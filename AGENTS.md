@@ -34,6 +34,7 @@
 - Node 用 `/g/nodejs/node`（v25.2.1）。
 - Git Bash 的 `find -printf` 可能不可用；没有 `strings` 命令（用 `grep -a`）。
 - 写含 `$` 的文件时，用**单引号** here-string（`@'...'@`），否则 `$` 会被 PowerShell 展开。
+- **git 行尾**：系统级 `E:\Git\etc\gitconfig` 里 `core.autocrlf=true`（Git for Windows 默认），会让 `git add` 刷 LF/CRLF 警告、`git status` 出幽灵 diff。已用「全局 attributes `* -text`（`~/.config/git/attributes`）+ 仓库内 `.gitattributes`」双保险根治。**遇到行尾/CRLF 警告不要再排查，看 `docs/git-line-endings-policy.md`。**
 
 ---
 
@@ -127,6 +128,7 @@ node deminify.mjs --only m0869
 | **怎么从 exe 抠出源码**（Bun 单文件逆向全流程） | `docs/bun-standalone-re.md` |
 | **为什么源码能直接读**（Bun `--compile` 原理） | `docs/why-source-is-readable.md` |
 | **Windows 上 Git Bash 怎么正确调用**（`shell="bash"` 为什么可能命中 WSL） | `docs/windows-git-bash-execution-note.md` |
+| **Git 行尾策略**（为什么总刷 LF/CRLF 警告 / 三种方案 / 最终选 C + A 双保险） | `docs/git-line-endings-policy.md` |
 | **自动去混淆怎么做**（四级证据 / 五条安全规则 / 怎么扩展） | `reconstructed/AUTO-NAMING.md` ★ |
 | **人工命名怎么做**（SOP / 范例 / 反模式） | `reconstructed/NAMING-METHOD.md` |
 | **workflow 子系统有哪些符号** | `reconstructed/GLOSSARY.md` |
