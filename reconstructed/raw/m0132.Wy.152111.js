@@ -1,0 +1,1 @@
+function Wy(e,{table:t,beneath:o,isObserving:r}){let n=Object.assign(Object.create(null),e.slots);for(let[s,i]of Object.entries(t)){let a=r&&i.withheldBy===void 0?Oa(e,s,i):Pn(e,s,i);n[s]=a,o.set(a,{name:s,descriptor:i})}return n}

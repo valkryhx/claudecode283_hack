@@ -1,0 +1,537 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import { Te } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import { c } from "B:/~BUN/root/chunk-kks4mj3w.js";
+import { Mr, l } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { Q } from "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import { t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import { I } from "B:/~BUN/root/chunk-y04k89s2.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import { a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import { RC, I2 } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import { zw } from "B:/~BUN/root/chunk-snmb1kqg.js";
+import { Po } from "B:/~BUN/root/chunk-6cq25d8x.js";
+import { i } from "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import { Nr, ga, $T } from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import { Cs, tn } from "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import { Jz } from "B:/~BUN/root/chunk-f1dj0k6n.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-tgk1nfes.js";
+import { yy, Pd } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import { ie } from "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import "B:/~BUN/root/chunk-ew8y0fm0.js";
+import { UG } from "B:/~BUN/root/chunk-3jyp964r.js";
+import "B:/~BUN/root/chunk-5yjtercz.js";
+import "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-8xaxa0y1.js";
+import "B:/~BUN/root/chunk-spgj5paf.js";
+import "B:/~BUN/root/chunk-5dk9zqaz.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-88mdabet.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-yeg3gem6.js";
+import "B:/~BUN/root/chunk-ewvnv67m.js";
+import "B:/~BUN/root/chunk-gbtzpa3e.js";
+import "B:/~BUN/root/chunk-r6m7remx.js";
+import "B:/~BUN/root/chunk-384x2wn9.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-nrrn2axm.js";
+import "B:/~BUN/root/chunk-8qv35yd7.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-5nfpvvfh.js";
+import "B:/~BUN/root/chunk-yzpw1mdr.js";
+import "B:/~BUN/root/chunk-2pww2v3x.js";
+import "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import "B:/~BUN/root/chunk-d8zzdckb.js";
+import "B:/~BUN/root/chunk-vq58jz92.js";
+import "B:/~BUN/root/chunk-kwex2zh0.js";
+import "B:/~BUN/root/chunk-1724zw97.js";
+import "B:/~BUN/root/chunk-196w7fz7.js";
+import "B:/~BUN/root/chunk-dt2g8e1y.js";
+import "B:/~BUN/root/chunk-s95n71e7.js";
+import "B:/~BUN/root/chunk-846bv8b5.js";
+import "B:/~BUN/root/chunk-30zp50p7.js";
+import "B:/~BUN/root/chunk-f6h9k5ss.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-n3t3nbqw.js";
+import "B:/~BUN/root/chunk-wefm1yd9.js";
+import "B:/~BUN/root/chunk-4dctrsn2.js";
+import "B:/~BUN/root/chunk-38kffpyk.js";
+import "B:/~BUN/root/chunk-9mfh08mz.js";
+import "B:/~BUN/root/chunk-0vgj9y5e.js";
+import "B:/~BUN/root/chunk-65tbbnf1.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-xy9bynby.js";
+import "B:/~BUN/root/chunk-mc8ranwc.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-6k625ztj.js";
+import "B:/~BUN/root/chunk-2m5rfp86.js";
+import "B:/~BUN/root/chunk-2n2hx639.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import "B:/~BUN/root/chunk-y39emrp9.js";
+import "B:/~BUN/root/chunk-skjrk8s1.js";
+import "B:/~BUN/root/chunk-mmnpv22v.js";
+import "B:/~BUN/root/chunk-nhxcgss8.js";
+import "B:/~BUN/root/chunk-ye6tacpp.js";
+import "B:/~BUN/root/chunk-affnknva.js";
+import "B:/~BUN/root/chunk-je63fn7b.js";
+import "B:/~BUN/root/chunk-90zbw58x.js";
+import "B:/~BUN/root/chunk-aa7kpy4p.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-n5swsemr.js";
+import "B:/~BUN/root/chunk-0w5kpsps.js";
+import "B:/~BUN/root/chunk-8k39s5js.js";
+import "B:/~BUN/root/chunk-ewjenbzd.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-70qv5h0a.js";
+import "B:/~BUN/root/chunk-efz11ra0.js";
+import "B:/~BUN/root/chunk-6wgkxd9a.js";
+import "B:/~BUN/root/chunk-d6sc6w1r.js";
+import "B:/~BUN/root/chunk-9qtz41py.js";
+import "B:/~BUN/root/chunk-n2rcpjj1.js";
+import "B:/~BUN/root/chunk-4mcmxrhr.js";
+import "B:/~BUN/root/chunk-5emths66.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-1xb1enjd.js";
+import "B:/~BUN/root/chunk-m1qtc24s.js";
+import "B:/~BUN/root/chunk-p6ejqvds.js";
+import "B:/~BUN/root/chunk-zfb6h1v8.js";
+import "B:/~BUN/root/chunk-3k26zwm7.js";
+import "B:/~BUN/root/chunk-y2pt1fm0.js";
+import "B:/~BUN/root/chunk-ec3373a4.js";
+import "B:/~BUN/root/chunk-1dghpe22.js";
+import "B:/~BUN/root/chunk-0djrqga0.js";
+import "B:/~BUN/root/chunk-7azfcycf.js";
+import "B:/~BUN/root/chunk-q3sthw4s.js";
+import "B:/~BUN/root/chunk-5a1m1kxy.js";
+import "B:/~BUN/root/chunk-4q0h6gxt.js";
+import "B:/~BUN/root/chunk-a8gk62v4.js";
+import "B:/~BUN/root/chunk-ehma26r8.js";
+import "B:/~BUN/root/chunk-q5ke49kw.js";
+import "B:/~BUN/root/chunk-faawr4jv.js";
+import "B:/~BUN/root/chunk-gksrzz5s.js";
+import "B:/~BUN/root/chunk-x8507144.js";
+import "B:/~BUN/root/chunk-j36yaq51.js";
+import "B:/~BUN/root/chunk-7d9qjs8x.js";
+import "B:/~BUN/root/chunk-a8td06ny.js";
+import "B:/~BUN/root/chunk-krn12wre.js";
+import "B:/~BUN/root/chunk-671s136j.js";
+import "B:/~BUN/root/chunk-rdxve5qj.js";
+import "B:/~BUN/root/chunk-hg30cgr1.js";
+import "B:/~BUN/root/chunk-z51p19sq.js";
+import "B:/~BUN/root/chunk-8p6es4nr.js";
+import "B:/~BUN/root/chunk-2gwgbd5e.js";
+import "B:/~BUN/root/chunk-pnn94d53.js";
+import "B:/~BUN/root/chunk-xdhy5nhb.js";
+import "B:/~BUN/root/chunk-rtxwm8ds.js";
+import "B:/~BUN/root/chunk-f71hcy5v.js";
+import "B:/~BUN/root/chunk-8gym6yya.js";
+import "B:/~BUN/root/chunk-q77pmen1.js";
+import "B:/~BUN/root/chunk-mmtwp5d6.js";
+import "B:/~BUN/root/chunk-9sy3w2pa.js";
+import "B:/~BUN/root/chunk-dt6tzt7w.js";
+import "B:/~BUN/root/chunk-xfvqq19y.js";
+import "B:/~BUN/root/chunk-06rekkgz.js";
+import "B:/~BUN/root/chunk-jz4j9jvf.js";
+import "B:/~BUN/root/chunk-zy5rwsjc.js";
+import "B:/~BUN/root/chunk-hjery5bx.js";
+import "B:/~BUN/root/chunk-1zdknz5q.js";
+import "B:/~BUN/root/chunk-ztbv79md.js";
+import "B:/~BUN/root/chunk-8b53pnky.js";
+import "B:/~BUN/root/chunk-g0q5e1g8.js";
+import "B:/~BUN/root/chunk-jwaej6se.js";
+import "B:/~BUN/root/chunk-gsz9m7j5.js";
+import "B:/~BUN/root/chunk-qmv1x2cp.js";
+import "B:/~BUN/root/chunk-k7mv1tkq.js";
+import { C7e, R7e } from "B:/~BUN/root/chunk-a6sr146m.js";
+import "B:/~BUN/root/chunk-786r45cb.js";
+import "B:/~BUN/root/chunk-9kdkyxyv.js";
+import "B:/~BUN/root/chunk-dxbqhx2r.js";
+import { n4t, uZr, rOe } from "B:/~BUN/root/chunk-9dreq0v6.js";
+import "B:/~BUN/root/chunk-twqr14hq.js";
+import "B:/~BUN/root/chunk-6wjpaxb7.js";
+import { Mc } from "B:/~BUN/root/chunk-s08gcgdz.js";
+import { pse, jet, l8, CEt, P2e, REt } from "B:/~BUN/root/chunk-tg1j81wg.js";
+import "B:/~BUN/root/chunk-8n4s8cn5.js";
+import "B:/~BUN/root/chunk-230s8gzy.js";
+import "B:/~BUN/root/chunk-ghw8h4y1.js";
+import "B:/~BUN/root/chunk-tzzvaz2j.js";
+import "B:/~BUN/root/chunk-pwpgxxsc.js";
+import "B:/~BUN/root/chunk-m4ehcybg.js";
+import "B:/~BUN/root/chunk-08bth2fj.js";
+import "B:/~BUN/root/chunk-esqb9g1a.js";
+import "B:/~BUN/root/chunk-6jwexnnw.js";
+import "B:/~BUN/root/chunk-a2kvnefe.js";
+import "B:/~BUN/root/chunk-w4zcf9ar.js";
+import "B:/~BUN/root/chunk-467d5w8j.js";
+import "B:/~BUN/root/chunk-cn8bxjex.js";
+import "B:/~BUN/root/chunk-zn0k3ezm.js";
+import "B:/~BUN/root/chunk-c1275ktq.js";
+import "B:/~BUN/root/chunk-pgrf1rrh.js";
+import "B:/~BUN/root/chunk-ymhw5dt2.js";
+import "B:/~BUN/root/chunk-xmtkv29j.js";
+import "B:/~BUN/root/chunk-hcqaqf9c.js";
+import "B:/~BUN/root/chunk-na2t7g12.js";
+import "B:/~BUN/root/chunk-aqngsaqg.js";
+import "B:/~BUN/root/chunk-gj7av6e0.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-vr3kcvgy.js";
+import "B:/~BUN/root/chunk-fbgf4b4h.js";
+import "B:/~BUN/root/chunk-g4xzaw4b.js";
+import "B:/~BUN/root/chunk-mac0vc34.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-h7t9e2fk.js";
+import "B:/~BUN/root/chunk-6bchs2sy.js";
+import "B:/~BUN/root/chunk-hbma7z88.js";
+import "B:/~BUN/root/chunk-vgyyj55s.js";
+import "B:/~BUN/root/chunk-9sajt7dp.js";
+import "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-hyp140x7.js";
+import "B:/~BUN/root/chunk-995m8a2a.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gmsn86f4.js";
+import "B:/~BUN/root/chunk-08q5fcq1.js";
+import "B:/~BUN/root/chunk-p10aw0p6.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import { Us, hi } from "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import { U, L } from "B:/~BUN/root/chunk-z1enakv9.js";
+function G(n) {
+  let m = new Map(),
+    rejectedCounts = new Map();
+  for (let r of n) {
+    if (r.kind !== "remote") continue;
+    let y = r.rejectedPassthroughTools?.size ?? 0;
+    if (y > 0) rejectedCounts.set(r.name, y);
+    for (let w of r.passthroughTools?.values() ?? []) {
+      let M = Us(w.localName);
+      if (M === null) continue;
+      let e = `${r.name}\x00${M.serverName}`,
+        u = m.get(e);
+      m.set(e, u === void 0 ? {
+        hostName: r.name,
+        hostStatus: ee(r),
+        serverName: M.serverName,
+        toolCount: 1
+      } : {
+        ...u,
+        toolCount: u.toolCount + 1
+      });
+    }
+  }
+  return {
+    servers: [...m.values()].sort((itemA, itemB) => itemA.hostName.localeCompare(itemB.hostName) || itemA.serverName.localeCompare(itemB.serverName)),
+    rejectedCounts: rejectedCounts
+  };
+}
+function ee(n) {
+  if (n.protocol.kind === "incompatible") return "incompatible";
+  return n.status;
+}
+var H = {
+    connected: "connected",
+    cached: "cached (connects on first use)",
+    pending: "connecting",
+    disabled: "disabled",
+    failed: "not connected",
+    "needs-auth": "needs authentication",
+    "needs-approval": "pending approval"
+  },
+  D = "Usage: /mcp [reconnect|enable|disable [<server>|all]]. With no server name, applies to all.",
+  ne = 2500;
+async function Be(n, m) {
+  let v = n.trim(),
+    r = m.getMcp().clients.filter(item => item.name !== "ide"),
+    y = v.toLowerCase();
+  if (!v || I2.includes(y)) {
+    let o = Te();
+    if (o && Boolean(a.CLAUDE_CODE_REMOTE) && !Po(m.session)) {
+      let C = m.toolState.get(UG);
+      if (await Promise.race([R7e(C7e(m), C, "resolve"), Q(ne, m.abortController.signal)]), !Po(m.session)) return s(te(r, m.getMcp().tools, C));
+    }
+    if (r.length === 0) return s(`No MCP servers are configured.${g(" Add one with `claude mcp add`.", " Open MCP servers from the command menu.")}${zw() ? "" : `
+${D}`}`);
+    let P = U(r, C => C.type === "connected"),
+      R = U(r, C => C.type === "cached"),
+      k = U(r, C => C.type === "pending"),
+      j = U(r, $T),
+      f = U(r, x),
+      O = U(r, C => C.type === "disabled"),
+      A = r.length - P - R - k - O - j;
+    return s(`${r.length} MCP server(s): ${P} connected, ` + (R > 0 ? `${R} cached, ` : "") + (k > 0 ? `${k} connecting, ` : "") + `${A} not connected, ` + (j > 0 ? `${j} not configured, ` : "") + `${O} disabled.` + (f > 0 && !o ? " Reply `/mcp reconnect all` here to retry." : "") + (o ? g(" Use `/mcp` in the terminal for details.", " Open MCP servers from the command menu.") : `${g(" Use `/mcp` in the terminal for details.")}
+${D}`));
+  }
+  if (RC.includes(y)) return s(D);
+  let w = /^(\S+)\s*(.*)$/.exec(v),
+    M = (w?.[1] ?? "").toLowerCase(),
+    e = w?.[2] || "all";
+  if (M !== "reconnect" && M !== "enable" && M !== "disable") return s(`"${d(M)}" isn't a recognized /mcp action. Try reconnect, enable, or disable.`);
+  i("tengu_mcp_command_inline", {
+    action: c(M)
+  });
+  let u = e === "all" ? r : r.filter(item => item.name === e);
+  if (u.length === 0) return s(e === "all" ? `No MCP servers are configured.${g(" Add one with `claude mcp add`.", " Open MCP servers from the command menu.")}` : `There's no MCP server named "${d(e)}".${g(" Run `/mcp` in the terminal to see configured servers.", " Open MCP servers from the command menu.")}`);
+  let h = n4t(),
+    E = uZr(),
+    b = rOe();
+  if (!h || !E || !b) {
+    if (Te()) return s("Reconnect, enable, and disable aren't available in this session.");
+    return s("MCP controls aren't available right now \u2014 the terminal is still starting up or is showing another view.");
+  }
+  if (M === "reconnect") {
+    let o = e !== "all" ? u[0] : void 0,
+      S = o && jet(o);
+    if (S === "disabled") {
+      if (yy()) return s(`"${d(e)}" is disabled for this project. Run \`/mcp\` in this project, in a terminal where this session runs, to bring it back.`);
+      return s(V(`"${d(e)}" is disabled.`, ` Run \`/mcp enable ${e}\` to bring it back.`, e));
+    }
+    if (S === "pending") return s(`"${d(e)}" is already reconnecting \u2014 retries can take a few minutes when a server keeps failing.`);
+    if (S === "needs-approval") return s(`"${d(e)}" is pending approval.${g(" Approve it with `/mcp` in the terminal first.", " Open MCP servers from the command menu.")}`);
+    let P = e === "all" ? u.filter(item => K(item, b)) : u,
+      R = e === "all" ? P2e(u, !0, b) : null;
+    if (P.length === 0) {
+      let f = U(u, C => C.type === "disabled"),
+        O = U(u, C => $T(C) && !b(C.name));
+      if (f === 0 && R === null && O > 0) return s(`${O} MCP server(s) aren't configured yet, so there's nothing to reconnect. The rest are already connected or connecting.`);
+      let A = [...(f > 0 ? [yy() ? `${f} MCP server(s) are disabled for this project. Run \`/mcp\` in this project, in a terminal where this session runs, to bring them back.` : `${f} MCP server(s) are disabled. Run \`/mcp enable all\` to bring them back.`] : []), ...(R !== null ? [R] : []), ...(O > 0 ? [`${O} MCP server(s) aren't configured yet, so there's nothing to reconnect.`] : [])];
+      if (A.length > 0) return s(A.join(" "));
+      return s("All enabled MCP servers are already connected or connecting.");
+    }
+    let k = await Promise.allSettled(P.map(item => h(item.name))),
+      j = U(k, f => f.status === "fulfilled" && f.value.client.type === "connected");
+    if (e !== "all") {
+      let f = k[0];
+      if (f?.status !== "fulfilled") return q("reconnect", e, f?.reason, {
+        config: P[0]?.config,
+        persistsOffBox: Po(m.session)
+      });
+      let O = f.value.client.type,
+        A = O === "needs-auth" ? g(" Authenticate with `/mcp` in the terminal.", " Open MCP servers from the command menu.") : g(" Check its config with `/mcp` in the terminal.", " Open MCP servers from the command menu.");
+      return s(O === "connected" ? `Reconnected "${d(e)}".` : `Couldn't reconnect "${d(e)}" (${H[O]}).${A}`);
+    }
+    return s(`Reconnected ${j} of ${P.length} MCP server(s).` + (R !== null ? ` ${R}` : "") + g(" Run `/mcp` in the terminal to see status.", " Open MCP servers from the command menu."));
+  }
+  let p = M === "enable";
+  if (e !== "all" && u.some(item => pse(item) === "needs-approval")) return s(`"${d(e)}" is pending approval.${g(" Approve it with `/mcp` in the terminal first.", " Open MCP servers from the command menu.")}`);
+  let T = u.filter(item => p ? item.type === "disabled" : item.type !== "disabled" && pse(item) !== "needs-approval");
+  if (T.length === 0) {
+    if (p && e !== "all" && b(e)) {
+      if (u.some(Cs)) return s(REt(e));
+      return s(l8(e));
+    }
+    if (!p && e !== "all" && !b(e)) return s(CEt(e));
+    if (e === "all") {
+      let o = P2e(u, p, b);
+      if (o !== null) {
+        let S = p ? U(u, P => K(P, b)) : 0;
+        return s(S > 0 ? `${o} ${Y(S)}` : o);
+      }
+    }
+    if (p) {
+      let o = U(u, x);
+      if (o > 0) return s(e === "all" ? `All MCP servers are already enabled, but ${Y(o)}` : V(`"${d(e)}" is already enabled but not connected.`, ` Run \`/mcp reconnect ${e}\` to retry.`, e));
+    }
+    return s(e === "all" ? `All MCP servers are already ${p ? "enabled" : "disabled"}.` : `"${d(e)}" is already ${p ? "enabled" : "disabled"}.`);
+  }
+  let F = e === "all" ? P2e(u, p, b) : null,
+    B = await Promise.allSettled(T.map(item => E(item.name))),
+    N = U(B, o => o.status === "fulfilled"),
+    W = p ? U(B, o => o.status === "fulfilled" && o.value.type === "connected") : N,
+    X = p ? "Enabled" : "Disabled",
+    Z = p && W < N ? ` (${N - W} enabled but not yet connected)` : "";
+  if (e !== "all") {
+    if (!p) return s(N > 0 ? `Disabled "${d(e)}".` : `Couldn't disable "${d(e)}" \u2014 it may have been removed, or its configuration couldn't be read.${g(" Run `/mcp` in the terminal to check.", " Open MCP servers from the command menu.")}`);
+    let o = B[0];
+    if (o?.status !== "fulfilled") return q("enable", e, o?.reason, {
+      config: T[0]?.config,
+      persistsOffBox: Po(m.session)
+    });
+    let S = o.value.type,
+      P = S === "needs-auth" ? g(" Authenticate with `/mcp` in the terminal.", " Open MCP servers from the command menu.") : g(" Check its config with `/mcp` in the terminal.", " Open MCP servers from the command menu.");
+    return s(S === "connected" ? `Enabled "${d(e)}".` : `Enabled "${d(e)}", but it isn't connected yet${S !== "failed" ? ` (${H[S]})` : ""}.${P}`);
+  }
+  let z = T.length - N;
+  return s(`${X} ${N} MCP server(s)${Z}` + (z > 0 ? ` (${z} couldn't be changed)` : "") + "." + (F !== null ? ` ${F}` : "") + g(" Run `/mcp` in the terminal to see status.", " Open MCP servers from the command menu."));
+}
+function d(n) {
+  return Nr(n);
+}
+function V(n, m, v) {
+  let r = `${n}${m}`;
+  return Jz(v) && [...r].length <= 1024 ? r : n;
+}
+function g(n, m = "") {
+  return zw() ? m : n;
+}
+function s(value) {
+  return {
+    type: "text",
+    value: value
+  };
+}
+function te(n, m, v) {
+  let {
+      servers: servers,
+      rejectedCounts: rejectedCounts_2
+    } = G(v.hosts()),
+    w = L([...servers.map(item => item.hostName), ...rejectedCounts_2.keys()]),
+    M = n.length === 0 ? ["  (none configured)"] : [...n].sort((itemA, itemB) => itemA.name.localeCompare(itemB.name)).map(item => {
+      let E = hi(item.name),
+        b = U(m, T => T.name.startsWith(E)),
+        p = $T(item) ? "not configured" : H[pse(item)];
+      return `  ${_(d(item.name))}  ${_(p)}  ${item.config.type ?? "stdio"}${J(b)}`;
+    }),
+    e = w.map(item => {
+      let E = servers.filter(p => p.hostName === item),
+        b = rejectedCounts_2.get(item) ?? 0;
+      return ["", `On ${d(item)} (attached):`, ...E.map(re), ...(b > 0 ? [`  (${b} more of its MCP ${I(b, "tool")} couldn't be read \u2014 likely a Claude Code version mismatch between this session and that machine)`] : [])].join(`
+`);
+    }),
+    u = w.length > 0 ? `
+
+Servers on ${w.map(d).join(", ")} are managed there \u2014 run \`/mcp\` in a local terminal on that machine. A server that's failed or disabled there won't appear here, and its transport type isn't reported to the cloud session.` : "";
+  return ["This cloud session's MCP servers:", ...M, ...e].join(`
+`) + u;
+}
+var oe = {
+  online: "connected",
+  offline: "unreachable",
+  incompatible: "unreachable (version mismatch)"
+};
+function re(n) {
+  return `  ${_(d(n.serverName))}  ${_(oe[n.hostStatus])}  via ${Pd}${J(n.toolCount)}`;
+}
+function _(n) {
+  return n + " ".repeat(Math.max(0, 28 - ie(n)));
+}
+function J(n) {
+  return n > 0 ? ` \xB7 ${n} ${I(n, "tool")}` : "";
+}
+function q(n, m, v, r) {
+  let y = r.config ? Mc(m, r.config, l(v)) : l(v);
+  if (v instanceof Mr) return s(ga(l(v), void 0, "none"));
+  if (r.persistsOffBox) return t(`mcp ${n} refused for ${tn(m)}: ${y}`, {
+    level: "error"
+  }), s(`Couldn't ${n} "${d(m)}" (detail withheld on this connection).${g(" Run `/mcp` in the terminal to check.", " Open MCP servers from the command menu.")}`);
+  return s(`Couldn't ${n} "${d(m)}" \u2014 ${ga(y)}.${g(" Run `/mcp` in the terminal to check.", " Open MCP servers from the command menu.")}`);
+}
+function x(n) {
+  return n.type === "failed" && !$T(n) || n.type === "needs-auth";
+}
+function K(n, m) {
+  return x(n) && !m(n.name);
+}
+function Y(n) {
+  return `${n} ${n === 1 ? "isn't" : "aren't"} connected \u2014 reply \`/mcp reconnect all\` here to retry.`;
+}
+export { Be as call };

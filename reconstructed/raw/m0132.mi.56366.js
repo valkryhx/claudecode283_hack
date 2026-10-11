@@ -1,0 +1,1 @@
+var mi={event:"ui.blit",check:K("ui.blit").check,checkArgument:(e,t)=>e.requestId!==t.requestId||e.key!==t.key||(("source"in e)&&e.source!==void 0)!==(("source"in t)&&t.source!==void 0)?"a changed requestId, key or kind (the Raster or Image being blitted; next(e) passes them on)":void 0};

@@ -1,0 +1,1550 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  I,
+  re
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import "B:/~BUN/root/chunk-kks4mj3w.js";
+import "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import {
+  uh
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-4tkwpa6e.js";
+import "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-e1thvnpv.js";
+import "B:/~BUN/root/chunk-1x7a47hz.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import "B:/~BUN/root/chunk-kss0wzj5.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-tq1hs216.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import {
+  G,
+  Md
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import {
+  Va
+} from "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import {
+  Pp,
+  XFt,
+  F$r,
+  JFt,
+  zce,
+  U$r,
+  p5e,
+  gpt,
+  n$t,
+  i3n,
+  r$t,
+  kD,
+  Bt,
+  WR,
+  En,
+  gi,
+  qb,
+  Z$r,
+  qE,
+  Kce,
+  N1,
+  dd,
+  Mv,
+  KE,
+  d$t
+} from "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-jpnyq4t7.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import {
+  s,
+  n,
+  bt
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import "B:/~BUN/root/chunk-e9hrnhar.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-p4t9nwg2.js";
+import "B:/~BUN/root/chunk-trcn2d68.js";
+import "B:/~BUN/root/chunk-q1b7bx45.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import "B:/~BUN/root/chunk-mvdr6ncg.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-jz31jc2e.js";
+import "B:/~BUN/root/chunk-p3ewqd1e.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-dczbgj6x.js";
+import "B:/~BUN/root/chunk-1223v177.js";
+import "B:/~BUN/root/chunk-0rtwbec7.js";
+import "B:/~BUN/root/chunk-jdm3bsma.js";
+import "B:/~BUN/root/chunk-7nc4t0q7.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-q52x4j16.js";
+import "B:/~BUN/root/chunk-acd2tycn.js";
+import "B:/~BUN/root/chunk-bxbr6qzf.js";
+import {
+  Fp
+} from "B:/~BUN/root/chunk-qg1rz74p.js";
+import "B:/~BUN/root/chunk-d4pzq02b.js";
+import "B:/~BUN/root/chunk-cxqcvpm0.js";
+import {
+  Le
+} from "B:/~BUN/root/chunk-dk0c0nrh.js";
+import "B:/~BUN/root/chunk-65tbbnf1.js";
+import {
+  ft,
+  su,
+  YV
+} from "B:/~BUN/root/chunk-faawr4jv.js";
+import "B:/~BUN/root/chunk-skjrk8s1.js";
+import "B:/~BUN/root/chunk-j36yaq51.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import "B:/~BUN/root/chunk-ew8y0fm0.js";
+import "B:/~BUN/root/chunk-mc8ranwc.js";
+import {
+  GWn
+} from "B:/~BUN/root/chunk-7d9qjs8x.js";
+import "B:/~BUN/root/chunk-a8td06ny.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import {
+  D4e
+} from "B:/~BUN/root/chunk-q5ke49kw.js";
+import {
+  NF
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-f1dj0k6n.js";
+import "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import {
+  _Po
+} from "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import {
+  Ipe,
+  Ckt
+} from "B:/~BUN/root/chunk-crnh5x5m.js";
+import {
+  ilo,
+  alo,
+  Yu
+} from "B:/~BUN/root/chunk-at7axhcd.js";
+import "B:/~BUN/root/chunk-bzhr4ppe.js";
+import {
+  Rm
+} from "B:/~BUN/root/chunk-1zdknz5q.js";
+import "B:/~BUN/root/chunk-z51p19sq.js";
+import {
+  Sm
+} from "B:/~BUN/root/chunk-r1ja2che.js";
+import {
+  Kwe,
+  lGe
+} from "B:/~BUN/root/chunk-116h9ckm.js";
+import "B:/~BUN/root/chunk-dt2g8e1y.js";
+import "B:/~BUN/root/chunk-9qtz41py.js";
+import "B:/~BUN/root/chunk-n2rcpjj1.js";
+import "B:/~BUN/root/chunk-7z8vew74.js";
+import {
+  J_,
+  Iao,
+  jmr
+} from "B:/~BUN/root/chunk-ndb6ecfp.js";
+import "B:/~BUN/root/chunk-xdhy5nhb.js";
+import "B:/~BUN/root/chunk-txj2pkcj.js";
+import "B:/~BUN/root/chunk-dty6td52.js";
+import "B:/~BUN/root/chunk-tv9af6s0.js";
+import "B:/~BUN/root/chunk-pv8vnm5m.js";
+import "B:/~BUN/root/chunk-rt2jhy85.js";
+import "B:/~BUN/root/chunk-krn12wre.js";
+import "B:/~BUN/root/chunk-as7rvra0.js";
+import {
+  vP,
+  k7
+} from "B:/~BUN/root/chunk-s9g1bc10.js";
+import "B:/~BUN/root/chunk-5yefzev8.js";
+import {
+  Uwe,
+  Stt,
+  J9t,
+  Q9t,
+  Z9t,
+  eXt,
+  Xpe,
+  dw,
+  Dmr,
+  Lmr,
+  Nmr
+} from "B:/~BUN/root/chunk-0mrty9z0.js";
+import "B:/~BUN/root/chunk-rv74wwkr.js";
+import {
+  cW,
+  gp
+} from "B:/~BUN/root/chunk-8qbd7aj8.js";
+import "B:/~BUN/root/chunk-rtxwm8ds.js";
+import "B:/~BUN/root/chunk-8qv35yd7.js";
+import "B:/~BUN/root/chunk-3jyp964r.js";
+import "B:/~BUN/root/chunk-mmnpv22v.js";
+import "B:/~BUN/root/chunk-nhxcgss8.js";
+import "B:/~BUN/root/chunk-ye6tacpp.js";
+import "B:/~BUN/root/chunk-affnknva.js";
+import "B:/~BUN/root/chunk-je63fn7b.js";
+import "B:/~BUN/root/chunk-90zbw58x.js";
+import "B:/~BUN/root/chunk-1mdeqc2r.js";
+import "B:/~BUN/root/chunk-6k625ztj.js";
+import "B:/~BUN/root/chunk-2m5rfp86.js";
+import "B:/~BUN/root/chunk-2n2hx639.js";
+import "B:/~BUN/root/chunk-196w7fz7.js";
+import "B:/~BUN/root/chunk-y39emrp9.js";
+import "B:/~BUN/root/chunk-5nfpvvfh.js";
+import "B:/~BUN/root/chunk-n3t3nbqw.js";
+import "B:/~BUN/root/chunk-wefm1yd9.js";
+import "B:/~BUN/root/chunk-4dctrsn2.js";
+import "B:/~BUN/root/chunk-38kffpyk.js";
+import "B:/~BUN/root/chunk-9mfh08mz.js";
+import "B:/~BUN/root/chunk-vq58jz92.js";
+import "B:/~BUN/root/chunk-0vgj9y5e.js";
+import "B:/~BUN/root/chunk-yzpw1mdr.js";
+import "B:/~BUN/root/chunk-d8zzdckb.js";
+import "B:/~BUN/root/chunk-kwex2zh0.js";
+import "B:/~BUN/root/chunk-1724zw97.js";
+import "B:/~BUN/root/chunk-s95n71e7.js";
+import "B:/~BUN/root/chunk-846bv8b5.js";
+import "B:/~BUN/root/chunk-30zp50p7.js";
+import "B:/~BUN/root/chunk-f6h9k5ss.js";
+import "B:/~BUN/root/chunk-8k39s5js.js";
+import "B:/~BUN/root/chunk-5dk9zqaz.js";
+import "B:/~BUN/root/chunk-yeg3gem6.js";
+import "B:/~BUN/root/chunk-ewvnv67m.js";
+import "B:/~BUN/root/chunk-gbtzpa3e.js";
+import "B:/~BUN/root/chunk-r6m7remx.js";
+import "B:/~BUN/root/chunk-384x2wn9.js";
+import "B:/~BUN/root/chunk-nrrn2axm.js";
+import "B:/~BUN/root/chunk-5yjtercz.js";
+import "B:/~BUN/root/chunk-8xaxa0y1.js";
+import "B:/~BUN/root/chunk-spgj5paf.js";
+import "B:/~BUN/root/chunk-88mdabet.js";
+import "B:/~BUN/root/chunk-2pww2v3x.js";
+import "B:/~BUN/root/chunk-6cq25d8x.js";
+import "B:/~BUN/root/chunk-0w5kpsps.js";
+import "B:/~BUN/root/chunk-n5swsemr.js";
+import "B:/~BUN/root/chunk-4mcmxrhr.js";
+import "B:/~BUN/root/chunk-tgk1nfes.js";
+import "B:/~BUN/root/chunk-qmv1x2cp.js";
+import "B:/~BUN/root/chunk-ewjenbzd.js";
+import "B:/~BUN/root/chunk-70qv5h0a.js";
+import "B:/~BUN/root/chunk-6wgkxd9a.js";
+import "B:/~BUN/root/chunk-d6sc6w1r.js";
+import "B:/~BUN/root/chunk-efz11ra0.js";
+import "B:/~BUN/root/chunk-1xb1enjd.js";
+import "B:/~BUN/root/chunk-xy9bynby.js";
+import "B:/~BUN/root/chunk-m1qtc24s.js";
+import "B:/~BUN/root/chunk-p6ejqvds.js";
+import "B:/~BUN/root/chunk-zfb6h1v8.js";
+import "B:/~BUN/root/chunk-3k26zwm7.js";
+import "B:/~BUN/root/chunk-y2pt1fm0.js";
+import "B:/~BUN/root/chunk-ec3373a4.js";
+import "B:/~BUN/root/chunk-5emths66.js";
+import "B:/~BUN/root/chunk-1dghpe22.js";
+import "B:/~BUN/root/chunk-0djrqga0.js";
+import "B:/~BUN/root/chunk-7azfcycf.js";
+import "B:/~BUN/root/chunk-q3sthw4s.js";
+import "B:/~BUN/root/chunk-5a1m1kxy.js";
+import "B:/~BUN/root/chunk-4q0h6gxt.js";
+import "B:/~BUN/root/chunk-a8gk62v4.js";
+import "B:/~BUN/root/chunk-ehma26r8.js";
+import "B:/~BUN/root/chunk-gksrzz5s.js";
+import "B:/~BUN/root/chunk-x8507144.js";
+import "B:/~BUN/root/chunk-671s136j.js";
+import "B:/~BUN/root/chunk-rdxve5qj.js";
+import "B:/~BUN/root/chunk-hg30cgr1.js";
+import "B:/~BUN/root/chunk-2gwgbd5e.js";
+import "B:/~BUN/root/chunk-f71hcy5v.js";
+import "B:/~BUN/root/chunk-8gym6yya.js";
+import "B:/~BUN/root/chunk-q77pmen1.js";
+import "B:/~BUN/root/chunk-mmtwp5d6.js";
+import "B:/~BUN/root/chunk-9sy3w2pa.js";
+import "B:/~BUN/root/chunk-dt6tzt7w.js";
+import "B:/~BUN/root/chunk-8p6es4nr.js";
+import "B:/~BUN/root/chunk-pnn94d53.js";
+import "B:/~BUN/root/chunk-xfvqq19y.js";
+import "B:/~BUN/root/chunk-06rekkgz.js";
+import "B:/~BUN/root/chunk-jz4j9jvf.js";
+import "B:/~BUN/root/chunk-zy5rwsjc.js";
+import "B:/~BUN/root/chunk-hjery5bx.js";
+import "B:/~BUN/root/chunk-ztbv79md.js";
+import "B:/~BUN/root/chunk-8b53pnky.js";
+import "B:/~BUN/root/chunk-g0q5e1g8.js";
+import "B:/~BUN/root/chunk-jwaej6se.js";
+import "B:/~BUN/root/chunk-gsz9m7j5.js";
+import "B:/~BUN/root/chunk-aa7kpy4p.js";
+import "B:/~BUN/root/chunk-t82zs1e5.js";
+import "B:/~BUN/root/chunk-m6mzmc8p.js";
+import "B:/~BUN/root/chunk-1mdmjaqt.js";
+import "B:/~BUN/root/chunk-n2j74jq8.js";
+import "B:/~BUN/root/chunk-awyadv01.js";
+import "B:/~BUN/root/chunk-86z0hexb.js";
+import "B:/~BUN/root/chunk-xanxfwr0.js";
+import "B:/~BUN/root/chunk-6yjt7rfc.js";
+import "B:/~BUN/root/chunk-bpf73dpy.js";
+import "B:/~BUN/root/chunk-w7ka0qjz.js";
+import "B:/~BUN/root/chunk-5f94cb9p.js";
+import {
+  cqt,
+  tJr,
+  vQe,
+  eSe,
+  sbt,
+  zje,
+  ibt,
+  RIe,
+  Gkn,
+  Wtr,
+  ztr,
+  dqt
+} from "B:/~BUN/root/chunk-sfkr36kw.js";
+import "B:/~BUN/root/chunk-d3dc4x7w.js";
+import "B:/~BUN/root/chunk-rje38cxe.js";
+import "B:/~BUN/root/chunk-shcemczw.js";
+import "B:/~BUN/root/chunk-t90pe00y.js";
+import "B:/~BUN/root/chunk-y19pnsxj.js";
+import {
+  RU,
+  h7,
+  yO,
+  OZe,
+  ok
+} from "B:/~BUN/root/chunk-h9ex720v.js";
+import "B:/~BUN/root/chunk-sjxdbr0h.js";
+import {
+  aWe,
+  FIe,
+  bU,
+  Vj,
+  ow,
+  cWe,
+  Yue,
+  YQ,
+  xQr
+} from "B:/~BUN/root/chunk-xdjz6v9t.js";
+import "B:/~BUN/root/chunk-tyqwkyrh.js";
+import {
+  kA,
+  SQr,
+  Arr
+} from "B:/~BUN/root/chunk-560ns521.js";
+import "B:/~BUN/root/chunk-5hv9qec2.js";
+import "B:/~BUN/root/chunk-0p35j9y3.js";
+import "B:/~BUN/root/chunk-r8egpw36.js";
+import "B:/~BUN/root/chunk-hsn00gxk.js";
+import {
+  Zro
+} from "B:/~BUN/root/chunk-exdrqg09.js";
+import "B:/~BUN/root/chunk-6jh6z0qd.js";
+import "B:/~BUN/root/chunk-0jh8qtc3.js";
+import "B:/~BUN/root/chunk-y0c065mp.js";
+import "B:/~BUN/root/chunk-njw22eg8.js";
+import "B:/~BUN/root/chunk-yqkdh8e9.js";
+import "B:/~BUN/root/chunk-q86sc2gv.js";
+import "B:/~BUN/root/chunk-tvyr4hbp.js";
+import "B:/~BUN/root/chunk-873x5maq.js";
+import {
+  kJe
+} from "B:/~BUN/root/chunk-gj14yjd8.js";
+import "B:/~BUN/root/chunk-b5qh4e85.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import "B:/~BUN/root/chunk-9z0za8jx.js";
+import "B:/~BUN/root/chunk-4dw8761b.js";
+import "B:/~BUN/root/chunk-1b31g1ea.js";
+import "B:/~BUN/root/chunk-4w0hpk1s.js";
+import "B:/~BUN/root/chunk-c50e3nb9.js";
+import {
+  aG,
+  QQ,
+  zIe
+} from "B:/~BUN/root/chunk-ve023kqk.js";
+import "B:/~BUN/root/chunk-4gthywt6.js";
+import "B:/~BUN/root/chunk-6bc9abmj.js";
+import "B:/~BUN/root/chunk-nvr3pbxz.js";
+import "B:/~BUN/root/chunk-7cdnr0z4.js";
+import "B:/~BUN/root/chunk-mppjs8gw.js";
+import "B:/~BUN/root/chunk-9dpn4kbz.js";
+import "B:/~BUN/root/chunk-tvk6phkz.js";
+import "B:/~BUN/root/chunk-whn8zvh7.js";
+import "B:/~BUN/root/chunk-106hagsg.js";
+import "B:/~BUN/root/chunk-qq6w89ha.js";
+import {
+  Dso
+} from "B:/~BUN/root/chunk-5n7pr87h.js";
+import "B:/~BUN/root/chunk-atp0ztev.js";
+import "B:/~BUN/root/chunk-v8s05yj9.js";
+import "B:/~BUN/root/chunk-8n4s8cn5.js";
+import "B:/~BUN/root/chunk-230s8gzy.js";
+import "B:/~BUN/root/chunk-ghw8h4y1.js";
+import "B:/~BUN/root/chunk-tzzvaz2j.js";
+import "B:/~BUN/root/chunk-pwpgxxsc.js";
+import "B:/~BUN/root/chunk-m4ehcybg.js";
+import "B:/~BUN/root/chunk-08bth2fj.js";
+import "B:/~BUN/root/chunk-esqb9g1a.js";
+import "B:/~BUN/root/chunk-6jwexnnw.js";
+import "B:/~BUN/root/chunk-a2kvnefe.js";
+import "B:/~BUN/root/chunk-w4zcf9ar.js";
+import "B:/~BUN/root/chunk-467d5w8j.js";
+import "B:/~BUN/root/chunk-cn8bxjex.js";
+import "B:/~BUN/root/chunk-zn0k3ezm.js";
+import "B:/~BUN/root/chunk-c1275ktq.js";
+import "B:/~BUN/root/chunk-pgrf1rrh.js";
+import "B:/~BUN/root/chunk-ymhw5dt2.js";
+import "B:/~BUN/root/chunk-xmtkv29j.js";
+import "B:/~BUN/root/chunk-hcqaqf9c.js";
+import "B:/~BUN/root/chunk-na2t7g12.js";
+import "B:/~BUN/root/chunk-aqngsaqg.js";
+import "B:/~BUN/root/chunk-gj7av6e0.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-vr3kcvgy.js";
+import "B:/~BUN/root/chunk-fbgf4b4h.js";
+import "B:/~BUN/root/chunk-g4xzaw4b.js";
+import "B:/~BUN/root/chunk-mac0vc34.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-h7t9e2fk.js";
+import "B:/~BUN/root/chunk-6bchs2sy.js";
+import "B:/~BUN/root/chunk-hbma7z88.js";
+import "B:/~BUN/root/chunk-vgyyj55s.js";
+import "B:/~BUN/root/chunk-9sajt7dp.js";
+import "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-hyp140x7.js";
+import "B:/~BUN/root/chunk-995m8a2a.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gmsn86f4.js";
+import "B:/~BUN/root/chunk-08q5fcq1.js";
+import "B:/~BUN/root/chunk-p10aw0p6.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import {
+  Ut
+} from "B:/~BUN/root/chunk-qbrwdgwc.js";
+import {
+  U
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+
+function M(t) {
+  let o = w(8),
+    {
+      name: c,
+      url: i,
+      iconColor: _
+    } = t,
+    h = _ === void 0 ? "claude" : _,
+    a;
+  if (o[0] !== h) a = e(n, {
+    color: h,
+    children: Md
+  }), o[0] = h, o[1] = a;
+  else a = o[1];
+  let f;
+  if (o[2] !== c || o[3] !== i) f = i ? e(bt, {
+    url: i,
+    fallback: c === i ? void 0 : `${c} (${i})`,
+    children: c
+  }) : c, o[2] = c, o[3] = i, o[4] = f;
+  else f = o[4];
+  let g;
+  if (o[5] !== a || o[6] !== f) g = r(n, {
+    children: [a, " ", f]
+  }), o[5] = a, o[6] = f, o[7] = g;
+  else g = o[7];
+  return g
+}
+import {
+  basename as V
+} from "path";
+var N = null,
+  B = null,
+  q = null,
+  H = null,
+  K = 8;
+
+function D(t, c, i = ok) {
+  let _ = t[i],
+    h = G(_) ? _.title : void 0;
+  return N1((c !== void 0 ? ft(c)?.title : void 0) || (typeof h === "string" ? h : ""))
+}
+
+function Z(t, c) {
+  let i = Yu() ? Kwe(t) : t;
+  if (i.action === "live-edit") return B ? B.renderLiveEditToolUse(i, c?.verbose === !0, gp()) : e(n, {
+    children: "live-edit"
+  });
+  if (i.action === "preview") {
+    let d = i,
+      m = typeof d.file_path === "string" ? d.file_path : "",
+      l = Mv(dd(m) ?? "(no file)");
+    if (c?.verbose !== !0) return r(n, {
+      children: ["preview ", Va(V(l), 60)]
+    });
+    let u = Z9t(d),
+      p = eXt(d);
+    return r(n, {
+      children: ["preview ", Va(l, 1024), e(n, {
+        dimColor: !0,
+        children: ` \xB7 ${u.join("/")} \xB7 ${p.join("+")}`
+      })]
+    })
+  }
+  if (i.action === "sync") return r(n, {
+    children: ["sync working copy", typeof i.file_path === "string" ? ` ${Va(KE(i.file_path)||"(unprintable path)",256)}` : "", typeof i.url === "string" ? ` \u2192 ${gi(i.url,"(unrecognized address)")}` : ""]
+  });
+  if (i.action === "version") return r(n, {
+    children: ["version", typeof i.url === "string" ? ` ${gi(i.url,"(unrecognized address)")}` : "", typeof i.label === "string" && i.label !== "" ? e(n, {
+      dimColor: !0,
+      children: ` \xB7 ${dd(i.label)??""}`
+    }) : null]
+  });
+  if (i.action === "list") {
+    if (eSe(i)) {
+      let m = sbt(i),
+        l = cWe(i),
+        u = l !== void 0 ? `"${dd(re(l,200))??""}"` : gi(ow(i), "(unrecognized address)");
+      return r(n, {
+        children: ["list", m === "shared" ? " (shared)" : m === "all" ? " (mine + shared)" : "", " ", "of type ", e(n, {
+          dimColor: !0,
+          children: u
+        })]
+      })
+    }
+    let d = Kce(i);
+    return r(n, {
+      children: ["list", d === "shared" ? " (shared)" : d === "all" ? " (mine + shared)" : ""]
+    })
+  }
+  if (i.action === "list_types") {
+    let d = typeof i.type_query === "string" && i.type_query !== "" ? dd(re(i.type_query, 200)) : null;
+    return r(n, {
+      children: ["list types", d ? e(n, {
+        dimColor: !0,
+        children: ` "${d}"`
+      }) : ""]
+    })
+  }
+  if (i.action === "quickstart") {
+    let d = i.intent,
+      m = d !== "document" && i.design_systems === !1;
+    return r(n, {
+      children: ["quickstart", typeof d === "string" ? e(n, {
+        dimColor: !0,
+        children: ` ${dd(re(d,20))}`
+      }) : "", m ? e(n, {
+        dimColor: !0,
+        children: " without design systems"
+      }) : ""]
+    })
+  }
+  if (i.action === "describe_type") return r(n, {
+    children: ["describe type", " ", e(n, {
+      dimColor: !0,
+      children: gi(ow(i), "(unrecognized address)")
+    })]
+  });
+  if (i.action === "comments" || i.action === "reply" || i.action === "resolve") {
+    let d = typeof i.url === "string" ? Bt(i.url) : null,
+      m = i.action === "reply" && c?.verbose === !0 ? vQe(RU(i).replyText) : void 0,
+      l = (i.action === "reply" || i.action === "resolve") && c?.verbose === !0 && d !== null ? ft(d.slug) : void 0,
+      u = YV(l);
+    return r(n, {
+      children: [i.action, r(n, {
+        dimColor: !0,
+        children: [" ", d !== null ? En(d) : "(unrecognized address)"]
+      }), u !== "" && e(n, {
+        dimColor: !0,
+        children: u
+      }), m !== void 0 && m !== "" && e(n, {
+        dimColor: !0,
+        children: ` \u2014 "${m}"`
+      })]
+    })
+  }
+  if (i.action === "read_page_data" || i.action === "read_db" || i.action === "write_db" || i.action === "room_send" || i.action === "watch" || i.action === "unwatch" || i.action === "resume_replies" || i.action === "status" || i.action === "verify" || i.action === "open") {
+    let d = i.action === "read_page_data" ? "read page data" : i.action === "read_db" ? "read database" : i.action === "write_db" ? "write database" : i.action === "room_send" ? `room send ${ibt(zje(i).topic)}` : i.action === "resume_replies" ? "resume auto-replies" : i.action;
+    if ((i.action === "status" || i.action === "verify") && i.url === void 0) return e(n, {
+      children: d
+    });
+    let m = i.action === "read_db" ? Yue(i) : void 0,
+      l = m?.kind === "dir" ? ` \u2192 ${Va(KE(m.dir)||"(unprintable path)",1024)}` : m?.kind === "unresolvable" ? " \u2192 (unresolvable out_dir)" : "";
+    if (i.action === "write_db" && c?.verbose === !0) {
+      let u = typeof i.url === "string" ? Bt(i.url) : null,
+        p = u !== null ? ft(u.slug) : void 0,
+        T = YV(p),
+        {
+          opLabel: y,
+          docTarget: R
+        } = SQr(i),
+        {
+          data: x,
+          filePath: C,
+          strReplace: A,
+          ifVersion: E
+        } = bU(i),
+        P = y === dw ? [Wtr(Vj(i)), Arr(ztr(Vj(i)))].filter((k) => k !== "").join(" \u2014 ") : C !== void 0 ? `from ${Va(KE(C)||"(unprintable path)",1024)}` : y === J_ ? xQr(A) : YQ(x),
+        S = su(p);
+      return r(n, {
+        children: [d, " (", y, ")", " ", e(n, {
+          dimColor: !0,
+          children: gi(i.url, "(unrecognized address)")
+        }), e(n, {
+          dimColor: !0,
+          children: ` \u2014 ${R}${T}`
+        }), S !== "" && e(n, {
+          color: "warning",
+          children: S
+        }), P !== "" && e(n, {
+          dimColor: !0,
+          children: ` \u2014 ${P}`
+        }), E !== void 0 && e(n, {
+          dimColor: !0,
+          children: ` (only if still at version ${E})`
+        })]
+      })
+    }
+    if (i.action === "room_send" && c?.verbose === !0) {
+      let u = typeof i.url === "string" ? Bt(i.url) : null,
+        p = u !== null ? ft(u.slug) : void 0,
+        T = YV(p),
+        y = YQ(zje(i).data),
+        R = su(p);
+      return r(n, {
+        children: [d, " ", e(n, {
+          dimColor: !0,
+          children: gi(i.url, "(unrecognized address)")
+        }), T !== "" && e(n, {
+          dimColor: !0,
+          children: T
+        }), R !== "" && e(n, {
+          color: "warning",
+          children: R
+        }), y !== "" && e(n, {
+          dimColor: !0,
+          children: ` \u2014 ${y}`
+        })]
+      })
+    }
+    if (i.action === "resume_replies" && c?.verbose === !0) {
+      let u = typeof i.url === "string" ? Bt(i.url) : null,
+        p = u !== null ? ft(u.slug) : void 0;
+      return r(n, {
+        children: [d, " ", e(n, {
+          dimColor: !0,
+          children: gi(i.url, "(unrecognized address)")
+        }), e(n, {
+          dimColor: !0,
+          children: YV(p)
+        })]
+      })
+    }
+    return r(n, {
+      children: [d, " ", r(n, {
+        dimColor: !0,
+        children: [gi(i.url, "(unrecognized address)"), l]
+      })]
+    })
+  }
+  if (i.action === "get_endpoints" || i.action === "call_endpoint" || i.action === "run_script") {
+    let {
+      verb: d,
+      body: m
+    } = q ? q.handlersToolUseLine(i, c?.verbose === !0) : {
+      verb: String(i.action),
+      body: ""
+    };
+    return r(n, {
+      children: [d, " ", e(n, {
+        dimColor: !0,
+        children: gi(i.url, "(unrecognized address)")
+      }), m !== "" && e(n, {
+        dimColor: !0,
+        children: m
+      })]
+    })
+  }
+  if (i.action === "read") {
+    let d = WR(i.url),
+      m = d !== null ? ft(d.slug) : void 0,
+      l = c?.verbose === !0 ? su(m) : "";
+    return r(n, {
+      children: ["read", " ", e(n, {
+        dimColor: !0,
+        children: d !== null ? En(d) : "(unrecognized address)"
+      }), l !== "" && e(n, {
+        color: "warning",
+        children: l
+      })]
+    })
+  }
+  if (i.action === "upload_asset") {
+    let d = typeof i.url === "string" ? Bt(i.url) : null,
+      m = d !== null ? ft(d.slug) : void 0,
+      l = c?.verbose === !0,
+      u = l ? su(m) : "",
+      p = RIe(i),
+      T = p.kind === "list" ? `${p.paths.length} ${I(p.paths.length,"file")}:${p.paths.map((y)=>`
+  ${Va(KE(y)||"(unprintable path)",1024)}`).join("")}
+ ` : Va(KE(i.file_path ?? "") || "(unprintable path)", 1024);
+    return r(n, {
+      children: ["upload ", T, e(n, {
+        dimColor: !0,
+        children: ` \u2192 ${gi(i.url,"(unrecognized address)")}${l?YV(m):""}`
+      }), u !== "" && e(n, {
+        color: "warning",
+        children: u
+      })]
+    })
+  }
+  if (i.action === "copy_from") {
+    let d = typeof i.url === "string" ? Bt(i.url) : null,
+      m = d !== null ? ft(d.slug) : void 0,
+      l = c?.verbose === !0,
+      u = l ? su(m) : "",
+      p = i.asset_ids,
+      T = Array.isArray(p) ? p.length : 0,
+      y = i.from_url,
+      R = typeof y === "string" ? Bt(y) : null,
+      x = l ? aWe(R !== null ? ft(R.slug) : void 0, "assets") : "";
+    return r(n, {
+      children: ["copy ", T, " ", I(T, "asset"), " from", " ", gi(y, "(unrecognized address)"), x !== "" && e(n, {
+        color: "warning",
+        children: x
+      }), e(n, {
+        dimColor: !0,
+        children: ` \u2192 ${gi(i.url,"(unrecognized address)")}${l?YV(m):""}`
+      }), u !== "" && e(n, {
+        color: "warning",
+        children: u
+      })]
+    })
+  }
+  if (i.action === "list_files" || i.action === "read_file") {
+    let d = typeof i.url === "string" ? Bt(i.url) : null,
+      m = d !== null ? ft(d.slug) : void 0,
+      l = c?.verbose === !0,
+      u = l ? su(m) : "",
+      p = D(i, d?.slug),
+      T = i.action === "read_file",
+      y = "list files",
+      R = "";
+    if (T) {
+      let {
+        path: x,
+        paths: C
+      } = aG(i), A = i[yO], E = G(A) && Array.isArray(A.paths) ? A.paths.length : C?.length;
+      y = C !== void 0 && E !== void 0 ? `read ${E} ${I(E,"file")}` : `read ${x!==void 0?Va(KE(x)||"(unprintable path)",256):"(no path)"}`;
+      let P = A != null,
+        S = C !== void 0 ? zIe(i, {
+          outDirJudged: P
+        }) : QQ(i, {
+          outDirJudged: P
+        }),
+        k = "files" in S ? S.base : ("dest" in S) ? S.dest : void 0,
+        X = G(A) && A.defaultDir === !0 || k !== void 0 && NF(k);
+      R = k === void 0 ? " \u2192 (no destination)" : X ? "" : ` \u2192 ${Va(KE(k)||"(unprintable path)",1024)}`
+    }
+    return r(n, {
+      children: [y, p ? ` of "${p}"` : "", e(n, {
+        dimColor: !0,
+        children: T ? `${p?"":` of ${gi(i.url,"(unrecognized address)")}`}${R}` : `${p?" \xB7 ":" of "}${gi(i.url,"(unrecognized address)")}${l?YV(m):""}`
+      }), !T && u !== "" && e(n, {
+        color: "warning",
+        children: u
+      })]
+    })
+  }
+  if (i.action === "pin" || i.action === "unpin") {
+    let d = typeof i.url === "string" ? Bt(i.url) : null,
+      m = D(i, d?.slug);
+    return r(n, {
+      children: [i.action, m ? ` "${m}"` : "", e(n, {
+        dimColor: !0,
+        children: ` \xB7 ${gi(i.url,"(unrecognized address)")}`
+      })]
+    })
+  }
+  if (i.action === "delete") {
+    let d = typeof i.url === "string" ? Bt(i.url) : null,
+      m = d !== null ? ft(d.slug) : void 0,
+      l = c?.verbose === !0,
+      u = l ? su(m) : "",
+      p = D(i, d?.slug, OZe);
+    return r(n, {
+      children: ["delete", p ? ` "${p}"` : "", e(n, {
+        dimColor: !0,
+        children: ` \xB7 ${gi(i.url,"(unrecognized address)")}${l?YV(m):""}`
+      }), u !== "" && e(n, {
+        color: "warning",
+        children: u
+      })]
+    })
+  }
+  if (i.action === "list_assets" || i.action === "read_asset" || i.action === "delete_asset") {
+    let d = typeof i.url === "string" ? Bt(i.url) : null,
+      m = d !== null ? ft(d.slug) : void 0,
+      l = c?.verbose === !0,
+      u = l ? su(m) : "",
+      {
+        assetId: p
+      } = h7(i),
+      T = p !== void 0 && Pp.test(p) ? p : "(no id)",
+      y = i.action === "read_asset",
+      R = i.action === "delete_asset" ? `delete asset ${T}` : y ? `read asset ${T}` : "list assets",
+      x = D(i, d?.slug),
+      C = i.action === "delete_asset" ? "from" : "of",
+      A = "";
+    if (y) {
+      let E = i[yO],
+        P = FIe(i),
+        S = G(E) && E.defaultDir === !0 || P?.defaultDir === !0;
+      A = P === void 0 || S ? "" : ` \u2192 ${Va(KE(`${P.stem}.*`)||"(unprintable path)",1024)}`
+    }
+    return r(n, {
+      children: [R, x ? ` ${C} "${x}"` : "", e(n, {
+        dimColor: !0,
+        children: y ? `${x?"":` of ${gi(i.url,"(unrecognized address)")}`}${A}` : `${x?" \xB7 ":` ${C} `}${gi(i.url,"(unrecognized address)")}${l?YV(m):""}`
+      }), !y && u !== "" && e(n, {
+        color: "warning",
+        children: u
+      })]
+    })
+  }
+  let {
+    file_path: _,
+    url: h
+  } = i, o = c?.verbose === !0, a = o && cW() && dqt(i) ? Xpe.trimStart() : void 0, f = ow(i);
+  if (f !== void 0) {
+    let d = gi(f, "(unrecognized address)"),
+      m = _ !== void 0 ? Ipe(Mv(dd(Ckt(_).shown) ?? "(unprintable path)")) : void 0;
+    return r(n, {
+      children: [m !== void 0 ? `"${m}" ` : "", r(n, {
+        dimColor: !0,
+        children: ["\u2192 new artifact from type ", d]
+      }), a !== void 0 && e(n, {
+        dimColor: !0,
+        children: `
+${a}`
+      })]
+    })
+  }
+  let g = o && h !== void 0 ? gi(h, "(unrecognized address)") : void 0,
+    b = Ckt(_ ?? ""),
+    v = Ipe(Mv(dd(b.shown) ?? "(unprintable path)"));
+  return r(n, {
+    children: [`"${v}"`, g !== void 0 && r(n, {
+      dimColor: !0,
+      children: [" \u2192 ", g]
+    }), a !== void 0 && e(n, {
+      dimColor: !0,
+      children: `
+${a}`
+    })]
+  })
+}
+
+function W(t) {
+  return (c, i) => Z(lGe(t, c), i)
+}
+var tn = W("comments"),
+  on = W("data"),
+  an = W("check");
+
+function dn(t) {
+  let c = t.at(-1)?.data;
+  if (!c || c.type !== "artifact_publish_retry" || c.resolved) return null;
+  let i = c.status === 503 ? "Publish service temporarily unavailable" : "Publish service busy";
+  return e(Le, {
+    children: r(n, {
+      dimColor: !0,
+      children: [i, " \u2014 retrying (attempt ", c.attempt, " of ", c.maxAttempts, ")\u2026"]
+    })
+  })
+}
+
+function Q(t) {
+  let c = Gkn(t);
+  return c === "handlers_doc" || c === "handler_result" || c === "script_result"
+}
+
+function ee(t) {
+  return "preview" in t && Gkn(t) === "preview"
+}
+
+function ln(t, c, i) {
+  if (ee(t)) {
+    let o = {
+        ...t.preview,
+        file: re(t.preview.file, 4096),
+        shots: t.preview.shots.slice(0, J9t).map((l) => ({
+          ...l,
+          theme: re(l.theme, 32)
+        })),
+        issues: t.preview.issues.slice(0, Q9t),
+        widths: t.preview.widths.slice(0, Uwe),
+        themes: t.preview.themes.slice(0, 2).map((l) => re(l, 32))
+      },
+      a = U(o.shots, (l) => l.error === void 0),
+      f = o.issues.filter((l) => l.kind !== "note"),
+      g = o.issues.filter((l) => l.kind === "note"),
+      b = f.length + (o.issuesDropped ?? 0),
+      v = (l, u) => {
+        let p = re(l, u),
+          T = dd(p) ?? "";
+        return p.length < l.length ? `${T}\u2026` : T
+      },
+      d = i?.verbose === !0 ? f : f.slice(0, K),
+      m = f.length - d.length + (o.issuesDropped ?? 0);
+    return e(Le, {
+      children: r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          dimColor: !0,
+          children: [a === 0 ? "Could not preview " : "Previewed ", v(V(o.file), 80), " \xB7 ", v(o.widths.join("/"), 24), " \xB7", " ", v(o.themes.join("+"), 24), " \xB7 ", b === 0 ? o.renderError !== void 0 ? "browser did not start \u2014 static checks only" : "no issues" : `${b}${o.issuesDropped===Stt?"+":""} ${I(b,"issue")}`, a < o.shots.length && o.renderError === void 0 ? ` \xB7 ${a}/${o.shots.length} captured` : ""]
+        }), o.renderError !== void 0 && e(s, {
+          paddingLeft: 2,
+          children: e(n, {
+            color: "warning",
+            children: v(o.renderError, 200)
+          })
+        }), d.map((l, u) => r(s, {
+          paddingLeft: 2,
+          flexDirection: "row",
+          children: [e(n, {
+            dimColor: !0,
+            children: "\xB7 "
+          }), e(n, {
+            dimColor: !0,
+            children: v(l.text, 200)
+          })]
+        }, u)), m > 0 && e(s, {
+          paddingLeft: 2,
+          children: r(n, {
+            dimColor: !0,
+            children: ["\xB7 \u2026 ", m, " more", f.length > d.length ? " (ctrl+o)" : ""]
+          })
+        }), g.map((l, u) => r(s, {
+          paddingLeft: 2,
+          flexDirection: "row",
+          children: [e(n, {
+            dimColor: !0,
+            children: "\xB7 note: "
+          }), e(n, {
+            dimColor: !0,
+            children: v(l.text, 200)
+          })]
+        }, `n${u}`)), i?.verbose === !0 && o.shots.map((l, u) => e(s, {
+          paddingLeft: 2,
+          children: r(n, {
+            dimColor: !0,
+            children: [v(`${l.width} ${l.theme}`, 20), ":", " ", l.error !== void 0 ? `not captured \u2014 ${v(l.error,120)}` : v(l.path ?? "(not saved)", 512)]
+          })
+        }, `s${u}`))]
+      })
+    })
+  }
+  if ("read" in t) return e(kJe, {
+    bytes: t.read.bytes,
+    status: `${t.read.code} ${t.read.codeText}`
+  });
+  if ("threads" in t) {
+    let o = t.threads_dropped === !0,
+      a = t.thread_filter !== void 0;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: a ? t.threads.some((f) => f.id === t.thread_filter) ? "read 1 comment thread (filtered)" : o ? "requested thread not among the readable threads" : "requested thread not in this result" : t.threads.length === 0 ? o ? "comment threads could not be read" : "no comment threads yet" : `read ${t.threads.length} comment ${I(t.threads.length,"thread")}${o?" (some could not be read)":""}`
+      })
+    })
+  }
+  if ("replied" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.replied ? "replied to comment thread" : t.summon_answered === !0 ? "reply not posted (summon already answered)" : t.summon_foreign === !0 ? "reply not posted (another user's summon or activation)" : t.already_answered === !0 ? "reply not posted (thread already answered)" : t.page_owns_threads === !0 ? "reply not posted (the page keeps its own comment threads)" : "reply needs thread activation by the user"
+    })
+  });
+  if ("thread_resolved" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.thread_resolved ? "resolved comment thread" : t.not_authorized === !0 ? "not resolved (not the thread starter or a writer)" : t.summon_foreign === !0 ? "not resolved (another user's activation)" : t.relayed_credential === !0 ? "not resolved (unavailable from this session)" : t.page_owns_threads === !0 ? "not resolved (the page keeps its own comment threads)" : "not resolved (thread not activated)"
+    })
+  });
+  if ("liveEdit" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: N ? N.renderLiveEditResultText(t.liveEdit) : "live edit landed"
+    })
+  });
+  if ("sync" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: N ? N.renderSyncResultText(t.sync) : "synced"
+    })
+  });
+  if ("versioned" in t) {
+    let o = typeof t.versioned.url === "string" ? Bt(t.versioned.url) : null,
+      a = o ? En(o) : void 0;
+    return e(Le, {
+      children: r(n, {
+        dimColor: !0,
+        children: ["Versioned", " ", a !== void 0 ? e(M, {
+          name: a,
+          url: a
+        }) : "(unrecognized address)"]
+      })
+    })
+  }
+  if ("db_read" in t) {
+    let o = t.db_read,
+      a = o.docs?.length ?? 0,
+      f = o.saved,
+      g = G(f) && typeof f.dir === "string" && Array.isArray(f.files) && Array.isArray(f.skipped) ? {
+        dir: f.dir,
+        fileCount: f.files.length,
+        skippedCount: f.skipped.length
+      } : void 0,
+      b = g !== void 0 ? `saved ${g.fileCount} ${I(g.fileCount,"document")} under ${Va(dd(g.dir)??"(unprintable path)",1024)}${g.skippedCount>0?` (${g.skippedCount} skipped)`:""}` : void 0;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: o.found === !1 ? "no such document" : b ?? `read ${a} ${I(a,"document")}`
+      })
+    })
+  }
+  if ("db_profiles" in t) {
+    let o = t.db_profiles,
+      a = G(o) && G(o.profiles) ? Object.keys(o.profiles).length : void 0;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: a === void 0 ? "no names available" : `found ${a} ${I(a,"person","people")}`
+      })
+    })
+  }
+  if ("db_write" in t) {
+    let o = "results" in t.db_write && Array.isArray(t.db_write.results) ? t.db_write.results.length : void 0;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: !t.db_write.committed ? "database write not committed" : o !== void 0 ? `database batch ${"fallback"in t.db_write&&t.db_write.fallback==="sequential"?"written one at a time":"committed"} (${o} ${I(o,"write")})` : "database write committed"
+      })
+    })
+  }
+  if (Q(t)) return H ? H.renderHandlersResult(t) : e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: "This record is unreadable in this build."
+    })
+  });
+  if ("room_send" in t) {
+    let o = t.room_send,
+      a = typeof o.peers === "number" && Number.isSafeInteger(o.peers) && o.peers >= 0 ? `${o.peers} ${I(o.peers,"peer")}` : "? peers",
+      f = typeof o.reason === "string" ? Sm(o.reason, {
+        max: 32
+      }) : void 0;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: o.delivered === !0 ? `sent to ${a}` : f === void 0 ? "not sent" : `not sent (${f})`
+      })
+    })
+  }
+  if ("asset_upload" in t) {
+    let o = t.asset_upload;
+    return e(Le, {
+      children: r(n, {
+        dimColor: !0,
+        children: ["uploaded ", dd(o.file_name) ?? "asset", " (", Ut(o.size_bytes), ") as ", dd(o.url) ?? "_blob/\u2026"]
+      })
+    })
+  }
+  if ("asset_uploads" in t) {
+    let o = G(t.asset_uploads) ? t.asset_uploads : {},
+      {
+        rows: a
+      } = kA(o.results, vP),
+      f = U(a, (g) => g.status === "uploaded");
+    return e(Le, {
+      children: r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          dimColor: !0,
+          children: ["uploaded ", f, " of ", a.length, " ", I(a.length, "file")]
+        }), a.map((g, b) => r(n, {
+          dimColor: !0,
+          children: ["  ", Va(dd(typeof g.file_path === "string" ? g.file_path : "") || "(unprintable path)", k7), " ", g.status === "uploaded" ? `as ${dd(typeof g.url==="string"?g.url:"")||"_blob/\u2026"}` : g.status === "not_attempted" ? "not attempted" : "failed"]
+        }, b))]
+      })
+    })
+  }
+  if ("asset_list" in t) {
+    let o = G(t.asset_list) ? t.asset_list : {},
+      a = Array.isArray(o.assets) ? o.assets.length : void 0;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: a === void 0 ? "listed assets (record unreadable)" : a === 0 ? "no assets listed" : `listed ${a} ${I(a,"asset")}${typeof o.next==="string"&&o.next!==""?" (more follow)":""}`
+      })
+    })
+  }
+  if ("file_list" in t) {
+    let o = G(t.file_list) ? t.file_list : {},
+      a = Array.isArray(o.files) ? o.files.length : void 0;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: a === void 0 ? "listed files (record unreadable)" : a === 0 ? "no files listed" : `listed ${a} ${I(a,"file")}`
+      })
+    })
+  }
+  if ("file_read" in t) {
+    let o = G(t.file_read) ? t.file_read : {};
+    return e(Le, {
+      children: r(n, {
+        dimColor: !0,
+        children: ["saved", " ", Va((typeof o.saved_to === "string" ? dd(o.saved_to) : void 0) ?? "file", 1024), typeof o.size_bytes === "number" ? ` (${Ut(o.size_bytes)})` : ""]
+      })
+    })
+  }
+  if ("files_read" in t) {
+    let o = G(t.files_read) ? t.files_read.files : void 0,
+      a = Array.isArray(o) ? o.length : void 0,
+      f = Array.isArray(o) ? U(o, (v) => G(v) && ("saved_to" in v)) : 0,
+      g = G(t.files_read) ? t.files_read.saved_dir : void 0,
+      b = typeof g === "string" ? ` under ${Va(Mv(dd(g)??"folder"),1024)}` : "";
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: a === void 0 ? "saved files (record unreadable)" : `saved ${f===a?a:`${f} of ${a}`} ${I(a,"file")}${b}`
+      })
+    })
+  }
+  if ("asset_read" in t) {
+    let o = t.asset_read;
+    return e(Le, {
+      children: r(n, {
+        dimColor: !0,
+        children: ["saved ", Va(dd(o.path) ?? "asset", 1024), " (", Ut(o.size_bytes), ")"]
+      })
+    })
+  }
+  if ("asset_delete" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.asset_delete.deleted ? "asset deleted" : "no such asset"
+    })
+  });
+  if ("asset_copy" in t) {
+    let o = Array.isArray(t.asset_copy.assets) ? t.asset_copy.assets.length : 0;
+    return e(Le, {
+      children: r(n, {
+        dimColor: !0,
+        children: ["copied ", o, " ", I(o, "asset"), " into the artifact"]
+      })
+    })
+  }
+  if ("artifact_delete" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.artifact_delete.already_gone === !0 ? "Artifact was already deleted" : "Artifact deleted"
+    })
+  });
+  if ("pin" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.pin.pinned ? "pinned to the sidebar" : "unpinned"
+    })
+  });
+  if ("watch" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.watch.watching ? t.watch.events?.includes("comment") ? "watching for republishes and to-Claude comments" : "watching for republishes" : t.watch.reason === "stop_latched" ? "not watching (stopped earlier in this session)" : `not watching (${qb(t.watch.reason??t.watch.outcome)??"unknown"})`
+    })
+  });
+  if ("unwatch" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.unwatch.was_watching ? "stopped watching" : "no watch to stop"
+    })
+  });
+  if ("watches" in t) {
+    let {
+      watching: o,
+      stopped: a
+    } = d$t(t.watches), f = t.arms ?? [], g = U(f, (p) => p.rail === void 0 && (p.state === "arming" || p.state === "backing_off")), b = U(f, (p) => p.rail !== void 0 && p.state === "arming"), v = U(f, (p) => p.state === "failed" || p.state === "ended"), d = [g > 0 ? `${g} connecting` : "", b > 0 ? `${b} registering` : "", v > 0 ? `${v} ended or failed` : ""].filter((p) => p !== "").join(", "), m = Array.isArray(t.rooms) ? t.rooms : [], l = U(m, (p) => p?.connected !== !0), u = m.length > 0 ? ` \xB7 ${m.length} artifact ${I(m.length,"room")} joined${l>0?` (${l} reconnecting)`:""}` : "";
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: `${o} artifact ${I(o,"watch","watches")}${a>0?` \xB7 ${a} with auto-replies paused or stopped`:""}${d!==""?`, ${d}`:""}${u}`
+      })
+    })
+  }
+  if ("resume_replies" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.resume_replies.resumed ? "auto-replies resumed" : t.resume_replies.reason === "stop_latched" ? "auto-replies not resumed (watch stopped earlier in this session)" : t.resume_replies.reason === "arm_in_flight" ? "auto-replies not resumed (an earlier connection is still winding down; the stop stays)" : `auto-replies not resumed (${qb(t.resume_replies.reason??t.resume_replies.outcome)??"unknown"})`
+    })
+  });
+  if ("verify" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.verify.state === "no_row" ? "no diagnostics readable: none captured in 24h, an older page that can't capture them, or not readable for this artifact" : t.verify.state !== "empty" && t.verify.state !== "entries" ? "unrecognized diagnostics result \u2014 verify again for a current read" : t.verify.entries.length === 0 ? (t.verify.dropped ?? 0) > 0 || t.verify.truncated === !0 ? "diagnostics captured but none readable (size cap) \u2014 not a clean signal" : "loaded clean: zero diagnostics captured" : `read ${t.verify.entries.length} diagnostic ${I(t.verify.entries.length,"entry","entries")}`
+    })
+  });
+  if ("page_data" in t) {
+    let o = t.page_data.derived === void 0 ? "" : ` (${Object.entries(t.page_data.derived).map(([f,g])=>`${f}: ${g}`).join(", ")})`,
+      a = ` \xB7 ${t.page_data.provenance.authorship}`;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: t.page_data.islandPresent ? `read ${t.page_data.entries.length} ${I(t.page_data.entries.length,"entry","entries")} [${t.page_data.schema}]${o}${a}` : `no ${t.page_data.schema} data island on the page${a}`
+      })
+    })
+  }
+  if ("artifact_types" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.artifact_types.length === 0 ? t.unavailable === !0 ? "artifact types not available to this account" : "no artifact types listed" : `listed ${t.artifact_types.length} artifact ${I(t.artifact_types.length,"type")}`
+    })
+  });
+  if ("artifact_type" in t) {
+    let o = Bt(t.artifact_type.type_url),
+      a = o ? En(o) : void 0,
+      f = G(t.type_file) ? t.type_file : null;
+    if (f !== null) {
+      let g = Va(KE(typeof f.path === "string" ? f.path : "") || "(unprintable path)", 256);
+      return e(Le, {
+        children: r(n, {
+          dimColor: !0,
+          children: [f.unread === void 0 ? "read " : "did not read ", g, " of artifact type", " ", a !== void 0 ? e(M, {
+            name: a,
+            url: a
+          }) : "(unrecognized address)"]
+        })
+      })
+    }
+    return e(Le, {
+      children: r(n, {
+        dimColor: !0,
+        children: ["described artifact type", " ", a !== void 0 ? e(M, {
+          name: a,
+          url: a
+        }) : "(unrecognized address)", ` (${t.artifact_type.files.length} ${I(t.artifact_type.files.length,"file")}${typeof t.artifact_type.files_omitted==="number"&&t.artifact_type.files_omitted>0?` +${t.artifact_type.files_omitted} not shown`:""}${t.artifact_type.instructions_file?", ships instructions":""})`]
+      })
+    })
+  }
+  if ("quickstart" in t) {
+    let o = t.quickstart,
+      a = Array.isArray(o?.design_systems?.instances) ? o.design_systems.instances.length : 0,
+      f = (o?.design_system?.docs ?? []).length > 0;
+    return e(Le, {
+      children: r(n, {
+        dimColor: !0,
+        children: [o?.match !== void 0 ? "found the type to start from" : o?.types_ruled === !0 ? "skipped: a permission rule covers listing artifact types" : o?.intent === "document" && o.types_ambiguous !== !0 && o.types_partial !== !0 ? "said where a document goes" : o?.design_guidance === !0 ? "sent page-design guidance" : "more than one matching type, or the listing was incomplete", a > 0 ? `, listed ${a} design ${I(a,"system")}` : "", f ? ", read the design system guide" : "", o?.design_systems_off === !0 ? ", left design systems out" : ""]
+      })
+    })
+  }
+  if ("type_instances" in t) {
+    let o = Array.isArray(t.type_instances?.instances) ? t.type_instances.instances.length : 0;
+    return e(Le, {
+      children: e(n, {
+        dimColor: !0,
+        children: o === 0 ? t.type_instances?.unavailable === !0 ? "instance listing not available to this account" : "no artifacts of this type listed" : `listed ${o} ${I(o,"artifact")} of this type`
+      })
+    })
+  }
+  if ("artifacts" in t) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: t.artifacts.length === 0 ? t.scope === "shared" ? "no shared artifacts listed" : t.scope === "all" ? "no artifacts listed" : "no published artifacts yet" : `listed ${t.artifacts.length} ${I(t.artifacts.length,t.scope!==void 0?"artifact":"published artifact")}`
+    })
+  });
+  if ("opened" in t) {
+    let o = typeof t.url === "string" ? Bt(t.url) : null,
+      a = o ? En(o) : void 0;
+    return e(Le, {
+      children: r(n, {
+        dimColor: !0,
+        children: ["Opened", " ", a !== void 0 ? e(M, {
+          name: (typeof t.title === "string" ? Rm(t.title) : null) ?? a,
+          url: a
+        }) : "(unrecognized address)"]
+      })
+    })
+  }
+  if ("created_from_type" in t) {
+    let o = (f) => {
+        let g = typeof f === "string" ? Bt(f) : null,
+          b = g ? En(g) : void 0;
+        return b !== void 0 ? e(M, {
+          name: b,
+          url: b
+        }) : "(unrecognized address)"
+      },
+      a = "files_error" in t && typeof t.files_error === "string" ? qE(t.files_error, i?.verbose === !0 ? kD / 2 : 200) : void 0;
+    return e(Le, {
+      children: r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          dimColor: !0,
+          children: ["Created ", o(t.url), " from Artifact type", " ", o(t.type?.url), "instructions" in t && typeof t.instructions === "string" ? ", read its instructions" : ""]
+        }), a !== void 0 && r(n, {
+          color: "error",
+          children: ["Couldn't publish its files \u2014 ", a]
+        })]
+      })
+    })
+  }
+  let _ = Dmr(t.publishesRemaining),
+    h = Lmr(t.publishesResetAt);
+  return e(Le, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [r(n, {
+        dimColor: !0,
+        children: [t.updated ? "Updated" : "Published", " ", e(M, {
+          name: t.url,
+          url: t.url
+        })]
+      }), _ !== void 0 && h !== void 0 && e(n, {
+        dimColor: !0,
+        children: Nmr(_, h)
+      })]
+    })
+  })
+}
+var ne = "content must first be written to a file",
+  L = "<tool_use_error>",
+  z = "</tool_use_error>",
+  Y = `${L}InputValidationError: `,
+  se = [{
+    open: L,
+    tail: `
+
+${gpt}${z}`,
+    ends: !0
+  }, {
+    open: "",
+    tail: `
+
+${gpt}`,
+    ends: !0
+  }, {
+    open: Y,
+    tail: `
+
+${n$t}
+
+`,
+    ends: !1
+  }];
+
+function te(t) {
+  let c = GWn();
+  if (c === null) return null;
+  for (let i of ["policy_fetch_failed", "policy_route_missing"]) {
+    let _ = r$t({
+      cause: i,
+      outcome: c
+    });
+    if (t === _ || t === `${L}${_}${z}` || t.startsWith(`${Y}${_}
+
+`)) return i3n({
+      cause: i,
+      outcome: c
+    })
+  }
+  return null
+}
+
+function cn(t, c) {
+  if (typeof t === "string") {
+    if (!c.verbose && t.startsWith(L) && t.endsWith(z) && U$r.includes(D4e(t.slice(L.length, t.length - z.length)))) return e(Fp, {
+      result: ne,
+      verbose: c.verbose
+    });
+    if (!c.verbose) {
+      for (let o of se) {
+        if (!t.startsWith(o.open + p5e)) continue;
+        let {
+          message: a
+        } = cqt(), f = o.open.length + a.length;
+        if (t.startsWith(a, o.open.length) && t.startsWith(o.tail, f) && (!o.ends || f + o.tail.length === t.length)) return e(Fp, {
+          result: a,
+          verbose: !1
+        })
+      }
+      let h = te(t);
+      if (h !== null) return e(Fp, {
+        result: h,
+        verbose: !1
+      })
+    }
+    let i = D4e(t),
+      _ = c.verbose ? void 0 : Zro(i);
+    if (_ !== void 0) return e(Le, {
+      children: e(n, {
+        color: "error",
+        children: _
+      })
+    });
+    if (i.startsWith(XFt) || i.startsWith(F$r) || i.startsWith(zce)) {
+      let h = c.verbose ? null : JFt.exec(i),
+        o = t;
+      if (h !== null) {
+        let a = t.slice(0, t.length - i.length),
+          f = i.slice(0, h.index + h[0].length - 1);
+        o = `${a}${f} (content shown to the model; elided here)`
+      } else if (!c.verbose) o = o.replaceAll(`
+${uh}`, "");
+      return e(Fp, {
+        result: Z$r(o),
+        verbose: c.verbose,
+        verbatim: !0
+      })
+    }
+  }
+  if (typeof t === "string" && !c.verbose) {
+    let i = D4e(t),
+      _ = Dso(i) ?? _Po(i) ?? tJr(i) ?? ilo(i) ?? alo(i);
+    if (_ !== void 0) return e(Le, {
+      children: e(n, {
+        color: "error",
+        children: _
+      })
+    });
+    if (Iao.some((h) => i.startsWith(h))) {
+      let h = G(c.input) && c.input.db_op === "delete";
+      return e(Le, {
+        children: e(n, {
+          color: "error",
+          children: h ? jmr.delete : jmr.write
+        })
+      })
+    }
+  }
+  return e(Fp, {
+    result: t,
+    verbose: c.verbose
+  })
+}
+export {
+  an as renderCheckToolUseMessage, tn as renderCommentsToolUseMessage, on as renderDataToolUseMessage, ln as renderToolResultMessage, cn as renderToolUseErrorMessage, Z as renderToolUseMessage, dn as renderToolUseProgressMessage
+};

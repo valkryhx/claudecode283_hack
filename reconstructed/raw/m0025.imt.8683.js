@@ -1,0 +1,1 @@
+imt="artifact-stored-declaration"

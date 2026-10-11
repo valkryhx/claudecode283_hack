@@ -1,0 +1,1 @@
+function cn(e,t){let{isReadOnly:o,...r}=e;if(r.deny!==void 0||r.ref===void 0)return r;let n=t.findLast((p)=>p.ref===r.ref),s=$n(r.result);return n!==void 0&&n.isReadOnly===!0&&(r.result===void 0||r.result===n.result||s!==void 0&&s===$n(n.result))?{...r,isReadOnly:!0}:r}

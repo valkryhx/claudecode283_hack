@@ -1,0 +1,16 @@
+/* ==========================================================================
+ * m0025.fBo   [m0025_0xbf5baa8.js @ 12074]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function fBo(e) {
+  let r = e,
+    s = r.indexOf(FD);
+  while (s >= 0) {
+    let o = r.indexOf(gxe, s);
+    if (o < 0) break;
+    r = r.slice(0, s) + r.slice(o + gxe.length), s = r.indexOf(FD);
+  }
+  return r;
+}

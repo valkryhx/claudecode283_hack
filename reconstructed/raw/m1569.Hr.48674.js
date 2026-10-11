@@ -1,0 +1,1 @@
+function Hr(e,r){let n=new Map;for(let a of e.rows){if(!wr(a)||a.status==="pending"||typeof a.fact.runId!=="string")continue;let w=n.get(a.fact.runId);if(w)w.push(a);else n.set(a.fact.runId,[a])}let s=0;for(let[a,w]of n){if(r.byId.has(a))continue;let h=w.at(-1);r.byId.set(a,tr.lost(a,e,h.addr,w.slice(0,-1).map((g)=>g.addr))),s++}return s}

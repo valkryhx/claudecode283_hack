@@ -1,0 +1,5777 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { go, kj, en } from "B:/~BUN/root/chunk-bvn0mpsk.js";
+import { Me } from "B:/~BUN/root/chunk-ekrhn4q1.js";
+import { dKr, HBo, N9e, H } from "B:/~BUN/root/chunk-dkxhwhft.js";
+import { Vde, $9e, g9n, zD, z$, fQ, Vw, egt, NBe, mQ, U9e, tgt, $o, xn } from "B:/~BUN/root/chunk-54p0h65d.js";
+import { vo } from "B:/~BUN/root/chunk-yv67t8hr.js";
+import { homedir as Hi } from "os";
+import { sep as pn } from "path";
+import { randomUUID as Ide } from "crypto";
+import { randomUUID as kn } from "crypto";
+var te = "3ab19d7e-9f35-45c2-926e-75e271cc60b3";
+function MBo(e) {
+  return kj(e.trim(), te);
+}
+function tyn() {
+  let e = process.env.CLAUDE_CODE_REMOTE_SESSION_ID?.trim();
+  return e ? kj(e, te) : null;
+}
+function v2r(e) {
+  if (e.toLowerCase().endsWith(".jsonl")) return {
+    sessionId: kn(),
+    ingressUrl: null,
+    isUrl: !1,
+    jsonlFile: e,
+    isJsonlFile: !0
+  };
+  if (en(e)) return {
+    sessionId: e,
+    ingressUrl: null,
+    isUrl: !1,
+    jsonlFile: null,
+    isJsonlFile: !1
+  };
+  try {
+    let t = new URL(e);
+    return {
+      sessionId: tyn() ?? kj(t.href, te),
+      ingressUrl: t.href,
+      isUrl: !0,
+      jsonlFile: null,
+      isJsonlFile: !1
+    };
+  } catch {}
+  return null;
+}
+function Cn() {
+  this.__data__ = new $9e(), this.size = 0;
+}
+var Ze = Cn;
+function Tn(e) {
+  var t = this.__data__,
+    o = t.delete(e);
+  return this.size = t.size, o;
+}
+var et = Tn;
+function An(e) {
+  return this.__data__.get(e);
+}
+var tt = An;
+function Rn(e) {
+  return this.__data__.has(e);
+}
+var nt = Rn;
+var Pn = 200;
+function wn(e, t) {
+  var o = this.__data__;
+  if (o instanceof $9e) {
+    var r = o.__data__;
+    if (!U9e || r.length < Pn - 1) return r.push([e, t]), this.size = ++o.size, this;
+    o = this.__data__ = new tgt(r);
+  }
+  return o.set(e, t), this.size = o.size, this;
+}
+var ot = wn;
+function A(e) {
+  var t = this.__data__ = new $9e(e);
+  this.size = t.size;
+}
+A.prototype.clear = Ze;
+A.prototype.delete = et;
+A.prototype.get = tt;
+A.prototype.has = nt;
+A.prototype.set = ot;
+var wxe = A;
+var Mn = "__lodash_hash_undefined__";
+function Ln(e) {
+  return this.__data__.set(e, Mn), this;
+}
+var rt = Ln;
+function In(e) {
+  return this.__data__.has(e);
+}
+var it = In;
+function B(e) {
+  var t = -1,
+    o = e == null ? 0 : e.length;
+  this.__data__ = new tgt();
+  while (++t < o) this.add(e[t]);
+}
+B.prototype.add = B.prototype.push = rt;
+B.prototype.has = it;
+var Q5n = B;
+function On(e, t) {
+  var o = -1,
+    r = e == null ? 0 : e.length;
+  while (++o < r) if (t(e[o], o, e)) return !0;
+  return !1;
+}
+var st = On;
+function Fn(e, t) {
+  return e.has(t);
+}
+var Z5n = Fn;
+var En = 1,
+  Dn = 2;
+function Hn(e, t, o, r, i, s) {
+  var a = o & En,
+    u = e.length,
+    d = t.length;
+  if (u != d && !(a && d > u)) return !1;
+  var l = s.get(e),
+    f = s.get(t);
+  if (l && f) return l == t && f == e;
+  var c = -1,
+    h = !0,
+    v = o & Dn ? new Q5n() : void 0;
+  s.set(e, t), s.set(t, e);
+  while (++c < u) {
+    var m = e[c],
+      y = t[c];
+    if (r) var k = a ? r(y, m, c, t, e, s) : r(m, y, c, e, t, s);
+    if (k !== void 0) {
+      if (k) continue;
+      h = !1;
+      break;
+    }
+    if (v) {
+      if (!st(t, function (C, x) {
+        if (!Z5n(v, x) && (m === C || i(m, C, o, r, s))) return v.push(x);
+      })) {
+        h = !1;
+        break;
+      }
+    } else if (!(m === y || i(m, y, o, r, s))) {
+      h = !1;
+      break;
+    }
+  }
+  return s.delete(e), s.delete(t), h;
+}
+var U = Hn;
+var Bn = zD.Uint8Array,
+  M1t = Bn;
+function jn(e) {
+  var t = -1,
+    o = Array(e.size);
+  return e.forEach(function (item, index) {
+    o[++t] = [index, item];
+  }), o;
+}
+var at = jn;
+function Un(e) {
+  var t = -1,
+    o = Array(e.size);
+  return e.forEach(function (item) {
+    o[++t] = item;
+  }), o;
+}
+var D1t = Un;
+var _n = 1,
+  qn = 2,
+  Wn = "[object Boolean]",
+  Gn = "[object Date]",
+  Nn = "[object Error]",
+  Kn = "[object Map]",
+  Vn = "[object Number]",
+  Jn = "[object RegExp]",
+  zn = "[object Set]",
+  Qn = "[object String]",
+  Xn = "[object Symbol]",
+  $n = "[object ArrayBuffer]",
+  Zn = "[object DataView]",
+  lt = z$ ? z$.prototype : void 0,
+  ne = lt ? lt.valueOf : void 0;
+function eo(e, t, o, r, i, s, a) {
+  switch (o) {
+    case Zn:
+      if (e.byteLength != t.byteLength || e.byteOffset != t.byteOffset) return !1;
+      e = e.buffer, t = t.buffer;
+    case $n:
+      if (e.byteLength != t.byteLength || !s(new M1t(e), new M1t(t))) return !1;
+      return !0;
+    case Wn:
+    case Gn:
+    case Vn:
+      return Vde(+e, +t);
+    case Nn:
+      return e.name == t.name && e.message == t.message;
+    case Jn:
+    case Qn:
+      return e == t + "";
+    case Kn:
+      var u = at;
+    case zn:
+      var d = r & _n;
+      if (u || (u = D1t), e.size != t.size && !d) return !1;
+      var l = a.get(e);
+      if (l) return l == t;
+      r |= qn, a.set(e, t);
+      var f = U(u(e), u(t), r, i, s, a);
+      return a.delete(e), f;
+    case Xn:
+      if (ne) return ne.call(e) == ne.call(t);
+  }
+  return !1;
+}
+var dt = eo;
+function to(e, t) {
+  var o = -1,
+    r = t.length,
+    i = e.length;
+  while (++o < r) e[i + o] = t[o];
+  return e;
+}
+var wmt = to;
+var no = Array.isArray,
+  kb = no;
+function oo(e, t, o) {
+  var r = t(e);
+  return kb(e) ? r : wmt(r, o(e));
+}
+var e8n = oo;
+function ro(e, t) {
+  var o = -1,
+    r = e == null ? 0 : e.length,
+    i = 0,
+    s = [];
+  while (++o < r) {
+    var a = e[o];
+    if (t(a, o, e)) s[i++] = a;
+  }
+  return s;
+}
+var t8n = ro;
+function so() {
+  return [];
+}
+var n8n = so;
+var ao = Object.prototype,
+  lo = ao.propertyIsEnumerable,
+  ut = Object.getOwnPropertySymbols,
+  uo = !ut ? n8n : function (e) {
+    if (e == null) return [];
+    return e = Object(e), t8n(ut(e), function (t) {
+      return lo.call(e, t);
+    });
+  },
+  vmt = uo;
+function co(e, t) {
+  var o = -1,
+    r = Array(e);
+  while (++o < e) r[o] = t(o);
+  return r;
+}
+var ct = co;
+function po(e) {
+  return e != null && typeof e == "object";
+}
+var L$ = po;
+var fo = "[object Arguments]";
+function ho(e) {
+  return L$(e) && fQ(e) == fo;
+}
+var oe = ho;
+var pt = Object.prototype,
+  {
+    hasOwnProperty: hasOwnProperty,
+    propertyIsEnumerable: propertyIsEnumerable
+  } = pt,
+  bo = oe(function () {
+    return arguments;
+  }()) ? oe : function (e) {
+    return L$(e) && hasOwnProperty.call(e, "callee") && !propertyIsEnumerable.call(e, "callee");
+  },
+  gBe = bo;
+var W = {};
+vo(W, {
+  default: () => vxe
+});
+function ko() {
+  return !1;
+}
+var gt = ko;
+var mt = typeof W == "object" && W && !W.nodeType && W,
+  ft = mt && typeof _ == "object" && _ && !_.nodeType && _,
+  Co = ft && ft.exports === mt,
+  ht = Co ? zD.Buffer : void 0,
+  xo = ht ? ht.isBuffer : void 0,
+  To = xo || gt,
+  vxe = To;
+var Ao = 9007199254740991,
+  Ro = /^(?:0|[1-9]\d*)$/;
+function Po(e, t) {
+  var o = typeof e;
+  return t = t == null ? Ao : t, !!t && (o == "number" || o != "symbol" && Ro.test(e)) && e > -1 && e % 1 == 0 && e < t;
+}
+var hBe = Po;
+var Mo = 9007199254740991;
+function Lo(e) {
+  return typeof e == "number" && e > -1 && e % 1 == 0 && e <= Mo;
+}
+var R = Lo;
+var Io = "[object Arguments]",
+  Oo = "[object Array]",
+  Eo = "[object Boolean]",
+  Do = "[object Date]",
+  Ho = "[object Error]",
+  Bo = "[object Function]",
+  jo = "[object Map]",
+  Uo = "[object Number]",
+  _o = "[object Object]",
+  qo = "[object RegExp]",
+  Go = "[object Set]",
+  No = "[object String]",
+  Ko = "[object WeakMap]",
+  Vo = "[object ArrayBuffer]",
+  Jo = "[object DataView]",
+  zo = "[object Float32Array]",
+  Qo = "[object Float64Array]",
+  Xo = "[object Int8Array]",
+  Yo = "[object Int16Array]",
+  Zo = "[object Int32Array]",
+  er = "[object Uint8Array]",
+  tr = "[object Uint8ClampedArray]",
+  nr = "[object Uint16Array]",
+  or = "[object Uint32Array]",
+  g = {};
+g[zo] = g[Qo] = g[Xo] = g[Yo] = g[Zo] = g[er] = g[tr] = g[nr] = g[or] = !0;
+g[Io] = g[Oo] = g[Vo] = g[Eo] = g[Jo] = g[Do] = g[Ho] = g[Bo] = g[jo] = g[Uo] = g[_o] = g[qo] = g[Go] = g[No] = g[Ko] = !1;
+function rr(e) {
+  return L$(e) && R(e.length) && !!g[fQ(e)];
+}
+var St = rr;
+function ir(e) {
+  return function (t) {
+    return e(t);
+  };
+}
+var L1t = ir;
+var N = {};
+vo(N, {
+  default: () => kxe
+});
+var vt = typeof N == "object" && N && !N.nodeType && N,
+  I = vt && typeof G == "object" && G && !G.nodeType && G,
+  sr = I && I.exports === vt,
+  re = sr && g9n.process,
+  ar = function () {
+    try {
+      var e = I && I.require && I.require("util").types;
+      if (e) return e;
+      return re && re.binding && re.binding("util");
+    } catch (error) {}
+  }(),
+  kxe = ar;
+var yt = kxe && kxe.isTypedArray,
+  lr = yt ? L1t(yt) : St,
+  N1t = lr;
+var dr = Object.prototype,
+  ur = dr.hasOwnProperty;
+function cr(e, t) {
+  var o = kb(e),
+    r = !o && gBe(e),
+    i = !o && !r && vxe(e),
+    s = !o && !r && !i && N1t(e),
+    a = o || r || i || s,
+    u = a ? ct(e.length, String) : [],
+    d = u.length;
+  for (var l in e) if ((t || ur.call(e, l)) && !(a && (l == "length" || i && (l == "offset" || l == "parent") || s && (l == "buffer" || l == "byteLength" || l == "byteOffset") || hBe(l, d)))) u.push(l);
+  return u;
+}
+var r8n = cr;
+var pr = Object.prototype;
+function gr(e) {
+  var t = e && e.constructor,
+    o = typeof t == "function" && t.prototype || pr;
+  return e === o;
+}
+var kmt = gr;
+function fr(e, t) {
+  return function (o) {
+    return e(t(o));
+  };
+}
+var o8n = fr;
+var hr = o8n(Object.keys, Object),
+  bt = hr;
+var mr = Object.prototype,
+  Sr = mr.hasOwnProperty;
+function vr(e) {
+  if (!kmt(e)) return bt(e);
+  var t = [];
+  for (var o in Object(e)) if (Sr.call(e, o) && o != "constructor") t.push(o);
+  return t;
+}
+var kt = vr;
+function yr(e) {
+  return e != null && R(e.length) && !egt(e);
+}
+var Ode = yr;
+function br(e) {
+  return Ode(e) ? r8n(e) : kt(e);
+}
+var dre = br;
+function Cr(e) {
+  return e8n(e, dre, vmt);
+}
+var nyn = Cr;
+var xr = 1,
+  Tr = Object.prototype,
+  Ar = Tr.hasOwnProperty;
+function Rr(e, t, o, r, i, s) {
+  var a = o & xr,
+    u = nyn(e),
+    d = u.length,
+    l = nyn(t),
+    f = l.length;
+  if (d != f && !a) return !1;
+  var c = d;
+  while (c--) {
+    var h = u[c];
+    if (!(a ? h in t : Ar.call(t, h))) return !1;
+  }
+  var v = s.get(e),
+    m = s.get(t);
+  if (v && m) return v == t && m == e;
+  var y = !0;
+  s.set(e, t), s.set(t, e);
+  var k = a;
+  while (++c < d) {
+    h = u[c];
+    var C = e[h],
+      x = t[h];
+    if (r) var Ye = a ? r(x, C, h, t, e, s) : r(C, x, h, e, t, s);
+    if (!(Ye === void 0 ? C === x || i(C, x, o, r, s) : Ye)) {
+      y = !1;
+      break;
+    }
+    k || (k = h == "constructor");
+  }
+  if (y && !k) {
+    var E = e.constructor,
+      D = t.constructor;
+    if (E != D && "constructor" in e && "constructor" in t && !(typeof E == "function" && E instanceof E && typeof D == "function" && D instanceof D)) y = !1;
+  }
+  return s.delete(e), s.delete(t), y;
+}
+var Ct = Rr;
+var Pr = mQ(zD, "DataView"),
+  K = Pr;
+var wr = mQ(zD, "Promise"),
+  V = wr;
+var Mr = mQ(zD, "Set"),
+  _9e = Mr;
+var Lr = mQ(zD, "WeakMap"),
+  J = Lr;
+var xt = "[object Map]",
+  Ir = "[object Object]",
+  Tt = "[object Promise]",
+  At = "[object Set]",
+  Rt = "[object WeakMap]",
+  Pt = "[object DataView]",
+  Or = NBe(K),
+  Fr = NBe(U9e),
+  Er = NBe(V),
+  Dr = NBe(_9e),
+  Hr = NBe(J),
+  T = fQ;
+if (K && T(new K(new ArrayBuffer(1))) != Pt || U9e && T(new U9e()) != xt || V && T(V.resolve()) != Tt || _9e && T(new _9e()) != At || J && T(new J()) != Rt) T = function (e) {
+  var t = fQ(e),
+    o = t == Ir ? e.constructor : void 0,
+    r = o ? NBe(o) : "";
+  if (r) switch (r) {
+    case Or:
+      return Pt;
+    case Fr:
+      return xt;
+    case Er:
+      return Tt;
+    case Dr:
+      return At;
+    case Hr:
+      return Rt;
+  }
+  return t;
+};
+var yBe = T;
+var Br = 1,
+  wt = "[object Arguments]",
+  Mt = "[object Array]",
+  z = "[object Object]",
+  jr = Object.prototype,
+  Lt = jr.hasOwnProperty;
+function Ur(e, t, o, r, i, s) {
+  var a = kb(e),
+    u = kb(t),
+    d = a ? Mt : yBe(e),
+    l = u ? Mt : yBe(t);
+  d = d == wt ? z : d, l = l == wt ? z : l;
+  var f = d == z,
+    c = l == z,
+    h = d == l;
+  if (h && vxe(e)) {
+    if (!vxe(t)) return !1;
+    a = !0, f = !1;
+  }
+  if (h && !f) return s || (s = new wxe()), a || N1t(e) ? U(e, t, o, r, i, s) : dt(e, t, d, o, r, i, s);
+  if (!(o & Br)) {
+    var v = f && Lt.call(e, "__wrapped__"),
+      m = c && Lt.call(t, "__wrapped__");
+    if (v || m) {
+      var y = v ? e.value() : e,
+        k = m ? t.value() : t;
+      return s || (s = new wxe()), i(y, k, o, r, s);
+    }
+  }
+  if (!h) return !1;
+  return s || (s = new wxe()), Ct(e, t, o, r, i, s);
+}
+var It = Ur;
+function Ot(e, t, o, r, i) {
+  if (e === t) return !0;
+  if (e == null || t == null || !L$(e) && !L$(t)) return e !== e && t !== t;
+  return It(e, t, o, r, Ot, i);
+}
+var P = Ot;
+function _r(e, t) {
+  return P(e, t);
+}
+var So = _r;
+import { basename as qr, dirname as Ft } from "path";
+class q {
+  #e;
+  #t = new WeakMap();
+  constructor(e) {
+    this.#e = e;
+  }
+  of(e) {
+    let t = this.#t.get(e);
+    if (t !== void 0) return t;
+    let o = this.#e();
+    return this.#t.set(e, o), o;
+  }
+}
+function xC(e) {
+  return {
+    subscribe(t) {
+      return e().subscribe(t);
+    },
+    emit(...t) {
+      e().emit(...t);
+    },
+    clear() {
+      e().clear();
+    }
+  };
+}
+class s8n {
+  mergedSettings = null;
+  perSource = new Map();
+  parsedFiles = new Map();
+  folderListings = new Map();
+  managedFileReads = new Map();
+  primedFiles = new Set();
+  policyWalks = 0;
+  walkedFolders = new Map();
+  policy = {};
+  lastPolicyEnvComposition = null;
+  isLoadingFromDisk = !1;
+  autoModeUntrustedSourceWarned = !1;
+  changed = Me();
+  internalWrites = new Map();
+  enabledSources;
+  inlineFlagParse;
+  pluginBase;
+  epoch = 0;
+  systemSpaceServingLogged = !1;
+  systemAttestationContradicted = !1;
+  backendReadResetTail = Promise.resolve();
+  backgroundWorkTail = Promise.resolve();
+  invalidated = Me();
+  pluginBaseLoaded = !1;
+  primer;
+  localStoreProbes = new Et();
+  retained = new Map();
+  retainedListings = new Map();
+  setPluginBase(e) {
+    this.pluginBase = e, this.pluginBaseLoaded = !0;
+  }
+  clearPluginBase() {
+    this.pluginBase = void 0;
+  }
+  invalidateAll(e) {
+    if (this.epoch++, this.mergedSettings = null, this.perSource.clear(), this.parsedFiles.clear(), this.primedFiles.clear(), this.policyWalks = 0, this.walkedFolders.clear(), this.folderListings.clear(), this.policy = {}, e?.userLayer === "retain" && H() && this.primer !== void 0) {
+      for (let [t, o] of this.retained) this.parsedFiles.set(t, o.parsed), this.primedFiles.add(t);
+      for (let [t, o] of this.retainedListings) this.folderListings.set(t, o.names);
+    } else this.retained.clear(), this.retainedListings.clear();
+    this.invalidated.emit();
+  }
+  invalidatePolicyLayer() {
+    this.mergedSettings = null, this.perSource.delete("policySettings"), this.policy = {};
+  }
+  onInvalidate(e) {
+    return this.invalidated.subscribe(e);
+  }
+  seedParsedFile(e, t, o, r) {
+    if (r !== this.epoch) return !1;
+    let i = this.parsedFiles.get(e),
+      s = i === void 0 || !So(i, o);
+    if (this.parsedFiles.set(e, o), s || this.primedFiles.has(e)) this.primedFiles.add(e);
+    let a = this.retained.get(e);
+    if (a !== void 0) a.parsed = o;
+    if (s) this.dropDerivedCaches(t);
+    return !0;
+  }
+  walkReadDiffers(e, t) {
+    let o = this.parsedFiles.get(e);
+    return o !== void 0 && !this.primedFiles.has(e) && !So(o, t);
+  }
+  unseedParsedFile(e, t, o) {
+    if (o !== this.epoch) return;
+    if (this.retained.delete(e), !this.primedFiles.has(e) || t === "policySettings" && this.policyWalks > 0) return;
+    this.primedFiles.delete(e), this.parsedFiles.delete(e), this.dropDerivedCaches(t);
+  }
+  dropDerivedCaches(e) {
+    if (this.perSource.delete(e), this.mergedSettings = null, e === "policySettings") this.policy = {};
+  }
+  primedFolderListing(e) {
+    return H() ? this.folderListings.get(e) : void 0;
+  }
+  folderListingForPolicyWalk(e) {
+    if (!H()) return;
+    this.policyWalks++;
+    let t = this.folderListings.get(e);
+    if (!this.walkedFolders.has(e) || t !== void 0) this.walkedFolders.set(e, t ?? null);
+    return t;
+  }
+  noteWalkListing(e, t) {
+    if (!H()) return;
+    this.walkedFolders.set(e, t);
+  }
+  get policyWalkCount() {
+    return this.policyWalks;
+  }
+  policyInstallVerdict(e, t, o) {
+    let r = this.parsedFiles.get(e);
+    if (r === void 0 || So(r, t)) return "install";
+    if (!this.primedFiles.has(e)) return "raced";
+    if (this.policyWalks === 0) return "install";
+    return this.policyWalks > o ? "raced" : "deferred";
+  }
+  folderInstallVerdict(e, t, o) {
+    if (!this.walkedFolders.has(e)) return this.hasParsedDropInOutside(e, t) ? "raced" : "install";
+    let r = this.walkedFolders.get(e);
+    if (r !== null && r !== void 0 && So(r, t)) return "install";
+    return this.policyWalks > o ? "raced" : "deferred";
+  }
+  seedFolderListing(e, t, o) {
+    if (o !== this.epoch) return !1;
+    let r = this.folderListings.get(e);
+    this.folderListings.set(e, t);
+    let i = this.retainedListings.get(e);
+    if (i !== void 0) i.names = t;
+    if (r !== void 0 && !So(r, t)) this.dropDerivedCaches("policySettings");
+    return !0;
+  }
+  walkReadManagedFileIn(e, t) {
+    for (let [o, r] of this.parsedFiles) if (!o.includes("\x00") && !this.primedFiles.has(o) && (r.settings !== null || r.errors.length > 0) && (o === e || Ft(o) === t)) return !0;
+    return !1;
+  }
+  walkRead(e) {
+    return this.parsedFiles.has(e) && !this.primedFiles.has(e);
+  }
+  hasParsedDropInOutside(e, t) {
+    for (let o of this.parsedFiles.keys()) if (!o.includes("\x00") && !this.primedFiles.has(o) && Ft(o) === e && !t.includes(qr(o))) return !0;
+    return !1;
+  }
+  clearFolderListing(e, t) {
+    if (t !== this.epoch) return;
+    if (this.retainedListings.delete(e), !this.folderListings.has(e) || this.walkedFolders.has(e)) return;
+    this.folderListings.delete(e), this.dropDerivedCaches("policySettings");
+  }
+  retainLayer(e, parsed) {
+    let o = {
+      parsed: parsed
+    };
+    return this.retained.set(e, o), () => {
+      if (this.retained.get(e) === o) this.retained.delete(e);
+    };
+  }
+  dropRetainedLayer(e) {
+    this.retained.delete(e);
+  }
+  retainFolderListing(e, names) {
+    let o = {
+      names: names
+    };
+    return this.retainedListings.set(e, o), () => {
+      if (this.retainedListings.get(e) === o) this.retainedListings.delete(e);
+    };
+  }
+}
+class Et {
+  ownerUidsByRoot = new Map();
+  realHomeDir = void 0;
+  canonicalRootOwnerUids(e, t) {
+    let o = this.ownerUidsByRoot.get(e);
+    if (o !== void 0) return o;
+    let r = t(e);
+    return this.ownerUidsByRoot.set(e, r), r;
+  }
+  hasCanonicalRootOwnerUids(e) {
+    return this.ownerUidsByRoot.has(e);
+  }
+  primeCanonicalRootOwnerUids(e, t) {
+    if (this.ownerUidsByRoot.has(e)) return !1;
+    return this.ownerUidsByRoot.set(e, t), !0;
+  }
+  clearCanonicalRootOwnerUids() {
+    this.ownerUidsByRoot.clear();
+  }
+  normalizedRealHomeDir(e) {
+    return this.realHomeDir ??= e(), this.realHomeDir;
+  }
+  clearNormalizedRealHomeDir() {
+    this.realHomeDir = void 0;
+  }
+}
+var i8n = new q(() => new s8n());
+function UY() {
+  return {
+    sent: new Set(),
+    rejected: new Set(),
+    declaredTools: void 0,
+    noChannelTools: void 0,
+    declaredToolsDecided: !1,
+    nameOnlyAnnouncements: new Set(),
+    surfacedOnWire: new Set(),
+    definedByValue: new Set(),
+    inlineToolsRefusal: {
+      rejectedHeader: void 0,
+      announcementsByName: new Set()
+    },
+    advisorHeld: void 0,
+    wireShapeSeed: void 0,
+    webSearchHistoryRejected: !1
+  };
+}
+function PC(e) {
+  return {
+    sent: new Set(e.sent),
+    rejected: new Set(e.rejected),
+    declaredTools: void 0,
+    noChannelTools: void 0,
+    declaredToolsDecided: !1,
+    nameOnlyAnnouncements: new Set(e.nameOnlyAnnouncements),
+    surfacedOnWire: new Set(e.surfacedOnWire),
+    definedByValue: new Set(e.definedByValue),
+    inlineToolsRefusal: {
+      rejectedHeader: e.inlineToolsRefusal.rejectedHeader,
+      announcementsByName: new Set(e.inlineToolsRefusal.announcementsByName)
+    },
+    advisorHeld: e.advisorHeld,
+    wireShapeSeed: e.wireShapeSeed,
+    webSearchHistoryRejected: e.webSearchHistoryRejected
+  };
+}
+function b9e(e) {
+  return {
+    sent: new Set(e.sent),
+    rejected: new Set(e.rejected),
+    declaredTools: e.declaredTools,
+    noChannelTools: e.noChannelTools,
+    declaredToolsDecided: e.declaredToolsDecided,
+    nameOnlyAnnouncements: new Set(e.nameOnlyAnnouncements),
+    surfacedOnWire: new Set(e.surfacedOnWire),
+    definedByValue: new Set(e.definedByValue),
+    inlineToolsRefusal: {
+      rejectedHeader: e.inlineToolsRefusal.rejectedHeader,
+      announcementsByName: new Set(e.inlineToolsRefusal.announcementsByName)
+    },
+    advisorHeld: e.advisorHeld,
+    wireShapeSeed: e.wireShapeSeed,
+    webSearchHistoryRejected: e.webSearchHistoryRejected
+  };
+}
+function S9e(e) {
+  e.declaredTools = void 0, e.noChannelTools = void 0, e.declaredToolsDecided = !1;
+}
+function w9e(e) {
+  let wireShapeSeed = e.wireShapeSeed;
+  if (wireShapeSeed === void 0) return;
+  for (let o of wireShapeSeed.sent) e.sent.delete(o);
+  for (let o of wireShapeSeed.rejected) e.rejected.delete(o);
+  e.wireShapeSeed = void 0;
+}
+function k2r(e, t) {
+  for (let o of t.sent) dH(e, o);
+  for (let o of t.rejected) jh(e, o);
+  e.wireShapeSeed = t;
+}
+function v9e(e) {
+  e.advisorHeld = void 0;
+}
+function ryn(e) {
+  let {
+    rejectedHeader: rejectedHeader,
+    announcementsByName: announcementsByName
+  } = e.inlineToolsRefusal;
+  if (rejectedHeader !== void 0) e.rejected.delete(rejectedHeader), e.inlineToolsRefusal.rejectedHeader = void 0;
+  for (let r of announcementsByName) e.nameOnlyAnnouncements.delete(r);
+  announcementsByName.clear();
+}
+function DBo(e) {
+  return e.advisorHeld = void 0, e;
+}
+function k9e(e) {
+  e.declaredToolsDecided = !0;
+}
+function Q(e) {
+  let t = UY();
+  if (t.declaredTools = e.declaredTools, t.noChannelTools = e.noChannelTools, t.declaredToolsDecided = e.declaredToolsDecided, t.advisorHeld = e.advisorHeld, e.wireShapeSeed !== void 0) k2r(t, e.wireShapeSeed);
+  let {
+    rejectedHeader: rejectedHeader_2,
+    announcementsByName: announcementsByName_2
+  } = e.inlineToolsRefusal;
+  if (rejectedHeader_2 !== void 0) E2r(t, rejectedHeader_2);
+  return T2r(t, announcementsByName_2), t.webSearchHistoryRejected = e.webSearchHistoryRejected, t;
+}
+function E2r(e, t) {
+  jh(e, t), e.inlineToolsRefusal.rejectedHeader = t;
+}
+function T2r(e, t) {
+  for (let o of t) e.inlineToolsRefusal.announcementsByName.add(o), e.nameOnlyAnnouncements.add(o);
+}
+function H1t(e, t) {
+  if (e.declaredTools === void 0) e.declaredTools = t;
+  k9e(e);
+}
+function a8n(e) {
+  return e.definedByValue.size === 0 ? e.surfacedOnWire : new Set([...e.surfacedOnWire, ...e.definedByValue]);
+}
+function dH(e, t) {
+  if (!e.rejected.has(t)) e.sent.add(t);
+}
+function oT(e, t) {
+  return e.sent.has(t) && !e.rejected.has(t);
+}
+function jh(e, t) {
+  e.sent.delete(t), e.rejected.add(t);
+}
+function Vu(e, t) {
+  return e.rejected.has(t);
+}
+function LBo(e) {
+  e.webSearchHistoryRejected = !0;
+}
+function oyn(e) {
+  e.webSearchHistoryRejected = !1;
+}
+class ie {
+  spawner = void 0;
+  pairings = new Map();
+  mainEnsureInFlight = !1;
+  mainSlotBlocked = !1;
+}
+class se {
+  #e = UY();
+  #t = void 0;
+  stickyBetas() {
+    return this.#e;
+  }
+  unlatchStickyBetas() {
+    this.#e = Q(this.#e);
+  }
+  atisLatch() {
+    return this.#t;
+  }
+  replaceAtisLatch(e) {
+    this.#t = e;
+  }
+  reset() {
+    this.#e = UY(), this.#t = void 0;
+  }
+}
+var Wr = function () {
+    try {
+      var e = mQ(Object, "defineProperty");
+      return e({}, "", {}), e;
+    } catch (error) {}
+  }(),
+  F1t = Wr;
+function Gr(e, t, value) {
+  if (t == "__proto__" && F1t) F1t(e, t, {
+    configurable: !0,
+    enumerable: !0,
+    value: value,
+    writable: !0
+  });else e[t] = value;
+}
+var Mde = Gr;
+function Nr(e) {
+  return function (t, o, r) {
+    var i = -1,
+      s = Object(t),
+      a = r(t),
+      u = a.length;
+    while (u--) {
+      var d = a[e ? u : ++i];
+      if (o(s[d], d, s) === !1) break;
+    }
+    return t;
+  };
+}
+var Dt = Nr;
+var Kr = Dt(),
+  l8n = Kr;
+function Vr(e, t) {
+  return e && l8n(e, t, dre);
+}
+var Emt = Vr;
+var Jr = 1,
+  zr = 2;
+function Qr(e, t, o, r) {
+  var i = o.length,
+    s = i,
+    a = !r;
+  if (e == null) return !s;
+  e = Object(e);
+  while (i--) {
+    var u = o[i];
+    if (a && u[2] ? u[1] !== e[u[0]] : !(u[0] in e)) return !1;
+  }
+  while (++i < s) {
+    u = o[i];
+    var d = u[0],
+      l = e[d],
+      f = u[1];
+    if (a && u[2]) {
+      if (l === void 0 && !(d in e)) return !1;
+    } else {
+      var c = new wxe();
+      if (r) var h = r(l, f, d, e, t, c);
+      if (!(h === void 0 ? P(f, l, Jr | zr, r, c) : h)) return !1;
+    }
+  }
+  return !0;
+}
+var Ht = Qr;
+function Xr(e) {
+  return e === e && !Vw(e);
+}
+var X = Xr;
+function $r(e) {
+  var t = dre(e),
+    o = t.length;
+  while (o--) {
+    var r = t[o],
+      i = e[r];
+    t[o] = [r, i, X(i)];
+  }
+  return t;
+}
+var Bt = $r;
+function Yr(e, t) {
+  return function (o) {
+    if (o == null) return !1;
+    return o[e] === t && (t !== void 0 || e in Object(o));
+  };
+}
+var Z = Yr;
+function Zr(e) {
+  var t = Bt(e);
+  if (t.length == 1 && t[0][2]) return Z(t[0][0], t[0][1]);
+  return function (o) {
+    return o === e || Ht(o, e, t);
+  };
+}
+var jt = Zr;
+var ei = "[object Symbol]";
+function ti(e) {
+  return typeof e == "symbol" || L$(e) && fQ(e) == ei;
+}
+var E9e = ti;
+var ni = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
+  ri = /^\w*$/;
+function ii(e, t) {
+  if (kb(e)) return !1;
+  var o = typeof e;
+  if (o == "number" || o == "symbol" || o == "boolean" || e == null || E9e(e)) return !0;
+  return ri.test(e) || !ni.test(e) || t != null && e in Object(t);
+}
+var w = ii;
+var si = 500;
+function ai(e) {
+  var t = $o(e, function (r) {
+      if (o.size === si) o.clear();
+      return r;
+    }),
+    o = t.cache;
+  return t;
+}
+var Ut = ai;
+var li = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g,
+  ui = /\\(\\)?/g,
+  ci = Ut(function (e) {
+    var t = [];
+    if (e.charCodeAt(0) === 46) t.push("");
+    return e.replace(li, function (o, r, i, s) {
+      t.push(i ? s.replace(ui, "$1") : r || o);
+    }), t;
+  }),
+  _t = ci;
+function pi(e, t) {
+  var o = -1,
+    r = e == null ? 0 : e.length,
+    i = Array(r);
+  while (++o < r) i[o] = t(e[o], o, e);
+  return i;
+}
+var Exe = pi;
+var gi = 1 / 0,
+  qt = z$ ? z$.prototype : void 0,
+  Wt = qt ? qt.toString : void 0;
+function Gt(e) {
+  if (typeof e == "string") return e;
+  if (kb(e)) return Exe(e, Gt) + "";
+  if (E9e(e)) return Wt ? Wt.call(e) : "";
+  var t = e + "";
+  return t == "0" && 1 / e == -gi ? "-0" : t;
+}
+var Kt = Gt;
+function fi(e) {
+  return e == null ? "" : Kt(e);
+}
+var ure = fi;
+function hi(e, t) {
+  if (kb(e)) return e;
+  return w(e, t) ? [e] : _t(ure(e));
+}
+var pre = hi;
+var mi = 1 / 0;
+function Si(e) {
+  if (typeof e == "string" || E9e(e)) return e;
+  var t = e + "";
+  return t == "0" && 1 / e == -mi ? "-0" : t;
+}
+var oQ = Si;
+function vi(e, t) {
+  t = pre(t, e);
+  var o = 0,
+    r = t.length;
+  while (e != null && o < r) e = e[oQ(t[o++])];
+  return o && o == r ? e : void 0;
+}
+var _Be = vi;
+function yi(e, t, o) {
+  var r = e == null ? void 0 : _Be(e, t);
+  return r === void 0 ? o : r;
+}
+var Vt = yi;
+function bi(e, t) {
+  return e != null && t in Object(e);
+}
+var Jt = bi;
+function ki(e, t, o) {
+  t = pre(t, e);
+  var r = -1,
+    i = t.length,
+    s = !1;
+  while (++r < i) {
+    var a = oQ(t[r]);
+    if (!(s = e != null && o(e, a))) break;
+    e = e[a];
+  }
+  if (s || ++r != i) return s;
+  return i = e == null ? 0 : e.length, !!i && R(i) && hBe(a, i) && (kb(e) || gBe(e));
+}
+var zt = ki;
+function Ci(e, t) {
+  return e != null && zt(e, t, Jt);
+}
+var c8n = Ci;
+var xi = 1,
+  Ti = 2;
+function Ai(e, t) {
+  if (w(e) && X(t)) return Z(oQ(e), t);
+  return function (o) {
+    var r = Vt(o, e);
+    return r === void 0 && r === t ? c8n(o, e) : P(t, r, xi | Ti);
+  };
+}
+var Qt = Ai;
+function Ri(e) {
+  return e;
+}
+var $1t = Ri;
+function Pi(e) {
+  return function (t) {
+    return t == null ? void 0 : t[e];
+  };
+}
+var Xt = Pi;
+function wi(e) {
+  return function (t) {
+    return _Be(t, e);
+  };
+}
+var $t = wi;
+function Mi(e) {
+  return w(e) ? Xt(oQ(e)) : $t(e);
+}
+var Yt = Mi;
+function Li(e) {
+  if (typeof e == "function") return e;
+  if (e == null) return $1t;
+  if (typeof e == "object") return kb(e) ? Qt(e[0], e[1]) : jt(e);
+  return Yt(e);
+}
+var uH = Li;
+function Ii(e, t) {
+  var o = {};
+  return t = uH(t, 3), Emt(e, function (r, i, s) {
+    Mde(o, i, t(r, i, s));
+  }), o;
+}
+var io = Ii;
+function Oi(e, t) {
+  var o,
+    r = -1,
+    i = e.length;
+  while (++r < i) {
+    var s = t(e[r]);
+    if (s !== void 0) o = o === void 0 ? s : o + s;
+  }
+  return o;
+}
+var Zt = Oi;
+function Fi(e, t) {
+  return e && e.length ? Zt(e, uH(t, 2)) : 0;
+}
+var M = Fi;
+var tn = {
+  inputTokens: 0,
+  outputTokens: 0,
+  cacheReadInputTokens: 0,
+  cacheCreationInputTokens: 0
+};
+function ee(e) {
+  let t = Object.create(null);
+  return Object.assign(t, e);
+}
+class ae {
+  #e = 0;
+  #t = 0;
+  #n = 0;
+  #o = 0;
+  #r = Date.now();
+  #i = void 0;
+  #d = 0;
+  #a = 0;
+  #s = 0;
+  #l = tn;
+  #u = !1;
+  #c = ee();
+  #g = null;
+  #p = null;
+  #f = null;
+  totalCostUSD() {
+    return this.#e;
+  }
+  restoredCostUSD() {
+    return this.#s;
+  }
+  restoredTokens() {
+    return this.#l;
+  }
+  totalAPIDuration() {
+    return this.#t;
+  }
+  totalAPIDurationWithoutRetries() {
+    return this.#n;
+  }
+  totalToolDuration() {
+    return this.#o;
+  }
+  totalDuration() {
+    return Math.max(0, Date.now() - this.#r);
+  }
+  sessionStartTime() {
+    return this.#i ?? this.#r;
+  }
+  totalLinesAdded() {
+    return this.#d;
+  }
+  totalLinesRemoved() {
+    return this.#a;
+  }
+  hasUnknownModelCost() {
+    return this.#u;
+  }
+  modelUsage() {
+    return this.#c;
+  }
+  usageForModel(e) {
+    return this.#c[e];
+  }
+  totalInputTokens() {
+    return M(Object.values(this.#c), "inputTokens");
+  }
+  totalOutputTokens() {
+    return M(Object.values(this.#c), "outputTokens");
+  }
+  totalCacheReadInputTokens() {
+    return M(Object.values(this.#c), "cacheReadInputTokens");
+  }
+  totalCacheCreationInputTokens() {
+    return M(Object.values(this.#c), "cacheCreationInputTokens");
+  }
+  totalWebSearchRequests() {
+    return M(Object.values(this.#c), "webSearchRequests");
+  }
+  recordApiDuration(e, t) {
+    this.#t += e, this.#n += t;
+  }
+  recordCost(e, t, o) {
+    this.#c[o] = t, this.#e += e;
+  }
+  recordToolDuration(e) {
+    this.#o += e;
+  }
+  recordLinesChanged(e, t) {
+    this.#d += e, this.#a += t;
+  }
+  markUnknownModelCost() {
+    this.#u = !0;
+  }
+  zeroDurationsAndCostForTests() {
+    this.#t = 0, this.#n = 0, this.#e = 0, this.#s = 0;
+  }
+  restartClock() {
+    this.#r = Date.now(), this.anchorLogicalStart(void 0);
+  }
+  anchorLogicalStart(e) {
+    this.#i = e === void 0 ? void 0 : Math.min(e, this.#r);
+  }
+  restore({
+    totalCostUSD: totalCostUSD,
+    totalAPIDuration: totalAPIDuration,
+    totalAPIDurationWithoutRetries: totalAPIDurationWithoutRetries,
+    totalToolDuration: totalToolDuration,
+    totalLinesAdded: totalLinesAdded,
+    totalLinesRemoved: totalLinesRemoved,
+    lastDuration: lastDuration,
+    startTime: startTime,
+    modelUsage: modelUsage,
+    hasUnknownModelCost: hasUnknownModelCost
+  }, f) {
+    if (this.#f = f, this.#e = totalCostUSD, this.#s = totalCostUSD, this.#t = totalAPIDuration, this.#n = totalAPIDurationWithoutRetries, this.#o = totalToolDuration, this.#d = totalLinesAdded, this.#a = totalLinesRemoved, this.#u = hasUnknownModelCost ?? !1, modelUsage) this.#c = ee(modelUsage);
+    if (this.#l = {
+      inputTokens: this.totalInputTokens(),
+      outputTokens: this.totalOutputTokens(),
+      cacheReadInputTokens: this.totalCacheReadInputTokens(),
+      cacheCreationInputTokens: this.totalCacheCreationInputTokens()
+    }, lastDuration !== void 0) this.#r = Date.now() - lastDuration;
+    this.anchorLogicalStart(startTime);
+  }
+  registerSaver(e) {
+    this.#g = e;
+  }
+  runSaver(e, t) {
+    (this.#g ?? (t ? t.#g : null))?.(e);
+  }
+  registerTranscriptRecorder(e) {
+    this.#p = e;
+  }
+  runTranscriptRecorder(e, t, o) {
+    (this.#p ?? (o ? o.#p : null))?.(e, t);
+  }
+  snapshot() {
+    return {
+      ownerSessionId: this.#f,
+      totalCostUSD: this.#e,
+      totalAPIDuration: this.#t,
+      totalAPIDurationWithoutRetries: this.#n,
+      totalToolDuration: this.#o,
+      startTime: this.#r,
+      sessionLogicalStartTime: this.#i,
+      totalLinesAdded: this.#d,
+      totalLinesRemoved: this.#a,
+      restoredCostUSD: this.#s,
+      restoredTokens: this.#l,
+      hasUnknownModelCost: this.#u,
+      modelUsage: io(this.#c, e => ({
+        ...e
+      }))
+    };
+  }
+  restoreSnapshot(e) {
+    this.#f = e.ownerSessionId, this.#e = e.totalCostUSD, this.#t = e.totalAPIDuration, this.#n = e.totalAPIDurationWithoutRetries, this.#o = e.totalToolDuration, this.#r = e.startTime, this.#i = e.sessionLogicalStartTime, this.#d = e.totalLinesAdded, this.#a = e.totalLinesRemoved, this.#s = e.restoredCostUSD, this.#l = e.restoredTokens, this.#u = e.hasUnknownModelCost, this.#c = ee(io(e.modelUsage, t => ({
+      ...t
+    })));
+  }
+  claim(e) {
+    this.#f ??= e;
+  }
+  scopeTo(e) {
+    this.#f = e;
+  }
+  ownerSessionId() {
+    return this.#f;
+  }
+  belongsTo(e) {
+    return this.#f === e;
+  }
+  reset(e) {
+    this.#f = e, this.#e = 0, this.#s = 0, this.#l = tn, this.#t = 0, this.#n = 0, this.#o = 0, this.#r = Date.now(), this.anchorLogicalStart(void 0), this.#d = 0, this.#a = 0, this.#u = !1, this.#c = ee();
+  }
+}
+class le {
+  #e = !1;
+  #t = null;
+  fableConsentSessionFallback() {
+    return this.#e;
+  }
+  replaceFableConsentSessionFallback(e) {
+    this.#e = e;
+  }
+  sessionConsentKey() {
+    return this.#t;
+  }
+  replaceSessionConsentKey(e) {
+    this.#t = e;
+  }
+  reset() {
+    this.#e = !1, this.#t = null;
+  }
+}
+class de {
+  #e = {
+    registeredHooks: null
+  };
+  #t = void 0;
+  #n = void 0;
+  holder() {
+    return this.#e;
+  }
+  mainThreadAgentType() {
+    return this.#t;
+  }
+  replaceMainThreadAgentType(e) {
+    this.#t = e;
+  }
+  mainThreadAgentHooks() {
+    return this.#n;
+  }
+  replaceMainThreadAgentHooks(e) {
+    this.#n = e;
+  }
+  reset() {
+    this.#e = {
+      registeredHooks: null
+    }, this.#t = void 0, this.#n = void 0;
+  }
+}
+class ue {
+  #e = new Map();
+  skills() {
+    return this.#e;
+  }
+  lookup(e) {
+    return this.#e.get(e);
+  }
+  record(e, t) {
+    this.#e.set(e, t);
+  }
+  forget(e) {
+    this.#e.delete(e);
+  }
+  forgetAll() {
+    this.#e.clear();
+  }
+  reset() {
+    this.#e = new Map();
+  }
+}
+class ce {
+  #e = [];
+  #t;
+  #n;
+  #o;
+  #r;
+  approvedServers() {
+    return this.#e;
+  }
+  approveServers(workspaceKey, t) {
+    for (let name of t) if (!this.#e.some(item => item.name === name && item.workspaceKey === workspaceKey)) this.#e.push({
+      name: name,
+      workspaceKey: workspaceKey
+    });
+  }
+  registerClientsAccessor(e) {
+    this.#t = e;
+  }
+  acquireClientsAccessor(e) {
+    if (this.#t) return () => {};
+    return this.#t = e, () => {
+      if (this.#t === e) this.#t = void 0;
+    };
+  }
+  clientsFromAccessor() {
+    return this.#t?.();
+  }
+  registerConnectedClientWiring(e) {
+    this.#n = e;
+  }
+  connectedClientWiring() {
+    return this.#n;
+  }
+  registerToolsSwapper(e) {
+    this.#o = e;
+  }
+  acquireToolsSwapper(e) {
+    if (this.#o) return () => {};
+    return this.#o = e, () => {
+      if (this.#o === e) this.#o = void 0;
+    };
+  }
+  swapServerTools(e, t) {
+    if (!this.#o) return !1;
+    return this.#o(e, t);
+  }
+  registerConnections(e) {
+    this.#r = e;
+  }
+  acquireConnections(e) {
+    if (this.#r) return () => {};
+    return this.#r = e, () => {
+      if (this.#r === e) this.#r = void 0;
+    };
+  }
+  connections() {
+    return this.#r;
+  }
+  reset() {
+    this.#e = [], this.#t = void 0;
+  }
+}
+class pe {
+  #e = void 0;
+  #t = void 0;
+  #n = void 0;
+  #o = void 0;
+  #r = void 0;
+  #i = void 0;
+  #d = !1;
+  #a = !1;
+  #s = void 0;
+  #l = !1;
+  #u = void 0;
+  #c = void 0;
+  mainLoopModelOverride() {
+    return this.#e;
+  }
+  overrideMainLoopModel(e) {
+    this.#e = e;
+  }
+  mainLoopEffortState() {
+    return this.#t;
+  }
+  replaceMainLoopEffortState(e) {
+    this.#t = e;
+  }
+  initialMainLoopModel() {
+    return this.#n;
+  }
+  replaceInitialMainLoopModel(e) {
+    this.#n = e;
+  }
+  initialModelSettingLayer() {
+    return this.#o;
+  }
+  replaceInitialModelSettingLayer(e) {
+    this.#o = e;
+  }
+  resolvedOrgDefault() {
+    return this.#r;
+  }
+  replaceResolvedOrgDefault(e) {
+    this.#r = e;
+  }
+  initialEnvDefaultModel() {
+    return this.#i;
+  }
+  replaceInitialEnvDefaultModel(e) {
+    this.#i = e;
+  }
+  refusalFallbackOccurred() {
+    return this.#d;
+  }
+  markRefusalFallbackOccurred(e) {
+    this.#d = !0, this.#s ??= e;
+  }
+  refusalFallbackHeaderArmed() {
+    return this.#a;
+  }
+  armRefusalFallbackHeader(e) {
+    this.#a = !0, this.#s ??= e;
+  }
+  refusalFallbackLatchOriginRequestId() {
+    return this.#s;
+  }
+  silentLaneServerArmed() {
+    return this.#l;
+  }
+  armSilentLaneFromServer() {
+    this.#l = !0;
+  }
+  forgetRefusalFallbackOccurred() {
+    this.#d = !1, this.#a = !1, this.#l = !1, this.#s = void 0;
+  }
+  refusalFallbackModelLatch() {
+    return this.#u;
+  }
+  replaceRefusalFallbackModelLatch(e) {
+    this.#u = e;
+  }
+  unlatchRefusalFallbackModel() {
+    this.#u = void 0;
+  }
+  availabilityFallbackChain() {
+    return this.#c;
+  }
+  replaceAvailabilityFallbackChain(e) {
+    this.#c = e;
+  }
+  reset() {
+    this.#e = void 0, this.#t = void 0, this.#n = void 0, this.#o = void 0, this.#r = void 0, this.#i = void 0, this.#d = !1, this.#a = !1, this.#l = !1, this.#s = void 0, this.#u = void 0, this.#c = void 0;
+  }
+}
+class ge {
+  #e = new Map();
+  #t = 0;
+  #n = void 0;
+  #o = null;
+  sections() {
+    return this.#e;
+  }
+  recordSection(e, t) {
+    this.#e.set(e, t);
+  }
+  forgetAllSections() {
+    this.#e.clear();
+  }
+  noteInvalidation(e = "other") {
+    this.#t += 1, this.#n = e;
+  }
+  epoch() {
+    return this.#t;
+  }
+  lastInvalidationReason() {
+    return this.#n;
+  }
+  registerWordingLatchClear(e) {
+    this.#o = e;
+  }
+  clearWordingLatch(e) {
+    (this.#o ?? (e ? e.#o : null))?.();
+  }
+  reset() {
+    this.#e = new Map();
+  }
+}
+class fe {
+  #e = null;
+  #t = null;
+  #n = null;
+  #o = null;
+  #r = null;
+  #i = 0;
+  #d = void 0;
+  #a = null;
+  #s = null;
+  #l = !1;
+  #u = null;
+  #c = null;
+  #g = !1;
+  lastAPIRequest() {
+    return this.#e;
+  }
+  replaceLastAPIRequest(e) {
+    this.#e = e;
+  }
+  lastCancelledAPIMessageId() {
+    return this.#t;
+  }
+  replaceLastCancelledAPIMessageId(e) {
+    this.#t = e;
+  }
+  lastAPIRequestMessages() {
+    return this.#n;
+  }
+  replaceLastAPIRequestMessages(e) {
+    this.#n = e;
+  }
+  lastClassifierRequests() {
+    return this.#o;
+  }
+  replaceLastClassifierRequests(e) {
+    this.#o = e;
+  }
+  promptId() {
+    return this.#r;
+  }
+  replacePromptId(e) {
+    this.#r = e;
+  }
+  promptIndex() {
+    return this.#i;
+  }
+  replacePromptIndex(e) {
+    this.#i = e;
+  }
+  incrementPromptIndex() {
+    return this.#i++, this.#i;
+  }
+  lastMainRequestId() {
+    return this.#d;
+  }
+  replaceLastMainRequestId(e) {
+    this.#d = e;
+  }
+  lastMainThreadCacheTtlMs() {
+    return this.#a;
+  }
+  replaceLastMainThreadCacheTtlMs(e) {
+    this.#a = e, this.#s = Date.now(), this.#l = !0;
+  }
+  lastMainThreadRequestAt() {
+    return this.#s;
+  }
+  mainThreadRequestedInProcess() {
+    return this.#l;
+  }
+  recordMainThreadTurnStart() {
+    this.#l = !0;
+  }
+  replaceLastMainThreadRequest(e, t) {
+    this.#s = e, this.#a = t;
+  }
+  lastMainThreadContextTokens() {
+    return this.#u;
+  }
+  replaceLastMainThreadContextTokens(e) {
+    this.#u = e;
+  }
+  stageResumeSeed(e) {
+    this.#p = e;
+  }
+  applyResumeSeed(e) {
+    this.#p = null, this.#a = e.ttlMs, this.#s = e.requestAt, this.#u = e.contextTokens;
+  }
+  #p = null;
+  clearLastMainThreadRequest(e) {
+    let t = e !== void 0 && this.#p?.sessionId === e ? this.#p : null;
+    this.#p = null, this.#a = t?.ttlMs ?? null, this.#s = t?.requestAt ?? null, this.#u = t?.contextTokens ?? null, this.#l = !1;
+  }
+  lastApiCompletionTimestamp() {
+    return this.#c;
+  }
+  replaceLastApiCompletionTimestamp(e) {
+    this.#c = e;
+  }
+  pendingPostCompaction() {
+    return this.#g;
+  }
+  replacePendingPostCompaction(e) {
+    this.#g = e;
+  }
+  reset() {
+    this.#e = null, this.#t = null, this.#n = null, this.#o = null, this.#r = null, this.#i = 0, this.#d = void 0, this.#a = null, this.#s = null, this.#l = !1, this.#u = null, this.#p = null, this.#c = null, this.#g = !1;
+  }
+}
+class he {
+  #e = [];
+  #t = Object.create(null);
+  #n = null;
+  #o = 0;
+  #r = !1;
+  #i = 0;
+  tasks() {
+    return this.#e;
+  }
+  schedule(e) {
+    this.#e.push(e);
+  }
+  replaceTasks(e) {
+    this.#e = e;
+  }
+  chainStartedAt(e) {
+    return this.#t[e];
+  }
+  recordChainStart(e, t) {
+    this.#t[e] = t;
+  }
+  forgetChainStart(e) {
+    delete this.#t[e];
+  }
+  tickInFlightPrompt() {
+    return this.#n;
+  }
+  replaceTickInFlightPrompt(e) {
+    this.#n = e;
+  }
+  consecutiveKeepalives() {
+    return this.#o;
+  }
+  replaceConsecutiveKeepalives(e) {
+    this.#o = e;
+  }
+  ended() {
+    return this.#r;
+  }
+  replaceEnded(e) {
+    this.#r = e;
+  }
+  wakeFires() {
+    return this.#i;
+  }
+  recordWakeFire() {
+    this.#i++;
+  }
+  resetWakeFires() {
+    this.#i = 0;
+  }
+  reset() {
+    this.#e = [], this.#t = Object.create(null), this.#n = null, this.#o = 0, this.#r = !1, this.#i = 0;
+  }
+}
+class me {
+  #e = !1;
+  #t = !1;
+  #n = !1;
+  #o = !1;
+  #r = !1;
+  #i = !1;
+  #d = !1;
+  #a = !1;
+  #s = !1;
+  #l = !1;
+  #u = null;
+  #c = null;
+  #g = null;
+  #p = !1;
+  #f = null;
+  #m = !1;
+  #v = !1;
+  #k = !1;
+  #h = !1;
+  #y = !1;
+  #S = void 0;
+  #b = void 0;
+  #x = void 0;
+  #C = null;
+  #T = null;
+  onboardingShownThisSession() {
+    return this.#e;
+  }
+  replaceOnboardingShownThisSession(e) {
+    this.#e = e;
+  }
+  lspRecommendationShownThisSession() {
+    return this.#t;
+  }
+  replaceLspRecommendationShownThisSession(e) {
+    this.#t = e;
+  }
+  sessionTrustAccepted() {
+    return this.#n;
+  }
+  replaceSessionTrustAccepted(e) {
+    this.#n = e;
+  }
+  homeTrustDialogAccepted() {
+    return this.#o;
+  }
+  replaceHomeTrustDialogAccepted(e) {
+    this.#o = e;
+  }
+  hasExitedPlanMode() {
+    return this.#r;
+  }
+  replaceHasExitedPlanMode(e) {
+    this.#r = e;
+  }
+  needsPlanModeExitAttachment() {
+    return this.#i;
+  }
+  replaceNeedsPlanModeExitAttachment(e) {
+    this.#i = e;
+  }
+  needsAutoModeExitAttachment() {
+    return this.#d;
+  }
+  replaceNeedsAutoModeExitAttachment(e) {
+    this.#d = e;
+  }
+  memoryToggledOff() {
+    return this.#a;
+  }
+  replaceMemoryToggledOff(e) {
+    this.#a = e;
+  }
+  restoredMemoryPause() {
+    return this.#s;
+  }
+  replaceRestoredMemoryPause(e) {
+    this.#s = e;
+  }
+  teardownUnwindRequested() {
+    return this.#p;
+  }
+  replaceTeardownUnwindRequested(e) {
+    this.#p = e;
+  }
+  backgroundAutoModeSetupInFlight() {
+    return this.#l;
+  }
+  replaceBackgroundAutoModeSetupInFlight(e) {
+    this.#l = e;
+  }
+  deferredToolStubGateLatch() {
+    return this.#u;
+  }
+  replaceDeferredToolStubGateLatch(e) {
+    this.#u = e;
+  }
+  verifySkillRolloutGateLatch() {
+    return this.#c;
+  }
+  replaceVerifySkillRolloutGateLatch(e) {
+    this.#c = e;
+  }
+  commitSkillRolloutGateLatch() {
+    return this.#g;
+  }
+  replaceCommitSkillRolloutGateLatch(e) {
+    this.#g = e;
+  }
+  memoryToolsShapeLatch() {
+    return this.#f;
+  }
+  replaceMemoryToolsShapeLatch(e) {
+    this.#f = e;
+  }
+  proposeGoalAvailabilityLogged() {
+    return this.#m;
+  }
+  markProposeGoalAvailabilityLogged() {
+    this.#m = !0;
+  }
+  activeRoutine() {
+    return this.#b;
+  }
+  replaceActiveRoutine(e) {
+    this.#b = e;
+  }
+  inheritedTeamName() {
+    return this.#x;
+  }
+  replaceInheritedTeamName(e) {
+    this.#x = e;
+  }
+  teleportedSessionInfo() {
+    return this.#C;
+  }
+  replaceTeleportedSessionInfo(e) {
+    this.#C = e;
+  }
+  markFirstTeleportMessageLogged() {
+    if (this.#C) this.#C.hasLoggedFirstMessage = !0;
+  }
+  cachedClaudeMdContent() {
+    return this.#T;
+  }
+  replaceCachedClaudeMdContent(e) {
+    this.#T = e;
+  }
+  accountSkillsSyncEnabled() {
+    return this.#v;
+  }
+  replaceAccountSkillsSyncEnabled(e) {
+    this.#v = e;
+  }
+  skillsSyncVetoed() {
+    return this.#k;
+  }
+  replaceSkillsSyncVetoed(e) {
+    this.#k = e;
+  }
+  accountPluginsSyncEnabled() {
+    return this.#h;
+  }
+  replaceAccountPluginsSyncEnabled(e) {
+    this.#h = e;
+  }
+  pluginsSyncVetoed() {
+    return this.#y;
+  }
+  replacePluginsSyncVetoed(e) {
+    this.#y = e;
+  }
+  armPendingContextCompacted(e) {
+    this.#S = e;
+  }
+  consumePendingContextCompacted() {
+    let e = this.#S;
+    return this.#S = void 0, e;
+  }
+  forgetPendingContextCompacted() {
+    this.#S = void 0;
+  }
+  reset() {
+    this.#v = !1, this.#k = !1, this.#h = !1, this.#y = !1, this.#e = !1, this.#t = !1, this.#n = !1, this.#o = !1, this.#r = !1, this.#i = !1, this.#d = !1, this.#a = !1, this.#s = !1, this.#p = !1, this.#l = !1, this.#u = null, this.#c = null, this.#g = null, this.#f = null, this.#m = !1, this.#b = void 0, this.#x = void 0, this.#C = null, this.#T = null, this.#S = void 0;
+  }
+}
+class Se {
+  #e = new Map();
+  #t = new Map();
+  #n = null;
+  #o = new Map();
+  #r = new Set();
+  #i = new Set();
+  #d = new Set();
+  #a = new Set();
+  #s = new Set();
+  #l = new Set();
+  #u = new Set();
+  #c = new Set();
+  #g = new Set();
+  #p = new Map();
+  #f = new Map();
+  #m = {
+    byFileUuid: new Map(),
+    recentPrefetchStarts: []
+  };
+  #v = new Set();
+  #k = void 0;
+  #h = void 0;
+  #y = void 0;
+  #S = void 0;
+  #b = void 0;
+  planSlugCache() {
+    return this.#e;
+  }
+  forgetPlanSlug(e) {
+    this.#e.delete(e);
+  }
+  pendingBranchLinks() {
+    return this.#t;
+  }
+  replacePendingBranchLinks() {
+    this.#t = new Map();
+  }
+  vimSharedState() {
+    return this.#n;
+  }
+  replaceVimSharedState(e) {
+    this.#n = e;
+  }
+  agentColorMap() {
+    return this.#o;
+  }
+  sessionCreatedTeams() {
+    return this.#r;
+  }
+  surfacedHookSpawnFailures() {
+    return this.#i;
+  }
+  bareMcpServerMatchersWarned() {
+    return this.#d;
+  }
+  pendingConversationEditKinds() {
+    return this.#a;
+  }
+  clientTruncatedAssistantIds() {
+    return this.#s;
+  }
+  heldStatelessReplyIds() {
+    return this.#l;
+  }
+  unsupportedThreadKeys() {
+    return this.#u;
+  }
+  pendingPrLinks() {
+    return this.#c;
+  }
+  policyPredicateTelemetryEmitted() {
+    return this.#g;
+  }
+  humanAttachmentDigests() {
+    return this.#p;
+  }
+  inboundAttachmentFiles() {
+    return this.#f;
+  }
+  inboundAttachmentDownloads() {
+    return this.#m;
+  }
+  chromeAvailabilityStagesLogged() {
+    return this.#v;
+  }
+  replaceChromeAvailabilityStagesLogged(e) {
+    if (this.#v = new Set(), e) this.#k = Date.now();
+  }
+  chromeAvailabilityAnchorMs() {
+    return this.#k;
+  }
+  pendingGoalIdleCheckin() {
+    return this.#h;
+  }
+  replacePendingGoalIdleCheckin(e) {
+    this.#h = e;
+  }
+  pendingGoalReprompt() {
+    return this.#y;
+  }
+  replacePendingGoalReprompt(e) {
+    this.#y = e;
+  }
+  goalInterruptionStreak() {
+    return this.#S;
+  }
+  replaceGoalInterruptionStreak(e) {
+    this.#S = e;
+  }
+  workerCheckin() {
+    return this.#b;
+  }
+  replaceWorkerCheckin(e) {
+    this.#b = e;
+  }
+  reset() {
+    this.#e = new Map(), this.#t = new Map(), this.#n = null, this.#o = new Map(), this.#r = new Set(), this.#i = new Set(), this.#d = new Set(), this.#a = new Set(), this.#s = new Set(), this.#l = new Set(), this.#u = new Set(), this.#c = new Set(), this.#g = new Set(), this.#p = new Map(), this.#f = new Map();
+    for (let e of this.#m.byFileUuid.values()) clearTimeout(e.expiry), e.abort.abort();
+    this.#m = {
+      byFileUuid: new Map(),
+      recentPrefetchStarts: []
+    }, this.#v = new Set(), this.#k = void 0, clearTimeout(this.#h), this.#h = void 0, clearTimeout(this.#y), this.#y = void 0, this.#S = void 0, clearInterval(this.#b?.timer), this.#b = void 0;
+  }
+}
+var nn = {
+  renderTarget: "ink",
+  workspace: "local",
+  canDrive: !0,
+  transcriptSource: "local-jsonl",
+  remote: null
+};
+class ve {
+  #e = !1;
+  #t = void 0;
+  #n = void 0;
+  #o = void 0;
+  #r = void 0;
+  #i = null;
+  #d = !1;
+  #a = void 0;
+  #s = nn;
+  #l = !1;
+  #u = "idle";
+  attacherCapsChanged = Me();
+  rvSupervisorLinkChanged = Me();
+  sdkDialogHostActive() {
+    return this.#e;
+  }
+  markSdkDialogHostActive(e) {
+    this.#e = e;
+  }
+  sdkSupportedDialogKinds() {
+    return this.#t;
+  }
+  sdkSupportedDialogKindsSource() {
+    return this.#n;
+  }
+  declareDialogKinds(e, t) {
+    this.#t = e, this.#n = e === void 0 ? void 0 : t;
+  }
+  sdkPerTaskStopAffordance() {
+    return this.#o;
+  }
+  declarePerTaskStopAffordance(e) {
+    this.#o = e;
+  }
+  sdkRapidFollowupPreempt() {
+    return this.#r;
+  }
+  declareRapidFollowupPreempt(e) {
+    this.#r = e;
+  }
+  attacherCaps() {
+    return this.#i;
+  }
+  replaceAttacherCaps(e) {
+    this.#i = e, this.attacherCapsChanged.emit();
+  }
+  rvSupervisorLinkLive() {
+    return this.#d;
+  }
+  replaceRvSupervisorLinkLive(e) {
+    if (this.#d === e) return;
+    this.#d = e, this.rvSupervisorLinkChanged.emit();
+  }
+  sdkBetas() {
+    return this.#a;
+  }
+  replaceSdkBetas(e) {
+    this.#a = e;
+  }
+  caps() {
+    return this.#s;
+  }
+  replaceCaps(e) {
+    this.#s = e;
+  }
+  markRemote(e) {
+    this.#s = {
+      ...this.#s,
+      workspace: e ? "remote" : "local"
+    };
+  }
+  replBridgeActive() {
+    return this.#l;
+  }
+  replaceReplBridgeActive(e) {
+    if (this.#l === e) return;
+    this.#l = e;
+  }
+  mainLoopBusy() {
+    return this.#u !== "idle";
+  }
+  mainQueryRunning() {
+    return this.#u === "running";
+  }
+  replaceMainLoopStatus(e) {
+    this.#u = e;
+  }
+  reset() {
+    this.#e = !1, this.#t = void 0, this.#n = void 0, this.#o = void 0, this.#r = void 0, this.#i = null, this.#a = void 0, this.#s = nn, this.#l = !1, this.#u = "idle", this.#d = !1, this.attacherCapsChanged.clear(), this.rvSupervisorLinkChanged.clear();
+  }
+}
+class ye {
+  #e = 0;
+  #t = null;
+  #n = 0;
+  outputTokensAtTurnStart() {
+    return this.#e;
+  }
+  budget() {
+    return this.#t;
+  }
+  continuationCount() {
+    return this.#n;
+  }
+  snapshotForTurn(e, t) {
+    this.#e = e, this.#t = t, this.#n = 0;
+  }
+  incrementContinuation() {
+    this.#n++;
+  }
+  reset() {
+    this.#e = 0, this.#t = null, this.#n = 0;
+  }
+}
+var on = 150;
+class be {
+  #e = Date.now();
+  #t = !1;
+  interactionFired = Me();
+  #n = void 0;
+  terminalFocusFired = Me();
+  #o = !1;
+  #r;
+  lastInteractionTime() {
+    return this.#e;
+  }
+  recordInteraction(e) {
+    if (e) this.#i();else this.#t = !0;
+  }
+  flushIfDirty() {
+    if (this.#t) this.#i();
+  }
+  #i() {
+    this.#e = Date.now(), this.#t = !1, this.interactionFired.emit();
+  }
+  resetBaseline() {
+    this.#e = Date.now(), this.#t = !1;
+  }
+  terminalFocus() {
+    return this.#n;
+  }
+  updateTerminalFocus(e) {
+    this.#n = e, this.terminalFocusFired.emit();
+  }
+  scrollDraining() {
+    return this.#o;
+  }
+  markScrollActivity() {
+    if (this.#o = !0, this.#r) clearTimeout(this.#r);
+    this.#r = setTimeout(() => {
+      this.#o = !1, this.#r = void 0;
+    }, on), this.#r.unref?.();
+  }
+  async waitForScrollIdle() {
+    while (this.#o) await new Promise(e => setTimeout(e, on));
+  }
+  reset() {
+    this.#e = Date.now(), this.#n = void 0, this.interactionFired.clear(), this.terminalFocusFired.clear();
+  }
+}
+var Ei = ["sdk_single_prompt_gate", "subagent_estimate", "subagent_final_turn"];
+class ke {
+  byAgent = new Map();
+  attemptsByAgent = new Map();
+  cappedFailuresByAgent = new Map();
+  armGateEventEmitted = new Set();
+  vetoedUnderPrompt = new Map();
+  sidecarIo = Promise.resolve();
+  rehydrateAttemptedSessions = new Set();
+  sidecarReadsAhead = new Map();
+  get(e) {
+    return this.byAgent.get(e);
+  }
+  has(e) {
+    return this.byAgent.has(e);
+  }
+  put(e, t) {
+    this.byAgent.set(e, t);
+  }
+  remove(e) {
+    this.byAgent.delete(e);
+  }
+  nextAttemptNumber(e) {
+    let t = (this.attemptsByAgent.get(e) ?? 0) + 1;
+    return this.attemptsByAgent.set(e, t), t;
+  }
+  consecutiveCountedFailures(e) {
+    return this.cappedFailuresByAgent.get(e) ?? 0;
+  }
+  recordCountedFailure(e) {
+    let t = (this.cappedFailuresByAgent.get(e) ?? 0) + 1;
+    return this.cappedFailuresByAgent.set(e, t), t;
+  }
+  clearCountedFailures(e) {
+    this.cappedFailuresByAgent.delete(e);
+  }
+  recordVeto(e, t) {
+    this.vetoedUnderPrompt.set(e, t);
+  }
+  isVetoedUnder(e, t) {
+    return this.vetoedUnderPrompt.get(e) === t;
+  }
+  latchArmGateEvent(e) {
+    if (this.armGateEventEmitted.has(e)) return !1;
+    return this.armGateEventEmitted.add(e), !0;
+  }
+  enqueueSidecarIo(e, t) {
+    return this.sidecarIo = this.sidecarIo.then(e, e).catch(t), this.sidecarIo;
+  }
+  sidecarIoSettled() {
+    return this.sidecarIo;
+  }
+  hasAttemptedRehydrate(e) {
+    return this.rehydrateAttemptedSessions.has(e);
+  }
+  markRehydrateAttempted(e) {
+    this.rehydrateAttemptedSessions.add(e);
+  }
+  keepSidecarReadAhead(e, t) {
+    this.sidecarReadsAhead.delete(e);
+    while (this.sidecarReadsAhead.size >= 8) {
+      let o = this.sidecarReadsAhead.keys().next().value;
+      if (o === void 0) break;
+      this.sidecarReadsAhead.delete(o);
+    }
+    this.sidecarReadsAhead.set(e, t);
+  }
+  takeSidecarReadAhead(e) {
+    let t = this.sidecarReadsAhead.get(e);
+    return this.sidecarReadsAhead.delete(e), t;
+  }
+  dropSidecarReadAhead(e) {
+    this.sidecarReadsAhead.delete(e);
+  }
+  forgetSubagentTelemetry(e) {
+    this.attemptsByAgent.delete(e), this.cappedFailuresByAgent.delete(e), this.vetoedUnderPrompt.delete(e);
+    for (let t of Ei) this.armGateEventEmitted.delete(`${e}:${t}`);
+  }
+}
+function T9e(e) {
+  return e ?? "main";
+}
+function C9e(rowUuids, t) {
+  return {
+    rowUuids: rowUuids,
+    instructions: t || void 0
+  };
+}
+function syn(e, t, o) {
+  if ((e.instructions || void 0) !== (o || void 0)) return !1;
+  return e.rowUuids.length <= t.length && e.rowUuids.every((item, index) => t[index] === item);
+}
+function Tmt(e, t) {
+  let o = e.findIndex(item => item.uuid === t);
+  if (o === -1) return null;
+  return e.slice(o + 1).filter(item => item.type !== "progress");
+}
+function C2r(e) {
+  return e.findLast(o => o.type === "user" && !o.isMeta && o.toolUseResult === void 0 && (typeof o.message.content === "string" || !o.message.content.some(item => item.type === "tool_result")))?.uuid ?? "";
+}
+function NBo(e, t, o) {
+  e.recordVeto(T9e(t), C2r(o));
+}
+class Ce {
+  #e = void 0;
+  get current() {
+    return this.#e;
+  }
+  adopt(e) {
+    this.#e = e;
+  }
+}
+class xe {
+  #e = null;
+  #t = null;
+  mainAgentId(e) {
+    return this.#e ??= go(e), this.#e;
+  }
+  projectDir() {
+    return this.#t;
+  }
+  replaceProjectDir(e) {
+    this.#t = e;
+  }
+}
+class Ae {
+  openToolUseId;
+  answeredThisSession = !1;
+  get answered() {
+    return this.answeredThisSession;
+  }
+  markAnswered() {
+    this.answeredThisSession = !0;
+  }
+  isOpenElsewhere(e) {
+    return this.openToolUseId !== void 0 && this.openToolUseId !== e;
+  }
+  open(e) {
+    this.openToolUseId = e;
+  }
+  closeFor(e) {
+    if (e !== void 0 && this.openToolUseId === e) this.openToolUseId = void 0;
+  }
+}
+class Re {
+  granted = !1;
+  isGranted() {
+    return this.granted;
+  }
+  grant() {
+    this.granted = !0;
+  }
+}
+class Pe {
+  inFlight = null;
+  startedForTurnEnd = !1;
+  reset() {
+    this.inFlight?.abort(), this.inFlight = null, this.startedForTurnEnd = !1;
+  }
+}
+class Le {
+  firstSyncPromise = null;
+  syncErrors = [];
+  syncedLaneOpened = !1;
+  removalsDeferredHere = new Set();
+  pendingTrashRemovals = [];
+  ensureBucketRoot = null;
+  deferredRelist = null;
+  missingEntry = {
+    resync: null,
+    resyncAt: -1 / 0,
+    swept: !1
+  };
+}
+class Ie {
+  abortController = null;
+  eligibleTurns = 0;
+  unusedInARow = 0;
+  askOnNextTurn() {
+    this.eligibleTurns = 0;
+  }
+  reset() {
+    this.abortController?.abort(), this.abortController = null;
+  }
+  arm() {
+    let abortController = new AbortController();
+    return this.abortController = abortController, abortController;
+  }
+}
+class Oe {
+  #e = void 0;
+  #t = void 0;
+  ccrSessionID() {
+    return this.#e;
+  }
+  latchCcrSessionID(e) {
+    this.#e = e;
+  }
+  syncEnabled() {
+    return this.#t;
+  }
+  latchSyncEnabled(e) {
+    return this.#t = e, e;
+  }
+}
+class Fe {
+  autonomousPreambleDelivered = !1;
+  lastLoopFileDelivered = null;
+  reset() {
+    this.autonomousPreambleDelivered = !1, this.lastLoopFileDelivered = null;
+  }
+}
+class Ee {
+  exchanges = [];
+  replace(e) {
+    this.exchanges = e;
+  }
+  append(question, response, fallbackNotice) {
+    this.exchanges = [...this.exchanges, {
+      question: question,
+      response: response,
+      ...(fallbackNotice && {
+        fallbackNotice: fallbackNotice
+      })
+    }].slice(-20);
+  }
+  pendingReopen = null;
+  reopenAway = !1;
+  get reopenPending() {
+    return this.pendingReopen !== null;
+  }
+  armReopen(e, t) {
+    if (this.pendingReopen) {
+      this.pendingReopen.owners.add(e);
+      return;
+    }
+    this.pendingReopen = {
+      owners: new Set([e]),
+      cancel: t()
+    };
+  }
+  clearPendingReopen(e) {
+    let pendingReopen = this.pendingReopen;
+    if (!pendingReopen) {
+      this.reopenAway = !1;
+      return;
+    }
+    if (e !== void 0) {
+      if (pendingReopen.owners.delete(e), pendingReopen.owners.size > 0) return;
+    }
+    pendingReopen.cancel(), this.pendingReopen = null, this.reopenAway = !1;
+  }
+  reopener = null;
+  setReopener(e) {
+    this.reopener = e;
+  }
+  get hasReopener() {
+    return this.reopener !== null;
+  }
+  reopenNow() {
+    return this.reopener?.() ?? !1;
+  }
+  inFlightQuestions = [];
+  get inFlight() {
+    return this.inFlightQuestions.at(-1) ?? null;
+  }
+  pendingBesidesTop() {
+    return this.inFlightQuestions.slice(0, -1);
+  }
+  setInFlight(e) {
+    if (!this.inFlightQuestions.includes(e)) this.inFlightQuestions = [...this.inFlightQuestions, e];
+  }
+  clearInFlight(e) {
+    if (this.inFlightQuestions.includes(e)) this.inFlightQuestions = this.inFlightQuestions.filter(item => item !== e);
+  }
+}
+var Di = 16;
+class De {
+  pending = null;
+  shownThisSession = !1;
+  changed = Me();
+  submitted = [];
+  submittedChanged = Me();
+  subscribe = this.changed.subscribe;
+  getSnapshot = () => this.pending;
+  subscribeSubmitted = this.submittedChanged.subscribe;
+  submit(e) {
+    if (this.shownThisSession) return;
+    if (this.submitted.length >= Di) this.submitted.shift();
+    this.submitted.push(e), this.submittedChanged.emit();
+  }
+  takeSubmitted() {
+    let submitted = this.submitted;
+    return this.submitted = [], submitted;
+  }
+  offer(e) {
+    if (this.shownThisSession) return;
+    this.pending = e, this.changed.emit();
+  }
+  dismiss() {
+    if (this.pending !== null) this.pending = null, this.changed.emit();
+  }
+  markShown() {
+    this.shownThisSession = !0;
+  }
+}
+class He {
+  lastEmittedAt = new Map();
+  shouldEmit(e, t, o) {
+    let r = this.lastEmittedAt.get(e) || 0;
+    if (t - r < o) return !1;
+    if (this.lastEmittedAt.size >= 100) {
+      let i = this.lastEmittedAt.keys().next().value;
+      if (i !== void 0) this.lastEmittedAt.delete(i);
+    }
+    return this.lastEmittedAt.set(e, t), !0;
+  }
+}
+var bBe = Symbol("permission-stash-evicted");
+class Be {
+  entriesCap;
+  evictedKeysCap;
+  lanes = {
+    write: new Map(),
+    read: new Map()
+  };
+  evicted = {
+    write: new Set(),
+    read: new Set()
+  };
+  poisoned = {
+    write: !1,
+    read: !1
+  };
+  identities = new Map();
+  identitiesEvicted = new Set();
+  identitiesPoisoned = !1;
+  constructor(e = 256, t = 1048576) {
+    this.entriesCap = e;
+    this.evictedKeysCap = t;
+  }
+  stash(e, t, o, r = "write") {
+    if (e === void 0) return;
+    let i = this.lanes[r],
+      s = this.evicted[r],
+      a = O(e, t);
+    if (s.has(a)) return;
+    let u = i.get(a);
+    if (u !== void 0) {
+      let d = new Set(o);
+      i.set(a, u.filter(item => d.has(item)));
+      return;
+    }
+    if (i.size >= this.entriesCap) {
+      let d = i.keys().next().value;
+      if (d !== void 0) {
+        if (i.delete(d), s.add(d), s.size > this.evictedKeysCap) {
+          this.poisoned[r] = !0;
+          let l = s.values().next().value;
+          if (l !== void 0) s.delete(l);
+        }
+      }
+    }
+    i.set(a, o);
+  }
+  holds(e, t, o = "write") {
+    return e !== void 0 && this.lanes[o].has(O(e, t));
+  }
+  stashIdentity(e, t, o) {
+    if (e === void 0) return;
+    let r = O(e, t),
+      i = this.identities.get(r);
+    if (i !== void 0) {
+      if (i === null || o === null || i.dev !== o.dev || i.ino !== o.ino) this.identities.set(r, null);
+      return;
+    }
+    if (this.identitiesEvicted.has(r) || this.identitiesPoisoned) {
+      this.identities.set(r, null);
+      return;
+    }
+    if (this.identities.size >= this.entriesCap) {
+      let s = this.identities.keys().next().value;
+      if (s !== void 0) {
+        if (this.identities.delete(s), this.identitiesEvicted.add(s), this.identitiesEvicted.size > this.evictedKeysCap) {
+          this.identitiesPoisoned = !0;
+          let a = this.identitiesEvicted.values().next().value;
+          if (a !== void 0) this.identitiesEvicted.delete(a);
+        }
+      }
+    }
+    this.identities.set(r, o);
+  }
+  takeIdentity(e, t) {
+    if (e === void 0) return;
+    let o = O(e, t),
+      r = this.identities.get(o);
+    return this.identities.delete(o), this.identitiesEvicted.delete(o), r;
+  }
+  consume(e, t, o = "write") {
+    if (e === void 0) return;
+    let r = this.lanes[o],
+      i = O(e, t),
+      s = r.get(i),
+      a = s === void 0 && (this.evicted[o].delete(i) || this.poisoned[o]),
+      u = `${e}\x00`;
+    for (let d of r.keys()) if (d.startsWith(u)) r.delete(d);
+    if (o === "read") {
+      for (let d of this.identities.keys()) if (d.startsWith(u)) this.identities.delete(d);
+    }
+    if (a) return bBe;
+    return s;
+  }
+}
+function O(e, t) {
+  return `${e}\x00${t}`;
+}
+var rn = "NoProjectDirectoryError";
+class IC extends Error {
+  name = rn;
+  constructor() {
+    super("This session has no working directory.");
+  }
+}
+function d8n(e) {
+  try {
+    return e instanceof Error && e.name === rn;
+  } catch {
+    return !1;
+  }
+}
+function vs(e) {
+  let {
+    project: project
+  } = e;
+  if (project === null) throw new IC();
+  return project;
+}
+function u8n(e) {
+  return sn({
+    kind: "root",
+    host: e.host,
+    id: e.id,
+    parentId: e.parentId
+  }, e.project);
+}
+function F(e, t) {
+  let o = t.originalCwd ?? e?.originalCwd,
+    r = t.projectRoot ?? e?.projectRoot,
+    i = t.cwd ?? e?.cwd;
+  if (o === void 0 && r === void 0 && i === void 0) return null;
+  if (o === void 0 || r === void 0 || i === void 0) throw new IC();
+  return {
+    originalCwd: xn(o),
+    projectRoot: xn(r),
+    cwd: xn(i)
+  };
+}
+function sn(e, t) {
+  let o = {
+      project: t === null ? null : F(null, t)
+    },
+    r = Me(),
+    observers = e.kind === "fork" ? e.root.observers : new ie(),
+    autonomousLoopPreamble = e.kind === "fork" ? e.root.autonomousLoopPreamble : new Fe(),
+    precompute = e.kind === "fork" ? e.root.precompute : new ke(),
+    u = {
+      get originalCwd() {
+        return vs(o).originalCwd;
+      },
+      get projectRoot() {
+        return vs(o).projectRoot;
+      },
+      get cwd() {
+        return vs(o).cwd;
+      }
+    },
+    d = {
+      host: e.kind === "fork" ? e.root.host : e.host,
+      get id() {
+        return e.kind === "fork" ? e.root.id : e.id;
+      },
+      get parentId() {
+        return e.kind === "fork" ? e.root.parentId : e.parentId;
+      },
+      get root() {
+        return e.kind === "fork" ? e.root : d;
+      },
+      get project() {
+        return o.project === null ? null : u;
+      },
+      observers: observers,
+      autonomousLoopPreamble: autonomousLoopPreamble,
+      btwHistory: e.kind === "fork" ? e.root.btwHistory : new Ee(),
+      ccrRecap: e.kind === "fork" ? e.root.ccrRecap : new Pe(),
+      conversationLatches: e.kind === "fork" ? e.root.conversationLatches : new se(),
+      costLedger: e.kind === "fork" ? e.root.costLedger : new ae(),
+      engineStore: e.kind === "fork" ? e.root.engineStore : new Ce(),
+      fableConsentSlots: e.kind === "fork" ? e.root.fableConsentSlots : new le(),
+      hookRegistry: e.kind === "fork" ? e.root.hookRegistry : new de(),
+      identity: e.kind === "fork" ? e.root.identity : new xe(),
+      invokedSkills: e.kind === "fork" ? e.root.invokedSkills : new ue(),
+      mcpSessionWiring: e.kind === "fork" ? e.root.mcpSessionWiring : new ce(),
+      modelSelection: e.kind === "fork" ? e.root.modelSelection : new pe(),
+      promptAssembly: e.kind === "fork" ? e.root.promptAssembly : new ge(),
+      promptSuggestion: e.kind === "fork" ? e.root.promptSuggestion : new Ie(),
+      pendingHint: e.kind === "fork" ? e.root.pendingHint : new De(),
+      pluginsSync: e.kind === "fork" ? e.root.pluginsSync : new Le(),
+      precompute: precompute,
+      requestJournal: e.kind === "fork" ? e.root.requestJournal : new fe(),
+      sessionCron: e.kind === "fork" ? e.root.sessionCron : new he(),
+      sessionFlags: e.kind === "fork" ? e.root.sessionFlags : new me(),
+      sessionRefsGate: e.kind === "fork" ? e.root.sessionRefsGate : new Oe(),
+      sessionScratch: e.kind === "fork" ? e.root.sessionScratch : new Se(),
+      surfaceCapabilities: e.kind === "fork" ? e.root.surfaceCapabilities : new ve(),
+      toolProgressThrottle: e.kind === "fork" ? e.root.toolProgressThrottle : new He(),
+      turnBudget: e.kind === "fork" ? e.root.turnBudget : new ye(),
+      userPresence: e.kind === "fork" ? e.root.userPresence : new be(),
+      workflowUsageConsent: e.kind === "fork" ? e.root.workflowUsageConsent : new Re(),
+      outsideReadPrompt: e.kind === "fork" ? e.root.outsideReadPrompt : new Ae(),
+      writePermissionStash: e.kind === "fork" ? e.root.writePermissionStash : new Be(),
+      subscribe(l) {
+        let f = r.subscribe(l);
+        if (e.kind !== "fork") return f;
+        let c = e.root,
+          {
+            id: id,
+            parentId: parentId
+          } = c,
+          m = c.subscribe(() => {
+            if (c.id === id && c.parentId === parentId) return;
+            id = c.id, parentId = c.parentId, l();
+          });
+        return () => {
+          f(), m();
+        };
+      },
+      setCwd(cwd) {
+        d.update({
+          project: {
+            cwd: cwd
+          }
+        });
+      },
+      withProject(l) {
+        return sn({
+          kind: "fork",
+          root: d.root
+        }, F(o.project, l));
+      },
+      update(l) {
+        let f = l.project === void 0 ? o.project : l.project === null ? null : F(o.project, l.project),
+          c = !1;
+        if (l.id !== void 0 || "parentId" in l) {
+          if (e.kind === "fork") throw Error("A withProject fork cannot re-identify the session \u2014 update the root session instead");
+          if (l.id !== void 0 && l.id !== e.id) e.id = l.id, c = !0;
+          if ("parentId" in l && l.parentId !== e.parentId) e.parentId = l.parentId, c = !0;
+        }
+        if (f?.originalCwd !== o.project?.originalCwd || f?.projectRoot !== o.project?.projectRoot || f?.cwd !== o.project?.cwd) o.project = f, c = !0;
+        if (c) r.emit();
+      }
+    };
+  return d;
+}
+class Nt {
+  #e;
+  #t = new WeakMap();
+  constructor(e) {
+    this.#e = e;
+  }
+  peek(e) {
+    return this.#t.get(e.root);
+  }
+  of(e) {
+    let t = e.root,
+      o = this.#t.get(t);
+    if (o !== void 0) return o;
+    let r = this.#e();
+    return this.#t.set(t, r), r;
+  }
+  drop(e) {
+    this.#t.delete(e.root);
+  }
+}
+class je {
+  #e = !1;
+  #t = null;
+  #n = !1;
+  #o = void 0;
+  #r = !1;
+  #i = !1;
+  #d = !1;
+  #a = !1;
+  #s = void 0;
+  #l = !1;
+  #u = !1;
+  #c = null;
+  #g = null;
+  #p = new Map();
+  #f = "cli";
+  #m = "fresh";
+  #v = void 0;
+  #k = !1;
+  #h = !1;
+  #y = [];
+  #S = !1;
+  #b = !1;
+  #x = !1;
+  #C = new Set();
+  #T = !1;
+  #A = "none";
+  #R = !1;
+  #P = !1;
+  #w = !1;
+  #M = !1;
+  #L = void 0;
+  #I = !1;
+  #O = !1;
+  #F = !1;
+  #E = null;
+  #D = !0;
+  #H = null;
+  #B = !1;
+  #j = null;
+  #U = !1;
+  #_ = !1;
+  #q = {};
+  #W = null;
+  #G = "none";
+  #N = void 0;
+  isInteractive() {
+    return this.#e;
+  }
+  replaceIsInteractive(e) {
+    this.#e = e;
+  }
+  printOutputFormat() {
+    return this.#t;
+  }
+  replacePrintOutputFormat(e) {
+    this.#t = e;
+  }
+  thinkingDisplayExplicit() {
+    return this.#n;
+  }
+  replaceThinkingDisplayExplicit(e) {
+    this.#n = e;
+  }
+  permissionPromptToolName() {
+    return this.#o;
+  }
+  replacePermissionPromptToolName(e) {
+    this.#o = e;
+  }
+  hasStreamingInput() {
+    return this.#r;
+  }
+  replaceHasStreamingInput(e) {
+    this.#r = e;
+  }
+  singleShotPrintSession() {
+    return this.#i;
+  }
+  replaceSingleShotPrintSession(e) {
+    this.#i = e;
+  }
+  printInputClosed() {
+    return this.#d;
+  }
+  markPrintInputClosed() {
+    this.#d = !0;
+  }
+  modelOverrideOptOutForSession() {
+    return this.#a;
+  }
+  replaceModelOverrideOptOutForSession(e) {
+    this.#a = e;
+  }
+  rendererMode() {
+    return this.#s;
+  }
+  replaceRendererMode(e) {
+    this.#s = e;
+  }
+  strictToolResultPairing() {
+    return this.#l;
+  }
+  replaceStrictToolResultPairing(e) {
+    this.#l = e;
+  }
+  restrictedSession() {
+    return this.#u;
+  }
+  replaceRestrictedSession(e) {
+    this.#u = e;
+  }
+  workspaceRestrictionState() {
+    return this.#c;
+  }
+  replaceWorkspaceRestrictionState(e) {
+    this.#c = e;
+  }
+  replaceWorkspaceRestrictionUnsubscribe(e) {
+    this.#g?.(), this.#g = e;
+  }
+  restrictedWorkspaceRoots() {
+    return this.#p;
+  }
+  addRestrictedWorkspaceRoot(e, t) {
+    this.#p.set(e, t);
+  }
+  clearRestrictedWorkspaceRoots() {
+    this.#p = new Map();
+  }
+  clientType() {
+    return this.#f;
+  }
+  replaceClientType(e) {
+    this.#f = e;
+  }
+  sessionStartType() {
+    return this.#m;
+  }
+  replaceSessionStartType(e) {
+    this.#m = e;
+  }
+  questionPreviewFormat() {
+    return this.#v;
+  }
+  replaceQuestionPreviewFormat(e) {
+    this.#v = e;
+  }
+  extendedQuestionsEnabled() {
+    return this.#k;
+  }
+  replaceExtendedQuestionsEnabled(e) {
+    this.#k = e;
+  }
+  questionOptionDescriptionsOptional() {
+    return this.#h;
+  }
+  replaceQuestionOptionDescriptionsOptional(e) {
+    this.#h = e;
+  }
+  replConfigArgv() {
+    return this.#y;
+  }
+  replaceReplConfigArgv(e) {
+    this.#y = e;
+  }
+  userMsgOptIn() {
+    return this.#S;
+  }
+  replaceUserMsgOptIn(e) {
+    this.#S = e;
+  }
+  searchToolsOptIn() {
+    return this.#b;
+  }
+  replaceSearchToolsOptIn(e) {
+    this.#b = e;
+  }
+  todoToolsOptIn() {
+    return this.#x;
+  }
+  replaceTodoToolsOptIn(e) {
+    this.#x = e;
+  }
+  toolsOmittedByLaunchList() {
+    return this.#C;
+  }
+  replaceToolsOmittedByLaunchList(e) {
+    this.#C = e;
+  }
+  wizardOperatorToolsEnabled() {
+    return this.#T;
+  }
+  replaceWizardOperatorToolsEnabled(e) {
+    this.#T = e;
+  }
+  pollEventIngress() {
+    return this.#A;
+  }
+  markPollEventIngress(e) {
+    this.#A = e;
+  }
+  ownEventDeliveryRequested() {
+    return this.#R;
+  }
+  markOwnEventDeliveryRequested() {
+    this.#R = !0;
+  }
+  sdkAgentProgressSummariesEnabled() {
+    return this.#P;
+  }
+  replaceSdkAgentProgressSummariesEnabled(e) {
+    this.#P = e;
+  }
+  sessionPersistenceDisabled() {
+    return this.#w;
+  }
+  replaceSessionPersistenceDisabled(e) {
+    this.#w = e;
+  }
+  diskless() {
+    return this.#M;
+  }
+  replaceDiskless(e) {
+    this.#M = e;
+  }
+  ccrSessionUrl() {
+    return this.#L;
+  }
+  replaceCcrSessionUrl(e) {
+    this.#L = e;
+  }
+  sessionBypassPermissionsMode() {
+    return this.#I;
+  }
+  replaceSessionBypassPermissionsMode(e) {
+    this.#I = e;
+  }
+  disableSlashCommands() {
+    return this.#O;
+  }
+  replaceDisableSlashCommands(e) {
+    this.#O = e;
+  }
+  disableFileMentions() {
+    return this.#F;
+  }
+  replaceDisableFileMentions(e) {
+    this.#F = e;
+  }
+  sessionUploadsDir() {
+    return this.#E;
+  }
+  replaceSessionUploadsDir(e) {
+    this.#E = e;
+  }
+  mayForwardHomeSettings() {
+    return this.#D;
+  }
+  replaceMayForwardHomeSettings(e) {
+    this.#D = e;
+  }
+  homeSettingsHostConsent() {
+    return this.#H;
+  }
+  replaceHomeSettingsHostConsent(e) {
+    this.#H = e;
+  }
+  scheduledTasksEnabled() {
+    return this.#B;
+  }
+  replaceScheduledTasksEnabled(e) {
+    this.#B = e;
+  }
+  initJsonSchema() {
+    return this.#j;
+  }
+  replaceInitJsonSchema(e) {
+    this.#j = e;
+  }
+  cliSessionConfigCarried() {
+    return this.#U;
+  }
+  replaceCliSessionConfigCarried(e) {
+    this.#U = e;
+  }
+  forkRestrictedLaunchConfig() {
+    return this.#_;
+  }
+  replaceForkRestrictedLaunchConfig(e) {
+    this.#_ = e;
+  }
+  forkReplayLaunchConfig() {
+    return this.#q;
+  }
+  spareClaimState() {
+    return this.#G;
+  }
+  replaceSpareClaimState(e) {
+    this.#G = e;
+  }
+  spareParkedAtMs() {
+    return this.#N;
+  }
+  replaceSpareParkedAtMs(e) {
+    this.#N = e;
+  }
+  replaceForkReplayLaunchConfig(e) {
+    this.#q = e;
+  }
+  projectConfigRoot() {
+    return this.#W;
+  }
+  replaceProjectConfigRoot(e) {
+    this.#W = e;
+  }
+  reset() {
+    this.#e = !1, this.#t = null, this.#G = "none", this.#N = void 0, this.#n = !1, this.#o = void 0, this.#r = !1, this.#i = !1, this.#d = !1, this.#a = !1, this.#s = void 0, this.#l = !1, this.#u = !1, this.#c = null, this.replaceWorkspaceRestrictionUnsubscribe(null), this.#p = new Map(), this.#f = "cli", this.#m = "fresh", this.#v = void 0, this.#k = !1, this.#h = !1, this.#y = [], this.#S = !1, this.#b = !1, this.#x = !1, this.#C = new Set(), this.#T = !1, this.#A = "none", this.#R = !1, this.#P = !1, this.#w = !1, this.#M = !1, this.#L = void 0, this.#I = !1, this.#O = !1, this.#F = !1, this.#E = null, this.#D = !0, this.#H = null, this.#B = !1, this.#j = null, this.#U = !1, this.#_ = !1, this.#q = {}, this.#W = null;
+  }
+}
+class Ue {
+  #e = void 0;
+  #t = [];
+  #n = void 0;
+  #o = void 0;
+  #r = null;
+  #i = null;
+  #d = !1;
+  #a = an();
+  #s = null;
+  #l = !1;
+  flagSettingsPath() {
+    return this.#e;
+  }
+  replaceFlagSettingsPath(e) {
+    this.#e = e;
+  }
+  flagAgentsFilePaths() {
+    return this.#t;
+  }
+  replaceFlagAgentsFilePaths(e) {
+    this.#t = e;
+  }
+  flagSettingsExpectedContent() {
+    return this.#n;
+  }
+  replaceFlagSettingsExpectedContent(e) {
+    this.#n = e;
+  }
+  flagSettingsFilePinnedContent() {
+    return this.#o;
+  }
+  replaceFlagSettingsFilePinnedContent(e) {
+    this.#o = e;
+  }
+  flagSettingsInline() {
+    return this.#r;
+  }
+  replaceFlagSettingsInline(e) {
+    this.#r = e;
+  }
+  parentManagedSettings() {
+    return this.#i;
+  }
+  replaceParentManagedSettings(e) {
+    this.#i = e;
+  }
+  parentManagedSettingsInvalid() {
+    return this.#d;
+  }
+  replaceParentManagedSettingsInvalid(e) {
+    this.#d = e;
+  }
+  allowedSettingSources() {
+    return this.#a;
+  }
+  replaceAllowedSettingSources(e) {
+    this.#a = e;
+  }
+  allowedSettingSourcesWithoutRepoDirSources() {
+    let e = this.#a;
+    if (this.#s?.of !== e) this.#s = {
+      of: e,
+      result: e.filter(item => item !== "projectSettings" && item !== "localSettings")
+    };
+    return this.#s.result;
+  }
+  useCoworkPlugins() {
+    return this.#l;
+  }
+  replaceUseCoworkPlugins(e) {
+    this.#l = e;
+  }
+  reset() {
+    this.#e = void 0, this.#t = [], this.#n = void 0, this.#o = void 0, this.#r = null, this.#i = null, this.#d = !1, this.#a = an(), this.#s = null, this.#l = !1;
+  }
+}
+function an() {
+  return ["userSettings", "projectSettings", "localSettings", "flagSettings", "policySettings"];
+}
+class _e {
+  #e = [];
+  #t = [];
+  #n = [];
+  #o = void 0;
+  #r = new Map();
+  #i = new Map();
+  #d = [];
+  #a = [];
+  #s = !1;
+  #l = void 0;
+  #u = void 0;
+  #c = void 0;
+  inlinePlugins() {
+    return this.#e;
+  }
+  replaceInlinePlugins(e) {
+    this.#e = e;
+  }
+  inlinePluginsNoMcp() {
+    return this.#t;
+  }
+  replaceInlinePluginsNoMcp(e) {
+    this.#t = e;
+  }
+  inlinePluginUrls() {
+    return this.#n;
+  }
+  replaceInlinePluginUrls(e) {
+    this.#n = e;
+  }
+  syncedPluginDirs() {
+    return this.#o ?? [];
+  }
+  syncedPluginDirsRegistered() {
+    return this.#o !== void 0;
+  }
+  syncedPluginAttestation(e) {
+    return this.#r.get(e);
+  }
+  replaceSyncedPluginDirs(e, t = new Map()) {
+    this.#o = e, this.#r = t, this.#i = this.#g(this.#i);
+  }
+  clearSyncedPluginDirs() {
+    this.#o = void 0, this.#r = new Map(), this.#i = new Map();
+  }
+  attestedOfficialPluginMarketplace(e) {
+    return this.#i.get(e);
+  }
+  replaceAttestedOfficialPluginIds(e) {
+    this.#i = this.#g(e);
+  }
+  #g(e) {
+    let t = new Set([...this.#r.values()].map(item => `${item.pluginName}@${item.marketplace}`));
+    return new Map([...e].filter(([o, r]) => t.has(`${o.slice(0, o.lastIndexOf("@"))}@${r}`)));
+  }
+  additionalDirectoriesForClaudeMd() {
+    return this.#d;
+  }
+  replaceAdditionalDirectoriesForClaudeMd(e) {
+    this.#d = e;
+  }
+  allowedChannels() {
+    return this.#a;
+  }
+  replaceAllowedChannels(e) {
+    this.#a = e;
+  }
+  hasDevChannels() {
+    return this.#s;
+  }
+  replaceHasDevChannels(e) {
+    this.#s = e;
+  }
+  sessionSkillAllowlist() {
+    return this.#l;
+  }
+  replaceSessionSkillAllowlist(e) {
+    this.#l = e;
+  }
+  chromeFlagOverride() {
+    return this.#u;
+  }
+  replaceChromeFlagOverride(e) {
+    this.#u = e;
+  }
+  teammateAgentId() {
+    return this.#c;
+  }
+  replaceTeammateAgentId(e) {
+    this.#c = e;
+  }
+  reset() {
+    this.#e = [], this.#t = [], this.#n = [], this.clearSyncedPluginDirs(), this.#d = [], this.#a = [], this.#s = !1, this.#l = void 0, this.#u = void 0, this.#c = void 0;
+  }
+}
+class We {
+  #e = null;
+  #t = null;
+  modelStrings() {
+    return this.#e;
+  }
+  replaceModelStrings(e) {
+    this.#e = e;
+  }
+  invalidate() {
+    this.#e = null;
+  }
+  admin3PSteeringSnapshot() {
+    return this.#t;
+  }
+  recordAdmin3PSteeringSnapshot(e) {
+    this.#t = e;
+  }
+  reset() {
+    this.#e = null, this.#t = null;
+  }
+}
+var ln = [];
+class Ge {
+  #e = [];
+  #t = [];
+  #n = void 0;
+  errorLog() {
+    return this.#e;
+  }
+  recordError(e) {
+    if (this.#e.length >= 100) this.#e.shift();
+    this.#e.push(e);
+  }
+  recordSlowOperation(e, t) {
+    return;
+  }
+  slowOperations() {
+    if (this.#t.length === 0) return ln;
+    let e = Date.now();
+    if (this.#t.some(item => e - item.timestamp >= 1e4)) {
+      if (this.#t = this.#t.filter(item => e - item.timestamp < 1e4), this.#t.length === 0) return ln;
+    }
+    return this.#t;
+  }
+  recordDevBarAlert(e) {
+    return;
+  }
+  devBarAlert() {
+    let e = this.#n;
+    if (e && Date.now() - e.timestamp >= 60000) {
+      this.#n = void 0;
+      return;
+    }
+    return e;
+  }
+  reset() {
+    this.#e = [], this.#t = [], this.#n = void 0;
+  }
+}
+function dn() {
+  return {
+    rateTokens: null,
+    rateLastRefillMs: null,
+    featureOkLogged: !1,
+    reportedDropReasons: new Set()
+  };
+}
+class Ne {
+  #e = null;
+  #t = null;
+  #n = null;
+  #o = null;
+  #r = null;
+  #i = null;
+  #d = null;
+  #a = null;
+  #s = null;
+  #l = null;
+  #u = null;
+  #c = null;
+  #g = null;
+  #p = [];
+  #f = null;
+  #m = dn();
+  #v = null;
+  #k = null;
+  #h = null;
+  #y = {
+    direct: null,
+    proxied: null
+  };
+  #S = null;
+  #b = null;
+  installMeter(e, t, {
+    omitUnits = !1
+  } = {}) {
+    this.#e = e;
+    let r = i => omitUnits ? void 0 : i;
+    this.#t = t("claude_code.session.count", {
+      description: "Count of CLI sessions started"
+    }), this.#n = t("claude_code.lines_of_code.count", {
+      description: "Count of lines of code modified, with the 'type' attribute indicating whether lines were added or removed and the 'model' attribute indicating which model made the change"
+    }), this.#o = t("claude_code.pull_request.count", {
+      description: "Number of pull requests created"
+    }), this.#r = t("claude_code.commit.count", {
+      description: "Number of git commits created"
+    }), this.#i = t("claude_code.cost.usage", {
+      description: "Cost of the Claude Code session",
+      unit: r("USD")
+    }), this.#d = t("claude_code.token.usage", {
+      description: "Number of tokens used",
+      unit: r("tokens")
+    }), this.#a = t("claude_code.code_edit_tool.decision", {
+      description: "Count of code editing tool permission decisions (accept/reject) for Edit, Write, and NotebookEdit tools"
+    }), this.#s = t("claude_code.active_time.total", {
+      description: "Total active time in seconds",
+      unit: r("s")
+    });
+  }
+  meter() {
+    return this.#e;
+  }
+  sessionCounter() {
+    return this.#t;
+  }
+  locCounter() {
+    return this.#n;
+  }
+  prCounter() {
+    return this.#o;
+  }
+  commitCounter() {
+    return this.#r;
+  }
+  costCounter() {
+    return this.#i;
+  }
+  tokenCounter() {
+    return this.#d;
+  }
+  codeEditToolDecisionCounter() {
+    return this.#a;
+  }
+  activeTimeCounter() {
+    return this.#s;
+  }
+  statsStore() {
+    return this.#l;
+  }
+  replaceStatsStore(e) {
+    this.#l = e;
+  }
+  loggerProvider() {
+    return this.#u;
+  }
+  replaceLoggerProvider(e) {
+    this.#u = e;
+  }
+  eventLogger() {
+    return this.#c;
+  }
+  eventLoggerOwner() {
+    return this.#g;
+  }
+  attachEventLogger(e, t) {
+    if (this.#c = e, this.#g = e ? t : null, !e) return;
+    let o = this.#p;
+    if (this.#p = null, o) for (let r of o) e.emit(r);
+  }
+  bufferPendingEvent(e) {
+    if (this.#p === null || this.#p.length >= 100) return !1;
+    return this.#p.push(e), !0;
+  }
+  closeWindow(e) {
+    this.#p = null, this.#f = e;
+  }
+  windowCloseCause() {
+    return this.#f;
+  }
+  isWindowOpen() {
+    return this.#p !== null;
+  }
+  hostOtel() {
+    return this.#m;
+  }
+  meterProvider() {
+    return this.#v;
+  }
+  replaceMeterProvider(e) {
+    this.#v = e;
+  }
+  tracerProvider() {
+    return this.#k;
+  }
+  replaceTracerProvider(e) {
+    this.#k = e;
+  }
+  cachedTelemetryResource() {
+    return this.#h;
+  }
+  replaceCachedTelemetryResource(e) {
+    this.#h = e;
+  }
+  cachedOtlpHttpAgentFactory(e) {
+    return this.#y[e ? "proxied" : "direct"];
+  }
+  replaceCachedOtlpHttpAgentFactory(e, t) {
+    this.#y[e ? "proxied" : "direct"] = t;
+  }
+  inClusterOtlpTrustRoots() {
+    return this.#S;
+  }
+  replaceInClusterOtlpTrustRoots(e) {
+    this.#S = e;
+  }
+  inClusterOtlpAgentFactory() {
+    return this.#b;
+  }
+  replaceInClusterOtlpAgentFactory(e) {
+    this.#b = e;
+  }
+  reset() {
+    this.#e = null, this.#t = null, this.#n = null, this.#o = null, this.#r = null, this.#i = null, this.#d = null, this.#a = null, this.#s = null, this.#l = null, this.#u = null, this.#c = null, this.#g = null, this.#p = [], this.#f = null, this.#m = dn(), this.#v = null, this.#k = null, this.#h = null, this.#y = {
+      direct: null,
+      proxied: null
+    }, this.#S = null, this.#b = null;
+  }
+}
+class Ke {
+  #e = void 0;
+  #t = void 0;
+  #n = !1;
+  #o = void 0;
+  #r = void 0;
+  #i = new Set();
+  #d = void 0;
+  #a = null;
+  #s = null;
+  #l = 0;
+  #u = !1;
+  #c = () => !1;
+  #g = null;
+  #p = void 0;
+  #f = null;
+  #m = null;
+  sessionIngressToken() {
+    return this.#e;
+  }
+  replaceSessionIngressToken(e) {
+    this.#e = e;
+  }
+  oauthTokenFromFd() {
+    return this.#t;
+  }
+  replaceOauthTokenFromFd(e) {
+    this.#t = e;
+  }
+  oauthTokenFromBgSnapshot() {
+    return this.#n;
+  }
+  replaceOauthTokenFromBgSnapshot(e) {
+    this.#n = e;
+  }
+  oauthScopesFromFd() {
+    return this.#o;
+  }
+  replaceOauthScopesFromFd(e) {
+    this.#o = e;
+  }
+  apiKeyFromFd() {
+    return this.#r;
+  }
+  replaceApiKeyFromFd(e) {
+    this.#r = e;
+  }
+  descriptorAnnouncementConsumed(e) {
+    return this.#i.has(e);
+  }
+  markDescriptorAnnouncementConsumed(e) {
+    this.#i.add(e);
+  }
+  gatewayTokenFromDescriptor() {
+    return this.#d;
+  }
+  replaceGatewayTokenFromDescriptor(e) {
+    this.#d = e;
+  }
+  resetFdCredentialState() {
+    this.#e = void 0, this.#t = void 0, this.#n = !1, this.#o = void 0, this.#r = void 0;
+  }
+  gatewayAuth() {
+    return this.#a;
+  }
+  replaceGatewayAuth(e) {
+    this.#a = e;
+  }
+  gatewayServerProcess() {
+    return this.#u;
+  }
+  replaceGatewayServerProcess(e) {
+    this.#u = e;
+  }
+  gatewayRequiredByHostPolicy() {
+    return this.#c();
+  }
+  replaceGatewayRequiredByHostPolicyReader(e) {
+    this.#c = e;
+  }
+  authenticatedAccount() {
+    return this.#s;
+  }
+  authenticatedAccountEpoch() {
+    return this.#l;
+  }
+  stampAuthenticatedAccount(e) {
+    let t = this.#s;
+    if (e !== null && t !== null && e.accountUuid === t.accountUuid && e.emailAddress === t.emailAddress && e.organizationUuid === t.organizationUuid) return;
+    this.#l += 1, this.#s = e;
+  }
+  startupPolicySnapshot() {
+    return this.#p;
+  }
+  replaceStartupPolicySnapshot(e) {
+    this.#p = e;
+  }
+  gatewayRefreshInFlight() {
+    return this.#g;
+  }
+  replaceGatewayRefreshInFlight(e) {
+    this.#g = e;
+  }
+  sdkOAuthTokenRefreshCallback() {
+    return this.#f;
+  }
+  replaceSdkOAuthTokenRefreshCallback(e) {
+    this.#f = e;
+  }
+  hostAuthTokenRefreshCallback() {
+    return this.#m;
+  }
+  replaceHostAuthTokenRefreshCallback(e) {
+    this.#m = e;
+  }
+  resetForTests() {
+    this.#e = null, this.#t = null, this.#n = !1, this.#o = void 0, this.#r = null, this.#i.clear(), this.#d = void 0, this.#a = null, this.#s = null, this.#l = 0, this.#u = !1, this.#c = () => !1, this.#g = null, this.#p = void 0, this.#f = null, this.#m = null;
+  }
+}
+class Ve {
+  #e = void 0;
+  #t = !1;
+  #n = !1;
+  #o;
+  directConnectServerUrl() {
+    return this.#e;
+  }
+  replaceDirectConnectServerUrl(e) {
+    this.#e = e;
+  }
+  connectNonBlocking() {
+    return this.#t;
+  }
+  replaceConnectNonBlocking(e) {
+    this.#t = e;
+  }
+  strictConfig() {
+    return this.#n;
+  }
+  replaceStrictConfig(e) {
+    this.#n = e;
+  }
+  registerEnsureConnectedClient(e) {
+    this.#o = e;
+  }
+  ensureConnectedClient() {
+    return this.#o;
+  }
+  reset() {
+    this.#e = void 0, this.#t = !1, this.#n = !1;
+  }
+}
+class Je {
+  #e = null;
+  #t = new Map();
+  #n = new Map();
+  #o = new Set();
+  #r = !1;
+  #i = !1;
+  #d = !1;
+  #a = !1;
+  #s = !1;
+  #l = !1;
+  #u = !1;
+  #c = !1;
+  #g = !1;
+  #p = new Set();
+  #f = !1;
+  #m = !1;
+  #v = !1;
+  #k = !1;
+  #h = new Map();
+  #y = void 0;
+  #S = !1;
+  #b = void 0;
+  #x = void 0;
+  #C = new Map();
+  #T = new Map();
+  promptCache1hAllowlist() {
+    return this.#e;
+  }
+  replacePromptCache1hAllowlist(e) {
+    this.#e = e;
+  }
+  thinkingTypeOverrides() {
+    return this.#t;
+  }
+  recordThinkingTypeOverride(e, t) {
+    this.#t.set(e, t);
+  }
+  servedModelsByRequestedModel() {
+    return this.#n;
+  }
+  recordServedModels(e, t) {
+    this.#n.set(e, t);
+  }
+  effortUnsupportedModels() {
+    return this.#o;
+  }
+  markEffortUnsupported(e) {
+    this.#o.add(e);
+  }
+  midConvCachePromotionRejected() {
+    return this.#r;
+  }
+  markMidConvCachePromotionRejected() {
+    this.#r = !0;
+  }
+  perTurnEffortOkEmitted() {
+    return this.#i;
+  }
+  markPerTurnEffortOkEmitted() {
+    this.#i = !0;
+  }
+  lateToolAdditionsOkEmitted() {
+    return this.#d;
+  }
+  markLateToolAdditionsOkEmitted() {
+    this.#d = !0;
+  }
+  toolResultScreeningOkEmitted() {
+    return this.#a;
+  }
+  markToolResultScreeningOkEmitted() {
+    this.#a = !0;
+  }
+  toolChangeHeaderRefused() {
+    return this.#s;
+  }
+  markToolChangeHeaderRefused() {
+    this.#s = !0;
+  }
+  inlineToolsRefused() {
+    return this.#l;
+  }
+  markInlineToolsRefused() {
+    this.#l = !0;
+  }
+  inlineToolsOkEmitted() {
+    return this.#u;
+  }
+  markInlineToolsOkEmitted() {
+    this.#u = !0;
+  }
+  thinkingResumptionRefused() {
+    return this.#c;
+  }
+  markThinkingResumptionRefused() {
+    this.#c = !0;
+  }
+  thinkingHighlightsRefused() {
+    return this.#g;
+  }
+  markThinkingHighlightsRefused() {
+    this.#g = !0;
+  }
+  toolChangeUnsupportedModels() {
+    return this.#p;
+  }
+  markToolChangeUnsupportedModel(e) {
+    this.#p.add(e);
+  }
+  internalModelFieldsRefused() {
+    return this.#f;
+  }
+  markInternalModelFieldsRefused() {
+    this.#f = !0;
+  }
+  internalModelFieldsRefusalAnnounced() {
+    return this.#m;
+  }
+  markInternalModelFieldsRefusalAnnounced() {
+    this.#m = !0;
+  }
+  thirdPartyServerClassifierRefused() {
+    return this.#v;
+  }
+  markThirdPartyServerClassifierRefused() {
+    this.#v = !0;
+  }
+  threadsHeldForServerClassifier() {
+    return this.#k;
+  }
+  markThreadsHeldForServerClassifier() {
+    this.#k = !0;
+  }
+  autoModeUnavailableResponse(e) {
+    return this.#h.get(e);
+  }
+  autoModeUnavailableResponsesInARow(e) {
+    let t = 0;
+    for (let o of this.#h.values()) if (o.runKey === e) t++;
+    return t;
+  }
+  noteAutoModeUnavailableResponse(e, t) {
+    this.#h.set(e, t);
+  }
+  clearAutoModeUnavailableResponses(e) {
+    for (let [t, o] of this.#h) if (o.runKey === e) this.#h.delete(t);
+  }
+  setAutoModeUnavailableStopNotice(e) {
+    this.#y = e;
+  }
+  autoModeUnavailableStopNotice() {
+    return this.#y;
+  }
+  observedGateway() {
+    return this.#b;
+  }
+  serverClassifierFallbackChoice() {
+    return this.#x;
+  }
+  setServerClassifierFallbackChoice(e) {
+    this.#x = e;
+  }
+  clearServerClassifierFallbackChoice() {
+    this.#x = void 0;
+  }
+  noteObservedGateway(e) {
+    this.#b ??= e;
+  }
+  takeServerClassifierFallbackAnnouncement() {
+    if (!this.#v || this.#S) return !1;
+    return this.#S = !0, !0;
+  }
+  inferenceProfileBackingModels() {
+    return this.#C;
+  }
+  recordInferenceProfileBackingModel(e, t) {
+    this.#C.set(e, t);
+  }
+  foundryDeploymentCapabilities() {
+    return this.#T;
+  }
+  reset() {
+    this.#e = null, this.#t = new Map(), this.#n = new Map(), this.#o = new Set(), this.#r = !1, this.#i = !1, this.#d = !1, this.#a = !1, this.#s = !1, this.#l = !1, this.#u = !1, this.#c = !1, this.#g = !1, this.#p = new Set(), this.#f = !1, this.#m = !1, this.#v = !1, this.#k = !1, this.#h.clear(), this.#y = void 0, this.#S = !1, this.#b = void 0, this.#x = void 0, this.#C = new Map(), this.#T = new Map();
+  }
+}
+class ze {
+  #e = !1;
+  #t = !1;
+  longContext1mCreditsBlocked() {
+    return this.#e;
+  }
+  replaceLongContext1mCreditsBlocked(e) {
+    this.#e = e;
+  }
+  fableCreditsRequired() {
+    return this.#t;
+  }
+  replaceFableCreditsRequired(e) {
+    this.#t = e;
+  }
+  reset() {
+    this.#e = !1, this.#t = !1;
+  }
+}
+class Qe {
+  #e = !1;
+  #t = !1;
+  #n = un;
+  #o = Me();
+  selectorGate() {
+    return this.#e;
+  }
+  selectorGateEverOn() {
+    return this.#t;
+  }
+  replaceSelectorGate(e) {
+    this.#e = e, this.#t ||= e;
+  }
+  inheritSelectorGateEverOn() {
+    this.#t = !0;
+  }
+  resampleSelectorGate(e) {
+    let t = this.#e;
+    if (this.#e = e, this.#t ||= e, t !== e) this.#o.emit(e);
+  }
+  subscribeSelectorGateChanged(e) {
+    return this.#o.subscribe(e);
+  }
+  replaceHostGateSubscription(e) {
+    let t = this.#n;
+    this.#n = e, t();
+  }
+  dropHostGateSubscription() {
+    this.replaceHostGateSubscription(un);
+  }
+}
+function un() {}
+class Xe {
+  started = !1;
+  stagingReaped = !1;
+  claim() {
+    if (this.started) return !1;
+    return this.started = !0, !0;
+  }
+  claimStagingReap() {
+    if (this.stagingReaped) return !1;
+    return this.stagingReaped = !0, !0;
+  }
+}
+class $e {
+  backgroundHousekeeping;
+  launchOptions;
+  settingsSource;
+  extensionsConfig;
+  modelStringsCache;
+  diagnostics;
+  telemetryHandles;
+  credentialSlots;
+  mcpProcessWiring;
+  requestLatches;
+  accountCreditLatches;
+  proactivity;
+  constructor(e) {
+    this.backgroundHousekeeping = e.backgroundHousekeeping, this.launchOptions = e.launchOptions, this.settingsSource = e.settingsSource, this.extensionsConfig = e.extensionsConfig, this.modelStringsCache = e.modelStringsCache, this.diagnostics = e.diagnostics, this.telemetryHandles = e.telemetryHandles, this.credentialSlots = e.credentialSlots, this.mcpProcessWiring = e.mcpProcessWiring, this.requestLatches = e.requestLatches, this.accountCreditLatches = e.accountCreditLatches, this.proactivity = e.proactivity;
+  }
+}
+function cn() {
+  return new $e({
+    backgroundHousekeeping: new Xe(),
+    launchOptions: new je(),
+    settingsSource: new Ue(),
+    extensionsConfig: new _e(),
+    modelStringsCache: new We(),
+    diagnostics: new Ge(),
+    telemetryHandles: new Ne(),
+    credentialSlots: new Ke(),
+    mcpProcessWiring: new Ve(),
+    requestLatches: new Je(),
+    accountCreditLatches: new ze(),
+    proactivity: new Qe()
+  });
+}
+function Bi(e = dKr()) {
+  return u8n({
+    host: cn(),
+    id: tyn() ?? Ide(),
+    project: {
+      originalCwd: e,
+      projectRoot: e,
+      cwd: e
+    }
+  });
+}
+var S = Bi(HBo);
+function j() {
+  return n();
+}
+function n() {
+  return b()?.session ?? S;
+}
+function di(e) {
+  return e.of(S.host);
+}
+function p() {
+  let e = b();
+  return e?.session ? void 0 : e;
+}
+var b = () => {
+  return;
+};
+function x5o(e) {
+  b = e;
+}
+function Y() {
+  return p()?.sessionId ?? n().id;
+}
+function qe() {
+  let e = p()?.sessionId;
+  if (e) return go(e);
+  let t = n();
+  return t.identity.mainAgentId(t.id);
+}
+function gn() {
+  let e = n();
+  return e.requestJournal.promptIndex() > 0 || e.sessionScratch.chromeAvailabilityStagesLogged().size > 0;
+}
+function R2r(e = {}) {
+  let t = n(),
+    parentId_2 = t.id;
+  t.sessionScratch.forgetPlanSlug(parentId_2), t.identity.replaceProjectDir(null);
+  let r = gn();
+  t.requestJournal.replacePromptIndex(0), t.requestJournal.replaceLastCancelledAPIMessageId(null), t.requestJournal.clearLastMainThreadRequest(), t.requestJournal.replaceLastMainRequestId(void 0), t.modelSelection.forgetRefusalFallbackOccurred(), t.sessionFlags.forgetPendingContextCompacted(), t.sessionScratch.replacePendingBranchLinks(), t.sessionScratch.replaceChromeAvailabilityStagesLogged(r);
+  let i = mn(),
+    id_2 = Ide();
+  return t.costLedger.scopeTo(id_2), t.update({
+    id: id_2,
+    ...(e.setCurrentAsParent && {
+      parentId: parentId_2
+    })
+  }), fn(t, "clear", i), t.id;
+}
+function fn(e, t, o) {
+  let r = Sn.of(e);
+  if (o) r.emit(e.id, t, o);else r.emit(e.id, t);
+}
+function hn(e) {
+  yn.of(e).emit(vs(e).originalCwd);
+}
+function SBe() {
+  let e = p();
+  return e ? e.parentSessionId : n().parentId;
+}
+function mh(id_3, t, o = null, r) {
+  let i = n(),
+    project_2 = r ? F(i.project, vn(r)) : r,
+    a,
+    parentId_3 = i.parentId;
+  if (i.id !== id_3) {
+    if (i.sessionScratch.forgetPlanSlug(i.id), i.requestJournal.replaceLastCancelledAPIMessageId(null), i.requestJournal.clearLastMainThreadRequest(id_3), t !== "fork") i.requestJournal.replaceLastMainRequestId(void 0);
+    i.modelSelection.forgetRefusalFallbackOccurred(), i.sessionFlags.forgetPendingContextCompacted(), i.sessionScratch.replacePendingBranchLinks(), i.sessionScratch.replaceChromeAvailabilityStagesLogged(gn()), a = mn(), parentId_3 = void 0;
+  }
+  if (i.identity.replaceProjectDir(o), i.update({
+    id: id_3,
+    parentId: parentId_3,
+    ...(project_2 !== void 0 && {
+      project: project_2
+    })
+  }), fn(i, t, a), r?.originalCwd !== void 0) hn(i);
+}
+function mn() {
+  let e = n(),
+    t = e.modelSelection.refusalFallbackModelLatch();
+  if (e.modelSelection.unlatchRefusalFallbackModel(), !t || e.modelSelection.mainLoopModelOverride() !== t.fallbackModel) return;
+  return e.modelSelection.overrideMainLoopModel(t.previousOverride), {
+    appStateModel: t.previousAppStateModel,
+    forSessionValue: t.previousModelForSession,
+    overrideValue: t.previousOverride,
+    restoredToExplicitOverride: t.previousOverride !== void 0,
+    fallbackModel: t.fallbackModel
+  };
+}
+var Sn = new Nt(() => Me());
+function Qd(e) {
+  return Sn.of(n()).subscribe(e);
+}
+function p8n() {
+  return n().sessionScratch.humanAttachmentDigests();
+}
+function A2r() {
+  return n().sessionScratch.inboundAttachmentFiles();
+}
+function iyn() {
+  return n().sessionScratch.inboundAttachmentDownloads();
+}
+function fre() {
+  let e = p();
+  return e ? e.sessionProjectDir : n().identity.projectDir();
+}
+function we() {
+  return p()?.originalCwd ?? vs(n()).originalCwd;
+}
+function hm() {
+  if (p()?.originalCwd === void 0 && n().project === null) return null;
+  return we();
+}
+function N2() {
+  return N9e();
+}
+function sT() {
+  return we() === Hi();
+}
+function kr() {
+  return p()?.projectRoot ?? vs(n()).projectRoot;
+}
+function aA() {
+  if (p()?.projectRoot === void 0 && n().project === null) return null;
+  return kr();
+}
+function vn(e) {
+  return e;
+}
+function U1t(e) {
+  let t = n();
+  if (t.update({
+    project: vn(e)
+  }), e.originalCwd !== void 0) hn(t);
+}
+function iT(originalCwd) {
+  U1t({
+    originalCwd: originalCwd
+  });
+}
+var yn = new Nt(() => Me());
+function x2r(e) {
+  return yn.of(n()).subscribe(e);
+}
+function Dde(projectRoot) {
+  U1t({
+    projectRoot: projectRoot
+  });
+}
+function VI() {
+  return vs(n()).cwd;
+}
+function wBe(cwd_2) {
+  U1t({
+    cwd: cwd_2
+  });
+}
+function B1t() {
+  n().costLedger.restartClock();
+}
+function Txe() {
+  return n().costLedger.sessionStartTime();
+}
+function P2r() {
+  return n().host.mcpProcessWiring.directConnectServerUrl();
+}
+function sQ() {
+  return n().host.mcpProcessWiring.connectNonBlocking();
+}
+function I2r(e) {
+  n().host.mcpProcessWiring.replaceConnectNonBlocking(e);
+}
+function O2r() {
+  return n().sessionFlags.teardownUnwindRequested();
+}
+function f8n(e) {
+  n().sessionFlags.replaceTeardownUnwindRequested(e);
+}
+function M2r() {
+  return n().sessionFlags.backgroundAutoModeSetupInFlight();
+}
+function m8n(e) {
+  n().sessionFlags.replaceBackgroundAutoModeSetupInFlight(e);
+}
+function D2r() {
+  return n().sessionFlags.deferredToolStubGateLatch();
+}
+function L2r(e) {
+  n().sessionFlags.replaceDeferredToolStubGateLatch(e);
+}
+function N2r() {
+  return n().sessionFlags.verifySkillRolloutGateLatch();
+}
+function H2r(e) {
+  n().sessionFlags.replaceVerifySkillRolloutGateLatch(e);
+}
+function F2r() {
+  return n().sessionFlags.commitSkillRolloutGateLatch();
+}
+function $2r(e) {
+  n().sessionFlags.replaceCommitSkillRolloutGateLatch(e);
+}
+function U2r() {
+  return n().sessionFlags.memoryToolsShapeLatch();
+}
+function ayn(e) {
+  n().sessionFlags.replaceMemoryToolsShapeLatch(e);
+}
+function j1t(e) {
+  n().sessionFlags.armPendingContextCompacted(e);
+}
+function B2r() {
+  return n().sessionFlags.consumePendingContextCompacted();
+}
+function j2r() {
+  n().sessionFlags.forgetPendingContextCompacted();
+}
+function OC() {
+  return n().host.mcpProcessWiring.strictConfig();
+}
+function W2r(e) {
+  n().host.mcpProcessWiring.replaceStrictConfig(e);
+}
+function z2r() {
+  return n().host.launchOptions.cliSessionConfigCarried();
+}
+function W1t(e) {
+  n().host.launchOptions.replaceCliSessionConfigCarried(e);
+}
+function qI() {
+  return n().host.launchOptions.forkRestrictedLaunchConfig();
+}
+function G2r(e) {
+  n().host.launchOptions.replaceForkRestrictedLaunchConfig(e);
+}
+function SK() {
+  return n().host.launchOptions.forkReplayLaunchConfig();
+}
+function V2r(e) {
+  n().host.launchOptions.replaceForkReplayLaunchConfig(e);
+}
+function z1t() {
+  return n().mcpSessionWiring.approvedServers();
+}
+function lyn(e, t) {
+  n().mcpSessionWiring.approveServers(e, t);
+}
+function q2r(e, t) {
+  n().costLedger.recordApiDuration(e, t);
+}
+function K2r(e, t, o) {
+  n().costLedger.recordCost(e, t, o);
+}
+function fg() {
+  return n().costLedger.totalCostUSD();
+}
+function KI() {
+  return n().costLedger.totalAPIDuration();
+}
+function mre() {
+  return n().costLedger.totalDuration();
+}
+function g8n() {
+  return n().costLedger.totalAPIDurationWithoutRetries();
+}
+function h8n() {
+  return n().costLedger.totalToolDuration();
+}
+function y8n(e) {
+  n().costLedger.recordToolDuration(e);
+}
+function R9e() {
+  return n().host.telemetryHandles.statsStore();
+}
+function Y2r(e) {
+  n().host.telemetryHandles.replaceStatsStore(e);
+}
+function gre(e) {
+  n().userPresence.recordInteraction(e);
+}
+function hre() {
+  n().userPresence.flushIfDirty();
+}
+function BY(e) {
+  return n().userPresence.interactionFired.subscribe(e);
+}
+function X2r() {
+  n().userPresence.resetBaseline();
+}
+function J2r(e, t) {
+  n().costLedger.recordLinesChanged(e, t);
+}
+function D_e() {
+  return n().costLedger.totalLinesAdded();
+}
+function L_e() {
+  return n().costLedger.totalLinesRemoved();
+}
+function Cmt() {
+  return n().costLedger.totalInputTokens();
+}
+function Lp() {
+  return n().costLedger.totalOutputTokens();
+}
+function Rmt() {
+  return n().costLedger.totalCacheReadInputTokens();
+}
+function Amt() {
+  return n().costLedger.totalCacheCreationInputTokens();
+}
+function Q2r() {
+  return n().costLedger.totalWebSearchRequests();
+}
+function xmt() {
+  return Lp() - n().turnBudget.outputTokensAtTurnStart();
+}
+function Pmt() {
+  return n().turnBudget.budget();
+}
+function Z2r() {
+  n().costLedger.markUnknownModelCost();
+}
+function _8n() {
+  return n().costLedger.hasUnknownModelCost();
+}
+function N$() {
+  return n().requestJournal.lastMainRequestId();
+}
+function eGr(e) {
+  n().requestJournal.replaceLastMainRequestId(e);
+}
+function cyn() {
+  n().requestJournal.replaceLastMainRequestId(void 0);
+}
+function wK() {
+  return n().requestJournal.lastMainThreadCacheTtlMs();
+}
+function Imt() {
+  return n().requestJournal.lastMainThreadRequestAt();
+}
+function tGr(e) {
+  n().requestJournal.replaceLastMainThreadCacheTtlMs(e);
+}
+function dyn() {
+  return n().requestJournal.lastMainThreadContextTokens();
+}
+function N_e(e) {
+  n().requestJournal.replaceLastMainThreadContextTokens(e);
+}
+function nGr(e) {
+  let t = n();
+  if (e.sessionId !== void 0 && e.sessionId === t.id) t.requestJournal.applyResumeSeed(e);else t.requestJournal.stageResumeSeed(e);
+}
+function jY() {
+  return n().requestJournal.lastApiCompletionTimestamp();
+}
+function uyn(e) {
+  n().requestJournal.replaceLastApiCompletionTimestamp(e);
+}
+function Omt(e, {
+  keepsCachedPrefix = !1
+} = {}) {
+  let requestJournal = n().requestJournal;
+  if (requestJournal.replacePendingPostCompaction(!0), requestJournal.replaceLastMainThreadContextTokens(e), !keepsCachedPrefix) requestJournal.replaceLastMainThreadRequest(null, null);
+}
+function rGr() {
+  let e = n(),
+    t = e.requestJournal.pendingPostCompaction();
+  return e.requestJournal.replacePendingPostCompaction(!1), t;
+}
+function Gm() {
+  return n().userPresence.lastInteractionTime();
+}
+var G1t = 60000;
+function oGr(e) {
+  n().userPresence.updateTerminalFocus(e);
+}
+function H_e() {
+  return n().userPresence.terminalFocus();
+}
+function sGr(e) {
+  return n().userPresence.terminalFocusFired.subscribe(e);
+}
+function iGr() {
+  let e = H_e();
+  if (e !== void 0) return e;
+  return Date.now() - Gm() < G1t;
+}
+function b8n() {
+  n().userPresence.markScrollActivity();
+}
+function A9e() {
+  return n().userPresence.scrollDraining();
+}
+async function V1t() {
+  return n().userPresence.waitForScrollIdle();
+}
+function lA() {
+  return n().costLedger.modelUsage();
+}
+function aGr(e) {
+  return n().costLedger.usageForModel(e);
+}
+function fd() {
+  return n().modelSelection.mainLoopModelOverride();
+}
+function BD() {
+  return n().modelSelection.initialMainLoopModel();
+}
+function fp(e) {
+  n().modelSelection.overrideMainLoopModel(e);
+}
+function lGr() {
+  return n().modelSelection.mainLoopEffortState();
+}
+function q1t(e) {
+  n().modelSelection.replaceMainLoopEffortState(e);
+}
+function cGr(e) {
+  n().modelSelection.markRefusalFallbackOccurred(e);
+}
+function H$() {
+  return n().modelSelection.refusalFallbackOccurred();
+}
+function Mmt(e) {
+  n().modelSelection.armRefusalFallbackHeader(e);
+}
+function Cxe() {
+  return n().modelSelection.refusalFallbackHeaderArmed();
+}
+function dGr() {
+  n().modelSelection.armSilentLaneFromServer();
+}
+function S8n() {
+  return n().modelSelection.silentLaneServerArmed();
+}
+function uGr() {
+  return n().modelSelection.refusalFallbackLatchOriginRequestId();
+}
+function Dmt(e) {
+  let t = n(),
+    o = t.modelSelection.refusalFallbackModelLatch();
+  if (o && t.modelSelection.mainLoopModelOverride() === o.fallbackModel) {
+    t.modelSelection.replaceRefusalFallbackModelLatch({
+      ...o,
+      fallbackModel: e.fallbackModel
+    });
+    return;
+  }
+  t.modelSelection.replaceRefusalFallbackModelLatch(e);
+}
+function yre() {
+  n().modelSelection.unlatchRefusalFallbackModel();
+}
+function iQ() {
+  return n().modelSelection.refusalFallbackModelLatch();
+}
+function pGr(previousOverride) {
+  let t = n(),
+    o = t.modelSelection.refusalFallbackModelLatch();
+  if (o) t.modelSelection.replaceRefusalFallbackModelLatch({
+    ...o,
+    previousOverride: previousOverride
+  });
+}
+function fGr() {
+  n().modelSelection.forgetRefusalFallbackOccurred();
+}
+function mGr(e) {
+  n().surfaceCapabilities.markSdkDialogHostActive(e);
+}
+function _j() {
+  return n().surfaceCapabilities.sdkDialogHostActive();
+}
+function w8n(e, t) {
+  n().surfaceCapabilities.declareDialogKinds(e, t);
+}
+function aQ() {
+  return n().surfaceCapabilities.sdkSupportedDialogKinds();
+}
+function gGr() {
+  let e = n();
+  if (e.surfaceCapabilities.sdkSupportedDialogKinds() === void 0) return "none";
+  return e.surfaceCapabilities.sdkSupportedDialogKindsSource() ?? "none";
+}
+function hGr(e) {
+  n().surfaceCapabilities.declarePerTaskStopAffordance(e);
+}
+function K1t() {
+  return n().surfaceCapabilities.sdkPerTaskStopAffordance() === !0;
+}
+function yGr(e) {
+  n().surfaceCapabilities.declareRapidFollowupPreempt(e);
+}
+function _Gr() {
+  return n().surfaceCapabilities.sdkRapidFollowupPreempt() === !0;
+}
+function F$() {
+  return n().host.launchOptions.replConfigArgv();
+}
+function Rxe(e) {
+  n().host.launchOptions.replaceReplConfigArgv(e);
+}
+function bGr(e) {
+  n().modelSelection.replaceInitialMainLoopModel(e);
+}
+function SGr() {
+  return n().modelSelection.availabilityFallbackChain();
+}
+function wGr(e) {
+  n().modelSelection.replaceAvailabilityFallbackChain(e);
+}
+function vGr() {
+  return n().modelSelection.initialModelSettingLayer();
+}
+function kGr(e) {
+  n().modelSelection.replaceInitialModelSettingLayer(e);
+}
+function EGr() {
+  return n().modelSelection.resolvedOrgDefault();
+}
+function vBe(e) {
+  n().modelSelection.replaceResolvedOrgDefault(e);
+}
+function TGr() {
+  return n().modelSelection.initialEnvDefaultModel();
+}
+function CGr(e) {
+  n().modelSelection.replaceInitialEnvDefaultModel(e);
+}
+function ym() {
+  return p()?.sdkBetas ?? n().surfaceCapabilities.sdkBetas();
+}
+function RGr(e) {
+  n().surfaceCapabilities.replaceSdkBetas(e);
+}
+function Lmt() {
+  return n().host.accountCreditLatches.longContext1mCreditsBlocked();
+}
+function AGr(e) {
+  n().host.accountCreditLatches.replaceLongContext1mCreditsBlocked(e);
+}
+function xGr() {
+  return n().host.accountCreditLatches.fableCreditsRequired();
+}
+function pyn(e) {
+  n().host.accountCreditLatches.replaceFableCreditsRequired(e);
+}
+function v8n() {
+  return n().fableConsentSlots.fableConsentSessionFallback();
+}
+function k8n(e) {
+  n().fableConsentSlots.replaceFableConsentSessionFallback(e);
+}
+function PGr() {
+  return n().fableConsentSlots.sessionConsentKey();
+}
+function E8n(e) {
+  n().fableConsentSlots.replaceSessionConsentKey(e);
+}
+function Lde() {
+  return n().host.credentialSlots.sdkOAuthTokenRefreshCallback();
+}
+function Nmt(e) {
+  n().host.credentialSlots.replaceSdkOAuthTokenRefreshCallback(e);
+}
+function kBe() {
+  return n().host.credentialSlots.hostAuthTokenRefreshCallback();
+}
+function Y1t(e) {
+  n().host.credentialSlots.replaceHostAuthTokenRefreshCallback(e);
+}
+function IGr(e) {
+  S.costLedger.registerSaver(e);
+}
+function OGr(e) {
+  n().costLedger.runSaver(e, S.costLedger);
+}
+function MGr(e) {
+  S.costLedger.registerTranscriptRecorder(e);
+}
+function DGr(e, t) {
+  n().costLedger.runTranscriptRecorder(e, t, S.costLedger);
+}
+function LGr() {
+  let e = n();
+  return e.costLedger.belongsTo(e.id);
+}
+function X1t() {
+  let e = n();
+  e.costLedger.claim(e.id);
+}
+function NGr() {
+  let e = n();
+  e.costLedger.scopeTo(e.id);
+}
+function EBe() {
+  let e = n();
+  e.costLedger.reset(e.id), e.requestJournal.replacePromptId(null);
+}
+function HGr(e) {
+  let t = n();
+  t.costLedger.restore(e, t.id);
+}
+function Fo() {
+  return n().host.launchOptions.projectConfigRoot();
+}
+function FGr(e) {
+  n().host.launchOptions.replaceProjectConfigRoot(e);
+}
+function Hmt() {
+  return n().host.modelStringsCache.modelStrings();
+}
+function fyn(e) {
+  n().host.modelStringsCache.replaceModelStrings(e);
+}
+function $Gr() {
+  n().host.modelStringsCache.invalidate();
+}
+function UGr(e) {
+  n().host.modelStringsCache.recordAdmin3PSteeringSnapshot(e);
+}
+function BGr() {
+  return n().host.modelStringsCache.admin3PSteeringSnapshot();
+}
+function x9e() {
+  return n().host.telemetryHandles.loggerProvider();
+}
+function T8n(e) {
+  n().host.telemetryHandles.replaceLoggerProvider(e);
+}
+function Axe() {
+  return n().host.telemetryHandles.eventLogger();
+}
+function C8n() {
+  return n().host.telemetryHandles.eventLoggerOwner();
+}
+function R8n(e, t = "org") {
+  n().host.telemetryHandles.attachEventLogger(e, t);
+}
+function jGr(e) {
+  return n().host.telemetryHandles.bufferPendingEvent(e);
+}
+function A8n(e) {
+  n().host.telemetryHandles.closeWindow(e);
+}
+function WGr() {
+  return n().host.telemetryHandles.windowCloseCause();
+}
+function J1t() {
+  return n().host.telemetryHandles.isWindowOpen();
+}
+function Fmt() {
+  return n().host.telemetryHandles.hostOtel();
+}
+function TBe() {
+  return n().host.telemetryHandles.tracerProvider();
+}
+function x8n(e) {
+  n().host.telemetryHandles.replaceTracerProvider(e);
+}
+function myn() {
+  return n().host.requestLatches.foundryDeploymentCapabilities();
+}
+function zGr() {
+  return n().host.telemetryHandles.cachedTelemetryResource();
+}
+function GGr(e) {
+  n().host.telemetryHandles.replaceCachedTelemetryResource(e);
+}
+function P8n(e) {
+  return n().host.telemetryHandles.cachedOtlpHttpAgentFactory(e);
+}
+function VGr(e, t) {
+  n().host.telemetryHandles.replaceCachedOtlpHttpAgentFactory(e, t);
+}
+function Te() {
+  return !n().host.launchOptions.isInteractive();
+}
+function $mt() {
+  return n().host.launchOptions.spareClaimState();
+}
+function MC() {
+  return n().host.launchOptions.spareClaimState() === "parked";
+}
+function qGr() {
+  let launchOptions = n().host.launchOptions;
+  launchOptions.replaceSpareClaimState("parked"), launchOptions.replaceSpareParkedAtMs(Date.now());
+}
+function KGr() {
+  let launchOptions_2 = n().host.launchOptions,
+    t = launchOptions_2.spareParkedAtMs();
+  return launchOptions_2.replaceSpareClaimState("claiming"), t === void 0 ? void 0 : Date.now() - t;
+}
+function YGr() {
+  n().host.launchOptions.replaceSpareClaimState("claimed");
+}
+function XGr() {
+  n().host.launchOptions.replaceSpareClaimState("failed");
+}
+function P9e() {
+  let e = n().host.launchOptions.spareClaimState();
+  return e === "parked" || e === "claiming" || e === "failed";
+}
+function yu() {
+  return n().host.launchOptions.isInteractive();
+}
+function JGr(e) {
+  n().host.launchOptions.replaceIsInteractive(e);
+}
+function lQ() {
+  return n().host.launchOptions.printOutputFormat();
+}
+function QGr(e) {
+  n().host.launchOptions.replacePrintOutputFormat(e);
+}
+function Q1t() {
+  return n().host.launchOptions.thinkingDisplayExplicit();
+}
+function Z1t(e) {
+  n().host.launchOptions.replaceThinkingDisplayExplicit(e);
+}
+function nM() {
+  return n().host.launchOptions.permissionPromptToolName();
+}
+function ZGr(e) {
+  n().host.launchOptions.replacePermissionPromptToolName(e);
+}
+function md() {
+  return n().surfaceCapabilities.attacherCaps();
+}
+function eVr(e) {
+  n().surfaceCapabilities.replaceAttacherCaps(e);
+}
+function bj(e) {
+  return n().surfaceCapabilities.attacherCapsChanged.subscribe(e);
+}
+function tVr() {
+  return n().surfaceCapabilities.rvSupervisorLinkLive();
+}
+function ejt(e) {
+  n().surfaceCapabilities.replaceRvSupervisorLinkLive(e);
+}
+function nVr(e) {
+  return n().surfaceCapabilities.rvSupervisorLinkChanged.subscribe(e);
+}
+function Umt() {
+  return n().host.launchOptions.hasStreamingInput();
+}
+function rVr(e) {
+  n().host.launchOptions.replaceHasStreamingInput(e);
+}
+function oVr({
+  hasStreamingInput: hasStreamingInput,
+  sdkUrl: sdkUrl
+}) {
+  return !hasStreamingInput && !sdkUrl;
+}
+function ji(e) {
+  if (e.entrypoint === "terminal") return e.ownEventsRequested ? "terminal" : "none";
+  if (e.hasStreamingInput || e.sdkUrl) return "host";
+  if (e.ownEventsRequested) return "evals";
+  return "none";
+}
+function sVr(e) {
+  n().host.launchOptions.replaceSingleShotPrintSession(e);
+}
+function CBe() {
+  return n().host.launchOptions.singleShotPrintSession();
+}
+function iVr() {
+  n().host.launchOptions.markPrintInputClosed();
+}
+function tjt() {
+  return n().host.launchOptions.clientType();
+}
+function aVr(e) {
+  n().host.launchOptions.replaceClientType(e);
+}
+function xxe() {
+  return n().host.launchOptions.sdkAgentProgressSummariesEnabled();
+}
+function lVr(e) {
+  n().host.launchOptions.replaceSdkAgentProgressSummariesEnabled(e);
+}
+function njt() {
+  return n().host.launchOptions.rendererMode();
+}
+function cVr(e) {
+  n().host.launchOptions.replaceRendererMode(e);
+}
+function rjt() {
+  return n().host.launchOptions.strictToolResultPairing();
+}
+function cA() {
+  return n().host.launchOptions.restrictedSession();
+}
+function ojt(e) {
+  n().host.launchOptions.replaceRestrictedSession(e);
+}
+function sjt() {
+  return n().host.launchOptions.workspaceRestrictionState()?.restriction ?? null;
+}
+function $$() {
+  return sjt() !== null;
+}
+function Ui(e) {
+  for (let [t, o] of n().host.launchOptions.restrictedWorkspaceRoots()) if (e === t || e.startsWith(t.endsWith(pn) ? t : t + pn)) return o;
+  return null;
+}
+function dVr(e) {
+  return Ui(e) !== null;
+}
+function uVr(e) {
+  if (sjt()?.gateKeys.includes(e)) return !0;
+  for (let t of n().host.launchOptions.restrictedWorkspaceRoots().values()) if (t.gateKeys.includes(e)) return !0;
+  return !1;
+}
+function Oy() {
+  return n().sessionFlags.memoryToggledOff();
+}
+function WY(e) {
+  n().sessionFlags.replaceMemoryToggledOff(e);
+}
+function I8n() {
+  return n().sessionFlags.restoredMemoryPause();
+}
+function Bmt(e) {
+  n().sessionFlags.replaceRestoredMemoryPause(e);
+}
+function pVr(e) {
+  if (e === !1) throw Error("setWizardOperatorToolsEnabled(false) is test-only: the wizard latch is one-way in production");
+  n().host.launchOptions.replaceWizardOperatorToolsEnabled(e);
+}
+function fVr() {
+  return n().host.launchOptions.wizardOperatorToolsEnabled();
+}
+function O8n() {
+  return n().host.launchOptions.pollEventIngress();
+}
+function mVr() {
+  return O8n() !== "none";
+}
+function _i(e) {
+  n().host.launchOptions.markPollEventIngress(e);
+}
+function qi() {
+  n().host.launchOptions.markOwnEventDeliveryRequested();
+}
+function gVr(e) {
+  let t = ji(e);
+  if (t !== "none") _i(t);
+  if (e.ownEventsRequested) qi();
+}
+function pH() {
+  return n().host.launchOptions.userMsgOptIn();
+}
+function F_e(e) {
+  n().host.launchOptions.replaceUserMsgOptIn(e);
+}
+function hVr() {
+  return n().host.launchOptions.searchToolsOptIn();
+}
+function yVr(e) {
+  n().host.launchOptions.replaceSearchToolsOptIn(e);
+}
+function _Vr() {
+  return n().host.launchOptions.todoToolsOptIn();
+}
+function bVr(e) {
+  n().host.launchOptions.replaceTodoToolsOptIn(e);
+}
+function SVr() {
+  return n().host.launchOptions.toolsOmittedByLaunchList();
+}
+function wVr(e) {
+  n().host.launchOptions.replaceToolsOmittedByLaunchList(new Set(e));
+}
+function vVr() {
+  return n().host.launchOptions.sessionStartType();
+}
+function ijt(e) {
+  n().host.launchOptions.replaceSessionStartType(e);
+}
+function M8n() {
+  return n().host.launchOptions.questionPreviewFormat();
+}
+function D8n(e) {
+  n().host.launchOptions.replaceQuestionPreviewFormat(e);
+}
+function Nde() {
+  return n().host.launchOptions.extendedQuestionsEnabled();
+}
+function kVr(e) {
+  n().host.launchOptions.replaceExtendedQuestionsEnabled(e);
+}
+function EVr() {
+  return n().host.launchOptions.questionOptionDescriptionsOptional();
+}
+function TVr(e) {
+  n().host.launchOptions.replaceQuestionOptionDescriptionsOptional(e);
+}
+function L8n() {
+  return n().sessionScratch.agentColorMap();
+}
+function U$() {
+  return n().host.settingsSource.flagSettingsPath();
+}
+function CVr(e) {
+  n().host.settingsSource.replaceFlagSettingsPath(e);
+}
+function RBe() {
+  return n().host.settingsSource.flagAgentsFilePaths();
+}
+function RVr(e) {
+  n().host.settingsSource.replaceFlagAgentsFilePaths(e);
+}
+function YI() {
+  return n().host.settingsSource.flagSettingsExpectedContent();
+}
+function AVr(e) {
+  n().host.settingsSource.replaceFlagSettingsExpectedContent(e);
+}
+function Hde() {
+  return n().host.settingsSource.flagSettingsFilePinnedContent();
+}
+function xVr(e) {
+  n().host.settingsSource.replaceFlagSettingsFilePinnedContent(e);
+}
+function aT() {
+  return n().host.settingsSource.flagSettingsInline();
+}
+function jD(e) {
+  n().host.settingsSource.replaceFlagSettingsInline(e);
+}
+function PVr() {
+  return n().host.settingsSource.parentManagedSettings();
+}
+function IVr(e) {
+  n().host.settingsSource.replaceParentManagedSettings(e);
+}
+function ABe() {
+  return n().host.settingsSource.parentManagedSettingsInvalid();
+}
+function OVr(e) {
+  n().host.settingsSource.replaceParentManagedSettingsInvalid(e);
+}
+function Pxe() {
+  let e = b();
+  return e ? e.secrets.sessionIngressToken : n().host.credentialSlots.sessionIngressToken();
+}
+function Ixe(e) {
+  let t = b();
+  if (t) t.secrets.sessionIngressToken = e;else n().host.credentialSlots.replaceSessionIngressToken(e);
+}
+function Sj() {
+  return n().host.credentialSlots.oauthTokenFromFd();
+}
+function B$(e) {
+  n().host.credentialSlots.replaceOauthTokenFromFd(e);
+}
+function H2() {
+  return n().host.credentialSlots.oauthTokenFromBgSnapshot();
+}
+function jmt(e) {
+  n().host.credentialSlots.replaceOauthTokenFromBgSnapshot(e);
+}
+function MVr() {
+  return n().host.credentialSlots.oauthScopesFromFd();
+}
+function Wmt(e) {
+  n().host.credentialSlots.replaceOauthScopesFromFd(e);
+}
+function N8n() {
+  return n().host.credentialSlots.apiKeyFromFd();
+}
+function H8n(e) {
+  n().host.credentialSlots.replaceApiKeyFromFd(e);
+}
+function DVr(e) {
+  return n().host.credentialSlots.descriptorAnnouncementConsumed(e);
+}
+function gyn(e) {
+  n().host.credentialSlots.markDescriptorAnnouncementConsumed(e);
+}
+function F8n() {
+  return n().host.credentialSlots.gatewayTokenFromDescriptor();
+}
+function hyn(e) {
+  n().host.credentialSlots.replaceGatewayTokenFromDescriptor(e);
+}
+function LVr() {
+  n().host.credentialSlots.resetFdCredentialState();
+}
+function wo() {
+  return n().host.credentialSlots.gatewayAuth();
+}
+function NVr() {
+  let e = n().host.credentialSlots.gatewayAuth();
+  return !!e && e.expiresAt <= Date.now();
+}
+function fH(e) {
+  return !!e && !e.unpinned;
+}
+function yyn(e) {
+  let t = e?.hostVerdict;
+  return t !== void 0 && "verified" in t && t.verified;
+}
+function HVr(e) {
+  return fH(e) || yyn(e);
+}
+function FVr(e) {
+  n().host.credentialSlots.replaceGatewayServerProcess(e);
+}
+function ajt() {
+  return n().host.credentialSlots.gatewayServerProcess();
+}
+function xBe(e) {
+  n().host.credentialSlots.replaceGatewayRequiredByHostPolicyReader(e);
+}
+function ljt() {
+  return n().host.credentialSlots.gatewayRequiredByHostPolicy();
+}
+function zY(e) {
+  n().host.credentialSlots.replaceGatewayAuth(e);
+}
+function $Vr() {
+  return n().host.credentialSlots.authenticatedAccount();
+}
+function Fde(e) {
+  n().host.credentialSlots.stampAuthenticatedAccount(e);
+}
+function PBe() {
+  return n().host.credentialSlots.authenticatedAccountEpoch();
+}
+function UVr() {
+  return n().host.credentialSlots.startupPolicySnapshot();
+}
+function BVr(e) {
+  n().host.credentialSlots.replaceStartupPolicySnapshot(e);
+}
+function $_e() {
+  return n().host.credentialSlots.gatewayRefreshInFlight();
+}
+function $8n(e) {
+  n().host.credentialSlots.replaceGatewayRefreshInFlight(e);
+}
+function jVr(e) {
+  n().requestJournal.replaceLastAPIRequest(e);
+}
+function cjt() {
+  return n().requestJournal.lastAPIRequest();
+}
+function _yn(e) {
+  n().requestJournal.replaceLastCancelledAPIMessageId(e);
+}
+function U_e() {
+  return n().requestJournal.lastCancelledAPIMessageId();
+}
+function WVr(e) {
+  n().requestJournal.replaceLastAPIRequestMessages(e);
+}
+function byn(e) {
+  n().requestJournal.replaceLastClassifierRequests(e);
+}
+function U8n() {
+  return n().requestJournal.lastClassifierRequests();
+}
+function djt(e) {
+  let t = p();
+  if (t) t.cachedClaudeMdContent = e;else n().sessionFlags.replaceCachedClaudeMdContent(e);
+}
+function zVr() {
+  let e = p();
+  return e ? e.cachedClaudeMdContent : n().sessionFlags.cachedClaudeMdContent();
+}
+function Oxe() {
+  let {
+    settingsSource: settingsSource,
+    launchOptions: launchOptions_3
+  } = n().host;
+  return launchOptions_3.workspaceRestrictionState()?.restriction ? settingsSource.allowedSettingSourcesWithoutRepoDirSources() : settingsSource.allowedSettingSources();
+}
+function zmt() {
+  return n().host.settingsSource.allowedSettingSources();
+}
+function GVr(e) {
+  n().host.settingsSource.replaceAllowedSettingSources(e);
+}
+function ujt() {
+  return Te() && n().host.launchOptions.clientType() !== "claude-vscode";
+}
+function F2(e) {
+  n().host.extensionsConfig.replaceInlinePlugins(e);
+}
+function Vv() {
+  return n().host.extensionsConfig.inlinePlugins();
+}
+function pjt(e) {
+  n().host.extensionsConfig.replaceInlinePluginsNoMcp(e);
+}
+function mH() {
+  return n().host.extensionsConfig.inlinePluginsNoMcp();
+}
+function VVr(e) {
+  n().host.extensionsConfig.replaceInlinePluginUrls(e);
+}
+function Mxe() {
+  return n().host.extensionsConfig.inlinePluginUrls();
+}
+function I9e(e, t) {
+  n().host.extensionsConfig.replaceSyncedPluginDirs(e, t);
+}
+function fjt(e) {
+  return n().host.extensionsConfig.syncedPluginAttestation(e);
+}
+function qVr(e) {
+  n().host.extensionsConfig.replaceAttestedOfficialPluginIds(e);
+}
+function KVr(e) {
+  return n().host.extensionsConfig.attestedOfficialPluginMarketplace(e);
+}
+function Syn() {
+  return n().host.extensionsConfig.syncedPluginDirsRegistered();
+}
+function Dxe() {
+  return n().pluginsSync.syncedLaneOpened;
+}
+function YVr() {
+  n().pluginsSync.syncedLaneOpened = !0;
+}
+function XVr() {
+  n().host.extensionsConfig.clearSyncedPluginDirs(), n().pluginsSync.syncedLaneOpened = !1, n().pluginsSync.removalsDeferredHere.clear();
+}
+function IBe() {
+  return n().host.extensionsConfig.syncedPluginDirs();
+}
+function wyn(e) {
+  n().sessionFlags.replaceAccountSkillsSyncEnabled(e);
+}
+function mjt() {
+  return n().sessionFlags.accountSkillsSyncEnabled();
+}
+function vyn(e) {
+  n().sessionFlags.replaceSkillsSyncVetoed(e);
+}
+function DC() {
+  return n().sessionFlags.skillsSyncVetoed();
+}
+function JVr(e) {
+  n().sessionFlags.replaceAccountPluginsSyncEnabled(e);
+}
+function O9e() {
+  return n().sessionFlags.accountPluginsSyncEnabled();
+}
+function QVr(e) {
+  n().sessionFlags.replacePluginsSyncVetoed(e);
+}
+function cQ() {
+  return n().sessionFlags.pluginsSyncVetoed();
+}
+function ZVr(e) {
+  n().host.extensionsConfig.replaceChromeFlagOverride(e);
+}
+function OBe() {
+  return n().host.extensionsConfig.chromeFlagOverride();
+}
+function eqr(e) {
+  n().host.extensionsConfig.replaceTeammateAgentId(e);
+}
+function dA() {
+  return n().host.extensionsConfig.teammateAgentId();
+}
+function tqr(e) {
+  n().sessionFlags.replaceOnboardingShownThisSession(e);
+}
+function nqr() {
+  return n().sessionFlags.onboardingShownThisSession();
+}
+function GY(e) {
+  let t = n();
+  t.host.settingsSource.replaceUseCoworkPlugins(e), i8n.of(t.host).invalidateAll();
+}
+function gjt() {
+  return n().host.settingsSource.useCoworkPlugins();
+}
+function rqr(e) {
+  n().host.launchOptions.replaceDisableSlashCommands(e);
+}
+function Gg() {
+  return n().host.launchOptions.disableSlashCommands();
+}
+function oqr() {
+  return n().host.launchOptions.disableFileMentions();
+}
+function hjt() {
+  return n().host.launchOptions.sessionUploadsDir();
+}
+function yjt(e) {
+  n().host.launchOptions.replaceSessionBypassPermissionsMode(e);
+}
+function vK() {
+  return n().host.launchOptions.sessionBypassPermissionsMode();
+}
+function VY(e) {
+  n().host.launchOptions.replaceScheduledTasksEnabled(e);
+}
+function _jt() {
+  return n().host.launchOptions.scheduledTasksEnabled();
+}
+function U_() {
+  return p()?.sessionCronTasks ?? n().sessionCron.tasks();
+}
+function $de(e) {
+  let t = p();
+  if (t) t.sessionCronTasks.push(e);else n().sessionCron.schedule(e);
+}
+function sqr(e) {
+  return n().sessionCron.chainStartedAt(e);
+}
+function B8n(e, t) {
+  n().sessionCron.recordChainStart(e, t);
+}
+function bjt(e) {
+  n().sessionCron.forgetChainStart(e);
+}
+function Gmt() {
+  return n().sessionCron.tickInFlightPrompt();
+}
+function M9e(e) {
+  n().sessionCron.replaceTickInFlightPrompt(e);
+}
+function j8n() {
+  return n().sessionCron.consecutiveKeepalives();
+}
+function Sjt(e) {
+  n().sessionCron.replaceConsecutiveKeepalives(e);
+}
+function iqr() {
+  return n().sessionCron.ended();
+}
+function Vmt() {
+  return n().sessionCron.wakeFires();
+}
+function wjt() {
+  n().sessionCron.recordWakeFire();
+}
+function qmt() {
+  n().sessionCron.resetWakeFires();
+}
+function kyn(e) {
+  n().sessionCron.replaceEnded(e);
+}
+function $2(e) {
+  if (e.length === 0) return 0;
+  let t = new Set(e),
+    o = p(),
+    r = o ? o.sessionCronTasks : n().sessionCron.tasks(),
+    i = r.filter(item => !t.has(item.id)),
+    s = r.length - i.length;
+  if (s === 0) return 0;
+  if (o) o.sessionCronTasks.length = 0, o.sessionCronTasks.push(...i);else n().sessionCron.replaceTasks(i);
+  return s;
+}
+function gH(e) {
+  n().sessionFlags.replaceSessionTrustAccepted(e);
+}
+function Ude() {
+  return n().sessionFlags.sessionTrustAccepted();
+}
+function Kmt(e) {
+  n().sessionFlags.replaceHomeTrustDialogAccepted(e);
+}
+function MBe() {
+  return n().sessionFlags.homeTrustDialogAccepted();
+}
+function aqr(e) {
+  n().host.launchOptions.replaceSessionPersistenceDisabled(e);
+}
+function LC() {
+  return n().host.launchOptions.sessionPersistenceDisabled();
+}
+function Wo() {
+  return n().host.launchOptions.diskless();
+}
+function lqr() {
+  return n().host.launchOptions.ccrSessionUrl();
+}
+function vjt() {
+  return n().sessionFlags.hasExitedPlanMode();
+}
+function rM(e) {
+  n().sessionFlags.replaceHasExitedPlanMode(e);
+}
+function W8n(e) {
+  return n().host.proactivity.subscribeSelectorGateChanged(e);
+}
+function cqr() {
+  return n().sessionFlags.needsPlanModeExitAttachment();
+}
+function wj(e) {
+  n().sessionFlags.replaceNeedsPlanModeExitAttachment(e);
+}
+function _re(e, t) {
+  if (t === "plan" && e !== "plan") n().sessionFlags.replaceNeedsPlanModeExitAttachment(!1);
+  if (e === "plan" && t !== "plan") n().sessionFlags.replaceNeedsPlanModeExitAttachment(!0);
+}
+function dqr() {
+  return n().sessionFlags.needsAutoModeExitAttachment();
+}
+function XI(e) {
+  n().sessionFlags.replaceNeedsAutoModeExitAttachment(e);
+}
+function uqr(e, t) {
+  if (e === "auto" && t === "plan" || e === "plan" && t === "auto") return;
+  let o = e === "auto",
+    r = t === "auto";
+  if (r && !o) n().sessionFlags.replaceNeedsAutoModeExitAttachment(!1);
+  if (o && !r) n().sessionFlags.replaceNeedsAutoModeExitAttachment(!0);
+}
+function z8n() {
+  return n().sessionFlags.lspRecommendationShownThisSession();
+}
+function G8n(e) {
+  n().sessionFlags.replaceLspRecommendationShownThisSession(e);
+}
+function pqr(e) {
+  n().host.launchOptions.replaceInitJsonSchema(e);
+}
+function V8n() {
+  return n().host.launchOptions.initJsonSchema();
+}
+function fqr(e) {
+  n().mcpSessionWiring.registerClientsAccessor(e);
+}
+function q8n(e) {
+  return n().mcpSessionWiring.acquireClientsAccessor(e);
+}
+function lT() {
+  return n().mcpSessionWiring.clientsFromAccessor();
+}
+function kjt(e) {
+  n().host.mcpProcessWiring.registerEnsureConnectedClient(e);
+}
+function hH() {
+  return n().host.mcpProcessWiring.ensureConnectedClient();
+}
+function D9e(e) {
+  n().mcpSessionWiring.registerConnectedClientWiring(e);
+}
+function Ejt() {
+  return n().mcpSessionWiring.connectedClientWiring();
+}
+function mqr(e) {
+  n().mcpSessionWiring.registerToolsSwapper(e);
+}
+function K8n(e) {
+  return n().mcpSessionWiring.acquireToolsSwapper(e);
+}
+function gqr(e, t) {
+  return n().mcpSessionWiring.swapServerTools(e, t);
+}
+function L() {
+  return p() ?? n().hookRegistry.holder();
+}
+function j$(e) {
+  let t = L();
+  if (!t.registeredHooks) t.registeredHooks = {};
+  for (let [o, r] of Object.entries(e)) {
+    let i = o;
+    if (!t.registeredHooks[i]) t.registeredHooks[i] = [];
+    t.registeredHooks[i].push(...r);
+  }
+  qY();
+}
+function yH() {
+  return L().registeredHooks;
+}
+function hqr() {
+  return S.hookRegistry.holder().registeredHooks;
+}
+function Tjt() {
+  let e = L();
+  e.registeredHooks = null, e.sdkHostOutOfReachNoted = void 0, qY();
+}
+function yqr() {
+  let e = L();
+  if (e.sdkHostOutOfReachNoted) return !1;
+  return e.sdkHostOutOfReachNoted = !0, !0;
+}
+function Y8n() {
+  L().sdkHostOutOfReachNoted = void 0;
+}
+function X8n() {
+  let e = L();
+  if (!e.registeredHooks) return;
+  let t = {};
+  for (let [o, r] of Object.entries(e.registeredHooks)) {
+    let i = r.filter(item => !("pluginRoot" in item));
+    if (i.length > 0) t[o] = i;
+  }
+  e.registeredHooks = Object.keys(t).length > 0 ? t : null, qY();
+}
+var bn = new q(() => Me());
+function qY() {
+  di(bn).emit();
+}
+function _qr(e) {
+  return di(bn).subscribe(e);
+}
+function Bde() {
+  return n().sessionScratch.planSlugCache();
+}
+function J8n() {
+  return p()?.sessionCreatedTeams ?? n().sessionScratch.sessionCreatedTeams();
+}
+function bqr() {
+  return p()?.surfacedHookSpawnFailures ?? n().sessionScratch.surfacedHookSpawnFailures();
+}
+function Q8n() {
+  return b()?.pendingConversationEditKinds ?? S.sessionScratch.pendingConversationEditKinds();
+}
+function Z8n() {
+  return b()?.clientTruncatedAssistantIds ?? S.sessionScratch.clientTruncatedAssistantIds();
+}
+function e9n() {
+  return b()?.heldStatelessReplyIds ?? S.sessionScratch.heldStatelessReplyIds();
+}
+function t9n() {
+  return b()?.unsupportedThreadKeys ?? S.sessionScratch.unsupportedThreadKeys();
+}
+function Sqr() {
+  return p()?.bareMcpServerMatchersWarned ?? n().sessionScratch.bareMcpServerMatchersWarned();
+}
+function Eyn() {
+  return p()?.pendingBranchLinks ?? n().sessionScratch.pendingBranchLinks();
+}
+function n9n() {
+  return n().sessionScratch.pendingPrLinks();
+}
+function wqr() {
+  return n().sessionScratch.policyPredicateTelemetryEmitted();
+}
+function vqr() {
+  return p()?.chromeAvailabilityStagesLogged ?? n().sessionScratch.chromeAvailabilityStagesLogged();
+}
+function kqr() {
+  return n().sessionScratch.chromeAvailabilityAnchorMs();
+}
+function Eqr() {
+  return n().sessionFlags.proposeGoalAvailabilityLogged();
+}
+function Tqr() {
+  n().sessionFlags.markProposeGoalAvailabilityLogged();
+}
+function r9n() {
+  return n().sessionFlags.inheritedTeamName();
+}
+function Cqr(e) {
+  n().sessionFlags.replaceInheritedTeamName(e);
+}
+function Ymt(e) {
+  n().sessionFlags.replaceTeleportedSessionInfo({
+    isTeleported: !0,
+    hasLoggedFirstMessage: !1,
+    sessionId: e.sessionId
+  });
+}
+function Xmt() {
+  return n().sessionFlags.teleportedSessionInfo();
+}
+function o9n() {
+  n().sessionFlags.markFirstTeleportMessageLogged();
+}
+function KY(skillName, skillPath, content, agentId = null) {
+  let i = `${agentId ?? ""}:${skillName}`;
+  n().invokedSkills.record(i, {
+    skillName: skillName,
+    skillPath: skillPath,
+    content: content,
+    invokedAt: Date.now(),
+    agentId: agentId
+  });
+}
+function kK() {
+  return n().invokedSkills.skills();
+}
+function s9n(e, content_2) {
+  let o = n(),
+    r = o.invokedSkills.lookup(e);
+  if (r) o.invokedSkills.record(e, {
+    ...r,
+    content: content_2
+  });
+}
+function Rqr(e) {
+  let t = e ?? null,
+    o = new Map();
+  for (let [r, i] of n().invokedSkills.skills()) if (i.agentId === t) o.set(r, i);
+  return o;
+}
+function Aqr(e) {
+  let t = n();
+  if (!e || e.size === 0) {
+    t.invokedSkills.forgetAll();
+    return;
+  }
+  for (let [o, r] of t.invokedSkills.skills()) if (r.agentId === null || !e.has(r.agentId)) t.invokedSkills.forget(o);
+}
+function DBe(e) {
+  let t = n();
+  for (let [o, r] of t.invokedSkills.skills()) if (r.agentId === e) t.invokedSkills.forget(o);
+}
+function P5o(e, t) {
+  n().host.diagnostics.recordSlowOperation(e, t);
+}
+function I5o() {
+  return n().host.diagnostics.slowOperations();
+}
+function O5o() {
+  return n().host.diagnostics.devBarAlert();
+}
+function qv() {
+  let e = p();
+  return e ? e.mainThreadAgentType : n().hookRegistry.mainThreadAgentType();
+}
+function dQ(e) {
+  let t = p();
+  if (t) t.mainThreadAgentType = e;else n().hookRegistry.replaceMainThreadAgentType(e);
+}
+function B_e() {
+  let e = p();
+  return e ? e.mainThreadAgentHooks : n().hookRegistry.mainThreadAgentHooks();
+}
+function xqr() {
+  return S.hookRegistry.mainThreadAgentHooks();
+}
+function Tyn(e) {
+  let t = p();
+  if (t) t.mainThreadAgentHooks = e;else n().hookRegistry.replaceMainThreadAgentHooks(e);
+  qY();
+}
+function W$() {
+  return n().host.extensionsConfig.sessionSkillAllowlist();
+}
+function Pqr(e) {
+  n().host.extensionsConfig.replaceSessionSkillAllowlist(e);
+}
+function _H() {
+  return n().surfaceCapabilities.caps();
+}
+function Iqr(e) {
+  n().surfaceCapabilities.replaceCaps(e);
+}
+function Yn() {
+  return n().surfaceCapabilities.caps().workspace === "remote";
+}
+function EK(e) {
+  n().surfaceCapabilities.markRemote(e);
+}
+function L9e() {
+  return n().promptAssembly.sections();
+}
+function Oqr(e, t) {
+  n().promptAssembly.recordSection(e, t);
+}
+function Cjt(e) {
+  n().promptAssembly.forgetAllSections(), NC(e);
+}
+function NC(e) {
+  n().promptAssembly.noteInvalidation(e);
+}
+function uQ() {
+  return n().promptAssembly.epoch();
+}
+function M5o() {
+  return n().promptAssembly.lastInvalidationReason();
+}
+function Mqr(e) {
+  S.promptAssembly.registerWordingLatchClear(e);
+}
+function Rjt() {
+  n().promptAssembly.clearWordingLatch(S.promptAssembly);
+}
+function Dqr() {
+  return n().sessionScratch.vimSharedState();
+}
+function Lqr(e) {
+  n().sessionScratch.replaceVimSharedState(e);
+}
+function xu() {
+  return n().host.extensionsConfig.additionalDirectoriesForClaudeMd();
+}
+function vj(e) {
+  n().host.extensionsConfig.replaceAdditionalDirectoriesForClaudeMd(e);
+}
+function Wh() {
+  return n().host.extensionsConfig.allowedChannels();
+}
+function Lxe(e) {
+  n().host.extensionsConfig.replaceAllowedChannels(e);
+}
+function Ajt() {
+  return n().host.extensionsConfig.hasDevChannels();
+}
+function Nqr(e) {
+  n().host.extensionsConfig.replaceHasDevChannels(e);
+}
+function Hqr() {
+  return n().host.requestLatches.promptCache1hAllowlist();
+}
+function Fqr(e) {
+  n().host.requestLatches.replacePromptCache1hAllowlist(e);
+}
+function Cyn(e) {
+  return n().host.requestLatches.thinkingTypeOverrides().get(e);
+}
+function $qr(e, t) {
+  n().host.requestLatches.recordThinkingTypeOverride(e, t);
+}
+function xjt(e) {
+  return n().host.requestLatches.servedModelsByRequestedModel().get(e);
+}
+function i9n(e, t) {
+  if (e === t) return;
+  let requestLatches = n().host.requestLatches,
+    r = requestLatches.servedModelsByRequestedModel().get(e);
+  if (r) r.add(t);else requestLatches.recordServedModels(e, new Set([t]));
+}
+function Ryn(e) {
+  return n().host.requestLatches.effortUnsupportedModels().has(e);
+}
+function Pjt(e) {
+  n().host.requestLatches.markEffortUnsupported(e);
+}
+function Uqr() {
+  return n().host.requestLatches.midConvCachePromotionRejected();
+}
+function Bqr() {
+  n().host.requestLatches.markMidConvCachePromotionRejected();
+}
+function pQ() {
+  return n().host.requestLatches.thirdPartyServerClassifierRefused();
+}
+function Ijt() {
+  n().host.requestLatches.markThirdPartyServerClassifierRefused();
+}
+function Ayn() {
+  return n().host.requestLatches.threadsHeldForServerClassifier();
+}
+function jqr() {
+  n().host.requestLatches.markThreadsHeldForServerClassifier();
+}
+function Wqr(e) {
+  return n().host.requestLatches.autoModeUnavailableResponse(e);
+}
+function a9n(e) {
+  return n().host.requestLatches.autoModeUnavailableResponsesInARow(e);
+}
+function l9n(e, t) {
+  n().host.requestLatches.noteAutoModeUnavailableResponse(e, t);
+}
+function c9n(e) {
+  n().host.requestLatches.clearAutoModeUnavailableResponses(e);
+}
+function d9n(e) {
+  n().host.requestLatches.setAutoModeUnavailableStopNotice(e);
+}
+function xyn() {
+  return n().host.requestLatches.autoModeUnavailableStopNotice();
+}
+function zqr() {
+  return n().host.requestLatches.observedGateway();
+}
+function Gqr(e) {
+  n().host.requestLatches.noteObservedGateway(e);
+}
+function Pyn() {
+  return n().host.requestLatches.serverClassifierFallbackChoice();
+}
+function Vqr(e) {
+  n().host.requestLatches.setServerClassifierFallbackChoice(e);
+}
+function u9n() {
+  n().host.requestLatches.clearServerClassifierFallbackChoice();
+}
+function qqr() {
+  return n().host.requestLatches.takeServerClassifierFallbackAnnouncement();
+}
+function Kqr() {
+  return n().host.requestLatches.perTurnEffortOkEmitted();
+}
+function Yqr() {
+  n().host.requestLatches.markPerTurnEffortOkEmitted();
+}
+function Xqr() {
+  return n().host.requestLatches.lateToolAdditionsOkEmitted();
+}
+function Jqr() {
+  n().host.requestLatches.markLateToolAdditionsOkEmitted();
+}
+function Qqr() {
+  return n().host.requestLatches.toolChangeHeaderRefused();
+}
+function Zqr() {
+  n().host.requestLatches.markToolChangeHeaderRefused();
+}
+function Iyn() {
+  return n().host.requestLatches.inlineToolsRefused();
+}
+function eKr() {
+  n().host.requestLatches.markInlineToolsRefused();
+}
+function tKr() {
+  return n().host.requestLatches.inlineToolsOkEmitted();
+}
+function nKr() {
+  n().host.requestLatches.markInlineToolsOkEmitted();
+}
+function p9n() {
+  return n().host.requestLatches.thinkingResumptionRefused();
+}
+function rKr() {
+  n().host.requestLatches.markThinkingResumptionRefused();
+}
+function Ojt() {
+  return n().host.requestLatches.thinkingHighlightsRefused();
+}
+function oKr() {
+  n().host.requestLatches.markThinkingHighlightsRefused();
+}
+function sKr(e) {
+  return n().host.requestLatches.toolChangeUnsupportedModels().has(e);
+}
+function iKr(e) {
+  n().host.requestLatches.markToolChangeUnsupportedModel(e);
+}
+function jde(e) {
+  return n().host.requestLatches.inferenceProfileBackingModels().get(e);
+}
+function aKr(e, t) {
+  n().host.requestLatches.recordInferenceProfileBackingModel(e, t);
+}
+function oi() {
+  return p()?.stickyBetas ?? n().conversationLatches.stickyBetas();
+}
+function TK() {
+  let e = p();
+  return e ? e.conversationAtisLatch : n().conversationLatches.atisLatch();
+}
+function Nxe(e) {
+  let t = p();
+  if (t) t.conversationAtisLatch = e;else n().conversationLatches.replaceAtisLatch(e);
+}
+function Oyn() {
+  let e = p();
+  if (e) e.stickyBetas = Q(e.stickyBetas);else n().conversationLatches.unlatchStickyBetas();
+}
+function j_e() {
+  return n().requestJournal.promptId();
+}
+function Jmt(e) {
+  n().requestJournal.replacePromptId(e);
+}
+function lKr() {
+  return n().requestJournal.incrementPromptIndex();
+}
+function CK() {
+  return n().requestJournal.promptIndex();
+}
+function Bl() {
+  return n().surfaceCapabilities.replBridgeActive();
+}
+function Hxe(e) {
+  n().surfaceCapabilities.replaceReplBridgeActive(e);
+}
+function W_e() {
+  return n().surfaceCapabilities.mainLoopBusy();
+}
+function Mjt() {
+  return n().surfaceCapabilities.mainQueryRunning();
+}
+function cKr(e) {
+  n().surfaceCapabilities.replaceMainLoopStatus(e);
+}
+export { Ide, MBo, tyn, v2r, wxe, Q5n, Z5n, M1t, D1t, wmt, kb, e8n, t8n, n8n, vmt, L$, gBe, vxe, hBe, L1t, kxe, N1t, r8n, kmt, o8n, Ode, dre, nyn, _9e, yBe, So, q, xC, s8n, i8n, UY, PC, b9e, S9e, w9e, k2r, v9e, ryn, DBo, k9e, E2r, T2r, H1t, a8n, dH, oT, jh, Vu, LBo, oyn, F1t, Mde, l8n, Emt, E9e, Exe, ure, pre, oQ, _Be, c8n, $1t, uH, io, T9e, C9e, syn, Tmt, C2r, NBo, bBe, IC, d8n, vs, u8n, Nt, j, di, x5o, Y, qe, R2r, SBe, mh, Qd, p8n, A2r, iyn, fre, we, hm, N2, sT, kr, aA, U1t, iT, x2r, Dde, VI, wBe, B1t, Txe, P2r, sQ, I2r, O2r, f8n, M2r, m8n, D2r, L2r, N2r, H2r, F2r, $2r, U2r, ayn, j1t, B2r, j2r, OC, W2r, z2r, W1t, qI, G2r, SK, V2r, z1t, lyn, q2r, K2r, fg, KI, mre, g8n, h8n, y8n, R9e, Y2r, gre, hre, BY, X2r, J2r, D_e, L_e, Cmt, Lp, Rmt, Amt, Q2r, xmt, Pmt, Z2r, _8n, N$, eGr, cyn, wK, Imt, tGr, dyn, N_e, nGr, jY, uyn, Omt, rGr, Gm, G1t, oGr, H_e, sGr, iGr, b8n, A9e, V1t, lA, aGr, fd, BD, fp, lGr, q1t, cGr, H$, Mmt, Cxe, dGr, S8n, uGr, Dmt, yre, iQ, pGr, fGr, mGr, _j, w8n, aQ, gGr, hGr, K1t, yGr, _Gr, F$, Rxe, bGr, SGr, wGr, vGr, kGr, EGr, vBe, TGr, CGr, ym, RGr, Lmt, AGr, xGr, pyn, v8n, k8n, PGr, E8n, Lde, Nmt, kBe, Y1t, IGr, OGr, MGr, DGr, LGr, X1t, NGr, EBe, HGr, Fo, FGr, Hmt, fyn, $Gr, UGr, BGr, x9e, T8n, Axe, C8n, R8n, jGr, A8n, WGr, J1t, Fmt, TBe, x8n, myn, zGr, GGr, P8n, VGr, Te, $mt, MC, qGr, KGr, YGr, XGr, P9e, yu, JGr, lQ, QGr, Q1t, Z1t, nM, ZGr, md, eVr, bj, tVr, ejt, nVr, Umt, rVr, oVr, sVr, CBe, iVr, tjt, aVr, xxe, lVr, njt, cVr, rjt, cA, ojt, sjt, $$, dVr, uVr, Oy, WY, I8n, Bmt, pVr, fVr, O8n, mVr, gVr, pH, F_e, hVr, yVr, _Vr, bVr, SVr, wVr, vVr, ijt, M8n, D8n, Nde, kVr, EVr, TVr, L8n, U$, CVr, RBe, RVr, YI, AVr, Hde, xVr, aT, jD, PVr, IVr, ABe, OVr, Pxe, Ixe, Sj, B$, H2, jmt, MVr, Wmt, N8n, H8n, DVr, gyn, F8n, hyn, LVr, wo, NVr, fH, yyn, HVr, FVr, ajt, xBe, ljt, zY, $Vr, Fde, PBe, UVr, BVr, $_e, $8n, jVr, cjt, _yn, U_e, WVr, byn, U8n, djt, zVr, Oxe, zmt, GVr, ujt, F2, Vv, pjt, mH, VVr, Mxe, I9e, fjt, qVr, KVr, Syn, Dxe, YVr, XVr, IBe, wyn, mjt, vyn, DC, JVr, O9e, QVr, cQ, ZVr, OBe, eqr, dA, tqr, nqr, GY, gjt, rqr, Gg, oqr, hjt, yjt, vK, VY, _jt, U_, $de, sqr, B8n, bjt, Gmt, M9e, j8n, Sjt, iqr, Vmt, wjt, qmt, kyn, $2, gH, Ude, Kmt, MBe, aqr, LC, Wo, lqr, vjt, rM, W8n, cqr, wj, _re, dqr, XI, uqr, z8n, G8n, pqr, V8n, fqr, q8n, lT, kjt, hH, D9e, Ejt, mqr, K8n, gqr, j$, yH, hqr, Tjt, yqr, Y8n, X8n, qY, _qr, Bde, J8n, bqr, Q8n, Z8n, e9n, t9n, Sqr, Eyn, n9n, wqr, vqr, kqr, Eqr, Tqr, r9n, Cqr, Ymt, Xmt, o9n, KY, kK, s9n, Rqr, Aqr, DBe, P5o, I5o, O5o, qv, dQ, B_e, xqr, Tyn, W$, Pqr, _H, Iqr, Yn, EK, L9e, Oqr, Cjt, NC, uQ, M5o, Mqr, Rjt, Dqr, Lqr, xu, vj, Wh, Lxe, Ajt, Nqr, Hqr, Fqr, Cyn, $qr, xjt, i9n, Ryn, Pjt, Uqr, Bqr, pQ, Ijt, Ayn, jqr, Wqr, a9n, l9n, c9n, d9n, xyn, zqr, Gqr, Pyn, Vqr, u9n, qqr, Kqr, Yqr, Xqr, Jqr, Qqr, Zqr, Iyn, eKr, tKr, nKr, p9n, rKr, Ojt, oKr, sKr, iKr, jde, aKr, oi, TK, Nxe, Oyn, j_e, Jmt, lKr, CK, Bl, Hxe, W_e, Mjt, cKr };

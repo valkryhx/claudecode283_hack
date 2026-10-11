@@ -1,0 +1,39 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import { Mm } from "B:/~BUN/root/chunk-ah3egpyh.js";
+function g6t(e) {
+  if (!e || Object.keys(e).length === 0) return !1;
+  for (let n of Mm) {
+    let o = e[n];
+    if (!o || o.length === 0) continue;
+    for (let s of o) if ((s.hooks?.length ?? 0) > 0) return !0;
+  }
+  return !1;
+}
+function oro(e, n, o, s, h = !1) {
+  if (!o || Object.keys(o).length === 0) return;
+  let r = 0;
+  for (let i of Mm) {
+    let f = o[i];
+    if (!f || f.length === 0) continue;
+    let c = i;
+    if (h && i === "Stop") c = "SubagentStop", t(`Converting Stop hook to SubagentStop for ${s} (subagents trigger SubagentStop)`);
+    for (let a of f) {
+      let k = a.matcher ?? "",
+        hooks = a.hooks;
+      if (!hooks || hooks.length === 0) continue;
+      for (let m of hooks) e.add(n, c, k, m), r++;
+    }
+  }
+  if (r > 0) t(`Registered ${r} frontmatter hook(s) from ${s} for session ${n}`);
+}
+export { g6t, oro };

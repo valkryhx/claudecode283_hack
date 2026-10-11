@@ -1,0 +1,16 @@
+/* ==========================================================================
+ * m1569.Pr   [m1569_0xdceb889.js @ 70707]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function Pr(e, r) {
+  for (let [s, a] of Object.entries(r.taskRegistry?.all() ?? {})) {
+    if (a.type !== "local_workflow" || a.workflowRunId !== e) continue;
+    if (a.status === "running") return `Workflow ${e} is still running (task ${s}). Stop it first with ${og}({taskId: "${s}"}) before resuming.`;
+    if (!nb(s)) return a.status === "paused" ? `Workflow ${e} is paused but its run has not exited yet (task ${s}); its agents are being stopped. Resuming now would run two copies of its agents against the same journal \u2014 wait for it to exit.` : `Workflow ${e} is not running but its run has not exited yet (task ${s}). Resuming now would run two copies of its agents against the same journal. Run ${og}({taskId: "${s}"}) on it or wait for it to exit.`;
+  }
+  let n = r.toolState.get(xe).byId.get(e);
+  if (n !== void 0 && !n.isKilled && n.isActive) return `Workflow ${e} is still running. Wait for it to settle, or stop it first with ${og}, before resuming.`;
+  return;
+}

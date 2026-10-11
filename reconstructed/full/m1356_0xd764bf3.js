@@ -1,0 +1,552 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  zte,
+  wYe,
+  qd,
+  x
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  qe
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  Q
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import {
+  gt,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  _,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  Xk,
+  K1,
+  G6n
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  ar
+} from "B:/~BUN/root/chunk-290k5gh5.js";
+import {
+  he,
+  yb
+} from "B:/~BUN/root/chunk-3rzkfay5.js";
+import {
+  Ws
+} from "B:/~BUN/root/chunk-mmnpv22v.js";
+import {
+  Fwr
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  ti
+} from "B:/~BUN/root/chunk-nhxcgss8.js";
+import {
+  Uf
+} from "B:/~BUN/root/chunk-affnknva.js";
+
+function RQe() {
+  return x("tengu_harbor_kite_mode_emit", !0)
+}
+
+function O() {
+  switch (I().decidedBy) {
+    case "policySettings":
+      return "managed-setting";
+    case "repoSettings":
+      return "repo-setting";
+    case "invalidSetting":
+      return "invalid-setting";
+    case "flagSettings":
+    case "userSettings":
+    case void 0:
+      return "explicit-setting"
+  }
+}
+var f = {
+    accept: 0,
+    hold: 1,
+    refuse: 2
+  },
+  F = 100,
+  y = new Set(Xk);
+
+function ubt(e) {
+  if (e !== null) ti().inbound.shuttingDown = !1, R(), ti().inbound.modeAtUnwire = void 0;
+  else {
+    let n = ti().inbound.getCurrentMode;
+    if (n !== null) try {
+      ti().inbound.modeAtUnwire = n()
+    } catch {
+      ti().inbound.modeAtUnwire = void 0
+    }
+  }
+  if (ti().inbound.getCurrentMode = e, e !== null) oSe("mode-changed")
+}
+
+function pbt(e) {
+  ti().inbound.onPeerHeld = e
+}
+
+function mnr(e) {
+  ti().inbound.sendPeerReceipt = e
+}
+
+function xJr(e, n) {
+  ti().inbound.sendPeerReceipt?.({
+    mode: "prompt",
+    agentId: qe(),
+    value: "",
+    origin: e
+  }, n)
+}
+
+function fbt(e) {
+  let n = ti().inbound;
+  if (n.publishAvailability = e, n.unsubscribeAvailabilityRefresh?.(), n.unsubscribeAvailabilityRefresh = null, e) AQe(), n.unsubscribeAvailabilityRefresh = qd(AQe)
+}
+
+function AQe() {
+  ti().inbound.publishAvailability?.(IQe() === void 0)
+}
+
+function gnr(e) {
+  ti().inbound.recordCorrespondent = e
+}
+var N = 750;
+
+function R() {
+  if (ti().inbound.shutdownSettleHandle === null) ti().inbound.shutdownSettleHandle = gt(mbt)
+}
+async function mbt() {
+  let e = ti().inbound;
+  if (e.shutdownSettleHandle?.(), e.shutdownSettleHandle = null, e.shuttingDown = !0, e.held.length === 0) return;
+  let n = e.held.splice(0, e.held.length);
+  t(`[cross-session-inbound] shutdown: settling ${n.length} still-held peer message(s) as expired`);
+  let o = [];
+  for (let s of n) o.push(e.sendPeerReceipt?.(s, "expired")), e.onPeerHoldDropped?.(s, "expired");
+  await Promise.race([Promise.allSettled(o), Q(N, void 0, {
+    unref: !0
+  })])
+}
+
+function hnr(e) {
+  let {
+    inbound: n
+  } = ti();
+  return n.held.includes(e) ? n.announced.get(e) : void 0
+}
+
+function gbt(e) {
+  ti().inbound.onPeerHoldDropped = e
+}
+
+function hbt(e) {
+  ti().inbound.onPeerHoldReleased = e
+}
+
+function Vje() {
+  return I().value
+}
+
+function I() {
+  let e, n;
+  for (let o of ["policySettings", "flagSettings", "userSettings"]) {
+    if (!ar(o)) continue;
+    let s = he(o)?.crossSessionInbound;
+    if (s !== void 0) {
+      e = s, n = o;
+      break
+    }
+  }
+  for (let o of ["localSettings", "projectSettings"]) {
+    if (!ar(o)) continue;
+    let s = he(o)?.crossSessionInbound;
+    if (s === void 0) continue;
+    if (f[s] > f[e ?? "accept"]) e = s, n = "repoSettings";
+    else if (s !== "accept" && e !== void 0 && f[s] === f[e] && n !== "policySettings") n = "repoSettings"
+  }
+  if (f[e ?? "accept"] < f.hold && B()) e = "hold", n = "invalidSetting";
+  return {
+    value: e,
+    decidedBy: n
+  }
+}
+
+function B() {
+  return yb().errors.some((e) => e.path === G6n && e.severity === "warning" && !e.statusOnly)
+}
+
+function h(e) {
+  switch (e) {
+    case "accept":
+      return {
+        policy: "accept"
+      };
+    case "hold":
+      return {
+        policy: "hold", holdCause: O()
+      };
+    case "refuse":
+      return {
+        policy: "refuse", refuseCause: "opt-out"
+      }
+  }
+}
+
+function w() {
+  return Ws() ? void 0 : {
+    policy: "refuse",
+    refuseCause: "kill-switch"
+  }
+}
+
+function H() {
+  let e = w();
+  if (e) return e;
+  let n = Vje();
+  if (n !== void 0) return h(n);
+  let o = C();
+  if (o === null) return {
+    policy: "hold",
+    holdCause: "mode-unknown"
+  };
+  if (!y.has(o.mode)) return t(`[cross-session-inbound] unrecognized permission mode '${o.mode}' (fail-closed \u2192 hold)`), {
+    policy: "hold",
+    holdCause: "mode-unknown"
+  };
+  return S(o) ? {
+    policy: "hold",
+    holdCause: "bypass-default"
+  } : {
+    policy: "accept"
+  }
+}
+
+function P(e) {
+  let n = w();
+  if (n) return n;
+  return k(e, !1)
+}
+
+function E(e) {
+  return k(e, !0)
+}
+
+function k(e, n) {
+  let o = Vje();
+  if (o !== void 0) return h(o);
+  if (e?.selfSent) return {
+    policy: "accept"
+  };
+  let s = C();
+  if (s === null || !y.has(s.mode)) {
+    if (s !== null) t(`[cross-session-inbound] unrecognized permission mode '${s.mode}' (fail-closed \u2192 hold)`);
+    return {
+      policy: "hold",
+      holdCause: "mode-unknown"
+    }
+  }
+  let i = xQe(s),
+    a = n || RQe() ? e?.fromMode : void 0;
+  if (a !== void 0) return a === i ? {
+    policy: "accept"
+  } : {
+    policy: "hold",
+    holdCause: "mode-mismatch"
+  };
+  return i === "bypass" ? {
+    policy: "hold",
+    holdCause: "no-mode-asserted"
+  } : {
+    policy: "accept"
+  }
+}
+
+function S(e) {
+  return e.mode === "bypassPermissions" || K1(e.mode, e.isBypassPermissionsModeAvailable)
+}
+
+function xQe(e) {
+  return S(e) ? "bypass" : "prompting"
+}
+
+function nSe() {
+  return H().policy
+}
+
+function ynr(e) {
+  return P(e).policy
+}
+
+function C() {
+  let e = ti().inbound.getCurrentMode;
+  if (e === null) return t("[cross-session-inbound] permission-mode getter not wired (fail-closed \u2192 hold)"), null;
+  try {
+    return e()
+  } catch (n) {
+    return t(`[cross-session-inbound] mode getter threw (${l(n)}; fail-closed \u2192 hold)`), null
+  }
+}
+
+function _nr() {
+  if (Vje() !== void 0) return !1;
+  let e = C();
+  if (e === null || !y.has(e.mode)) return !1;
+  return S(e)
+}
+
+function ybt(e) {
+  return v(e, P(b(e)))
+}
+
+function b(e) {
+  let n = e.origin;
+  if (!n || n.kind !== "peer") return;
+  return {
+    fromMode: n.fromMode,
+    selfSent: n.selfSent
+  }
+}
+
+function D(e) {
+  let n;
+  if (e.priority === "later") {
+    let {
+      priority: o,
+      ...s
+    } = e;
+    n = Fwr(s, {
+      receipt: "caller"
+    })
+  } else n = Fwr(e, {
+    receipt: "caller"
+  });
+  if (!n.admitted) return ti().inbound.sendPeerReceipt?.(e, "dropped", {
+    dropReason: n.reason,
+    droppedMsgIds: []
+  }), !1;
+  return ti().inbound.recordCorrespondent?.(e), !0
+}
+
+function v(e, n) {
+  let o = ti().inbound;
+  switch (AQe(), n.policy) {
+    case "accept":
+      return A("policy-accepts"), _("peer_inbound_gate"), "accept";
+    case "refuse":
+      return rSe(n.refuseCause === "kill-switch" ? m(e) : `crossSessionInbound=refuse: ${m(e)}`, n.refuseCause), o.sendPeerReceipt?.(e, "refused"), "refused";
+    case "hold": {
+      let {
+        holdCause: s
+      } = n;
+      if (o.shuttingDown) return t(`[cross-session-inbound] shutdown: not parking a late peer message \u2014 settled as expired: ${m(e)}`), o.sendPeerReceipt?.(e, "expired"), p("peer_inbound_gate", "shutdown_expired"), "refused";
+      if (o.held.length >= F) {
+        let i = o.held.shift();
+        if (i) t(`[cross-session-inbound] hold buffer full \u2014 evicted oldest as expired: ${m(i)}`), o.sendPeerReceipt?.(i, "expired"), o.onPeerHoldDropped?.(i, "expired")
+      }
+      if (o.held.push(e), R(), t(`[cross-session-inbound] held inbound peer message (${o.held.length} held, cause=${s}): ${m(e)}`), p("peer_inbound_gate", "held"), o.onPeerHeld) o.onPeerHeld(e, o.held.length, s), o.announced.set(e, s);
+      return o.sendPeerReceipt?.(e, "held"), "held"
+    }
+  }
+}
+
+function _bt(e) {
+  if (!e) return "ungated";
+  if (e.kind === "peer") return "hostInjected" in e && e.hostInjected === !0 ? "host-injected" : "peer";
+  if (e.kind === "task-notification" && "subkind" in e && e.subkind === "peer-send-message") return "coordinator";
+  return "ungated"
+}
+
+function bbt({
+  ingressOrigin: e,
+  inboundOrigin: n,
+  envelopePeer: o = !1
+}) {
+  return o || _bt(e) !== "ungated" && !j(e) || n === zte
+}
+
+function j(e) {
+  return !!e && e.kind === "peer" && !(("hostInjected" in e) && e.hostInjected === !0) && "inbound_origin" in e && e.inbound_origin === wYe
+}
+
+function Sbt(e, n) {
+  switch (_bt(e)) {
+    case "peer":
+      return ybt(n);
+    case "host-injected":
+      return bnr(n);
+    case "coordinator":
+      return T(n);
+    case "ungated":
+      return "accept"
+  }
+}
+
+function PQe(e) {
+  switch (_bt(e)) {
+    case "peer":
+      return IQe();
+    case "coordinator":
+    case "host-injected":
+      return Vje() === "refuse" ? "opt-out" : void 0;
+    case "ungated":
+      return
+  }
+}
+
+function IQe() {
+  let e = H();
+  if (e.policy !== "refuse") return;
+  return e.refuseCause
+}
+
+function G() {
+  let e = Vje();
+  return e !== void 0 ? h(e) : {
+    policy: "accept"
+  }
+}
+
+function T(e) {
+  let n = Vje();
+  if (n === void 0) return "accept";
+  return v(e, h(n))
+}
+
+function bnr(e) {
+  return v(e, E(b(e)))
+}
+
+function rSe(e, n) {
+  if (AQe(), n === "kill-switch") {
+    t(`[cross-session-inbound] refused inbound peer message \u2014 cross-session messaging disabled (kill switch) (${e})`), p("peer_inbound_gate", "kill_switch");
+    return
+  }
+  t(`[cross-session-inbound] refused inbound peer message (${e})`), p("peer_inbound_gate", "refused")
+}
+
+function oSe(e) {
+  return AQe(), A(e)
+}
+
+function M(e) {
+  switch (_bt(e.origin)) {
+    case "coordinator":
+      return G();
+    case "host-injected":
+      return E(b(e));
+    case "peer":
+    case "ungated":
+      return P(b(e))
+  }
+}
+
+function A(e) {
+  let n = ti().inbound,
+    o = n.held;
+  if (o.length === 0) return 0;
+  let s = [],
+    i = [],
+    a = [],
+    d = 0,
+    g = 0;
+  for (let r of o) {
+    let u = M(r);
+    if (u.policy === "accept") i.push(r);
+    else if (u.policy === "refuse") {
+      if (d += 1, u.refuseCause === "kill-switch") g += 1;
+      n.sendPeerReceipt?.(r, "refused"), n.onPeerHoldDropped?.(r, "refused")
+    } else if (s.push(r), n.announced.get(r) !== u.holdCause) a.push([r, u.holdCause])
+  }
+  o.length = 0, o.push(...s);
+  for (let [r, u] of a) n.announced.set(r, u), n.onPeerHeld?.(r, o.length, u);
+  if (d > 0) t(g === d ? `[cross-session-inbound] gate off \u2014 dropped ${d} parked peer message(s) (cross-session messaging disabled)` : `[cross-session-inbound] dropped ${d} held peer message(s) \u2014 policy is now refuse`);
+  if (i.length === 0) return 0;
+  let c = [];
+  for (let r of i)
+    if (D(r)) c.push(r), _("peer_inbound_gate");
+    else n.onPeerHoldDropped?.(r, "dropped");
+  if (t(`[cross-session-inbound] released ${i.length} held peer message(s) (${e}) \u2014 ${c.length} admitted by the ingress guard; ${o.length} still held`), c.length > 0) n.onPeerHoldReleased?.(c, e);
+  for (let r of c) n.sendPeerReceipt?.(r, "delivered");
+  return i.length
+}
+
+function OQe(e, n) {
+  let o = ti().inbound,
+    s = o.held.indexOf(e);
+  if (s === -1) return "gone";
+  let [i] = o.held.splice(s, 1);
+  if (!i) return "gone";
+  if (n === "approve") {
+    let d = M(i);
+    if (d.policy === "refuse") {
+      let c = d.refuseCause === "kill-switch";
+      return t(`[cross-session-inbound] held peer message approved but policy is now refuse (${c?"kill switch":"opt-out"}) \u2014 dropped`), o.sendPeerReceipt?.(i, "refused"), o.onPeerHoldDropped?.(i, "refused"), "dropped"
+    }
+    if (!D(i)) return t("[cross-session-inbound] held peer message approved but DROPPED by the ingress guard on release"), o.onPeerHoldDropped?.(i, "dropped"), "dropped-by-guard";
+    return t("[cross-session-inbound] held peer message APPROVED \u2014 released to queue"), _("peer_inbound_gate"), o.onPeerHoldReleased?.([i], "approved"), o.sendPeerReceipt?.(i, "delivered"), "delivered"
+  }
+  t(`[cross-session-inbound] held peer message ${n==="deny"?"DENIED":"EXPIRED/CANCELLED"} \u2014 dropped with denial receipt`);
+  let a = n === "deny" ? "denied" : "expired";
+  return o.sendPeerReceipt?.(i, a), "dropped"
+}
+
+function PJr() {
+  return ti().inbound.held
+}
+
+function MQe() {
+  return ti().inbound.held.length
+}
+
+function Snr() {
+  return ti().inbound.shuttingDown
+}
+
+function m(e) {
+  let n = e.origin?.kind === "peer" && typeof e.origin.from === "string" ? e.origin.from : "unknown",
+    o = typeof e.value === "string" ? e.value : "[blocks]";
+  return `from=${Uf(n)} "${Uf(o,60)}"`
+}
+export {
+  RQe,
+  ubt,
+  pbt,
+  mnr,
+  xJr,
+  fbt,
+  AQe,
+  gnr,
+  mbt,
+  hnr,
+  gbt,
+  hbt,
+  Vje,
+  xQe,
+  nSe,
+  ynr,
+  _nr,
+  ybt,
+  _bt,
+  bbt,
+  Sbt,
+  PQe,
+  IQe,
+  bnr,
+  rSe,
+  oSe,
+  OQe,
+  PJr,
+  MQe,
+  Snr
+};

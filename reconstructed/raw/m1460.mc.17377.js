@@ -1,0 +1,1 @@
+function mc(){return null}

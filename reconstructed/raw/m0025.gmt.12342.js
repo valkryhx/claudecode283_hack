@@ -1,0 +1,1 @@
+function gmt(){if(process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC)return"essential-traffic";if(process.env.DISABLE_TELEMETRY)return"no-telemetry";if(Ne(process.env.DO_NOT_TRACK))return"no-telemetry";return"default"}

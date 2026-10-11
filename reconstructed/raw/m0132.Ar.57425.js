@@ -1,0 +1,1 @@
+function Ar(e,t){let o=t.props,r=Object.keys(e).find((n)=>e[n]!==o[n]&&$n(e[n])!==$n(o[n])&&(Tt(e[n],o[n],yLr)||Tt(e[n],o[n],bLr)||Tt(e[n],o[n],_Lr)));if(r===void 0)return;return`a props.${r} with a control character (an escape sequence the terminal would honour, an image placeholder, or an unpaired surrogate half out of reach); a rewrite the engine draws adds none`}

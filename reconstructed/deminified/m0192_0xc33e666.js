@@ -1,0 +1,331 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { BlockList as w, connect as v, isIP as l } from "net";
+import { connect as O } from "tls";
+import { URL as p } from "url";
+function kt(e, t) {
+  if (!process.env.SRT_DEBUG) return;
+  let r = t?.level || "info",
+    o = "[SandboxDebug]";
+  switch (r) {
+    case "error":
+      console.error(`${o} ${e}`);
+      break;
+    case "warn":
+      console.warn(`${o} ${e}`);
+      break;
+    default:
+      console.error(`${o} ${e}`);
+  }
+}
+var C = 30000,
+  T = new Set(["connection", "keep-alive", "proxy-authenticate", "proxy-authorization", "proxy-connection", "te", "trailer", "transfer-encoding", "upgrade"]);
+function lIr(e) {
+  let t = e?.http ?? process.env.HTTP_PROXY ?? process.env.http_proxy ?? void 0,
+    r = e?.https ?? process.env.HTTPS_PROXY ?? process.env.https_proxy ?? t,
+    o = e?.noProxy ?? process.env.NO_PROXY ?? process.env.no_proxy ?? "";
+  if (!t && !r) return;
+  let n = s => {
+      if (!s) return;
+      let a = /^[a-z][a-z0-9+.-]*:\/\//i.test(s) ? s : `http://${s}`;
+      try {
+        let f = new p(a);
+        if (f.protocol !== "http:" && f.protocol !== "https:" || !f.hostname) throw Error("unsupported scheme or empty host");
+        return f;
+      } catch {
+        kt(`Invalid parent proxy URL, ignoring: ${E(s)}`, {
+          level: "error"
+        });
+        return;
+      }
+    },
+    httpUrl = n(t),
+    httpsUrl = n(r);
+  if (!httpUrl && !httpsUrl) return;
+  return {
+    httpUrl: httpUrl,
+    httpsUrl: httpsUrl,
+    noProxy: g(o)
+  };
+}
+function g(e) {
+  let t = {
+    all: !1,
+    suffixes: [],
+    cidr: new w()
+  };
+  for (let r of e.split(",")) {
+    if (r = r.trim(), !r) continue;
+    if (r === "*") {
+      t.all = !0;
+      continue;
+    }
+    let o = r.indexOf("/");
+    if (o !== -1) {
+      let s = r.slice(0, o),
+        u = r.slice(o + 1),
+        a = l(s);
+      if (a && u !== "" && /^\d+$/.test(u)) {
+        let f = Number(u),
+          d = a === 6 ? 128 : 32;
+        if (f >= 0 && f <= d) {
+          try {
+            t.cidr.addSubnet(s, f, a === 6 ? "ipv6" : "ipv4");
+          } catch {}
+          continue;
+        }
+      }
+      continue;
+    }
+    let n = r.toLowerCase(),
+      i = /^\[([^\]]+)\](?::\d+)?$/.exec(n);
+    if (i) n = i[1];
+    if (n.startsWith("*.")) n = n.slice(1);
+    let c = l(n);
+    if (!c) {
+      let s = n.lastIndexOf(":");
+      if (s !== -1 && /^\d+$/.test(n.slice(s + 1))) n = n.slice(0, s);
+    } else try {
+      t.cidr.addAddress(n, c === 6 ? "ipv6" : "ipv4");
+      continue;
+    } catch {}
+    t.suffixes.push(n);
+  }
+  return t;
+}
+function $in(e, t) {
+  let r = Fge(t.toLowerCase().replace(/\.$/, ""));
+  if (r === "localhost") return !0;
+  let o = l(r);
+  if (o) {
+    if (N.check(r, o === 6 ? "ipv6" : "ipv4")) return !0;
+  }
+  if (e.noProxy.all) return !0;
+  if (o) {
+    if (e.noProxy.cidr.check(r, o === 6 ? "ipv6" : "ipv4")) return !0;
+  }
+  for (let n of e.noProxy.suffixes) if (n.startsWith(".")) {
+    if (r === n.slice(1) || r.endsWith(n)) return !0;
+  } else if (r === n || r.endsWith("." + n)) return !0;
+  return !1;
+}
+var N = (() => {
+  let e = new w();
+  return e.addSubnet("127.0.0.0", 8, "ipv4"), e.addAddress("::1", "ipv6"), e.addSubnet("::ffff:127.0.0.0", 104, "ipv6"), e;
+})();
+function Uin(e, t) {
+  if (t.isHttps) return e.httpsUrl ?? e.httpUrl;
+  return e.httpUrl;
+}
+function cIr(e) {
+  let {
+      destHost: destHost,
+      destPort: destPort
+    } = e,
+    o = Fge(destHost);
+  if (!dMt(o)) return Promise.reject(Error(`Invalid destination host for CONNECT: ${JSON.stringify(destHost)}`));
+  if (!Number.isInteger(destPort) || destPort < 1 || destPort > 65535) return Promise.reject(Error(`Invalid destination port: ${destPort}`));
+  let n = l(o) === 6 ? `[${o}]:${destPort}` : `${o}:${destPort}`;
+  return new Promise((i, c) => {
+    let s = e.dial(),
+      u = !1,
+      a = d => {
+        if (u) return;
+        u = !0, s.destroy(), c(d);
+      },
+      f = () => a(Error("Proxy closed during CONNECT handshake"));
+    s.setTimeout(e.timeoutMs ?? C, () => a(Error("CONNECT handshake timed out"))), s.once("error", a), s.once("close", f), s.once(e.readyEvent, () => {
+      s.write(`CONNECT ${n} HTTP/1.1\r
+Host: ${n}\r
+` + (e.authHeader ? `Proxy-Authorization: ${e.authHeader}\r
+` : "") + `\r
+`);
+      let d = "",
+        h = b => {
+          d += b.toString("latin1");
+          let m = d.indexOf(`\r
+\r
+`);
+          if (m === -1) {
+            if (d.length > 16384) a(Error("CONNECT response header too large"));
+            return;
+          }
+          s.pause(), s.removeListener("data", h);
+          let P = d.slice(0, d.indexOf(`\r
+`));
+          if (!/^HTTP\/1\.[01] 2\d\d(?:\s|$)/.test(P)) return a(Error(`Proxy refused CONNECT: ${P.trim()}`));
+          let x = d.slice(m + 4);
+          if (x.length) s.unshift(Buffer.from(x, "latin1"));
+          u = !0, s.setTimeout(0), s.removeListener("error", a), s.removeListener("close", f), i(s);
+        };
+      s.on("data", h);
+    });
+  });
+}
+function EWn(e, destHost_2, destPort_2) {
+  let o = Fge(e.hostname),
+    port = Number(e.port) || (e.protocol === "https:" ? 443 : 80),
+    i = e.protocol === "https:";
+  return cIr({
+    destHost: destHost_2,
+    destPort: destPort_2,
+    authHeader: dIr(e),
+    readyEvent: i ? "secureConnect" : "connect",
+    dial: () => i ? O({
+      host: o,
+      port: port,
+      ...(l(o) ? {} : {
+        servername: o
+      })
+    }) : v(port, o)
+  });
+}
+function dIr(e) {
+  if (!e.username && !e.password) return;
+  try {
+    let t = `${decodeURIComponent(e.username)}:${decodeURIComponent(e.password)}`;
+    return `Basic ${Buffer.from(t).toString("base64")}`;
+  } catch {
+    let t = `${e.username}:${e.password}`;
+    return `Basic ${Buffer.from(t).toString("base64")}`;
+  }
+}
+function g3e(e) {
+  let t = new Set(),
+    connection = e.connection;
+  if (connection) for (let n of String(connection).split(",")) t.add(n.trim().toLowerCase());
+  let o = {};
+  for (let [n, i] of Object.entries(e)) {
+    let c = n.toLowerCase();
+    if (!T.has(c) && !t.has(c)) o[n] = i;
+  }
+  return o;
+}
+function Fge(e) {
+  return e.startsWith("[") && e.endsWith("]") ? e.slice(1, -1) : e;
+}
+function uIr(e) {
+  if (!e) return "-";
+  if (!e.username && !e.password) return e.href;
+  let t = new p(e.href);
+  return t.username = "***", t.password = "***", t.href;
+}
+function E(e) {
+  return e.replace(/\/\/[^@/]*@/, "//***:***@");
+}
+function dMt(e) {
+  if (!e || e.length > 255) return !1;
+  let t = Fge(e);
+  if (t.includes("%")) return !1;
+  if (l(t)) return !0;
+  return /^[A-Za-z0-9._-]+$/.test(t);
+}
+function d0(e) {
+  try {
+    let t = Fge(e),
+      r = l(t) === 6 ? `[${t}]` : t,
+      hostname = new p(`http://${r}/`).hostname;
+    return Fge(hostname).replace(/\.$/, "");
+  } catch {
+    return;
+  }
+}
+function TWn(e, t, r = C) {
+  return new Promise((o, n) => {
+    let i = v(t, e),
+      c = !1,
+      s = u => {
+        if (c) return;
+        if (c = !0, i.setTimeout(0), u) i.destroy(), n(u);else o(i);
+      };
+    i.setTimeout(r, () => s(Error("connect timed out"))), i.once("connect", () => s()), i.once("error", s), i.once("close", () => s(Error("socket closed before connect")));
+  });
+}
+import { isIP as H } from "net";
+function nX(hostPattern) {
+  if (hostPattern.startsWith("[")) {
+    let o = hostPattern.indexOf("]");
+    if (o === -1) return {
+      hostPattern: hostPattern,
+      port: void 0
+    };
+    let n = hostPattern.slice(1, o),
+      hostPattern_2 = d0(n) ?? n,
+      c = hostPattern.slice(o + 1);
+    if (c === "") return {
+      hostPattern: hostPattern_2,
+      port: void 0
+    };
+    let port_2 = y(c.startsWith(":") ? c.slice(1) : "");
+    return port_2 === void 0 ? {
+      hostPattern: hostPattern,
+      port: void 0
+    } : {
+      hostPattern: hostPattern_2,
+      port: port_2
+    };
+  }
+  let t = hostPattern.lastIndexOf(":");
+  if (t === -1) return {
+    hostPattern: hostPattern,
+    port: void 0
+  };
+  if (hostPattern.indexOf(":") !== t) return {
+    hostPattern: d0(hostPattern) ?? hostPattern,
+    port: void 0
+  };
+  let port_3 = y(hostPattern.slice(t + 1));
+  if (port_3 === void 0) return {
+    hostPattern: hostPattern,
+    port: void 0
+  };
+  return {
+    hostPattern: hostPattern.slice(0, t),
+    port: port_3
+  };
+}
+function y(e) {
+  if (!/^[1-9][0-9]{0,4}$/.test(e)) return;
+  let t = Number(e);
+  return t > 65535 ? void 0 : t;
+}
+function uMt(e) {
+  return nX(e).hostPattern;
+}
+function NNe(e, t) {
+  let r = e.toLowerCase();
+  if (t === "*") return !0;
+  if (t.startsWith("*.")) {
+    if (H(Fge(r))) return !1;
+    let o = t.substring(2).toLowerCase();
+    return r.endsWith("." + o);
+  }
+  return r === t.toLowerCase();
+}
+function Bin(e, t, r) {
+  let {
+    hostPattern: hostPattern_3,
+    port: port_4
+  } = nX(r);
+  if (port_4 !== void 0 && port_4 !== t) return !1;
+  return NNe(e, hostPattern_3);
+}
+function qat(e, t) {
+  let r = t.map(uMt);
+  if (!e.startsWith("*.")) return r.some(item => NNe(e, item));
+  let o = e.slice(2).toLowerCase();
+  return r.some(item => {
+    if (!item.startsWith("*.")) return !1;
+    let i = item.slice(2).toLowerCase();
+    return o === i || o.endsWith("." + i);
+  });
+}
+export { kt, lIr, $in, Uin, cIr, EWn, dIr, g3e, Fge, uIr, dMt, d0, TWn, nX, uMt, NNe, Bin, qat };

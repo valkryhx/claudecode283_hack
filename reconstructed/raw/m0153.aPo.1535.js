@@ -1,0 +1,1 @@
+function aPo(e,o){let t=o?"This session has the default workflow size guideline:":"A workflow size guideline is configured for this session:",r=o?' The user can raise or remove it with "Dynamic workflow size" in /config.':"";return`${t} ${f(e)}. ${d()}${r}`}

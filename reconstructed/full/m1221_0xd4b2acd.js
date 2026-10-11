@@ -1,0 +1,1221 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import {
+  we
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-17wqwt36.js";
+import {
+  nd
+} from "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import {
+  I
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-4tkwpa6e.js";
+import {
+  AI,
+  b4n
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-e1thvnpv.js";
+import "B:/~BUN/root/chunk-1x7a47hz.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import "B:/~BUN/root/chunk-kss0wzj5.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-tq1hs216.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import {
+  ie,
+  rA,
+  iK
+} from "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import {
+  V0
+} from "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-jpnyq4t7.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import {
+  s,
+  n,
+  Vs
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import "B:/~BUN/root/chunk-e9hrnhar.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-p4t9nwg2.js";
+import "B:/~BUN/root/chunk-trcn2d68.js";
+import "B:/~BUN/root/chunk-q1b7bx45.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import "B:/~BUN/root/chunk-mvdr6ncg.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-jz31jc2e.js";
+import "B:/~BUN/root/chunk-p3ewqd1e.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-dczbgj6x.js";
+import "B:/~BUN/root/chunk-1223v177.js";
+import "B:/~BUN/root/chunk-0rtwbec7.js";
+import {
+  Yt
+} from "B:/~BUN/root/chunk-jdm3bsma.js";
+import {
+  ye
+} from "B:/~BUN/root/chunk-41008fhm.js";
+import "B:/~BUN/root/chunk-syke822n.js";
+import "B:/~BUN/root/chunk-7nc4t0q7.js";
+import {
+  Wt
+} from "B:/~BUN/root/chunk-r2yrqvry.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-0d8a76zs.js";
+import "B:/~BUN/root/chunk-5r1x61tc.js";
+import {
+  ge
+} from "B:/~BUN/root/chunk-51erc9xb.js";
+import {
+  F
+} from "B:/~BUN/root/chunk-acd2tycn.js";
+import "B:/~BUN/root/chunk-txdt16r9.js";
+import "B:/~BUN/root/chunk-q52x4j16.js";
+import "B:/~BUN/root/chunk-cxqcvpm0.js";
+import {
+  tw,
+  Fe
+} from "B:/~BUN/root/chunk-bt71g93n.js";
+import "B:/~BUN/root/chunk-ey46s1kg.js";
+import "B:/~BUN/root/chunk-vabpvk99.js";
+import {
+  z_,
+  ea,
+  yg
+} from "B:/~BUN/root/chunk-20avdtc4.js";
+import "B:/~BUN/root/chunk-30zp50p7.js";
+import "B:/~BUN/root/chunk-mmtwp5d6.js";
+import {
+  VP
+} from "B:/~BUN/root/chunk-9sy3w2pa.js";
+import {
+  wV
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import {
+  j_
+} from "B:/~BUN/root/chunk-t7p2j7za.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import {
+  Zbn
+} from "B:/~BUN/root/chunk-ffpvrf4q.js";
+import {
+  LB,
+  Pat,
+  Ck
+} from "B:/~BUN/root/chunk-5a1m1kxy.js";
+import "B:/~BUN/root/chunk-ewjenbzd.js";
+import {
+  E9r
+} from "B:/~BUN/root/chunk-rg6271cv.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import {
+  kp
+} from "B:/~BUN/root/chunk-8b53pnky.js";
+import "B:/~BUN/root/chunk-9jvj58wt.js";
+import "B:/~BUN/root/chunk-mr8gretd.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-zg8y1401.js";
+import "B:/~BUN/root/chunk-d4pzq02b.js";
+import "B:/~BUN/root/chunk-mgxre38x.js";
+import "B:/~BUN/root/chunk-h23911wn.js";
+import "B:/~BUN/root/chunk-prb4vytb.js";
+import "B:/~BUN/root/chunk-1a6hgte8.js";
+import "B:/~BUN/root/chunk-rp3kg713.js";
+import "B:/~BUN/root/chunk-cpg4rjtx.js";
+import "B:/~BUN/root/chunk-jcnv9sfw.js";
+import {
+  qn
+} from "B:/~BUN/root/chunk-pet3tnhj.js";
+import {
+  CH
+} from "B:/~BUN/root/chunk-p273pdav.js";
+import "B:/~BUN/root/chunk-8gscr2mz.js";
+import "B:/~BUN/root/chunk-0rmh0w21.js";
+import "B:/~BUN/root/chunk-xfvqq19y.js";
+import "B:/~BUN/root/chunk-8gym6yya.js";
+import {
+  H_t,
+  F_t
+} from "B:/~BUN/root/chunk-gh4t1xg0.js";
+import {
+  SPe
+} from "B:/~BUN/root/chunk-m85mwbk9.js";
+import {
+  gYr,
+  EQn,
+  TQn
+} from "B:/~BUN/root/chunk-rb95gyx5.js";
+import {
+  FPe,
+  fJe,
+  nyt,
+  LK
+} from "B:/~BUN/root/chunk-0ff63ng8.js";
+import "B:/~BUN/root/chunk-v1xd9kf3.js";
+import "B:/~BUN/root/chunk-9k8er6ef.js";
+import {
+  Cr
+} from "B:/~BUN/root/chunk-xpw4e8kb.js";
+import "B:/~BUN/root/chunk-7frntmvs.js";
+import "B:/~BUN/root/chunk-w15vevdx.js";
+import "B:/~BUN/root/chunk-zza9ywwa.js";
+import "B:/~BUN/root/chunk-bbgg7kv0.js";
+import "B:/~BUN/root/chunk-sv155qry.js";
+import "B:/~BUN/root/chunk-parcaazx.js";
+import "B:/~BUN/root/chunk-b36qwjxy.js";
+import "B:/~BUN/root/chunk-ejdx9rag.js";
+import "B:/~BUN/root/chunk-cdch6ag4.js";
+import "B:/~BUN/root/chunk-b5qh4e85.js";
+import {
+  V,
+  e,
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import "B:/~BUN/root/chunk-9z0za8jx.js";
+import {
+  XC
+} from "B:/~BUN/root/chunk-wp4rvaf5.js";
+import "B:/~BUN/root/chunk-4dw8761b.js";
+import "B:/~BUN/root/chunk-c50e3nb9.js";
+import "B:/~BUN/root/chunk-106hagsg.js";
+import "B:/~BUN/root/chunk-qq6w89ha.js";
+import "B:/~BUN/root/chunk-q3x7vf9d.js";
+import "B:/~BUN/root/chunk-v8s05yj9.js";
+import {
+  Z
+} from "B:/~BUN/root/chunk-08bth2fj.js";
+import {
+  R,
+  X,
+  T,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-yzpw1mdr.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+N();
+N();
+import {
+  basename as Q,
+  resolve as ne
+} from "path";
+
+function Ut(Qe) {
+  return Qe === "worktree" ? "Each session gets its own git worktree (requires a git repo)." : "All sessions share the directory."
+}
+async function pt(m, t) {
+  let o = await SPe(XC(), t);
+  if (!o.ok) return [];
+  return (o.config.remoteControl ?? []).map((c) => ({
+    dir: c.dir,
+    name: c.name ?? Q(c.dir),
+    spawnMode: c.spawnMode ?? "same-dir",
+    isRunning: m
+  }))
+}
+
+function He(m) {
+  let a = w(41),
+    {
+      server: t,
+      onBack: o,
+      onDone: p,
+      refresh: c,
+      storageV5: f
+    } = m,
+    [k, x] = g(!1),
+    [C, A] = g(!1),
+    B;
+  if (a[0] !== k || a[1] !== p || a[2] !== c || a[3] !== t.dir || a[4] !== f) B = async function y() {
+    if (k) {
+      return
+    }
+    x(!0);;
+    try {
+      await F_t(t.dir, void 0, f), await c(), p(`Removed remote-control server for ${t.dir}.`, {
+        display: "system"
+      })
+    } catch (v) {
+      let L = v;
+      d(L), p(`Action failed: ${l(L)}`, {
+        display: "system"
+      })
+    }
+  }, a[0] = k, a[1] = p, a[2] = c, a[3] = t.dir, a[4] = f, a[5] = B;
+  else B = a[5];
+  let y = B;
+  if (C) {
+    const v = t.dir;
+    let h;
+    if (a[6] === S) h = kp(), a[6] = h;
+    else h = a[6];
+    const i = `Stop serving ${v} to claude.ai. The ${h} will stop the worker on its next reconcile.`;
+    let D;
+    if (a[7] === S) D = () => A(!1), a[7] = D;
+    else D = a[7];
+    let u;
+    if (a[8] !== y) u = () => void y(), a[8] = y, a[9] = u;
+    else u = a[9];
+    let H;
+    if (a[10] === S) H = () => A(!1), a[10] = H;
+    else H = a[10];
+    let P;
+    if (a[11] !== u) P = e(qn, {
+      hideIndexes: !0,
+      cancelFirst: !0,
+      focus: "cancel",
+      confirmLabel: "Yes, remove",
+      cancelLabel: "No, cancel",
+      onConfirm: u,
+      onCancel: H
+    }), a[11] = u, a[12] = P;
+    else P = a[12];
+    let M;
+    if (a[13] !== i || a[14] !== P) M = e(ge, {
+      title: "Remove server?",
+      subtitle: i,
+      onCancel: D,
+      color: "error",
+      children: P
+    }), a[13] = i, a[14] = P, a[15] = M;
+    else M = a[15];
+    return M
+  }
+  let v;
+  if (a[16] === S) v = [{
+    label: "Remove",
+    value: "remove"
+  }, {
+    label: "Back",
+    value: "back"
+  }], a[16] = v;
+  else v = a[16];
+  let Y = v,
+    h;
+  if (a[17] !== t.dir) h = r(n, {
+    dimColor: !0,
+    children: ["Directory ", t.dir]
+  }), a[17] = t.dir, a[18] = h;
+  else h = a[18];
+  let i;
+  if (a[19] !== t.spawnMode) i = r(n, {
+    dimColor: !0,
+    children: ["Spawn mode ", t.spawnMode]
+  }), a[19] = t.spawnMode, a[20] = i;
+  else i = a[20];
+  const D = t.isRunning ? "success" : "pending";
+  let u;
+  if (a[21] !== D) u = e(et, {
+    status: D,
+    withSpace: !0
+  }), a[21] = D, a[22] = u;
+  else u = a[22];
+  const H = t.isRunning ? "running" : "not running";
+  let P;
+  if (a[23] !== u || a[24] !== H) P = r(n, {
+    dimColor: !0,
+    children: ["Status", "     ", u, H]
+  }), a[23] = u, a[24] = H, a[25] = P;
+  else P = a[25];
+  let M;
+  if (a[26] !== h || a[27] !== i || a[28] !== P) M = r(s, {
+    flexDirection: "column",
+    marginBottom: 1,
+    children: [h, i, P]
+  }), a[26] = h, a[27] = i, a[28] = P, a[29] = M;
+  else M = a[29];
+  let b;
+  if (a[30] !== o) b = (E) => {
+    if (E === "back") {
+      return o()
+    }
+    A(!0)
+  }, a[30] = o, a[31] = b;
+  else b = a[31];
+  let _;
+  if (a[32] !== k || a[33] !== o || a[34] !== b) _ = e(Fe, {
+    options: Y,
+    isDisabled: k,
+    onChange: b,
+    onCancel: o
+  }), a[32] = k, a[33] = o, a[34] = b, a[35] = _;
+  else _ = a[35];
+  let O;
+  if (a[36] !== o || a[37] !== t.name || a[38] !== _ || a[39] !== M) O = r(ge, {
+    title: t.name,
+    onCancel: o,
+    children: [M, _]
+  }), a[36] = o, a[37] = t.name, a[38] = _, a[39] = M, a[40] = O;
+  else O = a[40];
+  return O
+}
+
+function Ke(m) {
+  let f = w(50),
+    {
+      defaultDir: t,
+      onCancel: o,
+      onAdded: p,
+      storageV5: c
+    } = m,
+    k;
+  if (f[0] !== t) k = Q(t), f[0] = t, f[1] = k;
+  else k = f[1];
+  let x;
+  if (f[2] !== t || f[3] !== k) x = {
+    dir: t,
+    name: k,
+    spawnMode: "same-dir"
+  }, f[2] = t, f[3] = k, f[4] = x;
+  else x = f[4];
+  let [C, A] = g(x), [a, B] = g(!1), [v, L] = g(null), [y, h] = g(!1), i;
+  if (f[5] !== t || f[6] !== a) i = function M(D, u) {
+    if (D === "name") B(!0);
+    A((H) => {
+      if (H[D] === u) {
+        return H
+      }
+      let P = {
+        ...H,
+        [D]: u
+      };
+      if (D === "dir" && !a) P.name = Q(ne(nd(u.trim() || t)));
+      return P
+    })
+  }, f[5] = t, f[6] = a, f[7] = i;
+  else i = f[7];
+  let M = i,
+    Y;
+  if (f[8] !== t || f[9] !== C.dir) Y = ne(nd(C.dir?.trim() || t)), f[8] = t, f[9] = C.dir, f[10] = Y;
+  else Y = f[10];
+  let b = Y,
+    E;
+  if (f[11] !== t) E = (_) => {
+    let O = ne(nd(_.trim() || t));
+    return AI(O, {
+      advisoryNoFsProbe: !0
+    }) ? "Available on claude.ai/code and the Claude mobile app." : `${O} is not yet trusted \u2014 you'll be asked to trust it on submit.`
+  }, f[11] = t, f[12] = E;
+  else E = f[12];
+  let ee;
+  if (f[13] !== t || f[14] !== E) ee = {
+    type: "text",
+    key: "dir",
+    label: "Directory",
+    placeholder: t,
+    required: !0,
+    hint: E
+  }, f[13] = t, f[14] = E, f[15] = ee;
+  else ee = f[15];
+  let fe;
+  if (f[16] !== a) fe = {
+    type: "text",
+    key: "name",
+    label: "Name",
+    hint: () => a ? "Shown in the claude.ai session picker." : "Auto-generated from the directory name."
+  }, f[16] = a, f[17] = fe;
+  else fe = f[17];
+  let pe;
+  if (f[18] === S) pe = {
+    type: "select",
+    key: "spawnMode",
+    label: "Spawn mode",
+    options: [{
+      label: "same-dir",
+      value: "same-dir"
+    }, {
+      label: "worktree",
+      value: "worktree"
+    }],
+    hint: Ut
+  }, f[18] = pe;
+  else pe = f[18];
+  let de;
+  if (f[19] !== ee || f[20] !== fe) de = [ee, fe, pe], f[19] = ee, f[20] = fe, f[21] = de;
+  else de = f[21];
+  let te = de,
+    le;
+  if (f[22] !== p || f[23] !== o || f[24] !== c || f[25] !== C.name || f[26] !== C.spawnMode) le = async function J(G) {
+    h(!0);
+    let uo = C.name?.trim() || Q(G);
+    let ve = C.spawnMode ?? "same-dir";;
+    try {
+      await H_t({
+        dir: G,
+        name: uo,
+        spawnMode: ve
+      }, void 0, c), p()
+    } catch (oe) {
+      let Be = oe;
+      d(Be), h(!1), o()
+    }
+  }, f[22] = p, f[23] = o, f[24] = c, f[25] = C.name, f[26] = C.spawnMode, f[27] = le;
+  else le = f[27];
+  let J = le,
+    oe;
+  if (f[28] !== y || f[29] !== J || f[30] !== b) oe = function re() {
+    if (y) {
+      return
+    }
+    if (!AI(b)) {
+      L({
+        dir: b,
+        trustRoot: V0(b)
+      });
+      return
+    }
+    J(b)
+  }, f[28] = y, f[29] = J, f[30] = b, f[31] = oe;
+  else oe = f[31];
+  let re = oe;
+  if (v !== null) {
+    let Ct = v.trustRoot != null && v.trustRoot !== v.dir ? ` It's part of the repository at ${v.trustRoot} \u2014 trusting it trusts that whole repository.` : "";
+    const U = `${v.dir} hasn't been trusted yet.${Ct} Trusting allows Claude to read and execute files there.`;
+    let ce;
+    if (f[32] === S) ce = () => L(null), f[32] = ce;
+    else ce = f[32];
+    let he;
+    if (f[33] !== J || f[34] !== v.dir || f[35] !== c) he = () => {
+      b4n(v.dir, c).then(() => J(v.dir)), L(null)
+    }, f[33] = J, f[34] = v.dir, f[35] = c, f[36] = he;
+    else he = f[36];
+    let Ge;
+    if (f[37] === S) Ge = () => L(null), f[37] = Ge;
+    else Ge = f[37];
+    let be;
+    if (f[38] !== he) be = e(qn, {
+      hideIndexes: !0,
+      cancelFirst: !0,
+      focus: "cancel",
+      confirmLabel: "Yes, trust and add server",
+      cancelLabel: "No, go back",
+      onConfirm: he,
+      onCancel: Ge
+    }), f[38] = he, f[39] = be;
+    else be = f[39];
+    let Ue;
+    if (f[40] !== U || f[41] !== be) Ue = e(ge, {
+      title: "Trust this directory?",
+      subtitle: U,
+      onCancel: ce,
+      children: be
+    }), f[40] = U, f[41] = be, f[42] = Ue;
+    else Ue = f[42];
+    return Ue
+  }
+  const U = y ? "Adding\u2026" : "Add server";
+  let ce;
+  if (f[43] !== te || f[44] !== re || f[45] !== o || f[46] !== M || f[47] !== U || f[48] !== C) ce = e(CH, {
+    title: "New Remote Control server",
+    subtitle: "Make a directory available on claude.ai/code and the Claude mobile app",
+    fields: te,
+    values: C,
+    onChange: M,
+    onSubmit: re,
+    onCancel: o,
+    submitLabel: U
+  }), f[43] = te, f[44] = re, f[45] = o, f[46] = M, f[47] = U, f[48] = C, f[49] = ce;
+  else ce = f[49];
+  return ce
+}
+async function Ye(m) {
+  let t = await FPe(),
+    o = j_(1, m).catch(() => null),
+    [p, c, f, k, x, C, A] = await Promise.all([o, gYr(m), o.then((a) => pt(a !== null, m)), Zbn(m).catch(() => null), E9r(m).catch(() => null), VP({
+      silent: !0
+    }, m), t ? LK() : Promise.resolve(!1)]);
+  return {
+    tasks: c,
+    servers: f,
+    lock: p,
+    status: k,
+    scheduledStatus: x,
+    bgCount: Object.keys(C.workers).length,
+    serviceInstalled: A,
+    serviceSupported: t
+  }
+}
+
+function kt() {
+  return wV(!1).map((m) => ({
+    label: m.label,
+    value: m.value ?? "",
+    description: m.description
+  }))
+}
+async function nr(m, t) {
+  let o = await Ye(t.storageV5);
+  return e(St, {
+    initialData: o,
+    modelOptions: kt(),
+    onDone: m,
+    storageV5: t.storageV5
+  })
+}
+
+function St({
+  initialData: m,
+  modelOptions: t,
+  onDone: o,
+  storageV5: p
+}) {
+  let [c, f] = g(m), k = Yt(), [x] = g(() => ({
+    wall: Date.now(),
+    clock: k.now()
+  })), [C, A] = g(x.wall), [a, B] = g({
+    type: "hub"
+  }), [v, L] = g("scheduled"), [y, h] = g(!1), [i, D] = g(null);
+  async function u() {
+    let b = await Ye(p);
+    f(b)
+  }
+  let H = T(0);
+  Vs(() => {
+    if (A(x.wall + (k.now() - x.clock)), H.current++ % 2 === 0) u()
+  }, a.type === "hub" ? 1000 : null);
+  async function P(b) {
+    if (y) return;
+    h(!0), D(null);
+    let E;
+    try {
+      switch (b) {
+        case "uninstall":
+          E = await fJe();
+          break;
+        case "stop":
+          E = await nyt();
+          break
+      }
+      if (!E.ok) D(`${b} failed: ${E.error}`)
+    } finally {
+      try {
+        await u()
+      } catch {}
+      h(!1)
+    }
+  }
+
+  function M() {
+    u(), B({
+      type: "hub"
+    })
+  }
+  switch (a.type) {
+    case "detail-scheduled":
+      return e(EQn, {
+        task: a.entry,
+        onBack: M,
+        onEdit: (b) => B({
+          type: "new",
+          kind: "scheduled",
+          prefill: b
+        }),
+        onDone: o,
+        refresh: u,
+        storageV5: p
+      });
+    case "detail-remoteControl":
+      return e(He, {
+        server: a.entry,
+        onBack: M,
+        onDone: o,
+        refresh: u,
+        storageV5: p
+      });
+    case "new":
+      if (a.kind === "remoteControl") return e(Ke, {
+        defaultDir: we(),
+        onCancel: M,
+        onAdded: () => M(),
+        storageV5: p
+      });
+      return e(TQn, {
+        defaultDir: we(),
+        existingIds: c.tasks.map((b) => b.id),
+        prefill: a.prefill,
+        modelOptions: t,
+        onCancel: M,
+        onDone: o,
+        onSaved: async () => M(),
+        storageV5: p
+      });
+    case "hub":
+      break
+  }
+  let Y = [e(ea, {
+    id: "scheduled",
+    title: "Scheduled",
+    children: e(qe, {
+      kind: "scheduled",
+      data: c,
+      now: C,
+      busy: y,
+      message: i,
+      onSelect: (b) => B({
+        type: "detail-scheduled",
+        entry: b
+      }),
+      onAddNew: () => B({
+        type: "new",
+        kind: "scheduled"
+      }),
+      onService: (b) => void P(b),
+      onCancel: () => o()
+    })
+  }, "scheduled")];
+  return Y.push(e(ea, {
+    id: "remoteControl",
+    title: "Remote Control",
+    children: e(qe, {
+      kind: "remoteControl",
+      data: c,
+      now: C,
+      busy: y,
+      message: i,
+      onSelect: (b) => B({
+        type: "detail-remoteControl",
+        entry: b
+      }),
+      onAddNew: () => B({
+        type: "new",
+        kind: "remoteControl"
+      }),
+      onService: (b) => void P(b),
+      onCancel: () => o()
+    })
+  }, "remoteControl")), e(ge, {
+    title: "Claude daemon",
+    onCancel: () => o(),
+    hideInputGuide: !0,
+    children: e(z_, {
+      title: null,
+      color: "permission",
+      selectedTab: v,
+      onTabChange: (b) => L(b),
+      navFromContent: !0,
+      children: Y
+    })
+  })
+}
+var Re = {
+  scheduled: "scheduled task",
+  remoteControl: "remote-control server"
+};
+
+function qe(m) {
+  let u = w(58),
+    {
+      kind: t,
+      data: o,
+      now: p,
+      busy: c,
+      message: f,
+      onSelect: k,
+      onAddNew: x,
+      onService: C,
+      onCancel: A
+    } = m,
+    {
+      headerFocused: a,
+      focusHeader: B
+    } = yg(),
+    v = t === "scheduled" ? o.tasks : o.servers,
+    L = bt(o),
+    y = v.length,
+    h = v.length + 1 + L.length,
+    [i, D] = g(0),
+    H, P;
+  if (u[0] !== i || u[1] !== h) H = () => {
+    if (i >= h) D(Math.max(0, h - 1))
+  }, P = [h, i], u[0] = i, u[1] = h, u[2] = H, u[3] = P;
+  else H = u[2], P = u[3];
+  R(H, P);
+  let M;
+  if (u[4] !== B || u[5] !== i) M = () => {
+    if (i === 0) B();
+    else D(i - 1)
+  }, u[4] = B, u[5] = i, u[6] = M;
+  else M = u[6];
+  let Y;
+  if (u[7] !== i || u[8] !== h) Y = () => D(Math.min(h - 1, i + 1)), u[7] = i, u[8] = h, u[9] = Y;
+  else Y = u[9];
+  const b = !a;
+  let E;
+  if (u[10] !== b) E = {
+    context: "Select",
+    isActive: b
+  }, u[10] = b, u[11] = E;
+  else E = u[11];
+  Wt({
+    "select:previous": M,
+    "select:next": Y,
+    "select:accept": () => {
+      if (c) {
+        return
+      }
+      if (i < v.length) k(v[i]);
+      else if (i === y) x();
+      else C(L[i - y - 1])
+    },
+    "select:cancel": A
+  }, E);
+  let _;
+  if (u[12] !== o || u[13] !== v || u[14] !== t || u[15] !== p) _ = ht(t, v, o, p), u[12] = o, u[13] = v, u[14] = t, u[15] = p, u[16] = _;
+  else _ = u[16];
+  let O = _;
+  const ee = s,
+    fe = "column",
+    pe = "  " + O.header;
+  let de;
+  if (u[17] !== pe) de = e(n, {
+    dimColor: !0,
+    children: pe
+  }), u[17] = pe, u[18] = de;
+  else de = u[18];
+  let te;
+  if (u[19] !== v.length || u[20] !== t) te = v.length === 0 && e(Cr, {
+    children: `  (no ${Re[t]}s)`
+  }), u[19] = v.length, u[20] = t, u[21] = te;
+  else te = u[21];
+  let le;
+  if (u[22] !== v || u[23] !== i || u[24] !== a || u[25] !== O.keys || u[26] !== O.rows) {
+    let G;
+    if (u[28] !== i || u[29] !== a || u[30] !== O.keys || u[31] !== O.rows) G = (uo, ve) => {
+      let oe = !a && i === ve;
+      return r(s, {
+        children: [r(n, {
+          color: oe ? "suggestion" : void 0,
+          children: [oe ? Z.pointer : " ", " "]
+        }), e(n, {
+          bold: oe,
+          children: O.rows[ve].text
+        }), O.rows[ve].suffix]
+      }, O.keys[ve])
+    }, u[28] = i, u[29] = a, u[30] = O.keys, u[31] = O.rows, u[32] = G;
+    else G = u[32];
+    le = v.map(G);
+    u[22] = v, u[23] = i, u[24] = a, u[25] = O.keys, u[26] = O.rows, u[27] = le
+  } else le = u[27];
+  const G = !a && i === y,
+    Be = `+ Add new ${Re[t]}\u2026`;
+  let J;
+  if (u[33] !== G || u[34] !== Be) J = e(s, {
+    marginTop: 1,
+    children: e(me, {
+      isFocused: G,
+      label: Be
+    })
+  }), u[33] = G, u[34] = Be, u[35] = J;
+  else J = u[35];
+  const re = s,
+    Ct = 1,
+    U = "column",
+    ce = "single",
+    he = !1,
+    Ge = !1,
+    be = !1,
+    Ue = !0;
+  let Qe, Dt;
+  if (u[36] === S) Qe = e(n, {
+    bold: !0,
+    children: "Daemon service"
+  }), Dt = e(n, {
+    dimColor: !0,
+    children: " \xB7 "
+  }), u[36] = Qe, u[37] = Dt;
+  else Qe = u[36], Dt = u[37];
+  const Ze = c ? "working\u2026" : f;
+  let Me;
+  if (u[38] !== o || u[39] !== Ze) Me = r(s, {
+    children: [Qe, Dt, e(ze, {
+      data: o,
+      message: Ze
+    })]
+  }), u[38] = o, u[39] = Ze, u[40] = Me;
+  else Me = u[40];
+  let Rt;
+  if (u[41] !== y || u[42] !== i || u[43] !== a) Rt = (_e, mo) => e(me, {
+    isFocused: !a && i === y + 1 + mo,
+    label: yt[_e],
+    color: _e === "uninstall" ? "error" : void 0
+  }, _e), u[41] = y, u[42] = i, u[43] = a, u[44] = Rt;
+  else Rt = u[44];
+  const tt = L.map(Rt);
+  let Pe;
+  if (u[45] !== re || u[46] !== Me || u[47] !== tt) Pe = r(re, {
+    marginTop: Ct,
+    flexDirection: U,
+    borderStyle: ce,
+    borderBottom: he,
+    borderLeft: Ge,
+    borderRight: be,
+    borderDimColor: Ue,
+    children: [Me, tt]
+  }), u[45] = re, u[46] = Me, u[47] = tt, u[48] = Pe;
+  else Pe = u[48];
+  let Tt;
+  if (u[49] === S) Tt = e(F, {
+    chord: ["left", "right"],
+    action: "tabs"
+  }), u[49] = Tt;
+  else Tt = u[49];
+  let xt;
+  if (u[50] === S) xt = e(s, {
+    marginTop: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: r(ye, {
+        children: [Tt, e(F, {
+          chord: ["up", "down"],
+          action: "move"
+        }), e(F, {
+          chord: "enter",
+          action: "select"
+        }), e(F, {
+          chord: "escape",
+          action: "close"
+        })]
+      })
+    })
+  }), u[50] = xt;
+  else xt = u[50];
+  let Ft;
+  if (u[51] !== ee || u[52] !== de || u[53] !== te || u[54] !== le || u[55] !== J || u[56] !== Pe) Ft = r(ee, {
+    flexDirection: fe,
+    children: [de, te, le, J, Pe, xt]
+  }), u[51] = ee, u[52] = de, u[53] = te, u[54] = le, u[55] = J, u[56] = Pe, u[57] = Ft;
+  else Ft = u[57];
+  return Ft
+}
+
+function me(m) {
+  let f = w(7),
+    {
+      isFocused: t,
+      label: o,
+      color: p
+    } = m;
+  const c = t ? void 0 : p;
+  let k;
+  if (f[0] !== t || f[1] !== o || f[2] !== c) k = e(n, {
+    bold: t,
+    color: c,
+    children: o
+  }), f[0] = t, f[1] = o, f[2] = c, f[3] = k;
+  else k = f[3];
+  let x;
+  if (f[4] !== t || f[5] !== k) x = e(tw, {
+    isFocused: t,
+    styled: !1,
+    children: k
+  }), f[4] = t, f[5] = k, f[6] = x;
+  else x = f[6];
+  return x
+}
+
+function ht(m, t, o, p) {
+  let c = new Date(p),
+    f = o.lock !== null,
+    k, x, C, A;
+  if (m === "scheduled") {
+    k = ["Name", "Schedule", "Next run", "Last run", "PID"], A = 2;
+    let y = t,
+      h = o.scheduledStatus?.workerPid ?? o.status?.workers["scheduled:0"]?.pid;
+    C = y.map((i) => i.id), x = y.map((i) => {
+      let D = o.scheduledStatus?.tasks[i.id],
+        u = i.enabled ? ao(i.cron, c) : null;
+      return [i.id, Ck(i.cron), !i.enabled ? "disabled" : !f ? "daemon stopped" : D?.running ? "running" : u ? iK(u, {
+        now: c
+      }) : "\u2014", D?.lastFiredAt ? iK(new Date(D.lastFiredAt), {
+        now: c
+      }) : "\u2014", D?.running && h !== void 0 ? String(h) : "\u2014"]
+    })
+  } else {
+    k = ["Name", "Directory", "Status", "PID"], A = 2;
+    let y = t;
+    C = y.map((h) => h.dir), x = y.map((h, i) => {
+      let D = o.status?.workers[`${m}:${i}`]?.pid,
+        u = f && (o.status === null || D !== void 0);
+      return [h.name, lo(h.dir), u ? "running" : "stopped", D !== void 0 ? String(D) : u ? "\u2014" : ""]
+    })
+  }
+  let a = k.map((y, h) => Math.max(ie(y), ...x.map((i) => ie(i[h] ?? "")))),
+    B = (y, h) => y + " ".repeat(Math.max(0, a[h] - ie(y))),
+    v = k.map(B).join("  "),
+    L = x.map((y) => ({
+      text: y.slice(0, A).map(B).join("  ") + "  ",
+      suffix: r(V, {
+        children: [io(y[A], a[A]), e(n, {
+          children: y.slice(A + 1).map((h, i) => "  " + B(h, A + 1 + i)).join("")
+        })]
+      })
+    }));
+  return {
+    header: v,
+    rows: L,
+    keys: C
+  }
+}
+
+function io(m, t) {
+  let o = m + " ".repeat(Math.max(0, t - ie(m)));
+  return m === "running" ? e(n, {
+    color: "success",
+    children: o
+  }) : e(n, {
+    dimColor: !0,
+    children: o
+  })
+}
+
+function ao(m, t) {
+  let o = LB(m);
+  return o ? Pat(o, t) : null
+}
+
+function lo(m) {
+  return rA(m, 40)
+}
+var yt = {
+  uninstall: "Uninstall service",
+  stop: "Stop"
+};
+
+function bt(m) {
+  if (!m.serviceSupported || !m.serviceInstalled) return [];
+  if (m.lock === null) return ["uninstall"];
+  return ["stop", "uninstall"]
+}
+
+function ze(m) {
+  let p = w(25),
+    {
+      data: t,
+      message: o
+    } = m;
+  if (o) {
+    let c;
+    if (p[0] !== o) c = e(n, {
+      dimColor: !0,
+      children: o
+    }), p[0] = o, p[1] = c;
+    else c = p[1];
+    return c
+  }
+  if (!t.serviceSupported) {
+    let c;
+    if (p[2] === S) c = e(n, {
+      dimColor: !0,
+      children: "service install not available on this platform \u2014 runs on demand"
+    }), p[2] = c;
+    else c = p[2];
+    return c
+  }
+  if (t.lock === null) {
+    const c = t.serviceInstalled ? "installed \xB7 not running" : "not installed (runs on demand)";
+    let f;
+    if (p[3] !== c) f = e(n, {
+      dimColor: !0,
+      children: c
+    }), p[3] = c, p[4] = f;
+    else f = p[4];
+    return f
+  }
+  let c;
+  if (p[5] !== t.lock.version || p[6] !== t.status) c = t.status === null || t.lock.version !== {
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.283",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-09-25T00:44:42Z",
+    GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.VERSION, p[5] = t.lock.version, p[6] = t.status, p[7] = c;
+  else c = p[7];
+  let k = c,
+    f;
+  if (p[8] === S) f = e(n, {
+    color: "success",
+    children: "running"
+  }), p[8] = f;
+  else f = p[8];
+  let x;
+  if (p[9] !== t.lock.pid) x = r(V, {
+    children: ["pid ", t.lock.pid]
+  }), p[9] = t.lock.pid, p[10] = x;
+  else x = p[10];
+  let C;
+  if (p[11] !== t.lock.version) C = r(V, {
+    children: ["v", t.lock.version]
+  }), p[11] = t.lock.version, p[12] = C;
+  else C = p[12];
+  let A;
+  if (p[13] !== t.bgCount) A = t.bgCount > 0 && r(V, {
+    children: [t.bgCount, " ", I(t.bgCount, "background session")]
+  }), p[13] = t.bgCount, p[14] = A;
+  else A = p[14];
+  let a;
+  if (p[15] !== t.serviceInstalled) a = !t.serviceInstalled && e(V, {
+    children: "not installed as service"
+  }), p[15] = t.serviceInstalled, p[16] = a;
+  else a = p[16];
+  let B;
+  if (p[17] !== k) B = k && e(n, {
+    color: "warning",
+    children: "restart to update"
+  }), p[17] = k, p[18] = B;
+  else B = p[18];
+  let v;
+  if (p[19] !== x || p[20] !== C || p[21] !== A || p[22] !== a || p[23] !== B) v = e(n, {
+    dimColor: !0,
+    children: r(ye, {
+      children: [f, x, C, A, a, B]
+    })
+  }), p[19] = x, p[20] = C, p[21] = A, p[22] = a, p[23] = B, p[24] = v;
+  else v = p[24];
+  return v
+}
+async function ir(m) {
+  let [{
+    createRoot: t
+  }, {
+    getBaseRenderOptions: o
+  }] = await Promise.all([import("B:/~BUN/root/chunk-7kb25cj2.js"), import("B:/~BUN/root/chunk-njw9q22k.js")]), {
+    AppRoot: p
+  } = await import("B:/~BUN/root/chunk-wbpvjxq0.js"), {
+    getEraseScreenSequence: c
+  } = await import("B:/~BUN/root/chunk-g5rzs3sn.js"), f = await Ye(m);
+  process.stdout.write(c());
+  let k = await t(o(!1));
+  await new Promise((x) => {
+    k.render(e(p, {
+      children: e(St, {
+        initialData: f,
+        modelOptions: kt(),
+        storageV5: m,
+        onDone: (C) => {
+          if (C) process.stdout.write(C + `
+`);
+          x()
+        }
+      })
+    }))
+  }), k.unmount()
+}
+export {
+  St as DaemonHub, nr as call, ir as renderDaemonHubStandalone
+};

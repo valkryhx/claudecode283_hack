@@ -1,0 +1,35 @@
+/* ==========================================================================
+ * m0132.Ci   [m0132_0xc24a4bb.js @ 105633]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+var Ci = {
+  event: "session.compact",
+  restoreArgument: (e, t) => W(["trigger", "agentId"], e, t),
+  checkArgument: (e, t) => {
+    if (e.trigger !== t.trigger) return "a changed trigger (the compaction is what it is; next(e) passes it on)";
+    if (e.agentId !== t.agentId) return "a changed agentId (the loop compacting is pinned)";
+    let {
+      instructions: n
+    } = e;
+    return n === void 0 || typeof n === "string" ? fo(e.messages) : "instructions that are not a string";
+  },
+  check: C((e, t, o) => {
+    let {
+      skip: r,
+      messages: n,
+      tokensBefore: s,
+      tokensAfter: i,
+      usage: p
+    } = e;
+    if (r !== void 0) {
+      if (!(typeof r === "string" && r !== "")) return "a skip that is not a reason (a non-empty string)";
+      if (n !== void 0) return "a skip beside messages";
+      return t.trigger !== "precompute" && (o ?? []).some(u => u.messages !== void 0) ? "a skip after next() compacted (the compaction happened beneath it; veto before calling next, or hand its result up)" : void 0;
+    }
+    if (n === void 0) return "neither { messages } nor { skip }";
+    if (!(mo(s) && mo(i))) return "token counts that are not numbers";
+    return nn(p) ? fo(n) : "a usage that is not the four token counts";
+  })
+};

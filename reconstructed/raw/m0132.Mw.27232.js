@@ -1,0 +1,1 @@
+function Mw(e,t){if(e===void 0)return()=>{};if(e.aborted)return t.abort(e.reason),()=>{};let o=()=>t.abort(e.reason);return e.addEventListener("abort",o,{once:!0}),()=>e.removeEventListener("abort",o)}

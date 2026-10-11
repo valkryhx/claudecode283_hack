@@ -1,0 +1,1 @@
+function Ba(e){switch(e.reason){case"api-error":return e.status!==null?`the request failed (HTTP ${e.status}, ${e.error})`:`the request failed (${e.error})`;case"empty-reply":return"the model answered with no text";case"aborted":return"the request was aborted"}}

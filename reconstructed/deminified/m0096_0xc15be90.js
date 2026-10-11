@@ -1,0 +1,70 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { readFile as r, readlink as s } from "fs/promises";
+import { hostname as i } from "os";
+var v5e = 262144;
+function bNo(n) {
+  let e = n.replace(/\.json$/, ""),
+    pid = parseInt(e, 10);
+  if (isNaN(pid)) return null;
+  return {
+    pid: pid,
+    canonical: String(pid) === e
+  };
+}
+var u = ["interactive", "bg", "daemon", "daemon-worker"];
+function d(n) {
+  return u.includes(n) ? n : void 0;
+}
+var a = ["busy", "shell", "idle", "waiting"];
+function p(n) {
+  return a.includes(n) ? n : void 0;
+}
+var c = 4000000000000000;
+function Spt(n) {
+  return typeof n === "number" && Number.isFinite(n) && n >= 0 && n <= c;
+}
+function h$t(n) {
+  return Spt(n) ? n : void 0;
+}
+function SNo(n) {
+  let e = typeof n === "object" && n !== null ? n : {};
+  return {
+    cwd: typeof e.cwd === "string" ? e.cwd : "?",
+    startedAt: h$t(e.startedAt) ?? 0,
+    procStart: typeof e.procStart === "string" ? e.procStart : void 0,
+    ...(typeof e.procStartFt === "string" && {
+      procStartFt: e.procStartFt
+    }),
+    kind: d(e.kind),
+    sessionId: typeof e.sessionId === "string" ? e.sessionId : void 0,
+    status: p(e.status),
+    entrypoint: typeof e.entrypoint === "string" ? e.entrypoint : void 0,
+    ...(typeof e.pidDomain === "string" && {
+      pidDomain: e.pidDomain
+    })
+  };
+}
+function ua(n) {
+  if (n <= 1) return !1;
+  try {
+    return process.kill(n, 0), !0;
+  } catch {
+    return !1;
+  }
+}
+async function wNo(n) {
+  if (n === "windows") return `win32:${i().toLowerCase()}`;
+  if (n !== "linux" && n !== "wsl") return "win32";
+  let [e, t] = await Promise.all([r("/etc/machine-id", "utf8").then(o => o.trim(), () => ""), s("/proc/self/ns/pid").catch(() => "")]);
+  return `win32:${e}:${t}`;
+}
+export { v5e, bNo, Spt, h$t, SNo, ua, wNo };

@@ -1,0 +1,685 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  Nt,
+  j,
+  Qd
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  but,
+  WMo,
+  x,
+  Ee,
+  le
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  GI,
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import {
+  J,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  _,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  bb
+} from "B:/~BUN/root/chunk-sd4cj2qx.js";
+import {
+  uc
+} from "B:/~BUN/root/chunk-bt3h0syz.js";
+import {
+  bC,
+  df,
+  xy
+} from "B:/~BUN/root/chunk-2ppgegpr.js";
+import {
+  my
+} from "B:/~BUN/root/chunk-ew8y0fm0.js";
+import {
+  Fm
+} from "B:/~BUN/root/chunk-dfh5rt4g.js";
+import {
+  o,
+  E,
+  u,
+  A
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import {
+  pd
+} from "B:/~BUN/root/chunk-tndjj29v.js";
+
+function C() {
+  return new WeakMap
+}
+
+function jRo(e, r, n) {
+  let s = e.get(r);
+  if (s?.fired) return {
+    kind: "already_fired"
+  };
+  let d = n?.input_tokens ?? 0,
+    l = n?.cache_read_input_tokens ?? 0,
+    m = n?.cache_creation_input_tokens ?? 0,
+    y = (n?.cache_creation?.ephemeral_5m_input_tokens ?? 0) + (n?.cache_creation?.ephemeral_1h_input_tokens ?? 0),
+    h = m > 0 ? m : y;
+  if (d + l + h <= 0) return {
+    kind: "no_usage"
+  };
+  if (d < 20000 || h >= 0.1 * d) {
+    let R = s ?? {
+      consecutive: 0,
+      fired: !1,
+      okEmitted: !1
+    };
+    if (!s) e.set(r, R);
+    if (R.consecutive = 0, !R.okEmitted && l + h > 0) return R.okEmitted = !0, {
+      kind: "confirm"
+    };
+    return {
+      kind: "healthy"
+    }
+  }
+  let g = s ?? {
+    consecutive: 0,
+    fired: !1,
+    okEmitted: !1
+  };
+  if (!s) e.set(r, g);
+  if (g.consecutive++, g.consecutive >= 3) return g.fired = !0, {
+    kind: "fire",
+    consecutive: g.consecutive,
+    inputTokens: d,
+    cacheReadTokens: l,
+    cacheCreationTokens: h
+  };
+  return {
+    kind: "counted",
+    consecutive: g.consecutive
+  }
+}
+var rDt = "root";
+
+function IF(e) {
+  return e ?? "root"
+}
+var D = 256;
+class B {
+  promptCacheBreak = {
+    previousStateBySource: new Map,
+    hydrationAttempted: !1,
+    pendingPersist: Promise.resolve(),
+    latestQueuedPersist: null,
+    hashSalt: null,
+    summaryForks: new Map,
+    classifierLines: new Map,
+    classifierCompactions: new Map
+  };
+  threadDecisionTracker = void 0;
+  threadInheritedFields = {
+    storedToolsHashByThread: new Map,
+    breakerTripped: !1
+  };
+  threadDropRecreate = new Map;
+  dumpPrompts = {
+    recentRequests: [],
+    stateByAgent: new Map,
+    appendQueue: Fm()
+  };
+  requestReplay = {
+    chains: new Map,
+    unrecordableShapes: new Set
+  };
+  lastIngressUuidBySession = new Map;
+  cacheCoverage = C();
+  gzipRequestBody = {
+    latchedOff: !1,
+    rejectedThisProcess: !1,
+    persistedLatchChecked: !1,
+    persistedLatchInEffect: !1,
+    telemetryByClientRequestId: new pd({
+      max: D
+    }),
+    ccrWorkerSkipReasonsLogged: new Set
+  };
+  sentPrefix = {
+    ledger: void 0,
+    mode: void 0,
+    persist: Promise.resolve(),
+    persisted: void 0,
+    pendingSeed: void 0,
+    lastReport: new WeakMap,
+    lastVerdict: new WeakMap,
+    renderEpochs: new WeakMap,
+    announced: new WeakMap,
+    excuse: new WeakMap,
+    staged: new WeakMap,
+    boundVerdict: new WeakMap
+  };
+  bindingDrops = {
+    seenBlocks: void 0,
+    threadsRead: new pd({
+      max: 512
+    })
+  };
+  foreignThinkingKeep = void 0;
+  streamFirstByteArmedRequestIds = new pd({
+    max: 64
+  });
+  skillHealthMap = void 0;
+  firedOnceKeys = new Set;
+  hasFired(e) {
+    return this.firedOnceKeys.has(e)
+  }
+  markFired(e) {
+    this.firedOnceKeys.add(e)
+  }
+  once(e) {
+    if (this.firedOnceKeys.has(e)) return !1;
+    return this.firedOnceKeys.add(e), !0
+  }
+  resetStreamNoEventsWarningLatch() {
+    this.firedOnceKeys.delete("stream_no_events_fallback_warning")
+  }
+}
+var M = new Nt(() => new B);
+
+function Qi() {
+  return M.of(j())
+}
+var ROr = new Set(["clear", "resume", "spare_claim", "remote_attach"]);
+
+function WRo() {
+  return Qd((e, r) => {
+    if (r === "cd" || r === "hydrate") return;
+    let n = Qi();
+    if (n.resetStreamNoEventsWarningLatch(), ROr.has(r)) n.threadDropRecreate.delete(rDt)
+  })
+}
+var N = "tengu_atomic_ocean",
+  U = "tengu_gzip_request_bodies",
+  W = "tengu_gentle_hammock",
+  K = "tengu_golden_popcorn",
+  H = 4096,
+  V = 1024,
+  Q = 604800000,
+  Y = 8192;
+
+function Z(e) {
+  if (e === "ccr_worker") return x(W, !1);
+  return x(N, !1) || x(U, !1)
+}
+
+function zRo() {
+  let e = a.CLAUDE_CODE_GZIP_REQUEST_BODY_LEVEL ?? x(K, 0);
+  return Number.isInteger(e) && e >= 1 && e <= 9 ? e : void 0
+}
+
+function v(e) {
+  return e === "ccr_worker" ? a.CLAUDE_CODE_GZIP_CCR_REQUEST_BODIES : a.CLAUDE_CODE_GZIP_REQUEST_BODIES
+}
+
+function X(e) {
+  return e === "ccr_worker" ? V : H
+}
+
+function ee(e) {
+  if (a.ANTHROPIC_UNIX_SOCKET) return "unix_socket";
+  if (df() !== void 0 && !xy(e)) return "proxy";
+  let r = bC();
+  if (r?.cert !== void 0 || r?.key !== void 0) return "mtls";
+  if (a.NODE_EXTRA_CA_CERTS) {
+    let n = my();
+    if (!(uc() || a.CLAUDE_CODE_ENTRYPOINT === "local-agent" && (n === void 0 || n.NODE_EXTRA_CA_CERTS !== void 0))) return "custom_ca"
+  }
+  return
+}
+
+function Tlt(e, r, n, s = "api") {
+  if (!bb(e)) return;
+  let d = typeof r === "string" ? r.length : void 0,
+    l = v(s);
+  if (l === !1) return {
+    gzip: !1,
+    reason: "env_off",
+    bodyChars: d
+  };
+  if (!GI()) return {
+    gzip: !1,
+    reason: "not_bun_runtime",
+    bodyChars: d
+  };
+  if (d === void 0) return {
+    gzip: !1,
+    reason: "non_string_body",
+    bodyChars: d
+  };
+  if (d < X(s)) return {
+    gzip: !1,
+    reason: "below_min_size",
+    bodyChars: d
+  };
+  if (l === !0) return Qi().gzipRequestBody.rejectedThisProcess ? {
+    gzip: !1,
+    reason: "latched_off",
+    bodyChars: d
+  } : {
+    gzip: !0,
+    bodyChars: d
+  };
+  let m = ee(e);
+  if (m !== void 0) return {
+    gzip: !1,
+    reason: m,
+    bodyChars: d
+  };
+  if (!Z(s)) return {
+    gzip: !1,
+    reason: "flag_off",
+    bodyChars: d
+  };
+  if (ce(n)) return {
+    gzip: !1,
+    reason: "latched_off",
+    bodyChars: d
+  };
+  return {
+    gzip: !0,
+    bodyChars: d
+  }
+}
+var te = f(() => u({
+    type: A("error"),
+    error: u({
+      type: o(),
+      message: o()
+    })
+  })),
+  P = f(() => u({
+    latchedAt: E().finite(),
+    status: E()
+  })),
+  re = f(() => u({
+    error: o(),
+    reason: o()
+  })),
+  ne = ["The request body is not valid JSON", "Failed to parse request: could not parse request body as JSON"],
+  q = /^bad json: (?:invalid character |unexpected EOF$|unexpected end of JSON input$|EOF$)/;
+
+function k(e) {
+  return {
+    status: e.status,
+    header: (r) => e.headers.get(r) ?? void 0,
+    bodyText: () => se(e)
+  }
+}
+
+function oe(e) {
+  return (e.header("request-id")?.startsWith("req_") ?? !1) || e.header("cf-ray") !== void 0
+}
+async function se(e) {
+  let r = e.clone().body?.getReader();
+  if (!r) return "";
+  let n = new TextDecoder,
+    s = "",
+    d = Y;
+  try {
+    while (d > 0) {
+      let {
+        done: l,
+        value: m
+      } = await r.read();
+      if (l) break;
+      let y = m.subarray(0, d);
+      d -= y.byteLength, s += n.decode(y, {
+        stream: !0
+      })
+    }
+  } catch {} finally {
+    r.cancel().catch(() => {})
+  }
+  return s
+}
+
+function ie(e) {
+  let r;
+  try {
+    r = J(e)
+  } catch {
+    return q.test(e.trimEnd())
+  }
+  let n = te().safeParse(r);
+  if (n.success) return ne.some((d) => n.data.error.message.startsWith(d));
+  let s = re().safeParse(r);
+  return s.success && s.data.reason === "bad_json" && q.test(s.data.error)
+}
+async function b(e) {
+  if (e.status !== 400 && e.status !== 403 && e.status !== 415) return null;
+  if (!oe(e)) return "non_anthropic_rejection";
+  if (e.status === 400 && ie(await e.bodyText())) return "invalid_json_at_origin";
+  return null
+}
+async function ae(e) {
+  if (e.ok) return null;
+  return b(k(e))
+}
+async function de(e) {
+  if (await b(e) !== null) return "same_rejection";
+  return e.header("request-id")?.startsWith("req_") ? "api_response" : "not_api_response"
+}
+
+function ue() {
+  let e;
+  try {
+    e = le().gzipRequestBodiesLatchedOff
+  } catch {
+    return "unavailable"
+  }
+  if (e === void 0) return;
+  let r = P().safeParse(e);
+  return r.success ? r.data : "malformed"
+}
+
+function T(e, r) {
+  Ee((n) => {
+    let s = P().safeParse(n.gzipRequestBodiesLatchedOff);
+    return (s.success ? s.data.latchedAt === e : n.gzipRequestBodiesLatchedOff !== void 0) ? {
+      ...n,
+      gzipRequestBodiesLatchedOff: void 0
+    } : n
+  }, r)
+}
+
+function ce(e) {
+  let r = Qi().gzipRequestBody;
+  if (r.latchedOff) return !0;
+  if (r.persistedLatchChecked) return !1;
+  let n = ue();
+  if (n === "unavailable") return !1;
+  if (r.persistedLatchChecked = !0, n === void 0) return !1;
+  if (n === "malformed") return T(void 0, e), i("tengu_gzip_request_body_latch_cleared", {
+    reason: c("malformed")
+  }), !1;
+  let s = Date.now() - n.latchedAt;
+  if (s >= 0 && s < Q) return r.latchedOff = !0, r.persistedLatchInEffect = !0, !0;
+  return T(n.latchedAt, e), i("tengu_gzip_request_body_latch_cleared", {
+    reason: s < 0 ? c("malformed") : c("expired"),
+    latchedStatus: n.status,
+    latchedAgeHours: Math.max(0, Math.round(s / 3600000))
+  }), !1
+}
+
+function S() {
+  let e = Qi().gzipRequestBody;
+  e.latchedOff = !0, e.rejectedThisProcess = !0, e.persistedLatchChecked = !0
+}
+
+function O({
+  persist: e,
+  status: r,
+  storageV5: n,
+  rollout: s = "api"
+}) {
+  S();
+  let d = Qi().gzipRequestBody;
+  if (e && !d.persistedLatchInEffect && v(s) !== !0) d.persistedLatchInEffect = !0, Ee((l) => ({
+    ...l,
+    gzipRequestBodiesLatchedOff: {
+      latchedAt: Date.now(),
+      status: r
+    }
+  }), n);
+  return d.persistedLatchInEffect ? "persisted" : "process"
+}
+
+function w(e, r) {
+  switch (e) {
+    case "api":
+      if (r === "fell_back") p("api_gzip_request_body", "fell_back");
+      else if (Qi().once("gzip_request_body_ok")) _("api_gzip_request_body");
+      return;
+    case "ccr_worker":
+      if (r === "fell_back") p("ccr_worker_gzip_request_body", "fell_back");
+      else if (Qi().once("ccr_worker_gzip_request_body_ok")) _("ccr_worker_gzip_request_body");
+      return;
+    case "frame_publish":
+      if (r === "fell_back") p("artifact_publish_gzip_request_body", "fell_back");
+      else if (Qi().once("artifact_publish_gzip_request_body_ok")) _("artifact_publish_gzip_request_body");
+      return
+  }
+}
+
+function oDt(e = "api") {
+  w(e, "sent")
+}
+
+function pe(e, r) {
+  if (e !== "ccr_worker") return;
+  let n = Qi().gzipRequestBody.ccrWorkerSkipReasonsLogged;
+  if (n.has(r.reason)) return;
+  n.add(r.reason), i("tengu_gzip_request_body_skipped", {
+    rollout: c(e),
+    reason: c(r.reason),
+    requestBodyChars: r.bodyChars
+  })
+}
+
+function G({
+  rejection: e,
+  status: r,
+  viaCloudflare: n,
+  retryOutcome: s,
+  retryStatus: d,
+  latched: l,
+  bodyChars: m,
+  rollout: y = "api"
+}) {
+  w(y, "fell_back"), t(`[API REQUEST] gzip request body rejected (rollout=${y} status=${r} kind=${e}); re-sent uncompressed \u2192 ${s}${d!==void 0?` status=${d}`:""}; gzip latched off: ${l}`, {
+    level: "warn"
+  }), i("tengu_gzip_request_body_fallback", {
+    rollout: c(y),
+    rejection: c(e),
+    status: r,
+    viaCloudflare: n,
+    retryOutcome: c(s),
+    retryStatus: d,
+    latched: c(l),
+    requestBodyChars: m
+  })
+}
+async function I({
+  rejection: e,
+  first: r,
+  resend: n,
+  facts: s,
+  aborted: d,
+  bodyChars: l,
+  storageV5: m,
+  rollout: y
+}) {
+  let h = {
+      rejection: e,
+      status: r.status,
+      viaCloudflare: r.header("cf-ray") !== void 0,
+      bodyChars: l,
+      rollout: y
+    },
+    g;
+  try {
+    g = await n()
+  } catch (L) {
+    throw G({
+      ...h,
+      retryOutcome: d() ? "aborted" : "network_error",
+      retryStatus: void 0,
+      latched: O({
+        persist: !1,
+        status: r.status,
+        storageV5: m,
+        rollout: y
+      })
+    }), L
+  }
+  let R = s(g),
+    z = await de(R),
+    F = O({
+      persist: y !== "ccr_worker" && e === "non_anthropic_rejection" && z === "api_response",
+      status: r.status,
+      storageV5: m,
+      rollout: y
+    });
+  return G({
+    ...h,
+    retryOutcome: z,
+    retryStatus: R.status,
+    latched: F
+  }), g
+}
+async function AOr({
+  res: e,
+  dispatch: r,
+  finalInit: n,
+  identityBody: s,
+  clientRequestId: d,
+  storageV5: l,
+  rollout: m = "api"
+}) {
+  let y = await ae(e);
+  if (y === null) return e;
+  S(), e.body?.cancel().catch(() => {});
+  let {
+    compress: h,
+    ...g
+  } = n, R = {
+    ...g,
+    body: s
+  };
+  if (d !== void 0) xOr(d, {
+    requestBodyEncoding: "identity",
+    requestBodyChars: s.length,
+    gzipFallbackStatus: e.status
+  });
+  return I({
+    rejection: y,
+    first: k(e),
+    resend: () => r(R),
+    facts: k,
+    aborted: () => n.signal?.aborted === !0,
+    bodyChars: s.length,
+    storageV5: l,
+    rollout: m
+  })
+}
+async function GRo({
+  answer: e,
+  facts: r,
+  resendIdentity: n,
+  aborted: s,
+  bodyChars: d,
+  storageV5: l,
+  rollout: m
+}) {
+  let y = r(e),
+    h = await b(y);
+  if (h === null) return e;
+  return S(), I({
+    rejection: h,
+    first: y,
+    resend: n,
+    facts: r,
+    aborted: s,
+    bodyChars: d,
+    storageV5: l,
+    rollout: m
+  })
+}
+
+function Ran(e, r) {
+  return async (n, s, d) => {
+    let l = Tlt(n, s.body, r, e);
+    if (!l?.gzip) {
+      if (l !== void 0) pe(e, l);
+      return d(s)
+    }
+    oDt(e);
+    let m = {
+        ...s,
+        compress: "gzip",
+        body: but(s.body)
+      },
+      y = await d(m);
+    return AOr({
+      res: y,
+      dispatch: d,
+      finalInit: m,
+      identityBody: s.body,
+      clientRequestId: void 0,
+      storageV5: r,
+      rollout: e
+    })
+  }
+}
+
+function xOr(e, r) {
+  Qi().gzipRequestBody.telemetryByClientRequestId.set(e, r)
+}
+
+function Clt(e) {
+  if (e === void 0) return;
+  let r = Qi().gzipRequestBody.telemetryByClientRequestId,
+    n = r.get(e);
+  return r.delete(e), n
+}
+
+function Aan(e) {
+  if (e === void 0) return {};
+  return {
+    requestBodyEncoding: c(e.requestBodyEncoding),
+    requestBodyChars: e.requestBodyChars,
+    ...e.requestBodyEncoding === "gzip" && e.requestBodyGzipLevel !== void 0 && {
+      requestBodyGzipLevel: e.requestBodyGzipLevel
+    },
+    ..."gzipSkipReason" in e && {
+      gzipSkipReason: c(e.gzipSkipReason)
+    },
+    ..."gzipFallbackStatus" in e && {
+      gzipFallback: !0,
+      gzipFallbackStatus: e.gzipFallbackStatus
+    }
+  }
+}
+WMo(Tlt);
+export {
+  jRo,
+  rDt,
+  IF,
+  Qi,
+  ROr,
+  WRo,
+  zRo,
+  Tlt,
+  oDt,
+  AOr,
+  GRo,
+  Ran,
+  xOr,
+  Clt,
+  Aan
+};

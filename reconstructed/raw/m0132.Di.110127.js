@@ -1,0 +1,1 @@
+var Di={event:"agent.spawn",restoreArgument:(e,t)=>W(an,e,t),checkArgument(e,t){return wt({keys:RNt,passed:e,received:t,explanation:`the identity of the spawn and its parent is pinned; a rewrite keeps ${RNt.join(", ")}`})??pn(e,t)},check:C((e)=>ct(e,"{ model }",(t)=>typeof t.model==="string"))};

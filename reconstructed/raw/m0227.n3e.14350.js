@@ -1,0 +1,1 @@
+function n3e(e){if(e.reason==="root_not_object")return"the API only accepts an object-rooted tool input schema, so every request would be rejected";return e.scope==="whole"?"no output can satisfy this schema, so StructuredOutput validation would fail on every attempt":"one property or item sub-schema admits no value, so any output that fills it in fails validation"}

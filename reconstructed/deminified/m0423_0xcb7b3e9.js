@@ -1,0 +1,2465 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { y, c, ue } from "B:/~BUN/root/chunk-kks4mj3w.js";
+import { l, v, ao, pA, Ym, vKr, B } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { Ne, Me } from "B:/~BUN/root/chunk-ekrhn4q1.js";
+import { H } from "B:/~BUN/root/chunk-dkxhwhft.js";
+import { Q } from "B:/~BUN/root/chunk-17wqwt36.js";
+import { aE } from "B:/~BUN/root/chunk-54p0h65d.js";
+import { i } from "B:/~BUN/root/chunk-728mwbhs.js";
+import { m, Or } from "B:/~BUN/root/chunk-51n463p1.js";
+import { b, J, qo, t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import { Wde } from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import { E1t, fh, m2r, g2r } from "B:/~BUN/root/chunk-0fnha6bz.js";
+import { fr } from "B:/~BUN/root/chunk-y04k89s2.js";
+import { a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import { d, O } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { V1, $N, K$e, kAe, OD, wmn, jpt, Wpt, Emn, Y$e, zpt, EAe } from "B:/~BUN/root/chunk-ah3egpyh.js";
+import { kv, qHe, au, Eu, gI } from "B:/~BUN/root/chunk-y00rw36h.js";
+import { Hu } from "B:/~BUN/root/chunk-ewjenbzd.js";
+import { Ea, fUo } from "B:/~BUN/root/chunk-py7yqpgt.js";
+import { dEr, y3 } from "B:/~BUN/root/chunk-mmtwp5d6.js";
+import { fi, x } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import { Kft, Yft } from "B:/~BUN/root/chunk-bpp59nyd.js";
+import { ZAe, b_e, Qne } from "B:/~BUN/root/chunk-zv4xh2j0.js";
+import { wt } from "B:/~BUN/root/chunk-rwwxddqq.js";
+import { li } from "B:/~BUN/root/chunk-bt3h0syz.js";
+import { f3n, Xce, cne, QRe, kfn, $c, eAe } from "B:/~BUN/root/chunk-83yxmdy5.js";
+import { r5e } from "B:/~BUN/root/chunk-3hn9fzjy.js";
+import { Id } from "B:/~BUN/root/chunk-aw2zngte.js";
+import { cl } from "B:/~BUN/root/chunk-3wnb3s8p.js";
+import { iG, Jue, qK, WEn, n7e, qQr, zEn, KQr, jIe, dor } from "B:/~BUN/root/chunk-b0ntjfh7.js";
+import { Em, Xc } from "B:/~BUN/root/chunk-f71hcy5v.js";
+import { x1n, TEo, E4e, T4e, C4e, BOt, kS, $9, REo, AEo, Aee, _w, nx, A4e, jOt, WOt, zOt, ZO, fsn } from "B:/~BUN/root/chunk-30zp50p7.js";
+import { Sc as proto, d3, wqe, jFn, ukr, o9, Tke, $ot, WFn, Sk, Pr, ja, s9, Ir, ry, Wot, oy, Mi } from "B:/~BUN/root/chunk-9sy3w2pa.js";
+import { W1e, gJe, A7n, iyt, $Pe, U2t } from "B:/~BUN/root/chunk-7bmdhxn6.js";
+import { Ure } from "B:/~BUN/root/chunk-aeenrt9j.js";
+import { Zjt, eWt } from "B:/~BUN/root/chunk-gw2ecz8t.js";
+import { F1e } from "B:/~BUN/root/chunk-my60r5py.js";
+import { oGt } from "B:/~BUN/root/chunk-1tq9wbjk.js";
+import { DIe } from "B:/~BUN/root/chunk-ekfgvtj1.js";
+import { yU } from "B:/~BUN/root/chunk-mr1whbdb.js";
+import { uV, dv } from "B:/~BUN/root/chunk-esqb9g1a.js";
+import { ua } from "B:/~BUN/root/chunk-358c43wz.js";
+import { t9e } from "B:/~BUN/root/chunk-23aycy1d.js";
+import { randomBytes as Re } from "crypto";
+import { unlinkSync as It } from "fs";
+import { mkdir as Ot, open as Lt, readdir as Nt, unlink as q } from "fs/promises";
+import { connect as be } from "net";
+import { join as pe } from "path";
+import { randomBytes as de } from "crypto";
+import { statSync as Fe } from "fs";
+import { access as ut, mkdir as et, unlink as ce, writeFile as Ee } from "fs/promises";
+import { basename as ft, dirname as gt, isAbsolute as mt } from "path";
+var Pe = 2000,
+  ne = Em,
+  st = /\x1b\[\d*D/g;
+function ke(e, r) {
+  let s = "",
+    h = "",
+    n = !0,
+    p = 0,
+    o = "",
+    u = !1;
+  function g(state, tempo) {
+    let detail = Xc(qo(h), ne),
+      w = `${state}|${tempo}|${detail}`;
+    if (w === o) return;
+    o = w, Ir(e, r).then(A => A && !u ? ja(e, {
+      ...A,
+      state: state,
+      tempo: tempo,
+      detail: detail,
+      updatedAt: new Date().toISOString()
+    }, r) : void 0).catch(d);
+  }
+  let f = setInterval(() => {
+    if (p > 0 && Date.now() - p < Pe) g("working", "active");else if (!n && h) g("blocked", "blocked");else g("working", "idle");
+  }, Pe);
+  return f.unref(), {
+    feed(S) {
+      let k = wt(S.replace(st, "\x00")).replace(/\r\n?/g, `
+`).replace(/\0+$/, "").replace(/\0/g, `
+`);
+      if (!k) return;
+      p = Date.now(), s += k;
+      let _ = s.split(`
+`);
+      if (s = _.pop() ?? "", n = s === "", h = s.trim() || _.findLast(A => A.trim())?.trim() || h, s.length > ne * 2) s = s.slice(-ne);
+      if (o.startsWith("blocked|")) g("working", "active");
+    },
+    dispose() {
+      u = !0, clearInterval(f);
+    },
+    get lastLine() {
+      return Xc(qo(h), ne);
+    }
+  };
+}
+import { rename as nt, unlink as oe } from "fs/promises";
+import { Socket as ot } from "net";
+import { StringDecoder as at } from "string_decoder";
+var Ie = [50, 100, 250, 500, 1000, 2000],
+  Oe = 30,
+  dt = 4,
+  ct = 1e4,
+  Le = 8 * WOt,
+  ht = 50;
+function ae(e, pid, s) {
+  let {
+      procStart: procStart,
+      short: short,
+      hostProc: hostProc,
+      auth: o,
+      onAuthRequired: onAuthRequired
+    } = s ?? {},
+    g = Me(),
+    f = Me(),
+    S,
+    k = new at("utf8"),
+    _,
+    w = !1,
+    A = !1,
+    P = 0,
+    M = 0,
+    N,
+    F,
+    T,
+    R,
+    C = 0,
+    G,
+    K,
+    z,
+    hadHello = !1,
+    se = !1,
+    fe = !1,
+    ee = "",
+    Ce = !1,
+    X = procStart;
+  if (X === void 0) $c(pid, {
+    skipCache: !0
+  }).then(E => {
+    X = E;
+  });
+  let Te = [],
+    ge = 0;
+  function Z(E) {
+    if (_) {
+      if (_.destroyed) return !1;
+      if (!_.write(E)) {
+        if (!T) T = setTimeout(() => {
+          T = void 0, _?.destroy();
+        }, ct), T.unref();
+        if (!R && _.writableLength > Le) R = setTimeout(() => {
+          if (R = void 0, _ && !_.destroyed && _.writableLength > Le) ie(), _.destroy();
+        }, ht), R.unref();
+      }
+      return !0;
+    }
+    if (ge < 2 * WOt) Te.push(E), ge += E.length;
+    return !1;
+  }
+  function ie() {
+    if (T) clearTimeout(T), T = void 0;
+    if (R) clearTimeout(R), R = void 0;
+  }
+  function j(exitCode, signal, hostStderr) {
+    if (A) return;
+    if (A = !0, w = !0, F) clearTimeout(F), F = void 0;
+    ie(), _?.destroy(), _ = void 0;
+    let L = k.end();
+    if (L) g.emit(L);
+    f.emit({
+      exitCode: exitCode,
+      signal: signal,
+      hostStderr: hostStderr
+    });
+  }
+  function me(E) {
+    let D = cl(_w(e), 1048576).then(V => V ?? "").catch(() => "");
+    D.then(V => {
+      let U = V.slice(0, 2000).trim();
+      if (U.length > 0) t(`[bg-pty] host crash: ${U}`, {
+        level: "warn"
+      });
+      let Y = [...U.matchAll(/\bE[A-Z]{2,14}\b/g)].find(item => !"/\\".includes(U[item.index - 1] ?? "."))?.[0];
+      i("tengu_bg_ptyhost_crash", {
+        hadBreadcrumb: U.length > 0,
+        hadHello: hadHello,
+        via: c(E),
+        short: short === void 0 ? void 0 : Sk(short),
+        stderr_errno: pA(Y)
+      });
+    }), Xce(C ? [-pid, C] : [-pid], E !== "hung" ? void 0 : X), cne(C, G);
+    let I = au().length > 0,
+      L = I ? (V, U) => void D.then(Y => j(V, U, xe(Y)), () => j(V, U)) : j;
+    if (hostProc) {
+      let V = null;
+      hostProc.exited.then(code => {
+        V = {
+          code: code,
+          signal: hostProc.signalCode ?? void 0
+        }, L(code, V.signal);
+      }, () => L(-1)), setTimeout(() => j(V ? V.code : -1, V?.signal), 1000).unref();
+      return;
+    }
+    if (L(-1), I) setTimeout(j, 1000, -1).unref();
+  }
+  function rt(E) {
+    if (E.kind === A4e) {
+      if (!se) {
+        let D = k.write(E.payload);
+        if (fe) g.emit(D);else if (D.length > 0) {
+          let I = (ee + D).replaceAll(d3, ""),
+            L = lt(I);
+          ee = L > 0 ? I.slice(I.length - L) : "";
+          let V = L > 0 ? I.slice(0, I.length - L) : I;
+          if (V.length > 0) g.emit(V);
+        }
+      }
+    } else if (E.ctrl.t === "hello") {
+      if (hadHello) se = !0, k.end(), ee = "";else oe(nx(e)).catch(() => {});
+      if (hadHello = !0, C = E.ctrl.replPid, z = E.ctrl.version, G = void 0, C > 1 && O() !== "windows") {
+        let D = C;
+        eAe(D).then(I => {
+          if (C !== D || A || w || I === void 0) return;
+          G = I, K?.(C, I);
+        });
+      }
+    } else if (E.ctrl.t === "live") {
+      if (!fe) {
+        if (fe = !0, ee.length > 0) g.emit(ee), ee = "";
+      }
+      if (se) se = !1, S?.();
+    } else if (E.ctrl.t === "exit") j(E.ctrl.code, E.ctrl.signal);else if (E.ctrl.t === "ping") Z(ZO({
+      t: "pong"
+    }));else if (E.ctrl.t === "auth-required") if (o) t(`[bg-pty] ${short ?? e}: host rejected auth token \u2014 roster ptyAuth poisoned; input is dead until the worker is re-keyed`, {
+      level: "warn"
+    }), onAuthRequired?.();else t(`[bg-pty] ${short ?? e}: host dropped input \u2014 DATA auth token missing (version skew; respawn the worker to re-key)`, {
+      level: "warn"
+    });
+  }
+  function De() {
+    if (w) return;
+    let E = new ot(),
+      D = !1;
+    E.on("error", I => {
+      Ce = v(I) === "ENOENT", _e();
+    }), E.once("close", () => {
+      if (_ === E) _ = void 0, ie();
+      if (w) return;
+      if (D && !A) {
+        try {
+          process.kill(pid, 0), t("[bg-pty] dropped by host; reconnecting", {
+            level: "debug"
+          }), M = dt, P = 0, _e();
+          return;
+        } catch {}
+        me("close");
+        return;
+      }
+      _e();
+    }), E.once("connect", () => {
+      D = !0, P = 0, M = 0, _ = E, E.on("drain", ie);
+      let I = _w(e),
+        L = `${I}.read`;
+      if (nt(I, L).then(() => cl(L, 1048576)).then(U => {
+        let Y = (U ?? "").slice(0, 2000).trim();
+        if (Y.length > 0) t(`[bg-pty] pre-connect stderr:
+${Y}`, {
+          level: "warn"
+        });
+      }).catch(() => {}).finally(() => oe(L).catch(() => {})), Z(ZO({
+        t: "pong"
+      })), o) Z(ZO({
+        t: "auth",
+        token: o
+      }));
+      for (let U of Te.splice(0)) Z(U);
+      ge = 0;
+      let V = fsn(rt, U => {
+        t(`[bg-pty] frame error: ${U}`, {
+          level: "warn"
+        }), E.destroy();
+      });
+      E.on("data", V);
+    }), E.connect(e);
+  }
+  function _e() {
+    if (w || N) return;
+    try {
+      process.kill(pid, 0);
+    } catch {
+      w = !0, cl(nx(e), 8388608).then(D => D ?? "").then(D => {
+        if (!hadHello && D.length > 0) g.emit(D.replaceAll(d3, ""));
+        oe(nx(e)).catch(() => {}), me("connect");
+      });
+      return;
+    }
+    if (M > 0 && --M === 0) {
+      me("hung");
+      return;
+    }
+    if (procStart !== void 0 && Ce && P >= 3) t(`[bg-pty] ${e}: ENOENT on adopt \u2014 sock file externally deleted; respawning`, {
+      level: "warn"
+    }), i("tengu_bg_adopt_sock_unlinked", {}), P = Oe;
+    if (P >= Oe) {
+      t(`[bg-pty] ${e}: ${P} connect attempts failed; treating host as dead`, {
+        level: "warn"
+      });
+      let D = X && QRe(pid);
+      if (pid > 1 && (!X || !D || X === D)) try {
+        process.kill(-pid, "SIGKILL");
+      } catch {
+        try {
+          process.kill(pid, "SIGKILL");
+        } catch {}
+      }
+      w = !0, cl(nx(e), 8388608).then(I => I ?? "").then(I => {
+        if (!hadHello && I.length > 0) g.emit(I.replaceAll(d3, ""));
+        oe(nx(e)).catch(() => {});
+        let L = au().length > 0,
+          V = (U, Y) => {
+            if (!L) {
+              j(U, Y);
+              return;
+            }
+            cl(_w(e), 1048576).then(Se => j(U, Y, xe(Se ?? "")), () => j(U, Y));
+          };
+        if (hostProc) {
+          let U = null;
+          hostProc.exited.then(code_2 => {
+            U = {
+              code: code_2,
+              signal: hostProc.signalCode ?? void 0
+            }, V(code_2, U.signal);
+          }, () => V(-1)), setTimeout(() => j(U ? U.code : -1, U?.signal), 1000).unref();
+        } else if (V(-1), L) setTimeout(j, 1000, -1).unref();
+      });
+      return;
+    }
+    let E = Ie[Math.min(P, Ie.length - 1)];
+    P++, N = setTimeout(() => {
+      N = void 0, De();
+    }, E), N.unref();
+  }
+  return De(), {
+    pid: pid,
+    replPid: () => C,
+    replVersion: () => z,
+    onRepl: E => {
+      if (K = E, C > 1 && G !== void 0) E(C, G);
+    },
+    onResume: E => {
+      S = E;
+    },
+    write: E => {
+      if (A) return;
+      let D = Buffer.from(E, "utf8"),
+        I = WOt - 1;
+      for (let L = 0; L < D.length; L += I) Z(zOt(D.subarray(L, L + I)));
+    },
+    resize: (cols, rows) => Z(ZO({
+      t: "resize",
+      cols: cols,
+      rows: rows
+    })),
+    kill: E => {
+      let sig = E === "SIGKILL" ? "SIGKILL" : "SIGTERM",
+        I = Z(ZO({
+          t: "kill",
+          sig: sig
+        }));
+      if (pid <= 1) return;
+      if (O() === "windows" && sig === "SIGTERM" && I) {
+        if (F) clearTimeout(F);
+        F = setTimeout((L, V) => {
+          if (!kfn(L, X)) {
+            V(-1);
+            return;
+          }
+          try {
+            process.kill(L, "SIGKILL");
+          } catch {
+            V(-1);
+          }
+        }, 5000, pid, j), F.unref();
+        return;
+      }
+      try {
+        process.kill(-pid, sig);
+      } catch {
+        try {
+          process.kill(pid, sig);
+        } catch {
+          j(-1);
+        }
+      }
+      if (cne(C, G, sig), sig === "SIGTERM" && !A) {
+        if (F) clearTimeout(F);
+        F = setTimeout((L, V) => {
+          if (!kfn(L, X)) {
+            V(-1);
+            return;
+          }
+          cne(C, G, "SIGKILL");
+          try {
+            process.kill(-L, "SIGKILL");
+          } catch {
+            try {
+              process.kill(L, "SIGKILL");
+            } catch {
+              V(-1);
+            }
+          }
+        }, 5000, pid, j), F.unref();
+      }
+    },
+    dispose: () => {
+      if (w = !0, N) clearTimeout(N), N = void 0;
+      if (F) clearTimeout(F), F = void 0;
+      ie(), _?.destroy(), _ = void 0;
+    },
+    onData: E => ({
+      dispose: g.subscribe(E)
+    }),
+    onExit: E => ({
+      dispose: f.subscribe(E)
+    })
+  };
+}
+function xe(e) {
+  return e.slice(0, 2000).split(/\r?\n/).map(item => item.trim()).find(item => item.length > 0);
+}
+function lt(e) {
+  let r = Math.min(d3.length - 1, e.length);
+  for (let s = r; s > 0; s--) if (e.endsWith(d3.slice(0, s))) return s;
+  return 0;
+}
+import { Socket as pt } from "net";
+var Ve = [100, 250, 500, 1000, 2000],
+  Be = 30;
+function Ue(e, r, s, h, auth) {
+  let p,
+    o = !1,
+    attempts = 0,
+    g = !1,
+    f;
+  function S() {
+    if (o) return;
+    let _ = new pt(),
+      w = !1;
+    _.on("error", () => k()), _.once("close", () => {
+      if (p === _) p = void 0;
+      if (o) return;
+      if (w) s();
+      k();
+    }), _.once("connect", () => {
+      w = !0, attempts = 0, g = !1, p = _, _.write(b({
+        proto: proto,
+        role: "supervisor",
+        supervisorPid: process.pid,
+        auth: auth
+      }) + `
+`), h?.(), oGt(_, A => {
+        let P;
+        try {
+          P = J(A);
+        } catch {
+          return;
+        }
+        if (P && typeof P === "object" && "type" in P) r(P);
+      });
+    }), _.connect(e);
+  }
+  function k() {
+    if (o || f || g) return;
+    if (attempts >= Be) {
+      g = !0, t(`[bg-rv] ${e}: ${attempts} connect attempts failed \u2014 giving up (pid-poll is liveness backstop)`, {
+        level: "warn"
+      }), i("tengu_bg_rv_connect_exhausted", {
+        attempts: attempts
+      });
+      return;
+    }
+    let _ = Ve[Math.min(attempts, Ve.length - 1)];
+    attempts++, f = setTimeout(() => {
+      f = void 0, S();
+    }, _), f.unref();
+  }
+  return S(), {
+    send(_) {
+      if (!p || p.destroyed) {
+        if (attempts >= Be) attempts = 0, g = !1, k();
+        return !1;
+      }
+      try {
+        return p.write(b(_) + `
+`), !0;
+      } catch (error) {
+        return t(`[bg-rv] send failed: ${String(error)}`), !1;
+      }
+    },
+    close() {
+      if (o = !0, f) clearTimeout(f);
+      p?.destroy(), p = void 0;
+    }
+  };
+}
+var _t = 1e4,
+  He = 20,
+  St = new Set([129, 143]);
+function $e() {
+  return x("tengu_bg_revival_guard", !0);
+}
+var kt = "Continue from where you left off. Note: this session was automatically restarted after its process exited unexpectedly; the user has not sent a new message since the restart. Re-verify anything time-sensitive (branch state, running processes, prior partial work) before continuing.",
+  vt = 3600000,
+  Et = 3,
+  Ge = 5000,
+  At = 300000,
+  yt = 60000,
+  he = 200,
+  detail_8 = "session ID already belongs to another conversation \u2014 open again to start with a new ID";
+function L9n(e) {
+  return `working directory no longer exists or is not accessible: ${e}`;
+}
+var ve = 5000,
+  Ke = ve * 3,
+  Rt = 120000,
+  ze = 120000,
+  bt = 300000,
+  Je = {
+    release: "2.1.213",
+    commitMs: Date.UTC(2026, 6, 16, 18, 0, 5)
+  },
+  tt = ["local_bash", "in_process_teammate", "dream", "auto_mode_scan"],
+  Ct = 3600000,
+  je = 4096;
+function N9n() {
+  return (e, r, s) => {
+    let {
+        cmd: cmd,
+        prefixArgs: prefixArgs
+      } = Hu({
+        pinToCurrentBinary: !0
+      }),
+      p = [cmd, ...prefixArgs, "--bg-pty-host", s.ptySock, String(s.cols), String(s.rows), "--", e, ...r],
+      o = {
+        cwd: s.cwd,
+        env: s.env,
+        detached: !0,
+        windowsHide: !0,
+        ...Ea("agent"),
+        ...(O() !== "windows" && {
+          argv0: "claude bg-pty-host"
+        })
+      },
+      hostProc_2;
+    try {
+      hostProc_2 = Bun.spawn(p, {
+        ...o,
+        stdio: ["ignore", "ignore", Bun.file(_w(s.ptySock))]
+      });
+    } catch (error) {
+      let f = v(error);
+      if (f !== "ENOENT" && f !== "ENOSPC" && f !== "EACCES" && f !== "EROFS") throw error;
+      t(`bg: ptyHost stderr breadcrumb open failed (${f}) at ${_w(s.ptySock)} \u2014 spawning with stderr discarded (crash diagnostics degraded): ${l(error)}`, {
+        level: "warn"
+      });
+      let {
+        cgroup: cgroup,
+        ...k
+      } = o;
+      if (cgroup !== void 0) t(`bg: retrying ptyHost spawn without tool cgroup placement (${cgroup})`, {
+        level: "warn"
+      });
+      hostProc_2 = Bun.spawn(p, {
+        ...k,
+        stdio: ["ignore", "ignore", "ignore"]
+      });
+    }
+    return hostProc_2.unref(), ae(s.ptySock, hostProc_2.pid, {
+      short: s.short,
+      hostProc: hostProc_2,
+      auth: s.ptyAuth
+    });
+  };
+}
+function Ye(e, r, s, h, n, p) {
+  if (e.launch.mode === "exec") return e.launch.args.map(aE);
+  if (r > 1 && s) return y3(["--resume", n ?? h, ...F1e(p)]);
+  if (r > 1 && h !== e.sessionId) return y3(["--session-id", h, ...F1e(p)]);
+  if (e.launch.mode === "resume") return y3([...(e.launch.fork ? ["--session-id", e.sessionId, "--fork-session"] : []), "--resume", e.launch.transcriptPath ?? e.launch.sessionId, ...F1e(e.launch.flagArgs)]);
+  return y3(F1e(e.launch.args));
+}
+function qe(e, CLAUDE_JOB_DIR, CLAUDE_BG_AUTH_SNAPSHOT_PATH, CLAUDE_BG_RENDEZVOUS_SOCK, n) {
+  let p = {
+    ...process.env
+  };
+  if (te(p), e.env) te(e.env);
+  let o = {
+      ...p,
+      ...(CLAUDE_BG_AUTH_SNAPSHOT_PATH && {
+        CLAUDE_BG_AUTH_SNAPSHOT_PATH: CLAUDE_BG_AUTH_SNAPSHOT_PATH
+      }),
+      ...(H() && x("tengu_hover_rest", !1) && {
+        CLAUDE_CODE_HOVER_REST: "1"
+      }),
+      ...(O() === "windows" && {
+        CLAUDE_CODE_ALT_SCREEN_FULL_REPAINT: "1"
+      }),
+      ...e.env,
+      CLAUDE_CODE_SESSION_KIND: "bg",
+      CLAUDE_BG_BACKEND: "daemon",
+      CLAUDE_BG_SOURCE: e.source,
+      CLAUDE_JOB_DIR: CLAUDE_JOB_DIR,
+      CLAUDE_CODE_SESSION_NAME: li(e.seed?.name || e.seed?.intent || e.short),
+      CLAUDE_BG_RENDEZVOUS_SOCK: CLAUDE_BG_RENDEZVOUS_SOCK,
+      FORCE_COLOR: "3",
+      COLORTERM: "truecolor",
+      BROWSER: "true"
+    },
+    u = Object.hasOwn(p, "PATH") ? "PATH" : Object.keys(p).find(item => item.toUpperCase() === "PATH"),
+    g = e.env?.PATH || (u ? p[u] : void 0);
+  for (let f of Object.keys(o)) if (f.toUpperCase() === "PATH") delete o[f];
+  if (g) o[u ?? "PATH"] = g;
+  if (process.env.CLAUDE_CONFIG_DIR) o.CLAUDE_CONFIG_DIR = process.env.CLAUDE_CONFIG_DIR;else if (o.CLAUDE_CONFIG_DIR !== void 0 && (!mt(o.CLAUDE_CONFIG_DIR) || o.CLAUDE_CONFIG_DIR.split(/[\\/]/).includes("..") || !Wde(o.CLAUDE_CONFIG_DIR))) t(`bg spawn ${e.short}: dropped dispatch CLAUDE_CONFIG_DIR \u2014 not an absolute, dot-dot-free spelling of this daemon's config home`, {
+    level: "warn"
+  }), delete o.CLAUDE_CONFIG_DIR;
+  for (let f of Jue) if (!e.env?.[f]) delete o[f];
+  if (qK(o), n7e(o), qQr(o, p), !e.env?.CLAUDE_CODE_ENTRYPOINT) iG(o);
+  if (e.isolation === "worktree") o.CLAUDE_BG_ISOLATION = "worktree";
+  for (let f of le) if (!e.env?.[f]) delete o[f];
+  for (let f of Object.keys(o)) if (Emn.some(item => f.startsWith(item)) && !e.env?.[f]) delete o[f];
+  if (zpt(p) || Vxe(e)) {
+    for (let k of OD) delete o[k];
+    if (Vxe(e) || Ne(p.CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST)) Wpt(o, e.env);
+    let f = EAe(p);
+    if (f) te(o, [f]), delete o[f];
+    let S = e.env?.CLAUDE_CODE_HOST_CREDS_FILE ?? (Vxe(e) ? p.CLAUDE_CODE_HOST_CREDS_FILE : void 0);
+    if (S) o.CLAUDE_CODE_HOST_CREDS_FILE = S;
+    for (let k of kAe) delete o[k];
+  } else {
+    let f = new Set(),
+      S = new Set(),
+      k = new Set(),
+      _ = !1,
+      w = !1;
+    for (let A of K$e) {
+      let P = A.selection === void 0 || Ne(o[A.selection]);
+      if (o[A.endpoint] === p[A.endpoint] && (!o[A.endpoint] || P) && A.companions.every(item => !wmn.includes(item) || Ne(o[item]) === Ne(p[item]))) {
+        if (o[A.endpoint]) {
+          for (let N of A.companions) f.add(N);
+          _ ||= re(p, A);
+        }
+        continue;
+      }
+      for (let N of [A.endpoint, ...A.companions]) if (S.add(N), o[A.endpoint] && o[N] !== p[N]) k.add(N);
+      if (A.endpoint === "ANTHROPIC_BASE_URL" && p.ANTHROPIC_BASE_URL) delete o.ANTHROPIC_AUTH_TOKEN;else w ||= re(p, A);
+    }
+    for (let A of S) if (!f.has(A) || k.has(A)) delete o[A];
+    if (w && !_) delete o.ANTHROPIC_AUTH_TOKEN;
+  }
+  if (n) o.CLAUDE_BG_RV_AUTH = n.rvAuth, o.CLAUDE_BG_PTY_AUTH = n.ptyAuth;
+  if (CLAUDE_BG_AUTH_SNAPSHOT_PATH) delete o.CLAUDE_CODE_OAUTH_TOKEN;
+  if (e.launch.mode === "exec") {
+    let f = K$e.some(item => re(o, item));
+    for (let S of Object.keys(o)) if (S.startsWith("CLAUDE_") && S !== "CLAUDE_JOB_DIR" && S !== "CLAUDE_CONFIG_DIR" && S !== "CLAUDE_BG_PTY_AUTH" || S.startsWith("OTEL_")) delete o[S];
+    if (delete o.BROWSER, f) delete o.ANTHROPIC_AUTH_TOKEN;
+    for (let S of kAe) delete o[S];
+    o.CLAUDE_PTY_HOST_EXEC = "1";
+  }
+  return o;
+}
+function Xe(e, r) {
+  let s = process.env[kv];
+  if (r.launch.mode === "exec" || s === void 0) delete e[kv];else e[kv] = s;
+}
+async function we(e, r) {
+  if (!r || O() !== "macos") return;
+  let s = T4e(e);
+  try {
+    return await et(E4e(), {
+      recursive: !0,
+      mode: 448
+    }), await Ee(s, JSON.stringify(r), {
+      mode: 384
+    }), s;
+  } catch (error) {
+    t(`writeAuthSnapshot failed: ${l(error)}`, {
+      level: "warn"
+    });
+    return;
+  }
+}
+async function Ae(e, r) {
+  if (O() === "windows") return;
+  let s = C4e(e);
+  try {
+    return await et(E4e(), {
+      recursive: !0,
+      mode: 448
+    }), await Ee(s, JSON.stringify(r), {
+      mode: 384
+    }), s;
+  } catch (error) {
+    t(`writeSocketTokensFile failed: ${l(error)}`, {
+      level: "warn"
+    });
+    return;
+  }
+}
+var le = [...dEr, "CLAUDE_CODE_CLIENT_DATA_URL", ...V1, "CLAUDE_CODE_EXTRA_BODY", ...$N, ...wmn, "ANTHROPIC_CUSTOM_HEADERS", ...Y$e, "CLAUDE_CODE_HOST_GATEWAY_LINEAGE", "CLAUDE_CODE_HOST_CREDS_FILE"],
+  Vxe = e => Ne(e.env?.CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST),
+  Qjt = e => e.launch.mode !== "exec" && !Vxe(e),
+  Tt = new Map(["CLAUDE_CONFIG_DIR", ...Jue, ...WEn, ...le, ...kAe, ...OD, ...jpt].map(item => [item.toUpperCase(), item]));
+function te(e, r = []) {
+  if (O() !== "windows") return;
+  let s = new Map(r.map(item => [item.toUpperCase(), item]));
+  for (let h of Object.keys(e)) {
+    let n = h.toUpperCase(),
+      p = Tt.get(n) ?? s.get(n);
+    if (p === void 0 || p === h) continue;
+    if (e[p] === void 0) e[p] = e[h];
+    delete e[h];
+  }
+}
+function re(e, r) {
+  return !!e[r.endpoint] && (r.endpoint === "ANTHROPIC_BASE_URL" || r.companions.some(item => wmn.includes(item) && Ne(e[item])));
+}
+function ye(e) {
+  let r = (e.inFlight?.kinds ?? []).filter(item => item !== "artifact_watch" || !(e.inFlight?.drainableMonitors ?? 0)),
+    s = Mi(e) && r.length > 0 && r.every(item => tt.includes(item)),
+    h = (e.inFlight?.tasks ?? 0) - (e.inFlight?.drainableMonitors ?? 0);
+  return (e.inFlight?.queued ?? 0) > 0 || h > 0 && !s || r.includes("session_cron");
+}
+function Dt(e) {
+  if (!e) return null;
+  if (Mi(e)) return "settled";
+  if (e.tempo === "active") return "active";
+  if (ye(e)) return "inflight";
+  return null;
+}
+function Ze(e, r) {
+  let s = Dt(e);
+  if (s === "settled" && r !== "missing-at-adopt") return e && ye(e) ? "inflight" : null;
+  return s;
+}
+function Qe(e) {
+  return e.kind === "retiring" ? `retiring:${e.reason}` : e.kind === "retired" ? `retired:${e.outcome}` : e.kind;
+}
+function Pt(e, r) {
+  if (e.kind === "retired") return !1;
+  switch (r.kind) {
+    case "spawning":
+      return e.kind === "upgrading" || e.kind === "running";
+    case "running":
+      return e.kind === "spawning";
+    case "upgrading":
+      return e.kind === "running";
+    case "retiring":
+      return !0;
+    case "retired":
+      return !0;
+  }
+}
+class bQ {
+  dispatch;
+  spawnPty;
+  getAuthSnapshot;
+  via;
+  storageV5;
+  credentials;
+  record;
+  onStream = Me();
+  onState = Me();
+  onSettle = Me();
+  onRepaintDone = Me();
+  attachers = new Map();
+  lastInputAttacher;
+  pty;
+  procStart;
+  replPid = 0;
+  replProcStart;
+  ptyCols = 200;
+  ptyRows = 50;
+  decModes = iyt();
+  execTracker;
+  execLastLine;
+  offData;
+  offExit;
+  ring = [];
+  ringBytes = 0;
+  ringSpawnMark = 0;
+  attempt = 0;
+  lastSpawnAt = 0;
+  fastCrashStreak = 0;
+  lastExitCause;
+  lastExitExternalStop = !1;
+  effectiveCwd;
+  liveTranscriptPath;
+  hostWokeAt;
+  backoffTimer = null;
+  pidPoll = null;
+  rv;
+  rvSockPath;
+  ptySockPath;
+  rvAuth = de(16).toString("hex");
+  ptyAuth = de(16).toString("hex");
+  authRekeyFired = !1;
+  authRekeyCount = 0;
+  pendingAuthRekey;
+  rosterExtras = {};
+  unverifiedSock;
+  phase = {
+    kind: "spawning"
+  };
+  workerReady = !1;
+  sessionIdTakenLatch = !1;
+  firedInteractiveMarks = [];
+  bootedViaResume = !1;
+  resizeDeferred = !1;
+  lastInputAt;
+  downgradeRefusalLogged = !1;
+  deleteJobDirOnSettle = !1;
+  get shouldDeleteJobDir() {
+    return this.deleteJobDirOnSettle;
+  }
+  adoptedAt;
+  lastRvHeartbeat;
+  stalledLogged = !1;
+  lastCheckPidAt = Date.now();
+  replyChain = Promise.resolve();
+  killOutcome = "killed";
+  handoffKill = !1;
+  get isKilling() {
+    return this.phase.kind === "retiring" && this.phase.reason === "reap";
+  }
+  get isHandoffKill() {
+    return this.handoffKill;
+  }
+  get isRetiring() {
+    return this.phase.kind === "retiring" && this.phase.reason === "grace";
+  }
+  get isUpgrading() {
+    return this.phase.kind === "upgrading";
+  }
+  get isBooting() {
+    return !this.record.outcome && (this.phase.kind === "upgrading" || !this.workerReady);
+  }
+  replayInteractiveMarksTo(e) {
+    let r = this.attachers.get(e);
+    if (!r || r.caps?.imark !== !0) return;
+    for (let s of this.firedInteractiveMarks) r.deliver(jFn({
+      ...s,
+      nonce: r.imarkNonce
+    }));
+  }
+  get isVersionStale() {
+    return !!this.record.cliVersion && this.record.cliVersion !== {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.283",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-09-25T00:44:42Z",
+      GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION;
+  }
+  get marksCapable() {
+    if (this.isVersionStale) return !1;
+    return this.bootedViaResume || this.firedInteractiveMarks.length > 0;
+  }
+  get bootingForAttachMetrics() {
+    return this.isBooting || this.marksCapable && this.firedInteractiveMarks.length === 0;
+  }
+  get isUnverified() {
+    return this.unverifiedSock !== void 0;
+  }
+  getPhase() {
+    return this.phase;
+  }
+  get isTransitioning() {
+    return this.phase.kind !== "running" || !this.pty || this.record.pid === 0;
+  }
+  get isDetached() {
+    return this.phase.kind === "retiring" && this.phase.reason === "stop";
+  }
+  transitionTo(e) {
+    if (!Pt(this.phase, e)) return t(`[bg] illegal worker-phase transition ${Qe(this.phase)} \u2192 ${Qe(e)} for ${this.record.short}`, {
+      level: "warn"
+    }), i("tengu_bg_phase_illegal", {}), !1;
+    return this.phase = e, !0;
+  }
+  shutdownWorker() {
+    let e = this.rv?.send({
+      type: "shutdown"
+    }) ?? !1;
+    if (!e) this.sigtermWorker();else setTimeout(r => {
+      let phase = r.phase;
+      if ((phase.kind === "upgrading" || phase.kind === "retiring" && phase.reason === "grace") && !r.record.outcome) r.sigtermWorker();
+    }, 5000, this).unref();
+    return e;
+  }
+  noteDowngradeRefused(e) {
+    if (this.downgradeRefusalLogged || !this.record.cliVersion) return;
+    this.downgradeRefusalLogged = !0, i("tengu_bg_respawn_downgrade_refused", {
+      short: Sk(this.dispatch.short),
+      trigger: c(e),
+      worker_cli_version: fi(this.record.cliVersion)
+    });
+  }
+  async respawnIfIdleStale(e, r = "sweep") {
+    if (this.dispatch.launch.mode === "exec") return {
+      respawned: !1,
+      reason: "not-stale"
+    };
+    if (this.isTransitioning) return {
+      respawned: !1,
+      reason: "in-progress"
+    };
+    if (this.record.outcome) return {
+      respawned: !1,
+      reason: "no-state"
+    };
+    if (this.record.cliVersion && gJe(this.record.cliVersion, {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.283",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-09-25T00:44:42Z",
+      GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION)) return this.noteDowngradeRefused(r), {
+      respawned: !1,
+      reason: "not-stale"
+    };
+    if (W1e(this.record.cliVersion, {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.283",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-09-25T00:44:42Z",
+      GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION)) return {
+      respawned: !1,
+      reason: "not-stale"
+    };
+    if (this.attachers.size > 0) return {
+      respawned: !1,
+      reason: "attached"
+    };
+    if (!this.isVersionStale) return {
+      respawned: !1,
+      reason: "not-stale"
+    };
+    if (r !== "attach" && this.lastInputAt && Date.now() - this.lastInputAt < Ct) return {
+      respawned: !1,
+      reason: "busy"
+    };
+    let s = Date.now(),
+      h = await Ir(Pr(this.dispatch.short), this.storageV5);
+    if (this.isTransitioning) return {
+      respawned: !1,
+      reason: "in-progress"
+    };
+    if (this.record.outcome) return {
+      respawned: !1,
+      reason: "no-state"
+    };
+    if (this.attachers.size > 0) return {
+      respawned: !1,
+      reason: "attached"
+    };
+    if (this.lastInputAt && this.lastInputAt >= s) return {
+      respawned: !1,
+      reason: "busy"
+    };
+    if (!h) return {
+      respawned: !1,
+      reason: "no-state"
+    };
+    if (r !== "attach" && !Mi(h) && this.adoptedAt && Date.now() - this.adoptedAt < ze) return {
+      respawned: !1,
+      reason: "busy"
+    };
+    if (Mi(h) && r === "sweep" && !e?.has(this.dispatch.short)) return {
+      respawned: !1,
+      reason: "settled"
+    };
+    if (!Mi(h) && h.tempo !== "idle" && !(this.isParkedIdleFork(h) && h.inFlight !== void 0)) return {
+      respawned: !1,
+      reason: "busy"
+    };
+    if (ye(h)) return {
+      respawned: !1,
+      reason: "inflight"
+    };
+    if (!this.transitionTo({
+      kind: "upgrading"
+    })) return {
+      respawned: !1,
+      reason: "in-progress"
+    };
+    return this.onState.emit({
+      pid: this.record.pid
+    }), i("tengu_bg_respawn_stale", {
+      short: Sk(this.dispatch.short),
+      rvSent: this.shutdownWorker(),
+      trigger: c(r),
+      worker_cli_version: fi(this.record.cliVersion)
+    }), {
+      respawned: !0
+    };
+  }
+  isParkedIdleFork(e) {
+    return (A7n(this.record.cliVersion, Je, {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.283",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-09-25T00:44:42Z",
+      GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION) || e.inFlight?.drainableMonitors !== void 0) && e.state === "working" && e.tempo === "blocked" && e.needs === ry && e.interactiveLineage === !0;
+  }
+  async retireIfSettled(e, r, s = e, {
+    shedMonitoringOnly = !1
+  } = {}) {
+    if (this.isTransitioning) return {
+      retired: !1,
+      reason: "in-progress"
+    };
+    if (this.record.outcome) return {
+      retired: !1,
+      reason: "no-state"
+    };
+    if (this.attachers.size > 0) return {
+      retired: !1,
+      reason: "attached"
+    };
+    if (Vxe(this.dispatch)) return {
+      retired: !1,
+      reason: "host-managed"
+    };
+    if (r?.has(this.dispatch.short)) return {
+      retired: !1,
+      reason: "pinned"
+    };
+    if (this.adoptedAt && Date.now() - this.adoptedAt < ze) return {
+      retired: !1,
+      reason: "recent-adopt"
+    };
+    if (this.lastInputAt && Date.now() - this.lastInputAt < e) return {
+      retired: !1,
+      reason: "recent-input"
+    };
+    let n = await Ir(Pr(this.dispatch.short), this.storageV5);
+    if (this.isTransitioning || this.attachers.size > 0) return {
+      retired: !1,
+      reason: "in-progress"
+    };
+    if (this.lastInputAt && Date.now() - this.lastInputAt < e) return {
+      retired: !1,
+      reason: "recent-input"
+    };
+    if (!n) {
+      if (this.dispatch.source === "spare" && Date.now() - this.dispatch.createdAt > e) {
+        if (!this.transitionTo({
+          kind: "retiring",
+          reason: "grace"
+        })) return {
+          retired: !1,
+          reason: "in-progress"
+        };
+        let T = Date.now() - this.dispatch.createdAt;
+        return i("tengu_bg_retired", {
+          short: Sk(this.dispatch.short),
+          rvSent: this.shutdownWorker(),
+          settledForMs: T,
+          state: y("stale-spare"),
+          cause: y("stale-spare"),
+          worker_cli_version: fi(this.record.cliVersion)
+        }), {
+          retired: !0,
+          cause: "stale-spare",
+          idleMs: T
+        };
+      }
+      return {
+        retired: !1,
+        reason: "no-state"
+      };
+    }
+    if (this.dispatch.source !== "shell" && !n.name && !n.intent && !n.worktreePath && n.template === "bg" && n.state === "working" && n.tempo === "blocked" && !((n.inFlight?.tasks ?? 0) > 0)) {
+      let T = Date.parse(n.createdAt),
+        R = Date.parse(n.updatedAt),
+        C = Date.now() - (R > T ? R : T);
+      if (C < bt) return {
+        retired: !1,
+        reason: "empty-idle-grace"
+      };
+      if (!this.transitionTo({
+        kind: "retiring",
+        reason: "grace"
+      })) return {
+        retired: !1,
+        reason: "in-progress"
+      };
+      return this.deleteJobDirOnSettle = !0, i("tengu_bg_retired", {
+        short: Sk(this.dispatch.short),
+        rvSent: this.shutdownWorker(),
+        settledForMs: C,
+        state: y("empty-idle"),
+        cause: y("empty-idle"),
+        worker_cli_version: fi(this.record.cliVersion)
+      }), {
+        retired: !0,
+        cause: "empty-idle",
+        idleMs: C
+      };
+    }
+    let p = this.isParkedIdleFork(n),
+      o = Mi(n) || this.dispatch.launch.mode !== "exec" && (n.tempo === "idle" || n.state === "blocked" && n.tempo === "blocked" || p),
+      u = Date.parse(n.updatedAt),
+      g = n.tempo === "blocked" && n.state !== "blocked" && n.needs !== void 0 && n.needs !== ry,
+      f = this.isVersionStale && !(this.record.cliVersion && gJe(this.record.cliVersion, {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION)) && !W1e(this.record.cliVersion, {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION) && this.dispatch.launch.mode !== "exec" && n.tempo !== "active" && !g && !n.routine && (n.inFlight?.tasks ?? 0) - (n.inFlight?.drainableMonitors ?? 0) === 0 && (n.inFlight?.queued ?? 0) === 0 && !(n.inFlight?.kinds ?? []).includes("session_cron") && u < Date.now() - Wot;
+    if (!o && !f) return {
+      retired: !1,
+      reason: "not-settled"
+    };
+    let S = shedMonitoringOnly || f ? n.inFlight?.drainableMonitors ?? 0 : 0,
+      k = (n.inFlight?.kinds ?? []).filter(item => item !== "artifact_watch" || S === 0),
+      detritusOnly = Mi(n) && k.length > 0 && k.every(item => tt.includes(item)),
+      w = n.interactiveLineage === !0 && A7n(this.record.cliVersion, Je, {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION),
+      A = f && !w ? 0 : 1;
+    if ((n.inFlight?.queued ?? A) > 0 || (n.inFlight?.tasks ?? A) - S > 0 && !detritusOnly) return {
+      retired: !1,
+      reason: "inflight"
+    };
+    if (k.includes("session_cron")) return {
+      retired: !1,
+      reason: "session-cron"
+    };
+    if (n.routine) return {
+      retired: !1,
+      reason: "routine"
+    };
+    let P = n.bridgeSessionId ? Math.max(e, s) : e,
+      M = n.updatedAt && Date.now() - Date.parse(n.updatedAt);
+    if (!M || M < P) return {
+      retired: !1,
+      reason: "grace"
+    };
+    if (!this.transitionTo({
+      kind: "retiring",
+      reason: "grace"
+    })) return {
+      retired: !1,
+      reason: "in-progress"
+    };
+    let N = n.inFlight?.tasks !== void 0 && n.inFlight.queued !== void 0,
+      cause = !o || !N || !shedMonitoringOnly && S > 0 ? "abandoned-stale" : Mi(n) ? "settled" : "idle-prompt";
+    return i("tengu_bg_retired", {
+      short: Sk(this.dispatch.short),
+      rvSent: this.shutdownWorker(),
+      settledForMs: M,
+      bridged: !!n.bridgeSessionId,
+      detritusOnly: detritusOnly,
+      state: yU(n.state),
+      cause: c(cause),
+      worker_cli_version: fi(this.record.cliVersion)
+    }), {
+      retired: !0,
+      cause: cause,
+      idleMs: M
+    };
+  }
+  sigtermWorker() {
+    try {
+      this.pty?.kill("SIGTERM");
+    } catch {}
+  }
+  onPtyAuthRequired() {
+    let mode = this.dispatch.launch.mode;
+    if (i("tengu_bg_pty_auth_mismatch", {
+      mode: c(mode)
+    }), mode === "exec") {
+      t(`[bg] exec worker ${this.dispatch.short}: ptyHost rejected auth token \u2014 roster ptyAuth poisoned; input is dead until re-dispatch (exec workers are never auto-respawned)`, {
+        level: "warn"
+      });
+      return;
+    }
+    this.rekeyForAuthMismatch("pty-auth-required");
+  }
+  rekeyForAuthMismatch(e) {
+    if (this.authRekeyFired || this.authRekeyCount >= Et || this.phase.kind !== "running" || this.record.outcome || this.dispatch.launch.mode === "exec") {
+      t(`[bg] worker ${this.dispatch.short}: auth mismatch (${e}) \u2014 not re-keying ` + `(via=${this.via} phase=${this.phase.kind} mode=${this.dispatch.launch.mode} fired=${this.authRekeyFired} count=${this.authRekeyCount})`, {
+        level: "warn"
+      });
+      return;
+    }
+    this.authRekeyFired = !0, Ir(Pr(this.dispatch.short), this.storageV5).then(r => {
+      let s = Ze(r, e);
+      if (s === "settled") {
+        this.authRekeyFired = !1, i("tengu_bg_adopt_token_lost_respawn", {
+          source: c(e),
+          deferred: !1,
+          skipped: y("settled")
+        }), t(`[bg] worker ${this.dispatch.short}: auth mismatch (${e}) \u2014 worker already settled; leaving to retireIfSettled`, {
+          level: "warn"
+        });
+        return;
+      }
+      if (s !== null) {
+        i("tengu_bg_adopt_token_lost_respawn", {
+          source: c(e),
+          deferred: !0,
+          reason: c(s)
+        }), t(`[bg] worker ${this.dispatch.short}: auth mismatch (${e}) \u2014 ` + (s === "active" ? "worker is mid-turn" : "worker has non-resumable in-flight work") + "; deferring re-key respawn until safe", {
+          level: "warn"
+        }), this.pendingAuthRekey = e;
+        return;
+      }
+      i("tengu_bg_adopt_token_lost_respawn", {
+        source: c(e),
+        deferred: !1
+      }), t(`[bg] worker ${this.dispatch.short}: auth mismatch (${e}) \u2014 respawning to re-key (--resume preserves the session)`, {
+        level: "warn"
+      }), this.fireAuthRekey();
+    });
+  }
+  fireAuthRekey() {
+    if (this.pendingAuthRekey = void 0, this.phase.kind !== "running" || this.record.outcome) return;
+    if (!this.transitionTo({
+      kind: "upgrading"
+    })) return;
+    this.authRekeyCount++, this.onState.emit({
+      pid: this.record.pid
+    }), this.sigtermWorker();
+  }
+  constructor(e, r, s, h, n, p, o) {
+    this.dispatch = e;
+    this.spawnPty = r;
+    this.getAuthSnapshot = s;
+    this.via = h;
+    this.storageV5 = p;
+    this.credentials = o;
+    if (this.record = {
+      short: e.short,
+      nonce: e.nonce,
+      sessionId: e.sessionId,
+      pid: 0,
+      attempt: 0,
+      startedAt: Date.now(),
+      createdAt: e.createdAt,
+      cwd: e.cwd,
+      backend: "daemon",
+      tempo: "active",
+      state: "starting",
+      detail: "",
+      intent: e.seed?.intent ?? "",
+      name: e.seed?.name,
+      agent: e.agent,
+      routine: e.routine,
+      worktreePath: e.worktree?.path,
+      cliVersion: {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION,
+      source: e.source,
+      ...n
+    }, e.cols) this.ptyCols = e.cols;
+    if (e.rows) this.ptyRows = e.rows;
+  }
+  static spawn(e, r, s, h, n, p) {
+    let o = new bQ(e, r ?? N9n(), s, "cold", void 0, n, p);
+    if (h?.afterUpgrade) return o.attempt = 1, o.buildBridgeReattachEnvFromState().then(u => o.doSpawn(u, !0)).catch(d), o;
+    return o.doSpawn(e.reattachEnv).catch(d), o;
+  }
+  static claim(e, r) {
+    let s = new bQ(e, r.spawnPty, r.getAuthSnapshot, "spare", {
+      pid: r.pid,
+      attempt: 1,
+      state: "running",
+      cliVersion: {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION
+    }, r.storageV5, r.credentials);
+    if (s.attempt = 1, s.bootedViaResume = e.launch.mode !== "exec" && (e.launch.restoresTranscript ?? e.launch.mode === "resume"), s.ptySockPath = r.ptySockPath, s.rvSockPath = BOt(e.short), r.ptyAuth) s.ptyAuth = r.ptyAuth;
+    return s.wirePty(ae(r.ptySockPath, r.pid, {
+      short: e.short,
+      auth: s.ptyAuth
+    })), s.resize(e.cols ?? 200, e.rows ?? 50), s.connectRv(), $c(r.pid, {
+      skipCache: !0
+    }).then(h => {
+      if (s.record.pid !== r.pid || s.isDetached || s.record.outcome) return;
+      if (h) s.procStart = h;
+      s.patch({
+        pid: r.pid
+      });
+    }), s;
+  }
+  socketAuth() {
+    return this.rvAuth ??= de(16).toString("hex"), this.ptyAuth ??= de(16).toString("hex"), {
+      rvAuth: this.rvAuth,
+      ptyAuth: this.ptyAuth
+    };
+  }
+  static buildClaimFrame(e, r, s) {
+    let h = Pr(e.short),
+      env = qe(e, h, r, BOt(e.short), s);
+    delete env.CLAUDE_BG_PTY_AUTH, dor(env, e.reattachEnv), qK(env), Xe(env, e);
+    let argv = Ye(e, 1, !1, e.sessionId, void 0, e.respawnFlags);
+    return {
+      env: env,
+      argv: argv
+    };
+  }
+  static async adopt(e, r, s, h, n, p) {
+    if (r.dispatch.env) r.dispatch.env = jIe(r.dispatch.env, KQr);
+    if (delete r.dispatch.reattachEnv, !ua(r.pid)) return null;
+    let o = await $c(r.pid, {
+      skipCache: !0
+    });
+    if (o && r.procStart !== o) return null;
+    let u = new bQ(r.dispatch, s, h, "adopted", {
+      pid: r.pid,
+      attempt: r.attempt,
+      startedAt: r.startedAt,
+      messagingSock: r.messagingSock,
+      state: "adopted",
+      detail: "adopted from previous supervisor",
+      cliVersion: r.cliVersion,
+      ...(r.ptySock ? {} : {
+        legacy: !0
+      })
+    }, n, p);
+    if (u.attempt = r.attempt, u.procStart = r.procStart, u.rosterExtras = WFn(r), u.workerReady = !0, u.adoptedAt = Date.now(), u.rvSockPath = r.rendezvousSock, u.ptySockPath = r.ptySock, u.rvAuth = r.rvAuth, u.ptyAuth = r.ptyAuth, u.dispatch.launch.mode === "exec") u.execTracker = ke(Pr(u.dispatch.short), u.storageV5), u.workerReady = !0;
+    if (r.ptySock) u.wirePty(ae(r.ptySock, r.pid, {
+      procStart: u.procStart,
+      short: u.dispatch.short,
+      auth: u.ptyAuth,
+      onAuthRequired: () => u.onPtyAuthRequired()
+    })), u.ptyCols = 0, u.seedFocus(!1);
+    if (r.decModes) u.decModes.seed(r.decModes);
+    if (r.firedInteractiveMarks) u.firedInteractiveMarks = r.firedInteractiveMarks.slice(0, 2);
+    if (u.replPid = r.replPid ?? 0, u.replProcStart = r.replProcStart, u.bootedViaResume = r.dispatch.launch.mode !== "exec" && (r.dispatch.launch.restoresTranscript ?? r.dispatch.launch.mode === "resume"), u.connectRv(), r.pendingRespawn === "upgrade" && !(r.cliVersion && gJe(r.cliVersion, {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.283",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-09-25T00:44:42Z",
+      GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION)) && !W1e(r.cliVersion, {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.283",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-09-25T00:44:42Z",
+      GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION)) u.transitionTo({
+      kind: "upgrading"
+    }), setTimeout(g => {
+      if (g.phase.kind === "upgrading" && !g.record.outcome) g.sigtermWorker();
+    }, 5000, u).unref();
+    if (u.dispatch.launch.mode !== "exec" && r.ptySock && r.cliVersion && (r.rvAuth === void 0 || r.ptyAuth === void 0)) return t(`[bg] adopt ${u.dispatch.short}: roster rvAuth/ptyAuth missing for token-era worker \u2014 schema-skewed daemon stripped them`, {
+      level: "warn"
+    }), u.rekeyForAuthMismatch("missing-at-adopt"), u;
+    return u;
+  }
+  static unverified(e, r, s, h) {
+    let n = new bQ(r.dispatch, void 0, void 0, "adopted", {
+      pid: r.pid,
+      attempt: r.attempt,
+      startedAt: r.startedAt,
+      messagingSock: r.messagingSock,
+      state: "adopted",
+      detail: "adopted (pid unverifiable; tracking via pty.sock)",
+      cliVersion: r.cliVersion
+    }, s, h);
+    if (n.attempt = r.attempt, n.procStart = r.procStart, n.rosterExtras = WFn(r), r.firedInteractiveMarks) n.firedInteractiveMarks = r.firedInteractiveMarks.slice(0, 2);
+    return n.replPid = r.replPid ?? 0, n.replProcStart = r.replProcStart, n.bootedViaResume = r.dispatch.launch.mode !== "exec" && (r.dispatch.launch.restoresTranscript ?? r.dispatch.launch.mode === "resume"), n.rvSockPath = r.rendezvousSock, n.ptySockPath = r.ptySock, n.rvAuth = r.rvAuth, n.ptyAuth = r.ptyAuth, n.unverifiedSock = r.ptySock, n.lastInputAt = Date.now(), n.pidPoll = setInterval(p => {
+      if (p.record.outcome || !p.unverifiedSock) return;
+      U2t(p.unverifiedSock).then(o => {
+        if (o || p.record.outcome || p.phase.kind !== "spawning") return;
+        p.settle("crashed");
+      });
+    }, ve, n), n.pidPoll.unref(), i("tengu_bg_adopt_unverified", {
+      short: Sk(e)
+    }), n;
+  }
+  tail(e) {
+    return e > 0 ? this.ring.slice(-e) : [];
+  }
+  ringSnapshot() {
+    return this.ring;
+  }
+  get sessionIdTaken() {
+    return this.sessionIdTakenLatch;
+  }
+  preInitErrorTail() {
+    let e = wt(this.ring.slice(this.ringSpawnMark).join("")).replace(/\s+/g, " ").trim();
+    if (!e) return;
+    return e.length > he ? `\u2026${e.slice(-he)}` : e;
+  }
+  decModeSnapshot() {
+    return this.decModes.snapshot();
+  }
+  write(e) {
+    this.lastInputAt = Date.now(), this.pty?.write(e);
+  }
+  noteActivity() {
+    this.lastInputAt = Date.now();
+  }
+  shiftGraceClocksForward(e) {
+    if (e <= 0) return;
+    if (this.hostWokeAt = Date.now(), this.adoptedAt !== void 0) this.adoptedAt += e;
+    if (this.lastInputAt !== void 0) this.lastInputAt += e;
+  }
+  seedFocus(e) {
+    if (this.dispatch.launch.mode === "exec") return;
+    this.pty?.write(e ? Kft : Yft);
+  }
+  resize(e, r) {
+    if (this.ptyCols = e, this.ptyRows = r, O() === "windows" && !this.workerReady) {
+      this.resizeDeferred = !0;
+      return;
+    }
+    try {
+      this.pty?.resize(e, r);
+    } catch {}
+  }
+  signalPtyPgrp() {
+    if (O() === "windows" || !this.record.pid) return;
+    setTimeout(e => {
+      try {
+        process.kill(-e, "SIGWINCH");
+      } catch {}
+    }, 15, this.record.pid);
+  }
+  resizeForRepaint(e, r) {
+    if (e !== this.ptyCols || r !== this.ptyRows) return this.resize(e, r), this.signalPtyPgrp(), this.rv?.send({
+      type: "repaint"
+    }), () => {};
+    let s = this.rv?.send({
+        type: "repaint"
+      }) === !0,
+      h = () => {},
+      n = setTimeout((p, o) => {
+        if (h(), this.ptyCols !== p || this.ptyRows !== o) return;
+        let u = Math.max(2, p - 1);
+        this.resize(u, o), this.signalPtyPgrp(), setTimeout((g, f, S) => {
+          if (this.ptyCols === S && this.ptyRows === f) this.resize(g, f), this.signalPtyPgrp();
+        }, 30, p, o, u);
+      }, s ? 50 : 0, e, r);
+    if (s) h = this.onRepaintDone.subscribe(() => {
+      h(), clearTimeout(n);
+    });
+    return () => {
+      h(), clearTimeout(n);
+    };
+  }
+  rosterEntry() {
+    return {
+      ...this.rosterExtras,
+      pid: this.record.pid,
+      procStart: this.procStart,
+      sessionId: this.record.sessionId,
+      rendezvousSock: this.rvSockPath ?? BOt(this.dispatch.short),
+      ptySock: this.record.legacy ? void 0 : this.ptySockPath ?? kS(this.dispatch.short),
+      messagingSock: this.record.messagingSock,
+      cliVersion: this.record.cliVersion,
+      startedAt: this.record.startedAt,
+      attempt: this.attempt,
+      cwd: this.dispatch.cwd,
+      worktreePath: this.dispatch.worktree?.path,
+      dispatch: this.cappedDispatch(),
+      pendingRespawn: this.phase.kind === "upgrading" ? "upgrade" : void 0,
+      decModes: this.decModes.snapshot(),
+      firedInteractiveMarks: this.firedInteractiveMarks.length > 0 ? this.firedInteractiveMarks.slice(0, 2) : void 0,
+      rvAuth: this.rvAuth,
+      ptyAuth: this.ptyAuth,
+      replPid: this.replPid > 1 ? this.replPid : void 0,
+      replProcStart: this.replPid > 1 ? this.replProcStart : void 0
+    };
+  }
+  cappedDispatch() {
+    return JSON.parse(JSON.stringify(this.dispatch, (e, r) => {
+      let s = e.toUpperCase();
+      if (e === "reattachEnv" || e === "attachStallRespawns" || zEn.includes(s === "PATH" ? e : s)) return;
+      if (typeof r === "string" && r.length > je) return r.slice(0, je);
+      return r;
+    }));
+  }
+  async reply(text) {
+    this.lastInputAt = Date.now(), this.lastInputAttacher = void 0;
+    let r = await Ir(Pr(this.dispatch.short), this.storageV5);
+    if ((!r || (r.tempo ?? this.record.tempo) === "blocked") && this.rv?.send({
+      type: "reply",
+      text: text
+    })) return !0;
+    if (this.pty) {
+      let s = this.dispatch.launch.mode !== "exec";
+      return this.replyChain = this.replyChain.then(() => new Promise(h => {
+        this.pty?.write(s ? `\x1B[200~${text}\x1B[201~` : text), setTimeout(n => {
+          this.pty?.write("\r"), n();
+        }, 10, h);
+      })), !0;
+    }
+    return this.rv?.send({
+      type: "reply",
+      text: text
+    }) ?? !1;
+  }
+  sendAttacherCaps(caps) {
+    return this.rv?.send({
+      type: "attacher-caps",
+      caps: caps
+    }) ?? !1;
+  }
+  kill(e = "SIGTERM", r = "killed", detail_2) {
+    if (this.phase.kind === "retired") return;
+    if (this.killOutcome = r === "failed" ? "failed" : "killed", this.handoffKill = this.handoffKill || r === "handoff", detail_2) this.patch({
+      detail: detail_2
+    });
+    if (this.transitionTo({
+      kind: "retiring",
+      reason: "reap"
+    }), this.backoffTimer) clearTimeout(this.backoffTimer), this.backoffTimer = null;
+    if (this.unverifiedSock) {
+      $Pe(this.unverifiedSock, this.storageV5).finally(() => this.settle(this.killOutcome));
+      return;
+    }
+    if (this.pty) try {
+      this.pty.kill(e);
+    } catch {} else if (this.record.pid && !this.pidRecycled()) try {
+      process.kill(-this.record.pid, e);
+    } catch {
+      try {
+        process.kill(this.record.pid, e);
+      } catch {}
+    }
+    if (!this.pty) this.settle(this.killOutcome);
+  }
+  stop() {
+    if (this.phase.kind === "retiring" && this.phase.reason === "reap") this.settle(this.killOutcome);else if (this.phase.kind === "retiring" && this.phase.reason === "grace") this.settle("done");else if (this.phase.kind !== "retired") this.transitionTo({
+      kind: "retiring",
+      reason: "stop"
+    });
+    if (this.backoffTimer) clearTimeout(this.backoffTimer), this.backoffTimer = null;
+    this.clearLiveness(), this.offData?.dispose(), this.offExit?.dispose(), this.execTracker?.dispose(), this.execTracker = void 0, this.pty?.dispose(), this.pty = void 0;
+  }
+  async doSpawn(e, r = !1) {
+    if (this.attempt++, this.authRekeyFired = !1, this.pendingAuthRekey = void 0, this.workerReady = !1, this.firedInteractiveMarks = [], this.attempt > 1) this.liveTranscriptPath = null;
+    this.resizeDeferred = !1, this.ringSpawnMark = this.ring.length, this.lastSpawnAt = Date.now(), this.lastExitExternalStop = !1;
+    let dispatch = this.dispatch,
+      h = Pr(dispatch.short);
+    await DIe(dispatch.short, this.storageV5).catch(() => {});
+    let detail_3 = Eu();
+    if (detail_3) {
+      i("tengu_bg_launcher_worker_refused", {
+        attempt: this.attempt
+      }), m("agent_launcher", "worker_refused"), this.patch({
+        state: "crashed",
+        detail: detail_3
+      });
+      let R = this.dimNotice(detail_3);
+      return this.pushRing(R), this.onStream.emit(R), this.settle("crashed");
+    }
+    let p = Qjt(dispatch) ? await we(dispatch.short, this.getAuthSnapshot?.()) : void 0,
+      o = await Ae(dispatch.short, dispatch.launch.mode === "exec" ? {
+        ptyAuth: this.socketAuth().ptyAuth
+      } : this.socketAuth());
+    try {
+      await TEo(gt(_w(this.ptySockPath ?? kS(dispatch.short))));
+    } catch (error) {
+      if (this.credentials) await Promise.all([o ? this.credentials.discardSpentCredentialFile(o).catch(() => {}) : void 0, p ? this.credentials.discardSpentCredentialFile(p).catch(() => {}) : void 0]);else await Promise.all([o ? ce(o).catch(() => {}) : void 0, p ? ce(p).catch(() => {}) : void 0]);
+      if (this.record.outcome) return;
+      if (v(error) === x1n) {
+        let detail_4 = `worker socket directory is not owned by this user \u2014 ${l(error)}`;
+        this.patch({
+          state: "crashed",
+          detail: detail_4
+        });
+        let G = this.dimNotice(detail_4);
+        return this.pushRing(G), this.onStream.emit(G), this.settle("crashed");
+      }
+      return this.scheduleRespawn(l(error));
+    }
+    await ce(_w(this.ptySockPath ?? kS(dispatch.short))).catch(() => {});
+    let u = dispatch.launch.mode === "resume" ? dispatch.launch.sessionId : void 0,
+      g = !1,
+      f = !1,
+      sessionId = dispatch.sessionId,
+      k,
+      {
+        respawnFlags: respawnFlags,
+        cwd: cwd
+      } = dispatch,
+      A = !1;
+    if (this.attempt > 1) {
+      let R = await Ir(h, this.storageV5);
+      sessionId = R?.resumeSessionId ?? dispatch.sessionId, respawnFlags = R?.respawnFlags ?? dispatch.respawnFlags, cwd = R?.cwd ?? dispatch.cwd, A = R?.interactiveLineage === !0;
+      let C = dv(uV(this.storageV5)),
+        G = await Qne(sessionId, cwd, R?.linkScanPath, void 0, C);
+      if (g = G.hasMessages, g) k = G.path, this.liveTranscriptPath = G.path;
+      let K = u !== void 0 && b_e(u);
+      if (f = !g && u !== void 0 && !(await Qne(K ? ft(u, ".jsonl") : u, cwd, K ? u : void 0, void 0, C)).hasMessages, !g) await ZAe(G.path, C);
+    }
+    if (this.effectiveCwd = cwd, this.phase.kind === "retiring" || this.phase.kind === "retired" || this.record.outcome) {
+      if (o) if (this.credentials) this.credentials.discardSpentCredentialFile(o).catch(() => {});else ce(o).catch(() => {});
+      return;
+    }
+    if (f) return this.patch({
+      state: "crashed",
+      detail: `source session ${u} not found`
+    }), this.settle("crashed");
+    if (!this.spawnPty) return this.patch({
+      state: "crashed",
+      detail: "Bun.Terminal unavailable (running under Node?)"
+    }), i("tengu_bg_pty_unavailable", {
+      short: Sk(this.dispatch.short)
+    }), this.settle("crashed");
+    let P = Ye(dispatch, this.attempt, g, sessionId, k, respawnFlags);
+    this.bootedViaResume = (dispatch.launch.mode === "prompt" || dispatch.launch.mode === "resume") && (this.attempt === 1 || !g && sessionId === dispatch.sessionId) ? dispatch.launch.restoresTranscript ?? P.includes("--resume") : P.includes("--resume");
+    let env_2 = qe(dispatch, h, p, this.rvSockPath ?? BOt(dispatch.short), this.socketAuth());
+    if (this.attempt > 1 && g && !r) {
+      if (env_2.CLAUDE_CODE_RESUME_INTERRUPTED_TURN = "1", $e()) {
+        if (env_2.CLAUDE_CODE_RESUME_PROMPT ??= kt, A) env_2.CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS ??= String(vt);
+      }
+    }
+    if (this.attempt > 1 && !g && sessionId !== dispatch.sessionId) env_2.CLAUDE_BG_POST_CLEAR_RESPAWN = "1";
+    if (dor(env_2, e), o) delete env_2.CLAUDE_BG_RV_AUTH, delete env_2.CLAUDE_BG_PTY_AUTH, env_2.CLAUDE_BG_SOCKET_TOKENS_PATH = o;
+    qK(env_2), Xe(env_2, dispatch);
+    let cols_2 = this.ptyCols || (dispatch.cols ?? 200),
+      rows_2 = this.ptyRows || (dispatch.rows ?? 50),
+      T;
+    try {
+      let {
+        cmd: cmd_2,
+        prefixArgs: prefixArgs_2
+      } = dispatch.launch.mode === "exec" ? {
+        cmd: aE(dispatch.launch.cmd),
+        prefixArgs: []
+      } : Hu({
+        pinToCurrentBinary: !0
+      });
+      T = this.spawnPty(cmd_2, [...prefixArgs_2, ...P], {
+        cols: cols_2,
+        rows: rows_2,
+        cwd: cwd,
+        env: env_2,
+        ptySock: this.ptySockPath ?? kS(dispatch.short),
+        short: dispatch.short,
+        ptyAuth: this.ptyAuth
+      });
+    } catch (error) {
+      let C = v(error),
+        G = au()[0];
+      if (B(error)) {
+        let K = await ut(cwd).then(() => !0, () => !1);
+        if (this.record.outcome) return;
+        if (!K) return this.settleCwdGone("cold", cwd);
+        let detail_5 = G ? `launcher \`${G}\` was deleted or moved (ENOENT) \u2014 fix CLAUDE_CODE_PROCESS_WRAPPER, then run your command again` : dispatch.launch.mode === "exec" ? `${dispatch.launch.cmd}: command not found` : "daemon binary was deleted (upgrade in progress) \u2014 run your command again to use the new version";
+        if (G) i("tengu_bg_launcher_worker_refused", {
+          attempt: this.attempt
+        }), m("agent_launcher", "worker_launcher_enoent");else i("tengu_bg_spawn_binary_gone", {
+          short: Sk(this.dispatch.short),
+          attempt: this.attempt
+        });
+        this.patch({
+          state: "crashed",
+          detail: detail_5
+        });
+        let W = this.dimNotice(detail_5);
+        return this.pushRing(W), this.onStream.emit(W), this.settle("crashed");
+      }
+      if (G && (C === "EACCES" || C === "EPERM")) {
+        if (this.record.outcome) return;
+        let detail_6 = `launcher \`${G}\` could not be executed (${C})`;
+        i("tengu_bg_launcher_worker_refused", {
+          attempt: this.attempt
+        }), m("agent_launcher", C === "EACCES" ? "worker_launcher_eacces" : "worker_launcher_eperm"), this.patch({
+          state: "crashed",
+          detail: detail_6
+        });
+        let z = this.dimNotice(detail_6);
+        return this.pushRing(z), this.onStream.emit(z), this.settle("crashed");
+      }
+      return this.scheduleRespawn(l(error));
+    }
+    if (dispatch.launch.mode === "exec") this.execTracker?.dispose(), this.execTracker = ke(h, this.storageV5), this.workerReady = !0;
+    if (O() === "windows") Ee(Aee(dispatch.short), String(T.pid)).catch(() => {});
+    this.wirePty(T), this.rv?.close(), this.rv = void 0, this.lastRvHeartbeat = void 0, this.stalledLogged = !1, this.connectRv(), this.patch({
+      pid: T.pid,
+      attempt: this.attempt,
+      state: this.attempt > 1 ? "resuming" : "running",
+      detail: "",
+      cliVersion: {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION
+    }), i("tengu_bg_worker_spawn", {
+      short: Sk(this.dispatch.short),
+      attempt: this.attempt,
+      source: c(this.dispatch.source),
+      launch_mode: c(this.dispatch.launch.mode)
+    }), $c(T.pid, {
+      skipCache: !0
+    }).then(R => {
+      if (!R || this.record.pid !== T.pid || this.isDetached || this.record.outcome) return;
+      this.procStart = R, this.patch({
+        pid: T.pid
+      });
+    });
+  }
+  wirePty(e) {
+    this.pty = e, this.transitionTo({
+      kind: "running"
+    }), this.decModes = iyt(), e.onResume?.(() => {
+      this.rv?.send({
+        type: "repaint"
+      });
+    }), e.onRepl?.((s, h) => {
+      if (!this.record.pid || this.record.outcome || this.isDetached) return;
+      this.replPid = s, this.replProcStart = h, this.onState.emit({
+        pid: this.record.pid
+      });
+    }), this.offData = e.onData(s => {
+      if (this.decModes.feed(s) && this.record.pid) this.onState.emit({
+        pid: this.record.pid
+      });
+      this.execTracker?.feed(s), this.pushRing(s.includes(d3) ? s.replaceAll(d3, "") : s), this.onStream.emit(s);
+    });
+    let r = !1;
+    this.offExit = e.onExit(({
+      exitCode: exitCode_2,
+      signal: signal_2,
+      hostStderr: hostStderr_2
+    }) => {
+      if (r) return;
+      r = !0, this.offData?.dispose(), this.execLastLine = this.execTracker?.lastLine, this.execTracker?.dispose(), this.execTracker = void 0, this.pty = void 0, this.onExit(exitCode_2, signal_2, hostStderr_2);
+    });
+  }
+  dimNotice(e) {
+    return wqe(`\r
+\x1B[2m[${e}]\x1B[0m\r
+`);
+  }
+  pushRing(e) {
+    if (this.ring.push(e), this.ringBytes += e.length, this.ringBytes > jOt * 1.25 && this.ring.length > 1) {
+      let r = 0,
+        s = 0;
+      while (this.ringBytes - s > jOt && r < this.ring.length - 1) s += this.ring[r].length, r++;
+      this.ring.splice(0, r), this.ringBytes -= s, this.ringSpawnMark = Math.max(0, this.ringSpawnMark - r);
+    }
+  }
+  patch(e) {
+    if (Object.assign(this.record, e), this.onState.emit(e), this.pendingAuthRekey !== void 0 && e.tempo !== void 0 && e.tempo !== "active") {
+      let pendingAuthRekey = this.pendingAuthRekey;
+      Ir(Pr(this.dispatch.short), this.storageV5).then(s => {
+        if (this.pendingAuthRekey !== pendingAuthRekey) return;
+        let h = Ze(s, pendingAuthRekey);
+        if (h === "settled") {
+          this.pendingAuthRekey = void 0, this.authRekeyFired = !1, t(`[bg] worker ${this.dispatch.short}: deferred auth-mismatch re-key (${pendingAuthRekey}) dropped \u2014 worker settled; leaving to retireIfSettled`, {
+            level: "warn"
+          });
+          return;
+        }
+        if (h !== null) return;
+        t(`[bg] worker ${this.dispatch.short}: deferred auth-mismatch re-key (${pendingAuthRekey}) firing on tempo='${e.tempo}'`, {
+          level: "warn"
+        }), this.fireAuthRekey();
+      });
+    }
+  }
+  onExit(e, r, s) {
+    if (this.isDetached) return;
+    if (this.phase.kind === "retired") return;
+    let procUptimeMs = this.lastSpawnAt ? Date.now() - this.lastSpawnAt : void 0;
+    if (Date.now() - this.lastCheckPidAt > Ke) this.hostWokeAt = Date.now();
+    let n = this.hostWokeAt !== void 0 && Date.now() - this.hostWokeAt < yt,
+      p = !n && procUptimeMs !== void 0 && procUptimeMs < Ge && e !== 0;
+    if (p) this.fastCrashStreak++;else this.fastCrashStreak = 0;
+    let o = this.fastCrashStreak >= 3,
+      u = this.workerReady && procUptimeMs !== void 0 && procUptimeMs >= At;
+    this.lastExitExternalStop = (r !== void 0 || St.has(e ?? -1)) && !n;
+    let g = this.workerReady ? void 0 : this.preInitErrorTail(),
+      f = au()[0],
+      S = s ? Xc(fr(wt(s)), he) || void 0 : void 0,
+      k = f && !this.workerReady && !g && S ? `(launch command: \`${f}\` \u2026): ${S}` : void 0,
+      _ = !!f && e === 0 && !this.workerReady && procUptimeMs !== void 0 && procUptimeMs < qHe,
+      w = e !== 0 ? m2r(Pr(this.dispatch.short)) : void 0,
+      A = w ? g2r(Pr(this.dispatch.short), w) : void 0,
+      P = A ? Xc(fr(wt(A)), he) || void 0 : void 0,
+      M = !g && P ? `: ${P}` : "",
+      N = p && !!w && w === this.lastExitCause;
+    this.lastExitCause = p ? w : void 0;
+    let F = !this.workerReady && w === E1t,
+      T = g ? ` \u2014 ${g}` : k ? ` \u2014 ${k}` : w ? ` \u2014 ${w}` : "",
+      R = this.effectiveCwd ?? this.dispatch.cwd,
+      C = !1;
+    if (w === "setcwd") try {
+      C = !Fe(R).isDirectory();
+    } catch {
+      C = !0;
+    }
+    let G = this.dispatch.launch.mode === "exec" && (r === "SIGINT" || r === "SIGQUIT"),
+      K;
+    if (this.phase.kind === "retiring" && this.phase.reason === "reap") K = this.killOutcome;else if (this.phase.kind === "retiring" && this.phase.reason === "grace") K = "done";else if (this.phase.kind === "upgrading") K = void 0;else if (_) K = "crashed";else if (e === 0) K = "done";else if (this.dispatch.launch.mode === "exec") K = G ? "killed" : "crashed";else if (C || F || !this.workerReady && (this.attempt >= 2 || g || k) || o || N || !u && this.attempt >= He) K = "crashed";
+    if (i("tengu_bg_worker_exit", {
+      short: Sk(this.dispatch.short),
+      code: e ?? void 0,
+      signal: ue(r),
+      attempt: this.attempt,
+      procUptimeMs: procUptimeMs,
+      source: c(this.dispatch.source),
+      launch_mode: c(this.dispatch.launch.mode),
+      outcome: ue(K),
+      exitCause: vKr(w),
+      worker_cli_version: fi(this.record.cliVersion),
+      worker_stale: this.isVersionStale
+    }), this.phase.kind === "retiring") return this.settle(this.phase.reason === "reap" ? this.killOutcome : "done");
+    if (this.phase.kind === "upgrading") {
+      this.transitionTo({
+        kind: "spawning"
+      }), this.attempt = 1, this.fastCrashStreak = 0, this.lastExitCause = void 0, this.patch({
+        pid: 0,
+        state: "starting",
+        detail: "upgrading"
+      }), this.procStart = void 0, this.buildBridgeReattachEnvFromState().then(W => this.doSpawn(W, !0)).catch(d);
+      return;
+    }
+    if (_) {
+      let detail_7 = `the launcher exited before Claude Code started \u2014 \`${f}\` must exec, not daemonize${k ? ` \u2014 ${k}` : ""}`;
+      return i("tengu_bg_launcher_fork_and_exit", {
+        attempt: this.attempt
+      }), m("agent_launcher", "worker_fork_and_exit"), this.patch({
+        state: "crashed",
+        detail: detail_7
+      }), this.settle("crashed");
+    }
+    if (e === 0) {
+      if (this.dispatch.launch.mode === "exec") {
+        if (!this.execLastLine && this.ringBytes > 0) i("tengu_bg_exec_no_lastline", {
+          ring_bytes: this.ringBytes
+        });
+        this.patch({
+          detail: this.execLastLine || "(no output)"
+        });
+      }
+      return this.settle("done");
+    }
+    let z = r ? `${r} (${e})` : `exit ${e}`;
+    if (this.dispatch.launch.mode === "exec") {
+      let execLastLine = this.execLastLine;
+      return this.patch({
+        state: G ? "stopped" : "crashed",
+        detail: execLastLine ? `${z} \u2014 ${execLastLine}` : `${z}${T}`
+      }), this.settle(G ? "killed" : "crashed");
+    }
+    if (F) {
+      this.sessionIdTakenLatch = !0, i("tengu_bg_session_id_taken", {
+        short: Sk(this.dispatch.short),
+        attempt: this.attempt,
+        via: c(this.via),
+        launch_mode: c(this.dispatch.launch.mode)
+      }), this.patch({
+        state: "crashed",
+        detail: detail_8
+      });
+      let W = this.dimNotice(detail_8);
+      return this.pushRing(W), this.onStream.emit(W), this.settle("crashed");
+    }
+    if (!this.workerReady && w?.startsWith("spare_postclaim:")) try {
+      if (!Fe(this.dispatch.cwd).isDirectory()) return this.settleCwdGone("spare");
+    } catch {
+      return this.settleCwdGone("spare");
+    }
+    if (C) return this.settleCwdGone("boot", R);
+    if (!this.workerReady && (this.attempt >= 2 || g || k)) {
+      let W = !r && Ure() ? " \u2014 possibly low memory \u2014 free some up and retry" : "";
+      return this.patch({
+        state: "crashed",
+        detail: `${z} before init${T || W}`
+      }), this.settle("crashed");
+    }
+    if (o || N) return this.patch({
+      state: "crashed",
+      detail: N ? `${z} \xD7${this.attempt}${T}${M}` : `${z} within ${Ge / 1000}s of spawn \xD7${this.fastCrashStreak}${T}${M}`
+    }), this.settle("crashed");
+    if (u) this.attempt = 1;
+    this.scheduleRespawn(`${z}${T}${M}`);
+  }
+  async doSpawnUnlessSettledOnDisk() {
+    let e = $e() ? await Ir(Pr(this.dispatch.short), this.storageV5).catch(() => {
+      return;
+    }) : void 0;
+    if (this.record.outcome || this.phase.kind === "retiring" || this.phase.kind === "retired") return;
+    if (e && Mi(e) && !e.queuedPrompt) {
+      i("tengu_bg_respawn_suppressed", {
+        short: Sk(this.dispatch.short),
+        reason: y("settled_on_disk")
+      });
+      let r = oy(e.state);
+      return this.settle(r === "success" ? "done" : r === "failure" ? "failed" : "killed");
+    }
+    if (e?.interactiveLineage && this.lastExitExternalStop) return i("tengu_bg_respawn_suppressed", {
+      short: Sk(this.dispatch.short),
+      reason: y("no_task_contract")
+    }), this.patch({
+      state: "stopped",
+      detail: "stopped by an external signal"
+    }), this.settle("killed");
+    return this.doSpawn();
+  }
+  settleCwdGone(e, r = this.dispatch.cwd) {
+    let detail_9 = L9n(r);
+    i("tengu_bg_spawn_cwd_gone", {
+      short: Sk(this.dispatch.short),
+      attempt: this.attempt,
+      via: c(e)
+    }), this.patch({
+      state: "crashed",
+      detail: detail_9
+    });
+    let h = this.dimNotice(`${detail_9} \u2014 this job cannot be respawned`);
+    this.pushRing(h), this.onStream.emit(h), this.settle("crashed");
+  }
+  async buildBridgeReattachEnvFromState() {
+    let e = await Ir(Pr(this.dispatch.short), this.storageV5).catch(() => null);
+    if (!e) return;
+    return s9(e.bridgeSessionId, e.bridgeSessionSeq, e.bridgeOutboundOnly, e.bridgeSessionGroupingId, {
+      ownerAccountUuid: e.bridgeOwnerAccountUuid,
+      ownerOrganizationUuid: e.bridgeOwnerOrganizationUuid,
+      noHistoryBackfill: e.bridgeNoHistoryBackfill
+    });
+  }
+  scheduleRespawn(detail_10) {
+    if (this.attempt >= He) return i("tengu_bg_respawn_exhausted", {
+      short: Sk(this.dispatch.short),
+      attempts: this.attempt
+    }), this.patch({
+      state: "crashed",
+      detail: detail_10
+    }), this.settle("crashed");
+    if (this.phase.kind === "running") this.transitionTo({
+      kind: "spawning"
+    });
+    this.patch({
+      pid: 0,
+      state: "crashed",
+      detail: `${detail_10}; respawning`
+    }), this.procStart = void 0;
+    let r = this.dimNotice(`worker crashed (${detail_10}) \u2014 respawning\u2026`);
+    this.pushRing(r), this.onStream.emit(r), this.backoffTimer = setTimeout(() => {
+      if (this.backoffTimer = null, this.phase.kind !== "retiring" && this.phase.kind !== "retired") this.doSpawnUnlessSettledOnDisk().catch(d);
+    }, _t), this.backoffTimer.unref();
+  }
+  settle(outcome) {
+    if (this.record.outcome) return;
+    i("tengu_bg_settle", {
+      short: Sk(this.dispatch.short),
+      outcome: c(outcome),
+      uptimeMs: Date.now() - this.record.startedAt,
+      attempt: this.attempt,
+      worker_cli_version: fi(this.record.cliVersion),
+      worker_stale: this.isVersionStale
+    }), this.transitionTo({
+      kind: "retired",
+      outcome: outcome
+    }), this.clearLiveness(), this.patch({
+      outcome: outcome,
+      settledAt: Date.now(),
+      tempo: "idle"
+    }), this.onSettle.emit(outcome);
+  }
+  connectRv() {
+    if (this.rv || this.isDetached || this.record.outcome) return;
+    if (this.dispatch.launch.mode === "exec") {
+      this.startPidPoll();
+      return;
+    }
+    this.rv = Ue(this.rvSockPath ?? BOt(this.dispatch.short), e => {
+      if (e.type === "heartbeat") this.lastRvHeartbeat = Date.now();else if (e.type === "auth-rejected" || e.type === "reply-rejected") i(e.type === "auth-rejected" ? "tengu_bg_rv_auth_mismatch" : "tengu_bg_rv_reply_rejected", {}), this.rekeyForAuthMismatch(e.type === "auth-rejected" ? "rv-auth-rejected" : "rv-reply-rejected");else if (e.type === "done") this.settle(e.outcome);else if (e.type === "state") this.patch(e.patch);else if (e.type === "detach-request") {
+        let r = o9(e.msg),
+          s = this.attachers.get(this.lastInputAttacher);
+        if (!e.broadcast && s) s.deliver(r);else if (this.attachers.size > 0) for (let h of this.attachers.values()) h.deliver(r);else this.onStream.emit(r);
+      } else if (e.type === "repaint-done") this.onRepaintDone.emit();else if (e.type === "interactive-mark") {
+        let r = ukr(e);
+        if (!r) {
+          t(`[bg ${this.record.short}] dropped malformed rv interactive-mark frame`, {
+            level: "warn"
+          }), i("tengu_bg_imark_malformed", {});
+          return;
+        }
+        if (this.firedInteractiveMarks.length < 2 && !this.firedInteractiveMarks.some(item => item.kind === r.kind)) {
+          if (this.firedInteractiveMarks.push(r), this.record.pid) this.onState.emit({
+            pid: this.record.pid
+          });
+        }
+        for (let s of this.attachers.values()) if (s.caps?.imark === !0) s.deliver(jFn({
+          ...r,
+          nonce: s.imarkNonce
+        }));
+      }
+    }, () => void this.checkPid(), () => {
+      if (this.workerReady = !0, this.resizeDeferred) this.resizeDeferred = !1, this.resize(this.ptyCols, this.ptyRows);
+      if (this.attachers.size > 0) {
+        let e = [...this.attachers.values()].at(-1);
+        this.sendAttacherCaps(e.caps ?? null);
+      } else this.sendAttacherCaps(null);
+    }, this.rvAuth), this.startPidPoll();
+  }
+  startPidPoll() {
+    if (this.pidPoll) return;
+    this.lastCheckPidAt = Date.now(), this.pidPoll = setInterval(() => void this.checkPid(!0), ve), this.pidPoll.unref();
+  }
+  pidRecycled() {
+    if (!this.procStart || !this.record.pid) return !1;
+    let e = QRe(this.record.pid);
+    return e !== void 0 && e !== this.procStart;
+  }
+  async pidRecycledAsync() {
+    if (!this.procStart || !this.record.pid) return !1;
+    let e = await $c(this.record.pid);
+    return e !== void 0 && e !== this.procStart;
+  }
+  async failIfHostExited(e) {
+    let pid_2 = this.record.pid;
+    if (!pid_2 || this.record.outcome || this.isKilling || !this.pty) return !1;
+    let s = await f3n(pid_2);
+    if (!t9e(s)) return !1;
+    if (this.record.outcome || this.isKilling || !this.pty || this.record.pid !== pid_2) return !1;
+    return t(`bg: ${this.dispatch.short} pty host pid=${pid_2} has exited but is unreaped (state ${s}) via=${e} \u2014 reaping it and marking the session failed`, {
+      level: "warn"
+    }), i("tengu_bg_ptyhost_zombie", {
+      short: Sk(this.dispatch.short),
+      via: c(e),
+      state: c(s === "Z" ? "Z" : "X"),
+      uptimeMs: Date.now() - this.record.startedAt,
+      attachers: this.attachers.size
+    }), this.kill("SIGKILL", "failed", this.dispatch.launch.mode === "exec" ? $ot : Tke), !0;
+  }
+  pidPollTick = 0;
+  async checkPid(e = !1) {
+    let r = Date.now() - this.lastCheckPidAt;
+    this.lastCheckPidAt = Date.now();
+    let s = r > Ke;
+    if (s) this.hostWokeAt = Date.now();
+    if (this.record.outcome || !this.record.pid) return;
+    if (s && this.lastRvHeartbeat !== void 0) this.lastRvHeartbeat = Date.now();
+    if (!this.pty) try {
+      process.kill(this.record.pid, 0);
+    } catch (error) {
+      let p = v(error);
+      if (p === "ESRCH" || p === "EPERM") this.logVanished(!1, e), this.settle(this.isKilling ? "killed" : "crashed");
+      return;
+    }
+    let lastRvHeartbeat = this.lastRvHeartbeat;
+    if (!s && !this.stalledLogged && lastRvHeartbeat !== void 0 && Date.now() - lastRvHeartbeat > Rt) {
+      let n = await Ir(Pr(this.dispatch.short), this.storageV5);
+      if (!this.stalledLogged && (n?.tempo ?? this.record.tempo) === "active") this.stalledLogged = !0, i("tengu_bg_worker_stalled", {
+        short: Sk(this.dispatch.short),
+        sinceMs: Date.now() - lastRvHeartbeat
+      });
+    }
+    if (this.pty) {
+      await this.failIfHostExited("poll");
+      return;
+    }
+    if (e && this.pidPollTick++ % 12 !== 0) return;
+    if (await this.pidRecycledAsync()) {
+      if (this.record.outcome || this.pty) return;
+      this.logVanished(!0, e), this.settle(this.isKilling ? "killed" : "crashed");
+    }
+  }
+  logVanished(recycled, fromPoll) {
+    if (this.isKilling) return;
+    i("tengu_bg_worker_vanished", {
+      short: Sk(this.dispatch.short),
+      recycled: recycled,
+      fromPoll: fromPoll,
+      uptimeMs: Date.now() - this.record.startedAt,
+      worker_cli_version: fi(this.record.cliVersion),
+      worker_stale: this.isVersionStale
+    });
+  }
+  clearLiveness() {
+    if (this.pidPoll) clearInterval(this.pidPoll), this.pidPoll = null;
+    this.rv?.close(), this.rv = void 0, this.lastRvHeartbeat = void 0, this.stalledLogged = !1;
+  }
+}
+async function xVo(e) {
+  let r = e[0];
+  if (!r) process.stderr.write(`[bg-spare] missing claim sock path
+`), process.exit(2);
+  let s = await xt(),
+    h = import("B:/~BUN/root/chunk-1d7sm668.js");
+  import("B:/~BUN/root/chunk-h020qjv7.js").catch(() => {}), import("B:/~BUN/root/chunk-dvmmamnq.js").catch(() => {});
+  let n = () => {
+      try {
+        It(r);
+      } catch {}
+    },
+    p = () => {
+      n(), process.exit(0);
+    },
+    o = k => {
+      n(), process.stderr.write(`[bg-spare] uncaughtException: ${l(k)}
+`), fh("spare_uncaught"), process.exit(1);
+    },
+    ppid = process.ppid,
+    g = setInterval((k, _) => {
+      if (process.ppid !== k) _(), process.exit(0);
+    }, 2000, ppid, n);
+  g.unref();
+  for (let k of ["SIGTERM", "SIGHUP", "SIGINT"]) process.on(k, p);
+  process.on("uncaughtException", o);
+  let f = () => {
+      clearInterval(g);
+      for (let k of ["SIGTERM", "SIGHUP", "SIGINT"]) process.off(k, p);
+      process.off("uncaughtException", o);
+    },
+    S;
+  try {
+    S = await Zjt(r, void 0, s);
+  } catch (error) {
+    n(), process.stderr.write(`[bg-spare] claim recv failed: ${l(error)}
+`), fh("spare_claim_recv"), process.exit(1);
+  }
+  f();
+  try {
+    await h, await eWt(S, h);
+  } catch (error) {
+    let _ = ao(error) ?? Ym(error) ?? "Error";
+    throw fh("spare_postclaim:" + _, S.env.CLAUDE_JOB_DIR), process.stderr.write(`[bg-spare] post-claim init failed: ${l(error)}
+`), error;
+  }
+}
+async function xt() {
+  let CLAUDE_BG_CLAIM_AUTH = a.CLAUDE_BG_CLAIM_AUTH;
+  delete process.env.CLAUDE_BG_CLAIM_AUTH;
+  let CLAUDE_BG_SOCKET_TOKENS_PATH = a.CLAUDE_BG_SOCKET_TOKENS_PATH;
+  if (delete process.env.CLAUDE_BG_SOCKET_TOKENS_PATH, !CLAUDE_BG_SOCKET_TOKENS_PATH) return CLAUDE_BG_CLAIM_AUTH;
+  let s = await r5e(CLAUDE_BG_SOCKET_TOKENS_PATH);
+  if (await q(CLAUDE_BG_SOCKET_TOKENS_PATH).catch(() => {}), !s?.claimAuth) t("[bg-spare] tokens file unreadable; claim gate degraded", {
+    level: "warn"
+  });
+  return s?.claimAuth ?? CLAUDE_BG_CLAIM_AUTH;
+}
+var Mt = 2000;
+async function H9n(e) {
+  if (O() === "windows") return null;
+  if (Eu()) return null;
+  if (!(await gI())) {
+    if (!e.launcherNotRunnableEpisode.logged) e.launcherNotRunnableEpisode.logged = !0, m("agent_launcher", "spare_launcher_not_runnable"), t(`bg spare: launcher \`${au()[0]}\` was deleted or is not executable \u2014 not minting a warm spare until it is restored`, {
+      level: "warn"
+    });
+    return null;
+  }
+  return e.launcherNotRunnableEpisode.logged = !1, Or("daemon_bg_spare_refill", async () => {
+    let r = Re(4).toString("hex"),
+      ptySock = REo(r),
+      claimSock = AEo(r),
+      ptyAuth = Re(16).toString("hex"),
+      claimAuth = Re(16).toString("hex");
+    await Ot($9(), {
+      recursive: !0,
+      mode: 448
+    }).catch(() => {});
+    let tokensPath = await Ae(`spare-${r}`, {
+      ptyAuth: ptyAuth,
+      claimAuth: claimAuth
+    });
+    await q(ptySock).catch(() => {}), await q(claimSock).catch(() => {});
+    let {
+        cmd: cmd_3,
+        prefixArgs: prefixArgs_3
+      } = Hu({
+        pinToCurrentBinary: !0
+      }),
+      f = await Lt(_w(ptySock), "w").catch(() => null),
+      S = fUo("agent"),
+      k = S?.(),
+      _;
+    try {
+      _ = Bun.spawn([cmd_3, ...prefixArgs_3, "--bg-pty-host", ptySock, "200", "50", "--", cmd_3, ...prefixArgs_3, "--bg-spare", claimSock], {
+        cwd: $9(),
+        env: Vt(tokensPath ? {
+          tokensPath: tokensPath
+        } : {
+          ptyAuth: ptyAuth,
+          claimAuth: claimAuth
+        }),
+        stdio: ["ignore", "ignore", f?.fd ?? "ignore"],
+        detached: !0,
+        windowsHide: !0,
+        ...Ea("agent"),
+        argv0: "claude bg-pty-host"
+      }), _.unref();
+    } catch (error) {
+      if (tokensPath) if (H() && e.credentials !== void 0) e.credentials.discardSpentCredentialFile(tokensPath).catch(() => {});else q(tokensPath).catch(() => {});
+      throw error;
+    } finally {
+      await f?.close().catch(() => {});
+    }
+    let w = {
+        hostPid: _.pid,
+        ptySock: ptySock,
+        claimSock: claimSock,
+        ptyAuth: ptyAuth,
+        claimAuth: claimAuth,
+        startedAt: Date.now(),
+        cliVersion: {
+          ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+          PACKAGE_URL: "@anthropic-ai/claude-code",
+          README_URL: "https://code.claude.com/docs/en/overview",
+          VERSION: "2.1.283",
+          FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+          BUILD_TIME: "2026-09-25T00:44:42Z",
+          GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+          HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+          DD_SOURCEMAP_GROUP: "win32"
+        }.VERSION,
+        claimed: !1,
+        dispose() {
+          A = !0;
+          try {
+            _.kill("SIGTERM");
+          } catch {}
+        }
+      },
+      A = !1;
+    return _.exited.then(async P => {
+      let M = Date.now(),
+        N = S?.(),
+        F = P !== 0 && k !== void 0 && N !== void 0 && N > k;
+      if (q(ptySock).catch(() => {}), q(claimSock).catch(() => {}), tokensPath) if (H() && e.credentials !== void 0) e.credentials.discardSpentCredentialFile(tokensPath).catch(() => {});else q(tokensPath).catch(() => {});
+      let T = ((await cl(_w(ptySock), 1048576)) ?? "").slice(0, 2000).trim();
+      if (T.length > 0) t(`bg spare host pid=${_.pid} exit stderr:
+${T}`, {
+        level: "warn"
+      });
+      q(_w(ptySock)).catch(() => {}), q(nx(ptySock)).catch(() => {});
+      let R = M - w.startedAt,
+        C = !A && !w.claimed && !F && au().length > 0 && (R < Mt || P === 0 && R < qHe);
+      if (F && !w.claimed && !A) t(`bg spare: host pid=${_.pid} died ${R}ms after spawn while the tool memory cgroup OOM-killed a member \u2014 not attributed to the launcher`, {
+        level: "warn"
+      });
+      if (C) Xce([-_.pid]), m("agent_launcher", "spare_fork_or_crash"), t(`bg spare: launcher \`${au()[0]}\` exited ${R}ms after spawn \u2014 it either daemonized instead of calling \`exec\` (launcher contract #1) or crashed at startup. Warm spares are disabled until the background service restarts; sessions still start, without the warm-attach shortcut.`, {
+        level: "warn"
+      });
+      e.onExit(C);
+    }), e.log(`bg spare spawned host pid=${_.pid}`), w;
+  });
+}
+function Vt(e) {
+  let r = {
+    ...process.env
+  };
+  te(r);
+  for (let s of Jue) delete r[s];
+  if (qK(r), n7e(r), iG(r), zpt(r)) {
+    let s = EAe(r);
+    if (s) te(r, [s]), delete r[s];
+    for (let h of OD) delete r[h];
+    if (Ne(r.CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST)) Wpt(r);
+  } else if (K$e.some(item => re(r, item))) delete r.ANTHROPIC_AUTH_TOKEN;
+  for (let s of le) delete r[s];
+  for (let s of Object.keys(r)) if (Emn.some(item => s.startsWith(item))) delete r[s];
+  if (O() === "macos") delete r.CLAUDE_CODE_OAUTH_TOKEN;
+  return Object.assign(r, {
+    CLAUDE_CODE_SESSION_KIND: "bg",
+    CLAUDE_BG_BACKEND: "daemon",
+    FORCE_COLOR: "3",
+    COLORTERM: "truecolor",
+    BROWSER: "true",
+    ...("tokensPath" in e ? {
+      CLAUDE_BG_SOCKET_TOKENS_PATH: e.tokensPath
+    } : {
+      CLAUDE_BG_PTY_AUTH: e.ptyAuth,
+      CLAUDE_BG_CLAIM_AUTH: e.claimAuth
+    })
+  }), r;
+}
+function F9n(e, r, spawnPty, getAuthSnapshot, storageV5, credentials) {
+  r.claimed = !0;
+  let o = bQ.claim(e, {
+    pid: r.hostPid,
+    ptySockPath: r.ptySock,
+    spawnPty: spawnPty,
+    getAuthSnapshot: getAuthSnapshot,
+    ptyAuth: r.ptyAuth,
+    storageV5: storageV5,
+    credentials: credentials
+  });
+  return we(e.short, Qjt(e) ? getAuthSnapshot?.() : void 0).then(u => Ut(r.claimSock, Bt(e, u, o.socketAuth(), r.claimAuth))).catch(u => {
+    i("tengu_bg_sendclaim_failed", {
+      short: Sk(e.short),
+      errno: ao(u),
+      ...Id(u)
+    }), t(`[bg-spare] send-claim failed: ${l(u)}`, {
+      level: "warn"
+    });
+    let g = be(r.ptySock);
+    g.on("error", () => {}), g.once("connect", () => {
+      g.write(ZO({
+        t: "kill",
+        sig: "SIGTERM"
+      })), g.end();
+    });
+  }), o;
+}
+function Bt(e, r, s, auth_2) {
+  let {
+    env: env_3,
+    argv: argv_2
+  } = bQ.buildClaimFrame(e, r, s);
+  return {
+    cwd: e.cwd,
+    env: env_3,
+    argv: argv_2,
+    sessionId: e.sessionId,
+    auth: auth_2
+  };
+}
+var it = [50, 100, 150, 200, 250, 300, 400, 500, 500, 500];
+async function Ut(e, r) {
+  let s = Date.now(),
+    h = 5000;
+  for (let n = 0;; n++) {
+    if (Date.now() - s > 5000) throw Error("send-claim timeout");
+    try {
+      await Ft(e, r);
+      return;
+    } catch (error) {
+      let o = v(error);
+      if (!(o === "ENOENT" || o === "ECONNREFUSED") || n >= it.length) throw error;
+      await Q(it[n] ?? 500);
+    }
+  }
+}
+function Ft(e, r) {
+  return new Promise((s, h) => {
+    let n = be(e);
+    n.once("error", h), n.once("connect", () => {
+      n.end(b(r) + `
+`, () => s());
+    });
+  });
+}
+async function $9n(e, r) {
+  if (O() === "windows") return;
+  let s = new Set();
+  for (let p of e.values()) {
+    let ptySock_2 = p.rosterEntry().ptySock;
+    if (ptySock_2) s.add(ptySock_2);
+  }
+  let h = await Nt($9()).catch(() => []),
+    n = 0;
+  for (let p of h) {
+    if (!p.endsWith(".pty.sock")) continue;
+    let o = pe($9(), p);
+    if (s.has(o)) continue;
+    n++;
+    let u = be(o);
+    u.on("error", () => {
+      q(o).catch(() => {});
+    }), u.once("connect", () => {
+      u.resume(), u.write(ZO({
+        t: "kill",
+        sig: "SIGTERM"
+      })), u.end(), setTimeout(g => g.destroy(), 2000, u).unref();
+    });
+  }
+  for (let p of h) {
+    let o = [".err", ".late", ".err.read"].find(item => p.endsWith(`.pty.sock${item}`));
+    if (o) {
+      let u = p.slice(0, -o.length);
+      if (!h.includes(u)) q(pe($9(), p)).catch(() => {});
+    }
+    if (p.endsWith(".claim.sock")) {
+      let u = pe($9(), `${p.slice(0, -11)}.pty.sock`);
+      if (!s.has(u)) q(pe($9(), p)).catch(() => {});
+    }
+  }
+  if (n) r(`bg orphan-spare reap: ${n}`);
+}
+export { L9n, N9n, Vxe, Qjt, bQ, xVo, H9n, F9n, $9n };

@@ -1,0 +1,535 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { Ne } from "B:/~BUN/root/chunk-ekrhn4q1.js";
+import { Yn } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { Ht } from "B:/~BUN/root/chunk-17wqwt36.js";
+import { Xr } from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import { rE } from "B:/~BUN/root/chunk-zksmb712.js";
+import { _ce, dc, gb, Sy, un, pt, Ap, JFe, Lg, cC, gpn, ia, x, Uu, o2, le, s$e } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import { a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import { _K, t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import { gmt, $5n } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { HI } from "B:/~BUN/root/chunk-290k5gh5.js";
+import { Fx, tUt, Ie, zn, z5e, Cy } from "B:/~BUN/root/chunk-sd4cj2qx.js";
+import { f$ } from "B:/~BUN/root/chunk-4h4gje25.js";
+import { ppt, zRe, ine, o5e } from "B:/~BUN/root/chunk-yehxgs7w.js";
+import { Kr } from "B:/~BUN/root/chunk-1rjcv085.js";
+import { Kct, c1, w6, Xt, uq, iFe, xDr, DGn, JLt, IDr, UE, pq } from "B:/~BUN/root/chunk-3hjtxzqy.js";
+import { j3, Gjn } from "B:/~BUN/root/chunk-zbbat3z2.js";
+import { pLo } from "B:/~BUN/root/chunk-hecveget.js";
+import { lne, Yce } from "B:/~BUN/root/chunk-erkcnv3k.js";
+function UB() {
+  if (!zn()) return !1;
+  if (c1() !== void 0) return !0;
+  if (a.ANTHROPIC_UNIX_SOCKET) return !1;
+  return Cy();
+}
+function l3e() {
+  return UB() && c() && (x("tengu_ccr_bridge", !1) || d());
+}
+function d() {
+  if (cC() || a.DISABLE_GROWTHBOOK || gmt() !== "no-telemetry" || pLo() || !UB() || !g() || !b()?.organizationUuid || Y()) return !1;
+  try {
+    let e = un(),
+      o = e?.refreshToken ? e.subscriptionType ?? null : null;
+    return o !== null && v.includes(o);
+  } catch {
+    return !1;
+  }
+}
+var v = ["pro", "max", "team", "enterprise"];
+function q0t() {
+  if (l3e()) return null;
+  if (!_()) return "not_signed_in";
+  if (!c()) return "api_key_auth";
+  if (!g()) return "no_profile_scope";
+  return "not_in_rollout";
+}
+function u() {
+  return !1;
+}
+function CF() {
+  return HI()?.settings.disableRemoteControl === !0;
+}
+function DE() {
+  if (u()) return !0;
+  if (CF()) return !1;
+  return !lI() && l3e();
+}
+function OPr() {
+  if (u()) return !0;
+  return !CF() && !lI() && UB();
+}
+async function MPr() {
+  return (await Mjn()) === null;
+}
+async function Mjn() {
+  if (u()) return null;
+  if (CF()) return "managed_disabled";
+  if (!UB()) return "not_first_party";
+  if (lI()) return "cloud_session";
+  if (!c()) return _() ? "not_subscription_auth" : "not_signed_in";
+  if (d() || (await Uu("tengu_ccr_bridge"))) return null;
+  if (!cC()) return "flags_disabled";
+  return Lg() ? "gate_off" : "flags_unreachable";
+}
+var B = "Remote Control is disabled by your organization's policy. Contact your organization admin for access.",
+  L = 86400000,
+  k = 2147483647;
+function T() {
+  return pq();
+}
+function Cin() {
+  let {
+    featureLabel: featureLabel,
+    verb: verb
+  } = w6("allow_remote_control");
+  return ppt(featureLabel, verb, f$(), B);
+}
+var i = (code, reason) => ({
+  reason: reason,
+  code: code,
+  orgPolicyDenied: !1
+});
+async function Djn() {
+  if (u()) return null;
+  if (!UB()) return i("not_first_party", G());
+  if (lI()) return i("cloud_session", "Remote Control is not available inside a cloud session.");
+  if (CF()) return i("managed_disabled", j3);
+  if (!_()) return i("not_signed_in", "Remote Control requires a claude.ai subscription. Run `claude auth login` to sign in with your claude.ai account.");
+  if (!c()) return i("not_subscription_auth", Ljn({
+    prefix: "Remote Control requires claude.ai subscription auth.",
+    suffix: "to use Remote Control."
+  }));
+  if (!g()) return i("token_scope_limited", "Remote Control requires a full-scope login token. Long-lived tokens (from `claude setup-token` or CLAUDE_CODE_OAUTH_TOKEN) are limited to inference-only for security reasons. Run `claude auth login` to use Remote Control.");
+  if (!b()?.organizationUuid) return i("no_organization", "Unable to determine your organization for Remote Control eligibility. Run `claude auth login` to refresh your account information.");
+  await J9();
+  let e = Uat();
+  if (e === "unavailable") return i("policy_unverified", Gjn);
+  if (e === "denied") return {
+    reason: I(),
+    code: "org_policy_denied",
+    orgPolicyDenied: !0
+  };
+  if (d()) return null;
+  if (!cC()) {
+    let o = $5n();
+    if (o) return i("flags_disabled", `Remote Control requires feature-flag evaluation, which is disabled because ${o} is set. Unset it (or run in a shell without it) to use Remote Control.`);
+    if (a.DISABLE_GROWTHBOOK) return i("flags_disabled", "Remote Control requires feature-flag evaluation, which is disabled because DISABLE_GROWTHBOOK is set. Unset it (or run in a shell without it) to use Remote Control.");
+    return i("flags_disabled", "Remote Control requires feature-flag evaluation, which is unavailable in this environment.");
+  }
+  if (!(await Uu("tengu_ccr_bridge"))) {
+    if (!Lg()) {
+      if (o2(), await Uu("tengu_ccr_bridge")) return null;
+      if (!Lg()) return i("flags_unreachable", "Couldn't verify Remote Control eligibility \u2014 the feature-flag service was unreachable (offline or blocked). Retry, or run with `--debug` / `claude doctor` for details.");
+    }
+    return i("gate_off", "Remote Control isn't enabled for this account. If you recently changed plans, run `claude auth logout` then `claude auth login` to refresh your entitlements, or `claude doctor` for details.");
+  }
+  return null;
+}
+async function w() {
+  return (await Djn())?.reason ?? null;
+}
+function I() {
+  try {
+    if (iFe()) return o5e("Remote Control");
+    if (DGn("allow_remote_control")) return zRe("Remote Control", "is");
+    if (!T()) return ine("Remote Control");
+    if (!xDr()) return B;
+    return Cin();
+  } catch {
+    return Gjn;
+  }
+}
+function N(e) {
+  return Yce(e).map(lne).join(", ");
+}
+function c3e() {
+  if (u()) return null;
+  if (CF()) return j3;
+  let e = Kr(),
+    policyCacheRevision = Kct(),
+    remoteControlLockReason = e.remoteControlLockReason;
+  if (remoteControlLockReason !== void 0 && remoteControlLockReason.policyCacheRevision === policyCacheRevision) return remoteControlLockReason.reason;
+  let reason_2 = M();
+  return e.remoteControlLockReason = {
+    policyCacheRevision: policyCacheRevision,
+    reason: reason_2
+  }, reason_2;
+}
+function M() {
+  let e = Uat();
+  if (e === "allowed") return null;
+  if (e === "unavailable") return Gjn;
+  return I();
+}
+function t6o() {
+  if (!_K()) return "";
+  let e = o => o ? "set" : "unset";
+  try {
+    let o = un(),
+      n = Object.values(tUt).filter(item => Ne(process.env[item]));
+    return ["", "[debug] Remote Control auth state:", `  isBareMode=${Xr()}`, `  hasOAuthAccessToken=${!!o?.accessToken}`, `  oauthScopes=${o?.scopes?.join(",") ?? "none"}`, `  hasClaudeAIInferenceScope=${_()}`, `  isClaudeAISubscriber=${c()}`, `  hasProfileScope=${g()}`, `  oauthAccount.organizationUuid=${b()?.organizationUuid ? "set" : "unset"}`, `  ANTHROPIC_API_KEY=${e(process.env.ANTHROPIC_API_KEY)}`, `  ANTHROPIC_AUTH_TOKEN=${e(process.env.ANTHROPIC_AUTH_TOKEN)}`, `  apiKeyHelper=${Sy() ? "set" : "unset"}`, `  CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR=${e(process.env.CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR)}`, `  CLAUDE_CODE_OAUTH_TOKEN=${e(process.env.CLAUDE_CODE_OAUTH_TOKEN)}`, `  ANTHROPIC_UNIX_SOCKET=${e(process.env.ANTHROPIC_UNIX_SOCKET)}`, `  3P env=${n.length ? n.join(",") : "none"}`, ...U()].join(`
+`);
+  } catch (error) {
+    return `
+[debug] failed to collect auth state: ${error}`;
+  }
+}
+function U() {
+  let e = r => r ? "set" : "unset",
+    o = JFe(),
+    n = H();
+  return [`  isGrowthBookEnabled=${cC()}`, `  telemetryDisabledBy=${$5n() ?? "none"}`, `  DISABLE_GROWTHBOOK=${e(process.env.DISABLE_GROWTHBOOK)}`, `  hasFreshGrowthBookFeatures=${Lg()}`, `  growthBookFeaturesLoaded=${Object.keys(o).length}`, `  growthBookLastFetched=${n ? `${K(Date.now() - n)} ago` : "never"}`, `  tengu_ccr_bridge=${String(o.tengu_ccr_bridge ?? "unset")}`];
+}
+async function DPr() {
+  if (lI() && !u()) return {
+    disabledReason: null,
+    inRemoteSession: !0,
+    checks: []
+  };
+  o2(), await J9();
+  let e = await w(),
+    o = $5n() ?? (a.DISABLE_GROWTHBOOK ? "DISABLE_GROWTHBOOK" : null),
+    ok = UB(),
+    ok_2 = !CF(),
+    ok_3 = _(),
+    ok_4 = c(),
+    ok_5 = g(),
+    ok_6 = !!b()?.organizationUuid,
+    f = Uat(),
+    R = T(),
+    D = N(f$()),
+    A = cC(),
+    p = d(),
+    ok_7 = p || (await Uu("tengu_ccr_bridge")),
+    S = Lg(),
+    checks = [{
+      label: ok ? "Connected to the Anthropic API (api.anthropic.com)" : "Not connected to the Anthropic API (api.anthropic.com)",
+      ok: ok
+    }, {
+      label: ok_2 ? "Not disabled by org policy (disableRemoteControl)" : "Disabled by org policy (disableRemoteControl)",
+      ok: ok_2
+    }, {
+      label: ok_3 ? "Signed in to claude.ai" : "Not signed in to claude.ai",
+      ok: ok_3
+    }, {
+      label: ok_4 ? "claude.ai subscription active" : "claude.ai subscription auth not active",
+      ok: ok_4
+    }, {
+      label: ok_5 ? "Sign-in includes the user:profile scope" : "Sign-in is missing the user:profile scope",
+      ok: ok_5
+    }, {
+      label: ok_6 ? "Organization resolved" : "Organization not resolved",
+      ok: ok_6
+    }, {
+      label: f === "allowed" ? "Org policy allows Remote Control (allow_remote_control)" : f === "unavailable" ? "Org policy could not be verified (allow_remote_control)" : !R ? "Org policy not loaded, see the Organization policy line above (allow_remote_control)" : "Org policy does not allow Remote Control (allow_remote_control)",
+      ok: f === "allowed",
+      detail: D || void 0
+    }, {
+      label: A ? "Feature-flag evaluation enabled" : "Feature-flag evaluation disabled",
+      ok: A || p,
+      detail: o ? p ? `disabled by ${o}; Remote Control does not need it on a paid plan` : `disabled by ${o}` : void 0
+    }, {
+      label: ok_7 ? "Remote Control enabled for this account" : S ? "Remote Control not enabled for this account" : "Remote Control availability could not be verified",
+      ok: ok_7,
+      detail: p ? "decided from your plan, feature flags are off" : S ? void 0 : "no server response this session"
+    }];
+  return {
+    disabledReason: e !== null && ok && ok_2 && ok_3 && ok_4 && ok_5 && ok_6 && f === "denied" && !R ? "Remote Control needs your organization's policy, which isn't loaded \u2014 see the Organization policy line above." : e,
+    inRemoteSession: !1,
+    checks: checks
+  };
+}
+function H() {
+  try {
+    return le().cachedGrowthBookFeaturesAt;
+  } catch {
+    return;
+  }
+}
+function K(e) {
+  let o = Math.round(e / 1000);
+  if (o < 120) return `${o}s`;
+  let n = Math.round(o / 60);
+  if (n < 120) return `${n}m`;
+  let r = Math.round(n / 60);
+  if (r < 48) return `${r}h`;
+  return `${Math.round(r / 24)}d`;
+}
+function Ljn({
+  prefix: prefix,
+  suffix: suffix
+}) {
+  try {
+    let {
+      source: source
+    } = gb({
+      skipRetrievingKeyFromApiKeyHelper: !0
+    });
+    if (source === "ANTHROPIC_API_KEY") return `${prefix} ANTHROPIC_API_KEY is set, so this session is using API-key auth \u2014 unset it (or run in a shell without it) ${suffix}`;
+    if (source === "apiKeyHelper") return `${prefix} apiKeyHelper is configured, so this session is using API-key auth \u2014 unset it ${suffix}`;
+    if (process.env.ANTHROPIC_AUTH_TOKEN) return `${prefix} ANTHROPIC_AUTH_TOKEN is set, so this session is using API-key auth \u2014 unset it (or run in a shell without it) ${suffix}`;
+    let {
+        source: source_2
+      } = dc(),
+      s = _ce(source_2);
+    if (source_2 !== "none" && s) return `${prefix} This session is using ${source_2} auth \u2014 ${s}`;
+    if (process.env.ANTHROPIC_UNIX_SOCKET) return `${prefix} ANTHROPIC_UNIX_SOCKET is set without CLAUDE_CODE_OAUTH_TOKEN, so requests on the socket carry no claude.ai login (on a claude ssh remote: the local machine is API-key-authed).`;
+  } catch {}
+  return `${prefix} Unset ANTHROPIC_API_KEY / apiKeyHelper / ANTHROPIC_AUTH_TOKEN ${suffix}`;
+}
+var l = "Remote Control is only available when using Claude via api.anthropic.com.",
+  E = "unset it (or run in a shell without it) to use Remote Control.",
+  F = "unset them (or run in a shell without them) to use Remote Control.";
+function G() {
+  let e = Ie();
+  if (e !== "firstParty") {
+    if (e === "gateway") return `${l} This session uses a ${Fx.gateway}, which does not support Remote Control.`;
+    if (e === "bedrock" && z5e() === "mantle") return `${l} ${tUt.bedrock} and ${tUt.mantle} are set, so this session is using ${Fx.bedrock} + ${Fx.mantle} \u2014 ${F}`;
+    return `${l} ${tUt[e]} is set, so this session is using ${Fx[e]} \u2014 ${E}`;
+  }
+  if (!Cy()) {
+    let o = a._CLAUDE_CODE_ASSUME_FIRST_PARTY_BASE_URL ? " (_CLAUDE_CODE_ASSUME_FIRST_PARTY_BASE_URL does not apply to Remote Control.)" : "";
+    return `${l} ANTHROPIC_BASE_URL is set and does not point at api.anthropic.com, so this session is using a custom endpoint \u2014 ${E}${o}`;
+  }
+  if (a.ANTHROPIC_UNIX_SOCKET) return `${l} ANTHROPIC_UNIX_SOCKET is set, so this session sends requests through a local socket rather than to api.anthropic.com \u2014 ${E}`;
+  return l;
+}
+function _() {
+  try {
+    return Boolean(un()?.scopes?.includes(rE));
+  } catch {
+    return !1;
+  }
+}
+function c() {
+  try {
+    return pt();
+  } catch {
+    return !1;
+  }
+}
+function g() {
+  try {
+    return Ap();
+  } catch {
+    return !1;
+  }
+}
+function b() {
+  try {
+    return le().oauthAccount;
+  } catch {
+    return;
+  }
+}
+function Y() {
+  try {
+    return JLt("require_trusted_devices") || uq();
+  } catch {
+    return !0;
+  }
+}
+async function J9() {
+  try {
+    await z();
+  } catch (error) {
+    t(`[bridge] policy-limits hydrate for the Remote Control diagnostic failed: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+async function z() {
+  try {
+    if (UE() !== null) return;
+  } catch {}
+  let e = await import("B:/~BUN/root/chunk-mjxpcxa7.js");
+  e.initializePolicyLimitsLoadingPromise();
+  let o = Kr();
+  if (o.diagnosticPolicyKick === void 0) {
+    let n = e.loadPolicyLimits();
+    n.catch(() => {}).finally(() => {
+      o.diagnosticPolicyKick = void 0;
+    }), o.diagnosticPolicyKick = Ht(n, e.POLICY_LIMITS_COLD_AWAIT_MS, "bridge_diagnostic_policy_limits").catch(() => {});
+  }
+  await o.diagnosticPolicyKick;
+}
+function Uat() {
+  try {
+    return Xt("allow_remote_control") ? "allowed" : "denied";
+  } catch {
+    return "unavailable";
+  }
+}
+function Kae() {
+  return DE() && Uat() === "allowed";
+}
+function lI() {
+  return Ne(process.env.CLAUDE_CODE_REMOTE) || Yn();
+}
+function LPr() {
+  return x("tengu_bridge_repl_v2_cse_shim_enabled", !0);
+}
+function Yae() {
+  return x("tengu_luminous_seal", !0);
+}
+function NPr() {
+  return x("tengu_bridge_partial_messages", !1);
+}
+function Rin() {
+  return x("tengu_wobbly_pinwheel", !0);
+}
+function Njn() {
+  return x("tengu_copper_kestrel", !0);
+}
+function Bat() {
+  return x("tengu_bridge_auth_revive", !0);
+}
+function Hjn() {
+  return x("tengu_ethereal_mist", !0);
+}
+function HPr() {
+  return x("tengu_bridge_resume_respects_local_owner", !0);
+}
+function FPr() {
+  return x("tengu_sequential_puffin", !0);
+}
+function Xae() {
+  return x("tengu_bridge_owner_pinned_end", !0);
+}
+function Fjn() {
+  return x("tengu_glimmering_glade", !0);
+}
+function $Pr() {
+  return x("tengu_lucky_quill", !0);
+}
+function $jn() {
+  return x("tengu_bridge_host_declined_end", !0);
+}
+function UPr() {
+  return x("tengu_bridge_signed_out_neutral", !0);
+}
+function K0t() {
+  return x("tengu_ccr_v2_send_events_cli", !0);
+}
+function RF() {
+  return x("tengu_ccr_v2_session_crud_cli", !1);
+}
+function n6o() {
+  return x("tengu_ccr_v2_bridge_create_cli", !1);
+}
+function Y0t() {
+  return x("tengu_composed_quail", !0);
+}
+function BPr() {
+  return x("tengu_gravel_chorus", !0);
+}
+function d3e() {
+  return Ujn().value;
+}
+function Ujn() {
+  if (lI()) return {
+    value: !1,
+    source: "remote_env"
+  };
+  let value = IDr("remote_control_at_startup");
+  if (d()) return {
+    value: !1,
+    source: value === !1 ? "org_policy" : "growthbook"
+  };
+  if (Mge()) return {
+    value: !0,
+    source: "persistent_remote_session"
+  };
+  if (value !== void 0) return {
+    value: value,
+    source: "org_policy"
+  };
+  return {
+    value: x("tengu_cobalt_harbor", !1),
+    source: "growthbook"
+  };
+}
+function jee() {
+  let e = s$e();
+  return e !== void 0 ? e : d3e();
+}
+function Mge() {
+  return !1;
+}
+function r6o() {
+  return !1;
+}
+function X0t() {
+  return x("tengu_amber_relay", !1);
+}
+function INe() {
+  {
+    let {
+      value: value_2,
+      source: source_3
+    } = ia("tengu_bridge_apply_server_session_config", !0);
+    if (value_2 !== !1) return !0;
+    if (source_3 === "override") return !1;
+    return !(source_3 === "payload" && gpn().organizationUUID);
+  }
+  return !1;
+}
+function Bjn() {
+  return x("tengu_bridge_child_auto_mode", !0);
+}
+function jPr() {
+  return x("tengu_bridge_child_auto_over_settings", !0);
+}
+function jjn() {
+  return x("tengu_bridge_rc_child_artifact", !0);
+}
+function Ain() {
+  return x("tengu_bridge_rc_projects_hint", !0);
+}
+function Wjn() {
+  return x("tengu_bridge_child_machine_settings", !0);
+}
+function zjn() {
+  return x("tengu_bridge_rc_child_auto_compact", !0);
+}
+function WPr() {
+  let e = x("tengu_bridge_rc_child_idle_exit_ms", L);
+  if (typeof e !== "number" || !Number.isFinite(e) || e < 1) return 0;
+  return Math.min(Math.floor(e), k);
+}
+function J0t() {
+  return x("tengu_bridge_rc_child_restart_resume", !0);
+}
+function Q0t() {
+  return {
+    enabled: x("tengu_bridge_subagent_frames", !0),
+    forwardText: x("tengu_bridge_subagent_text", !1)
+  };
+}
+function zPr(e, replBridgeEnabled) {
+  if (e.replBridgeOutboundOnly && !replBridgeEnabled) return e.replBridgeSessionGroupingId !== void 0 ? {
+    ...e,
+    replBridgeSessionGroupingId: void 0
+  } : e;
+  if (e.replBridgeEnabled === replBridgeEnabled && !e.replBridgeOutboundOnly) return !replBridgeEnabled && e.replBridgeSessionGroupingId !== void 0 ? {
+    ...e,
+    replBridgeSessionGroupingId: void 0
+  } : e;
+  return {
+    ...e,
+    replBridgeEnabled: replBridgeEnabled,
+    replBridgeOutboundOnly: !1,
+    ...(!replBridgeEnabled && {
+      replBridgeSessionGroupingId: void 0
+    })
+  };
+}
+export { UB, l3e, q0t, CF, DE, OPr, MPr, Mjn, Cin, Djn, c3e, t6o, DPr, Ljn, J9, Uat, Kae, lI, LPr, Yae, NPr, Rin, Njn, Bat, Hjn, HPr, FPr, Xae, Fjn, $Pr, $jn, UPr, K0t, RF, n6o, Y0t, BPr, d3e, Ujn, jee, Mge, r6o, X0t, INe, Bjn, jPr, jjn, Ain, Wjn, zjn, WPr, J0t, Q0t, zPr };

@@ -1,0 +1,764 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  Vm
+} from "B:/~BUN/root/chunk-bvn0mpsk.js";
+import {
+  q,
+  cA,
+  Oy,
+  CK
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  b,
+  To,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  Tr
+} from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import {
+  I
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  _,
+  m,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import {
+  Ye
+} from "B:/~BUN/root/chunk-qqgpf856.js";
+import {
+  Nc,
+  jlt,
+  zan,
+  gDt,
+  kz,
+  ux,
+  tN,
+  QV,
+  Bd,
+  nh,
+  e1,
+  Gzn,
+  Ok
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  GLe,
+  QIt
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import {
+  lr
+} from "B:/~BUN/root/chunk-339q6g5w.js";
+import {
+  ro,
+  $r,
+  On,
+  x,
+  PDo,
+  sFr,
+  u4n,
+  t$e,
+  eFt,
+  iFr,
+  ODo,
+  ll,
+  r$e,
+  $s,
+  mD,
+  Iq
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  Ux,
+  Q5e
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  Ct,
+  wn,
+  Ue,
+  St
+} from "B:/~BUN/root/chunk-bt3h0syz.js";
+import {
+  zt
+} from "B:/~BUN/root/chunk-msy8grqx.js";
+import {
+  il
+} from "B:/~BUN/root/chunk-6bn0bbdx.js";
+import {
+  Hn
+} from "B:/~BUN/root/chunk-hqrtayw5.js";
+import {
+  Pz
+} from "B:/~BUN/root/chunk-7zm7ax4t.js";
+import {
+  ZRt,
+  ZG,
+  gk,
+  LVe,
+  Ce,
+  DZt
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  Fle
+} from "B:/~BUN/root/chunk-gksrzz5s.js";
+import {
+  ba
+} from "B:/~BUN/root/chunk-na2t7g12.js";
+import {
+  uy,
+  Jp,
+  Zl
+} from "B:/~BUN/root/chunk-dbvr5zxh.js";
+import {
+  Wa
+} from "B:/~BUN/root/chunk-dz2tgns2.js";
+import {
+  at
+} from "B:/~BUN/root/chunk-2h7x7bdj.js";
+import {
+  U,
+  L
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+import {
+  basename as Ae,
+  sep as he
+} from "path";
+async function dKt(e, r) {
+  if (r.paths.length === 0) return;
+  let o = [];
+  for (let u of r.paths) try {
+    let n = Ye(u);
+    o.push(n);
+    let s = await ZRt(e.readFileState, n, {
+      requireReadBeforeWrite: !0
+    });
+    if (s !== null) t(`[memdir] re-synced readFileState for ${u} after the background ${r.source} pass wrote it (${s==="changed"?"content changed":"mtime only, content identical"})`)
+  } catch (n) {
+    t(`[memdir] left ${b(u)} out of the background ${r.source} pass's change notice, could not resolve it: ${l(n)}`)
+  }
+  if (o.length === 0) return;
+  e.enqueuePendingMemoryUpdate({
+    ...r,
+    paths: L(o)
+  })
+}
+class ce {
+  extractor = null;
+  drainer = async () => {}
+}
+var K = new q(() => new ce);
+
+function de(e, r, o, u, n) {
+  let s = ba(),
+    g = s ? Ue : St,
+    f = s ? "ls/find/cat/stat/wc/head/tail and similar" : "Get-ChildItem/Get-Content/Select-Object -First/-Last and similar",
+    y = s ? "rm" : "Remove-Item",
+    w = r.length > 0 ? `
+
+## Existing memory files
+
+${r}
+
+Check this list before writing \u2014 update an existing file rather than creating a duplicate.` : "",
+    M = o ? "scope guidance, " : "",
+    k = `Available tools: ${at}, ${$r}, ${ro}, read-only ${g} (${f}), and ${Ct}/${wn} for paths inside the memory directory only, and ${g} ${y} of .md files inside the memory directory only (outside protected subdirectories like .git or agents${s?"; rm takes no flags except -f":""}). All other tools \u2014 MCP, Agent, write-capable ${g}, etc \u2014 will be denied.`,
+    O = `You have a limited turn budget. ${Ct} requires a prior ${at} of the same file, so the efficient strategy is: turn 1 \u2014 issue all ${at} calls in parallel for every file you might update; turn 2 \u2014 issue all ${wn}/${Ct} calls in parallel. Do not interleave reads and writes across multiple turns.`;
+  return [`You are now acting as the memory extraction subagent. Analyze the most recent ~${e} messages above and use them to update your persistent memory systems.`, "", k, "", O, "", `You MUST only use content from the last ~${e} messages to update your persistent memories. Do not waste any turns attempting to investigate or verify that content further \u2014 no grepping source files, no reading code to confirm a pattern exists, no git commands.` + w, "", "If nothing is worth saving, output only 'Nothing to save.' Do not explain why.", "", QV() ? "If the user explicitly asks you to remember something, save it immediately. If they ask you to forget something, find and remove the relevant entry." : "If the user explicitly asks you to remember something, save it immediately as whichever type fits best. If they ask you to forget something, find and remove the relevant entry.", "", QV() ? "Apply the memory-writing guidance and frontmatter format from the Memory section of your system prompt \u2014 it is already in your context above." : `Apply the memory types, ${M}what-not-to-save criteria, and frontmatter format from the Memory section of your system prompt \u2014 it is already in your context above.`, ...jlt() && !QV() ? ["", "Skip the project-skill upkeep step here: your writes are restricted to the memory directory, so record the correction as a feedback memory only."] : [], ...u ? ["", `The ${uy} / ${Jp} / ${Zl} tools are unavailable here, so skip anything the scope guidance marks as shared with the project \u2014 the main conversation saves those; never file them in the personal directory instead. Save only what belongs in your personal memory directory.`] : [], ...[]].join(`
+`)
+}
+
+function te(e) {
+  return e.type === "user" || e.type === "assistant"
+}
+
+function ge(e, r) {
+  if (r === null || r === void 0) return U(e, te);
+  let o = !1,
+    u = 0;
+  for (let n of e) {
+    if (!o) {
+      if (n.uuid === r) o = !0;
+      continue
+    }
+    if (te(n)) u++
+  }
+  if (!o) return U(e, te);
+  return u
+}
+
+function re(e, r, o) {
+  let u = r === void 0,
+    n = new Set;
+  for (let s of e) {
+    if (!u) {
+      if (s.uuid === r) u = !0;
+      continue
+    }
+    if (s.type === "user") {
+      let f = s.message.content;
+      if (Array.isArray(f) && f.some((y) => y.type === "tool_result" && y.is_error !== !0 && n.has(y.tool_use_id))) return !0;
+      continue
+    }
+    if (s.type !== "assistant") continue;
+    let g = s.message.content;
+    if (!Array.isArray(g)) continue;
+    for (let f of g) {
+      if (o && f.type === "tool_use" && u4n.has(f.name)) return !0;
+      if (f.type === "tool_use" && f.name === Zl) {
+        n.add(f.id);
+        continue
+      }
+      let y = oe(f);
+      if (y !== void 0 && mD(y)) return !0
+    }
+  }
+  return o && !u && re(e, void 0, !0)
+}
+var fe = 3;
+
+function le(e) {
+  return U(e.split(/\s+/), Boolean)
+}
+
+function pe(e) {
+  if (e.type !== "user" || e.isMeta) return !1;
+  let r = e.message.content;
+  if (typeof r === "string") return le(r) >= fe;
+  if (!Array.isArray(r)) return !1;
+  return r.some((o) => o.type === "text" && le(o.text) >= fe)
+}
+
+function ye(e, r) {
+  let o = r === void 0;
+  for (let u of e) {
+    if (!o) {
+      if (u.uuid === r) o = !0;
+      continue
+    }
+    if (pe(u)) return !0
+  }
+  if (!o) return e.some(pe);
+  return !1
+}
+
+function oe(e) {
+  if (e.type !== "tool_use" || e.name !== Ct && e.name !== wn) return;
+  let r = e.input;
+  if (typeof r === "object" && r !== null && "file_path" in r) {
+    let o = r.file_path;
+    return typeof o === "string" ? o : void 0
+  }
+  return
+}
+var G = null,
+  _e = null,
+  W = null,
+  GEn = "rm|remove-item|ri|del|erase",
+  Le = new RegExp(`^(?:${GEn})$`, "i");
+
+function R(e, r) {
+  return t(`[autoMem] denied ${e.name}: ${r}`), i("tengu_auto_mem_tool_denied", {
+    tool_name: On(e.name)
+  }), {
+    behavior: "deny",
+    message: r,
+    decisionReason: {
+      type: "other",
+      reason: r
+    }
+  }
+}
+
+function be(e, r) {
+  let o = e.trim().match(/"[^"]*"|'[^']*'|\S+/g) ?? [];
+  if (o.length < 2) return;
+  if (!Le.test(o[0])) return;
+  let u = [];
+  for (let n = 1; n < o.length; n++) {
+    let s = o[n];
+    if (/^-(?:Literal)?Path$/i.test(s)) continue;
+    if (s.startsWith("-")) return;
+    let g = s.startsWith('"') && s.endsWith('"') || s.startsWith("'") && s.endsWith("'") ? s.slice(1, -1) : s;
+    if (/[*?[\]$`(){}|;&<>"',]/.test(g)) return;
+    if (!o7e(g, r)) return;
+    u.push(g)
+  }
+  return u.length > 0 ? u : void 0
+}
+async function Ie(e, r) {
+  let o = await Pz(e);
+  if (o.kind !== "simple") return;
+  if (o.commands.length !== 1) return;
+  let u = o.commands[0];
+  if (!u) return;
+  if (u.argv[0] !== "rm") return;
+  if (u.redirects.length > 0) return;
+  if (u.envVars.length > 0) return;
+  let n = [],
+    s = !1;
+  for (let g = 1; g < u.argv.length; g++) {
+    let f = u.argv[g];
+    if (f === void 0) continue;
+    if (!s) {
+      if (f === "--") {
+        s = !0;
+        continue
+      }
+      if (f.startsWith("-")) {
+        if (f === "-f" || f === "--force") continue;
+        return
+      }
+    }
+    if (/[*?[]/.test(f)) return;
+    if (!f.startsWith("/") || !o7e(f, r)) return;
+    n.push(f)
+  }
+  return n.length > 0 ? n : void 0
+}
+
+function o7e(e, r) {
+  return e.endsWith(".md") && Iq(e, r)
+}
+
+function VEn(e, r, {
+  fork: o = "dream",
+  onWriteAllowed: u
+} = {}) {
+  return async (n, s, g, f, y) => {
+    if (Oy()) return R(n, Q5e);
+    if (n.name === il) return {
+      behavior: "allow",
+      updatedInput: s
+    };
+    if (n.name === at || n.name === $r || n.name === ro) {
+      let M = g.getAppState().toolPermissionContext,
+        k = Gzn(n, s, M);
+      if (k) return R(n, k.message);
+      if (M.blockReadsOutsideWorkingDirectories === !0) {
+        let O = Ok(n, s, M);
+        if (O.behavior === "deny") {
+          let v = n.getPath?.(s),
+            B = To(e).map((C) => C.endsWith(he) ? C : C + he);
+          if (!(v !== void 0 && !gDt() && To(v).every((C) => B.some((d) => Iq(C, d)))) || O.decisionReason.type !== "other" || O.decisionReason.reason !== Ux) return R(n, O.message)
+        }
+      }
+      return {
+        behavior: "allow",
+        updatedInput: s
+      }
+    }
+    if (n.name === Ue || n.name === St) {
+      let M = n.inputSchema.safeParse(s);
+      if (M.success) {
+        if (n.isReadOnly(M.data)) return {
+          behavior: "allow",
+          updatedInput: s
+        };
+        let v = M.data.command;
+        if (typeof v === "string") {
+          if ((n.name === Ue ? await Ie(v, e) : be(v, e)) !== void 0) return {
+            behavior: "allow",
+            updatedInput: s
+          }
+        }
+      }
+      let k = n.name === Ue;
+      return R(n, `Only read-only shell commands and ${k?"rm (no flags except -f)":"Remove-Item"} of .md files under ${e} (not protected subdirectories like .git or agents) are permitted in this context (${k?"ls, find, grep, cat, stat, wc, head, tail, and similar":"Get-ChildItem, Get-Content, Select-Object -First/-Last, and similar"})`)
+    }
+    if ((n.name === Ct || n.name === wn) && "file_path" in s) {
+      let M = s.file_path;
+      if (typeof M === "string" && o7e(M, e)) return u?.(M, y), {
+        behavior: "allow",
+        updatedInput: s
+      }
+    }
+    let w = ba() ? Ue : St;
+    return R(n, `only ${at}, ${$r}, ${ro}, read-only ${w}, and ${Ct}/${wn} within ${e} are allowed`)
+  }
+}
+
+function Fe(e) {
+  return async (r, o, u) => {
+    if (Oy()) return R(r, Q5e);
+    if (r.name === Wa || r.name === il) return {
+      behavior: "allow",
+      updatedInput: o
+    };
+    if (!eFt(iFr(u.options.mcpClients))) return R(r, "the session has no CCR memory server; this background memory pass cannot run");
+    let n = u.getAppState().toolPermissionContext;
+    if ([...Bd(n), ...nh(n)].some((s) => e1(n, r, s))) return R(r, `${r.name} is blocked by a permission rule for this session`);
+    if (!sFr.has(r.name)) return R(r, `this background memory pass may only call ${[...sFr].join(", ")}`);
+    if (u4n.has(r.name) && CK() !== e) return R(r, "a newer user turn has started; this background memory pass may no longer write");
+    return {
+      behavior: "allow",
+      updatedInput: o
+    }
+  }
+}
+
+function $e(e) {
+  let r = new Set;
+  for (let o of e) {
+    if (o.type !== "user") continue;
+    let u = o.message.content;
+    if (!Array.isArray(u)) continue;
+    for (let n of u)
+      if (n.type === "tool_result" && n.is_error === !0) r.add(n.tool_use_id)
+  }
+  return r
+}
+
+function Te(e, r) {
+  let o = oe(e);
+  if (o === void 0) return;
+  let u;
+  try {
+    u = Ye(o)
+  } catch {
+    return
+  }
+  return o7e(u, r) ? u : void 0
+}
+
+function Ne(e, r) {
+  let o = $e(e),
+    u = [];
+  for (let n of e) {
+    if (n.type !== "assistant") continue;
+    let s = n.message.content;
+    if (!Array.isArray(s)) continue;
+    for (let g of s) {
+      if (g.type === "tool_use" && o.has(g.id)) continue;
+      let f = Te(g, r);
+      if (f !== void 0) u.push(f)
+    }
+  }
+  return L(u)
+}
+
+function Me(e) {
+  let r = U(e, (o) => Ae(o) !== Nc);
+  return {
+    source: "extract",
+    summary: r > 0 ? `saved ${r} ${I(r,"memory","memories")}` : "updated the memory index",
+    paths: e
+  }
+}
+
+function We(e, r) {
+  let o = new Map,
+    u = [];
+  return {
+    onMessage: (s) => {
+      if (s.type === "assistant") {
+        let f = s.message.content;
+        if (!Array.isArray(f)) return;
+        for (let y of f) {
+          let w = Te(y, r);
+          if (y.type === "tool_use" && w !== void 0) o.set(y.id, w)
+        }
+        return
+      }
+      if (s.type !== "user") return;
+      let g = s.message.content;
+      if (!Array.isArray(g)) return;
+      for (let f of g) {
+        if (f.type !== "tool_result") continue;
+        let y = o.get(f.tool_use_id);
+        if (y === void 0) continue;
+        if (o.delete(f.tool_use_id), f.is_error === !0) continue;
+        u.push(y), ZRt(e, y, {
+          requireReadBeforeWrite: !0
+        })
+      }
+    },
+    completedWritePaths: () => L(u)
+  }
+}
+
+function uor(e) {
+  if (a.CLAUDE_CODE_POST_TURN_MEMORY && t$e() === null) t("[extractMemories] CLAUDE_CODE_POST_TURN_MEMORY is set but CLAUDE_CODE_POST_TURN_MEMORY_CONFIG is missing or invalid; the pass is off"), p("ccr_memory_extract", "config_invalid");
+  let r = new Set,
+    o, u = !1,
+    n = !1,
+    s = 0,
+    g, f;
+
+  function y(d) {
+    return r.add(d), d.finally(() => r.delete(d))
+  }
+  let w = G?.createLaptopExtractRunner(e, y);
+
+  function M() {
+    let d = f;
+    if (f = void 0, d) clearTimeout(d.timer);
+    return d
+  }
+
+  function k(d, E, A = CK()) {
+    if (M(), d.idleFlushSeconds === 0) return;
+    f = {
+      timer: setTimeout(O, d.idleFlushSeconds * 1000).unref(),
+      promptIndex: A,
+      context: E
+    }
+  }
+
+  function O() {
+    let d = M();
+    if (!d || n || Fle() || CK() !== d.promptIndex) return;
+    y(v({
+      context: d.context,
+      trigger: "idle_flush",
+      promptIndex: d.promptIndex
+    }))
+  }
+  async function v({
+    context: d,
+    appendSystemMessage: E,
+    trigger: A,
+    promptIndex: Y = CK()
+  }) {
+    let {
+      messages: F
+    } = d, S = t$e(), D = ge(F, o);
+    if (re(F, o, !!S)) {
+      t("[extractMemories] skipping \u2014 conversation already wrote to memory in this range");
+      let h = F.at(-1);
+      if (h?.uuid) o = h.uuid;
+      i("tengu_extract_memories_skipped_direct_write", {
+        message_count: D
+      });
+      return
+    }
+    if (!ye(F, o)) {
+      t("[extractMemories] skipping \u2014 no user prose since last extraction");
+      let h = F.at(-1);
+      if (h?.uuid) o = h.uuid;
+      i("tengu_extract_memories_skipped_no_prose", {
+        message_count: D
+      });
+      return
+    }
+    let X = S?.everyNTurns ?? x("tengu_bramble_lintel", null) ?? 1,
+      ne = ZG(d);
+    if (A === void 0) {
+      if (s++, s < X) {
+        if (S) k(S, d, Y);
+        return
+      }
+    }
+    s = 0, n = !0;
+    let J = Date.now(),
+      Q;
+    try {
+      if (S) {
+        if (CK() !== Y) {
+          t("[extractMemories] skipping (mcp) \u2014 a newer turn started");
+          return
+        }
+        t(`[extractMemories] starting (mcp, ${A??"cadence"}) \u2014 ${D} new messages`);
+        let P = await gk({
+            promptMessages: [Ce({
+              content: S.instruction
+            })],
+            cacheSafeParams: ne,
+            canUseTool: Fe(Y),
+            querySource: "extract_memories",
+            forkLabel: "extract_memories",
+            overrides: {
+              mcpRequestMeta: ODo()
+            },
+            skipTranscript: !0,
+            maxTurns: S.maxTurns,
+            skipCacheWrite: LVe()
+          }),
+          ue = F.at(-1);
+        if (ue?.uuid) o = ue.uuid;
+        i("tengu_extract_memories_extraction", {
+          mode: c("mcp"),
+          trigger: c(A ?? "cadence"),
+          account_memory_line_rendered: !1,
+          every_n_turns: X,
+          input_tokens: P.totalUsage.input_tokens,
+          output_tokens: P.totalUsage.output_tokens,
+          cache_read_input_tokens: P.totalUsage.cache_read_input_tokens,
+          cache_creation_input_tokens: P.totalUsage.cache_creation_input_tokens,
+          message_count: D,
+          turn_count: U(P.messages, (we) => we.type === "assistant"),
+          duration_ms: Date.now() - J
+        }), _("ccr_memory_extract");
+        return
+      }
+      let h = $s();
+      t(`[extractMemories] starting \u2014 ${D} new messages, memoryDir=${h}`);
+      let j = zan(),
+        Z = ux() || j,
+        Pe = VEn(h, void 0, {
+          fork: "extraction"
+        }),
+        ke = QIt(await GLe(h, Hn().signal, d.toolUseContext.storageV5)),
+        se = !1,
+        ee = W?.isPromoterExtractorOn() === !0 ? W.typedTurnsInWindow(e, d.toolUseContext.session.id, F, o) : [],
+        Oe = de(D, ke, Z, j, se) + (W?.typedTurnsPromptBlock(ee) ?? ""),
+        V = W !== null && ee.length > 0 ? Vm("extract_memories") : void 0,
+        Se = V === void 0 ? void 0 : W?.registerExtractorFork(e, V, ee);
+      Q = We(d.toolUseContext.readFileState, h);
+      let T = await gk({
+          promptMessages: [Ce({
+            content: Oe
+          })],
+          cacheSafeParams: ne,
+          canUseTool: Pe,
+          querySource: "extract_memories",
+          forkLabel: "extract_memories",
+          ...V !== void 0 && {
+            overrides: {
+              agentId: V
+            }
+          },
+          skipTranscript: !0,
+          maxTurns: 5,
+          skipCacheWrite: LVe(),
+          onMessage: Q.onMessage
+        }).finally(() => Se?.()),
+        ie = F.at(-1);
+      if (ie?.uuid) o = ie.uuid;
+      let N = Ne(T.messages, h),
+        ve = U(T.messages, (P) => P.type === "assistant"),
+        ae = T.totalUsage.input_tokens + T.totalUsage.cache_creation_input_tokens + T.totalUsage.cache_read_input_tokens,
+        Re = ae > 0 ? (T.totalUsage.cache_read_input_tokens / ae * 100).toFixed(1) : "0.0";
+      if (t(`[extractMemories] finished \u2014 ${N.length} files written, cache: read=${T.totalUsage.cache_read_input_tokens} create=${T.totalUsage.cache_creation_input_tokens} input=${T.totalUsage.input_tokens} (${Re}% hit)`), N.length > 0) t(`[extractMemories] memories saved: ${N.join(", ")}`);
+      else t("[extractMemories] no memories saved this run");
+      let H = N.filter((P) => Ae(P) !== Nc),
+        me = U(H, tN);
+      if (i("tengu_extract_memories_extraction", {
+          mode: c("file"),
+          input_tokens: T.totalUsage.input_tokens,
+          output_tokens: T.totalUsage.output_tokens,
+          cache_read_input_tokens: T.totalUsage.cache_read_input_tokens,
+          cache_creation_input_tokens: T.totalUsage.cache_creation_input_tokens,
+          message_count: D,
+          turn_count: ve,
+          files_written: N.length,
+          memories_saved: H.length,
+          team_memories_saved: me,
+          account_memory_line_rendered: se,
+          duration_ms: Date.now() - J
+        }), t(`[extractMemories] writtenPaths=${N.length} memoryPaths=${H.length} appendSystemMessage defined=${E!=null}`), H.length > 0) {
+        let P = DZt(H);
+        P.teamCount = me, E?.(P)
+      }
+      if (N.length > 0) await dKt(d.toolUseContext, Me(N));
+      _("memory_extract")
+    } catch (h) {
+      t(`[extractMemories] error: ${h}`), i("tengu_extract_memories_error", {
+        duration_ms: Date.now() - J,
+        mode: c(S ? "mcp" : "file")
+      }), m(S ? "ccr_memory_extract" : "memory_extract", "agent_error");
+      let j = Q?.completedWritePaths() ?? [];
+      if (j.length > 0) try {
+        await dKt(d.toolUseContext, Me(j))
+      } catch (Z) {
+        t(`[extractMemories] could not queue the notice for writes that landed before the error: ${l(Z)}`)
+      }
+    } finally {
+      n = !1;
+      let h = g;
+      if (g = void 0, h && X <= 1) t("[extractMemories] running trailing extraction for stashed context"), await v({
+        context: h.context,
+        appendSystemMessage: h.appendSystemMessage,
+        trigger: "trailing",
+        promptIndex: h.promptIndex
+      });
+      else if (h && S) k(S, h.context, h.promptIndex)
+    }
+  }
+  async function B(d, E) {
+    if (d.toolUseContext.agentId) return;
+    let A = w?.onTurnEnd(d, E);
+    try {
+      if (r$e() || Ee()) await z(d, E)
+    } finally {
+      await A
+    }
+  }
+  async function z(d, E) {
+    M();
+    let A = t$e() !== null;
+    if (A && (Oy() || Tr() || cA())) return;
+    if (A && !(eFt(iFr(d.toolUseContext.options.mcpClients)) && d.toolUseContext.options.tools.some((Y) => zt(Y, PDo)))) {
+      t("[extractMemories] skipping (mcp) \u2014 CCR memory server not mounted");
+      return
+    }
+    if (!A && !x("tengu_passport_quail", !1) && !Ee()) return;
+    if (!A && !ll()) return;
+    if (!A && kz()) return;
+    if (lr() !== null) return;
+    if (n) {
+      t("[extractMemories] extraction in progress \u2014 stashing for trailing run"), i("tengu_extract_memories_coalesced", {}), g = {
+        context: d,
+        appendSystemMessage: E,
+        promptIndex: CK()
+      };
+      return
+    }
+    await v({
+      context: d,
+      appendSystemMessage: E
+    })
+  }
+  let C = K.of(e);
+  C.extractor = (d, E) => y(B(d, E)), C.drainer = async (d = 60000) => {
+    let E = Date.now() + d;
+    O(), w?.disarmIdleFlush();
+    while (r.size > 0 && Date.now() < E) await Promise.race([Promise.all(r).catch(() => {}), new Promise((A) => setTimeout(A, E - Date.now()).unref())]), O()
+  }
+}
+
+function Ee() {
+  return W !== null && W.EXTRACTOR_RUNS_FOR_PROMOTER && W.isPromoterExtractorOn()
+}
+
+function Xqo(e) {
+  return G !== null && G.isLaptopExtractDispatched(e)
+}
+
+function Jqo(e) {
+  return G !== null && G.isLaptopExtractSync(e)
+}
+async function Qqo(e, r) {
+  await K.of(e.toolUseContext.session.host).extractor?.(e, r)
+}
+async function Zqo(e, r) {
+  await K.of(e).drainer(r)
+}
+export {
+  dKt,
+  GEn,
+  o7e,
+  VEn,
+  uor,
+  Xqo,
+  Jqo,
+  Qqo,
+  Zqo
+};

@@ -1,0 +1,14 @@
+/* ==============================================================================
+ * m0855.U   [m0855_0xd10e439.js @ 1013]
+ * --------------------------------------------------------------------------
+ * 作用: (no note)
+ * 原文: claudecode283/modules/m0855_0xd10e439.js  字符偏移 1013
+ * 说明: 由 tools/extract.mjs 抽取，忠实原文，仅格式化；标识符仍为 Bun 压缩名。
+ * ============================================================================== */
+var U = {
+  low: "Quick, straightforward implementation",
+  medium: "Balanced approach with standard testing",
+  high: "Comprehensive implementation with extensive testing",
+  xhigh: `Extended reasoning with thorough analysis (${W2n})`,
+  max: `Maximum capability with deepest reasoning (${tPo})`
+};

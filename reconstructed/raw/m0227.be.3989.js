@@ -1,0 +1,1 @@
+function be(e,n){if(e===n)return!0;let[r,s]=e.length<=n.length?[e,n]:[n,e];if(s.length-r.length>1)return!1;let E=0,l=0,g=0;while(E<r.length&&l<s.length){if(r[E]===s[l]){E++,l++;continue}if(g>0)return!1;if(g++,r.length===s.length)E++;l++}return g===0||E===r.length}

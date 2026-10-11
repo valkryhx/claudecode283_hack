@@ -1,0 +1,1 @@
+function Lg(e,t){function o(r,n){if(typeof r!=="string"||r==="")throw new De(`${e}: $.store.${n} takes a non-empty string key`);return r}return R_({get:async(r)=>t("store.get",{key:o(r,"get")}),set:async(r,n)=>{await t("store.set",{value:Hn(n,e),key:o(r,"set")})},delete:async(r)=>{await t("store.delete",{key:o(r,"delete")})},keys:()=>t("store.keys",{})})}

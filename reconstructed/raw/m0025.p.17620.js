@@ -1,0 +1,1 @@
+function p(){return G??=new S({platform:"win32",env:process.env,readProcVersionSync:U5n,readProcVersion:()=>R("/proc/version",{encoding:"utf8"}),osRelease:k,readOsRelease:()=>R("/etc/os-release","utf8")})}

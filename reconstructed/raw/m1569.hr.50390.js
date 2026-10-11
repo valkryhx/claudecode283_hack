@@ -1,0 +1,1 @@
+function hr(e){let r=[];if(e.put!==void 0)r.push("put");if(e.retract!==void 0)r.push("retract");if(e.read!==void 0)r.push("read");if(e.script!==void 0)r.push("script");return r.length===1?r[0]:void 0}

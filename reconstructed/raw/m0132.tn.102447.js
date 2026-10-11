@@ -1,0 +1,1 @@
+function tn(e,t){let o=Object.keys(e).filter((n)=>n!=="surface"&&n!=="component");return t||o.length===0?void 0:`resolved ahead of time, once per surface and component; a matcher here takes surface and component only, not ${o.join(", ")}`}

@@ -1,0 +1,1 @@
+var gf=({bottom:e,index:t,event:o})=>async(r,n,{run:s,floors:i})=>{let p=performance.now(),a="rejected",f;try{return f=await e(r,n,i),a="returned",f}finally{Ve(s,{index:t,plugin:Ate,tier:"core",event:o,outcome:a,ms:performance.now()-p,received:r,returned:f})}};

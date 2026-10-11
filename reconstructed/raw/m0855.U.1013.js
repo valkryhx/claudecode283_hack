@@ -1,0 +1,1 @@
+var U={low:"Quick, straightforward implementation",medium:"Balanced approach with standard testing",high:"Comprehensive implementation with extensive testing",xhigh:`Extended reasoning with thorough analysis (${W2n})`,max:`Maximum capability with deepest reasoning (${tPo})`};

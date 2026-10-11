@@ -1,0 +1,1 @@
+function Ap(e,{matcher:t,event:o,run:r}){let n=new Set,s={count:0};return(i,p)=>{if(e.stamped(()=>vdt(t,i)))return r(i,p);if(s.count>=DLr)return p(i);s.count+=1;let f=e.stamped(()=>xNt(t,i));if(f!==void 0&&!n.has(f.path))n.add(f.path),kc().log(MLr(e.pluginName,o,f),"warn");return p(i)}}

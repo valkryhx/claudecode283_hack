@@ -1,0 +1,700 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { Ne } from "B:/~BUN/root/chunk-ekrhn4q1.js";
+import { q, bBe, j } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { P, l, v, B, wre, Et, gg } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { m } from "B:/~BUN/root/chunk-51n463p1.js";
+import { pg, oe } from "B:/~BUN/root/chunk-shgdrs47.js";
+import { gm, jo, To, ce, t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import { d, O } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { XS, hhn, vzr, Bo, kzr, ixe, x$, bUo } from "B:/~BUN/root/chunk-2swveyqa.js";
+import { a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import { V$e } from "B:/~BUN/root/chunk-qqgpf856.js";
+import { Wjr } from "B:/~BUN/root/chunk-t1t358ee.js";
+import { Fm } from "B:/~BUN/root/chunk-dfh5rt4g.js";
+import { randomBytes as Q } from "crypto";
+import { closeSync as L, fchmodSync as ae, constants as x, fstatSync as I, writeFileSync as V, fsyncSync as G, ftruncateSync as le, lstatSync as X, openSync as C, readSync as fe } from "fs";
+import { lstat as U, open as W, readlink as de, realpath as ee, stat as te } from "fs/promises";
+import { homedir as ne } from "os";
+import { basename as A, dirname as E, extname as Z, isAbsolute as Y, join as R, normalize as ue, parse as me, relative as H, resolve as z, sep as N } from "path";
+class re {
+  identities = new Map();
+  record(e, dev, ino, fd) {
+    let u = J(e),
+      i = this.identities.get(u);
+    if (i) try {
+      L(i.fd);
+    } catch {}
+    this.identities.set(u, {
+      dev: dev,
+      ino: ino,
+      fd: fd
+    });
+  }
+  identity(e) {
+    return this.identities.get(J(e));
+  }
+  reset() {
+    for (let {
+      fd: fd_2
+    } of this.identities.values()) try {
+      L(fd_2);
+    } catch {}
+    this.identities.clear();
+  }
+}
+var pe = new q(() => new re());
+function K() {
+  return pe.of(j().host);
+}
+function J(e) {
+  return z(e);
+}
+function NHo(e, n, r, s) {
+  K().record(e, n, r, s);
+}
+function $pt(e) {
+  return;
+}
+function q3n(e, n, r, s) {
+  let u = `${n}${r}`;
+  return u;
+}
+class SymlinkWriteRefusedError extends Error {
+  constructor(e) {
+    super(e);
+    this.name = "SymlinkWriteRefusedError";
+  }
+}
+class HardLinkWriteRefusedError extends SymlinkWriteRefusedError {
+  constructor(e, n) {
+    super(vzr(e, n));
+    this.name = "HardLinkWriteRefusedError";
+  }
+}
+function ie(e) {
+  return {
+    flags: "r+",
+    flagsIfMissing: "wx"
+  };
+}
+class SymlinkReadRefusedError extends Error {
+  constructor(e) {
+    super(e);
+    this.name = "SymlinkReadRefusedError";
+  }
+}
+async function q5e(e, n) {
+  let r = H(e, n);
+  if (r === "" || r.startsWith("..") || Y(r)) throw new P(`assertDirChainReal: dir must be strictly inside base (rel: ${r})`, "assertDirChainReal: dir must be strictly inside base");
+  let s = e;
+  for (let u of r.split(N)) {
+    s = R(s, u);
+    try {
+      let i = await U(s);
+      if (i.isSymbolicLink() || !i.isDirectory()) throw new SymlinkWriteRefusedError(`Refusing to write under symlinked or non-directory path: ${s}`);
+    } catch (error) {
+      if (error instanceof SymlinkWriteRefusedError) throw error;
+      let o = v(error);
+      if (o === "ENOTDIR") throw new SymlinkWriteRefusedError(`Refusing to write under symlinked or non-directory path: ${s}`);
+      if (o === "ENOENT") return;
+      throw error;
+    }
+    continue;
+  }
+}
+class StagingDirTamperedError extends Error {
+  constructor(e) {
+    super(e);
+    this.name = "StagingDirTamperedError";
+  }
+}
+function K5e(e) {
+  throw m("sandbox_exec", "atomic_write_staging_dir_tampered"), new StagingDirTamperedError(e);
+}
+function Gq(e, n, r = "write") {
+  let s = e.session.writePermissionStash.consume(e.toolUseId, n, r);
+  if (s === bBe) throw new (r === "read" ? SymlinkReadRefusedError : SymlinkWriteRefusedError)(`Refusing to ${r === "read" ? "read" : "write"} ${n}: its permission check expired before it ran (too many concurrent file operations). Retry.`);
+  if (s !== void 0) return s;
+  if (e.toolUseId) t(`takeApprovedPathsForWrite: no check-time stash for toolUseId=${e.toolUseId}; using fresh resolution`);
+  return To(n);
+}
+function j$e(e, n) {
+  return Gq(e, n, "read");
+}
+async function Od(e) {
+  try {
+    return await te(e), !0;
+  } catch {
+    return !1;
+  }
+}
+async function Sne(e) {
+  return U(e).then(() => "present", n => B(n) || v(n) === "ENOTDIR" ? "gone" : "unreadable");
+}
+var W$e = 262144;
+function z$e(e, {
+  maxBytes: maxBytes,
+  symlinkAtPath = "follow",
+  regularFileOnly = symlinkAtPath === "refuse"
+}) {
+  using u = gm`fs.readBoundedSync(${e}, max ${maxBytes} bytes)`;
+  let i = "r";
+  if (symlinkAtPath === "refuse") {
+    if (X(e).isSymbolicLink()) throw Object.assign(Error("ELOOP: refusing a symbolic link"), {
+      code: "ELOOP"
+    });
+  }
+  let o = C(e, i);
+  try {
+    if (regularFileOnly) {
+      if (!I(o).isFile()) throw Object.assign(Error("EINVAL: not a regular file"), {
+        code: "EINVAL"
+      });
+    }
+    if (symlinkAtPath === "refuse") {
+      let f = I(o, {
+          bigint: !0
+        }),
+        w = X(e, {
+          bigint: !0
+        });
+      if (w.isSymbolicLink() || w.ino !== f.ino || w.dev !== f.dev) throw Object.assign(Error("ELOOP: refusing a symbolic link"), {
+        code: "ELOOP"
+      });
+    }
+    return se(o, e, maxBytes);
+  } finally {
+    L(o);
+  }
+}
+function HHo(e, {
+  maxBytes: maxBytes_2
+}) {
+  using r = gm`fs.readInheritedFdSync(fd ${e}, max ${maxBytes_2} bytes)`;
+  let s = I(e);
+  if (!s.isSocket() && !s.isFIFO()) throw new P(`refusing to read fd ${e}: not a pipe or socket`, "readInheritedFdSync: descriptor is not a pipe or socket");
+  return he(e, maxBytes_2);
+}
+function Y3n(e) {
+  try {
+    return I(e).isSocket();
+  } catch {
+    return !1;
+  }
+}
+function he(e, n) {
+  try {
+    return se(e, `fd ${e}`, n, {
+      untilNewline: !0
+    });
+  } finally {
+    L(e);
+  }
+}
+function se(e, n, r, {
+  untilNewline = !1
+} = {}) {
+  let u = [],
+    i = 0,
+    o = Buffer.alloc(8192);
+  while (!0) {
+    let f = fe(e, o, 0, o.length, null);
+    if (f === 0) return Buffer.concat(u).toString("utf8");
+    if (i += f, i > r) throw new P(`refusing to read ${n}: content exceeds ${r} byte limit`, "readBoundedSync: content exceeds byte limit");
+    let w = untilNewline ? o.subarray(0, f).indexOf(10) : -1;
+    if (u.push(Buffer.from(o.subarray(0, w === -1 ? f : w + 1))), w !== -1) return Buffer.concat(u).toString("utf8");
+  }
+}
+function FHo(e) {
+  let n = ce();
+  return Math.floor(n.statSync(e).mtimeMs);
+}
+async function Sb(e) {
+  let n = await ce().stat(e);
+  return Math.floor(n.mtimeMs);
+}
+function zBr() {
+  return Ne(a.CLAUDE_CODE_PERFORCE_MODE);
+}
+var rUt = "File is read-only \u2014 it has not been opened for edit in Perforce. Run `p4 edit <file>` to check it out, then retry. Do not chmod the file writable; that bypasses Perforce tracking.";
+function oUt(e) {
+  return zBr() && (e & 128) === 0;
+}
+var ge = Fm();
+function TJ(e, n) {
+  return ge.run(e, n);
+}
+function G$e(e, n) {
+  if (n !== "CRLF") return e;
+  return e.replaceAll(`\r
+`, `
+`).split(`
+`).join(`\r
+`);
+}
+async function Oye(e, n, encoding, s) {
+  let u = G$e(n, s);
+  await Hv(e, u, {
+    encoding: encoding
+  });
+  let i = Buffer.byteLength(u, encoding),
+    o = await ce().stat(e);
+  if (o.size !== i) throw new P(`Write verification failed: ${e} is ${o.size} bytes on disk, expected ${i}. The filesystem may have silently truncated the write (network drive / cloud sync).`, "writeTextContent: on-disk size mismatch after write");
+  return Math.floor(o.mtimeMs);
+}
+function $Ho(e) {
+  try {
+    let n = ce(),
+      {
+        resolvedPath: resolvedPath
+      } = jo(n, e);
+    return Wjr(resolvedPath);
+  } catch (error) {
+    if (Et(error) || wre(error) || gg(error)) t(`detectFileEncoding failed for expected reason: ${v(error)}`, {
+      level: "debug"
+    });else d(error);
+    return "utf8";
+  }
+}
+function Y0(e) {
+  if (!e.includes("\t")) return e;
+  return e.replace(/^\t+/gm, n => "  ".repeat(n.length));
+}
+function we(e) {
+  let absolutePath = e ? V$e(e) ?? void 0 : void 0,
+    r = absolutePath ? pg() : null,
+    relativePath = absolutePath && r !== null ? H(r, absolutePath) : void 0;
+  return {
+    absolutePath: absolutePath,
+    relativePath: relativePath
+  };
+}
+var X3n = "Path hidden (unsupported characters)";
+function xo(e) {
+  if (e.includes("\x00")) return X3n;
+  let {
+    relativePath: relativePath_2
+  } = we(e);
+  if (relativePath_2 && !relativePath_2.startsWith("..")) return relativePath_2;
+  let r = ne();
+  if (e.startsWith(r + N)) return "~" + e.slice(r.length);
+  return e;
+}
+async function Mye(e) {
+  let n = ce();
+  try {
+    let r = E(e),
+      s = A(e, Z(e)),
+      o = (await n.readdir(r)).filter(item => A(item.name, Z(item.name)) === s && R(r, item.name) !== e)[0];
+    if (o) return o.name;
+    return;
+  } catch (error) {
+    if (!B(error)) t(`findSimilarFile failed for ${e}: ${error}`, {
+      level: "error"
+    });
+    return;
+  }
+}
+var FN = "Note: your current working directory is";
+async function CJ(e) {
+  let n = oe(),
+    r = E(n),
+    s = e;
+  try {
+    let S = await ee(E(e));
+    s = R(S, A(e));
+  } catch {}
+  let u = r === N ? N : r + N,
+    o = O() === "windows" ? S => S.toLowerCase() : S => S,
+    f = o(s);
+  if (!f.startsWith(o(u)) || f.startsWith(o(n + N)) || f === o(n)) return;
+  let w = H(r, s),
+    h = R(n, w);
+  try {
+    return await te(h), h;
+  } catch {
+    return;
+  }
+}
+function umn({
+  content: content,
+  startLine: startLine,
+  tabAwareSeparator = !1
+}) {
+  if (!content) return "";
+  let s = tabAwareSeparator && (content.startsWith("\t") || content.includes(`
+	`)) ? ":" : "\t",
+    u = [],
+    i = startLine,
+    o = 0,
+    f = content.indexOf(`
+`);
+  while (f !== -1) u.push(J3n(content.slice(o, f), i++, s)), o = f + 1, f = content.indexOf(`
+`, o);
+  return u.push(J3n(content.slice(o), i, s)), u.join(`
+`);
+}
+function J3n(e, n, r) {
+  let s = e.endsWith("\r") ? e.slice(0, -1) : e;
+  return `${n}${r}${s}`;
+}
+function pmn(e) {
+  return e.match(/^\s*\d+[\u2192\t:](.*)$/)?.[1] ?? e;
+}
+function M(e, value) {
+  if (e instanceof Error && !(e instanceof SymlinkWriteRefusedError) && e !== value) try {
+    if (e.cause === void 0) e.message += ` (atomic write failed first: ${l(value)})`, Object.defineProperty(e, "cause", {
+      value: value,
+      writable: !0,
+      configurable: !0,
+      enumerable: !1
+    });
+  } catch {}
+  throw e;
+}
+function GBr(e, n, r = {
+  encoding: "utf-8"
+}) {
+  let s = ce(),
+    u = (r.allowSymlink, 0),
+    i = e,
+    o,
+    f = !1;
+  if (r.allowSymlink) try {
+    let c = s.readlinkSync(e);
+    i = Y(c) ? c : z(jo(s, E(e)).resolvedPath, c), t(`Writing through symlink: ${e} -> ${i}`);
+  } catch {} else {
+    r.checkParentDir;
+    try {
+      let c = s.lstatSync(e);
+      if (c.isSymbolicLink()) throw new SymlinkWriteRefusedError(`Refusing to write through symlink: ${e}. Resolve the symlink and pass the real target path explicitly.`);
+      o = c.mode, f = !0;
+    } catch (error) {
+      if (!B(error)) throw error;
+    }
+  }
+  let w = `.tmp.${process.pid}.${Q(6).toString("hex")}`,
+    h = q3n(r.stagingDir, i, w, r.allowSymlink ?? !1),
+    S = !1;
+  if (r.allowSymlink && !f) try {
+    o = s.statSync(i).mode, f = !0;
+  } catch (error) {
+    if (!B(error)) throw error;
+  }
+  if (f && o !== void 0) t(`Preserving file permissions: ${o.toString(8)}`);else if (r.mode !== void 0) o = r.mode, t(`Setting permissions for new file: ${o.toString(8)}`);
+  try {
+    t(`Writing to temp file: ${h}`);
+    let c = C(h, "wx", !f && r.mode !== void 0 ? r.mode : void 0),
+      b = !1,
+      k;
+    try {
+      if (E(h) !== E(i)) $pt(r.stagingDir);
+      if (V(c, n, {
+        encoding: r.encoding
+      }), f && o !== void 0) try {
+        ae(c, o), t("Applied original permissions to temp file");
+      } catch (error) {
+        if (!ixe(error)) throw error;
+        t(`fchmod unsupported on this filesystem: ${error}`);
+      }
+      try {
+        G(c);
+      } catch (error) {
+        if (!ixe(error)) throw error;
+        t(`fsync unsupported on this filesystem: ${error}`);
+      }
+      S = !0;
+    } catch (error) {
+      b = !0, k = error;
+    }
+    try {
+      L(c);
+    } catch (error) {
+      if (!b) throw error;
+      t(`closeSync also failed after temp write error: ${error}`, {
+        level: "error"
+      });
+    }
+    if (b) throw k;
+    if (t(`Temp file written successfully, size: ${n.length} bytes`), E(h) !== E(i)) $pt(r.stagingDir);
+    t(`Renaming ${h} to ${i}`), kzr(h, i, (g, F) => s.renameSync(g, F)), t(`File ${i} written atomically`);
+  } catch (error) {
+    t(`Failed to write file atomically: ${error}`, {
+      level: "error"
+    });
+    let b = v(error);
+    if (S && b !== void 0 && XS.has(b) || !S && f && b === "EACCES") {
+      let {
+          flags: flags,
+          flagsIfMissing: flagsIfMissing
+        } = ie(u),
+        T = !f && r.mode !== void 0 ? r.mode : void 0,
+        y;
+      try {
+        try {
+          y = C(i, flags, T);
+        } catch (error) {
+          if (flagsIfMissing === void 0 || !B(error)) throw error;
+          bUo(i), y = C(i, flagsIfMissing, T);
+        }
+      } catch (p) {
+        try {
+          s.unlinkSync(h);
+        } catch (error) {
+          t(`Failed to clean up temp file: ${error}`);
+        }
+        if (v(p) === "ELOOP") throw new SymlinkWriteRefusedError(`Refusing to write through symlink: ${i} (O_NOFOLLOW)`);
+        throw error;
+      }
+      try {
+        let p = I(y);
+        if (p.nlink > 1 && (r.refuseHardLinkedInPlace ?? hhn())) throw new HardLinkWriteRefusedError(i, p.nlink);
+        if (p.isFile()) le(y, 0);
+      } catch (p) {
+        try {
+          L(y);
+        } catch {}
+        try {
+          s.unlinkSync(h);
+        } catch (error) {
+          t(`Failed to clean up temp file: ${error}`);
+        }
+        M(p, error);
+      }
+      try {
+        V(y, n, {
+          encoding: r.encoding
+        });
+        try {
+          G(y);
+        } catch (error) {
+          if (!ixe(error)) throw error;
+          t(`fsync unsupported on this filesystem: ${error}`);
+        }
+        L(y);
+        try {
+          s.unlinkSync(h);
+        } catch (error) {
+          t(`Failed to clean up temp file: ${error}`);
+        }
+        t(`File ${i} written via in-place fallback`);
+        return;
+      } catch (p) {
+        try {
+          L(y);
+        } catch {}
+        try {
+          s.unlinkSync(i);
+        } catch {}
+        if (S) throw new P(`Write to ${i} failed (${v(p) ?? p}) after the target was truncated. The new content was preserved at ${h}.`, "writeFileSyncAndFlush: in-place fallback write failed; content preserved at temp path");
+        M(p, error);
+      }
+    }
+    try {
+      s.unlinkSync(h);
+    } catch (error) {
+      t(`Failed to clean up temp file: ${error}`);
+    }
+    throw error;
+  }
+}
+async function Hv(e, n, r = {
+  encoding: "utf-8"
+}) {
+  let s = ce(),
+    u = (r.allowSymlink, 0),
+    i = e,
+    o,
+    f = !1;
+  if (r.allowSymlink) try {
+    let c = await de(e);
+    i = Y(c) ? c : z(await ee(E(e)), c), t(`Writing through symlink: ${e} -> ${i}`);
+  } catch {} else {
+    r.checkParentDir;
+    try {
+      let c = await U(e);
+      if (c.isSymbolicLink()) throw new SymlinkWriteRefusedError(`Refusing to write through symlink: ${e}. Resolve the symlink and pass the real target path explicitly.`);
+      o = c.mode, f = !0;
+    } catch (error) {
+      if (!B(error)) throw error;
+    }
+  }
+  let w = `.tmp.${process.pid}.${Q(6).toString("hex")}`,
+    h = q3n(r.stagingDir, i, w, r.allowSymlink ?? !1),
+    S = !1;
+  if (r.allowSymlink && !f) try {
+    o = (await s.stat(i)).mode, f = !0;
+  } catch (error) {
+    if (!B(error)) throw error;
+  }
+  if (f && o !== void 0) t(`Preserving file permissions: ${o.toString(8)}`);else if (r.mode !== void 0) o = r.mode, t(`Setting permissions for new file: ${o.toString(8)}`);
+  try {
+    t(`Writing to temp file: ${h}`);
+    let c = await W(h, "wx", !f && r.mode !== void 0 ? r.mode : void 0),
+      b = !1,
+      k;
+    try {
+      if (E(h) !== E(i)) $pt(r.stagingDir);
+      if (await c.writeFile(n, {
+        encoding: r.encoding
+      }), f && o !== void 0) try {
+        await c.chmod(o), t("Applied original permissions to temp file");
+      } catch (error) {
+        if (!ixe(error)) throw error;
+        t(`fchmod unsupported on this filesystem: ${error}`);
+      }
+      try {
+        await c.sync();
+      } catch (error) {
+        if (!ixe(error)) throw error;
+        t(`fsync unsupported on this filesystem: ${error}`);
+      }
+      S = !0;
+    } catch (error) {
+      b = !0, k = error;
+    }
+    try {
+      await c.close();
+    } catch (error) {
+      if (!b) throw error;
+      t(`close also failed after temp write error: ${error}`, {
+        level: "error"
+      });
+    }
+    if (b) throw k;
+    if (t(`Temp file written successfully, size: ${n.length} bytes`), E(h) !== E(i)) $pt(r.stagingDir);
+    t(`Renaming ${h} to ${i}`), await Bo(h, i, (g, F) => s.rename(g, F)), t(`File ${i} written atomically`);
+  } catch (error) {
+    t(`Failed to write file atomically: ${error}`, {
+      level: "error"
+    });
+    let b = v(error);
+    if (S && b !== void 0 && XS.has(b) || !S && f && b === "EACCES") {
+      let {
+          flags: flags_2,
+          flagsIfMissing: flagsIfMissing_2
+        } = ie(u),
+        T = !f && r.mode !== void 0 ? r.mode : void 0,
+        y;
+      try {
+        try {
+          y = await W(i, flags_2, T);
+        } catch (error) {
+          if (flagsIfMissing_2 === void 0 || !B(error)) throw error;
+          await x$(i), y = await W(i, flagsIfMissing_2, T);
+        }
+      } catch (p) {
+        try {
+          await s.unlink(h);
+        } catch (error) {
+          t(`Failed to clean up temp file: ${error}`);
+        }
+        if (v(p) === "ELOOP") throw new SymlinkWriteRefusedError(`Refusing to write through symlink: ${i} (O_NOFOLLOW)`);
+        throw error;
+      }
+      try {
+        let p = await y.stat();
+        if (p.nlink > 1 && (r.refuseHardLinkedInPlace ?? hhn())) throw new HardLinkWriteRefusedError(i, p.nlink);
+        if (p.isFile()) await y.truncate(0);
+      } catch (p) {
+        await y.close().catch(() => {});
+        try {
+          await s.unlink(h);
+        } catch (error) {
+          t(`Failed to clean up temp file: ${error}`);
+        }
+        M(p, error);
+      }
+      try {
+        await y.writeFile(n, {
+          encoding: r.encoding
+        });
+        try {
+          await y.sync();
+        } catch (error) {
+          if (!ixe(error)) throw error;
+          t(`fsync unsupported on this filesystem: ${error}`);
+        }
+        await y.close();
+        try {
+          await s.unlink(h);
+        } catch (error) {
+          t(`Failed to clean up temp file: ${error}`);
+        }
+        t(`File ${i} written via in-place fallback`);
+        return;
+      } catch (p) {
+        try {
+          await y.close();
+        } catch {}
+        try {
+          await s.unlink(i);
+        } catch {}
+        if (S) throw new P(`Write to ${i} failed (${v(p) ?? p}) after the target was truncated. The new content was preserved at ${h}.`, "writeFileAndFlush: in-place fallback write failed; content preserved at temp path");
+        M(p, error);
+      }
+    }
+    try {
+      await s.unlink(h);
+    } catch (error) {
+      t(`Failed to clean up temp file: ${error}`);
+    }
+    throw error;
+  }
+}
+var ye = new Set(["Public", "Default", "Default User", "All Users"]);
+async function UHo() {
+  let e = O(),
+    n = ne(),
+    r = ce();
+  if (e === "macos") return R(n, "Desktop");
+  if (e === "windows") {
+    let u = a.USERPROFILE ? a.USERPROFILE.replaceAll("\\", "/") : null;
+    if (u) {
+      let o = `/mnt/c${u.replace(/^[A-Z]:/, "")}/Desktop`;
+      if (await Od(o)) return o;
+    }
+    try {
+      let o = await r.readdir("/mnt/c/Users");
+      for (let f of o) {
+        if (ye.has(f.name)) continue;
+        let w = R("/mnt/c/Users", f.name, "Desktop");
+        if (await Od(w)) return w;
+      }
+    } catch (error) {
+      t(`Failed to enumerate /mnt/c/Users for Windows desktop path: ${error}`, {
+        level: "error"
+      });
+    }
+  }
+  let s = R(n, "Desktop");
+  if (await Od(s)) return s;
+  return n;
+}
+async function fmn(e, n = W$e) {
+  try {
+    return (await ce().stat(e)).size <= n;
+  } catch {
+    return !1;
+  }
+}
+function Rf(e) {
+  let n = O() === "windows",
+    r = ue(e),
+    s = n ? /[\\/]+$/ : /\/+$/,
+    u = r.length > me(r).root.length ? r.replace(s, "") : r;
+  return n ? u.replaceAll("/", "\\").toLowerCase() : u;
+}
+function mY(e, n) {
+  return Rf(e) === Rf(n);
+}
+export { NHo, $pt, q3n, SymlinkWriteRefusedError as sf, HardLinkWriteRefusedError as dmn, SymlinkReadRefusedError as Iye, q5e, StagingDirTamperedError as K3n, K5e, Gq, j$e, Od, Sne, W$e, z$e, HHo, Y3n, FHo, Sb, zBr, rUt, oUt, TJ, G$e, Oye, $Ho, Y0, X3n, xo, Mye, FN, CJ, umn, J3n, pmn, GBr, Hv, UHo, fmn, Rf, mY };

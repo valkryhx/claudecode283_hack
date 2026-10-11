@@ -1,0 +1,20 @@
+/* ==============================================================================
+ * m1569.Zt   [m1569_0xdceb889.js @ 56261]
+ * --------------------------------------------------------------------------
+ * 作用: (no note)
+ * 原文: claudecode283/modules/m1569_0xdceb889.js  字符偏移 56261
+ * 说明: 由 tools/extract.mjs 抽取，忠实原文，仅格式化；标识符仍为 Bun 压缩名。
+ * ============================================================================== */
+Zt = f(() => Qe({
+  script: o().max(Nb).refine(hI, Xt).optional().describe("Self-contained workflow script. Must begin with `export const meta = { name, description, phases }` (pure literal, no computed values) followed by the script body using agent()/parallel()/pipeline()/phase()." + (he()?.SCRIPT_DESCRIPTION_V2 ?? "")),
+  name: o().refine((e) => cH(e) === e, "contains control or invisible format characters").optional().describe("Name of a predefined workflow (built-in or from .claude/workflows/). Resolves to a self-contained script."),
+  description: o().optional().describe("Ignored \u2014 set the workflow description in the script's `meta` block."),
+  title: o().optional().describe("Ignored \u2014 set the workflow title in the script's `meta` block."),
+  args: ae().optional().describe("Optional input value exposed to the script as the global `args`, verbatim. Pass arrays/objects as actual JSON values, NOT as a " + "JSON-encoded string \u2014 a stringified list breaks `args.filter`/" + "`args.map` in the script. Use for parameterized named workflows (e.g. a research question)."),
+  scriptPath: o().refine((e) => cH(e) === e, "contains control or invisible format characters").optional().describe("Path to a workflow script file on disk. Every Workflow invocation persists its script under the session directory and returns the path in the tool result. To iterate, edit that file with Write/Edit and re-invoke Workflow with the same `scriptPath` instead of re-sending the full script. Takes precedence over `script` and `name`."),
+  resumeFromRunId: o().regex(/^wf_[a-z0-9-]{6,}$/).optional().describe(`Run ID of a prior Workflow invocation to resume from. Completed agent() calls with unchanged (prompt, opts) return their cached results instantly; only edited or new calls re-run. Same-session only. Stop the prior run first (${og}) before resuming.`),
+  ...he()?.runOpFields() ?? {},
+  ...!1
+}).refine((e) => e.script || e.name || e.scriptPath || e.runId, {
+  message: "Must provide script, name, scriptPath, or runId"
+}))

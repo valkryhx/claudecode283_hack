@@ -1,0 +1,76 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { We, P } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { Gl } from "B:/~BUN/root/chunk-hbma7z88.js";
+import { Ao } from "B:/~BUN/root/chunk-9sajt7dp.js";
+function u(i, r, o, n = "connection", a) {
+  let e = () => a?.aborted ? new We(`${n} for '${o}' aborted`) : Object.assign(new P(`${n} for '${o}' timed out connecting`, "MCP lazy dial timed out connecting"), {
+    mcpErrorSource: "downstream_unreachable"
+  });
+  if (r.aborted) return i.catch(() => {}), Promise.reject(a?.aborted ? new We(`${n} for '${o}' aborted before connect`) : new P(`${n} for '${o}' aborted before connect`, "MCP lazy dial aborted before connect"));
+  return new Promise((t, s) => {
+    let c = () => s(e());
+    r.addEventListener("abort", c, {
+      once: !0
+    }), i.then(l => {
+      r.removeEventListener("abort", c), t(l);
+    }, l => {
+      r.removeEventListener("abort", c), s(l);
+    });
+  });
+}
+async function mse(i, r) {
+  let timeoutMs = r.timeoutMs ?? Gl(),
+    {
+      signal: signal,
+      cleanup: cleanup
+    } = Ao(r.signal, {
+      timeoutMs: timeoutMs,
+      refTimer: !0
+    });
+  try {
+    return await u(i, signal, r.serverName, r.context, r.signal);
+  } finally {
+    cleanup();
+  }
+}
+var d = 5000,
+  m = 300000;
+function PEt(i) {
+  let r = i?.baseHoldMs ?? d,
+    o = i?.maxHoldMs ?? m,
+    n = new Map(),
+    a = (e, t) => {
+      let s = n.get(e);
+      return s !== void 0 && t < s.holdUntil;
+    };
+  return {
+    shouldSkip(e, t = Date.now()) {
+      return a(e, t);
+    },
+    recordFailure(e, t = Date.now()) {
+      if (a(e, t)) return;
+      let count = (n.get(e)?.count ?? 0) + 1,
+        l = Math.min(o, r * 2 ** (count - 1));
+      n.set(e, {
+        count: count,
+        holdUntil: t + l
+      });
+    },
+    recordSuccess(e) {
+      n.delete(e);
+    },
+    holdUntil(e) {
+      return n.get(e)?.holdUntil;
+    }
+  };
+}
+export { mse, PEt };

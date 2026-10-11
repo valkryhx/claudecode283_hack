@@ -1,0 +1,124 @@
+/* ==============================================================================
+ * m0132.rx   [m0132_0xc24a4bb.js @ 166992]
+ * --------------------------------------------------------------------------
+ * 作用: (no note)
+ * 原文: claudecode283/modules/m0132_0xc24a4bb.js  字符偏移 166992
+ * 说明: 由 tools/extract.mjs 抽取，忠实原文，仅格式化；标识符仍为 Bun 压缩名。
+ * ============================================================================== */
+function rx(e, t, o) {
+  let r = (a, f) => {
+      t(a, f).catch((m) => kc().log(`[${e}] $.${a} dropped: ${l(m)}`, "warn"))
+    },
+    n = (a, f = {}) => r("ui.log", {
+      text: String(a),
+      to: f?.to ?? "transcript"
+    }),
+    s = (a, f = {}) => {
+      r("ui.toast", {
+        text: String(a),
+        ...typeof f.timeoutMs === "number" && {
+          timeoutMs: f.timeoutMs
+        }
+      })
+    },
+    i = (a) => {
+      r("ui.status", {
+        text: a === void 0 || a === null ? void 0 : String(a)
+      })
+    };
+
+  function p(a) {
+    let f = yi(a);
+    if (f !== void 0) throw new De(`${e}: $.ui.resolve ${f}`);
+    return o(a)
+  }
+  return R_({
+    notice: (a, f) => r("ui.notice", {
+      tool_use_id: a,
+      text: f
+    }),
+    invalidate: (a) => r("ui.invalidate", {
+      event: a
+    }),
+    blit: (a) => t("ui.blit", yp(a)),
+    resolve: p,
+    log: n,
+    status: i,
+    ask: async (a, f) => {
+      if (typeof a !== "string" || a.trim() === "") throw new De(`${e}: $.ui.ask takes the question first`);
+      let m = Array.isArray(f) ? {
+          options: f
+        } : f ?? {},
+        u = (m.options ?? []).map(String);
+      if (u.length > mp) throw new De(`${e}: $.ui.ask takes at most ${mp} options (got ${u.length})`);
+      let d = pp(a),
+        y = lp(u.map(pp)),
+        c = re(m.header ?? "Plugin", Jg),
+        k = await t("ui.ask", {
+          tool: cp,
+          questions: [{
+            question: d,
+            header: c,
+            options: y.map((_) => ({
+              label: _,
+              description: ""
+            })),
+            multiSelect: m.multiSelect === !0
+          }]
+        }),
+        A = k.result?.answers?.[d],
+        x = (_) => u.find((h) => pp(h) === _) ?? _;
+      if (typeof A === "string") return x(A);
+      if (Array.isArray(A)) return A.map((_) => x(String(_))).join(", ");
+      throw new De(`${e}: $.ui.ask: no answer (${re(k.deny??k.text??"",qg)||"the dialog was dismissed"})`)
+    },
+    toast: s,
+    open: (a) => t("ui.open", {
+      id: a?.id,
+      ...a?.title !== void 0 && {
+        title: String(a.title)
+      },
+      ...a?.focus !== void 0 && {
+        focus: a.focus
+      },
+      ...a?.closeOnEscape !== void 0 && {
+        closeOnEscape: a.closeOnEscape
+      },
+      ...a?.holdToasts !== void 0 && {
+        holdToasts: a.holdToasts
+      },
+      ...a?.rows !== void 0 && {
+        rows: a.rows
+      },
+      ...a?.columns !== void 0 && {
+        columns: a.columns
+      }
+    }),
+    close: (a) => t("ui.close", {
+      id: a?.id,
+      origin: {
+        kind: "plugin"
+      }
+    }),
+    panes: () => t("ui.panes", {}),
+    scroll: (a) => t("ui.scroll", {
+      to: a?.to,
+      ...a?.in !== void 0 && {
+        in: a.in
+      },
+      ...a?.block !== void 0 && {
+        block: a.block
+      }
+    }),
+    focus: (a) => t("ui.focus", {
+      requestId: a?.requestId,
+      key: a?.key
+    }),
+    copy: (a) => t("ui.copy", {
+      text: a?.text,
+      ...a?.surface !== void 0 && {
+        surface: a.surface
+      }
+    })
+  })
+}

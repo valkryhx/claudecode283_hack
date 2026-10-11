@@ -1,0 +1,43 @@
+/* ==========================================================================
+ * m1460.Sl   [m1460_0xd973957.js @ 16015]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function Sl(o, l, {
+  indent: a,
+  width: u,
+  maxLines: d
+}) {
+  let f = d,
+    h = 0,
+    x = 0,
+    y = `${a}  `;
+  for (let A of l) {
+    if (f <= 0) {
+      h += A.lineCount;
+      continue;
+    }
+    let k = Me(A.key),
+      C = `${a}${k}: `;
+    if (!(A.lineCount === 1 && A.truncatedChars === 0 && ie(C) + ie(Me(A.head)) <= u) && ie(C) > Math.floor(u / 2)) {
+      if (o.push([{
+        text: ot(`${a}${k}:`, u),
+        dimColor: !0
+      }]), f--, C = y, f <= 0) {
+        h += A.lineCount;
+        continue;
+      }
+    }
+    let L = Ms(o, A, {
+      firstPrefix: C,
+      restPrefix: y,
+      width: u,
+      maxLines: f,
+      color: void 0,
+      reportHidden: !1
+    });
+    f -= L.lines, h += L.hiddenLines, x += L.hiddenChars;
+  }
+  Rs(o, a, u, h, x);
+}

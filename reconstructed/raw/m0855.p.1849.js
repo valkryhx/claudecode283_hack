@@ -1,0 +1,1 @@
+function p(e,t=!1){if(!lr())return null;if(!va())return" (applied locally \u2014 this remote transport can\u2019t change server effort)";return lr()?.sendControlRequest({subtype:"apply_flag_settings",settings:{effortLevel:e??null,ultracode:t}}).catch(d),null}

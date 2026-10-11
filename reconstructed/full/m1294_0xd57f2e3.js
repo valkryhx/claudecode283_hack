@@ -1,0 +1,1997 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  y
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  l,
+  v
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  Q
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  nK,
+  Un
+} from "B:/~BUN/root/chunk-zafy1b6k.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  I,
+  re,
+  hf,
+  Sxe
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  JCe,
+  Fdt,
+  $k,
+  BNt,
+  cHt,
+  GNr,
+  sut,
+  uYe,
+  iut,
+  LFe,
+  aut,
+  NFe,
+  W0o,
+  qNr,
+  tKn,
+  nKn,
+  V0o,
+  Sce,
+  FFe,
+  Tun,
+  rJ,
+  gYe,
+  An,
+  wN,
+  Tce,
+  yHr,
+  ps,
+  Ee
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  LY,
+  rE
+} from "B:/~BUN/root/chunk-zksmb712.js";
+import {
+  _,
+  m,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  Je,
+  H5e
+} from "B:/~BUN/root/chunk-3rzkfay5.js";
+import {
+  Ie
+} from "B:/~BUN/root/chunk-sd4cj2qx.js";
+import {
+  tl
+} from "B:/~BUN/root/chunk-bt3h0syz.js";
+import {
+  sY,
+  Efn,
+  tAe,
+  $q,
+  Tfn
+} from "B:/~BUN/root/chunk-ceg1zct0.js";
+import {
+  Id
+} from "B:/~BUN/root/chunk-aw2zngte.js";
+import {
+  zs
+} from "B:/~BUN/root/chunk-3hjtxzqy.js";
+import {
+  HL,
+  SR
+} from "B:/~BUN/root/chunk-rfp59gnb.js";
+import {
+  nLe
+} from "B:/~BUN/root/chunk-ky4py1p3.js";
+import {
+  x7e,
+  kZr,
+  EZr,
+  TZr,
+  WTn,
+  CZr,
+  RZr
+} from "B:/~BUN/root/chunk-s4qte2xc.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import {
+  ol
+} from "B:/~BUN/root/chunk-syke822n.js";
+import {
+  vA
+} from "B:/~BUN/root/chunk-e1thvnpv.js";
+import {
+  ke
+} from "B:/~BUN/root/chunk-kss0wzj5.js";
+import {
+  s,
+  n,
+  bt,
+  ek,
+  _r
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import {
+  Yt
+} from "B:/~BUN/root/chunk-jdm3bsma.js";
+import {
+  q2,
+  K2,
+  MQ
+} from "B:/~BUN/root/chunk-8nwqpq4c.js";
+import {
+  ve
+} from "B:/~BUN/root/chunk-cxqcvpm0.js";
+import {
+  ze,
+  K_
+} from "B:/~BUN/root/chunk-r2yrqvry.js";
+import {
+  ys
+} from "B:/~BUN/root/chunk-h23911wn.js";
+import {
+  P1e
+} from "B:/~BUN/root/chunk-zyajx7gx.js";
+import {
+  Qn
+} from "B:/~BUN/root/chunk-jcnv9sfw.js";
+import {
+  nJe
+} from "B:/~BUN/root/chunk-kqxpbs69.js";
+import {
+  Fe
+} from "B:/~BUN/root/chunk-bt71g93n.js";
+import {
+  qn
+} from "B:/~BUN/root/chunk-pet3tnhj.js";
+import {
+  Rs
+} from "B:/~BUN/root/chunk-8sb89kt9.js";
+import {
+  rJe
+} from "B:/~BUN/root/chunk-wnc0pd5v.js";
+import {
+  APe,
+  jQn,
+  WQn
+} from "B:/~BUN/root/chunk-7qh3fgtt.js";
+import {
+  aM
+} from "B:/~BUN/root/chunk-sefpqcph.js";
+import {
+  dU
+} from "B:/~BUN/root/chunk-b36qwjxy.js";
+import {
+  V,
+  e,
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import {
+  cL
+} from "B:/~BUN/root/chunk-955bfe77.js";
+import {
+  vso
+} from "B:/~BUN/root/chunk-wbt134f9.js";
+import {
+  KH,
+  Ko
+} from "B:/~BUN/root/chunk-v8s05yj9.js";
+import {
+  se,
+  R,
+  T,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import {
+  $a
+} from "B:/~BUN/root/chunk-fwzy34jf.js";
+import {
+  de,
+  fn,
+  lt
+} from "B:/~BUN/root/chunk-8386ms9e.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+N();
+class _e extends Error {
+  fallbackCures;
+  causeSummary;
+  constructor(k, c) {
+    super(k, {
+      cause: c.cause
+    });
+    this.fallbackCures = c.fallbackCures, this.causeSummary = c.fallbackCures ? c.causeSummary : null
+  }
+}
+async function tt(k, c, D = {}) {
+  try {
+    let z = await St(k, c, D);
+    return _("oauth_console_profile_login"), z
+  } catch (z) {
+    if (z instanceof _e && z.fallbackCures) p("oauth_console_profile_login", "refused_fell_back");
+    else m("oauth_console_profile_login", z instanceof _e ? "refused" : "error");
+    throw z
+  }
+}
+async function St(k, c, {
+  loginHint: D,
+  loginMethod: z,
+  orgUUID: M
+}) {
+  try {
+    await WTn()
+  } catch (P) {
+    let Y = EZr(P);
+    if (Y === null) throw P;
+    let O = TZr(P);
+    throw new _e(l(P), Y && O !== null ? {
+      fallbackCures: !0,
+      causeSummary: O,
+      cause: P
+    } : {
+      fallbackCures: !1,
+      cause: P
+    })
+  }
+  let C = await k.startOAuthFlow(c, {
+      loginWithClaudeAi: !1,
+      oauthClient: {
+        clientId: x7e,
+        scopes: kZr
+      },
+      loginHint: D,
+      loginMethod: z,
+      orgUUID: M
+    }),
+    A = Ot(C);
+  if (A instanceof Error) throw await et(C), A;
+  await Tt(await xt());
+  let L = await jQn(C, {}),
+    j;
+  try {
+    let P = C.tokenAccount;
+    j = await CZr({
+      accessToken: C.accessToken,
+      refreshToken: A.refreshToken,
+      expiresAtMs: A.expiresAtMs,
+      scopes: C.scopes,
+      organizationUuid: P?.organizationUuid ?? C.profile?.organization.uuid,
+      organizationName: P?.organizationName ?? C.profile?.organization.name,
+      accountEmail: P?.emailAddress ?? C.profile?.account.email,
+      workspaceId: P?.workspaceId,
+      workspaceName: P?.workspaceName
+    })
+  } catch (P) {
+    if (!await RZr(A.refreshToken)) await et(C);
+    throw P
+  }
+  return await BNt(C.accessToken).catch((P) => t(String(P), {
+    level: "error"
+  })), await WQn({
+    ...L
+  }), j
+}
+async function xt() {
+  if (Ie() !== "firstParty") return null;
+  let k = Un();
+  k.invalidateCache?.();
+  let c = (await k.readAsync())?.claudeAiOauth;
+  return c?.refreshToken ? {
+    refreshToken: c.refreshToken,
+    clientId: c.clientId
+  } : null
+}
+async function Tt(k) {
+  if (k === null) return;
+  await $k(k.refreshToken, k.clientId);
+  try {
+    await Un().mutate((c) => ({
+      ...c,
+      claudeAiOauth: void 0
+    }))
+  } catch (c) {
+    t(`Console profile login: could not clear the replaced claude.ai login record: ${l(c)}`, {
+      level: "error"
+    })
+  }
+}
+
+function Ot(k) {
+  if (!k.scopes.includes(rE)) return Error("The organization didn't grant inference access to this sign-in, so Claude Code can't use it.");
+  if (!k.refreshToken) return Error("The sign-in came back without a refresh token, so it would stop working within hours. Try again.");
+  if (k.expiresAt === null || !Number.isFinite(k.expiresAt)) return Error("The sign-in came back without the token's expiry, so it can't be refreshed on time. Try again.");
+  return {
+    refreshToken: k.refreshToken,
+    expiresAtMs: k.expiresAt
+  }
+}
+async function et(k) {
+  if (k.refreshToken) await $k(k.refreshToken, x7e)
+}
+N();
+var Et = "urn:ietf:params:oauth:grant-type:device_code",
+  Pt = "claude_code",
+  Rt = new Set(["UNABLE_TO_VERIFY_LEAF_SIGNATURE", "UNABLE_TO_GET_ISSUER_CERT", "UNABLE_TO_GET_ISSUER_CERT_LOCALLY", "DEPTH_ZERO_SELF_SIGNED_CERT", "SELF_SIGNED_CERT_IN_CHAIN", "CERT_UNTRUSTED"]),
+  De = 254,
+  Lt = "Sign-in timed out while waiting for you to continue. Try again.",
+  rt = "The gateway's TLS certificate changed during sign-in: it no longer matches the one you trusted. Aborting without storing credentials; start the sign-in again to review the new certificate.";
+
+function Ue(k) {
+  let c = l(k);
+  if (c.includes(uYe)) return "Claude Code's credentials file (where a gateway's TLS pin is kept) is a symlink, which it does not follow. Replace the link with the file itself and try again.";
+  if (c.includes(iut)) return "Claude Code's credentials file (where a gateway's TLS pin is kept) could not be read. Try again; if it keeps failing, check the file.";
+  if (aut(k) !== void 0) return rt;
+  return c
+}
+
+function Dt(k) {
+  let c = k?.response?.data;
+  if (typeof c !== "object" || c === null) return;
+  let D = c.error_description;
+  if (typeof D !== "string") return;
+  return re(hf(D), 300).trim() || void 0
+}
+
+function Ut(k) {
+  let c = v(k) ?? v(k?.cause),
+    D = l(k);
+  if (!(c !== void 0 && Rt.has(c) || /self[- ]?signed certificate|unable to (verify the first|get (local )?issuer) certificate|certificate not trusted/i.test(D))) return null;
+  return "Could not verify the gateway's TLS certificate. If your gateway uses a private CA or self-signed certificate: Claude Code reads your OS trust " + "store by default on the native binary and Node \u226522.15, so if the CA is " + "already installed there, upgrade to a current runtime. Otherwise set " + "NODE_EXTRA_CA_CERTS to the CA certificate PEM file before starting \u2014 " + "e.g. `export NODE_EXTRA_CA_CERTS=/path/to/ca.pem` \u2014 or add it under " + "`env.NODE_EXTRA_CA_CERTS` in your user settings (~/.claude/settings.json)."
+}
+var Mt = f(() => lt({
+  device_authorization_endpoint: de().optional(),
+  token_endpoint: de().optional(),
+  revocation_endpoint: de().nullish().catch(void 0)
+}));
+
+function ot(k, c, D) {
+  let z = tKn(k, c);
+  if (z) return z;
+  if (c) t(`[gateway-login] ignoring advertised endpoint ${c} (not same-origin with ${k}); using ${D}`);
+  return `${k}${D}`
+}
+var It = f(() => lt({
+  device_code: de(),
+  user_code: de(),
+  verification_uri: de(),
+  verification_uri_complete: de().optional(),
+  expires_in: fn(),
+  interval: fn().optional()
+}));
+
+function Me({
+  onDone: k,
+  onCancel: c,
+  initialUrl: D,
+  internalNetworks: z,
+  screenLocked: M
+}) {
+  let {
+    credentials: C
+  } = ke(), [A, L] = g({
+    state: "url_input"
+  }), j = void 0, P = D ?? (void 0)?.url, Y = (void 0)?.caption ?? "Your organization's gateway URL (set by managed settings):", O = T(0), ee = T(!1);
+  R(() => () => {
+    O.current += 1
+  }, []);
+  let ne = M ? () => L({
+    state: "url_input"
+  }) : c;
+
+  function ae() {
+    O.current += 1, ne()
+  }
+  async function le(B) {
+    let a = ++O.current;
+    L({
+      state: "connecting"
+    });
+    try {
+      let u = cHt(B),
+        h = await GNr(u, z);
+      if (a !== O.current) return;
+      let o = h ? await sut(u, 1e4, h) : void 0;
+      if (a !== O.current) return;
+      let x = await tl.get(`${u}/.well-known/oauth-authorization-server`, {
+        headers: {
+          "User-Agent": $a()
+        },
+        timeout: 1e4
+      });
+      if (a !== O.current) return;
+      let U = Mt().safeParse(x.data),
+        E = U.success ? U.data : void 0,
+        F = tKn(u, E?.revocation_endpoint);
+      if (E?.revocation_endpoint && !F) t(`[gateway-login] ignoring advertised revocation endpoint ${E.revocation_endpoint} (not same-origin with ${u}); sign-out will not revoke`);
+      let H = {
+          deviceAuthorizationEndpoint: ot(u, E?.device_authorization_endpoint, "/oauth/device_authorization"),
+          tokenEndpoint: ot(u, E?.token_endpoint, "/oauth/token"),
+          ...F && {
+            revocationEndpoint: F
+          }
+        },
+        {
+          hostname: oe,
+          fingerprint: q,
+          localAddress: ce,
+          remoteAddress: Ae
+        } = o ?? await sut(u);
+      if (a !== O.current) return;
+      let pe = await LFe(oe, C);
+      if (a !== O.current) return;
+      if (pe === q) await me(u, H, q);
+      else L({
+        state: "trust_prompt",
+        url: u,
+        hostname: oe,
+        fingerprint: q,
+        previouslyPinned: pe,
+        endpoints: H,
+        ...h && {
+          route: `from ${ce} to ${Ae}, both inside declared ${h}`
+        }
+      })
+    } catch (u) {
+      if (a !== O.current) return;
+      let h = Ut(u);
+      L(h ? {
+        state: "error",
+        message: h,
+        detail: l(u)
+      } : {
+        state: "error",
+        message: Ue(u)
+      })
+    }
+  }
+  async function me(B, a, u) {
+    let h = ++O.current;
+    L({
+      state: "connecting"
+    });
+    try {
+      let o = NFe(u, a.deviceAuthorizationEndpoint),
+        {
+          data: x
+        } = await tl.post(a.deviceAuthorizationEndpoint, new URLSearchParams({
+          surface: Pt
+        }).toString(), {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "User-Agent": $a()
+          },
+          timeout: 1e4,
+          maxRedirects: 0,
+          ...o && {
+            httpsAgent: o
+          }
+        });
+      if (h !== O.current) return;
+      let U = It().safeParse(x);
+      if (!U.success) throw Error("gateway device authorization endpoint returned malformed response");
+      let E = U.data;
+      Ko(E.verification_uri_complete ?? E.verification_uri), L({
+        state: "polling",
+        url: B,
+        userCode: E.user_code,
+        verificationUri: E.verification_uri
+      }), await b(B, a, E.device_code, E.interval ?? 5, h, u)
+    } catch (o) {
+      if (h !== O.current) return;
+      if (nKn(o) === "slow_down") {
+        L({
+          state: "error",
+          message: "The gateway is limiting sign-in attempts right now. Wait a few minutes and try again.",
+          detail: Dt(o)
+        });
+        return
+      }
+      L({
+        state: "error",
+        message: Ue(o)
+      })
+    }
+  }
+  async function b(B, a, u, h, o, x) {
+    let {
+      tokenEndpoint: U
+    } = a, E = Math.max(1, h);
+    while (o === O.current) {
+      if (await Q(E * 1000), o !== O.current) return;
+      try {
+        let F = NFe(x, U),
+          {
+            data: H
+          } = await tl.post(U, new URLSearchParams({
+            grant_type: Et,
+            device_code: u
+          }).toString(), {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "User-Agent": $a()
+            },
+            timeout: 1e4,
+            maxRedirects: 0,
+            ...F && {
+              httpsAgent: F
+            }
+          });
+        if (o !== O.current) return;
+        let oe = qNr().safeParse(H);
+        if (!oe.success) throw Error("gateway token endpoint returned malformed response");
+        await ie(B, a, oe.data, o);
+        return
+      } catch (F) {
+        if (o !== O.current) return;
+        let H = nKn(F);
+        if (H === "authorization_pending") continue;
+        if (H === "slow_down") {
+          E += 5;
+          continue
+        }
+        if (H === "expired_token") {
+          L({
+            state: "error",
+            message: "Sign-in timed out before the browser flow completed. Try again."
+          });
+          return
+        }
+        if (H === "access_denied") {
+          L({
+            state: "error",
+            message: "Sign-in was denied in the browser."
+          });
+          return
+        }
+        L({
+          state: "error",
+          message: Ue(F)
+        });
+        return
+      }
+    }
+  }
+  async function ie(B, a, u, h) {
+    let o = u.email ?? "",
+      x = re(o, 16 * De),
+      U = Sxe(x),
+      E = x.length < o.length || U.length > De ? `${re(U,De)}\u2026` : U,
+      F = {
+        url: B,
+        jwt: u.access_token,
+        expiresAt: Date.now() + u.expires_in * 1000,
+        tokenEndpoint: a.tokenEndpoint,
+        ...a.revocationEndpoint && {
+          revocationEndpoint: a.revocationEndpoint
+        },
+        ...u.refresh_token && {
+          idpRefreshToken: u.refresh_token
+        },
+        ...E && {
+          email: E
+        }
+      },
+      {
+        hostname: H,
+        fingerprint: oe
+      } = await sut(B);
+    if (h !== O.current) return;
+    let q = await LFe(H, C);
+    if (h !== O.current) return;
+    if (q !== oe) {
+      L({
+        state: "error",
+        message: rt
+      });
+      return
+    }
+    if (E) {
+      ee.current = !1, L({
+        state: "confirm_account",
+        auth: F,
+        email: E,
+        saving: !1
+      });
+      return
+    }
+    await K(F, h)
+  }
+  async function K(B, a) {
+    try {
+      await V0o(B, C)
+    } catch (u) {
+      if (a !== O.current) return;
+      let h = l(u);
+      t(`[gateway-login] secureStorage write failed: ${h}`, {
+        level: "error"
+      }), L({
+        state: "error",
+        message: h
+      });
+      return
+    }
+    if (a !== O.current) return;
+    k()
+  }
+  let J = A.state === "url_input";
+  switch (ze("confirm:yes", () => {
+      if (P) le(P)
+    }, {
+      context: "Confirmation",
+      isActive: J
+    }), ze("confirm:no", M ? () => !1 : c, {
+      context: "Confirmation",
+      isActive: J
+    }), K_((B, a) => a.escape, {
+      isActive: A.state === "confirm_account" && A.saving
+    }), A.state) {
+    case "url_input":
+      if (!P) return r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [e(n, {
+          bold: !0,
+          children: "Cloud gateway"
+        }), e(n, {
+          color: "warning",
+          children: "Gateway login is required by your organization's policy, but no gateway URL is configured. Contact your IT administrator."
+        })]
+      });
+      return r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [e(n, {
+          bold: !0,
+          children: "Cloud gateway"
+        }), e(n, {
+          children: Y
+        }), e(s, {
+          borderDimColor: !0,
+          borderStyle: "round",
+          paddingLeft: 1,
+          children: e(n, {
+            children: P
+          })
+        }), r(n, {
+          dimColor: !0,
+          children: ["Press Enter to connect", M ? "" : " \xB7 Esc to cancel"]
+        })]
+      });
+    case "polling":
+      return e(at, {
+        userCode: A.userCode,
+        verificationUri: A.verificationUri,
+        onCancel: ae
+      });
+    case "connecting":
+      return e(it, {
+        label: "Connecting to gateway\u2026",
+        onCancel: ae
+      });
+    case "trust_prompt":
+      return r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [r(n, {
+          bold: !0,
+          children: ["Trust gateway ", e(n, {
+            color: "suggestion",
+            children: A.hostname
+          }), "?"]
+        }), A.previouslyPinned ? e(n, {
+          color: "warning",
+          children: "The TLS certificate for this gateway has changed since you last connected. Only continue if your administrator has confirmed a certificate rotation."
+        }) : e(n, {
+          children: "You haven't connected to this gateway before. Once trusted, it can push settings to this machine that execute commands and change your environment. Only continue if this is your organization's gateway."
+        }), A.route && r(n, {
+          dimColor: !0,
+          children: ["Connecting ", A.route]
+        }), r(n, {
+          dimColor: !0,
+          children: ["Certificate fingerprint (SHA-256): ", A.fingerprint.slice(0, 16), "\u2026"]
+        }), e(qn, {
+          hideIndexes: !0,
+          confirmLabel: "Yes, trust this gateway",
+          cancelLabel: M ? "No, go back" : "No, cancel login",
+          focus: "cancel",
+          onConfirm: () => {
+            let B = O.current;
+            W0o(A.hostname, A.fingerprint, C).then(() => {
+              if (B !== O.current) return;
+              return me(A.url, A.endpoints, A.fingerprint)
+            }).catch((a) => {
+              if (B !== O.current) return;
+              L({
+                state: "error",
+                message: l(a)
+              })
+            })
+          },
+          onCancel: ae
+        })]
+      });
+    case "confirm_account":
+      return r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [r(n, {
+          bold: !0,
+          children: ["Signed in to Cloud gateway as", " ", e(n, {
+            color: "suggestion",
+            children: A.email
+          })]
+        }), A.saving ? r(s, {
+          gap: 1,
+          children: [e(Rs, {}), e(n, {
+            dimColor: !0,
+            children: "Finishing sign-in\u2026"
+          })]
+        }) : r(V, {
+          children: [e(n, {
+            children: "Continue only if this is your account; that organization's settings will then apply to this machine. Otherwise go back: nothing is saved, and you can sign in again."
+          }), e(qn, {
+            hideIndexes: !0,
+            focus: "cancel",
+            confirmLabel: "Yes, continue",
+            cancelLabel: M ? "No, go back" : "No, cancel login",
+            onConfirm: () => {
+              if (ee.current) return;
+              if (ee.current = !0, A.auth.expiresAt <= Date.now() && !A.auth.idpRefreshToken) {
+                L({
+                  state: "error",
+                  message: Lt
+                });
+                return
+              }
+              let B = O.current;
+              L((a) => a.state === "confirm_account" ? {
+                ...a,
+                saving: !0
+              } : a), K(A.auth, B)
+            },
+            onCancel: () => {
+              if (ee.current) return;
+              ee.current = !0, t("[gateway-login] signed-in account declined; nothing saved"), ne()
+            }
+          })]
+        })]
+      });
+    case "error":
+      return e(st, {
+        message: A.message,
+        detail: A.detail,
+        onCancel: ne
+      })
+  }
+}
+
+function at(k) {
+  let M = w(13),
+    {
+      userCode: c,
+      verificationUri: D,
+      onCancel: z
+    } = k,
+    C;
+  if (M[0] === S) C = {
+    context: "Confirmation"
+  }, M[0] = C;
+  else C = M[0];
+  ze("confirm:no", z, C);
+  let A, L;
+  if (M[1] === S) A = e(n, {
+    bold: !0,
+    children: "Cloud gateway \xB7 sign in"
+  }), L = e(n, {
+    children: "A browser window should have opened. After signing in with your identity provider, confirm this code on the verification page:"
+  }), M[1] = A, M[2] = L;
+  else A = M[1], L = M[2];
+  let j;
+  if (M[3] !== c) j = e(s, {
+    borderDimColor: !0,
+    borderStyle: "round",
+    paddingX: 2,
+    children: e(n, {
+      bold: !0,
+      color: "suggestion",
+      children: c
+    })
+  }), M[3] = c, M[4] = j;
+  else j = M[4];
+  let P;
+  if (M[5] === S) P = e(n, {
+    dimColor: !0,
+    children: "Browser didn't open? Visit:"
+  }), M[5] = P;
+  else P = M[5];
+  let Y;
+  if (M[6] !== D) Y = r(s, {
+    flexDirection: "column",
+    children: [P, e(n, {
+      dimColor: !0,
+      wrap: "wrap",
+      children: D
+    })]
+  }), M[6] = D, M[7] = Y;
+  else Y = M[7];
+  let O, ee;
+  if (M[8] === S) O = r(s, {
+    gap: 1,
+    children: [e(Rs, {}), e(n, {
+      dimColor: !0,
+      children: "Waiting for sign-in to complete in your browser\u2026"
+    })]
+  }), ee = e(n, {
+    dimColor: !0,
+    children: "Press Esc to cancel"
+  }), M[8] = O, M[9] = ee;
+  else O = M[8], ee = M[9];
+  let ne;
+  if (M[10] !== j || M[11] !== Y) ne = r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [A, L, j, Y, O, ee]
+  }), M[10] = j, M[11] = Y, M[12] = ne;
+  else ne = M[12];
+  return ne
+}
+
+function it(k) {
+  let z = w(7),
+    {
+      label: c,
+      onCancel: D
+    } = k,
+    M;
+  if (z[0] === S) M = {
+    context: "Confirmation"
+  }, z[0] = M;
+  else M = z[0];
+  ze("confirm:no", D, M);
+  let C;
+  if (z[1] === S) C = e(Rs, {}), z[1] = C;
+  else C = z[1];
+  let A;
+  if (z[2] !== c) A = r(s, {
+    gap: 1,
+    children: [C, e(n, {
+      children: c
+    })]
+  }), z[2] = c, z[3] = A;
+  else A = z[3];
+  let L;
+  if (z[4] === S) L = e(n, {
+    dimColor: !0,
+    children: "Press Esc to cancel"
+  }), z[4] = L;
+  else L = z[4];
+  let j;
+  if (z[5] !== A) j = r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [A, L]
+  }), z[5] = A, z[6] = j;
+  else j = z[6];
+  return j
+}
+
+function st(k) {
+  let M = w(9),
+    {
+      message: c,
+      detail: D,
+      onCancel: z
+    } = k,
+    C;
+  if (M[0] === S) C = {
+    context: "Confirmation"
+  }, M[0] = C;
+  else C = M[0];
+  ze("confirm:no", z, C);
+  let A;
+  if (M[1] !== c) A = r(n, {
+    color: "error",
+    children: ["Error: ", c]
+  }), M[1] = c, M[2] = A;
+  else A = M[2];
+  let L;
+  if (M[3] !== D) L = D && e(n, {
+    dimColor: !0,
+    children: D
+  }), M[3] = D, M[4] = L;
+  else L = M[4];
+  let j;
+  if (M[5] === S) j = e(n, {
+    dimColor: !0,
+    children: "Press Esc to go back"
+  }), M[5] = j;
+  else j = M[5];
+  let P;
+  if (M[6] !== A || M[7] !== L) P = r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [A, L, j]
+  }), M[6] = A, M[7] = L, M[8] = P;
+  else P = M[8];
+  return P
+}
+var Ye = "Paste code here if prompted > ",
+  Se = "The recommended sign-in isn't available on this machine";
+
+function $t(k) {
+  let c = Math.round(k / 86400);
+  if (c < 1) return "less than a day";
+  if (c === 365) return "1 year";
+  return `${c} ${I(c,"day")}`
+}
+
+function fue({
+  onDone: k,
+  onAuthSuccess: c,
+  onFreshPickerChange: D,
+  onAccountOnHold: z,
+  startingMessage: M,
+  mode: C = "login",
+  expiresIn: A,
+  forceLoginMethod: L,
+  urlOutdent: j = 0
+}) {
+  let P = ol(),
+    {
+      storageV5: Y,
+      credentials: O
+    } = ke(),
+    ee = ys((Z) => Z.proactivityLevel),
+    ne = ys((Z) => Z.toolPermissionContext),
+    ae = (P ? dU : 0) + j,
+    le = Je(),
+    {
+      forceLoginGatewayUrl: me,
+      gatewayInternalNetworks: b
+    } = H5e(),
+    ie = Tce(),
+    K = ie === "gateway",
+    J = K ? "gateway" : L ?? ie,
+    B = J === "claudeai" ? "Login method pre-selected: Subscription Plan (Claude Pro/Max)" : J === "console" ? "Login method pre-selected: API usage billing (Anthropic Console)" : null,
+    a = null,
+    u = vA(),
+    h = Yt(),
+    [o, x] = g(() => {
+      if (C === "setup-token") return {
+        state: "ready_to_start"
+      };
+      if (J === "claudeai" || J === "console") return {
+        state: "ready_to_start"
+      };
+      if (K) return {
+        state: "gateway_setup"
+      };
+      return {
+        state: "idle"
+      }
+    }),
+    U = T(!1);
+  R(() => {
+    if (o.state !== "idle" && o.state !== "platform_setup" && o.state !== "console_method") U.current = !0;
+    D?.(o.state === "idle" && !U.current)
+  }, [o.state, D]);
+  let [E, F] = g(""), [H, oe] = g(0), [q] = g(() => new cL), [ce, Ae] = g(() => C === "setup-token" || J === "claudeai"), [pe, yt] = g(!1), [Xe, Pe] = g(null), je = yHr(), be = Ie() === "firstParty" && !je && le.forceLoginOrgUUID === void 0 && J !== "claudeai", ye = le.forceLoginMethod !== void 0 && ce !== (le.forceLoginMethod === "claudeai"), he = typeof le.forceLoginOrgUUID === "string" && !ye ? le.forceLoginOrgUUID : void 0, [fe, ge] = g(!1), {
+    copiedVia: Re,
+    copy: Ce,
+    reset: Ke
+  } = MQ(o.state === "waiting_for_login" ? o.url : null), Ct = ve().columns - Ye.length - 1, [kt] = g(() => SR() && HL() !== "off");
+  R(() => {
+    if (J === "claudeai") i("tengu_oauth_claudeai_forced", {});
+    else if (J === "console") i("tengu_oauth_console_forced", {});
+    else if (K && !0 && C !== "setup-token") i("tengu_oauth_gateway_forced", {})
+  }, [J, K, C]), _r(() => {
+    if (o.state === "about_to_retry") x(o.nextState)
+  }, o.state === "about_to_retry" ? 1000 : null, [o]), ze("confirm:yes", () => {
+    i(o.state === "gateway_done" ? "tengu_oauth_gateway_done" : "tengu_oauth_success", {
+      loginWithClaudeAi: ce
+    }), k()
+  }, {
+    context: "Confirmation",
+    isActive: o.state === "success" && C !== "setup-token" || o.state === "gateway_done"
+  });
+  let At = ek(),
+    qe = T(!1);
+  ze("confirm:yes", () => {
+    if (qe.current) return;
+    qe.current = !0, Ee((Z) => ({
+      ...Z,
+      hasCompletedOnboarding: !0,
+      lastOnboardingVersion: {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION
+    }), Y).then(() => {
+      At.exit();
+      let Z = ee !== void 0 && ne !== void 0 ? vso({
+        proactivityLevel: ee,
+        toolPermissionContext: ne
+      }) : void 0;
+      import("B:/~BUN/root/chunk-br5arvvb.js").then((W) => W.execRelaunch(Z ? {
+        proactivity: Z
+      } : {}))
+    })
+  }, {
+    context: "Confirmation",
+    isActive: o.state === "bedrock_done" || o.state === "vertex_done"
+  }), ze("confirm:yes", () => x({
+    state: "platform_setup"
+  }), {
+    context: "Confirmation",
+    isActive: o.state === "aws_refresh_done"
+  }), ze("confirm:yes", () => {
+    if (o.state === "error" && o.toRetry) F(""), x({
+      state: "about_to_retry",
+      nextState: o.toRetry
+    })
+  }, {
+    context: "Confirmation",
+    isActive: o.state === "error" && !!o.toRetry
+  }), ze("confirm:yes", () => x({
+    state: "idle"
+  }), {
+    context: "Confirmation",
+    isActive: o.state === "account_on_hold" && C !== "setup-token"
+  }), R(() => {
+    if (/^c+$/.test(E) && o.state === "waiting_for_login" && fe) F(""), Ce(o.url)
+  }, [E, o, fe, Ce]);
+  async function vt(Z, W) {
+    if (!Z.trim()) {
+      F(""), oe(0);
+      return
+    }
+    try {
+      let [G, ue] = Z.split("#");
+      if (!G || !ue) {
+        x({
+          state: "error",
+          message: "Invalid code. Please make sure the full code was copied",
+          toRetry: {
+            state: "waiting_for_login",
+            url: W
+          }
+        });
+        return
+      }
+      i("tengu_oauth_manual_entry", {}), q.handleManualAuthCodeInput({
+        authorizationCode: G,
+        state: ue
+      })
+    } catch (G) {
+      d(G), x({
+        state: "error",
+        message: l(G),
+        toRetry: {
+          state: "waiting_for_login",
+          url: W
+        }
+      })
+    }
+  }
+  let Ze = se(async () => {
+      let Z = (W) => {
+        if (Ke(), ge(!1), x({
+            state: "waiting_for_login",
+            url: W
+          }), KH()) ge(!0);
+        else h.setTimeout(() => ge(!0), 3000)
+      };
+      Pe(null);
+      try {
+        if (i("tengu_oauth_flow_start", {
+            loginWithClaudeAi: ce
+          }), pe && C !== "setup-token") {
+          if (!be) throw Error("Settings on this machine pin the login method or organization, so signing in without an API key is not available here.");
+          try {
+            await tt(q, async (G) => Z(G), {
+              orgUUID: he
+            }), x({
+              state: "success"
+            }), c?.(), aM({
+              message: "Claude Code login successful",
+              notificationType: "auth_success"
+            }, u, {
+              storageV5: Y,
+              credentials: O
+            });
+            return
+          } catch (G) {
+            if (!(G instanceof _e) || !G.fallbackCures) throw G;
+            let ue = zs(l(G));
+            Pe({
+              cause: G.causeSummary !== null ? zs(G.causeSummary) : ue,
+              message: ue
+            }), t(`Keyless Console sign-in unavailable here, continuing with the API-key sign-in: ${ue}`, {
+              level: "warn"
+            })
+          }
+        }
+        let W = await q.startOAuthFlow(async (G) => Z(G), {
+          loginWithClaudeAi: ce,
+          inferenceOnly: C === "setup-token",
+          expiresIn: C === "setup-token" ? A ?? LY : void 0,
+          orgUUID: he
+        }).catch((G) => {
+          if (G instanceof $q) throw G;
+          let ue = G.message.includes("Token exchange failed"),
+            Qe = nK(G);
+          throw x({
+            state: "error",
+            message: Qe ?? (ue ? "Failed to exchange authorization code for access token. Please try again." : G.message),
+            toRetry: C === "setup-token" ? {
+              state: "ready_to_start"
+            } : {
+              state: "idle"
+            }
+          }), i("tengu_oauth_token_exchange_error", {
+            ...Id(G),
+            ssl_error: Qe !== null
+          }), G
+        });
+        if (C === "setup-token") x({
+          state: "success",
+          token: W.accessToken,
+          expiresAt: W.expiresAt ?? void 0
+        }), c?.();
+        else {
+          await APe(W, {
+            storageV5: Y,
+            credentials: O
+          });
+          let G = await wN(O);
+          if (!G.valid) throw Error(G.message);
+          x({
+            state: "success"
+          }), c?.(), aM({
+            message: "Claude Code login successful",
+            notificationType: "auth_success"
+          }, u, {
+            storageV5: Y,
+            credentials: O
+          })
+        }
+      } catch (W) {
+        if (Tfn(W)) {
+          x({
+            state: "account_on_hold",
+            message: Efn(tAe(W.errorUri))
+          }), i("tengu_oauth_error", {
+            account_on_hold: !0
+          });
+          return
+        }
+        let G = W instanceof $q ? W.displayMessage : l(W),
+          ue = nK(W);
+        x({
+          state: "error",
+          message: ue ?? G,
+          ...Fdt(W) && {
+            verbatim: !0
+          },
+          toRetry: {
+            state: C === "setup-token" ? "ready_to_start" : "idle"
+          }
+        }), i("tengu_oauth_error", {
+          ...Id(W),
+          ssl_error: ue !== null
+        })
+      }
+    }, [q, ce, pe, be, C, A, he, u, h, c, Y, O, Ke]),
+    Le = T(!1);
+  return R(() => {
+    if (o.state === "ready_to_start" && !Le.current) Le.current = !0, process.nextTick((Z, W) => {
+      Z().finally(() => {
+        W.current = !1
+      })
+    }, Ze, Le)
+  }, [o.state, Ze]), _r(() => {
+    i("tengu_oauth_success", {
+      loginWithClaudeAi: ce
+    }), k()
+  }, C === "setup-token" && o.state === "success" ? 500 : null, [C, o, ce, k]), _r(() => z?.(), C === "setup-token" && o.state === "account_on_hold" ? 500 : null, [C, o, z]), R(() => () => {
+    q.cleanup()
+  }, [q]), r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [o.state === "waiting_for_login" && fe && r(s, {
+      flexDirection: "column",
+      gap: 1,
+      paddingBottom: 1,
+      marginX: ae ? -ae : void 0,
+      children: [r(s, {
+        flexDirection: "column",
+        paddingX: ae,
+        children: [r(s, {
+          children: [r(n, {
+            dimColor: !0,
+            children: ["Browser didn't open? Use the url below to sign in", " "]
+          }), e(q2, {
+            via: Re
+          })]
+        }), e(K2, {
+          via: Re
+        })]
+      }), e(s, {
+        children: e(bt, {
+          url: o.url,
+          assumeSupport: !0,
+          children: e(n, {
+            dimColor: !0,
+            children: o.url
+          })
+        })
+      }), kt && e(s, {
+        paddingX: ae,
+        children: r(n, {
+          dimColor: !0,
+          children: ["Hold ", nLe(), " while selecting to use your terminal's native copy"]
+        })
+      })]
+    }, "urlToCopy"), C === "setup-token" && o.state === "success" && o.token && r(s, {
+      flexDirection: "column",
+      gap: 1,
+      paddingTop: 1,
+      children: [e(n, {
+        color: "success",
+        children: "\u2713 Long-lived authentication token created successfully!"
+      }), r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [r(n, {
+          children: ["Your OAuth token (valid for", " ", $t(o.expiresAt !== void 0 && Number.isFinite(o.expiresAt) ? Math.round((o.expiresAt - Date.now()) / 1000) : A ?? LY), "):"]
+        }), e(n, {
+          color: "warning",
+          children: o.token
+        }), e(n, {
+          dimColor: !0,
+          children: "Store this token securely. You won't be able to see it again."
+        }), e(n, {
+          dimColor: !0,
+          children: "Use this token by setting: export CLAUDE_CODE_OAUTH_TOKEN=<token>"
+        })]
+      })]
+    }, "tokenOutput"), e(s, {
+      flexDirection: "column",
+      gap: 1,
+      children: e(wt, {
+        oauthStatus: o,
+        mode: C,
+        startingMessage: M,
+        forcedMethodMessage: B,
+        gatewayUnsupportedWarning: null,
+        forceLoginGatewayUrl: me,
+        gatewayInternalNetworks: b,
+        gatewayScreenLocked: K,
+        keyMintFallbackReason: Xe,
+        showPastePrompt: fe,
+        pastedCode: E,
+        setPastedCode: F,
+        cursorOffset: H,
+        setCursorOffset: oe,
+        textInputColumns: Ct,
+        handleSubmitCode: vt,
+        setOAuthStatus: x,
+        setLoginWithClaudeAi: Ae,
+        setConsoleProfileLogin: yt,
+        consoleProfileLoginAllowed: be,
+        onAuthSuccess: c
+      })
+    })]
+  })
+}
+
+function Ve(k) {
+  let D = w(4),
+    {
+      onComplete: c
+    } = k,
+    z;
+  if (D[0] !== c) z = () => {
+    let M = Sce();
+    if (!M) {
+      c(!1);
+      return
+    }
+    if (FFe() && !ps()) {
+      c(!1);
+      return
+    }
+    let C = new AbortController;
+    return Tun(M, C.signal).then((A) => {
+      if (C.signal.aborted) {
+        return
+      }
+      if (A) rJ(), gYe();
+      c(A)
+    }), () => C.abort()
+  }, D[0] = c, D[1] = z;
+  else z = D[1];
+  let L;
+  if (D[2] === S) L = [], D[2] = L;
+  else L = D[2];
+  R(z, L);
+  let j;
+  if (D[3] === S) j = r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(s, {
+      children: [e(Rs, {}), e(n, {
+        children: "Running awsAuthRefresh\u2026"
+      })]
+    }), e(P1e, {})]
+  }), D[3] = j;
+  else j = D[3];
+  return j
+}
+
+function wt(k) {
+  let u = w(122),
+    {
+      oauthStatus: c,
+      mode: D,
+      startingMessage: z,
+      forcedMethodMessage: M,
+      gatewayUnsupportedWarning: C,
+      forceLoginGatewayUrl: A,
+      gatewayInternalNetworks: L,
+      gatewayScreenLocked: j,
+      keyMintFallbackReason: P,
+      showPastePrompt: Y,
+      pastedCode: O,
+      setPastedCode: ee,
+      cursorOffset: ne,
+      setCursorOffset: ae,
+      textInputColumns: le,
+      handleSubmitCode: me,
+      setOAuthStatus: b,
+      setLoginWithClaudeAi: ie,
+      setConsoleProfileLogin: K,
+      consoleProfileLoginAllowed: J,
+      onAuthSuccess: B
+    } = k;
+  switch (c.state) {
+    case "idle": {
+      const a = z ? z : "Claude Code can be used with your Claude subscription or billed based on API usage through your Console account.";
+      let h;
+      if (u[0] !== a) h = e(n, {
+        bold: !0,
+        children: a
+      }), u[0] = a, u[1] = h;
+      else h = u[1];
+      let o;
+      if (u[2] !== C) o = C && e(n, {
+        color: "warning",
+        children: C
+      }), u[2] = C, u[3] = o;
+      else o = u[3];
+      let x;
+      if (u[4] === S) x = e(n, {
+        children: "Select login method:"
+      }), u[4] = x;
+      else x = u[4];
+      let U;
+      if (u[5] === S) U = {
+        label: r(n, {
+          children: ["Claude account with subscription \xB7", " ", e(n, {
+            dimColor: !0,
+            children: "Pro, Max, Team, or Enterprise"
+          }), !1]
+        }),
+        value: "claudeai"
+      }, u[5] = U;
+      else U = u[5];
+      let E;
+      if (u[6] === S) E = {
+        label: r(n, {
+          children: ["Anthropic Console account \xB7", " ", e(n, {
+            dimColor: !0,
+            children: "API usage billing"
+          })]
+        }),
+        value: "console"
+      }, u[6] = E;
+      else E = u[6];
+      let F;
+      if (u[7] === S) F = [U, E, {
+        label: r(n, {
+          children: ["3rd-party platform \xB7", " ", e(n, {
+            dimColor: !0,
+            children: "Amazon Bedrock, Microsoft Foundry, or Vertex AI"
+          })]
+        }),
+        value: "platform"
+      }], u[7] = F;
+      else F = u[7];
+      let H;
+      if (u[8] !== J || u[9] !== K || u[10] !== ie || u[11] !== b) H = e(s, {
+        children: e(Fe, {
+          options: F,
+          onChange: (oe) => {
+            if (oe === "platform") i("tengu_oauth_platform_selected", {}), b({
+              state: "platform_setup"
+            });
+            else if (oe === "claudeai") i("tengu_oauth_claudeai_selected", {}), ie(!0), K(!1), b({
+              state: "ready_to_start"
+            });
+            else if (J) i("tengu_oauth_console_selected", {}), b({
+              state: "console_method"
+            });
+            else i("tengu_oauth_console_selected", {}), ie(!1), K(!1), b({
+              state: "ready_to_start"
+            })
+          }
+        })
+      }), u[8] = J, u[9] = K, u[10] = ie, u[11] = b, u[12] = H;
+      else H = u[12];
+      let q;
+      if (u[13] !== h || u[14] !== o || u[15] !== H) q = r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [h, o, x, H]
+      }), u[13] = h, u[14] = o, u[15] = H, u[16] = q;
+      else q = u[16];
+      return q
+    }
+    case "gateway_setup": {
+      let a;
+      if (u[17] !== B || u[18] !== b) a = () => {
+        B?.(), b({
+          state: "gateway_done"
+        })
+      }, u[17] = B, u[18] = b, u[19] = a;
+      else a = u[19];
+      let h;
+      if (u[20] !== b) h = () => b({
+        state: "idle"
+      }), u[20] = b, u[21] = h;
+      else h = u[21];
+      let o;
+      if (u[22] !== A || u[23] !== L || u[24] !== j || u[25] !== a || u[26] !== h) o = e(Me, {
+        initialUrl: A,
+        internalNetworks: L,
+        screenLocked: j,
+        onDone: a,
+        onCancel: h
+      }), u[22] = A, u[23] = L, u[24] = j, u[25] = a, u[26] = h, u[27] = o;
+      else o = u[27];
+      return o
+    }
+    case "gateway_done": {
+      let a;
+      if (u[28] === S) a = e(n, {
+        color: "success",
+        children: "Connected to Cloud gateway."
+      }), u[28] = a;
+      else a = u[28];
+      let h;
+      if (u[29] === S) h = r(s, {
+        flexDirection: "column",
+        gap: 1,
+        marginTop: 1,
+        children: [a, r(n, {
+          dimColor: !0,
+          children: ["Press ", e(n, {
+            bold: !0,
+            children: "Enter"
+          }), " to continue."]
+        })]
+      }), u[29] = h;
+      else h = u[29];
+      return h
+    }
+    case "console_method": {
+      let a, h;
+      if (u[30] === S) a = e(n, {
+        bold: !0,
+        children: "Anthropic Console account"
+      }), h = e(n, {
+        children: "How do you want to sign in?"
+      }), u[30] = a, u[31] = h;
+      else a = u[30], h = u[31];
+      let o;
+      if (u[32] === S) o = {
+        label: r(n, {
+          children: ["Sign in with your Console account", " ", e(n, {
+            dimColor: !0,
+            children: "(recommended)"
+          })]
+        }),
+        value: "wif"
+      }, u[32] = o;
+      else o = u[32];
+      let x;
+      if (u[33] === S) x = e(n, {
+        dimColor: !0,
+        children: "(legacy)"
+      }), u[33] = x;
+      else x = u[33];
+      let U;
+      if (u[34] === S) U = [o, {
+        label: r(n, {
+          children: ["Create an API key ", x, " \xB7", " ", e(n, {
+            dimColor: !0,
+            children: "adds a key to your Console workspace"
+          })]
+        }),
+        value: "api-key"
+      }, {
+        label: "Go back",
+        value: "back"
+      }], u[34] = U;
+      else U = u[34];
+      let E;
+      if (u[35] !== b) E = () => b({
+        state: "idle"
+      }), u[35] = b, u[36] = E;
+      else E = u[36];
+      let F;
+      if (u[37] !== K || u[38] !== ie || u[39] !== b) F = (ce) => {
+        if (ce === "back") {
+          b({
+            state: "idle"
+          });
+          return
+        }
+        if (ie(!1), ce === "wif") i("tengu_oauth_console_token_selected", {}), K(!0);
+        else i("tengu_oauth_console_api_key_selected", {}), K(!1);
+        b({
+          state: "ready_to_start"
+        })
+      }, u[37] = K, u[38] = ie, u[39] = b, u[40] = F;
+      else F = u[40];
+      let H;
+      if (u[41] !== E || u[42] !== F) H = r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [a, h, e(s, {
+          children: e(Fe, {
+            options: U,
+            onCancel: E,
+            onChange: F
+          })
+        })]
+      }), u[41] = E, u[42] = F, u[43] = H;
+      else H = u[43];
+      return H
+    }
+    case "platform_setup": {
+      let a;
+      if (u[44] === S) a = Sce(), u[44] = a;
+      else a = u[44];
+      let Ae = a;
+      let h;
+      if (u[45] === S) h = e(n, {
+        bold: !0,
+        children: "Using 3rd-party platforms"
+      }), u[45] = h;
+      else h = u[45];
+      let o, x;
+      if (u[46] === S) o = {
+        label: r(n, {
+          children: ["Amazon Bedrock \xB7 ", e(n, {
+            dimColor: !0,
+            children: "interactive setup"
+          })]
+        }),
+        value: "bedrock"
+      }, x = Ae ? [{
+        label: r(n, {
+          children: ["Claude Platform on AWS \xB7", " ", e(n, {
+            dimColor: !0,
+            children: "refresh credentials"
+          })]
+        }),
+        value: "aws_refresh"
+      }] : [], u[46] = o, u[47] = x;
+      else o = u[46], x = u[47];
+      let U;
+      if (u[48] === S) U = {
+        label: r(n, {
+          children: ["Microsoft Foundry \xB7 ", e(n, {
+            dimColor: !0,
+            children: "opens docs"
+          })]
+        }),
+        value: "foundry"
+      }, u[48] = U;
+      else U = u[48];
+      let E;
+      if (u[49] === S) E = [o, ...x, U, {
+        label: r(n, {
+          children: ["Google Vertex AI \xB7 ", e(n, {
+            dimColor: !0,
+            children: "interactive setup"
+          })]
+        }),
+        value: "vertex"
+      }, {
+        label: "Go back",
+        value: "back"
+      }], u[49] = E;
+      else E = u[49];
+      let F;
+      if (u[50] !== b) F = e(Fe, {
+        options: E,
+        onChange: (pe) => {
+          yt: switch (pe) {
+            case "bedrock": {
+              i("tengu_oauth_bedrock_wizard_launched", {}), b({
+                state: "bedrock_wizard"
+              });
+              break yt
+            }
+            case "aws_refresh": {
+              i("tengu_oauth_aws_refresh_launched", {}), b({
+                state: "aws_refresh_running"
+              });
+              break yt
+            }
+            case "foundry": {
+              i("tengu_oauth_platform_docs_opened", {
+                platform: y("foundry")
+              }), Ko("https://code.claude.com/docs/en/microsoft-foundry"), b({
+                state: "idle"
+              });
+              break yt
+            }
+            case "vertex": {
+              i("tengu_oauth_vertex_wizard_launched", {}), b({
+                state: "vertex_wizard"
+              });
+              break yt
+            }
+            default: {
+              b({
+                state: "idle"
+              })
+            }
+          }
+        },
+        onCancel: () => b({
+          state: "idle"
+        })
+      }), u[50] = b, u[51] = F;
+      else F = u[51];
+      let H;
+      if (u[52] === S) H = r(n, {
+        dimColor: !0,
+        children: ["Foundry: ", e(bt, {
+          url: "https://code.claude.com/docs/en/microsoft-foundry",
+          children: "https://code.claude.com/docs/en/microsoft-foundry"
+        })]
+      }), u[52] = H;
+      else H = u[52];
+      let q;
+      if (u[53] !== F) q = r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [h, F, H]
+      }), u[53] = F, u[54] = q;
+      else q = u[54];
+      return q
+    }
+    case "aws_refresh_running": {
+      let a;
+      if (u[55] !== b) a = e(Ve, {
+        onComplete: (Xe) => b({
+          state: "aws_refresh_done",
+          ok: Xe
+        })
+      }), u[55] = b, u[56] = a;
+      else a = u[56];
+      return a
+    }
+    case "aws_refresh_done": {
+      let a;
+      if (u[57] !== c.ok) a = c.ok ? e(n, {
+        color: "success",
+        children: "AWS credentials refreshed."
+      }) : e(n, {
+        color: "error",
+        children: "awsAuthRefresh failed. Check the command in your settings and try running it in a separate terminal."
+      }), u[57] = c.ok, u[58] = a;
+      else a = u[58];
+      let h;
+      if (u[59] === S) h = r(n, {
+        dimColor: !0,
+        children: ["Press ", e(n, {
+          bold: !0,
+          children: "Enter"
+        }), " to continue."]
+      }), u[59] = h;
+      else h = u[59];
+      let o;
+      if (u[60] !== a) o = r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [a, h]
+      }), u[60] = a, u[61] = o;
+      else o = u[61];
+      return o
+    }
+    case "bedrock_wizard": {
+      let a;
+      if (u[62] !== b) a = e(nJe, {
+        onComplete: (Pe) => b({
+          state: "bedrock_done",
+          message: Pe
+        }),
+        onCancel: () => b({
+          state: "platform_setup"
+        }),
+        exitOnCtrlCD: !0
+      }), u[62] = b, u[63] = a;
+      else a = u[63];
+      return a
+    }
+    case "bedrock_done":
+    case "vertex_done": {
+      let a;
+      if (u[64] !== c.message) a = e(n, {
+        color: "success",
+        children: c.message
+      }), u[64] = c.message, u[65] = a;
+      else a = u[65];
+      let h;
+      if (u[66] === S) h = r(n, {
+        dimColor: !0,
+        children: ["Press ", e(n, {
+          bold: !0,
+          children: "Enter"
+        }), " to restart Claude Code."]
+      }), u[66] = h;
+      else h = u[66];
+      let o;
+      if (u[67] !== a) o = r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [a, h]
+      }), u[67] = a, u[68] = o;
+      else o = u[68];
+      return o
+    }
+    case "vertex_wizard": {
+      let a;
+      if (u[69] !== b) a = e(rJe, {
+        onComplete: (je) => b({
+          state: "vertex_done",
+          message: je
+        }),
+        onCancel: () => b({
+          state: "platform_setup"
+        }),
+        exitOnCtrlCD: !0
+      }), u[69] = b, u[70] = a;
+      else a = u[70];
+      return a
+    }
+    case "waiting_for_login": {
+      let a;
+      if (u[71] !== M) a = M && e(s, {
+        children: e(n, {
+          dimColor: !0,
+          children: M
+        })
+      }), u[71] = M, u[72] = a;
+      else a = u[72];
+      let h;
+      if (u[73] !== P) h = P && e(s, {
+        children: e(n, {
+          dimColor: !0,
+          children: `${Se} (${P.cause}), so this sign-in will create an API key.`
+        })
+      }), u[73] = P, u[74] = h;
+      else h = u[74];
+      let o;
+      if (u[75] !== Y) o = !Y && r(s, {
+        children: [e(Rs, {}), e(n, {
+          children: "Opening browser to sign in\u2026"
+        })]
+      }), u[75] = Y, u[76] = o;
+      else o = u[76];
+      let x;
+      if (u[77] !== ne || u[78] !== me || u[79] !== c.url || u[80] !== O || u[81] !== ae || u[82] !== ee || u[83] !== Y || u[84] !== le) x = Y && r(s, {
+        children: [e(n, {
+          children: Ye
+        }), e(Qn, {
+          value: O,
+          onChange: ee,
+          onSubmit: (be) => me(be, c.url),
+          cursorOffset: ne,
+          onChangeCursorOffset: ae,
+          columns: le,
+          mask: "*"
+        })]
+      }), u[77] = ne, u[78] = me, u[79] = c.url, u[80] = O, u[81] = ae, u[82] = ee, u[83] = Y, u[84] = le, u[85] = x;
+      else x = u[85];
+      let U;
+      if (u[86] !== a || u[87] !== h || u[88] !== o || u[89] !== x) U = r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [a, h, o, x]
+      }), u[86] = a, u[87] = h, u[88] = o, u[89] = x, u[90] = U;
+      else U = u[90];
+      return U
+    }
+    case "creating_api_key": {
+      let a;
+      if (u[91] === S) a = e(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: r(s, {
+          children: [e(Rs, {}), e(n, {
+            children: "Creating API key for Claude Code\u2026"
+          })]
+        })
+      }), u[91] = a;
+      else a = u[91];
+      return a
+    }
+    case "about_to_retry": {
+      let a;
+      if (u[92] === S) a = e(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: e(n, {
+          color: "permission",
+          children: "Retrying\u2026"
+        })
+      }), u[92] = a;
+      else a = u[92];
+      return a
+    }
+    case "success": {
+      let a;
+      if (u[93] !== D || u[94] !== c.token) a = D === "setup-token" && c.token ? null : r(V, {
+        children: [An()?.emailAddress ? r(n, {
+          dimColor: !0,
+          children: ["Logged in as", " ", e(n, {
+            children: An()?.emailAddress
+          })]
+        }) : null, r(n, {
+          color: "success",
+          children: ["Login successful. Press ", e(n, {
+            bold: !0,
+            children: "Enter"
+          }), " to continue\u2026"]
+        })]
+      }), u[93] = D, u[94] = c.token, u[95] = a;
+      else a = u[95];
+      let h;
+      if (u[96] !== a) h = e(s, {
+        flexDirection: "column",
+        children: a
+      }), u[96] = a, u[97] = h;
+      else h = u[97];
+      return h
+    }
+    case "account_on_hold": {
+      let a;
+      if (u[98] !== c.message) a = e(n, {
+        color: "warning",
+        children: c.message
+      }), u[98] = c.message, u[99] = a;
+      else a = u[99];
+      let h;
+      if (u[100] !== D) h = D !== "setup-token" && r(n, {
+        dimColor: !0,
+        children: ["Press ", e(n, {
+          bold: !0,
+          children: "Enter"
+        }), " to go back to login options."]
+      }), u[100] = D, u[101] = h;
+      else h = u[101];
+      let o;
+      if (u[102] !== a || u[103] !== h) o = r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [a, h]
+      }), u[102] = a, u[103] = h, u[104] = o;
+      else o = u[104];
+      return o
+    }
+    case "error": {
+      let ye, a, h, o;
+      if (u[105] !== c.message || u[106] !== c.verbatim) {
+        let he = c.verbatim ? /\s(https:\/\/\S+)$/.exec(c.message) : null;
+        let fe = he?.[1];
+        let ge = fe && sY(fe);
+        let Re = fe && ge ? fe.slice(ge.length) : "";
+        let Ce = ge ? JCe(ge) : void 0;
+        ye = s;
+        a = "column";
+        h = 1;
+        o = he && ge ? r(s, {
+          flexDirection: "column",
+          children: [e(n, {
+            color: "error",
+            children: c.message.slice(0, he.index)
+          }), r(n, {
+            color: "error",
+            children: [Ce ? e(bt, {
+              url: Ce,
+              assumeSupport: !0,
+              children: e(n, {
+                color: "error",
+                children: Ce
+              })
+            }) : ge, Re]
+          })]
+        }) : e(n, {
+          color: "error",
+          children: c.verbatim ? c.message : `OAuth error: ${c.message}`
+        });
+        u[105] = c.message, u[106] = c.verbatim, u[107] = ye, u[108] = a, u[109] = h, u[110] = o
+      } else ye = u[107], a = u[108], h = u[109], o = u[110];
+      let x;
+      if (u[111] !== P) x = P && e(n, {
+        dimColor: !0,
+        children: `${Se}: ${P.message}`
+      }), u[111] = P, u[112] = x;
+      else x = u[112];
+      let U;
+      if (u[113] !== c.toRetry) U = c.toRetry && e(s, {
+        marginTop: 1,
+        children: r(n, {
+          color: "permission",
+          children: ["Press ", e(n, {
+            bold: !0,
+            children: "Enter"
+          }), " to retry."]
+        })
+      }), u[113] = c.toRetry, u[114] = U;
+      else U = u[114];
+      let E;
+      if (u[115] !== ye || u[116] !== a || u[117] !== h || u[118] !== o || u[119] !== x || u[120] !== U) E = r(ye, {
+        flexDirection: a,
+        gap: h,
+        children: [o, x, U]
+      }), u[115] = ye, u[116] = a, u[117] = h, u[118] = o, u[119] = x, u[120] = U, u[121] = E;
+      else E = u[121];
+      return E
+    }
+    default: {
+      return null
+    }
+  }
+}
+export {
+  fue
+};

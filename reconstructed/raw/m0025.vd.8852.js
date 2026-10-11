@@ -1,0 +1,1 @@
+vd="local-command-stdout"

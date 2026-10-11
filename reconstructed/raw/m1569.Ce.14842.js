@@ -1,0 +1,1 @@
+function Ce(e){let r=Ot().safeParse(e);if(!r.success||Ge(r.data))throw new P('a pattern must be a JSON object (nested objects as subsets, arrays exact, v("x") binds)',"world: not a pattern");return r.data}

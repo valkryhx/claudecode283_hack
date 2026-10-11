@@ -1,0 +1,443 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  Yn
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  Q
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import {
+  R_e,
+  an
+} from "B:/~BUN/root/chunk-zksmb712.js";
+import {
+  m,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import {
+  ce,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  tce,
+  $k,
+  hN,
+  nce,
+  pKn
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  Un
+} from "B:/~BUN/root/chunk-zafy1b6k.js";
+import {
+  Ri
+} from "B:/~BUN/root/chunk-vpejnsp4.js";
+import {
+  Uw
+} from "B:/~BUN/root/chunk-2d028bdz.js";
+import {
+  cL
+} from "B:/~BUN/root/chunk-955bfe77.js";
+import {
+  join as D
+} from "path";
+async function ipe(r) {
+  try {
+    return (await Un().readAsync(r))?.designOauth ?? null
+  } catch (o) {
+    return t(`Failed to read design OAuth tokens: ${l(o)}`, {
+      level: "error"
+    }), null
+  }
+}
+async function y4t(r, o) {
+  try {
+    let n = !1,
+      s = await Un().mutate((e) => {
+        if (o?.onlyIf && !o.onlyIf(e.designOauth)) return n = !0, e;
+        return {
+          ...e,
+          designOauth: r
+        }
+      });
+    return n ? {
+      ...s,
+      raced: !0
+    } : s
+  } catch (n) {
+    return t(`Failed to save design OAuth tokens: ${l(n)}`, {
+      level: "error"
+    }), {
+      success: !1,
+      warning: "Failed to save design OAuth tokens"
+    }
+  }
+}
+async function T(r) {
+  try {
+    await Un().mutate((o) => {
+      if (!o.designOauth) return o;
+      if (!r(o.designOauth)) return o;
+      let n = {
+        ...o
+      };
+      return delete n.designOauth, n
+    })
+  } catch (o) {
+    t(`Failed to clear design OAuth tokens: ${l(o)}`, {
+      level: "error"
+    })
+  }
+}
+var y = ".design_oauth_refresh.lock",
+  A = 5;
+class O extends Error {
+  constructor() {
+    super("Design OAuth lock contention: another process is holding the refresh lock");
+    this.name = "DesignOauthLockContendedError"
+  }
+}
+async function C(r) {
+  let o = Uw();
+  await ce().mkdir(o);
+  let n = D(o, y),
+    s = !1,
+    e, c = 0;
+  while (!e) {
+    c++;
+    try {
+      e = await Ri(n, {
+        lockfilePath: n,
+        realpath: !1,
+        stale: 60000,
+        update: 5000,
+        onCompromised: (u) => {
+          s = !0, t(`Design OAuth refresh lock compromised: ${u.message}`, {
+            level: "error"
+          })
+        }
+      })
+    } catch (u) {
+      if (u.code === "ELOCKED") {
+        if (c < A) {
+          await Q(1000 + Math.random() * 1000);
+          continue
+        }
+        throw new O
+      }
+      throw u
+    }
+  }
+  let f = {
+      isCompromised: () => s
+    },
+    i = pKn();
+  try {
+    return await r(f)
+  } finally {
+    try {
+      try {
+        await e()
+      } catch (u) {
+        t(`Design OAuth refresh lock release failed: ${l(u)}`, {
+          level: "error"
+        })
+      }
+    } finally {
+      i()
+    }
+  }
+}
+async function _() {
+  let r = Un();
+  return r.invalidateCache?.(), (await r.readAsync())?.designOauth ?? null
+}
+async function sir(r) {
+  let o = await ipe(r);
+  if (!o?.accessToken) return {
+    ok: !1,
+    reason: "needs_design_login"
+  };
+  if (!hN(o.expiresAt)) return {
+    ok: !0,
+    accessToken: o.accessToken
+  };
+  try {
+    return await C(async (n) => {
+      let s = await _();
+      if (!s?.accessToken) return {
+        ok: !1,
+        reason: "needs_design_login"
+      };
+      if (!hN(s.expiresAt)) return {
+        ok: !0,
+        accessToken: s.accessToken
+      };
+      if (!s.refreshToken) {
+        let e = s.refreshToken;
+        return await T((c) => c.refreshToken === e), {
+          ok: !1,
+          reason: "needs_design_login"
+        }
+      }
+      if (!Array.isArray(s.scopes) || s.scopes.length === 0) {
+        let e = s.refreshToken;
+        return await T((c) => c.refreshToken === e), {
+          ok: !1,
+          reason: "needs_design_login"
+        }
+      }
+      if (n.isCompromised()) return p("oauth_token_refresh", "design_oauth_refresh_lock_compromised"), {
+        ok: !1,
+        reason: "design_refresh_failed",
+        detail: "another process is refreshing the design token"
+      };
+      try {
+        let e = await tce(s.refreshToken, {
+          clientId: s.clientId,
+          scopes: s.scopes,
+          skipProfileFetch: !0
+        });
+        if (!e.refreshToken || !e.expiresAt) {
+          if (e.refreshToken && e.refreshToken !== s.refreshToken) await $k(e.refreshToken, s.clientId);
+          return {
+            ok: !1,
+            reason: "design_refresh_failed",
+            detail: "refresh response missing refresh_token or expiry"
+          }
+        }
+        if (!R_e.every((i) => e.scopes.includes(i))) {
+          if (e.refreshToken) await $k(e.refreshToken, s.clientId);
+          let i = s.refreshToken;
+          return await T((u) => u.refreshToken === i), {
+            ok: !1,
+            reason: "needs_design_login",
+            detail: "refresh response missing design scopes"
+          }
+        }
+        let c = s.refreshToken,
+          f = await y4t({
+            accessToken: e.accessToken,
+            refreshToken: e.refreshToken,
+            expiresAt: e.expiresAt,
+            scopes: e.scopes.filter((i) => R_e.some((u) => u === i)),
+            clientId: s.clientId
+          }, {
+            onlyIf: (i) => i?.refreshToken === c
+          });
+        if (f.raced) {
+          await $k(e.refreshToken, s.clientId);
+          let i = await _();
+          return i?.accessToken && !hN(i.expiresAt) ? {
+            ok: !0,
+            accessToken: i.accessToken
+          } : {
+            ok: !1,
+            reason: "needs_design_login"
+          }
+        }
+        if (!f.success) t("Design OAuth refresh succeeded but persist failed; continuing with in-memory token.", {
+          level: "error"
+        });
+        return {
+          ok: !0,
+          accessToken: e.accessToken
+        }
+      } catch (e) {
+        if (n.isCompromised()) {
+          let c = await _();
+          if (c?.accessToken && !hN(c.expiresAt)) return {
+            ok: !0,
+            accessToken: c.accessToken
+          };
+          if (!nce(e)) p("oauth_token_refresh", "design_oauth_refresh_lock_compromised");
+          return {
+            ok: !1,
+            reason: "design_refresh_failed",
+            detail: "another process is refreshing the design token"
+          }
+        }
+        if (nce(e)) {
+          let c = s.refreshToken;
+          return await T((f) => f.refreshToken === c), {
+            ok: !1,
+            reason: "needs_design_login",
+            detail: "design authorization expired"
+          }
+        }
+        return {
+          ok: !1,
+          reason: "design_refresh_failed",
+          detail: l(e)
+        }
+      }
+    })
+  } catch (n) {
+    if (n instanceof O) p("oauth_token_refresh", "design_oauth_refresh_lock_contention");
+    else d(n), m("oauth_token_refresh", "design_oauth_refresh_lock_error");
+    return {
+      ok: !1,
+      reason: "design_refresh_failed",
+      detail: l(n)
+    }
+  }
+}
+
+function _4t() {
+  return a.CLAUDE_CODE_DESIGN_OAUTH_CLIENT_ID ?? an().DESIGN_CLIENT_ID
+}
+
+function OSe() {
+  return !_4t().startsWith("00000000-")
+}
+async function oCn(r, o) {
+  let n = R_e.filter((s) => !r.scopes.includes(s));
+  if (n.length > 0) {
+    if (r.refreshToken) await $k(r.refreshToken, o);
+    return {
+      ok: !1,
+      message: `The authorization server did not grant the design scopes (missing: ${n.join(", ")}) \u2014 the Claude Design app registration may be incomplete or out of date.`
+    }
+  }
+  if (!r.refreshToken || !r.expiresAt) {
+    if (r.refreshToken) await $k(r.refreshToken, o);
+    return {
+      ok: !1,
+      message: "The token response was missing a refresh token or expiry \u2014 cannot store a usable design credential."
+    }
+  }
+  return {
+    ok: !0,
+    slot: {
+      accessToken: r.accessToken,
+      refreshToken: r.refreshToken,
+      expiresAt: r.expiresAt,
+      scopes: r.scopes.filter((s) => R_e.some((e) => e === s)),
+      clientId: o
+    }
+  }
+}
+
+function JSt() {
+  return a.isSSH() || a.CLAUDE_CODE_REMOTE === !0 || Yn()
+}
+var I = 300000;
+async function b4t(r, o) {
+  if (r?.aborted) return {
+    ok: !1,
+    reason: "interrupted",
+    message: "Design login was interrupted."
+  };
+  if (!OSe()) return {
+    ok: !1,
+    reason: "unconfigured",
+    message: "The Claude Design OAuth client is not configured in this build. Set CLAUDE_CODE_DESIGN_OAUTH_CLIENT_ID to the registered client id, or update to a build with the registered client."
+  };
+  if (JSt() && !o?.onManualCode) return {
+    ok: !1,
+    reason: "remote",
+    message: "This session is remote, so the browser can't reach the local sign-in listener. Run /design-login instead \u2014 it supports pasting the authorization code manually."
+  };
+  let n = _4t(),
+    s = new cL,
+    e = !1,
+    c = !1,
+    f;
+  try {
+    let i = o?.onAuthUrl;
+    o?.onManualCode?.((g, k) => s.handleManualAuthCodeInput({
+      authorizationCode: g,
+      state: k
+    }));
+    let u = s.startOAuthFlow(i ? async (g, k) => {
+      i(k ?? g, g)
+    }: async () => {}, {
+      loginWithClaudeAi: !0,
+      oauthClient: {
+        clientId: n,
+        scopes: R_e
+      },
+      skipProfileFetch: !0,
+      successRedirectUrl: an().CLAUDEAI_SUCCESS_URL,
+      ...i && {
+        skipBrowserOpen: !0
+      }
+    });
+    u.then((g) => {
+      if (c && g.refreshToken) $k(g.refreshToken, n)
+    }).catch(() => {});
+    let w = await Promise.race([u, new Promise((g, k) => {
+        f = setTimeout(() => {
+          e = !0, c = !0, k(Error("design login timed out"))
+        }, I), r?.addEventListener("abort", () => {
+          c = !0, k(Error("design login interrupted"))
+        }, {
+          once: !0
+        })
+      })]),
+      h = await oCn(w, n);
+    if (!h.ok) return {
+      ok: !1,
+      reason: "invalid",
+      message: h.message
+    };
+    if (r?.aborted) return await $k(h.slot.refreshToken, h.slot.clientId), {
+      ok: !1,
+      reason: "interrupted",
+      message: "Design login was interrupted."
+    };
+    if (!(await y4t(h.slot)).success) return await $k(h.slot.refreshToken, h.slot.clientId), {
+      ok: !1,
+      reason: "save_failed",
+      message: "Could not save the design credential to secure storage. Retry, or run /design-login."
+    };
+    return {
+      ok: !0,
+      accessToken: h.slot.accessToken
+    }
+  } catch (i) {
+    if (c = !0, r?.aborted) return {
+      ok: !1,
+      reason: "interrupted",
+      message: "Design login was interrupted."
+    };
+    if (e) return {
+      ok: !1,
+      reason: "timed_out",
+      message: "The browser authorization timed out after 5 minutes. Retry, or run /design-login for the manual flow."
+    };
+    return {
+      ok: !1,
+      reason: "failed",
+      cause: l(i),
+      message: `The browser authorization failed (${l(i)}). Run /design-login to retry with the manual flow.`
+    }
+  } finally {
+    if (f !== void 0) clearTimeout(f);
+    s.cleanup()
+  }
+}
+export {
+  ipe,
+  y4t,
+  sir,
+  _4t,
+  OSe,
+  oCn,
+  JSt,
+  b4t
+};

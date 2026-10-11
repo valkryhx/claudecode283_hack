@@ -1,0 +1,50 @@
+/* ==========================================================================
+ * m0132.jn   [m0132_0xc24a4bb.js @ 168971]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function jn({
+  pluginName: e,
+  host: t,
+  hostStream: o,
+  resolvedTable: r,
+  timers: n,
+  unloaded: s,
+  invoke: i,
+  wrapMethod: p,
+  signalFrom: a,
+  makeSignal: f
+}) {
+  let m = u => sg(u, p);
+  return {
+    ui: m(rx(e, t, r)),
+    model: m(kg(t)),
+    audio: m(ag(e, t)),
+    mcp: m(dg(e, u => t("mcp.call", u))),
+    session: m(Hg(e, t)),
+    prompt: m(vg(e, t)),
+    turn: m(zg(e, t)),
+    tool: m(Xg(e, t)),
+    command: m(fg(e, t)),
+    config: m(mg(e, t)),
+    agent: m(Vg(e, t)),
+    fs: m(cg(t)),
+    store: m(Lg(e, t)),
+    state: m(Fg(e, t)),
+    clock: m(Rd({
+      pluginName: e,
+      host: t,
+      live: n,
+      unloaded: s,
+      invoke: i,
+      signalFrom: a,
+      makeSignal: f
+    })),
+    http: m(lg(e, t)),
+    process: m(Tg(t, o)),
+    settings: m(Ng(e, t)),
+    env: m(ug(t)),
+    flag: m(eg(t))
+  };
+}

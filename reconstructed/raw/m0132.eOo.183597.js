@@ -1,0 +1,1 @@
+function eOo(e,t,o){if(!e)return o();let r=e.length-yNt,n=Array.from({length:r},(s,i)=>Atomics.load(e,yNt+i));for(let s=0;s<r;s++)Atomics.store(e,yNt+s,t[s]??0);try{return o()}finally{for(let[s,i]of n.entries())Atomics.store(e,yNt+s,i)}}

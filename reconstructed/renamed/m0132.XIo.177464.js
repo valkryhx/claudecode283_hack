@@ -1,0 +1,12 @@
+/* ==========================================================================
+ * m0132.XIo   [m0132_0xc24a4bb.js @ 177464]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function XIo(e, t) {
+  let o = e.return.bind(e);
+  return Object.defineProperty(e, "return", {
+    value: r => (t(), o(r))
+  });
+}

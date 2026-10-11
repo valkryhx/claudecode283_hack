@@ -1,0 +1,1174 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import {
+  Me
+} from "B:/~BUN/root/chunk-ekrhn4q1.js";
+import {
+  q8n,
+  K8n
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  H
+} from "B:/~BUN/root/chunk-dkxhwhft.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  gt,
+  AC,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  fP,
+  Mvn,
+  Dvn,
+  Lvn
+} from "B:/~BUN/root/chunk-h23911wn.js";
+import {
+  Yt
+} from "B:/~BUN/root/chunk-jdm3bsma.js";
+import {
+  Ivn,
+  Zr
+} from "B:/~BUN/root/chunk-cpg4rjtx.js";
+import {
+  JJe,
+  ke
+} from "B:/~BUN/root/chunk-kss0wzj5.js";
+import {
+  Bu,
+  Vut
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  Vn
+} from "B:/~BUN/root/chunk-3rzkfay5.js";
+import {
+  Mue,
+  rL,
+  lVt,
+  mT,
+  v5,
+  noe
+} from "B:/~BUN/root/chunk-trcn2d68.js";
+import {
+  zl
+} from "B:/~BUN/root/chunk-e1thvnpv.js";
+import {
+  ta
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import {
+  C6e
+} from "B:/~BUN/root/chunk-e9hrnhar.js";
+import {
+  N8r,
+  l_t,
+  XJe,
+  Ya
+} from "B:/~BUN/root/chunk-7nc4t0q7.js";
+import {
+  y9,
+  oee,
+  Obo,
+  Qke,
+  YA,
+  Vst,
+  Fbo,
+  yB,
+  qst,
+  Zke,
+  SLe,
+  mUn,
+  fIt
+} from "B:/~BUN/root/chunk-y355pc11.js";
+import {
+  Jwn,
+  Qwn,
+  jC
+} from "B:/~BUN/root/chunk-4r6zcwth.js";
+import {
+  Hi
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  x9
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import {
+  cje
+} from "B:/~BUN/root/chunk-9ketrzpm.js";
+import {
+  sje
+} from "B:/~BUN/root/chunk-3ms6a7at.js";
+import {
+  Wje,
+  wQe
+} from "B:/~BUN/root/chunk-xqjbapaq.js";
+import {
+  wer,
+  mvn
+} from "B:/~BUN/root/chunk-1yna3b23.js";
+import {
+  Ter,
+  Hbe
+} from "B:/~BUN/root/chunk-0tqg3ze0.js";
+import {
+  pvn,
+  fvn
+} from "B:/~BUN/root/chunk-qx3qjw47.js";
+import {
+  ZPe,
+  bGt,
+  Myt,
+  Bwn,
+  MJe
+} from "B:/~BUN/root/chunk-jzh8geyk.js";
+import {
+  Dyt,
+  Lyt,
+  Nyt
+} from "B:/~BUN/root/chunk-4hj9afs7.js";
+import {
+  Pvn
+} from "B:/~BUN/root/chunk-rp3kg713.js";
+import {
+  V,
+  e
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import {
+  Kj
+} from "B:/~BUN/root/chunk-fyvmz7de.js";
+import {
+  Vt,
+  se,
+  Pe,
+  R,
+  Gr,
+  sn,
+  X,
+  T,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import {
+  Hs
+} from "B:/~BUN/root/chunk-aky7m4ay.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+N();
+N();
+var ie = Vt(null),
+  Ge = 20;
+
+function Y(o) {
+  let s = w(4),
+    {
+      children: i
+    } = o,
+    r;
+  if (s[0] === S) r = [], s[0] = r;
+  else r = s[0];
+  let n = T(r),
+    l;
+  if (s[1] === S) l = {
+    getDenials: () => n.current,
+    recordDenial: (P) => {
+      n.current = [P, ...n.current.slice(0, Ge - 1)]
+    },
+    removeDenial: (M) => {
+      n.current = n.current.filter((E) => E !== M)
+    }
+  }, s[1] = l;
+  else l = s[1];
+  let W = l,
+    c;
+  if (s[2] !== i) c = e(ie.Provider, {
+    value: W,
+    children: i
+  }), s[2] = i, s[3] = c;
+  else c = s[3];
+  return c
+}
+
+function vue() {
+  let o = Pe(ie);
+  if (!o) {
+    throw ReferenceError("useAutoModeDenials cannot be called outside of an <AutoModeDenialsProvider /> (mounted by <AppStateProvider />)")
+  }
+  return o
+}
+N();
+var ae = Vt(void 0);
+
+function le(o) {
+  let r = w(3),
+    {
+      getFpsMetrics: i,
+      children: s
+    } = o,
+    n;
+  if (r[0] !== s || r[1] !== i) n = e(ae.Provider, {
+    value: i,
+    children: s
+  }), r[0] = s, r[1] = i, r[2] = n;
+  else n = r[2];
+  return n
+}
+
+function $wn() {
+  return Pe(ae)
+}
+N();
+
+function je(o, i) {
+  let s = i / 100 * (o.length - 1),
+    r = Math.floor(s),
+    n = Math.ceil(s);
+  if (r === n) return o[r];
+  return o[r] + (o[n] - o[r]) * (s - r)
+}
+var $e = 1024;
+
+function Uwn() {
+  let o = new Map,
+    i = new Map,
+    s = new Map;
+  return {
+    increment(r, n = 1) {
+      o.set(r, (o.get(r) ?? 0) + n)
+    },
+    set(r, n) {
+      o.set(r, n)
+    },
+    observe(r, n) {
+      let l = i.get(r);
+      if (!l) l = {
+        reservoir: [],
+        count: 0,
+        sum: 0,
+        min: n,
+        max: n
+      }, i.set(r, l);
+      if (l.count++, l.sum += n, n < l.min) l.min = n;
+      if (n > l.max) l.max = n;
+      if (l.reservoir.length < $e) l.reservoir.push(n);
+      else {
+        let P = Math.floor(Math.random() * l.count);
+        if (P < $e) l.reservoir[P] = n
+      }
+    },
+    add(r, n) {
+      let l = s.get(r);
+      if (!l) l = new Set, s.set(r, l);
+      l.add(n)
+    },
+    getAll() {
+      let r = Object.fromEntries(o);
+      for (let [n, l] of i) {
+        if (l.count === 0) continue;
+        r[`${n}_count`] = l.count, r[`${n}_min`] = l.min, r[`${n}_max`] = l.max, r[`${n}_avg`] = l.sum / l.count;
+        let P = [...l.reservoir].sort((M, E) => M - E);
+        r[`${n}_p50`] = je(P, 50), r[`${n}_p95`] = je(P, 95), r[`${n}_p99`] = je(P, 99)
+      }
+      for (let [n, l] of s) r[n] = l.size;
+      return r
+    }
+  }
+}
+var ze = Vt(null);
+
+function ue(o) {
+  let r = w(8),
+    {
+      store: i,
+      children: s
+    } = o,
+    n;
+  if (r[0] === S) n = Uwn(), r[0] = n;
+  else n = r[0];
+  let P = i ?? n,
+    {
+      storageV5: M
+    } = ke(),
+    E, W;
+  if (r[1] !== M || r[2] !== P) E = () => {
+    let c = !1;
+    let F = H() && M !== void 0 ? AC(async () => {
+      let O = P.getAll();
+      if (Object.keys(O).length > 0) await Bu((f) => ({
+        ...f,
+        lastSessionMetrics: O
+      }), M);
+      c = !0
+    }) : void 0;
+    let z = () => {
+      if (c) {
+        return
+      }
+      let L = P.getAll();
+      if (Object.keys(L).length > 0) Vut((_) => ({
+        ..._,
+        lastSessionMetrics: L
+      }))
+    };
+    return process.on("exit", z), () => {
+      F?.(), process.off("exit", z)
+    }
+  }, W = [P, M], r[1] = M, r[2] = P, r[3] = E, r[4] = W;
+  else E = r[3], W = r[4];
+  R(E, W);
+  let m;
+  if (r[5] !== s || r[6] !== P) m = e(ze.Provider, {
+    value: P,
+    children: s
+  }), r[5] = s, r[6] = P, r[7] = m;
+  else m = r[7];
+  return m
+}
+N();
+class Ve extends Mue {
+  action;
+  sourceEvent;
+  isChordCompletion;
+  origin;
+  constructor(o, i) {
+    super("action", {
+      bubbles: !0,
+      cancelable: !0
+    });
+    this.action = o, this.sourceEvent = i?.sourceEvent ?? null, this.isChordCompletion = i?.isChordCompletion ?? !1, this.origin = i?.origin ?? "single"
+  }
+  consume() {
+    this.stopPropagation(), this.sourceEvent?.preventDefault(), this.sourceEvent?.stopImmediatePropagation()
+  }
+  get consumed() {
+    return this._isPropagationStopped()
+  }
+}
+var Ye = 3000;
+
+function JPe(o) {
+  let r = w(4),
+    {
+      children: i
+    } = o;
+  if (Ya()) {
+    let n;
+    if (r[0] !== i) n = e(V, {
+      children: i
+    }), r[0] = i, r[1] = n;
+    else n = r[1];
+    return n
+  }
+  let n;
+  if (r[2] !== i) n = e(Xe, {
+    children: i
+  }), r[2] = i, r[3] = n;
+  else n = r[3];
+  return n
+}
+
+function Xe({
+  children: o
+}) {
+  let [{
+    bindings: i
+  }, s] = g(() => {
+    let m = Vst(YA);
+    return t(`[keybindings] KeybindingSetup initialized with ${m.bindings.length} bindings, ${m.warnings.length} warnings`), m
+  }), r = Yt(), {
+    addNotification: n
+  } = Zr(), l = T(null), [P, M] = g(null), E = T(null), W = T(new Map), c = T(new Set), O = T(new Set), [f] = g(l_t), F = se((m) => {
+    c.current.add(m)
+  }, []), L = se((m) => {
+    c.current.delete(m)
+  }, []), _ = se(() => {
+    E.current?.(), E.current = null
+  }, []), z = se((m) => {
+    if (_(), m !== null) E.current = r.setTimeout(() => {
+      t("[keybindings] Chord timeout - cancelling"), l.current = null, M(null), n({
+        key: "chord-timeout",
+        kind: "feedback",
+        text: `${oee(m,yB())} cancelled \u2014 no next key within ${Ye/1000}s`,
+        priority: "immediate",
+        timeoutMs: 3000
+      })
+    }, Ye);
+    l.current = m, M(m)
+  }, [n, _, r]);
+  return R(() => {
+    Fbo(YA);
+    let m = YA.changed.subscribe((a) => {
+      s(a), t(`[keybindings] Reloaded: ${a.bindings.length} bindings, ${a.warnings.length} warnings`)
+    });
+    return () => {
+      m(), _()
+    }
+  }, [_]), e(XJe, {
+    bindings: i,
+    pendingChordRef: l,
+    pendingChord: P,
+    setPendingChord: z,
+    activeContexts: c.current,
+    registerActiveContext: F,
+    unregisterActiveContext: L,
+    handlerRegistryRef: W,
+    preDispatchRef: O,
+    keyHandlerRegistry: f,
+    children: e(Zt, {
+      bindings: i,
+      pendingChordRef: l,
+      setPendingChord: z,
+      activeContexts: c.current,
+      handlerRegistryRef: W,
+      preDispatchRef: O,
+      keyHandlerRegistry: f,
+      children: o
+    })
+  })
+}
+
+function et(o) {
+  let i = [...o],
+    s = new Set(i.filter((r) => !r.fallback).map((r) => r.action));
+  return [...i.filter((r) => !r.fallback), ...i.filter((r) => r.fallback && !s.has(r.action))]
+}
+
+function tt(o) {
+  return !o.ctrl && !o.meta && !o.superKey
+}
+var Jt = Qke.map((o) => y9(o.key));
+
+function ot(o) {
+  let i = qst(o);
+  return i !== null && Jt.some((s) => Zke(s, i))
+}
+
+function Zt({
+  bindings: o,
+  pendingChordRef: i,
+  setPendingChord: s,
+  activeContexts: r,
+  handlerRegistryRef: n,
+  preDispatchRef: l,
+  keyHandlerRegistry: P,
+  children: M
+}) {
+  let E = T([]),
+    W = T(null),
+    c = T("legacy"),
+    O = se((a, p, u, x) => {
+      for (let v of l.current) try {
+        if (v.handler(a, p, u) === !0) return x(), !0
+      } catch (b) {
+        d(b)
+      }
+      return !1
+    }, [l]),
+    f = (a, p, u, x) => {
+      let v = n.current;
+      if (!v) return !1;
+      let b = [...v.values()].flatMap((y) => [...y]),
+        A = [...new Set(b.filter((y) => !y.fallback).map((y) => y.context)), ...r, "Global"],
+        h = SLe(a, A, o, p),
+        I = h.type === "match" && b.some((y) => !y.fallback && y.action === h.action) ? h.action : null,
+        j = I === null ? [u] : [I, u],
+        C = ot(a);
+      for (let y of j) {
+        let [D] = et(v.get(y) ?? []).filter((k) => !(k.fallback && C));
+        if (D) return D.handler(), fIt(y), x(), !0
+      }
+      return !1
+    },
+    F = (a, p, u, x, v, b = !1) => {
+      let A = n.current,
+        h = ot(a),
+        I = new Set;
+      if (A) {
+        for (let B of A.values())
+          for (let G of B)
+            if (!(h && G.fallback)) I.add(G.context)
+      }
+      let j = [...I, ...r, "Global"],
+        C = i.current,
+        y = C !== null,
+        D = SLe(a, j, o, C);
+      switch (D.type) {
+        case "chord_started":
+          c.current = "legacy", s(D.pending), v();
+          return;
+        case "chord_cancelled":
+          s(null), v();
+          return;
+        case "unbound":
+          if (s(null), y) {
+            v();
+            return
+          }
+          break;
+        case "match":
+          if (s(null), y) {
+            f(a, C, D.action, v);
+            return
+          }
+          break;
+        case "none":
+          break
+      }
+      if (!A) return;
+      if (!b && O(p, u, x, v)) return;
+      let k = new Map,
+        q = et([...A.values()].flatMap((B) => [...B])),
+        oe = tt(a) || h,
+        K;
+      for (let B of q) {
+        if (!B.singleKey || B.fallback && oe) continue;
+        let G;
+        if (B.fallback && !r.has(B.context)) K ??= (() => {
+          let J = SLe(a, [...r, "Global"], o, null);
+          return J.type === "match" ? J.action : null
+        })(), G = K;
+        else G = k.get(B.context);
+        if (G === void 0) {
+          let J = SLe(a, [...r, B.context, "Global"], o, null);
+          G = J.type === "match" ? J.action : null, k.set(B.context, G)
+        }
+        if (G === B.action) {
+          if (B.handler() !== !1) {
+            fIt(G), v();
+            return
+          }
+        }
+      }
+    },
+    L = (a, p, u, x, v, b) => {
+      let A = P,
+        h = (D, k) => {};
+      if (A.swallowAll.size > 0) {
+        h(null, !0), b();
+        return
+      }
+      if (i.current !== null && c.current === "legacy") {
+        h(null, !1), F(p, u, x, v, b);
+        return
+      }
+      let I = to(a.target),
+        j = i.current !== null && c.current === "scopeChain";
+      if (I.length === 0 && A.preemptiveScopes.size === 0 && !j) {
+        h(null, !1), F(p, u, x, v, b);
+        return
+      }
+      let C = de(a.target);
+      if (A.preemptiveScopes.size > 0 && !j) {
+        let D = [...A.preemptiveScopes.keys(), "Global"],
+          k = mUn(p, D, o, null);
+        if (k.type === "match" && C) {
+          if (Be(C, a, k.action, !1, a.type === "wheel" ? "wheel" : "single")) {
+            h(k.action, !0), fIt(k.action);
+            return
+          }
+        }
+      }
+      if (!j && C?.attributes.textEntry === !0 && tt(p) && [...p.key].length === 1) {
+        h(null, O(u, x, v, b));
+        return
+      }
+      if (j) {
+        let D = i.current,
+          k = mUn(p, E.current, o, D);
+        if (k.type === "chord_started") {
+          c.current = "scopeChain", s(k.pending), b(), h(null, !0);
+          return
+        }
+        if (k.type === "match") {
+          s(null);
+          let q = W.current;
+          W.current = null, E.current = [];
+          let oe = q && C && rL(q, lVt(C)) ? q : C;
+          if (oe) {
+            if (Be(oe, a, k.action, !0, "chord")) {
+              h(k.action, !0), fIt(k.action);
+              return
+            }
+          }
+          let K = f(p, D, k.action, b);
+          h(k.action, K);
+          return
+        }
+        W.current = null, E.current = [], h(null, !1), F(p, u, x, v, b);
+        return
+      }
+      let y = mUn(p, I, o, null);
+      switch (y.type) {
+        case "chord_started":
+          E.current = I, W.current = C ?? null, c.current = "scopeChain", s(y.pending), b(), h(null, !0);
+          return;
+        case "match": {
+          if (!C) {
+            h(y.action, !1), F(p, u, x, v, b);
+            return
+          }
+          if (O(u, x, v, b)) {
+            s(null), h(y.action, !0);
+            return
+          }
+          if (Be(C, a, y.action, !1, a.type === "wheel" ? "wheel" : "single")) {
+            s(null), h(y.action, !0), fIt(y.action);
+            return
+          }
+          h(y.action, !1), F(p, u, x, v, b, !0);
+          return
+        }
+        case "unbound":
+          if (O(u, x, v, b)) {
+            s(null), h(null, !0);
+            return
+          }
+          s(null), h(null, !1);
+          return;
+        default:
+          h(null, !1), F(p, u, x, v, b);
+          return
+      }
+    },
+    _ = (a) => {
+      let {
+        input: p,
+        key: u
+      } = N8r(a);
+      L(a, a, p, u, a.sequence, () => rt(a))
+    },
+    z = (a) => {
+      if (eo(a.target, a.currentTarget, a.col, a.row)) return;
+      let p = {
+          name: a.deltaY < 0 ? "wheelup" : "wheeldown",
+          key: "",
+          ctrl: a.ctrl,
+          shift: a.shift,
+          meta: a.meta,
+          superKey: !1
+        },
+        u = {
+          upArrow: !1,
+          downArrow: !1,
+          leftArrow: !1,
+          rightArrow: !1,
+          pageDown: !1,
+          pageUp: !1,
+          wheelUp: a.deltaY < 0,
+          wheelDown: a.deltaY > 0,
+          home: !1,
+          end: !1,
+          return: !1,
+          escape: !1,
+          tab: !1,
+          backspace: !1,
+          delete: !1,
+          ctrl: a.ctrl,
+          shift: a.shift,
+          meta: a.meta,
+          super: !1
+        };
+      L(a, p, "", u, "", () => rt(a))
+    },
+    m = T(null);
+  return sn(() => {
+    if (!m.current) return;
+    let a = mT(m.current),
+      p = () => {
+        let u = m.current;
+        if (!u || a.activeElement === u) return;
+        if (a.activeElement === null) {
+          a.focus(u);
+          return
+        }
+        let x = u.parentNode;
+        while (x) {
+          if (x === a.activeElement) {
+            a.focus(u);
+            return
+          }
+          x = x.parentNode
+        }
+      };
+    return p(), a.subscribe(p)
+  }, []), e(zl, {
+    ref: m,
+    keybindingScope: "Global",
+    tabIndex: -1,
+    flexDirection: "column",
+    flexGrow: 1,
+    onKeyDownCapture: _,
+    onWheelCapture: z,
+    children: M
+  })
+}
+
+function rt(o) {
+  o.preventDefault(), o.stopImmediatePropagation()
+}
+
+function Xt(o) {
+  return o !== null && "attributes" in o
+}
+
+function de(o) {
+  return Xt(o) ? o : void 0
+}
+
+function eo(o, i, s, r) {
+  let n = de(o),
+    l = de(i);
+  while (n && n !== l) {
+    if (n._eventHandlers?.onWheel && (s === void 0 || r === void 0 || typeof n.attributes.tabIndex === "number" || v5(n, s, r) !== null)) return !0;
+    n = n.parentNode
+  }
+  return !1
+}
+
+function to(o) {
+  let i = [],
+    s = de(o);
+  while (s) {
+    let r = s.attributes.keybindingScope;
+    if (typeof r === "string" && Obo(r)) i.push(r);
+    s = s.parentNode
+  }
+  return i
+}
+
+function Be(o, i, s, r, n) {
+  let l = new Ve(s, {
+    sourceEvent: i,
+    isChordCompletion: r,
+    origin: n
+  });
+  return noe.dispatch(o, l), l.consumed
+}
+N();
+N();
+N();
+var pe = Vt(null);
+
+function Z(o) {
+  let r = w(3),
+    {
+      children: i
+    } = o,
+    s = T(null),
+    n;
+  if (r[0] === S) n = {
+    setHandler: (l) => {
+      s.current = l
+    },
+    tryDelete: (P) => s.current?.(P) ?? !1
+  }, r[0] = n;
+  else n = r[0];
+  let M = n,
+    E;
+  if (r[1] !== i) E = e(pe.Provider, {
+    value: M,
+    children: i
+  }), r[1] = i, r[2] = E;
+  else E = r[2];
+  return E
+}
+
+function Oyt() {
+  let o = Pe(pe);
+  if (!o) {
+    throw ReferenceError("useInputSelectionBridge cannot be called outside of an <InputSelectionBridgeProvider /> (mounted by <AppStateProvider />)")
+  }
+  return o
+}
+N();
+class fe {
+  queue = [];
+  waiters = [];
+  changed = Me();
+  _revision = 0;
+  get length() {
+    return this.queue.length
+  }
+  get revision() {
+    return this._revision
+  }
+  send(o) {
+    this._revision++;
+    let i = this.waiters.findIndex((s) => s.fn(o));
+    if (i !== -1) {
+      let s = this.waiters.splice(i, 1)[0];
+      if (s) {
+        s.resolve(o), this.notify();
+        return
+      }
+    }
+    this.queue.push(o), this.notify()
+  }
+  poll(o = () => !0) {
+    let i = this.queue.findIndex(o);
+    if (i === -1) return;
+    return this.queue.splice(i, 1)[0]
+  }
+  receive(o = () => !0) {
+    let i = this.queue.findIndex(o);
+    if (i !== -1) {
+      let s = this.queue.splice(i, 1)[0];
+      if (s) return this.notify(), Promise.resolve(s)
+    }
+    return new Promise((s) => {
+      this.waiters.push({
+        fn: o,
+        resolve: s
+      })
+    })
+  }
+  subscribe = this.changed.subscribe;
+  notify() {
+    this.changed.emit()
+  }
+}
+var me = Vt(void 0);
+
+function ge(o) {
+  let s = w(3),
+    {
+      children: i
+    } = o,
+    r;
+  if (s[0] === S) r = new fe, s[0] = r;
+  else r = s[0];
+  let n = r,
+    l;
+  if (s[1] !== i) l = e(me.Provider, {
+    value: n,
+    children: i
+  }), s[1] = i, s[2] = l;
+  else l = s[2];
+  return l
+}
+
+function LZn() {
+  let o = Pe(me);
+  if (!o) {
+    throw Error("useMailbox must be used within a MailboxProvider")
+  }
+  return o
+}
+N();
+
+function QPe(o) {
+  let i = Gr(o);
+  R(() => Hi.subscribe((s, r) => {
+    let n = Vn();
+    i(s, n, r)
+  }), [])
+}
+N();
+var he = Vt(null);
+
+function _5() {
+  let o = Pe(he);
+  if (!o) throw ReferenceError("useSessionHooksRegistry cannot be called outside of an <AppStateProvider />");
+  return o
+}
+
+function Mo(We) {
+  return We.expandedView === "tasks" ? {
+    ...We,
+    expandedView: "none"
+  } : We
+}
+var ye = Vt(!1),
+  U = null;
+
+function Se(o) {
+  let c = w(86),
+    {
+      children: i,
+      store: s,
+      initialState: r,
+      onChangeAppState: n,
+      fleetNudgeStore: l,
+      writesExitHandoff: P,
+      sessionHooks: M
+    } = o,
+    E = P === void 0 ? !1 : P;
+  if (Pe(ye)) {
+    throw Error("AppStateProvider can not be nested within another AppStateProvider")
+  }
+  let O;
+  if (c[0] !== r || c[1] !== n || c[2] !== s) O = () => s ?? Hs(r ?? MJe(), n), c[0] = r, c[1] = n, c[2] = s, c[3] = O;
+  else O = c[3];
+  let [f] = g(O), F;
+  if (c[4] !== M) F = () => M ?? x9(), c[4] = M, c[5] = F;
+  else F = c[5];
+  let [L] = g(F), _ = ta(), z;
+  if (c[6] !== _) z = () => Ter(_), c[6] = _, c[7] = z;
+  else z = c[7];
+  let [m] = g(z), [a] = g(wer), {
+    storageV5: p
+  } = ke(), u = jC(), x;
+  if (c[8] !== p || c[9] !== f) x = () => new pvn(p, globalThis, () => f.setState(Mo)), c[8] = p, c[9] = f, c[10] = x;
+  else x = c[10];
+  let [v] = g(x), b;
+  if (c[11] !== l || c[12] !== p) b = () => l ?? new ZPe({
+    storageV5: p
+  }), c[11] = l, c[12] = p, c[13] = b;
+  else b = c[13];
+  let [A] = g(b), h;
+  if (c[14] !== p) h = () => U ? new U.SessionRosterStore({
+    storageV5: p
+  }) : null, c[14] = p, c[15] = h;
+  else h = c[15];
+  let [I] = g(h), [j] = g(E), [C] = g(p), y, D;
+  if (c[16] !== C || c[17] !== f || c[18] !== j) y = () => {
+    let k = j ? () => Myt(f.getState().tasks, C) : () => Bwn(f.getState().tasks);
+    let q = gt(k);
+    return () => {
+      k(), q()
+    }
+  }, D = [f, j, C], c[16] = C, c[17] = f, c[18] = j, c[19] = y, c[20] = D;
+  else y = c[19], D = c[20];
+  R(y, D);
+  let oe;
+  if (c[21] !== f) oe = () => sje.over(f), c[21] = f, c[22] = oe;
+  else oe = c[22];
+  let [K] = g(oe), B;
+  if (c[23] !== f) B = () => Kj.over(f), c[23] = f, c[24] = B;
+  else B = c[24];
+  let [G] = g(B), J;
+  if (c[25] !== K || c[26] !== u?.mcpSessionWiring) J = () => u?.mcpSessionWiring.acquireConnections(K), c[25] = K, c[26] = u?.mcpSessionWiring, c[27] = J;
+  else J = c[27];
+  let Rt;
+  if (c[28] !== K || c[29] !== u) Rt = [u, K], c[28] = K, c[29] = u, c[30] = Rt;
+  else Rt = c[30];
+  R(J, Rt);
+  let xt;
+  if (c[31] !== f) xt = () => Wje.over(f), c[31] = f, c[32] = xt;
+  else xt = c[32];
+  let [ve] = g(xt), Pt, Ct;
+  if (c[33] !== ve || c[34] !== u) Pt = () => {
+    if (u === void 0) {
+      return
+    }
+    return wQe.of(u).acquire(ve)
+  }, Ct = [u, ve], c[33] = ve, c[34] = u, c[35] = Pt, c[36] = Ct;
+  else Pt = c[35], Ct = c[36];
+  R(Pt, Ct);
+  let wt, kt;
+  if (c[37] !== K) wt = () => q8n(() => K.get().clients), kt = [K], c[37] = K, c[38] = wt, c[39] = kt;
+  else wt = c[38], kt = c[39];
+  R(wt, kt);
+  let Kt, Mt;
+  if (c[40] !== K) Kt = () => K8n((Fo, _o) => K.swapServerTools(Fo, _o)), Mt = [K], c[40] = K, c[41] = Kt, c[42] = Mt;
+  else Kt = c[41], Mt = c[42];
+  R(Kt, Mt);
+  let Et;
+  if (c[43] !== f.setState) Et = () => Dyt(f.setState), c[43] = f.setState, c[44] = Et;
+  else Et = c[44];
+  let At;
+  if (c[45] !== f) At = [f], c[45] = f, c[46] = At;
+  else At = c[46];
+  R(Et, At);
+  let Dt;
+  if (c[47] !== u || c[48] !== p || c[49] !== f.setState) Dt = (Wo, Yn, Go) => Lyt(u, Wo, f.setState, p, Go), c[47] = u, c[48] = p, c[49] = f.setState, c[50] = Dt;
+  else Dt = c[50];
+  let be = Gr(Dt);
+  QPe(be);
+  let Nt;
+  if (c[51] !== be) Nt = () => {
+    Nyt(() => be("policySettings"))
+  }, c[51] = be, c[52] = Nt;
+  else Nt = c[52];
+  let Ht;
+  if (c[53] === S) Ht = [], c[53] = Ht;
+  else Ht = c[53];
+  R(Nt, Ht);
+  const _e = u ?? null;
+  let Re;
+  if (c[54] !== i || c[55] !== I) Re = U && I ? e(U.SessionRosterStoreContext.Provider, {
+    value: I,
+    children: i
+  }) : i, c[54] = i, c[55] = I, c[56] = Re;
+  else Re = c[56];
+  let xe;
+  if (c[57] !== Re) xe = e(Y, {
+    children: e(Z, {
+      children: Re
+    })
+  }), c[57] = Re, c[58] = xe;
+  else xe = c[58];
+  let Ce;
+  if (c[59] !== A || c[60] !== xe) Ce = e(bGt.Provider, {
+    value: A,
+    children: xe
+  }), c[59] = A, c[60] = xe, c[61] = Ce;
+  else Ce = c[61];
+  let we;
+  if (c[62] !== Ce || c[63] !== v) we = e(fvn.Provider, {
+    value: v,
+    children: Ce
+  }), c[62] = Ce, c[63] = v, c[64] = we;
+  else we = c[64];
+  let Ke;
+  if (c[65] !== a || c[66] !== we) Ke = e(mvn.Provider, {
+    value: a,
+    children: we
+  }), c[65] = a, c[66] = we, c[67] = Ke;
+  else Ke = c[67];
+  let Ee;
+  if (c[68] !== m || c[69] !== Ke) Ee = e(ge, {
+    children: e(Pvn, {
+      children: e(Hbe.Provider, {
+        value: m,
+        children: Ke
+      })
+    })
+  }), c[68] = m, c[69] = Ke, c[70] = Ee;
+  else Ee = c[70];
+  let Ae;
+  if (c[71] !== L || c[72] !== Ee) Ae = e(he.Provider, {
+    value: L,
+    children: Ee
+  }), c[71] = L, c[72] = Ee, c[73] = Ae;
+  else Ae = c[73];
+  let De;
+  if (c[74] !== _e || c[75] !== Ae) De = e(Mvn.Provider, {
+    value: _e,
+    children: Ae
+  }), c[74] = _e, c[75] = Ae, c[76] = De;
+  else De = c[76];
+  let Ne;
+  if (c[77] !== G || c[78] !== De) Ne = e(Lvn.Provider, {
+    value: G,
+    children: De
+  }), c[77] = G, c[78] = De, c[79] = Ne;
+  else Ne = c[79];
+  let He;
+  if (c[80] !== K || c[81] !== Ne) He = e(Dvn.Provider, {
+    value: K,
+    children: Ne
+  }), c[80] = K, c[81] = Ne, c[82] = He;
+  else He = c[82];
+  let jt;
+  if (c[83] !== f || c[84] !== He) jt = e(ye.Provider, {
+    value: !0,
+    children: e(fP.Provider, {
+      value: f,
+      children: He
+    })
+  }), c[83] = f, c[84] = He, c[85] = jt;
+  else jt = c[85];
+  return jt
+}
+
+function W_(o) {
+  let m = w(32),
+    {
+      session: i,
+      host: s,
+      project: r,
+      storageV5: n,
+      messageQueue: l,
+      store: P,
+      initialState: M,
+      onChangeAppState: E,
+      fleetNudgeStore: W,
+      sessionHooks: c,
+      writesExitHandoff: O,
+      getFpsMetrics: f,
+      stats: F,
+      keybindings: L,
+      children: _
+    } = o,
+    z = L === void 0 ? !0 : L,
+    a;
+  if (m[0] !== n) a = C6e(n), m[0] = n, m[1] = a;
+  else a = m[1];
+  let p = a,
+    u;
+  if (m[2] !== _ || m[3] !== z) u = z ? e(JPe, {
+    children: _
+  }) : _, m[2] = _, m[3] = z, m[4] = u;
+  else u = m[4];
+  let x;
+  if (m[5] !== u) x = e(Ivn, {
+    children: e(Y, {
+      children: e(Z, {
+        children: u
+      })
+    })
+  }), m[5] = u, m[6] = x;
+  else x = m[6];
+  let v;
+  if (m[7] !== W || m[8] !== M || m[9] !== E || m[10] !== c || m[11] !== P || m[12] !== x || m[13] !== O) v = e(Se, {
+    store: P,
+    initialState: M,
+    onChangeAppState: E,
+    fleetNudgeStore: W,
+    sessionHooks: c,
+    writesExitHandoff: O,
+    children: x
+  }), m[7] = W, m[8] = M, m[9] = E, m[10] = c, m[11] = P, m[12] = x, m[13] = O, m[14] = v;
+  else v = m[14];
+  let b = v,
+    A;
+  if (m[15] !== b || m[16] !== s || m[17] !== r || m[18] !== i) A = i !== void 0 ? e(Jwn, {
+    session: i,
+    children: b
+  }) : s !== void 0 ? e(Qwn, {
+    host: s,
+    project: r,
+    children: b
+  }) : b, m[15] = b, m[16] = s, m[17] = r, m[18] = i, m[19] = A;
+  else A = m[19];
+  let h;
+  if (m[20] !== F || m[21] !== A) h = e(ue, {
+    store: F,
+    children: A
+  }), m[20] = F, m[21] = A, m[22] = h;
+  else h = m[22];
+  let I;
+  if (m[23] !== f || m[24] !== h) I = e(le, {
+    getFpsMetrics: f,
+    children: h
+  }), m[23] = f, m[24] = h, m[25] = I;
+  else I = m[25];
+  let j = I,
+    C;
+  if (m[26] !== l || m[27] !== j) C = l === void 0 ? j : e(cje, {
+    queue: l,
+    children: j
+  }), m[26] = l, m[27] = j, m[28] = C;
+  else C = m[28];
+  let y = C;
+  if (n === void 0) {
+    return y
+  }
+  let D;
+  if (m[29] !== y || m[30] !== p) D = e(JJe, {
+    ...p,
+    children: y
+  }), m[29] = y, m[30] = p, m[31] = D;
+  else D = m[31];
+  return D
+}
+export {
+  vue,
+  $wn,
+  Uwn,
+  JPe,
+  Oyt,
+  LZn,
+  QPe,
+  _5,
+  W_
+};

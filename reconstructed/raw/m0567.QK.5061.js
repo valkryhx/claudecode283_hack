@@ -1,0 +1,1 @@
+function QK(e,s,r){if(s.get(e)?.status==="running"&&nb(e)&&!utn(e))p("task_kill_missing_loop_entry","local_workflow");let o=L(e,s,"killed",{notified:!0});if(o)o.v2Run?.kill(r),_R(o.ownerAgentId,`workflow:${e}`,s),Tp(e),Si(e,"stopped",{toolUseId:o.toolUseId,summary:o.description}),lfe(e);return o!==null}

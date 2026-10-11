@@ -1,0 +1,1 @@
+function Wr(e,t){return t.component==="Pane"&&e.placement!==t.props.placement?"a props.placement other than the surface drew (the surface places the pane; a rewrite changes the drawing alone)":void 0}

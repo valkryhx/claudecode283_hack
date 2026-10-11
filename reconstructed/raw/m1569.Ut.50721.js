@@ -1,0 +1,1 @@
+Ut=f(()=>{let e=VS().nonnegative();return Qo("k",[u({k:A("put"),addr:e,kind:z(["put","eval","sub"]),fact:dr(),by:o(),in:VS().min(j),at:E().finite(),status:z(Fr)}).refine((r)=>r.in<r.addr,{message:"`in` must be ROOT or an earlier address"}),u({k:A("settled"),addr:e,status:z(["done","failed"]),value:ae().optional(),error:o().optional()}),u({k:A("retracted"),addr:e})])})

@@ -1,0 +1,1 @@
+function zIo(e){let t=new Set;return(o)=>{let r=o===void 0?tt:qz[o];return(n)=>{if(!r.includes(n)||t.has(n))return;t.add(n),kc().log(`${e}: $.ui.resolve: <${n}> was withheld by a ui.resolve hook; it draws a fragment`,"warn")}}}

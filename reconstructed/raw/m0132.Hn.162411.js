@@ -1,0 +1,1 @@
+function Hn(e,t,o="store.set"){let r;try{r=JSON.stringify(e)}catch(n){throw new De(`${t}: $.${o}: value is not JSON data (${l(n)})`)}if(typeof r!=="string")throw new De(`${t}: $.${o}: value is not JSON data (${e===void 0?"undefined":`a ${typeof e}`})`);if(r.length>Pte)throw new De(`${t}: $.${o}: the value is ${r.length} characters, over the ${Pte} limit`);return JSON.parse(r)}

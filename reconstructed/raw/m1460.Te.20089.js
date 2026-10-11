@@ -1,0 +1,1 @@
+function Te(o){let u=w(7),{segs:l,width:a}=o,d,f;if(u[0]!==l||u[1]!==a){let{segs:h,pad:x}=Vs(l,a);d=h.map(fc);f=" ".repeat(x);u[0]=l,u[1]=a,u[2]=d,u[3]=f}else d=u[2],f=u[3];let y;if(u[4]!==d||u[5]!==f)y=r(V,{children:[d,f]}),u[4]=d,u[5]=f,u[6]=y;else y=u[6];return y}

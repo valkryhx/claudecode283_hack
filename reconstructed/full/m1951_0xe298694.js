@@ -1,0 +1,1284 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import {
+  yre
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import {
+  y,
+  c
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  te,
+  l
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  RC,
+  pBo,
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  _,
+  m,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import {
+  lr,
+  Lt,
+  va,
+  zv
+} from "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import {
+  xt,
+  mo,
+  jE,
+  Yy,
+  sC,
+  iC,
+  JF,
+  qdn,
+  Xy,
+  C0,
+  _y,
+  by,
+  Tt
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import {
+  vCr
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import "B:/~BUN/root/chunk-ws24951p.js";
+import "B:/~BUN/root/chunk-kvhjwjyk.js";
+import "B:/~BUN/root/chunk-cbe9n9ke.js";
+import "B:/~BUN/root/chunk-xy9bynby.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import {
+  $F,
+  UF,
+  ql,
+  yCe,
+  iq
+} from "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import "B:/~BUN/root/chunk-ew8y0fm0.js";
+import "B:/~BUN/root/chunk-mc8ranwc.js";
+import "B:/~BUN/root/chunk-2jqr7z7w.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-f1dj0k6n.js";
+import "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import "B:/~BUN/root/chunk-196w7fz7.js";
+import {
+  dZ,
+  cDn,
+  K4,
+  CM,
+  $y,
+  Q_,
+  Z_,
+  Lve,
+  Nve,
+  eLn,
+  tLn
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import "B:/~BUN/root/chunk-skjrk8s1.js";
+import "B:/~BUN/root/chunk-8qv35yd7.js";
+import "B:/~BUN/root/chunk-88mdabet.js";
+import "B:/~BUN/root/chunk-5yjtercz.js";
+import "B:/~BUN/root/chunk-5dk9zqaz.js";
+import "B:/~BUN/root/chunk-yeg3gem6.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-8xaxa0y1.js";
+import "B:/~BUN/root/chunk-spgj5paf.js";
+import "B:/~BUN/root/chunk-n5swsemr.js";
+import "B:/~BUN/root/chunk-0w5kpsps.js";
+import "B:/~BUN/root/chunk-gbtzpa3e.js";
+import "B:/~BUN/root/chunk-ewvnv67m.js";
+import "B:/~BUN/root/chunk-mmnpv22v.js";
+import "B:/~BUN/root/chunk-nhxcgss8.js";
+import "B:/~BUN/root/chunk-ye6tacpp.js";
+import "B:/~BUN/root/chunk-affnknva.js";
+import "B:/~BUN/root/chunk-je63fn7b.js";
+import "B:/~BUN/root/chunk-90zbw58x.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-6k625ztj.js";
+import "B:/~BUN/root/chunk-2m5rfp86.js";
+import "B:/~BUN/root/chunk-2n2hx639.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import {
+  hR
+} from "B:/~BUN/root/chunk-y39emrp9.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-5nfpvvfh.js";
+import "B:/~BUN/root/chunk-n3t3nbqw.js";
+import "B:/~BUN/root/chunk-wefm1yd9.js";
+import "B:/~BUN/root/chunk-4dctrsn2.js";
+import "B:/~BUN/root/chunk-38kffpyk.js";
+import "B:/~BUN/root/chunk-9mfh08mz.js";
+import "B:/~BUN/root/chunk-vq58jz92.js";
+import "B:/~BUN/root/chunk-0vgj9y5e.js";
+import "B:/~BUN/root/chunk-yzpw1mdr.js";
+import "B:/~BUN/root/chunk-d8zzdckb.js";
+import "B:/~BUN/root/chunk-kwex2zh0.js";
+import "B:/~BUN/root/chunk-1724zw97.js";
+import "B:/~BUN/root/chunk-dt2g8e1y.js";
+import "B:/~BUN/root/chunk-s95n71e7.js";
+import "B:/~BUN/root/chunk-846bv8b5.js";
+import "B:/~BUN/root/chunk-30zp50p7.js";
+import "B:/~BUN/root/chunk-f6h9k5ss.js";
+import "B:/~BUN/root/chunk-xdhy5nhb.js";
+import "B:/~BUN/root/chunk-8k39s5js.js";
+import "B:/~BUN/root/chunk-r6m7remx.js";
+import "B:/~BUN/root/chunk-384x2wn9.js";
+import "B:/~BUN/root/chunk-nrrn2axm.js";
+import "B:/~BUN/root/chunk-2pww2v3x.js";
+import "B:/~BUN/root/chunk-6cq25d8x.js";
+import "B:/~BUN/root/chunk-4mcmxrhr.js";
+import "B:/~BUN/root/chunk-tgk1nfes.js";
+import "B:/~BUN/root/chunk-qmv1x2cp.js";
+import "B:/~BUN/root/chunk-5emths66.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-6wgkxd9a.js";
+import "B:/~BUN/root/chunk-q3sthw4s.js";
+import "B:/~BUN/root/chunk-z51p19sq.js";
+import "B:/~BUN/root/chunk-m1qtc24s.js";
+import "B:/~BUN/root/chunk-rdxve5qj.js";
+import "B:/~BUN/root/chunk-0djrqga0.js";
+import "B:/~BUN/root/chunk-8p6es4nr.js";
+import "B:/~BUN/root/chunk-gksrzz5s.js";
+import "B:/~BUN/root/chunk-70qv5h0a.js";
+import "B:/~BUN/root/chunk-d6sc6w1r.js";
+import "B:/~BUN/root/chunk-efz11ra0.js";
+import "B:/~BUN/root/chunk-9qtz41py.js";
+import "B:/~BUN/root/chunk-n2rcpjj1.js";
+import "B:/~BUN/root/chunk-1xb1enjd.js";
+import "B:/~BUN/root/chunk-65tbbnf1.js";
+import "B:/~BUN/root/chunk-p6ejqvds.js";
+import "B:/~BUN/root/chunk-zfb6h1v8.js";
+import "B:/~BUN/root/chunk-3k26zwm7.js";
+import "B:/~BUN/root/chunk-y2pt1fm0.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-ec3373a4.js";
+import "B:/~BUN/root/chunk-1dghpe22.js";
+import "B:/~BUN/root/chunk-7azfcycf.js";
+import "B:/~BUN/root/chunk-5a1m1kxy.js";
+import "B:/~BUN/root/chunk-4q0h6gxt.js";
+import "B:/~BUN/root/chunk-a8gk62v4.js";
+import "B:/~BUN/root/chunk-ehma26r8.js";
+import "B:/~BUN/root/chunk-q5ke49kw.js";
+import "B:/~BUN/root/chunk-faawr4jv.js";
+import "B:/~BUN/root/chunk-x8507144.js";
+import "B:/~BUN/root/chunk-j36yaq51.js";
+import "B:/~BUN/root/chunk-7d9qjs8x.js";
+import "B:/~BUN/root/chunk-a8td06ny.js";
+import "B:/~BUN/root/chunk-krn12wre.js";
+import "B:/~BUN/root/chunk-671s136j.js";
+import "B:/~BUN/root/chunk-hg30cgr1.js";
+import "B:/~BUN/root/chunk-2gwgbd5e.js";
+import "B:/~BUN/root/chunk-pnn94d53.js";
+import "B:/~BUN/root/chunk-xfvqq19y.js";
+import "B:/~BUN/root/chunk-06rekkgz.js";
+import "B:/~BUN/root/chunk-jz4j9jvf.js";
+import "B:/~BUN/root/chunk-zy5rwsjc.js";
+import "B:/~BUN/root/chunk-hjery5bx.js";
+import "B:/~BUN/root/chunk-1zdknz5q.js";
+import "B:/~BUN/root/chunk-ztbv79md.js";
+import "B:/~BUN/root/chunk-8b53pnky.js";
+import "B:/~BUN/root/chunk-ewjenbzd.js";
+import "B:/~BUN/root/chunk-g0q5e1g8.js";
+import "B:/~BUN/root/chunk-jwaej6se.js";
+import "B:/~BUN/root/chunk-gsz9m7j5.js";
+import "B:/~BUN/root/chunk-rtxwm8ds.js";
+import "B:/~BUN/root/chunk-aa7kpy4p.js";
+import "B:/~BUN/root/chunk-f71hcy5v.js";
+import "B:/~BUN/root/chunk-8gym6yya.js";
+import "B:/~BUN/root/chunk-q77pmen1.js";
+import "B:/~BUN/root/chunk-mmtwp5d6.js";
+import "B:/~BUN/root/chunk-9sy3w2pa.js";
+import "B:/~BUN/root/chunk-dt6tzt7w.js";
+import "B:/~BUN/root/chunk-pfpays63.js";
+import "B:/~BUN/root/chunk-4tkwpa6e.js";
+import "B:/~BUN/root/chunk-e1thvnpv.js";
+import "B:/~BUN/root/chunk-1x7a47hz.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import "B:/~BUN/root/chunk-kss0wzj5.js";
+import "B:/~BUN/root/chunk-tq1hs216.js";
+import "B:/~BUN/root/chunk-jpnyq4t7.js";
+import "B:/~BUN/root/chunk-1gn8pz4b.js";
+import "B:/~BUN/root/chunk-e9hrnhar.js";
+import "B:/~BUN/root/chunk-p4t9nwg2.js";
+import "B:/~BUN/root/chunk-trcn2d68.js";
+import "B:/~BUN/root/chunk-q1b7bx45.js";
+import "B:/~BUN/root/chunk-mvdr6ncg.js";
+import "B:/~BUN/root/chunk-jz31jc2e.js";
+import "B:/~BUN/root/chunk-p3ewqd1e.js";
+import "B:/~BUN/root/chunk-dczbgj6x.js";
+import "B:/~BUN/root/chunk-1223v177.js";
+import "B:/~BUN/root/chunk-0rtwbec7.js";
+import "B:/~BUN/root/chunk-jdm3bsma.js";
+import "B:/~BUN/root/chunk-d4pzq02b.js";
+import "B:/~BUN/root/chunk-mgxre38x.js";
+import {
+  W,
+  dn,
+  Ar
+} from "B:/~BUN/root/chunk-h23911wn.js";
+import "B:/~BUN/root/chunk-syke822n.js";
+import "B:/~BUN/root/chunk-cxqcvpm0.js";
+import {
+  tbe,
+  i5,
+  lXe
+} from "B:/~BUN/root/chunk-bm2wsr80.js";
+import "B:/~BUN/root/chunk-prb4vytb.js";
+import "B:/~BUN/root/chunk-9jvj58wt.js";
+import "B:/~BUN/root/chunk-mr8gretd.js";
+import "B:/~BUN/root/chunk-1a6hgte8.js";
+import "B:/~BUN/root/chunk-bt71g93n.js";
+import "B:/~BUN/root/chunk-zg8y1401.js";
+import "B:/~BUN/root/chunk-7nc4t0q7.js";
+import "B:/~BUN/root/chunk-r2yrqvry.js";
+import "B:/~BUN/root/chunk-q52x4j16.js";
+import "B:/~BUN/root/chunk-acd2tycn.js";
+import "B:/~BUN/root/chunk-41008fhm.js";
+import "B:/~BUN/root/chunk-rp3kg713.js";
+import {
+  Zr
+} from "B:/~BUN/root/chunk-cpg4rjtx.js";
+import "B:/~BUN/root/chunk-jcnv9sfw.js";
+import "B:/~BUN/root/chunk-vabpvk99.js";
+import "B:/~BUN/root/chunk-pet3tnhj.js";
+import "B:/~BUN/root/chunk-0d8a76zs.js";
+import "B:/~BUN/root/chunk-5r1x61tc.js";
+import "B:/~BUN/root/chunk-51erc9xb.js";
+import "B:/~BUN/root/chunk-txdt16r9.js";
+import "B:/~BUN/root/chunk-zw2hnzqr.js";
+import "B:/~BUN/root/chunk-cj9k3aj6.js";
+import "B:/~BUN/root/chunk-0tqg3ze0.js";
+import "B:/~BUN/root/chunk-xky3bazf.js";
+import "B:/~BUN/root/chunk-w5s5fy4b.js";
+import "B:/~BUN/root/chunk-5dn8wsxz.js";
+import "B:/~BUN/root/chunk-h89fwq58.js";
+import "B:/~BUN/root/chunk-93kq3f21.js";
+import "B:/~BUN/root/chunk-q7jerdh3.js";
+import "B:/~BUN/root/chunk-q87kdcms.js";
+import "B:/~BUN/root/chunk-8nq6mgsz.js";
+import "B:/~BUN/root/chunk-2ahfynn0.js";
+import "B:/~BUN/root/chunk-j8x7ygb4.js";
+import "B:/~BUN/root/chunk-jgc88y6c.js";
+import "B:/~BUN/root/chunk-54b3p8j4.js";
+import "B:/~BUN/root/chunk-dk0c0nrh.js";
+import "B:/~BUN/root/chunk-qx3qjw47.js";
+import "B:/~BUN/root/chunk-cg4vyrmt.js";
+import "B:/~BUN/root/chunk-1yna3b23.js";
+import "B:/~BUN/root/chunk-ekzfyp3g.js";
+import "B:/~BUN/root/chunk-psrp3wry.js";
+import "B:/~BUN/root/chunk-8sb89kt9.js";
+import "B:/~BUN/root/chunk-sxyam0fw.js";
+import "B:/~BUN/root/chunk-sxfy29yd.js";
+import "B:/~BUN/root/chunk-255yrpq9.js";
+import {
+  eoe
+} from "B:/~BUN/root/chunk-ph7apw4w.js";
+import "B:/~BUN/root/chunk-zfsr3kh2.js";
+import "B:/~BUN/root/chunk-bxbr6qzf.js";
+import "B:/~BUN/root/chunk-9451qw24.js";
+import {
+  OQ
+} from "B:/~BUN/root/chunk-vfry9y9g.js";
+import "B:/~BUN/root/chunk-3qb0jwrq.js";
+import "B:/~BUN/root/chunk-1xe8mz4a.js";
+import "B:/~BUN/root/chunk-8eznj17m.js";
+import "B:/~BUN/root/chunk-xpw4e8kb.js";
+import "B:/~BUN/root/chunk-ehewxxqw.js";
+import "B:/~BUN/root/chunk-2wfa1xth.js";
+import "B:/~BUN/root/chunk-nd6xvaae.js";
+import "B:/~BUN/root/chunk-sxjerhqq.js";
+import "B:/~BUN/root/chunk-y1h4hnnm.js";
+import "B:/~BUN/root/chunk-7frntmvs.js";
+import "B:/~BUN/root/chunk-w15vevdx.js";
+import "B:/~BUN/root/chunk-zza9ywwa.js";
+import "B:/~BUN/root/chunk-bbgg7kv0.js";
+import "B:/~BUN/root/chunk-sv155qry.js";
+import "B:/~BUN/root/chunk-vf07m8qt.js";
+import "B:/~BUN/root/chunk-parcaazx.js";
+import "B:/~BUN/root/chunk-b36qwjxy.js";
+import "B:/~BUN/root/chunk-ejdx9rag.js";
+import "B:/~BUN/root/chunk-cdch6ag4.js";
+import "B:/~BUN/root/chunk-b5qh4e85.js";
+import {
+  e
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import "B:/~BUN/root/chunk-9z0za8jx.js";
+import "B:/~BUN/root/chunk-4dw8761b.js";
+import "B:/~BUN/root/chunk-mqsfaz82.js";
+import "B:/~BUN/root/chunk-c50e3nb9.js";
+import "B:/~BUN/root/chunk-jh3vta2f.js";
+import "B:/~BUN/root/chunk-106hagsg.js";
+import "B:/~BUN/root/chunk-qq6w89ha.js";
+import {
+  Cpe,
+  Rpe,
+  sk,
+  Td,
+  xU,
+  okt,
+  XZe,
+  JZe,
+  hdr,
+  ydr,
+  lS,
+  y4,
+  xAn,
+  skt,
+  RYt,
+  J5,
+  BOe
+} from "B:/~BUN/root/chunk-qacpyzq5.js";
+import "B:/~BUN/root/chunk-mht1nqv1.js";
+import "B:/~BUN/root/chunk-yxnd4g87.js";
+import "B:/~BUN/root/chunk-q3x7vf9d.js";
+import "B:/~BUN/root/chunk-v8s05yj9.js";
+import "B:/~BUN/root/chunk-8n4s8cn5.js";
+import "B:/~BUN/root/chunk-230s8gzy.js";
+import "B:/~BUN/root/chunk-ghw8h4y1.js";
+import "B:/~BUN/root/chunk-tzzvaz2j.js";
+import "B:/~BUN/root/chunk-pwpgxxsc.js";
+import "B:/~BUN/root/chunk-m4ehcybg.js";
+import "B:/~BUN/root/chunk-08bth2fj.js";
+import "B:/~BUN/root/chunk-esqb9g1a.js";
+import "B:/~BUN/root/chunk-6jwexnnw.js";
+import {
+  se,
+  R,
+  T,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import "B:/~BUN/root/chunk-a2kvnefe.js";
+import "B:/~BUN/root/chunk-w4zcf9ar.js";
+import "B:/~BUN/root/chunk-467d5w8j.js";
+import "B:/~BUN/root/chunk-cn8bxjex.js";
+import "B:/~BUN/root/chunk-zn0k3ezm.js";
+import "B:/~BUN/root/chunk-c1275ktq.js";
+import "B:/~BUN/root/chunk-pgrf1rrh.js";
+import "B:/~BUN/root/chunk-ymhw5dt2.js";
+import "B:/~BUN/root/chunk-xmtkv29j.js";
+import "B:/~BUN/root/chunk-hcqaqf9c.js";
+import "B:/~BUN/root/chunk-na2t7g12.js";
+import "B:/~BUN/root/chunk-aqngsaqg.js";
+import "B:/~BUN/root/chunk-gj7av6e0.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-vr3kcvgy.js";
+import "B:/~BUN/root/chunk-fbgf4b4h.js";
+import "B:/~BUN/root/chunk-g4xzaw4b.js";
+import "B:/~BUN/root/chunk-mac0vc34.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-h7t9e2fk.js";
+import "B:/~BUN/root/chunk-6bchs2sy.js";
+import "B:/~BUN/root/chunk-hbma7z88.js";
+import "B:/~BUN/root/chunk-vgyyj55s.js";
+import "B:/~BUN/root/chunk-9sajt7dp.js";
+import "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-hyp140x7.js";
+import "B:/~BUN/root/chunk-995m8a2a.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gmsn86f4.js";
+import "B:/~BUN/root/chunk-08q5fcq1.js";
+import "B:/~BUN/root/chunk-p10aw0p6.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import {
+  Jt
+} from "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import {
+  pn
+} from "B:/~BUN/root/chunk-8j4yaj30.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+N();
+
+function Ft(ao) {
+  return ao.mainLoopModel
+}
+
+function Dt() {
+  return new AbortController
+}
+
+function _t(n) {
+  return n !== null
+}
+
+function Ct() {
+  return lr() !== null && va()
+}
+
+function Rt(h) {
+  return h.mainLoopModel
+}
+
+function St(u) {
+  return u.mainLoopModelForSession
+}
+
+function $t(Y) {
+  return Y.sessionEffort
+}
+
+function Et(P) {
+  return P.settingsEffortTable
+}
+var ro = "Model picker shows local options in cloud sessions \u2014 pass a model name, e.g. /model sonnet",
+  po = "Couldn\u2019t load the model list from the cloud session \u2014 pass a model name, e.g. /model sonnet",
+  go = "Stopped waiting for the cloud session\u2019s model list \u2014 run /model again, or pass a model name, e.g. /model sonnet",
+  ho = 15000,
+  Ee = (A) => Jt(A) !== A,
+  yo = (A) => A.reduce((o, r) => o === null || (r.value?.length ?? 0) > (o.value?.length ?? 0) ? r : o, null)?.value ?? null;
+
+function qo({
+  getMessages: A,
+  onDone: o,
+  storageV5: r,
+  session: s
+}) {
+  let v = Ar(),
+    O = W((n) => n.mainLoopModel),
+    h = W((n) => n.mainLoopModelForSession),
+    u = eoe() ?? O,
+    Y = W((n) => n.fastMode),
+    P = dn(),
+    {
+      addNotification: L
+    } = Zr(),
+    [b, f] = g(null),
+    oe = T([]),
+    [de, we] = g(null),
+    B = T(!1),
+    he = T(!1),
+    ce = T(0),
+    [$e, V] = g(!1),
+    U = T(null),
+    [Fe, x] = g(!1),
+    me = T(null);
+
+  function X() {
+    i("tengu_model_command_menu", {
+      action: y("cancel")
+    });
+    let n = lS(u);
+    o(`${Nve}${Z_(n)}`, {
+      display: "system"
+    })
+  }
+
+  function ye(n, M, q = !1) {
+    let k = n === null ? C0(_y(), "switch") : null;
+    if (k !== null) {
+      m("model_switch", "denied_by_managed_settings"), o(k, {
+        display: "system"
+      });
+      return
+    }
+    if (!q && RYt(n)) {
+      he.current = !1, ce.current += 1, we({
+        model: n,
+        effort: M
+      });
+      return
+    }
+    let C = BOe(n, M),
+      H = B.current;
+    B.current = !1;
+    let K = new AbortController;
+    U.current = K, V(!0), Q_(s, () => sk(s, v.getState, n, "picker", {
+      signal: K.signal
+    })).then((F) => {
+      if (V(!1), K.signal.aborted) return;
+      if (oe.current = F.messages, F.decision === "block") {
+        p("model_switch", "blocked_by_hook"), o(xU(n, F.reason, F.messages), {
+          display: "system"
+        });
+        return
+      }
+      if (F.decision === "ask") {
+        f({
+          model: n,
+          pick: C,
+          kind: "model",
+          hookReason: F.reason ?? "Confirm switching the model",
+          vettedFrom: CM(v.getState()),
+          saveAsDefault: H
+        });
+        return
+      }
+      return ie(n, C, F.skipConfirm, H)
+    }).catch((F) => {
+      if (V(!1), K.signal.aborted) return;
+      ne(F)
+    })
+  }
+
+  function ne(n) {
+    d(te(n)), o(`Model switch failed: ${Td(l(n))}`, {
+      display: "system"
+    })
+  }
+  async function ie(n, M, q, k) {
+    let C = v.getState();
+    if (!q && xAn(n, C.mainLoopModel, C.mainLoopModelForSession, C.cacheMissAckedAtOutputTokens, cDn(A()))) {
+      f({
+        model: n,
+        pick: M,
+        kind: "model",
+        vettedFrom: CM(v.getState()),
+        saveAsDefault: k
+      });
+      return
+    }
+    if (M !== void 0 && yCe(M.level, ql(C), y4(n), C.cacheMissAckedAtOutputTokens, dZ(A()))) {
+      f({
+        model: n,
+        pick: M,
+        kind: "effort",
+        vettedFrom: CM(v.getState()),
+        saveAsDefault: k
+      });
+      return
+    }
+    await De(n, M, k)
+  }
+  async function De(n, M, q) {
+    if (i("tengu_model_command_menu", {
+        action: xt(n),
+        from_model: xt(O),
+        to_model: xt(n)
+      }), M !== void 0 && !M.fromUltracode) iq(M.level, y4(n), q, r);
+    yre();
+    let k = !1,
+      C = !1;
+    if (mo()) JF();
+    $y(s, v.getState(), n, "picker"), P((Q) => (k = !!Q.fastMode, C = mo() ? sC(n, Q.fastMode) : k, {
+      ...Q,
+      mainLoopModel: n,
+      mainLoopModelForSession: null,
+      ...M !== void 0 && {
+        sessionEffort: UF(M.level),
+        ultracode: M.ultracode
+      },
+      ...C !== k && {
+        fastMode: C
+      }
+    })), iC(k, C), _("model_switch"), lo(n, L), x(!0);
+    let H = null;
+    try {
+      H = q ? await XZe(n, r) : null
+    } finally {
+      x(!1)
+    }
+    let K = H?.kind === "saved",
+      F = `${Lve}${Z_(lS(n))}${K?" and saved as your default for new sessions":" for this session only"}`;
+    if (M !== void 0) {
+      let Q = M.ultracode ? "ultracode" : M.level;
+      if (F += ` with ${Z_(Q)} effort`, M.fromUltracode && K) F += M.ultracode ? " (ultracode applies to this session only)" : " (the effort applies to this session only)";
+      let ue = M.fromUltracode ? $F() : void 0;
+      if (ue !== void 0 && ue !== "xhigh") {
+        let Ge = ue === null ? a.CLAUDE_CODE_EFFORT_LEVEL?.toLowerCase() : String(ue);
+        F += ` \u2014 CLAUDE_CODE_EFFORT_LEVEL=${Ge} overrides effort this session; clear it and ${Q} takes over`
+      }
+    }
+    if (F += Cpe(k, C, n, {
+        announceKeptOn: !0
+      }), F += JZe(H), K) F += hdr(n) || ydr(n);
+    if (oe.current.length > 0) F += `
+${oe.current.map(Td).join(`
+`)}`, oe.current = [];
+    o(F)
+  }
+  if (de) {
+    let {
+      model: n,
+      effort: M
+    } = de, q = ce.current;
+    return e(lXe, {
+      variant: "picker",
+      modelName: by(Tt(n ?? _y())),
+      onDone: (k, C) => {
+        if (q !== ce.current) return !1;
+        if (he.current) return !1;
+        if (he.current = !0, we(null), k === "consent") {
+          ye(n, M, !0);
+          return
+        }
+        if (B.current = !1, k === "upgrade") {
+          o(void 0, {
+            display: "skip",
+            nextInput: "/upgrade",
+            submitNextInput: !0
+          });
+          return
+        }
+        o(C ?? `${Nve}${Z_(lS(u))}`, {
+          display: "system"
+        })
+      }
+    })
+  }
+  if (Fe) return null;
+  if ($e) return e(i5, {
+    message: "Running PreModelSwitch hooks\u2026",
+    onCancel: () => {
+      U.current?.abort(), V(!1), o("Model switch cancelled", {
+        display: "system"
+      })
+    }
+  });
+  if (b) return e(OQ, {
+    kind: b.kind,
+    model: b.model,
+    effort: b.pick?.level,
+    hookReason: b.hookReason,
+    onConfirm: () => {
+      if (me.current === b) return;
+      if (me.current = b, b.vettedFrom !== void 0 && CM(v.getState()) !== b.vettedFrom) {
+        f(null), o("The model changed while you were confirming; pick again", {
+          display: "system"
+        });
+        return
+      }
+      De(b.model, b.pick, b.saveAsDefault).catch(ne)
+    },
+    onCancel: () => {
+      f(null), B.current = !1
+    }
+  });
+  return e(tbe, {
+    initial: O,
+    sessionModel: h,
+    onSelect: ye,
+    onSetDefault: (n) => {
+      B.current = !0
+    },
+    onCancel: X,
+    isStandaloneCommand: !0,
+    showFastModeNotice: mo() && Y && Yy(u) && jE()
+  })
+}
+
+function To(A) {
+  let f = w(31),
+    {
+      getMessages: o,
+      onDone: r,
+      storageV5: s,
+      credentials: v,
+      session: O
+    } = A,
+    h = W(Ft),
+    [u, Y] = g(null),
+    [P, L] = g(null),
+    [b] = g(Dt),
+    oe, de;
+  if (f[0] !== b || f[1] !== r) oe = () => {
+    let we = lr();
+    if (!we) {
+      r(ro, {
+        display: "system"
+      });
+      return
+    }
+    let B = !1;
+    return we.sendControlRequest({
+      subtype: "list_models"
+    }, {
+      signal: b.signal,
+      timeoutMs: ho
+    }).then((he) => {
+      if (B || b.signal.aborted) {
+        return
+      }
+      let ce = he.models.map(vCr).filter(_t);
+      i("tengu_remote_model_picker", {
+        outcome: y("opened"),
+        model_count: ce.length
+      }), Y(ce)
+    }).catch(($e) => {
+      if (B || b.signal.aborted) {
+        return
+      }
+      i("tengu_remote_model_picker", {
+        outcome: y($e instanceof hR ? "timeout" : "fallback")
+      }), r(po, {
+        display: "system"
+      })
+    }), () => {
+      B = !0
+    }
+  }, de = [r, b], f[0] = b, f[1] = r, f[2] = oe, f[3] = de;
+  else oe = f[2], de = f[3];
+  if (R(oe, de), P !== null) {
+    let V;
+    if (f[4] !== v || f[5] !== o || f[6] !== r || f[7] !== P || f[8] !== O || f[9] !== s) V = e(Be, {
+      args: P,
+      getMessages: o,
+      onDone: r,
+      storageV5: s,
+      credentials: v,
+      session: O
+    }), f[4] = v, f[5] = o, f[6] = r, f[7] = P, f[8] = O, f[9] = s, f[10] = V;
+    else V = f[10];
+    return V
+  }
+  if (u === null) {
+    let V;
+    if (f[11] !== b || f[12] !== r) V = e(i5, {
+      message: "Loading models from the cloud session\u2026",
+      onCancel: () => {
+        b.abort(), i("tengu_remote_model_picker", {
+          outcome: y("cancelled")
+        }), r(go, {
+          display: "system"
+        })
+      }
+    }), f[11] = b, f[12] = r, f[13] = V;
+    else V = f[13];
+    return V
+  }
+  let V;
+  if (f[14] !== h || f[15] !== u) {
+    let U;
+    if (f[17] !== h) U = (Fe) => Fe.value === h, f[17] = h, f[18] = U;
+    else U = f[18];
+    V = u.find(U);
+    f[14] = h, f[15] = u, f[16] = V
+  } else V = f[16];
+  let x = V,
+    U;
+  if (f[19] !== x || f[20] !== h || f[21] !== u) U = x ? x.value : yo(h === null ? [] : u.filter((me) => me.value !== null && Jt(h).includes(Jt(me.value)) && Ee(h) === Ee(me.value))), f[19] = x, f[20] = h, f[21] = u, f[22] = U;
+  else U = f[22];
+  let X = U,
+    ye;
+  if (f[23] === S) ye = (ne) => L(ne ?? "default"), f[23] = ye;
+  else ye = f[23];
+  let ie;
+  if (f[24] !== h || f[25] !== r) ie = () => {
+    i("tengu_model_command_menu", {
+      action: y("cancel")
+    }), r(h === null ? "Kept the workspace\u2019s current model" : `${Nve}${Z_(lS(h))}`, {
+      display: "system"
+    })
+  }, f[24] = h, f[25] = r, f[26] = ie;
+  else ie = f[26];
+  let De;
+  if (f[27] !== X || f[28] !== u || f[29] !== ie) De = e(tbe, {
+    initial: X,
+    options: u,
+    headerText: "Models reported by the cloud session. Your pick applies to that session.",
+    onSelect: ye,
+    onCancel: ie,
+    isStandaloneCommand: !0
+  }), f[27] = X, f[28] = u, f[29] = ie, f[30] = De;
+  else De = f[30];
+  return De
+}
+
+function Be(A) {
+  let f = w(65),
+    {
+      args: o,
+      getMessages: r,
+      onDone: s,
+      storageV5: v,
+      credentials: O,
+      session: h
+    } = A,
+    u = Ar(),
+    Y = dn(),
+    {
+      addNotification: P
+    } = Zr(),
+    [L, b] = g(null),
+    oe;
+  if (f[0] === S) oe = [], f[0] = oe;
+  else oe = f[0];
+  let de = T(oe),
+    [we, B] = g(!1),
+    he = T(null),
+    [ce, $e] = g(null),
+    [V] = g(Ct),
+    U = T(!1),
+    Fe = T(!1),
+    x = T(0),
+    me = T(null),
+    X = T(!1),
+    ye;
+  if (f[1] !== P || f[2] !== s || f[3] !== h || f[4] !== Y || f[5] !== v || f[6] !== u) ye = (ne, ie) => {
+    let De = !Lt();
+    b(null);
+    let ao = okt(h, ne, () => u.getState(), Y, De, "command", ie, v);
+    if (ie !== void 0 && ne !== null) P({
+      key: `model-restricted-${ne}`,
+      kind: "warning",
+      text: Xy(ie, ne),
+      priority: "immediate"
+    });
+    lo(ne, P);
+    let n = de.current;
+    de.current = [], ao.then((M) => s(n.length > 0 ? `${M}
+${n.map(Td).join(`
+`)}` : M), (q) => {
+      d(te(q)), s(`Model switch failed: ${Td(l(q))}`, {
+        display: "system"
+      })
+    })
+  }, f[1] = P, f[2] = s, f[3] = h, f[4] = Y, f[5] = v, f[6] = u, f[7] = ye;
+  else ye = f[7];
+  let k = ye,
+    C;
+  if (f[8] !== k || f[9] !== r || f[10] !== u) C = (H, K, F) => {
+    let Q = u.getState();
+    if (!F && xAn(H, Q.mainLoopModel, Q.mainLoopModelForSession, Q.cacheMissAckedAtOutputTokens, cDn(r()))) {
+      b({
+        model: H,
+        substitutedFrom: K,
+        vettedFrom: CM(u.getState())
+      });
+      return
+    }
+    k(H, K)
+  }, f[8] = k, f[9] = r, f[10] = u, f[11] = C;
+  else C = f[11];
+  let ue = C,
+    Ge;
+  if (f[12] !== ue || f[13] !== s || f[14] !== h || f[15] !== u) Ge = (Ue, Bo) => {
+    let We = new AbortController;
+    he.current = We, B(!0), Q_(h, () => sk(h, u.getState, Ue, "command", {
+      signal: We.signal
+    })).then((Me) => {
+      if (B(!1), We.signal.aborted) {
+        return
+      }
+      if (de.current = Me.messages, Me.decision === "block") {
+        p("model_switch", "blocked_by_hook"), s(xU(Ue, Me.reason, Me.messages), {
+          display: "system"
+        });
+        return
+      }
+      if (Me.decision === "ask") {
+        b({
+          model: Ue,
+          substitutedFrom: Bo,
+          hookReason: Me.reason ?? "Confirm switching the model",
+          vettedFrom: CM(u.getState())
+        });
+        return
+      }
+      ue(Ue, Bo, Me.skipConfirm)
+    }).catch((Go) => {
+      if (B(!1), We.signal.aborted) {
+        return
+      }
+      d(te(Go)), s(`Model switch failed: ${Td(l(Go))}`, {
+        display: "system"
+      })
+    })
+  }, f[12] = ue, f[13] = s, f[14] = h, f[15] = u, f[16] = Ge;
+  else Ge = f[16];
+  let re = Ge,
+    Uo;
+  if (f[17] !== P || f[18] !== o || f[19] !== O || f[20] !== s || f[21] !== re || f[22] !== h || f[23] !== Y || f[24] !== v) Uo = () => {
+    let Wo = lr();
+    if (Wo && va()) {
+      Rpe(o, v, O).then((le) => {
+        if (U.current) {
+          return
+        }
+        if (!le.ok) {
+          X.current = !0, s(le.message, {
+            display: "system"
+          });
+          return
+        }
+        if (le.model !== null && J5(le.model)) {
+          p("model_fable_consent", "remote_thin_client_blocked"), X.current = !0, s(`${by(Tt(le.model))} uses usage credits, and this cloud session can\u2019t show the consent prompt yet \xB7 switch models from the workspace, or consent once in a local session first`, {
+            display: "system"
+          });
+          return
+        }
+        let I = le.model;
+        return Wo.sendControlRequest({
+          subtype: "set_model",
+          model: I ?? void 0
+        }).then(() => {
+          let co = !1;
+          if (Y((Ie) => (co = mo() && !!Ie.fastMode && !sC(I, Ie.fastMode), $y(h, Ie, I, "command"), {
+              ...Ie,
+              mainLoopModel: I,
+              mainLoopModelForSession: null,
+              ...co && {
+                fastMode: !1
+              }
+            })), co) iC(!0, !1);
+          if (U.current) {
+            P({
+              key: `remote-model-switch-landed-${I??"default"}`,
+              kind: "event",
+              text: I === null ? "The cloud session reset its model to the workspace default" : `The cloud session switched to ${lS(I)}`,
+              priority: "high"
+            });
+            return
+          }
+          if (le.substitutedFrom !== void 0 && I !== null) P({
+            key: `model-restricted-${I}`,
+            kind: "warning",
+            text: Xy(le.substitutedFrom, I),
+            priority: "immediate"
+          });
+          if (le.substitutedFrom !== void 0) p("model_switch", "family_alias_stepped_down");
+          else _("model_switch");
+          X.current = !0, s(I === null ? "Reset model to the workspace default" : `${Lve}${Z_(lS(I))}`)
+        }).catch((uo) => {
+          if (t(`[remote] set_model rejected: ${l(uo)}`), U.current) {
+            return
+          }
+          let Io = uo instanceof hR;
+          m("model_switch", Io ? "timeout" : "remote_rejected"), X.current = !0, s(Io ? `${eLn}${Z_(o)} may still have been applied` : `${tLn}${Z_(o)}: ${Td(l(uo))}`, {
+            display: "system"
+          })
+        })
+      });
+      return
+    }
+    Rpe(o, v, O, {
+      acceptCreditsRequired: !0
+    }).then((ae) => {
+      if (!ae.ok) {
+        s(ae.message, {
+          display: "system"
+        });
+        return
+      }
+      if (RYt(ae.model)) {
+        Fe.current = !1, x.current = x.current + 1, $e({
+          model: ae.model,
+          substitutedFrom: ae.substitutedFrom
+        });
+        return
+      }
+      if (ae.creditsRefusal !== void 0) {
+        s(ae.creditsRefusal, {
+          display: "system"
+        });
+        return
+      }
+      re(ae.model, ae.substitutedFrom)
+    })
+  }, f[17] = P, f[18] = o, f[19] = O, f[20] = s, f[21] = re, f[22] = h, f[23] = Y, f[24] = v, f[25] = Uo;
+  else Uo = f[25];
+  let Jo;
+  if (f[26] !== o || f[27] !== O || f[28] !== s || f[29] !== re || f[30] !== Y || f[31] !== v) Jo = [o, s, Y, re, v, O], f[26] = o, f[27] = O, f[28] = s, f[29] = re, f[30] = Y, f[31] = v, f[32] = Jo;
+  else Jo = f[32];
+  if (R(Uo, Jo), V) {
+    const E = `Switching the cloud session to ${o}\u2026`;
+    let j;
+    if (f[33] !== o || f[34] !== s) j = () => {
+      if (X.current) {
+        return
+      }
+      X.current = !0, U.current = !0, p("model_switch", "remote_wait_cancelled"), s(`Stopped waiting for the cloud session \u2014 you\u2019ll get a notice if the switch to ${o} still lands`, {
+        display: "system"
+      })
+    }, f[33] = o, f[34] = s, f[35] = j;
+    else j = f[35];
+    let fe;
+    if (f[36] !== E || f[37] !== j) fe = e(i5, {
+      message: E,
+      onCancel: j
+    }), f[36] = E, f[37] = j, f[38] = fe;
+    else fe = f[38];
+    return fe
+  }
+  if (ce) {
+    let {
+      model: _e,
+      substitutedFrom: fo
+    } = ce;
+    let Nt = x.current;
+    let E;
+    if (f[39] !== _e) E = by(Tt(_e ?? _y())), f[39] = _e, f[40] = E;
+    else E = f[40];
+    let j;
+    if (f[41] !== _e || f[42] !== s || f[43] !== re || f[44] !== u || f[45] !== fo) j = (Xo, Ot) => {
+      if (Nt !== x.current) {
+        return !1
+      }
+      if (Fe.current) {
+        return !1
+      }
+      if (Fe.current = !0, $e(null), Xo === "consent") {
+        re(_e, fo);
+        return
+      }
+      if (Xo === "upgrade") {
+        s(void 0, {
+          display: "skip",
+          nextInput: "/upgrade",
+          submitNextInput: !0
+        });
+        return
+      }
+      s(Ot ?? `${Nve}${Z_(lS(K4(u.getState())))}`, {
+        display: "system"
+      })
+    }, f[41] = _e, f[42] = s, f[43] = re, f[44] = u, f[45] = fo, f[46] = j;
+    else j = f[46];
+    let fe;
+    if (f[47] !== E || f[48] !== j) fe = e(lXe, {
+      variant: "picker",
+      modelName: E,
+      onDone: j
+    }), f[47] = E, f[48] = j, f[49] = fe;
+    else fe = f[49];
+    return fe
+  }
+  if (L) {
+    let E;
+    if (f[50] !== k || f[51] !== s || f[52] !== L || f[53] !== u) E = () => {
+      if (me.current === L) {
+        return
+      }
+      if (me.current = L, L.vettedFrom !== void 0 && CM(u.getState()) !== L.vettedFrom) {
+        s("The model changed while you were confirming; pick again", {
+          display: "system"
+        });
+        return
+      }
+      k(L.model, L.substitutedFrom)
+    }, f[50] = k, f[51] = s, f[52] = L, f[53] = u, f[54] = E;
+    else E = f[54];
+    let j;
+    if (f[55] !== s || f[56] !== u) j = () => s(`${Nve}${Z_(lS(K4(u.getState())))}`, {
+      display: "system"
+    }), f[55] = s, f[56] = u, f[57] = j;
+    else j = f[57];
+    let fe;
+    if (f[58] !== L.hookReason || f[59] !== L.model || f[60] !== E || f[61] !== j) fe = e(OQ, {
+      kind: "model",
+      model: L.model,
+      effort: void 0,
+      hookReason: L.hookReason,
+      onConfirm: E,
+      onCancel: j
+    }), f[58] = L.hookReason, f[59] = L.model, f[60] = E, f[61] = j, f[62] = fe;
+    else fe = f[62];
+    return fe
+  }
+  if (we) {
+    let E;
+    if (f[63] !== s) E = e(i5, {
+      message: "Running PreModelSwitch hooks\u2026",
+      onCancel: () => {
+        he.current?.abort(), B(!1), s("Model switch cancelled", {
+          display: "system"
+        })
+      }
+    }), f[63] = s, f[64] = E;
+    else E = f[64];
+    return E
+  }
+  return null
+}
+
+function lo(A, o) {
+  let r = qdn(A);
+  if (!r) return;
+  o({
+    key: "model-deprecation-warning",
+    kind: "warning",
+    text: r,
+    color: "warning",
+    priority: "immediate",
+    invalidates: ["model-deprecation-warning"]
+  })
+}
+
+function Yo(A) {
+  let {
+    onDone: o
+  } = A, r = W(Rt), s = W(St), v = W($t), O = W(Et);
+  return o(skt({
+    mainLoopModel: r,
+    mainLoopModelForSession: s,
+    sessionEffort: v,
+    settingsEffortTable: O
+  })), null
+}
+var _n = async (A, o, r) => {
+  if (r = r?.trim() || "", pBo(r)) return i("tengu_model_command_inline_help", {
+    args: c(r)
+  }), e(Yo, {
+    onDone: A
+  });
+  if (RC.includes(r)) {
+    A("Run /model to open the model selection menu, or /model [modelName] to set the model.", {
+      display: "system"
+    });
+    return
+  }
+  if (r) return i("tengu_model_command_inline", {
+    args_hash: pn(r),
+    args_length: r.length
+  }), e(Be, {
+    args: r,
+    getMessages: () => o.getMessages?.() ?? o.messages,
+    onDone: A,
+    storageV5: o.storageV5,
+    credentials: o.credentials,
+    session: o.session
+  });
+  if (lr()) {
+    if (zv("modelCatalog") && va()) return e(To, {
+      getMessages: () => o.getMessages?.() ?? o.messages,
+      onDone: A,
+      storageV5: o.storageV5,
+      credentials: o.credentials,
+      session: o.session
+    });
+    A(ro, {
+      display: "system"
+    });
+    return
+  }
+  return e(qo, {
+    onDone: A,
+    getMessages: () => o.getMessages?.() ?? o.messages,
+    storageV5: o.storageV5,
+    session: o.session
+  })
+};
+export {
+  _n as call
+};

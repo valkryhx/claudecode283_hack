@@ -1,0 +1,1 @@
+function yi(e){if(!(G(e)&&HCe(e.surface)))return"takes a ui.render argument (e.surface names the surface)";let o=String(e.component);return Object.hasOwn(Lhe,o)?void 0:`takes a ui.render argument (e.component "${o}" is not a component the engine draws)`}

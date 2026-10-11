@@ -1,0 +1,1 @@
+function g(e,{suffix:r="nodejs"}={}){if(typeof e!=="string")throw TypeError(`Expected a string, got ${typeof e}`);if(r)e+=`-${r}`;if(l.platform==="darwin")return x(e);if(l.platform==="win32")return M(e);return N(e)}

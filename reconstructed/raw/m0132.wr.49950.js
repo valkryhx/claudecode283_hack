@@ -1,0 +1,1 @@
+function wr(e,t){if(e!==void 0&&t===void 0)return"an element where the move named none (one of the engine's stops)";if(e===void 0&&t!==void 0)return"no element where the move named one (a rewrite names another)";return e===void 0||typeof e==="string"&&e!==""?void 0:"an element that is not a non-empty string"}

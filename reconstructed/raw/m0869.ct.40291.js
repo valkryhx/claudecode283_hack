@@ -1,0 +1,1 @@
+function ct(){if(A?.total==null||A.total<=0)return;let M=A.getTurnSpent();if(M<A.total)return;if(!X)X=!0,i("tengu_workflow_budget_cap_exceeded",{spent:M,budget:A.total,agentCount:ge});throw new Wo(M,A.total)}

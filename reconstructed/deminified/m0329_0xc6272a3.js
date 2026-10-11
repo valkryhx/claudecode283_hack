@@ -1,0 +1,264 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { Me } from "B:/~BUN/root/chunk-ekrhn4q1.js";
+import { Wo } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { d } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import { K } from "B:/~BUN/root/chunk-5px6g0cn.js";
+import { The } from "B:/~BUN/root/chunk-gksrzz5s.js";
+import { fo } from "B:/~BUN/root/chunk-bpp59nyd.js";
+import { qt } from "B:/~BUN/root/chunk-9xz983aj.js";
+import { za } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import { Pv } from "B:/~BUN/root/chunk-yehxgs7w.js";
+function Mme(e) {
+  for (let n of [e?.request_id, e?.suppressed_request_id]) if (typeof n === "string" && n.length > 0) return n;
+  return;
+}
+var g = 32;
+function p(e) {
+  let {
+    display_tool_name: display_tool_name,
+    raw_command: raw_command
+  } = e;
+  return {
+    tool_name: e.tool_name,
+    ...(display_tool_name === void 0 ? {} : {
+      display_tool_name: display_tool_name
+    }),
+    action_description: fo(e.action_description, Pv),
+    ...(raw_command === void 0 ? {} : {
+      raw_command: fo(raw_command, Pv)
+    }),
+    tool_use_id: e.tool_use_id,
+    request_id: e.request_id,
+    ...(e.suppressed_request_id === void 0 ? {} : {
+      suppressed_request_id: e.suppressed_request_id
+    })
+  };
+}
+function QEr(e, n) {
+  return [e, ...n.slice(0, g - 1).map(p)];
+}
+function enn(e) {
+  switch (e?.cross_session_inbound) {
+    case "unavailable":
+      return {
+        acceptsPeerMessages: !1
+      };
+    case "available":
+      return {
+        acceptsPeerMessages: !0
+      };
+    default:
+      return;
+  }
+}
+class iIt {
+  stateChanged = Me();
+  userDecisionPendingChanged = Me();
+  userDecisionsPending = 0;
+  onStateChanged;
+  getPendingActionDetails;
+  heldRequiresAction;
+  onWaitingOnUserChanged;
+  onTurnStarting;
+  onMetadataChanged;
+  onInternalMetadataChanged;
+  onPermissionModeChanged;
+  onProactivityLevelChanged;
+  onActiveGoalChanged;
+  onAutocompactInputsChanged;
+  onConversationReset;
+  currentState = "idle";
+  hasPendingAction = !1;
+  hasTaskSummary = !1;
+  hasTerminalGoalSnapshot = !1;
+  mainLoopRefcount = 0;
+  nestedBlockedChains = Object.create(null);
+  nestedBlockedChainCount = 0;
+  droppedChainAgentIds = Object.create(null);
+  nestedChainUnparks = Object.create(null);
+  lastWaitingOnUser = !1;
+  chainExcessLogged = !1;
+  beginUserDecision() {
+    if (this.userDecisionsPending += 1, this.userDecisionsPending === 1) r(this.userDecisionPendingChanged, !0);
+  }
+  get userDecisionPending() {
+    return this.userDecisionsPending > 0;
+  }
+  endUserDecision() {
+    if (this.userDecisionsPending === 0) return;
+    if (this.userDecisionsPending -= 1, this.userDecisionsPending === 0) r(this.userDecisionPendingChanged, !1);
+  }
+  getState() {
+    return this.currentState;
+  }
+  get waitingOnUser() {
+    return this.currentState === "requires_action" && this.mainLoopRefcount - this.nestedBlockedChainCount <= 0;
+  }
+  setMainLoopRefcount(e) {
+    this.mainLoopRefcount = e, this.emitIfWaitingChanged();
+  }
+  emitIfWaitingChanged() {
+    this.checkChainInvariant();
+    let waitingOnUser = this.waitingOnUser;
+    if (waitingOnUser !== this.lastWaitingOnUser) this.lastWaitingOnUser = waitingOnUser, this.onWaitingOnUserChanged?.(waitingOnUser);
+  }
+  checkChainInvariant() {
+    if (this.nestedBlockedChainCount - this.mainLoopRefcount > 0) {
+      if (!this.chainExcessLogged) this.chainExcessLogged = !0, K("warn", "nested_chain_count_exceeds_refcount", {
+        nested_blocked_chain_count: this.nestedBlockedChainCount,
+        main_loop_refcount: this.mainLoopRefcount,
+        session_state: this.currentState
+      });
+    } else this.chainExcessLogged = !1;
+  }
+  reteeWaitingOnUser() {
+    this.onWaitingOnUserChanged?.(this.waitingOnUser);
+  }
+  notifyNestedPromptBlocking(e) {
+    if (a.CLAUDE_CODE_DISABLE_NESTED_CHAIN_IDLE) return;
+    if (this.droppedChainAgentIds[e]) return;
+    let n = this.nestedBlockedChains[e] ?? 0;
+    if (this.nestedBlockedChains[e] = n + 1, n === 0) {
+      if (this.nestedBlockedChainCount++, this.nestedBlockedChainCount <= this.mainLoopRefcount) this.nestedChainUnparks[e] = The();
+    }
+    this.emitIfWaitingChanged();
+  }
+  notifyNestedPromptUnblocking(e) {
+    let n = (this.nestedBlockedChains[e] ?? 0) - 1;
+    if (n > 0) this.nestedBlockedChains[e] = n;else if (this.nestedBlockedChains[e] !== void 0) this.removeChain(e);
+    this.emitIfWaitingChanged();
+  }
+  removeChain(e) {
+    delete this.nestedBlockedChains[e], this.nestedBlockedChainCount--, this.nestedChainUnparks[e]?.(), delete this.nestedChainUnparks[e];
+  }
+  dropNestedBlockedChain(e) {
+    if (this.droppedChainAgentIds[e] = !0, this.nestedBlockedChains[e] !== void 0) this.removeChain(e), this.emitIfWaitingChanged();
+  }
+  notifyTurnStarting(e, n) {
+    this.onTurnStarting?.(e, n);
+  }
+  notifyStateChanged(state, n) {
+    if (this.currentState = state, this.lastWaitingOnUser = this.waitingOnUser, this.onStateChanged?.(state, n), r(this.stateChanged, state, n), state === "requires_action" && n) this.hasPendingAction = !0, this.onMetadataChanged?.(this.pendingActionPatch(n));else if (this.hasPendingAction) this.hasPendingAction = !1, this.onMetadataChanged?.({
+      pending_action: null,
+      pending_actions: null
+    });
+    if (state === "running") this.wipeTurnScopedMetadata();
+    if (state === "idle" && this.hasTaskSummary) this.hasTaskSummary = !1, this.notifyMetadataChanged({
+      task_summary: null
+    });
+    if (a.CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS) za({
+      type: "system",
+      subtype: "session_state_changed",
+      state: state
+    });
+  }
+  republishPendingAction(e) {
+    this.hasPendingAction = !0, this.onMetadataChanged?.(this.pendingActionPatch(e));
+  }
+  wipeTurnScopedMetadata() {
+    if (this.onMetadataChanged?.({
+      post_turn_summary: null,
+      recap: null
+    }), this.hasTerminalGoalSnapshot) this.hasTerminalGoalSnapshot = !1, this.onMetadataChanged?.({
+      goal: null
+    });
+  }
+  adoptRestoredPendingAction() {
+    this.hasPendingAction = !0;
+  }
+  pendingActionPatch(pending_action) {
+    let t = (this.getPendingActionDetails?.(pending_action.request_id) ?? []).filter(item => item !== pending_action).reverse();
+    return {
+      pending_action: pending_action,
+      pending_actions: QEr(pending_action, t)
+    };
+  }
+  notifyMetadataChanged(e) {
+    if (this.onMetadataChanged?.(e), "goal" in e) this.hasTerminalGoalSnapshot = e.goal?.met === !0;
+    if ("task_summary" in e) {
+      if (e.task_summary != null) this.hasTaskSummary = !0;
+      za({
+        type: "system",
+        subtype: "task_summary",
+        detail: e.task_summary ?? null
+      });
+    }
+    if ("artifacts" in e) za({
+      type: "system",
+      subtype: "session_metadata",
+      metadata: {
+        artifacts: e.artifacts
+      }
+    });
+  }
+  workerPermissionModeRecordEnabled = !1;
+  get isWorkerPermissionModeRecordEnabled() {
+    return this.workerPermissionModeRecordEnabled;
+  }
+  enableWorkerPermissionModeRecord() {
+    this.workerPermissionModeRecordEnabled = !0;
+  }
+  notifyPermissionModeChanged(e) {
+    this.onPermissionModeChanged?.(e);
+  }
+  notifyProactivityLevelChanged() {
+    this.onProactivityLevelChanged?.();
+  }
+  notifyInternalMetadataChanged(e) {
+    this.onInternalMetadataChanged?.(e);
+  }
+  notifyActiveGoalChanged(e) {
+    this.onActiveGoalChanged?.(e);
+  }
+  notifyAutocompactInputsChanged() {
+    this.onAutocompactInputsChanged?.();
+  }
+  notifyConversationReset() {
+    this.onConversationReset?.();
+  }
+}
+function ZEr(e, n) {
+  let t = [];
+  if (e.length > 0) {
+    let i = e.map(item => `- ${qt(item.description || "(no description)")} (task ${qt(item.task_id)})`);
+    t.push(`The following background tasks were running and are now stopped:
+${i.join(`
+`)}
+Re-create them if still needed.`);
+  }
+  if (n.length > 0) {
+    let i = n.map(item => Wo() ? void 0 : item.output_file),
+      o = n.map((item, index) => {
+        let l = i[index],
+          h = l ? `output: ${qt(l)}` : "no output file";
+        return `- ${qt(item.description || "(no description)")} (task ${qt(item.task_id)}), status ${qt(item.status)}, ${h}`;
+      }),
+      u = i.some(Boolean) ? "Read the output file to get the result (it is gone if the restart replaced the container); they cannot be stopped or messaged." : "No output file was recorded for them, and they cannot be stopped or messaged; re-create them if still needed.";
+    t.push(`These background tasks finished before the restart, but their results were not delivered to you:
+${o.join(`
+`)}
+${u}`);
+  }
+  return `<system-reminder>
+The container was restarted. ${t.join(`
+`)}
+</system-reminder>`;
+}
+function r(e, ...n) {
+  try {
+    e.emit(...n);
+  } catch (error) {
+    d(error);
+  }
+}
+export { Mme, QEr, enn, iIt, ZEr };

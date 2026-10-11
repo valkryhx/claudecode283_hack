@@ -1,0 +1,255 @@
+/* ==============================================================================
+ * m0132.RLr   [m0132_0xc24a4bb.js @ 179983]
+ * --------------------------------------------------------------------------
+ * 作用: (no note)
+ * 原文: claudecode283/modules/m0132_0xc24a4bb.js  字符偏移 179983
+ * 说明: 由 tools/extract.mjs 抽取，忠实原文，仅格式化；标识符仍为 Bun 压缩名。
+ * ============================================================================== */
+async function RLr({
+  bare: e,
+  args: t,
+  host: o,
+  bounds: r = {},
+  loaded: n,
+  isInstallingGlobals: s
+}) {
+  let {
+    pluginName: i
+  } = t, {
+    stamp: p,
+    signal: a,
+    framed: f = (S, g) => g(),
+    hostStream: m = kLr,
+    blamedFor: u
+  } = r, d = !1, y = () => u?.() ?? p?.environmentId ?? 0, c = Lp(p, y), k = Mp(p, y), A = new Map, x = 0, {
+    globals: _,
+    context: h,
+    vmCall: v,
+    vmApply: M,
+    vmSettle: R,
+    vmOwns: H,
+    copyMatcher: F,
+    vmClone: B,
+    cloneIn: V,
+    vmAsyncWrap: z,
+    makers: Ae,
+    fromEnvironment: ue,
+    intoEnvironment: we,
+    wrapMethod: X,
+    vmIterate: de,
+    isGeneratorHook: ye
+  } = e;
+  async function ae(S, g, w) {
+    if (d) throw zCe(i);
+    try {
+      let E = await c(() => de(S, g, w));
+      return {
+        ...E,
+        value: B(E.value)
+      }
+    } catch (E) {
+      throw ue(E)
+    }
+  }
+  let ge = (S) => Np(S, ae),
+    Z = CLr(e, k);
+
+  function oe(S, g) {
+    if (d) throw zCe(i);
+    try {
+      return c(() => v(S, V(g)))
+    } catch (w) {
+      throw ue(w)
+    }
+  }
+  let I = async (S, g, w) => {
+    if (d) throw zCe(i);
+    let E;
+    try {
+      E = c(() => w === void 0 ? v(S, ...g) : M(w, S, ...g))
+    } catch (T) {
+      throw ue(T)
+    }
+    try {
+      return (await R(E)).v
+    } catch (T) {
+      throw ue(T)
+    }
+  }, D = jp(i, Ae), J = Dp({
+    context: h,
+    wrapMethod: X,
+    cloneIn: V,
+    pluginName: i,
+    vmClone: B
+  }), Y = Bp({
+    vmClone: B,
+    cloneIn: V
+  }), ne = TLr(J), ce = new WeakMap;
+
+  function se(S, g) {
+    let w = we(g);
+    if (typeof w !== "object" || !w) return w;
+    return ce.set(w, {
+      plugin: i,
+      op: S,
+      message: l(g)
+    }), w
+  }
+  let He = z(async (...S) => {
+      let [g, w, E] = S, T;
+      try {
+        return T = D(E), B(await k(o(g, w, T?.signal)))
+      } catch (N) {
+        throw se(g, N)
+      } finally {
+        T?.unlink()
+      }
+    }),
+    st = (...S) => {
+      let [g, w, E] = S, T = D(E), N = m(g, w, T?.signal);
+      async function* j() {
+        try {
+          return yield* N
+        } finally {
+          T?.unlink()
+        }
+      }
+      return Z(XIo(u1(j), () => {
+        N.return(void 0).catch(() => {
+          return
+        })
+      }))
+    };
+
+  function Nt(S) {
+    let g = S ? "setInterval" : "setTimeout";
+    return k0(X((w, E, ...T) => {
+      if (typeof w !== "function") throw new De(`${i}: ${g} takes a function`);
+      if (d) throw new De(`${i}: ${g}: its environment was unloaded`);
+      let N = jVn(E) ? E : 0,
+        j = ++x,
+        Te = Up({
+          pluginName: i,
+          api: g,
+          invoke: (ee, xe) => (udn(p?.view), I(ee, xe)),
+          fn: w,
+          args: T
+        }),
+        Re = S ? setInterval(An, N, Te) : setTimeout(gy, N, {
+          timers: A,
+          id: j,
+          fire: Te
+        });
+      return A.set(j, {
+        handle: Re,
+        repeat: S
+      }), j
+    }))
+  }
+  let it = k0(X((S) => {
+    if (typeof S !== "number") return;
+    let g = A.get(S);
+    if (g) A.delete(S), ka(g)
+  }));
+  if (s) Object.assign(_, {
+    setTimeout: Nt(!1),
+    setInterval: Nt(!0),
+    clearTimeout: it,
+    clearInterval: it,
+    console: OIo(X, `[${i}]`)
+  });
+  let Mt = {
+    ...t,
+    options: B(t.options)
+  };
+  a?.addEventListener("abort", We, {
+    once: !0
+  });
+  let at;
+  try {
+    if (at = await KIo({
+        loaded: await n(c),
+        args: Mt,
+        host: He,
+        hostStream: st,
+        resolvedTable: ne.read,
+        invoke: I,
+        iterate: ge,
+        streamIn: Z,
+        isGeneratorHook: ye,
+        wrapMethod: X,
+        signalFrom: D,
+        makeSignal: () => {
+          let {
+            signal: S,
+            abort: g
+          } = Ae.makeSignal();
+          return {
+            signal: S,
+            abort: (w) => c(() => g(we(w)))
+          }
+        },
+        copyMatcher: F,
+        stamped: c,
+        framed: f
+      }), a?.aborted === !0) throw new De(`${i}: unloaded while its module loaded`)
+  } catch (S) {
+    throw We(), S
+  }
+
+  function We() {
+    d = !0;
+    for (let S of A.values()) ka(S);
+    A.clear()
+  }
+
+  function jt(S) {
+    let g = pdn(S),
+      {
+        signal: w,
+        abort: E
+      } = Ae.makeSignal();
+    return Mw(S.signal, {
+      abort: (T) => c(() => E(we(T)))
+    }), {
+      signal: w,
+      is: S.is,
+      event: S.event,
+      origin: V(S.origin),
+      trace: X(() => Y(S.trace)),
+      budget: X(() => V(S.budget)),
+      caught: g && {
+        ...g,
+        error: V(g.error)
+      }
+    }
+  }
+  return {
+    activation: at,
+    invoke: I,
+    invokeSync: oe,
+    cloneIn: V,
+    argumentFor: V,
+    freezeForNext: UCe,
+    nextFor: (S, g) => {
+      let w = g === "ui.resolve",
+        E = (T, N) => w ? J(T, Fp(N)) : B(T);
+      return LCe({
+        ...jt(S),
+        call: X(async (T) => E(await k(S(T)), T)),
+        to: X(async (T, ...N) => E(await k(_Nt(T, S, N.map(B))), T))
+      })
+    },
+    streamNextFor: (S) => TVn({
+      ...jt(S),
+      call: X((g) => Z(S(B(g)))),
+      to: X((g, ...w) => Z(pLr(B(g), S, w.map(B))))
+    }),
+    storeResolved: ne.store,
+    dispose: () => {
+      We(), at.dispose()
+    },
+    opFailureOf: (S) => ELr(ce, S),
+    ownsValue: H
+  }
+}

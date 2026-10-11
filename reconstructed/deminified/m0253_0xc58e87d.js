@@ -1,0 +1,513 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { q, j, md } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { l } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import { tM } from "B:/~BUN/root/chunk-y04k89s2.js";
+import { sc, KJ, a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import { O } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { tt } from "B:/~BUN/root/chunk-py7yqpgt.js";
+import { IN } from "B:/~BUN/root/chunk-3wnb3s8p.js";
+import { LD, pj, WUe, xY } from "B:/~BUN/root/chunk-bpp59nyd.js";
+import { uv } from "B:/~BUN/root/chunk-0av24qsq.js";
+import { Re } from "B:/~BUN/root/chunk-yv67t8hr.js";
+var c = null,
+  C = !1;
+function f() {
+  if (C) return c;
+  return C = !0, null;
+  if (process.env.CLIPBOARD_NAPI_NODE_PATH) try {
+    return c = Re(process.env.CLIPBOARD_NAPI_NODE_PATH), c;
+  } catch {}
+  let n = ["x64-win32"].flatMap(item => [`./vendor/clipboard-napi/${item}/clipboard-napi.node`, `../clipboard-napi/${item}/clipboard-napi.node`]);
+  for (let r of n) try {
+    return c = Re(r), c;
+  } catch {}
+  return null;
+}
+import { Buffer as N } from "buffer";
+import { isAbsolute as P } from "path";
+var S = LD + String.fromCharCode(xY.OSC),
+  vtn = LD + "\\";
+function w() {
+  return md()?.terminal ?? a.terminal;
+}
+function HPt() {
+  let e = md();
+  if (e) return e.mux;
+  if (a.TMUX) return "tmux";
+  if (a.STY) return "screen";
+  if (a.ZELLIJ) return "zellij";
+  return null;
+}
+function p() {
+  return md()?.ssh ?? !!a.SSH_CONNECTION;
+}
+function _() {
+  let e = md();
+  if (e) {
+    if (e.mux !== "tmux" || !e.tmuxSocket) return null;
+    return P(e.tmuxSocket) && IN(e.tmuxSocket) ? ["-S", e.tmuxSocket] : null;
+  }
+  return a.TMUX ? [] : null;
+}
+function nLe() {
+  let e = w();
+  if (e === "Apple_Terminal") return "Fn";
+  if (e === "iTerm.app") return "Option";
+  if (md()?.isVscodeTerm || e && k.has(e)) return O() === "macos" ? "Option" : "Shift";
+  if (e && M.has(e)) return "Shift";
+  if (a.LC_TERMINAL === "iTerm2") return "Option";
+  return p() || HPt() !== null || O() === "macos" ? "Shift (Option in iTerm2, Fn in Terminal.app)" : "Shift";
+}
+var M = new Set(["ghostty", "kitty", "WezTerm", "alacritty", "xterm", "gnome-terminal", "vte-based", "konsole", "windows-terminal", "mintty", ...KJ]),
+  k = new Set(["vscode", "cursor", "windsurf", "antigravity", "codium"]);
+function Uy(...e) {
+  let o = w() === "kitty" ? vtn : pj;
+  return `${S}${e.join(WUe)}${o}`;
+}
+function bR(e) {
+  let o = HPt();
+  if (o === "tmux") return `\x1BPtmux;${e.replaceAll("\x1B", "\x1B\x1B")}\x1B\\`;
+  if (o === "screen") return `\x1BP${e.replaceAll("\x1B", "\x1B\x1B")}\x1B\\`;
+  return e;
+}
+class R {
+  tool = void 0;
+  addonWriteFailed = !1;
+  addonWriteSucceeded = !1;
+  waylandCopyGeneration = 0;
+  async probe() {
+    if (O() !== "linux" || typeof this.tool === "string" && this.tool !== "addon") return;
+    let {
+      display: display,
+      waylandDisplay: waylandDisplay
+    } = A();
+    if (waylandDisplay && (await sc("wl-copy"))) {
+      this.tool = "wl-copy";
+      return;
+    }
+    if (display) {
+      if (await sc("xclip")) {
+        this.tool = "xclip";
+        return;
+      }
+      if (await sc("xsel")) {
+        this.tool = "xsel";
+        return;
+      }
+    }
+    if (!this.addonWriteFailed && I() && f()?.setLinuxClipboardText) {
+      this.tool = "addon";
+      return;
+    }
+    this.tool = null;
+  }
+  recordAddonWrite(e) {
+    if (e) this.addonWriteSucceeded = !0;else this.addonWriteFailed ||= !this.addonWriteSucceeded;
+  }
+  beginWaylandCopy() {
+    return ++this.waylandCopyGeneration;
+  }
+  isLatestWaylandCopy(e) {
+    return e === this.waylandCopyGeneration;
+  }
+  reset() {
+    this.tool = void 0, this.addonWriteFailed = !1, this.addonWriteSucceeded = !1;
+  }
+}
+var D = new q(() => new R());
+function d() {
+  return D.of(j().host);
+}
+function eae() {
+  if (!p()) switch (O()) {
+    case "macos":
+    case "windows":
+    case "wsl":
+      return "native";
+    case "linux":
+      if (typeof d().tool === "string") return "native";
+      break;
+  }
+  if (_()) return "tmux-buffer";
+  return "osc52";
+}
+function ktn() {
+  return d().probe();
+}
+function Jyo() {
+  if (O() !== "linux") return "not_linux";
+  let {
+    tool: tool
+  } = d();
+  if (tool === void 0) return "not_probed";
+  return tool ?? "none";
+}
+function Qyo() {
+  return a.VTE_VERSION != null;
+}
+function A() {
+  return {
+    display: process.env.DISPLAY,
+    waylandDisplay: process.env.WAYLAND_DISPLAY
+  };
+}
+function I() {
+  let {
+    display: display_2,
+    waylandDisplay: waylandDisplay_2
+  } = A();
+  if (display_2) return /^(unix)?:/.test(display_2);
+  return !!waylandDisplay_2;
+}
+function H(e) {
+  return /[^\x00-\x7f]/.test(e);
+}
+function Etn(e) {
+  if (!uv.hasOsc52ClipboardUtf8Bug() || !H(e)) return null;
+  return "VS Code 1.123/1.124 will mojibake this paste \u2014 update to \u22651.125";
+}
+async function U(input) {
+  let o = _();
+  if (!o) return !1;
+  let n = {
+      input: input,
+      useCwd: !1,
+      timeout: 2000
+    },
+    r = a.LC_TERMINAL ?? "unset",
+    i = o.length > 0 ? "attacher socket" : "$TMUX",
+    {
+      code: code
+    } = await tt("tmux", [...o, "load-buffer", "-w", "-"], n);
+  if (t(`clipboard: tmux load-buffer -w - \u2192 exit ${code} (server=${i} LC_TERMINAL=${r})`), code === 0) return !0;
+  let u = await tt("tmux", [...o, "load-buffer", "-"], n);
+  return t(`clipboard: retry tmux load-buffer - \u2192 exit ${u.code} (server=${i} LC_TERMINAL=${r})`), u.code === 0;
+}
+var y = 76;
+async function SS(e) {
+  let o = N.from(e, "utf8").toString("base64");
+  if (!p()) L(e);
+  await U(e);
+  let n = HPt(),
+    r = p(),
+    i = n === "tmux" ? "raw+dcs" : n === "screen" ? "dcs" : "raw";
+  if (t(`clipboard: setClipboard mux=${n ?? "none"} ssh=${r} native=${!r} predicted=${eae()} emit=${i} bytes=${e.length}`), n === "tmux") {
+    let s = `${LD}]52;c;${o}${pj}`;
+    return s + bR(s);
+  }
+  if (n === "screen") {
+    let s = [];
+    for (let u = 0; u < o.length; u += y) s.push(o.slice(u, u + y));
+    return `${LD}P${LD}]52;c;${s.join(`${vtn}${LD}P`)}${pj}${vtn}`;
+  }
+  return Uy(Tg.CLIPBOARD, "c", o);
+}
+var E = "[Console]::InputEncoding = [Text.Encoding]::UTF8; Set-Clipboard -Value ([Console]::In.ReadToEnd())",
+  B = "[Console]::OutputEncoding = [Text.Encoding]::UTF8; Get-Clipboard -Raw";
+function L(input_2) {
+  let o = {
+    input: input_2,
+    useCwd: !1,
+    timeout: 2000
+  };
+  switch (O()) {
+    case "macos":
+      tt("pbcopy", [], o);
+      return;
+    case "linux":
+      {
+        let n = d();
+        if (typeof n.tool !== "string") n.probe().then(() => {
+          if (typeof n.tool === "string") L(input_2);
+        });else if (n.tool === "wl-copy") W(input_2);else if (n.tool === "xclip") {
+          let r = {
+            ...o,
+            useToolMemoryCgroup: !1
+          };
+          tt("xclip", ["-selection", "clipboard"], r), tt("xclip", ["-selection", "primary"], r);
+        } else if (n.tool === "xsel") {
+          let r = {
+            ...o,
+            useToolMemoryCgroup: !1
+          };
+          tt("xsel", ["--clipboard", "--input"], r), tt("xsel", ["--primary", "--input"], r);
+        } else if (n.tool === "addon") {
+          try {
+            n.recordAddonWrite(f()?.setLinuxClipboardText(input_2) !== !1);
+          } catch {
+            n.recordAddonWrite(!1);
+          }
+          n.probe();
+        }
+        return;
+      }
+    case "wsl":
+      {
+        tt("powershell.exe", ["-NoProfile", "-NonInteractive", "-Command", E], o);
+        return;
+      }
+    case "windows":
+      {
+        tt("powershell", ["-NoProfile", "-NonInteractive", "-Command", E], o);
+        return;
+      }
+  }
+}
+async function W(input_3) {
+  let o = d(),
+    n = o.beginWaylandCopy(),
+    r = {
+      input: input_3,
+      useCwd: !1,
+      timeout: 2000,
+      stdout: "ignore",
+      stderr: "ignore",
+      useToolMemoryCgroup: !1
+    };
+  if (await tt("wl-copy", [], r), !o.isLatestWaylandCopy(n)) return;
+  await tt("wl-copy", ["--primary"], r);
+}
+async function bst(e = "clipboard") {
+  if (p()) return "";
+  let o = {
+    useCwd: !1,
+    timeout: 2000
+  };
+  switch (O()) {
+    case "macos":
+      {
+        let n = await tt("pbpaste", [], o);
+        return n.code === 0 ? n.stdout : "";
+      }
+    case "windows":
+    case "wsl":
+      {
+        let n = await tt(O() === "wsl" ? "powershell.exe" : "powershell", ["-NoProfile", "-NonInteractive", "-Command", B], o);
+        return n.code === 0 ? n.stdout.replace(/\r\n/g, `
+`).replace(/\n$/, "") : "";
+      }
+    case "linux":
+      {
+        let n = e === "primary",
+          r = [["wl-paste", n ? ["--primary", "--no-newline"] : ["--no-newline"]], ["xclip", ["-selection", n ? "primary" : "clipboard", "-o"]], ["xsel", [n ? "--primary" : "--clipboard", "--output"]]];
+        for (let [i, s] of r) {
+          let u = await tt(i, [...s], o);
+          if (u.code === 0) return u.stdout;
+        }
+        return (await Y(n, o.timeout)) ?? "";
+      }
+    default:
+      return "";
+  }
+}
+async function Y(e, o) {
+  if (!I()) return null;
+  try {
+    return (await f()?.getLinuxClipboardText?.(e, o))?.replace(/\r?\n$|\r$/, "") ?? null;
+  } catch (error) {
+    return t(`clipboard: addon read: ${l(error)}`), null;
+  }
+}
+var Tg = {
+  SET_TITLE_AND_ICON: 0,
+  SET_ICON: 1,
+  SET_TITLE: 2,
+  SET_COLOR: 4,
+  SET_CWD: 7,
+  HYPERLINK: 8,
+  ITERM2: 9,
+  SET_FG_COLOR: 10,
+  SET_BG_COLOR: 11,
+  SET_CURSOR_COLOR: 12,
+  CLIPBOARD: 52,
+  KITTY: 99,
+  RESET_COLOR: 104,
+  RESET_FG_COLOR: 110,
+  RESET_BG_COLOR: 111,
+  RESET_CURSOR_COLOR: 112,
+  SEMANTIC_PROMPT: 133,
+  GHOSTTY: 777,
+  ITERM2_PROPRIETARY: 1337,
+  TAB_STATUS: 21337
+};
+function Zyo(e) {
+  let o = e.indexOf(";"),
+    n = o >= 0 ? e.slice(0, o) : e,
+    r = o >= 0 ? e.slice(o + 1) : "",
+    i = parseInt(n, 10);
+  if (i === Tg.SET_TITLE_AND_ICON) return {
+    type: "title",
+    action: {
+      type: "both",
+      title: r
+    }
+  };
+  if (i === Tg.SET_ICON) return {
+    type: "title",
+    action: {
+      type: "iconName",
+      name: r
+    }
+  };
+  if (i === Tg.SET_TITLE) return {
+    type: "title",
+    action: {
+      type: "windowTitle",
+      title: r
+    }
+  };
+  if (i === Tg.HYPERLINK) {
+    let s = r.split(";"),
+      u = s[0] ?? "",
+      url = s.slice(1).join(";");
+    if (url === "") return {
+      type: "link",
+      action: {
+        type: "end"
+      }
+    };
+    let x = {};
+    if (u) for (let T of u.split(":")) {
+      let b = T.indexOf("=");
+      if (b >= 0) x[T.slice(0, b)] = T.slice(b + 1);
+    }
+    return {
+      type: "link",
+      action: {
+        type: "start",
+        url: url,
+        params: Object.keys(x).length > 0 ? x : void 0
+      }
+    };
+  }
+  if (i === Tg.TAB_STATUS) return {
+    type: "tabStatus",
+    action: F(r)
+  };
+  return {
+    type: "unknown",
+    sequence: `\x1B]${e}`
+  };
+}
+function h(e) {
+  let o = e.match(/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i);
+  if (o) return {
+    type: "rgb",
+    r: parseInt(o[1], 16),
+    g: parseInt(o[2], 16),
+    b: parseInt(o[3], 16)
+  };
+  let n = e.match(/^rgb:([0-9a-f]{1,4})\/([0-9a-f]{1,4})\/([0-9a-f]{1,4})$/i);
+  if (n) {
+    let r = i => Math.round(parseInt(i, 16) / (16 ** i.length - 1) * 255);
+    return {
+      type: "rgb",
+      r: r(n[1]),
+      g: r(n[2]),
+      b: r(n[3])
+    };
+  }
+  return null;
+}
+function F(e) {
+  let o = {};
+  for (let [n, r] of G(e)) switch (n) {
+    case "indicator":
+      o.indicator = r === "" ? null : h(r);
+      break;
+    case "status":
+      o.status = r === "" ? null : r;
+      break;
+    case "status-color":
+      o.statusColor = r === "" ? null : h(r);
+      break;
+  }
+  return o;
+}
+function* G(e) {
+  let o = "",
+    n = "",
+    r = !1,
+    i = !1;
+  for (let s of e) if (i) {
+    if (r) n += s;else o += s;
+    i = !1;
+  } else if (s === "\\") i = !0;else if (s === ";") yield [o, n], o = "", n = "", r = !1;else if (s === "=" && !r) r = !0;else if (r) n += s;else o += s;
+  if (o || r) yield [o, n];
+}
+var regExp = new RegExp(tM.source, "g");
+function Qqe(e, o) {
+  let n = e.replace(regExp, "");
+  if (!n) return Zqe;
+  let r = {
+      id: V(n),
+      ...o
+    },
+    i = Object.entries(r).map(([s, u]) => `${s}=${u}`).join(":");
+  return Uy(Tg.HYPERLINK, i, n);
+}
+function V(e) {
+  let o = 0;
+  for (let n = 0; n < e.length; n++) o = (o << 5) - o + e.charCodeAt(n) | 0;
+  return (o >>> 0).toString(36);
+}
+var Zqe = Uy(Tg.HYPERLINK, "", ""),
+  Sst = {
+    NOTIFY: 0,
+    BADGE: 2,
+    PROGRESS: 4
+  },
+  wst = {
+    CLEAR: 0,
+    SET: 1,
+    ERROR: 2,
+    INDETERMINATE: 3
+  },
+  Ttn = `${S}${Tg.ITERM2};${Sst.PROGRESS};${wst.CLEAR};${pj}`,
+  ft = `${S}${Tg.SET_TITLE_AND_ICON};${pj}`,
+  Ctn = Uy(Tg.TAB_STATUS, "indicator=;status=;status-color=");
+function FPt() {
+  return !1;
+}
+function e_o(e) {
+  let o = [],
+    n = r => r.type === "rgb" ? `#${[r.r, r.g, r.b].map(item => item.toString(16).padStart(2, "0")).join("")}` : "";
+  if ("indicator" in e) o.push(`indicator=${e.indicator ? n(e.indicator) : ""}`);
+  if ("status" in e) o.push(`status=${e.status?.replaceAll("\\", "\\\\").replaceAll(";", "\\;") ?? ""}`);
+  if ("statusColor" in e) o.push(`status-color=${e.statusColor ? n(e.statusColor) : ""}`);
+  return Uy(Tg.TAB_STATUS, o.join(";"));
+}
+class v {
+  hooks = null;
+  uiMounted = !1;
+  setHooks(e) {
+    this.hooks = e;
+  }
+  setUiMounted(e) {
+    this.uiMounted = e;
+  }
+}
+var m = new v();
+function fEr(e) {
+  m.setHooks(e);
+}
+function mEr() {
+  return m.hooks;
+}
+function t_o(e) {
+  m.setUiMounted(e);
+}
+function $Pt() {
+  return m.uiMounted;
+}
+export { vtn, HPt, nLe, Uy, bR, eae, ktn, Jyo, Qyo, Etn, SS, bst, Tg, Zyo, Qqe, Zqe, Sst, wst, Ttn, Ctn, FPt, e_o, fEr, mEr, t_o, $Pt };

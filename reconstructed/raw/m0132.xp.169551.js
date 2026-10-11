@@ -1,0 +1,1 @@
+function xp(){let e={},t=jn({pluginName:"core",host:Be,hostStream:Be,resolvedTable:Be,timers:new Set,unloaded:Be,invoke:Be,wrapMethod:(o)=>o,signalFrom:Be,makeSignal:Be});for(let[o,r]of Object.entries(t))e[o]=Object.freeze(Object.keys(r));return Object.freeze(e)}

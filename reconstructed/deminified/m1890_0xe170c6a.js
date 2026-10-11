@@ -1,0 +1,1181 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { w } from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import { W_ } from "B:/~BUN/root/chunk-9hqq0jcs.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import { io } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import { y, c, Dy } from "B:/~BUN/root/chunk-kks4mj3w.js";
+import { P, l, v, Et } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-1223v177.js";
+import { O } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { O2, t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import { tr } from "B:/~BUN/root/chunk-0fnha6bz.js";
+import { I } from "B:/~BUN/root/chunk-y04k89s2.js";
+import "B:/~BUN/root/chunk-d4pzq02b.js";
+import "B:/~BUN/root/chunk-mgxre38x.js";
+import "B:/~BUN/root/chunk-h23911wn.js";
+import "B:/~BUN/root/chunk-jdm3bsma.js";
+import "B:/~BUN/root/chunk-cpg4rjtx.js";
+import { ke } from "B:/~BUN/root/chunk-kss0wzj5.js";
+import { Fw, le, Is, aFt } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import { Ls } from "B:/~BUN/root/chunk-728mwbhs.js";
+import { Ai, gn } from "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import { Kq } from "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import { Qye } from "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import { ct } from "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import { W$t, he, ln } from "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import { bJ } from "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-trcn2d68.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-4tkwpa6e.js";
+import "B:/~BUN/root/chunk-e1thvnpv.js";
+import { Zn } from "B:/~BUN/root/chunk-1x7a47hz.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-tq1hs216.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-jpnyq4t7.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import { s, n, fU } from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import "B:/~BUN/root/chunk-e9hrnhar.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-p4t9nwg2.js";
+import "B:/~BUN/root/chunk-q1b7bx45.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import "B:/~BUN/root/chunk-mvdr6ncg.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-jz31jc2e.js";
+import "B:/~BUN/root/chunk-p3ewqd1e.js";
+import "B:/~BUN/root/chunk-dczbgj6x.js";
+import "B:/~BUN/root/chunk-0rtwbec7.js";
+import "B:/~BUN/root/chunk-7nc4t0q7.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-4r6zcwth.js";
+import { bE, fnt, mnt, IGe, Kn, zW, cF, IFn, bme, GW, Sme, wp, Men, jO, m_, Uo } from "B:/~BUN/root/chunk-3jyp964r.js";
+import "B:/~BUN/root/chunk-5nfpvvfh.js";
+import "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import { al } from "B:/~BUN/root/chunk-f1dj0k6n.js";
+import { bd } from "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import "B:/~BUN/root/chunk-n3t3nbqw.js";
+import "B:/~BUN/root/chunk-wefm1yd9.js";
+import "B:/~BUN/root/chunk-4dctrsn2.js";
+import { iy, $T } from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import "B:/~BUN/root/chunk-38kffpyk.js";
+import "B:/~BUN/root/chunk-9mfh08mz.js";
+import "B:/~BUN/root/chunk-vq58jz92.js";
+import "B:/~BUN/root/chunk-0vgj9y5e.js";
+import "B:/~BUN/root/chunk-yzpw1mdr.js";
+import "B:/~BUN/root/chunk-d8zzdckb.js";
+import "B:/~BUN/root/chunk-kwex2zh0.js";
+import "B:/~BUN/root/chunk-1724zw97.js";
+import "B:/~BUN/root/chunk-196w7fz7.js";
+import "B:/~BUN/root/chunk-dt2g8e1y.js";
+import "B:/~BUN/root/chunk-s95n71e7.js";
+import { tb } from "B:/~BUN/root/chunk-846bv8b5.js";
+import "B:/~BUN/root/chunk-8qv35yd7.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import "B:/~BUN/root/chunk-ew8y0fm0.js";
+import "B:/~BUN/root/chunk-30zp50p7.js";
+import "B:/~BUN/root/chunk-f6h9k5ss.js";
+import "B:/~BUN/root/chunk-xdhy5nhb.js";
+import "B:/~BUN/root/chunk-8k39s5js.js";
+import "B:/~BUN/root/chunk-5dk9zqaz.js";
+import "B:/~BUN/root/chunk-yeg3gem6.js";
+import "B:/~BUN/root/chunk-ewvnv67m.js";
+import "B:/~BUN/root/chunk-gbtzpa3e.js";
+import "B:/~BUN/root/chunk-r6m7remx.js";
+import "B:/~BUN/root/chunk-384x2wn9.js";
+import "B:/~BUN/root/chunk-nrrn2axm.js";
+import "B:/~BUN/root/chunk-5yjtercz.js";
+import "B:/~BUN/root/chunk-8xaxa0y1.js";
+import "B:/~BUN/root/chunk-spgj5paf.js";
+import "B:/~BUN/root/chunk-88mdabet.js";
+import "B:/~BUN/root/chunk-2pww2v3x.js";
+import "B:/~BUN/root/chunk-6cq25d8x.js";
+import "B:/~BUN/root/chunk-0w5kpsps.js";
+import "B:/~BUN/root/chunk-n5swsemr.js";
+import "B:/~BUN/root/chunk-4mcmxrhr.js";
+import "B:/~BUN/root/chunk-y39emrp9.js";
+import "B:/~BUN/root/chunk-tgk1nfes.js";
+import "B:/~BUN/root/chunk-qmv1x2cp.js";
+import "B:/~BUN/root/chunk-skjrk8s1.js";
+import "B:/~BUN/root/chunk-mc8ranwc.js";
+import "B:/~BUN/root/chunk-mmnpv22v.js";
+import "B:/~BUN/root/chunk-nhxcgss8.js";
+import "B:/~BUN/root/chunk-ye6tacpp.js";
+import "B:/~BUN/root/chunk-affnknva.js";
+import "B:/~BUN/root/chunk-je63fn7b.js";
+import "B:/~BUN/root/chunk-90zbw58x.js";
+import "B:/~BUN/root/chunk-6k625ztj.js";
+import "B:/~BUN/root/chunk-2m5rfp86.js";
+import "B:/~BUN/root/chunk-2n2hx639.js";
+import "B:/~BUN/root/chunk-aa7kpy4p.js";
+import "B:/~BUN/root/chunk-ewjenbzd.js";
+import "B:/~BUN/root/chunk-70qv5h0a.js";
+import "B:/~BUN/root/chunk-6wgkxd9a.js";
+import "B:/~BUN/root/chunk-d6sc6w1r.js";
+import "B:/~BUN/root/chunk-efz11ra0.js";
+import "B:/~BUN/root/chunk-9qtz41py.js";
+import "B:/~BUN/root/chunk-n2rcpjj1.js";
+import "B:/~BUN/root/chunk-1xb1enjd.js";
+import "B:/~BUN/root/chunk-65tbbnf1.js";
+import "B:/~BUN/root/chunk-xy9bynby.js";
+import "B:/~BUN/root/chunk-m1qtc24s.js";
+import "B:/~BUN/root/chunk-p6ejqvds.js";
+import "B:/~BUN/root/chunk-zfb6h1v8.js";
+import "B:/~BUN/root/chunk-3k26zwm7.js";
+import "B:/~BUN/root/chunk-y2pt1fm0.js";
+import "B:/~BUN/root/chunk-ec3373a4.js";
+import "B:/~BUN/root/chunk-5emths66.js";
+import "B:/~BUN/root/chunk-1dghpe22.js";
+import "B:/~BUN/root/chunk-0djrqga0.js";
+import "B:/~BUN/root/chunk-7azfcycf.js";
+import "B:/~BUN/root/chunk-q3sthw4s.js";
+import "B:/~BUN/root/chunk-5a1m1kxy.js";
+import "B:/~BUN/root/chunk-4q0h6gxt.js";
+import "B:/~BUN/root/chunk-a8gk62v4.js";
+import "B:/~BUN/root/chunk-ehma26r8.js";
+import "B:/~BUN/root/chunk-q5ke49kw.js";
+import "B:/~BUN/root/chunk-faawr4jv.js";
+import "B:/~BUN/root/chunk-gksrzz5s.js";
+import "B:/~BUN/root/chunk-x8507144.js";
+import "B:/~BUN/root/chunk-j36yaq51.js";
+import "B:/~BUN/root/chunk-7d9qjs8x.js";
+import "B:/~BUN/root/chunk-a8td06ny.js";
+import "B:/~BUN/root/chunk-krn12wre.js";
+import "B:/~BUN/root/chunk-671s136j.js";
+import "B:/~BUN/root/chunk-rdxve5qj.js";
+import "B:/~BUN/root/chunk-hg30cgr1.js";
+import "B:/~BUN/root/chunk-2gwgbd5e.js";
+import { Win } from "B:/~BUN/root/chunk-rtxwm8ds.js";
+import "B:/~BUN/root/chunk-f71hcy5v.js";
+import "B:/~BUN/root/chunk-8gym6yya.js";
+import "B:/~BUN/root/chunk-q77pmen1.js";
+import "B:/~BUN/root/chunk-mmtwp5d6.js";
+import "B:/~BUN/root/chunk-9sy3w2pa.js";
+import "B:/~BUN/root/chunk-dt6tzt7w.js";
+import "B:/~BUN/root/chunk-z51p19sq.js";
+import "B:/~BUN/root/chunk-8p6es4nr.js";
+import "B:/~BUN/root/chunk-pnn94d53.js";
+import "B:/~BUN/root/chunk-xfvqq19y.js";
+import "B:/~BUN/root/chunk-06rekkgz.js";
+import "B:/~BUN/root/chunk-jz4j9jvf.js";
+import "B:/~BUN/root/chunk-zy5rwsjc.js";
+import "B:/~BUN/root/chunk-hjery5bx.js";
+import "B:/~BUN/root/chunk-1zdknz5q.js";
+import "B:/~BUN/root/chunk-ztbv79md.js";
+import "B:/~BUN/root/chunk-8b53pnky.js";
+import "B:/~BUN/root/chunk-g0q5e1g8.js";
+import "B:/~BUN/root/chunk-jwaej6se.js";
+import "B:/~BUN/root/chunk-gsz9m7j5.js";
+import "B:/~BUN/root/chunk-9ketrzpm.js";
+import "B:/~BUN/root/chunk-brdpd4rf.js";
+import "B:/~BUN/root/chunk-3ms6a7at.js";
+import "B:/~BUN/root/chunk-xqjbapaq.js";
+import "B:/~BUN/root/chunk-1yna3b23.js";
+import "B:/~BUN/root/chunk-1a6hgte8.js";
+import "B:/~BUN/root/chunk-0tqg3ze0.js";
+import "B:/~BUN/root/chunk-qx3qjw47.js";
+import "B:/~BUN/root/chunk-jzh8geyk.js";
+import "B:/~BUN/root/chunk-wkrgyaen.js";
+import "B:/~BUN/root/chunk-4grky1fs.js";
+import "B:/~BUN/root/chunk-at7axhcd.js";
+import "B:/~BUN/root/chunk-bzhr4ppe.js";
+import "B:/~BUN/root/chunk-r1ja2che.js";
+import "B:/~BUN/root/chunk-116h9ckm.js";
+import "B:/~BUN/root/chunk-7z8vew74.js";
+import "B:/~BUN/root/chunk-txj2pkcj.js";
+import "B:/~BUN/root/chunk-dty6td52.js";
+import "B:/~BUN/root/chunk-1mdmjaqt.js";
+import "B:/~BUN/root/chunk-t82zs1e5.js";
+import "B:/~BUN/root/chunk-m24apm1y.js";
+import "B:/~BUN/root/chunk-vczknmbj.js";
+import "B:/~BUN/root/chunk-4hj9afs7.js";
+import "B:/~BUN/root/chunk-mxaybm01.js";
+import "B:/~BUN/root/chunk-0mn860zt.js";
+import "B:/~BUN/root/chunk-rp3kg713.js";
+import "B:/~BUN/root/chunk-6yjt7rfc.js";
+import "B:/~BUN/root/chunk-1h0a0b4e.js";
+import "B:/~BUN/root/chunk-k1r60xrk.js";
+import "B:/~BUN/root/chunk-q52x4j16.js";
+import { F } from "B:/~BUN/root/chunk-acd2tycn.js";
+import "B:/~BUN/root/chunk-9jvj58wt.js";
+import "B:/~BUN/root/chunk-bt71g93n.js";
+import "B:/~BUN/root/chunk-prb4vytb.js";
+import "B:/~BUN/root/chunk-mr8gretd.js";
+import "B:/~BUN/root/chunk-syke822n.js";
+import "B:/~BUN/root/chunk-cxqcvpm0.js";
+import "B:/~BUN/root/chunk-zg8y1401.js";
+import "B:/~BUN/root/chunk-r2yrqvry.js";
+import { ye } from "B:/~BUN/root/chunk-41008fhm.js";
+import "B:/~BUN/root/chunk-jcnv9sfw.js";
+import "B:/~BUN/root/chunk-vabpvk99.js";
+import { dP } from "B:/~BUN/root/chunk-zfsr3kh2.js";
+import "B:/~BUN/root/chunk-0d8a76zs.js";
+import "B:/~BUN/root/chunk-5r1x61tc.js";
+import { ge } from "B:/~BUN/root/chunk-51erc9xb.js";
+import "B:/~BUN/root/chunk-txdt16r9.js";
+import "B:/~BUN/root/chunk-dx2z5mzz.js";
+import { zXe } from "B:/~BUN/root/chunk-k3wmx3f5.js";
+import { b6 } from "B:/~BUN/root/chunk-ynkk3h75.js";
+import "B:/~BUN/root/chunk-385v01s9.js";
+import "B:/~BUN/root/chunk-fhmaxxy1.js";
+import "B:/~BUN/root/chunk-7r4zb9xn.js";
+import { EZn } from "B:/~BUN/root/chunk-3wp0sje4.js";
+import { qwt, uze } from "B:/~BUN/root/chunk-mtjq1vv3.js";
+import { WC, lM } from "B:/~BUN/root/chunk-j8x7ygb4.js";
+import { hx, nn, Fi, cN } from "B:/~BUN/root/chunk-zahshfs3.js";
+import { j9n, nWt } from "B:/~BUN/root/chunk-zapvg1dg.js";
+import { qD } from "B:/~BUN/root/chunk-tdg8w0m4.js";
+import { MYr } from "B:/~BUN/root/chunk-sk2avvb9.js";
+import { TPe } from "B:/~BUN/root/chunk-n8vd08cn.js";
+import "B:/~BUN/root/chunk-7yf8jrt2.js";
+import "B:/~BUN/root/chunk-6q5vhtfh.js";
+import "B:/~BUN/root/chunk-7frntmvs.js";
+import "B:/~BUN/root/chunk-w15vevdx.js";
+import "B:/~BUN/root/chunk-zza9ywwa.js";
+import "B:/~BUN/root/chunk-bbgg7kv0.js";
+import "B:/~BUN/root/chunk-sv155qry.js";
+import { Xe } from "B:/~BUN/root/chunk-parcaazx.js";
+import "B:/~BUN/root/chunk-b36qwjxy.js";
+import "B:/~BUN/root/chunk-ejdx9rag.js";
+import "B:/~BUN/root/chunk-cdch6ag4.js";
+import "B:/~BUN/root/chunk-b5qh4e85.js";
+import { V, e, r } from "B:/~BUN/root/chunk-qkvevvte.js";
+import "B:/~BUN/root/chunk-9z0za8jx.js";
+import "B:/~BUN/root/chunk-4dw8761b.js";
+import "B:/~BUN/root/chunk-c50e3nb9.js";
+import "B:/~BUN/root/chunk-18pna2e9.js";
+import "B:/~BUN/root/chunk-8tap4h55.js";
+import "B:/~BUN/root/chunk-qqa5c82w.js";
+import "B:/~BUN/root/chunk-zfm0jkby.js";
+import "B:/~BUN/root/chunk-fyvmz7de.js";
+import "B:/~BUN/root/chunk-tvk6phkz.js";
+import "B:/~BUN/root/chunk-0f5aa3v1.js";
+import "B:/~BUN/root/chunk-0sj8manb.js";
+import { Pn } from "B:/~BUN/root/chunk-106hagsg.js";
+import "B:/~BUN/root/chunk-qq6w89ha.js";
+import "B:/~BUN/root/chunk-wbt134f9.js";
+import "B:/~BUN/root/chunk-v8xy4z2n.js";
+import "B:/~BUN/root/chunk-q3x7vf9d.js";
+import { Gpr, Mc } from "B:/~BUN/root/chunk-s08gcgdz.js";
+import "B:/~BUN/root/chunk-tg1j81wg.js";
+import "B:/~BUN/root/chunk-v8s05yj9.js";
+import "B:/~BUN/root/chunk-8n4s8cn5.js";
+import "B:/~BUN/root/chunk-230s8gzy.js";
+import "B:/~BUN/root/chunk-ghw8h4y1.js";
+import "B:/~BUN/root/chunk-tzzvaz2j.js";
+import "B:/~BUN/root/chunk-pwpgxxsc.js";
+import "B:/~BUN/root/chunk-m4ehcybg.js";
+import { Z } from "B:/~BUN/root/chunk-08bth2fj.js";
+import "B:/~BUN/root/chunk-esqb9g1a.js";
+import "B:/~BUN/root/chunk-6jwexnnw.js";
+import { Sr, mr, R, g, N } from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import "B:/~BUN/root/chunk-a2kvnefe.js";
+import "B:/~BUN/root/chunk-w4zcf9ar.js";
+import "B:/~BUN/root/chunk-467d5w8j.js";
+import "B:/~BUN/root/chunk-cn8bxjex.js";
+import "B:/~BUN/root/chunk-zn0k3ezm.js";
+import "B:/~BUN/root/chunk-c1275ktq.js";
+import "B:/~BUN/root/chunk-pgrf1rrh.js";
+import "B:/~BUN/root/chunk-ymhw5dt2.js";
+import "B:/~BUN/root/chunk-xmtkv29j.js";
+import "B:/~BUN/root/chunk-hcqaqf9c.js";
+import "B:/~BUN/root/chunk-na2t7g12.js";
+import "B:/~BUN/root/chunk-aqngsaqg.js";
+import "B:/~BUN/root/chunk-gj7av6e0.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-vr3kcvgy.js";
+import "B:/~BUN/root/chunk-fbgf4b4h.js";
+import "B:/~BUN/root/chunk-g4xzaw4b.js";
+import "B:/~BUN/root/chunk-mac0vc34.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-h7t9e2fk.js";
+import "B:/~BUN/root/chunk-6bchs2sy.js";
+import "B:/~BUN/root/chunk-hbma7z88.js";
+import "B:/~BUN/root/chunk-vgyyj55s.js";
+import "B:/~BUN/root/chunk-9sajt7dp.js";
+import "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-hyp140x7.js";
+import "B:/~BUN/root/chunk-995m8a2a.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gmsn86f4.js";
+import "B:/~BUN/root/chunk-08q5fcq1.js";
+import "B:/~BUN/root/chunk-p10aw0p6.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import { wUe } from "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import { L } from "B:/~BUN/root/chunk-z1enakv9.js";
+import { S } from "B:/~BUN/root/chunk-yv67t8hr.js";
+import { stat as jr } from "fs/promises";
+N();
+import { cwd as Pr } from "process";
+N();
+function br(Wr) {
+  t(`Failed to read existing MCP configs for Desktop import: ${l(Wr)}`, {
+    level: "error"
+  });
+}
+function Mr(Yr) {
+  return Yr !== null;
+}
+function pe(h) {
+  let a = w(50),
+    {
+      servers: servers,
+      scope: scope,
+      onDone: onDone
+    } = h,
+    u;
+  if (a[0] !== servers) u = Object.keys(servers), a[0] = servers, a[1] = u;else u = a[1];
+  let m = u,
+    i;
+  if (a[2] === S) i = {}, a[2] = i;else i = a[2];
+  let [C, j] = g(i),
+    [f] = Zn(),
+    {
+      storageV5: storageV5
+    } = ke(),
+    k,
+    x;
+  if (a[3] !== storageV5) k = () => {
+    jO({
+      storageV5: storageV5
+    }).then(_ => {
+      let {
+        servers: servers_2
+      } = _;
+      return j(servers_2);
+    }).catch(br);
+  }, x = [storageV5], a[3] = storageV5, a[4] = k, a[5] = x;else k = a[4], x = a[5];
+  R(k, x);
+  let _;
+  if (a[6] !== C || a[7] !== m) {
+    let E;
+    if (a[9] !== C) E = ve => C[ve] !== void 0, a[9] = C, a[10] = E;else E = a[10];
+    _ = m.filter(E);
+    a[6] = C, a[7] = m, a[8] = _;
+  } else _ = a[8];
+  let A = _,
+    E;
+  if (a[11] !== C) E = function W(J) {
+    if (C[J] === void 0) {
+      return J;
+    }
+    let Se = 1;
+    while (C[`${J}_${Se}`] !== void 0) Se++;
+    return `${J}_${Se}`;
+  }, a[11] = C, a[12] = E;else E = a[12];
+  let W = E,
+    Ue;
+  if (a[13] !== W || a[14] !== scope || a[15] !== storageV5) Ue = async function Y(serverName, Dr) {
+    ;
+    try {
+      return await cF(W(serverName), Dr, scope, storageV5), null;
+    } catch (error) {
+      let Or = error;
+      return {
+        serverName: serverName,
+        reason: l(Or)
+      };
+    }
+  }, a[13] = W, a[14] = scope, a[15] = storageV5, a[16] = Ue;else Ue = a[16];
+  let Y = Ue,
+    z,
+    onSubmit;
+  if (a[17] !== Y || a[18] !== onDone || a[19] !== scope || a[20] !== servers || a[21] !== f) {
+    let We = async function We(Ir) {
+      let Ge = await Ir.flatMap(Ve => {
+        let serverConfig = servers[Ve];
+        return serverConfig ? [{
+          serverName: Ve,
+          serverConfig: serverConfig
+        }] : [];
+      }).reduce(async (acc, item) => {
+        let {
+          serverName: serverName_2,
+          serverConfig: serverConfig_2
+        } = item;
+        return [...(await acc), await Y(serverName_2, serverConfig_2)];
+      }, Promise.resolve([]));
+      let failures = Ge.filter(Mr);
+      z({
+        importedCount: Ge.length - failures.length,
+        failures: failures
+      });
+    };
+    onSubmit = function q(Ur) {
+      We(Ur).catch(zr => {
+        tr(`
+${Pn("error", f)(l(zr))}
+`), onDone(), Kn();
+      });
+    };
+    z = _e => {
+      let {
+        importedCount: importedCount,
+        failures: failures_2
+      } = _e;
+      if (importedCount > 0) tr(`
+${Pn("success", f)(`Successfully imported ${importedCount} MCP ${I(importedCount, "server")} to ${scope} config.`)}
+`);else tr(`
+No servers were imported.`);
+      failures_2.forEach(item => {
+        let {
+          serverName: serverName_3,
+          reason: reason
+        } = item;
+        tr(`
+${Pn("error", f)(`Could not import ${serverName_3}: ${reason}`)}
+`);
+      }), onDone(), Kn();
+    };
+    a[17] = Y, a[18] = onDone, a[19] = scope, a[20] = servers, a[21] = f, a[22] = z, a[23] = onSubmit;
+  } else z = a[22], onSubmit = a[23];
+  let D;
+  if (a[24] !== z) D = () => {
+    z({
+      importedCount: 0,
+      failures: []
+    });
+  }, a[24] = z, a[25] = D;else D = a[25];
+  let onCancel = D;
+  const _e = m.length;
+  let K;
+  if (a[26] !== m.length) K = I(m.length, "server"), a[26] = m.length, a[27] = K;else K = a[27];
+  const subtitle = `Found ${_e} MCP ${K} in Claude Desktop.`;
+  let X;
+  if (a[28] !== A.length) X = A.length > 0 && e(n, {
+    color: "warning",
+    children: "Note: Some servers already exist with the same name. If selected, they will be imported with a numbered suffix."
+  }), a[28] = A.length, a[29] = X;else X = a[29];
+  let Ye;
+  if (a[30] === S) Ye = e(n, {
+    children: "Please select the servers you want to import:"
+  }), a[30] = Ye;else Ye = a[30];
+  let options, defaultValue;
+  if (a[31] !== A || a[32] !== m) {
+    options = m.map(be => ({
+      label: `${be}${A.includes(be) ? " (already exists)" : ""}`,
+      value: be
+    }));
+    let T;
+    if (a[35] !== A) T = Jr => !A.includes(Jr), a[35] = A, a[36] = T;else T = a[36];
+    defaultValue = m.filter(T);
+    a[31] = A, a[32] = m, a[33] = options, a[34] = defaultValue;
+  } else options = a[33], defaultValue = a[34];
+  let T;
+  if (a[37] !== onCancel || a[38] !== onSubmit || a[39] !== options || a[40] !== defaultValue) T = e(dP, {
+    options: options,
+    defaultValue: defaultValue,
+    onSubmit: onSubmit,
+    onCancel: onCancel,
+    hideIndexes: !0
+  }), a[37] = onCancel, a[38] = onSubmit, a[39] = options, a[40] = defaultValue, a[41] = T;else T = a[41];
+  let re;
+  if (a[42] !== onCancel || a[43] !== subtitle || a[44] !== X || a[45] !== T) re = r(ge, {
+    title: "Import MCP Servers from Claude Desktop",
+    subtitle: subtitle,
+    color: "success",
+    onCancel: onCancel,
+    hideInputGuide: !0,
+    children: [X, Ye, T]
+  }), a[42] = onCancel, a[43] = subtitle, a[44] = X, a[45] = T, a[46] = re;else re = a[46];
+  let Ke;
+  if (a[47] === S) Ke = e(s, {
+    paddingX: 1,
+    children: e(n, {
+      dimColor: !0,
+      italic: !0,
+      children: r(ye, {
+        children: [e(F, {
+          chord: "space",
+          action: "select"
+        }), e(F, {
+          chord: "enter",
+          action: "confirm"
+        }), e(Xe, {
+          action: "confirm:no",
+          context: "Confirmation",
+          fallback: "Esc",
+          description: "cancel"
+        })]
+      })
+    })
+  }), a[47] = Ke;else Ke = a[47];
+  let Qe;
+  if (a[48] !== re) Qe = r(V, {
+    children: [re, Ke]
+  }), a[48] = re, a[49] = Qe;else Qe = a[49];
+  return Qe;
+}
+function Fr(f) {
+  return f !== null;
+}
+function ue() {
+  return import.meta.require("B:/~BUN/root/chunk-m4dhr7e5.js");
+}
+function U() {
+  return ue().mcpAuthModule();
+}
+function me() {
+  return ue().mcpClientModule();
+}
+function $r() {
+  return ue().mcpIsListAuthErrorModule();
+}
+function Er(h, o, d) {
+  let p = d?.issues,
+    a = l(d);
+  if (Array.isArray(p) && p.length > 0) {
+    let u = p[0],
+      m = typeof u.message === "string" ? u.message : a,
+      i = Array.isArray(u.path) && u.path.length > 0 ? ` (at ${u.path.join(".")})` : "",
+      C = p.length > 1 ? ` (+${p.length - 1} more)` : "";
+    a = m + i + C;
+  }
+  return iy(Mc(h, o, a));
+}
+async function Oe(h, o, d) {
+  try {
+    let p = await me().connectToServer(h, o, void 0, d);
+    if (p.type === "connected") {
+      if (p.capabilities.tools) try {
+        await Win(p, {
+          timeout: 5000
+        });
+      } catch (error) {
+        if ($r().isListAuthError(error)) return {
+          status: "! Needs authentication"
+        };
+        return {
+          status: "! Connected \xB7 tools fetch failed",
+          issue: Er(h, o, error)
+        };
+      }
+      return {
+        status: `${Z.tick} Connected`
+      };
+    } else if (p.type === "needs-auth") return {
+      status: "! Needs authentication"
+    };else if ($T(p)) return {
+      status: "- Not configured"
+    };else if (p.type === "failed") {
+      let issue = MYr(p);
+      return {
+        status: `${Z.cross} Failed to connect`,
+        ...(issue !== "" && {
+          issue: issue
+        })
+      };
+    } else return {
+      status: `${Z.cross} Failed to connect`
+    };
+  } catch (error) {
+    return {
+      status: `${Z.cross} Connection error`
+    };
+  }
+}
+async function ao({
+  debug: debug,
+  verbose: verbose,
+  transport: transport,
+  port: port,
+  resultFormat: resultFormat
+}, u) {
+  let m = Pr(),
+    i = "stdio",
+    C = "raw";
+  await Ls("tengu_mcp_start", {
+    transport: c("stdio")
+  });
+  let j = 0;
+  try {
+    await jr(m);
+  } catch (error) {
+    if (Et(error)) return await gn("cli_mcp_serve", "cli_mcp_serve_cwd_missing"), Fi(`Error: Directory ${m} does not exist`);
+    throw error;
+  }
+  try {
+    let {
+      awaitPolicyLimitsColdStart: awaitPolicyLimitsColdStart
+    } = await import("B:/~BUN/root/chunk-mjxpcxa7.js");
+    await awaitPolicyLimitsColdStart();
+    let {
+      setup: setup
+    } = await import("B:/~BUN/root/chunk-mw5pfcfw.js");
+    await setup(m, "default", !1, !1, void 0, !1, void 0, void 0, void 0, u);
+    let {
+        SandboxManager: SandboxManager
+      } = await import("B:/~BUN/root/chunk-7kkgm04r.js"),
+      x = SandboxManager.getSandboxUnavailableReason();
+    if (x) {
+      if (SandboxManager.isSandboxRequired()) return await gn("cli_mcp_serve", "cli_mcp_serve_sandbox_required_unavailable"), Fi(`Error: sandbox required but unavailable: ${x}
+` + "  sandbox.failIfUnavailable is set \u2014 refusing to start without a working sandbox.");
+      process.stderr.write(`
+\u26A0 Sandbox disabled: ${x}
+  Commands will run WITHOUT sandboxing. Network and filesystem restrictions will NOT be enforced.
+
+`);
+    } else {
+      if (SandboxManager.canMaskCredentialWarningFire()) SandboxManager.checkDependencies();
+      let _ = SandboxManager.getMaskCredentialWarning();
+      if (_) process.stderr.write(`
+\u26A0 ${_}
+
+`);
+    }
+    {
+      let {
+        startMCPServer: startMCPServer
+      } = await import("B:/~BUN/root/chunk-hgcnt1q3.js");
+      await startMCPServer(m, debug ?? !1, verbose ?? !1, u, "raw");
+    }
+    await Ai("cli_mcp_serve");
+  } catch (error) {
+    return await gn("cli_mcp_serve", "cli_mcp_serve_start_failed"), Fi(`Error: Failed to start MCP server: ${error}`);
+  }
+}
+async function co(h, o, d, p) {
+  let a = null,
+    u = j => {
+      let f = GW.find(item => item === j);
+      a = f ? wp(f).servers[o] ?? null : null;
+    },
+    m = async () => {
+      if (await me().removeMcpAuthCacheEntry(o, p), a && (a.type === "sse" || a.type === "http")) try {
+        await U().clearServerTokensFromLocalStorage(o, a), await U().clearMcpClientConfig(o, a);
+      } catch (error) {
+        t(`mcp remove: secure-storage cleanup for "${o}" failed: ${l(error)}`, {
+          level: "warn"
+        });
+      }
+    },
+    i;
+  try {
+    let j = Fw(o, Men(o) ?? void 0);
+    if (d.scope) {
+      let f = mnt(d.scope);
+      await Ls("tengu_mcp_delete", {
+        name: Dy(o, j),
+        scope: c(f)
+      }), u(f), await IFn(o, f, p), await m(), i = f;
+    } else {
+      let f = Is(),
+        b = le(),
+        k = await bme().catch(M => {
+          if (M instanceof P || v(M) !== void 0) throw M;
+          return {};
+        }),
+        x = Object.hasOwn(k, o),
+        _ = [];
+      if (f.mcpServers?.[o]) _.push("local");
+      if (x) _.push("project");
+      if (b.mcpServers?.[o]) _.push("user");
+      if (_.length === 0) {
+        await qD({
+          hasDynamicMcpConfig: !1
+        });
+        let M = Men(o)?.scope;
+        if (M && Sme(M)) return Fi(`MCP server "${o}" is provided by your organization (${M === "managed" ? "managed settings" : bE("enterprise")}) and cannot be removed locally.`);
+        let E = [...Object.keys(f.mcpServers ?? {}), ...Object.keys(k), ...Object.keys(b.mcpServers ?? {})];
+        return await gn("cli_mcp_remove", "cli_mcp_remove_not_found"), Fi(j9n(o, L(E)));
+      } else if (_.length === 1) {
+        let M = _[0];
+        await Ls("tengu_mcp_delete", {
+          name: Dy(o, j),
+          scope: c(M)
+        }), u(M), await IFn(o, M, p), await m(), i = M;
+      } else {
+        process.stderr.write(`MCP server "${o}" exists in multiple scopes:
+`), _.forEach(item => {
+          process.stderr.write(`  - ${fnt(item)} (${bE(item)})
+`);
+        });
+        let M = _.map(item => al("mcp remove", o, `-s ${item}`)).filter(item => item !== null);
+        if (M.length > 0) process.stderr.write(`
+To remove from a specific scope, use:
+`), M.forEach(item => process.stderr.write(`  ${item}
+`));else process.stderr.write(`
+Specify a scope with -s to remove from a specific one.
+`);
+        return await gn("cli_mcp_remove", "cli_mcp_remove_ambiguous_scope"), Fi();
+      }
+    }
+  } catch (error) {
+    return await gn("cli_mcp_remove", "cli_mcp_remove_failed"), Fi(l(error));
+  }
+  await Ai("cli_mcp_remove");
+  let C = d.scope ? o : `"${o}"`;
+  await lM(h, r(s, {
+    flexDirection: "column",
+    children: [r(n, {
+      children: ["Removed MCP server ", C, " from ", i, " config"]
+    }), r(n, {
+      children: ["File modified: ", bE(i)]
+    })]
+  }));
+}
+function Rr(h) {
+  let o = d => typeof d === "string" ? Qye(d) : Array.isArray(d) ? d.map(o) : d && typeof d === "object" ? io(d, o) : d;
+  return o(h);
+}
+function fe(h) {
+  let o = O2(h),
+    d = bJ(h);
+  if ("url" in o) return {
+    ...o,
+    url: d,
+    ...("headers" in o && o.headers && {
+      headers: Object.fromEntries(Object.keys(o.headers).map(item => [item, "[REDACTED]"]))
+    })
+  };
+  if ("command" in o) return {
+    ...o,
+    command: d,
+    ...(o.args && {
+      args: []
+    }),
+    ...("env" in o && o.env && {
+      env: Object.fromEntries(Object.keys(o.env).map(item => [item, "[REDACTED]"]))
+    })
+  };
+  return o;
+}
+function Ie(h) {
+  let o = new Map(),
+    d = {};
+  for (let [p, a] of Object.entries(h)) {
+    let u = GW.find(item => item === a.scope);
+    if (u !== void 0) {
+      let m = o.get(u);
+      if (!m) m = wp(u, {
+        expandVars: !1
+      }).servers, o.set(u, m);
+      let i = m[p],
+        C = i && Gpr(i, a) ? Rr(i) : fe(a);
+      if (C.scope !== "managed") {
+        d[p] = C;
+        continue;
+      }
+      let j = O2(C);
+      d[p] = "url" in j ? TPe(j, C.scope) : j;
+    } else d[p] = O2(a);
+  }
+  return d;
+}
+function Fe({
+  name: name,
+  server: server,
+  status: status,
+  issue: issue_2
+}) {
+  let a = issue_2 ? `${status} \u2014 ${issue_2}` : status;
+  if (server.type === "sse") return `${name}: ${server.url} (SSE) - ${a}`;
+  if (server.type === "http") return `${name}: ${server.url} (HTTP) - ${a}`;
+  if (server.type === "claudeai-proxy") return `${name}: ${server.url} - ${a}`;
+  if (!server.type || server.type === "stdio") {
+    let u = Array.isArray(server.args) ? server.args : [];
+    return `${name}: ${server.command} ${u.join(" ")} - ${a}`;
+  }
+  return null;
+}
+function Be(h) {
+  let p = w(10),
+    {
+      promise: promise
+    } = h,
+    d = mr(promise),
+    a,
+    u,
+    children;
+  if (p[0] !== d) {
+    let i = d.map(Fe).filter(Fr);
+    u = WC;
+    a = n;
+    children = i.join(`
+`);
+    p[0] = d, p[1] = a, p[2] = u, p[3] = children;
+  } else a = p[1], u = p[2], children = p[3];
+  let children_2;
+  if (p[4] !== a || p[5] !== children) children_2 = e(a, {
+    children: children
+  }), p[4] = a, p[5] = children, p[6] = children_2;else children_2 = p[6];
+  let j;
+  if (p[7] !== u || p[8] !== children_2) j = e(u, {
+    children: children_2
+  }), p[7] = u, p[8] = children_2, p[9] = j;else j = p[9];
+  return j;
+}
+var status_2 = "\u23F8 Pending approval (run `claude` to approve)",
+  status_4 = `${Z.cross} Rejected (see disabledMcpjsonServers in settings)`,
+  status_3 = "\u2298 Disabled for this project (re-enable via /mcp)";
+async function lo(h, storageV5_2, credentials) {
+  await Ls("tengu_mcp_list", {}), await qD({
+    hasDynamicMcpConfig: !1
+  });
+  let {
+    servers: servers_3,
+    pendingProjectServers: pendingProjectServers
+  } = await jO({
+    includePendingProjectServers: !0,
+    storageV5: storageV5_2,
+    credentials: credentials
+  });
+  await Ai("cli_mcp_list");
+  let u = e(zXe, {});
+  if (Object.keys(servers_3).length === 0) {
+    await lM(h, r(s, {
+      flexDirection: "column",
+      children: [e(n, {
+        children: "No MCP servers configured. Use `claude mcp add` to add a server."
+      }), u]
+    })), await Kn(0);
+    return;
+  }
+  let m = Ie(servers_3),
+    promise_2 = tb(Object.entries(servers_3), async ([name_2, j]) => {
+      let f = pendingProjectServers.has(name_2) ? {
+        status: status_2
+      } : Uo(name_2) ? {
+        status: status_3
+      } : await Oe(name_2, j, storageV5_2);
+      return {
+        name: name_2,
+        server: m[name_2] ?? fe(j),
+        status: f.status,
+        ...(f.issue !== void 0 && {
+          issue: f.issue
+        })
+      };
+    }, {
+      concurrency: me().getMcpServerConnectionBatchSize()
+    });
+  h.render(e(Sr, {
+    fallback: r(n, {
+      children: ["Checking MCP server health\u2026", `
+
+`]
+    }),
+    children: r(s, {
+      flexDirection: "column",
+      children: [e(Be, {
+        promise: promise_2
+      }), u]
+    })
+  })), await h.waitUntilExit(), await Kn(0);
+}
+async function po(h, o, storageV5_3, credentials_2) {
+  await Ls("tengu_mcp_get", {
+    name: Dy(o, Fw(o, Men(o) ?? void 0))
+  }), await qD({
+    hasDynamicMcpConfig: !1
+  });
+  let {
+      servers: servers_4,
+      pendingProjectServers: pendingProjectServers_2,
+      rejectedProjectServers: rejectedProjectServers
+    } = await jO({
+      includePendingProjectServers: !0,
+      includeRejectedProjectServers: !0,
+      storageV5: storageV5_3,
+      credentials: credentials_2
+    }),
+    i = servers_4[o] ?? null,
+    C = pendingProjectServers_2.has(o) ? "pending" : rejectedProjectServers.has(o) ? "rejected" : null;
+  if (!i) {
+    await gn("cli_mcp_get", "cli_mcp_get_not_found");
+    let M = Object.keys(servers_4).filter(item => !pendingProjectServers_2.has(item) && !rejectedProjectServers.has(item));
+    return Fi(nWt(o, M, pendingProjectServers_2.size > 0));
+  }
+  let j = C === "pending" ? {
+      status: status_2
+    } : C === "rejected" ? {
+      status: status_4
+    } : Uo(o) ? {
+      status: status_3
+    } : await Oe(o, i, storageV5_3),
+    f = Ie({
+      [o]: i
+    })[o] ?? fe(i),
+    b = [`${o}:`, `  Scope: ${fnt(i.scope)}`, `  Status: ${j.status}`, ...(j.issue ? [`  Issue: ${j.issue}`] : [])];
+  if ((i.type === "sse" || i.type === "http") && (f.type === "sse" || f.type === "http")) {
+    if (b.push(`  Type: ${i.type}`), b.push(`  URL: ${f.url}`), f.headers) {
+      b.push("  Headers:");
+      for (let [M, E] of Object.entries(f.headers)) b.push(`    ${M}: ${E}`);
+    }
+    if (i.oauth?.clientId || i.oauth?.callbackPort) {
+      let M = [];
+      if (i.oauth.clientId) {
+        if (M.push("client_id configured"), (await U().getMcpClientConfig(o, i))?.clientSecret) M.push("client_secret configured");
+      }
+      if (i.oauth.callbackPort) M.push(`callback_port ${i.oauth.callbackPort}`);
+      b.push(`  OAuth: ${M.join(", ")}`);
+    }
+  } else if (i.type === "stdio" && f.type === "stdio") {
+    b.push("  Type: stdio"), b.push(`  Command: ${f.command}`);
+    let M = Array.isArray(f.args) ? f.args : [];
+    if (b.push(`  Args: ${M.join(" ")}`), f.env) {
+      b.push("  Environment:");
+      for (let [E, ve] of Object.entries(f.env)) b.push(`    ${E}=${ve}`);
+    }
+  }
+  if (i.timeout !== void 0) b.push(`  Timeout: ${i.timeout}ms${i.timeout < 1000 ? " (ignored: below 1000ms minimum)" : ""}`);
+  let x = i.scope === "local" || i.scope === "project" || i.scope === "user" ? al("mcp remove", o, `-s ${i.scope}`) : null,
+    _ = null;
+  if (x) _ = `To remove this server, run: ${x}`;else if (i.scope === "user" || i.scope === "project" || i.scope === "local" || i.scope === "enterprise") _ = `To remove this server, edit ${bE(i.scope)}`;else if (i.scope === "managed") _ = "This server is provided by your organization's managed settings and cannot be removed locally.";
+  if (_) b.push(""), b.push(_);
+  await Ai("cli_mcp_get"), await lM(h, e(n, {
+    children: b.join(`
+`)
+  })), await Kn(0);
+}
+async function uo(h, o, d, p, a) {
+  let u, m;
+  try {
+    u = mnt(p.scope);
+    let i = ct(d, !1);
+    if (i === null) t("mcp add-json: user-provided JSON was empty, invalid, or null", {
+      level: "error"
+    });
+    let j = p.clientSecret && i && typeof i === "object" && "type" in i && (i.type === "sse" || i.type === "http" || i.type === "streamable-http") && "url" in i && typeof i.url === "string" && "oauth" in i && i.oauth && typeof i.oauth === "object" && "clientId" in i.oauth ? await U().readClientSecret() : void 0;
+    await cF(o, i, u, a);
+    let f = Kq().safeParse(i);
+    if (m = (f.success ? f.data.type : void 0) ?? "stdio", j && i && typeof i === "object" && "type" in i && (i.type === "sse" || i.type === "http" || i.type === "streamable-http") && "url" in i && typeof i.url === "string") {
+      let x = await U().saveMcpClientSecret(o, {
+        type: i.type === "sse" ? "sse" : "http",
+        url: i.url
+      }, j);
+      if (!x.success) process.stderr.write(`Server added, but the client secret could not be stored${x.warning ? ` (${x.warning})` : ""}. Re-run with --client-secret once secure storage is available.
+`);
+    }
+    let b = u,
+      k = m;
+    await Ls("tengu_mcp_add", {
+      scope: c(b),
+      source: y("json"),
+      type: c(k)
+    });
+  } catch (error) {
+    return await gn("cli_mcp_add_json", "cli_mcp_add_json_failed"), Fi(l(error));
+  }
+  await Ai("cli_mcp_add_json"), await lM(h, r(n, {
+    children: ["Added ", m, " MCP server ", o, " to ", u, " config"]
+  }));
+}
+async function mo(h, storageV5_4) {
+  try {
+    let scope_2 = mnt(h.scope),
+      p = O();
+    await Ls("tengu_mcp_add", {
+      scope: c(scope_2),
+      platform: c(p),
+      source: y("desktop")
+    });
+    let {
+        readClaudeDesktopMcpServers: readClaudeDesktopMcpServers
+      } = await import("B:/~BUN/root/chunk-3gm2t0fp.js"),
+      servers_5 = await readClaudeDesktopMcpServers();
+    if (Object.keys(servers_5).length === 0) return await Ai("cli_mcp_add_from_desktop"), cN("No MCP servers found in Claude Desktop configuration or configuration file does not exist.");
+    await Ai("cli_mcp_add_from_desktop");
+    let {
+      unmount: unmount
+    } = await fU(e(W_, {
+      storageV5: storageV5_4,
+      children: e(pe, {
+        servers: servers_5,
+        scope: scope_2,
+        onDone: () => {
+          unmount();
+        }
+      })
+    }), {
+      exitOnCtrlC: !0,
+      patchConsole: !1
+    });
+  } catch (error) {
+    return await gn("cli_mcp_add_from_desktop", "cli_mcp_add_from_desktop_failed"), Fi(l(error));
+  }
+}
+async function fo(h, o) {
+  if (await Ls("tengu_mcp_reset_mcpjson_choices", {}), !(await aFt(["enabledMcpjsonServers", "disabledMcpjsonServers", "enableAllProjectMcpServers"], o))) return hx("Error: Failed to reset project choices: legacy approvals in ~/.claude.json could not be cleared (is the file writable?). Nothing was changed."), await gn("cli_mcp_reset_choices", "cli_mcp_reset_choices_projectconfig_delete_failed"), await b6(), nn();
+  let p = he("localSettings");
+  if (p ? p.enabledMcpjsonServers !== void 0 || p.disabledMcpjsonServers !== void 0 || p.enableAllProjectMcpServers !== void 0 : W$t().length > 0) {
+    if (p !== null && qwt().length > 0) return hx("Error: Failed to reset project choices: settings.local.json carries validation warnings, and rewriting it would delete the warned entries \u2014 run `claude doctor` to list them, fix them, then re-run (legacy approvals in ~/.claude.json were cleared; local settings were not)"), await gn("cli_mcp_reset_choices", "cli_mcp_reset_choices_settings_warnings_blocked"), await b6(), nn();
+    let {
+      error: error_2
+    } = await ln("localSettings", {
+      enabledMcpjsonServers: void 0,
+      disabledMcpjsonServers: void 0,
+      enableAllProjectMcpServers: void 0
+    }, void 0, o);
+    if (error_2) return hx(`Error: Failed to reset project choices: ${error_2.message} (legacy approvals in ~/.claude.json were cleared; local settings were not)`), await gn("cli_mcp_reset_choices", "cli_mcp_reset_choices_settings_write_failed"), await b6(), nn();
+  }
+  await Ai("cli_mcp_reset_choices");
+  let u = null;
+  try {
+    let m = bd("mcp");
+    if (!m_()) {
+      let {
+          serverNames: serverNames,
+          pluginServerNames: pluginServerNames,
+          rootServers: rootServers
+        } = await EZn(o),
+        f = _ => wUe(_, pluginServerNames.has(_)),
+        autoApprovedServers = [],
+        stillRejectedServers = [],
+        pendingCount = 0;
+      for (let _ of serverNames) {
+        if (m && !pluginServerNames.has(_)) continue;
+        let M = IGe(_);
+        if (M === "approved") {
+          if (Uo(_)) continue;
+          let E = rootServers[_];
+          if (E && !zW(_, E)) continue;
+          autoApprovedServers.push(f(_));
+        } else if (M === "rejected") stillRejectedServers.push(f(_));else pendingCount++;
+      }
+      u = {
+        autoApprovedServers: autoApprovedServers,
+        stillRejectedServers: stillRejectedServers,
+        pendingCount: pendingCount,
+        gatingErrors: uze().length
+      };
+    }
+  } catch (error) {
+    t(`mcp reset-project-choices: post-reset disclosure scan failed: ${l(error)}`, {
+      level: "warn"
+    }), u = null;
+  }
+  h.render(e(WC, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [e(n, {
+        children: "Project-scoped (.mcp.json) server approvals and rejections stored for this project have been reset."
+      }), u && u.autoApprovedServers.length > 0 && e(n, {
+        children: De(u.autoApprovedServers, "is still approved by other settings and will connect automatically without prompting.", "are still approved by other settings and will connect automatically without prompting.")
+      }), u && u.stillRejectedServers.length > 0 && e(n, {
+        children: De(u.stillRejectedServers, "remains rejected by other settings and will not prompt.", "remain rejected by other settings and will not prompt.")
+      }), u && u.pendingCount > 0 && (u.gatingErrors > 0 ? e(n, {
+        children: "Settings errors are currently blocking the approval prompt \u2014 run `claude doctor` to list them, fix them, then restart Claude Code to be prompted."
+      }) : e(n, {
+        children: "You will be prompted for approval next time you start Claude Code."
+      }))]
+    })
+  })), await h.waitUntilExit();
+}
+function De(h, o, d) {
+  return h.length === 1 ? `1 server (${h[0]}) ${o}` : `${h.length} servers (${h.join(", ")}) ${d}`;
+}
+export { mo as mcpAddFromDesktopHandler, uo as mcpAddJsonHandler, po as mcpGetHandler, lo as mcpListHandler, co as mcpRemoveHandler, fo as mcpResetChoicesHandler, ao as mcpServeHandler };

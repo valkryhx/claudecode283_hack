@@ -1,0 +1,1 @@
+async function*Hhe(e,t=()=>{}){let o=!1;async function r(){try{return await e.next()}catch(n){throw o=!0,n}}try{while(!0){let n=await r();if(n.done===!0)return o=!0,n.value;t(n.value),yield n.value}}finally{if(!o)await e.return?.(void 0)}}

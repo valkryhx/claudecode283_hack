@@ -1,0 +1,1 @@
+function nr(e){if(!Array.isArray(e))return e;let t=[];for(let o=0;o<e.length;o+=1){if(!Object.hasOwn(e,o)){t.push(void 0);continue}let r=e[o];t.push(G(r)?Object.fromEntries(Object.keys(r).map((n)=>[n,r[n]])):r)}return t}

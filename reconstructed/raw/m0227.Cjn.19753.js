@@ -1,0 +1,1 @@
+function Cjn(e){let n=k(e,Fe,{remaining:We});if("reason"in n)return{ok:!1,reason:n.reason};if(n.node.type!=="object")return{ok:!1,reason:"root_not_object"};return{ok:!0,schema:{...n.node,type:"object"}}}

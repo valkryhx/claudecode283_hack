@@ -1,0 +1,1 @@
+function kNt(e){let t=typeof e==="boolean"||typeof e==="string"||Number.isFinite(e),o=Array.isArray(e)&&e.every((n)=>typeof n==="string");return t||o?void 0:"a value that is not a boolean, a string, a number or a list of strings"}

@@ -1,0 +1,1 @@
+var as=(e,t)=>({name:t.map((o)=>o.name).join("+"),tier:t[0]?.tier,tiers:L(t.map(Ce)),...t.at(-1)?.answersForEngine&&{answersForEngine:!0},budgetMs:0,isHop:!0,run:(o,r,{call:n,floors:s,cutAt:i})=>e.run({members:t,e:o,call:n,signal:r.signal,origin:r.origin,floors:s,cutAt:i})});

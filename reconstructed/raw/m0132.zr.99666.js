@@ -1,0 +1,1 @@
+function zr(e,t){return(t.component==="Pane"||t.component==="AbovePrompt")&&$n(e.view)!==$n(t.props.view)?"a props.view other than the surface drew (the person chooses the transcript in view; a rewrite changes the drawing alone)":void 0}

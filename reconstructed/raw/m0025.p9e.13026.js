@@ -1,0 +1,1 @@
+function p9e(e,r){let s=e.firstPrompt?.startsWith(`<${fK}>`),o=e.firstPrompt?mmt(e.firstPrompt):"",i=o&&!s,u=e.agentName||e.customTitle||e.aiTitle||e.summary||(i?o:void 0)||r||(s?"Autonomous session":void 0)||(e.sessionId?e.sessionId.slice(0,8):"")||"";return Whn(u).trim()}

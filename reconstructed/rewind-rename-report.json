@@ -1,0 +1,90 @@
+{
+  "src": "D:\\git_repos\\claude_hack\\reconstructed\\deminified\\m0357_0xc63ba04.js",
+  "out": "D:\\git_repos\\claude_hack\\reconstructed\\deminified-rewind\\m0357_0xc63ba04.js",
+  "inBytes": 5425751,
+  "outBytes": 5421068,
+  "renamed": [
+    {
+      "old": "Jse",
+      "new": "reduceFileHistoryState"
+    },
+    {
+      "old": "pR",
+      "new": "fileHistoryEnabled"
+    },
+    {
+      "old": "JGe",
+      "new": "fileHistoryTrackEdit"
+    },
+    {
+      "old": "kfe",
+      "new": "fileHistoryMakeSnapshot"
+    },
+    {
+      "old": "SQt",
+      "new": "RewindNoFilesRestoredError"
+    },
+    {
+      "old": "fRt",
+      "new": "fileHistoryRewind"
+    },
+    {
+      "old": "mRt",
+      "new": "fileHistoryCanRestore"
+    },
+    {
+      "old": "Mnt",
+      "new": "fileHistoryGetDiffStats"
+    },
+    {
+      "old": "gRt",
+      "new": "fileHistoryRestoreStateFromLog"
+    },
+    {
+      "old": "wQt",
+      "new": "copyFileHistoryForResume"
+    },
+    {
+      "old": "Isr",
+      "new": "applyFileHistoryRewind"
+    },
+    {
+      "old": "Bsr",
+      "new": "restoreFileFromBackup"
+    },
+    {
+      "old": "dXt",
+      "new": "shouldRestoreFile"
+    },
+    {
+      "old": "Lsr",
+      "new": "makeBackupFileName"
+    },
+    {
+      "old": "$R",
+      "new": "resolveBackupPath"
+    },
+    {
+      "old": "uXt",
+      "new": "createFileBackup"
+    },
+    {
+      "old": "$sr",
+      "new": "checkPathLinkSafety"
+    },
+    {
+      "old": "Fsr",
+      "new": "getFileHistoryEntry"
+    },
+    {
+      "old": "Psr",
+      "new": "pruneSnapshotBackups"
+    },
+    {
+      "old": "cue",
+      "new": "normalizeTrackedPath"
+    }
+  ],
+  "skipped": [],
+  "fellBack": false
+}

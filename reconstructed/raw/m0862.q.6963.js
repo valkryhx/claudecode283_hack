@@ -1,0 +1,1 @@
+function q(e){let n;if(e.key.type==="Identifier")n=e.key.name;else if(e.key.type==="Literal")n=String(e.key.value);else throw Error(`unsupported key type in meta: ${e.key.type}`);if(y.has(n))throw Error(`reserved key name not allowed in meta: ${n}`);return n}

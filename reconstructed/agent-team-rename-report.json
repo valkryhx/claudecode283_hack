@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-10-11T11:15:10.640Z",
+  "files": [
+    {
+      "id": "m1578",
+      "src": "D:\\git_repos\\claude_hack\\reconstructed\\deminified\\m1578_0xdd0c821.js",
+      "out": "D:\\git_repos\\claude_hack\\reconstructed\\deminified-agent-team\\m1578_0xdd0c821.js",
+      "inBytes": 39035,
+      "outBytes": 39550,
+      "renamed": [
+        {
+          "old": "Ot",
+          "new": "spawnTeammate"
+        },
+        {
+          "old": "ge",
+          "new": "handleSpawn"
+        },
+        {
+          "old": "j",
+          "new": "reserveTeammateIdentity"
+        },
+        {
+          "old": "pe",
+          "new": "sanitizeTeammateName"
+        },
+        {
+          "old": "ce",
+          "new": "handleSpawnSplitPane"
+        },
+        {
+          "old": "ue",
+          "new": "handleSpawnSplitPaneAlt"
+        },
+        {
+          "old": "z",
+          "new": "handleSpawnInProcess"
+        },
+        {
+          "old": "te",
+          "new": "registerInProcessTeammateTask"
+        },
+        {
+          "old": "K",
+          "new": "updateTeammatePane"
+        },
+        {
+          "old": "_e",
+          "new": "showTeammateAutoFallback"
+        },
+        {
+          "old": "ne",
+          "new": "TeammateFallbackNotice"
+        }
+      ],
+      "skipped": [],
+      "fellBack": false
+    },
+    {
+      "id": "m0511",
+      "src": "D:\\git_repos\\claude_hack\\reconstructed\\deminified\\m0511_0xcd25473.js",
+      "out": "D:\\git_repos\\claude_hack\\reconstructed\\deminified-agent-team\\m0511_0xcd25473.js",
+      "inBytes": 68382,
+      "outBytes": 68573,
+      "renamed": [
+        {
+          "old": "tool_2",
+          "new": "agentTool"
+        },
+        {
+          "old": "Ftr",
+          "new": "getAgentToolInputSchema"
+        },
+        {
+          "old": "Wkn",
+          "new": "validateAgentToolInput"
+        },
+        {
+          "old": "name_2",
+          "new": "agentToolName"
+        }
+      ],
+      "skipped": [],
+      "fellBack": false
+    },
+    {
+      "id": "m0527",
+      "src": "D:\\git_repos\\claude_hack\\reconstructed\\deminified\\m0527_0xcd4a41f.js",
+      "out": "D:\\git_repos\\claude_hack\\reconstructed\\deminified-agent-team\\m0527_0xcd4a41f.js",
+      "inBytes": 4631,
+      "outBytes": 4975,
+      "renamed": [
+        {
+          "old": "Hbt",
+          "new": "inProcessTeammateTask"
+        },
+        {
+          "old": "Oqt",
+          "new": "killInProcessTeammate"
+        },
+        {
+          "old": "Gue",
+          "new": "findTaskByAgentId"
+        },
+        {
+          "old": "KJr",
+          "new": "findTaskByAgentName"
+        },
+        {
+          "old": "YJr",
+          "new": "getRunningAgentIds"
+        },
+        {
+          "old": "eWe",
+          "new": "getTeammateTasks"
+        },
+        {
+          "old": "p",
+          "new": "PANE_TEARDOWN_TIMEOUT_MS"
+        }
+      ],
+      "skipped": [],
+      "fellBack": false
+    }
+  ]
+}

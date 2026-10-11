@@ -1,0 +1,1 @@
+function m(){if(a.CLAUDE_CODE_WORKFLOWS===!0){let o=x("tengu_workflows_enabled",!0);return{available:o,defaultOn:o}}if(a.CLAUDE_CODE_WORKFLOWS===!1)return{available:!1,defaultOn:!1};if(!x("tengu_workflows_enabled",!0))return{available:!1,defaultOn:!1};return{available:!0,defaultOn:nr()!=="pro"}}

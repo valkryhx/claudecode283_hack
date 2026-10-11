@@ -1,0 +1,1 @@
+function B(e,n){let r=e;for(let s of n.split("/").slice(1)){let E=s.replaceAll("~1","/").replaceAll("~0","~");if(Array.isArray(r))r=r[Number(E)];else if(G(r)&&Object.hasOwn(r,E))r=r[E];else return}return r}

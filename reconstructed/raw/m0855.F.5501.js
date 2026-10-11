@@ -1,0 +1,1 @@
+async function F(e,t=!0,r,n){let s=e.toLowerCase();if(s==="auto"||s==="unset")return O(t,r,n);if(s==="ultracode")return R(r);let o=bhe(e);if(!o)return{message:`Invalid argument: ${e}. Valid options are: ${g(it())}`};return w(o,t,r,n)}

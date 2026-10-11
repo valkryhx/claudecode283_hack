@@ -1,0 +1,66 @@
+/* ==========================================================================
+ * m0132.KIo   [m0132_0xc24a4bb.js @ 175266]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+async function KIo(e) {
+  let {
+      loaded: t,
+      host: o,
+      hostStream: r,
+      resolvedTable: n,
+      invoke: s,
+      wrapMethod: i,
+      signalFrom: p,
+      makeSignal: a
+    } = e,
+    {
+      modulePath: f,
+      pluginName: m,
+      pluginRoot: u
+    } = e.args,
+    d = new Set(),
+    y = !1,
+    c = {
+      plugin: R_({
+        name: m,
+        root: u
+      })
+    };
+  Object.setPrototypeOf(c, null);
+  let k = Yy({
+      engine: c,
+      core: jn({
+        pluginName: m,
+        host: o,
+        hostStream: r,
+        resolvedTable: n,
+        timers: d,
+        unloaded: () => y,
+        invoke: s,
+        wrapMethod: i,
+        signalFrom: p,
+        makeSignal: a
+      }),
+      pluginName: m,
+      callInterface: x => o("interface.call", x),
+      invoke: s,
+      wrapMethod: i
+    }),
+    A = vx({
+      pluginName: m,
+      engine: c,
+      interfaces: k
+    }, e);
+  return await s(ng(t, f, m), [Cx(A), UCe(e.args.options)]), A.isRegistered = !0, {
+    registrations: A.registrations,
+    finalize: k.finalize,
+    callInterface: k.call,
+    dispose() {
+      y = !0;
+      for (let x of d) x.cancel();
+      d.clear();
+    }
+  };
+}

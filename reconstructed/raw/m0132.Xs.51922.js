@@ -1,0 +1,1 @@
+var Xs={event:"attribution.text",checkArgument:(e,t)=>{let o=e.kind;if(typeof o!=="string")return"no { kind }";if(o!==t.kind)return"a changed kind (the hooks beneath match on it)";return typeof e.text==="string"?void 0:"no { text }"},measureArgument:(e,t)=>te(e.text,t.text),check:C((e)=>typeof e.text==="string"?void 0:"no { text } (a string)"),measure:Ze("text")};

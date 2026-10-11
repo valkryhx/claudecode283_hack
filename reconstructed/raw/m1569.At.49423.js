@@ -1,0 +1,1 @@
+function At(e,r){for(let n of Object.values(e.all())){if(n.type!=="local_workflow"||n.workflowRunId!==r)continue;switch(n.status){case"pending":case"running":return"open";case"killed":return"killed";case"completed":case"failed":case"paused":return"settled"}}return"unknown"}

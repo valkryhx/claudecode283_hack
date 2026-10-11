@@ -1,0 +1,1 @@
+var si={event:"prompt.edit",budgetMs:ri,restoreArgument:(e,t)=>W(["origin","key"],e,t),checkArgument:Er,measureArgument:(e,t)=>Math.max(te(e.text,t.text),te(e.inputText,t.inputText)),check:C(Sr),measure:(e,t,o)=>te(e.text,t.text,...o.map((r)=>r.text))};

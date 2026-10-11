@@ -1,0 +1,71 @@
+/* ==========================================================================
+ * m1460.hs   [m1460_0xd973957.js @ 6841]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function hs(o, l, a, u, d, f) {
+  let h = Co(a, f),
+    x = f - h.length,
+    y = d ? "," : "",
+    A = typeof u === "string" ? {
+      text: us(u),
+      color: "permission"
+    } : void 0;
+  if (typeof l === "object" && l !== null) {
+    if (a >= Qi) throw RangeError("JSON outcome nested past MAX_DEPTH");
+    let L = Array.isArray(l) ? l.map((q, H) => [H, q]) : Object.entries(l),
+      [D, M] = Array.isArray(l) ? ["[", "]"] : ["{", "}"];
+    if (L.length === 0) {
+      let q = D + M + y;
+      o.push([{
+        text: h
+      }, ...wo(A, x - q.length), {
+        text: q,
+        dimColor: !0
+      }]);
+      return;
+    }
+    o.push([{
+      text: h
+    }, ...wo(A, x - D.length), {
+      text: D,
+      dimColor: !0
+    }]);
+    for (let q = 0; q < L.length; q++) {
+      let [H, z] = L[q];
+      hs(o, z, a + 1, H, q < L.length - 1, f);
+    }
+    o.push([{
+      text: h
+    }, {
+      text: M + y,
+      dimColor: !0
+    }]);
+    return;
+  }
+  if (typeof l === "number" && (Number.isInteger(l) ? !Number.isSafeInteger(l) : !Number.isFinite(l))) throw RangeError("JSON outcome number not representable");
+  if (typeof l === "string" && l.includes(`
+`)) {
+    ps(o, a, A ?? (typeof u === "number" ? {
+      text: `[${u}]`,
+      dimColor: !0
+    } : void 0), l.replace(/(?:\r?\n)+$/, "").split(/\r?\n/).map(L => vte(gs(L))), f, void 0);
+    return;
+  }
+  let k = typeof l === "string" ? us(l) : String(l),
+    C = typeof l === "string" ? "success" : "warning";
+  if ((A === void 0 ? 0 : ie(A.text) + yo.length) + ie(k) + y.length <= x) {
+    o.push([{
+      text: h
+    }, ...wo(A, x), {
+      text: k,
+      color: C
+    }, ...(y ? [{
+      text: y,
+      dimColor: !0
+    }] : [])]);
+    return;
+  }
+  ps(o, a, A, [k + y], f, C);
+}

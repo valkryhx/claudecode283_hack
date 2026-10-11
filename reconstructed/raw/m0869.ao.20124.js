@@ -1,0 +1,1 @@
+function ao(e){let r=new Map,s=new Map,g=new Set;for(let f of e)if(f.type==="result")r.set(f.key,f);else if(f.type==="started"){let w=s.get(f.key);if(w)w.push(f);else s.set(f.key,[f])}else if(f.type==="failed")g.add(f.key);return{results:r,started:s,failed:g}}

@@ -1,0 +1,1 @@
+var Js={event:"prompt.attachment",restoreArgument:Me(["origin","agentId"]),checkArgument:(e,t)=>{let o=pe(["type","origin","agentId"],e,t);if(o!==void 0)return o;return typeof e.text==="string"?void 0:"no { text } (a string)"},measureArgument:(e,t)=>te(e.text,t.text),check:C((e)=>Go(e.text,"attachment")),measure:Ze("text")};

@@ -1,0 +1,56 @@
+/* ==============================================================================
+ * m0869.bo   [m0869_0xd12567a.js @ 31505]
+ * --------------------------------------------------------------------------
+ * 作用: (no note)
+ * 原文: claudecode283/modules/m0869_0xd12567a.js  字符偏移 31505
+ * 说明: 由 tools/extract.mjs 抽取，忠实原文，仅格式化；标识符仍为 Bun 压缩名。
+ * ============================================================================== */
+class bo {
+  now;
+  entries = new Map;
+  constructor(e = Date.now) {
+    this.now = e
+  }
+  async enter(e, r) {
+    let s = this.now();
+    for (let [F, R] of this.entries)
+      if (R.state === "warm" && R.until <= s) this.entries.delete(F);
+    let g = this.entries.get(e),
+      f, w = 0;
+    if (g === void 0) f = Ar(), this.entries.set(e, f);
+    else if (g.state === "warming" && r.capMs > 0) {
+      let F = this.now();
+      await Cr(g.ready, r.capMs, r.signal), w = Math.max(0, this.now() - F)
+    }
+    let A = !1;
+    return {
+      leader: f !== void 0,
+      waitedMs: w,
+      responded: () => {
+        A = !0, this.markWarm(e)
+      },
+      done: () => {
+        if (A || f === void 0) return;
+        if (this.entries.get(e) === f && f.state === "warming") this.entries.delete(e), f.release()
+      }
+    }
+  }
+  stateOf(e) {
+    let r = this.entries.get(e);
+    if (r === void 0) return "cold";
+    if (r.state === "warm") return r.until > this.now() ? "warm" : "cold";
+    return "warming"
+  }
+  clear() {
+    for (let e of this.entries.values())
+      if (e.state === "warming") e.release();
+    this.entries.clear()
+  }
+  markWarm(e) {
+    let r = this.entries.get(e);
+    if (this.entries.set(e, {
+        state: "warm",
+        until: this.now() + Er
+      }), r?.state === "warming") r.release()
+  }
+}

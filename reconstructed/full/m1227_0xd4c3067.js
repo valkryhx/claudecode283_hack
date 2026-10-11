@@ -1,0 +1,202 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  Xd
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  Jgt,
+  c1e
+} from "B:/~BUN/root/chunk-3w1jmaht.js";
+import {
+  oho,
+  nvr
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  Ut
+} from "B:/~BUN/root/chunk-qbrwdgwc.js";
+
+function r4r(e) {
+  return {
+    steps: [{
+      id: "check",
+      status: "running",
+      startedAt: e
+    }, {
+      id: "create",
+      status: "pending"
+    }],
+    rerouted: !1,
+    folder: !1,
+    bundle: null,
+    fallback: null,
+    requestSent: !1
+  }
+}
+
+function o4r(e, a, n) {
+  switch (a.kind) {
+    case "checking":
+      return a.folder === !0 && !e.folder ? {
+        ...e,
+        folder: !0
+      } : e;
+    case "bundling": {
+      if (e.fallback !== null || e.steps.some((r) => r.id === "bundle") || !e.steps.some((r) => r.id === "create" && r.status === "pending")) return e;
+      let t = d(e, "check", "completed", n);
+      return {
+        ...t,
+        steps: t.steps.flatMap((r) => r.id === "create" ? [{
+          id: "bundle",
+          status: "running",
+          startedAt: n
+        }, ...a.uploadedBySync === !0 ? [] : [{
+          id: "upload",
+          status: "pending"
+        }], r] : [r]),
+        rerouted: a.rerouted,
+        folder: a.folder === !0
+      }
+    }
+    case "bundled": {
+      let t = d(e, "bundle", "completed", n);
+      return t === e ? e : {
+        ...u(t, "upload", n),
+        bundle: {
+          sizeBytes: a.sizeBytes,
+          scope: a.scope
+        }
+      }
+    }
+    case "bundle_failed": {
+      let t = e.steps.find((l) => l.status === "running" && (l.id === "bundle" || l.id === "upload"));
+      if (t === void 0 && e.fallback !== null) return e;
+      let r = t === void 0 ? e : d(e, t.id, "failed", n);
+      return {
+        ...r,
+        steps: r.steps.filter((l) => !(l.id === "upload" && l.status === "pending")),
+        fallback: a.fallback
+      }
+    }
+    case "creating":
+      return u(d(d(e, "check", "completed", n), "upload", "completed", n), "create", n);
+    case "request_sent":
+      return e.requestSent ? e : {
+        ...e,
+        requestSent: !0
+      };
+    case "created":
+      return d(e, "create", "completed", n)
+  }
+}
+
+function d(e, a, n, t) {
+  return e.steps.some((r) => r.id === a && r.status === "running") ? {
+    ...e,
+    steps: e.steps.map((r) => r.id === a && r.status === "running" ? {
+      ...r,
+      status: n,
+      completedAt: t
+    } : r)
+  } : e
+}
+
+function u(e, a, n) {
+  return e.steps.some((t) => t.id === a && t.status === "pending") ? {
+    ...e,
+    steps: e.steps.map((t) => t.id === a && t.status === "pending" ? {
+      ...t,
+      status: "running",
+      startedAt: n
+    } : t)
+  } : e
+}
+
+function qBe(e) {
+  let a = e.steps.findLast((n) => n.status !== "pending");
+  switch (a?.id) {
+    case void 0:
+    case "check":
+      return "checking";
+    case "bundle":
+      return "bundling";
+    case "upload":
+      return "uploading";
+    case "create":
+      return a.status === "completed" ? "created" : "creating"
+  }
+}
+var o = {
+  all: "with history",
+  current_branch: "current branch only",
+  head: "current history only",
+  squashed: "snapshot without history"
+};
+
+function W9n(e, a, n) {
+  return {
+    label: s(e, a),
+    annotation: `${i(e,a)}${c1e(e,n)}`,
+    detail: e.status === "failed" && a.fallback !== null ? [`${Xd(oho(a.fallback))}; starting from the tip of the branch on its remote rather than your checkout's commit, and file sync is off for this session`, nvr(a.fallback)].filter((t) => t !== void 0).join(". ") : void 0
+  }
+}
+
+function s(e, {
+  rerouted: a,
+  folder: n
+}) {
+  let t = e.status === "completed";
+  switch (e.id) {
+    case "check":
+      if (n) return t ? "Checked this folder" : "Checking this folder";
+      return t ? "Checked this checkout" : "Checking this checkout";
+    case "bundle":
+      if (n) return t ? "Packaged this folder" : "Packaging this folder";
+      if (a) return t ? "Packaged local changes" : "Packaging local changes";
+      return t ? "Packaged this repository" : "Packaging this repository";
+    case "upload":
+      if (a) return t ? "Uploaded your working tree" : "Uploading your working tree";
+      return t ? "Uploaded this repository" : "Uploading this repository";
+    case "create":
+      return t ? "Created cloud session" : "Creating cloud session"
+  }
+}
+
+function i(e, {
+  bundle: a,
+  folder: n
+}) {
+  if (a === null || e.status !== "running" && e.status !== "completed") return "";
+  let t = Ut(a.sizeBytes);
+  switch (e.id) {
+    case "bundle":
+      return e.status === "completed" ? n ? ` \xB7 ${t}` : ` \xB7 ${t}, ${o[a.scope]}` : "";
+    case "upload":
+      return e.status === "completed" ? ` \xB7 ${t}` : ` ${t}`;
+    case "check":
+    case "create":
+      return ""
+  }
+}
+
+function z9n(e) {
+  let a = Jgt("new");
+  return qBe(e) === "created" ? a.replace(/^Setting up/, "Set up") : `${a}\u2026`
+}
+
+function s4r(e) {
+  return e !== null && e.requestSent ? "Cancelled after the create request was sent, so a cloud session may still have been created" : "Cancelled before a cloud session was created"
+}
+export {
+  r4r,
+  o4r,
+  qBe,
+  W9n,
+  z9n,
+  s4r
+};

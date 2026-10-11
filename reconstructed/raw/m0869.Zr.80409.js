@@ -1,0 +1,1 @@
+function Zr(e){let r=[],s,g=0,f=(w)=>{if(s=void 0,r.length===0)return;if(!w&&!Te()&&Bl()){let F=g+Xr-Date.now();if(F>0){s=setTimeout(f,F);return}g=Date.now()}let A=r;if(r=[],e.onBatch(A),!Te()&&!Bl())return;e.onSdkEmit(A)};return{onProgress:(w)=>{if(r.push(w),!s)s=setTimeout(f,qr)},flushNow:()=>{if(s)clearTimeout(s);f(!0)},cancel:()=>{if(s)clearTimeout(s),s=void 0;r=[]}}}

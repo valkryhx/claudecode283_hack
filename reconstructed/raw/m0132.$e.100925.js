@@ -1,0 +1,1 @@
+var $e={AskUserQuestion:fe,UserMessage:fe,AssistantMessage:fe,ToolUse:fe,ToolResult:fe,ToolGroup:fe,ToolProgress:["terminal"],CommandOutput:fe,Spinner:["terminal","desktop"],TurnDuration:["terminal"],InfoNotice:["terminal"],SessionMode:["terminal","desktop"],PromptHint:["terminal","desktop"],AbovePrompt:["terminal","desktop"],Pane:fe};

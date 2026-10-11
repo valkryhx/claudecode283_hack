@@ -1,0 +1,1 @@
+function Jr(e,t){let o=t.props,r=Object.keys(e).find((n)=>e[n]!==o[n]&&$n(e[n])!==$n(o[n])&&Ot(e[n])>xte&&Ot(e[n])>Ot(o[n]));if(r===void 0)return;return`a props.${r} of more than ${xte} characters of text, more than the engine drew`}

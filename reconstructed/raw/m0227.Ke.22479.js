@@ -1,0 +1,1 @@
+Ke=f(()=>u({}).passthrough())

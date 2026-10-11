@@ -1,0 +1,1 @@
+function Sn(e){let t=0,o=0,r=0;e.pause();function n(){if(t++===0)o=performance.now(),e.resume()}function s(){if(--t===0)r+=performance.now()-o,e.pause()}return{async own(i){n();try{return await mt.run(e,i)}finally{s()}},async away(i){if(!(t>0))return i();s();try{return await i()}finally{n()}},ms:()=>t>0?r+(performance.now()-o):r}}

@@ -1,0 +1,1 @@
+var Ga=(e,t)=>It(e,t,"prompt.fill").then((o)=>{let r=G(e)?e.mode:void 0;return r!==void 0&&!Sdn(r)?Promise.reject(new De(`${t}: $.prompt.fill takes { mode } of ${ONt.join(", ")}`)):{text:o,...r!==void 0&&{mode:r}}});

@@ -1,0 +1,1 @@
+var Fo=f(()=>u({verb:z(["put","retract","read","script"]),addr:E().optional(),retracted:M().optional(),rows:C(ae()).optional(),rowsTotal:E().optional(),foreignArtifactContent:M().optional(),error:o().optional(),reopened:M(),status:u({pending:E()}),killed:u({at:E(),reason:z([...Ze,"unknown"]).catch("unknown"),rows:E(),pending:E(),rules:E(),agents:E()}).optional()}));

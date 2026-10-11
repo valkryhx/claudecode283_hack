@@ -1,0 +1,87 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { q, j } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { Se } from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import { an } from "B:/~BUN/root/chunk-zksmb712.js";
+import { createHash as c } from "crypto";
+import { homedir as a, userInfo as u } from "os";
+import { join as l } from "path";
+var cAe = "-credentials";
+function Uw() {
+  let CLAUDE_SECURESTORAGE_CONFIG_DIR = process.env.CLAUDE_SECURESTORAGE_CONFIG_DIR;
+  if (CLAUDE_SECURESTORAGE_CONFIG_DIR !== void 0) return (CLAUDE_SECURESTORAGE_CONFIG_DIR || l(a(), ".claude")).normalize("NFC");
+  return Se();
+}
+function kJ(n = "") {
+  let CLAUDE_SECURESTORAGE_CONFIG_DIR_2 = process.env.CLAUDE_SECURESTORAGE_CONFIG_DIR,
+    t = CLAUDE_SECURESTORAGE_CONFIG_DIR_2 !== void 0 ? !CLAUDE_SECURESTORAGE_CONFIG_DIR_2 : !process.env.CLAUDE_CONFIG_DIR,
+    r = CLAUDE_SECURESTORAGE_CONFIG_DIR_2 !== void 0 ? CLAUDE_SECURESTORAGE_CONFIG_DIR_2.normalize("NFC") : Se(),
+    o = t ? "" : `-${c("sha256").update(r).digest("hex").substring(0, 8)}`;
+  return `Claude Code${an().OAUTH_FILE_SUFFIX}${n}${o}`;
+}
+var s = /^[a-zA-Z0-9._-]+$/;
+function DN() {
+  return "claude-code-user";
+}
+var NUr = 30000;
+class i {
+  cache = {
+    data: null,
+    cachedAt: 0
+  };
+  generation = 0;
+  readInFlight = null;
+  lastReadFailure = null;
+  keychainHoldsItem = !1;
+  lastKnown = null;
+  legacyApiKeyPrefetch = null;
+}
+var d = new q(() => new i());
+function cY() {
+  return d.of(j().host);
+}
+function Dx() {
+  let n = cY();
+  n.cache = {
+    data: null,
+    cachedAt: 0
+  }, n.generation++, n.readInFlight = null, n.lastReadFailure = null;
+}
+function HUr(n, e, t = cY()) {
+  if (t.cache.cachedAt !== 0 || t.generation !== e) return;
+  let data = null;
+  if (n) try {
+    data = JSON.parse(n);
+  } catch {
+    return;
+  }
+  t.cache = {
+    data: data,
+    cachedAt: Date.now()
+  };
+}
+function XNo(n, e, t) {
+  if (n.generation === t) n.keychainHoldsItem = e;
+}
+function JNo(n) {
+  if (!n) return "empty";
+  let e = n.toLowerCase();
+  if (e.includes("errsecduplicateitem") || e.includes("already exists")) return "duplicate_item";
+  if (e.includes("unable to open") || e.includes("could not open")) return "keychain_unavailable";
+  if (e.includes("errsecnodefaultkeychain") || e.includes("default keychain") || e.includes("no keychain")) return "no_keychain";
+  if (e.includes("errsecitemnotfound") || e.includes("item could not be found")) return "item_not_found";
+  if (e.includes("errsecinteractionnotallowed") || e.includes("interaction is not allowed") || e.includes("no user interaction")) return "interaction_not_allowed";
+  if (e.includes("errsecusercanceled") || e.includes("cancel")) return "user_canceled";
+  if (e.includes("errsecauthfailed") || e.includes("authorization") || e.includes("authentication") || e.includes("name or passphrase")) return "auth_failed";
+  if (e.includes("locked") || e.includes("unlock")) return "keychain_locked";
+  return "other";
+}
+export { cAe, Uw, kJ, DN, NUr, cY, Dx, HUr, XNo, JNo };

@@ -1,0 +1,1 @@
+Qor=`${ne}words`

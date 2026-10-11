@@ -1,0 +1,1 @@
+function Ke(e){if(typeof e.runId!=="string")return;let r=e.put!==void 0||typeof e.retract==="number"||e.read!==void 0;return{runId:e.runId,...e.put!==void 0&&{put:e.put},...typeof e.retract==="number"&&{retract:e.retract},...e.read!==void 0&&{read:e.read},...!r&&typeof e.script==="string"&&e.script!==""&&{script:e.script}}}

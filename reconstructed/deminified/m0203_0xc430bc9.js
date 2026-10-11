@@ -1,0 +1,409 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { v, B } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { $o } from "B:/~BUN/root/chunk-54p0h65d.js";
+import { b, J, ce } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import { Se } from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import { O } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { jRe } from "B:/~BUN/root/chunk-3hn9fzjy.js";
+import { Cn, eH } from "B:/~BUN/root/chunk-2swveyqa.js";
+import { a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+var y = 65534;
+import { readFile as U } from "fs/promises";
+async function T() {
+  return;
+}
+function k(e) {
+  let n = [];
+  for (let t of e.split(`
+`)) {
+    if (t.trim() === "") continue;
+    let r = t.trim().split(/\s+/),
+      innerStart = Number(r[0]),
+      hostStart = Number(r[1]),
+      count = Number(r[2]);
+    if (r.length !== 3 || !Number.isSafeInteger(innerStart) || innerStart < 0 || !Number.isSafeInteger(hostStart) || hostStart < 0 || !Number.isSafeInteger(count) || count <= 0) return;
+    n.push({
+      innerStart: innerStart,
+      hostStart: hostStart,
+      count: count
+    });
+  }
+  return n;
+}
+function N(e) {
+  return e.length === 1 && e[0].innerStart === 0 && e[0].count >= 4294967295;
+}
+async function C() {
+  try {
+    return P(await U("/proc/sys/kernel/overflowuid", "utf8"));
+  } catch {
+    return;
+  }
+}
+function P(e) {
+  let n = e.trim();
+  if (!/^\d+$/.test(n)) return;
+  let t = Number(n);
+  return Number.isSafeInteger(t) ? t : void 0;
+}
+async function vEo() {
+  let e = process.getuid?.();
+  if (e === void 0) return;
+  return e;
+}
+function A1n() {
+  return jRe.uidsCollapse ??= M(ce()), jRe.uidsCollapse;
+}
+function M(e) {
+  return !1;
+}
+import { createHash as A, randomBytes as h } from "crypto";
+import { lstatSync as L, mkdirSync as K, readFileSync as j, rmSync as z, writeFileSync as V } from "fs";
+import { chmod as S, lstat as m, mkdir as d, readdir as w, readFile as D, rm as F, utimes as W } from "fs/promises";
+import { connect as X } from "net";
+import { basename as H, dirname as R, join as i, resolve as G } from "path";
+function c() {
+  return i(Se(), "daemon");
+}
+function Y() {
+  return A("sha256").update(G(Se())).digest("hex").slice(0, 8);
+}
+function yge() {
+  let e = process.getuid?.() ?? 0,
+    n = a.TERMUX_VERSION && a.PREFIX ? i(a.PREFIX, "tmp") : "/tmp";
+  return i(n, `cc-daemon-${e}`, Y());
+}
+var q = /^[a-f0-9]{16}$/;
+function UAr() {
+  return i(c(), "pipe.key");
+}
+var Q = $o(() => {
+  let e = UAr();
+  for (let n = 0; n < 8; n++) {
+    let t;
+    try {
+      let o = L(e);
+      if (!o.isFile() || o.size > 4096) {
+        try {
+          z(e, {
+            recursive: !0,
+            force: !0
+          });
+        } catch {}
+        t = "invalid";
+      } else t = j(e, "utf8").trim();
+    } catch (error) {
+      if (!B(error)) throw error;
+    }
+    if (t !== void 0) {
+      if (q.test(t)) return t;
+      if (t === "" && n < 3) continue;
+      let o = h(8).toString("hex");
+      return eH(e, o, 384), o;
+    }
+    let r = h(8).toString("hex");
+    K(c(), {
+      recursive: !0,
+      mode: 448
+    });
+    try {
+      return V(e, r, {
+        flag: "wx",
+        mode: 384
+      }), r;
+    } catch (error) {
+      if (v(error) !== "EEXIST") throw error;
+    }
+  }
+  throw Error("daemon pipe.key is not a valid nonce");
+}, () => Se());
+function x(e) {
+  return `\\\\.\\pipe\\cc-daemon-${Q()}-${e}`;
+}
+function yw(e) {
+  return e.replace(/cc-daemon-[0-9a-f]{16}/g, "cc-daemon-*");
+}
+function cat(e) {
+  if (e instanceof Error) {
+    if (e.message = yw(e.message), typeof e.stack === "string") e.stack = yw(e.stack);
+  }
+  return e;
+}
+function dsn() {
+  return i(c(), "control.key");
+}
+async function kEo() {
+  let e = dsn();
+  try {
+    let t = await m(e);
+    if (t.isFile() && t.size <= 4096) {
+      let r = (await D(e, "utf8")).trim();
+      if (r) return r;
+    } else await F(e, {
+      recursive: !0,
+      force: !0
+    }).catch(() => {});
+  } catch (error) {
+    if (!B(error)) throw error;
+  }
+  let n = h(16).toString("hex");
+  return await d(c(), {
+    recursive: !0,
+    mode: 448
+  }), await Cn(e, n, 384), n;
+}
+async function _ge() {
+  try {
+    let e = await m(dsn());
+    if (!e.isFile() || e.size > 4096) return;
+    return (await D(dsn(), "utf8")).trim() || void 0;
+  } catch {
+    return;
+  }
+}
+async function EEo() {
+  let e = c();
+  if (O() === "windows") {
+    await d(e, {
+      recursive: !0
+    }), await S(e, 448).catch(() => {});
+    return;
+  }
+  await d(e, {
+    recursive: !0,
+    mode: 448
+  }), E();
+  let n = process.getuid?.(),
+    t = await m(e);
+  if (n !== void 0 && t.uid !== n) throw Error(`refusing to use daemon dir: ${e} is owned by uid ${t.uid}`);
+  if ((t.mode & 511) !== 448) await S(e, 448);
+}
+async function $Ot() {
+  if (O() === "windows") return;
+  let e = yge();
+  await d(e, {
+    recursive: !0,
+    mode: 448
+  });
+  let date = new Date();
+  await W(e, date, date).catch(() => {}), await I([R(e), e]);
+}
+var code = "ENOTOWNED";
+async function I(e) {
+  let n = process.getuid?.();
+  E();
+  for (let t of e) {
+    let r = await m(t);
+    if (n !== void 0 && r.uid !== n) throw Object.assign(Error(`refusing to bind: ${t} is owned by uid ${r.uid}`), {
+      code: code
+    });
+    if ((r.mode & 511) !== 448) await S(t, 448);
+  }
+}
+var BAr = "refusing to use the daemon socket: this process runs in a user namespace without a uid mapping, so directory and peer ownership cannot be verified (start it with a mapping, e.g. unshare -Ur)";
+function E() {
+  if (A1n()) throw Object.assign(Error(BAr), {
+    code: code
+  });
+}
+async function TEo(e) {
+  if (O() === "windows") {
+    await d(e, {
+      recursive: !0
+    }).catch(() => {});
+    return;
+  }
+  await $Ot();
+  let n = [R4e(), P1n()];
+  for (let t of n) await d(t, {
+    recursive: !0,
+    mode: 448
+  });
+  if (!n.includes(e)) {
+    if (await d(e, {
+      recursive: !0,
+      mode: 448
+    }).then(() => !0, () => !1)) n.push(e);
+  }
+  await I(n);
+}
+function CEo() {
+  if (O() === "windows") return;
+  let e = yge(),
+    n = R(e),
+    t = H(e);
+  w(n, {
+    withFileTypes: !0
+  }).then(async r => {
+    for (let o of r) {
+      if (!o.isDirectory() || o.name === t) continue;
+      let s = i(n, o.name);
+      if (!(await Z(i(s, "control.sock")))) continue;
+      let u = await m(s).catch(() => null);
+      if (!u || Date.now() - u.mtimeMs < 1e4) continue;
+      let p = await w(i(s, "rv")).catch(() => []),
+        l = await w(i(s, "pty")).catch(() => []),
+        g = await w(i(s, "spare")).catch(() => []);
+      if (p.length || l.length || g.length) continue;
+      await F(s, {
+        recursive: !0,
+        force: !0
+      }).catch(() => {});
+    }
+  }).catch(() => {});
+}
+function Z(e) {
+  let n,
+    promise = new Promise(o => {
+      n = o;
+    }),
+    r = X(e);
+  return r.setTimeout(1000, () => {
+    r.destroy(), n(!1);
+  }), r.on("error", o => {
+    let s = v(o);
+    n(s === "ENOENT" || s === "ECONNREFUSED" || s === "ENOTSOCK");
+  }), r.once("connect", () => {
+    r.end(`{"op":"ping"}
+`), n(!1);
+  }), promise;
+}
+function Cee() {
+  return i(c(), "dispatch");
+}
+function jAr() {
+  return i(c(), "dispatch", "rejected");
+}
+function CB() {
+  return i(c(), "roster.json");
+}
+var usn = "attach-journal";
+function Ree() {
+  return i(c(), usn);
+}
+function P1n() {
+  return i(yge(), "rv");
+}
+function E4e() {
+  return i(c(), "auth");
+}
+function T4e(e) {
+  return i(E4e(), `${e}.json`);
+}
+function UOt() {
+  return i(c(), "host-managed");
+}
+function Lae(e) {
+  return i(UOt(), e);
+}
+function C4e(e) {
+  return i(E4e(), `${e}.tokens.json`);
+}
+function BOt(e) {
+  if (O() === "windows") return x(`rv-${e}`);
+  return i(P1n(), `${e}.sock`);
+}
+function R4e() {
+  return i(yge(), "pty");
+}
+function kS(e) {
+  if (O() === "windows") return x(`pty-${e}`);
+  return i(R4e(), `${e}.sock`);
+}
+function $9() {
+  return i(yge(), "spare");
+}
+function REo(e) {
+  return i($9(), `${e}.pty.sock`);
+}
+function AEo(e) {
+  return i($9(), `${e}.claim.sock`);
+}
+function dNe() {
+  return i(c(), "pty-pids");
+}
+function Aee(e) {
+  return i(dNe(), `${e}.pid`);
+}
+function _w(e) {
+  return _(e, "err");
+}
+function nx(e) {
+  return _(e, "late");
+}
+function _(e, n) {
+  if (O() === "windows") return i(dNe(), `${e.split("\\").pop()}.${n}`);
+  return `${e}.${n}`;
+}
+function MV(e) {
+  if (O() === "windows") return i(dNe(), `${e.split("\\").pop()}.exec-exit`);
+  return `${e}.exec-exit`;
+}
+function RB() {
+  if (O() === "windows") return x("control");
+  return E(), i(yge(), "control.sock");
+}
+var kind = 0,
+  kind_2 = 1,
+  jOt = 262144,
+  f = 5,
+  WOt = 1048576,
+  bge = 1e4;
+function zOt(e) {
+  let n = typeof e === "string" ? Buffer.from(e, "utf8") : e,
+    t = Buffer.allocUnsafe(f + n.length);
+  return t.writeUInt32BE(n.length, 0), t.writeUInt8(kind, 4), n.copy(t, f), t;
+}
+function ZO(e) {
+  let n = Buffer.from(b(e), "utf8"),
+    t = Buffer.allocUnsafe(f + n.length);
+  return t.writeUInt32BE(n.length, 0), t.writeUInt8(kind_2, 4), n.copy(t, f), t;
+}
+function fsn(e, n) {
+  let t = Buffer.alloc(0),
+    r = !1;
+  return o => {
+    if (r) return;
+    t = t.length === 0 ? o : Buffer.concat([t, o]);
+    while (t.length >= f) {
+      let s = t.readUInt32BE(0);
+      if (s > WOt) {
+        r = !0, n(`frame too large (${s} > ${WOt})`);
+        return;
+      }
+      let u = f + s;
+      if (t.length < u) return;
+      let p = t.readUInt8(4),
+        l = t.subarray(f, u);
+      if (t = t.subarray(u), p === kind) e({
+        kind: kind,
+        payload: Buffer.from(l)
+      });else if (p === kind_2) {
+        let ctrl;
+        try {
+          ctrl = J(l.toString("utf8"));
+        } catch {
+          r = !0, n("bad ctrl json");
+          return;
+        }
+        e({
+          kind: kind_2,
+          ctrl: ctrl
+        });
+      } else {
+        r = !0, n(`unknown frame kind ${p}`);
+        return;
+      }
+    }
+  };
+}
+export { vEo, A1n, yge, UAr, yw, cat, dsn, kEo, _ge, EEo, $Ot, code as x1n, BAr, TEo, CEo, Cee, jAr, CB, usn, Ree, P1n, E4e, T4e, UOt, Lae, C4e, BOt, R4e, kS, $9, REo, AEo, dNe, Aee, _w, nx, MV, RB, kind as A4e, kind_2 as psn, jOt, WOt, bge, zOt, ZO, fsn };

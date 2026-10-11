@@ -1,0 +1,1 @@
+function ri(o,l,a,u,d,f,h){let x=u==="agents"&&l===a,{glyph:y,color:A}=cn(Dt(o,h)),k=ot(o.label,f),C=" ".repeat(Math.max(0,f-ie(k))),W=Math.max(0,d-(f+4));return[{text:x?Z.pointer:" ",color:"permission"},{text:y,color:A},{text:" "},{text:`${k}${C}`,color:x?"permission":void 0,dimColor:!x&&It(o)},{text:" "},...Kr(o,W,x,h)]}

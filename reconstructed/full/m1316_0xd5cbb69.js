@@ -1,0 +1,718 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  wo
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  H
+} from "B:/~BUN/root/chunk-dkxhwhft.js";
+import {
+  MKe,
+  irn,
+  __
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import {
+  Zmt
+} from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import {
+  re,
+  fr,
+  bK,
+  Zhn
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import {
+  j_
+} from "B:/~BUN/root/chunk-t7p2j7za.js";
+import {
+  x0,
+  ed,
+  Hl,
+  nf,
+  Wte,
+  fYe,
+  SHt,
+  z6,
+  pt,
+  An,
+  oye
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  S0
+} from "B:/~BUN/root/chunk-3daz140w.js";
+import {
+  HYe,
+  Ax,
+  DFr
+} from "B:/~BUN/root/chunk-bt3h0syz.js";
+import {
+  wt
+} from "B:/~BUN/root/chunk-rwwxddqq.js";
+import {
+  xo
+} from "B:/~BUN/root/chunk-8hs4bwwk.js";
+import {
+  is
+} from "B:/~BUN/root/chunk-bpp59nyd.js";
+import {
+  LBr,
+  fs
+} from "B:/~BUN/root/chunk-290k5gh5.js";
+import {
+  yHo,
+  he,
+  mBr,
+  z$t,
+  kBr,
+  gC,
+  TBr
+} from "B:/~BUN/root/chunk-3rzkfay5.js";
+import {
+  Fx,
+  Ie,
+  z5e
+} from "B:/~BUN/root/chunk-sd4cj2qx.js";
+import {
+  bC,
+  UAe,
+  Bne
+} from "B:/~BUN/root/chunk-2ppgegpr.js";
+import {
+  x$e,
+  S$t
+} from "B:/~BUN/root/chunk-ceg1zct0.js";
+import {
+  n
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import {
+  Lb,
+  _Ao
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  fMe,
+  bco,
+  mJt,
+  $Ge,
+  pS,
+  qCt,
+  KCt,
+  Vse,
+  fyr,
+  Zpo
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  Eu,
+  gI,
+  dN
+} from "B:/~BUN/root/chunk-y00rw36h.js";
+import {
+  yan,
+  _an,
+  MRo
+} from "B:/~BUN/root/chunk-7d9qjs8x.js";
+import {
+  Hu
+} from "B:/~BUN/root/chunk-ewjenbzd.js";
+import {
+  uGe
+} from "B:/~BUN/root/chunk-nwhcj0v8.js";
+import {
+  tMe
+} from "B:/~BUN/root/chunk-1sgh90j0.js";
+import {
+  b3t
+} from "B:/~BUN/root/chunk-xk341xte.js";
+import {
+  Ooe
+} from "B:/~BUN/root/chunk-mtjq1vv3.js";
+import {
+  lso
+} from "B:/~BUN/root/chunk-cbe9n9ke.js";
+import {
+  nje
+} from "B:/~BUN/root/chunk-gr2k5vsr.js";
+import {
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import {
+  Pn
+} from "B:/~BUN/root/chunk-106hagsg.js";
+import {
+  Z
+} from "B:/~BUN/root/chunk-08bth2fj.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+
+function iGt(o) {
+  let e = [];
+  for (let s of o) {
+    let i = typeof s.value === "string" ? s.value : Array.isArray(s.value) ? s.value.join(", ") : null;
+    if (i === null || i === "" || i === "none") continue;
+    e.push(s.label ? {
+      label: s.label,
+      value: i
+    } : {
+      value: i
+    })
+  }
+  return e
+}
+
+function VPe(o) {
+  let e = o.map((s) => s.filter((i) => !i.antOnly));
+  return e.push(o.flatMap((s) => s.filter((i) => i.antOnly))), e
+}
+var rr = import.meta.require("B:/~BUN/root/chunk-h31ms38y.js");
+
+function Q5r() {
+  return []
+}
+
+function Z5r() {
+  return []
+}
+
+function e8r() {
+  return []
+}
+
+function t8r(o, e = null, s) {
+  let i = o?.find((t) => t.name === "ide");
+  if (e) {
+    let t = __(e.ideType),
+      l = Vse(e.ideType) ? "plugin" : "extension";
+    if (e.error) return [{
+      label: "IDE",
+      value: r(n, {
+        children: [Pn("error", s)(Z.cross), " Error installing ", t, " ", l, ": ", e.error, `
+`, "Please restart your IDE and try again."]
+      })
+    }];
+    if (e.installed)
+      if (i && i.type === "connected")
+        if (e.installedVersion !== i.serverInfo?.version) return [{
+          label: "IDE",
+          value: `Connected to ${t} ${l} version ${e.installedVersion} (server version: ${i.serverInfo?.version})`
+        }];
+        else return [{
+          label: "IDE",
+          value: `Connected to ${t} ${l} version ${e.installedVersion}`
+        }];
+    else return [{
+      label: "IDE",
+      value: `Installed ${t} ${l}`
+    }]
+  } else if (i) {
+    let t = fyr(i) ?? "IDE";
+    if (i.type === "connected") return [{
+      label: "IDE",
+      value: `Connected to ${t} extension`
+    }];
+    else return [{
+      label: "IDE",
+      value: `${Pn("error",s)(Z.cross)} Not connected to ${t}`
+    }]
+  }
+  return []
+}
+
+function n8r(o = [], e) {
+  let s = o.filter((l) => l.name !== "ide");
+  if (!s.length) return [];
+  let i = {
+    connected: 0,
+    cached: 0,
+    pending: 0,
+    needsAuth: 0,
+    disabled: 0,
+    failed: 0
+  };
+  for (let l of s) switch (l.type) {
+    case "connected":
+      i.connected++;
+      break;
+    case "cached":
+      i.cached++;
+      break;
+    case "pending":
+      i.pending++;
+      break;
+    case "needs-auth":
+      i.needsAuth++;
+      break;
+    case "disabled":
+      i.disabled++;
+      break;
+    case "failed":
+      i.failed++;
+      break;
+    default:
+  }
+  let t = [];
+  if (i.connected) t.push(Pn("success", e)(`${i.connected} connected`));
+  if (i.cached) t.push(Pn("inactive", e)(`${i.cached} cached`));
+  if (i.needsAuth) t.push(Pn("warning", e)(`${i.needsAuth} need auth`));
+  if (i.pending) t.push(Pn("inactive", e)(`${i.pending} pending`));
+  if (i.disabled) t.push(Pn("inactive", e)(`${i.disabled} disabled`));
+  if (i.failed) t.push(Pn("error", e)(`${i.failed} failed`));
+  return [{
+    label: "MCP servers",
+    value: `${t.join(", ")} ${Pn("inactive",e)("\xB7 /mcp")}`
+  }]
+}
+async function r8r(o, e, s) {
+  if (S0()) return [];
+  let i = await pS(o, !1, e, s),
+    t = qCt(i),
+    l = [],
+    u = KCt(i);
+  if (u) l.push(`Instruction files will impact performance: ${u.summary.fileCount} files, ${is(u.summary.totalChars)} chars in total > ${is(u.summary.totalLimitChars)}`);
+  let p = $Ge();
+  return t.forEach((d) => {
+    let c = xo(d.path);
+    l.push(`Large ${c} will impact performance (${is(d.content.length)} chars > ${is(p)})`)
+  }), l
+}
+
+function b(o = "remote") {
+  let e = z$t();
+  if (!e) return null;
+  return `Enterprise managed settings (${e.map((i)=>i==="remote"?o:h(i)).join(" + ")}, merged)`
+}
+
+function o8r() {
+  let o = fs(),
+    e = mBr(),
+    t = [{
+      label: "Setting sources",
+      value: o.filter((c) => {
+        if (c === "policySettings" && e.composes !== "none") return !0;
+        let g = he(c);
+        return g !== null && Object.keys(g).length > 0
+      }).map((c) => {
+        if (c === "policySettings") {
+          if (e.composes !== "none") {
+            let m = e.composes === "remoteSlot",
+              v = yHo() ? `${m?"remote ":""}default settings payload` : m ? "remote helper" : "helper",
+              S = e.mergedOver ? `${v} merged over ${h(e.mergedOver)}` : v;
+            return (m ? b(S) : null) ?? `Enterprise managed settings (${S})`
+          }
+          let g = gC();
+          if (g === null) return null;
+          return b() ?? C(g)
+        }
+        return LBr(c)
+      }).filter((c) => c !== null)
+    }],
+    l = TBr();
+  if (l.length > 0) t.push({
+    label: "Skipped sources",
+    value: l.map(C)
+  });
+  if (Lb()) {
+    let c = [..._Ao()];
+    t.push({
+      label: "Permission rules",
+      value: ["Managed settings only (allowManagedPermissionRulesOnly)", ...c.length > 0 ? [`allowed-tools ignored this session: ${c.join(", ")}`] : []]
+    })
+  }
+  let u = fMe();
+  if (u && bco(u)) t.push({
+    label: "Managed settings (remote)",
+    value: mJt(u)
+  });
+  let p = yan();
+  if (MRo(p)) t.push({
+    label: "Organization policy",
+    value: _an(p)
+  });
+  let d = lso();
+  if (d !== void 0) t.push({
+    label: "Client data",
+    value: d
+  });
+  return t
+}
+
+function s8r(o) {
+  return [{
+    label: "Auto mode server",
+    value: Zpo(o) ? "Enabled" : "Disabled"
+  }]
+}
+
+function h(o) {
+  switch (o) {
+    case "helper":
+    case "remote":
+    case "plist":
+      return o;
+    case "hklm":
+      return "HKLM";
+    case "file": {
+      let {
+        hasBase: e,
+        hasDropIns: s
+      } = kBr();
+      if (e && s) return "file + drop-ins";
+      return s ? "drop-ins" : "file"
+    }
+    case "parent":
+      return "parent process";
+    case "hkcu":
+      return "HKCU"
+  }
+}
+
+function C(o) {
+  return `Enterprise managed settings (${h(o)})`
+}
+async function i8r() {
+  return (await tMe()).filter((e) => e.type !== "error").map((e) => e.message)
+}
+async function a8r(o) {
+  let e = dN(),
+    s = Eu();
+  if (!e && !s) return [];
+  let i = [];
+  if (s) return i.push(`${s} \u2014 nothing will run unwrapped: new background sessions are refused unless a background service that validated an earlier value is still serving them (\`claude daemon status\` shows it)`), i;
+  let t = Hu();
+  if (i.push(`Self-exec: \`${[t.cmd,...t.prefixArgs].join(" ")}\` (CLAUDE_CODE_PROCESS_WRAPPER)`), !await gI()) i.push(`The launcher \`${t.cmd}\` cannot run right now (deleted or not executable) \u2014 new background sessions are refused until it is restored; a background service that validated it earlier keeps serving its existing sessions (\`claude daemon status\`)`);
+  let l = await j_(1, o).catch(() => null);
+  if (!l) return i;
+  let [{
+    controlRequest: u
+  }, {
+    BG_PROTO: p
+  }] = await Promise.all([import("B:/~BUN/root/chunk-y9w1rjh3.js"), import("B:/~BUN/root/chunk-t2fx2wmj.js")]), d = await u({
+    proto: p,
+    op: "nudge"
+  }).catch(() => null), c = d?.ok && d.op === "nudge" ? d.processWrapper ?? "" : l.processWrapper ?? "", g = re(fr(wt(c)), 200);
+  if (l.origin === "service") i.push(`The installed background service predates launcher support and runs outside \`${t.cmd}\`; its sessions are covered, the service process itself is not \u2014 a launcher-aware \`claude daemon install\` will close this`);
+  if (c !== e) i.push(`The running background service launches sessions via \`${g||"(no launcher)"}\`, but this session resolves \`${e}\` \u2014 restart it (and your running claude sessions) to converge`);
+  return i
+}
+async function l8r(o) {
+  let e = await uGe({
+      storageV5: o
+    }),
+    s = [],
+    {
+      statusNotices: i,
+      invalidEntries: t
+    } = nje(Ooe().errors);
+  if (t.length > 0) {
+    let u = L(t.map((d) => d.file)).join(", ");
+    s.push(`Found invalid entries in: ${u}.`);
+    let p = await b3t(o);
+    if (p === "settings_unknowable" || p === "settings_invalid_key_set") s.push("Transcript retention cleanup is paused until the settings errors above are fixed (cleanupPeriodDays cannot be determined reliably).")
+  }
+  for (let l of i) s.push(l.message);
+  if (e.warnings.forEach((l) => {
+      s.push(l.issue)
+    }), e.hasUpdatePermissions === !1) s.push("No write permissions for auto-updates");
+  return s
+}
+
+function qPe(o) {
+  if (!(H() && o !== void 0)) return;
+  return (async () => ({
+    refreshKnownDead: Hl() && await z6(o)
+  }))().catch(() => ({
+    refreshKnownDead: !1
+  }))
+}
+
+function aGt(o) {
+  let e = oye();
+  if (!e) return [];
+  let s = [];
+  if (o !== void 0 && H() ? o.refreshKnownDead : Hl() && SHt()) {
+    s.push({
+      label: "Login",
+      value: "Expired \u2014 log in again"
+    });
+    let u = An();
+    if (u?.organizationName && !a.IS_DEMO) s.push({
+      label: "Organization",
+      value: u.organizationName
+    });
+    if (u?.emailAddress && !a.IS_DEMO) s.push({
+      label: "Email",
+      value: u.emailAddress
+    });
+    return s
+  }
+  if (e.subscription) s.push({
+    label: "Login method",
+    value: `${e.subscription} account`
+  });
+  let i = " \xB7 not in use",
+    t = pt();
+  if (e.tokenSource) {
+    let u = e.tokenSource === "claude.ai" || e.tokenSource === "CLAUDE_CODE_OAUTH_TOKEN" || e.tokenSource === "CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR" || e.tokenSource === "CCR_OAUTH_TOKEN_FILE";
+    s.push({
+      label: "Auth token",
+      value: u && e.apiKeySource && !t ? `${e.tokenSource}${i}` : e.tokenSource
+    })
+  }
+  if (e.apiKeySource) s.push({
+    label: "API key",
+    value: t ? `${e.apiKeySource}${i}` : e.apiKeySource
+  });
+  let l = fYe();
+  if (l && Wte()) s.push({
+    label: "apiKeyHelper",
+    value: a.IS_DEMO ? "Failing" : `Failing \u2014 last run ${bK(l,Zhn)}`
+  });
+  if (ed()) s.push({
+    label: "Profile",
+    value: S$t()
+  });
+  if (ed() && nf({
+      skipRetrievingKeyFromApiKeyHelper: !0
+    }).key === null) {
+    let u = x$e();
+    if (!a.IS_DEMO) {
+      if (u?.organizationName || u?.organizationUuid) s.push({
+        label: "Organization",
+        value: [u.organizationName, u.organizationUuid].filter(Boolean).join(" \xB7 ")
+      });
+      if (u?.accountEmail) s.push({
+        label: "Email",
+        value: u.accountEmail
+      })
+    }
+  }
+  if (e.organization && !a.IS_DEMO) s.push({
+    label: "Organization",
+    value: e.organization
+  });
+  if (e.email && !a.IS_DEMO) s.push({
+    label: "Email",
+    value: e.email
+  });
+  return s
+}
+
+function f(o) {
+  let e;
+  try {
+    e = new URL(o)
+  } catch {
+    e = void 0
+  }
+  if (e?.host) {
+    if (!e.username && !e.password) return o;
+    let t = new URL(e.href);
+    return t.username = "***", t.password = "", t.href
+  }
+  let s = o.lastIndexOf("@");
+  if (s < 0) return o;
+  return `${/^[a-z][a-z0-9+.-]*:\/\//i.exec(o)?.[0]??""}***${o.slice(s)}`
+}
+
+function lGt() {
+  let o = Ie(),
+    e = [];
+  if (o !== "firstParty") {
+    let t = z5e(),
+      l = t ? `${Fx[o]} + ${Fx[t]}` : Fx[o];
+    e.push({
+      label: "API provider",
+      value: l
+    })
+  }
+  if (o === "firstParty") {
+    let t = a.ANTHROPIC_BASE_URL;
+    if (t) e.push({
+      label: "Anthropic base URL",
+      value: f(t)
+    })
+  } else if (o === "bedrock") {
+    let t = a.ANTHROPIC_BEDROCK_BASE_URL;
+    if (t) e.push({
+      label: "Bedrock base URL",
+      value: f(t)
+    });
+    e.push({
+      label: "AWS region",
+      value: y()
+    });
+    let l = a.ANTHROPIC_BEDROCK_SERVICE_TIER;
+    if (l) e.push({
+      label: "Bedrock service tier",
+      value: l
+    });
+    if (a.CLAUDE_CODE_SKIP_BEDROCK_AUTH) e.push({
+      value: "AWS auth skipped"
+    })
+  } else if (o === "vertex") {
+    let t = a.ANTHROPIC_VERTEX_BASE_URL;
+    if (t) e.push({
+      label: "Vertex base URL",
+      value: f(t)
+    });
+    let l = a.ANTHROPIC_VERTEX_PROJECT_ID;
+    if (l) e.push({
+      label: "GCP project",
+      value: l
+    });
+    if (e.push({
+        label: "Default region",
+        value: Zmt()
+      }), a.CLAUDE_CODE_SKIP_VERTEX_AUTH) e.push({
+      value: "GCP auth skipped"
+    })
+  } else if (o === "foundry") {
+    let t = a.ANTHROPIC_FOUNDRY_BASE_URL;
+    if (t) e.push({
+      label: "Microsoft Foundry base URL",
+      value: f(t)
+    });
+    let l = a.ANTHROPIC_FOUNDRY_RESOURCE;
+    if (l) e.push({
+      label: "Microsoft Foundry resource",
+      value: l
+    });
+    if (a.CLAUDE_CODE_SKIP_FOUNDRY_AUTH) e.push({
+      value: "Microsoft Foundry auth skipped"
+    })
+  } else if (o === "anthropicAws") {
+    let t = a.ANTHROPIC_AWS_BASE_URL;
+    if (t) e.push({
+      label: "Claude Platform on AWS base URL",
+      value: f(t)
+    });
+    let l = a.ANTHROPIC_AWS_WORKSPACE_ID;
+    if (l) e.push({
+      label: "Workspace ID",
+      value: l
+    });
+    if (e.push({
+        label: "AWS region",
+        value: HYe()
+      }), a.CLAUDE_CODE_SKIP_ANTHROPIC_AWS_AUTH) e.push({
+      value: "Claude Platform on AWS auth skipped"
+    })
+  } else if (o === "anthropicGoogleCloud") {
+    let t = a.ANTHROPIC_GOOGLE_CLOUD_BASE_URL;
+    if (t) e.push({
+      label: "Claude Platform on Google Cloud base URL",
+      value: f(t)
+    });
+    let l = a.ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID;
+    if (l) e.push({
+      label: "Workspace ID",
+      value: l
+    });
+    let u = a.ANTHROPIC_GOOGLE_CLOUD_PROJECT || a.GOOGLE_CLOUD_PROJECT;
+    if (u) e.push({
+      label: "GCP project",
+      value: u
+    });
+    if (e.push({
+        label: "GCP location",
+        value: a.ANTHROPIC_GOOGLE_CLOUD_LOCATION || "global"
+      }), a.CLAUDE_CODE_SKIP_ANTHROPIC_GOOGLE_CLOUD_AUTH) e.push({
+      value: "Claude Platform on Google Cloud auth skipped"
+    })
+  } else if (o === "gateway") {
+    let t = wo();
+    if (t) {
+      if (e.push({
+          label: "Gateway URL",
+          value: f(t.url)
+        }), t.email && !a.IS_DEMO) e.push({
+        label: "Gateway account",
+        value: t.email
+      })
+    }
+  }
+  if (o === "mantle" || z5e() === "mantle") {
+    let t = a.ANTHROPIC_BEDROCK_MANTLE_BASE_URL;
+    if (t) e.push({
+      label: "Amazon Bedrock (Mantle) base URL",
+      value: f(t)
+    });
+    if (o === "mantle") e.push({
+      label: "AWS region",
+      value: y()
+    });
+    if (a.CLAUDE_CODE_SKIP_MANTLE_AUTH) e.push({
+      value: "Amazon Bedrock (Mantle) auth skipped"
+    })
+  }
+  let s = UAe();
+  if (s) e.push({
+    label: "Proxy",
+    value: Bne(s) ? f(s) : `${f(s).replace(/\p{Cc}/gu,"")} (invalid \u2014 ignored; fix or unset the proxy env var)`
+  });
+  let i = bC();
+  if (a.NODE_EXTRA_CA_CERTS) e.push({
+    label: "Additional CA cert(s)",
+    value: a.NODE_EXTRA_CA_CERTS
+  });
+  if (i) {
+    if (i.cert && a.CLAUDE_CODE_CLIENT_CERT) e.push({
+      label: "mTLS client cert",
+      value: a.CLAUDE_CODE_CLIENT_CERT
+    });
+    if (i.key && a.CLAUDE_CODE_CLIENT_KEY) e.push({
+      label: "mTLS client key",
+      value: a.CLAUDE_CODE_CLIENT_KEY
+    })
+  }
+  return e
+}
+
+function y() {
+  let {
+    region: o,
+    source: e
+  } = DFr();
+  switch (e) {
+    case "env":
+      return o;
+    case "shared-config":
+      return `${o} (from AWS config)`;
+    case "env-invalid":
+    case "default":
+      return Ax(), e === "env-invalid" ? `${o} (default \u2014 region env var invalid, ignored; fix or unset AWS_REGION / AWS_DEFAULT_REGION)` : `${o} (default \u2014 set AWS_REGION or add a region to your AWS config)`
+  }
+}
+
+function c8r(o) {
+  let e = x0(o),
+    s = MKe();
+  if (s !== void 0) return `${e} (${irn(x0(s.previousModel))})`;
+  return e
+}
+export {
+  iGt,
+  VPe,
+  Q5r,
+  Z5r,
+  e8r,
+  t8r,
+  n8r,
+  r8r,
+  o8r,
+  s8r,
+  i8r,
+  a8r,
+  l8r,
+  qPe,
+  aGt,
+  lGt,
+  c8r
+};

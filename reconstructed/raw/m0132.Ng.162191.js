@@ -1,0 +1,1 @@
+var Ng=(e,t)=>R_({read:(o)=>{let r=G(o)?o.source:void 0;return o!==void 0&&!G(o)?Promise.reject(new De(`${e}: $.settings.read takes { source } or nothing`)):t("settings.read",r!==void 0?{source:r}:{})}});

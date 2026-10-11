@@ -1,0 +1,1 @@
+function M2o(e,t){let o=new Map(t.map((r)=>[`${ds(r)}\x00${r.path}`,r]));return e.map((r)=>{let n=o.get(`${r.kind}\x00${r.path}`);if(n===void 0)return{path:r.path,type:ys(r),content:r.content,...r.parent!==void 0&&{parent:r.parent}};return n.content!==r.content?{...n,content:r.content}:n})}

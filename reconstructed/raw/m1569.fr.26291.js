@@ -1,0 +1,1 @@
+function fr(e,r,n){let{addr:s,by:a}=r;for(;;){if(!a.startsWith("rule:"))return s;let w=Number(a.slice(5));if(!Number.isSafeInteger(w)||w<0||w>=s||!e.within(w,n))return;let h=e.rows[w];if(!h)return;s=w,a=h.by}}

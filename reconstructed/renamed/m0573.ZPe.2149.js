@@ -1,0 +1,108 @@
+/* ==========================================================================
+ * m0573.ZPe   [m0573_0xcde50bc.js @ 2149]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+class ZPe {
+  #l;
+  #c;
+  #i = void 0;
+  #m = Me();
+  #d = 0;
+  #s = !1;
+  #u = !0;
+  #e = null;
+  #t = null;
+  #a = !1;
+  #o = 0;
+  #n = null;
+  #g;
+  constructor(e) {
+    this.#l = e?.sweepMs ?? D, this.#c = e?.ignoredAfterMs ?? B;
+    let n = e?.storageV5;
+    this.#g = () => cv(void 0, n);
+  }
+  getSnapshot = () => this.#i;
+  subscribe = e => {
+    let n = this.#m.subscribe(e);
+    if (this.#d++, !this.#s) if (this.#s = !0, this.#i === void 0) this.#r();else this.#e = setTimeout(() => void this.#r(), this.#l), this.#e.unref();
+    let o = !1;
+    return () => {
+      if (o) return;
+      if (o = !0, n(), this.#d--, this.#d === 0) this.#k();
+    };
+  };
+  refetch = () => this.#r();
+  async quiesce() {
+    while (this.#t) await this.#t;
+  }
+  setFocused(e) {
+    if (e === this.#u) return;
+    if (this.#u = e, !this.#s) return;
+    if (e) this.#r();else this.#f();
+  }
+  recordOpenViaLeft() {
+    if (this.#p(), this.#o > 0 && Date.now() - this.#o <= F) _("fleet_needs_input_nudge"), this.#o = 0;
+    return this.#i;
+  }
+  #r() {
+    if (this.#f(), this.#t) return this.#a = !0, this.#t;
+    return this.#t = this.#h().finally(() => {
+      if (this.#t = null, this.#a) this.#a = !1, this.#r();
+    }), this.#t;
+  }
+  async #h() {
+    let e;
+    try {
+      e = await this.#g();
+    } catch {
+      e = [];
+    }
+    if (!this.#s) return;
+    let n = 0,
+      o = 0,
+      s = 0,
+      h = 0,
+      u = vp();
+    for (let c of e) {
+      if (c.id === u) continue;
+      if (I(c.state)) {
+        if (o++, oy(c.state.state) === "success") s++;
+        continue;
+      }
+      if (h++, C(c.state)) n++;
+    }
+    if (n === 0) this.#p(), this.#o = 0;
+    let f = this.#i;
+    if (f?.needsInput !== n || f?.done !== o || f?.succeeded !== s) {
+      let c = f !== void 0 && n > f.needsInput;
+      if (this.#i = {
+        needsInput: n,
+        done: o,
+        succeeded: s
+      }, i("tengu_fleet_nudge_state", {
+        needs_input_count: n,
+        done_count: o,
+        succeeded_count: s,
+        increased: c
+      }), c) this.#o = Date.now(), this.#S();
+      this.#m.emit();
+    }
+    if (h > 0 && this.#u) this.#e = setTimeout(() => void this.#r(), this.#l), this.#e.unref();
+  }
+  #S() {
+    this.#p(), this.#n = setTimeout(() => {
+      this.#n = null, p("fleet_needs_input_nudge", "ignored"), this.#o = 0;
+    }, this.#c), this.#n.unref();
+  }
+  #f() {
+    if (this.#e) clearTimeout(this.#e), this.#e = null;
+  }
+  #p() {
+    if (this.#n) clearTimeout(this.#n), this.#n = null;
+  }
+  #k() {
+    this.#f(), this.#a = !1, this.#s = !1;
+  }
+}

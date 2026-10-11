@@ -1,0 +1,412 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import {
+  Te
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  H
+} from "B:/~BUN/root/chunk-dkxhwhft.js";
+import "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  P,
+  Pf,
+  igt
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import "B:/~BUN/root/chunk-1223v177.js";
+import {
+  It,
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  b,
+  J,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  Se
+} from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import "B:/~BUN/root/chunk-y04k89s2.js";
+import "B:/~BUN/root/chunk-d4pzq02b.js";
+import "B:/~BUN/root/chunk-mgxre38x.js";
+import "B:/~BUN/root/chunk-h23911wn.js";
+import "B:/~BUN/root/chunk-jdm3bsma.js";
+import {
+  Zr
+} from "B:/~BUN/root/chunk-cpg4rjtx.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  ke
+} from "B:/~BUN/root/chunk-kss0wzj5.js";
+import {
+  Ae
+} from "B:/~BUN/root/chunk-5w2ecytn.js";
+import {
+  Ee,
+  le
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import {
+  tt
+} from "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import {
+  zn
+} from "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-4dw8761b.js";
+import {
+  R,
+  T,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import {
+  rX
+} from "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import {
+  o,
+  E,
+  C,
+  u
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+import {
+  rt
+} from "B:/~BUN/root/chunk-mmkravm0.js";
+N();
+import {
+  join as oe
+} from "path";
+var te = f(() => u({
+    number: E(),
+    title: o(),
+    closedAt: o()
+  })),
+  F = f(() => C(te())),
+  re = 5000,
+  ne = 86400000,
+  ce = 30;
+
+function j() {
+  return rX(oe(Se(), "cache", "my-closed-issues.json"), F, {
+    defaultValue: () => [],
+    ensureDir: !0
+  })
+}
+
+function z() {
+  return Ae.cache("my-closed-issues", "my-closed-issues.json")
+}
+
+function ie(e) {
+  return new Date(e - ce * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
+}
+async function A(e) {
+  if (Te()) return null;
+  if (It()) return null;
+  let s = le(),
+    n = Date.now();
+  if (n - (s.closedIssuesLastChecked ?? 0) < ne) return null;
+  let h = n,
+    {
+      stdout: m,
+      code: a
+    } = await tt("gh", ["issue", "list", "-R", "anthropics/claude-code", "--author", "@me", "--state", "closed", "--search", `closed:>${ie(n)}`, "--json", "number,title,closedAt,stateReason", "--limit", "30"], {
+      timeout: re,
+      preserveOutputOnError: !1
+    }),
+    x = Date.now() - h,
+    l = null;
+  if (a === 0) try {
+    l = J(m).filter((c) => c.stateReason === "COMPLETED").map((c) => ({
+      number: c.number,
+      title: c.title,
+      closedAt: c.closedAt
+    }))
+  } catch (r) {
+    t(`Failed to parse gh issue list output: ${r}`, {
+      level: "error"
+    })
+  }
+  if (l !== null)
+    if (H() && e !== void 0) try {
+      let r = await e.write(z(), b(l), {
+        mode: 438 & ~process.umask()
+      });
+      if (!r.ok) t(`Failed to write closed-issues cache: ${rt(r.error)}`, {
+        level: "error"
+      })
+    } catch (r) {
+      t(`Failed to write closed-issues cache: ${r}`, {
+        level: "error"
+      })
+    } else try {
+      await j().write(l)
+    } catch (r) {
+      t(`Failed to write closed-issues cache: ${r}`, {
+        level: "error"
+      })
+    }
+  let g = s.closedIssuesAcknowledged ?? [],
+    p = g;
+  if (l !== null) {
+    let r = new Set(l.map((c) => c.number));
+    p = g.filter((c) => r.has(c))
+  }
+  let I = p.length !== g.length || p.some((r, c) => r !== g[c]);
+  return await Ee((r) => ({
+    ...r,
+    closedIssuesLastChecked: n,
+    ...I && {
+      closedIssuesAcknowledged: p
+    }
+  }), e), x
+}
+async function S(e) {
+  if (e) {
+    let s;
+    try {
+      s = await e.read([z()])
+    } catch (a) {
+      if (Pf(a)) t(`closed-issues cache read failed: ${a}`);
+      else d(a);
+      return []
+    }
+    if (!s.ok) {
+      let a = s.error;
+      if ("telemetryCode" in a && igt(a.telemetryCode)) t(`closed-issues cache read failed: ${rt(a)}`);
+      else d(new P(`closed-issues cache read failed: ${rt(a)}`, "closed-issues cache read failed (v5 backend error)"));
+      return []
+    }
+    let n = s.value.items[0];
+    if (!n?.found) return [];
+    let h;
+    try {
+      h = J(Buffer.from(n.value).toString("utf-8"))
+    } catch (a) {
+      return t(`closed-issues cache is not valid JSON: ${a}`, {
+        level: "warn"
+      }), []
+    }
+    let m = F().safeParse(h);
+    if (!m.success) return t(`closed-issues cache failed schema validation: ${m.error.message}`, {
+      level: "warn"
+    }), [];
+    return m.data
+  }
+  try {
+    return await j().read()
+  } catch (s) {
+    if (Pf(s)) t(`closed-issues cache read failed: ${s}`);
+    else d(s);
+    return []
+  }
+}
+
+function k(e) {
+  let s = new Set(le().closedIssuesAcknowledged ?? []);
+  return e.filter((n) => !s.has(n.number))
+}
+
+function D(e, s) {
+  if (e.length === 0) return;
+  let n = le().closedIssuesAcknowledged ?? [],
+    h = L([...n, ...e]);
+  if (h.length === n.length) return;
+  Ee((m) => ({
+    ...m,
+    closedIssuesAcknowledged: h
+  }), s)
+}
+
+function Ie(ve) {
+  return ve.number
+}
+
+function ye(is, Oe) {
+  return Oe
+}
+
+function be(xe) {
+  return xe.number
+}
+var B = 4000,
+  V = 1e4,
+  ae = "https://github.com/anthropics/claude-code/issues/";
+
+function K(e) {
+  return {
+    text: `#${e}`,
+    color: "success",
+    url: `${ae}${e}`
+  }
+}
+
+function M(e) {
+  if (e.length === 1) return [{
+    text: "\u2713 Your issue ",
+    color: "success"
+  }, K(e[0].number), {
+    text: " has been closed. Thanks for reporting!",
+    color: "success"
+  }];
+  return [{
+    text: `\u2713 ${e.length} of your issues have been closed (`,
+    color: "success"
+  }, ...e.flatMap((s, n) => [...n > 0 ? [{
+    text: ", ",
+    color: "success"
+  }] : [], K(s.number)]), {
+    text: "). Thanks for reporting!",
+    color: "success"
+  }]
+}
+
+function Ce() {
+  let h = w(4),
+    {
+      storageV5: e
+    } = ke(),
+    {
+      addNotification: s
+    } = Zr(),
+    n = T(!1),
+    m, a;
+  if (h[0] !== s || h[1] !== e) m = () => {
+    if (n.current) {
+      return
+    }
+    if (n.current = !0, zn()) {
+      let r = function(x) {
+        let g = new Set(l.map(Ie));
+        let I = x.filter((p) => !g.has(p.number));
+        if (I.length === 0) {
+          return
+        }
+        l.push(...I), i("tengu_closed_issue_notice_shown", {
+          newClosedIssueCount: I.length,
+          totalClosedIssueCount: l.length
+        }), s({
+          key: "closed-issue-notice",
+          kind: "event",
+          segments: M(l),
+          priority: "low",
+          timeoutMs: V,
+          fold: ye
+        }), D(I.map(be), e)
+      };
+      let c = !1;
+      let l = [];
+      let se = async function se() {
+        let _e = await S(e);
+        let X = k(_e);
+        if (!c && X.length > 0) r(X);
+        let Z = await A(e);
+        if (c || Z === null || Z > B) {
+          return
+        }
+        let ee = k(await S(e));
+        if (!c && ee.length > 0) r(ee)
+      };
+      return se().catch(d), () => {
+        c = !0
+      }
+    }
+  }, a = [s, e], h[0] = s, h[1] = e, h[2] = m, h[3] = a;
+  else m = h[2], a = h[3];
+  return R(m, a), null
+}
+export {
+  Ce as ClosedIssueNotice
+};

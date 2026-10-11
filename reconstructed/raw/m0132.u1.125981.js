@@ -1,0 +1,1 @@
+function u1(e){let t=Promise.withResolvers();t.promise.catch(()=>{});let o=!1;async function*r(){let n=typeof e==="function"?e():e;try{let s=yield*n;return o=!0,t.resolve(s),s}catch(s){throw o=!0,t.reject(s),s}finally{if(!o)t.reject(new De("the stream was closed before its result"))}}return Object.defineProperty(r(),"result",{value:t.promise,enumerable:!0})}

@@ -1,0 +1,1 @@
+var pi={event:"skill.prompt",checkArgument:(e,t)=>{let{skill:o,text:r}=e,n=typeof o==="string",s=o===t.skill;return n?s?typeof r==="string"?void 0:"no { text }":"a changed skill (the hooks beneath match on it)":"no { skill }"},measureArgument:(e,t)=>te(e.text,t.text),check:C((e)=>typeof e.text==="string"?void 0:"no { text } (a string)"),measure:Ze("text")};

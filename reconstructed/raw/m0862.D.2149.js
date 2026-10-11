@@ -1,0 +1,1 @@
+function D(e,n){let t=e[n],r;if(t==="'"||t==='"')r=_(e,n);else{let a=g(e,n);r=a===void 0?void 0:{value:a,end:n+a.length}}if(!r||y.has(r.value))return;let o=d(e,r.end);if(e[o]!==":")return;let i=x(e,d(e,o+1));return i&&{value:[r.value,i.value],end:i.end}}

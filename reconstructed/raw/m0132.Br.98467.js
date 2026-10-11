@@ -1,0 +1,1 @@
+function Br(e,t){let o=Object.hasOwn(t.props,"onScreen")?t.props.onScreen:void 0;return NVn.has(t.component)&&$n(e.onScreen)!==$n(o)?"a props.onScreen other than the surface reported (the surface says what its viewport shows; a rewrite changes the drawing alone)":void 0}

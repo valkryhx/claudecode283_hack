@@ -1,0 +1,1 @@
+function sn(e,t){let o=e.ifVersion!==t.ifVersion,r=$n(e.previous)!==$n(t.previous);return vt(e,t)??(o?"a changed ifVersion (the condition is the caller's)":void 0)??(r?"a changed previous (the host stamps it)":void 0)}

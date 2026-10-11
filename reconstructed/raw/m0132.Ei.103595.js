@@ -1,0 +1,1 @@
+var Ei={event:"ui.render",restoreArgument:(e)=>Sdt(e),checkArgument:Zr,checkMatcher:(e)=>Object.hasOwn(e,"component")&&vdt(e.component,to)?`${to} is drawn by the engine alone; its answer authorises an action. A plugin adds context with $.ui.notice`:void 0,check:(e)=>G(e)&&typeof e.type==="string"?void 0:"something that is not a tree element"};

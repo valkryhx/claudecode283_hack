@@ -1,0 +1,171 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { qe } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { $t } from "B:/~BUN/root/chunk-3jyp964r.js";
+import { gJ } from "B:/~BUN/root/chunk-3wnb3s8p.js";
+import { dkn } from "B:/~BUN/root/chunk-91sz5k2c.js";
+import { L } from "B:/~BUN/root/chunk-z1enakv9.js";
+var y = 500,
+  l = 200;
+function dJn({
+  clock: clock,
+  transcript: transcript,
+  queue: queue,
+  wakesIdleSession = () => !0
+}) {
+  {
+    let n = h(),
+      m = () => {
+        let p = n;
+        n = h();
+        for (let o of ["held", "denied", "expired", "delivered", "refused"]) {
+          let d = p[o];
+          if (d.length === 0) continue;
+          let i = d.length,
+            t = f(d);
+          transcript.replace(c => [...c, $t(`Cross-session ${i === 1 ? "message" : `messages (${i})`} ${C(o)}${t}. ${w(o)}`, "warning")]), queue.enqueue({
+            mode: "prompt",
+            agentId: qe(),
+            value: b(o, i, t),
+            ...g(wakesIdleSession()),
+            skipSlashCommands: !0,
+            isMeta: !0
+          });
+        }
+        if (p.dropped.length > 0) {
+          let o = p.dropped.reduce((acc, item) => acc + item.droppedCount, 0),
+            d = f(p.dropped.map(item => item.label)),
+            i = P(p.dropped.map(item => item.dropReason));
+          transcript.replace(t => [...t, $t(`Cross-session ${o === 1 ? "message was" : `messages (${o}) were`} dropped at the recipient session's inbox${d} and not delivered${i ? ` \u2014 ${i}` : ""}. Claude was told not to resend right away.`, "warning")]), queue.enqueue({
+            mode: "prompt",
+            agentId: qe(),
+            value: R(o, d, i),
+            ...g(wakesIdleSession()),
+            skipSlashCommands: !0,
+            isMeta: !0
+          });
+        }
+      },
+      u = null,
+      v = () => {
+        u?.(), u = clock.setTimeout(() => {
+          u = null, m();
+        }, y);
+      };
+    return dkn((p, o, d) => {
+      let label = typeof o === "string" && gJ(o) ? o : "";
+      if (p === "dropped") {
+        let dropped = n.dropped;
+        if (dropped.length < l) dropped.push({
+          label: label,
+          dropReason: d?.dropReason,
+          droppedCount: d?.droppedCount ?? 1
+        });
+      } else {
+        let t = n[p];
+        if (t.length < l) t.push(label);
+      }
+      v();
+    }), () => {
+      dkn(null), u?.(), u = null;
+    };
+  }
+  return () => {};
+}
+function h() {
+  return {
+    held: [],
+    denied: [],
+    expired: [],
+    delivered: [],
+    refused: [],
+    dropped: []
+  };
+}
+function f(s) {
+  let r = L(s.filter(item => item !== ""));
+  if (r.length === 0) return "";
+  if (r.length === 1) return ` (recipient: ${r[0]})`;
+  return ` (recipients: ${r.slice(0, 3).join(", ")}${r.length > 3 ? ", \u2026" : ""})`;
+}
+function C(s) {
+  switch (s) {
+    case "held":
+      return "held for approval";
+    case "denied":
+      return "denied";
+    case "expired":
+      return "expired without approval";
+    case "delivered":
+      return "released after approval";
+    case "refused":
+      return "refused";
+  }
+}
+function w(s) {
+  switch (s) {
+    case "held":
+      return "The recipient's session has different permission-mode settings, so their user must approve it before Claude sees it.";
+    case "denied":
+      return "The recipient's user declined it; it was not delivered.";
+    case "expired":
+      return "The recipient's user did not respond in time; it was not delivered.";
+    case "delivered":
+      return "It was approved and released to that session (final delivery is up to their queue).";
+    case "refused":
+      return "That session is not accepting cross-session messages (the feature is off there, or a setting or policy there refuses them); it was not delivered.";
+  }
+}
+function b(s, r, e) {
+  let a = r === 1 ? "Your message to another session" : `${r} of your messages to another session`,
+    n = r === 1 ? "was" : "were";
+  switch (s) {
+    case "held":
+      return `[Cross-session delivery notice] ${a} ${n} held for the recipient user's approval${e}. Not delivered to that session's Claude yet; its user must approve first. Do not wait for a reply; continue, or choose another approach.`;
+    case "denied":
+      return `[Cross-session delivery notice] ${a} ${n} denied by the recipient user${e}. Not delivered to that session's Claude. Do not wait for a reply; continue, or choose another approach.`;
+    case "expired":
+      return `[Cross-session delivery notice] ${a} ${n} not approved before expiry${e}. Not delivered to that session's Claude. Do not wait for a reply; continue, or choose another approach.`;
+    case "delivered":
+      return `[Cross-session delivery notice] ${a} ${n} approved and released to that session${e}.`;
+    case "refused":
+      return `[Cross-session delivery notice] ${a} ${n} refused${e}: that session is not accepting cross-session messages (the feature is off there, or a setting or policy there refuses them). Not delivered to that session's Claude. Do not wait for a reply and do not resend; tell the user, or choose another approach.`;
+  }
+}
+function P(s) {
+  return L(s.map(item => {
+    switch (item) {
+      case "rate-limited":
+        return "you sent faster than that session accepts";
+      case "duplicate":
+        return "it repeated your previous message";
+      case "hop-loop":
+      case "hop-runaway":
+        return "a relay loop between sessions was cut";
+      case "queue-full":
+        return "its queue of undelivered peer messages was full";
+      case void 0:
+        return "";
+    }
+  })).filter(item => item !== "").join("; ");
+}
+function R(s, r, e) {
+  return `[Cross-session delivery notice] Do not resend now: ${s === 1 ? "one of your messages to another session was" : `${s} of your messages to another session were`} dropped at that session's inbox${r} and NOT delivered${e ? ` (${e})` : ""}. Treat them as unsent. If the content still matters, fold it into ONE later message after you have finished other work; never retry in a loop.`;
+}
+function g(s) {
+  return s ? {
+    priority: "later"
+  } : {
+    passive: !0,
+    priority: "next"
+  };
+}
+export { dJn };

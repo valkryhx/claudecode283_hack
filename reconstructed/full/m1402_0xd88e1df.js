@@ -1,0 +1,945 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  y,
+  c
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  st,
+  te,
+  l
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import {
+  Me
+} from "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import {
+  nt
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  b,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import "B:/~BUN/root/chunk-y04k89s2.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  qd
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import {
+  aY
+} from "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import {
+  xAo
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-d8zzdckb.js";
+import "B:/~BUN/root/chunk-kwex2zh0.js";
+import "B:/~BUN/root/chunk-1724zw97.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-f1dj0k6n.js";
+import "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import "B:/~BUN/root/chunk-196w7fz7.js";
+import "B:/~BUN/root/chunk-dt2g8e1y.js";
+import "B:/~BUN/root/chunk-vq58jz92.js";
+import "B:/~BUN/root/chunk-s95n71e7.js";
+import {
+  GTr,
+  oEe,
+  VTr,
+  qTr,
+  ZP,
+  sEe,
+  _ae,
+  iEe,
+  JA,
+  oz,
+  Sf,
+  $Ke,
+  iz,
+  mEe,
+  wR,
+  Di
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import "B:/~BUN/root/chunk-myd8edm1.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-9qtz41py.js";
+import "B:/~BUN/root/chunk-hjery5bx.js";
+import {
+  GXr,
+  obt,
+  KXr
+} from "B:/~BUN/root/chunk-6q0mnrxy.js";
+import {
+  wIe,
+  Oje,
+  htr,
+  hkn,
+  ytr
+} from "B:/~BUN/root/chunk-tv2r2ekj.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import "B:/~BUN/root/chunk-ew8y0fm0.js";
+import "B:/~BUN/root/chunk-30zp50p7.js";
+import {
+  k6
+} from "B:/~BUN/root/chunk-f6h9k5ss.js";
+import "B:/~BUN/root/chunk-0vgj9y5e.js";
+import "B:/~BUN/root/chunk-7ncfjae2.js";
+import "B:/~BUN/root/chunk-0w5kpsps.js";
+import "B:/~BUN/root/chunk-gbtzpa3e.js";
+import "B:/~BUN/root/chunk-n5swsemr.js";
+import {
+  UCt,
+  BCt
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import "B:/~BUN/root/chunk-5dk9zqaz.js";
+import "B:/~BUN/root/chunk-ewvnv67m.js";
+import "B:/~BUN/root/chunk-4mcmxrhr.js";
+import "B:/~BUN/root/chunk-yeg3gem6.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-8xaxa0y1.js";
+import "B:/~BUN/root/chunk-spgj5paf.js";
+import "B:/~BUN/root/chunk-y39emrp9.js";
+import "B:/~BUN/root/chunk-tgk1nfes.js";
+import "B:/~BUN/root/chunk-5yjtercz.js";
+import "B:/~BUN/root/chunk-88mdabet.js";
+import "B:/~BUN/root/chunk-r6m7remx.js";
+import "B:/~BUN/root/chunk-384x2wn9.js";
+import "B:/~BUN/root/chunk-nrrn2axm.js";
+import "B:/~BUN/root/chunk-8qv35yd7.js";
+import "B:/~BUN/root/chunk-5nfpvvfh.js";
+import "B:/~BUN/root/chunk-yzpw1mdr.js";
+import "B:/~BUN/root/chunk-2pww2v3x.js";
+import "B:/~BUN/root/chunk-6cq25d8x.js";
+import "B:/~BUN/root/chunk-846bv8b5.js";
+import "B:/~BUN/root/chunk-n3t3nbqw.js";
+import "B:/~BUN/root/chunk-wefm1yd9.js";
+import "B:/~BUN/root/chunk-4dctrsn2.js";
+import "B:/~BUN/root/chunk-38kffpyk.js";
+import "B:/~BUN/root/chunk-9mfh08mz.js";
+import "B:/~BUN/root/chunk-65tbbnf1.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-xy9bynby.js";
+import "B:/~BUN/root/chunk-mc8ranwc.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-6k625ztj.js";
+import "B:/~BUN/root/chunk-2m5rfp86.js";
+import "B:/~BUN/root/chunk-2n2hx639.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import "B:/~BUN/root/chunk-skjrk8s1.js";
+import "B:/~BUN/root/chunk-mmnpv22v.js";
+import "B:/~BUN/root/chunk-nhxcgss8.js";
+import "B:/~BUN/root/chunk-ye6tacpp.js";
+import "B:/~BUN/root/chunk-affnknva.js";
+import "B:/~BUN/root/chunk-je63fn7b.js";
+import "B:/~BUN/root/chunk-90zbw58x.js";
+import "B:/~BUN/root/chunk-aa7kpy4p.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-8k39s5js.js";
+import "B:/~BUN/root/chunk-ewjenbzd.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-70qv5h0a.js";
+import "B:/~BUN/root/chunk-efz11ra0.js";
+import "B:/~BUN/root/chunk-6wgkxd9a.js";
+import "B:/~BUN/root/chunk-d6sc6w1r.js";
+import "B:/~BUN/root/chunk-n2rcpjj1.js";
+import "B:/~BUN/root/chunk-1xb1enjd.js";
+import "B:/~BUN/root/chunk-m1qtc24s.js";
+import "B:/~BUN/root/chunk-p6ejqvds.js";
+import "B:/~BUN/root/chunk-zfb6h1v8.js";
+import "B:/~BUN/root/chunk-3k26zwm7.js";
+import "B:/~BUN/root/chunk-y2pt1fm0.js";
+import "B:/~BUN/root/chunk-ec3373a4.js";
+import "B:/~BUN/root/chunk-5emths66.js";
+import "B:/~BUN/root/chunk-1dghpe22.js";
+import "B:/~BUN/root/chunk-0djrqga0.js";
+import "B:/~BUN/root/chunk-7azfcycf.js";
+import "B:/~BUN/root/chunk-q3sthw4s.js";
+import "B:/~BUN/root/chunk-5a1m1kxy.js";
+import "B:/~BUN/root/chunk-4q0h6gxt.js";
+import "B:/~BUN/root/chunk-a8gk62v4.js";
+import "B:/~BUN/root/chunk-ehma26r8.js";
+import "B:/~BUN/root/chunk-q5ke49kw.js";
+import "B:/~BUN/root/chunk-faawr4jv.js";
+import "B:/~BUN/root/chunk-gksrzz5s.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-x8507144.js";
+import "B:/~BUN/root/chunk-j36yaq51.js";
+import "B:/~BUN/root/chunk-7d9qjs8x.js";
+import "B:/~BUN/root/chunk-a8td06ny.js";
+import "B:/~BUN/root/chunk-krn12wre.js";
+import "B:/~BUN/root/chunk-671s136j.js";
+import "B:/~BUN/root/chunk-rdxve5qj.js";
+import "B:/~BUN/root/chunk-hg30cgr1.js";
+import "B:/~BUN/root/chunk-2gwgbd5e.js";
+import "B:/~BUN/root/chunk-xdhy5nhb.js";
+import "B:/~BUN/root/chunk-rtxwm8ds.js";
+import "B:/~BUN/root/chunk-f71hcy5v.js";
+import "B:/~BUN/root/chunk-8gym6yya.js";
+import "B:/~BUN/root/chunk-q77pmen1.js";
+import "B:/~BUN/root/chunk-mmtwp5d6.js";
+import "B:/~BUN/root/chunk-9sy3w2pa.js";
+import "B:/~BUN/root/chunk-dt6tzt7w.js";
+import "B:/~BUN/root/chunk-z51p19sq.js";
+import "B:/~BUN/root/chunk-pnn94d53.js";
+import "B:/~BUN/root/chunk-xfvqq19y.js";
+import "B:/~BUN/root/chunk-06rekkgz.js";
+import "B:/~BUN/root/chunk-jz4j9jvf.js";
+import "B:/~BUN/root/chunk-zy5rwsjc.js";
+import "B:/~BUN/root/chunk-1zdknz5q.js";
+import "B:/~BUN/root/chunk-ztbv79md.js";
+import "B:/~BUN/root/chunk-8b53pnky.js";
+import "B:/~BUN/root/chunk-g0q5e1g8.js";
+import "B:/~BUN/root/chunk-jwaej6se.js";
+import "B:/~BUN/root/chunk-8p6es4nr.js";
+import "B:/~BUN/root/chunk-gsz9m7j5.js";
+import "B:/~BUN/root/chunk-qmv1x2cp.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import "B:/~BUN/root/chunk-0mn860zt.js";
+import "B:/~BUN/root/chunk-b8z99tfd.js";
+import "B:/~BUN/root/chunk-nadb9e0w.js";
+import {
+  C5
+} from "B:/~BUN/root/chunk-j92898s3.js";
+import "B:/~BUN/root/chunk-p4et90hb.js";
+import "B:/~BUN/root/chunk-4jwsev0y.js";
+import "B:/~BUN/root/chunk-at7axhcd.js";
+import "B:/~BUN/root/chunk-873x5maq.js";
+import "B:/~BUN/root/chunk-rje38cxe.js";
+import "B:/~BUN/root/chunk-d3dc4x7w.js";
+import "B:/~BUN/root/chunk-kchavkh0.js";
+import "B:/~BUN/root/chunk-bzhr4ppe.js";
+import "B:/~BUN/root/chunk-r1ja2che.js";
+import "B:/~BUN/root/chunk-116h9ckm.js";
+import "B:/~BUN/root/chunk-d8nmf0rh.js";
+import "B:/~BUN/root/chunk-fwqmqt2f.js";
+import "B:/~BUN/root/chunk-2zbbrncj.js";
+import "B:/~BUN/root/chunk-cvp4mxy2.js";
+import "B:/~BUN/root/chunk-14smhg7m.js";
+import "B:/~BUN/root/chunk-m2n01fyt.js";
+import "B:/~BUN/root/chunk-8tye9ns0.js";
+import "B:/~BUN/root/chunk-xqjbapaq.js";
+import "B:/~BUN/root/chunk-e9881fq4.js";
+import "B:/~BUN/root/chunk-8p7bqe2p.js";
+import "B:/~BUN/root/chunk-ckf575ct.js";
+import "B:/~BUN/root/chunk-1h0a0b4e.js";
+import "B:/~BUN/root/chunk-zw2hnzqr.js";
+import "B:/~BUN/root/chunk-95q529cj.js";
+import "B:/~BUN/root/chunk-antaq155.js";
+import "B:/~BUN/root/chunk-6yjt7rfc.js";
+import "B:/~BUN/root/chunk-mxaybm01.js";
+import "B:/~BUN/root/chunk-k1r60xrk.js";
+import "B:/~BUN/root/chunk-19zg054h.js";
+import "B:/~BUN/root/chunk-tw49cqbs.js";
+import "B:/~BUN/root/chunk-7z8vew74.js";
+import "B:/~BUN/root/chunk-txj2pkcj.js";
+import "B:/~BUN/root/chunk-dty6td52.js";
+import "B:/~BUN/root/chunk-1mdmjaqt.js";
+import "B:/~BUN/root/chunk-fnr32q2y.js";
+import "B:/~BUN/root/chunk-hrk4739b.js";
+import "B:/~BUN/root/chunk-gn719r3c.js";
+import "B:/~BUN/root/chunk-4005qhef.js";
+import "B:/~BUN/root/chunk-ed0dfjjk.js";
+import "B:/~BUN/root/chunk-qt02hgat.js";
+import "B:/~BUN/root/chunk-4jmqaaj0.js";
+import "B:/~BUN/root/chunk-gvs0tqga.js";
+import "B:/~BUN/root/chunk-da7gf0he.js";
+import "B:/~BUN/root/chunk-x3g0tez1.js";
+import "B:/~BUN/root/chunk-ncdxkfma.js";
+import "B:/~BUN/root/chunk-rd4ad7j6.js";
+import "B:/~BUN/root/chunk-385v01s9.js";
+import "B:/~BUN/root/chunk-fhmaxxy1.js";
+import "B:/~BUN/root/chunk-p4t9nwg2.js";
+import "B:/~BUN/root/chunk-7r4zb9xn.js";
+import "B:/~BUN/root/chunk-qbmzdkn9.js";
+import {
+  LVt,
+  NVt
+} from "B:/~BUN/root/chunk-4zjf9ss8.js";
+import "B:/~BUN/root/chunk-b1hyprgx.js";
+import "B:/~BUN/root/chunk-tdkq03qj.js";
+import {
+  Hje,
+  nG
+} from "B:/~BUN/root/chunk-6pasxt6h.js";
+import {
+  mU
+} from "B:/~BUN/root/chunk-ap9x1xq2.js";
+import {
+  EIe,
+  TIe
+} from "B:/~BUN/root/chunk-te37866b.js";
+import "B:/~BUN/root/chunk-tf5r9ckx.js";
+import "B:/~BUN/root/chunk-4dw8761b.js";
+import "B:/~BUN/root/chunk-ymahamqq.js";
+import "B:/~BUN/root/chunk-0z00jn29.js";
+import "B:/~BUN/root/chunk-18pna2e9.js";
+import "B:/~BUN/root/chunk-5qckkekv.js";
+import "B:/~BUN/root/chunk-pxgbzn64.js";
+import "B:/~BUN/root/chunk-twqr14hq.js";
+import "B:/~BUN/root/chunk-6wjpaxb7.js";
+import "B:/~BUN/root/chunk-gff94s4f.js";
+import {
+  j7e
+} from "B:/~BUN/root/chunk-y1yq0gxq.js";
+import {
+  cpe
+} from "B:/~BUN/root/chunk-1kweczhs.js";
+import "B:/~BUN/root/chunk-6x8k31zb.js";
+import "B:/~BUN/root/chunk-0f5aa3v1.js";
+import "B:/~BUN/root/chunk-3fag6yem.js";
+import "B:/~BUN/root/chunk-y96pqvt2.js";
+import "B:/~BUN/root/chunk-h8a5cy3z.js";
+import "B:/~BUN/root/chunk-bcr826es.js";
+import "B:/~BUN/root/chunk-0sj8manb.js";
+import "B:/~BUN/root/chunk-ys127bbc.js";
+import "B:/~BUN/root/chunk-wbt134f9.js";
+import "B:/~BUN/root/chunk-v8xy4z2n.js";
+import "B:/~BUN/root/chunk-etbe3g70.js";
+import "B:/~BUN/root/chunk-q3x7vf9d.js";
+import "B:/~BUN/root/chunk-c42jr7s7.js";
+import "B:/~BUN/root/chunk-8n4s8cn5.js";
+import "B:/~BUN/root/chunk-230s8gzy.js";
+import "B:/~BUN/root/chunk-ghw8h4y1.js";
+import "B:/~BUN/root/chunk-tzzvaz2j.js";
+import "B:/~BUN/root/chunk-pwpgxxsc.js";
+import "B:/~BUN/root/chunk-m4ehcybg.js";
+import "B:/~BUN/root/chunk-08bth2fj.js";
+import "B:/~BUN/root/chunk-esqb9g1a.js";
+import "B:/~BUN/root/chunk-6jwexnnw.js";
+import "B:/~BUN/root/chunk-a2kvnefe.js";
+import "B:/~BUN/root/chunk-w4zcf9ar.js";
+import "B:/~BUN/root/chunk-467d5w8j.js";
+import "B:/~BUN/root/chunk-cn8bxjex.js";
+import "B:/~BUN/root/chunk-zn0k3ezm.js";
+import "B:/~BUN/root/chunk-c1275ktq.js";
+import "B:/~BUN/root/chunk-pgrf1rrh.js";
+import "B:/~BUN/root/chunk-ymhw5dt2.js";
+import "B:/~BUN/root/chunk-xmtkv29j.js";
+import "B:/~BUN/root/chunk-hcqaqf9c.js";
+import "B:/~BUN/root/chunk-na2t7g12.js";
+import "B:/~BUN/root/chunk-aqngsaqg.js";
+import "B:/~BUN/root/chunk-gj7av6e0.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-vr3kcvgy.js";
+import "B:/~BUN/root/chunk-fbgf4b4h.js";
+import "B:/~BUN/root/chunk-g4xzaw4b.js";
+import "B:/~BUN/root/chunk-mac0vc34.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-h7t9e2fk.js";
+import "B:/~BUN/root/chunk-6bchs2sy.js";
+import "B:/~BUN/root/chunk-hbma7z88.js";
+import "B:/~BUN/root/chunk-vgyyj55s.js";
+import "B:/~BUN/root/chunk-9sajt7dp.js";
+import "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-hyp140x7.js";
+import "B:/~BUN/root/chunk-995m8a2a.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gmsn86f4.js";
+import "B:/~BUN/root/chunk-08q5fcq1.js";
+import "B:/~BUN/root/chunk-p10aw0p6.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+var ue = 30000,
+  ce = 5000,
+  fe = "not served over session events yet; directory sync holds until it is",
+  pe = 3000,
+  me = 5000;
+
+function ve(n) {
+  switch (n) {
+    case "not_marked":
+      return Di["repository_trust.served_calls.unattested_untrusted_repo.not_marked"];
+    case "declined":
+      return Di["repository_trust.served_calls.unattested_untrusted_repo"];
+    case void 0:
+      return Di["repository_trust.served_calls.unattested"]
+  }
+}
+var Z = (n) => {
+    let r = () => ("offReason" in n) ? typeof n.offReason === "function" ? n.offReason() : n.offReason : oz(n.cwd),
+      o = r(),
+      a = o,
+      m = o === "launched_from_home";
+    if (o !== void 0) i("tengu_remote_tool_serving", {
+      event: y("gate_off"),
+      served_tool_count: 0,
+      reason: c(o),
+      ...cpe(o, n.cwd),
+      transport: y("session")
+    });
+    let f = () => {
+      try {
+        return n.owner()
+      } catch (e) {
+        return t("session serving: the owner test threw; this client serves as a viewer", {
+          level: "error"
+        }), d(te(e)), {
+          owner: !1
+        }
+      }
+    };
+    if (sEe(o) && f().owner) n.onNotice?.(UCt, BCt);
+    let R = !1,
+      g = (e) => {
+        if (!R && e === "profile_dirs_unreadable" && f().owner) R = !0, n.onNotice?.(GTr, Di["serving_off.profile_dirs_unreadable"])
+      };
+    g(o);
+    let T = !1,
+      E = (e) => {
+        if (!T && e === "mount_table_unreadable" && f().owner) T = !0, n.onNotice?.(xAo, Di["serving_off.mount_table_unreadable"])
+      };
+    if (E(o), o === "muted" && f().owner) n.onNotice?.(_ae, Di["serving_off.muted"]);
+    let v = () => {
+        let e = hkn({
+            sessionId: n.sessionId,
+            limiter: NVt(LVt),
+            getDeviceId: () => {
+              let p = f();
+              return p.owner ? p.deviceId : void 0
+            },
+            onNotice: n.onNotice,
+            ...n.cwd !== void 0 && {
+              launchDir: n.cwd
+            },
+            ...n.tools !== void 0 && {
+              tools: n.tools
+            },
+            ...n.policy !== void 0 && {
+              policy: n.policy
+            }
+          }),
+          s = e.onRedescribed(_);
+        return {
+          kit: e,
+          source: void 0,
+          nativeTools: Oje(e.deps).map((p) => ytr(p, e.deps, e.description)),
+          release: () => {
+            s(), e.dispose()
+          }
+        }
+      },
+      O = (e) => {
+        let s = e.source.subscribe((S) => {
+            if (N() !== L) P(S)
+          }),
+          p = e.kit.onRedescribed(_);
+        return {
+          kit: e.kit,
+          source: e.source,
+          nativeTools: [],
+          release: () => {
+            p(), s()
+          }
+        }
+      },
+      _ = () => {
+        if (!h && x && N() !== L) P("redescribed")
+      },
+      x = n.serving === void 0,
+      u = n.serving === void 0 ? v() : void 0,
+      A = !1,
+      I = Se(),
+      h = !1,
+      M = Me(),
+      W = (e) => !h && u !== void 0 && a === void 0 && e.instance_id === n.instanceId && f().owner,
+      Y = new Set,
+      ne = async () => {
+        let e = n.repositoryTrust;
+        if (e === void 0) return;
+        let s = await nt(Promise.resolve().then(e).catch(() => {
+            return
+          }), pe),
+          p = GXr(s) ? s : void 0,
+          S = p !== void 0 ? KXr : obt;
+        if (!Y.has(S)) {
+          Y.add(S);
+          try {
+            n.onNotice?.(S, ve(p))
+          } catch (D) {
+            t(`session serving: the notice sink threw on ${S}: ${te(D).message}`, {
+              level: "error"
+            })
+          }
+        }
+        return p
+      }, B = (e, s, p) => s !== void 0 && s <= e.deadline_ms + p, j = (e) => e.request.ok && e.request.kind === "call" && e.request.value.approval === void 0;
+
+    function K() {
+      if (h || u === void 0 || !f().owner) return;
+      return a === void 0 ? {
+        host: u.kit.description,
+        tools: u.source?.native() ?? u.nativeTools,
+        passthrough: u.source?.passthrough() ?? [],
+        plumbing: n.plumbing?.names() ?? []
+      } : {
+        host: u.kit.description,
+        tools: [],
+        passthrough: [],
+        plumbing: []
+      }
+    }
+    let N = () => b(K() ?? null);
+
+    function P(e) {
+      L = N();
+      try {
+        M.emit(e)
+      } catch (s) {
+        t("session serving: a served-tools listener threw", {
+          level: "error"
+        }), d(te(s))
+      }
+    }
+    let L = N(),
+      oe = (e) => {
+        if (t("session serving: the device registration handed over nothing usable; serving without it", {
+            level: "warn"
+          }), d(te(e)), !h) u = v(), A = !1
+      };
+    n.serving?.then((e) => {
+      if (h) return;
+      u = e === void 0 ? v() : O(e), A = e !== void 0
+    }).catch(oe).then(() => {
+      if (!h) x = !0, P("adopted")
+    }).catch((e) => d(te(e)));
+    let re = () => {
+      let e = u?.kit.deps.sessions.peek(wIe({
+        sessionId: n.sessionId
+      }));
+      if (u === void 0 || e === void 0) return;
+      for (let s of e.pendingAsks.list())
+        if (s.raisedOver === "session") C5(e, s.askId, {
+          reason: "host_unbound",
+          message: nG({
+            targetName: u.kit.description.name,
+            reason: "host_unbound"
+          })
+        })
+    };
+    return {
+      sessionId: n.sessionId,
+      instanceId: n.instanceId,
+      serveSessionToolCall: async (e, {
+        signal: s,
+        requestId: p,
+        ageMs: S,
+        workerEpoch: D,
+        attestationStatus: k,
+        modeStamp: U
+      }) => {
+        let w = u;
+        if (w === void 0 || !W(e)) return;
+        let {
+          kit: C
+        } = w, G = EIe(k), F = e.request.ok && e.request.kind === "call" ? C.deps.sessions.peek(wIe({
+          sessionId: n.sessionId
+        }))?.calls.lookup(e.request.value.call_id) : void 0, se = e.request.ok && (e.request.kind === "outcome_query" || (j(e) ? F !== void 0 : F !== void 0 && F.summary.state !== "asked")), X = j(e) ? ce : ue, ie = se || B(e, S, X) ? void 0 : {
+          ageMs: S,
+          windowMs: e.deadline_ms + X
+        }, J = TIe(G), de = J ? await ne() : void 0, z = w.source?.localNameFor(e.name), [ae, le] = z !== void 0 ? [z, C.deps] : [e.name, ge(C.deps)];
+        return I.answer(p, async () => ({
+          result: await htr(ae, {
+            ...e.input
+          }, e.request, {
+            sessionId: n.sessionId,
+            signal: s,
+            workerEpoch: D
+          }, le, "session", {
+            stale: ie,
+            attestation: G,
+            unattested: J,
+            untrustedRepositories: de,
+            modeStamp: U
+          }).then((H) => Re(C.description, e.tool_use_id, H)).catch((H) => Te(C.description, e.tool_use_id, H))
+        }))
+      },
+      servePlumbingCall: async (e, {
+        signal: s,
+        requestId: p,
+        ageMs: S,
+        attestationStatus: D
+      }) => {
+        let k = n.plumbing,
+          U = k !== void 0 && k.names().includes(e.name);
+        if (!W(e)) return;
+        if (!U || k === void 0) return I.answer(p, async () => ({
+          result: V(`${e.name}: ${fe}`)
+        }));
+        if (!B(e, S, me)) {
+          t(S === void 0 ? `[remote-tools] a ${e.name} plumbing call could not be dated against the service clock (no Date header on this stream) and was not served` : `[remote-tools] a ${e.name} plumbing call delivered ${S} ms after it was stored, past its ${e.deadline_ms} ms window, was not served`);
+          return
+        }
+        let w = EIe(D);
+        if (w !== void 0 && TIe(w)) return I.answer(p, async () => ({
+          result: V(`${e.name}: ${Hje({targetName:u?.kit.description.name??e.host,status:w.status,subtype:"remote_plumbing_call"})}`)
+        }));
+        return I.answer(p, () => Promise.resolve().then(() => k.serve(e, s)).catch((C) => (d(st(te(C), `session serving: plumbing call ${e.name} threw`)), {
+          result: V(`${e.name}: could not be served (internal error)`)
+        })))
+      },
+      answerProbe: () => u === void 0 ? void 0 : {
+        result: {
+          epoch: u.kit.deps.sessions.epoch
+        }
+      },
+      servedTools: K,
+      onServedToolsChanged: (e) => M.subscribe(e),
+      reevaluate: () => {
+        if (h) return;
+        let e = r(),
+          s = a;
+        if (m ||= e === "launched_from_home", g(e), E(e), a = m && e === void 0 ? "launched_from_home" : e, f().owner) {
+          if (a === "muted" && s !== "muted") n.onNotice?.(_ae, Di["serving_off.muted"]);
+          else if (s === "muted" && a === void 0) n.onNotice?.(iEe, Di["serving_on.unmuted"]);
+          else if ((s === "muted" || s === "profile_dirs_unread" || s === "profile_dirs_unreadable" || s === "mount_table_unreadable") && sEe(a)) n.onNotice?.(UCt, BCt)
+        }
+        if (a !== void 0 || !f().owner) re();
+        if (N() !== L) P()
+      },
+      heldServedCall: (e) => h || u === void 0 || a !== void 0 || !f().owner ? mU : u.kit.heldServedCall(e),
+      announcesPassthrough: () => A,
+      dispose: () => {
+        if (h) return;
+        h = !0, u?.release(), P(), M.clear()
+      }
+    }
+  },
+  q = (n, r, o) => ({
+    instance_id: r,
+    ...o !== void 0 && {
+      worker_epoch: o
+    },
+    host: n.host,
+    tools: n.tools,
+    passthrough: n.passthrough ?? [],
+    plumbing: n.plumbing
+  });
+
+function ge({
+  servedMcpTools: n,
+  servedMcpWireArguments: r,
+  ...o
+}) {
+  return o
+}
+
+function Se() {
+  let n = new Map;
+  return {
+    answer: (r, o) => {
+      if (r === void 0) return o();
+      let a = n.get(r);
+      if (a !== void 0) return a;
+      let m = o().finally(() => n.delete(r));
+      return n.set(r, m), m
+    }
+  }
+}
+
+function Re(n, r, o) {
+  return _e(n, r, he(r, o))
+}
+
+function he(n, r) {
+  let o = iz(r);
+  if (o.envelope.status !== "present" || o.envelope.envelope.call_id !== void 0) return r;
+  return mEe({
+    envelope: {
+      ...o.envelope.envelope,
+      call_id: n
+    },
+    content: o.content
+  })
+}
+
+function _e(n, r, o) {
+  let a = wR(o);
+  if (a <= $Ke) return o;
+  let m = iz(o),
+    f = m.envelope.status === "present" ? m.envelope.envelope : void 0,
+    R = `(${Q(a)}) is larger than this session can carry back (limit ${Q($Ke)}), so it was not returned.`,
+    g = f?.outcome === "completed" ? `The command ran to completion on ${n.name}, but its result ${R} Its effects stand \u2014 do not re-run it to see the output; run a narrower command instead (head or tail, a filter, or write to a file and read part of it).` : `${n.name} answered this call, but the answer ${R}`;
+  return mEe({
+    envelope: {
+      v: Sf,
+      outcome: "failed",
+      call_id: r,
+      target: {
+        name: n.name,
+        working_dir: n.working_dir
+      },
+      code: "tool_error",
+      message: g,
+      ...f !== void 0 && ye(f)
+    },
+    content: [{
+      type: "text",
+      text: g
+    }]
+  })
+}
+
+function ye(n) {
+  return "replayed" in n && n.replayed === !0 ? {
+    replayed: !0,
+    ..."served_at" in n && n.served_at !== void 0 && {
+      served_at: n.served_at
+    }
+  } : {}
+}
+
+function V(n) {
+  return {
+    content: [{
+      type: "text",
+      text: n
+    }],
+    isError: !0
+  }
+}
+
+function Q(n) {
+  return `${(n/1048576).toFixed(1)} MB`
+}
+
+function Te(n, r, o) {
+  t(`session serving: served call ${r} threw`, {
+    level: "error"
+  }), d(te(o));
+  let a = `${n.name} could not serve this call (internal error); nothing is known to have run.`;
+  return mEe({
+    envelope: {
+      v: Sf,
+      outcome: "failed",
+      call_id: r,
+      target: {
+        name: n.name,
+        working_dir: n.working_dir
+      },
+      code: "internal_error",
+      message: a
+    },
+    content: [{
+      type: "text",
+      text: a
+    }]
+  })
+}
+
+function ln({
+  owner: n,
+  deviceBridge: r,
+  onNotice: o,
+  repositoryTrust: a,
+  plumbing: m,
+  signals: f
+}) {
+  let R = we();
+  if (R !== void 0) {
+    t(`[servedTools] not served over the session channel: ${R}`);
+    return
+  }
+  let g = be(f),
+    T, E = (v, O) => {
+      let _ = Z({
+        ...v,
+        owner: Ce(O),
+        ...r && {
+          serving: r.serving
+        },
+        ...m && {
+          plumbing: m
+        },
+        ...a && {
+          repositoryTrust: () => a.refresh()
+        }
+      });
+      T = _;
+      let x = g(() => _.reevaluate()),
+        u = (f?.onMuteRecheck ?? JA)(() => _.reevaluate()),
+        A = qTr(() => _.reevaluate());
+      return {
+        ..._,
+        dispose: () => {
+          A(), u(), x(), _.dispose()
+        }
+      }
+    };
+  return {
+    createServingContext: n instanceof Promise ? async (v) => (await oEe(), E(v, await n)) : (v) => {
+      let O = VTr();
+      return O === void 0 ? E(v, n) : O.then(() => E(v, n))
+    },
+    buildAnnounce: q,
+    ...r && {
+      onAnnounceOutcome: (v) => r.announceSettled(v.kind === "announced" && T?.announcesPassthrough?.() !== !0 ? {
+        kind: v.kind,
+        status: v.status
+      } : v)
+    },
+    ...o && {
+      onNotice: o
+    },
+    onRevoked: g
+  }
+}
+
+function we() {
+  return j7e() ?? (ZP() ? "channel_off" : void 0)
+}
+
+function ee() {
+  return j7e() ?? (k6() ? "flag_off" : void 0)
+}
+
+function be({
+  onEgressChange: n = aY,
+  onGateChange: r = qd
+} = {}) {
+  return (o) => {
+    let a = !1,
+      m = [],
+      f = () => {
+        a = !0, m.splice(0).forEach((g) => g())
+      },
+      R = () => {
+        let g = ee();
+        if (a || g === void 0) return;
+        f();
+        try {
+          o(g)
+        } catch (T) {
+          t(`[servedTools] a revocation listener threw: ${l(T)}`, {
+            level: "error"
+          })
+        }
+      };
+    return m.push(n(R)), m.push(r(R)), R(), f
+  }
+}
+
+function Ce(n) {
+  return () => ee() === void 0 ? n() : {
+    owner: !1
+  }
+}
+export {
+  ln as servedToolsAttachOptions, we as servedToolsUnavailableReason
+};

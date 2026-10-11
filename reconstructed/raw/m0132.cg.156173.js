@@ -1,0 +1,1 @@
+var cg=(e)=>R_({read:(t,o)=>e("fs.read",{path:t,as:o?.as??"text"}),write:(t,o)=>e("fs.write",{path:t,text:o}),list:(t=".")=>e("fs.list",{path:t}),exists:(t)=>e("fs.exists",{path:t}),stat:(t,o)=>e("fs.stat",{path:t,resolve:o?.resolve??!1}),ancestors:(t)=>e("fs.ancestors",{names:t.names,...t.of!==void 0&&{of:t.of},...t.below!==void 0&&{below:t.below}})});

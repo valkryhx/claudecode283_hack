@@ -1,0 +1,27 @@
+/* ==============================================================================
+ * m0132.Ns   [m0132_0xc24a4bb.js @ 49117]
+ * --------------------------------------------------------------------------
+ * 作用: (no note)
+ * 原文: claudecode283/modules/m0132_0xc24a4bb.js  字符偏移 49117
+ * 说明: 由 tools/extract.mjs 抽取，忠实原文，仅格式化；标识符仍为 Bun 压缩名。
+ * ============================================================================== */
+var Ns = {
+  event: "config.set",
+  restoreArgument: Me(["previous", "provider", "origin"]),
+  checkArgument: (e, t) => {
+    let o = $n(e.previous) !== $n(t.previous),
+      r = $n(e.origin) !== $n(t.origin),
+      n = Object.hasOwn(e, "value");
+    return xt(e, t) ?? (o ? "a changed previous (pinned)" : void 0) ?? (r ? "a changed origin (the engine sets it)" : void 0) ?? (n ? kNt(e.value) : "no { value }")
+  },
+  settle: (e) => e.deny === void 0 ? {
+    value: e.value
+  } : {
+    deny: e.deny
+  },
+  check: C((e) => {
+    let t = e.deny,
+      r = typeof t === "string" && t.length > NS ? `a deny over ${NS}` : void 0;
+    return ct(e, "{ value }", (s) => Object.hasOwn(s, "value")) ?? r ?? (t === void 0 ? kNt(e.value) : void 0)
+  })
+};

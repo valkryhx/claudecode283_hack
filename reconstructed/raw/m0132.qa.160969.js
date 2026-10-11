@@ -1,0 +1,1 @@
+function qa(e){if(e===void 0)return;let t=G(e)?Object.keys(e).filter((r)=>r!=="breakdown"&&r!=="columns"):[];return G(e)&&t.length===0?void 0:"takes { breakdown, columns } or nothing"+(t.length>0?` (not ${t.join(", ")})`:"")}

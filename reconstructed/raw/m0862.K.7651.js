@@ -1,0 +1,1 @@
+function K(e){if(!Array.isArray(e))return;let n=[];for(let t of e)if(t&&typeof t==="object"&&"title"in t){let{title:r,detail:o,model:i}=t;if(typeof r==="string")n.push({title:r,detail:typeof o==="string"?o:void 0,model:typeof i==="string"?i:void 0})}return n.length>0?n:void 0}

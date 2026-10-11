@@ -1,0 +1,1 @@
+function zn(e){let t=e?.importModuleDynamically;if(t===Xn)return;if(typeof t!=="function")throw TypeError("The options argument of hardenVMIntrinsics and createVMIntakeWalkers must be either { importModuleDynamically: <function> } or COMPILE_WITHOUT_IMPORT_HOOK, which src/utils/vmHardening.ts exports");return{importModuleDynamically:t}}

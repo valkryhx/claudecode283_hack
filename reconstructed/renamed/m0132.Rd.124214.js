@@ -1,0 +1,92 @@
+/* ==========================================================================
+ * m0132.Rd   [m0132_0xc24a4bb.js @ 124214]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function Rd({
+  pluginName: e,
+  host: t,
+  live: o,
+  unloaded: r,
+  invoke: n,
+  signalFrom: s,
+  makeSignal: i
+}) {
+  let p = new ra(`${e} $.clock`);
+  function a(u, d) {
+    if (!jVn(u)) throw new De(`${e}: $.clock.${d} takes a non-negative number of milliseconds`);
+    if (r()) throw zCe(e);
+    return u;
+  }
+  function f({
+    event: u,
+    ms: d,
+    fn: y,
+    shouldRepeat: c
+  }) {
+    if (typeof y !== "function") throw new De(`${e}: $.clock.${u} takes a function`);
+    let k = a(d, u),
+      A = c ? Math.max(ta, k) : k,
+      x = i(),
+      _ = new ra(`${e} $.clock.${u}`),
+      h,
+      v = R_({
+        cancel: () => {
+          o?.delete(v), h && clearImmediate(h), x.abort(new De(`${e}: $.clock.${u} cancelled`));
+        }
+      }),
+      M = () => void _.runInAsyncScope(() => n(y, [])).catch(V => kc().log(`${e}: $.clock.${u}: the callback threw: ` + l(V), "warn"));
+    function R(V) {
+      if (o?.delete(v), !x.signal.aborted) kc().log(`${e}: $.clock.${u} refused: ${oa(V)}`, "warn");
+    }
+    function H() {
+      if (x.signal.aborted) return;
+      if (!c) o?.delete(v);
+      if (M(), c) h = setImmediate(F);
+    }
+    function F() {
+      if (!x.signal.aborted) B();
+    }
+    function B() {
+      let V = c ? "clock.every" : "clock.after";
+      p.runInAsyncScope(() => t(V, {
+        ms: A
+      }, x.signal).then(H, R));
+    }
+    return o?.add(v), B(), v;
+  }
+  async function m(u, d = {}) {
+    let y = a(u, "sleep"),
+      c = s(d.signal),
+      k = i(),
+      A = Mw(c?.signal, k),
+      x = R_({
+        cancel: () => k.abort(zCe(e))
+      });
+    o?.add(x);
+    try {
+      await t("clock.sleep", {
+        ms: y
+      }, k.signal);
+    } finally {
+      o?.delete(x), A(), c?.unlink();
+    }
+  }
+  return R_({
+    now: () => t("clock.now", {}),
+    sleep: m,
+    after: (u, d) => f({
+      event: "after",
+      ms: u,
+      fn: d,
+      shouldRepeat: !1
+    }),
+    every: (u, d) => f({
+      event: "every",
+      ms: u,
+      fn: d,
+      shouldRepeat: !0
+    })
+  });
+}

@@ -1,0 +1,1 @@
+function Fn(e){if(!e)return"a rejection that is not an Error";if(Eh(e))return"a rejection that is not plain data";let t=Object.getOwnPropertyDescriptor(e,"message")?.value;return typeof t==="string"?t:Fn(Object.getPrototypeOf(e))}

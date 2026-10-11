@@ -1,0 +1,1 @@
+function j(e){let n=Object.create(null);for(let t of e.properties){if(t.type!=="Property")throw Error("only plain properties allowed in meta");let r=t;if(r.computed)throw Error("computed keys not allowed in meta");if(r.method||r.kind!=="init")throw Error("methods/accessors not allowed in meta");n[q(r)]=O(r.value)}return n}

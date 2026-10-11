@@ -1,0 +1,71 @@
+/* ==========================================================================
+ * m0869.rr   [m0869_0xd12567a.js @ 14755]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function rr(e) {
+  let {
+      parse: r
+    } = q6e(),
+    s = Jor(),
+    g = `(async () => {'use strict';
+`,
+    f = `(async () => {'use strict';
+${e}
+})()`,
+    w = r(f, {
+      ecmaVersion: "latest",
+      sourceType: "script",
+      allowHashBang: !0
+    });
+  s.full(w, W => {
+    if (W.name?.startsWith(ne)) throw SyntaxError(`Identifier '${W.name}' is reserved.`);
+    if (W.type === "WithStatement") throw SyntaxError("'with' statements are not supported in workflow scripts.");
+    if (W.type === "ImportExpression") throw SyntaxError("import() is not available in workflow scripts.");
+  });
+  let A = [],
+    F = W => {
+      if (!W) return;
+      A.push([W.start, ` ${ne}((`], [W.end, "))"]);
+    },
+    R = W => {
+      for (let H = W.length - 2; H >= 0; H--) {
+        let z = W[H];
+        if (z && (z.type === "FunctionDeclaration" || z.type === "FunctionExpression" || z.type === "ArrowFunctionExpression")) return z;
+      }
+      return;
+    };
+  if (s.ancestor(w, {
+    VariableDeclaration(W) {
+      if (W.kind === "await using") throw SyntaxError("'await using' declarations are not supported in workflow scripts.");
+    },
+    AwaitExpression(W) {
+      F(W.argument);
+    },
+    ArrowFunctionExpression(W) {
+      if (W.async && W.expression) F(W.body);
+    },
+    ForOfStatement(W) {
+      if (W.await) A.push([W.right.start, ` ${ne}a((`], [W.right.end, "))"]);
+    },
+    ReturnStatement(W, H, z) {
+      let ge = R(z);
+      if (!ge?.async) return;
+      if (ge.generator) {
+        if (W.argument) A.push([W.argument.start, ` await ${ne}((`], [W.argument.end, "))"]);
+      } else F(W.argument);
+    },
+    YieldExpression(W, H, z) {
+      let ge = R(z);
+      if (!(ge?.async && ge.generator)) return;
+      if (W.delegate) {
+        if (W.argument) A.push([W.argument.start, ` ${ne}a((`], [W.argument.end, "))"]);
+      } else F(W.argument);
+    }
+  }), A.length === 0) return e;
+  A.sort((W, H) => H[0] - W[0]);
+  let ce = f;
+  for (let [W, H] of A) ce = ce.slice(0, W) + H + ce.slice(W);
+  return ce.slice(28, ce.length - 5);
+}

@@ -1,0 +1,1 @@
+function Rp(e,t,o){let r;for(let[n,s]of e.clauses.entries()){if(!(x6(s.pattern,t)&&!o.includes(n)))continue;let p=Eo(e,{clause:s,event:t,registration:n});r=r===void 0?p:vp(e,{outer:r,inner:p,pattern:s.pattern})}return r}

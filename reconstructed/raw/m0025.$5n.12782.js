@@ -1,0 +1,1 @@
+function $5n(){if(process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC)return"CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC";if(process.env.DISABLE_TELEMETRY)return"DISABLE_TELEMETRY";if(Ne(process.env.DO_NOT_TRACK))return"DO_NOT_TRACK";return null}

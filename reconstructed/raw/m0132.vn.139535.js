@@ -1,0 +1,1 @@
+var vn=(e)=>JSON.stringify({href:e.href,origin:e.origin,protocol:e.protocol,username:e.username,password:e.password,host:e.host,hostname:e.hostname,port:e.port,pathname:e.pathname,search:e.search,hash:e.hash});

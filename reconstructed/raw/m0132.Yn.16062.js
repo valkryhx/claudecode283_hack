@@ -1,0 +1,1 @@
+function Yn(e){let t;try{t=e.length}catch{throw Error("unable to read array length across the workflow VM boundary")}if(typeof t!=="number"||!Number.isSafeInteger(t))throw Gn("array length is not a safe integer across the workflow VM boundary");if(t>Sx)throw Gn(`array length ${t} exceeds the maximum of ${Sx} supported across the workflow VM boundary`);return t}

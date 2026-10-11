@@ -1,0 +1,477 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  fp,
+  q1t,
+  Yn,
+  NC,
+  Bl
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  te
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  VGe,
+  Nnt,
+  q4,
+  CM,
+  mfo,
+  A_r,
+  Wve,
+  G8,
+  oV,
+  Bie
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  za,
+  vFe,
+  it,
+  bl,
+  mYe,
+  rJ,
+  gYe,
+  yYe,
+  ps,
+  TFr,
+  CFr
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  oc,
+  oFo,
+  Qk
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  d$e
+} from "B:/~BUN/root/chunk-bt3h0syz.js";
+import {
+  Lb
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  Bxo
+} from "B:/~BUN/root/chunk-msy8grqx.js";
+import {
+  s1
+} from "B:/~BUN/root/chunk-4py062qg.js";
+import {
+  Lk,
+  oPo,
+  RX
+} from "B:/~BUN/root/chunk-t1afcev5.js";
+import {
+  yx
+} from "B:/~BUN/root/chunk-ew8y0fm0.js";
+import {
+  MTe,
+  Kee
+} from "B:/~BUN/root/chunk-n2rcpjj1.js";
+import {
+  JRo
+} from "B:/~BUN/root/chunk-65tbbnf1.js";
+import {
+  qA,
+  Ptn
+} from "B:/~BUN/root/chunk-zfb6h1v8.js";
+import {
+  Yae,
+  NPr
+} from "B:/~BUN/root/chunk-x8507144.js";
+import {
+  ile
+} from "B:/~BUN/root/chunk-7d9qjs8x.js";
+import {
+  WO
+} from "B:/~BUN/root/chunk-9sy3w2pa.js";
+import {
+  zOe
+} from "B:/~BUN/root/chunk-cj9k3aj6.js";
+import {
+  eCn
+} from "B:/~BUN/root/chunk-acsg9bv8.js";
+import {
+  lW,
+  yL
+} from "B:/~BUN/root/chunk-0mn860zt.js";
+import {
+  G8t
+} from "B:/~BUN/root/chunk-hsn00gxk.js";
+import {
+  M5
+} from "B:/~BUN/root/chunk-51edmwg2.js";
+import {
+  Hd,
+  km,
+  p9
+} from "B:/~BUN/root/chunk-ydzwkn0c.js";
+import {
+  Rw
+} from "B:/~BUN/root/chunk-0b2y1gsk.js";
+import {
+  o,
+  u
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+
+function lJn(e) {
+  return e !== "requesting" && Yae()
+}
+
+function h() {
+  return !oV() && !G8()
+}
+
+function zgt(e) {
+  if (e.type === "system" && "subtype" in e && e.subtype === "status" && "compact_error" in e && e.compact_error !== void 0 && !h()) return {
+    ...e,
+    compact_error: void 0
+  };
+  return e
+}
+
+function i1e({
+  status: e,
+  permissionMode: i,
+  compactResult: s,
+  compactError: r
+}) {
+  try {
+    if (!lJn(e)) return;
+    za({
+      type: "system",
+      subtype: "status",
+      status: e,
+      ...i !== void 0 && {
+        permissionMode: i
+      },
+      ...s !== void 0 && {
+        compact_result: s
+      },
+      ...r !== void 0 && h() && {
+        compact_error: r
+      }
+    })
+  } catch (l) {
+    d(l)
+  }
+}
+
+function H3r(e) {
+  try {
+    if (!Bl() || !NPr()) return;
+    if (Bie(e.event)) return;
+    za({
+      type: "stream_event",
+      event: e.event,
+      parent_tool_use_id: null,
+      ...e.ttftMs !== void 0 && {
+        ttft_ms: e.ttftMs
+      }
+    })
+  } catch (i) {
+    d(i)
+  }
+}
+var b = u({
+  status_category: o(),
+  status_detail: o(),
+  needs_action: o(),
+  recent_action: o().optional(),
+  description: o().optional(),
+  reply: o().optional()
+});
+
+function P(e) {
+  return (i) => {
+    let s = i.toolPermissionContext;
+    if (typeof e.permission_mode === "string") {
+      let l = Qk(e.permission_mode);
+      if (d$e(l), l === "bypassPermissions" && (Rw() || !s.isBypassPermissionsModeAvailable)) t("[externalMetadataToAppState] Refusing restored mode 'bypassPermissions' (disabled by settings/policy or session not launched with --dangerously-skip-permissions); falling back to 'default'", {
+        level: "warn"
+      }), l = "default";
+      try {
+        if (s = {
+            ...yL(s.mode, l, s),
+            mode: l
+          }, l === "auto") s = lW(s)
+      } catch (v) {
+        t(`[externalMetadataToAppState] transitionPermissionMode rejected restored mode '${l}': ${te(v).message}`)
+      }
+    }
+    let r = b.safeParse(e.post_turn_summary);
+    return {
+      ...i,
+      toolPermissionContext: s,
+      ...typeof e.is_ultraplan_mode === "boolean" && {
+        isUltraplanMode: e.is_ultraplan_mode
+      },
+      ...r.success && {
+        postTurnSummary: r.data
+      }
+    }
+  }
+}
+
+function A(e) {
+  let i = e.session_allow_rules;
+  if (!Array.isArray(i)) return (r) => r;
+  if (Lb()) return (r) => r;
+  let s = Bxo(i.filter((r) => typeof r === "string" && !r.startsWith("mcp__")));
+  if (s.length === 0) return (r) => r;
+  return (r) => ({
+    ...r,
+    toolPermissionContext: {
+      ...r.toolPermissionContext,
+      alwaysAllowRules: {
+        ...r.toolPermissionContext.alwaysAllowRules,
+        session: s
+      }
+    }
+  })
+}
+
+function F3r(e) {
+  return (i) => P(e.external ?? {})(A(e.internal ?? {})(i))
+}
+
+function mzt({
+  newState: e,
+  oldState: i
+}, s, r, l, v) {
+  let g = i.toolPermissionContext.mode,
+    f = e.toolPermissionContext.mode,
+    F = e.proactivityLevel !== i.proactivityLevel;
+  if (g !== f) {
+    let n = oc(g),
+      a = oc(f);
+    if (n !== a) {
+      let p = oFo({
+          rule: "first-entry",
+          prevMode: g,
+          newMode: f,
+          prevUltraplan: i.isUltraplanMode,
+          newUltraplan: e.isUltraplanMode
+        }),
+        m = p.is_ultraplan_mode;
+      if (r?.notifyMetadataChanged(p), r?.isWorkerPermissionModeRecordEnabled) r.notifyInternalMetadataChanged({
+        worker_permission_mode: a
+      });
+      if (MTe(f, m), !r) i1e({
+        status: null,
+        permissionMode: a
+      })
+    }
+    r?.notifyPermissionModeChanged(f)
+  }
+  if (g !== f) WO("--permission-mode", ["--inherit-permission-mode"], q4(f, e.proactivityLevel), void 0, l);
+  if (e.toolPermissionContext !== i.toolPermissionContext) JRo();
+  if (e.toolPermissionContext.additionalWorkingDirectories !== i.toolPermissionContext.additionalWorkingDirectories && G8t(e.toolPermissionContext)) import("B:/~BUN/root/chunk-m4dhr7e5.js").then((n) => n.mcpClientModule().notifyMcpRootsListChanged()).catch((n) => {
+    t(`Failed to notify MCP servers of roots change: ${te(n).message}`)
+  });
+  if (e.tasks !== i.tasks) {
+    if (r) {
+      let p = E(i),
+        m = E(e);
+      if (p.length !== m.length || m.some((y, c) => y.task_id !== p[c]?.task_id)) r.notifyInternalMetadataChanged({
+        running_background_tasks: m
+      })
+    }
+    let n = M(i),
+      a = M(e);
+    if (n.length !== a.length || a.some((p, m) => p.task_id !== n[m]?.task_id || p.description !== n[m]?.description || p.ambient !== n[m]?.ambient)) za({
+      type: "system",
+      subtype: "background_tasks_changed",
+      tasks: a
+    })
+  }
+  let k = i.toolPermissionContext.alwaysAllowRules.session,
+    _ = e.toolPermissionContext.alwaysAllowRules.session;
+  if (k !== _) {
+    let n = _?.filter((a) => !a.startsWith("mcp__"));
+    r?.notifyInternalMetadataChanged({
+      session_allow_rules: n?.length ? n : null
+    })
+  }
+  if (e.mainLoopModel !== i.mainLoopModel || e.mainLoopModelForSession !== i.mainLoopModelForSession || e.toolPermissionContext.mode !== i.toolPermissionContext.mode) {
+    let n = mfo(s);
+    try {
+      let a = CM(i),
+        p = CM(e);
+      if (a !== p) {
+        if (VGe(["seven_day_overage_included"]), !Yn()) A_r(s, {
+          fromModel: a,
+          toModel: p,
+          requestedModel: n.requestedModel,
+          source: n.source
+        })
+      }
+    } catch (a) {
+      d(te(a))
+    }
+  }
+  if (e.mainLoopModel !== i.mainLoopModel) {
+    let n = e.mainLoopModel,
+      a = Nnt() ? CFr() : void 0,
+      p = it();
+    fp(n);
+    let m = it();
+    try {
+      Kee(m)
+    } catch (c) {
+      d(te(c))
+    }
+    let y = a !== void 0 && it() !== p;
+    if (y) TFr(a);
+    M5(m, e), zOe(), Wve(s.precompute, void 0, "model_switch", void 0, l), import("B:/~BUN/root/chunk-6vy6kmgh.js").then(({
+      refreshBootstrapData: c
+    }) => c(l, v, {
+      renderedClientData: y ? a : void 0
+    })), r?.notifyMetadataChanged({
+      model: n ?? bl()
+    }), WO("--model", ["-m"], n, void 0, l)
+  }
+  if (e.fotwClaim?.phase === "granted" && i.fotwClaim?.phase !== "granted") zOe();
+  if (!RX(e.sessionEffort, i.sessionEffort) || e.settingsEffortTable !== i.settingsEffortTable) q1t({
+    sessionEffort: e.sessionEffort,
+    settingsEffortTable: e.settingsEffortTable
+  });
+  if (!RX(e.sessionEffort, i.sessionEffort)) {
+    r?.notifyMetadataChanged({
+      effort_level: oPo(e.sessionEffort)
+    }), M5(it(), e);
+    let n = e.sessionEffort;
+    if (n.kind !== "level") WO("--effort", [], null, void 0, l);
+    else if (typeof n.value === "string" && Lk(n.value)) WO("--effort", [], n.value, void 0, l)
+  }
+  if (e.mainLoopModelForSession !== i.mainLoopModelForSession) {
+    let n = it();
+    try {
+      Kee(n)
+    } catch (a) {
+      d(te(a))
+    }
+    if (M5(n, e), vFe() && (e.mainLoopModelForSession === null || e.mainLoopModelForSession === void 0) && i.mainLoopModelForSession !== null && i.mainLoopModelForSession !== void 0 && e.mainLoopModel === i.mainLoopModel) fp(e.mainLoopModel), r?.notifyMetadataChanged({
+      model: e.mainLoopModel ?? bl()
+    })
+  }
+  if (e.advisorModel !== i.advisorModel) WO("--advisor", [], e.advisorModel ?? null, void 0, l);
+  if (r && e.frameUrls !== i.frameUrls && ile()) {
+    let n = qA(e.frameUrls).map(([, a]) => a);
+    if (n.length > 0 || qA(i.frameUrls).length > 0) r.notifyMetadataChanged({
+      artifacts: n.length === 0 ? null : n.map(Ptn)
+    })
+  }
+  if (r && !T(e.activeGoal, i.activeGoal)) {
+    let n = e.activeGoal;
+    if (r.notifyActiveGoalChanged(n), n) {
+      let {
+        tokens_at_start: a,
+        ...p
+      } = cJn(n);
+      r.notifyMetadataChanged({
+        goal: {
+          ...p,
+          last_reason: p.last_reason ?? null,
+          met: !1
+        }
+      })
+    } else r.notifyMetadataChanged({
+      goal: null
+    })
+  }
+  if (r && (e.autoCompactWindow !== i.autoCompactWindow || e.mainLoopModel !== i.mainLoopModel || e.mainLoopModelForSession !== i.mainLoopModelForSession || e.settings !== i.settings)) r.notifyAutocompactInputsChanged();
+  if (e.verbose !== i.verbose) s1("verbose", e.verbose, l);
+  if (e.settings !== i.settings) {
+    try {
+      if (mYe(), rJ(), gYe(), yYe(), e.settings.env !== i.settings.env && ps()) yx(), eCn()
+    } catch (n) {
+      t(`Failed to apply settings change (clear auth caches / re-apply env): ${te(n).message}`, {
+        level: "error"
+      })
+    }
+    if (e.settings.outputStyle !== i.settings.outputStyle) NC("output_style")
+  }
+}
+
+function x(e, i) {
+  if (e.type !== "local_bash" && e.type !== "monitor_mcp" && e.type !== "monitor_ws") return !1;
+  let s = e.agentId !== void 0 ? i[e.agentId] : void 0;
+  return s !== void 0 && Hd(s)
+}
+
+function E(e) {
+  return Object.values(e.tasks).filter((i) => km(i) && !Hd(i) && (i.type === "local_bash" || i.type === "monitor_mcp" || i.type === "monitor_ws" || i.type === "local_agent" || i.type === "local_workflow")).map((i) => ({
+    task_id: i.id,
+    task_type: i.type,
+    description: i.description,
+    ...(i.type === "local_bash" || i.type === "monitor_mcp" || i.type === "monitor_ws") && i.agentId !== void 0 && {
+      owner_agent_id: i.agentId
+    },
+    ...i.type === "local_bash" && i.kind !== void 0 && {
+      shell_kind: i.kind
+    },
+    ...i.type === "monitor_ws" && i.ambient && {
+      ambient: !0
+    },
+    ...x(i, e.tasks) && {
+      observer_owned: !0
+    }
+  }))
+}
+var L = ["condition", "setAt", "iterations", "tokensAtStart", "lastReason"];
+
+function cJn(e) {
+  return {
+    condition: e.condition,
+    iterations: e.iterations,
+    set_at: e.setAt,
+    tokens_at_start: e.tokensAtStart,
+    ...e.lastReason !== void 0 && {
+      last_reason: e.lastReason
+    }
+  }
+}
+
+function T(e, i) {
+  if (e === i) return !0;
+  if (e === void 0 || i === void 0) return !1;
+  return L.every((s) => e[s] === i[s])
+}
+
+function M(e) {
+  return Object.values(e.tasks).filter((i) => km(i) && !Hd(i)).map((i) => ({
+    task_id: i.id,
+    task_type: i.type,
+    description: i.description,
+    ...p9(i) && {
+      ambient: !0
+    }
+  }))
+}
+
+function Ggt(e) {
+  za({
+    type: "system",
+    subtype: "background_tasks_changed",
+    tasks: M(e)
+  })
+}
+export {
+  lJn,
+  zgt,
+  i1e,
+  H3r,
+  F3r,
+  mzt,
+  cJn,
+  Ggt
+};

@@ -1,0 +1,1499 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  kr,
+  Fo
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  P,
+  st,
+  te,
+  l,
+  v,
+  B
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  Rt
+} from "B:/~BUN/root/chunk-54p0h65d.js";
+import {
+  J,
+  ce,
+  Dp,
+  ZJ,
+  D$,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  d,
+  O
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  z1
+} from "B:/~BUN/root/chunk-qqgpf856.js";
+import {
+  CN,
+  tl
+} from "B:/~BUN/root/chunk-bt3h0syz.js";
+import {
+  vl,
+  Un
+} from "B:/~BUN/root/chunk-zafy1b6k.js";
+import {
+  pa
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  Sne
+} from "B:/~BUN/root/chunk-8hs4bwwk.js";
+import {
+  wr,
+  he,
+  ln
+} from "B:/~BUN/root/chunk-3rzkfay5.js";
+import {
+  De,
+  DNt
+} from "B:/~BUN/root/chunk-5dk9zqaz.js";
+import {
+  iCe
+} from "B:/~BUN/root/chunk-hfe3cbfz.js";
+import {
+  dt
+} from "B:/~BUN/root/chunk-hhgrczac.js";
+import {
+  gN,
+  kc,
+  xNt,
+  MLr,
+  DLr,
+  vdt,
+  NLr,
+  Fhe
+} from "B:/~BUN/root/chunk-n5swsemr.js";
+import {
+  fFe,
+  Hhe,
+  PLr
+} from "B:/~BUN/root/chunk-0w5kpsps.js";
+import {
+  jCe,
+  Jle
+} from "B:/~BUN/root/chunk-gbtzpa3e.js";
+import {
+  IB,
+  ER,
+  OB
+} from "B:/~BUN/root/chunk-xmtkv29j.js";
+import {
+  rX
+} from "B:/~BUN/root/chunk-zfjnfpf7.js";
+import {
+  cn
+} from "B:/~BUN/root/chunk-w5bkq1td.js";
+import {
+  o,
+  E,
+  u
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import {
+  isAbsolute as Re,
+  normalize as Ne
+} from "path";
+import {
+  inflateRawSync as Ue
+} from "zlib";
+var U = {
+  MAX_FILE_SIZE: 536870912,
+  MAX_TOTAL_SIZE: 1073741824,
+  MAX_FILE_COUNT: 1e5,
+  MAX_COMPRESSION_RATIO: 50
+};
+
+function Zen(e) {
+  if (z1(e)) return !1;
+  for (let n of e.split(/[/\\]/))
+    if (/^\.\. [ .]*$/.test(n)) return !1;
+  let r = Ne(e);
+  if (Re(r)) return !1;
+  return !0
+}
+
+function je(e, r) {
+  r.fileCount++;
+  let n;
+  if (r.fileCount > U.MAX_FILE_COUNT) n = `Archive contains too many files: ${r.fileCount} (max: ${U.MAX_FILE_COUNT})`;
+  let i = cn(e.name, 120);
+  if (!Zen(e.name)) n = `Unsafe file path detected: "${i}". Path traversal or absolute paths are not allowed.`;
+  let s = e.originalSize || 0;
+  if (s > U.MAX_FILE_SIZE) n = `File "${i}" is too large: ${Math.round(s/1024/1024)}MB (max: ${Math.round(U.MAX_FILE_SIZE/1024/1024)}MB)`;
+  if (r.totalUncompressedSize += s, r.totalUncompressedSize > U.MAX_TOTAL_SIZE) n = `Archive total size is too large: ${Math.round(r.totalUncompressedSize/1024/1024)}MB (max: ${Math.round(U.MAX_TOTAL_SIZE/1024/1024)}MB)`;
+  let a = r.totalUncompressedSize / r.compressedSize;
+  if (a > U.MAX_COMPRESSION_RATIO) n = `Suspicious compression ratio detected: ${a.toFixed(1)}:1 (max: ${U.MAX_COMPRESSION_RATIO}:1). This may be a zip bomb.`;
+  return n ? {
+    isValid: !1,
+    error: n
+  } : {
+    isValid: !0
+  }
+}
+async function zDe(e) {
+  let r = {
+      fileCount: 0,
+      totalUncompressedSize: 0,
+      compressedSize: e.length,
+      errors: []
+    },
+    n = Ye(new Uint8Array(e.buffer, e.byteOffset, e.byteLength), (i) => {
+      let s = je(i, r);
+      if (!s.isValid) throw new P(s.error, "MCPB zip entry validation failed")
+    });
+  return t(`Zip extraction completed: ${r.fileCount} files, ${Math.round(r.totalUncompressedSize/1024)}KB uncompressed`), n
+}
+var Be = 101010256,
+  Ve = 101075792,
+  ze = 117853008,
+  Ke = 33639248,
+  We = 65557,
+  Ge = 2048,
+  Ze = 0,
+  Xe = 8;
+
+function R(e) {
+  return e === void 0 ? Error("invalid zip data") : new P(`invalid zip data: ${e}`, "invalid zip data")
+}
+
+function I(e, r) {
+  if (r + 2 > e.length) throw R();
+  return e[r] | e[r + 1] << 8
+}
+
+function A(e, r) {
+  if (r + 4 > e.length) throw R();
+  return (e[r] | e[r + 1] << 8 | e[r + 2] << 16 | e[r + 3] << 24) >>> 0
+}
+
+function de(e, r) {
+  return A(e, r) + A(e, r + 4) * 4294967296
+}
+
+function qe(e) {
+  let r = "";
+  for (let n = 0; n < e.length; n += 16384) r += String.fromCharCode(...e.subarray(n, n + 16384));
+  return r
+}
+
+function Ye(e, r) {
+  let n = {},
+    i = e.length - 22;
+  while (i < 0 || A(e, i) !== Be) {
+    if (i <= 0 || e.length - i > We) throw R();
+    i--
+  }
+  let s = I(e, i + 8);
+  if (s === 0) return n;
+  let a = A(e, i + 16),
+    c = !1;
+  if ((a === 4294967295 || s === 65535) && i >= 20 && A(e, i - 20) === ze) {
+    let h = A(e, i - 12);
+    if (h + 56 <= e.length && A(e, h) === Ve) c = !0, s = A(e, h + 32), a = A(e, h + 48)
+  }
+  let m = new TextDecoder;
+  for (let h = 0; h < s; h++) {
+    if (A(e, a) !== Ke) throw R();
+    let p = I(e, a + 8),
+      b = I(e, a + 10),
+      g = I(e, a + 28),
+      y = I(e, a + 30),
+      w = I(e, a + 32),
+      C = a + 46;
+    if (C + g > e.length) throw R();
+    let M = e.subarray(C, C + g),
+      S = p & Ge ? m.decode(M) : qe(M),
+      H = A(e, a + 20),
+      L = A(e, a + 24),
+      x = A(e, a + 42),
+      D = C + g;
+    if (c && H === 4294967295) {
+      let k = D + y,
+        T = D;
+      while (T + 4 <= k && I(e, T) !== 1) T += 4 + I(e, T + 2);
+      if (T + 28 > k) throw R();
+      L = de(e, T + 4), H = de(e, T + 12), x = de(e, T + 20)
+    }
+    a = D + y + w, r({
+      name: S,
+      originalSize: L
+    });
+    let W = x + 30 + I(e, x + 26) + I(e, x + 28);
+    if (W + H > e.length) throw R();
+    let q = e.subarray(W, W + H);
+    if (b === Ze) {
+      if (H !== L) throw R("stored entry size mismatch");
+      n[S] = q.slice()
+    } else if (b === Xe) {
+      if (H === 0 && L === 0) {
+        n[S] = new Uint8Array(0);
+        continue
+      }
+      let k;
+      try {
+        k = Ue(q, {
+          maxOutputLength: Math.max(L, 1),
+          chunkSize: Math.min(Math.max(L, 64), 1048576)
+        })
+      } catch (T) {
+        let _ = T.code;
+        throw R(typeof _ === "string" && _.startsWith("Z_") ? _ : "entry larger than declared")
+      }
+      n[S] = new Uint8Array(k.buffer, k.byteOffset, k.byteLength)
+    } else throw R(`unsupported compression method ${b}`)
+  }
+  return n
+}
+var GDe = 493;
+
+function yPt(e) {
+  let r = Buffer.from(e.buffer, e.byteOffset, e.byteLength),
+    n = {},
+    i = Math.max(0, r.length - 22 - 65535),
+    s = -1;
+  for (let m = r.length - 22; m >= i; m--)
+    if (r.readUInt32LE(m) === 101010256) {
+      s = m;
+      break
+    } if (s < 0) return n;
+  let a = r.readUInt16LE(s + 10),
+    c = r.readUInt32LE(s + 16);
+  for (let m = 0; m < a; m++) {
+    if (c + 46 > r.length || r.readUInt32LE(c) !== 33639248) break;
+    let h = r.readUInt16LE(c + 4),
+      p = r.readUInt16LE(c + 28),
+      b = r.readUInt16LE(c + 30),
+      g = r.readUInt16LE(c + 32),
+      y = r.readUInt32LE(c + 38),
+      w = r.toString("utf8", c + 46, c + 46 + p);
+    if (h >> 8 === 3) {
+      let C = y >>> 16 & 65535;
+      if (C) n[w] = C
+    }
+    c += 46 + p + b + g
+  }
+  return n
+}
+import {
+  createHash as ge
+} from "crypto";
+import {
+  chmod as tt,
+  writeFile as ye
+} from "fs/promises";
+import {
+  dirname as rt,
+  join as N
+} from "path";
+async function Je(e) {
+  let {
+    McpbManifestSchema: r
+  } = await import("B:/~BUN/root/chunk-q46e3vrk.js"), n = r.safeParse(e);
+  if (!n.success) {
+    let i = n.error.flatten(),
+      s = [...Object.entries(i.fieldErrors).map(([a, c]) => `${a}: ${c?.join(", ")}`), ...i.formErrors || []].filter(Boolean).join("; ");
+    throw new P(`Invalid manifest: ${s}`, "MCPB manifest schema validation failed")
+  }
+  return n.data
+}
+async function Qe(e) {
+  let r;
+  try {
+    r = J(e)
+  } catch (n) {
+    throw Error(`Invalid JSON in manifest.json: ${l(n)}`)
+  }
+  return Je(r)
+}
+async function me(e) {
+  let r = new TextDecoder().decode(e);
+  return Qe(r)
+}
+import {
+  homedir as et
+} from "os";
+import {
+  join as z
+} from "path";
+
+function xe(e) {
+  let r = e?.platform ?? O(),
+    n = e?.homedir ?? et(),
+    i = e?.env ?? process.env,
+    s = {
+      HOME: n,
+      DESKTOP: z(n, "Desktop"),
+      DOCUMENTS: z(n, "Documents"),
+      DOWNLOADS: z(n, "Downloads")
+    };
+  switch (r) {
+    case "windows": {
+      let a = i.USERPROFILE || n;
+      return {
+        HOME: n,
+        DESKTOP: z(a, "Desktop"),
+        DOCUMENTS: z(a, "Documents"),
+        DOWNLOADS: z(a, "Downloads")
+      }
+    }
+    case "linux":
+    case "wsl":
+      return {
+        HOME: n, DESKTOP: i.XDG_DESKTOP_DIR || s.DESKTOP, DOCUMENTS: i.XDG_DOCUMENTS_DIR || s.DOCUMENTS, DOWNLOADS: i.XDG_DOWNLOAD_DIR || s.DOWNLOADS
+      };
+    case "macos":
+    default: {
+      if (r === "unknown") t("Unknown platform detected, using default paths");
+      return s
+    }
+  }
+}
+var ot = f(() => u({
+  source: o(),
+  contentHash: o(),
+  extractedPath: o(),
+  cachedAt: o(),
+  lastChecked: o(),
+  sourceMtimeMs: E().optional()
+}));
+
+function LL(e) {
+  return e.endsWith(".mcpb") || e.endsWith(".dxt")
+}
+
+function ke(e) {
+  return e.startsWith("http://") || e.startsWith("https://")
+}
+
+function Ce(e) {
+  return N(e, ".mcpb-cache")
+}
+
+function nt(e, r) {
+  let n = ge("md5").update(r).digest("hex").substring(0, 8);
+  return N(e, `${n}.metadata.json`)
+}
+
+function Oe(e, r) {
+  return rX(nt(e, r), () => ot().nullable(), {
+    defaultValue: null,
+    indent: 2
+  })
+}
+
+function Ee(e, r) {
+  return `${e}/${r}`
+}
+async function VDe(e, r, n) {
+  try {
+    let i = jCe(e).mcpServers?.[r],
+      s = (await Un().readAsync(n))?.pluginSecrets?.[Ee(e, r)];
+    if (!i && !s) return null;
+    return t(`Loaded user config for ${e}/${r} (settings + secureStorage)`), {
+      ...i,
+      ...s
+    }
+  } catch (i) {
+    return t(`Failed to load user config for ${e}/${r}: ${i}`, {
+      level: "error"
+    }), null
+  }
+}
+async function etn(e, r, n, i, s, a) {
+  try {
+    let c = {},
+      m = {};
+    for (let [S, H] of Object.entries(n))
+      if (i[S]?.sensitive === !0) m[S] = String(H);
+      else c[S] = H;
+    let h = new Set(Object.keys(m)),
+      p = new Set(Object.keys(c)),
+      b = Ee(e, r),
+      g = 0,
+      y = await Un().mutate((S) => {
+        let H = S.pluginSecrets?.[b],
+          L = H ? pa(H, (x, D) => p.has(D)) : void 0;
+        if (g = L && H ? Object.keys(H).length - Object.keys(L).length : 0, Object.keys(m).length === 0 && g === 0) return S;
+        return {
+          ...S,
+          pluginSecrets: {
+            ...S.pluginSecrets,
+            [b]: {
+              ...L,
+              ...m
+            }
+          }
+        }
+      }, a);
+    if (!y.success) throw Error(`Failed to save sensitive config to secure storage for ${b}`);
+    if (y.warning) t(`Server secrets save warning: ${y.warning}`, {
+      level: "warn"
+    });
+    if (g > 0) t(`saveMcpServerUserConfig: scrubbed ${g} stale non-sensitive key(s) from secureStorage for ${b}`);
+    let w = he("userSettings")?.pluginConfigs,
+      C = {},
+      M = 0;
+    for (let S of Jle(e)) {
+      let H = Object.keys(w?.[S]?.mcpServers?.[r] ?? {}).filter((D) => h.has(D)),
+        L = Object.fromEntries(H.map((D) => [D, void 0])),
+        x = S === e ? c : {};
+      if (Object.keys(x).length > 0 || H.length > 0) C[S] = {
+        mcpServers: {
+          [r]: {
+            ...x,
+            ...L
+          }
+        }
+      }, M += H.length
+    }
+    if (Object.keys(C).length > 0) {
+      let S = await ln("userSettings", {
+        pluginConfigs: C
+      }, void 0, s);
+      if (S.error) throw S.error;
+      if (M > 0) t(`saveMcpServerUserConfig: scrubbed ${M} plaintext sensitive key(s) from settings.json for ${e}/${r}`)
+    }
+    t(`Saved user config for ${e}/${r} (${Object.keys(c).length} non-sensitive, ${Object.keys(m).length} sensitive)`)
+  } catch (c) {
+    let m = te(c);
+    throw t(`Failed to save user config for ${e}/${r}: ${m.message}`, {
+      level: "error"
+    }), Error(`Failed to save user configuration for ${e}/${r}: ${m.message}`)
+  }
+}
+
+function kme(e, r) {
+  let n = [];
+  for (let [i, s] of Object.entries(r)) {
+    let a = e[i];
+    if (s.required && (a === void 0 || a === "")) {
+      n.push(`${s.title||i} is required but not provided`);
+      continue
+    }
+    if (a === void 0 || a === "") continue;
+    if (s.type === "string") {
+      if (Array.isArray(a)) {
+        if (!s.multiple) n.push(`${s.title||i} must be a string, not an array`);
+        else if (!a.every((c) => typeof c === "string")) n.push(`${s.title||i} must be an array of strings`)
+      } else if (typeof a !== "string") n.push(`${s.title||i} must be a string`);
+      else if (s.options !== void 0 && !s.options.includes(a)) n.push(`${s.title||i} must be one of: ${s.options.join(", ")}`)
+    } else if (s.type === "number" && typeof a !== "number") n.push(`${s.title||i} must be a number`);
+    else if (s.type === "boolean" && typeof a !== "boolean") n.push(`${s.title||i} must be a boolean`);
+    else if ((s.type === "file" || s.type === "directory") && typeof a !== "string") n.push(`${s.title||i} must be a path string`);
+    if (s.type === "number" && typeof a === "number") {
+      if (s.min !== void 0 && a < s.min) n.push(`${s.title||i} must be at least ${s.min}`);
+      if (s.max !== void 0 && a > s.max) n.push(`${s.title||i} must be at most ${s.max}`)
+    }
+  }
+  return {
+    valid: n.length === 0,
+    errors: n
+  }
+}
+async function Y(e, r, n = {}) {
+  let {
+    getMcpConfigForManifest: i
+  } = await import("B:/~BUN/root/chunk-q46e3vrk.js"), s = await i({
+    manifest: e,
+    extensionPath: r,
+    systemDirs: xe(),
+    userConfig: n,
+    pathSeparator: "/"
+  });
+  if (!s) {
+    let a = st(Error(`Failed to generate MCP server configuration from manifest "${e.name}"`), "MCPB manifest: failed to generate MCP server configuration");
+    throw d(a), a
+  }
+  return s
+}
+async function Me(e, r) {
+  try {
+    return await Oe(e, r).read()
+  } catch (n) {
+    return t(`Failed to load MCPB cache metadata: ${n}`, {
+      level: "error"
+    }), null
+  }
+}
+async function pe(e, r, n) {
+  await ce().mkdir(e), await Oe(e, r).write(n)
+}
+async function it(e, r, n) {
+  let i = Dp(e);
+  if (t(`Downloading MCPB from ${i}`), n) n(`Downloading ${i}...`);
+  let s = performance.now(),
+    a = !1;
+  try {
+    let m = await (CN(e) ? IB.get : tl.get)(e, {
+        timeout: 120000,
+        responseType: "arraybuffer",
+        maxRedirects: 5,
+        onDownloadProgress: (p) => {
+          if (p.total && n) {
+            let b = Math.round(p.loaded / p.total * 100);
+            n(`Downloading... ${b}%`)
+          }
+        }
+      }),
+      h = new Uint8Array(m.data);
+    if (ER("mcpb", e, "success", performance.now() - s), a = !0, await ye(r, Buffer.from(h)), t(`Downloaded ${h.length} bytes to ${r}`), n) n("Download complete");
+    return h
+  } catch (c) {
+    if (!a) ER("mcpb", e, "failure", performance.now() - s, OB(c));
+    let m = D$(ZJ(l(c), e, i)),
+      h = Error(`Failed to download MCPB file from ${i}: ${m}`);
+    throw t(`Failed to download MCPB file from ${i}: ${m}`, {
+      level: "error"
+    }), h
+  }
+}
+async function at(e, r, n, i) {
+  if (i) i("Extracting files...");
+  await ce().mkdir(r);
+  let s = 0,
+    a = Object.entries(e).filter(([m]) => !m.endsWith("/")),
+    c = a.length;
+  for (let [m, h] of a) {
+    let p = N(r, m),
+      b = rt(p);
+    if (b !== r) await ce().mkdir(b);
+    if (m.endsWith(".json") || m.endsWith(".js") || m.endsWith(".ts") || m.endsWith(".txt") || m.endsWith(".md") || m.endsWith(".yml") || m.endsWith(".yaml")) {
+      let w = new TextDecoder().decode(h);
+      await ye(p, w, "utf-8")
+    } else await ye(p, Buffer.from(h));
+    let y = n[m];
+    if (y && y & 73) await tt(p, y & GDe).catch(() => {});
+    if (s++, i && s % 10 === 0) i(`Extracted ${s}/${c} files`)
+  }
+  if (t(`Extracted ${s} files to ${r}`), i) i(`Extraction complete (${s} files)`)
+}
+async function ft(e, r) {
+  let n = ce(),
+    i = Ce(r),
+    s = await Me(i, e);
+  if (!s) return !0;
+  try {
+    await n.stat(s.extractedPath)
+  } catch (a) {
+    if (v(a) === "ENOENT") t(`MCPB extraction path missing: ${s.extractedPath}`);
+    else t(`MCPB extraction path inaccessible: ${s.extractedPath}: ${a}`, {
+      level: "error"
+    });
+    return !0
+  }
+  if (!ke(e)) {
+    let a = N(r, e),
+      c = N(r, Dp(e)),
+      m;
+    try {
+      m = await n.stat(a)
+    } catch (p) {
+      if (v(p) === "ENOENT") t(`MCPB source file missing: ${c}`);
+      else t(`MCPB source file inaccessible: ${c}: ${ZJ(String(p),a,c)}`, {
+        level: "error"
+      });
+      return !0
+    }
+    if (s.sourceMtimeMs === void 0) return !0;
+    let h = Math.floor(m.mtimeMs);
+    if (h !== s.sourceMtimeMs) return t(`MCPB file modified: mtime ${new Date(h).toISOString()} != cached ${new Date(s.sourceMtimeMs).toISOString()}`), !0
+  }
+  return !1
+}
+async function _Pt(e, r, n, i, s, a, c, m) {
+  let h = Dp(e),
+    p = ce(),
+    b = Ce(r);
+  await p.mkdir(b), t(`Loading MCPB from source: ${h}`);
+  let g = await Me(b, e);
+  if (g && !await ft(e, r)) {
+    t(`Using cached MCPB from ${g.extractedPath} (hash: ${g.contentHash})`);
+    let k = N(g.extractedPath, "manifest.json"),
+      T;
+    try {
+      T = await p.readFile(k, {
+        encoding: "utf-8"
+      })
+    } catch (j) {
+      if (B(j)) {
+        let V = Error(`Cached manifest not found: ${k}`);
+        throw d(V), V
+      }
+      throw j
+    }
+    let _ = new TextEncoder().encode(T),
+      F = await me(_);
+    if (F.user_config && Object.keys(F.user_config).length > 0) {
+      let j = F.name,
+        V = await VDe(n, j, m),
+        Se = s || V || {},
+        ue = kme(Se, F.user_config);
+      if (a || !ue.valid) return {
+        status: "needs-config",
+        manifest: F,
+        extractedPath: g.extractedPath,
+        contentHash: g.contentHash,
+        configSchema: F.user_config,
+        existingConfig: V || {},
+        validationErrors: ue.valid ? [] : ue.errors
+      };
+      if (s) await etn(n, j, s, F.user_config ?? {}, c, m);
+      let Ie = await Y(F, g.extractedPath, Se);
+      return {
+        manifest: F,
+        mcpConfig: Ie,
+        extractedPath: g.extractedPath,
+        contentHash: g.contentHash
+      }
+    }
+    let le = await Y(F, g.extractedPath);
+    return {
+      manifest: F,
+      mcpConfig: le,
+      extractedPath: g.extractedPath,
+      contentHash: g.contentHash
+    }
+  }
+  let y, w, C;
+  if (ke(e)) {
+    let k = ge("md5").update(e).digest("hex").substring(0, 8);
+    w = N(b, `${k}.mcpb`), y = await it(e, w, i)
+  } else {
+    let k = N(r, e);
+    if (i) i(`Loading ${h}...`);
+    try {
+      y = await p.readFileBytes(k), w = k, C = Math.floor((await p.stat(k)).mtimeMs)
+    } catch (T) {
+      let _ = N(r, h);
+      if (B(T)) {
+        let F = Error(`MCPB file not found: ${_}`);
+        throw t(`MCPB file not found: ${_}`, {
+          level: "error"
+        }), F
+      }
+      throw k === _ ? T : new P(ZJ(l(T), k, _), "MCPB local file read failed")
+    }
+  }
+  let M = ge("sha256").update(y).digest("hex").substring(0, 16);
+  if (t(`MCPB content hash: ${M}`), i) i("Extracting MCPB archive...");
+  let S = await zDe(Buffer.from(y)),
+    H = yPt(y),
+    L = S["manifest.json"];
+  if (!L) {
+    let k = Error("No manifest.json found in MCPB file");
+    throw t(`No manifest.json found in MCPB file: ${w}`, {
+      level: "error"
+    }), k
+  }
+  let x = await me(L);
+  if (t(`MCPB manifest: ${x.name} v${x.version} by ${x.author.name}`), !x.server) {
+    let k = st(Error(`MCPB manifest for "${x.name}" does not define a server configuration`), "MCPB manifest does not define a server configuration");
+    throw d(k), k
+  }
+  let D = N(b, M);
+  if (await at(S, D, H, i), x.user_config && Object.keys(x.user_config).length > 0) {
+    let k = x.name,
+      T = await VDe(n, k, m),
+      _ = s || T || {},
+      F = kme(_, x.user_config);
+    if (!F.valid) {
+      let V = {
+        source: e,
+        contentHash: M,
+        extractedPath: D,
+        cachedAt: new Date().toISOString(),
+        lastChecked: new Date().toISOString(),
+        sourceMtimeMs: C
+      };
+      return await pe(b, e, V), {
+        status: "needs-config",
+        manifest: x,
+        extractedPath: D,
+        contentHash: M,
+        configSchema: x.user_config,
+        existingConfig: T || {},
+        validationErrors: F.errors
+      }
+    }
+    if (s) await etn(n, k, s, x.user_config ?? {}, c, m);
+    if (i) i("Generating MCP server configuration...");
+    let le = await Y(x, D, _),
+      j = {
+        source: e,
+        contentHash: M,
+        extractedPath: D,
+        cachedAt: new Date().toISOString(),
+        lastChecked: new Date().toISOString(),
+        sourceMtimeMs: C
+      };
+    return await pe(b, e, j), {
+      manifest: x,
+      mcpConfig: le,
+      extractedPath: D,
+      contentHash: M
+    }
+  }
+  if (i) i("Generating MCP server configuration...");
+  let W = await Y(x, D),
+    q = {
+      source: e,
+      contentHash: M,
+      extractedPath: D,
+      cachedAt: new Date().toISOString(),
+      lastChecked: new Date().toISOString(),
+      sourceMtimeMs: C
+    };
+  return await pe(b, e, q), t(`Successfully loaded MCPB: ${x.name} (extracted to ${D})`), {
+    manifest: x,
+    mcpConfig: W,
+    extractedPath: D,
+    contentHash: M
+  }
+}
+
+function g_(e) {
+  return e.source
+}
+
+function ttn(e, r) {
+  return e.find((n) => n.repository === r || n.source === r)
+}
+
+function zO(e, r) {
+  if (DNt()) return Promise.resolve({});
+  let {
+    optionValues: n
+  } = dt(), i = n.get(e);
+  if (i !== void 0) return i;
+  let s = ct(e, r);
+  return n.set(e, s), s.catch(() => {
+    if (n.get(e) === s) n.delete(e)
+  }), s
+}
+async function ct(e, r) {
+  let n = jCe(e).options ?? {},
+    i = (await Un().readAsync(r))?.pluginSecrets?.[e] ?? {};
+  return {
+    ...n,
+    ...i
+  }
+}
+
+function qDe() {
+  dt().optionValues.clear()
+}
+async function Dqe(e, r, n, i, s) {
+  let a = {},
+    c = {};
+  for (let [y, w] of Object.entries(r))
+    if (n[y]?.sensitive === !0) c[y] = String(w);
+    else a[y] = w;
+  let m = new Set(Object.keys(c)),
+    h = new Set(Object.keys(a)),
+    p = await Un().mutate((y) => {
+      let w = y.pluginSecrets?.[e],
+        C = w ? pa(w, (S, H) => h.has(H)) : void 0,
+        M = C && w && Object.keys(C).length !== Object.keys(w).length;
+      if (Object.keys(c).length === 0 && !M) return y;
+      return {
+        ...y,
+        pluginSecrets: {
+          ...y.pluginSecrets,
+          [e]: {
+            ...C,
+            ...c
+          }
+        }
+      }
+    }, s);
+  if (!p.success) {
+    let y = Error(`Failed to save sensitive plugin options for ${e} to secure storage`);
+    throw t(y.message, {
+      level: "error"
+    }), y
+  }
+  if (p.warning) t(`Plugin secrets save warning: ${p.warning}`, {
+    level: "warn"
+  });
+  let b = he("userSettings")?.pluginConfigs,
+    g = {};
+  for (let y of Jle(e)) {
+    let w = Object.keys(b?.[y]?.options ?? {}).filter((S) => m.has(S)),
+      C = Object.fromEntries(w.map((S) => [S, void 0])),
+      M = y === e ? a : {};
+    if (Object.keys(M).length > 0 || w.length > 0) g[y] = {
+      options: {
+        ...M,
+        ...C
+      }
+    }
+  }
+  if (Object.keys(g).length > 0) {
+    let y = await ln("userSettings", {
+      pluginConfigs: g
+    }, void 0, i);
+    if (y.error) throw t(`Failed to save plugin options for ${e} to settings.json: ${l(y.error)}`, {
+      level: "error"
+    }), Error(`Failed to save plugin options for ${e}: ${y.error.message}`)
+  }
+  qDe()
+}
+async function ut(e) {
+  let r = he("userSettings");
+  if (r !== null && r !== void 0) return r;
+  let n = wr("userSettings");
+  if (n === void 0 || await Sne(n) === "gone") return;
+  return t(`deletePluginOptions: the user settings file (${n}) is there and could not be read, so options of ${e} may remain in it`, {
+    level: "warn"
+  }), "unreadable"
+}
+async function _yo(e, r, n, i) {
+  let s = !0,
+    a = await ut(e);
+  if (a === "unreadable") s = !1, i?.push("settings_unreadable");
+  let c = a === "unreadable" ? void 0 : a,
+    m = Jle(e).filter((p) => c?.pluginConfigs?.[p] !== void 0);
+  if (m.length > 0) {
+    let p = Object.fromEntries(m.map((g) => [g, void 0])),
+      {
+        error: b
+      } = await ln("userSettings", {
+        pluginConfigs: p
+      }, void 0, r);
+    if (b) t(`deletePluginOptions: failed to clear settings.pluginConfigs[${e}]: ${b.message}`, {
+      level: "warn"
+    }), s = !1, i?.push("settings_write_failed")
+  }
+  let h = `${e}/`;
+  try {
+    let p = Un();
+    if (!(await p.mutate((g) => {
+        if (!g.pluginSecrets) return g;
+        let y = Object.entries(g.pluginSecrets).filter(([w]) => w !== e && !w.startsWith(h));
+        if (y.length === Object.keys(g.pluginSecrets).length) return g;
+        return {
+          ...g,
+          pluginSecrets: y.length > 0 ? Object.fromEntries(y) : void 0
+        }
+      }, n)).success) t(`deletePluginOptions: failed to clear pluginSecrets for ${e} from keychain`, {
+      level: "warn"
+    }), s = !1, i?.push("secrets_write_failed");
+    else {
+      let g = p.readAsyncStrict ? await p.readAsyncStrict(n, {
+        inaccessibleAs: "failure"
+      }) : await p.readAsync(n);
+      if (g === vl || Object.keys(g?.pluginSecrets ?? {}).some((y) => y === e || y.startsWith(h))) t(`deletePluginOptions: after the delete, secure storage could not be read or still holds pluginSecrets for ${e}`, {
+        level: "warn"
+      }), s = !1, i?.push(g === vl ? "secrets_unreadable" : "secrets_remain")
+    }
+  } catch (p) {
+    t(`deletePluginOptions: storage lock unavailable for ${e}: ${l(p)}`, {
+      level: "warn"
+    }), s = !1, i?.push("secrets_write_failed")
+  }
+  return qDe(), s
+}
+async function Xot(e, r) {
+  let n = e.manifest.userConfig;
+  if (!n || Object.keys(n).length === 0) return {};
+  let i = await zO(g_(e), r),
+    s = {};
+  for (let [a, c] of Object.entries(n)) {
+    let m = i[a];
+    if (m === void 0 || m === "" || c.sensitive !== !0 && !kme({
+        [a]: m
+      }, {
+        [a]: c
+      }).valid) s[a] = c
+  }
+  return s
+}
+
+function Bkr(e, r) {
+  let n = e?.options;
+  return n !== void 0 && !(typeof r === "string" && n.includes(r))
+}
+
+function Jot(e, r) {
+  let n = {};
+  for (let [s, a] of Object.entries(r)) {
+    if (a.required && a.default === void 0) continue;
+    n[s] = a.default ?? ""
+  }
+  let i = pa(e, (s, a) => {
+    let c = r[a]?.options;
+    if (c === void 0 || !Bkr(r[a], s)) return !1;
+    return t(`plugin option ${a} holds a value that is not one of ${c.join(", ")}; it reads as unset`, {
+      level: "warn"
+    }), !0
+  });
+  return {
+    ...n,
+    ...i
+  }
+}
+
+function YZ(e, r) {
+  let n = (s) => s.replace(/\\/g, "/"),
+    i = e.replace(/\$\{CLAUDE_PLUGIN_ROOT\}/g, () => n(r.path));
+  if (i = i.replace(/\$\{CLAUDE_PROJECT_DIR\}/g, () => n(Fo() ?? kr())), r.source) {
+    let s = r.source;
+    i = i.replace(/\$\{CLAUDE_PLUGIN_DATA\}/g, () => n(iCe(s)))
+  }
+  return i
+}
+
+function Qot(e, r) {
+  return e.replace(/\$\{user_config\.([^}]+)\}/g, (n, i) => {
+    let s = r[i];
+    if (s === void 0) throw Error(`Plugin option "${i}" isn't set. Open /plugin manage to configure it, or check that the plugin's userConfig schema declares "${i}".`);
+    return String(s)
+  })
+}
+
+function Zot(e, r) {
+  try {
+    return Qot(e, r) !== e
+  } catch {
+    return !0
+  }
+}
+
+function e$n(e, r, n, i) {
+  return e.replace(/\$\{user_config\.([^}]+)\}/g, (s, a) => {
+    if (n[a]?.sensitive === !0) return `[sensitive option '${a}' not available in skill content]`;
+    let c = r[a];
+    if (c === void 0) return s;
+    let m = String(c);
+    return i ? i(m) : m
+  })
+}
+
+function hPt({
+  pluginName: e,
+  pluginStorageId: r
+}) {
+  return r.startsWith(`${e}@`) ? r : `${r}+${e}`
+}
+var jkr = (e) => hPt({
+  pluginName: e.name,
+  pluginStorageId: g_(e)
+});
+var Pe = (e) => typeof e === "string" ? e : `${e.plugin}#${e.registration}`;
+var bPt = (e) => typeof e === "string" ? e : e.plugin;
+
+function yt(e, r) {
+  let n = new Set;
+  for (let i of e ?? []) {
+    if (bPt(i) !== r) continue;
+    if (typeof i === "string") return "every";
+    n.add(i.registration)
+  }
+  return [...n].sort((i, s) => i - s)
+}
+var SPt = (e) => (e ?? []).map(Pe).join(" > ");
+
+function Q(e, r) {
+  let n = [];
+  for (let i of e) {
+    let s = i.status();
+    if (s.kind !== "live") {
+      let a = s.kind === "retiring" || s.kind === "unloaded" && s.retired,
+        c = s.kind === "unloaded";
+      t(`hooks module ${a?`${i.label}: its environment was retired by a reload during ${r}`:c?`${i.label}: its environment was unloaded (during ${r})`:`${i.label}: ${s.reason} (during ${r})`}; passing on`);
+      continue
+    }
+    n.push(i)
+  }
+  return n
+}
+var be = Rt(new Map, (e) => e.clear());
+var we = Rt(new Set, (e) => e.clear());
+
+function K(e, r, n) {
+  let i = `${e.name}#${e.environmentId} ${r}`,
+    s = be.get(i) ?? 0;
+  if (s >= DLr) return;
+  be.set(i, s + 1);
+  let a = xNt(e.matcherFor(r), n);
+  if (a === void 0) return;
+  let c = `${i} ${a.path}`;
+  if (we.has(c)) return;
+  we.add(c), kc().log(MLr(e.name, r, a), "warn")
+}
+
+function QFn(e, r, n) {
+  let i = e.matcherFor(r),
+    s = e.hopKey.kind === "worker";
+  if (i === void 0) return !0;
+  let a = s ? NLr(i, n) : vdt(i, n);
+  if (!a) K(e, r, n);
+  return a
+}
+
+function re(e, r, n) {
+  let i = Q(e, r),
+    s = i.findIndex((a) => QFn(a, r, n));
+  return s === -1 ? [] : i.slice(s)
+}
+var oe = (e, r, n) => e.map((i) => {
+  let s = r.get(i);
+  if (s === void 0) throw new De(`${n}: a hop member is not one of these handlers`);
+  return s
+});
+var He = ({
+  loaded: e,
+  event: r,
+  origin: n,
+  raise: i,
+  owners: s
+}) => ({
+  name: e.name,
+  tier: e.tier,
+  ...PLr(e.args.modulePath) && {
+    answersForEngine: !0
+  },
+  run: (a, c, {
+    call: m,
+    floors: h,
+    cutAt: p
+  }) => t$n({
+    members: [e],
+    event: r,
+    e: a,
+    call: m,
+    signal: c.signal,
+    hookOrigin: n,
+    raise: i,
+    origin: c.origin,
+    floors: h,
+    cutAt: p
+  }),
+  hop: {
+    key: e.hopKey,
+    run: (a) => t$n({
+      members: oe(a.members, s, r),
+      event: r,
+      e: a.e,
+      call: a.call,
+      signal: a.signal,
+      hookOrigin: n,
+      raise: i,
+      origin: a.origin,
+      floors: a.floors,
+      cutAt: a.cutAt
+    })
+  }
+});
+
+function Wkr(e, r, n) {
+  let i = e.matcherFor(r);
+  if (i === void 0) return !0;
+  try {
+    if (vdt(i, n)) return !0
+  } catch (s) {
+    return t(`hooks module ${e.label}: on('${r}') matcher threw on the host (${l(s)}); the hop decides`), !0
+  }
+  return K(e, r, n), !1
+}
+
+function ne(e, r, n) {
+  if (!n || n.length === 0) return e;
+  let i = yt(n, e.name);
+  if (i === "every") {
+    t(`hooks module ${e.label} ${r} skipped: re-entry (the plugin's own code raised it; origin ${SPt(n)})`);
+    return
+  }
+  let s = e.registrationsFor(r),
+    a = i.filter((c) => s.includes(c));
+  if (a.length === 0) return e;
+  if (!e.hooks(r, a)) {
+    t(`hooks module ${e.label} ${r} skipped: re-entry (its own frame is being dispatched; origin ${SPt(n)})`);
+    return
+  }
+  return t(`hooks module ${e.label} ${r}: hooks ${a.join(", ")} left out for re-entry (origin ${SPt(n)})`), {
+    ...e,
+    leftOut: a,
+    hooks: (c, m = []) => e.hooks(c, [...a, ...m]),
+    matcherFor: (c, m = []) => e.matcherFor(c, [...a, ...m])
+  }
+}
+var est = (e, r, n) => dt().loadedModules.filter((i) => {
+  let s = i.hooks(e) ? ne(i, e, n) : void 0;
+  if (s === void 0) return !1;
+  return Object.entries(r).every(([a, c]) => Fhe(s.matcherFor(e), a, c))
+}).map((i) => i.name);
+
+function Te(e, r, {
+  keys: n,
+  e: i
+}) {
+  let s = e.matcherFor(r);
+  if (s === void 0 || !gN(i)) return !1;
+  try {
+    let c = n.some((m) => Object.hasOwn(i, m) && !Fhe(s, m, i[m]));
+    if (c) K(e, r, i);
+    return c
+  } catch (c) {
+    return t(`hooks module ${e.label}: on('${r}') matcher threw on the host (${l(c)}); the hop decides`), !1
+  }
+}
+
+function wPt(e, r, {
+  only: n,
+  e: i,
+  among: s,
+  pinned: a
+} = {}) {
+  let c = (s ?? dt().loadedModules).flatMap((h) => {
+    if (!h.hooks(e) || h.name !== (n ?? h.name)) return [];
+    let p = ne(h, e, r);
+    return p === void 0 || a !== void 0 && Te(p, e, a) ? [] : [p]
+  });
+  if (i === void 0) return c;
+  let m = c.findIndex((h) => Wkr(h, e, i));
+  return m === -1 ? [] : c.slice(m)
+}
+var $e = (e) => e;
+var $t = (e) => e;
+var Fe = (e) => [...e];
+
+function KDe(e) {
+  let r = e?.at(-1);
+  if (r === void 0) return fFe;
+  let n = bPt(r),
+    {
+      loadedModules: i,
+      moduleSeats: s
+    } = dt(),
+    c = i.find((m) => m.name === n)?.tier ?? s.get(n) ?? "user";
+  return Object.freeze({
+    plugin: n,
+    tier: c
+  })
+}
+var _e = (e, r) => ({
+  name: e.loaded.name,
+  tier: e.loaded.tier,
+  run: (n, i, {
+    open: s,
+    floors: a
+  }) => Le({
+    members: [e.loaded],
+    event: e.event,
+    e: n,
+    open: s,
+    signal: i.signal,
+    hookOrigin: e.origin,
+    raise: e.raise,
+    origin: i.origin,
+    floors: a
+  }),
+  hop: {
+    key: e.loaded.hopKey,
+    run: ({
+      members: n,
+      e: i,
+      open: s,
+      signal: a,
+      origin: c,
+      floors: m
+    }) => Le({
+      members: oe(n, r, e.event),
+      event: e.event,
+      e: i,
+      open: s,
+      signal: a,
+      hookOrigin: e.origin,
+      raise: e.raise,
+      origin: c,
+      floors: m
+    })
+  }
+});
+
+function Syo(e, r, n = {}) {
+  let i = new Map;
+  return wPt(e, r, n).flatMap((s) => {
+    if (s.streamLinks !== void 0) return Fe(It({
+      loaded: s,
+      event: e,
+      origin: r
+    }));
+    let a = _e({
+      loaded: s,
+      event: e,
+      origin: r,
+      raise: n.raise
+    }, i);
+    return i.set(a, s), [a]
+  })
+}
+var qzo = 3;
+var wyo = (e) => `${e}: the op was aborted: the plugin's environment was unloaded`;
+var hyo = (e) => Array.from(e).join(",") || "none";
+var ZFn = (e) => e.map((r) => r.label).join(", ");
+var yyo = (e) => `next() result not cloneable: ${l(e)}`;
+var byo = "the plugin is unloaded; /reload-plugins brings it back";
+
+function se({
+  members: e,
+  event: r,
+  e: n,
+  hookOrigin: i,
+  origin: s,
+  raise: a,
+  floors: c,
+  cutAt: m,
+  kind: h
+}) {
+  let [p] = e;
+  if (i) t(`hooks module ${ZFn(e)}: ${r}${h} nested in ${SPt(i)}`);
+  let b = e.flatMap((g) => {
+    let y = [...g.leftOut ?? []],
+      {
+        environmentId: w
+      } = g;
+    return y.length > 0 ? [{
+      environmentId: w,
+      registrations: y
+    }] : []
+  });
+  return {
+    id: p ? p.hopKey.nextDispatchId() : 0,
+    event: r,
+    payload: n,
+    environments: e.map((g) => g.environmentId),
+    leftOut: b.length === 0 ? void 0 : b,
+    origin: s,
+    hookOrigin: i,
+    raise: a,
+    floors: c.length === 0 ? void 0 : c,
+    cutAt: m
+  }
+}
+async function t$n(e) {
+  let {
+    event: r,
+    e: n,
+    call: i,
+    signal: s,
+    floors: a
+  } = e, c = re(e.members, r, n), m = c[0]?.hopKey;
+  if (!m) return i(n, void 0, a);
+  let h = (w, C, M) => i(w, C, M),
+    p = performance.now();
+  for (let w of c) w.enter();
+  let b;
+  try {
+    b = await m.dispatch(se({
+      ...e,
+      members: c,
+      kind: ""
+    }), h, s)
+  } finally {
+    for (let w of c) w.leave()
+  }
+  let y = typeof n === "object" && "requestId" in n && typeof n.requestId === "string" ? ` key=${n.requestId}` : "";
+  return t(`hooks module ${ZFn(c)} ${r} settled in ${(performance.now()-p).toFixed(1)}ms (${m.kind} hop, next() included)${y}`), $e(b.result)
+}
+
+function ae(e, r, n) {
+  e.leave(), t(`hooks module ${e.label} ${r} settled in ${(performance.now()-n).toFixed(1)}ms (native link, next() included)`)
+}
+
+function fe({
+  loaded: e,
+  event: r,
+  origin: n
+}, i) {
+  let s = Q([e], r).length === 1 && QFn(e, r, i);
+  if (s && n) t(`hooks module ${e.label} (native): ${r} nested in ` + SPt(n));
+  return s
+}
+
+function Kt(e) {
+  let {
+    loaded: r,
+    event: n,
+    origin: i
+  } = e;
+  if (r.link === void 0) throw new De(`${r.name}: ${n}: not a native module; it runs in a hop`);
+  let s = r.link({
+      event: n,
+      leftOut: r.leftOut,
+      hookOrigin: i
+    }),
+    a = s.catch;
+  async function c(p) {
+    let b = performance.now();
+    r.enter();
+    try {
+      return await p()
+    } finally {
+      ae(r, n, b)
+    }
+  }
+  async function m(p, b) {
+    r.enter();
+    try {
+      return await a?.(p, b)
+    } finally {
+      r.leave()
+    }
+  }
+  let h = (p, b, g) => fe({
+    loaded: r,
+    event: n,
+    origin: i
+  }, p) ? c(() => s.run(p, b, g)) : b(p);
+  return $t({
+    ...s,
+    run: h,
+    ...a !== void 0 && {
+      catch: m
+    }
+  })
+}
+
+function Le(e) {
+  let {
+    event: r,
+    e: n,
+    open: i,
+    signal: s,
+    floors: a
+  } = e, c = re(e.members, r, n), m = c[0]?.hopKey;
+  if (!m) return i(n, void 0, a);
+  let h = (g, y, w) => Hhe(i(g, y, w)),
+    p = performance.now();
+  for (let g of c) g.enter();
+  let b = m.dispatchStream(se({
+    ...e,
+    members: c,
+    kind: " stream"
+  }), h, s);
+  return async function*() {
+    try {
+      let g = yield* Hhe(b);
+      return $e(g)
+    } finally {
+      for (let g of c) g.leave();
+      t(`hooks module ${ZFn(c)} ${r} stream settled in ${(performance.now()-p).toFixed(1)}ms (${m.kind} hop, next() included)`)
+    }
+  }()
+}
+
+function It(e) {
+  let {
+    loaded: r,
+    event: n,
+    origin: i
+  } = e;
+  if (r.streamLinks === void 0) throw new De(`${r.name}: ${n}: not a native module; it runs in a hop`);
+
+  function s(a) {
+    let c = performance.now();
+    return r.enter(), async function*() {
+      try {
+        return yield* a
+      } finally {
+        ae(r, n, c)
+      }
+    }()
+  }
+  return r.streamLinks({
+    event: n,
+    leftOut: r.leftOut,
+    hookOrigin: i
+  }).map((a) => {
+    let c = a.catch;
+    return {
+      ...a,
+      run: async (m, h, p) => fe({
+        loaded: r,
+        event: n,
+        origin: i
+      }, m) ? s(await a.run(m, h, p)) : h(m),
+      ...c !== void 0 && {
+        catch: async (m, h, p) => s(await c(m, h, p))
+      }
+    }
+  })
+}
+
+function Ae(e) {
+  return e.loaded.link !== void 0 ? Kt(e) : He(e)
+}
+
+function pB(e, r, n = {}) {
+  let i = [],
+    s = new Map;
+  for (let a of wPt(e, r, n)) {
+    let c = Ae({
+      loaded: a,
+      event: e,
+      origin: r,
+      raise: n.raise,
+      owners: s
+    });
+    s.set(c, a), i.push(c)
+  }
+  return i
+}
+export {
+  QFn,
+  hyo,
+  ZFn,
+  hPt,
+  yyo,
+  Zen,
+  zDe,
+  GDe,
+  yPt,
+  LL,
+  VDe,
+  etn,
+  kme,
+  _Pt,
+  g_,
+  ttn,
+  zO,
+  qDe,
+  Dqe,
+  _yo,
+  Xot,
+  Bkr,
+  Jot,
+  YZ,
+  Qot,
+  Zot,
+  e$n,
+  jkr,
+  byo,
+  bPt,
+  SPt,
+  t$n,
+  Wkr,
+  wPt,
+  pB,
+  est,
+  KDe,
+  Syo,
+  qzo,
+  wyo
+};

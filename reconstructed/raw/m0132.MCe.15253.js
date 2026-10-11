@@ -1,0 +1,1 @@
+function MCe(e){try{let t=ff()(e);return{msg:typeof t.msg==="string"?t.msg:"<unprintable thrown value>",name:typeof t.name==="string"?t.name:"Error",stack:typeof t.stack==="string"?t.stack:void 0}}catch{return{msg:"<unprintable thrown value>",name:"Error"}}}

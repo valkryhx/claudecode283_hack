@@ -1,0 +1,1 @@
+function Cr(e,r,s){if(s?.aborted)return Promise.resolve();let g=new AbortController,f=()=>g.abort();return s?.addEventListener("abort",f,{once:!0}),Promise.race([e,Q(r,g.signal)]).finally(()=>{g.abort(),s?.removeEventListener("abort",f)})}

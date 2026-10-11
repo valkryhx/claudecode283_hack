@@ -1,0 +1,1 @@
+M=(e)=>{let r=c.APPDATA||n.join(a,"AppData","Roaming"),s=c.LOCALAPPDATA||n.join(a,"AppData","Local");return{data:n.join(s,e,"Data"),config:n.join(r,e,"Config"),cache:n.join(s,e,"Cache"),log:n.join(s,e,"Log"),temp:n.join(m,e)}}

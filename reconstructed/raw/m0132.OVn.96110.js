@@ -1,0 +1,1 @@
+function OVn(e,t,o){if(!(mN(e)&&e>=1&&e<=o.columns))return`columns must be a whole number from 1 to ${o.columns}`;return mN(t)&&t>=1&&t<=o.rows?void 0:`rows must be a whole number from 1 to ${o.rows}`}

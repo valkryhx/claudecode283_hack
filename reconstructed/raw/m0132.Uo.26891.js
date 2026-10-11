@@ -1,0 +1,1 @@
+function Uo(e,t,o){let r=!1,n=()=>{r=!0};e.then(n,n),setTimeout(()=>{if(r||q(t))return;let i=Ye(t,`still running ${Mhe}ms after its budget ran out; ignores its signal`);kc().log(`hook overran: ${i} (${o.event})`,"error"),kc().hookFailed({plugin:t.name,event:o.event,reason:i,effect:"counted toward a runaway",hasOverrun:!0})},Mhe).unref?.()}

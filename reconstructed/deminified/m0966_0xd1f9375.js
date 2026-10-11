@@ -1,0 +1,141 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { c } from "B:/~BUN/root/chunk-kks4mj3w.js";
+import { st, te } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { q } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { _, m } from "B:/~BUN/root/chunk-51n463p1.js";
+import { za } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import { d } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { Ct, wn, O4n } from "B:/~BUN/root/chunk-bt3h0syz.js";
+import { jZr, cir, WZr } from "B:/~BUN/root/chunk-5y8nnrk8.js";
+import { ab } from "B:/~BUN/root/chunk-na2t7g12.js";
+var I = /AndroidManifest\.xml|<manifest xmlns:android=/,
+  v = /com\.android\.(application|library|tools\.build)/,
+  y = /\bimport android\./,
+  regExp = new RegExp(String.raw`(?:^|[;&|(]\s*)(?:(?:\w+=\S*|sudo|time|env)\s+)*(?:\S*[\\/])?(?:` + [String.raw`adb(?:\.exe)?\s`, String.raw`emulator(?:\.exe)?\s+(?:-|@)`, String.raw`(?:sdkmanager|avdmanager)\b`, String.raw`gradlew?(?:\.bat)?\s(?:\\\n|[^\n&|;])*\b(?:assemble|install|bundle)\w*(?:Debug|Release)\b`, String.raw`(?:npx\s+)?react-native\s+run-android\b`].join("|") + ")", "m"),
+  b = [".kt", ".kts", ".java"],
+  D = new Set([Ct, wn]);
+function u() {
+  return {
+    kotlinOrJavaFileEdited: !1,
+    evidence: null
+  };
+}
+function l(e) {
+  return e.kotlinOrJavaFileEdited && e.evidence !== null;
+}
+function f(e, r) {
+  for (let t of r) {
+    if (l(e)) return;
+    let i = t.type === "progress" && (t.data.type === "agent_progress" || t.data.type === "skill_progress") ? t.data.message : t;
+    if (i.type === "assistant") {
+      if (!Array.isArray(i.message.content)) continue;
+      for (let o of i.message.content) {
+        if (o.type !== "tool_use") continue;
+        let input = o.input;
+        if (typeof input !== "object" || input === null) continue;
+        if (D.has(o.name)) {
+          if ("file_path" in input && typeof input.file_path === "string" && S(input.file_path)) e.kotlinOrJavaFileEdited = !0;
+          if (e.evidence === null) e.evidence = "content" in input && p(input.content) || "new_string" in input && p(input.new_string) || null;
+        } else if (e.evidence === null && ab.includes(o.name) && "command" in input && typeof input.command === "string" && regExp.test(input.command)) e.evidence = "android_command";
+      }
+    } else if (i.type === "user" && e.evidence === null) {
+      if (!Array.isArray(i.message.content)) continue;
+      for (let o of i.message.content) {
+        if (o.type !== "tool_result") continue;
+        let n = T(o.content);
+        if (n !== null) {
+          e.evidence = n;
+          break;
+        }
+      }
+    }
+  }
+}
+function S(e) {
+  let r = e.toLowerCase();
+  return b.some(item => r.endsWith(item));
+}
+function p(e) {
+  if (typeof e !== "string") return null;
+  if (y.test(e)) return "android_import";
+  return a(e);
+}
+function a(e) {
+  if (I.test(e)) return "android_manifest";
+  return v.test(e) ? "gradle_plugin" : null;
+}
+function T(e) {
+  if (typeof e === "string") return a(e);
+  if (!Array.isArray(e)) return null;
+  for (let r of e) {
+    let t = r.type === "text" ? a(r.text) : null;
+    if (t !== null) return t;
+  }
+  return null;
+}
+var R = {
+  ios_app: () => {
+    let e = jZr();
+    return {
+      absorb: r => WZr(e, r),
+      trigger: () => cir(e)
+    };
+  },
+  android_app: () => {
+    let e = u();
+    return {
+      absorb: r => f(e, r),
+      trigger: () => l(e) ? e.evidence : null
+    };
+  }
+};
+function g() {
+  return new Map(O4n.map(item => [item, R[item]()]));
+}
+class A {
+  #n = g();
+  #e = new Set();
+  #t = new Set();
+  get intents() {
+    return this.#e;
+  }
+  absorb(e) {
+    let r = [];
+    for (let [kind, i] of this.#n) {
+      if (this.#e.has(kind)) continue;
+      let o = null;
+      try {
+        i.absorb(e);
+        let trigger = i.trigger();
+        if (trigger !== null) za({
+          type: "system",
+          subtype: "dev_intent",
+          kind: kind,
+          trigger: trigger
+        }), this.#e.add(kind), o = trigger;
+      } catch (error) {
+        if (d(st(te(error), "dev intent fold")), !this.#t.has(kind)) this.#t.add(kind), m("dev_intent_detect", "fold_threw");
+      }
+      let n = o;
+      if (n !== null) r.push(kind), _("dev_intent_detect", {
+        kind: c(kind),
+        trigger: c(n)
+      });
+    }
+    return r;
+  }
+  reset() {
+    this.#n = g(), this.#e.clear(), this.#t.clear();
+  }
+}
+var Coe = new q(() => new A());
+export { Coe };

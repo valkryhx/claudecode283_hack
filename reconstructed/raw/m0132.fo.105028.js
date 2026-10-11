@@ -1,0 +1,1 @@
+function fo(e){if(!Array.isArray(e))return"messages that are not a list";if(e.length===0)return"an empty messages (a compaction leaves at least one)";let t=e.map(rn),o=t.findIndex((n)=>n!==void 0);return o===-1?void 0:`messages[${o}] that ${t[o]}`}

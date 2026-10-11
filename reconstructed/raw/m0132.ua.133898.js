@@ -1,0 +1,1 @@
+function ua(e){let t=[],o=[];function r(){let[n]=o,s=n?.hop;if(n!==void 0&&s!==void 0)t.push(ma(s,o));o=[]}for(let n of e){if(!(n.hop!==void 0&&n.hop.key===o[0]?.hop?.key))r();if(n.hop===void 0){t.push(n);continue}o.push(n)}return r(),t}

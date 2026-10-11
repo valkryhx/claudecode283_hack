@@ -1,0 +1,1 @@
+function ee(e,n){return e.some((r)=>{switch(r){case"null":return n===null;case"boolean":return typeof n==="boolean";case"string":return typeof n==="string";case"number":return typeof n==="number"&&Number.isFinite(n);case"integer":return typeof n==="number"&&Number.isInteger(n);case"array":return Array.isArray(n);case"object":return G(n);default:return!0}})}

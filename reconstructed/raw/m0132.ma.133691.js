@@ -1,0 +1,1 @@
+var ma=(e,t)=>({name:t.map((o)=>o.name).join("+"),tier:t[0]?.tier,tiers:L(t.map(Ce)),budgetMs:0,isHop:!0,run:(o,r,{open:n,floors:s})=>e.run({members:t,e:o,open:n,signal:r.signal,origin:r.origin,floors:s})});

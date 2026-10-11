@@ -1,0 +1,1 @@
+function $e(e){let n=S(e,"type"),r;if(typeof n==="string"&&Q.has(n))r=[n];else if(Array.isArray(n)&&n.length>0&&n.every((s)=>typeof s==="string"&&Q.has(s)))r=n.slice();else return;if(S(e,"nullable")===!0&&!r.includes("null"))r.push("null");return r}

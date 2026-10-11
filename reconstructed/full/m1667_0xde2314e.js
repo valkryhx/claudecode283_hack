@@ -1,0 +1,601 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  D5
+} from "B:/~BUN/root/chunk-cyn7mwjt.js";
+import {
+  qI,
+  SK,
+  EBe,
+  wo,
+  $_e
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  te,
+  l
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  Ht
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import {
+  oYt
+} from "B:/~BUN/root/chunk-y19pnsxj.js";
+import {
+  MK
+} from "B:/~BUN/root/chunk-5sy7sbyq.js";
+import {
+  z0o,
+  wy,
+  An,
+  t$,
+  vt,
+  o2
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  Fv
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  Ie
+} from "B:/~BUN/root/chunk-sd4cj2qx.js";
+import {
+  Mq
+} from "B:/~BUN/root/chunk-aw2zngte.js";
+import {
+  Eo
+} from "B:/~BUN/root/chunk-8zp66ckr.js";
+import {
+  eNt,
+  LDr,
+  tNt
+} from "B:/~BUN/root/chunk-hjery5bx.js";
+import {
+  qke
+} from "B:/~BUN/root/chunk-xfvqq19y.js";
+import {
+  QRo
+} from "B:/~BUN/root/chunk-65tbbnf1.js";
+import {
+  yx
+} from "B:/~BUN/root/chunk-ew8y0fm0.js";
+import {
+  ugr
+} from "B:/~BUN/root/chunk-as7rvra0.js";
+import {
+  JIr
+} from "B:/~BUN/root/chunk-7d9qjs8x.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import {
+  _a,
+  Kn,
+  ty,
+  $t
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  jSo
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import {
+  mX,
+  Q3,
+  HOr,
+  jOr,
+  WOr
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  me,
+  Ale
+} from "B:/~BUN/root/chunk-fk6j5yf3.js";
+import {
+  ax
+} from "B:/~BUN/root/chunk-yzpw1mdr.js";
+import {
+  nIr
+} from "B:/~BUN/root/chunk-d8zzdckb.js";
+import {
+  qZ,
+  f3,
+  KZ,
+  Eqe
+} from "B:/~BUN/root/chunk-9sy3w2pa.js";
+import {
+  aGn,
+  NLt
+} from "B:/~BUN/root/chunk-fhmaxxy1.js";
+import {
+  zsr,
+  PZr,
+  VSt,
+  RSe,
+  d4t
+} from "B:/~BUN/root/chunk-7r4zb9xn.js";
+import {
+  ol
+} from "B:/~BUN/root/chunk-syke822n.js";
+import {
+  n,
+  ek
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import {
+  ze
+} from "B:/~BUN/root/chunk-r2yrqvry.js";
+import {
+  dn
+} from "B:/~BUN/root/chunk-h23911wn.js";
+import {
+  Wr
+} from "B:/~BUN/root/chunk-5r1x61tc.js";
+import {
+  qJe
+} from "B:/~BUN/root/chunk-cpg4rjtx.js";
+import {
+  ge
+} from "B:/~BUN/root/chunk-51erc9xb.js";
+import {
+  fue
+} from "B:/~BUN/root/chunk-g12nftwt.js";
+import {
+  tJe
+} from "B:/~BUN/root/chunk-cjdxpr4j.js";
+import {
+  rd
+} from "B:/~BUN/root/chunk-ph7apw4w.js";
+import {
+  Tyt
+} from "B:/~BUN/root/chunk-mdaf06x1.js";
+import {
+  $6r
+} from "B:/~BUN/root/chunk-h7qf9khh.js";
+import {
+  eJe,
+  T2t
+} from "B:/~BUN/root/chunk-7bpe2enr.js";
+import {
+  SU,
+  woe
+} from "B:/~BUN/root/chunk-qzprwy0h.js";
+import {
+  E2t
+} from "B:/~BUN/root/chunk-mq2jwp4a.js";
+import {
+  Xe
+} from "B:/~BUN/root/chunk-parcaazx.js";
+import {
+  VC,
+  cU
+} from "B:/~BUN/root/chunk-b36qwjxy.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import {
+  aL
+} from "B:/~BUN/root/chunk-mqsfaz82.js";
+import {
+  T,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+N();
+
+function x1o() {
+  HOr(mX())
+}
+async function pue(o, s, i) {
+  if (o.onChangeAPIKey(), !s) return {
+    bridgeDisconnected: !1,
+    accountSwitched: !1,
+    relaunching: !1
+  };
+  let u = wo(),
+    c = u !== null && u !== i.previousGatewayAuth;
+  if (Ie() === "gateway") {
+    let f = i.onConsentNeeded,
+      C = {
+        release: null
+      },
+      V = f ? PZr(() => (C.release ??= zsr(), f())) : null;
+    try {
+      let v;
+      try {
+        v = await d4t(tJe, o.storageV5, o.credentials)
+      } finally {
+        V?.()
+      }
+      let A = wo(),
+        O = ee(A);
+      if (c && !v.fetchSucceeded && v.failure?.errorKind === "gateway_cert_mismatch") return await ne(o, A, P1o(O, v.failure.gatewayPinMismatch));
+      if (!v.fetchSucceeded || Tyt()) {
+        let _ = v.fetchSucceeded ? void 0 : v.failure;
+        return await oe(o, I1o(O, _, c), (P) => O1o(O, _, P, c)), F
+      }
+      if (Eo()) return F;
+      E2t("gateway"), yx(), nIr()
+    } finally {
+      if (!Eo()) C.release?.()
+    }
+  } else RSe(tJe, o.storageV5, o.credentials);
+  EBe();
+  let p = NLt().catch(() => {});
+  p.then(() => {
+    if (JIr()) ugr({
+      credentials: o.credentials,
+      storageV5: o.storageV5,
+      timeoutMs: 5000
+    })
+  }).catch(() => {}), t$(), o2(), Ht(p, aGn, "post-login policy limits refresh").catch(() => {}).then(() => $6r()).catch((f) => d(f));
+  let {
+    setAppState: m
+  } = i, y = D5.of(o.session), b = () => y.credentialsPersisted(), E = i.previousAccount, M = An(), R = wy(E, M), {
+    replBridgeEnabled: D,
+    replBridgeOutboundOnly: k
+  } = o.getAppState(), h = E?.accountUuid !== void 0 && !R, G = h && D && !k;
+  if (h) m((f) => {
+    if (!(f.replBridgeEnabled || f.replBridgeError !== void 0)) return f;
+    return t("[bridge:repl] Account changed via /login \u2014 disconnecting Remote Control session"), {
+      ...f,
+      replBridgeEnabled: !1,
+      replBridgeExplicit: !1,
+      replBridgeOutboundOnly: !1,
+      replBridgeError: void 0,
+      replBridgeErrorKind: void 0,
+      notifications: qJe(f.notifications, aL)
+    }
+  });
+  if (Q3(), jOr(), QRo(M), i.setAppState(oYt), h)
+    if (WOr(), i.setAppState((f) => ({
+        ...f,
+        replBridgeSessionGroupingId: void 0,
+        replBridgeInitialName: void 0,
+        ultrareviewOverageConfirmed: !1
+      })), jSo(), o.dialogStore) o.dialogStore.dismissKind(MK.kind);
+    else d(Error("runPostLoginHooks: no dialog store to dismiss a pending Remote Control callout on account switch"));
+  if (R && await eNt()) t("[trusted-device] Same account+org re-login with existing token, skipping re-enrollment"), b();
+  else {
+    LDr();
+    let f = tNt({
+      credentials: o.credentials
+    }).then(b, b);
+    if (i.awaitEnrollment) await f
+  }
+  let {
+    host: L
+  } = o.session, I = o.getAppState();
+  return T2t(L), eJe(L, me(o), m, I.fastMode), x1o(), y.loginCompleted(), {
+    bridgeDisconnected: G,
+    accountSwitched: h,
+    relaunching: !1
+  }
+}
+var Z = 16;
+
+function j(o) {
+  return `${o.slice(0,Z)}\u2026`
+}
+
+function ee(o) {
+  try {
+    return o ? new URL(o.url).hostname : "gateway"
+  } catch {
+    return o?.url ?? "gateway"
+  }
+}
+var F = {
+  bridgeDisconnected: !1,
+  accountSwitched: !1,
+  relaunching: !0
+};
+async function ne(o, s, i) {
+  for (let p = $_e(); p; p = $_e()) await p.catch(() => {});
+  let u = wo();
+  if (await z0o(u && s && u.url === s.url ? u : s, o.credentials), await VSt(o.storageV5), Eo()) return {
+    ...F,
+    gatewayLoginError: i
+  };
+  let c = !_a();
+  if (c) await SU(o.messages, o.storageV5);
+  return await Kn(0, "other", {
+    finalMessage: `${i}
+This session is ending so that nothing from that gateway stays half-applied. Start claude again${c?" to continue (your conversation can be resumed)":""} and sign in once that is fixed.`
+  }), {
+    ...F,
+    gatewayLoginError: i
+  }
+}
+
+function P1o(o, s) {
+  let i = s?.presentedFingerprint && s.pinnedFingerprint ? `TLS certificate ${j(s.presentedFingerprint)} instead of the one you trusted (${j(s.pinnedFingerprint)})` : "a different TLS certificate from the one you trusted";
+  return `Cloud gateway sign-in was not completed: on the first request after sign-in, ${o} presented ${i}. No gateway credentials were kept. Usually this means the gateway runs several nodes behind one address that serve different certificates (they must all serve the same one), or something on the network path is intercepting TLS.`
+}
+
+function re(o, s) {
+  switch (o.errorKind) {
+    case "timeout":
+      return "the request timed out";
+    case "network_error":
+      return "couldn't connect to the gateway";
+    case "http_401":
+      return s ? "the gateway did not accept the new credential" : "the gateway did not accept this session's credential";
+    case "http_403":
+      return "the gateway refused them for this account: Claude Code may not be enabled for your organization; contact your administrator";
+    case "no_auth_available":
+      return "no credential was on hand for the request";
+    case "profile_credential_error":
+      return "the profile credential could not authenticate the request (details with --debug)";
+    case "http_4xx":
+    case "http_5xx":
+      return o.httpStatus === void 0 ? "the gateway answered with an unexpected status" : `the gateway answered HTTP ${o.httpStatus}`;
+    case "parse_error":
+      return "the gateway's response was not valid managed settings";
+    case "ruled_empty":
+      return "no setting in the gateway's response could be applied as written";
+    case "gateway_cert_mismatch":
+      return "the gateway's TLS certificate did not match the one you trusted";
+    case "gateway_public_address":
+      return "the gateway's name resolved to a public address, so the request was not sent";
+    case "gateway_pin_refused":
+      return "the credentials file that keeps the gateway's TLS pin is a symlink, which is not followed";
+    case "gateway_pin_unreadable":
+      return "the credentials file that keeps the gateway's TLS pin could not be read (try again)";
+    case "unknown_error":
+      return "something unexpected went wrong (details with --debug)"
+  }
+}
+
+function X(o, s, i) {
+  if (s) {
+    let u = re(s, i);
+    return i ? `Signed in to Cloud gateway ${o}, but couldn't load your organization's managed settings (${u})` : `Couldn't reload your organization's managed settings from Cloud gateway ${o} (${u})`
+  }
+  return i ? `Signed in to Cloud gateway ${o}` : `Your organization's managed settings on Cloud gateway ${o} changed`
+}
+
+function I1o(o, s, i, u = !_a()) {
+  let c = u ? "\u2026" : " (this conversation is not saved, so it starts fresh)\u2026",
+    p = X(o, s, i);
+  return s ? `${p}. Restarting Claude Code to retry${c}` : `${p}. Restarting Claude Code to apply ${i?"your organization's managed settings":"them"}${c}`
+}
+
+function O1o(o, s, i, u, c = !_a()) {
+  return `${X(o,s,u)}. ${s?"Claude Code has to restart to retry":`Claude Code has to restart to apply ${u?"your organization's managed settings":"them"}`}, and ${i}, so this session is ending instead. Your sign-in is saved: start claude again the same way${c?" (add --continue to return to this conversation)":""}.`
+}
+async function oe(o, s, i) {
+  if (Eo()) return;
+  let u = (y) => Kn(0, "other", {
+    finalMessage: i(y)
+  });
+  if (await SU(ax(o), o.storageV5), Eo()) return;
+  if (vt()) return u("a background session cannot restart itself (sign in from a session started directly with `claude`)");
+  let c = me(o),
+    p = f3(c, qI());
+  if (p.length > 0) return u(`this session has restrictions a restart can't carry over (${p.join("; ")})`);
+  let m = {
+    proactivityLevel: o.getProactivityLevel(),
+    toolPermissionContext: c
+  };
+  try {
+    await woe({
+      freshIfNoTranscript: !0,
+      extraArgs: [...qZ(c, Ale(o)), ...KZ(c, SK())],
+      proactivity: m,
+      env: {
+        ...Mq(),
+        ...Eqe(c.additionalWorkingDirectories)
+      },
+      preSpawn: () => process.stdout.write(`
+${s}
+`)
+    }, o.storageV5)
+  } catch (y) {
+    return d(te(y)), u(`it could not restart itself (${l(y)})`)
+  }
+}
+
+function QXe(o, s, i, {
+  envTokenWasSet: u = !1,
+  envWarningOnce: c
+} = {}) {
+  if (i.gatewayLoginError !== void 0 || i.relaunching) return [i.gatewayLoginError];
+  let p = s ? M1o(o, i) : void 0,
+    m = N1o({
+      envTokenWasSet: u,
+      gatewayActive: Ie() === "gateway",
+      willAutoQuery: p?.shouldQuery === !0
+    });
+  if (m === "out-of-band" && c && !c.delivered) c.delivered = !0, o.applyMessageOp({
+    type: "append",
+    messages: [$t(zYr, "notice")]
+  });
+  return [H1o(s, {
+    bridgeDisconnected: i.bridgeDisconnected,
+    includeEnvTokenWarning: m === "inline"
+  }), p]
+}
+
+function M1o(o, s) {
+  if (s.accountSwitched || s.relaunching) return;
+  let i = ty(o.messages);
+  if (i?.isApiErrorMessage && i.error === "authentication_failed") return {
+    display: "system",
+    shouldQuery: !0
+  };
+  return
+}
+var Y = "but if that variable is set in your shell profile or a Claude Code settings file, new `claude` sessions will keep using the old token until you remove it there.";
+
+function D1o() {
+  return "Signed in. Review your organization's managed settings to continue."
+}
+
+function L1o() {
+  return a.CLAUDE_CODE_OAUTH_TOKEN ? `Warning: CLAUDE_CODE_OAUTH_TOKEN is set in your environment. This session will switch to your new credentials after logging in, ${Y}` : void 0
+}
+var zYr = `Note: CLAUDE_CODE_OAUTH_TOKEN was set in your environment when /login started. This session will use your new credentials, ${Y}`;
+
+function N1o(o) {
+  if (!o.envTokenWasSet || o.gatewayActive) return "none";
+  return o.willAutoQuery ? "out-of-band" : "inline"
+}
+
+function H1o(o, s) {
+  if (!o) return "Login interrupted";
+  let i = s.bridgeDisconnected ? `Login successful. ${qke}` : "Login successful";
+  return s.includeEnvTokenWarning ? `${i}
+
+${zYr}` : i
+}
+async function uqo(o, s) {
+  let i = L1o(),
+    u = i !== void 0,
+    c = An(),
+    p = c && {
+      accountUuid: c.accountUuid,
+      organizationUuid: c.organizationUuid
+    },
+    m = wo(),
+    y = {
+      delivered: !1
+    };
+  return e(Hre, {
+    startingMessage: i,
+    onDone: async (b, E, M) => {
+      let R = !1,
+        D = await pue(s, b, {
+          setAppState: M,
+          previousAccount: p,
+          previousGatewayAuth: m,
+          onConsentNeeded: () => (R = !0, o(D1o(), {
+            display: "system"
+          }), Fv())
+        }),
+        k = QXe(s, b, D, {
+          envTokenWasSet: u,
+          envWarningOnce: y
+        });
+      if (R) {
+        let [h] = k;
+        if (h) s.applyMessageOp({
+          type: "append",
+          messages: [$t(h, "notice")]
+        });
+        return
+      }
+      o(...k)
+    }
+  })
+}
+
+function Hre(o) {
+  let m = w(29),
+    s = rd(),
+    i = dn(),
+    u = ol(),
+    [c, p] = g(!1),
+    y;
+  if (m[0] === S) y = () => p(!0), m[0] = y;
+  else y = m[0];
+  let b = y,
+    E = T(!1),
+    [M, R] = g(!1),
+    D;
+  if (m[1] !== s || m[2] !== o || m[3] !== i) D = (k) => {
+    if (E.current) {
+      return
+    }
+    E.current = !0, R(!0), o.onDone(k, s, i)
+  }, m[1] = s, m[2] = o, m[3] = i, m[4] = D;
+  else D = m[4];
+  let h = D,
+    G;
+  if (m[5] !== c || m[6] !== h) G = () => h(c), m[5] = c, m[6] = h, m[7] = G;
+  else G = m[7];
+  let L = G,
+    I;
+  if (m[8] === S) I = {
+    context: "Settings"
+  }, m[8] = I;
+  else I = m[8];
+  ze("confirm:no", L, I);
+  let {
+    exit: f
+  } = ek(), [C, V] = g(!1), v;
+  if (m[9] !== f || m[10] !== h || m[11] !== C) v = () => {
+    if (C && !E.current) {
+      h(!1);
+      return
+    }
+    f()
+  }, m[9] = f, m[10] = h, m[11] = C, m[12] = v;
+  else v = m[12];
+  let A = Wr(v);
+  const O = c && !A.pending;
+  let _;
+  if (m[13] !== M || m[14] !== A.keyName || m[15] !== A.pending || m[16] !== C) _ = A.pending ? r(n, {
+    children: ["Press ", A.keyName, " again to", " ", C && !M ? "cancel" : "exit"]
+  }) : e(Xe, {
+    action: "confirm:no",
+    context: "Settings",
+    fallback: "Esc",
+    description: "cancel"
+  }), m[13] = M, m[14] = A.keyName, m[15] = A.pending, m[16] = C, m[17] = _;
+  else _ = m[17];
+  let P;
+  if (m[18] !== h) P = () => h(!0), m[18] = h, m[19] = P;
+  else P = m[19];
+  const W = u ? cU : VC;
+  let B;
+  if (m[20] !== o.startingMessage || m[21] !== P || m[22] !== W) B = e(fue, {
+    onDone: P,
+    onAuthSuccess: b,
+    onFreshPickerChange: V,
+    startingMessage: o.startingMessage,
+    urlOutdent: W
+  }), m[20] = o.startingMessage, m[21] = P, m[22] = W, m[23] = B;
+  else B = m[23];
+  let J;
+  if (m[24] !== L || m[25] !== O || m[26] !== _ || m[27] !== B) J = e(ge, {
+    title: "Login",
+    onCancel: L,
+    color: "permission",
+    isCancelActive: !1,
+    hideInputGuide: O,
+    inputGuide: _,
+    children: B
+  }), m[24] = L, m[25] = O, m[26] = _, m[27] = B, m[28] = J;
+  else J = m[28];
+  return J
+}
+export {
+  x1o,
+  pue,
+  P1o,
+  I1o,
+  O1o,
+  QXe,
+  M1o,
+  D1o,
+  L1o,
+  zYr,
+  N1o,
+  H1o,
+  uqo,
+  Hre
+};

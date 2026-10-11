@@ -1,0 +1,929 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  Ii
+} from "B:/~BUN/root/chunk-bt71g93n.js";
+import {
+  ve
+} from "B:/~BUN/root/chunk-cxqcvpm0.js";
+import {
+  s,
+  n,
+  _t
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import {
+  hr
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import {
+  Yt
+} from "B:/~BUN/root/chunk-jdm3bsma.js";
+import {
+  I
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  ke
+} from "B:/~BUN/root/chunk-kss0wzj5.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  af,
+  Tn
+} from "B:/~BUN/root/chunk-rwwxddqq.js";
+import {
+  Pkn,
+  $je,
+  tbt,
+  nbt,
+  Fkn,
+  GQ,
+  RXr
+} from "B:/~BUN/root/chunk-gn719r3c.js";
+import {
+  Ube
+} from "B:/~BUN/root/chunk-9jvj58wt.js";
+import {
+  ol,
+  As
+} from "B:/~BUN/root/chunk-syke822n.js";
+import {
+  ir
+} from "B:/~BUN/root/chunk-4r6zcwth.js";
+import {
+  Rn,
+  J3e
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  ye
+} from "B:/~BUN/root/chunk-41008fhm.js";
+import {
+  ge
+} from "B:/~BUN/root/chunk-51erc9xb.js";
+import {
+  F
+} from "B:/~BUN/root/chunk-acd2tycn.js";
+import {
+  Kc,
+  kn
+} from "B:/~BUN/root/chunk-87fmbjg1.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-zg8y1401.js";
+import {
+  Qn
+} from "B:/~BUN/root/chunk-jcnv9sfw.js";
+import {
+  xgt
+} from "B:/~BUN/root/chunk-bm2wsr80.js";
+import {
+  jr
+} from "B:/~BUN/root/chunk-1xe8mz4a.js";
+import {
+  ko
+} from "B:/~BUN/root/chunk-v1xd9kf3.js";
+import {
+  V,
+  e,
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import {
+  Aje,
+  M_t
+} from "B:/~BUN/root/chunk-f0qx42vc.js";
+import {
+  Z
+} from "B:/~BUN/root/chunk-08bth2fj.js";
+import {
+  se,
+  R,
+  X,
+  T,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import {
+  U
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+N();
+
+function Xt(W) {
+  return e(kn.Item, {
+    label: Rn(W.title),
+    meta: Me(W)
+  }, W.draft_id)
+}
+
+function Jt(ne) {
+  return e(kn.Item, {
+    label: Rn(ne.title),
+    meta: Me(ne)
+  }, ne.draft_id)
+}
+var Te = ["bug", "idea", "missing_capability"],
+  wt = {
+    bug: "bug",
+    idea: "idea",
+    missing_capability: "missing capability"
+  },
+  Ne = [void 0, ...tbt],
+  Ke = [void 0, ...nbt];
+
+function rt(h) {
+  return h === void 0 ? "(none)" : h.replace(/_/g, " ")
+}
+
+function st(h) {
+  return ["type", "title", "area", "failure_mode", "task_category", "details", ...h.transcriptAvailable ? ["transcript"] : [], "send"]
+}
+var Pe = 500,
+  ot = 6,
+  at = 3,
+  lt = 5;
+
+function AJe({
+  messages: h,
+  onDone: u,
+  abortSignal: c,
+  onWriteNew: d
+}) {
+  let [f, C] = g(null), [y, L] = g(0), Q = _t(), [m, M] = g("list"), [o, O] = g(null), [D, H] = g(!1), [q, _, A] = Ii(0), [E, k, G] = Ii(null), [Y, ee] = g(null), ce = T(-1 / 0), [oe, B] = g(null), [ae, ue] = g(null), te = ve().columns - 6, x = Yt(), le = T(0), W = T(!1), ne = T(0), fe = T(!1), xe = T(!1), {
+    storageV5: J,
+    credentials: je
+  } = ke(), ie = ir((t) => t.id), me = d !== void 0, de = se(async () => {
+    let {
+      queued: t
+    } = await GQ(void 0, J).catch(() => ({
+      queued: [],
+      expired: []
+    }));
+    RXr(U(t, (l) => l.source_session_id === ie)), C(t);
+    let a = t.length - (me ? 0 : 1);
+    return L((l) => Math.min(l, Math.max(0, a))), t
+  }, [ie, me, J, L]);
+  R(() => {
+    de().then((t) => {
+      i("tengu_feedback_queue_opened", {
+        queued_count: hr(t.length),
+        this_session_count: hr(U(t, (a) => a.source_session_id === ie))
+      })
+    })
+  }, [de, ie]);
+  let Ve = (f ?? []).filter((t) => t.source_session_id === ie),
+    Xe = (f ?? []).filter((t) => t.source_session_id !== ie),
+    re = [...Ve, ...Xe],
+    Je = me && y === re.length,
+    ze = re.length + (me ? 1 : 0),
+    Ct = re[y],
+    Oe = o ? $je(o.request_ids).length : 0,
+    pe = se((t) => {
+      if (t === void 0) u();
+      else u(t, {
+        display: "system"
+      })
+    }, [u]),
+    K = X(() => o ? st(o) : [], [o]),
+    Ce = se((t) => {
+      le.current = x.now(), _(t.length - 1)
+    }, [x, _]),
+    p = K[q],
+    he = p === "title" || p === "area" || p === "details",
+    Ft = se((t) => {
+      O(t), H(t.transcriptAvailable), B(null), k({
+        type: t.type,
+        title: Rn(t.title),
+        area: Rn(t.area ?? ""),
+        failureMode: t.failure_mode,
+        taskCategory: t.task_category,
+        details: J3e(t.details)
+      }), ee(null), ce.current = -1 / 0, Ce(st(t)), ne.current = x.now(), W.current = !1, xe.current = !1, M("review")
+    }, [x, Ce, k]),
+    Qe = se(async (t) => {
+      let a = x.now(),
+        l = ne.current;
+      if (ne.current = Math.max(a, l), a - l < Pe || fe.current || W.current) return;
+      fe.current = !0;
+      try {
+        await M_t(t, "panel", J).catch(() => {}), await de(), M("list"), O(null)
+      } finally {
+        fe.current = !1
+      }
+    }, [de, x, J]),
+    Fe = se((t) => {
+      O(t), C((b) => b ? b.map((v) => v.draft_id === t.draft_id ? t : v) : b);
+      let {
+        transcriptAvailable: a,
+        ...l
+      } = t;
+      return Fkn(l, new Date, J).then((b) => {
+        if (!b.success) B(b.reason === "too_large" ? "That draft is too large to save. Trim the details." : "Could not save the draft to disk.")
+      })
+    }, [J]),
+    De = se(() => {
+      let t = G();
+      if (!o || !t) return o;
+      let a = Rn(o.title),
+        l = Rn(o.area ?? ""),
+        b = J3e(o.details),
+        v = t.title === a || t.title.trim() === "" ? o.title : t.title.trim(),
+        _e = t.area === l ? o.area ?? "" : t.area.trim(),
+        it = t.details === b ? o.details : t.details.trim() === "" ? "" : t.details;
+      if (t.type === o.type && v === o.title && (_e === "" ? void 0 : _e) === o.area && t.failureMode === o.failure_mode && t.taskCategory === o.task_category && it === o.details) return o;
+      return {
+        ...o,
+        type: t.type,
+        title: v,
+        area: _e === "" ? void 0 : _e,
+        failure_mode: t.failureMode,
+        task_category: t.taskCategory,
+        details: it
+      }
+    }, [o, G]),
+    Ze = se(() => {
+      let t = De();
+      if (t && t !== o) {
+        if (o && t.details === "" && o.details !== "" && x.now() - ce.current < Pe) t = {
+          ...t,
+          details: o.details
+        };
+        Fe(t)
+      }
+    }, [De, o, Fe, x]),
+    j = se((t) => {
+      ee(null), B((a) => a === Re ? null : a), _((a) => {
+        let l = Math.max(0, Math.min(K.length - 1, a + t));
+        if (l !== a && K[l] === "send") le.current = x.now();
+        return l
+      })
+    }, [K, x, _]),
+    Dt = se((t, a) => {
+      if (t === "type") k((l) => {
+        if (!l) return l;
+        let b = Te.indexOf(l.type),
+          v = Te[(b + a + Te.length) % Te.length];
+        return v ? {
+          ...l,
+          type: v
+        } : l
+      });
+      else if (t === "failure_mode") k((l) => {
+        if (!l) return l;
+        let b = Ne.indexOf(l.failureMode),
+          v = Ne.length;
+        return {
+          ...l,
+          failureMode: Ne[(b + a + v) % v]
+        }
+      });
+      else if (t === "task_category") k((l) => {
+        if (!l) return l;
+        let b = Ke.indexOf(l.taskCategory),
+          v = Ke.length;
+        return {
+          ...l,
+          taskCategory: Ke[(b + a + v) % v]
+        }
+      });
+      else if (t === "transcript") H((l) => !l)
+    }, [k]),
+    Tt = se(async () => {
+      if (!o || W.current || fe.current) return;
+      let t = x.now(),
+        a = le.current;
+      if (le.current = Math.max(t, a), t - a < Pe) return;
+      if (G()?.title.trim() === "") {
+        B("Title is blank. Type a title, or press esc on the field to restore it.");
+        return
+      }
+      let l = De() ?? o;
+      if (W.current = !0, M("submitting"), B(null), l !== o) await Fe(l);
+      let b;
+      try {
+        b = await Aje({
+          draft: l,
+          includeTranscript: D && l.transcriptAvailable,
+          currentSessionMessages: h,
+          signal: c,
+          storageV5: J,
+          credentials: je
+        })
+      } catch {
+        b = {
+          success: !1,
+          error: "Couldn't send feedback. The draft is still queued. Try again later."
+        }
+      }
+      if (W.current = !1, b.success) await de(), ue(b.feedbackId), M("receipt");
+      else {
+        if (B(b.error), b.payloadTooLarge) {
+          let v = K.indexOf("transcript");
+          if (v >= 0) _(v)
+        }
+        M("review")
+      }
+    }, [o, G, D, h, c, de, x, De, Fe, J, je, K, _]);
+
+  function Rt(t) {
+    if (t.ctrl || t.meta) return;
+    if (m === "submitting") {
+      t.preventDefault();
+      return
+    }
+    if (t.key === "escape" && !(m === "review" && he)) return;
+    if (m === "receipt") {
+      if (t.preventDefault(), (f?.length ?? 0) > 0) M("list"), O(null);
+      else pe(`Feedback sent (receipt ${ae})`);
+      return
+    }
+    if (m === "list") {
+      if (!f) {
+        t.preventDefault();
+        return
+      }
+      if (t.key.toLowerCase() === "w" && d) {
+        t.preventDefault(), d();
+        return
+      }
+      if (ze === 0) {
+        t.preventDefault(), pe();
+        return
+      }
+      if (re.length > 0) return;
+      if (t.key === "up" || t.key === "down") t.preventDefault();
+      else if (t.key === "return" && d) t.preventDefault(), d();
+      else if (t.key !== "escape") t.preventDefault(), pe();
+      return
+    }
+    if (m === "review" && o) {
+      if (xe.current) {
+        t.preventDefault();
+        return
+      }
+      if (he) {
+        if (t.key === "escape") t.preventDefault(), tt();
+        return
+      }
+      let a = K[A()];
+      if (t.key === "up") t.preventDefault(), j(-1);
+      else if (t.key === "down") t.preventDefault(), j(1);
+      else if (t.key === "left" || t.key === "right") t.preventDefault(), Dt(a, t.key === "left" ? -1 : 1);
+      else if (t.key === " " && a === "transcript") t.preventDefault(), H((l) => !l);
+      else if (t.key === "return")
+        if (t.preventDefault(), a === "send") Tt();
+        else j(1);
+      else if (t.key.toLowerCase() === "d" && a !== "title" && a !== "area" && a !== "details") t.preventDefault(), Qe(o)
+    }
+  }
+  let be = se(() => {
+      if (xe.current || W.current || fe.current) return;
+      xe.current = !0, Ze(), ne.current = -1 / 0, M("list"), O(null)
+    }, [Ze]),
+    tt = se(() => {
+      if (m !== "review") {
+        pe();
+        return
+      }
+      let t = K[A()];
+      if (t !== "title" && t !== "area" && t !== "details") {
+        be();
+        return
+      }
+      k((a) => a && o ? {
+        ...a,
+        [t]: t === "details" ? J3e(o.details) : Rn(o[t] ?? "")
+      } : a), ee(null), Ce(K), B((a) => a === Re ? null : a)
+    }, [m, o, K, A, be, k, Ce, pe]),
+    nt = !(Q && re.length > 0),
+    St = m === "list" ? r(ye, {
+      children: [ze > 0 && nt && e(F, {
+        chord: "enter",
+        action: Je ? "write new feedback" : "review"
+      }), Ct !== void 0 && nt && e(F, {
+        chord: "d",
+        action: "discard"
+      }), e(F, {
+        chord: "esc",
+        action: "close"
+      })]
+    }) : m === "review" ? r(ye, {
+      children: [e(F, {
+        chord: ["up", "down"],
+        action: "move"
+      }), (p === "type" || p === "failure_mode" || p === "task_category" || p === "transcript") && e(F, {
+        chord: ["left", "right"],
+        action: "change"
+      }), e(F, {
+        chord: "enter",
+        action: p === "send" ? "send" : "next"
+      }), p === "details" && e(F, {
+        chord: Ube() ? "shift+enter" : "ctrl+j",
+        action: "new line"
+      }), !he && e(F, {
+        chord: "d",
+        action: "discard"
+      }), e(F, {
+        chord: "esc",
+        action: he ? "cancel edit" : "later"
+      })]
+    }) : null;
+  return e(jr, {
+    onKeyDown: Rt,
+    children: r(ge, {
+      title: "Feedback drafts",
+      onCancel: tt,
+      isCancelActive: m !== "submitting" && !he,
+      hideInputGuide: m === "receipt" || m === "submitting",
+      inputGuide: St,
+      children: [m === "list" && f === null && e(n, {
+        dimColor: !0,
+        children: "Loading\u2026"
+      }), m === "list" && f !== null && re.length === 0 && r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [e(n, {
+          children: "No feedback drafts queued."
+        }), e(n, {
+          dimColor: !0,
+          children: "Claude drafts feedback at high-signal moments; drafts appear here for your review."
+        }), d ? r(s, {
+          flexDirection: "column",
+          gap: 1,
+          children: [e(kt, {
+            isSelected: Je
+          }), e(n, {
+            dimColor: !0,
+            children: "/bug works anytime. Any other key closes this panel."
+          })]
+        }) : e(n, {
+          dimColor: !0,
+          children: "Any key closes this panel."
+        })]
+      }), m === "list" && f !== null && re.length > 0 && r(s, {
+        flexDirection: "column",
+        children: [e(xt, {
+          thisSession: Ve,
+          others: Xe,
+          hasWriteNew: me,
+          defaultFocusIndex: y,
+          onFocus: L,
+          onOpen: Ft,
+          onWriteNew: () => d?.(),
+          onDiscard: (t) => void Qe(t)
+        }), e(s, {
+          marginTop: 1,
+          children: e(n, {
+            dimColor: !0,
+            wrap: "wrap",
+            children: "Drafts live only on this machine and are never sent without you. Unsent drafts expire after 30 days."
+          })
+        })]
+      }), m === "review" && o && E && r(s, {
+        flexDirection: "column",
+        children: [r(s, {
+          children: [e(P, {
+            isFocused: p === "type"
+          }), e(n, {
+            children: "Type: "
+          }), e(we, {
+            value: wt[E.type],
+            isFocused: p === "type"
+          })]
+        }), e(Ae, {
+          label: "Title:",
+          value: E.title,
+          isFocused: p === "title",
+          bold: !0,
+          columns: te,
+          cursorOffset: Y,
+          onChange: (t) => k((a) => a ? {
+            ...a,
+            title: t
+          } : a),
+          onCursorChange: ee,
+          onNext: () => j(1),
+          onPrev: () => j(-1),
+          onExit: be
+        }), e(Ae, {
+          label: "Area:",
+          value: E.area,
+          isFocused: p === "area",
+          dim: !0,
+          columns: te,
+          cursorOffset: Y,
+          onChange: (t) => k((a) => a ? {
+            ...a,
+            area: t
+          } : a),
+          onCursorChange: ee,
+          onNext: () => j(1),
+          onPrev: () => j(-1),
+          onExit: be
+        }), r(s, {
+          children: [e(P, {
+            isFocused: p === "failure_mode"
+          }), e(n, {
+            children: "Failure mode: "
+          }), e(we, {
+            value: rt(E.failureMode),
+            isFocused: p === "failure_mode"
+          })]
+        }), r(s, {
+          children: [e(P, {
+            isFocused: p === "task_category"
+          }), e(n, {
+            children: "Task: "
+          }), e(we, {
+            value: rt(E.taskCategory),
+            isFocused: p === "task_category"
+          })]
+        }), e(Ae, {
+          label: "Details:",
+          value: E.details,
+          isFocused: p === "details",
+          dim: !0,
+          multiline: !0,
+          columns: te,
+          cursorOffset: Y,
+          onChange: (t) => {
+            let a = Buffer.byteLength(t, "utf8");
+            if (a > Pkn && a >= Buffer.byteLength(E.details, "utf8")) {
+              B(Re);
+              return
+            }
+            k((l) => {
+              if (l && l.details.trim() !== "" && t.trim() === "") ce.current = x.now();
+              return l ? {
+                ...l,
+                details: t
+              } : l
+            }), B((l) => l === Re ? null : l)
+          },
+          onCursorChange: ee,
+          onNext: () => j(1),
+          onPrev: () => j(-1),
+          onExit: be
+        }), o.transcriptAvailable ? r(s, {
+          flexDirection: "column",
+          children: [r(s, {
+            children: [e(P, {
+              isFocused: p === "transcript"
+            }), e(n, {
+              children: "Send transcript: "
+            }), e(we, {
+              value: D ? "yes" : "no",
+              isFocused: p === "transcript"
+            }), r(n, {
+              dimColor: !0,
+              children: [" \xB7 ", D ? "sends this conversation to Anthropic" : "report only"]
+            })]
+          }), o.source_session_id !== ie && e(s, {
+            marginLeft: 4,
+            children: r(n, {
+              dimColor: !0,
+              wrap: "wrap",
+              children: ["from ", Rn(o.cwd), " \xB7 session", " ", Rn(o.source_session_id)]
+            })
+          })]
+        }) : r(s, {
+          children: [e(P, {
+            isFocused: !1
+          }), r(n, {
+            children: ["Send transcript: ", e(n, {
+              dimColor: !0,
+              children: "expired (report only)"
+            })]
+          })]
+        }), r(s, {
+          marginTop: 1,
+          children: [e(P, {
+            isFocused: !1
+          }), r(n, {
+            dimColor: !0,
+            wrap: "wrap",
+            children: ["Environment info (", Rn(o.os), ", v", Rn(o.cli_version), ",", " ", Rn(o.model), o.effort !== void 0 && r(V, {
+              children: [", effort", " ", Rn(o.effort)]
+            }), o.thinking_type !== void 0 && r(V, {
+              children: [", thinking ", o.thinking_type, o.thinking_budget !== void 0 && r(V, {
+                children: [" (budget ", o.thinking_budget, ")"]
+              })]
+            }), o.assistant_turn_count !== void 0 && r(V, {
+              children: [", turn ", o.assistant_turn_count, o.message_count !== void 0 && r(V, {
+                children: ["/", o.message_count]
+              }), o.subagent_count !== void 0 && o.subagent_count > 0 && r(V, {
+                children: [" ", "with ", o.subagent_count, " ", I(o.subagent_count, "subagent")]
+              })]
+            }), ", drafted ", vt(o.created_at), " ago)", Oe > 0 ? ` and ${Oe} API request ${I(Oe,"id")} are` : " is", " ", "always attached."]
+          })]
+        }), oe && e(s, {
+          marginTop: 1,
+          children: e(ko, {
+            error: oe
+          })
+        }), r(s, {
+          marginTop: 1,
+          children: [e(P, {
+            isFocused: p === "send"
+          }), e(n, {
+            bold: p === "send",
+            children: "Send feedback"
+          })]
+        }), e(s, {
+          marginTop: 1,
+          children: e(n, {
+            dimColor: !0,
+            wrap: "wrap",
+            children: "We may use these reports to debug related issues and improve Claude Code. Turn off Claude-drafted feedback anytime in /config."
+          })
+        })]
+      }), m === "submitting" && e(n, {
+        children: "Sending feedback\u2026"
+      }), m === "receipt" && r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          color: "success",
+          children: [e(et, {
+            status: "success",
+            withSpace: !0
+          }), "Feedback sent (receipt ", ae, "). Thanks!"]
+        }), e(s, {
+          marginTop: 1,
+          children: e(n, {
+            dimColor: !0,
+            italic: !0,
+            children: "Any key to continue"
+          })
+        })]
+      })]
+    })
+  })
+}
+var Re = `That edit would push Details past the ${Math.floor(Pkn/1024)}KB limit. Trim the details first.`;
+
+function dt(h, u) {
+  return af(h.replace(/\r\n|\r/g, `
+`)).split(`
+`).map((c) => Tn(c)).join(u ? `
+` : " ")
+}
+
+function P(h) {
+  let f = w(3),
+    {
+      isFocused: u
+    } = h;
+  const c = u ? "suggestion" : void 0,
+    d = u ? `${Z.pointer} ` : "  ";
+  let C;
+  if (f[0] !== c || f[1] !== d) C = e(n, {
+    color: c,
+    children: d
+  }), f[0] = c, f[1] = d, f[2] = C;
+  else C = f[2];
+  return C
+}
+
+function we(h) {
+  let d = w(6),
+    {
+      value: u,
+      isFocused: c
+    } = h;
+  if (!c) {
+    let f;
+    if (d[0] !== u) f = e(n, {
+      dimColor: !0,
+      children: u
+    }), d[0] = u, d[1] = f;
+    else f = d[1];
+    return f
+  }
+  let f;
+  if (d[2] === S) f = r(n, {
+    dimColor: !0,
+    children: [Z.triangleLeft, " "]
+  }), d[2] = f;
+  else f = d[2];
+  let C;
+  if (d[3] === S) C = r(n, {
+    dimColor: !0,
+    children: [" ", Z.triangleRight]
+  }), d[3] = C;
+  else C = d[3];
+  let y;
+  if (d[4] !== u) y = r(n, {
+    children: [f, u, C]
+  }), d[4] = u, d[5] = y;
+  else y = d[5];
+  return y
+}
+
+function Ae(h) {
+  let q = w(24),
+    {
+      label: u,
+      value: c,
+      isFocused: d,
+      bold: f,
+      dim: C,
+      multiline: y,
+      columns: L,
+      cursorOffset: Q,
+      onChange: m,
+      onCursorChange: M,
+      onNext: o,
+      onPrev: O,
+      onExit: D
+    } = h,
+    H = _t(),
+    _;
+  if (q[0] !== d) _ = e(P, {
+    isFocused: d
+  }), q[0] = d, q[1] = _;
+  else _ = q[1];
+  let A;
+  if (q[2] !== u) A = e(n, {
+    children: u
+  }), q[2] = u, q[3] = A;
+  else A = q[3];
+  let E;
+  if (q[4] !== _ || q[5] !== A) E = r(s, {
+    children: [_, A]
+  }), q[4] = _, q[5] = A, q[6] = E;
+  else E = q[6];
+  let k;
+  if (q[7] !== f || q[8] !== L || q[9] !== Q || q[10] !== C || q[11] !== d || q[12] !== H || q[13] !== y || q[14] !== m || q[15] !== M || q[16] !== D || q[17] !== o || q[18] !== O || q[19] !== c) k = e(s, {
+    marginLeft: 4,
+    children: d ? e(s, {
+      borderStyle: y && !H ? "single" : void 0,
+      borderLeft: !0,
+      borderTop: !1,
+      borderBottom: !1,
+      borderRight: !1,
+      borderDimColor: !0,
+      paddingLeft: y && !H ? 1 : 0,
+      children: e(Qn, {
+        value: c,
+        onChange: m,
+        columns: y && !H ? L - 2 : L,
+        onSubmit: o,
+        onExit: D,
+        onHistoryUp: O,
+        onHistoryDown: o,
+        cursorOffset: Q ?? c.length,
+        onChangeCursorOffset: M,
+        multiline: y,
+        inputFilter: (G) => dt(G, y),
+        clearOnSubmit: !1,
+        disableCtrlCClear: !0,
+        disableBackslashReturn: y,
+        disableCursorMovementForUpDownKeys: !y,
+        disableEscapeDoublePress: !0,
+        showCursor: !0,
+        focus: !0
+      })
+    }) : y ? e(xgt, {
+      value: c,
+      bold: f,
+      dim: C,
+      columns: L
+    }) : e(n, {
+      bold: f,
+      dimColor: C,
+      wrap: "wrap",
+      children: Rn(c)
+    })
+  }), q[7] = f, q[8] = L, q[9] = Q, q[10] = C, q[11] = d, q[12] = H, q[13] = y, q[14] = m, q[15] = M, q[16] = D, q[17] = o, q[18] = O, q[19] = c, q[20] = k;
+  else k = q[20];
+  let Y;
+  if (q[21] !== E || q[22] !== k) Y = r(s, {
+    flexDirection: "column",
+    children: [E, k]
+  }), q[21] = E, q[22] = k, q[23] = Y;
+  else Y = q[23];
+  return Y
+}
+var Ie = "+ Write new feedback";
+
+function kt(h) {
+  let f = w(3),
+    {
+      isSelected: u
+    } = h;
+  const c = u ? "suggestion" : void 0,
+    d = u ? `${Z.pointer} ` : "  ";
+  let C;
+  if (f[0] !== c || f[1] !== d) C = r(n, {
+    color: c,
+    children: [d, Ie]
+  }), f[0] = c, f[1] = d, f[2] = C;
+  else C = f[2];
+  return C
+}
+
+function xt(h) {
+  let o = w(34),
+    {
+      thisSession: u,
+      others: c,
+      hasWriteNew: d,
+      defaultFocusIndex: f,
+      onFocus: C,
+      onOpen: y,
+      onWriteNew: L,
+      onDiscard: Q
+    } = h,
+    {
+      rows: m
+    } = As(ve()),
+    M = ol(),
+    O;
+  if (o[0] !== c || o[1] !== u) O = [...u, ...c], o[0] = c, o[1] = u, o[2] = O;
+  else O = o[2];
+  let D = O,
+    H = (u.length > 0 ? 1 : 0) + (c.length > 0 ? 1 : 0) + D.length + (d ? 2 : 0),
+    q = Math.max(lt, m - at - (M ? 0 : ot));
+  const _ = H > q ? q - 2 : q;
+  let A;
+  if (o[3] !== y || o[4] !== L || o[5] !== D) A = (E) => {
+    let k = D[E];
+    if (k) y(k);
+    else L()
+  }, o[3] = y, o[4] = L, o[5] = D, o[6] = A;
+  else A = o[6];
+  let G;
+  if (o[7] !== Q || o[8] !== D) G = (Y, ee) => {
+    let ce = D[ee];
+    if (Y.key.toLowerCase() === "d" && ce && !Y.ctrl && !Y.meta) Y.preventDefault(), Q(ce)
+  }, o[7] = Q, o[8] = D, o[9] = G;
+  else G = o[9];
+  let oe;
+  if (o[10] !== u.length) oe = u.length > 0 && e(Kc.Heading, {
+    children: e(n, {
+      bold: !0,
+      children: "This session"
+    })
+  }, "this-session"), o[10] = u.length, o[11] = oe;
+  else oe = o[11];
+  let B;
+  if (o[12] !== u) B = u.map(Xt), o[12] = u, o[13] = B;
+  else B = o[13];
+  let ae;
+  if (o[14] !== c.length) ae = c.length > 0 && e(Kc.Heading, {
+    children: e(n, {
+      bold: !0,
+      children: "Other sessions"
+    })
+  }, "other-sessions"), o[14] = c.length, o[15] = ae;
+  else ae = o[15];
+  let ue;
+  if (o[16] !== c) ue = c.map(Jt), o[16] = c, o[17] = ue;
+  else ue = o[17];
+  let te;
+  if (o[18] !== d) te = d && e(Kc.Heading, {}, "gap"), o[18] = d, o[19] = te;
+  else te = o[19];
+  let x;
+  if (o[20] !== d) x = d && e(kn.Item, {
+    label: Ie
+  }, "write-new"), o[20] = d, o[21] = x;
+  else x = o[21];
+  let le;
+  if (o[22] !== f || o[23] !== C || o[24] !== x || o[25] !== _ || o[26] !== A || o[27] !== G || o[28] !== oe || o[29] !== B || o[30] !== ae || o[31] !== ue || o[32] !== te) le = r(kn, {
+    visibleCount: _,
+    defaultFocusIndex: f,
+    overflowHint: "count",
+    onFocus: C,
+    onSelect: A,
+    onRowKeyDown: G,
+    children: [oe, B, ae, ue, te, x]
+  }), o[22] = f, o[23] = C, o[24] = x, o[25] = _, o[26] = A, o[27] = G, o[28] = oe, o[29] = B, o[30] = ae, o[31] = ue, o[32] = te, o[33] = le;
+  else le = o[33];
+  return le
+}
+
+function Me(h) {
+  return [wt[h.type], vt(h.created_at), Rn(h.cwd), h.transcriptAvailable ? "transcript available" : "transcript expired (report only)"]
+}
+
+function vt(h, u = Date.now()) {
+  let c = u - Date.parse(h);
+  if (!Number.isFinite(c) || c < 0) return "now";
+  let d = Math.floor(c / 60000);
+  if (d < 60) return `${Math.max(1,d)}m`;
+  let f = Math.floor(d / 60);
+  if (f < 24) return `${f}h`;
+  return `${Math.floor(f/24)}d`
+}
+export {
+  AJe
+};

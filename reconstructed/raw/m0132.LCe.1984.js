@@ -1,0 +1,1 @@
+function LCe(e){let{call:t,signal:o,event:r,origin:n}=e,s=k0(t);if(s.to=k0(e.to),s.signal=o,s.is=e.is,s.event=r,s.origin=n,e.caught!==void 0)Object.assign(s,e.caught);return Object.defineProperty(s,"trace",{get:k0(e.trace),enumerable:!0}),Object.defineProperty(s,"budget",{get:k0(e.budget??(()=>Po)),enumerable:!0}),Object.freeze(s)}

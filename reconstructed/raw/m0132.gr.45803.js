@@ -1,0 +1,1 @@
+var gr=(e)=>[...["block","stopReason","sessionTitle","initialUserMessage","displayContent","permissionDecisionReason","worktreePath"].filter((t)=>e[t]!==void 0&&typeof e[t]!=="string"),...["preventContinuation","suppressOriginalPrompt","reloadSkills","retry"].filter((t)=>e[t]!==void 0&&e[t]!==!0),...["additionalContext","watchPaths"].filter((t)=>e[t]!==void 0&&!vNt(e[t]))];

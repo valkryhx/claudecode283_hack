@@ -1,0 +1,1 @@
+async function rt(e){let t=new AbortController,o=Promise.resolve().then(()=>e.return?.(void 0)).then(()=>{return},()=>{return});try{await Promise.race([o,Q(Mhe,t.signal,{unref:!0})])}finally{t.abort()}}

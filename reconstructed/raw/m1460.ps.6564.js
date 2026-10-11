@@ -1,0 +1,1 @@
+function ps(o,l,a,u,d,f){if(a){let y=Co(l,d);o.push([{text:y},{...a,text:ot(a.text,d-y.length-1)},{text:":",dimColor:!0}])}let h=Co(a?l+1:l,d),x=d-h.length;for(let y of u){if(y===""){o.push([{text:""}]);continue}for(let A of GUe(y,x))o.push([f?{text:h+A,color:f}:{text:h+A}])}}

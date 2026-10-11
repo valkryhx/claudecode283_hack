@@ -1,0 +1,1 @@
+function Gr(e){let r=[],n=new Set,s=0;for(let a of e){if(!a)continue;let w;try{w=Vo(a)}catch{s++;continue}let h=Ut().safeParse(w);if(!h.success){s++;continue}if(h.data.k==="put"){if(n.has(h.data.addr)){s++;continue}n.add(h.data.addr)}r.push(h.data)}if(s>0)t(`world journal: skipped ${s} malformed or invalid line(s)`,{level:"warn"});return{lines:r,skipped:s}}

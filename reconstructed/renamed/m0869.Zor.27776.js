@@ -1,0 +1,35 @@
+/* ==========================================================================
+ * m0869.Zor   [m0869_0xd12567a.js @ 27776]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+async function Zor(e, r) {
+  let s = e.intakeClone(r);
+  if (typeof s === "string") {
+    let g = await e.resolveWorkflow(s, oe());
+    if (!g) {
+      let w = (await e.getAllWorkflows(oe())).map(A => A.name).join(", ");
+      throw Error(`workflow('${s}'): no workflow with that name. Available: ${w || "(none)"}`);
+    }
+    let f = Fy(g.script);
+    if ("error" in f) throw Error(`workflow('${s}'): ${f.error}`);
+    return {
+      childName: g.name,
+      scriptBody: f.scriptBody
+    };
+  }
+  if (s && typeof s === "object" && "scriptPath" in s && typeof s.scriptPath === "string") {
+    if (OWe()) throw Error("workflow({scriptPath}): this session restricts workflows to " + "named bundled workflows (CLAUDE_WORKFLOW_NAME_ONLY is set) \u2014 " + "nest with workflow('<name>') instead.");
+    let g = await e.loadScriptPath(s.scriptPath);
+    if ("error" in g) throw Error(`workflow({scriptPath: '${s.scriptPath}'}): ${g.error}`);
+    let f = Fy(g.script);
+    if ("error" in f) throw Error(`workflow({scriptPath: '${s.scriptPath}'}): ${f.error}`);
+    return {
+      childName: f.meta.name,
+      scriptBody: f.scriptBody,
+      scriptPath: s.scriptPath
+    };
+  }
+  throw TypeError("workflow() expects a workflow name (string) or {scriptPath: string}");
+}

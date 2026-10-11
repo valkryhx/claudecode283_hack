@@ -1,0 +1,1 @@
+function zi(o){if(o===void 0||o===null)return[];return(typeof o==="object"&&!Array.isArray(o)?Object.entries(o):[["input",o]]).map(([a,u])=>{let d;if(typeof u==="string")d=u;else try{d=b(u)??String(u)}catch{d=String(u)}return{key:a,...as(d,Ui)}})}

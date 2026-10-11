@@ -1,0 +1,1 @@
+var HIo={"session.start":(e)=>({cwd:e.cwd}),"session.attach":(e)=>({clientId:e.clientId}),"session.detach":(e)=>({clientId:e.clientId}),"session.measure":(e)=>({changed:e.changed}),"session.end":(e)=>({sessionId:e.sessionId}),"turn.start":(e)=>({turnId:e.turnId}),"turn.complete":(e)=>({text:e.answer,...e.usage&&{usage:e.usage}})};

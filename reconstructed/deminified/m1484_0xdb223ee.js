@@ -1,0 +1,316 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { f } from "B:/~BUN/root/chunk-zv3zxqya.js";
+import { SUe, Jn, Mn } from "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import "B:/~BUN/root/chunk-kks4mj3w.js";
+import { B } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import { ce } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import "B:/~BUN/root/chunk-y04k89s2.js";
+import "B:/~BUN/root/chunk-zs3ycjed.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import { wr, he, NI, fAe } from "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import { Bye } from "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import { q0, ar, r_ } from "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-f1dj0k6n.js";
+import { bte } from "B:/~BUN/root/chunk-mrt797ke.js";
+import { Lb, Jan, ZV } from "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import { o, C, Qe, Qo, z, A } from "B:/~BUN/root/chunk-n8qdr73v.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+var D = ["allow", "deny", "ask"],
+  _ = 1e4,
+  L = 100,
+  j = f(() => z(D, {
+    error: "behavior must be one of: allow, deny, ask"
+  })),
+  V = f(() => z(r_)),
+  M = f(() => Qe({
+    op: A("add"),
+    rules: C(o().max(_, "each rule must be at most 10000 characters")).min(1, "rules must be an array of 1 to 100 strings").max(L, "rules must be an array of 1 to 100 strings"),
+    behavior: j(),
+    destination: V()
+  })),
+  W = f(() => Qe({
+    op: A("remove"),
+    rule: o().min(1, "rule must be a non-empty string of at most 10000 characters").max(_, "rule must be a non-empty string of at most 10000 characters"),
+    behavior: j(),
+    source: V()
+  })),
+  H = f(() => Qo("op", [M(), W()]));
+function X(s) {
+  let t = s.issues[0];
+  if (!t) return "the edit is not a valid permission-rule edit";
+  let e = t.path.map(String).join(".");
+  if (e === "destination" || e === "source") return e === "destination" ? `destination must be one of: ${r_.join(", ")}` : `rules from this source cannot be removed here (removable sources: ${r_.join(", ")})`;
+  if (e === "op") return "op must be one of: add, remove";
+  if (e.startsWith("rules") && t.code === "invalid_type") return "rules must be an array of 1 to 100 strings";
+  if (e === "rule" && t.code === "invalid_type") return "rule must be a non-empty string of at most 10000 characters";
+  let n = t.path[0] === void 0 ? "" : String(t.path[0]);
+  return e && !t.message.startsWith(n) ? `${e}: ${t.message}` : t.message;
+}
+function G() {
+  if (Lb()) return "enterprise managed settings allow only managed permission rules; rules cannot be added or removed";
+  if (bte()) return "enterprise managed settings could not be read, so permission rules cannot be edited";
+  return null;
+}
+function x(s) {
+  return ar(s) ? null : `${q0(s)} are not loaded here, so their rules cannot be edited`;
+}
+function Z(s) {
+  let {
+      rules: rules,
+      behavior: behavior,
+      destination: destination
+    } = s,
+    ruleValues = [],
+    warnings = [];
+  for (let m of rules) {
+    let r = m.trim();
+    if (r.length === 0) return {
+      ok: !1,
+      error: "rules must not be empty"
+    };
+    let l = Bye(r, behavior);
+    if (!l.valid) return {
+      ok: !1,
+      error: l.suggestion ? `${l.error} \u2014 ${l.suggestion}` : l.error ?? "invalid permission rule"
+    };
+    if (l.warning !== void 0) warnings.push(l.warning);
+    let S = Jn(r),
+      p = SUe(r);
+    if (p.kind === "call" && p.toolName !== "" && !/\s/.test(p.toolName) && p.rawContent === "*") {
+      let h = Mn(S);
+      warnings.push(`"${r}" was saved as the tool-wide rule "${h}", which matches every use of the tool. To limit it, put a specific pattern inside the parentheses.`);
+    }
+    ruleValues.push(S);
+  }
+  return {
+    ok: !0,
+    ruleValues: ruleValues,
+    behavior: behavior,
+    destination: destination,
+    warnings: warnings
+  };
+}
+function q(s, t) {
+  let {
+      rule: rule,
+      behavior: n,
+      source: source
+    } = s,
+    storedRaw = t.find(item => item === rule);
+  if (storedRaw === void 0) return {
+    ok: !1,
+    error: `rule not found: no ${n} rule with this exact value in ${q0(source)} (rules are matched verbatim, as the listing reports them; the file may have been changed outside this dialog)`
+  };
+  let m = c(storedRaw);
+  if (t.some(item => item !== storedRaw && c(item) === m)) return {
+    ok: !1,
+    error: "this rule cannot be removed here: the same settings file holds another spelling of the same rule, and removing one would silently remove both \u2014 edit the file by hand to clean these up"
+  };
+  return {
+    ok: !0,
+    rule: {
+      source: source,
+      ruleBehavior: n,
+      ruleValue: Jn(storedRaw)
+    },
+    storedRaw: storedRaw
+  };
+}
+function c(s) {
+  return Mn(Jn(s));
+}
+function R(s, t) {
+  return s?.permissions?.[t] ?? [];
+}
+async function ae(s, t) {
+  let e = error => ({
+      ok: !1,
+      error: error
+    }),
+    n = G();
+  if (n !== null) return e(n);
+  let d = H().safeParse(s);
+  if (!d.success) return e(X(d.error));
+  let i = d.data;
+  if (i.op === "add") {
+    let a = Z(i);
+    if (!a.ok) return e(a.error);
+    let {
+        destination: destination_2,
+        behavior: behavior_2,
+        ruleValues: g
+      } = a,
+      v = x(destination_2);
+    if (v !== null) return e(v);
+    let P = await O(destination_2);
+    if (P !== null) return e(P);
+    let N = new Set(R(NI(destination_2), behavior_2).map(c)),
+      E = g.find(item => N.has(Mn(item)));
+    if (E !== void 0) return e(`"${Mn(E)}" is already in the ${behavior_2} rules in ${q0(destination_2)}`);
+    if (destination_2 === "localSettings") {
+      let w = new Set(R(he(destination_2), behavior_2).map(c)),
+        k = g.find(item => w.has(Mn(item)));
+      if (k !== void 0) return e(`"${Mn(k)}" is already in effect from the launch directory\u2019s own .claude/settings.local.json`);
+    }
+    await ZV({
+      type: "addRules",
+      rules: g,
+      behavior: behavior_2,
+      destination: destination_2
+    }, t), await fAe();
+    let U = new Set(R(NI(destination_2), behavior_2).map(c)),
+      y = g.filter(item => !U.has(Mn(item)));
+    if (y.length > 0) return e(y.length === g.length ? `the rules could not be written to ${q0(destination_2)}: the settings write was refused or failed` : `${y.length} of ${g.length} rules could not be written to ${q0(destination_2)}: the settings write was refused or failed for those`);
+    return {
+      ok: !0,
+      warnings: a.warnings,
+      stored: g.map(Mn)
+    };
+  }
+  let {
+      behavior: behavior_3,
+      source: source_2
+    } = i,
+    l = x(source_2);
+  if (l !== null) return e(l);
+  let S = await O(source_2);
+  if (S !== null) return e(S);
+  let p = R(NI(source_2), behavior_3);
+  if (source_2 === "localSettings" && !p.includes(i.rule) && R(he(source_2), behavior_3).includes(i.rule)) return e("that rule is defined in the launch directory\u2019s own .claude/settings.local.json, which is not edited here; edit that file directly");
+  let h = q(i, p);
+  if (!h.ok) return e(h.error);
+  if (source_2 === "localSettings" && R(he(source_2), behavior_3).some(item => item !== h.storedRaw && c(item) === c(h.storedRaw))) return e("this rule cannot be removed here: the launch directory\u2019s own .claude/settings.local.json holds another spelling of the same rule, and removing one would silently remove both \u2014 edit that file by hand to clean these up");
+  let F = await Jan(h.rule, t);
+  await fAe();
+  let T = R(NI(source_2), behavior_3).some(item => c(item) === c(h.storedRaw));
+  if (!F || T) return e(`the rule could not be removed from ${q0(source_2)}: the settings write was refused or failed, so it is still in its settings file`);
+  return {
+    ok: !0,
+    warnings: [],
+    stored: []
+  };
+}
+async function O(s) {
+  if (NI(s) !== null) return null;
+  let t = wr(s);
+  if (t === void 0) return null;
+  return (await ce().stat(t).then(n => n.size, n => B(n) ? 0 : 1)) > 0 ? `the ${q0(s)} file has errors and could not be loaded; fix it by hand first` : null;
+}
+export { ae as runPermissionRuleEdit };

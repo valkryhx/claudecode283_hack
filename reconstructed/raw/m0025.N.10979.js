@@ -1,0 +1,1 @@
+N=(e)=>{let r=n.basename(a);return{data:n.join(c.XDG_DATA_HOME||n.join(a,".local","share"),e),config:n.join(c.XDG_CONFIG_HOME||n.join(a,".config"),e),cache:n.join(c.XDG_CACHE_HOME||n.join(a,".cache"),e),log:n.join(c.XDG_STATE_HOME||n.join(a,".local","state"),e),temp:n.join(m,r,e)}}

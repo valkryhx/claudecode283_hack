@@ -1,0 +1,1 @@
+function si(o,l,a,u,d){let f=l===a,{glyph:h,color:x}=cn(Dt(o,d)),y=ot(o.label,Math.max(1,u-4));return[{text:f?`${Z.pointer} `:"  ",color:"permission"},{text:h,color:x},{text:" "},{text:y,color:f?"permission":void 0,dimColor:!f&&It(o)}]}

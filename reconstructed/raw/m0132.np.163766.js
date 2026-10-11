@@ -1,0 +1,1 @@
+var np=(e,t)=>({tool:op,prompt:t,description:e.description??t.split(/\s+/).slice(0,rp).join(" "),run_in_background:!0,...e.model!==void 0&&{model:e.model},...e.subagentType!==void 0&&{subagent_type:e.subagentType},...e.name!==void 0&&{name:e.name},...e.cwd!==void 0&&{cwd:e.cwd}});

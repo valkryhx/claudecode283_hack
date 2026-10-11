@@ -1,0 +1,1391 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  q,
+  j
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  i9e,
+  zUo,
+  pxe,
+  Tde,
+  fxe,
+  imt,
+  mK,
+  l9e
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  an
+} from "B:/~BUN/root/chunk-zksmb712.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  Gc,
+  qr,
+  re,
+  pp
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  a,
+  Nn
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import {
+  lAe
+} from "B:/~BUN/root/chunk-4h4gje25.js";
+import {
+  m$t
+} from "B:/~BUN/root/chunk-5kqdkjak.js";
+import {
+  Tpt,
+  c2,
+  Ffn,
+  $fn,
+  k3n,
+  dne,
+  $No
+} from "B:/~BUN/root/chunk-9xz983aj.js";
+import {
+  Yce
+} from "B:/~BUN/root/chunk-erkcnv3k.js";
+import {
+  nj
+} from "B:/~BUN/root/chunk-5xa13319.js";
+import {
+  U,
+  L
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+var M1 = 50000,
+  iNo = 4000,
+  s5e = 128000,
+  GRe = 500000;
+var VRe = 4,
+  aNo = 400000,
+  dfn = 200000,
+  Pv = 50,
+  lNo = 1073741824,
+  cNo = 1e4,
+  FFt = 1e4,
+  fpt = 1e5;
+
+function so() {
+  return an().CLAUDE_AI_ORIGIN.includes("staging") ? "staging" : "prod"
+}
+
+function dNo() {
+  return ne() ?? an().CLAUDE_AI_ORIGIN
+}
+
+function ne() {
+  return
+}
+
+function w(e) {
+  let n;
+  try {
+    n = new URL(e)
+  } catch {
+    return
+  }
+  let r = nj(n.hostname),
+    o;
+  switch (n.protocol) {
+    case "https:":
+    case "wss:":
+      o = "https:";
+      break;
+    case "http:":
+    case "ws:":
+      if (!r) return;
+      o = "http:";
+      break;
+    default:
+      return
+  }
+  if (n.username !== "" || n.password !== "" || n.pathname !== "/" || n.search !== "" || n.hash !== "") return;
+  return `${o}//${n.host}`
+}
+
+function uNo() {
+  return !1
+}
+
+function pNo() {
+  return oe() ?? an().BASE_API_URL
+}
+
+function oe() {
+  return
+}
+
+function fNo() {
+  return !1
+}
+
+function bye() {
+  return
+}
+var Wce = "/api/claude_code/policy_limits",
+  p = "disabled by your organization's policy",
+  F = "disabled for the rest of this session because an organization with a restricted policy was signed in earlier";
+
+function ppt(e, n, r, o) {
+  if (Yce(r).length > 0) return `${e} ${n} ${p}.`;
+  if (o !== void 0) return o;
+  return `${e} ${n} ${p}. Contact your organization admin to enable ${n==="are"?"them":"it"}.`
+}
+
+function zRe(e, n) {
+  return `${e} ${n} ${F}. Restart Claude Code to re-evaluate.`
+}
+
+function ine(e) {
+  return `Couldn't verify your organization's policy for ${e.toLowerCase()}. Check your network connection and try again.`
+}
+
+function o5e(e) {
+  return `Couldn't load your organization's policy, which governs ${e.toLowerCase()}. The request for ${Wce} got a 404, which usually means a proxy or gateway between you and the API isn't forwarding that path. Ask your network admin to allow it; \`claude doctor\` (or /status in a session) shows which host was asked.`
+}
+
+function P(e, n, r) {
+  let o = `${e} ${n==="are"?"aren't":"isn't"} available`,
+    {
+      host: i,
+      httpStatus: s
+    } = r;
+  switch (r.errorCode) {
+    case "parse_failed":
+      return `${o}: Claude Code couldn't read the reply when it asked ${i} for your organization's policy, which usually means a network proxy or web filter answered instead.`;
+    case "network_error":
+    case "timeout":
+      return `${o}: couldn't reach ${i} to load your organization's policy. Check your network or proxy.`;
+    case "auth_failed":
+      if (s === 403) return `${o}: ${i}, or a proxy in front of it, refused the request for your organization's policy (HTTP 403).`;
+      return s === 401 ? `${o}: ${i} didn't accept this session's credentials when Claude Code asked for your organization's policy.` : `${o}: no credentials could be attached to the request for your organization's policy.`;
+    case "spurious_304":
+      return `${o}: the saved copy of your organization's policy belongs to a previous sign-in, and a fresh one hasn't loaded yet.`;
+    case "request_failed":
+      if (s === 404) return `${o}: the request for your organization's policy got a 404 from ${i}, which usually means a proxy or gateway isn't forwarding ${Wce}.`;
+      if (s === 304) return `${o}: a caching proxy answered in place of ${i} when Claude Code asked for your organization's policy.`;
+      if (s === 407) return `${o}: your proxy asked for authentication before it would forward the request for your organization's policy to ${i}.`;
+      if (s !== null && (s >= 500 || s === 429)) return `${o}: your organization's policy couldn't be loaded from ${i} (HTTP ${s}). Try again later.`;
+      return s !== null ? `${o}: your organization's policy couldn't be loaded from ${i} (HTTP ${s}). Check your proxy settings.` : `${o}: the request to ${i} for your organization's policy didn't complete. If you use a proxy, check that it lets ${i} through.`
+  }
+}
+
+function tNo(e) {
+  return `Couldn't verify your organization's policy for ${e.toLowerCase()}. Check your network connection, then restart Claude Code and try again.`
+}
+
+function nNo(e) {
+  return `/${e} is available for your organization but wasn't when this session started. Restart Claude Code to use it.`
+}
+
+function rNo(e, n) {
+  if (Yce(e).length > 0) return p;
+  return n ?? p
+}
+
+function oNo() {
+  return `${F} \u2014 restart Claude Code to re-evaluate`
+}
+
+function sNo() {
+  return "couldn't verify your organization's policy \u2014 check your network connection and try again"
+}
+
+function O$r() {
+  return `your organization's policy couldn't be loaded: the request for ${Wce} got a 404, which usually means a proxy or gateway isn't forwarding that path. Ask your network admin to allow it`
+}
+var qRe = "\u02F9-\u02FC\u230C-\u230F\u231C-\u231F\u239B-\u23CC\u23DC-\u23E1\u2E00-\u2E0D\u2E1C\u2E1D\u2500-\u257F";
+var Iv = "[Request interrupted by user]",
+  uu = "[Request interrupted by user for tool use]",
+  VE = "[Tool call did not complete: the turn was ended to deliver the message that follows. Nothing refused it; re-run it if still needed.]",
+  j0 = "[Tool call interrupted: the session ended before this call's result was recorded, so its outcome is unknown. Check whether it took effect before relying on it or running it again.]",
+  W0 = "[Tool call result not in this copy: this session was copied from another session before that session recorded this call's result. The call may have finished there, may still be running there, or may never have run. Check whether it took effect before relying on it or running it again.]",
+  Vb = "The user doesn't want to take this action right now. STOP what you are doing and wait for the user to tell you how to proceed.",
+  Sye = "[Tool call skipped: the turn ended to deliver the message that follows before this call ran. Nothing refused it; re-run it if still needed.]",
+  wye = "[Tool call skipped: the turn was stopped before this call ran, by the check whose denial is on another call in this batch. Nothing refused this call and it had no effects; re-run it if still needed.]",
+  i5e = "[Tool call not completed: an approval request expired with no answer, so the action awaiting approval did not run. Nobody refused it, so this is not the user's decision; ask again if it is still needed.]",
+  a5e = "[Tool call not completed: an approval request was still unanswered when the message that follows arrived and was closed, so the action awaiting approval did not run. Nobody refused it, so this is not the user's decision; ask again if it is still needed.]",
+  vye = ["[Request interrupted by user]", "[Request interrupted by user for tool use]", "[Tool call did not complete: the turn was ended to deliver the message that follows. Nothing refused it; re-run it if still needed.]", "[Tool call interrupted: the session ended before this call's result was recorded, so its outcome is unknown. Check whether it took effect before relying on it or running it again.]", "[Tool call result not in this copy: this session was copied from another session before that session recorded this call's result. The call may have finished there, may still be running there, or may never have run. Check whether it took effect before relying on it or running it again.]", "The user doesn't want to take this action right now. STOP what you are doing and wait for the user to tell you how to proceed.", "[Tool call skipped: the turn was stopped before this call ran, by the check whose denial is on another call in this batch. Nothing refused this call and it had no effects; re-run it if still needed.]", "[Tool call skipped: the turn ended to deliver the message that follows before this call ran. Nothing refused it; re-run it if still needed.]"];
+
+function pC(e) {
+  if (e.type !== "user") return !1;
+  let n = e.message?.content;
+  if (typeof n === "string") return vye.some((r) => n.startsWith(r));
+  if (!Array.isArray(n)) return !1;
+  return n.length > 0 && n.every((r) => {
+    let o = r?.type === "text" ? r.text : r?.type === "tool_result" && r.is_error === !0 ? r.content : void 0;
+    return typeof o === "string" && vye.some((i) => o.startsWith(i))
+  })
+}
+var $Ft = "User rejected tool use",
+  fC = "API Error: Request was aborted.",
+  l5e = `The user sent a new message while you were working:
+`,
+  kye = "Operation stopped by hook";
+
+function UFt(e) {
+  return e.startsWith(Vb) || e.startsWith(Sye) || e.startsWith(wye)
+}
+var c5e = `
+
+Note: The user's next message may contain a correction or preference. Pay close attention \u2014 if they explain what went wrong or how they'd prefer you to work, consider saving that to memory for future sessions.`;
+
+function BFt(e) {
+  if (e.type !== "user" || e.interruptedByShutdown !== !0) return !1;
+  let n = e.message?.content;
+  return Array.isArray(n) && n.some((r) => r.type === "tool_result")
+}
+var X4n = ` hook feedback:
+`,
+  M$r = ["Stop", "TeammateIdle", "TaskCreated", "TaskCompleted"];
+
+function ufn(e, n) {
+  return `${e}${X4n}${n}`
+}
+var mpt = "[structured-output-enforce]",
+  D$r = "",
+  d5e = "[projects-reply-gate]",
+  jFt = "The previous response failed to produce a valid tool call. Please retry the tool call now.",
+  L$r = "Your tool call was malformed and could not be parsed. Please retry.",
+  WFt = "[Your previous response had no visible output. Please continue and produce a user-visible response.]",
+  zFt = "The PermissionDenied hook indicated you may retry this tool call.",
+  J4n = "Your response above was stopped by a safety classifier \u2014 this is not a tool or API error. " + "The rest of it was withheld, and tool calls in it that had not finished did not run. Do not produce that content again, even reworded.",
+  N$r = J4n + ' Exception: a tool call whose result reads "Interrupted" was already running when the response was stopped; it may have partially or fully completed.',
+  GFt = "Output token limit hit. Resume directly \u2014 no apology, no recap of what you were doing. " + "Pick up mid-thought if that is where the cut happened. Break remaining work into smaller pieces.",
+  VFt = "Your response above was cut off mid-stream. Resume directly from where it stops \u2014 no apology, no recap. " + "If none of it survived, answer the request from the start.",
+  qFt = "Your response above was cut off mid-stream and only your next message is delivered. " + "Write the complete response again from the start \u2014 no apology, no mention of the cut-off.",
+  pfn = "Goal check-in: \xAB",
+  se = [mpt, D$r, d5e, m$t].filter((e) => e.length > 0),
+  ae = [jFt, L$r, WFt, zFt, J4n, N$r, GFt, VFt, qFt];
+
+function Q4n(e) {
+  if (e.type !== "user" || e.isMeta !== !0) return !1;
+  let n = e.message?.content,
+    r = Array.isArray(n) ? n[0] : void 0,
+    o = typeof n === "string" ? n : r?.type === "text" && typeof r.text === "string" ? r.text : void 0;
+  if (typeof o !== "string") return !1;
+  if (se.some((i) => o.startsWith(i))) return !0;
+  if (ae.includes(o)) return !0;
+  return M$r.some((i) => o.startsWith(`${i}${X4n}`))
+}
+var YLo = ["mcp_needs_auth", "mcp_disabled", "mcp_required_missing", "auth_expired", "auth_overridden", "auth_missing_scope", "design_needs_authorization", "sandbox_violation", "outside_reads_blocked", "memory_paused", "feature_disabled", "policy_denied", "spawn_arg_limit", "staged_for_review"],
+  XLo = ["claude_ai", "claude_design"],
+  JLo = ["workflows", "artifacts"],
+  QLo = ["managed_settings", "org_policy", "unavailable", "user_setting"],
+  ZLo = ["org_denied", "latched"];
+
+function jce() {
+  return {
+    kind: "auth_expired",
+    provider: "claude_ai"
+  }
+}
+
+function w$e(e) {
+  return {
+    kind: "auth_overridden",
+    provider: "claude_ai",
+    managed: e
+  }
+}
+
+function HFt(e) {
+  switch (e) {
+    case "env":
+      return w$e(!1);
+    case "fd":
+      return w$e(!0);
+    case "store":
+    case "none":
+      return jce()
+  }
+}
+var D = new WeakMap;
+
+function DI(e, n) {
+  return D.set(e, n), e
+}
+
+function eNo(e) {
+  if (e === null || typeof e !== "object") return;
+  return D.get(e)
+}
+var T = 58n,
+  ue = (1n << 128n) - 1n,
+  ffn = 22,
+  Z4n = "[1-9A-HJ-NP-Za-km-z]{22}",
+  ce = new RegExp("^[1-9A-HJ-NP-Za-km-z]{22}$"),
+  le = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+
+function E(e) {
+  if (!le.test(e)) return null;
+  let n = BigInt(`0x${e.replaceAll("-","")}`),
+    r = "";
+  for (let o = 0; o < 22; o++) r = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz" [Number(n % T)] + r, n /= T;
+  return r
+}
+
+function u$(e) {
+  if (!ce.test(e)) return null;
+  let n = 0n;
+  for (let o of e) n = n * T + BigInt("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".indexOf(o));
+  if (n > ue) return null;
+  let r = n.toString(16).padStart(32, "0");
+  return `${r.slice(0,8)}-${r.slice(8,12)}-${r.slice(12,16)}-${r.slice(16,20)}-${r.slice(20)}`
+}
+var S = null;
+
+function KLo(e) {
+  let n = S;
+  return S = e, n
+}
+
+function cfn() {
+  return S?.("tengu_cobalt_plinth_lovage", !1) === !0
+}
+var yn = "Artifact",
+  u5e = ["document", "slides", "design", "other"],
+  I_ = "ArtifactComments",
+  Jf = "ArtifactData",
+  jR = "ArtifactCheck",
+  rY = [yn, I_, Jf, jR],
+  Pp = /^[0-9a-f]{32}$/,
+  KFt = "file_path",
+  e3n = ["action", "url", "prompt"],
+  H$r = ["page"],
+  YFt = "Describe what this page contains and reproduce its substantive text content, structure, and any data it presents.",
+  mNo = " \u2014 live version; raw HTML follows]",
+  XFt = "You hadn't viewed the live version of this artifact, so the publish was refused.",
+  F$r = "This session hadn't viewed the live version of this artifact, so the publish was refused.",
+  $$r = (e) => `[Artifact ${e}${mNo}`,
+  JFt = new RegExp(`\\n\\[Artifact [\\w-]{1,64}${Gc(mNo)}\\n`),
+  zce = "Publish refused \u2014 nothing was merged or published:",
+  K = "file_path required to publish. Write the page to an .html file, then call again with its path as `file_path`",
+  t3n = `${K}, or pass \`type_url\` to start a new Artifact from a type. There is no inline content parameter.`,
+  n3n = `${K}. There is no inline content parameter, and creating an Artifact from a type is not available in this session, so build the page yourself.`,
+  U$r = [t3n, n3n],
+  Gce = {
+    republishForceRefused: "pr_review_republish_force_refused",
+    decisionsProvenance: "pr_review_decisions_provenance",
+    republishAnchor: "pr_review_republish_anchor",
+    republishStamp: "pr_review_republish_stamp",
+    overwriteRefused: "pr_review_overwrite_refused"
+  };
+
+function KRe() {
+  return cfn() ? "\u2026/artifact/<id>" : "\u2026/code/artifact/<uuid>"
+}
+var p5e = "Artifacts need a claude.ai login",
+  QFt = 13,
+  ZFt = "not_logged_in",
+  r3n = 15,
+  e$t = 22,
+  i5o = ["policy_blocked", "policy_fetch_failed", "policy_route_missing"],
+  t$t = {
+    rate_limited: "publish_rate_limited",
+    contract_rollout: "publish_contract_rollout"
+  },
+  B$r = `${p5e}. Run /login and select "Claude account with subscription", then retry \u2014 the "Anthropic Console account" option does not provide claude.ai credentials.`,
+  gpt = "Every Artifact call is refused like this until a claude.ai login is available, so do not retry; tell the user what is needed.",
+  n$t = "Changing the input will not help: every Artifact call is refused like this until a claude.ai login is available, so do not retry; tell the user what is needed. The input was also invalid, but the schema error below matters only once that login is available.",
+  j$r = `${p5e}, and this remote session authenticates through the machine that launched it, which is not signed in to claude.ai. Sign in to claude.ai on that machine (/login, "Claude account with subscription"), then reconnect this session.`,
+  W$r = `${p5e}, but this session authenticates with a credential injected by its host environment, which takes precedence and cannot be changed here. Start a session that is signed in to claude.ai to publish or read artifacts.`;
+
+function z$r(e) {
+  return `${p5e}. This session's API access is set up by ${e?"your organization's managed settings":"the ANTHROPIC_FEDERATION_RULE_ID / ANTHROPIC_ORGANIZATION_ID environment variables"}, which stays active for everything else \u2014 artifacts also use a claude.ai account. Run /login and select "Claude account with subscription", then retry.`
+}
+
+function o3n(e) {
+  switch (e) {
+    case "org_policy_unverifiable":
+      return "Artifacts can't check the signed-in Claude account's organization settings from this session: the account belongs to a Claude organization (Team or Enterprise), and this session's API access uses a different credential that can't read those settings. Run /login with a personal Claude account (Pro or Max), then retry.";
+    case "plan_unreadable":
+      return "The signed-in Claude account's plan couldn't be read from this session. Run /login again to refresh the signed-in account, then retry.";
+    case "org_denied":
+      return ppt("Artifacts", "are", lAe(), "Artifacts are disabled by your organization's policy. Contact your organization admin to enable them, then retry.");
+    case "latched":
+      return zRe("Artifacts", "are");
+    case "cache_miss":
+      return ine("Artifacts");
+    case "policy_route_missing":
+      return o5e("Artifacts");
+    case "policy_unavailable":
+      return "Artifacts can't check the organization settings that apply to this session: the session's configuration (such as a custom ANTHROPIC_BASE_URL) prevents the policy lookup. Remove that configuration, then retry."
+  }
+}
+
+function s3n(e) {
+  switch (e) {
+    case "plan_unreadable":
+      return jce();
+    case "org_denied":
+    case "latched":
+      return {
+        kind: "policy_denied", feature: "artifacts", policy_kind: e
+      };
+    case "org_policy_unverifiable":
+    case "cache_miss":
+    case "policy_route_missing":
+    case "policy_unavailable":
+      return
+  }
+}
+
+function i3n(e) {
+  return P("Artifacts", "are", e.outcome)
+}
+var de = "Claude Code reads that policy from ",
+  _e = /^[A-Za-z0-9.-]+(:[0-9]+)?$/;
+
+function fe(e) {
+  return _e.test(e) ? `${e}${Wce}` : `the API's ${Wce} route`
+}
+var pe = " and keeps retrying it in the background; whether artifacts are allowed is decided once it loads. Do not retry this call now. Tell the user why artifacts are unavailable and, if a proxy, VPN or web filter is involved, that their IT admin needs to let that address through.",
+  Ee = ", and a proxy or gateway that does not forward that path will keep answering 404, so nothing in this session can load it. Do not retry this call. Tell the user that their IT admin needs to let that address through to the API.";
+
+function FGo(e) {
+  let n = e.cause === "policy_route_missing" ? Ee : pe;
+  return `${de}${fe(e.outcome.host)}${n}`
+}
+
+function r$t(e) {
+  return `${i3n(e)}
+
+${FGo(e)}`
+}
+
+function o$t(e, n) {
+  return `${p5e}, and this session is authenticating with ${e}, which takes precedence over a claude.ai account. ${n} Then run /login and select "Claude account with subscription".`
+}
+class Oe extends Error {
+  reasonCode;
+  maxErrorChars;
+  constructor(e, n, r) {
+    super(e);
+    this.name = "ArtifactInputError", this.reasonCode = n, this.maxErrorChars = r?.maxErrorChars
+  }
+}
+var R = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
+  m = "https://(?:[a-z0-9-]+\\.)?claude\\.ai",
+  s$t = "/(?:artifact|code/(?:artifact|frame))/",
+  O = `${R}|${Z4n}`,
+  I = `${s$t}(?:([A-Za-z0-9_-]*)-)?(${O})(?:[/?#]|$)`,
+  C = `${s$t}(?:[A-Za-z0-9_-]*-)?(?:${O})/([^?#]+)`;
+
+function h(e, n = !1) {
+  if (e === void 0) return null;
+  if (e.length !== ffn) return e;
+  return n ? null : u$(e)
+}
+
+function y(e) {
+  return e?.length === ffn ? {
+    shortId: !0
+  } : {}
+}
+var Bn = new RegExp(`^${R}$`),
+  ON = /^[\w-]{1,64}$/,
+  hpt = 1024,
+  kD = 16000,
+  G$r = M1,
+  ypt = 20000,
+  D1 = 300000,
+  YRe = "eval-stub://artifact/";
+
+function Rc() {
+  let e = Nn.CLAUDE_CODE_EVAL_ARTIFACT_STUB_DIR;
+  return typeof e === "string" && e.length > 0 ? e : null
+}
+
+function x() {
+  return null
+}
+
+function V$r(e) {
+  if (new RegExp(`^${m}(?:[/?#]|$)`).test(e)) return "prod";
+  let n = x();
+  if (n !== null && new RegExp(`^${n}(?:[/?#]|$)`).test(e)) return "staging";
+  return null
+}
+
+function Bt(e) {
+  return W(e, !1)
+}
+
+function W(e, n) {
+  let r = e.match(new RegExp(`^${m}${I}`)),
+    o = h(r?.[2], n);
+  if (o !== null) return g(e, {
+    slug: o,
+    env: "prod",
+    ...y(r?.[2])
+  }, r?.[1]);
+  let i = x();
+  if (i !== null) {
+    let l = e.match(new RegExp(`^${i}${I}`)),
+      c = h(l?.[2], n);
+    if (c !== null) return g(e, {
+      slug: c,
+      env: "staging",
+      ...y(l?.[2])
+    }, l?.[1])
+  }
+  let s = e.match(new RegExp(`^https://(${R})\\.frame\\.(staging\\.)?claudeusercontent\\.com(?:[/?#]|$)`));
+  if (s?.[1]) return g(e, {
+    slug: s[1],
+    env: s[2] ? "staging" : "prod"
+  });
+  let u = bye();
+  if (u) {
+    let l = e.match(new RegExp(`^https?://([^/?#]+)${I}`)),
+      c = h(l?.[3], n);
+    if (l !== null && c !== null && l[1] === new URL(u).host) return g(e, {
+      slug: c,
+      env: so(),
+      ...y(l[3])
+    }, l[2])
+  }
+  return null
+}
+var ge = /^[A-Za-z0-9_-]{1,64}$/,
+  Ae = /^[a-z0-9][a-z0-9-]{0,59}$/;
+
+function g(e, n, r) {
+  let o = r !== void 0 && Ae.test(r) ? {
+      ...n,
+      vanity: r
+    } : n,
+    i = e.indexOf("#"),
+    s = i === -1 ? e : e.slice(0, i),
+    u = s.indexOf("?");
+  if (u === -1) return o;
+  let c = s.slice(u + 1).split("&").find((d) => d.startsWith("sk="))?.slice(3);
+  return c !== void 0 && ge.test(c) ? {
+    ...o,
+    sk: c
+  } : o
+}
+
+function Vce(e) {
+  let n = bye(),
+    r = x(),
+    o = e.match(new RegExp(`^${m}${C}`))?.[1] ?? (r !== null ? e.match(new RegExp(`^${r}${C}`))?.[1] : void 0) ?? (n ? e.match(new RegExp(`^https?://${Gc(new URL(n).host)}${C}`))?.[1] : void 0);
+  return o === void 0 || o === "" ? void 0 : o
+}
+
+function l2(e) {
+  try {
+    let n = new URL(e);
+    if (n.protocol === "http:") n.protocol = "https:";
+    if (n.hostname.endsWith(".")) n.hostname = n.hostname.slice(0, -1);
+    return n.href
+  } catch {
+    return e
+  }
+}
+
+function WR(e) {
+  return typeof e === "string" ? Bt(l2(e)) : null
+}
+
+function Fq(e) {
+  let n = l2(e);
+  return Bt(n) ?? W(n.toLowerCase(), !0)
+}
+var he = new RegExp(`^${Gc(YRe)}(${R})(?:[/?#]|$)`);
+
+function v$e(e) {
+  let n = e.match(he);
+  return n?.[1] ? {
+    slug: n[1]
+  } : null
+}
+var XRe = "artifact-deleted",
+  q$r = new RegExp(`^<${XRe} url="([^"]+)"/>`),
+  a3n = "artifact-attached",
+  K$r = new RegExp(`^<${a3n} url="([^"]+)"(?: title="([^"]*)")?( own)?/>`);
+
+function ha(e) {
+  let n = Bt(e)?.slug;
+  if (n !== void 0) return n;
+  return Rc() !== null ? v$e(e)?.slug ?? null : null
+}
+
+function l3n(e) {
+  if (cfn()) {
+    let n = E(e);
+    if (n !== null) return `/artifact/${n}`
+  }
+  return `/code/artifact/${e}`
+}
+
+function b(e) {
+  let n = bye();
+  if (n && e === so()) return n;
+  return "https://claude.ai"
+}
+
+function En(e) {
+  return `${b(e.env)}${l3n(e.slug)}`
+}
+
+function JRe(e) {
+  return {
+    written: {
+      url: En(e)
+    }
+  }
+}
+
+function i$t(e) {
+  let n = b(e.env),
+    r = E(e.slug);
+  return [`${n}/code/artifact/${e.slug}`, ...r !== null ? [`${n}/artifact/${r}`] : []]
+}
+
+function WS(e, n) {
+  let {
+    target: r,
+    other: o
+  } = c3n(e, n);
+  return o === void 0 ? r : `${r} [same artifact: ${o}]`
+}
+
+function c3n(e, n) {
+  let r = typeof e === "string" ? Bt(e) : null;
+  if (r === null) return {
+    target: n
+  };
+  let o = b(r.env),
+    i = E(r.slug),
+    s = `${o}/code/artifact/${r.slug}`;
+  if (i === null) return {
+    target: s
+  };
+  let u = `${o}/artifact/${i}`;
+  return r.shortId ? {
+    target: u,
+    other: s
+  } : {
+    target: s,
+    other: u
+  }
+}
+
+function Y$r(e) {
+  return e.other === void 0 ? "" : ` [same artifact: ${e.target} is ${e.other}]`
+}
+
+function k$e(e) {
+  return `https://${e.slug}.frame.${e.env==="staging"?"staging.":""}claudeusercontent.com`
+}
+
+function gi(e, n) {
+  let r = typeof e === "string" ? Bt(e) : null;
+  return r ? En(r) : n
+}
+
+function d3n(e) {
+  let r = e.match(new RegExp(`^https://claude\\.ai${s$t}(${O})/?$`));
+  return h(r?.[1]) !== null
+}
+var E$e = 8192,
+  X$r = E$e * 4,
+  mfn = 280,
+  p$ = 60,
+  Re = /&(#x[0-9a-f]+|#\d+|[a-z]+);/gi,
+  A = {
+    amp: "&",
+    lt: "<",
+    gt: ">",
+    quot: '"',
+    apos: "'",
+    nbsp: "\xA0",
+    ndash: "\u2013",
+    mdash: "\u2014",
+    minus: "\u2212",
+    hellip: "\u2026",
+    lsquo: "\u2018",
+    rsquo: "\u2019",
+    sbquo: "\u201A",
+    ldquo: "\u201C",
+    rdquo: "\u201D",
+    bdquo: "\u201E",
+    lsaquo: "\u2039",
+    rsaquo: "\u203A",
+    laquo: "\xAB",
+    raquo: "\xBB",
+    middot: "\xB7",
+    bull: "\u2022",
+    dagger: "\u2020",
+    Dagger: "\u2021",
+    prime: "\u2032",
+    Prime: "\u2033",
+    trade: "\u2122",
+    copy: "\xA9",
+    reg: "\xAE",
+    deg: "\xB0",
+    times: "\xD7"
+  };
+
+function z(e) {
+  return e.replace(/<!--[\s\S]*?(?:-->|$)/g, "")
+}
+
+function N(e) {
+  let n = z(e.slice(0, E$e)),
+    r = n.search(/<svg/i);
+  return r === -1 ? n : n.slice(0, r)
+}
+
+function f5e(e) {
+  return e.replace(Re, (n, r) => {
+    if (r.startsWith("#")) {
+      let i = r[1] === "x" || r[1] === "X" ? parseInt(r.slice(2), 16) : parseInt(r.slice(1), 10);
+      return i <= 1114111 && (i < 55296 || i > 57343) ? String.fromCodePoint(i) : n
+    }
+    if (Object.hasOwn(A, r)) return A[r] ?? n;
+    let o = r.toLowerCase();
+    if (Object.hasOwn(A, o)) return A[o] ?? n;
+    return n
+  })
+}
+var Te = /<link\b[^>]*>/gi,
+  Se = 2048,
+  X = /<link\b[^>]{0,2048}\bartifact-thumbnail\b/gi,
+  Ie = new RegExp(X.source, "i"),
+  Ce = /([^\s"'<>\/=]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/g,
+  V = "artifact-thumbnail",
+  ye = /^\(\s*prefers-color-scheme\s*:\s*dark\s*\)$/i,
+  me = /^(?:all|\(\s*prefers-color-scheme\s*:\s*light\s*\))$/i,
+  v = /<(script|style)\b[^>]{0,2048}>[\s\S]*?(?:<\/\1\s*>|$)/gi;
+
+function xe(e) {
+  let n = [];
+  for (let r of e.match(Te) ?? []) {
+    if (r.length > Se) {
+      if (Ie.test(r)) n.push({
+        dark: !1,
+        oversize: !0
+      });
+      continue
+    }
+    let o, i, s;
+    for (let d of r.matchAll(Ce)) {
+      let _ = d[1].toLowerCase(),
+        f = d[2] ?? d[3] ?? d[4] ?? "";
+      if (_ === "rel") o ??= f;
+      else if (_ === "href") i ??= f;
+      else if (_ === "media") s ??= f
+    }
+    if (!(o ?? "").toLowerCase().split(/\s+/).includes(V)) continue;
+    let u = f5e(s ?? "").trim(),
+      l = ye.test(u),
+      c = u === "" || me.test(u);
+    n.push({
+      ...i !== void 0 && {
+        href: f5e(i).trim()
+      },
+      dark: l,
+      ...!l && !c && {
+        badMedia: u
+      }
+    })
+  }
+  return n
+}
+
+function J$r(e) {
+  let n = {
+      pastWindow: !1
+    },
+    r = N(e).replace(v, "");
+  for (let {
+      href: i,
+      dark: s,
+      badMedia: u,
+      oversize: l
+    }
+    of xe(r))
+    if (l) n.oversizeTag = !0;
+    else if (i === void 0) n.missingHref = !0;
+  else if (u !== void 0) n.badMedia ??= u;
+  else if (s) n.dark ??= i;
+  else n.light ??= i;
+  let o = (i) => i.match(X)?.length ?? 0;
+  return n.pastWindow = e.includes(V) && o(z(e).replace(v, "")) > o(r), n
+}
+var Q$r = /[<>&"']/,
+  Le = [
+    ["'", "'"],
+    ['"', '"'],
+    ["\u2018", "\u2019"],
+    ["\u201C", "\u201D"],
+    ["`", "`"]
+  ];
+
+function gfn(e) {
+  let n = e;
+  for (let r = 0; r < 4; r++) {
+    let o = n.trim();
+    for (let [i, s] of Le)
+      if (o.length > i.length + s.length - 1 && o.startsWith(i) && o.endsWith(s)) {
+        o = o.slice(i.length, o.length - s.length);
+        break
+      } if (o = f5e(o), o === n) break;
+    n = o
+  }
+  return n
+}
+var k = String.raw`\p{Extended_Pictographic}[\ufe0e\ufe0f]?\p{Emoji_Modifier}?`,
+  be = String.raw`\u{1f3f4}\u{e0067}\u{e0062}(?:\u{e0065}\u{e006e}\u{e0067}|\u{e0073}\u{e0063}\u{e0074}|\u{e0077}\u{e006c}\u{e0073})\u{e007f}`,
+  Ne = String.raw`(?:[#*0-9]\ufe0f?\u20e3|\p{Regional_Indicator}{2}|${be}|${k}(?:\u200d${k}){0,3})`,
+  we = new RegExp(`^${Ne}{1,4}$`, "u"),
+  Fe = /\p{Regional_Indicator}{2}.*\p{Regional_Indicator}/u;
+
+function m5e(e) {
+  if (typeof e !== "string" || e.length > 32) return;
+  let n = gfn(e);
+  return we.test(n) && !Fe.test(n) ? n : void 0
+}
+
+function a$t(e) {
+  let r = N(e).match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1];
+  if (r === void 0) return null;
+  return qb(f5e(r))
+}
+
+function qb(e) {
+  let r = Array.from(e, (i) => {
+    let s = i.codePointAt(0) ?? 0;
+    return s <= 31 || s >= 127 && s <= 159 ? " " : i
+  }).join("").replace(/\s+/g, " ").trim();
+  if (r === "") return null;
+  let o = Array.from(r);
+  return o.length > mfn ? o.slice(0, mfn).join("") : r
+}
+var Ox = /[\u201C\u201D\u201E\u201F\u2E42\uFF02\u02F5\u02F6\u2033\u2034\u2036\u2037\u02BA\u02DD\u02EE\u05F4\u3003\u301D-\u301F\u275D\u275E\u2760\u{1F676}-\u{1F678}]/gu,
+  ED = /['\u0060\u00B4\u02B9\u02BB\u02BC\u02BD\u02BE\u02BF\u02C8\u02CA\u02CB\u0374\u0384\u055A\u05F3\u07F4\u07F5\u1FBD\u1FBF\u1FEF\u1FFD\u1FFE\u2018\u2019\u201A\u201B\u2032\u2035\u275B\u275C\u275F\uA78B\uA78C\uFF07\uFF40]{2,}/g,
+  zR = /[\p{Default_Ignorable_Code_Point}\u2800\u{1D159}\u{13441}\u{13442}\uFFFC]/gu;
+
+function qk(e) {
+  return e <= 31 || e >= 127 && e <= 159 || e === 173 || e === 1564 || e >= 8203 && e <= 8207 || e === 8232 || e === 8233 || e >= 8234 && e <= 8238 || e >= 8288 && e <= 8297 || e >= 65024 && e <= 65039 || e === 65279 || e >= 65529 && e <= 65531 || e === 94180 || e >= 917504 && e <= 917999
+}
+var _pt = /^[\p{Default_Ignorable_Code_Point}\u2800\u{1D159}\u{13441}\u{13442}\uFFFC]$/u;
+
+function Ue(e) {
+  return e === 8204 || e === 8205
+}
+
+function J(e) {
+  return e >= 65024 && e <= 65039 || e >= 917760 && e <= 917999
+}
+
+function T$e(e) {
+  return Ue(e) || J(e)
+}
+
+function gNo(e) {
+  return !T$e(e) && (qk(e) || e > 127 && _pt.test(String.fromCodePoint(e)))
+}
+var Pe = /^[\p{Extended_Pictographic}\p{Emoji_Modifier}]$/u,
+  De = 8,
+  M = /^[#*0-9]$/,
+  ve = /^\p{Script=Han}$/u,
+  ke = /^[\p{Script=Arabic}\p{Script=Syriac}\p{Script=Mongolian}\p{Script=Devanagari}\p{Script=Bengali}\p{Script=Gurmukhi}\p{Script=Gujarati}\p{Script=Oriya}\p{Script=Tamil}\p{Script=Telugu}\p{Script=Kannada}\p{Script=Malayalam}\p{Script=Sinhala}\p{Script=Myanmar}\p{Script=Tibetan}\p{Script=Khmer}]$/u,
+  Me = /^[\n\r\t\v\f\u0085\u2028\u2029]$/;
+
+function hfn(e) {
+  if ((e.codePointAt(0) ?? 0) < 128) return M.test(e) ? "keycap" : "plain";
+  return Pe.test(e) ? "pictograph" : M.test(e) ? "keycap" : ve.test(e) ? "han" : ke.test(e) ? "joining" : "plain"
+}
+
+function yfn(e, n) {
+  if (J(e)) {
+    let o = e <= 65039 ? n === "pictograph" || n === "han" || n === "keycap" && e === 65039 : n === "han";
+    return {
+      rides: o,
+      after: o && n === "pictograph" ? "selector" : "none"
+    }
+  }
+  return {
+    rides: e === 8205 ? n === "pictograph" || n === "selector" || n === "joining" : n === "joining",
+    after: "none"
+  }
+}
+
+function g5e(e, n, {
+  joiners: r
+} = {
+  joiners: !0
+}) {
+  let o = pp(e),
+    i = [],
+    s = 0,
+    u = !1,
+    l = 0,
+    c = "none";
+  for (let d of o) {
+    if (++s > 16 * n || i.length >= n + 1) {
+      u = !0;
+      break
+    }
+    let _ = d.codePointAt(0) ?? 0;
+    if (!r && T$e(_)) c = "none";
+    else if (T$e(_)) {
+      let f = yfn(_, c);
+      if (f.rides && l < De) i.push(d), l++, c = f.after;
+      else c = "none"
+    } else if (Me.test(d)) {
+      if (i.length > 0 && i.at(-1) !== " ") i.push(" ");
+      c = "none"
+    } else if (!gNo(_)) i.push(d), c = hfn(d);
+    else c = "none"
+  }
+  if (i.length > n) u = !0;
+  return {
+    kept: pc(i.slice(0, u ? n - 1 : n).join("")),
+    cut: u
+  }
+}
+
+function Z$r(e) {
+  let n = "",
+    r = "none";
+  for (let o of pp(e)) {
+    let i = $e(o, r);
+    n += i.shown, r = i.after
+  }
+  return n
+}
+
+function $e(e, n) {
+  let r = e.codePointAt(0) ?? 0;
+  if (T$e(r)) {
+    let o = yfn(r, n);
+    return {
+      shown: o.rides ? e : "\uFFFD",
+      after: o.after
+    }
+  }
+  if (r === 10 || r === 13 || r === 9) return {
+    shown: e,
+    after: "none"
+  };
+  if (gNo(r)) return {
+    shown: "\uFFFD",
+    after: "none"
+  };
+  return {
+    shown: e,
+    after: hfn(e)
+  }
+}
+
+function Ov(e, n) {
+  let {
+    kept: r,
+    cut: o
+  } = g5e(e, n);
+  return o ? `${r}\u2026` : r
+}
+
+function qE(e, n) {
+  let {
+    kept: r,
+    cut: o
+  } = g5e(e, n, {
+    joiners: !1
+  });
+  return o ? `${r}\u2026` : r
+}
+var a5o = 500,
+  eUr = 600;
+
+function l5o(e) {
+  let n = e?.action;
+  return n === void 0 || n === "publish" || n === "live-edit" || n === "sync" || n === "version"
+}
+var ane = 25,
+  qce = 50;
+
+function Kce(e) {
+  let n = e.scope;
+  return n === "shared" || n === "all" ? n : "mine"
+}
+var G = [i9e, pxe, zUo, fxe, imt, Tde],
+  Ge = ["tool_use_error", "sandbox_violations"];
+class Z {
+  #e;
+  #t;
+  #n;
+  get lead() {
+    return this.#e ??= $No([
+      ["artifact", k3n],
+      ["artifact", dne, "owned", "by", "you"],
+      ["artifact", dne, "raw", "html", "follows"],
+      ["artifact", dne, "summary", "below"],
+      ["artifact", dne, "shared", "with", "you"],
+      ["artifact", dne, "published", "from", "your"],
+      ["artifact", dne, "live", "version"],
+      ["artifact", dne, "published", "by", "a", "writer"],
+      ["this", "version", "has", dne, "published", "files"],
+      ["stored", "for", "the", "live", "version"],
+      ["origin", "of", "this", "version"],
+      ["created", "from", "the", "artifact", "type"],
+      ["end", "of", "live", "content"],
+      ["this", "artifact", dne, "ships", "an", "instructions", "file"],
+      ["could", "not", "check", "whether", "this", "artifact"],
+      ["design", "system", "not", "attached"],
+      ["design", "systems", "not", "listed"],
+      ["design", "systems", "left", "out"],
+      ["published", "types", "titled"],
+      ["artifact", "types", "not", "listed"],
+      ["type", "reference", "pages", "not", "attached"],
+      ["a", "quickstart", "in", "this", "conversation"],
+      ["the", "design", "guidance", "that", "came", "with"],
+      ["how", "to", "build", "and", "iterate", "on"]
+    ]), this.#e
+  }
+  get page() {
+    return this.#t ??= [c2(G), this.lead], this.#t
+  }
+  get envelopes() {
+    return this.#n ??= [c2(L([...G, "transcript", ...l9e.filter((e) => e !== mK), ...Ge])), Ffn(), $fn(), this.lead], this.#n
+  }
+}
+var $Go = new q(() => new Z);
+
+function Q() {
+  return $Go.of(j().host)
+}
+
+function tUr() {
+  return Q().lead
+}
+var ee = [uu, VE, j0, W0];
+
+function nUr(e) {
+  return ee.some((n) => e.includes(n))
+}
+var Be = new RegExp(ee.map((e) => `${Gc(e.slice(0,1))}(?=${Gc(e.slice(1))})`).join("|"), "g");
+
+function UGo(e) {
+  return e.replace(Be, (n) => `${n}\\`)
+}
+
+function pc(e, n = "all") {
+  let r = Q(),
+    o = e;
+  for (let i of n === "page" ? r.page : r.envelopes) o = o.replace(i, (s) => `${s}\\`);
+  return n === "page" ? o : UGo(o)
+}
+
+function rUr(e, n, r = "all") {
+  let o = pc(re(e, n), r);
+  return o.length > n ? pc(re(e, n - 1), r) : o
+}
+
+function L1(e, n) {
+  return pc(qr(Array.from(re(e, n * 4), (r) => qk(r.codePointAt(0) ?? 0) ? " " : r).join("").replace(zR, " ").replace(/\s+/g, " ").trim(), n))
+}
+var BGo = 80;
+
+function C$e(e) {
+  return Mv((dd(qb(e ?? "") ?? "") ?? "").replace(ch, " ").replace(/:\u2215\u2215/g, "://")).replace(yJ, " ").replace(h5e, y5e).replace(/\s+/g, " ").trim()
+}
+
+function N1(e) {
+  let n = C$e(e),
+    r = re(n, BGo);
+  if (r === n) return n;
+  return `${r.endsWith(":\u2215")?r.slice(0,-1):r}\u2026`
+}
+
+function dd(e) {
+  return Array.from(e, (n) => qk(n.codePointAt(0) ?? 0) ? " " : n).join("").replace(zR, " ").replace(/"/g, "'").replace(Ox, "'").replace(ED, "'").replace(/\s+/g, " ").trim() || null
+}
+var jGo = String.raw`\u002b\u003d\u005e\u007c\u007e\u00a2-\u00a5\u00a8\u00ac\u00af\u00b1\u00b4\u00b8\u00d7\u00f7\u02c2-\u02c5\u02d2-\u02df\u02e5-\u02eb\u02ed\u02ef-\u02ff\u0375\u0384\u0385\u03f6\u058f\u0606-\u0608\u060b\u07fe\u07ff\u0888\u09f2\u09f3\u09fb\u0af1\u0bf9\u0e3f\u17db\u1fbd\u1fbf-\u1fc1\u1fcd-\u1fcf\u1fdd-\u1fdf\u1fed-\u1fef\u1ffd\u1ffe\u2044\u2052\u207a-\u207c\u208a-\u208c\u20a0-\u20c1\u2118\u2140-\u2144\u214b\u2190-\u2194\u219a\u219b\u21a0\u21a3\u21a6\u21ae\u21ce\u21cf\u21d2\u21d4\u21f4-\u22ff\u2320\u2321\u237c\u239b-\u23b3\u23dc-\u23e1\u25b7\u25c1\u25f8-\u25ff\u266f\u27c0-\u27c4\u27c7-\u27e5\u27f0-\u27ff\u2900-\u2982\u2999-\u29d7\u29dc-\u29fb\u29fe-\u2aff\u2b30-\u2b44\u2b47-\u2b4c\u309b\u309c\ua700-\ua716\ua720\ua721\ua789\ua78a\ua838\uab5b\uab6a\uab6b\ufb29\ufbb2-\ufbc2\ufdfc\ufe62\ufe64-\ufe66\ufe69\uff04\uff0b\uff1c-\uff1e\uff3e\uff40\uff5c\uff5e\uffe0-\uffe3\uffe5\uffe6\uffe9-\uffec\u{10d8e}\u{10d8f}\u{11fdd}-\u{11fe0}\u{1cef0}\u{1d6c1}\u{1d6db}\u{1d6fb}\u{1d715}\u{1d735}\u{1d74f}\u{1d76f}\u{1d789}\u{1d7a9}\u{1d7c3}\u{1e2ff}\u{1ecb0}\u{1eef0}\u{1eef1}\u{1f3fb}-\u{1f3ff}\u{1f8d0}-\u{1f8d8}`,
+  B = `[\\p{So}${jGo}\\p{Pd}\\p{Pc}\\p{Mn}\\p{Me}${Tpt}\\u02c9\\u02cd\\u2017\\u2053\\u203e\\ufe49-\\ufe4c\\u0640\\u07fa\\u1173\\u1428\\u180a\\u2e0f\\u2f00\\u3127\\u3161\\u3192\\u31d0\\u4e00\\ua4ff\\ua7f7\\ua8fb\\uffda]`,
+  He = new RegExp(`(?<!${B})${B}+>`, "gu");
+
+function Mv(e) {
+  return e.replace(/[\u00bb\u02c2-\u02c5\u02ef-\u02ff\u1405\u1406\u1409\u1433\u1434\u1450\u1451\u15d2\u2023\u203a\u204d\u20d0-\u20ef\u2044\u2190-\u21ff\u2215\u226b\u227b\u227d\u227f\u2283\u22b1\u22b3\u22d7\u22d9\u2571\u2572\u2303-\u2304\u232a\u2344\u2348\u23e9-\u23ef\u23f5\u25b6-\u25bb\u261b\u261e\u276d\u276f\u2771\u2794-\u27bf\u27e9\u27eb\u27f0-\u27ff\u2900-\u297f\u29a8-\u29af\u2992\u2994\u29c1\u29d0\u29f5\u29f8\u29fd\u2a20\u2a7a\u2aa2\u2aa7\u2aa9\u2aab\u2aad\u2ab0\u2ab2\u2ab4\u2ab6\u2ab8\u2aba\u2abc\u2af8\u2b00-\u2bff\u3009\u300b\ue000-\uf8ff\ufe65\ufe68\uff0f\uff1e\uff3c\uffe9-\uffec\u{1f449}\u{1f599}\u{1f59b}\u{1f59d}\u{1f782}\u{1f800}-\u{1f8ff}\u{1faf1}\u{1fbc1}-\u{1fbc3}\u{1fbb0}-\u{1fbb8}\u{f0000}-\u{ffffd}\u{100000}-\u{10fffd}]/gu, "?").replace(He, "?")
+}
+var h5e = /[:\uFE13\uFE55\uFF1A][/\uFF0F][/\uFF0F]/gu,
+  y5e = ":\u2215\u2215",
+  yJ = /[<>\uFE64\uFE65\uFF1C\uFF1E]+/gu,
+  H = `(?![(){}])[\\p{Ps}\\p{Pe}${qRe}]`,
+  ch = new RegExp(`(?<!\\s)\\s*${H}(?:\\s|${H})*`, "gu"),
+  te = /[:\u02D0\u02D1\u05C3\u2D42\u2D53\u2D57\uA4FD\uA789\u{10781}\u{10782}]|(?![\p{L}\p{N}\p{Zs}])[^\x00-\x7F]/gu,
+  oUr = new RegExp(`^(?:${te.source})$`, "u");
+
+function l$t(e) {
+  return H1(e.replace(ch, " ").replace(te, " ").replace(/ {2,}/g, " "))
+}
+
+function H1(e) {
+  return e.replace(/sources[^\p{L}\p{N}]+under/giu, "sources-under").replace(/stored[^\p{L}\p{N}]+connector[^\p{L}\p{N}]+grant/giu, "stored-connector-grant").replace(/published[^\p{L}\p{N}]+by[^\p{L}\p{N}]+this[^\p{L}\p{N}]+session/giu, "published-by-this-session").replace(/created[^\p{L}\p{N}]+by[^\p{L}\p{N}]+this[^\p{L}\p{N}]+session/giu, "created-by-this-session")
+}
+var _fn = " [artifact published by this session]",
+  sUr = " [artifact created by this session]",
+  c$t = " [ownership: yours, made from an Artifact type \u2014 the files the type put in it were written by the type's publisher]",
+  iUr = " [capabilities: declared by the Anthropic-published type this Artifact was made from; this publish cannot change them]",
+  aUr = " [destination is a file name Claude Code screens: git, hook, tool and agent settings]",
+  lUr = "Automatic edit of an Artifact this session watches, requested by a writer's comment on it; the server re-checks the writer, the thread's edit grant, single-file, size and rate limits";
+
+function KE(e) {
+  return Mv(dd(e) ?? "").replace(ch, " ").replace(yJ, " ").replace(/ {2,}/g, " ").trim()
+}
+var Ye = /<meta[^>]+name=["']description["'][^>]+content=(["'])((?:(?!\1).)*)\1/is,
+  Ke = /<title[^>]*>([\s\S]*?)<\/title>/i,
+  We = /<h1[^>]*>([\s\S]*?)<\/h1>/i,
+  Y = new Set(["", "index", "untitled", "document"]);
+
+function cUr(e, n) {
+  let r = N(e),
+    o = (_) => qb(f5e(_ ?? "")) ?? "",
+    i = o(r.match(Ye)?.[2]);
+  if (i.length >= 10) return i;
+  let s = (_) => o(r.match(_)?.[1]?.replace(/<[^>]+>/g, "")),
+    u = s(Ke),
+    l = s(We),
+    c = u.toLowerCase();
+  if (Y.has(c) || c === n) u = "";
+  let d = l.toLowerCase();
+  if (d === u.toLowerCase() || Y.has(d) || d === n) return u;
+  return l
+}
+
+function d$t(e) {
+  let n = U(e, (r) => ("rail" in r) && r.rail === "live_stopped");
+  return {
+    watching: e.length - n,
+    stopped: n
+  }
+}
+export {
+  KLo,
+  cfn,
+  YLo,
+  XLo,
+  JLo,
+  QLo,
+  ZLo,
+  jce,
+  w$e,
+  HFt,
+  DI,
+  eNo,
+  Wce,
+  ppt,
+  zRe,
+  ine,
+  o5e,
+  tNo,
+  nNo,
+  rNo,
+  oNo,
+  sNo,
+  O$r,
+  M1,
+  iNo,
+  s5e,
+  GRe,
+  VRe,
+  aNo,
+  dfn,
+  Pv,
+  lNo,
+  cNo,
+  FFt,
+  fpt,
+  so,
+  dNo,
+  uNo,
+  pNo,
+  fNo,
+  bye,
+  qRe,
+  Iv,
+  uu,
+  VE,
+  j0,
+  W0,
+  Vb,
+  Sye,
+  wye,
+  i5e,
+  a5e,
+  vye,
+  pC,
+  $Ft,
+  fC,
+  l5e,
+  kye,
+  UFt,
+  c5e,
+  BFt,
+  X4n,
+  M$r,
+  ufn,
+  mpt,
+  D$r,
+  d5e,
+  jFt,
+  L$r,
+  WFt,
+  zFt,
+  J4n,
+  N$r,
+  GFt,
+  VFt,
+  qFt,
+  pfn,
+  Q4n,
+  ffn,
+  Z4n,
+  u$,
+  yn,
+  u5e,
+  I_,
+  Jf,
+  jR,
+  rY,
+  Pp,
+  KFt,
+  e3n,
+  H$r,
+  YFt,
+  mNo,
+  XFt,
+  F$r,
+  $$r,
+  JFt,
+  zce,
+  t3n,
+  n3n,
+  U$r,
+  Gce,
+  KRe,
+  p5e,
+  QFt,
+  ZFt,
+  r3n,
+  e$t,
+  i5o,
+  t$t,
+  B$r,
+  gpt,
+  n$t,
+  j$r,
+  W$r,
+  z$r,
+  o3n,
+  s3n,
+  i3n,
+  FGo,
+  r$t,
+  o$t,
+  Oe,
+  s$t,
+  Bn,
+  ON,
+  hpt,
+  kD,
+  G$r,
+  ypt,
+  D1,
+  YRe,
+  Rc,
+  V$r,
+  Bt,
+  Vce,
+  l2,
+  WR,
+  Fq,
+  v$e,
+  XRe,
+  q$r,
+  a3n,
+  K$r,
+  ha,
+  l3n,
+  En,
+  JRe,
+  i$t,
+  WS,
+  c3n,
+  Y$r,
+  k$e,
+  gi,
+  d3n,
+  E$e,
+  X$r,
+  mfn,
+  p$,
+  f5e,
+  J$r,
+  Q$r,
+  gfn,
+  m5e,
+  a$t,
+  qb,
+  Ox,
+  ED,
+  zR,
+  qk,
+  _pt,
+  T$e,
+  gNo,
+  hfn,
+  yfn,
+  g5e,
+  Z$r,
+  Ov,
+  qE,
+  a5o,
+  eUr,
+  l5o,
+  ane,
+  qce,
+  Kce,
+  $Go,
+  tUr,
+  nUr,
+  UGo,
+  pc,
+  rUr,
+  L1,
+  BGo,
+  C$e,
+  N1,
+  dd,
+  jGo,
+  Mv,
+  h5e,
+  y5e,
+  yJ,
+  ch,
+  oUr,
+  l$t,
+  H1,
+  _fn,
+  sUr,
+  c$t,
+  iUr,
+  aUr,
+  lUr,
+  KE,
+  cUr,
+  d$t
+};

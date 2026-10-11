@@ -1,0 +1,1 @@
+var zt=(e,t,o={restored:[],passedProblem:()=>{return}})=>({event:e,restoreArgument:(r,n)=>W(["origin",...o.restored],r,n),checkArgument:(r,n)=>sr(r,n)??o.passedProblem(r),measureArgument:(r,n)=>te(r.text,n.text),check:C((r)=>typeof r[t]==="boolean"?void 0:`no { ${t} } (true or false)`)});

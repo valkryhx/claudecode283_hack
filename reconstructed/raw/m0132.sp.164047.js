@@ -1,0 +1,1 @@
+var sp=["name","description","prompt","tools","disallowedTools","model","effort","permissionMode","mcpServers","hooks","maxTurns","skills","initialPrompt","memory","background","omitClaudeMd","isolation"];

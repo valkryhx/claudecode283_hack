@@ -1,0 +1,243 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { Te } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { _, m, p } from "B:/~BUN/root/chunk-51n463p1.js";
+import { t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import { O } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { tt, Ve } from "B:/~BUN/root/chunk-py7yqpgt.js";
+import { zae, Jsn, G9, oTe, FV, Aat } from "B:/~BUN/root/chunk-7azfcycf.js";
+import { Ee, le } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import { Dct } from "B:/~BUN/root/chunk-hed6xq91.js";
+import { homedir as o } from "os";
+async function XYt() {
+  if ((await tt("which", ["uv"])).code === 0) return t("[it2Setup] Found uv (will use uv tool install)"), "uvx";
+  if ((await tt("which", ["pipx"])).code === 0) return t("[it2Setup] Found pipx package manager"), "pipx";
+  if ((await tt("which", ["pip"])).code === 0) return t("[it2Setup] Found pip package manager"), "pip";
+  if ((await tt("which", ["pip3"])).code === 0) return t("[it2Setup] Found pip3 package manager"), "pip";
+  return t("[it2Setup] No Python package manager found"), null;
+}
+async function k() {
+  return (await tt("which", ["it2"])).code === 0;
+}
+async function eur(packageManager) {
+  t(`[it2Setup] Installing it2 using ${packageManager}`);
+  let n;
+  switch (packageManager) {
+    case "uvx":
+      n = await Ve("uv", ["tool", "install", "it2"], {
+        cwd: o()
+      });
+      break;
+    case "pipx":
+      n = await Ve("pipx", ["install", "it2"], {
+        cwd: o()
+      });
+      break;
+    case "pip":
+      if (n = await Ve("pip", ["install", "--user", "it2"], {
+        cwd: o()
+      }), n.code !== 0) n = await Ve("pip3", ["install", "--user", "it2"], {
+        cwd: o()
+      });
+      break;
+  }
+  if (n.code !== 0) {
+    let error = n.stderr || "Unknown installation error";
+    return t(`[it2Setup] Failed to install it2: ${error}`, {
+      level: "error"
+    }), m("swarm_iterm2_it2_install", `${packageManager}_install_failed`), {
+      success: !1,
+      error: error,
+      packageManager: packageManager
+    };
+  }
+  return t("[it2Setup] it2 installed successfully"), _("swarm_iterm2_it2_install"), {
+    success: !0,
+    packageManager: packageManager
+  };
+}
+async function tur() {
+  if (t("[it2Setup] Verifying it2 setup..."), !(await k())) return m("swarm_iterm2_it2_verify", "not_installed"), {
+    success: !1,
+    error: "it2 CLI is not installed or not in PATH"
+  };
+  let n = await tt("it2", ["session", "list"]);
+  if (n.code !== 0) {
+    let a = n.stderr.toLowerCase();
+    if (a.includes("api") || a.includes("python") || a.includes("connection refused") || a.includes("not enabled")) return t("[it2Setup] Python API not enabled in iTerm2"), p("swarm_iterm2_it2_verify", "python_api_not_enabled"), {
+      success: !1,
+      error: "Python API not enabled in iTerm2 preferences",
+      needsPythonApiEnabled: !0
+    };
+    return m("swarm_iterm2_it2_verify", "communication_failed"), {
+      success: !1,
+      error: n.stderr || "Failed to communicate with iTerm2"
+    };
+  }
+  return t("[it2Setup] it2 setup verified successfully"), _("swarm_iterm2_it2_verify"), {
+    success: !0
+  };
+}
+function nur() {
+  return ["Almost done! Enable the Python API in iTerm2:", "", "  iTerm2 \u2192 Settings \u2192 General \u2192 Magic \u2192 Enable Python API", "", "After enabling, you may need to restart iTerm2."];
+}
+function rur(e) {
+  if (le().iterm2It2SetupComplete !== !0) Ee(a => ({
+    ...a,
+    iterm2It2SetupComplete: !0
+  }), e), t("[it2Setup] Marked it2 setup as complete");
+}
+function our(preferTmuxOverIterm2, n) {
+  if (le().preferTmuxOverIterm2 !== preferTmuxOverIterm2) Ee(s => ({
+    ...s,
+    preferTmuxOverIterm2: preferTmuxOverIterm2
+  }), n), t(`[it2Setup] Set preferTmuxOverIterm2 = ${preferTmuxOverIterm2}`);
+}
+function d() {
+  return le().preferTmuxOverIterm2 === !0;
+}
+async function axn(e = zae) {
+  if (e.backendsRegistered) return;
+  let {
+      TmuxBackend: TmuxBackend
+    } = await import("B:/~BUN/root/chunk-sjq91v90.js"),
+    {
+      ITermBackend: ITermBackend
+    } = await import("B:/~BUN/root/chunk-v7ar4fs5.js");
+  e.TmuxBackendClass = TmuxBackend, e.ITermBackendClass = ITermBackend, e.backendsRegistered = !0;
+}
+function c(e) {
+  if (e.tmuxBackend) return e.tmuxBackend;
+  if (!e.TmuxBackendClass) throw Error("TmuxBackend not registered. Import TmuxBackend.ts before using the registry.");
+  return e.tmuxBackend = new e.TmuxBackendClass(), e.tmuxBackend;
+}
+function u(e) {
+  if (e.itermBackend) return e.itermBackend;
+  if (!e.ITermBackendClass) throw Error("ITermBackend not registered. Import ITermBackend.ts before using the registry.");
+  return e.itermBackend = new e.ITermBackendClass(), e.itermBackend;
+}
+async function JYt(e = zae) {
+  if (await axn(e), e.cachedDetectionResult) return t(`[BackendRegistry] Using cached backend: ${e.cachedDetectionResult.backend.type}`), e.cachedDetectionResult;
+  if (t("[BackendRegistry] Starting backend detection..."), Dct() === "iterm2") {
+    if (!FV(e)) throw m("swarm_backend_detect", "iterm2_explicit_not_in_iterm2"), Error('teammateMode is set to "iterm2" but this session is not running inside iTerm2. Launch Claude from iTerm2, or change teammateMode in settings.');
+    if (!(await Aat(e))) throw m("swarm_backend_detect", "iterm2_explicit_no_it2"), Error('teammateMode is set to "iterm2" but the it2 CLI is not reachable. Install it with `pip install it2` and enable the Python API in iTerm2 (Preferences > General > Magic > Enable Python API).');
+    t("[BackendRegistry] Selected: iterm2 (explicit teammateMode)");
+    let backend = u(e);
+    return e.cachedDetectionResult = {
+      backend: backend,
+      isNative: !0,
+      needsIt2Setup: !1
+    }, _("swarm_backend_detect"), e.cachedDetectionResult;
+  }
+  let n = await G9(),
+    a = FV(e);
+  if (t(`[BackendRegistry] Environment: insideTmux=${n}, inITerm2=${a}`), n) {
+    t("[BackendRegistry] Selected: tmux (running inside tmux session)");
+    let backend_2 = c(e);
+    return e.cachedDetectionResult = {
+      backend: backend_2,
+      isNative: !0,
+      needsIt2Setup: !1
+    }, _("swarm_backend_detect"), e.cachedDetectionResult;
+  }
+  if (a) {
+    let i = d();
+    if (i) t("[BackendRegistry] User prefers tmux over iTerm2, skipping iTerm2 detection");else {
+      let r = await Aat(e);
+      if (t(`[BackendRegistry] iTerm2 detected, it2 CLI available: ${r}`), r) {
+        t("[BackendRegistry] Selected: iterm2 (native iTerm2 with it2 CLI)");
+        let backend_3 = u(e);
+        return e.cachedDetectionResult = {
+          backend: backend_3,
+          isNative: !0,
+          needsIt2Setup: !1
+        }, _("swarm_backend_detect"), e.cachedDetectionResult;
+      }
+    }
+    let l = await oTe();
+    if (t(`[BackendRegistry] it2 not available, tmux available: ${l}`), l) {
+      t("[BackendRegistry] Selected: tmux (fallback in iTerm2, it2 setup recommended)");
+      let backend_4 = c(e);
+      return e.cachedDetectionResult = {
+        backend: backend_4,
+        isNative: !1,
+        needsIt2Setup: !i
+      }, p("swarm_backend_detect", i ? "fallback_to_tmux" : "needs_it2_setup"), e.cachedDetectionResult;
+    }
+    throw t("[BackendRegistry] ERROR: iTerm2 detected but no it2 CLI and no tmux"), m("swarm_backend_detect", "iterm2_no_it2_no_tmux"), Error("iTerm2 detected but it2 CLI not installed. Install it2 with: pip install it2");
+  }
+  let s = await oTe();
+  if (t(`[BackendRegistry] Not in tmux or iTerm2, tmux available: ${s}`), s) {
+    t("[BackendRegistry] Selected: tmux (external session mode)");
+    let backend_5 = c(e);
+    return e.cachedDetectionResult = {
+      backend: backend_5,
+      isNative: !1,
+      needsIt2Setup: !1
+    }, _("swarm_backend_detect"), e.cachedDetectionResult;
+  }
+  throw t("[BackendRegistry] ERROR: No pane backend available"), m("swarm_backend_detect", "no_backend_available"), Error(x());
+}
+function x() {
+  switch (O()) {
+    case "macos":
+      return `To use agent swarms, install tmux:
+  brew install tmux
+Then start a tmux session with: tmux new-session -s claude`;
+    case "linux":
+    case "wsl":
+      return `To use agent swarms, install tmux:
+  sudo apt install tmux    # Ubuntu/Debian
+  sudo dnf install tmux    # Fedora/RHEL
+Then start a tmux session with: tmux new-session -s claude`;
+    case "windows":
+      return `To use agent swarms, you need tmux which requires WSL (Windows Subsystem for Linux).
+Install WSL first, then inside WSL run:
+  sudo apt install tmux
+Then start a tmux session with: tmux new-session -s claude`;
+    default:
+      return `To use agent swarms, install tmux using your system's package manager.
+Then start a tmux session with: tmux new-session -s claude`;
+  }
+}
+function bkt(e, n = zae) {
+  switch (e) {
+    case "tmux":
+      return c(n);
+    case "iterm2":
+      return u(n);
+  }
+}
+function sur(e = zae) {
+  return e.cachedDetectionResult;
+}
+function iur(e = zae) {
+  t("[BackendRegistry] Marking in-process fallback as active"), e.inProcessFallbackActive = !0;
+}
+function w() {
+  return Dct();
+}
+function Skt(e = zae) {
+  if (Te()) return t("[BackendRegistry] isInProcessEnabled: true (non-interactive session)"), !0;
+  let n = w(),
+    a;
+  if (n === "in-process") a = !0;else if (n === "tmux" || n === "iterm2") a = !1;else {
+    if (e.inProcessFallbackActive) return t("[BackendRegistry] isInProcessEnabled: true (fallback after pane backend unavailable)"), !0;
+    let s = Jsn(),
+      i = FV(e);
+    a = !s && !i;
+  }
+  return t(`[BackendRegistry] isInProcessEnabled: ${a} (mode=${n}, insideTmux=${Jsn()}, inITerm2=${FV(e)})`), a;
+}
+function wkt(e = zae) {
+  e.cachedDetectionResult = null, e.backendsRegistered = !1, e.inProcessFallbackActive = !1;
+}
+export { XYt, eur, tur, nur, rur, our, axn, JYt, bkt, sur, iur, Skt, wkt };

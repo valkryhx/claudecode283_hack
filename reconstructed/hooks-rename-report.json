@@ -1,0 +1,865 @@
+{
+  "generatedAt": "2026-10-11T11:46:33.583Z",
+  "files": [
+    {
+      "id": "m0357",
+      "src": "D:\\git_repos\\claude_hack\\reconstructed\\deminified\\m0357_0xc63ba04.js",
+      "out": "D:\\git_repos\\claude_hack\\reconstructed\\deminified-hooks\\m0357_0xc63ba04.js",
+      "inBytes": 5425751,
+      "outBytes": 5427910,
+      "renamed": [
+        {
+          "old": "kE",
+          "new": "dispatchHookEvent"
+        },
+        {
+          "old": "WLt",
+          "new": "runClassicHooksGenerator"
+        },
+        {
+          "old": "RLt",
+          "new": "runHookGenerators"
+        },
+        {
+          "old": "NNn",
+          "new": "filterAgentContextHookResult"
+        },
+        {
+          "old": "HNn",
+          "new": "enforceConfinedSessionHookResult"
+        },
+        {
+          "old": "Xxo",
+          "new": "executeHookEvent"
+        },
+        {
+          "old": "Yxo",
+          "new": "runFunctionHookChain"
+        },
+        {
+          "old": "BA",
+          "new": "runClassicHooks"
+        },
+        {
+          "old": "FNn",
+          "new": "resolveHookCwd"
+        },
+        {
+          "old": "Vbr",
+          "new": "runDeviceHook"
+        },
+        {
+          "old": "CLt",
+          "new": "shouldYieldBeforeHooks"
+        },
+        {
+          "old": "jLt",
+          "new": "formatHookName"
+        },
+        {
+          "old": "s0",
+          "new": "runCommandHook"
+        },
+        {
+          "old": "HLt",
+          "new": "matchHooks"
+        },
+        {
+          "old": "d0",
+          "new": "collectHookConfigs"
+        },
+        {
+          "old": "OLt",
+          "new": "getMatcherQuery"
+        },
+        {
+          "old": "GIe",
+          "new": "matcherMatches"
+        },
+        {
+          "old": "_xo",
+          "new": "parseMatcherNameSet"
+        },
+        {
+          "old": "DLt",
+          "new": "getMatcherFamilyNames"
+        },
+        {
+          "old": "Cxo",
+          "new": "getMatcherFamilyParent"
+        },
+        {
+          "old": "jIe",
+          "new": "normalizeMatcherQuery"
+        },
+        {
+          "old": "xxo",
+          "new": "buildIfConditionEvaluator"
+        },
+        {
+          "old": "LLt",
+          "new": "getToolPermissionMatcherInfo"
+        },
+        {
+          "old": "Txo",
+          "new": "warnMatcherMatchesNoTool"
+        },
+        {
+          "old": "Kbr",
+          "new": "hookMatcherMatchesInput"
+        },
+        {
+          "old": "qbr",
+          "new": "toolInputMatchesPermissionRule"
+        },
+        {
+          "old": "Bmo",
+          "new": "hasMatchingHookForTool"
+        },
+        {
+          "old": "mR",
+          "new": "hookPatternForEvent"
+        },
+        {
+          "old": "PAt",
+          "new": "hasRegisteredHookForEvent"
+        },
+        {
+          "old": "Lxo",
+          "new": "sameHookDefinition"
+        },
+        {
+          "old": "Nxo",
+          "new": "findHookDefinitionOwner"
+        },
+        {
+          "old": "Fxo",
+          "new": "isProjectConfiguredHook"
+        },
+        {
+          "old": "$Lt",
+          "new": "isInternalCallbackHook"
+        },
+        {
+          "old": "t0",
+          "new": "hookDedupKey"
+        },
+        {
+          "old": "Exo",
+          "new": "MATCHER_NAME_SET_REGEX"
+        },
+        {
+          "old": "WIe",
+          "new": "TOOL_HOOK_EVENTS"
+        },
+        {
+          "old": "$Re",
+          "new": "MCP_MATCHER_WARN_EVENTS"
+        },
+        {
+          "old": "kxo",
+          "new": "isMcpMatcherName"
+        },
+        {
+          "old": "hq",
+          "new": "interpretHookOutput"
+        },
+        {
+          "old": "$Ve",
+          "new": "parseHookOutput"
+        },
+        {
+          "old": "MLt",
+          "new": "getHookResultStdout"
+        },
+        {
+          "old": "Z7t",
+          "new": "augmentHookValidationError"
+        },
+        {
+          "old": "eZt",
+          "new": "parseHttpHookBody"
+        },
+        {
+          "old": "MNn",
+          "new": "isAsyncMarkerOutput"
+        },
+        {
+          "old": "ZRo",
+          "new": "isJsonLinesHookOutput"
+        },
+        {
+          "old": "hxo",
+          "new": "mergeResultStdout"
+        },
+        {
+          "old": "vLt",
+          "new": "hookRanByContract"
+        },
+        {
+          "old": "ILt",
+          "new": "scriptHookRan"
+        },
+        {
+          "old": "HIe",
+          "new": "makeScriptHookBlockingError"
+        },
+        {
+          "old": "pre",
+          "new": "describeHookExit"
+        },
+        {
+          "old": "DNn",
+          "new": "isBenignMissingFileError"
+        },
+        {
+          "old": "ure",
+          "new": "emitHookTerminalSequence"
+        },
+        {
+          "old": "OSe",
+          "new": "sanitizeTerminalSequence"
+        },
+        {
+          "old": "jOt",
+          "new": "runPromptHook"
+        },
+        {
+          "old": "tDt",
+          "new": "runAgentHook"
+        },
+        {
+          "old": "K7t",
+          "new": "runHttpHook"
+        },
+        {
+          "old": "Zxo",
+          "new": "runFunctionHook"
+        },
+        {
+          "old": "Tvn",
+          "new": "runFunctionHookChainInternal"
+        },
+        {
+          "old": "Pvn",
+          "new": "runSessionFunctionHooks"
+        },
+        {
+          "old": "bQe",
+          "new": "hasFunctionHook"
+        },
+        {
+          "old": "v0n",
+          "new": "isFunctionHookEvent"
+        },
+        {
+          "old": "cSe",
+          "new": "classicHookName"
+        },
+        {
+          "old": "x9",
+          "new": "classicHookPattern"
+        },
+        {
+          "old": "yWo",
+          "new": "isClassicHookLoaded"
+        },
+        {
+          "old": "$Qe",
+          "new": "makeManagedOrCoreHookHandler"
+        },
+        {
+          "old": "Avn",
+          "new": "mergeFunctionHookResults"
+        },
+        {
+          "old": "O9",
+          "new": "functionHookResultToBlock"
+        },
+        {
+          "old": "rL",
+          "new": "lastNonEmptyLine"
+        },
+        {
+          "old": "Cvn",
+          "new": "lastLine"
+        },
+        {
+          "old": "FQe",
+          "new": "makeBlockedHookResult"
+        },
+        {
+          "old": "BQe",
+          "new": "makeSucceededHookResult"
+        },
+        {
+          "old": "Rdo",
+          "new": "isHookAttributionKind"
+        },
+        {
+          "old": "SMe",
+          "new": "truncateWithBudget"
+        },
+        {
+          "old": "Bvn",
+          "new": "formatAttributionLabel"
+        },
+        {
+          "old": "Nvn",
+          "new": "HOOK_ATTRIBUTION_KINDS"
+        },
+        {
+          "old": "Fvn",
+          "new": "ATTRIBUTION_MIN_WIDTH"
+        },
+        {
+          "old": "$vn",
+          "new": "ATTRIBUTION_MAX_WIDTH"
+        },
+        {
+          "old": "Axo",
+          "new": "canForwardHook"
+        },
+        {
+          "old": "Pxo",
+          "new": "makeHeldModelHookResult"
+        },
+        {
+          "old": "Bxo",
+          "new": "makeHeldServedCallHookResult"
+        },
+        {
+          "old": "NLt",
+          "new": "recordHeldHookTelemetry"
+        },
+        {
+          "old": "Mxo",
+          "new": "buildServedCallReach"
+        },
+        {
+          "old": "Oxo",
+          "new": "judgeServedCallHook"
+        },
+        {
+          "old": "Uxo",
+          "new": "rewriteBlockingErrorCommand"
+        },
+        {
+          "old": "Hxo",
+          "new": "refuseUnverifiableServedCallHook"
+        },
+        {
+          "old": "OJe",
+          "new": "AsyncHookRegistry"
+        },
+        {
+          "old": "DJe",
+          "new": "registerAsyncHook"
+        },
+        {
+          "old": "LSe",
+          "new": "deliverAsyncHookResponse"
+        },
+        {
+          "old": "LJe",
+          "new": "parseAsyncHookResponse"
+        },
+        {
+          "old": "W9",
+          "new": "emitHookStarted"
+        },
+        {
+          "old": "zTn",
+          "new": "emitHookProgress"
+        },
+        {
+          "old": "G9",
+          "new": "startHookProgressPolling"
+        },
+        {
+          "old": "ec",
+          "new": "emitHookResponse"
+        },
+        {
+          "old": "j9",
+          "new": "shouldEmitHookSystemMessage"
+        },
+        {
+          "old": "$do",
+          "new": "setAllHookEventsEnabled"
+        },
+        {
+          "old": "q9",
+          "new": "warnUnrecognizedHookOutputKeys"
+        },
+        {
+          "old": "IJe",
+          "new": "validateAsyncHookOutput"
+        },
+        {
+          "old": "rW",
+          "new": "describeJsonValueType"
+        },
+        {
+          "old": "PJe",
+          "new": "HookEventsSettings"
+        },
+        {
+          "old": "GTn",
+          "new": "hookEventsSettingsStore"
+        },
+        {
+          "old": "MJe",
+          "new": "getHookEventsSettings"
+        },
+        {
+          "old": "WTn",
+          "new": "ALWAYS_EMITTED_HOOK_EVENTS"
+        },
+        {
+          "old": "qTn",
+          "new": "asyncHookRegistryStore"
+        },
+        {
+          "old": "sW",
+          "new": "getAsyncHookRegistry"
+        },
+        {
+          "old": "wLt",
+          "new": "registerBackgroundHookProcess"
+        },
+        {
+          "old": "AJe",
+          "new": "TerminalSequenceWriter"
+        },
+        {
+          "old": "jTn",
+          "new": "terminalSequenceWriterStore"
+        },
+        {
+          "old": "H9",
+          "new": "getTerminalSequenceWriter"
+        },
+        {
+          "old": "DSe",
+          "new": "writeTerminalSequence"
+        },
+        {
+          "old": "nyr",
+          "new": "setTerminalSequenceWriter"
+        },
+        {
+          "old": "ryr",
+          "new": "unregisterTerminalSequenceWriter"
+        },
+        {
+          "old": "Na",
+          "new": "DEFAULT_HOOK_TIMEOUT_MS"
+        },
+        {
+          "old": "Kxo",
+          "new": "HOOK_EVENTS_NEEDING_YIELD"
+        },
+        {
+          "old": "Aie",
+          "new": "isWorkspaceUntrusted"
+        },
+        {
+          "old": "sxo",
+          "new": "pluginDirectoryExists"
+        },
+        {
+          "old": "Qxo",
+          "new": "WARNED_HOOK_CWD_FALLBACKS"
+        },
+        {
+          "old": "$xo",
+          "new": "isAnchorableHookPath"
+        }
+      ],
+      "skipped": [],
+      "fellBack": false
+    },
+    {
+      "id": "m0247",
+      "src": "D:\\git_repos\\claude_hack\\reconstructed\\deminified\\m0247_0xc49fe84.js",
+      "out": "D:\\git_repos\\claude_hack\\reconstructed\\deminified-hooks\\m0247_0xc49fe84.js",
+      "inBytes": 1306150,
+      "outBytes": 1308523,
+      "renamed": [
+        {
+          "old": "P2",
+          "new": "HookOutputSchema"
+        },
+        {
+          "old": "P9",
+          "new": "HookOutputOrAsyncMarkerSchema"
+        },
+        {
+          "old": "O2",
+          "new": "HookPermissionDecisionSchema"
+        },
+        {
+          "old": "tI",
+          "new": "isSyncHookOutput"
+        },
+        {
+          "old": "Jme",
+          "new": "isAsyncHookOutputMarker"
+        },
+        {
+          "old": "cy",
+          "new": "HOOK_SOURCES"
+        },
+        {
+          "old": "dvo",
+          "new": "collectAllHookConfigs"
+        },
+        {
+          "old": "A2",
+          "new": "iterateSettingsSources"
+        },
+        {
+          "old": "hT",
+          "new": "collectNonFunctionHooks"
+        },
+        {
+          "old": "jIt",
+          "new": "HOOK_EVENTS_WITHOUT_TOOL_CGROUP"
+        },
+        {
+          "old": "LKe",
+          "new": "hookToolCgroupCategory"
+        },
+        {
+          "old": "D2",
+          "new": "LOCAL_BLOCKING_HOOK_EVENTS"
+        },
+        {
+          "old": "I2",
+          "new": "LOCAL_BLOCKING_HOOK_EVENT_SET"
+        },
+        {
+          "old": "L2",
+          "new": "HOOK_EVENT_EXECUTION_LOCATION"
+        },
+        {
+          "old": "EV",
+          "new": "isLocalBlockingHookEvent"
+        },
+        {
+          "old": "Fwo",
+          "new": "getHookEventExecutionLocation"
+        },
+        {
+          "old": "N2",
+          "new": "FILE_EDIT_TOOL_NAMES"
+        },
+        {
+          "old": "_T",
+          "new": "FILE_EDIT_TOOL_SET"
+        },
+        {
+          "old": "Xh",
+          "new": "isFileEditTool"
+        },
+        {
+          "old": "HLe",
+          "new": "hasMcpHookForServer"
+        },
+        {
+          "old": "T2",
+          "new": "MCP_TOOL_CGROUP_MAX"
+        },
+        {
+          "old": "yrn",
+          "new": "trackMcpServerPid"
+        },
+        {
+          "old": "Hwo",
+          "new": "releaseMcpServerAtHookFire"
+        },
+        {
+          "old": "x2",
+          "new": "releaseStaleMcpServers"
+        },
+        {
+          "old": "qh",
+          "new": "pruneDeadMcpServers"
+        },
+        {
+          "old": "uvo",
+          "new": "sortHookEventsBySource"
+        },
+        {
+          "old": "XIt",
+          "new": "describeHookSource"
+        },
+        {
+          "old": "Frn",
+          "new": "hookSourceHeader"
+        },
+        {
+          "old": "lRr",
+          "new": "hookSourceInline"
+        },
+        {
+          "old": "zM",
+          "new": "formatHookCommand"
+        },
+        {
+          "old": "aRr",
+          "new": "hookDisplayInfo"
+        },
+        {
+          "old": "QA",
+          "new": "hookStatusMessage"
+        },
+        {
+          "old": "jK",
+          "new": "HOOK_PATH_PLACEHOLDERS"
+        },
+        {
+          "old": "lvo",
+          "new": "anchorScriptHookFile"
+        },
+        {
+          "old": "cvo",
+          "new": "expandHookPathPlaceholders"
+        },
+        {
+          "old": "iRr",
+          "new": "unsupportedScriptHook"
+        },
+        {
+          "old": "avo",
+          "new": "SCRIPT_HOOK_ACK_ENV"
+        },
+        {
+          "old": "dSe",
+          "new": "SCRIPT_HOOK_MAX_BYTES"
+        },
+        {
+          "old": "_Bn",
+          "new": "formatScriptHookPreview"
+        },
+        {
+          "old": "GL",
+          "new": "PermissionUpdateSchema"
+        },
+        {
+          "old": "Ta",
+          "new": "PermissionUpdateDestinationSchema"
+        },
+        {
+          "old": "$u",
+          "new": "PermissionBehaviorSchema"
+        },
+        {
+          "old": "Hu",
+          "new": "PermissionRuleSchema"
+        }
+      ],
+      "skipped": [],
+      "fellBack": false
+    },
+    {
+      "id": "m0094",
+      "src": "D:\\git_repos\\claude_hack\\reconstructed\\deminified\\m0094_0xc0d9ae5.js",
+      "out": "D:\\git_repos\\claude_hack\\reconstructed\\deminified-hooks\\m0094_0xc0d9ae5.js",
+      "inBytes": 596728,
+      "outBytes": 599275,
+      "renamed": [
+        {
+          "old": "Iq",
+          "new": "HOOK_EVENT_NAMES"
+        },
+        {
+          "old": "DR",
+          "new": "HookEventNameSchema"
+        },
+        {
+          "old": "v",
+          "new": "HookInputBaseSchema"
+        },
+        {
+          "old": "Dq",
+          "new": "PreToolUseHookInputSchema"
+        },
+        {
+          "old": "kq",
+          "new": "PermissionRequestHookInputSchema"
+        },
+        {
+          "old": "Lq",
+          "new": "PostToolUseHookInputSchema"
+        },
+        {
+          "old": "xq",
+          "new": "PostToolUseFailureHookInputSchema"
+        },
+        {
+          "old": "Vq",
+          "new": "PostToolBatchHookInputSchema"
+        },
+        {
+          "old": "Gq",
+          "new": "PermissionDeniedHookInputSchema"
+        },
+        {
+          "old": "jq",
+          "new": "NotificationHookInputSchema"
+        },
+        {
+          "old": "Bq",
+          "new": "UserPromptSubmitHookInputSchema"
+        },
+        {
+          "old": "Hq",
+          "new": "UserPromptExpansionHookInputSchema"
+        },
+        {
+          "old": "qq",
+          "new": "SessionStartHookInputSchema"
+        },
+        {
+          "old": "Kq",
+          "new": "SetupHookInputSchema"
+        },
+        {
+          "old": "Fq",
+          "new": "StopHookInputSchema"
+        },
+        {
+          "old": "Yq",
+          "new": "StopFailureHookInputSchema"
+        },
+        {
+          "old": "Wq",
+          "new": "SubagentStartHookInputSchema"
+        },
+        {
+          "old": "$q",
+          "new": "SubagentStopHookInputSchema"
+        },
+        {
+          "old": "Xq",
+          "new": "PreCompactHookInputSchema"
+        },
+        {
+          "old": "Qq",
+          "new": "PostCompactHookInputSchema"
+        },
+        {
+          "old": "f0",
+          "new": "SessionEndHookInputSchema"
+        },
+        {
+          "old": "l0",
+          "new": "ConfigChangeHookInputSchema"
+        },
+        {
+          "old": "u0",
+          "new": "InstructionsLoadedHookInputSchema"
+        },
+        {
+          "old": "h0",
+          "new": "WorktreeCreateHookInputSchema"
+        },
+        {
+          "old": "p0",
+          "new": "WorktreeRemoveHookInputSchema"
+        },
+        {
+          "old": "_0",
+          "new": "CwdChangedHookInputSchema"
+        },
+        {
+          "old": "m0",
+          "new": "FileChangedHookInputSchema"
+        },
+        {
+          "old": "E0",
+          "new": "DirectoryAddedHookInputSchema"
+        },
+        {
+          "old": "g0",
+          "new": "MessageDisplayHookInputSchema"
+        },
+        {
+          "old": "M4n",
+          "new": "HookInputSchema"
+        },
+        {
+          "old": "b0",
+          "new": "AsyncHookOutputMarkerSchema"
+        },
+        {
+          "old": "rF",
+          "new": "SdkHookConfigSchema"
+        },
+        {
+          "old": "xe",
+          "new": "McpServerInfoSchema"
+        },
+        {
+          "old": "kR",
+          "new": "BackgroundTaskSchema"
+        },
+        {
+          "old": "LR",
+          "new": "SessionCronSchema"
+        },
+        {
+          "old": "ne",
+          "new": "PermissionModeSchema"
+        }
+      ],
+      "skipped": [],
+      "fellBack": false
+    },
+    {
+      "id": "m0052",
+      "src": "D:\\git_repos\\claude_hack\\reconstructed\\deminified\\m0052_0xbfaae5d.js",
+      "out": "D:\\git_repos\\claude_hack\\reconstructed\\deminified-hooks\\m0052_0xbfaae5d.js",
+      "inBytes": 519177,
+      "outBytes": 519721,
+      "renamed": [
+        {
+          "old": "Ru",
+          "new": "defineHookSchemas"
+        },
+        {
+          "old": "xAe",
+          "new": "HookSchema"
+        },
+        {
+          "old": "on",
+          "new": "HookMatcherSchema"
+        },
+        {
+          "old": "_Y",
+          "new": "SettingsHooksSchema"
+        },
+        {
+          "old": "sn",
+          "new": "knownHookTypes"
+        },
+        {
+          "old": "cFo",
+          "new": "validateScriptHookFilePath"
+        },
+        {
+          "old": "Mm",
+          "new": "HOOK_EVENT_NAMES"
+        },
+        {
+          "old": "lFo",
+          "new": "HOOK_OUTPUT_MAX_BYTES"
+        }
+      ],
+      "skipped": [],
+      "fellBack": false
+    }
+  ]
+}

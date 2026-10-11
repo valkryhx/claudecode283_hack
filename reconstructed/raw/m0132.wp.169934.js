@@ -1,0 +1,1 @@
+function wp(e,t){let{pattern:o,matcher:r}=t;if(r!==void 0){let n=W6e(o),s=n?PNt.filter((i)=>x6(o,i)):[o];for(let i of s){let p=$Ce(i).checkMatcher?.(r,n);if(p!==void 0)throw new De(`${e.pluginName}: ${i}: ${p}`)}}e.clauses=[...e.clauses,t]}

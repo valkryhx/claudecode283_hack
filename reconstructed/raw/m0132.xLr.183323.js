@@ -1,0 +1,1 @@
+function xLr(e,t,o={}){let r=bo(e.modulePath);if(r)return r(e,t,o);let n=uLr(e.pluginRoot);return RLr({bare:n,args:e,host:t,bounds:o,isInstallingGlobals:!0,loaded:(s)=>JIo({args:e,context:n.context,intoEnvironment:n.intoEnvironment,stamped:s})})}

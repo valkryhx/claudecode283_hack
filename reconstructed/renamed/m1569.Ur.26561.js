@@ -1,0 +1,213 @@
+/* ==========================================================================
+ * m1569.Ur   [m1569_0xdceb889.js @ 26561]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function Ur(e) {
+  let {
+      ctx: r,
+      world: n,
+      killSignal: s
+    } = e,
+    a = r.childWorkflow,
+    {
+      clone: w
+    } = r.vmBoundary,
+    h = nsr(),
+    g = new Map(),
+    k = new Map();
+  function R() {
+    return new P("Workflow aborted", "workflow v2: child workflow retracted by kill");
+  }
+  function I(O) {
+    return n.settled(O).then(async K => {
+      let L = g.get(O);
+      switch (g.delete(O), K.status) {
+        case "done":
+          {
+            if (await n.whenIdle(O), s.aborted) throw R();
+            if (n.rows[O]?.status === "retracted") return null;
+            let te = n.read({
+              topic: "result"
+            }, {
+              in: O
+            }).filter(X => pr(n, X, O)).map(X => X.fact);
+            return te.length > 0 ? w(te) : w(K.value);
+          }
+        case "failed":
+          {
+            if (L) throw Ohe(L.message, L.name, L.rendered);
+            throw new P(K.error ?? "child workflow failed", "workflow v2: awaited child workflow failed");
+          }
+        case "retracted":
+          if (s.aborted) throw R();
+          return null;
+        default:
+          return null;
+      }
+    });
+  }
+  function x(O, K) {
+    if (O instanceof Error) return {
+      name: O.name,
+      message: O.message
+    };
+    let L = (K ?? e.errorInfo)(O);
+    return {
+      name: L.name,
+      message: L.message
+    };
+  }
+  function Z(O) {
+    let K = k.get(O);
+    if (K) {
+      K.cutRequested = !0;
+      return;
+    }
+    n.retract(O);
+  }
+  async function F(O, K, L) {
+    if (a.abortSignal?.aborted) return new Promise(() => {});
+    let te = {
+        in: O.in
+      },
+      X = O.by;
+    if (n.isRetractedScope(te.in)) {
+      if (s.aborted) throw R();
+      return null;
+    }
+    let ne, ge;
+    try {
+      ne = a.intakeClone(K);
+    } catch (ue) {
+      ge = {
+        error: ue
+      };
+    }
+    let we = Te({
+        topic: "workflow",
+        ...(typeof ne === "string" ? {
+          name: ne
+        } : ne !== null && typeof ne === "object" && "scriptPath" in ne && typeof ne.scriptPath === "string" ? {
+          scriptPath: ne.scriptPath
+        } : {}),
+        founding: !0,
+        child: !0
+      }),
+      de = new AbortController(),
+      q = n.rows.length,
+      W = n.subscribe(ue => {
+        if (ue.kind === "retracted" && ue.row.addr === q) W(), k.delete(q), de.abort();
+      });
+    k.set(q, {
+      cutRequested: !1
+    });
+    async function D() {
+      let ue, pe, ke, _e, N;
+      try {
+        if (ge) throw ge.error;
+        let Pe = await Zor(a, ne);
+        if (de.signal.aborted) return;
+        let be = t7(Pe.scriptBody);
+        if (!be.ok) {
+          let Le = `workflow('${Pe.childName}'): ${be.error}`;
+          throw Error(Le);
+        }
+        pe = Pe.childName, _e = be.vmScript, ke = h(pe);
+        let ve = bTn(a.abortSignal ? AbortSignal.any([a.abortSignal, de.signal]) : de.signal);
+        e.registerTimers(ve), N = esr(a, pe, ke, ve), ue = N.errorInfo, ve.bindVMInvoke(Mr.runInContext("(fn => { fn() })", N.childCtx));
+        for (let [Le, Ee] of [["parallel", a.hooks.parallel], ["pipeline", a.hooks.pipeline]]) {
+          let je = Ee,
+            Je = (...De) => de.signal.aborted ? new Promise(() => {}) : je(...De);
+          Object.defineProperty(N.childCtx, Le, {
+            value: N.asyncWrap(DCe(Je)),
+            writable: !0,
+            enumerable: !0,
+            configurable: !0
+          });
+        }
+        Object.defineProperty(N.childCtx, "args", {
+          value: L === void 0 ? void 0 : N.clone(L),
+          writable: !0,
+          enumerable: !0,
+          configurable: !0
+        });
+        let Se = k.get(q)?.cutRequested === !0;
+        if (k.delete(q), Se) {
+          n.retract(q);
+          return;
+        }
+        a.hooks.reservePhase(ke, "child"), a.hooks.log(`${v$} running dynamic workflow ${pe}`);
+        let He = {
+          vmContext: N.childCtx,
+          hooks: {
+            ...a.hooks,
+            agent: N.agent
+          },
+          childSpawnMemoRef: {},
+          vmToStr: N.toStr,
+          vmOwnString: N.ownString,
+          vmStringify: N.stringify,
+          timers: ve,
+          vmBoundary: {
+            clone: N.clone,
+            call: N.call,
+            settle: N.settle,
+            sanitize: N.sanitize,
+            asyncWrap: N.asyncWrap
+          },
+          childWorkflow: a
+        };
+        e.installWords(He, q, de.signal, O.spawnMemo);
+      } catch (Pe) {
+        k.delete(q), de.abort();
+        let {
+            name: be,
+            message: ve
+          } = x(Pe, ue),
+          Se = Fc(ve);
+        throw g.set(q, {
+          name: be,
+          message: Se,
+          rendered: `${be}: ${Se}`
+        }), a.hooks.log(`${v$} workflow() failed to start: ${Se}`), new P(Se, "workflow v2: child workflow failed to start");
+      }
+      let me = await er(_e, {
+        vmContext: N.childCtx,
+        settle: N.settle,
+        sanitize: N.sanitize,
+        errorInfo: N.errorInfo
+      });
+      if (de.signal.aborted) return;
+      if (me.thrown) throw g.set(q, {
+        name: me.thrown.name,
+        message: Fc(me.thrown.message),
+        rendered: me.error
+      }), a.hooks.log(`${v$} ${pe} failed: ${me.error}`), new P(me.error, "workflow v2: child workflow script failed");
+      if (me.error !== void 0) throw a.hooks.log(`${v$} ${pe} failed: ${me.error}`), new P(me.error, "workflow v2: child workflow result refused");
+      return a.hooks.log(`${v$} ${pe} done`), me.value;
+    }
+    let ee;
+    try {
+      ee = n.eval(we, ue => (ue.addEventListener("abort", () => de.abort(), {
+        once: !0
+      }), D()), X, te);
+    } catch (ue) {
+      if (W(), k.delete(q), !n.isRetractedScope(te.in)) {
+        let {
+            message: pe
+          } = x(ue, void 0),
+          ke = typeof we.name === "string" ? we.name : typeof we.scriptPath === "string" ? `workflow(${we.scriptPath})` : "workflow()";
+        a.hooks.recordFailure(`${v$} ${ke}: ${Fc(pe)}`), a.hooks.log(`${v$} workflow() failed to start: ${Fc(pe)}`);
+      }
+      throw ue;
+    }
+    if (ee !== q) throw W(), k.delete(q), new P(`child workflow row landed at ${ee}, expected ${q}`, "workflow v2: child founding address mismatch");
+    return I(ee);
+  }
+  return {
+    workflow: F,
+    cut: Z
+  };
+}

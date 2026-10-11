@@ -1,0 +1,1 @@
+var Xi={...Wt({event:"turn.complete",check:({text:e},t)=>typeof e==="string"?rr(e,t.answer):"no { text }",checkArgument:(e,t)=>{let o=e.answer;if(typeof o!=="string")return"no { answer }";return e.agentId===t.agentId?rr(o,t.answer):"a changed agentId (the loop the turn ran in is pinned)"}}),restoreArgument:(e,t)=>W(["agentId"],e,t)};

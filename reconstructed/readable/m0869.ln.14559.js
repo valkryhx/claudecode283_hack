@@ -1,0 +1,13 @@
+/* ==============================================================================
+ * m0869.ln   [m0869_0xd12567a.js @ 14559]
+ * --------------------------------------------------------------------------
+ * 作用: (no note)
+ * 原文: claudecode283/modules/m0869_0xd12567a.js  字符偏移 14559
+ * 说明: 由 tools/extract.mjs 抽取，忠实原文，仅格式化；标识符仍为 Bun 压缩名。
+ * ============================================================================== */
+function ln(e) {
+  Kt.runInContext(`Object.defineProperty(globalThis, ${b(Qn)}, {
+      value: Promise.resolve.bind(Promise),
+      writable: false, enumerable: false, configurable: false,
+    })`, e)
+}

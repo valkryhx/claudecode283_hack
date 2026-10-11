@@ -1,0 +1,1 @@
+function Xr(e,t){if(t.component!=="UserMessage")return;let o=Vr.find((r)=>$n(e[r])!==$n(t.props[r]));if(o===void 0)return;return`a props.${o} other than the engine drew (the row names its message's origin, sender and task and how the view draws it; a rewrite changes the text alone)`}

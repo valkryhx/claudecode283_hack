@@ -1,0 +1,1 @@
+function Lr(e){if(Ge(e)){let r=e.$atleast;if(!Number.isSafeInteger(r)||r<0)throw new P("atleast(N, pattern): N must be a non-negative integer","world: bad threshold count");return{$atleast:r,of:Ce(e.of)}}return Ce(e)}

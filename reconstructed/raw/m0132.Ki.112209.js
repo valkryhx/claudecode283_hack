@@ -1,0 +1,1 @@
+var Ki={event:"tool.call",restoreArgument:(e,t)=>W(Bl,e,t),checkArgument:At,pinnedKeys:jl,settle:ln,stripResult:cn,check:C((e,t,o)=>{let r=e.deny===void 0;return ct(e,"{ result }",(n)=>Object.hasOwn(n,"result"))??(r?Ss(e.context,e.result,(o??[]).filter((n)=>n.deny===void 0)):void 0)}),measure:(e,t,o)=>gt(e.context,...o.map((r)=>r.context)),carry:gLr};

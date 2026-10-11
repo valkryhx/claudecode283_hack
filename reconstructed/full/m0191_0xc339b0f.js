@@ -1,0 +1,912 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  H
+} from "B:/~BUN/root/chunk-dkxhwhft.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  P,
+  te,
+  l,
+  Zd
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  _,
+  m,
+  p,
+  Or
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  p1,
+  un,
+  vy,
+  Pl,
+  Hw,
+  uDo,
+  Ee,
+  le
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  mt
+} from "B:/~BUN/root/chunk-vyq5y0zs.js";
+import {
+  an
+} from "B:/~BUN/root/chunk-zksmb712.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  G
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  fs
+} from "B:/~BUN/root/chunk-290k5gh5.js";
+import {
+  he
+} from "B:/~BUN/root/chunk-3rzkfay5.js";
+import {
+  Ie
+} from "B:/~BUN/root/chunk-sd4cj2qx.js";
+import {
+  Kr,
+  lf,
+  Wc,
+  ci,
+  pr
+} from "B:/~BUN/root/chunk-1rjcv085.js";
+import {
+  rp
+} from "B:/~BUN/root/chunk-skjrk8s1.js";
+import {
+  BDr
+} from "B:/~BUN/root/chunk-q77pmen1.js";
+import {
+  C,
+  u,
+  lp
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+
+function Jbo(e) {
+  if (e.branchDropped && e.warnMessage) {
+    if (i("tengu_bridge_outcome_branch_dropped", {
+        reason: c(e.branchDropped)
+      }), t(e.warnMessage, {
+        level: "warn"
+      }), e.branchDropped === "no_evidence") console.warn(e.warnMessage)
+  }
+  if (e.revisionGuessUsed) i("tengu_bridge_revision_guess_used", {})
+}
+import {
+  randomUUID as de
+} from "crypto";
+var Ybo = "tengu_woven_harbor";
+
+function vTr(e) {
+  return e.githubPr == null
+}
+var X = 16;
+
+function _Un(e, n) {
+  return {
+    type: "event",
+    data: {
+      type: "control_request",
+      request_id: `set-mode-${de()}`,
+      request: {
+        subtype: "set_permission_mode",
+        mode: e,
+        ultraplan: n
+      }
+    }
+  }
+}
+
+function kTr(e) {
+  return {
+    envVars: Object.keys(e.environmentVariables ?? {}).length > 0,
+    events: e.events.filter((n) => !K(n)).map(ce)
+  }
+}
+
+function Xbo(e) {
+  let n = e.bind_attestation;
+  if (!n) return e;
+  return {
+    ...e,
+    bind_attestation: {
+      ...n,
+      signature: "<redacted>"
+    }
+  }
+}
+var ue = new Set(["set_permission_mode", "set_mcp_permission_mode_override", "set_max_thinking_tokens", "mcp_toggle"]);
+
+function J(e) {
+  let n = e.data.request;
+  return e.data.type === "control_request" && typeof n?.subtype === "string" ? n.subtype : void 0
+}
+
+function K(e) {
+  if (e.data.type === "user") return !0;
+  let n = J(e);
+  return n !== void 0 && ue.has(n)
+}
+
+function ce(e) {
+  return J(e) ?? String(e.data.type)
+}
+
+function Enn(e) {
+  let n = e.deviceBinding,
+    o = n ? e.events.filter((r) => K(r) && !(e.deferFirstPrompt && r.data.type === "user")) : e.events;
+  if (n && o.length > X) throw new P(`session create allows at most ${X} initial events, got ${o.length}`, "session create: too many initial events");
+  let s = n ? {} : e.environmentVariables ?? {},
+    a = L([...e.disallowedTools ?? [], ...n ? uDo : []]);
+  return {
+    ...e.title && {
+      title: e.title
+    },
+    ...e.worker,
+    ...ETr(e.persistentVolume),
+    events: o.map((r) => ({
+      payload: r.data
+    })),
+    ...e.tags && {
+      tags: e.tags
+    },
+    ...!n && e.sessionGroupingId && {
+      session_grouping_id: e.sessionGroupingId
+    },
+    ...!n && e.agentId && {
+      agent_id: e.agentId
+    },
+    ...Object.keys(s).length > 0 && {
+      environment_variables: s
+    },
+    ...n && {
+      target_device_id: n.deviceUUID,
+      bind_attestation: {
+        kid: n.kid,
+        signature: n.signature
+      },
+      bind_attestation_issued_at: n.issuedAt,
+      ...e.requestElevatedTier && {
+        security_tier: "elevated"
+      },
+      ...e.repositoriesTrusted && {
+        repositories_trusted: !0
+      }
+    },
+    config: {
+      sources: e.sources.map(ge),
+      outcomes: e.outcomes,
+      ...e.model && {
+        model: e.model
+      },
+      ...e.cwd && {
+        cwd: e.cwd
+      },
+      ...e.effortLevel && {
+        effort_level: e.effortLevel
+      },
+      ...e.seedBundleFileId && {
+        seed_bundle_file_id: e.seedBundleFileId
+      },
+      ...e.reuseOutcomeBranches && {
+        reuse_outcome_branches: !0
+      },
+      ...e.appendSystemPrompt && {
+        append_system_prompt: e.appendSystemPrompt
+      },
+      ...e.customSystemPrompt && {
+        custom_system_prompt: e.customSystemPrompt
+      },
+      ...e.appendSubagentSystemPrompt && {
+        append_subagent_system_prompt: e.appendSubagentSystemPrompt
+      },
+      ...e.fallbackModel && {
+        fallback_model: e.fallbackModel
+      },
+      ...e.maxBudgetUsd !== void 0 && e.maxBudgetUsd > 0 && {
+        max_budget_usd: e.maxBudgetUsd
+      },
+      ...e.allowedTools && e.allowedTools.length > 0 && {
+        allowed_tools: e.allowedTools
+      },
+      ...e.outputSchema && {
+        output_schema: e.outputSchema
+      },
+      ...!n && e.correlationId && {
+        correlation_id: e.correlationId
+      },
+      ...a.length > 0 && {
+        disallowed_tools: a
+      }
+    }
+  }
+}
+
+function ETr(e) {
+  return
+}
+
+function Tnn(e, n) {
+  return e === "v1alpha2" ? n?.session : n
+}
+
+function ge(e) {
+  let {
+    allow_unrestricted_git_push: n,
+    ...o
+  } = e;
+  return o
+}
+
+function TTr(e, n) {
+  if (e === 401) return `${n||"Claude login not accepted"} \xB7 Run /login, then try again`;
+  return
+}
+
+function CTr(e, n) {
+  if (n?.type === "not_found_error" && n.resource_type === "session_grouping") return `Project not found: ${e}. Check the id \u2014 a Project you don't have access to looks the same as one that doesn't exist.`;
+  switch (n?.reason) {
+    case "public_grouping_hosted_only":
+      return `${e} is a public Project, and public Projects run on Anthropic-hosted infrastructure only. Drop --environment (and any self-hosted target), or use a private Project.`;
+    case "feature_disabled":
+      return "Projects are not available for your organization.";
+    default:
+      return
+  }
+}
+
+function see(e) {
+  return e?.kind === "self_hosted_pool"
+}
+
+function gF(e) {
+  return e.kind === "self_hosted_pool" ? e.pool_id : e.environment_id
+}
+
+function k3(e) {
+  return e !== void 0 && e.startsWith("ccpool_")
+}
+var pe = ["policySettings", "flagSettings", "userSettings"];
+
+function E3() {
+  let e, n = fs();
+  for (let o = n.length - 1; o >= 0; o--) {
+    let s = n[o],
+      a = he(s)?.remote?.defaultEnvironmentId;
+    if (a === void 0) continue;
+    if (k3(a) && !pe.includes(s)) {
+      e ??= {
+        id: a,
+        source: s
+      };
+      continue
+    }
+    return {
+      id: a,
+      source: s,
+      ignoredUntrustedPool: e?.id === a ? void 0 : e
+    }
+  }
+  return {
+    id: void 0,
+    source: void 0,
+    ignoredUntrustedPool: e
+  }
+}
+
+function gIt(e) {
+  return e.startsWith("ccpool_") ? {
+    self_hosted_runner_pool_id: e
+  } : {
+    environment_id: e
+  }
+}
+var me = f(() => u({
+  environments: C(lp((e) => typeof e === "object" && e !== null && !Array.isArray(e)))
+}));
+
+function fe(e) {
+  if (typeof e === "string" && e.trim().length === 0) return new P("The cloud environments service returned an empty response (HTTP 200 with no body). This is usually temporary \u2014 try again in a moment.", "fetchEnvironments: HTTP 200 with an empty body");
+  if (typeof e === "string") return new P("The cloud environments service returned a response in an unexpected format (HTTP 200 with a non-JSON body). This is usually temporary \u2014 try again in a moment.", "fetchEnvironments: HTTP 200 with a non-JSON body");
+  return new P("The cloud environments service returned a response in an unexpected format (HTTP 200 without a usable environments list). This is usually temporary \u2014 try again in a moment.", "fetchEnvironments: HTTP 200 JSON body without a valid environments array")
+}
+async function T3(e, n, o) {
+  return Or("teleport_environments_list", async () => {
+    if (Ie() !== "firstParty") throw Error("Remote environments are only available on the first-party Anthropic API provider.");
+    let a = e ?? un()?.accessToken;
+    if (!a) throw Error("Claude Code cloud sessions require authentication with a Claude.ai account. API key authentication is not sufficient. Please run /login to authenticate, or check your authentication status with /status.");
+    let r = await p1();
+    if (!r) throw Error("Unable to get organization UUID");
+    let y = `${an().BASE_API_URL}/v1/environment_providers`;
+    try {
+      let h = await vy(() => mt.get(y, {
+        headers: {
+          ...Hw(un()?.accessToken ?? a),
+          "x-organization-uuid": r
+        },
+        timeout: 15000
+      }), {
+        credentials: o
+      });
+      if (h.status !== 200) throw Error(`Failed to fetch environments: ${h.status} ${h.statusText}`);
+      let v = me().safeParse(h.data);
+      if (!v.success) throw fe(h.data);
+      let S = v.data.environments,
+        E = S.length > 0;
+      if (le().hasRemoteEnvironment !== E) await Ee((g) => g.hasRemoteEnvironment === E ? g : {
+        ...g,
+        hasRemoteEnvironment: E
+      }, n);
+      return S
+    } catch (h) {
+      let v = te(h);
+      if (Zd(h)) t(`fetchEnvironments failed: ${v.message}`, {
+        level: "error"
+      });
+      else d(v);
+      throw v
+    }
+  }, _e)
+}
+
+function _e(e) {
+  return e instanceof P ? "malformed_response" : "error"
+}
+async function wLe(e = "Default", n, o) {
+  return Or("teleport_default_environment_create", async () => {
+    if (Ie() !== "firstParty") throw Error("Remote environments are only available on the first-party Anthropic API provider.");
+    let s = o ?? un()?.accessToken;
+    if (!s) throw Error("No access token available");
+    let a = await p1();
+    if (!a) throw Error("Unable to get organization UUID");
+    let r = `${an().BASE_API_URL}/v1/environment_providers/cloud/create`;
+    return (await mt.post(r, {
+      name: e,
+      kind: "anthropic_cloud",
+      description: "Default - trusted network access",
+      config: {
+        environment_type: "anthropic",
+        cwd: "/home/user",
+        init_script: null,
+        environment: {},
+        languages: [{
+          name: "python",
+          version: "3.11"
+        }, {
+          name: "node",
+          version: "20"
+        }],
+        network_config: {
+          allowed_hosts: [],
+          allow_default_hosts: !0
+        }
+      }
+    }, {
+      headers: {
+        ...Hw(s),
+        "anthropic-beta": "ccr-byoc-2025-07-29",
+        "x-organization-uuid": a
+      },
+      timeout: 15000,
+      signal: n
+    })).data
+  })
+}
+async function Cnn(e, n) {
+  {
+    if (Ie() !== "firstParty") return [];
+    let o = e ?? un()?.accessToken;
+    if (!o) return [];
+    let s = await p1();
+    if (!s) return [];
+    let a = `${an().BASE_API_URL}/v1/code/runners/self-hosted/pools`;
+    try {
+      let r = await vy(() => mt.get(a, {
+        headers: {
+          ...Hw(un()?.accessToken ?? o),
+          "anthropic-beta": "ccr-byoc-2025-07-29",
+          "x-organization-uuid": s
+        },
+        timeout: 15000
+      }), {
+        credentials: n
+      });
+      if (r.status !== 200) return t(`fetchSelfHostedPools: ${r.status} ${r.statusText}`, {
+        level: "error"
+      }), p("teleport_self_hosted_pool_list", "non_200"), [];
+      return Or("teleport_self_hosted_pool_list", async () => (r.data.pools ?? []).map((y) => ({
+        kind: "self_hosted_pool",
+        pool_id: y.pool_id,
+        name: y.name,
+        created_at: y.created_at,
+        alive_runner_count: y.alive_runner_count ?? 0
+      })))
+    } catch (r) {
+      let y = te(r);
+      if (Zd(r)) t(`fetchSelfHostedPools failed: ${y.message}`, {
+        level: "error"
+      }), p("teleport_self_hosted_pool_list", "api_error");
+      else d(y), p("teleport_self_hosted_pool_list", "unexpected");
+      return []
+    }
+  }
+  return []
+}
+async function RTr({
+  environmentId: e,
+  title: n,
+  gitRepoUrl: o,
+  branch: s,
+  defaultBranch: a,
+  signal: r,
+  baseUrl: y,
+  getAccessToken: h,
+  credentials: v,
+  permissionMode: S,
+  tags: E
+}) {
+  let {
+    getClaudeAIOAuthTokens: g,
+    getClaudeAIOAuthTokensAsync: b
+  } = await import("B:/~BUN/root/chunk-3vayk698.js"), {
+    getOrganizationUUID: T
+  } = await import("B:/~BUN/root/chunk-j09wrkxt.js"), {
+    getOauthConfig: I
+  } = await import("B:/~BUN/root/chunk-dry4g6jq.js"), {
+    sessionsApiWire: x
+  } = await import("B:/~BUN/root/chunk-an75r2wp.js"), {
+    getMainLoopModel: Z
+  } = await import("B:/~BUN/root/chunk-f0j8d9fn.js"), {
+    getOriginalCwd: ee
+  } = await import("B:/~BUN/root/chunk-kyqapdq5.js"), {
+    default: ne
+  } = await import("B:/~BUN/root/chunk-acyg5hgw.js"), {
+    isCcrV2BridgeCreateEnabled: oe
+  } = await import("B:/~BUN/root/chunk-5px3whmg.js"), O = oe() ? "v1alpha2" : "v1", w = {
+    create_endpoint: c(O)
+  }, {
+    isFirstPartyProvider: re
+  } = await import("B:/~BUN/root/chunk-4qfk17be.js");
+  if (!re()) return t("[bridge] Session create skipped on non-firstParty provider"), A("bridge_session_create_3p_provider", w);
+  let F = h?.() ?? (H() && v !== void 0 ? (await b(v))?.accessToken : g()?.accessToken);
+  if (!F) return t("[bridge] No access token for session creation"), A("bridge_session_create_no_token", w);
+  let M = await T();
+  if (!M) return t("[bridge] No org UUID for session creation"), A("bridge_session_create_no_org", w);
+  let {
+    sources: B,
+    outcomes: j,
+    report: se
+  } = await BDr(o, s, a), V = gIt(e), q = Z(), z = ee(), Y = S ? [_Un(S)] : [], ie = O === "v1alpha2" ? Enn({
+    title: n,
+    worker: V,
+    events: Y,
+    sources: B,
+    outcomes: j,
+    model: q,
+    cwd: z,
+    reuseOutcomeBranches: !0,
+    tags: E?.length ? E : void 0
+  }) : {
+    ...n !== void 0 && {
+      title: n
+    },
+    events: Y,
+    session_context: {
+      sources: B,
+      outcomes: j,
+      model: q,
+      cwd: z,
+      reuse_outcome_branches: !0
+    },
+    ...V,
+    source: "remote-control",
+    ...E?.length && {
+      tags: E
+    }
+  }, W = x(O, y ?? I().BASE_API_URL, F), ae = {
+    ...W.headers,
+    "x-organization-uuid": M
+  }, k;
+  try {
+    k = await ne.post(W.url, ie, {
+      headers: ae,
+      signal: r,
+      validateStatus: (R) => R < 500
+    })
+  } catch (R) {
+    return t(`[bridge] Session creation request failed: ${l(R)}`), A("bridge_session_create_request_failed", w)
+  }
+  if (!(k.status === 200 || k.status === 201)) {
+    let R = rp(k.data);
+    return t(`[bridge] Session creation failed with status ${k.status}${R?`: ${R}`:""}`), A("bridge_session_create_http_error", w)
+  }
+  let D = Tnn(O, k.data)?.id;
+  if (typeof D !== "string" || D === "") return t("[bridge] No session ID in response"), A("bridge_session_create_bad_response", w);
+  return Jbo(se), _("bridge_session_create", w), Wc(D)
+}
+async function hKe(e, n) {
+  return (await yKe(e, n)).session
+}
+async function yKe(e, n) {
+  let {
+    getClaudeAIOAuthTokens: o,
+    getClaudeAIOAuthTokensAsync: s
+  } = await import("B:/~BUN/root/chunk-3vayk698.js"), {
+    getOauthConfig: a
+  } = await import("B:/~BUN/root/chunk-dry4g6jq.js"), {
+    getCodeSession: r
+  } = await import("B:/~BUN/root/chunk-0njx5nf1.js"), {
+    isCcrV2SessionCrudEnabled: y
+  } = await import("B:/~BUN/root/chunk-5px3whmg.js"), {
+    isFirstPartyProvider: h
+  } = await import("B:/~BUN/root/chunk-4qfk17be.js");
+  if (!h()) return m("bridge_session_get", "bridge_session_get_3p_provider"), {
+    session: null,
+    notFound: !1
+  };
+  let v = n?.getAccessToken?.() ?? (H() && n?.credentials !== void 0 ? (await s(n.credentials))?.accessToken : o()?.accessToken);
+  if (!v) return t("[bridge] No access token for session fetch"), m("bridge_session_get", "bridge_session_get_no_token"), {
+    session: null,
+    notFound: !1
+  };
+  let S = n?.useV2 ?? y(),
+    E;
+  if (!S) {
+    let {
+      getOrganizationUUID: b
+    } = await import("B:/~BUN/root/chunk-j09wrkxt.js");
+    if (E = await b() ?? void 0, !E) return t("[bridge] No org UUID for session fetch"), m("bridge_session_get", "bridge_session_get_no_org"), {
+      session: null,
+      notFound: !1
+    }
+  }
+  let g = await r(n?.baseUrl ?? a().BASE_API_URL, v, e, 1e4, {
+    useV2: S,
+    orgUUID: E
+  });
+  if (typeof g !== "object") return m("bridge_session_get", g === "invalid" ? "bridge_session_get_invalid_id" : typeof g === "number" ? "bridge_session_get_http_error" : "bridge_session_get_request_failed"), {
+    session: null,
+    notFound: g === 404
+  };
+  return _("bridge_session_get"), {
+    session: {
+      environment_id: g.environment_id,
+      title: g.title,
+      status: g.status,
+      created_at: g.created_at,
+      updated_at: g.updated_at,
+      tags: g.tags
+    },
+    notFound: !1
+  }
+}
+async function N(e, n, o, s) {
+  let {
+    getClaudeAIOAuthTokens: a,
+    getClaudeAIOAuthTokensAsync: r
+  } = await import("B:/~BUN/root/chunk-3vayk698.js"), {
+    getOauthConfig: y
+  } = await import("B:/~BUN/root/chunk-dry4g6jq.js"), {
+    updateCodeSession: h
+  } = await import("B:/~BUN/root/chunk-0njx5nf1.js"), {
+    isCcrV2SessionCrudEnabled: v
+  } = await import("B:/~BUN/root/chunk-5px3whmg.js"), S = s?.getAccessToken?.() ?? (H() && s?.credentials !== void 0 ? (await r(s.credentials))?.accessToken : a()?.accessToken);
+  if (!S) return t(`[bridge] No access token for session ${o} update`), "failed";
+  let E = "client_metadata" in n || v(),
+    g;
+  if (!E) {
+    let {
+      getOrganizationUUID: T
+    } = await import("B:/~BUN/root/chunk-j09wrkxt.js");
+    if (g = await T() ?? void 0, !g) return t(`[bridge] No org UUID for session ${o} update`), "failed"
+  }
+  t(`[bridge] Updating session ${o}: ${e}`);
+  let b = await h(s?.baseUrl ?? y().BASE_API_URL, S, e, n, 1e4, {
+    useV2: E,
+    orgUUID: g
+  });
+  if (b === "invalid") return m("bridge_session_patch", "bridge_session_patch_invalid_id"), "rejected";
+  else if (typeof b !== "number") return m("bridge_session_patch", "bridge_session_patch_request_failed"), "failed";
+  else if (b === 200) return t(`[bridge] Session ${o} updated successfully`), _("bridge_session_patch"), "landed";
+  else return p("bridge_session_patch", "bridge_session_patch_http_error"), "failed"
+}
+async function ATr(e, n, o) {
+  return N(e, {
+    title: n
+  }, "title", o)
+}
+async function $3o(e, n, o) {
+  let s = `Couldn't start \u2014 too many sessions are running \xB7 ${n}`;
+  return N(e, {
+    title: s,
+    client_metadata: {
+      desktop_rc_refusal: {
+        title: s,
+        reason: "capacity"
+      }
+    }
+  }, "refusal", o)
+}
+var Qbo = "color:";
+async function xTr(e, n, o, s) {
+  let a = n === "default",
+    r = o.filter((h) => a || h !== n).map((h) => Qbo + h),
+    y = a ? void 0 : [Qbo + n];
+  await N(e, {
+    add_tags: y,
+    remove_tags: r
+  }, "color tag", s)
+}
+async function U3o(e, n, o) {
+  return !1
+}
+
+function A(e, n) {
+  return m("bridge_session_create", e, n), null
+}
+
+function jM(e) {
+  return (e.type === "user" || e.type === "assistant") && e.isVirtual === !0
+}
+
+function tz(e) {
+  return e.type === "assistant" && e.isApiErrorMessage === !0 && e.message?.model === Pl
+}
+
+function b9(e) {
+  return e.type === "system" && e.subtype === "local_command"
+}
+
+function mw(e) {
+  if (e.type === "api_system") return !1;
+  return e.type === "progress" || e.type === "system" && !b9(e) || jM(e) || tz(e) || e.type === "attachment" && (e.attachment?.type === "thinking_drop" || e.attachment?.type === "credential_org" || e.attachment?.type === "prompt_snapshot" || e.attachment?.type === "prompt_render_point" || e.attachment?.type === "deferred_tools_record")
+}
+var Se = new Set(["user", "assistant", "attachment", "system"]);
+
+function yUn(e) {
+  return G(e) && typeof e.type === "string" && Se.has(e.type)
+}
+var Q = ["cwd", "gitBranch", "version", "userType", "entrypoint", "promptId"],
+  ye = [...Q, "requestId"];
+
+function ve(e) {
+  let n = e.message;
+  return e.type === "assistant" && G(n) && typeof n.id === "string" && n.id.length > 0
+}
+
+function Gbo(e) {
+  if (!yUn(e)) return e;
+  let n = ve(e) ? ye : Q,
+    o;
+  for (let s of n)
+    if (s in e) o ??= {
+      ...e
+    }, delete o[s];
+  return o ?? e
+}
+
+function _nn(e, n) {
+  if (!yUn(e)) return e;
+  let o;
+  for (let [s, a] of Object.entries(n))
+    if (a !== void 0 && e[s] === void 0) o ??= {
+      ...e
+    }, o[s] = a;
+  return o ?? e
+}
+
+function bnn(e) {
+  let n = [],
+    o = 0;
+  while (o < e.length) {
+    let s = e[o];
+    if (s.type !== "assistant" || s.resumedFromIncompleteThinking !== !0) {
+      o++;
+      continue
+    }
+    let a = o,
+      r = o - 1;
+    for (;;) {
+      while (r >= 0 && mw(e[r])) r--;
+      let S = r >= 0 ? e[r] : void 0;
+      if (S?.type !== "assistant") break;
+      let E = S.message.id,
+        g = r;
+      while (r >= 0) {
+        let T = e[r];
+        if (T.type === "assistant")
+          if (T.message.id === E) g = r, r--;
+          else break;
+        else if (mw(T)) r--;
+        else {
+          let I = r;
+          while (I >= 0 && (e[I].type !== "assistant" || mw(e[I]))) I--;
+          let x = I >= 0 ? e[I] : void 0;
+          if (x?.type === "assistant" && x.message.id === E) g = I, r = I - 1;
+          else break
+        }
+      }
+      a = g;
+      let b = e[g];
+      if (b.type !== "assistant" || b.resumedFromIncompleteThinking !== !0) break
+    }
+    let y = o,
+      h = s.message.id,
+      v = o + 1;
+    for (;;) {
+      let S = v;
+      while (S < e.length && mw(e[S])) S++;
+      let E = S < e.length ? e[S] : void 0;
+      if (E?.type === "assistant") {
+        if (E.message.id === h) {
+          y = S, v = S + 1;
+          continue
+        }
+        if (E.resumedFromIncompleteThinking === !0) {
+          y = S, h = E.message.id, v = S + 1;
+          continue
+        }
+        break
+      }
+      let g = S;
+      while (g < e.length && (e[g].type !== "assistant" || mw(e[g]))) g++;
+      let b = g < e.length ? e[g] : void 0;
+      if (b?.type === "assistant" && b.message.id === h) {
+        y = g, v = g + 1;
+        continue
+      }
+      break
+    }
+    n.push({
+      fromIdx: a,
+      toIdx: y
+    }), o = v > o ? v : o + 1
+  }
+  return n
+}
+var Snn = "auto-mode-classifier-error.txt",
+  wnn = "auto-mode-dump.",
+  vnn = "auto-mode-env-edit-",
+  knn = "auto-mode-builtins-",
+  Vbo = "auto-mode-classifier-dump",
+  qbo = "auto-mode-classifier-system";
+
+function Kbo(e) {
+  if (typeof e !== "object" || e === null || !("type" in e)) return !1;
+  return e.type === "auto-mode-classifier-dump" || e.type === "auto-mode-classifier-system"
+}
+
+function Rnn(e) {
+  let n = Kr().teleportedSessionIds;
+  if (n.add(pr(e)), n.size > 64) {
+    let o = n.values().next().value;
+    if (o !== void 0) n.delete(o)
+  }
+}
+
+function vk(e) {
+  return Kr().teleportedSessionIds.has(pr(e))
+}
+
+function Zbo(e) {
+  Kr().teleportedSessionIds.delete(pr(e))
+}
+var be = {
+    refusal_fallback_prompt: "choose: retry on fallback model or edit prompt",
+    auto_mode_server_fallback: "acknowledge the classifier billing notice (Enter continues in auto mode)",
+    auto_mode_outside_reads: "choose: keep allowing reads outside the working directories, or block them"
+  },
+  _Ke = "dialog:mcp_elicitation";
+
+function Ann(e, n, o, s) {
+  return {
+    tool_name: `dialog:${e}`,
+    display_tool_name: "Claude needs your input",
+    action_description: be[e] ?? `Respond to the ${e} dialog to continue`,
+    raw_command: void 0,
+    tool_use_id: s ?? "",
+    request_id: o,
+    input: {
+      dialog_kind: e,
+      payload: n
+    }
+  }
+}
+import {
+  randomUUID as Te
+} from "crypto";
+
+function xnn(e, n, o, s) {
+  if (lf(n, "sessionId"), !s) return {
+    url: `${e}/v1/sessions/${n}/events`,
+    body: {
+      events: o
+    }
+  };
+  let a = ci(n);
+  return {
+    url: `${e}/v1/code/sessions/${encodeURIComponent(a)}/events`,
+    body: {
+      events: o.map((r) => ({
+        payload: typeof r.uuid === "string" && r.uuid ? r : {
+          ...r,
+          uuid: Te()
+        }
+      }))
+    }
+  }
+}
+export {
+  jM,
+  tz,
+  b9,
+  mw,
+  yUn,
+  Gbo,
+  _nn,
+  bnn,
+  Snn,
+  wnn,
+  vnn,
+  knn,
+  Vbo,
+  qbo,
+  Kbo,
+  Ybo,
+  vTr,
+  _Un,
+  kTr,
+  Xbo,
+  Enn,
+  ETr,
+  Tnn,
+  TTr,
+  CTr,
+  see,
+  gF,
+  k3,
+  E3,
+  gIt,
+  T3,
+  wLe,
+  Cnn,
+  Jbo,
+  RTr,
+  hKe,
+  yKe,
+  ATr,
+  $3o,
+  Qbo,
+  xTr,
+  U3o,
+  Rnn,
+  vk,
+  Zbo,
+  _Ke,
+  Ann,
+  xnn
+};

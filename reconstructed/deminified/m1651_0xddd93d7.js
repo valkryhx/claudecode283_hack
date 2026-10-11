@@ -1,0 +1,253 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { je } from "B:/~BUN/root/chunk-0xgg0ked.js";
+import { Re } from "B:/~BUN/root/chunk-yv67t8hr.js";
+var e = Re("B:/~BUN/root/batches-478qj4xs.md");
+var t = Re("B:/~BUN/root/files-api-y98keysa.md");
+var a = "B:/~BUN/root/README-92b24d43.md.zst";
+var s = je(a, import.meta.dirname);
+var r = Re("B:/~BUN/root/streaming-dweka9av.md");
+var o = Re("B:/~BUN/root/tool-use-rp8zy51p.md");
+var i = "B:/~BUN/root/examples-de855a6e.md.zst";
+var n = je(i, import.meta.dirname);
+var l = "B:/~BUN/root/managed-agents-122e011f.md.zst";
+var c = je(l, import.meta.dirname);
+var d = Re("B:/~BUN/root/files-api-dqrbs305.md");
+var p = Re("B:/~BUN/root/README-1f2a0xpy.md");
+var m = Re("B:/~BUN/root/streaming-fcyc4t0t.md");
+var h = "B:/~BUN/root/tool-use-501e1b56.md.zst";
+var u = je(h, import.meta.dirname);
+var f = "B:/~BUN/root/README-789c86c7.md.zst";
+var g = je(f, import.meta.dirname);
+var b = Re("B:/~BUN/root/files-api-kedsmk9k.md");
+var y = "B:/~BUN/root/README-de1712b4.md.zst";
+var A = je(y, import.meta.dirname);
+var v = Re("B:/~BUN/root/streaming-z72gab71.md");
+var T = "B:/~BUN/root/tool-use-8d64e723.md.zst";
+var S = je(T, import.meta.dirname);
+var k = "B:/~BUN/root/README-36fe3c2c.md.zst";
+var x = je(k, import.meta.dirname);
+var D = Re("B:/~BUN/root/batches-4mf6m7br.md");
+var P = Re("B:/~BUN/root/files-api-8h98qn9x.md");
+var w = Re("B:/~BUN/root/README-30faskmk.md");
+var B = Re("B:/~BUN/root/streaming-nv4rn4f3.md");
+var R = "B:/~BUN/root/tool-use-44b25038.md.zst";
+var I = je(R, import.meta.dirname);
+var E = "B:/~BUN/root/README-eac36656.md.zst";
+var C = je(E, import.meta.dirname);
+var _ = Re("B:/~BUN/root/batches-bs1y3kxd.md");
+var F = Re("B:/~BUN/root/files-api-hdqcvq4z.md");
+var H = "B:/~BUN/root/README-4543fbfe.md.zst";
+var N = je(H, import.meta.dirname);
+var j = "B:/~BUN/root/sdk-upgrade-c0be7fcf.md.zst";
+var M = je(j, import.meta.dirname);
+var J = "B:/~BUN/root/streaming-8f3e55cc.md.zst";
+var L = je(J, import.meta.dirname);
+var Q = "B:/~BUN/root/tool-use-8d92ddf6.md.zst";
+var q = je(Q, import.meta.dirname);
+var X = "B:/~BUN/root/README-f17ef371.md.zst";
+var K = je(X, import.meta.dirname);
+var U = Re("B:/~BUN/root/README-7qvwkvrv.md");
+var V = Re("B:/~BUN/root/streaming-bb6a1kkb.md");
+var O = Re("B:/~BUN/root/tool-use-2nd4kc3n.md");
+var Z = "B:/~BUN/root/README-a931fc85.md.zst";
+var z = je(Z, import.meta.dirname);
+var Y = "B:/~BUN/root/SKILL-8cfe9276.md.zst";
+var G = je(Y, import.meta.dirname);
+var W = "B:/~BUN/root/admin-api-b43f6d46.md.zst";
+var ee = je(W, import.meta.dirname);
+var te = "B:/~BUN/root/agent-design-1d6ecee1.md.zst";
+var ae = je(te, import.meta.dirname);
+var se = "B:/~BUN/root/anthropic-cli-da67d00b.md.zst";
+var re = je(se, import.meta.dirname);
+var oe = Re("B:/~BUN/root/claude-platform-on-aws-cehevcbd.md");
+var ie = "B:/~BUN/root/cost-optimization-be31affb.md.zst";
+var ne = je(ie, import.meta.dirname);
+var le = "B:/~BUN/root/error-codes-8c86764e.md.zst";
+var ce = je(le, import.meta.dirname);
+var de = "B:/~BUN/root/build-eval-61524bd7.md.zst";
+var pe = je(de, import.meta.dirname);
+var me = "B:/~BUN/root/eval-audit-bb5d9000.md.zst";
+var he = je(me, import.meta.dirname);
+var ue = "B:/~BUN/root/cost-hillclimb-29c67778.md.zst";
+var fe = je(ue, import.meta.dirname);
+var ge = "B:/~BUN/root/eval-hillclimb-a60c233b.md.zst";
+var be = je(ge, import.meta.dirname);
+var ye = Re("B:/~BUN/root/runner-scaffold-nhmxapvt.mjs");
+var Ae = Re("B:/~BUN/root/build-report-lite-s1t46kds.mjs");
+var ve = "B:/~BUN/root/SCHEMA-80d41355.md.zst";
+var Te = je(ve, import.meta.dirname);
+var Se = "B:/~BUN/root/live-sources-de9a291d.md.zst";
+var ke = je(Se, import.meta.dirname);
+var xe = "B:/~BUN/root/managed-agents-api-reference-224d46c3.md.zst";
+var De = je(xe, import.meta.dirname);
+var Pe = "B:/~BUN/root/managed-agents-client-patterns-c3523d97.md.zst";
+var we = je(Pe, import.meta.dirname);
+var Be = "B:/~BUN/root/managed-agents-core-43a24c00.md.zst";
+var $e = je(Be, import.meta.dirname);
+var Ie = "B:/~BUN/root/managed-agents-environments-de9e9669.md.zst";
+var Ee = je(Ie, import.meta.dirname);
+var Ce = "B:/~BUN/root/managed-agents-events-9d0c0001.md.zst";
+var _e = je(Ce, import.meta.dirname);
+var Fe = "B:/~BUN/root/managed-agents-memory-2133e8a9.md.zst";
+var He = je(Fe, import.meta.dirname);
+var Ne = "B:/~BUN/root/managed-agents-multiagent-e4608060.md.zst";
+var Me = je(Ne, import.meta.dirname);
+var Je = "B:/~BUN/root/managed-agents-onboarding-ec987338.md.zst";
+var Le = je(Je, import.meta.dirname);
+var Qe = Re("B:/~BUN/root/managed-agents-outcomes-9gz0q7qk.md");
+var qe = "B:/~BUN/root/managed-agents-overview-33e52c6a.md.zst";
+var Xe = je(qe, import.meta.dirname);
+var Ke = "B:/~BUN/root/managed-agents-scheduled-deployments-e294f143.md.zst";
+var Ue = je(Ke, import.meta.dirname);
+var Ve = "B:/~BUN/root/managed-agents-self-hosted-sandboxes-726a54ad.md.zst";
+var Oe = je(Ve, import.meta.dirname);
+var Ze = "B:/~BUN/root/managed-agents-tools-ad9e0b80.md.zst";
+var ze = je(Ze, import.meta.dirname);
+var Ye = "B:/~BUN/root/managed-agents-webhooks-b3994e9e.md.zst";
+var Ge = je(Ye, import.meta.dirname);
+var We = "B:/~BUN/root/model-migration-0afe82a9.md.zst";
+var et = je(We, import.meta.dirname);
+var tt = "B:/~BUN/root/models-7ff954b0.md.zst";
+var at = je(tt, import.meta.dirname);
+var st = "B:/~BUN/root/platform-availability-689576e2.md.zst";
+var rt = je(st, import.meta.dirname);
+var ot = "B:/~BUN/root/preserved-thinking-migration-8e8eab6d.md.zst";
+var it = je(ot, import.meta.dirname);
+var nt = "B:/~BUN/root/causes-0ecc624a.md.zst";
+var lt = je(nt, import.meta.dirname);
+var ct = "B:/~BUN/root/prefix_diff-b09e416c.py.zst";
+var dt = je(ct, import.meta.dirname);
+var pt = "B:/~BUN/root/drop_block_probe-45553169.py.zst";
+var mt = je(pt, import.meta.dirname);
+var ht = "B:/~BUN/root/prompt-audit-c2ef092d.md.zst";
+var ut = je(ht, import.meta.dirname);
+var ft = "B:/~BUN/root/prompt-caching-686b210d.md.zst";
+var gt = je(ft, import.meta.dirname);
+var bt = Re("B:/~BUN/root/token-counting-a61qz5zx.md");
+var yt = "B:/~BUN/root/tool-use-concepts-04417f2f.md.zst";
+var At = je(yt, import.meta.dirname);
+var vt = Re("B:/~BUN/root/batches-ee32bpws.md");
+var Tt = Re("B:/~BUN/root/files-api-vf8kqk69.md");
+var St = "B:/~BUN/root/README-1adba0d5.md.zst";
+var kt = je(St, import.meta.dirname);
+var xt = "B:/~BUN/root/streaming-bfeb4a2b.md.zst";
+var Dt = je(xt, import.meta.dirname);
+var Pt = "B:/~BUN/root/tool-use-642f1e38.md.zst";
+var wt = je(Pt, import.meta.dirname);
+var Bt = "B:/~BUN/root/README-a665cb14.md.zst";
+var Rt = je(Bt, import.meta.dirname);
+var oc = {
+    FABLE_ID: "claude-fable-5-1",
+    FABLE_NAME: "Claude Fable 5.1",
+    MYTHOS_ID: "claude-mythos-5-1",
+    MYTHOS_NAME: "Claude Mythos 5.1",
+    PREV_FABLE_ID: "claude-fable-5",
+    PREV_FABLE_NAME: "Claude Fable 5",
+    PREV_MYTHOS_ID: "claude-mythos-5",
+    PREV_MYTHOS_NAME: "Claude Mythos 5",
+    OPUS_ID: "claude-opus-5",
+    OPUS_NAME: "Claude Opus 5",
+    OPUS_NEXT_ID: "claude-opus-5-5",
+    OPUS_NEXT_NAME: "Claude Opus 5.5",
+    PREV_OPUS_ID: "claude-opus-4-8",
+    PREV_OPUS_NAME: "Claude Opus 4.8",
+    SONNET_ID: "claude-sonnet-5",
+    SONNET_NAME: "Claude Sonnet 5",
+    SONNET_NEXT_ID: "claude-sonnet-5",
+    SONNET_NEXT_NAME: "Claude Sonnet 5",
+    HAIKU_ID: "claude-haiku-4-5",
+    HAIKU_NAME: "Claude Haiku 4.5",
+    PREV_SONNET_ID: "claude-sonnet-4-6"
+  },
+  ic = G,
+  nc = {
+    "csharp/claude-api/README.md": s,
+    "csharp/claude-api/batches.md": e,
+    "csharp/claude-api/files-api.md": t,
+    "csharp/claude-api/streaming.md": r,
+    "csharp/claude-api/tool-use.md": o,
+    "curl/examples.md": n,
+    "curl/managed-agents.md": c,
+    "go/claude-api/README.md": p,
+    "go/claude-api/files-api.md": d,
+    "go/claude-api/streaming.md": m,
+    "go/claude-api/tool-use.md": u,
+    "go/managed-agents/README.md": g,
+    "java/claude-api/README.md": A,
+    "java/claude-api/files-api.md": b,
+    "java/claude-api/streaming.md": v,
+    "java/claude-api/tool-use.md": S,
+    "java/managed-agents/README.md": x,
+    "php/claude-api/README.md": w,
+    "php/claude-api/batches.md": D,
+    "php/claude-api/files-api.md": P,
+    "php/claude-api/streaming.md": B,
+    "php/claude-api/tool-use.md": I,
+    "php/managed-agents/README.md": C,
+    "python/claude-api/README.md": N,
+    "python/claude-api/batches.md": _,
+    "python/claude-api/files-api.md": F,
+    "python/claude-api/sdk-upgrade.md": M,
+    "python/claude-api/streaming.md": L,
+    "python/claude-api/tool-use.md": q,
+    "python/managed-agents/README.md": K,
+    "ruby/claude-api/README.md": U,
+    "ruby/claude-api/streaming.md": V,
+    "ruby/claude-api/tool-use.md": O,
+    "ruby/managed-agents/README.md": z,
+    "shared/admin-api.md": ee,
+    "shared/agent-design.md": ae,
+    "shared/anthropic-cli.md": re,
+    "shared/claude-platform-on-aws.md": oe,
+    "shared/cost-optimization.md": ne,
+    "shared/error-codes.md": ce,
+    "shared/evals/build-eval.md": pe,
+    "shared/evals/eval-audit.md": he,
+    "shared/evals/cost-hillclimb.md": fe,
+    "shared/evals/eval-hillclimb.md": be,
+    "shared/evals/report/runner-scaffold.mjs": ye,
+    "shared/evals/report/build-report-lite.mjs": Ae,
+    "shared/evals/report/SCHEMA.md": Te,
+    "shared/live-sources.md": ke,
+    "shared/managed-agents-api-reference.md": De,
+    "shared/managed-agents-client-patterns.md": we,
+    "shared/managed-agents-core.md": $e,
+    "shared/managed-agents-environments.md": Ee,
+    "shared/managed-agents-events.md": _e,
+    "shared/managed-agents-memory.md": He,
+    "shared/managed-agents-multiagent.md": Me,
+    "shared/managed-agents-onboarding.md": Le,
+    "shared/managed-agents-outcomes.md": Qe,
+    "shared/managed-agents-overview.md": Xe,
+    "shared/managed-agents-scheduled-deployments.md": Ue,
+    "shared/managed-agents-self-hosted-sandboxes.md": Oe,
+    "shared/managed-agents-tools.md": ze,
+    "shared/managed-agents-webhooks.md": Ge,
+    "shared/model-migration.md": et,
+    "shared/models.md": at,
+    "shared/platform-availability.md": rt,
+    "shared/preserved-thinking-migration.md": it,
+    "shared/preserved-thinking-migration/causes.md": lt,
+    "shared/preserved-thinking-migration/prefix_diff.py": dt,
+    "shared/preserved-thinking-migration/drop_block_probe.py": mt,
+    "shared/prompt-audit.md": ut,
+    "shared/prompt-caching.md": gt,
+    "shared/token-counting.md": bt,
+    "shared/tool-use-concepts.md": At,
+    "typescript/claude-api/README.md": kt,
+    "typescript/claude-api/batches.md": vt,
+    "typescript/claude-api/files-api.md": Tt,
+    "typescript/claude-api/streaming.md": Dt,
+    "typescript/claude-api/tool-use.md": wt,
+    "typescript/managed-agents/README.md": Rt
+  };
+export { nc as SKILL_FILES, oc as SKILL_MODEL_VARS, ic as SKILL_PROMPT };

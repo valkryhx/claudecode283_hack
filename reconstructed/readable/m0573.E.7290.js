@@ -1,0 +1,84 @@
+/* ==============================================================================
+ * m0573.E   [m0573_0xcde50bc.js @ 7290]
+ * --------------------------------------------------------------------------
+ * 作用: (no note)
+ * 原文: claudecode283/modules/m0573_0xcde50bc.js  字符偏移 7290
+ * 说明: 由 tools/extract.mjs 抽取，忠实原文，仅格式化；标识符仍为 Bun 压缩名。
+ * ============================================================================== */
+function E({
+  shells: e,
+  workflows: n,
+  agents: o,
+  unresumedAgents: s,
+  unresumedWorkflows: h,
+  frameLive: u,
+  jobDir: f,
+  agentTranscriptPaths: c,
+  workflowTranscriptDirs: y,
+  projectTempDir: S,
+  mergeShellOutputReadRoots: k
+}, T) {
+  for (let g of n) g.abortController?.abort(Kl("background"));
+  for (let g of o) g.abortController?.abort(Kl("background"));
+  let r = (async () => {
+    let g = [];
+    if (o.length > 0) {
+      try {
+        await Ht((async () => {
+          await Fv(), await ru()
+        })(), P, R)
+      } catch (l) {
+        let v = l instanceof Error && l.message === R;
+        p("task_local_agent_exit_handoff", v ? "flush_timeout" : "flush_failed"), t(`exit handoff: agent transcript flush failed: ${l}`, {
+          level: "warn"
+        })
+      }
+      g = await Promise.all(o.map((l) => zwn(l, {
+        derivedTranscriptPath: c[l.agentId]
+      })))
+    }
+    g.push(...s);
+    let w = (await Promise.all(e.map((l) => Wwn(l, {
+        rerootOutputsTo: S
+      })))).filter((l) => l !== null),
+      b = [...await Promise.all(n.map((l) => Gwn(l, {
+        derivedTranscriptDir: y[l.workflowRunId]
+      }))), ...h];
+    if (w.length === 0 && b.length === 0 && g.length === 0 && u.length === 0 || !f) return;
+    try {
+      if (await aje(f, {
+          writtenAtMs: Date.now(),
+          origin: "exit",
+          shells: w,
+          cron: [],
+          workflows: b,
+          agents: g,
+          ...u.length > 0 && {
+            frameLive: u
+          }
+        }, {
+          mergeShellOutputRoot: [S, ...k ?? []]
+        }, T), i("tengu_adopt_exit_handoff", {
+          adopted_shells: w.length,
+          adopted_workflows: b.length,
+          adopted_agents: g.length,
+          adopted_frame_live: u.length
+        }), w.length > 0) _("task_local_shell_exit_handoff");
+      if (b.length > 0) _("task_local_workflow_exit_handoff");
+      if (g.length > 0) _("task_local_agent_exit_handoff");
+      t(`exit handoff: ${w.length} background shell(s), ${b.length} workflow(s), ${g.length} agent(s), and ${u.length} comment-monitoring consent record(s) handed to the next wake of this session`)
+    } catch (l) {
+      for (let v of e) try {
+        v.shellCommand?.kill()
+      } catch {}
+      if (e.length > 0) m("task_local_shell_exit_handoff", "write_failed");
+      if (n.length > 0) m("task_local_workflow_exit_handoff", "write_failed");
+      if (g.length > 0) m("task_local_agent_exit_handoff", "write_failed");
+      if (u.length > 0 && f !== void 0) zZn(f, u), m("artifact_live_subscribe", "consent_exit_write_failed");
+      t(`exit handoff: adopt.json write failed: ${l}`, {
+        level: "warn"
+      })
+    }
+  })();
+  return tdo(r), r
+}

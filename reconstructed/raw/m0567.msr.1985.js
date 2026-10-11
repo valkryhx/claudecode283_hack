@@ -1,0 +1,1 @@
+function msr(e,s){let r=vm(e.taskId,"local_workflow",e.description,void 0),o={...r,startTime:e.startTime??r.startTime,type:"local_workflow",outputFile:ep(e.taskId),status:"paused",script:"",scriptPath:e.scriptPath,prompt:"",workflowRunId:e.workflowRunId,workflowProgress:[],progressVersion:0,agentCount:0,totalTokens:0,totalToolCalls:0,logs:[],notified:!0};s.register(o)}

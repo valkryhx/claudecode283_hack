@@ -1,0 +1,388 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { of, vt, x } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import { Nt, Te } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import { y, c } from "B:/~BUN/root/chunk-kks4mj3w.js";
+import { te } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import { qo } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import { d } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import { i } from "B:/~BUN/root/chunk-728mwbhs.js";
+import { _, m } from "B:/~BUN/root/chunk-51n463p1.js";
+import { Je } from "B:/~BUN/root/chunk-3rzkfay5.js";
+import { nl } from "B:/~BUN/root/chunk-6spmd6p4.js";
+import { ma, ubr, umo, ZG, gk, ty, Ce } from "B:/~BUN/root/chunk-3jyp964r.js";
+import { _o } from "B:/~BUN/root/chunk-38kffpyk.js";
+import { Pr, vp, ja, ml, Ju, Ir } from "B:/~BUN/root/chunk-9sy3w2pa.js";
+import { VZe, zoo, cdr } from "B:/~BUN/root/chunk-1h0a0b4e.js";
+import { gU } from "B:/~BUN/root/chunk-4dw8761b.js";
+import { o1 } from "B:/~BUN/root/chunk-aky7m4ay.js";
+import { _e } from "B:/~BUN/root/chunk-batgyebn.js";
+import { U } from "B:/~BUN/root/chunk-z1enakv9.js";
+var R = o1("computerUseMcpState", void 0);
+class Wje {
+  #e;
+  constructor(e) {
+    this.#e = e;
+  }
+  static over(e) {
+    return new Wje(R(e.getState, e.setState));
+  }
+  get() {
+    return this.#e.get();
+  }
+  update(e) {
+    this.#e.set(e);
+  }
+}
+class b {
+  owner = void 0;
+  acquire(e) {
+    if (this.owner) return () => {};
+    return this.owner = e, () => {
+      if (this.owner === e) this.owner = void 0;
+    };
+  }
+}
+var wQe = new Nt(() => new b());
+function XXr(e) {
+  return wQe.of(e).owner;
+}
+var A = /\p{Script=Han}/u,
+  T = /[\p{Script=Hiragana}\p{Script=Katakana}\u30fc\uff70\p{Script=Thai}\p{Script=Lao}\p{Script=Khmer}\p{Script=Myanmar}]/u,
+  L = /\p{Script=Hangul}/u,
+  v = /[\p{L}\p{N}]/u;
+function E(e) {
+  let {
+    han: han,
+    phonetic: phonetic,
+    hangul: hangul
+  } = w(e);
+  return han + phonetic + hangul;
+}
+function C(e) {
+  let n = e.trim();
+  if (n === "") return 0;
+  let t = 0;
+  for (let o of n.split(/\s+/)) {
+    let {
+      han: han_2,
+      phonetic: phonetic_2,
+      hangul: hangul_2,
+      other: other
+    } = w(o);
+    t += han_2 === 0 && phonetic_2 === 0 ? 1 : (other + hangul_2 > 0 ? 1 : 0) + han_2 / 2 + phonetic_2 / 4;
+  }
+  return Math.ceil(t);
+}
+function w(e) {
+  let han_3 = 0,
+    phonetic_3 = 0,
+    hangul_3 = 0,
+    other_2 = 0;
+  for (let r of e) if (A.test(r)) han_3++;else if (T.test(r)) phonetic_3++;else if (L.test(r)) hangul_3++;else if (v.test(r)) other_2++;
+  return {
+    han: han_3,
+    phonetic: phonetic_3,
+    hangul: hangul_3,
+    other: other_2
+  };
+}
+function Qbe(e) {
+  return e.status === "shown" || e.status === "accepted";
+}
+function iqt(e) {
+  return e.status === "empty" ? null : e.text;
+}
+function aqt() {
+  let CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION = a.CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION;
+  if (CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION === !1) return i("tengu_prompt_suggestion_init", {
+    enabled: !1,
+    source: y("env")
+  }), !1;
+  if (CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION === !0) return i("tengu_prompt_suggestion_init", {
+    enabled: !0,
+    source: y("env")
+  }), !0;
+  if (!x("tengu_chomp_inflection", !1)) return i("tengu_prompt_suggestion_init", {
+    enabled: !1,
+    source: y("growthbook")
+  }), !1;
+  if (Te()) return i("tengu_prompt_suggestion_init", {
+    enabled: !1,
+    source: y("non_interactive")
+  }), !1;
+  if (_o() && nl()) return i("tengu_prompt_suggestion_init", {
+    enabled: !1,
+    source: y("swarm_teammate")
+  }), !1;
+  let enabled = Je()?.promptSuggestionEnabled !== !1;
+  return i("tengu_prompt_suggestion_init", {
+    enabled: enabled,
+    source: y("setting")
+  }), enabled;
+}
+function lqt() {
+  let CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION_2 = a.CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION;
+  if (CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION_2 !== void 0) return CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION_2;
+  return Je()?.promptSuggestionEnabled !== !1;
+}
+function M(e) {
+  if (!e.promptSuggestionEnabled) return "disabled";
+  if (e.pendingWorkerRequest || e.pendingSandboxRequest) return "pending_permission";
+  if (e.mcp.clients.some(item => item.type === "connected" && (item.transportErrorState?.pendingElicitations ?? 0) > 0)) return "elicitation_active";
+  if (e.toolPermissionContext.mode === "plan") return "plan_mode";
+  {
+    let {
+        status: status
+      } = ma(),
+      t = status === "allowed_warning" && a.CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION === !0;
+    if (status !== "allowed" && !t) return "rate_limit";
+  }
+  return null;
+}
+async function Btr(e, n, t, o, s, r) {
+  if (e.signal.aborted) return bP("aborted", s), null;
+  if (U(n, h => h.type === "assistant") < 2) return bP("early_conversation", s), null;
+  let p = ty(n);
+  if (p?.isApiErrorMessage) return bP("last_response_error", s), null;
+  let l = t(),
+    g = M(l);
+  if (g) return bP(g, s), null;
+  let cacheColdBy = I(p);
+  if (cacheColdBy) return bP("cache_cold", s, {
+    cacheColdBy: cacheColdBy
+  }), null;
+  if (r && cdr()) {
+    let h = r.eligibleTurns % zoo === 0;
+    if (r.eligibleTurns++, !h) return bP("unused_streak", s), null;
+  }
+  let {
+    suggestion: suggestion,
+    generationRequestId: generationRequestId
+  } = await D(e, o);
+  if (e.signal.aborted) return bP("aborted", s), null;
+  if (!suggestion) return bP("empty", s), null;
+  if (B(suggestion, s)) return null;
+  return {
+    suggestion: suggestion,
+    generationRequestId: generationRequestId
+  };
+}
+async function JXr(e, n) {
+  if (!e.querySource?.startsWith("repl_main_thread")) return;
+  let t = gU(),
+    o = vt(),
+    s = o && n?.tempo === "blocked" && !n.block;
+  if (o ? t !== "focused" && !s : t === "blurred") {
+    bP(o ? "bg_unattached" : "unfocused", "cli");
+    return;
+  }
+  let promptSuggestion = e.toolUseContext.session.promptSuggestion,
+    abortController = new AbortController();
+  promptSuggestion.abortController = abortController;
+  let p = ZG(e);
+  try {
+    let l = await Btr(abortController, e.messages, e.toolUseContext.getAppState, p, "cli", s ? void 0 : promptSuggestion);
+    if (!l) return;
+    if (VZe() && of(e.toolUseContext.agentContext)) {
+      bP("plugin_owns", "cli");
+      return;
+    }
+    let g = !1,
+      {
+        isShown: isShown
+      } = await umo({
+        text: l.suggestion,
+        origin: {
+          kind: "suggestion"
+        },
+        signal: abortController.signal,
+        place: S => {
+          if (abortController.signal.aborted) return {
+            isShown: !1
+          };
+          if (g = !0, s) O(S, n?.needs, e.toolUseContext.storageV5).catch(ml);
+          return ubr(S, l.generationRequestId);
+        }
+      });
+    if (abortController.signal.aborted) {
+      bP("aborted", "cli");
+      return;
+    }
+    if (!isShown && g) bP("timing", "cli");
+  } catch (error) {
+    if (error instanceof Error && (error.name === "AbortError" || error.name === "APIUserAbortError")) {
+      bP("aborted", "cli");
+      return;
+    }
+    m("prompt_suggestion_generate", "api_error"), d(te(error));
+  } finally {
+    if (promptSuggestion.abortController === abortController) promptSuggestion.abortController = null;
+  }
+}
+async function O(suggestedReply, n, t) {
+  if (qo(suggestedReply) !== suggestedReply) return;
+  let o = Pr(vp());
+  Ju(o);
+  let s = await Ir(o, t);
+  if (s?.tempo !== "blocked" || s.needs !== n || s.suggestedReply === suggestedReply) return;
+  await ja(o, {
+    ...s,
+    suggestedReply: suggestedReply
+  }, t);
+}
+var P = 1e4;
+function I(e) {
+  if (!e) return null;
+  let usage = e.message.usage,
+    t = (usage.input_tokens ?? 0) + (usage.output_tokens ?? 0);
+  if (t > P) return "uncached";
+  let o = usage.cache_creation_input_tokens ?? 0;
+  if (t + o <= P) return null;
+  return x("tengu_chomp_thaw", !1) ? null : "cache_write";
+}
+var W = `[SUGGESTION MODE: Suggest what the user might naturally type next into Claude Code.]
+
+FIRST: Look at the user's recent messages and original request.
+
+Your job is to predict what THEY would type - not what you think they should do.
+
+THE TEST: Would they think "I was just about to type that"?
+
+EXAMPLES:
+User asked "fix the bug and run tests", bug is fixed \u2192 "run the tests"
+After code written \u2192 "try it out"
+Claude offers options \u2192 suggest the one the user would likely pick, based on conversation
+Claude asks to continue \u2192 "yes" or "go ahead"
+Task complete, obvious follow-up \u2192 "commit this" or "push it"
+After error or misunderstanding \u2192 silence (let them assess/correct)
+
+Be specific: "run the tests" beats "continue".
+
+NEVER SUGGEST:
+- Evaluative ("looks good", "thanks")
+- Questions ("what about...?")
+- Claude-voice ("Let me...", "I'll...", "Here's...")
+- New ideas they didn't ask about
+- Multiple sentences
+
+Stay silent if the next step isn't obvious from what the user said.
+
+Stay silent if a suggestion could be unsafe or inappropriate \u2014 including any sensitive topic (security incidents, credentials, harm, private data). Even when the user is doing legitimate security or cybersecurity work, do not predict potentially unsafe actions.
+
+Format: 2-12 words, match the user's style. Or nothing.
+
+Reply with ONLY the suggestion, no quotes or explanation.`;
+async function N(content, abortController_2, cacheSafeParams) {
+  let canUseTool = async () => ({
+      behavior: "deny",
+      message: "No tools needed for suggestion",
+      decisionReason: {
+        type: "other",
+        reason: "suggestion only"
+      }
+    }),
+    s = await gk({
+      promptMessages: [Ce({
+        content: content
+      })],
+      cacheSafeParams: cacheSafeParams,
+      canUseTool: canUseTool,
+      querySource: "prompt_suggestion",
+      forkLabel: "prompt_suggestion",
+      overrides: {
+        abortController: abortController_2
+      },
+      skipTranscript: !0,
+      skipCacheWrite: !0
+    }),
+    r = s.messages.find(item => item.type === "assistant"),
+    generationRequestId_2 = r?.type === "assistant" ? r.requestId ?? null : null,
+    candidates = [];
+  for (let l of s.messages) {
+    if (l.type !== "assistant") continue;
+    let g = l.message.content.find(item => item.type === "text");
+    if (g?.type === "text") candidates.push(g.text);
+  }
+  return {
+    candidates: candidates,
+    generationRequestId: generationRequestId_2
+  };
+}
+function q(e) {
+  return e.trim().replace(/^<(suggestion|response|output|answer|result)>([\s\S]*)<\/\1>$/i, (n, t, o) => o.includes(`</${t.toLowerCase()}>`) || o.includes(`</${t.toUpperCase()}>`) ? n : o).replace(/^\s*(suggested\s+(response|reply|input|prompt)|suggestion|response|reply|answer|output|result|\u63D0\u6848|\u56DE\u7B54|\u8FD4\u4FE1|\u5FDC\u7B54|\u51FA\u529B|\u7D50\u679C|\u5EFA\u8BAE|\u56DE\u590D|\u7B54\u6848|\u8F93\u51FA|\u7ED3\u679C|\uC81C\uC548|\uB2F5\uBCC0|\uC751\uB2F5|\uCD9C\uB825|\uACB0\uACFC)\s*[:\uFF1A]\s*/i, "").trim();
+}
+async function D(e, n) {
+  let {
+    candidates: candidates_2,
+    generationRequestId: generationRequestId_3
+  } = await N(W, e, n);
+  for (let s of candidates_2) {
+    let suggestion_2 = q(s);
+    if (suggestion_2) return _("prompt_suggestion_generate"), {
+      suggestion: suggestion_2,
+      generationRequestId: generationRequestId_3
+    };
+  }
+  return _("prompt_suggestion_generate"), {
+    suggestion: null,
+    generationRequestId: generationRequestId_3
+  };
+}
+function B(e, n) {
+  if (!e) return bP("empty", n), !0;
+  let t = e.toLowerCase(),
+    o = C(e),
+    s = [["done", () => t === "done" || /^\P{L}*(\u5B8C\u4E86(\u3057\u307E\u3057\u305F)?|\u5B8C\u6210\u4E86?|\uC644\uB8CC\uB428?)\P{L}*$/u.test(e)], ["meta_text", () => t === "nothing found" || t === "nothing found." || t.startsWith("nothing to suggest") || t.startsWith("no suggestion") || /\bsilence is\b|\bstay(s|ing)? silent\b/.test(t) || /^\W*silence\W*$/.test(t) || /^\P{L}*(\u6C88\u9ED9|\u6C89\u9ED8|\u9759\u9ED8|\uCE68\uBB35|\u63D0\u6848(\u306A\u3057|\u306F\u3042\u308A\u307E\u305B\u3093)|\u7279\u306B(\u306A\u3057|\u3042\u308A\u307E\u305B\u3093)|[\u65E0\u6CA1\u6C92]\u6709?\u5EFA[\u8BAE\u8B70]|(\uC81C\uC548|\uD574\uB2F9)\s*\uC5C6\uC74C)\P{L}*$/u.test(e)], ["meta_wrapped", () => /^(\(.*\)|\[.*\]|\uFF08.*\uFF09|\uFF3B.*\uFF3D|\u3010.*\u3011|\u3014.*\u3015)$/.test(e)], ["error_message", () => t.startsWith("api error:") || t.startsWith("prompt is too long") || t.startsWith("request timed out") || t.startsWith("invalid api key") || t.startsWith("image was too large")], ["prefixed_label", () => /^\w+:\s/.test(e)], ["too_few_words", () => {
+      if (o >= 2) return !1;
+      if (e.startsWith("/")) return !1;
+      let r = E(e);
+      if (r > 0) return r < 2;
+      return !new Set(["yes", "yeah", "yep", "yea", "yup", "sure", "ok", "okay", "push", "commit", "deploy", "stop", "continue", "check", "exit", "quit", "no"]).has(t);
+    }], ["too_many_words", () => o > 12], ["too_long", () => e.length >= 100], ["multiple_sentences", () => /[.!?]\s+[A-Z]|[\u3002\uFF01\uFF1F]\s*[\p{L}\p{N}]/u.test(e)], ["has_formatting", () => /[\n*]|\*\*/.test(e)], ["evaluative", () => /thanks|thank you|looks good|sounds good|that works|that worked|that's all|nice|great|perfect|makes sense|awesome|excellent/.test(t) || /^\P{L}*(\u3042\u308A\u304C\u3068\u3046(\u3054\u3056\u3044\u307E\u3059|\u3054\u3056\u3044\u307E\u3057\u305F)?|\u52A9\u304B\u308A\u307E\u3057\u305F|[\u8C22\u8B1D][\u8C22\u8B1D][\u4F60\u60A8]?|\u611F\u8C22[\u4F60\u60A8]?|\u611F\u8B1D\u3057\u307E\u3059|\uAC10\uC0AC\uD569\uB2C8\uB2E4|\uACE0\uB9C8\uC6CC\uC694?)(\P{L}|\u7684|$)/u.test(e) || /(\u826F\u3055\u305D\u3046|\u3088\u3055\u305D\u3046|\u3044\u3044\u3067\u3059\u306D|\u770B\u8D77\u6765\u4E0D\u9519|\u592A\u597D\u4E86|\u5B8C\u74A7|\u5B8C\u7F8E|\uC88B\uB124\uC694)(\u3067\u3059|\u3067\u3059\u306D|\u3060\u306D)?\P{L}*$/u.test(e)], ["claude_voice", () => /^(let me|i'll|i've|i'm|i can|i would|i think|i notice|here's|here is|here are|that's|this is|this will|you can|you should|you could|sure,|of course|certainly|\u8BA9\u6211(?!\u4EEC)|\u6211\u6765|\u6211\u4F1A|\u6211\u5C06)/i.test(e)]];
+  for (let [r, u] of s) if (u()) return bP(r, n), !0;
+  return !1;
+}
+function QXr(e, n, t, o) {
+  let similarity = Math.round(n.length / (e.length || 1) * 100) / 100,
+    r = n.toLowerCase() === e.toLowerCase(),
+    u = Math.max(0, Date.now() - t);
+  i("tengu_prompt_suggestion", {
+    source: y("sdk"),
+    outcome: y(r ? "accepted" : "ignored"),
+    prompt_id: y("user_intent"),
+    ...(o && {
+      generationRequestId: _e(o)
+    }),
+    ...(r && {
+      timeToAcceptMs: u
+    }),
+    ...(!r && {
+      timeToIgnoreMs: u
+    }),
+    similarity: similarity
+  });
+}
+function bP(e, n, t) {
+  i("tengu_prompt_suggestion", {
+    ...(n && {
+      source: c(n)
+    }),
+    outcome: y("suppressed"),
+    reason: c(e),
+    ...(t?.cacheColdBy && {
+      cacheColdBy: c(t.cacheColdBy)
+    }),
+    prompt_id: y("user_intent")
+  });
+}
+export { Wje, wQe, XXr, Qbe, iqt, aqt, lqt, Btr, JXr, QXr, bP };

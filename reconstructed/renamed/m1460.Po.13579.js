@@ -1,0 +1,67 @@
+/* ==========================================================================
+ * m1460.Po   [m1460_0xd973957.js @ 13579]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function Po({
+  tasks: o,
+  expanded: l,
+  width: a,
+  indent: u
+}) {
+  let d = [],
+    f = U(o, k => k.status === "completed");
+  d.push([{
+    text: "Tasks",
+    bold: !0,
+    dimColor: !0
+  }, {
+    text: ot(` \xB7 ${f}/${o.length} done`, a - 5),
+    dimColor: !0
+  }]);
+  let h = o.length > _o,
+    x = o,
+    y = [];
+  if (!l && h) {
+    let k = [...o.filter(W => W.status === "in_progress"), ...o.filter(W => W.status === "pending"), ...o.filter(W => W.status === "completed")],
+      C = new Set(k.slice(0, _o));
+    x = o.filter(W => C.has(W)), y = k.slice(_o);
+  } else if (l && o.length > Io) x = o.slice(0, Io), y = o.slice(Io);
+  let A = Math.max(4, a - ie(u) - 2);
+  for (let k of x) {
+    let C = Me(k.content),
+      W = l ? GUe(C, A) : [ot(C, A)],
+      L = W.length > 0 ? W : [""];
+    for (let [D, M] of L.entries()) d.push([{
+      text: u
+    }, D === 0 ? Tl(k.status) : {
+      text: " "
+    }, {
+      text: ` ${M}`,
+      bold: k.status === "in_progress",
+      dimColor: k.status !== "in_progress"
+    }]);
+  }
+  if (y.length > 0) {
+    let k;
+    if (l) k = `${y.length} more`;else {
+      let C = [],
+        W = U(y, M => M.status === "in_progress"),
+        L = U(y, M => M.status === "pending"),
+        D = U(y, M => M.status === "completed");
+      if (W > 0) C.push(`${W} in progress`);
+      if (L > 0) C.push(`${L} pending`);
+      if (D > 0) C.push(`${D} completed`);
+      k = C.join(", ");
+    }
+    d.push([{
+      text: ot(`${u}\u2026 +${k}`, a),
+      dimColor: !0
+    }]);
+  }
+  return {
+    lines: d,
+    capped: h
+  };
+}

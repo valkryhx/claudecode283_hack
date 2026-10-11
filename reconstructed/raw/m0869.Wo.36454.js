@@ -1,0 +1,1 @@
+class Wo extends Error{constructor(e,r){super(`Workflow token budget exceeded (${e.toLocaleString()} / ${r.toLocaleString()} output tokens). Stopping further agent() calls. In-flight agents will complete; their results are preserved.`);this.name="WorkflowBudgetExceededError"}}

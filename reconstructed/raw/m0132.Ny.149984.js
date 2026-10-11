@@ -1,0 +1,1 @@
+function Ny({engine:e,core:t,pluginName:o,callInterface:r,invoke:n,wrapMethod:s}){let i=e;return{engine:e,slots:i,identity:new Set(Object.keys(i)),local:t,own:new Map,isFinalized:!1,pluginName:o,callInterface:r,invoke:n,wrapMethod:s}}

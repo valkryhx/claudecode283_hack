@@ -1,0 +1,1 @@
+async function el(o,l){if(o==="user")return S7e();if(Fo()!==null)throw p("workflow_save","project_scope_unavailable"),Error("Project-scope workflow saves are unavailable in a session started with --project-config-root");let a=L$t(l);if(a===null)return So(l,".claude","workflows");let u=(await Use("workflows",l))[0];if(u!==void 0)return u;return So(a,".claude","workflows")}

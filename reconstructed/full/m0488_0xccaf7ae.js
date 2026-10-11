@@ -1,0 +1,1018 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  en
+} from "B:/~BUN/root/chunk-bvn0mpsk.js";
+import {
+  io,
+  Y,
+  Qd
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  b
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import {
+  Bn
+} from "B:/~BUN/root/chunk-yehxgs7w.js";
+import {
+  nc,
+  r2
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  pa
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  ZRe,
+  Dv,
+  oY
+} from "B:/~BUN/root/chunk-83yxmdy5.js";
+import {
+  WRe
+} from "B:/~BUN/root/chunk-3hn9fzjy.js";
+import {
+  _c,
+  _f,
+  Yve,
+  EZ,
+  hSr,
+  lZt,
+  lDe,
+  ySr,
+  ru,
+  pZt,
+  xSr,
+  ov,
+  YSr,
+  XSr
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  Rd
+} from "B:/~BUN/root/chunk-06ra9xdn.js";
+import {
+  ee,
+  WTe
+} from "B:/~BUN/root/chunk-65tbbnf1.js";
+import {
+  o,
+  E,
+  ae,
+  C,
+  u,
+  fe,
+  z,
+  A
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+import {
+  basename as J
+} from "path";
+var ot = {
+    published: "published",
+    comment: "comment"
+  },
+  x = 64,
+  F = 16,
+  it = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/,
+  st = "",
+  at = f(() => {
+    let e = u({
+        v: A(1),
+        rows: fe(o(), ae())
+      }),
+      t = u({
+        v: E().gt(1)
+      }),
+      n = u({
+        stopped: fe(o(), ae())
+      }),
+      i = z(ot),
+      r = o().refine((g) => en(g) !== null),
+      d = u({
+        orphans: C(ae()).transform((g) => g.slice(0, F).flatMap((m) => {
+          let c = r.safeParse(m);
+          return c.success ? [c.data] : []
+        }))
+      }),
+      s = u({
+        trigger_id: r,
+        since: o().regex(it),
+        events: C(o()).max(16).transform((g) => L(g).flatMap((m) => {
+          let c = i.safeParse(m);
+          return c.success ? [c.data] : []
+        })).refine((g) => g.length > 0),
+        unreleased: C(ae()).catch([]).transform((g) => g.slice(0, F).flatMap((m) => {
+          let c = r.safeParse(m);
+          return c.success ? [c.data] : []
+        }))
+      }),
+      l = u({
+        at_ms: E().refine(Number.isFinite)
+      });
+    return {
+      rowsEnvelope: e,
+      newerEnvelope: t,
+      stopsEnvelope: n,
+      orphansEnvelope: d,
+      row: s,
+      stop: l
+    }
+  });
+
+function ano(e) {
+  ee().durable.registrySink = e
+}
+
+function lno() {
+  ee().durable.registryPublished = st
+}
+
+function gpe() {
+  if (!a.CLAUDE_CODE_REMOTE) return;
+  let e = ee(),
+    {
+      durable: t
+    } = e;
+  if (t.registrySink === null) return;
+  let n = {},
+    i = [],
+    r = new Set;
+  for (let c of t.pendingRestoredRows.values()) {
+    let h = t.rows.get(c.slug);
+    if (h === void 0 && !t.unwatchedSlugs.has(c.slug)) {
+      i.push(c);
+      continue
+    }
+    for (let S of [c.triggerId, ...c.unreleased ?? []])
+      if (S !== h?.triggerId) r.add(S)
+  }
+  for (let c of [...t.rows.values(), ...i].slice(0, x)) n[c.slug] = {
+    trigger_id: c.triggerId,
+    since: c.since,
+    events: [...c.events],
+    ...c.unreleased !== void 0 && c.unreleased.length > 0 && {
+      unreleased: [...c.unreleased]
+    }
+  };
+  let d = {},
+    s = [...e.commentMonitorIntent.bySlug.entries()].filter(([, c]) => c.state === "stopped").sort(([, c], [, h]) => h.writtenAtMs - c.writtenAtMs).slice(0, x);
+  for (let [c, h] of s) d[c] = {
+    at_ms: h.writtenAtMs
+  };
+  let l = L([...t.orphanTriggers, ...r]).slice(0, F),
+    g = t.rows.size + i.length === 0 && s.length === 0 && l.length === 0 ? null : {
+      v: 1,
+      rows: n,
+      stopped: d,
+      ...l.length > 0 && {
+        orphans: l
+      }
+    },
+    m = b(g);
+  if (m === t.registryPublished) return;
+  t.registryPublished = m, t.registrySink({
+    artifact_durable_watches: g
+  })
+}
+
+function cno(e) {
+  if (e === void 0 || e === null) return null;
+  let t = at(),
+    n = 0,
+    i = [],
+    r = t.rowsEnvelope.safeParse(e);
+  if (r.success)
+    for (let [m, c] of B(r.data.rows)) {
+      let h = t.row.safeParse(c);
+      if (!Bn.test(m) || !h.success) {
+        n++;
+        continue
+      }
+      i.push({
+        slug: m,
+        triggerId: h.data.trigger_id,
+        since: h.data.since,
+        events: h.data.events,
+        ...h.data.unreleased.length > 0 && {
+          unreleased: h.data.unreleased
+        }
+      })
+    }
+  let d = new Map,
+    s = t.stopsEnvelope.safeParse(e);
+  if (s.success)
+    for (let [m, c] of B(s.data.stopped)) {
+      if (!Bn.test(m)) {
+        n++;
+        continue
+      }
+      let h = t.stop.safeParse(c);
+      if (d.set(m, h.success ? h.data.at_ms : Date.now()), !h.success) n++
+    }
+  if (!r.success || !s.success) p("artifact_durable_subscribe", s.success && t.newerEnvelope.safeParse(e).success ? "registry_newer_version" : "registry_invalid");
+  else if (n > 0) p("artifact_durable_subscribe", "registry_entry_invalid");
+  let l = t.orphansEnvelope.safeParse(e),
+    g = l.success ? l.data.orphans : [];
+  return {
+    rows: i,
+    stopped: d,
+    orphans: g
+  }
+}
+
+function B(e) {
+  return Object.keys(e).slice(0, x).map((n) => [n, e[n]])
+}
+
+function p7(e) {
+  let {
+    live: t
+  } = ee(), n = t.supervisors.get(e);
+  return n !== void 0 && !n.stopped && n.autoReactWiring !== void 0 || t.inFlightWiredIntent.has(e)
+}
+var R = "\x00unwritten",
+  G = 256,
+  H = 32,
+  O = 64,
+  dt = f(() => {
+    let e = E().refine(Number.isFinite),
+      t = u({
+        state: z(["armed", "stopped"]),
+        writtenAtMs: e,
+        title: o().min(1).max(G).optional(),
+        holder: o().optional().transform((i) => i === void 0 ? void 0 : "bg"),
+        holderPid: E().int().positive().optional().catch(void 0),
+        holderProcStart: o().min(1).max(64).optional().catch(void 0),
+        holderProcStartFt: o().min(1).max(64).optional().catch(void 0),
+        holderJob: o().regex(/^[0-9a-f]{8}$/).optional().catch(void 0),
+        holderPidSpace: o().min(1).max(160).optional().catch(void 0)
+      }),
+      n = u({
+        type: A("artifact-comment-monitor"),
+        v: A(1),
+        sessionId: o(),
+        artifacts: fe(o(), ae()),
+        crossLineMerged: A(!0).optional().catch(void 0),
+        tailTorn: A(!0).optional().catch(void 0)
+      });
+    return {
+      record: t,
+      envelope: n
+    }
+  });
+
+function K(e) {
+  if (e.holderPid === void 0 || e.holderJob === void 0 || e.holderPidSpace === void 0 || e.holderProcStart === void 0 && e.holderProcStartFt === void 0) return {};
+  return {
+    holderPid: e.holderPid,
+    holderJob: e.holderJob,
+    ...e.holderProcStart !== void 0 && {
+      holderProcStart: e.holderProcStart
+    },
+    ...e.holderProcStartFt !== void 0 && {
+      holderProcStartFt: e.holderProcStartFt
+    },
+    holderPidSpace: e.holderPidSpace
+  }
+}
+
+function Z() {
+  let e = ZRe.token;
+  if (e === void 0) return Dv(), {};
+  let t = r2();
+  if (t === void 0 || !/^[0-9a-f]{8}$/.test(J(t))) return {};
+  let {
+    procStart: n,
+    procStartFt: i
+  } = oY(e);
+  return K({
+    holderPid: process.pid,
+    holderJob: J(t),
+    holderProcStart: n,
+    holderProcStartFt: i,
+    holderPidSpace: WRe().slice(0, 160)
+  })
+}
+
+function _lr() {
+  return Dv()
+}
+
+function B3t(e, t) {
+  let n = dt(),
+    i = n.envelope.safeParse(e);
+  if (!i.success) return p("artifact_live_subscribe", "comment_monitor_intent_invalid"), null;
+  if (i.data.sessionId !== Y()) return p("artifact_live_subscribe", "comment_monitor_intent_foreign"), null;
+  if (i.data.crossLineMerged === !0) t?.onLossy?.();
+  let r = i.data.tailTorn === !0;
+  if (r) t?.onLossy?.();
+  let d = new Map,
+    s = 0,
+    l = 0,
+    g = 0;
+  for (let [m, c] of Object.entries(i.data.artifacts)) {
+    if (l++ >= 2 * O) {
+      t?.onLossy?.();
+      break
+    }
+    let h = n.record.safeParse(c);
+    if (!Bn.test(m)) {
+      s++, t?.onLossy?.();
+      continue
+    }
+    if (!h.success) {
+      if (s++, t?.onLossy?.(), typeof c === "object" && c !== null && c.state === "stopped") d.set(m, {
+        state: "stopped",
+        writtenAtMs: Date.now()
+      });
+      continue
+    }
+    if (r && h.data.state === "armed" && h.data.holder === void 0) {
+      d.set(m, {
+        state: "stopped",
+        writtenAtMs: Date.now(),
+        ...h.data.title !== void 0 && {
+          title: h.data.title
+        }
+      }), t?.onTornStop?.(m);
+      continue
+    }
+    if (h.data.state === "armed" && g++ >= O) {
+      t?.onLossy?.();
+      continue
+    }
+    let {
+      state: S,
+      writtenAtMs: w,
+      title: M,
+      holder: y
+    } = h.data;
+    d.set(m, {
+      state: S,
+      writtenAtMs: w,
+      ...M !== void 0 && {
+        title: M
+      },
+      ...y !== void 0 && {
+        holder: y,
+        ...r ? {} : K(h.data)
+      }
+    })
+  }
+  if (s > 0) p("artifact_live_subscribe", "comment_monitor_intent_record_invalid");
+  return d
+}
+
+function mvt(e) {
+  let t = k(e.storageV5),
+    n = new Map([...t.pendingRestore ?? [], ...t.bySlug]);
+  t.pendingRestore = null;
+  let {
+    excludeSlug: i
+  } = e;
+  if (i !== void 0) n.delete(i);
+  return v(), n
+}
+
+function j3t() {
+  return ee().commentMonitorIntent.tornStops
+}
+
+function blr() {
+  return ee().commentMonitorIntent.storageV5
+}
+
+function pG(e) {
+  k(e?.storageV5)
+}
+
+function dno(e, t) {
+  if (e === void 0 && !WTe()) return;
+  let n = ee().commentMonitorIntent;
+  n.earlySeed = e, n.adoptPendingFor = Y(), k(t?.storageV5)
+}
+
+function W3t(e, t) {
+  let n = k(t?.storageV5);
+  if (ee().durable.stopLatches.isStopped(e)) return;
+  let i = t?.title,
+    r = i !== void 0 && i.length >= 1 && i.length <= G,
+    d = n.bySlug.get(e)?.title;
+  n.forgottenAt.delete(e);
+  let s = Date.now(),
+    l = nc() ? {
+      holder: "bg",
+      ...Z()
+    } : void 0;
+  if (n.bySlug.set(e, {
+      state: "armed",
+      writtenAtMs: s,
+      ...r ? {
+        title: i
+      } : d !== void 0 && {
+        title: d
+      },
+      ...l
+    }), tt(n, e), v(), l !== void 0 && l.holderPid === void 0) ct(e, s)
+}
+
+function ct(e, t) {
+  Dv().then(() => {
+    if (!WTe() || !nc()) return;
+    let n = ee().commentMonitorIntent,
+      i = n.bySlug.get(e);
+    if (n.sid !== Y() || i?.state !== "armed" || i.holder !== "bg" || i.holderPid !== void 0 || i.writtenAtMs !== t) return;
+    let r = Z();
+    if (r.holderPid === void 0) return;
+    n.bySlug.set(e, {
+      ...i,
+      ...r
+    }), v()
+  }).catch(() => {
+    return
+  })
+}
+
+function hze(e, t) {
+  let n = k(t?.storageV5),
+    i = n.bySlug.get(e);
+  n.bySlug.set(e, {
+    state: "stopped",
+    writtenAtMs: Date.now(),
+    ...i?.title !== void 0 && {
+      title: i.title
+    }
+  }), v({
+    durableNow: !0
+  });
+  for (let [r, d] of n.parked) {
+    let s = d.line[e];
+    if (s?.state === "armed") d.line[e] = {
+      state: "stopped",
+      writtenAtMs: Date.now(),
+      ...s.title !== void 0 && {
+        title: s.title
+      }
+    }, P(r, d.path, d.line, {
+      durableNow: !0
+    })
+  }
+}
+
+function uno(e, t) {
+  return k(t?.storageV5).bySlug.get(e)?.state
+}
+
+function kOe(e, t) {
+  let n = k(t?.storageV5),
+    i = !1,
+    r = new Set(typeof e === "string" ? [e] : e),
+    d = Date.now();
+  for (let s of r) {
+    if (i = n.bySlug.delete(s) || i, n.forgottenAt.delete(s), n.forgottenAt.size >= ft) {
+      let l = n.forgottenAt.keys().next().value;
+      if (l !== void 0) n.forgottenAt.delete(l)
+    }
+    n.forgottenAt.set(s, d)
+  }
+  if (i) v({
+    durableNow: !0
+  });
+  for (let [s, l] of n.parked) {
+    let g = !1;
+    for (let m of r)
+      if (l.traveling?.has(m) && l.line[m]?.state === "armed") delete l.line[m], l.traveling.delete(m), g = !0;
+    if (g) {
+      if (P(s, l.path, l.line, {
+          durableNow: !0
+        }), !Object.values(l.line).some((m) => m.state === "armed")) n.parked.delete(s)
+    }
+  }
+}
+
+function z3t(e, t) {
+  let n = k(t?.storageV5),
+    {
+      stopLatches: i
+    } = ee().durable;
+  for (let [r, d] of e) {
+    if (i.wasClearedByRewatch(r)) continue;
+    let s = n.bySlug.get(r);
+    if (s === void 0 || s.state === "armed" || s.writtenAtMs <= d) n.bySlug.set(r, {
+      state: "stopped",
+      writtenAtMs: d,
+      ...s?.title !== void 0 && {
+        title: s.title
+      }
+    });
+    i.reaffirmStop(r)
+  }
+  v()
+}
+
+function pno(e) {
+  let t = k(e?.storageV5),
+    {
+      yieldedSlugs: n
+    } = ee().wakes,
+    i = Date.now(),
+    r = !1;
+  for (let [d, s] of t.bySlug)
+    if (s.state === "armed" && !n.has(d)) t.bySlug.set(d, {
+      state: "stopped",
+      writtenAtMs: i,
+      ...s.title !== void 0 && {
+        title: s.title
+      }
+    }), r = !0;
+  if (r) v({
+    durableNow: !0
+  });
+  for (let [d, s] of t.parked) {
+    let l = !1;
+    for (let [g, m] of Object.entries(s.line))
+      if (m.state === "armed") s.line[g] = {
+        state: "stopped",
+        writtenAtMs: i,
+        ...m.title !== void 0 && {
+          title: m.title
+        }
+      }, l = !0;
+    if (l) P(d, s.path, s.line, {
+      durableNow: !0
+    })
+  }
+}
+
+function lt(e) {
+  switch (e) {
+    case "clear":
+    case "resume":
+    case "fork":
+    case "remote_attach":
+      return !0;
+    case "cd":
+    case "spare_claim":
+    case "hydrate":
+    case "startup_custom_id":
+      return !1
+  }
+}
+
+function ut() {
+  let e = ee().commentMonitorIntent,
+    t = e.sid;
+  if (t === null || t === Y()) {
+    e.leftWith = null;
+    return
+  }
+  let n = new Set;
+  for (let [i, r] of e.bySlug)
+    if (r.state === "armed" && p7(i)) n.add(i);
+  e.leftWith = {
+    sid: t,
+    traveling: n,
+    unwritten: !e.onFile && !lDe(t) && e.adoptPendingFor !== t,
+    inWindow: e.adoptPendingFor === t
+  }
+}
+
+function _() {
+  let e = ee().commentMonitorIntent;
+  if (!lDe(Y())) return;
+  for (let [t, n] of e.parked) {
+    if (n.traveling === void 0 || t === Y()) continue;
+    let i = !1;
+    for (let r of n.traveling)
+      if (n.line[r]?.state === "armed") delete n.line[r], i = !0;
+    if (n.traveling = void 0, i) P(t, n.path, n.line);
+    if (!Object.values(n.line).some((r) => r.state === "armed")) e.parked.delete(t)
+  }
+}
+
+function N(e, t) {
+  if (lDe(t)) {
+    if (e.adoptPendingFor === t) e.adoptPendingFor = null;
+    return !1
+  }
+  return e.adoptPendingFor === t || _c() !== null
+}
+
+function q(e, t, n, i, r) {
+  if (t === null) return;
+  let d = ee().commentMonitorIntent,
+    s = {
+      path: t,
+      line: Q(e, n)
+    };
+  d.pendingLines.set(e, s), lZt(V), d.writeChain = d.writeChain.then(async () => {
+    if (await ru().catch(() => {}), d.pendingLines.get(e) !== s) return;
+    if (d.exitStamped) return;
+    if (d.pendingLines.delete(e), !i && Yve() === r) return;
+    if (e === d.sid) {
+      d.lastWritten = R, v();
+      return
+    }
+    P(e, t, n)
+  }), d.writeChain = d.writeChain.catch(() => {})
+}
+var ft = 1024;
+
+function Q(e, t) {
+  let n = ee().commentMonitorIntent,
+    i = n.parked.get(e);
+  if (i?.unwritten === !0) {
+    let {
+      traveling: r
+    } = i;
+    return r === void 0 ? t : pa(t, (d, s) => d.state === "armed" && r.has(s))
+  }
+  if (i?.leftInWindow === !0) return j(n, {
+    type: "artifact-comment-monitor",
+    v: 1,
+    sessionId: e,
+    artifacts: t
+  }).artifacts;
+  return t
+}
+
+function P(e, t, n, i) {
+  if (t === null) return;
+  let r = ee().commentMonitorIntent,
+    {
+      storageV5: d
+    } = r,
+    s = Q(e, {
+      ...n
+    }),
+    l = {
+      type: "artifact-comment-monitor",
+      v: 1,
+      sessionId: e,
+      artifacts: s
+    };
+  r.owedLines.delete(e);
+  let g = {
+    path: t,
+    line: s
+  };
+  if (r.pendingLines.set(e, g), lZt(V), i?.durableNow === !0) pZt(l, t, T(l));
+  r.writeChain = r.writeChain.then(async () => {
+    if (await ru().catch(() => {}), r.exitStamped) return;
+    if (e === r.sid) {
+      if (r.pendingLines.get(e) === g) r.pendingLines.delete(e);
+      r.lastWritten = R, v();
+      return
+    }
+    if (await ov(t, l, d, {
+        onlyIfExists: !0,
+        tornTailEntry: T(l)
+      }), r.pendingLines.get(e) === g) r.pendingLines.delete(e)
+  }).catch(() => {
+    if (r.pendingLines.get(e) !== g) {
+      p("artifact_live_subscribe", "comment_monitor_intent_write_failed");
+      return
+    }
+    if (r.pendingLines.delete(e), r.owedLines.size >= 2 * H) {
+      let m = r.owedLines.keys().next().value;
+      if (m !== void 0) r.owedLines.delete(m)
+    }
+    r.owedLines.set(e, {
+      path: t,
+      line: s
+    }), p("artifact_live_subscribe", "comment_monitor_intent_write_failed")
+  })
+}
+
+function fno(e, t) {
+  tt(k(t?.storageV5), e)
+}
+
+function tt(e, t) {
+  let n = !1;
+  for (let [i, r] of e.parked) {
+    if (i === Y() || r.line[t]?.state !== "armed") continue;
+    (r.traveling ??= new Set).add(t), n = !0
+  }
+  if (n) _()
+}
+
+function X(e) {
+  if (e.owedLines.size === 0) return;
+  let t = [...e.owedLines.entries()];
+  e.owedLines.clear();
+  let n = !1;
+  for (let [i, {
+      path: r,
+      line: d
+    }] of t) {
+    if (i === e.sid) {
+      e.lastWritten = R, n = !0;
+      continue
+    }
+    if (e.pendingLines.has(i)) continue;
+    let s = e.parked.get(i);
+    P(i, s?.path ?? r, s?.line ?? d)
+  }
+  if (n) v()
+}
+
+function k(e) {
+  let t = ee().commentMonitorIntent;
+  if (e !== void 0) t.storageV5 = e;
+  let n = Y(),
+    i = !1,
+    r = !1;
+  if (t.sid !== n) {
+    let s = t.leftWith !== null && t.leftWith.sid === t.sid ? t.leftWith : null,
+      l = (S) => s !== null ? s.traveling.has(S) : p7(S);
+    t.leftWith = null;
+    let g = I(t),
+      m = new Set,
+      c = 0;
+    for (let [S, w] of t.bySlug) {
+      if (w.state !== "armed") continue;
+      if (l(S)) m.add(S);
+      else t.bySlug.delete(S), c++
+    }
+    let {
+      stopLatches: h
+    } = ee().durable;
+    for (let [S, w] of Object.entries(t.parked.get(n)?.line ?? {})) {
+      let M = t.forgottenAt.get(S);
+      if (w.state === "armed" && M !== void 0 && w.writtenAtMs <= M && !p7(S)) {
+        r = !0;
+        continue
+      }
+      let y = D(t.bySlug.get(S), w);
+      if (y.state === "armed" && h.isStopped(S)) y = {
+        state: "stopped",
+        writtenAtMs: Date.now(),
+        ...y.title !== void 0 && {
+          title: y.title
+        }
+      };
+      if (t.bySlug.set(S, y), y.state === "stopped") h.confirmStop(S)
+    }
+    t.parked.delete(n);
+    for (let S of [t.owedLines.get(n), t.pendingLines.get(n)])
+      for (let [w, M] of Object.entries(S?.line ?? {})) {
+        if (M.state !== "stopped") continue;
+        let y = D(t.bySlug.get(w), M);
+        if (t.bySlug.set(w, y), y.state === "stopped") h.confirmStop(w)
+      }
+    if (t.sid !== null && (c > 0 || m.size > 0)) {
+      t.parked.set(t.sid, {
+        path: t.transcriptPath,
+        line: g,
+        ...m.size > 0 && {
+          traveling: m
+        },
+        ...s?.unwritten === !0 && {
+          unwritten: !0
+        },
+        ...s?.inWindow === !0 && {
+          leftInWindow: !0
+        }
+      });
+      while (t.parked.size > H) {
+        let [S, w] = t.parked.entries().next().value;
+        t.parked.delete(S);
+        let M = Date.now();
+        P(S, w.path, Object.fromEntries(Object.entries(w.line).flatMap(([y, W]) => W.state !== "armed" ? [
+          [y, W]
+        ] : w.traveling?.has(y) ? [] : [
+          [y, {
+            state: "stopped",
+            writtenAtMs: M,
+            ...W.title !== void 0 && {
+              title: W.title
+            }
+          }]
+        ])))
+      }
+    }
+    if (t.sid !== null && t.wroteCurrentLine) q(t.sid, t.transcriptPath, g, t.lastWritten === R, t.failureSeqAtWrite);
+    else if (t.sid !== null && s?.inWindow === !0 && nt(t, g)) q(t.sid, t.transcriptPath, g, !0, t.failureSeqAtWrite);
+    if (_(), i = [...t.bySlug.values()].some((S) => S.state === "armed"), t.sid = n, t.adoptPendingFor !== n) t.adoptPendingFor = null;
+    t.lastWritten = r ? R : null, t.wroteCurrentLine = !1, t.pendingRestore = null, t.transcriptPath = null, t.tornStops.clear(), t.onFile = !1
+  }
+  if (!t.onFile && lDe(n)) t.onFile = !0;
+  if (t.transcriptPath = N(t, n) ? Rd() : _f(n), t.unsubscribeMaterialized === void 0) t.unsubscribeMaterialized = ySr(() => {
+    if (t.sid !== null && lDe(t.sid)) t.onFile = !0;
+    _()
+  });
+  if (t.unsubscribeSwitch === void 0) t.unregisterExitDrain = hSr(() => (X(t), t.writeChain)), lZt(V), t.unsubscribeSwitch = Qd((s, l) => {
+    if (l === "cd" && t.sid === s) t.transcriptPath = _f(s);
+    if (lt(l)) ut();
+    if (l === "clear") queueMicrotask(v)
+  });
+  let d = t.earlySeed ?? XSr();
+  if (t.earlySeed = void 0, d !== void 0) {
+    let s = !1,
+      l = B3t(d, {
+        onLossy: () => {
+          s = !0
+        },
+        onTornStop: (g) => {
+          t.tornStops.add(g)
+        }
+      });
+    if (l !== null) {
+      if (d.tailTorn === !0) xSr(t.transcriptPath ?? void 0);
+      let {
+        stopLatches: g
+      } = ee().durable, m = new Map;
+      for (let [c, h] of l) {
+        let S = t.forgottenAt.get(c);
+        if (h.state === "armed" && S !== void 0 && h.writtenAtMs <= S && !p7(c)) {
+          s = !0;
+          continue
+        }
+        let w = t.bySlug.get(c);
+        if (t.tornStops.has(c) && w?.state === "armed" && p7(c)) {
+          t.tornStops.delete(c), m.set(c, w), s = !0;
+          continue
+        }
+        let M = D(w, h);
+        if (t.bySlug.set(c, M), m.set(c, M), M.state === "stopped") g.confirmStop(c)
+      }
+      if (t.pendingRestore = m, !s && t.lastWritten === null) t.lastWritten = U(Object.fromEntries(l)), t.failureSeqAtWrite = Yve();
+      else if (s && t.lastWritten === null) t.lastWritten = R;
+      gpe()
+    }
+  }
+  if (X(t), i || r) v();
+  return t
+}
+
+function D(e, t) {
+  if (e === void 0) return t;
+  if (t.state === "stopped" && e.state !== "stopped" && t.writtenAtMs >= e.writtenAtMs) return t;
+  if (t.state === "armed" && e.state === "armed" && t.writtenAtMs > e.writtenAtMs) return t;
+  return e
+}
+
+function I(e) {
+  return Object.fromEntries([...e.bySlug.entries()].sort(([, t], [, n]) => Number(n.state === "stopped") - Number(t.state === "stopped") || n.writtenAtMs - t.writtenAtMs).slice(0, O))
+}
+
+function et() {
+  let {
+    commentMonitorIntent: e,
+    wakes: t
+  } = ee();
+  if (!e.wroteCurrentLine || e.sid !== Y() || [...e.bySlug.keys()].some((n) => t.yieldedSlugs.has(n))) return;
+  return {
+    type: "artifact-comment-monitor",
+    v: 1,
+    sessionId: Y(),
+    artifacts: I(e)
+  }
+}
+
+function V() {
+  let e = ee().commentMonitorIntent,
+    t = Y(),
+    n, i = () => nt(e, I(e)),
+    r = !e.exitStamped && e.sid === t;
+  if (r && lDe(t)) {
+    if (e.wroteCurrentLine || i() || e.owedLines.has(t) || e.pendingLines.has(t)) _(), e.wroteCurrentLine = !0, EZ(et)
+  } else if (r && N(e, t) && e.transcriptPath !== null && i()) {
+    let s = j(e, {
+      type: "artifact-comment-monitor",
+      v: 1,
+      sessionId: t,
+      artifacts: I(e)
+    });
+    n = {
+      path: e.transcriptPath,
+      entry: s,
+      tornTailEntry: T(s)
+    };
+    for (let l of [e.owedLines, e.pendingLines])
+      if (l.get(t)?.path === n.path) l.delete(t)
+  }
+  e.exitStamped = !0;
+  let d = [...e.owedLines, ...e.pendingLines].map(([s, {
+    path: l,
+    line: g
+  }]) => {
+    let m = {
+      type: "artifact-comment-monitor",
+      v: 1,
+      sessionId: s,
+      artifacts: g
+    };
+    return {
+      path: l,
+      entry: m,
+      tornTailEntry: T(m)
+    }
+  });
+  return n === void 0 ? d : [...d, n]
+}
+
+function T(e) {
+  let t = Date.now();
+  return {
+    ...e,
+    artifacts: io(e.artifacts, (n) => n.state === "armed" && n.holder === void 0 ? {
+      state: "stopped",
+      writtenAtMs: t,
+      ...n.title !== void 0 && {
+        title: n.title
+      }
+    } : n)
+  }
+}
+
+function j(e, t) {
+  let n = Y(),
+    i = new Set;
+  for (let [r, d] of e.parked) {
+    if (r === n || r === t.sessionId || d.unwritten) continue;
+    for (let s of d.traveling ?? [])
+      if (d.line[s]?.state === "armed") i.add(s)
+  }
+  if (i.size === 0) return t;
+  return {
+    ...t,
+    artifacts: pa(t.artifacts, (r, d) => r.state === "armed" && i.has(d))
+  }
+}
+
+function nt(e, t) {
+  return e.lastWritten !== U(t) && !(e.lastWritten === null && Object.keys(t).length === 0)
+}
+
+function U(e) {
+  return b(Object.entries(e).map(([t, n]) => [t, n.state, n.writtenAtMs, n.title ?? null, n.holder ?? null, n.holderPid ?? null, n.holderProcStart ?? n.holderProcStartFt ?? null, n.holderJob ?? null, n.holderPidSpace ?? null]).sort())
+}
+
+function v(e) {
+  let t = k();
+  _(), gpe();
+  let n = I(t),
+    i = U(n);
+  if (i === t.lastWritten && Yve() === t.failureSeqAtWrite) return;
+  if (t.failureSeqAtWrite = Yve(), t.lastWritten === null && t.bySlug.size === 0) {
+    t.lastWritten = i;
+    return
+  }
+  let r = {
+    type: "artifact-comment-monitor",
+    v: 1,
+    sessionId: Y(),
+    artifacts: n
+  };
+  if (N(t, Y())) {
+    if (t.lastWritten = R, e?.durableNow === !0 && t.transcriptPath !== null) {
+      let d = j(t, r);
+      pZt(d, t.transcriptPath, T(d))
+    }
+    return
+  }
+  if (t.lastWritten = i, t.wroteCurrentLine = !0, EZ(et), e?.durableNow === !0) pZt(r);
+  YSr(r, t.storageV5).catch(() => {
+    if (t.lastWritten === i) t.lastWritten = R;
+    p("artifact_live_subscribe", "comment_monitor_intent_write_failed")
+  })
+}
+export {
+  ano,
+  lno,
+  gpe,
+  cno,
+  p7,
+  _lr,
+  B3t,
+  mvt,
+  j3t,
+  blr,
+  pG,
+  dno,
+  W3t,
+  hze,
+  uno,
+  kOe,
+  z3t,
+  pno,
+  fno
+};

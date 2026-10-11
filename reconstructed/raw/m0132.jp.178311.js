@@ -1,0 +1,1 @@
+var jp=(e,t)=>(o)=>{if(o===void 0||o===null)return;if(!dOo(o))throw new De(`${e}: options.signal must be an AbortSignal`);let r=new AbortController,n=t.relaySignal(o,k0((s,i)=>{let p=new De(i);p.name=s,r.abort(p)}));return{signal:r.signal,unlink:n}};

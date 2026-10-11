@@ -1,0 +1,1 @@
+function kt(e,t){let{blocks:o,instructionFiles:r}=e;if(!Array.isArray(o))return e;for(let i=0;i<o.length;i+=1){let p=o[i];if(!(Object.hasOwn(o,i)&&G(p)&&typeof p.name==="string"&&typeof p.text==="string"))return e}if(!(r===void 0||Vt(r)))return e;let s={blocks:o,instructionFiles:r};return{...e,...qs(s,t)}}

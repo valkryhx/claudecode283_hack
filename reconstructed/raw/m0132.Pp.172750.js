@@ -1,0 +1,1 @@
+var Pp=(e,t,o)=>e.clauses.flatMap((r,n)=>{if(!(x6(r.pattern,t)&&!o.includes(n)))return[];return INt(r.pattern)?[Cp(e,{clause:r,registration:n})]:[{kind:"value",registration:n,hook:Eo(e,{clause:r,event:t,registration:n})}]});

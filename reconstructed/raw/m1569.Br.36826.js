@@ -1,0 +1,1 @@
+Br="killed (runaway): the run exceeded the per-run row cap \u2014 usually a rule putting the fact it fires on. Its facts are readable with read {status:'retracted'}; fix the rule (or split a genuinely larger workload) before launching again."

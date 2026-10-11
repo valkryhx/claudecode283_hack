@@ -1,0 +1,1 @@
+var vi={event:"ui.scroll",restoreArgument:(e,t)=>W(po,e,t),checkArgument:(e,t)=>{let o=pe(po,e,t),r=mN(e.offset);return o??(r?void 0:"an offset that is not a whole row number (0 or more)")},check:C(Ko)};

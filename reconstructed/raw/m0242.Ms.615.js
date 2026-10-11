@@ -1,0 +1,1 @@
+function Ms(i,s){let e=0,n=[];function o(){if(e<i)return e++,Promise.resolve();return new Promise((r)=>n.push(r))}function t(){let r=n.shift();if(r)r();else e--}return async(...r)=>{await o();try{return await s(...r)}finally{t()}}}

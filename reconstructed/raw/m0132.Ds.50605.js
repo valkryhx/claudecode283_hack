@@ -1,0 +1,1 @@
+var Ds={event:"ui.close",check:K("ui.close").check,checkArgument:(e,t)=>{let o=bdt(e.id);if(o!==void 0)return`an unusable id: ${o}`;if(e.id!==t.id)return"a changed id (the pane being closed; next(e) passes it on)";if(e.origin===void 0)return"no origin (next(e) passes e.origin on; a rewrite spreads it: next({ ...e, id }))";return $n(e.origin)!==$n(t.origin)?dt:void 0}};

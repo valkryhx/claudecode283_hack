@@ -1,0 +1,1 @@
+function Yy(e){let t=Ny(e);return{get isFinalized(){return t.isFinalized},wrap:Pa(t),finalize:Ca(t),call:(o,r,n)=>{let s=t.own.get(o);if(!s)return Promise.reject(new De(`${t.pluginName} provides no interface named ${o}`));let i=s[r];return typeof i==="function"?t.invoke(i,n,s):Promise.reject(new De(`$.${o} (${t.pluginName}) has no method ${r}`))}}}

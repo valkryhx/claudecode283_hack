@@ -1,0 +1,3097 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  Vm
+} from "B:/~BUN/root/chunk-bvn0mpsk.js";
+import {
+  Me
+} from "B:/~BUN/root/chunk-ekrhn4q1.js";
+import {
+  io,
+  j,
+  we,
+  kr
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  y,
+  c,
+  ue
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  Ke,
+  te,
+  l
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  Q,
+  nt
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import {
+  AC,
+  b,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  Gc,
+  re,
+  Ze
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  d,
+  O
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  Cd,
+  xSo,
+  ZP,
+  sEe,
+  _ae,
+  iEe,
+  XA,
+  JA,
+  oz,
+  tit,
+  Bnn,
+  Sf,
+  BLe,
+  WIt,
+  Srn,
+  Bwo,
+  jLe,
+  WM,
+  wit,
+  FT,
+  Eae,
+  mBn,
+  Crn,
+  Rrn,
+  KCr,
+  Arn,
+  Qwo,
+  ZCr,
+  mEe,
+  vB,
+  wR,
+  Di,
+  nko,
+  b_
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import {
+  Uje
+} from "B:/~BUN/root/chunk-myd8edm1.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  _,
+  m,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  ss
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  it,
+  DNr,
+  ro,
+  $r,
+  On,
+  Kte
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  Ue,
+  St
+} from "B:/~BUN/root/chunk-bt3h0syz.js";
+import {
+  pr
+} from "B:/~BUN/root/chunk-1rjcv085.js";
+import {
+  Py,
+  s_
+} from "B:/~BUN/root/chunk-339q6g5w.js";
+import {
+  Xx,
+  a1t
+} from "B:/~BUN/root/chunk-shgdrs47.js";
+import {
+  Zt
+} from "B:/~BUN/root/chunk-bpp59nyd.js";
+import {
+  dr,
+  YTe,
+  ble,
+  _X
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  _n,
+  py,
+  OR
+} from "B:/~BUN/root/chunk-msy8grqx.js";
+import {
+  Hn,
+  Ih,
+  Kl
+} from "B:/~BUN/root/chunk-hqrtayw5.js";
+import {
+  M9r,
+  _kn,
+  z_t,
+  D9r,
+  gQe,
+  L9r,
+  N9r,
+  H9r,
+  F9r,
+  $9r
+} from "B:/~BUN/root/chunk-7ncfjae2.js";
+import {
+  Zhr,
+  eyr,
+  xdo,
+  Pdo,
+  Ido,
+  UCt,
+  BCt,
+  wMe,
+  C8,
+  hfe,
+  KJt,
+  vMe,
+  Hdo,
+  tyr,
+  Fdo,
+  $A,
+  oB,
+  LNn,
+  bc,
+  IZ,
+  oot,
+  kh
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  JW
+} from "B:/~BUN/root/chunk-y39emrp9.js";
+import {
+  Pme
+} from "B:/~BUN/root/chunk-1xb1enjd.js";
+import {
+  pF
+} from "B:/~BUN/root/chunk-zfb6h1v8.js";
+import {
+  idr,
+  adr,
+  Yvt
+} from "B:/~BUN/root/chunk-b8z99tfd.js";
+import {
+  G9r,
+  Wj,
+  eG,
+  hQe,
+  wkn,
+  V_t,
+  V9r,
+  q9r,
+  K9r,
+  Ttr,
+  Y9r,
+  C5,
+  X9r,
+  Ctr,
+  J9r,
+  q_t,
+  uoe,
+  Q9r,
+  vkn,
+  kkn,
+  Z9r,
+  WVt,
+  Rtr,
+  K_t,
+  zVt,
+  eXr,
+  Ckn,
+  Y_t,
+  Rkn,
+  tXr,
+  nXr,
+  X_t,
+  yQe,
+  rXr
+} from "B:/~BUN/root/chunk-j92898s3.js";
+import {
+  G_t,
+  j9r
+} from "B:/~BUN/root/chunk-p4et90hb.js";
+import {
+  AWe
+} from "B:/~BUN/root/chunk-4jwsev0y.js";
+import {
+  Ise
+} from "B:/~BUN/root/chunk-at7axhcd.js";
+import {
+  TWe,
+  CWe,
+  L5
+} from "B:/~BUN/root/chunk-kchavkh0.js";
+import {
+  _P
+} from "B:/~BUN/root/chunk-m2n01fyt.js";
+import {
+  IH
+} from "B:/~BUN/root/chunk-k1r60xrk.js";
+import {
+  Jw,
+  zj
+} from "B:/~BUN/root/chunk-gn719r3c.js";
+import {
+  btr
+} from "B:/~BUN/root/chunk-qbmzdkn9.js";
+import {
+  Mje
+} from "B:/~BUN/root/chunk-qerdtp15.js";
+import {
+  _tr,
+  mQe
+} from "B:/~BUN/root/chunk-4zjf9ss8.js";
+import {
+  U9r,
+  B9r
+} from "B:/~BUN/root/chunk-b1hyprgx.js";
+import {
+  Nje,
+  tG
+} from "B:/~BUN/root/chunk-tdkq03qj.js";
+import {
+  GVt,
+  oXr,
+  sXr,
+  iXr,
+  aXr,
+  lXr,
+  VVt,
+  dXr,
+  uXr,
+  pXr,
+  Hje,
+  fXr,
+  mXr,
+  nG
+} from "B:/~BUN/root/chunk-6pasxt6h.js";
+import {
+  mU
+} from "B:/~BUN/root/chunk-ap9x1xq2.js";
+import {
+  xtr,
+  Fje,
+  qVt
+} from "B:/~BUN/root/chunk-te37866b.js";
+import {
+  Msr
+} from "B:/~BUN/root/chunk-ddsh90nc.js";
+import {
+  lc
+} from "B:/~BUN/root/chunk-twqr14hq.js";
+import {
+  Xj
+} from "B:/~BUN/root/chunk-6wjpaxb7.js";
+import {
+  UWe
+} from "B:/~BUN/root/chunk-gff94s4f.js";
+import {
+  cpe
+} from "B:/~BUN/root/chunk-1kweczhs.js";
+import {
+  H3
+} from "B:/~BUN/root/chunk-c1275ktq.js";
+import {
+  pn
+} from "B:/~BUN/root/chunk-8j4yaj30.js";
+import {
+  o,
+  ae,
+  C,
+  ut,
+  fe,
+  A
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import {
+  Qr
+} from "B:/~BUN/root/chunk-0bx1tycm.js";
+import {
+  _e
+} from "B:/~BUN/root/chunk-batgyebn.js";
+import {
+  Ut
+} from "B:/~BUN/root/chunk-qbrwdgwc.js";
+import {
+  randomUUID as oo
+} from "crypto";
+import {
+  isDeepStrictEqual as so
+} from "util";
+import {
+  arch as Jt,
+  homedir as en,
+  hostname as tn,
+  platform as nn
+} from "os";
+var on = 40,
+  rn = "machine",
+  sn = typeof {
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.283",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-09-25T00:44:42Z",
+    GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  } < "u" ? {
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.283",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-09-25T00:44:42Z",
+    GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.VERSION : "unknown";
+
+function an(e = tn) {
+  let n = Uje(Ze(e(), "."), on);
+  return ble(n) ? n : rn
+}
+
+function mt({
+  policy: e,
+  launchDir: n,
+  epoch: u,
+  deviceId: a,
+  getHostname: r,
+  projectSync: s = "unknown",
+  syncRoot: g,
+  folderRelation: R,
+  readyToSyncAtAttach: k = !1,
+  servedToolNames: T = []
+}) {
+  let w = e.notes(),
+    h = dn(T),
+    v = xtr() === "off" ? [] : ["vouched_calls"],
+    I = Be([...e.capabilities ?? [], ...v], k);
+  return {
+    name: an(r),
+    kind: e.kind,
+    platform: nn(),
+    arch: Jt(),
+    ...h !== void 0 && {
+      shell: h
+    },
+    home_dir: en(),
+    working_dir: n,
+    project_sync: s,
+    ...g !== void 0 && Fe(s) && {
+      sync_root: g
+    },
+    ...He(s, R),
+    limits: e.limits,
+    claude_code_version: sn,
+    ...I.length > 0 && {
+      capabilities: I
+    },
+    ...w && {
+      notes: w
+    },
+    ...u !== void 0 && {
+      epoch: u
+    },
+    ...a !== void 0 && {
+      device_id: a
+    }
+  }
+}
+
+function Be(e, n) {
+  let u = e.filter((a) => a !== ct);
+  return n ? [...u, ct] : u
+}
+var ct = "sync_at_attach";
+
+function dn(e) {
+  return O() === "windows" ? U9r(B9r(e, xSo())) : void 0
+}
+
+function Fe(e) {
+  return e === "two_way" || e === "upload_only"
+}
+
+function He(e, n) {
+  return e === "off" && n !== void 0 ? {
+    folder_relation: n
+  } : {}
+}
+var ln = async () => (await nko().catch(() => {}), {
+  confined: !0
+});
+
+function pt(e, n) {
+  switch (e.admission) {
+    case "none":
+      return;
+    case "device_binding":
+      return _tr({
+        ...n,
+        readPosture: ln
+      });
+    case "device_gate":
+      return _tr(n)
+  }
+}
+var cn = 58000,
+  un = Crn,
+  mn = 4,
+  fn = {
+    sandbox: "tool_default",
+    background: "forbidden",
+    pinCwd: !1,
+    scrubCredentialEnv: !1,
+    maxTimeoutMs: void 0,
+    get additionalDenyRead() {
+      return wMe()
+    },
+    get additionalDenyWrite() {
+      return wMe()
+    }
+  },
+  gn = z_t,
+  yn = "Approvals are asked in this session. This machine's rules, hooks and sandbox settings apply exactly as locally (a hook can block or rewrite a call, never pre-approve it). This machine's own shell timeout applies to commands. No background commands.";
+
+function ft() {
+  return {
+    name: "local_parity",
+    kind: "personal_machine",
+    requireEnvelope: !0,
+    admission: "device_binding",
+    stance: {
+      mode: "session",
+      honorLocalRules: !0,
+      onAsk: "session",
+      askOnDestructive: !1
+    },
+    limits: {
+      max_call_ms: cn,
+      max_request_bytes: un,
+      max_in_flight: mn,
+      caller_sessions_max: Bnn() ?? Ctr,
+      pending_asks_max: gQe,
+      progress_interval_ms: jLe.progress_interval_ms,
+      progress_misses: jLe.progress_misses
+    },
+    capabilities: ["progress_checks", "standing_approvals", "plan_classifier"],
+    serves: (n) => Xj.has(n.name) && py(n).supported,
+    constraints: (n, u, a = M9r) => {
+      let r = py(n);
+      return _kn(fn, r.supported ? r.tighten : void 0)
+    },
+    refusedInputFields: (n) => {
+      let u = py(n);
+      return (u.supported ? u.refusedInputFields ?? [] : []).filter((r) => !gn.has(r))
+    },
+    notes: () => yn
+  }
+}
+
+function Ce(e = tit()) {
+  return e === "parity" ? ft() : D9r()
+}
+import {
+  randomUUID as Oe
+} from "crypto";
+
+function gt(e, n, u) {
+  let a = e.kind !== "not_running";
+  return j9r({
+    v: G_t,
+    frame: {
+      side: "laptop",
+      gen: a ? e.generation : 0,
+      tree: a ? e.tree : null,
+      taken: a ? e.taken : 0,
+      dirty: a,
+      shipping: null,
+      takes: a,
+      instance: n,
+      seq: u
+    },
+    outcome: e.kind === "failed" || e.kind === "kept_here" ? {
+      kind: e.kind,
+      reason: e.reason
+    } : {
+      kind: e.kind === "queued" ? "unchanged" : e.kind
+    }
+  })
+}
+var hn = 15000;
+
+function pe(e, n) {
+  return Math.min(e.max_call_ms, n?.expires_in_ms ?? Number.POSITIVE_INFINITY)
+}
+
+function yt({
+  remainingMs: e,
+  controller: n,
+  leg: u,
+  lifetime: a
+}) {
+  let r = !1,
+    s = () => n.abort(Kl("remote-cancel")),
+    g = () => n.abort(Kl("shutdown")),
+    R = () => {
+      r = !0, s()
+    },
+    k = setTimeout(R, e),
+    T = u;
+  if (T.addEventListener("abort", s, {
+      once: !0
+    }), a?.addEventListener("abort", g, {
+      once: !0
+    }), T.aborted) s();
+  if (a?.aborted) g();
+  let w = () => {
+    clearTimeout(k), T.removeEventListener("abort", s)
+  };
+  return {
+    get timedOut() {
+      return r
+    },
+    shuttingDown: () => a?.aborted === !0,
+    detachLeg: w,
+    enterRunning() {
+      clearTimeout(k)
+    },
+    resume(h) {
+      if (w(), T = h.signal, T.addEventListener("abort", s, {
+          once: !0
+        }), T.aborted) s();
+      k = setTimeout(R, vB(Math.max(1, h.expiresInMs - (Date.now() - h.startedAt))))
+    },
+    windDown() {
+      clearTimeout(k), k = setTimeout(s, hn)
+    },
+    dispose() {
+      w(), a?.removeEventListener("abort", g)
+    }
+  }
+}
+
+function de({
+  known: e,
+  session: n,
+  hostEpoch: u,
+  callId: a,
+  target: r,
+  facts: s
+}) {
+  let g = _t(e, n);
+  if (g !== void 0) return s.joinedCallId = e.summary.joinedCallId, je({
+    session: n,
+    joined: g,
+    hostEpoch: u,
+    callId: a,
+    target: r,
+    facts: s
+  });
+  let R = kt(e, n, {
+    callId: a,
+    target: r,
+    hostEpoch: u,
+    facts: s
+  });
+  if (R !== void 0) return R;
+  switch (e.summary.state) {
+    case "completed":
+    case "failed":
+      return Ge(e, a, r, s);
+    case "received":
+    case "running":
+    case "asked":
+      return s.answeredFromRecord = "duplicate", Ttr(r, a, e.summary)
+  }
+}
+
+function ht({
+  sessions: e,
+  callLog: n,
+  callerKey: u,
+  callId: a,
+  target: r,
+  facts: s
+}) {
+  let g = e.forCaller(u),
+    R = g?.calls.lookup(a);
+  if (R === void 0 || vn(R)) {
+    s.answeredFromRecord = "unknown_call", s.fromPriorEpoch = R?.priorEpoch !== void 0;
+    let h = g !== void 0 && !g.calls.forgotAny;
+    if (R === void 0 && g !== void 0) {
+      if (g.calls.remember(a, {
+          state: "failed",
+          code: vMe
+        }), h) n?.note({
+        t: "disowned",
+        caller: g.callerSessionId,
+        call_id: a
+      })
+    }
+    return K9r({
+      target: r,
+      callId: a,
+      hostEpoch: h ? e.epoch : void 0
+    })
+  }
+  let k = e.epoch,
+    T = _t(R, g);
+  if (T !== void 0) return s.joinedCallId = R.summary.joinedCallId, je({
+    session: g,
+    joined: T,
+    hostEpoch: k,
+    callId: a,
+    target: r,
+    facts: s
+  });
+  let w = kt(R, g, {
+    callId: a,
+    target: r,
+    hostEpoch: k,
+    facts: s
+  });
+  if (w !== void 0) return w;
+  switch (R.summary.state) {
+    case "completed":
+    case "failed":
+      return Ge(R, a, r, s);
+    case "received":
+    case "running":
+    case "asked":
+      return s.answeredFromRecord = "in_progress", $e(R, {
+        callId: a,
+        target: r,
+        hostEpoch: k
+      })
+  }
+}
+
+function he({
+  session: e,
+  joined: n,
+  hostEpoch: u,
+  callId: a,
+  target: r,
+  facts: s,
+  workerEpoch: g
+}) {
+  return lc(a, "retry joined", {
+    joined_call: n.callId,
+    state: n.call.summary.state,
+    worker_epoch: g
+  }), e.calls.remember(a, {
+    state: "failed",
+    code: C8,
+    joinedCallId: n.callId
+  }), s.joinedCallId = n.callId, je({
+    session: e,
+    joined: n.call,
+    hostEpoch: u,
+    callId: a,
+    target: r,
+    facts: s
+  })
+}
+
+function je({
+  session: e,
+  joined: n,
+  hostEpoch: u,
+  callId: a,
+  target: r,
+  facts: s
+}) {
+  switch (n.summary.state) {
+    case "completed":
+    case "failed": {
+      let g = Ge(n, a, r, s);
+      return s.answeredFromRecord = "joined_retry", V_t(g, a)
+    }
+    case "received":
+    case "running":
+    case "asked":
+      return s.answeredFromRecord = "joined_retry", $e(n, {
+        callId: a,
+        target: r,
+        hostEpoch: u,
+        answerInHand: vt(n, e, s)
+      })
+  }
+}
+
+function vt(e, n, u) {
+  let {
+    summary: a
+  } = e;
+  if (a.state !== "asked" || a.askId === void 0) return !1;
+  let r = n?.pendingAsks.peek(a.askId);
+  if (r === void 0) return !1;
+  let s = u.redeemsAskId === r.askId ? 1 : 0;
+  return r.redeemingLegs > s
+}
+
+function $e(e, {
+  callId: n,
+  target: u,
+  hostEpoch: a,
+  answerInHand: r = !1
+}) {
+  return q9r({
+    target: u,
+    callId: n,
+    state: e.summary.state === "asked" ? r ? "admitting" : "awaiting_approval" : e.summary.state === "received" || e.summary.state === "running" && e.summary.started !== !0 ? "admitting" : "running",
+    sinceMs: Date.now() - e.receivedAt,
+    hostEpoch: a
+  })
+}
+
+function Ge(e, n, u, a) {
+  return a.answeredFromRecord = e.result !== void 0 ? "replayed" : "duplicate", a.fromPriorEpoch = e.priorEpoch !== void 0, V9r(e.result ?? Ttr(u, n, e.summary), e.summary.servedAt)
+}
+
+function vn(e) {
+  return e.summary.state === "failed" && e.summary.code === vMe
+}
+
+function _t(e, n) {
+  let {
+    summary: u
+  } = e;
+  return u.state === "failed" && u.code === C8 && u.joinedCallId !== void 0 ? n?.calls.lookup(u.joinedCallId) : void 0
+}
+
+function kt(e, n, {
+  callId: u,
+  target: a,
+  hostEpoch: r,
+  facts: s
+}) {
+  let {
+    summary: g
+  } = e;
+  if (g.state !== "asked" || g.askId === void 0) return;
+  let R = n?.pendingAsks.peek(g.askId);
+  if (R === void 0) return;
+  if (vt(e, n, s)) return s.answeredFromRecord = "in_progress", $e(e, {
+    callId: u,
+    target: a,
+    hostEpoch: r,
+    answerInHand: !0
+  });
+  return s.answeredFromRecord = "pending_ask", V_t(R.asked, u)
+}
+var Sn = 204800,
+  kn = 1048576,
+  wn = 8,
+  Tn = 256,
+  Rn = 1000,
+  Cn = 2000,
+  En = 4096,
+  bn = 4,
+  wt = new Set(["persistedOutputPath", "persistedOutputSize", "rawOutputPath"]);
+
+function be({
+  content: e,
+  output: n,
+  targetName: u,
+  localSpillPaths: a,
+  localSpillDirs: r,
+  maxInlineBytes: s = Sn,
+  maxImageBytes: g = kn
+}) {
+  let R = qe({
+      targetName: u,
+      localSpillPaths: a,
+      localSpillDirs: r
+    }),
+    k = Bwo(u),
+    T = An(e, R, s, g, k, u),
+    w = In(n, R, s, k);
+  return {
+    content: T.content,
+    output: w.value,
+    truncated: T.truncated || w.truncated
+  }
+}
+
+function qe({
+  targetName: e,
+  localSpillPaths: n,
+  localSpillDirs: u
+}) {
+  let a = `a file on ${e} that cannot be read from here \u2014 the command already ran on ${e}, so only this part of its output is out of reach. If it is safe to repeat, re-run it there with head, tail or grep to see the part you need`,
+    r = u.filter((g) => g.length > 0).map((g) => new RegExp(`${Gc(g)}(?:[\\\\/][^\\s"'\`;|&()<>]*|(?=$|[^A-Za-z0-9._-])|(?=\\.(?:$|[^A-Za-z0-9_-])))`, "g")),
+    s = n.filter((g) => g.length > 0);
+  return (g) => r.reduce((R, k) => R.replace(k, () => a), s.reduce((R, k) => R.replaceAll(k, () => a), g))
+}
+
+function An(e, n, u, a, r, s) {
+  if (typeof e === "string") {
+    let k = We(n(e), u, r);
+    return {
+      content: k.text,
+      truncated: k.truncated
+    }
+  }
+  let {
+    blocks: g,
+    truncated: R
+  } = e.reduce((k, T) => {
+    if (T.type === "image") {
+      let h = T.source.type === "base64" ? T.source.data.length : void 0;
+      if (h === void 0 || h > k.imageRemaining) {
+        let v = h === void 0 ? `(an image referenced by URL was omitted on ${s})` : `(an image was omitted on ${s}: too large to return)`;
+        return k.blocks.push({
+          type: "text",
+          text: v
+        }), {
+          ...k,
+          remaining: Math.max(0, k.remaining - Buffer.byteLength(v)),
+          truncated: !0
+        }
+      }
+      return k.blocks.push(T), {
+        ...k,
+        imageRemaining: k.imageRemaining - h
+      }
+    }
+    if (T.type !== "text") {
+      let h = `(a ${T.type} block was omitted on ${s})`;
+      return k.blocks.push({
+        type: "text",
+        text: h
+      }), {
+        ...k,
+        remaining: Math.max(0, k.remaining - Buffer.byteLength(h)),
+        truncated: !0
+      }
+    }
+    if (k.remaining === 0 && k.truncated) return k;
+    let w = We(n(T.text), k.remaining, r);
+    return k.blocks.push({
+      ...T,
+      text: w.text
+    }), {
+      blocks: k.blocks,
+      remaining: Math.max(0, k.remaining - Buffer.byteLength(w.text)),
+      imageRemaining: k.imageRemaining,
+      truncated: k.truncated || w.truncated
+    }
+  }, {
+    blocks: [],
+    remaining: u,
+    imageRemaining: a,
+    truncated: !1
+  });
+  return {
+    content: g,
+    truncated: R
+  }
+}
+
+function In(e, n, u, a) {
+  let r = {
+    remaining: u,
+    entriesRemaining: Cn,
+    markerSpent: !1,
+    floorsGranted: 0
+  };
+  if (typeof e !== "object" || e === null || Array.isArray(e)) return Ee(e, n, r, a, 0);
+  if (Reflect.get(e, "isImage") === !0) return {
+    value: void 0,
+    truncated: !1
+  };
+  let s = Object.entries(e).some(([h, v]) => wt.has(h) && Boolean(v)),
+    g = Reflect.get(e, "persistedOutputSize"),
+    R = typeof g === "number" && Number.isSafeInteger(g) && g > 0 ? [
+      [Srn, g]
+    ] : [],
+    k = Math.min(En, u),
+    T = Tt([...Object.entries(e).filter(([h]) => !wt.has(h)), ...R], n, r, (h) => typeof h === "string" ? Rt(h, n, r, a, k) : Ee(h, n, r, a, 1)),
+    w = T.entries.map(([h, v]) => s && h === "stdout" && typeof v.value === "string" && !v.truncated ? [h, {
+      value: `${v.value}${a}`,
+      truncated: !0
+    }] : [h, v]);
+  return {
+    value: Object.fromEntries(w.map(([h, v]) => [h, v.value])),
+    truncated: T.truncated || w.some(([, h]) => h.truncated)
+  }
+}
+
+function Tt(e, n, u, a) {
+  let r = Ct(e, u),
+    s = new Set,
+    g = !1;
+  return {
+    entries: r.map(([k, T]) => {
+      let w = Et(Dn(k, n, u), s);
+      return g ||= w !== k, s.add(w), [w, a(T)]
+    }),
+    truncated: r.length < e.length || g
+  }
+}
+
+function Ee(e, n, u, a, r) {
+  if (typeof e === "string") return Rt(e, n, u, a, 0);
+  if (typeof e !== "object" || e === null) return Ye(u, Buffer.byteLength(String(e))), {
+    value: e,
+    truncated: !1
+  };
+  if (r >= wn) return {
+    value: void 0,
+    truncated: !0
+  };
+  if (Array.isArray(e)) {
+    let g = Ct(e, u).map((R) => Ee(R, n, u, a, r + 1));
+    return {
+      value: g.map((R) => R.value),
+      truncated: g.length < e.length || g.some((R) => R.truncated)
+    }
+  }
+  let s = Tt(Object.entries(e), n, u, (g) => Ee(g, n, u, a, r + 1));
+  return {
+    value: Object.fromEntries(s.entries.map(([g, R]) => [g, R.value])),
+    truncated: s.truncated || s.entries.some(([, g]) => g.truncated)
+  }
+}
+
+function Rt(e, n, u, a, r) {
+  let s = r > 0 && u.floorsGranted < bn,
+    g = s ? Math.max(u.remaining, r) : u.remaining,
+    R = n(e);
+  if (g === 0 && u.markerSpent) return {
+    value: "",
+    truncated: R.length > 0
+  };
+  let k = We(R, g, u.markerSpent ? "" : a);
+  if (k.truncated) u.markerSpent = !0;
+  let T = Buffer.byteLength(k.text);
+  if (s && g > u.remaining && T > u.remaining) u.floorsGranted += 1;
+  return Ye(u, T), {
+    value: k.text,
+    truncated: k.truncated
+  }
+}
+
+function Ct(e, n) {
+  let u = e.slice(0, Math.min(Rn, n.entriesRemaining));
+  return n.entriesRemaining -= u.length, u
+}
+
+function Et(e, n, u = 1) {
+  let a = u === 1 ? e : `${e} (${u})`;
+  return n.has(a) ? Et(e, n, u + 1) : a
+}
+
+function Dn(e, n, u) {
+  let a = re(n(e), Tn);
+  return Ye(u, Buffer.byteLength(a)), a
+}
+
+function Ye(e, n) {
+  e.remaining = Math.max(0, e.remaining - n)
+}
+
+function We(e, n, u) {
+  if (Buffer.byteLength(e) <= n) return {
+    text: e,
+    truncated: !1
+  };
+  return {
+    text: `${new TextDecoder("utf-8",{fatal:!1}).decode(Buffer.from(e).subarray(0,n)).replace(/\uFFFD$/,"")}${u}`,
+    truncated: !0
+  }
+}
+var Nn = 262144;
+
+function At(e) {
+  return e === "session" ? {
+    imageBase64Bytes: 1572864,
+    documentBase64Bytes: 3380000
+  } : {
+    imageBase64Bytes: 1048576,
+    documentBase64Bytes: 0
+  }
+}
+var Pn = 5000,
+  Ln = 8000;
+
+function It(e, n) {
+  return {
+    result: {
+      type: "tool_result",
+      tool_use_id: e,
+      content: n,
+      is_error: !0
+    },
+    settledBeforeStop: !0,
+    denialKind: void 0,
+    output: void 0,
+    ranToEnd: !1,
+    extra: [],
+    hookExtra: [],
+    notes: [],
+    heldHookNotes: 0,
+    gateHookErrors: 0,
+    localSpillPaths: [],
+    localSpillDirs: []
+  }
+}
+async function Ot(e) {
+  let n = bc({
+      content: [e.toolUse]
+    }),
+    u = Py(e.context.session),
+    a = [Pme(u, e.toolUse.id, !1), Pme(u, e.toolUse.id, !0)],
+    r = [],
+    s = [],
+    g = [],
+    R = 0,
+    k = 0,
+    T, w = !1,
+    h, v, I = !1;
+  for await (let E of oB(e.toolUse, n, e.canUseTool, e.context, () => new Date().toISOString())) {
+    if ($A(E)) continue;
+    let {
+      message: N
+    } = E;
+    if (N.type === "attachment") {
+      if (N.attachment.type === "read_truncation_notice") {
+        let H = {
+          type: "text",
+          text: `${N.attachment.banner} ${Fn(e.servedShellToolName)}`
+        };
+        r.push(H);
+        continue
+      }
+      if (!N.attachment.type.startsWith("hook_")) continue;
+      if (N.attachment.type === "hook_non_blocking_error" && N.attachment.hookEvent === "PreToolUse") k++;
+      if (N.attachment.type === "hook_system_message") {
+        if (N.attachment.heldForServedCall === !0) g.push(N.attachment.content), R++;
+        continue
+      }
+      for (let H of oot(N.attachment)) {
+        let M = Ae(H.message.content);
+        s.push(...M), g.push(...M.flatMap((L) => {
+          let Z = Nt(L)?.text;
+          return Z === void 0 ? [] : [IZ(Z)]
+        }))
+      }
+      continue
+    }
+    if (N.type !== "user") continue;
+    for (let H of Ae(N.message.content))
+      if (H.type === "tool_result" && H.tool_use_id === e.toolUse.id) {
+        T = H, w = !e.stopSignal.aborted, h = N.toolDenialKind, I = xn(N.toolUseResult, H), v = Bn(e.toolUse.name, N.toolUseResult);
+        let M = Mn(v);
+        if (M !== void 0) a.push(M)
+      } else r.push(H)
+  }
+  return {
+    result: T,
+    settledBeforeStop: w,
+    denialKind: h,
+    output: v,
+    ranToEnd: I,
+    extra: r,
+    hookExtra: s,
+    notes: g,
+    heldHookNotes: R,
+    gateHookErrors: k,
+    localSpillPaths: a,
+    localSpillDirs: [u, s_()]
+  }
+}
+
+function Dt(e) {
+  let {
+    run: n
+  } = e, u = {
+    targetName: e.targetName,
+    localSpillPaths: n.localSpillPaths,
+    localSpillDirs: n.localSpillDirs,
+    maxImageBytes: e.budget.imageBase64Bytes
+  }, a = bt([...Ae(n.result.content), ...n.extra], e.targetName, e.budget.documentBase64Bytes), r = Nje(e.toolName) ? n.output : void 0, s = be({
+    content: a.content,
+    output: r,
+    ...u
+  }), g = a.documents.filter((v) => jn(typeof s.content === "string" ? void 0 : s.content[v.at], a.content[v.at])), R = n.hookExtra.length === 0 ? s : be({
+    content: bt([...Ae(n.result.content), ...n.extra, ...n.hookExtra], e.targetName, e.budget.documentBase64Bytes).content,
+    output: void 0,
+    ...u
+  }), k = r === void 0 ? Ve(n.output, qe(u)) : s.output, T = hQe(k) && wR(k) <= Nn ? k : void 0, w = a.dropped || g.length < a.documents.length || s.truncated || R.truncated || hQe(s.output) && T === void 0;
+  return {
+    envelope: {
+      v: Sf,
+      outcome: "completed",
+      ...e.callId !== void 0 && {
+        call_id: e.callId
+      },
+      target: e.target,
+      is_error: n.result.is_error === !0,
+      content: ZCr(s.content),
+      ...g.length > 0 && {
+        documents: g
+      },
+      ...T !== void 0 && {
+        output: T
+      },
+      ...w && {
+        truncated: !0
+      },
+      disposition: Kn(e.permissionOutcome, n),
+      ...Pt(n.notes, {
+        targetName: e.targetName,
+        localSpillPaths: n.localSpillPaths,
+        localSpillDirs: n.localSpillDirs
+      })
+    },
+    content: R.content,
+    truncated: w
+  }
+}
+
+function Mn(e) {
+  if (typeof e !== "object" || e === null) return;
+  let n = Reflect.get(e, "persistedOutputPath");
+  return typeof n === "string" && n.length > 0 ? n : void 0
+}
+
+function xn(e, n) {
+  let u = typeof e === "object" && e !== null ? Reflect.get(e, "interrupted") : void 0;
+  return typeof u === "boolean" ? !u : n.is_error !== !0
+}
+
+function Ae(e) {
+  if (e === void 0 || e === "") return [];
+  return typeof e === "string" ? [{
+    type: "text",
+    text: e
+  }] : e
+}
+
+function Ve(e, n) {
+  if (typeof e === "string") return n(e);
+  if (Array.isArray(e)) return e.map((u) => Ve(u, n));
+  if (hQe(e)) return io(e, (u) => Ve(u, n));
+  return e
+}
+
+function Bn(e, n) {
+  let u = Rrn.get(e);
+  if (u === void 0 || n === void 0) return;
+  if (Nje(e)) return n;
+  if (!hQe(n)) return;
+  return Qr(n, (a, r) => u.has(r))
+}
+
+function Fn(e) {
+  let n = e === void 0 ? "" : e === St ? `, else Select-String through ${e} there` : `, else grep through ${e} there`;
+  return `(on that machine: read further with offset/limit and the same machine argument; to search it there, ${$r} with that argument if this session's ${$r} accepts one${n} \u2014 without the argument ${$r} and ${ro} search only this session's own files)`
+}
+
+function bt(e, n, u) {
+  return e.reduce((a, r) => {
+    let s = Nt(r) ?? $n(r);
+    if (s !== void 0) return a.content.push(s), a;
+    let g = Un(r);
+    if (g !== void 0 && a.documents.length < KCr && g.data.length <= a.documentRemaining) return a.documents.push({
+      at: a.content.length,
+      ...g
+    }), a.content.push({
+      type: "text",
+      text: `${Arn}${n}, ${Ut(Math.floor(g.data.length*3/4))}, came with this result but this session's Claude Code could not take it from another machine \u2014 an older version, most likely; read it by pages instead)`
+    }), {
+      ...a,
+      documentRemaining: a.documentRemaining - g.data.length
+    };
+    return a.content.push({
+      type: "text",
+      text: r.type === "image" ? `(an image referenced by URL was omitted on ${n})` : g !== void 0 ? `(a PDF read on ${n} could not be returned with this result \u2014 read it by pages instead)` : `(a ${String(r.type)} block was omitted on ${n})`
+    }), {
+      ...a,
+      dropped: !0
+    }
+  }, {
+    content: [],
+    documents: [],
+    dropped: !1,
+    documentRemaining: u
+  })
+}
+
+function jn(e, n) {
+  return e?.type === "text" && n?.type === "text" && typeof e.text === "string" && e.text === n.text
+}
+
+function Un(e) {
+  if (e.type !== "document") return;
+  let n = Reflect.get(e, "source");
+  if (typeof n !== "object" || n === null) return;
+  let u = Reflect.get(n, "data");
+  return Reflect.get(n, "type") === "base64" && Reflect.get(n, "media_type") === "application/pdf" && typeof u === "string" ? {
+    media_type: "application/pdf",
+    data: u
+  } : void 0
+}
+
+function Nt(e) {
+  let n = Reflect.get(e, "text");
+  return e.type === "text" && typeof n === "string" ? {
+    type: "text",
+    text: n
+  } : void 0
+}
+
+function $n(e) {
+  if (e.type !== "image") return;
+  let n = Reflect.get(e, "source");
+  if (typeof n !== "object" || n === null) return;
+  let u = Reflect.get(n, "type"),
+    a = Reflect.get(n, "media_type"),
+    r = Reflect.get(n, "data");
+  return u === "base64" && typeof r === "string" && (a === "image/jpeg" || a === "image/png" || a === "image/gif" || a === "image/webp") ? {
+    type: "image",
+    source: {
+      type: "base64",
+      media_type: a,
+      data: r
+    }
+  } : void 0
+}
+
+function Kn(e, n) {
+  if (e !== void 0) {
+    if (e.kind === "allowed") return "ran";
+    return e.kind === "stopped" ? "ask_expired" : e.kind
+  }
+  if (n.denialKind !== void 0) return "hook_blocked";
+  return n.result?.is_error === !0 ? "validation_failed" : "ran"
+}
+
+function ze(e, n) {
+  return Pt(e.notes, {
+    targetName: n,
+    localSpillPaths: e.localSpillPaths,
+    localSpillDirs: e.localSpillDirs
+  }).notes ?? []
+}
+
+function Pt(e, n) {
+  if (e.length === 0) return {};
+  return {
+    notes: e.slice(0, mBn).map((a) => {
+      let r = be({
+          content: a,
+          output: void 0,
+          maxInlineBytes: Ln,
+          ...n
+        }),
+        s = typeof r.content === "string" ? r.content : a;
+      return re(s, Eae)
+    })
+  }
+}
+async function Lt(e, n) {
+  let u = Hn(),
+    a = new Promise((r) => {
+      let s = () => {
+        Q(Pn, u.signal).then(() => r(void 0))
+      };
+      if (n.aborted) s();
+      else n.addEventListener("abort", s, {
+        once: !0
+      }), u.signal.addEventListener("abort", () => n.removeEventListener("abort", s))
+    });
+  try {
+    return await Promise.race([e, a])
+  } finally {
+    u.abort()
+  }
+}
+
+function Mt(e) {
+  let {
+    target: n,
+    facts: u,
+    targetName: a,
+    clock: r,
+    notes: s
+  } = e;
+  return eG(n, u, r.timedOut ? "timed_out" : "cancelled", r.timedOut ? `The call reached its deadline on ${a} while file sync was still writing the cloud session's newer files into this checkout, before the command started \u2014 nothing ran.` : r.shuttingDown() ? `The call was stopped because Claude Code on ${a} is shutting down, before the command started \u2014 nothing ran.` : `The call was cancelled on ${a} while file sync was still writing the cloud session's newer files into this checkout, before the command started \u2014 nothing ran.`, {
+    notes: s.lines()
+  })
+}
+
+function ve(e) {
+  let {
+    target: n,
+    facts: u,
+    targetName: a,
+    clock: r,
+    permissionOutcome: s
+  } = e, g = {
+    notes: e.notes.lines()
+  };
+  if (s?.kind !== "allowed" && s?.kind !== "approved_by_session") return r.timedOut ? eG(n, u, "timed_out", `The call was stopped on ${a} at its deadline before the command started (a hook or an approval was still pending) \u2014 nothing ran.`, g) : eG(n, u, "cancelled", r.shuttingDown() ? `The call was stopped because Claude Code on ${a} is shutting down, before the command started \u2014 nothing ran.` : `The call was cancelled on ${a} before the command started (a hook or an approval was still pending) \u2014 nothing ran.`, g);
+  return r.timedOut ? eG(n, u, "timed_out", `The call did not finish within its deadline on ${a} and was stopped \u2014 it may have partially run. Do not retry non-idempotent commands blindly.`, g) : eG(n, u, "cancelled", r.shuttingDown() ? `The call was stopped while it ran because Claude Code on ${a} is shutting down \u2014 it may have partially run.` : `The call was cancelled while it ran on ${a} \u2014 it may have partially run.`, g)
+}
+
+function Xe(e, n) {
+  let {
+    target: u,
+    facts: a,
+    targetName: r,
+    callId: s,
+    controller: g,
+    clock: R,
+    toolVerdict: k,
+    notes: T
+  } = e;
+  if (n === void 0) return ve(e);
+  if (n.result === void 0) return g.signal.aborted ? ve(e) : eG(u, a, "tool_error", `The call produced no result on ${r} (one of your hooks there deferred it or returned no result) \u2014 it did not run.`, {
+    notes: [...T.lines(), ...ze(n, r)]
+  });
+  let w = !n.settledBeforeStop && n.ranToEnd;
+  if (!n.settledBeforeStop && !w) return ve(e);
+  if (k !== void 0) {
+    let E = {
+      notes: [...T.lines(), ...ze(n, r)]
+    };
+    return k.verdict.kind === "refused" ? Wj(u, a, k.verdict.code, k.message, E) : eG(u, a, k.verdict.code, k.message, E)
+  }
+  let h = R.timedOut ? "at the call's deadline" : R.shuttingDown() ? "because Claude Code here is shutting down" : "when the call was cancelled",
+    v = `(output withheld: the command COMPLETED on ${r} and was not interrupted. What ran after it here \u2014 a PostToolUse hook, most likely \u2014 was stopped ${h} before it finished, and it may have been meant to check this output, so only the output is withheld. Do not re-run the command just to see the output unless it is safe to repeat.)`,
+    I = Dt({
+      run: w ? {
+        ...n,
+        result: {
+          ...n.result,
+          content: v
+        },
+        output: Nje(a.toolName) ? Gn(n.output, v) : void 0,
+        extra: [],
+        hookExtra: [],
+        notes: [...T.lines()]
+      } : {
+        ...n,
+        result: n.result,
+        notes: [...T.lines(), ...n.notes]
+      },
+      toolName: a.toolName,
+      target: u,
+      callId: s,
+      targetName: r,
+      permissionOutcome: e.permissionOutcome,
+      budget: At(a.arrivedOver)
+    });
+  return a.truncated = I.truncated, {
+    envelope: I.envelope,
+    content: I.content
+  }
+}
+
+function Gn(e, n) {
+  if (typeof e !== "object" || e === null) return n;
+  let u = Reflect.get(e, "returnCodeInterpretation");
+  return {
+    stdout: n,
+    stderr: "",
+    interrupted: !1,
+    ...typeof u === "string" && {
+      returnCodeInterpretation: u
+    }
+  }
+}
+
+function xt(e) {
+  let n = {
+      ...IH(),
+      toolPermissionContext: e.permissionContext
+    },
+    u = it();
+  return {
+    requestDialog: void 0,
+    abortController: e.abortController,
+    messageQueue: kh(),
+    session: j().withProject({
+      cwd: e.cwd
+    }),
+    agentContext: {
+      agentType: "main",
+      agentId: Vm()
+    },
+    options: {
+      commands: [],
+      tools: e.servedTools,
+      toolCatalog: zj,
+      mainLoopModel: u,
+      thinkingConfig: {
+        type: "disabled",
+        mechanical: !0
+      },
+      mcpClients: [],
+      mcpResources: {},
+      isNonInteractiveSession: !0,
+      runQuery: _P,
+      debug: !1,
+      verbose: !1,
+      agentDefinitions: {
+        activeAgents: [],
+        allAgents: []
+      }
+    },
+    getAppState: () => n,
+    setAppState: () => {},
+    markPrResolvedThisSession: () => {},
+    isUltrareviewOverageConfirmed: () => !1,
+    markUltrareviewOverageConfirmed: () => {},
+    getAdvisorSetting: () => n.advisorModel,
+    getMcp: () => n.mcp,
+    getProactivityLevel: () => n.proactivityLevel,
+    getWebBrowser: () => n.webBrowser,
+    setToolPermissionContext: () => {},
+    setSessionToolPermissionContext: () => {},
+    taskRegistry: JW,
+    queuedNotificationsRegistry: AWe,
+    sessionHooksRegistry: Mje,
+    setWebBrowserSlice: () => {},
+    setArtifactReadVersion: () => {},
+    getArtifactReadObservation: Ise(() => n),
+    artifactRegistries: TWe(),
+    setArtifactContractTarget: () => {},
+    getArtifactContractTarget: () => ({
+      targetSlug: void 0,
+      pins: {}
+    }),
+    enqueuePendingMemoryUpdate: () => {},
+    agentLifecycle: UWe,
+    teammateColors: CWe,
+    rootToolSurface: {
+      tools: e.servedTools,
+      mainLoopModel: u
+    },
+    messages: [],
+    turnStartIndex: 0,
+    readFileState: e.session.readFileState,
+    toolState: e.session.toolState,
+    toolDecisions: new Map,
+    permissionRelays: L5,
+    getFileHistoryState: () => {
+      return
+    },
+    applyFileHistoryOp: () => {},
+    applyAttributionOp: () => {},
+    remoteCall: e.remoteCall,
+    requireCanUseTool: !0,
+    storageV5: e.storageV5
+  }
+}
+
+function ce(e, n, u) {
+  let a = e.remoteExecution,
+    r = a?.supported ? a.decidingInputFields : void 0,
+    s = r === void 0 ? ss(n, [dr, YTe]) : Object.fromEntries(r.map((g) => [g, n[g]]).filter(([, g]) => g !== void 0 && g !== null && g !== !1));
+  return H3(e.name, {
+    startDir: u,
+    deciding: s
+  })
+}
+var Ie = 86400000;
+
+function Wn(e) {
+  return `The call failed on ${e} before it produced a result \u2014 details are in that machine's debug log.`
+}
+var qn = "anonymous";
+
+function wIe(e) {
+  return e.sessionId === void 0 ? qn : pr(e.sessionId)
+}
+
+function Qe(e) {
+  return new Promise((n) => {
+    if (e.aborted) n();
+    else e.addEventListener("abort", () => n(), {
+      once: !0
+    })
+  })
+}
+var Yn = Oe(),
+  Bt = 0;
+
+function Vn() {
+  return Bt += 1, Bt
+}
+async function jt(e) {
+  let {
+    tool: n,
+    wireArguments: u,
+    ctx: a,
+    deps: r,
+    facts: s
+  } = e;
+  if (!idr()) await adr(a.signal);
+  let g = py(n),
+    R = r.policy.refusedInputFields?.(n) ?? (g.supported ? g.refusedInputFields ?? [] : []),
+    k = X_t(e.toolInput, R, r.targetName);
+  if (k !== void 0) return Wj(e.target, s, "refused_field", k);
+  let T = r.policy.constraints(n, r.launchDir, {
+      approvalAttested: s.approvalAttested
+    }),
+    w = yQe(e.toolInput, R),
+    h = r.sessions.forCaller(wIe(a));
+  if (h === void 0) return s.seatsFull = !0, lc(s.envelope?.call_id, "capacity refused", {
+    sessions_in_use: r.sessions.size,
+    sessions_limit: r.sessions.limit
+  }), Wj(e.target, s, "too_many_in_flight", dXr({
+    targetName: r.targetName,
+    limit: r.sessions.limit
+  }));
+  let v = s.envelope?.call_id,
+    I = s.envelope?.approval;
+  X9r(h, s.envelope);
+  let E = a.sessionId === void 0 ? void 0 : r.dirSyncOf?.(a.sessionId);
+  if (v !== void 0 && I === void 0 && !s.enteredRecord)
+    if (h.calls.receive(v, {
+        retryKey: ce(n, e.toolInput, h.cwd ?? r.launchDir),
+        workerEpoch: a.workerEpoch
+      })) s.enteredRecord = !0;
+    else {
+      let S = h.calls.lookup(v);
+      if (S !== void 0) return de({
+        known: S,
+        session: h,
+        hostEpoch: r.sessions.epoch,
+        callId: v,
+        target: e.target,
+        facts: s
+      })
+    } let N = h.cwd,
+    H = T.pinCwd || N === void 0 ? r.launchDir : N,
+    M = {
+      ...e.target,
+      working_dir: H
+    },
+    L = H3(n.name, w);
+  s.inputFingerprint = L;
+  let Z = (S, D) => {
+      if (S !== void 0) h.calls.remember(S, D)
+    },
+    x = (S, D) => {
+      if (S !== void 0) h.calls.settle(S, D, wkn(D))
+    };
+  if (v !== void 0 && I === void 0) {
+    let S = h.calls.retryOf(v);
+    if (S !== void 0 && !De(n, w)) {
+      let {
+        summary: D
+      } = S.call, oe = D.state === "asked" && D.askId !== void 0 ? h.pendingAsks.peek(D.askId) : void 0;
+      if (oe === void 0 || oe.redeemingLegs > 0) return he({
+        session: h,
+        joined: S,
+        hostEpoch: r.sessions.epoch,
+        callId: v,
+        target: M,
+        facts: s,
+        workerEpoch: a.workerEpoch
+      });
+      lc(v, "retry replaced ask", {
+        replaced_call: S.callId,
+        ask_id: oe.askId,
+        worker_epoch: a.workerEpoch
+      }), p("remote_tool_serve", "ask_replaced_by_retry"), C5(h, oe.askId, {
+        reason: hfe,
+        message: nG({
+          targetName: r.targetName,
+          reason: hfe
+        })
+      });
+      let ie = h.calls.lookup(S.callId)?.result,
+        se = {
+          state: "failed",
+          code: hfe
+        };
+      if (ie === void 0) Z(S.callId, se);
+      else h.calls.settle(S.callId, ie, se)
+    }
+    if (s.enteredRecord) h.calls.rekey(v, ce(n, e.toolInput, h.cwd ?? r.launchDir))
+  }
+  if (I !== void 0) {
+    let S = h.pendingAsks.peek(I.ask_id);
+    if (S === void 0) {
+      let ie = v === void 0 ? void 0 : h.calls.lookup(v);
+      return ie !== void 0 && v !== void 0 ? de({
+        known: ie,
+        session: h,
+        hostEpoch: r.sessions.epoch,
+        callId: v,
+        target: M,
+        facts: s
+      }) : Wj(M, s, "invalid_request", I.decision === "deny" ? `That permission request was no longer pending on ${r.targetName} \u2014 nothing ran and nothing will.` : `That permission request is no longer pending on ${r.targetName} \u2014 nothing ran. Send the call again without an approval to ask afresh.`)
+    }
+    s.askedInMode = S.askedInMode;
+    let D = {
+        ...e.target,
+        working_dir: S.startCwd
+      },
+      oe = S.callId !== void 0 && S.callId === v;
+    if (I.decision === "deny" && !oe) return s.askStillPending = !0, Wj(D, s, "invalid_request", `That decline named a different call than the pending question on ${r.targetName} \u2014 the question is still pending and nothing ran.`);
+    if (I.decision === "deny" || oe && S.fingerprints.includes(L)) {
+      let ie = nXr(I.updated_input === void 0 ? void 0 : Rkn(I.updated_input, u), r.targetName);
+      if (ie !== void 0 && I.decision === "allow") {
+        let J = X_t(ie, R, r.targetName) ?? (Ckn in ie ? GVt({
+          field: Ckn,
+          targetName: r.targetName
+        }) : void 0);
+        if (J !== void 0) return s.askStillPending = !0, Wj(D, s, "refused_field", J);
+        if (!S.fingerprints.includes(H3(n.name, rXr(S.evaluatedInput, yQe(ie, R))))) return s.askStillPending = !0, Wj(D, s, "invalid_request", `An approval cannot change the call it approves on ${r.targetName} \u2014 nothing ran and the request is still pending. Send the changed call as a new one.`)
+      }
+      if (I.decision === "allow") {
+        let J = Date.now() - S.createdAt;
+        if (!Ft(S.raisedOver) && !Ft(s.arrivedOver) && J > Ie) {
+          let Re = mXr({
+            targetName: r.targetName,
+            askAgeMs: J,
+            windowMs: Ie
+          });
+          return C5(h, I.ask_id, {
+            reason: "stale_answer",
+            message: Re
+          }), s.staleLeg = {
+            ageMs: J,
+            windowMs: Ie,
+            judgedBy: "ask_age"
+          }, lc(v, "undated allow refused", {
+            ask_age_ms: Math.round(J),
+            window_ms: Ie
+          }), Wj(D, s, "stale", Re, {
+            reason: "stale_answer"
+          })
+        }
+        if (pe(r.policy.limits, s.envelope) - (Date.now() - s.startedAt) <= 0) return s.askStillPending = !0, eG(D, s, "timed_out", `The approval reached ${r.targetName} with no time left to run the call (admission took longer than the caller allowed) \u2014 nothing ran and the request is still pending.`)
+      }
+      if (I.decision === "allow" && Ht(S.raisedOver, s.arrivedOver)) s.approvalBasis = Jn(s.arrivedOver, r.registrationTransport ?? "auto", {
+        attested: I.attested,
+        callerKind: s.envelope?.caller.kind,
+        toolName: n.name,
+        isServedMcpTool: n.isMcp === !0,
+        sessionMode: s.sessionMode,
+        askedInMode: S.askedInMode,
+        classifierEligible: S.classifierEligible,
+        autoModeRefusedHere: q_t(),
+        planClaimBackedHere: K_t(s.sessionMode)
+      }), s.approvalAttested = s.approvalBasis === "attested";
+      if (I.decision === "allow" && s.approvalBasis === void 0) return s.askStillPending = !0, Wj(D, s, "no_approval", Ht(S.raisedOver, s.arrivedOver) ? `The approval for this call could not be verified as the person's own, so ${r.targetName} did not run it; the request is still pending.` : `The approval for this call arrived over a different channel than the one the request was put on, so ${r.targetName} did not run it; the request is still pending.`);
+      if (s.forceAsk = S.raisedToAsk, I.decision === "deny") return s.deniedBySession = !0, Y9r(h, I.ask_id, N9r(I.feedback)), $9r(D, s, I.ask_id);
+      let se = `${I.ask_id}:${Oe()}`,
+        K = E?.holdInstalls === void 0 ? null : Promise.resolve(E.holdInstalls(se)).catch(() => {});
+      if (K !== null) {
+        let J = !1;
+        K.then(() => {
+          J = !0
+        });
+        let xe = pe(r.policy.limits, s.envelope) - (Date.now() - s.startedAt),
+          Re = Date.now();
+        if (await Promise.race([K, Qe(a.signal), ...Number.isFinite(xe) ? [Qe(AbortSignal.timeout(Math.max(0, xe)))] : []]), s.holdMs = Date.now() - Re, !J) return K.then(() => {
+          try {
+            E?.releaseInstalls?.(se)
+          } catch {}
+        }), s.askStillPending = !0, eG(D, s, a.signal.aborted ? "cancelled" : "timed_out", `The approval reached ${r.targetName} while file sync was still writing the cloud session's newer files into this checkout \u2014 nothing ran and the request is still pending.`)
+      }
+      if (h.pendingAsks.take(I.ask_id) === void 0) {
+        K?.then(() => {
+          try {
+            E?.releaseInstalls?.(se)
+          } catch {}
+        });
+        let J = v === void 0 ? void 0 : h.calls.lookup(v);
+        if (J !== void 0 && v !== void 0) return de({
+          known: J,
+          session: h,
+          hostEpoch: r.sessions.epoch,
+          callId: v,
+          target: M,
+          facts: s
+        });
+        return Wj(D, s, "invalid_request", `That permission request is no longer pending on ${r.targetName} \u2014 nothing ran. Send the call again without an approval to ask afresh.`)
+      }
+      Z(S.callId, {
+        state: "running",
+        started: !0
+      });
+      let le = Date.now();
+      if (S.callId !== void 0) r.callLog?.note({
+        t: "started",
+        caller: h.callerSessionId,
+        call_id: S.callId,
+        tool: n.name,
+        input_fp: L,
+        by: "session",
+        basis: s.approvalBasis
+      });
+      if (S.resume({
+          signal: a.signal,
+          startedAt: s.startedAt,
+          expiresInMs: pe(r.policy.limits, s.envelope)
+        }), s.arrivedOver !== "session" || s.approvalAttested) S.onApproved?.();
+      if (S.answer({
+          behavior: "allow",
+          updatedInput: S.evaluatedInput,
+          decisionReason: {
+            type: "other",
+            reason: WVt
+          }
+        }), s.approvalAttested && r.policy.capabilities?.includes("standing_approvals") === !0 && S.standingRowOffered) await H9r(h, I.permission_updates, s, {
+        toolName: n.name,
+        input: S.evaluatedInput
+      }).catch((J) => {
+        lc(v, "standing approval not kept", {
+          error: J instanceof Error ? J.name : "unknown"
+        }, "warn")
+      });
+      let Te = await S.settled.finally(() => void K?.then(() => {
+        try {
+          E?.releaseInstalls?.(se)
+        } catch (J) {
+          t(`[remote-tools] releasing the file-sync hold failed: ${l(J)}`, {
+            level: "warn"
+          })
+        }
+      }));
+      if (s.pipelineMs = Date.now() - le, s.truncated = Te.envelope.outcome === "completed" && Te.envelope.truncated === !0, S.pipelineCallId === void 0) return Te;
+      lc(S.callId, "carried run settled", {
+        pipeline_call: S.pipelineCallId
+      });
+      let lt = V_t(Te, S.callId);
+      return x(S.callId, lt), lt
+    }
+  }
+  if (I !== void 0) {
+    let S = v === void 0 ? void 0 : h.calls.lookup(v);
+    if (S !== void 0 && v !== void 0) return de({
+      known: S,
+      session: h,
+      hostEpoch: r.sessions.epoch,
+      callId: v,
+      target: M,
+      facts: s
+    });
+    return s.askStillPending = !0, Wj(M, s, "invalid_request", `This approval answers a different request than the one pending on ${r.targetName} \u2014 nothing ran. Send the call without an approval to ask afresh.`)
+  }
+  let W = (S) => Z(v, S),
+    G = r.policy.stance,
+    P = Hn(),
+    B = vB(pe(r.policy.limits, s.envelope)),
+    U = B - (Date.now() - s.startedAt);
+  if (U <= 0) return W({
+    state: "failed",
+    code: "timed_out"
+  }), eG(M, s, "timed_out", `The call reached ${r.targetName} with no time left before its ${Zt(Math.max(1000,B))} deadline (admission took longer than the caller allowed) \u2014 nothing ran.`);
+  let q = {
+      facts: s,
+      target: M,
+      targetName: r.targetName,
+      callId: v,
+      controller: P,
+      clock: yt({
+        remainingMs: U,
+        controller: P,
+        leg: a.signal,
+        lifetime: r.lifetime
+      }),
+      notes: G9r(),
+      permissionOutcome: void 0,
+      toolVerdict: void 0
+    },
+    {
+      clock: X
+    } = q,
+    Y, F = new Promise((S) => {
+      Y = S
+    }),
+    V = s.envelope?.caller.model !== void 0 ? DNr(s.envelope.caller.model, {
+      overridesMap: {}
+    }) : void 0,
+    z = eXr({
+      stance: G,
+      targetName: r.targetName,
+      sessionMode: s.sessionMode,
+      sessionModel: V,
+      forwardedInput: w,
+      stopSignal: P.signal,
+      legDeadlineAt: s.startedAt + B,
+      onOutcome: (S) => {
+        q.permissionOutcome = S, s.forceAsk = S.raisedToAsk, s.allowBasis = S.allowBasis, s.denySource = S.denySource;
+        let D = (S.kind === "allowed" || S.kind === "approved_by_session") && !P.signal.aborted;
+        if (D) W({
+          state: "running",
+          started: !0
+        });
+        if (D && S.kind === "allowed" && v !== void 0) r.callLog?.note({
+          t: "started",
+          caller: h.callerSessionId,
+          call_id: v,
+          tool: n.name,
+          input_fp: L,
+          by: "host",
+          basis: S.allowBasis
+        });
+        if ((S.kind === "allowed" || S.kind === "approved_by_session") && T.maxTimeoutMs === void 0 && (tG(n) || n.mcpInfo !== void 0)) X.enterRunning(), lc(v, "running: call deadline disarmed", {
+          epoch: r.sessions.epoch,
+          outcome: S.kind
+        })
+      },
+      onAsk: (S) => {
+        s.forceAsk = S.raisedToAsk, Y?.(S)
+      }
+    }),
+    ge = {
+      type: "tool_use",
+      id: `remote_${Oe()}`,
+      name: n.name,
+      input: w,
+      caller: {
+        type: "direct"
+      }
+    };
+  W({
+    state: "running"
+  });
+  let ee = `ask_${Oe()}`;
+  if (G.honorLocalRules) await LNn((await r.reach.current()).map(Cd), r.storageV5, r.reach.distrustedSources);
+  let ye = ee,
+    Se = null,
+    tt = !1,
+    Pe = () => {
+      if (Se !== null && !tt) tt = !0, Se.then(() => {
+        try {
+          E?.releaseInstalls?.(ye)
+        } catch (S) {
+          t(`[remote-tools] releasing the file-sync hold failed: ${l(S)}`, {
+            level: "warn"
+          })
+        }
+      })
+    },
+    ke, ot = (async () => {
+      let S;
+      try {
+        let D = zVt({
+            stance: G,
+            launchDir: r.launchDir,
+            sessionMode: s.sessionMode,
+            sessionUpdates: h.sessionPermissionUpdates
+          }),
+          oe = Q9r(n, w, D, H);
+        if (oe !== void 0) return q.permissionOutcome = {
+          kind: "denied_by_rule",
+          raisedToAsk: !1
+        }, s.denySource = uoe, S = Xe(q, It(ge.id, VVt({
+          targetName: r.targetName,
+          kind: kkn(oe),
+          subject: vkn(oe)
+        }))), S;
+        let ie = xt({
+          session: h,
+          servedTools: Qn(r),
+          cwd: H,
+          abortController: Ih(P),
+          remoteCall: {
+            origin: {
+              kind: "remote",
+              transport: s.arrivedOver,
+              callerSessionId: a.sessionId,
+              callId: v ?? ge.id,
+              hostName: r.targetName,
+              launchDir: r.launchDir
+            },
+            constraints: T,
+            reach: r.reach,
+            ...V !== void 0 && {
+              model: V
+            },
+            ...s.envelope?.read_baseline !== void 0 && s.envelope.approval === void 0 && {
+              readBaseline: s.envelope.read_baseline
+            },
+            onToolVerdict: (K, le) => {
+              q.toolVerdict ??= {
+                verdict: K,
+                message: le
+              }
+            },
+            onProjectHook: (K, le) => {
+              if (s.projectHook = K, K === "held_changed_since_last_serve" && le !== void 0)(s.changedHookKeys ??= []).push(le)
+            },
+            onNote: (K) => {
+              switch (K.key) {
+                case "timeout_clamped":
+                  q.notes.add(K.key, iXr({
+                    ...K,
+                    targetName: r.targetName
+                  }));
+                  return;
+                case "sandboxed_failure":
+                  q.notes.add(K.key, aXr({
+                    ...K,
+                    targetName: r.targetName
+                  }));
+                  return
+              }
+            }
+          },
+          permissionContext: D,
+          storageV5: r.storageV5
+        });
+        if (E?.holdInstalls !== void 0) {
+          let K = !1,
+            le = Date.now();
+          if (Se = Promise.resolve(E.holdInstalls(ye)).catch(() => {}).then(() => {
+              K = !0
+            }), await Promise.race([Se, Qe(P.signal)]), s.holdMs = Date.now() - le, P.signal.aborted && !K) return S = Mt(q), S
+        }
+        ke = Date.now();
+        let se = await Lt(Xx(H, async () => {
+          let K = await Ot({
+            toolUse: ge,
+            canUseTool: z,
+            context: ie,
+            stopSignal: P.signal,
+            servedShellToolName: zn(r)
+          });
+          if (K.gateHookErrors > 0) r.onNotice?.(Pdo, Ido);
+          if (K.heldHookNotes > 0) r.onNotice?.(Zhr, eyr);
+          if (!T.pinCwd && !P.signal.aborted && (h.cwd ?? r.launchDir) === H) h.cwd = a1t();
+          return K
+        }), P.signal);
+        if (S = Xe(q, se), S.envelope.outcome === "completed" && WM(S.envelope.disposition) && E?.capturePoint !== void 0 && !P.signal.aborted) try {
+          let K = await E.capturePoint().catch(() => ({
+            kind: "not_running"
+          }));
+          S = {
+            ...S,
+            dirSync: gt(K, Yn, Vn())
+          }, lc(v, "file sync answer attached", {
+            answer: K.kind
+          })
+        } catch (K) {
+          t(`[remote-tools] the file sync answer was not attached to the result: ${l(K)}`, {
+            level: "warn"
+          })
+        } finally {
+          Pe()
+        }
+        return s.pipelineMs = Date.now() - ke, S
+      } catch (D) {
+        return S = P.signal.aborted || Ke(D) ? ve(q) : Ne(D, M, s, P.signal, {
+          notes: q.notes.lines()
+        }), S
+      } finally {
+        Pe(), C5(h, ee, {
+          reason: "host_stopped",
+          message: nG({
+            targetName: r.targetName,
+            reason: "host_stopped"
+          })
+        });
+        let D = v === void 0 ? void 0 : h.calls.lookup(v);
+        if (!(D?.result !== void 0 || D?.summary.state === "failed" && D.summary.code !== void 0 && KJt.has(D.summary.code)) && S !== void 0) x(v, S);
+        X.dispose()
+      }
+    })(),
+    ne = await Promise.race([ot.then((S) => ({
+      suspended: !1,
+      served: S
+    })), F.then((S) => ({
+      suspended: !0,
+      ask: S
+    }))]);
+  if (!ne.suspended) return ne.served;
+  if (ke !== void 0) s.pipelineMs = Date.now() - ke;
+  Pe(), X.detachLeg();
+  let rt = !1;
+  if (h.pendingAsks.size >= gQe) {
+    let S = h.pendingAsks.list().find((D) => D.redeemingLegs === 0);
+    if (S === void 0) rt = !0;
+    else C5(h, S.askId, {
+      reason: "evicted",
+      message: nG({
+        targetName: r.targetName,
+        reason: "evicted"
+      })
+    })
+  }
+  if (ne.ask.heldHook) r.onNotice?.(Zhr, eyr);
+  let Le = v === void 0 ? void 0 : h.calls.newestRetryJoinedTo(v),
+    me = v !== void 0 && Le !== void 0 && h.calls.carryQuestion(v, Le, ee) ? Le : void 0;
+  if (v !== void 0 && me !== void 0) lc(v, "ask carried by retry", {
+    carrier_call: me,
+    ask_id: ee,
+    worker_epoch: a.workerEpoch
+  }), p("remote_tool_serve", "ask_carried_by_retry"), s.askCarriedBy = me;
+  let st = me ?? v,
+    at = H3(n.name, yQe(ne.ask.input, R)),
+    dt = F9r({
+      target: M,
+      facts: s,
+      askId: ee,
+      toolName: n.name,
+      ask: {
+        ...ne.ask,
+        input: tXr(ne.ask.input, u)
+      },
+      notes: q.notes.lines(),
+      inputFingerprint: at,
+      hostRules: G.honorLocalRules ? "full" : "none"
+    }),
+    Qt = me !== void 0 && v !== void 0 ? {
+      callId: me,
+      pipelineCallId: v
+    } : {
+      callId: v
+    };
+  if (h.pendingAsks.register({
+      askId: ee,
+      ...Qt,
+      toolName: n.name,
+      raisedOver: s.arrivedOver,
+      toolStillServed: () => Je(r, n.name) !== void 0,
+      fingerprints: [L, at],
+      createdAt: Date.now(),
+      asked: dt,
+      startCwd: H,
+      evaluatedInput: ne.ask.input,
+      raisedToAsk: ne.ask.raisedToAsk,
+      classifierEligible: ne.ask.classifierEligible,
+      standingRowOffered: ne.ask.standingRowOffered,
+      askedInMode: s.sessionMode,
+      redeemingLegs: 0,
+      answer: ne.ask.answer,
+      ...ne.ask.heldHook && {
+        onApproved: () => {
+          let S = xdo(ne.ask.message, s.changedHookKeys);
+          if (S !== void 0) r.reach.projectHooks?.shownChanged.add(S)
+        }
+      },
+      settled: ot,
+      resume: X.resume,
+      windDown: X.windDown
+    }), me === void 0) Z(v, {
+    state: "asked",
+    askId: ee
+  });
+  if (rt) {
+    let S = nG({
+      targetName: r.targetName,
+      reason: "evicted"
+    });
+    C5(h, ee, {
+      reason: "evicted",
+      message: S
+    });
+    let D = st === void 0 ? void 0 : h.calls.lookup(st)?.result;
+    return D !== void 0 && v !== void 0 ? V_t(D, v) : D ?? Wj(M, s, "withdrawn", S, {
+      reason: "evicted"
+    })
+  }
+  return dt
+}
+
+function Oje(e) {
+  return e.tools.filter((n) => !OR(n) && py(n).supported && e.policy.serves(n))
+}
+
+function zn(e) {
+  let n = new Set(Oje(e).map((u) => u.name));
+  return [Ue, St].find((u) => n.has(u))
+}
+
+function Xn(e) {
+  let n = e.resolvedToolName;
+  if (e.isMcp === !0 || n === void 0 || !Nje(n)) return;
+  return n === St ? "powershell" : "bash"
+}
+
+function Qn(e) {
+  return [...Oje(e), ...e.servedMcpTools?.().values() ?? []]
+}
+
+function Je(e, n) {
+  return e.servedMcpTools?.().get(n) ?? _n(Oje(e), n)
+}
+
+function $t(e, n) {
+  return e.servedMcpWireArguments?.(n) ?? Y_t()
+}
+
+function De(e, n) {
+  try {
+    return e.isReadOnly(n)
+  } catch {
+    return !1
+  }
+}
+
+function Ne(e, n, u, a, r) {
+  if (a.aborted || Ke(e)) return eG(n, u, "cancelled", "The call was cancelled.", r);
+  return d(te(e)), eG(n, u, "internal_error", Wn(n.name), r)
+}
+
+function Kt(e, n, u, a) {
+  let r = e.outcome === "completed" ? e.is_error ? "completed_error" : "completed" : e.outcome === "failed" && (e.code === "cancelled" || e.code === "timed_out") ? e.code : e.outcome,
+    s = n.secondLeg ? n.askedInMode : n.sessionMode,
+    g = Rtr({
+      stance: u.policy.stance,
+      sessionMode: s
+    }),
+    R = n.query || n.answeredFromRecord !== void 0 || n.callId === void 0 ? void 0 : a?.calls.lookup(n.callId);
+  if (u.callLog !== void 0 && a !== void 0 && R !== void 0 && R.priorEpoch === void 0 && n.callId !== void 0) {
+    let T = (h, v) => ({
+      t: "leg",
+      caller: a.callerSessionId,
+      call_id: h,
+      tool: n.resolvedToolName ?? "unresolved",
+      is_mcp: n.isMcp,
+      input_fp: n.inputFingerprint,
+      transport: n.arrivedOver,
+      second_leg: n.secondLeg,
+      session_mode: n.sessionMode ?? "absent",
+      evaluated_mode: g.mode,
+      ...n.secondLeg && {
+        approval_basis: n.approvalBasis ?? "none"
+      },
+      ...n.allowBasis !== void 0 && {
+        allow_basis: n.allowBasis
+      },
+      ...n.denySource !== void 0 && {
+        deny_source: n.denySource
+      },
+      ...n.projectHook !== void 0 && {
+        hook: n.projectHook
+      },
+      outcome: e.outcome,
+      ...e.outcome === "completed" && e.disposition !== void 0 && {
+        disposition: e.disposition
+      },
+      ...(e.outcome === "refused" || e.outcome === "failed") && {
+        code: e.code
+      },
+      ...e.outcome === "refused" && e.reason !== void 0 && {
+        reason: e.reason
+      },
+      ...e.outcome === "completed" && {
+        is_error: e.is_error
+      },
+      duration_ms: Date.now() - n.startedAt,
+      record: {
+        state: v.state,
+        ...v.code !== void 0 && {
+          code: v.code
+        },
+        ...v.endedAs !== void 0 && {
+          ended_as: v.endedAs
+        },
+        ...v.isError !== void 0 && {
+          is_error: v.isError
+        },
+        ...v.askId !== void 0 && {
+          ask_id: v.askId
+        },
+        ...v.joinedCallId !== void 0 && {
+          joined_call_id: v.joinedCallId
+        }
+      }
+    });
+    u.callLog.note(T(n.callId, R.summary));
+    let w = n.askCarriedBy === void 0 ? void 0 : a.calls.lookup(n.askCarriedBy);
+    if (n.askCarriedBy !== void 0 && w !== void 0 && w.priorEpoch === void 0) u.callLog.note(T(n.askCarriedBy, w.summary))
+  }
+  let k = n.query && n.callId !== void 0 ? a?.calls.countOutcomeQuery(n.callId, `${r}:${e.outcome==="in_progress"?e.state:e.outcome==="refused"||e.outcome==="failed"?e.code:""}`) : void 0;
+  if (k?.report === !1) return;
+  if (i("tengu_remote_tool_serve", {
+      call_id: _e(n.callId),
+      host_epoch: _e(u.sessions.epoch),
+      handle_hash: pn(u.targetName),
+      host_device_id: _e(u.deviceId),
+      criteria_version: y(wit),
+      tool: n.toolNameForAnalytics,
+      isMcp: n.isMcp,
+      shell: ue(Xn(n)),
+      policy: c(u.policy.name),
+      transport: c(n.arrivedOver),
+      op: c(n.query ? "outcome_of" : "call"),
+      outcome_queries_since_last_row: k?.sinceReported,
+      outcome: c(r),
+      answered_from_record: ue(n.answeredFromRecord),
+      from_prior_epoch: n.fromPriorEpoch,
+      ...n.joinedCallId !== void 0 && {
+        joined_call_id: _e(n.joinedCallId)
+      },
+      ...n.askCarriedBy !== void 0 && {
+        ask_carried_by: _e(n.askCarriedBy)
+      },
+      ...n.workerEpoch !== void 0 && {
+        worker_epoch: n.workerEpoch
+      },
+      ...e.outcome === "refused" && {
+        refusal_code: c(e.code)
+      },
+      ...n.staleLeg !== void 0 && {
+        age_ms: n.staleLeg.ageMs === void 0 ? void 0 : Math.round(n.staleLeg.ageMs),
+        window_ms: n.staleLeg.windowMs
+      },
+      ...n.attestation !== void 0 && {
+        attestation_mode: c(n.attestation.mode),
+        request_attestation: c(n.attestation.status),
+        attestation_verdict: c(n.attestation.verdict)
+      },
+      mode_stamp: c(n.modeStamp ?? "absent"),
+      ...e.outcome === "refused" && n.seatsFull && {
+        sessions_in_use: u.sessions.size,
+        sessions_limit: u.sessions.limit
+      },
+      ...e.outcome === "failed" && {
+        failure_code: c(e.code)
+      },
+      ...e.outcome === "completed" && e.disposition !== void 0 && {
+        disposition: c(e.disposition)
+      },
+      force_ask: n.forceAsk,
+      allow_basis: ue(n.allowBasis),
+      deny_source: ue(n.denySource),
+      second_leg: n.secondLeg,
+      approval_decision: c(n.envelope?.approval?.decision ?? "none"),
+      ...n.secondLeg && {
+        approval_basis: c(n.approvalBasis ?? "none")
+      },
+      evaluated_mode: c(g.mode),
+      mode_capped: g.capped,
+      auto_refused_here: g.autoRefusedHere,
+      consent_pending: Yvt(),
+      plan_classifier_backed: K_t(s),
+      destination_downgraded: n.destinationDowngraded,
+      session_mode: c(n.sessionMode ?? "absent"),
+      envelope: c(n.envelopeStatus),
+      read_baseline_carried: n.envelope?.read_baseline !== void 0,
+      truncated: n.truncated,
+      ...e.outcome === "completed" && {
+        documents: e.documents?.length ?? 0
+      },
+      duration_ms: Date.now() - n.startedAt,
+      posture_wait_ms: n.postureWaitMs,
+      hold_ms: n.holdMs,
+      pipeline_ms: n.pipelineMs,
+      output_bytes: Buffer.byteLength(b(e.outcome === "completed" ? e.content : e.outcome === "refused" || e.outcome === "failed" ? e.message : ""), "utf8")
+    }), n.query || n.answeredFromRecord !== void 0) return;
+  if (e.outcome === "completed" && !e.is_error) _("remote_tool_serve");
+  else if (e.outcome === "completed") p("remote_tool_serve", e.disposition ?? "completed_error");
+  else if (e.outcome === "acknowledged" && n.deniedBySession) p("remote_tool_serve", "denied_by_session");
+  else if (e.outcome === "needs_approval" || e.outcome === "acknowledged" || e.outcome === "in_progress" || n.askStillPending);
+  else if (e.code === "cancelled") p("remote_tool_serve", "cancelled");
+  else if (n.staleLeg !== void 0) p("remote_tool_serve", n.staleLeg.judgedBy === "ask_age" ? "undated_answer" : n.staleLeg.ageMs === void 0 ? "undatable_leg" : "stale_leg", {
+    answer_leg: n.secondLeg
+  });
+  else m("remote_tool_serve", e.code)
+}
+
+function Ft(e) {
+  switch (e) {
+    case "session":
+      return !0;
+    case "bridge":
+    case "direct":
+      return !1;
+    default: {
+      let n = e;
+      return !1
+    }
+  }
+}
+
+function Ht(e, n) {
+  switch (e) {
+    case "session":
+      return n === "session";
+    case "bridge":
+    case "direct":
+      return !0;
+    default: {
+      let u = e;
+      return !1
+    }
+  }
+}
+
+function Jn(e, n, u) {
+  switch (e) {
+    case "session":
+      return Z9r(u);
+    case "bridge":
+    case "direct":
+      return n === "bridge" ? "bridge" : void 0;
+    default: {
+      let a = e;
+      return
+    }
+  }
+}
+var Zn = 128;
+async function gkn(e, n, u, a, r) {
+  let {
+    request: s,
+    toolInput: g
+  } = Qwo(hQe(n) ? n : {}), R = r === "bridge" ? Fje() : void 0;
+  return htr(e, g, s, u, a, r, {
+    requestBytes: () => wR(n ?? {}),
+    ...R?.attestation !== void 0 && {
+      attestation: R.attestation,
+      unattested: R.heldBack,
+      onHeldBack: () => qVt(a.onNotice)
+    }
+  })
+}
+async function htr(e, n, u, a, r, s, g = {}) {
+  let R = g.requestBytes ?? (() => wR({
+      toolInput: n,
+      envelope: u.ok ? u.value : null
+    })),
+    k = {
+      name: r.targetName,
+      working_dir: r.launchDir
+    },
+    T = u.ok && u.kind === "call" ? u.value : void 0,
+    w = Je(r, e),
+    h = $t(r, e),
+    v = Rkn(n, h),
+    I = re(e.replace(/[\p{Cc}\p{Cf}]/gu, ""), Zn),
+    E = {
+      arrivedOver: s,
+      workerEpoch: a.workerEpoch,
+      toolNameForAnalytics: w ? On(w.name) : Kte(e),
+      isMcp: w?.isMcp ?? !1,
+      toolName: w?.name ?? e,
+      resolvedToolName: w?.name,
+      envelope: T,
+      callId: u.ok ? u.value.call_id : void 0,
+      envelopeStatus: u.ok ? "present" : u.why,
+      query: u.ok && u.kind === "outcome_query",
+      enteredRecord: !1,
+      answeredFromRecord: void 0,
+      joinedCallId: void 0,
+      fromPriorEpoch: !1,
+      inputFingerprint: void 0,
+      redeemsAskId: void 0,
+      sessionMode: T?.caller.permission_mode,
+      startedAt: Date.now(),
+      forceAsk: !1,
+      secondLeg: T?.approval !== void 0,
+      approvalAttested: !1,
+      approvalBasis: void 0,
+      deniedBySession: !1,
+      seatsFull: !1,
+      destinationDowngraded: !1,
+      askStillPending: !1,
+      truncated: !1,
+      staleLeg: void 0,
+      ...g.attestation !== void 0 && {
+        attestation: g.attestation
+      },
+      ...g.modeStamp !== void 0 && {
+        modeStamp: g.modeStamp
+      }
+    },
+    N = (B, U, q = {}) => {
+      if (E.secondLeg) E.askStillPending = !0;
+      return Wj(k, E, B, U, q)
+    },
+    H = a.sessionId !== void 0 || r.policy.admission === "none" ? wIe(a) : void 0,
+    M = () => H === void 0 ? void 0 : r.sessions.peek(H),
+    L = T !== void 0 && T.approval === void 0 ? T.call_id : void 0,
+    Z = () => {
+      let B = T?.approval,
+        U = B === void 0 ? void 0 : M()?.pendingAsks.peek(B.ask_id);
+      return U?.callId === T?.call_id ? U : void 0
+    },
+    x = (B) => {
+      let U = T?.approval,
+        q = M(),
+        X = U !== void 0 && q !== void 0 && Z() !== void 0;
+      if (X) C5(q, U.ask_id, {
+        reason: "stale_answer",
+        message: nG({
+          targetName: r.targetName,
+          reason: "stale_answer"
+        })
+      });
+      return E.staleLeg = B, lc(T?.call_id, "stale leg refused", {
+        leg: U === void 0 ? "call" : "answer",
+        age_ms: B.ageMs,
+        window_ms: B.windowMs,
+        ended_ask: X
+      }), Wj(k, E, "stale", pXr({
+        targetName: r.targetName,
+        leg: U === void 0 ? "call" : "answer",
+        endedAsk: X,
+        ageMs: B.ageMs
+      }), X ? {
+        reason: "stale_answer"
+      } : {})
+    },
+    W = await (async () => {
+      if (r.callLog !== void 0 && !r.callLog.priorLoaded) await r.callLog.loadPrior();
+      if (R() > r.policy.limits.max_request_bytes) return N("invalid_request", `The call is larger than ${r.targetName} accepts (${r.policy.limits.max_request_bytes} bytes) \u2014 it was not run.`);
+      if (!u.ok && u.why === "unsupported_protocol") return N("unsupported_protocol", sXr({
+        toolName: I,
+        targetName: r.targetName
+      }));
+      if (!u.ok && u.why === "malformed") return N("invalid_request", `The remote tool call envelope sent to ${r.targetName} was present but did not match protocol v${Sf} (for example a call id or expiry out of range) \u2014 the call was not run.`);
+      let B = (Y) => to({
+        toolName: w?.name ?? I,
+        ctx: a,
+        deps: r,
+        target: k,
+        facts: E,
+        refuse: N,
+        answer: Y
+      });
+      if (g.unattested === !0) return B(() => (g.onHeldBack?.(), N("unattested_request", g.untrustedRepositories !== void 0 ? fXr({
+        targetName: r.targetName,
+        state: g.untrustedRepositories
+      }) : Hje({
+        targetName: r.targetName,
+        status: g.attestation?.status ?? "UNSPECIFIED",
+        subtype: "remote_tool_call"
+      }))));
+      if (g.stale !== void 0) {
+        let Y = g.stale;
+        return B(() => {
+          if (L !== void 0 && H !== void 0) {
+            let F = r.sessions.forCaller(H),
+              V = F?.calls.lookup(L);
+            if (F !== void 0 && V !== void 0) return de({
+              known: V,
+              session: F,
+              hostEpoch: r.sessions.epoch,
+              callId: L,
+              target: k,
+              facts: E
+            });
+            if (F !== void 0) {
+              E.enteredRecord = F.calls.receive(L, w === void 0 ? void 0 : {
+                retryKey: ce(w, v, F.cwd ?? r.launchDir),
+                workerEpoch: a.workerEpoch,
+                late: !0
+              });
+              let z = w === void 0 ? void 0 : F.calls.retryOf(L);
+              if (w !== void 0 && z !== void 0 && z.call.summary.state !== "asked" && z.call.summary.state !== "received" && (z.call.summary.state !== "running" || z.call.summary.started === !0) && !De(w, v)) return E.staleLeg = Y, he({
+                session: F,
+                joined: {
+                  callId: z.callId,
+                  call: F.calls.lookup(z.callId) ?? z.call
+                },
+                hostEpoch: r.sessions.epoch,
+                callId: L,
+                target: k,
+                facts: E,
+                workerEpoch: a.workerEpoch
+              })
+            }
+          }
+          return x(Y)
+        })
+      }
+      if (u.ok && u.kind === "outcome_query") {
+        let Y = u.value.call_id;
+        return B(() => H === void 0 ? N("no_session", `${I} refused: no server-asserted session.`) : ht({
+          sessions: r.sessions,
+          callLog: r.callLog,
+          callerKey: H,
+          callId: Y,
+          target: k,
+          facts: E
+        }))
+      }
+      if (!w) {
+        let Y = () => N("not_served", lXr({
+            toolName: I,
+            targetName: r.targetName
+          })),
+          F = M(),
+          V = T?.call_id,
+          z = F !== void 0 && V !== void 0 ? F.calls.lookup(V) : void 0;
+        if (F === void 0 || V === void 0 || z === void 0) return Y();
+        let ge = () => de({
+          known: F.calls.lookup(V) ?? z,
+          session: F,
+          hostEpoch: r.sessions.epoch,
+          callId: V,
+          target: k,
+          facts: E
+        });
+        if (T?.approval === void 0 || z.summary.state !== "asked") return B(ge);
+        let ee = z.summary.askId !== void 0 ? F.pendingAsks.peek(z.summary.askId) : void 0;
+        if (ee === void 0 || ee.callId !== V || ee.toolStillServed()) return Y();
+        return B(() => {
+          let ye = Y();
+          return C5(F, ee.askId, {
+            reason: "tool_withdrawn",
+            message: nG({
+              targetName: r.targetName,
+              reason: "tool_withdrawn"
+            }),
+            retain: ye
+          }), E.askStillPending = !1, ye
+        })
+      }
+      if (!u.ok && r.policy.requireEnvelope) return N("invalid_request", oXr({
+        toolName: I,
+        targetName: r.targetName
+      }));
+      if (r.readiness !== void 0 && !r.readiness.ready) {
+        if (await nt(r.readiness.whenReady(), vB(pe(r.policy.limits, T) - (Date.now() - E.startedAt))), !r.readiness.ready) return t(`[remote-tools] ${I} refused: this machine was still loading its hooks and settings when the call's deadline ran out`, {
+          level: "warn"
+        }), N("queue_full", uXr({
+          targetName: r.targetName
+        }), {
+          limit: "queue"
+        })
+      }
+      let U = M();
+      if (L !== void 0 && U !== void 0) {
+        let Y = U.calls.lookup(L);
+        if (Y !== void 0) return B(() => de({
+          known: U.calls.lookup(L) ?? Y,
+          session: U,
+          hostEpoch: r.sessions.epoch,
+          callId: L,
+          target: k,
+          facts: E
+        }));
+        E.enteredRecord = U.calls.receive(L, {
+          retryKey: ce(w, v, U.cwd ?? r.launchDir),
+          workerEpoch: a.workerEpoch
+        });
+        let F = U.calls.retryOf(L),
+          V = U.directoryReset;
+        if (F === void 0 && E.enteredRecord && V !== void 0 && V.from !== U.cwd) {
+          U.calls.rekey(L, ce(w, v, V.from));
+          let z = U.calls.retryOf(L);
+          if (z !== void 0 && z.call.receivedAt < V.at) F = z;
+          else U.calls.rekey(L, ce(w, v, U.cwd ?? r.launchDir))
+        }
+        if (F !== void 0 && F.call.summary.state !== "asked" && !De(w, v)) return B(() => he({
+          session: U,
+          joined: {
+            callId: F.callId,
+            call: U.calls.lookup(F.callId) ?? F.call
+          },
+          hostEpoch: r.sessions.epoch,
+          callId: L,
+          target: k,
+          facts: E,
+          workerEpoch: a.workerEpoch
+        }))
+      }
+      let q = () => jt({
+          tool: w,
+          toolInput: v,
+          wireArguments: h,
+          ctx: a,
+          deps: r,
+          target: k,
+          facts: E
+        }),
+        X = T?.approval?.decision === "allow" ? Z() : void 0;
+      if (X !== void 0) X.redeemingLegs += 1, E.redeemsAskId = X.askId;
+      try {
+        if (r.policy.admission === "none") return await q().catch((V) => Ne(V, k, E, a.signal, {}));
+        if (!r.gate) return N("unbound", Wt(I, r.targetName));
+        let Y = Date.now(),
+          F = Gt({
+            target: k,
+            facts: E,
+            refuse: N,
+            ctx: a,
+            serve: () => (E.postureWaitMs = Date.now() - Y, q())
+          });
+        return await (T?.approval?.decision === "deny" ? r.gate.admitWithoutSlot(w.name, a, F) : r.gate.run(w.name, a, F))
+      } finally {
+        if (X !== void 0) X.redeemingLegs -= 1, E.redeemsAskId = void 0
+      }
+    })().catch((B) => (t(`[remote-tools] serving ${I} failed before admission: ${l(B)}`, {
+      level: "warn"
+    }), N("invalid_request", `The call sent to ${r.targetName} could not be read \u2014 it was not run.`))),
+    G = M();
+  if (L !== void 0 && E.enteredRecord && G !== void 0 && E.answeredFromRecord === void 0 && eo(W) && G.calls.lookup(L)?.result === void 0) G.calls.settle(L, W, wkn(W));
+  Kt(W.envelope, E, r, G);
+  let P = mEe(W);
+  return W.dirSync === void 0 ? P : {
+    ...P,
+    structuredContent: {
+      ...P.structuredContent,
+      [Msr]: W.dirSync
+    },
+    ...P.isError === !0 && {
+      _meta: {
+        ...P._meta,
+        [Msr]: W.dirSync
+      }
+    }
+  }
+}
+
+function eo(e) {
+  let {
+    outcome: n
+  } = e.envelope;
+  return n === "completed" || n === "refused" || n === "failed"
+}
+
+function to({
+  toolName: e,
+  ctx: n,
+  deps: u,
+  target: a,
+  facts: r,
+  refuse: s,
+  answer: g
+}) {
+  if (u.policy.admission === "none") return Promise.resolve(g());
+  if (!u.gate) return Promise.resolve(s("unbound", Wt(e, u.targetName)));
+  return u.gate.admitWithoutSlot(e, n, Gt({
+    target: a,
+    facts: r,
+    refuse: s,
+    ctx: n,
+    serve: () => Promise.resolve(g())
+  }))
+}
+
+function Gt({
+  target: e,
+  facts: n,
+  refuse: u,
+  ctx: a,
+  serve: r
+}) {
+  return {
+    refuse: (s, g) => u(no(s), g),
+    fail: (s) => Ne(s, e, n, a.signal, {}),
+    cancelled: () => eG(e, n, "cancelled", "The caller cancelled the call before it ran."),
+    serve: r
+  }
+}
+
+function Wt(e, n) {
+  return `${e} refused: ${n} is not accepting calls from cloud sessions right now.`
+}
+
+function no(e) {
+  switch (e) {
+    case "no_session":
+      return "no_session";
+    case "unbound_device":
+    case "mode_withdrawn":
+      return "unbound";
+    case "too_many_concurrent":
+      return "too_many_in_flight";
+    default:
+      return "sandbox_unavailable"
+  }
+}
+
+function Bqo(e = {}) {
+  let n = e.tools ?? Jw,
+    u = e.policy ?? Ce;
+  return (a) => {
+    let {
+      registry: r,
+      getDeviceId: s,
+      onNotice: g,
+      serving: R
+    } = a, k = u(), T = R !== void 0 ? R.offReason : oz();
+    if (T !== void 0) {
+      let G = s() !== void 0;
+      if (i("tengu_remote_tool_serving", {
+          event: y("gate_off"),
+          served_tool_count: 0,
+          policy: c(k.name),
+          reason: c(T),
+          ...cpe(T),
+          bound: G
+        }), G && sEe(T)) g?.(UCt, BCt);
+      return
+    }
+    let w = fQe(a, {
+        tools: n,
+        policy: u
+      }),
+      h = (G) => {
+        let P = Oje(w.deps).map((B) => co(B, w.deps, w.description));
+        r.setGroup(mQe, P), i("tengu_remote_tool_serving", {
+          event: y(G),
+          served_tool_count: P.length,
+          policy: c(w.policy.name),
+          project_sync: c(w.description.project_sync ?? "unknown")
+        })
+      };
+    h("announced");
+    let v = !1,
+      I, {
+        attachSyncs: E
+      } = b_(),
+      N = () => {
+        if (w.description.project_sync !== "unknown" && !E.concerns(a.sessionId)) I?.(), I = void 0
+      },
+      H, M = (G, P) => {
+        if (v) return;
+        H = P ?? H;
+        let B = G === "unknown" && E.concerns(a.sessionId) ? "off" : G;
+        if (w.redescribe(B, H)) h("redescribed");
+        N()
+      },
+      L = () => {
+        if (v || I !== void 0 || w.description.project_sync !== "unknown" && !E.concerns(a.sessionId)) return;
+        I = (e.watchProjectSync ?? lo)(a.sessionId, (G) => M(Yt(G))), N()
+      };
+    if (a.dirSync instanceof Promise) {
+      let G = a.folderRelation?.catch(() => {
+        return
+      });
+      a.dirSync.then((P) => {
+        if (!P) {
+          if (G === void 0) {
+            M("off");
+            return
+          }
+          return G.then((B) => M("off", B))
+        }
+        M(et(a.sessionId)), L()
+      }, () => M("off")).catch((P) => d(te(P)))
+    }
+    L();
+    let Z = E.onChanged(a.sessionId, () => {
+        M(et(a.sessionId)), L()
+      }),
+      x = (e.isMuted ?? XA)();
+    if (x && ZP() && s() !== void 0) g?.(_ae, Di["serving_off.muted"]);
+    let W = (e.onMuteRecheck ?? JA)(() => {
+      let G = (e.isMuted ?? XA)();
+      if (v || G === x) return;
+      if (x = G, x) {
+        let P = w.deps.sessions.peek(wIe({
+          sessionId: a.sessionId
+        }));
+        for (let B of P?.pendingAsks.list() ?? [])
+          if (B.raisedOver === "bridge") C5(P, B.askId, {
+            reason: "host_unbound",
+            message: nG({
+              targetName: w.description.name,
+              reason: "host_unbound"
+            })
+          })
+      }
+      if (ZP() && s() !== void 0) g?.(x ? _ae : iEe, Di[x ? "serving_off.muted" : "serving_on.unmuted"])
+    });
+    return () => {
+      v = !0, W(), Z(), I?.(), w.dispose(), r.setGroup(mQe, []), i("tengu_remote_tool_serving", {
+        event: y("withdrawn"),
+        served_tool_count: 0,
+        policy: c(w.policy.name)
+      })
+    }
+  }
+}
+
+function fQe(e, n = {}) {
+  let u = e.servingKit.current;
+  if (u !== void 0) {
+    if (n.tools !== void 0 && n.tools !== u.tools || n.policy !== void 0 && n.policy !== u.policy) throw Error("servingKitFor: a second tool group asked for a different tool set or policy than the kit was built with");
+    return u.kit
+  }
+  let a = n.tools ?? Jw,
+    r = n.policy ?? Ce,
+    s = hkn({
+      sessionId: e.sessionId,
+      limiter: e.limiter,
+      getDeviceId: e.getDeviceId,
+      onNotice: e.onNotice,
+      tools: a,
+      policy: r,
+      ...e.dirSync !== void 0 && {
+        dirSync: e.dirSync
+      },
+      ...e.transport !== void 0 && {
+        registrationTransport: e.transport
+      },
+      ...e.readiness !== void 0 && {
+        readiness: e.readiness
+      }
+    }),
+    g = {
+      ...s,
+      get description() {
+        return s.description
+      },
+      dispose: () => {
+        if (s.dispose(), e.servingKit.current?.kit === g) e.servingKit.current = void 0
+      }
+    };
+  return e.servingKit.current = {
+    kit: g,
+    tools: a,
+    policy: r
+  }, g
+}
+var ao = 1000;
+
+function hkn(e) {
+  let {
+    limiter: n,
+    onNotice: u,
+    sessionId: a
+  } = e, r = e.tools ?? Jw, s = (e.policy ?? Ce)(), g = e.launchDir ?? we(), R = oo(), k = Me(), T = e.getDeviceId(), w = r(), h = mt({
+    policy: s,
+    launchDir: g,
+    projectSync: e.dirSync === !1 ? "off" : et(a),
+    syncRoot: b_().rootOf(a),
+    readyToSyncAtAttach: qt(a),
+    epoch: R,
+    ...T !== void 0 && {
+      deviceId: T
+    },
+    servedToolNames: Oje({
+      policy: s,
+      tools: w
+    }).map((x) => x.name)
+  }), v = Hdo({
+    epoch: R,
+    targetName: h.name
+  });
+  AC(() => Promise.race([v.flush(), Q(ao, void 0, {
+    unref: !0
+  })]));
+  let I = J9r({
+      limit: Bnn(),
+      epoch: R,
+      priorCallsFor: v.priorCallsFor
+    }),
+    E = Hn(),
+    N = new Set,
+    H = u === void 0 ? void 0 : (x, W) => {
+      if (!N.has(x)) N.add(x), u(x, W)
+    },
+    M = new Map,
+    L = new Map,
+    Z = {
+      policy: s,
+      targetName: h.name,
+      ...T !== void 0 && {
+        deviceId: T
+      },
+      launchDir: g,
+      reach: Fdo({
+        launchDir: g,
+        projectDir: kr(),
+        originalCwd: we()
+      }),
+      ...H !== void 0 && {
+        onNotice: H
+      },
+      dirSyncOf: (x) => b_().syncOf(x),
+      tools: w,
+      gate: pt(s, {
+        limiter: n,
+        getDeviceId: e.getDeviceId,
+        isModeCurrent: () => !0
+      }),
+      sessions: I,
+      callLog: v,
+      readiness: e.readiness ?? btr(),
+      lifetime: E.signal,
+      servedMcpTools: () => M,
+      servedMcpWireArguments: (x) => L.get(x),
+      ...e.registrationTransport !== void 0 && {
+        registrationTransport: e.registrationTransport
+      }
+    };
+  if (Z.reach.projectHooks !== void 0) AC(() => tyr(Z.reach));
+  return {
+    policy: s,
+    get description() {
+      return h
+    },
+    redescribe: (x, W) => {
+      let G = He(x, W),
+        P = Be(h.capabilities ?? [], qt(a));
+      if (x === h.project_sync && G.folder_relation === h.folder_relation && so(P, h.capabilities ?? [])) return !1;
+      let {
+        sync_root: B,
+        folder_relation: U,
+        capabilities: q,
+        ...X
+      } = h, Y = b_().rootOf(a);
+      h = {
+        ...X,
+        project_sync: x,
+        ...Y !== void 0 && Fe(x) && {
+          sync_root: Y
+        },
+        ...G,
+        ...P.length > 0 && {
+          capabilities: P
+        }
+      };
+      try {
+        k.emit()
+      } catch (F) {
+        d(te(F))
+      }
+      return !0
+    },
+    onRedescribed: k.subscribe,
+    deps: Z,
+    setServedMcp: (x, W) => {
+      M = x, L = W
+    },
+    heldServedCall: (x) => {
+      let W = I.heldAsk(wIe({
+        sessionId: a
+      }), x.toolUseId);
+      if (W === void 0) return mU;
+      return _X(x.input).requested === h.name && L9r(W, x.toolName, x.input) ? {
+        held: !0,
+        startCwd: W.startCwd
+      } : {
+        held: !1,
+        reason: "other_input"
+      }
+    },
+    dispose: () => {
+      E.abort(), tyr(Z.reach)
+    }
+  }
+}
+
+function qt(e) {
+  return b_().attachSyncs.ready(e)
+}
+
+function et(e) {
+  return Yt(b_().stateOf(e))
+}
+
+function lo(e, n) {
+  return b_().watchState(e, n)
+}
+
+function Yt(e) {
+  switch (e?.state) {
+    case "armed":
+      return e.direction === "pending" ? "unknown" : e.direction;
+    case "off":
+    case "stopped":
+      return "off";
+    case void 0:
+    case "seeding":
+      return "unknown"
+  }
+}
+
+function Vt(e, n) {
+  if (e.refusedInputFields) return e.refusedInputFields(n);
+  let u = py(n);
+  return u.supported ? u.refusedInputFields ?? [] : []
+}
+
+function co(e, n, u) {
+  let a = Vt(n.policy, e);
+  return {
+    definition: {
+      name: e.name,
+      description: zt(e, u),
+      inputSchema: Xt(e, [...a, dr]),
+      _meta: {
+        [FT]: {
+          v: WIt,
+          tool: e.name,
+          refused_input_fields: a,
+          target: u,
+          protocol_versions: BLe
+        }
+      }
+    },
+    analyticsName: y("remote_served_tool"),
+    senderJudgedBy: "handler",
+    call: (r, s) => gkn(e.name, r, s, n, "bridge")
+  }
+}
+
+function ytr(e, n, u) {
+  let a = Vt(n.policy, e);
+  return {
+    name: e.name,
+    refused_input_fields: a,
+    protocol_versions: BLe,
+    description: zt(e, u),
+    input_schema: Xt(e, [...a, dr])
+  }
+}
+
+function zt(e, n) {
+  return `Claude Code ${e.name} served by ${n.name} for its bound cloud session; called by that session's own routing, not directly.`
+}
+
+function Xt(e, n) {
+  let u = uo().safeParse(pF(e.inputSchema));
+  if (!u.success) throw Error("a served tool must have an object input schema");
+  let {
+    properties: a,
+    required: r
+  } = u.data, s = r?.filter((g) => !n.includes(g));
+  return {
+    type: "object",
+    properties: ss(a, n),
+    ...s?.length && {
+      required: s
+    }
+  }
+}
+var uo = f(() => ut({
+  type: A("object"),
+  properties: fe(o(), fe(o(), ae())),
+  required: C(o()).optional()
+}));
+export {
+  wIe,
+  Oje,
+  gkn,
+  htr,
+  Bqo,
+  fQe,
+  hkn,
+  ytr
+};

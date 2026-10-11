@@ -1,0 +1,1 @@
+function Dr(e,t){for(let r of["surface","component","requestId","element","module"])if(e[r]!==t[r])return`{ ${r} } rewritten; only data may change`;if(!("data"in e)||e.data===void 0)return"no { data }";let o=TNt(e.data);return o===void 0?void 0:`data ${o}`}

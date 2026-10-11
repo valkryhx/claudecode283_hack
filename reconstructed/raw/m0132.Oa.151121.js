@@ -1,0 +1,1 @@
+function Oa(e,t,o){let r={};for(let n of o.methods)r[n]=e.wrapMethod(()=>{throw new De(`${e.pluginName}: $.${t}.${n} is not callable from an engine.create step registered through on("*"); hook engine.create by name to compose nouns`)});return R_(r)}

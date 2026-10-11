@@ -1,0 +1,1 @@
+function ns({error:e,handler:t,site:o,effect:r,cause:n}){let s=Ye(t,l(e));if(kc().log(`hook failed: ${t.name}: ${Pe(e)} (${o.event}; ${r})`,"error"),!q(t))kc().hookFailed({plugin:t.name,environmentId:t.environmentId,event:o.event,reason:s,effect:r,hasOverrun:!1,skip:t.isHop===!0?void 0:rs(e,n)});return s}

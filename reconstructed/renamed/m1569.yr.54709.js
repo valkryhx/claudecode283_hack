@@ -1,0 +1,57 @@
+/* ==========================================================================
+ * m1569.yr   [m1569_0xdceb889.js @ 54709]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function yr(e, r) {
+  let n = kr.of(e);
+  if (n.opened) return n.opened;
+  if (n.unsubscribe === void 0) {
+    let s = Y();
+    n.unsubscribe = Qd((a, w) => {
+      if (w === "cd" || w === "hydrate" || a === s) return;
+      n.unsubscribe?.(), kr.drop(e), st.drop(e);
+    });
+  }
+  return n.opened = (async () => {
+    let s = br(e),
+      a = Zr(),
+      w = Ht.of(e),
+      h = w.get(a);
+    if (h !== void 0) {
+      if (p("workflow_journal", "writer_reclaimed"), t(`world journal at ${a} had a writer from before a session switch; the re-entered session reclaims the file and the pre-switch world stops journaling`, {
+        level: "warn"
+      }), await h(), w.get(a) === h) w.delete(a);
+    }
+    let g = 0,
+      k = !1,
+      R = !1;
+    try {
+      let {
+        lines: I,
+        skipped: x
+      } = await tt(a, r);
+      if (I.length > 0 && s.rows.length === 0) g = ot(s, I);
+      k = x === 0 && g === nt(I) && s.rows.length === g;
+    } catch (I) {
+      R = !0, t(`world journal replay failed: ${I}`, {
+        level: "warn"
+      });
+    }
+    if (kr.peek(e) !== n) return yr(e, r);
+    if (!k) {
+      if (p("workflow_journal", R ? "replay_failed" : "not_whole"), t(`world journal at ${a} is not whole after replay (${g} rows restored); the world stays in memory for this session`, {
+        level: "warn"
+      }), R) n.opened = void 0;
+      return {
+        restored: g,
+        attached: !1
+      };
+    }
+    return w.set(a, et(s, a, r)), _("workflow_journal"), {
+      restored: g,
+      attached: !0
+    };
+  })(), n.opened;
+}

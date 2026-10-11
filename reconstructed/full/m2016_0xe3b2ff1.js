@@ -1,0 +1,681 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  as
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import {
+  I,
+  xr
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-4tkwpa6e.js";
+import "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-e1thvnpv.js";
+import "B:/~BUN/root/chunk-1x7a47hz.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import "B:/~BUN/root/chunk-kss0wzj5.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-tq1hs216.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import {
+  oe
+} from "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import {
+  xo
+} from "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-jpnyq4t7.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import {
+  s,
+  n
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import "B:/~BUN/root/chunk-e9hrnhar.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-p4t9nwg2.js";
+import {
+  u_t,
+  p_t
+} from "B:/~BUN/root/chunk-trcn2d68.js";
+import "B:/~BUN/root/chunk-q1b7bx45.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import "B:/~BUN/root/chunk-mvdr6ncg.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-jz31jc2e.js";
+import "B:/~BUN/root/chunk-p3ewqd1e.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-dczbgj6x.js";
+import "B:/~BUN/root/chunk-1223v177.js";
+import "B:/~BUN/root/chunk-0rtwbec7.js";
+import "B:/~BUN/root/chunk-jdm3bsma.js";
+import "B:/~BUN/root/chunk-d4pzq02b.js";
+import {
+  ve
+} from "B:/~BUN/root/chunk-cxqcvpm0.js";
+import {
+  Le
+} from "B:/~BUN/root/chunk-dk0c0nrh.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import {
+  Xlt,
+  Jlt
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-f1dj0k6n.js";
+import "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import {
+  xl
+} from "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import {
+  stn,
+  XW,
+  APt,
+  ltn
+} from "B:/~BUN/root/chunk-efz11ra0.js";
+import "B:/~BUN/root/chunk-7nc4t0q7.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-q52x4j16.js";
+import "B:/~BUN/root/chunk-acd2tycn.js";
+import "B:/~BUN/root/chunk-bxbr6qzf.js";
+import {
+  Ed,
+  c_,
+  Fp
+} from "B:/~BUN/root/chunk-qg1rz74p.js";
+import "B:/~BUN/root/chunk-mgxre38x.js";
+import "B:/~BUN/root/chunk-h23911wn.js";
+import "B:/~BUN/root/chunk-6wgkxd9a.js";
+import "B:/~BUN/root/chunk-w5s5fy4b.js";
+import "B:/~BUN/root/chunk-93kq3f21.js";
+import "B:/~BUN/root/chunk-q7jerdh3.js";
+import "B:/~BUN/root/chunk-5dn8wsxz.js";
+import {
+  d_
+} from "B:/~BUN/root/chunk-h89fwq58.js";
+import "B:/~BUN/root/chunk-196w7fz7.js";
+import "B:/~BUN/root/chunk-y39emrp9.js";
+import "B:/~BUN/root/chunk-gbtzpa3e.js";
+import "B:/~BUN/root/chunk-ewvnv67m.js";
+import "B:/~BUN/root/chunk-5dk9zqaz.js";
+import {
+  Rb
+} from "B:/~BUN/root/chunk-ykembm0j.js";
+import "B:/~BUN/root/chunk-4r6zcwth.js";
+import "B:/~BUN/root/chunk-nrrn2axm.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import "B:/~BUN/root/chunk-ew8y0fm0.js";
+import {
+  u5,
+  qht
+} from "B:/~BUN/root/chunk-ce9thsvp.js";
+import "B:/~BUN/root/chunk-vf07m8qt.js";
+import "B:/~BUN/root/chunk-b5qh4e85.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import "B:/~BUN/root/chunk-9z0za8jx.js";
+import "B:/~BUN/root/chunk-4dw8761b.js";
+import "B:/~BUN/root/chunk-c50e3nb9.js";
+import "B:/~BUN/root/chunk-106hagsg.js";
+import "B:/~BUN/root/chunk-qq6w89ha.js";
+import "B:/~BUN/root/chunk-q3x7vf9d.js";
+import "B:/~BUN/root/chunk-v8s05yj9.js";
+import "B:/~BUN/root/chunk-tzzvaz2j.js";
+import {
+  Lr
+} from "B:/~BUN/root/chunk-m4ehcybg.js";
+import {
+  Sr,
+  mr,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import "B:/~BUN/root/chunk-cn8bxjex.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-995m8a2a.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+N();
+import {
+  isAbsolute as de,
+  relative as Y,
+  resolve as ue
+} from "path";
+
+function pe(o, i, a = 1 / 0) {
+  let l = i <= 0 || !Number.isFinite(i),
+    f = 0,
+    c = 0;
+  while (c <= o.length) {
+    let h = o.indexOf(`
+`, c),
+      u = h === -1 ? o.substring(c) : o.substring(c, h);
+    if (l) f++;
+    else {
+      let b = u_t(u);
+      f += b === 0 ? 1 : Math.ceil(b / i)
+    }
+    if (f > a) return f;
+    if (h === -1) break;
+    c = h + 1
+  }
+  return f
+}
+
+function Q(o, i, a) {
+  return pe(o, i, a) > a
+}
+var y = 10,
+  P = `
+`;
+
+function W(o) {
+  let i = o.split(P);
+  return o.endsWith(P) ? i.length - 1 : i.length
+}
+
+function Z(o, i) {
+  let a = p_t(o, i).height;
+  return o.endsWith(P) ? a - 1 : a
+}
+
+function F() {
+  let o = w(1),
+    i;
+  if (o[0] === S) i = e(n, {
+    dimColor: !0,
+    children: " \u2014 previous content replaced (no diff shown)"
+  }), o[0] = i;
+  else i = o[0];
+  return i
+}
+
+function se(o) {
+  let p = w(37),
+    {
+      filePath: i,
+      content: a,
+      verbose: l,
+      replacedUndiffedContent: f
+    } = o,
+    c = f === void 0 ? !1 : f,
+    {
+      columns: h
+    } = ve(),
+    u = Math.max(1, h - 12),
+    b = a || "(No content)",
+    v;
+  if (p[0] !== a) v = W(a), p[0] = a, p[1] = v;
+  else v = p[1];
+  let m = v,
+    x;
+  if (p[2] !== b || p[3] !== u || p[4] !== l) x = l ? b : b.split(P).slice(0, y).join(P).slice(0, y * (u + 1)), p[2] = b, p[3] = u, p[4] = l, p[5] = x;
+  else x = p[5];
+  let T = x,
+    z = l ? 0 : Z(b, u) - y,
+    C;
+  if (p[6] !== m) C = e(n, {
+    bold: !0,
+    children: m
+  }), p[6] = m, p[7] = C;
+  else C = p[7];
+  let D;
+  if (p[8] !== m) D = I(m, "line"), p[8] = m, p[9] = D;
+  else D = p[9];
+  let L;
+  if (p[10] !== i || p[11] !== l) L = l ? i : Y(oe(), i), p[10] = i, p[11] = l, p[12] = L;
+  else L = p[12];
+  let M;
+  if (p[13] !== L) M = e(n, {
+    bold: !0,
+    children: L
+  }), p[13] = L, p[14] = M;
+  else M = p[14];
+  let U;
+  if (p[15] !== c) U = c && e(F, {}), p[15] = c, p[16] = U;
+  else U = p[16];
+  let _;
+  if (p[17] !== C || p[18] !== D || p[19] !== M || p[20] !== U) _ = r(n, {
+    children: ["Wrote ", C, " ", D, " to", " ", M, U]
+  }), p[17] = C, p[18] = D, p[19] = M, p[20] = U, p[21] = _;
+  else _ = p[21];
+  const J = l ? void 0 : "hidden",
+    K = l ? void 0 : y;
+  let j;
+  if (p[22] !== T || p[23] !== i || p[24] !== u) j = e(d_, {
+    code: T,
+    filePath: i,
+    width: u
+  }), p[22] = T, p[23] = i, p[24] = u, p[25] = j;
+  else j = p[25];
+  let H;
+  if (p[26] !== J || p[27] !== K || p[28] !== j) H = e(s, {
+    flexDirection: "column",
+    overflowY: J,
+    maxHeight: K,
+    children: j
+  }), p[26] = J, p[27] = K, p[28] = j, p[29] = H;
+  else H = p[29];
+  let O;
+  if (p[30] !== z || p[31] !== l) O = !l && e(c_, {
+    count: z,
+    expandable: !0
+  }), p[30] = z, p[31] = l, p[32] = O;
+  else O = p[32];
+  let fe;
+  if (p[33] !== H || p[34] !== O || p[35] !== _) fe = e(Le, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [_, H, O]
+    })
+  }), p[33] = H, p[34] = O, p[35] = _, p[36] = fe;
+  else fe = p[36];
+  return fe
+}
+
+function ae({
+  type: o,
+  content: i,
+  structuredPatch: a,
+  originalFile: l
+}) {
+  return o === "update" && Array.isArray(a) && a.length === 0 && l === null && typeof i === "string" && i !== ""
+}
+
+function rt(o, {
+  columns: i
+}) {
+  let {
+    type: a,
+    content: l
+  } = o;
+  if (a !== "create" && !ae(o)) return !1;
+  if (typeof l !== "string") return !1;
+  let f = l.endsWith(P) ? y + 1 : y;
+  return Q(l, Math.max(1, i - 12), f)
+}
+
+function ot(o, {
+  verbose: i
+}) {
+  if (!o.file_path) return null;
+  if (o.file_path.startsWith(xl())) return "";
+  return e(Rb, {
+    filePath: o.file_path,
+    children: i ? o.file_path : xo(o.file_path)
+  })
+}
+
+function nt({
+  file_path: o,
+  content: i
+}, {
+  style: a,
+  verbose: l
+}) {
+  return e(le, {
+    filePath: o,
+    content: i,
+    style: a,
+    verbose: l
+  })
+}
+
+function le(o) {
+  let c = w(20),
+    {
+      filePath: i,
+      content: a,
+      style: l,
+      verbose: f
+    } = o,
+    h;
+  if (c[0] !== a || c[1] !== i) h = () => ie(i, a), c[0] = a, c[1] = i, c[2] = h;
+  else h = c[2];
+  let [u] = g(h), b;
+  if (c[3] !== a) b = xr(a), c[3] = a, c[4] = b;
+  else b = c[4];
+  let p = b,
+    v;
+  if (c[5] !== a || c[6] !== i || c[7] !== p || c[8] !== f) v = e(u5, {
+    file_path: i,
+    operation: "write",
+    content: a,
+    firstLine: p,
+    verbose: f
+  }), c[5] = a, c[6] = i, c[7] = p, c[8] = f, c[9] = v;
+  else v = c[9];
+  let m = v,
+    x;
+  if (c[10] !== m || c[11] !== u || c[12] !== i || c[13] !== p || c[14] !== l || c[15] !== f) x = e(q, {
+    promise: u,
+    filePath: i,
+    firstLine: p,
+    createFallback: m,
+    style: l,
+    verbose: f
+  }), c[10] = m, c[11] = u, c[12] = i, c[13] = p, c[14] = l, c[15] = f, c[16] = x;
+  else x = c[16];
+  let T;
+  if (c[17] !== m || c[18] !== x) T = e(Sr, {
+    fallback: m,
+    children: x
+  }), c[17] = m, c[18] = x, c[19] = T;
+  else T = c[19];
+  return T
+}
+
+function q(o) {
+  let b = w(8),
+    {
+      promise: i,
+      filePath: a,
+      firstLine: l,
+      createFallback: f,
+      style: c,
+      verbose: h
+    } = o,
+    u = mr(i);
+  if (u.type === "create") {
+    return f
+  }
+  if (u.type === "error") {
+    let p;
+    if (b[0] === S) p = e(Le, {
+      children: e(n, {
+        children: "(No changes)"
+      })
+    }), b[0] = p;
+    else p = b[0];
+    return p
+  }
+  let p;
+  if (b[1] !== u.oldContent || b[2] !== u.patch || b[3] !== a || b[4] !== l || b[5] !== c || b[6] !== h) p = e(u5, {
+    file_path: a,
+    operation: "update",
+    patch: u.patch,
+    firstLine: l,
+    fileContent: u.oldContent,
+    style: c,
+    verbose: h
+  }), b[1] = u.oldContent, b[2] = u.patch, b[3] = a, b[4] = l, b[5] = c, b[6] = h, b[7] = p;
+  else p = b[7];
+  return p
+}
+async function ie(o, i) {
+  try {
+    let a = de(o) ? o : ue(oe(), o),
+      l = await APt(a);
+    if (l === null) return {
+      type: "create"
+    };
+    let f;
+    try {
+      f = await ltn(l)
+    } finally {
+      await l.close()
+    }
+    if (f === null) return {
+      type: "create"
+    };
+    return {
+      type: "update",
+      patch: XW({
+        filePath: o,
+        fileContents: f,
+        edits: [{
+          old_string: f,
+          new_string: i,
+          replace_all: !1
+        }]
+      }),
+      oldContent: f
+    }
+  } catch (a) {
+    if (as(a)) t(`Failed to load rejection diff for ${o}: ${a.message}`, {
+      level: "error"
+    });
+    else d(a);
+    return {
+      type: "error"
+    }
+  }
+}
+
+function it(o, {
+  verbose: i
+}) {
+  if (!i && typeof o === "string" && Lr(o, "tool_use_error")) return e(Le, {
+    children: e(n, {
+      color: "error",
+      children: "Error writing file"
+    })
+  });
+  return e(Fp, {
+    result: o,
+    verbose: i
+  })
+}
+
+function st(o, i, {
+  style: a,
+  verbose: l
+}) {
+  if (o.staged && o.filePath) return e(Le, {
+    children: e(n, {
+      dimColor: !0,
+      children: stn
+    })
+  });
+  return ce(o, i, {
+    style: a,
+    verbose: l
+  })
+}
+
+function ce(o, i, {
+  style: a,
+  verbose: l,
+  replacedUndiffedContent: f = !1
+}) {
+  let {
+    filePath: c = "",
+    content: h,
+    structuredPatch: u,
+    type: b,
+    originalFile: p
+  } = o;
+  if (!c) return null;
+  switch (b) {
+    case "create": {
+      if (c.startsWith(xl()) && !l) {
+        if (a !== "condensed") return e(Le, {
+          children: e(n, {
+            dimColor: !0,
+            children: "/plan to preview"
+          })
+        })
+      } else if (a === "condensed" && !l) {
+        let m = W(h);
+        return r(n, {
+          children: ["Wrote ", e(n, {
+            bold: !0,
+            children: m
+          }), " ", I(m, "line"), " to", " ", e(n, {
+            bold: !0,
+            children: Y(oe(), c)
+          }), f && e(F, {})]
+        })
+      } else if (!l && (Xlt(c) || Jlt(c))) {
+        let m = W(h);
+        return e(Le, {
+          children: r(n, {
+            children: ["Wrote ", e(n, {
+              bold: !0,
+              children: m
+            }), " ", I(m, "line"), f && e(F, {}), " ", e(Ed, {})]
+          })
+        })
+      }
+      return e(se, {
+        filePath: c,
+        content: h,
+        verbose: l,
+        replacedUndiffedContent: f
+      })
+    }
+    case "update": {
+      if (ae(o)) return ce({
+        ...o,
+        type: "create"
+      }, i, {
+        style: a,
+        verbose: l,
+        replacedUndiffedContent: !0
+      });
+      let v = c.startsWith(xl());
+      return e(qht, {
+        filePath: c,
+        structuredPatch: u,
+        firstLine: xr(h),
+        fileContent: p ?? void 0,
+        style: a,
+        verbose: l,
+        previewHint: v ? "/plan to preview" : void 0,
+        collapsed: !v && (Xlt(c) || Jlt(c))
+      })
+    }
+  }
+}
+export {
+  rt as isResultTruncated, st as renderToolResultMessage, it as renderToolUseErrorMessage, ot as renderToolUseMessage, nt as renderToolUseRejectedMessage
+};

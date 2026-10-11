@@ -1,0 +1,1 @@
+function hsr(e,s,r){r.update(e,(o)=>{let n=o.status==="running"?s:void 0;if(o.rateLimitWait?.resetsAt===n?.resetsAt&&o.rateLimitWait?.resumeAtMs===n?.resumeAtMs&&o.rateLimitWait?.waitingAgents===n?.waitingAgents)return o;return{...o,rateLimitWait:n}})}

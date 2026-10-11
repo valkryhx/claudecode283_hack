@@ -1,0 +1,1249 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import "B:/~BUN/root/chunk-kks4mj3w.js";
+import { l, v } from "B:/~BUN/root/chunk-bgthmgyc.js";
+import { nt } from "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import { t } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import "B:/~BUN/root/chunk-y04k89s2.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import { d, O } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import { K } from "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-1rjcv085.js";
+import { gko, _ee, sb, ZA, D9, JO, lge, UT, rn, Oko, vOt, oNe, fge, Mt, m4e, g4e, Wko, Lc, Oae, IV, zko, L3, qL, EOt, TOt, Gko, Vko, qko, Kko, Yko, rat, ex, y4e } from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import "B:/~BUN/root/chunk-ew8y0fm0.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-3hjtxzqy.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-f1dj0k6n.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import "B:/~BUN/root/chunk-d8zzdckb.js";
+import "B:/~BUN/root/chunk-30zp50p7.js";
+import "B:/~BUN/root/chunk-f6h9k5ss.js";
+import "B:/~BUN/root/chunk-kwex2zh0.js";
+import "B:/~BUN/root/chunk-1724zw97.js";
+import "B:/~BUN/root/chunk-196w7fz7.js";
+import "B:/~BUN/root/chunk-dt2g8e1y.js";
+import "B:/~BUN/root/chunk-vq58jz92.js";
+import "B:/~BUN/root/chunk-s95n71e7.js";
+import "B:/~BUN/root/chunk-r6beatp9.js";
+import { bh, gO } from "B:/~BUN/root/chunk-a716ngan.js";
+import "B:/~BUN/root/chunk-jr7rmyt0.js";
+import { lze } from "B:/~BUN/root/chunk-h7prpcgw.js";
+import { jCn } from "B:/~BUN/root/chunk-cph4m8td.js";
+import "B:/~BUN/root/chunk-0w5kpsps.js";
+import "B:/~BUN/root/chunk-gbtzpa3e.js";
+import "B:/~BUN/root/chunk-n5swsemr.js";
+import { DM as createUploadFilter_2 } from "B:/~BUN/root/chunk-3jyp964r.js";
+import "B:/~BUN/root/chunk-5dk9zqaz.js";
+import "B:/~BUN/root/chunk-ewvnv67m.js";
+import "B:/~BUN/root/chunk-4mcmxrhr.js";
+import "B:/~BUN/root/chunk-yeg3gem6.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-8xaxa0y1.js";
+import "B:/~BUN/root/chunk-spgj5paf.js";
+import "B:/~BUN/root/chunk-y39emrp9.js";
+import "B:/~BUN/root/chunk-tgk1nfes.js";
+import "B:/~BUN/root/chunk-5yjtercz.js";
+import "B:/~BUN/root/chunk-88mdabet.js";
+import "B:/~BUN/root/chunk-r6m7remx.js";
+import "B:/~BUN/root/chunk-384x2wn9.js";
+import "B:/~BUN/root/chunk-nrrn2axm.js";
+import "B:/~BUN/root/chunk-8qv35yd7.js";
+import "B:/~BUN/root/chunk-5nfpvvfh.js";
+import "B:/~BUN/root/chunk-yzpw1mdr.js";
+import "B:/~BUN/root/chunk-2pww2v3x.js";
+import "B:/~BUN/root/chunk-6cq25d8x.js";
+import "B:/~BUN/root/chunk-846bv8b5.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-n3t3nbqw.js";
+import "B:/~BUN/root/chunk-wefm1yd9.js";
+import "B:/~BUN/root/chunk-4dctrsn2.js";
+import "B:/~BUN/root/chunk-38kffpyk.js";
+import "B:/~BUN/root/chunk-9mfh08mz.js";
+import "B:/~BUN/root/chunk-0vgj9y5e.js";
+import "B:/~BUN/root/chunk-65tbbnf1.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-xy9bynby.js";
+import "B:/~BUN/root/chunk-mc8ranwc.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-6k625ztj.js";
+import "B:/~BUN/root/chunk-2m5rfp86.js";
+import "B:/~BUN/root/chunk-2n2hx639.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import "B:/~BUN/root/chunk-skjrk8s1.js";
+import "B:/~BUN/root/chunk-mmnpv22v.js";
+import "B:/~BUN/root/chunk-nhxcgss8.js";
+import "B:/~BUN/root/chunk-ye6tacpp.js";
+import "B:/~BUN/root/chunk-affnknva.js";
+import "B:/~BUN/root/chunk-je63fn7b.js";
+import "B:/~BUN/root/chunk-90zbw58x.js";
+import "B:/~BUN/root/chunk-aa7kpy4p.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-8k39s5js.js";
+import "B:/~BUN/root/chunk-ewjenbzd.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-70qv5h0a.js";
+import "B:/~BUN/root/chunk-efz11ra0.js";
+import "B:/~BUN/root/chunk-6wgkxd9a.js";
+import "B:/~BUN/root/chunk-d6sc6w1r.js";
+import "B:/~BUN/root/chunk-9qtz41py.js";
+import "B:/~BUN/root/chunk-n2rcpjj1.js";
+import "B:/~BUN/root/chunk-1xb1enjd.js";
+import "B:/~BUN/root/chunk-m1qtc24s.js";
+import "B:/~BUN/root/chunk-p6ejqvds.js";
+import "B:/~BUN/root/chunk-zfb6h1v8.js";
+import "B:/~BUN/root/chunk-3k26zwm7.js";
+import "B:/~BUN/root/chunk-y2pt1fm0.js";
+import "B:/~BUN/root/chunk-ec3373a4.js";
+import "B:/~BUN/root/chunk-5emths66.js";
+import "B:/~BUN/root/chunk-1dghpe22.js";
+import "B:/~BUN/root/chunk-0djrqga0.js";
+import "B:/~BUN/root/chunk-7azfcycf.js";
+import "B:/~BUN/root/chunk-q3sthw4s.js";
+import "B:/~BUN/root/chunk-5a1m1kxy.js";
+import "B:/~BUN/root/chunk-4q0h6gxt.js";
+import "B:/~BUN/root/chunk-a8gk62v4.js";
+import "B:/~BUN/root/chunk-ehma26r8.js";
+import "B:/~BUN/root/chunk-q5ke49kw.js";
+import "B:/~BUN/root/chunk-faawr4jv.js";
+import "B:/~BUN/root/chunk-gksrzz5s.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-x8507144.js";
+import "B:/~BUN/root/chunk-j36yaq51.js";
+import "B:/~BUN/root/chunk-7d9qjs8x.js";
+import "B:/~BUN/root/chunk-a8td06ny.js";
+import "B:/~BUN/root/chunk-krn12wre.js";
+import "B:/~BUN/root/chunk-671s136j.js";
+import "B:/~BUN/root/chunk-rdxve5qj.js";
+import "B:/~BUN/root/chunk-hg30cgr1.js";
+import "B:/~BUN/root/chunk-2gwgbd5e.js";
+import "B:/~BUN/root/chunk-xdhy5nhb.js";
+import "B:/~BUN/root/chunk-rtxwm8ds.js";
+import "B:/~BUN/root/chunk-f71hcy5v.js";
+import "B:/~BUN/root/chunk-8gym6yya.js";
+import "B:/~BUN/root/chunk-q77pmen1.js";
+import "B:/~BUN/root/chunk-mmtwp5d6.js";
+import "B:/~BUN/root/chunk-9sy3w2pa.js";
+import "B:/~BUN/root/chunk-dt6tzt7w.js";
+import "B:/~BUN/root/chunk-z51p19sq.js";
+import "B:/~BUN/root/chunk-pnn94d53.js";
+import "B:/~BUN/root/chunk-xfvqq19y.js";
+import "B:/~BUN/root/chunk-06rekkgz.js";
+import "B:/~BUN/root/chunk-jz4j9jvf.js";
+import "B:/~BUN/root/chunk-zy5rwsjc.js";
+import "B:/~BUN/root/chunk-hjery5bx.js";
+import "B:/~BUN/root/chunk-1zdknz5q.js";
+import "B:/~BUN/root/chunk-ztbv79md.js";
+import "B:/~BUN/root/chunk-8b53pnky.js";
+import "B:/~BUN/root/chunk-g0q5e1g8.js";
+import "B:/~BUN/root/chunk-jwaej6se.js";
+import "B:/~BUN/root/chunk-8p6es4nr.js";
+import "B:/~BUN/root/chunk-gsz9m7j5.js";
+import "B:/~BUN/root/chunk-qmv1x2cp.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import { ZZr } from "B:/~BUN/root/chunk-2wtynsez.js";
+import "B:/~BUN/root/chunk-6bc9abmj.js";
+import "B:/~BUN/root/chunk-nvr3pbxz.js";
+import "B:/~BUN/root/chunk-7cdnr0z4.js";
+import { TU, rto, oto } from "B:/~BUN/root/chunk-gnzce1c4.js";
+import "B:/~BUN/root/chunk-8n4s8cn5.js";
+import "B:/~BUN/root/chunk-230s8gzy.js";
+import "B:/~BUN/root/chunk-ghw8h4y1.js";
+import "B:/~BUN/root/chunk-tzzvaz2j.js";
+import "B:/~BUN/root/chunk-pwpgxxsc.js";
+import "B:/~BUN/root/chunk-m4ehcybg.js";
+import "B:/~BUN/root/chunk-08bth2fj.js";
+import "B:/~BUN/root/chunk-esqb9g1a.js";
+import "B:/~BUN/root/chunk-6jwexnnw.js";
+import "B:/~BUN/root/chunk-a2kvnefe.js";
+import "B:/~BUN/root/chunk-w4zcf9ar.js";
+import "B:/~BUN/root/chunk-467d5w8j.js";
+import "B:/~BUN/root/chunk-cn8bxjex.js";
+import "B:/~BUN/root/chunk-zn0k3ezm.js";
+import "B:/~BUN/root/chunk-c1275ktq.js";
+import "B:/~BUN/root/chunk-pgrf1rrh.js";
+import "B:/~BUN/root/chunk-ymhw5dt2.js";
+import "B:/~BUN/root/chunk-xmtkv29j.js";
+import "B:/~BUN/root/chunk-hcqaqf9c.js";
+import "B:/~BUN/root/chunk-na2t7g12.js";
+import "B:/~BUN/root/chunk-aqngsaqg.js";
+import "B:/~BUN/root/chunk-gj7av6e0.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import { Ms } from "B:/~BUN/root/chunk-6492v1c5.js";
+import "B:/~BUN/root/chunk-vr3kcvgy.js";
+import "B:/~BUN/root/chunk-fbgf4b4h.js";
+import "B:/~BUN/root/chunk-g4xzaw4b.js";
+import "B:/~BUN/root/chunk-mac0vc34.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-h7t9e2fk.js";
+import "B:/~BUN/root/chunk-6bchs2sy.js";
+import "B:/~BUN/root/chunk-hbma7z88.js";
+import "B:/~BUN/root/chunk-vgyyj55s.js";
+import "B:/~BUN/root/chunk-9sajt7dp.js";
+import "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-hyp140x7.js";
+import "B:/~BUN/root/chunk-995m8a2a.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gmsn86f4.js";
+import "B:/~BUN/root/chunk-08q5fcq1.js";
+import "B:/~BUN/root/chunk-p10aw0p6.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import { U, L } from "B:/~BUN/root/chunk-z1enakv9.js";
+import { resolve as dt } from "path";
+var Ue = /^:([0-7]{6}) ([0-7]{6}) ([0-9a-f]{40}(?:[0-9a-f]{24})?) ([0-9a-f]{40}(?:[0-9a-f]{24})?) ([A-Z])[0-9]*$/,
+  ze = /^0{40}(?:0{24})?$/,
+  D = {
+    GIT_ALLOW_PROTOCOL: "none",
+    GIT_GLOB_PATHSPECS: "",
+    GIT_GRAFT_FILE: "/dev/null",
+    GIT_ICASE_PATHSPECS: "",
+    GIT_LITERAL_PATHSPECS: "",
+    GIT_NOGLOB_PATHSPECS: "",
+    GIT_NO_LAZY_FETCH: "1",
+    GIT_NO_REPLACE_OBJECTS: "1",
+    GIT_TERMINAL_PROMPT: "0"
+  },
+  R = ["--no-optional-locks", ...JO, "-c", "advice.graftFileDeprecated=false"];
+function ge(e) {
+  return ["diff-index", "-z", "--no-renames", "--ignore-submodules=all", e, "--"];
+}
+function ye(e) {
+  let n = e.split("\x00");
+  if (n.length % 2 !== 1 || n.at(-1) !== "") return null;
+  let r = Array.from({
+    length: (n.length - 1) / 2
+  }, (i, s) => {
+    let o = Ue.exec(n[2 * s] ?? ""),
+      path = n[2 * s + 1];
+    if (o === null || path === void 0 || path === "") return null;
+    let [, oldMode = "", newMode = "", oldId = "", g = "", status = ""] = o;
+    return {
+      path: path,
+      status: status,
+      oldMode: oldMode,
+      newMode: newMode,
+      oldId: oldId,
+      newId: ze.test(g) ? null : g
+    };
+  });
+  return r.includes(null) ? null : r.filter(item => item !== null);
+}
+function we(e) {
+  let n = {
+    nul: 0,
+    lonecr: 0,
+    lonelf: 0,
+    crlf: 0,
+    printable: 0,
+    nonprintable: 0
+  };
+  for (let r = 0; r < e.length; r++) {
+    let i = e[r];
+    if (i === 13) {
+      if (r + 1 < e.length && e[r + 1] === 10) n.crlf++, r++;else n.lonecr++;
+    } else if (i === 10) n.lonelf++;else if (i === 127) n.nonprintable++;else if (i < 32) {
+      if (i === 8 || i === 9 || i === 27 || i === 12) n.printable++;else n.nul += i === 0 ? 1 : 0, n.nonprintable++;
+    } else n.printable++;
+  }
+  if (e.at(-1) === 26) n.nonprintable--;
+  return n;
+}
+function $e(e) {
+  return e.lonecr > 0 || e.nul > 0 || e.printable >> 7 < e.nonprintable;
+}
+function ke(e) {
+  switch (e) {
+    case "set":
+    case "input":
+      return "text";
+    case "unset":
+      return "binary";
+    case "auto":
+      return "auto";
+    default:
+      return null;
+  }
+}
+function je(e, n) {
+  let r = ke(e.text) ?? ke(e.crlf);
+  if (r === "binary" || r === "auto") return r;
+  if (r === "text" || e.eol === "lf" || e.eol === "crlf") return "text";
+  return n === "true" || n === "input" ? "auto" : "binary";
+}
+function be(e, n, r) {
+  if (r.crlf === 0) return !1;
+  let i = je(e, n);
+  return i === "text" || i === "auto" && !$e(r);
+}
+function _e(e) {
+  if (e === null) return null;
+  let n = e.trim().toLowerCase();
+  if (n === "input") return "input";
+  if (["true", "yes", "on"].includes(n) || /^-?[1-9]\d*$/.test(n)) return "true";
+  if (["false", "no", "off", "0", ""].includes(n)) return "false";
+  return null;
+}
+function Ae(e) {
+  let n = e.split("\x00");
+  if (n.length % 3 !== 1 || n.at(-1) !== "") return null;
+  let r = new Map();
+  for (let i = 0; i + 2 < n.length; i += 3) {
+    let [s, o, f] = [n[i], n[i + 1], n[i + 2]];
+    r.set(s, {
+      ...r.get(s),
+      [o]: f
+    });
+  }
+  return r;
+}
+function Se(e) {
+  return {
+    text: e?.text ?? "unspecified",
+    crlf: e?.crlf ?? "unspecified",
+    eol: e?.eol ?? "unspecified"
+  };
+}
+function j(e) {
+  let n = e?.filter;
+  return n !== void 0 && n !== "unspecified" && n !== "unset";
+}
+import { lstat as ee, readdir as Ve, readlink as We } from "fs/promises";
+import { join as q } from "path";
+var J = 8,
+  Y = "120000",
+  Q = new Set(["100644", "100755"]),
+  Re = "000000";
+async function Ke(e, n, r, i) {
+  try {
+    for (let o of te(n)) if (!(await r(o))) return "gone";
+    if (!(await ee(q(e, n))).isFile()) return "other";
+    return (await qe(i, n)) ? "file" : "gone";
+  } catch (error) {
+    let o = v(error);
+    return o === "ENOENT" || o === "ENOTDIR" ? "gone" : "unreadable";
+  }
+}
+function Ye(e) {
+  let n = new Map();
+  return r => {
+    let i = n.get(r);
+    if (i !== void 0) return i;
+    let s = Ve(r === "" ? e : q(e, r)).then(o => new Set(o.map(item => item.normalize("NFC"))));
+    return n.set(r, s), s;
+  };
+}
+async function qe(e, n) {
+  let r = n.lastIndexOf("/");
+  return (await e(r < 0 ? "" : n.slice(0, r))).has(n.slice(r + 1).normalize("NFC"));
+}
+async function ve(e, n, r) {
+  let i = De(e),
+    s = Ye(e),
+    o = Ms(J, async c => (r?.throwIfAborted(), [c.path, await Ke(e, c.path, i, s)])),
+    f = await qL(n.filter(item => item.status === "D" && item.oldMode !== Y).map(o), r);
+  return f === null ? null : new Map(f);
+}
+function ie(e, n, r) {
+  return {
+    path: e.path,
+    base: e.oldId,
+    foldStats: Je(n, r) === e.oldId ? we(n) : null
+  };
+}
+function te(e) {
+  let n = e.split("/").slice(0, -1);
+  return n.map((item, index) => n.slice(0, index + 1).join("/"));
+}
+function De(e) {
+  let n = new Map();
+  return r => {
+    let i = n.get(r);
+    if (i !== void 0) return i;
+    let s = ee(q(e, r)).then(o => o.isDirectory());
+    return n.set(r, s), s;
+  };
+}
+async function Me(e, n, r, i) {
+  if (r.length === 0) return new Set();
+  let s = new Set();
+  for (let o of re(r, ne)) {
+    let f = await Lc(e, [...R, "--literal-pathspecs", "ls-tree", "-z", "--full-tree", n, "--", ...o], i, void 0, D);
+    if (f.code !== 0) return null;
+    Oko(f.stdout).forEach(item => s.add(item.path));
+  }
+  return s;
+}
+async function Ee(e, n, r) {
+  if (n.length === 0) return new Set();
+  let i = new Map(n.map(item => [`./${item}`, item])),
+    s = await Lc(e, [...R, "check-ignore", "-z", "--stdin", "--no-index"], r, void 0, D, [...i.keys()].map(item => `${item}\x00`).join(""));
+  if (s.exitCode === 1) return new Set();
+  if (s.code !== 0) return null;
+  let o = s.stdout.split("\x00").filter(item => item !== ""),
+    f = o.flatMap(item => {
+      let m = i.get(item);
+      return m === void 0 ? [] : [m];
+    });
+  return f.length === o.length ? new Set(f) : null;
+}
+function Je(e, n) {
+  if (!e.includes(`\r
+`)) return null;
+  let r = Buffer.allocUnsafe(e.length),
+    i = 0;
+  for (let s = 0; s < e.length; s++) {
+    let o = e[s];
+    if (o !== 13 || e[s + 1] !== 10) r[i++] = o;
+  }
+  return ex(r.subarray(0, i), n);
+}
+async function ae(e, n, r) {
+  let i = await Ce(e, n.flatMap(item => item.kind === "row" && item.checkin !== null ? [item.checkin] : []), r);
+  if (i === null) return null;
+  return n.map(item => item.kind === "row" && i.has(item.row.path) ? {
+    kind: "unchanged",
+    path: item.row.path,
+    resurfaced: item.resurfaced
+  } : item);
+}
+var Xe = ["text", "crlf", "eol", "ident", "working-tree-encoding", "filter"];
+function Ze(e) {
+  let n = e?.["working-tree-encoding"],
+    r = e?.ident;
+  return !j(e) && (r === void 0 || r === "unset" || r === "unspecified") && (n === void 0 || n === "unset" || n === "unspecified");
+}
+function Qe(e) {
+  let n = e?.["working-tree-encoding"],
+    r = n !== void 0 && n !== "unspecified" && n !== "unset";
+  return !j(e) && n !== "set" && (e?.ident === "set" || r);
+}
+async function Ce(e, n, r) {
+  if (n.length === 0) return new Set();
+  let i = n.map(item => item.path),
+    [s, o, f] = await Promise.all([X(e, i, Xe, r), it(e, r), tt(e, i, r)]);
+  if (Mt(r)) return null;
+  if (s === null || f === null) return new Set();
+  let c = n.filter(item => f.get(item.path) === item.base),
+    m = c.filter(item => item.foldStats !== null && Ze(s.get(item.path)) && be(Se(s.get(item.path)), o, item.foldStats)),
+    p = new Set(m.map(item => item.path)),
+    g = c.filter(item => !p.has(item.path) && Qe(s.get(item.path))),
+    k = g.length === 0 ? new Set() : await Te(e, r);
+  if (Mt(r)) return null;
+  let h = k === null ? [] : g.filter(item => !["", ...te(item.path)].some(item => k.has(item))),
+    b = await Pe(e, h.map(item => item.path), r);
+  if (Mt(r)) return null;
+  return new Set([...p, ...h.flatMap(item => b?.get(item.path) === item.base ? [item.path] : [])]);
+}
+var et = ["unset", "unspecified", "set"].flatMap(item => ["-c", `filter.${item}.clean=`, "-c", `filter.${item}.smudge=`, "-c", `filter.${item}.process=`, "-c", `filter.${item}.required=false`]);
+async function Pe(e, n, r) {
+  let i = new Map(),
+    s = async o => {
+      try {
+        let f = await ee(q(e, o), {
+          bigint: !0
+        });
+        return f.isFile() && f.ino !== 0n ? `${f.dev}:${f.ino}:${f.size}:${f.mtimeNs}:${f.ctimeNs}` : null;
+      } catch {
+        return null;
+      }
+    };
+  for (let o of re(n, ne)) {
+    let f = await Promise.all(o.map(s)),
+      c = o.filter((item, index) => f[index] !== null);
+    if (c.length === 0) continue;
+    let m = await Lc(e, [...R, ...et, "hash-object", "--", ...c], r, void 0, D),
+      p = m.stdout.split(`
+`).filter(item => item !== "");
+    if (m.code !== 0 || p.length !== c.length) return null;
+    let g = new Map(o.map((item, index) => [item, f[index]])),
+      k = await Promise.all(c.map(s));
+    p.forEach((item, index) => {
+      let y = c[index];
+      if (y !== void 0 && rn.test(item) && k[index] !== null && k[index] === g.get(y)) i.set(y, item);
+    });
+  }
+  return i;
+}
+async function xe(e, n, r) {
+  if (n.length === 0) return new Map();
+  let i = await Te(e, r);
+  if (i === null) return null;
+  return Pe(e, n.filter(item => !["", ...te(item)].some(item => i.has(item))), r);
+}
+async function Ie(e, n, r, i) {
+  if (r.length === 0) return new Set();
+  let s = new Map();
+  for (let p of re(r.map(item => `:(icase,literal)${item.path}`), ne)) {
+    let g = await Lc(e, [...R, "ls-files", "-z", "--full-name", "--", ...p], i, void 0, D);
+    if (g.code !== 0) return null;
+    for (let k of g.stdout.split("\x00").filter(item => item !== "")) {
+      let h = UT(k);
+      s.set(h, (s.get(h) ?? new Set()).add(k));
+    }
+  }
+  let o = [...s.values()].filter(item => item.size > 1);
+  if (o.length === 0) return new Set();
+  let f = new Set(o.flatMap(item => [...item].some(item => !TU(item)) ? [...item] : [])),
+    c = Ms(J, path_2 => f.has(path_2) ? Promise.resolve({
+      path: path_2,
+      identity: null
+    }) : rto(n, path_2)),
+    m = oto(await Promise.all(o.flatMap(item => [...item]).map(c)));
+  return new Set(r.flatMap(item => m.has(item.path) || f.has(item.path) ? [item.path] : []));
+}
+async function Te(e, n) {
+  let r = await Lc(e, [...R, "ls-files", "-z", "--full-name", "--", ":(top,glob).gitattributes", ":(top,glob)**/.gitattributes"], n, void 0, D);
+  if (r.code !== 0) return null;
+  let i = r.stdout.split("\x00").filter(item => item !== ""),
+    s = Ms(J, f => TU(f) ? ee(q(e, f)).then(c => c.isFile(), () => !1) : Promise.resolve(!1)),
+    o = await Promise.all(i.map(s));
+  return new Set(i.flatMap((item, index) => o[index] ? [] : [item.split("/").slice(0, -1).join("/")]));
+}
+async function tt(e, n, r) {
+  let i = new Map();
+  for (let s of re(n, ne)) {
+    let o = await Lc(e, [...R, "--literal-pathspecs", "ls-files", "-s", "-z", "--full-name", "--", ...s], r, void 0, D);
+    if (o.code !== 0) return null;
+    for (let f of o.stdout.split("\x00")) {
+      let c = rt.exec(f);
+      if (c !== null && c[2] === "0" && c[3] !== void 0) i.set(c[3], c[1] ?? "");
+    }
+  }
+  return i;
+}
+var rt = /^[0-7]{6} ([0-9a-f]{40}(?:[0-9a-f]{24})?) ([0-3])\t(.+)$/s;
+async function X(e, n, r, i, s) {
+  if (n.length === 0) return new Map();
+  let o = await Lc(e, [...R, "check-attr", "-z", "--stdin", ...(s === void 0 ? [] : [`--source=${s}`]), ...r], i, void 0, D, n.map(item => `${item}\x00`).join(""));
+  return o.code === 0 ? Ae(o.stdout) : null;
+}
+async function Oe(e, n) {
+  let r = await Lc(e, [...R, "config", "--bool", "--default", "true", "--get", "core.filemode"], n, void 0, D);
+  return r.code === 0 && r.stdout.trim() === "true";
+}
+async function it(e, n) {
+  let r = await Lc(e, [...R, "config", "--get", "core.autocrlf"], n, void 0, D);
+  return r.code === 0 ? _e(r.stdout) : null;
+}
+var ne = 24000;
+function re(e, n) {
+  return e.reduce((acc, item) => {
+    let s = item.length + 1,
+      o = acc.chunks.at(-1);
+    if (o === void 0 || acc.used + s > n) acc.chunks.push([item]), acc.used = s;else o.push(item), acc.used += s;
+    return acc;
+  }, {
+    chunks: [],
+    used: 0
+  }).chunks;
+}
+function Ne(e) {
+  return e === "100755" ? 493 : 420;
+}
+function oe(e) {
+  let n = e.status === "D" ? (Q.has(e.oldMode) || e.oldMode === Y) && e.newMode === Re : (Q.has(e.oldMode) || e.oldMode === Re) && Q.has(e.newMode);
+  return ["M", "A", "D"].includes(e.status) && n && TU(e.path) && _ee(e.path) === null && !e.path.split("/").some(jCn);
+}
+async function Fe(e, n, r, i, s, o) {
+  let f = h => h.status === "M" && h.oldMode === h.newMode && h.newId === null && !oe(h) && TU(h.path) && !h.path.split("/").some(jCn),
+    c = De(e),
+    m = async h => {
+      for (let b of te(h)) if (!(await c(b).catch(() => !1))) return !1;
+      return !0;
+    },
+    p = Ms(J, async h => {
+      o?.throwIfAborted();
+      let b = {
+        unchanged: !1,
+        checkin: null
+      };
+      if (!f(h)) return b;
+      if (h.oldMode === Y) {
+        if (!(await m(h.path))) return b;
+        let S = await We(q(e, h.path), "buffer").catch(() => null);
+        if (S !== null) {
+          let w = O() === "windows" ? Buffer.from(S.toString("utf8").replaceAll("\\", "/")) : S;
+          return {
+            unchanged: ex(w, s) === h.oldId,
+            checkin: null
+          };
+        }
+      } else if (!Q.has(h.oldMode)) return b;
+      let y = await L3(e, n, h.path, r);
+      if (y.kind !== "read") return b;
+      return ex(y.content, s) === h.oldId ? {
+        unchanged: !0,
+        checkin: null
+      } : {
+        unchanged: !1,
+        checkin: h.oldMode === Y ? null : ie(h, y.content, s)
+      };
+    }),
+    g = await qL(i.map(p), o);
+  if (g === null) return null;
+  let k = await Ce(e, g.flatMap(item => item.checkin === null ? [] : [item.checkin]), o);
+  if (k === null) return null;
+  return i.filter((item, index) => !g[index]?.unchanged && !k.has(item.path));
+}
+function se(refusal, count) {
+  return {
+    kind: "refused",
+    refusal: refusal,
+    count: count
+  };
+}
+function Be(e) {
+  return e === "read_denied" || e === "sensitive" || e === "sensitive_tracked" || e === "host_config" || e === "rules_unreadable";
+}
+function at(e) {
+  return e.includes("too_large") ? "tracked_too_large" : "tracked_unreadable";
+}
+async function ot({
+  gitRoot: gitRoot,
+  realRoot: realRoot,
+  anchor: anchor,
+  headCommit: headCommit,
+  pinnedCommit: pinnedCommit,
+  signal: signal,
+  uploadFilter: uploadFilter,
+  platform: platform
+}) {
+  if (!rn.test(headCommit) || !rn.test(pinnedCommit) || pinnedCommit.length !== headCommit.length) return {
+    kind: "failed",
+    reason: "diff_index_failed"
+  };
+  let [m, p] = await Promise.all([Lc(gitRoot, [...R, ...ge(headCommit)], signal, void 0, D), Lc(gitRoot, [...R, "ls-files", "--unmerged", "-z"], signal, void 0, D)]),
+    g = m.code === 0 ? ye(m.stdout) : null;
+  if (g === null || p.code !== 0) return {
+    kind: "failed",
+    reason: Mt(signal) ? "aborted" : "diff_index_failed"
+  };
+  let k = rat(headCommit);
+  if (g.some(item => item.oldId.length !== headCommit.length)) return {
+    kind: "failed",
+    reason: "diff_index_failed"
+  };
+  let h = new Set(p.stdout.split("\x00").filter(item => item !== "").map(item => item.slice(item.indexOf("\t") + 1))),
+    b = a => a.status === "D" && platform === "windows" && ZA(a.path),
+    y = a => {
+      if (a.status === "D") return !1;
+      let P = uploadFilter(a.path, !0);
+      return P !== null && Be(P);
+    },
+    S = g.filter(item => !h.has(item.path) && !b(item)),
+    w = await Fe(gitRoot, realRoot, anchor, S.filter(item => !y(item)), k, signal),
+    records = w === null ? null : [...w, ...S.filter(y)];
+  if (records === null || Mt(signal)) return {
+    kind: "failed",
+    reason: "aborted"
+  };
+  let N = await Ie(gitRoot, realRoot, records.filter(item => !y(item)), signal);
+  if (N === null) return {
+    kind: "failed",
+    reason: Mt(signal) ? "aborted" : "diff_index_failed"
+  };
+  let F = h.size + U(records, a => !y(a) && (!oe(a) || N.has(a.path)));
+  if (F > 0) return se("tracked_unrepresentable", F);
+  let M = await ve(gitRoot, records, signal);
+  if (M === null || Mt(signal)) return {
+    kind: "failed",
+    reason: "aborted"
+  };
+  let B = await st({
+    gitRoot: gitRoot,
+    records: records,
+    headCommit: headCommit,
+    pinnedCommit: pinnedCommit,
+    mayCarryBytes: a => a.status !== "D" || M.get(a.path) === "file",
+    signal: signal,
+    uploadFilter: uploadFilter
+  });
+  if (B.kind !== "classified") return B;
+  let {
+      carried: carried,
+      setAside: setAside,
+      bytesVerdict: bytesVerdict
+    } = B,
+    I = await Oe(gitRoot, signal),
+    z = Ms(J, async record => {
+      if (signal?.throwIfAborted(), record.status === "D" && record.oldMode === Y) return {
+        kind: "unchanged",
+        path: record.path,
+        resurfaced: !1
+      };
+      let P = record.status === "D" ? M.get(record.path) ?? "unreadable" : null;
+      if (P === "unreadable") return {
+        kind: "skip",
+        reason: "unreadable"
+      };
+      if (P === "gone" || P === "other") return {
+        kind: "removed",
+        removal: {
+          path: record.path,
+          base: record.oldId
+        }
+      };
+      let resurfaced = P === "file",
+        reason = resurfaced ? bytesVerdict.get(record.path) ?? null : null;
+      if (reason !== null) return {
+        kind: "aside",
+        record: record,
+        reason: reason
+      };
+      let T = await L3(gitRoot, realRoot, record.path, anchor);
+      if (T.kind === "skip") {
+        if ((resurfaced || record.status === "M" && record.newId === null && record.oldMode === record.newMode) && (T.skipped.reason === "too_large" || T.skipped.reason === "hard_link")) {
+          if ((await xe(gitRoot, [record.path], signal))?.get(record.path) === record.oldId) return {
+            kind: "unchanged",
+            path: record.path,
+            resurfaced: resurfaced
+          };
+        }
+        return {
+          kind: "skip",
+          reason: T.skipped.reason
+        };
+      }
+      let he = y4e(T.content),
+        Le = k === "sha1" ? he.gitBlobId : ex(T.content, k),
+        me = resurfaced || record.oldMode === record.newMode;
+      if (record.status !== "A" && me && Le === record.oldId) return {
+        kind: "unchanged",
+        path: record.path,
+        resurfaced: resurfaced
+      };
+      let checkin = record.status === "M" && me && record.newId === null ? ie(record, T.content, k) : null;
+      return {
+        kind: "row",
+        resurfaced: resurfaced,
+        checkin: checkin,
+        row: {
+          path: record.path,
+          sha256: he.sha256,
+          size: T.content.length,
+          mode: resurfaced && I ? (T.mode & 73) !== 0 ? 493 : 420 : Ne(resurfaced ? record.oldMode : record.newMode),
+          ...(record.status !== "A" && {
+            base: record.oldId
+          })
+        }
+      };
+    }),
+    V = a => a.record.status === "M" && a.record.newId === null && !Be(a.reason),
+    u = await qL(setAside.filter(V).map(item => z(item.record)), signal),
+    A = u === null ? null : await ae(gitRoot, u, signal);
+  if (A === null) return {
+    kind: "failed",
+    reason: "aborted"
+  };
+  let ue = new Set(A.flatMap(item => item.kind === "unchanged" ? [item.path] : [])),
+    fe = setAside.filter(item => !ue.has(item.record.path)),
+    ce = await qL(carried.map(z), signal),
+    W = ce === null ? null : await ae(gitRoot, ce, signal);
+  if (W === null || Mt(signal)) return {
+    kind: "failed",
+    reason: "aborted"
+  };
+  let Z = W.flatMap(item => item.kind === "skip" ? [item.reason] : []);
+  if (Z.length > 0) {
+    let a = at(Z);
+    return se(a, a === "tracked_too_large" ? U(Z, P => P === "too_large") : Z.length);
+  }
+  return {
+    kind: "listed",
+    rows: W.flatMap(item => item.kind === "row" ? [item.row] : []),
+    removed: W.flatMap(item => item.kind === "removed" ? [item.removal] : []),
+    resurfaced: new Set([...fe.flatMap(({
+      record: record_2
+    }) => record_2.status === "D" && M.get(record_2.path) === "file" ? [record_2.path] : []), ...W.flatMap(item => item.kind === "aside" ? [item.record.path] : item.kind === "row" && item.resurfaced || item.kind === "unchanged" && item.resurfaced ? [item.kind === "row" ? item.row.path : item.path] : [])]),
+    skipped: [...fe, ...W.flatMap(item => item.kind === "aside" ? [item] : [])].map(({
+      record: record_3,
+      reason: reason_2
+    }) => ({
+      path: record_3.path,
+      reason: reason_2
+    }))
+  };
+}
+async function st({
+  gitRoot: gitRoot_2,
+  records: records_2,
+  headCommit: headCommit_2,
+  pinnedCommit: pinnedCommit_2,
+  mayCarryBytes: mayCarryBytes,
+  signal: signal_2,
+  uploadFilter: uploadFilter_2
+}) {
+  let c = records_2.filter(item => item.status !== "A"),
+    m = pinnedCommit_2 === headCommit_2 ? new Set(c.map(item => item.path)) : await Me(gitRoot_2, pinnedCommit_2, c.map(item => item.path), signal_2);
+  if (m === null) return {
+    kind: "failed",
+    reason: Mt(signal_2) ? "aborted" : "pin_tree_failed"
+  };
+  let p = c.filter(item => m.has(item.path)),
+    g = records_2.filter(item => item.status === "A" || !m.has(item.path)),
+    k = Oae(g, u => u.path, u => uploadFilter_2(u.path, !1) ?? (D9(u.path) ? "sensitive" : null), u => u.status !== "A"),
+    h = p.map(item => uploadFilter_2(item.path, !0));
+  if (h.includes("rules_unreadable") || k.withheld.some(({
+    reason: reason_3
+  }) => reason_3 === "rules_unreadable")) return se("rules_unreadable", records_2.length);
+  let b = new Set(k.eligible.map(item => item.path)),
+    y = new Set(k.withheld.map(({
+      item: item_2
+    }) => item_2.path)),
+    S = [...g.filter(item => mayCarryBytes(item) && !y.has(item.path) && (item.status === "A" || b.has(item.path))), ...p.filter(item => item.status === "D" && mayCarryBytes(item))].map(item => item.path),
+    w = u => L([u, u.normalize("NFC"), u.normalize("NFD")]),
+    E = records_2.filter(mayCarryBytes).map(item => item.path),
+    [N, F, M] = await Promise.all([Ee(gitRoot_2, S.flatMap(w), signal_2), X(gitRoot_2, E, ["filter"], signal_2), X(gitRoot_2, E, ["filter"], signal_2, pinnedCommit_2)]),
+    C = N === null ? null : new Set(S.filter(item => w(item).some(item => N.has(item))));
+  if (F !== null && M === null && !Mt(signal_2)) K("warn", "dir_sync_overlay_pin_attrs_unread", {});
+  let B = M ?? new Map();
+  if (C === null || F === null) return {
+    kind: "failed",
+    reason: Mt(signal_2) ? "aborted" : C === null ? "check_ignore_failed" : "check_attr_failed"
+  };
+  let G = u => j(F.get(u.path)) || j(B.get(u.path)) ? "content_filter" : null,
+    x = (u, A) => u.status !== "A" ? "unpushed_only" : C.has(u.path) ? "ignored" : A,
+    _ = new Map([...p.map((item, index) => [item.path, h[index] ?? (item.status === "D" && C.has(item.path) ? "ignored" : G(item))]), ...k.filtered.map(item => [item.path, x(item, "filtered")]), ...k.dependency.map(item => [item.path, x(item, "dependency_dir")]), ...k.withheld.map(({
+      item: item_3,
+      reason: reason_4
+    }) => [item_3.path, reason_4]), ...k.eligible.map(item => [item.path, C.has(item.path) ? x(item, "ignored") : G(item)])]),
+    setAside_2 = records_2.flatMap(u => {
+      let reason_5 = _.get(u.path) ?? null;
+      return reason_5 !== null && (u.status !== "D" || reason_5 === "read_denied") ? [{
+        record: u,
+        reason: reason_5
+      }] : [];
+    }),
+    z = new Set(setAside_2.map(({
+      record: record_4
+    }) => record_4.path)),
+    carried_2 = records_2.filter(item => !z.has(item.path));
+  return {
+    kind: "classified",
+    carried: carried_2,
+    setAside: setAside_2,
+    bytesVerdict: new Map(carried_2.filter(item => item.status === "D").map(item => [item.path, _.get(item.path) ?? null]))
+  };
+}
+function lt(e, n, r) {
+  if (e.kind === "too_many") return {
+    files: [],
+    skipped: [...e.skipped, ...e.eligiblePaths.map(p => ({
+      path: p,
+      reason: "left_behind"
+    }))],
+    note: Yko(e.eligiblePaths.length),
+    leftBehind: "too_many"
+  };
+  let {
+      files: files,
+      skipped: skipped
+    } = e,
+    o = files.reduce((acc, item) => acc + item.size, 0),
+    f = U(skipped, p => p.reason === "over_budget");
+  if (o <= n) return {
+    files: files,
+    skipped: skipped,
+    note: f > 0 ? Kko(f, r) : null,
+    leftBehind: f > 0 ? "over_rows" : "none"
+  };
+  let {
+      kept: c
+    } = files.reduce((acc, item) => {
+      if (acc.used + item.size <= n) acc.kept.push(item), acc.used += item.size;
+      return acc;
+    }, {
+      kept: [],
+      used: 0
+    }),
+    m = new Set(c.map(item => item.path));
+  return {
+    files: c,
+    skipped: [...skipped, ...files.filter(item => !m.has(item.path)).map(item => ({
+      path: item.path,
+      reason: "over_budget"
+    }))],
+    note: qko(o, n),
+    leftBehind: "over_bytes"
+  };
+}
+async function Ge({
+  gitRoot: gitRoot_3,
+  containerOrigin: containerOrigin,
+  signal: signal_3,
+  createUploadFilter: createUploadFilter,
+  withheldOf: withheldOf,
+  host = bh(),
+  filterAttributed: filterAttributed,
+  purpose = "seed"
+}) {
+  let m = Date.now(),
+    {
+      bundle: bundle,
+      headCommit: g,
+      pinnedCommit: k
+    } = containerOrigin;
+  if (bundle !== null && bundle.size > sb) return TOt("overlay_too_large", 1, containerOrigin, m, purpose);
+  let realRoot_2 = await IV(gitRoot_3);
+  if (realRoot_2 === null) return EOt("root_unresolvable", containerOrigin, m, purpose);
+  let headSha = await zko(gitRoot_3, signal_3);
+  if (headSha === null) return EOt(Mt(signal_3) ? "aborted" : "rev_parse_failed", containerOrigin, m, purpose);
+  let uploadFilter_3 = withheldOf ?? createUploadFilter(gitRoot_3, {
+    realRoot: realRoot_2
+  });
+  await using anchor_2 = await gO(host, {
+    gitRoot: gitRoot_3,
+    realRoot: realRoot_2
+  }).then(_ => {
+    if ("unavailable" in _) return t(`dirSync overlay inventory: no anchored backend here (${_.unavailable})`), null;
+    return _;
+  }, _ => (t(`dirSync overlay inventory: tree anchor not opened (${v(_) ?? l(_)})`), null));
+  if (anchor_2 === null) return EOt("anchor_unavailable", containerOrigin, m, purpose);
+  let w = await ot({
+    gitRoot: gitRoot_3,
+    realRoot: realRoot_2,
+    anchor: anchor_2,
+    headCommit: containerOrigin.headCommit,
+    pinnedCommit: containerOrigin.pinnedCommit,
+    signal: signal_3,
+    uploadFilter: uploadFilter_3,
+    platform: host.platform()
+  });
+  if (w.kind === "failed") return EOt(w.reason, containerOrigin, m, purpose);
+  if (w.kind === "refused") return TOt(w.refusal, w.count, containerOrigin, m, purpose);
+  let E = w.rows.reduce((acc, item) => acc + item.size, 0);
+  if (w.rows.length > m4e || E > g4e) return TOt("tracked_over_budget", w.rows.length, containerOrigin, m, purpose);
+  let N = E + (bundle?.size ?? 0);
+  if (N > g4e) return TOt("overlay_over_budget", w.rows.length, containerOrigin, m, purpose);
+  if (w.removed.length > gko) return TOt("too_many_removed", w.removed.length, containerOrigin, m, purpose);
+  let filterAttributed_2 = filterAttributed === void 0 ? void 0 : async (_, I) => {
+      let [z, V] = await Promise.all([filterAttributed(_, I), X(gitRoot_3, _, ["filter"], I, k)]);
+      return z === null ? null : new Set([...z, ...[...(V ?? new Map())].flatMap(([u, A]) => j(A) ? [u] : [])]);
+    },
+    M = await Vko({
+      gitRoot: gitRoot_3,
+      realRoot: realRoot_2,
+      anchor: anchor_2,
+      signal: signal_3,
+      uploadFilter: uploadFilter_3,
+      rowBudget: m4e - w.rows.length,
+      filterAttributed: filterAttributed_2,
+      alreadyJudged: new Set([...w.resurfaced, ...w.removed.map(item => item.path)])
+    });
+  if (M.kind === "failed") return EOt(M.reason, containerOrigin, m, purpose);
+  let C = lt(M, g4e - N, Math.max(0, m4e - w.rows.length)),
+    files_2 = [...w.rows, ...C.files],
+    overlay = bundle === null ? void 0 : {
+      ...bundle,
+      head: g,
+      pin: k
+    },
+    manifest = {
+      version: Wko({
+        overlay: overlay,
+        files: files_2,
+        removed: w.removed
+      }),
+      gitRoot: gitRoot_3,
+      headSha: headSha,
+      originKind: "overlay",
+      ...(overlay !== void 0 && {
+        overlay: overlay
+      }),
+      files: files_2,
+      ...(w.removed.length > 0 && {
+        removed: w.removed
+      }),
+      skipped: [...w.skipped, ...C.skipped]
+    };
+  return Gko(manifest, {
+    untrackedCount: M.untrackedCount,
+    trackedCount: w.rows.length,
+    removedCount: w.removed.length,
+    overlayBytes: bundle?.size ?? 0,
+    untrackedLeftBehind: C.leftBehind,
+    purpose: purpose
+  }, m), {
+    ok: !0,
+    manifest: manifest,
+    trackedPaths: w.rows.map(item => item.path),
+    note: C.note
+  };
+}
+var le = 60000,
+  ut = 8,
+  de = 5000;
+async function pn({
+  gitRoot: gitRoot_4,
+  pin: n,
+  head: r,
+  signal: signal_4
+}) {
+  let s = AbortSignal.timeout(de),
+    o = await nt(fge(gitRoot_4, signal_4 === void 0 ? s : AbortSignal.any([signal_4, s]), {
+      bound: !0,
+      linkedTrees: !0
+    }).catch(() => ({
+      kind: "failed"
+    })), de);
+  if (o === void 0 || o.kind === "failed") return {
+    kind: "not_planned",
+    whyNot: Mt(signal_4) ? "aborted" : "unavailable"
+  };
+  if (o.kind !== "read" || o.layout.checkout === "linked" && !lge()) return {
+    kind: "not_planned",
+    whyNot: "layout_unsupported"
+  };
+  let f = await ft({
+    gitRoot: gitRoot_4,
+    pin: n,
+    head: r,
+    signal: signal_4,
+    linked: o.layout.checkout === "linked" ? o.layout : void 0
+  });
+  if (f.kind === "not_planned") return f;
+  let c = Date.now(),
+    m = AbortSignal.timeout(le),
+    signal_5 = signal_4 === void 0 ? m : AbortSignal.any([signal_4, m]),
+    g = (await nt(Ge({
+      gitRoot: gitRoot_4,
+      containerOrigin: {
+        kind: "overlay",
+        pinnedCommit: n,
+        headCommit: r,
+        bundle: f.bundle === null ? null : {
+          sha256: f.bundle.sha256,
+          size: f.bundle.sizeBytes
+        }
+      },
+      signal: signal_5,
+      createUploadFilter: createUploadFilter_2,
+      filterAttributed: lze(gitRoot_4),
+      purpose: "create_check"
+    }).catch(k => (d(k), {
+      ok: !1,
+      reason: "aborted"
+    })), le)) ?? {
+      ok: !1,
+      reason: "aborted"
+    };
+  if (g.ok) return (await nt(ct(gitRoot_4, r, signal_5), de)) === !0 ? f : {
+    kind: "not_planned",
+    whyNot: "head_moved"
+  };
+  if (g.reason === "refused") return {
+    kind: "not_planned",
+    whyNot: "inventory_refused",
+    refusal: g.refusal
+  };
+  return Mt(signal_4) ? {
+    kind: "not_planned",
+    whyNot: "aborted"
+  } : m.aborted || Date.now() - c >= le ? {
+    kind: "not_planned",
+    whyNot: "inventory_cut"
+  } : {
+    kind: "not_planned",
+    whyNot: "inventory_failed"
+  };
+}
+async function ft({
+  gitRoot: gitRoot_5,
+  pin: n,
+  head: head,
+  signal: signal_6,
+  linked: linked
+}) {
+  if (head === n) return {
+    kind: "planned",
+    bundle: null
+  };
+  let o = linked === void 0 ? void 0 : dt(gitRoot_5, linked.commonDir),
+    f = async () => {
+      let p = o === void 0 ? void 0 : await oNe(o);
+      if (p === null) return "changed";
+      let g = await ZZr({
+        gitRoot: gitRoot_5,
+        prerequisiteSha: n,
+        signal: signal_6
+      });
+      if (!g.ok || linked === void 0 || o === void 0 || p === void 0) return g;
+      let k = await vOt(gitRoot_5, linked, o, p);
+      return k.kind === "tampered" ? "tampered" : k.kind === "moved" ? "changed" : g;
+    },
+    c = await f(),
+    m = c === "changed" && !Mt(signal_6) ? await f() : c;
+  if (m === "changed" || m === "tampered") return {
+    kind: "not_planned",
+    whyNot: "store_changed"
+  };
+  if (m.ok) {
+    if (m.prerequisites.length > ut) return {
+      kind: "not_planned",
+      whyNot: "too_many_prerequisites"
+    };
+    return m.headSha === head ? {
+      kind: "planned",
+      bundle: {
+        content: m.content,
+        sha256: m.sha256,
+        sizeBytes: m.sizeBytes,
+        aheadCount: m.aheadCount
+      }
+    } : {
+      kind: "not_planned",
+      whyNot: "head_moved"
+    };
+  }
+  switch (m.reason) {
+    case "not_diverged":
+      return {
+        kind: "not_planned",
+        whyNot: "head_moved"
+      };
+    case "too_large":
+      return {
+        kind: "not_planned",
+        whyNot: "too_large"
+      };
+    case "not_ancestor":
+      return {
+        kind: "not_planned",
+        whyNot: "not_ancestor"
+      };
+    case "aborted":
+      return {
+        kind: "not_planned",
+        whyNot: "aborted"
+      };
+    case "git_error":
+      return {
+        kind: "not_planned",
+        whyNot: "git_error",
+        stage: m.stage
+      };
+  }
+}
+async function ct(e, n, r) {
+  let i = await Lc(e, [...R, "rev-parse", "-q", "--verify", "HEAD^{commit}"], r);
+  return i.code === 0 && i.stdout.trim() === n;
+}
+export { ut as MAX_OVERLAY_PREREQUISITES, le as OVERLAY_CHECK_DEADLINE_MS, pn as planOverlay };

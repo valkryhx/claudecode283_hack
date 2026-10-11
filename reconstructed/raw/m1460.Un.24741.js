@@ -1,0 +1,1 @@
+function Un(o,l){let a=[],u=0;if(l.label){let h=` ${ot(l.label.text,Math.max(1,o-2))} `;u+=ie(h),a.push(e(n,{color:l.label.color??"text",bold:l.label.bold,children:h},"label"))}let d=l.tag?` ${ot(l.tag,Math.max(0,o-u-2))} `:"",f=Math.max(0,o-u-ie(d));if(a.push(e(n,{color:"text",children:Bx.repeat(f)},"dash")),d)a.push(e(n,{dimColor:!0,children:d},"tag"));return a}

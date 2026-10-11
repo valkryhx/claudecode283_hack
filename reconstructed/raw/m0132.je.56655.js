@@ -1,0 +1,1 @@
+var je="any kind";

@@ -1,0 +1,1 @@
+function Tr(e){if(!G(e))return"no { stream, text } (not an object)";if(!(e.stream==="stdout"||e.stream==="stderr"))return'a stream that is neither "stdout" nor "stderr"';return typeof e.text==="string"&&e.text!==""?void 0:"a text that is not a non-empty string"}

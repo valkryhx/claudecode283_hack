@@ -1,0 +1,138 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { ec } from "B:/~BUN/root/chunk-3zvn01m4.js";
+import { tLr } from "B:/~BUN/root/chunk-t2es1wgh.js";
+import { tC } from "B:/~BUN/root/chunk-ywvtswng.js";
+import { Ef } from "B:/~BUN/root/chunk-ydt4z4fm.js";
+import "B:/~BUN/root/chunk-ne7hcw7b.js";
+import { cf, zx } from "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import { be } from "B:/~BUN/root/chunk-yv67t8hr.js";
+var E = be(tC()),
+  N = be(zx()),
+  m = be(Ef());
+import O from "fs/promises";
+var A = be(Ef());
+var w = "169.254.170.2",
+  g = "169.254.170.23",
+  S = "[fd00:ec2::23]",
+  h = (e, logger) => {
+    if (e.protocol === "https:") return;
+    if (e.hostname === w || e.hostname === g || e.hostname === S) return;
+    if (e.hostname.includes("[")) {
+      if (e.hostname === "[::1]" || e.hostname === "[0000:0000:0000:0000:0000:0000:0000:0001]") return;
+    } else {
+      if (e.hostname === "localhost") return;
+      let n = e.hostname.split("."),
+        r = t => {
+          let s = parseInt(t, 10);
+          return 0 <= s && s <= 255;
+        };
+      if (n[0] === "127" && r(n[1]) && r(n[2]) && r(n[3]) && n.length === 4) return;
+    }
+    throw new A.CredentialsProviderError(`URL not accepted. It must either be HTTPS or match one of the following:
+  - loopback CIDR 127.0.0.0/8 or [::1/128]
+  - ECS container host 169.254.170.2
+  - EKS container host 169.254.170.23 or [fd00:ec2::23]`, {
+      logger: logger
+    });
+  };
+var i = be(Ef()),
+  C = be(cf()),
+  l = be(ec()),
+  p = be(tLr());
+function _(e) {
+  return new C.HttpRequest({
+    protocol: e.protocol,
+    hostname: e.hostname,
+    port: Number(e.port),
+    path: e.pathname,
+    query: Array.from(e.searchParams.entries()).reduce((acc, [n, r]) => (acc[n] = r, acc), {}),
+    fragment: e.hash
+  });
+}
+async function I(e, logger_2) {
+  let r = await p.sdkStreamMixin(e.body).transformToString();
+  if (e.statusCode === 200) {
+    let t = JSON.parse(r);
+    if (typeof t.AccessKeyId !== "string" || typeof t.SecretAccessKey !== "string" || typeof t.Token !== "string" || typeof t.Expiration !== "string") throw new i.CredentialsProviderError("HTTP credential provider response not of the required format, an object matching: { AccessKeyId: string, SecretAccessKey: string, Token: string, Expiration: string(rfc3339) }", {
+      logger: logger_2
+    });
+    return {
+      accessKeyId: t.AccessKeyId,
+      secretAccessKey: t.SecretAccessKey,
+      sessionToken: t.Token,
+      expiration: l.parseRfc3339DateTime(t.Expiration)
+    };
+  }
+  if (e.statusCode >= 400 && e.statusCode < 500) {
+    let t = {};
+    try {
+      t = JSON.parse(r);
+    } catch (error) {}
+    throw Object.assign(new i.CredentialsProviderError(`Server responded with status: ${e.statusCode}`, {
+      logger: logger_2
+    }), {
+      Code: t.Code,
+      Message: t.Message
+    });
+  }
+  throw new i.CredentialsProviderError(`Server responded with status: ${e.statusCode}`, {
+    logger: logger_2
+  });
+}
+var f = (e, o, n) => async () => {
+  for (let r = 0; r < o; ++r) try {
+    return await e();
+  } catch (error) {
+    await new Promise(s => setTimeout(s, n));
+  }
+  return await e();
+};
+var L = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI",
+  y = "http://169.254.170.2",
+  v = "AWS_CONTAINER_CREDENTIALS_FULL_URI",
+  U = "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE",
+  k = "AWS_CONTAINER_AUTHORIZATION_TOKEN",
+  H = (e = {}) => {
+    e.logger?.debug("@aws-sdk/credential-provider-http - fromHttp");
+    let o,
+      n = e.awsContainerCredentialsRelativeUri ?? process.env[L],
+      r = e.awsContainerCredentialsFullUri ?? process.env[v],
+      t = e.awsContainerAuthorizationToken ?? process.env[k],
+      s = e.awsContainerAuthorizationTokenFile ?? process.env[U],
+      a = e.logger?.constructor?.name === "NoOpLogger" || !e.logger?.warn ? console.warn : e.logger.warn.bind(e.logger);
+    if (n && r) a("@aws-sdk/credential-provider-http: you have set both awsContainerCredentialsRelativeUri and awsContainerCredentialsFullUri."), a("awsContainerCredentialsFullUri will take precedence.");
+    if (t && s) a("@aws-sdk/credential-provider-http: you have set both awsContainerAuthorizationToken and awsContainerAuthorizationTokenFile."), a("awsContainerAuthorizationToken will take precedence.");
+    if (r) o = r;else if (n) o = `${y}${n}`;else throw new m.CredentialsProviderError(`No HTTP credential provider host provided.
+Set AWS_CONTAINER_CREDENTIALS_FULL_URI or AWS_CONTAINER_CREDENTIALS_RELATIVE_URI.`, {
+      logger: e.logger
+    });
+    let T = new URL(o);
+    h(T, e.logger);
+    let u = N.NodeHttpHandler.create({
+      requestTimeout: e.timeout ?? 1000,
+      connectionTimeout: e.timeout ?? 1000
+    });
+    return f(async () => {
+      let c = _(T);
+      if (t) c.headers.Authorization = t;else if (s) c.headers.Authorization = (await O.readFile(s)).toString();
+      try {
+        let d = await u.handle(c);
+        return I(d.response).then(R => E.setCredentialFeature(R, "CREDENTIALS_HTTP", "z"));
+      } catch (error) {
+        throw new m.CredentialsProviderError(String(error), {
+          logger: e.logger
+        });
+      }
+    }, e.maxRetries ?? 3, e.timeout ?? 1000);
+  };
+export { H as fromHttp };

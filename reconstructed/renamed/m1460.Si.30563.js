@@ -1,0 +1,240 @@
+/* ==========================================================================
+ * m1460.Si   [m1460_0xd973957.js @ 30563]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function Si({
+  agent: o,
+  status: l,
+  transcript: a,
+  expanded: u,
+  width: d,
+  nowMs: f
+}) {
+  let h = [],
+    x = "  ",
+    y = Math.max(8, d - 2),
+    A = a === "loading" ? null : a,
+    {
+      glyph: k,
+      color: C
+    } = cn(l),
+    W = [];
+  if (o.model != null) W.push(I1e(o.model, o.fallbackModel));
+  if (o.agentType != null) W.push(o.agentType);
+  if (o.isolation != null) W.push(o.isolation === "remote" && o.remoteSessionId ? `remote ${o.remoteSessionId}` : o.isolation);
+  if (o.cached) W.push("from resume journal");
+  if (o.attempt != null && o.attempt > 1) {
+    let it = o.lastAttemptReason === "throttled" ? o.label.endsWith(zKt) ? ESt : "throttled" : o.lastAttemptReason === "user-retry" ? "user retry" : "stalled";
+    W.push(`attempt ${o.attempt} (${it})`);
+  }
+  let L = ie(k) + 1 + ie(ro[l]),
+    D = W.length > 0 ? ot(` \xB7 ${W.join(" \xB7 ")}`, Math.max(0, d - L)) : "";
+  h.push([{
+    text: k,
+    color: C
+  }, {
+    text: " "
+  }, {
+    text: ro[l],
+    color: C,
+    bold: !0
+  }, ...(D ? [{
+    text: D,
+    dimColor: !0
+  }] : [])]);
+  let M = [];
+  if (o.tokens != null) M.push(`${cr(o.tokens)} tok`);
+  if (o.toolCalls != null && o.toolCalls > 0) M.push(`${o.toolCalls} ${I(o.toolCalls, "tool call")}`);
+  if (o.durationMs != null) M.push(Zt(o.durationMs));
+  if (l === "queued" && o.queuedAt != null) M.push(`waiting ${Zt(Math.max(0, f - o.queuedAt))}`);
+  if (l === "running" && o.lastProgressAt != null) {
+    let it = Math.floor((f - o.lastProgressAt) / 1000);
+    if (it >= 30) M.push(`idle ${Zt(it * 1000)}`);
+  }
+  if (M.length > 0) h.push([{
+    text: ot(M.join(" \xB7 "), d),
+    dimColor: !0
+  }]);
+  h.push([{
+    text: ""
+  }]);
+  let q = l !== "queued" && A ? A.toolCalls : [],
+    H = A?.tasks ?? [],
+    z = H.length > 0 ? Po({
+      tasks: H,
+      expanded: !1,
+      width: d,
+      indent: "  "
+    }) : null,
+    E = H.length > 0 ? Po({
+      tasks: H,
+      expanded: !0,
+      width: d,
+      indent: "  "
+    }) : null,
+    B = u ? E : z,
+    O = q.length > 0 || (B?.capped ?? !1),
+    rt = a !== "loading" && a?.prompt ? a.prompt : o.promptPreview ?? "",
+    G = rt ? Ir(rt, y).map(it => [{
+      text: "  " + it,
+      dimColor: !0
+    }]) : [[{
+      text: "  " + (l === "queued" ? "Available once the agent starts." : a === "loading" ? "Loading\u2026" : l === "running" ? "Not available yet (agent still running)." : "Transcript not available."),
+      dimColor: !0
+    }]],
+    nt = Ci({
+      lines: h,
+      title: "Prompt",
+      body: G,
+      collapsedLines: Ga,
+      expanded: u,
+      indent: "  ",
+      width: d
+    }),
+    gt = nt > 0 ? nt - 1 : 0,
+    Q = gt,
+    K = [{
+      end: h.length - (u ? Q : 0),
+      growth: gt
+    }];
+  if (h.push([{
+    text: ""
+  }]), B && z && E) {
+    for (let pt of B.lines) h.push(pt);
+    let it = E.lines.length - z.lines.length;
+    Q += it, K.push({
+      end: h.length - (u ? Q : 0),
+      growth: it
+    }), h.push([{
+      text: ""
+    }]);
+  }
+  if (l !== "queued") {
+    let it = l === "running",
+      pt = q.filter((St, yt) => yt >= q.length - ui || Tn(St, it) === "running"),
+      dt = [];
+    for (let [St, yt] of pt.entries()) {
+      if (St > 0) dt.push([{
+        text: ""
+      }]);
+      let Nt = Tn(yt, it);
+      dt.push(...$s({
+        call: yt,
+        state: Nt,
+        width: d,
+        indent: "  "
+      }));
+    }
+    let at = "";
+    if (q.length > pt.length) at = ` \xB7 ${pt.length <= ui ? "last " : ""}${pt.length} of ${q.length} tool calls`;
+    let ut = Math.max(0, d - ie("Activity")),
+      Tt = ` \xB7 ${eUe} expand`;
+    if (at = !u && O && ie(at) + ie(Tt) <= ut ? at + Tt : ot(at, ut), h.push([{
+      text: "Activity",
+      bold: !0,
+      dimColor: !0
+    }, ...(at ? [{
+      text: at,
+      dimColor: !0
+    }] : [])]), q.length > 0) {
+      if (u) for (let yt of dt) h.push(yt);else for (let yt of pt) {
+        let Nt = Tn(yt, it);
+        h.push(Eo({
+          call: yt,
+          state: Nt,
+          width: d,
+          indent: "  "
+        }));
+      }
+      let St = dt.length - pt.length;
+      Q += St, K.push({
+        end: h.length - (u ? Q : 0),
+        growth: St
+      });
+    } else if (o.lastToolName != null) {
+      let St = o.lastToolSummary ? `(${o.lastToolSummary})` : "",
+        yt = Do(o.lastToolName);
+      h.push([{
+        text: ot(`  ${yt}${St}`, d),
+        dimColor: !0
+      }]);
+    } else h.push([{
+      text: `  ${l === "running" ? "No tool calls yet." : "No tool calls."}`,
+      dimColor: !0
+    }]);
+    h.push([{
+      text: ""
+    }]);
+  }
+  let Y = [];
+  switch (l) {
+    case "queued":
+      Y.push([{
+        text: "  Waiting for an agent slot.",
+        dimColor: !0
+      }]);
+      break;
+    case "running":
+      Y.push([{
+        text: `${"  "}Still running\u2026`,
+        dimColor: !0
+      }]);
+      break;
+    case "interrupted":
+      Y.push([{
+        text: "  The workflow stopped before this agent finished.",
+        dimColor: !0
+      }]);
+      break;
+    case "skipped":
+      Y.push([{
+        text: "  Skipped by user.",
+        dimColor: !0
+      }]);
+      break;
+    case "blocked":
+    case "failed":
+      {
+        for (let it of Ir(o.error ?? "failed", y)) Y.push([{
+          text: "  " + it,
+          color: "error"
+        }]);
+        break;
+      }
+    case "done":
+      {
+        let it = a !== "loading" && a?.finalText ? a.finalText : o.resultPreview ?? "";
+        if (!it) {
+          Y.push([{
+            text: "  " + (a === "loading" ? "Loading\u2026" : "(empty)"),
+            dimColor: !0
+          }]);
+          break;
+        }
+        let pt = ms(it, y);
+        if (pt) for (let dt of pt) Y.push([{
+          text: "  "
+        }, ...dt]);else for (let dt of Ir(it, y)) Y.push([{
+          text: "  " + dt
+        }]);
+        break;
+      }
+  }
+  let mt = Ci({
+    lines: h,
+    title: "Outcome",
+    body: Y,
+    collapsedLines: Ya,
+    expanded: u,
+    indent: "  ",
+    width: d
+  });
+  return {
+    lines: h,
+    expandable: nt > 0 || mt > 0 || O,
+    folds: K,
+    detailExpandable: O
+  };
+}

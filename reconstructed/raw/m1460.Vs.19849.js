@@ -1,0 +1,1 @@
+function Vs(o,l){let a=0;for(let u=0;u<o.length;u++){let d=o[u],f=ie(d.text);if(a+f>l){let h=l-a,x=h>0?ot(d.text,h):"",y=o.slice(0,u);if(x)y.push({...d,text:x});return{segs:y,pad:Math.max(0,h-ie(x))}}a+=f}return{segs:o,pad:Math.max(0,l-a)}}

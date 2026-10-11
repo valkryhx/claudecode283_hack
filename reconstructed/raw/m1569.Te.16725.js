@@ -1,0 +1,1 @@
+function Te(e){let r=dr().safeParse(e);if(r.success)return r.data;let n=e!==null&&typeof e==="object"?Object.keys(e).find((s)=>Dr.has(s)):void 0;if(n!==void 0)throw new P(`a fact may not carry \`${n}\` \u2014 the host sets it on the row`,"world: fact carries a reserved key");throw new P("a fact must be an object with a non-empty string `topic`","world: not a fact")}

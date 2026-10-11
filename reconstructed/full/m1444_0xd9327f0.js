@@ -1,0 +1,2648 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  we
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  P
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  b
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  I,
+  Gt
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  Pce,
+  On
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  Zn
+} from "B:/~BUN/root/chunk-1x7a47hz.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import {
+  pe
+} from "B:/~BUN/root/chunk-nf4z9ga7.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  Uv
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  YR,
+  ZUt,
+  Jn,
+  Mn
+} from "B:/~BUN/root/chunk-1f9marcm.js";
+import {
+  g2
+} from "B:/~BUN/root/chunk-tsjnk8ma.js";
+import {
+  xa
+} from "B:/~BUN/root/chunk-qqgpf856.js";
+import {
+  ie,
+  Wu,
+  ot,
+  rA,
+  YN,
+  ohn
+} from "B:/~BUN/root/chunk-bpp59nyd.js";
+import {
+  s,
+  n,
+  Jr,
+  _t,
+  Vs,
+  Xi
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import {
+  Z2,
+  U8r
+} from "B:/~BUN/root/chunk-trcn2d68.js";
+import {
+  Yt
+} from "B:/~BUN/root/chunk-jdm3bsma.js";
+import {
+  GL
+} from "B:/~BUN/root/chunk-1mdeqc2r.js";
+import {
+  BLt,
+  zs,
+  S6,
+  Za,
+  DR,
+  ig,
+  l1,
+  ZHe,
+  Ule,
+  TCe,
+  WLt,
+  ai,
+  T_,
+  fGn,
+  uN,
+  Fs
+} from "B:/~BUN/root/chunk-3hjtxzqy.js";
+import {
+  W,
+  dn
+} from "B:/~BUN/root/chunk-h23911wn.js";
+import {
+  ve
+} from "B:/~BUN/root/chunk-cxqcvpm0.js";
+import {
+  Wt
+} from "B:/~BUN/root/chunk-r2yrqvry.js";
+import {
+  ii,
+  Fe
+} from "B:/~BUN/root/chunk-bt71g93n.js";
+import {
+  Oc
+} from "B:/~BUN/root/chunk-q52x4j16.js";
+import {
+  F
+} from "B:/~BUN/root/chunk-acd2tycn.js";
+import {
+  ye
+} from "B:/~BUN/root/chunk-41008fhm.js";
+import {
+  Zr
+} from "B:/~BUN/root/chunk-cpg4rjtx.js";
+import {
+  GC
+} from "B:/~BUN/root/chunk-txdt16r9.js";
+import {
+  SJe
+} from "B:/~BUN/root/chunk-kxqh0yc7.js";
+import {
+  Rn,
+  aln
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  Zw,
+  iet
+} from "B:/~BUN/root/chunk-0mn860zt.js";
+import {
+  yp
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  ZS
+} from "B:/~BUN/root/chunk-255yrpq9.js";
+import {
+  hwn
+} from "B:/~BUN/root/chunk-qzz7wd45.js";
+import {
+  sIe
+} from "B:/~BUN/root/chunk-q87kdcms.js";
+import {
+  JD
+} from "B:/~BUN/root/chunk-5dn8wsxz.js";
+import {
+  xi
+} from "B:/~BUN/root/chunk-bwmvn5s6.js";
+import {
+  q_
+} from "B:/~BUN/root/chunk-y1h4hnnm.js";
+import {
+  Ba
+} from "B:/~BUN/root/chunk-vf07m8qt.js";
+import {
+  V,
+  e,
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import {
+  MH
+} from "B:/~BUN/root/chunk-evn8cf3v.js";
+import {
+  Upr
+} from "B:/~BUN/root/chunk-mngsveaw.js";
+import {
+  se,
+  R,
+  X,
+  T,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import {
+  at
+} from "B:/~BUN/root/chunk-2h7x7bdj.js";
+import {
+  $Re,
+  SLo,
+  wLo,
+  m$r
+} from "B:/~BUN/root/chunk-6pbxcdg3.js";
+import {
+  Us
+} from "B:/~BUN/root/chunk-w5bkq1td.js";
+import {
+  lp
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import {
+  qne
+} from "B:/~BUN/root/chunk-nfc48pcb.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+import {
+  S,
+  hn
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+
+function zi(t) {
+  let l = w(4),
+    {
+      multiline: u,
+      children: o
+    } = t;
+  if (_t()) {
+    let c;
+    if (l[0] !== o) c = e(s, {
+      "aria-role": "blockquote",
+      children: o
+    }), l[0] = o, l[1] = c;
+    else c = l[1];
+    return c
+  }
+  if (!u) {
+    return o
+  }
+  let c;
+  if (l[2] !== o) c = e(s, {
+    borderStyle: "single",
+    borderLeft: !0,
+    borderRight: !1,
+    borderTop: !1,
+    borderBottom: !1,
+    borderDimColor: !0,
+    paddingLeft: 1,
+    children: o
+  }), l[2] = o, l[3] = c;
+  else c = l[3];
+  return c
+}
+
+function cn(t) {
+  return aln(t)
+}
+
+function dr(t) {
+  let u = [];
+  for (let o of t) {
+    if (o === null || typeof o !== "object") continue;
+    if (o.type !== "addRules") {
+      u.push(o);
+      continue
+    }
+    if (!Array.isArray(o.rules)) continue;
+    let l = o.rules.filter((c) => c !== null && typeof c === "object" && typeof c.toolName === "string" && (c.ruleContent === void 0 || typeof c.ruleContent === "string") && (c.ruleContent === void 0 ? ze(c.toolName) : cn({
+      toolName: c.toolName,
+      ruleContent: c.ruleContent
+    })));
+    if (l.length > 0) u.push({
+      ...o,
+      rules: l
+    })
+  }
+  return u
+}
+var abe = 8,
+  oue = 64,
+  d1e = 160,
+  pr = new Set(["localSettings", "session"]);
+
+function au(t, u, o) {
+  let l = dr(t).filter((D) => {
+      if (!u.has(D.type)) return !1;
+      if ((D.type === "addRules" || D.type === "replaceRules" || D.type === "removeRules") && D.behavior !== "allow") return !1;
+      return D.destination !== void 0 && pr.has(D.destination)
+    }),
+    c = [];
+  for (let D of l) {
+    if (D.type !== "addRules") {
+      if (D.type === "addDirectories") {
+        if (!Array.isArray(D.directories)) continue;
+        let C = D.directories.filter((E) => typeof E === "string" && E.trim() !== "" && ie(E) > 0 && Ule(E));
+        if (C.length === 0) continue;
+        c.push({
+          ...D,
+          directories: C
+        });
+        continue
+      }
+      c.push(D);
+      continue
+    }
+    if (D.rules === void 0) continue;
+    let a = D.rules.filter((C) => Ule(Mn({
+        toolName: C.toolName,
+        ...C.ruleContent !== void 0 && {
+          ruleContent: C.ruleContent
+        }
+      }))),
+      p = o === void 0 ? a : a.filter(o);
+    if (p.length > 0) c.push({
+      ...D,
+      rules: p
+    })
+  }
+  return c
+}
+var mbn = new Set(["addRules", "addDirectories"]),
+  Y3r = new Set(["addRules"]);
+
+function Fr(t) {
+  return t.trim() !== t || t === "" || S6(t) || zs(t) !== t || /[\t\n]/.test(t) || ie(t) === 0
+}
+
+function ze(t) {
+  if (t === $Re) return !1;
+  if (Fr(t)) return !1;
+  let u = Jn(Mn({
+    toolName: t
+  }));
+  if (u.toolName !== t || u.ruleContent !== void 0) return !1;
+  if (YR(t)) return !1;
+  let o = Us(t);
+  if (o !== null && !o.toolName) return !1;
+  return !0
+}
+
+function lu(t) {
+  if (typeof t !== "string" || t.trim() === "" || ie(t) === 0 || !Ule(t)) return null;
+  return wLo(t)
+}
+
+function pn(t) {
+  switch (t.length) {
+    case 0:
+      return "";
+    case 1:
+      return e(n, {
+        bold: !0,
+        children: t[0]
+      });
+    case 2:
+      return r(n, {
+        children: [e(n, {
+          bold: !0,
+          children: t[0]
+        }), " and ", e(n, {
+          bold: !0,
+          children: t[1]
+        })]
+      });
+    default:
+      return r(n, {
+        children: [e(n, {
+          bold: !0,
+          children: t.slice(0, -1).join(", ")
+        }), ", and", " ", e(n, {
+          bold: !0,
+          children: t.slice(-1)[0]
+        })]
+      })
+  }
+}
+
+function fPe(t) {
+  if (t.length === 0) return "";
+  if (t.length === 1) return e(n, {
+    bold: !0,
+    children: t[0]
+  });
+  if (t.length === 2) return r(n, {
+    children: [e(n, {
+      bold: !0,
+      children: t[0]
+    }), " and ", e(n, {
+      bold: !0,
+      children: t[1]
+    })]
+  });
+  return r(n, {
+    children: [t.slice(0, -1).map((u, o) => r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: u
+      }), ",", " "]
+    }, o)), "and ", e(n, {
+      bold: !0,
+      children: t.at(-1)
+    })]
+  })
+}
+
+function eht(t) {
+  return ZUt((t?.replace(/\/\*\*$/, "") || "").replace(/^\.\//, "").replace(/^\/\//, "/"))
+}
+
+function Fn(t) {
+  if (!t) return "";
+  return t.endsWith(":*") || t.endsWith(" *") ? t.slice(0, -2) : t
+}
+
+function tht(t, u, o) {
+  if (t.toolName === u) {
+    let l = Fn(t.ruleContent);
+    if (!l) return !1;
+    return Boolean(o ? o(l) : l)
+  }
+  if (t.toolName === at) return Boolean(eht(t.ruleContent));
+  return !1
+}
+
+function l5(t) {
+  return t !== void 0 && zs(t) === t && !/[\t\n\u2028\u2029]/.test(t) && !S6(t) ? SLo(t) : void 0
+}
+
+function ZI(t) {
+  return fGn(t)
+}
+
+function gbn(t, u, o, l) {
+  if (!Array.isArray(t)) return null;
+  if (t.length > oue) return null;
+  if (t.some((m) => m === null || typeof m !== "object")) return null;
+  let c = t.filter((m) => m.type === "addRules").flatMap((m) => m.rules || []),
+    D = t.filter((m) => m.type === "addDirectories").flatMap((m) => Array.isArray(m.directories) ? m.directories : []);
+  if (c.some((m) => m === null || typeof m !== "object" || typeof m.toolName !== "string" || m.ruleContent !== void 0 && typeof m.ruleContent !== "string")) return null;
+  if (c.length + D.length > abe) return null;
+  let a = c.filter((m) => m.toolName === at),
+    p = c.filter((m) => m.toolName === u);
+  if (D.some((m) => typeof m !== "string" || m.trim() === "" || ie(m) === 0 || !Ule(m))) return null;
+  let C = L(D),
+    E = L(a.flatMap((m) => m.ruleContent && eht(m.ruleContent) ? m.ruleContent : []));
+  if (E.some((m) => !Ule(m))) return null;
+  let y = L(p.flatMap((m) => {
+    if (!m.ruleContent) return [];
+    return Fn(m.ruleContent) ? [m.ruleContent] : []
+  }));
+  if (y.some((m) => !Ule(m))) return null;
+  let x = TCe(y, (m) => {
+      let M = Fn(m) || m;
+      return ZI(o ? o(M) : M)
+    }),
+    k = TCe([...E, ...C], (m) => E.includes(m) ? ZI(eht(m)) : ZI(m)),
+    h = k.slice(0, E.length),
+    B = k.slice(E.length);
+  if (ie([...x, ...h, ...B].join(" and ")) > d1e) return null;
+  let U = C.length > 0,
+    Y = h.length > 0,
+    j = x.length > 0;
+  if (Y && !U && !j) return r(n, {
+    children: ["Yes, allow reading from ", fPe(h), " from this project"]
+  });
+  if (U && !Y && !j) return r(n, {
+    children: ["Yes, and always allow access to ", fPe(B), " from this project"]
+  });
+  if (j && !U && !Y) return r(n, {
+    children: ["Yes, and don't ask again for ", pn(x), " commands", " ", l === void 0 ? r(V, {
+      children: ["in", " ", e(n, {
+        bold: !0,
+        children: Rn(we())
+      })]
+    }) : r(V, {
+      children: ["on ", e(n, {
+        bold: !0,
+        children: l
+      })]
+    })]
+  });
+  if ((U || Y) && !j) {
+    let m = [...B, ...h];
+    return r(n, {
+      children: ["Yes, and always allow access to ", fPe(m), " from this project"]
+    })
+  }
+  if ((U || Y) && j) {
+    let m = [...B, ...h];
+    if (m.length === 1 && x.length === 1) return r(n, {
+      children: ["Yes, and allow access to ", fPe(m), " and", " ", pn(x), " commands"]
+    });
+    return r(n, {
+      children: ["Yes, and allow ", fPe(m), " access and", " ", pn(x), " commands"]
+    })
+  }
+  return null
+}
+var Ee = Symbol("ConsentRow mint token");
+class le {
+  #e = !0;
+  node;
+  applies;
+  constructor(t, u, o) {
+    if (t !== Ee) throw Error("ConsentRow may only be constructed by the consentRows factories");
+    this.node = u, this.applies = o, Object.freeze(this)
+  }
+  static is(t) {
+    return typeof t === "object" && t !== null && #e in t
+  }
+}
+var Tb = le.is,
+  X3r = f(() => lp(Tb));
+
+function Xe(t) {
+  if (t.length > oue) return null;
+  let u = [];
+  for (let o of t) {
+    let l;
+    try {
+      l = GL().safeParse(o)
+    } catch {
+      return null
+    }
+    if (!l.success) return null;
+    u.push(l.data)
+  }
+  return m$r(u)
+}
+
+function mA(t, u) {
+  if (!Array.isArray(t)) return null;
+  let o;
+  try {
+    o = t.length
+  } catch {
+    return null
+  }
+  if (typeof o !== "number" || !Number.isSafeInteger(o) || o < 0 || o > oue) return null;
+  let l = 0,
+    c = [];
+  for (let E = 0; E < o; E++) try {
+    let y = t[E],
+      x = y !== null && typeof y === "object" ? {
+        ...y
+      } : y,
+      k = !1;
+    if (x !== null && typeof x === "object") {
+      let h = x;
+      for (let B of ["rules", "directories"]) {
+        let A = h[B];
+        if (!Array.isArray(A)) continue;
+        let U = A.length;
+        if (typeof U !== "number" || !Number.isSafeInteger(U) || U < 0) {
+          k = !0;
+          break
+        }
+        if (l += U, l > oue * abe) return null;
+        let Y = [];
+        for (let j = 0; j < U; j++) Y.push(A[j]);
+        h[B] = Y
+      }
+    }
+    if (k) continue;
+    c.push(x)
+  } catch {}
+  let D = [];
+  for (let E of c) {
+    let y;
+    try {
+      y = GL().safeParse(E)
+    } catch {
+      continue
+    }
+    if (y.success) D.push(y.data)
+  }
+  if (D.length === 0) return null;
+  let a = au(D, u.displayedTypes, u.labelPredicate);
+  if (a.length === 0) return null;
+  let p = m$r(a),
+    C = u.renderLabel(p);
+  if (C == null || typeof C === "boolean" || C === "") return null;
+  return new le(Ee, C, p)
+}
+var fr = {
+  default: "default (ask each time)",
+  acceptEdits: "accept edits (auto-approve file edits and common file commands)",
+  auto: "auto (no routine prompts; a reviewer model screens actions)",
+  dontAsk: "don't ask (auto-deny anything that would prompt)",
+  plan: "plan mode (research and propose changes without making them)",
+  bypassPermissions: "BYPASS PERMISSIONS (no further prompts)"
+};
+
+function sue(t, u) {
+  if (t === "bypassPermissions" && u?.isBypassPermissionsModeAvailable === !1) return null;
+  let o = Xe([{
+    type: "setMode",
+    destination: "session",
+    mode: t
+  }]);
+  if (o === null) throw Error("setModeRow: schema rejected a designed setMode update");
+  if (u?.labelVariant === "plan-keep-context") {
+    let l = t === "acceptEdits" ? "Yes, auto-accept edits" : t === "default" ? "Yes, manually approve edits" : null;
+    if (l !== null) return new le(Ee, e(n, {
+      children: l
+    }), o)
+  }
+  return new le(Ee, r(n, {
+    children: ["Yes, and switch to ", e(n, {
+      bold: !0,
+      children: fr[t]
+    }), " for this session"]
+  }), o)
+}
+
+function Izt(t) {
+  if (!Array.isArray(t)) return null;
+  let u;
+  try {
+    u = t.length
+  } catch {
+    return null
+  }
+  if (typeof u !== "number" || !Number.isSafeInteger(u) || u < 0 || u > oue) return null;
+  let o = [];
+  for (let a = 0; a < u; a++) try {
+    let p = t[a],
+      C = lu(p);
+    if (C !== null) o.push(C)
+  } catch {}
+  let l = L(o);
+  if (l.length === 0) return null;
+  if (l.length > abe) return null;
+  let c = uN(l, (a) => fGn(a));
+  if (ie(c.join(", ")) > d1e) return null;
+  let D = Xe([{
+    type: "addDirectories",
+    destination: "session",
+    directories: l
+  }]);
+  if (D === null) return null;
+  return new le(Ee, r(n, {
+    children: ["Yes, and always allow access to ", e(n, {
+      bold: !0,
+      children: c.join(", ")
+    }), " for this session"]
+  }), D)
+}
+
+function hbn(t, u, o) {
+  if (typeof t !== "string" || l5(t) !== t) return null;
+  if (typeof u !== "string") return null;
+  let l = u.trim();
+  if (l === "" || l5(l) !== l) return null;
+  if (l === "*") {
+    if (!ze(o)) return null;
+    let D = Xe([{
+      type: "addRules",
+      rules: [{
+        toolName: o
+      }],
+      behavior: "allow",
+      destination: "localSettings"
+    }]);
+    if (D === null) return null;
+    return new le(Ee, `Yes, and don\u2019t ask again for any ${o} command`, D)
+  }
+  if (!ze(o) || !cn({
+      toolName: o,
+      ruleContent: l
+    })) return null;
+  let c = Xe([{
+    type: "addRules",
+    rules: [{
+      toolName: o,
+      ruleContent: l
+    }],
+    behavior: "allow",
+    destination: "localSettings"
+  }]);
+  if (c === null) return null;
+  return new le(Ee, `Yes, and don\u2019t ask again for: ${l}`, c)
+}
+var TJn = {
+    workflow: "Yes, and switch to auto mode",
+    "exit-plan-resume": "Yes, and use auto mode"
+  },
+  mr = (() => {
+    let t = Xe([]);
+    if (t === null) throw Error("NO_DISPLAYED_UPDATES: empty intake rejected");
+    return t
+  })();
+
+function Ozt(t) {
+  return new le(Ee, TJn[t], mr)
+}
+
+function ybn(t, ...u) {
+  let o = [t, ...u];
+  for (let D of o)
+    if (!Tb(D)) throw Error("combineRows accepts only constructor-produced ConsentRows");
+  let l = o.flatMap((D) => [...D.applies]);
+  if (l.length > oue) throw Error("combineRows: combined updates exceed the display intake cap");
+  let c = Xe(l);
+  if (c === null) throw Error("combineRows: schema rejected already-minted updates");
+  return new le(Ee, e(n, {
+    children: o.map((D, a) => r(n, {
+      children: [a > 0 ? "; " : "", D.node]
+    }, a))
+  }), c)
+}
+
+function fn({
+  onlyFirst: t = !1
+} = {}) {
+  let o = ["[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?(?:\\u0007|\\u001B\\u005C|\\u009C))", "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-nq-uy=><~]))"].join("|");
+  return new RegExp(o, t ? void 0 : "g")
+}
+var Cr = fn();
+
+function lt(t) {
+  if (typeof t !== "string") throw TypeError(`Expected a \`string\`, got \`${typeof t}\``);
+  return t.replace(Cr, "")
+}
+var cu = () => /[#*0-9]\uFE0F?\u20E3|[\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23ED-\u23EF\u23F1\u23F2\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB\u25FC\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692\u2694-\u2697\u2699\u269B\u269C\u26A0\u26A7\u26AA\u26B0\u26B1\u26BD\u26BE\u26C4\u26C8\u26CF\u26D1\u26E9\u26F0-\u26F5\u26F7\u26F8\u26FA\u2702\u2708\u2709\u270F\u2712\u2714\u2716\u271D\u2721\u2733\u2734\u2744\u2747\u2757\u2763\u27A1\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B55\u3030\u303D\u3297\u3299]\uFE0F?|[\u261D\u270C\u270D](?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?|[\u270A\u270B](?:\uD83C[\uDFFB-\uDFFF])?|[\u23E9-\u23EC\u23F0\u23F3\u25FD\u2693\u26A1\u26AB\u26C5\u26CE\u26D4\u26EA\u26FD\u2705\u2728\u274C\u274E\u2753-\u2755\u2795-\u2797\u27B0\u27BF\u2B50]|\u26D3\uFE0F?(?:\u200D\uD83D\uDCA5)?|\u26F9(?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?(?:\u200D[\u2640\u2642]\uFE0F?)?|\u2764\uFE0F?(?:\u200D(?:\uD83D\uDD25|\uD83E\uDE79))?|\uD83C(?:[\uDC04\uDD70\uDD71\uDD7E\uDD7F\uDE02\uDE37\uDF21\uDF24-\uDF2C\uDF36\uDF7D\uDF96\uDF97\uDF99-\uDF9B\uDF9E\uDF9F\uDFCD\uDFCE\uDFD4-\uDFDF\uDFF5\uDFF7]\uFE0F?|[\uDF85\uDFC2\uDFC7](?:\uD83C[\uDFFB-\uDFFF])?|[\uDFC4\uDFCA](?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDFCB\uDFCC](?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?(?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDCCF\uDD8E\uDD91-\uDD9A\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF43\uDF45-\uDF4A\uDF4C-\uDF7C\uDF7E-\uDF84\uDF86-\uDF93\uDFA0-\uDFC1\uDFC5\uDFC6\uDFC8\uDFC9\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF8-\uDFFF]|\uDDE6\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF]|\uDDE7\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF]|\uDDE8\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF7\uDDFA-\uDDFF]|\uDDE9\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF]|\uDDEA\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA]|\uDDEB\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7]|\uDDEC\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE]|\uDDED\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA]|\uDDEE\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9]|\uDDEF\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5]|\uDDF0\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF]|\uDDF1\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE]|\uDDF2\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF]|\uDDF3\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF]|\uDDF4\uD83C\uDDF2|\uDDF5\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE]|\uDDF6\uD83C\uDDE6|\uDDF7\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC]|\uDDF8\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF]|\uDDF9\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF]|\uDDFA\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF]|\uDDFB\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA]|\uDDFC\uD83C[\uDDEB\uDDF8]|\uDDFD\uD83C\uDDF0|\uDDFE\uD83C[\uDDEA\uDDF9]|\uDDFF\uD83C[\uDDE6\uDDF2\uDDFC]|\uDF44(?:\u200D\uD83D\uDFEB)?|\uDF4B(?:\u200D\uD83D\uDFE9)?|\uDFC3(?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D(?:[\u2640\u2642]\uFE0F?(?:\u200D\u27A1\uFE0F?)?|\u27A1\uFE0F?))?|\uDFF3\uFE0F?(?:\u200D(?:\u26A7\uFE0F?|\uD83C\uDF08))?|\uDFF4(?:\u200D\u2620\uFE0F?|\uDB40\uDC67\uDB40\uDC62\uDB40(?:\uDC65\uDB40\uDC6E\uDB40\uDC67|\uDC73\uDB40\uDC63\uDB40\uDC74|\uDC77\uDB40\uDC6C\uDB40\uDC73)\uDB40\uDC7F)?)|\uD83D(?:[\uDC3F\uDCFD\uDD49\uDD4A\uDD6F\uDD70\uDD73\uDD76-\uDD79\uDD87\uDD8A-\uDD8D\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA\uDECB\uDECD-\uDECF\uDEE0-\uDEE5\uDEE9\uDEF0\uDEF3]\uFE0F?|[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC](?:\uD83C[\uDFFB-\uDFFF])?|[\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4\uDEB5](?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDD74\uDD90](?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?|[\uDC00-\uDC07\uDC09-\uDC14\uDC16-\uDC25\uDC27-\uDC3A\uDC3C-\uDC3E\uDC40\uDC44\uDC45\uDC51-\uDC65\uDC6A\uDC79-\uDC7B\uDC7D-\uDC80\uDC84\uDC88-\uDC8E\uDC90\uDC92-\uDCA9\uDCAB-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDDA4\uDDFB-\uDE2D\uDE2F-\uDE34\uDE37-\uDE41\uDE43\uDE44\uDE48-\uDE4A\uDE80-\uDEA2\uDEA4-\uDEB3\uDEB7-\uDEBF\uDEC1-\uDEC5\uDED0-\uDED2\uDED5-\uDED7\uDEDC-\uDEDF\uDEEB\uDEEC\uDEF4-\uDEFC\uDFE0-\uDFEB\uDFF0]|\uDC08(?:\u200D\u2B1B)?|\uDC15(?:\u200D\uD83E\uDDBA)?|\uDC26(?:\u200D(?:\u2B1B|\uD83D\uDD25))?|\uDC3B(?:\u200D\u2744\uFE0F?)?|\uDC41\uFE0F?(?:\u200D\uD83D\uDDE8\uFE0F?)?|\uDC68(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D(?:[\uDC68\uDC69]\u200D\uD83D(?:\uDC66(?:\u200D\uD83D\uDC66)?|\uDC67(?:\u200D\uD83D[\uDC66\uDC67])?)|[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uDC66(?:\u200D\uD83D\uDC66)?|\uDC67(?:\u200D\uD83D[\uDC66\uDC67])?)|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]))|\uD83C(?:\uDFFB(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFC-\uDFFF])))?|\uDFFC(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFB\uDFFD-\uDFFF])))?|\uDFFD(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])))?|\uDFFE(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFB-\uDFFD\uDFFF])))?|\uDFFF(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?\uDC68\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D\uDC68\uD83C[\uDFFB-\uDFFE])))?))?|\uDC69(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:\uDC8B\u200D\uD83D)?[\uDC68\uDC69]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D(?:[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uDC66(?:\u200D\uD83D\uDC66)?|\uDC67(?:\u200D\uD83D[\uDC66\uDC67])?|\uDC69\u200D\uD83D(?:\uDC66(?:\u200D\uD83D\uDC66)?|\uDC67(?:\u200D\uD83D[\uDC66\uDC67])?))|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]))|\uD83C(?:\uDFFB(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFC-\uDFFF])))?|\uDFFC(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFB\uDFFD-\uDFFF])))?|\uDFFD(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])))?|\uDFFE(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFB-\uDFFD\uDFFF])))?|\uDFFF(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D\uD83D(?:[\uDC68\uDC69]|\uDC8B\u200D\uD83D[\uDC68\uDC69])\uD83C[\uDFFB-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83D[\uDC68\uDC69]\uD83C[\uDFFB-\uDFFE])))?))?|\uDC6F(?:\u200D[\u2640\u2642]\uFE0F?)?|\uDD75(?:\uD83C[\uDFFB-\uDFFF]|\uFE0F)?(?:\u200D[\u2640\u2642]\uFE0F?)?|\uDE2E(?:\u200D\uD83D\uDCA8)?|\uDE35(?:\u200D\uD83D\uDCAB)?|\uDE36(?:\u200D\uD83C\uDF2B\uFE0F?)?|\uDE42(?:\u200D[\u2194\u2195]\uFE0F?)?|\uDEB6(?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D(?:[\u2640\u2642]\uFE0F?(?:\u200D\u27A1\uFE0F?)?|\u27A1\uFE0F?))?)|\uD83E(?:[\uDD0C\uDD0F\uDD18-\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5\uDEC3-\uDEC5\uDEF0\uDEF2-\uDEF8](?:\uD83C[\uDFFB-\uDFFF])?|[\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD\uDDCF\uDDD4\uDDD6-\uDDDD](?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDDDE\uDDDF](?:\u200D[\u2640\u2642]\uFE0F?)?|[\uDD0D\uDD0E\uDD10-\uDD17\uDD20-\uDD25\uDD27-\uDD2F\uDD3A\uDD3F-\uDD45\uDD47-\uDD76\uDD78-\uDDB4\uDDB7\uDDBA\uDDBC-\uDDCC\uDDD0\uDDE0-\uDDFF\uDE70-\uDE7C\uDE80-\uDE89\uDE8F-\uDEC2\uDEC6\uDECE-\uDEDC\uDEDF-\uDEE9]|\uDD3C(?:\u200D[\u2640\u2642]\uFE0F?|\uD83C[\uDFFB-\uDFFF])?|\uDDCE(?:\uD83C[\uDFFB-\uDFFF])?(?:\u200D(?:[\u2640\u2642]\uFE0F?(?:\u200D\u27A1\uFE0F?)?|\u27A1\uFE0F?))?|\uDDD1(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1|\uDDD1\u200D\uD83E\uDDD2(?:\u200D\uD83E\uDDD2)?|\uDDD2(?:\u200D\uD83E\uDDD2)?))|\uD83C(?:\uDFFB(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFC-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?|\uDFFC(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFB\uDFFD-\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?|\uDFFD(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?|\uDFFE(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFB-\uDFFD\uDFFF]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?|\uDFFF(?:\u200D(?:[\u2695\u2696\u2708]\uFE0F?|\u2764\uFE0F?\u200D(?:\uD83D\uDC8B\u200D)?\uD83E\uDDD1\uD83C[\uDFFB-\uDFFE]|\uD83C[\uDF3E\uDF73\uDF7C\uDF84\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E(?:[\uDDAF\uDDBC\uDDBD](?:\u200D\u27A1\uFE0F?)?|[\uDDB0-\uDDB3]|\uDD1D\u200D\uD83E\uDDD1\uD83C[\uDFFB-\uDFFF])))?))?|\uDEF1(?:\uD83C(?:\uDFFB(?:\u200D\uD83E\uDEF2\uD83C[\uDFFC-\uDFFF])?|\uDFFC(?:\u200D\uD83E\uDEF2\uD83C[\uDFFB\uDFFD-\uDFFF])?|\uDFFD(?:\u200D\uD83E\uDEF2\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])?|\uDFFE(?:\u200D\uD83E\uDEF2\uD83C[\uDFFB-\uDFFD\uDFFF])?|\uDFFF(?:\u200D\uD83E\uDEF2\uD83C[\uDFFB-\uDFFE])?))?)/g;
+var Er = new Intl.Segmenter,
+  gr = /^\p{Default_Ignorable_Code_Point}$/u;
+
+function $e(t, u = {}) {
+  if (typeof t !== "string" || t.length === 0) return 0;
+  let {
+    ambiguousIsNarrow: o = !0,
+    countAnsiEscapeCodes: l = !1
+  } = u;
+  if (!l) t = lt(t);
+  if (t.length === 0) return 0;
+  let c = 0,
+    D = {
+      ambiguousAsWide: !o
+    };
+  for (let {
+      segment: a
+    }
+    of Er.segment(t)) {
+    let p = a.codePointAt(0);
+    if (p <= 31 || p >= 127 && p <= 159) continue;
+    if (p >= 8203 && p <= 8207 || p === 65279) continue;
+    if (p >= 768 && p <= 879 || p >= 6832 && p <= 6911 || p >= 7616 && p <= 7679 || p >= 8400 && p <= 8447 || p >= 65056 && p <= 65071) continue;
+    if (p >= 55296 && p <= 57343) continue;
+    if (p >= 65024 && p <= 65039) continue;
+    if (gr.test(a)) continue;
+    if (cu().test(a)) {
+      c += 2;
+      continue
+    }
+    c += U8r(p, D)
+  }
+  return c
+}
+var wt = new Set(["\x1B", "\x9B"]),
+  hr = 39,
+  Cn = "\x07",
+  Fu = "[",
+  yr = "]",
+  fu = "m",
+  Rt = `${yr}8;;`,
+  du = (t) => `${wt.values().next().value}${Fu}${t}${fu}`,
+  pu = (t) => `${wt.values().next().value}${Rt}${t}${Cn}`,
+  br = (t) => t.split(" ").map((u) => $e(u)),
+  mn = (t, u, o) => {
+    let l = [...u],
+      c = !1,
+      D = !1,
+      a = $e(lt(t.at(-1)));
+    for (let [p, C] of l.entries()) {
+      let E = $e(C);
+      if (a + E <= o) t[t.length - 1] += C;
+      else t.push(C), a = 0;
+      if (wt.has(C)) c = !0, D = l.slice(p + 1, p + 1 + Rt.length).join("") === Rt;
+      if (c) {
+        if (D) {
+          if (C === Cn) c = !1, D = !1
+        } else if (C === fu) c = !1;
+        continue
+      }
+      if (a += E, a === o && p < l.length - 1) t.push(""), a = 0
+    }
+    if (!a && t.at(-1).length > 0 && t.length > 1) t[t.length - 2] += t.pop()
+  },
+  Ar = (t) => {
+    let u = t.split(" "),
+      o = u.length;
+    while (o > 0) {
+      if ($e(u[o - 1]) > 0) break;
+      o--
+    }
+    if (o === u.length) return t;
+    return u.slice(0, o).join(" ") + u.slice(o).join("")
+  },
+  Br = (t, u, o = {}) => {
+    if (o.trim !== !1 && t.trim() === "") return "";
+    let l = "",
+      c, D, a = br(t),
+      p = [""];
+    for (let [x, k] of t.split(" ").entries()) {
+      if (o.trim !== !1) p[p.length - 1] = p.at(-1).trimStart();
+      let h = $e(p.at(-1));
+      if (x !== 0) {
+        if (h >= u && (o.wordWrap === !1 || o.trim === !1)) p.push(""), h = 0;
+        if (h > 0 || o.trim === !1) p[p.length - 1] += " ", h++
+      }
+      if (o.hard && a[x] > u) {
+        let B = u - h,
+          A = 1 + Math.floor((a[x] - B - 1) / u);
+        if (Math.floor((a[x] - 1) / u) < A) p.push("");
+        mn(p, k, u);
+        continue
+      }
+      if (h + a[x] > u && h > 0 && a[x] > 0) {
+        if (o.wordWrap === !1 && h < u) {
+          mn(p, k, u);
+          continue
+        }
+        p.push("")
+      }
+      if (h + a[x] > u && o.wordWrap === !1) {
+        mn(p, k, u);
+        continue
+      }
+      p[p.length - 1] += k
+    }
+    if (o.trim !== !1) p = p.map((x) => Ar(x));
+    let C = p.join(`
+`),
+      E = [...C],
+      y = 0;
+    for (let [x, k] of E.entries()) {
+      if (l += k, wt.has(k)) {
+        let {
+          groups: B
+        } = new RegExp(`(?:\\${Fu}(?<code>\\d+)m|\\${Rt}(?<uri>.*)${Cn})`).exec(C.slice(y)) || {
+          groups: {}
+        };
+        if (B.code !== void 0) {
+          let A = Number.parseFloat(B.code);
+          c = A === hr ? void 0 : A
+        } else if (B.uri !== void 0) D = B.uri.length === 0 ? void 0 : B.uri
+      }
+      let h = Z2.codes.get(Number(c));
+      if (E[x + 1] === `
+`) {
+        if (D) l += pu("");
+        if (c && h) l += du(h)
+      } else if (k === `
+`) {
+        if (c && h) l += du(c);
+        if (D) l += pu(D)
+      }
+      y += k.length
+    }
+    return l
+  };
+
+function Ze(t, u, o) {
+  return String(t).normalize().replaceAll(`\r
+`, `
+`).split(`
+`).map((l) => Br(l, u, o)).join(`
+`)
+}
+N();
+N();
+
+function Mr(G) {
+  return G + 1
+}
+
+function Tt(t) {
+  let D = w(18),
+    {
+      permissionResult: u
+    } = t,
+    o = u?.behavior === "ask" ? u.denialLimitFallback?.deadlineEpochMs ?? u.autoDenyWindow?.deadlineEpochMs : void 0,
+    l = _t(),
+    c = Yt(),
+    a;
+  if (D[0] !== c) a = c.now(), D[0] = c, D[1] = a;
+  else a = D[1];
+  let p;
+  if (D[2] === S) p = Date.now(), D[2] = p;
+  else p = D[2];
+  let C;
+  if (D[3] !== a) C = {
+    clockAt: a,
+    epochAt: p
+  }, D[3] = a, D[4] = C;
+  else C = D[4];
+  let E = C,
+    y;
+  if (D[5] !== E.clockAt || D[6] !== E.epochAt || D[7] !== c) y = () => E.epochAt + (c.now() - E.clockAt), D[5] = E.clockAt, D[6] = E.epochAt, D[7] = c, D[8] = y;
+  else y = D[8];
+  let x = y,
+    [, k] = g(0),
+    h;
+  if (D[9] === S) h = () => k(Mr), D[9] = h;
+  else h = D[9];
+  if (Vs(h, o !== void 0 && !l ? 1000 : null), o === void 0) {
+    return null
+  }
+  if (l) {
+    let B = Math.max(0, o - x());
+    let A;
+    if (D[10] !== B) {
+      let U = Math.round(B / 60000);
+      let Y = Math.max(1, Math.round(B / 1000));
+      A = B >= 60000 ? `about ${U} ${I(U,"minute")}` : `about ${Y} ${I(Y,"second")}`;
+      D[10] = B, D[11] = A
+    } else A = D[11];
+    let j = A;
+    const m = `${Uv} Claude Code will automatically deny this request in ${j}, to avoid blocking progress on an unattended session`;
+    let M;
+    if (D[12] !== m) M = e(s, {
+      marginBottom: 1,
+      children: e(n, {
+        color: "warning",
+        children: m
+      })
+    }), D[12] = m, D[13] = M;
+    else M = D[13];
+    return M
+  }
+  let q = Math.max(0, o - x()),
+    re = Math.floor(q / 60000),
+    H = Math.floor(q % 60000 / 1000);
+  const A = String(H);
+  let m;
+  if (D[14] !== A) m = A.padStart(2, "0"), D[14] = A, D[15] = m;
+  else m = D[15];
+  let K = `${re}:${m}`;
+  const M = `${Uv} Claude Code will automatically deny this request in ${K}, to avoid blocking progress on an unattended session`;
+  let O;
+  if (D[16] !== M) O = e(s, {
+    marginBottom: 1,
+    children: e(n, {
+      color: "warning",
+      children: M
+    })
+  }), D[16] = M, D[17] = O;
+  else O = D[17];
+  return O
+}
+
+function Ur(bt) {
+  return bt.toolPermissionContext.mode
+}
+
+function jr(At, me) {
+  return e(zi, {
+    multiline: DR(At),
+    children: me
+  })
+}
+
+function _r(t) {
+  if (t?.startsWith("plugin")) return "plugin hooks.json";
+  if (t?.startsWith("skill")) return "SKILL.md";
+  return "settings.json"
+}
+
+function Lt(t) {
+  if (t?.type === "rule" && t.rule.ruleBehavior === "ask") return t.rule;
+  if (t?.type === "subcommandResults") {
+    for (let u of t.reasons.values())
+      if (u.behavior === "ask") {
+        let o = Lt(u.decisionReason);
+        if (o) return o
+      }
+  }
+  return
+}
+
+function _e(t, u, o) {
+  if (!t) return null;
+  let l = (c) => ai(c).text;
+  if (t.type === "classifier") {
+    if (t.classifier === "auto-mode") return {
+      reasonString: `Auto mode classifier requires confirmation for this ${u}.
+${l(t.reason)}`,
+      configString: void 0,
+      themeColor: "error"
+    };
+    return {
+      reasonString: `Classifier ${pe.bold(l(t.classifier))} requires confirmation for this ${u}.
+${l(t.reason)}`,
+      configString: void 0
+    }
+  }
+  if (t.type === "subcommandResults") {
+    let c = Lt(t);
+    if (c) return _e({
+      type: "rule",
+      rule: c
+    }, u, o);
+    for (let D of t.reasons.values())
+      if (D.behavior === "ask" || D.behavior === "passthrough") {
+        let a = _e(D.decisionReason, u, o);
+        if (a) return a
+      }
+  }
+  switch (t.type) {
+    case "rule": {
+      let c = pe.bold(l(Mn(t.rule.ruleValue)));
+      if (o === "auto" && t.rule.ruleBehavior === "ask" && t.rule.source !== "policySettings") return {
+        reasonString: `Ask rule ${c} overrides auto mode for this ${u}.`,
+        configString: "/permissions to let auto mode decide"
+      };
+      return {
+        reasonString: `Permission rule ${c} requires confirmation for this ${u}.`,
+        configString: t.rule.source === "policySettings" ? void 0 : "/permissions to update rules"
+      }
+    }
+    case "hook": {
+      let c = t.reason ? `:
+${l(t.reason)}` : ".",
+        D = t.hookSource ? ` ${pe.dim(`[${l(t.hookSource)}]`)}` : "";
+      return {
+        reasonString: `Hook ${pe.bold(l(t.hookName))} requires confirmation for this ${u}${c}${D}`,
+        configString: `${_r(t.hookSource)} to update hooks`
+      }
+    }
+    case "safetyCheck":
+    case "other":
+      return {
+        reasonString: l(t.reason), configString: void 0
+      };
+    case "workingDir":
+      return {
+        reasonString: l(t.reason), configString: "/permissions to update rules"
+      };
+    default:
+      return null
+  }
+}
+
+function Cb(t) {
+  let C = w(27),
+    {
+      permissionResult: u,
+      toolType: o
+    } = t,
+    l = W(Ur),
+    c = u?.behavior === "ask" ? u.denialLimitFallback?.disclosure : void 0,
+    D = _e(u?.decisionReason, o, l),
+    a = c !== void 0 && c !== u?.decisionReason ? _e(c, o, l) : null,
+    p = ve().columns,
+    E;
+  if (C[0] !== c || C[1] !== p) E = (y, x) => {
+    if (c === void 0) {
+      return y
+    }
+    let k = x;
+    let h = Math.max(20, p - 8);
+    let A = Ze(y, h, {
+      trim: !0,
+      hard: !0
+    }).split(`
+`).map((B) => ot(B, h));
+    if (A.length <= k) {
+      return A.join(`
+`)
+    }
+    let U = Math.max(1, k - 1);
+    return A.slice(0, U).join(`
+`) + `
+\u2026 (+${A.length-U} more lines)`
+  }, C[0] = c, C[1] = p, C[2] = E;
+  else E = C[2];
+  let Y = E,
+    j = u?.behavior === "ask" ? u.matchedAskRule : void 0,
+    m = j !== void 0 && Lt(u?.decisionReason) === void 0 ? _e({
+      type: "rule",
+      rule: j
+    }, o, l) : null,
+    M;
+  if (C[3] !== c || C[4] !== p) M = (q) => {
+    if (q === void 0 || c === void 0) {
+      return 0
+    }
+    let re = Math.max(20, p - 8);
+    return Gt(Ze(q, re, {
+      trim: !0,
+      hard: !0
+    }), `
+`) + 1
+  }, C[3] = c, C[4] = p, C[5] = M;
+  else M = C[5];
+  let H = M,
+    K = {
+      consent: H(D?.reasonString),
+      streak: H(a?.reasonString),
+      askRule: H(m?.reasonString)
+    },
+    O = {
+      consent: Math.min(K.consent, 4),
+      streak: Math.min(K.streak, 4),
+      askRule: Math.min(K.askRule, 4)
+    },
+    G = 12 - (O.consent + O.streak + O.askRule);
+  for (const v of ["consent", "streak", "askRule"]) {
+    if (G <= 0) {
+      break
+    }
+    let ee = Math.min(K[v] - O[v], G);
+    O[v] = O[v] + ee, G = G - ee
+  }
+  let z = D !== null && D !== void 0 ? Y(D.reasonString, O.consent) : void 0,
+    te = a ? Y(a.reasonString, O.streak) : void 0,
+    De = m ? Y(m.reasonString, O.askRule) : void 0,
+    Be;
+  if (C[6] !== u) Be = e(Tt, {
+    permissionResult: u
+  }), C[6] = u, C[7] = Be;
+  else Be = C[7];
+  let Z = Be;
+  if (!D && !m && !a) {
+    return Z
+  }
+  let xe = D?.themeColor ?? (u?.decisionReason?.type === "hook" && l === "auto" ? "warning" : void 0),
+    fe = jr,
+    Le;
+  if (C[8] !== z || C[9] !== D || C[10] !== xe) Le = D && fe(z ?? D.reasonString, xe ? e(n, {
+    color: xe,
+    children: z ?? D.reasonString
+  }) : e(n, {
+    children: e(Jr, {
+      children: z ?? D.reasonString
+    })
+  })), C[8] = z, C[9] = D, C[10] = xe, C[11] = Le;
+  else Le = C[11];
+  let ue;
+  if (C[12] !== D) ue = D?.configString && e(n, {
+    dimColor: !0,
+    children: D.configString
+  }), C[12] = D, C[13] = ue;
+  else ue = C[13];
+  let Q;
+  if (C[14] !== m || C[15] !== De || C[16] !== D?.configString) Q = m && r(V, {
+    children: [fe(De ?? m.reasonString, e(n, {
+      children: e(Jr, {
+        children: De ?? m.reasonString
+      })
+    })), m.configString && m.configString !== D?.configString && e(n, {
+      dimColor: !0,
+      children: m.configString
+    })]
+  }), C[14] = m, C[15] = De, C[16] = D?.configString, C[17] = Q;
+  else Q = C[17];
+  let Ie;
+  if (C[18] !== te || C[19] !== a) Ie = a && fe(te ?? a.reasonString, a.themeColor ? e(n, {
+    color: a.themeColor,
+    children: te ?? a.reasonString
+  }) : e(n, {
+    children: e(Jr, {
+      children: te ?? a.reasonString
+    })
+  })), C[18] = te, C[19] = a, C[20] = Ie;
+  else Ie = C[20];
+  let ke;
+  if (C[21] !== Z || C[22] !== Le || C[23] !== ue || C[24] !== Q || C[25] !== Ie) ke = r(s, {
+    marginBottom: 1,
+    flexDirection: "column",
+    children: [Le, ue, Q, Ie, Z]
+  }), C[21] = Z, C[22] = Le, C[23] = ue, C[24] = Q, C[25] = Ie, C[26] = ke;
+  else ke = C[26];
+  return ke
+}
+N();
+N();
+
+function ri(At) {
+  return {
+    ...At,
+    attribution: {
+      ...At.attribution,
+      escapeCount: At.attribution.escapeCount + 1
+    }
+  }
+}
+
+function rht(t) {
+  return t === "yes" ? "accept" : t === "no" ? "reject" : void 0
+}
+
+function lbe(t) {
+  let M = w(35),
+    {
+      feedbackTypeOf: u,
+      toolName: o,
+      isMcp: l,
+      initialFocusedType: c
+    } = t,
+    D = dn(),
+    [a, p] = g(""),
+    [C, E] = g(""),
+    [y, x] = g(!1),
+    [k, h] = g(!1),
+    [B, A] = g(!1),
+    [U, Y] = g(!1),
+    [j, m] = g(void 0),
+    q;
+  if (M[0] !== u || M[1] !== j || M[2] !== c) q = j === void 0 ? c : u(j), M[0] = u, M[1] = j, M[2] = c, M[3] = q;
+  else q = M[3];
+  let re = q,
+    H;
+  if (M[4] !== y || M[5] !== u || M[6] !== l || M[7] !== k || M[8] !== o) H = (K) => {
+    let O = u(K);
+    let G = {
+      toolName: o,
+      isMcp: l
+    };
+    if (O === "accept") {
+      if (y) x(!1), i("tengu_accept_feedback_mode_collapsed", G);
+      else x(!0), A(!0), i("tengu_accept_feedback_mode_entered", G)
+    } else if (O === "reject") {
+      if (k) h(!1), i("tengu_reject_feedback_mode_collapsed", G);
+      else h(!0), Y(!0), i("tengu_reject_feedback_mode_entered", G)
+    }
+  }, M[4] = y, M[5] = u, M[6] = l, M[7] = k, M[8] = o, M[9] = H;
+  else H = M[9];
+  let v = H,
+    ee;
+  if (M[10] !== a || M[11] !== y || M[12] !== u || M[13] !== C || M[14] !== k) ee = (z) => {
+    let te = u(z);
+    if (te !== "accept" && y && !a.trim()) x(!1);
+    if (te !== "reject" && k && !C.trim()) h(!1);
+    m(z)
+  }, M[10] = a, M[11] = y, M[12] = u, M[13] = C, M[14] = k, M[15] = ee;
+  else ee = M[15];
+  let De = ee,
+    Be;
+  if (M[16] !== B || M[17] !== l || M[18] !== U || M[19] !== o) Be = (Z, xe) => {
+    i(Z === "accept" ? "tengu_accept_submitted" : "tengu_reject_submitted", {
+      toolName: o,
+      isMcp: l,
+      has_instructions: !!xe,
+      instructions_length: xe?.length ?? 0,
+      entered_feedback_mode: Z === "accept" ? B : U
+    })
+  }, M[16] = B, M[17] = l, M[18] = U, M[19] = o, M[20] = Be;
+  else Be = M[20];
+  let fe = Be,
+    Le;
+  if (M[21] !== D) Le = () => {
+    i("tengu_permission_request_escape", {}), D(ri)
+  }, M[21] = D, M[22] = Le;
+  else Le = M[22];
+  let ue = Le,
+    Q = re === "accept" && !y || re === "reject" && !k,
+    Ie;
+  if (M[23] !== Q) Ie = Q && e(F, {
+    chord: "tab",
+    action: "amend"
+  }), M[23] = Q, M[24] = Ie;
+  else Ie = M[24];
+  let ke = Ie,
+    bt;
+  if (M[25] !== a || M[26] !== y || M[27] !== De || M[28] !== v || M[29] !== ke || M[30] !== ue || M[31] !== fe || M[32] !== C || M[33] !== k) bt = {
+    acceptFeedback: a,
+    rejectFeedback: C,
+    setAcceptFeedback: p,
+    setRejectFeedback: E,
+    acceptInputMode: y,
+    rejectInputMode: k,
+    handleInputModeToggle: v,
+    handleFocus: De,
+    logSubmitted: fe,
+    logEscape: ue,
+    hintNode: ke
+  }, M[25] = a, M[26] = y, M[27] = De, M[28] = v, M[29] = ke, M[30] = ue, M[31] = fe, M[32] = C, M[33] = k, M[34] = bt;
+  else bt = M[34];
+  return bt
+}
+var po = {
+  accept: "tell Claude what to do next",
+  reject: "tell Claude what to do differently"
+};
+
+function OK({
+  options: t,
+  onSelect: u,
+  onCancel: o,
+  question: l = "Do you want to proceed?",
+  toolAnalyticsContext: c,
+  defaultFocusValue: D,
+  hideIndexes: a
+}) {
+  let [p, C] = g(D);
+  R(() => {
+    C(void 0)
+  }, []);
+  let E = se((O) => t.find((G) => G.value === O)?.feedbackConfig?.type, [t]),
+    {
+      acceptFeedback: y,
+      rejectFeedback: x,
+      setAcceptFeedback: k,
+      setRejectFeedback: h,
+      acceptInputMode: B,
+      rejectInputMode: A,
+      handleInputModeToggle: U,
+      handleFocus: Y,
+      logSubmitted: j,
+      logEscape: m,
+      hintNode: M
+    } = lbe({
+      feedbackTypeOf: E,
+      toolName: c?.toolName,
+      isMcp: c?.isMcp ?? !1
+    }),
+    q = X(() => t.map((O) => {
+      let {
+        value: G,
+        label: v,
+        feedbackConfig: ee
+      } = O;
+      if (!ee) return {
+        label: v,
+        value: G,
+        description: O.description
+      };
+      let {
+        type: z,
+        placeholder: te
+      } = ee, De = z === "accept" ? B : A, Be = z === "accept" ? k : h, Z = po[z];
+      if (De) return {
+        type: "input",
+        label: v,
+        value: G,
+        placeholder: te ?? Z,
+        onChange: Be,
+        allowEmptySubmitToCancel: !0
+      };
+      return {
+        label: v,
+        value: G,
+        description: O.description
+      }
+    }), [t, B, A]),
+    re = se((O) => {
+      let G = t.find((te) => te.value === O);
+      if (!G) return;
+      let v = G.feedbackConfig,
+        ee, z = "";
+      if (v) {
+        if (z = (v.type === "accept" ? y : x).trim(), z) ee = z
+      }
+      if (u(O, ee) === !1) return !1;
+      if (v) j(v.type, z)
+    }, [t, y, x, u, j]),
+    H = X(() => {
+      let O = t.find((v) => v.feedbackConfig?.type === "accept" && B || v.feedbackConfig?.type === "reject" && A),
+        G = {};
+      for (let v of t)
+        if (v.keybinding) G[v.keybinding] = () => O ? U(O.value) : re(v.value);
+      return G
+    }, [t, B, A, U, re]);
+  Wt(H, {
+    context: "Confirmation"
+  });
+  let K = se(() => {
+    if (o?.() === !1) return;
+    m()
+  }, [o, m]);
+  return r(s, {
+    flexDirection: "column",
+    children: [typeof l === "string" ? e(n, {
+      children: l
+    }) : l, e(Fe, {
+      selectedValue: ii,
+      options: q,
+      defaultFocusValue: p,
+      hideIndexes: a,
+      inlineDescriptions: !0,
+      onChange: re,
+      onCancel: K,
+      onFocus: Y,
+      onInputModeToggle: U
+    }), e(s, {
+      marginTop: 1,
+      children: e(n, {
+        dimColor: !0,
+        children: r(ye, {
+          children: [e(F, {
+            chord: "escape",
+            action: "cancel"
+          }), M]
+        })
+      })
+    })]
+  })
+}
+N();
+
+function Oi(t) {
+  let {
+    style: z
+  } = t;
+  return z === "value"
+}
+
+function vi(t) {
+  let {
+    style: te
+  } = t;
+  return te !== "value"
+}
+
+function Ui(t, De) {
+  let {
+    text: Be,
+    style: Z
+  } = t;
+  return e(n, {
+    bold: Z === "question",
+    children: Be
+  }, De)
+}
+
+function ji(t, xe) {
+  let {
+    text: fe
+  } = t;
+  return e(n, {
+    dimColor: !0,
+    children: fe
+  }, `value-${xe}`)
+}
+var We = 12,
+  Kt = 60,
+  Gn = We * Kt,
+  qn = 4,
+  Bi = /^(?:replacing|source|into|type|artifact)(?: \d+)?: https?:\/\/[^\s/]+\/(?:[^\s/]+\/)*(?:artifact|frame)\/(?:[A-Za-z0-9_-]*-)?(?:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[A-Za-z0-9_-]{22})\/?$/;
+
+function ki(t, u) {
+  if (ie(t) <= u) return t;
+  let o = YN(t, Math.floor(u / 2));
+  return o + rA(t, u - ie(o))
+}
+
+function Hn(t, u) {
+  let o = Math.max(1, u),
+    l = [...t.question === void 0 ? [] : [{
+      text: t.question,
+      style: "question"
+    }], ...t.lines.map((a) => ({
+      text: a,
+      style: "line"
+    })), ...t.values.map((a) => ({
+      text: a,
+      style: "value"
+    }))],
+    c = -1,
+    D = l.flatMap(({
+      text: a,
+      style: p
+    }) => {
+      let C = a.replace(/\r\n|[\r\n\u2028\u2029]/g, " "),
+        E = p === "value" ? c += 1 : void 0;
+      return p === "value" && !Bi.test(C) ? [{
+        text: ki(C, o),
+        style: p,
+        value: E
+      }] : Wu(p === "value" ? C : a, o, {
+        trim: !0,
+        hard: !0
+      }).split(`
+`).map((y) => ({
+        text: ot(y, o),
+        style: p,
+        ...E !== void 0 && {
+          value: E
+        }
+      }))
+    });
+  return {
+    rows: D,
+    gutter: t.values.length > 0 || t.lines.length > 0 || D.length > l.length || l.some(({
+      text: a
+    }) => DR(a))
+  }
+}
+
+function zt(t) {
+  let o = w(33),
+    {
+      card: u
+    } = t;
+  if (u.rows.length === 0) {
+    return null
+  }
+  let l, c, D, a, p, C, E, y, x, k, h;
+  if (o[0] !== u.gutter || o[1] !== u.rows) {
+    let B = u.rows.filter(Oi);
+    let A = u.rows.filter(vi);
+    let U = u.rows.length <= We;
+    let Y = B;
+    if (!U) {
+      let j = We - 3;
+      let m = 0;
+      while (m < B.length) {
+        let M = B[m].value;
+        let q = m;
+        while (q < B.length && B[q].value === M) q = q + 1;
+        if (q > j) {
+          break
+        }
+        m = q
+      }
+      Y = B.slice(0, m)
+    }
+    a = B.length - Y.length;
+    let re = We - 1 - Y.length - (a > 0 ? 1 : 0);
+    let H = U ? A : A.slice(0, Math.max(1, re));
+    let K = A.length - H.length;
+    D = s;
+    k = "column";
+    h = 1;
+    c = zi;
+    x = u.gutter;
+    l = s;
+    p = "column";
+    C = H.map(Ui);
+    if (o[13] !== K) E = K > 0 && r(n, {
+      dimColor: !0,
+      children: ["\u2026 (+", K, " more lines)"]
+    }), o[13] = K, o[14] = E;
+    else E = o[14];
+    y = Y.map(ji);
+    o[0] = u.gutter, o[1] = u.rows, o[2] = l, o[3] = c, o[4] = D, o[5] = a, o[6] = p, o[7] = C, o[8] = E, o[9] = y, o[10] = x, o[11] = k, o[12] = h
+  } else l = o[2], c = o[3], D = o[4], a = o[5], p = o[6], C = o[7], E = o[8], y = o[9], x = o[10], k = o[11], h = o[12];
+  let O;
+  if (o[15] !== a) O = a > 0 && r(n, {
+    dimColor: !0,
+    children: ["\u2026 (+", a, " more lines)"]
+  }), o[15] = a, o[16] = O;
+  else O = o[16];
+  let G;
+  if (o[17] !== l || o[18] !== p || o[19] !== C || o[20] !== E || o[21] !== y || o[22] !== O) G = r(l, {
+    flexDirection: p,
+    children: [C, E, y, O]
+  }), o[17] = l, o[18] = p, o[19] = C, o[20] = E, o[21] = y, o[22] = O, o[23] = G;
+  else G = o[23];
+  let v;
+  if (o[24] !== c || o[25] !== x || o[26] !== G) v = e(c, {
+    multiline: x,
+    children: G
+  }), o[24] = c, o[25] = x, o[26] = G, o[27] = v;
+  else v = o[27];
+  let ee;
+  if (o[28] !== D || o[29] !== v || o[30] !== k || o[31] !== h) ee = e(D, {
+    flexDirection: k,
+    paddingY: h,
+    children: v
+  }), o[28] = D, o[29] = v, o[30] = k, o[31] = h, o[32] = ee;
+  else ee = o[32];
+  return ee
+}
+N();
+
+function Zi(A) {
+  return A.toolPermissionContext
+}
+var Mzt = "\xB7 workflows run best with it on";
+
+function nht(t) {
+  let c = w(10),
+    u = W(Zi),
+    o = dn(),
+    {
+      addNotification: l
+    } = Zr(),
+    D;
+  if (c[0] !== u) D = (u.mode === "default" || u.mode === "acceptEdits") && MH(u), c[0] = u, c[1] = D;
+  else D = c[1];
+  let a = D,
+    p = t?.type === "workflow-agent" && a,
+    C;
+  if (c[2] !== l || c[3] !== o || c[4] !== u) C = (E) => {
+    let y = E === void 0 ? "workflow_permission_prompt" : E;
+    if (!Zw("auto", u, (x) => o((k) => {
+        let h = x(k.toolPermissionContext);
+        if (h === k.toolPermissionContext) {
+          return k
+        }
+        return {
+          ...k,
+          toolPermissionContext: h
+        }
+      }), y).ok) {
+      return l({
+        key: "workflow-auto-mode-unavailable",
+        kind: "warning",
+        text: iet(),
+        color: "warning",
+        priority: "high"
+      }), !1
+    }
+    return !0
+  }, c[2] = l, c[3] = o, c[4] = u, c[5] = C;
+  else C = c[5];
+  let B = C,
+    E;
+  if (c[6] !== a || c[7] !== B || c[8] !== p) E = {
+    offered: p,
+    canOfferAutoMode: a,
+    enableAutoMode: B
+  }, c[6] = a, c[7] = B, c[8] = p, c[9] = E;
+  else E = c[9];
+  return E
+}
+N();
+var Ve = 200000,
+  Kn = Ve,
+  Qi = 1e4,
+  Ji = 1000,
+  eD = 200000;
+
+function go(t) {
+  return typeof t === "string" && t.length <= 256
+}
+var Et = 80,
+  tD = 50000,
+  nD = new Set(["channel_id", "channel"]),
+  uD = new Set(["ts", "thread_ts"]),
+  oD = /^\d{10}\.\d{6}$/,
+  rD = /\b\d{4}\b/,
+  iD = /\d{1,2}:\d{2}/;
+
+function Pe(t, u, o, l) {
+  return ie(t) + 2 + ie(u) + (o === void 0 ? 0 : ie(o) + 3) <= Math.min(Et, l - 2)
+}
+var DD = 64;
+
+function Xn(t, u, o = 0, l = {
+  remaining: Qi,
+  unitsRemaining: Ve
+}) {
+  if (typeof t === "string") {
+    if (t.length + 2 > l.unitsRemaining) throw Error("value exceeds the units display budget");
+    let c = b(t);
+    if (l.unitsRemaining -= c.length, l.unitsRemaining < 0) throw Error("value exceeds the units display budget");
+    return c
+  }
+  if (t === null || typeof t === "number" || typeof t === "boolean") {
+    let c = String(t);
+    if (l.unitsRemaining -= c.length, l.unitsRemaining < 0) throw Error("value exceeds the units display budget");
+    return c
+  }
+  if (o >= DD) throw Error("value exceeds the display depth bound");
+  if (Array.isArray(t)) {
+    if (t.length === 0) return "[]";
+    let c = t.length;
+    if (typeof c !== "number" || !Number.isSafeInteger(c) || c < 0) throw Error("value exceeds the element display budget");
+    if (l.remaining -= c, l.remaining < 0) throw Error("value exceeds the element display budget");
+    let D = [];
+    for (let C = 0; C < c; C++) D.push(Xn(t[C], u + 1, o + 1, l));
+    if (D.every((C) => !C.includes(`
+`))) {
+      let C = `[${D.join(", ")}]`;
+      if (ie(C) <= Et) return C
+    }
+    let a = "  ".repeat(u + 1),
+      p = "  ".repeat(u);
+    return `[
+${D.map((C)=>a+C).join(`,
+`)}
+${p}]`
+  }
+  if (typeof t === "object") {
+    let c = Object.entries(t);
+    if (c.length === 0) return "{}";
+    if (l.remaining -= c.length, l.remaining < 0) throw Error("value exceeds the element display budget");
+    for (let [E] of c) {
+      if (E.length > eD) throw Error("nested key exceeds the display bound");
+      if (E.length > l.unitsRemaining) throw Error("keys exceed the units display budget");
+      if (ig(E) !== E) throw Error("nested key display would drop code points");
+      l.unitsRemaining -= E.length
+    }
+    let D = WLt(c.map(([E]) => E));
+    for (let [E] of c) {
+      let y = D.get(E) ?? E;
+      if (y.length > E.length) {
+        if (l.unitsRemaining -= y.length - E.length, l.unitsRemaining < 0) throw Error("keys exceed the units display budget")
+      }
+    }
+    let a = c.map(([E, y]) => `${D.get(E)??E}: ${Xn(y,u+1,o+1,l)}`);
+    if (a.every((E) => !E.includes(`
+`))) {
+      let E = `{ ${a.join(", ")} }`;
+      if (ie(E) <= Et) return E
+    }
+    let p = "  ".repeat(u + 1),
+      C = "  ".repeat(u);
+    return `{
+${a.map((E)=>p+E).join(`,
+`)}
+${C}}`
+  }
+  if (typeof t === "bigint") throw Error("bigint value cannot be rendered");
+  return "undefined"
+}
+var bo = /^(\d{4})-(\d{2})-(\d{2})[Tt ](\d{2}):(\d{2})(?::(\d{2})(?:\.\d{1,9})?)?(?:[Zz]|[+-]\d{2}:?\d{2})?$/;
+
+function ho(t) {
+  let u = t.trim(),
+    o = u.match(bo);
+  if (!o) return null;
+  let l = Number(o[1] ?? ""),
+    c = Number(o[2] ?? ""),
+    D = Number(o[3] ?? ""),
+    a = Number(o[4] ?? ""),
+    p = Number(o[5] ?? ""),
+    C = o[6] === void 0 ? 0 : Number(o[6]);
+  if (l < 100) return null;
+  let E = new Date(Date.UTC(l, c, 0)).getUTCDate();
+  if (c < 1 || c > 12 || D < 1 || D > E) return null;
+  if (a > 24 || p > 59 || C > 59 || a === 24 && (p > 0 || C > 0)) return null;
+  let y = Date.parse(u);
+  if (Number.isNaN(y)) return null;
+  if (!/(?:[Zz]|[+-]\d{2}:?\d{2})$/.test(u)) {
+    let h = new Date(Date.UTC(l, c - 1, D, a, p)),
+      B = new Date(y);
+    if (B.getFullYear() !== h.getUTCFullYear() || B.getMonth() !== h.getUTCMonth() || B.getDate() !== h.getUTCDate() || B.getHours() !== h.getUTCHours() || B.getMinutes() !== h.getUTCMinutes()) return null
+  }
+  let k = Date.UTC(l, c - 1, D, a, p, C);
+  if (Math.abs(y - k) > 50400000) return null;
+  return new Date(y).toLocaleString(void 0, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short"
+  })
+}
+
+function Qn(t, u, o = Et) {
+  if (t === null || typeof t !== "object" || Array.isArray(t)) return [{
+    kind: "inline",
+    key: "input",
+    text: "(parameters are not an object \u2014 deny unless expected)",
+    unrenderable: !0
+  }];
+  let l = Object.entries(t),
+    c = g2(t);
+  if (c !== null) return [{
+    kind: "inline",
+    key: "input",
+    text: c,
+    unrenderable: !0,
+    parseFailureSentinel: !0
+  }];
+  let D = [],
+    a = l.length;
+  if (a > Ji) return [{
+    kind: "inline",
+    key: "input",
+    text: `(${a} parameters \u2014 too many to show \u2014 deny unless expected)`,
+    unrenderable: !0
+  }];
+  let p = [],
+    C = 0,
+    E = 0;
+  for (let [h, B] of l) {
+    if (h.length > Ve) {
+      C += 1;
+      continue
+    }
+    if (p.push(h), E += h.length, typeof B === "string" && B.length <= Ve) E += B.length
+  }
+  if (E > Kn) return [{
+    kind: "inline",
+    key: "input",
+    text: `(parameters total ${E.toLocaleString()} characters \u2014 too much to show \u2014 deny unless expected)`,
+    unrenderable: !0
+  }];
+  if (C > 0) D.push({
+    kind: "inline",
+    key: "input",
+    text: `(${C} parameter ${C===1?"name is":"names are"} too large to show \u2014 deny unless expected)`,
+    unrenderable: !0
+  });
+  let y = WLt(p),
+    x = l.find(([h]) => h === "language")?.[1],
+    k = 0;
+  for (let [h, B] of l) {
+    if (h.length > Ve) continue;
+    let A = y.get(h) ?? h;
+    if (ig(h) !== h) {
+      k += 1;
+      continue
+    }
+    if (typeof B === "string") {
+      if (B.length > Ve) {
+        let v = `(value of ${B.length.toLocaleString()} characters cannot be shown \u2014 deny unless expected)`;
+        if (!Pe(A, v, void 0, o)) D.push({
+          kind: "block",
+          key: A,
+          text: v,
+          unrenderable: !0
+        });
+        else D.push({
+          kind: "inline",
+          key: A,
+          text: v,
+          unrenderable: !0
+        });
+        continue
+      }
+      let m = Za(B),
+        M = ig(m);
+      if (BLt.test(M) || M !== m) {
+        let v = `(value of ${B.length.toLocaleString()} characters cannot be shown in full \u2014 deny unless expected)`;
+        if (!Pe(A, v, void 0, o)) D.push({
+          kind: "block",
+          key: A,
+          text: v,
+          unrenderable: !0
+        });
+        else D.push({
+          kind: "inline",
+          key: A,
+          text: v,
+          unrenderable: !0
+        });
+        continue
+      }
+      let q = M.replace(/\t/g, " ");
+      if (M.includes(`
+`) || ie(M) > Et) {
+        let v = h === "code" && go(x) ? Za(x) : void 0;
+        D.push({
+          kind: "block",
+          key: A,
+          text: q,
+          language: v
+        });
+        continue
+      }
+      let re = b(M),
+        H = u?.[h] === "date-time" && rD.test(M) && iD.test(M),
+        O = uD.has(h) && oD.test(M) ? ho(new Date(Number(M) * 1000).toISOString()) ?? void 0 : H || bo.test(M) ? ho(M) ?? void 0 : void 0;
+      if (!Pe(A, re, O, o)) {
+        let v = h === "code" && go(x) ? Za(x) : void 0;
+        D.push({
+          kind: "block",
+          key: A,
+          text: q,
+          annotation: O,
+          language: v
+        });
+        continue
+      }
+      let G = nD.has(h) ? Upr(M) ?? void 0 : /^https?:\/\/\S+$/.test(M) && !S6(M) ? M : void 0;
+      D.push({
+        kind: "inline",
+        key: A,
+        text: re,
+        linkUrl: G,
+        annotation: O
+      });
+      continue
+    }
+    if (B === null || typeof B === "number" || typeof B === "boolean") {
+      let m = String(B);
+      if (!Pe(A, m, void 0, o)) {
+        D.push({
+          kind: "block",
+          key: A,
+          text: m
+        });
+        continue
+      }
+      D.push({
+        kind: "inline",
+        key: A,
+        text: m
+      });
+      continue
+    }
+    let U, Y = "",
+      j = 0;
+    try {
+      let m = Xn(B, 0);
+      if (j = m.length, m.length > Ve) {
+        let M = `(value of ${m.length.toLocaleString()} formatted characters cannot be shown \u2014 deny unless expected)`;
+        if (!Pe(A, M, void 0, o)) D.push({
+          kind: "block",
+          key: A,
+          text: M,
+          unrenderable: !0
+        });
+        else D.push({
+          kind: "inline",
+          key: A,
+          text: M,
+          unrenderable: !0
+        });
+        continue
+      }
+      Y = Za(m), U = ig(Y)
+    } catch {
+      if (!Pe(A, "(value too large or too deeply nested to render \u2014 deny unless expected)", void 0, o)) D.push({
+        kind: "block",
+        key: A,
+        text: "(value too large or too deeply nested to render \u2014 deny unless expected)",
+        unrenderable: !0
+      });
+      else D.push({
+        kind: "inline",
+        key: A,
+        text: "(value too large or too deeply nested to render \u2014 deny unless expected)",
+        unrenderable: !0
+      });
+      continue
+    }
+    if (E += j, E > Kn) return [{
+      kind: "inline",
+      key: "input",
+      text: `(parameters total over ${Kn.toLocaleString()} rendered characters \u2014 too much to show \u2014 deny unless expected)`,
+      unrenderable: !0
+    }];
+    if (BLt.test(U) || ig(Y) !== Y) {
+      let m = `(value of ${j.toLocaleString()} formatted characters cannot be shown in full \u2014 deny unless expected)`;
+      if (!Pe(A, m, void 0, o)) D.push({
+        kind: "block",
+        key: A,
+        text: m,
+        unrenderable: !0
+      });
+      else D.push({
+        kind: "inline",
+        key: A,
+        text: m,
+        unrenderable: !0
+      });
+      continue
+    }
+    if (!U.includes(`
+`) && Pe(A, U, void 0, o)) D.push({
+      kind: "inline",
+      key: A,
+      text: U
+    });
+    else D.push({
+      kind: "block",
+      key: A,
+      text: U,
+      language: "javascript"
+    })
+  }
+  if (k > 0) D.push({
+    kind: "inline",
+    key: "input",
+    text: `(${k} parameter ${k===1?"name":"names"} cannot be shown in full \u2014 deny unless expected)`,
+    unrenderable: !0
+  });
+  return D
+}
+
+function sD(t, u) {
+  return t.language !== void 0 && u !== null && t.text.length <= tD && u.supportsLanguage(t.language)
+}
+
+function Ao(t) {
+  let l = w(38),
+    {
+      keyText: u,
+      contentColumns: o
+    } = t,
+    c, D, a, p, C, E, y, x, k, h, B, A, U, Y, j, m;
+  if (l[0] !== o || l[1] !== u) {
+    x = hn;
+    re: {
+      let M = Wu(`${u}:`, Math.max(10, o - 2), {
+        hard: !0,
+        trim: !1
+      });
+      let q = M.indexOf(`
+`);
+      if (q === -1) {
+        x = e(n, {
+          dimColor: !0,
+          children: M
+        });
+        break re
+      }
+      a = s;E = "column";y = e(n, {
+        dimColor: !0,
+        children: M.slice(0, q)
+      });D = s;h = 2;B = "single";A = !0;U = !1;Y = !1;j = !1;m = !0;C = 1;c = n;p = !0;k = Wu(M.slice(q + 1).replace(/\n/g, ""), Math.max(10, o - 4), {
+        hard: !0,
+        trim: !1
+      })
+    }
+    l[0] = o, l[1] = u, l[2] = c, l[3] = D, l[4] = a, l[5] = p, l[6] = C, l[7] = E, l[8] = y, l[9] = x, l[10] = k, l[11] = h, l[12] = B, l[13] = A, l[14] = U, l[15] = Y, l[16] = j, l[17] = m
+  } else c = l[2], D = l[3], a = l[4], p = l[5], C = l[6], E = l[7], y = l[8], x = l[9], k = l[10], h = l[11], B = l[12], A = l[13], U = l[14], Y = l[15], j = l[16], m = l[17];
+  if (x !== hn) return x;
+  let H;
+  if (l[18] !== c || l[19] !== p || l[20] !== k) H = e(c, {
+    dimColor: p,
+    children: k
+  }), l[18] = c, l[19] = p, l[20] = k, l[21] = H;
+  else H = l[21];
+  let K;
+  if (l[22] !== D || l[23] !== C || l[24] !== H || l[25] !== h || l[26] !== B || l[27] !== A || l[28] !== U || l[29] !== Y || l[30] !== j || l[31] !== m) K = e(D, {
+    marginLeft: h,
+    borderStyle: B,
+    borderLeft: A,
+    borderRight: U,
+    borderTop: Y,
+    borderBottom: j,
+    borderDimColor: m,
+    paddingLeft: C,
+    children: H
+  }), l[22] = D, l[23] = C, l[24] = H, l[25] = h, l[26] = B, l[27] = A, l[28] = U, l[29] = Y, l[30] = j, l[31] = m, l[32] = K;
+  else K = l[32];
+  let O;
+  if (l[33] !== a || l[34] !== E || l[35] !== y || l[36] !== K) O = r(a, {
+    flexDirection: E,
+    children: [y, K]
+  }), l[33] = a, l[34] = E, l[35] = y, l[36] = K, l[37] = O;
+  else O = l[37];
+  return O
+}
+
+function eu({
+  entries: t,
+  contentColumns: u
+}) {
+  let [o] = Zn(), c = Ba().syntaxHighlightingDisabled ?? !1, D = T(new Map), a = X(() => {
+    let y = c ? null : JD(),
+      x = new Map,
+      k = t.map((h) => {
+        if (h.kind !== "block") return null;
+        let B = `${o}\x00${c}\x00${h.language??""}\x00${h.text}`,
+          A = x.get(B) ?? D.current.get(B);
+        if (A === void 0) A = sD(h, y) && h.language !== void 0 && y !== null ? y.highlight(h.text, {
+          language: h.language
+        }) : S6(h.text) ? h.text : hwn(h.text, o);
+        return x.set(B, A), A
+      });
+    return D.current = x, k
+  }, [t, o, c]), p = X(() => a.map((y) => y === null ? null : Wu(y, Math.max(10, u - 4), {
+    hard: !0,
+    trim: !1
+  })), [a, u]), C = sIe(), E = t.length === 1 && t[0].kind === "inline" && t[0].parseFailureSentinel === !0 ? t[0] : null;
+  if (E !== null) return e(s, {
+    marginTop: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: E.text
+    })
+  });
+  if (t.length === 0) return null;
+  return e(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: t.map((y, x) => y.kind === "inline" ? r(n, {
+      children: [r(n, {
+        dimColor: !0,
+        children: [y.key, ": "]
+      }), e(Jr, {
+        children: y.linkUrl !== void 0 && C ? q_(y.linkUrl, y.text) : y.text
+      }), y.annotation !== void 0 && r(n, {
+        dimColor: !0,
+        children: [" (", y.annotation, ")"]
+      })]
+    }, x) : r(s, {
+      flexDirection: "column",
+      children: [e(Ao, {
+        keyText: y.key,
+        contentColumns: u
+      }), e(s, {
+        marginLeft: 2,
+        borderStyle: "single",
+        borderLeft: !0,
+        borderRight: !1,
+        borderTop: !1,
+        borderBottom: !1,
+        borderDimColor: !0,
+        paddingLeft: 1,
+        children: e(Jr, {
+          children: p[x] ?? y.text
+        })
+      }), y.annotation !== void 0 && e(s, {
+        marginLeft: 2,
+        children: r(n, {
+          dimColor: !0,
+          children: ["(", y.annotation, ")"]
+        })
+      })]
+    }, x))
+  })
+}
+
+function TD(vD) {
+  return vD.unrenderable === !0
+}
+
+function MD(UD) {
+  return l1(UD)
+}
+
+function _D(jD) {
+  return !jD
+}
+
+function PD($D, lr) {
+  return $D + ie(lr) + (lr.split(/\r\n|[\r\n\u2028\u2029]/).length - 1) * Kt
+}
+
+function Bo(t, u, o, l) {
+  switch (t) {
+    case "yes":
+    case "yes-enable-auto-mode":
+      return {
+        behavior: "allow", updatedInput: u.input, ...l && {
+          feedback: l
+        }
+      };
+    case "yes-dont-ask-again": {
+      if (o === null || !Tb(o)) return {
+        behavior: "allow",
+        updatedInput: u.input
+      };
+      return {
+        behavior: "allow",
+        updatedInput: u.input,
+        permissionUpdates: o.applies
+      }
+    }
+    case "no":
+      return {
+        behavior: "deny", ...l && {
+          feedback: l
+        }
+      }
+  }
+}
+
+function xo(t, u) {
+  return mA([{
+    type: "addRules",
+    rules: [{
+      toolName: t.toolName
+    }],
+    behavior: "allow",
+    destination: "localSettings"
+  }], {
+    displayedTypes: lD,
+    renderLabel: (o) => {
+      let l = o.length === 1 ? o[0] : void 0;
+      if (l === void 0 || l.type !== "addRules" || l.rules.length !== 1 || l.rules[0]?.toolName !== t.toolName || l.rules[0]?.ruleContent !== void 0) return null;
+      let c = String(t.userFacingName);
+      if (ie(c) >= ZHe || c.includes("\u2026")) return null;
+      if (u.cwd.includes("\u2026")) return null;
+      let D = Math.max(24, u.maxLabelWidth),
+        a = (x) => `Yes, and don't ask again for ${t.userFacingName} commands in ${x}`,
+        p = Rn(u.cwd);
+      if (ie(a(p)) <= D) return a(p);
+      if (p !== u.cwd) return null;
+      let C = xa(u.cwd);
+      if (ie(a(C)) <= D) return a(C);
+      let E = qne(C),
+        y = "";
+      for (let x = 0; x < E.length; x++) {
+        let k = y + E[x];
+        if (ie(a(`${k}\u2026`)) > D) break;
+        y = k
+      }
+      if (y.length > 0) return a(`${y}\u2026`);
+      return null
+    }
+  })
+}
+var lD = new Set(["addRules"]);
+
+function ou(t) {
+  let u = t.permissionResult.decisionReason;
+  return yp(u, (l) => !l.classifierApprovable) !== void 0 || t.isAskCappedByOrg || Pce(t.requestSource)
+}
+
+function Dzt(t) {
+  return t.showAlwaysAllow && !ou(t) && ze(t.toolName)
+}
+var ko = 2,
+  cD = 16,
+  dD = 24,
+  pD = 80;
+
+function Ro(t, u) {
+  return t && u.columns >= pD ? Math.max(ko, Math.min(cD, u.rows - dD)) : ko
+}
+
+function CJn(t) {
+  let a = w(147),
+    {
+      payload: u,
+      answer: o,
+      wouldTakeAnswer: l
+    } = t,
+    c = T(null),
+    D = ve(),
+    p;
+  if (a[0] !== D.columns) p = () => Math.max(20, Math.min(40, D.columns - 6)), a[0] = D.columns, a[1] = p;
+  else p = a[1];
+  let [C, E] = g(p), y;
+  if (a[2] === S) y = () => {
+    if (c.current) {
+      let {
+        width: x
+      } = Xi(c.current);
+      if (x > 0) E(Math.max(20, x - 2))
+    }
+  }, a[2] = y;
+  else y = a[2];
+  let k;
+  if (a[3] !== D.columns || a[4] !== D.rows) k = [D.columns, D.rows], a[3] = D.columns, a[4] = D.rows, a[5] = k;
+  else k = a[5];
+  R(y, k);
+  let h = Math.min(C, Math.max(20, D.columns - 6)),
+    B;
+  if (a[6] !== h || a[7] !== u.input || a[8] !== u.isMcp || a[9] !== u.paramFormatHints) B = u.isMcp ? Qn(u.input, u.paramFormatHints, h) : null, a[6] = h, a[7] = u.input, a[8] = u.isMcp, a[9] = u.paramFormatHints, a[10] = B;
+  else B = a[10];
+  let A = B,
+    [U] = Zn(),
+    Y;
+  m: {
+    if (u.renderedToolUseMessage != null) {
+      let j;
+      if (a[11] !== u.renderedToolUseMessage) j = {
+        node: u.renderedToolUseMessage,
+        threw: !1
+      }, a[11] = u.renderedToolUseMessage, a[12] = j;
+      else j = a[12];
+      Y = j;
+      break m
+    };
+    try {
+      let M;
+      if (a[13] !== u.input || a[14] !== u.toolName || a[15] !== U) M = SJe(u.toolName, u.input, {
+        theme: U,
+        verbose: !0
+      }), a[13] = u.input, a[14] = u.toolName, a[15] = U, a[16] = M;
+      else M = a[16];
+      let q;
+      if (a[17] !== M) q = {
+        node: M,
+        threw: !1
+      }, a[17] = M, a[18] = q;
+      else q = a[18];
+      Y = q
+    } catch (j) {
+      let re = j;
+      let M;
+      if (a[19] !== u.toolName) M = (d(new P(`Error rendering tool use line for ${u.toolName}: ${re}`, "Error rendering tool use line (permission dialog table fallback)")), {
+        node: null,
+        threw: !0
+      }), a[19] = u.toolName, a[20] = M;
+      else M = a[20];
+      Y = M
+    }
+  }
+  let {
+    node: H,
+    threw: K
+  } = Y, j;
+  if (a[21] !== H) j = typeof H === "string" ? T_(H) : null, a[21] = H, a[22] = j;
+  else j = a[22];
+  let O = j,
+    M;
+  if (a[23] !== A || a[24] !== O?.kind || a[25] !== u.toolUseRenderFailed || a[26] !== K) M = (A?.some(TD) ?? !1) || u.toolUseRenderFailed === !0 || K || O?.kind === "withheld", a[23] = A, a[24] = O?.kind, a[25] = u.toolUseRenderFailed, a[26] = K, a[27] = M;
+  else M = a[27];
+  let G = M,
+    q;
+  if (a[28] !== u) q = Dzt(u), a[28] = u, a[29] = q;
+  else q = a[29];
+  let v = q,
+    {
+      offered: ee,
+      enableAutoMode: z
+    } = nht(u.requestSource),
+    te;
+  if (a[30] === S) te = we(), a[30] = te;
+  else te = a[30];
+  let De = te,
+    Be;
+  if (a[31] !== v || a[32] !== h || a[33] !== G || a[34] !== u) Be = v && !G ? xo(u, {
+    cwd: De,
+    maxLabelWidth: h - 8
+  }) : null, a[31] = v, a[32] = h, a[33] = G, a[34] = u, a[35] = Be;
+  else Be = a[35];
+  let Z = Be,
+    xe;
+  if (a[36] !== u) xe = ou(u), a[36] = u, a[37] = xe;
+  else xe = a[37];
+  let fe = xe,
+    Le;
+  if (a[38] !== ee || a[39] !== G || a[40] !== fe) Le = ee && !G && !fe ? Ozt("workflow") : null, a[38] = ee, a[39] = G, a[40] = fe, a[41] = Le;
+  else Le = a[41];
+  let ue = Le,
+    Q = u.permissionResult.defaultToNo === !0,
+    Ie;
+  if (a[42] !== Z || a[43] !== o || a[44] !== z || a[45] !== u || a[46] !== l) Ie = (ke) => {
+    let {
+      value: bt,
+      feedback: At
+    } = ke;
+    if (!l()) {
+      return !1
+    }
+    if (bt === "yes-enable-auto-mode") z();
+    return o(Bo(bt, u, Z, At))
+  }, a[42] = Z, a[43] = o, a[44] = z, a[45] = u, a[46] = l, a[47] = Ie;
+  else Ie = a[47];
+  let me = ZS(Ie),
+    ru = me.answer,
+    ke;
+  if (a[48] !== ru) ke = (ND, LD) => ru({
+    value: ND,
+    feedback: LD
+  }), a[48] = ru, a[49] = ke;
+  else ke = a[49];
+  let Je = ke,
+    et = me.refused === null ? Q ? "no" : void 0 : me.refused.value === "yes" && !Q ? "yes" : "no",
+    Zo;
+  if (a[50] !== o) Zo = () => o({
+    behavior: "cancelled"
+  }), a[50] = o, a[51] = Zo;
+  else Zo = a[51];
+  let tt = Zo;
+  const iu = typeof u.description === "string" ? u.description : "";
+  let Qo;
+  if (a[52] !== iu) Qo = iu.split(`
+`).filter(MD).join(`
+`).trim(), a[52] = iu, a[53] = Qo;
+  else Qo = a[53];
+  let nt = Qo,
+    on;
+  lc: {
+    if (O === null) {
+      on = H;
+      break lc
+    }
+    if (O.kind === "withheld") {
+      on = O.marker;
+      break lc
+    }
+    let ut;
+    if (a[54] !== O.text) ut = Fs(O.text).replace(/\s+/g, " ").trim(),
+    a[54] = O.text,
+    a[55] = ut;
+    else ut = a[55];on = ut
+  }
+  let Bt = on,
+    rt = u.isMcp ? Math.max(10, h - 2) : h;
+  const ut = u.roomyDescription === !0;
+  let Jo;
+  if (a[56] !== ut || a[57] !== D) Jo = Ro(ut, D), a[56] = ut, a[57] = D, a[58] = Jo;
+  else Jo = a[58];
+  let Du = Jo,
+    er;
+  if (a[59] !== Du || a[60] !== rt || a[61] !== nt) er = ohn(nt, rt, Du), a[59] = Du, a[60] = rt, a[61] = nt, a[62] = er;
+  else er = a[62];
+  let xt = er,
+    tr;
+  if (a[63] !== rt || a[64] !== nt) tr = ohn(nt, rt, Number.MAX_SAFE_INTEGER), a[63] = rt, a[64] = nt, a[65] = tr;
+  else tr = a[65];
+  let rn = tr,
+    it = rn !== xt,
+    [Dn, ID] = g(!1),
+    su = Oc("app:toggleTranscript", "Global", "ctrl+o"),
+    nr;
+  if (a[66] === S) nr = [{
+    action: "app:toggleTranscript",
+    run: () => ID(_D)
+  }], a[66] = nr;
+  else nr = a[66];
+  let OD = nr,
+    ur;
+  if (a[67] === S) ur = {
+    label: "Yes",
+    value: "yes",
+    feedbackConfig: {
+      type: "accept"
+    }
+  }, a[67] = ur;
+  else ur = a[67];
+  let or = ur,
+    rr;
+  if (a[68] === S) rr = {
+    label: "No",
+    value: "no",
+    feedbackConfig: {
+      type: "reject"
+    }
+  }, a[68] = rr;
+  else rr = a[68];
+  let ir = rr,
+    kt;
+  if (a[69] !== Z || a[70] !== ue || a[71] !== Q) {
+    kt = Q ? [ir, or] : [or];
+    if (Z !== null) {
+      if (typeof Z.node === "string") {
+        let Ce;
+        if (a[73] !== Z.node) Ce = {
+          label: Z.node,
+          value: "yes-dont-ask-again"
+        }, a[73] = Z.node, a[74] = Ce;
+        else Ce = a[74];
+        kt.push(Ce)
+      }
+    }
+    if (ue !== null) {
+      if (typeof ue.node === "string") {
+        let Ce;
+        if (a[75] !== ue.node) Ce = {
+          label: ue.node,
+          description: Mzt,
+          value: "yes-enable-auto-mode"
+        }, a[75] = ue.node, a[76] = Ce;
+        else Ce = a[76];
+        kt.push(Ce)
+      }
+    }
+    if (!Q) kt.push(ir);
+    a[69] = Z, a[70] = ue, a[71] = Q, a[72] = kt
+  } else kt = a[72];
+  let Dt = kt,
+    Ce;
+  if (a[77] !== u.toolName) Ce = On(u.toolName), a[77] = u.toolName, a[78] = Ce;
+  else Ce = a[78];
+  let Dr;
+  if (a[79] !== u.isMcp || a[80] !== Ce) Dr = {
+    toolName: Ce,
+    isMcp: u.isMcp
+  }, a[79] = u.isMcp, a[80] = Ce, a[81] = Dr;
+  else Dr = a[81];
+  let st = Dr,
+    ae = u.toolUseRenderFailed === !0 ? void 0 : u.card;
+  if (ae !== void 0 && [ae.question, ...ae.lines, ...ae.values].reduce(PD, 0) <= Gn) {
+    let sr = u.requestSource === void 0 && !ae.question.includes(`
+`) && ie(ae.question) <= Math.min(h, D.columns - 2);
+    const Oe = sr ? void 0 : ae.question;
+    let He;
+    if (a[82] !== ae || a[83] !== C || a[84] !== Oe || a[85] !== D.columns) He = Hn({
+      ...ae,
+      question: Oe
+    }, Math.min(C, D.columns - 6) - qn), a[82] = ae, a[83] = C, a[84] = Oe, a[85] = D.columns, a[86] = He;
+    else He = a[86];
+    let sn = He;
+    const Ue = sr ? ae.question : u.userFacingName;
+    let Re;
+    if (a[87] !== sn) Re = e(s, {
+      flexDirection: "column",
+      paddingX: 2,
+      children: e(s, {
+        ref: c,
+        width: "100%",
+        flexDirection: "column",
+        children: e(zt, {
+          card: sn
+        })
+      })
+    }), a[87] = sn, a[88] = Re;
+    else Re = a[88];
+    const je = sn.rows.length === 0 ? 1 : 0;
+    let Se;
+    if (a[89] !== tt || a[90] !== Je || a[91] !== Q || a[92] !== Dt || a[93] !== me.attempts || a[94] !== et || a[95] !== st) Se = e(OK, {
+      question: null,
+      options: Dt,
+      defaultFocusValue: et,
+      hideIndexes: Q,
+      onSelect: Je,
+      onCancel: tt,
+      toolAnalyticsContext: st
+    }, me.attempts), a[89] = tt, a[90] = Je, a[91] = Q, a[92] = Dt, a[93] = me.attempts, a[94] = et, a[95] = st, a[96] = Se;
+    else Se = a[96];
+    let Te;
+    if (a[97] !== je || a[98] !== Se) Te = e(s, {
+      marginTop: je,
+      children: Se
+    }), a[97] = je, a[98] = Se, a[99] = Te;
+    else Te = a[99];
+    let Ke;
+    if (a[100] !== u.requestSource || a[101] !== Ue || a[102] !== Re || a[103] !== Te) Ke = r(xi, {
+      title: Ue,
+      requestSource: u.requestSource,
+      children: [Re, Te]
+    }), a[100] = u.requestSource, a[101] = Ue, a[102] = Re, a[103] = Te, a[104] = Ke;
+    else Ke = a[104];
+    return Ke
+  }
+  let Oe;
+  if (a[105] !== Bt || a[106] !== u.hasMcpSuffix || a[107] !== u.isMcp || a[108] !== u.userFacingName) Oe = u.isMcp ? r(s, {
+    flexDirection: "row",
+    children: [e(n, {
+      wrap: "truncate-end",
+      children: r(n, {
+        bold: !0,
+        children: [u.userFacingName, " Tool:"]
+      })
+    }), u.hasMcpSuffix ? e(s, {
+      flexShrink: 0,
+      children: e(n, {
+        dimColor: !0,
+        children: " (MCP)"
+      })
+    }) : null]
+  }) : r(n, {
+    children: [u.userFacingName, Bt != null && Bt !== "" && r(V, {
+      children: ["(", Bt, ")"]
+    }), u.hasMcpSuffix ? e(n, {
+      dimColor: !0,
+      children: " (MCP)"
+    }) : ""]
+  }), a[105] = Bt, a[106] = u.hasMcpSuffix, a[107] = u.isMcp, a[108] = u.userFacingName, a[109] = Oe;
+  else Oe = a[109];
+  let He;
+  if (a[110] !== h || a[111] !== A) He = A !== null && e(eu, {
+    entries: A,
+    contentColumns: h
+  }), a[110] = h, a[111] = A, a[112] = He;
+  else He = a[112];
+  let Ue;
+  if (a[113] !== xt || a[114] !== Dn || a[115] !== it || a[116] !== su || a[117] !== rn || a[118] !== u.isMcp || a[119] !== u.userFacingName) Ue = xt !== "" && r(s, {
+    width: "100%",
+    flexDirection: "column",
+    marginTop: u.isMcp ? 1 : 0,
+    children: [u.isMcp && r(n, {
+      italic: !0,
+      wrap: "truncate-end",
+      children: ["About the ", e(n, {
+        bold: !0,
+        children: u.userFacingName
+      }), " Tool:"]
+    }), e(s, {
+      borderStyle: "single",
+      borderLeft: !0,
+      borderRight: !1,
+      borderTop: !1,
+      borderBottom: !1,
+      borderDimColor: !0,
+      paddingLeft: 1,
+      children: e(n, {
+        dimColor: !0,
+        italic: u.isMcp,
+        children: Dn ? rn : xt
+      })
+    }), it && e(n, {
+      dimColor: !0,
+      children: e(F, {
+        chord: su,
+        action: Dn ? "collapse description" : "expand description",
+        parens: !0,
+        format: {
+          keyCase: "lower"
+        }
+      })
+    })]
+  }), a[113] = xt, a[114] = Dn, a[115] = it, a[116] = su, a[117] = rn, a[118] = u.isMcp, a[119] = u.userFacingName, a[120] = Ue;
+  else Ue = a[120];
+  let Re;
+  if (a[121] !== He || a[122] !== Ue) Re = r(s, {
+    ref: c,
+    width: "100%",
+    flexDirection: "column",
+    children: [He, Ue]
+  }), a[121] = He, a[122] = Ue, a[123] = Re;
+  else Re = a[123];
+  let je;
+  if (a[124] !== Oe || a[125] !== Re) je = r(s, {
+    flexDirection: "column",
+    paddingX: 2,
+    paddingY: 1,
+    children: [Oe, Re]
+  }), a[124] = Oe, a[125] = Re, a[126] = je;
+  else je = a[126];
+  let Se;
+  if (a[127] !== u.permissionResult) Se = e(Cb, {
+    permissionResult: u.permissionResult,
+    toolType: "tool"
+  }), a[127] = u.permissionResult, a[128] = Se;
+  else Se = a[128];
+  let Te;
+  if (a[129] !== tt || a[130] !== Je || a[131] !== Q || a[132] !== Dt || a[133] !== me.attempts || a[134] !== et || a[135] !== st) Te = e(OK, {
+    options: Dt,
+    defaultFocusValue: et,
+    hideIndexes: Q,
+    onSelect: Je,
+    onCancel: tt,
+    toolAnalyticsContext: st
+  }, me.attempts), a[129] = tt, a[130] = Je, a[131] = Q, a[132] = Dt, a[133] = me.attempts, a[134] = et, a[135] = st, a[136] = Te;
+  else Te = a[136];
+  let Ke;
+  if (a[137] !== Se || a[138] !== Te) Ke = r(s, {
+    flexDirection: "column",
+    children: [Se, Te]
+  }), a[137] = Se, a[138] = Te, a[139] = Ke;
+  else Ke = a[139];
+  let an;
+  if (a[140] !== u.requestSource || a[141] !== je || a[142] !== Ke) an = r(xi, {
+    title: "Tool use",
+    requestSource: u.requestSource,
+    children: [je, Ke]
+  }), a[140] = u.requestSource, a[141] = je, a[142] = Ke, a[143] = an;
+  else an = a[143];
+  let ar;
+  if (a[144] !== it || a[145] !== an) ar = e(GC, {
+    bindings: OD,
+    active: it,
+    flexDirection: "column",
+    children: an
+  }), a[144] = it, a[145] = an, a[146] = ar;
+  else ar = a[146];
+  return ar
+}
+export {
+  abe,
+  oue,
+  d1e,
+  mbn,
+  Y3r,
+  fPe,
+  eht,
+  tht,
+  l5,
+  ZI,
+  gbn,
+  zi,
+  Tb,
+  X3r,
+  mA,
+  sue,
+  Izt,
+  hbn,
+  TJn,
+  Ozt,
+  ybn,
+  Cb,
+  Mzt,
+  nht,
+  rht,
+  lbe,
+  OK,
+  Dzt,
+  CJn
+};

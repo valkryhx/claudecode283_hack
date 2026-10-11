@@ -1,0 +1,1 @@
+function So(e,t,o){let r=INt(t),n=e.isGeneratorHook(o);if(r&&!n)return`takes an async generator, async function* ($, e, next) { ... }: ${t} streams, its hook yields the chunks and returns the result`;return!r&&n?`takes ($, e, next) => result, not an async generator: only a streaming event named as itself (${YVn.join(", ")}) takes the generator form`:void 0}

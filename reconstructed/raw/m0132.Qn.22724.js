@@ -1,0 +1,1 @@
+function Qn(e){let{plugin:t,tier:o,event:r,ms:n}=e,s=`${r} ${t}`,i=Xe.get(s),p=`${t} (${o}) answered ${r} without next()`;if(i!==void 0){i.count+=1,i.lastMs=n;return}kc().log(`${p} in ${n.toFixed(1)}ms; nothing beneath it ran for this dispatch`);let a=setTimeout(qn,$t,s,p);a.unref(),Xe.set(s,{count:0,lastMs:n,timer:a})}

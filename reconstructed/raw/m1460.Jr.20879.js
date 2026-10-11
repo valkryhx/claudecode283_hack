@@ -1,0 +1,1 @@
+function Jr(o){let u=w(5),{win:l,total:a}=o,d;if(u[0]!==a||u[1]!==l)d=At(l,a),u[0]=a,u[1]=l,u[2]=d;else d=u[2];const f=`  ${d}`;let h;if(u[3]!==f)h=e(n,{dimColor:!0,wrap:"truncate-end",children:f}),u[3]=f,u[4]=h;else h=u[4];return h}

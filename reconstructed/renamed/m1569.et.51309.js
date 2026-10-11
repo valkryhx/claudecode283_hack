@@ -1,0 +1,92 @@
+/* ==========================================================================
+ * m1569.et   [m1569_0xdceb889.js @ 51309]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function et(e, r, n) {
+  let s = Qr(r),
+    a = !1,
+    w = !1,
+    h = Promise.resolve(),
+    g = R => {
+      h = h.then(async () => {
+        if (w) return;
+        if (H() && n !== void 0 && s !== void 0) {
+          let I = await n.append(s, [{
+            data: hj(R)
+          }]);
+          if (!I.ok) throw t(`world journal append failed: ${rt(I.error)}`, {
+            level: "warn"
+          }), Error("world journal append failed", {
+            cause: I.error
+          });
+          return;
+        }
+        if (!a) await Dt(gr(r), {
+          recursive: !0
+        }), a = !0;
+        await Lt(r, hj(R));
+      }).catch(I => {
+        w = !0, k(), p("workflow_journal", "append_failed"), t(`world journal append failed; the writer detaches and this session's later rows stay in memory only: ${I}`, {
+          level: "warn"
+        });
+      });
+    },
+    k = e.subscribe(R => {
+      switch (R.kind) {
+        case "put":
+          {
+            let {
+              addr: I,
+              kind: x,
+              fact: Z,
+              by: F,
+              at: O,
+              status: K
+            } = R.row;
+            g({
+              k: "put",
+              addr: I,
+              kind: x,
+              fact: Z,
+              by: F,
+              in: R.row.in,
+              at: O,
+              status: K
+            });
+            return;
+          }
+        case "settled":
+          {
+            let {
+              addr: I,
+              status: x,
+              value: Z,
+              error: F
+            } = R.row;
+            if (x === "done") g({
+              k: "settled",
+              addr: I,
+              status: x,
+              value: Z
+            });else if (x === "failed") g({
+              k: "settled",
+              addr: I,
+              status: x,
+              error: F
+            });
+            return;
+          }
+        case "retracted":
+          g({
+            k: "retracted",
+            addr: R.row.addr
+          });
+          return;
+        case "runaway":
+          return;
+      }
+    });
+  return () => (k(), h);
+}

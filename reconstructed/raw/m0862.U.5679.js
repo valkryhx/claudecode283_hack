@@ -1,0 +1,1 @@
+function U(e){let n=e.declaration;if(!n||n.type!=="VariableDeclaration")return!1;if(n.kind!=="const"||n.declarations.length!==1)return!1;let t=n.declarations[0];return t.id.type==="Identifier"&&t.id.name==="meta"&&t.init?.type==="ObjectExpression"}

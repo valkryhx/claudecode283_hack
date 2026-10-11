@@ -1,0 +1,1 @@
+function Pn(e,t,o){let r=j2o(o);if(r!==void 0)return Pt(t,r,e.wrapMethod);if(o.owner===$he){let n=e.local[t];if(!n)throw new De(`${e.pluginName}: the interface table names core as the owner of $.${t}, which core does not provide`);return n}return Aa(e,t,o)}

@@ -1,0 +1,1 @@
+var Yg=["Yes","No"];

@@ -1,0 +1,123 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import { _I } from "B:/~BUN/root/chunk-ger4wyq2.js";
+import { Ef } from "B:/~BUN/root/chunk-ydt4z4fm.js";
+import { be } from "B:/~BUN/root/chunk-yv67t8hr.js";
+var S = be(Ef()),
+  a = be(_I());
+var g = 300000,
+  p = "To refresh this SSO session run 'aws sso login' with the corresponding profile.";
+var k = async (e, o = {}) => {
+  let {
+      SSOOIDCClient: SSOOIDCClient
+    } = await import("B:/~BUN/root/chunk-p6zep8bg.js").then(m => be(m.default)),
+    n = f => o.clientConfig?.[f] ?? o.parentClientConfig?.[f];
+  return new SSOOIDCClient(Object.assign({}, o.clientConfig ?? {}, {
+    region: e ?? o.clientConfig?.region,
+    logger: n("logger"),
+    userAgentAppId: n("userAgentAppId")
+  }));
+};
+var h = async (e, o, s = {}) => {
+  let {
+    CreateTokenCommand: CreateTokenCommand
+  } = await import("B:/~BUN/root/chunk-p6zep8bg.js").then(m => be(m.default));
+  return (await k(o, s)).send(new CreateTokenCommand({
+    clientId: e.clientId,
+    clientSecret: e.clientSecret,
+    refreshToken: e.refreshToken,
+    grantType: "refresh_token"
+  }));
+};
+var u = be(Ef());
+var w = e => {
+  if (e.expiration && e.expiration.getTime() < Date.now()) throw new u.TokenProviderError(`Token is expired. ${p}`, !1);
+};
+var E = be(Ef());
+var i = (e, o, s = !1) => {
+  if (typeof o > "u") throw new E.TokenProviderError(`Value not present for '${e}' in SSO Token${s ? ". Cannot refresh" : ""}. ${p}`, !1);
+};
+var x = be(_I());
+import { promises as A } from "fs";
+var {
+    writeFile: writeFile
+  } = A,
+  O = (e, o) => {
+    let s = x.getSSOTokenFilepath(e),
+      n = JSON.stringify(o, null, 2);
+    return writeFile(s, n);
+  };
+var date = new Date(0),
+  sdn = (e = {}) => async ({
+    callerClientConfig: callerClientConfig
+  } = {}) => {
+    let s = {
+      ...e,
+      parentClientConfig: {
+        ...callerClientConfig,
+        ...e.parentClientConfig
+      }
+    };
+    s.logger?.debug("@aws-sdk/token-providers - fromSso");
+    let n = await a.parseKnownFiles(s),
+      c = a.getProfileName({
+        profile: s.profile ?? callerClientConfig?.profile
+      }),
+      f = n[c];
+    if (!f) throw new S.TokenProviderError(`Profile '${c}' could not be found in shared credentials file.`, !1);else if (!f.sso_session) throw new S.TokenProviderError(`Profile '${c}' is missing required property 'sso_session'.`);
+    let sso_session = f.sso_session,
+      d = (await a.loadSsoSessionData(s))[sso_session];
+    if (!d) throw new S.TokenProviderError(`Sso session '${sso_session}' could not be found in shared credentials file.`, !1);
+    for (let t of ["sso_start_url", "sso_region"]) if (!d[t]) throw new S.TokenProviderError(`Sso session '${sso_session}' is missing required property '${t}'.`, !1);
+    let {
+        sso_start_url: sso_start_url,
+        sso_region: sso_region
+      } = d,
+      r;
+    try {
+      r = await a.getSSOTokenFromFile(sso_session);
+    } catch (error) {
+      throw new S.TokenProviderError(`The SSO session token associated with profile=${c} was not found or is invalid. ${p}`, !1);
+    }
+    i("accessToken", r.accessToken), i("expiresAt", r.expiresAt);
+    let {
+        accessToken: y,
+        expiresAt: expiresAt
+      } = r,
+      l = {
+        token: y,
+        expiration: new Date(expiresAt)
+      };
+    if (l.expiration.getTime() - Date.now() > g) return l;
+    if (Date.now() - date.getTime() < 30000) return w(l), l;
+    i("clientId", r.clientId, !0), i("clientSecret", r.clientSecret, !0), i("refreshToken", r.refreshToken, !0);
+    try {
+      date.setTime(Date.now());
+      let t = await h(r, sso_region, s);
+      i("accessToken", t.accessToken), i("expiresIn", t.expiresIn);
+      let T = new Date(Date.now() + t.expiresIn * 1000);
+      try {
+        await O(sso_session, {
+          ...r,
+          accessToken: t.accessToken,
+          expiresAt: T.toISOString(),
+          refreshToken: t.refreshToken
+        });
+      } catch (error) {}
+      return {
+        token: t.accessToken,
+        expiration: T
+      };
+    } catch (error) {
+      return w(l), l;
+    }
+  };
+export { sdn };

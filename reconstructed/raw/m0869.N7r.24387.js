@@ -1,0 +1,1 @@
+function N7r(e,r,s,g){if(!ko(r,e))return;let f=uo(r),w=wr("sha256").update(f).update("\x00").update(s).digest("hex");if(g.mirroredScripts.get(e)===w)return;let A=mMn();if(A===void 0)return;g.mirroredScripts.set(e,w),A.mirror(mo,{fileName:f,script:s},{sessionId:Y(),agentId:e}).catch((F)=>{g.mirroredScripts.delete(e),wo(F)})}

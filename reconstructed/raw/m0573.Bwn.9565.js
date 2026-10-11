@@ -1,0 +1,1 @@
+function Bwn(e,n=new Set){for(let o of Object.values(e)){if(o.status!=="running"||n.has(o.id))continue;try{if(_p(o))o.shellCommand?.kill(),o.shellCommand?.cleanup();else if(Eo()){Tp(o.id);continue}else if("abortController"in o)o.abortController?.abort();if(!Hd(o))Si(o.id,"stopped",{toolUseId:o.toolUseId,summary:o.description,ambient:p9(o)});Tp(o.id)}catch(s){d(s)}}}

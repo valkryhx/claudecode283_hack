@@ -1,0 +1,1 @@
+function Eo(e,{clause:t,event:o,registration:r}){let n=Tp(e,t,o),s=(u,d)=>e.framed(r,()=>n(u,d)),{matcher:i}=t,a=o==="engine.create"?void 0:Ep(e,t),f=a===void 0?void 0:(u,d)=>e.framed(r,()=>a(u,d)),m=i===void 0?{run:s}:{run:Ap(e,{matcher:i,event:o,run:s}),matcher:i};return f===void 0?m:{...m,catch:f}}

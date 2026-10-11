@@ -1,0 +1,1 @@
+function yp(e){let t={...e?.columns!==void 0&&{columns:e.columns},...e?.rows!==void 0&&{rows:e.rows}};return dp(e)?{requestId:e.requestId,key:e.key,cells:e.cells,...t}:{requestId:e?.requestId,key:e?.key,source:e?.source,...G(e)&&"cells"in e&&{cells:e.cells},...t}}

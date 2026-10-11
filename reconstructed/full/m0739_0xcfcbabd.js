@@ -1,0 +1,506 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import "B:/~BUN/root/chunk-kks4mj3w.js";
+import "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import {
+  Q
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  WD
+} from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import {
+  fh
+} from "B:/~BUN/root/chunk-0fnha6bz.js";
+import "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  O
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  eH
+} from "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import {
+  Yd,
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import {
+  r5e,
+  vD
+} from "B:/~BUN/root/chunk-3hn9fzjy.js";
+import {
+  _w,
+  nx,
+  MV,
+  A4e,
+  psn,
+  jOt,
+  bge,
+  zOt,
+  ZO,
+  fsn
+} from "B:/~BUN/root/chunk-30zp50p7.js";
+import {
+  MKt
+} from "B:/~BUN/root/chunk-9t6a3qkt.js";
+import {
+  YHe
+} from "B:/~BUN/root/chunk-dqm1wqrw.js";
+import {
+  appendFileSync as re,
+  createWriteStream as ie,
+  mkdirSync as oe
+} from "fs";
+import {
+  appendFile as se,
+  mkdir as ce,
+  unlink as G,
+  writeFile as ae
+} from "fs/promises";
+import {
+  createServer as le
+} from "net";
+import {
+  getPriority as de,
+  setPriority as ue
+} from "os";
+import {
+  dirname as V
+} from "path";
+import {
+  link as q,
+  mkdir as J,
+  stat as Y,
+  unlink as Z,
+  writeFile as ee
+} from "fs/promises";
+import {
+  join as v,
+  sep as te
+} from "path";
+async function ne() {
+  let r = v(YHe(), "claude");
+  if (!process.execPath.startsWith(v(r, "versions") + te)) return null;
+  let n = v(r, "ClaudeCode.app", "Contents", "MacOS"),
+    t = v(n, "claude");
+  try {
+    let o = (await Y(process.execPath)).ino;
+    await J(n, {
+      recursive: !0
+    }), await ee(v(n, "..", "Info.plist"), `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict><key>CFBundleIdentifier</key><string>com.anthropic.claude-code</string><key>CFBundleName</key><string>Claude Code</string><key>CFBundleDisplayName</key><string>Claude Code</string><key>CFBundleExecutable</key><string>claude</string><key>CFBundlePackageType</key><string>APPL</string><key>LSUIElement</key><true/><key>NSMicrophoneUsageDescription</key><string>Claude Code uses the microphone for voice dictation.</string><key>NSAppleEventsUsageDescription</key><string>Claude Code needs to send Apple Events to open URLs and control applications you authorize.</string><key>NSLocalNetworkUsageDescription</key><string>Claude Code connects to servers and devices on your local network when commands you run need to reach them.</string></dict></plist>
+`);
+    try {
+      if ((await Y(t)).ino === o) return t;
+      await Z(t)
+    } catch {}
+    return await q(process.execPath, t), t
+  } catch {
+    return null
+  }
+}
+async function z() {
+  if (O() !== "macos") return;
+  if (a.CLAUDE_BG_TCC_DISCLAIMED) {
+    delete process.env.CLAUDE_BG_TCC_DISCLAIMED;
+    return
+  }
+  let r = await ne() ?? process.execPath,
+    t = [...Yd() ? [r] : [r, process.argv[1]], ...process.argv.slice(2)],
+    o = MKt(process.env);
+  o.CLAUDE_BG_TCC_DISCLAIMED = "1";
+  try {
+    process.execve(r, t, o, {
+      macDisclaimResponsibility: !0
+    })
+  } catch {}
+}
+var fe = 1048576;
+async function He(r) {
+  let n = r.indexOf("--"),
+    t = r.includes("--bg-spare", n + 1);
+  if (!t) await z();
+  if (n < 3 || n === r.length - 1) return _(void 0, "bad argv: --bg-pty-host <sock> <cols> <rows> -- <file> [args...]");
+  let o = r[0];
+  process.on("uncaughtException", (e) => _(o, `uncaught: ${e?.stack??String(e)}`)), process.on("unhandledRejection", (e) => _(o, `unhandledRejection: ${e?.stack??String(e)}`));
+  let l = Number(r[1]) || 200,
+    f = Number(r[2]) || 50,
+    h = r[n + 1],
+    m = r.slice(n + 2),
+    c = process.env.CLAUDE_PTY_HOST_EXEC === "1";
+  delete process.env.CLAUDE_PTY_HOST_EXEC;
+  let P = process.env.CLAUDE_BG_PTY_AUTH;
+  delete process.env.CLAUDE_BG_PTY_AUTH;
+  let D = process.env.CLAUDE_BG_SOCKET_TOKENS_PATH;
+  if (D) {
+    let e = await r5e(D);
+    if (e?.ptyAuth) P = e.ptyAuth;
+    else if (!P) await X(o, "tokens-file unreadable; DATA gate fail-open");
+    if (c) delete process.env.CLAUDE_BG_SOCKET_TOKENS_PATH, await G(D).catch(() => {})
+  }
+  if (O() !== "windows") try {
+    ue(0, Math.min(de(0) + 5, 19))
+  } catch {}
+  let A = he(jOt),
+    p = new Set,
+    x = new WeakMap,
+    N = new WeakSet,
+    M = new WeakSet,
+    y = !1,
+    g = !1,
+    b = !1,
+    H = process.ppid,
+    R = 0,
+    I = null,
+    F = ye(process.env.CLAUDE_PTY_RECORD, l, f);
+
+  function K(e) {
+    for (let s of p) {
+      if (s.destroyed) {
+        p.delete(s);
+        continue
+      }
+      if (s.writableLength > fe) {
+        s.destroy(), p.delete(s);
+        continue
+      }
+      s.write(e)
+    }
+  }
+  let S, d;
+  try {
+    S = new Bun.Terminal({
+      cols: l,
+      rows: f,
+      data(e, s) {
+        b = !0;
+        let i = Buffer.from(s);
+        if (A.push(i), F?.write(i), p.size) K(zOt(i))
+      }
+    }), d = Bun.spawn([h, ...m], {
+      cwd: process.cwd(),
+      env: {
+        ...process.env,
+        TERM: "xterm-256color"
+      },
+      terminal: S,
+      windowsHide: !0,
+      detached: !1,
+      ...t && {
+        argv0: "claude bg-spare"
+      }
+    })
+  } catch (e) {
+    _(o, `spawn failed: ${String(e)}`)
+  }
+
+  function w(e, s) {
+    if (!e.destroyed) e.write(s)
+  }
+
+  function j(e) {
+    switch (e.t) {
+      case "resize": {
+        let s = Number(e.cols),
+          i = Number(e.rows);
+        if (s > 0 && s <= bge && i > 0 && i <= bge && !y && !g) {
+          if (S.resize(s, i), O() !== "windows") {
+            try {
+              process.kill(-process.pid, "SIGWINCH")
+            } catch {}
+            try {
+              d.kill("SIGWINCH")
+            } catch {}
+          }
+        }
+        return
+      }
+      case "kill": {
+        let s = e.sig === "SIGKILL" ? "SIGKILL" : "SIGTERM";
+        try {
+          g = me(s, d, S) || g
+        } catch {}
+        if (s === "SIGTERM") setTimeout(() => {
+          if (!y) try {
+            d.kill("SIGKILL")
+          } catch {}
+        }, 5000).unref();
+        return
+      }
+      default:
+        return
+    }
+  }
+  await G(o).catch(() => {});
+  let C = le((e) => {
+    e.on("error", () => e.destroy()), e.once("close", () => p.delete(e)), w(e, ZO({
+      t: "hello",
+      replPid: d.pid,
+      version: typeof {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      } < "u" ? {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.283",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-09-25T00:44:42Z",
+        GIT_SHA: "4631ccd7cfe41e69bc72d3b5b9dc7282536e4985",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION : void 0
+    }));
+    for (let i of A.chunks) w(e, zOt(i));
+    if (w(e, ZO({
+        t: "live"
+      })), p.add(e), R = 0, x.set(e, {
+        armed: !1,
+        missed: 0
+      }), w(e, ZO({
+        t: "ping"
+      })), y) {
+      w(e, ZO({
+        t: "exit",
+        code: T,
+        signal: L
+      })), e.end();
+      return
+    }
+    let s = fsn((i) => {
+      if (i.kind === A4e) {
+        if (P && !N.has(e)) {
+          if (!M.has(e)) M.add(e), w(e, ZO({
+            t: "auth-required"
+          }));
+          return
+        }
+        if (!y && !g) {
+          if (S.write(i.payload), c && O() !== "windows") {
+            let u = i.payload.includes(3) ? "SIGINT" : i.payload.includes(28) ? "SIGQUIT" : null;
+            if (u) {
+              I = u;
+              try {
+                process.kill(-process.pid, u)
+              } catch {}
+              setImmediate(() => {
+                I = null
+              })
+            }
+          }
+        }
+      } else if (i.kind === psn)
+        if (i.ctrl.t === "pong") {
+          let u = x.get(e);
+          if (u) u.armed = !0, u.missed = 0
+        } else if (i.ctrl.t === "auth") {
+        if (vD(i.ctrl.token, P)) N.add(e)
+      } else j(i.ctrl)
+    }, () => e.destroy());
+    e.on("data", s)
+  });
+  C.on("error", (e) => {
+    try {
+      d.kill("SIGTERM")
+    } catch {}
+    _(o, `server error: ${String(e)}`)
+  }), C.listen(o), C.unref();
+  let E, k;
+  if (O() !== "windows") {
+    let e = WD(process.env.CLAUDE_PTY_HEARTBEAT_MS) || 60000,
+      s = 3;
+    k = setInterval(() => {
+      if (y) return;
+      for (let B of p) {
+        let U = x.get(B);
+        if (!U?.armed) continue;
+        if (U.missed++, U.missed >= 3) B.destroy(), p.delete(B);
+        else w(B, ZO({
+          t: "ping"
+        }))
+      }
+    }, e), k.unref();
+    let i = WD(process.env.CLAUDE_PTY_ORPHAN_CHECK_MS) || 2000,
+      u = 30;
+    E = setInterval(() => {
+      if (y) return;
+      if (process.ppid === H || p.size > 0) {
+        R = 0;
+        return
+      }
+      if (++R < u) return;
+      clearInterval(E), clearInterval(k), X(o, `orphan watchdog: ppid ${H}\u2192${process.ppid}, no client for ${u*i}ms`), fh("ptyhost_orphan_watchdog");
+      try {
+        d.kill("SIGTERM")
+      } catch {}
+      setTimeout(() => {
+        if (!y) try {
+          d.kill("SIGKILL")
+        } catch {}
+      }, 5000).unref()
+    }, i), E.unref()
+  }
+  for (let e of ["SIGTERM", "SIGINT", "SIGHUP"]) process.on(e, () => {
+    if (I === e) return;
+    try {
+      d.kill(e === "SIGHUP" ? "SIGTERM" : e)
+    } catch {}
+  });
+  if (c && O() !== "windows") process.on("SIGQUIT", () => {
+    if (I === "SIGQUIT") return;
+    try {
+      d.kill("SIGQUIT")
+    } catch {}
+  });
+  let T = 0;
+  T = await d.exited;
+  let W = 0;
+  for (let e = 0; e < 20; e++)
+    if (b = !1, await Q(5), b) W = 0;
+    else if (++W >= 2) break;
+  let L = d.signalCode ?? void 0;
+  if (y = !0, c) try {
+    let e = MV(o),
+      s = Buffer.concat(A.chunks).subarray(-4096),
+      i = 0;
+    while (i < 3 && i < s.length && (s[i] & 192) === 128) i++;
+    let u = s.subarray(i).toString("utf8");
+    eH(e, JSON.stringify({
+      code: T,
+      signal: L,
+      tail: u
+    }), 384)
+  } catch {}
+  if (E) clearInterval(E);
+  if (k) clearInterval(k);
+  if (!g) S.close();
+  if (F?.close(), c && O() !== "windows") {
+    I = "SIGHUP";
+    try {
+      process.kill(-process.pid, "SIGHUP")
+    } catch {}
+  }
+  if (K(ZO({
+      t: "exit",
+      code: T,
+      signal: L
+    })), p.size === 0) await pe(C, c ? () => ae(nx(o), Buffer.concat(A.chunks)) : void 0);
+  for (let e of p) e.end();
+  if (await Promise.race([new Promise((e) => C.close(() => e())), Q(2000, void 0, {
+      unref: !0
+    })]), O() !== "windows") await G(o).catch(() => {});
+  process.exit(T)
+}
+async function pe(r, n, t = 5000) {
+  let o = new Promise((f) => r.once("connection", () => f())),
+    l = (n ? n().catch(() => {}) : Promise.resolve()).then(() => Q(t));
+  await Promise.race([o, l])
+}
+
+function me(r, n, t) {
+  if (r === "SIGTERM" && O() === "windows") return t.close(), !0;
+  return n.kill(r), !1
+}
+
+function he(r) {
+  let n = [],
+    t = 0,
+    o = 0;
+
+  function l() {
+    if (t > 0) n = n.slice(t), t = 0
+  }
+  return {
+    get chunks() {
+      return l(), n
+    },
+    push(f) {
+      n.push(f), o += f.length;
+      while (o > r && n.length - t > 1) {
+        o -= n[t++].length;
+        for (let h = 0; h < 3;) {
+          let m = n[t],
+            c = 0;
+          while (h + c < 3 && c < m.length && (m[c] & 192) === 128) c++;
+          if (c > 0) n[t] = m.subarray(c), o -= c, h += c;
+          if (n[t].length > 0 || n.length - t === 1) break;
+          t++
+        }
+      }
+      if (t >= n.length - t) l()
+    }
+  }
+}
+
+function ye(r, n, t) {
+  if (!r) return;
+  let o = process.hrtime.bigint(),
+    l;
+  try {
+    l = ie(r, {
+      flags: "w"
+    })
+  } catch {
+    return
+  }
+  l.on("error", () => {
+    l?.destroy(), l = void 0
+  });
+  let f = Buffer.allocUnsafe(8);
+  return f.writeUInt32BE(n, 0), f.writeUInt32BE(t, 4), l.write(f), {
+    write(h) {
+      if (!l) return;
+      let m = Buffer.allocUnsafe(8 + h.length),
+        c = Number((process.hrtime.bigint() - o) / 1000n);
+      m.writeUInt32BE(c >>> 0, 0), m.writeUInt32BE(h.length, 4), h.copy(m, 8), l.write(m)
+    },
+    close() {
+      l?.end()
+    }
+  }
+}
+async function X(r, n) {
+  try {
+    let t = _w(r);
+    await ce(V(t), {
+      recursive: !0
+    }), await se(t, `${new Date().toISOString()} ${n}
+`)
+  } catch {}
+}
+
+function _(r, n) {
+  if (r) try {
+    let t = _w(r);
+    oe(V(t), {
+      recursive: !0
+    }), re(t, `${new Date().toISOString()} ${n}
+`)
+  } catch {}
+  process.exit(1)
+}
+export {
+  He as runPtyHost
+};

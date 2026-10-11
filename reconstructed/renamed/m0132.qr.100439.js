@@ -1,0 +1,22 @@
+/* ==========================================================================
+ * m0132.qr   [m0132_0xc24a4bb.js @ 100439]
+ * 由 tools/rename.mjs 按 rename-map.json 做作用域感知重命名。
+ * 未收录的标识符保持 Bun 压缩名；字符串/属性名/控制流未改动。
+ * 名字证据等级见 naming-map.json / NAMING-METHOD.md。
+ * ========================================================================== */
+function qr(e, t) {
+  let o = e.props;
+  if (!G(o)) return "no { props } (an object)";
+  let r = Rr[t.component] ?? {};
+  for (let [n, s] of Object.entries(r)) {
+    let i = St(o[n]);
+    if (s !== je && !s.includes(i)) return `a props.${n} that is ${i}, not ${s.join(" or ")}`;
+  }
+  for (let [n, s] of Object.entries(t.props)) {
+    if (s === void 0 || Object.hasOwn(r, n)) continue;
+    let i = St(s),
+      p = St(o[n]);
+    if (p !== i) return `a props.${n} that is ${p}, not ${i}`;
+  }
+  return Ar(o, t) ?? Jr(o, t) ?? Xr(o, t) ?? Yr(o, t) ?? Gr(o, t) ?? _r(o, t) ?? Kr(o, t) ?? Wr(o, t) ?? zr(o, t) ?? Br(o, t);
+}

@@ -1,0 +1,1 @@
+var vg=(e,t)=>R_({submit:(o)=>It(o,e,"prompt.submit").then((r)=>r.trim()===""?Promise.reject(new De(`${e}: $.prompt.submit takes { text } (a non-empty prompt)`)):t("prompt.submit",{text:r})),read:()=>t("prompt.read",{}),fill:(o)=>Ga(o,e).then((r)=>t("prompt.fill",r)),suggest:(o)=>It(o,e,"prompt.suggest").then((r)=>t("prompt.suggest",{text:r}))});

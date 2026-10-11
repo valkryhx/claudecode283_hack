@@ -1,0 +1,1337 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  aA,
+  mjt
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  v,
+  B
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  Q
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import {
+  Se
+} from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import {
+  b,
+  J
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  x,
+  qs
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import {
+  _,
+  m,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  K
+} from "B:/~BUN/root/chunk-5px6g0cn.js";
+import {
+  Cn
+} from "B:/~BUN/root/chunk-2swveyqa.js";
+import {
+  Iy
+} from "B:/~BUN/root/chunk-9fcn5kmc.js";
+import {
+  Ae
+} from "B:/~BUN/root/chunk-5w2ecytn.js";
+import {
+  Ld,
+  DY
+} from "B:/~BUN/root/chunk-snmb1kqg.js";
+import {
+  M_,
+  $c
+} from "B:/~BUN/root/chunk-83yxmdy5.js";
+import {
+  QXt,
+  C0n,
+  qtt,
+  uCt,
+  R0n,
+  kL,
+  pCt,
+  _8,
+  YH,
+  X7,
+  A0n,
+  x0n,
+  P0n,
+  Jlo,
+  Ktt,
+  rJt,
+  I0n,
+  Qlo,
+  oJt,
+  fCt,
+  Ytt,
+  Zlo,
+  eco,
+  NG,
+  O0n,
+  Xtt,
+  cMe,
+  _Ge,
+  M0n,
+  sJt,
+  J7,
+  D0n,
+  L0n,
+  Zwe,
+  eve,
+  N0n,
+  bGe,
+  H0n,
+  mCt,
+  iJt,
+  F0n,
+  $0n,
+  U0n,
+  _E,
+  ove,
+  wco,
+  _Jt,
+  kco,
+  Eco,
+  Tco,
+  bJt,
+  vCt,
+  Cco,
+  Rco,
+  SJt,
+  q0n,
+  PL,
+  Sxt,
+  LZ,
+  zwr,
+  Sp,
+  MT
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import {
+  rD,
+  x2n,
+  u6e,
+  NHe,
+  rq,
+  dCe,
+  Mz,
+  p6e,
+  f6e,
+  u6,
+  FHe
+} from "B:/~BUN/root/chunk-gj0n7q1s.js";
+import {
+  Oee,
+  Gsn,
+  fz,
+  nTe,
+  Cat
+} from "B:/~BUN/root/chunk-r6m7remx.js";
+import {
+  _kt,
+  kso
+} from "B:/~BUN/root/chunk-gpp54h0e.js";
+import {
+  Ms
+} from "B:/~BUN/root/chunk-6492v1c5.js";
+import {
+  Yin
+} from "B:/~BUN/root/chunk-h7t9e2fk.js";
+import {
+  ua
+} from "B:/~BUN/root/chunk-358c43wz.js";
+import {
+  ug
+} from "B:/~BUN/root/chunk-t1t358ee.js";
+import {
+  o,
+  E,
+  ae,
+  C,
+  ut
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import {
+  lstat as sn,
+  lutimes as Wn,
+  mkdir as jn,
+  readdir as fn,
+  rename as rn,
+  rm as X,
+  rmdir as on,
+  stat as mn
+} from "fs/promises";
+import {
+  basename as U,
+  join as A,
+  relative as yn,
+  sep as Xn
+} from "path";
+var qe = 10,
+  Nn = qe * 60000,
+  Fn = 4,
+  An = "tengu_claudeai_skills_sync_interval_minutes",
+  On = 5,
+  xn = 1440,
+  Bn = "tengu_claudeai_skills_sync_shared_round",
+  zn = 30000,
+  Un = 60000,
+  $e = 180000,
+  Te = 45000;
+
+function oe() {
+  let e = x(An, qe);
+  if (typeof e !== "number" || Number.isNaN(e) || e <= 0) return Nn;
+  return Math.min(Math.max(e, On), xn) * 60000
+}
+
+function Je() {
+  return x(Bn, !1) === !0
+}
+
+function Qe() {
+  return zn + Math.floor(Math.random() * Un)
+}
+
+function Ie(e) {
+  let n = oe();
+  return Math.min(n * 2 ** Math.max(0, e - 1), n * Fn)
+}
+
+function Ve(e) {
+  let n = _E();
+  if (n.resyncTimer) return;
+  n.resyncRunRound = e, me(n, e, Ie(n.consecutiveFailedRounds), "resync")
+}
+
+function Pe(e) {
+  let n = _E();
+  if (!n.resyncTimer || !n.resyncRunRound) return;
+  clearTimeout(n.resyncTimer), me(n, n.resyncRunRound, e, "resync")
+}
+
+function en() {
+  Pe(Ie(_E().consecutiveFailedRounds))
+}
+
+function me(e, n, r, t) {
+  let l = Date.now() + r;
+  e.resyncTimer = setTimeout(Hn, r, e, n, l, t), e.resyncTimer.unref?.()
+}
+
+function Hn(e, n, r, t) {
+  let l = e.resyncTimer,
+    w = Math.max(0, Date.now() - r);
+  if (w > Te) {
+    K("info", "skills_sync_resync_skipped_after_sleep", {
+      late_ms: w
+    }), i("tengu_skills_sync_resync_skipped", {
+      trigger: c(t),
+      tick_late_ms: w,
+      settle_ms: $e
+    }), me(e, n, $e, "wake_settle");
+    return
+  }
+  n({
+    trigger: t,
+    tickLateMs: w
+  }).catch(() => {}).then(() => {
+    if (e.resyncTimer !== l) return;
+    me(e, n, Ie(e.consecutiveFailedRounds), "resync")
+  })
+}
+var Kn = 60000;
+
+function ye() {
+  return Ld() ?? "none"
+}
+async function nn({
+  syncedRoot: e,
+  bucket: n,
+  root: r,
+  trigger: t,
+  pinned: l,
+  lastGeneration: w,
+  holdsPlaceholders: S
+}) {
+  let g = !l && Je() && n === pCt(),
+    R = l ? void 0 : Yn(t, g);
+  if (R === void 0) return {
+    list: !0,
+    shared: g
+  };
+  let u = await F0n(r, R);
+  if (!u.reuse || !await NG(e, n)) return {
+    list: !0,
+    shared: g
+  };
+  let h = await H0n(r),
+    P = !1;
+  if (g) {
+    if (h === null || S || !h.listedFor.includes(ye())) return {
+      list: !0,
+      shared: g
+    };
+    P = h.token !== w && t !== "startup";
+    let y = oe();
+    if (u.ageMs < y) Pe(y - u.ageMs + Qe())
+  }
+  return K("info", "skills_sync_round_reused", {
+    age_ms: u.ageMs,
+    within_ms: u.withinMs
+  }), {
+    list: !1,
+    generation: h?.token ?? null,
+    reload: P
+  }
+}
+
+function Yn(e, n) {
+  let r = e === "startup" ? N0n() : void 0;
+  if (!n || e === "reload") return r;
+  let t = e === "startup" && !DY() ? Math.min(Kn, oe()) : oe();
+  return Math.max(t, r ?? 0)
+}
+var Gn = "tengu_jaunty_alpaca";
+
+function tn() {
+  return qs(Gn, !0) !== !1
+}
+var an = 15;
+
+function Zn() {
+  let e = a.CLAUDE_CODE_SYNC_SKILLS_WAIT_TIMEOUT_MS;
+  return e && e > 0 ? e : 5000
+}
+
+function O4r() {
+  let e = a.CLAUDE_CODE_SYNC_SKILLS_INSTALL_TIMEOUT_MS;
+  return e && e > 0 ? e : 30000
+}
+
+function Fe() {
+  let e = _E();
+  if (!e.firstListDeferred) {
+    let n, r = new Promise((t) => {
+      n = t
+    });
+    e.firstListDeferred = {
+      promise: r,
+      resolve: n
+    }
+  }
+  return e.firstListDeferred
+}
+
+function gWt(e, n, r) {
+  _E().firstSyncPromise ??= _n(e, n, r), Ve((t) => Be(e, n, r, t))
+}
+
+function M4r(e, n, r) {
+  let t = Fe();
+  return _E().firstSyncPromise ??= _n(e, n, r), t.promise
+}
+async function D4r(e, n) {
+  let r = Zn() - (performance.now() - n),
+    t = await Promise.race([e.then(() => "listed"), Q(Math.max(0, r)).then(() => "timed_out")]);
+  if (t === "timed_out") i("tengu_skills_sync_wait_timeout", {});
+  return t
+}
+async function L4r(e, n, r) {
+  return nTe.of(e).discardInflight(), await _E().syncPromise?.catch(() => {}), Be(e, n, r, {
+    trigger: "reload"
+  })
+}
+
+function _n(e, n, r) {
+  let t = _E();
+  return Be(e, n, r, {
+    trigger: "startup"
+  }).finally(() => {
+    t.firstRoundSettled = !0
+  })
+}
+
+function Oe() {
+  let e = _E();
+  if (!e.firstRoundSettled) e.firstRoundEmitted = !0
+}
+
+function j() {
+  Oe(), LZ(), PL.emit()
+}
+
+function ln(e, n) {
+  if (e === null) return;
+  if (n !== null && e.token !== n.token) {
+    j();
+    return
+  }
+  _E().bucketGeneration = e.token
+}
+
+function G() {
+  return A(Se(), u6)
+}
+
+function kn(e) {
+  return A(G(), e)
+}
+
+function gn(e) {
+  return Ae.userConfigDir("skills", yn(A(Se(), "skills"), e).split(Xn))
+}
+async function Sn(e) {
+  let n = G();
+  if (await YH(n, Se(), {
+      event: "skills_sync_root_refused",
+      phase: "prune",
+      rootLabel: u6
+    }, {
+      storageV5: e
+    }).catch(() => null) !== "real") return null;
+  let t;
+  try {
+    t = await fn(n, {
+      withFileTypes: !0
+    })
+  } catch {
+    return null
+  }
+  let l = [],
+    w = [];
+  for (let S of t)
+    if (S.isDirectory() && dCe(S.name) && await NG(n, S.name)) l.push(S.name);
+    else if (!Mz(S.name)) w.push(S.name);
+  return {
+    buckets: l,
+    strays: w
+  }
+}
+async function pn(e, n) {
+  let r = 0;
+  for (let t of e)
+    if (await ge(A(G(), t), n)) r++;
+  if (r > 0) K("info", "skills_sync_stray_entry_trashed", {
+    count: r
+  });
+  return r
+}
+async function $n(e) {
+  let n = await Sn(e);
+  if (n === null || n.strays.length === 0) return !1;
+  return await pn(n.strays, e) > 0
+}
+
+function ge(e, n) {
+  return X7({
+    dir: e,
+    trashRoot: pe(),
+    configHome: Se(),
+    failureEvent: "skills_sync_trash_move_failed",
+    storageV5: n
+  })
+}
+async function hWt(e) {
+  if (!Rco()) return !1;
+  let n = await YH(G(), Se(), {
+    event: "skills_sync_root_refused",
+    phase: "prune",
+    rootLabel: u6
+  }, {
+    storageV5: e
+  });
+  if (n !== "real" && n !== "absent") return !1;
+  let r = null,
+    t = n === "real" ? await Sn(e) : null;
+  if (t !== null) {
+    r = 0;
+    for (let w of t.buckets) {
+      let S = kn(w);
+      await X(bGe(S), {
+        force: !0
+      }).catch(() => {});
+      let g = await lt(S, e).catch(() => null);
+      if (g !== null) r += g, await on(S).then(() => Xtt(G(), w), () => {})
+    }
+    r += await pn(t.strays, e), await on(G()).catch(() => {})
+  }
+  K("info", "skills_sync_pruned_for_closed_gate", {
+    moved: r ?? 0
+  });
+  let l = r !== null && r > 0;
+  if (l) MT(), LZ(), PL.emit();
+  return l
+}
+
+function pe() {
+  return A(Se(), FHe)
+}
+
+function we(e) {
+  return A(e, rD)
+}
+var cn = new Set,
+  dn = [],
+  qn = f(() => ut({
+    lastUpdated: E().catch(0),
+    skills: C(ae()),
+    staleDirs: ae().optional(),
+    pendingClaims: ae().optional()
+  })),
+  Jn = f(() => ut({
+    name: o(),
+    skillId: o().catch(""),
+    description: o().catch(""),
+    source: o().catch(""),
+    updatedAt: o().nullable().catch(null)
+  }));
+
+function wn(e) {
+  return gn(we(e))
+}
+async function ke(e, n) {
+  let r = !n.manifestRead;
+  n.manifestRead = !0;
+  let t;
+  if (e) try {
+    let u = await e.read([{
+      key: wn(n.root),
+      offset: 0,
+      length: cMe + 1
+    }]);
+    if (!u.ok) {
+      if (r) K("warn", "skills_sync_manifest_unreadable", {
+        code: "backend_read_failed"
+      });
+      return null
+    }
+    let h = u.value.items[0];
+    if (!h.found) return null;
+    if (h.totalBytes > cMe || h.value.byteLength > cMe) {
+      if (r) K("warn", "skills_sync_manifest_unreadable", {
+        code: "parse_or_size"
+      });
+      return null
+    }
+    t = Buffer.from(h.value).toString("utf8")
+  } catch (u) {
+    if (r) K("warn", "skills_sync_manifest_unreadable", {
+      code: v(u) ?? "backend_read_failed"
+    });
+    return null
+  } else if (t = await Zwe(we(n.root), r ? "skills_sync_manifest_unreadable" : null), t === null) return null;
+  let l = eve(t, q0n(), r ? "skills_sync_manifest_unreadable" : null);
+  if (l === null) return null;
+  let {
+    skills: w,
+    staleDirs: S,
+    pendingClaims: g,
+    ...R
+  } = l;
+  return {
+    ...R,
+    skills: J7(SJt(), w),
+    staleDirs: _Ge(S),
+    pendingClaims: _Ge(g)
+  }
+}
+async function Ne(e, n, r, t) {
+  let l = t.guard.refusedReason();
+  if (l !== null) throw x0n(l);
+  await Mn(r, t.root);
+  let w = await ke(r, t),
+    S = M0n(J7(SJt(), e.skills), w?.skills, (R) => R.skillId, n.removedSkillIds, n.deferredRows),
+    g = b({
+      ...L0n(w, ["lastUpdated", "skills", "staleDirs", "pendingClaims"]),
+      ...e,
+      skills: S,
+      staleDirs: sJt(e.staleDirs, w?.staleDirs, n.staleDirs),
+      pendingClaims: sJt(e.pendingClaims, w?.pendingClaims, n.pendingClaims)
+    }, null, 2);
+  if (r) {
+    let R = await r.write(wn(t.root), g, {
+      mode: 438 & ~process.umask(),
+      publishDiscipline: "atomic"
+    });
+    if (!R.ok) throw K("error", "skills_sync_manifest_write_failed", {
+      code: R.error.code
+    }), Error("skillsSync: manifest write failed");
+    return
+  }
+  await Cn(we(t.root), g)
+}
+
+function xe(e) {
+  return A(e, rq, String(process.pid))
+}
+
+function z(e, n) {
+  return p6e(n, e)
+}
+
+function Qn(e) {
+  return gn(A(e, "SKILL.md"))
+}
+async function Vn(e, n, r) {
+  try {
+    let t = z(e, n);
+    if (r) return (await r.statMeta(Qn(t))).ok;
+    return (await mn(A(t, "SKILL.md"))).isFile()
+  } catch {
+    return !1
+  }
+}
+
+function et(e) {
+  return {
+    skillId: e.id,
+    name: e.directory || e.name || e.id,
+    description: e.description,
+    source: "session-refs",
+    updatedAt: null,
+    requestedVersion: e.version || void 0
+  }
+}
+
+function hn(e, n) {
+  return {
+    ...e,
+    backingPluginId: n.backingPluginId
+  }
+}
+var nt = {
+  idOf: (e) => e.skillId,
+  invalidNameTag: "skills_sync_invalid_name",
+  collisionTag: "skills_sync_name_collision"
+};
+
+function tt(e, n, r) {
+  return U0n(n, r, {
+    ...nt,
+    dirFor: (t) => z(e, t),
+    carry: hn,
+    ...tn() && {
+      markCollisionLoser: it
+    }
+  })
+}
+
+function it(e) {
+  return {
+    ...e,
+    updatedAt: Cat
+  }
+}
+
+function st(e, n, r) {
+  let t = Sxt({
+    skillName: e,
+    displayName: void 0,
+    description: Yin(n.description),
+    hasUserSpecifiedDescription: !0,
+    markdownContent: "",
+    allowedTools: [],
+    argumentHint: void 0,
+    argumentNames: [],
+    whenToUse: void 0,
+    version: void 0,
+    model: void 0,
+    disableModelInvocation: !1,
+    userInvocable: !0,
+    source: "userSettings",
+    baseDir: r,
+    serverAttribution: QXt(n.skillId, n.backingPluginId),
+    loadedFrom: "syncedSkills",
+    hooks: void 0,
+    executionContext: void 0,
+    agent: void 0,
+    paths: void 0,
+    effort: void 0,
+    shell: void 0
+  });
+  if (t.type === "prompt") t.getPromptForCommand = async (l, w) => {
+    let S = await _Jt(e);
+    if (S.ok) {
+      let u = (await Sp(aA(), w.storageV5)).find((h) => h.loadedFrom === "syncedSkills" && h.name === t.name && h.type === "prompt" && h.getPromptForCommand !== t.getPromptForCommand);
+      if (u && u.type === "prompt") return t.source = u.source, t.skillRoot = u.skillRoot, t.contentLength = u.contentLength, t.progressMessage = u.progressMessage, t.userInvocable = u.userInvocable, u.getPromptForCommand(l, w)
+    }
+    let g = S.ok ? "skill not found after download" : S.reason;
+    return [{
+      type: "text",
+      text: `Skill ${e} could not be downloaded (${g}). Proceed without it.`
+    }]
+  };
+  return t
+}
+
+function rt(e, n) {
+  return P0n({
+    root: () => n,
+    configHome: Se,
+    rootLabel: u6,
+    event: "skills_sync_root_refused",
+    storageV5: e
+  })
+}
+var Rn = I0n("zip fetch failed"),
+  _e = rJt("skill archive unusable or landing obstructed");
+async function un(e, {
+  round: n,
+  credentials: r,
+  storageV5: t,
+  replacesAttributedCopy: l,
+  classifyOccupant: w,
+  markTargetDestroyed: S
+}) {
+  let g = n.root,
+    R = z(g, e.name),
+    u = A(xe(g), yn(g, R)),
+    h = A(Iy(), `claude-skill-${process.pid}-${Math.random().toString(36).slice(2)}.zip`);
+  try {
+    if (n.guard.refused()) return Ktt;
+    if (!await kso(e.skillId, h, e.requestedVersion, {
+        isBackground: !0,
+        credentials: r
+      })) return Rn;
+    if (!await n.guard.verify()) return Ktt;
+    await X(u, {
+      recursive: !0,
+      force: !0
+    }), await jn(xe(g), {
+      recursive: !0
+    }), await C0n(h, u, {
+      skipEntry: (M) => M.split(/[\\/]/).some((H) => Mz(H))
+    });
+    let y = u,
+      D = await fn(u, {
+        withFileTypes: !0
+      });
+    if (!D.some((M) => M.name === "SKILL.md") && D.length === 1 && D[0].isDirectory()) y = A(u, D[0].name);
+    try {
+      if (!(await mn(A(y, "SKILL.md"))).isFile()) return K("warn", "skills_sync_extracted_zip_unusable"), _e
+    } catch {
+      return K("warn", "skills_sync_extracted_zip_unusable"), _e
+    }
+    if (await R0n(y)) return K("warn", "skills_sync_extracted_zip_unusable"), _e;
+    if (!await n.guard.verify()) return Ktt;
+    if (l) await X(R, {
+      recursive: !0,
+      force: !0
+    });
+    try {
+      await rn(y, R)
+    } catch (M) {
+      let H = v(M);
+      if (l || !oJt(H)) {
+        if (l) S();
+        return K("warn", "skills_sync_promotion_failed", {
+          code: H ?? "unknown"
+        }), Ytt(H)
+      }
+      let T = await w(U(R));
+      if (T === "inFlight") return K("info", "skills_sync_target_in_flight_elsewhere"), Qlo;
+      if (T === "landed") await X(R, {
+        recursive: !0,
+        force: !0
+      });
+      else if (!await ge(R, t)) return fCt;
+      try {
+        await rn(y, R)
+      } catch (F) {
+        S();
+        let L = v(F);
+        return K("warn", "skills_sync_promotion_failed", {
+          code: L ?? "unknown"
+        }), Ytt(L)
+      }
+    }
+    return Jlo
+  } finally {
+    if (await X(h, {
+        force: !0
+      }).catch(() => {}), !n.guard.refused() && await YH(g, Se(), {
+        event: "skills_sync_root_refused",
+        phase: "sweep",
+        rootLabel: u6
+      }, {
+        checkStagingLeaf: !0,
+        storageV5: t
+      }).catch(() => null) === "real") await X(u, {
+      recursive: !0,
+      force: !0
+    }).catch(() => {})
+  }
+}
+var ot = 500;
+async function at(e, n) {
+  try {
+    return await un(e, n)
+  } catch {
+    return K("warn", "skills_sync_extract_retry"), await Q(ot), un(e, n)
+  }
+}
+async function Be(e, n, r, t) {
+  let l = _E();
+  if (l.syncPromise) return l.syncPromise;
+  return l.syncPromise = ct(e, n, r, t).finally(() => {
+    l.syncPromise = null
+  }), l.syncPromise
+}
+async function lt(e, n) {
+  let r = A(e, rD),
+    t, l, w;
+  try {
+    l = (await ug(r, cMe)).content, w = J(l)
+  } catch {
+    return null
+  }
+  let S = qn().safeParse(w);
+  if (S.success) {
+    let {
+      lastUpdated: y,
+      skills: D,
+      staleDirs: M,
+      pendingClaims: H,
+      ...T
+    } = S.data;
+    t = {
+      ...T,
+      lastUpdated: y,
+      skills: J7(Jn(), D),
+      staleDirs: _Ge(M),
+      pendingClaims: _Ge(H)
+    }
+  } else return null;
+  let g = [...t.skills.map((y) => ({
+      row: y,
+      syntheticListName: null
+    })), ...["staleDirs", "pendingClaims"].flatMap((y) => (t[y] ?? []).map((D) => ({
+      row: {
+        name: y === "pendingClaims" ? u6e(D).name : D
+      },
+      syntheticListName: y,
+      entry: D
+    })))],
+    R = 0,
+    u = [],
+    h = [],
+    P = [];
+  for (let y of g) {
+    let D = y.row;
+    if (y.syntheticListName === "pendingClaims" && await ze(y.entry)) {
+      P.push(y.entry);
+      continue
+    }
+    try {
+      let M = f6e(D.name, e);
+      if (await qtt(M, G())) {
+        K("info", "skills_sync_sibling_root_row_skipped");
+        continue
+      }
+      if (await qtt(M, pe())) {
+        K("info", "skills_sync_trash_root_row_skipped");
+        continue
+      }
+      if (await ge(M, n)) R++;
+      else if (y.syntheticListName === "staleDirs") h.push(y.entry);
+      else if (y.syntheticListName === "pendingClaims") P.push(y.entry);
+      else u.push(y.row)
+    } catch (M) {
+      if (M instanceof NHe) {
+        if (y.syntheticListName === "staleDirs") h.push(y.entry);
+        else if (y.syntheticListName === "pendingClaims") P.push(y.entry);
+        else u.push(y.row);
+        continue
+      }
+    }
+  }
+  if (u.length > 0 || h.length > 0 || P.length > 0) {
+    let y = b({
+      ...t,
+      skills: u,
+      staleDirs: h.length > 0 ? h : void 0,
+      pendingClaims: P.length > 0 ? P : void 0
+    }, null, 2);
+    if (y !== l) await Cn(r, y).catch(() => {})
+  } else await X(r, {
+    force: !0
+  }).catch(() => {});
+  return R
+}
+async function ct(e, n, r, t) {
+  let l = Date.now(),
+    w = performance.now(),
+    S = !1,
+    g = !1,
+    R = !1,
+    u = () => {
+      let T = Date.now() - l;
+      return {
+        account_opt_in: R,
+        trigger: c(t.trigger),
+        ..."tickLateMs" in t && {
+          tick_late_ms: t.tickLateMs
+        },
+        duration_ms: T,
+        suspended_ms: Math.max(0, Math.round(T - (performance.now() - w)))
+      }
+    },
+    h = new Map,
+    P = !1,
+    y = null,
+    D = _E(),
+    M = !1,
+    H = !1;
+  try {
+    if (R = mjt(), bJt()) R = !0;
+    if (!ove(e) || !vCt()) {
+      K("info", "skills_sync_gate_closed");
+      let {
+        placeholders: s
+      } = _E();
+      if (s.size > 0) s.clear(), j();
+      p("skills_sync_round", "gate_closed", u());
+      return
+    }
+    if (Cco()) {
+      K("info", "skills_sync_policy_verdict_pending"), p("skills_sync_round", "policy_verdict_pending", u());
+      return
+    }
+    let T = await kL(r);
+    if (T === null) {
+      K("info", "skills_sync_bucket_unresolved"), p("skills_sync_round", "bucket_unresolved", u());
+      return
+    }
+    let F = rt(n, kn(T));
+    y = F;
+    let L = F.root,
+      ie = await nn({
+        syncedRoot: G(),
+        bucket: T,
+        root: L,
+        trigger: t.trigger,
+        pinned: fz(e),
+        lastGeneration: D.bucketGeneration,
+        holdsPlaceholders: D.placeholders.size > 0
+      });
+    if (!ie.list) {
+      if (D.bucketGeneration = ie.generation, ie.reload) {
+        let s = await ke(n, F);
+        if (s) {
+          let d = new Set;
+          for (let k of s.skills) try {
+            d.add(U(z(L, k.name)))
+          } catch {}
+          zwr(d)
+        }
+        j()
+      }
+      _("skills_sync_round", {
+        ...u(),
+        reused: !0,
+        reloaded: ie.reload
+      });
+      return
+    }
+    H = !0, K("info", "skills_sync_starting");
+    let I, le = [];
+    if (fz(e)) {
+      let [s, d] = await Promise.all([nTe.of(e).listEntries("skills"), a.CLAUDE_CODE_SYNC_SKILLS ? _kt({
+        isBackground: !0,
+        credentials: r
+      }) : null]);
+      if (!s.success) I = s;
+      else if (le = s.entries.map(et), d === null) I = {
+        success: !0,
+        skills: le
+      };
+      else if (!d.success) I = d;
+      else I = {
+        success: !0,
+        skills: $0n(le, d.skills, (k) => k.skillId, hn)
+      }
+    } else I = await _kt({
+      isBackground: !0,
+      credentials: r
+    });
+    if (M = !I.success && Oee(I), M) K("warn", "skills_sync_list_refused"), I = {
+      success: !0,
+      skills: le
+    };
+    if (!I.success) {
+      D.consecutiveFailedRounds++;
+      let s = Gsn(I),
+        d = {
+          ...u(),
+          ...s
+        };
+      if (K("warn", "skills_sync_list_failed", d), i("tengu_skills_sync_list_failed", d), (I.kind === "timeout" || I.kind === "network" || I.kind === "http") && d.suspended_ms > Te) p("skills_sync_round", "suspended", d);
+      else m("skills_sync_round", "list_failed", d);
+      return
+    }
+    if (D.consecutiveFailedRounds = M ? D.consecutiveFailedRounds + 1 : 0, !await NG(G(), T) && await sn(L).then((s) => s.isDirectory(), () => !1) && await X7({
+        dir: L,
+        trashRoot: pe(),
+        configHome: Se(),
+        failureEvent: "skills_sync_trash_move_failed",
+        storageV5: n
+      }).catch(() => !1)) K("info", "skills_sync_unmarked_bucket_quarantined");
+    await Mn(n, L), await O0n(G(), T), P = !0;
+    let ce = await iJt(L);
+    if (ie.shared && ce !== null && D.bucketGeneration !== null && ce.token !== D.bucketGeneration) j();
+    await $n(n);
+    let W = await ke(n, F),
+      {
+        toDownload: Z,
+        toRemove: q,
+        carryover: se,
+        liveDirs: Ue,
+        carryoverOwningLiveDir: vn
+      } = tt(L, I.skills, W?.skills ?? []),
+      Ln = uCt(Ue),
+      he = async (s) => {
+        let d;
+        try {
+          d = f6e(s, L)
+        } catch (N) {
+          if (N instanceof NHe) return !1;
+          return !0
+        }
+        let k = await Ln(d);
+        if (k === "live") return !0;
+        if (k === "indeterminate") return !1;
+        return ge(d, n)
+      }, Re = new Set(Array.from(Ue, (s) => U(s))), En = zwr(Re);
+    if (Tco(Re) + En > 0) MT(), Oe(), PL.emit();
+    let bn = await Promise.all(se.map((s) => vn.has(s.skillId) ? Vn(L, s.name, n) : null)),
+      De = new Set;
+    for (let [s, d] of se.entries()) {
+      let k = bn[s];
+      if (k === null) continue;
+      if (!k) {
+        let ne = I.skills.find((fe) => fe.skillId === d.skillId);
+        if (ne) De.add(d.skillId), Z.push({
+          item: ne
+        });
+        continue
+      }
+      let N = U(z(L, d.name));
+      if (D.placeholders.delete(N)) D.pendingDownloads.get(N)?.resolve({
+        ok: !0
+      }), D.pendingDownloads.delete(N), LZ(), MT(), g = !0, K("info", "skills_sync_materialized_elsewhere")
+    }
+    let Tn = se.filter((s) => !De.has(s.skillId)),
+      He = new Map(se.filter((s) => De.has(s.skillId)).map((s) => [s.skillId, s])),
+      O = new Set(W?.staleDirs ?? []),
+      V = new Set,
+      Y = new Set,
+      Me = {
+        pid: process.pid,
+        procStart: await $c(process.pid)
+      },
+      ve = [];
+    if (W?.pendingClaims) {
+      let s = W.pendingClaims,
+        d = new Set;
+      for (let k of s)
+        if (await ze(k)) d.add(u6e(k).name);
+        else ve.push(k);
+      for (let k of ve) {
+        let {
+          name: N
+        } = u6e(k);
+        if (d.has(N) || Re.has(N)) continue;
+        O.add(N), Y.add(k)
+      }
+    }
+    for (let s of O)
+      if (await he(s)) O.delete(s), V.add(s);
+    if (V.size > 0 || Y.size > 0) g = !0;
+    let de = D0n(W?.skills ?? [], [...se, ...Z.flatMap(({
+      prev: s
+    }) => s ?? [])], (s) => s.skillId, (s, d) => s.backingPluginId === d.backingPluginId && s.updatedAt === Cat === (d.updatedAt === Cat));
+    if (Z.length === 0 && q.length === 0) {
+      if (g) j();
+      if ((V.size > 0 || Y.size > 0 || de.attributionMoved) && W) await Ne({
+        lastUpdated: W.lastUpdated,
+        skills: de.rows,
+        staleDirs: O.size > 0 ? Array.from(O) : void 0,
+        pendingClaims: void 0
+      }, {
+        staleDirs: V,
+        pendingClaims: Y,
+        removedSkillIds: cn,
+        deferredRows: dn
+      }, n, F);
+      if (W) {
+        let k = new Date;
+        await Wn(we(L), k, k).catch(() => {})
+      }
+      let s = g ? null : ce;
+      ln(await mCt(L, "skills", O.size === 0 && !M && !fz(e), s, ye()), s), K("info", "skills_sync_no_changes", {
+        duration_ms: Date.now() - l
+      });
+      let d = {
+        ...u(),
+        no_changes: !0
+      };
+      if (M) p("skills_sync_round", "not_entitled", d);
+      else _("skills_sync_round", d);
+      return
+    }
+    let Ke = 0;
+    for (let {
+        item: s,
+        prev: d
+      }
+      of Z)
+      if (!d) {
+        let k = z(L, s.name);
+        kco(st(U(k), s, k)), Ke++, h.set(s.skillId, wco(U(z(L, s.name))))
+      } if (Ke > 0) MT(), Oe(), PL.emit();
+    let Ye = !0;
+    try {
+      let s = [];
+      for (let {
+          item: d
+        }
+        of Z) try {
+        s.push(x2n(U(z(L, d.name)), Me))
+      } catch {}
+      if (s.length > 0) await Ne({
+        lastUpdated: W?.lastUpdated ?? 0,
+        skills: de.rows,
+        staleDirs: O.size > 0 ? Array.from(O) : void 0,
+        pendingClaims: s
+      }, {
+        staleDirs: V,
+        pendingClaims: Y,
+        removedSkillIds: cn,
+        deferredRows: dn
+      }, n, F)
+    } catch (s) {
+      if (s instanceof _8) throw s;
+      Ye = !1, K("warn", "skills_sync_pending_claims_write_failed")
+    }
+    if (Fe().resolve(), !Ye) {
+      if (m("skills_sync_round", "pending_claims_write_failed", u()), g) j();
+      return
+    }
+    let ee = [],
+      Ge = [],
+      Le = [],
+      ue = 0,
+      We = 0,
+      te = {};
+    await Promise.all(Z.map(Ms(an, async ({
+      item: s,
+      prev: d
+    }) => {
+      let k = Rn;
+      try {
+        k = await at(s, {
+          round: F,
+          credentials: r,
+          storageV5: n,
+          classifyOccupant: (N) => dt(N, n, F),
+          markTargetDestroyed: () => {
+            S = !0
+          },
+          replacesAttributedCopy: d !== void 0 && await Dn(L, d.name, s.name) || He.has(s.skillId)
+        })
+      } catch {
+        k = _e, K("warn", "skills_sync_extract_failed")
+      }
+      if (k.ok) {
+        if (ee.push(s), d && d.name !== s.name) {
+          if (!await he(d.name)) O.add(d.name)
+        }
+        Eco(U(z(L, s.name))), LZ(), MT(), _("skills_sync_download")
+      } else {
+        let N = Zlo(k.cause);
+        if (N === null) ue++, K("info", "skills_sync_landing_deferred");
+        else te[N] = (te[N] ?? 0) + 1, m("skills_sync_download", N);
+        let ne = d ?? He.get(s.skillId);
+        if (ne && k.cause === "deferred") {
+          if (Le.push(ne), d && d.name !== s.name) O.add(d.name), We++
+        } else if (ne) Ge.push(ne);
+        else try {
+          let fe = z(L, s.name);
+          if (await sn(fe).then(() => !1, (Pn) => B(Pn))) Y.add(x2n(U(fe), Me))
+        } catch {}
+      }
+      h.get(s.skillId)?.(k.ok ? {
+        ok: !0
+      } : {
+        ok: !1,
+        reason: eco(k.cause)
+      })
+    })));
+    let re = [];
+    await Promise.all(q.map(Ms(an, async (s) => {
+      if (!await he(s.name)) re.push(s)
+    })));
+    let je = new Set(q.map((s) => s.skillId));
+    for (let s of re) je.delete(s.skillId);
+    let Ce = ee.length > 0 || S || re.length < q.length || V.size > 0 || Y.size > 0,
+      In = Ce || We > 0 || de.attributionMoved;
+    if (Ce || g) j();
+    if (In) {
+      let s = [...Tn, ...ee, ...Ge, ...re],
+        d = new Set;
+      for (let k of [...s, ...Le]) try {
+        d.add(U(z(L, k.name)))
+      } catch {}
+      for (let k of d) Y.add(x2n(k, Me));
+      for (let k of ve)
+        if (d.has(u6e(k).name)) Y.add(k);
+      await Ne({
+        lastUpdated: Date.now(),
+        skills: s,
+        staleDirs: O.size > 0 ? Array.from(O) : void 0
+      }, {
+        staleDirs: V,
+        pendingClaims: Y,
+        removedSkillIds: je,
+        deferredRows: Le
+      }, n, F)
+    }
+    let Ee = Z.length - ee.length - ue;
+    K("info", "skills_sync_complete", {
+      downloaded: ee.length,
+      removed: q.length,
+      duration_ms: Date.now() - l
+    });
+    let Xe = u();
+    i("tengu_skills_sync_success", {
+      ...Xe,
+      downloaded: ee.length,
+      removed: q.length,
+      total: I.skills.length
+    });
+    let Ze = Ce || g ? null : ce;
+    ln(await mCt(L, "skills", !M && Ee === 0 && ue === 0 && re.length === 0 && O.size === 0 && !fz(e), Ze, ye()), Ze);
+    let be = {
+      ...Xe,
+      downloaded: ee.length,
+      deferred: ue,
+      removed: q.length,
+      total: I.skills.length
+    };
+    if (Ee > 0) p("skills_sync_round", "download_failed", {
+      ...be,
+      failed: Ee,
+      download_failed: te.download_failed ?? 0,
+      extract_failed: te.extract_failed ?? 0,
+      root_refused: te.root_refused ?? 0,
+      local_failed: te.local_failed ?? 0
+    });
+    else if (M) p("skills_sync_round", "not_entitled", be);
+    else _("skills_sync_round", be)
+  } catch (T) {
+    if (g || S) j();
+    if (T instanceof _8 && P) K("warn", "skills_sync_late_root_refusal", {
+      reason: T.reason,
+      duration_ms: Date.now() - l
+    }), p("skills_sync_round", "root_refused", u()), P = !1;
+    else if (T instanceof _8) K("warn", "skills_sync_root_refused_round", {
+      reason: T.reason,
+      duration_ms: Date.now() - l
+    }), p("skills_sync_round", "root_refused", u());
+    else {
+      if (!M) D.consecutiveFailedRounds++;
+      K("error", "skills_sync_unexpected_error", {
+        duration_ms: Date.now() - l
+      });
+      let F = u();
+      i("tengu_skills_sync_error", F), m("skills_sync_round", "unexpected_error", F)
+    }
+  } finally {
+    if (H) en();
+    for (let T of h.values()) T({
+      ok: !1,
+      reason: "skills sync failed"
+    });
+    if (Fe().resolve(), y === null || y.guard.refused()) P = !1;
+    if (P && y !== null) {
+      if (await YH(y.root, Se(), {
+          event: "skills_sync_root_refused",
+          phase: "sweep",
+          rootLabel: u6
+        }, {
+          checkStagingLeaf: !0,
+          storageV5: n
+        }).catch(() => null) === "real") await X(xe(y.root), {
+        recursive: !0,
+        force: !0
+      }).catch(() => {})
+    }
+  }
+}
+async function ze(e) {
+  let {
+    ownerPid: n,
+    ownerProcStart: r
+  } = u6e(e);
+  return n !== void 0 && n !== process.pid && ua(n) && await M_(n, r)
+}
+async function dt(e, n, r) {
+  let t = await ke(n, r);
+  if (!t) return "unattributed";
+  for (let l of t.skills)
+    if (await Dn(r.root, l.name, e)) return "landed";
+  for (let l of t.pendingClaims ?? [])
+    if (u6e(l).name === e && await ze(l)) return "inFlight";
+  return "unattributed"
+}
+async function Dn(e, n, r) {
+  try {
+    let t = z(e, n),
+      l = z(e, r);
+    return U(t) === U(l) || await qtt(t, l)
+  } catch {
+    return !1
+  }
+}
+
+function Mn(e, n) {
+  return A0n({
+    root: n,
+    trashRoot: pe(),
+    configHome: Se(),
+    events: {
+      refused: "skills_sync_root_refused"
+    },
+    storageV5: e
+  })
+}
+export {
+  O4r,
+  gWt,
+  M4r,
+  D4r,
+  L4r,
+  hWt
+};

@@ -1,0 +1,1 @@
+var qz={terminal:["Box","Text","Button","Input","Select","Link","Code","Markdown","Client","Raster","Image"],desktop:["Box","Text","Button","Input","Select","Svg","Link","Code","Markdown","Client"],mobile:["Box","Text","Button","Svg","Link","Code","Markdown"],vscode:["Box","Text","Button","Input","Select","Svg","Link","Code","Markdown"]};

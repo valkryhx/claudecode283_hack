@@ -1,0 +1,632 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  v
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  Nd
+} from "B:/~BUN/root/chunk-54p0h65d.js";
+import {
+  W5n,
+  jo,
+  yxe,
+  Ua,
+  ce,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  Ip,
+  h8e,
+  EFo,
+  y8e
+} from "B:/~BUN/root/chunk-ah3egpyh.js";
+import {
+  O
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  sf,
+  Iye
+} from "B:/~BUN/root/chunk-8hs4bwwk.js";
+import {
+  ude
+} from "B:/~BUN/root/chunk-t1t358ee.js";
+import {
+  constants as u
+} from "fs";
+import {
+  lstat as W,
+  mkdir as tn,
+  open as H,
+  readlink as U
+} from "fs/promises";
+import {
+  basename as K,
+  dirname as b,
+  isAbsolute as V,
+  join as m
+} from "path";
+async function clt(n, a, s, f, o) {
+  o?.throwIfAborted();
+  let e = f ? sX(n, a, s) : H(n, a | Ip);
+  if (!o) return e;
+  let c, d = new Promise((l, L) => {
+    c = () => L(o.reason ?? Error("aborted")), o.addEventListener("abort", c, {
+      once: !0
+    })
+  });
+  try {
+    return await Promise.race([e, d])
+  } catch (l) {
+    throw e.then((L) => L.close(), () => {}), l
+  } finally {
+    if (c) o.removeEventListener("abort", c)
+  }
+}
+var on = /^(?:\/dev\/(?:stdin|stdout|stderr|fd\/\d+)|\/proc\/self\/fd\/\d+)$/;
+
+function q(n) {
+  return on.test(n) || /^\/proc\/\d+\/fd\/\d+$/.test(n) && n.startsWith(`/proc/${process.pid}/fd/`)
+}
+var rn = 2097152;
+async function sX(n, a, s) {
+  if (s !== "macos" || await EFo()) return H(n, a | Ip);
+  return H(n, a & ~u.O_NOFOLLOW | h8e | Ip)
+}
+async function G(n, a, s) {
+  if (s !== "macos") return !1;
+  for (let o = n;; o = b(o)) {
+    try {
+      if (!(await W(o)).isDirectory()) return !1
+    } catch {
+      return !1
+    }
+    if (b(o) === o) break
+  }
+  let f;
+  try {
+    f = await H(n, u.O_RDONLY | u.O_DIRECTORY | h8e | Ip)
+  } catch {
+    return !1
+  }
+  try {
+    let [o, e] = await Promise.all([f.stat({
+      bigint: !0
+    }), a.stat({
+      bigint: !0
+    })]);
+    return o.ino === e.ino && o.dev === e.dev
+  } catch {
+    return !1
+  } finally {
+    await f.close()
+  }
+}
+var an = {
+  chain: "a link on the way now leads somewhere the check did not see",
+  networkLink: "a link now stands at the network path",
+  junction: "the junction no longer leads to the approved share",
+  unrenderable: "its real path can no longer be determined",
+  rendering: "it now resolves to a path the check did not see",
+  linkOnApproved: "a link now stands on the approved path",
+  openedElsewhere: "it opened at a different path than approved",
+  afterOpen: "it re-resolved elsewhere once opened"
+};
+
+function T(n, a) {
+  return new Iye(`Refusing to read ${n}: its symlink resolution changed after permission was checked (${an[a]}). If a link in the working directory is being rewritten concurrently, stop that and retry.`)
+}
+var nn = !1;
+async function X(n) {
+  let a = [];
+  for (let c = n;; c = b(c))
+    if (a.unshift(c), b(c) === c) break;
+  let s = ce(),
+    f, o = [],
+    e = [];
+  for (let c of a) {
+    try {
+      let d = await W(c, {
+        bigint: !0
+      });
+      if (!(c === n ? d.isFile() : d.isDirectory())) return;
+      o.push(d), e.push("lstat");
+      continue
+    } catch (d) {
+      let l = v(d);
+      if (c === n || l !== "EPERM" && l !== "EACCES") return
+    }
+    if (f ??= yxe(s), f !== null && e.slice(1).every((d) => d === "passed") && W5n(c, f)) {
+      o.push(void 0), e.push("passed");
+      continue
+    }
+    return
+  }
+  for (let c = 0; c < a.length - 1; c++) {
+    let d = o[c];
+    if (d === void 0) continue;
+    let l;
+    try {
+      l = e[c] === "open" ? await sn(a[c]) : await W(a[c], {
+        bigint: !0
+      })
+    } catch {
+      return
+    }
+    if (l === void 0 || !l.isDirectory() || l.dev !== d.dev || l.ino !== d.ino) return
+  }
+  return o.at(-1)
+}
+async function sn(n) {
+  let a;
+  try {
+    a = await H(n, u.O_RDONLY | u.O_DIRECTORY | u.O_NOFOLLOW | Ip)
+  } catch {
+    return
+  }
+  try {
+    let s = await a.stat({
+      bigint: !0
+    });
+    return s.isDirectory() ? s : void 0
+  } catch {
+    return
+  } finally {
+    await a.close().catch(() => {})
+  }
+}
+
+function J(n) {
+  return V(n) && !Nd(n) && !q(n)
+}
+async function $Mt(n) {
+  for (let a = n.length - 1; a >= 0; a--) {
+    let s = n[a];
+    if (!J(s)) continue;
+    let f = await X(s);
+    if (f) return {
+      dev: f.dev,
+      ino: f.ino
+    }
+  }
+  return null
+}
+async function Q(n, a, s, f, o) {
+  if (o == null) return;
+  for (let e = a.length - 1; e >= 0; e--) {
+    let c = a[e];
+    if (!J(c) || !nn && !await X(c)) continue;
+    let d;
+    try {
+      d = await clt(c, s & ~u.O_NOFOLLOW | h8e | u.O_NONBLOCK, "macos", !1, f)
+    } catch (L) {
+      if (f?.aborted) throw f.reason ?? L;
+      continue
+    }
+    let l = await d.stat({
+      bigint: !0
+    }).catch(() => {
+      return
+    });
+    if (l?.isFile() && l.dev === o.dev && l.ino === o.ino) return t(`openReadBoundToApproval: the fresh resolution of ${n} is not verbatim what the check approved (or realpath could not render it); reading approved ${c}, opened link-free`), {
+      canonicalPath: c,
+      ioPath: c,
+      handle: d,
+      close: () => d.close()
+    };
+    await d.close().catch(() => {})
+  }
+  return
+}
+async function han(n, a, s, f) {
+  let o = new Set(a),
+    e = O(),
+    c = e === "windows" ? u.O_RDONLY : u.O_RDONLY | u.O_NOCTTY,
+    d = e === "windows" ? c : c | u.O_NOFOLLOW,
+    l = jo(ce(), n),
+    L = (w) => f != null && w.isFile() && w.dev === f.dev && w.ino === f.ino,
+    P = async (w = l) => {
+      let h = w.resolvedPath;
+      if (f == null || !w.isCanonical || !J(h) || h.startsWith("/dev/")) return !1;
+      if (!nn) {
+        let i = await X(h);
+        return i !== void 0 && L(i)
+      }
+      let p;
+      try {
+        p = await clt(h, d & ~u.O_NOFOLLOW | h8e | u.O_NONBLOCK, "macos", !1, s)
+      } catch (i) {
+        if (s?.aborted) throw s.reason ?? i;
+        return !1
+      }
+      try {
+        return await p.stat({
+          bigint: !0
+        }).then(L, () => !1)
+      } finally {
+        await p.close().catch(() => {})
+      }
+    }, M = async (w) => {
+      if (e === "macos" && await P()) {
+        let h = await Q(n, a, d, s, f);
+        if (h) return h
+      }
+      throw T(n, w)
+    }, j = Ua(n);
+  if (j.unresolved) throw T(n, "unrenderable");
+  for (let w of j.spellings)
+    if (!o.has(w)) return M(l.isCanonical && w === l.resolvedPath ? "rendering" : "chain");
+  let B = async (w, h) => {
+    if ((await W(w)).isSymbolicLink()) throw T(n, "networkLink");
+    let p = await clt(w, d, e, !h, s);
+    if (e === "linux" || e === "wsl") {
+      let i = null;
+      try {
+        i = await U(`/proc/self/fd/${p.fd}`)
+      } catch {}
+      if (i !== null && i !== w && !o.has(i)) throw await p.close().catch(() => {}), T(n, "openedElsewhere");
+      if (i !== null) return {
+        ioPath: `/proc/${process.pid}/fd/${p.fd}`,
+        canonicalPath: w,
+        handle: p,
+        close: () => p.close()
+      }
+    }
+    return {
+      ioPath: w,
+      canonicalPath: w,
+      handle: p,
+      close: () => p.close()
+    }
+  };
+  if (y8e(n, e)) return B(n, !1);
+  let D = q(n) && !V(l.resolvedPath) && /^(?:pipe|socket|anon_inode):\[/.test(l.resolvedPath) && K(j.landing) === l.resolvedPath;
+  if (!l.isCanonical && !D) {
+    if (l.isSymlink || l.resolvedPath !== n) {
+      if (o.has(l.resolvedPath) && y8e(l.resolvedPath, e)) {
+        let p = e === "macos" ? await B(l.resolvedPath, !1) : await B(n, !0),
+          i = jo(ce(), n);
+        if (i.isCanonical || i.resolvedPath !== l.resolvedPath) throw await p.close().catch(() => {}), T(n, "junction");
+        return p
+      }
+      throw T(n, "junction")
+    }
+    let w = await clt(n, e === "macos" ? c | u.O_NONBLOCK : c, e, !1, s),
+      h = e === "macos" && f != null ? await w.stat({
+        bigint: !0
+      }).catch(() => {
+        return
+      }) : void 0;
+    if (await w.close().catch(() => {}), h && L(h)) {
+      let p = await Q(n, a, d, s, f);
+      if (p) return p
+    }
+    throw T(n, "unrenderable")
+  }
+  if (!D && !o.has(l.resolvedPath)) return M("rendering");
+  let C = D ? n : l.resolvedPath,
+    E;
+  try {
+    E = await clt(C, D ? d & ~u.O_NOFOLLOW : d, e, !D, s)
+  } catch (w) {
+    if (v(w) === "ELOOP") throw T(n, "linkOnApproved");
+    throw w
+  }
+  try {
+    let w = C;
+    if (e === "linux" || e === "wsl") {
+      let p = null;
+      try {
+        p = await U(`/proc/self/fd/${E.fd}`)
+      } catch {}
+      if (p !== null) {
+        if (p !== (D ? l.resolvedPath : C)) throw T(n, "openedElsewhere");
+        w = `/proc/${process.pid}/fd/${E.fd}`
+      }
+    }
+    if (w === C) {
+      let p = Ua(n);
+      if (p.unresolved) throw T(n, "afterOpen");
+      for (let i of p.spellings)
+        if (!o.has(i)) {
+          if (e === "macos" && await P(jo(ce(), n)) && await E.stat({
+              bigint: !0
+            }).then(L, () => !1)) break;
+          throw T(n, "afterOpen")
+        }
+    }
+    let h = E;
+    return {
+      canonicalPath: C,
+      ioPath: w,
+      handle: h,
+      close: () => h.close()
+    }
+  } catch (w) {
+    throw await E.close().catch(() => {}), w
+  }
+}
+class Y extends Error {
+  dir;
+  reported;
+  constructor(n, a) {
+    super("held directory vanished");
+    this.dir = n;
+    this.reported = a
+  }
+}
+var Z = 3;
+
+function N(n) {
+  return new sf(`Refusing to write ${n}: its parent-directory symlink resolution changed after permission was checked.`)
+}
+async function JNe(n, a, s, f, o = !1) {
+  let e = () => new sf(`Refusing to write ${a}: it is a symbolic link. Write to the link's target path instead.`);
+  if (s === "windows") try {
+    if ((await W(n)).isSymbolicLink()) throw e()
+  } catch (l) {
+    if (v(l) === "ENOENT") return null;
+    throw l
+  }
+  let c = s === "windows" ? u.O_RDONLY : u.O_RDONLY | u.O_NOFOLLOW | u.O_NONBLOCK | (u.O_NOCTTY ?? 0),
+    d;
+  try {
+    d = o ? await H(n, c | Ip) : await sX(n, c, s)
+  } catch (l) {
+    let L = v(l);
+    if (L === "ENOENT") return null;
+    if (L === "ELOOP" || L === "EMLINK" || L === "EFTYPE") throw e();
+    throw l
+  }
+  try {
+    return await ude(d, a, f)
+  } finally {
+    await d.close()
+  }
+}
+async function cy(n, a, s) {
+  for (let f = 1;; f++) try {
+    return await cn(n, a, s)
+  } catch (o) {
+    if (!(o instanceof Y)) throw o;
+    if (t(`pinWriteTarget: ${o.dir} was removed while held (attempt ${f}); ${f<Z?"taking the pin again":"refusing"}`, {
+        level: "warn"
+      }), f >= Z) throw o.reported ?? N(n)
+  }
+}
+async function cn(n, a, s) {
+  let f = new Set(a),
+    o = K(n),
+    e = O(),
+    c = () => {
+      let i = Ua(s?.leaf === "replace" ? b(n) : n),
+        g = s?.leaf === "replace" ? i.spellings.map((r) => m(r, o)) : i.spellings;
+      return !i.unresolved && g.every((r) => f.has(r))
+    },
+    d = () => {
+      if (!c()) throw N(n)
+    },
+    l = c();
+  if (!l && !(e === "macos" && !y8e(n, e))) throw N(n);
+  let L = async (i, g, r) => {
+    if (!await G(i, r, e)) return t(`pinWriteTarget: ${i} resolves to ${g}: not the same directory by a link-free route; refused`, {
+      level: "warn"
+    }), !1;
+    return t(`pinWriteTarget: ${i} is rendered ${g} by realpath; same directory (device and inode), treated as an alias`), !0
+  }, P = (i) => f.has(m(i, o)), M = (i) => {
+    let g = jo(ce(), i);
+    if (!g.isCanonical) throw N(n);
+    return g.resolvedPath
+  }, j = (i) => {
+    let g = jo(ce(), i);
+    return g.isCanonical ? g.resolvedPath : i
+  };
+  if (y8e(n, e) && e !== "linux" && e !== "wsl") {
+    let i = async (r) => {
+      if (e !== "macos") return;
+      for (let k = r;; k = b(k)) try {
+        await (await sX(k, u.O_RDONLY | u.O_DIRECTORY, e)).close();
+        return
+      } catch (R) {
+        let S = v(R);
+        if (S === "ELOOP") throw N(n);
+        if (S !== "ENOENT" || b(k) === k) throw R
+      }
+    };
+    if (await i(b(n)), s?.createParents) await ce().mkdir(b(n)), await i(b(n));
+    let g = async () => {
+      if (d(), e !== "macos") return;
+      try {
+        await (await sX(b(n), u.O_RDONLY | u.O_DIRECTORY, e)).close()
+      } catch (r) {
+        throw v(r) === "ELOOP" ? N(n) : r
+      }
+    };
+    return {
+      ioPath: n,
+      canonicalPath: n,
+      readExisting: async (r) => {
+        await g();
+        let k = await JNe(n, n, e, r, !1);
+        return await g(), k
+      },
+      recheckBeforeWrite: g,
+      close: async () => {}
+    }
+  }
+  let B = async () => {
+    if (s?.createParents) await ce().mkdir(b(n)), d();
+    let i = jo(ce(), b(n));
+    if (!i.isCanonical && !(i.isSymlink && P(i.resolvedPath) && y8e(m(i.resolvedPath, o), e))) {
+      if (!i.isSymlink) await W(b(n));
+      throw N(n)
+    }
+    let g = !i.isCanonical,
+      r = i.resolvedPath;
+    if (!P(r)) throw N(n);
+    return {
+      ioPath: n,
+      canonicalPath: m(r, o),
+      readExisting: async (k) => {
+        d();
+        let R = await JNe(n, n, e, k, g);
+        if (d(), g && jo(ce(), b(n)).resolvedPath !== r) throw N(n);
+        return R
+      },
+      recheckBeforeWrite: d,
+      close: async () => {}
+    }
+  };
+  if (e === "windows") return B();
+  let C = e === "linux" || e === "wsl" ? rn | u.O_DIRECTORY : u.O_RDONLY | u.O_DIRECTORY,
+    E = b(n),
+    w = [],
+    h, p = "";
+  for (;;) try {
+    p = e === "macos" ? j(E) : E, h = await sX(p, C, e);
+    break
+  } catch (i) {
+    let g = v(i),
+      r = b(E),
+      k = g === "ELOOP" && e === "macos" && p === E && !jo(ce(), E).isCanonical;
+    if (g === "ELOOP" && !k) {
+      let R = jo(ce(), b(n));
+      if (l && !R.isCanonical && R.isSymlink && P(R.resolvedPath) && y8e(m(R.resolvedPath, o), e)) return B();
+      throw N(n)
+    }
+    if (k && !s?.createParents) {
+      let R = [K(E)];
+      for (let S = r;; S = b(S)) {
+        let y = jo(ce(), S);
+        if (y.isCanonical) {
+          await W(m(y.resolvedPath, R[0]));
+          break
+        }
+        if (b(S) === S) break;
+        R.unshift(K(S))
+      }
+      throw N(n)
+    }
+    if ((g === "ENOENT" || k) && s?.createParents && r !== E) {
+      w.unshift(K(E)), E = r;
+      continue
+    }
+    throw i
+  }
+  try {
+    let i = !1,
+      g = async (y, F) => {
+        if (e === "linux" || e === "wsl") try {
+          let _ = await U(`/proc/self/fd/${y.fd}`);
+          if (i = !0, _.endsWith(" (deleted)")) throw new Y(F);
+          return _
+        } catch (_) {
+          if (_ instanceof Y) throw _
+        }
+        return M(F)
+      }, r = await g(h, E);
+    if (!i && r !== E && !P(m(r, ...w)) && P(m(E, ...w)) && await L(E, r, h)) r = E;
+    let k = m(r, ...w);
+    if (!P(k)) {
+      if (w.length === 0 && await W(m(i ? `/proc/self/fd/${h.fd}` : r, o)).then((F) => F.isSymbolicLink(), () => !1)) throw new sf(`Refusing to write ${n}: it is a symbolic link. Write to the link's target path instead.`);
+      throw N(n)
+    }
+    for (let y of w) {
+      let F = i ? `/proc/self/fd/${h.fd}` : r,
+        _ = null;
+      try {
+        await tn(m(F, y))
+      } catch (A) {
+        if (_ = A, v(A) === "ENOENT") throw new Y(r);
+        if (v(A) !== "EEXIST") Jee(A, {
+          ioPath: m(F, y),
+          canonicalPath: m(r, y)
+        }, m(r, y))
+      }
+      let x;
+      try {
+        x = await sX(m(F, y), C | u.O_NOFOLLOW, e)
+      } catch (A) {
+        if (v(A) === "ELOOP" || v(A) === "ENOTDIR") throw N(n);
+        if (v(A) === "ENOENT") {
+          let z;
+          if (_ !== null) try {
+            Jee(_, {
+              ioPath: m(F, y),
+              canonicalPath: m(r, y)
+            }, m(r, y))
+          } catch (en) {
+            z = en
+          }
+          throw new Y(m(r, y), z)
+        }
+        Jee(_ !== null ? _ : A, {
+          ioPath: m(F, y),
+          canonicalPath: m(r, y)
+        }, m(r, y))
+      }
+      await h.close(), h = x;
+      let I = m(r, y);
+      if (r = await g(h, I), r !== I) {
+        if (i || !await L(I, r, h)) throw N(n);
+        r = I
+      }
+    }
+    if (!i) {
+      let y = h,
+        F = async () => {
+          if (c()) return;
+          if (!await G(k, y, e)) throw N(n);
+          if (s?.leaf !== "replace" && await W(m(k, o)).then((x) => x.isSymbolicLink(), (x) => v(x) !== "ENOENT")) throw N(n)
+        };
+      await F();
+      let _ = m(k, o);
+      return {
+        ioPath: _,
+        canonicalPath: _,
+        readExisting: async (x) => {
+          await F();
+          let I = await JNe(_, n, e, x);
+          return await F(), I
+        },
+        recheckBeforeWrite: F,
+        close: () => y.close()
+      }
+    }
+    let R = h,
+      S = `/proc/self/fd/${R.fd}/${o}`;
+    return {
+      ioPath: S,
+      canonicalPath: m(k, o),
+      readExisting: (y) => JNe(S, n, e, y),
+      recheckBeforeWrite: () => {},
+      close: () => R.close()
+    }
+  } catch (i) {
+    throw await h.close().catch(() => {}), i
+  }
+}
+
+function Jee(n, a, s) {
+  if (n instanceof Error) {
+    let f = n.message;
+    for (let o of [a.ioPath, a.canonicalPath])
+      if (o !== s) f = f.split(o).join(s);
+    if (f !== n.message) n.message = f
+  }
+  throw n
+}
+export {
+  clt,
+  sX,
+  $Mt,
+  han,
+  JNe,
+  cy,
+  Jee
+};

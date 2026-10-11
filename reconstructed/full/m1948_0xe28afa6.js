@@ -1,0 +1,1726 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.283
+import {
+  w
+} from "B:/~BUN/root/chunk-x9hkq9y1.js";
+import "B:/~BUN/root/chunk-syke822n.js";
+import "B:/~BUN/root/chunk-trcn2d68.js";
+import {
+  s,
+  n,
+  _t
+} from "B:/~BUN/root/chunk-1gn8pz4b.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import {
+  vs,
+  Nt
+} from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-kks4mj3w.js";
+import {
+  l,
+  v
+} from "B:/~BUN/root/chunk-bgthmgyc.js";
+import {
+  nt
+} from "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import {
+  ce,
+  t
+} from "B:/~BUN/root/chunk-qe2zga5e.js";
+import {
+  Se,
+  Tr,
+  qm
+} from "B:/~BUN/root/chunk-4p6z9qq1.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import {
+  I,
+  qr
+} from "B:/~BUN/root/chunk-y04k89s2.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-zs3ycjed.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-7nc4t0q7.js";
+import {
+  ze
+} from "B:/~BUN/root/chunk-r2yrqvry.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import {
+  _,
+  m,
+  p
+} from "B:/~BUN/root/chunk-51n463p1.js";
+import {
+  qd,
+  ll,
+  MYe,
+  le,
+  Is
+} from "B:/~BUN/root/chunk-gf53qpk6.js";
+import {
+  lr,
+  va
+} from "B:/~BUN/root/chunk-339q6g5w.js";
+import {
+  oe
+} from "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import {
+  ie,
+  cr
+} from "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import {
+  Je,
+  ln
+} from "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import "B:/~BUN/root/chunk-58nsgxpm.js";
+import {
+  pr
+} from "B:/~BUN/root/chunk-1rjcv085.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import "B:/~BUN/root/chunk-3daz140w.js";
+import "B:/~BUN/root/chunk-y355pc11.js";
+import "B:/~BUN/root/chunk-0d8a76zs.js";
+import "B:/~BUN/root/chunk-0av24qsq.js";
+import "B:/~BUN/root/chunk-4tkwpa6e.js";
+import "B:/~BUN/root/chunk-e1thvnpv.js";
+import "B:/~BUN/root/chunk-1x7a47hz.js";
+import {
+  ke
+} from "B:/~BUN/root/chunk-kss0wzj5.js";
+import "B:/~BUN/root/chunk-tq1hs216.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-jpnyq4t7.js";
+import "B:/~BUN/root/chunk-rfp59gnb.js";
+import "B:/~BUN/root/chunk-e9hrnhar.js";
+import "B:/~BUN/root/chunk-ky4py1p3.js";
+import "B:/~BUN/root/chunk-p4t9nwg2.js";
+import "B:/~BUN/root/chunk-q1b7bx45.js";
+import "B:/~BUN/root/chunk-9921expb.js";
+import "B:/~BUN/root/chunk-mvdr6ncg.js";
+import "B:/~BUN/root/chunk-yp00xppt.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-jz31jc2e.js";
+import "B:/~BUN/root/chunk-p3ewqd1e.js";
+import "B:/~BUN/root/chunk-thz7h362.js";
+import "B:/~BUN/root/chunk-dczbgj6x.js";
+import "B:/~BUN/root/chunk-1223v177.js";
+import "B:/~BUN/root/chunk-0rtwbec7.js";
+import "B:/~BUN/root/chunk-jdm3bsma.js";
+import {
+  Wr
+} from "B:/~BUN/root/chunk-5r1x61tc.js";
+import {
+  ge
+} from "B:/~BUN/root/chunk-51erc9xb.js";
+import {
+  F
+} from "B:/~BUN/root/chunk-acd2tycn.js";
+import {
+  GC
+} from "B:/~BUN/root/chunk-txdt16r9.js";
+import "B:/~BUN/root/chunk-q52x4j16.js";
+import {
+  ye
+} from "B:/~BUN/root/chunk-41008fhm.js";
+import {
+  ve
+} from "B:/~BUN/root/chunk-cxqcvpm0.js";
+import "B:/~BUN/root/chunk-1a6hgte8.js";
+import "B:/~BUN/root/chunk-0tqg3ze0.js";
+import "B:/~BUN/root/chunk-xky3bazf.js";
+import {
+  pS,
+  cR,
+  wnt,
+  vnt,
+  Qa
+} from "B:/~BUN/root/chunk-3jyp964r.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-5emths66.js";
+import "B:/~BUN/root/chunk-0w5kpsps.js";
+import "B:/~BUN/root/chunk-gbtzpa3e.js";
+import "B:/~BUN/root/chunk-n5swsemr.js";
+import "B:/~BUN/root/chunk-5dk9zqaz.js";
+import "B:/~BUN/root/chunk-ewvnv67m.js";
+import "B:/~BUN/root/chunk-f1dj0k6n.js";
+import "B:/~BUN/root/chunk-yeg3gem6.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-4mcmxrhr.js";
+import "B:/~BUN/root/chunk-6wgkxd9a.js";
+import "B:/~BUN/root/chunk-r6m7remx.js";
+import "B:/~BUN/root/chunk-y39emrp9.js";
+import "B:/~BUN/root/chunk-d4pzq02b.js";
+import "B:/~BUN/root/chunk-mgxre38x.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-h23911wn.js";
+import "B:/~BUN/root/chunk-w5s5fy4b.js";
+import "B:/~BUN/root/chunk-5dn8wsxz.js";
+import "B:/~BUN/root/chunk-h89fwq58.js";
+import "B:/~BUN/root/chunk-93kq3f21.js";
+import "B:/~BUN/root/chunk-q7jerdh3.js";
+import "B:/~BUN/root/chunk-rp3kg713.js";
+import "B:/~BUN/root/chunk-cpg4rjtx.js";
+import "B:/~BUN/root/chunk-y00rw36h.js";
+import "B:/~BUN/root/chunk-ewjenbzd.js";
+import "B:/~BUN/root/chunk-9jvj58wt.js";
+import "B:/~BUN/root/chunk-1mdeqc2r.js";
+import "B:/~BUN/root/chunk-jcnv9sfw.js";
+import "B:/~BUN/root/chunk-q87kdcms.js";
+import "B:/~BUN/root/chunk-5nfpvvfh.js";
+import {
+  mX,
+  LOr,
+  fle,
+  hzn,
+  Alt,
+  rAo,
+  Q3,
+  Vy,
+  dDt,
+  j3e,
+  Z3,
+  eN,
+  JV,
+  uDt,
+  sAo,
+  pHe,
+  Lan,
+  xlt,
+  th,
+  Nan,
+  Han,
+  Ban,
+  GOr,
+  VOr,
+  qOr,
+  gle,
+  gX,
+  V3e,
+  ehe,
+  Hlt,
+  Flt,
+  Ezn,
+  QOr,
+  rte,
+  yAo,
+  Ah,
+  n0r,
+  r0r,
+  Rn
+} from "B:/~BUN/root/chunk-d36ctpgs.js";
+import {
+  $le
+} from "B:/~BUN/root/chunk-3hjtxzqy.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import "B:/~BUN/root/chunk-n3t3nbqw.js";
+import "B:/~BUN/root/chunk-wefm1yd9.js";
+import "B:/~BUN/root/chunk-4dctrsn2.js";
+import "B:/~BUN/root/chunk-38kffpyk.js";
+import "B:/~BUN/root/chunk-9mfh08mz.js";
+import "B:/~BUN/root/chunk-vq58jz92.js";
+import "B:/~BUN/root/chunk-0vgj9y5e.js";
+import "B:/~BUN/root/chunk-yzpw1mdr.js";
+import "B:/~BUN/root/chunk-d8zzdckb.js";
+import "B:/~BUN/root/chunk-kwex2zh0.js";
+import "B:/~BUN/root/chunk-1724zw97.js";
+import "B:/~BUN/root/chunk-196w7fz7.js";
+import "B:/~BUN/root/chunk-dt2g8e1y.js";
+import "B:/~BUN/root/chunk-s95n71e7.js";
+import "B:/~BUN/root/chunk-846bv8b5.js";
+import "B:/~BUN/root/chunk-8qv35yd7.js";
+import "B:/~BUN/root/chunk-ew8y0fm0.js";
+import "B:/~BUN/root/chunk-30zp50p7.js";
+import "B:/~BUN/root/chunk-f6h9k5ss.js";
+import "B:/~BUN/root/chunk-nhxcgss8.js";
+import "B:/~BUN/root/chunk-ye6tacpp.js";
+import "B:/~BUN/root/chunk-affnknva.js";
+import "B:/~BUN/root/chunk-xdhy5nhb.js";
+import "B:/~BUN/root/chunk-skjrk8s1.js";
+import "B:/~BUN/root/chunk-mc8ranwc.js";
+import "B:/~BUN/root/chunk-mmnpv22v.js";
+import "B:/~BUN/root/chunk-je63fn7b.js";
+import "B:/~BUN/root/chunk-90zbw58x.js";
+import "B:/~BUN/root/chunk-6k625ztj.js";
+import "B:/~BUN/root/chunk-2m5rfp86.js";
+import "B:/~BUN/root/chunk-2n2hx639.js";
+import "B:/~BUN/root/chunk-aa7kpy4p.js";
+import "B:/~BUN/root/chunk-8k39s5js.js";
+import "B:/~BUN/root/chunk-384x2wn9.js";
+import "B:/~BUN/root/chunk-nrrn2axm.js";
+import "B:/~BUN/root/chunk-5yjtercz.js";
+import "B:/~BUN/root/chunk-8xaxa0y1.js";
+import "B:/~BUN/root/chunk-spgj5paf.js";
+import "B:/~BUN/root/chunk-88mdabet.js";
+import "B:/~BUN/root/chunk-2pww2v3x.js";
+import "B:/~BUN/root/chunk-6cq25d8x.js";
+import "B:/~BUN/root/chunk-tgk1nfes.js";
+import "B:/~BUN/root/chunk-qmv1x2cp.js";
+import "B:/~BUN/root/chunk-70qv5h0a.js";
+import "B:/~BUN/root/chunk-d6sc6w1r.js";
+import "B:/~BUN/root/chunk-efz11ra0.js";
+import "B:/~BUN/root/chunk-9qtz41py.js";
+import "B:/~BUN/root/chunk-n2rcpjj1.js";
+import "B:/~BUN/root/chunk-1xb1enjd.js";
+import "B:/~BUN/root/chunk-65tbbnf1.js";
+import "B:/~BUN/root/chunk-xy9bynby.js";
+import "B:/~BUN/root/chunk-m1qtc24s.js";
+import "B:/~BUN/root/chunk-p6ejqvds.js";
+import "B:/~BUN/root/chunk-zfb6h1v8.js";
+import "B:/~BUN/root/chunk-3k26zwm7.js";
+import "B:/~BUN/root/chunk-y2pt1fm0.js";
+import "B:/~BUN/root/chunk-ec3373a4.js";
+import "B:/~BUN/root/chunk-1dghpe22.js";
+import "B:/~BUN/root/chunk-0djrqga0.js";
+import "B:/~BUN/root/chunk-7azfcycf.js";
+import "B:/~BUN/root/chunk-q3sthw4s.js";
+import "B:/~BUN/root/chunk-5a1m1kxy.js";
+import "B:/~BUN/root/chunk-4q0h6gxt.js";
+import "B:/~BUN/root/chunk-a8gk62v4.js";
+import "B:/~BUN/root/chunk-ehma26r8.js";
+import "B:/~BUN/root/chunk-q5ke49kw.js";
+import "B:/~BUN/root/chunk-faawr4jv.js";
+import "B:/~BUN/root/chunk-gksrzz5s.js";
+import "B:/~BUN/root/chunk-x8507144.js";
+import "B:/~BUN/root/chunk-j36yaq51.js";
+import "B:/~BUN/root/chunk-7d9qjs8x.js";
+import "B:/~BUN/root/chunk-a8td06ny.js";
+import "B:/~BUN/root/chunk-krn12wre.js";
+import "B:/~BUN/root/chunk-671s136j.js";
+import "B:/~BUN/root/chunk-rdxve5qj.js";
+import "B:/~BUN/root/chunk-hg30cgr1.js";
+import "B:/~BUN/root/chunk-2gwgbd5e.js";
+import "B:/~BUN/root/chunk-rtxwm8ds.js";
+import "B:/~BUN/root/chunk-f71hcy5v.js";
+import "B:/~BUN/root/chunk-8gym6yya.js";
+import "B:/~BUN/root/chunk-q77pmen1.js";
+import "B:/~BUN/root/chunk-mmtwp5d6.js";
+import "B:/~BUN/root/chunk-9sy3w2pa.js";
+import "B:/~BUN/root/chunk-dt6tzt7w.js";
+import "B:/~BUN/root/chunk-z51p19sq.js";
+import "B:/~BUN/root/chunk-8p6es4nr.js";
+import "B:/~BUN/root/chunk-pnn94d53.js";
+import "B:/~BUN/root/chunk-xfvqq19y.js";
+import "B:/~BUN/root/chunk-06rekkgz.js";
+import "B:/~BUN/root/chunk-jz4j9jvf.js";
+import "B:/~BUN/root/chunk-zy5rwsjc.js";
+import "B:/~BUN/root/chunk-hjery5bx.js";
+import "B:/~BUN/root/chunk-1zdknz5q.js";
+import "B:/~BUN/root/chunk-ztbv79md.js";
+import "B:/~BUN/root/chunk-8b53pnky.js";
+import "B:/~BUN/root/chunk-g0q5e1g8.js";
+import "B:/~BUN/root/chunk-jwaej6se.js";
+import "B:/~BUN/root/chunk-gsz9m7j5.js";
+import "B:/~BUN/root/chunk-8nq6mgsz.js";
+import "B:/~BUN/root/chunk-2ahfynn0.js";
+import "B:/~BUN/root/chunk-j8x7ygb4.js";
+import "B:/~BUN/root/chunk-jgc88y6c.js";
+import "B:/~BUN/root/chunk-54b3p8j4.js";
+import "B:/~BUN/root/chunk-dk0c0nrh.js";
+import "B:/~BUN/root/chunk-qx3qjw47.js";
+import "B:/~BUN/root/chunk-cg4vyrmt.js";
+import "B:/~BUN/root/chunk-1yna3b23.js";
+import "B:/~BUN/root/chunk-ekzfyp3g.js";
+import "B:/~BUN/root/chunk-psrp3wry.js";
+import "B:/~BUN/root/chunk-8sb89kt9.js";
+import "B:/~BUN/root/chunk-myd8edm1.js";
+import "B:/~BUN/root/chunk-mr8gretd.js";
+import "B:/~BUN/root/chunk-prb4vytb.js";
+import {
+  tw,
+  Ii,
+  Fe
+} from "B:/~BUN/root/chunk-bt71g93n.js";
+import "B:/~BUN/root/chunk-vabpvk99.js";
+import "B:/~BUN/root/chunk-hamz9y7k.js";
+import {
+  kn
+} from "B:/~BUN/root/chunk-87fmbjg1.js";
+import "B:/~BUN/root/chunk-t7rzs5dc.js";
+import "B:/~BUN/root/chunk-zg8y1401.js";
+import {
+  m1e
+} from "B:/~BUN/root/chunk-da79nptg.js";
+import "B:/~BUN/root/chunk-zfsr3kh2.js";
+import "B:/~BUN/root/chunk-rd1ccb7k.js";
+import {
+  V_
+} from "B:/~BUN/root/chunk-5arv5xy6.js";
+import {
+  sOe
+} from "B:/~BUN/root/chunk-ndzdwpxp.js";
+import {
+  m2t,
+  g2t,
+  h2t,
+  y2t,
+  _2t
+} from "B:/~BUN/root/chunk-bpwr4mkz.js";
+import {
+  JXe
+} from "B:/~BUN/root/chunk-wnwck3ar.js";
+import {
+  gh
+} from "B:/~BUN/root/chunk-8eznj17m.js";
+import {
+  Cr
+} from "B:/~BUN/root/chunk-xpw4e8kb.js";
+import {
+  ur
+} from "B:/~BUN/root/chunk-ehewxxqw.js";
+import "B:/~BUN/root/chunk-2wfa1xth.js";
+import "B:/~BUN/root/chunk-nd6xvaae.js";
+import "B:/~BUN/root/chunk-sxjerhqq.js";
+import "B:/~BUN/root/chunk-y1h4hnnm.js";
+import "B:/~BUN/root/chunk-7frntmvs.js";
+import "B:/~BUN/root/chunk-w15vevdx.js";
+import "B:/~BUN/root/chunk-zza9ywwa.js";
+import "B:/~BUN/root/chunk-bbgg7kv0.js";
+import "B:/~BUN/root/chunk-sv155qry.js";
+import "B:/~BUN/root/chunk-vf07m8qt.js";
+import "B:/~BUN/root/chunk-parcaazx.js";
+import "B:/~BUN/root/chunk-b36qwjxy.js";
+import "B:/~BUN/root/chunk-ejdx9rag.js";
+import "B:/~BUN/root/chunk-cdch6ag4.js";
+import "B:/~BUN/root/chunk-b5qh4e85.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-qkvevvte.js";
+import "B:/~BUN/root/chunk-9z0za8jx.js";
+import {
+  W_t,
+  Lje
+} from "B:/~BUN/root/chunk-ckf575ct.js";
+import {
+  Bje
+} from "B:/~BUN/root/chunk-tf5r9ckx.js";
+import "B:/~BUN/root/chunk-4dw8761b.js";
+import "B:/~BUN/root/chunk-ymahamqq.js";
+import "B:/~BUN/root/chunk-mqsfaz82.js";
+import "B:/~BUN/root/chunk-c50e3nb9.js";
+import {
+  mM
+} from "B:/~BUN/root/chunk-qt0vdz7n.js";
+import "B:/~BUN/root/chunk-106hagsg.js";
+import "B:/~BUN/root/chunk-qq6w89ha.js";
+import "B:/~BUN/root/chunk-q3x7vf9d.js";
+import {
+  BEt
+} from "B:/~BUN/root/chunk-v8s05yj9.js";
+import "B:/~BUN/root/chunk-8n4s8cn5.js";
+import "B:/~BUN/root/chunk-230s8gzy.js";
+import "B:/~BUN/root/chunk-ghw8h4y1.js";
+import "B:/~BUN/root/chunk-tzzvaz2j.js";
+import "B:/~BUN/root/chunk-pwpgxxsc.js";
+import "B:/~BUN/root/chunk-m4ehcybg.js";
+import {
+  Z
+} from "B:/~BUN/root/chunk-08bth2fj.js";
+import "B:/~BUN/root/chunk-esqb9g1a.js";
+import "B:/~BUN/root/chunk-6jwexnnw.js";
+import {
+  Sr,
+  V$n,
+  mr,
+  R,
+  T,
+  g,
+  N
+} from "B:/~BUN/root/chunk-rnj6pcz5.js";
+import "B:/~BUN/root/chunk-a2kvnefe.js";
+import "B:/~BUN/root/chunk-w4zcf9ar.js";
+import "B:/~BUN/root/chunk-467d5w8j.js";
+import "B:/~BUN/root/chunk-cn8bxjex.js";
+import "B:/~BUN/root/chunk-zn0k3ezm.js";
+import "B:/~BUN/root/chunk-c1275ktq.js";
+import "B:/~BUN/root/chunk-pgrf1rrh.js";
+import "B:/~BUN/root/chunk-ymhw5dt2.js";
+import "B:/~BUN/root/chunk-xmtkv29j.js";
+import "B:/~BUN/root/chunk-hcqaqf9c.js";
+import "B:/~BUN/root/chunk-na2t7g12.js";
+import "B:/~BUN/root/chunk-aqngsaqg.js";
+import "B:/~BUN/root/chunk-gj7av6e0.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-vr3kcvgy.js";
+import "B:/~BUN/root/chunk-fbgf4b4h.js";
+import "B:/~BUN/root/chunk-g4xzaw4b.js";
+import "B:/~BUN/root/chunk-mac0vc34.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import "B:/~BUN/root/chunk-zfjnfpf7.js";
+import "B:/~BUN/root/chunk-h7t9e2fk.js";
+import "B:/~BUN/root/chunk-6bchs2sy.js";
+import "B:/~BUN/root/chunk-hbma7z88.js";
+import "B:/~BUN/root/chunk-vgyyj55s.js";
+import {
+  k_
+} from "B:/~BUN/root/chunk-z9xwt6re.js";
+import "B:/~BUN/root/chunk-9sajt7dp.js";
+import "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import {
+  uy,
+  Jp,
+  Zl
+} from "B:/~BUN/root/chunk-dbvr5zxh.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-hyp140x7.js";
+import "B:/~BUN/root/chunk-995m8a2a.js";
+import "B:/~BUN/root/chunk-dqm1wqrw.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gmsn86f4.js";
+import "B:/~BUN/root/chunk-08q5fcq1.js";
+import "B:/~BUN/root/chunk-p10aw0p6.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import {
+  o,
+  E,
+  M,
+  C,
+  u
+} from "B:/~BUN/root/chunk-n8qdr73v.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import {
+  U
+} from "B:/~BUN/root/chunk-z1enakv9.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-yv67t8hr.js";
+N();
+import {
+  writeFile as en
+} from "fs/promises";
+N();
+
+function Po(q, Y) {
+  return e(n, {
+    wrap: "truncate-end",
+    children: Rn(q) || " "
+  }, Y)
+}
+var lo = 65536,
+  mo = f(() => u({
+    memoryFiles: C(u({
+      path: o(),
+      type: o().catch(""),
+      tokens: E().catch(0)
+    }).nullable().catch(null)).catch([])
+  })),
+  uo = f(() => u({
+    contents: o(),
+    truncated: M().optional().catch(void 0)
+  }));
+async function Ft(h, k) {
+  try {
+    let y = mM("get_context_usage", mo(), await h.sendControlRequest({
+      subtype: "get_context_usage",
+      detail: "summary"
+    }, {
+      signal: k
+    }));
+    if (!y) return {
+      kind: "unreadable",
+      reason: "the cloud session sent a reply this version can't display"
+    };
+    return {
+      kind: "read",
+      files: y.memoryFiles.flatMap((O) => O === null ? [] : [{
+        path: O.path,
+        shownPath: Rn(O.path),
+        type: Rn(O.type),
+        tokens: O.tokens,
+        userScope: O.type === "User"
+      }])
+    }
+  } catch (y) {
+    return {
+      kind: "unreadable",
+      reason: Rn(l(y))
+    }
+  }
+}
+async function Ct(h, k, y) {
+  try {
+    let O = mM("read_file", uo(), await h.sendControlRequest({
+      subtype: "read_file",
+      path: k,
+      max_bytes: lo
+    }, {
+      signal: y
+    }));
+    return O ? {
+      kind: "read",
+      contents: O.contents,
+      truncated: O.truncated === !0
+    } : {
+      kind: "unreadable",
+      reason: "the cloud session sent a reply this version can't display"
+    }
+  } catch (O) {
+    let P = l(O);
+    return {
+      kind: "unreadable",
+      reason: P.startsWith("read denied") ? "the cloud session only shows a terminal the files inside its workspace, and this one isn't" : Rn(P)
+    }
+  }
+}
+
+function po(h) {
+  let k = /[\\/]\.claude[\\/]rules[\\/]([^\\/]+)$/.exec(h);
+  return k ? `~/.claude/rules/${k[1]}` : "~/.claude/CLAUDE.md"
+}
+
+function Ne(h, k) {
+  return h === "sentFromHere" ? `User files were sent from ${JXe()} at launch \u2014 edit ${k===void 0?"them under ~/.claude":po(k)} there; changes apply to the next cloud session, or when this machine re-attaches.` : "This file is in the cloud session's own ~/.claude (not from this machine) and can't be opened from here."
+}
+
+function at(h) {
+  let A = w(31),
+    {
+      onExit: k,
+      remote: y,
+      filesRead: O,
+      signal: P,
+      userMemoryOrigin: j
+    } = h,
+    [x, G] = g(null),
+    L;
+  if (A[0] !== k) L = () => k("Memory dialog dismissed", {
+    display: "system"
+  }), A[0] = k, A[1] = L;
+  else L = A[1];
+  let D = L;
+  if (x !== null) {
+    const z = `${x.file.type} memory \xB7 read-only`;
+    let B;
+    if (A[2] === S) B = () => G(null), A[2] = B;
+    else B = A[2];
+    let X;
+    if (A[3] === S) X = e(F, {
+      chord: "escape",
+      action: "go back"
+    }), A[3] = X;
+    else X = A[3];
+    let q;
+    if (A[4] === S) q = e(ur, {
+      message: "Reading\u2026",
+      dimColor: !0
+    }), A[4] = q;
+    else q = A[4];
+    let Y;
+    if (A[5] !== x.read) Y = e(Sr, {
+      fallback: q,
+      children: e(st, {
+        read: x.read
+      })
+    }), A[5] = x.read, A[6] = Y;
+    else Y = A[6];
+    let V;
+    if (A[7] !== x.file.shownPath || A[8] !== z || A[9] !== Y) V = e(ge, {
+      title: x.file.shownPath,
+      subtitle: z,
+      onCancel: B,
+      color: "remember",
+      inputGuide: X,
+      children: Y
+    }), A[7] = x.file.shownPath, A[8] = z, A[9] = Y, A[10] = V;
+    else V = A[10];
+    return V
+  }
+  let z;
+  if (A[11] === S) z = r(ye, {
+    children: [e(F, {
+      chord: "enter",
+      action: "view"
+    }), e(F, {
+      chord: "escape",
+      action: "close"
+    })]
+  }), A[11] = z;
+  else z = A[11];
+  let B;
+  if (A[12] === S) B = e(ur, {
+    message: "Asking the cloud session for its memory files\u2026",
+    dimColor: !0
+  }), A[12] = B;
+  else B = A[12];
+  let X;
+  if (A[13] !== y || A[14] !== P || A[15] !== j) X = (te) => G({
+    file: te,
+    read: te.userScope ? Promise.resolve({
+      kind: "userScope",
+      hint: Ne(j, te.shownPath)
+    }) : Ct(y, te.path, P)
+  }), A[13] = y, A[14] = P, A[15] = j, A[16] = X;
+  else X = A[16];
+  let q;
+  if (A[17] !== D || A[18] !== O || A[19] !== X || A[20] !== j) q = e(Sr, {
+    fallback: B,
+    children: e(it, {
+      filesRead: O,
+      onPick: X,
+      onCancel: D,
+      userMemoryOrigin: j
+    })
+  }), A[17] = D, A[18] = O, A[19] = X, A[20] = j, A[21] = q;
+  else q = A[21];
+  let Y;
+  if (A[22] === S) Y = e(n, {
+    dimColor: !0,
+    wrap: "wrap-trim",
+    children: "Workspace files are read-only here: the session takes no edits from a terminal \u2014 ask Claude to edit one, or edit and commit it in the repo."
+  }), A[22] = Y;
+  else Y = A[22];
+  let V;
+  if (A[23] !== j) V = j === "sentFromHere" && e(n, {
+    dimColor: !0,
+    wrap: "wrap-trim",
+    children: Ne("sentFromHere")
+  }), A[23] = j, A[24] = V;
+  else V = A[24];
+  let re;
+  if (A[25] !== V) re = r(s, {
+    flexDirection: "column",
+    children: [Y, V]
+  }), A[25] = V, A[26] = re;
+  else re = A[26];
+  let Ke;
+  if (A[27] !== D || A[28] !== q || A[29] !== re) Ke = r(ge, {
+    title: "Memory",
+    subtitle: "Loaded in the cloud session",
+    onCancel: D,
+    color: "remember",
+    inputGuide: z,
+    children: [q, re]
+  }), A[27] = D, A[28] = q, A[29] = re, A[30] = Ke;
+  else Ke = A[30];
+  return Ke
+}
+
+function it(h) {
+  let j = w(14),
+    {
+      filesRead: k,
+      onPick: y,
+      userMemoryOrigin: O
+    } = h,
+    P = mr(k);
+  if (P.kind === "unreadable") {
+    let x;
+    if (j[0] !== P.reason) x = r(n, {
+      color: "error",
+      children: ["Couldn't list the cloud session's memory files: ", P.reason]
+    }), j[0] = P.reason, j[1] = x;
+    else x = j[1];
+    return x
+  }
+  if (P.files.length === 0) {
+    let x;
+    if (j[2] === S) x = e(Cr, {
+      hint: "Add a CLAUDE.md to the repo, or ask Claude to write one",
+      children: "No memory files loaded in the cloud session"
+    }), j[2] = x;
+    else x = j[2];
+    return x
+  }
+  let x;
+  if (j[3] !== y || j[4] !== P.files) x = (G) => {
+    let A = P.files[G];
+    if (A) y(A)
+  }, j[3] = y, j[4] = P.files, j[5] = x;
+  else x = j[5];
+  let L;
+  if (j[6] !== P.files || j[7] !== O) {
+    let D;
+    if (j[9] !== O) D = (z, B) => e(kn.Item, {
+      label: z.shownPath,
+      meta: [z.type, `${cr(z.tokens)} tokens`],
+      description: !z.userScope ? void 0 : O === "sentFromHere" ? `sent from ${JXe()} at launch` : "the session's own ~/.claude, not sent from here"
+    }, B), j[9] = O, j[10] = D;
+    else D = j[10];
+    L = P.files.map(D);
+    j[6] = P.files, j[7] = O, j[8] = L
+  } else L = j[8];
+  let D;
+  if (j[11] !== x || j[12] !== L) D = e(kn, {
+    onSelect: x,
+    children: L
+  }), j[11] = x, j[12] = L, j[13] = D;
+  else D = j[13];
+  return D
+}
+
+function st(h) {
+  let P = w(18),
+    {
+      read: k
+    } = h,
+    y = mr(k),
+    {
+      rows: O
+    } = ve();
+  if (y.kind === "userScope") {
+    let j;
+    if (P[0] !== y.hint) j = e(n, {
+      dimColor: !0,
+      wrap: "wrap-trim",
+      children: y.hint
+    }), P[0] = y.hint, P[1] = j;
+    else j = P[1];
+    return j
+  }
+  if (y.kind === "unreadable") {
+    let j;
+    if (P[2] !== y.reason) j = r(n, {
+      color: "error",
+      children: ["Couldn't read it: ", y.reason]
+    }), P[2] = y.reason, P[3] = j;
+    else j = P[3];
+    return j
+  }
+  let x, G, j, A;
+  if (P[4] !== y.contents || P[5] !== O) {
+    let L = y.contents.replaceAll("\t", "    ").split(/\r?\n/);
+    let D = Math.max(5, O - 12);
+    let z = L.slice(0, D);
+    G = L.length - z.length;
+    x = s;
+    j = "column";
+    A = z.map(Po);
+    P[4] = y.contents, P[5] = O, P[6] = x, P[7] = G, P[8] = j, P[9] = A
+  } else x = P[6], G = P[7], j = P[8], A = P[9];
+  let B;
+  if (P[10] !== G || P[11] !== y.truncated) B = (G > 0 || y.truncated) && r(n, {
+    dimColor: !0,
+    children: ["\u2026 ", G > 0 ? `${G} more ${I(G,"line")}` : "more", y.truncated ? " (the session sent only the beginning)" : "", " \u2014 ask Claude to show or change the rest"]
+  }), P[10] = G, P[11] = y.truncated, P[12] = B;
+  else B = P[12];
+  let X;
+  if (P[13] !== x || P[14] !== j || P[15] !== A || P[16] !== B) X = r(x, {
+    flexDirection: j,
+    children: [A, B]
+  }), P[13] = x, P[14] = j, P[15] = A, P[16] = B, P[17] = X;
+  else X = P[17];
+  return X
+}
+N();
+import {
+  mkdir as qo
+} from "fs/promises";
+import {
+  join as Vo
+} from "path";
+var _e = `${uy} / ${Jp} / ${Zl}`,
+  xt = 80,
+  jo = /[\u2039\u203A\uFF1C\uFF1E\uFE64\uFE65\u3008\u3009\u2329\u232A\u27E8\u27E9\u02C2\u02C3]/g,
+  Fo = 20000,
+  xo = 120000;
+class It {
+  latest = 0;
+  begin() {
+    return ++this.latest
+  }
+}
+var Eo = new Nt(() => new It);
+async function Dt(h, k) {
+  try {
+    let y = Eo.of(h),
+      O = y.begin(),
+      P = k === "project" ? hzn() : null,
+      j = mX(),
+      x = Ge(),
+      G = () => {
+        x = Ge()
+      },
+      A = k === "off" ? qOr(G) : VOr(G),
+      L = await nt(A, Fo) ?? "timeout";
+    if (L !== "timeout" && L.kind === "refused") return Et("refused", x, x, []), p("org_memory_project_switch", L.reason), {
+      outcome: "refused",
+      notice: Wo(L.reason)
+    };
+    let D = Ge(),
+      z = L === "timeout" || L.current.state === "undecided",
+      B = z ? "pending" : To(k, x, D),
+      X = L !== "timeout" && L.current.state === "on" ? L.current.request.selection : null,
+      q = !z && P !== null && X !== P && mX() === j && hzn() === null;
+    Io(B, x, D);
+    let Y = B === "switched" || B === "connected" ? await No(D.stores) : [];
+    if (Et(B, x, D, Y, q), q) p("org_memory_project_switch", "selection_dropped");
+    else if (B === "unavailable" || B === "pending") p("org_memory_project_switch", L === "timeout" ? "switch_deadline" : Lo(L.current));
+    else _("org_memory_project_switch", {
+      outcome: c(B)
+    });
+    if (B === "pending") A.then(() => xlt(xo, void 0, {
+      unref: !0
+    })).then(() => {
+      if (O !== y.latest) return;
+      let te = Ge();
+      if (de(x) || te.stores.length > 0) rte(te.stores.some((re) => re.writable))
+    }).catch(() => {});
+    let V = Go(B, k, x, D, Y, q);
+    return {
+      outcome: B,
+      notice: Bo(B, k, x, D, q),
+      ...V !== null && {
+        modelMessage: V
+      }
+    }
+  } catch (y) {
+    return Han(), Q3(), d(y), m("org_memory_project_switch", "unexpected_throw"), {
+      outcome: "unavailable",
+      notice: Ho(k)
+    }
+  }
+}
+
+function Io(h, k, y) {
+  switch (h) {
+    case "switched":
+    case "connected":
+      rte(y.stores.some((O) => O.writable));
+      return;
+    case "disconnected":
+    case "unavailable":
+    case "pending":
+      if (de(k)) rte(!1);
+      return;
+    case "unchanged":
+      if (de(k) || y.stores.length > 0) rte(y.stores.some((O) => O.writable));
+      return
+  }
+}
+
+function de(h) {
+  return h.servedEarlier || h.stores.length > 0
+}
+
+function Ge() {
+  return {
+    project: Do(th()),
+    servedEarlier: Nan() !== null,
+    stores: Hlt(gX()).map((h) => ({
+      id: ehe(h),
+      description: Flt(h),
+      writable: V3e(h),
+      promptIndex: h.promptIndex,
+      store: h
+    }))
+  }
+}
+
+function Do(h) {
+  if (h.state !== "on") return {
+    kind: "none"
+  };
+  let k = h.request.selection;
+  if (k === null || h.selectionSource !== "preference") return {
+    kind: "default"
+  };
+  if (fle(k)) return {
+    kind: "picked",
+    name: "all public projects"
+  };
+  let y = Ban()?.candidates.find((O) => O.id === k);
+  return {
+    kind: "picked",
+    name: y === void 0 ? null : $o(y.name)
+  }
+}
+
+function $o(h) {
+  let k = $le(h).replaceAll('"', "'").replaceAll("<", "\u2039").replaceAll(">", "\u203A").replace(/[\u2028\u2029]/g, " ").trim();
+  if (k === "") return null;
+  return qr(k, xt) === k ? k : `${qr(k,xt-1)}\u2026`
+}
+
+function Ao(h, k) {
+  return h.stores.length === k.stores.length && h.stores.every((y, O) => {
+    let P = k.stores[O];
+    return P !== void 0 && y.id === P.id && y.store.path === P.store.path && y.promptIndex === P.promptIndex && y.writable === P.writable
+  })
+}
+
+function To(h, k, y) {
+  if (y.stores.length === 0) {
+    if (h === "off") return de(k) ? "disconnected" : "unchanged";
+    return "unavailable"
+  }
+  if (k.stores.length === 0) return "connected";
+  return Ao(k, y) ? "unchanged" : "switched"
+}
+
+function Lo(h) {
+  switch (h.state) {
+    case "off":
+      return `off_${h.cause}`;
+    case "parked":
+      return `parked_${h.cause}`;
+    case "ended":
+      return `ended_${h.cause}`;
+    case "undecided":
+      return "settle_timeout";
+    case "on":
+      return "no_stores"
+  }
+}
+async function No(h) {
+  let k = h.filter((O) => O.promptIndex !== void 0),
+    y = await Promise.all(k.map((O) => yAo(O.store)));
+  return k.map((O, P) => {
+    let j = y[P];
+    if (j === null || j === void 0) return {
+      store: O,
+      state: "unavailable",
+      content: ""
+    };
+    return j.content.trim() === "" ? {
+      store: O,
+      state: "empty",
+      content: ""
+    } : {
+      store: O,
+      state: "loaded",
+      content: j.content
+    }
+  })
+}
+
+function Et(h, k, y, O, P = !1) {
+  i("tengu_org_memory_project_switch", {
+    outcome: c(h),
+    pick_dropped: P,
+    stores_before: k.stores.length,
+    stores_after: y.stores.length,
+    indexes_loaded: U(O, (j) => j.state === "loaded"),
+    indexes_empty: U(O, (j) => j.state === "empty"),
+    indexes_unavailable: U(O, (j) => j.state === "unavailable")
+  })
+}
+
+function Bo(h, k, y, O, P) {
+  if (P) return Uo(h, O);
+  switch (h) {
+    case "switched":
+    case "connected":
+      return $t(O);
+    case "disconnected":
+      return `off for this directory \u2014 Claude has stopped using ${At(y.project)}`;
+    case "unavailable":
+      return y.stores.length > 0 ? "couldn't connect, so it is off for now \u2014 the pick is kept for this directory; Enter on it in /memory retries" : "couldn't connect \u2014 the pick is kept for this directory; Enter on it in /memory retries";
+    case "pending":
+      return k === "off" ? "off for this directory \u2014 disconnecting once the in-flight connection attempt lands" : "saved for this directory \u2014 still connecting; Claude can use it once it lands";
+    case "unchanged":
+      return k === "off" ? "off for this directory \u2014 nothing was connected" : "saved for this directory \u2014 already connected, nothing changed"
+  }
+}
+
+function Ho(h) {
+  return h === "off" ? "off for this directory \u2014 the disconnect may not have finished this session; it holds from next session" : "couldn't connect \u2014 the pick is kept for this directory; Enter on it in /memory retries"
+}
+
+function $t(h) {
+  let k = h.stores.some((P) => P.writable),
+    y = `connected to ${At(h.project)}${k?"":" (read-only)"}`,
+    O = k ? "Claude can use it and save to it now" : "Claude can use it now";
+  return h.project.kind === "picked" ? `${y} \u2014 saved for this directory; ${O}` : `${y} \u2014 ${O}`
+}
+
+function Wo(h) {
+  switch (h) {
+    case "account_boundary":
+      return "saved for this directory \u2014 the account changed mid-session, so it connects next session";
+    case "untrusted_workspace":
+      return "saved for this directory \u2014 this workspace is not trusted yet, so it connects next session"
+  }
+}
+
+function Uo(h, k) {
+  switch (h) {
+    case "switched":
+    case "connected":
+      return `${"that project is no longer available \u2014 the pick was cleared"}; ${$t(k)}`;
+    case "unchanged":
+      return `${"that project is no longer available \u2014 the pick was cleared"}; connection unchanged`;
+    case "unavailable":
+    case "disconnected":
+    case "pending":
+      return `${"that project is no longer available \u2014 the pick was cleared"}; project memory is off until another pick in /memory`
+  }
+}
+
+function At(h) {
+  switch (h.kind) {
+    case "none":
+      return "project memory";
+    case "default":
+      return "the default project memory";
+    case "picked":
+      return h.name ?? "the picked project"
+  }
+}
+
+function Pe(h) {
+  switch (h.kind) {
+    case "none":
+      return "project memory";
+    case "default":
+      return "the default project memory";
+    case "picked":
+      return h.name === null ? "a project with no displayable name" : `project "${k_(h.name).replace(jo,(k)=>`&#${k.codePointAt(0)};`)}"`
+  }
+}
+
+function Go(h, k, y, O, P, j = !1) {
+  let x = y.stores.length > 0 ? ` \u2014 most recently ${Pe(y.project)}` : "",
+    G = de(y) ? ` Any connected memory store list or shared memory index your system prompt may carry, and any ${_e} results earlier in this conversation, describe an earlier connection${x}, possibly to a different project. Treat them as stale until re-checked with the tools: do not attribute those memories to, or save them into, the project connected now on the strength of the earlier results alone. Your personal memory directory, if your system prompt names one, is unaffected.` : "";
+  switch (h) {
+    case "unchanged":
+      return null;
+    case "pending":
+      if (de(y)) return Qa(`This session is no longer connected to ${Pe(y.project)} (a re-pick in /memory is still being applied). Any connected memory store list or shared memory index your system prompt may carry, and any ${_e} results earlier in this conversation, are stale. Call ${uy} with no arguments to check what, if anything, is connected before relying on the memory tools again.`);
+      return k === "off" ? null : Qa(`The user picked a project's shared memory in /memory and the connection is still being set up; nothing is connected yet. Before relying on the ${_e} tools, call ${uy} with no arguments: once it lists connected stores, read your teammates' shared memories and save new shared learnings through those tools as their prompts describe. Your personal memory directory, if your system prompt names one, is unaffected either way.`);
+    case "disconnected":
+    case "unavailable":
+      if (!de(y)) return null;
+      return Qa(`This session is no longer connected to ${Pe(y.project)} (${h==="disconnected"?"the user turned it off in /memory":j?"the project the user re-picked is no longer available, so the pick was cleared and nothing connected":"reconnecting to the re-picked project failed"}). Any connected memory store list or shared memory index your system prompt may carry, and any ${_e} results earlier in this conversation, are stale, and nothing is connected for the memory tools to serve until the user reconnects in /memory (${uy} with no arguments reports what, if anything, is connected whenever you need to re-check). If the user asks you to remember something, use your personal memory directory if your system prompt names one; otherwise explain that project memory is disconnected for this session.`);
+    case "switched":
+    case "connected": {
+      let A = O.stores.map((B) => Ezn(B.store, B.writable, B.id, B.description)),
+        L = A.find((B) => !B.readOnly),
+        D = L === void 0 ? `Every connected store is read-only in this session: ${Zl} calls are refused.` : `Save new shared memories in \`${L.id}\` under \`${L.projectDir}\` and keep its index \`${L.indexPath}\` current, as the ${Zl} tool prompt describes. Private memories belong in your personal memory directory, if your system prompt names one; the shared stores are for what teammates should also see. Never save secrets, credentials or other sensitive data to the shared stores.`;
+      return [Qa([`The project memory connected to this session has changed: ${j?`the project the user picked in /memory is no longer available, so ${Pe(O.project)} is connected instead`:O.project.kind==="default"?"the user picked a project in /memory, and the default project memory is what is now connected":`the user picked ${Pe(O.project)} in /memory`}.${G}`, "", `Connected memory stores for the rest of this session \u2014 pass an id as the ${_e} tools' store argument, and call ${uy} with no arguments to re-check this set whenever you are unsure:`, ...A.map(QOr), "", D].join(`
+`)), ...P.map(zo)].join(`
+
+`)
+    }
+  }
+}
+
+function zo(h) {
+  let k = `/${h.store.promptIndex}`,
+    y = n0r(h.store.id, k);
+  switch (h.state) {
+    case "unavailable":
+      return `(${y} could not be fetched just now \u2014 call ${Jp} on it when you need it.)`;
+    case "empty":
+      return `(${y} is currently empty.)`;
+    case "loaded":
+      return r0r(y, k, h.content)
+  }
+}
+class Tt {
+  promise = null;
+  rowsOnce(h) {
+    return this.promise ??= h(), this.promise
+  }
+  reset() {
+    this.promise = null
+  }
+}
+var qe = new Nt(() => new Tt);
+var je = "__open_folder__",
+  Yo = 30;
+
+function Ko(h, k, y) {
+  return h.rowsOnce(async () => {
+    let O = await GOr(k, y).catch(() => null),
+      P = Ban();
+    if (O === null) return {
+      mounts: [],
+      picker: P
+    };
+    let j = sAo(),
+      x = th(),
+      G = x.state === "on" ? x.initialGrant.find((D) => JV(D.path) === "grouping_root" || D.kind === "grouping_root" && JV(D.path) === "unknown") : void 0,
+      A = x.state === "on" ? x.initialGrant.find((D) => D.kind === "grouping" || JV(D.path) === "grouping") : void 0,
+      L = x.state === "on" && uDt(x.initialGrant);
+    return {
+      mounts: O.filter((D) => D.scope === "team").map((D) => ({
+        mount: D.mount,
+        dir: Vo(Ah(), D.mount),
+        description: G !== void 0 && Vy(D.path) === Vy(G.path) ? D.mode === "rw" && eN(D.path) === "rw" && Z3() ? "public project memory, read-write" : "public project memory, read-only" : A !== void 0 && Vy(D.path) === Vy(A.path) ? L ? "private project, read-only" : "project memory, read-only" : D.mode === "rw" && eN(D.path) === "rw" && Z3() ? "read-write" : L ? "read-only \u2014 private project selected" : j ? "writes requested \u2014 granted read-only" : "read-only"
+      })),
+      picker: P
+    }
+  })
+}
+var ct = "__org_memory_project_picker__",
+  Ve = "__org_memory_project_off__";
+
+function Lt({
+  session: h,
+  addedInstructionFiles: k,
+  onSelect: y,
+  onCancel: O,
+  onProjectSwitch: P
+}) {
+  let j = vs(h).originalCwd,
+    x = m1e.of(h.host),
+    G = qe.of(h),
+    {
+      storageV5: A,
+      credentials: L
+    } = ke(),
+    D = mr(pS(h, !1, A, L)),
+    z = ll() || Tr(),
+    B = ll() && !Tr(),
+    {
+      mounts: X,
+      picker: q
+    } = B ? mr(Ko(G, A, L)) : {
+      mounts: [],
+      picker: null
+    },
+    [Y, V, te] = Ii(!1),
+    [re, Ke] = g(!1),
+    [J, lt] = g(Alt),
+    Xe = J !== null && fle(J),
+    [Ht] = g(gle),
+    [Qe] = g(() => Is().orgMemoryRead ?? !0),
+    [Wt, Me] = g(null),
+    [Ut, Gt] = g(!1),
+    dt = T(!1),
+    Ze = P !== void 0 && gle(),
+    ne = th(),
+    et = !B ? null : ne.state === "on" ? {
+      label: "active",
+      note: ne.stores.map((b) => b.mount).join(", ")
+    } : ne.state === "parked" ? {
+      label: "parked",
+      note: Ze ? "paused for this session \u2014 pick a project to reconnect" : "paused for this session \u2014 a new pick still applies next session"
+    } : ne.state === "ended" ? {
+      label: "ended",
+      note: ne.cause === "account_switch" ? "account changed \u2014 next session decides fresh" : "signed out \u2014 next session decides fresh"
+    } : null,
+    zt = m2t(vnt(D, k), j, "\xB7 ").map((b) => ({
+      label: b.label,
+      value: b.path,
+      description: b.description
+    })),
+    mt = [],
+    xe = [],
+    qt = W((b) => b.agentDefinitions),
+    [me] = g(() => ({
+      write: !1,
+      picker: !1,
+      pickerData: null
+    }));
+  if (q !== null) me.pickerData = q;
+  let K = q ?? me.pickerData,
+    ut = K !== null && Xe;
+  R(() => {
+    if (ut) i("tengu_org_memory_legacy_pick_nudged", {})
+  }, [ut]);
+  let Vt = ne.state === "on" && J === ne.request.selection,
+    pt = J !== null && (Vt ? uDt(ne.initialGrant) : K?.candidates.find((b) => b.id === J)?.visibility === "private"),
+    Yt = J === null || K === null ? Ve : K.candidates.find((b) => b.id === J)?.id ?? K.candidates.find((b) => b.isDefault)?.id ?? K.candidates[0]?.id ?? Ve;
+  if (z) {
+    for (let b of g2t()) xe.push({
+      label: b.label,
+      value: `${je}${b.path}`,
+      description: b.description
+    });
+    if (!Ht)
+      for (let b of X) xe.push({
+        label: `Open synced project memory: ${b.mount}`,
+        value: `${je}${b.dir}`,
+        description: b.description
+      });
+    if (me.picker ||= K !== null, K !== null && me.picker) {
+      let b = J === null ? void 0 : K.candidates.find((he) => he.id === J),
+        H = J === null ? null : b?.name ?? (Xe ? "all public projects" : J),
+        Q = H === null ? "off" : Qe ? pt ? `${H} (private)` : H : "off \u2014 disabled in settings";
+      mt.push({
+        label: `Sync memories from: ${Q}`,
+        value: ct,
+        description: Wt || (Xe ? "set automatically \u2014 pick a project to choose where saves go" : K.writeOptInAvailable && j3e() && !pHe() ? "change \xB7 org allows write opt-in (/config)" : "change")
+      })
+    }
+    for (let b of h2t(qt.activeAgents)) xe.push({
+      label: b.label,
+      value: `${je}${b.path}`,
+      description: b.description
+    })
+  }
+  let Ce = [...mt, ...zt, ...xe],
+    tt = x.memorySelectorLastPath,
+    Kt = tt && Ce.some((b) => b.value === tt) ? tt : Ce[0]?.value || "",
+    [ue, ft] = g(ll),
+    [gt, Xt] = g(Lje),
+    [Ee, Jt] = g(MYe);
+  R(() => qd(() => {
+    let b = MYe();
+    if (b !== Ee) Jt(b), ft(ll())
+  }), [Ee]);
+  let Ie = y2t({
+      enabled: ue,
+      modelDisabled: Ee,
+      safeMode: Tr()
+    }),
+    [De] = g(() => ue && W_t()),
+    ht = W((b) => Object.values(b.tasks).some((H) => H.type === "dream" && H.status === "running")),
+    [Qt, Zt] = g(null);
+  R(() => {
+    if (!De) return;
+    Bje(void 0, A).then(Zt)
+  }, [De, ht, A]);
+  let $e = _2t({
+      autoMemoryOn: ue,
+      enabled: gt,
+      running: ht,
+      lastDreamAt: Qt
+    }),
+    [, pe, Ae] = Ii(!1),
+    [eo, to] = g(0),
+    [Te, yt] = g(pHe),
+    [oo, se] = g(null);
+  me.write ||= !dDt() && (Te || X.length > 0 && j3e());
+  let wt = Qe && J !== null && me.write;
+
+  function no(b) {
+    if (!wt) return;
+    V$n(() => {
+      let H = Lan(b, A);
+      if (H === "granted" || H === "withdrawn") G.reset(), yt(b), se(null);
+      else if (H === "noop") yt(pHe()), se(null);
+      else if (H === "refused_gates") se("unavailable right now");
+      else if (H === "refused_identity") se("requires an OAuth login");
+      else if (H === "refused_read_off") se("enable reads first")
+    })
+  }
+
+  function ro(b) {
+    if (Tr()) return;
+    if (Ee) return;
+    ln("userSettings", {
+      autoMemoryEnabled: b
+    }, void 0, A), ft(b), i("tengu_auto_memory_toggled", {
+      enabled: b
+    })
+  }
+
+  function io(b) {
+    if (!De || !ue) return;
+    let H = b && Je().autoDreamEnabled === void 0;
+    ln("userSettings", {
+      autoDreamEnabled: b
+    }, void 0, A), Xt(b), i("tengu_auto_dream_toggled", {
+      enabled: b,
+      is_first_enable: H
+    })
+  }
+  let fe = [{
+    key: "auto-memory",
+    label: "Auto-memory",
+    value: ue,
+    description: Ie.dim ? [Ie.status, Ie.detail].filter(Boolean).join(" \xB7 ") : void 0,
+    disabled: !Ie.toggleable,
+    onChange: ro
+  }];
+  if (De) fe.push({
+    key: "auto-dream",
+    label: "Auto-dream",
+    value: ue && gt,
+    description: $e.dim ? $e.status : $e.detail || "\u2026",
+    disabled: !$e.toggleable,
+    onChange: io
+  });
+  if (wt) fe.push({
+    key: "org-writes",
+    label: "Write to synced project memory",
+    value: Te,
+    description: oo ?? (pt ? "no effect under a private project pick" : "this directory, applies next session"),
+    disabled: !1,
+    onChange: no
+  });
+  let so = fe.reduce((b, H) => b + 2 + (H.description ? 1 : 0), 0),
+    bt = _t(),
+    Le = bt ? fe : [];
+  return Wr(), ze("confirm:no", () => {
+    if (Y) {
+      V(!1);
+      return
+    }
+    O()
+  }, {
+    context: "Confirmation"
+  }), r(s, {
+    flexDirection: "column",
+    width: "100%",
+    children: [r(s, {
+      flexDirection: "column",
+      marginBottom: 1,
+      children: [!bt && e(s, {
+        flexDirection: "column",
+        onFocus: () => {
+          if (!te() && !Ae()) pe(!0)
+        },
+        children: e(V_, {
+          visibleCount: so,
+          defaultFocusIndex: fe.length - 1,
+          isDisabled: () => !Ae(),
+          onDownFromLastItem: () => pe(!1),
+          onDisabledRowClick: Y ? void 0 : () => pe(!0),
+          children: fe.map((b) => e(V_.Field, {
+            label: b.label,
+            description: b.description,
+            children: e(V_.Toggle, {
+              value: b.value,
+              onChange: b.onChange,
+              disabled: b.disabled
+            })
+          }, b.key))
+        }, eo)
+      }), et !== null && e(tw, {
+        isFocused: !1,
+        styled: !1,
+        children: r(n, {
+          children: ["Synced project memory: ", et.label, r(n, {
+            dimColor: !0,
+            children: [" \xB7 ", et.note]
+          })]
+        })
+      })]
+    }), Y && K !== null ? e(GC, {
+      scope: "Confirmation",
+      claimFocus: !0,
+      bindings: [{
+        action: "confirm:no",
+        run: () => V(!1)
+      }],
+      children: e(Fe, {
+        defaultFocusValue: Yt,
+        options: [{
+          label: "off",
+          value: Ve,
+          description: K.candidates.length === 0 ? "no projects to pick yet" : J === null ? "" : "clear the saved pick"
+        }, ...K.candidates.map((b) => ({
+          label: b.name,
+          value: b.id,
+          description: b.visibility === "private" ? "private \u2014 org store becomes read-only" : b.kind === "project" ? "public project" : ""
+        }))],
+        onChange: (b) => {
+          if (dt.current) return;
+          V$n(() => {
+            let H = b === Ve,
+              Q = H ? void 0 : K.candidates.find((be) => be.id === b),
+              he = H ? LOr : b,
+              ee = H ? null : b,
+              Re = rAo(he, A),
+              St = Re === "saved" || Re === "cleared",
+              we = th(),
+              ao = Re === "noop" && (ee === null ? we.state === "on" || we.state === "parked" : !(we.state === "on" && we.request.selection === ee)),
+              kt = Ze && ee === null && (we.state === "off" || we.state === "ended"),
+              Mt = (St || ao) && !kt && Ze && P(() => Dt(h, ee === null ? "off" : "project"));
+            if (Re === "saved" && Q !== void 0) i("tengu_org_memory_project_selected", {
+              is_default: Q.isDefault === !0,
+              kind: c(Q.kind),
+              private: Q.visibility === "private",
+              reconnects_now: Mt
+            });
+            if (Mt) dt.current = !0, lt(ee), se(null), Me(ee === null ? "disconnecting\u2026" : "connecting\u2026"), Gt(!0);
+            else if (St) {
+              let be = th(),
+                ot = be.state === "on" && be.request.writeAccess && (ee === null || be.request.selection !== ee) && Han();
+              if (ot || be.state === "undecided") Q3();
+              if (lt(ee), ee === null) se(null), Me(ot && Te ? "off \u2014 writes stop now; unsync next session" : kt ? "off \u2014 saved for this directory" : "off \u2014 applies next session");
+              else Me(!Qe ? "saved \u2014 enable reads in /config (orgMemoryRead) to apply" : ot && Te ? "saved \u2014 previous workspace writes stop now; applies next session" : "saved \u2014 applies next session");
+              G.reset()
+            } else if (Re === "refused") Me("requires an OAuth login");
+            else Me(null);
+            V(!1)
+          })
+        },
+        onCancel: () => V(!1)
+      })
+    }) : e(s, {
+      flexDirection: "column",
+      onFocus: () => {
+        if (Ae()) pe(!1)
+      },
+      children: r(kn, {
+        defaultFocusIndex: Le.length + Math.max(0, Ce.findIndex((b) => b.value === (re ? ct : Kt))),
+        isDisabled: () => Ae() || Ut,
+        onDisabledRowClick: () => pe(!1),
+        wrap: !0,
+        onSelect: (b) => {
+          let H = Le[b];
+          if (H !== void 0) {
+            if (!H.disabled) H.onChange(!H.value);
+            return
+          }
+          let Q = Ce[b - Le.length]?.value;
+          if (Q === void 0) return;
+          if (Q === ct) {
+            V(!0), Ke(!0);
+            return
+          }
+          if (Q.startsWith(je)) {
+            let he = Q.slice(je.length);
+            qo(he, {
+              recursive: !0
+            }).catch(() => {}).then(() => BEt(he)).catch(() => {});
+            return
+          }
+          x.rememberMemorySelectorPath(Q), y(Q)
+        },
+        onUpFromFirstItem: () => {
+          to((b) => b + 1), pe(!0)
+        },
+        children: [Le.map((b) => e(kn.Item, {
+          label: b.label,
+          meta: [String(b.value)],
+          description: b.description
+        }, b.key)), Ce.map((b) => ie(b.description) <= Yo ? e(kn.Item, {
+          label: b.label,
+          meta: [b.description]
+        }, b.value) : e(kn.Item, {
+          label: b.label,
+          description: b.description
+        }, b.value))]
+      })
+    })]
+  })
+}
+var Xo = f(() => u({
+  generation: E().int().min(1),
+  etag: o().optional(),
+  allow: C(o()),
+  at: E()
+}));
+
+function Jo(h) {
+  return pr(h)
+}
+
+function Bt(h) {
+  let k = le().remoteHomeSettingsSent?.[Jo(h)];
+  if (k === void 0) return;
+  let y = Xo().safeParse(k);
+  return y.success ? y.data : void 0
+}
+import {
+  homedir as Qo
+} from "os";
+import {
+  relative as Zo
+} from "path";
+
+function Ye(h) {
+  let k = Qo(),
+    y = oe(),
+    O = h.startsWith(k) ? "~" + h.slice(k.length) : null,
+    P = h.startsWith(y) ? "./" + Zo(y, h) : null;
+  if (O && P) return O.length <= P.length ? O : P;
+  return O || P || h
+}
+
+function tn({
+  session: h,
+  addedInstructionFiles: k,
+  onDone: y
+}) {
+  let O = async (j) => {
+    try {
+      if (j.includes(Se())) await ce().mkdir(Se());
+      try {
+        await en(j, "", {
+          encoding: "utf8",
+          flag: "wx"
+        })
+      } catch (z) {
+        if (v(z) !== "EEXIST") throw z
+      }
+      if (!sOe(j)) {
+        y(`Couldn't open ${Ye(j)} in an editor. If no editor is configured, set $EDITOR or $VISUAL, then run /memory again.`, {
+          display: "system"
+        });
+        return
+      }
+      let x = "default",
+        G = "";
+      if (a.VISUAL) x = "$VISUAL", G = a.VISUAL;
+      else if (a.EDITOR) x = "$EDITOR", G = a.EDITOR;
+      let A = x !== "default" ? `Using ${x}="${G}".` : "",
+        L = A ? `> ${A} To change editor, set $EDITOR or $VISUAL environment variable.` : "> To use a different editor, set the $EDITOR or $VISUAL environment variable.",
+        D = Tr() ? `
+
+> Safe mode: this session doesn't load CLAUDE.md files, so changes take effect after you ${qm()}.` : "";
+      y(`Opened ${Ye(j)}${D}
+
+${L}`, {
+        display: "system"
+      })
+    } catch (x) {
+      t(`Failed to open memory file ${j}: ${x}`, {
+        level: "error"
+      }), y(`Couldn't open ${Ye(j)}: ${l(x)}`, {
+        display: "system"
+      })
+    }
+  }, P = () => {
+    y("Cancelled memory editing", {
+      display: "system"
+    })
+  };
+  return e(ge, {
+    title: "Memory",
+    onCancel: P,
+    color: "remember",
+    children: r(s, {
+      flexDirection: "column",
+      gap: 1,
+      children: [Tr() && r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          color: "suggestion",
+          children: [Z.info, " Safe mode"]
+        }), r(n, {
+          dimColor: !0,
+          children: ["CLAUDE.md files aren't loaded into this session. You can still edit them \u2014 changes take effect after you", " ", qm(), "."]
+        })]
+      }), e(Sr, {
+        fallback: e(ur, {
+          message: "Loading\u2026",
+          dimColor: !0
+        }),
+        children: e(Lt, {
+          session: h,
+          addedInstructionFiles: k,
+          onSelect: O,
+          onCancel: P
+        })
+      }), e(gh, {
+        url: "https://code.claude.com/docs/en/memory"
+      })]
+    })
+  })
+}
+var Fi = async (h, k) => {
+  let y = lr();
+  if (y) {
+    if (!va()) return h("Memory files aren't available over this remote connection"), null;
+    return e(at, {
+      onExit: h,
+      remote: y,
+      filesRead: Ft(y, k.abortController.signal),
+      signal: k.abortController.signal,
+      userMemoryOrigin: y.sessionId !== void 0 && Bt(y.sessionId) !== void 0 ? "sentFromHere" : "inSession"
+    })
+  }
+  cR(k.session), qe.of(k.session).reset(), await pS(k.session, !1, k.storageV5, k.credentials);
+  let O = await wnt(k.session);
+  return e(tn, {
+    session: k.session,
+    addedInstructionFiles: O,
+    onDone: h
+  })
+};
+export {
+  Fi as call
+};

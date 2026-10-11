@@ -1,0 +1,396 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.283
+import "B:/~BUN/root/chunk-bvn0mpsk.js";
+import "B:/~BUN/root/chunk-ekrhn4q1.js";
+import { bBe, Bl } from "B:/~BUN/root/chunk-4rk7cwxz.js";
+import "B:/~BUN/root/chunk-dkxhwhft.js";
+import { c } from "B:/~BUN/root/chunk-kks4mj3w.js";
+import "B:/~BUN/root/chunk-bgthmgyc.js";
+import "B:/~BUN/root/chunk-17wqwt36.js";
+import "B:/~BUN/root/chunk-54p0h65d.js";
+import { Kr } from "B:/~BUN/root/chunk-1rjcv085.js";
+import { x } from "B:/~BUN/root/chunk-gf53qpk6.js";
+import "B:/~BUN/root/chunk-4p6z9qq1.js";
+import { f } from "B:/~BUN/root/chunk-zv3zxqya.js";
+import "B:/~BUN/root/chunk-6j6ra85q.js";
+import { a } from "B:/~BUN/root/chunk-nkmmqnq7.js";
+import "B:/~BUN/root/chunk-zksmb712.js";
+import { Ua, To } from "B:/~BUN/root/chunk-qe2zga5e.js";
+import "B:/~BUN/root/chunk-0fnha6bz.js";
+import { I } from "B:/~BUN/root/chunk-y04k89s2.js";
+import { It } from "B:/~BUN/root/chunk-zs3ycjed.js";
+import "B:/~BUN/root/chunk-zk6g628v.js";
+import "B:/~BUN/root/chunk-339q6g5w.js";
+import { i } from "B:/~BUN/root/chunk-728mwbhs.js";
+import "B:/~BUN/root/chunk-51n463p1.js";
+import "B:/~BUN/root/chunk-shgdrs47.js";
+import "B:/~BUN/root/chunk-5px6g0cn.js";
+import "B:/~BUN/root/chunk-py7yqpgt.js";
+import "B:/~BUN/root/chunk-e7p62566.js";
+import "B:/~BUN/root/chunk-2swveyqa.js";
+import "B:/~BUN/root/chunk-bpp59nyd.js";
+import "B:/~BUN/root/chunk-zv4xh2j0.js";
+import "B:/~BUN/root/chunk-9fcn5kmc.js";
+import "B:/~BUN/root/chunk-5w2ecytn.js";
+import "B:/~BUN/root/chunk-y72v2pst.js";
+import "B:/~BUN/root/chunk-tsjnk8ma.js";
+import { hu } from "B:/~BUN/root/chunk-snmb1kqg.js";
+import "B:/~BUN/root/chunk-dv435n4g.js";
+import "B:/~BUN/root/chunk-ht635kqk.js";
+import "B:/~BUN/root/chunk-33tn3weg.js";
+import "B:/~BUN/root/chunk-ah3egpyh.js";
+import "B:/~BUN/root/chunk-65064145.js";
+import "B:/~BUN/root/chunk-rwwxddqq.js";
+import "B:/~BUN/root/chunk-1f9marcm.js";
+import { Ye } from "B:/~BUN/root/chunk-qqgpf856.js";
+import "B:/~BUN/root/chunk-8hs4bwwk.js";
+import "B:/~BUN/root/chunk-290k5gh5.js";
+import "B:/~BUN/root/chunk-7zje4z8c.js";
+import "B:/~BUN/root/chunk-3rzkfay5.js";
+import "B:/~BUN/root/chunk-g2vddtj4.js";
+import { Ie } from "B:/~BUN/root/chunk-sd4cj2qx.js";
+import "B:/~BUN/root/chunk-nr0fnbpc.js";
+import "B:/~BUN/root/chunk-jd3kqn1r.js";
+import "B:/~BUN/root/chunk-vpejnsp4.js";
+import "B:/~BUN/root/chunk-nf4z9ga7.js";
+import { jYe } from "B:/~BUN/root/chunk-bt3h0syz.js";
+import "B:/~BUN/root/chunk-vyq5y0zs.js";
+import "B:/~BUN/root/chunk-2ppgegpr.js";
+import "B:/~BUN/root/chunk-ceg1zct0.js";
+import "B:/~BUN/root/chunk-zafy1b6k.js";
+import "B:/~BUN/root/chunk-fszjvjk0.js";
+import "B:/~BUN/root/chunk-83yxmdy5.js";
+import "B:/~BUN/root/chunk-3hn9fzjy.js";
+import "B:/~BUN/root/chunk-ejjy06g8.js";
+import "B:/~BUN/root/chunk-2d028bdz.js";
+import "B:/~BUN/root/chunk-4h4gje25.js";
+import "B:/~BUN/root/chunk-cwzv7tgb.js";
+import "B:/~BUN/root/chunk-aw2zngte.js";
+import "B:/~BUN/root/chunk-3wnb3s8p.js";
+import { bo } from "B:/~BUN/root/chunk-846280n0.js";
+import "B:/~BUN/root/chunk-dy0jx7je.js";
+import "B:/~BUN/root/chunk-fct6vke8.js";
+import "B:/~BUN/root/chunk-5kqdkjak.js";
+import "B:/~BUN/root/chunk-yehxgs7w.js";
+import "B:/~BUN/root/chunk-9xz983aj.js";
+import { P_ as name, y$r, _$r } from "B:/~BUN/root/chunk-58nsgxpm.js";
+import "B:/~BUN/root/chunk-v4qhg3t2.js";
+import "B:/~BUN/root/chunk-6spmd6p4.js";
+import { Xt } from "B:/~BUN/root/chunk-3hjtxzqy.js";
+import { Ft } from "B:/~BUN/root/chunk-msy8grqx.js";
+import "B:/~BUN/root/chunk-mrt797ke.js";
+import "B:/~BUN/root/chunk-vrhwdtwx.js";
+import "B:/~BUN/root/chunk-4py062qg.js";
+import "B:/~BUN/root/chunk-xyqb4s7p.js";
+import "B:/~BUN/root/chunk-t1afcev5.js";
+import "B:/~BUN/root/chunk-fk6j5yf3.js";
+import { Bf, bz, NE } from "B:/~BUN/root/chunk-z51p19sq.js";
+import { ks, ku, xg, Ok } from "B:/~BUN/root/chunk-d36ctpgs.js";
+import "B:/~BUN/root/chunk-zz5hnasr.js";
+import "B:/~BUN/root/chunk-rtyz5f1n.js";
+import "B:/~BUN/root/chunk-f1dj0k6n.js";
+import "B:/~BUN/root/chunk-6bn0bbdx.js";
+import "B:/~BUN/root/chunk-hfe3cbfz.js";
+import "B:/~BUN/root/chunk-hhgrczac.js";
+import "B:/~BUN/root/chunk-0y3bphdf.js";
+import "B:/~BUN/root/chunk-j14vfkmm.js";
+import "B:/~BUN/root/chunk-gj0n7q1s.js";
+import "B:/~BUN/root/chunk-pt7v2bpc.js";
+import "B:/~BUN/root/chunk-hqrtayw5.js";
+import "B:/~BUN/root/chunk-ewv6w8xv.js";
+import "B:/~BUN/root/chunk-06ra9xdn.js";
+import "B:/~BUN/root/chunk-xzpzh9gh.js";
+import "B:/~BUN/root/chunk-7zm7ax4t.js";
+import "B:/~BUN/root/chunk-6pevpnkj.js";
+import "B:/~BUN/root/chunk-dt2g8e1y.js";
+import "B:/~BUN/root/chunk-8zp66ckr.js";
+import "B:/~BUN/root/chunk-9qtz41py.js";
+import "B:/~BUN/root/chunk-n2rcpjj1.js";
+import "B:/~BUN/root/chunk-671s136j.js";
+import { Zze } from "B:/~BUN/root/chunk-qt02hgat.js";
+import { _5t, b5t, S5t, w5t } from "B:/~BUN/root/chunk-etbe3g70.js";
+import "B:/~BUN/root/chunk-q3x7vf9d.js";
+import "B:/~BUN/root/chunk-kk0ky5aa.js";
+import "B:/~BUN/root/chunk-dkswey4x.js";
+import { $Mt } from "B:/~BUN/root/chunk-q1gfnztc.js";
+import "B:/~BUN/root/chunk-10m2dkry.js";
+import "B:/~BUN/root/chunk-rve7y02j.js";
+import "B:/~BUN/root/chunk-tqj9zsrn.js";
+import "B:/~BUN/root/chunk-0b2y1gsk.js";
+import "B:/~BUN/root/chunk-aky7m4ay.js";
+import "B:/~BUN/root/chunk-5ym02gv2.js";
+import "B:/~BUN/root/chunk-gmsn86f4.js";
+import "B:/~BUN/root/chunk-gsxez0fk.js";
+import "B:/~BUN/root/chunk-73hzyafy.js";
+import "B:/~BUN/root/chunk-hecveget.js";
+import "B:/~BUN/root/chunk-erkcnv3k.js";
+import "B:/~BUN/root/chunk-sa6ew4xs.js";
+import "B:/~BUN/root/chunk-r833zsf7.js";
+import "B:/~BUN/root/chunk-w5bkq1td.js";
+import "B:/~BUN/root/chunk-t1t358ee.js";
+import "B:/~BUN/root/chunk-8j4yaj30.js";
+import { o, E, M, C, u, Qe, z, Bi } from "B:/~BUN/root/chunk-n8qdr73v.js";
+import "B:/~BUN/root/chunk-g1mh72ry.js";
+import "B:/~BUN/root/chunk-kbd7ddta.js";
+import "B:/~BUN/root/chunk-mjdkd2h9.js";
+import "B:/~BUN/root/chunk-81280fc2.js";
+import "B:/~BUN/root/chunk-0bx1tycm.js";
+import "B:/~BUN/root/chunk-tndjj29v.js";
+import "B:/~BUN/root/chunk-batgyebn.js";
+import { L } from "B:/~BUN/root/chunk-z1enakv9.js";
+var A = f(() => Qe({
+    files: Bi(t => typeof t === "string" ? [t] : t, C(o()).min(1)).describe("File paths (absolute or relative to cwd) to send to the user. Always pass an array, even for a single file."),
+    caption: o().optional().describe("Optional short caption for the file(s)."),
+    status: z(["normal", "proactive"]).describe("Use 'proactive' when you're surfacing a file the user hasn't asked for and needs to see now \u2014 a generated artifact, a completed report. Use 'normal' when replying to something the user just said."),
+    display: z(["render", "attach"]).optional().describe("How the client should present the file. 'render' opens it inline in the side panel (for HTML, SVG, Mermaid, images, PDFs \u2014 anything the user wants to look at now). 'attach' shows a download card only, no inline preview (for deliverables the user will save and open elsewhere). Omit to let the client decide by file type \u2014 today that means renderable types render and everything else attaches, same as before this parameter existed.")
+  })),
+  P = f(() => u({
+    caption: o().optional(),
+    display: z(["render", "attach"]).optional(),
+    attachments: C(u({
+      path: o(),
+      size: E(),
+      isImage: M(),
+      file_uuid: o().optional(),
+      media_type: o().optional(),
+      pathValidated: M().optional(),
+      upload_error: o().optional(),
+      project_path: o().optional(),
+      partial_error: o().optional()
+    })).describe("Resolved file metadata"),
+    rendered_locally: M().optional()
+  }));
+function j() {
+  let t = bo();
+  return t.sendUserFileDeferred ??= !w(), t.sendUserFileDeferred;
+}
+var he = Ft({
+  name: name,
+  searchHint: "deliver files (screenshots, reports, artifacts) to the user",
+  get shouldDefer() {
+    return j();
+  },
+  briefStandalone: !0,
+  backgrounding: "never",
+  maxResultSizeChars: 1e5,
+  userFacingName() {
+    return "";
+  },
+  get inputSchema() {
+    return A();
+  },
+  get outputSchema() {
+    return P();
+  },
+  isEnabled() {
+    if (Ie() !== "firstParty" || It()) return !1;
+    if (!Xt("allow_send_file")) return !1;
+    if (!x("tengu_send_user_file", !0)) return !1;
+    return (Bl() || w()) && !Zze();
+  },
+  isConcurrencySafe() {
+    return !0;
+  },
+  isReadOnly() {
+    return !0;
+  },
+  toAutoClassifierInput(t) {
+    let files = t.files,
+      s = typeof files === "string" ? files : NE(files),
+      d = typeof s === "string" ? s : s === Bf ? bz : (s ?? []).filter(item => typeof item === "string").join(", "),
+      r = typeof t.caption === "string" ? t.caption : "";
+    return r ? `${r} [${d}]` : `[${d}]`;
+  },
+  async description() {
+    return y$r;
+  },
+  async prompt() {
+    return _$r;
+  },
+  mapToolResultToToolResultBlockParam(t, tool_use_id) {
+    let s = t.attachments.filter(item => item.upload_error !== void 0),
+      d = t.attachments.filter(item => item.upload_error === void 0),
+      r = d.filter(item => item.project_path !== void 0).map(item => `  ${item.path} \u2192 ${item.project_path}`),
+      h = d.filter(item => item.file_uuid !== void 0 && item.project_path === void 0).map(item => `  ${item.path} \u2192 file_uuid: ${item.file_uuid}`),
+      m = d.filter(item => item.partial_error !== void 0).map(item => `  ${item.path}: ${item.partial_error}`),
+      e = [];
+    if (r.length > 0) e.push(`${r.length} ${I(r.length, "file")} placed in the project's shared folder (visible in its Library):
+` + r.join(`
+`) + `
+To show ${I(r.length, "it", "them")} on the thread, declare each path on your reply: attached_outputs: [{ "kind": "file", "ref": "<path above>" }].`);
+    let y = d.length - r.length;
+    if (y > 0) e.push(`${y} ${I(y, "file")} delivered to user.` + (h.length > 0 ? `
+${h.join(`
+`)}` : ""));
+    if (m.length > 0) e.push(`${m.length} ${I(m.length, "file")} reached only one of its viewers:
+` + m.join(`
+`) + `
+Tell the user which viewers missed it.`);
+    if (s.length > 0) {
+      let n = g => `${(g / 1048576).toFixed(1)} MiB`,
+        b = s.map(item => `  ${item.path} (${n(item.size)}): ${item.upload_error}`).join(`
+`);
+      if (t.rendered_locally) e.push(`${s.length} ${I(s.length, "file")} NOT delivered to Remote Control (phone/web) viewers \u2014 only visible in the desktop app on this machine:
+` + b + `
+Tell the user the ${I(s.length, "file is", "files are")} only visible in the desktop app, and why.`);else e.push(`${s.length} ${I(s.length, "file")} could NOT be delivered to the user:
+` + b + `
+Tell the user the ${I(s.length, "file was", "files were")} not delivered and why.`);
+    }
+    return {
+      tool_use_id: tool_use_id,
+      type: "tool_result",
+      content: e.join(`
+`)
+    };
+  },
+  renderToolUseMessage() {
+    return "";
+  },
+  create(t) {
+    return {
+      async validateInput({
+        files: files_2
+      }) {
+        return S5t(files_2, t.permissions());
+      },
+      async checkPermissions(updatedInput, s) {
+        let d = t.permissions(),
+          r = updatedInput.files.map(item => {
+            let fullPath = Ye(item),
+              walked = Ua(fullPath);
+            return {
+              fullPath: fullPath,
+              walked: walked,
+              pathsToCheck: walked.spellings
+            };
+          }),
+          h = Kr().projectFilesDoor?.() ?? null,
+          rule = ks(d, xg),
+          e = r.map(({
+            fullPath: p,
+            walked: walked_2
+          }) => Ok(xg, {
+            file_path: p
+          }, d, walked_2)),
+          y = e.find(item => item.behavior === "deny"),
+          n = e.find(item => item.behavior !== "allow" && item.decisionReason?.type === "rule" && item.decisionReason.rule.ruleBehavior === "ask"),
+          rule_2 = ku(d, xg),
+          g,
+          T = h != null;
+        if (rule) g = {
+          behavior: "deny",
+          message: "SendUserFile reads file contents; that action is disabled.",
+          decisionReason: {
+            type: "rule",
+            rule: rule
+          }
+        };else if (y) g = y;else if (n) g = n, T &&= d.mode !== "plan";else if (rule_2) g = {
+          behavior: "ask",
+          message: `Send ${updatedInput.files.length} ${I(updatedInput.files.length, "file")} to the user? SendUserFile reads file contents.`,
+          decisionReason: {
+            type: "rule",
+            rule: rule_2
+          }
+        }, T &&= d.mode !== "plan";else if (d.mode === "plan" && h) {
+          let p = e.find(item => item.behavior !== "allow");
+          g = {
+            behavior: "ask",
+            message: `${name} would place ${I(updatedInput.files.length, "a file", "files")} in the project's shared folder${p?.behavior === "ask" ? ` (${p.message})` : ""} \u2014 approve the plan first.`,
+            decisionReason: {
+              type: "mode",
+              mode: "plan"
+            }
+          };
+        } else g = e.find(item => item.behavior !== "allow") ?? {
+          behavior: "allow",
+          updatedInput: updatedInput
+        };
+        let writePermissionStash = t.session.writePermissionStash;
+        writePermissionStash.stash(s.toolUseId, D(updatedInput.files), [...r.flatMap(item => item.pathsToCheck), ...(T && h ? [`${S}${h.channelId}`] : [])], "read");
+        for (let {
+          fullPath: fullPath_2,
+          pathsToCheck: pathsToCheck
+        } of r) writePermissionStash.stashIdentity(s.toolUseId, fullPath_2, await $Mt(pathsToCheck));
+        return g;
+      },
+      async call({
+        files: files_3,
+        caption: caption,
+        status: status,
+        display: display
+      }, h) {
+        let lane = _5t({
+          replBridgeEnabled: t.replBridgeEnabled()
+        });
+        i("tengu_send_user_file", {
+          proactive: status === "proactive",
+          file_count: files_3.length,
+          display_set: display !== void 0,
+          display_attach: display === "attach",
+          upload_lane: c(lane)
+        });
+        let judged = O(t.session, h.toolUseId, files_3),
+          projectFilesChannel = judged.doorChannel ?? (t.permissions().mode !== "plan" ? Kr().projectFilesDoor?.()?.channelId : void 0),
+          attachments = await w5t(files_3, {
+            lane: lane,
+            signal: h.signal,
+            credentials: t.credentials,
+            judged: judged,
+            projectFilesChannel: projectFilesChannel
+          });
+        return {
+          data: {
+            caption: caption,
+            display: display,
+            attachments: attachments,
+            ...(b5t(lane) && {
+              rendered_locally: !0
+            })
+          }
+        };
+      }
+    };
+  }
+});
+function w() {
+  return !!a.CLAUDE_CODE_REMOTE_ENVIRONMENT_TYPE || a.CLAUDE_CODE_REMOTE || hu() || k();
+}
+function k() {
+  return jYe() && x("tengu_bridge_child_file_upload", !0);
+}
+function D(t) {
+  return L(t).sort().join(`
+`);
+}
+var S = "\x00project-files-door:";
+function O(t, l, s) {
+  let writePermissionStash_2 = t.writePermissionStash,
+    identities = new Map(L(s.map(item => Ye(item))).map(item => [item, writePermissionStash_2.takeIdentity(l, item)])),
+    h = writePermissionStash_2.consume(l, D(s), "read");
+  if (h === bBe) return {
+    paths: [],
+    identities: identities,
+    doorChannel: void 0
+  };
+  if (h === void 0) return {
+    paths: s.flatMap(item => To(Ye(item))),
+    identities: identities,
+    doorChannel: void 0
+  };
+  let m = h.find(item => item.startsWith(S));
+  for (let [e, y] of identities) if (y === void 0) identities.set(e, null);
+  return {
+    paths: h.filter(item => !item.startsWith(S)),
+    identities: identities,
+    doorChannel: m?.slice(S.length)
+  };
+}
+export { he as SendUserFileTool };
