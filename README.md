@@ -54,6 +54,10 @@ python tools/bunpeek.py "$EXE" off 0x5CEB420
 | ImageBase | 0x140000000 |
 | 载荷段 | `.bun` @ VA `0x145B74000`（文件偏移 `0x5951400`） |
 
+> **样本路径说明（历史记录）**：文中出现的 `C:\Users\Administrator\...` 是**原始分析机**上的路径，保留原样、仅作历史记录。
+> 本机对应位置是 `C:\Users\drago\.local\bin\claude.exe`，但那是 **v2.1.296**，与本次分析对象（**v2.1.283**）不是同一文件；
+> 复现时请把 **v2.1.283** 的 `claude.exe` 放回 `claudecode283/claude.exe`。
+
 ## 警告
 
 **不要**在 IDA 里对 245MB 的二进制跑 `db.strings.rebuild()`。

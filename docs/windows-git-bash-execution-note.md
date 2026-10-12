@@ -12,7 +12,7 @@
 它前半句说：
 
 ```text
-prefer Git Bash by E:\Git\bin\bash.exe -lc your_command
+prefer Git Bash by D:\Git\bin\bash.exe -lc your_command
 ```
 
 后半句却说：
@@ -44,7 +44,7 @@ C:\Windows\System32\bash.exe
 而真正的 Git Bash 是：
 
 ```text
-E:\Git\bin\bash.exe
+D:\Git\bin\bash.exe
 ```
 
 它不在 `bash` 这个 basename 的默认解析结果里。
@@ -59,7 +59,7 @@ E:\Git\bin\bash.exe
 exec_command(
   shell="powershell",
   login=false,
-  cmd="& 'E:\\Git\\bin\\bash.exe' -lc 'your command'"
+  cmd="& 'D:\\Git\\bin\\bash.exe' -lc 'your command'"
 )
 ```
 
@@ -68,7 +68,7 @@ exec_command(
 ```text
 shell 参数 = powershell
 login      = false
-cmd        = & 'E:\Git\bin\bash.exe' -lc '...'
+cmd        = & 'D:\Git\bin\bash.exe' -lc '...'
 ```
 
 不要写成：
@@ -86,7 +86,7 @@ shell="bash"
 理论上可以写：
 
 ```text
-shell="E:\Git\bin\bash.exe"
+shell="D:\Git\bin\bash.exe"
 login=false
 ```
 
@@ -94,7 +94,7 @@ login=false
 有的仍可能按 basename 解析。最稳的是：
 
 ```text
-shell="powershell" + cmd="& 'E:\Git\bin\bash.exe' -lc '...'"
+shell="powershell" + cmd="& 'D:\Git\bin\bash.exe' -lc '...'"
 ```
 
 ---
@@ -112,7 +112,7 @@ Git Bash 的 `-l` 是在命令内部显式传给 `bash.exe` 的，和 `exec_comm
 exec_command(
   shell="powershell",
   login=false,
-  cmd="& 'E:\\Git\\bin\\bash.exe' -lc '...'"
+  cmd="& 'D:\\Git\\bin\\bash.exe' -lc '...'"
 )
 ```
 
@@ -125,7 +125,7 @@ exec_command(
 ```text
 On Windows, prefer Git Bash via:
   exec_command with shell="powershell", login=false
-  and cmd="& 'E:\\Git\\bin\\bash.exe' -lc '<command>'"
+  and cmd="& 'D:\\Git\\bin\\bash.exe' -lc '<command>'"
 
 Do not use shell="bash" on this machine, because it may resolve to WSL.
 Use login=true only when PowerShell startup files are explicitly required.
@@ -137,4 +137,4 @@ Use login=true only when PowerShell startup files are explicitly required.
 
 - 在 Linux/macOS 语境下，`shell="bash"` 可能没问题；
 - 在本机 Windows + Git Bash 环境下，**有误导性**；
-- 正确做法是 `shell="powershell"` + 绝对路径调用 `E:\Git\bin\bash.exe`。
+- 正确做法是 `shell="powershell"` + 绝对路径调用 `D:\Git\bin\bash.exe`。

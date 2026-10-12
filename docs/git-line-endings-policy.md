@@ -1,150 +1,130 @@
-# Git 行尾策略：本机为什么总是刷 LF/CRLF 警告，以及怎么根治
+# Git 行尾策略：本仓库统一 LF
 
-本文记录本机（Windows + Git for Windows）的一个长期噪音源：**行尾（EOL）自动转换**。
-它会刷大量 `LF will be replaced by CRLF` 警告、制造「其实没改、只是行尾不同」的幽灵 diff，
-让 agent 反复去追行尾问题、浪费 token。本文给出三种处理方案，并记录最终选用的方案 C。
+本文记录本仓库（Claude Code v2.1.283 源码存档）的行尾（EOL）策略。
+结论先行：**本仓库所有文本文件统一为 LF（入库 + 检出），由仓库内 `.gitattributes` 声明，只影响本仓库。**
 
 ---
 
-## 0. 症状
+## 0. 一句话结论
 
-- `git add` 输出成千上万行：`warning: in the working copy of 'X', LF will be replaced by CRLF the next time Git touches it`
-- `git status` 里出现"改了"但 `git diff` 看不出实质变化的文件（幽灵 diff）。
-- 反复 `git add` / `checkout` 后，工作区文件行尾在 LF ↔ CRLF 之间来回变。
-- agent 看到这些就去排查、解释、重试 —— 全是白烧 token。
+- 仓库内 `.gitattributes` 写 **`* text=auto eol=lf`**（外加 `.bat`/`.cmd` 与二进制例外）。
+- 入库与检出**都用 LF**，跨平台字节一致，不再有"改一行、全文件 diff"。
+- **只影响本仓库**（以及它的 clone / CI）；不改任何全局或系统配置。
+- 系统级 `core.autocrlf=true` 保持原样，被仓库级 `eol=lf` 覆盖。
 
-## 1. 根因：三层配置里最底层的系统级开关是 `true`
+---
 
-Git 的配置是分层的（就近覆盖）：
+## 1. 症状（为什么当初要处理）
+
+- `git add` 刷大量 `warning: ... LF will be replaced by CRLF ...`。
+- `git status` / `git diff` 里出现"其实没改、只是行尾不同"的**幽灵 diff**。
+- 最恶劣的一种：一个文件整体 LF↔CRLF 翻转时，git 认为**每一行都改了** —— 全文件 diff
+  （review 看不清、`git blame` 全废、合并处处冲突、agent 反复追行尾烧 token）。
+- 实例：`AGENTS.md` 曾被提交成 CRLF，改动一行却产生 184/184 的全文件 diff。
+
+## 2. 根因
+
+Git 配置分层，最底层的系统级开关是罪魁：
 
 ```
-系统级   E:\Git\etc\gitconfig      core.autocrlf = true     ← Git for Windows 安装器默认
+系统级   D:\Git\etc\gitconfig      core.autocrlf = true     ← Git for Windows 安装器默认
 全局级   ~/.gitconfig               (未设置)
-仓库级   <repo>/.git/config         (随仓库而定)
+仓库级   <repo>/.git/config         (无覆盖)
 ```
 
 诊断命令：
 
 ```bash
 git config --show-origin --get-all core.autocrlf
-# file:E:/Git/etc/gitconfig   true      ← 真正的元凶
+# file:D:/Git/etc/gitconfig   true      ← 真正的元凶
 ```
 
-`core.autocrlf=true` 的语义是：
+`core.autocrlf=true` 的语义：提交时 CRLF→LF，检出时 LF→CRLF。
+对"真实源码存档 / 需要跨平台一致"的仓库是破坏源：改字节、刷警告、制造幽灵 diff。
 
-- **提交时**：把工作区的 CRLF 转成 LF 存进库；
-- **检出时**：把库里的 LF 转成 CRLF 写回工作区。
+## 3. 最终方案：仓库内 `.gitattributes` 统一 LF
 
-在 Windows 上这是 git 的"贴心默认"，但对本项目（**真实源码存档，要求字节保真**）是纯粹的破坏源：
-它会在入库时改字节、在检出时改字节，还会刷警告。
+文件 `D:\git_codes\claudecode283_hack\.gitattributes`（**入库，随 clone 走**）：
 
-## 2. 三种处理方案
+```gitattributes
+# 默认：所有文件按文本处理，入库与检出统一 LF
+* text=auto eol=lf
 
-| 方案 | 做法 | 影响面 | 代价 |
+# Windows 专用脚本：必须 CRLF（老式 cmd.exe 对 LF 的 goto / 多行 if 解析异常）
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制：禁止任何转换
+*.exe  binary
+*.dll  binary
+*.i64  binary
+# ...（其余二进制扩展名见文件本身）
+```
+
+要点：
+
+- **`eol=lf`**：入库 LF + 检出 LF，全平台工作区字节一致；并显式压过系统 `core.autocrlf=true`。
+- **`text=auto`**：让 git 自动判定文本/二进制；已知二进制再用 `binary`（=`-text -diff`）显式兜底。
+- **只影响本仓库**：仓库级 attributes 优先级高于全局/系统，但作用域仅限本 repo（会随 clone 传播）。
+- **例外**：`.bat`/`.cmd` 保持 CRLF；二进制永不转换。
+
+## 4. 历史：为什么放弃了旧的 `* -text` / 全局 attributes 方案
+
+早期用的是"字节保真"路线：
+
+- 仓库内 `.gitattributes` = `* -text`（对所有文件关闭 EOL 处理）；
+- 另配一份**全局** attributes `~/.config/git/attributes`（`* -text`）+ `core.attributesFile`（文档旧称"方案 C"）。
+
+放弃的原因：
+
+1. **`* -text` 放任 LF/CRLF 混杂漂移**：它只是"不转换"，并不"统一"。结果仓库里既有 LF 又有 CRLF，
+   且 CRLF 文件一旦被编辑就容易整文件 diff —— 正是 `AGENTS.md` 出问题的方式。
+2. **全局文件在本机并未落实**：本机 `core.attributesFile` 未设置、`~/.config/git/attributes` 不存在（见 §5），
+   所谓"双保险"实际只有仓库内那一层。
+3. 对**文本为主的源码仓库**，LF 统一比"字节保真"更实用：既跨平台一致，又杜绝行尾 churn。
+
+> 若将来真有某个文件必须"字节级冻结"（例如二进制 fixture），再对该路径单独写 `-text` / `binary` 即可，
+> 不必全仓退回 `* -text`。
+
+## 5. 本机实际配置（现状）
+
+| 层级 | 文件 / 配置 | 值 | 是否改动 |
 | --- | --- | --- | --- |
-| **A. 只修本仓库** | 仓库内加 `.gitattributes` 写 `* -text` + `git config core.autocrlf false` | 仅当前仓库 | 每建一个新仓库都要重做一次；本机其它仓库不受益 |
-| **B. 全局关转换** | `git config --global core.autocrlf false` | 本机所有仓库 | 想在 Windows 上保留 CRLF 的仓库（如某些 `.bat`/`.ps1` 项目）会把 CRLF 也存进库；是"隐式"行为变更 |
-| **C. 全局属性文件** | 建 `~/.config/git/attributes` 写 `* -text`，并设 `core.attributesFile` 指向它 | 本机所有仓库 | 同样是全机器级行为变更，但"声明式"、可读、一处可查、易回退 |
+| 系统 | `D:\Git\etc\gitconfig` | `core.autocrlf=true` | 保持原样 |
+| 系统 | `D:\Git\etc\gitattributes` | 仅 `diff=astextplain`（office 文档） | 不涉及行尾 |
+| 全局 | `core.attributesFile` | **未设置** | — |
+| 全局 | `~/.config/git/attributes` | **不存在** | — |
+| 仓库 | `.gitattributes` | `* text=auto eol=lf`（+ 例外） | 本次改 |
+| 仓库 | `.git/config` | 无 `core.autocrlf` 覆盖 | 不需要 |
 
-> A 与 B/C 的区别：A 是**仓库自带**的（会跟着 clone 走，保护 CI 和别人）；
-> B/C 是**本机全局**的（只保护这台机器）。两者不冲突，最终是 A + C 一起用。
+> 仓库级 `.gitattributes` 优先级高于全局/系统，因此**无需**再设 `core.autocrlf=false` 或全局 attributes。
 
-## 3. 最终选用：方案 C（并保留 A）
-
-### 为什么选 C 而不是 B
-
-- **声明式、看得见**：`* -text` 写在一个 attributes 文件里，一眼就知道这台机器"按字节保真"，
-  而不是藏在 `core.autocrlf=false` 这种需要知道语义的开关里。
-- **易回退**：删文件 / `git config --global --unset core.attributesFile` 即可，不残留。
-- **和 git 的原生机制一致**：`.gitattributes` 本来就是 git 用来声明"某类文件怎么处理"的正规手段，
-  全局 attributes 是它的标准用法。
-
-### 为什么还要保留 A（仓库内 `.gitattributes`）
-
-- 全局 attributes **只在这台机器上生效**。仓库内的 `.gitattributes` 是**入库**的，
-  会跟着 clone 到别的机器 / CI，保证**任何地方**都按字节保真。
-- 所以本仓库是 **A + C 双保险**。
-
-## 4. 实际改动清单
-
-### 4.1 全局（方案 C，本机所有仓库生效）
-
-新建文件 `C:\Users\Administrator\.config\git\attributes`（= `~/.config/git/attributes`）：
-
-```text
-# 全局 git attributes —— 本机所有仓库默认按字节保真，禁用一切 EOL 转换。
-# 背景：Git for Windows 安装器把 core.autocrlf=true 写进系统级配置，
-#       导致 git add 刷大量 LF/CRLF 警告、git status 出现幽灵 diff。
-# 规则：* -text  =  对所有文件关闭 text/EOL 处理（按字节原样进出）。
-# 生效范围：本机所有仓库（不改变任何仓库的已有内容）。
-# 关闭方式：git config --global --unset core.attributesFile，或删除本文件。
-* -text
-```
-
-并设置：
+## 6. 验证方法（可复现）
 
 ```bash
-git config --global core.attributesFile "C:/Users/Administrator/.config/git/attributes"
+# 1) 规则是否生效
+git check-attr text eol -- AGENTS.md README.md
+# 期望： text: auto / eol: lf
+git check-attr text eol -- foo.bat foo.exe
+# 期望： foo.bat -> text: set, eol: crlf ;  foo.exe -> text: unset
+
+# 2) 把工作区改动按新规则重新入库
+git add --renormalize .
+git status --short        # 只会列出真正需要改的文件
+
+# 3) 全量扫描工作区 + 暂存区是否还有 CR
+#    本机实测：10309 个跟踪文件，含 CR 的文件 = 0，结论 ALL LF
 ```
 
-> 说明：`~/.config/git/attributes` 本来就是 git 的**默认**全局 attributes 路径，
-> 但显式设置 `core.attributesFile` 更稳（不依赖 `XDG_CONFIG_HOME` / `HOME` 的取值）。
+## 7. 如何回退
 
-### 4.2 本仓库（方案 A，入库）
+只改仓库内 `.gitattributes` 即可，不影响其它仓库：
 
-文件 `D:\git_repos\claude_hack\.gitattributes`（已随 `06092d4` 提交）：
+- 回到"不转"：`* -text`
+- 回到"入库 LF、Windows 检出 CRLF"：`* text=auto`
+- 改完执行 `git add --renormalize .` 重新规范化。
 
-```text
-# 本仓库是「真实源码存档」——所有文件按字节保真，禁用任何 EOL 转换。
-# 与本地 core.autocrlf=false 配套使用。
-* -text
-```
+## 8. 一句话总结
 
-仓库本地配置 `D:\git_repos\claude_hack\.git\config`（未跟踪）：
-
-```text
-core.autocrlf=false
-core.safecrlf=false
-```
-
-### 4.3 没有改动的地方
-
-- **系统级 `E:\Git\etc\gitconfig` 保持原样**（仍是 `core.autocrlf=true`）。
-  我们只在本机用全局 attributes 覆盖它的效果，不改动系统文件。
-- 没有改动任何已有仓库的**内容**（attributes 只影响**后续**的 add/checkout 处理，不重写历史）。
-
-## 5. 验证方法（可复现）
-
-在临时仓库里放一个带 CRLF 的文件，`git add` 后看入库 blob 是否保留 `\r\n`：
-
-```bash
-T=$(mktemp -d) && cd "$T" && git init -q -b main
-printf "line1\r\nline2\r\n" > crlf.txt
-git add -A 2>warn.txt
-cat warn.txt                 # 期望：空（没有警告）
-git show :crlf.txt | od -c   # 期望：... \r \n ...  （CRLF 被原样保留）
-git check-attr text -- crlf.txt   # 期望：crlf.txt: text: unset
-```
-
-本机实测结果（2026-10-11）：
-
-- `git add` 警告字节数 = **0**
-- `crlf.txt` 入库 blob = `l i n e 1 \r \n l i n e 2 \r \n`（**CRLF 保留**）
-- `lf.txt` 入库 blob = LF 保留
-- `check-attr` = `text: unset`
-
-## 6. 如何回退
-
-```bash
-# 只关全局（本机所有仓库恢复系统默认 autocrlf=true 的行为）
-git config --global --unset core.attributesFile
-# 如需连文件一起清掉
-rm ~/.config/git/attributes
-```
-
-仓库内的 `.gitattributes` 是入库的，需要时单独处理（`git rm .gitattributes`）。
-
-## 7. 一句话总结
-
-**本机行尾噪音的根因是系统级 `core.autocrlf=true`；最终用「全局 attributes `* -text`（方案 C）+ 仓库内 `.gitattributes`（方案 A）」双保险，
-让这台机器上所有仓库都按字节保真，git 不再转换行尾、不再刷警告、不再产生幽灵 diff。**
+**本仓库用仓库内 `.gitattributes` 的 `* text=auto eol=lf` 把文本统一成 LF（`.bat`/`.cmd` 与二进制除外）；
+只影响本仓库，不动系统级 `core.autocrlf=true`，从此不再有行尾警告与幽灵 diff。**

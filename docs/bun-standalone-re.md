@@ -6,6 +6,10 @@
 - 目标样本：`C:\Users\Administrator\.local\bin\claude.exe`
 - 样本信息：244,960,928 字节，PE32+ x86-64，Claude Code **v2.1.283**
 
+> **样本路径说明（历史记录）**：文中出现的 `C:\Users\Administrator\...` 是**原始分析机**上的路径，保留原样、仅作历史记录。
+> 本机对应位置是 `C:\Users\drago\.local\bin\claude.exe`，但那是 **v2.1.296**，与本次分析对象（**v2.1.283**）不是同一文件；
+> 复现时请把 **v2.1.283** 的 `claude.exe` 放回 `claudecode283/claude.exe`。
+
 ---
 
 > **为什么源码能直接读？** 见 `why-source-is-readable.md`（Bun `--compile` 把源码当数据嵌入）。本文只讲"怎么做"。
@@ -101,7 +105,7 @@ bash 的 `dd` + `od` 能用，但取上下文还是 Python 省事。
 注意外层 PowerShell 会抢 `$`，所以用**单引号外层 + heredoc**：
 
 ```powershell
-& 'E:\Git\bin\bash.exe' -lc 'python - << "PYEOF"
+& 'D:\Git\bin\bash.exe' -lc 'python - << "PYEOF"
 import re
 d = open("C:/Users/Administrator/.local/bin/claude.exe", "rb").read()
 for m in re.finditer(rb"dynamic workflow", d, re.I):
@@ -211,7 +215,7 @@ for va in [0x145F0E020, 0x145FEE514, 0x14609AC04, 0x14E5D1D38]:
 这台机器的固定套路（详见 `windows-git-bash.md`）：
 
 ```powershell
-& 'E:\Git\bin\bash.exe' -lc '<script>'
+& 'D:\Git\bin\bash.exe' -lc '<script>'
 ```
 
 **最容易踩的坑：外层 PowerShell 会展开 `$`。**
@@ -219,17 +223,17 @@ for va in [0x145F0E020, 0x145FEE514, 0x14609AC04, 0x14E5D1D38]:
 反面教材（`$f` 被 PowerShell 吃成空串，报 `grep: : No such file`）：
 
 ```powershell
-& 'E:\Git\bin\bash.exe' -lc "f=/path; grep foo $f"     # 错
+& 'D:\Git\bin\bash.exe' -lc "f=/path; grep foo $f"     # 错
 ```
 
 正确写法，二选一：
 
 ```powershell
 # 方案 A：外层用单引号，内层只用双引号
-& 'E:\Git\bin\bash.exe' -lc 'python tools/bunpeek.py "C:/x/claude.exe" find "workflow"'
+& 'D:\Git\bin\bash.exe' -lc 'python tools/bunpeek.py "C:/x/claude.exe" find "workflow"'
 
 # 方案 B：heredoc（Python 多行脚本首选）
-& 'E:\Git\bin\bash.exe' -lc 'python - << "PYEOF"
+& 'D:\Git\bin\bash.exe' -lc 'python - << "PYEOF"
 ...任意 Python，随便用 $
 PYEOF'
 ```

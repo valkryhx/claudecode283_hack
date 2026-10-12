@@ -568,6 +568,10 @@ oa(...) 把这条消息以 mode:"task-notification"、priority:"next" 入队，�
 
 ## 10. 复现与检索
 
+> **样本路径说明（历史记录）**：文中出现的 `C:\Users\Administrator\...` 是**原始分析机**上的路径，保留原样、仅作历史记录。
+> 本机对应位置是 `C:\Users\drago\.local\bin\claude.exe`，但那是 **v2.1.296**，与本次分析对象（**v2.1.283**）不是同一文件；
+> 复现时请把 **v2.1.283** 的 `claude.exe` 放回 `claudecode283/claude.exe`。
+
     EXE="C:/Users/Administrator/.local/bin/claude.exe"
 
     # 用工具在原始二进制里检索

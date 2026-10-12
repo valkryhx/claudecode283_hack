@@ -25,16 +25,22 @@
 - 交互命令统一走 Git Bash 绝对路径，且 `exec_command` 的 `shell` 参数必须是 **`powershell`**：
 
   ```powershell
-  & 'E:\Git\bin\bash.exe' -lc '<script>'
+  & 'D:\Git\bin\bash.exe' -lc '<script>'
   ```
 
   ❌ 把 `shell` 设成 `bash` 会命中 WSL 别名，报"没有已安装的发行版"。
 - 路径映射：`D:\x` → `/d/x`。
 - Python 用 **`python`**（不是 `python3`，后者命中 WindowsApps 存根）。
-- Node 用 `/g/nodejs/node`（v25.2.1）。
+- Node 用 `/d/nodejs/node`（v22.17.0）。
 - Git Bash 的 `find -printf` 可能不可用；没有 `strings` 命令（用 `grep -a`）。
 - 写含 `$` 的文件时，用**单引号** here-string（`@'...'@`），否则 `$` 会被 PowerShell 展开。
-- **git 行尾**：系统级 `E:\Git\etc\gitconfig` 里 `core.autocrlf=true`（Git for Windows 默认），会让 `git add` 刷 LF/CRLF 警告、`git status` 出幽灵 diff。已用「全局 attributes `* -text`（`~/.config/git/attributes`）+ 仓库内 `.gitattributes`」双保险根治。**遇到行尾/CRLF 警告不要再排查，看 `docs/git-line-endings-policy.md`。**
+- **git 行尾**：系统级 `D:\Git\etc\gitconfig` 里 `core.autocrlf=true`（Git for Windows 默认），会让 `git add` 刷 LF/CRLF 警告、`git status` 出幽灵 diff。**本仓库已用仓库内 `.gitattributes`（`* text=auto eol=lf`）统一为 LF 根治**——只影响本仓库，不动系统级 `core.autocrlf=true`。**遇到行尾/CRLF 警告不要再排查，看 `docs/git-line-endings-policy.md`。**
+- **写文件一律 LF**：编辑/生成任何文本文件都直接写成 LF（`\n`），不要 CRLF。
+  - 仓库已用 `.gitattributes`（`* text=auto eol=lf`）在入库时自动规范化。**看到"整文件 diff"先怀疑行尾，一步确认即可，
+    不要展开排查、不要反复 checkout/重写** —— 那是纯 token 浪费。
+  - 程序化写文件的坑（本机实测）：**Python `open(p,"w")` 在 Windows 会把 `\n` 翻成 `\r\n`**
+    → 必须 `open(p,"w",newline="\n")`（或写二进制）；Node `fs.writeFileSync` 默认原样写，确保字符串里是 `\n`。
+  - 快速校验（期望 0）：`grep -c $'\r' <file>`
 
 ---
 
@@ -128,7 +134,7 @@ node deminify.mjs --only m0869
 | **怎么从 exe 抠出源码**（Bun 单文件逆向全流程） | `docs/bun-standalone-re.md` |
 | **为什么源码能直接读**（Bun `--compile` 原理） | `docs/why-source-is-readable.md` |
 | **Windows 上 Git Bash 怎么正确调用**（`shell="bash"` 为什么可能命中 WSL） | `docs/windows-git-bash-execution-note.md` |
-| **Git 行尾策略**（为什么总刷 LF/CRLF 警告 / 三种方案 / 最终选 C + A 双保险） | `docs/git-line-endings-policy.md` |
+| **Git 行尾策略**（为什么总刷 LF/CRLF 警告 / 本仓库统一 LF 的做法与验证） | `docs/git-line-endings-policy.md` |
 | **自动去混淆怎么做**（四级证据 / 五条安全规则 / 怎么扩展） | `reconstructed/AUTO-NAMING.md` ★ |
 | **人工命名怎么做**（SOP / 范例 / 反模式） | `reconstructed/NAMING-METHOD.md` |
 | **workflow 子系统有哪些符号** | `reconstructed/GLOSSARY.md` |
@@ -183,7 +189,7 @@ node deminify.mjs --only m0869
 
 ## 9. 禁忌清单
 
-- ❌ 不要用 `shell="bash"`（WSL 别名）。用 `shell="powershell"` + `& 'E:\Git\bin\bash.exe' -lc ...`。
+- ❌ 不要用 `shell="bash"`（WSL 别名）。用 `shell="powershell"` + `& 'D:\Git\bin\bash.exe' -lc ...`。
 - ❌ 不要在 IDA 里对 245MB 的 exe 跑 `db.strings.rebuild()`（会卡死 GUI 20 分钟，见主文档 §2）。
 - ❌ 不要删减 / 取舍源码（铁律 §0）。
 - ❌ 不要覆盖前一阶段目录；新阶段开新目录。
