@@ -511,11 +511,142 @@ oa(...) 把这条消息以 mode:"task-notification"、priority:"next" 入队，�
 
 ### 8.6 输出快照与 /workflows
 
-- uO(runId)（m0571 @1082）：<projectsDir>/<sessionId>/subagents/workflows/<runId> 。
-- G7r()（m0571 @1280）：把 {runId, timestamp, result, agentCount, logs, workflowProgress, totalTokens, totalToolCalls, status, ...} 写成 transcriptDir/runId.json 快照。
-- psr()（m0571 @2416）：读回快照，供 /workflows 列表展示。
+- uO(runId)（m0571 @1082）：`<projectsDir>/<sessionId>/subagents/workflows/<runId>` —— **agent 转录目录**（每 agent 一个 `agent-<id>.jsonl`）。
+- G7r()（m0571 @1280）：把 {runId, timestamp, result, agentCount, logs, workflowProgress, totalTokens, totalToolCalls, status, ...} 写成 `<…>/workflows/<runId>.json` 快照（快照目录 = `m()` = `<projectsDir>/<sessionId>/workflows/`，与转录目录不同）。
+- psr()（m0571 @2422）：读回全部 `.json` 快照，按 `startTime` 倒序，供 /workflows 列表展示（详见 §9）。
 
-## 9. 源码索引总表
+## 9. UI 与交互（/workflows / 详情 / 再跑历史）
+
+> 本节回答：**执行时用户看得到什么、能做什么、历史 workflow 怎么再跑**。
+> 源码集中在 6 个 UI 模块 + 1 个任务注册表模块。云端会话相关（remote_launched）一律标注为不复刻。
+
+| 模块 | 角色 |
+| --- | --- |
+| m1075_0xd34f8d5.js | `/workflows` 斜杠命令定义 |
+| m1906_0xe19cc02.js | `/workflows` 历史列表对话框（workflow-history-dialog） |
+| m1460_0xd973957.js | workflow 详情对话框（workflow-detail-dialog）+ agent 转录按需读盘 |
+| m1456_0xd96e09a.js | 进度树折叠 helpers（workflowProgress → phases/agents/logs） |
+| m2000_0xe395211.js | 状态行（Running / Completed / Failed / Stopped + /workflows 提示） |
+| m1478_0xd9951de.js | 后台任务对话框 / 大规模告警 / 跨会话 adopt |
+| m0567_0xcdd6311.js | 任务注册表操作（kill / pause / skip / retry / resume） |
+
+### 9.1 /workflows 命令（m1075）
+
+整个模块只有一个对象：
+
+```js
+{ type:"local-jsx", name:"workflows", aliases:[], description:"Browse running and completed workflows",
+  isEnabled: () => Qp(), immediate:true }     // Qp() = workflow feature gate（§2.2）
+```
+
+### 9.2 状态行（m2000 @~10379）
+
+| 任务状态 | 文案 |
+| --- | --- |
+| local_workflow 运行中 | `Running in background · /workflows to monitor and save · <规模提示>` |
+| 结束（completed） | `✓ Completed in <dur> · N agents · X tokens` |
+| 结束（failed / killed） | `✗ Failed …` / `✗ Stopped …` |
+| remote_launched（云端） | `Running in cloud session · <url>` ——【复刻时暂时不需要参考 claudecode 云端会话的实现】 |
+| 其它 | `/workflows to view dynamic workflow runs` |
+
+- 大规模告警（m1478 @~379000）：`⚠ Large workflow · /workflows to stop`，埋点 `tengu_workflow_size_warning_shown`。
+- ultracode banner（m1478 @774934）：`Dynamic workflow requested for this turn · <key> to ignore`。
+
+### 9.3 /workflows 历史列表（m1906 @17350）
+
+注册名 `vi("workflow-history-dialog")`，标题 "Dynamic workflows"，副标题 `{N} running {M} completed`，
+空态 `No dynamic workflows in this session.`，加载态 `Loading dynamic workflow history…`。
+
+数据源 = **内存 + 磁盘合并**：
+
+- 磁盘：`psr(storageV5)` 读 `<projectsDir>/<sessionId>/workflows/<runId>.json` 快照（§8.6），按 `startTime` 倒序；
+- 内存：`appState.tasks` 里 `type==="local_workflow"` 的实时任务（带实时 workflowProgress）；
+- 去重键 runId，**live 优先**（正在跑的显示实时进度而非最后落盘快照）；只有一个 run 时自动进详情。
+
+键位：`↑/↓` select、`enter` view、`x` stop（仅 running）、`s` 另存（script 非空）、`escape` close。
+状态图标 `Bt` 映射：pending / running / paused / completed / failed / killed。
+
+### 9.4 详情视图（m1460 @38333 w1e）
+
+三层 scope `phases → agents → agent`，`tab` 切换。进度树数据来自 `_Sn()`（m1456 @1960）：
+
+```js
+_Sn(workflowProgress[]) -> { agents:[...], logs:[...], phaseTitles:Map }
+```
+
+三种进度事件就是 UI 的全部输入：workflow_phase / workflow_agent / workflow_log。
+
+agent 派生状态 `Dt()`（m1460 @17626）：`done→"done"`；`error→skipped?blocked?failed`；run 结束→`"interrupted"`；否则 `queued`/`running`。
+状态过滤：`["all","running","queued","failed","done","skipped","blocked","interrupted"]`。
+
+**agent 转录按需读盘**（`bo()` m1460 @3233）：选中某 agent 才读 `<transcriptDir>/agent-<id>.jsonl`
+（`uO(runId)` = `<…>/subagents/workflows/<runId>`）→ `{prompt,toolCalls,finalText,tasks}`；
+由 `Br()`（m1460 @28884）节流 + 缓存。详情视图**不会**把所有 agent 的对话塞进内存。
+
+键位：`j/k` 移动、`enter/→` 下钻、`←` 返回、`x`（agent 层跳过 / phases 层停整个 run）、
+`r` 重试该 agent、`p` 暂停/恢复、`f` 状态过滤、`s` 另存、`space` 返回、`escape` cancel。
+
+### 9.5 控制操作的真实实现（m0567 任务注册表）
+
+| 符号 | 偏移 | 作用 |
+| --- | --- | --- |
+| QK() | 5061 | kill → killed + `v2Run.kill(reason)` |
+| npe() | 4676 | pause → paused + `v2Run.kill("pause")` |
+| U() | 5365 | 中止 agent controller（`DOMException(reason,"AbortError")`） |
+| L() | 3521 | 终态 + `evictAfter` |
+| PWe() / IWe() | 5659 / 5707 | `U(...,"user-skip")` / `U(...,"user-retry")` |
+| CTn() | 4818 | 恢复指令文本 |
+| msr() | 1985 | 跨会话 adopt → paused 任务 |
+
+**恢复的本质是"给模型下一条指令"**（CTn @4818）：
+
+```js
+function CTn(snapshot){
+  let s = snapshot.args!==undefined ? `, args: ${json(snapshot.args)}` : "";
+  return `Resume the paused workflow by calling: Workflow({scriptPath: '${snapshot.scriptPath}', ` +
+         `resumeFromRunId: '${snapshot.workflowRunId}'${s}}) — completed agents return cached results.`;
+}
+// UI 侧 onResume(msg) => submitMessage(msg, {shouldQuery:true, display:"system", metaMessages:[msg]})
+```
+
+即：UI 的"恢复"**并不直接跑脚本**，而是把这句话作为一条**用户消息**塞进主循环，
+由模型去调 `Workflow({scriptPath, resumeFromRunId})`，再走 §7.4 的缓存命中。
+
+### 9.6 "再次执行历史 workflow"的四条路径
+
+| 路径 | 触发 | 实际发生什么 |
+| --- | --- | --- |
+| ① 暂停后恢复 | 详情按 `p` | 注入 CTn 文本 → 模型调 `Workflow({scriptPath,resumeFromRunId,args})` → 未变 agent 全走缓存 |
+| ② 另存为命名 workflow | 列表/详情按 `s` | 打开保存对话框（默认名 = meta.name 或 summary slug），重名提示 " already exists. Press Enter again to overwrite…"；之后 `Workflow({name,args})` 再跑 |
+| ③ 失败/被杀后按通知恢复 | 不需要 UI | task-notification 的 `<recovery>` 已写好 `Workflow({scriptPath,resumeFromRunId,args})`（§8.3） |
+| ④ 工具侧 runId 运行操作 | — | **本 build 不存在**（见下） |
+
+**路径 ④**：`m1569 @55937 he()` 的实现是 `function he(){ return }`（恒 undefined）—— 没有任何 run-op provider 被注入。
+后果三处：
+
+1. validateInput：`if(typeof input.runId==="string"){ let k=he(); if(!k) return {result:false, message:"runId is not a field of this tool here.", errorCode:9} }`
+2. call()：同样抛 `new WorkflowError("runId is not a field of this tool here.")`
+3. inputSchema 的 status 枚举：`["async_launched","remote_launched", ...(he()?[he().RUN_OP_STATUS]:[])]` —— provider 不存在时连枚举值都不出现。
+
+所以 **"用 `Workflow({runId,...})` 去 stop/resume/delete 一个已有 run"这条工具层接口在 v2.1.283 不存在**；
+UI 的 stop / pause / skip / retry 走的是**任务注册表**（§9.5），不是这个接口。
+
+### 9.7 /tasks 与跨会话 adopt
+
+- `/tasks`（别名 `bashes`）："View and manage everything running in the background"（m0357），
+  对话框 `background-tasks-dialog`（m1478），`local_workflow` 由 `Df()` 筛出（运行中 + 未被驱逐的终态），
+  按 `startTime` **升序**（与 /workflows 倒序相反）；
+- 跨会话 adopt：会话恢复时把上次会话遗留的 workflow 重新登记为 paused 任务
+  （`msr()` m0567 @1985：`status:"paused"`, `script:""`, 保留 `scriptPath`/`workflowRunId`），
+  并校验 scriptPath、硬链接 agent 转录、`resumeAdoptedAgents`/`resumeOrphanedAgents`（m1478 / m0572）。
+
+### 9.8 复刻建议（最小可观测性）
+
+- **必须**：状态行提示 + 一个运行历史视图（数据源就是 §8.6 的 `runId.json` 快照）+ 一个详情视图（把 `workflowProgress[]` 按 `phaseIndex` 分组渲染成树）；
+- **可省**：云端会话状态行（`remote_launched`）、跨会话 adopt 的硬链接/孤儿恢复、大规模告警（都非核心；云端部分见 §5.1.1 的说明）；
+- **不做 TUI 时**：落盘 `runId.json` + 暴露只读的"列出 runs / 读某 run 进度"接口，再照抄 §8.4 的 `task-notification` 文本，即可拿到原版 ~80% 的可观测性。
+
+## 10. 源码索引总表
 
 | 模块 | 偏移 | 符号 | 作用 |
 | --- | --- | --- | --- |
@@ -557,16 +688,31 @@ oa(...) 把这条消息以 mode:"task-notification"、priority:"next" 入队，�
 | | 5824 | RTn() | enqueueWorkflowNotification |
 | m0352_0xc63a7b9.js | 697 / 885 | BV() / qi() | 通知去重 / XML 组装 |
 | m0025_0xbf5baa8.js | 9014 | tag 常量 | task-notification 等 |
-| m0571_0xcddb07e.js | 1082 / 1280 / 2416 | uO / G7r / psr | 转录目录 / 快照写 / 快照读 |
+| m0571_0xcddb07e.js | 1082 / 1280 / 2422 | uO / G7r / psr | 转录目录 `<…>/subagents/workflows/<runId>` / 快照写 / 快照读（快照落 `<…>/workflows/<runId>.json`） |
 | m0227_0xc482590.js | 23937 | r3e() | JSON Schema lint |
 | | 22565 | bi="StructuredOutput" | 结构化输出工具名 |
 | m0247_0xc49fe84.js | 371494 / 372355 | lh / kKe | ultracode 关键词匹配 |
 | m0153_0xc2a414f.js | 1985-2247 | acn / Qp / rMr | feature gate |
 | m1478_0xd9951de.js | 774934 | banner | UI 提示 / 忽略恢复 |
 | m0855_0xd10e439.js | 1676 | Wor() | /effort ultracode |
+| m1075_0xd34f8d5.js | — | default | `/workflows` 斜杠命令（local-jsx, isEnabled:Qp()） |
+| m1906_0xe19cc02.js | 17350 | workflow-history-dialog | 运行历史列表：内存+磁盘合并、startTime 倒序、s 另存、x stop |
+| m1456_0xd96e09a.js | 1960 | _Sn() | workflowProgress[] → {agents, logs, phaseTitles} |
+| m1460_0xd973957.js | 3233 | bo() | 读 `<transcriptDir>/agent-<id>.jsonl` → {prompt,toolCalls,finalText,tasks} |
+| | 17626 | Dt() | agent 派生状态（done/skipped/blocked/failed/interrupted/queued/running） |
+| | 28884 | Br() | agent 转录按需读的节流 + 缓存 hook |
+| | 38333 / 38485 | w1e() / dialog | workflow 详情对话框（进度树 + j/k/enter/x/r/p/f/s 键位） |
+| m2000_0xe395211.js | 10379 | 状态行 | Running in background · /workflows … / ✓ Completed … / ✗ Failed / ✗ Stopped |
+| m0567_0xcdd6311.js | 3521 | L() | agent 终态 + evictAfter |
+| | 4676 / 5061 | npe() / QK() | pause→paused / kill→killed（v2Run.kill） |
+| | 5365 | U() | 中止 agent controller（AbortError） |
+| | 5659 / 5707 | PWe() / IWe() | 用户跳过 / 重试 agent（user-skip / user-retry） |
+| | 4818 | CTn() | 恢复指令文本 → UI onResume 注入用户消息 |
+| | 1985 | msr() | 跨会话 adopt → paused 任务 |
+| m1569_0xdceb889.js | 55937 | he() | run-op provider 取用点（恒 undefined → runId 运行操作关闭，§9.6） |
 | m1996_0xe38e78b.js | — | export{...} | 通知 API 友好名再导出 |
 
-## 10. 复现与检索
+## 11. 复现与检索
 
 > **样本路径说明（历史记录）**：文中出现的 `C:\Users\Administrator\...` 是**原始分析机**上的路径，保留原样、仅作历史记录。
 > 本机对应位置是 `C:\Users\drago\.local\bin\claude.exe`，但那是 **v2.1.296**，与本次分析对象（**v2.1.283**）不是同一文件；
@@ -581,7 +727,7 @@ oa(...) 把这条消息以 mode:"task-notification"、priority:"next" 入队，�
     # 或直接用已抽出的模块
     grep -n "function Io(" claudecode283/modules/m0869_0xd12567a.js
 
-## 11. 一句话总结
+## 12. 一句话总结
 
 - **触发**：prompt 关键词 / 会话开关 → feature gate → system-reminder + banner 告诉模型“本轮可调 Workflow”。
 - **稳定生成 DSL**：脚本必须 export const meta = {纯字面量} 开头；acorn 解析 + 纯字面量求值 + 确定性静态检查（禁 Date.now/Math.random/new Date）三重闸门，保证“同脚本 + 同 args → 同调用序列”。

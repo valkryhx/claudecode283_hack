@@ -41,6 +41,7 @@
   - 程序化写文件的坑（本机实测）：**Python `open(p,"w")` 在 Windows 会把 `\n` 翻成 `\r\n`**
     → 必须 `open(p,"w",newline="\n")`（或写二进制）；Node `fs.writeFileSync` 默认原样写，确保字符串里是 `\n`。
   - 快速校验（期望 0）：`grep -c $'\r' <file>`
+- **md / 文档命名**：新建 markdown 及文档时，文件名一律用 `日期-名字` 格式（日期 `YYYYMMDD`），例如 `docs/20261012-研究workflow.md`；不要用无日期的裸名字。
 
 ---
 
@@ -139,7 +140,7 @@ node deminify.mjs --only m0869
 | **人工命名怎么做**（SOP / 范例 / 反模式） | `reconstructed/NAMING-METHOD.md` |
 | **workflow 子系统有哪些符号** | `reconstructed/GLOSSARY.md` |
 | **产物线 / 目录 / 正确性保证** | `reconstructed/README.md` |
-| **dynamic workflow 实现剖析**（逐条源码坐标） | `claudecode283/extracted/dynamic-workflow-internals.md` |
+| **dynamic workflow 实现剖析**（逐条源码坐标；含 §9 执行期 UI/交互：`/workflows` 列表、详情进度树、再跑历史） | `claudecode283/extracted/dynamic-workflow-internals.md` |
 | **rewind / 检查点实现剖析**（逐条源码坐标） | `claudecode283/extracted/rewind-internals.md` |
 | **Agent Team / teammate / swarm 实现剖析**（逐条源码坐标） | `claudecode283/extracted/agent-team-internals.md` |
 | **hooks 机制实现剖析**（5 种类型 / 33 事件 / 输入输出 schema / 执行链路 / 安全门禁 / 自研复刻清单） | `claudecode283/extracted/hooks-internals.md` |
@@ -147,6 +148,7 @@ node deminify.mjs --only m0869
 | **Agent Team 可读化副本**（spawnTeammate / Agent 工具 / InProcessTeammateTask） | `reconstructed/deminified-agent-team/` + `extracted/agent-team-internals.md` §10 |
 | **hooks 可读化副本**（执行引擎 / 输入输出 schema / 来源 / 事件分类，204 个符号改真名） | `reconstructed/deminified-hooks/` + `extracted/hooks-internals.md` |
 | **Workflow 工具描述 / DSL 参考** | `claudecode283/extracted/workflow-{tool-description,authoring-reference}.md` |
+| **Dynamic Workflow 复刻指南**（面向自研 Agent / Codex 开发者的实现蓝图 + 逐 API 源码核对 + 坑清单 + §9 执行期 UI/交互与“再跑历史 workflow”） | `docs/20261012-复刻dynamic-workflow指南.md` |
 
 **命名方法一句话**：Bun `--compile` 是 minify 不是混淆，只压标识符，
 **字符串 / 属性名 / 解构键 / 对象键一律保留**——所有真名只能从这四类保留物里读出来。

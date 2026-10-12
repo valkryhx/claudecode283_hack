@@ -9,7 +9,7 @@
 | --- | --- |
 | `workflow-tool-description.md` | **Workflow 工具的描述**（喂给模型的 tool prompt），3,018 字符 |
 | `workflow-authoring-reference.md` | **Workflow 编写参考**（完整 DSL 文档），17,018 字符 |
-| `dynamic-workflow-internals.md` | **实现剖析**：从触发到通知的全链路，逐条附源码坐标（模块+偏移） |
+| `dynamic-workflow-internals.md` | **实现剖析**：从触发到通知的全链路，逐条附源码坐标（模块+偏移）；含 §9 执行期 UI/交互（`/workflows` 列表、详情进度树、再跑历史 workflow） |
 | `rewind-internals.md` | **实现剖析（rewind / 检查点）**：文件检查点 + 会话回滚全链路，逐条附源码坐标；含 §13 命名方法与证据分级 |
 | `agent-team-internals.md` | **实现剖析（Agent Team / teammate / swarm）**：`Agent` 工具、`spawnTeammate`、三后端、任务板与团队文件，逐条附源码坐标；含 §10 专项可读化副本 |
 | `hooks-internals.md` | **实现剖析（hooks 机制）**：5 种 hook 类型、33 个事件、输入/输出 schema、spawn 执行链路、异步注册表、来源与安全门禁，逐条附源码坐标；含 §12 命名方法与证据分级、§14 自研复刻清单、§15 专项可读化副本（`reconstructed/deminified-hooks/`） |
@@ -33,10 +33,15 @@
 | `m0862_0xd11f1fb.js` | 7,946 B | **脚本解析器** `Fy()`：acorn 解析 + 强制 `meta` 是第一条语句 |
 | `m1994_0xe384791.js` | 26,330 B | 权限对话框 UI（"will spin up multiple subagents across the following phases"） |
 | `m1372_0xd781293.js` | 495,188 B | launch 状态机（`createWorkflowLaunchState` / `resumeWorkflowLaunch`） |
-| `m1460_0xd973957.js` | 45,033 B | 保存 / 采纳（`readWorkflowAgentTranscript`、`tengu_workflow_saved`） |
+| `m1460_0xd973957.js` | 45,033 B | **workflow 详情对话框**（进度树 + 按需读 `agent-<id>.jsonl`）+ 保存 / 采纳（`readWorkflowAgentTranscript`、`tengu_workflow_saved`） |
 | `m0567_0xcdd6311.js` | 8,719 B | task 类型定义（`task_local_workflow_*`） |
 | `m0868_0xd1234ad.js` | 8,653 B | 从 `.claude/workflows/` 加载（`loadWorkflowsDir`） |
 | `m0573_0xcde50bc.js` | 9,976 B | adopted workflow 相关 |
+| `m1075_0xd34f8d5.js` | 13,406 B | **`/workflows` 斜杠命令**定义（local-jsx，`isEnabled:Qp()`） |
+| `m1906_0xe19cc02.js` | 23,671 B | **`/workflows` 历史列表对话框**（内存+磁盘合并、startTime 倒序、s 另存、x stop） |
+| `m1456_0xd96e09a.js` | 16,579 B | 进度树折叠 helpers（`workflowProgress[]` → agents/logs/phaseTitles） |
+| `m2000_0xe395211.js` | 11,308 B | **状态行**（Running in background / ✓ Completed / ✗ Failed / ✗ Stopped + `/workflows` 提示） |
+| `m1478_0xd9951de.js` | 1,566,713 B | 后台任务对话框 / 大规模告警 / 跨会话 adopt |
 
 ## 脚本格式
 
