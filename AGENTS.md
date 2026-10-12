@@ -36,6 +36,7 @@
     & 'D:\Git\bin\bash.exe' -lc '<script>'
     ```
 - 路径映射：`D:\x` → `/d/x`。
+- **路径格式不可混用**：Git Bash 内用 POSIX 路径（`/d/...` 或相对路径）；Windows 程序（`python` / `node`）**不认** `/d/...`，要传原生路径（`D:\...` 或 `D:/...`）。同一条命令里不要混用两种。
 - Python 用 **`python`**（不是 `python3`，后者命中 WindowsApps 存根）。
 - Node 用 `/d/nodejs/node`（v22.17.0）。
 - Git Bash 的 `find -printf` 可能不可用；没有 `strings` 命令（用 `grep -a`）。

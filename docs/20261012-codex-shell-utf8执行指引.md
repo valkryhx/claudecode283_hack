@@ -107,6 +107,7 @@ export LC_ALL=C.UTF-8
 | 6 | `rm -f` / 递归删除被拒 | 安全规则 | 用 Python `os.remove()` 删单个文件；不递归删 |
 | 7 | `python3` 命中 WindowsApps 存根 | PATH | 用 `python` |
 | 8 | bash 写 `/tmp/x`，`python` 读不到 | Git Bash 的 `/tmp` 与 Windows 版 `python` 不互通 | 用工作区内 Windows 路径 |
+| 9 | bash 传 `/d/...` 给 `python`，找不到文件 | Windows 版 `python`/`node` 不认 POSIX 路径 | 给 Windows 程序传 `D:\...` 或 `D:/...` |
 
 ---
 
@@ -121,6 +122,7 @@ export LC_ALL=C.UTF-8
 7. **反斜杠路径**：不要放进会被转义解析的字符串层；用原始字符串或 `chr(92)` 构造。
 8. **删除**：绝不 `rm -rf`/递归删除；单文件用 Python `os.remove()`，且不删工作目录之外。
 9. **escalation 只读/窄范围**，不用于绕过安全规则。
+10. **路径格式不可混用**：Git Bash 内用 POSIX 路径（`/d/...` 或相对路径）；Windows 程序（`python` / `node`）**不认** `/d/...`，要传原生路径（`D:\...` 或 `D:/...`）。
 
 ---
 
