@@ -22,13 +22,19 @@
 
 ## 1. 环境铁律（Windows / Git Bash）
 
-- 交互命令统一走 Git Bash 绝对路径，且 `exec_command` 的 `shell` 参数必须是 **`powershell`**：
+- **交互命令统一走 Git Bash**。`exec_command` 的默认 shell 是 **PowerShell**，所以每次调用必须**显式**传 `shell="bash"` 与 `login=false`：
 
-  ```powershell
-  & 'D:\Git\bin\bash.exe' -lc '<script>'
+  ```text
+  exec_command(cmd="<bash script>", shell="bash", login=false, workdir=...)
   ```
 
-  ❌ 把 `shell` 设成 `bash` 会命中 WSL 别名，报"没有已安装的发行版"。
+  - ✅ 本机实测：`shell="bash"` 命中 **Git Bash**（`0=/usr/bin/bash`、`BASH_VERSION=5.2.37`、`MINGW64`），并**自动注入** `LANG=C.UTF-8` / `LC_ALL=C.UTF-8`；不会命中 WSL。
+  - ❗ 不显式传参时走的是 **PowerShell**（`PSVersion=...`）——这就是之前“嘴上说 Git Bash、实际跑 PowerShell”、以致中文与 heredoc 报错的根因。**不要依赖默认值，也不要只“声称”在 Git Bash。**
+  - 🛡 兼容兜底（当某环境下 `shell="bash"` 真的命中 WSL 别名时）：用 PowerShell 包装器调**绝对路径** Git Bash。该方式实测同样可用，不依赖 PATH，最确定：
+
+    ```powershell
+    & 'D:\Git\bin\bash.exe' -lc '<script>'
+    ```
 - 路径映射：`D:\x` → `/d/x`。
 - Python 用 **`python`**（不是 `python3`，后者命中 WindowsApps 存根）。
 - Node 用 `/d/nodejs/node`（v22.17.0）。
@@ -134,7 +140,7 @@ node deminify.mjs --only m0869
 | --- | --- |
 | **怎么从 exe 抠出源码**（Bun 单文件逆向全流程） | `docs/bun-standalone-re.md` |
 | **为什么源码能直接读**（Bun `--compile` 原理） | `docs/why-source-is-readable.md` |
-| **Windows 上 Git Bash 怎么正确调用**（`shell="bash"` 为什么可能命中 WSL） | `docs/windows-git-bash-execution-note.md` |
+| **Windows 上 Git Bash / 中文 UTF-8 怎么正确调用**（实测结论、兜底方案、编码坑） | `docs/20261012-codex-shell-utf8执行指引.md` + `docs/windows-git-bash-execution-note.md` |
 | **Git 行尾策略**（为什么总刷 LF/CRLF 警告 / 本仓库统一 LF 的做法与验证） | `docs/git-line-endings-policy.md` |
 | **自动去混淆怎么做**（四级证据 / 五条安全规则 / 怎么扩展） | `reconstructed/AUTO-NAMING.md` ★ |
 | **人工命名怎么做**（SOP / 范例 / 反模式） | `reconstructed/NAMING-METHOD.md` |
@@ -191,7 +197,11 @@ node deminify.mjs --only m0869
 
 ## 9. 禁忌清单
 
-- ❌ 不要用 `shell="bash"`（WSL 别名）。用 `shell="powershell"` + `& 'D:\Git\bin\bash.exe' -lc ...`。
+- ❌ 不要依赖默认 shell（它是 PowerShell）；每次显式传 `shell="bash"`。不要只“声称”在 Git Bash 而不传参。
+- ❌ 中文内容不要经 `python -c` 参数或 shell 变量往返（会损坏编码）；用单引号 heredoc 直写文件（`cat > file << 'EOF'`）。
+- ❌ 中文正确性**看字节不看终端回显**：`open(p,"rb").read().decode("utf-8")` 不报错即合法；输出中文用 `sys.stdout.buffer.write(...encode("utf-8"))`。控制台代码页 GBK 会误导。
+- ❌ 跨 bash/python 传文件时不要用 `/tmp`：Git Bash 的 `/tmp` 与 Windows 版 `python` 不互通（`FileNotFoundError`）；用工作区内 Windows 路径。
+- ❌ 单文件删除用 Python `os.remove()`，不用 `rm -f`；绝不递归删除。
 - ❌ 不要在 IDA 里对 245MB 的 exe 跑 `db.strings.rebuild()`（会卡死 GUI 20 分钟，见主文档 §2）。
 - ❌ 不要删减 / 取舍源码（铁律 §0）。
 - ❌ 不要覆盖前一阶段目录；新阶段开新目录。
