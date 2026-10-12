@@ -200,6 +200,7 @@ node deminify.mjs --only m0869
 
 - ❌ 不要依赖默认 shell（它是 PowerShell）；每次显式传 `shell="bash"`。不要只“声称”在 Git Bash 而不传参。
 - ❌ 中文内容不要经 `python -c` 参数或 shell 变量往返（会损坏编码）；用单引号 heredoc 直写文件（`cat > file << 'EOF'`）。
+- ❌ 反斜杠会被吃：内容**直写文件**（`cat > f << 'EOF'`）安全；但内容若**穿过 Python 字符串字面量 / 嵌套 shell 层**（如 `python - << 'EOF'` 里写 `"D:\Git\bin"`），`\b`/`\a`/`\G` 会被当转义吃掉。此时用 raw string 或 `chr(92)` 构造，源码里不出现字面反斜杠。
 - ❌ 中文正确性**看字节不看终端回显**：`open(p,"rb").read().decode("utf-8")` 不报错即合法；输出中文用 `sys.stdout.buffer.write(...encode("utf-8"))`。控制台代码页 GBK 会误导。
 - ❌ 跨 bash/python 传文件时不要用 `/tmp`：Git Bash 的 `/tmp` 与 Windows 版 `python` 不互通（`FileNotFoundError`）；用工作区内 Windows 路径。
 - ❌ 单文件删除用 Python `os.remove()`，不用 `rm -f`；绝不递归删除。

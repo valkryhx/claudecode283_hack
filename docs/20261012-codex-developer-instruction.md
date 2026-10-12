@@ -28,9 +28,11 @@ Do not round-trip Chinese through `python -c` command arguments or shell variabl
 read the file as rb and decode("utf-8"); write verification output via sys.stdout.buffer
 with UTF-8.
 
-Never place a Windows backslash path inside a Python string literal that is not raw:
-\b, \a, \G are parsed as escapes and silently corrupt the path. Build such paths with
-raw strings (r"...") or chr(92).
+Backslashes are lost only when content passes through a Python string literal or a
+nested shell layer, not when a heredoc writes straight to a file. Writing a path via
+`cat > f << 'EOF'` is safe, but a path built inside Python (e.g. "D:\Git\bin" in a
+`python - << 'EOF'` script) is corrupted: \b, \a, \G are read as escapes. For such
+cases use a raw string (r"...") or build with chr(92) so no literal backslash appears.
 
 NEVER run rm -rf or any recursive deletion. Delete single files with Python os.remove().
 
