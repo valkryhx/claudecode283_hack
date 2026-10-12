@@ -193,3 +193,29 @@ MINGW64_NT-10.0-26200
    - 或完全用 `chr(92)` 构造：`"D:" + chr(92) + "Git" + chr(92) + "bin"`；
    - 逐行匹配替换时，把目标行也用同样方式拼出来，避免 `\b` / `\a` / `\G` 命中。
 3. **不要**把含反斜杠的内容塞进 `python -c "<code>"` 或未加引号的 shell 变量里再落地。
+
+---
+
+## 8. 放进 config.toml：用 TOML 字面字符串，别用 `"""`
+
+把本指引写进 Codex 的 `~/.codex/config.toml` 时，**不要用 TOML 多行基本字符串 `"""..."""`**：
+
+```toml
+# ❌ 会报错：TOML parse error ... invalid escape sequence
+developer_instructions = """
+... D:\... ...   # 这里的 \ 被 TOML 当转义
+"""
+```
+
+原因：TOML 的 `"""` 是**基本字符串**，其中 `\` 是转义符；`D:\...` 的 `\...` 不是合法转义，报
+`invalid escape sequence expected 'b','f','n','r','t','u','U','\','"'`。
+
+**正确写法**：用 TOML 多行**字面**字符串 `'''...'''`，其中所有 `\` 都是字面量：
+
+```toml
+developer_instructions = '''
+... D:\... ...   # 反斜杠原样保留，无需转义
+'''
+```
+
+规则：内容里含 `\`（Windows 路径、`\n` 示例等）时，**TOML 一律用 `'''`**；含 `'''` 或需要转义时才用 `"""` 并手动把 `\` 写成 `\`。
