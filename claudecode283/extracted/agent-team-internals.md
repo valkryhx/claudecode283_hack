@@ -291,15 +291,25 @@ python tools/bunpeek.py claudecode283/claude.exe module "spawnTeammate" --max-si
 
 ## 9. 仍未确定（诚实标注）
 
-- `TeamCreate` / `TeamDelete` 这两个工具名只在 `m0357` 的分类集里出现；
-  它们的工具定义对象未在已抽的 2135 个模块里找到（可能在更深的懒加载 chunk，
-  或名字由常量拼接）。Agent Teams 的实际入口是 `Agent` 工具 + `ExitPlanMode.launchSwarm`。
-- `SendMessage` 的完整分发实现（`m0261` 只有 724B，像是薄壳；真正路由在别的 chunk）。
-- team 文件的确切路径与格式（`teamFilePath` 由 `m0636`/`m1614` 产出，未逐行核对）。
-- `launchSwarm` / `teammateCount` 的批量拉起逻辑（只在 schema 扩展处见到，未见 spawn 循环）。
-- UI 层（计划审批 `awaitingPlanApproval`、`pendingUserMessages` 的交互）未定位到具体模块。
+> **2026-10-14 更新**：本节原来的 5 个缺口已由
+> `docs/20261014-复刻agent-team指南.md` 逐个补齐（含证据坐标）。下面是更新后的状态：
 
----
+- `TeamCreate` / `TeamDelete` —— **范围仅限已抽取的 2135 个模块**：其中只有名字、无工具定义
+  （`name:`/`inputSchema`/`description`/`create()` 全无），是 `Tfe`（`m0357 @ 944342`，
+  「已知、但本进程可能不提供的内置工具名」白名单）的成员。**不代表 CC 源码层没有此概念**
+  —— 名字被 harness 显式识别（否则不会进白名单）。本 build 无可用入口；待在有 `claude.exe`
+  的机器上用 `reconstructed/tools/bunpeek.py` 复核是否藏在懒加载 chunk。
+  团队入口是 `Agent`（带 `name`）+ `ExitPlanMode.launchSwarm`。见新文档 §10。
+- `SendMessage` 的完整分发 —— **已补齐主干**：工具定义/描述在 `m1548`，执行器在 `m1549`，
+  recipient resolver + send pin 在 `m1344`，名常量/legacy 字段在 `m0261`。见新文档 §4。
+- team 文件路径与格式 —— **已定论**：`<configDir>/teams/<sanitized-name>/config.json`；
+  schema 见 `m1614 initializeSessionTeam`，读写/CAS 见 `m0319`。见新文档 §6。
+- `launchSwarm` / `teammateCount` —— **已定论为条件 schema 字段**（`m0357 nOn` + `qbe` 删字段），
+  批量拉起循环在运行时、不在已抽模块内。见新文档 §10。
+- UI 层（`awaitingPlanApproval` / `pendingUserMessages` / `swarm-view`）—— **仍未定位**到具体模块。
+- `SendMessage` 落 socket 的底层 send、team 文件成员 `mode`/`isActive` 取值枚举 —— **仍未逐行核对**。
+
+详见 `docs/20261014-复刻agent-team指南.md`。
 
 ## 10. 专项可读化副本（`reconstructed/deminified-agent-team/`）
 
