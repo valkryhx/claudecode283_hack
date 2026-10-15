@@ -867,3 +867,35 @@ team 文件（`m0319`/`m1614`/`m0636`）、协作总线（`m0184`）、提示词
 
 - GA 无「跨机器 peer / UDS / kill-switch」概念，**闸门的传输层不做**；但 **accept/hold/refuse 的本地语义、100 上限 hold 缓冲、held/delivered/refused/expired/dropped/denied 回执、释放/审批/结算** 全部可本地照抄（配置项 `cross_session_inbound`）。
 - GA 已有 receipts（P5）；本轮补：**swarm host 单例**（聚合）+ **mailbox ledger 幂等去重**（2048）+ **入站闸门** + **drain 16000 预算接线**。
+
+---
+
+## 16. 执行期 team UI：CC 现状 → GA 落点
+
+> 目标：复刻「用 `/workflows` 式可视化查看 team 实时执行」的体验。先厘清 CC 到底怎么做。
+
+### 16.1 CC 的 team 执行期 UI = tmux 多窗格 `swarm-view`（`m1573`），不是 Ink 面板列表
+
+- `m1573` `createTeammatePaneInSwarmView` → 分派到
+  `createTeammatePaneWithLeader`（首窗格 `split-window -h -l 70%`）或 `createTeammatePaneExternal`；
+- 每个 teammate 一个 pane：`setPaneTitle`（pane 标题=teammate 名）、`setPaneBorderColor`（边框色）、
+  `rebalancePanesWithLeader`（重排）；swarm 会话名 `claude-swarm-<pid>`（`m0093` `IFt()`）。
+- 报错文案（"Failed to create teammate pane" / "no room for another tmux split ... switch to
+  in-process teammates via /config"）印证：**CC 用 tmux 窗格承载「实时查看 team」**。
+- **本 build 未定位到 `/team` 式的 TUI 列表**：`m0357` 里的 `/agents` 指的是
+  `.claude/agents/*.md` 子代理**定义**，不是团队面板；`swarm-view` 的具体渲染模块在懒加载 chunk（本 checkout 无 exe，待复核）。
+
+### 16.2 GA 落点：用 GA 既有 `/workflows` 面板范式承载 `/team`
+
+GA 无 tmux 多窗格，故等价物 = **GA 既有的 overlay 面板范式**（`/workflows` 同款）：
+
+| 层 | GA 落点 |
+| --- | --- |
+| 命令解析 | `inputController.ts`：`/team` / `/team list` / `/agents` → `{type:'team_list'}` |
+| 协议 | `protocol.ts`：`team_list` 命令 + `team_roster` 事件（`team/members/tasks`） |
+| 后端 | `frontends/ink_bridge.py::team_list` → 读 `SubagentTeam.view()`（名册）+ `SubagentTaskStore.list_tasks()`（共享任务板），emit `team_roster` |
+| 面板 | `frontends/ink-ui/src/teamPanel.ts`（`teamPanelFromRoster/teamPanelLines/…`）+ `App.tsx` 复用 `WorkflowPanelView` |
+| 交互 | `↑/↓` 选成员、`r` 刷新、`Esc` 关闭（与 `/workflows` 一致） |
+
+> 语义对齐 CC：名册（teammate 名 + 状态 + 归属任务数 + 当前任务）、共享任务板（CC `TaskList`：
+> `[x]/[~]/[ ]` + owner + blockedBy）。**【复刻时暂时不需要参考 claudecode 云端会话的实现】**
