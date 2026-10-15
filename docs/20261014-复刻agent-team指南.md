@@ -804,3 +804,66 @@ team 文件（`m0319`/`m1614`/`m0636`）、协作总线（`m0184`）、提示词
 > 关联：`claudecode283/extracted/agent-team-internals.md`（spawn 主干）、
 > `reconstructed/deminified-agent-team/`（m1578/m0511/m0527 可读化副本）、
 > `claudecode283/extracted/hooks-internals.md`（钩子机制）。
+
+---
+
+## 15. 第三轮深挖：swarm 总线 / 入站闸门 / drain 预算（逐行源码）
+
+> 本轮把 §7 的一行式描述展开为**逐行可核对**的实现细节，供 GA 复刻时直接照抄常量与状态机。
+> 三块证据：`m0184`（130 行，已全量读）、`m1356`（436 行，已全量读）、`m0300`（2204 行，读 drain 段）。
+
+### 15.1 swarm 共享总线（`m0184`）
+
+- **单例语义**：`ti()` = `y.of(j().host)`。`y` 是 `q(...)` 造的 **per-host 惰性单例**（`q` 来自 `chunk-4rk7cwxz`），键为 `j().host`。即「同一 host 上会话唯一」的集中协作状态对象。
+- **host `g` 的 7 个槽位**（class → 字段）：
+
+| 槽位 | class | 字段 | 作用 |
+| --- | --- | --- | --- |
+| `inbound` | `o` | `getCurrentMode` / `modeAtUnwire` / `onPeerHeld` / `onPeerHoldReleased` / `onPeerHoldDropped` / `sendPeerReceipt` / `recordCorrespondent` / `publishAvailability` / `unsubscribeAvailabilityRefresh` / `shutdownSettleHandle` / `shuttingDown` / `held[]` / `announced(WeakMap)` | 入站闸门（见 15.2） |
+| `receipts` | `d` | `outstandingSends[]` / `awaitingTerminal[]` | 投递回执（P5 已复刻） |
+| `outbound` | `l` | `pacer` | 发送限速 |
+| `ingress` | `a` | `ownUdsHopToken` / `ownBridgePeerAddressResolver` / `messageDropped(Me())` | 传输层（UDS hop token） |
+| `swarmPermissions` | `u` | `pending(Map)` / `pendingSandbox(Map)` / `pendingPlanApproval` | 权限请求同步（`m0970` 轮询） |
+| `mailbox` | `p` | `reportedDroppedEntries(Set)` / `pendingPrunes(Map)` / `ledger(new i())` | 未读投递 + 去重账本 |
+| `taskList` | `m` | `updated(Me())` / `locks(Fm())` / `leaderTeamName` | 任务板更新事件 + 文件锁 |
+
+- **mailbox ledger `i`（最值得抄的幂等去重件）**：
+  - `h = 2048` 上限：`f(s)` 在 `s.size > 2048` 时删最旧键（FIFO 淘汰）。
+  - `record(agentId, entry)`：entry 无 `msg_id` 直接 return；结构 `#e: Map<agentId, Map<msg_id, digest>>`。
+  - `wrote(agentId, entry)`：`entry.msg_id` 存在 **且** 记账 digest 相同 → `true`（**幂等写：同内容不重复落**）。
+  - `retire(agentId, ids)` / `retain(agentId, ids)` / `forget(agentId)`。
+  - 摘要 `t(entry)`：`sha256(from, timestamp, text, summary ?? null, color ?? null, from_plugin ?? null)`。
+
+### 15.2 入站闸门（`m1356`，`peer_inbound_gate`）
+
+- 三档策略 `f = {accept:0, hold:1, refuse:2}`；**hold 缓冲上限 `F = 100`**；settle 定时 `N = 750ms`。
+- **策略归并 `I()`**（越靠前越优先）：`policySettings` > `flagSettings`/`userSettings`（→ `explicit-setting`）> `localSettings`/`projectSettings`（→ `repo-setting`，取更严格）；若 settings 非法（`B()`）且结果 < `hold` → 强制 `hold`（`invalidSetting`）。
+- **决策 `H()`**：kill-switch（`w()`，`Ws()` 为真）→ `refuse(kill-switch)`；显式 setting → `h(n)`；当前 mode 未知/不可识别 → **fail-closed `hold(mode-unknown)`**；bypass 默认 → `hold(bypass-default)`；否则 `accept`。
+- **peer 决策 `k(e,n)`**：`e.selfSent` → `accept`；mode 不可识别 → `hold(mode-unknown)`；`fromMode` 已断言且 ≠ 本机 mode → `hold(mode-mismatch)`；本机 bypass 且对端未断言 mode → `hold(no-mode-asserted)`；否则 `accept`。
+- **应用 `v(e, policy)` → `accept|held|refused`**：
+  - `accept` → 事件 `_("peer_inbound_gate")`，返回 `"accept"`。
+  - `refuse` → `sendPeerReceipt(e, "refused")`。
+  - `hold` → 若 `shuttingDown` 记 `expired`；若 `held.length >= 100` 则 `shift()` 淘汰最旧为 `expired`；`held.push(e)`；`R()` 起 750ms settle；`onPeerHeld(e, held.length, holdCause)`；`announced.set(e, holdCause)`；`sendPeerReceipt(e, "held")`。
+- **释放 `A(reason)`**（mode 变更时）：遍历 `held`，用 `M()` 按 origin 重新决策；accept 者过 ingress guard `D()` 准入 → `onPeerHoldReleased` + `sendPeerReceipt(e, "delivered")`；refuse 者 → `sendPeerReceipt(e, "refused")` + `onPeerHoldDropped`。
+- **手动审批 `OQe(e, action)`**：`approve` → 重决策，若现为 refuse 则 `dropped`，否则过 guard 后 `delivered`；`deny`/其他 → 记 `denied`/`expired`。返回 `gone|dropped|delivered|dropped-by-guard`。
+- **shutdown 结算 `mbt()`**：`shuttingDown=true`，`held` 全量 `sendPeerReceipt(s,"expired")` + `onPeerHoldDropped(s,"expired")`，`Promise.race([...allSettled, 750ms])`。
+- **回执词表**：`accepted | held | refused | expired | dropped | delivered | denied`。
+- **host-injected / coordinator 通道**：`_bt(origin)` 把来源分为 `peer / host-injected / coordinator / ungated`；`coordinator`（`task-notification` + `subkind==="peer-send-message"`）走 `T()`（只受显式 refuse 影响）。
+
+### 15.3 drain 结果预算（`m0300`）
+
+- 常量：**单条 `xB(bound_2) = 4000`**，**一次 drain `eTo = 16000`**。
+- drain 逻辑（约 1690–1770 行）：取本回合全部消息 `n`，对含 idle result 的项按 `recency` 排序；以 `c = eTo` 为剩余预算，逐条扣 `text.length`；**超预算**的项把 `result` 换成
+  `[result truncated — this drain's results exceeded 16000 characters; ask the agent for it via <lo>]`
+  （`idleReason === "failed"` 则不带提示）；若替换文本仍超预算则退化为 `[result truncated]`；替换后不短于原文则跳过；统计 `budget_truncated`。
+- 单条 `mat(e,n)`：`result = r2o(n.result, senderReachable ?? idleReason !== "failed")`（P6 已落）。
+
+### 15.4 钩子事件（`m0052`）
+
+- 事件枚举含 **`TeammateIdle` / `TaskCreated` / `TaskCompleted`**（详见 `extracted/hooks-internals.md`）。
+- GA 当前**无 hooks 运行时**（`grep` 无命中）→ 本轮**不做**，记为可选后续。
+
+### 15.5 与 GA 的落地结论
+
+- GA 无「跨机器 peer / UDS / kill-switch」概念，**闸门的传输层不做**；但 **accept/hold/refuse 的本地语义、100 上限 hold 缓冲、held/delivered/refused/expired/dropped/denied 回执、释放/审批/结算** 全部可本地照抄（配置项 `cross_session_inbound`）。
+- GA 已有 receipts（P5）；本轮补：**swarm host 单例**（聚合）+ **mailbox ledger 幂等去重**（2048）+ **入站闸门** + **drain 16000 预算接线**。
