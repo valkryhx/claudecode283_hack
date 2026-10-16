@@ -156,6 +156,7 @@ node deminify.mjs --only m0869
 | **hooks 可读化副本**（执行引擎 / 输入输出 schema / 来源 / 事件分类，204 个符号改真名） | `reconstructed/deminified-hooks/` + `extracted/hooks-internals.md` |
 | **Workflow 工具描述 / DSL 参考** | `claudecode283/extracted/workflow-{tool-description,authoring-reference}.md` |
 | **Dynamic Workflow 复刻指南**（面向自研 Agent / Codex 开发者的实现蓝图 + 逐 API 源码核对 + 坑清单 + §9 执行期 UI/交互与“再跑历史 workflow”） | `docs/20261012-复刻dynamic-workflow指南.md` |
+| **Skill 渐进式披露 / 通用 tool_result 预算**（L1/L2/L3、Skill 正文/工具结果分通道、50K/2K/500K 阈值、持久化与截断、GA 复刻映射） | `docs/20261017-CC-skill渐进式披露调研.md` |
 
 **命名方法一句话**：Bun `--compile` 是 minify 不是混淆，只压标识符，
 **字符串 / 属性名 / 解构键 / 对象键一律保留**——所有真名只能从这四类保留物里读出来。
