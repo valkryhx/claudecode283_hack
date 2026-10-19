@@ -1,0 +1,801 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  j,
+  $c
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  z
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  wde,
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  pw
+} from "B:/~BUN/root/chunk-d69870x4.js";
+import {
+  F8r,
+  UZo,
+  VA,
+  lKt,
+  Rh
+} from "B:/~BUN/root/chunk-2efkaa0v.js";
+import {
+  av
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  B2,
+  Ba,
+  hjo,
+  rGe,
+  oS,
+  Ine,
+  fde,
+  gv,
+  bbt,
+  j1t,
+  tYs,
+  nYs,
+  _jo,
+  rYs,
+  oYs
+} from "B:/~BUN/root/chunk-nvgn0qsr.js";
+import {
+  hVt,
+  Wnt,
+  E9o,
+  cvn,
+  uvn,
+  tkt,
+  T9o,
+  pvn,
+  AL,
+  xL,
+  nkt,
+  rkt,
+  h_e,
+  C9o,
+  R9o,
+  mvn
+} from "B:/~BUN/root/chunk-1d35msqn.js";
+import {
+  I6,
+  nb,
+  lM,
+  Pm,
+  Ddt,
+  EIt,
+  TIt
+} from "B:/~BUN/root/chunk-0x8xex6w.js";
+import {
+  e
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  qt,
+  ae,
+  Ee,
+  Z,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  _h
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  ve
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+class g {
+  value = void 0;
+  get() {
+    let r = lKt(),
+      n = $c(),
+      o = n?.wheelFlood ?? j4r(),
+      u = n ? wde.includes(n.terminal ?? "") : pw.isJetBrainsIdeTerminal(),
+      i = n?.wtSession ?? !!a.WT_SESSION,
+      p = Rh(),
+      s = this.value;
+    if (s && s.xtversion === (r ?? "(no reply)") && s.wheelFlood === o && s.jediTerm === u && s.wtSession === i && s.xtermJs === p) return s;
+    let d = "win32";
+    return this.value = {
+      useDecayCurve: !o && (p || d === "win32" || i),
+      useAdaptiveDrain: p,
+      base: u ? 2 : ie(p, o, i),
+      xtermJs: p,
+      wheelFlood: o,
+      jediTerm: u,
+      termProgram: a.TERM_PROGRAM ?? "unset",
+      termProgramVersion: a.TERM_PROGRAM_VERSION ?? "unset",
+      xtversion: r ?? "(no reply)",
+      wtSession: i,
+      scrollSpeedEnv: a.CLAUDE_CODE_SCROLL_SPEED ?? "unset",
+      platform: d
+    }, this.value
+  }
+  invalidate() {
+    this.value = void 0
+  }
+}
+var E = new z(() => new g);
+
+function yY() {
+  return E.of(j().host).get()
+}
+
+function j4r() {
+  if (process.env.CURSOR_TRACE_ID !== void 0) return !0;
+  if (a.VSCODE_GIT_ASKPASS_MAIN?.includes("cursor")) return !0;
+  if (a.TERM_PROGRAM === "vscode") {
+    let r = oe(a.TERM_PROGRAM_VERSION);
+    if (r !== null) return r >= 1092000 && r < 1105000
+  }
+  return lKt()?.startsWith("xterm.js") ?? !1
+}
+
+function oe(r) {
+  if (!r) return null;
+  let n = /^(\d+)\.(\d+)\.(\d+)/.exec(r);
+  if (!n) return null;
+  return +n[1] * 1e6 + +n[2] * 1000 + +n[3]
+}
+
+function arr(r, n, o) {
+  return !n && (r || !0) ? 3 : 1
+}
+
+function ie(r, n, o) {
+  let u = arr(r, n, o),
+    i = a.CLAUDE_CODE_SCROLL_SPEED;
+  if (!i) return u;
+  let p = parseFloat(i);
+  return Number.isNaN(p) || p <= 0 ? u : Math.min(p, 20)
+}
+
+function uVt() {
+  E.of(j().host).invalidate()
+}
+var y = ve(_h(), 1);
+var S = Ba(0, "f");
+
+function v9o() {
+  if (pw.windowsConsoleSupportsVirtualTerminalSequences()) return gv + bbt + oS;
+  else return gv + S;
+  return gv + bbt + oS
+}
+
+function G4r() {
+  if (!pw.windowsConsoleSupportsVirtualTerminalSequences()) return gv + S;
+  return gv + oS
+}
+
+function Unt(r) {
+  return oS + (fde + hjo(1)).repeat(r) + oS
+}
+
+function k9o() {
+  if (a.TMUX && VA().get("synchronizedOutput").state === "pending") return;
+  return XCe()
+}
+
+function Xre() {
+  return v({
+    beforeTheAnswer: !1
+  })
+}
+
+function XCe() {
+  return v({
+    beforeTheAnswer: !0
+  })
+}
+
+function v({
+  beforeTheAnswer: r
+}) {
+  if (a.CLAUDE_BG_BACKEND === "daemon") return $c()?.syncOutput !== !1;
+  if (!a.TMUX && a.CLAUDE_CODE_FORCE_SYNC_OUTPUT) return !0;
+  let n = VA().get("synchronizedOutput");
+  if (n.state === "settled") return n.value;
+  return r && n.likely
+}
+
+function lrr(r = Xre()) {
+  if (a.CLAUDE_BG_BACKEND === "daemon") return !1;
+  return r && a.TMUX == null && process.env.ZELLIJ == null && !pw.isJetBrainsIdeTerminal() && !Rh() && a.WT_SESSION == null
+}
+
+function Bnt() {
+  let r = $c()?.progressReporting;
+  if (r !== void 0) return r;
+  if (!process.stdout.isTTY) return !1;
+  if (a.WT_SESSION) return !1;
+  if (a.ConEmuANSI || a.ConEmuPID || a.ConEmuTask) return !0;
+  let n = y.coerce(a.TERM_PROGRAM_VERSION);
+  if (!n) return !1;
+  if (a.TERM_PROGRAM === "ghostty") return av(n.version, "1.2.0");
+  if (a.TERM_PROGRAM === "iTerm.app") return av(n.version, "3.6.6");
+  return !1
+}
+
+function h(r) {
+  if (r != null) return F8r.includes(r);
+  return VA().now("extendedKeys")
+}
+
+function pVt(r = a.terminal, n = VA()) {
+  if (a.TMUX || a.STY || !n.now("extendedKeys")) return !1;
+  return r === null || !UZo.includes(r) || n.confirmed("kittyKeyboard")
+}
+
+function NLe() {
+  return !I6() && (h() || VA().now("kittyKeyboard")) ? _jo : ""
+}
+
+function Zvt() {
+  return I6() ? "" : oYs
+}
+
+function ekt(r) {
+  return h() ? _jo + (r?.legacyKitty ? nYs : tYs) + rYs : ""
+}
+
+function fVt(r) {
+  return nkt + gv + oS + ekt(r)
+}
+
+function Jre() {
+  return NLe() + rkt + Zvt()
+}
+var ivn = 5000;
+
+function mVt() {
+  return !0
+}
+var drr = lrr(XCe());
+
+function crr(r, n, o) {
+  let u = performance.now(),
+    i = r.slowestWrite;
+  if (i === void 0 || u - n >= i.endedMs - i.startedMs) r.slowestWrite = {
+    startedMs: n,
+    endedMs: u,
+    bytes: o
+  }
+}
+
+function avn(r, n) {
+  if (r.stdoutDead) return;
+  let o = performance.now(),
+    u = Buffer.byteLength(n);
+  try {
+    r.stdout.write(n)
+  } catch (i) {
+    if (r.tolerateDeadStdout && (b(i) === "EIO" || b(i) === "EPIPE")) {
+      r.stdoutDead = !0, crr(r, o, u);
+      return
+    }
+    throw i
+  }
+  crr(r, o, u)
+}
+
+function V4r(r, n, o = !1, u, i = "") {
+  let p = u !== void 0 && u > 1 ? u - 1 : void 0;
+  if (n.length === 0) {
+    if (i !== "") avn(r, i);
+    return
+  }
+  let s = !o,
+    d = i + (s ? hVt : "");
+  for (let c of n) switch (c.type) {
+    case "stdout":
+      d += c.content;
+      break;
+    case "clear":
+      if (c.count > 0) d += j1t(c.count);
+      break;
+    case "clearTerminal":
+      d += c.altScreen ? v9o() : Unt(c.viewportRows);
+      break;
+    case "cursorHide":
+      d += xL;
+      break;
+    case "cursorShow":
+      d += AL;
+      break;
+    case "cursorMove":
+      d += Ine(c.x, p !== void 0 ? Math.max(-p, Math.min(p, c.y)) : c.y);
+      break;
+    case "cursorTo":
+      d += rGe(c.col);
+      break;
+    case "carriageReturn":
+      d += "\r";
+      break;
+    case "hyperlink":
+      d += Ddt(c.uri);
+      break;
+    case "styleStr":
+      d += c.str;
+      break
+  }
+  if (s) d += Wnt;
+  avn(r, d)
+}
+
+function b(r) {
+  return r && typeof r === "object" && "code" in r ? String(r.code) : void 0
+}
+class $nt {
+  _didStopImmediatePropagation = !1;
+  didStopImmediatePropagation() {
+    return this._didStopImmediatePropagation
+  }
+  stopImmediatePropagation() {
+    this._didStopImmediatePropagation = !0
+  }
+}
+import {
+  EventEmitter as se
+} from "events";
+class cVt extends se {
+  constructor() {
+    super();
+    this.setMaxListeners(0)
+  }
+  emit(r, ...n) {
+    if (r === "error") return super.emit(r, ...n);
+    let o = this.rawListeners(r);
+    if (o.length === 0) return !1;
+    let u = n[0] instanceof $nt ? n[0] : null;
+    for (let i of o)
+      if (i.apply(this, n), u?.didStopImmediatePropagation()) break;
+    return !0
+  }
+}
+
+function Qvt() {
+  return {
+    lastWheelTime: 0,
+    lastWheelDownTime: 0,
+    bugConfirmed: !1,
+    notified: !1,
+    trackpadGesture: !1,
+    pendingArrowBoost: 0
+  }
+}
+
+function ue(r) {
+  r.bugConfirmed = !0, r.trackpadGesture = !0, r.pendingArrowBoost++
+}
+
+function T(r) {
+  r.trackpadGesture = !1, r.pendingArrowBoost = 0
+}
+
+function S9o(r) {
+  let n = r.pendingArrowBoost;
+  return r.pendingArrowBoost = 0, n
+}
+
+function W4r(r) {
+  if (r.bugConfirmed) return !0;
+  if (process.env.INTELLIJ_TERMINAL_COMMAND_BLOCKS_REWORKED !== void 0 || process.env.INTELLIJ_TERMINAL_COMMAND_BLOCKS !== void 0) return r.bugConfirmed = !0, !0;
+  return !1
+}
+var le = 75,
+  de = 250,
+  z4r = 200;
+
+function w9o(r, n, o, u) {
+  if (!yY().jediTerm) return T(r), n;
+  let i = null;
+  for (let p = 0; p < n.length; p++) {
+    let s = n[p];
+    if (s.kind !== "key") {
+      i?.push(s);
+      continue
+    }
+    if (s.name === "wheelup" || s.name === "wheeldown") {
+      if (o - r.lastWheelTime > z4r) r.lastWheelDownTime = 0, T(r);
+      if (r.lastWheelTime = o, s.name === "wheeldown") r.lastWheelDownTime = o;
+      if (s.name === "wheelup" && o - r.lastWheelDownTime < de && W4r(r)) {
+        i ??= n.slice(0, p), i.push({
+          ...s,
+          name: "wheeldown"
+        });
+        continue
+      }
+      i?.push(s);
+      continue
+    }
+    if ((s.name === "up" || s.name === "down") && !s.ctrl && !s.meta && !s.shift && o - r.lastWheelTime < le) {
+      if (!r.notified) r.notified = !0, u();
+      ue(r), i ??= n.slice(0, p);
+      continue
+    }
+    i?.push(s)
+  }
+  return i ?? n
+}
+
+function RL(r, n) {
+  if (r === void 0) return;
+  if (Number.isInteger(r)) return;
+  t(`${n} should be an integer, got ${r}`, {
+    level: "warn"
+  })
+}
+
+function lvn(r, n, o, u, i) {
+  if (r === void 0 && n === void 0 && o === void 0 && u === void 0 && i === void 0) return;
+  return {
+    hidden: r,
+    label: n,
+    role: o,
+    state: u,
+    preserveWhitespace: i
+  }
+}
+
+function ce({
+  children: r,
+  ref: n,
+  tabIndex: o,
+  autoFocus: u,
+  onClick: i,
+  onFocus: p,
+  onFocusCapture: s,
+  onBlur: d,
+  onBlurCapture: c,
+  onMouseEnter: C,
+  onMouseLeave: A,
+  onPointer: P,
+  hoverIgnoresBlankCells: M,
+  hoverFollowsPaint: k,
+  renderEvent: O,
+  renderComponent: N,
+  drawPending: D,
+  elementKey: K,
+  elementPlugin: L,
+  onKeyDown: W,
+  onKeyDownCapture: F,
+  onPaste: G,
+  onPasteCapture: J,
+  onWheel: U,
+  onWheelCapture: Y,
+  keybindingScope: q,
+  textEntry: X,
+  onAction: V,
+  onActionCapture: H,
+  "aria-hidden": Q,
+  "aria-label": ee,
+  "aria-role": te,
+  "aria-state": re,
+  "aria-preserve-whitespace": ne,
+  ...l
+}) {
+  if (RL(l.margin, "margin"), RL(l.marginX, "marginX"), RL(l.marginY, "marginY"), RL(l.marginTop, "marginTop"), RL(l.marginBottom, "marginBottom"), l.marginLeft !== "auto") RL(l.marginLeft, "marginLeft");
+  if (l.marginRight !== "auto") RL(l.marginRight, "marginRight");
+  return RL(l.padding, "padding"), RL(l.paddingX, "paddingX"), RL(l.paddingY, "paddingY"), RL(l.paddingTop, "paddingTop"), RL(l.paddingBottom, "paddingBottom"), RL(l.paddingLeft, "paddingLeft"), RL(l.paddingRight, "paddingRight"), RL(l.gap, "gap"), RL(l.columnGap, "columnGap"), RL(l.rowGap, "rowGap"), l.flexWrap ??= "nowrap", l.flexDirection ??= "row", l.flexGrow ??= 0, l.flexShrink ??= 1, l.overflowX = l.overflowX ?? l.overflow ?? "visible", l.overflowY = l.overflowY ?? l.overflow ?? "visible", e("ink-box", {
+    ref: n,
+    tabIndex: o,
+    autoFocus: u,
+    onClick: i,
+    onFocus: p,
+    onFocusCapture: s,
+    onBlur: d,
+    onBlurCapture: c,
+    onMouseEnter: C,
+    onMouseLeave: A,
+    onPointer: P,
+    hoverIgnoresBlankCells: M,
+    hoverFollowsPaint: k,
+    renderEvent: O,
+    renderComponent: N,
+    drawPending: D,
+    elementKey: K,
+    elementPlugin: L,
+    onKeyDown: W,
+    onKeyDownCapture: F,
+    onPaste: G,
+    onPasteCapture: J,
+    onWheel: U,
+    onWheelCapture: Y,
+    keybindingScope: q,
+    textEntry: X,
+    onAction: V,
+    onActionCapture: H,
+    accessibility: lvn(Q, ee, te, re, ne),
+    style: l,
+    children: r
+  })
+}
+var vc = ce;
+B();
+var R = qt({
+  stdin: process.stdin,
+  internal_eventEmitter: new cVt,
+  setRawMode() {},
+  isRawModeSupported: !1,
+  internal_querier: null,
+  internal_jediTermInput: Qvt()
+});
+R.displayName = "InternalStdinContext";
+var g_e = R;
+B();
+var Og = qt(null);
+B();
+
+function x({
+  background: r,
+  foreground: n
+}) {
+  return nb(Pm.SET_BG_COLOR, r) + nb(Pm.SET_FG_COLOR, n)
+}
+
+function w() {
+  return nb(Pm.RESET_BG_COLOR) + nb(Pm.RESET_FG_COLOR)
+}
+var f = {
+  bracketedPaste: 0,
+  themeReports: 0,
+  extendedKeys: 0,
+  altScreen: 1,
+  altScreenKeys: 2,
+  mouse: 2,
+  mousePixels: 2,
+  surface: 3,
+  focusEvents: 4
+};
+
+function I(r) {
+  switch (r) {
+    case "bracketedPaste":
+      return {
+        mode: r, on: E9o, off: cvn
+      };
+    case "themeReports":
+      return {
+        mode: r, on: T9o, off: pvn
+      };
+    case "focusEvents":
+      return {
+        mode: r, on: uvn, off: tkt
+      };
+    case "mousePixels":
+      return {
+        mode: r, on: C9o, off: R9o
+      };
+    case "extendedKeys":
+      return {
+        mode: r, get on() {
+          return ekt()
+        }, get off() {
+          return Zvt() + NLe()
+        }
+      };
+    case "altScreen":
+      return {
+        mode: r, on: nkt + gv + oS, get off() {
+          return rkt + Zvt()
+        }
+      };
+    case "altScreenKeys":
+      return {
+        mode: r, get on() {
+          return ekt()
+        }, get off() {
+          return NLe()
+        }
+      }
+  }
+}
+class jnt {
+  entries = [];
+  suspended = !1;
+  kept;
+  get isSuspended() {
+    return this.suspended
+  }
+  isSet(r) {
+    return this.entries.some((n) => n.mode === r)
+  }
+  set(r, n) {
+    if (this.isSet(r)) return "";
+    let o = this.add(this.entry(r, n));
+    if (r === "altScreen") o += this.add(I("altScreenKeys"));
+    return this.suspended ? "" : o
+  }
+  reset(r) {
+    if (!this.isSet(r)) return "";
+    let n = r === "altScreen" ? this.remove("altScreenKeys") : "",
+      o = this.remove(r);
+    if (this.suspended && r === this.kept) return this.kept = void 0, o;
+    return this.suspended ? "" : n + o
+  }
+  reassert(r) {
+    if (this.suspended) return "";
+    return this.entries.find((n) => n.mode === r)?.on ?? ""
+  }
+  reassertKeys() {
+    if (this.suspended) return "";
+    let r = this.isSet("altScreen") ? "altScreenKeys" : "extendedKeys";
+    return this.entries.find((n) => n.mode === r)?.on ?? ""
+  }
+  reassertFrom(r) {
+    if (this.suspended || !this.isSet(r)) return "";
+    return this.entries.filter((n) => f[n.mode] >= f[r]).reduce((n, o) => n + o.on, "")
+  }
+  suspend(r) {
+    if (this.suspended) return "";
+    return this.suspended = !0, this.kept = r, this.entries.reduceRight((n, o) => o.mode === r ? n : n + o.off, "")
+  }
+  resume({
+    clearKeys: r = !1
+  } = {}) {
+    if (!this.suspended) return "";
+    this.suspended = !1, this.kept = void 0;
+    let n = this.isSet("altScreen"),
+      o = r ? Zvt() + (n ? "" : NLe()) : "";
+    return this.entries.reduce((u, i) => u + i.on + (r && i.mode === "altScreen" ? NLe() : ""), o)
+  }
+  resetAll() {
+    let r = this.suspended ? this.entries.filter((n) => n.mode === this.kept) : this.entries;
+    return this.entries = [], this.kept = void 0, r.reduceRight((n, o) => n + o.off, "")
+  }
+  entry(r, n) {
+    switch (r) {
+      case "mouse": {
+        let o = typeof n === "string" ? n : "off";
+        return {
+          mode: r,
+          on: mvn(o),
+          off: o === "off" ? "" : h_e
+        }
+      }
+      case "surface":
+        return {
+          mode: r, on: typeof n === "object" ? x(n) : "", off: w()
+        };
+      default:
+        return I(r)
+    }
+  }
+  add(r) {
+    let n = this.entries.findIndex((o) => f[o.mode] > f[r.mode]);
+    if (n === -1) this.entries.push(r);
+    else this.entries.splice(n, 0, r);
+    return r.on
+  }
+  remove(r) {
+    let n = this.entries.findIndex((o) => o.mode === r);
+    if (n === -1) return "";
+    return this.entries.splice(n, 1)[0].off
+  }
+}
+var _ = qt(new jnt);
+_.displayName = "InternalTerminalModesContext";
+var gVt = _;
+B();
+
+function m(r) {
+  let n = "";
+  for (let o = 0; o < r.length; o++) {
+    let u = r.charCodeAt(o);
+    n += u < 32 || u >= 127 && u <= 159 ? " " : r[o]
+  }
+  return n
+}
+var S1 = qt(null),
+  dvn = S1.Provider;
+
+function C0() {
+  let r = Ee(S1);
+  if (!r) throw Error("useTerminalNotification must be used within TerminalWriteProvider");
+  let n = ae(({
+      message: s,
+      title: d
+    }) => {
+      let c = d ? `${d}: ${s}` : s;
+      r(lM(nb(Pm.ITERM2, m(c))))
+    }, [r]),
+    o = ae(({
+      message: s,
+      title: d,
+      id: c
+    }) => {
+      r(lM(nb(Pm.KITTY, `i=${c}:d=0:p=title`, m(d)))), r(lM(nb(Pm.KITTY, `i=${c}:p=body`, m(s)))), r(lM(nb(Pm.KITTY, `i=${c}:d=1:a=focus`, "")))
+    }, [r]),
+    u = ae(({
+      message: s,
+      title: d
+    }) => {
+      r(lM(nb(Pm.GHOSTTY, "notify", m(d), m(s))))
+    }, [r]),
+    i = ae(() => {
+      r(B2)
+    }, [r]),
+    p = ae((s, d) => {
+      if (!Bnt()) return;
+      if (!s) {
+        r(lM(nb(Pm.ITERM2, EIt.PROGRESS, TIt.CLEAR, "")));
+        return
+      }
+      let c = Math.max(0, Math.min(100, Math.round(d ?? 0)));
+      switch (s) {
+        case "completed":
+          r(lM(nb(Pm.ITERM2, EIt.PROGRESS, TIt.CLEAR, "")));
+          break;
+        case "error":
+          r(lM(nb(Pm.ITERM2, EIt.PROGRESS, TIt.ERROR, c)));
+          break;
+        case "indeterminate":
+          r(lM(nb(Pm.ITERM2, EIt.PROGRESS, TIt.INDETERMINATE, "")));
+          break;
+        case "running":
+          r(lM(nb(Pm.ITERM2, EIt.PROGRESS, TIt.SET, c)));
+          break;
+        case null:
+          break
+      }
+    }, [r]);
+  return Z(() => ({
+    notifyITerm2: n,
+    notifyKitty: o,
+    notifyGhostty: u,
+    notifyBell: i,
+    progress: p
+  }), [n, o, u, i, p])
+}
+export {
+  $nt,
+  cVt,
+  yY,
+  j4r,
+  arr,
+  uVt,
+  Qvt,
+  S9o,
+  W4r,
+  z4r,
+  w9o,
+  g_e,
+  v9o,
+  G4r,
+  Unt,
+  RL,
+  k9o,
+  Xre,
+  XCe,
+  lrr,
+  Bnt,
+  pVt,
+  NLe,
+  Zvt,
+  ekt,
+  fVt,
+  Jre,
+  ivn,
+  mVt,
+  drr,
+  crr,
+  avn,
+  V4r,
+  lvn,
+  vc,
+  Og,
+  jnt,
+  gVt,
+  S1,
+  dvn,
+  C0
+};

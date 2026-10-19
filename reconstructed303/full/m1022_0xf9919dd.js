@@ -1,0 +1,877 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  _
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  O
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  ee
+} from "B:/~BUN/root/chunk-t63e78w2.js";
+import {
+  nYn,
+  zC,
+  VT,
+  MD,
+  uB,
+  idn,
+  vht,
+  vs,
+  Iht
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  m
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  xe
+} from "B:/~BUN/root/chunk-8pmnanyd.js";
+import {
+  $s
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  cn,
+  x_,
+  wW
+} from "B:/~BUN/root/chunk-qp0344nb.js";
+import {
+  BE
+} from "B:/~BUN/root/chunk-gt1x0gdb.js";
+import {
+  kt
+} from "B:/~BUN/root/chunk-ydtn2zrk.js";
+import {
+  jg,
+  MS,
+  amt,
+  Fh,
+  le
+} from "B:/~BUN/root/chunk-e7tskyjv.js";
+import {
+  ov,
+  Rmt,
+  MK,
+  FHs,
+  kke,
+  HHs,
+  xxo,
+  Q9e,
+  Amt,
+  aFt,
+  UX,
+  Z9e,
+  $C,
+  T3,
+  UN,
+  sA
+} from "B:/~BUN/root/chunk-66hg7026.js";
+import {
+  iAt,
+  Q7,
+  eU
+} from "B:/~BUN/root/chunk-neajqqs3.js";
+import {
+  PAe
+} from "B:/~BUN/root/chunk-36awbxtc.js";
+import {
+  gds
+} from "B:/~BUN/root/chunk-grt0b3xy.js";
+import {
+  FY,
+  uFe,
+  Wp,
+  L0,
+  WCt,
+  lAe,
+  tue
+} from "B:/~BUN/root/chunk-cfst22ma.js";
+import {
+  rpr
+} from "B:/~BUN/root/chunk-7sgsvmmg.js";
+import {
+  Uis,
+  jis,
+  MPn,
+  DPn
+} from "B:/~BUN/root/chunk-21sxe603.js";
+import {
+  fr,
+  Nx
+} from "B:/~BUN/root/chunk-c6mbjdcy.js";
+import {
+  N
+} from "B:/~BUN/root/chunk-nkxgam12.js";
+import {
+  ye
+} from "B:/~BUN/root/chunk-shj1mfyk.js";
+var Q = "__artifactAsk",
+  Z = ["Claude wants to upload a file to this artifact.", "Claude wants to copy files from another artifact into this one.", "Claude wants to edit this artifact's data."],
+  X = 64,
+  Dis = 3;
+
+function ne(e) {
+  return e.length <= 2 ? e.join(" and ") : `${e.slice(0,-1).join(", ")}, and ${e.at(-1)}`
+}
+var F = /"[^"]*"/g,
+  L = "Let Claude read the comments on ";
+
+function Lis(e) {
+  return `${L}${e?`"${e}"`:"this artifact"}?`
+}
+
+function te(e) {
+  if (!e.startsWith(L)) return;
+  for (let n of e.matchAll(new RegExp(`${F.source}|\\?(?=\\s)`, "g")))
+    if (n[0] === "?") return n.index + 1;
+  return
+}
+
+function P(e) {
+  try {
+    return e === void 0 ? void 0 : rpr(e)
+  } catch {
+    return
+  }
+}
+
+function wPn(e, n, t) {
+  let s = ee().askCards.get(n);
+  if (s === void 0 || s.reason !== t || P(e) !== s.input) return;
+  return s.card
+}
+
+function Nis(e, n = (t) => t) {
+  let {
+    request: t,
+    script: s,
+    text: r,
+    documents: d,
+    files: a,
+    file: u,
+    source: l
+  } = e, p = [];
+  if (N(t) && typeof t.method === "string" && typeof t.path === "string") {
+    let g = N(t.query) ? new URLSearchParams(Object.entries(t.query).flatMap(([h, o]) => {
+        let k = typeof o === "string" ? o : _(o);
+        return k === void 0 ? [] : [
+          [h, k]
+        ]
+      })).toString() : "",
+      f = n(g === "" ? t.path : `${t.path}?${g}`);
+    if (/^[A-Za-z]{1,16}$/.test(t.method) && /^[^\s\p{Cc}]+$/u.test(f)) {
+      if (p.push(`${t.method.toUpperCase()} ${f}`), t.body !== void 0) p.push(`Request body \xB7 ${I(j(t.body))}`)
+    }
+  }
+  for (let g of [s, r])
+    if (typeof g === "string" && g.trim() !== "") {
+      let [f = "", ...h] = x(g.trim());
+      p.push(`${I(h.length+1)} \xB7 ${f}`)
+    } if (d !== void 0) p.push(`${d} ${O(d,"document")}`);
+  if (a !== void 0) {
+    let g = a.count - a.names.length,
+      f = a.names.map((o) => `"${o}"`),
+      h = ne(g > 0 ? [...f, `${g} more`] : f);
+    p.push(`${a.count} ${O(a.count,"file")} \xB7 ${h}`)
+  }
+  if (l !== void 0) p.push(`source: ${l}`);
+  if (u !== void 0) p.push(`file: ${u}`);
+  return p
+}
+
+function j(e, n = new WeakSet) {
+  if (typeof e === "string") return x(e).length;
+  if (typeof e !== "object" || e === null || n.has(e)) return 1;
+  n.add(e);
+  let t = Array.isArray(e) ? e : Object.values(e);
+  return t.length === 0 ? 1 : t.reduce((s, r) => s + (typeof r === "string" ? 1 : j(r, n)), 2)
+}
+
+function x(e) {
+  return e.split(/\r\n|[\r\n\u2028\u2029]/)
+}
+
+function I(e) {
+  return `${e} ${e===1?"line":"lines"}`
+}
+
+function se(e, n, t, s = ee().askCardFacts.get(e)) {
+  let r = ee(),
+    d = r.askClassCards.get(e),
+    a = s?.target,
+    u = s?.values ?? [],
+    l = s?.audience ?? "";
+  if (r.askClassCards.delete(e), r.askCardFacts.delete(e), s === void 0 || s.generic === !0 || n.behavior !== "ask" || n.decisionReason?.type !== "safetyCheck" && n.decisionReason?.type !== "other" || n.decisionReason.reason.trim() === "") return;
+  let p = n.decisionReason.reason,
+    g = p.indexOf(`
+
+`),
+    f = g === -1 ? p : p.slice(0, g),
+    h = g === -1 ? [] : p.slice(g + 2).split(`
+`).filter((C) => C !== ""),
+    o = n.updatedInput ?? t,
+    k = N(o) ? o[Q] : void 0,
+    y;
+  if (k === void 0) {
+    let b = Z.find((D) => f.startsWith(D))?.length ?? te(f),
+      A = b === void 0 ? f : f.slice(0, b),
+      v = b === void 0 ? "" : f.slice(b).trim(),
+      U = a?.title ?? "",
+      T = U !== "" ? `"${U}"` : a?.url,
+      R = [],
+      E = (D) => h.some((J) => J.endsWith(D));
+    if (T !== void 0 && !A.includes(T) && !E(T)) R.push(T);
+    let S = a?.url;
+    if (s?.foreign === !0 && S !== void 0 && !A.includes(S) && !R.includes(S) && !E(S)) R.push(S);
+    if (v !== "") R.push(v);
+    let Y = l === "" || f.replace(F, "").includes(l);
+    y = {
+      question: A,
+      lines: R,
+      values: [...h, ...Y ? u : [...u, l]]
+    }
+  } else if (d !== void 0 && d.reason === f && P(k) === d.stamp) {
+    let [C, ...b] = d.parts, A = l === "" || d.saysPublic;
+    y = C === void 0 ? void 0 : {
+      question: C,
+      lines: b,
+      values: A ? u : [...u, l]
+    }
+  }
+  let w = P(o);
+  if (w !== void 0 && y !== void 0) Zce(r.askCards, e, {
+    input: w,
+    card: y,
+    reason: p
+  })
+}
+
+function Fis(e, n) {
+  let t = e.checkPermissions;
+  return Fcr(e, {
+    async checkPermissions(s, r) {
+      let d = await t.call(this, s, r),
+        a = r.toolUseId,
+        u = d.behavior === "ask" ? d.updatedInput ?? s : null;
+      if (a !== void 0 && N(u)) {
+        let l;
+        try {
+          l = n(u, r)
+        } catch {
+          l = {
+            values: [],
+            generic: !0
+          }
+        }
+        Zce(ee().askCardFacts, a, l)
+      }
+      return d
+    }
+  })
+}
+
+function vPn(e) {
+  let n = e.checkPermissions;
+  return Fcr(e, {
+    async checkPermissions(t, s) {
+      let r = s.toolUseId;
+      if (r !== void 0) {
+        let a = ee();
+        a.askCards.delete(r), a.askClassCards.delete(r), a.askCardFacts.delete(r)
+      }
+      let d = await n.call(this, t, s);
+      if (r !== void 0) se(r, d, t);
+      return d
+    }
+  })
+}
+
+function Zce(e, n, t) {
+  if (e.delete(n), e.set(n, t), e.size > X) {
+    let s = e.keys().next().value;
+    if (s !== void 0) e.delete(s)
+  }
+}
+
+function Fcr(e, n) {
+  return Object.defineProperties(Object.defineProperties({}, Object.getOwnPropertyDescriptors(e)), Object.getOwnPropertyDescriptors(n))
+}
+
+function Hcr(e, n) {
+  let t = kt(e);
+  return n.toolUseId !== void 0 && t?.lastProbeToolUseId === n.toolUseId ? ICt(t) : {
+    owned: void 0,
+    public: void 0,
+    outsideOrg: UN(t) || W(),
+    invitedByOtherOrg: t?.external === !0
+  }
+}
+
+function ICt(e) {
+  let n = e?.external === !0;
+  if (e === void 0 || e.probeFailed === !0) return {
+    owned: void 0,
+    public: void 0,
+    outsideOrg: UN(e) || W(),
+    invitedByOtherOrg: n
+  };
+  let t = e.mode === "unknown" ? void 0 : e.mode === "public",
+    s = UN(e);
+  if (e.role === void 0) return {
+    owned: t === !0 ? !1 : void 0,
+    public: t,
+    outsideOrg: s,
+    invitedByOtherOrg: n
+  };
+  return {
+    owned: e.role === "unknown" ? void 0 : e.role === "owner",
+    public: t,
+    outsideOrg: s,
+    invitedByOtherOrg: n,
+    ...(e.role === "owner" || e.role === "writer") && {
+      canWrite: !0
+    }
+  }
+}
+
+function W() {
+  return BE() ? void 0 : !1
+}
+
+function KA(e, n, t) {
+  let s = Hcr(n.slug, t);
+  return {
+    operation: e,
+    artifactId: n.slug,
+    owned: s.owned,
+    public: s.public,
+    outsideOrg: s.outsideOrg,
+    invitedByOtherOrg: s.invitedByOtherOrg,
+    networkOff: MCt(n),
+    turnStartedByHuman: MD(t.messages),
+    ...s.canWrite === !0 && {
+      canWrite: !0
+    }
+  }
+}
+var oe = new Set(["scheduled", "retry", "catch_up", "manual"]);
+
+function M(e) {
+  return e?.kind === "task-notification" && e.subkind === "scheduled-trigger" && e.fireReason !== void 0 && oe.has(e.fireReason)
+}
+
+function ast(e) {
+  if (q(e)) return !1;
+  if (!M(uB(e.messages).decider?.origin)) return !1;
+  let n = ee();
+  if (!n.routineRunTainted && !idn(e.messages, (t, s) => VT(s) || M(t))) n.routineRunTainted = !0;
+  return !n.routineRunTainted
+}
+
+function $cr() {
+  if (Iht() !== void 0) return !1;
+  if (fr()) return Q7() && re() && nYn();
+  return !Nx() && $C() && xe() === "firstParty" && zC() === "env"
+}
+
+function B() {
+  return iAt("POST", "/api/frame/deploy/direct")
+}
+
+function K(e) {
+  return ee().frameRelay.servedUntil.get(e) ?? 0
+}
+
+function re() {
+  let e = B();
+  if (e === null || eU(e)) return !1;
+  let n = ee().routineRelayNotCarried;
+  return n === null || K(e) > n.servedUntil
+}
+
+function $Zr() {
+  let e = B();
+  ee().routineRelayNotCarried = {
+    servedUntil: e === null ? 0 : K(e)
+  }
+}
+
+function q(e) {
+  let {
+    mode: n,
+    modeBeforeRewrite: t
+  } = le(e);
+  return $s(n) || t !== void 0 && $s(t)
+}
+
+function lst(e, n) {
+  if (q(e)) return !1;
+  let {
+    messages: t
+  } = e, s = uB(t).decider;
+  if (s === null || t[s.index]?.type !== "user" || s.origin?.kind !== "task-notification") return !1;
+  let r = s.index;
+  for (; r > 0; r--) {
+    let a = t[r - 1];
+    if (a == null || a.type === "assistant" || a.type === "user" && !vht(a) && a.origin?.kind !== "task-notification") break
+  }
+  let d = t.slice(r);
+  return idn(d, (a, u) => u.type === "user" && a?.kind === "task-notification" && a.subkind === void 0 && Uis(u.uuid) === n) && ie(d, n)
+}
+
+function ie(e, n) {
+  let t = e[0] === void 0 ? NaN : Date.parse(e[0].timestamp),
+    s = DPn();
+  if (s !== void 0 && !(Number.isFinite(t) && s < t)) return !1;
+  if (MPn(n, t)) return !1;
+  let r = !1;
+  for (let d of e) {
+    if (d?.type !== "assistant" || !Array.isArray(d.message.content)) continue;
+    for (let a of d.message.content)
+      if (a.type === "tool_use" && ae(a.name, a.input)) {
+        let u = jis(a.id);
+        if (u?.ownWordsOnly !== !0 || u.slug !== n) return !1;
+        r = !0
+      }
+  }
+  return r
+}
+
+function ae(e, n) {
+  let t = e === x_ ? PAe("comments", n) : e === cn ? n : void 0;
+  return typeof t === "object" && t !== null && "action" in t && t.action === "comments"
+}
+var cFe = !0;
+
+function YV(e, n) {
+  return e.ask && e.basis === "unattended" || cFe && le(n).mode === "plan"
+}
+var Ucr = !0;
+
+function x1(e) {
+  return Ucr && le(e).mode === "plan"
+}
+
+function aAe(e, n, t, s, r = () => ov(KA("read", n, e))) {
+  return !t && s && !x1(e) ? r() : null
+}
+
+function H(e) {
+  return $C() && Fh(e)
+}
+
+function Doe(e, n, t) {
+  let s = H(e) && !MD(e.messages);
+  if (!s && !MS(e)) return null;
+  let r = t.endsWith(".") ? t : `${t}.`;
+  return {
+    behavior: "deny",
+    message: `${n}. This needs a yes to: ${r} ${s?"No one can answer that prompt in this Cowork session, and this turn was not started by the user's own message \u2014 tell the user in chat; do not retry it on this turn.":"No one can answer that prompt from plan mode in this session \u2014 keep planning in the plan file and raise it with the user in chat; do not retry while plan mode is on."}`,
+    decisionReason: {
+      type: "safetyCheck",
+      reason: s ? "Artifact call with a new-comments notice pending, on a turn the user's own message did not start, in a Cowork session that has no one to answer its prompt" : "Notification-triggered artifact call in plan mode has no one to answer its prompt",
+      classifierApprovable: !1
+    }
+  }
+}
+
+function bbe(e, n, t) {
+  if (!Bcr(e, t)) return null;
+  return {
+    behavior: "deny",
+    message: `${n}. Reading content of an artifact the user does not own, or whose ownership couldn't be confirmed, needs a person's yes, and no one can answer the prompt in this session \u2014 tell the user in chat instead of retrying.`,
+    decisionReason: {
+      type: "safetyCheck",
+      reason: "Reading content of an artifact that is not confirmed to be the user's own requires a live human consent surface in this session",
+      classifierApprovable: !1
+    }
+  }
+}
+
+function Bcr(e, n) {
+  return Fh(e) && ($C() || n)
+}
+
+function MCt(e) {
+  return gds(e?.env)
+}
+var G = "this artifact",
+  de = "no one was asked first \u2014 nothing was returned; retry the same action so the user is asked",
+  ue = "no one can be asked about it in this session \u2014 nothing was returned; do not retry it here",
+  ce = "a PermissionRequest hook answered the permission prompt in the user's place; only the user's own approval allows this read \u2014 nothing was returned; do not retry it here, and tell the user their hook answered for them (to approve it themselves they would narrow the hook so it no longer answers this prompt)";
+
+function dst(e, n, t, s) {
+  if (ke(n, t)) return !0;
+  if (UX(amt(n), s === "page" ? "artifactReadConsentSlugs" : "artifactAssetReadHumanConsentSlugs", t)) return !0;
+  if (Fh(n) || tue(n)) return !1;
+  return uFe(e, n) || !$s(le(n).mode) && !fe(e) && FY(e, n)
+}
+
+function z(e) {
+  let n = e.toolUseId === void 0 ? void 0 : e.toolDecisions?.get(e.toolUseId);
+  return n?.source === "hook" && n.decision !== "reject"
+}
+
+function DCt(e, n = !1, t) {
+  let s = z(e),
+    r = n ? !jg(e) || Fh(e) && !$s(le(e).mode) : Fh(e);
+  if (!n) return `this turned out to be a public artifact from outside your organization, and ${r?ue:s?ce:de}`;
+  let d = t === void 0 ? "nothing was copied" : "nothing was published",
+    a = t === void 0 ? "Retry the same action so that question is asked." : t.retryUrl !== void 0 ? `Retry publishing with url: ${_(t.retryUrl)} so that question is asked.` : "Retry the same publish so that question is asked.";
+  return r ? `the source artifact belongs to another organization and nobody can be asked about copying from it in this session, so ${d}. Don't retry it here.` : `the source artifact belongs to another organization and nobody was asked whether to copy from another organization's artifact, so ${d}. ${a}`
+}
+
+function kPn(e, n, t) {
+  return sA(kt(n)) && (t || jcr(e, n))
+}
+
+function jcr(e, n) {
+  return xxo(n) || UX(amt(e), "artifactOutsideOrgConsentSlugs", n)
+}
+
+function fe(e) {
+  let n = Reflect.get(e, L0);
+  return typeof n === "object" && n !== null && Reflect.get(n, "classifier") === !0
+}
+var EPn = "This artifact was created outside your organization.";
+
+function TPn(e, n, t) {
+  let s = wW(n),
+    r = s ? `"${s}"` : G,
+    d = s ? `"${s}"` : "This artifact",
+    a = `Let Claude read it${t?` and ${t}`:""}?`;
+  switch (e) {
+    case "someone_else":
+      return `${d} was made by someone else. ${a}`;
+    case "unknown":
+      return `Claude couldn't check who made ${r}. ${a}`;
+    case "cowritten":
+      return `Other people can edit ${r}. ${a}`;
+    case "from_type":
+      return `${d} was made from someone else's artifact type. ${a}`
+  }
+}
+
+function UZr(e) {
+  return `Approving covers its files${e?", and copying them into other artifacts,":""} for the rest of the conversation.`
+}
+
+function pe(e, n, t) {
+  let s = ge(e, n, t);
+  if (e.remember !== "artifact") return s;
+  let r = T3() ? "task" : "conversation";
+  return s.replace(/\?$/, ` for the rest of this ${r}?`)
+}
+
+function V(e) {
+  return e.class === "public_change" && e.basis !== "unattended" && e.about !== "someone_else" && e.missing !== "public"
+}
+
+function ge(e, n, t) {
+  let s = wW(n),
+    r = s ? `"${s}"` : G,
+    d = s ? `"${s}"` : "This artifact";
+  switch (e.class) {
+    case "delete":
+      return `Permanently delete ${s||t===void 0?r:t}?`;
+    case "public_change":
+      if (V(e)) return `${d} is public. Allow Claude to change it?`;
+      if (e.basis === "unattended") return `Allow Claude to change ${r}?`;
+      if (e.about === "someone_else") return e.missing === "owned" ? `Claude couldn't check who made ${r}. Allow Claude to change it?` : `${d} was made by someone else. Allow Claude to change it?`;
+      return `Claude couldn't check who can see ${r}. Allow Claude to change it?`;
+    case "access_change":
+      return `Allow Claude to change who can open or comment on ${r}?`;
+    case "standing_job":
+      return `Allow Claude to keep replying to comments on ${r}?`;
+    case "foreign_read":
+      return TPn(e.missing === "owned" ? "unknown" : "someone_else", n)
+  }
+}
+
+function me(e) {
+  return e.about === "outside_org" ? EPn : void 0
+}
+
+function BF(e) {
+  return WKe(e.input, e.context, [e])
+}
+
+function WKe(e, n, t) {
+  if (n.toolUseId !== void 0) ee().askClassPending.delete(n.toolUseId), ee().askClassCards.delete(n.toolUseId);
+  let s = [];
+  for (let o of t)
+    if (!o.ruling.ask) {
+      if (o.ruling.foreignRead) NCt(o.action, o.slug, o.ownerAccountId, o.ruling.attested)
+    } else if (o.ruling.remember !== "artifact" || !(o.consentHeld ?? kke(o.ruling, o.slug, o.userOnly === !0)) || o.heldYesDoesNotCover === !0) s.push({
+    ...o,
+    ruling: o.ruling
+  });
+  if (s.length === 0) return {
+    behavior: "allow",
+    updatedInput: {
+      ...e,
+      [Wp]: !1
+    }
+  };
+  let r = (o) => o.ruling.answeredBy === "person" || o.userOnly === !0;
+  s.sort((o, k) => Number(r(k)) - Number(r(o)));
+  let d = s.some(r),
+    a = s.map((o) => ({
+      display: o.display,
+      question: pe(o.ruling, o.display.title, o.display.url),
+      note: me(o.ruling),
+      linked: o.ruling.class === "foreign_read" || o.ruling.about === "someone_else" || o.ruling.missing === "owned",
+      reach: o.note
+    })),
+    u = a.flatMap((o) => o.reach === void 0 ? [o.question] : [o.question, o.reach]).join(" ");
+  if (d ? Fh(n) : MS(n) || s.some((o) => o.ruling.class === "foreign_read") && H(n)) return {
+    behavior: "deny",
+    message: `Nothing was done. This needs a yes to: ${a.map((o)=>o.question).join(" ")} No one can answer in this session.`,
+    decisionReason: {
+      type: "safetyCheck",
+      reason: `Artifact ${s.map((o)=>o.ruling.class).join(", ")} ask has no one to answer it`,
+      classifierApprovable: !1
+    }
+  };
+  let p = jg(n),
+    g = Z9e(),
+    f = s.map((o) => ({
+      class: o.ruling.class,
+      remember: o.ruling.remember,
+      ...o.ruling.endpoint && {
+        endpoint: !0
+      },
+      slug: o.slug,
+      url: o.display.url,
+      ...o.display.title !== void 0 && {
+        title: o.display.title
+      },
+      reachable: p,
+      askedIn: g
+    }));
+  Q9e(n, s.filter((o) => ("about" in o.ruling) && o.ruling.about === "outside_org" && !o.ruling.endpoint).map((o) => o.slug), p);
+  let h = f.length === 1 ? f[0] : f;
+  if (n.toolUseId !== void 0) {
+    if (Zce(ee().askClassPending, n.toolUseId, f), d) Zce(ee().askClassPersonAsked, n.toolUseId, !0);
+    else ee().askClassPersonAsked.delete(n.toolUseId);
+    if ($s(le(n).mode)) ee().askClassNoClassifier.delete(n.toolUseId);
+    else Zce(ee().askClassNoClassifier, n.toolUseId, !0);
+    let o = P(h);
+    if (o !== void 0) {
+      let k = a.flatMap(({
+        display: y,
+        question: w,
+        note: C,
+        linked: b,
+        reach: A
+      }) => [w, ...C === void 0 ? [] : [C], ...w.includes(y.url) || !b && wW(y.title) ? [] : [y.url], ...A === void 0 ? [] : [A]]);
+      Zce(ee().askClassCards, n.toolUseId, {
+        stamp: o,
+        parts: k,
+        saysPublic: s.some((y) => V(y.ruling)),
+        reason: u
+      })
+    }
+  }
+  return {
+    behavior: "ask",
+    message: u,
+    updatedInput: {
+      ...e,
+      [Wp]: !1,
+      [WCt]: h
+    },
+    ...s.some((o) => o.ruling.class === "delete" || o.ruling.class === "access_change") && {
+      defaultToNo: !0
+    },
+    ...s.some((o) => o.ruling.class === "access_change") && {
+      personOnly: !0
+    },
+    suppressAlwaysAllowRule: !0,
+    localDisplayOnly: !0,
+    decisionReason: {
+      type: "safetyCheck",
+      reason: u,
+      classifierApprovable: !d
+    }
+  }
+}
+
+function BZr(e) {
+  if (e.toolUseId === void 0) return;
+  let n = ee(),
+    t = n.askClassPending,
+    s = t.get(e.toolUseId) ?? [];
+  t.delete(e.toolUseId);
+  let r = n.askClassPersonAsked.get(e.toolUseId);
+  n.askClassPersonAsked.delete(e.toolUseId);
+  let d = n.askClassNoClassifier.get(e.toolUseId);
+  n.askClassNoClassifier.delete(e.toolUseId);
+  let a = lAe(e),
+    u = !Fh(e) && !tue(e) && (a || r === !0 || d === !0 && !$s(le(e).mode));
+  if (s[0]?.reachable !== !0 || s[0].askedIn !== Z9e() || !jg(e)) return;
+  if (Zce(n.askClassTaken, e.toolUseId, s), u) Zce(n.askClassTakenByPerson, e.toolUseId, !0);
+  if (vs(e.agentContext)) return;
+  for (let l of s)
+    if (l.remember === "artifact" && (a || !l.endpoint)) {
+      if (FHs(Rmt(l), l.slug, u), !l.endpoint && Amt(e, l.slug) && (u || r !== !0 && !z(e))) HHs(l.slug)
+    }
+}
+
+function jZr(e, n, t) {
+  return he(e, n, t)
+}
+
+function he(e, n, t) {
+  let s = e.toolUseId === void 0 ? void 0 : ee().askClassTaken.get(e.toolUseId);
+  return s !== void 0 && s.some((r) => Rmt(r) === n && r.slug === t && r.remember === "artifact") && MK(n, t)
+}
+
+function ke(e, n) {
+  let t = ee();
+  return e.toolUseId !== void 0 && t.askClassTakenByPerson.get(e.toolUseId) === !0 && (t.askClassTaken.get(e.toolUseId)?.some((r) => Rmt(r) === "foreign_read" && r.slug === n) ?? !1) || lAe(e) || aFt("foreign_read", n)
+}
+
+function pri(e, n, t) {
+  if (e.toolUseId === void 0) return;
+  let s = ee();
+  Zce(s.askClassPending, e.toolUseId, [{
+    class: "foreign_read",
+    remember: "this_call",
+    slug: n,
+    url: t,
+    reachable: jg(e),
+    askedIn: Z9e()
+  }]), Zce(s.askClassPersonAsked, e.toolUseId, !0)
+}
+
+function WZr(e, n) {
+  i("tengu_artifact_routine_write_unasked", {
+    db_op: c(e),
+    artifact_id: ye(n)
+  })
+}
+
+function zZr(e, n) {
+  i("tengu_artifact_comment_write_unasked", {
+    db_op: c(e),
+    artifact_id: ye(n)
+  })
+}
+
+function GZr(e) {
+  i("tengu_artifact_comment_publish_unasked", {
+    artifact_id: ye(e)
+  })
+}
+
+function VZr(e) {
+  ee().commentRepublishedPaths.add(e)
+}
+
+function Wcr(e) {
+  ee().routineRepublishedPaths.add(e)
+}
+
+function qZr(e) {
+  if (e === void 0) return;
+  let n = ee();
+  n.askClassPending.delete(e), n.askClassCards.delete(e), n.askClassPersonAsked.delete(e), n.askClassNoClassifier.delete(e), n.askNamedOtherOrg.delete(e)
+}
+
+function KZr(e) {
+  i("tengu_artifact_routine_publish_unasked", {
+    artifact_id: ye(e)
+  })
+}
+
+function LCt(e, n, t) {
+  let s = c(n ?? "absent");
+  if (i("tengu_artifact_routine_first_publish_unasked", {
+      ...e !== void 0 && {
+        artifact_id: ye(e)
+      },
+      mode: s,
+      ...t?.fromType && {
+        from_type: !0
+      }
+    }), n === "owner" || n === "refused_before_send") return;
+  if (n !== "stranded" && n !== "refused_shape" && n !== "unknown_outcome") m("artifact_publish", "routine_first_publish_not_owner_only", {
+    mode: s,
+    ...t?.fromType && {
+      from_type: !0
+    }
+  });
+  ee().routineRunTainted = !0
+}
+
+function NCt(e, n, t, s) {
+  i("tengu_artifact_foreign_read_unasked", {
+    action: c(e),
+    artifact_id: ye(n),
+    ...t !== void 0 && {
+      owner_account_id: ye(t)
+    },
+    ...s && {
+      attested: !0
+    }
+  })
+}
+export {
+  Dis,
+  Lis,
+  wPn,
+  Nis,
+  Fis,
+  vPn,
+  Zce,
+  Fcr,
+  Hcr,
+  ICt,
+  KA,
+  ast,
+  $cr,
+  $Zr,
+  lst,
+  cFe,
+  YV,
+  Ucr,
+  x1,
+  aAe,
+  Doe,
+  bbe,
+  Bcr,
+  MCt,
+  dst,
+  DCt,
+  kPn,
+  jcr,
+  EPn,
+  TPn,
+  UZr,
+  BF,
+  WKe,
+  BZr,
+  jZr,
+  pri,
+  WZr,
+  zZr,
+  GZr,
+  VZr,
+  Wcr,
+  qZr,
+  KZr,
+  LCt,
+  NCt
+};

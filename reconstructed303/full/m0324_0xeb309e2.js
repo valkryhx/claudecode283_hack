@@ -1,0 +1,509 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  Ct
+} from "B:/~BUN/root/chunk-28dw3zbk.js";
+import {
+  Me
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  j,
+  we
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  je
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  z
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  ln
+} from "B:/~BUN/root/chunk-jpdys232.js";
+import {
+  g,
+  m
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  azs,
+  n5,
+  Gi,
+  gB,
+  En,
+  E,
+  yb,
+  NNr
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  Eh,
+  $p,
+  _,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  At,
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  _De
+} from "B:/~BUN/root/chunk-je1b1drr.js";
+import {
+  Rt
+} from "B:/~BUN/root/chunk-vpgpdrbv.js";
+import {
+  Xn
+} from "B:/~BUN/root/chunk-8pmnanyd.js";
+import {
+  qn
+} from "B:/~BUN/root/chunk-245a2x6v.js";
+import {
+  MUs,
+  GMr,
+  VMr
+} from "B:/~BUN/root/chunk-7z3ndmqr.js";
+import {
+  kXe
+} from "B:/~BUN/root/chunk-8d9x5cx1.js";
+import {
+  ya
+} from "B:/~BUN/root/chunk-6k93vgm0.js";
+import {
+  hs
+} from "B:/~BUN/root/chunk-qjf8jcwq.js";
+import {
+  hostname as G
+} from "os";
+var s = "tengu_sessions_elevated_auth_enforcement",
+  u = "require_trusted_devices",
+  O = "tengu_sessions_elevated_auth_disable_proactive_enrollment",
+  q = 300000,
+  W = 86400000;
+class b {
+  storedTokenRead = void 0;
+  lastEnrollAttemptAtMs = 0;
+  automaticEnrollmentNoticePending = !1;
+  automaticEnrollmentNoticeRaised = Me();
+  signInEnrollmentsInFlight = 0
+}
+var T = new z(() => new b),
+  san = "This computer was enrolled as a trusted device for your account (you will also get an email). If you did not expect this, review your devices in claude.ai settings.";
+
+function PMr() {
+  let e = T.of(j().host),
+    n = e.automaticEnrollmentNoticePending;
+  return e.automaticEnrollmentNoticePending = !1, n
+}
+
+function TOo(e) {
+  return T.of(j().host).automaticEnrollmentNoticeRaised.subscribe(e)
+}
+
+function Csi() {
+  if (PMr()) process.stderr.write(`${san}
+`)
+}
+var ogt = "Your organization requires Trusted Devices for Remote Control, but enrollment is temporarily disabled. Please try again later, or contact your administrator.";
+
+function Bme() {
+  return E(O, !1)
+}
+
+function k() {
+  return import.meta.require("B:/~BUN/root/chunk-v3zcvmws.js")
+}
+
+function p() {
+  return import.meta.require("B:/~BUN/root/chunk-9hz9jer5.js")
+}
+
+function VX() {
+  if (!E(s, !1)) return !1;
+  return p().isPolicyAllowed(u)
+}
+
+function Nke() {
+  if (!E(s, !1)) return !1;
+  return p().isPolicyEnforced(u)
+}
+
+function COo() {
+  if (!ya(s, {
+      safe: !0
+    })) return !1;
+  let e = p();
+  return e.isPolicyEnforcedOrHintedByRefusedCache(u) || e.isPolicyVerdictAbsent()
+}
+
+function Rsi() {
+  return a.CLAUDE_CODE_REMOTE === !0 && !a.CLAUDE_TRUSTED_DEVICE_TOKEN && Nke()
+}
+var N = "not reachable with this tool from a cloud session: that session requires a trusted device, and this cloud session has none to show",
+  OMr = `${N}. Tell your user it was not sent; do not look for another tool to send it with`,
+  K = /^(?:cse|session)_[0-9A-Za-z_-]{1,128}$/;
+
+function Asi(e, n) {
+  let r = `Nothing was sent: Remote Control session '${e}' is`;
+  return n === void 0 || !K.test(n.sessionId) ? `${r} ${OMr}.` : `${r} ${N}. This target may be reachable with ${n.sendTool}, the session service's own tool, if your user has allowed this cloud session to reach that computer; that session's id there is "${n.sessionId}". A tool of that name on any other server is not it.`
+}
+
+function Fke() {
+  if (!ya("tengu_bridge_attestation_enforce", {
+      safe: !0
+    })) return GMr;
+  if (!ya(s, {
+      safe: !0
+    }) || !p().isPolicyEnforcedOrHintedByRefusedCache(u)) return GMr;
+  return Z()
+}
+var Y = "VERIFIED_KEYLESS_DEVICE",
+  F = "tengu_bridge_attestation_enforce_config";
+
+function Z() {
+  try {
+    let {
+      value: e,
+      source: n
+    } = En(F, {});
+    switch (n) {
+      case "payload":
+        return gB() ? w(e, D()) : VMr(e);
+      case "disk":
+        return w(e, D());
+      case "override":
+        return w(e, P());
+      default:
+        return P()
+    }
+  } catch {
+    return D()
+  }
+}
+
+function P() {
+  return Gi() && !gB() ? VMr(n5()[F] ?? {}) : D()
+}
+
+function D() {
+  return {
+    enforce: !0,
+    acceptLevel: Y,
+    acceptStatuses: new Set
+  }
+}
+
+function w(e, n) {
+  return {
+    ...n,
+    acceptLevel: MUs(VMr(e).acceptLevel, n.acceptLevel)
+  }
+}
+
+function ian() {
+  let e = T.of(j().host);
+  if (e.storedTokenRead !== void 0) return e.storedTokenRead;
+  let n = J();
+  return e.storedTokenRead = n, n
+}
+async function J() {
+  let e = process.env.CLAUDE_TRUSTED_DEVICE_TOKEN;
+  if (e) return e;
+  return (await qn().readAsync())?.trustedDeviceToken
+}
+async function FS() {
+  if (!VX() || azs()) return;
+  return ian()
+}
+async function NKn() {
+  if (!Nke()) return !1;
+  if (await ian()) return !1;
+  return !0
+}
+async function Q() {
+  if (!await NKn()) return null;
+  if (Bme()) return ogt;
+  return "Your organization requires Trusted Devices for Remote Control, but this device is not enrolled. Please run `/login` in Claude Code to enroll this device."
+}
+async function ROo(e) {
+  return await yb(s), await IMr(e), Q()
+}
+
+function jae(e, n) {
+  t(`${e} untrusted_device read as ${n.kind}${"subReason"in n?` (sub_reason ${Rt(n.subReason,64)})`:""}; not re-enrolling`)
+}
+
+function UH() {
+  T.of(j().host).storedTokenRead = void 0
+}
+async function _Ie(e, n) {
+  if (!VX()) return;
+  UH();
+  let r = await FS();
+  if (!r || r === e) {
+    let o = await BJs(r),
+      y = T.of(j().host);
+    if (o !== "none") t(o === "recent" ? "[trusted-device] The refused device token is one an earlier refusal enrolled; not enrolling again" : "[trusted-device] The stored time of the last enrollment after a refusal is unusable; not enrolling until a sign-in clears it");
+    else if (Date.now() - y.lastEnrollAttemptAtMs >= q) y.lastEnrollAttemptAtMs = Date.now(), await aan({
+      trigger: "server_denied",
+      credentials: n
+    }), r = await FS()
+  }
+  if (!r || r === e) return;
+  return t("[trusted-device] Token changed after untrusted_device 403 (cache bust or lazy enrollment); caller will retry"), r
+}
+async function BJs(e) {
+  if (!e) return "none";
+  let n = await qn().readAsync(),
+    r = n?.trustedDeviceEnrolledAfterRefusalAtMs;
+  if (n?.trustedDeviceToken !== e || r === void 0) return "none";
+  let o = Date.now();
+  if (!Number.isSafeInteger(r) || r <= 0 || r > o) return "unusable";
+  return o - r < W ? "recent" : "none"
+}
+async function GFt(e, n, r) {
+  let o = await _Ie(e, r);
+  if (!o) return;
+  return n(o)
+}
+
+function Hke(e) {
+  if (e?.kind === "signature_wanted") return kXe;
+  if (Bme()) return ogt;
+  return "this device is not enrolled as a trusted device; run /login to enroll"
+}
+async function IMr(e) {
+  if (!Nke()) return;
+  if (UH(), !await NKn()) return;
+  if (Bme()) return;
+  t("[trusted-device] Not enrolled, attempting lazy enrollment with OAuth token"), await aan({
+    lazy: !0,
+    credentials: e
+  })
+}
+async function xsi(e) {
+  if (!VX()) return $p("trusted_devices_off");
+  if (UH(), await ian()) return Eh(void 0);
+  if (Bme()) return $p("enrollment_paused");
+  return t("[trusted-device] Not enrolled, enrolling for a device-bound session"), await aan({
+    trigger: "device_bind",
+    credentials: e
+  }), await FS() ? Eh(void 0) : $p("not_given")
+}
+
+function AOo() {
+  let {
+    isClaudeAISubscriber: e
+  } = import.meta.require("B:/~BUN/root/chunk-nnhd4yzs.js");
+  if (!Xn() || !e()) {
+    FKn();
+    return
+  }
+  if (Bme()) {
+    FKn();
+    return
+  }
+  UH(), qn().mutate((n) => n.trustedDeviceToken || n.trustedDeviceEnrolledAfterRefusalAtMs !== void 0 ? {
+    ...n,
+    trustedDeviceToken: void 0,
+    trustedDeviceEnrolledAfterRefusalAtMs: void 0
+  } : n).catch(() => {})
+}
+async function FKn() {
+  let e = qn();
+  if ((await e.readAsync().catch(() => null))?.trustedDeviceEnrolledAfterRefusalAtMs === void 0) return;
+  await e.mutate((r) => r.trustedDeviceEnrolledAfterRefusalAtMs === void 0 ? r : {
+    ...r,
+    trustedDeviceEnrolledAfterRefusalAtMs: void 0
+  }).catch(() => {})
+}
+
+function jJs() {
+  return x(E(s, !1))
+}
+async function Psi() {
+  if (a.CLAUDE_CODE_REMOTE === !0) return "no_cloud_container";
+  if (!R()) return "no";
+  return await je((async () => {
+    let n = await yb(s);
+    if (!n) return NNr(s) ? "no_gate_off" : "no";
+    await k().waitForPolicyLimitsToLoad();
+    let r = x(n),
+      o = p();
+    return r === "no" && R() && !o.isPolicyEnforced(u) && (!o.isPolicyLimitsEligible() || o.isSessionVerdictFromServerFetch() && !o.isSessionVerdictDisowned()) ? "no_not_required" : r
+  })(), X).catch(() => {
+    return
+  }) ?? jJs()
+}
+var X = 5000;
+
+function x(e) {
+  if (!e || !R() || !p().isPolicyEnforced(u)) return "no";
+  return Bme() ? "paused" : "enrolls"
+}
+
+function R() {
+  let {
+    isClaudeAISubscriber: e
+  } = import.meta.require("B:/~BUN/root/chunk-nnhd4yzs.js");
+  return !(a.CLAUDE_CODE_REMOTE === !0 || a.DISABLE_LOGIN_COMMAND || !Xn() || !e() || process.env.CLAUDE_TRUSTED_DEVICE_TOKEN || At())
+}
+async function aan({
+  trigger: e = "proactive",
+  lazy: n = !1,
+  credentials: r
+}) {
+  let {
+    isClaudeAISubscriber: o,
+    isConsumerSubscriber: y,
+    getClaudeAIOAuthTokens: U,
+    checkAndRefreshOAuthTokenIfNeeded: M
+  } = import.meta.require("B:/~BUN/root/chunk-nnhd4yzs.js");
+  if (!Xn() || !o()) return;
+  if (a.CLAUDE_CODE_REMOTE === !0) {
+    t("[trusted-device] In a cloud container, skipping enrollment");
+    return
+  }
+  let A = T.of(j().host),
+    C = e === "proactive" && !n;
+  if (C) A.signInEnrollmentsInFlight++;
+  try {
+    if (!await yb(s)) {
+      t(`[trusted-device] Gate ${s} is off, skipping enrollment`);
+      return
+    }
+    if (Bme()) {
+      t(`[trusted-device] Proactive enrollment disabled via ${O}, skipping`);
+      return
+    }
+    if (process.env.CLAUDE_TRUSTED_DEVICE_TOKEN) {
+      t("[trusted-device] CLAUDE_TRUSTED_DEVICE_TOKEN env var is set, skipping enrollment (env var takes precedence)");
+      return
+    }
+    await k().waitForPolicyLimitsToLoad();
+    let h = p(),
+      L = h.isPolicyEnforced(u),
+      H = e === "server_denied" || e === "device_bind" && y();
+    if (!(L || H && h.isPolicyAllowed(u))) {
+      t(`[trusted-device] Org has not enabled ${u}, skipping enrollment`);
+      return
+    }
+    let v = {
+      trigger: c(e),
+      org_enforced: L
+    };
+    if (At()) {
+      t("[trusted-device] Essential traffic only, skipping enrollment");
+      return
+    }
+    await M({
+      credentials: r
+    });
+    let I = U()?.accessToken;
+    if (!I) {
+      t("[trusted-device] No OAuth token, skipping enrollment");
+      return
+    }
+    let B = ln().BASE_API_URL,
+      f;
+    try {
+      f = await Ct.post(`${B}/api/auth/trusted_devices`, {
+        display_name: `Claude Code on ${G()} \xB7 ${_De("win32")}`
+      }, {
+        headers: {
+          "User-Agent": hs(),
+          Authorization: `Bearer ${I}`,
+          "Content-Type": "application/json"
+        },
+        timeout: 1e4,
+        validateStatus: (i) => i < 500
+      })
+    } catch (i) {
+      t(`[trusted-device] Enrollment request failed: ${d(i)}`), m("bridge_trusted_device_enroll", "request_failed", v);
+      return
+    }
+    if (f.status !== 200 && f.status !== 201) {
+      t(`[trusted-device] Enrollment failed ${f.status}: ${_(f.data).slice(0,200)}`), m("bridge_trusted_device_enroll", "http_error", v);
+      return
+    }
+    let S = f.data?.device_token;
+    if (!S || typeof S !== "string") {
+      t("[trusted-device] Enrollment response missing device_token field"), m("bridge_trusted_device_enroll", "missing_token", v);
+      return
+    }
+    try {
+      let i = await qn().mutate((V) => ({
+        ...V,
+        trustedDeviceToken: S,
+        trustedDeviceEnrolledAfterRefusalAtMs: e === "server_denied" ? Date.now() : void 0
+      }));
+      if (!i.success) {
+        t(`[trusted-device] Failed to persist token: ${i.warning??"unknown"}`), m("bridge_trusted_device_enroll", "storage_failed", v);
+        return
+      }
+      UH(), t(`[trusted-device] Enrolled device_id=${f.data.device_id??"unknown"}`), g("bridge_trusted_device_enroll", v)
+    } catch (i) {
+      t(`[trusted-device] Storage write failed: ${d(i)}`), m("bridge_trusted_device_enroll", "storage_failed", v);
+      return
+    }
+    if (C || A.signInEnrollmentsInFlight > 0) return;
+    try {
+      if (we()) {
+        if (t(`[trusted-device] ${san}`), process.stderr.isTTY) process.stderr.write(`${san}
+`)
+      } else A.automaticEnrollmentNoticePending = !0, A.automaticEnrollmentNoticeRaised.emit()
+    } catch (i) {
+      l(i)
+    }
+  } catch (h) {
+    t(`[trusted-device] Enrollment error: ${d(h)}`), m("bridge_trusted_device_enroll", "unexpected_error", {
+      trigger: c(e)
+    })
+  } finally {
+    if (C) A.signInEnrollmentsInFlight--
+  }
+}
+export {
+  san,
+  PMr,
+  TOo,
+  Csi,
+  ogt,
+  Bme,
+  VX,
+  Nke,
+  COo,
+  Rsi,
+  OMr,
+  Asi,
+  Fke,
+  ian,
+  FS,
+  NKn,
+  ROo,
+  jae,
+  UH,
+  _Ie,
+  BJs,
+  GFt,
+  Hke,
+  IMr,
+  xsi,
+  AOo,
+  FKn,
+  jJs,
+  Psi,
+  aan
+};

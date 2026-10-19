@@ -14,10 +14,10 @@ import { fileURLToPath } from "node:url";
 import { parse } from "@babel/parser";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, "..");
-const MODDIR = path.resolve(ROOT, "..", "claudecode283", "modules");
-const OUT = path.join(ROOT, "deminified");
-const FULLDIR = path.join(ROOT, "full");
+const ROOT = process.env.RE_ROOT ? path.resolve(process.env.RE_ROOT) : path.resolve(__dirname, "..");
+const MODDIR = process.env.RE_MODULES ? path.resolve(process.env.RE_MODULES) : path.resolve(ROOT, "..", "claudecode283", "modules");
+const OUT = process.env.RE_DEMINIFIED ? path.resolve(process.env.RE_DEMINIFIED) : path.join(ROOT, "deminified");
+const FULLDIR = process.env.RE_FULL ? path.resolve(process.env.RE_FULL) : path.join(ROOT, "full");
 const BIG_LIMIT = 1000000;
 
 const args = process.argv.slice(2);

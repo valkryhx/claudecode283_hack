@@ -1,0 +1,133 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Noe } from "B:/~BUN/root/chunk-bvp25jb5.js";
+import { K7e } from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import { Uq as toolName } from "B:/~BUN/root/chunk-kcbxq7ta.js";
+import { yZ } from "B:/~BUN/root/chunk-9grc6xh0.js";
+import { N } from "B:/~BUN/root/chunk-nkxgam12.js";
+import { E1t, T1t } from "B:/~BUN/root/chunk-07c8fw5z.js";
+function f(r) {
+  return r.replace(/^www\./i, "");
+}
+function n4t(r) {
+  if (r.startsWith("[")) {
+    let n = r.indexOf("]");
+    return n === -1 ? r : r.slice(0, n + 1);
+  }
+  let e = r.lastIndexOf(":");
+  return e === -1 ? r : r.slice(0, e);
+}
+function yz(r) {
+  let e = E1t(r).replace(/\.+(?=$|:)/, "").toLowerCase(),
+    n = n4t(e),
+    o = e.slice(n.length),
+    t = (T1t(n) || n).replace(/\.+$/, "");
+  return f(t + o);
+}
+var regExp = new RegExp(`^${toolName}\\(([^)]+)\\)$`);
+function Zrt(r) {
+  let allowed = new Set(),
+    allowedRaw = [],
+    denied = new Set(),
+    sourceOf = new Map();
+  return u(r.alwaysDenyRules, denied, sourceOf), u(r.alwaysAllowRules, allowed, sourceOf, allowedRaw, denied), {
+    allowed: allowed,
+    denied: denied,
+    allowedRaw: allowedRaw,
+    sourceOf: sourceOf
+  };
+}
+function rar(r, e) {
+  return r.has(e) || r.has(n4t(e));
+}
+function qEt(r, ruleContent) {
+  let n = yz(ruleContent);
+  if (!rar(r.denied, n)) return;
+  return {
+    behavior: "deny",
+    message: `Claude in Chrome is denied on ${ruleContent}.`,
+    decisionReason: {
+      type: "rule",
+      rule: {
+        source: r.sourceOf.get(n) ?? r.sourceOf.get(n4t(n)) ?? "session",
+        ruleBehavior: "deny",
+        ruleValue: {
+          toolName: toolName,
+          ruleContent: ruleContent
+        }
+      }
+    }
+  };
+}
+function u(r, e, n, o, t) {
+  for (let [a, l] of Object.entries(r)) for (let c of l ?? []) {
+    let s = regExp.exec(c);
+    if (s?.[1]) {
+      let i = yz(s[1]);
+      if (t && rar(t, i)) continue;
+      if (!e.has(i)) e.add(i), n.set(i, a), o?.push(s[1]);
+    }
+  }
+}
+function RCn(r) {
+  return ["back", "forward"].includes(r.trim().toLowerCase());
+}
+var p = /^(?:https?|wss?|ftp|file)\.*(?=[\\?#]|$)/i;
+function KEt(r) {
+  let e = r.replace(/[\t\n\r]/g, "").replace(/^[\u0000-\u0020]+|[\u0000-\u0020]+$/g, ""),
+    n;
+  try {
+    if (n = new URL(e), n.protocol !== "http:" && n.protocol !== "https:") {
+      if (!/^(localhost|[a-z0-9-]+\.[a-z0-9.-]+):\d+(?=$|[/?#])/i.test(e)) return;
+      n = void 0;
+    }
+  } catch {}
+  if (!n) {
+    if (/^[^/\\?#]*:(?=$|[/\\?#])/.test(e)) return;
+    try {
+      n = new URL(`https://${e}`);
+    } catch {
+      return;
+    }
+    if (p.test(K7e(e))) return;
+  }
+  if (!n.host || n.username || n.password) return;
+  return {
+    host: n.host,
+    url: n.href
+  };
+}
+function ACn(r) {
+  let e = new URL(r.url);
+  return e.protocol === "http:" && e.port === "" ? `${e.host}:80` : e.host;
+}
+function oar(r) {
+  let e = KEt(r);
+  return e && {
+    ...e,
+    host: ACn(e)
+  };
+}
+function Xes(r) {
+  if (!Array.isArray(r.actions)) return;
+  for (let e of r.actions) {
+    if (!N(e) || typeof e.name !== "string") continue;
+    let input = N(e.input) ? e.input : {};
+    if (Noe.has(e.name) && yZ(e.name, input)) continue;
+    if (e.name === "navigate" && typeof input.url === "string" && (input.url.trim().toLowerCase() === "back" || input.url.trim().toLowerCase() === "forward")) continue;
+    if (e.name === "navigate" && typeof input.url === "string" || typeof input.tabId === "number") return {
+      toolName: e.name,
+      input: input
+    };
+  }
+  return;
+}
+export { n4t, yz, Zrt, rar, qEt, RCn, KEt, ACn, oar, Xes };

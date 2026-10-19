@@ -1,0 +1,897 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import {
+  b,
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  Tb
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import "B:/~BUN/root/chunk-8ye9n4fk.js";
+import "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import "B:/~BUN/root/chunk-yt0knyw7.js";
+import "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import "B:/~BUN/root/chunk-nggrknsv.js";
+import "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-frrkt2bs.js";
+import "B:/~BUN/root/chunk-8pmnanyd.js";
+import "B:/~BUN/root/chunk-kad4nq7y.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import {
+  ro
+} from "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import "B:/~BUN/root/chunk-nxwmyxnk.js";
+import "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import "B:/~BUN/root/chunk-xrp58hm9.js";
+import "B:/~BUN/root/chunk-2zk4vqr8.js";
+import "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import "B:/~BUN/root/chunk-pjgzz98k.js";
+import "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import "B:/~BUN/root/chunk-1gpjpba6.js";
+import "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import "B:/~BUN/root/chunk-28dw3zbk.js";
+import "B:/~BUN/root/chunk-07c8fw5z.js";
+import {
+  FO,
+  Ce,
+  ue
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import "B:/~BUN/root/chunk-h9p45fg5.js";
+import "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import {
+  Ut
+} from "B:/~BUN/root/chunk-cx57tr4b.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import {
+  kS
+} from "B:/~BUN/root/chunk-8w42v0dp.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import {
+  If
+} from "B:/~BUN/root/chunk-zayh6xmh.js";
+import {
+  eA
+} from "B:/~BUN/root/chunk-maccjk0y.js";
+import "B:/~BUN/root/chunk-tkcgmvh7.js";
+import "B:/~BUN/root/chunk-1g2t7gtx.js";
+import "B:/~BUN/root/chunk-8pqw0dhk.js";
+import "B:/~BUN/root/chunk-pbq7kcha.js";
+import "B:/~BUN/root/chunk-h6hab5w2.js";
+import "B:/~BUN/root/chunk-arcgcnq8.js";
+import {
+  Far,
+  Har,
+  N4t,
+  $ar,
+  F4t,
+  Uar,
+  Bar,
+  H4t
+} from "B:/~BUN/root/chunk-7y466s77.js";
+import "B:/~BUN/root/chunk-7ybsx93y.js";
+import "B:/~BUN/root/chunk-rnh5g2g4.js";
+import {
+  hpe
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import "B:/~BUN/root/chunk-m42n0wc9.js";
+import "B:/~BUN/root/chunk-tkkhtfwq.js";
+import "B:/~BUN/root/chunk-z84amwaw.js";
+import "B:/~BUN/root/chunk-hkc0g0wr.js";
+import "B:/~BUN/root/chunk-mgb2hezz.js";
+import "B:/~BUN/root/chunk-nvdqbkrt.js";
+import "B:/~BUN/root/chunk-0n2201tc.js";
+import "B:/~BUN/root/chunk-q3srk2wz.js";
+import "B:/~BUN/root/chunk-x4gdh7dq.js";
+import "B:/~BUN/root/chunk-qk52d0gf.js";
+import "B:/~BUN/root/chunk-f25646gd.js";
+import "B:/~BUN/root/chunk-dq7zfs8r.js";
+import "B:/~BUN/root/chunk-z8fd2x5s.js";
+import "B:/~BUN/root/chunk-2fccb5hn.js";
+import "B:/~BUN/root/chunk-8y0chnnr.js";
+import "B:/~BUN/root/chunk-gy660jgx.js";
+import "B:/~BUN/root/chunk-pmw6knpp.js";
+import "B:/~BUN/root/chunk-e7tskyjv.js";
+import "B:/~BUN/root/chunk-9080897a.js";
+import "B:/~BUN/root/chunk-c44qc88s.js";
+import "B:/~BUN/root/chunk-bn7mrnb3.js";
+import "B:/~BUN/root/chunk-vfmvkxsr.js";
+import "B:/~BUN/root/chunk-tqyz3ejx.js";
+import "B:/~BUN/root/chunk-h1tq8zce.js";
+import "B:/~BUN/root/chunk-efcxwmhb.js";
+import "B:/~BUN/root/chunk-d544j3ga.js";
+import "B:/~BUN/root/chunk-hhgqcegv.js";
+import "B:/~BUN/root/chunk-472kxa0t.js";
+import "B:/~BUN/root/chunk-ggdk44cm.js";
+import "B:/~BUN/root/chunk-cvj1wxdh.js";
+import "B:/~BUN/root/chunk-9w4ppz44.js";
+import "B:/~BUN/root/chunk-v1j2tw52.js";
+import "B:/~BUN/root/chunk-gjdk1btq.js";
+import "B:/~BUN/root/chunk-3d7bmmrg.js";
+import "B:/~BUN/root/chunk-e3hz52nd.js";
+import "B:/~BUN/root/chunk-ses0c36n.js";
+import "B:/~BUN/root/chunk-2zdc0br5.js";
+import "B:/~BUN/root/chunk-7j5tvnqj.js";
+import "B:/~BUN/root/chunk-fb07w30y.js";
+import "B:/~BUN/root/chunk-9tkh434c.js";
+import "B:/~BUN/root/chunk-1xwk1cwp.js";
+import "B:/~BUN/root/chunk-r9swysv9.js";
+import {
+  dve,
+  X9,
+  but
+} from "B:/~BUN/root/chunk-dn8rakwm.js";
+import "B:/~BUN/root/chunk-3tj0rd0x.js";
+import "B:/~BUN/root/chunk-j97yjp75.js";
+import "B:/~BUN/root/chunk-vd11ggb1.js";
+import "B:/~BUN/root/chunk-cw2ph5fw.js";
+import "B:/~BUN/root/chunk-yjayxywk.js";
+import "B:/~BUN/root/chunk-t3p4x0tq.js";
+import "B:/~BUN/root/chunk-rx39nt6a.js";
+import "B:/~BUN/root/chunk-r81hcemr.js";
+import "B:/~BUN/root/chunk-q0t5e1bx.js";
+import "B:/~BUN/root/chunk-f0ytfwhx.js";
+import "B:/~BUN/root/chunk-r0jnxjth.js";
+import "B:/~BUN/root/chunk-bp7zxkzq.js";
+import "B:/~BUN/root/chunk-429xgjya.js";
+import "B:/~BUN/root/chunk-7qeqkjr8.js";
+import "B:/~BUN/root/chunk-7qatwz9y.js";
+import "B:/~BUN/root/chunk-b0vcwsh9.js";
+import "B:/~BUN/root/chunk-r4y1700s.js";
+import "B:/~BUN/root/chunk-hcz3kjms.js";
+import "B:/~BUN/root/chunk-0m6vvjrw.js";
+import "B:/~BUN/root/chunk-mtfk0qfd.js";
+import "B:/~BUN/root/chunk-6vykeeak.js";
+import "B:/~BUN/root/chunk-9tx73f8x.js";
+import "B:/~BUN/root/chunk-p4t63p2q.js";
+import "B:/~BUN/root/chunk-vttg4n7q.js";
+import "B:/~BUN/root/chunk-01qdq3qc.js";
+import "B:/~BUN/root/chunk-7gwemd3j.js";
+import "B:/~BUN/root/chunk-h2myanpn.js";
+import "B:/~BUN/root/chunk-hkh6hras.js";
+import "B:/~BUN/root/chunk-s6jt7ap6.js";
+import "B:/~BUN/root/chunk-1fjjnb3f.js";
+import "B:/~BUN/root/chunk-8gzvb73z.js";
+import "B:/~BUN/root/chunk-72n790j1.js";
+import "B:/~BUN/root/chunk-2vhqkymb.js";
+import "B:/~BUN/root/chunk-nz6ywek4.js";
+import "B:/~BUN/root/chunk-vnmfp48d.js";
+import "B:/~BUN/root/chunk-1s3ejbv6.js";
+import "B:/~BUN/root/chunk-qegjq8ky.js";
+import "B:/~BUN/root/chunk-ervhay8x.js";
+import "B:/~BUN/root/chunk-t63e78w2.js";
+import "B:/~BUN/root/chunk-t78esase.js";
+import "B:/~BUN/root/chunk-66hg7026.js";
+import "B:/~BUN/root/chunk-gt1x0gdb.js";
+import "B:/~BUN/root/chunk-ydtn2zrk.js";
+import "B:/~BUN/root/chunk-2vz2n6bw.js";
+import "B:/~BUN/root/chunk-7fsmvr58.js";
+import "B:/~BUN/root/chunk-j4qesy5s.js";
+import "B:/~BUN/root/chunk-ks7h6f0s.js";
+import "B:/~BUN/root/chunk-d69870x4.js";
+import "B:/~BUN/root/chunk-x73fxyt1.js";
+import "B:/~BUN/root/chunk-vm7ta03q.js";
+import "B:/~BUN/root/chunk-25j8tcak.js";
+import "B:/~BUN/root/chunk-j2ppas05.js";
+import "B:/~BUN/root/chunk-k382hx6g.js";
+import "B:/~BUN/root/chunk-19m6yp46.js";
+import "B:/~BUN/root/chunk-vqar0j99.js";
+import "B:/~BUN/root/chunk-tsyp86a9.js";
+import "B:/~BUN/root/chunk-pwz0pnkt.js";
+import "B:/~BUN/root/chunk-c8j3aby6.js";
+import "B:/~BUN/root/chunk-9y4mcm7b.js";
+import "B:/~BUN/root/chunk-0x8xex6w.js";
+import "B:/~BUN/root/chunk-4zxf96ry.js";
+import "B:/~BUN/root/chunk-wje8pvrc.js";
+import "B:/~BUN/root/chunk-7h4t08m3.js";
+import "B:/~BUN/root/chunk-nw686kdq.js";
+import "B:/~BUN/root/chunk-w2mafqxc.js";
+import "B:/~BUN/root/chunk-pm2vnc51.js";
+import "B:/~BUN/root/chunk-183sjefx.js";
+import "B:/~BUN/root/chunk-rhpppw15.js";
+import "B:/~BUN/root/chunk-q5ca2nsw.js";
+import "B:/~BUN/root/chunk-p64g0hj8.js";
+import "B:/~BUN/root/chunk-0p489043.js";
+import "B:/~BUN/root/chunk-fvn1tqbf.js";
+import "B:/~BUN/root/chunk-r1z1wgpe.js";
+import "B:/~BUN/root/chunk-m3ka5wpr.js";
+import "B:/~BUN/root/chunk-c0j3f8cc.js";
+import "B:/~BUN/root/chunk-w6et565n.js";
+import "B:/~BUN/root/chunk-4mz5gtvt.js";
+import "B:/~BUN/root/chunk-b0envsq0.js";
+import "B:/~BUN/root/chunk-qdaqzk6w.js";
+import "B:/~BUN/root/chunk-7z3ndmqr.js";
+import "B:/~BUN/root/chunk-aqd86p9a.js";
+import "B:/~BUN/root/chunk-74f4ssah.js";
+import "B:/~BUN/root/chunk-m1mbrj05.js";
+import "B:/~BUN/root/chunk-jwh3r245.js";
+import "B:/~BUN/root/chunk-n0e205s6.js";
+import "B:/~BUN/root/chunk-351qj2sm.js";
+import "B:/~BUN/root/chunk-3m56hntj.js";
+import "B:/~BUN/root/chunk-00v9f07q.js";
+import "B:/~BUN/root/chunk-gk5jpppj.js";
+import "B:/~BUN/root/chunk-yq5myw2y.js";
+import "B:/~BUN/root/chunk-qj8q07z1.js";
+import "B:/~BUN/root/chunk-8zz6429p.js";
+import "B:/~BUN/root/chunk-bvhc5fp3.js";
+import "B:/~BUN/root/chunk-raq9cfnw.js";
+import "B:/~BUN/root/chunk-8d9x5cx1.js";
+import "B:/~BUN/root/chunk-gygbhz84.js";
+import "B:/~BUN/root/chunk-5y3z8s12.js";
+import "B:/~BUN/root/chunk-6s78sa1b.js";
+import "B:/~BUN/root/chunk-78zw0pmb.js";
+import "B:/~BUN/root/chunk-89m6ef17.js";
+import "B:/~BUN/root/chunk-dbpgrm5a.js";
+import "B:/~BUN/root/chunk-kcbxq7ta.js";
+import "B:/~BUN/root/chunk-hjwx01fc.js";
+import "B:/~BUN/root/chunk-703q5f7c.js";
+import "B:/~BUN/root/chunk-fvbmxrbm.js";
+import "B:/~BUN/root/chunk-5ec3ghdy.js";
+import "B:/~BUN/root/chunk-p7n9drc0.js";
+import "B:/~BUN/root/chunk-f06s8ws5.js";
+import "B:/~BUN/root/chunk-5vcgesja.js";
+import "B:/~BUN/root/chunk-s81ha78q.js";
+import "B:/~BUN/root/chunk-esg2vqtm.js";
+import "B:/~BUN/root/chunk-k8twyg23.js";
+import "B:/~BUN/root/chunk-0sbppzkc.js";
+import "B:/~BUN/root/chunk-3thbj98m.js";
+import "B:/~BUN/root/chunk-ewwghe6s.js";
+import "B:/~BUN/root/chunk-c1tegkb3.js";
+import "B:/~BUN/root/chunk-57vwkt3t.js";
+import "B:/~BUN/root/chunk-nj6es8gv.js";
+import "B:/~BUN/root/chunk-3d6wa55r.js";
+import "B:/~BUN/root/chunk-xyxdcn7p.js";
+import "B:/~BUN/root/chunk-2wpqgvtg.js";
+import "B:/~BUN/root/chunk-xf25v2pj.js";
+import "B:/~BUN/root/chunk-2ppwmg0p.js";
+import "B:/~BUN/root/chunk-ks90p42g.js";
+import "B:/~BUN/root/chunk-nq10jsxs.js";
+import "B:/~BUN/root/chunk-45m7jrth.js";
+import "B:/~BUN/root/chunk-7abd7f1e.js";
+import "B:/~BUN/root/chunk-qvd6ab1g.js";
+import "B:/~BUN/root/chunk-0hq7zw7b.js";
+import "B:/~BUN/root/chunk-b8czrbb6.js";
+import "B:/~BUN/root/chunk-fv1y2eh7.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import "B:/~BUN/root/chunk-b900np4s.js";
+import "B:/~BUN/root/chunk-3md9ngvz.js";
+import "B:/~BUN/root/chunk-smy4yvhm.js";
+import "B:/~BUN/root/chunk-1jz9m9yh.js";
+import {
+  s,
+  n,
+  zt,
+  Aa
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import "B:/~BUN/root/chunk-vw193yjw.js";
+import "B:/~BUN/root/chunk-2efkaa0v.js";
+import {
+  Oe
+} from "B:/~BUN/root/chunk-g5gf7tps.js";
+import "B:/~BUN/root/chunk-gyjdf492.js";
+import "B:/~BUN/root/chunk-2jzp4p89.js";
+import "B:/~BUN/root/chunk-psvhak2h.js";
+import "B:/~BUN/root/chunk-3xc6vbb9.js";
+import "B:/~BUN/root/chunk-b5bxtj5p.js";
+import "B:/~BUN/root/chunk-vbtp6nn1.js";
+import "B:/~BUN/root/chunk-1d35msqn.js";
+import "B:/~BUN/root/chunk-mxxcv7nt.js";
+import "B:/~BUN/root/chunk-t7y4rt40.js";
+import "B:/~BUN/root/chunk-sk7eej8z.js";
+import "B:/~BUN/root/chunk-dwajd7kx.js";
+import {
+  Za,
+  cs,
+  Hi,
+  Xe
+} from "B:/~BUN/root/chunk-nbjke4gr.js";
+import "B:/~BUN/root/chunk-ps74es0g.js";
+import "B:/~BUN/root/chunk-a3hh790f.js";
+import "B:/~BUN/root/chunk-bf7csy4f.js";
+import "B:/~BUN/root/chunk-1nevq7mk.js";
+import "B:/~BUN/root/chunk-653rvs3k.js";
+import "B:/~BUN/root/chunk-9h1egpkt.js";
+import "B:/~BUN/root/chunk-jjcfcfrs.js";
+import "B:/~BUN/root/chunk-tgzmva3g.js";
+import "B:/~BUN/root/chunk-mvgarwbg.js";
+import "B:/~BUN/root/chunk-jh7dpafw.js";
+import {
+  Ra
+} from "B:/~BUN/root/chunk-aw9w2cra.js";
+import "B:/~BUN/root/chunk-5xxjpbgm.js";
+import "B:/~BUN/root/chunk-pw5vpw1q.js";
+import "B:/~BUN/root/chunk-7dpyfa5r.js";
+import "B:/~BUN/root/chunk-275mme56.js";
+import "B:/~BUN/root/chunk-exdm7pa7.js";
+import "B:/~BUN/root/chunk-rxj6qxcq.js";
+import "B:/~BUN/root/chunk-54b5252d.js";
+import "B:/~BUN/root/chunk-a8k6kvgb.js";
+import "B:/~BUN/root/chunk-cbtzavb5.js";
+import "B:/~BUN/root/chunk-327wfkv3.js";
+import {
+  be
+} from "B:/~BUN/root/chunk-nyga36vf.js";
+import "B:/~BUN/root/chunk-mhftza1y.js";
+import {
+  t2t
+} from "B:/~BUN/root/chunk-3cgpbmp2.js";
+import {
+  rce
+} from "B:/~BUN/root/chunk-tajz9s25.js";
+import {
+  hd
+} from "B:/~BUN/root/chunk-q6bapw2s.js";
+import "B:/~BUN/root/chunk-xa5s55y7.js";
+import "B:/~BUN/root/chunk-5xpqz53z.js";
+import "B:/~BUN/root/chunk-91at02k2.js";
+import "B:/~BUN/root/chunk-k0dt33zg.js";
+import "B:/~BUN/root/chunk-vs438w4e.js";
+import "B:/~BUN/root/chunk-88ayp7r7.js";
+import {
+  sh
+} from "B:/~BUN/root/chunk-44n8zjk2.js";
+import {
+  Q,
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import "B:/~BUN/root/chunk-4b5pvd1y.js";
+import "B:/~BUN/root/chunk-34t4kgx5.js";
+import "B:/~BUN/root/chunk-wrc71zzx.js";
+import "B:/~BUN/root/chunk-g8583f1n.js";
+import "B:/~BUN/root/chunk-em3vcka2.js";
+import "B:/~BUN/root/chunk-6a5s81az.js";
+import "B:/~BUN/root/chunk-ez6nq1pq.js";
+import "B:/~BUN/root/chunk-cy4hjzy6.js";
+import "B:/~BUN/root/chunk-dsby0gnt.js";
+import "B:/~BUN/root/chunk-tx0dq5y3.js";
+import "B:/~BUN/root/chunk-0bjget2c.js";
+import "B:/~BUN/root/chunk-gvcmagy5.js";
+import "B:/~BUN/root/chunk-wxq7ypdv.js";
+import "B:/~BUN/root/chunk-c2nm18xm.js";
+import "B:/~BUN/root/chunk-906np0vb.js";
+import "B:/~BUN/root/chunk-k798mzph.js";
+import "B:/~BUN/root/chunk-mrkvqm9w.js";
+import "B:/~BUN/root/chunk-rx9rjzse.js";
+import "B:/~BUN/root/chunk-nt0g6kgc.js";
+import "B:/~BUN/root/chunk-0x393xyp.js";
+import "B:/~BUN/root/chunk-9g7m04dd.js";
+import "B:/~BUN/root/chunk-m5caq93p.js";
+import "B:/~BUN/root/chunk-4gqhj4xs.js";
+import "B:/~BUN/root/chunk-5mwc5s4z.js";
+import "B:/~BUN/root/chunk-g52e2dzb.js";
+import "B:/~BUN/root/chunk-mbp55gyg.js";
+import "B:/~BUN/root/chunk-jcpnv8z5.js";
+import "B:/~BUN/root/chunk-3a551r0y.js";
+import {
+  A,
+  y,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import "B:/~BUN/root/chunk-f29awv9y.js";
+import "B:/~BUN/root/chunk-13n9yynj.js";
+import "B:/~BUN/root/chunk-pp32733x.js";
+import "B:/~BUN/root/chunk-6t9vgqfx.js";
+import "B:/~BUN/root/chunk-455kgrq5.js";
+import "B:/~BUN/root/chunk-nsa84wqe.js";
+import "B:/~BUN/root/chunk-25qdy3nw.js";
+import "B:/~BUN/root/chunk-92fjqg3t.js";
+import "B:/~BUN/root/chunk-6wyzmyt1.js";
+import "B:/~BUN/root/chunk-8vgph9ej.js";
+import "B:/~BUN/root/chunk-cxg2mbf6.js";
+import "B:/~BUN/root/chunk-cv2x0a47.js";
+import "B:/~BUN/root/chunk-0k9rq8e2.js";
+import "B:/~BUN/root/chunk-k8727s7d.js";
+import "B:/~BUN/root/chunk-7df33jce.js";
+import "B:/~BUN/root/chunk-f3f5k3wx.js";
+import "B:/~BUN/root/chunk-46bqx6b8.js";
+import "B:/~BUN/root/chunk-ma5pke8s.js";
+import "B:/~BUN/root/chunk-cc0we03s.js";
+import "B:/~BUN/root/chunk-p95zaxtt.js";
+import "B:/~BUN/root/chunk-6bmmxtvh.js";
+import "B:/~BUN/root/chunk-3hya8nsv.js";
+import "B:/~BUN/root/chunk-f561y43v.js";
+import "B:/~BUN/root/chunk-xnas864x.js";
+import "B:/~BUN/root/chunk-ft39p62b.js";
+import "B:/~BUN/root/chunk-nbprdt7j.js";
+import "B:/~BUN/root/chunk-th6c28ah.js";
+import "B:/~BUN/root/chunk-bhfm57j1.js";
+import "B:/~BUN/root/chunk-rzekebyp.js";
+import "B:/~BUN/root/chunk-stjjr4k8.js";
+import "B:/~BUN/root/chunk-y424etr5.js";
+import "B:/~BUN/root/chunk-3npegs3h.js";
+import "B:/~BUN/root/chunk-410t5g3b.js";
+import "B:/~BUN/root/chunk-b4xxgr0r.js";
+import "B:/~BUN/root/chunk-0p1hpv0s.js";
+import "B:/~BUN/root/chunk-hdc8p5sh.js";
+import "B:/~BUN/root/chunk-hgpj62j5.js";
+import "B:/~BUN/root/chunk-4yrr52wq.js";
+import "B:/~BUN/root/chunk-ac9kwvf4.js";
+import "B:/~BUN/root/chunk-6n2cf80v.js";
+import "B:/~BUN/root/chunk-asrchj7k.js";
+import "B:/~BUN/root/chunk-0zewma8k.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-9929fpp1.js";
+import "B:/~BUN/root/chunk-mbz8rhex.js";
+import "B:/~BUN/root/chunk-r0sre1ss.js";
+import "B:/~BUN/root/chunk-q56gve2c.js";
+import "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-g58w39t3.js";
+import "B:/~BUN/root/chunk-dyer18a2.js";
+import "B:/~BUN/root/chunk-xpy44yvr.js";
+import "B:/~BUN/root/chunk-et37ax67.js";
+import "B:/~BUN/root/chunk-4qc55bxf.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-3m71dqxd.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+B();
+
+function Ge() {
+  return !ue().hasSeenUltrareviewTerms
+}
+
+function Ee(U) {
+  return U.hasSeenUltrareviewTerms ? U : {
+    ...U,
+    hasSeenUltrareviewTerms: !0
+  }
+}
+var se = "This will upload your repository to a cloud session for the review, which may include staged and unstaged changes you haven't committed yet, but not untracked files.";
+
+function ie(R) {
+  let t = w(23),
+    {
+      subtitle: l,
+      body: g,
+      scope: o,
+      postOption: d,
+      onProceed: v,
+      onCancel: m
+    } = R;
+  Ra("ultrareview-launch");
+  let {
+    storageV5: C
+  } = Oe(), [a] = y(Ge), [p, f] = y(!1), [L, M] = y(null), O;
+  if (t[0] === S) O = new AbortController, t[0] = O;
+  else O = t[0];
+  let h = A(O),
+    T = A(!1),
+    N;
+  if (t[1] !== m || t[2] !== v || t[3] !== a || t[4] !== C) N = (_) => {
+    if (T.current) {
+      return
+    }
+    if (T.current = !0, _ === "proceed" || _ === "proceed-post") {
+      if (a) Ce(Ee, C);
+      M(_), f(!0), v(h.current.signal, {
+        postToPR: _ === "proceed-post"
+      }).catch(() => {
+        T.current = !1, f(!1)
+      })
+    } else h.current.abort(), m()
+  }, t[1] = m, t[2] = v, t[3] = a, t[4] = C, t[5] = N;
+  else N = t[5];
+  let F = N,
+    D;
+  if (t[6] !== m) D = () => {
+    T.current = !0, h.current.abort(), m()
+  }, t[6] = m, t[7] = D;
+  else D = t[7];
+  let P = D,
+    x;
+  if (t[8] !== l) x = l ?? `${X9()} \xB7 Est. cost ${dve()} USD`, t[8] = l, t[9] = x;
+  else x = t[9];
+  let k;
+  if (t[10] !== g || t[11] !== P || t[12] !== F || t[13] !== p || t[14] !== L || t[15] !== d || t[16] !== o || t[17] !== a) k = e(ne, {
+    showTerms: a,
+    body: g,
+    scope: o,
+    postOption: d,
+    retryFocus: L,
+    isLaunching: p,
+    onSelect: F,
+    onCancel: P
+  }), t[10] = g, t[11] = P, t[12] = F, t[13] = p, t[14] = L, t[15] = d, t[16] = o, t[17] = a, t[18] = k;
+  else k = t[18];
+  let I;
+  if (t[19] !== P || t[20] !== x || t[21] !== k) I = e(be, {
+    title: "Run ultrareview in the cloud?",
+    subtitle: x,
+    onCancel: P,
+    children: k
+  }), t[19] = P, t[20] = x, t[21] = k, t[22] = I;
+  else I = t[22];
+  return I
+}
+
+function ne(R) {
+  let t = w(30),
+    {
+      showTerms: l,
+      body: g,
+      scope: o,
+      postOption: d,
+      retryFocus: v,
+      isLaunching: m,
+      onSelect: C,
+      onCancel: a
+    } = R,
+    p = d ? `When it finishes, Claude can post the findings to the PR as a single comment from your GitHub account${d.githubLogin?` (@${d.githubLogin})`:""} \u2014 one plain comment, not a review or an approval, and it carries a "Generated by Claude Code" note.` : null,
+    f = Za(),
+    {
+      refusedWithin: L,
+      noteRefused: M
+    } = cs(),
+    O;
+  if (t[0] !== f || t[1] !== M || t[2] !== L) O = function h() {
+    if (f() || L()) {
+      return M(), !0
+    }
+    return !1
+  }, t[0] = f, t[1] = M, t[2] = L, t[3] = O;
+  else O = t[3];
+  let h = O,
+    T;
+  if (t[4] !== C || t[5] !== h) T = (N) => {
+    if (h()) {
+      return
+    }
+    C(N)
+  }, t[4] = C, t[5] = h, t[6] = T;
+  else T = t[6];
+  let _ = T,
+    F = o.mode === "pr" ? `Reviewing ${o.repo}#${o.prNumber} fetched from GitHub.` : o.noMergeBase === "unrelated_history" ? `Reviewing all files (no common history with ${o.baseBranch}).` : o.noMergeBase === "base_ref_missing" ? `Reviewing all files (no ${o.baseBranch} branch to compare against).` : o.noMergeBase === "first_commit" ? "Reviewing every file in the first commit (there is nothing earlier to compare with)." : o.headBranch === o.baseBranch ? `Reviewing local changes on ${o.baseBranch}.` : `Reviewing ${o.headBranch} against ${o.baseBranch}.`,
+    D = o.mode === "branch" && o.diffStat ? o.diffStat : null,
+    P = o.mode === "branch" ? se : null,
+    x;
+  if (t[7] !== o.instructions || t[8] !== o.mode) x = o.mode === "branch" && o.instructions ? `Note for findings (not a base branch): "${F4t(o.instructions)}"` : null, t[7] = o.instructions, t[8] = o.mode, t[9] = x;
+  else x = t[9];
+  let k = x,
+    I = o.mode === "pr" ? "Tip: run /code-review ultra (no number) to review your current branch instead." : "Tip: run /code-review ultra <PR number> to fetch and review a specific GitHub PR instead.",
+    U;
+  if (t[10] !== g || t[11] !== D || t[12] !== k || t[13] !== p || t[14] !== F || t[15] !== l || t[16] !== P || t[17] !== I) U = l ? r(Q, {
+    children: [r(s, {
+      flexDirection: "column",
+      children: [e(n, {
+        dimColor: !0,
+        children: F
+      }), D && r(n, {
+        dimColor: !0,
+        children: ["Scope: ", D]
+      }), P && e(n, {
+        dimColor: !0,
+        children: P
+      }), k && e(n, {
+        dimColor: !0,
+        children: k
+      }), e(n, {
+        dimColor: !0,
+        children: "Finds and verifies bugs using a multi-agent review fleet."
+      }), e(n, {
+        dimColor: !0,
+        children: I
+      }), g && e(n, {
+        dimColor: !0,
+        children: g
+      }), p && e(n, {
+        dimColor: !0,
+        children: p
+      }), r(n, {
+        dimColor: !0,
+        children: ["More information: ", e(zt, {
+          url: hpe,
+          children: hpe
+        })]
+      })]
+    }), e(n, {
+      children: "Proceed?"
+    })]
+  }) : r(s, {
+    flexDirection: "column",
+    children: [e(n, {
+      dimColor: !0,
+      children: F
+    }), D && r(n, {
+      dimColor: !0,
+      children: ["Scope: ", D]
+    }), P && e(n, {
+      dimColor: !0,
+      children: P
+    }), k && e(n, {
+      dimColor: !0,
+      children: k
+    }), e(n, {
+      dimColor: !0,
+      children: "Finds and verifies bugs using a multi-agent review fleet."
+    }), e(n, {
+      dimColor: !0,
+      children: I
+    }), g && e(n, {
+      dimColor: !0,
+      children: g
+    }), p && e(n, {
+      dimColor: !0,
+      children: p
+    })]
+  }), t[10] = g, t[11] = D, t[12] = k, t[13] = p, t[14] = F, t[15] = l, t[16] = P, t[17] = I, t[18] = U;
+  else U = t[18];
+  let q;
+  if (t[19] !== _ || t[20] !== m || t[21] !== a || t[22] !== d || t[23] !== h || t[24] !== v || t[25] !== l) q = m ? e(te, {}) : d ? e(Xe, {
+    options: [{
+      label: "Run and only show findings here",
+      value: "proceed",
+      description: "launch in a cloud session"
+    }, {
+      label: "Cancel",
+      value: "cancel"
+    }, {
+      label: "Run and post the findings to the PR as me",
+      value: "proceed-post",
+      description: "launch in a cloud session"
+    }],
+    defaultFocusValue: v ?? (d.preferPost ? "proceed-post" : "proceed"),
+    refuseInput: h,
+    selectedValue: Hi,
+    onChange: _,
+    onCancel: a
+  }) : e(Xe, {
+    options: [{
+      label: l ? "Yes" : "Run ultrareview",
+      value: "proceed",
+      description: "launch in a cloud session"
+    }, {
+      label: l ? "No" : "Not now",
+      value: "cancel"
+    }],
+    refuseInput: h,
+    selectedValue: Hi,
+    onChange: _,
+    onCancel: a
+  }), t[19] = _, t[20] = m, t[21] = a, t[22] = d, t[23] = h, t[24] = v, t[25] = l, t[26] = q;
+  else q = t[26];
+  let he;
+  if (t[27] !== U || t[28] !== q) he = r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [U, q]
+  }), t[27] = U, t[28] = q, t[29] = he;
+  else he = t[29];
+  return he
+}
+
+function te() {
+  let l = w(12),
+    R = hd(),
+    g;
+  if (l[0] !== R.prefersReducedMotion) g = sh(R.prefersReducedMotion), l[0] = R.prefersReducedMotion, l[1] = g;
+  else g = l[1];
+  let o = g,
+    [d, v] = Aa(o ? null : 50),
+    m = o ? -100 : 19 - Math.floor(v / 200) % 29,
+    C = Math.floor(v / 120),
+    a;
+  if (l[2] !== C || l[3] !== o || l[4] !== v) a = e(rce, {
+    frame: C,
+    messageColor: "inactive",
+    reducedMotion: o,
+    time: v
+  }), l[2] = C, l[3] = o, l[4] = v, l[5] = a;
+  else a = l[5];
+  let p;
+  if (l[6] !== m) p = e(t2t, {
+    message: "Launching",
+    mode: "responding",
+    messageColor: "inactive",
+    glimmerIndex: m,
+    flashOpacity: 0,
+    shimmerColor: "subtle"
+  }), l[6] = m, l[7] = p;
+  else p = l[7];
+  let f;
+  if (l[8] !== d || l[9] !== a || l[10] !== p) f = r(s, {
+    ref: d,
+    flexDirection: "row",
+    columnGap: 1,
+    children: [a, p]
+  }), l[8] = d, l[9] = a, l[10] = p, l[11] = f;
+  else f = l[11];
+  return f
+}
+async function He({
+  scope: R,
+  context: l,
+  onDone: g,
+  billingNote: o,
+  applyFixes: d,
+  postToPR: v,
+  postDropped: m,
+  signal: C
+}) {
+  let a = await Bar(R, l, o, {
+    applyFixesOnComplete: d,
+    postReviewToPR: v,
+    findingsArriveInSession: !0,
+    signal: C
+  });
+  if (C?.aborted) {
+    if (a?.launched && a.taskId && R.mode === "pr") l.taskRegistry.update(a.taskId, (p) => ({
+      ...p,
+      postReviewTo: void 0
+    }));
+    return
+  }
+  if (a) {
+    let p = m && a.launched ? m === "disabled" ? Har : Far : "",
+      f = a.blocks.map((L) => L.type === "text" ? L.text : "").filter(Boolean).join(`
+`) + p;
+    g(f, {
+      shouldQuery: !0,
+      metaMessages: a.launched ? [H4t(d, R.mode === "branch" ? R.instructions : void 0)] : void 0
+    })
+  } else g("Ultrareview failed to launch the cloud session. Check that this is a GitHub repo and try again.", {
+    display: "system"
+  })
+}
+var Po = async (R, l, g, o) => {
+  let d = (O, h) => R(O === void 0 ? void 0 : Ut(O), h),
+    v = If("allow_remote_sessions", "Cloud sessions", "are");
+  if (v) return eA("allow_remote_sessions", "slash_command"), d(v, {
+    display: "system"
+  }), null;
+  let {
+    scopeArgs: m,
+    applyFixes: C,
+    postReview: a
+  } = N4t(g), p = await $ar(m, o ? `/${o}` : "/ultrareview", {
+    confirmsBeforeLaunch: !0
+  });
+  if (!p.ok) return d(p.error, {
+    display: "system"
+  }), null;
+  let f = p.scope,
+    L = !1,
+    M = (O) => {
+      if (f.mode === "branch" && f.noMergeBase) i("tengu_review_remote_precondition_recovery", {
+        reason: b("no_merge_base"),
+        method: b("empty_tree_bundle"),
+        outcome: c(O)
+      })
+    },
+    t = await Uar({
+      overageConfirmed: l.isUltrareviewOverageConfirmed(),
+      credentials: l.credentials,
+      bundleFollows: f.mode === "branch"
+    });
+  switch (t.kind) {
+    case "blocked": {
+      i("tengu_review_overage_blocked", {
+        reason: Tb(t.reason)
+      });
+      let T = t.actionUrl ? `
+  \u2192 ${t.actionUrl}` : "",
+        N = t.actionUrl?.includes("/admin-settings/") && FO() && !kS() ? `
+  Run /usage-credits to request this from your admin.` : "";
+      return d(`${t.message}${T}${N}`, {
+        display: "system"
+      }), null
+    }
+    case "needs-confirm":
+    case "proceed":
+      if (t.kind === "needs-confirm") i("tengu_review_overage_dialog_shown", {});
+      let O = !but(),
+        h = f.mode === "pr" && ro(f.host) && a !== !1 && !O ? {
+          githubLogin: t.githubLogin ?? null,
+          preferPost: a === !0
+        } : null;
+      return e(ie, {
+        subtitle: t.kind === "needs-confirm" ? X9() : t.billingNote || null,
+        body: t.kind === "needs-confirm" ? t.body : void 0,
+        scope: f,
+        postOption: h,
+        onProceed: async (T, N) => {
+          if (!L) L = !0, M("accepted");
+          if (await He({
+              scope: f,
+              context: l,
+              onDone: d,
+              billingNote: t.billingNote,
+              applyFixes: C,
+              postToPR: h !== null && N.postToPR,
+              postDropped: a === !0 && h === null ? O ? "disabled" : "target" : void 0,
+              signal: T
+            }), !T.aborted && t.kind === "needs-confirm") l.markUltrareviewOverageConfirmed()
+        },
+        onCancel: () => {
+          if (!L) M("declined");
+          d("Ultrareview cancelled.", {
+            display: "system"
+          })
+        }
+      })
+  }
+};
+export {
+  Po as call
+};

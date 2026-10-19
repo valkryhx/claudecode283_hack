@@ -1,0 +1,843 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { ji, ne, nt } from "B:/~BUN/root/chunk-nggrknsv.js";
+import { ws } from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import { a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import { l } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { he } from "B:/~BUN/root/chunk-4qqgabd5.js";
+import { Wwo } from "B:/~BUN/root/chunk-x4gdh7dq.js";
+import { S7t, QHn, Bmo, Wmo } from "B:/~BUN/root/chunk-5vcgesja.js";
+import { DSn, $re } from "B:/~BUN/root/chunk-b0gxvjar.js";
+import { hUe, cct } from "B:/~BUN/root/chunk-ervhay8x.js";
+import { nvn } from "B:/~BUN/root/chunk-1jz9m9yh.js";
+import { ea } from "B:/~BUN/root/chunk-53tmhe2j.js";
+import { ua, sXn } from "B:/~BUN/root/chunk-pp80ffk4.js";
+import { ie } from "B:/~BUN/root/chunk-t7350kw8.js";
+var xSn = 2000;
+function Qtt(e, n = 0) {
+  if (e.length - n <= xSn) return {
+    code: e.slice(n),
+    truncatedChars: 0
+  };
+  let t = e.slice(n, n + xSn + 1),
+    code = ne(t, xSn);
+  return {
+    code: code,
+    truncatedChars: e.length - n - code.length
+  };
+}
+function yVe(e) {
+  return ` \u2026 [+${e} chars]`;
+}
+import { basename as ae, extname as de } from "path";
+function j() {
+  return DSn();
+}
+var v = "\x1B[0m",
+  A = "\x1B[2m",
+  J = "\x1B[22m";
+function c(r_2, g_2, b_2) {
+  return {
+    r: r_2,
+    g: g_2,
+    b: b_2,
+    a: 255
+  };
+}
+function x(r_3) {
+  return {
+    r: r_3,
+    g: 0,
+    b: 0,
+    a: 0
+  };
+}
+var L = {
+  r: 0,
+  g: 0,
+  b: 0,
+  a: 1
+};
+function Y(e) {
+  if (e.includes("ansi")) return "ansi";
+  return he.level >= 3 ? "truecolor" : "color256";
+}
+var I = [0, 95, 135, 175, 215, 255];
+function fe(e, n, t) {
+  let s = m => m < 48 ? 0 : m < 115 ? 1 : m < 155 ? 2 : m < 195 ? 3 : m < 235 ? 4 : 5,
+    r = s(e),
+    i = s(n),
+    o = s(t),
+    f = 16 + 36 * r + 6 * i + o,
+    u = Math.round((e + n + t) / 3);
+  if (u < 5) return 16;
+  if (u > 244 && r === i && i === o) return f;
+  let d = Math.max(0, Math.min(23, Math.round((u - 8) / 10))),
+    h = 232 + d,
+    b = 8 + d * 10,
+    g = I[r],
+    y = I[i],
+    k = I[o],
+    S = (e - g) ** 2 + (n - y) ** 2 + (t - k) ** 2;
+  return (e - b) ** 2 + (n - b) ** 2 + (t - b) ** 2 < S ? h : f;
+}
+function N(e, n, t) {
+  if (e.a === 0) {
+    let r = e.r;
+    if (r < 8) return `\x1B[${(n ? 30 : 40) + r}m`;
+    if (r < 16) return `\x1B[${(n ? 90 : 100) + (r - 8)}m`;
+    return `\x1B[${n ? 38 : 48};5;${r}m`;
+  }
+  if (e.a === 1) return n ? "\x1B[39m" : "\x1B[49m";
+  let s = n ? 38 : 48;
+  if (t === "truecolor") return `\x1B[${s};2;${e.r};${e.g};${e.b}m`;
+  return `\x1B[${s};5;${fe(e.r, e.g, e.b)}m`;
+}
+function E(e, n, t, s) {
+  let r = s ? v + A : v;
+  for (let [i, o] of e) {
+    if (r += N(i.foreground, !0, n), !t) r += N(i.background, !1, n);
+    r += o;
+  }
+  return r + v;
+}
+function ge(e) {
+  if (e.includes("ansi")) return "ansi";
+  if (e.includes("dark")) return "Monokai Extended";
+  return "GitHub";
+}
+var scopes_2 = new Map([["keyword", c(249, 38, 114)], ["_storage", c(102, 217, 239)], ["built_in", c(166, 226, 46)], ["type", c(166, 226, 46)], ["literal", c(190, 132, 255)], ["number", c(190, 132, 255)], ["string", c(230, 219, 116)], ["title", c(166, 226, 46)], ["title.function", c(166, 226, 46)], ["title.class", c(166, 226, 46)], ["title.class.inherited", c(166, 226, 46)], ["params", c(253, 151, 31)], ["comment", c(117, 113, 94)], ["meta", c(117, 113, 94)], ["attr", c(166, 226, 46)], ["attribute", c(166, 226, 46)], ["variable", c(255, 255, 255)], ["variable.language", c(255, 255, 255)], ["property", c(255, 255, 255)], ["operator", c(249, 38, 114)], ["punctuation", c(248, 248, 242)], ["symbol", c(190, 132, 255)], ["regexp", c(230, 219, 116)], ["subst", c(248, 248, 242)]]),
+  scopes_3 = new Map([["keyword", c(167, 29, 93)], ["_storage", c(167, 29, 93)], ["built_in", c(0, 134, 179)], ["type", c(0, 134, 179)], ["literal", c(0, 134, 179)], ["number", c(0, 134, 179)], ["string", c(24, 54, 145)], ["title", c(121, 93, 163)], ["title.function", c(121, 93, 163)], ["title.class", c(0, 0, 0)], ["title.class.inherited", c(0, 0, 0)], ["params", c(0, 134, 179)], ["comment", c(150, 152, 150)], ["meta", c(150, 152, 150)], ["attr", c(0, 134, 179)], ["attribute", c(0, 134, 179)], ["variable", c(0, 134, 179)], ["variable.language", c(0, 134, 179)], ["property", c(0, 134, 179)], ["operator", c(167, 29, 93)], ["punctuation", c(51, 51, 51)], ["symbol", c(0, 134, 179)], ["regexp", c(24, 54, 145)], ["subst", c(51, 51, 51)]]),
+  pe = new Set(["const", "let", "var", "function", "class", "type", "interface", "enum", "namespace", "module", "def", "fn", "func", "struct", "trait", "impl"]),
+  scopes = new Map([["keyword", x(13)], ["_storage", x(14)], ["built_in", x(14)], ["type", x(14)], ["literal", x(12)], ["number", x(12)], ["string", x(10)], ["title", x(11)], ["title.function", x(11)], ["title.class", x(11)], ["comment", x(8)], ["meta", x(8)]]);
+function Q(e, n) {
+  let t = e.includes("dark"),
+    s = e.includes("ansi"),
+    r = e.includes("daltonized"),
+    i = n === "truecolor";
+  if (s) return {
+    addLine: L,
+    addWord: L,
+    addDecoration: x(10),
+    deleteLine: L,
+    deleteWord: L,
+    deleteDecoration: x(9),
+    foreground: t ? x(7) : x(0),
+    background: L,
+    scopes: scopes
+  };
+  if (t) {
+    let foreground = c(248, 248, 242),
+      deleteLine = c(61, 1, 0),
+      deleteWord = c(92, 2, 0),
+      deleteDecoration = c(220, 90, 90);
+    if (r) return {
+      addLine: i ? c(0, 27, 41) : x(17),
+      addWord: i ? c(0, 48, 71) : x(24),
+      addDecoration: c(81, 160, 200),
+      deleteLine: deleteLine,
+      deleteWord: deleteWord,
+      deleteDecoration: deleteDecoration,
+      foreground: foreground,
+      background: L,
+      scopes: scopes_2
+    };
+    return {
+      addLine: i ? c(2, 40, 0) : x(22),
+      addWord: i ? c(4, 71, 0) : x(28),
+      addDecoration: c(80, 200, 80),
+      deleteLine: deleteLine,
+      deleteWord: deleteWord,
+      deleteDecoration: deleteDecoration,
+      foreground: foreground,
+      background: L,
+      scopes: scopes_2
+    };
+  }
+  let foreground_2 = c(51, 51, 51),
+    deleteLine_2 = c(255, 220, 220),
+    deleteWord_2 = c(255, 199, 199),
+    deleteDecoration_2 = c(207, 34, 46);
+  if (r) return {
+    addLine: c(219, 237, 255),
+    addWord: c(179, 217, 255),
+    addDecoration: c(36, 87, 138),
+    deleteLine: deleteLine_2,
+    deleteWord: deleteWord_2,
+    deleteDecoration: deleteDecoration_2,
+    foreground: foreground_2,
+    background: L,
+    scopes: scopes_3
+  };
+  return {
+    addLine: c(220, 255, 220),
+    addWord: c(178, 255, 178),
+    addDecoration: c(36, 138, 61),
+    deleteLine: deleteLine_2,
+    deleteWord: deleteWord_2,
+    deleteDecoration: deleteDecoration_2,
+    foreground: foreground_2,
+    background: L,
+    scopes: scopes_3
+  };
+}
+var be = new Map([["black", 0], ["red", 1], ["green", 2], ["yellow", 3], ["blue", 4], ["magenta", 5], ["cyan", 6], ["white", 7], ["blackBright", 8], ["redBright", 9], ["greenBright", 10], ["yellowBright", 11], ["blueBright", 12], ["magentaBright", 13], ["cyanBright", 14], ["whiteBright", 15]]);
+function D(e) {
+  if (e === void 0) return null;
+  let n = /^rgb\(\s?(\d{1,3}),\s?(\d{1,3}),\s?(\d{1,3})\s?\)$/.exec(e);
+  if (n) return c(Number(n[1]), Number(n[2]), Number(n[3]));
+  let t = /^#([0-9a-fA-F]{6})$/.exec(e);
+  if (t) {
+    let i = parseInt(t[1], 16);
+    return c(i >> 16, i >> 8 & 255, i & 255);
+  }
+  let s = /^#([0-9a-fA-F]{3})$/.exec(e);
+  if (s) {
+    let [i, o, f] = s[1];
+    return c(parseInt(i + i, 16), parseInt(o + o, 16), parseInt(f + f, 16));
+  }
+  let r = /^ansi256\(\s?(\d{1,3})\s?\)$/.exec(e);
+  if (r) return x(Number(r[1]));
+  if (e.startsWith("ansi:")) {
+    let i = be.get(e.slice(5));
+    return i === void 0 ? null : x(i);
+  }
+  return null;
+}
+function ke(e, n, t) {
+  let s = D((t ? n.diffAddedDimmed : void 0) ?? n.diffAdded),
+    r = D((t ? n.diffRemovedDimmed : void 0) ?? n.diffRemoved),
+    i = D(n.diffAddedWord),
+    o = D(n.diffRemovedWord);
+  return {
+    ...e,
+    addLine: s ?? e.addLine,
+    deleteLine: r ?? e.deleteLine,
+    addWord: i ?? e.addWord,
+    deleteWord: o ?? e.deleteWord
+  };
+}
+function B(e) {
+  return {
+    foreground: e.foreground,
+    background: e.background
+  };
+}
+function W(e, n) {
+  switch (e) {
+    case "+":
+      return n.addLine;
+    case "-":
+      return n.deleteLine;
+    case " ":
+      return n.background;
+  }
+}
+function ye(e, n) {
+  switch (e) {
+    case "+":
+      return n.addWord;
+    case "-":
+      return n.deleteWord;
+    case " ":
+      return n.background;
+  }
+}
+function V(e, n) {
+  switch (e) {
+    case "+":
+      return n.addDecoration;
+    case "-":
+      return n.deleteDecoration;
+    case " ":
+      return n.foreground;
+  }
+}
+var F = new Map([["Dockerfile", "dockerfile"], ["Makefile", "makefile"], ["Rakefile", "ruby"], ["Gemfile", "ruby"], ["CMakeLists", "cmake"]]);
+function Z(e, n) {
+  let t = ae(e),
+    s = de(e).slice(1),
+    r = nt(t, "."),
+    i = F.get(t) ?? F.get(r);
+  if (i) {
+    let o = $re(i);
+    if (o) return o;
+  }
+  if (s) {
+    let o = $re(s);
+    if (o) return o;
+  }
+  if (n) {
+    let o = n.startsWith("\uFEFF") ? n.slice(1) : n;
+    if (o.startsWith("#!")) {
+      if (o.includes("bash") || o.includes("/sh")) return $re("bash");
+      if (o.includes("python")) return $re("python");
+      if (o.includes("node")) return $re("javascript");
+      if (o.includes("ruby")) return $re("ruby");
+      if (o.includes("perl")) return $re("perl");
+    }
+    if (o.startsWith("<?php")) return $re("php");
+    if (o.startsWith("<?xml")) return $re("xml");
+  }
+  return null;
+}
+function Ce(e, n, t) {
+  if (!e) return t.foreground;
+  if (e === "keyword" && pe.has(n.trim())) return t.scopes.get("_storage") ?? t.foreground;
+  return t.scopes.get(e) ?? t.scopes.get(nt(e, ".")) ?? t.foreground;
+}
+function ee(e, n, t, s) {
+  let r = e.scope ?? e.kind ?? t;
+  for (let i of e.children) if (typeof i === "string") {
+    let foreground_3 = Ce(r, i, n);
+    s.push([{
+      foreground: foreground_3,
+      background: n.background
+    }, i]);
+  } else ee(i, n, r, s);
+}
+function xe(e) {
+  return typeof e === "object" && e !== null && "rootNode" in e && typeof e.rootNode === "object" && e.rootNode !== null && "children" in e.rootNode;
+}
+function te(e, n, t) {
+  let s = n + `
+`;
+  if (!e.lang) return [[B(t), s]];
+  if (s.length > S7t) e.limited ??= Wmo(j(), e.lang);
+  let r = Bmo(s, e.limited ?? e.lang);
+  if (e.squares += r, r > 0 && e.squares > QHn) return [[B(t), s]];
+  let i;
+  try {
+    i = j().highlight(s, {
+      language: e.lang,
+      ignoreIllegals: !0
+    });
+  } catch {
+    return e.lang = null, [[B(t), s]];
+  }
+  if (!xe(i._emitter)) {
+    if (ea().claim("color_diff_hljs_emitter_shape_error")) l(Error(`color-diff: hljs emitter shape mismatch (keys: ${Object.keys(i._emitter).join(",")}). Syntax highlighting disabled.`));
+    return [[B(t), s]];
+  }
+  let o = [];
+  return ee(i._emitter.rootNode, t, void 0, o), Se(o);
+}
+function Se(e) {
+  let n = e.map(([, r]) => r),
+    t = sXn(n);
+  if (t === n) return e;
+  let s = [];
+  for (let r = 0; r < e.length; r++) {
+    let i = t[r];
+    if (i.length > 0) s.push([e[r][0], i]);
+  }
+  return s;
+}
+var Te = 0.4;
+function U(e) {
+  let n = [],
+    t = 0;
+  while (t < e.length) {
+    let s = e[t];
+    if (/[\p{L}\p{N}_]/u.test(s)) {
+      let r = t + 1;
+      while (r < e.length && /[\p{L}\p{N}_]/u.test(e[r])) r++;
+      n.push(e.slice(t, r)), t = r;
+    } else if (/\s/.test(s)) {
+      let r = t + 1;
+      while (r < e.length && /\s/.test(e[r])) r++;
+      n.push(e.slice(t, r)), t = r;
+    } else {
+      let i = e.codePointAt(t) > 65535 ? 2 : 1;
+      n.push(e.slice(t, t + i)), t += i;
+    }
+  }
+  return n;
+}
+function Me(e) {
+  let n = [],
+    t = 0;
+  while (t < e.length) if (e[t] === "-") {
+    let s = t,
+      r = t;
+    while (r < e.length && e[r] === "-") r++;
+    let i = r;
+    while (i < e.length && e[i] === "+") i++;
+    let o = r - s,
+      f = i - r;
+    if (o > 0 && f > 0) {
+      let u = Math.min(o, f);
+      for (let d = 0; d < u; d++) n.push([s + d, r + d]);
+      t = i;
+    } else t = r;
+  } else t++;
+  return n;
+}
+function we(e, n) {
+  let t = U(e),
+    s = U(n),
+    r = Wwo(t, s),
+    i = e.length + n.length,
+    o = 0,
+    f = [],
+    u = [],
+    start = 0,
+    start_2 = 0;
+  for (let b of r) {
+    let g = b.value.reduce((acc, item) => acc + item.length, 0);
+    if (b.removed) o += g, f.push({
+      start: start,
+      end: start + g
+    }), start += g;else if (b.added) o += g, u.push({
+      start: start_2,
+      end: start_2 + g
+    }), start_2 += g;else start += g, start_2 += g;
+  }
+  if (i > 0 && o / i > Te) return [[], []];
+  return [f, u];
+}
+function re(e) {
+  e.lines = e.lines.map(item => item.flatMap(([t, s]) => s.split(`
+`).filter(item => item.length > 0).map(item => [t, item])));
+}
+function Le(e) {
+  if (e.length !== 1) return !1;
+  let n = e.codePointAt(0);
+  for (let [t, s] of hUe) if (n >= t && n <= s) return !0;
+  return !1;
+}
+var oe = /^[\x20-\x7e]*$/;
+function q(e) {
+  if (e === "\t") return 8;
+  if (Le(e)) return 1;
+  return ie(e);
+}
+function R(e) {
+  if (!nvn.test(e)) return ie(e);
+  let n = e.split(cct),
+    t = n.length - 1;
+  for (let s of n) t += ie(s);
+  return t;
+}
+function K(e) {
+  return e.map(([, n]) => n).join("");
+}
+var Be = 256;
+function se(e, n) {
+  if (oe.test(n)) return n.length;
+  let t = e.slice(-Be);
+  return R(t + n) - R(t);
+}
+function Re(e, n, t) {
+  return N(e.foreground, !0, n) + (t ? "" : N(e.background, !1, n));
+}
+function Ee(e, n, t) {
+  let s = [],
+    r = null;
+  for (let [i, o] of e) {
+    let f = Re(i, n, t),
+      u = s.at(-1);
+    if (u && f === r) s[s.length - 1] = [u[0], u[1] + o];else s.push([i, o]), r = f;
+  }
+  return s;
+}
+function _e(e) {
+  if (!e.some(([, r]) => r.includes("\t"))) return e;
+  let n = "",
+    t = 0,
+    s = [];
+  for (let [r, i] of e) {
+    let o = i.split("\t"),
+      f = "";
+    for (let u = 0; u < o.length; u++) {
+      let d = u === 0 ? o[u] : ji(" ", 8 - t % 8) + o[u];
+      t += se(n, d), f += d, n += d;
+    }
+    s.push([r, f]);
+  }
+  return s;
+}
+function le(e, n, t, s, r) {
+  let i = [];
+  for (let o of e.lines) {
+    let f = i.length,
+      u = [],
+      d = "",
+      h = 0;
+    for (let [b, g] of _e(Ee(o, s, r))) {
+      let y = h + se(d, g);
+      if (y <= n) {
+        if (g.length > 0) u.push([b, g]), d += g, h = y;
+        continue;
+      }
+      if (n >= 1 && oe.test(g)) {
+        let p = 0,
+          m = n - h;
+        while (g.length - p > m) {
+          if (m > 0) u.push([b, g.slice(p, p + m)]), p += m;
+          if (u.length > 0) i.push(u), u = [], d = "";
+          h = 0, m = n;
+        }
+        if (p < g.length) u.push([b, g.slice(p)]), d += g.slice(p), h += g.length - p;
+        continue;
+      }
+      let k = 0,
+        S = 0;
+      for (let {
+        segment: segment,
+        index: index
+      } of ua().segment(g)) {
+        let C = q(segment);
+        if (h + S + C > n) {
+          if (index > k) u.push([b, g.slice(k, index)]);
+          if (u.length > 0) i.push(u), u = [], d = "", h = 0;
+          if (k = index, S = 0, C > n) {
+            i.push([[b, g.slice(index, index + segment.length)]]), k = index + segment.length;
+            continue;
+          }
+        }
+        S += C;
+      }
+      if (k < g.length) u.push([b, g.slice(k)]), d += g.slice(k), h = R(d);
+    }
+    if (u.length > 0 || i.length === f) i.push(u);
+  }
+  if (e.lines = i, e.lines = e.lines.map(item => {
+    let f = K(item);
+    if (R(f) <= n) return item;
+    let u = Math.max(0, n - 1),
+      d = [[0, 0, 0]],
+      h = 0,
+      b = 0;
+    e: for (let C = 0; C < item.length; C++) {
+      let T = item[C][1];
+      for (let {
+        segment: segment_2,
+        index: index_2
+      } of ua().segment(T)) {
+        if (h += q(segment_2), h > u) break e;
+        let w = index_2 + segment_2.length;
+        d.push([C, w, b + w]);
+      }
+      b += T.length;
+    }
+    let g = 0,
+      y = d.length - 1;
+    while (g < y) {
+      let C = g + y + 1 >> 1;
+      if (R(f.slice(0, d[C][2])) <= u) g = C;else y = C - 1;
+    }
+    let [k, S] = d[g],
+      p = item.slice(0, k);
+    if (S > 0) p.push([item[k][0], item[k][1].slice(0, S)]);
+    let m = p.at(-1)?.[0] ?? item[0][0];
+    return p.push([m, "\u2026"]), p;
+  }), e.marker && e.marker !== " ") {
+    let background = W(e.marker, t),
+      f = {
+        foreground: t.foreground,
+        background: background
+      };
+    for (let u of e.lines) {
+      let d = R(K(u));
+      if (d < n) u.push([f, ji(" ", n - d)]);
+    }
+  }
+}
+function ce(e, n, t, s) {
+  let r = {
+      foreground: e.marker ? V(e.marker, n) : n.foreground,
+      background: e.marker ? W(e.marker, n) : n.background
+    },
+    i = e.marker === null || e.marker === " ";
+  for (let o = 0; o < e.lines.length; o++) {
+    let f = o === 0 ? ` ${String(e.lineNumber).padStart(t)} ` : " ".repeat(t + 2),
+      u = i && !s ? `${A}${f}${J}` : f;
+    e.lines[o].unshift([r, u]);
+  }
+}
+function De(e, n) {
+  if (!e.marker) return;
+  let t = {
+    foreground: V(e.marker, n),
+    background: W(e.marker, n)
+  };
+  for (let s of e.lines) s.unshift([t, e.marker]);
+}
+function Ne(e) {
+  for (let n of e.lines) if (n.length > 0) {
+    n[0][1] = A + n[0][1];
+    let t = n.length - 1;
+    n[t][1] = n[t][1] + J;
+  }
+}
+function We(e, n) {
+  if (n.length === 0) return n;
+  let t = [0];
+  for (let o of ua().segment(e)) t.push(o.index + o.segment.length);
+  let s = o => {
+      let f = 0,
+        u = t.length - 1;
+      while (f < u) {
+        let d = f + u + 1 >> 1;
+        if (t[d] <= o) f = d;else u = d - 1;
+      }
+      return t[f];
+    },
+    r = o => {
+      let f = 0,
+        u = t.length - 1;
+      while (f < u) {
+        let d = f + u >> 1;
+        if (t[d] >= o) u = d;else f = d + 1;
+      }
+      return t[f];
+    },
+    i = [];
+  for (let o of n) {
+    let start_3 = s(Math.min(o.start, e.length)),
+      end = Math.max(start_3, r(Math.min(o.end, e.length))),
+      d = i.at(-1);
+    if (d && start_3 <= d.end) d.end = Math.max(d.end, end);else i.push({
+      start: start_3,
+      end: end
+    });
+  }
+  return i;
+}
+function ve(e, n, t) {
+  if (!e.marker) return;
+  let background_2 = W(e.marker, n),
+    r = ye(e.marker, n),
+    i = e.lines.map(item => item.map(([, h]) => h).join("")).join(""),
+    o = We(i, t),
+    f = 0,
+    u = 0;
+  for (let d = 0; d < e.lines.length; d++) {
+    let h = [];
+    for (let [b, g] of e.lines[d]) {
+      let y = u,
+        k = u + g.length;
+      while (f < o.length && o[f].end <= y) f++;
+      if (f >= o.length) {
+        h.push([{
+          ...b,
+          background: background_2
+        }, g]), u = k;
+        continue;
+      }
+      let S = g,
+        p = y;
+      while (S.length > 0 && f < o.length) {
+        let m = o[f],
+          C = p >= m.start && p < m.end,
+          T;
+        if (C) T = Math.min(m.end, k);else if (m.start > p && m.start < k) T = m.start;else T = k;
+        let M = T - p,
+          _ = S.slice(0, M);
+        if (h.push([{
+          ...b,
+          background: C ? r : background_2
+        }, _]), S = S.slice(M), p = T, p >= m.end) f++;
+      }
+      if (S.length > 0) h.push([{
+        ...b,
+        background: background_2
+      }, S]);
+      u = k;
+    }
+    e.lines[d] = h;
+  }
+}
+function Ie(e) {
+  let n = Math.max(0, e.oldStart + e.oldLines - 1),
+    t = Math.max(0, e.newStart + e.newLines - 1);
+  return Math.max(n, t);
+}
+function Ae(e) {
+  return e === "+" || e === "-" ? e : " ";
+}
+var X = 2,
+  z = 1;
+class O {
+  hunk;
+  filePath;
+  firstLine;
+  prefixContent;
+  constructor(e, n, t, s) {
+    this.hunk = e, this.filePath = t, this.firstLine = n, this.prefixContent = s ?? null;
+  }
+  render(e, n, t, s) {
+    let {
+      rows: rows,
+      mode: mode
+    } = this.buildRows(e, n, t, s);
+    return rows.map(item => E(item, mode, !1, t));
+  }
+  renderSplit(e, n, t, s) {
+    let {
+      rows: rows_2,
+      mode: mode_2
+    } = this.buildRows(e, n, t, s);
+    return {
+      gutters: rows_2.map(item => E(item.slice(0, X), mode_2, !1, t)),
+      contents: rows_2.map(item => E(item.slice(X), mode_2, !1, t))
+    };
+  }
+  buildRows(e, n, t, s) {
+    let mode_3 = Y(e),
+      i = Q(e, mode_3),
+      o = s ? ke(i, s, t) : i,
+      u = {
+        lang: Z(this.filePath, this.firstLine),
+        stack: null,
+        squares: 0
+      };
+    this.prefixContent;
+    let d = String(Ie(this.hunk)).length,
+      oldStart = this.hunk.oldStart,
+      newStart = this.hunk.newStart,
+      g = Math.max(1, n - d - 2 - 1),
+      y = this.hunk.lines.map(item => {
+        let marker = Ae(item.slice(0, 1)),
+          {
+            code: code_2,
+            truncatedChars: truncatedChars
+          } = Qtt(item, 1),
+          lineNumber;
+        switch (marker) {
+          case "+":
+            lineNumber = newStart++;
+            break;
+          case "-":
+            lineNumber = oldStart++;
+            break;
+          case " ":
+            lineNumber = newStart, oldStart++, newStart++;
+            break;
+        }
+        return {
+          lineNumber: lineNumber,
+          marker: marker,
+          code: code_2,
+          truncatedChars: truncatedChars
+        };
+      }),
+      k = y.map(() => []);
+    if (!t) {
+      let p = y.map(item => item.marker);
+      for (let [m, C] of Me(p)) {
+        let [T, M] = we(y[m].code, y[C].code);
+        k[m] = T, k[C] = M;
+      }
+    }
+    let rows_3 = [];
+    for (let p = 0; p < y.length; p++) {
+      let {
+          lineNumber: lineNumber_2,
+          marker: marker_2,
+          code: code_3,
+          truncatedChars: truncatedChars_2
+        } = y[p],
+        _ = marker_2 === "-" ? [[B(o), code_3]] : te(u, code_3, o),
+        w = {
+          marker: marker_2,
+          lineNumber: lineNumber_2,
+          lines: [_]
+        };
+      if (re(w), ve(w, o, k[p]), truncatedChars_2 > 0) w.lines[0].push([B(o), yVe(truncatedChars_2)]);
+      if (le(w, g, o, mode_3, !1), mode_3 === "ansi" && marker_2 === "-") Ne(w);
+      De(w, o), ce(w, o, d, t), rows_3.push(...w.lines);
+    }
+    return {
+      rows: rows_3,
+      mode: mode_3
+    };
+  }
+}
+class H {
+  code;
+  filePath;
+  constructor(e, n) {
+    this.code = e, this.filePath = n;
+  }
+  render(e, n, t) {
+    let {
+      rows: rows_4,
+      mode: mode_4
+    } = this.buildRows(e, n, t);
+    return rows_4.map(item => E(item, mode_4, !0, t));
+  }
+  renderSplit(e, n, t) {
+    let {
+      rows: rows_5,
+      mode: mode_5
+    } = this.buildRows(e, n, t);
+    return {
+      gutters: rows_5.map(item => E(item.slice(0, z), mode_5, !0, t)),
+      contents: rows_5.map(item => E(item.slice(z), mode_5, !0, t))
+    };
+  }
+  buildRows(e, n, t) {
+    let mode_6 = Y(e),
+      r = Q(e, mode_6),
+      i = this.code.split(`
+`);
+    if (i.at(-1) === "") i.pop();
+    let o = i[0] ?? null,
+      u = {
+        lang: Z(this.filePath, o),
+        stack: null,
+        squares: 0
+      },
+      d = String(i.length).length,
+      h = Math.max(1, n - d - 2),
+      rows_6 = [];
+    for (let g = 0; g < i.length; g++) {
+      let {
+          code: code_4,
+          truncatedChars: truncatedChars_3
+        } = Qtt(i[g]),
+        S = te(u, code_4, r);
+      if (truncatedChars_3 > 0) S.push([B(r), yVe(truncatedChars_3)]);
+      let p = {
+        marker: null,
+        lineNumber: g + 1,
+        lines: [S]
+      };
+      re(p), le(p, h, r, mode_6, !0), ce(p, r, d, t), rows_6.push(...p.lines);
+    }
+    return {
+      rows: rows_6,
+      mode: mode_6
+    };
+  }
+}
+function ue(e) {
+  return {
+    theme: ge(e),
+    source: null
+  };
+}
+function o2t() {
+  if (ws(a.CLAUDE_CODE_SYNTAX_HIGHLIGHT)) return "env";
+  return null;
+}
+function l5o() {
+  return o2t() === null ? O : null;
+}
+function Tqr() {
+  return o2t() === null ? H : null;
+}
+function Cqr(e) {
+  return o2t() === null ? ue(e) : null;
+}
+export { xSn, Qtt, yVe, o2t, l5o, Tqr, Cqr };

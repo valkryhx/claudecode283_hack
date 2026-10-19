@@ -1,0 +1,14672 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  Fe
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  F,
+  L,
+  oa,
+  hu,
+  r1,
+  ign,
+  l3s,
+  Ze,
+  we,
+  QW
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  x,
+  Ye
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  Ja
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  h2
+} from "B:/~BUN/root/chunk-53tmhe2j.js";
+import {
+  qu
+} from "B:/~BUN/root/chunk-1jz9m9yh.js";
+import {
+  mi,
+  cz,
+  nVt,
+  s,
+  n,
+  zt,
+  Go,
+  dn,
+  ot,
+  Iu,
+  Aa
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  _,
+  u0,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  Ga,
+  O,
+  ne,
+  nt,
+  $t,
+  Nl,
+  t1
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  zhe,
+  q2,
+  Pl,
+  Uf,
+  K2,
+  $5,
+  Nc,
+  fL,
+  Y2,
+  c0,
+  P6s,
+  lS,
+  j_,
+  Gne,
+  JXn,
+  Ubt,
+  ujt,
+  Fmn,
+  qW,
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  QX,
+  KG,
+  Bgt,
+  Vje,
+  Vn,
+  Xke,
+  B1s,
+  T_,
+  tt,
+  oge,
+  Nm,
+  Yo,
+  C_,
+  It,
+  wm,
+  Et,
+  Er,
+  qk,
+  DD,
+  WLr,
+  f6n,
+  hWs,
+  mJe,
+  dW,
+  Ji,
+  ao,
+  Pr,
+  Ht,
+  Czs,
+  On,
+  E
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  C0
+} from "B:/~BUN/root/chunk-3md9ngvz.js";
+import {
+  ce
+} from "B:/~BUN/root/chunk-nxwmyxnk.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  P_,
+  q3n
+} from "B:/~BUN/root/chunk-v6pbq6dm.js";
+import {
+  Lc,
+  mt,
+  LW,
+  es,
+  STe,
+  rn,
+  ei,
+  cr
+} from "B:/~BUN/root/chunk-pjgzz98k.js";
+import {
+  Ut,
+  km,
+  jge
+} from "B:/~BUN/root/chunk-cx57tr4b.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import {
+  gs,
+  wR
+} from "B:/~BUN/root/chunk-xc1c9t20.js";
+import {
+  oq,
+  U1,
+  ymr,
+  sq,
+  oSe,
+  Iue,
+  sse,
+  g0n,
+  vmr,
+  lSe,
+  iHe,
+  aHe,
+  Gp,
+  ZY,
+  y9t,
+  _9t,
+  sxt,
+  _Se,
+  dDn,
+  Qfs,
+  XAe,
+  RSe,
+  elo,
+  tlo,
+  ilo,
+  dlo,
+  pZ,
+  rU,
+  PDn,
+  z9t,
+  OYe,
+  ODn,
+  IDn,
+  Sxt,
+  MDn,
+  Sat,
+  wat,
+  vat,
+  oU,
+  Ems,
+  txe,
+  QA,
+  ZDn,
+  fdo,
+  nyr,
+  Ok,
+  Yat,
+  kdo,
+  Tyr,
+  xdo,
+  VYe,
+  Cyr,
+  Xxt,
+  Jxt,
+  Cse,
+  Ryr,
+  Db,
+  d6,
+  XXt,
+  kNn,
+  rys,
+  m9,
+  J1,
+  tdt,
+  jfo,
+  ndt,
+  awr,
+  Ope,
+  sN,
+  mHn,
+  $Qt,
+  Wfo,
+  zfo,
+  yd,
+  Z_,
+  Y0,
+  GQt,
+  emo,
+  VQt,
+  zOt,
+  T6,
+  Ly,
+  pwr,
+  Do,
+  x9,
+  KOt
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  Xo
+} from "B:/~BUN/root/chunk-9tkh434c.js";
+import {
+  im
+} from "B:/~BUN/root/chunk-hvvs3ef6.js";
+import {
+  Ud
+} from "B:/~BUN/root/chunk-1xwk1cwp.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  di
+} from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import {
+  ts,
+  jW
+} from "B:/~BUN/root/chunk-xrp58hm9.js";
+import {
+  v5,
+  pt
+} from "B:/~BUN/root/chunk-cqkcn3bx.js";
+import {
+  wo,
+  m0e,
+  oR,
+  OBt,
+  v_t,
+  iTe,
+  R$o,
+  g0e,
+  qx,
+  WS,
+  sR,
+  A$o,
+  XM,
+  rF
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  dt,
+  Kt,
+  xLo,
+  We,
+  xt
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  HFo,
+  Ml,
+  Gyt
+} from "B:/~BUN/root/chunk-245a2x6v.js";
+import {
+  FBo,
+  $Bo
+} from "B:/~BUN/root/chunk-pej55jax.js";
+import {
+  efe,
+  kS,
+  lj,
+  UUn,
+  wyo,
+  hie,
+  Gkr,
+  BUn,
+  Iyo
+} from "B:/~BUN/root/chunk-8w42v0dp.js";
+import {
+  lde
+} from "B:/~BUN/root/chunk-m94tqsvv.js";
+import {
+  QE,
+  Lp,
+  Hx,
+  GO,
+  JH,
+  bb,
+  VO,
+  dcn
+} from "B:/~BUN/root/chunk-qp0344nb.js";
+import {
+  my
+} from "B:/~BUN/root/chunk-k2ekj8re.js";
+import {
+  By,
+  Gn
+} from "B:/~BUN/root/chunk-c44qc88s.js";
+import {
+  jv,
+  ht,
+  Op
+} from "B:/~BUN/root/chunk-2fccb5hn.js";
+import {
+  Lh,
+  bsn,
+  bm,
+  yO,
+  Xu,
+  v3,
+  CK,
+  Pn,
+  fb
+} from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import {
+  qNt,
+  FAo,
+  Sme,
+  wme
+} from "B:/~BUN/root/chunk-f25646gd.js";
+import {
+  FN
+} from "B:/~BUN/root/chunk-8y0chnnr.js";
+import {
+  bs
+} from "B:/~BUN/root/chunk-gy660jgx.js";
+import {
+  f3
+} from "B:/~BUN/root/chunk-9w4ppz44.js";
+import {
+  xPe,
+  BMt,
+  Oen,
+  YUe,
+  K9,
+  Mc,
+  JUe,
+  Qq,
+  Gs,
+  P0t,
+  mxs
+} from "B:/~BUN/root/chunk-dn8rakwm.js";
+import {
+  as
+} from "B:/~BUN/root/chunk-j97yjp75.js";
+import {
+  Wa,
+  ann,
+  Y0t
+} from "B:/~BUN/root/chunk-vd11ggb1.js";
+import {
+  NDt
+} from "B:/~BUN/root/chunk-0m6vvjrw.js";
+import {
+  sd
+} from "B:/~BUN/root/chunk-j2ppas05.js";
+import {
+  Yu,
+  Ph,
+  Kxe,
+  Lpe,
+  J0,
+  UR
+} from "B:/~BUN/root/chunk-k382hx6g.js";
+import {
+  te
+} from "B:/~BUN/root/chunk-9tx73f8x.js";
+import {
+  Ffe,
+  jie,
+  Fnn,
+  zWn,
+  yG,
+  cK,
+  vH,
+  Nv,
+  GWn,
+  fw,
+  kH,
+  Hg,
+  lX,
+  ORr,
+  IRr,
+  MRr,
+  hDt,
+  wko,
+  Tko,
+  yDt,
+  DRr,
+  lO,
+  _Dt,
+  bDt
+} from "B:/~BUN/root/chunk-74f4ssah.js";
+import {
+  wN,
+  gx,
+  nOe
+} from "B:/~BUN/root/chunk-qj8q07z1.js";
+import {
+  RBe
+} from "B:/~BUN/root/chunk-bvhc5fp3.js";
+import {
+  zut
+} from "B:/~BUN/root/chunk-89m6ef17.js";
+import {
+  pf,
+  Jw,
+  JPe
+} from "B:/~BUN/root/chunk-dbpgrm5a.js";
+import {
+  pM
+} from "B:/~BUN/root/chunk-kcbxq7ta.js";
+import {
+  mBe,
+  OU,
+  bve,
+  oO
+} from "B:/~BUN/root/chunk-f06s8ws5.js";
+import {
+  jq
+} from "B:/~BUN/root/chunk-0hq7zw7b.js";
+import {
+  pz
+} from "B:/~BUN/root/chunk-avy82qb9.js";
+import {
+  Ev
+} from "B:/~BUN/root/chunk-sk7eej8z.js";
+import {
+  br
+} from "B:/~BUN/root/chunk-g5gf7tps.js";
+import {
+  oc
+} from "B:/~BUN/root/chunk-t7y4rt40.js";
+import {
+  Te
+} from "B:/~BUN/root/chunk-smy4yvhm.js";
+import {
+  ze,
+  tnt
+} from "B:/~BUN/root/chunk-yqm8ptb8.js";
+import {
+  Ae
+} from "B:/~BUN/root/chunk-jjcfcfrs.js";
+import {
+  TP,
+  V,
+  Ar,
+  Fo
+} from "B:/~BUN/root/chunk-tgzmva3g.js";
+import {
+  CV
+} from "B:/~BUN/root/chunk-1nevq7mk.js";
+import {
+  jer,
+  vP
+} from "B:/~BUN/root/chunk-z7dx70bj.js";
+import {
+  jp
+} from "B:/~BUN/root/chunk-9pv2t2x4.js";
+import {
+  Her,
+  Zbn,
+  MGt,
+  Dre
+} from "B:/~BUN/root/chunk-1tpvfw1w.js";
+import {
+  TI,
+  Va,
+  gVe,
+  f1,
+  kL,
+  $d
+} from "B:/~BUN/root/chunk-znr767c8.js";
+import {
+  q
+} from "B:/~BUN/root/chunk-bf7csy4f.js";
+import {
+  Wvt,
+  Gu,
+  d_
+} from "B:/~BUN/root/chunk-653rvs3k.js";
+import {
+  UGt,
+  oSn,
+  QS
+} from "B:/~BUN/root/chunk-34am1esp.js";
+import {
+  hS
+} from "B:/~BUN/root/chunk-a8k6kvgb.js";
+import {
+  rXr,
+  oXr
+} from "B:/~BUN/root/chunk-sgcv8apk.js";
+import {
+  Se
+} from "B:/~BUN/root/chunk-7dpyfa5r.js";
+import {
+  Utt
+} from "B:/~BUN/root/chunk-wjfjba9d.js";
+import {
+  Sk
+} from "B:/~BUN/root/chunk-dyx9ks30.js";
+import {
+  Pu
+} from "B:/~BUN/root/chunk-msja8jzc.js";
+import {
+  Bye,
+  RGt,
+  bR,
+  T3o,
+  jye,
+  c1,
+  nVe,
+  xGt,
+  pLe,
+  C3o,
+  u1,
+  oVe,
+  Mre,
+  mLe,
+  Qbn,
+  GVr
+} from "B:/~BUN/root/chunk-ga160ee8.js";
+import {
+  ers
+} from "B:/~BUN/root/chunk-jadjnm81.js";
+import {
+  ft
+} from "B:/~BUN/root/chunk-jh7dpafw.js";
+import {
+  nst,
+  NKe,
+  FKe
+} from "B:/~BUN/root/chunk-qc6mvzn1.js";
+import {
+  M$
+} from "B:/~BUN/root/chunk-aps766z0.js";
+import {
+  Vvt
+} from "B:/~BUN/root/chunk-rxj6qxcq.js";
+import {
+  lvt
+} from "B:/~BUN/root/chunk-9sdmtswr.js";
+import {
+  SR,
+  zye
+} from "B:/~BUN/root/chunk-dp4s51j4.js";
+import {
+  Bir,
+  VTn
+} from "B:/~BUN/root/chunk-r3x06dkm.js";
+import {
+  Mtt
+} from "B:/~BUN/root/chunk-y11hm1s1.js";
+import {
+  GTt
+} from "B:/~BUN/root/chunk-7pf9r0sr.js";
+import {
+  EI,
+  Lre
+} from "B:/~BUN/root/chunk-r13249bw.js";
+import {
+  Ftt
+} from "B:/~BUN/root/chunk-hjynwxxe.js";
+import {
+  Irr
+} from "B:/~BUN/root/chunk-v80favdx.js";
+import {
+  Hw,
+  Ire
+} from "B:/~BUN/root/chunk-1z273mny.js";
+import {
+  y1,
+  g4r
+} from "B:/~BUN/root/chunk-cztbaswn.js";
+import {
+  Cs
+} from "B:/~BUN/root/chunk-cbtzavb5.js";
+import {
+  Per,
+  TCe,
+  Oer,
+  Ier,
+  Mer
+} from "B:/~BUN/root/chunk-h9mw6yna.js";
+import {
+  Ou
+} from "B:/~BUN/root/chunk-t70eh59h.js";
+import {
+  Cdr
+} from "B:/~BUN/root/chunk-fbgs9vjp.js";
+import {
+  GYr,
+  dor,
+  cor,
+  VYr
+} from "B:/~BUN/root/chunk-5bn6ybmz.js";
+import {
+  j5r,
+  W5r
+} from "B:/~BUN/root/chunk-bydcz337.js";
+import {
+  Cer,
+  Rer
+} from "B:/~BUN/root/chunk-r65rr9j4.js";
+import {
+  Ore
+} from "B:/~BUN/root/chunk-2r63p4c7.js";
+import {
+  sVe,
+  x3o,
+  P3o
+} from "B:/~BUN/root/chunk-9sbqmg9q.js";
+import {
+  gLe,
+  iVe,
+  aY,
+  DGt,
+  $er,
+  LGt,
+  wP
+} from "B:/~BUN/root/chunk-qtysracf.js";
+import {
+  Uer,
+  Kwt,
+  O3o
+} from "B:/~BUN/root/chunk-as38jhd0.js";
+import {
+  Rm
+} from "B:/~BUN/root/chunk-75n4yg0p.js";
+import {
+  Ol
+} from "B:/~BUN/root/chunk-n5g6ryax.js";
+import {
+  Eo
+} from "B:/~BUN/root/chunk-3hxvnq94.js";
+import {
+  Tp
+} from "B:/~BUN/root/chunk-wzaq6x2k.js";
+import {
+  wk
+} from "B:/~BUN/root/chunk-wwnnc3mv.js";
+import {
+  Yye,
+  $w,
+  vqr
+} from "B:/~BUN/root/chunk-x2fwa42c.js";
+import {
+  sz
+} from "B:/~BUN/root/chunk-ek3t847v.js";
+import {
+  Ql
+} from "B:/~BUN/root/chunk-5xpqz53z.js";
+import {
+  gt
+} from "B:/~BUN/root/chunk-vs438w4e.js";
+import {
+  hE
+} from "B:/~BUN/root/chunk-88ayp7r7.js";
+import {
+  WCe,
+  Vu
+} from "B:/~BUN/root/chunk-44n8zjk2.js";
+import {
+  Q,
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  jw
+} from "B:/~BUN/root/chunk-tmxfgevx.js";
+import {
+  C9r,
+  Hes
+} from "B:/~BUN/root/chunk-v0rh8eyd.js";
+import {
+  dTt
+} from "B:/~BUN/root/chunk-hz18r0wg.js";
+import {
+  LP
+} from "B:/~BUN/root/chunk-7qt3r3cx.js";
+import {
+  vbe,
+  q6t,
+  FPn,
+  HPn,
+  K6t
+} from "B:/~BUN/root/chunk-58yhc5gg.js";
+import {
+  aN
+} from "B:/~BUN/root/chunk-gvcmagy5.js";
+import {
+  zs
+} from "B:/~BUN/root/chunk-c2nm18xm.js";
+import {
+  Is
+} from "B:/~BUN/root/chunk-906np0vb.js";
+import {
+  Kd,
+  Xr,
+  qt,
+  ng,
+  $r,
+  ae,
+  Ee,
+  P,
+  Jt,
+  Z,
+  A,
+  y,
+  Dt,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  IU
+} from "B:/~BUN/root/chunk-znxeecc4.js";
+import {
+  tX
+} from "B:/~BUN/root/chunk-z7gq8w6c.js";
+import {
+  uO
+} from "B:/~BUN/root/chunk-bz6z3szz.js";
+import {
+  Dc
+} from "B:/~BUN/root/chunk-j82xms77.js";
+import {
+  IS,
+  jk
+} from "B:/~BUN/root/chunk-rzekebyp.js";
+import {
+  go
+} from "B:/~BUN/root/chunk-y59h61rh.js";
+import {
+  pr
+} from "B:/~BUN/root/chunk-j1zjtkgf.js";
+import {
+  rv,
+  Nu
+} from "B:/~BUN/root/chunk-hdc8p5sh.js";
+import {
+  OH
+} from "B:/~BUN/root/chunk-z96xwcnb.js";
+import {
+  Fu
+} from "B:/~BUN/root/chunk-97bdq2mm.js";
+import {
+  Yi
+} from "B:/~BUN/root/chunk-s39maerh.js";
+import {
+  lin
+} from "B:/~BUN/root/chunk-ac9kwvf4.js";
+import {
+  Qe
+} from "B:/~BUN/root/chunk-5k20pvvh.js";
+import {
+  Rn
+} from "B:/~BUN/root/chunk-hwnj8m4g.js";
+import {
+  ge,
+  St,
+  YO
+} from "B:/~BUN/root/chunk-rm2gz7kj.js";
+import {
+  N
+} from "B:/~BUN/root/chunk-nkxgam12.js";
+import {
+  o,
+  T,
+  u
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  ie
+} from "B:/~BUN/root/chunk-t7350kw8.js";
+import {
+  B4
+} from "B:/~BUN/root/chunk-3m71dqxd.js";
+import {
+  Zt
+} from "B:/~BUN/root/chunk-ekswf6ps.js";
+import {
+  Ede,
+  OWo
+} from "B:/~BUN/root/chunk-qvy7wp4j.js";
+import {
+  Mr,
+  S,
+  yn
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+var Ur = {};
+Mr(Ur, {
+  CommandOutputSite: () => Hp,
+  default: () => Ur,
+  frameOf: () => dl,
+  printedTextOf: () => Eb
+});
+B();
+var tVe = qt(null);
+B();
+var BS = 500,
+  Jf = 5000;
+
+function xtt() {
+  let m = ot(),
+    d = C0(),
+    p = gs();
+  return ae(() => {
+    if (!m) return;
+    let g = h2.of(p),
+      h = Date.now();
+    if (h - g.lastBellAt < BS) return;
+    g.lastBellAt = h, d.notifyBell()
+  }, [m, d, p])
+}
+var Zf = "messages_entry_without_uuid",
+  oh = "Messages: renderable entry without a string uuid",
+  FS = {
+    assistant: !0,
+    user: !0,
+    attachment: !0,
+    system: !0,
+    grouped_tool_use: !0,
+    collapsed_read_search: !0,
+    work_segment: !0,
+    speaker_label: !0,
+    recap_fold: !0
+  },
+  jS = new Set([...Object.keys(FS), "progress", "api_system", "tombstone"]),
+  HS = {
+    api_error: !0,
+    informational: !0,
+    compact_boundary: !0,
+    microcompact_boundary: !0,
+    local_command: !0,
+    permission_retry: !0,
+    stop_hook_summary: !0,
+    turn_duration: !0,
+    memory_saved: !0,
+    agents_killed: !0,
+    away_summary: !0,
+    thinking: !0,
+    file_snapshot: !0,
+    bridge_status: !0,
+    scheduled_task_fire: !0,
+    read_divider: !0,
+    model_fallback: !0,
+    model_consent_fallback: !0
+  },
+  $S = {
+    file: !0,
+    invoked_skills: !0,
+    todo_reminder: !0,
+    task_reminder: !0,
+    tool_search_usage_reminder: !0,
+    relevant_memories: !0,
+    queued_command: !0,
+    diagnostics: !0,
+    plan_mode: !0,
+    plan_mode_reentry: !0,
+    attention_budget: !0,
+    auto_mode: !0,
+    mcp_resource: !0,
+    task_status: !0,
+    async_hook_response: !0,
+    hook_success: !0,
+    context_efficiency: !0,
+    deferred_tools_delta: !0,
+    agent_listing_delta: !0,
+    memory_update: !0,
+    mcp_instructions_delta: !0,
+    mcp_dropped_tools_delta: !0
+  };
+
+function RF(m) {
+  if (typeof m !== "object" || m === null || !("uuid" in m)) return !1;
+  let {
+    uuid: d
+  } = m;
+  return typeof d === "string" && d !== ""
+}
+
+function bV(m) {
+  return RF(m) ? m.uuid.slice(0, Z_) : void 0
+}
+
+function wVr(m, d, p) {
+  try {
+    let g = h2.of(m);
+    if (g.has(Zf)) return;
+    let h = d.findIndex((b) => !RF(b));
+    if (h < 0 || !g.claim(Zf)) return;
+    let M;
+    try {
+      M = GS(d, h, {
+        ...p,
+        resumed: pz(m),
+        uptimeSeconds: process.uptime()
+      })
+    } catch {
+      M = `${oh} (describe=failed)`
+    }
+    l(new x(M))
+  } catch {}
+}
+
+function GS(m, d, {
+  resumed: p,
+  virtualized: g,
+  screen: h,
+  uptimeSeconds: M
+}) {
+  let b = [...qS(m[d]), `index=${d}`, `length=${m.length}`, `previous=${d>0?eh(m[d-1]):"none"}`, `next=${d+1<m.length?eh(m[d+1]):"none"}`, `resumed=${p}`, `virtualized=${g}`, `screen=${h==="transcript"?"transcript":"prompt"}`, `uptime=${JS(M)}`];
+  return `${oh} (${b.join(" ")})`
+}
+
+function qS(m) {
+  try {
+    let d = Wo(m, "type");
+    return [`uuid=${YS(m)}`, `kind=${Fa(m)}`, `type=${th(m)}`, ...d === "user" || d === "assistant" ? [`block=${KS(Wo(m,"message"))}`] : d === "attachment" ? [`attachment=${Ba(Wo(Wo(m,"attachment"),"type"),zS)}`] : d === "system" ? [`subtype=${Ba(Wo(m,"subtype"),VS)}`] : [], `has_message=${Wo(m,"message")!==void 0}`, `has_timestamp=${Wo(m,"timestamp")!==void 0}`, `has_parentUuid=${Wo(m,"parentUuid")!==void 0}`, `isMeta=${XS(Wo(m,"isMeta"))}`]
+  } catch {
+    return ["describe=failed"]
+  }
+}
+
+function eh(m) {
+  try {
+    return th(m)
+  } catch {
+    return "describe_failed"
+  }
+}
+
+function th(m) {
+  return Ba(Wo(m, "type"), (d) => jS.has(d))
+}
+
+function KS(m) {
+  if (m === void 0) return "no_message";
+  let d = Wo(m, "content");
+  if (typeof d === "string") return "string_content";
+  if (!Array.isArray(d)) return "non_array_content";
+  let p = d[0];
+  return p === void 0 ? "empty_content" : Ba(Wo(p, "type"), Xke)
+}
+
+function VS(m) {
+  return Object.hasOwn(HS, m)
+}
+
+function zS(m) {
+  return Object.hasOwn(pwr, m) || Object.hasOwn($S, m)
+}
+
+function Ba(m, d) {
+  if (typeof m !== "string") return m === void 0 ? "absent" : `non_string_${Fa(m)}`;
+  return d(m) ? m : "unlisted"
+}
+
+function YS(m) {
+  if (typeof m !== "object" || m === null || !("uuid" in m)) return "absent";
+  let {
+    uuid: d
+  } = m;
+  if (typeof d === "string") return d === "" ? "string_empty" : "string";
+  return d === void 0 ? "undefined" : Fa(d)
+}
+
+function Fa(m) {
+  return m === null ? "null" : Array.isArray(m) ? "array" : typeof m
+}
+
+function XS(m) {
+  return typeof m === "boolean" ? String(m) : m === void 0 ? "absent" : `non_boolean_${Fa(m)}`
+}
+
+function Wo(m, d) {
+  return typeof m === "object" && m !== null && d in m ? Reflect.get(m, d) : void 0
+}
+
+function JS(m) {
+  return m < 60 ? "lt_1m" : m < 600 ? "lt_10m" : m < 3600 ? "lt_1h" : m < 21600 ? "lt_6h" : m < 86400 ? "lt_24h" : "gte_24h"
+}
+var ZS = "https://clau.de/chrome/tab/";
+
+function sh(m) {
+  if (!Ev()) return null;
+  if (typeof m !== "object" || m === null || !("tabId" in m)) return null;
+  let d = typeof m.tabId === "number" ? m.tabId : typeof m.tabId === "string" ? parseInt(m.tabId, 10) : NaN;
+  if (isNaN(d)) return null;
+  let p = `${ZS}${d}`;
+  return r(n, {
+    children: [" ", e(zt, {
+      url: p,
+      children: e(n, {
+        color: "subtle",
+        children: "[View Tab]"
+      })
+    })]
+  })
+}
+
+function e_(m, d, p) {
+  if (p) return Zbn(m, [], {
+    verbose: p
+  });
+  let g = null;
+  switch (d) {
+    case "navigate":
+      g = "Navigation completed";
+      break;
+    case "tabs_create_mcp":
+      g = "Tab created";
+      break;
+    case "tabs_context_mcp":
+      g = "Tabs read";
+      break;
+    case "form_input":
+      g = "Input completed";
+      break;
+    case "computer":
+      g = "Action completed";
+      break;
+    case "resize_window":
+      g = "Window resized";
+      break;
+    case "find":
+      g = "Search completed";
+      break;
+    case "gif_creator":
+      g = "GIF action completed";
+      break;
+    case "read_console_messages":
+      g = "Console messages retrieved";
+      break;
+    case "read_network_requests":
+      g = "Network requests retrieved";
+      break;
+    case "shortcuts_list":
+      g = "Shortcuts retrieved";
+      break;
+    case "shortcuts_execute":
+      g = "Shortcut executed";
+      break;
+    case "javascript_tool":
+      g = "Script executed";
+      break;
+    case "read_page":
+      g = "Page read";
+      break;
+    case "upload_image":
+      g = "Image uploaded";
+      break;
+    case "get_page_text":
+      g = "Page text retrieved";
+      break;
+    case "update_plan":
+      g = "Plan updated";
+      break
+  }
+  if (g) return e(ze, {
+    height: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: g
+    })
+  });
+  return null
+}
+
+function nh(m) {
+  return (d, p, {
+    verbose: g
+  }) => {
+    if (typeof d !== "object" || d === null) return null;
+    return e_(d, m, g)
+  }
+}
+var o_ = {
+  screenshot: "Captured",
+  zoom: "Captured",
+  request_access: "Access updated",
+  left_click: "Clicked",
+  right_click: "Clicked",
+  middle_click: "Clicked",
+  double_click: "Clicked",
+  triple_click: "Clicked",
+  type: "Typed",
+  key: "Pressed",
+  hold_key: "Pressed",
+  scroll: "Scrolled",
+  left_click_drag: "Dragged",
+  open_application: "Opened"
+};
+
+function ah(m) {
+  return (d, p, {
+    verbose: g
+  }) => {
+    if (g || typeof d !== "object" || d === null) return null;
+    let h = o_[m];
+    if (!h) return null;
+    return e(ze, {
+      height: 1,
+      children: e(n, {
+        dimColor: !0,
+        children: h
+      })
+    })
+  }
+}
+
+function ih(m) {
+  let d = Hes(m);
+  if (d === null) return null;
+  return e(s, {
+    flexWrap: "nowrap",
+    marginLeft: 1,
+    children: e(Go, {
+      children: d.url && Ev() ? jw(d.url, d.label) : d.label
+    })
+  })
+}
+
+function rr(m) {
+  let p = w(3),
+    {
+      plan: d
+    } = m,
+    g;
+  if (p[0] === S) g = e(n, {
+    color: "subtle",
+    children: "User rejected Claude's plan:"
+  }), p[0] = g;
+  else g = p[0];
+  let h;
+  if (p[1] !== d) h = e(ze, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [g, e(s, {
+        borderStyle: "round",
+        borderColor: "planMode",
+        paddingX: 1,
+        overflow: "hidden",
+        children: e(Va, {
+          children: d
+        })
+      })]
+    })
+  }), p[1] = d, p[2] = h;
+  else h = p[2];
+  return h
+}
+
+function lh(m, d, {
+  theme: p
+}) {
+  let {
+    plan: g,
+    filePath: h
+  } = m, M = !g || g.trim() === "", b = h ? ts(h) : "", R = m.awaitingLeaderApproval;
+  if (M) return e(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: r(s, {
+      flexDirection: "row",
+      children: [e(n, {
+        color: rF("plan"),
+        children: wo
+      }), e(n, {
+        children: " Exited plan mode"
+      })]
+    })
+  });
+  if (R) return r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [r(s, {
+      flexDirection: "row",
+      children: [e(n, {
+        color: rF("plan"),
+        children: wo
+      }), e(n, {
+        children: " Plan submitted for team lead approval"
+      })]
+    }), e(ze, {
+      children: r(s, {
+        flexDirection: "column",
+        children: [h && r(n, {
+          dimColor: !0,
+          children: ["Plan file: ", b]
+        }), e(n, {
+          dimColor: !0,
+          children: "Waiting for team lead to review and approve..."
+        })]
+      })
+    })]
+  });
+  return r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [r(s, {
+      flexDirection: "row",
+      children: [e(n, {
+        color: rF("plan"),
+        children: wo
+      }), e(n, {
+        children: " User approved Claude's plan"
+      })]
+    }), e(ze, {
+      children: r(s, {
+        flexDirection: "column",
+        children: [h && r(n, {
+          dimColor: !0,
+          children: ["Plan saved to: ", b, " \xB7 /plan to edit"]
+        }), e(Va, {
+          children: g
+        })]
+      })
+    })]
+  })
+}
+
+function dh({
+  plan: m
+}, {
+  theme: d
+}) {
+  let p = m ?? f3() ?? "No plan found";
+  return e(s, {
+    flexDirection: "column",
+    children: e(rr, {
+      plan: p
+    })
+  })
+}
+
+function mh(m, {
+  verbose: d,
+  isTranscriptMode: p
+}) {
+  return !d && !p && m === bsn ? e(n, {}) : null
+}
+
+function uh(m, d, {
+  verbose: p,
+  isTranscriptMode: g
+}) {
+  let h = oSe(m);
+  if (!h) return null;
+  if (h.status === "working") return p || g ? e(ze, {
+    height: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: "still running"
+    })
+  }) : null;
+  let M = h.status === "completed" ? h.result.content.reduce((R, v) => R + v.text.length, 0) : 0,
+    b = [h.status === "completed" && h.result.isError ? "completed with errors" : h.status, ...M > 0 ? [`${ei(M)} chars of output`] : []].join(" \xB7 ");
+  return e(ze, {
+    height: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: b
+    })
+  })
+}
+
+function $a(m) {
+  let R = w(26),
+    {
+      count: d,
+      countLabel: p,
+      secondaryCount: g,
+      secondaryLabel: h,
+      content: M,
+      verbose: b
+    } = m,
+    v;
+  if (R[0] !== d) v = r(n, {
+    bold: !0,
+    children: [d, " "]
+  }), R[0] = d, R[1] = v;
+  else v = R[1];
+  let k;
+  if (R[2] !== d || R[3] !== p) k = d === 0 || d > 1 ? p : p.slice(0, -1), R[2] = d, R[3] = p, R[4] = k;
+  else k = R[4];
+  let C;
+  if (R[5] !== v || R[6] !== k) C = r(n, {
+    children: ["Found ", v, k]
+  }), R[5] = v, R[6] = k, R[7] = C;
+  else C = R[7];
+  let I = C,
+    W;
+  if (R[8] !== g || R[9] !== h) W = g !== void 0 && h ? r(n, {
+    children: [" ", "across ", r(n, {
+      bold: !0,
+      children: [g, " "]
+    }), g === 0 || g > 1 ? h : h.slice(0, -1)]
+  }) : null, R[8] = g, R[9] = h, R[10] = W;
+  else W = R[10];
+  let j = W;
+  if (b) {
+    let U;
+    if (R[11] === S) U = e(n, {
+      dimColor: !0,
+      children: "\xA0\xA0\u23BF \xA0"
+    }), R[11] = U;
+    else U = R[11];
+    let H;
+    if (R[12] !== I || R[13] !== j) H = e(s, {
+      flexDirection: "row",
+      children: r(n, {
+        children: [U, I, j]
+      })
+    }), R[12] = I, R[13] = j, R[14] = H;
+    else H = R[14];
+    let D;
+    if (R[15] !== M) D = e(s, {
+      marginLeft: 5,
+      children: e(n, {
+        children: M
+      })
+    }), R[15] = M, R[16] = D;
+    else D = R[16];
+    let G;
+    if (R[17] !== H || R[18] !== D) G = r(s, {
+      flexDirection: "column",
+      children: [H, D]
+    }), R[17] = H, R[18] = D, R[19] = G;
+    else G = R[19];
+    return G
+  }
+  let U;
+  if (R[20] !== d) U = d > 0 && e(Gu, {}), R[20] = d, R[21] = U;
+  else U = R[21];
+  let H;
+  if (R[22] !== I || R[23] !== j || R[24] !== U) H = e(ze, {
+    height: 1,
+    children: r(n, {
+      children: [I, j, " ", U]
+    })
+  }), R[22] = I, R[23] = j, R[24] = U, R[25] = H;
+  else H = R[25];
+  return H
+}
+
+function Im(m, {
+  verbose: d,
+  toolDenialKind: p
+}) {
+  if (!d && p !== "permission-rule" && typeof m === "string" && Is(m, "tool_use_error")) {
+    if (Is(m, "tool_use_error")?.includes(jW)) return e(ze, {
+      children: e(n, {
+        color: "error",
+        children: "File not found"
+      })
+    });
+    return e(ze, {
+      children: e(n, {
+        color: "error",
+        children: "Error searching files"
+      })
+    })
+  }
+  return e(Rm, {
+    result: m,
+    verbose: d
+  })
+}
+
+function Am({
+  mode: m = "files_with_matches",
+  filenames: d,
+  numFiles: p,
+  content: g,
+  numLines: h,
+  numMatches: M
+}, b, {
+  verbose: R
+}) {
+  if (m === "content") return e($a, {
+    count: h ?? 0,
+    countLabel: "lines",
+    content: g,
+    verbose: R
+  });
+  if (m === "count") return e($a, {
+    count: M ?? 0,
+    countLabel: "matches",
+    secondaryCount: p,
+    secondaryLabel: "files",
+    content: g,
+    verbose: R
+  });
+  let v = d.map((k) => k).join(`
+`);
+  return e($a, {
+    count: p,
+    countLabel: "files",
+    content: v,
+    verbose: R
+  })
+}
+var fh = {
+  goToDefinition: {
+    singular: "definition",
+    plural: "definitions"
+  },
+  findReferences: {
+    singular: "reference",
+    plural: "references"
+  },
+  documentSymbol: {
+    singular: "symbol",
+    plural: "symbols"
+  },
+  workspaceSymbol: {
+    singular: "symbol",
+    plural: "symbols"
+  },
+  hover: {
+    singular: "hover info",
+    plural: "hover info",
+    special: "available"
+  },
+  goToImplementation: {
+    singular: "implementation",
+    plural: "implementations"
+  },
+  prepareCallHierarchy: {
+    singular: "call item",
+    plural: "call items"
+  },
+  incomingCalls: {
+    singular: "caller",
+    plural: "callers"
+  },
+  outgoingCalls: {
+    singular: "callee",
+    plural: "callees"
+  }
+};
+
+function bh(m) {
+  let b = w(24),
+    {
+      operation: d,
+      resultCount: p,
+      fileCount: g,
+      content: h,
+      verbose: M
+    } = m,
+    R;
+  if (b[0] !== d) R = fh[d] || {
+    singular: "result",
+    plural: "results"
+  }, b[0] = d, b[1] = R;
+  else R = b[1];
+  let v = R,
+    k = p === 1 ? v.singular : v.plural,
+    C;
+  if (b[2] !== k || b[3] !== v.special || b[4] !== d || b[5] !== p) C = d === "hover" && p > 0 && v.special ? r(n, {
+    children: ["Hover info ", v.special]
+  }) : r(n, {
+    children: ["Found ", r(n, {
+      bold: !0,
+      children: [p, " "]
+    }), k]
+  }), b[2] = k, b[3] = v.special, b[4] = d, b[5] = p, b[6] = C;
+  else C = b[6];
+  let I = C,
+    W;
+  if (b[7] !== g) W = g > 1 ? r(n, {
+    children: [" ", "across ", r(n, {
+      bold: !0,
+      children: [g, " "]
+    }), "files"]
+  }) : null, b[7] = g, b[8] = W;
+  else W = b[8];
+  let j = W;
+  if (M) {
+    let U;
+    if (b[9] === S) U = e(n, {
+      dimColor: !0,
+      children: "\xA0\xA0\u23BF \xA0"
+    }), b[9] = U;
+    else U = b[9];
+    let H;
+    if (b[10] !== I || b[11] !== j) H = e(s, {
+      flexDirection: "row",
+      children: r(n, {
+        children: [U, I, j]
+      })
+    }), b[10] = I, b[11] = j, b[12] = H;
+    else H = b[12];
+    let D;
+    if (b[13] !== h) D = e(s, {
+      marginLeft: 5,
+      children: e(n, {
+        children: h
+      })
+    }), b[13] = h, b[14] = D;
+    else D = b[14];
+    let G;
+    if (b[15] !== H || b[16] !== D) G = r(s, {
+      flexDirection: "column",
+      children: [H, D]
+    }), b[15] = H, b[16] = D, b[17] = G;
+    else G = b[17];
+    return G
+  }
+  let U;
+  if (b[18] !== p) U = p > 0 && e(Gu, {}), b[18] = p, b[19] = U;
+  else U = b[19];
+  let H;
+  if (b[20] !== I || b[21] !== j || b[22] !== U) H = e(ze, {
+    height: 1,
+    children: r(n, {
+      children: [I, j, " ", U]
+    })
+  }), b[20] = I, b[21] = j, b[22] = U, b[23] = H;
+  else H = b[23];
+  return H
+}
+
+function Rh(m, {
+  verbose: d,
+  toolDenialKind: p
+}) {
+  if (!d && p !== "permission-rule" && typeof m === "string" && Is(m, "tool_use_error")) return e(ze, {
+    children: e(n, {
+      color: "error",
+      children: "LSP operation failed"
+    })
+  });
+  return e(Rm, {
+    result: m,
+    verbose: d
+  })
+}
+
+function kh(m, d, {
+  verbose: p
+}) {
+  if (m.resultCount !== void 0 && m.fileCount !== void 0) return e(bh, {
+    operation: m.operation,
+    resultCount: m.resultCount,
+    fileCount: m.fileCount,
+    content: m.result,
+    verbose: p
+  });
+  return e(ze, {
+    children: e(n, {
+      children: m.result
+    })
+  })
+}
+
+function x_(m) {
+  let [U, H] = m;
+  return r(n, {
+    color: "inactive",
+    children: ["\xB7 ", U, " \u2192 ", H]
+  }, U)
+}
+
+function S_(D) {
+  return D.label
+}
+
+function w_(G) {
+  return r(n, {
+    color: "inactive",
+    children: ["\xB7 ", G.question, " (", G.options.map(S_).join(" / "), ")"]
+  }, G.question)
+}
+
+function __(m) {
+  let [j, U] = m;
+  return r(n, {
+    color: "inactive",
+    children: ["\xB7 ", j, " \u2192 ", U]
+  }, j)
+}
+
+function vh(m) {
+  let h = w(15),
+    {
+      questions: d,
+      answers: p,
+      timeoutMs: g
+    } = m,
+    M;
+  if (h[0] !== p) M = Object.entries(p), h[0] = p, h[1] = M;
+  else M = h[1];
+  let b = M,
+    R = b.length > 0,
+    v;
+  if (h[2] === S) v = r(s, {
+    flexDirection: "row",
+    children: [r(n, {
+      color: rF("default"),
+      children: [wo, "\xA0"]
+    }), e(n, {
+      children: "Claude asked:"
+    })]
+  }), h[2] = v;
+  else v = h[2];
+  let k;
+  if (h[3] !== b || h[4] !== R || h[5] !== d) k = R ? b.map(x_) : d.map(w_), h[3] = b, h[4] = R, h[5] = d, h[6] = k;
+  else k = h[6];
+  let C;
+  if (h[7] !== g) C = Math.round(g / 1000), h[7] = g, h[8] = C;
+  else C = h[8];
+  const I = R ? "continued with the answers selected so far" : "continued without an answer";
+  let W;
+  if (h[9] !== C || h[10] !== I) W = r(n, {
+    dimColor: !0,
+    children: [wo, " No response after ", C, "s \u2014", " ", I]
+  }), h[9] = C, h[10] = I, h[11] = W;
+  else W = h[11];
+  let j;
+  if (h[12] !== k || h[13] !== W) j = r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [v, e(ze, {
+      children: r(s, {
+        flexDirection: "column",
+        children: [k, W]
+      })
+    })]
+  }), h[12] = k, h[13] = W, h[14] = j;
+  else j = h[14];
+  return j
+}
+
+function Eh(m) {
+  let h = w(13),
+    {
+      answers: d,
+      response: p,
+      followUp: g
+    } = m,
+    M;
+  if (h[0] !== d) M = Object.entries(d), h[0] = d, h[1] = M;
+  else M = h[1];
+  let b = M,
+    R = Boolean(p) || b.length > 0;
+  if (!g && !R) {
+    return null
+  }
+  let v = g ? R ? "User asked Claude for more questions (so far):" : "User asked Claude for more questions" : "User answered Claude's questions:",
+    k;
+  if (h[2] === S) k = r(n, {
+    color: rF("default"),
+    children: [wo, "\xA0"]
+  }), h[2] = k;
+  else k = h[2];
+  let C;
+  if (h[3] !== v) C = r(s, {
+    flexDirection: "row",
+    children: [k, e(n, {
+      children: v
+    })]
+  }), h[3] = v, h[4] = C;
+  else C = h[4];
+  let I;
+  if (h[5] !== b || h[6] !== g || h[7] !== R || h[8] !== p) I = R && e(ze, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [(g || !p) && b.map(__), p && r(n, {
+        color: "inactive",
+        children: ["\xB7 ", p]
+      })]
+    })
+  }), h[5] = b, h[6] = g, h[7] = R, h[8] = p, h[9] = I;
+  else I = h[9];
+  let W;
+  if (h[10] !== C || h[11] !== I) W = r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [C, I]
+  }), h[10] = C, h[11] = I, h[12] = W;
+  else W = h[12];
+  return W
+}
+
+function Uh() {
+  return null
+}
+
+function Ih() {
+  return null
+}
+
+function Ah({
+  questions: m,
+  answers: d,
+  response: p,
+  afkTimeoutMs: g,
+  followUp: h
+}) {
+  if (g) return e(vh, {
+    questions: m,
+    answers: d,
+    timeoutMs: g
+  });
+  return e(Eh, {
+    answers: d,
+    response: p,
+    followUp: h
+  })
+}
+
+function Dh({
+  questions: m
+}) {
+  return r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [r(s, {
+      flexDirection: "row",
+      children: [r(n, {
+        color: rF("default"),
+        children: [wo, "\xA0"]
+      }), e(n, {
+        children: "User declined to answer questions"
+      })]
+    }), e(ze, {
+      children: e(s, {
+        flexDirection: "column",
+        children: m.map((d) => r(n, {
+          color: "inactive",
+          children: ["\xB7 ", d.question, " (", d.options.map((p) => p.label).join(" / "), ")"]
+        }, d.question))
+      })
+    })]
+  })
+}
+import {
+  isAbsolute as Nh
+} from "path";
+
+function U_(M) {
+  let b = Nh(M.path) && M.pathValidated && !Ja(M.path);
+  return r(s, {
+    flexDirection: "row",
+    children: [r(n, {
+      dimColor: !0,
+      children: [te.pointerSmall, " ", M.isImage ? "[image]" : "[file]", " "]
+    }), b ? e(QS, {
+      filePath: M.path,
+      children: ts(M.path)
+    }) : e(n, {
+      children: ts(M.path)
+    }), r(n, {
+      dimColor: !0,
+      children: [" (", Zt(M.size), ")"]
+    })]
+  }, M.file_uuid ?? M.path)
+}
+
+function Oh(m, d, p) {
+  let g = (m.attachments?.length ?? 0) > 0;
+  if (!m.message && !g) return null;
+  if (p?.isTranscriptMode) return r(s, {
+    flexDirection: "row",
+    marginTop: 1,
+    children: [e(s, {
+      minWidth: 2,
+      children: e(n, {
+        color: "text",
+        children: wo
+      })
+    }), r(s, {
+      flexDirection: "column",
+      children: [m.message ? e(Va, {
+        children: m.message
+      }) : null, e(nr, {
+        attachments: m.attachments
+      })]
+    })]
+  });
+  if (p?.isBriefOnly) {
+    let h = m.sentAt ? gLe(m.sentAt) : "";
+    return r(s, {
+      flexDirection: "column",
+      marginTop: 1,
+      paddingLeft: 2,
+      children: [r(s, {
+        flexDirection: "row",
+        children: [e(n, {
+          color: "briefLabelClaude",
+          children: "Claude"
+        }), h ? r(n, {
+          dimColor: !0,
+          children: [" ", h]
+        }) : null]
+      }), r(s, {
+        flexDirection: "column",
+        children: [m.message ? e(Va, {
+          children: m.message
+        }) : null, e(nr, {
+          attachments: m.attachments
+        })]
+      })]
+    })
+  }
+  return r(s, {
+    flexDirection: "row",
+    marginTop: 1,
+    children: [e(Iu, {
+      fromLeftEdge: !0,
+      minWidth: 2,
+      children: e(n, {
+        color: "text",
+        children: wo
+      })
+    }), r(s, {
+      flexDirection: "column",
+      children: [m.message ? e(Va, {
+        children: m.message
+      }) : null, e(nr, {
+        attachments: m.attachments
+      })]
+    })]
+  })
+}
+
+function nr(m) {
+  let p = w(4),
+    {
+      attachments: d
+    } = m;
+  if (!d || d.length === 0) {
+    return null
+  }
+  let g;
+  if (p[0] !== d) g = d.map(U_), p[0] = d, p[1] = g;
+  else g = p[1];
+  let h;
+  if (p[2] !== g) h = e(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: g
+  }), p[2] = g, p[3] = h;
+  else h = p[3];
+  return h
+}
+B();
+B();
+B();
+
+function Ya() {
+  return "What should Claude do instead?"
+}
+var Pt = qt(!1);
+
+function Qa() {
+  let d = w(3);
+  if (Ee(Pt)) {
+    let p;
+    if (d[0] === S) p = e(n, {
+      dimColor: !0,
+      children: "Interrupted"
+    }), d[0] = p;
+    else p = d[0];
+    return p
+  }
+  let p;
+  if (d[1] === S) p = e(n, {
+    dimColor: !0,
+    children: "Interrupted "
+  }), d[1] = p;
+  else p = d[1];
+  let g;
+  if (d[2] === S) g = r(Q, {
+    children: [p, r(n, {
+      dimColor: !0,
+      children: ["\xB7 ", Ya()]
+    })]
+  }), d[2] = g;
+  else g = d[2];
+  return g
+}
+
+function rh() {
+  let m = w(1),
+    d;
+  if (m[0] === S) d = e(ze, {
+    height: 1,
+    children: e(Qa, {})
+  }), m[0] = d;
+  else d = m[0];
+  return d
+}
+
+function Fh(m, d) {
+  return null
+}
+
+function jh() {
+  return null
+}
+
+function Wh(m, d) {
+  return null
+}
+
+function H_(de) {
+  return de.line === void 0 ? 0 : String(de.line).length
+}
+
+function $_(fe) {
+  return fe.category ? ie(`[${fe.category}]`) : 0
+}
+var Hh = {
+    CONFIRMED: "error",
+    PLAUSIBLE: "warning"
+  },
+  $h = 16;
+
+function zh(m, d, {
+  verbose: p
+}) {
+  let g = m?.findings ?? [];
+  if (g.length === 0) return null;
+  return e(Yh, {
+    findings: g,
+    verbose: p
+  })
+}
+
+function Yh(m) {
+  let h = w(23),
+    {
+      findings: d,
+      verbose: p
+    } = m,
+    {
+      columns: g
+    } = Te(),
+    M, b, R, v;
+  if (h[0] !== g || h[1] !== d || h[2] !== p) {
+    let k = new Map;
+    for (const C of d) {
+      let I = k.get(C.file) ?? [];
+      I.push(C), k.set(C.file, I)
+    }
+    let W;
+    if (h[7] !== d) W = Math.max(0, ...d.map(H_)), h[7] = d, h[8] = W;
+    else W = h[8];
+    let j = W;
+    let U;
+    if (h[9] !== d) U = Math.max(0, ...d.map($_)), h[9] = d, h[10] = U;
+    else U = h[10];
+    let H = Math.min(24, U);
+    let D = g - 14 - (j > 0 ? j + 1 : 0) - (H > 0 ? H + 1 : 0);
+    let G = D >= $h;
+    b = ze;
+    M = s;
+    R = "column";
+    let K;
+    if (h[11] !== G || h[12] !== H || h[13] !== j || h[14] !== p) K = (Y) => {
+      let [ee, z] = Y;
+      return r(s, {
+        flexDirection: "column",
+        children: [e(n, {
+          color: "suggestion",
+          children: ee
+        }), z.map((se, X) => r(s, {
+          flexDirection: "column",
+          children: [G ? r(s, {
+            columnGap: 1,
+            paddingLeft: 2,
+            children: [e(s, {
+              flexShrink: 0,
+              children: e(gn, {
+                finding: se
+              })
+            }), j > 0 ? e(s, {
+              flexShrink: 0,
+              width: j,
+              justifyContent: "flex-end",
+              children: e(n, {
+                color: "suggestion",
+                children: se.line
+              })
+            }) : null, H > 0 ? e(s, {
+              flexShrink: 0,
+              width: H,
+              children: e(n, {
+                dimColor: !0,
+                children: se.category ? `[${se.category}]` : ""
+              })
+            }) : null, e(s, {
+              flexGrow: 1,
+              children: e(fn, {
+                finding: se
+              })
+            })]
+          }) : e(s, {
+            paddingLeft: 2,
+            children: r(n, {
+              wrap: "wrap",
+              children: [e(gn, {
+                finding: se
+              }), se.line === void 0 ? null : r(n, {
+                color: "suggestion",
+                children: [" ", se.line]
+              }), se.category ? r(n, {
+                dimColor: !0,
+                children: [" [", se.category, "]"]
+              }) : null, " ", e(fn, {
+                finding: se
+              })]
+            })
+          }), p && e(s, {
+            paddingLeft: 4,
+            children: e(n, {
+              dimColor: !0,
+              wrap: "wrap",
+              children: se.failure_scenario
+            })
+          })]
+        }, X))]
+      }, ee)
+    }, h[11] = G, h[12] = H, h[13] = j, h[14] = p, h[15] = K;
+    else K = h[15];
+    v = [...k.entries()].map(K);
+    h[0] = g, h[1] = d, h[2] = p, h[3] = M, h[4] = b, h[5] = R, h[6] = v
+  } else M = h[3], b = h[4], R = h[5], v = h[6];
+  let W;
+  if (h[16] !== M || h[17] !== R || h[18] !== v) W = e(M, {
+    flexDirection: R,
+    children: v
+  }), h[16] = M, h[17] = R, h[18] = v, h[19] = W;
+  else W = h[19];
+  let U;
+  if (h[20] !== b || h[21] !== W) U = e(b, {
+    children: W
+  }), h[20] = b, h[21] = W, h[22] = U;
+  else U = h[22];
+  return U
+}
+
+function gn(m) {
+  let h = w(3),
+    {
+      finding: d
+    } = m;
+  const p = d.outcome === "fixed" ? "success" : d.verdict ? Hh[d.verdict] : void 0,
+    g = d.outcome === "fixed" ? "\u2713" : "\u25CF";
+  let M;
+  if (h[0] !== p || h[1] !== g) M = e(n, {
+    color: p,
+    children: g
+  }), h[0] = p, h[1] = g, h[2] = M;
+  else M = h[2];
+  return M
+}
+
+function fn(m) {
+  let p = w(5),
+    {
+      finding: d
+    } = m,
+    g;
+  if (p[0] !== d.outcome) g = d.outcome && d.outcome !== "fixed" ? r(n, {
+    dimColor: !0,
+    children: [" [", d.outcome === "skipped" ? "skipped" : "no change needed", "]"]
+  }) : null, p[0] = d.outcome, p[1] = g;
+  else g = p[1];
+  let h;
+  if (p[2] !== d.summary || p[3] !== g) h = r(n, {
+    wrap: "wrap",
+    children: [d.summary, g]
+  }), p[2] = d.summary, p[3] = g, p[4] = h;
+  else h = p[4];
+  return h
+}
+var si = 10;
+
+function hn(m) {
+  let R = w(3),
+    d = Vu(),
+    p = m > 0 && !d,
+    [g, h] = Aa(p ? 50 : null),
+    M = m + si * 2;
+  const b = p ? Math.floor(h / 50) % M - si : WCe;
+  let v;
+  if (R[0] !== g || R[1] !== b) v = [g, b], R[0] = g, R[1] = b, R[2] = v;
+  else v = R[2];
+  return v
+}
+
+function Tn(m) {
+  let M = w(7),
+    {
+      text: d,
+      color: p,
+      shimmerColor: g,
+      glimmerIndex: h
+    } = m,
+    b;
+  if (M[0] !== d) b = [...d], M[0] = d, M[1] = b;
+  else b = M[1];
+  let R;
+  if (M[2] !== p || M[3] !== h || M[4] !== g || M[5] !== b) R = e(n, {
+    children: b.map((v, k) => e(Vvt, {
+      char: v,
+      index: k,
+      glimmerIndex: h,
+      messageColor: p,
+      shimmerColor: g
+    }, k))
+  }), M[2] = p, M[3] = h, M[4] = g, M[5] = b, M[6] = R;
+  else R = M[6];
+  return R
+}
+
+function Zh(m) {
+  return null
+}
+var eT = 2,
+  oT = 160;
+
+function ov(m) {
+  let d = m.split(`
+`),
+    p = m;
+  if (d.length > eT) p = d.slice(0, eT).join(`
+`);
+  if (ie(p) > oT) p = LW(p, oT);
+  return p.trim()
+}
+
+function tT(m, d, {
+  verbose: p
+}) {
+  let g = m.command ?? "",
+    h = p ? g : ov(g);
+  return e(ze, {
+    children: r(n, {
+      children: [h, h !== g ? "\u2026 \xB7 stopped" : " \xB7 stopped"]
+    })
+  })
+}
+
+function sv(m) {
+  let d = 0;
+  for (let p of m)
+    if (p != null && typeof p !== "string") d++;
+  return d
+}
+
+function sT(m) {
+  if (m.length === 0) return null;
+  let d = m.at(-1);
+  if (!d?.data) return null;
+  let p = d.data;
+  switch (p.type) {
+    case "query_update":
+      return e(ze, {
+        children: r(n, {
+          dimColor: !0,
+          children: ["Searching: ", p.query]
+        })
+      });
+    case "search_results_received":
+      return e(ze, {
+        children: r(n, {
+          dimColor: !0,
+          children: ["Found ", p.resultCount, ' results for "', p.query, '"']
+        })
+      });
+    default:
+      return null
+  }
+}
+
+function rT(m) {
+  let d = m.searchCount ?? sv(m.results ?? []),
+    p = m.durationSeconds >= 1 ? `${Math.round(m.durationSeconds)}s` : `${Math.round(m.durationSeconds*1000)}ms`;
+  return e(s, {
+    justifyContent: "space-between",
+    width: "100%",
+    children: e(ze, {
+      height: 1,
+      children: r(n, {
+        children: ["Did ", d, " search", d !== 1 ? "es" : "", " in ", p]
+      })
+    })
+  })
+}
+
+function nT(m, d, p) {
+  return r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [r(s, {
+      flexDirection: "row",
+      children: [e(n, {
+        color: rF("plan"),
+        children: wo
+      }), e(n, {
+        children: " Entered plan mode"
+      })]
+    }), e(s, {
+      paddingLeft: 2,
+      children: e(n, {
+        dimColor: !0,
+        children: "Claude is now exploring and designing an implementation approach."
+      })
+    })]
+  })
+}
+
+function aT() {
+  return r(s, {
+    flexDirection: "row",
+    marginTop: 1,
+    children: [e(n, {
+      color: rF("default"),
+      children: wo
+    }), e(n, {
+      children: " User declined to enter plan mode"
+    })]
+  })
+}
+
+function iT(m, d, p) {
+  return e(ze, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [r(n, {
+        children: ["Switched to worktree", m.worktreeBranch ? r(n, {
+          children: [" ", "on branch ", e(n, {
+            bold: !0,
+            children: m.worktreeBranch
+          })]
+        }) : null]
+      }), e(n, {
+        dimColor: !0,
+        children: m.worktreePath
+      })]
+    })
+  })
+}
+
+function lT(m, d, p) {
+  let g = m.action === "keep" ? "Kept worktree" : "Removed worktree";
+  return e(ze, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [r(n, {
+        children: [g, m.worktreeBranch ? r(Q, {
+          children: [" ", "(branch ", e(n, {
+            bold: !0,
+            children: m.worktreeBranch
+          }), ")"]
+        }) : null]
+      }), r(n, {
+        dimColor: !0,
+        children: ["Returned to ", m.originalCwd]
+      })]
+    })
+  })
+}
+
+function dT(m, d, {
+  verbose: p
+}) {
+  if (!m || m.length === 0) return e(ze, {
+    height: 1,
+    children: e(Eo, {
+      children: "(No resources found)"
+    })
+  });
+  let g = _(m, null, 2);
+  return e(vP, {
+    content: g,
+    verbose: p
+  })
+}
+
+function mT(m, {
+  columns: d
+}) {
+  return aN(_(m, null, 2), d)
+}
+
+function uT(m) {
+  return e(ze, {
+    children: r(n, {
+      children: ["Monitor started", " ", r(n, {
+        dimColor: !0,
+        children: ["\xB7 task ", m.taskId, " \xB7", " ", m.persistent ? "persistent" : `timeout ${m.timeoutMs/1000}s`]
+      })]
+    })
+  })
+}
+B();
+
+function ni(m) {
+  let p = w(14),
+    {
+      command: d
+    } = m,
+    g;
+  if (p[0] === S) g = KOt(), p[0] = g;
+  else g = p[0];
+  let h = g,
+    [M, b] = y(!1),
+    R = hS();
+  if (!h) {
+    let v;
+    if (p[1] !== d) v = r(n, {
+      underline: !0,
+      children: ["/", d]
+    }), p[1] = d, p[2] = v;
+    else v = p[2];
+    return v
+  }
+  let v;
+  if (p[3] !== d || p[4] !== R) v = (k) => {
+    if (R(k)) {
+      return
+    }
+    i("tengu_slash_link_clicked", {
+      command: c(d)
+    }), h(d, {
+      kind: "human"
+    })
+  }, p[3] = d, p[4] = R, p[5] = v;
+  else v = p[5];
+  let C, I;
+  if (p[6] === S) C = () => b(!0), I = () => b(!1), p[6] = C, p[7] = I;
+  else C = p[6], I = p[7];
+  let W;
+  if (p[8] !== d || p[9] !== M) W = r(n, {
+    underline: !0,
+    bold: M,
+    children: ["/", d]
+  }), p[8] = d, p[9] = M, p[10] = W;
+  else W = p[10];
+  let j;
+  if (p[11] !== v || p[12] !== W) j = e(s, {
+    onClick: v,
+    onMouseEnter: C,
+    onMouseLeave: I,
+    children: W
+  }), p[11] = v, p[12] = W, p[13] = j;
+  else j = p[13];
+  return j
+}
+
+function gT(m) {
+  let d;
+  if (m.disabledReason === "config_off") d = r(s, {
+    flexDirection: "row",
+    children: [r(n, {
+      children: ['Not sent because "Push when Claude decides" is disabled in', " "]
+    }), e(ni, {
+      command: "config"
+    }), e(n, {
+      children: "."
+    })]
+  });
+  else if (m.disabledReason === "user_present") d = e(n, {
+    children: "Not sent because you're active in this terminal."
+  });
+  else if (m.disabledReason === "no_transport") d = m.localSent ? e(n, {
+    children: "Terminal notification sent."
+  }) : r(s, {
+    flexDirection: "row",
+    children: [e(n, {
+      children: "Not sent \u2014 Remote Control is off. Enable with "
+    }), e(ni, {
+      command: "remote-control"
+    }), e(n, {
+      children: "."
+    })]
+  });
+  else {
+    if (m.localSent === void 0) return null;
+    d = e(n, {
+      children: m.localSent ? "Terminal and mobile notification sent." : "Mobile notification sent."
+    })
+  }
+  return e(ze, {
+    height: 1,
+    children: d
+  })
+}
+
+function fT(m, d, {
+  verbose: p
+}) {
+  if (m?.error) return e(vP, {
+    content: m.error,
+    verbose: p
+  });
+  if (!m || m.resources.length === 0) return e(ze, {
+    height: 1,
+    children: e(Eo, {
+      children: "(Empty directory)"
+    })
+  });
+  let g = _(m, null, 2);
+  return e(vP, {
+    content: g,
+    verbose: p
+  })
+}
+
+function hT(m, {
+  columns: d
+}) {
+  if (m.error) return aN(m.error, d);
+  return aN(_(m, null, 2), d)
+}
+
+function TT(m, d, {
+  verbose: p
+}) {
+  if (m?.error) return e(vP, {
+    content: m.error,
+    verbose: p
+  });
+  if (!m || !m.contents || m.contents.length === 0) return e(s, {
+    justifyContent: "space-between",
+    overflowX: "hidden",
+    width: "100%",
+    children: e(ze, {
+      height: 1,
+      children: e(n, {
+        dimColor: !0,
+        children: "(No content)"
+      })
+    })
+  });
+  let g = _(m, null, 2);
+  return e(vP, {
+    content: g,
+    verbose: p
+  })
+}
+
+function MT(m, {
+  columns: d
+}) {
+  if (m.error) return aN(m.error, d);
+  return aN(_(m, null, 2), d)
+}
+
+function RT(m, d, {
+  verbose: p
+}) {
+  let g = m.remaining > 0 ? `${m.remaining} more ${O(m.remaining,"notification")} still queued` : "";
+  if (m.notifications.length === 0) return e(ze, {
+    height: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: g || "No queued notifications"
+    })
+  });
+  return e(ze, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [m.notifications.map((h) => r(s, {
+        flexDirection: "column",
+        children: [Tv(h.origin, h.content, p), p ? e(n, {
+          dimColor: !0,
+          children: `queued ${rXr(h.queued_at)}`
+        }) : null]
+      }, h.notification_id)), g ? e(n, {
+        dimColor: !0,
+        children: g
+      }) : null]
+    })
+  })
+}
+
+function Tv(m, d, p) {
+  switch (m) {
+    case "github_webhook":
+      break;
+    case "mcp_send_message":
+      return e($m, {
+        origin: m,
+        summary: "message from another session",
+        expandHint: !0,
+        body: d,
+        verbose: p
+      });
+    default:
+      break
+  }
+  return e($m, {
+    origin: m,
+    summary: d,
+    body: d,
+    verbose: p
+  })
+}
+
+function $m(m) {
+  let R = w(25),
+    {
+      origin: d,
+      summary: p,
+      expandHint: g,
+      body: h,
+      verbose: M
+    } = m,
+    b = g === void 0 ? !1 : g,
+    v;
+  if (R[0] !== p || R[1] !== M) v = M ? "" : q3n(p.replace(/\n/g, " "), LP), R[0] = p, R[1] = M, R[2] = v;
+  else v = R[2];
+  let k = v,
+    C;
+  if (R[3] !== h || R[4] !== M) C = M ? LP(h).trim() : "", R[3] = h, R[4] = M, R[5] = C;
+  else C = R[5];
+  let I = C,
+    W;
+  if (R[6] === S) W = e(n, {
+    "aria-label": "inbound:",
+    color: "suggestion",
+    children: g0e
+  }), R[6] = W;
+  else W = R[6];
+  let j;
+  if (R[7] !== d) j = OH(oXr(d)), R[7] = d, R[8] = j;
+  else j = R[8];
+  let U;
+  if (R[9] !== j) U = e(n, {
+    dimColor: !0,
+    children: j
+  }), R[9] = j, R[10] = U;
+  else U = R[10];
+  let H;
+  if (R[11] !== k) H = k ? r(Q, {
+    children: [e(n, {
+      dimColor: !0,
+      children: " \xB7 "
+    }), k]
+  }) : null, R[11] = k, R[12] = H;
+  else H = R[12];
+  let D;
+  if (R[13] !== b || R[14] !== M) D = b && !M ? r(Q, {
+    children: [" ", e(Gu, {})]
+  }) : null, R[13] = b, R[14] = M, R[15] = D;
+  else D = R[15];
+  let G;
+  if (R[16] !== U || R[17] !== H || R[18] !== D) G = r(n, {
+    wrap: "truncate-end",
+    children: [W, " ", U, H, D]
+  }), R[16] = U, R[17] = H, R[18] = D, R[19] = G;
+  else G = R[19];
+  let K;
+  if (R[20] !== I) K = I ? e(s, {
+    borderStyle: "quote",
+    borderTop: !1,
+    borderBottom: !1,
+    borderRight: !1,
+    borderDimColor: !0,
+    paddingLeft: 1,
+    children: e(n, {
+      dimColor: !0,
+      wrap: "wrap",
+      children: I
+    })
+  }) : null, R[20] = I, R[21] = K;
+  else K = R[21];
+  let Y;
+  if (R[22] !== K || R[23] !== G) Y = r(s, {
+    flexDirection: "column",
+    children: [G, K]
+  }), R[22] = K, R[23] = G, R[24] = Y;
+  else Y = R[24];
+  return Y
+}
+
+function kT(m) {
+  let d = $t(m.json, `
+`) + 1;
+  return e(ze, {
+    children: r(n, {
+      children: ["HTTP ", m.status, " ", r(n, {
+        dimColor: !0,
+        children: ["(", d, " lines)"]
+      })]
+    })
+  })
+}
+
+function xT(m) {
+  return e(ze, {
+    children: r(n, {
+      children: ["Scheduled ", e(n, {
+        bold: !0,
+        children: m.id
+      }), " ", r(n, {
+        dimColor: !0,
+        children: ["(", m.humanSchedule, ST(m.nextFireAt), ")"]
+      })]
+    })
+  })
+}
+
+function wT(m) {
+  return e(ze, {
+    children: r(n, {
+      children: ["Cancelled ", e(n, {
+        bold: !0,
+        children: m.id
+      })]
+    })
+  })
+}
+
+function CT(m) {
+  if (m.jobs.length === 0) return e(ze, {
+    children: e(Eo, {
+      children: "No scheduled jobs"
+    })
+  });
+  return e(ze, {
+    children: e(s, {
+      flexDirection: "column",
+      children: m.jobs.map((d) => r(n, {
+        children: [e(n, {
+          bold: !0,
+          children: d.id
+        }), " ", r(n, {
+          dimColor: !0,
+          children: [d.humanSchedule, d.recurring ? " (recurring)" : " (one-shot)", d.durable === !1 ? " [session-only]" : "", ST(d.nextFireAt), d.prompt ? `: ${es(d.prompt,60,!0)}` : ""]
+        })]
+      }, d.id))
+    })
+  })
+}
+
+function ST(m) {
+  let d = zut(m ?? Number.NaN);
+  return Number.isNaN(d.getTime()) ? "" : `, next run ${gLe(d.toISOString())}`
+}
+B();
+
+function Km(m) {
+  let G = w(32),
+    {
+      agentType: d,
+      description: p,
+      name: g,
+      descriptionColor: h,
+      taskDescription: M,
+      toolUseCount: b,
+      tokens: R,
+      color: v,
+      isLast: k,
+      isResolved: C,
+      isAsync: I,
+      lastToolInfo: W,
+      hideType: j
+    } = m,
+    U = I === void 0 ? !1 : I,
+    H = j === void 0 ? !1 : j,
+    D = U && C,
+    K;
+  if (G[0] !== D || G[1] !== C || G[2] !== W || G[3] !== M) K = () => {
+    if (!C) {
+      return W || "Initializing\u2026"
+    }
+    if (D) {
+      return M ?? "Running in the background"
+    }
+    return "Done"
+  }, G[0] = D, G[1] = C, G[2] = W, G[3] = M, G[4] = K;
+  else K = G[4];
+  let Y = K;
+  const ee = k ? "last" : "branch";
+  let z;
+  if (G[5] !== ee) z = [ee], G[5] = ee, G[6] = z;
+  else z = G[6];
+  const se = !C;
+  let X;
+  if (G[7] !== d || G[8] !== v || G[9] !== p || G[10] !== h || G[11] !== H || G[12] !== g) X = H ? r(Q, {
+    children: [e(n, {
+      bold: !0,
+      children: g ?? p ?? d
+    }), g && p && r(n, {
+      dimColor: !0,
+      children: [": ", p]
+    })]
+  }) : r(Q, {
+    children: [e(wk, {
+      color: v,
+      bold: !0,
+      children: d
+    }), p && r(Q, {
+      children: [" (", e(wk, {
+        color: h,
+        children: p
+      }), ")"]
+    })]
+  }), G[7] = d, G[8] = v, G[9] = p, G[10] = h, G[11] = H, G[12] = g, G[13] = X;
+  else X = G[13];
+  let de;
+  if (G[14] !== D || G[15] !== R || G[16] !== b) de = !D && r(Q, {
+    children: [" \xB7 ", b, " tool ", b === 1 ? "use" : "uses", R !== null && r(Q, {
+      children: [" \xB7 ", ei(R), " tokens"]
+    })]
+  }), G[14] = D, G[15] = R, G[16] = b, G[17] = de;
+  else de = G[17];
+  let fe;
+  if (G[18] !== se || G[19] !== X || G[20] !== de) fe = r(n, {
+    dimColor: se,
+    children: [X, de]
+  }), G[18] = se, G[19] = X, G[20] = de, G[21] = fe;
+  else fe = G[21];
+  let oe;
+  if (G[22] !== z || G[23] !== fe) oe = e(Utt, {
+    connectors: z,
+    children: fe
+  }), G[22] = z, G[23] = fe, G[24] = oe;
+  else oe = G[24];
+  let ue;
+  if (G[25] !== Y || G[26] !== D || G[27] !== k) ue = !D && e(Utt, {
+    connectors: [k ? "space" : "pipe"],
+    children: r(n, {
+      dimColor: !0,
+      children: ["\u23BF  ", Y()]
+    })
+  }), G[25] = Y, G[26] = D, G[27] = k, G[28] = ue;
+  else ue = G[28];
+  let le;
+  if (G[29] !== oe || G[30] !== ue) le = r(s, {
+    flexDirection: "column",
+    paddingLeft: 3,
+    children: [oe, ue]
+  }), G[29] = oe, G[30] = ue, G[31] = le;
+  else le = G[31];
+  return le
+}
+B();
+
+function ece(m, d) {
+  return m
+}
+
+function ii(m) {
+  let h = w(24),
+    {
+      message: d,
+      screen: p
+    } = m,
+    g = p === "transcript",
+    M;
+  if (h[0] !== d) M = ece(Ly(d) || "", d.modelOnlyText), h[0] = d, h[1] = M;
+  else M = h[1];
+  let b = M,
+    R = d.summarizeMetadata;
+  if (R) {
+    let v;
+    if (h[2] === S) v = e(s, {
+      minWidth: 2,
+      children: e(n, {
+        "aria-hidden": !0,
+        color: "text",
+        children: wo
+      })
+    }), h[2] = v;
+    else v = h[2];
+    let k;
+    if (h[3] === S) k = e(n, {
+      bold: !0,
+      children: "Summarized conversation"
+    }), h[3] = k;
+    else k = h[3];
+    let C;
+    if (h[4] !== g || h[5] !== R) C = !g && e(ze, {
+      children: r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          dimColor: !0,
+          children: ["Summarized ", R.messagesSummarized, " messages", " ", R.direction === "up_to" ? "up to this point" : "from this point"]
+        }), R.userContext && r(n, {
+          dimColor: !0,
+          children: ["Context: ", "\u201C", R.userContext, "\u201D"]
+        }), e(n, {
+          dimColor: !0,
+          children: e(gt, {
+            action: "app:toggleTranscript",
+            context: "Global",
+            fallback: "ctrl+o",
+            description: "expand history",
+            parens: !0
+          })
+        })]
+      })
+    }), h[4] = g, h[5] = R, h[6] = C;
+    else C = h[6];
+    let I;
+    if (h[7] !== g || h[8] !== b) I = g && e(ze, {
+      children: e(n, {
+        children: b
+      })
+    }), h[7] = g, h[8] = b, h[9] = I;
+    else I = h[9];
+    let W;
+    if (h[10] !== C || h[11] !== I) W = e(s, {
+      flexDirection: "column",
+      marginTop: 1,
+      children: r(s, {
+        flexDirection: "row",
+        children: [v, r(s, {
+          flexDirection: "column",
+          children: [k, C, I]
+        })]
+      })
+    }), h[10] = C, h[11] = I, h[12] = W;
+    else W = h[12];
+    return W
+  }
+  let v;
+  if (h[13] === S) v = e(s, {
+    minWidth: 2,
+    children: e(n, {
+      "aria-hidden": !0,
+      color: "text",
+      children: wo
+    })
+  }), h[13] = v;
+  else v = h[13];
+  let k;
+  if (h[14] !== g) k = !g && r(n, {
+    dimColor: !0,
+    children: [" ", e(gt, {
+      action: "app:toggleTranscript",
+      context: "Global",
+      fallback: "ctrl+o",
+      description: "expand",
+      parens: !0
+    })]
+  }), h[14] = g, h[15] = k;
+  else k = h[15];
+  let C;
+  if (h[16] !== k) C = r(s, {
+    flexDirection: "row",
+    children: [v, e(s, {
+      flexDirection: "column",
+      children: r(n, {
+        bold: !0,
+        children: ["Compact summary", k]
+      })
+    })]
+  }), h[16] = k, h[17] = C;
+  else C = h[17];
+  let I;
+  if (h[18] !== g || h[19] !== b) I = g && e(ze, {
+    children: e(n, {
+      children: b
+    })
+  }), h[18] = g, h[19] = b, h[20] = I;
+  else I = h[20];
+  let W;
+  if (h[21] !== C || h[22] !== I) W = r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [C, I]
+  }), h[21] = C, h[22] = I, h[23] = W;
+  else W = h[23];
+  return W
+}
+B();
+var Dv = 600;
+
+function AT(m, d = Dv) {
+  let p = oc(),
+    [g, h] = Aa(m && p ? d : null);
+  if (!m || !p) return [g, !0];
+  let M = Math.floor(h / d) % 2 === 0;
+  return [g, M]
+}
+
+function bo({
+  isError: m,
+  isUnresolved: d,
+  shouldAnimate: p
+}) {
+  let g = ot(),
+    h = Vu(),
+    [M, b] = AT(p && !g && !h),
+    R = d && p && h && !g,
+    v = xtt(),
+    k = A(null);
+  return P(() => {
+    if (d) k.current ??= Date.now();
+    else if (k.current !== null) {
+      if (Date.now() - k.current > Jf) v();
+      k.current = null
+    }
+  }, [d, v]), e(s, {
+    ref: M,
+    minWidth: 2,
+    children: e(n, {
+      "aria-label": m ? "tool error:" : "tool:",
+      color: R ? "text" : d ? void 0 : m ? "error" : "success",
+      dimColor: d && !R,
+      children: !p || b || m || !d ? wo : " "
+    })
+  })
+}
+
+function li(m) {
+  let k = w(42),
+    {
+      block: d,
+      addMargin: p,
+      resolvedToolUseIDs: g,
+      erroredToolUseIDs: h,
+      shouldAnimate: M,
+      verbose: b,
+      advisorModel: R
+    } = m,
+    v = gs();
+  if (d.type === "server_tool_use") {
+    let C;
+    if (k[0] !== d.input) C = d.input && Object.keys(d.input).length > 0 ? _(d.input) : null, k[0] = d.input, k[1] = C;
+    else C = k[1];
+    let I = C;
+    const W = p ? 1 : 0;
+    let j;
+    if (k[2] !== d.id || k[3] !== g) j = g.has(d.id), k[2] = d.id, k[3] = g, k[4] = j;
+    else j = k[4];
+    const U = !j;
+    let H;
+    if (k[5] !== d.id || k[6] !== h) H = h.has(d.id), k[5] = d.id, k[6] = h, k[7] = H;
+    else H = k[7];
+    let D;
+    if (k[8] !== M || k[9] !== U || k[10] !== H) D = e(bo, {
+      shouldAnimate: M,
+      isUnresolved: U,
+      isError: H
+    }), k[8] = M, k[9] = U, k[10] = H, k[11] = D;
+    else D = k[11];
+    let G;
+    if (k[12] === S) G = e(n, {
+      bold: !0,
+      children: "Advising"
+    }), k[12] = G;
+    else G = k[12];
+    let K;
+    if (k[13] !== R) K = R ? r(n, {
+      dimColor: !0,
+      children: [" using ", Yo(R)]
+    }) : null, k[13] = R, k[14] = K;
+    else K = k[14];
+    let Y;
+    if (k[15] !== I) Y = I ? r(n, {
+      dimColor: !0,
+      children: [" \xB7 ", I]
+    }) : null, k[15] = I, k[16] = Y;
+    else Y = k[16];
+    let ee;
+    if (k[17] !== W || k[18] !== D || k[19] !== K || k[20] !== Y) ee = r(s, {
+      marginTop: W,
+      paddingRight: 2,
+      flexDirection: "row",
+      children: [D, G, K, Y]
+    }), k[17] = W, k[18] = D, k[19] = K, k[20] = Y, k[21] = ee;
+    else ee = k[21];
+    return ee
+  }
+  let z;
+  if (xPe(d)) {
+    let C;
+    if (k[22] !== d) C = BMt(d), k[22] = d, k[23] = C;
+    else C = k[23];
+    let se = C;
+    let W;
+    if (k[24] === S) W = e(n, {
+      color: "warning",
+      children: "Advisor declined to advise on this request"
+    }), k[24] = W;
+    else W = k[24];
+    let j;
+    if (k[25] !== se || k[26] !== b) j = se !== void 0 && !b ? r(Q, {
+      children: [" ", e(Gu, {})]
+    }) : null, k[25] = se, k[26] = b, k[27] = j;
+    else j = k[27];
+    let U;
+    if (k[28] !== j) U = r(n, {
+      children: [W, j]
+    }), k[28] = j, k[29] = U;
+    else U = k[29];
+    let X = U;
+    let H;
+    if (k[30] !== X || k[31] !== se || k[32] !== b) H = b && se !== void 0 ? r(s, {
+      flexDirection: "column",
+      children: [X, e(n, {
+        dimColor: !0,
+        children: se
+      })]
+    }) : X, k[30] = X, k[31] = se, k[32] = b, k[33] = H;
+    else H = k[33];
+    z = H
+  } else {
+    de: switch (d.content?.type) {
+      case "advisor_tool_result_error": {
+        let C;
+        if (k[34] !== d.content.error_code) C = r(n, {
+          color: "error",
+          children: ["Advisor unavailable (", d.content.error_code, ")"]
+        }), k[34] = d.content.error_code, k[35] = C;
+        else C = k[35];
+        z = C;
+        break de
+      }
+      case "advisor_result": {
+        let C;
+        if (k[36] !== d.content || k[37] !== b) C = b ? e(n, {
+          dimColor: !0,
+          children: d.content.text
+        }) : r(n, {
+          dimColor: !0,
+          children: [r(n, {
+            "aria-hidden": !0,
+            children: [te.tick, " "]
+          }), "Advisor has reviewed the conversation and will apply the feedback ", e(Gu, {})]
+        }), k[36] = d.content, k[37] = b, k[38] = C;
+        else C = k[38];
+        z = C;
+        break de
+      }
+      case "advisor_redacted_result": {
+        let C;
+        if (k[39] === S) C = r(n, {
+          dimColor: !0,
+          children: [r(n, {
+            "aria-hidden": !0,
+            children: [te.tick, " "]
+          }), "Advisor has reviewed the conversation and will apply the feedback"]
+        }), k[39] = C;
+        else C = k[39];
+        z = C;
+        break de
+      }
+      default: {
+        if (d.content != null && h2.of(v).claim(`advisor-unknown:${d.tool_use_id}`)) i("tengu_advisor_unknown_content", {});
+        return null
+      }
+    }
+  }
+  let C;
+  if (k[40] !== z) C = e(s, {
+    paddingRight: 2,
+    children: e(ze, {
+      children: z
+    })
+  }), k[40] = z, k[41] = C;
+  else C = k[41];
+  return C
+}
+
+function ui(m) {
+  let h = w(3),
+    {
+      addMargin: d
+    } = m;
+  const g = (d === void 0 ? !1 : d) ? 1 : 0;
+  let M;
+  if (h[0] === S) M = r(n, {
+    dimColor: !0,
+    italic: !0,
+    children: [e(n, {
+      "aria-hidden": !0,
+      children: "\u273B "
+    }), "Thinking\u2026"]
+  }), h[0] = M;
+  else M = h[0];
+  let b;
+  if (h[1] !== g) b = e(s, {
+    marginTop: g,
+    children: M
+  }), h[1] = g, h[2] = b;
+  else b = h[2];
+  return b
+}
+B();
+B();
+B();
+
+function $v(m) {
+  let d = hie,
+    p = (g) => m.startsWith(`You've hit your ${g}`);
+  if (p(d.five_hour)) return "session";
+  if (p(d.seven_day)) return "weekly";
+  return p(d.seven_day_opus) || p(d.seven_day_sonnet) || p(d.seven_day_overage_included) ? "model" : void 0
+}
+
+function OT(m, d, p) {
+  Dt(nVe, c1, c1), Dt(oVe, u1, u1);
+  let g = p ? $v(m) : void 0,
+    h = x3o(d.rateLimitType);
+  if (g === void 0 || g !== h && !(d.rateLimitType === "seven_day_sonnet" && g === "weekly") || xGt(d) || Mre(d) || pLe(d) !== void 0 || mLe(d) !== void 0) return;
+  return P3o(E(sVe, null), g, jp, C3o(d))
+}
+var Gv = {
+  opening_options: "Opening your options\u2026",
+  spend_limit: "/usage-credits to adjust your monthly spend limit.",
+  extra_usage: "/usage-credits to finish what you\u2019re working on.",
+  api_login: "/login to switch to an API usage-billed account.",
+  admin_can_enable: `Your admin can enable extra usage at ${KG}.`,
+  ask_admin: "/usage-credits to request more usage from your admin.",
+  upgrade: "/upgrade to increase your usage limit.",
+  upgrade_or_extra_usage: "/upgrade or /usage-credits to finish what you\u2019re working on."
+};
+
+function qv({
+  shouldShowUpsell: m,
+  isMax20x: d,
+  isExtraUsageCommandEnabled: p,
+  shouldAutoOpenRateLimitOptionsMenu: g,
+  isTeamOrEnterprise: h,
+  hasBillingAccess: M,
+  serverHidesUpgrade: b,
+  serverHidesOverage: R,
+  spendLimitNudgePath: v
+}) {
+  if (!m) return null;
+  if (g) return "opening_options";
+  if (v) return "spend_limit";
+  let k = p && !R;
+  if (d) return k ? "extra_usage" : "api_login";
+  if (h) {
+    if (!k) return "admin_can_enable";
+    return M ? "extra_usage" : "ask_admin"
+  }
+  if (b) return k ? "extra_usage" : null;
+  return k ? "upgrade_or_extra_usage" : "upgrade"
+}
+
+function Qm({
+  text: m,
+  onOpenRateLimitOptions: d,
+  onRateLimitAutoQueueContinue: p
+}) {
+  let g = gs(),
+    h = Er(),
+    M = qk(),
+    b = h === "team" || h === "enterprise",
+    R = h === "max" && M === "default_claude_max_20x",
+    v = Bgt() || Et(),
+    k = bR(),
+    C = k.upgradePaths,
+    I = C !== void 0 && !C.includes("upgrade_plan"),
+    W = C !== void 0 && !C.includes("overage"),
+    j = efe(),
+    U = m9.isEnabled(),
+    H = kS(),
+    D = C !== void 0 && (C.includes("upgrade_plan") && j || C.includes("overage") && U),
+    G = E(RGt, !1) && !b && k.overageDisabledReason === "org_level_disabled_until" && H && U,
+    K = v && (C !== void 0 ? D : !R),
+    Y = nst(k),
+    ee = jye(),
+    z = ee.phase === "armed",
+    se = FKe(ee.phase),
+    X = k.resetsAt !== void 0 && NKe(k.resetsAt),
+    [de, fe] = y("pending"),
+    oe = k.status === "rejected" && k.resetsAt !== void 0 && !k.isUsingOverage,
+    ue = k.rateLimitType === "seven_day_overage_included" || k.errorCode === "credits_required",
+    le = k.resetsAt,
+    ke = k.overageDisabledReason !== void 0 && UUn.has(k.overageDisabledReason),
+    re = oe && !z && !X && le !== void 0 && Number.isFinite(le) && k.rateLimitType === "five_hour" && !ue && !G && !ke && E(BUn, !1),
+    ye = ers(),
+    me = re && ye?.committed === !0,
+    ve = (K || Y) && !z && !X && de === "pending" && oe && !ue && d,
+    be = re && de === "pending" && le !== void 0 && p;
+  P(() => {
+    if (ve) fe(d() ? "opened" : "blocked");
+    else if (be) fe("blocked");
+    if (be && le !== void 0) {
+      if (p(le)) i("tengu_rl_checkpoint_copy_shown", {}), i("tengu_rl_checkpoint_auto_continue_queued", {})
+    }
+  }, [ve, d, be, p, le]);
+  let Ce = Z(() => {
+      if (ue) return null;
+      return qv({
+        shouldShowUpsell: v,
+        isMax20x: R,
+        isExtraUsageCommandEnabled: U,
+        shouldAutoOpenRateLimitOptionsMenu: !!ve,
+        isTeamOrEnterprise: b,
+        hasBillingAccess: H,
+        serverHidesUpgrade: I || !j,
+        serverHidesOverage: W,
+        spendLimitNudgePath: G
+      })
+    }, [v, R, I, j, W, b, ve, U, H, G, ue]),
+    qe = A(void 0),
+    Ue = !se && de !== "opened" && Ce !== null;
+  P(() => {
+    if (!oe || Ce === "opening_options") return;
+    qe.current ??= k;
+    let Ke = qe.current.resetsAt;
+    if (Ke === void 0 || Ke * 1000 <= Date.now()) return;
+    T3o(g, qe.current, {
+      kind: ue ? "in_limit_line" : Ce ?? "none",
+      shown: Ue,
+      waitLive: se
+    })
+  }, [g, k, oe, ue, Ce, Ue, se]);
+  let Ie = G && oe && !ue,
+    xe = ee.phase !== "armed" || ee.resetsAtSeconds === k.resetsAt,
+    De = Ie && xe ? Gkr(k) : null,
+    je = OT(m, k, v && oe && !Ie),
+    lo = Ie ? De ? `You've hit your monthly spend limit \xB7 your ${De.limitName} resets ${De.resetTime}` : "You've hit your monthly spend limit." : m;
+  return e(ze, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [e(sz, {
+        color: Ie ? "warning" : "error",
+        linkHref: Kv,
+        children: lo
+      }), je ? e(Va, {
+        dimColor: !0,
+        stripPromptTags: !1,
+        linkSchemes: gVe,
+        children: je
+      }) : null, re ? r(n, {
+        dimColor: !0,
+        children: ["Press ", v_t, " to continue after reset"]
+      }) : null, me && ye?.committed === !0 ? r(Q, {
+        children: [r(n, {
+          dimColor: !0,
+          children: [e(ft, {
+            status: "success",
+            withSpace: !0
+          }), "checkpointed \u2014 see ", ye.resumePath]
+        }), r(n, {
+          dimColor: !0,
+          children: ["  ", "or /rewind to undo this turn's file edits"]
+        })]
+      }) : null, Ue && Ce ? e(n, {
+        dimColor: !0,
+        children: Gv[Ce]
+      }) : null]
+    })
+  })
+}
+
+function Kv(m) {
+  return m === QX || m === KG ? m : void 0
+}
+
+function Oe(m) {
+  let h = w(5),
+    {
+      row: d,
+      addMargin: p
+    } = m;
+  const g = p ? 1 : 0;
+  let M;
+  if (h[0] !== d) M = e(Yye, {
+    state: "settled",
+    ...d
+  }), h[0] = d, h[1] = M;
+  else M = h[1];
+  let b;
+  if (h[2] !== g || h[3] !== M) b = e(s, {
+    flexDirection: "column",
+    marginTop: g,
+    width: "100%",
+    children: M
+  }), h[2] = g, h[3] = M, h[4] = b;
+  else b = h[4];
+  return b
+}
+
+function xn(m) {
+  let d = m.teamCount,
+    p = typeof d === "number" ? d : 0;
+  if (p === 0) return null;
+  return {
+    segment: `${p} team ${p===1?"memory":"memories"}`,
+    count: p
+  }
+}
+var BT = "/clear to start fresh",
+  FT = "Error: ";
+
+function jT(m) {
+  let d = m.startsWith(FT) ? m.slice(FT.length) : m;
+  switch (d) {
+    case FPn:
+      return Xm(`conversation too long \xB7 ${BT}`);
+    case HPn:
+      return Xm(`attached media too large \xB7 ${BT}`);
+    case q6t:
+      return {
+        tone: "dim", text: q6t
+      };
+    default:
+      break
+  }
+  let p = K6t.trimEnd();
+  if (d.startsWith(p)) return Xm(d.slice(p.length).trim());
+  if (d.startsWith(J1)) {
+    let g = d.slice(J1.length).replace(/^:\s*/, "");
+    return {
+      tone: "dim",
+      text: J1,
+      detail: g || void 0
+    }
+  }
+  return null
+}
+
+function Xm(m) {
+  return {
+    tone: "red",
+    text: "Could not compact",
+    detail: m || void 0
+  }
+}
+var WT = null,
+  HT = 200,
+  Jm = 5,
+  ar = 1000,
+  Qv = [`${WS} `, `${sR} `];
+
+function Zm(m) {
+  switch (m.subtype) {
+    case "informational":
+    case "model_fallback":
+    case "model_consent_fallback":
+    case "model_refusal_fallback":
+    case "scheduled_task_fire":
+      if (typeof m.content !== "string") return {
+        kind: "legacy"
+      };
+      break;
+    default:
+      break
+  }
+  switch (m.subtype) {
+    case "turn_duration":
+      if (m.budgetLimit !== void 0 || (m.briefHiddenCount ?? 0) > 0 || (m.pendingBackgroundAgentCount ?? 0) > 0 || (m.pendingWorkflowCount ?? 0) > 0) return {
+        kind: "legacy"
+      };
+      return {
+        kind: "hidden"
+      };
+    case "informational": {
+      if (m.highlight !== void 0) return {
+        kind: "legacy"
+      };
+      let d;
+      switch (m.level) {
+        case "warning":
+          d = "gold";
+          break;
+        case "notice":
+          d = "dim";
+          break;
+        case "info":
+        case "suggestion":
+          d = null;
+          break
+      }
+      if (d === null) return {
+        kind: "legacy"
+      };
+      if (m.content.startsWith(`${ign}
+`)) return {
+        kind: "line",
+        row: {
+          tone: d,
+          text: ign,
+          detail: l3s,
+          linkify: !1
+        }
+      };
+      return wn(d, m.content, {
+        maxChars: ar,
+        linkify: !1
+      })
+    }
+    case "model_fallback":
+      return wn("gold", m.content, {
+        maxChars: ar,
+        linkify: !1
+      });
+    case "model_consent_fallback":
+      return {
+        kind: "line", row: $T("gold", m.content, {
+          linkify: !1
+        })
+      };
+    case "model_refusal_fallback":
+      return wn("gold", m.content, {
+        maxChars: ar,
+        linkify: !0
+      });
+    case "agents_killed":
+      return {
+        kind: "line", row: {
+          tone: "red",
+          text: "All background agents stopped",
+          linkify: !1
+        }
+      };
+    case "permission_retry": {
+      let d = aHe(m.commands);
+      if (d.length === 0) return {
+        kind: "legacy"
+      };
+      return wn("dim", `Allowed ${d.join(", ")}`, {
+        linkify: !1
+      })
+    }
+    case "scheduled_task_fire":
+      return wn("dim", m.content, {
+        maxChars: ar,
+        linkify: !1
+      });
+    case "memory_saved": {
+      let d = xn(m),
+        g = aHe(m.writtenPaths).length - (d?.count ?? 0),
+        h = WT?.localMemoryQualifier() ?? "",
+        M = [g > 0 ? `${g} ${h}${g===1?"memory":"memories"}` : null, d?.segment ?? null].filter((b) => b !== null);
+      return {
+        kind: "line",
+        row: {
+          tone: "dim",
+          text: `${typeof m.verb==="string"?m.verb:"Saved"} ${M.join(" \xB7 ")}`,
+          linkify: !1
+        }
+      }
+    }
+    case "stop_hook_summary": {
+      if (iHe(m) !== void 0) return {
+        kind: "legacy"
+      };
+      let {
+        hookCount: d,
+        hookInfos: p,
+        hookErrors: g,
+        hookAdditionalContext: h = [],
+        preventedContinuation: M,
+        stopReason: b,
+        totalDurationMs: R
+      } = lSe(m), v = R ?? p.reduce((I, W) => I + (W.durationMs ?? 0), 0), k = !1;
+      if (g.length === 0 && h.length === 0 && !M && (!k || v < rys)) return {
+        kind: "hidden"
+      };
+      let C = Us([...M && b ? [b] : [], ...g.map((I) => `Stop hook error: ${I}`), ...h.map((I) => `Stop hook feedback: ${I}`)].join(`
+`), {
+        maxLines: Jm
+      });
+      return {
+        kind: "line",
+        row: {
+          tone: g.length > 0 ? "red" : M || h.length > 0 ? "gold" : "dim",
+          text: `Ran ${d} stop ${d===1?"hook":"hooks"}`,
+          detail: k && v > 0 ? STe(v) : void 0,
+          subLines: C.length > 0 ? C : void 0,
+          linkify: !1
+        }
+      }
+    }
+    default: {
+      let d = WT?.accountMemorySavedParts(m);
+      if (d === void 0) return {
+        kind: "legacy"
+      };
+      return {
+        kind: "line",
+        row: {
+          tone: "dim",
+          text: d.header,
+          detail: d.hint,
+          subLines: [...d.pathRows, ...d.bodyRows === void 0 ? [] : Us(d.bodyRows.join(`
+`), {
+            maxLines: d.bodyRows.length,
+            preserveLayout: !0
+          })],
+          linkify: !1
+        }
+      }
+    }
+  }
+}
+
+function eu(m, d) {
+  return m !== void 0 && !(d && m.trigger === "manual")
+}
+
+function ou(m, d, p) {
+  let g = m.messagesSummarized !== void 0 && m.messagesSummarized > 0 ? `${m.messagesSummarized} ${m.messagesSummarized===1?"message":"messages"} summarized` : m.preTokens > 0 ? `${cr(m.preTokens)} tokens summarized` : null,
+    h = p === null ? g ? "to see them" : "for history" : p.leadsToSummary ? "for the summary" : null;
+  return {
+    tone: "dim",
+    text: "Compacted",
+    detail: h === null ? g ?? void 0 : g ? `${g} (${d} ${h})` : `${d} ${h}`,
+    ...p?.savedIn !== void 0 && {
+      subLines: [`Earlier messages are saved in ${p.savedIn}`]
+    },
+    linkify: !1
+  }
+}
+
+function tu(m, d) {
+  let p = Is(m, Pl),
+    g = Is(m, Uf),
+    h = p === null ? "" : km(p),
+    M = g === null ? "" : km(g),
+    b = h.trim() !== "" && h.trim() !== hu,
+    R = M.trim() !== "",
+    v = (b ? h : M).trim();
+  if (v === "" || Qbn(v) !== null || Qv.some((I) => v.startsWith(I))) return {
+    kind: "legacy"
+  };
+  let [k = "", ...C] = Us(b ? `${h}
+${M}` : M, {
+    maxChars: ar,
+    maxLines: 1 / 0,
+    preserveLayout: !0
+  });
+  return {
+    kind: "line",
+    row: {
+      tone: R ? "red" : "dim",
+      text: k,
+      ...d === "compact" && !b && jT(k),
+      subLines: C.length > 0 ? C : void 0,
+      linkify: !1
+    }
+  }
+}
+
+function ir({
+  isBySendNow: m
+}) {
+  return {
+    tone: "dim",
+    text: "Interrupted",
+    detail: m ? void 0 : Ya(),
+    linkify: !1
+  }
+}
+
+function As(m, {
+  whole: d = !1
+} = {}) {
+  let p = m === Ml ? `${Ml}: Please wait a moment and try again.` : m,
+    [g = "", ...h] = Us(p, {
+      maxChars: ar,
+      ...d && {
+        maxChars: 1 / 0,
+        maxLines: 1 / 0,
+        preserveLayout: !0
+      }
+    }),
+    M = $T("red", g, {
+      linkify: !d
+    });
+  return h.length > 0 ? {
+    ...M,
+    subLines: h
+  } : M
+}
+
+function Cn({
+  status: m,
+  summary: d,
+  context: p,
+  durationMs: g,
+  deliveryNote: h,
+  sentMessages: M
+}) {
+  let b = [p, Number.isFinite(g) && g > 0 ? rn(g) : null, h].filter((j) => j !== null),
+    R = JXn(0),
+    v = m === "completed" && d.startsWith(Gne) && d.endsWith(R) ? d.slice(0, -R.length) : d,
+    [k = "", ...C] = Us(LP(v)),
+    I = M === 1 ? "sent a message (ctrl+o)" : M > 1 ? `sent ${M} messages (ctrl+o)` : null,
+    W = I === null ? C : [...C, I];
+  return {
+    tone: m === "failed" ? "red" : m === "killed" ? "gold" : "dim",
+    text: k,
+    detail: b.length > 0 ? b.join(" \xB7 ") : void 0,
+    subLines: W.length > 0 ? W : void 0,
+    linkify: !1
+  }
+}
+
+function Sn({
+  hookName: m,
+  blocking: d,
+  reason: p
+}) {
+  let g = Us(p, {
+    maxLines: Jm
+  });
+  return {
+    tone: "red",
+    text: d ? `${m} hook returned blocking error` : `${m} hook error`,
+    subLines: g.length > 0 ? g : void 0,
+    linkify: !1
+  }
+}
+
+function wn(m, d, {
+  maxChars: p = HT,
+  linkify: g
+}) {
+  let [h, ...M] = Us(d, {
+    maxChars: p
+  });
+  if (h === void 0) return {
+    kind: "legacy"
+  };
+  return {
+    kind: "line",
+    row: {
+      tone: m,
+      text: h,
+      subLines: M.length > 0 ? M : void 0,
+      linkify: g
+    }
+  }
+}
+
+function $T(m, d, {
+  linkify: p
+}) {
+  let g = /.( \u00B7 |: )/s.exec(d);
+  if (g === null) return {
+    tone: m,
+    text: d,
+    linkify: p
+  };
+  return {
+    tone: m,
+    text: d.slice(0, g.index + 1),
+    detail: d.slice(g.index + g[0].length),
+    linkify: p
+  }
+}
+
+function Us(m, {
+  maxChars: d = HT,
+  maxLines: p = Jm + 1,
+  preserveLayout: g = !1
+} = {}) {
+  let h;
+  if (g) {
+    let R = m.split(`
+`),
+      v = R.findIndex((C) => C.trim() !== ""),
+      k = R.findLastIndex((C) => C.trim() !== "");
+    h = v === -1 ? [] : R.slice(v, k + 1).map((C) => C.trimEnd() || " ")
+  } else h = m.split(`
+`).map((R) => R.trim()).filter((R) => R.length > 0);
+  let M = h.slice(0, p).map((R) => {
+      let v = ne(R, d);
+      return v.length < R.length ? `${v}\u2026` : R
+    }),
+    b = h.length - M.length;
+  if (b > 0) M.push(`\u2026 +${b} more ${b===1?"line":"lines"}`);
+  return M
+}
+
+function cP(C) {
+  return C.remoteAutocompactState !== void 0
+}
+var GT = new Set([OYe, IDn, ODn, MDn, Sxt]);
+
+function lu() {
+  let d = w(1);
+  if (!$r(HFo())) {
+    return null
+  }
+  let p;
+  if (d[0] === S) p = e(n, {
+    dimColor: !0,
+    children: "\xB7 Run in another terminal: security unlock-keychain"
+  }), d[0] = p;
+  else p = d[0];
+  return p
+}
+
+function du() {
+  let m = w(6),
+    d;
+  if (m[0] === S) d = vbe("warning"), m[0] = d;
+  else d = m[0];
+  let p = d,
+    g = Fe(process.env.DISABLE_COMPACT) ? "/clear to continue" : "/compact or /clear to continue",
+    h = V(cP),
+    M = tnt(),
+    b = !h && !M && Iyo() ? " \xB7 auto-compact is off \xB7 /config to turn it on" : "";
+  const R = b || p ? void 0 : 1;
+  let v;
+  if (m[1] !== b) v = r(n, {
+    color: "error",
+    children: ["Context limit reached \xB7 ", g, b, p ? ` \xB7 ${p}` : ""]
+  }), m[1] = b, m[2] = v;
+  else v = m[2];
+  let k;
+  if (m[3] !== R || m[4] !== v) k = e(ze, {
+    height: R,
+    children: v
+  }), m[3] = R, m[4] = v, m[5] = k;
+  else k = m[5];
+  return k
+}
+
+function mu() {
+  let m = w(2),
+    d;
+  if (m[0] === S) d = e(n, {
+    color: "error",
+    children: z9t
+  }), m[0] = d;
+  else d = m[0];
+  let p;
+  if (m[1] === S) p = e(ze, {
+    children: r(s, {
+      flexDirection: "column",
+      children: [d, e(Xr, {
+        fallback: null,
+        children: e(lu, {})
+      })]
+    })
+  }), m[1] = p;
+  else p = m[1];
+  return p
+}
+
+function mr(m) {
+  let h = w(8),
+    {
+      text: d
+    } = m.param,
+    {
+      shouldShowDot: p,
+      messageId: g
+    } = m,
+    M, b;
+  if (h[0] !== g || h[1] !== p || h[2] !== d) M = () => ({
+    requestId: g,
+    props: {
+      text: T6(d),
+      isFirstOfReply: p
+    }
+  }), b = [d, p, g], h[0] = g, h[1] = p, h[2] = d, h[3] = M, h[4] = b;
+  else M = h[3], b = h[4];
+  let R = $d.useRenderInput("AssistantMessage", M, b),
+    v = R.props.text,
+    k;
+  if (h[5] !== v || h[6] !== m) k = (C) => e(uu, {
+    ...m,
+    param: C.props.text === v ? m.param : {
+      ...m.param,
+      text: C.props.text
+    },
+    shouldShowDot: C.props.isFirstOfReply
+  }), h[5] = v, h[6] = m, h[7] = k;
+  else k = h[7];
+  return $d.useRenderHook(R, k)
+}
+
+function uu(m) {
+  let U = w(55),
+    {
+      param: d,
+      addMargin: p,
+      shouldShowDot: g,
+      verbose: h,
+      isApiError: M,
+      isSessionFailureNotice: b,
+      apiErrorKind: R,
+      onOpenRateLimitOptions: v,
+      onRateLimitAutoQueueContinue: k
+    } = m,
+    {
+      text: C
+    } = d,
+    I = b === void 0 ? !1 : b,
+    W = tnt(),
+    j = $w(h) && !W;
+  if (zOt(C)) {
+    return null
+  }
+  if (j && C === VO) {
+    let H;
+    if (U[0] === S) H = ir({
+      isBySendNow: !1
+    }), U[0] = H;
+    else H = U[0];
+    let D;
+    if (U[1] !== p || U[2] !== H) D = e(Oe, {
+      row: H,
+      addMargin: p
+    }), U[1] = p, U[2] = H, U[3] = D;
+    else D = U[3];
+    return D
+  }
+  if (j && GT.has(C)) {
+    let H;
+    if (U[4] !== C) H = As(C), U[4] = C, U[5] = H;
+    else H = U[5];
+    let D;
+    if (U[6] !== p || U[7] !== H) D = e(Oe, {
+      row: H,
+      addMargin: p
+    }), U[6] = p, U[7] = H, U[8] = D;
+    else D = U[8];
+    return D
+  }
+  if (wyo(C)) {
+    let H;
+    if (U[9] !== v || U[10] !== k || U[11] !== C) H = e(Qm, {
+      text: C,
+      onOpenRateLimitOptions: v,
+      onRateLimitAutoQueueContinue: k
+    }), U[9] = v, U[10] = k, U[11] = C, U[12] = H;
+    else H = U[12];
+    return H
+  }
+  switch (C) {
+    case r1: {
+      return null
+    }
+    case rU: {
+      let H;
+      if (U[13] === S) H = e(du, {}), U[13] = H;
+      else H = U[13];
+      return H
+    }
+    case PDn: {
+      let H;
+      if (U[14] === S) H = e(ze, {
+        height: 1,
+        children: e(n, {
+          color: "error",
+          children: "Credit balance too low \xB7 Add funds: https://platform.claude.com/settings/billing"
+        })
+      }), U[14] = H;
+      else H = U[14];
+      return H
+    }
+    case z9t: {
+      let H;
+      if (U[15] === S) H = e(mu, {}), U[15] = H;
+      else H = U[15];
+      return H
+    }
+    case OYe: {
+      let H;
+      if (U[16] === S) H = e(ze, {
+        height: 1,
+        children: e(n, {
+          color: "error",
+          children: OYe
+        })
+      }), U[16] = H;
+      else H = U[16];
+      return H
+    }
+    case IDn:
+    case ODn:
+    case MDn: {
+      let H;
+      if (U[17] !== C) H = e(ze, {
+        children: e(n, {
+          color: "error",
+          children: C
+        })
+      }), U[17] = C, U[18] = H;
+      else H = U[18];
+      return H
+    }
+    case Sxt: {
+      let H;
+      if (U[19] === S) H = e(ze, {
+        height: 1,
+        children: e(n, {
+          color: "error",
+          children: Sxt
+        })
+      }), U[19] = H;
+      else H = U[19];
+      return H
+    }
+    case vat: {
+      let H;
+      if (U[20] === S) H = e(ze, {
+        height: 1,
+        children: r(n, {
+          color: "error",
+          children: [vat, process.env.API_TIMEOUT_MS && r(Q, {
+            children: [" ", "(API_TIMEOUT_MS=", process.env.API_TIMEOUT_MS, "ms, try increasing it)"]
+          })]
+        })
+      }), U[20] = H;
+      else H = U[20];
+      return H
+    }
+    case Sat: {
+      let H;
+      if (U[21] === S) H = e(n, {
+        color: "error",
+        children: "We are experiencing high demand for Opus 4."
+      }), U[21] = H;
+      else H = U[21];
+      let D;
+      if (U[22] === S) D = e(ze, {
+        children: r(s, {
+          flexDirection: "column",
+          gap: 1,
+          children: [H, r(n, {
+            children: ["To continue immediately, use /model to switch to", " ", Yo(Nm()), " and continue coding."]
+          })]
+        })
+      }), U[22] = D;
+      else D = U[22];
+      return D
+    }
+    case wat: {
+      let H;
+      if (U[23] === S) H = e(pu, {}), U[23] = H;
+      else H = U[23];
+      return H
+    }
+    case VO: {
+      let H;
+      if (U[24] === S) H = e(rh, {}), U[24] = H;
+      else H = U[24];
+      return H
+    }
+    default: {
+      if (C.startsWith(`${rU} \xB7 `)) {
+        let H;
+        if (U[25] === S) H = vbe("warning"), U[25] = H;
+        else H = U[25];
+        let G = H;
+        let D;
+        if (U[26] !== C) D = e(ze, {
+          children: r(n, {
+            color: "error",
+            children: [C, " \xB7 /clear to start fresh", G ? ` \xB7 ${G}` : ""]
+          })
+        }), U[26] = C, U[27] = D;
+        else D = U[27];
+        return D
+      }
+      if (dlo(C) || M && ilo(C)) {
+        if (j) {
+          let H;
+          if (U[28] !== C) H = As(C), U[28] = C, U[29] = H;
+          else H = U[29];
+          let D;
+          if (U[30] !== p || U[31] !== H) D = e(Oe, {
+            row: H,
+            addMargin: p
+          }), U[30] = p, U[31] = H, U[32] = D;
+          else D = U[32];
+          return D
+        }
+        let H;
+        if (U[33] !== C) H = e(ze, {
+          children: e(n, {
+            color: "error",
+            children: C
+          })
+        }), U[33] = C, U[34] = H;
+        else H = U[34];
+        return H
+      }
+      if (M || pZ(C) || $Bo(C)) {
+        if (j) {
+          let H;
+          if (U[35] !== I || U[36] !== C) H = As(C, {
+            whole: I
+          }), U[35] = I, U[36] = C, U[37] = H;
+          else H = U[37];
+          let D;
+          if (U[38] !== p || U[39] !== H) D = e(Oe, {
+            row: H,
+            addMargin: p
+          }), U[38] = p, U[39] = H, U[40] = D;
+          else D = U[40];
+          return D
+        }
+        const H = I ? eM : R === "verification_required" ? Vje : void 0;
+        let D;
+        if (U[41] !== p || U[42] !== I || U[43] !== H || U[44] !== C || U[45] !== h) D = e(cu, {
+          text: C,
+          verbose: h,
+          whole: I,
+          addMargin: p,
+          linkHref: H
+        }), U[41] = p, U[42] = I, U[43] = H, U[44] = C, U[45] = h, U[46] = D;
+        else D = U[46];
+        return D
+      }
+      const H = p ? 1 : 0;
+      let D;
+      if (U[47] !== g) D = g && e(Iu, {
+        fromLeftEdge: !0,
+        minWidth: 2,
+        children: e(n, {
+          "aria-label": "claude:",
+          color: "text",
+          children: wo
+        })
+      }), U[47] = g, U[48] = D;
+      else D = U[48];
+      let K;
+      if (U[49] !== C) K = e(s, {
+        flexDirection: "column",
+        children: e(Va, {
+          capProseWidth: !0,
+          children: C
+        })
+      }), U[49] = C, U[50] = K;
+      else K = U[50];
+      let Y;
+      if (U[51] !== H || U[52] !== D || U[53] !== K) Y = r(s, {
+        alignItems: "flex-start",
+        flexDirection: "row",
+        marginTop: H,
+        width: "100%",
+        children: [D, K]
+      }), U[51] = H, U[52] = D, U[53] = K, U[54] = Y;
+      else Y = U[54];
+      return Y
+    }
+  }
+}
+
+function pu() {
+  let d = w(7),
+    m = Pu(),
+    p;
+  if (d[0] !== m) p = oge(m) ? C_(m) : "Fable", d[0] = m, d[1] = p;
+  else p = d[1];
+  let g;
+  if (d[2] !== p) g = r(n, {
+    color: "error",
+    children: ["We are experiencing high demand for", " ", p, "."]
+  }), d[2] = p, d[3] = g;
+  else g = d[3];
+  let h;
+  if (d[4] === S) h = r(n, {
+    children: ["To continue immediately, use /model to switch to", " ", Yo(Nm()), " and continue coding."]
+  }), d[4] = h;
+  else h = d[4];
+  let M;
+  if (d[5] !== g) M = e(ze, {
+    children: r(s, {
+      flexDirection: "column",
+      gap: 1,
+      children: [g, h]
+    })
+  }), d[5] = g, d[6] = M;
+  else M = d[6];
+  return M
+}
+
+function eM() {
+  return
+}
+
+function cu(m) {
+  let k = w(26),
+    {
+      text: d,
+      verbose: p,
+      whole: g,
+      addMargin: h,
+      linkHref: M
+    } = m,
+    {
+      columns: b
+    } = Te(),
+    R = tnt();
+  const v = d === Ml ? `${Ml}: Please wait a moment and try again.` : d;
+  let C, I;
+  if (k[0] !== v || k[1] !== p || k[2] !== g) {
+    let W = v.trim();
+    I = !p && !g && W.length > Gyt;
+    C = I ? ne(W, Gyt) + "\u2026" : W;
+    k[0] = v, k[1] = p, k[2] = g, k[3] = C, k[4] = I
+  } else C = k[3], I = k[4];
+  let j = C;
+  if (R) {
+    let U;
+    if (k[5] !== M || k[6] !== j) U = e(sz, {
+      color: "warning",
+      linkHref: M,
+      children: j
+    }), k[5] = M, k[6] = j, k[7] = U;
+    else U = k[7];
+    let H;
+    if (k[8] !== I) H = I && e(Gu, {}), k[8] = I, k[9] = H;
+    else H = k[9];
+    let D;
+    if (k[10] !== U || k[11] !== H) D = r(s, {
+      flexDirection: "column",
+      children: [U, H]
+    }), k[10] = U, k[11] = H, k[12] = D;
+    else D = k[12];
+    return D
+  }
+  const U = h ? 1 : 0;
+  let H;
+  if (k[13] === S) H = e(s, {
+    minWidth: 2,
+    children: e(n, {
+      "aria-label": "error:",
+      color: "warning",
+      children: wo
+    })
+  }), k[13] = H;
+  else H = k[13];
+  const D = b - 10;
+  let G;
+  if (k[14] !== M || k[15] !== j) G = e(sz, {
+    color: "warning",
+    linkHref: M,
+    children: j
+  }), k[14] = M, k[15] = j, k[16] = G;
+  else G = k[16];
+  let K;
+  if (k[17] !== I) K = I && e(Gu, {}), k[17] = I, k[18] = K;
+  else K = k[18];
+  let Y;
+  if (k[19] !== D || k[20] !== G || k[21] !== K) Y = r(s, {
+    flexDirection: "column",
+    width: D,
+    children: [G, K]
+  }), k[19] = D, k[20] = G, k[21] = K, k[22] = Y;
+  else Y = k[22];
+  let ee;
+  if (k[23] !== U || k[24] !== Y) ee = r(s, {
+    flexDirection: "row",
+    marginTop: U,
+    width: "100%",
+    children: [H, Y]
+  }), k[23] = U, k[24] = Y, k[25] = ee;
+  else ee = k[25];
+  return ee
+}
+
+function ci(m) {
+  let R = w(12),
+    {
+      param: d,
+      model: p,
+      addMargin: g,
+      shouldShowDot: h,
+      messageId: M
+    } = m,
+    {
+      thinking: b
+    } = d,
+    v;
+  if (R[0] !== b) v = b.trim(), R[0] = b, R[1] = v;
+  else v = R[1];
+  let k = v,
+    C, I;
+  if (R[2] !== M || R[3] !== h || R[4] !== k) C = () => ({
+    requestId: M,
+    props: {
+      text: T6(k),
+      isFirstOfReply: h,
+      isSummary: !0
+    }
+  }), I = [k, h, M], R[2] = M, R[3] = h, R[4] = k, R[5] = C, R[6] = I;
+  else C = R[5], I = R[6];
+  let W = $d.useRenderInput("AssistantMessage", C, I),
+    j = W.props.text,
+    U;
+  if (R[7] !== g || R[8] !== j || R[9] !== p || R[10] !== k) U = (H) => e(Tu, {
+    text: H.props.text === j ? k : H.props.text,
+    model: p,
+    addMargin: g,
+    shouldShowDot: H.props.isFirstOfReply
+  }), R[7] = g, R[8] = j, R[9] = p, R[10] = k, R[11] = U;
+  else U = R[11];
+  return $d.useRenderHook(W, U)
+}
+
+function Tu(m) {
+  let M = w(11),
+    {
+      text: d,
+      model: p,
+      addMargin: g,
+      shouldShowDot: h
+    } = m,
+    b;
+  if (M[0] !== p) b = () => Cdr(p), M[0] = p, M[1] = b;
+  else b = M[1];
+  let R = Sk(b);
+  if (d.trim() === "") {
+    return null
+  }
+  const v = g ? 1 : 0;
+  let k;
+  if (M[2] !== h) k = h && e(Iu, {
+    fromLeftEdge: !0,
+    minWidth: 2,
+    children: e(n, {
+      "aria-label": "claude:",
+      color: "text",
+      children: wo
+    })
+  }), M[2] = h, M[3] = k;
+  else k = M[3];
+  const C = R ? void 0 : xdo;
+  let I;
+  if (M[4] !== C || M[5] !== d) I = e(s, {
+    flexDirection: "column",
+    flexGrow: 1,
+    children: e(Va, {
+      hint: C,
+      capProseWidth: !0,
+      children: d
+    })
+  }), M[4] = C, M[5] = d, M[6] = I;
+  else I = M[6];
+  let W;
+  if (M[7] !== v || M[8] !== k || M[9] !== I) W = r(s, {
+    flexDirection: "row",
+    marginTop: v,
+    width: "100%",
+    children: [k, I]
+  }), M[7] = v, M[8] = k, M[9] = I, M[10] = W;
+  else W = M[10];
+  return W
+}
+
+function Ds(m) {
+  let R = w(27),
+    {
+      param: d,
+      addMargin: p,
+      isTranscriptMode: g,
+      verbose: h
+    } = m,
+    {
+      thinking: M
+    } = d,
+    b = p === void 0 ? !1 : p,
+    v, k, C, I, W, j, U, H, D, G;
+  if (R[0] !== b || R[1] !== g || R[2] !== M || R[3] !== h) {
+    C = yn;
+    Y: {
+      let K = By(M);
+      if (!K) {
+        C = null;
+        break Y
+      }
+      let ee = g || h;k = s;U = "row";H = b ? 1 : 0;D = "100%";
+      if (R[14] === S) G = e(s, {
+        minWidth: 2,
+        children: e(n, {
+          "aria-label": "thinking:",
+          dimColor: !0,
+          italic: !0,
+          children: OBt
+        })
+      }),
+      R[14] = G;
+      else G = R[14];v = s;I = "column";W = 1;j = ee ? e(Va, {
+        dimColor: !0,
+        capProseWidth: !0,
+        children: K.trim()
+      }) : e(n, {
+        dimColor: !0,
+        italic: !0,
+        children: K.trim().replace(/\s+/g, " ")
+      })
+    }
+    R[0] = b, R[1] = g, R[2] = M, R[3] = h, R[4] = v, R[5] = k, R[6] = C, R[7] = I, R[8] = W, R[9] = j, R[10] = U, R[11] = H, R[12] = D, R[13] = G
+  } else v = R[4], k = R[5], C = R[6], I = R[7], W = R[8], j = R[9], U = R[10], H = R[11], D = R[12], G = R[13];
+  if (C !== yn) return C;
+  let z;
+  if (R[15] !== v || R[16] !== I || R[17] !== W || R[18] !== j) z = e(v, {
+    flexDirection: I,
+    flexGrow: W,
+    children: j
+  }), R[15] = v, R[16] = I, R[17] = W, R[18] = j, R[19] = z;
+  else z = R[19];
+  let se;
+  if (R[20] !== k || R[21] !== z || R[22] !== U || R[23] !== H || R[24] !== D || R[25] !== G) se = r(k, {
+    flexDirection: U,
+    marginTop: H,
+    width: D,
+    children: [G, z]
+  }), R[20] = k, R[21] = z, R[22] = U, R[23] = H, R[24] = D, R[25] = G, R[26] = se;
+  else se = R[26];
+  return se
+}
+B();
+
+function yu(m) {
+  return null
+}
+
+function bu(m) {
+  return Fo((d) => d.classifierApprovals.checking.has(m)) ?? !1
+}
+
+function gr(m) {
+  let M = w(22),
+    {
+      hookEvent: d,
+      lookups: p,
+      toolUseID: g,
+      isTranscriptMode: h
+    } = m,
+    b;
+  if (M[0] !== d || M[1] !== p.inProgressHookCounts || M[2] !== g) b = p.inProgressHookCounts.get(g)?.get(d) ?? 0, M[0] = d, M[1] = p.inProgressHookCounts, M[2] = g, M[3] = b;
+  else b = M[3];
+  let R = b,
+    v = p.resolvedHookCounts.get(g)?.get(d) ?? 0;
+  if (R === 0) {
+    return null
+  }
+  if (d === "PreToolUse" || d === "PostToolUse") {
+    if (h) {
+      let k;
+      if (M[4] !== R) k = r(n, {
+        dimColor: !0,
+        children: [R, " "]
+      }), M[4] = R, M[5] = k;
+      else k = M[5];
+      let C;
+      if (M[6] !== d) C = e(n, {
+        dimColor: !0,
+        bold: !0,
+        children: d
+      }), M[6] = d, M[7] = C;
+      else C = M[7];
+      const I = R === 1 ? " hook" : " hooks";
+      let W;
+      if (M[8] !== I) W = r(n, {
+        dimColor: !0,
+        children: [I, " ran"]
+      }), M[8] = I, M[9] = W;
+      else W = M[9];
+      let j;
+      if (M[10] !== k || M[11] !== C || M[12] !== W) j = e(ze, {
+        children: r(s, {
+          flexDirection: "row",
+          children: [k, C, W]
+        })
+      }), M[10] = k, M[11] = C, M[12] = W, M[13] = j;
+      else j = M[13];
+      return j
+    }
+    return null
+  }
+  if (v >= R) {
+    return null
+  }
+  let k;
+  if (M[14] === S) k = e(n, {
+    dimColor: !0,
+    children: "Running "
+  }), M[14] = k;
+  else k = M[14];
+  let C;
+  if (M[15] !== d) C = e(n, {
+    dimColor: !0,
+    bold: !0,
+    children: d
+  }), M[15] = d, M[16] = C;
+  else C = M[16];
+  const I = R === 1 ? " hook\u2026" : " hooks\u2026";
+  let W;
+  if (M[17] !== I) W = e(n, {
+    dimColor: !0,
+    children: I
+  }), M[17] = I, M[18] = W;
+  else W = M[18];
+  let j;
+  if (M[19] !== C || M[20] !== W) j = e(ze, {
+    children: r(s, {
+      flexDirection: "row",
+      children: [k, C, W]
+    })
+  }), M[19] = C, M[20] = W, M[21] = j;
+  else j = M[21];
+  return j
+}
+
+function BP(j) {
+  return j.settings.maxProseWidth
+}
+
+function Ls(m) {
+  let b = w(13),
+    {
+      content: d,
+      addMargin: p,
+      trailer: g
+    } = m,
+    h = Fo(BP);
+  const M = p ? 1 : 0;
+  let R;
+  if (b[0] === S) R = e(s, {
+    minWidth: 2,
+    children: e(n, {
+      "aria-hidden": !0,
+      dimColor: !0,
+      children: A$o
+    })
+  }), b[0] = R;
+  else R = b[0];
+  let v;
+  if (b[1] === S) v = r(n, {
+    dimColor: !0,
+    bold: !0,
+    children: ["recap:", " "]
+  }), b[1] = v;
+  else v = b[1];
+  let k;
+  if (b[2] !== d) k = e(n, {
+    dimColor: !0,
+    italic: !0,
+    children: d
+  }), b[2] = d, b[3] = k;
+  else k = b[3];
+  let C;
+  if (b[4] !== k || b[5] !== g) C = r(n, {
+    children: [v, k, g]
+  }), b[4] = k, b[5] = g, b[6] = C;
+  else C = b[6];
+  let I;
+  if (b[7] !== h || b[8] !== C) I = e(s, {
+    maxWidth: h,
+    children: C
+  }), b[7] = h, b[8] = C, b[9] = I;
+  else I = b[9];
+  let W;
+  if (b[10] !== M || b[11] !== I) W = r(s, {
+    flexDirection: "row",
+    marginTop: M,
+    width: "100%",
+    children: [R, I]
+  }), b[10] = M, b[11] = I, b[12] = W;
+  else W = b[12];
+  return W
+}
+
+function iE(_s) {
+  return _s.pendingWorkerRequest
+}
+
+function lE(If) {
+  return If.toolPermissionContext.mode
+}
+
+function dE(rm) {
+  return rm.agentDefinitions.activeAgents
+}
+
+function Si(m) {
+  let h = w(27),
+    {
+      param: d,
+      inProgressToolUseIDs: p,
+      lookups: g
+    } = m,
+    M;
+  if (h[0] !== p || h[1] !== d.id) M = p.has(d.id), h[0] = p, h[1] = d.id, h[2] = M;
+  else M = h[2];
+  let b = M,
+    R;
+  if (h[3] !== g.erroredToolUseIDs || h[4] !== d.id) R = g.erroredToolUseIDs.has(d.id), h[3] = g.erroredToolUseIDs, h[4] = d.id, h[5] = R;
+  else R = h[5];
+  let v = R,
+    k, C;
+  if (h[6] !== g.toolResultByToolUseID || h[7] !== d.id) k = g.toolResultByToolUseID.get(d.id), C = Qq.isInterruptedCall(k), h[6] = g.toolResultByToolUseID, h[7] = d.id, h[8] = k, h[9] = C;
+  else k = h[8], C = h[9];
+  let I = C,
+    W = k?.type === "user" ? k.toolUseResult : void 0,
+    j;
+  if (h[10] !== v || h[11] !== I || h[12] !== W || h[13] !== d.id || h[14] !== d.input || h[15] !== d.name || h[16] !== b) j = () => ({
+    requestId: d.id,
+    props: {
+      tool_use_id: d.id,
+      tool: d.name,
+      input: d.input,
+      isRunning: b,
+      isErrored: v,
+      isInterrupted: I,
+      output: W
+    }
+  }), h[10] = v, h[11] = I, h[12] = W, h[13] = d.id, h[14] = d.input, h[15] = d.name, h[16] = b, h[17] = j;
+  else j = h[17];
+  let U;
+  if (h[18] !== v || h[19] !== I || h[20] !== W || h[21] !== d || h[22] !== b) U = [d, b, v, I, W], h[18] = v, h[19] = I, h[20] = W, h[21] = d, h[22] = b, h[23] = U;
+  else U = h[23];
+  let H = $d.useRenderInput("ToolUse", j, U),
+    D;
+  if (h[24] !== d || h[25] !== m) D = (G) => e(Wu, {
+    ...m,
+    param: G.props.input === d.input ? d : {
+      ...d,
+      input: G.props.input
+    },
+    toolLabel: G.props.tool === d.name ? void 0 : G.props.tool
+  }), h[24] = d, h[25] = m, h[26] = D;
+  else D = h[26];
+  return $d.useRenderHook(H, D)
+}
+
+function Wu(m) {
+  let Y = w(208),
+    {
+      param: d,
+      addMargin: p,
+      tools: g,
+      commands: h,
+      verbose: M,
+      inProgressToolUseIDs: b,
+      progressMessagesForMessage: R,
+      shouldAnimate: v,
+      shouldShowDot: k,
+      inProgressToolCallCount: C,
+      lookups: I,
+      isTranscriptMode: W,
+      toolLabel: j
+    } = m,
+    U = Te(),
+    [H] = br(),
+    D = gs(),
+    G = wR(),
+    K = Ee(lvt),
+    ee;
+  if (Y[0] !== G) ee = G ? Ok.of(G) : null, Y[0] = G, Y[1] = ee;
+  else ee = Y[1];
+  let z;
+  if (Y[2] !== d.id) z = (se) => se.get(d.id), Y[2] = d.id, Y[3] = z;
+  else z = Y[3];
+  let [X, de] = zye(Ae(ee, z)), fe = de?.status === "running", oe = de?.status === "failed" || de?.status === "stopped", ue = Fo(iE);
+  bu(d.id), Ee(TP), Fo(lE);
+  let le = Fo(dE),
+    ke;
+  if (Y[4] !== D || Y[5] !== d.name) ke = Dre(d.name, D), Y[4] = D, Y[5] = d.name, Y[6] = ke;
+  else ke = Y[6];
+  let pe = ke,
+    re = (void 0)?.type === "user" && (void 0).isVirtual === !0,
+    ye;
+  if (Y[7] !== le || Y[8] !== pe || Y[9] !== d.input || Y[10] !== d.name || Y[11] !== j || Y[12] !== g) {
+    ve: {
+      if (!g) {
+        let me;
+        if (Y[14] === S) me = {
+          notFound: "no-tools"
+        }, Y[14] = me;
+        else me = Y[14];
+        ye = me;
+        break ve
+      }
+      let be = Pn(g, d.name) ?? pe;
+      if (!be) {
+        const me = d.name.startsWith("mcp__") || d.name.startsWith("skill__") || d.name === Wa || d.name === jv || jk(d.name) || !1 || d.name === "WebBrowser" || XAe.has(d.name) || sse().has(d.name) || Pn(CK() ?? [], d.name) !== void 0 ? "expected-absent" : "unknown";
+        let Ce;
+        if (Y[15] !== me) Ce = {
+          notFound: me
+        }, Y[15] = me, Y[16] = Ce;
+        else Ce = Y[16];
+        ye = Ce;
+        break ve
+      }
+      let qe = fb(be, d.input);
+      let Ue = qe.success ? qe.data : void 0;ye = {
+        tool: be,
+        input: qe,
+        remoteHost: Yat(be, Ue),
+        userFacingToolName: j ?? be.userFacingName(Ue, {
+          activeAgents: le
+        }),
+        userFacingToolNameBackgroundColor: Cg(be, "userFacingNameBackgroundColor")?.(Ue, {
+          activeAgents: le
+        }),
+        isTransparentWrapper: be.isTransparentWrapper?.() ?? !1
+      }
+    }
+    Y[7] = le,
+    Y[8] = pe,
+    Y[9] = d.input,
+    Y[10] = d.name,
+    Y[11] = j,
+    Y[12] = g,
+    Y[13] = ye
+  }
+  else ye = Y[13];
+  let Ie = ye,
+    xe = "notFound" in Ie ? Ie.notFound : null,
+    me, Ce;
+  if (Y[17] !== xe || Y[18] !== d.name) me = () => {
+    if (xe === "no-tools") l(Ye(Error(`Tools array is undefined for tool ${d.name}`), `Tools array is undefined (mcp=${d.name.startsWith("mcp__")})`));
+    else if (xe === "expected-absent") t(`Tool ${d.name} not found in render-time tools`, {
+      level: "error"
+    });
+    else if (xe === "unknown") l(Ye(Error(`Tool ${d.name} not found`), "Tool not found"))
+  }, Ce = [d.name, xe], Y[17] = xe, Y[18] = d.name, Y[19] = me, Y[20] = Ce;
+  else me = Y[19], Ce = Y[20];
+  P(me, Ce);
+  let De;
+  if (Y[21] !== I.erroredToolUseIDs || Y[22] !== d) De = ann(d, I.erroredToolUseIDs), Y[21] = I.erroredToolUseIDs, Y[22] = d, Y[23] = De;
+  else De = Y[23];
+  let je = De;
+  const lo = je !== null;
+  let Ke, Ve, To, mo, He, Xe, co, Mo, vo, xo, kt, jo, et, jt, Po, ns, Co, st, so, rt, ro;
+  if (Y[24] !== le || Y[25] !== p || Y[26] !== h || Y[27] !== X || Y[28] !== C || Y[29] !== b || Y[30] !== oe || Y[31] !== fe || Y[32] !== K || Y[33] !== W || Y[34] !== I || Y[35] !== d || Y[36] !== Ie || Y[37] !== ue?.toolUseId || Y[38] !== R || Y[39] !== je || Y[40] !== G || Y[41] !== v || Y[42] !== k || Y[43] !== lo || Y[44] !== U || Y[45] !== H || Y[46] !== g || Y[47] !== M) {
+    so = yn;
+    Ca: {
+      if (lo) {
+        so = e(Ls, {
+          content: je,
+          addMargin: p
+        });
+        break Ca
+      }
+      const $e = "notFound" in Ie;
+      if (Y[69] !== le || Y[70] !== p || Y[71] !== h || Y[72] !== X || Y[73] !== C || Y[74] !== b || Y[75] !== oe || Y[76] !== fe || Y[77] !== K || Y[78] !== W || Y[79] !== I || Y[80] !== d || Y[81] !== Ie || Y[82] !== ue?.toolUseId || Y[83] !== R || Y[84] !== G || Y[85] !== v || Y[86] !== k || Y[87] !== $e || Y[88] !== U || Y[89] !== H || Y[90] !== g || Y[91] !== M) {
+        if ($e) {
+          so = null;
+          break Ca
+        }
+        let {
+          tool: uo,
+          input: Uo,
+          remoteHost: is,
+          userFacingToolName: Io,
+          userFacingToolNameBackgroundColor: wt,
+          isTransparentWrapper: ws
+        } = Ie;
+        ro = uo;
+        if (Y[112] !== le || Y[113] !== p || Y[114] !== h || Y[115] !== X || Y[116] !== C || Y[117] !== b || Y[118] !== Uo || Y[119] !== oe || Y[120] !== fe || Y[121] !== K || Y[122] !== W || Y[123] !== ws || Y[124] !== I || Y[125] !== d || Y[126] !== ue?.toolUseId || Y[127] !== R || Y[128] !== is || Y[129] !== G || Y[130] !== v || Y[131] !== k || Y[132] !== U || Y[133] !== H || Y[134] !== ro || Y[135] !== g || Y[136] !== Io || Y[137] !== wt || Y[138] !== M) {
+          He = I.resolvedToolUseIDs.has(d.id) && !fe;
+          mo = !b.has(d.id) && !He && !fe;
+          Xe = ue?.toolUseId === d.id;
+          let er = I.toolResultByToolUseID.get(d.id);
+          let sn = er?.type === "user" ? er.toolUseResult : void 0;
+          if (ws) {
+            let Ss = yu({
+              param: d,
+              isQueued: mo,
+              isResolved: He,
+              isError: I.erroredToolUseIDs.has(d.id),
+              shouldAnimate: v,
+              shouldShowDot: k,
+              addMargin: p,
+              progressMessagesForMessage: R,
+              resultMsg: er
+            });
+            if (Ss !== null) {
+              so = Ss;
+              break Ca
+            }
+            if (He) {
+              so = null;
+              break Ca
+            }
+            let yo;
+            if (Y[158] !== le || Y[159] !== C || Y[160] !== W || Y[161] !== I || Y[162] !== d.id || Y[163] !== R || Y[164] !== U || Y[165] !== ro || Y[166] !== g || Y[167] !== M) yo = wi(ro, g, I, d.id, R, {
+              verbose: M,
+              inProgressToolCallCount: C,
+              isTranscriptMode: W,
+              activeAgents: le
+            }, U), Y[158] = le, Y[159] = C, Y[160] = W, Y[161] = I, Y[162] = d.id, Y[163] = R, Y[164] = U, Y[165] = ro, Y[166] = g, Y[167] = M, Y[168] = yo;
+            else yo = Y[168];
+            so = e(s, {
+              flexDirection: "column",
+              width: "100%",
+              children: yo
+            });
+            break Ca
+          }
+          if (Io === "") {
+            so = null;
+            break Ca
+          }
+          let Wt = Uo.success ? Ci(ro, Uo.data, {
+            theme: H,
+            verbose: M,
+            isTranscriptMode: W,
+            activeAgents: le,
+            commands: h,
+            teammateAuthorOf: (at, Sa) => G ? GTt(G, at, Sa) : null,
+            toolUseResult: sn
+          }) : null;
+          if (Wt === null) {
+            so = null;
+            break Ca
+          }
+          let sm = Math.max(U.columns - (k ? 2 : 0) - ie(Io) - 2, 20);
+          To = s;
+          jt = X;
+          Po = "row";
+          ns = "space-between";
+          Co = p ? 1 : 0;
+          st = "100%";
+          Ve = s;
+          et = "column";
+          Ke = s;
+          rt = "row";
+          co = "nowrap";
+          Mo = ie(Io) + (k ? 2 : 0);
+          vo = k && (mo ? e(s, {
+            minWidth: 2,
+            children: e(n, {
+              "aria-label": "tool:",
+              dimColor: mo,
+              children: wo
+            })
+          }) : e(bo, {
+            shouldAnimate: v || fe,
+            isUnresolved: !He,
+            isError: I.erroredToolUseIDs.has(d.id) || oe
+          }));
+          if (Y[169] !== Io || Y[170] !== wt) xo = e(s, {
+            flexShrink: 0,
+            children: e(wk, {
+              color: wt,
+              bold: !0,
+              wrap: "truncate-end",
+              children: Io
+            })
+          }), Y[169] = Io, Y[170] = wt, Y[171] = xo;
+          else xo = Y[171];
+          kt = Wt !== "" && e(oSn.Provider, {
+            value: M || K ? null : sm,
+            children: e(s, {
+              flexWrap: "nowrap",
+              children: r(n, {
+                children: ["(", Wt, ")", is !== void 0 && r(n, {
+                  dimColor: !0,
+                  children: [" \xB7 on ", is]
+                })]
+              })
+            })
+          });
+          jo = Uo.success && Cg(ro, "renderToolUseTag")?.(Uo.data, {
+            toolUseId: d.id,
+            toolUseResult: sn,
+            progressMessages: I.progressMessagesByToolUseID.get(d.id)
+          });
+          Y[112] = le, Y[113] = p, Y[114] = h, Y[115] = X, Y[116] = C, Y[117] = b, Y[118] = Uo, Y[119] = oe, Y[120] = fe, Y[121] = K, Y[122] = W, Y[123] = ws, Y[124] = I, Y[125] = d, Y[126] = ue?.toolUseId, Y[127] = R, Y[128] = is, Y[129] = G, Y[130] = v, Y[131] = k, Y[132] = U, Y[133] = H, Y[134] = ro, Y[135] = g, Y[136] = Io, Y[137] = wt, Y[138] = M, Y[139] = Ke, Y[140] = Ve, Y[141] = To, Y[142] = mo, Y[143] = He, Y[144] = Xe, Y[145] = co, Y[146] = Mo, Y[147] = vo, Y[148] = xo, Y[149] = kt, Y[150] = jo, Y[151] = et, Y[152] = jt, Y[153] = Po, Y[154] = ns, Y[155] = Co, Y[156] = st, Y[157] = rt
+        } else Ke = Y[139], Ve = Y[140], To = Y[141], mo = Y[142], He = Y[143], Xe = Y[144], co = Y[145], Mo = Y[146], vo = Y[147], xo = Y[148], kt = Y[149], jo = Y[150], et = Y[151], jt = Y[152], Po = Y[153], ns = Y[154], Co = Y[155], st = Y[156], rt = Y[157];
+        Y[69] = le, Y[70] = p, Y[71] = h, Y[72] = X, Y[73] = C, Y[74] = b, Y[75] = oe, Y[76] = fe, Y[77] = K, Y[78] = W, Y[79] = I, Y[80] = d, Y[81] = Ie, Y[82] = ue?.toolUseId, Y[83] = R, Y[84] = G, Y[85] = v, Y[86] = k, Y[87] = $e, Y[88] = U, Y[89] = H, Y[90] = g, Y[91] = M, Y[92] = Ke, Y[93] = Ve, Y[94] = To, Y[95] = mo, Y[96] = He, Y[97] = Xe, Y[98] = co, Y[99] = Mo, Y[100] = vo, Y[101] = xo, Y[102] = kt, Y[103] = jo, Y[104] = et, Y[105] = jt, Y[106] = Po, Y[107] = ns, Y[108] = Co, Y[109] = st, Y[110] = rt, Y[111] = ro
+      } else Ke = Y[92],
+      Ve = Y[93],
+      To = Y[94],
+      mo = Y[95],
+      He = Y[96],
+      Xe = Y[97],
+      co = Y[98],
+      Mo = Y[99],
+      vo = Y[100],
+      xo = Y[101],
+      kt = Y[102],
+      jo = Y[103],
+      et = Y[104],
+      jt = Y[105],
+      Po = Y[106],
+      ns = Y[107],
+      Co = Y[108],
+      st = Y[109],
+      rt = Y[110],
+      ro = Y[111]
+    }
+    Y[24] = le, Y[25] = p, Y[26] = h, Y[27] = X, Y[28] = C, Y[29] = b, Y[30] = oe, Y[31] = fe, Y[32] = K, Y[33] = W, Y[34] = I, Y[35] = d, Y[36] = Ie, Y[37] = ue?.toolUseId, Y[38] = R, Y[39] = je, Y[40] = G, Y[41] = v, Y[42] = k, Y[43] = lo, Y[44] = U, Y[45] = H, Y[46] = g, Y[47] = M, Y[48] = Ke, Y[49] = Ve, Y[50] = To, Y[51] = mo, Y[52] = He, Y[53] = Xe, Y[54] = co, Y[55] = Mo, Y[56] = vo, Y[57] = xo, Y[58] = kt, Y[59] = jo, Y[60] = et, Y[61] = jt, Y[62] = Po, Y[63] = ns, Y[64] = Co, Y[65] = st, Y[66] = so, Y[67] = rt, Y[68] = ro
+  } else Ke = Y[48], Ve = Y[49], To = Y[50], mo = Y[51], He = Y[52], Xe = Y[53], co = Y[54], Mo = Y[55], vo = Y[56], xo = Y[57], kt = Y[58], jo = Y[59], et = Y[60], jt = Y[61], Po = Y[62], ns = Y[63], Co = Y[64], st = Y[65], so = Y[66], rt = Y[67], ro = Y[68];
+  if (so !== yn) return so;
+  let $e;
+  if (Y[172] !== Ke || Y[173] !== co || Y[174] !== Mo || Y[175] !== vo || Y[176] !== xo || Y[177] !== kt || Y[178] !== jo || Y[179] !== rt) $e = r(Ke, {
+    flexDirection: rt,
+    flexWrap: co,
+    minWidth: Mo,
+    children: [vo, xo, kt, jo]
+  }), Y[172] = Ke, Y[173] = co, Y[174] = Mo, Y[175] = vo, Y[176] = xo, Y[177] = kt, Y[178] = jo, Y[179] = rt, Y[180] = $e;
+  else $e = Y[180];
+  let uo;
+  if (Y[181] !== le || Y[182] !== C || Y[183] !== mo || Y[184] !== He || Y[185] !== W || Y[186] !== Xe || Y[187] !== I || Y[188] !== d.id || Y[189] !== R || Y[190] !== U || Y[191] !== ro || Y[192] !== g || Y[193] !== M) uo = !He && (Xe ? e(ze, {
+    height: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: "Waiting for permission\u2026"
+    })
+  }) : mo ? _M(ro) : wi(ro, g, I, d.id, R, {
+    verbose: M,
+    inProgressToolCallCount: C,
+    isTranscriptMode: W,
+    activeAgents: le
+  }, U)), Y[181] = le, Y[182] = C, Y[183] = mo, Y[184] = He, Y[185] = W, Y[186] = Xe, Y[187] = I, Y[188] = d.id, Y[189] = R, Y[190] = U, Y[191] = ro, Y[192] = g, Y[193] = M, Y[194] = uo;
+  else uo = Y[194];
+  let yo;
+  if (Y[195] !== Ve || Y[196] !== et || Y[197] !== $e || Y[198] !== uo) yo = r(Ve, {
+    flexDirection: et,
+    children: [$e, uo]
+  }), Y[195] = Ve, Y[196] = et, Y[197] = $e, Y[198] = uo, Y[199] = yo;
+  else yo = Y[199];
+  let _a;
+  if (Y[200] !== To || Y[201] !== jt || Y[202] !== Po || Y[203] !== ns || Y[204] !== Co || Y[205] !== st || Y[206] !== yo) _a = e(To, {
+    ref: jt,
+    flexDirection: Po,
+    justifyContent: ns,
+    marginTop: Co,
+    width: st,
+    children: yo
+  }), Y[200] = To, Y[201] = jt, Y[202] = Po, Y[203] = ns, Y[204] = Co, Y[205] = st, Y[206] = yo, Y[207] = _a;
+  else _a = Y[207];
+  return _a
+}
+
+function _i(m) {
+  let b = w(46),
+    {
+      addMargin: d,
+      call: p,
+      verbose: g
+    } = m,
+    [h] = br(),
+    {
+      tool: M
+    } = p,
+    R, v, k, C, I, W, j, U, H, D, G;
+  if (b[0] !== d || b[1] !== p.input || b[2] !== p.status || b[3] !== h || b[4] !== M || b[5] !== g) {
+    let K = fb(M, p.input);
+    let Y = K.success ? K.data : void 0;
+    C = Y === void 0 ? null : Ci(M, Y, {
+      theme: h,
+      verbose: g
+    });
+    k = s;
+    D = "column";
+    G = d ? 1 : 0;
+    v = s;
+    j = "row";
+    U = "nowrap";
+    const ee = p.status !== "completed";
+    if (b[17] !== ee) H = e(bo, {
+      shouldAnimate: !1,
+      isUnresolved: !1,
+      isError: ee
+    }), b[17] = ee, b[18] = H;
+    else H = b[18];
+    R = n;
+    I = !0;
+    W = M.userFacingName(Y);
+    b[0] = d, b[1] = p.input, b[2] = p.status, b[3] = h, b[4] = M, b[5] = g, b[6] = R, b[7] = v, b[8] = k, b[9] = C, b[10] = I, b[11] = W, b[12] = j, b[13] = U, b[14] = H, b[15] = D, b[16] = G
+  } else R = b[6], v = b[7], k = b[8], C = b[9], I = b[10], W = b[11], j = b[12], U = b[13], H = b[14], D = b[15], G = b[16];
+  let ee;
+  if (b[19] !== R || b[20] !== I || b[21] !== W) ee = e(R, {
+    bold: I,
+    children: W
+  }), b[19] = R, b[20] = I, b[21] = W, b[22] = ee;
+  else ee = b[22];
+  let z;
+  if (b[23] !== C) z = C !== null && C !== "" && r(n, {
+    children: ["(", C, ")"]
+  }), b[23] = C, b[24] = z;
+  else z = b[24];
+  let se;
+  if (b[25] !== v || b[26] !== j || b[27] !== U || b[28] !== H || b[29] !== ee || b[30] !== z) se = r(v, {
+    flexDirection: j,
+    flexWrap: U,
+    children: [H, ee, z]
+  }), b[25] = v, b[26] = j, b[27] = U, b[28] = H, b[29] = ee, b[30] = z, b[31] = se;
+  else se = b[31];
+  let X;
+  if (b[32] !== p.data || b[33] !== p.input || b[34] !== p.status || b[35] !== p.text || b[36] !== h || b[37] !== M || b[38] !== g) X = p.status === "completed" ? Cg(M, "renderToolResultMessage")?.(p.data, [], {
+    theme: h,
+    tools: [],
+    verbose: g,
+    input: p.input
+  }) ?? null : p.status === "stopped" ? e(rh, {}) : e(Rm, {
+    result: p.text,
+    verbose: g
+  }), b[32] = p.data, b[33] = p.input, b[34] = p.status, b[35] = p.text, b[36] = h, b[37] = M, b[38] = g, b[39] = X;
+  else X = b[39];
+  let de;
+  if (b[40] !== k || b[41] !== se || b[42] !== X || b[43] !== D || b[44] !== G) de = r(k, {
+    flexDirection: D,
+    marginTop: G,
+    children: [se, X]
+  }), b[40] = k, b[41] = se, b[42] = X, b[43] = D, b[44] = G, b[45] = de;
+  else de = b[45];
+  return de
+}
+
+function Ci(m, d, p) {
+  let g = v5(d);
+  if (g !== null) return g;
+  try {
+    return Mtt(m, d, p)
+  } catch (h) {
+    return l(Ye(Error(`Error rendering tool use message for ${m.name}: ${h}`), `Error rendering tool use message (mcp=${m.name.startsWith("mcp__")})`)), ""
+  }
+}
+
+function wi(m, d, p, g, h, {
+  verbose: M,
+  inProgressToolCallCount: b,
+  isTranscriptMode: R,
+  activeAgents: v
+}, k) {
+  let C = h.filter((I) => I.data.type !== "hook_progress");
+  try {
+    let I = Cg(m, "renderToolUseProgressMessage")?.(C, {
+      tools: d,
+      verbose: M,
+      terminalSize: k,
+      inProgressToolCallCount: b ?? 1,
+      isTranscriptMode: R,
+      activeAgents: v
+    }) ?? null;
+    return r(Q, {
+      children: [e(TI, {
+        children: e(gr, {
+          hookEvent: "PreToolUse",
+          lookups: p,
+          toolUseID: g,
+          isTranscriptMode: R
+        })
+      }), I]
+    })
+  } catch (I) {
+    return l(Ye(Error(`Error rendering tool use progress message for ${m.name}: ${I}`), `Error rendering tool use progress message (mcp=${m.name.startsWith("mcp__")})`)), null
+  }
+}
+
+function _M(m) {
+  try {
+    return Cg(m, "renderToolUseQueuedMessage")?.()
+  } catch (d) {
+    return l(Ye(Error(`Error rendering tool use queued message for ${m.name}: ${d}`), `Error rendering tool use queued message (mcp=${m.name.startsWith("mcp__")})`)), null
+  }
+}
+var DV = f(() => YO([St({
+  file_path: ge().min(1)
+}), St({
+  notebook_path: ge().min(1)
+})]));
+B();
+import {
+  basename as tR,
+  sep as rR
+} from "path";
+
+function vi(m) {
+  let g = w(15),
+    {
+      why: d,
+      path: p
+    } = m,
+    h;
+  if (g[0] !== p || g[1] !== d) h = _Se.withheldLine(d, p), g[0] = p, g[1] = d, g[2] = h;
+  else h = g[2];
+  let M = h,
+    b;
+  if (g[3] !== M.lead) b = e(n, {
+    children: M.lead
+  }), g[3] = M.lead, g[4] = b;
+  else b = g[4];
+  let R;
+  if (g[5] !== M.mark) R = e(s, {
+    flexShrink: 0,
+    marginRight: 1,
+    children: e(n, {
+      children: M.mark
+    })
+  }), g[5] = M.mark, g[6] = R;
+  else R = g[6];
+  let v;
+  if (g[7] !== M.path) v = e(n, {
+    bold: !0,
+    wrap: "truncate-start",
+    children: M.path
+  }), g[7] = M.path, g[8] = v;
+  else v = g[8];
+  let k;
+  if (g[9] !== R || g[10] !== v) k = r(s, {
+    flexDirection: "row",
+    children: [R, v]
+  }), g[9] = R, g[10] = v, g[11] = k;
+  else k = g[11];
+  let C;
+  if (g[12] !== b || g[13] !== k) C = r(s, {
+    flexDirection: "column",
+    flexShrink: 1,
+    children: [b, k]
+  }), g[12] = b, g[13] = k, g[14] = C;
+  else C = g[14];
+  return C
+}
+
+function gE(v, k) {
+  return e(ze, {
+    children: e(vi, {
+      why: v.why,
+      path: v.displayPath
+    })
+  }, `${k} ${v.path}`)
+}
+
+function Pi(m) {
+  let d = w(10),
+    p, g, h, M;
+  if (d[0] !== m.entries) {
+    let b = _Se.withheldShown(m.entries);
+    p = s;
+    g = "column";
+    h = b.shown.map(gE);
+    M = b.more > 0 && e(ze, {
+      children: e(n, {
+        dimColor: !0,
+        children: _Se.withheldMore(b)
+      })
+    });
+    d[0] = m.entries, d[1] = p, d[2] = g, d[3] = h, d[4] = M
+  } else p = d[1], g = d[2], h = d[3], M = d[4];
+  let R;
+  if (d[5] !== p || d[6] !== g || d[7] !== h || d[8] !== M) R = r(p, {
+    flexDirection: g,
+    children: [h, M]
+  }), d[5] = p, d[6] = g, d[7] = h, d[8] = M, d[9] = R;
+  else R = d[9];
+  return R
+}
+
+function In() {
+  if (we()) return !1;
+  return E("tengu_coordinator_panel", !0)
+}
+
+function i8() {
+  return hE() && sd()
+}
+
+function qQ() {
+  return Sk(i8)
+}
+B();
+import {
+  relative as vM
+} from "path";
+
+function xE(U, H) {
+  return U + H.diagnostics.length
+}
+
+function CE(D, G) {
+  return e(ze, {
+    children: r(n, {
+      dimColor: !0,
+      wrap: "wrap",
+      children: ["  ", vmr(D.severity), " [Line ", D.range.start.line + 1, ":", D.range.start.character + 1, "] ", D.message, D.code ? ` [${D.code}]` : "", D.source ? ` (${D.source})` : ""]
+    })
+  }, G)
+}
+
+function wE(K, Y) {
+  return r(Kd, {
+    children: [e(ze, {
+      children: r(n, {
+        dimColor: !0,
+        wrap: "wrap",
+        children: [e(n, {
+          bold: !0,
+          children: vM(ce(), K.uri.replace("file://", "").replace("_claude_fs_right:", ""))
+        }), " ", e(n, {
+          dimColor: !0,
+          children: K.uri.startsWith("file://") ? "(file://)" : K.uri.startsWith("_claude_fs_right:") ? "(claude_fs_right)" : `(${nt(K.uri,":")})`
+        }), ":"]
+      })
+    }), K.diagnostics.map(CE)]
+  }, Y)
+}
+
+function Ui(m) {
+  let h = w(11),
+    {
+      attachment: d,
+      verbose: p,
+      isTranscriptMode: g
+    } = m,
+    M;
+  if (h[0] !== d.files || h[1] !== g || h[2] !== p) {
+    M = yn;
+    R: {
+      let b = g0n(d.files);
+      if (b.length === 0) {
+        M = null;
+        break R
+      }
+      let v = b.reduce(xE, 0);
+      let k = b.length;
+      if (p || g) {
+        M = e(s, {
+          flexDirection: "column",
+          children: b.map(wE)
+        });
+        break R
+      } else {
+        let C;
+        if (h[4] !== v) C = e(n, {
+          bold: !0,
+          children: v
+        }), h[4] = v, h[5] = C;
+        else C = h[5];
+        const I = v === 1 ? "issue" : "issues";
+        const W = k === 1 ? "file" : "files";
+        let j;
+        if (h[6] !== k || h[7] !== C || h[8] !== I || h[9] !== W) j = e(ze, {
+          children: r(n, {
+            dimColor: !0,
+            wrap: "wrap",
+            children: ["Found ", C, " new diagnostic", " ", I, " in ", k, " ", W, " (ctrl+o to expand)"]
+          })
+        }), h[6] = k, h[7] = C, h[8] = I, h[9] = W, h[10] = j;
+        else j = h[10];
+        M = j;
+        break R
+      }
+    }
+    h[0] = d.files, h[1] = g, h[2] = p, h[3] = M
+  } else M = h[3];
+  if (M !== yn) return M
+}
+
+function zu(m) {
+  let M = w(12),
+    {
+      request: d,
+      senderName: p,
+      replyInstructions: g
+    } = m,
+    h = p || fw,
+    b;
+  if (M[0] !== d.reason) b = yG(d.reason, vH), M[0] = d.reason, M[1] = b;
+  else b = M[1];
+  let R = b;
+  const v = `Shutdown request from ${h}`;
+  let k;
+  if (M[2] !== R) k = R && r(n, {
+    children: ["Reason: ", R]
+  }), M[2] = R, M[3] = k;
+  else k = M[3];
+  let C;
+  if (M[4] !== v || M[5] !== k) C = e(Tp, {
+    color: "warning",
+    title: v,
+    children: k
+  }), M[4] = v, M[5] = k, M[6] = C;
+  else C = M[6];
+  let I;
+  if (M[7] !== g) I = g && e(n, {
+    dimColor: !0,
+    children: g
+  }), M[7] = g, M[8] = I;
+  else I = M[8];
+  let W;
+  if (M[9] !== C || M[10] !== I) W = r(s, {
+    flexDirection: "column",
+    marginY: 1,
+    children: [C, I]
+  }), M[9] = C, M[10] = I, M[11] = W;
+  else W = M[11];
+  return W
+}
+
+function AM(m) {
+  let h = w(8),
+    {
+      response: d,
+      senderName: p
+    } = m,
+    g = p || fw,
+    M;
+  if (h[0] !== d.reason) M = yG(d.reason, vH), h[0] = d.reason, h[1] = M;
+  else M = h[1];
+  let b = M;
+  const R = `Shutdown rejected by ${g}`;
+  let v;
+  if (h[2] !== b) v = e(Ol, {
+    children: r(n, {
+      children: ["Reason: ", b]
+    })
+  }), h[2] = b, h[3] = v;
+  else v = h[3];
+  let k;
+  if (h[4] === S) k = e(n, {
+    dimColor: !0,
+    children: "Teammate is continuing to work. You may request shutdown again later."
+  }), h[4] = k;
+  else k = h[4];
+  let C;
+  if (h[5] !== R || h[6] !== v) C = e(s, {
+    flexDirection: "column",
+    marginY: 1,
+    children: r(Tp, {
+      color: "subtle",
+      title: R,
+      children: [v, k]
+    })
+  }), h[5] = R, h[6] = v, h[7] = C;
+  else C = h[7];
+  return C
+}
+
+function DM(m, d) {
+  let p = m.indexOf(`
+
+`),
+    g = p === -1 ? m : m.slice(0, p),
+    h = lO(MRr(), g);
+  if (h && g === m) return e(zu, {
+    request: h,
+    senderName: d
+  });
+  if (h && lX(g, d) === g && bDt(g, d) === m) return e(zu, {
+    request: h,
+    senderName: d,
+    replyInstructions: m.slice(p + 2)
+  });
+  if (lO(hDt(), m)) return null;
+  let M = lO(wko(), m);
+  if (M) return e(AM, {
+    response: M,
+    senderName: d
+  });
+  return null
+}
+
+function OM(m) {
+  let g = w(16),
+    {
+      assignment: d,
+      senderName: p
+    } = m,
+    h;
+  if (g[0] !== d.taskId) h = Hg(d.taskId, Nv), g[0] = d.taskId, g[1] = h;
+  else h = g[1];
+  let M = h;
+  const b = p || fw;
+  let R;
+  if (g[2] !== b) R = Hg(b, Nv), g[2] = b, g[3] = R;
+  else R = g[3];
+  let v = R,
+    k;
+  if (g[4] !== d.subject) k = Hg(d.subject, vH), g[4] = d.subject, g[5] = k;
+  else k = g[5];
+  let C = k,
+    I;
+  if (g[6] !== d.description) I = yG(d.description, cK), g[6] = d.description, g[7] = I;
+  else I = g[7];
+  let W = I;
+  const j = `Task #${M} assigned by ${v}`;
+  let U;
+  if (g[8] !== C) U = C && e(n, {
+    bold: !0,
+    children: C
+  }), g[8] = C, g[9] = U;
+  else U = g[9];
+  let H;
+  if (g[10] !== W) H = W && e(n, {
+    dimColor: !0,
+    children: W
+  }), g[10] = W, g[11] = H;
+  else H = g[11];
+  let D;
+  if (g[12] !== j || g[13] !== U || g[14] !== H) D = e(s, {
+    flexDirection: "column",
+    marginY: 1,
+    children: r(Tp, {
+      color: "cyan_FOR_SUBAGENTS_ONLY",
+      title: j,
+      children: [U, H]
+    })
+  }), g[12] = j, g[13] = U, g[14] = H, g[15] = D;
+  else D = g[15];
+  return D
+}
+
+function BM(m, d) {
+  let p = Tko(m);
+  if (p) return e(OM, {
+    assignment: p,
+    senderName: d
+  });
+  return null
+}
+
+function HM(m) {
+  let h = w(12),
+    {
+      request: d,
+      senderName: p
+    } = m,
+    g = p || fw,
+    M;
+  if (h[0] !== d.planFilePath) M = Hg(d.planFilePath, Nv), h[0] = d.planFilePath, h[1] = M;
+  else M = h[1];
+  let b = M,
+    R;
+  if (h[2] !== d.planContent) R = yG(d.planContent, zWn), h[2] = d.planContent, h[3] = R;
+  else R = h[3];
+  let v = R;
+  const k = `Plan Approval Request from ${g}`;
+  let C;
+  if (h[4] !== v) C = e(Ol, {
+    children: e(Va, {
+      stripPromptTags: !1,
+      children: v
+    })
+  }), h[4] = v, h[5] = C;
+  else C = h[5];
+  let I;
+  if (h[6] !== b) I = r(n, {
+    dimColor: !0,
+    children: ["Plan file: ", b]
+  }), h[6] = b, h[7] = I;
+  else I = h[7];
+  let W;
+  if (h[8] !== k || h[9] !== C || h[10] !== I) W = e(s, {
+    flexDirection: "column",
+    marginY: 1,
+    children: r(Tp, {
+      color: "planMode",
+      title: k,
+      children: [C, I]
+    })
+  }), h[8] = k, h[9] = C, h[10] = I, h[11] = W;
+  else W = h[11];
+  return W
+}
+
+function $M(m) {
+  let g = w(20),
+    {
+      response: d,
+      senderName: p
+    } = m,
+    h;
+  if (g[0] !== d.feedback) h = yG(d.feedback, cK), g[0] = d.feedback, g[1] = h;
+  else h = g[1];
+  let M = h,
+    b = p || fw;
+  if (d.approved) {
+    let R;
+    if (g[2] === S) R = e(n, {
+      "aria-hidden": !0,
+      children: "\u2713 "
+    }), g[2] = R;
+    else R = g[2];
+    let v;
+    if (g[3] !== b) v = r(n, {
+      children: [R, "Plan Approved by ", b]
+    }), g[3] = b, g[4] = v;
+    else v = g[4];
+    let k;
+    if (g[5] !== M) k = M && e(Ol, {
+      children: r(n, {
+        children: ["Feedback: ", M]
+      })
+    }), g[5] = M, g[6] = k;
+    else k = g[6];
+    let C;
+    if (g[7] === S) C = e(n, {
+      children: "You can now proceed with implementation. Your plan mode restrictions have been lifted."
+    }), g[7] = C;
+    else C = g[7];
+    let I;
+    if (g[8] !== v || g[9] !== k) I = e(s, {
+      flexDirection: "column",
+      marginY: 1,
+      children: r(Tp, {
+        color: "success",
+        title: v,
+        children: [k, C]
+      })
+    }), g[8] = v, g[9] = k, g[10] = I;
+    else I = g[10];
+    return I
+  }
+  let R;
+  if (g[11] === S) R = e(n, {
+    "aria-hidden": !0,
+    children: "\u2717 "
+  }), g[11] = R;
+  else R = g[11];
+  let v;
+  if (g[12] !== b) v = r(n, {
+    children: [R, "Plan Rejected by ", b]
+  }), g[12] = b, g[13] = v;
+  else v = g[13];
+  let k;
+  if (g[14] !== M) k = M && e(Ol, {
+    children: r(n, {
+      children: ["Feedback: ", M]
+    })
+  }), g[14] = M, g[15] = k;
+  else k = g[15];
+  let C;
+  if (g[16] === S) C = e(n, {
+    dimColor: !0,
+    children: "Please revise your plan based on the feedback and call ExitPlanMode again."
+  }), g[16] = C;
+  else C = g[16];
+  let I;
+  if (g[17] !== v || g[18] !== k) I = e(s, {
+    flexDirection: "column",
+    marginY: 1,
+    children: r(Tp, {
+      color: "error",
+      title: v,
+      children: [k, C]
+    })
+  }), g[17] = v, g[18] = k, g[19] = I;
+  else I = g[19];
+  return I
+}
+
+function GM(m, d) {
+  let p = lO(ORr(), m);
+  if (p) return e(HM, {
+    request: p,
+    senderName: d
+  });
+  let g = lO(IRr(), m);
+  if (g) return e($M, {
+    response: g,
+    senderName: d
+  });
+  return null
+}
+
+function qM(m, d) {
+  let p = lO(DRr(), m);
+  if (!p) return null;
+  let g = yG(p.message, cK);
+  if (!g.trim()) return null;
+  return e(s, {
+    flexDirection: "column",
+    marginY: 1,
+    children: e(Tp, {
+      color: "subtle",
+      title: `Teammate terminated (from ${d||fw})`,
+      children: e(n, {
+        wrap: "wrap",
+        children: g
+      })
+    })
+  })
+}
+
+function hr(m, d) {
+  return GM(m, d) ?? DM(m, d) ?? BM(m, d) ?? qM(m, d)
+}
+
+function Os(m) {
+  let b = w(18),
+    {
+      displayName: d,
+      inkColor: p,
+      summary: g,
+      taskId: h,
+      taskSubject: M
+    } = m,
+    R;
+  if (b[0] === S) R = e(n, {
+    "aria-hidden": !0,
+    children: te.pointer
+  }), b[0] = R;
+  else R = b[0];
+  let v;
+  if (b[1] !== d || b[2] !== p) v = r(n, {
+    color: p,
+    children: ["@ ", d, R]
+  }), b[1] = d, b[2] = p, b[3] = v;
+  else v = b[3];
+  let k;
+  if (b[4] !== g) k = g.trim() && r(n, {
+    children: [" ", g]
+  }), b[4] = g, b[5] = k;
+  else k = b[5];
+  let C;
+  if (b[6] !== v || b[7] !== k) C = r(s, {
+    children: [v, k]
+  }), b[6] = v, b[7] = k, b[8] = C;
+  else C = b[8];
+  let I;
+  if (b[9] === S) I = e(ft, {
+    status: "success"
+  }), b[9] = I;
+  else I = b[9];
+  let W;
+  if (b[10] !== M) W = M && r(n, {
+    dimColor: !0,
+    children: [" (", M, ")"]
+  }), b[10] = M, b[11] = W;
+  else W = b[11];
+  let j;
+  if (b[12] !== W || b[13] !== h) j = r(ze, {
+    children: [I, r(n, {
+      children: [" ", "Completed task #", h, W]
+    })]
+  }), b[12] = W, b[13] = h, b[14] = j;
+  else j = b[14];
+  let U;
+  if (b[15] !== C || b[16] !== j) U = r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [C, j]
+  }), b[15] = C, b[16] = j, b[17] = U;
+  else U = b[17];
+  return U
+}
+
+function Bs(m) {
+  let k = w(15),
+    {
+      imageId: d,
+      addMargin: p,
+      startsUserTurn: g
+    } = m,
+    M = Fo((h) => d !== void 0 ? h.storedImagePaths.get(d) ?? null : null) ?? null,
+    R = Fo((b) => d !== void 0 ? b.imageDescriptions.get(d) ?? null : null) ?? null,
+    v = d ? `[Image #${d}]` : "[Image]",
+    C;
+  if (k[0] !== M) C = M && Ev() ? J0(M) : null, k[0] = M, k[1] = C;
+  else C = k[1];
+  let I = C,
+    W;
+  if (k[2] !== I || k[3] !== v) W = I ? e(zt, {
+    url: I,
+    children: e(n, {
+      children: v
+    })
+  }) : e(n, {
+    children: v
+  }), k[2] = I, k[3] = v, k[4] = W;
+  else W = k[4];
+  let j = W,
+    U;
+  if (k[5] !== R) U = R ? r(n, {
+    dimColor: !0,
+    children: [" ", R]
+  }) : null, k[5] = R, k[6] = U;
+  else U = k[6];
+  let H;
+  if (k[7] !== j || k[8] !== U) H = r(n, {
+    children: [j, U]
+  }), k[7] = j, k[8] = U, k[9] = H;
+  else H = k[9];
+  let D = H;
+  if (g ?? p) {
+    const G = p ? 1 : 0;
+    let K;
+    if (k[10] !== D || k[11] !== G) K = e(s, {
+      marginTop: G,
+      children: D
+    }), k[10] = D, k[11] = G, k[12] = K;
+    else K = k[12];
+    return K
+  }
+  let G;
+  if (k[13] !== D) G = e(ze, {
+    children: D
+  }), k[13] = D, k[14] = G;
+  else G = k[14];
+  return G
+}
+B();
+B();
+
+function PU(C) {
+  return C.agentNameRegistry
+}
+
+function EU(j, U) {
+  return j.kind === "panel" ? j.node : e(Lre, {
+    displayName: j.senderName,
+    qualifier: j.isUnverified ? Cr : void 0,
+    count: j.count,
+    fallbackLabel: "teammate"
+  }, U)
+}
+var Cr = "unverified";
+
+function Fn(m) {
+  return `${m} (${Cr})`
+}
+var Ju = `</${qW}>`;
+
+function up(m) {
+  for (let h of qNt)
+    if (m.endsWith(h)) {
+      m = m.slice(0, -h.length);
+      break
+    } for (let h of Sme)
+    if (m.startsWith(h) && m.startsWith(`<${qW} `, h.length)) {
+      m = m.slice(h.length);
+      break
+    } let d = new RegExp(`<${qW}\\s+teammate_id="([^"]+)"(?:\\s+color="([^"]+)")?(?:\\s+summary="([^"]+)")?(?:\\s+verified="(false)")?>\\n?`, "y"),
+    p = [],
+    g = 0;
+  while (g < m.length) {
+    d.lastIndex = g;
+    let h = d.exec(m);
+    if (!h) return {
+      messages: p,
+      unparsed: m.slice(g)
+    };
+    let M = g + h[0].length,
+      b = -1,
+      R = m.length;
+    for (let k = m.indexOf(Ju, M); k !== -1; k = m.indexOf(Ju, k + 1)) {
+      let C = k + Ju.length;
+      while (C < m.length && /\s/.test(m.charAt(C))) C++;
+      if (d.lastIndex = C, C === m.length || d.test(m)) {
+        b = k, R = C;
+        break
+      }
+    }
+    if (b === -1) b = m.length;
+    let v = m.slice(M, b).trim();
+    p.push({
+      teammateId: jge(h[1] ?? ""),
+      color: h[2] ? jge(h[2]) : void 0,
+      summary: h[3] ? jge(h[3]) : void 0,
+      content: v,
+      ...h[4] === "false" && {
+        isVerified: !1
+      }
+    }), g = R
+  }
+  return {
+    messages: p,
+    unparsed: ""
+  }
+}
+
+function pp() {
+  let p = w(7),
+    m = V(PU),
+    d = Ar(),
+    g;
+  if (p[0] !== m || p[1] !== d) {
+    g = new Map;
+    let h;
+    if (p[3] !== d) h = Object.values(d.getState().tasks), p[3] = d, p[4] = h;
+    else h = p[4];
+    for (const M of h) {
+      if (M.type === "in_process_teammate") g.set(M.id, M.identity.agentName);
+      else if (M.type === "local_agent") g.set(M.id, M.agentType)
+    }
+    for (const [b, R] of m) g.set(R, b);
+    p[0] = m, p[1] = d, p[2] = g
+  } else g = p[2];
+  let v = g,
+    h;
+  if (p[5] !== v) h = (k) => k === "leader" ? "leader" : v.get(k) ?? k, p[5] = v, p[6] = h;
+  else h = p[6];
+  return h
+}
+
+function jn(m) {
+  let d = [];
+  for (let p of m) {
+    if (p.kind === "panel") {
+      d.push(p);
+      continue
+    }
+    let g = d.at(-1);
+    if (g && g.kind === "coalesced" && g.displayName === p.displayName) g.count++;
+    else d.push({
+      kind: "coalesced",
+      displayName: p.displayName,
+      senderName: p.senderName,
+      isUnverified: p.isUnverified,
+      count: 1
+    })
+  }
+  return d
+}
+
+function cp(m) {
+  return m.filter((d) => {
+    if (d.summary?.trim()) return !0;
+    if (d.isVerified === !1) return !0;
+    if (lO(hDt(), d.content)) return !1;
+    return !0
+  })
+}
+
+function xy(m) {
+  let {
+    messages: d,
+    unparsed: p
+  } = up(m);
+  return cp(d).length === 0 && !p.trim()
+}
+
+function sy(m, d) {
+  if (d) return m;
+  let p = jie(m);
+  return p === m.trim() ? p : `${p}\u2026`
+}
+
+function Gi(m) {
+  let d = w(12),
+    p, g;
+  if (d[0] !== m.param.text) {
+    let {
+      messages: h,
+      unparsed: M
+    } = up(m.param.text);
+    p = cp(h);
+    g = M.trim();
+    d[0] = m.param.text, d[1] = p, d[2] = g
+  } else p = d[1], g = d[2];
+  let b = g;
+  if (p.length === 0 && !b) {
+    return null
+  }
+  let R;
+  if (d[3] !== p || d[4] !== m.addMargin || d[5] !== m.followsSpeakerLabel || d[6] !== m.isTranscriptMode || d[7] !== m.messageId || d[8] !== m.origin || d[9] !== m.verbose || d[10] !== b) R = e(gp, {
+    addMargin: m.addMargin,
+    verbose: m.verbose,
+    isTranscriptMode: m.isTranscriptMode,
+    messageId: m.messageId,
+    origin: m.origin,
+    followsSpeakerLabel: m.followsSpeakerLabel,
+    messages: p,
+    unparsedTrimmed: b
+  }), d[3] = p, d[4] = m.addMargin, d[5] = m.followsSpeakerLabel, d[6] = m.isTranscriptMode, d[7] = m.messageId, d[8] = m.origin, d[9] = m.verbose, d[10] = b, d[11] = R;
+  else R = d[11];
+  return R
+}
+
+function gp(m) {
+  let j = w(30),
+    {
+      addMargin: d,
+      verbose: p,
+      isTranscriptMode: g,
+      messageId: h,
+      origin: M,
+      followsSpeakerLabel: b,
+      messages: R,
+      unparsedTrimmed: v
+    } = m,
+    k = b === void 0 ? !1 : b,
+    C = pp(),
+    I = M$(p, g),
+    W = I || k,
+    U, H, D, G;
+  if (j[0] !== C || j[1] !== k || j[2] !== R || j[3] !== I || j[4] !== v) {
+    let K;
+    if (j[9] !== C) K = (Y) => Hg(C(Y.teammateId), Nv) || fw, j[9] = C, j[10] = K;
+    else K = j[10];
+    let ee = R.map(K);
+    let de = R.map((z, se) => {
+      let X = ee[se] ?? fw;
+      return z.isVerified === !1 ? Fn(X) : X
+    });
+    let fe;
+    if (j[11] !== I) fe = (oe) => oe.summary ? sy(oe.summary, I) : "", j[11] = I, j[12] = fe;
+    else fe = j[12];
+    let ue = R.map(fe);
+    U = R.map((le, ke) => [ue[ke]?.trim() ? ue[ke] : "", lX(le.content, le.teammateId)].filter(Boolean).join(`
+`)).concat(v).filter(Boolean).join(`
+
+`);
+    let [pe] = de;
+    D = pe !== void 0 && de.every((re) => re === pe) ? pe : void 0;
+    H = R.map((ye, me) => {
+      let ve = EI(ye.color);
+      let be = de[me] ?? fw;
+      let Ce = ue[me] ?? "";
+      let qe = Ce.trim() ? r(s, {
+        children: [r(n, {
+          color: ve,
+          children: ["@ ", be, e(n, {
+            "aria-hidden": !0,
+            children: te.pointer
+          })]
+        }), r(n, {
+          children: [" ", Ce]
+        })]
+      }) : null;
+      let Ue = ye.isVerified === !1 ? null : hr(ye.content, be);
+      if (Ue) {
+        return {
+          kind: "panel",
+          node: r(Kd, {
+            children: [qe, Ue]
+          }, me)
+        }
+      }
+      let Ie = ye.isVerified === !1 ? null : lO(Ffe(), ye.content);
+      if (Ie && !ye.summary) {
+        return {
+          kind: "panel",
+          node: e(_r, {
+            displayName: be,
+            inkColor: ve,
+            idleReason: Ie.idleReason,
+            failureReason: Ie.failureReason,
+            summary: Ie.summary,
+            completedTaskId: Ie.completedTaskId,
+            result: Ie.result,
+            expanded: I
+          }, me)
+        }
+      }
+      let xe = ye.isVerified === !1 ? null : lO(yDt(), ye.content);
+      if (xe) {
+        let De = Hg(xe.taskId, Nv);
+        let je = xe.taskSubject ? Hg(xe.taskSubject, vH) : "";
+        return {
+          kind: "panel",
+          node: e(Os, {
+            displayName: be,
+            inkColor: ve,
+            summary: Ce,
+            taskId: De,
+            taskSubject: je
+          }, me)
+        }
+      }
+      return {
+        kind: "text",
+        displayName: be,
+        senderName: ee[me] ?? fw,
+        isUnverified: ye.isVerified === !1,
+        inkColor: ve,
+        content: lX(ye.content, ye.teammateId),
+        summary: k ? Ce : ye.summary
+      }
+    });
+    G = H.length === 1 && H[0]?.kind === "text" && !v && !ue[0]?.trim();
+    j[0] = C, j[1] = k, j[2] = R, j[3] = I, j[4] = v, j[5] = U, j[6] = H, j[7] = D, j[8] = G
+  } else U = j[5], H = j[6], D = j[7], G = j[8];
+  let lo = G,
+    K;
+  if (j[13] !== D) K = D !== void 0 && {
+    sender: {
+      name: D
+    }
+  }, j[13] = D, j[14] = K;
+  else K = j[14];
+  let fe;
+  if (j[15] !== d || j[16] !== U || j[17] !== W || j[18] !== lo || j[19] !== H || j[20] !== k || j[21] !== v) fe = (Ke) => e(fp, {
+    items: Ke !== U && lo ? H.map((Ve) => Ve.kind === "text" ? {
+      ...Ve,
+      content: Ke
+    } : Ve) : H,
+    unparsedTrimmed: Ke !== U && H.length === 0 ? Ke : v,
+    expanded: W,
+    labelView: k,
+    addMargin: d && !k
+  }), j[15] = d, j[16] = U, j[17] = W, j[18] = lo, j[19] = H, j[20] = k, j[21] = v, j[22] = fe;
+  else fe = j[22];
+  let To;
+  if (j[23] !== U || j[24] !== W || j[25] !== h || j[26] !== M || j[27] !== K || j[28] !== fe) To = {
+    messageId: h,
+    stored: M,
+    text: U,
+    isExpanded: W,
+    ...K,
+    draw: fe
+  }, j[23] = U, j[24] = W, j[25] = h, j[26] = M, j[27] = K, j[28] = fe, j[29] = To;
+  else To = j[29];
+  return aY.useUserMessageSite(To)
+}
+
+function fp(m) {
+  let R = w(11),
+    {
+      items: d,
+      unparsedTrimmed: p,
+      expanded: g,
+      labelView: h,
+      addMargin: M
+    } = m;
+  const b = M ? 1 : 0;
+  let v;
+  if (R[0] !== g || R[1] !== d || R[2] !== h) v = g ? d.map((k, C) => k.kind === "panel" ? k.node : e(Sr, {
+    displayName: k.displayName,
+    inkColor: k.inkColor,
+    content: k.content,
+    summary: k.summary,
+    labelView: h,
+    headerless: h && C === 0
+  }, C)) : jn(d).map(EU), R[0] = g, R[1] = d, R[2] = h, R[3] = v;
+  else v = R[3];
+  let I;
+  if (R[4] !== h || R[5] !== p) I = p && (h ? e(wP, {
+    text: p
+  }) : e(s, {
+    children: e(n, {
+      children: p
+    })
+  })), R[4] = h, R[5] = p, R[6] = I;
+  else I = R[6];
+  let W;
+  if (R[7] !== b || R[8] !== v || R[9] !== I) W = r(s, {
+    flexDirection: "column",
+    marginTop: b,
+    width: "100%",
+    children: [v, I]
+  }), R[7] = b, R[8] = v, R[9] = I, R[10] = W;
+  else W = R[10];
+  return W
+}
+
+function Sr(m) {
+  let k = w(23),
+    {
+      displayName: d,
+      inkColor: p,
+      content: g,
+      summary: h,
+      labelView: M,
+      headerless: b
+    } = m,
+    R = M === void 0 ? !1 : M,
+    v = b === void 0 ? !1 : b,
+    C;
+  if (k[0] !== g || k[1] !== R) C = R ? e(wP, {
+    text: g
+  }) : e(Va, {
+    stripPromptTags: !1,
+    children: g
+  }), k[0] = g, k[1] = R, k[2] = C;
+  else C = k[2];
+  let I = C;
+  if (v) {
+    let W;
+    if (k[3] !== h) W = h && e(n, {
+      children: h
+    }), k[3] = h, k[4] = W;
+    else W = k[4];
+    const j = g && I;
+    let U;
+    if (k[5] !== W || k[6] !== j) U = r(s, {
+      flexDirection: "column",
+      paddingLeft: 2,
+      children: [W, j]
+    }), k[5] = W, k[6] = j, k[7] = U;
+    else U = k[7];
+    return U
+  }
+  let W;
+  if (k[8] === S) W = e(n, {
+    "aria-hidden": !0,
+    children: te.pointer
+  }), k[8] = W;
+  else W = k[8];
+  let j;
+  if (k[9] !== d || k[10] !== p) j = r(n, {
+    color: p,
+    children: ["@ ", d, W]
+  }), k[9] = d, k[10] = p, k[11] = j;
+  else j = k[11];
+  let U;
+  if (k[12] !== h) U = h && r(n, {
+    children: [" ", h]
+  }), k[12] = h, k[13] = U;
+  else U = k[13];
+  let H;
+  if (k[14] !== j || k[15] !== U) H = r(s, {
+    children: [j, U]
+  }), k[14] = j, k[15] = U, k[16] = H;
+  else H = k[16];
+  let D;
+  if (k[17] !== I || k[18] !== g) D = g && e(s, {
+    paddingLeft: 2,
+    children: I
+  }), k[17] = I, k[18] = g, k[19] = D;
+  else D = k[19];
+  let G;
+  if (k[20] !== H || k[21] !== D) G = r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: [H, D]
+  }), k[20] = H, k[21] = D, k[22] = G;
+  else G = k[22];
+  return G
+}
+
+function My(m) {
+  let d = jie(m);
+  return d === m.trim() ? d : `${d}\u2026`
+}
+
+function _r(m) {
+  let I = w(39),
+    {
+      displayName: d,
+      inkColor: p,
+      idleReason: g,
+      failureReason: h,
+      summary: M,
+      completedTaskId: b,
+      result: R,
+      expanded: v
+    } = m,
+    k = g === "failed" ? "error" : g === "interrupted" ? "warning" : "success",
+    C = g === "failed" ? "failed" : g === "interrupted" ? "was interrupted" : "finished",
+    W;
+  if (I[0] !== h) W = Fnn(h), I[0] = h, I[1] = W;
+  else W = I[1];
+  let j = W,
+    U;
+  if (I[2] !== g || I[3] !== R) U = R ? GWn(R, g !== "failed") : "", I[2] = g, I[3] = R, I[4] = U;
+  else U = I[4];
+  let H = U,
+    D;
+  if (I[5] !== M) D = M ? Hg(M, vH) : "", I[5] = M, I[6] = D;
+  else D = I[6];
+  let G = D,
+    K;
+  if (I[7] !== b) K = b ? Hg(b, Nv) : "", I[7] = b, I[8] = K;
+  else K = I[8];
+  let Y = K,
+    ee;
+  if (I[9] !== H || I[10] !== v) ee = !v && H ? My(H) : "", I[9] = H, I[10] = v, I[11] = ee;
+  else ee = I[11];
+  let z = ee,
+    se;
+  if (I[12] !== k) se = e(n, {
+    "aria-hidden": !0,
+    color: k,
+    children: wo
+  }), I[12] = k, I[13] = se;
+  else se = I[13];
+  let X;
+  if (I[14] !== d || I[15] !== p) X = r(n, {
+    color: p,
+    bold: !0,
+    children: ["@", d]
+  }), I[14] = d, I[15] = p, I[16] = X;
+  else X = I[16];
+  let de;
+  if (I[17] !== j) de = j && r(n, {
+    dimColor: !0,
+    children: [": ", j]
+  }), I[17] = j, I[18] = de;
+  else de = I[18];
+  let fe;
+  if (I[19] !== Y || I[20] !== v) fe = v && Y ? r(n, {
+    dimColor: !0,
+    children: [" (task #", Y, ")"]
+  }) : null, I[19] = Y, I[20] = v, I[21] = fe;
+  else fe = I[21];
+  let oe;
+  if (I[22] !== C || I[23] !== se || I[24] !== X || I[25] !== de || I[26] !== fe) oe = r(n, {
+    children: [se, " ", "Teammate", " ", X, " ", C, de, fe]
+  }), I[22] = C, I[23] = se, I[24] = X, I[25] = de, I[26] = fe, I[27] = oe;
+  else oe = I[27];
+  let ue;
+  if (I[28] !== G || I[29] !== v) ue = v && G ? e(s, {
+    paddingLeft: 2,
+    children: r(n, {
+      dimColor: !0,
+      children: ["Last DM: ", G]
+    })
+  }) : null, I[28] = G, I[29] = v, I[30] = ue;
+  else ue = I[30];
+  let le;
+  if (I[31] !== H || I[32] !== v || I[33] !== z) le = v && H ? e(s, {
+    paddingLeft: 2,
+    children: e(Va, {
+      stripPromptTags: !1,
+      children: H
+    })
+  }) : z ? e(s, {
+    paddingLeft: 2,
+    children: e(n, {
+      dimColor: !0,
+      children: z
+    })
+  }) : null, I[31] = H, I[32] = v, I[33] = z, I[34] = le;
+  else le = I[34];
+  let ke;
+  if (I[35] !== oe || I[36] !== ue || I[37] !== le) ke = r(s, {
+    marginTop: 1,
+    flexDirection: "column",
+    children: [oe, ue, le]
+  }), I[35] = oe, I[36] = ue, I[37] = le, I[38] = ke;
+  else ke = I[38];
+  return ke
+}
+B();
+
+function qi(m) {
+  return m.startsWith(P6s())
+}
+B();
+
+function Vi(m) {
+  let b = w(15),
+    {
+      addMargin: d,
+      text: p,
+      verbose: g
+    } = m,
+    h = Ee(CV),
+    M = wR(),
+    R;
+  if (b[0] !== M) R = M ? Ok.of(M) : null, b[0] = M, b[1] = R;
+  else R = b[1];
+  let v = R,
+    k;
+  if (b[2] !== p) k = Is(p, Y2), b[2] = p, b[3] = k;
+  else k = b[3];
+  let C = k,
+    I;
+  if (b[4] !== C) I = (W) => C === null ? void 0 : W.get(C), b[4] = C, b[5] = I;
+  else I = b[5];
+  let j = Ae(v, I);
+  if (j === void 0) {
+    let U;
+    if (b[6] !== d || b[7] !== p || b[8] !== g) {
+      let H = g ? Is(p, "result") : null;
+      let D;
+      if (b[10] === S) D = e(n, {
+        dimColor: !0,
+        children: "An earlier tool call's result arrived here"
+      }), b[10] = D;
+      else D = b[10];
+      U = r(s, {
+        flexDirection: "column",
+        marginTop: d ? 1 : 0,
+        children: [D, H !== null && e(s, {
+          paddingLeft: 2,
+          children: e(n, {
+            dimColor: !0,
+            children: t1(km(H)).trim()
+          })
+        })]
+      });
+      b[6] = d, b[7] = p, b[8] = g, b[9] = U
+    } else U = b[9];
+    return U
+  }
+  if (h || j.status === "running" || j.paintedInPlace) {
+    return null
+  }
+  let U;
+  if (b[11] !== d || b[12] !== j || b[13] !== g) U = e(_i, {
+    addMargin: d,
+    call: j,
+    verbose: g
+  }), b[11] = d, b[12] = j, b[13] = g, b[14] = U;
+  else U = b[14];
+  return U
+}
+B();
+B();
+var ver = new Map,
+  kGt = qt(ver);
+var Ey = 500,
+  LU = 4000,
+  NU = 12,
+  BU = " \xB7 ";
+
+function hp(m, d) {
+  let p = kdo(m, d),
+    g = p === null ? null : Is(p, j_);
+  if (p === null || g === null || g.includes("<")) return null;
+  let h = km(g);
+  if (!h.startsWith(ujt) || !h.endsWith('"') || h.length <= ujt.length) return null;
+  let M = Is(p, Fmn);
+  if (M === null || M.includes("<")) return null;
+  let b = kH(u0(km(M))).trim(),
+    R = "";
+  for (let v of b.split(`
+`))
+    if (R = Hg(v, Ey), R !== "") break;
+  if (R === "") return null;
+  return {
+    description: Hg(h.slice(ujt.length, -1), Ey),
+    headline: R,
+    body: kH(Nl(b, LU))
+  }
+}
+
+function Mp({
+  headline: m,
+  description: d
+}, p) {
+  let g = Math.max(1, p - ie(Ubt) - 1),
+    h = mt(m, g),
+    M = g - ie(h) - ie(BU);
+  return {
+    headline: h,
+    description: d !== "" && M >= NU ? mt(d, M) : null
+  }
+}
+var Uy = 2;
+
+function Iy(m) {
+  switch (m) {
+    case "completed":
+      return "success";
+    case "failed":
+      return "error";
+    case "killed":
+      return "warning";
+    default:
+      return "text"
+  }
+}
+
+function Ay(m) {
+  let d = oSe(m);
+  return d?.status === "completed" ? d.result.content.map((p) => p.text).join(`
+`) : ""
+}
+
+function js(m) {
+  let I = w(11),
+    {
+      addMargin: d,
+      param: p,
+      taskDelivery: g,
+      messageId: h,
+      origin: M,
+      verbose: b,
+      isExpanded: R
+    } = m,
+    {
+      text: v
+    } = p,
+    k = b === void 0 ? !1 : b,
+    C = R === void 0 ? k : R,
+    W;
+  if (I[0] !== v) {
+    let j = Is(v, j_);
+    W = j === null ? null : km(j);
+    I[0] = v, I[1] = W
+  } else W = I[1];
+  let U = W;
+  if (!U) {
+    return null
+  }
+  let H;
+  if (I[2] !== d || I[3] !== C || I[4] !== h || I[5] !== M || I[6] !== U || I[7] !== g || I[8] !== v || I[9] !== k) H = e(xp, {
+    addMargin: d,
+    text: v,
+    summary: U,
+    taskDelivery: g,
+    messageId: h,
+    origin: M,
+    verbose: k,
+    isExpanded: C
+  }), I[2] = d, I[3] = C, I[4] = h, I[5] = M, I[6] = U, I[7] = g, I[8] = v, I[9] = k, I[10] = H;
+  else H = I[10];
+  return H
+}
+
+function xp(m) {
+  let k = w(49),
+    {
+      addMargin: d,
+      text: p,
+      summary: g,
+      taskDelivery: h,
+      messageId: M,
+      origin: b,
+      verbose: R,
+      isExpanded: v
+    } = m,
+    C;
+  if (k[0] !== p) C = Is(p, lS), k[0] = p, k[1] = C;
+  else C = k[1];
+  let I = C,
+    W;
+  if (k[2] !== p) W = Is(p, "duration_ms"), k[2] = p, k[3] = W;
+  else W = k[3];
+  let j = Number(W),
+    U;
+  if (k[4] !== p) U = cs(p, fL), k[4] = p, k[5] = U;
+  else U = k[5];
+  let H = U,
+    D;
+  if (k[6] !== p) D = cs(p, lS), k[6] = p, k[7] = D;
+  else D = k[7];
+  let G = D,
+    K;
+  if (k[8] !== p) K = cs(p, c0), k[8] = p, k[9] = K;
+  else K = k[9];
+  let Y = K,
+    ee;
+  if (k[10] !== p) ee = cs(p, Y2), k[10] = p, k[11] = ee;
+  else ee = k[11];
+  let z = ee,
+    se;
+  if (k[12] !== H) se = H !== void 0 && {
+    id: H
+  }, k[12] = H, k[13] = se;
+  else se = k[13];
+  let X;
+  if (k[14] !== G) X = G !== void 0 && {
+    status: G
+  }, k[14] = G, k[15] = X;
+  else X = k[15];
+  let de;
+  if (k[16] !== Y) de = Y !== void 0 && {
+    type: Y
+  }, k[16] = Y, k[17] = de;
+  else de = k[17];
+  let fe;
+  if (k[18] !== z) fe = z !== void 0 && {
+    toolUseId: z
+  }, k[18] = z, k[19] = fe;
+  else fe = k[19];
+  let oe;
+  if (k[20] !== j) oe = Number.isFinite(j) && j > 0 && {
+    durationMs: j
+  }, k[20] = j, k[21] = oe;
+  else oe = k[21];
+  let ue;
+  if (k[22] !== fe || k[23] !== oe || k[24] !== se || k[25] !== X || k[26] !== de) ue = {
+    ...se,
+    ...X,
+    ...de,
+    ...fe,
+    ...oe
+  }, k[22] = fe, k[23] = oe, k[24] = se, k[25] = X, k[26] = de, k[27] = ue;
+  else ue = k[27];
+  let le = ue,
+    ke;
+  if (k[28] !== b || k[29] !== p) ke = hp(p, b), k[28] = b, k[29] = p, k[30] = ke;
+  else ke = k[30];
+  let pe = ke,
+    re;
+  if (k[31] !== d || k[32] !== j || k[33] !== v || k[34] !== M || k[35] !== pe || k[36] !== I || k[37] !== g || k[38] !== h || k[39] !== p || k[40] !== R) re = (ye) => e(wp, {
+    addMargin: d,
+    text: p,
+    summary: ye,
+    monitorEvent: ye === g ? pe : null,
+    status: I,
+    durationMs: j,
+    taskDelivery: h,
+    messageId: M,
+    verbose: R,
+    isExpanded: v
+  }), k[31] = d, k[32] = j, k[33] = v, k[34] = M, k[35] = pe, k[36] = I, k[37] = g, k[38] = h, k[39] = p, k[40] = R, k[41] = re;
+  else re = k[41];
+  let me;
+  if (k[42] !== v || k[43] !== M || k[44] !== b || k[45] !== g || k[46] !== re || k[47] !== le) me = {
+    messageId: M,
+    stored: b,
+    text: g,
+    isExpanded: v,
+    task: le,
+    draw: re
+  }, k[42] = v, k[43] = M, k[44] = b, k[45] = g, k[46] = re, k[47] = le, k[48] = me;
+  else me = k[48];
+  return aY.useUserMessageSite(me)
+}
+
+function wp(m) {
+  let W = w(39),
+    {
+      addMargin: d,
+      summary: p,
+      monitorEvent: g,
+      status: h,
+      durationMs: M,
+      taskDelivery: b,
+      messageId: R,
+      verbose: v,
+      isExpanded: k
+    } = m,
+    C = vqr(v),
+    I = Ee(kGt).get(R) ?? 0,
+    j;
+  if (W[0] !== h) j = Iy(h), W[0] = h, W[1] = j;
+  else j = W[1];
+  let U = j,
+    H = !1 && U === "text" ? "planMode" : U,
+    D;
+  if (W[2] !== M) D = Number.isFinite(M) && M > 0 ? ` \xB7 ${rn(M)}` : null, W[2] = M, W[3] = D;
+  else D = W[3];
+  let G = D,
+    K;
+  if (W[4] !== R || W[5] !== b) K = b !== void 0 && Vn().bashTaskDeliveryOutcomes.get(R) !== "no_host", W[4] = R, W[5] = b, W[6] = K;
+  else K = W[6];
+  let Y = K,
+    ee, z;
+  if (W[7] !== Y || W[8] !== b) ee = Y ? Ay(b) : "", z = Y ? `delivered to Claude as a ${Lh} result${ee?` (${ei(ee.length)} chars)`:""}` : null, W[7] = Y, W[8] = b, W[9] = ee, W[10] = z;
+  else ee = W[9], z = W[10];
+  let se = z,
+    X = se === null ? null : ` \xB7 ${se}`;
+  if (g !== null && !k) {
+    let de;
+    if (W[11] !== d || W[12] !== H || W[13] !== g || W[14] !== h || W[15] !== C) de = e(Cp, {
+      addMargin: d,
+      monitorEvent: g,
+      status: h,
+      color: H,
+      transcriptV2Rows: C
+    }), W[11] = d, W[12] = H, W[13] = g, W[14] = h, W[15] = C, W[16] = de;
+    else de = W[16];
+    return de
+  }
+  if (C) {
+    return e(Oe, {
+      row: Cn({
+        status: h,
+        summary: p,
+        context: null,
+        durationMs: M,
+        deliveryNote: se,
+        sentMessages: I
+      }),
+      addMargin: d
+    })
+  }
+  const de = d ? 1 : 0;
+  let fe;
+  if (W[17] !== H) fe = e(n, {
+    "aria-hidden": !0,
+    color: H,
+    children: !1 ? te.pointer : wo
+  }), W[17] = H, W[18] = fe;
+  else fe = W[18];
+  let oe;
+  if (W[19] !== G) oe = G && e(n, {
+    dimColor: !0,
+    children: G
+  }), W[19] = G, W[20] = oe;
+  else oe = W[20];
+  let ue;
+  if (W[21] !== X) ue = X && e(n, {
+    dimColor: !0,
+    children: X
+  }), W[21] = X, W[22] = ue;
+  else ue = W[22];
+  let le;
+  if (W[23] !== p || W[24] !== fe || W[25] !== oe || W[26] !== ue) le = r(n, {
+    children: [fe, " ", p, oe, ue]
+  }), W[23] = p, W[24] = fe, W[25] = oe, W[26] = ue, W[27] = le;
+  else le = W[27];
+  let ke;
+  if (W[28] !== ee || W[29] !== v) ke = v && ee ? e(s, {
+    paddingLeft: 2,
+    children: e(n, {
+      dimColor: !0,
+      children: ee
+    })
+  }) : null, W[28] = ee, W[29] = v, W[30] = ke;
+  else ke = W[30];
+  let pe;
+  if (W[31] !== k || W[32] !== g) pe = k && g !== null ? e(s, {
+    paddingLeft: 2,
+    children: e(n, {
+      dimColor: !0,
+      children: g.body
+    })
+  }) : null, W[31] = k, W[32] = g, W[33] = pe;
+  else pe = W[33];
+  let re;
+  if (W[34] !== ke || W[35] !== pe || W[36] !== de || W[37] !== le) re = r(s, {
+    marginTop: de,
+    flexDirection: "column",
+    children: [le, ke, pe]
+  }), W[34] = ke, W[35] = pe, W[36] = de, W[37] = le, W[38] = re;
+  else re = W[38];
+  return re
+}
+
+function Cp(m) {
+  let R = w(19),
+    {
+      addMargin: d,
+      monitorEvent: p,
+      status: g,
+      color: h,
+      transcriptV2Rows: M
+    } = m,
+    {
+      columns: b
+    } = Te(),
+    v, k, C;
+  if (R[0] !== d || R[1] !== b || R[2] !== p || R[3] !== g || R[4] !== M) {
+    C = yn;
+    I: {
+      ({
+        headline: k,
+        description: v
+      } = Mp(p, b - Uy));
+      if (M) {
+        C = e(Oe, {
+          row: Cn({
+            status: g,
+            summary: `${Ubt} ${k}`,
+            context: v,
+            durationMs: 0,
+            deliveryNote: null,
+            sentMessages: 0
+          }),
+          addMargin: d
+        });
+        break I
+      }
+    }
+    R[0] = d, R[1] = b, R[2] = p, R[3] = g, R[4] = M, R[5] = v, R[6] = k, R[7] = C
+  } else v = R[5], k = R[6], C = R[7];
+  if (C !== yn) return C;
+  const W = d ? 1 : 0;
+  let j;
+  if (R[8] !== h) j = e(n, {
+    "aria-hidden": !0,
+    color: h,
+    children: wo
+  }), R[8] = h, R[9] = j;
+  else j = R[9];
+  let U;
+  if (R[10] !== v) U = v !== null && e(n, {
+    dimColor: !0,
+    children: ` \xB7 ${v}`
+  }), R[10] = v, R[11] = U;
+  else U = R[11];
+  let H;
+  if (R[12] !== k || R[13] !== j || R[14] !== U) H = r(n, {
+    wrap: "truncate-end",
+    children: [j, " ", Ubt, " ", k, U]
+  }), R[12] = k, R[13] = j, R[14] = U, R[15] = H;
+  else H = R[15];
+  let D;
+  if (R[16] !== W || R[17] !== H) D = e(s, {
+    marginTop: W,
+    children: H
+  }), R[16] = W, R[17] = H, R[18] = D;
+  else D = R[18];
+  return D
+}
+
+function cs(m, d) {
+  let p = Is(m, d),
+    g = p === null ? "" : Hg(p, Nv);
+  return g === "" ? void 0 : g
+}
+
+function Bwt(m) {
+  let h = w(8),
+    {
+      param: d,
+      addMargin: p
+    } = m,
+    {
+      text: g
+    } = d,
+    M;
+  if (h[0] !== g) M = Ope(g), h[0] = g, h[1] = M;
+  else M = h[1];
+  let b = M;
+  if (!b) {
+    return null
+  }
+  const R = p ? 1 : 0;
+  let v;
+  if (h[2] === S) v = e(n, {
+    color: "bashBorder",
+    children: "! "
+  }), h[2] = v;
+  else v = h[2];
+  let k;
+  if (h[3] !== b) k = e(n, {
+    color: "text",
+    children: b
+  }), h[3] = b, h[4] = k;
+  else k = h[4];
+  let C;
+  if (h[5] !== R || h[6] !== k) C = r(s, {
+    flexDirection: "row",
+    marginTop: R,
+    backgroundColor: "bashMessageBackgroundColor",
+    paddingRight: 1,
+    children: [v, k]
+  }), h[5] = R, h[6] = k, h[7] = C;
+  else C = h[7];
+  return C
+}
+
+function Ptt(m) {
+  return m.startsWith("<bash-stdout") || m.startsWith("<bash-stderr")
+}
+
+function Sp(m) {
+  let d = Is(m, "bash-stdout") ?? "";
+  return {
+    stdout: Is(d, "persisted-output") ?? km(d),
+    stderr: km(Is(m, "bash-stderr") ?? "")
+  }
+}
+
+function _Vr(m, d) {
+  let p = m.get(d);
+  if (!p) p = Sp(d.text), m.set(d, p);
+  return p
+}
+
+function el(m) {
+  let g = w(5),
+    {
+      content: d,
+      verbose: p
+    } = m,
+    h;
+  if (g[0] !== d) h = Sp(d), g[0] = d, g[1] = h;
+  else h = g[1];
+  const M = !!p;
+  let b;
+  if (g[2] !== h || g[3] !== M) b = e(Ftt, {
+    content: h,
+    verbose: M
+  }), g[2] = h, g[3] = M, g[4] = b;
+  else b = g[4];
+  return b
+}
+
+function ol(m) {
+  let b = w(14),
+    {
+      addMargin: d,
+      param: p,
+      followsSpeakerLabel: g
+    } = m,
+    {
+      text: h
+    } = p,
+    M = g === void 0 ? !1 : g,
+    R;
+  if (b[0] !== h) R = jfo(h), b[0] = h, b[1] = R;
+  else R = b[1];
+  let v = R;
+  if (!v?.message) {
+    return null
+  }
+  let {
+    message: k,
+    args: C,
+    isSkillFormat: I
+  } = v, W;
+  if (b[2] !== C || b[3] !== k || b[4] !== I) W = I ? `Skill(${k})` : `/${[k,C].filter(Boolean).join(" ")}`, b[2] = C, b[3] = k, b[4] = I, b[5] = W;
+  else W = b[5];
+  let j = W;
+  if (M) {
+    let U;
+    if (b[6] !== j) U = e(n, {
+      color: "text",
+      children: j
+    }), b[6] = j, b[7] = U;
+    else U = b[7];
+    return U
+  }
+  const U = d ? 1 : 0;
+  let H;
+  if (b[8] === S) H = e(n, {
+    "aria-label": "you:",
+    color: "inactive",
+    children: te.pointer
+  }), b[8] = H;
+  else H = b[8];
+  let D;
+  if (b[9] !== j) D = r(n, {
+    children: [H, " ", e(n, {
+      color: "text",
+      children: j
+    })]
+  }), b[9] = j, b[10] = D;
+  else D = b[10];
+  let G;
+  if (b[11] !== U || b[12] !== D) G = e(s, {
+    flexDirection: "column",
+    marginTop: U,
+    backgroundColor: "userMessageBackground",
+    paddingRight: 1,
+    children: D
+  }), b[11] = U, b[12] = D, b[13] = G;
+  else G = b[13];
+  return G
+}
+
+function _p(m) {
+  return Ems(m, [""])
+}
+
+function tl(m) {
+  let h = w(6),
+    {
+      addMargin: d,
+      directive: p
+    } = m;
+  const g = d ? 1 : 0;
+  let M;
+  if (h[0] === S) M = e(n, {
+    "aria-label": "fork:",
+    dimColor: !0,
+    children: qx
+  }), h[0] = M;
+  else M = h[0];
+  let b;
+  if (h[1] !== p) b = e(s, {
+    paddingLeft: 1,
+    children: e(n, {
+      children: p
+    })
+  }), h[1] = p, h[2] = b;
+  else b = h[2];
+  let R;
+  if (h[3] !== g || h[4] !== b) R = r(s, {
+    marginTop: g,
+    backgroundColor: "userMessageBackground",
+    paddingRight: 1,
+    children: [M, b]
+  }), h[3] = g, h[4] = b, h[5] = R;
+  else R = h[5];
+  return R
+}
+B();
+B();
+var ker = qt(null);
+
+function vp() {
+  return Ee(ker)
+}
+
+function ll(m) {
+  let g = w(3),
+    {
+      content: d,
+      capProseWidth: p
+    } = m,
+    h;
+  if (g[0] !== p || g[1] !== d) {
+    let M = Is(d, "local-command-stdout");
+    let b = Is(d, "local-command-stderr");
+    let R = M === null ? null : km(M);
+    let v = b === null ? null : km(b);
+    h = [];
+    if (R?.trim() && R.trim() !== hu) h.push(e($n, {
+      capProseWidth: p,
+      children: R.trim()
+    }, "stdout"));
+    if (v?.trim()) h.push(e($n, {
+      isError: !0,
+      children: v.trim()
+    }, "stderr"));
+    g[0] = p, g[1] = d, g[2] = h
+  } else h = g[2];
+  if (h.length === 0) {
+    return null
+  }
+  return h
+}
+
+function $n(m) {
+  let M = w(11),
+    {
+      children: d,
+      isError: p,
+      capProseWidth: g
+    } = m,
+    h = p === void 0 ? !1 : p,
+    b;
+  if (M[0] !== d) b = Qbn(d), M[0] = d, M[1] = b;
+  else b = M[1];
+  let R = b;
+  if (R !== null) {
+    let v;
+    if (M[2] !== R) v = e(Np, {
+      fields: R
+    }), M[2] = R, M[3] = v;
+    else v = M[3];
+    return v
+  }
+  if (d.startsWith(`${WS} `) || d.startsWith(`${sR} `)) {
+    let v;
+    if (M[4] !== d) v = e(Bp, {
+      children: d
+    }), M[4] = d, M[5] = v;
+    else v = M[5];
+    return v
+  }
+  let v;
+  if (M[6] === S) v = e(n, {
+    "aria-hidden": !0,
+    dimColor: !0,
+    children: "  \u23BF  "
+  }), M[6] = v;
+  else v = M[6];
+  let k;
+  if (M[7] !== g || M[8] !== d || M[9] !== h) k = r(s, {
+    flexDirection: "row",
+    children: [v, e(s, {
+      flexDirection: "column",
+      flexGrow: 1,
+      children: h ? e(n, {
+        color: "error",
+        wrap: "wrap",
+        children: d
+      }) : e(Va, {
+        stripPromptTags: !1,
+        capProseWidth: g,
+        children: d
+      })
+    })]
+  }), M[7] = g, M[8] = d, M[9] = h, M[10] = k;
+  else k = M[10];
+  return k
+}
+
+function Ap(m) {
+  let p = w(11),
+    {
+      children: d
+    } = m,
+    g, h, M;
+  if (p[0] !== d) {
+    M = yn;
+    b: {
+      g = d.indexOf(qx);
+      if (g === -1) {
+        M = d;
+        break b
+      }
+      h = d.slice(0, g)
+    }
+    p[0] = d, p[1] = g, p[2] = h, p[3] = M
+  } else g = p[1], h = p[2], M = p[3];
+  if (M !== yn) return M;
+  let R;
+  if (p[4] === S) R = e(n, {
+    "aria-label": "of",
+    children: qx
+  }), p[4] = R;
+  else R = p[4];
+  let v;
+  if (p[5] !== g || p[6] !== d) v = d.slice(g + qx.length), p[5] = g, p[6] = d, p[7] = v;
+  else v = p[7];
+  let k;
+  if (p[8] !== h || p[9] !== v) k = r(Q, {
+    children: [h, R, v]
+  }), p[8] = h, p[9] = v, p[10] = k;
+  else k = p[10];
+  return k
+}
+var Dp = "  \u23BF  ",
+  yb = ie(Dp);
+
+function Np(m) {
+  let R = w(25),
+    {
+      fields: d
+    } = m,
+    p = vp(),
+    [g, h] = y(!1),
+    {
+      columns: M
+    } = Te(),
+    b = d.id !== void 0 && !Ht() ? d.id : void 0,
+    v, k, C, I, W, j;
+  if (R[0] !== p || R[1] !== M || R[2] !== d || R[3] !== g || R[4] !== b) {
+    let U = GVr(d, M - yb, b !== void 0);
+    let H;
+    if (R[11] !== p || R[12] !== b) H = () => {
+      if (b !== void 0) p?.requestAttach(b)
+    }, R[11] = p, R[12] = b, R[13] = H;
+    else H = R[13];
+    k = H;
+    let D = U.name ?? U.id;
+    let G = U.name !== void 0 && U.id !== void 0;
+    v = n;
+    C = r(n, {
+      dimColor: !0,
+      children: [U.state, (D !== void 0 || G || U.chips.length > 0) && " \xB7 "]
+    });
+    I = D !== void 0 && e(n, {
+      bold: !0,
+      underline: b !== void 0 && g,
+      children: e(Ap, {
+        children: D
+      })
+    });
+    W = G && e(n, {
+      dimColor: !0,
+      children: " \xB7 " + U.id
+    });
+    j = U.chips.length > 0 && e(n, {
+      dimColor: !0,
+      children: " \xB7 " + U.chips.join(" \xB7 ")
+    });
+    R[0] = p, R[1] = M, R[2] = d, R[3] = g, R[4] = b, R[5] = v, R[6] = k, R[7] = C, R[8] = I, R[9] = W, R[10] = j
+  } else v = R[5], k = R[6], C = R[7], I = R[8], W = R[9], j = R[10];
+  let H;
+  if (R[14] !== v || R[15] !== C || R[16] !== I || R[17] !== W || R[18] !== j) H = r(v, {
+    children: [C, I, W, j]
+  }), R[14] = v, R[15] = C, R[16] = I, R[17] = W, R[18] = j, R[19] = H;
+  else H = R[19];
+  let K = H,
+    Y;
+  if (R[20] === S) Y = e(n, {
+    "aria-label": "fork:",
+    dimColor: !0,
+    children: Dp
+  }), R[20] = Y;
+  else Y = R[20];
+  let ee;
+  if (R[21] !== k || R[22] !== K || R[23] !== b) ee = r(s, {
+    flexDirection: "row",
+    children: [Y, b ? e(s, {
+      onClick: k,
+      onMouseEnter: () => h(!0),
+      onMouseLeave: () => h(!1),
+      children: K
+    }) : K]
+  }), R[21] = k, R[22] = K, R[23] = b, R[24] = ee;
+  else ee = R[24];
+  return ee
+}
+
+function Bp(m) {
+  let g = w(19),
+    {
+      children: d
+    } = m,
+    p = d[0],
+    h, M, b;
+  if (g[0] !== d) {
+    let R = d.indexOf(`
+`);
+    let v = R === -1 ? d.slice(2) : d.slice(2, R);
+    M = R === -1 ? "" : d.slice(R + 1).trim();
+    let k = v.indexOf(" \xB7 ");
+    h = k === -1 ? v : v.slice(0, k);
+    b = k === -1 ? "" : v.slice(k);
+    g[0] = d, g[1] = h, g[2] = M, g[3] = b
+  } else h = g[1], M = g[2], b = g[3];
+  let C = b,
+    I;
+  if (g[4] !== p) I = r(n, {
+    "aria-hidden": !0,
+    color: "background",
+    children: [p, " "]
+  }), g[4] = p, g[5] = I;
+  else I = g[5];
+  let W;
+  if (g[6] !== h) W = e(n, {
+    bold: !0,
+    children: h
+  }), g[6] = h, g[7] = W;
+  else W = g[7];
+  let j;
+  if (g[8] !== C) j = C && e(n, {
+    dimColor: !0,
+    children: C
+  }), g[8] = C, g[9] = j;
+  else j = g[9];
+  let U;
+  if (g[10] !== I || g[11] !== W || g[12] !== j) U = r(n, {
+    children: [I, W, j]
+  }), g[10] = I, g[11] = W, g[12] = j, g[13] = U;
+  else U = g[13];
+  let H;
+  if (g[14] !== M) H = M && r(s, {
+    flexDirection: "row",
+    children: [e(n, {
+      "aria-hidden": !0,
+      dimColor: !0,
+      children: "  \u23BF  "
+    }), e(n, {
+      dimColor: !0,
+      children: M
+    })]
+  }), g[14] = M, g[15] = H;
+  else H = g[15];
+  let D;
+  if (g[16] !== U || g[17] !== H) D = r(s, {
+    flexDirection: "column",
+    children: [U, H]
+  }), g[16] = U, g[17] = H, g[18] = D;
+  else D = g[18];
+  return D
+}
+
+function dl(m, d) {
+  let p = d ? Uf : Pl;
+  return `<${p}>${Ut(m)}</${p}>`
+}
+
+function Hp(m) {
+  let C = w(12),
+    {
+      content: d,
+      commandRun: p,
+      printed: g,
+      messageId: h,
+      draw: M
+    } = m,
+    {
+      command: b,
+      args: R
+    } = p,
+    {
+      text: v,
+      isErrored: k
+    } = g,
+    I, W;
+  if (C[0] !== R || C[1] !== b || C[2] !== k || C[3] !== h || C[4] !== v) I = () => ({
+    requestId: h,
+    props: {
+      command: b,
+      args: R,
+      text: v,
+      isErrored: k
+    }
+  }), W = [h, b, R, v, k], C[0] = R, C[1] = b, C[2] = k, C[3] = h, C[4] = v, C[5] = I, C[6] = W;
+  else I = C[5], W = C[6];
+  let j;
+  if (C[7] !== d || C[8] !== M || C[9] !== k || C[10] !== v) j = (U) => {
+    let H = U.props.text === v;
+    return M(H ? d : dl(U.props.text, k))
+  }, C[7] = d, C[8] = M, C[9] = k, C[10] = v, C[11] = j;
+  else j = C[11];
+  return $d.useRenderHook($d.useRenderInput("CommandOutput", I, W), j)
+}
+
+function Eb(m) {
+  let d = Is(m, Pl),
+    p = Is(m, Uf),
+    g = d === null ? "" : km(d),
+    h = p === null ? "" : km(p),
+    M = g.trim() !== "" && g.trim() !== hu;
+  if (M === (h.trim() !== "")) return;
+  return M ? {
+    text: g,
+    isErrored: !1
+  } : {
+    text: h,
+    isErrored: !0
+  }
+}
+B();
+
+function ml(m) {
+  let g = w(10),
+    {
+      text: d,
+      addMargin: p
+    } = m,
+    h;
+  if (g[0] !== d) h = Is(d, "user-memory-input"), g[0] = d, g[1] = h;
+  else h = g[1];
+  let M = h,
+    b;
+  if (g[2] === S) b = y1(["Got it.", "Good to know.", "Noted."]), g[2] = b;
+  else b = g[2];
+  let R = b;
+  if (!M) {
+    return null
+  }
+  const v = p ? 1 : 0;
+  let k;
+  if (g[3] === S) k = e(n, {
+    color: "remember",
+    backgroundColor: "memoryBackgroundColor",
+    children: "#"
+  }), g[3] = k;
+  else k = g[3];
+  let C;
+  if (g[4] !== M) C = r(s, {
+    children: [k, r(n, {
+      backgroundColor: "memoryBackgroundColor",
+      color: "text",
+      children: [" ", M, " "]
+    })]
+  }), g[4] = M, g[5] = C;
+  else C = g[5];
+  let I;
+  if (g[6] === S) I = e(ze, {
+    height: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: R
+    })
+  }), g[6] = I;
+  else I = g[6];
+  let W;
+  if (g[7] !== v || g[8] !== C) W = r(s, {
+    flexDirection: "column",
+    marginTop: v,
+    width: "100%",
+    children: [C, I]
+  }), g[7] = v, g[8] = C, g[9] = W;
+  else W = g[9];
+  return W
+}
+
+function jwt(m) {
+  let h = w(5),
+    {
+      addMargin: d,
+      planContent: p
+    } = m;
+  const g = d ? 1 : 0;
+  let M;
+  if (h[0] !== p) M = e(Tp, {
+    color: "planMode",
+    title: "Plan to implement",
+    children: e(Va, {
+      children: p
+    })
+  }), h[0] = p, h[1] = M;
+  else M = h[1];
+  let b;
+  if (h[2] !== g || h[3] !== M) b = e(s, {
+    marginTop: g,
+    children: M
+  }), h[2] = g, h[3] = M, h[4] = b;
+  else b = h[4];
+  return b
+}
+B();
+
+function Ir(m, d) {
+  if (d !== void 0 && d.kind !== "human" || !$er(m)) return new Set;
+  return new Set(Mc(m).filter((p) => YUe(p.match)).map((p) => p.id))
+}
+B();
+var Wbn = "placeholder",
+  Ib = "-c1a0-4de0-8e00-";
+
+function bVr(m) {
+  return `${m.toString(16).padStart(8,"0")}${Ib}000000000000`
+}
+
+function Ab(m) {
+  return m.slice(8) === Ib
+}
+class SVr {
+  #o = 0;
+  #e = !1;
+  #t = "";
+  get baseline() {
+    return this.#o
+  }
+  get pending() {
+    return this.#e
+  }
+  start(m, d) {
+    this.#o = m, this.#e = !0, this.#t = d
+  }
+  stop() {
+    this.#e = !1, this.#t = ""
+  }
+  track(m, d) {
+    if (d.length < this.#o) return this.#o = 0, this.#e = !1, this.#t = "", !0;
+    if (d.length > m.length && this.#e) {
+      let p = d.length - m.length;
+      if ((m.length === 0 || d[0] === m[0] ? d.slice(-p) : d.slice(0, p)).some((h) => hWs(h, this.#t))) this.#e = !1;
+      else this.#o = d.length
+    }
+    return !1
+  }
+}
+var EGt = qt(null);
+
+function $p(m) {
+  let d = Ee(EGt),
+    p = bV({
+      uuid: m
+    }),
+    g = Ae(d === "every" ? null : d, (h) => p !== void 0 && (Ab(p) ? h.placeholderWaitedInQueue : h.promptsAwaitingModel.size > 0 && h.promptsAwaitingModel.has(p)));
+  return d === "every" || g === !0
+}
+
+function sA(je) {
+  return je.isBriefOnly
+}
+
+function rA(lo) {
+  return lo.viewingAgentTaskId
+}
+
+function Ko(m) {
+  let b = w(19),
+    {
+      text: d
+    } = m.param,
+    {
+      messageId: p,
+      origin: g,
+      isExpanded: h
+    } = m,
+    M = g?.kind === "plugin" ? g.name : void 0,
+    R;
+  if (b[0] !== m || b[1] !== M || b[2] !== d) R = (v) => e(Qp, {
+    ...m,
+    addMargin: M === void 0 && m.addMargin,
+    param: v === d ? m.param : {
+      ...m.param,
+      text: v
+    }
+  }), b[0] = m, b[1] = M, b[2] = d, b[3] = R;
+  else R = b[3];
+  let k;
+  if (b[4] !== h || b[5] !== p || b[6] !== g || b[7] !== R || b[8] !== d) k = {
+    messageId: p,
+    stored: g,
+    text: d,
+    isExpanded: h,
+    draw: R
+  }, b[4] = h, b[5] = p, b[6] = g, b[7] = R, b[8] = d, b[9] = k;
+  else k = b[9];
+  let C = aY.useUserMessageSite(k);
+  if (M === void 0) {
+    return C
+  }
+  const I = m.addMargin && !m.followsSpeakerLabel && !m.followsInboundLabel ? 1 : 0;
+  let W;
+  if (b[10] === S) W = r(n, {
+    "aria-hidden": !0,
+    children: [te.pointerSmall, " "]
+  }), b[10] = W;
+  else W = b[10];
+  let j;
+  if (b[11] !== M) j = x9(M), b[11] = M, b[12] = j;
+  else j = b[12];
+  let U;
+  if (b[13] !== j) U = r(n, {
+    dimColor: !0,
+    children: [W, "Prompt from the ", j, " plugin"]
+  }), b[13] = j, b[14] = U;
+  else U = b[14];
+  let H;
+  if (b[15] !== C || b[16] !== I || b[17] !== U) H = r(s, {
+    flexDirection: "column",
+    marginTop: I,
+    children: [U, C]
+  }), b[15] = C, b[16] = I, b[17] = U, b[18] = H;
+  else H = b[18];
+  return H
+}
+
+function Qp(m) {
+  let j = w(33),
+    {
+      addMargin: d,
+      param: p,
+      isTranscriptMode: g,
+      timestamp: h,
+      messageId: M,
+      origin: b,
+      followsSpeakerLabel: R,
+      followsInboundLabel: v
+    } = m,
+    {
+      text: k
+    } = p,
+    C = R === void 0 ? !1 : R,
+    I = v === void 0 ? !1 : v,
+    W = $p(M),
+    U;
+  if (j[0] !== C || j[1] !== b || j[2] !== k) U = C && k ? [...Ir(k, b)] : [], j[0] = C, j[1] = b, j[2] = k, j[3] = U;
+  else U = j[3];
+  let H = U,
+    D;
+  if (j[4] !== H) D = (G) => H.map((K) => G.storedImagePaths.get(K) ?? "").join("\x00"), j[4] = H, j[5] = D;
+  else D = j[5];
+  let Y = V(D),
+    ee;
+  if (j[6] !== H || j[7] !== Y) {
+    let z = new Map;
+    let se = Y.split("\x00");
+    ee = (H.forEach((X, de) => {
+      let fe = se[de];
+      let oe = fe ? J0(fe) : null;
+      if (oe !== null) z.set(K9(X), oe)
+    }), z.size > 0 ? z : void 0);
+    j[6] = H, j[7] = Y, j[8] = ee
+  } else ee = j[8];
+  let ue = ee,
+    le = V(sA),
+    ke = V(rA),
+    pe = a.CLAUDE_CODE_BRIEF,
+    re;
+  if (j[9] !== le || j[10] !== g || j[11] !== ke) re = QW() && (pe || E("tengu_kairos_brief", !1)) && le && !g && !ke, j[9] = le, j[10] = g, j[11] = ke, j[12] = re;
+  else re = j[12];
+  let ye = re,
+    me;
+  if (j[13] !== k) me = QA() ? OWo(k, txe()) : k, j[13] = k, j[14] = me;
+  else me = j[14];
+  let ve;
+  if (j[15] !== me) ve = DGt(me), j[15] = me, j[16] = ve;
+  else ve = j[16];
+  let be = ve;
+  if (!k) {
+    return l(Error("No content found in user prompt message")), null
+  }
+  if (I) {
+    let Ce;
+    if (j[17] !== k) Ce = e(wP, {
+      text: k
+    }), j[17] = k, j[18] = Ce;
+    else Ce = j[18];
+    return Ce
+  }
+  if (C) {
+    let Ce;
+    if (j[19] !== W || j[20] !== be || j[21] !== ue) Ce = e(s, {
+      flexDirection: "column",
+      children: e(LGt, {
+        text: be,
+        bodyOnly: !0,
+        awaitingModel: W,
+        markLinks: ue
+      })
+    }), j[19] = W, j[20] = be, j[21] = ue, j[22] = Ce;
+    else Ce = j[22];
+    return Ce
+  }
+  const Ce = d ? 1 : 0,
+    qe = ye ? void 0 : "userMessageBackground",
+    Ue = ye ? 0 : 1,
+    Ie = ye ? h : void 0;
+  let xe;
+  if (j[23] !== W || j[24] !== be || j[25] !== Ie || j[26] !== ye) xe = e(LGt, {
+    text: be,
+    useBriefLayout: ye,
+    timestamp: Ie,
+    awaitingModel: W
+  }), j[23] = W, j[24] = be, j[25] = Ie, j[26] = ye, j[27] = xe;
+  else xe = j[27];
+  let De;
+  if (j[28] !== Ce || j[29] !== qe || j[30] !== Ue || j[31] !== xe) De = e(s, {
+    flexDirection: "column",
+    marginTop: Ce,
+    backgroundColor: qe,
+    paddingRight: Ue,
+    children: xe
+  }), j[28] = Ce, j[29] = qe, j[30] = Ue, j[31] = xe, j[32] = De;
+  else De = j[32];
+  return De
+}
+
+function lA(j, U) {
+  return e(s, {
+    children: r(n, {
+      children: [e(n, {
+        "aria-label": "update:",
+        color: "success",
+        children: R$o
+      }), " ", r(n, {
+        dimColor: !0,
+        children: [j.server, ":"]
+      }), " ", e(n, {
+        color: "suggestion",
+        children: j.kind === "resource" ? Gb(j.target) : j.target
+      }), j.reason && r(n, {
+        dimColor: !0,
+        children: [" \xB7 ", j.reason]
+      })]
+    })
+  }, U)
+}
+
+function pl(m) {
+  let d = [],
+    p = /<mcp-resource-update\s+server="([^"]+)"\s+uri="([^"]+)"[^>]*>(?:[\s\S]*?<reason>([^<]+)<\/reason>)?/g,
+    g;
+  while ((g = p.exec(m)) !== null) d.push({
+    kind: "resource",
+    server: g[1] ?? "",
+    target: g[2] ?? "",
+    reason: g[3]
+  });
+  let h = /<mcp-polling-update\s+type="([^"]+)"\s+server="([^"]+)"\s+tool="([^"]+)"[^>]*>(?:[\s\S]*?<reason>([^<]+)<\/reason>)?/g;
+  while ((g = h.exec(m)) !== null) d.push({
+    kind: "polling",
+    server: g[2] ?? "",
+    target: g[3] ?? "",
+    reason: g[4]
+  });
+  return d
+}
+
+function Gb(m) {
+  if (m.startsWith("file://")) {
+    let d = m.slice(7),
+      p = d.split("/");
+    return p[p.length - 1] || d
+  }
+  if (m.length > 40) return m.slice(0, 39) + "\u2026";
+  return m
+}
+
+function cl(m) {
+  let h = w(12),
+    {
+      addMargin: d,
+      param: p
+    } = m,
+    {
+      text: g
+    } = p,
+    M, b, R, v, k;
+  if (h[0] !== d || h[1] !== g) {
+    k = yn;
+    I: {
+      let C = pl(g);
+      if (C.length === 0) {
+        k = null;
+        break I
+      }
+      M = s;b = "column";R = d ? 1 : 0;v = C.map(lA)
+    }
+    h[0] = d, h[1] = g, h[2] = M, h[3] = b, h[4] = R, h[5] = v, h[6] = k
+  } else M = h[2], b = h[3], R = h[4], v = h[5], k = h[6];
+  if (k !== yn) return k;
+  let W;
+  if (h[7] !== M || h[8] !== b || h[9] !== R || h[10] !== v) W = e(M, {
+    flexDirection: b,
+    marginTop: R,
+    children: v
+  }), h[7] = M, h[8] = b, h[9] = R, h[10] = v, h[11] = W;
+  else W = h[11];
+  return W
+}
+
+function o3o(m, d) {
+  if (!d || d.trim() === hu) return !0;
+  if (m.planContent) return !1;
+  if (DD(m.origin)) return !1;
+  return eVe(d)
+}
+
+function eVe(m) {
+  if (!m || m.trim() === hu) return !0;
+  if (as() && Iue(m)) return xy(m);
+  if (ymr(m)) return !1;
+  if (m.startsWith('<wake reason="external-event"')) return !1;
+  if (wme(m)) return !1;
+  if (awr(m)) return !1;
+  let d = Ope(m);
+  if (d !== null) return !d;
+  if (Is(m, $5) !== null) return !0;
+  if (m.includes(`<${K2}>`)) return !0;
+  if (m.startsWith(`<${Pl}`) || m.startsWith(`<${Uf}`)) {
+    let p = Is(m, Pl)?.trim(),
+      g = Is(m, Uf)?.trim();
+    return !(p && p !== hu || g)
+  }
+  if (m.startsWith(`<${zhe}`) || m.startsWith(`<${q2}`)) return !1;
+  if (m.includes("<user-memory-input>")) return !Is(m, "user-memory-input");
+  if (m.includes(`<${Nc}`)) return !Is(m, "summary") || qi(m) || nyr(m);
+  if (m.includes("<mcp-resource-update") || m.includes("<mcp-polling-update")) return pl(m).length === 0;
+  return !1
+}
+
+function Pre(m) {
+  let G = w(138),
+    {
+      addMargin: d,
+      param: p,
+      verbose: g,
+      planContent: h,
+      isTranscriptMode: M,
+      timestamp: b,
+      messageId: R,
+      origin: v,
+      commandRun: k,
+      taskDelivery: C,
+      followsSpeakerLabel: I,
+      followsInboundLabel: W,
+      followsCoordinatorLabel: j
+    } = m,
+    U = $w(g),
+    H = Ee(Pt),
+    D = M$(g, M);
+  if (typeof p.text !== "string" || !p.text || p.text.trim() === hu) {
+    return null
+  }
+  if (h) {
+    let K;
+    if (G[0] !== d || G[1] !== h) K = e(jwt, {
+      addMargin: d,
+      planContent: h
+    }), G[0] = d, G[1] = h, G[2] = K;
+    else K = G[2];
+    return K
+  }
+  if (j) {
+    let K;
+    if (G[3] !== d || G[4] !== I || G[5] !== D || G[6] !== M || G[7] !== R || G[8] !== v || G[9] !== p || G[10] !== b) K = e(Ko, {
+      addMargin: d,
+      param: p,
+      isTranscriptMode: M,
+      isExpanded: D,
+      timestamp: b,
+      messageId: R,
+      origin: v,
+      followsSpeakerLabel: I,
+      followsInboundLabel: !0
+    }), G[3] = d, G[4] = I, G[5] = D, G[6] = M, G[7] = R, G[8] = v, G[9] = p, G[10] = b, G[11] = K;
+    else K = G[11];
+    return K
+  }
+  let Y = I || W,
+    ee = null;
+  if (as() && Iue(p.text)) {
+    let K;
+    if (G[12] !== d || G[13] !== M || G[14] !== R || G[15] !== v || G[16] !== p || G[17] !== Y || G[18] !== g) K = e(Gi, {
+      addMargin: d,
+      param: p,
+      verbose: g,
+      isTranscriptMode: M,
+      messageId: R,
+      origin: v,
+      followsSpeakerLabel: Y
+    }), G[12] = d, G[13] = M, G[14] = R, G[15] = v, G[16] = p, G[17] = Y, G[18] = g, G[19] = K;
+    else K = G[19];
+    return K
+  }
+  if (ymr(p.text)) {
+    let {
+      UserChannelMessage: z
+    } = import.meta.require("B:/~BUN/root/chunk-p3cnb7q7.js");
+    let K;
+    if (G[20] !== d || G[21] !== D || G[22] !== R || G[23] !== v || G[24] !== p || G[25] !== Y) K = e(z, {
+      addMargin: d,
+      param: p,
+      messageId: R,
+      origin: v,
+      isExpanded: D,
+      followsSpeakerLabel: Y
+    }), G[20] = d, G[21] = D, G[22] = R, G[23] = v, G[24] = p, G[25] = Y, G[26] = K;
+    else K = G[26];
+    return K
+  }
+  if (p.text.startsWith('<wake reason="external-event"')) {
+    let {
+      parseExternalEventWake: se,
+      isSessionInboxWake: X
+    } = import.meta.require("B:/~BUN/root/chunk-2yj82q91.js");
+    let K, de;
+    if (G[27] !== p.text) de = se(p.text), K = de !== null && X(de), G[27] = p.text, G[28] = K, G[29] = de;
+    else K = G[28], de = G[29];
+    if (K) ee = de
+  }
+  if (wme(p.text)) {
+    let {
+      UserCrossSessionMessage: fe
+    } = import.meta.require("B:/~BUN/root/chunk-g0mjwhys.js");
+    const K = v?.kind === "peer" && v.hostInjected === !0;
+    let oe;
+    if (G[30] !== d || G[31] !== M || G[32] !== R || G[33] !== v || G[34] !== p || G[35] !== K || G[36] !== Y || G[37] !== g) oe = e(fe, {
+      addMargin: d,
+      param: p,
+      hostInjected: K,
+      verbose: g,
+      isTranscriptMode: M,
+      messageId: R,
+      origin: v,
+      followsSpeakerLabel: Y
+    }), G[30] = d, G[31] = M, G[32] = R, G[33] = v, G[34] = p, G[35] = K, G[36] = Y, G[37] = g, G[38] = oe;
+    else oe = G[38];
+    return oe
+  }
+  if (W) {
+    let K;
+    if (G[39] !== d || G[40] !== I || G[41] !== D || G[42] !== M || G[43] !== R || G[44] !== v || G[45] !== p || G[46] !== b) K = e(Ko, {
+      addMargin: d,
+      param: p,
+      isTranscriptMode: M,
+      isExpanded: D,
+      timestamp: b,
+      messageId: R,
+      origin: v,
+      followsSpeakerLabel: I,
+      followsInboundLabel: !0
+    }), G[39] = d, G[40] = I, G[41] = D, G[42] = M, G[43] = R, G[44] = v, G[45] = p, G[46] = b, G[47] = K;
+    else K = G[47];
+    return K
+  }
+  if (p.text.startsWith('<wake reason="external-event"')) {
+    if (ee !== null) {
+      let {
+        UserSessionInboxWakeMessage: ue
+      } = import.meta.require("B:/~BUN/root/chunk-njzwz568.js");
+      let K;
+      if (G[48] !== d || G[49] !== ee || G[50] !== M || G[51] !== v || G[52] !== p.text || G[53] !== g) K = e(ue, {
+        addMargin: d,
+        wake: ee,
+        origin: v,
+        rawText: p.text,
+        verbose: g,
+        isTranscriptMode: M
+      }), G[48] = d, G[49] = ee, G[50] = M, G[51] = v, G[52] = p.text, G[53] = g, G[54] = K;
+      else K = G[54];
+      return K
+    }
+    let K;
+    if (G[55] !== d || G[56] !== I || G[57] !== D || G[58] !== M || G[59] !== R || G[60] !== v || G[61] !== p || G[62] !== b) K = e(Ko, {
+      addMargin: d,
+      param: p,
+      isTranscriptMode: M,
+      isExpanded: D,
+      timestamp: b,
+      messageId: R,
+      origin: v,
+      followsSpeakerLabel: I
+    }), G[55] = d, G[56] = I, G[57] = D, G[58] = M, G[59] = R, G[60] = v, G[61] = p, G[62] = b, G[63] = K;
+    else K = G[63];
+    return K
+  }
+  if (awr(p.text)) {
+    let K;
+    if (G[64] !== d || G[65] !== I || G[66] !== D || G[67] !== M || G[68] !== R || G[69] !== v || G[70] !== p || G[71] !== b) {
+      let le = tdt(p.text);
+      K = le && ndt(le) ? e(ol, {
+        addMargin: d,
+        param: p,
+        followsSpeakerLabel: I
+      }) : e(Ko, {
+        addMargin: d,
+        param: p,
+        isTranscriptMode: M,
+        isExpanded: D,
+        timestamp: b,
+        messageId: R,
+        origin: v,
+        followsSpeakerLabel: I
+      });
+      G[64] = d, G[65] = I, G[66] = D, G[67] = M, G[68] = R, G[69] = v, G[70] = p, G[71] = b, G[72] = K
+    } else K = G[72];
+    return K
+  }
+  if (Ope(p.text) !== null) {
+    let K;
+    if (G[73] !== d || G[74] !== p) K = e(Bwt, {
+      addMargin: d,
+      param: p
+    }), G[73] = d, G[74] = p, G[75] = K;
+    else K = G[75];
+    return K
+  }
+  if (Is(p.text, $5)) {
+    return null
+  }
+  if (p.text.includes(`<${K2}>`)) {
+    return null
+  }
+  if (Ptt(p.text)) {
+    let K;
+    if (G[76] !== p.text || G[77] !== g) K = e(el, {
+      content: p.text,
+      verbose: g
+    }), G[76] = p.text, G[77] = g, G[78] = K;
+    else K = G[78];
+    return K
+  }
+  if (p.text.startsWith("<local-command-stdout") || p.text.startsWith("<local-command-stderr")) {
+    let K;
+    if (G[79] !== k || G[80] !== p.text) K = k === void 0 ? void 0 : Ur.printedTextOf(p.text), G[79] = k, G[80] = p.text, G[81] = K;
+    else K = G[81];
+    let ke = K;
+    let pe = k?.command === "recap";
+    if (k === void 0 || ke === void 0) {
+      const oe = k?.command;
+      let re;
+      if (G[82] !== d || G[83] !== pe || G[84] !== p.text || G[85] !== oe || G[86] !== U) re = e(Kn, {
+        content: p.text,
+        addMargin: d,
+        systemLine: U,
+        command: oe,
+        capProseWidth: pe
+      }), G[82] = d, G[83] = pe, G[84] = p.text, G[85] = oe, G[86] = U, G[87] = re;
+      else re = G[87];
+      return re
+    }
+    let oe;
+    if (G[88] !== d || G[89] !== pe || G[90] !== k || G[91] !== p.text || G[92] !== U) oe = (ye) => e(Kn, {
+      content: ye,
+      addMargin: d,
+      systemLine: U,
+      command: ye === p.text ? k.command : void 0,
+      capProseWidth: pe
+    }), G[88] = d, G[89] = pe, G[90] = k, G[91] = p.text, G[92] = U, G[93] = oe;
+    else oe = G[93];
+    let re;
+    if (G[94] !== k || G[95] !== R || G[96] !== p.text || G[97] !== ke || G[98] !== oe) re = e(Ur.CommandOutputSite, {
+      content: p.text,
+      commandRun: k,
+      printed: ke,
+      messageId: R,
+      draw: oe
+    }), G[94] = k, G[95] = R, G[96] = p.text, G[97] = ke, G[98] = oe, G[99] = re;
+    else re = G[99];
+    return re
+  }
+  if (p.text === QE || p.text === Lp) {
+    if (U) {
+      let K;
+      if (G[100] !== H) K = ir({
+        isBySendNow: H
+      }), G[100] = H, G[101] = K;
+      else K = G[101];
+      let oe;
+      if (G[102] !== d || G[103] !== K) oe = e(Oe, {
+        row: K,
+        addMargin: d
+      }), G[102] = d, G[103] = K, G[104] = oe;
+      else oe = G[104];
+      return oe
+    }
+    let K;
+    if (G[105] === S) K = e(rh, {}), G[105] = K;
+    else K = G[105];
+    return K
+  }
+  if (p.text.includes("<user-memory-input>")) {
+    let K;
+    if (G[106] !== d || G[107] !== p.text) K = e(ml, {
+      addMargin: d,
+      text: p.text
+    }), G[106] = d, G[107] = p.text, G[108] = K;
+    else K = G[108];
+    return K
+  }
+  if (p.text.includes(`<${Nc}`)) {
+    if (qi(p.text)) {
+      return null
+    }
+    if (nyr(p.text)) {
+      let K;
+      if (G[109] !== d || G[110] !== p.text || G[111] !== g) K = e(Vi, {
+        addMargin: d,
+        text: p.text,
+        verbose: g
+      }), G[109] = d, G[110] = p.text, G[111] = g, G[112] = K;
+      else K = G[112];
+      return K
+    }
+    const K = g || M;
+    let oe;
+    if (G[113] !== d || G[114] !== D || G[115] !== R || G[116] !== v || G[117] !== p || G[118] !== K || G[119] !== C) oe = e(js, {
+      addMargin: d,
+      param: p,
+      taskDelivery: C,
+      messageId: R,
+      origin: v,
+      verbose: K,
+      isExpanded: D
+    }), G[113] = d, G[114] = D, G[115] = R, G[116] = v, G[117] = p, G[118] = K, G[119] = C, G[120] = oe;
+    else oe = G[120];
+    return oe
+  }
+  if (p.text.includes("<mcp-resource-update") || p.text.includes("<mcp-polling-update")) {
+    let K;
+    if (G[121] !== d || G[122] !== p) K = e(cl, {
+      addMargin: d,
+      param: p
+    }), G[121] = d, G[122] = p, G[123] = K;
+    else K = G[123];
+    return K
+  }
+  let K;
+  if (G[124] !== p.text) K = p.text.includes("<fork-boilerplate>") ? _p(p.text) : void 0, G[124] = p.text, G[125] = K;
+  else K = G[125];
+  let me = K;
+  if (me !== void 0) {
+    let oe;
+    if (G[126] !== d || G[127] !== me) oe = e(tl, {
+      addMargin: d,
+      directive: me
+    }), G[126] = d, G[127] = me, G[128] = oe;
+    else oe = G[128];
+    return oe
+  }
+  let oe;
+  if (G[129] !== d || G[130] !== I || G[131] !== D || G[132] !== M || G[133] !== R || G[134] !== v || G[135] !== p || G[136] !== b) oe = e(Ko, {
+    addMargin: d,
+    param: p,
+    isTranscriptMode: M,
+    isExpanded: D,
+    timestamp: b,
+    messageId: R,
+    origin: v,
+    followsSpeakerLabel: I
+  }), G[129] = d, G[130] = I, G[131] = D, G[132] = M, G[133] = R, G[134] = v, G[135] = p, G[136] = b, G[137] = oe;
+  else oe = G[137];
+  return oe
+}
+
+function Kn(m) {
+  let b = w(9),
+    {
+      content: d,
+      addMargin: p,
+      systemLine: g,
+      command: h,
+      capProseWidth: M
+    } = m;
+  if (g) {
+    let R;
+    if (b[0] !== h || b[1] !== d) R = tu(d, h), b[0] = h, b[1] = d, b[2] = R;
+    else R = b[2];
+    let v = R;
+    if (v.kind === "line") {
+      let k;
+      if (b[3] !== p || b[4] !== v.row) k = e(Oe, {
+        row: v.row,
+        addMargin: p
+      }), b[3] = p, b[4] = v.row, b[5] = k;
+      else k = b[5];
+      return k
+    }
+  }
+  let R;
+  if (b[6] !== M || b[7] !== d) R = e(ll, {
+    content: d,
+    capProseWidth: M
+  }), b[6] = M, b[7] = d, b[8] = R;
+  else R = b[8];
+  return R
+}
+
+function YA(at, Sa) {
+  return at.kind === "panel" ? at.node : e(Sr, {
+    displayName: at.displayName,
+    inkColor: at.inkColor,
+    content: at.content,
+    summary: at.summary
+  }, Sa)
+}
+
+function XA(Wt, sm) {
+  return Wt.kind === "panel" ? Wt.node : e(Lre, {
+    displayName: Wt.senderName,
+    qualifier: Wt.isUnverified ? Cr : void 0,
+    count: Wt.count,
+    fallbackLabel: "teammate"
+  }, sm)
+}
+
+function JA(_a) {
+  return _a.name
+}
+
+function ZA(_s, If) {
+  return r(Kd, {
+    children: [If > 0 && ", ", _s.count === 1 ? r(Q, {
+      children: ["Async hook ", e(n, {
+        bold: !0,
+        children: _s.hookEvent
+      }), " completed"]
+    }) : r(Q, {
+      children: [_s.count, " async ", e(n, {
+        bold: !0,
+        children: _s.hookEvent
+      }), " hooks completed"]
+    })]
+  }, _s.hookEvent)
+}
+
+function eD(rm) {
+  return rm.trim() !== ""
+}
+
+function oD(tS) {
+  return tS.trim() !== ""
+}
+
+function tD(Af) {
+  return Af.trim() !== ""
+}
+
+function kl(m) {
+  let U = w(280),
+    {
+      attachment: d,
+      addMargin: p,
+      verbose: g,
+      isTranscriptMode: h,
+      hasMetadataHeader: M,
+      followsSpeakerLabel: b,
+      followsInboundLabel: R,
+      messageId: v
+    } = m,
+    k = M === void 0 ? !1 : M,
+    C = b === void 0 ? !1 : b,
+    I = R === void 0 ? !1 : R,
+    W = M$(g, h),
+    j = $w(g);
+  if (as() && d.type === "teammate_mailbox") {
+    let H, D, G, K;
+    if (U[0] !== d.messages || U[1] !== W) {
+      K = yn;
+      ee: {
+        let Y = _Dt(d.messages);
+        if (Y.length === 0) {
+          K = null;
+          break ee
+        }
+        let z;
+        if (U[6] !== W) z = (se, X) => {
+          let de = EI(se.color);
+          let fe = Hg(se.from, Nv) || fw;
+          let oe = se.provenance === "forged";
+          let ue = oe ? Fn(fe) : fe;
+          let le = jie(se.summary);
+          let ke = le ? r(s, {
+            children: [r(n, {
+              color: de,
+              children: ["@", ue, e(n, {
+                "aria-hidden": !0,
+                children: te.pointer
+              })]
+            }), r(n, {
+              children: [" ", le]
+            })]
+          }) : null;
+          let pe = oe ? null : hr(se.text, ue);
+          if (pe) {
+            return {
+              kind: "panel",
+              node: r(Kd, {
+                children: [ke, pe]
+              }, X)
+            }
+          }
+          let re = oe ? null : lO(Ffe(), se.text);
+          if (re && !se.summary) {
+            return {
+              kind: "panel",
+              node: e(_r, {
+                displayName: ue,
+                inkColor: de,
+                idleReason: re.idleReason,
+                failureReason: re.failureReason,
+                summary: re.summary,
+                completedTaskId: re.completedTaskId,
+                result: re.result,
+                expanded: W
+              }, X)
+            }
+          }
+          let ye = oe ? null : lO(yDt(), se.text);
+          if (ye) {
+            let me = Hg(ye.taskId, Nv);
+            let ve = ye.taskSubject ? Hg(ye.taskSubject, vH) : "";
+            return {
+              kind: "panel",
+              node: e(Os, {
+                displayName: ue,
+                inkColor: de,
+                summary: le,
+                taskId: me,
+                taskSubject: ve
+              }, X)
+            }
+          }
+          let be = lX(se.text, se.from);
+          return {
+            kind: "text",
+            displayName: ue,
+            senderName: fe,
+            isUnverified: oe,
+            inkColor: de,
+            content: be,
+            summary: le
+          }
+        },
+        U[6] = W,
+        U[7] = z;
+        else z = U[7];
+        let Ce = Y.map(z);H = s;D = "column";G = W ? Ce.map(YA) : jn(Ce).map(XA)
+      }
+      U[0] = d.messages, U[1] = W, U[2] = H, U[3] = D, U[4] = G, U[5] = K
+    } else H = U[2], D = U[3], G = U[4], K = U[5];
+    if (K !== yn) return K;
+    let z;
+    if (U[8] !== H || U[9] !== D || U[10] !== G) z = e(H, {
+      flexDirection: D,
+      children: G
+    }), U[8] = H, U[9] = D, U[10] = G, U[11] = z;
+    else z = U[11];
+    return z
+  }
+  switch (d.type) {
+    case "directory": {
+      const D = d.displayPath + rR;
+      let G;
+      if (U[12] !== D) G = r(Me, {
+        children: ["Listed directory ", e(n, {
+          bold: !0,
+          children: D
+        })]
+      }), U[12] = D, U[13] = G;
+      else G = U[13];
+      return G
+    }
+    case "file":
+    case "already_read_file": {
+      let D;
+      if (U[14] !== d.content || U[15] !== d.truncated) D = _R(d.content, d.truncated), U[14] = d.content, U[15] = d.truncated, U[16] = D;
+      else D = U[16];
+      let qe = D;
+      let G;
+      if (U[17] !== d.displayPath) G = e(n, {
+        bold: !0,
+        children: d.displayPath
+      }), U[17] = d.displayPath, U[18] = G;
+      else G = U[18];
+      const K = qe !== void 0 && ` (${qe})`;
+      let z;
+      if (U[19] !== G || U[20] !== K) z = r(Me, {
+        children: ["Read ", G, K]
+      }), U[19] = G, U[20] = K, U[21] = z;
+      else z = U[21];
+      return z
+    }
+    case "compact_file_reference": {
+      let D;
+      if (U[22] !== d.displayPath) D = r(Me, {
+        children: ["Referenced file ", e(n, {
+          bold: !0,
+          children: d.displayPath
+        })]
+      }), U[22] = d.displayPath, U[23] = D;
+      else D = U[23];
+      return D
+    }
+    case "at_mention_reference": {
+      let D;
+      if (U[24] !== d.displayPath || U[25] !== d.mentions || U[26] !== d.unread) D = d.unread === "too_large" ? Gn(d.displayPath) : d.mentions.join(", "), U[24] = d.displayPath, U[25] = d.mentions, U[26] = d.unread, U[27] = D;
+      else D = U[27];
+      let G;
+      if (U[28] !== D) G = e(n, {
+        bold: !0,
+        children: D
+      }), U[28] = D, U[29] = G;
+      else G = U[29];
+      let K;
+      if (U[30] !== d.fileSize || U[31] !== d.unread) K = d.unread === "unexamined" ? "not read: could not be examined" : d.unread === "too_large" ? `not read: too large, ${Zt(d.fileSize)}` : "not read", U[30] = d.fileSize, U[31] = d.unread, U[32] = K;
+      else K = U[32];
+      let z;
+      if (U[33] !== G || U[34] !== K) z = r(Me, {
+        children: ["Referenced", " ", G, " ", "(", K, ")"]
+      }), U[33] = G, U[34] = K, U[35] = z;
+      else z = U[35];
+      return z
+    }
+    case "pdf_reference": {
+      let D;
+      if (U[36] !== d.displayPath) D = e(n, {
+        bold: !0,
+        children: d.displayPath
+      }), U[36] = d.displayPath, U[37] = D;
+      else D = U[37];
+      let G;
+      if (U[38] !== d.pageCount || U[39] !== d.stillArriving) G = d.stillArriving ? "queued before download" : d.pageCount === null ? "page count unknown" : `${d.pageCount} ${O(d.pageCount,"page")}`, U[38] = d.pageCount, U[39] = d.stillArriving, U[40] = G;
+      else G = U[40];
+      let K;
+      if (U[41] !== D || U[42] !== G) K = r(Me, {
+        children: ["Referenced PDF ", D, " (", G, ")"]
+      }), U[41] = D, U[42] = G, U[43] = K;
+      else K = U[43];
+      return K
+    }
+    case "selected_lines_in_ide": {
+      let D;
+      if (U[44] === S) D = e(n, {
+        "aria-hidden": !0,
+        children: "\u29C9 "
+      }), U[44] = D;
+      else D = U[44];
+      const G = d.lineEnd - d.lineStart + 1;
+      let K;
+      if (U[45] !== G) K = e(n, {
+        bold: !0,
+        children: G
+      }), U[45] = G, U[46] = K;
+      else K = U[46];
+      let z;
+      if (U[47] !== d.displayPath) z = e(n, {
+        bold: !0,
+        children: d.displayPath
+      }), U[47] = d.displayPath, U[48] = z;
+      else z = U[48];
+      let Ue;
+      if (U[49] !== d.ideName || U[50] !== K || U[51] !== z) Ue = r(Me, {
+        children: [D, "Selected", " ", K, " ", "lines from ", z, " in", " ", d.ideName]
+      }), U[49] = d.ideName, U[50] = K, U[51] = z, U[52] = Ue;
+      else Ue = U[52];
+      return Ue
+    }
+    case "selected_lines_in_diff": {
+      let D;
+      if (U[53] === S) D = e(n, {
+        "aria-hidden": !0,
+        children: "\u29C9 "
+      }), U[53] = D;
+      else D = U[53];
+      let G;
+      if (U[54] !== d.lineCount) G = e(n, {
+        bold: !0,
+        children: d.lineCount
+      }), U[54] = d.lineCount, U[55] = G;
+      else G = U[55];
+      let K;
+      if (U[56] !== d.lineCount) K = O(d.lineCount, "line"), U[56] = d.lineCount, U[57] = K;
+      else K = U[57];
+      let z;
+      if (U[58] !== G || U[59] !== K) z = r(Me, {
+        children: [D, "Selected", " ", G, " ", K, " from diff view"]
+      }), U[58] = G, U[59] = K, U[60] = z;
+      else z = U[60];
+      return z
+    }
+    case "nested_memory": {
+      let D;
+      if (U[61] !== d.displayPath) D = r(Me, {
+        children: ["Loaded ", e(n, {
+          bold: !0,
+          children: d.displayPath
+        })]
+      }), U[61] = d.displayPath, U[62] = D;
+      else D = U[62];
+      return D
+    }
+    case "withheld_memory": {
+      let D;
+      if (U[63] !== d.entries) D = e(Pi, {
+        entries: d.entries
+      }), U[63] = d.entries, U[64] = D;
+      else D = U[64];
+      return D
+    }
+    case "relevant_memories": {
+      let D;
+      if (U[65] === S) D = Oen(), U[65] = D;
+      else D = U[65];
+      let Ie = D;
+      const G = p ? 1 : 0;
+      let K;
+      if (U[66] === S) K = e(s, {
+        minWidth: 2
+      }), U[66] = K;
+      else K = U[66];
+      let z;
+      if (U[67] !== d.memories.length) z = e(n, {
+        bold: !0,
+        children: d.memories.length
+      }), U[67] = d.memories.length, U[68] = z;
+      else z = U[68];
+      const Ue = d.memories.length === 1 ? "memory" : "memories";
+      let xe;
+      if (U[69] !== h) xe = !h && r(Q, {
+        children: [" ", e(Gu, {})]
+      }), U[69] = h, U[70] = xe;
+      else xe = U[70];
+      let De;
+      if (U[71] !== z || U[72] !== Ue || U[73] !== xe) De = r(s, {
+        flexDirection: "row",
+        children: [K, r(n, {
+          dimColor: !0,
+          children: ["Recalled ", z, " ", Ie ? "local " : "", Ue, xe]
+        })]
+      }), U[71] = z, U[72] = Ue, U[73] = xe, U[74] = De;
+      else De = U[74];
+      let je;
+      if (U[75] !== d.memories || U[76] !== h || U[77] !== g) je = (g || h) && d.memories.map((lo) => r(s, {
+        flexDirection: "column",
+        children: [e(ze, {
+          children: r(n, {
+            dimColor: !0,
+            children: [e(QS, {
+              filePath: lo.path,
+              children: tR(lo.path)
+            }), Ie ? " \xB7 local" : ""]
+          })
+        }), h && e(s, {
+          paddingLeft: 5,
+          children: e(n, {
+            children: e(Go, {
+              children: lo.content
+            })
+          })
+        })]
+      }, lo.path)), U[75] = d.memories, U[76] = h, U[77] = g, U[78] = je;
+      else je = U[78];
+      let Ke;
+      if (U[79] !== De || U[80] !== je || U[81] !== G) Ke = r(s, {
+        flexDirection: "column",
+        marginTop: G,
+        children: [De, je]
+      }), U[79] = De, U[80] = je, U[81] = G, U[82] = Ke;
+      else Ke = U[82];
+      return Ke
+    }
+    case "account_memory_recall": {
+      d.localRecall ?? [];
+      return null
+    }
+    case "dynamic_skill": {
+      let Ve = d.skillNames.length;
+      let D;
+      if (U[83] !== Ve) D = O(Ve, "skill"), U[83] = Ve, U[84] = D;
+      else D = U[84];
+      let G;
+      if (U[85] !== Ve || U[86] !== D) G = r(n, {
+        bold: !0,
+        children: [Ve, " ", D]
+      }), U[85] = Ve, U[86] = D, U[87] = G;
+      else G = U[87];
+      let K;
+      if (U[88] !== d.displayPath) K = e(n, {
+        bold: !0,
+        children: d.displayPath
+      }), U[88] = d.displayPath, U[89] = K;
+      else K = U[89];
+      let z;
+      if (U[90] !== G || U[91] !== K) z = r(Me, {
+        children: ["Loaded", " ", G, " ", "from ", K]
+      }), U[90] = G, U[91] = K, U[92] = z;
+      else z = U[92];
+      return z
+    }
+    case "skill_listing": {
+      if (d.isInitial) {
+        return null
+      }
+      let D;
+      if (U[93] !== d.skillCount) D = e(n, {
+        bold: !0,
+        children: d.skillCount
+      }), U[93] = d.skillCount, U[94] = D;
+      else D = U[94];
+      let G;
+      if (U[95] !== d.skillCount) G = O(d.skillCount, "skill"), U[95] = d.skillCount, U[96] = G;
+      else G = U[96];
+      let K;
+      if (U[97] !== D || U[98] !== G) K = r(Me, {
+        children: [D, " ", G, " available"]
+      }), U[97] = D, U[98] = G, U[99] = K;
+      else K = U[99];
+      return K
+    }
+    case "agent_listing_delta": {
+      let D;
+      if (U[100] !== d.addedTypes) D = oa(d.addedTypes), U[100] = d.addedTypes, U[101] = D;
+      else D = U[101];
+      let To = D;
+      if (d.isInitial || To.length === 0) {
+        return null
+      }
+      let mo = To.length;
+      let G;
+      if (U[102] !== mo) G = e(n, {
+        bold: !0,
+        children: mo
+      }), U[102] = mo, U[103] = G;
+      else G = U[103];
+      let K;
+      if (U[104] !== mo) K = O(mo, "type"), U[104] = mo, U[105] = K;
+      else K = U[105];
+      let z;
+      if (U[106] !== G || U[107] !== K) z = r(Me, {
+        children: [G, " agent ", K, " available"]
+      }), U[106] = G, U[107] = K, U[108] = z;
+      else z = U[108];
+      return z
+    }
+    case "queued_command": {
+      let He, D, Xe;
+      if (U[109] !== d || U[110] !== C || U[111] !== k || U[112] !== j) {
+        Xe = dW(d.prompt).trim();
+        let co = Array.isArray(d.imagePasteIds) ? d.imagePasteIds : [];
+        let Mo = j && C && co.length > 0 ? Ir(Xe, mJe(d)) : void 0;
+        He = Mo === void 0 ? co : co.filter((vo) => !Mo.has(vo));
+        D = k && eVe(Xe);
+        U[109] = d, U[110] = C, U[111] = k, U[112] = j, U[113] = He, U[114] = D, U[115] = Xe
+      } else He = U[113], D = U[114], Xe = U[115];
+      let xo = D;
+      let G;
+      if (U[116] !== Xe) G = {
+        text: Xe,
+        type: "text"
+      }, U[116] = Xe, U[117] = G;
+      else G = U[117];
+      let K;
+      if (U[118] !== d) K = mJe(d), U[118] = d, U[119] = K;
+      else K = U[119];
+      const z = I && d.origin?.kind === "coordinator";
+      let Ue;
+      if (U[120] !== p || U[121] !== d.taskDelivery || U[122] !== I || U[123] !== C || U[124] !== h || U[125] !== v || U[126] !== G || U[127] !== K || U[128] !== z || U[129] !== g) Ue = e(Pre, {
+        addMargin: p,
+        param: G,
+        verbose: g,
+        isTranscriptMode: h,
+        messageId: v,
+        origin: K,
+        taskDelivery: d.taskDelivery,
+        followsSpeakerLabel: C,
+        followsInboundLabel: I,
+        followsCoordinatorLabel: z
+      }), U[120] = p, U[121] = d.taskDelivery, U[122] = I, U[123] = C, U[124] = h, U[125] = v, U[126] = G, U[127] = K, U[128] = z, U[129] = g, U[130] = Ue;
+      else Ue = U[130];
+      let xe;
+      if (U[131] !== xo || U[132] !== He) {
+        let De;
+        if (U[134] !== xo) De = (kt, jo) => e(Bs, {
+          imageId: kt,
+          startsUserTurn: xo && jo === 0 ? !0 : void 0
+        }, kt), U[134] = xo, U[135] = De;
+        else De = U[135];
+        xe = He.map(De);
+        U[131] = xo, U[132] = He, U[133] = xe
+      } else xe = U[133];
+      let De;
+      if (U[136] !== Ue || U[137] !== xe) De = r(s, {
+        flexDirection: "column",
+        children: [Ue, xe]
+      }), U[136] = Ue, U[137] = xe, U[138] = De;
+      else De = U[138];
+      return De
+    }
+    case "plan_file_reference": {
+      if (!d.planFilePath) {
+        let D;
+        if (U[139] === S) D = e(Me, {
+          children: "Plan referenced"
+        }), U[139] = D;
+        else D = U[139];
+        return D
+      }
+      let D;
+      if (U[140] !== d.planFilePath) D = ts(d.planFilePath), U[140] = d.planFilePath, U[141] = D;
+      else D = U[141];
+      let G;
+      if (U[142] !== D) G = r(Me, {
+        children: ["Plan file referenced (", D, ")"]
+      }), U[142] = D, U[143] = G;
+      else G = U[143];
+      return G
+    }
+    case "invoked_skills": {
+      if (d.skills.length === 0) {
+        return null
+      }
+      let D;
+      if (U[144] !== d.skills) D = d.skills.map(JA).join(", "), U[144] = d.skills, U[145] = D;
+      else D = U[145];
+      let et = D;
+      let G;
+      if (U[146] !== et) G = r(Me, {
+        children: ["Skills restored (", et, ")"]
+      }), U[146] = et, U[147] = G;
+      else G = U[147];
+      return G
+    }
+    case "diagnostics": {
+      let D;
+      if (U[148] !== d || U[149] !== h || U[150] !== g) D = e(Ui, {
+        attachment: d,
+        verbose: g,
+        isTranscriptMode: h
+      }), U[148] = d, U[149] = h, U[150] = g, U[151] = D;
+      else D = U[151];
+      return D
+    }
+    case "mcp_resource": {
+      let D;
+      if (U[152] !== d.name) D = e(n, {
+        bold: !0,
+        children: d.name
+      }), U[152] = d.name, U[153] = D;
+      else D = U[153];
+      let G;
+      if (U[154] !== d.server || U[155] !== D) G = r(Me, {
+        children: ["Read MCP resource ", D, " from", " ", d.server]
+      }), U[154] = d.server, U[155] = D, U[156] = G;
+      else G = U[156];
+      return G
+    }
+    case "command_permissions": {
+      return null
+    }
+    case "async_hook_response":
+    case "async_hook_response_batch": {
+      let D;
+      if (U[157] !== d.hookEvent || U[158] !== d.hooks || U[159] !== d.type) D = d.type === "async_hook_response" ? [{
+        hookEvent: d.hookEvent,
+        count: 1
+      }] : d.hooks, U[157] = d.hookEvent, U[158] = d.hooks, U[159] = d.type, U[160] = D;
+      else D = U[160];
+      let H, G, K;
+      if (U[161] !== h || U[162] !== D || U[163] !== g) {
+        K = yn;
+        ns: {
+          let z;
+          if (U[167] !== h || U[168] !== g) z = (jt) => g || h && jt.hookEvent !== "SessionStart",
+          U[167] = h,
+          U[168] = g,
+          U[169] = z;
+          else z = U[169];
+          let Po = D.filter(z);
+          if (Po.length === 0) {
+            K = null;
+            break ns
+          }
+          H = Me;G = Po.map(ZA)
+        }
+        U[161] = h, U[162] = D, U[163] = g, U[164] = H, U[165] = G, U[166] = K
+      } else H = U[164], G = U[165], K = U[166];
+      if (K !== yn) return K;
+      let z;
+      if (U[170] !== H || U[171] !== G) z = e(H, {
+        children: G
+      }), U[170] = H, U[171] = G, U[172] = z;
+      else z = U[172];
+      return z
+    }
+    case "hook_blocking_error": {
+      if (d.hookEvent === "Stop" || d.hookEvent === "SubagentStop") {
+        return null
+      }
+      let Co, D;
+      if (U[173] !== p || U[174] !== d.blockingError.blockingError || U[175] !== d.hookName || U[176] !== j) {
+        D = yn;
+        st: {
+          Co = d.blockingError.blockingError.trim();
+          if (j) {
+            D = e(Oe, {
+              row: Sn({
+                hookName: d.hookName,
+                blocking: !0,
+                reason: Co
+              }),
+              addMargin: p
+            });
+            break st
+          }
+        }
+        U[173] = p, U[174] = d.blockingError.blockingError, U[175] = d.hookName, U[176] = j, U[177] = Co, U[178] = D
+      } else Co = U[177], D = U[178];
+      if (D !== yn) return D;
+      let G;
+      if (U[179] !== d.hookName) G = r(Me, {
+        color: "error",
+        children: [d.hookName, " hook returned blocking error"]
+      }), U[179] = d.hookName, U[180] = G;
+      else G = U[180];
+      let K;
+      if (U[181] !== Co) K = Co ? e(Me, {
+        color: "error",
+        children: Co
+      }) : null, U[181] = Co, U[182] = K;
+      else K = U[182];
+      let z;
+      if (U[183] !== G || U[184] !== K) z = r(Q, {
+        children: [G, K]
+      }), U[183] = G, U[184] = K, U[185] = z;
+      else z = U[185];
+      return z
+    }
+    case "hook_non_blocking_error": {
+      if (d.hookEvent === "Stop" || d.hookEvent === "SubagentStop") {
+        return null
+      }
+      let so, D;
+      if (U[186] !== p || U[187] !== d.hookName || U[188] !== d.stderr || U[189] !== d.stdout || U[190] !== j) {
+        D = yn;
+        rt: {
+          so = vR(d.stderr, d.stdout);
+          if (j) {
+            D = e(Oe, {
+              row: Sn({
+                hookName: d.hookName,
+                blocking: !1,
+                reason: so
+              }),
+              addMargin: p
+            });
+            break rt
+          }
+        }
+        U[186] = p, U[187] = d.hookName, U[188] = d.stderr, U[189] = d.stdout, U[190] = j, U[191] = so, U[192] = D
+      } else so = U[191], D = U[192];
+      if (D !== yn) return D;
+      let G;
+      if (U[193] !== d.hookName) G = r(Me, {
+        color: "error",
+        children: [d.hookName, " hook error"]
+      }), U[193] = d.hookName, U[194] = G;
+      else G = U[194];
+      let K;
+      if (U[195] !== so) K = so ? e(Me, {
+        color: "error",
+        children: so
+      }) : null, U[195] = so, U[196] = K;
+      else K = U[196];
+      let z;
+      if (U[197] !== G || U[198] !== K) z = r(Q, {
+        children: [G, K]
+      }), U[197] = G, U[198] = K, U[199] = z;
+      else z = U[199];
+      return z
+    }
+    case "hook_cancelled": {
+      if (d.hookEvent !== "UserPromptSubmit" || !d.timedOut) {
+        return null
+      }
+      let D;
+      if (U[200] !== d.timeoutMs) D = d.timeoutMs ? d.timeoutMs < 1000 ? `${d.timeoutMs}ms` : `${Math.round(d.timeoutMs/1000)}s` : void 0, U[200] = d.timeoutMs, U[201] = D;
+      else D = U[201];
+      let ro = D;
+      let Ca = d.command ? ` [${d.command}]` : "";
+      const G = ro !== void 0 ? ` after ${ro}` : "";
+      let K;
+      if (U[202] !== d.hookName || U[203] !== Ca || U[204] !== G) K = r(Me, {
+        color: "error",
+        dimColor: !1,
+        children: [d.hookName, " hook", Ca, " timed out", G, ` \u2014 output discarded. Raise the hook's "timeout" to allow more time.`]
+      }), U[202] = d.hookName, U[203] = Ca, U[204] = G, U[205] = K;
+      else K = U[205];
+      return K
+    }
+    case "hook_error_during_execution": {
+      if (d.hookEvent === "Stop" || d.hookEvent === "SubagentStop") {
+        return null
+      }
+      let D;
+      if (U[206] !== d.hookName) D = r(Me, {
+        children: [d.hookName, " hook warning"]
+      }), U[206] = d.hookName, U[207] = D;
+      else D = U[207];
+      return D
+    }
+    case "hook_success": {
+      return null
+    }
+    case "hook_stopped_continuation": {
+      if (d.hookEvent === "Stop" || d.hookEvent === "SubagentStop") {
+        return null
+      }
+      let D;
+      if (U[208] !== d.hookName || U[209] !== d.message) D = r(Me, {
+        color: "warning",
+        children: [d.hookName, " hook stopped continuation: ", d.message]
+      }), U[208] = d.hookName, U[209] = d.message, U[210] = D;
+      else D = U[210];
+      return D
+    }
+    case "hook_deferred_tool": {
+      let D;
+      if (U[211] !== d.hookName || U[212] !== d.toolName) D = r(Me, {
+        color: "warning",
+        children: [d.hookName, " deferred ", d.toolName, " \xB7 resume with -p --resume to continue"]
+      }), U[211] = d.hookName, U[212] = d.toolName, U[213] = D;
+      else D = U[213];
+      return D
+    }
+    case "goal_status": {
+      if (d.sentinel) {
+        return null
+      }
+      let $e = d.failed === !0;
+      let uo;
+      if (U[214] !== d.durationMs || U[215] !== d.iterations || U[216] !== d.met || U[217] !== d.tokens || U[218] !== $e) {
+        uo = [];
+        if (d.met || $e) {
+          if (d.durationMs !== void 0) {
+            let D;
+            if (U[220] !== d.durationMs) D = rn(d.durationMs, {
+              mostSignificantOnly: !0
+            }), U[220] = d.durationMs, U[221] = D;
+            else D = U[221];
+            uo.push(D)
+          }
+          if (d.iterations !== void 0) {
+            const D = d.iterations;
+            let G;
+            if (U[222] !== d.iterations) G = O(d.iterations, "turn"), U[222] = d.iterations, U[223] = G;
+            else G = U[223];
+            uo.push(`${D} ${G}`)
+          }
+          if (d.tokens !== void 0) {
+            let D;
+            if (U[224] !== d.tokens) D = cr(d.tokens), U[224] = d.tokens, U[225] = D;
+            else D = U[225];
+            uo.push(`${D} tokens`)
+          }
+        }
+        U[214] = d.durationMs, U[215] = d.iterations, U[216] = d.met, U[217] = d.tokens, U[218] = $e, U[219] = uo
+      } else uo = U[219];
+      let Uo = uo.length > 0 ? ` (${uo.join(" \xB7 ")})` : "";
+      const D = $e ? "error" : d.met ? "success" : "pending";
+      let G;
+      if (U[226] !== D) G = e(ft, {
+        status: D,
+        withSpace: !0
+      }), U[226] = D, U[227] = G;
+      else G = U[227];
+      const K = $e ? "error" : void 0;
+      const z = !d.met && !$e;
+      const Ue = $e ? "Goal could not be achieved" : d.met ? "Goal achieved" : "Goal not yet met\u2026 continuing";
+      let xe;
+      if (U[228] !== K || U[229] !== z || U[230] !== Ue) xe = e(n, {
+        color: K,
+        dimColor: z,
+        children: Ue
+      }), U[228] = K, U[229] = z, U[230] = Ue, U[231] = xe;
+      else xe = U[231];
+      let De;
+      if (U[232] !== Uo) De = Uo ? e(n, {
+        dimColor: !0,
+        children: Uo
+      }) : null, U[232] = Uo, U[233] = De;
+      else De = U[233];
+      let je;
+      if (U[234] !== g) je = !g ? r(n, {
+        children: [" ", e(Gu, {})]
+      }) : null, U[234] = g, U[235] = je;
+      else je = U[235];
+      let Ke;
+      if (U[236] !== De || U[237] !== je || U[238] !== G || U[239] !== xe) Ke = r(n, {
+        children: [G, xe, De, je]
+      }), U[236] = De, U[237] = je, U[238] = G, U[239] = xe, U[240] = Ke;
+      else Ke = U[240];
+      let is;
+      if (U[241] !== d.reason || U[242] !== $e) is = $e && d.reason ? e(s, {
+        paddingLeft: 2,
+        children: e(n, {
+          dimColor: !0,
+          wrap: "wrap",
+          children: d.reason
+        })
+      }) : null, U[241] = d.reason, U[242] = $e, U[243] = is;
+      else is = U[243];
+      let Io;
+      if (U[244] !== d.condition || U[245] !== g) Io = g ? e(s, {
+        paddingLeft: 2,
+        children: r(n, {
+          dimColor: !0,
+          wrap: "wrap",
+          children: ["Goal: ", d.condition]
+        })
+      }) : null, U[244] = d.condition, U[245] = g, U[246] = Io;
+      else Io = U[246];
+      let wt;
+      if (U[247] !== d.reason || U[248] !== $e || U[249] !== g) wt = g && !$e && d.reason ? e(s, {
+        paddingLeft: 2,
+        children: r(n, {
+          dimColor: !0,
+          wrap: "wrap",
+          children: ["Reason: ", d.reason]
+        })
+      }) : null, U[247] = d.reason, U[248] = $e, U[249] = g, U[250] = wt;
+      else wt = U[250];
+      let ws;
+      if (U[251] !== Ke || U[252] !== is || U[253] !== Io || U[254] !== wt) ws = r(s, {
+        flexDirection: "column",
+        marginTop: 1,
+        children: [Ke, is, Io, wt]
+      }), U[251] = Ke, U[252] = is, U[253] = Io, U[254] = wt, U[255] = ws;
+      else ws = U[255];
+      return ws
+    }
+    case "hook_system_message": {
+      let D;
+      if (U[256] !== d.content || U[257] !== d.hookName) D = r(Me, {
+        children: [d.hookName, " says: ", d.content]
+      }), U[256] = d.content, U[257] = d.hookName, U[258] = D;
+      else D = U[258];
+      return D
+    }
+    case "tool_hosts_notice": {
+      let D;
+      if (U[259] !== d.lines) {
+        let er = oa(d.lines).filter(eD);
+        D = er.length === 0 ? null : e(Me, {
+          children: er.join(`
+`)
+        });
+        U[259] = d.lines, U[260] = D
+      } else D = U[260];
+      return D
+    }
+    case "tool_hosts_correction": {
+      let D;
+      if (U[261] !== d.lines) {
+        let sn = oa(d.lines).filter(oD);
+        D = sn.length === 0 ? null : e(Me, {
+          children: sn.join(`
+`)
+        });
+        U[261] = d.lines, U[262] = D
+      } else D = U[262];
+      return D
+    }
+    case "tool_host_result_lines": {
+      let D;
+      if (U[263] !== d.label || U[264] !== d.lines || U[265] !== d.unverified) {
+        let Ss = [...d.unverified === !0 && typeof d.label === "string" ? [d.label] : [], ...oa(d.lines)].filter(tD);
+        D = Ss.length === 0 ? null : e(Me, {
+          children: e(n, {
+            dimColor: !0,
+            children: Ss.join(`
+`)
+          })
+        });
+        U[263] = d.label, U[264] = d.lines, U[265] = d.unverified, U[266] = D
+      } else D = U[266];
+      return D
+    }
+    case "hook_permission_decision": {
+      let yo = d.decision === "allow" ? "Allowed" : "Denied";
+      let D;
+      if (U[267] !== d.hookEvent) D = e(n, {
+        bold: !0,
+        children: d.hookEvent
+      }), U[267] = d.hookEvent, U[268] = D;
+      else D = U[268];
+      let G;
+      if (U[269] !== yo || U[270] !== D) G = r(Me, {
+        children: [yo, " by ", D, " hook"]
+      }), U[269] = yo, U[270] = D, U[271] = G;
+      else G = U[271];
+      return G
+    }
+    case "task_status": {
+      let D;
+      if (U[272] !== d) D = e(mc, {
+        attachment: d
+      }), U[272] = d, U[273] = D;
+      else D = U[273];
+      return D
+    }
+    case "teammate_shutdown_batch": {
+      let D;
+      if (U[274] === S) D = r(n, {
+        "aria-hidden": !0,
+        dimColor: !0,
+        children: [wo, " "]
+      }), U[274] = D;
+      else D = U[274];
+      const G = d.count;
+      let K;
+      if (U[275] !== d.count) K = O(d.count, "teammate"), U[275] = d.count, U[276] = K;
+      else K = U[276];
+      let z;
+      if (U[277] !== d.count || U[278] !== K) z = r(s, {
+        flexDirection: "row",
+        width: "100%",
+        marginTop: 1,
+        children: [D, r(n, {
+          dimColor: !0,
+          children: [G, " ", K, " shut down gracefully"]
+        })]
+      }), U[277] = d.count, U[278] = K, U[279] = z;
+      else z = U[279];
+      return z
+    }
+    default: {
+      return null
+    }
+  }
+}
+
+function mc(m) {
+  let p = w(4),
+    {
+      attachment: d
+    } = m;
+  if (In() && !i8() && d.status === "killed") {
+    return null
+  }
+  if (as() && d.taskType === "in_process_teammate") {
+    let g;
+    if (p[0] !== d) g = e(uc, {
+      attachment: d
+    }), p[0] = d, p[1] = g;
+    else g = p[1];
+    return g
+  }
+  let g;
+  if (p[2] !== d) g = e(ea, {
+    attachment: d
+  }), p[2] = d, p[3] = g;
+  else g = p[3];
+  return g
+}
+
+function ea(m) {
+  let g = w(6),
+    {
+      attachment: d
+    } = m,
+    p = d.status === "completed" ? "completed in background" : d.status === "killed" ? "stopped" : d.status === "running" ? "still running in background" : d.status,
+    h;
+  if (g[0] === S) h = r(n, {
+    "aria-hidden": !0,
+    dimColor: !0,
+    children: [wo, " "]
+  }), g[0] = h;
+  else h = g[0];
+  let M;
+  if (g[1] !== d.description) M = e(n, {
+    bold: !0,
+    children: d.description
+  }), g[1] = d.description, g[2] = M;
+  else M = g[2];
+  let b;
+  if (g[3] !== p || g[4] !== M) b = r(s, {
+    flexDirection: "row",
+    width: "100%",
+    marginTop: 1,
+    children: [h, r(n, {
+      dimColor: !0,
+      children: ['Task "', M, '" ', p]
+    })]
+  }), g[3] = p, g[4] = M, g[5] = b;
+  else b = g[5];
+  return b
+}
+
+function uc(m) {
+  let p = w(13),
+    {
+      attachment: d
+    } = m,
+    g;
+  if (p[0] !== d.taskId) g = (h) => h.tasks[d.taskId], p[0] = d.taskId, p[1] = g;
+  else g = p[1];
+  let M = V(g);
+  if (M?.type !== "in_process_teammate") {
+    let b;
+    if (p[2] !== d) b = e(ea, {
+      attachment: d
+    }), p[2] = d, p[3] = b;
+    else b = p[3];
+    return b
+  }
+  let b;
+  if (p[4] !== M.identity.color) b = EI(M.identity.color), p[4] = M.identity.color, p[5] = b;
+  else b = p[5];
+  let R = b,
+    v = d.status === "completed" ? "shut down gracefully" : d.status,
+    k;
+  if (p[6] === S) k = r(n, {
+    "aria-hidden": !0,
+    dimColor: !0,
+    children: [wo, " "]
+  }), p[6] = k;
+  else k = p[6];
+  let C;
+  if (p[7] !== R || p[8] !== M.identity.agentName) C = r(n, {
+    color: R,
+    bold: !0,
+    dimColor: !1,
+    children: ["@", M.identity.agentName]
+  }), p[7] = R, p[8] = M.identity.agentName, p[9] = C;
+  else C = p[9];
+  let I;
+  if (p[10] !== v || p[11] !== C) I = r(s, {
+    flexDirection: "row",
+    width: "100%",
+    marginTop: 1,
+    children: [k, r(n, {
+      dimColor: !0,
+      children: ["Teammate", " ", C, " ", v]
+    })]
+  }), p[10] = v, p[11] = C, p[12] = I;
+  else I = p[12];
+  return I
+}
+
+function _R(m, d) {
+  if (!N(m)) return;
+  let p = N(m.file) ? m.file : void 0;
+  switch (m.type) {
+    case "file_unchanged":
+      return "unchanged";
+    case "notebook":
+      return Array.isArray(p?.cells) ? `${p.cells.length} cells` : void 0;
+    case "text":
+      return typeof p?.numLines === "number" ? `${p.numLines}${d?"+":""} lines` : void 0;
+    default:
+      return typeof p?.originalSize === "number" ? Zt(p.originalSize) : void 0
+  }
+}
+
+function vR(m, d) {
+  let p = m?.trim() ? m : d?.trim() ? d : "";
+  if (!p) return "";
+  let g = nt(p, `
+
+Expected schema:`).trim(),
+    h = 0,
+    M = g.indexOf(`
+`);
+  while (M !== -1) {
+    let R = g.slice(h, M).trim();
+    if (R) return R.length > 200 ? R.slice(0, 200) + "\u2026" : R;
+    h = M + 1, M = g.indexOf(`
+`, h)
+  }
+  let b = g.slice(h).trim();
+  return b.length > 200 ? b.slice(0, 200) + "\u2026" : b
+}
+
+function Me(m) {
+  let M = w(4),
+    {
+      dimColor: d,
+      children: p,
+      color: g
+    } = m,
+    h = d === void 0 ? !0 : d,
+    b;
+  if (M[0] !== p || M[1] !== g || M[2] !== h) b = e(s, {
+    children: e(ze, {
+      children: e(n, {
+        color: g,
+        dimColor: h,
+        wrap: "wrap",
+        children: p
+      })
+    })
+  }), M[0] = p, M[1] = g, M[2] = h, M[3] = b;
+  else b = M[3];
+  return b
+}
+B();
+import {
+  basename as NR
+} from "path";
+B();
+
+function pc(m, d) {
+  let p = dn(),
+    [g, h] = y(m),
+    M = A(m !== void 0 ? Date.now() : 0);
+  return P(() => {
+    if (m !== void 0) {
+      M.current = Date.now(), h(m);
+      return
+    }
+    let b = d - (Date.now() - M.current);
+    if (b <= 0) {
+      h(void 0);
+      return
+    }
+    return p.setTimeout(() => h(void 0), b)
+  }, [m, d, p]), g
+}
+B();
+
+function cc(m, d) {
+  let p = dn(),
+    [g, h] = y(m),
+    M = A(0);
+  return P(() => {
+    let b = Date.now() - M.current;
+    if (b >= d) {
+      M.current = Date.now(), h(m);
+      return
+    }
+    return p.setTimeout(() => {
+      M.current = Date.now(), h(m)
+    }, d - b)
+  }, [m, d, p]), g
+}
+
+function hc(m) {
+  return (m.teamMemorySearchCount ?? 0) > 0 || (m.teamMemoryReadCount ?? 0) > 0 || (m.teamMemoryWriteCount ?? 0) > 0
+}
+
+function Cl(m) {
+  let R = w(15),
+    {
+      message: d,
+      isActiveGroup: p,
+      hasPrecedingParts: g
+    } = m,
+    h = d.teamMemoryReadCount ?? 0,
+    M = d.teamMemorySearchCount ?? 0,
+    b = d.teamMemoryWriteCount ?? 0;
+  if (h === 0 && M === 0 && b === 0) {
+    return null
+  }
+  let v;
+  if (R[0] !== g || R[1] !== p || R[2] !== h || R[3] !== M || R[4] !== b) {
+    let k = [];
+    let C = g ? 1 : 0;
+    if (h > 0) {
+      let I = p ? C === 0 ? "Recalling" : "recalling" : C === 0 ? "Recalled" : "recalled";
+      if (C > 0) {
+        let W;
+        if (R[6] === S) W = e(n, {
+          children: ", "
+        }, "comma-tmr"), R[6] = W;
+        else W = R[6];
+        k.push(W)
+      }
+      k.push(r(n, {
+        children: [I, " ", e(n, {
+          bold: !0,
+          children: h
+        }), " team", " ", h === 1 ? "memory" : "memories"]
+      }, "team-mem-read")), C++
+    }
+    if (M > 0) {
+      let j = p ? C === 0 ? "Searching" : "searching" : C === 0 ? "Searched" : "searched";
+      if (C > 0) {
+        let W;
+        if (R[7] === S) W = e(n, {
+          children: ", "
+        }, "comma-tms"), R[7] = W;
+        else W = R[7];
+        k.push(W)
+      }
+      k.push(e(n, {
+        children: `${j} team memories`
+      }, "team-mem-search")), C++
+    }
+    if (b > 0) {
+      let U = p ? C === 0 ? "Writing" : "writing" : C === 0 ? "Wrote" : "wrote";
+      if (C > 0) {
+        let W;
+        if (R[8] === S) W = e(n, {
+          children: ", "
+        }, "comma-tmw"), R[8] = W;
+        else W = R[8];
+        k.push(W)
+      }
+      let W;
+      if (R[9] !== b) W = e(n, {
+        bold: !0,
+        children: b
+      }), R[9] = b, R[10] = W;
+      else W = R[10];
+      const H = b === 1 ? "memory" : "memories";
+      let D;
+      if (R[11] !== W || R[12] !== H || R[13] !== U) D = r(n, {
+        children: [U, " ", W, " team", " ", H]
+      }, "team-mem-write"), R[11] = W, R[12] = H, R[13] = U, R[14] = D;
+      else D = R[14];
+      k.push(D)
+    }
+    v = e(Q, {
+      children: k
+    });
+    R[0] = g, R[1] = p, R[2] = h, R[3] = M, R[4] = b, R[5] = v
+  } else v = R[5];
+  return v
+}
+
+function Sl() {
+  let m = w(1),
+    d;
+  if (m[0] === S) d = e(ze, {
+    height: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: "Tool use rejected"
+    })
+  }), m[0] = d;
+  else d = m[0];
+  return d
+}
+
+function TD(se) {
+  return se.agentDefinitions.activeAgents
+}
+
+function ut(m) {
+  let W = w(27),
+    {
+      progressMessagesForMessage: d,
+      tool: p,
+      tools: g,
+      param: h,
+      input: M,
+      output: b,
+      toolDenialKind: R,
+      toolDenialMonitorBlocked: v,
+      verbose: k,
+      isTranscriptMode: C
+    } = m,
+    I = Fo(TD);
+  if (typeof h.content === "string" && (h.content.includes(Lp) || h.content.includes(Hx) || h.content.includes(GO) || h.content.includes(JH))) {
+    let j;
+    if (W[0] === S) j = e(rh, {}), W[0] = j;
+    else j = W[0];
+    return j
+  }
+  if (typeof h.content === "string" && h.content.startsWith(mHn)) {
+    let j;
+    if (W[1] !== h.content) j = h.content.substring(mHn.length), W[1] = h.content, W[2] = j;
+    else j = W[2];
+    let U = j;
+    let H;
+    if (W[3] !== U) H = e(rr, {
+      plan: U
+    }), W[3] = U, W[4] = H;
+    else H = W[4];
+    return H
+  }
+  if (typeof h.content === "string" && h.content.startsWith(sN)) {
+    let j;
+    if (W[5] === S) j = e(Sl, {}), W[5] = j;
+    else j = W[5];
+    return j
+  }
+  if (typeof h.content === "string" && $Qt(h.content)) {
+    let j;
+    if (W[6] === S) j = e(zt, {
+      url: "https://code.claude.com/docs/s/claude-code-auto-mode"
+    }), W[6] = j;
+    else j = W[6];
+    let D = j;
+    let H;
+    if (W[7] !== h.content) H = zfo(u0(h.content)), W[7] = h.content, W[8] = H;
+    else H = W[8];
+    let G = H;
+    let K;
+    if (W[9] === S) K = r(n, {
+      "aria-hidden": !0,
+      children: [m0e, " "]
+    }), W[9] = K;
+    else K = W[9];
+    let Y;
+    if (W[10] !== G) Y = G && r(Q, {
+      children: [G, " ", r(n, {
+        "aria-hidden": !0,
+        children: [m0e, " "]
+      })]
+    }), W[10] = G, W[11] = Y;
+    else Y = W[11];
+    let ee;
+    if (W[12] !== Y) ee = e(ze, {
+      children: r(n, {
+        dimColor: !0,
+        children: ["Denied by auto mode classifier", " ", K, Y, "see ", D]
+      })
+    }), W[12] = Y, W[13] = ee;
+    else ee = W[13];
+    return ee
+  }
+  if (R === "automode-unavailable" && v !== !0 && !k && C !== !0) {
+    let j;
+    if (W[14] === S) j = r(Se, {
+      children: [e(n, {
+        children: "Not run"
+      }), e(n, {
+        children: "auto mode's check had no usable answer"
+      })]
+    }), W[14] = j;
+    else j = W[14];
+    let H;
+    if (W[15] === S) H = e(ze, {
+      children: r(n, {
+        dimColor: !0,
+        wrap: "wrap",
+        children: [j, " ", e(Gu, {})]
+      })
+    }), W[15] = H;
+    else H = W[15];
+    return H
+  }
+  let j;
+  if (W[16] !== I || W[17] !== M || W[18] !== C || W[19] !== b || W[20] !== h.content || W[21] !== d || W[22] !== p || W[23] !== R || W[24] !== g || W[25] !== k) {
+    let z = p && !Nu(M) ? Cg(p, "renderToolUseErrorMessage") : void 0;
+    j = z?.(h.content, {
+      progressMessagesForMessage: v3(d),
+      tools: g,
+      verbose: k,
+      isTranscriptMode: C,
+      input: M,
+      output: b,
+      activeAgents: I,
+      toolDenialKind: R
+    }) ?? e(Rm, {
+      result: h.content,
+      verbose: k
+    });
+    W[16] = I, W[17] = M, W[18] = C, W[19] = b, W[20] = h.content, W[21] = d, W[22] = p, W[23] = R, W[24] = g, W[25] = k, W[26] = j
+  } else j = W[26];
+  return j
+}
+
+function MD(m) {
+  if (Czs(m)) return On(m);
+  if (m.startsWith("mcp__")) return "mcp_tool";
+  if (m.startsWith("eval_registered__")) return "eval_registered_tool";
+  if (m.includes("__")) return "dynamic_tool";
+  return On(m)
+}
+
+function Br(m, d, p) {
+  if (typeof d !== "string" && typeof d !== "number" && typeof d !== "bigint") return d;
+  if (h2.of(m).claim(`primitive_tool_result_reported:${p.name}`)) {
+    let g = typeof d;
+    queueMicrotask(() => {
+      l(Ye(Error(`renderToolResultMessage returned a bare ${g} (tool: ${p.name}) \u2014 wrapped in <Text>`), `renderToolResultMessage returned a bare ${g} (tool: ${MD(p.name)}) \u2014 wrapped in <Text>`))
+    })
+  }
+  return e(n, {
+    children: d
+  })
+}
+
+function zL(lo) {
+  return lo.agentDefinitions.activeAgents
+}
+
+function YL(NS) {
+  return NS.viewingAgentTaskId === void 0 && Y0t(NS.toolPermissionContext.mode)
+}
+
+function QL(IF) {
+  return IF.id
+}
+
+function XL(AF) {
+  return jk(AF.name) && !0
+}
+
+function JL(DF) {
+  return DF.id
+}
+
+function ZL(LF) {
+  return LF.id
+}
+
+function eN(rre) {}
+
+function oN(nre) {
+  return !1
+}
+
+function tN(OS, NF) {
+  return r(n, {
+    dimColor: !0,
+    children: [e(n, {
+      "aria-hidden": !0,
+      children: "     \u23BF "
+    }), OS.command, " (", STe(OS.durationMs ?? 0), ")"]
+  }, `hook-${NF}`)
+}
+
+function rN(OF) {
+  return OF.sha
+}
+
+function nN(BF) {
+  return BF.branch
+}
+
+function iN(FF) {
+  return FF.replace(/^claude\.ai /, "")
+}
+
+function lN(I) {
+  return I.viewingAgentTaskId
+}
+var OR = 700;
+var BR = 3000,
+  FR = 5,
+  jR = 10;
+
+function Qc(m) {
+  let h = w(28),
+    {
+      content: d,
+      inProgressToolUseIDs: p,
+      lookups: g
+    } = m,
+    M;
+  if (h[0] !== d.id || h[1] !== p) M = p.has(d.id), h[0] = d.id, h[1] = p, h[2] = M;
+  else M = h[2];
+  let b = M,
+    R;
+  if (h[3] !== d.id || h[4] !== g.erroredToolUseIDs) R = g.erroredToolUseIDs.has(d.id), h[3] = d.id, h[4] = g.erroredToolUseIDs, h[5] = R;
+  else R = h[5];
+  let v = R,
+    k, C;
+  if (h[6] !== d.id || h[7] !== g.toolResultByToolUseID) k = g.toolResultByToolUseID.get(d.id), C = Qq.isInterruptedCall(k), h[6] = d.id, h[7] = g.toolResultByToolUseID, h[8] = k, h[9] = C;
+  else k = h[8], C = h[9];
+  let I = C,
+    W = k?.type === "user" ? k.toolUseResult : void 0,
+    j;
+  if (h[10] !== d.id || h[11] !== d.input || h[12] !== d.name || h[13] !== v || h[14] !== I || h[15] !== W || h[16] !== b) j = () => ({
+    requestId: d.id,
+    props: {
+      tool_use_id: d.id,
+      tool: d.name,
+      input: d.input,
+      isRunning: b,
+      isErrored: v,
+      isInterrupted: I,
+      output: W
+    }
+  }), h[10] = d.id, h[11] = d.input, h[12] = d.name, h[13] = v, h[14] = I, h[15] = W, h[16] = b, h[17] = j;
+  else j = h[17];
+  let U;
+  if (h[18] !== d || h[19] !== v || h[20] !== I || h[21] !== W || h[22] !== b) U = [d, b, v, I, W], h[18] = d, h[19] = v, h[20] = I, h[21] = W, h[22] = b, h[23] = U;
+  else U = h[23];
+  let H = $d.useRenderInput("ToolUse", j, U),
+    D;
+  if (h[24] !== d || h[25] !== W || h[26] !== m) D = (G) => e(Xc, {
+    ...m,
+    content: G.props.input === d.input ? d : {
+      ...d,
+      input: G.props.input
+    },
+    toolLabel: G.props.tool === d.name ? void 0 : G.props.tool,
+    outputOverride: G.props.output === W ? void 0 : {
+      value: G.props.output
+    }
+  }), h[24] = d, h[25] = W, h[26] = m, h[27] = D;
+  else D = h[27];
+  return $d.useRenderHook(H, D)
+}
+
+function Xc(m) {
+  let W = w(53),
+    {
+      content: d,
+      tools: p,
+      lookups: g,
+      inProgressToolUseIDs: h,
+      shouldAnimate: M,
+      theme: b,
+      outputOverride: R,
+      toolLabel: v
+    } = m,
+    k = gs(),
+    C = Fo(zL),
+    I = cz(),
+    j, U, H, D, G, K, Y, ee, z, se, X, de;
+  if (W[0] !== C || W[1] !== d.id || W[2] !== d.input || W[3] !== d.name || W[4] !== k || W[5] !== h || W[6] !== g || W[7] !== R || W[8] !== I || W[9] !== M || W[10] !== b || W[11] !== v || W[12] !== p) {
+    X = yn;
+    fe: {
+      de = Xxt(p, d.name) ?? Dre(d.name, k);
+      if (!de || de.isTransparentWrapper?.()) {
+        X = null;
+        break fe
+      }
+      let oe;
+      if (W[25] !== d.id || W[26] !== g.resolvedToolUseIDs) oe = g.resolvedToolUseIDs.has(d.id),
+      W[25] = d.id,
+      W[26] = g.resolvedToolUseIDs,
+      W[27] = oe;
+      else oe = W[27];H = oe;
+      let ue;
+      if (W[28] !== d.id || W[29] !== g.erroredToolUseIDs) ue = g.erroredToolUseIDs.has(d.id),
+      W[28] = d.id,
+      W[29] = g.erroredToolUseIDs,
+      W[30] = ue;
+      else ue = W[30];U = ue;
+      let le;
+      if (W[31] !== d.id || W[32] !== h) le = h.has(d.id),
+      W[31] = d.id,
+      W[32] = h,
+      W[33] = le;
+      else le = W[33];
+      let ke = le;G = g.toolResultByToolUseID.get(d.id);
+      let pe = R !== void 0 ? R.value : G?.type === "user" ? G.toolUseResult : void 0;
+      let re = nVt(I, de.outputSchema, pe);
+      let ye = re?.success ? re.data : void 0;
+      let me = ye;
+      let ve = fb(de, d.input);
+      let be = ve.success ? ve.data : void 0;
+      let Ce = Yat(de, be);
+      let qe = v ?? de.userFacingName(be, {
+        activeAgents: C
+      });
+      let Ue;
+      if (W[34] !== d.input) Ue = v5(d.input),
+      W[34] = d.input,
+      W[35] = Ue;
+      else Ue = W[35];
+      let Ie = Ue;
+      let xe = Ie !== null ? Ie : be ? Mtt(de, be, {
+        theme: b,
+        verbose: !0,
+        isTranscriptMode: !0,
+        activeAgents: C
+      }) : null;D = g.progressMessagesByToolUseID.get(d.id) ?? [];
+      let De = H && !U && me !== void 0 ? Cg(de, "renderToolResultMessage")?.(me, v3(D), {
+        verbose: !0,
+        tools: p,
+        theme: b,
+        isTranscriptMode: !0,
+        input: d.input,
+        activeAgents: C
+      }) : void 0;
+      let je = qe !== "";
+      if (!je && De == null && !(H && U && G !== void 0)) {
+        X = null;
+        break fe
+      }
+      j = s;K = d.id;Y = "column";ee = 1;z = je && r(s, {
+        flexDirection: "row",
+        children: [e(bo, {
+          shouldAnimate: M && ke,
+          isUnresolved: !H,
+          isError: U
+        }), r(n, {
+          children: [e(n, {
+            bold: !0,
+            children: qe
+          }), xe && r(n, {
+            children: ["(", xe, ")"]
+          }), Ce !== void 0 && r(n, {
+            dimColor: !0,
+            children: [" \xB7 on ", Ce]
+          })]
+        }), be && Cg(de, "renderToolUseTag")?.(be, {
+          toolUseId: d.id,
+          toolUseResult: pe,
+          progressMessages: g.progressMessagesByToolUseID.get(d.id)
+        })]
+      });se = De != null && e(s, {
+        children: Br(k, De, de)
+      })
+    }
+    W[0] = C, W[1] = d.id, W[2] = d.input, W[3] = d.name, W[4] = k, W[5] = h, W[6] = g, W[7] = R, W[8] = I, W[9] = M, W[10] = b, W[11] = v, W[12] = p, W[13] = j, W[14] = U, W[15] = H, W[16] = D, W[17] = G, W[18] = K, W[19] = Y, W[20] = ee, W[21] = z, W[22] = se, W[23] = X, W[24] = de
+  } else j = W[13], U = W[14], H = W[15], D = W[16], G = W[17], K = W[18], Y = W[19], ee = W[20], z = W[21], se = W[22], X = W[23], de = W[24];
+  if (X !== yn) return X;
+  let oe;
+  if (W[36] !== d.id || W[37] !== d.input || W[38] !== U || W[39] !== H || W[40] !== D || W[41] !== G || W[42] !== de || W[43] !== p) oe = H && U && e(la, {
+    toolUseID: d.id,
+    input: d.input,
+    resultMsg: G,
+    tool: de,
+    tools: p,
+    progressMessagesForMessage: D
+  }), W[36] = d.id, W[37] = d.input, W[38] = U, W[39] = H, W[40] = D, W[41] = G, W[42] = de, W[43] = p, W[44] = oe;
+  else oe = W[44];
+  let ue;
+  if (W[45] !== j || W[46] !== K || W[47] !== Y || W[48] !== ee || W[49] !== z || W[50] !== se || W[51] !== oe) ue = r(j, {
+    flexDirection: Y,
+    marginTop: ee,
+    children: [z, se, oe]
+  }, K), W[45] = j, W[46] = K, W[47] = Y, W[48] = ee, W[49] = z, W[50] = se, W[51] = oe, W[52] = ue;
+  else ue = W[52];
+  return ue
+}
+
+function la(m) {
+  let k = w(27),
+    {
+      toolUseID: d,
+      input: p,
+      resultMsg: g,
+      tool: h,
+      tools: M,
+      progressMessagesForMessage: b
+    } = m,
+    {
+      columns: R
+    } = Te(),
+    [v] = br();
+  if (g?.type !== "user") {
+    return null
+  }
+  let C, I, W;
+  if (k[0] !== g.message.content || k[1] !== h || k[2] !== d) {
+    W = yn;
+    H: {
+      let j;
+      if (k[6] !== d) j = (U) => U.type === "tool_result" && U.tool_use_id === d,
+      k[6] = d,
+      k[7] = j;
+      else j = k[7];C = g.message.content.find(j);
+      if (C?.type !== "tool_result") {
+        W = null;
+        break H
+      }
+      if (typeof C.content === "string" && dcn(C.content)) {
+        let D;
+        if (k[8] === S) D = e(rh, {}), k[8] = D;
+        else D = k[8];
+        W = D;
+        break H
+      }
+      I = typeof C.content === "string" && (C.content.startsWith(bb) || C.content.startsWith(sN) && Cg(h, "renderToolUseRejectedMessage") !== void 0) || C.content === Lp || C.content === Hx || C.content === GO || C.content === JH
+    }
+    k[0] = g.message.content, k[1] = h, k[2] = d, k[3] = C, k[4] = I, k[5] = W
+  } else C = k[3], I = k[4], W = k[5];
+  if (W !== yn) return W;
+  if (I) {
+    let j, D;
+    if (k[9] !== R || k[10] !== p || k[11] !== b || k[12] !== v || k[13] !== h || k[14] !== M) {
+      D = yn;
+      Y: {
+        let G = Cg(h, "renderToolUseRejectedMessage");
+        if (!G) {
+          let K;
+          if (k[17] === S) K = e(rh, {}), k[17] = K;
+          else K = k[17];
+          D = K;
+          break Y
+        }
+        let ee = fb(h, p);
+        if (!ee.success) {
+          let K;
+          if (k[18] === S) K = e(rh, {}), k[18] = K;
+          else K = k[18];
+          D = K;
+          break Y
+        }
+        j = G(ee.data, {
+          columns: R,
+          messages: [],
+          tools: M,
+          verbose: !0,
+          progressMessagesForMessage: v3(b),
+          theme: v,
+          isTranscriptMode: !0
+        }) ?? e(rh, {})
+      }
+      k[9] = R, k[10] = p, k[11] = b, k[12] = v, k[13] = h, k[14] = M, k[15] = j, k[16] = D
+    } else j = k[15], D = k[16];
+    if (D !== yn) return D;
+    return j
+  }
+  let j;
+  if (k[19] !== C || k[20] !== p || k[21] !== b || k[22] !== g.toolDenialKind || k[23] !== g.toolUseResult || k[24] !== h || k[25] !== M) j = e(ut, {
+    param: C,
+    tool: h,
+    tools: M,
+    input: p,
+    output: g.toolUseResult,
+    toolDenialKind: g.toolDenialKind,
+    verbose: !0,
+    progressMessagesForMessage: b,
+    isTranscriptMode: !0
+  }), k[19] = C, k[20] = p, k[21] = b, k[22] = g.toolDenialKind, k[23] = g.toolUseResult, k[24] = h, k[25] = M, k[26] = j;
+  else j = k[26];
+  return j
+}
+var uk = "\x00",
+  pk = "\x01";
+
+function md(m) {
+  let b = w(25),
+    {
+      message: d,
+      inProgressToolUseIDs: p,
+      lookups: g,
+      verbose: h,
+      isActiveGroup: M
+    } = m,
+    R;
+  if (b[0] !== p || b[1] !== g || b[2] !== d) {
+    let v;
+    if (b[4] !== p || b[5] !== g) v = (k) => [k.id, g.toolResultByToolUseID.get(k.id)?.uuid ?? "", p.has(k.id) ? "running" : "", g.erroredToolUseIDs.has(k.id) ? "errored" : ""].join(uk), b[4] = p, b[5] = g, b[6] = v;
+    else v = b[6];
+    R = Bt(d).map(v).join(pk);
+    b[0] = p, b[1] = g, b[2] = d, b[3] = R
+  } else R = b[3];
+  let C = R,
+    v;
+  if (b[7] !== p || b[8] !== g || b[9] !== d) v = (I) => ({
+    key: I,
+    calls: Bt(d).map((W) => {
+      let j = g.toolResultByToolUseID.get(W.id);
+      return {
+        tool_use_id: W.id,
+        tool: W.name,
+        input: W.input,
+        isRunning: p.has(W.id),
+        isErrored: g.erroredToolUseIDs.has(W.id),
+        isInterrupted: Qq.isInterruptedCall(j),
+        output: j?.type === "user" ? j.toolUseResult : void 0
+      }
+    })
+  }), b[7] = p, b[8] = g, b[9] = d, b[10] = v;
+  else v = b[10];
+  let U = v,
+    H;
+  if (b[11] !== C || b[12] !== U) H = () => U(C), b[11] = C, b[12] = U, b[13] = H;
+  else H = b[13];
+  let [D, G] = y(H), K = D;
+  if (D.key !== C) {
+    if (b[14] !== C || b[15] !== U) K = U(C), G(K), b[14] = C, b[15] = U, b[16] = K;
+    else K = b[16]
+  }
+  let {
+    calls: Y
+  } = K, ee, z;
+  if (b[17] !== Y || b[18] !== M || b[19] !== d.uuid || b[20] !== h) ee = () => ({
+    requestId: d.uuid,
+    props: {
+      calls: Y,
+      isActive: M === !0,
+      isExpanded: h
+    }
+  }), z = [d.uuid, Y, M, h], b[17] = Y, b[18] = M, b[19] = d.uuid, b[20] = h, b[21] = ee, b[22] = z;
+  else ee = b[21], z = b[22];
+  let se = $d.useRenderInput("ToolGroup", ee, z),
+    X;
+  if (b[23] !== m) X = (de) => e(Jc, {
+    ...m,
+    verbose: de.props.isExpanded
+  }), b[23] = m, b[24] = X;
+  else X = b[24];
+  return $d.useRenderHook(se, X)
+}
+
+function Bt(m) {
+  let d = [];
+  for (let p of m.messages) {
+    let g = p.type === "assistant" ? [p] : p.type === "grouped_tool_use" ? p.messages : [];
+    for (let h of g) {
+      let M = h.message.content[0];
+      if (M?.type === "tool_use") d.push(M)
+    }
+  }
+  return d
+}
+
+function Jc(m) {
+  let X = w(178),
+    {
+      message: d,
+      inProgressToolUseIDs: p,
+      shouldAnimate: g,
+      verbose: h,
+      tools: M,
+      lookups: b,
+      isActiveGroup: R,
+      addMargin: v
+    } = m,
+    k = v === void 0 ? !0 : v,
+    C = mi(),
+    I = Fo(YL),
+    W = Ee(tVe) !== null && I === !0,
+    {
+      searchCount: j,
+      readCount: U,
+      listCount: H,
+      memorySearchCount: D,
+      memoryReadCount: G,
+      memoryWriteCount: K,
+      messages: Y
+    } = d,
+    [ee] = br(),
+    {
+      columns: z
+    } = Te(),
+    se = Cse(d),
+    de;
+  if (X[0] !== b.erroredToolUseIDs) de = (fe) => b.erroredToolUseIDs.has(fe), X[0] = b.erroredToolUseIDs, X[1] = de;
+  else de = X[1];
+  let oe = se.some(de),
+    ue = d.accountMemoryReadKeys?.length ?? 0,
+    le = d.accountMemorySearchCount ?? 0,
+    ke = Oen() || ue > 0 || le > 0 ? "local " : "",
+    pe = D > 0 || G > 0 || K > 0 || ue > 0 || le > 0,
+    re;
+  if (X[2] !== d) re = hc(d), X[2] = d, X[3] = re;
+  else re = X[3];
+  let ye = re;
+  const me = U ?? 0,
+    ve = j ?? 0,
+    be = H ?? 0,
+    Ce = d.mcpCallCount ?? 0,
+    qe = d.bashCount ?? 0;
+  let Ue;
+  if (X[4] !== me || X[5] !== ve || X[6] !== be || X[7] !== Ce || X[8] !== qe) Ue = {
+    read: me,
+    search: ve,
+    list: be,
+    mcp: Ce,
+    bash: qe
+  }, X[4] = me, X[5] = ve, X[6] = be, X[7] = Ce, X[8] = qe, X[9] = Ue;
+  else Ue = X[9];
+  let Ie = Ue,
+    [xe, De] = y(Ie);
+  const je = Math.max(xe.read, Ie.read),
+    lo = Math.max(xe.search, Ie.search),
+    Ke = Math.max(xe.list, Ie.list),
+    Ve = Math.max(xe.mcp, Ie.mcp),
+    To = Math.max(xe.bash, Ie.bash);
+  let mo;
+  if (X[10] !== je || X[11] !== lo || X[12] !== Ke || X[13] !== Ve || X[14] !== To) mo = {
+    read: je,
+    search: lo,
+    list: Ke,
+    mcp: Ve,
+    bash: To
+  }, X[10] = je, X[11] = lo, X[12] = Ke, X[13] = Ve, X[14] = To, X[15] = mo;
+  else mo = X[15];
+  let He = mo;
+  if (He.read !== xe.read || He.search !== xe.search || He.list !== xe.list || He.mcp !== xe.mcp || He.bash !== xe.bash) De(He);
+  let Xe = d.otherToolCount ?? 0,
+    co = d.agentCount ?? 0,
+    Mo = d.editFileCount ?? 0,
+    vo = d.frameCount ?? 0,
+    xo = d.linesAdded ?? 0,
+    kt = d.linesRemoved ?? 0,
+    jo = d.scratchpadWriteCount ?? 0,
+    et = d.scratchpadLinesAdded ?? 0,
+    jt = d.scratchpadLinesRemoved ?? 0,
+    Po = d.workshopWriteCount ?? 0,
+    ns = d.workshopLinesAdded ?? 0,
+    Co = d.workshopLinesRemoved ?? 0,
+    {
+      read: st,
+      search: so,
+      list: rt,
+      mcp: ro
+    } = He,
+    Ca = d.gitOpBashCount ?? 0,
+    $e = C ? Math.max(0, He.bash - Ca) : 0,
+    uo = d.thoughtForMs ?? 0,
+    Uo = uo > 0 || d.latestThinkingSummary !== void 0,
+    is = so > 0 || st > 0 || rt > 0 || ro > 0 || $e > 0 || Ca > 0 || Xe > 0 || co > 0 || Mo > 0 || jo > 0 || Po > 0 || vo > 0 || (d.hookTotalMs ?? 0) > 0 || Uo,
+    Io;
+  if (X[16] !== R || X[17] !== b.toolResultByToolUseID || X[18] !== d || X[19] !== W) Io = R === !0 && !W ? Bt(d).filter((wt) => jk(wt.name) && !b.toolResultByToolUseID.has(wt.id)).map(QL) : [], X[16] = R, X[17] = b.toolResultByToolUseID, X[18] = d, X[19] = W, X[20] = Io;
+  else Io = X[20];
+  let ws = Io,
+    er;
+  if (X[21] !== p || X[22] !== R || X[23] !== d || X[24] !== ws.length || X[25] !== W) er = ws.length > 0 || R === !0 && !W && Bt(d).some((sn) => jk(sn.name) && p.has(sn.id)), X[21] = p, X[22] = R, X[23] = d, X[24] = ws.length, X[25] = W, X[26] = er;
+  else er = X[26];
+  let Ss = er,
+    yo = Bt(d).filter(XL),
+    at = yo.length > 0 ? Pn(M, IS) : void 0,
+    Sa = at && Cg(at, "renderToolUseErrorMessage"),
+    Wt;
+  if (X[27] === S) Wt = [], X[27] = Wt;
+  else Wt = X[27];
+  let sm = Wt;
+  sm.length > 0 ? Pn(M, bm) : void 0;
+  let _a;
+  if (X[28] === S) _a = new Set([]), X[28] = _a;
+  else _a = X[28];
+  let _s = _a,
+    If = Sa !== void 0 && _s.size > 0,
+    rm;
+  if (X[29] === S) rm = new Set(sm.map(JL)), X[29] = rm;
+  else rm = X[29];
+  let tS = rm;
+  new Set(yo.map(ZL));
+  let Af = !1 && !If && !0,
+    sS = !1 ? yo.filter((cF) => !_s.has(cF.id)) : yo,
+    Df = se.some((rS) => !tS.has(rS) && Qq.isInterruptedCall(b.toolResultByToolUseID.get(rS))) || Af,
+    Nf = function Nf(nm, Lf) {
+      let vs = b.toolResultByToolUseID.get(nm);
+      if (!Sa || vs?.type !== "user" || !b.erroredToolUseIDs.has(nm) || Qq.isInterruptedCall(vs)) {
+        return null
+      }
+      let ls = vs.message.content.find((nS) => nS.type === "tool_result" && nS.tool_use_id === nm);
+      if (ls?.type !== "tool_result" || typeof ls.content === "string" && (ls.content.startsWith(bb) || ls.content.startsWith(sN))) {
+        return null
+      }
+      if (typeof ls.content === "string" && (xLo(vs.toolDenialKind) || $Qt(ls.content) || Wfo(ls.content))) {
+        return e(ut, {
+          param: ls,
+          tool: at,
+          tools: M,
+          input: yo.find((gF) => gF.id === nm)?.input,
+          output: vs.toolUseResult,
+          toolDenialKind: vs.toolDenialKind,
+          toolDenialMonitorBlocked: vs.toolDenialMonitorBlocked,
+          verbose: Lf,
+          progressMessagesForMessage: [],
+          isTranscriptMode: Lf
+        })
+      }
+      return Sa(ls.content, {
+        progressMessagesForMessage: [],
+        tools: M,
+        verbose: Lf,
+        output: vs.toolUseResult
+      }) ?? null
+    },
+    {
+      readFilePaths: Of,
+      searchArgs: Bf,
+      latestDisplayHint: nn
+    } = d;
+  if (nn === void 0) {
+    let va;
+    if (X[30] !== Bf) va = Bf?.at(-1), X[30] = Bf, X[31] = va;
+    else va = X[31];
+    let aS = va;
+    let Ff = aS !== void 0 ? `"${aS}"` : void 0;
+    let Ps;
+    if (X[32] !== Ff || X[33] !== Of) {
+      let iS = Of?.at(-1);
+      Ps = iS !== void 0 ? ts(iS) : Ff;
+      X[32] = Ff, X[33] = Of, X[34] = Ps
+    } else Ps = X[34];
+    nn = Ps
+  }
+  if (Fo(eN), Fo(oN), R) {
+    for (const dS of se) {
+      if (!p.has(dS)) {
+        continue
+      }
+      let mS = (b.progressMessagesByToolUseID.get(dS) ?? []).at(-1)?.data;
+      if (mS?.type === "mcp_progress") {
+        let {
+          progress: am,
+          total: jf,
+          progressMessage: fF
+        } = mS;
+        let lm = jp(fF);
+        if (am !== void 0 && jf !== void 0 && jf > 0) {
+          let uS = Math.round(Math.min(1, Math.max(0, am / jf)) * 100);
+          nn = lm ? `${lm} (${uS}%)` : `${uS}%`
+        } else if (lm) nn = lm;
+        else if (am !== void 0) nn = `Processing\u2026 ${am}`
+      }
+    }
+  }
+  let hF = cc(nn, OR),
+    Wf, or = R && d.isLiveBriefTurn === !0,
+    pS = pc(R && !or ? d.latestThinkingSummary : void 0, BR),
+    dm = R && pS !== void 0,
+    Pa = dm ? pS : hF,
+    Hf = Date.parse(d.timestamp),
+    va;
+  if (X[35] !== Hf || X[36] !== R) va = (mm) => R && !mm.viewingAgentTaskId && mm.taskSummary !== null && !(mm.taskSummary.at < Hf) ? mm.taskSummary.text : null, X[35] = Hf, X[36] = R, X[37] = va;
+  else va = X[37];
+  let um = Fo(va);
+  if (h) {
+    let an;
+    if (X[38] !== Y) {
+      an = [];
+      for (const pm of Y) {
+        if (pm.type === "assistant") an.push(pm);
+        else if (pm.type === "grouped_tool_use") an.push(...pm.messages)
+      }
+      X[38] = Y, X[39] = an
+    } else an = X[39];
+    new Set;
+    let Ps;
+    if (X[40] !== b) Ps = (cS) => b.erroredToolUseIDs.has(cS.id) && b.toolResultByToolUseID.get(cS.id)?.type === "user", X[40] = b, X[41] = Ps;
+    else Ps = X[41];
+    let TF = sS.filter(Ps);
+    let Ea;
+    if (X[42] !== Y || X[43] !== h) {
+      let Le;
+      if (X[45] !== h) Le = (ln) => {
+        let $f = ln.type === "user" ? ln.message.content[0] : null;
+        if ($f?.type !== "text" || !$f.text.includes(`<${Nc}`)) {
+          return null
+        }
+        return e(s, {
+          marginTop: 1,
+          children: e(js, {
+            addMargin: !1,
+            param: {
+              type: "text",
+              text: $f.text
+            },
+            messageId: ln.uuid,
+            origin: ln.type === "user" ? ln.origin : void 0,
+            verbose: h
+          })
+        }, ln.uuid)
+      }, X[45] = h, X[46] = Le;
+      else Le = X[46];
+      Ea = Y.map(Le);
+      X[42] = Y, X[43] = h, X[44] = Ea
+    } else Ea = X[44];
+    let Le;
+    if (X[47] !== p || X[48] !== b || X[49] !== g || X[50] !== ee || X[51] !== an || X[52] !== M) Le = an.map((gS) => {
+      let mn = gS.message.content[0];
+      if (mn?.type === "thinking" && mn.thinking) {
+        return e(s, {
+          marginTop: 1,
+          children: e(Ds, {
+            param: mn,
+            addMargin: !1,
+            isTranscriptMode: !0,
+            verbose: !0
+          })
+        }, gS.uuid)
+      }
+      if (mn?.type !== "tool_use") {
+        return null
+      }
+      return e(Qc, {
+        content: mn,
+        tools: M,
+        lookups: b,
+        inProgressToolUseIDs: p,
+        shouldAnimate: g,
+        theme: ee
+      }, mn.id)
+    }), X[47] = p, X[48] = b, X[49] = g, X[50] = ee, X[51] = an, X[52] = M, X[53] = Le;
+    else Le = X[53];
+    const eo = TF.map((Ua) => {
+      let fS = b.toolResultByToolUseID.get(Ua.id);
+      let un;
+      if (Qq.isInterruptedCall(fS)) un = e(rh, {});
+      else if (un = Nf(Ua.id, !0), un === null && at !== void 0) un = e(la, {
+        toolUseID: Ua.id,
+        input: Ua.input,
+        resultMsg: fS,
+        tool: at,
+        tools: M,
+        progressMessagesForMessage: []
+      });
+      return un === null ? null : e(s, {
+        marginTop: 1,
+        children: un
+      }, `ended-${Ua.id}`)
+    });
+    let it;
+    if (X[54] !== d.hookCount || X[55] !== d.hookInfos || X[56] !== d.hookTotalMs) it = d.hookInfos && d.hookInfos.length > 0 && r(Q, {
+      children: [r(n, {
+        dimColor: !0,
+        children: [e(n, {
+          "aria-hidden": !0,
+          children: "  \u23BF  "
+        }), "Ran ", d.hookCount, " ", "PreToolUse ", d.hookCount === 1 ? "hook" : "hooks", " (", STe(d.hookTotalMs ?? 0), ")"]
+      }), d.hookInfos.map(tN)]
+    }), X[54] = d.hookCount, X[55] = d.hookInfos, X[56] = d.hookTotalMs, X[57] = it;
+    else it = X[57];
+    let tr;
+    if (X[58] !== ke || X[59] !== d.relevantMemories) tr = d.relevantMemories?.map((Gf) => r(s, {
+      flexDirection: "column",
+      marginTop: 1,
+      children: [r(n, {
+        dimColor: !0,
+        children: [e(n, {
+          "aria-hidden": !0,
+          children: "  \u23BF  "
+        }), "Recalled ", NR(Gf.path), ke ? " \xB7 local" : ""]
+      }), e(s, {
+        paddingLeft: 5,
+        children: e(n, {
+          children: e(Go, {
+            children: Gf.content
+          })
+        })
+      })]
+    }, Gf.path)), X[58] = ke, X[59] = d.relevantMemories, X[60] = tr;
+    else tr = X[60];
+    return r(s, {
+      flexDirection: "column",
+      children: [Ea, Le, !1, eo, !1, !1, it, tr, !1]
+    })
+  }
+  let Gt = void 0 !== void 0 && sS.includes(void 0) ? Nf((void 0).id, !1) : null,
+    Ps;
+  if (X[61] !== b) Ps = (MF) => Qq.isInterruptedCall(b.toolResultByToolUseID.get(MF.id)), X[61] = b, X[62] = Ps;
+  else Ps = X[62];
+  let yF = yo.some(Ps),
+    Ea;
+  if (X[63] === S) Ea = [], X[63] = Ea;
+  else Ea = X[63];
+  let sr = Ea;
+  if (!pe && !ye && !is && !Ss) {
+    let cm = yF || Af;
+    if (!cm && Gt === null && sr.length === 0) {
+      return null
+    }
+    const Le = k ? 1 : 0;
+    let eo;
+    if (X[64] !== cm) eo = cm && e(rh, {}), X[64] = cm, X[65] = eo;
+    else eo = X[65];
+    let it;
+    if (X[66] !== Gt || X[67] !== sr || X[68] !== Le || X[69] !== eo) it = r(s, {
+      flexDirection: "column",
+      marginTop: Le,
+      children: [eo, sr, Gt]
+    }), X[66] = Gt, X[67] = sr, X[68] = Le, X[69] = eo, X[70] = it;
+    else it = X[70];
+    return it
+  }
+  let gm = "";
+  if (C && R) {
+    let pn;
+    let fm = 0;
+    for (const TS of se) {
+      if (!p.has(TS)) {
+        continue
+      }
+      let Ia = b.progressMessagesByToolUseID.get(TS)?.at(-1)?.data;
+      if (Ia?.type !== "bash_progress" && Ia?.type !== "powershell_progress") {
+        continue
+      }
+      if (pn === void 0 || Ia.elapsedTimeSeconds > pn) pn = Ia.elapsedTimeSeconds, fm = Ia.totalLines
+    }
+    if (pn !== void 0 && pn >= 2) {
+      const Le = pn * 1000;
+      let eo;
+      if (X[71] !== Le) eo = rn(Le), X[71] = Le, X[72] = eo;
+      else eo = X[72];
+      let MS = eo;
+      gm = fm > 0 ? ` (${MS} \xB7 ${fm} ${fm===1?"line":"lines"})` : ` (${MS})`
+    }
+  }
+  let Es = 0;
+  if (R && C) {
+    if (X[73] !== Y || X[74] !== Es || X[76] !== p) {
+      X[75] = Es;
+      for (let qf = Y.length - 1; qf >= 0 && !Es; qf--) {
+        let hm = Y[qf];
+        let bF = hm.type === "grouped_tool_use" ? hm.messages : hm.type === "assistant" ? [hm] : [];
+        for (const yS of bF) {
+          if (yS.message.content.some((bS) => bS.type === "tool_use" && p.has(bS.id))) {
+            let RS = Date.parse(yS.timestamp);
+            if (Number.isFinite(RS)) Es = RS;
+            break
+          }
+        }
+      }
+      X[73] = Y, X[74] = X[75], X[76] = p, X[77] = Es
+    } else Es = X[77]
+  }
+  let Da, Ct, La, fo;
+  if (X[78] !== co || X[79] !== $e || X[80] !== Wf || X[81] !== Mo || X[82] !== vo || X[83] !== C || X[84] !== Y || X[85] !== Ss || X[86] !== ye || X[87] !== Uo || X[88] !== Es || X[89] !== R || X[90] !== or || X[91] !== xo || X[92] !== kt || X[93] !== rt || X[94] !== um || X[95] !== ke || X[96] !== ro || X[97] !== G || X[98] !== D || X[99] !== K || X[100] !== d || X[101] !== Xe || X[102] !== st || X[103] !== et || X[104] !== jt || X[105] !== jo || X[106] !== so || X[107] !== uo || X[108] !== ns || X[109] !== Co || X[110] !== Po) {
+    fo = [];
+    let oo = function oo(xS, Kf, wS) {
+      let CS = fo.length === 0;
+      if (!CS) fo.push(e(n, {
+        children: ", "
+      }, `comma-${xS}`));
+      fo.push(r(n, {
+        children: [CS ? Kf[0].toUpperCase() + Kf.slice(1) : Kf, wS != null && r(Q, {
+          children: [" ", wS]
+        })]
+      }, xS))
+    };
+    if (Uo) {
+      let Vf = R ? "Thinking" : "Thought";
+      let Na;
+      if (R && C && !or) {
+        let Oa = 0;
+        if (X[115] !== Y) {
+          for (let zf = Y.length - 1; zf >= 0; zf--) {
+            let Yf = Y[zf];
+            if (Yf?.type === "assistant" && Yf.message.content[0]?.type === "thinking") {
+              let SS = Date.parse(Yf.timestamp);
+              if (Number.isFinite(SS)) Oa = SS;
+              break
+            }
+          }
+          X[115] = Y, X[116] = Oa
+        } else Oa = X[116];
+        let Le;
+        if (X[117] !== Oa || X[118] !== uo) Le = e(Zc, {
+          baseMs: uo,
+          lastThinkingAtMs: Oa
+        }), X[117] = Oa, X[118] = uo, X[119] = Le;
+        else Le = X[119];
+        Na = Le
+      } else {
+        const Le = Math.max(1000, uo);
+        let eo;
+        if (X[120] !== Le) eo = rn(Le), X[120] = Le, X[121] = eo;
+        else eo = X[121];
+        let it;
+        if (X[122] !== eo) it = e(n, {
+          bold: !0,
+          children: eo
+        }), X[122] = eo, X[123] = it;
+        else it = X[123];
+        Na = it
+      }
+      let Le;
+      if (X[124] !== Na || X[125] !== Vf) Le = r(n, {
+        children: [Vf, " for ", Na]
+      }, "thought"), X[124] = Na, X[125] = Vf, X[126] = Le;
+      else Le = X[126];
+      fo.push(Le)
+    }
+    let kF = fo.length;
+    if (Mo > 0) oo("edit", R ? "editing" : "edited", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: Mo
+      }), " ", Mo === 1 ? "file" : "files", " ", e(Hw, {
+        added: xo,
+        removed: kt
+      })]
+    }));
+    if (jo > 0) oo("scratchpad", R ? "making" : "made", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: jo
+      }), " scratchpad", " ", jo === 1 ? "edit" : "edits", " ", e(Hw, {
+        added: et,
+        removed: jt
+      })]
+    }));
+    if (Po > 0) oo("workshop", R ? "making" : "made", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: Po
+      }), " page", " ", Po === 1 ? "edit" : "edits", " ", e(Hw, {
+        added: ns,
+        removed: Co
+      })]
+    }));
+    if (C && d.commits?.length) {
+      let xF = {
+        committed: "committed",
+        amended: "amended commit",
+        "cherry-picked": "cherry-picked"
+      };
+      for (const Qf of ["committed", "amended", "cherry-picked"]) {
+        let _S = d.commits.filter((wF) => wF.kind === Qf).map(rN);
+        if (_S.length) oo(Qf, xF[Qf], e(n, {
+          bold: !0,
+          children: _S.join(", ")
+        }))
+      }
+    }
+    if (C && d.pushes?.length) {
+      let CF = L(d.pushes.map(nN));
+      oo("push", "pushed to", e(n, {
+        bold: !0,
+        children: CF.join(", ")
+      }))
+    }
+    if (C && d.branches?.length) {
+      let SF = {
+        merged: "merged",
+        rebased: "rebased onto"
+      };
+      for (const Tm of d.branches) oo(`br-${Tm.action}-${Tm.ref}`, SF[Tm.action], e(n, {
+        bold: !0,
+        children: Tm.ref
+      }))
+    }
+    if (C && d.prs?.length) {
+      let _F = {
+        created: "created",
+        edited: "edited",
+        merged: "merged",
+        commented: "commented on",
+        closed: "closed",
+        reopened: "reopened",
+        ready: "marked ready",
+        draft: "marked draft",
+        "auto-merge-enabled": "enabled auto-merge on",
+        "auto-merge-disabled": "disabled auto-merge on"
+      };
+      for (const _t of d.prs) oo(`pr-${_t.action}-${_t.number}`, _F[_t.action], _t.url && P0t(_t.url) ? e(Ire, {
+        number: _t.number,
+        url: _t.url,
+        bold: !0,
+        kind: lde(_t.url) ? "mr" : void 0
+      }) : r(n, {
+        bold: !0,
+        children: [_t.url && lde(_t.url) ? "MR !" : "PR #", _t.number]
+      }))
+    }
+    if (vo > 0) oo("frame", R ? "publishing" : "published", null);
+    if (so > 0) oo("search", R ? "searching for" : "searched for", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: so
+      }), " ", so === 1 ? "pattern" : "patterns"]
+    }));
+    if (st > 0) oo("read", R ? "reading" : "read", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: st
+      }), " ", st === 1 ? "file" : "files"]
+    }));
+    if (rt > 0) oo("list", R ? "listing" : "listed", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: rt
+      }), " ", rt === 1 ? "directory" : "directories"]
+    }));
+    if (ro > 0) {
+      let vF = d.mcpCallLabels?.map(iN).join(", ") || "MCP";
+      oo("mcp", R ? "calling" : "called", r(n, {
+        children: [vF, ro > 1 && r(n, {
+          children: [" ", e(n, {
+            bold: !0,
+            children: ro
+          }), " times"]
+        })]
+      }))
+    }
+    if (co > 0) {
+      let PF = Nx(d.messages);
+      let Mm = co === 1 && !PF ? d.agentDescriptions?.[0] : void 0;
+      let Xf = Mm !== void 0 ? Irr(Mm) : void 0;
+      let vS = R ? "running" : "ran";
+      if (Xf !== void 0) {
+        let PS = fo.length === 0;
+        if (!PS) {
+          let Le;
+          if (X[127] === S) Le = e(n, {
+            children: ", "
+          }, "comma-agent"), X[127] = Le;
+          else Le = X[127];
+          fo.push(Le)
+        }
+        const Le = e(n, {
+          bold: !0,
+          children: Lx(R ? Xf.running : Xf.done, PS)
+        });
+        let eo;
+        if (X[128] !== Le) eo = e(n, {
+          children: Le
+        }, "agent"), X[128] = Le, X[129] = eo;
+        else eo = X[129];
+        fo.push(eo)
+      } else if (Mm !== void 0) oo("agent", vS, r(n, {
+        children: ["agent \xB7 ", e(n, {
+          bold: !0,
+          children: Mm
+        })]
+      }));
+      else oo("agent", vS, r(n, {
+        children: [e(n, {
+          bold: !0,
+          children: co
+        }), " ", co === 1 ? "agent" : "agents"]
+      }))
+    }
+    if (Xe > 0) oo("other", R ? "calling" : "called", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: Xe
+      }), " ", Xe === 1 ? "tool" : "tools"]
+    }));
+    if (C && $e > 0) oo("bash", R ? "running" : "ran", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: $e
+      }), " shell", " ", $e === 1 ? "command" : "commands"]
+    }));
+    if (G > 0) oo("mem-read", R ? "recalling" : "recalled", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: G
+      }), " ", ke, G === 1 ? "memory" : "memories"]
+    }));
+    if (D > 0) oo("mem-search", R ? "searching" : "searched", "memories");
+    if (K > 0) oo("mem-write", R ? "writing" : "wrote", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: K
+      }), " ", K === 1 ? "memory" : "memories"]
+    }));
+    let ES = Ss && !ye && fo.length === kF;
+    if (ES) oo("script", "working", null);
+    let US = !um && ES ? Wf : void 0;
+    Ct = um || US;
+    Da = US === void 0 ? Es : 0;
+    La = fo.length === 0 && (d.hookTotalMs ?? 0) > 0;
+    if (La) oo("hooks", "ran", r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: d.hookCount
+      }), " PreToolUse", " ", d.hookCount === 1 ? "hook" : "hooks", " (", STe(d.hookTotalMs ?? 0), ")"]
+    }));
+    X[78] = co, X[79] = $e, X[80] = Wf, X[81] = Mo, X[82] = vo, X[83] = C, X[84] = Y, X[85] = Ss, X[86] = ye, X[87] = Uo, X[88] = Es, X[89] = R, X[90] = or, X[91] = xo, X[92] = kt, X[93] = rt, X[94] = um, X[95] = ke, X[96] = ro, X[97] = G, X[98] = D, X[99] = K, X[100] = d, X[101] = Xe, X[102] = st, X[103] = et, X[104] = jt, X[105] = jo, X[106] = so, X[107] = uo, X[108] = ns, X[109] = Co, X[110] = Po, X[111] = Da, X[112] = Ct, X[113] = La, X[114] = fo
+  } else Da = X[111], Ct = X[112], La = X[113], fo = X[114];
+  const Le = k ? 1 : 0;
+  let eo;
+  if (X[130] !== oe || X[131] !== R) eo = R ? e(bo, {
+    shouldAnimate: !0,
+    isUnresolved: !0,
+    isError: oe || !1
+  }) : e(s, {
+    minWidth: 2
+  }), X[130] = oe, X[131] = R, X[132] = eo;
+  else eo = X[132];
+  const it = !R;
+  let tr;
+  if (X[133] !== Ct || X[134] !== fo) tr = Ct ? e(n, {
+    children: Ga(Ct)
+  }, "task-summary") : fo, X[133] = Ct, X[134] = fo, X[135] = tr;
+  else tr = X[135];
+  let ym;
+  if (X[136] !== Ct || X[137] !== R || X[138] !== d || X[139] !== fo) ym = !Ct && Cl({
+    message: d,
+    isActiveGroup: R,
+    hasPrecedingParts: fo.length > 0
+  }), X[136] = Ct, X[137] = R, X[138] = d, X[139] = fo, X[140] = ym;
+  else ym = X[140];
+  let xm;
+  if (X[141] !== Da || X[142] !== or || X[143] !== g) xm = Da > 0 && !or && e(eg, {
+    anchorMs: Da,
+    shouldAnimate: g
+  }, "tool-elapsed"), X[141] = Da, X[142] = or, X[143] = g, X[144] = xm;
+  else xm = X[144];
+  let Cm;
+  if (X[145] !== Ct || X[146] !== R) Cm = R && !Ct && e(n, {
+    children: "\u2026"
+  }, "ellipsis"), X[145] = Ct, X[146] = R, X[147] = Cm;
+  else Cm = X[147];
+  let AS;
+  if (X[148] === S) AS = e(Gu, {}), X[148] = AS;
+  else AS = X[148];
+  let Sm;
+  if (X[149] !== it || X[150] !== tr || X[151] !== ym || X[152] !== xm || X[153] !== Cm) Sm = r(n, {
+    dimColor: it,
+    children: [tr, ym, xm, Cm, " ", AS]
+  }), X[149] = it, X[150] = tr, X[151] = ym, X[152] = xm, X[153] = Cm, X[154] = Sm;
+  else Sm = X[154];
+  let _m;
+  if (X[155] !== eo || X[156] !== Sm) _m = r(s, {
+    flexDirection: "row",
+    children: [eo, Sm]
+  }), X[155] = eo, X[156] = Sm, X[157] = _m;
+  else _m = X[157];
+  let vm;
+  if (X[158] !== Df) vm = Df && e(rh, {}), X[158] = Df, X[159] = vm;
+  else vm = X[159];
+  let Pm;
+  if (X[160] !== z || X[161] !== Pa || X[162] !== R || X[163] !== Gt || X[164] !== gm || X[165] !== dm) Pm = R && Gt === null && Pa !== void 0 && r(s, {
+    flexDirection: "row",
+    children: [e(s, {
+      width: 5,
+      flexShrink: 0,
+      children: e(n, {
+        "aria-hidden": !0,
+        dimColor: !0,
+        children: "  \u23BF  "
+      })
+    }), e(s, {
+      flexDirection: "column",
+      flexGrow: 1,
+      children: dm ? e(Va, {
+        dimColor: !0,
+        italic: !0,
+        children: Dx(Pa, z - FR, jR)
+      }) : Pa.split(`
+`).map((EF, DS, UF) => r(n, {
+        dimColor: !0,
+        children: [EF, DS === UF.length - 1 && gm]
+      }, `hint-${DS}`))
+    })]
+  }), X[160] = z, X[161] = Pa, X[162] = R, X[163] = Gt, X[164] = gm, X[165] = dm, X[166] = Pm;
+  else Pm = X[166];
+  let Em;
+  if (X[167] !== La || X[168] !== d) Em = !La && d.hookTotalMs !== void 0 && d.hookTotalMs > 0 && r(n, {
+    dimColor: !0,
+    children: [e(n, {
+      "aria-hidden": !0,
+      children: "  \u23BF  "
+    }), "Ran ", d.hookCount, " PreToolUse", " ", d.hookCount === 1 ? "hook" : "hooks", " (", STe(d.hookTotalMs), ")"]
+  }), X[167] = La, X[168] = d, X[169] = Em;
+  else Em = X[169];
+  let LS;
+  if (X[170] !== Gt || X[171] !== sr || X[172] !== Le || X[173] !== _m || X[174] !== vm || X[175] !== Pm || X[176] !== Em) LS = r(s, {
+    flexDirection: "column",
+    marginTop: Le,
+    children: [_m, vm, sr, Gt, Pm, Em]
+  }), X[170] = Gt, X[171] = sr, X[172] = Le, X[173] = _m, X[174] = vm, X[175] = Pm, X[176] = Em, X[177] = LS;
+  else LS = X[177];
+  return LS
+}
+
+function Zc(m) {
+  let h = w(6),
+    {
+      baseMs: d,
+      lastThinkingAtMs: p
+    } = m,
+    g = V(lN),
+    M;
+  if (h[0] !== g) M = g ?? Ze(), h[0] = g, h[1] = M;
+  else M = h[1];
+  let b = g4r(M);
+  Aa(b !== null ? 1000 : null);
+  let R = b !== null ? d + Math.min(Cyr, Math.max(0, Date.now() - Math.max(b, p))) : d;
+  const v = Math.max(1000, R);
+  let k;
+  if (h[2] !== v) k = rn(v), h[2] = v, h[3] = k;
+  else k = h[3];
+  let C;
+  if (h[4] !== k) C = e(n, {
+    bold: !0,
+    children: k
+  }), h[4] = k, h[5] = C;
+  else C = h[5];
+  return C
+}
+
+function eg(m) {
+  let h = w(4),
+    {
+      anchorMs: d,
+      shouldAnimate: p
+    } = m;
+  Aa(p ? 1000 : null);
+  let g = Date.now() - d;
+  if (g < 2000) {
+    return null
+  }
+  let M;
+  if (h[0] !== g) M = rn(g), h[0] = g, h[1] = M;
+  else M = h[1];
+  let b;
+  if (h[2] !== M) b = r(n, {
+    dimColor: !0,
+    children: [" \xB7 ", M]
+  }), h[2] = M, h[3] = b;
+  else b = h[3];
+  return b
+}
+
+function Dx(m, d, p) {
+  let g = By(m);
+  if (d < 1) return g;
+  let h = qu(g, d, "wrap").split(`
+`);
+  if (h.length <= p) return g;
+  let M = h.slice(0, p).join("").replace(/\s+/g, " ").trim();
+  while (M.length > 0 && $t(qu(`${M}\u2026`, d, "wrap"), `
+`) + 1 > p) {
+    let b = M.length > 1 ? M.codePointAt(M.length - 2) : void 0;
+    M = M.slice(0, b !== void 0 && b > 65535 ? -2 : -1)
+  }
+  return `${M.trimEnd()}\u2026`
+}
+
+function Lx(m, d) {
+  return d || /^\S\S*\p{Lu}/u.test(m) ? m : m.charAt(0).toLowerCase() + m.slice(1)
+}
+
+function Nx(m) {
+  let d = new Set,
+    p = new Set;
+  for (let M of m) {
+    if (M.type !== "assistant") continue;
+    for (let b of M.message.content)
+      if (b.type === "tool_use" && (b.name === ht || b.name === Op)) {
+        if (d.add(b.id), b.input?.run_in_background !== !1) p.add(b.id)
+      }
+  }
+  if (d.size === 0) return !1;
+  let g = new Set,
+    h = !1;
+  for (let M of m) {
+    if (M.type !== "user" || !Array.isArray(M.message.content)) continue;
+    let b = !1;
+    for (let v of M.message.content)
+      if (v.type === "tool_result" && d.has(v.tool_use_id)) {
+        if (b = !0, g.add(v.tool_use_id), v.is_error === !0) h = !0
+      } if (!b) continue;
+    let R = M.toolUseResult?.status;
+    if (R === "async_launched" || R === "remote_launched" || R === "teammate_spawned") h = !0
+  }
+  if (h) return !0;
+  for (let M of p)
+    if (!g.has(M)) return !0;
+  return !1
+}
+B();
+B();
+var Ox = "If you need specific details from before compaction (like exact code snippets, error messages, or content you generated), read the full transcript at: ",
+  TGt = qt(null);
+
+function Eer(m) {
+  let d = m.findIndex((R) => R.type === "user" || R.type === "assistant" || Do(R)),
+    p = m[d];
+  if (p === void 0 || !Do(p) || !RF(p)) return null;
+  let g;
+  for (let R = d + 1; R < m.length; R++) {
+    let v = m[R];
+    if (Do(v)) break;
+    if (v.type === "user" && v.isCompactSummary) {
+      g = Ly(v);
+      break
+    }
+  }
+  if (g === void 0) return {
+    uuid: p.uuid,
+    summary: null
+  };
+  let h = g?.lastIndexOf(`
+${Ox}`) ?? -1;
+  if (g === null || h === -1) return {
+    uuid: p.uuid,
+    summary: {
+      transcriptPath: void 0
+    }
+  };
+  let M = h + 1 + Ox.length,
+    b = g.indexOf(`
+`, M);
+  return {
+    uuid: p.uuid,
+    summary: {
+      transcriptPath: g.slice(M, b === -1 ? void 0 : b)
+    }
+  }
+}
+
+function ud(m, d) {
+  if (m === null) return ` (${d} for history)`;
+  return m.summary === null ? "" : ` (${d} for the summary)`
+}
+
+function vVr(m, d, p) {
+  let g = Eer(m);
+  return ud(g?.uuid === d ? g : null, p)
+}
+
+function gd(m) {
+  let v = w(22),
+    {
+      message: d,
+      transcriptV2Rows: p
+    } = m,
+    g = mi(),
+    h = Cs("app:toggleTranscript", "Global", "ctrl+o"),
+    M = Ee(TGt),
+    b = M !== null && M.uuid === d.uuid ? M : null,
+    R = b?.summary?.savedIn,
+    k;
+  if (v[0] !== R) k = R === void 0 || UGt(R) ? void 0 : {
+    file: R,
+    shown: ts(R)
+  }, v[0] = R, v[1] = k;
+  else k = v[1];
+  let C = k,
+    I = g && b === null;
+  if (p && eu(d.compactMetadata, I)) {
+    let W;
+    if (v[2] !== C?.shown || v[3] !== b) W = b && {
+      leadsToSummary: b.summary !== null,
+      savedIn: C?.shown
+    }, v[2] = C?.shown, v[3] = b, v[4] = W;
+    else W = v[4];
+    let j;
+    if (v[5] !== h || v[6] !== d.compactMetadata || v[7] !== W) j = ou(d.compactMetadata, h, W), v[5] = h, v[6] = d.compactMetadata, v[7] = W, v[8] = j;
+    else j = v[8];
+    let U;
+    if (v[9] !== j) U = e(Oe, {
+      row: j,
+      addMargin: !0
+    }), v[9] = j, v[10] = U;
+    else U = v[10];
+    return U
+  }
+  if (I) {
+    return null
+  }
+  let W;
+  if (v[11] === S) W = r(n, {
+    "aria-hidden": !0,
+    children: [oR, " "]
+  }), v[11] = W;
+  else W = v[11];
+  let j;
+  if (v[12] !== h || v[13] !== b) j = ud(b, h), v[12] = h, v[13] = b, v[14] = j;
+  else j = v[14];
+  let U;
+  if (v[15] !== j) U = r(n, {
+    dimColor: !0,
+    children: [W, "Conversation compacted", j]
+  }), v[15] = j, v[16] = U;
+  else U = v[16];
+  let H;
+  if (v[17] !== C) H = C !== void 0 && e(s, {
+    paddingLeft: 2,
+    children: r(n, {
+      dimColor: !0,
+      children: ["Earlier messages are saved in", " ", e(QS, {
+        filePath: C.file,
+        children: C.shown
+      })]
+    })
+  }), v[17] = C, v[18] = H;
+  else H = v[18];
+  let D;
+  if (v[19] !== U || v[20] !== H) D = r(s, {
+    flexDirection: "column",
+    marginY: 1,
+    children: [U, H]
+  }), v[19] = U, v[20] = H, v[21] = D;
+  else D = v[21];
+  return D
+}
+
+function bN(se) {
+  return se.agentDefinitions.activeAgents
+}
+
+function RN(X) {
+  return X.isInProgress
+}
+
+function fd(m) {
+  let v = w(11),
+    {
+      message: d,
+      tools: p,
+      lookups: g,
+      inProgressToolUseIDs: h,
+      shouldAnimate: M,
+      addMargin: b
+    } = m,
+    R = Fo(bN),
+    k, C;
+  if (v[0] !== R || v[1] !== b || v[2] !== h || v[3] !== g || v[4] !== d.messages || v[5] !== d.results || v[6] !== d.toolName || v[7] !== M || v[8] !== p) {
+    C = yn;
+    j: {
+      let I = Pn(p, d.toolName);
+      let W = I && Cg(I, "renderGroupedToolUse");
+      if (!W) {
+        C = null;
+        break j
+      }
+      let U = new Map;
+      for (const H of d.results) {
+        for (const D of H.message.content) {
+          if (D.type === "tool_result") U.set(D.tool_use_id, {
+            param: D,
+            output: H.toolUseResult
+          })
+        }
+      }
+      let ee = d.messages.map((G) => {
+        let K = G.message.content[0];
+        let Y = U.get(K.id);
+        return {
+          param: K,
+          isResolved: g.resolvedToolUseIDs.has(K.id),
+          isError: g.erroredToolUseIDs.has(K.id),
+          isInProgress: h.has(K.id),
+          progressMessages: v3(g.progressMessagesByToolUseID.get(K.id) ?? []),
+          result: Y
+        }
+      });
+      let z = ee.some(RN);k = W(ee, {
+        shouldAnimate: M && z,
+        tools: p,
+        addMargin: b,
+        activeAgents: R
+      })
+    }
+    v[0] = R, v[1] = b, v[2] = h, v[3] = g, v[4] = d.messages, v[5] = d.results, v[6] = d.toolName, v[7] = M, v[8] = p, v[9] = k, v[10] = C
+  } else k = v[9], C = v[10];
+  if (C !== yn) return C;
+  return k
+}
+B();
+import {
+  basename as Xx
+} from "path";
+
+function EN(ee) {
+  return ee.cloudSessionSync
+}
+
+function Md(m) {
+  let h = w(18),
+    {
+      message: d,
+      addMargin: p
+    } = m,
+    {
+      columns: g
+    } = Te(),
+    M;
+  if (h[0] !== d.url) M = (b) => b.remoteSessionUrl === d.url, h[0] = d.url, h[1] = M;
+  else M = h[1];
+  let R = V(M),
+    v = V(EN),
+    [k, C] = zye(v);
+  if (!R) {
+    return null
+  }
+  const I = p ? 1 : 0;
+  let W;
+  if (h[2] === S) W = e(s, {
+    minWidth: 2,
+    children: e(n, {
+      "aria-hidden": !0,
+      color: "inactive",
+      children: wo
+    })
+  }), h[2] = W;
+  else W = h[2];
+  const j = g - 10,
+    U = Cer[d.entry];
+  let H;
+  if (h[3] !== d.url) H = e(zt, {
+    url: d.url,
+    children: d.url
+  }), h[3] = d.url, h[4] = H;
+  else H = h[4];
+  let D;
+  if (h[5] !== U || h[6] !== H) D = r(n, {
+    color: "inactive",
+    wrap: "wrap",
+    children: [U, Rer, H]
+  }), h[5] = U, h[6] = H, h[7] = D;
+  else D = h[7];
+  let G;
+  if (h[8] !== C) G = C !== void 0 && e(lg, {
+    rows: C
+  }), h[8] = C, h[9] = G;
+  else G = h[9];
+  let K;
+  if (h[10] !== j || h[11] !== D || h[12] !== G) K = r(s, {
+    flexDirection: "column",
+    width: j,
+    children: [D, G]
+  }), h[10] = j, h[11] = D, h[12] = G, h[13] = K;
+  else K = h[13];
+  let Y;
+  if (h[14] !== k || h[15] !== I || h[16] !== K) Y = r(s, {
+    ref: k,
+    flexDirection: "row",
+    marginTop: I,
+    width: "100%",
+    children: [W, K]
+  }), h[14] = k, h[15] = I, h[16] = K, h[17] = Y;
+  else Y = h[17];
+  return Y
+}
+
+function lg(m) {
+  let p = w(24),
+    {
+      rows: d
+    } = m,
+    g;
+  if (p[0] !== d) g = Ier(d), p[0] = d, p[1] = g;
+  else g = p[1];
+  let h = g,
+    M;
+  if (p[2] !== d) M = Mer(d), p[2] = d, p[3] = M;
+  else M = p[3];
+  let b = M,
+    R;
+  if (p[4] === S) R = e(n, {
+    color: "inactive",
+    children: Per
+  }), p[4] = R;
+  else R = p[4];
+  let v;
+  if (p[5] !== d.projectFiles) v = d.projectFiles !== void 0 && e(ss, {
+    label: TCe.projectFiles,
+    row: d.projectFiles
+  }), p[5] = d.projectFiles, p[6] = v;
+  else v = p[6];
+  let k;
+  if (p[7] !== d.settings) k = e(ss, {
+    label: TCe.settings,
+    row: d.settings
+  }), p[7] = d.settings, p[8] = k;
+  else k = p[8];
+  let C;
+  if (p[9] !== d.plugins) C = e(ss, {
+    label: TCe.plugins,
+    row: d.plugins
+  }), p[9] = d.plugins, p[10] = C;
+  else C = p[10];
+  let I;
+  if (p[11] !== d.localTools) I = d.localTools !== void 0 && e(ss, {
+    label: TCe.localTools,
+    row: d.localTools
+  }), p[11] = d.localTools, p[12] = I;
+  else I = p[12];
+  let W;
+  if (p[13] !== h) W = h !== void 0 && e(n, {
+    dimColor: !0,
+    wrap: "wrap",
+    children: h
+  }), p[13] = h, p[14] = W;
+  else W = p[14];
+  let j;
+  if (p[15] !== b) j = b !== void 0 && e(n, {
+    dimColor: !0,
+    wrap: "wrap",
+    children: b
+  }), p[15] = b, p[16] = j;
+  else j = p[16];
+  let U;
+  if (p[17] !== v || p[18] !== k || p[19] !== C || p[20] !== I || p[21] !== W || p[22] !== j) U = r(Q, {
+    children: [R, v, k, C, I, W, j]
+  }), p[17] = v, p[18] = k, p[19] = C, p[20] = I, p[21] = W, p[22] = j, p[23] = U;
+  else U = p[23];
+  return U
+}
+
+function ss(m) {
+  let g = w(15),
+    {
+      label: d,
+      row: p
+    } = m;
+  switch (p.mark) {
+    case "synced": {
+      let h;
+      if (g[0] === S) h = e(ft, {
+        status: "success",
+        withSpace: !0
+      }), g[0] = h;
+      else h = g[0];
+      let M;
+      if (g[1] !== p.note) M = p.note !== void 0 && r(n, {
+        dimColor: !0,
+        children: [" (", p.note, ")"]
+      }), g[1] = p.note, g[2] = M;
+      else M = g[2];
+      let b;
+      if (g[3] !== d || g[4] !== M) b = r(n, {
+        color: "inactive",
+        children: [h, d, M]
+      }), g[3] = d, g[4] = M, g[5] = b;
+      else b = g[5];
+      return b
+    }
+    case "pending": {
+      let h;
+      if (g[6] === S) h = e(ft, {
+        status: "loading",
+        withSpace: !0
+      }), g[6] = h;
+      else h = g[6];
+      let M;
+      if (g[7] !== d) M = r(n, {
+        dimColor: !0,
+        children: [h, d]
+      }), g[7] = d, g[8] = M;
+      else M = g[8];
+      return M
+    }
+    case "not_synced": {
+      let h;
+      if (g[9] === S) h = e(n, {
+        "aria-label": "not synced:",
+        children: Oer
+      }), g[9] = h;
+      else h = g[9];
+      let M;
+      if (g[10] !== p.words) M = r(n, {
+        dimColor: !0,
+        children: [" \u2014 ", p.words]
+      }), g[10] = p.words, g[11] = M;
+      else M = g[11];
+      let b;
+      if (g[12] !== d || g[13] !== M) b = r(n, {
+        color: "inactive",
+        wrap: "wrap",
+        children: [h, " ", d, M]
+      }), g[12] = d, g[13] = M, g[14] = b;
+      else b = g[14];
+      return b
+    }
+  }
+}
+
+function Ott(m, d) {
+  if (!m) return null;
+  let p = wm(m) ?? T_(m),
+    g = d === void 0 ? void 0 : typeof d === "number" ? void 0 : FN(d);
+  return g !== void 0 ? `${p} (${g})` : p
+}
+
+function w0(m) {
+  return m === "completed" || m === "failed" || m === "killed"
+}
+
+function kVr(m) {
+  if (m === "running") return wo;
+  if (m === "completed") return te.tick;
+  if (m === "failed" || m === "killed") return te.cross;
+  if (m === "paused") return iTe;
+  return te.circle
+}
+
+function EVr(m) {
+  if (m === "completed") return "success";
+  if (m === "failed") return "error";
+  if (m === "killed") return "warning";
+  if (m === "paused") return "warning";
+  return "background"
+}
+
+function TVr(m) {
+  if (!UR(m) || Yu(m)) return !1;
+  if (m.status === "running" || m.status === "pending") return m.isBackgrounded === !1;
+  return zbn(m)
+}
+
+function zbn(m) {
+  return m.status === "completed" && [...m.keepaliveReasons ?? []].some((d) => d !== oU)
+}
+
+function Uye(m) {
+  if (Kxe(m)) return !1;
+  if (i8()) return Ph(m) || TVr(m);
+  return Ph(m) && m.type !== "local_workflow" && !(In() && (UR(m) || m.type === "in_process_teammate"))
+}
+
+function Wwt(m, d) {
+  return F(Object.values(m), Uye) + dLe(d)
+}
+
+function dLe(m) {
+  return F(m, (d) => !d.ambient && d.taskType !== "in_process_teammate")
+}
+var dg = ["Baked", "Brewed", "Churned", "Cogitated", "Cooked", "Crunched", "Saut\xE9ed", "Worked"];
+var UN = "Worked";
+
+function mg(m) {
+  let d = (Ede(m) >>> 0) % dg.length;
+  return dg[d] ?? UN
+}
+
+function cLe({
+  tasks: m,
+  queuedCommands: d = []
+}) {
+  let p = new Set,
+    g = new Set,
+    h = (M) => {
+      if (UR(M) && M.isBackgrounded) p.add(M.id);
+      else if (M.type === "local_workflow") g.add(M.id)
+    };
+  for (let M of Object.values(m))
+    if (M.status === "running" || zs(M.status) && !M.notified) h(M);
+  for (let M of d) {
+    if (M.mode !== "task-notification" || !Gp(M) || M.taskId === void 0) continue;
+    let b = m[M.taskId];
+    if (b) h(b)
+  }
+  return {
+    pendingAgents: p.size,
+    pendingWorkflows: g.size
+  }
+}
+
+function CVr({
+  tasks: m,
+  queuedCommands: d = [],
+  turnDurationMs: p,
+  turnStartTime: g,
+  now: h,
+  backgroundWaitStartTime: M
+}) {
+  let {
+    pendingAgents: b,
+    pendingWorkflows: R
+  } = cLe({
+    tasks: m,
+    queuedCommands: d
+  });
+  if (b > 0 || R > 0) return {
+    durationMs: p,
+    pendingBackgroundAgentCount: b > 0 ? b : void 0,
+    pendingWorkflowCount: R > 0 ? R : void 0,
+    backgroundWaitStartTime: M ?? g
+  };
+  return {
+    durationMs: M !== null ? h - M : p,
+    pendingBackgroundAgentCount: void 0,
+    pendingWorkflowCount: void 0,
+    backgroundWaitStartTime: null
+  }
+}
+
+function EO(Y, ee) {
+  return Y + (ee.durationMs ?? 0)
+}
+
+function UO(z, se) {
+  return r(n, {
+    dimColor: !0,
+    children: [e(n, {
+      "aria-hidden": !0,
+      children: "     \u23BF "
+    }), z.command === "prompt" ? `prompt: ${z.promptText||""}` : z.command, ""]
+  }, `cmd-${se}`)
+}
+
+function IO(X, de) {
+  return r(n, {
+    dimColor: !0,
+    children: [e(n, {
+      "aria-hidden": !0,
+      children: "\u23BF \xA0"
+    }), X.command === "prompt" ? `prompt: ${X.promptText||""}` : X.command, ""]
+  }, `cmd-${de}`)
+}
+
+function AO(fe, oe) {
+  return r(n, {
+    children: [e(n, {
+      "aria-hidden": !0,
+      dimColor: !0,
+      children: "\u23BF \xA0"
+    }), "Stop hook feedback: ", fe]
+  }, `feedback-${oe}`)
+}
+
+function DO(je) {
+  let lo = i8();
+  let Ve = Object.values(je.tasks).filter((Ke) => Uye(Ke) && !(lo && Lpe(Ke)));
+  let To = dLe(je.remoteBackgroundTasks);
+  return Ve.length + To > 0 ? dTt(Ve, To) : null
+}
+
+function LO(se) {
+  return e(Ig, {
+    path: se
+  }, se)
+}
+var Jx = null,
+  bd = null;
+
+function Cd(m) {
+  let M = w(66),
+    {
+      message: d,
+      addMargin: p,
+      verbose: g,
+      isTranscriptMode: h
+    } = m;
+  if (d.subtype === "turn_duration") {
+    let b;
+    if (M[0] !== p || M[1] !== d) b = e(Pg, {
+      message: d,
+      addMargin: p
+    }), M[0] = p, M[1] = d, M[2] = b;
+    else b = M[2];
+    return b
+  }
+  if (d.subtype === "memory_saved") {
+    const b = g || !!h;
+    let R;
+    if (M[3] !== p || M[4] !== d || M[5] !== b) R = e(Ug, {
+      message: d,
+      addMargin: p,
+      verbose: b
+    }), M[3] = p, M[4] = d, M[5] = b, M[6] = R;
+    else R = M[6];
+    return R
+  }
+  if (d.subtype === "account_memory_saved") {
+    let b;
+    if (M[7] !== p || M[8] !== d) b = bd === null ? null : e(bd.AccountMemorySavedMessage, {
+      message: d,
+      addMargin: p
+    }), M[7] = p, M[8] = d, M[9] = b;
+    else b = M[9];
+    return b
+  }
+  if (d.subtype === "away_summary") {
+    let b;
+    if (M[10] !== p || M[11] !== d.content) b = e(Ls, {
+      content: d.content,
+      addMargin: p
+    }), M[10] = p, M[11] = d.content, M[12] = b;
+    else b = M[12];
+    return b
+  }
+  if (d.subtype === "agents_killed") {
+    const b = p ? 1 : 0;
+    let R, v;
+    if (M[13] === S) R = e(s, {
+      minWidth: 2,
+      children: e(n, {
+        "aria-hidden": !0,
+        color: "error",
+        children: wo
+      })
+    }), v = e(n, {
+      dimColor: !0,
+      children: "All background agents stopped"
+    }), M[13] = R, M[14] = v;
+    else R = M[13], v = M[14];
+    let k;
+    if (M[15] !== b) k = r(s, {
+      flexDirection: "row",
+      marginTop: b,
+      width: "100%",
+      children: [R, v]
+    }), M[15] = b, M[16] = k;
+    else k = M[16];
+    return k
+  }
+  if (d.subtype === "thinking") {
+    return null
+  }
+  if (d.subtype === "model_refusal_no_fallback") {
+    return null
+  }
+  if (lj() && d.subtype === "model_refusal_fallback") {
+    const b = p ? 1 : 0;
+    let R;
+    if (M[17] === S) R = e(s, {
+      minWidth: 2,
+      children: e(n, {
+        "aria-label": "warning:",
+        color: "warning",
+        children: wo
+      })
+    }), M[17] = R;
+    else R = M[17];
+    let v;
+    if (M[18] !== d.content) v = r(s, {
+      flexDirection: "row",
+      width: "100%",
+      children: [R, e(Bye, {
+        color: "warning",
+        bold: !0,
+        children: d.content
+      })]
+    }), M[18] = d.content, M[19] = v;
+    else v = M[19];
+    let k;
+    if (M[20] !== d.scope) k = d.scope !== "local" && r(n, {
+      dimColor: !0,
+      children: [e(n, {
+        "aria-hidden": !0,
+        children: "  \u23BF  "
+      }), "Tip: You can configure model switch behavior in /config"]
+    }), M[20] = d.scope, M[21] = k;
+    else k = M[21];
+    let C;
+    if (M[22] !== b || M[23] !== v || M[24] !== k) C = r(s, {
+      flexDirection: "column",
+      marginTop: b,
+      width: "100%",
+      children: [v, k, !1]
+    }), M[22] = b, M[23] = v, M[24] = k, M[25] = C;
+    else C = M[25];
+    return C
+  }
+  if (d.subtype === "model_fallback") {
+    let I = d.trigger === "model_not_found" || d.trigger === "permission_denied";
+    const b = p ? 1 : 0;
+    let R;
+    if (M[26] === S) R = e(s, {
+      minWidth: 2,
+      children: e(n, {
+        "aria-label": "warning:",
+        color: "warning",
+        children: wo
+      })
+    }), M[26] = R;
+    else R = M[26];
+    let v;
+    if (M[27] !== I || M[28] !== d.content) v = e(n, {
+      color: "warning",
+      bold: I,
+      wrap: "wrap",
+      children: d.content
+    }), M[27] = I, M[28] = d.content, M[29] = v;
+    else v = M[29];
+    let k;
+    if (M[30] !== b || M[31] !== v) k = r(s, {
+      flexDirection: "row",
+      marginTop: b,
+      width: "100%",
+      children: [R, v]
+    }), M[30] = b, M[31] = v, M[32] = k;
+    else k = M[32];
+    return k
+  }
+  if (d.subtype === "bridge_status") {
+    let b;
+    if (M[33] !== p || M[34] !== d) b = e(Ag, {
+      message: d,
+      addMargin: p
+    }), M[33] = p, M[34] = d, M[35] = b;
+    else b = M[35];
+    return b
+  }
+  if (d.subtype === "cloud_session_status") {
+    let b;
+    if (M[36] !== p || M[37] !== d) b = e(Md, {
+      message: d,
+      addMargin: p
+    }), M[36] = p, M[37] = d, M[38] = b;
+    else b = M[38];
+    return b
+  }
+  if (d.subtype === "scheduled_task_fire") {
+    const b = p ? 1 : 0;
+    let R;
+    if (M[39] === S) R = r(n, {
+      "aria-hidden": !0,
+      children: [oR, " "]
+    }), M[39] = R;
+    else R = M[39];
+    let v;
+    if (M[40] !== d.content) v = r(n, {
+      dimColor: !0,
+      children: [R, d.content]
+    }), M[40] = d.content, M[41] = v;
+    else v = M[41];
+    let k;
+    if (M[42] !== b || M[43] !== v) k = e(s, {
+      marginTop: b,
+      width: "100%",
+      children: v
+    }), M[42] = b, M[43] = v, M[44] = k;
+    else k = M[44];
+    return k
+  }
+  if (d.subtype === "permission_retry") {
+    let W = d.commands;
+    let j = d.content;
+    let b;
+    if (M[45] !== W) b = aHe(W).join(", "), M[45] = W, M[46] = b;
+    else b = M[46];
+    let U = b;
+    let H = typeof j === "string" ? j : "";
+    if (U.length === 0 && H.length === 0) {
+      return null
+    }
+    const R = p ? 1 : 0;
+    let v;
+    if (M[47] === S) v = r(n, {
+      "aria-hidden": !0,
+      dimColor: !0,
+      children: [oR, " "]
+    }), M[47] = v;
+    else v = M[47];
+    let k;
+    if (M[48] !== U || M[49] !== H) k = U.length > 0 ? r(Q, {
+      children: [e(n, {
+        children: "Allowed "
+      }), e(n, {
+        bold: !0,
+        children: U
+      })]
+    }) : e(n, {
+      children: H
+    }), M[48] = U, M[49] = H, M[50] = k;
+    else k = M[50];
+    let C;
+    if (M[51] !== R || M[52] !== k) C = r(s, {
+      marginTop: R,
+      width: "100%",
+      children: [v, k]
+    }), M[51] = R, M[52] = k, M[53] = C;
+    else C = M[53];
+    return C
+  }
+  if (d.subtype !== "stop_hook_summary" && !g && d.level === "info") {
+    return null
+  }
+  if (d.subtype === "api_error") {
+    return null
+  }
+  if (d.subtype === "stop_hook_summary") {
+    let b;
+    if (M[54] !== p || M[55] !== h || M[56] !== d || M[57] !== g) b = e(_g, {
+      message: d,
+      addMargin: p,
+      verbose: g,
+      isTranscriptMode: h
+    }), M[54] = p, M[55] = h, M[56] = d, M[57] = g, M[58] = b;
+    else b = M[58];
+    return b
+  }
+  let G = d.content;
+  if (typeof G !== "string") {
+    return null
+  }
+  const b = d.level !== "info",
+    R = d.level === "warning" ? "warning" : d.level === "notice" ? "inactive" : void 0,
+    v = d.subtype === "informational" ? d.highlight : void 0,
+    k = d.level === "info";
+  let C;
+  if (M[59] !== p || M[60] !== G || M[61] !== b || M[62] !== R || M[63] !== v || M[64] !== k) C = e(s, {
+    flexDirection: "row",
+    width: "100%",
+    children: e(vg, {
+      content: G,
+      addMargin: p,
+      dot: b,
+      color: R,
+      highlight: v,
+      dimColor: k
+    })
+  }), M[59] = p, M[60] = G, M[61] = b, M[62] = R, M[63] = v, M[64] = k, M[65] = C;
+  else C = M[65];
+  return C
+}
+
+function _g(m) {
+  let H = w(2),
+    {
+      message: d,
+      addMargin: p,
+      verbose: g,
+      isTranscriptMode: h
+    } = m,
+    {
+      hookCount: M,
+      hookInfos: b,
+      hookErrors: R,
+      hookAdditionalContext: v,
+      preventedContinuation: k,
+      stopReason: C,
+      hookLabel: I,
+      totalDurationMs: W
+    } = lSe(d),
+    j = v === void 0 ? [] : v,
+    {
+      columns: U
+    } = Te();
+  if (W ?? b.reduce(EO, 0), R.length === 0 && j.length === 0 && !k && !I) {
+    return null
+  }
+  if (I) {
+    let D;
+    if (H[0] === S) D = e(n, {
+      "aria-hidden": !0,
+      children: "  \u23BF  "
+    }), H[0] = D;
+    else D = H[0];
+    return r(s, {
+      flexDirection: "column",
+      width: "100%",
+      children: [r(n, {
+        dimColor: !0,
+        children: [D, "Ran ", M, " ", I, " ", M === 1 ? "hook" : "hooks", ""]
+      }), h && b.map(UO)]
+    })
+  }
+  let D;
+  if (H[1] === S) D = e(s, {
+    minWidth: 2,
+    children: e(n, {
+      "aria-hidden": !0,
+      children: wo
+    })
+  }), H[1] = D;
+  else D = H[1];
+  return r(s, {
+    flexDirection: "row",
+    marginTop: p ? 1 : 0,
+    width: "100%",
+    children: [D, r(s, {
+      flexDirection: "column",
+      width: U - 10,
+      children: [r(n, {
+        children: ["Ran ", e(n, {
+          bold: !0,
+          children: M
+        }), " ", I ?? "stop", " ", M === 1 ? "hook" : "hooks", "", !g && b.length > 0 && r(Q, {
+          children: [" ", e(Gu, {})]
+        })]
+      }), g && b.length > 0 && b.map(IO), k && C && r(n, {
+        children: [e(n, {
+          "aria-hidden": !0,
+          dimColor: !0,
+          children: "\u23BF \xA0"
+        }), C]
+      }), R.length > 0 && R.map((G, K) => r(n, {
+        children: [e(n, {
+          "aria-hidden": !0,
+          dimColor: !0,
+          children: "\u23BF \xA0"
+        }), I ?? "Stop", " hook error: ", G]
+      }, K)), j.length > 0 && j.map(AO)]
+    })]
+  })
+}
+
+function vg(m) {
+  let j = w(19),
+    {
+      content: d,
+      addMargin: p,
+      dot: g,
+      color: h,
+      dimColor: M,
+      highlight: b
+    } = m,
+    {
+      columns: R
+    } = Te(),
+    v = d.trim(),
+    [k, C] = hn(b ? v.length : 0),
+    [I] = v.split(`
+`);
+  I === void 0 ? "" : I;
+  const W = p ? 1 : 0;
+  let U;
+  if (j[0] !== h || j[1] !== M || j[2] !== g || j[3] !== b?.color) U = g && e(s, {
+    minWidth: 2,
+    children: e(n, {
+      "aria-hidden": !0,
+      color: b?.color ?? h,
+      dimColor: M,
+      children: wo
+    })
+  }), j[0] = h, j[1] = M, j[2] = g, j[3] = b?.color, j[4] = U;
+  else U = j[4];
+  const H = R - 10;
+  let D;
+  if (j[5] !== h || j[6] !== M || j[7] !== C || j[8] !== b || j[9] !== v) D = b ? e(Tn, {
+    text: v,
+    color: b.color,
+    shimmerColor: b.shimmerColor,
+    glimmerIndex: C
+  }) : e(n, {
+    color: h,
+    dimColor: M,
+    wrap: "wrap",
+    children: v
+  }), j[5] = h, j[6] = M, j[7] = C, j[8] = b, j[9] = v, j[10] = D;
+  else D = j[10];
+  let G;
+  if (j[11] !== H || j[12] !== D) G = e(s, {
+    flexDirection: "column",
+    width: H,
+    children: D
+  }), j[11] = H, j[12] = D, j[13] = G;
+  else G = j[13];
+  let K;
+  if (j[14] !== k || j[15] !== W || j[16] !== U || j[17] !== G) K = r(s, {
+    ref: k,
+    flexDirection: "row",
+    marginTop: W,
+    width: "100%",
+    children: [U, G]
+  }), j[14] = k, j[15] = W, j[16] = U, j[17] = G, j[18] = K;
+  else K = j[18];
+  return K
+}
+
+function Pg(m) {
+  let h = w(10),
+    {
+      message: d,
+      addMargin: p
+    } = m,
+    g = RF(d) ? d.uuid : "",
+    M;
+  if (h[0] !== g) M = mg(g), h[0] = g, h[1] = M;
+  else M = h[1];
+  let b = M,
+    R, v;
+  if (h[2] !== d.durationMs || h[3] !== g || h[4] !== b) R = () => ({
+    requestId: g,
+    props: {
+      word: b,
+      durationMs: d.durationMs
+    }
+  }), v = [b, g, d.durationMs], h[2] = d.durationMs, h[3] = g, h[4] = b, h[5] = R, h[6] = v;
+  else R = h[5], v = h[6];
+  let k = $d.useRenderInput("TurnDuration", R, v),
+    C;
+  if (h[7] !== p || h[8] !== d) C = (I) => e(Eg, {
+    message: I.props.durationMs === d.durationMs ? d : {
+      ...d,
+      durationMs: I.props.durationMs
+    },
+    addMargin: p,
+    verb: I.props.word
+  }), h[7] = p, h[8] = d, h[9] = C;
+  else C = h[9];
+  return $d.useRenderHook(k, C)
+}
+
+function Eg(m) {
+  let b = w(37),
+    {
+      message: d,
+      addMargin: p,
+      verb: g
+    } = m,
+    h = Ar(),
+    M = Ou(),
+    R;
+  if (b[0] !== d.timestamp || b[1] !== M || b[2] !== h) R = () => {
+    let v = cLe({
+      tasks: h.getState().tasks,
+      queuedCommands: M.getCommandQueue()
+    });
+    return {
+      hasPendingAgents: v.pendingAgents > 0,
+      hasPendingWorkflows: v.pendingWorkflows > 0,
+      showTurnDuration: bs("showTurnDuration", !0).value,
+      doneAt: gLe(d.timestamp)
+    }
+  }, b[0] = d.timestamp, b[1] = M, b[2] = h, b[3] = R;
+  else R = b[3];
+  let [k] = y(R), {
+    hasPendingAgents: C,
+    hasPendingWorkflows: I,
+    showTurnDuration: W,
+    doneAt: j
+  } = k, U = V(DO), H;
+  if (b[4] !== d.durationMs) H = rn(d.durationMs), b[4] = d.durationMs, b[5] = H;
+  else H = b[5];
+  let D = H,
+    G = d.budgetLimit !== void 0,
+    K;
+  Y: {
+    if (!G) {
+      K = null;
+      break Y
+    }
+    let ee = d.budgetTokens;
+    let z = d.budgetLimit;
+    let se;
+    if (b[6] !== z || b[7] !== ee) se = ee >= z ? r(n, {
+      children: [ei(ee), " used (", ei(z), " min", r(n, {
+        "aria-hidden": !0,
+        children: [" ", te.tick]
+      }), ")"]
+    }) : `${ei(ee)} / ${ei(z)} (${Math.round(ee/z*100)}%)`,
+    b[6] = z,
+    b[7] = ee,
+    b[8] = se;
+    else se = b[8];
+    let X = se;
+    let de = d.budgetNudges > 0 ? ` \xB7 ${d.budgetNudges} ${d.budgetNudges===1?"nudge":"nudges"}` : "";
+    const fe = W ? " \xB7 " : "";
+    let oe;
+    if (b[9] !== de || b[10] !== fe || b[11] !== X) oe = r(Q, {
+      children: [fe, X, de]
+    }),
+    b[9] = de,
+    b[10] = fe,
+    b[11] = X,
+    b[12] = oe;
+    else oe = b[12];K = oe
+  }
+  let ue = K,
+    le = d.briefHiddenCount ?? 0,
+    ke = le > 0 ? `${W||G?" \xB7 ":""}${le} ${le===1?"message":"messages"} hidden (/focus to show)` : "",
+    pe = !W && !G && !ke,
+    re = C ? d.pendingBackgroundAgentCount ?? 0 : 0,
+    ye = I ? d.pendingWorkflowCount ?? 0 : 0,
+    me = re > 0 || ye > 0,
+    se;
+  if (b[13] !== re) se = re > 0 && r(n, {
+    children: [" ", e(n, {
+      bold: !0,
+      dimColor: !0,
+      children: re
+    }), ` background ${re===1?"agent":"agents"}`]
+  }), b[13] = re, b[14] = se;
+  else se = b[14];
+  const fe = re > 0 && ye > 0 && " and";
+  let oe;
+  if (b[15] !== ye) oe = ye > 0 && r(n, {
+    children: [" ", e(n, {
+      bold: !0,
+      dimColor: !0,
+      children: ye
+    }), ` ${ye===1?"dynamic workflow":"dynamic workflows"}`]
+  }), b[15] = ye, b[16] = oe;
+  else oe = b[16];
+  let ve;
+  if (b[17] !== se || b[18] !== fe || b[19] !== oe) ve = r(n, {
+    dimColor: !0,
+    children: ["Waiting for", se, fe, oe, " to finish"]
+  }), b[17] = se, b[18] = fe, b[19] = oe, b[20] = ve;
+  else ve = b[20];
+  let be = ve,
+    Ce = W && me,
+    qe;
+  if (b[21] !== p || b[22] !== U || b[23] !== ue || b[24] !== j || b[25] !== D || b[26] !== ke || b[27] !== pe || b[28] !== me || b[29] !== W || b[30] !== Ce || b[31] !== g || b[32] !== be) qe = pe ? null : r(s, {
+    flexDirection: "row",
+    marginTop: p ? 1 : 0,
+    width: "100%",
+    children: [e(s, {
+      minWidth: 2,
+      children: e(n, {
+        "aria-hidden": !0,
+        dimColor: !0,
+        children: oR
+      })
+    }), r(n, {
+      children: [W && (me ? be : e(n, {
+        dimColor: !0,
+        children: `${g} for ${D}${j?` \xB7 done ${j}`:""}`
+      })), ue && e(n, {
+        dimColor: !0,
+        children: ue
+      }), ke && e(n, {
+        dimColor: !0,
+        children: ke
+      }), !Ce && U && e(n, {
+        dimColor: !0,
+        children: ` \xB7 ${U} still running`
+      })]
+    })]
+  }), b[21] = p, b[22] = U, b[23] = ue, b[24] = j, b[25] = D, b[26] = ke, b[27] = pe, b[28] = me, b[29] = W, b[30] = Ce, b[31] = g, b[32] = be, b[33] = qe;
+  else qe = b[33];
+  let Ue = qe,
+    [Ie, xe] = zye(Ue),
+    De;
+  if (b[34] !== xe || b[35] !== Ie) De = e(s, {
+    ref: Ie,
+    flexDirection: "column",
+    width: "100%",
+    children: xe
+  }), b[34] = xe, b[35] = Ie, b[36] = De;
+  else De = b[36];
+  return De
+}
+
+function Ug(m) {
+  let h = w(14),
+    {
+      message: d,
+      addMargin: p,
+      verbose: g
+    } = m,
+    M;
+  if (h[0] !== p || h[1] !== d || h[2] !== g) {
+    let b = aHe(d.writtenPaths);
+    let R = d.verb;
+    let v = typeof R === "string" ? R : void 0;
+    let k;
+    if (h[4] !== d) k = xn(d), h[4] = d, h[5] = k;
+    else k = h[5];
+    let C = k;
+    let I = b.length - (C?.count ?? 0);
+    let W;
+    if (h[6] === S) W = Jx?.localMemoryQualifier() ?? "", h[6] = W;
+    else W = h[6];
+    let j = W;
+    const U = I > 0 ? `${I} ${j}${I===1?"memory":"memories"}` : null;
+    const H = C?.segment;
+    let D;
+    if (h[7] !== U || h[8] !== H) D = [U, H].filter(Boolean), h[7] = U, h[8] = H, h[9] = D;
+    else D = h[9];
+    let G = D;
+    let K;
+    if (h[10] === S) K = e(s, {
+      minWidth: 2,
+      children: e(n, {
+        "aria-hidden": !0,
+        dimColor: !0,
+        children: wo
+      })
+    }), h[10] = K;
+    else K = h[10];
+    const Y = v ?? "Saved";
+    const ee = G.join(" \xB7 ");
+    let z;
+    if (h[11] !== Y || h[12] !== ee) z = r(s, {
+      flexDirection: "row",
+      children: [K, r(n, {
+        children: [Y, " ", ee]
+      })]
+    }), h[11] = Y, h[12] = ee, h[13] = z;
+    else z = h[13];
+    M = r(s, {
+      flexDirection: "column",
+      marginTop: p ? 1 : 0,
+      children: [z, g && b.map(LO)]
+    });
+    h[0] = p, h[1] = d, h[2] = g, h[3] = M
+  } else M = h[3];
+  return M
+}
+
+function Ig(m) {
+  let h = w(16),
+    {
+      path: d
+    } = m,
+    [p, g] = y(!1),
+    M;
+  if (h[0] !== d) M = () => void lin(d), h[0] = d, h[1] = M;
+  else M = h[1];
+  let b, R;
+  if (h[2] === S) b = () => g(!0), R = () => g(!1), h[2] = b, h[3] = R;
+  else b = h[2], R = h[3];
+  const v = !p;
+  let k;
+  if (h[4] !== d) k = Xx(d), h[4] = d, h[5] = k;
+  else k = h[5];
+  let C;
+  if (h[6] !== d || h[7] !== k) C = e(QS, {
+    filePath: d,
+    children: k
+  }), h[6] = d, h[7] = k, h[8] = C;
+  else C = h[8];
+  let I;
+  if (h[9] !== p || h[10] !== v || h[11] !== C) I = e(n, {
+    dimColor: v,
+    underline: p,
+    children: C
+  }), h[9] = p, h[10] = v, h[11] = C, h[12] = I;
+  else I = h[12];
+  let W;
+  if (h[13] !== M || h[14] !== I) W = e(ze, {
+    children: e(s, {
+      onClick: M,
+      onMouseEnter: b,
+      onMouseLeave: R,
+      children: I
+    })
+  }), h[13] = M, h[14] = I, h[15] = W;
+  else W = h[15];
+  return W
+}
+
+function Ag(m) {
+  let g = w(13),
+    {
+      message: d,
+      addMargin: p
+    } = m,
+    h;
+  if (g[0] !== d) h = (M) => M.replBridgeConnected && !M.replBridgeOutboundOnly && M.replBridgeSessionUrl === d.url, g[0] = d, g[1] = h;
+  else h = g[1];
+  if (!V(h)) {
+    return null
+  }
+  const R = p ? 1 : 0;
+  let v;
+  if (g[2] === S) v = e(s, {
+    minWidth: 2
+  }), g[2] = v;
+  else v = g[2];
+  let k;
+  if (g[3] !== d.url) k = r(n, {
+    children: ["/remote-control is active", r(n, {
+      dimColor: !0,
+      children: [" \xB7 Continue here, on your phone, or at ", e(zt, {
+        url: d.url,
+        children: d.url
+      })]
+    })]
+  }), g[3] = d.url, g[4] = k;
+  else k = g[4];
+  let C;
+  if (g[5] !== d.upgradeNudge) C = d.upgradeNudge && r(s, {
+    flexDirection: "row",
+    children: [e(n, {
+      "aria-hidden": !0,
+      dimColor: !0,
+      children: "\u23BF  "
+    }), e(n, {
+      dimColor: !0,
+      children: d.upgradeNudge
+    })]
+  }), g[5] = d.upgradeNudge, g[6] = C;
+  else C = g[6];
+  let I;
+  if (g[7] !== k || g[8] !== C) I = r(s, {
+    flexDirection: "column",
+    children: [k, C]
+  }), g[7] = k, g[8] = C, g[9] = I;
+  else I = g[9];
+  let W;
+  if (g[10] !== R || g[11] !== I) W = r(s, {
+    flexDirection: "row",
+    marginTop: R,
+    width: 999,
+    children: [v, I]
+  }), g[10] = R, g[11] = I, g[12] = W;
+  else W = g[12];
+  return W
+}
+B();
+
+function JO(ue) {
+  return ue.verbose
+}
+var Dg = "</agent-message>",
+  _w = 5;
+
+function vw(m) {
+  return P_(m) || "agent"
+}
+
+function Wg(m) {
+  let d = m,
+    p = Sme.find((h) => d.startsWith(h));
+  if (p) d = d.slice(p.length);
+  let g = d.lastIndexOf(Dg) + Dg.length;
+  if (g > Dg.length - 1) {
+    let h = d.slice(g);
+    if (qNt.includes(h) || FAo.includes(h)) d = d.slice(0, g)
+  }
+  return d.replace(/^<agent-message[^>]*>\n/, "").replace(/\n<\/agent-message>$/, "")
+}
+
+function Pw(m) {
+  let d = NDt + `
+`,
+    p = `
+${m}`.indexOf(`
+${d}`);
+  if (p === -1) return m;
+  let g = m.slice(p + d.length);
+  if (p === 0) return Fw(g);
+  return `${Fw(m.slice(0,p-1))}
+
+${g}`
+}
+
+function en(m) {
+  let I = w(31),
+    {
+      addMargin: d,
+      param: p,
+      fromName: g,
+      verbose: h,
+      isTranscriptMode: M,
+      messageId: b,
+      origin: R,
+      followsSpeakerLabel: v
+    } = m,
+    k = v === void 0 ? !1 : v,
+    C = M$(h, M),
+    W;
+  if (I[0] !== g) W = vw(g), I[0] = g, I[1] = W;
+  else W = I[1];
+  let j = W,
+    U = Fo(JO) === !0,
+    H;
+  if (I[2] !== R.handback || I[3] !== R.kind || I[4] !== p.text || I[5] !== U) {
+    let D = Wg(typeof p.text === "string" ? p.text : "");
+    H = R.kind === "peer" && R.handback === !0 && !U ? Pw(D) : D;
+    I[2] = R.handback, I[3] = R.kind, I[4] = p.text, I[5] = U, I[6] = H
+  } else H = I[6];
+  let G = H,
+    {
+      columns: K
+    } = Te(),
+    Y;
+  if (I[7] !== R) Y = WLr(R), I[7] = R, I[8] = Y;
+  else Y = I[8];
+  let ee = Y,
+    z;
+  if (I[9] !== G || I[10] !== K || I[11] !== C || I[12] !== k || I[13] !== ee) z = C || k && (ee || Ta(G, Math.max(1, K)) === null), I[9] = G, I[10] = K, I[11] = C, I[12] = k, I[13] = ee, I[14] = z;
+  else z = I[14];
+  let se = z,
+    X;
+  if (I[15] !== j) X = {
+    name: j
+  }, I[15] = j, I[16] = X;
+  else X = I[16];
+  let de;
+  if (I[17] !== d || I[18] !== C || I[19] !== k || I[20] !== g || I[21] !== j || I[22] !== ee) de = (fe) => e($g, {
+    addMargin: d,
+    fromName: g,
+    name: j,
+    expanded: C,
+    uncapped: ee,
+    followsSpeakerLabel: k,
+    body: fe
+  }), I[17] = d, I[18] = C, I[19] = k, I[20] = g, I[21] = j, I[22] = ee, I[23] = de;
+  else de = I[23];
+  let oe;
+  if (I[24] !== G || I[25] !== se || I[26] !== b || I[27] !== R || I[28] !== X || I[29] !== de) oe = {
+    messageId: b,
+    stored: R,
+    text: G,
+    isExpanded: se,
+    sender: X,
+    draw: de
+  }, I[24] = G, I[25] = se, I[26] = b, I[27] = R, I[28] = X, I[29] = de, I[30] = oe;
+  else oe = I[30];
+  return aY.useUserMessageSite(oe)
+}
+
+function $g(m) {
+  let v = w(16),
+    {
+      addMargin: d,
+      fromName: p,
+      name: g,
+      expanded: h,
+      uncapped: M,
+      followsSpeakerLabel: b,
+      body: R
+    } = m;
+  if (b) {
+    let k;
+    if (v[0] !== R || v[1] !== h || v[2] !== M) k = h || M ? e(wP, {
+      text: R
+    }) : e(Gg, {
+      body: R
+    }), v[0] = R, v[1] = h, v[2] = M, v[3] = k;
+    else k = v[3];
+    return k
+  }
+  if (!h) {
+    let k;
+    if (v[4] !== d || v[5] !== p) k = e(Lre, {
+      displayName: p,
+      addMargin: d,
+      fallbackLabel: "agent"
+    }), v[4] = d, v[5] = p, v[6] = k;
+    else k = v[6];
+    return k
+  }
+  const k = d ? 1 : 0;
+  let C;
+  if (v[7] === S) C = r(n, {
+    "aria-hidden": !0,
+    children: [te.pointerSmall, " "]
+  }), v[7] = C;
+  else C = v[7];
+  let I;
+  if (v[8] !== g) I = r(n, {
+    dimColor: !0,
+    children: [C, "Message from ", g]
+  }), v[8] = g, v[9] = I;
+  else I = v[9];
+  let W;
+  if (v[10] !== R) W = e(s, {
+    paddingLeft: 2,
+    children: e(n, {
+      wrap: "wrap",
+      children: R
+    })
+  }), v[10] = R, v[11] = W;
+  else W = v[11];
+  let j;
+  if (v[12] !== k || v[13] !== I || v[14] !== W) j = r(s, {
+    flexDirection: "column",
+    marginTop: k,
+    width: "100%",
+    children: [I, W]
+  }), v[12] = k, v[13] = I, v[14] = W, v[15] = j;
+  else j = v[15];
+  return j
+}
+
+function Gg(m) {
+  let h = w(13),
+    {
+      body: d
+    } = m,
+    {
+      columns: p
+    } = Te(),
+    g = Math.max(1, p),
+    M;
+  if (h[0] !== d || h[1] !== g) M = Ta(d, g), h[0] = d, h[1] = g, h[2] = M;
+  else M = h[2];
+  let b = M;
+  if (b === null) {
+    let R;
+    if (h[3] !== d) R = e(wP, {
+      text: d
+    }), h[3] = d, h[4] = R;
+    else R = h[4];
+    return R
+  }
+  let R;
+  if (h[5] !== b.shown) R = e(wP, {
+    text: b.shown
+  }), h[5] = b.shown, h[6] = R;
+  else R = h[6];
+  let v;
+  if (h[7] !== b.hiddenChars || h[8] !== b.hiddenLines) v = e(d_, {
+    count: b.hiddenLines,
+    hiddenChars: b.hiddenChars,
+    expandable: !0
+  }), h[7] = b.hiddenChars, h[8] = b.hiddenLines, h[9] = v;
+  else v = h[9];
+  let k;
+  if (h[10] !== R || h[11] !== v) k = r(s, {
+    flexDirection: "column",
+    children: [R, v]
+  }), h[10] = R, h[11] = v, h[12] = k;
+  else k = h[12];
+  return k
+}
+
+function Ta(m, d) {
+  let p = Math.max(1e4, _w * d * 4 + 1),
+    g = ne(m, p),
+    h = g.length < m.length,
+    b = LP(g).split(`
+`),
+    R = [],
+    v = _w,
+    k = 0,
+    C = h;
+  for (let [j, U] of b.entries()) {
+    if (v === 0) {
+      C = !0;
+      break
+    }
+    let H = ne(U, v * d * 4),
+      D = Lc(H, d, {
+        hard: !0,
+        trim: !1
+      }).split(`
+`);
+    if (H.length < U.length || h && j === b.length - 1 || D.length > v) {
+      R.push(D.slice(0, v).join("")), C = !0;
+      break
+    }
+    R.push(U), k++, v -= D.length
+  }
+  if (!C && k === b.length) return null;
+  let I = R.join(`
+`),
+    W = $t(m, `
+`) + 1;
+  return {
+    shown: I,
+    hiddenLines: W - k,
+    hiddenChars: m.length - I.length
+  }
+}
+var Bw = new WeakMap;
+
+function Gbn(m, d, p, g) {
+  if (WLr(p)) return !1;
+  let h = Bw.get(m);
+  if (h !== void 0 && h.width === g) return h.overflows;
+  let M = Ta(Wg(d), Math.max(1, g)) !== null;
+  return Bw.set(m, {
+    width: g,
+    overflows: M
+  }), M
+}
+
+function Fw(m) {
+  let d = m.split(`
+`);
+  return d.every((p) => p.startsWith("  ")) ? d.map((p) => p.slice(2)).join(`
+`) : m
+}
+B();
+
+function vd(m) {
+  let p = w(15),
+    d = wR(),
+    g;
+  if (p[0] !== d) g = d ? Ok.of(d) : null, p[0] = d, p[1] = g;
+  else g = p[1];
+  let h = g,
+    M = m.toolUseID,
+    b;
+  if (p[2] !== M) b = (R) => R.get(M), p[2] = M, p[3] = b;
+  else b = p[3];
+  let v = Ae(h, b),
+    [k, C] = zye(v),
+    I = C !== void 0 && C.status !== "running",
+    W, j;
+  if (p[4] !== h || p[5] !== I || p[6] !== M) W = () => {
+    if (I) h?.paintedInPlace(M)
+  }, j = [h, M, I], p[4] = h, p[5] = I, p[6] = M, p[7] = W, p[8] = j;
+  else W = p[7], j = p[8];
+  Jt(W, j);
+  let U;
+  if (p[9] !== m || p[10] !== C) U = e(zg, {
+    props: m,
+    state: C
+  }), p[9] = m, p[10] = C, p[11] = U;
+  else U = p[11];
+  let H;
+  if (p[12] !== k || p[13] !== U) H = e(s, {
+    ref: k,
+    flexDirection: "column",
+    children: U
+  }), p[12] = k, p[13] = U, p[14] = H;
+  else H = p[14];
+  return H
+}
+
+function zg(m) {
+  let R = w(47),
+    {
+      props: d,
+      state: p
+    } = m,
+    g = d.toolUseID,
+    {
+      Success: h,
+      Reject: M,
+      Error: b
+    } = d.rows;
+  if (p === void 0) {
+    let v;
+    if (R[0] === S) v = e(ze, {
+      height: 1,
+      children: e(n, {
+        dimColor: !0,
+        children: "Result delivered later in the conversation"
+      })
+    }), R[0] = v;
+    else v = R[0];
+    return v
+  }
+  if (p.status === "running") {
+    return null
+  }
+  let v;
+  if (R[1] !== d.isTranscriptMode || R[2] !== p.detachedAt || R[3] !== p.settledAt) v = d.isTranscriptMode ? e(ze, {
+    height: 1,
+    children: r(n, {
+      dimColor: !0,
+      children: ["Stepped aside for your message \xB7 finished", " ", rn(p.settledAt - p.detachedAt), " later"]
+    })
+  }) : null, R[1] = d.isTranscriptMode, R[2] = p.detachedAt, R[3] = p.settledAt, R[4] = v;
+  else v = R[4];
+  let k = v;
+  if (p.status === "completed") {
+    let C;
+    if (R[5] !== d.message || R[6] !== p.data) C = {
+      ...d.message,
+      toolUseResult: p.data
+    }, R[5] = d.message, R[6] = p.data, R[7] = C;
+    else C = R[7];
+    let I;
+    if (R[8] !== h || R[9] !== d.isTranscriptMode || R[10] !== d.lookups || R[11] !== d.progressMessagesForMessage || R[12] !== d.style || R[13] !== d.tool || R[14] !== d.tools || R[15] !== d.verbose || R[16] !== d.width || R[17] !== C || R[18] !== g) I = e(h, {
+      message: C,
+      lookups: d.lookups,
+      toolUseID: g,
+      progressMessagesForMessage: d.progressMessagesForMessage,
+      style: d.style,
+      tool: d.tool,
+      tools: d.tools,
+      verbose: d.verbose,
+      width: d.width,
+      isTranscriptMode: d.isTranscriptMode
+    }), R[8] = h, R[9] = d.isTranscriptMode, R[10] = d.lookups, R[11] = d.progressMessagesForMessage, R[12] = d.style, R[13] = d.tool, R[14] = d.tools, R[15] = d.verbose, R[16] = d.width, R[17] = C, R[18] = g, R[19] = I;
+    else I = R[19];
+    let W;
+    if (R[20] !== I || R[21] !== k) W = r(Q, {
+      children: [I, k]
+    }), R[20] = I, R[21] = k, R[22] = W;
+    else W = R[22];
+    return W
+  }
+  if (p.status === "stopped") {
+    let C;
+    if (R[23] !== M || R[24] !== d.input || R[25] !== d.isTranscriptMode || R[26] !== d.progressMessagesForMessage || R[27] !== d.style || R[28] !== d.tool || R[29] !== d.tools || R[30] !== d.verbose) C = e(M, {
+      input: d.input,
+      progressMessagesForMessage: d.progressMessagesForMessage,
+      tool: d.tool,
+      tools: d.tools,
+      style: d.style,
+      verbose: d.verbose,
+      isTranscriptMode: d.isTranscriptMode
+    }), R[23] = M, R[24] = d.input, R[25] = d.isTranscriptMode, R[26] = d.progressMessagesForMessage, R[27] = d.style, R[28] = d.tool, R[29] = d.tools, R[30] = d.verbose, R[31] = C;
+    else C = R[31];
+    return C
+  }
+  let C;
+  if (R[32] !== d.param || R[33] !== p.text) C = {
+    ...d.param,
+    content: p.text,
+    is_error: !0
+  }, R[32] = d.param, R[33] = p.text, R[34] = C;
+  else C = R[34];
+  let I;
+  if (R[35] !== b || R[36] !== d.input || R[37] !== d.isTranscriptMode || R[38] !== d.progressMessagesForMessage || R[39] !== d.tool || R[40] !== d.tools || R[41] !== d.verbose || R[42] !== C) I = e(b, {
+    progressMessagesForMessage: d.progressMessagesForMessage,
+    tool: d.tool,
+    tools: d.tools,
+    param: C,
+    input: d.input,
+    output: void 0,
+    toolDenialKind: void 0,
+    verbose: d.verbose,
+    isTranscriptMode: d.isTranscriptMode
+  }), R[35] = b, R[36] = d.input, R[37] = d.isTranscriptMode, R[38] = d.progressMessagesForMessage, R[39] = d.tool, R[40] = d.tools, R[41] = d.verbose, R[42] = C, R[43] = I;
+  else I = R[43];
+  let W;
+  if (R[44] !== I || R[45] !== k) W = r(Q, {
+    children: [I, k]
+  }), R[44] = I, R[45] = k, R[46] = W;
+  else W = R[46];
+  return W
+}
+
+function Yg(m, d) {
+  let p = mxs(m, d);
+  return p !== void 0 && Ore() ? p : void 0
+}
+
+function Pd(m) {
+  let g = w(2),
+    {
+      refusal: d
+    } = m;
+  const p = Gs[`repository_trust.folder_waits.${d}`];
+  let h;
+  if (g[0] !== p) h = e(ze, {
+    children: r(n, {
+      dimColor: !0,
+      wrap: "wrap",
+      children: [p, " ", Gs["repository_trust.folder_waits.marker"]]
+    })
+  }), g[0] = p, g[1] = h;
+  else h = g[1];
+  return h
+}
+
+function y0(K) {
+  return K.agentDefinitions.activeAgents
+}
+
+function Ma(m) {
+  let I = w(14),
+    {
+      input: d,
+      progressMessagesForMessage: p,
+      style: g,
+      tool: h,
+      tools: M,
+      verbose: b,
+      isTranscriptMode: R
+    } = m,
+    {
+      columns: v
+    } = Te(),
+    [k] = br(),
+    C = Fo(y0),
+    W, j;
+  if (I[0] !== C || I[1] !== v || I[2] !== d || I[3] !== R || I[4] !== p || I[5] !== g || I[6] !== k || I[7] !== h || I[8] !== M || I[9] !== b) {
+    j = yn;
+    D: {
+      let U = h ? Cg(h, "renderToolUseRejectedMessage") : void 0;
+      if (!h || !U) {
+        let H;
+        if (I[12] === S) H = e(rh, {}), I[12] = H;
+        else H = I[12];
+        j = H;
+        break D
+      }
+      let G = fb(h, d);
+      if (!G.success) {
+        let H;
+        if (I[13] === S) H = e(rh, {}), I[13] = H;
+        else H = I[13];
+        j = H;
+        break D
+      }
+      W = U(G.data, {
+        columns: v,
+        messages: [],
+        tools: M,
+        verbose: b,
+        progressMessagesForMessage: v3(p),
+        style: g,
+        theme: k,
+        isTranscriptMode: R,
+        activeAgents: C
+      }) ?? e(rh, {})
+    }
+    I[0] = C, I[1] = v, I[2] = d, I[3] = R, I[4] = p, I[5] = g, I[6] = k, I[7] = h, I[8] = M, I[9] = b, I[10] = W, I[11] = j
+  } else W = I[10], j = I[11];
+  if (j !== yn) return j;
+  return W
+}
+B();
+
+function F0(Ce) {
+  return Ce.isBriefOnly
+}
+
+function j0(qe) {
+  return qe.agentDefinitions.activeAgents
+}
+
+function ba(m) {
+  let G = w(40),
+    {
+      message: d,
+      lookups: p,
+      toolUseID: g,
+      progressMessagesForMessage: h,
+      style: M,
+      tool: b,
+      tools: R,
+      verbose: v,
+      width: k,
+      isTranscriptMode: C
+    } = m,
+    I = gs(),
+    [W] = br(),
+    j = cz(),
+    U = V(F0),
+    H = V(j0),
+    D = Ar(),
+    K;
+  if (G[0] !== D || G[1] !== g) K = () => elo(D.getState(), g), G[0] = D, G[1] = g, G[2] = K;
+  else K = G[2];
+  let [Y] = y(K), ee;
+  if (G[3] !== D.setState || G[4] !== g) ee = () => {
+    tlo(RSe(D.setState), g)
+  }, G[3] = D.setState, G[4] = g, G[5] = ee;
+  else ee = G[5];
+  let z;
+  if (G[6] !== D || G[7] !== g) z = [D, g], G[6] = D, G[7] = g, G[8] = z;
+  else z = G[8];
+  if (P(ee, z), !d.toolUseResult || !b) {
+    return null
+  }
+  if (b.isTransparentWrapper?.()) {
+    return null
+  }
+  let se, X, de;
+  if (G[9] !== H || G[10] !== I || G[11] !== U || G[12] !== C || G[13] !== p || G[14] !== d.toolUseResult || G[15] !== h || G[16] !== j || G[17] !== M || G[18] !== W || G[19] !== b || G[20] !== g || G[21] !== R || G[22] !== v) {
+    de = yn;
+    oe: {
+      let fe = nVt(j, b.outputSchema, d.toolUseResult);
+      if (fe && !fe.success) {
+        de = null;
+        break oe
+      }
+      let ue = fe ? fe.data : d.toolUseResult;
+      let le = ue;
+      let ke = Cg(b, "renderToolResultMessage")?.(le, v3(h), {
+        style: M,
+        theme: W,
+        tools: R,
+        verbose: v,
+        isTranscriptMode: C,
+        isBriefOnly: U,
+        input: p.toolUseByToolUseID.get(g)?.input,
+        activeAgents: H
+      }) ?? null;
+      if (ke === null) {
+        de = null;
+        break oe
+      }
+      se = b.userFacingName(void 0) === "";X = Br(I, ke, b)
+    }
+    G[9] = H, G[10] = I, G[11] = U, G[12] = C, G[13] = p, G[14] = d.toolUseResult, G[15] = h, G[16] = j, G[17] = M, G[18] = W, G[19] = b, G[20] = g, G[21] = R, G[22] = v, G[23] = se, G[24] = X, G[25] = de
+  } else se = G[23], X = G[24], de = G[25];
+  if (de !== yn) return de;
+  let pe = X;
+  const re = se ? void 0 : k;
+  let ye;
+  if (G[26] !== b.name || G[27] !== Y) ye = Y && b.name !== ht && e(ze, {
+    height: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: "Allowed by auto mode classifier"
+    })
+  }), G[26] = b.name, G[27] = Y, G[28] = ye;
+  else ye = G[28];
+  let me;
+  if (G[29] !== pe || G[30] !== re || G[31] !== ye) me = r(s, {
+    flexDirection: "column",
+    width: re,
+    children: [pe, ye]
+  }), G[29] = pe, G[30] = re, G[31] = ye, G[32] = me;
+  else me = G[32];
+  let ve;
+  if (G[33] !== C || G[34] !== p || G[35] !== g) ve = e(TI, {
+    children: e(gr, {
+      hookEvent: "PostToolUse",
+      lookups: p,
+      toolUseID: g,
+      isTranscriptMode: C
+    })
+  }), G[33] = C, G[34] = p, G[35] = g, G[36] = ve;
+  else ve = G[36];
+  let be;
+  if (G[37] !== me || G[38] !== ve) be = r(s, {
+    flexDirection: "column",
+    children: [me, ve]
+  }), G[37] = me, G[38] = ve, G[39] = be;
+  else be = G[39];
+  return be
+}
+B();
+var Zw = new Set([im]);
+
+function Ad(m, d, p) {
+  let R = w(8),
+    g = p.toolUseByToolUseID.get(m)?.name,
+    h = gs(),
+    M = g === void 0 ? void 0 : Dre(g, h),
+    b;
+  if (R[0] !== M || R[1] !== p.toolUseByToolUseID || R[2] !== m || R[3] !== d) {
+    k: {
+      let v = p.toolUseByToolUseID.get(m);
+      if (!v) {
+        b = null;
+        break k
+      }
+      let C = Pn(d, v.name) ?? M;
+      if (C) {
+        b = {
+          tool: C,
+          toolUse: v
+        };
+        break k
+      }
+      const I = (Zw.has(v.name) ? Pn(CK() ?? [], v.name) : void 0) ?? void 0;
+      let W;
+      if (R[5] !== I || R[6] !== v) W = {
+        tool: I,
+        toolUse: v
+      },
+      R[5] = I,
+      R[6] = v,
+      R[7] = W;
+      else W = R[7];b = W
+    }
+    R[0] = M,
+    R[1] = p.toolUseByToolUseID,
+    R[2] = m,
+    R[3] = d,
+    R[4] = b
+  }
+  else b = R[4];
+  return b
+}
+var rC = {
+  Success: ba,
+  Reject: Ma,
+  Error: ut
+};
+
+function Bd(m) {
+  let p = w(3),
+    d = Ad(m.param.tool_use_id, m.tools, m.lookups);
+  if (!d) {
+    return null
+  }
+  let g;
+  if (p[0] !== m || p[1] !== d) g = e(sf, {
+    ...m,
+    toolUse: d
+  }), p[0] = m, p[1] = d, p[2] = g;
+  else g = p[2];
+  return g
+}
+
+function sf(m) {
+  let R = w(10),
+    {
+      param: d,
+      message: p,
+      toolUse: g
+    } = m,
+    h = p.toolUseResult,
+    M = d.is_error === !0,
+    b = g.toolUse.name,
+    v, k;
+  if (R[0] !== M || R[1] !== h || R[2] !== d.tool_use_id || R[3] !== b) v = () => ({
+    requestId: d.tool_use_id,
+    props: {
+      tool_use_id: d.tool_use_id,
+      tool: b,
+      output: h,
+      isErrored: M
+    }
+  }), k = [d.tool_use_id, b, h, M], R[0] = M, R[1] = h, R[2] = d.tool_use_id, R[3] = b, R[4] = v, R[5] = k;
+  else v = R[4], k = R[5];
+  let C = $d.useRenderInput("ToolResult", v, k),
+    I;
+  if (R[6] !== p || R[7] !== h || R[8] !== m) I = (W) => e(rf, {
+    ...m,
+    message: W.props.output === h ? p : {
+      ...p,
+      toolUseResult: W.props.output
+    }
+  }), R[6] = p, R[7] = h, R[8] = m, R[9] = I;
+  else I = R[9];
+  return $d.useRenderHook(C, I)
+}
+
+function rf(m) {
+  let I = w(54),
+    {
+      param: d,
+      message: p,
+      lookups: g,
+      progressMessagesForMessage: h,
+      style: M,
+      tools: b,
+      verbose: R,
+      width: v,
+      isTranscriptMode: k,
+      toolUse: C
+    } = m,
+    W;
+  if (I[0] !== k || I[1] !== d.content || I[2] !== d.is_error || I[3] !== C || I[4] !== R) W = d.is_error === !0 && !R && k !== !0 ? Yg(C.toolUse.name, d.content) : void 0, I[0] = k, I[1] = d.content, I[2] = d.is_error, I[3] = C, I[4] = R, I[5] = W;
+  else W = I[5];
+  let j = W,
+    U;
+  if (typeof d.content === "string" && dcn(d.content)) {
+    let H;
+    if (I[6] === S) H = e(rh, {}), I[6] = H;
+    else H = I[6];
+    U = H
+  } else if (typeof d.content === "string" && (d.content.startsWith(bb) || d.content.startsWith(sN) && C.tool != null && Cg(C.tool, "renderToolUseRejectedMessage") !== void 0) || d.content === Lp || d.content === Hx || d.content === GO || d.content === JH) {
+    let H;
+    if (I[7] !== k || I[8] !== h || I[9] !== M || I[10] !== C.tool || I[11] !== C.toolUse.input || I[12] !== b || I[13] !== R) H = e(Ma, {
+      input: C.toolUse.input,
+      progressMessagesForMessage: h,
+      tool: C.tool,
+      tools: b,
+      style: M,
+      verbose: R,
+      isTranscriptMode: k
+    }), I[7] = k, I[8] = h, I[9] = M, I[10] = C.tool, I[11] = C.toolUse.input, I[12] = b, I[13] = R, I[14] = H;
+    else H = I[14];
+    U = H
+  } else if (fdo(C.tool, p.toolUseResult)) {
+    let H;
+    if (I[15] !== k || I[16] !== g || I[17] !== p || I[18] !== d || I[19] !== h || I[20] !== M || I[21] !== C.tool || I[22] !== C.toolUse.id || I[23] !== C.toolUse.input || I[24] !== b || I[25] !== R || I[26] !== v) H = e(vd, {
+      param: d,
+      message: p,
+      lookups: g,
+      progressMessagesForMessage: h,
+      style: M,
+      tool: C.tool,
+      toolUseID: C.toolUse.id,
+      input: C.toolUse.input,
+      tools: b,
+      verbose: R,
+      width: v,
+      isTranscriptMode: k,
+      rows: rC
+    }), I[15] = k, I[16] = g, I[17] = p, I[18] = d, I[19] = h, I[20] = M, I[21] = C.tool, I[22] = C.toolUse.id, I[23] = C.toolUse.input, I[24] = b, I[25] = R, I[26] = v, I[27] = H;
+    else H = I[27];
+    U = H
+  } else if (j !== void 0) {
+    let H;
+    if (I[28] !== j) H = e(Pd, {
+      refusal: j
+    }), I[28] = j, I[29] = H;
+    else H = I[29];
+    U = H
+  } else if (d.is_error) {
+    const H = p.toolDenialKind ?? p.remoteToolDenialKind;
+    let D;
+    if (I[30] !== k || I[31] !== p.toolDenialMonitorBlocked || I[32] !== p.toolUseResult || I[33] !== d || I[34] !== h || I[35] !== H || I[36] !== C.tool || I[37] !== C.toolUse.input || I[38] !== b || I[39] !== R) D = e(ut, {
+      progressMessagesForMessage: h,
+      tool: C.tool,
+      tools: b,
+      param: d,
+      input: C.toolUse.input,
+      output: p.toolUseResult,
+      toolDenialKind: H,
+      toolDenialMonitorBlocked: p.toolDenialMonitorBlocked,
+      verbose: R,
+      isTranscriptMode: k
+    }), I[30] = k, I[31] = p.toolDenialMonitorBlocked, I[32] = p.toolUseResult, I[33] = d, I[34] = h, I[35] = H, I[36] = C.tool, I[37] = C.toolUse.input, I[38] = b, I[39] = R, I[40] = D;
+    else D = I[40];
+    U = D
+  } else {
+    let H;
+    if (I[41] !== k || I[42] !== g || I[43] !== p || I[44] !== h || I[45] !== M || I[46] !== C.tool || I[47] !== C.toolUse.id || I[48] !== b || I[49] !== R || I[50] !== v) H = e(ba, {
+      message: p,
+      lookups: g,
+      toolUseID: C.toolUse.id,
+      progressMessagesForMessage: h,
+      style: M,
+      tool: C.tool,
+      tools: b,
+      verbose: R,
+      width: v,
+      isTranscriptMode: k
+    }), I[41] = k, I[42] = g, I[43] = p, I[44] = h, I[45] = M, I[46] = C.tool, I[47] = C.toolUse.id, I[48] = b, I[49] = R, I[50] = v, I[51] = H;
+    else H = I[51];
+    U = H
+  }
+  let H;
+  if (I[52] !== U) H = e(s, {
+    flexDirection: "column",
+    children: U
+  }), I[52] = U, I[53] = H;
+  else H = I[53];
+  return H
+}
+var Jo = null;
+
+function DC(m) {
+  let pe = w(169),
+    {
+      message: d,
+      lookups: p,
+      containerWidth: g,
+      addMargin: h,
+      tools: M,
+      commands: b,
+      verbose: R,
+      inProgressToolUseIDs: v,
+      progressMessagesForMessage: k,
+      shouldAnimate: C,
+      shouldShowDot: I,
+      style: W,
+      isTranscriptMode: j,
+      onOpenRateLimitOptions: U,
+      onRateLimitAutoQueueContinue: H,
+      isActiveCollapsedGroup: D,
+      isUserContinuation: G,
+      isSplitUserContinuation: K,
+      followsSpeakerLabel: Y,
+      followsInboundLabel: ee,
+      hasMetadataHeader: z,
+      latestBashOutputUUID: se,
+      disableDisplayOverride: X
+    } = m,
+    de = G === void 0 ? !1 : G,
+    fe = K === void 0 ? !1 : K,
+    oe = Y === void 0 ? !1 : Y,
+    ue = ee === void 0 ? !1 : ee,
+    le = z === void 0 ? !1 : z,
+    ke = $w(R);
+  switch (d.type) {
+    case "attachment": {
+      if (d.attachment.type === "queued_command" && DD(d.attachment.origin)) {
+        let re;
+        if (pe[0] !== d.attachment.prompt) re = dW(d.attachment.prompt), pe[0] = d.attachment.prompt, pe[1] = re;
+        else re = pe[1];
+        let ye = re;
+        const me = g ?? "100%";
+        let ve;
+        if (pe[2] !== ye) ve = {
+          text: ye,
+          type: "text"
+        }, pe[2] = ye, pe[3] = ve;
+        else ve = pe[3];
+        let be;
+        if (pe[4] !== d.attachment.origin) be = f6n(d.attachment.origin), pe[4] = d.attachment.origin, pe[5] = be;
+        else be = pe[5];
+        let Ce;
+        if (pe[6] !== h || pe[7] !== j || pe[8] !== d.attachment.origin || pe[9] !== d.uuid || pe[10] !== ve || pe[11] !== be || pe[12] !== R) Ce = e(en, {
+          addMargin: h,
+          param: ve,
+          fromName: be,
+          verbose: R,
+          isTranscriptMode: j,
+          messageId: d.uuid,
+          origin: d.attachment.origin
+        }), pe[6] = h, pe[7] = j, pe[8] = d.attachment.origin, pe[9] = d.uuid, pe[10] = ve, pe[11] = be, pe[12] = R, pe[13] = Ce;
+        else Ce = pe[13];
+        let qe;
+        if (pe[14] !== Ce || pe[15] !== me) qe = e(s, {
+          flexDirection: "column",
+          width: me,
+          children: Ce
+        }), pe[14] = Ce, pe[15] = me, pe[16] = qe;
+        else qe = pe[16];
+        return qe
+      }
+      const re = g ?? "100%";
+      let me;
+      if (pe[17] !== h || pe[18] !== ue || pe[19] !== oe || pe[20] !== le || pe[21] !== j || pe[22] !== d.attachment || pe[23] !== d.uuid || pe[24] !== R) me = e(kl, {
+        addMargin: h,
+        attachment: d.attachment,
+        verbose: R,
+        isTranscriptMode: j,
+        hasMetadataHeader: le,
+        followsSpeakerLabel: oe,
+        followsInboundLabel: ue,
+        messageId: d.uuid
+      }), pe[17] = h, pe[18] = ue, pe[19] = oe, pe[20] = le, pe[21] = j, pe[22] = d.attachment, pe[23] = d.uuid, pe[24] = R, pe[25] = me;
+      else me = pe[25];
+      let ve;
+      if (pe[26] !== re || pe[27] !== me) ve = e(s, {
+        flexDirection: "column",
+        width: re,
+        children: me
+      }), pe[26] = re, pe[27] = me, pe[28] = ve;
+      else ve = pe[28];
+      return ve
+    }
+    case "assistant": {
+      let re;
+      if (pe[29] !== p.firstTextBlockUuidByMessageID || pe[30] !== d.message.id) re = p.firstTextBlockUuidByMessageID.get(d.message.id), pe[29] = p.firstTextBlockUuidByMessageID, pe[30] = d.message.id, pe[31] = re;
+      else re = pe[31];
+      let Ue = re;
+      const me = g ?? "100%";
+      let ve;
+      if (pe[32] !== h || pe[33] !== b || pe[34] !== X || pe[35] !== Ue || pe[36] !== oe || pe[37] !== v || pe[38] !== j || pe[39] !== p || pe[40] !== d.advisorModel || pe[41] !== d.error || pe[42] !== d.isApiErrorMessage || pe[43] !== d.message.content || pe[44] !== d.message.id || pe[45] !== d.message.model || pe[46] !== d.sessionFailureNotice || pe[47] !== d.uuid || pe[48] !== U || pe[49] !== H || pe[50] !== k || pe[51] !== C || pe[52] !== I || pe[53] !== M || pe[54] !== R) {
+        let be;
+        if (pe[56] !== h || pe[57] !== b || pe[58] !== X || pe[59] !== Ue || pe[60] !== oe || pe[61] !== v || pe[62] !== j || pe[63] !== p || pe[64] !== d.advisorModel || pe[65] !== d.error || pe[66] !== d.isApiErrorMessage || pe[67] !== d.message.id || pe[68] !== d.message.model || pe[69] !== d.sessionFailureNotice || pe[70] !== d.uuid || pe[71] !== U || pe[72] !== H || pe[73] !== k || pe[74] !== C || pe[75] !== I || pe[76] !== M || pe[77] !== R) be = (Ie, xe) => e(Tf, {
+          param: Ie,
+          model: d.message.model,
+          addMargin: h && !oe,
+          tools: M,
+          commands: b,
+          verbose: R,
+          inProgressToolUseIDs: v,
+          progressMessagesForMessage: k,
+          shouldAnimate: C,
+          shouldShowDot: I,
+          inProgressToolCallCount: v.size,
+          isTranscriptMode: j,
+          lookups: p,
+          onOpenRateLimitOptions: U,
+          onRateLimitAutoQueueContinue: H,
+          advisorModel: d.advisorModel,
+          isApiError: d.isApiErrorMessage === !0,
+          isSessionFailureNotice: d.sessionFailureNotice === !0,
+          apiErrorKind: d.error,
+          apiMessageId: X ? void 0 : d.message.id,
+          messageUuid: d.uuid,
+          isFirstTextBlock: Ue === void 0 || Ue === d.uuid
+        }, xe), pe[56] = h, pe[57] = b, pe[58] = X, pe[59] = Ue, pe[60] = oe, pe[61] = v, pe[62] = j, pe[63] = p, pe[64] = d.advisorModel, pe[65] = d.error, pe[66] = d.isApiErrorMessage, pe[67] = d.message.id, pe[68] = d.message.model, pe[69] = d.sessionFailureNotice, pe[70] = d.uuid, pe[71] = U, pe[72] = H, pe[73] = k, pe[74] = C, pe[75] = I, pe[76] = M, pe[77] = R, pe[78] = be;
+        else be = pe[78];
+        ve = d.message.content.map(be);
+        pe[32] = h, pe[33] = b, pe[34] = X, pe[35] = Ue, pe[36] = oe, pe[37] = v, pe[38] = j, pe[39] = p, pe[40] = d.advisorModel, pe[41] = d.error, pe[42] = d.isApiErrorMessage, pe[43] = d.message.content, pe[44] = d.message.id, pe[45] = d.message.model, pe[46] = d.sessionFailureNotice, pe[47] = d.uuid, pe[48] = U, pe[49] = H, pe[50] = k, pe[51] = C, pe[52] = I, pe[53] = M, pe[54] = R, pe[55] = ve
+      } else ve = pe[55];
+      let be;
+      if (pe[79] !== me || pe[80] !== ve) be = e(s, {
+        flexDirection: "column",
+        width: me,
+        children: ve
+      }), pe[79] = me, pe[80] = ve, pe[81] = be;
+      else be = pe[81];
+      return be
+    }
+    case "user": {
+      if (d.isCompactSummary) {
+        const re = j ? "transcript" : "prompt";
+        let me;
+        if (pe[82] !== d || pe[83] !== re) me = e(ii, {
+          message: d,
+          screen: re
+        }), pe[82] = d, pe[83] = re, pe[84] = me;
+        else me = pe[84];
+        return me
+      }
+      let De;
+      if (pe[85] !== d.imagePasteIds || pe[86] !== d.message.content) {
+        De = [];
+        let je = 0;
+        for (const lo of d.message.content) {
+          if (lo.type === "image") {
+            let Ke = d.imagePasteIds?.[je];
+            je++, De.push(Ke ?? je)
+          } else De.push(je)
+        }
+        pe[85] = d.imagePasteIds, pe[86] = d.message.content, pe[87] = De
+      } else De = pe[87];
+      let Ve = se === d.uuid;
+      const re = g ?? "100%";
+      let me;
+      if (pe[88] !== h || pe[89] !== ue || pe[90] !== oe || pe[91] !== le || pe[92] !== De || pe[93] !== fe || pe[94] !== j || pe[95] !== de || pe[96] !== p || pe[97] !== d || pe[98] !== k || pe[99] !== W || pe[100] !== M || pe[101] !== R) me = d.message.content.map((To, mo) => e(hf, {
+        message: d,
+        addMargin: h,
+        tools: M,
+        progressMessagesForMessage: k,
+        param: To,
+        style: W,
+        verbose: R,
+        imageIndex: De[mo],
+        isUserContinuation: de,
+        isSplitUserContinuation: fe,
+        followsSpeakerLabel: oe,
+        followsInboundLabel: ue,
+        hasMetadataHeader: le,
+        lookups: p,
+        isTranscriptMode: j
+      }, mo)), pe[88] = h, pe[89] = ue, pe[90] = oe, pe[91] = le, pe[92] = De, pe[93] = fe, pe[94] = j, pe[95] = de, pe[96] = p, pe[97] = d, pe[98] = k, pe[99] = W, pe[100] = M, pe[101] = R, pe[102] = me;
+      else me = pe[102];
+      let ve;
+      if (pe[103] !== re || pe[104] !== me) ve = e(s, {
+        flexDirection: "column",
+        width: re,
+        children: me
+      }), pe[103] = re, pe[104] = me, pe[105] = ve;
+      else ve = pe[105];
+      let He = ve;
+      const be = d.interruptedBySendNow === !0;
+      let Ce;
+      if (pe[106] !== He || pe[107] !== Ve) Ce = Ve ? e(jer, {
+        children: He
+      }) : He, pe[106] = He, pe[107] = Ve, pe[108] = Ce;
+      else Ce = pe[108];
+      let qe;
+      if (pe[109] !== Ce || pe[110] !== be) qe = e(Pt.Provider, {
+        value: be,
+        children: Ce
+      }), pe[109] = Ce, pe[110] = be, pe[111] = qe;
+      else qe = pe[111];
+      return qe
+    }
+    case "system": {
+      if (d.subtype === "compact_boundary") {
+        let re;
+        if (pe[112] !== d || pe[113] !== ke) re = e(gd, {
+          message: d,
+          transcriptV2Rows: ke
+        }), pe[112] = d, pe[113] = ke, pe[114] = re;
+        else re = pe[114];
+        return re
+      }
+      if (d.subtype === "microcompact_boundary") {
+        return null
+      }
+      if (ke) {
+        let re;
+        if (pe[115] !== d) re = Zm(d), pe[115] = d, pe[116] = re;
+        else re = pe[116];
+        let Xe = re;
+        if (Xe.kind === "hidden") {
+          return null
+        }
+        if (Xe.kind === "line") {
+          let me;
+          if (pe[117] !== h || pe[118] !== Xe.row) me = e(Oe, {
+            row: Xe.row,
+            addMargin: h
+          }), pe[117] = h, pe[118] = Xe.row, pe[119] = me;
+          else me = pe[119];
+          return me
+        }
+      }
+      if (d.subtype === "read_divider") {
+        let re;
+        if (pe[120] !== d.content) re = e(s, {
+          marginTop: 1,
+          width: "100%",
+          children: e(Ql, {
+            title: d.content,
+            color: "inactive"
+          })
+        }), pe[120] = d.content, pe[121] = re;
+        else re = pe[121];
+        return re
+      }
+      if (d.subtype === "local_command") {
+        let re;
+        if (pe[122] !== d.content) re = {
+          type: "text",
+          text: d.content
+        }, pe[122] = d.content, pe[123] = re;
+        else re = pe[123];
+        let me;
+        if (pe[124] !== h || pe[125] !== oe || pe[126] !== j || pe[127] !== d.commandRun || pe[128] !== d.uuid || pe[129] !== re || pe[130] !== R) me = e(Pre, {
+          addMargin: h,
+          param: re,
+          verbose: R,
+          isTranscriptMode: j,
+          messageId: d.uuid,
+          commandRun: d.commandRun,
+          followsSpeakerLabel: oe
+        }), pe[124] = h, pe[125] = oe, pe[126] = j, pe[127] = d.commandRun, pe[128] = d.uuid, pe[129] = re, pe[130] = R, pe[131] = me;
+        else me = pe[131];
+        return me
+      }
+      let re;
+      if (pe[132] !== h || pe[133] !== j || pe[134] !== d || pe[135] !== R) re = e(Cd, {
+        message: d,
+        addMargin: h,
+        verbose: R,
+        isTranscriptMode: j
+      }), pe[132] = h, pe[133] = j, pe[134] = d, pe[135] = R, pe[136] = re;
+      else re = pe[136];
+      return re
+    }
+    case "grouped_tool_use": {
+      let re;
+      if (pe[137] !== h || pe[138] !== v || pe[139] !== p || pe[140] !== d || pe[141] !== C || pe[142] !== M) re = e(fd, {
+        message: d,
+        tools: M,
+        lookups: p,
+        inProgressToolUseIDs: v,
+        shouldAnimate: C,
+        addMargin: h
+      }), pe[137] = h, pe[138] = v, pe[139] = p, pe[140] = d, pe[141] = C, pe[142] = M, pe[143] = re;
+      else re = pe[143];
+      return re
+    }
+    case "collapsed_read_search": {
+      let re;
+      if (pe[144] !== p || pe[145] !== d) {
+        let me;
+        if (pe[147] !== p) me = (co) => {
+          let Mo = p.toolResultByToolUseID.get(co);
+          return Mo?.type === "user" && Mo.interruptedBySendNow === !0
+        }, pe[147] = p, pe[148] = me;
+        else me = pe[148];
+        re = Cse(d).some(me);
+        pe[144] = p, pe[145] = d, pe[146] = re
+      } else re = pe[146];
+      let vo = re;
+      const me = R || j;
+      let ve;
+      if (pe[149] !== h || pe[150] !== v || pe[151] !== D || pe[152] !== p || pe[153] !== d || pe[154] !== C || pe[155] !== me || pe[156] !== M) ve = e(md, {
+        message: d,
+        inProgressToolUseIDs: v,
+        shouldAnimate: C,
+        verbose: me,
+        tools: M,
+        lookups: p,
+        isActiveGroup: D,
+        addMargin: h
+      }), pe[149] = h, pe[150] = v, pe[151] = D, pe[152] = p, pe[153] = d, pe[154] = C, pe[155] = me, pe[156] = M, pe[157] = ve;
+      else ve = pe[157];
+      let be;
+      if (pe[158] !== vo || pe[159] !== ve) be = e(SR, {
+        children: e(Pt.Provider, {
+          value: vo,
+          children: ve
+        })
+      }), pe[158] = vo, pe[159] = ve, pe[160] = be;
+      else be = pe[160];
+      return be
+    }
+    case "work_segment": {
+      let re;
+      if (pe[161] !== d || pe[162] !== C) re = e(ff, {
+        message: d,
+        shouldAnimate: C
+      }), pe[161] = d, pe[162] = C, pe[163] = re;
+      else re = pe[163];
+      return re
+    }
+    case "speaker_label": {
+      let re;
+      if (pe[164] !== d.speaker) re = Jo === null ? null : e(s, {
+        marginTop: 1,
+        children: e(Jo.SpeakerLabel, {
+          speaker: d.speaker
+        })
+      }), pe[164] = d.speaker, pe[165] = re;
+      else re = pe[165];
+      return re
+    }
+    case "recap_fold": {
+      let re;
+      if (pe[166] !== h || pe[167] !== d) re = Jo === null ? null : e(Jo.RecapFoldMessage, {
+        message: d,
+        addMargin: h
+      }), pe[166] = h, pe[167] = d, pe[168] = re;
+      else re = pe[168];
+      return re
+    }
+  }
+}
+
+function ff(m) {
+  let b = w(3),
+    {
+      message: d,
+      shouldAnimate: p
+    } = m,
+    g = Vu(),
+    h = ot();
+  if (Jo === null) {
+    return null
+  }
+  const M = g || h || !p;
+  let R;
+  if (b[0] !== d || b[1] !== M) R = e(Jo.WorkSegmentMessage, {
+    message: d,
+    reducedMotion: M
+  }), b[0] = d, b[1] = M, b[2] = R;
+  else R = b[2];
+  return R
+}
+
+function hf(m) {
+  let G = w(38),
+    {
+      message: d,
+      addMargin: p,
+      tools: g,
+      progressMessagesForMessage: h,
+      param: M,
+      style: b,
+      verbose: R,
+      imageIndex: v,
+      isUserContinuation: k,
+      isSplitUserContinuation: C,
+      followsSpeakerLabel: I,
+      followsInboundLabel: W,
+      hasMetadataHeader: j,
+      lookups: U,
+      isTranscriptMode: H
+    } = m,
+    {
+      columns: D
+    } = Te();
+  switch (M.type) {
+    case "text": {
+      if (DD(d.origin)) {
+        let K;
+        if (G[0] !== d.origin) K = f6n(d.origin), G[0] = d.origin, G[1] = K;
+        else K = G[1];
+        const Y = I || W;
+        let ee;
+        if (G[2] !== p || G[3] !== H || G[4] !== d.origin || G[5] !== d.uuid || G[6] !== M || G[7] !== K || G[8] !== Y || G[9] !== R) ee = e(en, {
+          addMargin: p,
+          param: M,
+          fromName: K,
+          verbose: R,
+          isTranscriptMode: H,
+          messageId: d.uuid,
+          origin: d.origin,
+          followsSpeakerLabel: Y
+        }), G[2] = p, G[3] = H, G[4] = d.origin, G[5] = d.uuid, G[6] = M, G[7] = K, G[8] = Y, G[9] = R, G[10] = ee;
+        else ee = G[10];
+        return ee
+      }
+      const K = W && d.origin?.kind === "coordinator";
+      let Y;
+      if (G[11] !== p || G[12] !== W || G[13] !== I || G[14] !== H || G[15] !== d.origin || G[16] !== d.planContent || G[17] !== d.taskDelivery || G[18] !== d.timestamp || G[19] !== d.uuid || G[20] !== M || G[21] !== K || G[22] !== R) Y = e(Pre, {
+        addMargin: p,
+        param: M,
+        verbose: R,
+        planContent: d.planContent,
+        isTranscriptMode: H,
+        timestamp: d.timestamp,
+        messageId: d.uuid,
+        origin: d.origin,
+        taskDelivery: d.taskDelivery,
+        followsSpeakerLabel: I,
+        followsInboundLabel: W,
+        followsCoordinatorLabel: K
+      }), G[11] = p, G[12] = W, G[13] = I, G[14] = H, G[15] = d.origin, G[16] = d.planContent, G[17] = d.taskDelivery, G[18] = d.timestamp, G[19] = d.uuid, G[20] = M, G[21] = K, G[22] = R, G[23] = Y;
+      else Y = G[23];
+      return Y
+    }
+    case "image": {
+      const K = p && !k;
+      const Y = j ? !C : void 0;
+      let ee;
+      if (G[24] !== v || G[25] !== K || G[26] !== Y) ee = e(Bs, {
+        imageId: v,
+        addMargin: K,
+        startsUserTurn: Y
+      }), G[24] = v, G[25] = K, G[26] = Y, G[27] = ee;
+      else ee = G[27];
+      return ee
+    }
+    case "tool_result": {
+      const K = D - 5;
+      let Y;
+      if (G[28] !== H || G[29] !== U || G[30] !== d || G[31] !== M || G[32] !== h || G[33] !== b || G[34] !== K || G[35] !== g || G[36] !== R) Y = e(Bd, {
+        param: M,
+        message: d,
+        lookups: U,
+        progressMessagesForMessage: h,
+        style: b,
+        tools: g,
+        verbose: R,
+        width: K,
+        isTranscriptMode: H
+      }), G[28] = H, G[29] = U, G[30] = d, G[31] = M, G[32] = h, G[33] = b, G[34] = K, G[35] = g, G[36] = R, G[37] = Y;
+      else Y = G[37];
+      return Y
+    }
+    default: {
+      return
+    }
+  }
+}
+var kC = new Set(["tool_search_tool_regex", "tool_search_tool_bm25"]);
+
+function xC(m) {
+  return "name" in m && ZDn(m.name) ? m.name : "non-allowlisted"
+}
+
+function wC(m) {
+  let d = "type" in m ? m.type : void 0;
+  if (typeof d !== "string") return "non-allowlisted (non-string)";
+  return B1s(d)
+}
+
+function wB(m) {
+  if ("id" in m && typeof m.id === "string") return `${m.type}:${m.id}`;
+  if ("tool_use_id" in m && typeof m.tool_use_id === "string") return `${m.type}:${m.tool_use_id}`;
+  try {
+    return `${m.type}:${Bun.hash(_(m)).toString(36)}`
+  } catch {
+    return `${m.type}:unserializable`
+  }
+}
+
+function zd(m, d, p) {
+  if (!h2.of(m).claim(`unrenderable_block:${wB(d)}`)) return;
+  l(p)
+}
+
+function Tf(m) {
+  let de = w(61),
+    {
+      param: d,
+      model: p,
+      addMargin: g,
+      tools: h,
+      commands: M,
+      verbose: b,
+      inProgressToolUseIDs: R,
+      progressMessagesForMessage: v,
+      shouldAnimate: k,
+      shouldShowDot: C,
+      inProgressToolCallCount: I,
+      isTranscriptMode: W,
+      lookups: j,
+      onOpenRateLimitOptions: U,
+      onRateLimitAutoQueueContinue: H,
+      advisorModel: D,
+      isApiError: G,
+      isSessionFailureNotice: K,
+      apiErrorKind: Y,
+      apiMessageId: ee,
+      messageUuid: z,
+      isFirstTextBlock: se
+    } = m,
+    X = gs(),
+    fe;
+  if (de[0] !== ee || de[1] !== d.type) fe = (oe) => d.type === "text" && ee !== void 0 ? oe.displayedMessageContent[ee] : void 0, de[0] = ee, de[1] = d.type, de[2] = fe;
+  else fe = de[2];
+  let ue = Fo(fe);
+  if (sq(d)) {
+    return null
+  }
+  switch (d.type) {
+    case "tool_use": {
+      let le;
+      if (de[3] !== g || de[4] !== M || de[5] !== I || de[6] !== R || de[7] !== W || de[8] !== j || de[9] !== d || de[10] !== v || de[11] !== k || de[12] !== C || de[13] !== h || de[14] !== b) le = e(Si, {
+        param: d,
+        addMargin: g,
+        tools: h,
+        commands: M,
+        verbose: b,
+        inProgressToolUseIDs: R,
+        progressMessagesForMessage: v,
+        shouldAnimate: k,
+        shouldShowDot: C,
+        inProgressToolCallCount: I,
+        lookups: j,
+        isTranscriptMode: W
+      }), de[3] = g, de[4] = M, de[5] = I, de[6] = R, de[7] = W, de[8] = j, de[9] = d, de[10] = v, de[11] = k, de[12] = C, de[13] = h, de[14] = b, de[15] = le;
+      else le = de[15];
+      return le
+    }
+    case "text": {
+      if (ue !== void 0 && !b) {
+        if (!se) {
+          return null
+        }
+        let le;
+        if (de[16] !== ue) le = {
+          type: "text",
+          text: ue
+        }, de[16] = ue, de[17] = le;
+        else le = de[17];
+        let ke;
+        if (de[18] !== g || de[19] !== Y || de[20] !== G || de[21] !== K || de[22] !== z || de[23] !== U || de[24] !== H || de[25] !== C || de[26] !== le || de[27] !== b) ke = e(mr, {
+          param: le,
+          addMargin: g,
+          shouldShowDot: C,
+          verbose: b,
+          messageId: z,
+          isApiError: G,
+          isSessionFailureNotice: K,
+          apiErrorKind: Y,
+          onOpenRateLimitOptions: U,
+          onRateLimitAutoQueueContinue: H
+        }), de[18] = g, de[19] = Y, de[20] = G, de[21] = K, de[22] = z, de[23] = U, de[24] = H, de[25] = C, de[26] = le, de[27] = b, de[28] = ke;
+        else ke = de[28];
+        return ke
+      }
+      let le;
+      if (de[29] !== g || de[30] !== Y || de[31] !== G || de[32] !== K || de[33] !== z || de[34] !== U || de[35] !== H || de[36] !== d || de[37] !== C || de[38] !== b) le = e(mr, {
+        param: d,
+        addMargin: g,
+        shouldShowDot: C,
+        verbose: b,
+        messageId: z,
+        isApiError: G,
+        isSessionFailureNotice: K,
+        apiErrorKind: Y,
+        onOpenRateLimitOptions: U,
+        onRateLimitAutoQueueContinue: H
+      }), de[29] = g, de[30] = Y, de[31] = G, de[32] = K, de[33] = z, de[34] = U, de[35] = H, de[36] = d, de[37] = C, de[38] = b, de[39] = le;
+      else le = de[39];
+      return le
+    }
+    case "redacted_thinking": {
+      if (!W && !b) {
+        return null
+      }
+      let le;
+      if (de[40] !== g) le = e(ui, {
+        addMargin: g
+      }), de[40] = g, de[41] = le;
+      else le = de[41];
+      return le
+    }
+    case "thinking": {
+      if (VYe(d)) {
+        let le;
+        if (de[42] !== g || de[43] !== z || de[44] !== p || de[45] !== d || de[46] !== C) le = e(ci, {
+          param: d,
+          model: p,
+          addMargin: g,
+          shouldShowDot: C,
+          messageId: z
+        }), de[42] = g, de[43] = z, de[44] = p, de[45] = d, de[46] = C, de[47] = le;
+        else le = de[47];
+        return le
+      }
+      if (!W && !b) {
+        return null
+      }
+      let le;
+      if (de[48] !== g || de[49] !== W || de[50] !== d || de[51] !== b) le = e(Ds, {
+        addMargin: g,
+        param: d,
+        isTranscriptMode: W,
+        verbose: b
+      }), de[48] = g, de[49] = W, de[50] = d, de[51] = b, de[52] = le;
+      else le = de[52];
+      return le
+    }
+    case "server_tool_use":
+    case "advisor_tool_result": {
+      if (d.type !== "server_tool_use" || d.name === "advisor") {
+        const le = b || W;
+        let ke;
+        if (de[53] !== g || de[54] !== D || de[55] !== j.erroredToolUseIDs || de[56] !== j.resolvedToolUseIDs || de[57] !== d || de[58] !== k || de[59] !== le) ke = e(li, {
+          block: d,
+          addMargin: g,
+          resolvedToolUseIDs: j.resolvedToolUseIDs,
+          erroredToolUseIDs: j.erroredToolUseIDs,
+          shouldAnimate: k,
+          verbose: le,
+          advisorModel: D
+        }), de[53] = g, de[54] = D, de[55] = j.erroredToolUseIDs, de[56] = j.resolvedToolUseIDs, de[57] = d, de[58] = k, de[59] = le, de[60] = ke;
+        else ke = de[60];
+        return ke
+      }
+      if (kC.has(d.name)) {
+        return null
+      }
+      return zd(X, d, Error(`Unable to render server tool block: ${d.type} (${xC(d)})`)), null
+    }
+    case "tool_search_tool_result": {
+      return null
+    }
+    default: {
+      return zd(X, d, Error(`Unable to render message type: ${wC(d)}`)), null
+    }
+  }
+}
+
+function DB(m, d) {
+  if (m.message.uuid !== d.message.uuid) return !1;
+  if (!RF(d.message) && m.message !== d.message) return !1;
+  if (m.verbose !== d.verbose) return !1;
+  let p = m.latestBashOutputUUID === m.message.uuid,
+    g = d.latestBashOutputUUID === d.message.uuid;
+  if (p !== g) return !1;
+  if (m.isTranscriptMode !== d.isTranscriptMode) return !1;
+  if (m.isUserContinuation !== d.isUserContinuation || m.isSplitUserContinuation !== d.isSplitUserContinuation || m.followsSpeakerLabel !== d.followsSpeakerLabel || m.followsInboundLabel !== d.followsInboundLabel || m.hasMetadataHeader !== d.hasMetadataHeader || m.shouldShowDot !== d.shouldShowDot) return !1;
+  if ((m.message.type === "work_segment" || m.message.type === "recap_fold" || Tyr(m.message) || Tyr(d.message)) && m.message !== d.message) return !1;
+  if (m.containerWidth !== d.containerWidth) return !1;
+  if (m.isStatic && d.isStatic) {
+    let h = m.message.type === "system" && m.message.subtype === "turn_duration" ? m.message.briefHiddenCount : void 0,
+      M = d.message.type === "system" && d.message.subtype === "turn_duration" ? d.message.briefHiddenCount : void 0;
+    return h === M
+  }
+  return !1
+}
+var iY = ng(DC, DB);
+
+function Zo(m) {
+  if (!("message" in m)) return !1;
+  let d = m.message;
+  return d != null && typeof d === "object" && "type" in d
+}
+
+function Qd(m) {
+  return Zo(m.data)
+}
+
+function yf(m) {
+  let d = m.data.message.message.content[0];
+  return d?.type === "tool_use" || d?.type === "tool_result"
+}
+
+function bf(m, d, p) {
+  if (!Zo(m.data)) return null;
+  let g = m.data.message;
+  if (g.type === "assistant") return Jxt(g.message.content[0], d);
+  if (g.type === "user") {
+    let h = g.message.content[0];
+    if (h?.type === "tool_result") {
+      let M = p.get(h.tool_use_id);
+      if (M) return Jxt(M, d)
+    }
+  }
+  return null
+}
+
+function Rf() {
+  return {
+    processedSourceCount: 0,
+    lastSourceUuid: void 0,
+    tools: void 0,
+    stable: [],
+    stableCountableCount: 0,
+    openGroup: null,
+    toolUseByID: new Map,
+    toolUseCount: 0,
+    latestAssistantUsage: void 0,
+    resolvedToolUseIDs: new Set,
+    erroredToolUseIDs: new Set,
+    toolResultByToolUseID: new Map,
+    inProgressToolUseIDs: new Set,
+    pendingServerToolUses: [],
+    lastRowAssistantMessageId: void 0
+  }
+}
+
+function LC(m, d, p) {
+  if (!(p === m.tools && d.length >= m.processedSourceCount && (m.processedSourceCount === 0 || d[m.processedSourceCount - 1]?.uuid === m.lastSourceUuid))) Object.assign(m, Rf()), m.tools = p;
+  for (let h = m.processedSourceCount; h < d.length; h++) {
+    let M = d[h];
+    if (Qd(M)) {
+      m.processedSourceCount = h + 1, m.lastSourceUuid = M.uuid;
+      try {
+        NB(m, M, p)
+      } catch (b) {
+        l(b)
+      }
+    }
+  }
+}
+
+function Mf(m, d) {
+  if (m.stable.push(d), NC(d)) m.stableCountableCount++
+}
+
+function NC(m) {
+  if (m.type === "summary") return !0;
+  return m.message.data.message.message.content.some((d) => d.type === "tool_use")
+}
+
+function OC(m) {
+  return m.searchCount > 0 || m.readCount > 0
+}
+
+function BC(m, d) {
+  return {
+    type: "summary",
+    searchCount: m.searchCount,
+    readCount: m.readCount,
+    uuid: `summary-${m.startUuid}`,
+    isActive: d
+  }
+}
+
+function LB(m) {
+  if (m.openGroup && OC(m.openGroup)) Mf(m, BC(m.openGroup, !1));
+  m.openGroup = null
+}
+
+function NB(m, d, p) {
+  if (!Qd(d)) return;
+  let g = d,
+    h = g.data.message;
+  if (h.type === "assistant") {
+    if (h.isUnmetered !== !0) m.latestAssistantUsage = h.message.usage;
+    m.lastRowAssistantMessageId = h.message.id;
+    let b = !1;
+    for (let R of h.message.content) {
+      if (R.type === "tool_use") {
+        if (b = !0, m.toolUseByID.set(R.id, R), !m.resolvedToolUseIDs.has(R.id)) m.inProgressToolUseIDs.add(R.id)
+      } else if (R.type === "server_tool_use" || R.type === "mcp_tool_use") m.pendingServerToolUses.push({
+        block: R,
+        messageId: h.message.id
+      });
+      if (GQt(R, m.resolvedToolUseIDs, m.erroredToolUseIDs), "tool_use_id" in R && typeof R.tool_use_id === "string") m.inProgressToolUseIDs.delete(R.tool_use_id)
+    }
+    if (b) m.toolUseCount++
+  } else if (h.type === "user") {
+    m.lastRowAssistantMessageId = void 0;
+    for (let b of h.message.content)
+      if (b.type === "tool_result") {
+        if (m.resolvedToolUseIDs.add(b.tool_use_id), m.toolResultByToolUseID.set(b.tool_use_id, h), m.inProgressToolUseIDs.delete(b.tool_use_id), b.is_error) m.erroredToolUseIDs.add(b.tool_use_id)
+      }
+  }
+  if (h.type !== "user") Mf(m, {
+    type: "original",
+    message: g
+  });
+  return
+}
+
+function FC(m, d) {
+  let p = m.openGroup;
+  if (!p || !OC(p)) return m.stable;
+  return m.stable.concat(BC(p, d))
+}
+
+function jC(m, d, p) {
+  if (p <= 0) return 0;
+  let g = m.stableCountableCount;
+  if (d.length > m.stable.length) g++;
+  for (let h = Math.min(p, d.length); h < d.length; h++)
+    if (NC(d[h])) g--;
+  return g
+}
+
+function WC(m) {
+  let d = m.latestAssistantUsage ? B4(m.latestAssistantUsage) : void 0;
+  return d ? yO(d) : null
+}
+
+function HC(m) {
+  if (m.pendingServerToolUses.length > 0) {
+    let d = [];
+    for (let p of m.pendingServerToolUses) {
+      if (p.messageId === m.lastRowAssistantMessageId) {
+        d.push(p);
+        continue
+      }
+      emo(p.block, m.resolvedToolUseIDs, m.erroredToolUseIDs)
+    }
+    m.pendingServerToolUses = d
+  }
+  return {
+    lookups: {
+      ...Y0,
+      toolUseByToolUseID: m.toolUseByID,
+      resolvedToolUseIDs: m.resolvedToolUseIDs,
+      erroredToolUseIDs: m.erroredToolUseIDs,
+      toolResultByToolUseID: m.toolResultByToolUseID
+    },
+    inProgressToolUseIDs: m.inProgressToolUseIDs
+  }
+}
+
+function oF(b, R) {
+  return e(s, {
+    paddingLeft: 2,
+    marginTop: R === 0 ? 0 : 1,
+    children: e(Va, {
+      children: b.text
+    })
+  }, R)
+}
+
+function tF(W) {
+  return Zo(W.data)
+}
+
+function sF(j) {
+  return j.data
+}
+
+function nF(U) {
+  if (!Zo(U.data)) {
+    return !1
+  }
+  let H = U.data.message;
+  if (H.type === "user" && H.toolUseResult === void 0) {
+    return !1
+  }
+  return !0
+}
+var $C = 3,
+  OB = 9,
+  BB = 7;
+
+function Ter(m) {
+  let g = w(3),
+    {
+      prompt: d,
+      dim: p
+    } = m;
+  p === void 0 ? !1 : p;
+  let h;
+  if (g[0] === S) h = e(n, {
+    color: "success",
+    bold: !0,
+    children: "Prompt:"
+  }), g[0] = h;
+  else h = g[0];
+  let M;
+  if (g[1] !== d) M = r(s, {
+    flexDirection: "column",
+    children: [h, e(s, {
+      paddingLeft: 2,
+      children: e(Va, {
+        children: d
+      })
+    })]
+  }), g[1] = d, g[2] = M;
+  else M = g[2];
+  return M
+}
+
+function s3o(m) {
+  let p = w(5),
+    {
+      content: d
+    } = m,
+    g;
+  if (p[0] === S) g = e(n, {
+    color: "success",
+    bold: !0,
+    children: "Response:"
+  }), p[0] = g;
+  else g = p[0];
+  let h;
+  if (p[1] !== d) h = d.map(oF), p[1] = d, p[2] = h;
+  else h = p[2];
+  let M;
+  if (p[3] !== h) M = r(s, {
+    flexDirection: "column",
+    children: [g, h]
+  }), p[3] = h, p[4] = M;
+  else M = p[4];
+  return M
+}
+
+function QC(m) {
+  let h = w(15),
+    {
+      progressMessages: d,
+      tools: p,
+      verbose: g
+    } = m,
+    M;
+  if (h[0] !== d) M = VQt(d.filter(tF).map(sF)), h[0] = d, h[1] = M;
+  else M = h[1];
+  let {
+    lookups: b,
+    inProgressToolUseIDs: R
+  } = M, v;
+  if (h[2] !== b || h[3] !== R || h[4] !== d || h[5] !== p || h[6] !== g) {
+    let k = d.filter(nF);
+    let C;
+    if (h[8] !== b || h[9] !== R || h[10] !== p || h[11] !== g) C = (I) => e(ze, {
+      height: 1,
+      children: e(iY, {
+        message: I.data.message,
+        lookups: b,
+        addMargin: !1,
+        tools: p,
+        commands: [],
+        verbose: g,
+        inProgressToolUseIDs: R,
+        progressMessagesForMessage: [],
+        shouldAnimate: !1,
+        shouldShowDot: !1,
+        isTranscriptMode: !1,
+        isStatic: !0
+      })
+    }, I.uuid), h[8] = b, h[9] = R, h[10] = p, h[11] = g, h[12] = C;
+    else C = h[12];
+    v = k.map(C);
+    h[2] = b, h[3] = R, h[4] = d, h[5] = p, h[6] = g, h[7] = v
+  } else v = h[7];
+  let C;
+  if (h[13] !== v) C = e(Q, {
+    children: v
+  }), h[13] = v, h[14] = C;
+  else C = h[14];
+  return C
+}
+
+function i3o(m, d, {
+  tools: p,
+  verbose: g,
+  theme: h,
+  isTranscriptMode: M = !1,
+  input: b,
+  activeAgents: R
+}) {
+  let v = m;
+  if (v.status === "remote_launched") return e(s, {
+    flexDirection: "column",
+    children: e(ze, {
+      height: 1,
+      children: r(n, {
+        children: ["Cloud agent launched", " ", r(n, {
+          dimColor: !0,
+          children: ["\xB7 ", v.taskId, " \xB7 ", v.sessionUrl]
+        })]
+      })
+    })
+  });
+  if (m.status === "async_launched") {
+    let {
+      prompt: K
+    } = m;
+    return r(s, {
+      flexDirection: "column",
+      children: [e(ze, {
+        height: 1,
+        children: r(n, {
+          children: [!M && kNn(d, R, XXt(b, R)) ? "Fetching in background" : "Backgrounded agent", !M && r(n, {
+            dimColor: !0,
+            children: [" (", r(Se, {
+              children: [e(q, {
+                chord: "down",
+                action: "manage"
+              }), K && e(gt, {
+                action: "app:toggleTranscript",
+                context: "Global",
+                fallback: "ctrl+o",
+                description: "expand"
+              })]
+            }), ")"]
+          })]
+        })
+      }), M && K && e(ze, {
+        children: e(Ter, {
+          prompt: K,
+          theme: h
+        })
+      })]
+    })
+  }
+  if (m.status !== "completed") return null;
+  if (!M && kNn(d, R, d6(m.agentType, R))) {
+    let {
+      report: K
+    } = Qfs(m.content), Y = K.reduce((z, se) => z + Buffer.byteLength(se.text), 0), ee = e(Kwt, {
+      bytes: Y
+    });
+    return g ? r(s, {
+      flexDirection: "column",
+      children: [ee, e(s, {
+        flexDirection: "column",
+        children: e(n, {
+          children: K.map((z) => z.text).join(`
+`)
+        })
+      })]
+    }) : ee
+  }
+  let {
+    totalDurationMs: k,
+    totalToolUseCount: C,
+    totalTokens: I,
+    usage: W,
+    content: j,
+    prompt: U
+  } = m, D = `Done (${[C===1?"1 tool use":`${C} tool uses`,ei(I)+" tokens",rn(k)].join(" \xB7 ")})`, G = yd({
+    content: D,
+    usage: {
+      ...W,
+      output_tokens_details: typeof W.output_tokens_details?.thinking_tokens === "number" ? {
+        thinking_tokens: W.output_tokens_details.thinking_tokens
+      } : null,
+      inference_geo: null,
+      iterations: null,
+      speed: null,
+      fallback_credit: null,
+      service_tier: W.service_tier === "standard" || W.service_tier === "priority" || W.service_tier === "batch" ? W.service_tier : null
+    }
+  });
+  return r(s, {
+    flexDirection: "column",
+    children: [M && U && e(ze, {
+      children: e(Ter, {
+        prompt: U,
+        theme: h
+      })
+    }), M ? e(Wvt, {
+      children: e(QC, {
+        progressMessages: d,
+        tools: p,
+        verbose: g
+      })
+    }) : null, M && j && j.length > 0 && e(ze, {
+      children: e(s3o, {
+        content: j,
+        theme: h
+      })
+    }), e(ze, {
+      height: 1,
+      children: e(iY, {
+        message: G,
+        lookups: Y0,
+        addMargin: !1,
+        tools: p,
+        commands: [],
+        verbose: g,
+        inProgressToolUseIDs: new Set,
+        progressMessagesForMessage: [],
+        shouldAnimate: !1,
+        shouldShowDot: !1,
+        isTranscriptMode: !1,
+        isStatic: !0
+      })
+    }), !M && r(n, {
+      dimColor: !0,
+      children: ["  ", e(Gu, {})]
+    })]
+  })
+}
+
+function Iei(m, d) {
+  let {
+    description: p,
+    prompt: g,
+    subagent_type: h
+  } = m;
+  if (!p || !g) return null;
+  if (!d.isTranscriptMode && d6(h, d.activeAgents)) {
+    let M = FBo(g) ?? FBo(p);
+    if (M !== void 0) return Db.renderToolUseMessage({
+      url: M
+    }, d)
+  }
+  return p.replace(/\s+/g, " ").trim()
+}
+var YB = f(() => u({
+  modelsUsed: T(o()).optional(),
+  resolvedModel: o().optional(),
+  status: o().optional(),
+  model: o().optional()
+}));
+
+function QB(m) {
+  let d = YB().safeParse(m);
+  if (!d.success) return [];
+  let {
+    modelsUsed: p,
+    resolvedModel: g,
+    status: h,
+    model: M
+  } = d.data;
+  if (p && p.length > 0) return p;
+  if (g) return [g];
+  if (h === "teammate_spawned" && M) return [It(M)];
+  return []
+}
+
+function XB(m) {
+  let d = (m?.progressMessages ?? []).reduce((g, h) => h.data.type === "agent_progress" ? h.data.modelsUsed ?? g : g, []),
+    p = QB(m?.toolUseResult);
+  return p.length > d.length ? p : d
+}
+
+function a3o(m, d) {
+  let p = [],
+    g = XB(d);
+  if (g.length > 1) p.push(e(s, {
+    flexWrap: "nowrap",
+    marginLeft: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: g.map(Yo).join(" \u2192 ")
+    })
+  }, "model"));
+  else if (m.model && m.model !== "inherit") {
+    let h = g[0];
+    if (h) {
+      let M = tt(),
+        b = It(m.model);
+      if (h !== M || b !== h) p.push(e(s, {
+        flexWrap: "nowrap",
+        marginLeft: 1,
+        children: e(n, {
+          dimColor: !0,
+          children: Yo(h)
+        })
+      }, "model"))
+    }
+  }
+  if (p.length === 0) return null;
+  return e(Q, {
+    children: p
+  })
+}
+var YC = "Initializing\u2026";
+
+function zwt(m, {
+  tools: d,
+  verbose: p,
+  terminalSize: g,
+  inProgressToolCallCount: h,
+  isTranscriptMode: M = !1,
+  activeAgents: b
+}) {
+  if (!M && kNn(m, b)) return Uer();
+  return e(JB, {
+    progressMessages: m,
+    tools: d,
+    verbose: p,
+    terminalSize: g,
+    inProgressToolCallCount: h,
+    isTranscriptMode: M
+  })
+}
+
+function JB({
+  progressMessages: m,
+  tools: d,
+  verbose: p,
+  terminalSize: g,
+  inProgressToolCallCount: h,
+  isTranscriptMode: M
+}) {
+  let b = A(null);
+  b.current ??= Rf();
+  let R = b.current;
+  try {
+    if (LC(R, m, d), !m.length) return e(ze, {
+      height: 1,
+      children: e(n, {
+        dimColor: !0,
+        children: YC
+      })
+    });
+    let v = (h ?? 1) * OB + BB;
+    if (!M && g && g.rows && g.rows < v) {
+      let G = WC(R);
+      return e(ze, {
+        height: 1,
+        children: r(n, {
+          dimColor: !0,
+          children: ["In progress\u2026 \xB7 ", e(n, {
+            bold: !0,
+            children: R.toolUseCount
+          }), " tool", " ", R.toolUseCount === 1 ? "use" : "uses", G && ` \xB7 ${ei(G)} tokens`, " \xB7", " ", e(gt, {
+            action: "app:toggleTranscript",
+            context: "Global",
+            fallback: "ctrl+o",
+            description: "expand",
+            parens: !0
+          })]
+        })
+      })
+    }
+    let C = FC(R, !0),
+      I = M ? C : C.slice(-$C),
+      W = M ? 0 : jC(R, C, C.length - $C),
+      j = m[0]?.data,
+      U = j && Zo(j) ? j.prompt : void 0;
+    if (I.length === 0 && !(M && U)) return e(ze, {
+      height: 1,
+      children: e(n, {
+        dimColor: !0,
+        children: YC
+      })
+    });
+    let {
+      lookups: H,
+      inProgressToolUseIDs: D
+    } = HC(R);
+    return e(ze, {
+      children: r(s, {
+        flexDirection: "column",
+        children: [r(Wvt, {
+          children: [M && U && e(s, {
+            marginBottom: 1,
+            children: e(Ter, {
+              prompt: U
+            })
+          }), I.map((G) => {
+            if (G.type === "summary") {
+              let K = Ryr(G.searchCount, G.readCount, G.isActive);
+              return e(s, {
+                height: 1,
+                overflow: "hidden",
+                children: e(n, {
+                  dimColor: !0,
+                  children: K
+                })
+              }, G.uuid)
+            }
+            return e(iY, {
+              message: G.message.data.message,
+              lookups: H,
+              addMargin: !1,
+              tools: d,
+              commands: [],
+              verbose: p,
+              inProgressToolUseIDs: D,
+              progressMessagesForMessage: [],
+              shouldAnimate: !1,
+              shouldShowDot: !1,
+              style: "condensed",
+              isTranscriptMode: !1,
+              isStatic: !0
+            }, G.message.uuid)
+          })]
+        }), e(d_, {
+          count: W,
+          unit: "tool use",
+          expandable: !0
+        })]
+      })
+    })
+  } catch (v) {
+    return l(v), null
+  }
+}
+
+function l3o({
+  subagent_type: m
+}, {
+  progressMessagesForMessage: d,
+  tools: p,
+  verbose: g,
+  isTranscriptMode: h,
+  activeAgents: M
+}) {
+  if (!h && d6(m, M)) return e(rh, {});
+  return r(Q, {
+    children: [zwt(d, {
+      tools: p,
+      verbose: g,
+      isTranscriptMode: h,
+      activeAgents: M
+    }), e(rh, {})]
+  })
+}
+
+function d3o(m, {
+  progressMessagesForMessage: d,
+  tools: p,
+  verbose: g,
+  isTranscriptMode: h,
+  input: M,
+  activeAgents: b
+}) {
+  if (!h && kNn(d, b, XXt(M, b))) return e(Rm, {
+    result: m,
+    verbose: g
+  });
+  return r(Q, {
+    children: [zwt(d, {
+      tools: p,
+      verbose: g,
+      isTranscriptMode: h,
+      activeAgents: b
+    }), e(Rm, {
+      result: m,
+      verbose: g
+    })]
+  })
+}
+
+function ZB(m) {
+  let d = F(m, (M) => {
+      if (!Zo(M.data)) return !1;
+      let b = M.data.message;
+      return b.type === "user" && b.message.content.some((R) => R.type === "tool_result")
+    }),
+    p = m.findLast((M) => Zo(M.data) && M.data.message.type === "assistant" && M.data.message.isUnmetered !== !0),
+    g = p?.data.message.type === "assistant" ? B4(p.data.message.message.usage) : void 0,
+    h = g ? yO(g) : null;
+  return {
+    toolUseCount: d,
+    tokens: h
+  }
+}
+
+function c3o(m, d) {
+  let {
+    shouldAnimate: p,
+    tools: g,
+    addMargin: h = !0,
+    activeAgents: M
+  } = d, b = m.map(({
+    param: j,
+    isResolved: U,
+    isError: H,
+    progressMessages: D,
+    result: G
+  }) => {
+    let K = ZB(D),
+      Y = f5s(D, g, M),
+      ee = VYr().safeParse(dDn(j.input)?.input ?? j.input),
+      z = G?.output?.status === "teammate_spawned",
+      se, X, de, fe, oe;
+    if (z && ee.success && ee.data.name) se = `@${ee.data.name}`, X = GYr(ee.data.subagent_type, M), oe = ee.data.description?.replace(/\s+/g, " ").trim() || void 0, fe = X ? RBe(X) : void 0;
+    else se = ee.success ? dor(ee.data, {
+      activeAgents: M
+    }) : "Agent", X = ee.success ? ee.data.description?.replace(/\s+/g, " ").trim() || void 0 : void 0, de = ee.success ? cor(ee.data, {
+      activeAgents: M
+    }) : void 0, oe = void 0;
+    let ue = ee.success && "run_in_background" in ee.data && ee.data.run_in_background === !0,
+      le = G?.output?.status,
+      pe = ue || (le === "async_launched" || le === "remote_launched") || z,
+      re = ee.success ? ee.data.name : void 0;
+    return {
+      id: j.id,
+      agentType: se,
+      description: X,
+      toolUseCount: K.toolUseCount,
+      tokens: K.tokens,
+      isResolved: U,
+      isError: H,
+      isAsync: pe,
+      color: de,
+      descriptionColor: fe,
+      lastToolInfo: Y,
+      taskDescription: oe,
+      name: re
+    }
+  }), R = m.some((j) => !j.isResolved), v = m.some((j) => j.isError), k = !R, C = b.length > 0 && b.every((j) => j.agentType === b[0]?.agentType), I = C && b[0]?.agentType !== "Agent" ? b[0]?.agentType : null, W = b.every((j) => j.isAsync);
+  return r(s, {
+    flexDirection: "column",
+    marginTop: h ? 1 : 0,
+    children: [r(s, {
+      flexDirection: "row",
+      children: [e(bo, {
+        shouldAnimate: p && R,
+        isUnresolved: R,
+        isError: v
+      }), r(n, {
+        children: [k ? W ? r(Q, {
+          children: [e(n, {
+            bold: !0,
+            children: m.length
+          }), " background agents launched", " ", e(n, {
+            dimColor: !0,
+            children: e(q, {
+              chord: "down",
+              action: "manage",
+              parens: !0
+            })
+          })]
+        }) : r(Q, {
+          children: [e(n, {
+            bold: !0,
+            children: m.length
+          }), " ", I ? `${I} agents` : "agents", " finished"]
+        }) : r(Q, {
+          children: ["Running ", e(n, {
+            bold: !0,
+            children: m.length
+          }), " ", I ? `${I} agents` : "agents", "\u2026"]
+        }), " "]
+      }), !W && e(Gu, {})]
+    }), b.map((j, U) => e(Km, {
+      agentType: j.agentType,
+      description: j.description,
+      descriptionColor: j.descriptionColor,
+      taskDescription: j.taskDescription,
+      toolUseCount: j.toolUseCount,
+      tokens: j.tokens,
+      color: j.color,
+      isLast: U === b.length - 1,
+      isResolved: j.isResolved,
+      isError: j.isError,
+      isAsync: j.isAsync,
+      shouldAnimate: p,
+      lastToolInfo: j.lastToolInfo,
+      hideType: C,
+      name: j.name
+    }, j.id))]
+  })
+}
+
+function f5s(m, d, p) {
+  let g = new Map;
+  for (let R of m) {
+    if (!Zo(R.data)) continue;
+    if (R.data.message.type === "assistant") {
+      for (let v of R.data.message.message.content)
+        if (v.type === "tool_use") g.set(v.id, v)
+    }
+  }
+  let h = 0,
+    M = 0;
+  for (let R = m.length - 1; R >= 0; R--) {
+    let v = m[R];
+    if (!Qd(v)) continue;
+    if (!yf(v)) continue;
+    let k = bf(v, d, g);
+    if (k && (k.isSearch || k.isRead)) {
+      if (v.data.message.type === "user") {
+        if (k.isSearch) h++;
+        else if (k.isRead) M++
+      }
+    } else if (!k?.isREPL) break
+  }
+  if (h + M >= 2) return Ryr(h, M, !0);
+  let b = m.findLast((R) => {
+    if (!Zo(R.data)) return !1;
+    let v = R.data.message;
+    if (v.type !== "user") return !1;
+    let k = v.message.content.find((I) => I.type === "tool_result");
+    if (k?.type !== "tool_result") return !1;
+    let C = g.get(k.tool_use_id);
+    return Jxt(C, d)?.isREPL !== !0
+  });
+  if (b?.data.message.type === "user") {
+    let R = b.data.message.message.content.find((v) => v.type === "tool_result");
+    if (R?.type === "tool_result") {
+      let v = g.get(R.tool_use_id);
+      if (v) {
+        let k = Pn(d, v.name);
+        if (!k) return v.name;
+        let C = v.input,
+          I = fb(k, C),
+          W = I.success ? I.data : void 0;
+        try {
+          let j = k.userFacingName(W, {
+              activeAgents: p
+            }),
+            U = k.getToolUseSummary?.(W);
+          return U ? `${j}: ${U}` : j
+        } catch {
+          return v.name
+        }
+      }
+    }
+  }
+  return null
+}
+
+function XC(m, d, {
+  verbose: p
+}) {
+  let g = j5r().safeParse(typeof m === "string" ? pt(m, !1) : m);
+  if (!g.success) return typeof m === "string" ? e(vP, {
+    content: u0(m),
+    verbose: p
+  }) : null;
+  let h = W5r(g.data);
+  return h === void 0 ? null : e(ze, {
+    children: e(n, {
+      dimColor: !0,
+      children: di(h)
+    })
+  })
+}
+
+function JC(m) {
+  if (typeof m === "string") return e(ze, {
+    children: e(n, {
+      dimColor: !0,
+      children: di(m)
+    })
+  });
+  let d = m.files.filter((p) => p.error !== void 0);
+  return r(ze, {
+    children: [e(n, {
+      dimColor: !0,
+      children: di(m.message)
+    }), d.map((p) => r(n, {
+      color: "warning",
+      children: ["  ", di(`${p.path}: ${p.error}`)]
+    }, p.path))]
+  })
+}
+
+function ZC(m) {
+  return r(s, {
+    flexDirection: "row",
+    marginTop: 1,
+    children: [e(s, {
+      minWidth: 2,
+      children: e(n, {
+        color: "text",
+        children: wo
+      })
+    }), r(s, {
+      flexDirection: "column",
+      children: [m.caption ? e(n, {
+        children: m.caption
+      }) : null, e(nr, {
+        attachments: m.attachments
+      })]
+    })]
+  })
+}
+
+function eS(m) {
+  return e(ze, {
+    children: e(n, {
+      children: m.role !== void 0 ? `Role: ${m.role}` : "Role picker dismissed"
+    })
+  })
+}
+
+function oS(m) {
+  return e(n, {
+    children: `Shown ${m.proposalCount} ${O(m.proposalCount,"skill proposal")} to the user for review`
+  })
+}
+var kf = {
+    name: import.meta.require("B:/~BUN/root/chunk-3bczxeyp.js").SEARCH_MCP_REGISTRY_TOOL_NAME,
+    ui: import.meta.require("B:/~BUN/root/chunk-kss0h4jn.js")
+  },
+  xf = {
+    name: import.meta.require("B:/~BUN/root/chunk-s6vwa7d3.js").SUGGEST_CONNECTORS_TOOL_NAME,
+    ui: import.meta.require("B:/~BUN/root/chunk-j2gx39qn.js")
+  },
+  Xd = null,
+  wf = null,
+  Cf = {
+    name: import.meta.require("B:/~BUN/root/chunk-7vgj75wy.js").LIST_CONNECTORS_TOOL_NAME,
+    ui: import.meta.require("B:/~BUN/root/chunk-fqvd8cjy.js")
+  },
+  Sf = null,
+  _f = null,
+  vf = {
+    name: import.meta.require("B:/~BUN/root/chunk-cv65hqsg.js").FETCH_INBOX_MESSAGE_TOOL_NAME,
+    ui: import.meta.require("B:/~BUN/root/chunk-yqcr8758.js")
+  },
+  Jd = null,
+  Zd = {
+    name: import.meta.require("B:/~BUN/root/chunk-14p0f914.js").WORKFLOW_TOOL_NAME,
+    ui: import.meta.require("B:/~BUN/root/chunk-4xk52x09.js")
+  },
+  em = null,
+  Oo = import.meta.require("B:/~BUN/root/chunk-s59q6hwb.js"),
+  om = null,
+  tm = null,
+  rs = {
+    name: import.meta.require("B:/~BUN/root/chunk-4h1ezzvc.js").ARTIFACT_TOOL_NAME,
+    names: import.meta.require("B:/~BUN/root/chunk-4h1ezzvc.js"),
+    ui: import.meta.require("B:/~BUN/root/chunk-hwy6aeht.js")
+  },
+  Pf = {
+    name: import.meta.require("B:/~BUN/root/chunk-wn2e3h4c.js").END_CONVERSATION_TOOL_NAME,
+    ui: import.meta.require("B:/~BUN/root/chunk-w1hnd374.js")
+  },
+  Ef = {
+    [ht]: {
+      renderGroupedToolUse: c3o,
+      renderToolResultMessage: i3o,
+      renderToolUseErrorMessage: d3o,
+      renderToolUseProgressMessage: zwt,
+      renderToolUseRejectedMessage: l3o,
+      renderToolUseTag: a3o,
+      userFacingNameBackgroundColor: cor
+    },
+    get [We]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-p1nr3mjg.js");
+      return {
+        renderToolResultMessage: m.renderToolResultMessage,
+        renderToolUseProgressMessage: m.renderToolUseProgressMessage,
+        renderToolUseQueuedMessage: m.renderToolUseQueuedMessage,
+        renderToolUseErrorMessage: m.renderToolUseErrorMessage,
+        isResultTruncated: m.isResultTruncated
+      }
+    },
+    [Ud]: {
+      renderToolResultMessage: tT
+    },
+    [Xo]: {
+      renderToolResultMessage: Ah,
+      renderToolUseRejectedMessage: Dh,
+      renderToolUseProgressMessage: Uh,
+      renderToolUseErrorMessage: Ih
+    },
+    [im]: {
+      renderToolResultMessage: Oh
+    },
+    [Fu]: {
+      renderToolResultMessage: lh,
+      renderToolUseRejectedMessage: dh
+    },
+    get [dt]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-56cmy9ct.js");
+      return {
+        renderToolResultMessage: m.renderToolResultMessage,
+        renderToolUseRejectedMessage: m.renderToolUseRejectedMessage,
+        renderToolUseErrorMessage: m.renderToolUseErrorMessage
+      }
+    },
+    get [Kt]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-r6ghtwhh.js");
+      return {
+        renderToolResultMessage: m.renderToolResultMessage,
+        renderToolUseRejectedMessage: m.renderToolUseRejectedMessage,
+        renderToolUseErrorMessage: m.renderToolUseErrorMessage,
+        isResultTruncated: m.isResultTruncated
+      }
+    },
+    get [Dc]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-xrqgpqfm.js");
+      return {
+        renderToolResultMessage: m.renderToolResultMessage,
+        renderToolUseErrorMessage: m.renderToolUseErrorMessage,
+        isResultTruncated: m.isResultTruncated
+      }
+    },
+    get [Qe]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-9a6p3hdq.js");
+      return {
+        renderToolResultMessage: m.renderToolResultMessage,
+        renderToolUseErrorMessage: m.renderToolUseErrorMessage,
+        renderToolUseTag: m.renderToolUseTag
+      }
+    },
+    get [Ji]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-gnpx8cta.js");
+      return {
+        renderToolResultMessage: m.renderToolResultMessage,
+        renderToolUseRejectedMessage: m.renderToolUseRejectedMessage,
+        renderToolUseErrorMessage: m.renderToolUseErrorMessage
+      }
+    },
+    get [xt]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-ph5m7pax.js");
+      return {
+        renderToolResultMessage: m.renderToolResultMessage,
+        renderToolUseErrorMessage: m.renderToolUseErrorMessage,
+        renderToolUseProgressMessage: m.renderToolUseProgressMessage,
+        renderToolUseQueuedMessage: m.renderToolUseQueuedMessage,
+        isResultTruncated: m.isResultTruncated
+      }
+    },
+    [Pr]: {
+      renderToolResultMessage: Am,
+      renderToolUseErrorMessage: Im
+    },
+    [ao]: {
+      renderToolResultMessage: Am,
+      renderToolUseErrorMessage: Im
+    },
+    [pr]: {
+      renderToolResultMessage: O3o,
+      renderToolUseProgressMessage: Uer
+    },
+    [Xu]: {
+      renderToolResultMessage: rT,
+      renderToolUseProgressMessage: sT
+    },
+    [gx]: {
+      renderToolResultMessage: zh
+    },
+    get [go]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-g67m5zka.js");
+      return {
+        renderToolResultMessage: m.renderToolResultMessage,
+        renderToolUseProgressMessage: m.renderToolUseProgressMessage,
+        renderToolUseRejectedMessage: m.renderToolUseRejectedMessage,
+        renderToolUseErrorMessage: m.renderToolUseErrorMessage
+      }
+    },
+    [OU]: {
+      renderToolResultMessage: kh,
+      renderToolUseErrorMessage: Rh
+    },
+    [IS]: {
+      renderToolUseErrorMessage: Wh,
+      renderToolUseProgressMessage: Fh,
+      renderToolUseRejectedMessage: jh
+    },
+    [ZY]: {
+      renderToolResultMessage: dT,
+      isResultTruncated: mT
+    },
+    [oq]: {
+      renderToolResultMessage: fT,
+      isResultTruncated: hT
+    },
+    [U1]: {
+      renderToolResultMessage: TT,
+      isResultTruncated: MT
+    },
+    [oO]: {
+      renderToolResultMessage: RT
+    },
+    [rv]: {
+      renderToolResultMessage: nT,
+      renderToolUseRejectedMessage: aT
+    },
+    [wN]: {
+      renderToolResultMessage: iT
+    },
+    [mBe]: {
+      renderToolResultMessage: lT
+    },
+    [pf]: {
+      renderToolResultMessage: xT
+    },
+    [Jw]: {
+      renderToolResultMessage: wT
+    },
+    [JPe]: {
+      renderToolResultMessage: CT
+    },
+    [IU]: {
+      renderToolResultMessage: kT
+    },
+    [Bir]: {
+      renderToolResultMessage: Zbn,
+      renderToolUseProgressMessage: Her,
+      isResultTruncated: MGt
+    },
+    get [VTn]() {
+      let m = import.meta.require("B:/~BUN/root/chunk-638g5ane.js").displayOnlyMcpToolUi;
+      return {
+        renderToolUseProgressMessage: Her,
+        renderToolResultMessage: m.renderToolResultMessage,
+        isResultTruncated: m.isResultTruncated
+      }
+    },
+    [C9r]: {
+      renderToolResultMessage: Zbn,
+      renderToolUseProgressMessage: Her,
+      renderToolUseTag: ih,
+      isResultTruncated: MGt
+    },
+    [Yi]: {
+      renderToolResultMessage: uT
+    },
+    [my]: {
+      renderToolResultMessage: ZC
+    },
+    [jq]: {
+      renderToolResultMessage: JC
+    },
+    [tX]: {
+      renderToolResultMessage: oS
+    },
+    [uO]: {
+      renderToolResultMessage: gT
+    },
+    [Rn]: {
+      renderToolResultMessage: XC
+    },
+    [bve]: {
+      renderToolResultMessage: eS
+    },
+    ...kf && {
+      [kf.name]: {
+        renderToolResultMessage: kf.ui.renderToolResultMessage
+      }
+    },
+    ...xf && {
+      [xf.name]: {
+        renderToolResultMessage: xf.ui.renderToolResultMessage
+      }
+    },
+    ...Xd && {
+      [Xd.name]: {
+        renderToolResultMessage: Xd.ui.renderToolResultMessage,
+        isResultTruncated: Xd.ui.isResultTruncated
+      }
+    },
+    ...wf && {
+      [wf.name]: {
+        renderToolResultMessage: wf.ui.renderToolResultMessage
+      }
+    },
+    ...Cf && {
+      [Cf.name]: {
+        renderToolResultMessage: Cf.ui.renderToolResultMessage
+      }
+    },
+    ...Sf && {
+      [Sf.name]: {
+        renderToolResultMessage: Sf.ui.renderToolResultMessage
+      }
+    },
+    [nOe]: {
+      renderToolResultMessage: Zh
+    },
+    ..._f && {
+      [_f.name]: {
+        renderToolResultMessage: _f.ui.renderToolResultMessage
+      }
+    },
+    ...vf && {
+      [vf.name]: {
+        renderToolResultMessage: vf.ui.renderToolResultMessage
+      }
+    },
+    ...Jd && {
+      [Jd.name]: {
+        renderToolResultMessage: Jd.ui.renderToolResultMessage,
+        renderToolUseProgressMessage: Jd.ui.renderToolUseProgressMessage
+      }
+    },
+    [Lh]: {
+      renderToolResultMessage: uh,
+      renderToolUseErrorMessage: mh
+    },
+    [Zd.name]: {
+      renderToolResultMessage: Zd.ui.renderToolResultMessage,
+      renderToolUseProgressMessage: Zd.ui.renderToolUseProgressMessage,
+      renderToolUseRejectedMessage: Zd.ui.renderToolUseRejectedMessage
+    },
+    ...em && {
+      [em.name]: {
+        renderToolResultMessage: em.ui.renderToolResultMessage,
+        renderToolUseRejectedMessage: em.ui.renderToolUseRejectedMessage
+      }
+    },
+    ...om && {
+      [om.name]: {
+        renderToolResultMessage: om.ui.renderToolResultMessage,
+        renderToolUseProgressMessage: om.ui.renderToolUseProgressMessage
+      }
+    },
+    ...tm && {
+      [tm.name]: {
+        renderToolResultMessage: tm.ui.renderToolResultMessage,
+        renderToolUseProgressMessage: tm.ui.renderToolUseProgressMessage
+      }
+    },
+    ...rs && Object.fromEntries([rs.name, rs.names.ARTIFACT_COMMENTS_TOOL_NAME, rs.names.ARTIFACT_DATA_TOOL_NAME, rs.names.ARTIFACT_CHECK_TOOL_NAME].map((m) => [m, {
+      renderToolResultMessage: rs.ui.renderToolResultMessage,
+      renderToolUseProgressMessage: rs.ui.renderToolUseProgressMessage,
+      renderToolUseErrorMessage: rs.ui.renderToolUseErrorMessage,
+      renderToolUseQueuedMessage: rs.ui.renderToolUseQueuedMessage
+    }])),
+    ...Pf && {
+      [Pf.name]: {
+        renderToolResultMessage: Pf.ui.renderToolResultMessage
+      }
+    },
+    ...Oo && {
+      ListPlugins: {
+        renderToolResultMessage: Oo.makeResultCountRenderer("plugin")
+      },
+      ListSkills: {
+        renderToolResultMessage: Oo.makeResultCountRenderer("skill")
+      },
+      SearchPlugins: {
+        renderToolResultMessage: Oo.makeResultCountRenderer("plugin")
+      },
+      SearchSkills: {
+        renderToolResultMessage: Oo.makeResultCountRenderer("skill")
+      },
+      SuggestPluginInstall: {
+        renderToolResultMessage: (m) => Oo.makeResultCountRenderer("plugin")({
+          results: m.plugins
+        })
+      },
+      SuggestSkills: {
+        renderToolResultMessage: Oo.makeResultCountRenderer("skill")
+      }
+    }
+  },
+  uF = `mcp__${XM}__`;
+
+function pF(m, d) {
+  if (m.builtinRenderFamily === "claude-in-chrome") {
+    let p = m.name.slice(pM.length);
+    if (d === "renderToolResultMessage") return nh(p);
+    if (d === "renderToolUseTag") return sh
+  }
+  if (m.builtinRenderFamily === "computer-use") {
+    let p = m.name.slice(uF.length);
+    if (d === "renderToolResultMessage") return ah(p)
+  }
+  return
+}
+
+function Cg(m, d) {
+  let p = m.uiTableKey ?? m.name;
+  return pF(m, d) ?? (Object.hasOwn(Ef, p) ? Ef[p]?.[d] : void 0)
+}
+
+function u3o(m, d) {
+  let p = Object.getOwnPropertyDescriptor(Ef, m);
+  return p?.value !== void 0 && p.value[d] !== void 0
+}
+export {
+  rh,
+  ece,
+  xtt,
+  i8,
+  qQ,
+  ver,
+  kGt,
+  Bwt,
+  Ptt,
+  _Vr,
+  ker,
+  jwt,
+  Wbn,
+  bVr,
+  SVr,
+  RF,
+  bV,
+  wVr,
+  EGt,
+  o3o,
+  eVe,
+  Pre,
+  tVe,
+  TGt,
+  Eer,
+  vVr,
+  Ott,
+  w0,
+  kVr,
+  EVr,
+  TVr,
+  zbn,
+  Uye,
+  Wwt,
+  dLe,
+  cLe,
+  CVr,
+  Gbn,
+  iY,
+  Ter,
+  s3o,
+  i3o,
+  Iei,
+  a3o,
+  zwt,
+  l3o,
+  d3o,
+  c3o,
+  f5s,
+  Cg,
+  u3o
+};

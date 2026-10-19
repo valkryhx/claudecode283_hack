@@ -1,0 +1,1577 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import {
+  bl,
+  us
+} from "B:/~BUN/root/chunk-b900np4s.js";
+import {
+  Og
+} from "B:/~BUN/root/chunk-3md9ngvz.js";
+import {
+  Gr
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  zr
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  s$,
+  tI,
+  I$o,
+  Aw
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  s,
+  n,
+  dn,
+  ot,
+  N$,
+  Iu,
+  zCe,
+  n7,
+  Fl,
+  Ws
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import {
+  wc,
+  Pg
+} from "B:/~BUN/root/chunk-1jz9m9yh.js";
+import {
+  PI
+} from "B:/~BUN/root/chunk-dwajd7kx.js";
+import {
+  xy
+} from "B:/~BUN/root/chunk-vw193yjw.js";
+import {
+  vR,
+  $Ce,
+  UCe,
+  kR,
+  e7,
+  xc
+} from "B:/~BUN/root/chunk-nbjke4gr.js";
+import {
+  hS
+} from "B:/~BUN/root/chunk-a8k6kvgb.js";
+import {
+  iz,
+  uvt
+} from "B:/~BUN/root/chunk-v3vx38xn.js";
+import {
+  Te
+} from "B:/~BUN/root/chunk-smy4yvhm.js";
+import {
+  l2t
+} from "B:/~BUN/root/chunk-hq7vjyyz.js";
+import {
+  Zl
+} from "B:/~BUN/root/chunk-ps74es0g.js";
+import {
+  on
+} from "B:/~BUN/root/chunk-pw5vpw1q.js";
+import {
+  Int,
+  ft
+} from "B:/~BUN/root/chunk-jh7dpafw.js";
+import {
+  Q,
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  S_,
+  qt,
+  Mm,
+  Ee,
+  P,
+  Mo,
+  Jt,
+  A,
+  y,
+  Dt,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  ie
+} from "B:/~BUN/root/chunk-t7350kw8.js";
+import {
+  S,
+  yn
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+B();
+B();
+B();
+B();
+var Vn = 150,
+  Kn = 400,
+  _n = 60;
+
+function pe({
+  children: o,
+  paddingX: t = 0,
+  onPress: i,
+  repeat: a = !1
+}) {
+  let m = dn(),
+    f = hS(),
+    l = $Ce(),
+    [v, p] = y(!1),
+    [D, I] = y(!1),
+    [R, x] = y(null),
+    k = A(null);
+  P(() => () => k.current?.(), []);
+  let T = i !== void 0;
+  if (!T && (v || D || R !== null)) p(!1), I(!1), x(null);
+  let W = Mo((b) => i?.({
+    row: b
+  }));
+  P(() => {
+    if (R === null) return;
+    let b = m.setTimeout(function F() {
+      W(R), b = m.setTimeout(F, _n)
+    }, Kn);
+    return () => b()
+  }, [R, m]);
+
+  function H(b) {
+    if (b.stopImmediatePropagation(), k.current !== null || f(b)) return;
+    b.endClickChain(), I(!0), k.current = m.setTimeout(() => {
+      k.current = null, I(!1), i?.(b)
+    }, Vn)
+  }
+
+  function E(b) {
+    if (b.type === "down" && b.button === 0) I(!0), x(b.row), i?.(b);
+    else if (b.type === "up") I(!1), x(null)
+  }
+  let C = l === "inverse",
+    L = C ? void 0 : D ? "text" : v ? vR : void 0,
+    [N = "", ...U] = o;
+  return r(s, {
+    paddingLeft: t,
+    flexShrink: 1,
+    alignSelf: "flex-start",
+    backgroundColor: L,
+    onClick: T && !a ? H : void 0,
+    onPointer: T && a ? E : void 0,
+    onMouseEnter: T ? () => p(!0) : void 0,
+    onMouseLeave: T ? () => p(!1) : void 0,
+    hoverFollowsPaint: T,
+    noSelect: !0,
+    children: [e(n, {
+      color: D && !C ? "inverseText" : void 0,
+      dimColor: !D,
+      inverse: D && C,
+      wrap: "truncate-end",
+      children: v && !D && C ? r(Q, {
+        children: [e(n, {
+          inverse: !0,
+          children: N
+        }), U.join("")]
+      }) : o
+    }), t > 0 && T && e(s, {
+      width: t,
+      flexShrink: 1000
+    })]
+  })
+}
+var _o = 1000;
+
+function io() {
+  let t = w(2),
+    o = dn(),
+    i;
+  if (t[0] !== o) i = () => {
+    let a = {
+      at: Number.NEGATIVE_INFINITY,
+      row: -1
+    };
+    return {
+      pressed: (m) => {
+        a = {
+          at: o.now(),
+          row: m.row
+        }
+      },
+      dropsClick: (f) => {
+        if (f.row !== a.row || o.now() - a.at >= _o) {
+          return !1
+        }
+        return f.dropAsStray(), !0
+      }
+    }
+  }, t[0] = o, t[1] = i;
+  else i = t[1];
+  let [l] = y(i);
+  return l
+}
+var a2t = qt(() => !1);
+
+function SVe(o) {
+  let l = w(3),
+    {
+      direction: t,
+      count: i,
+      onPress: a
+    } = o;
+  if (i <= 0) {
+    return null
+  }
+  const f = `${t==="above"?s$:tI} ${i} more`;
+  let v;
+  if (l[0] !== a || l[1] !== f) v = e(s, {
+    paddingLeft: 1,
+    children: e(pe, {
+      paddingX: 1,
+      onPress: a,
+      children: f
+    })
+  }), l[0] = a, l[1] = f, l[2] = v;
+  else v = l[2];
+  return v
+}
+B();
+var je = qt(null),
+  vV = 1;
+
+function ent(o) {
+  let f = w(8),
+    {
+      reserve: t,
+      children: i
+    } = o,
+    a = A(null),
+    {
+      rows: m
+    } = us(Te()),
+    l;
+  if (f[0] !== t || f[1] !== m) l = {
+    box: a,
+    rows: m,
+    reserve: t
+  }, f[0] = t, f[1] = m, f[2] = l;
+  else l = f[2];
+  let v;
+  if (f[3] !== i) v = e(s, {
+    ref: a,
+    flexDirection: "column",
+    children: i
+  }), f[3] = i, f[4] = v;
+  else v = f[4];
+  let p;
+  if (f[5] !== l || f[6] !== v) p = e(je, {
+    value: l,
+    children: v
+  }), f[5] = l, f[6] = v, f[7] = p;
+  else p = f[7];
+  return p
+}
+
+function kV() {
+  return Ee(je)
+}
+B();
+B();
+
+function so() {
+  let o = Ee(l2t),
+    {
+      subscribeHoverTracked: t,
+      isHoverTracked: i
+    } = Ee(Pg),
+    a = Dt(t, i);
+  return o ?? a
+}
+B();
+var Xo = 5;
+
+function Ye(o) {
+  let E = w(47),
+    {
+      offset: t,
+      visible: i,
+      total: a,
+      height: m,
+      onScrollTo: f,
+      onScrollBy: l,
+      arrows: v
+    } = o,
+    p = m === void 0 ? i : m,
+    D = v === void 0 ? !1 : v,
+    I = A(null),
+    [R, x] = y(!1),
+    [k, T] = y(!1);
+  if (a <= i || p < 1) {
+    return null
+  }
+  let W = D && p >= Xo,
+    H = W ? p - 2 : p,
+    C;
+  if (E[0] !== H || E[1] !== t || E[2] !== a || E[3] !== i) C = mo({
+    offset: t,
+    visible: i,
+    total: a,
+    height: H
+  }), E[0] = H, E[1] = t, E[2] = a, E[3] = i, E[4] = C;
+  else C = E[4];
+  let {
+    top: L,
+    size: N
+  } = C, U = H - L - N, b;
+  if (E[5] !== H || E[6] !== t || E[7] !== f || E[8] !== N || E[9] !== L || E[10] !== a || E[11] !== i) b = function oe(F) {
+    if (F.type === "up") {
+      I.current = null, x(!1);
+      return
+    }
+    let ee = F.type === "down" && F.button === 0;
+    let z = ee && F.localRow >= L && F.localRow < L + N;
+    if (ee) I.current = {
+      trackRow: F.row - F.localRow,
+      visible: i,
+      total: a,
+      height: H,
+      grab: z ? F.localRow - L : Math.floor(N / 2),
+      asked: t
+    }, x(!0);
+    let g = I.current;
+    if (g === null) {
+      return
+    }
+    let M = sn({
+      top: F.row - g.trackRow - g.grab,
+      visible: g.visible,
+      total: g.total,
+      height: g.height
+    });
+    let V = M >= g.total - g.visible ? g.total - Math.min(g.visible, i) : M;
+    if (V === g.asked) {
+      return
+    }
+    if (g.asked = V, !z) f?.(V)
+  }, E[5] = H, E[6] = t, E[7] = f, E[8] = N, E[9] = L, E[10] = a, E[11] = i, E[12] = b;
+  else b = E[12];
+  let oe = b,
+    X = k || R ? "suggestion" : void 0,
+    j;
+  if (E[13] !== W || E[14] !== t || E[15] !== l) j = W && e(pe, {
+    repeat: !0,
+    onPress: l && t > 0 ? () => l(-1) : void 0,
+    children: s$
+  }), E[13] = W, E[14] = t, E[15] = l, E[16] = j;
+  else j = E[16];
+  const G = f || R ? oe : void 0;
+  let q;
+  if (E[17] !== f) q = f && (() => T(!0)), E[17] = f, E[18] = q;
+  else q = E[18];
+  let d;
+  if (E[19] !== f) d = f && (() => T(!1)), E[19] = f, E[20] = d;
+  else d = E[20];
+  let h;
+  if (E[21] !== L) h = L > 0 && e(n, {
+    dimColor: !0,
+    children: xe(Aw.pipe, L)
+  }), E[21] = L, E[22] = h;
+  else h = E[22];
+  let u;
+  if (E[23] !== N) u = xe(I$o, N), E[23] = N, E[24] = u;
+  else u = E[24];
+  let te;
+  if (E[25] !== u || E[26] !== X) te = e(n, {
+    color: X,
+    children: u
+  }), E[25] = u, E[26] = X, E[27] = te;
+  else te = E[27];
+  let J;
+  if (E[28] !== U) J = U > 0 && e(n, {
+    dimColor: !0,
+    children: xe(Aw.pipe, U)
+  }), E[28] = U, E[29] = J;
+  else J = E[29];
+  let Y;
+  if (E[30] !== te || E[31] !== J || E[32] !== G || E[33] !== q || E[34] !== d || E[35] !== h) Y = r(Iu, {
+    flexDirection: "column",
+    flexShrink: 0,
+    onPointer: G,
+    onMouseEnter: q,
+    onMouseLeave: d,
+    children: [h, te, J]
+  }), E[30] = te, E[31] = J, E[32] = G, E[33] = q, E[34] = d, E[35] = h, E[36] = Y;
+  else Y = E[36];
+  let K;
+  if (E[37] !== W || E[38] !== t || E[39] !== l || E[40] !== a || E[41] !== i) K = W && e(pe, {
+    repeat: !0,
+    onPress: l && t < a - i ? () => l(1) : void 0,
+    children: tI
+  }), E[37] = W, E[38] = t, E[39] = l, E[40] = a, E[41] = i, E[42] = K;
+  else K = E[42];
+  let Z;
+  if (E[43] !== Y || E[44] !== K || E[45] !== j) Z = e(N$, {
+    children: r(s, {
+      flexDirection: "column",
+      flexShrink: 0,
+      children: [j, Y, K]
+    })
+  }), E[43] = Y, E[44] = K, E[45] = j, E[46] = Z;
+  else Z = E[46];
+  return Z
+}
+
+function mo({
+  offset: o,
+  visible: t,
+  total: i,
+  height: a
+}) {
+  let m = wc(Math.round(t / i * a), 1, Math.max(1, a - 1)),
+    f = a - m,
+    l = i - t;
+  if (o <= 0) return {
+    top: 0,
+    size: m
+  };
+  if (o >= l) return {
+    top: f,
+    size: m
+  };
+  let v = Math.round(o / l * f);
+  if (f < 2) return {
+    top: v,
+    size: m
+  };
+  return {
+    top: wc(v, 1, f - 1),
+    size: m
+  }
+}
+
+function sn({
+  top: o,
+  visible: t,
+  total: i,
+  height: a
+}) {
+  let {
+    size: m
+  } = mo({
+    offset: 0,
+    visible: t,
+    total: i,
+    height: a
+  }), f = a - m, l = i - t;
+  if (o <= 0) return 0;
+  if (o >= f) return l;
+  let v = Math.round(o / f * l);
+  if (l < 2) return v;
+  return wc(v, 1, l - 1)
+}
+
+function xe(o, t) {
+  return Array.from({
+    length: t
+  }, () => o).join(`
+`)
+}
+
+function LSn(o) {
+  let p = w(12),
+    {
+      bar: t,
+      height: i,
+      children: a
+    } = o,
+    [m, f] = y(!1),
+    l = so();
+  if (m && !l) f(!1);
+  let v = l && t.total > t.visible,
+    D, I;
+  if (p[0] === S) D = () => f(!0), I = () => f(!1), p[0] = D, p[1] = I;
+  else D = p[0], I = p[1];
+  let R;
+  if (p[2] !== a) R = e(s, {
+    flexDirection: "column",
+    flexGrow: 1,
+    children: a
+  }), p[2] = a, p[3] = R;
+  else R = p[3];
+  let x;
+  if (p[4] !== t || p[5] !== v || p[6] !== i || p[7] !== m) x = v && (m ? e(Ye, {
+    ...t,
+    height: i
+  }) : e(s, {
+    width: 1,
+    flexShrink: 0
+  })), p[4] = t, p[5] = v, p[6] = i, p[7] = m, p[8] = x;
+  else x = p[8];
+  let k;
+  if (p[9] !== R || p[10] !== x) k = r(s, {
+    gap: 1,
+    onMouseEnter: D,
+    onMouseLeave: I,
+    children: [R, x]
+  }), p[9] = R, p[10] = x, p[11] = k;
+  else k = p[11];
+  return k
+}
+B();
+B();
+
+function Oqr(o, t, i, a = null) {
+  let m = wc(a === null ? o - i + 1 : wc(a, o - i + 1, o), 0, Math.max(0, t - i)),
+    f = Math.min(m + i, t);
+  return {
+    windowStart: m,
+    windowEnd: f,
+    moreAbove: m,
+    moreBelow: t - f
+  }
+}
+var lt = new Set;
+
+function an({
+  lineCount: o,
+  visibleCount: t,
+  cursorLine: i,
+  getCursorLine: a,
+  headings: m = lt,
+  boundaries: f,
+  markerLines: l = 0,
+  onScroll: v
+}) {
+  let p = Math.max(0, o - 1),
+    D = wc(i, 0, p),
+    I = () => wc(a(), 0, p),
+    [R, x, k] = xc(null),
+    T = t + 2 * l,
+    W = 0;
+  while (W < o && m.has(W)) W++;
+  let H = o - 1;
+  while (H >= 0 && m.has(H)) H--;
+
+  function E(d, h) {
+    return (d > W ? l : 0) + (h <= H ? l : 0)
+  }
+
+  function C(d) {
+    return d <= 0 || d >= o || f === void 0 || f.has(d) || m.has(d)
+  }
+
+  function L(d) {
+    let h = Math.min(d + 1, o);
+    while (!C(h)) h++;
+    return h
+  }
+
+  function N(d) {
+    return C(d) && !(d > W && d <= W + l)
+  }
+
+  function U(d, h) {
+    let u = d + h;
+    while (u > 0 && u < o && !N(u)) u += h;
+    return wc(u, 0, o)
+  }
+
+  function b(d) {
+    for (let h = Math.min(d + T, o); h > d; h--)
+      if (C(h) && h - d + E(d, h) <= T) return h;
+    return L(d)
+  }
+  let F = 0;
+  for (let d = o - 1; d >= 0; d--)
+    if (N(d) && b(d) < o) {
+      F = U(d, 1);
+      break
+    }
+  function ee(d) {
+    let h = b(d);
+    return m.has(h - 1) && h < o
+  }
+
+  function z(d) {
+    let h = b(d);
+    for (let u = d; u < h; u++)
+      if (!m.has(u)) return !0;
+    return !1
+  }
+
+  function g(d, h) {
+    let u = d;
+    while (!C(u)) u--;
+    let te = L(u),
+      J = te > H ? o : te,
+      Y = Math.min(u, F);
+    while (!N(Y)) Y--;
+    let K = u <= W ? 0 : Y;
+    while (K < Y && b(K) < te) K = U(K, 1);
+    let Z = Math.min(Y, Math.max(0, J - T));
+    while (Z < Y && (!N(Z) || b(Z) < J)) Z++;
+    let re = wc(h ?? Z, Math.min(Z, K), K);
+    while (!N(re)) re--;
+    if (h !== null && h > u)
+      for (let me = U(re, -1); me < re && b(me) >= J && (m.has(re - 1) || ee(re)); me = U(me, -1)) re = me;
+    return re
+  }
+  let M = g(D, R),
+    V = b(M);
+  P(() => {
+    if (R !== null && R !== M) x(M)
+  }, [R, M, x]);
+
+  function oe(d) {
+    let h = g(I(), k()),
+      u = wc(d, 0, F);
+    while (!N(u)) u--;
+    let te = u < h ? -1 : 1;
+    while (u !== h && u > 0 && u < F && (m.has(u - 1) && (te < 0 || !m.has(u)) || ee(u) || !z(u))) u = U(u, te);
+    let J = z(u) ? u : h;
+    x(J);
+    let Y = J,
+      K = b(J);
+    while (Y < K && g(Y, J) !== J) Y++;
+    while (K > Y && g(K - 1, J) !== J) K--;
+    v?.(Y, K)
+  }
+
+  function X(d) {
+    let h = g(I(), k());
+    for (let u = 0; u < Math.abs(d); u++) h = U(h, d < 0 ? -1 : 1);
+    if (d !== 0) oe(h)
+  }
+  let j = V - M >= o,
+    G = j ? 0 : Math.max(0, T - E(M, V) - V + M),
+    q = V - M + G;
+  return {
+    windowStart: M,
+    windowEnd: V,
+    spareLines: G,
+    fits: j,
+    getWindow: () => {
+      let d = g(I(), k());
+      return {
+        windowStart: d,
+        windowEnd: b(d)
+      }
+    },
+    scrollBy: X,
+    scrollTo: oe,
+    pin: () => x(g(I(), k())),
+    bar: {
+      offset: M,
+      visible: q,
+      total: o,
+      onScrollTo: j ? void 0 : (d) => oe(d + q >= o ? F : d),
+      onScrollBy: j ? void 0 : X
+    }
+  }
+}
+
+function un({
+  count: o,
+  visibleCount: t,
+  headingLines: i,
+  rowHeights: a,
+  moreRowLines: m = !1,
+  rowKeys: f,
+  resetKey: l,
+  initialCursor: v = 0,
+  isDisabled: p = !1,
+  onAccept: D,
+  onRowKeyDown: I,
+  onCursorChange: R,
+  edge: x = "clamp",
+  onUpFromFirstItem: k,
+  onDownFromLastItem: T,
+  declineHomeEnd: W = !1,
+  keybindingContext: H = "Select"
+}) {
+  let E = A(null),
+    C = Math.max(0, o - 1),
+    [L, N, U] = xc(() => {
+      let c = wc(v, 0, C);
+      return {
+        index: c,
+        key: f?.[c],
+        resetKey: l
+      }
+    }),
+    b = n7(E),
+    {
+      focusDirection: F
+    } = zCe(),
+    ee = cY(p);
+
+  function z(c) {
+    if (!Object.is(c.resetKey, l)) return 0;
+    let O = wc(c.index, 0, C);
+    if (c.key === void 0 || f?.[O] === c.key) return O;
+    let se = f?.indexOf(c.key) ?? -1;
+    return se < 0 ? O : se
+  }
+  let g = z(L);
+
+  function M() {
+    return z(U())
+  }
+
+  function V(c) {
+    N((O) => O.index === c && O.key === f?.[c] && Object.is(O.resetKey, l) ? O : {
+      index: c,
+      key: f?.[c],
+      resetKey: l
+    })
+  }
+  let oe = new Set(i),
+    X = oe.size;
+  for (let c = 0; c < o; c++) X += a?.[c] ?? 1;
+  let j = [],
+    G = [0],
+    q = new Set;
+  for (let c = 0, O = 0; c < X; c++) {
+    if (c >= O) {
+      if (q.add(c), !oe.has(c)) O = c + (a?.[j.length] ?? 1), j.push(c)
+    }
+    G.push(j.length)
+  }
+  let d = m ? 1 : 0;
+
+  function h(c) {
+    Z((O) => {
+      let se = O + c;
+      if (x === "wrap" && o > 0) return (se % o + o) % o;
+      return wc(se, 0, C)
+    })
+  }
+
+  function u(c) {
+    if (ne.fits) return !1;
+    if (t === 1) {
+      h(c);
+      return
+    }
+    Z((O) => {
+      let se = ne.getWindow(),
+        ce = wc((j[O] ?? 0) + c * (se.windowEnd - se.windowStart), 0, X - 1);
+      while (!q.has(ce)) ce--;
+      return wc(c > 0 ? Math.max((G[ce + 1] ?? 0) - 1, O + 1) : Math.min(G[ce] ?? 0, O - 1), 0, C)
+    })
+  }
+
+  function te(c) {
+    if (M() === (c < 0 ? 0 : C)) {
+      let O = c < 0 ? k : T;
+      if (O) {
+        O();
+        return
+      }
+      if (x !== "wrap" && F(c < 0 ? "up" : "down")) return
+    }
+    h(c)
+  }
+
+  function J(c) {
+    if (W && ne.fits) return !1;
+    Z(c)
+  }
+  P(() => {
+    if (U() === L) V(g)
+  });
+  let Y = Mo((c) => R?.(c)),
+    K = A(null);
+  P(() => {
+    if (o === 0) {
+      K.current = null;
+      return
+    }
+    if (K.current !== g) K.current = g, Y(g)
+  }, [g, o]);
+
+  function Z(c) {
+    let O = wc(typeof c === "function" ? c(M()) : c, 0, C);
+    if (V(O), o === 0 || O === K.current) return;
+    K.current = O, R?.(O)
+  }
+  on(Gr({
+    "select:next": () => te(1),
+    "select:previous": () => te(-1),
+    "select:pageDown": () => u(1),
+    "select:pageUp": () => u(-1),
+    "select:first": () => J(0),
+    "select:last": () => J(C)
+  }, (c) => () => cY(p) ? !1 : c()), {
+    context: H,
+    isActive: b && !ee && o > 0
+  }), on({
+    "select:accept": () => cY(p) ? !1 : D?.(M())
+  }, {
+    context: H,
+    isActive: b && !ee && o > 0 && D !== void 0
+  });
+  let re = Zl() !== null;
+
+  function me(c) {
+    if (cY(p) || o === 0) return;
+    let O = M();
+    if (c.key === "return" && D && !re) {
+      D(O), c.preventDefault(), c.stopImmediatePropagation();
+      return
+    }
+    I?.(c, O)
+  }
+  let ne = an({
+    lineCount: X,
+    visibleCount: t,
+    cursorLine: j[g] ?? 0,
+    getCursorLine: () => j[M()] ?? 0,
+    headings: oe,
+    boundaries: q,
+    markerLines: d,
+    onScroll: (c, O) => {
+      let se = M(),
+        ce = G[c] ?? 0,
+        Fe = (G[O] ?? o) - 1;
+      Z(ce > Fe ? se : wc(se, ce, Fe))
+    }
+  });
+
+  function De(c) {
+    if (c.deltaY === 0 || cY(p)) return;
+    ne.scrollBy(c.deltaY > 0 ? 1 : -1), c.stopImmediatePropagation()
+  }
+
+  function He(c, O = !1) {
+    if (!O && cY(p)) return;
+    ne.scrollTo(c < 0 ? 0 : X)
+  }
+
+  function Ae(c) {
+    ne.pin(), Z(wc(c, 0, C))
+  }
+  return {
+    cursor: g,
+    windowStart: ne.windowStart,
+    windowEnd: ne.windowEnd,
+    spareLines: ne.spareLines,
+    moreAbove: G[ne.windowStart] ?? 0,
+    moreBelow: o - (G[ne.windowEnd] ?? o),
+    isCursor: (c) => c === g && o > 0,
+    hasFocus: b,
+    scrollBar: {
+      ...ne.bar,
+      onScrollTo: ee ? void 0 : ne.bar.onScrollTo,
+      onScrollBy: ee ? void 0 : ne.bar.onScrollBy
+    },
+    setCursor: Ae,
+    scrollToEdge: He,
+    containerRef: E,
+    bind: {
+      ref: E,
+      tabIndex: 0,
+      onKeyDown: me,
+      onWheel: !ee && !ne.fits ? De : void 0
+    }
+  }
+}
+
+function cY(o) {
+  return typeof o === "function" ? o() : o === !0
+}
+
+function Rt(H, E) {
+  return {
+    label: H,
+    value: E
+  }
+}
+
+function xt(J, Y) {
+  return J + Y
+}
+var $e = 3,
+  mn = 7,
+  ko = qt(!1);
+
+function kP() {
+  return Ee(ko)
+}
+
+function Mn(o) {
+  let m = w(27),
+    t = ot(),
+    {
+      onFocus: i,
+      onSelect: a
+    } = o;
+  if (t && a !== void 0) {
+    let f, l;
+    if (m[0] !== o.children) {
+      l = [];
+      f = new Map;
+      for (const v of S_.toArray(o.children)) {
+        if (!ke(v)) {
+          l.push(v);
+          continue
+        }
+        f.set(l.length, [...f.get(l.length) ?? [], v])
+      }
+      m[0] = o.children, m[1] = f, m[2] = l
+    } else f = m[1], l = m[2];
+    if (l.length === 0) {
+      let p;
+      if (m[3] !== o.emptyMessage) p = o.emptyMessage ? e(n, {
+        children: o.emptyMessage
+      }) : null, m[3] = o.emptyMessage, m[4] = p;
+      else p = m[4];
+      return p
+    }
+    let p;
+    if (m[5] !== o.isDisabled) p = (D) => {
+      if (cY(o.isDisabled) || D.ctrl || D.meta) {
+        return
+      }
+      if (D.key === "return" || D.key === " ") D.stopPropagation()
+    }, m[5] = o.isDisabled, m[6] = p;
+    else p = m[6];
+    let I;
+    if (m[7] !== l) I = l.map(Rt), m[7] = l, m[8] = I;
+    else I = m[8];
+    let R;
+    if (m[9] !== o.isDisabled) R = cY(o.isDisabled), m[9] = o.isDisabled, m[10] = R;
+    else R = m[10];
+    let x;
+    if (m[11] !== i || m[12] !== a) x = (k) => {
+      i?.(k), a(k)
+    }, m[11] = i, m[12] = a, m[13] = x;
+    else x = m[13];
+    let T;
+    if (m[14] !== f || m[15] !== i || m[16] !== I || m[17] !== R || m[18] !== x) T = e(e7, {
+      options: I,
+      headings: f,
+      drawLabels: !0,
+      isDisabled: R,
+      onFocus: i,
+      onChange: x
+    }), m[14] = f, m[15] = i, m[16] = I, m[17] = R, m[18] = x, m[19] = T;
+    else T = m[19];
+    let W;
+    if (m[20] !== p || m[21] !== T) W = e(s, {
+      flexDirection: "column",
+      onKeyDown: p,
+      children: T
+    }), m[20] = p, m[21] = T, m[22] = W;
+    else W = m[22];
+    return W
+  }
+  if (o.visibleCount === void 0) {
+    let p;
+    if (m[23] !== o) p = e(Eo, {
+      ...o
+    }), m[23] = o, m[24] = p;
+    else p = m[24];
+    return p
+  }
+  let p;
+  if (m[25] !== o) p = e(Qe, {
+    props: o,
+    visibleCount: o.visibleCount
+  }), m[25] = o, m[26] = p;
+  else p = m[26];
+  return p
+}
+
+function Eo(o) {
+  let p = w(21),
+    t = kV(),
+    i = Ee(iz),
+    a = Te(),
+    {
+      rows: m
+    } = us(a),
+    f = bl(),
+    l = i !== null && !f,
+    v = A(null),
+    D;
+  if (p[0] !== l || p[1] !== t) D = () => {
+    let I = v.current;
+    if (I === null) {
+      return null
+    }
+    let R = t?.box.current ?? I;
+    while (t === null && !l && R.parentNode !== void 0) R = R.parentNode;
+    return Ws(R).height - Ws(I).height
+  }, p[0] = l, p[1] = t, p[2] = D;
+  else D = p[2];
+  let x = Fl(D),
+    k;
+  if (p[3] !== i || p[4] !== t?.box.current) k = () => {
+    let T = t?.box.current ?? v.current;
+    let W = i === null ? null : i();
+    return T === null || W === null ? null : W + Ws(T).height
+  }, p[3] = i, p[4] = t?.box.current, p[5] = k;
+  else k = p[5];
+  let H = Fl(k),
+    E = Ee(uvt),
+    C;
+  if (p[6] !== o.children || p[7] !== o.emptyMessage) {
+    let L = S_.toArray(o.children);
+    C = L.every(ke) ? Number(Boolean(o.emptyMessage)) : L.map(Co).reduce(xt, 0);
+    p[6] = o.children, p[7] = o.emptyMessage, p[8] = C
+  } else C = p[8];
+  let N = C,
+    U = o.maxVisibleCount === void 0 ? N : Math.min(N, o.maxVisibleCount),
+    b, F;
+  if (p[9] !== E || p[10] !== l || p[11] !== U) b = () => l ? E?.({
+    rows: () => v.current === null ? U : Ws(v.current).height,
+    owed: U
+  }) : void 0, F = [l, E, U], p[9] = E, p[10] = l, p[11] = U, p[12] = b, p[13] = F;
+  else b = p[12], F = p[13];
+  Jt(b, F);
+  let ee;
+  if (p[14] === S) ee = () => v.current === null ? 0 : Ws(v.current).width, p[14] = ee;
+  else ee = p[14];
+  let z = Fl(ee),
+    [g, M] = y(null),
+    V = f ? t?.rows ?? m : a.rows,
+    oe = g?.rows === V && g.width === z;
+  if (x !== null && (g === null || !oe || x > g.chrome)) M({
+    rows: V,
+    width: z,
+    chrome: x
+  });
+  let X = oe ? Math.max(g.chrome, x ?? g.chrome) : x,
+    j = f ? V : l ? H : a.rows - (t?.reserve ?? vV),
+    G = X === null || j === null ? $e : f || l ? j - X : Math.min(Math.max(mn, Math.floor(a.rows / 2)), j - X),
+    q = o.maxVisibleCount === void 0 ? G : Math.min(G, o.maxVisibleCount),
+    d = Math.max(1, q),
+    h = d === 1 ? "none" : d < $e && o.overflowHint !== "none" ? "glyph" : o.overflowHint === "count" ? void 0 : o.overflowHint,
+    u;
+  if (p[15] !== h || p[16] !== o) u = {
+    ...o,
+    overflowHint: h
+  }, p[15] = h, p[16] = o, p[17] = u;
+  else u = p[17];
+  let te;
+  if (p[18] !== d || p[19] !== u) te = e(s, {
+    ref: v,
+    flexDirection: "column",
+    children: e(Qe, {
+      props: u,
+      visibleCount: d
+    })
+  }), p[18] = d, p[19] = u, p[20] = te;
+  else te = p[20];
+  return te
+}
+
+function Qe({
+  props: {
+    children: o,
+    defaultFocusIndex: t,
+    resetKey: i,
+    onSelect: a,
+    onFocus: m,
+    onRowKeyDown: f,
+    isDisabled: l,
+    onDisabledRowClick: v,
+    wrap: p = !1,
+    onUpFromFirstItem: D,
+    onDownFromLastItem: I,
+    declineHomeEnd: R = !1,
+    keybindingContext: x,
+    overflowHint: k,
+    scrollBar: T = !0,
+    emptyMessage: W,
+    hoverStyle: H,
+    rowClick: E = "select",
+    styled: C = !1
+  },
+  visibleCount: L
+}) {
+  let N = S_.toArray(o),
+    U = [],
+    b = 0;
+  for (let _ of N) U.push(Co(_)), b += U.at(-1) ?? 1;
+  let F = k === void 0 && b > L,
+    ee = F ? Math.max(1, L - 2) : L,
+    z = F && ee === L - 2,
+    g = [],
+    M = [],
+    V = [],
+    oe = [],
+    X = [],
+    j = 0;
+  for (let [_, ae] of N.entries()) {
+    if (oe.push(M.length), X.push(j), ke(ae)) {
+      g.push(j++);
+      continue
+    }
+    M.push(Math.min(U[_] ?? 1, ee)), V.push(Mm(ae) ? ae.key ?? void 0 : void 0), j += M.at(-1) ?? 1
+  }
+  let G = M.length,
+    q = cY(l),
+    d = A(null),
+    {
+      containerRef: h,
+      ...u
+    } = un({
+      count: G,
+      visibleCount: ee,
+      moreRowLines: z,
+      headingLines: g,
+      rowHeights: M,
+      rowKeys: V,
+      resetKey: i,
+      initialCursor: t,
+      isDisabled: l,
+      edge: p ? "wrap" : "clamp",
+      onUpFromFirstItem: D,
+      onDownFromLastItem: I,
+      declineHomeEnd: R,
+      keybindingContext: x,
+      onAccept: a,
+      onRowKeyDown: f,
+      onCursorChange: (_) => {
+        d.current = {
+          cursor: _,
+          count: G
+        }, m?.(_)
+      }
+    }),
+    te = Mo((_) => m?.(_));
+  P(() => {
+    let _ = d.current;
+    if (G === 0 || _?.cursor === u.cursor && _.count === G) return;
+    d.current = {
+      cursor: u.cursor,
+      count: G
+    }, te(u.cursor)
+  }, [u.cursor, G]), xy(h, !q);
+  let J = hS(),
+    Y = io(),
+    K = (_) => J(_) || Y.dropsClick(_);
+  if (G === 0) return e(s, {
+    ref: h,
+    flexDirection: "column",
+    tabIndex: 0,
+    children: W && e(n, {
+      dimColor: !0,
+      children: W
+    })
+  });
+  let Z = k === void 0 || k === "glyph" && L === 1 ? "count" : k,
+    {
+      windowStart: re,
+      windowEnd: me,
+      moreAbove: ne,
+      moreBelow: De
+    } = u,
+    He = N.flatMap((_, ae) => {
+      let ge = X[ae] ?? 0;
+      return ge >= re && ge < me ? [{
+        child: _,
+        index: ae,
+        line: ge
+      }] : []
+    }),
+    Ae = (_) => q && v === void 0 ? void 0 : (ae) => {
+      if (u.scrollToEdge(_, q), Y.pressed(ae), q) v?.(d.current?.cursor ?? u.cursor)
+    },
+    c = Z === "count" && e(SVe, {
+      direction: "above",
+      count: ne,
+      onPress: Ae(-1)
+    }),
+    O = Z === "count" && e(SVe, {
+      direction: "below",
+      count: De,
+      onPress: Ae(1)
+    }),
+    se = He.map(({
+      child: _,
+      index: ae,
+      line: ge
+    }, Fo) => {
+      let jo = Mm(_) ? _.key ?? ge : ge,
+        Uo = Fo === 0 && ne > 0,
+        Vo = Fo === He.length - 1 && De > 0;
+      if (ke(_)) return e(kR, {
+        isFocused: !1,
+        showScrollUp: Z === "glyph" && Uo,
+        showScrollDown: Z === "glyph" && Vo,
+        styled: !1,
+        children: _
+      }, jo);
+      let he = oe[ae] ?? 0,
+        Ko = u.isCursor(he);
+      return e(ko.Provider, {
+        value: Ko && !q,
+        children: e(s, {
+          flexDirection: "column",
+          height: M[he],
+          overflow: "hidden",
+          onClick: q && v !== void 0 ? (we) => {
+            if (we.droppedAsStray || K(we)) return;
+            u.setCursor(he), v(he)
+          } : E === "move" && !q && a !== void 0 ? (we) => {
+            if (we.droppedAsStray || K(we) || cY(l)) return;
+            u.setCursor(he)
+          } : void 0,
+          children: e(kR, {
+            isFocused: Ko,
+            idle: q,
+            showScrollUp: Z === "glyph" && Uo,
+            showScrollDown: Z === "glyph" && Vo,
+            styled: C,
+            hoverStyle: H,
+            declareCursor: !q && En(_)?.declareCursor !== !1,
+            onClick: q || a === void 0 || E === "move" ? void 0 : (we) => {
+              if (K(we) || cY(l)) return;
+              u.setCursor(he), a(he)
+            },
+            children: _
+          })
+        })
+      }, jo)
+    }),
+    ce = u.spareLines > 0 && e(s, {
+      flexShrink: 0,
+      height: u.spareLines
+    });
+  if (!T) return e(a2t, {
+    value: Y.dropsClick,
+    children: r(UCe, {
+      windowStart: re,
+      ...u.bind,
+      children: [c, se, ce, O]
+    })
+  });
+  let Fe = r(UCe, {
+    windowStart: re,
+    children: [se, ce]
+  });
+  return e(a2t, {
+    value: Y.dropsClick,
+    children: r(s, {
+      flexDirection: "column",
+      ...u.bind,
+      children: [z ? null : c, r(LSn, {
+        bar: z ? {
+          ...u.scrollBar,
+          arrows: !0
+        } : u.scrollBar,
+        height: z ? L : void 0,
+        children: [z ? c : null, Fe, z ? O : null]
+      }), z ? null : O]
+    })
+  })
+}
+
+function Po(o) {
+  let i = w(2),
+    {
+      children: t
+    } = o,
+    a;
+  if (i[0] !== t) a = e(Q, {
+    children: t
+  }), i[0] = t, i[1] = a;
+  else a = i[1];
+  return a
+}
+
+function Bo(o) {
+  let i = w(2),
+    {
+      children: t
+    } = o,
+    a;
+  if (i[0] !== t) a = e(Q, {
+    children: t
+  }), i[0] = t, i[1] = a;
+  else a = i[1];
+  return a
+}
+
+function ke(o) {
+  return Mm(o) && o.type === Bo
+}
+
+function Co(o) {
+  let t = En(o)?.lines ?? 1;
+  return Number.isFinite(t) ? Math.max(1, Math.trunc(t)) : 1
+}
+
+function En(o) {
+  return Mm(o) && o.type === Po ? o.props : void 0
+}
+var ql = Object.assign(Mn, {
+  Item: Po,
+  Heading: Bo
+});
+
+function At() {
+  return new Set
+}
+
+function Ft(X) {
+  if (!Ce(X)) {
+    return 0
+  }
+  let {
+    icon: j
+  } = X.props;
+  return Mm(j) && j.type === ft ? Int() : ie(PI(j))
+}
+
+function jt(G) {
+  return be(G.props.meta).length > 0
+}
+
+function Ut(q) {
+  return ie(Ure(q.props.label))
+}
+
+function Vt(d) {
+  return ie(be(d.props.meta).join(" \xB7 "))
+}
+var Cn = 2,
+  no = 3,
+  Pn = 50,
+  Bn = 6;
+
+function jn(o) {
+  let t = w(30),
+    i, a;
+  if (t[0] !== o)({
+    children: i,
+    ...a
+  } = o), t[0] = o, t[1] = i, t[2] = a;
+  else i = t[1], a = t[2];
+  let m = us(Ee(Og) ?? {
+      rows: 0,
+      columns: 0
+    }),
+    f = A(null),
+    [l] = y(At),
+    v;
+  if (t[3] !== l || t[4] !== m) v = () => {
+    let [p] = l;
+    if (p) {
+      return Ws(p).width
+    }
+    return (f.current && Ws(f.current).width || m.columns) - Cn
+  }, t[3] = l, t[4] = m, t[5] = v;
+  else v = t[5];
+  let D = Fl(v),
+    I, R, x, k, T, W;
+  if (t[6] !== i || t[7] !== a || t[8] !== l || t[9] !== D) {
+    let H = S_.toArray(i);
+    let E = H.filter(Ce);
+    let C = Math.max(0, ...H.map(Ft));
+    let L = E.filter(jt);
+    let N = Math.min(Pn, Math.max(0, ...L.map(Ut)));
+    let U = Math.max(0, ...L.map(Vt));
+    let b = D - (C > 0 ? C + 1 : 0) - no;
+    let F = b - Math.min(N, Math.max(Math.ceil(b / 2), b - U));
+    let z = N + U > b && b < 2 * Bn ? 0 : Math.min(F, Math.max(0, ...L.map((ee) => ie(to(be(ee.props.meta), F)))));
+    let g = Math.min(N, b - z);
+    R = s;
+    T = f;
+    W = "column";
+    I = ql;
+    x = a;
+    let M;
+    if (t[16] !== z || t[17] !== C || t[18] !== g || t[19] !== l) M = (V) => Ce(V) ? e(ql.Item, {
+      lines: Ure(V.props.description) ? 2 : 1,
+      children: e(Ao, {
+        item: V.props,
+        iconWidth: C,
+        nameWidth: g,
+        factsWidth: z,
+        rowLines: l
+      })
+    }, V.key) : V, t[16] = z, t[17] = C, t[18] = g, t[19] = l, t[20] = M;
+    else M = t[20];
+    k = H.map(M);
+    t[6] = i, t[7] = a, t[8] = l, t[9] = D, t[10] = I, t[11] = R, t[12] = x, t[13] = k, t[14] = T, t[15] = W
+  } else I = t[10], R = t[11], x = t[12], k = t[13], T = t[14], W = t[15];
+  let M;
+  if (t[21] !== I || t[22] !== x || t[23] !== k) M = e(I, {
+    ...x,
+    children: k
+  }), t[21] = I, t[22] = x, t[23] = k, t[24] = M;
+  else M = t[24];
+  let oe;
+  if (t[25] !== R || t[26] !== T || t[27] !== W || t[28] !== M) oe = e(R, {
+    ref: T,
+    flexDirection: W,
+    children: M
+  }), t[25] = R, t[26] = T, t[27] = W, t[28] = M, t[29] = oe;
+  else oe = t[29];
+  return oe
+}
+
+function Ao(o) {
+  let k = w(42),
+    {
+      item: t,
+      iconWidth: i,
+      nameWidth: a,
+      factsWidth: m,
+      rowLines: f
+    } = o,
+    {
+      icon: l,
+      meta: v,
+      ...p
+    } = t,
+    D = kP(),
+    I = ot(),
+    R = Ure(p.label),
+    x = Ure(p.description),
+    T, W;
+  if (k[0] !== x || k[1] !== m || k[2] !== l || k[3] !== I || k[4] !== R || k[5] !== v) {
+    W = yn;
+    U: {
+      let H = be(v);
+      if (I) {
+        const E = H.length > 0 && `, ${H.join(" \xB7 ")}`;
+        const C = x && `. ${x}`;
+        let L;
+        if (k[8] !== R || k[9] !== E || k[10] !== C) L = r(n, {
+          children: [R, E, C]
+        }), k[8] = R, k[9] = E, k[10] = C, k[11] = L;
+        else L = k[11];
+        let N;
+        if (k[12] !== l || k[13] !== L) N = r(s, {
+          children: [l, L]
+        }), k[12] = l, k[13] = L, k[14] = N;
+        else N = k[14];
+        W = N;
+        break U
+      }
+      T = m > 0 && H.length > 0 ? to(H, m) : void 0
+    }
+    k[0] = x, k[1] = m, k[2] = l, k[3] = I, k[4] = R, k[5] = v, k[6] = T, k[7] = W
+  } else T = k[6], W = k[7];
+  if (W !== yn) return W;
+  let b = T,
+    E;
+  if (k[15] !== f) E = (F) => {
+    if (!F) {
+      return
+    }
+    return f.add(F), () => {
+      f.delete(F)
+    }
+  }, k[15] = f, k[16] = E;
+  else E = k[16];
+  let C;
+  if (k[17] !== l || k[18] !== i) C = i > 0 && e(s, {
+    flexShrink: 0,
+    width: i,
+    marginRight: 1,
+    children: l
+  }), k[17] = l, k[18] = i, k[19] = C;
+  else C = k[19];
+  const L = b === void 0 ? 1 : 0,
+    N = b === void 0 ? void 0 : a,
+    ee = b === void 0 ? 0 : no,
+    z = D ? "suggestion" : void 0;
+  let g;
+  if (k[20] !== R || k[21] !== z) g = e(n, {
+    color: z,
+    wrap: "truncate-end",
+    children: R
+  }), k[20] = R, k[21] = z, k[22] = g;
+  else g = k[22];
+  let M;
+  if (k[23] !== g || k[24] !== L || k[25] !== N || k[26] !== ee) M = e(s, {
+    flexShrink: L,
+    width: N,
+    marginRight: ee,
+    children: g
+  }), k[23] = g, k[24] = L, k[25] = N, k[26] = ee, k[27] = M;
+  else M = k[27];
+  let V;
+  if (k[28] !== m || k[29] !== b) V = b !== void 0 && e(s, {
+    flexShrink: 1,
+    maxWidth: m,
+    children: e(n, {
+      dimColor: !0,
+      wrap: "truncate-end",
+      children: b
+    })
+  }), k[28] = m, k[29] = b, k[30] = V;
+  else V = k[30];
+  let oe;
+  if (k[31] !== M || k[32] !== V || k[33] !== E || k[34] !== C) oe = r(s, {
+    ref: E,
+    children: [C, M, V]
+  }), k[31] = M, k[32] = V, k[33] = E, k[34] = C, k[35] = oe;
+  else oe = k[35];
+  let X;
+  if (k[36] !== x || k[37] !== i) X = x && e(s, {
+    paddingLeft: i > 0 ? i + 1 : 0,
+    children: e(n, {
+      dimColor: !0,
+      wrap: "truncate-end",
+      children: x
+    })
+  }), k[36] = x, k[37] = i, k[38] = X;
+  else X = k[38];
+  let j;
+  if (k[39] !== oe || k[40] !== X) j = r(s, {
+    flexDirection: "column",
+    flexGrow: 1,
+    flexShrink: 1,
+    children: [oe, X]
+  }), k[39] = oe, k[40] = X, k[41] = j;
+  else j = k[41];
+  return j
+}
+
+function Un(o) {
+  return null
+}
+
+function Ce(o) {
+  return Mm(o) && o.type === Un
+}
+
+function be(o) {
+  return (o ?? []).map(Ure).filter((t) => t !== "")
+}
+
+function to(o, t) {
+  return o.map((i, a) => o.slice(0, a + 1).join(" \xB7 ")).findLast((i, a) => a === 0 || ie(i) <= t) ?? ""
+}
+
+function Ure(o) {
+  if (typeof o === "string") return zr(o);
+  return typeof o === "number" || typeof o === "boolean" ? String(o) : ""
+}
+var tn = Object.assign(jn, {
+  Item: Un
+});
+export {
+  a2t,
+  SVe,
+  vV,
+  ent,
+  kV,
+  LSn,
+  Oqr,
+  cY,
+  kP,
+  ql,
+  Ure,
+  tn
+};

@@ -1,0 +1,132 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { w } from "B:/~BUN/root/chunk-rysqv8v1.js";
+import { e } from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import { qt, Ee, y, B } from "B:/~BUN/root/chunk-5hr2ysa5.js";
+B();
+var c = 10,
+  a = {
+    ring: [],
+    mode: {
+      type: "idle"
+    }
+  };
+function h(n, i) {
+  switch (i.type) {
+    case "kill":
+      {
+        if (i.text.length === 0) return n.mode.type === "idle" ? n : {
+          ...n,
+          mode: {
+            type: "idle"
+          }
+        };
+        return {
+          ring: n.mode.type === "killing" && n.ring.length > 0 ? [i.direction === "prepend" ? i.text + n.ring[0] : n.ring[0] + i.text, ...n.ring.slice(1)] : [i.text, ...n.ring].slice(0, c),
+          mode: {
+            type: "killing"
+          }
+        };
+      }
+    case "yank":
+      return {
+        ...n,
+        mode: {
+          type: "yanked",
+          start: i.start,
+          length: i.length,
+          index: 0
+        }
+      };
+    case "yankPop":
+      {
+        if (n.mode.type !== "yanked" || n.ring.length <= 1) return n;
+        let index = (n.mode.index + 1) % n.ring.length;
+        return {
+          ...n,
+          mode: {
+            ...n.mode,
+            index: index
+          }
+        };
+      }
+    case "updateYankLength":
+      if (n.mode.type !== "yanked") return n;
+      return {
+        ...n,
+        mode: {
+          ...n.mode,
+          length: i.length
+        }
+      };
+    case "interrupt":
+      if (n.mode.type === "idle") return n;
+      return {
+        ...n,
+        mode: {
+          type: "idle"
+        }
+      };
+  }
+}
+function Dnt(n) {
+  return n.ring[0] ?? "";
+}
+function evn(n) {
+  if (n.mode.type !== "yanked" || n.ring.length <= 1) return null;
+  let i = (n.mode.index + 1) % n.ring.length,
+    {
+      start: start,
+      length: length
+    } = n.mode;
+  return {
+    text: n.ring[i] ?? "",
+    start: start,
+    length: length
+  };
+}
+function err() {
+  let n = a;
+  return {
+    get state() {
+      return n;
+    },
+    dispatch(i) {
+      n = h(n, i);
+    }
+  };
+}
+var l = qt(null);
+function Jvt(n) {
+  let t = w(5),
+    {
+      handle: handle,
+      children: children
+    } = n,
+    p;
+  if (t[0] !== handle) p = () => handle ?? err(), t[0] = handle, t[1] = p;else p = t[1];
+  let [x] = y(p);
+  const value = handle ?? x;
+  let u;
+  if (t[2] !== children || t[3] !== value) u = e(l.Provider, {
+    value: value,
+    children: children
+  }), t[2] = children, t[3] = value, t[4] = u;else u = t[4];
+  return u;
+}
+function zVe() {
+  let n = Ee(l);
+  if (!n) {
+    throw ReferenceError("useKillRing cannot be called outside of a <KillRingProvider /> (mounted around every Ink root by src/ink.ts)");
+  }
+  return n;
+}
+export { Dnt, evn, err, Jvt, zVe };

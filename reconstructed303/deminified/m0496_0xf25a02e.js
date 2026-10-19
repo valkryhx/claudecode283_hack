@@ -1,0 +1,354 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { x, k, G } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { j } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { W } from "B:/~BUN/root/chunk-hg8ngszx.js";
+import { Y, je } from "B:/~BUN/root/chunk-89mss1tj.js";
+import { z } from "B:/~BUN/root/chunk-4bx17ygx.js";
+import { _, t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { Pe } from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import { lt } from "B:/~BUN/root/chunk-6ft8yhc8.js";
+import { Lge, _2, Uh, jD, ad } from "B:/~BUN/root/chunk-2ypz4cxh.js";
+import { K6 } from "B:/~BUN/root/chunk-dn8rakwm.js";
+import { Be } from "B:/~BUN/root/chunk-d9rmnpx3.js";
+import { cF, KB } from "B:/~BUN/root/chunk-rvc0n7zm.js";
+import { pt } from "B:/~BUN/root/chunk-cqkcn3bx.js";
+import { Bc } from "B:/~BUN/root/chunk-c0j3f8cc.js";
+async function Eqe(e, r = {}) {
+  if (!_2(e)) return "eperm";
+  try {
+    process.kill(e, r.signal ?? "SIGTERM");
+  } catch (error) {
+    if (k(error) === "EPERM") return "eperm";
+    return "exited";
+  }
+  let o = Date.now() + (r.gracefulMs ?? 2000);
+  while (!0) {
+    let n = Date.now() >= o;
+    try {
+      process.kill(e, 0);
+    } catch {
+      return "exited";
+    }
+    if (await Lge(e)) return "exited";
+    if (n) return "timed-out";
+    await Y(50);
+  }
+}
+import { lstat as l, readFile as u, rename as f, rm as g, unlink as d } from "fs/promises";
+import { uptime as b } from "os";
+import { join as h } from "path";
+var L = "daemon.lock";
+function FI() {
+  return h(Pe(), L);
+}
+function Tqe() {
+  return Be.state("daemon-lock");
+}
+function D(e) {
+  return e === "EISDIR" || e === "ENXIO";
+}
+class w {
+  logged = !1;
+  markLogged() {
+    if (this.logged) return !1;
+    return this.logged = !0, !0;
+  }
+}
+var S = new z(() => new w());
+function I() {
+  return S.of(j().host);
+}
+async function E() {
+  let e = await l(FI()).catch(() => {
+    return;
+  });
+  return e !== void 0 && e.isSymbolicLink();
+}
+async function y(e) {
+  let r = FI(),
+    o = await l(r).catch(() => {
+      return;
+    });
+  if (o === void 0 || o.isFile()) return;
+  let n = o.isDirectory() ? "directory" : o.isFIFO() ? "fifo" : o.isSocket() ? "socket" : o.isSymbolicLink() ? "symlink" : "other non-regular node";
+  if (I().markLogged()) t(`[DaemonLock] ${n} at the lock path (${e}) \u2014 removing it as the legacy path does`, {
+    level: "warn"
+  });
+  await g(r, {
+    recursive: !0,
+    force: !0
+  }).catch(() => {});
+}
+var C = 65536;
+async function V7o(e, r) {
+  if (W() && r !== void 0) {
+    let o = () => r.write(Tqe(), _(e, null, 2), {
+        precondition: {
+          type: "ifAbsent"
+        },
+        mode: 438 & ~process.umask()
+      }),
+      n = await o();
+    for (let i of [0, 1]) {
+      if (n.ok) return !0;
+      if (n.error.code === "AlreadyExists") return !1;
+      let a = "telemetryCode" in n.error ? n.error.telemetryCode : void 0;
+      if (n.error.code !== "Failed" || !K6(a)) break;
+      if (a === "ELOOP") {
+        if (await E()) return !1;
+        break;
+      }
+      if (i === 1) break;
+      await y(a), n = await o();
+    }
+    if (n.ok) return !0;
+    throw new x(`[DaemonLock] Failed to acquire daemon lock: ${n.error.code}${"telemetryCode" in n.error && n.error.telemetryCode ? ` (${n.error.telemetryCode})` : ""}`, "[DaemonLock] v5 acquire write failed");
+  }
+  try {
+    return await KB(FI(), _(e, null, 2)), !0;
+  } catch (error) {
+    if (k(error) === "EEXIST") return !1;
+    throw error;
+  }
+}
+async function q7o(e, r) {
+  let o = await vY(r);
+  if (!o || o.pid !== e.pid || o.startedAt !== e.startedAt) return;
+  await Zsr({
+    ...o,
+    bgDisabled: !0
+  }, r);
+}
+async function vY(e) {
+  let r;
+  if (e) {
+    let n = await e.read([Tqe()]);
+    if (!n.ok) {
+      if (!(n.error.code === "Failed" && (n.error.telemetryCode === "ENXIO" || n.error.telemetryCode === "EFBIG" || n.error.telemetryCode === "ELOOP" || n.error.telemetryCode === "ENAMETOOLONG"))) throw new x(`[DaemonLock] Failed to read daemon lock: ${n.error.code}${"telemetryCode" in n.error && n.error.telemetryCode ? ` (${n.error.telemetryCode})` : ""}`, "[DaemonLock] v5 lock read failed");
+      let s = await e.delete(Tqe());
+      if (!s.ok && s.error.code === "Failed") {
+        let m = "telemetryCode" in s.error ? s.error.telemetryCode : void 0;
+        if (D(m)) await y(m);
+      }
+      return null;
+    }
+    let i = n.value.items[0];
+    if (!i.found) return null;
+    if (i.totalBytes > C) return await e.delete(Tqe()), null;
+    r = Buffer.from(i.value).toString("utf8");
+    let a = pt(r, !1);
+    if (a && typeof a === "object") {
+      let c = a;
+      if (typeof c.pid === "number" && typeof c.version === "string") return a;
+    }
+    return null;
+  }
+  try {
+    let n = await l(FI());
+    if (!n.isFile() || n.size > 65536) return await g(FI(), {
+      recursive: !0,
+      force: !0
+    }).catch(() => {}), null;
+    r = await u(FI(), "utf8");
+  } catch (error) {
+    if (G(error)) return null;
+    throw error;
+  }
+  let o = pt(r, !1);
+  if (o && typeof o === "object") {
+    let n = o;
+    if (typeof n.pid === "number" && typeof n.version === "string") return o;
+  }
+  return null;
+}
+async function Zsr(e, r) {
+  if (r) {
+    let i = await r.write(Tqe(), _(e, null, 2), {
+      mode: 438 & ~process.umask()
+    });
+    if (!i.ok) {
+      let c = "telemetryCode" in i.error ? i.error.telemetryCode : void 0;
+      if (c === "LockContended" || c === "LockSuspect") {
+        let s = await vY(r);
+        if (s?.pid !== e.pid || s?.startedAt !== e.startedAt) return !1;
+        i = await r.write(Tqe(), _(e, null, 2), {
+          mode: 438 & ~process.umask()
+        });
+      }
+      if (!i.ok) throw new x(`[DaemonLock] Failed to replace daemon lock: ${i.error.code}${"telemetryCode" in i.error && i.error.telemetryCode ? ` (${i.error.telemetryCode})` : ""}`, "[DaemonLock] v5 replace write failed");
+    }
+    let a = await vY(r);
+    return a?.pid === e.pid && a?.startedAt === e.startedAt;
+  }
+  let o = await cF(FI(), _(e, null, 2));
+  try {
+    await f(o, FI());
+  } catch (error) {
+    let a = k(error);
+    if (a === "EEXIST" || a === "EPERM") {
+      await d(FI()).catch(() => {});
+      try {
+        await f(o, FI());
+      } catch (error) {
+        await d(o).catch(() => {});
+        let s = k(error);
+        if (s === "EEXIST" || s === "EPERM") return !1;
+        throw error;
+      }
+    } else throw await d(o).catch(() => {}), error;
+  }
+  let n = await vY(r);
+  return n?.pid === e.pid && n?.startedAt === e.startedAt;
+}
+async function K7o(e) {
+  if (e) {
+    let r = await e.delete(Tqe());
+    if (!r.ok) throw new x(`[DaemonLock] Failed to remove daemon lock: ${r.error.code}${"telemetryCode" in r.error && r.error.telemetryCode ? ` (${r.error.telemetryCode})` : ""}`, "[DaemonLock] v5 lock delete failed");
+    return;
+  }
+  try {
+    await d(FI());
+  } catch (error) {
+    if (!G(error)) throw error;
+  }
+}
+async function DEn(e) {
+  let r;
+  try {
+    r = await u(`/proc/${e}/cmdline`, "utf8");
+  } catch {
+    return !0;
+  }
+  let o = r.split("\x00");
+  return o[0] === "claude daemon" || o.slice(1, 4).includes("daemon");
+}
+function p(e) {
+  return e !== void 0 && (/(^|\/)claude(\.exe)?$|\/claude-code\/cli\.js$|\/claude\/versions\/[^/\s]+$/.test(e) || e === Bc().target);
+}
+async function Y7o(e) {
+  let r = await je(u(`/proc/${e}/cmdline`, "utf8").catch(() => {
+    return;
+  }), 1000);
+  if (r !== void 0) {
+    let n = r.split("\x00"),
+      i = /(^|\/)(node|bun)$/.test(n[0]) ? 1 : 0;
+    return n[0] === "claude daemon" || p(n[i]) && /^daemon\0(run\0|--json-path\0[^\0]+\0--log-file\0[^\0]+\0--origin\0service\0$)/.test(n.slice(i + 1).join("\x00"));
+  }
+  let o = await lt("ps", ["-ww", "-o", "args=", "-p", String(e)], {
+    timeout: 1000,
+    useCwd: !1
+  });
+  return p(/^(?:(?:\S*\/)?(?:node|bun)\s+)?(\/\S+)\sdaemon\s(?:run(?:\s|$)|--json-path\s\S+\s--log-file\s\S+\s--origin\sservice\s*$)/.exec(o.code === 0 ? o.stdout : "")?.[1]);
+}
+var Irt = 2,
+  eir = 250;
+async function tKt(e, r, o) {
+  if (r === void 0) return !0;
+  for (let n = 0; n < o; n++) {
+    if (n > 0) await Y(eir);
+    let i = await ad(e, {
+      skipCache: n > 0
+    });
+    if (i !== void 0) return i === r;
+  }
+  return !1;
+}
+var v = 120000;
+function P(e, r = Date.now(), o = b()) {
+  return e.startedAt < r - o * 1000 - v;
+}
+async function LEn(e) {
+  let r = jD(e);
+  if (r !== void 0) {
+    let o = await Uh(e.pid, r);
+    if (o === !0) return null;
+    if (o === !1) return "pid_recycled";
+  }
+  return P(e) ? "predates_boot" : null;
+}
+function cEt(e) {
+  return jD(e) !== void 0;
+}
+function X7o() {
+  return `Stop it with \`claude daemon stop --any\` (a graceful, socket-based stop); if nothing is running at that pid, delete ${FI()}`;
+}
+async function kv(e = 1, r) {
+  let o = await vY(r);
+  if (!o) return null;
+  try {
+    process.kill(o.pid, 0);
+  } catch {
+    return null;
+  }
+  if (!(await DEn(o.pid))) return null;
+  if (!(await tKt(o.pid, jD(o), e))) return null;
+  return o;
+}
+async function nKt(e) {
+  let lock = await kv(1, e).catch(() => null);
+  if (!lock) return {
+    kind: "none"
+  };
+  switch (lock.origin) {
+    case "service":
+      return {
+        kind: "service",
+        lock: lock
+      };
+    case "foreground":
+      return {
+        kind: "foreground",
+        lock: lock
+      };
+    case "transient":
+    case void 0:
+      {
+        if (!cEt(lock)) return {
+          kind: "not-stopped",
+          pid: lock.pid,
+          outcome: "unverified"
+        };
+        let outcome = await Eqe(lock.pid);
+        return outcome === "exited" ? {
+          kind: "stopped",
+          pid: lock.pid
+        } : {
+          kind: "not-stopped",
+          pid: lock.pid,
+          outcome: outcome
+        };
+      }
+    default:
+      return lock.origin, {
+        kind: "unknown-origin",
+        lock: lock
+      };
+  }
+}
+function oNe(e) {
+  switch (e.outcome) {
+    case "eperm":
+      return `the daemon holding the lock (pid ${e.pid}) is owned by another user and cannot be signalled from this session`;
+    case "unverified":
+      return `pid ${e.pid} is holding the daemon lock but could not be verified as the daemon, so it was not signalled`;
+    case "timed-out":
+      return `the daemon holding the lock (pid ${e.pid}) was asked to stop but has not exited yet`;
+  }
+}
+function NEn(e) {
+  return `a background daemon with an unrecognized origin (pid ${e}) holds the daemon lock \u2014 it may have been started by a newer Claude Code, so it was left untouched`;
+}
+async function J7o(e, r) {
+  let o = await kv(1, r).catch(() => null);
+  return !!o && o.version !== e;
+}
+export { Eqe, FI, Tqe, V7o, q7o, vY, Zsr, K7o, DEn, Y7o, Irt, eir, tKt, LEn, cEt, X7o, kv, nKt, oNe, NEn, J7o };

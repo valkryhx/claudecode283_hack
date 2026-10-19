@@ -1,0 +1,2557 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  uN,
+  dH,
+  nyo,
+  ryo,
+  Nkr,
+  zkr,
+  yMt,
+  fN,
+  hie,
+  JZt,
+  bMt,
+  fa,
+  ob,
+  yie,
+  Act,
+  vPe,
+  SMt
+} from "B:/~BUN/root/chunk-8w42v0dp.js";
+import {
+  Me
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  j,
+  Hc
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  c,
+  pe,
+  fl
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  H,
+  of
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  je
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  z
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  cy,
+  vte,
+  Jp,
+  wn,
+  Er,
+  lv,
+  Gt,
+  E
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  At,
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  qx
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  mt,
+  eP
+} from "B:/~BUN/root/chunk-pjgzz98k.js";
+import {
+  Rc
+} from "B:/~BUN/root/chunk-28dw3zbk.js";
+import {
+  eM,
+  m9,
+  kZ,
+  _pe,
+  vlt,
+  Hys,
+  pU,
+  xh,
+  bxe,
+  tFn,
+  $ys,
+  bpe,
+  tbr,
+  Bt
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import {
+  MI,
+  KVe,
+  Tk
+} from "B:/~BUN/root/chunk-t7y4rt40.js";
+import {
+  n,
+  zt,
+  sa
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import {
+  Ro
+} from "B:/~BUN/root/chunk-exdm7pa7.js";
+import {
+  C0
+} from "B:/~BUN/root/chunk-3md9ngvz.js";
+import {
+  Oe
+} from "B:/~BUN/root/chunk-g5gf7tps.js";
+import {
+  ybe,
+  NKe,
+  qV,
+  wCt,
+  fZr,
+  HKe,
+  Y$,
+  hZr,
+  bZr,
+  rst
+} from "B:/~BUN/root/chunk-qc6mvzn1.js";
+import {
+  jp
+} from "B:/~BUN/root/chunk-9pv2t2x4.js";
+import {
+  bVe
+} from "B:/~BUN/root/chunk-dej6hn79.js";
+import {
+  sVe,
+  VVr
+} from "B:/~BUN/root/chunk-9sbqmg9q.js";
+import {
+  OF
+} from "B:/~BUN/root/chunk-5nyfx9ah.js";
+import {
+  sz
+} from "B:/~BUN/root/chunk-ek3t847v.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  iTt,
+  Zqe,
+  qCn,
+  eKe,
+  uot
+} from "B:/~BUN/root/chunk-pe8p3pbg.js";
+import {
+  iFe
+} from "B:/~BUN/root/chunk-xdhhxjd5.js";
+import {
+  ae,
+  Ee,
+  P,
+  Z,
+  y,
+  Dt,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  IC
+} from "B:/~BUN/root/chunk-46bqx6b8.js";
+import {
+  o,
+  v,
+  M,
+  oe,
+  T,
+  u,
+  fe,
+  U
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  ie
+} from "B:/~BUN/root/chunk-t7350kw8.js";
+import {
+  ye
+} from "B:/~BUN/root/chunk-shj1mfyk.js";
+import {
+  S,
+  yn
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+var RGt = "tengu_pewter_summit";
+B();
+
+function bR() {
+  let [a, s] = y({
+    ...fa()
+  });
+  return P(() => yie((d) => {
+    s({
+      ...d
+    })
+  }), []), a
+}
+var lt = new z(() => ({
+  messageKeys: new Set,
+  footerOfferKeys: new Set
+}));
+
+function Ybn(a) {
+  let s = a.rateLimitType;
+  return {
+    limit_type: s !== void 0 && Object.hasOwn(hie, s) ? c(s) : void 0,
+    tier: c(eKe()),
+    resets_at: a.resetsAt
+  }
+}
+
+function T3o(a, s, d) {
+  if (s.resetsAt === void 0) return;
+  let m = lt.of(a).messageKeys,
+    b = `${s.resetsAt}:${d.shown}`;
+  if (m.has(b)) return;
+  m.add(b), i("tengu_rate_limit_message_shown", {
+    ...Ybn(s),
+    hint: c(d.kind),
+    hint_shown: d.shown,
+    wait_live: d.waitLive
+  })
+}
+
+function DVr(a, s, d) {
+  if (s.resetsAt === void 0) return;
+  let m = lt.of(a).footerOfferKeys,
+    b = `${s.resetsAt}:${d}`;
+  if (m.has(b)) return;
+  m.add(b), i("tengu_limit_footer_offer_shown", {
+    ...Ybn(s),
+    offer: c(d)
+  })
+}
+B();
+
+function AGt(a) {
+  return m9.isEnabled() && (a === void 0 || a.includes("overage"))
+}
+
+function ut(a) {
+  let s = Er(),
+    d = s === "team" || s === "enterprise";
+  return AGt(a) && !d && !At() && vte(cy()) === null
+}
+B();
+var Ln = 30000;
+
+function LVr(a, s, d) {
+  let m = !1,
+    b = () => {},
+    _ = () => {
+      if (m) return;
+      let h = a - Date.now();
+      if (h <= 0) {
+        d();
+        return
+      }
+      b = s(_, Math.min(h, Ln))
+    };
+  return _(), () => {
+    m = !0, b()
+  }
+}
+
+function SV(a) {
+  let d = Ee(Tk)?.setTimeout ?? MI,
+    m = Z(() => {
+      if (a === null) return KVe;
+      return (b) => LVr(a, d, b)
+    }, [a, d]);
+  return Dt(m, () => a !== null && Date.now() >= a)
+}
+var dt = 30000,
+  ge = "quota-auto-resume-cap",
+  Ler = "quota-auto-resume-cancelled",
+  Ner = "Automatic continue cancelled \xB7 /rate-limit-options to re-arm";
+
+function jye() {
+  return Dt(fZr, ybe, ybe)
+}
+var xn = "tengu_functional_llama",
+  ct = {
+    waiting: "Continuing automatically {when} \xB7 esc to cancel",
+    started: "Usage limit reached \xB7 continuing automatically {when} \xB7 esc to cancel",
+    rearmed: "Usage limit reached again \xB7 continuing automatically {when} \xB7 esc to cancel",
+    credits: "/usage-credits to continue now"
+  },
+  Rt = 120,
+  Rn = f(() => u({
+    waiting: o().optional().catch(void 0),
+    started: o().optional().catch(void 0),
+    rearmed: o().optional().catch(void 0),
+    credits: o().optional().catch(void 0)
+  }));
+
+function he(a, s) {
+  let d = jp(s);
+  if (d === void 0) return ct[a];
+  if (a === "credits") return mt(d, Rt);
+  return d.includes("{when}") ? d : ct[a]
+}
+
+function kn(a) {
+  let s = Rn().safeParse(a),
+    d = s.success ? s.data : {};
+  return {
+    waiting: he("waiting", d.waiting),
+    started: he("started", d.started),
+    rearmed: he("rearmed", d.rearmed),
+    credits: he("credits", d.credits)
+  }
+}
+
+function de() {
+  return kn(E(xn, null))
+}
+
+function Ge(a, s) {
+  return mt(a.replace("{when}", s), Rt)
+}
+
+function kt(a, s) {
+  let d = a.phase === "armed" ? a.resetsAtSeconds : 0,
+    m = d * 1000 > s ? eP(d) : void 0;
+  return m ? `at ${m}` : "shortly"
+}
+
+function pt(a, s) {
+  return Ge(de().started, kt(a, s))
+}
+
+function ft(a, s) {
+  return Ge(de().rearmed, kt(a, s))
+}
+var Ce = "Usage limit reached";
+
+function NVr(a) {
+  let s = eP(a);
+  return s ? `${Ce} \xB7 limit resets ${s}` : Ce
+}
+
+function bt(a, s) {
+  if (a.phase === "stale") return {
+    status: "Your usage limit has reset",
+    next: "Press enter to continue"
+  };
+  if (a.phase !== "armed") return null;
+  let d = eP(a.resetsAtSeconds),
+    m = NVr(a.resetsAtSeconds);
+  if (s) return {
+    status: m,
+    next: "Continuing shortly \xB7 esc to cancel"
+  };
+  let b = Ge(de().waiting, d ? "at " + d : "when it resets");
+  if (b.startsWith(`${Ce} \xB7 `)) b = b.slice(Ce.length + 3).replace(/^./u, (_) => _.toUpperCase());
+  return {
+    status: m,
+    next: b
+  }
+}
+
+function _t(a, s, d) {
+  return a.phase === "armed" && !s && d
+}
+
+function gt() {
+  return ut(fa().upgradePaths)
+}
+
+function Je(a) {
+  return SV(a.phase === "armed" ? Math.min(a.fireAtMs, a.resetsAtSeconds * 1000) : null)
+}
+
+function FVr(a) {
+  let x = w(30),
+    {
+      isLoading: s,
+      transcript: d
+    } = a,
+    {
+      addNotification: m,
+      removeNotification: b
+    } = Ro(),
+    {
+      storageV5: _,
+      credentials: h
+    } = Oe(),
+    A = C0(),
+    C = jye(),
+    L = Je(C),
+    R = Dt(yie, gt),
+    k, N;
+  if (x[0] !== _) k = () => {
+    bZr(_)
+  }, N = [_], x[0] = _, x[1] = k, x[2] = N;
+  else k = x[1], N = x[2];
+  P(k, N);
+  let X;
+  if (x[3] !== d) X = (W, K) => d.apply({
+    type: "append",
+    messages: [Bt(W, K)]
+  }), x[3] = d, x[4] = X;
+  else X = x[4];
+  let I = X,
+    ue;
+  if (x[5] !== h || x[6] !== _ || x[7] !== A) ue = (gn, Vr) => void OF({
+    message: gn,
+    notificationType: Vr
+  }, A, {
+    storageV5: _,
+    credentials: h
+  }), x[5] = h, x[6] = _, x[7] = A, x[8] = ue;
+  else ue = x[8];
+  let J = ue,
+    hn, En;
+  if (x[9] !== m || x[10] !== I || x[11] !== J || x[12] !== b) hn = () => wCt((Qr) => {
+    switch (Qr) {
+      case "armed":
+      case "rearmed": {
+        b(ge), b(Ler);
+        return
+      }
+      case "taken-over": {
+        I(ft(ybe(), Date.now()), "notice");
+        return
+      }
+      case "cancelled": {
+        I(Ner, "notice");
+        return
+      }
+      case "auto-armed": {
+        I(pt(ybe(), Date.now()), "notice");
+        return
+      }
+      case "fired-now": {
+        I("Usage limit available again \xB7 continuing now", "notice"), J("Usage limit available \u2014 Claude is continuing your task", "quota_auto_resume_fired");
+        return
+      }
+      case "stale": {
+        I("Usage limit has reset \xB7 press enter to continue", "notice"), J("Usage limit reset \u2014 press enter to continue", "quota_auto_resume_stale");
+        return
+      }
+      case "disabled": {
+        I(`Automatic continue was turned off \xB7 this task will not resume on its own${iFe()?" (/rate-limit-options to wait anyway)":""}`, "warning"), J("Automatic continue was turned off \u2014 the task will not resume on its own", "quota_auto_resume_disabled");
+        return
+      }
+      case "horizon-exceeded": {
+        I("Automatic continue stopped \xB7 the usage limit now resets more than 24 hours out, so this task will not resume on its own (/rate-limit-options to wait anyway)", "warning"), J("Automatic continue stopped \u2014 the usage limit now resets more than 24 hours out; the task will not resume on its own", "quota_auto_resume_disabled");
+        return
+      }
+      case "continuation-dropped": {
+        I("Automatic continue did not run \xB7 the continuation was blocked before it reached the model, so this task did not resume on its own \xB7 send a prompt to continue", "warning"), J("Automatic continue did not run \u2014 the continuation was blocked before it reached the model; send a prompt to continue", "quota_auto_resume_disabled");
+        return
+      }
+      case "cap-exhausted": {
+        I("Automatic continue stopped after repeated usage-limit hits \xB7 this task will not resume on its own (/rate-limit-options to try again)", "warning"), J("Automatic continue stopped after repeated usage-limit hits \u2014 the task will not resume on its own", "quota_auto_resume_disabled"), m({
+          key: ge,
+          kind: "warning",
+          text: "Automatic continue stopped after repeated usage-limit hits \xB7 /rate-limit-options to try again",
+          color: "warning",
+          priority: "high",
+          timeoutMs: 20000
+        });
+        return
+      }
+      default:
+    }
+  }), En = [m, b, I, J], x[9] = m, x[10] = I, x[11] = J, x[12] = b, x[13] = hn, x[14] = En;
+  else hn = x[13], En = x[14];
+  P(hn, En);
+  let An;
+  if (x[15] !== I || x[16] !== s || x[17] !== J) An = () => {
+    if (hZr(Date.now(), s) === "fired") I("Usage limit reset \xB7 continuing automatically", "notice"), J("Usage limit reset \u2014 Claude is continuing your task", "quota_auto_resume_fired")
+  }, x[15] = I, x[16] = s, x[17] = J, x[18] = An;
+  else An = x[18];
+  sa(An, C.phase === "armed" ? dt : null);
+  let Cn;
+  if (x[19] !== C || x[20] !== L) Cn = bt(C, L), x[19] = C, x[20] = L, x[21] = Cn;
+  else Cn = x[21];
+  let ze = Cn;
+  if (ze === null) {
+    let se;
+    if (x[22] === S) {
+      let Tn = fa().resetsAt;
+      se = Tn !== void 0 && NKe(Tn) ? {
+        kind: "declined"
+      } : null;
+      x[22] = se
+    } else se = x[22];
+    return se
+  }
+  let se;
+  if (x[23] !== C || x[24] !== R || x[25] !== L) se = _t(C, L, R) ? de().credits : null, x[23] = C, x[24] = R, x[25] = L, x[26] = se;
+  else se = x[26];
+  let vn;
+  if (x[27] !== ze || x[28] !== se) vn = {
+    kind: "live",
+    ...ze,
+    credits: se
+  }, x[27] = ze, x[28] = se, x[29] = vn;
+  else vn = x[29];
+  return vn
+}
+import {
+  randomUUID as Xn
+} from "crypto";
+var Nn = "cedar_ember",
+  Wn = 25000,
+  $e = /^[a-z0-9_-]{1,40}$/,
+  zn = /^[A-Za-z0-9_-]{1,64}$/,
+  ve = ["five_hour", "seven_day", "seven_day_overage_included", "seven_day_opus", "seven_day_sonnet", "seven_day_cowork", "seven_day_omelette", "seven_day_oauth_apps"],
+  St = ["config_off", "tier", "seat", "mobile", "surface", "cli_version", "no_grant", "tenure", "other_experiment", "unavailable", "unknown"],
+  Fn = [...St, "paused", "expired", "unknown_grant", "not_next_grant", "grant_id_required", "not_limited", "already_used", "cooldown", "stamp_indeterminate", "reset_unconfirmed"],
+  Dn = f(() => u({
+    surface: U(["claude_ai", "claude_code_cli", "unknown"]).catch("unknown"),
+    tier: U(["claude_pro", "claude_max_5x", "claude_max_20x", "claude_team", "unknown"]).catch("unknown"),
+    tenure_bucket: U(["under_14", "14-29", "30-89", "90-364", "365+", "unknown"]).catch("unknown"),
+    billing_path: U(["stripe", "apple", "google_play", "other", "unknown"]).catch("unknown"),
+    billing_period: U(["monthly", "annual", "unknown"]).catch("unknown"),
+    extra_usage_state: U(["not_configured", "disabled", "enabled", "unknown"]).catch("unknown")
+  })),
+  Te = f(() => T(oe()).catch([]).transform((a) => a.filter((s) => ve.some((d) => d === s)))),
+  Jn = f(() => u({
+    id: o().regex($e),
+    label: o().catch(""),
+    resets_total: v().int().min(0).catch(0),
+    resets_left: v().int().min(0),
+    starts_at: o().nullable().optional().catch(null),
+    ends_at: o().nullable().optional().catch(null),
+    clears: Te(),
+    paused: M().catch(!1),
+    usable_now: M().catch(!1),
+    use_requires_limit: M().catch(!0),
+    percent_used: fe(o(), oe()).catch({}),
+    blocking: Te()
+  }));
+
+function Gn(a) {
+  let s = {};
+  for (let d of ve) {
+    let m = a[d];
+    if (typeof m === "number" && Number.isInteger(m) && m >= 0 && m <= 100) s[d] = m
+  }
+  return s
+}
+var $n = f(() => u({
+    eligible: M(),
+    ineligible_reason: U(St).catch("unknown").nullable().optional(),
+    at_limit: M().optional().catch(void 0),
+    exhausted: Te().optional(),
+    grants: T(oe()).optional().catch(void 0),
+    next_grant_id: o().regex($e).nullable().optional().catch(null),
+    weekly_resets_at: o().nullable().optional().catch(null),
+    cooldown_until: o().nullable().optional().catch(null),
+    event_props: Dn().nullable().optional().catch(null)
+  })),
+  jn = f(() => u({
+    result: U(["reset", "already_used", "not_limited", "cooldown", "ineligible", "unavailable"]).catch("unavailable"),
+    reason: U(Fn).catch("unknown").nullable().optional(),
+    resets_left: v().int().min(0).nullable().optional().catch(null),
+    cleared: Te().optional(),
+    weekly_resets_at: o().nullable().optional().catch(null),
+    cooldown_until: o().nullable().optional().catch(null)
+  }));
+
+function Hn(a) {
+  let s = Jn().safeParse(a);
+  if (!s.success) return t(`[cedar-ember] ignoring a malformed grant: ${s.error.message}`), null;
+  let d = s.data;
+  return {
+    id: d.id,
+    label: d.label,
+    resetsTotal: d.resets_total,
+    resetsLeft: d.resets_left,
+    startsAt: d.starts_at ?? null,
+    endsAt: d.ends_at ?? null,
+    clears: d.clears,
+    paused: d.paused,
+    usableNow: d.usable_now,
+    useRequiresLimit: d.use_requires_limit,
+    percentUsed: Gn(d.percent_used),
+    blocking: d.blocking
+  }
+}
+
+function Kn(a) {
+  if (a === void 0 || a === null) return null;
+  let s = $n().safeParse(a);
+  if (!s.success) return t(`[cedar-ember] ignoring a malformed status block: ${s.error.message}`), null;
+  let d = s.data,
+    m = (d.grants ?? []).map(Hn).filter((h) => h !== null),
+    b = d.next_grant_id !== void 0 && d.next_grant_id !== null && m.some((h) => h.id === d.next_grant_id) ? d.next_grant_id : null,
+    _ = d.event_props;
+  return {
+    eligible: d.eligible,
+    ineligibleReason: d.ineligible_reason ?? null,
+    atLimit: d.at_limit ?? !1,
+    exhausted: d.exhausted ?? [],
+    grants: m,
+    nextGrantId: b,
+    weeklyResetsAt: d.weekly_resets_at ?? null,
+    cooldownUntil: d.cooldown_until ?? null,
+    eventProps: _ ? {
+      surface: _.surface,
+      tier: _.tier,
+      tenureBucket: _.tenure_bucket,
+      billingPath: _.billing_path,
+      billingPeriod: _.billing_period,
+      extraUsageState: _.extra_usage_state
+    } : null
+  }
+}
+async function He(a, {
+  read: s = "at_wall"
+} = {}) {
+  try {
+    if (!Jp()) return {
+      kind: "no_profile_scope"
+    };
+    let d = await fN(a, {
+      read: s
+    });
+    if (!yMt(d)) return t("[cedar-ember] status fetch returned a fieldless or non-object body (in-band error)", {
+      level: "warn"
+    }), {
+      kind: "failed"
+    };
+    return {
+      kind: "answered",
+      status: Kn(d?.cedar_ember)
+    }
+  } catch (d) {
+    if (t(`[cedar-ember] status fetch failed: ${H(d).message}`, {
+        level: "warn"
+      }), zkr(d)) return {
+      kind: "not_authorized"
+    };
+    return {
+      kind: "failed"
+    }
+  }
+}
+var Q = {
+  reason: null,
+  resetsLeft: null,
+  cleared: [],
+  weeklyResetsAt: null
+};
+async function Ke(a, s, d) {
+  let m = wn()?.organizationUuid;
+  if (!m) return t("[cedar-ember] no OAuth organization; cannot claim"), {
+    result: "auth_error",
+    ...Q
+  };
+  if (!$e.test(s) || !zn.test(d)) return l(Error("[cedar-ember] refusing to claim with a malformed grant or request id")), {
+    result: "error",
+    ...Q
+  };
+  try {
+    let b = await lv(() => Gt.post(`/api/organizations/${m}/reset_rate_limits`, {
+      program: Nn,
+      grant_id: s,
+      request_id: d
+    }, {
+      auth: "async",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      timeout: Wn,
+      refreshOAuth: !0,
+      credentials: a
+    }), {
+      credentials: a
+    });
+    if (!b.ok) return t(`[cedar-ember] claim not sent: ${b.reason==="no-auth"?b.detail:b.reason}`, {
+      level: "warn"
+    }), {
+      result: b.reason === "no-auth" ? "auth_error" : "error",
+      ...Q
+    };
+    let _ = jn().safeParse(b.data);
+    if (!_.success) return t(`[cedar-ember] unreadable claim response: ${_.error.message}`, {
+      level: "error"
+    }), l(Error("[cedar-ember] unreadable claim response")), {
+      result: "error",
+      ...Q
+    };
+    return {
+      result: _.data.result,
+      reason: _.data.reason ?? null,
+      resetsLeft: _.data.resets_left ?? null,
+      cleared: _.data.cleared ?? [],
+      weeklyResetsAt: _.data.weekly_resets_at ?? null
+    }
+  } catch (b) {
+    if (of(b)) t(`[cedar-ember] claim failed: ${H(b).message}`, {
+      level: "warn"
+    });
+    else l(H(b));
+    if (Rc(b)) switch (b.response?.status) {
+      case 429:
+        return {
+          result: "rate_limited", ...Q
+        };
+      case 401:
+      case 403:
+        return {
+          result: "auth_error", ...Q
+        };
+      default:
+        break
+    }
+    return {
+      result: "error",
+      ...Q
+    }
+  }
+}
+
+function Bn() {
+  return {
+    state: {
+      phase: "idle"
+    },
+    shownOfferKey: null,
+    wallRecordKey: null,
+    pendingAsk: null,
+    claiming: !1,
+    continuableWallResetsAt: null,
+    unsettledClaimGrantId: null,
+    unsettledClaimEpoch: null,
+    unsettledClaimRequestId: null,
+    unsettledClaimAtMs: null,
+    sessionSwitchSubscribed: !1,
+    changed: Me(),
+    events: Me()
+  }
+}
+var qn = new z(Bn);
+
+function O() {
+  return qn.of(j().host)
+}
+
+function c1() {
+  return O().state
+}
+
+function ee(a) {
+  let s = O();
+  s.state = a, s.changed.emit()
+}
+
+function nVe(a) {
+  return O().changed.subscribe(a)
+}
+
+function HVr(a) {
+  return O().events.subscribe(a)
+}
+var Yn = 3,
+  Mt = 12000,
+  Nt = 35000,
+  Vn = 600000,
+  Qn = 20000;
+
+function Qe(a) {
+  if (!qCn(a) || a.rateLimitType === void 0 || a.resetsAt === void 0) return null;
+  return {
+    rateLimitType: a.rateLimitType,
+    wallResetsAt: a.resetsAt,
+    accountEpoch: ob()
+  }
+}
+
+function Se(a, s) {
+  return s.rateLimitType === a.rateLimitType && s.resetsAt === a.wallResetsAt && a.accountEpoch === ob()
+}
+
+function ne(a) {
+  let s = c1();
+  return s.phase === "answered" && Se(s.wall, a) ? s.status : void 0
+}
+
+function Ze(a) {
+  let s = c1();
+  return s.phase === "failed" && Se(s.wall, a)
+}
+
+function q() {
+  return Date.now()
+}
+
+function Wt(a, s, d, m) {
+  if (a.final) return !1;
+  let b = m - a.answeredAtMs,
+    _ = (C) => b < 0 || b >= C;
+  if (CCe(s, m) !== void 0) return !1;
+  let h = le(a.status?.cooldownUntil ?? null),
+    A = b < 0 || b >= Qn && (h === void 0 || m >= Math.min(h, a.answeredAtMs + 150000));
+  switch (d) {
+    case "wall":
+      return _(Vn);
+    case "command":
+      return A;
+    case "dialog":
+      return A && (a.status === null || er(s))
+  }
+}
+
+function me(a, s) {
+  return a.clears.some((d) => d === s)
+}
+
+function CCe(a, s = Date.now()) {
+  let d = ne(a);
+  if (!qCn(a) || d === void 0 || d === null || d.nextGrantId === null || a.rateLimitType === void 0 || a.resetsAt === void 0 || a.resetsAt * 1000 <= s || uN() || !_pe()) return;
+  let m = Xt(d, s);
+  if (m === void 0 || !me(m.grant, a.rateLimitType) || et(m.grant, d)) return;
+  let {
+    grant: b,
+    endsAtMs: _
+  } = m;
+  return {
+    origin: "wall",
+    grant: b,
+    resetsLeft: Math.max(1, Ie(d)),
+    weeklyResetsAt: d.weeklyResetsAt,
+    endsAtMs: _,
+    rateLimitType: a.rateLimitType
+  }
+}
+
+function Ie(a) {
+  return a.grants.reduce((s, d) => s + d.resetsLeft, 0)
+}
+
+function et(a, s) {
+  return !a.useRequiresLimit && !a.clears.some((d) => s.exhausted.includes(d))
+}
+
+function Zn(a, s) {
+  if (!et(a, s)) return null;
+  let d = null;
+  for (let b of ve) {
+    let _ = a.percentUsed[b];
+    if (a.clears.includes(b) && _ !== void 0 && (d === null || _ > d.percentUsed)) d = {
+      claimType: b,
+      percentUsed: _
+    }
+  }
+  if (d === null) return {
+    kind: "unnumbered",
+    percentUsedMax: null
+  };
+  let m = tt(d.claimType);
+  if (m === null || d.percentUsed >= 100) return {
+    kind: "unnumbered",
+    percentUsedMax: d.percentUsed
+  };
+  return {
+    kind: "numbered",
+    percentLeft: 100 - d.percentUsed,
+    claimType: d.claimType,
+    limitName: m,
+    percentUsedMax: d.percentUsed
+  }
+}
+
+function tt(a) {
+  switch (a) {
+    case "five_hour":
+    case "seven_day":
+    case "seven_day_opus":
+      return bMt(a);
+    case "seven_day_sonnet":
+      return JZt();
+    case "seven_day_overage_included":
+    case "seven_day_cowork":
+    case "seven_day_omelette":
+    case "seven_day_oauth_apps":
+      return null
+  }
+}
+
+function $Vr(a) {
+  if (a.origin === "wall" || a.earlyUse === null) return;
+  let s = pU();
+  switch (a.earlyUse.kind) {
+    case "numbered":
+      return xh(s.earlyLine, KQ(a));
+    case "unnumbered":
+      return xh(s.earlyNoNumberLine, KQ(a))
+  }
+}
+
+function Wye() {
+  let a = O();
+  return a.claiming || a.unsettledClaimGrantId !== null && a.unsettledClaimEpoch === ob() && jt(a)
+}
+
+function xGt(a, s = Date.now()) {
+  return CCe(a, s) !== void 0
+}
+
+function pLe(a, s = Date.now()) {
+  let d = ne(a);
+  if (!qCn(a) || d === void 0 || d === null || !d.eligible || d.nextGrantId !== null || d.grants.length === 0 || d.grants.some((m) => m.resetsLeft > 0) || a.resetsAt === void 0 || a.resetsAt * 1000 <= s || !_pe()) return;
+  return xh(pU().spentLine, {
+    left: 0
+  })
+}
+
+function C3o(a, s = Date.now()) {
+  let d = ne(a);
+  return d !== void 0 && d !== null && d.eligible && d.grants.some((m) => m.resetsLeft > 0 && !m.paused && (le(m.endsAt) ?? 1 / 0) > s)
+}
+
+function er(a) {
+  let s = ne(a);
+  return s !== void 0 && s !== null && s.eligible && s.nextGrantId === null && s.grants.some((d) => d.resetsLeft > 0)
+}
+
+function KQ(a) {
+  return {
+    left: a.resetsLeft,
+    date: Ft(a.grant.endsAt),
+    deadline: Le(a.grant.endsAt),
+    week: Le(a.weeklyResetsAt),
+    limits: tr(a.grant.clears),
+    ...a.origin === "anytime" && a.earlyUse?.kind === "numbered" && {
+      percent: a.earlyUse.percentLeft,
+      limit: a.earlyUse.limitName
+    }
+  }
+}
+
+function tr(a) {
+  let s = new Set;
+  for (let b of a) switch (b) {
+    case "five_hour":
+      s.add("session");
+      break;
+    case "seven_day":
+    case "seven_day_overage_included":
+      s.add("weekly");
+      break;
+    case "seven_day_opus":
+      s.add(bMt(b).replace(/ limit$/, ""));
+      break;
+    case "seven_day_sonnet":
+      s.add(JZt().replace(/ limit$/, ""));
+      break;
+    case "seven_day_cowork":
+    case "seven_day_omelette":
+    case "seven_day_oauth_apps":
+      break
+  }
+  let d = [...s],
+    m = d.pop();
+  if (m === void 0) return "limits";
+  return d.length === 0 ? `${m} limit` : `${d.join(", ")} and ${m} limits`
+}
+
+function Ft(a) {
+  let s = le(a);
+  return s === void 0 ? void 0 : IC(Math.floor(s / 1000), !1, !1, !0)
+}
+
+function Le(a) {
+  let s = le(a);
+  return s === void 0 ? void 0 : IC(Math.floor(s / 1000), !1, !0, !0)
+}
+
+function le(a) {
+  if (a === null) return;
+  let s = Date.parse(a);
+  return Number.isFinite(s) ? s : void 0
+}
+
+function Jt() {
+  return _pe() || VVr(E(sVe, null))
+}
+
+function R3o(a, s) {
+  if (!Jt() || !qCn(a)) return;
+  let d = O();
+  if (Tr(d), d.continuableWallResetsAt = a.resetsAt ?? null, d.unsettledClaimEpoch !== ob()) D(d);
+  te(a, s, "wall")
+}
+
+function te(a, s, d) {
+  if (d === "wall" ? !Jt() : !_pe()) return Promise.resolve();
+  let m = Qe(a);
+  if (m === null) return Promise.resolve();
+  let b = O(),
+    _ = b.state,
+    h = 0,
+    A = null;
+  if (_.phase !== "idle" && Se(_.wall, a)) switch (_.phase) {
+    case "answered":
+      if (!Wt(_, a, d, q())) return Promise.resolve();
+      A = _;
+      break;
+    case "asking":
+      return b.pendingAsk ?? Promise.resolve();
+    case "failed":
+      if (d === "wall" && _.failures >= Yn) return Promise.resolve();
+      h = _.failures
+  }
+  ee({
+    phase: "asking",
+    wall: m
+  });
+  let C = qV(),
+    L = je(He(s), Mt).then((R) => {
+      if (It({
+          wall: m,
+          failures: h,
+          previous: A,
+          result: R ?? {
+            kind: "failed"
+          },
+          autoArmed: C
+        }), R !== void 0 && R.kind === "answered" && R.status?.ineligibleReason !== "unavailable") $t(b, R.status, s)
+    }).catch((R) => {
+      l(H(R));
+      try {
+        It({
+          wall: m,
+          failures: h,
+          previous: A,
+          result: {
+            kind: "failed"
+          },
+          autoArmed: C
+        })
+      } catch (x) {
+        l(H(x))
+      }
+    }).finally(() => {
+      if (b.pendingAsk === L) b.pendingAsk = null
+    });
+  return b.pendingAsk = L, L
+}
+
+function It({
+  wall: a,
+  failures: s,
+  previous: d,
+  result: m,
+  autoArmed: b
+}) {
+  let _ = c1();
+  if (_.phase !== "asking" || _.wall.rateLimitType !== a.rateLimitType || _.wall.wallResetsAt !== a.wallResetsAt || _.wall.accountEpoch !== a.accountEpoch) return;
+  let h = m.kind === "answered" ? m.status : null,
+    A = m.kind === "failed" || h?.ineligibleReason === "unavailable";
+  if (A && d !== null) ee({
+    ...d,
+    answeredAtMs: q()
+  });
+  else if (A) ee({
+    phase: "failed",
+    wall: a,
+    failures: s + 1
+  });
+  else {
+    let k = m.kind === "no_profile_scope" || m.kind === "not_authorized";
+    ee(k ? {
+      phase: "answered",
+      wall: a,
+      status: h,
+      answeredAtMs: q(),
+      final: k
+    } : {
+      phase: "answered",
+      wall: a,
+      status: h,
+      answeredAtMs: q()
+    })
+  }
+  if (!_pe()) return;
+  let C = vlt();
+  if (i("tengu_cedar_ember_asked", {
+      outcome: c(Ht(m)),
+      at_wall: !0,
+      attempt: s + 1,
+      eligible: h?.eligible ?? !1,
+      ineligible_reason: pe(h?.ineligibleReason),
+      limit_type: c(a.rateLimitType),
+      config_version: C
+    }), A || h === null || !h.eligible) return;
+  let L = O(),
+    R = `${a.accountEpoch}:${a.rateLimitType}:${a.wallResetsAt}:${h.eligible}:${h.nextGrantId}`;
+  if (L.wallRecordKey === R) return;
+  L.wallRecordKey = R;
+  let x = h.grants.find((k) => k.id === h.nextGrantId);
+  i("tengu_cedar_ember_wall", {
+    eligible: h.eligible,
+    at_limit: h.atLimit,
+    usable: x !== void 0 && me(x, a.rateLimitType) && !et(x, h),
+    grant_id: ye(h.nextGrantId),
+    resets_left: x?.resetsLeft ?? 0,
+    resets_left_total: Ie(h),
+    grants: h.grants.length,
+    limit_type: c(a.rateLimitType),
+    limit_types: fl(h.exhausted),
+    tier: c(eKe()),
+    auto_armed: b,
+    low_priority_active: uN(),
+    config_version: C,
+    surface: pe(h.eventProps?.surface),
+    server_tier: pe(h.eventProps?.tier),
+    tenure_bucket: pe(h.eventProps?.tenureBucket),
+    billing_path: pe(h.eventProps?.billingPath),
+    billing_period: pe(h.eventProps?.billingPeriod),
+    extra_usage_state: pe(h.eventProps?.extraUsageState)
+  })
+}
+
+function $t(a, s, d) {
+  if (a.unsettledClaimGrantId === null) return;
+  if (a.unsettledClaimEpoch !== ob()) {
+    D(a);
+    return
+  }
+  if (s?.nextGrantId === a.unsettledClaimGrantId) return;
+  if (F(d), s !== null && !Pe(s)) D(a)
+}
+var nr = 600000;
+
+function jt(a) {
+  return a.unsettledClaimAtMs !== null && q() - a.unsettledClaimAtMs < nr
+}
+
+function Ht(a) {
+  return a.kind === "answered" ? a.status === null ? "absent" : "block" : a.kind
+}
+
+function nt(a, s) {
+  return a.unsettledClaimGrantId === s && a.unsettledClaimEpoch === ob() && jt(a)
+}
+
+function D(a) {
+  a.unsettledClaimGrantId = null, a.unsettledClaimRequestId = null, a.unsettledClaimEpoch = null, a.unsettledClaimAtMs = null
+}
+
+function Kt(a, s, d, m) {
+  if (a.unsettledClaimRequestId !== d) a.unsettledClaimAtMs = q();
+  a.unsettledClaimGrantId = s, a.unsettledClaimRequestId = d, a.unsettledClaimEpoch = m
+}
+
+function qt(a, s) {
+  return nt(a, s) && a.unsettledClaimRequestId !== null ? a.unsettledClaimRequestId : Xn()
+}
+
+function Xt(a, s) {
+  if (a.nextGrantId === null) return;
+  let d = a.grants.find((b) => b.id === a.nextGrantId);
+  if (d === void 0 || !d.usableNow || d.paused) return;
+  let m = le(d.endsAt) ?? null;
+  if (m !== null && m <= s) return;
+  return {
+    grant: d,
+    endsAtMs: m
+  }
+}
+
+function PGt(a, s) {
+  let d = CCe(a);
+  if (d === void 0 || a.resetsAt === void 0) return;
+  let m = `${d.rateLimitType}:${a.resetsAt}:${d.grant.id}`,
+    b = O();
+  if (b.shownOfferKey === m) return;
+  b.shownOfferKey = m, i("tengu_cedar_ember_shown", {
+    surface: c(s),
+    grant_id: ye(d.grant.id),
+    resets_left: d.grant.resetsLeft,
+    resets_left_total: d.resetsLeft,
+    limit_type: c(d.rateLimitType),
+    config_version: vlt()
+  })
+}
+
+function Xbn(a, s) {
+  let d = c1();
+  if (Ze(a) || d.phase === "answered" && Se(d.wall, a) && Wt(d, a, "dialog", q())) te(a, s, "dialog")
+}
+async function qwt(a, s) {
+  try {
+    return await rr(a, s)
+  } catch (d) {
+    return l(H(d)), {
+      kind: "answer",
+      result: {
+        outcome: "unavailable",
+        text: fLe
+      }
+    }
+  }
+}
+async function Yt(a, s) {
+  let m = O().pendingAsk !== null;
+  if (await te(fa(), s, a), m && Ze(fa())) await te(fa(), s, a)
+}
+async function rr(a, s) {
+  if (O().claiming) return {
+    kind: "answer",
+    result: {
+      outcome: "unavailable",
+      text: ln
+    }
+  };
+  if (fa().status !== "rejected" && iTt() && _pe()) {
+    if (uN()) return {
+      kind: "answer",
+      result: {
+        outcome: "not_offered",
+        text: pr
+      }
+    };
+    return ir(a, s)
+  }
+  await Yt(a, s);
+  let m = fa(),
+    b = CCe(m);
+  if (b === void 0) {
+    let _ = ne(m);
+    if (_ !== void 0 && _ !== null && (Pe(_) || Zt(_, m))) F(s);
+    return {
+      kind: "answer",
+      result: Qt(m)
+    }
+  }
+  return Vt(a, b), {
+    kind: "confirm",
+    offer: b
+  }
+}
+
+function Vt(a, s) {
+  i("tengu_cedar_ember_selected", {
+    entry: c(a),
+    grant_id: ye(s.grant.id),
+    resets_left: s.grant.resetsLeft,
+    resets_left_total: s.resetsLeft,
+    limit_type: pe(s.origin === "wall" ? s.rateLimitType : void 0),
+    at_limit: s.origin === "wall" || s.atLimit,
+    early_use: xe(s),
+    auto_armed: qV(),
+    config_version: vlt()
+  })
+}
+async function ir(a, s) {
+  let d = O(),
+    m = await je(He(s, {
+      read: "cedar_ember"
+    }), Mt),
+    b = m?.kind === "answered" ? m.status : null,
+    _ = m === void 0 || m.kind === "failed" || b?.ineligibleReason === "unavailable";
+  if (i("tengu_cedar_ember_asked", {
+      outcome: c(Ht(m ?? {
+        kind: "failed"
+      })),
+      at_wall: !1,
+      asker: c(a),
+      eligible: b?.eligible ?? !1,
+      ineligible_reason: pe(b?.ineligibleReason),
+      at_limit: b?.atLimit ?? !1,
+      grants: b?.grants.length ?? 0,
+      grant_id: ye(b?.nextGrantId ?? null),
+      config_version: vlt()
+    }), _) return {
+    kind: "answer",
+    result: {
+      outcome: "unavailable",
+      text: Wye() ? xh(pU().unconfirmedAnytimeLine, {}) : fLe
+    }
+  };
+  $t(d, b, s);
+  let h = b === null ? void 0 : ar(b, q());
+  if (h === void 0) return {
+    kind: "answer",
+    result: sr(b)
+  };
+  return Vt(a, h), {
+    kind: "confirm",
+    offer: h
+  }
+}
+
+function ar(a, s) {
+  let d = Xt(a, s);
+  if (d === void 0) return;
+  let {
+    grant: m,
+    endsAtMs: b
+  } = d;
+  return {
+    origin: "anytime",
+    grant: m,
+    resetsLeft: Math.max(1, Ie(a)),
+    weeklyResetsAt: a.weeklyResetsAt,
+    endsAtMs: b,
+    earlyUse: Zn(m, a),
+    atLimit: a.atLimit
+  }
+}
+
+function sr(a) {
+  if (a === null || !a.eligible || a.grants.length === 0) return {
+    outcome: "not_offered",
+    text: `${Ye} \xB7 ${tn}`
+  };
+  let s = a.grants.filter((_) => _.resetsLeft > 0),
+    d = {
+      left: Ie(a),
+      date: Ft(s[0]?.endsAt ?? null)
+    };
+  if (s.length === 0) return {
+    outcome: "spent",
+    text: xh(pU().spentLine, d)
+  };
+  let m = s.flatMap((_) => _.blocking).map(tt).find((_) => _ !== null) ?? null,
+    b = m !== null ? nn(m) : s.every((_) => _.paused) ? `${qe} \xB7 it is paused` : Pe(a) ? `${qe} \xB7 try again in a minute` : s.every((_) => _.useRequiresLimit) ? mr : `${qe} \xB7 try again later`;
+  return {
+    outcome: "not_offered",
+    text: xh(`${b} \xB7 {resets} left \xB7 use by {date}`, d)
+  }
+}
+
+function Qt(a) {
+  let s = pLe(a);
+  if (s !== void 0) return {
+    outcome: "spent",
+    text: s
+  };
+  if (Ze(a)) return {
+    outcome: "unavailable",
+    text: Wye() ? xh(pU().unconfirmedLine, {}) : fLe
+  };
+  let d = ne(a);
+  if (d !== void 0 && d !== null && Zt(d, a)) return {
+    outcome: "not_offered",
+    text: cr
+  };
+  return {
+    outcome: "not_offered",
+    text: en(or(a), a)
+  }
+}
+
+function Zt(a, s) {
+  let d = s.rateLimitType;
+  return d !== void 0 && a.nextGrantId !== null && !a.exhausted.some((m) => m === d) && a.grants.some((m) => m.id === a.nextGrantId && me(m, d))
+}
+
+function Pe(a) {
+  let s = le(a.cooldownUntil);
+  return s !== void 0 && s > q()
+}
+
+function or(a) {
+  let s = ne(a);
+  if (s === void 0 || s === null || a.rateLimitType === void 0) return Ye;
+  let d = a.rateLimitType,
+    m = s.grants.filter((_) => _.resetsLeft > 0);
+  if (m.length === 0) return Ye;
+  if (!m.some((_) => me(_, d))) return dr;
+  let b = m.filter((_) => me(_, d)).flatMap((_) => _.blocking).map(tt).find((_) => _ !== null) ?? null;
+  if (b !== null) return nn(b);
+  if (m.every((_) => _.paused)) return `${Be} \xB7 it is paused`;
+  if (Pe(s)) return `${Be} \xB7 try again in a minute`;
+  return Be
+}
+
+function en(a, s) {
+  let d = eM(s) ? IC(s.resetsAt) : void 0;
+  return d !== void 0 ? `${a} \xB7 this limit resets ${d}` : `${a} \xB7 ${tn}`
+}
+
+function UVr(a, s) {
+  i("tengu_cedar_ember_confirmed", {
+    confirmed: !1,
+    entry: c(a),
+    grant_id: ye(s.grant.id),
+    limit_type: pe(s.origin === "wall" ? s.rateLimitType : void 0),
+    at_limit: s.origin === "wall" || s.atLimit,
+    early_use: xe(s),
+    percent_used_max: Xe(s),
+    config_version: vlt()
+  });
+  let d = pU();
+  return {
+    outcome: "kept",
+    text: xh(s.grant.useRequiresLimit ? d.keptLine : d.keptAnytimeLine, KQ(s))
+  }
+}
+async function BVr(a, s, d) {
+  let m = O();
+  if (m.claiming) return {
+    outcome: "unavailable",
+    text: ln
+  };
+  m.claiming = !0;
+  try {
+    return d.origin === "wall" || Qe(fa()) !== null ? await lr(a, s, d.grant.id) : await ur(a, s, d)
+  } catch (b) {
+    l(H(b));
+    let _ = pU();
+    return {
+      outcome: "unavailable",
+      text: xh(d.origin === "wall" ? _.unconfirmedLine : _.unconfirmedAnytimeLine, {})
+    }
+  } finally {
+    m.claiming = !1
+  }
+}
+async function lr(a, s, d) {
+  let m = O(),
+    b = pU(),
+    _ = vlt();
+  await Yt(a, s);
+  let h = fa(),
+    A = Qe(h),
+    C = CCe(h);
+  if (i("tengu_cedar_ember_confirmed", {
+      confirmed: !0,
+      entry: c(a),
+      grant_id: ye(d),
+      limit_type: pe(h.rateLimitType),
+      still_offered: C !== void 0 && C.grant.id === d,
+      at_limit: !0,
+      early_use: !1,
+      config_version: _
+    }), C === void 0 || A === null) return Qt(h);
+  if (C.grant.id !== d) return {
+    outcome: "not_offered",
+    text: br
+  };
+  let L = Date.now(),
+    R = nt(m, d),
+    x = qt(m, d),
+    k = await je(Ke(s, d, x), Nt) ?? {
+      result: "error",
+      reason: null,
+      resetsLeft: null,
+      cleared: [],
+      weeklyResetsAt: null
+    };
+  switch (i("tengu_cedar_ember_result", {
+      result: c(k.result),
+      reason: pe(k.reason),
+      entry: c(a),
+      grant_id: ye(d),
+      resets_left: k.resetsLeft ?? void 0,
+      cleared: fl(k.cleared),
+      limit_type: c(A.rateLimitType),
+      at_limit: !0,
+      early_use: !1,
+      latency_ms: Date.now() - L,
+      config_version: _
+    }), k.result) {
+    case "reset":
+    case "not_limited":
+    case "cooldown":
+    case "already_used":
+    case "ineligible":
+      g("cedar_ember");
+      break;
+    case "unavailable":
+    case "rate_limited":
+    case "auth_error":
+    case "error":
+      p("cedar_ember", k.result);
+      break
+  }
+  let N = C.resetsLeft - C.grant.resetsLeft,
+    X = k.resetsLeft ?? (k.result === "already_used" ? 0 : Math.max(0, C.grant.resetsLeft - 1)),
+    W = {
+      ...KQ(C),
+      left: N + X,
+      week: Le(k.weeklyResetsAt ?? C.weeklyResetsAt)
+    };
+  switch (k.result) {
+    case "reset": {
+      D(m);
+      let K = Pt(m, A);
+      Ut(m, A, [A.rateLimitType, ...ke(k.cleared).filter((ue) => ue !== A.rateLimitType)], a, K);
+      let I = xh(b.successLine, W);
+      return {
+        outcome: "reset",
+        text: K ? I : Ot(I)
+      }
+    }
+    case "not_limited": {
+      D(m);
+      let K = Pt(m, A);
+      Ut(m, A, [A.rateLimitType], a, K);
+      let I = R ? gr : _r;
+      return {
+        outcome: "reset",
+        text: K ? I : Ot(I)
+      }
+    }
+    case "cooldown": {
+      if (!R) D(m);
+      return F(s), {
+        outcome: "unavailable",
+        text: R ? sn : yr
+      }
+    }
+    case "already_used": {
+      if (R) return D(m), ce(A), F(s), {
+        outcome: "spent",
+        text: on
+      };
+      if (N > 0) return ce(A), te(fa(), s, a), F(s), {
+        outcome: "spent",
+        text: xh(`${Re} \xB7 ${rn}`, W)
+      };
+      return Cr(A, d), F(s), {
+        outcome: "spent",
+        text: xh(Re, W)
+      }
+    }
+    case "ineligible": {
+      if (ce(A), te(fa(), s, a), R) return D(m), F(s), {
+        outcome: "not_offered",
+        text: Ve
+      };
+      return {
+        outcome: "not_offered",
+        text: en(an, h)
+      }
+    }
+    case "auth_error":
+      return {
+        outcome: "unavailable", text: un
+      };
+    case "rate_limited":
+      return {
+        outcome: "unavailable", text: xh(R ? b.unconfirmedLine : b.unavailableLine, W)
+      };
+    case "unavailable":
+    case "error": {
+      Kt(m, d, x, A.accountEpoch);
+      let K = ke(k.cleared);
+      if (K.length > 0) {
+        if (Act(K), K.includes(A.rateLimitType)) F(s)
+      }
+      return ce(A), te(fa(), s, a), {
+        outcome: "unavailable",
+        text: xh(R ? b.stillUnconfirmedLine : b.unconfirmedLine, W)
+      }
+    }
+  }
+}
+
+function Xe(a) {
+  return a.origin === "anytime" ? a.earlyUse?.percentUsedMax ?? void 0 : void 0
+}
+
+function xe(a) {
+  return a.origin === "anytime" && a.earlyUse !== null
+}
+async function ur(a, s, d) {
+  let m = O(),
+    b = pU(),
+    _ = vlt(),
+    h = d.grant.id,
+    A = ob();
+  i("tengu_cedar_ember_confirmed", {
+    confirmed: !0,
+    entry: c(a),
+    grant_id: ye(h),
+    at_limit: d.atLimit,
+    early_use: xe(d),
+    percent_used_max: Xe(d),
+    config_version: _
+  });
+  let C = Date.now(),
+    L = nt(m, h),
+    R = qt(m, h),
+    x = await je(Ke(s, h, R), Nt) ?? {
+      result: "error",
+      reason: null,
+      resetsLeft: null,
+      cleared: [],
+      weeklyResetsAt: null
+    };
+  switch (i("tengu_cedar_ember_result", {
+      result: c(x.result),
+      reason: pe(x.reason),
+      entry: c(a),
+      grant_id: ye(h),
+      resets_left: x.resetsLeft ?? void 0,
+      cleared: fl(x.cleared),
+      at_limit: d.atLimit,
+      early_use: xe(d),
+      percent_used_max: Xe(d),
+      latency_ms: Date.now() - C,
+      config_version: _
+    }), x.result) {
+    case "reset":
+    case "not_limited":
+    case "cooldown":
+    case "already_used":
+    case "ineligible":
+      g("cedar_ember");
+      break;
+    case "unavailable":
+    case "rate_limited":
+    case "auth_error":
+    case "error":
+      p("cedar_ember", x.result);
+      break
+  }
+  let k = d.resetsLeft - d.grant.resetsLeft,
+    N = x.resetsLeft ?? (x.result === "already_used" ? 0 : Math.max(0, d.grant.resetsLeft - 1)),
+    X = {
+      ...KQ(d),
+      left: k + N,
+      week: Le(x.weeklyResetsAt ?? d.weeklyResetsAt)
+    };
+  switch (x.result) {
+    case "reset": {
+      D(m);
+      let W = ke(x.cleared);
+      if (W.length > 0) Act(W);
+      return F(s), {
+        outcome: "reset",
+        text: xh(b.successLine, X)
+      }
+    }
+    case "not_limited":
+      if (D(m), L) return F(s), {
+        outcome: "not_offered",
+        text: Ve
+      };
+      return {
+        outcome: "not_offered", text: fr
+      };
+    case "cooldown":
+      if (!L) D(m);
+      return F(s), {
+        outcome: "unavailable",
+        text: L ? sn : hr
+      };
+    case "already_used":
+      if (L) return D(m), F(s), {
+        outcome: "spent",
+        text: on
+      };
+      return {
+        outcome: "spent", text: xh(k > 0 ? `${Re} \xB7 ${rn}` : Re, X)
+      };
+    case "ineligible":
+      if (L) return D(m), F(s), {
+        outcome: "not_offered",
+        text: Ve
+      };
+      return {
+        outcome: "not_offered", text: an
+      };
+    case "auth_error":
+      return {
+        outcome: "unavailable", text: un
+      };
+    case "rate_limited":
+      return {
+        outcome: "unavailable", text: xh(L ? b.unconfirmedAnytimeLine : b.unavailableLine, X)
+      };
+    case "unavailable":
+    case "error": {
+      Kt(m, h, R, A);
+      let W = ke(x.cleared);
+      if (W.length > 0) Act(W);
+      if (W.length > 0 || L) F(s);
+      return {
+        outcome: "unavailable",
+        text: xh(L ? b.stillUnconfirmedLine : b.unconfirmedAnytimeLine, X)
+      }
+    }
+  }
+}
+var Ye = "No reset to use",
+  tn = "you're not at a usage limit right now",
+  Be = "Your reset can't be used for this limit right now",
+  dr = "Your reset doesn't cover this limit",
+  cr = `This limit may have lifted already \xB7 checking your limits now \xB7 run /${kZ} again in a moment to use your reset anyway`,
+  mr = `You have a reset saved for when you reach a usage limit \xB7 run /${kZ} when you do`,
+  qe = "Your reset can't be used right now",
+  pr = `Resets can't be used while you continue at lower priority \xB7 run /${kZ} after that ends`,
+  fr = "Your reset only works at a usage limit, and you're not at one now \xB7 nothing was used";
+
+function nn(a) {
+  return `Your reset doesn't refill your ${a}, so it can't be used until that resets`
+}
+var fLe = "Couldn't check for a reset right now \xB7 try again in a moment",
+  rVe = "Checking for a reset\u2026",
+  Re = "That reset was already used \xB7 nothing changed just now \xB7 {resets} left",
+  rn = `run /${kZ} again to use one`,
+  an = "This reset isn't available any more \xB7 nothing was used",
+  br = `A different reset is on offer now \xB7 nothing was used \xB7 run /${kZ} again to see it`,
+  _r = "Your limit had already reset on its own \xB7 nothing was used",
+  gr = "Your limits are clear",
+  yr = "Another reset was just started on your account \xB7 checking your limits now \xB7 if you're still at the limit in a minute, try again",
+  sn = "Your earlier reset may still be going through \xB7 checking your limits now \xB7 try again in a minute if they aren't refilled",
+  hr = "Another reset was just started on your account \xB7 this one wasn't used \xB7 try again in a minute",
+  on = "Your earlier reset went through after all \xB7 checking your limits now",
+  Ve = "This reset isn't available any more \xB7 your earlier try may have gone through \xB7 checking your limits now",
+  wr = "send a message to continue",
+  ln = "Your limits are already being reset \xB7 one moment",
+  un = "Couldn't reset your limits with this login \xB7 run /login, then try again";
+
+function Ot(a) {
+  return `${a} \xB7 ${wr}`
+}
+
+function Pt(a, s) {
+  let d = Hys() && a.continuableWallResetsAt === s.wallResetsAt;
+  return a.continuableWallResetsAt = null, d
+}
+
+function ke(a) {
+  let s = [];
+  for (let d of a) switch (d) {
+    case "five_hour":
+    case "seven_day":
+    case "seven_day_overage_included":
+    case "seven_day_opus":
+    case "seven_day_sonnet":
+      s.push(d);
+      break;
+    case "seven_day_cowork":
+    case "seven_day_omelette":
+    case "seven_day_oauth_apps":
+      break
+  }
+  return s
+}
+
+function Ut(a, s, d, m, b) {
+  let _ = [() => Y$("cedar_ember"), () => {
+    dH("reset")
+  }, () => Ar(d), () => {
+    ce(s), a.wallRecordKey = null, a.shownOfferKey = null
+  }, () => {
+    if (b) uot()
+  }, () => a.events.emit({
+    type: "reset",
+    entry: m
+  })];
+  for (let h of _) try {
+    h()
+  } catch (A) {
+    l(H(A))
+  }
+}
+
+function Ar(a) {
+  if (a.length > 0) Act(a);
+  let s = fa();
+  if (s.status !== "rejected" || s.rateLimitType === void 0 || !a.includes(s.rateLimitType)) return;
+  vPe({
+    ...s,
+    status: "allowed",
+    rateLimitType: void 0,
+    resetsAt: void 0
+  })
+}
+
+function F(a) {
+  if (qV()) {
+    HKe();
+    return
+  }
+  SMt(a, void 0).catch((s) => {
+    l(H(s))
+  })
+}
+
+function ce(a) {
+  let s = c1();
+  if (s.phase !== "idle" && s.wall.wallResetsAt === a.wallResetsAt && s.wall.rateLimitType === a.rateLimitType) ee({
+    phase: "idle"
+  })
+}
+
+function Cr(a, s) {
+  let d = c1();
+  if (d.phase !== "answered" || d.wall.wallResetsAt !== a.wallResetsAt || d.wall.rateLimitType !== a.rateLimitType || d.status === null) return;
+  ee({
+    ...d,
+    answeredAtMs: q(),
+    status: {
+      ...d.status,
+      nextGrantId: d.status.nextGrantId === s ? null : d.status.nextGrantId,
+      grants: d.status.grants.map((m) => m.id === s ? {
+        ...m,
+        resetsLeft: 0,
+        usableNow: !1
+      } : m)
+    }
+  })
+}
+
+function Tr(a) {
+  if (a.sessionSwitchSubscribed) return;
+  a.sessionSwitchSubscribed = !0, Hc((s, d) => {
+    if (rst(d)) a.continuableWallResetsAt = null
+  })
+}
+var vr = "juniper_tide",
+  Lr = 25000,
+  xr = f(() => u({
+    surface: U(["claude_ai", "claude_code_cli", "unknown"]).catch("unknown"),
+    tier: U(["claude_pro", "claude_max_5x", "claude_max_20x", "unknown"]).catch("unknown"),
+    tenure_bucket: U(["under_14", "14-29", "30-89", "90-364", "365+", "unknown"]).catch("unknown"),
+    billing_path: U(["stripe", "apple", "google_play", "other", "unknown"]).catch("unknown"),
+    billing_period: U(["monthly", "annual", "unknown"]).catch("unknown"),
+    extra_usage_state: U(["not_configured", "disabled", "enabled", "unknown"]).catch("unknown")
+  })),
+  Rr = f(() => u({
+    eligible: M(),
+    ineligible_reason: U(["tier", "tenure", "surface", "mobile", "cli_version", "not_at_wall", "weekly_limit", "no_weekly_limit", "other_experiment", "extra_usage", "unavailable", "unknown"]).catch("unknown").nullable().optional(),
+    in_experiment: M().optional(),
+    arm: U(["control", "reset"]).nullable().optional().catch(null),
+    available: M().optional(),
+    next_available_at: o().nullable().optional().catch(null),
+    weekly_resets_at: o().nullable().optional().catch(null),
+    resets_per_week: v().optional().catch(void 0),
+    event_props: xr().nullable().optional().catch(null)
+  })),
+  kr = f(() => u({
+    result: U(["reset", "already_used", "not_limited", "ineligible", "unavailable"]).catch("unavailable"),
+    next_available_at: o().nullable().optional().catch(null),
+    weekly_resets_at: o().nullable().optional().catch(null)
+  }));
+
+function Sr(a) {
+  if (a === void 0 || a === null) return null;
+  let s = Rr().safeParse(a);
+  if (!s.success) return t(`[juniper-tide] ignoring a malformed status block: ${s.error.message}`), null;
+  let d = s.data,
+    m = d.event_props;
+  return {
+    eligible: d.eligible,
+    ineligibleReason: d.ineligible_reason ?? null,
+    inExperiment: d.in_experiment ?? !1,
+    arm: d.arm ?? null,
+    available: d.available ?? !1,
+    nextAvailableAt: d.next_available_at ?? null,
+    weeklyResetsAt: d.weekly_resets_at ?? null,
+    resetsPerWeek: d.resets_per_week ?? 1,
+    eventProps: m ? {
+      surface: m.surface,
+      tier: m.tier,
+      tenureBucket: m.tenure_bucket,
+      billingPath: m.billing_path,
+      billingPeriod: m.billing_period,
+      extraUsageState: m.extra_usage_state
+    } : null
+  }
+}
+async function dn(a) {
+  try {
+    if (!Jp()) return {
+      kind: "no_profile_scope"
+    };
+    let s = await fN(a, {
+      read: "at_wall"
+    });
+    if (!yMt(s)) return t("[juniper-tide] status fetch returned a fieldless or non-object body (in-band error)", {
+      level: "warn"
+    }), {
+      kind: "failed"
+    };
+    return {
+      kind: "answered",
+      status: Sr(s?.juniper_tide)
+    }
+  } catch (s) {
+    if (t(`[juniper-tide] status fetch failed: ${H(s).message}`, {
+        level: "warn"
+      }), zkr(s)) return {
+      kind: "answered",
+      status: null
+    };
+    return {
+      kind: "failed"
+    }
+  }
+}
+async function cn(a) {
+  let s = wn()?.organizationUuid;
+  if (!s) return t("[juniper-tide] no OAuth organization; cannot claim"), {
+    result: "auth_error",
+    nextAvailableAt: null
+  };
+  try {
+    let d = await lv(() => Gt.post(`/api/organizations/${s}/reset_rate_limits`, {
+      program: vr
+    }, {
+      auth: "async",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      timeout: Lr,
+      refreshOAuth: !0,
+      credentials: a
+    }), {
+      credentials: a
+    });
+    if (!d.ok) return t(`[juniper-tide] claim not sent: ${d.reason==="no-auth"?d.detail:d.reason}`, {
+      level: "warn"
+    }), {
+      result: d.reason === "no-auth" ? "auth_error" : "error",
+      nextAvailableAt: null
+    };
+    let m = kr().safeParse(d.data);
+    if (!m.success) return t(`[juniper-tide] unreadable claim response: ${m.error.message}`, {
+      level: "error"
+    }), l(Error("[juniper-tide] unreadable claim response")), {
+      result: "error",
+      nextAvailableAt: null
+    };
+    return {
+      result: m.data.result,
+      nextAvailableAt: m.data.next_available_at ?? null
+    }
+  } catch (d) {
+    if (of(d)) t(`[juniper-tide] claim failed: ${H(d).message}`, {
+      level: "warn"
+    });
+    else l(H(d));
+    if (Rc(d)) switch (d.response?.status) {
+      case 429:
+        return {
+          result: "rate_limited", nextAvailableAt: null
+        };
+      case 401:
+      case 403:
+        return {
+          result: "auth_error", nextAvailableAt: null
+        };
+      default:
+        break
+    }
+    return {
+      result: "error",
+      nextAvailableAt: null
+    }
+  }
+}
+
+function Ir() {
+  return {
+    state: {
+      phase: "idle"
+    },
+    shownWallResetsAt: null,
+    pendingAsk: null,
+    claiming: !1,
+    continuableWallResetsAt: null,
+    unsettledClaimWallResetsAt: null,
+    sessionSwitchSubscribed: !1,
+    changed: Me(),
+    events: Me()
+  }
+}
+var Or = new z(Ir);
+
+function Y() {
+  return Or.of(j().host)
+}
+
+function u1() {
+  return Y().state
+}
+
+function re(a) {
+  let s = Y();
+  s.state = a, s.changed.emit()
+}
+
+function oVe(a) {
+  return Y().changed.subscribe(a)
+}
+
+function jVr(a) {
+  return Y().events.subscribe(a)
+}
+var Pr = 3,
+  Ur = 12000,
+  Mr = 35000;
+
+function at(a, s) {
+  return s.resetsAt === a.wallResetsAt && a.accountEpoch === ob()
+}
+
+function Ne(a) {
+  let s = u1();
+  return s.phase === "answered" && at(s, a) ? s.status : void 0
+}
+
+function rt(a) {
+  let s = u1();
+  return s.phase === "failed" && at(s, a)
+}
+
+function Mre(a, s = Date.now()) {
+  let d = Ne(a);
+  return Zqe(a) && d !== void 0 && d !== null && d.arm === "reset" && d.available && a.resetsAt !== void 0 && a.resetsAt * 1000 > s && !uN() && bxe()
+}
+
+function mLe(a, s = Date.now()) {
+  let d = Ne(a);
+  if (!Zqe(a) || d === void 0 || d === null || d.arm !== "reset" || d.available || d.nextAvailableAt === null || a.resetsAt === void 0 || a.resetsAt * 1000 <= s || !bxe()) return;
+  return tbr(bpe().spentLine, it(d.nextAvailableAt))
+}
+
+function it(a) {
+  if (a === null) return;
+  let s = Date.parse(a);
+  return Number.isFinite(s) ? IC(Math.floor(s / 1000), !1, !0, !0) : void 0
+}
+
+function A3o(a, s) {
+  if (!bxe() || !Zqe(a)) return;
+  let d = Y();
+  jr(d), d.continuableWallResetsAt = a.resetsAt ?? null, Ue(a, s, "wall")
+}
+
+function Ue(a, s, d) {
+  if (!bxe() || !Zqe(a)) return Promise.resolve();
+  let m = a.resetsAt;
+  if (m === void 0) return Promise.resolve();
+  let b = Y(),
+    _ = ob(),
+    h = b.state,
+    A = 0;
+  if (h.phase !== "idle" && at(h, a)) switch (h.phase) {
+    case "answered":
+      return Promise.resolve();
+    case "asking":
+      return b.pendingAsk ?? Promise.resolve();
+    case "failed":
+      if (d === "wall" && h.failures >= Pr) return Promise.resolve();
+      A = h.failures
+  }
+  re({
+    phase: "asking",
+    wallResetsAt: m,
+    accountEpoch: _
+  });
+  let C = qV(),
+    L = je(dn(s), Ur).then((R) => {
+      mn({
+        wallResetsAt: m,
+        accountEpoch: _,
+        failures: A,
+        result: R ?? {
+          kind: "failed"
+        },
+        autoArmed: C
+      })
+    }).catch((R) => {
+      l(H(R));
+      try {
+        mn({
+          wallResetsAt: m,
+          accountEpoch: _,
+          failures: A,
+          result: {
+            kind: "failed"
+          },
+          autoArmed: C
+        })
+      } catch (x) {
+        l(H(x))
+      }
+    }).finally(() => {
+      if (b.pendingAsk === L) b.pendingAsk = null
+    });
+  return b.pendingAsk = L, L
+}
+
+function mn({
+  wallResetsAt: a,
+  accountEpoch: s,
+  failures: d,
+  result: m,
+  autoArmed: b
+}) {
+  let _ = u1();
+  if (_.phase !== "asking" || _.wallResetsAt !== a || _.accountEpoch !== s) return;
+  let h = m.kind === "answered" ? m.status : null;
+  if (m.kind === "failed") re({
+    phase: "failed",
+    wallResetsAt: a,
+    accountEpoch: s,
+    failures: d + 1
+  });
+  else re({
+    phase: "answered",
+    wallResetsAt: a,
+    accountEpoch: s,
+    status: h
+  });
+  if (i("tengu_juniper_tide_asked", {
+      outcome: c(m.kind === "answered" ? h === null ? "absent" : "block" : m.kind),
+      attempt: d + 1,
+      eligible: h?.eligible ?? !1,
+      ineligible_reason: pe(h?.ineligibleReason) ?? void 0,
+      config_version: tFn()
+    }), h === null || !h.eligible) return;
+  i("tengu_juniper_tide_wall", {
+    in_experiment: h.inExperiment,
+    arm: pe(h.arm) ?? void 0,
+    available: h.available,
+    tier: c(eKe()),
+    auto_armed: b,
+    low_priority_active: uN(),
+    config_version: tFn(),
+    surface: pe(h.eventProps?.surface) ?? void 0,
+    server_tier: pe(h.eventProps?.tier) ?? void 0,
+    tenure_bucket: pe(h.eventProps?.tenureBucket) ?? void 0,
+    billing_path: pe(h.eventProps?.billingPath) ?? void 0,
+    billing_period: pe(h.eventProps?.billingPeriod) ?? void 0,
+    extra_usage_state: pe(h.eventProps?.extraUsageState) ?? void 0
+  })
+}
+
+function OGt(a, s) {
+  let d = a.resetsAt ?? null,
+    m = Y();
+  if (d === null || m.shownWallResetsAt === d) return;
+  m.shownWallResetsAt = d;
+  let b = Ne(a);
+  i("tengu_juniper_tide_shown", {
+    arm: pe(b?.arm) ?? void 0,
+    surface: c(s),
+    config_version: tFn()
+  })
+}
+
+function WVr(a, s) {
+  if (rt(a)) Ue(a, s, "dialog")
+}
+async function Dtt(a, s) {
+  try {
+    return await Nr(a, s)
+  } catch (d) {
+    return l(H(d)), {
+      outcome: "unavailable",
+      text: bpe().unavailableLine
+    }
+  }
+}
+async function Nr(a, s) {
+  let d = Y(),
+    m = bpe();
+  if (Ne(fa()) === void 0) {
+    let L = d.pendingAsk !== null;
+    if (await Ue(fa(), s, a), L && rt(fa())) await Ue(fa(), s, a)
+  }
+  let b = fa();
+  if (!Mre(b) || b.resetsAt === void 0) {
+    let L = mLe(b);
+    if (L !== void 0) return {
+      outcome: "spent",
+      text: L
+    };
+    return rt(b) ? {
+      outcome: "unavailable",
+      text: m.unavailableLine
+    } : {
+      outcome: "not_offered",
+      text: pn
+    }
+  }
+  if (d.claiming) return {
+    outcome: "unavailable",
+    text: Wr
+  };
+  let _ = b.resetsAt,
+    h = tFn();
+  i("tengu_juniper_tide_selected", {
+    entry: c(a),
+    auto_armed: qV(),
+    config_version: h
+  });
+  let A = Date.now(),
+    C;
+  d.claiming = !0;
+  try {
+    C = await je(cn(s), Mr) ?? {
+      result: "error",
+      nextAvailableAt: null
+    }
+  } finally {
+    d.claiming = !1
+  }
+  switch (i("tengu_juniper_tide_result", {
+      result: c(C.result),
+      entry: c(a),
+      latency_ms: Date.now() - A,
+      config_version: h
+    }), C.result) {
+    case "reset":
+    case "not_limited":
+    case "already_used":
+    case "ineligible":
+      g("juniper_tide");
+      break;
+    case "unavailable":
+    case "rate_limited":
+    case "auth_error":
+    case "error":
+      p("juniper_tide", C.result);
+      break
+  }
+  switch (C.result) {
+    case "reset":
+    case "not_limited": {
+      d.unsettledClaimWallResetsAt = null;
+      let L = $ys() && d.continuableWallResetsAt === _;
+      d.continuableWallResetsAt = null, Fr(d, _, a, L);
+      let R = tbr(m.successLine, C.result === "reset" ? it(C.nextAvailableAt) : void 0);
+      return {
+        outcome: "reset",
+        text: L ? R : `${R} \xB7 send a message to continue`
+      }
+    }
+    case "already_used": {
+      if (Gr(_, C.nextAvailableAt), d.unsettledClaimWallResetsAt === _) d.unsettledClaimWallResetsAt = null, Jr(s);
+      return {
+        outcome: "spent",
+        text: tbr(m.spentLine, it(C.nextAvailableAt))
+      }
+    }
+    case "ineligible":
+      return $r(_), {
+        outcome: "not_offered",
+        text: pn
+      };
+    case "auth_error":
+      return {
+        outcome: "unavailable", text: zr
+      };
+    case "unavailable":
+    case "rate_limited":
+    case "error":
+      if (C.result === "error") d.unsettledClaimWallResetsAt = _;
+      return {
+        outcome: "unavailable", text: m.unavailableLine
+      }
+  }
+}
+var pn = "A session-limit reset isn't available right now.",
+  Wr = "Your session limit is already being reset \xB7 one moment",
+  zr = "Couldn't reset your session limit with this login \xB7 run /login, then try again";
+
+function Fr(a, s, d, m) {
+  let b = [() => Y$("juniper_tide"), () => {
+    dH("reset")
+  }, () => Dr(s), () => {
+    let _ = u1();
+    if (_.phase !== "idle" && _.wallResetsAt === s) re({
+      phase: "idle"
+    })
+  }, () => {
+    if (m) uot()
+  }, () => a.events.emit({
+    type: "reset",
+    entry: d
+  })];
+  for (let _ of b) try {
+    _()
+  } catch (h) {
+    l(H(h))
+  }
+}
+
+function Dr(a) {
+  let s = fa();
+  if (s.status !== "rejected" || s.rateLimitType !== "five_hour" || s.resetsAt !== a) return;
+  vPe({
+    ...s,
+    status: "allowed",
+    rateLimitType: void 0,
+    resetsAt: void 0
+  })
+}
+
+function Jr(a) {
+  if (qV()) {
+    HKe();
+    return
+  }
+  SMt(a, void 0).catch((s) => {
+    l(H(s))
+  })
+}
+
+function Gr(a, s) {
+  let d = u1();
+  if (d.phase !== "answered" || d.wallResetsAt !== a || d.status === null) return;
+  re({
+    ...d,
+    status: {
+      ...d.status,
+      available: !1,
+      nextAvailableAt: s ?? d.status.nextAvailableAt
+    }
+  })
+}
+
+function $r(a) {
+  let s = u1();
+  if (s.phase !== "answered" || s.wallResetsAt !== a || s.status === null) return;
+  re({
+    ...s,
+    status: {
+      ...s.status,
+      eligible: !1,
+      available: !1
+    }
+  })
+}
+
+function jr(a) {
+  if (a.sessionSwitchSubscribed) return;
+  a.sessionSwitchSubscribed = !0, Hc((s, d) => {
+    if (rst(d)) a.continuableWallResetsAt = null
+  })
+}
+var Jbn = "session running",
+  IGt = "session waiting for a prompt",
+  Hr = "session waiting",
+  be = " \xB7 ",
+  Kr = /^[0-9a-f]{8}$/,
+  fn = 20;
+
+function zVr(a) {
+  let s = a.split(qx).map((b) => b.trim()).filter(Boolean);
+  if (s.length === 0) return;
+  let [d, ...m] = s;
+  return m.length === 0 ? d : `${d} ${qx} ${m.join(be)}`
+}
+
+function Qbn(a) {
+  if (!a.startsWith(Jbn) && !a.startsWith(IGt)) return null;
+  if (a.includes(`
+`)) return null;
+  let s = a.split(be),
+    d = s[0];
+  if (d !== Jbn && d !== IGt) return null;
+  let m = s.findLastIndex((L) => Kr.test(L)),
+    b = m === -1 ? void 0 : s[m],
+    _ = m === -1 ? s.length : m,
+    h = s.slice(1, _),
+    A = h.length > 0 ? h.join(be) : void 0,
+    C = m === -1 ? [] : s.slice(m + 1);
+  return {
+    state: d,
+    name: A,
+    id: b,
+    chips: C
+  }
+}
+
+function GVr(a, s, d = !0) {
+  let m = (_) => ie(Fer(_)),
+    b = {
+      ...a,
+      chips: [...a.chips]
+    };
+  if (m(b) <= s) return b;
+  if (b.state === IGt) {
+    if (b = {
+        ...b,
+        state: Hr
+      }, m(b) <= s) return b
+  }
+  if (b.id !== void 0 && b.name !== void 0 && d) {
+    if (b = {
+        ...b,
+        id: void 0
+      }, m(b) <= s) return b
+  }
+  if (b.name !== void 0) {
+    let _ = m({
+        ...b,
+        name: void 0
+      }),
+      h = s - _ - ie(be),
+      A = ie(b.name),
+      C = A > fn ? Math.max(h, fn) : h;
+    if (C >= 1 && C < A) b = {
+      ...b,
+      name: mt(b.name, C)
+    }
+  }
+  return b
+}
+
+function Fer(a) {
+  return [a.state, ...a.name ? [a.name] : [], ...a.id ? [a.id] : [], ...a.chips].join(be)
+}
+
+function Yr(a) {
+  let {
+    index: gn
+  } = a;
+  return gn !== -1
+}
+var bn = [ryo, Nkr, nyo].map((a) => ({
+  url: a,
+  marker: `learn more: ${a}`
+}));
+
+function Bye(a) {
+  let _ = w(33),
+    {
+      children: s,
+      color: d,
+      bold: m
+    } = a,
+    b = bVe(),
+    h, A, C, L, R, x;
+  if (_[0] !== m || _[1] !== s || _[2] !== d || _[3] !== b) {
+    x = yn;
+    K: {
+      let k;
+      if (_[10] !== s) k = (N) => {
+        let {
+          url: X,
+          marker: W
+        } = N;
+        return {
+          url: X,
+          marker: W,
+          index: s.indexOf(W)
+        }
+      },
+      _[10] = s,
+      _[11] = k;
+      else k = _[11];A = bn.map(k).find(Yr);
+      if (!b || A === void 0) {
+        let N;
+        if (_[12] !== m || _[13] !== s || _[14] !== d) N = e(sz, {
+          color: d,
+          bold: m,
+          children: s
+        }), _[12] = m, _[13] = s, _[14] = d, _[15] = N;
+        else N = _[15];
+        x = N;
+        break K
+      }
+      h = n;C = d;L = m;R = s.slice(0, A.index)
+    }
+    _[0] = m, _[1] = s, _[2] = d, _[3] = b, _[4] = h, _[5] = A, _[6] = C, _[7] = L, _[8] = R, _[9] = x
+  } else h = _[4], A = _[5], C = _[6], L = _[7], R = _[8], x = _[9];
+  if (x !== yn) return x;
+  let k;
+  if (_[16] !== m || _[17] !== d) k = e(n, {
+    color: d,
+    bold: m,
+    underline: !0,
+    children: "learn more"
+  }), _[16] = m, _[17] = d, _[18] = k;
+  else k = _[18];
+  let N;
+  if (_[19] !== A.url || _[20] !== k) N = e(zt, {
+    url: A.url,
+    children: k
+  }), _[19] = A.url, _[20] = k, _[21] = N;
+  else N = _[21];
+  let I;
+  if (_[22] !== s || _[23] !== A.index || _[24] !== A.marker.length) I = s.slice(A.index + A.marker.length), _[22] = s, _[23] = A.index, _[24] = A.marker.length, _[25] = I;
+  else I = _[25];
+  let ue;
+  if (_[26] !== h || _[27] !== C || _[28] !== L || _[29] !== R || _[30] !== N || _[31] !== I) ue = r(h, {
+    color: C,
+    bold: L,
+    children: [R, N, I]
+  }), _[26] = h, _[27] = C, _[28] = L, _[29] = R, _[30] = N, _[31] = I, _[32] = ue;
+  else ue = _[32];
+  return ue
+}
+export {
+  Bye,
+  RGt,
+  bR,
+  Ybn,
+  T3o,
+  DVr,
+  AGt,
+  LVr,
+  SV,
+  Ler,
+  Ner,
+  jye,
+  NVr,
+  FVr,
+  c1,
+  nVe,
+  HVr,
+  CCe,
+  $Vr,
+  Wye,
+  xGt,
+  pLe,
+  C3o,
+  KQ,
+  R3o,
+  PGt,
+  Xbn,
+  qwt,
+  UVr,
+  BVr,
+  fLe,
+  rVe,
+  u1,
+  oVe,
+  jVr,
+  Mre,
+  mLe,
+  A3o,
+  OGt,
+  WVr,
+  Dtt,
+  Jbn,
+  IGt,
+  zVr,
+  Qbn,
+  GVr,
+  Fer
+};

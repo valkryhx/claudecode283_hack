@@ -1,0 +1,766 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { L, j } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { W } from "B:/~BUN/root/chunk-hg8ngszx.js";
+import { b, c, pe, fl, K_, xn } from "B:/~BUN/root/chunk-jthpk6wv.js";
+import { d1, pS } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { z } from "B:/~BUN/root/chunk-4bx17ygx.js";
+import { i } from "B:/~BUN/root/chunk-1kfn24jp.js";
+import { dMe, kc, zi, E, Ce, ue, Idn } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { vr } from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import { a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import { bt, mI, t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { l } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import { I8n, BJ, lKs, hn, oi, Sp, Kx, Oi, fc, zl, L_t, d7e } from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import { iCs, Lv } from "B:/~BUN/root/chunk-nz6ywek4.js";
+import { up } from "B:/~BUN/root/chunk-efcxwmhb.js";
+import { D9e, HPr, I1e, $Pr, Sae } from "B:/~BUN/root/chunk-hhgqcegv.js";
+import { wi } from "B:/~BUN/root/chunk-yjayxywk.js";
+import { o, u } from "B:/~BUN/root/chunk-g3snhg6n.js";
+import { sep as me } from "path";
+var K = new Set(["plugin command source printed a network path", "plugin command source path resolves to a network path", "plugin command source printed a path through a suspect link", "plugin command source entry traverses a suspect link", "plugin command source link escapes producer directory", "plugin command source relink entry not canonical", "plugin command source relink entry unreadable", "plugin command source relink target resolves to a network path", "plugin command source relink target traverses a suspect link", "plugin command source link marker not a small regular file", "plugin command source printed cwd or an ancestor", "plugin command source printed a relative path", "plugin command source printed nothing", "plugin command source printed multiple lines", "plugin command source exceeded the stdout cap", "plugin command source directory has no plugin content", "plugin command source directory has too many files", "plugin command source directory too large", "plugin command source link mode unsupported on windows", "plugin command source disabled by managed policy", "plugin command source held for the organization answer", "plugin command source not started by a tool server daemon", "plugin command source command changed since consent", "plugin command source never consented for an installed plugin", "plugin command source changed between display and run", "plugin command source without consent", "plugin command source declined at the prompt"]),
+  OZt = "plugin update refused during cli update: ";
+class Y {
+  nameRegistration;
+  catalogEntryNames;
+  reviewerMarkedEntryNames;
+  isAccessAllowed;
+  lastFailedWalk;
+  staleCatalogFetchedAt;
+  catalogLoadInFlight;
+  bindingsWriteTail = Promise.resolve();
+  marketplaceChoice;
+  blockedLogged = new Set();
+}
+var ke = new z(() => new Y());
+function Nk() {
+  return ke.of(j().host);
+}
+function qvs(e) {
+  Nk().nameRegistration = e === void 0 ? "none" : e === "pluginDirectory" ? "built-in" : "other";
+}
+function aUn(e) {
+  if (e !== hn) return !1;
+  let {
+    nameRegistration: nameRegistration
+  } = Nk();
+  return nameRegistration === "built-in" || nameRegistration === "none";
+}
+function x() {
+  let e = Nk();
+  return e.nameRegistration === "built-in" && e.isAccessAllowed?.() === !0;
+}
+function H3e(e) {
+  return Nk().reviewerMarkedEntryNames?.has(e) === !0;
+}
+function J(e) {
+  return x() && Nk().catalogEntryNames?.has(e) === !0;
+}
+var Tho = ["agent", "subagentStatusLine"];
+function q(e) {
+  return Tho.includes(e);
+}
+function X(e, n) {
+  return n ? `${e}@${n.toLowerCase()}` : e;
+}
+class Z {
+  #e = new Map();
+  #n = 0;
+  generation() {
+    return this.#n;
+  }
+  register(e, n, r, s) {
+    if (s !== void 0 && s !== this.#n) return;
+    this.#e.set(X(e, n), r);
+  }
+  get(e, n) {
+    if (n === void 0) return;
+    return this.#e.get(X(e, n));
+  }
+  clear() {
+    this.#e.clear(), this.#n++;
+  }
+}
+var Ee = new z(() => new Z());
+function I() {
+  return Ee.of(j().host);
+}
+function Kvs() {
+  return I().generation();
+}
+function Yvs(e, n, r, s) {
+  I().register(e, n, r, s);
+}
+function v(e, n) {
+  return I().get(e, n);
+}
+function Xvs() {
+  I().clear();
+}
+var Q = /^skill_(?:staging_|local_)?[A-Za-z0-9]{1,64}$/;
+function R(e) {
+  return Q.test(e);
+}
+var C = "skill_id";
+function PZt(e, n) {
+  let r = {};
+  if (typeof e === "string" && R(e)) r.skillId = e;
+  if (typeof n === "string" && Sae(n)) r.pluginId = n;
+  return r.skillId === void 0 && r.pluginId === void 0 ? void 0 : r;
+}
+var Ie = f(() => u({
+    [C]: o().regex(Q).optional().catch(void 0),
+    [I1e]: o().regex($Pr).optional().catch(void 0)
+  })),
+  Ue = 262144,
+  be = () => {
+    return;
+  };
+function act() {
+  let CLAUDE_CODE_SKILL_ATTRIBUTION = a.CLAUDE_CODE_SKILL_ATTRIBUTION;
+  if (CLAUDE_CODE_SKILL_ATTRIBUTION === void 0) return be;
+  let n = HPr("CLAUDE_CODE_SKILL_ATTRIBUTION", CLAUDE_CODE_SKILL_ATTRIBUTION, Ue, Ae);
+  return r => n.get(D9e(r));
+}
+function Ae(e) {
+  let n = Ie().safeParse(e);
+  if (!n.success) {
+    t("Ignoring a CLAUDE_CODE_SKILL_ATTRIBUTION entry: not a JSON object");
+    return;
+  }
+  let r = PZt(n.data[C], n.data[I1e]);
+  if (typeof e === "object" && e !== null) {
+    for (let [s, g] of [[C, r?.skillId], [I1e, r?.pluginId]]) if (s in e && g === void 0) t(`Ignoring a CLAUDE_CODE_SKILL_ATTRIBUTION entry field: invalid ${s}`);
+  }
+  return r;
+}
+class ee {
+  pendingUsage = new Map();
+  flushTimer = null;
+  exitFlushesInFlight = [];
+  flushStorageV5 = void 0;
+}
+var ne = new z(() => new ee());
+class te {
+  flushers = null;
+  exitFlushRegistered = !1;
+}
+var P = new te();
+var Te = 60000;
+function ie(e) {
+  P.flushers = e;
+  let n = y();
+  if (n.pendingUsage.size > 0) re(n, e);
+}
+function y() {
+  return ne.of(j().host);
+}
+function TC(e) {
+  let lastUsedAt = Date.now(),
+    r = y(),
+    s = r.pendingUsage.get(e);
+  if (s) s.count++, s.lastUsedAt = lastUsedAt;else r.pendingUsage.set(e, {
+    count: 1,
+    lastUsedAt: lastUsedAt
+  });
+  if (P.flushers) re(r, P.flushers);
+}
+function re(e, n) {
+  if (!P.exitFlushRegistered) P.exitFlushRegistered = !0, process.on("exit", n.flushAtExit);
+  if (!e.flushTimer) e.flushTimer = setTimeout(n.flush, Te), e.flushTimer.unref?.();
+}
+function oe(e) {
+  y().exitFlushesInFlight.push(e);
+}
+function se(e) {
+  let exitFlushesInFlight = y().exitFlushesInFlight,
+    r = exitFlushesInFlight.indexOf(e);
+  if (r !== -1) exitFlushesInFlight.splice(r, 1);
+}
+function le() {
+  let e = y(),
+    n = e.exitFlushesInFlight.flat();
+  return e.exitFlushesInFlight = [], n.length > 0 ? n : null;
+}
+function ae(e) {
+  y().flushStorageV5 = e;
+}
+function de() {
+  return y().flushStorageV5;
+}
+function U() {
+  let e = y();
+  if (e.flushTimer) clearTimeout(e.flushTimer), e.flushTimer = null;
+  if (e.pendingUsage.size === 0) return null;
+  let n = [...e.pendingUsage.entries()];
+  return e.pendingUsage.clear(), n;
+}
+function Cho(e) {
+  return y().pendingUsage.has(e);
+}
+function ge(e) {
+  let {
+    pendingUsage: pendingUsage
+  } = y();
+  for (let r of pendingUsage.keys()) if (e.has(r.toLowerCase())) pendingUsage.delete(r);
+}
+function flush() {
+  let e = U();
+  if (!e) return;
+  Ce(F(e), de());
+}
+async function ce(e) {
+  let n = U();
+  if (!n) return;
+  oe(n), await Ce(F(n), e), se(n);
+}
+function Jvs(e) {
+  if (W() && e !== void 0) ae(e), bt(() => ce(e)), mI(() => ce(e));
+}
+function flushAtExit() {
+  let e = [...(le() ?? []), ...(U() ?? [])];
+  if (e.length === 0) return;
+  Idn(F(e));
+}
+ie({
+  flush: flush,
+  flushAtExit: flushAtExit
+});
+function F(e) {
+  return n => {
+    let pluginUsage = {
+      ...n.pluginUsage
+    };
+    for (let [s, g] of e) {
+      let p = pluginUsage[s];
+      pluginUsage[s] = {
+        usageCount: (p?.usageCount ?? 0) + g.count,
+        lastUsedAt: g.lastUsedAt,
+        lastUsedNumStartups: n.numStartups
+      };
+    }
+    return {
+      ...n,
+      pluginUsage: pluginUsage
+    };
+  };
+}
+function gkr(e, n) {
+  let lastUsedAt_2 = Date.now();
+  Ce(s => {
+    let g = e.filter(item => !s.pluginUsage?.[item]);
+    if (g.length === 0) return s;
+    let pluginUsage_2 = {
+      ...s.pluginUsage
+    };
+    for (let m of g) pluginUsage_2[m] = {
+      usageCount: 0,
+      lastUsedAt: lastUsedAt_2,
+      lastUsedNumStartups: s.numStartups
+    };
+    return {
+      ...s,
+      pluginUsage: pluginUsage_2
+    };
+  }, n);
+}
+function nMt(e, n) {
+  let r = new Set(e.map(item => item.toLowerCase()));
+  ge(r), Ce(s => {
+    let p = Object.keys(s.pluginUsage ?? {}).filter(item => r.has(item.toLowerCase()));
+    if (p.length === 0) return s;
+    let pluginUsage_3 = {
+      ...s.pluginUsage
+    };
+    for (let _ of p) delete pluginUsage_3[_];
+    return {
+      ...s,
+      pluginUsage: pluginUsage_3
+    };
+  }, n);
+}
+function lUn(e) {
+  let pluginUsage_4 = ue().pluginUsage;
+  return [e, ...Kx(e)].map(item => pluginUsage_4?.[item]).find(item => item !== void 0);
+}
+function Qvs(e, n) {
+  let lastUsedAt_3 = Date.now();
+  Ce(s => {
+    let g = e.filter(item => s.pluginUsage?.[item]);
+    if (g.length === 0) return s;
+    let pluginUsage_5 = {
+      ...s.pluginUsage
+    };
+    for (let m of g) {
+      let _ = pluginUsage_5[m];
+      if (!_) continue;
+      pluginUsage_5[m] = {
+        ..._,
+        lastUsedAt: lastUsedAt_3,
+        lastUsedNumStartups: s.numStartups
+      };
+    }
+    return {
+      ...s,
+      pluginUsage: pluginUsage_5
+    };
+  }, n);
+}
+function fe(e, n) {
+  let pluginUsageLspGraceAppliedIds = ue().pluginUsageLspGraceAppliedIds;
+  if (e.every(item => pluginUsageLspGraceAppliedIds?.includes(item))) return;
+  let lastUsedAt_4 = Date.now();
+  Ce(g => {
+    let p = new Set(g.pluginUsageLspGraceAppliedIds),
+      m = e.filter(item => !p.has(item));
+    if (m.length === 0) return g;
+    let pluginUsage_6 = {
+      ...g.pluginUsage
+    };
+    for (let S of m) {
+      let h = pluginUsage_6[S];
+      if (!h || h.usageCount > 0) continue;
+      pluginUsage_6[S] = {
+        ...h,
+        lastUsedAt: lastUsedAt_4,
+        lastUsedNumStartups: g.numStartups
+      };
+    }
+    return {
+      ...g,
+      pluginUsage: pluginUsage_6,
+      pluginUsageLspGraceAppliedIds: [...p, ...m]
+    };
+  }, n);
+}
+function dUn(e, n, r) {
+  return {
+    sessionsSinceLastUse: Math.max(0, n - e.lastUsedNumStartups),
+    daysSinceLastUse: Math.max(0, Math.floor((r - e.lastUsedAt) / 86400000))
+  };
+}
+function VR(e, n) {
+  let r = v(e, n) ?? n,
+    s = r ? `${e}@${r.toLowerCase()}` : e;
+  return xn(dMe(s));
+}
+function die(e) {
+  let {
+    name: name,
+    marketplace: marketplace
+  } = fc(e);
+  return L_t(marketplace) || ye(name, marketplace) ? xn(e) : b("third-party");
+}
+function _e(e) {
+  return e === hn && E("tengu_wise_kite", !1);
+}
+function ye(e, n) {
+  return _e(n) && J(e);
+}
+function Zvs(e, n) {
+  return e.length > 0 ? K_(e.map(item => n(item) ? die(item) : b("third-party")).sort()) : void 0;
+}
+function mPe(e) {
+  if (_e(e) && x()) return b(hn);
+  return L_t(e) ? xn(e.toLowerCase()) : b("third-party");
+}
+function KZ(e, n, r) {
+  if (n === oi) return "default-bundle";
+  if (zl(n)) return "official";
+  if (n !== void 0 && I8n.has(n.toLowerCase())) return "community";
+  if (r?.has(e)) return "org";
+  return "user-local";
+}
+function YZ(e) {
+  return e === "official" || e === "default-bundle";
+}
+function Re(e) {
+  return YZ(e) || e === "community";
+}
+function rMt(e, n, invocation_trigger) {
+  let s = n?.type === "prompt" ? n.source : void 0,
+    g = n?.type === "prompt" ? n.pluginInfo : void 0,
+    p = g ? fc(g.repository).marketplace : void 0,
+    _ = s === "builtin" || s === "bundled" || s === "plugin" && zl(p) || kc();
+  wi("skill_activated", {
+    "skill.name": _ ? e : "custom_skill",
+    invocation_trigger: invocation_trigger,
+    ...(s && {
+      "skill.source": s
+    }),
+    ...(n?.kind && {
+      "skill.kind": n.kind
+    }),
+    ...(_ && g && {
+      "plugin.name": g.pluginManifest.name
+    }),
+    ...(_ && p && {
+      "marketplace.name": p
+    })
+  });
+}
+function Xpe(e, n, r, s) {
+  return {
+    ...(e && {
+      skill_source: c(e)
+    }),
+    ...(n && {
+      skill_loaded_from: c(n)
+    }),
+    ...(r && {
+      skill_kind: c(r)
+    }),
+    ...(s && {
+      skill_created_by: c(s)
+    })
+  };
+}
+function Rho(e) {
+  return {
+    skill_name_hash: xn(dMe(e))
+  };
+}
+function Aho(e, n) {
+  if (!e) return {};
+  return {
+    parent_skill_name_hash: xn(dMe(e)),
+    parent_command_name: xho(e, n)
+  };
+}
+function xho(e, n) {
+  return xn(n ? e : "custom");
+}
+function $6({
+  rawName: rawName,
+  canonicalName: canonicalName,
+  isMcp: isMcp,
+  isBuiltIn: isBuiltIn,
+  isBundled: isBundled,
+  isOfficial: isOfficial
+}) {
+  let m = isMcp ? "mcp" : isBuiltIn || isBundled || isOfficial ? rawName : "custom";
+  return {
+    sanitizedName: xn(m),
+    skillNameHash: m === "custom" ? Rho(canonicalName) : {}
+  };
+}
+function $9(e) {
+  if (e.source !== "plugin" || !e.pluginInfo?.repository) return !1;
+  return zl(fc(e.pluginInfo.repository).marketplace);
+}
+function IZt(e) {
+  let pluginInfo = e.pluginInfo;
+  if (!pluginInfo || !$9(e)) return {
+    plugin_name: b(Lv),
+    plugin_repository: b(Lv)
+  };
+  return {
+    plugin_name: xn(pluginInfo.pluginManifest.name),
+    plugin_repository: xn(pluginInfo.repository)
+  };
+}
+function Pho(e, n, r) {
+  if (e.isBuiltin) return "default-enable";
+  if (n?.has(e.name)) return "org-policy";
+  if (e.installationPreference === "required" || e.installationPreference === "auto_install") return "admin-install";
+  if (r.some(item => e.path.startsWith(item.endsWith(me) ? item : item + me))) return "seed-mount";
+  return "user-install";
+}
+function MZt(e, n, r = null) {
+  let s = KZ(e, n, r),
+    g = Re(s) || d7e(e, n) || ye(e, n),
+    p = n === oi ? lKs(e) : void 0;
+  return {
+    plugin_id_hash: VR(e, n),
+    plugin_scope: aUn(n) ? c("directory") : c(s),
+    plugin_name_redacted: g ? xn(e) : b(Lv),
+    marketplace_name_redacted: g && n ? xn(n) : b(Lv),
+    is_official_plugin: YZ(s),
+    ...(p !== void 0 && {
+      plugin_name_previous: xn(p),
+      plugin_id_hash_previous: VR(p, n)
+    })
+  };
+}
+function $q(_PROTO_plugin_name, n, r = null) {
+  let _PROTO_marketplace_name = v(_PROTO_plugin_name, n) ?? n;
+  return {
+    _PROTO_plugin_name: _PROTO_plugin_name,
+    ...(_PROTO_marketplace_name && {
+      _PROTO_marketplace_name: _PROTO_marketplace_name
+    }),
+    ...MZt(_PROTO_plugin_name, n, r)
+  };
+}
+function D(e) {
+  if (e === void 0 || !Sae(e)) return;
+  return xn(e);
+}
+function Fe(e) {
+  if (e === void 0 || !R(e)) return;
+  return xn(e);
+}
+var Ne = /^[0-9a-f]{40}$/;
+function Le(e, n) {
+  if (e === void 0 || !L_t(n)) return;
+  let r = e.toLowerCase();
+  return Ne.test(r) ? xn(r) : void 0;
+}
+function oMt(e, n) {
+  let plugin_version_sha = Le(n, fc(e).marketplace);
+  return plugin_version_sha !== void 0 ? {
+    plugin_version_sha: plugin_version_sha
+  } : {};
+}
+function cie(e) {
+  return e.pluginSource !== void 0 ? uM(e.pluginSource, up()) : {};
+}
+function hkr(e, n, r) {
+  i("tengu_plugin_folder_shadowed", {
+    component: c(r),
+    ...$q(e, n)
+  });
+}
+function ykr(e, n, r) {
+  i("tengu_plugin_renamed", {
+    outcome: c(r.kind),
+    chain_depth: r.kind === "unresolved" ? void 0 : r.chainDepth,
+    reason: r.kind === "unresolved" ? c(r.reason) : void 0,
+    ...$q(e, n)
+  });
+}
+function lct(e, n, r) {
+  let s = new Map();
+  for (let {
+    name: name_2,
+    source: source
+  } of n) {
+    let m = s.get(name_2);
+    if (m === void 0) s.set(name_2, [source]);else m.push(source);
+  }
+  for (let [_PROTO_skill_name, p] of s) {
+    let m = L(p);
+    if (m.length < 2) continue;
+    i("tengu_plugin_name_collision", {
+      item_type: c(e),
+      _PROTO_skill_name: _PROTO_skill_name,
+      item_name_hash: VR(_PROTO_skill_name),
+      source_count: m.length,
+      sources: fl(m),
+      ...(r.resolves && {
+        winner_source: pe(p.at(-1))
+      })
+    });
+  }
+}
+function uM(e, n = null) {
+  let {
+    name: name_3,
+    marketplace: marketplace_2
+  } = fc(e);
+  return $q(name_3, marketplace_2, n);
+}
+function De(e, n = up()) {
+  let {
+      marketplace: marketplace_3
+    } = fc(e.repository),
+    server_plugin_id = D(e.serverPluginId);
+  return {
+    ...$q(e.pluginManifest.name, marketplace_3, n),
+    ...(server_plugin_id !== void 0 && {
+      server_plugin_id: server_plugin_id
+    })
+  };
+}
+function Jpe(e, n) {
+  let skill_id = Fe(e.serverAttribution?.skillId),
+    server_plugin_id_2 = D(e.serverAttribution?.pluginId);
+  return {
+    ...(e.pluginInfo && De(e.pluginInfo, n)),
+    ...(skill_id !== void 0 && {
+      skill_id: skill_id
+    }),
+    ...(server_plugin_id_2 !== void 0 && {
+      server_plugin_id: server_plugin_id_2
+    })
+  };
+}
+function eks(e, n) {
+  for (let r of e) try {
+    let {
+      marketplace: marketplace_4
+    } = fc(r.repository);
+    if (YZ(KZ(r.name, marketplace_4, n))) iCs(r.name, marketplace_4);
+  } catch (error) {
+    l(error);
+  }
+}
+function Se(e) {
+  let n = Oi(e);
+  return n === void 0 || Sp(n);
+}
+function Me(e) {
+  return e.isBuiltin === !0 || Se(e.repository);
+}
+function Oho(e) {
+  return e.type === "prompt" && e.loadedFrom === "plugin" && e.pluginInfo !== void 0 && !Se(e.pluginInfo.repository);
+}
+function tks(e) {
+  let n = new Map();
+  for (let r of e) {
+    if (!Oho(r)) continue;
+    let s = n.get(r.pluginInfo.repository);
+    if (s) s.push(r.name);else n.set(r.pluginInfo.repository, [r.name]);
+  }
+  return n;
+}
+function we(e, n) {
+  if (e === null) return {};
+  let r = e.get(n) ?? [];
+  return {
+    skill_name_hash_count: r.length,
+    ...(r.length > 0 && {
+      skill_name_hashes: xn(r.map(item => dMe(item)).sort().join(","))
+    })
+  };
+}
+function nks(e, n, r, s, g) {
+  let p = kc(),
+    numStartups = ue().numStartups,
+    _ = Date.now(),
+    S = [],
+    h = e.filter(item => item.lspServers && Object.keys(item.lspServers).length > 0).map(item => item.repository);
+  if (h.length > 0) fe(h, g);
+  for (let d of e) {
+    let {
+        marketplace: marketplace_5
+      } = fc(d.repository),
+      A = lUn(d.repository);
+    if (!A) S.push(d.repository);
+    let {
+        sessionsSinceLastUse: he,
+        daysSinceLastUse: Pe
+      } = A ? dUn(A, numStartups, _) : {
+        sessionsSinceLastUse: 0,
+        daysSinceLastUse: 0
+      },
+      M = KZ(d.name, marketplace_5, n),
+      enabled_via = Pho(d, n, r),
+      skill_path_count = (d.skillsPath ? 1 : 0) + (d.skillsPaths?.length ?? 0),
+      command_path_count = (d.commandsPath ? 1 : 0) + (d.commandsPaths?.length ?? 0),
+      agent_path_count = (d.agentsPath ? 1 : 0) + (d.agentsPaths?.length ?? 0),
+      server_plugin_id_3 = D(d.serverPluginId),
+      has_hooks = d.hooksConfig !== void 0 || d.modulePath !== void 0,
+      T = YZ(M) || p;
+    wi("plugin_loaded", {
+      "plugin.name": T ? d.name : Lv,
+      ...(marketplace_5 && {
+        "marketplace.name": T ? marketplace_5 : Lv
+      }),
+      ...(T && d.manifest.version && {
+        "plugin.version": d.manifest.version
+      }),
+      "plugin.scope": M,
+      enabled_via: enabled_via,
+      plugin_id_hash: VR(d.name, marketplace_5),
+      has_hooks: has_hooks,
+      has_mcp: !d.skipMcpDiscovery && d.mcpServers !== void 0,
+      host_owned_mcp: d.skipMcpDiscovery === !0,
+      skill_path_count: skill_path_count,
+      command_path_count: command_path_count,
+      agent_path_count: agent_path_count,
+      safe_mode: String(vr())
+    }), i("tengu_plugin_enabled_for_session", {
+      ...$q(d.name, marketplace_5, n),
+      ...(server_plugin_id_3 !== void 0 && {
+        server_plugin_id: server_plugin_id_3
+      }),
+      enabled_via: c(enabled_via),
+      ...(d.installationPreference !== void 0 && {
+        installation_preference: c(d.installationPreference)
+      }),
+      skill_path_count: skill_path_count,
+      command_path_count: command_path_count,
+      agent_path_count: agent_path_count,
+      ...we(Me(d) ? null : s, d.repository),
+      has_mcp: !d.skipMcpDiscovery && d.mcpServers !== void 0,
+      host_owned_mcp: d.skipMcpDiscovery === !0,
+      has_lsp: d.lspServers !== void 0,
+      has_hooks: has_hooks,
+      has_settings: d.settings !== void 0,
+      sessions_since_last_use: he,
+      days_since_last_use: Pe,
+      safe_mode: vr(),
+      ...(d.settings && {
+        settings_keys: fl(Object.keys(d.settings).filter(q))
+      }),
+      ...(d.manifest.version && {
+        version: zi(d.manifest.version)
+      }),
+      ...oMt(d.repository, d.gitCommitSha)
+    });
+  }
+  if (S.length > 0) gkr(S, g);
+}
+var Oe = ["network", "not-found", "permission", "policy", "validation", "in-use", "unknown"],
+  Be = new Set(Oe);
+function Ge(e) {
+  return typeof e === "string" && Be.has(e);
+}
+function U6(e) {
+  if (typeof e === "object" && e !== null && "pluginCommandErrorCategory" in e && Ge(e.pluginCommandErrorCategory)) return e.pluginCommandErrorCategory;
+  let n = String(e?.message ?? e),
+    r = d1(e);
+  if (typeof r === "string" && (K.has(r) || r.startsWith(OZt))) return "policy";
+  if (/ENOTFOUND|ECONNREFUSED|EAI_AGAIN|ETIMEDOUT|ECONNRESET|network|Could not resolve|Connection refused|timed out/i.test(n)) return "network";
+  if (/\b404\b|not found|does not exist|no such plugin/i.test(n)) return "not-found";
+  if (/\b40[13]\b|EACCES|EPERM|permission denied|unauthorized/i.test(n)) return "permission";
+  if (/blocked by your organization'?s policy|required by your organization/i.test(n)) return "policy";
+  if (/(?:the command|it|nothing) was not run|nothing was run|command that installs it was not run|is ignored inside a Claude Code session|Command-sourced plugins are disabled|not supported on Windows yet/i.test(n)) return "policy";
+  if (/invalid|malformed|schema|validation|parse error/i.test(n)) return "validation";
+  return "unknown";
+}
+function Iho(e) {
+  let n = e.toLowerCase();
+  return BJ.has(n) ? xn(n) : b(Lv);
+}
+function rks(e, n, r) {
+  for (let s of e) {
+    let {
+        name: name_4,
+        marketplace: marketplace_6
+      } = fc(s.source),
+      m = "plugin" in s && s.plugin ? s.plugin : name_4;
+    i("tengu_plugin_load_failed", {
+      error_category: c(s.type),
+      cache_only: r?.cacheOnly ?? !1,
+      ...("component" in s && {
+        component: c(s.component)
+      }),
+      ...("errno" in s && {
+        errno: pS(s.errno)
+      }),
+      ...{
+        is_directory: aUn(marketplace_6),
+        removed_from_directory: "removedFromDirectory" in s && s.removedFromDirectory === !0
+      },
+      ...$q(m, marketplace_6, n),
+      ...(s.type === "marketplace-load-failed" && s.untrustedReservedName === !0 && {
+        plugin_name_redacted: b(Lv),
+        marketplace_name_redacted: Iho(s.marketplace),
+        plugin_scope: c("user-local"),
+        is_official_plugin: !1
+      })
+    });
+  }
+}
+export { PZt, act, OZt, Nk, qvs, aUn, H3e, Tho, Kvs, Yvs, Xvs, TC, Cho, Jvs, gkr, nMt, lUn, Qvs, dUn, VR, die, Zvs, mPe, KZ, YZ, rMt, Xpe, Rho, Aho, xho, $6, $9, IZt, Pho, MZt, $q, oMt, cie, hkr, ykr, lct, uM, Jpe, eks, Oho, tks, nks, U6, Iho, rks };

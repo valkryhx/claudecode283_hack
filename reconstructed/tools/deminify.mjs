@@ -36,8 +36,8 @@ const generate = _generate.default ?? _generate;
 const t = _types.default ?? _types;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, "..");
-const MODDIR = path.resolve(ROOT, "..", "claudecode283", "modules");
+const ROOT = process.env.RE_ROOT ? path.resolve(process.env.RE_ROOT) : path.resolve(__dirname, "..");
+const MODDIR = process.env.RE_MODULES ? path.resolve(process.env.RE_MODULES) : path.resolve(ROOT, "..", "claudecode283", "modules");
 const OUT = path.join(ROOT, "deminified");
 const FULLDIR = path.join(ROOT, "full");
 fs.mkdirSync(OUT, { recursive: true });

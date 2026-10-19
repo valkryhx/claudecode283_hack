@@ -1,0 +1,900 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Fe, ws } from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import { Br, $Jn, det, uet } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { d } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { lle, _$t, lht, S0o, YE, gp, eMe, np as readAccount, ue } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import { ln } from "B:/~BUN/root/chunk-jpdys232.js";
+import { Bi, t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { l } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { I } from "B:/~BUN/root/chunk-je1b1drr.js";
+import { mDe, Cu, uI, hDe } from "B:/~BUN/root/chunk-gyr2a6wz.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import { Da, S4, ta, dm, xqs, CBt, GQe, Qun, h8n, u0e, NB, Zun, tpn, Pqs, npn, qQe, b$o, KQe, S$o, y_t, Oqs, TUo, AUo, xUo, IUo, eL, MUo, pv, LUo, NUo, N_ } from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import { xe, xi } from "B:/~BUN/root/chunk-8pmnanyd.js";
+import { dr, Wo, nn } from "B:/~BUN/root/chunk-6a9s3k2y.js";
+import { N5n, IB, YFo, t_t, QVs, BHr, fn, me, xun, OHo } from "B:/~BUN/root/chunk-1gpjpba6.js";
+import { eQ, bfn, N2, a1o, OUr, wb, nQ } from "B:/~BUN/root/chunk-07c8fw5z.js";
+import { H7e } from "B:/~BUN/root/chunk-pej55jax.js";
+import { Pyt, JFr, QFr, Hge, XWe } from "B:/~BUN/root/chunk-5g9fghtv.js";
+import { jT } from "B:/~BUN/root/chunk-7qeqkjr8.js";
+import { K$s, ly } from "B:/~BUN/root/chunk-vfvzs0rk.js";
+import { aUs, dUs, cUs, uUs } from "B:/~BUN/root/chunk-9929fpp1.js";
+import { yIe } from "B:/~BUN/root/chunk-r0sre1ss.js";
+import { Pt } from "B:/~BUN/root/chunk-j0ghr71r.js";
+import { o, M, T, u, U } from "B:/~BUN/root/chunk-g3snhg6n.js";
+import { W2 } from "B:/~BUN/root/chunk-eya7pdzx.js";
+import { xl } from "B:/~BUN/root/chunk-648jq7hr.js";
+function Yj() {
+  return a.CLAUDE_CODE_REMOTE && a.CLAUDE_CODE_REMOTE_HERMETIC_MODE;
+}
+function W(e) {
+  try {
+    return new URL(e).host;
+  } catch {
+    return;
+  }
+}
+function HIr(e = a.ANTHROPIC_BASE_URL || H7e()) {
+  if (!e) return !0;
+  let n = W(ln().BASE_API_URL);
+  return n !== void 0 && W(e) === n;
+}
+function O3() {
+  TUo();
+}
+function W$s() {
+  xUo(w());
+}
+function w() {
+  if (!S4()) return {
+    kind: "unreadable"
+  };
+  try {
+    return {
+      kind: "read",
+      orgs: yIe()
+    };
+  } catch {
+    return {
+      kind: "unreadable"
+    };
+  }
+}
+function BC() {
+  let e = eL();
+  if (e !== void 0) return e;
+  let {
+    eligible: eligible,
+    ineligibleReason: ineligibleReason,
+    hybridOrganizationUuid: hybridOrganizationUuid,
+    hybridSignInEnded: hybridSignInEnded
+  } = ae();
+  if (NUo(hybridOrganizationUuid ?? null, hybridSignInEnded === !0), eligible && hybridOrganizationUuid === void 0) AUo({
+    readAccount: readAccount,
+    covers: xe() !== "gateway" || S0o() && !det() && !uet(),
+    orgPin: w()
+  });
+  let _ = a.CLAUDE_CODE_EVAL_CONFINED === !0,
+    E = !eligible && _;
+  LUo(E);
+  let C = eligible || E;
+  return IUo(C, C ? void 0 : ineligibleReason);
+}
+function Ee() {
+  return $Ir() || gp() && (eMe() === null || xun());
+}
+function _e() {
+  let ineligibleReason_2 = uUs();
+  return ineligibleReason_2 === null ? {
+    eligible: !0
+  } : {
+    eligible: !1,
+    ineligibleReason: ineligibleReason_2
+  };
+}
+function $Ir() {
+  if (!gp()) return !1;
+  let e = eMe();
+  return e === "enterprise" || e === "team" || MUo(OHo, t_t);
+}
+function ae() {
+  if (pv()) return {
+    eligible: !0
+  };
+  if (Yj()) return {
+    eligible: !1,
+    ineligibleReason: "hermetic_remote_session"
+  };
+  if (dm()) return _e();
+  if (xe() === "gateway") {
+    let i = Br(),
+      eligible_2 = $Jn(i);
+    return {
+      eligible: eligible_2,
+      ineligibleReason: eligible_2 ? void 0 : i?.hostVerdict !== void 0 ? "host_gateway_not_accepted" : "unpinned_gateway"
+    };
+  }
+  let ineligibleReason_3 = xe() !== "firstParty" ? "third_party_provider" : !xi() ? "custom_base_url" : void 0;
+  if (ineligibleReason_3) return {
+    eligible: !1,
+    ineligibleReason: ineligibleReason_3
+  };
+  let CLAUDE_CODE_ENTRYPOINT = a.CLAUDE_CODE_ENTRYPOINT;
+  if (CLAUDE_CODE_ENTRYPOINT === "local-agent" || hDe() || CLAUDE_CODE_ENTRYPOINT?.startsWith("claude-coworker")) return {
+    eligible: !1,
+    ineligibleReason: "sandboxed_entrypoint"
+  };
+  let r = !1;
+  try {
+    r = lht();
+  } catch (error) {
+    t(`Remote settings: could not read the profile store (${d(error)}); not treating this session as profile-authenticated`, {
+      level: "warn"
+    });
+  }
+  if (r) return HIr() ? {
+    eligible: !0
+  } : {
+    eligible: !1,
+    ineligibleReason: "profile_base_url_mismatch"
+  };
+  if (Ee()) return {
+    eligible: !0
+  };
+  try {
+    let {
+      key: key
+    } = YE({
+      skipRetrievingKeyFromApiKeyHelper: !0
+    });
+    if (key) return {
+      eligible: !0
+    };
+  } catch {}
+  if (_$t() !== void 0) return {
+    eligible: !0
+  };
+  return {
+    eligible: !1,
+    ineligibleReason: gp() ? "unsupported_subscription" : "no_auth"
+  };
+}
+var Ce = ["CLAUDE_CODE_REMOTE", "CLAUDE_CODE_IS_COWORK"];
+function sje(e) {
+  return Ce.some(item => e ? Fe(e[item]) : a[item]);
+}
+function m(e, n) {
+  return xqs.test(e) ? "invalid-name" : typeof n !== "string" ? "non-string-value" : n.includes("\x00") ? "nul-in-value" : void 0;
+}
+var PFt = {
+  "invalid-name": "it isn't a valid environment variable name",
+  "non-string-value": "its value isn't a string",
+  "nul-in-value": "its value contains a NUL character"
+};
+function cKn(kept) {
+  let n = Object.entries(kept),
+    dropped = n.flatMap(([name, _]) => {
+      let problem = m(name, _);
+      return problem === void 0 ? [] : [{
+        name: name,
+        problem: problem
+      }];
+    });
+  if (dropped.length === 0) return {
+    kept: kept,
+    dropped: dropped
+  };
+  let i = new Set(dropped.map(item => item.name));
+  return {
+    kept: Object.fromEntries(n.filter(([s]) => !i.has(s))),
+    dropped: dropped
+  };
+}
+var k = 200;
+function de(e) {
+  return e === 1 ? "1 character" : `${e} characters`;
+}
+function L(e) {
+  return Bi(e).slice(1, -1).replace(/[^\x20-\x7e]/g, n => `\\u${n.charCodeAt(0).toString(16).padStart(4, "0")}`);
+}
+function zmt(e) {
+  let n = e.indexOf("="),
+    r = n === -1 ? e : e.slice(0, n),
+    i = r.length > k,
+    s = `"${L(i ? r.slice(0, k) : r)}"${i ? "\u2026" : ""}`;
+  return n === -1 ? s : `${s} (then '=' and ${de(e.length - n - 1)}, not shown)`;
+}
+var Oe = null;
+function x(e) {
+  Oe = e;
+}
+var Y = () => o().trim().min(1).max(100).refine(e => Pt(e) === e),
+  zn = f(() => u({
+    lead: Y(),
+    worker: Y(),
+    effort: U(ta).optional(),
+    coordinator: M().default(!0),
+    label: o().trim().min(1).max(60).default("Mix"),
+    prompt: o().trim().min(1).max(4000).optional(),
+    whenToUse: o().trim().max(4000).optional(),
+    removePromptStrings: T(o().max(2000).refine(e => e.trim() !== "")).max(20).optional()
+  }));
+function uKn() {
+  return;
+}
+function v() {}
+var le = new Set(["ANTHROPIC_UNIX_SOCKET", "ANTHROPIC_BASE_URL", "ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN", "CLAUDE_CODE_OAUTH_TOKEN", ...NB.filter(item => item.startsWith("CLAUDE_CODE_ARTIFACT") || u0e(item))]);
+function j(e) {
+  if (!e || !process.env.ANTHROPIC_UNIX_SOCKET) return e || {};
+  let n = {};
+  for (let [r, i] of Object.entries(e)) if (!le.has(r.toUpperCase())) n[r] = i;
+  return n;
+}
+var P = Object.freeze({
+  coworkCloud: !1,
+  managedByHost: !1,
+  managedByHostFlag: !1,
+  desktopHost: !1,
+  hostOrchestrated: !1,
+  storedLoginPinned: !1
+});
+function y() {
+  let managedByHostFlag = Fe(process.env.CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST),
+    desktopHost = Cu(),
+    CLAUDE_CODE_ENVIRONMENT_KIND = process.env.CLAUDE_CODE_ENVIRONMENT_KIND;
+  return {
+    coworkCloud: dm(),
+    managedByHost: managedByHostFlag || !!process.env.CLAUDE_CODE_HOST_AUTH_ENV_VAR,
+    managedByHostFlag: managedByHostFlag,
+    desktopHost: desktopHost,
+    hostOrchestrated: desktopHost || CLAUDE_CODE_ENVIRONMENT_KIND === "byoc",
+    storedLoginPinned: IB()
+  };
+}
+var De = new Set(["policySettings", "projectSettings", "localSettings"]),
+  Se = [],
+  Ae = [],
+  ce = [],
+  ne = [],
+  UIr = new Set([jT, "CLAUDE_CODE_CUSTOM_OAUTH_URL", "CLAUDE_CODE_SYNC_SKILLS", "CLAUDE_CODE_SYNC_PLUGINS", "CLAUDE_CODE_TRANSCRIPT_LOCAL_GC", "CLAUDE_CODE_CCR_SURFACE", "CLAUDE_CODE_RELAUNCH_PROACTIVITY_BASELINE", "CLAUDE_CODE_RELAUNCH_PROACTIVITY_DECIDED", "CLAUDE_CODE_RELAUNCH_PROACTIVITY_EVER_ON", "CLAUDE_CODE_RELAUNCH_PROACTIVITY_LEVEL", "CLAUDE_CODE_DISABLE_PROACTIVITY", "CLAUDE_CODE_DISABLE_ATTACHMENTS", "CLAUDE_CODE_TETHER_LIVE", "CLAUDE_CODE_BRIDGE_CHILD_AUTO_DEFAULT", "CLAUDE_CODE_BRIDGE_CHILD_ARTIFACT", "CLAUDE_CODE_BRIDGE_CHILD_MACHINE_SETTINGS", "CLAUDE_CODE_MCP_APPS_HOST", "CLAUDE_CODE_COORDINATOR_MODE", "CLAUDE_CODE_COORDINATOR_EXTRA_TOOLS", "CLAUDE_CODE_HOST_PROMPT_SUPERSEDES_RECORD", "CLAUDE_CODE_REMOTE_TOOLS_PIN_STORED_LOGIN", "CLAUDE_CODE_REMOTE_TOOLS_HOST_ALLOWS_UNATTENDED", "CLAUDE_CODE_3P_PROBE_WROTE_SONNET_DEFAULT", "CLAUDE_CODE_3P_PROBE_WROTE_OPUS_DEFAULT", "CLAUDE_CODE_3P_PROBE_WROTE_HAIKU_DEFAULT", "CLAUDE_CODE_3P_SEEDED_SONNET_DEFAULT", "CLAUDE_CODE_3P_SEEDED_OPUS_DEFAULT", "CLAUDE_CODE_SANDBOXED", "CLAUDE_CODE_ATTRIBUTION_STATUS_TIMEOUT_MS", "CLAUDE_CODE_TOOL_USE_ID", "CLAUDE_CODE_DISABLE_ATTRIBUTION_CROSS_REPO", "CLAUDE_CODE_DISABLE_WEB_FETCH", "CLAUDE_CODE_DISABLE_FILE_MENTIONS", "CCR_SESSION_PROFILE", "CLAUDE_CODE_MCP_STARTUP_WAIT_MS", "CLAUDE_CODE_MCP_CONNECTOR_PREWAIT_MS", "CLAUDE_CODE_MCP_PREWAIT_SERVERS", "CLAUDE_CODE_MCP_PREWAIT_SERVERS_MS", "CLAUDE_CODE_SKILL_PROPOSALS", "CLAUDE_CODE_PLUGIN_CACHE_DIR", "CLAUDE_CODE_PLUGIN_SEED_DIR", "CLAUDE_CODE_PLUGIN_DIRS", "CLAUDE_CODE_PLUGIN_DIR_WATCH", "CLAUDE_CODE_ENABLE_FUNCTION_HOOKS", "CLAUDE_CODE_PLUGIN_ATTRIBUTION", "CLAUDE_CODE_SKILL_ATTRIBUTION", "CLAUDE_CODE_MODEL_CATALOG_URL", "CLAUDE_CODE_CLIENT_DATA_URL", "CLAUDE_CODE_ALLOW_OTHER_MODELS", "CLAUDE_CODE_REMOVE_PROMPT_STRINGS", ...Pyt, "CLAUDE_CODE_SUBSCRIPTION_TYPE", "CLAUDE_CODE_RATE_LIMIT_TIER", "CLAUDE_CODE_SANDBOX_LEAVE_DENIES_TO_SRT_WIN", "CLAUDE_CODE_SANDBOX_LEAVE_PARENT_FOLDERS_ALONE", "CLAUDE_CODE_NANKEEN_KESTREL", "CLAUDE_CODE_DISABLE_DANGEROUS_RM_TIMEOUT", "CLAUDE_CODE_DISABLE_SUBSTITUTION_RM_PROMPT", "CLAUDE_CODE_DISABLE_INLINE_SHELL_RM_PROMPT", "CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT", "CLAUDE_CODE_DISABLE_POWERSHELL_CMD_RM_DENY", "CLAUDE_CODE_FEDERATION_CACHE_DIR", "ANTHROPIC_CONFIG_DIR", "XDG_CONFIG_HOME", "HOME", "APPDATA", "USERPROFILE", "HOMEDRIVE", "HOMEPATH", "PROGRAMDATA", "ALLUSERSPROFILE", "SYSTEMROOT", "WINDIR", "COMSPEC", "SYSTEMDRIVE", "PROGRAMFILES", "PROGRAMFILES(X86)", "PROGRAMW6432", "LOCALAPPDATA", "PATHEXT", "COMMONPROGRAMFILES", "COMMONPROGRAMFILES(X86)", "COMMONPROGRAMW6432", "PSMODULEPATH", "HOMESHARE", "ONEDRIVE", "ONEDRIVECONSUMER", "ONEDRIVECOMMERCIAL", "CDPATH", "PWD", "XDG_DATA_HOME", "XDG_CACHE_HOME", "XDG_STATE_HOME", "CLAUDE_CODE_SAFE_MODE", "CLAUDE_CODE_SIMPLE", "CLAUDE_CODE_HARBOR_KITE", "CLAUDE_CODE_HARBOR_KITE_CLOUD", "CLAUDE_CODE_HARBOR_KITE_PACING_OFF", "CLAUDE_CODE_SILENT_TURN_REMINDER", "CLAUDE_CODE_SILENT_TURN_REMINDER_TURNS", "CLAUDE_CODE_SILENT_TURN_REMINDER_SECONDS", "CLAUDE_CODE_SILENT_TURN_REMINDER_TEXT", "CLAUDE_CODE_MODEL_CAPABILITIES", "CLAUDE_CODE_ARTIFACT_ROOM", "CLAUDE_CODE_BASH_EDIT_DIFF", "CLAUDE_CODE_FORWARD_USER_INTENT", "CLAUDE_CODE_WHIMSICAL_ELEPHANT", "CLAUDE_CODE_ARTIFACT_PRESENCE", "CLAUDE_CODE_ARTIFACT_OPEN_ACTION", "CLAUDE_CODE_ARTIFACT_REPL", "CLAUDE_CODE_ARTIFACT_PREVIEW_EMULATOR", "USER_TYPE", "CLAUDE_CODE_MESSAGING_SOCKET", "CLAUDE_CODE_MESSAGING_TOKEN", "CLAUDE_CODE_DISABLE_ADMIN_ENV_UNION", "CLAUDE_CODE_MANAGED_SETTINGS_PATH", "CLAUDE_CODE_TOASTY_THIMBLE", "CLAUDE_CODE_GENTLE_PARASOL", "CLAUDE_CODE_STREAMED_BUMBLEBEE_TEXT", "CLAUDE_CODE_LEGACY_BUNDLE", "CCR_ENABLE_BUNDLE", "CCR_FORCE_BUNDLE", ...ne.flatMap(item => item.names), "GITHUB_ACTIONS", "RUNNER_ENVIRONMENT", "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB", "ENABLE_BETA_TRACING_DETAILED", "BETA_TRACING_ENDPOINT", "OTEL_LOG_RAW_API_BODIES", ...Qun, "CLAUDE_PTY_RECORD", "CLAUDE_CODE_DEBUG_LOGS_DIR", "CLAUDE_CODE_DIAGNOSTICS_FILE", "CLAUDE_CODE_PERFETTO_TRACE", "CLAUDE_CODE_FRAME_TIMING_LOG", "CLAUDE_CODE_REMOTE_MEMORY_DIR", "CLAUDE_COWORK_MEMORY_PATH_OVERRIDE", "AUTOMODE_DECISION_LOG", "CLAUDE_CONFIG_DIR", "CLAUDE_SECURESTORAGE_CONFIG_DIR", "CLAUDE_CODE_TMPDIR", "CLAUDE_TMPDIR", "TMPDIR", "TMP", "TEMP", "XDG_RUNTIME_DIR", "CLAUDE_JOB_DIR", "CLAUDE_CODE_DISABLE_BG_STABLE_PATH", "CLAUDE_CODE_REMOTE_TOOLS_FORWARD", "CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS", "CLAUDE_AFK_TIMEOUT_MS", "CLAUDE_AFK_COUNTDOWN_MS", "CLAUDE_CHROME_CLASSIFIER_FLOOR", "CLAUDE_CHROME_PERMISSION_MODE", "CLAUDE_CODE_ENABLE_CFC", "CLAUDE_CODE_WORKFLOW_SUBAGENT_MODEL", ...Se]),
+  ge = [...ne.flatMap(item => item.prefixes), ...Ae];
+function BIr(e) {
+  let n = e.toUpperCase();
+  return UIr.has(n) || ge.some(item => n.startsWith(item));
+}
+function X(e, n, r, i, s) {
+  if (!e || !GQe(n)) return e;
+  let _ = !0,
+    E;
+  for (let C of Object.keys(e)) {
+    if (!BIr(C) || h8n(C, e[C], i) || S$o.has(C) && Fe(e[C]) || oe(C.toUpperCase(), e[C])) continue;
+    if (E ??= {
+      ...e
+    }, delete E[C], r?.has(C) === !1) {
+      r.add(C);
+      let D = n === "localSettings" ? ".claude/settings.local.json" : ".claude/settings.json",
+        A = K.get(C.toUpperCase());
+      t(V.has(C.toUpperCase()) || re.has(C.toUpperCase()) || ie.has(C.toUpperCase()) ? `${C} in ${D} is ignored: no settings file can set this key, only the environment Claude Code is started with or Claude Code itself.` : A !== void 0 ? `${C} in ${D} is ignored: a project's settings can only set it to "${A}". Set any other value in ~/.claude/settings.json or managed settings; in a remote or Cowork session, only in the environment Claude Code is started with.` : `${C} in ${D} is ignored \u2014 project-scoped settings can't set this key. Set it in ~/.claude/settings.json or managed settings instead.`, {
+        level: "warn"
+      });
+    }
+  }
+  return E ?? e;
+}
+var pe = {
+  ...PFt,
+  "non-string-value": "its value isn't a string, a number or a boolean"
+};
+function h(e, n, r) {
+  if (!e) return e;
+  let i;
+  for (let [s, _] of Object.entries(e)) {
+    let E = _,
+      C = typeof E === "string" ? E : typeof E === "number" || typeof E === "boolean" ? String(E) : void 0,
+      D = m(s, C);
+    if (D === void 0) {
+      if (C !== void 0 && C !== E) i ??= {
+        ...e
+      }, i[s] = C;
+      continue;
+    }
+    i ??= {
+      ...e
+    }, delete i[s];
+    let A = pe[D],
+      c = zmt(s),
+      R = `${n}:${A}:${c}`;
+    if (r !== void 0 && !r.has(R)) r.add(R), t(`Env key ${c} from ${n} is ignored: ${A}.`, {
+      level: "warn"
+    });
+  }
+  return i ?? e;
+}
+var V = new Set([...KQe, "CLAUDE_CODE_HOST_GATEWAY_LINEAGE", "CLAUDE_CODE_HOST_CREDS_FILE", "CLAUDE_CODE_HOST_AUTH_ENV_VAR", "CLAUDE_BG_AUTH_SNAPSHOT_PATH", "CLAUDE_BG_SOCKET_TOKENS_PATH", ...Zun, "CLAUDE_CODE_MESSAGING_SOCKET", "CLAUDE_CODE_MESSAGING_TOKEN", "CLAUDE_CODE_DISABLE_ADMIN_ENV_UNION", "CLAUDE_CODE_DISABLE_DANGEROUS_RM_TIMEOUT", "CLAUDE_CODE_DISABLE_SUBSTITUTION_RM_PROMPT", "CLAUDE_CODE_DISABLE_INLINE_SHELL_RM_PROMPT", "CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT", "CLAUDE_CODE_DISABLE_POWERSHELL_CMD_RM_DENY", "CLAUDE_CODE_SANDBOX_LEAVE_PARENT_FOLDERS_ALONE", "CLAUDE_CODE_TRANSCRIPT_LOCAL_GC", "CLAUDE_CODE_MANAGED_SETTINGS_PATH", "CLAUDE_CODE_EVAL_CONFINED", "CLAUDE_CODE_SANDBOX_LEAVE_DENIES_TO_SRT_WIN", "CLAUDE_CODE_TUI_TRIAL", "CLAUDE_RELAUNCH_SESSION_ADD_DIRS", "CLAUDE_BG_SESSION_PERMISSION_RULES", "CLAUDE_BG_GATEWAY_WITHHELD", "CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR", "CLAUDE_SESSION_INGRESS_TOKEN_FILE", "CLAUDE_CODE_SESSION_ACCESS_TOKEN", "CLAUDE_CODE_SESSION_KIND", "CLAUDE_CODE_SANDBOXED", "CLAUDE_BG_WORKSPACE_TRUSTED", "CLAUDE_BG_CARRIED_PROMPTS_SHA256", "CLAUDE_CODE_RELAUNCH_HOME_TRUST", "CLAUDE_BRIDGE_REATTACH_SESSION", "CLAUDE_CODE_PROJECT_DIR_NAME", "CLAUDE_PTY_HOST_EXEC", "CLAUDE_BG_PTY_AUTH", "CLAUDE_BG_RV_AUTH", "CLAUDE_BG_CLAIM_AUTH", "CLAUDE_BG_RENDEZVOUS_SOCK", "CLAUDE_BG_BACKEND", "CLAUDE_BG_TCC_DISCLAIMED", "CLAUDE_PTY_HOST_NO_STABLE_PATH"]),
+  Re = new Set(["CLAUDE_CODE_TRANSCRIPT_LOCAL_GC"]);
+function Te(e, n, r) {
+  return r === "policySettings" && Re.has(e.toUpperCase()) && ws(n);
+}
+var fe = new Set(["CLAUDE_CODE_ATTRIBUTION_HEADER"]);
+function Le(e, n, r) {
+  return r === "policySettings" && fe.has(e.toUpperCase()) && ws(n) && uI() && $Jn(Br()) && ws(N_()?.env?.[e]);
+}
+function N(e, n, r, i = !1) {
+  if (e === void 0 || e.has(n)) return;
+  e.add(n);
+  let s = L(n);
+  t(i ? `Ignoring ${s} from ${r} \u2014 repo-committed settings can't re-point the TLS/proxy channel of a session whose credential comes from the host. Set it in ~/.claude/settings.json or managed settings instead.` : `Ignoring ${s} from ${r} \u2014 this session's provider routing is managed by the host (CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST or a host-auth-callback marker), so settings-sourced provider/auth configuration does not apply.`, {
+    level: "warn"
+  });
+}
+function z(e, n, r, i) {
+  if (!e) return {};
+  let s = r.managedByHost || r.desktopHost && De.has(n),
+    _ = {};
+  for (let [E, C] of Object.entries(e)) {
+    if (V.has(E.toUpperCase()) && !Te(E, C, n)) continue;
+    if (r.coworkCloud && b$o(E)) {
+      N(i, E, n);
+      continue;
+    }
+    if (!s) {
+      _[E] = C;
+      continue;
+    }
+    if (tpn(E) && (r.managedByHost || !Pqs(E))) {
+      if (r.managedByHost) N(i, E, n);
+      continue;
+    }
+    if (r.managedByHost && E.toUpperCase() === "ANTHROPIC_CUSTOM_HEADERS") {
+      N(i, E, n);
+      continue;
+    }
+    if (r.managedByHostFlag && (!r.desktopHost || GQe(n)) && (npn(E) || qQe(E))) {
+      N(i, E, n, r.desktopHost);
+      continue;
+    }
+    _[E] = C;
+  }
+  return _;
+}
+function J(e, n, r, i) {
+  if (!e || !r) return e || {};
+  let s = {},
+    _ = [];
+  for (let [E, C] of Object.entries(e)) {
+    if (!r.has(E.toUpperCase()) || Le(E, C, n)) {
+      s[E] = C;
+      continue;
+    }
+    if (i && process.env[E] !== C) _.push(E);
+  }
+  if (i && _.length > 0) he(_, n, i);
+  return s;
+}
+function he(e, n, r) {
+  let i = e.filter(item => {
+    let E = `${n}:${item}`;
+    if (r.has(E)) return !1;
+    return r.add(E), !0;
+  });
+  if (i.length === 0) return;
+  let s = i.map(L).join(", ");
+  t(`Ignoring ${s} from ${n}: the environment this session was launched with already sets ${i.length === 1 ? "it" : "them"}, and when the desktop app or a runner starts the session, the launch environment takes precedence over settings.`, {
+    level: "warn"
+  });
+}
+var Ue = new Set(["CLAUDE_CODE_SUBPROCESS_ENV_SCRUB", "CLAUDE_CODE_PERFORCE_MODE"]),
+  Ie = new Set(Qun);
+function te(e, n) {
+  let r = e.toUpperCase();
+  return xl() && !(y_t(e, n) && !tpn(e) && !XWe(r) && !Ie.has(r)) && !(Ue.has(r) && Fe(n));
+}
+function B(e) {
+  return e === "NO_COLOR" || e === "FORCE_COLOR";
+}
+function b(e, n) {
+  if (!e) return {};
+  let r = {};
+  for (let [i, s] of Object.entries(e)) {
+    let _ = i.toUpperCase();
+    if (B(_) || te(i, s)) {
+      n[Hge(n, i)] = s;
+      continue;
+    }
+    delete n[Hge(n, i)], r[i] = s;
+  }
+  return r;
+}
+var ie = new Set(["CLAUDE_CODE_REMOTE", "CLAUDE_CODE_REMOTE_HERMETIC_MODE", "CLAUDE_CODE_HOSTED_DESKTOP", "CLAUDE_CODE_ENVIRONMENT_KIND", "CLAUDE_CODE_REMOTE_ENVIRONMENT_TYPE", "CLAUDE_CODE_BRIDGE_CHILD_AUTO_DEFAULT", "CLAUDE_CODE_BRIDGE_CHILD_ARTIFACT", "CLAUDE_CODE_BRIDGE_CHILD_MACHINE_SETTINGS", "CLAUDE_CODE_BRIDGE_MCP_CARRIER", "CLAUDE_CODE_BRIDGE_PROMPT_SHA256", "CLAUDE_CODE_APPEND_PROMPT_HEAD", "CLAUDE_CODE_BRIDGE_OWNER_ACCOUNT_UUID", "CLAUDE_CODE_BRIDGE_OWNER_ORG_UUID", "CLAUDE_CODE_BRIDGE_SOURCE_DIR", "VOICE_STREAM_BASE_URL", "CLAUDE_CODE_POLL_EVENTS", "CLAUDE_CODE_POLL_EVENT_DECLARATIONS", "CLAUDE_CODE_ACCOUNT_UUID", "CLAUDE_CODE_ORGANIZATION_UUID", "CLAUDE_CODE_USER_EMAIL", "CLAUDE_CODE_CONTAINER_ID", "CLAUDE_CODE_SESSION_ID", "CLAUDE_CODE_SYNC_SESSION_REFS", "CLAUDE_CODE_SKILL_PROPOSALS", "CLAUDE_CODE_REMOTE_SESSION_ID", "CLAUDE_CODE_REMOTE_MCP_CONFIG", "CLAUDE_CODE_HOVER_REST", "CCR_AGENT_PROXY_ENABLED", "CCR_AGENT_PROXY_RELAY_MODE", "CCR_AGENT_PROXY_INCLUDE_HOSTS", "CCR_AGENT_PROXY_RECEIVE_GATE_DISABLED", "CCR_AGENT_PROXY_UPLOAD_GATE_DISABLED", "CCR_AGENT_PROXY_NO_PROXY_LOCAL_ONLY", "CCR_AGENT_PROXY_CA_WATCH_ENABLED", "CCR_AGENT_PROXY_CA_CERT_B64", "CCR_AGENT_PROXY_FRAME_HOSTS", "CCR_AGENT_PROXY_STANDALONE_URL", "AGENT_PROXY_URL", "AGENT_PROXY_AUTH_TOKEN", "CLAUDE_CODE_MCP_SERVE_AUTH_TOKEN", "CLAUDE_CODE_MCP_SERVE_SETTINGS", "CLAUDE_CODE_MCP_SERVE_WORKSPACE_ROOT", "CLAUDE_CODE_MCP_SERVE_TOOL_OUTPUT", "CLAUDE_CODE_MCP_SERVE_INTERFACE_MIN_VERSION", ...[], "CLAUDE_CODE_AGENT_PROXY_GIT_CONFIG", "CLAUDE_CODE_AGENT_PROXY_GH_SHIM", "CLAUDE_CODE_AGENT_PROXY_GIT_HOSTS", "SESSION_INGRESS_URL", "CLAUDE_CODE_REMOTE_SDK_URL", "CCR_SESSION_PROFILE", "CLAUDE_CODE_REMOTE_SESSION_ORIGIN", "CLAUDE_CODE_WORKER_EPOCH", "CLAUDE_CODE_DISABLE_WORKING_SYNC", ...[], "CLAUDE_CODE_CCR_EARLY_HYDRATE_PREFETCH", "CLAUDE_CODE_CCR_EARLY_REMOTE_CONNECT", "CLAUDE_CODE_CCR_WORKER_SOCKET", "CLAUDE_CODE_CCR_EARLY_PLUGINS_SYNC", "CLAUDE_CODE_CCR_EARLY_SKILLS_SYNC", "CLAUDE_CODE_SYNC_REUSE_WITHIN_MS", "CLAUDE_CODE_CCR_FOLD_FIRST_TURN_RESCAN", "CLAUDE_CODE_MCP_ALWAYS_LOAD_JOIN_BEFORE_INPUT", "CLAUDE_CODE_GROWTHBOOK_KICK_FROM_INIT", "CLAUDE_CODE_GROWTHBOOK_KICK_ON_WARM_CACHE", "CLAUDE_CODE_SLEEP_COMPACT", "CLAUDE_CODE_SLEEP_COMPACT_AFTER_MS", "CLAUDE_CODE_CCR_SKIP_FRESH_MIGRATIONS", "CLAUDE_CODE_ATTACHMENTS_IN_USER_DATA", "CLAUDE_CODE_MANAGED_CONFIG_PREFETCH", "CLAUDE_CODE_CONFIG_WATCH_EVENTS", "CLAUDE_CODE_FLAG_FETCH_WAIT_MS", "CLAUDE_CODE_GB_DISK_CACHE_WHEN_TELEMETRY_OFF", "CLAUDE_CODE_HOME_SEED_HOLD_TIMEOUT_MS", "CLAUDE_CODE_HOME_SEED_VERDICT_TIMEOUT_MS", "CLAUDE_CODE_TRANSCRIPT_SLIM_TOOL_RESULTS", "CLAUDE_CODE_RESUME_SESSIONSTART_HOOKS_WAIT_MS", "CLAUDE_CODE_JIT_POLICY_AFTER_STARTUP", "CLAUDE_CODE_SETTLE_TOUCHED_FILES", "CLAUDE_CODE_DISABLE_HOOK_FORWARDING", "CLAUDE_CODE_DISABLE_PLUGIN_FORWARDING", "CLAUDE_CODE_DISABLE_TURN_HANDOFF", "CLAUDE_CODE_LAZY_ENV_GETTERS", "CLAUDE_CODE_RESTRICTED", "CLAUDE_CODE_RESTRICT_PERSONAL_CONFIG"]),
+  Ne = new Set(["CLAUDE_REMOTE_WORKFLOW_SCRIPT", "CLAUDE_REMOTE_WORKFLOW_ARGS", "CLAUDE_WORKFLOW_NAME_ONLY"]),
+  re = new Set(["CLAUDE_CODE_ENTRYPOINT", "CLAUDE_CODE_HOST_SESSION_ID", "CLAUDE_CODE_HOST_WORKTREE", "CLAUDE_CODE_HOST_WORKTREE_FENCE", "CLAUDE_CODE_AUTOUPDATER_DISABLED_BY_HOST", "CLAUDE_CODE_IS_COWORK", "CLAUDE_CODE_COWORK_FRAME_ARTIFACTS", "CLAUDE_CODE_HOST_SCHEDULED_RUN", "CLAUDE_CODE_ARTIFACT_SHARE", "CLAUDE_CODE_ARTIFACT_VERSIONS", "CLAUDE_CODE_CCR_SURFACE", "CLAUDE_CODE_SESSION_ORIGIN", "SYSTEM_REMINDER_MEMORY_CONTEXT", "CLAUDE_CODE_MEMORY_SUBAGENT_APPEND", "CLAUDE_CODE_POST_TURN_MEMORY", "CLAUDE_CODE_POST_TURN_MEMORY_CONFIG", "CLAUDE_CODE_POST_TURN_MEMORY_SYNC", "CLAUDE_CODE_COORDINATOR_EXTRA_TOOLS", ...ce, "CLAUDE_CODE_QUESTION_EXTENDED", "CLAUDE_CODE_QUESTION_OPTIONAL_DESCRIPTIONS", "CLAUDE_CODE_AGENT_PROGRESS_SUMMARIES", "CLAUDE_CODE_ATTACHMENTS_BY_PATH", "CLAUDE_CODE_MCP_APPS_HOST", "CLAUDE_CODE_HOST_PROMPT_SUPERSEDES_RECORD", "CLAUDE_CODE_REMOTE_TOOLS_PIN_STORED_LOGIN", "CLAUDE_CODE_REMOTE_TOOLS_HOST_ALLOWS_UNATTENDED", "CLAUDE_CODE_SDK_HAS_OAUTH_REFRESH", "CLAUDE_CODE_SDK_READS_SESSION_STATE", "CLAUDE_CHROME_PAIRED_DEVICE_ID", "CLAUDE_CHROME_TAB_GROUP_KEY", mDe, "CLAUDE_CODE_DESKTOP_SKILLS_PLUGIN_DIR", "CLAUDE_CODE_SANDBOXED", "CLAUDE_CODE_ATTRIBUTION_STATUS_TIMEOUT_MS", "CLAUDE_CODE_TOOL_USE_ID", "CLAUDE_CODE_DISABLE_ATTRIBUTION_CROSS_REPO", "CLAUDE_CODE_CONFIG_PROBE"]),
+  ve = new Set(["CLAUDE_STAGE_FILE_ROOT"]),
+  K = new Map([["CLAUDE_CHROME_CLASSIFIER_FLOOR", "1"], ["CLAUDE_CHROME_PERMISSION_MODE", "ask"], ["CLAUDE_CODE_ENABLE_CFC", "0"]]);
+function oe(e, n) {
+  switch (e) {
+    case "CLAUDE_CHROME_CLASSIFIER_FLOOR":
+      return Fe(n);
+    case "CLAUDE_CHROME_PERMISSION_MODE":
+      return n === "ask";
+    case "CLAUDE_CODE_ENABLE_CFC":
+      return ws(n);
+    default:
+      return !1;
+  }
+}
+function yPo() {
+  for (let e of K.keys()) delete process.env[e];
+}
+var Pe = "CLAUDE_CODE_DISABLE_DIR_",
+  Me = new Set(["CLAUDE_CODE_PLUGIN_DIRS", "CLAUDE_CODE_PLUGIN_DIR_WATCH", "CLAUDE_CODE_PROCESS_WRAPPER"]);
+function ye(e, n) {
+  if (e === void 0 || !ly() || n !== "userSettings" && n !== "globalConfig") return e;
+  return Da(e, (r, i) => Me.has(i.toUpperCase()));
+}
+function G(e) {
+  if (!e) return {};
+  let n = sje(),
+    r = {};
+  for (let [i, s] of Object.entries(e)) {
+    let _ = i.toUpperCase();
+    if (!ie.has(_) && !_.startsWith(Pe) && !Ne.has(_) && !re.has(_) && !ve.has(_) && !(n && K.has(_) && !oe(_, s)) && !0 && _ !== "CLAUDE_CODE_REMOTE_TOOLS_FORWARD") r[i] = s;
+  }
+  return r;
+}
+function _Po() {
+  return O.envAboveProjectSettings();
+}
+function zE() {
+  return O.getPreSettingsEnvSnapshot();
+}
+function lXe() {
+  let e = {
+    ...zE()
+  };
+  for (let n of Object.keys(e)) if (process.env[n] === void 0) delete e[n];
+  return e;
+}
+function ije(e, n) {
+  return O.isSettingsSourcedEnvValue(e, n);
+}
+function bPo(e, n) {
+  return O.personsSettingsEnvKeeps(e, n);
+}
+function SPo(e) {
+  O.setToolServerLaunchEnv(e);
+}
+function wPo(e, n) {
+  O.recordPersonsEnvValue(e, n);
+}
+function ug() {
+  return O.peekPreSettingsEnvSnapshot();
+}
+function Fin() {
+  return O.getLegacyEnvMap();
+}
+function ote() {
+  return O.getAppliedGlobalConfigEnv();
+}
+QVs(zE);
+K$s(ug);
+x(ije);
+aUs({
+  env: () => O.getHostLaunchEnv(),
+  credential: () => O.getLaunchCredential(),
+  road: () => O.getLaunchCredentialRoad()
+});
+function vPo(e, n) {
+  return O.dropPreSettingsEnvSnapshot(e, n);
+}
+function p(e) {
+  return I() === "windows" ? e.toUpperCase() : e;
+}
+function jIr(e, n, r) {
+  if (e === void 0) return Object.freeze({
+    ...process.env
+  });
+  let i = new Set(n.map(p)),
+    s = new Map(Object.entries(e).map(([E, C]) => [p(E), C])),
+    _ = {};
+  for (let E of Object.keys(process.env)) if (i.has(p(E))) _[E] = r?.[E] ?? process.env[E];else if (s.has(p(E))) _[E] = s.get(p(E));
+  return Object.freeze(_);
+}
+function WIr(e, n) {
+  let r = Object.keys(process.env).filter(item => n(item) && process.env[item] !== e[item]);
+  for (let i of r) if (e[i] === void 0) delete process.env[i];else process.env[i] = e[i];
+  return r.length > 0;
+}
+function I3(e, n = "policySettings") {
+  return O.filterPolicyPredicateEnv(e, n, {
+    forPolicyMatch: !1
+  });
+}
+function OFt(e, n = "policySettings") {
+  return O.filterPolicyPredicateEnv(e, n, {
+    forPolicyMatch: !0
+  });
+}
+function aje(e, n) {
+  return O.withoutInvalidSettingsEnv(e, n);
+}
+var be = ["userSettings", "flagSettings", "policySettings"],
+  H = ["TRACES", "METRICS", "LOGS", "PROFILES"],
+  g = CBt,
+  q = new Set(["HEADERS", "CLIENT_KEY", "CLIENT_CERTIFICATE"]),
+  Z = new Set(["OTEL_LOGS_EXPORTER", "OTEL_TRACES_EXPORTER"]),
+  Q = "CLAUDE_CODE_ENABLE_TELEMETRY",
+  ee = "BETA_TRACING_ENDPOINT";
+var Jt = new Set([`${CBt}ENDPOINT`, `${CBt}HEADERS`, `${CBt}PROTOCOL`]);
+function F(e) {
+  return e;
+}
+function Ge(e) {
+  return !e.split(",").map(item => item.trim()).includes("otlp");
+}
+class se {
+  providerStripContext = P;
+  projectScopeDropWarned = new Set();
+  fullPassDroppedGitKey = !1;
+  hostManagedDropWarned = new Set();
+  invalidEnvKeyWarned = new Set();
+  hostSpawnEnvKeys = void 0;
+  settingsEnvForChildren = {};
+  toolServerLaunchEnv = {};
+  materializedProcessWrapper = void 0;
+  preSettingsEnvSnapshot = void 0;
+  userTierNames = new Set();
+  launchNamesBeforeClaim = void 0;
+  userTierNamesInSnapshot = new Set();
+  claimLaunchEnv = void 0;
+  launchCredentialRoad = "none";
+  launchCredential = void 0;
+  otelDominanceDropWarned = new Set();
+  hostSpawnEnvDropWarned = new Set();
+  servedFolderEnvWithheld = !1;
+  getPreSettingsEnvSnapshot() {
+    return this.preSettingsEnvSnapshot ??= this.latchPreSettingsEnvSnapshot({
+      ...process.env
+    }), this.preSettingsEnvSnapshot;
+  }
+  latchPreSettingsEnvSnapshot(e) {
+    let launchNamesBeforeClaim = this.launchNamesBeforeClaim;
+    this.userTierNamesInSnapshot = new Set(launchNamesBeforeClaim === void 0 ? [] : Object.keys(e).map(item => item.toUpperCase()).filter(item => this.userTierNames.has(item) && !launchNamesBeforeClaim.has(item)));
+    let r = this.claimLaunchEnv ?? e;
+    return this.launchCredential = dm() ? cUs(r) : null, this.launchCredentialRoad = dm() ? dUs(r, this.launchCredential) : "none", Object.freeze(e);
+  }
+  getLaunchCredentialRoad() {
+    return this.getPreSettingsEnvSnapshot(), this.launchCredentialRoad;
+  }
+  getLaunchCredential() {
+    return this.getPreSettingsEnvSnapshot(), this.launchCredential ?? null;
+  }
+  getHostLaunchEnv() {
+    let e = this.getPreSettingsEnvSnapshot();
+    return this.claimLaunchEnv ?? e;
+  }
+  envAboveProjectSettings() {
+    let e = this.getPreSettingsEnvSnapshot(),
+      n = {};
+    for (let [r, i] of Object.entries(e)) if (!this.userTierNamesInSnapshot.has(r.toUpperCase())) n[r] = i;
+    return {
+      ...n,
+      ...me("flagSettings")?.env,
+      ...me("policySettings")?.env
+    };
+  }
+  peekPreSettingsEnvSnapshot() {
+    return this.preSettingsEnvSnapshot;
+  }
+  appliedGlobalConfigEnv = void 0;
+  legacyEnvMapAtLaunch = void 0;
+  settingsOfferedEnvValues = new Map();
+  personsWrittenEnvValues = new Map();
+  otelDominatedAsked = void 0;
+  getAppliedGlobalConfigEnv() {
+    return this.appliedGlobalConfigEnv;
+  }
+  getLegacyEnvMap() {
+    return this.legacyEnvMapAtLaunch ?? ue().env;
+  }
+  dropPreSettingsEnvSnapshot(e, n) {
+    let preSettingsEnvSnapshot = this.preSettingsEnvSnapshot;
+    if (this.preSettingsEnvSnapshot = void 0, this.launchCredential = void 0, this.claimLaunchEnv = void 0, this.legacyEnvMapAtLaunch = void 0, e === void 0) return !1;
+    let i = [...e];
+    if (preSettingsEnvSnapshot) this.launchNamesBeforeClaim = new Set([...Object.keys(preSettingsEnvSnapshot), ...i].map(item => item.toUpperCase()));
+    if (!dm()) return !1;
+    let s = jIr(preSettingsEnvSnapshot, i, n);
+    this.claimLaunchEnv = s;
+    let _ = preSettingsEnvSnapshot !== void 0 && WIr(s, b$o);
+    return this.getPreSettingsEnvSnapshot(), _;
+  }
+  reset() {
+    this.providerStripContext = P, this.projectScopeDropWarned.clear(), this.hostManagedDropWarned.clear(), this.invalidEnvKeyWarned.clear(), this.hostSpawnEnvKeys = void 0, this.settingsEnvForChildren = {}, this.toolServerLaunchEnv = {}, this.materializedProcessWrapper = void 0, this.preSettingsEnvSnapshot = void 0, this.userTierNames.clear(), this.launchNamesBeforeClaim = void 0, this.userTierNamesInSnapshot = new Set(), this.claimLaunchEnv = void 0, this.launchCredential = void 0, this.launchCredentialRoad = "none", this.appliedGlobalConfigEnv = void 0, this.legacyEnvMapAtLaunch = void 0, this.settingsOfferedEnvValues.clear(), this.personsWrittenEnvValues.clear(), this.otelDominanceDropWarned.clear(), this.hostSpawnEnvDropWarned.clear(), this.servedFolderEnvWithheld = !1, this.fullPassDroppedGitKey = !1;
+  }
+  lastFullPassDroppedProjectGitKey() {
+    return this.fullPassDroppedGitKey;
+  }
+  servedFolderEnvWasWithheld() {
+    return this.servedFolderEnvWithheld;
+  }
+  strippedSettingsEnv(e, n, r, i) {
+    let s = J(z(G(j(X(h(ye(this.asFromAFolderNobodyTrusted(e, n, i !== void 0), n), n, i && this.invalidEnvKeyWarned), n, i && this.projectScopeDropWarned, () => this.envAboveProjectSettings(), i?.onGitKeyDropped))), n, r, i && this.hostManagedDropWarned), n, this.hostSpawnEnvKeys, i && this.hostSpawnEnvDropWarned);
+    if (i) return b(s, this.settingsEnvForChildren);
+    let _ = {},
+      E = b(s, _);
+    for (let [C, D] of Object.entries(_)) if (B(C.toUpperCase())) E[C] = D;
+    return E;
+  }
+  keptSettingsEnv(e, n, r, i) {
+    return this.withholdsEnvFrom(n, r) ? {} : this.strippedSettingsEnv(e, n, r, i);
+  }
+  setToolServerLaunchEnv(e) {
+    this.toolServerLaunchEnv = e;
+  }
+  takenFromToolServerLaunchEnv() {
+    let e = {};
+    for (let [n, r] of Object.entries(G(h(this.toolServerLaunchEnv, "globalConfig", this.invalidEnvKeyWarned)))) if (!V.has(n.toUpperCase())) e[n] = r;
+    return this.filterSettingsEnv(b(e, this.settingsEnvForChildren), "globalConfig");
+  }
+  filterSettingsEnv(e, n, onGitKeyDropped) {
+    let i = this.keptSettingsEnv(e, n, this.providerStripContext, {
+      onGitKeyDropped: onGitKeyDropped
+    });
+    for (let [s, _] of Object.entries(i)) this.recordOfferedEnvValue(s, _);
+    if (n === "globalConfig" || n === "userSettings") for (let s of Object.keys(i)) this.userTierNames.add(s.toUpperCase());
+    return i;
+  }
+  withoutInvalidSettingsEnv(e, n) {
+    return h(e, n, this.invalidEnvKeyWarned);
+  }
+  isSettingsSourcedEnvValue(e, n) {
+    let r = n.trim();
+    return this.settingsOfferedEnvValues.get(e.toUpperCase())?.has(r) === !0 || this.personsWrittenEnvValues.get(p(e)) === r;
+  }
+  recordPersonsEnvValue(e, n) {
+    if (n === void 0) this.personsWrittenEnvValues.delete(p(e));else this.personsWrittenEnvValues.set(p(e), n.trim());
+  }
+  recordOfferedEnvValue(e, n) {
+    let r = e.toUpperCase(),
+      i = n.trim(),
+      s = this.settingsOfferedEnvValues.get(r);
+    if (s) s.add(i);else this.settingsOfferedEnvValues.set(r, new Set([i]));
+  }
+  personsSettingsEnvKeeps(e, n) {
+    let r = this.providerStripContext === P ? y() : this.providerStripContext,
+      i = Wo(),
+      s = i.slice(i.indexOf("userSettings") + 1),
+      _ = (E, C) => Object.keys(this.keptSettingsEnv(E, C, r, void 0));
+    return i.includes("userSettings") && _({
+      [e]: n
+    }, "userSettings").includes(e) && !s.some(item => _(me(item)?.env, item).some(item => p(item) === p(e))) && !this.otelDominates(e) && !(n === "" && p(e) === p(jT) && this.processWrapperKeyAbove() !== void 0);
+  }
+  otelDominates(e) {
+    let n = new Set();
+    this.otelDominatedAsked = n;
+    try {
+      this.enforceManagedOtelFamilyDominance();
+    } finally {
+      this.otelDominatedAsked = void 0;
+    }
+    return n.has(e.toUpperCase());
+  }
+  otelClaimInForce(e, n) {
+    return this.otelDominatedAsked !== void 0 || process.env[e] === n;
+  }
+  processWrapperKeyAbove() {
+    return [this.processWrapperKeyFrom("policySettings"), this.processWrapperKeyFrom("flagSettings")].find(item => typeof item === "string" && item !== "");
+  }
+  filterPolicyPredicateEnv(e, n, {
+    forPolicyMatch: forPolicyMatch
+  }) {
+    if (!forPolicyMatch && this.withholdsEnvFrom(n)) return {};
+    let i = J(z(G(j(X(h(forPolicyMatch ? e : this.asFromAFolderNobodyTrusted(e, n, !1), n, this.invalidEnvKeyWarned), n, this.projectScopeDropWarned, () => this.envAboveProjectSettings()))), n, this.providerStripContext, this.hostManagedDropWarned), n, this.hostSpawnEnvKeys),
+      s = {};
+    for (let [_, E] of Object.entries(i)) {
+      let C = _.toUpperCase();
+      if (B(C)) continue;
+      if (!forPolicyMatch && te(_, E)) continue;
+      s[_] = E;
+    }
+    return s;
+  }
+  withholdsEnvFrom(e, n = this.providerStripContext) {
+    return n.storedLoginPinned && BHr(e);
+  }
+  asFromAFolderNobodyTrusted(e, n, r) {
+    if (e === void 0 || !N5n(n)) return e;
+    let i = {};
+    for (let [s, _] of Object.entries(e)) if (typeof _ === "string" && Oqs(s, _)) i[s] = _;else if (r) this.servedFolderEnvWithheld = !0;
+    return i;
+  }
+  processWrapperKeyFrom(e) {
+    return this.withholdsEnvFrom(e) || xl() || e === "userSettings" && ly() ? void 0 : me(e)?.processWrapper;
+  }
+  dropDominatedOtelKey(e, n, r, i, s = "managed settings") {
+    let otelDominatedAsked = this.otelDominatedAsked;
+    if (otelDominatedAsked !== void 0) {
+      if (!(i.has(e) && i.get(e) === process.env[e]) && !this.hostSpawnEnvKeys?.has(e.toUpperCase())) otelDominatedAsked.add(e.toUpperCase());
+      return;
+    }
+    if (i.get(e) === process.env[e]) return;
+    if (this.hostSpawnEnvKeys?.has(e.toUpperCase())) return;
+    if (process.env[e] === void 0) return;
+    if (!this.otelDominanceDropWarned.has(e)) this.otelDominanceDropWarned.add(e), t(`Dropping ${L(e)}: ${L(r)} is claimed by ${s}, so lower-trust scopes cannot redirect ${n}`, {
+      level: "warn"
+    });
+    delete process.env[e];
+  }
+  dropDominatedAntAlias(e, n, r, i = "managed settings") {
+    return;
+  }
+  dropDominatedBetaTracingEndpoint(e, n, r = "managed settings") {
+    this.dropDominatedOtelKey(ee, "the logs and traces signals through detailed beta tracing", e, n, r);
+  }
+  hostSpawnOtelClaims() {
+    let e = new Map(),
+      hostSpawnEnvKeys = this.hostSpawnEnvKeys;
+    if (!hostSpawnEnvKeys) return e;
+    let r = [...hostSpawnEnvKeys].some(item => {
+      let s = F(item);
+      return (s.startsWith(g) && s.endsWith("_ENDPOINT") || s === ee) && (process.env[item] ?? "").trim() !== "";
+    });
+    for (let i of hostSpawnEnvKeys) {
+      let s = F(i),
+        _ = Z.has(s) || s === Q,
+        E = r && s.startsWith(g);
+      if (!_ && !E) continue;
+      let C = process.env[i];
+      if (C !== void 0) e.set(i, C);
+    }
+    return e;
+  }
+  enforceManagedOtelFamilyDominance() {
+    let e = me("policySettings"),
+      n = e?.env,
+      r = (e?.otelHeadersHelper ?? "").trim() !== "",
+      i = new Map();
+    for (let [s, _] of Object.entries(n ?? {})) {
+      let E = s.toUpperCase();
+      if (!i.has(E) || s === E) i.set(E, _);
+    }
+    if (this.applyOtelFamilyClaims(this.hostSpawnOtelClaims(), i, "the host spawn env"), !n && !r) return;
+    if (r) {
+      for (let s of H) this.dropDominatedOtelKey(`${g}${s}_ENDPOINT`, `the ${s.toLowerCase()} signal`, "otelHeadersHelper", i);
+      this.dropDominatedOtelKey(`${g}ENDPOINT`, "telemetry for any signal", "otelHeadersHelper", i), this.dropDominatedAntAlias(`${g}ENDPOINT`, "otelHeadersHelper", i), this.dropDominatedBetaTracingEndpoint("otelHeadersHelper", i);
+    }
+    this.applyOtelFamilyClaims(i, i, "managed settings");
+  }
+  applyOtelFamilyClaims(e, n, r) {
+    for (let [i, s] of e) {
+      let _ = F(i);
+      if (_ === Q) {
+        if (this.otelClaimInForce(i, s) && !Fe(s)) this.dropDominatedBetaTracingEndpoint(i, n, r);
+        continue;
+      }
+      if (Z.has(_)) {
+        if (this.otelClaimInForce(i, s) && Ge(s)) this.dropDominatedBetaTracingEndpoint(i, n, r);
+        continue;
+      }
+      if (!_.startsWith(g)) continue;
+      if (s.trim() === "") continue;
+      if (!this.otelClaimInForce(i, s)) continue;
+      let E = H.find(item => _.startsWith(`${g}${item}_`));
+      if (E) {
+        let c = _.slice(`${g}${E}_`.length),
+          R = E === "TRACES" || E === "LOGS";
+        if (q.has(c)) {
+          if (this.dropDominatedOtelKey(`${g}${E}_ENDPOINT`, `the ${E.toLowerCase()} signal`, i, n, r), R) this.dropDominatedBetaTracingEndpoint(i, n, r);
+        } else if (c === "ENDPOINT" && R) this.dropDominatedBetaTracingEndpoint(i, n, r);
+        continue;
+      }
+      let C = _.slice(g.length),
+        D = q.has(C),
+        A = D ? [C, "ENDPOINT"] : [C];
+      for (let c of A) for (let R of H) this.dropDominatedOtelKey(`${g}${R}_${c}`, `the ${R.toLowerCase()} signal`, i, n, r);
+      if (D) this.dropDominatedOtelKey(`${g}ENDPOINT`, "telemetry for any signal", i, n, r), this.dropDominatedAntAlias(`${g}ENDPOINT`, i, n, r);
+      if (A.includes("ENDPOINT")) this.dropDominatedBetaTracingEndpoint(i, n, r);
+      this.dropDominatedAntAlias(_, i, n, r);
+    }
+  }
+  resetSettingsIfUserSettingsFileMoved(e) {
+    if (fn("userSettings") !== e) dr();
+  }
+  applySafeConfigEnvironmentVariables() {
+    this.getPreSettingsEnvSnapshot(), this.providerStripContext = y();
+    let e = fn("userSettings");
+    if (this.hostSpawnEnvKeys === void 0) {
+      if (this.hostSpawnEnvKeys = this.providerStripContext.hostOrchestrated ? new Set(Object.keys(process.env).map(item => item.toUpperCase())) : null, QFr()) this.hostSpawnEnvKeys?.delete("FORCE_COLOR");
+    }
+    this.settingsEnvForChildren = {}, Object.assign(process.env, this.takenFromToolServerLaunchEnv()), this.appliedGlobalConfigEnv = this.filterSettingsEnv(this.getLegacyEnvMap(), "globalConfig"), Object.assign(process.env, this.appliedGlobalConfigEnv);
+    for (let i of be) {
+      if (i === "policySettings") continue;
+      if (!nn(i)) continue;
+      Object.assign(process.env, this.filterSettingsEnv(me(i)?.env, i));
+    }
+    BC(), Object.assign(process.env, this.filterSettingsEnv(me("policySettings")?.env, "policySettings"));
+    let n = new Map();
+    for (let i of Wo()) {
+      let s = this.filterSettingsEnv(me(i)?.env, i);
+      for (let [key_2, value] of Object.entries(s)) n.set(key_2.toUpperCase(), {
+        key: key_2,
+        value: value
+      });
+    }
+    for (let {
+      key: key_3,
+      value: value_2
+    } of n.values()) if (y_t(key_3, value_2)) process.env[key_3] = value_2;
+    JFr(this.settingsEnvForChildren);
+    let r = process.env[jT];
+    if (!r || r === this.materializedProcessWrapper) {
+      let i = nn("userSettings") ? this.processWrapperKeyFrom("userSettings") : void 0,
+        s = this.processWrapperKeyAbove() ?? (i === "" ? void 0 : i);
+      if (s !== void 0) process.env[jT] = s, this.materializedProcessWrapper = s;
+    }
+    this.enforceManagedOtelFamilyDominance(), this.resetSettingsIfUserSettingsFileMoved(e);
+  }
+  applyConfigEnvironmentVariables() {
+    this.getPreSettingsEnvSnapshot(), this.providerStripContext = y(), this.settingsEnvForChildren = {};
+    let NODE_EXTRA_CA_CERTS = a.NODE_EXTRA_CA_CERTS,
+      CLAUDE_CODE_CERT_STORE = a.CLAUDE_CODE_CERT_STORE,
+      NODE_OPTIONS = a.NODE_OPTIONS,
+      CLAUDE_CODE_CLIENT_CERT = a.CLAUDE_CODE_CLIENT_CERT,
+      CLAUDE_CODE_CLIENT_KEY = a.CLAUDE_CODE_CLIENT_KEY;
+    this.legacyEnvMapAtLaunch ??= {
+      ...ue().env
+    }, Object.assign(process.env, this.takenFromToolServerLaunchEnv()), this.appliedGlobalConfigEnv = this.filterSettingsEnv(this.getLegacyEnvMap(), "globalConfig"), Object.assign(process.env, this.appliedGlobalConfigEnv), this.fullPassDroppedGitKey = !1;
+    for (let A of Wo()) Object.assign(process.env, this.filterSettingsEnv(me(A)?.env, A, () => {
+      this.fullPassDroppedGitKey = !0;
+    }));
+    JFr(this.settingsEnvForChildren), this.enforceManagedOtelFamilyDominance();
+    let _ = a.NODE_EXTRA_CA_CERTS !== NODE_EXTRA_CA_CERTS || a.CLAUDE_CODE_CLIENT_CERT !== CLAUDE_CODE_CLIENT_CERT || a.CLAUDE_CODE_CLIENT_KEY !== CLAUDE_CODE_CLIENT_KEY;
+    if (a.NODE_EXTRA_CA_CERTS !== NODE_EXTRA_CA_CERTS || a.CLAUDE_CODE_CERT_STORE !== CLAUDE_CODE_CERT_STORE || a.NODE_OPTIONS !== NODE_OPTIONS) bfn();
+    let {
+        certPath: certPath,
+        keyPath: keyPath
+      } = a1o(),
+      D = (a.CLAUDE_CODE_CLIENT_CERT !== certPath || a.CLAUDE_CODE_CLIENT_KEY !== keyPath) && (certPath !== void 0 || keyPath !== void 0);
+    if (!D) OUr();
+    nQ(), wb(), Promise.all([eQ(), N2()]).then(([A, c]) => {
+      if (D && c.readFailed) OUr();
+      if (_ || D || A || c.changed) nQ(), wb();
+    }).catch(l);
+  }
+}
+var O = new se(),
+  qt = W2({
+    clear: clear
+  });
+function Dae() {
+  try {
+    O.applySafeConfigEnvironmentVariables();
+  } finally {
+    YFo();
+  }
+  v(), lle();
+}
+function aA() {
+  try {
+    O.applyConfigEnvironmentVariables();
+  } finally {
+    YFo();
+  }
+  v(), lle();
+}
+function kPo() {
+  return O.servedFolderEnvWasWithheld();
+}
+function clear() {
+  O.reset();
+}
+export { Yj, HIr, O3, W$s, BC, $Ir, sje, PFt, cKn, zmt, uKn, UIr, BIr, yPo, _Po, zE, lXe, ije, bPo, SPo, wPo, ug, Fin, ote, vPo, jIr, WIr, I3, OFt, aje, Dae, aA, kPo };

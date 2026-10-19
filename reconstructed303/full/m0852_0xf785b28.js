@@ -1,0 +1,2778 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  Fe
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  b,
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  k,
+  Fr
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  z
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  K5
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import {
+  Zl
+} from "B:/~BUN/root/chunk-ps74es0g.js";
+import {
+  on
+} from "B:/~BUN/root/chunk-pw5vpw1q.js";
+import {
+  Hre
+} from "B:/~BUN/root/chunk-wng69n5z.js";
+import {
+  Rh
+} from "B:/~BUN/root/chunk-2efkaa0v.js";
+import {
+  Vy,
+  av,
+  zi,
+  E,
+  ue,
+  Tge
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  Oe,
+  ew
+} from "B:/~BUN/root/chunk-g5gf7tps.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  m,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  _h
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  wo,
+  Mqs
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  ce
+} from "B:/~BUN/root/chunk-nxwmyxnk.js";
+import {
+  ct
+} from "B:/~BUN/root/chunk-6ft8yhc8.js";
+import {
+  Lc
+} from "B:/~BUN/root/chunk-pjgzz98k.js";
+import {
+  ut
+} from "B:/~BUN/root/chunk-1gpjpba6.js";
+import {
+  ea
+} from "B:/~BUN/root/chunk-53tmhe2j.js";
+import {
+  bs
+} from "B:/~BUN/root/chunk-gy660jgx.js";
+import {
+  I6,
+  Z$e,
+  Upe,
+  C$n,
+  R$n
+} from "B:/~BUN/root/chunk-0x8xex6w.js";
+import {
+  Bq
+} from "B:/~BUN/root/chunk-xyxdcn7p.js";
+import {
+  cuo,
+  zPt,
+  Fys
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  Dnt,
+  evn,
+  zVe
+} from "B:/~BUN/root/chunk-2jzp4p89.js";
+import {
+  s,
+  n,
+  dn,
+  ot,
+  Kwn,
+  Ek,
+  Kre,
+  Aa,
+  n7,
+  sa,
+  Dr
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import {
+  CP,
+  LF
+} from "B:/~BUN/root/chunk-1jz9m9yh.js";
+import {
+  U9
+} from "B:/~BUN/root/chunk-c0j3f8cc.js";
+import {
+  cce,
+  w4r,
+  fi,
+  qvt
+} from "B:/~BUN/root/chunk-vw193yjw.js";
+import {
+  Te
+} from "B:/~BUN/root/chunk-smy4yvhm.js";
+import {
+  Ae
+} from "B:/~BUN/root/chunk-jjcfcfrs.js";
+import {
+  b4r
+} from "B:/~BUN/root/chunk-54b5252d.js";
+import {
+  $tn,
+  yCr,
+  _Cr
+} from "B:/~BUN/root/chunk-dn8rakwm.js";
+import {
+  V,
+  Un
+} from "B:/~BUN/root/chunk-tgzmva3g.js";
+import {
+  Ro
+} from "B:/~BUN/root/chunk-exdm7pa7.js";
+import {
+  Rce
+} from "B:/~BUN/root/chunk-3p36t90r.js";
+import {
+  gs,
+  wR
+} from "B:/~BUN/root/chunk-xc1c9t20.js";
+import {
+  h8
+} from "B:/~BUN/root/chunk-aw9w2cra.js";
+import {
+  oh,
+  Gwn,
+  xLe
+} from "B:/~BUN/root/chunk-275mme56.js";
+import {
+  OCr,
+  xC,
+  Pjn,
+  PU,
+  cBe
+} from "B:/~BUN/root/chunk-raq9cfnw.js";
+import {
+  ER,
+  Py,
+  Xm
+} from "B:/~BUN/root/chunk-mvgarwbg.js";
+import {
+  Fj
+} from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import {
+  Rd
+} from "B:/~BUN/root/chunk-aqd86p9a.js";
+import {
+  Cit,
+  JFe,
+  b8t,
+  dio,
+  Ait,
+  KMn,
+  QFe,
+  eYe,
+  Dcs,
+  tYe,
+  xit,
+  Xfr,
+  S8t,
+  nYe,
+  Pit
+} from "B:/~BUN/root/chunk-hrf323t4.js";
+import {
+  Q4e,
+  Eit,
+  YFe,
+  aio,
+  XFe
+} from "B:/~BUN/root/chunk-t1rttjj3.js";
+import {
+  H0,
+  y8t,
+  _8t,
+  J4e,
+  gAt
+} from "B:/~BUN/root/chunk-trktrhyg.js";
+import {
+  ft
+} from "B:/~BUN/root/chunk-jh7dpafw.js";
+import {
+  Sk
+} from "B:/~BUN/root/chunk-dyx9ks30.js";
+import {
+  hd
+} from "B:/~BUN/root/chunk-q6bapw2s.js";
+import {
+  uY
+} from "B:/~BUN/root/chunk-72p78b38.js";
+import {
+  hE
+} from "B:/~BUN/root/chunk-88ayp7r7.js";
+import {
+  sh
+} from "B:/~BUN/root/chunk-44n8zjk2.js";
+import {
+  Q,
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  ae,
+  P,
+  Mo,
+  Jt,
+  Z,
+  A,
+  y,
+  Dt,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  o,
+  v,
+  u,
+  C
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  aQ,
+  W4s
+} from "B:/~BUN/root/chunk-pp80ffk4.js";
+import {
+  ie
+} from "B:/~BUN/root/chunk-t7350kw8.js";
+import {
+  ve,
+  S,
+  yn
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+
+function Azt(d) {
+  if (d.wheelUp || d.wheelDown || d.escape) return !1;
+  if (d.pageUp || d.pageDown) return !1;
+  if ((d.home || d.end) && d.ctrl) return !1;
+  if ((d.leftArrow || d.rightArrow || d.upArrow || d.downArrow || d.home || d.end) && (d.shift || d.meta || d.super)) return !1;
+  return !0
+}
+
+function mo(d) {
+  if (d.name === "escape" || d.name === "pageup" || d.name === "pagedown") return !1;
+  if ((d.name === "home" || d.name === "end") && d.ctrl) return !1;
+  if ((d.name === "left" || d.name === "right" || d.name === "up" || d.name === "down" || d.name === "home" || d.name === "end") && (d.shift || d.meta || d.superKey)) return !1;
+  return !0
+}
+
+function r6o(d, h) {
+  return (R) => {
+    if (!d.hasSelection()) return;
+    if (R.key === "c" && !R.meta && (R.ctrl || R.superKey)) {
+      if (h) d.clearSelection();
+      else d.copySelection();
+      if (R.ctrl && !R.shift) Hre();
+      R.consume();
+      return
+    }
+    if (mo(R)) d.clearSelection()
+  }
+}
+
+function O2e(d, h = !0) {
+  on({
+    "selection:clear": () => {
+      if (!d.hasSelection()) return !1;
+      d.clearSelection(), Hre()
+    }
+  }, {
+    context: "Scroll",
+    isActive: h
+  })
+}
+B();
+
+function rbn(d) {
+  let h = Upe(),
+    R = aQ(d),
+    x = R === 1 ? "char" : "chars",
+    M, T;
+  switch (h) {
+    case "native":
+      M = `copied ${R} ${x} to clipboard`, T = `copied ${R} ${x}`;
+      break;
+    case "tmux-buffer":
+      M = `copied ${R} ${x} to tmux buffer \xB7 paste with prefix + ]`, T = "copied \xB7 paste with prefix + ]";
+      break;
+    case "osc52":
+      if (I6()) {
+        M = `couldn't copy ${R} ${x} \xB7 select with ${Z$e()} held, then use your terminal's Copy`;
+        break
+      }
+      M = `sent ${R} ${x} via OSC 52 \xB7 if paste fails, hold ${Z$e()} while selecting for native copy`, T = `sent ${R} ${x} via OSC 52`;
+      break
+  }
+  let O = R$n(d);
+  if (O) M = `\u26A0 ${O} \xB7 ${M}`;
+  return {
+    key: "selection-copied",
+    kind: "feedback",
+    text: M,
+    color: hE() ? O ? "warning" : void 0 : "suggestion",
+    priority: "immediate",
+    timeoutMs: O ? 6000 : h === "native" ? 2000 : 4000,
+    ...O || T === void 0 ? {} : {
+      row1Hint: T
+    }
+  }
+}
+
+function I2e(d, h, R) {
+  let x = A(!1),
+    M = A(null),
+    [T] = y(() => ({
+      peek: () => M.current,
+      invalidate: () => {
+        M.current = null
+      }
+    })),
+    O = Mo((I) => R?.(I));
+  return P(() => {
+    if (!h) return;
+    return C$n(), d.subscribe(() => {
+      let N = d.getState(),
+        j = d.hasSelection();
+      if (N?.isDragging) {
+        x.current = !1, M.current = null;
+        return
+      }
+      if (!j) {
+        x.current = !1, M.current = null;
+        return
+      }
+      if (x.current) {
+        M.current = null;
+        return
+      }
+      if (!(ue().copyOnSelect ?? !0)) return;
+      let H = d.copySelectionNoClear();
+      if (!H || !H.trim()) {
+        x.current = !0;
+        return
+      }
+      x.current = !0, M.current = H, g("clipboard_write"), O(H)
+    })
+  }, [h, d]), T
+}
+
+function M2e(d) {
+  let h = ew();
+  P(() => {
+    d.setSelectionBgColor(h.selectionBg)
+  }, [d, h.selectionBg])
+}
+B();
+import go from "path";
+var ho = "at_mentioned",
+  vo = f(() => u({
+    method: C(ho),
+    params: u({
+      filePath: o(),
+      lineStart: v().optional(),
+      lineEnd: v().optional()
+    })
+  }));
+
+function xzt(d, h) {
+  let R = Z(() => Fj(d), [d]),
+    x = A(void 0);
+  P(() => {
+    if (x.current = R, !R) return;
+    Bq(R, vo(), (M) => {
+      if (x.current !== R) return;
+      try {
+        let T = M.params,
+          O = T.lineStart !== void 0 ? T.lineStart + 1 : void 0,
+          I = T.lineEnd !== void 0 ? T.lineEnd + 1 : void 0;
+        h({
+          filePath: T.filePath,
+          lineStart: O,
+          lineEnd: I
+        }), g("ide_at_mention")
+      } catch (T) {
+        l(T), m("ide_at_mention", "ide_at_mention_failed")
+      }
+    })
+  }, [R, h])
+}
+
+function Pzt(d, h) {
+  let R = go.relative(ce(), d.filePath),
+    x;
+  if (d.lineStart && d.lineEnd) x = d.lineStart === d.lineEnd ? `@${R}#L${d.lineStart} ` : `@${R}#L${d.lineStart}-${d.lineEnd} `;
+  else x = `@${R} `;
+  if (h !== void 0 && !/\s/.test(h)) x = ` ${x}`;
+  return x
+}
+B();
+
+function o8() {
+  return bs("editorMode", "normal").value === "vim"
+}
+
+function h2r() {
+  if (cce()) return "shift + \u23CE for newline";
+  return w4r() ? "\\\u23CE for newline" : "backslash (\\) + return (\u23CE) for newline"
+}
+var bo = new Set(["escape", "return", "enter", "tab", "backspace", "delete", "up", "down", "left", "right", "pageup", "pagedown", "home", "end", "insert", "clear", "center", "undefined", "mouse", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12"]);
+
+function y2r(d, h) {
+  if (h.ctrl || h.meta) return !1;
+  if (bo.has(d)) return !1;
+  return d.length > 0 && !/^\s/.test(d)
+}
+
+function _2r(d) {
+  return d.length > 0 && ".,?!:;)]".includes(d.charAt(0))
+}
+
+function So(d) {
+  if (d.ctrl && (d.key === "k" || d.key === "u" || d.key === "w")) return !0;
+  if ((d.meta || d.ctrl) && d.key === "backspace") return !0;
+  if (d.meta && !d.ctrl && d.key.toLowerCase() === "d") return !0;
+  return !1
+}
+
+function yo(d) {
+  return (d.ctrl || d.meta) && d.key === "y"
+}
+var Co = new Set(["pageup", "pagedown", "insert", "wheelup", "wheeldown", "mouse", "clear", "enter", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12"]);
+
+function s_({
+  isActive: d,
+  onExit: h,
+  onCancel: R,
+  onExitUp: x,
+  onExitDown: M,
+  columns: T,
+  passthroughCtrlKeys: O = [],
+  initialQuery: I = "",
+  buffer: N,
+  backspaceExitsOnEmpty: j = !0,
+  multiline: D = !1,
+  onSpaceOnEmpty: H,
+  onTabOnEmpty: me,
+  honorEditorMode: ne = !1
+}) {
+  let q = zVe(),
+    {
+      columns: ee
+    } = Te(),
+    we = T ?? ee,
+    [Ee, L] = y(I),
+    [te, ye] = y(I.length),
+    de = Ae(N, (_) => _.query),
+    re = Ae(N, (_) => _.cursorOffset),
+    se = de ?? Ee,
+    X = re ?? te,
+    K = A(Ee),
+    oe = A(te),
+    F = Z(() => N ? {
+      get current() {
+        return N.getSnapshot().query
+      },
+      set current(_) {
+        N.setQueryAndCursor(_, N.getSnapshot().cursorOffset)
+      }
+    } : K, [N]),
+    G = Z(() => N ? {
+      get current() {
+        return N.getSnapshot().cursorOffset
+      },
+      set current(_) {
+        N.setQueryAndCursor(N.getSnapshot().query, _)
+      }
+    } : oe, [N]),
+    Y = ae((_) => {
+      if (N) {
+        N.setQueryAndCursor(_, N.getSnapshot().cursorOffset);
+        return
+      }
+      K.current = _, L(_)
+    }, [N]),
+    W = ae((_) => {
+      if (N) {
+        N.setQueryAndCursor(N.getSnapshot().query, _);
+        return
+      }
+      oe.current = _, ye(_)
+    }, [N]),
+    Re = ae((_) => {
+      Y(_), W(_.length)
+    }, [Y, W]),
+    le = ae((_) => {
+      if (!d || !D || _.name !== "return") return !1;
+      let ge = G.current;
+      return ge > 0 && F.current[ge - 1] === "\\" || _.shift || _.meta
+    }, [d, D]),
+    fe = (_) => {
+      if (!d) return;
+      let ge = F.current,
+        Me = G.current,
+        J = fi.fromText(ge, we, Me);
+      if (!So(_) && !yo(_)) q.dispatch({
+        type: "interrupt"
+      });
+      if (_.ctrl && O.includes(_.key.toLowerCase())) return;
+      if (_.name === "return") {
+        if (_.preventDefault(), le(_)) {
+          if (ge[Me - 1] === "\\") {
+            Y(ge.slice(0, Me - 1) + `
+` + ge.slice(Me));
+            return
+          }
+          Y(ge.slice(0, Me) + `
+` + ge.slice(Me)), W(Me + 1);
+          return
+        }
+        h();
+        return
+      }
+      if (D && (_.name === "enter" || _.ctrl && !_.shift && !_.meta && _.name === "j")) {
+        _.preventDefault();
+        let U = J.insert(`
+`);
+        Y(U.text), W(U.offset);
+        return
+      }
+      if (_.name === "down") {
+        if (_.preventDefault(), D) {
+          let U = J.down();
+          if (!U.equals(J)) {
+            W(U.offset);
+            return
+          }
+        }
+        if (M) M();
+        else if (!D) h();
+        return
+      }
+      if (_.name === "up") {
+        if (_.preventDefault(), D) {
+          let U = J.up();
+          if (!U.equals(J)) {
+            W(U.offset);
+            return
+          }
+        }
+        if (x) x();
+        return
+      }
+      if (_.name === "escape") {
+        if (_.preventDefault(), R) R();
+        else if (ge.length > 0) Y(""), W(0);
+        else h();
+        return
+      }
+      if (_.name === "backspace") {
+        if (_.preventDefault(), _.meta || _.ctrl) {
+          let {
+            cursor: xe,
+            killed: Ce
+          } = J.backwardKillWord();
+          q.dispatch({
+            type: "kill",
+            text: Ce,
+            direction: "prepend"
+          }), Y(xe.text), W(xe.offset);
+          return
+        }
+        if (ge.length === 0) {
+          if (j)(R ?? h)();
+          return
+        }
+        let U = J.backspace();
+        Y(U.text), W(U.offset);
+        return
+      }
+      if (_.name === "delete") {
+        _.preventDefault();
+        let U = J.del();
+        Y(U.text), W(U.offset);
+        return
+      }
+      if (_.name === "left" && (_.ctrl || _.meta || _.fn)) {
+        _.preventDefault(), W(J.backwardWord().offset);
+        return
+      }
+      if (_.name === "right" && (_.ctrl || _.meta || _.fn)) {
+        _.preventDefault(), W(J.forwardWord().offset);
+        return
+      }
+      if (_.name === "left") {
+        _.preventDefault();
+        let U = J.left();
+        W(U.offset);
+        return
+      }
+      if (_.name === "right") {
+        _.preventDefault();
+        let U = J.right();
+        W(U.offset);
+        return
+      }
+      if (_.name === "home") {
+        _.preventDefault(), W(J.startOfLine().offset);
+        return
+      }
+      if (_.name === "end") {
+        _.preventDefault(), W(J.endOfLine().offset);
+        return
+      }
+      if (_.ctrl) {
+        switch (_.preventDefault(), _.key.toLowerCase()) {
+          case "a":
+            W(J.startOfLogicalLine().offset);
+            return;
+          case "e":
+            W(J.endOfLogicalLine().offset);
+            return;
+          case "b":
+            W(J.left().offset);
+            return;
+          case "f":
+            W(J.right().offset);
+            return;
+          case "d": {
+            if (ge.length === 0) {
+              (R ?? h)();
+              return
+            }
+            let U = J.del();
+            Y(U.text), W(U.offset);
+            return
+          }
+          case "h": {
+            if (ge.length === 0) {
+              if (j)(R ?? h)();
+              return
+            }
+            let U = J.backspace();
+            Y(U.text), W(U.offset);
+            return
+          }
+          case "k": {
+            let {
+              cursor: U,
+              killed: xe
+            } = J.deleteToLineEnd();
+            q.dispatch({
+              type: "kill",
+              text: xe,
+              direction: "append"
+            }), Y(U.text), W(U.offset);
+            return
+          }
+          case "u": {
+            let {
+              cursor: U,
+              killed: xe
+            } = J.deleteToLineStart();
+            q.dispatch({
+              type: "kill",
+              text: xe,
+              direction: "prepend"
+            }), Y(U.text), W(U.offset);
+            return
+          }
+          case "w": {
+            let {
+              cursor: U,
+              killed: xe
+            } = J.deleteWORDBefore();
+            q.dispatch({
+              type: "kill",
+              text: xe,
+              direction: "prepend"
+            }), Y(U.text), W(U.offset);
+            return
+          }
+          case "y": {
+            let U = Dnt(q.state);
+            if (U.length > 0) {
+              let xe = J.offset,
+                Ce = J.insert(U);
+              q.dispatch({
+                type: "yank",
+                start: xe,
+                length: U.length
+              }), Y(Ce.text), W(Ce.offset)
+            }
+            return
+          }
+          case "g":
+          case "c":
+            if (R) {
+              R();
+              return
+            }
+        }
+        return
+      }
+      if (_.meta) {
+        switch (_.preventDefault(), _.key.toLowerCase()) {
+          case "b":
+            W(J.backwardWord().offset);
+            return;
+          case "f":
+            W(J.forwardWord().offset);
+            return;
+          case "d": {
+            let {
+              cursor: U,
+              killed: xe
+            } = J.killWord();
+            q.dispatch({
+              type: "kill",
+              text: xe,
+              direction: "append"
+            }), Y(U.text), W(U.offset);
+            return
+          }
+          case "y": {
+            let U = evn(q.state);
+            if (U) {
+              let {
+                text: xe,
+                start: Ce,
+                length: Ye
+              } = U;
+              q.dispatch({
+                type: "yankPop"
+              });
+              let at = ge.slice(0, Ce),
+                mt = ge.slice(Ce + Ye),
+                lt = at + xe + mt,
+                Ke = Ce + xe.length;
+              q.dispatch({
+                type: "updateYankLength",
+                length: xe.length
+              }), Y(lt), W(Ke)
+            }
+            return
+          }
+        }
+        return
+      }
+      if (_.name === "tab") {
+        if (_.preventDefault(), me && ge === "") me();
+        return
+      }
+      if (H && _.key === " " && ge === "") {
+        _.preventDefault(), H();
+        return
+      }
+      if (_.key.length >= 1 && !Co.has(_.name)) {
+        _.preventDefault();
+        let U = J.insert(_.key);
+        Y(U.text), W(U.offset)
+      }
+    },
+    _e = ne && o8(),
+    pe = b4r({
+      value: se,
+      onChange: Y,
+      columns: we,
+      onHistoryUp: x,
+      onHistoryDown: M,
+      isActive: _e && d
+    }),
+    ke = {
+      handleKeyDown: fe,
+      offset: X,
+      setOffset: W
+    };
+  return {
+    query: se,
+    queryRef: F,
+    setQuery: Re,
+    cursorOffset: X,
+    cursorOffsetRef: G,
+    willInsertNewline: le,
+    setCursorOffset: W,
+    handleKeyDown: (_) => {
+      if (!_e) {
+        fe(_);
+        return
+      }
+      if (!d) return;
+      if (_.name === "escape" && pe.mode === "NORMAL") {
+        pe.handleKeyDown(_, ke), fe(_);
+        return
+      }
+      pe.handleKeyDown(_, ke)
+    },
+    handlePaste: (_) => {
+      if (!d || _.text.length === 0) return;
+      _.preventDefault(), pe.cancelPendingRemap();
+      let ge = D ? _.text.replace(/\r\n|\r/g, `
+`) : _.text.split(/\r\n|\r|\n/, 2)[0] ?? "";
+      if (ge.length === 0) return;
+      let J = fi.fromText(F.current, we, G.current).insert(ge);
+      Y(J.text), W(J.offset)
+    },
+    vimMode: _e ? pe.mode : void 0,
+    enterInsertMode: () => {
+      if (_e) pe.setMode("INSERT", ke)
+    }
+  }
+}
+B();
+
+function D2e() {
+  let d = wR();
+  return Ae(d && Rce.of(d), (h) => h.loginCompleted) ?? 0
+}
+
+function b0() {
+  let d = V((x) => $tn(x.settings)),
+    h = D2e(),
+    R = Z(() => d && yCr(), [h, d]);
+  return P(() => {
+    if (!ea().claim("voice_init_gate")) return;
+    i("tengu_voice_init_gate", {
+      user_intent_store: d,
+      user_intent_disk: $tn(ut()),
+      has_voice_auth: yCr(),
+      voice_mode_allowed: _Cr(),
+      auth_version: h
+    })
+  }, []), R && _Cr()
+}
+B();
+
+function $o(rs) {
+  return rs.voiceState
+}
+
+function Fo(ns) {
+  return ns.settings.voice?.mode ?? "hold"
+}
+
+function Wo(Gr) {
+  if (!Gr.voiceWarmingUp) {
+    return Gr
+  }
+  return {
+    ...Gr,
+    voiceWarmingUp: !1
+  }
+}
+
+function Ho(qr) {
+  if (!qr.awaitingVoiceSubmitDoubleTap) {
+    return qr
+  }
+  return {
+    ...qr,
+    awaitingVoiceSubmitDoubleTap: !1
+  }
+}
+
+function jo(Xr) {
+  if (!Xr.voiceWarmingUp) {
+    return Xr
+  }
+  return {
+    ...Xr,
+    voiceWarmingUp: !1
+  }
+}
+
+function zo(Jr) {
+  if (!Jr.awaitingVoiceSubmitDoubleTap) {
+    return Jr
+  }
+  return {
+    ...Jr,
+    awaitingVoiceSubmitDoubleTap: !1
+  }
+}
+
+function Qo(Zr) {
+  if (!Zr.awaitingVoiceSubmitDoubleTap) {
+    return Zr
+  }
+  return {
+    ...Zr,
+    awaitingVoiceSubmitDoubleTap: !1
+  }
+}
+
+function Yo(en) {
+  if (!en.voiceWarmingUp) {
+    return en
+  }
+  return {
+    ...en,
+    voiceWarmingUp: !1
+  }
+}
+
+function Go(tn) {
+  if (tn.voiceWarmingUp) {
+    return tn
+  }
+  return {
+    ...tn,
+    voiceWarmingUp: !0
+  }
+}
+var bn = import.meta.require("B:/~BUN/root/chunk-a2gehp7w.js"),
+  ht = 120,
+  rn = 2000,
+  nn = 5,
+  Ht = 2,
+  sn = 300;
+
+function an(d, h) {
+  if ((d.key === "return" ? "enter" : d.key.toLowerCase()) !== h.key) return !1;
+  if (d.ctrl !== h.ctrl) return !1;
+  if (d.shift !== h.shift) return !1;
+  if (d.meta !== (h.alt || h.meta)) return !1;
+  if (d.superKey !== h.super) return !1;
+  return !0
+}
+
+function cn(d) {
+  return xC.changed.subscribe(d)
+}
+
+function un() {
+  return Pjn(xC)
+}
+
+function ntt({
+  composer: d,
+  isActive: h = !0
+}) {
+  let {
+    addNotification: R
+  } = Ro(), x = Gwn(), M = xLe(), T = A(null), O = A(""), I = A(null), N = ae((L, {
+    char: te = " ",
+    anchor: ye = !1,
+    floor: de = 0
+  } = {}) => {
+    let {
+      value: re,
+      cursorOffset: se
+    } = d, X = re.slice(0, se), K = re.slice(se), oe = te === " " ? K5(X) : X, F = 0;
+    while (F < oe.length && oe[oe.length - 1 - F] === te) F++;
+    let G = Math.max(0, Math.min(F - de, L)),
+      Y = F - G,
+      W = X.slice(0, X.length - G),
+      Re = "";
+    if (ye) {
+      if (T.current = W, O.current = K, K.length > 0 && !/^\s/.test(K)) Re = " "
+    }
+    let le = W + Re + K;
+    if (ye) I.current = le;
+    if (le === re && G === 0) return Y;
+    return d.setValueWithCursor(le, W.length), Y
+  }, [d]), j = ae(() => {
+    let L = T.current;
+    if (L === null) return;
+    let te = O.current;
+    if (T.current = null, O.current = "", d.value !== I.current) return;
+    d.setValueWithCursor(L + te, L.length)
+  }, [d]), D = b0(), H = V((L) => L.settings.voice?.autoSubmit === !0), me = V((L) => L.settings.voice?.mode ?? "hold"), ne = oh((L) => L.voiceState), q = oh((L) => L.voiceInterimTranscript);
+  P(() => {
+    if (h && M().voiceState === "recording" && T.current === null) {
+      let {
+        value: L,
+        cursorOffset: te
+      } = d;
+      T.current = L.slice(0, te), O.current = L.slice(te), I.current = L
+    }
+    if (ne === "idle") T.current = null, O.current = "", I.current = null
+  }, [ne, M, d, h]), P(() => {
+    if (T.current === null) return;
+    let L = T.current,
+      te = O.current;
+    if (d.value !== I.current) return;
+    let ye = L.length > 0 && !/\s$/.test(L) && q.length > 0,
+      de = te.length > 0 && !/^\s/.test(te),
+      re = ye ? " " : "",
+      se = de ? " " : "",
+      X = L + re + q + se + te,
+      K = L.length + re.length + q.length;
+    d.setValueWithCursor(X, K), I.current = X
+  }, [q, d]);
+  let ee = ae((L) => {
+      let te = T.current;
+      if (te === null) {
+        m("voice_transcript_insert", "no_anchor");
+        return
+      }
+      let ye = O.current;
+      if (d.value !== I.current) {
+        p("voice_transcript_insert", "input_diverged");
+        return
+      }
+      let de = te.length > 0 && !/\s$/.test(te) && L.length > 0,
+        re = ye.length > 0 && !/^\s/.test(ye) && L.length > 0,
+        se = de ? " " : "",
+        X = re ? " " : "",
+        K = te + se + L + X + ye,
+        oe = te.length + se.length + L.length;
+      d.setValueWithCursor(K, oe), I.current = K, g("voice_transcript_insert"), T.current = te + se + L;
+      let F = me === "tap" || H,
+        G = d.submit !== void 0 && F && W4s(L) >= 3 && d.submit(K, !0);
+      x((Y) => {
+        let W = d.submit !== void 0 && me !== "tap" && !G;
+        if (Y.awaitingVoiceSubmitDoubleTap === W) return Y;
+        return {
+          ...Y,
+          awaitingVoiceSubmitDoubleTap: W
+        }
+      })
+    }, [d, x, H, me]),
+    we = bn.useVoice({
+      onTranscript: ee,
+      onError: (L) => {
+        R({
+          key: "voice-error",
+          kind: "warning",
+          text: L,
+          color: "error",
+          priority: "immediate",
+          timeoutMs: 1e4
+        })
+      },
+      enabled: D,
+      focusMode: !1,
+      mode: me
+    }),
+    Ee = Z(() => {
+      if (T.current === null) return null;
+      if (q.length === 0) return null;
+      let L = T.current,
+        te = L.length > 0 && !/\s$/.test(L) && q.length > 0,
+        ye = L.length + (te ? 1 : 0),
+        de = ye + q.length;
+      return {
+        start: ye,
+        end: de
+      }
+    }, [q]);
+  return Jt(() => {
+    d.setInterimRange?.(Ee)
+  }, [d, Ee]), {
+    stripTrailing: N,
+    resetAnchor: j,
+    handleKeyEvent: we.handleKeyEvent,
+    cancelRecording: we.cancelRecording,
+    interimRange: Ee
+  }
+}
+
+function L2e(d) {
+  let re = w(34),
+    {
+      voiceHandleKeyEvent: h,
+      voiceCancelRecording: R,
+      stripTrailing: x,
+      resetAnchor: M,
+      isActive: T,
+      composerTakesTypedKeys: O,
+      composer: I
+    } = d,
+    N = O === void 0 ? !0 : O,
+    j = xLe(),
+    D = Gwn(),
+    H = Zl(),
+    me = h8(),
+    ne = b0(),
+    q = oh($o),
+    ee = V(Fo),
+    we = dn(),
+    Ee = Dt(cn, un),
+    L = H ? H.bindings : Ee,
+    te;
+  ye: {
+    if (!ne) {
+      te = null;
+      break ye
+    }
+    let de = null;
+    if (re[0] !== L || re[1] !== de) {
+      re[2] = de;
+      for (const se of L) {
+        if (se.context !== "Chat") {
+          continue
+        }
+        if (se.chord.length !== 1) {
+          continue
+        }
+        let X = se.chord[0];
+        if (!X) {
+          continue
+        }
+        if (se.action === "voice:pushToTalk") de = X;
+        else if (de !== null && cBe(X, de)) de = null
+      }
+      re[0] = L, re[1] = re[2], re[3] = de
+    } else de = re[3];te = de
+  }
+  let K = te,
+    oe;
+  if (re[4] !== K) oe = K ? OCr(K, PU()) : null, re[4] = K, re[5] = oe;
+  else oe = re[5];
+  let F = oe,
+    G = K !== null && K.key.length === 1 && !K.ctrl && !K.alt && !K.shift && !K.meta && !K.super ? K.key : null,
+    Y = A(0),
+    W = A(0),
+    Re = A(0),
+    le = A(!1),
+    fe = A(null),
+    _e = A(0),
+    pe = A(null),
+    ke, Ie;
+  if (re[6] !== D || re[7] !== q) ke = () => {
+    if (q !== "recording") le.current = !1, Re.current = 0, D(Wo);
+    else {
+      if (_e.current = 0, pe.current) pe.current(), pe.current = null;
+      D(Ho)
+    }
+  }, Ie = [q, D], re[6] = D, re[7] = q, re[8] = ke, re[9] = Ie;
+  else ke = re[8], Ie = re[9];
+  P(ke, Ie);
+  let Qe, _;
+  if (re[10] === S) Qe = () => () => {
+    if (pe.current) pe.current(), pe.current = null
+  }, _ = [], re[10] = Qe, re[11] = _;
+  else Qe = re[10], _ = re[11];
+  P(Qe, _);
+  let ge;
+  if (re[12] !== D) ge = function Me() {
+    if (Y.current === 0) {
+      return
+    }
+    if (fe.current) fe.current(), fe.current = null;
+    Y.current = 0, W.current = 0, D(jo)
+  }, re[12] = D, re[13] = ge;
+  else ge = re[13];
+  let Me = ge,
+    J;
+  if (re[14] !== G || re[15] !== we || re[16] !== I || re[17] !== N || re[18] !== j || re[19] !== T || re[20] !== me || re[21] !== M || re[22] !== Me || re[23] !== D || re[24] !== x || re[25] !== R || re[26] !== ne || re[27] !== h || re[28] !== K || re[29] !== ee) J = (U) => {
+    if (!ne) {
+      return
+    }
+    if (!T || me) {
+      return
+    }
+    if ((U.key === "escape" || U.key === "c" && U.ctrl && !U.shift && !U.meta) && j().voiceState !== "idle") {
+      U.stopImmediatePropagation(), R(), M();
+      return
+    }
+    if (G !== null && !N) {
+      return
+    }
+    if (ee !== "tap" && I.submit !== void 0 && j().awaitingVoiceSubmitDoubleTap) {
+      let xe = I.submit;
+      let Ce = () => {
+        if (_e.current = 0, pe.current) pe.current(), pe.current = null
+      };
+      let Ye = () => {
+        Ce(), D(zo)
+      };
+      let at = G !== null && !U.ctrl && !U.meta && !U.shift && (G === " " ? K5(U.key) : U.key)[0] === G;
+      let mt = I.cursorOffset === I.value.length;
+      if (!at || !mt) Ye();
+      else if (pe.current !== null) Ye();
+      else if (j().voiceState === "idle") {
+        let lt = Date.now();
+        let Ke = _e.current;
+        if (Ke !== 0 && lt - Ke <= sn) {
+          U.stopImmediatePropagation(), _e.current = 0, pe.current = we.setTimeout(() => {
+            pe.current = null;
+            let Ne = j();
+            if (Ne.voiceState !== "idle" || !Ne.awaitingVoiceSubmitDoubleTap) {
+              return
+            }
+            let Pe = I.value;
+            let $e = Pe.endsWith(G) || G === " " && Pe.endsWith("\u3000") ? Pe.slice(0, -1) : Pe;
+            if (!xe($e, !0)) {
+              return
+            }
+            D(Qo)
+          }, ht);
+          return
+        }
+        if (Ke !== 0) Ye();
+        else _e.current = lt
+      }
+    }
+    if (K === null) {
+      return
+    }
+    let Ue;
+    if (G !== null) {
+      let Je = G === " " ? K5(U.key) : U.key;
+      Ue = !U.ctrl && !U.meta && !U.shift && Je[0] === G && (Je.length === 1 || Je === G.repeat(Je.length)) ? Je.length : null
+    } else Ue = an(U, K) ? 1 : null;
+    if (Ue === null) {
+      Me();
+      return
+    }
+    if (ee === "tap") {
+      let kt = j().voiceState;
+      if (kt === "processing") {
+        if (G === null) U.stopImmediatePropagation();
+        return
+      }
+      let gt = kt === "idle";
+      if (gt && I.value.length > 0) {
+        return
+      }
+      U.stopImmediatePropagation();
+      let Qr = Y.current === 0;
+      if (Y.current = Y.current + Ue, fe.current) fe.current();
+      if (fe.current = we.setTimeout(() => {
+          fe.current = null, Me()
+        }, ht), !Qr) {
+        if (G !== null) x(Ue, {
+          char: G,
+          floor: 0
+        });
+        return
+      }
+      if (gt) {
+        if (G !== null) x(Ue, {
+          char: G,
+          anchor: !0
+        });
+        else x(0, {
+          anchor: !0
+        })
+      } else if (G !== null) x(Ue, {
+        char: G,
+        floor: 0
+      });
+      if (h(), gt && j().voiceState === "idle") M();
+      return
+    }
+    let xt = j().voiceState;
+    if (le.current && xt !== "idle") {
+      if (U.stopImmediatePropagation(), G !== null) x(Ue, {
+        char: G,
+        floor: Re.current
+      });
+      h();
+      return
+    }
+    if (xt === "recording") {
+      if (G === null) U.stopImmediatePropagation();
+      return
+    }
+    if (xt === "processing" && G === null) {
+      U.stopImmediatePropagation();
+      return
+    }
+    let cr = Y.current;
+    if (Y.current = Y.current + Ue, G === null || xt === "idle" && Y.current >= nn) {
+      if (U.stopImmediatePropagation(), fe.current) fe.current(), fe.current = null;
+      if (Y.current = 0, le.current = !0, D(Yo), G !== null) Re.current = x(W.current + Ue, {
+        char: G,
+        anchor: !0
+      }), W.current = 0, h();
+      else x(0, {
+        anchor: !0
+      }), h(rn);
+      if (j().voiceState === "idle") le.current = !1, M();
+      return
+    }
+    if (cr >= Ht) U.stopImmediatePropagation(), x(Ue, {
+      char: G,
+      floor: W.current
+    });
+    else W.current = W.current + Ue;
+    if (xt === "idle" && Y.current >= Ht) D(Go);
+    if (fe.current) fe.current();
+    fe.current = we.setTimeout(() => {
+      fe.current = null, Me()
+    }, ht)
+  }, re[14] = G, re[15] = we, re[16] = I, re[17] = N, re[18] = j, re[19] = T, re[20] = me, re[21] = M, re[22] = Me, re[23] = D, re[24] = x, re[25] = R, re[26] = ne, re[27] = h, re[28] = K, re[29] = ee, re[30] = J;
+  else J = re[30];
+  let Yr = J,
+    po;
+  if (re[31] !== Yr || re[32] !== F) po = {
+    handleKeyDown: Yr,
+    voiceKeyDisplay: F
+  }, re[31] = Yr, re[32] = F, re[33] = po;
+  else po = re[33];
+  return po
+}
+
+function ii(T) {
+  return T.settings.voice?.mode ?? "hold"
+}
+var Sn = {
+    r: 153,
+    g: 153,
+    b: 153
+  },
+  wn = {
+    r: 185,
+    g: 185,
+    b: 185
+  },
+  Cn = 2;
+
+function rLe(d) {
+  let x = w(3),
+    {
+      voiceState: h
+    } = d,
+    R = V(ii);
+  switch (h) {
+    case "recording": {
+      if (R === "tap") {
+        let M;
+        if (x[0] === S) M = r(n, {
+          children: [r(n, {
+            color: "error",
+            children: [wo, " REC"]
+          }), e(n, {
+            dimColor: !0,
+            children: " \xB7 tap to send"
+          })]
+        }), x[0] = M;
+        else M = x[0];
+        return M
+      }
+      let M;
+      if (x[1] === S) M = e(n, {
+        dimColor: !0,
+        children: "listening\u2026"
+      }), x[1] = M;
+      else M = x[1];
+      return M
+    }
+    case "processing": {
+      let M;
+      if (x[2] === S) M = e(xr, {}), x[2] = M;
+      else M = x[2];
+      return M
+    }
+    case "idle": {
+      return null
+    }
+  }
+}
+
+function Ozt() {
+  let h = w(2),
+    [, d] = qvt(),
+    R;
+  if (h[0] !== d) R = d ? e(n, {
+    color: d.hex,
+    children: d.char
+  }) : null, h[0] = d, h[1] = R;
+  else R = h[1];
+  return R
+}
+
+function oLe() {
+  let d = w(1),
+    h;
+  if (d[0] === S) h = e(n, {
+    dimColor: !0,
+    children: "keep holding\u2026"
+  }), d[0] = h;
+  else h = d[0];
+  return h
+}
+
+function xr() {
+  let M = w(8),
+    d = hd(),
+    h = sh(d.prefersReducedMotion),
+    [R, x] = Aa(h ? null : 50);
+  if (h) {
+    let T;
+    if (M[0] === S) T = e(n, {
+      color: "warning",
+      children: "Voice: processing\u2026"
+    }), M[0] = T;
+    else T = M[0];
+    return T
+  }
+  let O = x / 1000,
+    I = (Math.sin(O * Math.PI * 2 / Cn) + 1) / 2,
+    T;
+  if (M[1] !== I) {
+    let N = Rh() ? ER(I) : I;
+    T = Xm(Py(Sn, wn, N));
+    M[1] = I, M[2] = T
+  } else T = M[2];
+  let j = T,
+    D;
+  if (M[3] !== j) D = e(n, {
+    color: j,
+    children: "Voice: processing\u2026"
+  }), M[3] = j, M[4] = D;
+  else D = M[4];
+  let H;
+  if (M[5] !== R || M[6] !== D) H = e(s, {
+    ref: R,
+    children: D
+  }), M[5] = R, M[6] = D, M[7] = H;
+  else H = M[7];
+  return H
+}
+B();
+B();
+import {
+  basename as wt,
+  dirname as tr
+} from "path";
+B();
+var bt = ve(_h(), 1);
+
+function kn(d) {
+  return `${bt.major(d,{loose:!0})}.${bt.minor(d,{loose:!0})}.${bt.patch(d,{loose:!0})}`
+}
+
+function Ot(d, h = {
+  ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+  PACKAGE_URL: "@anthropic-ai/claude-code",
+  README_URL: "https://code.claude.com/docs/en/overview",
+  VERSION: "2.1.303",
+  FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+  BUILD_TIME: "2026-10-18T20:20:57Z",
+  GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+  HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+  DD_SOURCEMAP_GROUP: "win32"
+}.VERSION) {
+  return Z(() => {
+    if (!d) return null;
+    let R = kn(d);
+    return R === kn(h) ? null : R
+  }, [d, h])
+}
+var In = 2;
+
+function Pr({
+  isUpdating: d,
+  onChangeIsUpdating: h,
+  showSuccessMessage: R,
+  verbose: x,
+  withSeparator: M
+}) {
+  let {
+    storageV5: T
+  } = Oe(), O = V((re) => re.autoUpdaterResult), I = Un(), [N, j] = y({}), [D, H] = y(!1), me = Ot(O?.version);
+  P(() => {
+    JFe().then(H)
+  }, []);
+  let ne = A(d),
+    q = A(O?.status),
+    ee = A(O?.consecutiveExeLockFailures ?? 0);
+  P(() => {
+    ne.current = d, q.current = O?.status, ee.current = O?.consecutiveExeLockFailures ?? 0
+  });
+  let we = ae(async () => {
+      if (ne.current) return;
+      if (q.current === "no_permissions") {
+        t("AutoUpdater: Skipping update check (no_permissions persists this session)");
+        return
+      }
+      if (ee.current >= In) {
+        t("AutoUpdater: Skipping update check (claude.exe locked by another process; damped for this session)");
+        return
+      }
+      if (Tge()) return;
+      if (Ait()) return;
+      let re = {
+          ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+          PACKAGE_URL: "@anthropic-ai/claude-code",
+          README_URL: "https://code.claude.com/docs/en/overview",
+          VERSION: "2.1.303",
+          FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+          BUILD_TIME: "2026-10-18T20:20:57Z",
+          GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+          HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+          DD_SOURCEMAP_GROUP: "win32"
+        }.VERSION,
+        se = uY(),
+        X = await xit(se),
+        {
+          maxVersion: K,
+          forceDowngradeEnabled: oe
+        } = await QFe(),
+        F = null,
+        G = !1;
+      if (oe && K) {
+        if (G = eYe(re, K, "auto_updater"), G) F = K
+      }
+      if (!F && X) {
+        if (K && Vy(X, K))
+          if (t(`AutoUpdater: maxVersion ${K} is set, capping update from ${X} to ${K}`), Vy(K, re)) F = K;
+          else t(`AutoUpdater: current version ${re} is already at or above maxVersion ${K}, skipping update`);
+        else if (Vy(X, re)) F = X
+      }
+      if (j({
+          global: re,
+          latest: F ?? X
+        }), !F || tYe(F)) return;
+      if (G) i("tengu_auto_updater_forced_downgrade", {
+        from_version: zi(re),
+        to_version: zi(F)
+      });
+      let Y = Date.now();
+      h(!0);
+      let W = ue();
+      if (W.installMethod !== "native" && !Fe(process.env.DISABLE_INSTALLATION_CHECKS)) await gAt();
+      let Re = await XFe();
+      if (t(`AutoUpdater: Detected installation type: ${Re}`), Re === "development") {
+        t("AutoUpdater: Cannot auto-update development build"), h(!1);
+        return
+      }
+      let le, fe, _e;
+      if (Re === "npm-local") t("AutoUpdater: Using local update method"), fe = "local", le = await Cit(se, F, T);
+      else if (Re === "npm-global") t("AutoUpdater: Using global update method"), fe = "global", _e = await Pit(F, T), le = _e.status;
+      else if (Re === "native") {
+        t("AutoUpdater: Unexpected native installation in non-native updater"), h(!1);
+        return
+      } else {
+        t("AutoUpdater: Unknown installation type, falling back to config");
+        let ke = W.installMethod === "local";
+        if (fe = ke ? "local" : "global", ke) le = await Cit(se, F, T);
+        else _e = await Pit(F, T), le = _e.status
+      }
+      h(!1);
+      let pe = _e?.failureHint;
+      if (le !== "in_progress") Q4e({
+        timestamp: new Date().toISOString(),
+        path: fe === "local" ? "npm-local" : "npm-global",
+        outcome: le === "success" ? "success" : "failed",
+        status: le,
+        version_from: re,
+        version_to: F,
+        error_code: le === "install_failed" && nYe() ? "update_apply_restore_failed" : b8t(pe)
+      }, T);
+      if (le === "success") {
+        let ke = _e?.probeDurationMs ?? 0;
+        i("tengu_auto_updater_success", {
+          fromVersion: zi(re),
+          toVersion: zi(F),
+          durationMs: Date.now() - Y - ke,
+          probeDurationMs: ke,
+          wasMigrated: fe === "local",
+          installationType: c(Re)
+        })
+      } else if (le !== "in_progress") {
+        let ke = le;
+        i("tengu_auto_updater_fail", {
+          fromVersion: zi(re),
+          attemptedVersion: zi(F),
+          status: c(ke),
+          durationMs: Date.now() - Y,
+          wasMigrated: fe === "local",
+          installationType: c(Re)
+        })
+      }
+      I((ke) => {
+        let Ie = ke.autoUpdaterResult,
+          Qe = Ie?.consecutiveExeLockFailures ?? 0,
+          _ = le === "in_progress" ? Qe : pe === "windows_running_exe_lock" ? Qe + 1 : 0;
+        if (Ie?.version === F && Ie?.status === le && Ie?.failureHint === pe && (Ie?.consecutiveExeLockFailures ?? 0) === _) return ke;
+        return {
+          ...ke,
+          autoUpdaterResult: {
+            version: F,
+            status: le,
+            failureHint: pe,
+            consecutiveExeLockFailures: _
+          }
+        }
+      })
+    }, [I, T]),
+    Ee = Mo((re) => {
+      h(!1), l(re)
+    });
+  if (P(() => {
+      we().catch(Ee)
+    }, [we]), sa(() => void we().catch(Ee), 1800000), !O?.version && (!N.global || !N.latest)) return null;
+  if (!O?.version && !d) return null;
+  let L = O?.status === "install_failed" ? nYe() : null,
+    te = null;
+  switch (O?.failureHint) {
+    case "windows_running_exe_lock":
+      te = "claude.exe in use (close other Claude Code sessions, including VS Code)";
+      break;
+    case "native_binary_missing":
+      te = "native binary for this platform was not downloaded (will retry)";
+      break;
+    case void 0:
+      break
+  }
+  if (!(x || d || O?.status === "success" && R && !!me || O?.status === "no_permissions" || O?.status === "install_failed")) return null;
+  return r(s, {
+    flexDirection: "row",
+    gap: 1,
+    children: [M === void 0 ? null : e(n, {
+      dimColor: !0,
+      children: M ? " \xB7" : ""
+    }), x && r(n, {
+      dimColor: !0,
+      wrap: "truncate",
+      children: ["globalVersion: ", N.global, " \xB7 latestVersion:", " ", N.latest]
+    }), d ? e(Q, {
+      children: e(s, {
+        children: e(n, {
+          color: "text",
+          dimColor: !0,
+          wrap: "truncate",
+          children: "Auto-updating\u2026"
+        })
+      })
+    }) : O?.status === "success" && R && me && r(n, {
+      color: "success",
+      wrap: "truncate",
+      children: [e(ft, {
+        status: "success",
+        withSpace: !0
+      }), "Update installed \xB7 Restart to apply"]
+    }), O?.status === "no_permissions" && r(n, {
+      color: "error",
+      wrap: "truncate",
+      children: [e(ft, {
+        status: "error",
+        withSpace: !0
+      }), "Auto-update failed: no write permission to npm prefix \xB7 Run", " ", e(n, {
+        bold: !0,
+        children: "claude doctor"
+      })]
+    }), O?.status === "install_failed" && (L ? L.preservedPath ? r(s, {
+      flexDirection: "column",
+      children: [r(n, {
+        color: "error",
+        wrap: "truncate",
+        children: [e(ft, {
+          status: "error",
+          withSpace: !0
+        }), "Update failed and ", wt(L.originalPath), " could not be restored \u2014 it was preserved at:"]
+      }), tr(L.preservedPath) === tr(L.originalPath) ? r(n, {
+        color: "error",
+        wrap: "truncate",
+        children: [L.preservedPath, " \xB7 rename it back to", " ", wt(L.originalPath), " or run", " ", r(n, {
+          bold: !0,
+          children: ["npm i -g ", {
+            ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+            PACKAGE_URL: "@anthropic-ai/claude-code",
+            README_URL: "https://code.claude.com/docs/en/overview",
+            VERSION: "2.1.303",
+            FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+            BUILD_TIME: "2026-10-18T20:20:57Z",
+            GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+            HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+            DD_SOURCEMAP_GROUP: "win32"
+          }.PACKAGE_URL]
+        })]
+      }) : r(n, {
+        color: "error",
+        wrap: "truncate",
+        children: [L.preservedPath, " \xB7 reinstall with", " ", r(n, {
+          bold: !0,
+          children: ["npm i -g ", {
+            ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+            PACKAGE_URL: "@anthropic-ai/claude-code",
+            README_URL: "https://code.claude.com/docs/en/overview",
+            VERSION: "2.1.303",
+            FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+            BUILD_TIME: "2026-10-18T20:20:57Z",
+            GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+            HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+            DD_SOURCEMAP_GROUP: "win32"
+          }.PACKAGE_URL]
+        })]
+      })]
+    }) : r(n, {
+      color: "error",
+      wrap: "truncate",
+      children: [e(ft, {
+        status: "error",
+        withSpace: !0
+      }), "Update failed and ", wt(L.originalPath), " could not be restored (no preserved copy found) \xB7 reinstall with", " ", r(n, {
+        bold: !0,
+        children: ["npm i -g ", {
+          ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+          PACKAGE_URL: "@anthropic-ai/claude-code",
+          README_URL: "https://code.claude.com/docs/en/overview",
+          VERSION: "2.1.303",
+          FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+          BUILD_TIME: "2026-10-18T20:20:57Z",
+          GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+          HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+          DD_SOURCEMAP_GROUP: "win32"
+        }.PACKAGE_URL]
+      })]
+    }) : te ? r(n, {
+      color: "error",
+      wrap: "truncate",
+      children: [e(ft, {
+        status: "error",
+        withSpace: !0
+      }), "Auto-update failed: ", te, " \xB7 Run", " ", e(n, {
+        bold: !0,
+        children: "claude doctor"
+      })]
+    }) : r(n, {
+      color: "error",
+      wrap: "truncate",
+      children: [e(ft, {
+        status: "error",
+        withSpace: !0
+      }), "Auto-update failed \xB7 Try ", e(n, {
+        bold: !0,
+        children: "claude doctor"
+      }), " or", " ", e(n, {
+        bold: !0,
+        children: D ? `cd ~/.claude/local && npm update ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://code.claude.com/docs/en/overview",VERSION:"2.1.303",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues",BUILD_TIME:"2026-10-18T20:20:57Z",GIT_SHA:"07df2aedd2d01d2f60907b8404acbda187b04072",HOOKS_WORKER_URL:"B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",DD_SOURCEMAP_GROUP:"win32"}.PACKAGE_URL}` : `npm i -g ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://code.claude.com/docs/en/overview",VERSION:"2.1.303",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues",BUILD_TIME:"2026-10-18T20:20:57Z",GIT_SHA:"07df2aedd2d01d2f60907b8404acbda187b04072",HOOKS_WORKER_URL:"B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",DD_SOURCEMAP_GROUP:"win32"}.PACKAGE_URL}`
+      })]
+    }))]
+  })
+}
+B();
+
+function ki(d) {
+  if (d instanceof H0) return "signature_verification";
+  if (d instanceof _8t) return "checksum_mismatch";
+  let h = d instanceof Error ? d.message : String(d),
+    R = k(d);
+  if (d instanceof y8t || R === "ETIMEDOUT" || R === "ECONNABORTED" || h.includes("Download timed out") || h.includes("timeout")) return "timeout";
+  if (h.includes("Checksum mismatch")) return "checksum_mismatch";
+  if (h.includes("ENOENT") || h.includes("not found")) return "not_found";
+  if (h.includes("EACCES") || h.includes("permission")) return "permission_denied";
+  if (h.includes("ENOSPC")) return "disk_full";
+  if (h.includes("npm")) return "npm_error";
+  if (h.includes("network") || h.includes("ECONNREFUSED") || h.includes("ENOTFOUND")) return "network_error";
+  let x = h.toLowerCase();
+  if (h.includes("ENOEXEC") || x.includes("exec format error") || x.includes("bad cpu type") || x.includes("cannot execute binary") || x.includes("code signature") || x.includes("gatekeeper") || x.includes("killed: 9")) return "exec_format";
+  if (x.includes("virus") || x.includes("quarantine") || x.includes("defender") || x.includes("operation did not complete successfully because the file contains")) return "av_quarantine";
+  if (h.includes("EXDEV") || h.includes("EEXIST") || h.includes("EBUSY") || x.includes("rename") || x.includes("move failed") || x.includes("cross-device")) return "swap_failure";
+  return "unknown"
+}
+
+function xi(d) {
+  if (d.wasUpdated) return "tengu_native_auto_updater_success";
+  if (d.skippedUnverifiedRelease) return "tengu_native_auto_updater_skipped_unverified_release";
+  return "tengu_native_auto_updater_up_to_date"
+}
+
+function Ei() {
+  return U9() && !Rd()?.bridgeSessionId && "version" in zPt() && Fys()
+}
+
+function Ti() {
+  let d = E("tengu_fancy_wand_copy", {}).offer;
+  return typeof d === "string" && d !== "" ? d : "/restart to apply"
+}
+
+function Pn() {
+  return Ei() ? Ti() : "Restart to update"
+}
+
+function Vn() {
+  return Sk(Pn)
+}
+
+function Vr({
+  isUpdating: d,
+  onChangeIsUpdating: h,
+  showSuccessMessage: R,
+  verbose: x,
+  withSeparator: M,
+  atPrompt: T
+}) {
+  let {
+    storageV5: O
+  } = Oe(), I = V((re) => re.autoUpdaterResult), N = Un(), [j, D] = y({
+    current: {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.303",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-10-18T20:20:57Z",
+      GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION
+  }), [H, me] = y(null), ne = Ot(I?.version), q = uY();
+  async function ee() {
+    if (d) return;
+    if (I?.status === "success") return;
+    if (Tge()) return;
+    let re = await KMn();
+    if (re && Vy({
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.303",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-10-18T20:20:57Z",
+        GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION, re)) {
+      let X = await Dcs();
+      me(X ?? "affects your version")
+    }
+    if (Ait()) return;
+    h(!0);
+    let se = Date.now();
+    i("tengu_native_auto_updater_start", {});
+    try {
+      let X = await J4e(q, !1, O),
+        K = {
+          ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+          PACKAGE_URL: "@anthropic-ai/claude-code",
+          README_URL: "https://code.claude.com/docs/en/overview",
+          VERSION: "2.1.303",
+          FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+          BUILD_TIME: "2026-10-18T20:20:57Z",
+          GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+          HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+          DD_SOURCEMAP_GROUP: "win32"
+        }.VERSION,
+        oe = Date.now() - se;
+      if (X.lockFailed) {
+        i("tengu_native_auto_updater_lock_contention", {
+          latency_ms: oe
+        });
+        return
+      }
+      if (D({
+          current: K,
+          latest: X.latestVersion
+        }), i(xi(X), {
+          latency_ms: oe
+        }), X.wasUpdated) cuo(), Q4e({
+        timestamp: new Date().toISOString(),
+        path: "native",
+        outcome: "success",
+        status: "success",
+        version_from: K,
+        version_to: X.latestVersion ?? null,
+        error_code: null
+      }, O), N((F) => {
+        let G = F.autoUpdaterResult;
+        if (G?.version === X.latestVersion && G?.status === "success") return F;
+        return {
+          ...F,
+          autoUpdaterResult: {
+            version: X.latestVersion,
+            status: "success"
+          }
+        }
+      })
+    } catch (X) {
+      let K = Date.now() - se,
+        oe = X instanceof Error ? X.message : String(X);
+      t(`Native auto-updater failed: ${oe}`, {
+        level: "error"
+      }), Q4e({
+        timestamp: new Date().toISOString(),
+        path: "native",
+        outcome: "failed",
+        status: "install_failed",
+        version_from: {
+          ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+          PACKAGE_URL: "@anthropic-ai/claude-code",
+          README_URL: "https://code.claude.com/docs/en/overview",
+          VERSION: "2.1.303",
+          FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+          BUILD_TIME: "2026-10-18T20:20:57Z",
+          GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+          HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+          DD_SOURCEMAP_GROUP: "win32"
+        }.VERSION,
+        version_to: null,
+        error_code: null
+      }, O);
+      let F = ki(X),
+        G = Fr(X) ?? b("none");
+      i("tengu_native_auto_updater_fail", {
+        latency_ms: K,
+        error_code: G,
+        error_timeout: F === "timeout",
+        error_checksum: F === "checksum_mismatch",
+        error_signature: F === "signature_verification",
+        error_not_found: F === "not_found",
+        error_permission: F === "permission_denied",
+        error_disk_full: F === "disk_full",
+        error_npm: F === "npm_error",
+        error_network: F === "network_error",
+        error_swap_failure: F === "swap_failure",
+        error_exec_format: F === "exec_format",
+        error_av_quarantine: F === "av_quarantine"
+      }), N((Y) => {
+        let W = Y.autoUpdaterResult;
+        if (W?.version === null && W?.status === "install_failed") return Y;
+        return {
+          ...Y,
+          autoUpdaterResult: {
+            version: null,
+            status: "install_failed"
+          }
+        }
+      })
+    } finally {
+      h(!1)
+    }
+  }
+  let we = Mo(ee);
+  P(() => {
+    we()
+  }, [q]), sa(() => void ee(), 1800000);
+  let Ee = !!I?.status,
+    L = !!j.current && !!j.latest;
+  if (!((!!H || Ee || d && L) && (x || d || I?.status === "success" && R && !!ne || I?.status === "install_failed" || !1))) return null;
+  return r(s, {
+    flexDirection: "row",
+    gap: 1,
+    children: [M === void 0 ? null : e(n, {
+      dimColor: !0,
+      children: M ? " \xB7" : ""
+    }), x && r(n, {
+      dimColor: !0,
+      wrap: "truncate",
+      children: ["current: ", j.current, " \xB7 ", q, ": ", j.latest]
+    }), d ? e(s, {
+      children: e(n, {
+        dimColor: !0,
+        wrap: "truncate",
+        children: "Checking for updates"
+      })
+    }) : I?.status === "success" && R && ne && r(n, {
+      color: "success",
+      wrap: "truncate",
+      children: [e(ft, {
+        status: "success",
+        withSpace: !0
+      }), "Update installed \xB7", " ", T ? e(Vn, {}) : "Restart to update"]
+    }), I?.status === "install_failed" && r(n, {
+      color: "error",
+      wrap: "truncate",
+      children: [e(ft, {
+        status: "error",
+        withSpace: !0
+      }), "Auto-update failed \xB7 Run ", e(n, {
+        bold: !0,
+        children: "claude doctor"
+      })]
+    }), H && !1]
+  })
+}
+B();
+import {
+  homedir as Dn
+} from "os";
+import {
+  join as Mi
+} from "path";
+class Nn {
+  packageManagerUpdateLastFailedAt = 0;
+  packageManagerLatestVersion = null;
+  fastIconHintShown = !1;
+  memorySelectorLastPath = void 0;
+  recordPackageManagerUpdateFailure(d) {
+    this.packageManagerUpdateLastFailedAt = d
+  }
+  recordPackageManagerLatestVersion(d) {
+    this.packageManagerLatestVersion = d
+  }
+  markFastIconHintShown() {
+    this.fastIconHintShown = !0
+  }
+  rememberMemorySelectorPath(d) {
+    this.memorySelectorLastPath = d
+  }
+}
+var ttt = new z(() => new Nn);
+
+function Fi(xt) {
+  return xt.autoUpdaterResult
+}
+
+function Wi(cr) {
+  return cr.autoUpdaterResult?.status === "install_failed" ? {
+    ...cr,
+    autoUpdaterResult: null
+  } : cr
+}
+
+function Kn(d, h) {
+  switch (d) {
+    case "homebrew":
+      return ["brew", "upgrade", "--cask", h ?? "claude-code"];
+    case "winget": {
+      let R = process.env.LOCALAPPDATA;
+      return [R ? Mi(R, "Microsoft", "WindowsApps", "winget.exe") : "winget", "upgrade", "--id", "Anthropic.ClaudeCode", "--exact", "--silent", "--disable-interactivity"]
+    }
+    default:
+      return null
+  }
+}
+
+function Ln(d, h) {
+  switch (d) {
+    case "homebrew":
+      return `brew upgrade ${h??"claude-code"}`;
+    case "winget":
+      return "winget upgrade Anthropic.ClaudeCode";
+    case "mise":
+      return "mise upgrade claude";
+    case "apk":
+      return "apk upgrade claude-code";
+    default:
+      return "your package manager update command"
+  }
+}
+var rr = 1800000;
+
+function or(d) {
+  let ee = w(54),
+    {
+      isUpdating: h,
+      onChangeIsUpdating: R,
+      showSuccessMessage: x,
+      verbose: M,
+      withSeparator: T
+    } = d,
+    O = V(Fi),
+    I = Un(),
+    N = ttt.of(gs()),
+    [j, D] = y(N.packageManagerLatestVersion),
+    [H, me] = y("unknown"),
+    [ne, q] = y(null),
+    we;
+  if (ee[0] !== h) we = () => h, ee[0] = h, ee[1] = we;
+  else we = ee[1];
+  let Ee = Mo(we),
+    L, te;
+  if (ee[2] === S) L = () => {
+    YFe().then((ye) => {
+      if (me(ye), ye === "homebrew") q(Eit())
+    })
+  }, te = [], ee[2] = L, ee[3] = te;
+  else L = ee[2], te = ee[3];
+  P(L, te);
+  let de;
+  if (ee[4] !== O?.status || ee[5] !== h || ee[6] !== R || ee[7] !== Ee || ee[8] !== I || ee[9] !== N) de = async () => {
+    if (h) {
+      return
+    }
+    if (O?.status === "success") {
+      return
+    }
+    if (Tge()) {
+      return
+    }
+    if (Ait()) {
+      return
+    }
+    if (O?.status === "install_failed") {
+      if (Date.now() - N.packageManagerUpdateLastFailedAt < rr) {
+        return
+      }
+      I(Wi)
+    }
+    let [re, se] = await Promise.all([uY(), YFe()]);
+    let X = re;
+    let K = null;
+    if (se === "homebrew") K = Eit(), X = K === "claude-code@latest" ? "latest" : "stable";
+    let oe = se === "homebrew" ? await S8t(K ?? "claude-code", X) : await Xfr(X);
+    let F = await KMn();
+    let G = !1;
+    if (F && oe && Vy(oe, F)) {
+      if (t(`PackageManagerAutoUpdater: maxVersion ${F} is set, capping update from ${oe} to ${F}`), av({
+          ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+          PACKAGE_URL: "@anthropic-ai/claude-code",
+          README_URL: "https://code.claude.com/docs/en/overview",
+          VERSION: "2.1.303",
+          FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+          BUILD_TIME: "2026-10-18T20:20:57Z",
+          GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+          HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+          DD_SOURCEMAP_GROUP: "win32"
+        }.VERSION, F)) {
+        t(`PackageManagerAutoUpdater: current version ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://code.claude.com/docs/en/overview",VERSION:"2.1.303",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues",BUILD_TIME:"2026-10-18T20:20:57Z",GIT_SHA:"07df2aedd2d01d2f60907b8404acbda187b04072",HOOKS_WORKER_URL:"B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",DD_SOURCEMAP_GROUP:"win32"}.VERSION} is already at or above maxVersion ${F}, skipping update`), N.recordPackageManagerLatestVersion(null), D(null);
+        return
+      }
+      oe = F, G = !0
+    }
+    let Y = oe && !av({
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.303",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-10-18T20:20:57Z",
+      GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION, oe) && !tYe(oe);
+    let W = Y ? oe : null;
+    if (N.recordPackageManagerLatestVersion(W), D(W), !Y) {
+      return
+    }
+    t(`PackageManagerAutoUpdater: Update available ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://code.claude.com/docs/en/overview",VERSION:"2.1.303",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues",BUILD_TIME:"2026-10-18T20:20:57Z",GIT_SHA:"07df2aedd2d01d2f60907b8404acbda187b04072",HOOKS_WORKER_URL:"B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",DD_SOURCEMAP_GROUP:"win32"}.VERSION} -> ${oe}`);
+    let Re = Fe(process.env.CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE);
+    let le = Kn(se, K);
+    if (!Re || !le || G) {
+      return
+    }
+    if (Ee()) {
+      return
+    }
+    R(!0);
+    let fe = Date.now();
+    let _e = {
+      pm_homebrew: se === "homebrew",
+      pm_winget: se === "winget"
+    };
+    i("tengu_pkg_manager_auto_updater_start", _e);
+    let [pe, ...ke] = le;
+    let Ie = await ct(pe, ke, {
+      cwd: Dn(),
+      timeout: 300000,
+      env: se === "homebrew" ? {
+        ...process.env,
+        HOMEBREW_NO_AUTO_UPDATE: ""
+      } : void 0
+    });
+    let Qe = Date.now() - fe;
+    if (R(!1), Ie.code === 0) i("tengu_pkg_manager_auto_updater_success", {
+      ..._e,
+      latency_ms: Qe
+    }), I((_) => {
+      let ge = _.autoUpdaterResult;
+      if (ge?.version === oe && ge?.status === "success") {
+        return _
+      }
+      return {
+        ..._,
+        autoUpdaterResult: {
+          version: oe,
+          status: "success"
+        }
+      }
+    });
+    else t(`PackageManagerAutoUpdater: ${pe} exited ${Ie.code}: ${Ie.stderr||Ie.error||Ie.stdout}`), i("tengu_pkg_manager_auto_updater_fail", {
+      ..._e,
+      latency_ms: Qe,
+      exit_code: Ie.code
+    }), N.recordPackageManagerUpdateFailure(Date.now()), I((Me) => {
+      if (Me.autoUpdaterResult?.status === "install_failed") {
+        return Me
+      }
+      return {
+        ...Me,
+        autoUpdaterResult: {
+          version: oe,
+          status: "install_failed"
+        }
+      }
+    })
+  }, ee[4] = O?.status, ee[5] = h, ee[6] = R, ee[7] = Ee, ee[8] = I, ee[9] = N, ee[10] = de;
+  else de = ee[10];
+  let J = Mo(de),
+    U;
+  if (ee[11] !== R) U = (xe) => {
+    R(!1), l(xe)
+  }, ee[11] = R, ee[12] = U;
+  else U = ee[12];
+  let Ce = Mo(U),
+    Ye;
+  if (ee[13] !== J || ee[14] !== Ce) Ye = () => {
+    J().catch(Ce)
+  }, ee[13] = J, ee[14] = Ce, ee[15] = Ye;
+  else Ye = ee[15];
+  let at;
+  if (ee[16] === S) at = [], ee[16] = at;
+  else at = ee[16];
+  P(Ye, at);
+  let mt;
+  if (ee[17] !== J || ee[18] !== Ce) mt = () => void J().catch(Ce), ee[17] = J, ee[18] = Ce, ee[19] = mt;
+  else mt = ee[19];
+  sa(mt, rr);
+  let lt;
+  if (ee[20] !== T) lt = T === void 0 ? null : e(n, {
+    dimColor: !0,
+    children: T ? " \xB7" : ""
+  }), ee[20] = T, ee[21] = lt;
+  else lt = ee[21];
+  let Ke = lt;
+  if (O?.status === "success") {
+    if (!x) {
+      return null
+    }
+    let Ne;
+    if (ee[22] !== O || ee[23] !== M) Ne = M && r(n, {
+      dimColor: !0,
+      wrap: "truncate",
+      children: ["current: ", {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.303",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-10-18T20:20:57Z",
+        GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION, " \xB7 latest:", " ", O.version]
+    }), ee[22] = O, ee[23] = M, ee[24] = Ne;
+    else Ne = ee[24];
+    const Pe = H !== "unknown" && ` via ${H}`;
+    let $e;
+    if (ee[25] !== Pe) $e = r(n, {
+      color: "success",
+      wrap: "truncate",
+      children: ["\u2713 Update installed", Pe, " \xB7 Restart to apply"]
+    }), ee[25] = Pe, ee[26] = $e;
+    else $e = ee[26];
+    let Ue;
+    if (ee[27] !== Ke || ee[28] !== Ne || ee[29] !== $e) Ue = r(s, {
+      flexDirection: "row",
+      gap: 1,
+      children: [Ke, Ne, $e]
+    }), ee[27] = Ke, ee[28] = Ne, ee[29] = $e, ee[30] = Ue;
+    else Ue = ee[30];
+    return Ue
+  }
+  if (h) {
+    const Ne = H === "unknown" ? "Updating\u2026" : `Updating via ${H}\u2026`;
+    let Pe;
+    if (ee[31] !== Ne) Pe = e(n, {
+      dimColor: !0,
+      wrap: "truncate",
+      children: Ne
+    }), ee[31] = Ne, ee[32] = Pe;
+    else Pe = ee[32];
+    let $e;
+    if (ee[33] !== Ke || ee[34] !== Pe) $e = r(s, {
+      flexDirection: "row",
+      gap: 1,
+      children: [Ke, Pe]
+    }), ee[33] = Ke, ee[34] = Pe, ee[35] = $e;
+    else $e = ee[35];
+    return $e
+  }
+  let Je = O?.status === "install_failed";
+  if (!j && !Je || H === "unknown") {
+    return null
+  }
+  let Ne;
+  if (ee[36] !== M) Ne = M && r(n, {
+    dimColor: !0,
+    wrap: "truncate",
+    children: ["currentVersion: ", {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.303",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-10-18T20:20:57Z",
+      GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION]
+  }), ee[36] = M, ee[37] = Ne;
+  else Ne = ee[37];
+  let Pe;
+  if (ee[38] !== ne || ee[39] !== H) Pe = Ln(H, ne), ee[38] = ne, ee[39] = H, ee[40] = Pe;
+  else Pe = ee[40];
+  let $e;
+  if (ee[41] !== Pe) $e = e(n, {
+    bold: !0,
+    children: Pe
+  }), ee[41] = Pe, ee[42] = $e;
+  else $e = ee[42];
+  let Ue;
+  if (ee[43] !== Je) Ue = Je && e(n, {
+    dimColor: !0,
+    children: " (auto-update failed)"
+  }), ee[43] = Je, ee[44] = Ue;
+  else Ue = ee[44];
+  let kt;
+  if (ee[45] !== $e || ee[46] !== Ue) kt = r(n, {
+    color: "warning",
+    wrap: "truncate",
+    children: ["Update available! Run:", " ", $e, Ue]
+  }), ee[45] = $e, ee[46] = Ue, ee[47] = kt;
+  else kt = ee[47];
+  let gt;
+  if (ee[48] !== Ne || ee[49] !== kt) gt = r(s, {
+    flexDirection: "column",
+    alignItems: "flex-end",
+    children: [Ne, kt]
+  }), ee[48] = Ne, ee[49] = kt, ee[50] = gt;
+  else gt = ee[50];
+  let Qr;
+  if (ee[51] !== Ke || ee[52] !== gt) Qr = r(s, {
+    flexDirection: "row",
+    gap: 1,
+    alignItems: "flex-end",
+    children: [Ke, gt]
+  }), ee[51] = Ke, ee[52] = gt, ee[53] = Qr;
+  else Qr = ee[53];
+  return Qr
+}
+
+function rtt(d) {
+  let H = w(18),
+    {
+      isUpdating: h,
+      onChangeIsUpdating: R,
+      showSuccessMessage: x,
+      verbose: M,
+      withSeparator: T,
+      atPrompt: O
+    } = d,
+    [I, N] = y(null),
+    [j, D] = y(null),
+    me;
+  if (H[0] === S) me = async function we() {
+    let ne = !aio();
+    let q = Date.now();
+    let ee = await XFe();
+    g("update_detection", {
+      duration_ms: Date.now() - q,
+      first_in_process: ne,
+      installation_type: c(ee)
+    }), t(`AutoUpdaterWrapper: Installation type: ${ee}`), N(ee === "native"), D(ee === "package-manager")
+  }, H[0] = me;
+  else me = H[0];
+  let we = me,
+    [Ee] = y(dio),
+    L;
+  if (H[1] === S) L = () => void we(), H[1] = L;
+  else L = H[1];
+  if (Dr(L, Ee), I === null || j === null) {
+    return null
+  }
+  if (j) {
+    let te;
+    if (H[2] !== h || H[3] !== R || H[4] !== x || H[5] !== M || H[6] !== T) te = e(or, {
+      verbose: M,
+      isUpdating: h,
+      onChangeIsUpdating: R,
+      showSuccessMessage: x,
+      withSeparator: T
+    }), H[2] = h, H[3] = R, H[4] = x, H[5] = M, H[6] = T, H[7] = te;
+    else te = H[7];
+    return te
+  }
+  let te;
+  if (H[8] !== h || H[9] !== R || H[10] !== x || H[11] !== M || H[12] !== T) te = {
+    verbose: M,
+    isUpdating: h,
+    onChangeIsUpdating: R,
+    showSuccessMessage: x,
+    withSeparator: T
+  }, H[8] = h, H[9] = R, H[10] = x, H[11] = M, H[12] = T, H[13] = te;
+  else te = H[13];
+  let ye = te,
+    de;
+  if (H[14] !== O || H[15] !== ye || H[16] !== I) de = I ? e(Vr, {
+    ...ye,
+    atPrompt: O
+  }) : e(Pr, {
+    ...ye
+  }), H[14] = O, H[15] = ye, H[16] = I, H[17] = de;
+  else de = H[17];
+  return de
+}
+
+function ywt() {
+  return !Sk(hE)
+}
+B();
+
+function nbn(d, h) {
+  let R = Math.max(1, Math.floor(h) || 1),
+    x = h > 0 ? Lc(d, R, {
+      hard: !0,
+      trim: !1
+    }) : d,
+    M = [],
+    T = 0,
+    O = -1,
+    I = x.split(`
+`);
+  for (let N = 0; N < I.length; N++) {
+    let j = I[N] ?? "";
+    if (j.length === 0) {
+      if (O = d.indexOf(`
+`, O + 1), O !== -1) {
+        let ne = O;
+        M.push(ar({
+          text: j,
+          startOffset: ne,
+          isPrecededByNewline: sr(d, ne, N === 0),
+          endsWithNewline: !0
+        }))
+      } else {
+        let ne = d.length;
+        M.push(ar({
+          text: j,
+          startOffset: ne,
+          isPrecededByNewline: sr(d, ne, N === 0),
+          endsWithNewline: !1
+        }))
+      }
+      continue
+    }
+    let D = d.indexOf(j, T);
+    if (D === -1) {
+      let ne = T;
+      M.push(ar({
+        text: j,
+        startOffset: ne,
+        isPrecededByNewline: sr(d, ne, N === 0),
+        endsWithNewline: !1
+      })), T = ne + j.length;
+      continue
+    }
+    T = D + j.length;
+    let H = D + j.length,
+      me = H < d.length && d[H] === `
+`;
+    if (me) O = H;
+    M.push(ar({
+      text: j,
+      startOffset: D,
+      isPrecededByNewline: sr(d, D, N === 0),
+      endsWithNewline: me
+    }))
+  }
+  return Object.freeze({
+    text: d,
+    columns: R,
+    lines: Object.freeze(M)
+  })
+}
+
+function Ji(d, h) {
+  let R = fo(h, 0, Math.max(0, d.lines.length - 1));
+  return d.lines[R] ?? {
+    text: "",
+    startOffset: 0,
+    isPrecededByNewline: !0,
+    endsWithNewline: !1
+  }
+}
+
+function uo(d, h) {
+  if (d.lines.length === 0) return {
+    line: 0,
+    column: 0
+  };
+  let R = fo(h, 0, d.text.length);
+  for (let T = 0; T < d.lines.length; T++) {
+    let O = d.lines[T],
+      I = d.lines[T + 1];
+    if (R >= O.startOffset && (!I || R < I.startOffset)) {
+      let N = R - O.startOffset,
+        j;
+      if (O.isPrecededByNewline) j = co(O.text, N);
+      else {
+        let D = O.text.length - O.text.trimStart().length;
+        if (N < D) j = 0;
+        else j = co(O.text.slice(D), N - D)
+      }
+      return {
+        line: T,
+        column: j
+      }
+    }
+  }
+  let x = d.lines.length - 1,
+    M = d.lines[x];
+  return {
+    line: x,
+    column: ie(M.text)
+  }
+}
+
+function lo(d, h, R) {
+  if (d.lines.length === 0) return 0;
+  let x = Ji(d, h);
+  if (x.text.length === 0 && x.endsWithNewline) return x.startOffset;
+  let M = x.isPrecededByNewline ? 0 : x.text.length - x.text.trimStart().length,
+    T = Zi(x.text.slice(M), Math.max(0, R)) + M;
+  return x.startOffset + T
+}
+
+function co(d, h) {
+  if (h <= 0) return 0;
+  if (h >= d.length) return ie(d);
+  return ie(d.slice(0, h))
+}
+
+function Zi(d, h) {
+  if (h <= 0 || d.length === 0) return 0;
+  let R = 0,
+    x = 0;
+  for (let M of d) {
+    let T = ie(M);
+    if (R + T > h) break;
+    R += T, x += M.length
+  }
+  return x
+}
+
+function sr(d, h, R) {
+  if (R) return !0;
+  return h > 0 && d[h - 1] === `
+`
+}
+
+function ar(d) {
+  return Object.freeze(d)
+}
+
+function fo(d, h, R) {
+  return d < h ? h : d > R ? R : d
+}
+
+function fS({
+  query: d,
+  placeholder: h,
+  isFocused: R,
+  onKeyDown: x,
+  onPaste: M,
+  ref: T,
+  autoFocus: O,
+  isTerminalFocused: I,
+  prefix: N = Mqs,
+  width: j,
+  cursorOffset: D,
+  borderless: H = !1,
+  highlights: me = [],
+  dimRange: ne,
+  cursorChar: q,
+  prefixDim: ee = !1,
+  prefixColor: we,
+  onCursorOffsetChange: Ee,
+  onFocus: L,
+  wrapColumns: te
+}) {
+  let ye = D ?? d.length,
+    de = x !== void 0,
+    re = A(null),
+    se = (Ce) => {
+      re.current = Ce, Kwn(T, Ce)
+    },
+    X = n7(re),
+    K = R ?? (de && X),
+    oe = ot(),
+    F = !H && !oe,
+    G = !1,
+    Y = F && !1,
+    W = F && !Y,
+    Re = h ?? "Search\u2026",
+    le = W ? 2 : 0,
+    fe = F ? 1 : 0,
+    _e = `${N} ${d}`,
+    pe = N.length + 1,
+    ke = Z(() => nbn(_e, te ?? 0), [_e, te]),
+    Ie = Z(LF, []),
+    Qe = a.CLAUDE_CODE_ALT_SCREEN_FULL_REPAINT && a.CLAUDE_CODE_SESSION_KIND !== "bg",
+    _ = uo(ke, pe + ye),
+    ge = q === void 0 && !Qe,
+    Me = Ek({
+      line: fe + _.line,
+      column: le + _.column,
+      active: K && !de,
+      visible: ge
+    }),
+    J = I && !(Ie && !Qe && q === void 0),
+    U = Ee || L || de ? (Ce) => {
+      if (!K && Ce.isWindowActivation) {
+        Ce.dropAsStray();
+        return
+      }
+      let Ye = re.current;
+      if (Ye && !L) CP(Ye).focus(Ye);
+      if (!K) {
+        L?.();
+        return
+      }
+      if (!d || !Ee) return;
+      let at = Ce.localRow - fe;
+      if (at < 0) return;
+      let mt = Math.max(0, Ce.localCol - le),
+        lt = lo(ke, at, mt);
+      Ee(Math.max(0, Math.min(d.length, lt - pe)))
+    } : void 0,
+    xe = r(n, {
+      dimColor: !K,
+      children: [e(n, {
+        dimColor: ee,
+        color: we ?? (Y && K ? "permission" : void 0),
+        children: N
+      }), " ", K ? d ? ts(d, me, ne, J ? ye : -1, q) : J ? r(Q, {
+        children: [q ?? e(n, {
+          inverse: !0,
+          children: Re.charAt(0)
+        }), e(n, {
+          dimColor: !0,
+          children: q ? Re : Re.slice(1)
+        })]
+      }) : e(n, {
+        dimColor: !0,
+        children: Re
+      }) : d ? e(n, {
+        children: d
+      }) : e(n, {
+        children: Re
+      })]
+    });
+  if (de) return e(s, {
+    flexShrink: 0,
+    borderStyle: W ? "round" : void 0,
+    borderColor: K ? "suggestion" : void 0,
+    borderDimColor: !K,
+    paddingX: W ? 1 : 0,
+    paddingY: Y ? 1 : 0,
+    width: j,
+    onClick: U,
+    children: e(Kre, {
+      ref: se,
+      autoFocus: O,
+      onKeyDown: x,
+      onPaste: M,
+      caret: K ? {
+        line: _.line,
+        column: _.column,
+        visible: ge
+      } : void 0,
+      flexGrow: 1,
+      children: xe
+    })
+  });
+  return e(s, {
+    ref: Me,
+    flexShrink: 0,
+    borderStyle: W ? "round" : void 0,
+    borderColor: K ? "suggestion" : void 0,
+    borderDimColor: !K,
+    paddingX: W ? 1 : 0,
+    paddingY: Y ? 1 : 0,
+    width: j,
+    onClick: U,
+    children: xe
+  })
+}
+
+function ts(d, h, R, x, M) {
+  let T = (D) => h.some(([H, me]) => D >= H && D < me),
+    O = (D) => !!R && D >= R[0] && D < R[1],
+    I = new Set([0, d.length]);
+  for (let [D, H] of h) I.add(D), I.add(H);
+  if (R) I.add(R[0]), I.add(R[1]);
+  if (x >= 0) I.add(x), I.add(x + 1);
+  let N = [...I].sort((D, H) => D - H),
+    j = [];
+  for (let D = 0; D < N.length - 1; D++) {
+    let H = N[D],
+      me = N[D + 1],
+      ne = H < d.length ? d.slice(H, me) : " ";
+    if (!ne) continue;
+    let q = H === x,
+      ee = q && ne === `
+`;
+    j.push(q && M ? r(n, {
+      children: [M, ee ? `
+` : null]
+    }, H) : e(n, {
+      color: T(H) ? "suggestion" : void 0,
+      dimColor: O(H),
+      inverse: q,
+      children: ee ? ` 
+` : ne
+    }, H))
+  }
+  return j
+}
+
+function b2r({
+  presentation: d,
+  rows: h,
+  embedded: R
+}) {
+  return !1
+}
+export {
+  o8,
+  h2r,
+  y2r,
+  _2r,
+  s_,
+  nbn,
+  fS,
+  b2r,
+  Azt,
+  r6o,
+  O2e,
+  rbn,
+  I2e,
+  M2e,
+  D2e,
+  ttt,
+  xzt,
+  Pzt,
+  b0,
+  ntt,
+  L2e,
+  rLe,
+  Ozt,
+  oLe,
+  rtt,
+  ywt
+};

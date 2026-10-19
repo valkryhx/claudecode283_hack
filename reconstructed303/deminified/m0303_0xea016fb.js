@@ -1,0 +1,1101 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Z4, Vt } from "B:/~BUN/root/chunk-9ka04m0y.js";
+import { L, K, de } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { x, Ye, d, k, bye } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { Y } from "B:/~BUN/root/chunk-89mss1tj.js";
+import { Xp } from "B:/~BUN/root/chunk-9080897a.js";
+import { p } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import { _o, xo, se, AGe, mR, t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { Vn, A_ } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { I1t, T5, Y7e, GS } from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import { l } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { I } from "B:/~BUN/root/chunk-je1b1drr.js";
+import { ns } from "B:/~BUN/root/chunk-rvc0n7zm.js";
+import { Sg } from "B:/~BUN/root/chunk-xrp58hm9.js";
+import { mo } from "B:/~BUN/root/chunk-c44qc88s.js";
+import { em, _O } from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import { jM } from "B:/~BUN/root/chunk-4qc55bxf.js";
+function U(e) {
+  if (!Z4(e)) return !1;
+  if (Vt(e)) return !0;
+  return /^[A-Za-z0-9][A-Za-z0-9_]*$/.test(e) && jM(e) !== void 0;
+}
+function RGn(e, n = {}) {
+  return n.acceptCustomIds ? Z4(e) : U(e);
+}
+function t1e(adoptedSessionId, n, i = {}) {
+  if (n) return {
+    adoptedSessionId: null,
+    effectiveFork: !0
+  };
+  if (adoptedSessionId === void 0) return {
+    adoptedSessionId: null,
+    effectiveFork: !1
+  };
+  if (RGn(adoptedSessionId, i)) return {
+    adoptedSessionId: adoptedSessionId,
+    effectiveFork: !1
+  };
+  return t(`resume: transcript session id (${typeof adoptedSessionId}) rejected by the adoption gate; continuing as a fork under the fresh session id`), p("session_resume", "unadoptable_session_id"), {
+    adoptedSessionId: null,
+    effectiveFork: !0
+  };
+}
+import { randomBytes as be } from "crypto";
+import { constants as T, fstat as ve } from "fs";
+import { copyFile as Se, link as $e, lstat as F, mkdir as oe, open as j, readdir as Fe, readlink as _, realpath as z, symlink as Q, unlink as S } from "fs/promises";
+import { basename as X, dirname as m, isAbsolute as pe, join as b, resolve as A, sep as R } from "path";
+var W = T.O_NOFOLLOW ?? 0,
+  Ne = 8388608,
+  cLt = 5368709120,
+  yxr = "5GB",
+  bX = 67108864;
+function Xrn() {
+  return em();
+}
+function uLt() {
+  let e = A_()?.adoptShellOutputRoot;
+  if (e !== void 0) return b(e, K(), "tasks");
+  let n = Vn();
+  if (n.outputDir === void 0 || de()) n.outputDir = b(_O(), K(), "tasks");
+  return n.outputDir;
+}
+function XTo(e) {
+  return b(_O(), e, "tasks");
+}
+function JTo() {
+  return A_()?.adoptShellOutputRoot !== void 0 ? uLt() : (de() ? void 0 : Vn().outputDir) ?? b(_O(), K(), "tasks");
+}
+function xe() {
+  let e = Vn();
+  if (e.outputDir === void 0) {
+    if (A_() !== null) return b(_O(), K(), "tasks");
+    e.outputDir = b(_O(), K(), "tasks");
+  }
+  return e.outputDir;
+}
+function pLt(e) {
+  if (de()) throw Error("Task output is not written to disk in a diskless session");
+  let n = Vn().outputPathBindings.get(e);
+  if (n !== void 0) return n;
+  let i = b(uLt(), `${e}.output`);
+  return Vn().outputPathBindings.set(e, i), i;
+}
+function Wc(e) {
+  if (de()) throw Error("Task output has no file in a diskless session");
+  let n = Vn().outputPathBindings.get(e);
+  if (n !== void 0) return n;
+  return b(xe(), `${e}.output`);
+}
+function B(e) {
+  let pendingOutputOps = Vn().pendingOutputOps;
+  return pendingOutputOps.add(e), e.finally(() => pendingOutputOps.delete(e)).catch(() => {}), e;
+}
+var Re = 16777216,
+  H = `
+[output omitted: it could not be written to disk]
+`,
+  ee = [50, 100, 200, 400, 800, 1600],
+  V = ee.reduce((acc, item) => acc + item, 0);
+class AGn {
+  #w;
+  #n = null;
+  #e = [];
+  #h = 0;
+  #o = !1;
+  #t = 0;
+  #r = 0;
+  #i = !1;
+  #u = new Set();
+  #c = !1;
+  #s = null;
+  #a = null;
+  #l = null;
+  #f = null;
+  constructor(e, n) {
+    this.#w = n ?? pLt(e);
+  }
+  append(e) {
+    if (this.#o) return;
+    if (this.#h += e.length, this.#h > cLt) this.#o = !0;
+    let n = this.#o ? `
+[output truncated: exceeded ${yxr} disk cap]
+` : e;
+    if (this.#e.push(n), this.#t += n.length, !this.#l) this.#l = new Promise(i => {
+      this.#f = i;
+    }), B(this.#O());
+  }
+  appendTrailer(e, n) {
+    if (!this.#o) this.#s = n;
+    this.append(e);
+  }
+  flush() {
+    return this.#l ?? Promise.resolve();
+  }
+  get failing() {
+    return this.#i;
+  }
+  get lostOutput() {
+    return this.#c;
+  }
+  get unwrittenChars() {
+    return this.#t;
+  }
+  cancel() {
+    this.#r += 1, this.#e.length = 0, this.#t = 0, this.#s = null, this.#a?.abort(), this.#a = null;
+  }
+  async #d() {
+    while (!0) {
+      try {
+        if (!this.#n) this.#n = await mLt(this.#w);
+        while (!0) {
+          let e = this.#r;
+          try {
+            await this.#y();
+          } catch (error) {
+            if (this.#r === e) this.#c = !0, this.#e.unshift(H), this.#t += H.length;
+            throw error;
+          }
+          if (this.#e.length === 0) break;
+        }
+      } finally {
+        if (this.#n) {
+          let e = this.#n;
+          this.#n = null, await e.close();
+        }
+      }
+      if (this.#e.length) continue;
+      break;
+    }
+  }
+  #y() {
+    return this.#n.appendFile(this.#m());
+  }
+  #m() {
+    let e = this.#e.splice(0, this.#e.length);
+    this.#t = 0, this.#s = null;
+    let n = 0;
+    for (let r of e) n += Buffer.byteLength(r, "utf8");
+    let i = Buffer.allocUnsafe(n),
+      s = 0;
+    for (let r of e) s += i.write(r, s, "utf8");
+    return i;
+  }
+  async #O() {
+    try {
+      await this.#d(), this.#p();
+    } catch (error) {
+      if (this.#g(error) !== null) {
+        if (!this.#i) this.#i = !0, t(`Task output closing line delayed: its file is busy (EBUSY); trying again for up to ${V} ms`);
+        for (let [n, i] of ee.entries()) {
+          if (this.#a ??= new AbortController(), await Y(i, this.#a.signal), this.#e.length === 0) return;
+          let s = this.#r;
+          try {
+            await this.#d(), this.#p();
+            return;
+          } catch (error) {
+            if (this.#e.length === 0 && this.#r !== s) return;
+            let o = this.#g(error);
+            if (o === null || n === ee.length - 1) {
+              this.#k(error, o);
+              return;
+            }
+          }
+        }
+        return;
+      }
+      if (!this.#i) this.#i = !0, t(`Task output drain failed (will retry once): ${error}`, {
+        level: "error"
+      });
+      if (this.#e.length > 0) try {
+        await this.#d(), this.#p();
+      } catch (error) {
+        this.#k(error, null);
+      }
+    } finally {
+      let e = this.#f;
+      this.#l = null, this.#f = null, e();
+    }
+  }
+  #p() {
+    this.#i = !1, this.#u.clear();
+  }
+  #g(e) {
+    return I() === "windows" && k(e) === "EBUSY" ? this.#s : null;
+  }
+  #k(e, n) {
+    let i = k(e),
+      s = i !== void 0 && bye.has(i) ? "exhaustion" : n ?? "unexpected",
+      r = `${s}:${i ?? "no errno"}`;
+    if (!this.#u.has(r)) switch (this.#u.add(r), s) {
+      case "exhaustion":
+        t(`Task output drain retry failed (${i}): ${e}`, {
+          level: "error"
+        });
+        break;
+      case "exited":
+        t(`Task output closing line not written (EBUSY): the file was still busy after ${V} ms`, {
+          level: "warn"
+        });
+        break;
+      case "killed":
+        l(Ye(e, `closing line of a stopped shell command not written: output file still busy after ${V} ms`));
+        break;
+      case "unexpected":
+        l(e);
+        break;
+    }
+    if (this.#t > Re) t(`Task output still cannot be written (${i ?? "no errno"}); dropped ${this.#t} chars of unwritten output`, {
+      level: "error"
+    }), this.#c = !0, this.#e.length = 0, this.#e.push(H), this.#t = H.length, this.#s = null;
+  }
+}
+function ge(e) {
+  let n = Vn().diskOutputs.get(e);
+  if (!n) n = new AGn(e), Vn().diskOutputs.set(e, n);
+  return n;
+}
+function X8e(e, n) {
+  ge(e).append(n);
+}
+function xGn(e, n) {
+  let i = ge(e);
+  if (n === "killed") i.appendTrailer(`
+[killed]
+`, "killed");else i.appendTrailer(`
+[exited with code ${n.exitCode ?? "unknown"}]
+`, "exited");
+}
+function Pp(e) {
+  return B((async () => {
+    let n = Vn(),
+      i = n.diskOutputs.get(e);
+    if (i) {
+      if (await i.flush(), i.failing && i.unwrittenChars > 0) t(`Task output writer evicted while failing; discarded ${i.unwrittenChars} chars of unwritten output`, {
+        level: "error"
+      });
+      n.diskOutputs.delete(e);
+    }
+    Jrn(e);
+  })());
+}
+function Jrn(e) {
+  let n = Vn().outputPathBindings.get(e);
+  if (n !== void 0 && A_() === null && n === b(uLt(), `${e}.output`)) Vn().outputPathBindings.delete(e);
+}
+async function QTo(e, newOffset, i = Ne) {
+  try {
+    let s = await qve(Wc(e));
+    if (!s) return {
+      content: "",
+      newOffset: newOffset
+    };
+    let r;
+    try {
+      r = await AGe(s, newOffset, i);
+    } finally {
+      await s.close();
+    }
+    if (!r) return {
+      content: "",
+      newOffset: newOffset
+    };
+    return {
+      content: r.content,
+      newOffset: newOffset + r.bytesRead
+    };
+  } catch (error) {
+    let r = k(error);
+    if (r === "ENOENT" || aft(error)) return {
+      content: "",
+      newOffset: newOffset
+    };
+    if (r && bye.has(r)) t(`getTaskOutputDelta failed (${r}): ${error}`, {
+      level: "error"
+    });else l(error);
+    return {
+      content: "",
+      newOffset: newOffset
+    };
+  }
+}
+async function fLt(e) {
+  try {
+    let n = await qve(Wc(e));
+    if (!n) return 0;
+    try {
+      return (await n.stat()).size;
+    } finally {
+      await n.close();
+    }
+  } catch (error) {
+    if (aft(error)) throw error;
+    let i = k(error);
+    if (i === "ENOENT") return 0;
+    if (i === "EACCES" || i === "EPERM") {
+      let s = await F(Wc(e)).catch(() => null);
+      if (s !== null && s.isFile() && (s.mode & 256) === 0) return s.size;
+      g(Wc(e), `output no longer measurable (${i})`);
+    }
+    if (i && bye.has(i)) t(`getTaskOutputSize failed (${i}): ${error}`, {
+      level: "error"
+    });else l(error);
+    return 0;
+  }
+}
+async function isi(e, n) {
+  if (de()) return;
+  let i = Vn(),
+    s = L([...(i.outputDir !== void 0 ? [i.outputDir] : []), ...[...i.outputPathBindings.values()].map(item => m(item))]);
+  if (s.length === 0) return;
+  let r = e + R;
+  for (let o of s) {
+    let a;
+    try {
+      a = await Fe(o);
+    } catch (error) {
+      let f = k(error);
+      if (f !== "ENOENT") if (f && bye.has(f)) t(`repointTaskOutputSymlinks readdir failed (${f}): ${error}`, {
+        level: "error"
+      });else l(error);
+      continue;
+    }
+    await _e(o, a, r, e, n);
+  }
+}
+async function _e(e, n, i, s, r) {
+  let linkedOutputs = Vn().linkedOutputs;
+  for (let a of n) {
+    if (!a.endsWith(".output")) continue;
+    let u = b(e, a),
+      f = linkedOutputs.get(u),
+      c;
+    try {
+      c = I() === "windows" ? void 0 : await C(u, {
+        replaceLeaf: !0
+      });
+      let w = c?.ioPath ?? u;
+      if (f === void 0 && e === Vn().outputDir) f = await _(w).then(h => ke(u, w, h)).catch(() => {
+        return;
+      });
+      if (f === void 0 || !f.startsWith(i)) continue;
+      let y = r + f.slice(s.length),
+        O = await ne(w);
+      if (O === null) continue;
+      if (O !== f) g(u, "output symlink was re-pointed");
+      if (await c?.recheckBeforeWrite(), await S(w), linkedOutputs.get(u) === f) await ae(u, y);
+      try {
+        await c?.recheckBeforeWrite(), await Q(y, w).catch(async h => {
+          if (k(h) !== "EEXIST") throw h;
+          let v = await _(w).catch(() => {
+            return;
+          });
+          if (v !== y && v !== linkedOutputs.get(u)) throw h;
+        });
+      } catch (error) {
+        if (linkedOutputs.get(u) === y) linkedOutputs.delete(u);
+        throw error;
+      }
+      if ((await _(w).catch(() => {
+        return;
+      })) === y) linkedOutputs.set(u, y);
+    } catch (error) {
+      if (k(error) !== "ENOENT" && !aft(error)) l(error);
+    } finally {
+      await c?.close();
+    }
+  }
+}
+async function P(e, n, i = 0) {
+  if (de()) throw Error("Task output is not written to disk in a diskless session");
+  if (I() === "windows") return await oe(m(e), {
+    recursive: !0
+  }), j(e, n.windowsFlags);
+  let s = await C(e, {
+    replaceLeaf: !0
+  });
+  try {
+    let r = await ie(s.ioPath);
+    if (r?.isSymbolicLink()) {
+      let u = await te(e, s.ioPath);
+      if (u === null) {
+        if (n.relooked) g(e, "output leaf changed during open");
+        return await s.close(), P(e, {
+          ...n,
+          relooked: !0
+        }, i);
+      }
+      if (n.exclusive || i > 0 || !D(u)) g(e, "output link is not appendable");
+      return await P(u, {
+        exclusive: n.exclusive,
+        windowsFlags: n.windowsFlags
+      }, i + 1);
+    }
+    if (r !== null && (!r.isFile() || r.nlink !== 1 && i === 0)) g(e, "existing output is not a plain file");
+    await s.recheckBeforeWrite();
+    let o = n.exclusive || r === null,
+      a;
+    try {
+      a = await T5(s.ioPath, T.O_WRONLY | T.O_APPEND | (o ? T.O_CREAT | T.O_EXCL : 0) | W | (T.O_NONBLOCK ?? 0), I());
+    } catch (error) {
+      if (!n.exclusive && k(error) === "EEXIST" && !n.retried) return await s.close(), P(e, {
+        ...n,
+        retried: !0
+      }, i);
+      throw error;
+    }
+    if (i > 0 && r === null) {
+      let u = await a.stat();
+      q.set(e, {
+        dev: u.dev,
+        ino: u.ino
+      });
+    }
+    try {
+      await re(a, r, e, {
+        registeredIdentity: i > 0 ? ye(e) : void 0
+      });
+    } catch (error) {
+      throw await a.close().catch(() => {}), error;
+    }
+    return a;
+  } catch (error) {
+    throw G(error, e);
+  } finally {
+    await s.close();
+  }
+}
+async function qve(e, n = 0, i = !1) {
+  if (I() === "windows") {
+    let r = await ie(e);
+    if (r === null) return null;
+    if (r.isSymbolicLink()) {
+      let a = await te(e, e);
+      if (a === null) {
+        if (i) g(e, "output leaf changed during open");
+        return qve(e, n, !0);
+      }
+      return we(a, n, e);
+    }
+    if (!r.isFile()) g(e, "not a regular file");
+    let o = await j(e, "r");
+    return await re(o, r, e, {
+      anyLinkCount: !0
+    }), o;
+  }
+  let s;
+  try {
+    s = await C(e, {
+      replaceLeaf: !0,
+      create: !1
+    });
+  } catch (error) {
+    if (k(error) === "ENOENT") return null;
+    throw error;
+  }
+  try {
+    let r = await ie(s.ioPath);
+    if (r === null) return null;
+    if (r.isSymbolicLink()) {
+      let a = await te(e, s.ioPath);
+      if (a === null) {
+        if (i) g(e, "output leaf changed during open");
+        return await s.close(), qve(e, n, !0);
+      }
+      return await we(a, n, e);
+    }
+    if (n === 0 && r.isFile() && r.nlink === 0) return null;
+    if (!r.isFile() || r.nlink !== 1 && n === 0) g(e, "not a regular nlink-1 file");
+    await s.recheckBeforeWrite();
+    let o = await T5(s.ioPath, T.O_RDONLY | W | (T.O_NONBLOCK ?? 0), I());
+    try {
+      if ((await re(o, r, e, {
+        registeredIdentity: n > 0 ? ye(e) : void 0,
+        unlinkedIsGone: n === 0
+      })) === "gone") return null;
+    } catch (error) {
+      throw await o.close().catch(() => {}), error;
+    }
+    return o;
+  } catch (error) {
+    if (k(error) === "ENOENT") return null;
+    throw G(error, e);
+  } finally {
+    await s.close();
+  }
+}
+async function ke(e, n, i) {
+  let s = pe(i) && A(i).startsWith(A(Xp()) + R);
+  if (!pe(i) || !D(i) && !s) return g(e, "output is an unregistered symlink of a shape this session does not create");
+  let r = await F(n);
+  if (!r.isSymbolicLink() || r.ctimeMs >= Vn().linksInheritedBeforeFor(m(e))) return g(e, "output is an unregistered symlink made during this session");
+  return await ae(e, i), i;
+}
+async function te(e, n) {
+  let i = Vn().linkedOutputs.get(e);
+  if (i === void 0) {
+    if (!Qrn(e)) return g(e, "output is an unregistered symlink outside any tasks directory");
+    let r = await ne(n);
+    if (r === null) return null;
+    i = await ke(e, n, r);
+  }
+  let s = await ne(n);
+  if (s === null) return null;
+  if (s !== i) return g(e, "output symlink was re-pointed");
+  return i;
+}
+async function ne(e) {
+  try {
+    return await _(e);
+  } catch (error) {
+    if (k(error) === "EINVAL") return null;
+    throw error;
+  }
+}
+async function we(e, n, i) {
+  if (D(e)) {
+    if (n > 0) return g(i, "output links chain");
+    return qve(e, n + 1);
+  }
+  let s, r;
+  try {
+    let o = await z(e);
+    if (D(o)) return g(i, "output link leads back into the tasks tree");
+    r = await F(o), s = await T5(o, T.O_RDONLY | W | (T.O_NONBLOCK ?? 0), I());
+  } catch (error) {
+    if (aft(error)) throw error;
+    if (k(error) === "ENOENT") return null;
+    throw G(error, i);
+  }
+  try {
+    let o = await s.stat();
+    if (!o.isFile() || o.ino !== r.ino || o.dev !== r.dev) g(i, "link target is not a regular file");
+  } catch (error) {
+    throw await s.close().catch(() => {}), error;
+  }
+  return s;
+}
+function D(e) {
+  let n = em();
+  return e === n || e.startsWith(n.endsWith(R) ? n : n + R);
+}
+async function ie(e) {
+  try {
+    return await F(e);
+  } catch (error) {
+    if (k(error) === "ENOENT") return null;
+    throw error;
+  }
+}
+var q = new Map();
+function ye(e) {
+  let n = q.get(e);
+  if (n === void 0) return g(e, "link target identity was never recorded");
+  return n;
+}
+async function ae(e, n) {
+  if (D(n)) await me(n);
+  Vn().linkedOutputs.set(e, n);
+}
+async function me(e) {
+  let n = await C(e, {
+    replaceLeaf: !0,
+    create: !1
+  });
+  try {
+    let i = await T5(n.ioPath, T.O_RDONLY | W | (T.O_NONBLOCK ?? 0), I()).catch(s => {
+      throw G(s, e);
+    });
+    try {
+      let s = await i.stat();
+      if (!s.isFile() || s.nlink !== 1) g(e, "link target is not a regular single-link file");
+      q.set(e, {
+        dev: s.dev,
+        ino: s.ino
+      });
+    } finally {
+      await i.close();
+    }
+  } finally {
+    await n.close();
+  }
+}
+async function re(e, n, i, s) {
+  try {
+    let r = await e.stat(),
+      o = s?.registeredIdentity;
+    if (s?.unlinkedIsGone && o === void 0 && !s.anyLinkCount && n !== null && r.isFile() && r.nlink === 0 && r.ino === n.ino && r.dev === n.dev) return await e.close().catch(() => {}), "gone";
+    if (!r.isFile() || (o !== void 0 ? r.ino !== o.ino || r.dev !== o.dev : !s?.anyLinkCount && r.nlink !== 1) || n !== null && (r.ino !== n.ino || r.dev !== n.dev)) g(i, "output file identity changed");
+    return "same";
+  } catch (error) {
+    throw await e.close().catch(() => {}), error;
+  }
+}
+function G(e, n) {
+  let i = k(e);
+  if (i === "ELOOP" || i === "EISDIR" || i === "ENOTDIR" || i === "ENXIO" || i === "EOPNOTSUPP" || i === "ENOTSUP") try {
+    g(n, `open refused a swapped leaf (${i})`);
+  } catch (error) {
+    return error;
+  }
+  return e;
+}
+function Pe(e) {
+  let n = le(),
+    i = A(e);
+  if (i.startsWith(n + R)) return i;
+  let s = se(),
+    r = m(m(m(m(i)))),
+    {
+      resolvedPath: resolvedPath
+    } = _o(s, r);
+  return mo(resolvedPath) === mo(n) ? b(n, i.slice(r.length + 1)) : i;
+}
+function le() {
+  return m(m(m(A(uLt()))));
+}
+function Qrn(e) {
+  let n = le(),
+    i = se(),
+    s = new Set([n, _o(i, n).resolvedPath].map(item => mo(item)));
+  return xo(e).some(item => {
+    let o = m(A(item));
+    return mo(X(o)) === "tasks" && Oe(X(m(o))) && s.has(mo(m(m(m(o)))));
+  });
+}
+function Z() {
+  let e = ["????????-????-????-????-????????????", "session_*", "cse_*"],
+    n = K();
+  if (!U(n) && /^[A-Za-z0-9._-]+$/.test(n)) e.push(n);
+  return e;
+}
+function Oe(e) {
+  return U(e) || e === K();
+}
+function ZTo(e) {
+  let n = le(),
+    i = se(),
+    s = L([n, _o(i, n).resolvedPath]),
+    r = new Set(),
+    o = (u, f) => {
+      let c = u.endsWith(R) ? u : u + R;
+      return mo(f).startsWith(mo(c)) ? f.slice(c.length) : null;
+    },
+    a = u => u.replaceAll("\\", "/");
+  for (let u of xo(e)) {
+    let f = A(u);
+    for (let c of s) {
+      let w = X(c);
+      if (mo(f) === mo(c)) {
+        for (let h of Z()) r.add(`!/*/${h}/tasks/**`), r.add(`!**/${w}/*/${h}/tasks/**`);
+        continue;
+      }
+      let y = o(f, c);
+      if (y !== null) {
+        for (let h of Z()) r.add(`!/${a(y)}/*/${h}/tasks/**`), r.add(`!**/${w}/*/${h}/tasks/**`);
+        continue;
+      }
+      let O = o(c, f);
+      if (O !== null) {
+        let h = O.split(R);
+        if (h.length === 1) for (let v of Z()) r.add(`!/${v}/tasks/**`), r.add(`!**/${w}/${a(O)}/${v}/tasks/**`);else if (!Oe(h[1] ?? "")) ;else if (h.length === 2) r.add("!/tasks/**"), r.add(`!**/${w}/${a(O)}/tasks/**`);else if (mo(h[2] ?? "") === "tasks") r.add("!**");
+      }
+    }
+  }
+  return [...r];
+}
+async function PGn(canonicalPath) {
+  canonicalPath = Pe(canonicalPath);
+  let handle = await qve(canonicalPath);
+  if (handle === null) throw await F(canonicalPath), new x(`task output ${canonicalPath} is no longer available (the file it pointed to was removed)`, "task output link target removed");
+  let i = I();
+  return {
+    ioPath: (i === "linux" || i === "wsl") && (await _(`/proc/self/fd/${handle.fd}`).then(() => !0, () => !1)) ? I1t(handle.fd) : i === "macos" ? `/dev/fd/${handle.fd}` : canonicalPath,
+    canonicalPath: canonicalPath,
+    handle: handle,
+    close: () => handle.close()
+  };
+}
+var _xr = 8192;
+async function J8e(e) {
+  return Q8e(Wc(e), _xr);
+}
+async function Q8e(e, n) {
+  let i = await qve(e);
+  if (i === null) return {
+    content: "",
+    bytesRead: 0,
+    bytesTotal: 0
+  };
+  try {
+    return await mR(i, n);
+  } finally {
+    await i.close();
+  }
+}
+async function Zrn(e) {
+  let n = Vn().linkedOutputs.get(e);
+  if (Vn().linkedOutputs.delete(e), n !== void 0) q.delete(n);
+  if (I() === "windows") {
+    await S(e);
+    return;
+  }
+  let i;
+  try {
+    i = await C(e, {
+      replaceLeaf: !0,
+      create: !1
+    });
+  } catch (error) {
+    if (k(error) === "ENOENT") return;
+    throw error;
+  }
+  try {
+    await i.recheckBeforeWrite(), await S(i.ioPath);
+  } finally {
+    await i.close();
+  }
+}
+var uint8Array = new Uint8Array([10]);
+async function eCo(e) {
+  let n = `${e}.${be(6).toString("hex")}.probe`;
+  try {
+    let i;
+    try {
+      i = await P(n, {
+        exclusive: !0,
+        windowsFlags: "wx"
+      });
+    } catch {
+      return null;
+    }
+    try {
+      await i.write(uint8Array);
+    } finally {
+      await i.close();
+    }
+    return null;
+  } catch (error) {
+    return k(error) ?? null;
+  } finally {
+    await Zrn(n).catch(i => {
+      t(`probeTaskOutputWrite: could not delete ${n}: ${d(i)}`);
+    });
+  }
+}
+async function tCo(e, n) {
+  let i = await P(e, {
+    exclusive: !1,
+    windowsFlags: "w"
+  });
+  try {
+    await i.truncate(0), await i.writeFile(n);
+  } finally {
+    await i.close();
+  }
+}
+async function C(e, n) {
+  let i = m(e),
+    s = X(e),
+    r = E.get(i);
+  if (r !== void 0) {
+    let c = await r.catch(() => null);
+    if (c !== null) {
+      let y = (await Promise.all([c.handleStat(), F(i)]).then(([O, h]) => O.nlink > 0 && h.isDirectory() && h.ino === O.ino && h.dev === O.dev, () => !1)) ? c.viewFor(s) : null;
+      if (y !== null) return y;
+      if (E.get(i) === r) E.delete(i);
+      await c.release();
+    } else if (E.get(i) === r) E.delete(i);
+  }
+  let o = E.get(i);
+  if (o !== void 0 && o !== r) return C(e, n);
+  let a = (async () => {
+      let c;
+      try {
+        c = await GS(e, [e], {
+          createParents: n?.create ?? !0,
+          ...(n?.replaceLeaf && {
+            leaf: "replace"
+          })
+        });
+      } catch (error) {
+        if (error instanceof Sg) {
+          if (!(await Le())) {
+            if (n?.create ?? !0) await oe(m(e), {
+              recursive: !0,
+              mode: 448
+            });
+            return {
+              ioPath: e,
+              canonicalPath: e,
+              readExisting: () => Promise.resolve(null),
+              recheckBeforeWrite: () => {},
+              close: async () => {}
+            };
+          }
+          t(`task output: pin of ${m(e)} refused: ${d(error)}`, {
+            level: "warn"
+          }), g(e, "tasks dir moved or linked", `restart Claude Code with CLAUDE_CODE_TMPDIR set to a fresh directory; or, if ${_O().replace(/[\\/]+$/, "")} is a stray directory or a symbolic link that should not be there, remove that entry itself (not what it points to) and restart`);
+        }
+        throw error;
+      }
+      let w = /^\/proc\/self\/fd\/(\d+)\//.exec(c.ioPath);
+      if (w === null) return c;
+      let y = c.ioPath.slice(0, c.ioPath.length - s.length - 1),
+        O = Number(w[1]),
+        h = 0,
+        v = !1,
+        ue = !1,
+        ce = async () => {
+          if (v && h === 0 && !ue) ue = !0, await c.close();
+        };
+      return {
+        handleStat: () => Ce(O),
+        release: () => (v = !0, ce()),
+        viewFor: N => {
+          if (v) return null;
+          h++;
+          let fe = !1;
+          return {
+            ioPath: `${y}/${N}`,
+            canonicalPath: b(i, N),
+            readExisting: Ee => Y7e(`${y}/${N}`, b(i, N), I(), Ee),
+            recheckBeforeWrite: () => {},
+            close: async () => {
+              if (!fe) fe = !0, h--, await ce();
+            }
+          };
+        }
+      };
+    })(),
+    u = a.then(c => "viewFor" in c ? c : Promise.reject(Error("not held")));
+  u.catch(() => {}), E.set(i, u);
+  let f;
+  try {
+    f = await a;
+  } catch (error) {
+    if (E.get(i) === u) E.delete(i);
+    throw error;
+  }
+  if (!("viewFor" in f)) {
+    if (E.get(i) === u) E.delete(i);
+    return f;
+  }
+  if (E.size > Ae) {
+    for (let [c, w] of E) if (c !== i) {
+      E.delete(c), w.then(y => y.release(), () => {});
+      break;
+    }
+  }
+  return f.viewFor(s) ?? Promise.reject(Error("unreachable: fresh hold retired"));
+}
+var J;
+async function Le() {
+  let root = em();
+  if (J?.root === root) return J.ok;
+  let n = await z(root).then(() => !0, i => k(i) !== "EPERM");
+  if (n) J = {
+    root: root,
+    ok: Promise.resolve(!0)
+  };
+  return n;
+}
+var E = new Map();
+function Ce(e) {
+  return new Promise((n, i) => ve(e, (s, r) => s ? i(s) : n(r)));
+}
+var Ae = 8;
+function mLt(e, windowsFlags = "a") {
+  return P(e, {
+    exclusive: !1,
+    windowsFlags: windowsFlags
+  });
+}
+function Z8e(e) {
+  return B((async () => {
+    let n = pLt(e);
+    return await (await P(n, {
+      exclusive: !0,
+      windowsFlags: "wx"
+    })).close(), n;
+  })());
+}
+var Te = Symbol("taskOutputSwapRefused");
+function aft(e) {
+  return e instanceof Error && Te in e;
+}
+function g(e, n, i) {
+  let s = `task output swap refused (${n}): ${e}` + (i === void 0 ? "" : `. To recover: ${i}.`),
+    r = Object.assign(new x(s, `task output swap refused (${n})`), {
+      [Te]: !0
+    });
+  t(s, {
+    level: "error"
+  });
+  let o = `${n}\x00${e}`;
+  if (!M.has(o)) {
+    if (M.size >= Be) M.clear();
+    M.add(o), l(r);
+  }
+  throw r;
+}
+var M = new Set(),
+  Be = 256;
+async function OGn(e, n) {
+  let i;
+  try {
+    i = await F(e);
+  } catch (error) {
+    let u = k(error);
+    if (u === "ELOOP" || u === "ENOTDIR") g(e, `lstat refused a swapped path (${u})`);
+    throw error;
+  }
+  if (!i.isFile() || i.nlink !== 1) g(e, "not a regular nlink-1 file");
+  let s = !0,
+    r = i.size > n,
+    handle_2;
+  try {
+    handle_2 = await j(e, s ? r ? "r+" : "r" : (r ? T.O_RDWR : T.O_RDONLY) | W | (T.O_NONBLOCK ?? 0));
+  } catch (error) {
+    let u = k(error);
+    if (u === "ELOOP" || u === "EISDIR" || u === "ENOTDIR" || u === "ENXIO" || u === "EOPNOTSUPP" || u === "ENOTSUP") g(e, `open refused a swapped path (${u})`);
+    throw error;
+  }
+  try {
+    let a = await handle_2.stat();
+    if (!a.isFile() || a.dev !== i.dev || a.ino !== i.ino || a.nlink !== 1) g(e, "file changed between lstat and open");
+    if (r && a.size > n) await handle_2.truncate(n);
+    return {
+      handle: handle_2,
+      size: a.size
+    };
+  } catch (error) {
+    throw await handle_2.close(), error;
+  }
+}
+async function e9e(e, n) {
+  let i;
+  try {
+    i = await OGn(Wc(e), cLt);
+  } catch (error) {
+    if (k(error) === "ENOENT") return {
+      content: "",
+      omittedBytes: 0
+    };
+    throw error;
+  }
+  let {
+      handle: handle_3
+    } = i,
+    r = Math.min(i.size, cLt);
+  try {
+    let o = Math.max(0, r - n),
+      a = Buffer.allocUnsafe(r - o),
+      u = 0;
+    while (u < a.length) {
+      let {
+        bytesRead: bytesRead
+      } = await handle_3.read(a, u, a.length - u, o + u);
+      if (bytesRead === 0) break;
+      u += bytesRead;
+    }
+    let f = 0;
+    while (o > 0 && f < u && (a[f] & 192) === 128) f++;
+    return {
+      content: a.toString("utf8", f, u),
+      omittedBytes: o + f
+    };
+  } finally {
+    await handle_3.close();
+  }
+}
+async function eon(e, n, i) {
+  let {
+    handle: handle_4,
+    size: size
+  } = await OGn(e, i);
+  try {
+    let a = await j(n, "w");
+    try {
+      let u = Buffer.alloc(1048576),
+        f = 0;
+      while (f < i) {
+        let c = Math.min(u.length, i - f),
+          {
+            bytesRead: bytesRead_2
+          } = await handle_4.read(u, 0, c, f);
+        if (bytesRead_2 === 0) break;
+        let y = 0;
+        while (y < bytesRead_2) {
+          let {
+            bytesWritten: bytesWritten
+          } = await a.write(u, y, bytesRead_2 - y, f + y);
+          y += bytesWritten;
+        }
+        f += bytesRead_2;
+      }
+    } finally {
+      await a.close();
+    }
+    return size;
+  } finally {
+    await handle_4.close();
+  }
+}
+async function he(e, n, i = e) {
+  if (e === n) return !0;
+  try {
+    if (!(await F(i)).isFile()) return !1;
+    return (await z(i)) === (await z(n));
+  } catch {
+    return !1;
+  }
+}
+function ton(e, n, i) {
+  return B((async () => {
+    let s = pLt(e);
+    if (await oe(m(s), {
+      recursive: !0
+    }), await he(s, n)) return i?.("noop"), s;
+    let r = `${s}.staging`;
+    await S(r).catch(() => {});
+    let o;
+    try {
+      await $e(n, r), o = "hardlink";
+    } catch (error) {
+      if (k(error) !== "ENOENT") try {
+        await Se(n, r), o = "copy";
+      } catch {
+        await S(r).catch(() => {});
+      }
+      if (o === void 0) t(`[adopt] win32 link ${n} failed: ${error}`, {
+        level: "warn"
+      });
+    }
+    if (o !== void 0) try {
+      await ns(r, s);
+    } catch (error) {
+      t(`[adopt] win32 swap for ${e} failed: ${error}`, {
+        level: "warn"
+      }), await S(r).catch(() => {}), o = void 0;
+    }
+    if (o !== void 0) return i?.(o), s;
+    i?.("fail");
+    try {
+      if ((await F(s)).isFile()) return s;
+    } catch (error) {
+      if (k(error) !== "ENOENT") return s;
+    }
+    return await S(s).catch(() => {}), Z8e(e);
+  })());
+}
+export { RGn, t1e, cLt, yxr, bX, Xrn, uLt, XTo, JTo, pLt, Wc, AGn, X8e, xGn, Pp, Jrn, QTo, fLt, isi, qve, Qrn, ZTo, PGn, _xr, J8e, Q8e, Zrn, eCo, tCo, mLt, Z8e, aft, OGn, e9e, eon, ton };

@@ -1,0 +1,656 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  j,
+  tet,
+  k$,
+  sre,
+  VTe,
+  UDe
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-hg8ngszx.js";
+import {
+  x,
+  d,
+  k,
+  Wt,
+  o_
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  je
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  IA,
+  H5
+} from "B:/~BUN/root/chunk-jpdys232.js";
+import {
+  g
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  E_,
+  tjs,
+  ojs,
+  qH,
+  jjs,
+  lJ,
+  mLr,
+  T0o,
+  cJ,
+  DLr,
+  o2,
+  hdn,
+  Ht,
+  o5,
+  Ce,
+  JN,
+  sUt
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  J,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  Or,
+  ok,
+  xe,
+  _f
+} from "B:/~BUN/root/chunk-8pmnanyd.js";
+import {
+  wl,
+  LFo,
+  pVs,
+  XMe,
+  qn
+} from "B:/~BUN/root/chunk-245a2x6v.js";
+import {
+  Nze,
+  mTe,
+  oL
+} from "B:/~BUN/root/chunk-pej55jax.js";
+import {
+  hks,
+  dH,
+  WUn,
+  OEs,
+  IEs
+} from "B:/~BUN/root/chunk-8w42v0dp.js";
+import {
+  UH
+} from "B:/~BUN/root/chunk-gygbhz84.js";
+import {
+  Jfr,
+  JA
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  jCs
+} from "B:/~BUN/root/chunk-dn8rakwm.js";
+import {
+  Hee
+} from "B:/~BUN/root/chunk-c44qc88s.js";
+import {
+  vmt,
+  Fs
+} from "B:/~BUN/root/chunk-dq7zfs8r.js";
+import {
+  oRr
+} from "B:/~BUN/root/chunk-8gzvb73z.js";
+import {
+  xae
+} from "B:/~BUN/root/chunk-yjayxywk.js";
+import {
+  GUs,
+  man,
+  FOo,
+  XMr
+} from "B:/~BUN/root/chunk-j4qesy5s.js";
+import {
+  g$s,
+  h$s
+} from "B:/~BUN/root/chunk-t63e78w2.js";
+import {
+  t$s
+} from "B:/~BUN/root/chunk-gt1x0gdb.js";
+import {
+  VPo
+} from "B:/~BUN/root/chunk-pbq7kcha.js";
+import {
+  wns
+} from "B:/~BUN/root/chunk-3zy0q0p2.js";
+import {
+  woe,
+  LRe
+} from "B:/~BUN/root/chunk-6g3t7qy0.js";
+import {
+  sds
+} from "B:/~BUN/root/chunk-kjk3ptap.js";
+import {
+  Y$
+} from "B:/~BUN/root/chunk-qc6mvzn1.js";
+import {
+  W4t
+} from "B:/~BUN/root/chunk-hw809fek.js";
+import {
+  wz
+} from "B:/~BUN/root/chunk-w83t0s5z.js";
+import {
+  STt
+} from "B:/~BUN/root/chunk-twz67yqp.js";
+import {
+  o,
+  _t
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  mkdir as T,
+  readFile as M,
+  unlink as H,
+  writeFile as U
+} from "fs/promises";
+import {
+  join as _
+} from "path";
+var _Tt = "41077d10-94b8-4194-be48-d251e9eb21b4",
+  dns = [H5, IA],
+  B = /^[A-Za-z0-9_.-]+$/,
+  P = {
+    created_by: "claude-code"
+  },
+  K = f(() => _t({
+    created_by: o().optional(),
+    base_url: o().optional(),
+    authentication: _t({
+      type: o(),
+      client_id: o().optional(),
+      credentials_path: o().optional()
+    })
+  })),
+  G = f(() => _t({
+    created_by: o().optional()
+  })),
+  N = {
+    no_config_dir: !0,
+    invalid_profile_name: !0,
+    foreign_profile: !0,
+    custom_credentials_path: !0,
+    api_key_env_nondispatching: !0,
+    wif_env_quad: !1,
+    third_party_provider: !1,
+    api_key_env: !1,
+    env_credential_shadow: !1,
+    other_deployment_profile: !1,
+    federation_profile: !1,
+    unreadable_profile: !1
+  };
+
+function Y(e) {
+  return Object.hasOwn(N, e)
+}
+
+function cns(e) {
+  if (!(e instanceof x) || e.errorClass === void 0 || !Y(e.errorClass)) return null;
+  return N[e.errorClass]
+}
+var b = {
+  no_config_dir: "no Anthropic config directory was found",
+  invalid_profile_name: "the configured profile name isn't valid",
+  foreign_profile: "the profile on this machine belongs to another tool",
+  custom_credentials_path: "the existing profile keeps its sign-in somewhere custom",
+  api_key_env_nondispatching: "ANTHROPIC_API_KEY is set in this environment"
+};
+
+function uns(e) {
+  if (!(e instanceof x) || e.errorClass === void 0 || !z(e.errorClass)) return null;
+  return b[e.errorClass]
+}
+
+function z(e) {
+  return Object.hasOwn(b, e)
+}
+async function Gar() {
+  if (!D(a.ANTHROPIC_PROFILE) && a.ANTHROPIC_FEDERATION_RULE_ID && a.ANTHROPIC_ORGANIZATION_ID) throw new x("Workload identity federation is configured in this environment (ANTHROPIC_FEDERATION_RULE_ID and ANTHROPIC_ORGANIZATION_ID), and it takes precedence over the default profile. Set ANTHROPIC_PROFILE to a profile name to sign in with a profile that outranks it.", "Console profile login refused: env-quad federation outranks the implicit profile", "wif_env_quad");
+  let e = xe();
+  if (e !== "firstParty") throw new x(`This session uses ${ok[e]}, which does not use Anthropic Console sign-in.`, "This session uses a third-party provider, which does not use Anthropic Console sign-in.", "third_party_provider");
+  let r = a.ANTHROPIC_API_KEY;
+  if (r) {
+    let u = await DLr({
+      skipRetrievingKeyFromApiKeyHelper: !0
+    });
+    if (u.source === "ANTHROPIC_API_KEY" && u.key === r) throw new x("ANTHROPIC_API_KEY is set in this environment and takes precedence over a profile, so a profile sign-in would not be used. Unset it to sign in this way.", "Console profile login refused: env credential shadows the profile", "api_key_env")
+  }
+  if (mLr()) throw new x("Something in this environment \u2014 an API key helper, an injected token, or a third-party provider setting \u2014 takes precedence over a profile sign-in, so it would not be used here.", "Console profile login refused: env credential shadows the profile", "env_credential_shadow");
+  let n = oL();
+  if (n === null) throw new x("Cannot locate the Anthropic config directory. Set ANTHROPIC_CONFIG_DIR (or HOME) and try again.", "Console profile login refused: no config directory", "no_config_dir");
+  let s = A(n),
+    c = await I(_(n, "configs", `${s}.json`));
+  if (c !== null) {
+    if (c.base_url && !_f(c.base_url)) throw new x("This profile is bound to a different Anthropic deployment, so Claude Code will not replace it here. Sign out of it with the tool that created it, then try again.", "Console profile login refused: profile bound to another deployment", "other_deployment_profile");
+    if (c.authentication.type === "oidc_federation") throw new x("This machine is set up for workload identity federation, which signs in on its own. If you need a different sign-in, ask whoever configured it.", "Console profile login refused: federation profile", "federation_profile");
+    if (c.authentication.type !== "user_oauth") throw new x("Claude Code cannot read the existing sign-in on this machine, so it will not overwrite it. Check the permissions on your Anthropic config directory, then try again.", "Console profile login refused: unreadable or unrecognized profile config", "unreadable_profile");
+    if (c.authentication.client_id !== _Tt) throw new x("This machine already has a sign-in from another tool that Claude Code cannot replace. Sign out with that tool, then try again.", "Console profile login refused: profile is not a same-client login", "foreign_profile");
+    if (c.authentication.credentials_path) throw new x("This profile keeps its sign-in somewhere custom, so Claude Code cannot replace it. Sign out of it with the tool that created it, then try again.", "Console profile login refused: custom credentials_path", "custom_credentials_path")
+  }
+  if (r) throw new x("ANTHROPIC_API_KEY is set in this environment. Unset it to sign in without an API key.", "Console profile login refused: non-dispatching env API key present", "api_key_env_nondispatching");
+  return {
+    profile: s,
+    configDir: n,
+    isNewProfile: c === null
+  }
+}
+async function pns(e) {
+  let r = await Gar();
+  return await T(_(r.configDir, "credentials"), {
+    recursive: !0,
+    mode: 448
+  }), FOo(S(r.configDir, r.profile), () => q(e))
+}
+async function q(e) {
+  let {
+    profile: r,
+    configDir: n,
+    isNewProfile: s
+  } = await Gar(), c = _(n, "configs", `${r}.json`);
+  await T(_(n, "configs"), {
+    recursive: !0,
+    mode: 448
+  });
+  let u = {
+    version: GUs,
+    organization_id: e.organizationUuid,
+    workspace_id: e.workspaceId,
+    authentication: {
+      type: "user_oauth",
+      client_id: _Tt
+    },
+    ...P
+  };
+  await Nze(c, u);
+  let C = s,
+    m = {
+      version: man,
+      type: "oauth_token",
+      access_token: e.accessToken,
+      refresh_token: e.refreshToken,
+      expires_at: Math.floor(e.expiresAtMs / 1000),
+      scope: e.scopes.join(" "),
+      organization_uuid: e.organizationUuid,
+      organization_name: e.organizationName,
+      account_email: e.accountEmail
+    };
+  await Nze(S(n, r), {
+    ...m,
+    workspace_id: e.workspaceId,
+    workspace_name: e.workspaceName,
+    ...P
+  });
+  let R = await Q(_(n, "active_config"), r + `
+`);
+  return t(`Console profile login: wrote credentials for profile ${r}${C?" (new profile)":""}${R?" (set active)":""}`), XMr(), {
+    profile: r,
+    configDir: n
+  }
+}
+async function L({
+  revoke: e
+} = {}) {
+  try {
+    let r = oL();
+    if (r === null) return {
+      removed: !1
+    };
+    let n;
+    try {
+      n = A(r)
+    } catch {
+      return {
+        removed: !1
+      }
+    }
+    let s = await I(_(r, "configs", `${n}.json`));
+    if (s === null || !F(s)) return {
+      removed: !1
+    };
+    if (await O(S(r, n)) === null) return {
+      removed: !1
+    };
+    return await FOo(S(r, n), () => V(e))
+  } catch (r) {
+    if (k(r) === "ENOENT") return {
+      removed: !1
+    };
+    return t(`Logout: profile credential removal failed: ${d(r)}`, {
+      level: "error"
+    }), {
+      removed: !1
+    }
+  }
+}
+async function V(e) {
+  let r = oL();
+  if (r === null) return {
+    removed: !1
+  };
+  let n;
+  try {
+    n = A(r)
+  } catch {
+    return {
+      removed: !1
+    }
+  }
+  let s = await I(_(r, "configs", `${n}.json`));
+  if (s === null || !F(s)) return {
+    removed: !1
+  };
+  let c = S(r, n),
+    u = await O(c);
+  if (u === null) return {
+    removed: !1
+  };
+  let C = {
+    refreshToken: u.refreshToken,
+    clientId: _Tt
+  };
+  if (e && C.refreshToken) await e({
+    refreshToken: C.refreshToken,
+    clientId: C.clientId
+  });
+  try {
+    await H(c)
+  } catch (m) {
+    return t(`Logout: could not remove profile credentials: ${d(m)}`, {
+      level: "error"
+    }), {
+      removed: !1,
+      ...C
+    }
+  }
+  return t(`Logout: removed credentials for profile ${n}`), XMr(), {
+    removed: !0,
+    ...C
+  }
+}
+
+function A(e) {
+  let r = a.ANTHROPIC_PROFILE || mTe(e);
+  if (!D(r)) throw new x(`ANTHROPIC_PROFILE "${r}" is not a valid profile name (letters, digits, '_', '.', '-')`, "ANTHROPIC_PROFILE is not a valid profile name", "invalid_profile_name");
+  return r
+}
+
+function D(e) {
+  return !!e && B.test(e) && e !== "." && e !== ".."
+}
+
+function S(e, r) {
+  return _(e, "credentials", `${r}.json`)
+}
+async function I(e) {
+  let r;
+  try {
+    r = await M(e, "utf-8")
+  } catch (c) {
+    if (k(c) === "ENOENT") return null;
+    if (Wt(c)) return {
+      authentication: {
+        type: "unreadable"
+      }
+    };
+    throw c
+  }
+  let n;
+  try {
+    n = J(r)
+  } catch (c) {
+    return t(`Profile config is not JSON, treating as foreign: ${d(c)}`), {
+      authentication: {
+        type: "unreadable"
+      }
+    }
+  }
+  let s = K().safeParse(n);
+  return s.success ? s.data : {
+    authentication: {
+      type: "unreadable"
+    }
+  }
+}
+
+function F(e) {
+  return e.created_by === P.created_by && e.authentication.type === "user_oauth" && e.authentication.client_id === _Tt
+}
+async function O(e) {
+  let r;
+  try {
+    r = await M(e, "utf-8")
+  } catch (u) {
+    if (Wt(u)) return null;
+    throw u
+  }
+  let n;
+  try {
+    n = J(r)
+  } catch {
+    return null
+  }
+  let s = G().safeParse(n);
+  if (!s.success || s.data.created_by !== P.created_by) return null;
+  let c = s.data.refresh_token;
+  return {
+    refreshToken: typeof c === "string" ? c : void 0
+  }
+}
+async function fns(e) {
+  let r = oL();
+  if (r === null) return !1;
+  try {
+    let n = await O(S(r, A(r)));
+    return n !== null && n.refreshToken === e
+  } catch {
+    return !0
+  }
+}
+async function Q(e, r) {
+  try {
+    return await U(e, r, {
+      flag: "wx",
+      mode: 420
+    }), !0
+  } catch (n) {
+    if (k(n) === "EEXIST") return !1;
+    throw n
+  }
+}
+var Z = null;
+async function Soe({
+  clearOnboarding: e = !1,
+  preserveInProcessTokens: r = !1,
+  preserveNonAnthropicAuth: n = !1,
+  storageV5: s,
+  preserveQuotaAutoResume: c = !1,
+  artifactAccount: u = "signed_out",
+  incomingIdentity: C,
+  credentials: m
+}) {
+  let {
+    flushTelemetry: R
+  } = await import("B:/~BUN/root/chunk-pdksj5r8.js");
+  if (await R(), await h$s(u), Ht()) {
+    await ORn(s, {
+      preserveQuotaAutoResume: c,
+      artifactAccount: u,
+      incomingIdentity: C
+    });
+    return
+  }
+  if (!r && xe() === "firstParty") {
+    let p = qn();
+    p.invalidateCache?.();
+    let i = await p.readAsync(m),
+      h = i?.claudeAiOauth;
+    if (h?.refreshToken) await E_(h.refreshToken, h.clientId);
+    let y = i?.designOauth;
+    if (y?.refreshToken) await E_(y.refreshToken, y.clientId);
+    let v = i?.cloudSessionsOauth;
+    if (v?.refreshToken) await E_(v.refreshToken, v.clientId)
+  }
+  if (xe() === "gateway") {
+    let p = Date.now() + 5000;
+    for (let y = UDe(); y && Date.now() < p; y = UDe()) await je(y.catch(() => {}), p - Date.now());
+    let i = qn();
+    i.invalidateCache?.();
+    let h = (await i.readAsync(m))?.enterpriseGateway;
+    if (h) await jjs(h, m)
+  }
+  if (!r) a.unset("CLAUDE_CODE_OAUTH_TOKEN"), k$(null);
+  await T0o(s), await L({
+    revoke: !r && xe() === "firstParty" ? ({
+      refreshToken: p,
+      clientId: i
+    }) => E_(p, i) : void 0
+  }), hdn();
+  let w = qn(),
+    te;
+  if (n) {
+    if (xe() === "firstParty") {
+      w.invalidateCache?.();
+      let p = (await w.readAsync(m))?.designOauth;
+      if (p?.refreshToken) await E_(p.refreshToken, p.clientId)
+    }
+    await w.mutate((p) => {
+      let i = {
+        ...p
+      };
+      return delete i.claudeAiOauth, delete i.organizationUuid, delete i.trustedDeviceToken, delete i.trustedDeviceEnrolledAfterRefusalAtMs, delete i.enterpriseGateway, delete i.designOauth, delete i.cloudSessionsOauth, i
+    }, m).catch((p) => {
+      let i = k(p);
+      if (i === "EPERM" || i === "ENOENT" || o_(p)) {
+        t(`[performLogout] re-login secure-storage prune failed (${i}): ${d(p)}`, {
+          level: "error"
+        });
+        return
+      }
+      l(p)
+    })
+  } else {
+    let p = !1,
+      i = async () => {
+        p = !0;
+        let y = (await oe(w, m))?.coworkRemoteDevice;
+        if (await w.delete(m), y && Object.keys(y).length > 0) await ee(w, y, m)
+      };
+    await LFo(i).catch((h) => {
+      if (p) throw h;
+      return l(h), pVs(i)
+    })
+  }
+  sre(null), VTe(null), await ORn(s, {
+    preserveQuotaAutoResume: c,
+    artifactAccount: u,
+    incomingIdentity: C,
+    credentials: m
+  }), await Ce((p) => {
+    let i = {
+      ...p
+    };
+    if (e) {
+      if (i.hasCompletedOnboarding = !1, i.subscriptionNoticeCount = 0, i.hasAvailableSubscription = !1, i.customApiKeyResponses !== void 0) i.customApiKeyResponses = {
+        approved: [],
+        rejected: JN(i).rejected
+      };
+      let h = STt;
+      if (i.seenNotifications?.[h] !== void 0) {
+        let {
+          [h]: y, ...v
+        } = i.seenNotifications;
+        i.seenNotifications = v
+      }
+    }
+    return i.oauthAccount = void 0, i.additionalModelOptionsCache = void 0, i.additionalModelOptionsAnsweredAt = void 0, i.additionalModelCostsCache = void 0, i.modelAccessCache = void 0, i.orgModelDefaultCache = void 0, i.cachedArtifactRoster = void 0, i.artifactRosterDenied = void 0, i.lastSeenOrgDefaultUpdatedAt = void 0, i.clientDataCache = void 0, i.clientDataCacheSlots = void 0, i.autoCompactWindowsCache = void 0, i.cachedUsageUtilization = void 0, i.metricsStatusCache = void 0, i.metricsStatusCacheByPrincipal = void 0, i.githubWebConnectionStatusCache = void 0, i.startupPrefetchedAt = void 0, i
+  }, s), await X(), tet(void 0), g("oauth_logout")
+}
+async function X() {}
+async function ORn(e, {
+  preserveQuotaAutoResume: r = !1,
+  artifactAccount: n = "signed_out",
+  incomingIdentity: s,
+  credentials: c
+} = {}) {
+  if (cJ(), W() && c === void 0) XMe();
+  UH(), sUt(), Or().providerCache.clientDataFetches.clear(), qH(), Or().providerCache.modelConfigs.clear(), Or().providerCache.validatedModels.clear(), ojs(), tjs(), lJ(), vmt(Fs().gzipRequestBody.blockStore), Hee();
+  let u = j();
+  if (jCs(u.host), Z?.forgetClaudeCodeKeyHeard(), sds(u.host), g$s(n, s), n !== "same_account") {
+    if (t$s(u), !(Ht() && n === "signed_out")) Jfr("account_change"), oRr("account_change")
+  }
+  if (wz.of(u.host).clear(), o2(), JA(u, "account_change"), o5(), LRe.cache?.clear?.(), woe.cache?.clear?.(), await W4t(e), await VPo(), wns(), OEs(), IEs(), !r) Y$("account_switch"), dH("account_switch"), hks();
+  WUn()
+}
+async function Hni({
+  exit: e,
+  setError: r,
+  setInfo: n,
+  storageV5: s,
+  credentials: c
+}) {
+  n("Signing out\u2026"), xae({
+    action: "logout",
+    success: !0,
+    authMethod: "oauth"
+  });
+  try {
+    await Soe({
+      clearOnboarding: !0,
+      storageV5: s,
+      credentials: c
+    }), e()
+  } catch (u) {
+    l(u), r(`Couldn't sign out \u2014 ${u instanceof Error?u.message:String(u)}`)
+  }
+}
+async function ee(e, r, n) {
+  let s;
+  for (let c = 0; c < 2; c++) try {
+    let u = await e.mutate(() => ({
+      coworkRemoteDevice: r
+    }), n);
+    if (u.success) return;
+    if (s = Error("logout: the device identity could not be written back after the credential wipe"), !u.transient) break
+  } catch (u) {
+    s = u
+  }
+  l(s)
+}
+async function oe(e, r) {
+  for (let n = 0; n < 2; n++) {
+    let s = await (e.readAsyncStrict?.(r) ?? e.readAsync(r));
+    if (s !== wl) return s
+  }
+  l(Error("logout: secure storage could not be read, so the device identity is not carried across the wipe"));
+  return
+}
+export {
+  _Tt,
+  dns,
+  cns,
+  uns,
+  Gar,
+  pns,
+  fns,
+  Soe,
+  ORn,
+  Hni
+};

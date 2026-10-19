@@ -1,0 +1,1038 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import * as Y from "fs";
+function lMs() {
+  return;
+}
+function Hv() {
+  switch ("win32") {
+    case "darwin":
+      return "macos";
+    case "linux":
+      return "linux";
+    case "win32":
+      return "windows";
+    default:
+      return "unknown";
+  }
+}
+import { homedir as L } from "os";
+import * as S from "path";
+import * as N from "fs";
+function Lt(e, t) {
+  if (!process.env.SRT_DEBUG) return;
+  let r = t?.level || "info",
+    n = "[SandboxDebug]";
+  switch (r) {
+    case "error":
+      console.error(`${n} ${e}`);
+      break;
+    case "warn":
+      console.warn(`${n} ${e}`);
+      break;
+    default:
+      console.error(`${n} ${e}`);
+  }
+}
+var Pzn = [".gitconfig", ".gitmodules", ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".profile", ".ripgreprc", ".mcp.json"],
+  re = [".git", ".vscode", ".idea"];
+function Ozn() {
+  return [...re.filter(item => item !== ".git"), ".claude/commands", ".claude/agents"];
+}
+function lEo(e) {
+  return e.toLowerCase();
+}
+function yx(e, t) {
+  return e === t || e.startsWith(t === "/" ? "/" : t + "/");
+}
+function Ipt(e, t) {
+  return e !== t && yx(e, t);
+}
+function* dEo(e) {
+  for (let t = e.lastIndexOf("/"); t > 0; t = e.lastIndexOf("/", t - 1)) yield e.slice(0, t);
+  if (e !== "/") yield "/";
+}
+function dMs(e) {
+  try {
+    let t = N.realpathSync(e);
+    if (t !== e) return [e, t];
+  } catch {}
+  return [e];
+}
+function drn() {
+  try {
+    return process.cwd();
+  } catch {
+    return;
+  }
+}
+function I8e(e) {
+  let t = e?.code;
+  return t === "ENOENT" || t === "ENOTDIR" || t === "ELOOP" || t === "ENAMETOOLONG";
+}
+function Td(e) {
+  return e.includes("*") || e.includes("?") || e.includes("[") || e.includes("]");
+}
+function vOe(e) {
+  return e.includes("*") || e.includes("?");
+}
+function Mpt(e) {
+  return Hv() === "windows" ? vOe(e) : Td(e);
+}
+function $Dt(e) {
+  let t = e;
+  if (t === null || typeof t !== "object" || typeof t.path !== "string" || t.path === "" || t.literal !== !0) throw TypeError(`A filesystem path entry must be a path, or { path, literal: true }; got ${JSON.stringify(e) ?? String(e)}`);
+  return t.path;
+}
+function CN(e) {
+  if (/^\\\\\?\\unc\\/i.test(e)) return "\\\\" + e.slice(8);
+  if (e.startsWith("\\\\?\\")) return e.slice(4);
+  return e;
+}
+function crn(e) {
+  let t = S.win32.toNamespacedPath(e);
+  return /^[\\/]{2}[?.][\\/]unc[\\/]/i.test(t);
+}
+function $g(e) {
+  return e.replace(/\/\*\*$/, "") || "/";
+}
+function urn(e, t) {
+  let r = S.normalize(e),
+    n = S.normalize(t);
+  if (n === r) return !1;
+  if (r.startsWith("/tmp/") && n === "/private" + r) return !1;
+  if (r.startsWith("/var/") && n === "/private" + r) return !1;
+  if (n === "/") return !0;
+  if (n.split("/").filter(Boolean).length <= 1) return !0;
+  if (r.startsWith(n + "/")) return !0;
+  let c = r;
+  if (r.startsWith("/tmp/")) c = "/private" + r;else if (r.startsWith("/var/")) c = "/private" + r;
+  if (c !== r && c.startsWith(n + "/")) return !0;
+  let i = n.startsWith(r + "/"),
+    s = c !== r && n.startsWith(c + "/");
+  if (!(c !== r && n === c) && !i && !s) return !0;
+  return !1;
+}
+function UDt(e) {
+  if (e === "~") return L();
+  if (e.startsWith("~/") || e.startsWith("~\\")) return L() + e.slice(1);
+  return e;
+}
+function Dpt(e) {
+  let t = L(),
+    r = /^[A-Za-z]:/.test(t) ? t.slice(0, 2) : "",
+    n = r ? t.slice(2) : t;
+  return e.replace(/%USERPROFILE%/gi, t).replace(/%HOMEDRIVE%/gi, r).replace(/%HOMEPATH%/gi, n);
+}
+function cEo(e) {
+  return e.replace(/\/{2,}/g, "/").replace(/\/\.(?=\/)/g, "");
+}
+function U(e) {
+  if (Hv() !== "windows" && /(?:^|\/)\.\.(?:\/|$)/.test(e)) Lt(`[Sandbox] "${e}" could not be resolved and still contains a ".." component, so a rule spelled this way may not match.`, {
+    level: "warn"
+  });
+  return e;
+}
+function AS(e, t) {
+  let r = o => !t?.literal && Mpt(o);
+  if (Hv() === "windows") {
+    if (e = CN(Dpt(e)), /^[a-z]:/.test(e)) e = e[0].toUpperCase() + e.slice(1);
+    if (crn(e) && !r(e)) return S.win32.normalize(e);
+  }
+  if (Hv() !== "windows" && e.endsWith("/") && !r(e)) e = e.replace(/\/+$/, "") || "/";
+  let n = UDt(e);
+  if (n === e && !S.isAbsolute(e)) n = S.resolve(process.cwd(), e);
+  if (Hv() !== "windows") n = cEo(n);
+  if (r(n)) {
+    let o = Hv() === "windows" ? /[*?]/ : /[*?[\]]/,
+      c = n.split(o)[0];
+    if (c && c !== "/") {
+      let i = c.endsWith("/") ? c.slice(0, -1) : S.dirname(c);
+      try {
+        let s = N.realpathSync(i);
+        if (!urn(i, s)) {
+          let f = n.slice(i.length);
+          return U(s + f);
+        }
+      } catch {}
+    }
+    return U(n);
+  }
+  if (Hv() !== "windows" && n !== "") n = n.replace(/\/\.$/, "").replace(/\/+$/, "") || "/";
+  try {
+    let o = N.realpathSync(n);
+    if (!urn(n, o)) n = o;
+  } catch {}
+  return U(n);
+}
+var oe = ["/dev/stdout", "/dev/stderr", "/dev/null", "/dev/tty", "/dev/dtracehelper", "/dev/autofs_nowait", "/tmp/claude", "/private/tmp/claude"],
+  j = [".npm/_logs", ".claude/debug"];
+function RN(e) {
+  let t = L(),
+    r = !e || e.denyRead.length === 0 ? j : se(t, e.denyRead, e.allowRead);
+  return [...oe, ...r.map(item => S.join(t, item))];
+}
+function se(e, t, r = []) {
+  let n = [...new Set([e, AS(e, {
+      literal: !0
+    })])],
+    o = t.map(item => ie(item)),
+    c = r.flatMap(item => {
+      if (typeof item !== "string") return [$Dt(item)];
+      let s = $g(item);
+      return Mpt(s) ? [] : [s];
+    }).map(item => AS(item, {
+      literal: !0
+    }));
+  return j.filter(item => {
+    let s = n.map(f => S.join(f, item));
+    return !o.some(item => s.some(item) && !c.some(a => item(a) && s.some(item => yx(item, a))));
+  });
+}
+function ie(e) {
+  if (typeof e !== "string") {
+    let n = AS($Dt(e), {
+      literal: !0
+    });
+    return o => yx(o, n);
+  }
+  let t = $g(e);
+  if (Mpt(t)) try {
+    let regExp = new RegExp(Mzn(AS(t)));
+    return o => regExp.test(o);
+  } catch {}
+  let r = AS(t, {
+    literal: !0
+  });
+  return n => yx(n, r);
+}
+var ce = ["NODE_EXTRA_CA_CERTS", "SSL_CERT_FILE", "CURL_CA_BUNDLE", "REQUESTS_CA_BUNDLE", "PIP_CERT", "GIT_SSL_CAINFO", "AWS_CA_BUNDLE", "CARGO_HTTP_CAINFO", "DENO_CERT", "CLOUDSDK_CORE_CUSTOM_CA_CERTS_FILE", "NIX_SSL_CERT_FILE"];
+function M8e(e, t, r, n, o, c) {
+  let i = fe(c),
+    s = i === zBe ? i : encodeURIComponent(i),
+    f = n ? `${s}:${n}@` : "",
+    a = ["SANDBOX_RUNTIME=1"];
+  if (!o) {
+    let g = process.env.CLAUDE_CODE_TMPDIR || process.env.CLAUDE_TMPDIR || "/tmp/claude";
+    a.push(`TMPDIR=${g}`);
+  }
+  if (r) for (let g of ce) a.push(`${g}=${r}`);
+  if (!e && !t) return a;
+  let O = ["localhost", "127.0.0.1", "::1", "169.254.0.0/16", "10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"].join(",");
+  if (a.push(`NO_PROXY=${O}`), a.push(`no_proxy=${O}`), e) {
+    if (a.push(`HTTP_PROXY=http://${f}localhost:${e}`), a.push(`HTTPS_PROXY=http://${f}localhost:${e}`), a.push(`http_proxy=http://${f}localhost:${e}`), a.push(`https_proxy=http://${f}localhost:${e}`), n) a.push("GIT_CONFIG_PARAMETERS='http.proxyAuthMethod=basic'");
+  }
+  let x = e ? `http://${f}localhost:${e}` : `socks5h://${f}localhost:${t}`;
+  if (a.push(`ALL_PROXY=${x}`), a.push(`all_proxy=${x}`), a.push(`GRPC_PROXY=${x}`), a.push(`grpc_proxy=${x}`), t) {
+    let R = Hv();
+    if (R === "macos") a.push(`GIT_SSH_COMMAND=ssh -o ControlMaster=no -o ControlPath=none -o ProxyCommand='nc -X 5 -x localhost:${t} %h %p'`);else if (R === "linux" && e) {
+      let v = n ? `,proxyauth=${i}:${n}` : "";
+      a.push(`GIT_SSH_COMMAND=ssh -o ControlMaster=no -o ControlPath=none -o ProxyCommand='socat - PROXY:localhost:%h:%p,proxyport=${e}${v}'`);
+    }
+    if (a.push(`FTP_PROXY=socks5h://${f}localhost:${t}`), a.push(`ftp_proxy=socks5h://${f}localhost:${t}`), a.push(`RSYNC_PROXY=localhost:${t}`), a.push(`DOCKER_HTTP_PROXY=http://${f}localhost:${e || t}`), a.push(`DOCKER_HTTPS_PROXY=http://${f}localhost:${e || t}`), e) {
+      if (a.push("CLOUDSDK_PROXY_TYPE=http"), a.push("CLOUDSDK_PROXY_ADDRESS=localhost"), a.push(`CLOUDSDK_PROXY_PORT=${e}`), n) a.push(`CLOUDSDK_PROXY_USERNAME=${i}`), a.push(`CLOUDSDK_PROXY_PASSWORD=${n}`);
+    }
+  }
+  return a;
+}
+var ae = 8;
+function DAr(e) {
+  if (e.baseEnv?.GIT_CONFIG_COUNT === "0") return {};
+  let t = Number.parseInt(e.baseEnv?.GIT_CONFIG_COUNT ?? "", 10),
+    r = Number.isFinite(t) && t >= 0 ? t : 0,
+    n = r,
+    o = {},
+    c = (s, f) => {
+      o[`GIT_CONFIG_KEY_${n}`] = s, o[`GIT_CONFIG_VALUE_${n}`] = f, n++;
+    },
+    i = [...new Set(e.safeDirs.filter(item => !!item).map(item => {
+      let a = item.replace(/\\/g, "/").replace(/\/+$/, "");
+      if (a === "" || /^[A-Za-z]:$/.test(a)) return `${a}/`;
+      return a;
+    }))];
+  if (i.length > ae) c("safe.directory", "*");else for (let s of i) c("safe.directory", s), c("safe.directory", s.endsWith("/") ? `${s}*` : `${s}/*`);
+  if (e.schannelCa) c("http.schannelUseSSLCAInfo", "true"), c("http.schannelCheckRevoke", "false");
+  if (n === r) return {};
+  return o.GIT_CONFIG_COUNT = String(n), o;
+}
+function LAr(e) {
+  let baseEnv = {
+    GIT_CONFIG_COUNT: process.env.GIT_CONFIG_COUNT
+  };
+  for (let r of e.unsetEnvVars ?? []) delete baseEnv[r];
+  return Object.assign(baseEnv, e.setEnvVars ?? {}), DAr({
+    safeDirs: e.safeDirs,
+    baseEnv: baseEnv
+  });
+}
+var uEo = 100;
+function Lpt(e, t) {
+  return !t ? e : t;
+}
+function zfe(e) {
+  let t = e.slice(0, uEo);
+  return Buffer.from(t).toString("base64");
+}
+function WBe(e) {
+  return Buffer.from(e, "base64").toString("utf8");
+}
+var zBe = "srt",
+  K = 255,
+  pEo = K - Buffer.byteLength(`${zBe}.`);
+function fe(e) {
+  if (!e) return zBe;
+  let t = `${zBe}.${e}`;
+  return Buffer.byteLength(t) <= K ? t : zBe;
+}
+function Izn(e) {
+  if (!e || !e.startsWith(`${zBe}.`)) return;
+  let t = e.slice(zBe.length + 1);
+  if (!t || Buffer.byteLength(t) > pEo) return;
+  return t;
+}
+function Npt(e) {
+  return "^" + e.replace(/[.^$+{}()|\\]/g, "\\$&").replace(/\[([^\]]*?)$/g, "\\[$1").replace(/\*\*\//g, "__GLOBSTAR_SLASH__").replace(/\*\*/g, "__GLOBSTAR__").replace(/\*/g, "[^/]*").replace(/\?/g, "[^/]").replace(/__GLOBSTAR_SLASH__/g, "(.*/)?").replace(/__GLOBSTAR__/g, ".*") + "$";
+}
+function Mzn(e) {
+  return Npt(e).slice(0, -1) + "(/.*)?$";
+}
+function prn(e) {
+  for (;;) {
+    let t = e.next();
+    if (t.done) return t.value;
+  }
+}
+var ue = 10;
+async function cMs(e, t) {
+  t?.throwIfAborted();
+  let r = performance.now();
+  for (;;) {
+    let n = e.next();
+    if (!n.done && performance.now() - r < ue) continue;
+    if (!n.done) await new Promise(o => setImmediate(o));
+    if (t?.throwIfAborted(), n.done) return n.value;
+    r = performance.now();
+  }
+}
+function Dzn(e, t = {}) {
+  return de(e, t).matches;
+}
+function z(e, t) {
+  if (e.includes("__GLOBSTAR")) return;
+  let r = i => Npt(i).slice(1, -1),
+    n = [],
+    o = 0,
+    c = /(\[[^\]]*\])|(\*+)(\/?)|(\/)|([^[*/]+|\[)/g;
+  for (let i of e.matchAll(c)) {
+    let [s, f, a, O, x] = i;
+    if (f !== void 0) {
+      if (/[*?]/.test(f)) return;
+      let source = r(f);
+      n.push(new RegExp(`^${source}$`, t).test("/") ? {
+        source: source,
+        canBeSeparator: !0
+      } : {
+        source: source
+      });
+    } else if (a !== void 0) {
+      let g = O === "/" && a.length >= 2,
+        R = a.length - (g ? 2 : 0);
+      if (R >= 2) n.push("any");else if (R === 1) n.push({
+        source: "[^/]*"
+      });
+      if (g) n.push("anyDirs");else if (O === "/") n.push("/");
+    } else if (x !== void 0) n.push("/");else {
+      if (s === "[" && o++ > 0) return;
+      n.push({
+        source: r(s)
+      });
+    }
+  }
+  return n.filter((item, index) => item !== "anyDirs" || n[index + 1] !== "anyDirs" && n[index + 1] !== "any");
+}
+function le(e, t) {
+  let regExp_2 = new RegExp(Npt(e), t),
+    n = $g(e),
+    o = n !== e ? new RegExp(Npt(n), t) : void 0,
+    c = {
+      splits: !1,
+      start: [0],
+      next: () => [0],
+      matches: (h, d, u) => regExp_2.test(u),
+      matchesDirectoryForm: (h, d, u) => o?.test(u) === !0
+    },
+    i = [],
+    s = "[^/]*",
+    f = h => {
+      let d = new Map(),
+        u = then => i.push({
+          then: then
+        }) - 1,
+        m = (l, _) => {
+          let E = `${l}${_ ? "*" : ""}`,
+            A = d.get(E);
+          if (A !== void 0) return A;
+          if (!_ && h[l] === "anyDirs") {
+            let y = u(void 0);
+            return d.set(E, y), i[y].then = m(l + 1, !1), y;
+          }
+          if (!_ && h[l] === "any" && l === h.length - 1) {
+            let y = u(void 0);
+            return d.set(E, y), y;
+          }
+          let p = {
+              edges: []
+            },
+            w = i.push(p) - 1;
+          d.set(E, w);
+          let D = (y, to) => {
+              p.edges.push({
+                regex: new RegExp(`^${y}$`, t),
+                to: to
+              });
+            },
+            b = _ ? "[^/]*" : "";
+          for (let y = l;; y++) {
+            let C = h[y];
+            if (C === void 0) {
+              D(b, void 0);
+              break;
+            }
+            if (C === "/") {
+              D(b, m(y + 1, !1));
+              break;
+            }
+            if (C === "any") D(b + "[^/]*", u(m(y + 1, !0))), b += "[^/]*";else if (C === "anyDirs") D(b + "[^/]*", u(m(y + 1, !1)));else if (C.canBeSeparator) D(b, m(y + 1, !1)), b += `(?!/)${C.source}`;else b += C.source;
+          }
+          return w;
+        };
+      return m(0, !1);
+    },
+    a,
+    O;
+  try {
+    let h = z(e, t),
+      d = o ? z(n, t) : [];
+    if (h === void 0 || d === void 0) return c;
+    if (a = [f(h)], O = i.length, o) a.push(f(d));
+  } catch {
+    return c;
+  }
+  let x = (h, d) => {
+      for (let u = d; u !== void 0 && !h.has(u);) {
+        h.add(u);
+        let m = i[u];
+        u = "then" in m ? m.then : void 0;
+      }
+    },
+    g = h => [...h].sort((itemA, itemB) => itemA - itemB),
+    R = (h, d, u) => h.some(item => {
+      if (item >= O !== u) return !1;
+      let l = i[item];
+      return "then" in l ? l.then === void 0 : l.edges.some(item => item.to === void 0 && item.regex.test(d));
+    }),
+    v = new Set();
+  for (let h of a) x(v, h);
+  return {
+    splits: !0,
+    start: g(v),
+    next: (h, d) => {
+      let u = new Set();
+      for (let m of h) {
+        let l = i[m];
+        if ("then" in l) x(u, m);else for (let _ of l.edges) if (_.to !== void 0 && _.regex.test(d)) x(u, _.to);
+      }
+      return g(u);
+    },
+    matches: (h, d) => R(h, d, !1),
+    matchesDirectoryForm: (h, d) => R(h, d, !0)
+  };
+}
+function fEo(e) {
+  let t = e.split(/[*?[\]]/)[0];
+  if (!t) return "";
+  return t.endsWith("/") ? t.slice(0, -1) : S.dirname(t);
+}
+function BDt(e) {
+  return e.replace(/\\/g, "/");
+}
+function de(e, t = {}) {
+  return prn(Lzn(e, t));
+}
+function* Lzn(e, t = {}) {
+  let r = {
+      baseLocation: "",
+      matches: [],
+      directoryMatches: [],
+      symlinks: new Set(),
+      uninspectableLinks: new Set(),
+      unlisted: [],
+      realOf: new Map()
+    },
+    n = t.anchor === void 0 ? void 0 : BDt(t.anchor),
+    o = n === void 0 ? BDt(AS(e)) : BDt(e).slice(n.length);
+  if (n !== void 0 && (!/[^/]/.test(n) || !BDt(e).startsWith(n) || !(n.endsWith("/") || /^(\/|$)/.test(o)))) throw TypeError(`Glob pattern ${e} does not lie beneath the anchor ${t.anchor}`);
+  let c = fEo(o),
+    i = c === "/" ? "" : c,
+    dir = n === void 0 ? c : n + i;
+  if (dir === "" || dir === "/") return Lt(`[Sandbox] Glob pattern has no literal directory to start from, skipping: ${e}`, {
+    level: "warn"
+  }), r;
+  let f = t.caseInsensitive ? "is" : "s",
+    a = le(o, f);
+  if (t.followSymlinkedDirectories && !a.splits) Lt(`[Sandbox] Glob pattern ${e} cannot be followed one path component at a time, so it is matched against real paths only and not through symlinked directories`, {
+    level: "warn"
+  });
+  let O = new Map(),
+    x = t.listings ?? new Map(),
+    g = [],
+    R = (u, m, l) => {
+      try {
+        return l(u);
+      } catch (error) {
+        if (m === u) throw error;
+        return l(m);
+      }
+    },
+    v = new Map(),
+    h = (u, m) => {
+      let l = v.get(m);
+      if (l !== void 0) return l;
+      let _;
+      try {
+        _ = R(m, u, E => ({
+          isDirectory: N.statSync(E).isDirectory(),
+          real: N.realpathSync(E)
+        }));
+      } catch (error) {
+        _ = I8e(error) ? "absent" : "uninspectable";
+      }
+      return v.set(m, _), _;
+    },
+    real = dir;
+  try {
+    real = N.realpathSync(dir);
+  } catch {}
+  r.baseLocation = real, g.push({
+    dir: dir,
+    real: real,
+    short: dir.length < real.length ? dir : real,
+    positions: (n === void 0 ? dir : i).split("/").reduce(a.next, a.start)
+  });
+  for (let u = g.pop(); u !== void 0; u = g.pop()) {
+    let {
+        dir: dir_2,
+        real: real_2
+      } = u,
+      _ = O.get(real_2);
+    if (_ === void 0) O.set(real_2, _ = new Set());
+    let E = u.positions.filter(item => !_.has(item));
+    if (E.length === 0) continue;
+    yield;
+    for (let p of E) _.add(p);
+    let A;
+    try {
+      let p = x.get(real_2);
+      if (p instanceof Error) throw p;
+      A = p ?? R(real_2, u.short, w => N.readdirSync(w, {
+        withFileTypes: !0
+      })), x.set(real_2, A);
+    } catch (error) {
+      let w = error?.code;
+      if (Lt(`[Sandbox] Error listing ${dir_2} for glob pattern ${e}: ${error}`, {
+        level: w === "ENOENT" ? "info" : "warn"
+      }), w !== "ENOENT") {
+        if (x.set(real_2, error instanceof Error ? error : Error(String(error))), r.unlisted.push(dir_2), real_2 !== dir_2) r.realOf.set(dir_2, real_2);
+      }
+      continue;
+    }
+    for (let p of A) {
+      if (a.splits && !p.isDirectory() && !p.isSymbolicLink() && !a.matches(E, p.name, "")) continue;
+      let dir_3 = S.join(dir_2, p.name),
+        real_3 = S.join(real_2, p.name),
+        b = BDt(dir_3),
+        y = n !== void 0 && b.startsWith(n) ? b.slice(n.length) : b,
+        C = a.matches(E, p.name, y);
+      if (C) r.matches.push(dir_3);
+      if (p.isDirectory()) {
+        let positions = a.next(E, p.name),
+          X = t.withDirectoryForm === !0 && a.matchesDirectoryForm(E, p.name, y);
+        if (X) r.directoryMatches.push(dir_3);
+        if ((C || X) && real_3 !== dir_3) r.realOf.set(dir_3, real_3);
+        if (positions.length > 0) g.push({
+          dir: dir_3,
+          real: real_3,
+          short: S.join(u.short, p.name),
+          positions: positions
+        });
+        continue;
+      }
+      if (!p.isSymbolicLink()) {
+        if (C && real_3 !== dir_3) r.realOf.set(dir_3, real_3);
+        continue;
+      }
+      if (r.symlinks.add(dir_3), !t.followSymlinkedDirectories) continue;
+      let P = t.withDirectoryForm === !0 && a.matchesDirectoryForm(E, p.name, y),
+        positions_2 = a.splits ? a.next(E, p.name) : [];
+      if (!C && !P && positions_2.length === 0) continue;
+      let G = S.join(u.short, p.name),
+        T = h(G, real_3);
+      if (T === "absent") continue;
+      if (T === "uninspectable") {
+        if (r.uninspectableLinks.add(dir_3), P) r.directoryMatches.push(dir_3);
+        continue;
+      }
+      if (C) r.realOf.set(dir_3, T.real);
+      if (!T.isDirectory) continue;
+      if (P) r.directoryMatches.push(dir_3), r.realOf.set(dir_3, T.real);
+      if (positions_2.length === 0) continue;
+      if (yx(real_2, T.real) || yx(real, T.real)) {
+        Lt(`[Sandbox] Not following symlink ${dir_3} -> ${T.real} for glob pattern ${e}: it leads back up the tree`);
+        continue;
+      }
+      g.push({
+        dir: T.real,
+        real: T.real,
+        short: G.length < T.real.length ? G : T.real,
+        positions: positions_2
+      });
+    }
+  }
+  return r;
+}
+import { isIP as ne } from "net";
+import { BlockList as xe, connect as Q, isIP as I } from "net";
+import { connect as ge } from "tls";
+import { URL as F } from "url";
+import { BlockList as pe, isIP as V } from "net";
+var mEo = ["127.0.0.0/8", "::1"];
+function Z(e) {
+  let t = V(e);
+  return t === 4 ? "ipv4" : t === 6 ? "ipv6" : void 0;
+}
+function gEo(e) {
+  let t = e.indexOf("/"),
+    address_2 = M(t === -1 ? e : e.slice(0, t)),
+    family = Z(address_2);
+  if (!family) return;
+  let o = family === "ipv6" ? 128 : 32,
+    prefix = o;
+  if (t !== -1) {
+    let s = e.slice(t + 1);
+    if (!/^\d{1,3}$/.test(s) || Number(s) > o) return;
+    prefix = Number(s);
+  }
+  let address = family === "ipv6" ? H(address_2) : void 0;
+  if (address !== void 0) return prefix < 96 ? void 0 : {
+    address: address,
+    prefix: prefix - 96,
+    family: "ipv4"
+  };
+  return {
+    address: address_2,
+    prefix: prefix,
+    family: family
+  };
+}
+function jDt(e, t) {
+  let r = gEo(t);
+  if (!r) return !1;
+  try {
+    e.addSubnet(r.address, r.prefix, r.family);
+  } catch {
+    return !1;
+  }
+  return !0;
+}
+function he(e) {
+  let t = new pe();
+  for (let r of e) if (!jDt(t, r)) throw Error(`Invalid IP address or CIDR range: ${JSON.stringify(r)}`);
+  return t;
+}
+function Fpt(e, t) {
+  let r = M(t),
+    n = Z(r);
+  return n !== void 0 && e.check(r, n);
+}
+function M(e) {
+  let t = e.indexOf("%");
+  return t === -1 ? e : e.slice(0, t);
+}
+function J(e) {
+  let t;
+  try {
+    t = new URL(`http://[${M(e)}]/`).hostname.slice(1, -1);
+  } catch {
+    return;
+  }
+  let [r = "", n] = t.split("::"),
+    o = r ? r.split(":") : [],
+    c = n ? n.split(":") : [],
+    i = n === void 0 ? 0 : 8 - o.length - c.length;
+  if (i < 0 || o.length + i + c.length !== 8) return;
+  return [...o, ...Array(i).fill("0"), ...c].map(item => parseInt(item, 16));
+}
+var B = (e, t) => `${e >> 8}.${e & 255}.${t >> 8}.${t & 255}`;
+function H(e) {
+  if (!/ffff/i.test(e)) return;
+  let t = J(e);
+  return t && t.slice(0, 5).every(item => item === 0) && t[5] === 65535 ? B(t[6], t[7]) : void 0;
+}
+function uMs(e) {
+  if (V(e) !== 6) return;
+  let t = J(e);
+  if (!t) return;
+  let r = (o, c) => t.slice(o, c).every(item => item === 0);
+  if (t[0] === 8194) return B(t[1], t[2]);
+  let n = B(t[6], t[7]);
+  if (t[0] === 100 && t[1] === 65435 && r(2, 6)) return n;
+  if (r(0, 5) && (t[5] === 0 || t[5] === 65535)) return n;
+  if (r(0, 4) && t[4] === 65535 && t[5] === 0) return n;
+  return;
+}
+var me = he(mEo);
+function NAr(e) {
+  return Fpt(me, e);
+}
+function pMs(e) {
+  let t = e.toLowerCase().replace(/\.$/, "");
+  return t === "localhost" || t.endsWith(".localhost");
+}
+var q = 30000,
+  _e = new Set(["connection", "keep-alive", "proxy-authenticate", "proxy-authorization", "proxy-connection", "te", "trailer", "transfer-encoding", "upgrade"]);
+function hEo(e) {
+  let t = e?.http ?? process.env.HTTP_PROXY ?? process.env.http_proxy ?? void 0,
+    r = e?.https ?? process.env.HTTPS_PROXY ?? process.env.https_proxy ?? t,
+    n = e?.noProxy ?? process.env.NO_PROXY ?? process.env.no_proxy ?? "";
+  if (!t && !r) return;
+  let o = s => {
+      if (!s) return;
+      let a = /^[a-z][a-z0-9+.-]*:\/\//i.test(s) ? s : `http://${s}`;
+      try {
+        let O = new F(a);
+        if (O.protocol !== "http:" && O.protocol !== "https:" || !O.hostname) throw Error("unsupported scheme or empty host");
+        return O;
+      } catch {
+        Lt(`Invalid parent proxy URL, ignoring: ${Oe(s)}`, {
+          level: "error"
+        });
+        return;
+      }
+    },
+    httpUrl = o(t),
+    httpsUrl = o(r);
+  if (!httpUrl && !httpsUrl) return;
+  return {
+    httpUrl: httpUrl,
+    httpsUrl: httpsUrl,
+    noProxy: we(n)
+  };
+}
+function we(e) {
+  let t = {
+    all: !1,
+    suffixes: [],
+    cidr: new xe()
+  };
+  for (let r of e.split(",")) {
+    if (r = r.trim(), !r) continue;
+    if (r === "*") {
+      t.all = !0;
+      continue;
+    }
+    if (r.includes("/")) {
+      jDt(t.cidr, r);
+      continue;
+    }
+    let n = r.toLowerCase(),
+      o = /^\[([^\]]+)\](?::\d+)?$/.exec(n);
+    if (o) n = o[1];
+    if (n.startsWith("*.")) n = n.slice(1);
+    if (!I(n)) {
+      let c = n.lastIndexOf(":");
+      if (c !== -1 && /^\d+$/.test(n.slice(c + 1))) n = n.slice(0, c);
+    } else if (jDt(t.cidr, n)) continue;
+    t.suffixes.push(n);
+  }
+  return t;
+}
+function Nzn(e, t) {
+  let r = kOe(t.toLowerCase().replace(/\.$/, ""));
+  if (r === "localhost" || NAr(r)) return !0;
+  if (e.noProxy.all) return !0;
+  if (Fpt(e.noProxy.cidr, r)) return !0;
+  for (let n of e.noProxy.suffixes) if (n.startsWith(".")) {
+    if (r === n.slice(1) || r.endsWith(n)) return !0;
+  } else if (r === n || r.endsWith("." + n)) return !0;
+  return !1;
+}
+function Fzn(e, t) {
+  if (t.isHttps) return e.httpsUrl ?? e.httpUrl;
+  return e.httpUrl;
+}
+function yEo(e) {
+  let {
+      destHost: destHost,
+      destPort: destPort
+    } = e,
+    n = kOe(destHost);
+  if (!mrn(n)) return Promise.reject(Error(`Invalid destination host for CONNECT: ${JSON.stringify(destHost)}`));
+  if (!Number.isInteger(destPort) || destPort < 1 || destPort > 65535) return Promise.reject(Error(`Invalid destination port: ${destPort}`));
+  let o = I(n) === 6 ? `[${n}]:${destPort}` : `${n}:${destPort}`;
+  return new Promise((c, i) => {
+    let s = e.dial(),
+      f = !1,
+      a = x => {
+        if (f) return;
+        f = !0, s.destroy(), i(x);
+      },
+      O = () => a(Error("Proxy closed during CONNECT handshake"));
+    s.setTimeout(e.timeoutMs ?? q, () => a(Error("CONNECT handshake timed out"))), s.once("error", a), s.once("close", O), s.once(e.readyEvent, () => {
+      s.write(`CONNECT ${o} HTTP/1.1\r
+Host: ${o}\r
+` + (e.authHeader ? `Proxy-Authorization: ${e.authHeader}\r
+` : "") + `\r
+`);
+      let x = "",
+        g = R => {
+          x += R.toString("latin1");
+          let v = x.indexOf(`\r
+\r
+`);
+          if (v === -1) {
+            if (x.length > 16384) a(Error("CONNECT response header too large"));
+            return;
+          }
+          s.pause(), s.removeListener("data", g);
+          let h = x.slice(0, x.indexOf(`\r
+`));
+          if (!/^HTTP\/1\.[01] 2\d\d(?:\s|$)/.test(h)) return a(Error(`Proxy refused CONNECT: ${h.trim()}`));
+          let d = x.slice(v + 4);
+          if (d.length) s.unshift(Buffer.from(d, "latin1"));
+          f = !0, s.setTimeout(0), s.removeListener("error", a), s.removeListener("close", O), c(s);
+        };
+      s.on("data", g);
+    });
+  });
+}
+function FAr(e, destHost_2, destPort_2) {
+  let n = kOe(e.hostname),
+    port = Number(e.port) || (e.protocol === "https:" ? 443 : 80),
+    c = e.protocol === "https:";
+  return yEo({
+    destHost: destHost_2,
+    destPort: destPort_2,
+    authHeader: _Eo(e),
+    readyEvent: c ? "secureConnect" : "connect",
+    dial: () => c ? ge({
+      host: n,
+      port: port,
+      ...(I(n) ? {} : {
+        servername: n
+      })
+    }) : Q(port, n)
+  });
+}
+function _Eo(e) {
+  if (!e.username && !e.password) return;
+  try {
+    let t = `${decodeURIComponent(e.username)}:${decodeURIComponent(e.password)}`;
+    return `Basic ${Buffer.from(t).toString("base64")}`;
+  } catch {
+    let t = `${e.username}:${e.password}`;
+    return `Basic ${Buffer.from(t).toString("base64")}`;
+  }
+}
+function frn(e, t) {
+  try {
+    return e.writeHead(t.statusCode ?? 502, Hzn(t.headers)), !0;
+  } catch (error) {
+    if (Lt(`Invalid upstream response head (status ${t.statusCode}): ${error instanceof Error ? error.message : String(error)}`, {
+      level: "error"
+    }), t.destroy(), e.headersSent) return e.destroy(), !1;
+    for (let n of e.getHeaderNames()) e.removeHeader(n);
+    return e.writeHead(502, {
+      "Content-Type": "text/plain"
+    }), e.end("Bad Gateway"), !1;
+  }
+}
+function Hzn(e) {
+  let t = new Set(),
+    connection = e.connection;
+  if (connection) for (let o of String(connection).split(",")) t.add(o.trim().toLowerCase());
+  let n = {};
+  for (let [o, c] of Object.entries(e)) {
+    let i = o.toLowerCase();
+    if (!_e.has(i) && !t.has(i)) n[o] = c;
+  }
+  return n;
+}
+function kOe(e) {
+  return e.startsWith("[") && e.endsWith("]") ? e.slice(1, -1) : e;
+}
+function bEo(e) {
+  if (!e) return "-";
+  if (!e.username && !e.password) return e.href;
+  let t = new F(e.href);
+  return t.username = "***", t.password = "***", t.href;
+}
+function Oe(e) {
+  return e.replace(/\/\/[^@/]*@/, "//***:***@");
+}
+function mrn(e) {
+  if (!e || e.length > 255) return !1;
+  let t = kOe(e);
+  if (t.includes("%")) return !1;
+  if (I(t)) return !0;
+  return /^[A-Za-z0-9._-]+$/.test(t);
+}
+function AN(e) {
+  try {
+    let t = kOe(e),
+      r = I(t) === 6 ? `[${t}]` : t,
+      n = kOe(new F(`http://${r}/`).hostname);
+    return I(n) === 6 ? H(n) ?? n : n.replace(/\.$/, "");
+  } catch {
+    return;
+  }
+}
+function HAr(e, t, r) {
+  let n = I(e) === 6 ? `[${e}]` : e;
+  return t === r ? n : `${n}:${t}`;
+}
+async function $Ar(servername, port_2, r, n) {
+  let host = servername;
+  if (r && !I(servername)) {
+    let c = await $zn(servername, port_2, r);
+    if (host = c.remoteAddress ?? "", c.destroy(), !host) throw Error(`connect ${servername}:${port_2}: no peer address`);
+  }
+  return {
+    host: host,
+    port: port_2,
+    ...(n && !I(servername) ? {
+      servername: servername
+    } : {}),
+    agent: !1
+  };
+}
+function $zn(host_2, port_3, lookup, n = q) {
+  return new Promise((o, c) => {
+    let i = Q({
+        port: port_3,
+        host: host_2,
+        lookup: lookup
+      }),
+      s = !1,
+      f = a => {
+        if (s) return;
+        if (s = !0, i.setTimeout(0), a) i.destroy(), c(a);else o(i);
+      };
+    i.setTimeout(n, () => f(Error("connect timed out"))), i.once("connect", () => f()), i.once("error", f), i.once("close", () => f(Error("socket closed before connect")));
+  });
+}
+function ee(e) {
+  let t = e.indexOf("%");
+  return t === -1 ? e : e.slice(0, t);
+}
+function Pee(hostPattern) {
+  if (hostPattern.startsWith("[")) {
+    let n = hostPattern.indexOf("]");
+    if (n === -1) return {
+      hostPattern: hostPattern,
+      port: void 0
+    };
+    let o = ee(hostPattern.slice(1, n)),
+      hostPattern_2 = AN(o) ?? o,
+      i = hostPattern.slice(n + 1);
+    if (i === "") return {
+      hostPattern: hostPattern_2,
+      port: void 0
+    };
+    let port_4 = te(i.startsWith(":") ? i.slice(1) : "");
+    return port_4 === void 0 ? {
+      hostPattern: hostPattern,
+      port: void 0
+    } : {
+      hostPattern: hostPattern_2,
+      port: port_4
+    };
+  }
+  let t = hostPattern.lastIndexOf(":");
+  if (t === -1) return {
+    hostPattern: hostPattern,
+    port: void 0
+  };
+  if (hostPattern.indexOf(":") !== t) {
+    let n = ee(hostPattern);
+    return {
+      hostPattern: AN(n) ?? n,
+      port: void 0
+    };
+  }
+  let port_5 = te(hostPattern.slice(t + 1));
+  if (port_5 === void 0) return {
+    hostPattern: hostPattern,
+    port: void 0
+  };
+  return {
+    hostPattern: hostPattern.slice(0, t),
+    port: port_5
+  };
+}
+function te(e) {
+  if (!/^[1-9][0-9]{0,4}$/.test(e)) return;
+  let t = Number(e);
+  return t > 65535 ? void 0 : t;
+}
+function SEo(e) {
+  return e.flatMap(item => {
+    let {
+      hostPattern: r,
+      port: port_6
+    } = Pee(item);
+    return ne(r) ? [{
+      range: r,
+      port: port_6
+    }] : [];
+  });
+}
+function grn(e) {
+  return Pee(e).hostPattern;
+}
+function D8e(e, t) {
+  let r = e.toLowerCase();
+  if (t === "*") return !0;
+  if (t.startsWith("*.")) {
+    if (ne(kOe(r))) return !1;
+    let n = t.substring(2).toLowerCase();
+    return r.endsWith("." + n);
+  }
+  return r === t.toLowerCase();
+}
+function Uzn(e, t, r) {
+  let {
+    hostPattern: hostPattern_3,
+    port: port_7
+  } = Pee(r);
+  if (port_7 !== void 0 && port_7 !== t) return !1;
+  return D8e(e, hostPattern_3);
+}
+function WDt(e, t) {
+  let r = t.map(grn);
+  if (!e.startsWith("*.")) return r.some(item => D8e(e, item));
+  let n = e.slice(2).toLowerCase();
+  return r.some(item => {
+    if (!item.startsWith("*.")) return !1;
+    let c = item.slice(2).toLowerCase();
+    return n === c || n.endsWith("." + c);
+  });
+}
+export { lMs, Hv, Lt, Pzn, Ozn, lEo, yx, Ipt, dEo, dMs, drn, I8e, Td, vOe, Mpt, $Dt, CN, crn, $g, urn, UDt, Dpt, cEo, AS, RN, M8e, DAr, LAr, uEo, Lpt, zfe, WBe, zBe, pEo, Izn, Npt, Mzn, prn, cMs, Dzn, fEo, BDt, Lzn, mEo, gEo, jDt, Fpt, uMs, NAr, pMs, hEo, Nzn, Fzn, yEo, FAr, _Eo, frn, Hzn, kOe, bEo, mrn, AN, HAr, $Ar, $zn, Pee, SEo, grn, D8e, Uzn, WDt };

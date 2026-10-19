@@ -1,0 +1,2271 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  wt,
+  Vn,
+  _a,
+  zH,
+  T_,
+  Tw,
+  It,
+  Kg,
+  SWs,
+  wWs,
+  US,
+  Ox,
+  vs,
+  hp,
+  SJe,
+  s2,
+  fB,
+  B6n,
+  E,
+  ir
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  Vr,
+  Cy
+} from "B:/~BUN/root/chunk-9ka04m0y.js";
+import {
+  L,
+  Ze,
+  hgn,
+  we,
+  sye,
+  de
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  b,
+  c,
+  pe,
+  Bde,
+  wye
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  Ke,
+  H,
+  d
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  O
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  m
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  kmn,
+  $4,
+  ce
+} from "B:/~BUN/root/chunk-nxwmyxnk.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  ta,
+  Gqs,
+  HB,
+  dKs,
+  fc
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  $s
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  m1t,
+  Ane
+} from "B:/~BUN/root/chunk-pej55jax.js";
+import {
+  _i
+} from "B:/~BUN/root/chunk-8w42v0dp.js";
+import {
+  Ri
+} from "B:/~BUN/root/chunk-jkv8n5r0.js";
+import {
+  m2s
+} from "B:/~BUN/root/chunk-v6pbq6dm.js";
+import {
+  Ao
+} from "B:/~BUN/root/chunk-s6czymtt.js";
+import {
+  acn,
+  $D
+} from "B:/~BUN/root/chunk-qp0344nb.js";
+import {
+  Sh,
+  qO
+} from "B:/~BUN/root/chunk-e4q58xft.js";
+import {
+  bA,
+  vW
+} from "B:/~BUN/root/chunk-8v3gkznb.js";
+import {
+  SOe,
+  UBe,
+  wOe,
+  x8e,
+  Tzn
+} from "B:/~BUN/root/chunk-0m6vvjrw.js";
+import {
+  ht,
+  pHs,
+  fHs,
+  mHs,
+  VU,
+  Op,
+  wmt,
+  eFt,
+  Dqn
+} from "B:/~BUN/root/chunk-2fccb5hn.js";
+import {
+  Qt
+} from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import {
+  lg,
+  ZFs,
+  kx
+} from "B:/~BUN/root/chunk-8y0chnnr.js";
+import {
+  le,
+  uc
+} from "B:/~BUN/root/chunk-e7tskyjv.js";
+import {
+  iSe,
+  aSe,
+  tU,
+  nU,
+  VL,
+  Tgr,
+  z1,
+  zfs,
+  kHe,
+  dDn,
+  gq,
+  Pgr,
+  Hgr,
+  TSe,
+  kT,
+  Av,
+  YAe,
+  TDn,
+  LDn,
+  _se,
+  kat,
+  Bz,
+  glo,
+  hlo,
+  ylo,
+  jz,
+  bse,
+  gl,
+  PSe,
+  _hr,
+  exe,
+  Mms,
+  rxe,
+  MSe,
+  LHe,
+  DSe,
+  iXt,
+  r9,
+  nM,
+  zxt,
+  UYe,
+  BYe,
+  rpe,
+  ET,
+  YL,
+  rM,
+  ryr,
+  qxt,
+  LLn,
+  a6,
+  Zat,
+  Ldo,
+  HSe,
+  TT,
+  qP,
+  Rse,
+  chs,
+  qYe,
+  uhs,
+  phs,
+  OXt,
+  nlt,
+  GHe,
+  MXt,
+  Dyr,
+  DXt,
+  ZYe,
+  KHe,
+  Ase,
+  xse,
+  UXt,
+  ex,
+  WXt,
+  wq,
+  Jyr,
+  e_r,
+  Db,
+  d6,
+  Rco,
+  oM,
+  u$e,
+  qbr,
+  m$e,
+  E_s,
+  T_s,
+  C_s,
+  R_s,
+  A_s,
+  x_s,
+  en,
+  oN,
+  Ipe,
+  K0,
+  Re,
+  cf,
+  Io
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  $0s,
+  yft
+} from "B:/~BUN/root/chunk-c44qc88s.js";
+import {
+  mae
+} from "B:/~BUN/root/chunk-ses0c36n.js";
+import {
+  gN
+} from "B:/~BUN/root/chunk-dn8rakwm.js";
+import {
+  TC,
+  $q
+} from "B:/~BUN/root/chunk-vnmfp48d.js";
+import {
+  Wc
+} from "B:/~BUN/root/chunk-7j5tvnqj.js";
+import {
+  ch,
+  d8e
+} from "B:/~BUN/root/chunk-vd11ggb1.js";
+import {
+  as
+} from "B:/~BUN/root/chunk-j97yjp75.js";
+import {
+  $Cr,
+  UCr,
+  Mie,
+  o8e
+} from "B:/~BUN/root/chunk-rx39nt6a.js";
+import {
+  vn,
+  Q0
+} from "B:/~BUN/root/chunk-k382hx6g.js";
+import {
+  xfe
+} from "B:/~BUN/root/chunk-yq5myw2y.js";
+import {
+  oUs
+} from "B:/~BUN/root/chunk-8pqw0dhk.js";
+import {
+  RBe,
+  Spt
+} from "B:/~BUN/root/chunk-bvhc5fp3.js";
+import {
+  $k
+} from "B:/~BUN/root/chunk-k8twyg23.js";
+import {
+  A7,
+  pxn,
+  XNe,
+  AR,
+  Ldr,
+  C7r,
+  qA,
+  Xos,
+  yxn,
+  Fdr,
+  ZTt,
+  Qos,
+  x7
+} from "B:/~BUN/root/chunk-fbgs9vjp.js";
+import {
+  WAn,
+  nos,
+  ddr,
+  cdr,
+  zAn
+} from "B:/~BUN/root/chunk-46xf3ted.js";
+import {
+  ZKe
+} from "B:/~BUN/root/chunk-4rtd9bc2.js";
+import {
+  trt
+} from "B:/~BUN/root/chunk-hmwh3b50.js";
+import {
+  Psr
+} from "B:/~BUN/root/chunk-r211hm9e.js";
+import {
+  _Rn
+} from "B:/~BUN/root/chunk-60jq77qx.js";
+import {
+  VRe
+} from "B:/~BUN/root/chunk-41hr4czy.js";
+import {
+  Toe
+} from "B:/~BUN/root/chunk-jnv7mp4r.js";
+import {
+  XPn,
+  oas,
+  F8,
+  yst,
+  QPn
+} from "B:/~BUN/root/chunk-wyn3ry16.js";
+import {
+  a4e
+} from "B:/~BUN/root/chunk-rdprh13j.js";
+import {
+  Mv
+} from "B:/~BUN/root/chunk-rx9rjzse.js";
+import {
+  Xpt
+} from "B:/~BUN/root/chunk-d128kf6v.js";
+import {
+  sqn
+} from "B:/~BUN/root/chunk-j1zjtkgf.js";
+import {
+  da
+} from "B:/~BUN/root/chunk-0zewma8k.js";
+import {
+  ly
+} from "B:/~BUN/root/chunk-vfvzs0rk.js";
+import {
+  dgt,
+  lte,
+  cgt,
+  fan
+} from "B:/~BUN/root/chunk-q56gve2c.js";
+import {
+  Qe
+} from "B:/~BUN/root/chunk-5k20pvvh.js";
+import {
+  Rn
+} from "B:/~BUN/root/chunk-hwnj8m4g.js";
+import {
+  N
+} from "B:/~BUN/root/chunk-nkxgam12.js";
+import {
+  o,
+  M,
+  T,
+  u,
+  $e,
+  U,
+  C
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  realpath as No
+} from "fs/promises";
+
+function Sn(n, e, p) {
+  if (e === void 0) return;
+  let h = n?.message?.content;
+  if (!Array.isArray(h)) return;
+  return h.some((k) => N(k) && k.type === "tool_use" && k.id === e && N(k.input) && (k.input.run_in_background === !0 || p && k.input.run_in_background !== !1)) ? e : void 0
+}
+
+function In(n) {
+  let e = Boolean(a.CLAUDE_CODE_REMOTE),
+    p = de(),
+    h = !e && m$e(),
+    _ = n ? "(--restricted)" : "(no claude.ai login or feature gate off)",
+    k = e ? "(already inside a CCR session); running as a local agent" : p ? "(the session has no disk); running as a local agent" : h ? `${_}; falling back to isolation:'worktree'` : `${_} and no git root; running as a local agent`;
+  return t(`[remote agent] isolation:'remote' is unavailable ${k}`), h ? "worktree" : void 0
+}
+var jt = (n, e) => ({
+  ...n,
+  prompt: e.prompt,
+  description: e.description,
+  subagent_type: e.subagentType,
+  model: e.model,
+  run_in_background: e.background,
+  cwd: e.cwd
+});
+
+function En(n) {
+  let {
+    agent: e,
+    isolation: p,
+    restricted: h
+  } = n, _ = p ?? e.isolation;
+  if (_ !== void 0 && Av(e)) {
+    t(`[web-fetch agent] isolation:'${_}' ignored; the built-in web-fetch agent always runs as a local agent`);
+    return
+  }
+  return _ === "remote" && (!qbr() || h) ? In(h) : _
+}
+
+function Dn(n, e) {
+  let p = n?.decisionReason,
+    h = e.decisionReason;
+  if (p?.type !== "rule" || h?.type !== "rule") return !1;
+  let [_, k] = [p.rule, h.rule];
+  return _.source === k.source && _.ruleBehavior === k.ruleBehavior && _.ruleValue.toolName === k.ruleValue.toolName && _.ruleValue.ruleContent === k.ruleValue.ruleContent
+}
+var po = !0;
+var fo = !1;
+
+function yo(n) {
+  let {
+    agent: e,
+    wantsBackground: p,
+    callerIsInProcessTeammate: h
+  } = n, _ = h || n.callerIsHeadlessSubagent, k = n.isCoordinator && !h || n.forceAsync || !_ && p !== !1, z = En(n), v = p === !0 || e.background === !0 || !Av(e) && k, fe = z === "remote";
+  return {
+    effectiveIsolation: z,
+    isRemoteLaunch: fe,
+    shouldRunAsync: fe || v && !n.backgroundTasksDisabled
+  }
+}
+var Mn = (n) => L(n.flatMap((e) => d8e(e) ?? []));
+
+function On(n, e) {
+  let p = Mn(e).map((h) => h.toLowerCase());
+  return (n.requiredMcpServers ?? []).filter((h) => !p.some((_) => _.includes(h.toLowerCase())))
+}
+var Pn = (n, e) => `Agent '${n}', named by a plugin's agent.spawn hook, requires MCP servers matching: ${e.join(", ")}; none has tools yet. Use /mcp to configure and authenticate them.`;
+import {
+  isDeepStrictEqual as To
+} from "util";
+async function Cn(n) {
+  let {
+    tool: e,
+    raised: p,
+    rewritten: h,
+    context: _
+  } = n;
+  if (To(p, h)) return null;
+  let k = await ET(e, h, _);
+  if (k === null || k.behavior === "deny") return k;
+  return Dn(await ET(e, p, _), k) ? null : k
+}
+var Nn = {
+  deny: "denies",
+  ask: "asks about"
+};
+class Ee {
+  #e = new Map;
+  #t;
+  #n;
+  constructor(n = 2048, e = 600000) {
+    this.#t = n, this.#n = e
+  }
+  static key(n, e) {
+    return JSON.stringify([n, ...e])
+  }
+  static #o(n) {
+    return `${JSON.stringify([n]).slice(0,-1)},`
+  }
+  get size() {
+    return this.#e.size
+  }
+  set(n, e, p) {
+    if (this.dropToolUse(n), this.#e.size >= this.#t) {
+      let h = Date.now();
+      for (let [_, k] of this.#e)
+        if (h - k.at > this.#n) this.#e.delete(_);
+      if (this.#e.size >= this.#t) {
+        let _ = this.#e.keys().next().value;
+        if (_ !== void 0) this.#e.delete(_)
+      }
+    }
+    this.#e.set(Ee.key(n, e), {
+      value: p,
+      at: Date.now()
+    })
+  }
+  take(n, e) {
+    let p = Ee.key(n, e),
+      h = this.#e.get(p);
+    return this.#e.delete(p), h?.value
+  }
+  has(n, e) {
+    return this.#e.has(Ee.key(n, e))
+  }
+  dropToolUse(n) {
+    let e = Ee.#o(n);
+    for (let p of this.#e.keys())
+      if (p.startsWith(e)) this.#e.delete(p)
+  }
+}
+var lt = "dontAsk",
+  Eo = 8,
+  Do = new RegExp(m1t.source, "gi");
+class xt extends Ee {}
+async function Mo({
+  prompt: n,
+  subagent_type: e
+}, p) {
+  let h = le(p),
+    _ = h.mode;
+  if (!$s(_) || HB(lt, _) !== lt || !d6(e, p.options.agentDefinitions.activeAgents) || typeof n !== "string" || zxt() || gq() || iXt(_, h)) return !1;
+  let k = new Set([...n.matchAll(Do)].map((z) => Ane(z[0])));
+  if (k.size === 0 || k.size > Eo) return !1;
+  for (let z of k) {
+    let v = Db.inputSchema.safeParse({
+      url: z,
+      prompt: ""
+    });
+    if (!v.success || await ET(Db, v.data, p) !== null || (await Db.checkPermissions(v.data, p)).behavior !== "allow") return !1
+  }
+  return !0
+}
+async function Bn({
+  input: n,
+  toolUseContext: e
+}) {
+  if (!await Mo(n, e)) return !1;
+  return Oo(e), !0
+}
+
+function Oo({
+  toolUseId: n,
+  toolState: e
+}) {
+  if (n === void 0) return;
+  e.get(xt).set(n, [], !0)
+}
+
+function Gt({
+  toolUseId: n,
+  toolState: e
+}) {
+  return n !== void 0 && e.get(xt).take(n, []) === !0
+}
+
+function Ln(n, e) {
+  if (n === null || typeof n !== "object" || e === null || typeof e !== "object" || e.status === "remote_launched") return e;
+  let p = !1;
+  switch (n.status) {
+    case "completed":
+    case "async_launched":
+      p = n.canContinueAgent;
+      break;
+    case "remote_launched":
+      break
+  }
+  return {
+    ...e,
+    canContinueAgent: p === !1 || e.canContinueAgent === !1 ? !1 : p
+  }
+}
+var Po = {
+  none: "Each fresh agent you launch has a budget of {N} tokens, counting the context it starts with.",
+  forks: "Each agent you launch has a budget of {N} tokens. For a fork, the budget does not count the context it starts with.",
+  all: "Each agent you launch has a budget of {N} tokens. The budget does not count the context the agent starts with: its system prompt, its tools, and your prompt to it."
+};
+
+function $n(n) {
+  if (da() || zH(n)) return;
+  let e = Ao();
+  if (e.subagentBudgetNote === void 0) e.subagentBudgetNote = Co();
+  return e.subagentBudgetNote ?? void 0
+}
+
+function Co() {
+  if (OXt("tengu_streamed_bumblebee", a.CLAUDE_CODE_STREAMED_BUMBLEBEE) !== !0) return null;
+  let n = nlt(cdr(hgn()), void 0);
+  if (n === void 0) return null;
+  let e = OXt("tengu_streamed_bumblebee_text", a.CLAUDE_CODE_STREAMED_BUMBLEBEE_TEXT),
+    p = typeof e === "string" && e.trim() !== "",
+    h = p ? e.trim() : Po[GHe()];
+  return i("tengu_streamed_bumblebee_applied", {
+    budget: n,
+    isConfiguredWording: p
+  }), h.replaceAll("{N}", n.toLocaleString("en-US"))
+}
+
+function GYr(n, e) {
+  if (!n || n === jz.agentType) return;
+  if (n !== a4e) return n;
+  let p = e?.find((h) => h.agentType === a4e);
+  return p !== void 0 && p.source !== "built-in" ? n : void 0
+}
+
+function dor(n, {
+  activeAgents: e,
+  webFetchByAgentType: p = !1
+} = {}) {
+  if (!p && d6(n?.subagent_type, e)) return sqn;
+  return GYr(n?.subagent_type, e) ?? "Agent"
+}
+
+function cor(n, {
+  activeAgents: e
+} = {}) {
+  if (!n?.subagent_type || d6(n.subagent_type, e)) return;
+  return RBe(n.subagent_type)
+}
+class te extends Error {
+  constructor(n) {
+    super(n);
+    this.name = "AgentTypeError"
+  }
+}
+class gt extends Error {
+  constructor(n) {
+    super(n);
+    this.name = "RemoteAgentPreconditionError"
+  }
+}
+var Fo = 'Cannot launch cloud agent: this session limits what your own Claude Code files can do (CLAUDE_CODE_RESTRICT_PERSONAL_CONFIG), and a cloud session would not apply those limits. Set isolation to "worktree" instead.';
+class F extends Error {
+  constructor(n) {
+    super(n);
+    this.name = "AgentPreconditionError"
+  }
+}
+async function Wn(n, e) {
+  let p = await nos(n);
+  if (p !== void 0) throw m("subagent_launch", "subagent_cwd_refused"), new F(e === "the call" ? `Cannot run the agent in another directory: ${p}. Start it without cwd.` : `A plugin's agent.spawn hook set cwd on this spawn: ${p}.`)
+}
+var Bo = 2000;
+
+function Lo() {
+  if (a.CLAUDE_AUTO_BACKGROUND_TASKS) return 120000;
+  return 0
+}
+var $o = f(() => u({
+    description: o().describe(fHs),
+    prompt: o().describe(pHs),
+    subagent_type: o().optional().describe("The type of specialized agent to use for this task"),
+    model: U(["sonnet", "opus", "haiku", "fable"]).optional().describe(`Optional model override for this agent. Takes precedence over the agent definition's model frontmatter and the configured default subagent model. If omitted, uses the agent definition's model, else the default (inherits from the parent unless a default subagent model is configured). Ignored for subagent_type: "fork" \u2014 forks always inherit the parent model.` + (da() ? a.CLAUDE_CODE_COORDINATOR_FORCE_WORKER_INHERIT_MODEL ? " Unavailable on this session: this parameter is ignored \u2014 do not set it." : " Set this only when EXPLICITLY asked by the user for a specific model, never because the task seems small, simple, or cheap; otherwise omit it so the worker uses the default (the session model, unless a default subagent model is configured)." : "")),
+    effort: U(ta).optional().describe("Reasoning effort for this agent. Set this ONLY when the user, or instructions such as CLAUDE.md or a skill, explicitly ask that this agent or delegated work run at a specific effort level, never on your own judgment; otherwise omit it and the agent runs at its usual effort." + (_se() ? ' Ignored for subagent_type: "fork": a fork runs at your own effort.' : "")),
+    run_in_background: M().optional().describe("Agents run in the background by default; you will be notified when one completes. Set to false only when your very next action depends on this agent's result and nothing else could usefully happen while it runs \u2014 otherwise leave it in the background so the user can hand you other work.")
+  })),
+  zo = f(() => {
+    let n = u({
+      name: o().regex(m2s, {
+        message: "name must start with a letter or digit and contain only letters, digits, underscores, or hyphens (max 64 chars)"
+      }).refine((e) => e !== Sh, {
+        message: `"${Sh}" is reserved \u2014 SendMessage routes it to the main conversation`
+      }).refine((e) => !qO(e), {
+        message: 'name must not be a reserved name ("main", "team-lead", "user" or ' + '"system", in any spelling) or have the shape of an agent id \u2014 ' + "those already address an agent directly"
+      }).optional().describe(mHs),
+      team_name: o().optional().describe("Deprecated; ignored. The session has a single implicit team."),
+      mode: Gqs().optional().describe("Deprecated; ignored. Subagents inherit the parent session's permission mode; agent-definition frontmatter may override it.")
+    });
+    return $o().merge(n).extend({
+      isolation: U(["worktree", "remote"]).optional().describe('Isolation mode. "worktree" creates a temporary git worktree so the agent works on an isolated copy of the repo. "remote" launches the agent in a remote cloud environment (always runs in background; availability is gated).'),
+      cwd: o().optional().describe('Absolute path to run the agent in. Overrides the working directory for all filesystem and shell operations within this agent. Mutually exclusive with isolation: "worktree".')
+    })
+  }),
+  Hn = f(() => {
+    let n = zo().omit({
+        cwd: !0
+      }),
+      e = dgt() || kat(),
+      p = e || fan() ? void 0 : qxt()?.parameterDescription,
+      h = e ? n.omit({
+        run_in_background: !0
+      }) : p === void 0 ? n : n.extend({
+        run_in_background: M().optional().describe(p)
+      }),
+      _ = a.CLAUDE_CODE_SUBAGENT_MODEL_FORCE ? h.omit({
+        model: !0
+      }) : h;
+    return kx() !== void 0 ? _.omit({
+      effort: !0
+    }) : _
+  }),
+  Wo = f(() => Hn().extend({
+    effort: U([...zfs, ...ta]).optional().describe('Reasoning effort for this agent. "lower" or "higher" is one step from the effort the agent would otherwise run at (normally yours), on whatever model it would otherwise use. Pass "lower" when the brief is mechanical and checkable against itself \u2014 bounded search, grep-and-report, a pattern you spelled out. Pass "higher" when one well-specified piece needs more reasoning than the work around it. Omit when neither clearly applies. Name a level (' + ta.join(", ") + ') ONLY when the user, or instructions such as CLAUDE.md or a skill, explicitly ask for that level. "lower" and "higher" are ignored for subagent_type: "fork", isolation: "remote", and teammates.')
+  }));
+
+function VYr() {
+  return kHe() ? Wo() : Hn()
+}
+var jo = f(() => Xos().extend({
+    status: C("completed"),
+    prompt: o(),
+    worktreePath: o().optional(),
+    worktreeBranch: o().optional(),
+    canContinueAgent: Kn()
+  })),
+  xo = f(() => {
+    let n = jo(),
+      e = u({
+        status: C("async_launched"),
+        isAsync: C(!0).optional(),
+        agentId: o().describe("The ID of the async agent"),
+        description: o().describe("The description of the task"),
+        resolvedModel: o().optional().describe("Model in use at the backgrounding transition (a pre-background swap is reflected here)"),
+        modelsUsed: T(o()).optional().describe("Ordered distinct models used before backgrounding (length > 1 means a mid-run swap)"),
+        prompt: o().describe("The prompt for the agent"),
+        outputFile: o().describe("Path to the output file for checking agent progress"),
+        canReadOutputFile: M().optional().describe("Whether the calling agent has Read/Bash tools to check progress"),
+        canContinueAgent: Kn(),
+        sharesCwd: M().optional().describe("@internal True when this unisolated write-capable agent was launched into a working directory where another one is already running and a worktree could have been made here (drives a model-facing note; not a stable consumer field)")
+      }),
+      p = u({
+        status: C("remote_launched"),
+        taskId: o().describe("The ID of the remote agent task"),
+        sessionUrl: o().describe("The URL of the cloud session"),
+        description: o().describe("The description of the task"),
+        prompt: o().describe("The prompt for the agent"),
+        outputFile: o().describe("Path to the output file for checking agent progress")
+      });
+    return $e([n, e, p])
+  });
+async function Go({
+  agentInput: n,
+  toolUseContext: e,
+  canUseTool: p,
+  assistantMessage: h,
+  onProgress: _,
+  timing: k,
+  enclosingToolUseId: z
+}) {
+  let {
+    subagent_type: v,
+    run_in_background: fe,
+    name: D,
+    isolation: De
+  } = n, {
+    prompt: pt,
+    description: mt,
+    cwd: xe,
+    effort: Me
+  } = n, Je = n.model, ft = kHe() && (Me === "lower" || Me === "higher") ? Me : void 0, Ue = Me === "lower" || Me === "higher" ? void 0 : Me, Xn = Date.now();
+  if (da() && a.CLAUDE_CODE_COORDINATOR_FORCE_WORKER_INHERIT_MODEL) Je = void 0;
+  let et = Je,
+    x = pt,
+    B = mt,
+    ne = xe;
+  await Wn(ne, "the call");
+  let Ht = hp(e.agentContext),
+    qt = $k();
+  if (Ht >= qt) throw m("subagent_launch", "subagent_depth_cap"), ZKe.of(e.session).recordRefused("depth_limit"), new F(`Subagent nesting limit reached (depth ${Ht} of ${qt}). Complete this task directly using your tools instead of spawning another agent. If the user explicitly requested deeper nesting, ask them to raise CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH.`);
+  if (e.agentId !== void 0 && tU(e.agentId)) throw m("subagent_launch", "subagent_spawner_stop_pending"), new F("This agent has been stopped and its stop is still completing; it cannot launch new agents.");
+  B = B.replace(/\s+/g, " ").trim();
+  let Oe = e.getAppState(),
+    ae = le(e),
+    Pe = ae.mode,
+    {
+      taskRegistry: Y
+    } = e,
+    Jn = as() ? Oe.teamContext : void 0,
+    Se = !!e.teammateContext;
+  if ((Se || !!vW()) && D && !rM()) throw m("subagent_launch", "subagent_nested_teammate"), new F("Teammates cannot spawn other teammates \u2014 the team roster is flat. To spawn a subagent instead, omit the `name` parameter.");
+  if (Se && fe === !0) throw m("subagent_launch", "subagent_teammate_background_denied"), new F("In-process teammates cannot spawn background agents. Use run_in_background=false for synchronous subagents.");
+  let {
+    activeAgents: ue,
+    allowedAgentTypes: ve
+  } = e.options.agentDefinitions, yt = v !== void 0 && TSe(v) === VU, {
+    available: Vt,
+    denyRule: Yt
+  } = qn(ue, ve, ae);
+  if (yt && Yt) throw m("subagent_launch", "subagent_type_denied"), new te(`Agent type '${VU}' has been denied by permission rule '${ht}(${VU})' from ${Yt.source}.`);
+  let G = yt && Vt;
+  if (v !== void 0 && !yt) {
+    let r = mae(ae, ht, v);
+    if (r) throw m("subagent_launch", "subagent_type_denied"), new te(`Agent type '${v}' has been denied by permission rule '${ht}(${v})' from ${r.source}.`);
+    if (ve && !ve.includes(v)) {
+      m("subagent_launch", "subagent_type_not_found");
+      let y = (await rpe(ue, ve, ae, e)).map((A) => A.agentType);
+      throw new te(`Agent type '${v}' not found. Available agents: ${ct(y)}`)
+    }
+  }
+  let bt = (r = !1) => {
+      if (e.abortController.signal.aborted) {
+        let A = Ri(e.abortController.signal.reason);
+        if (!(r && A === "interrupt")) throw new Ke
+      }
+      let {
+        maxBudgetUsd: y
+      } = e.options;
+      if (oN(y)) throw m("subagent_launch", "subagent_budget_exhausted"), ZKe.of(e.session).recordRefused("budget"), new F(`Budget limit reached ($${aSe().toFixed(2)} spent of the $${y} maximum). New agents cannot be started. Complete the remaining work directly with your tools, or wrap up with the results you already have.`)
+    },
+    Qn = async () => {
+      let r = jn(e);
+      if (r) throw await Le(), r;
+      return e.taskRegistry.takeConcurrencySlot()
+    };
+  if (Jn && D && !G && !d6(v, ue) && !De && !ne && !rM()) {
+    let r = await rpe(ue, ve, ae, e),
+      y = v ? Gn(ue, r, v) : void 0;
+    if (y && y.agentType !== v) {
+      let se = mae(ae, ht, y.agentType);
+      if (se) throw m("subagent_launch", "subagent_type_denied"), new te(`Agent type '${y.agentType}' has been denied by permission rule '${ht}(${y.agentType})' from ${se.source}.`)
+    }
+    let A = y ?? (v ? Gn(ue, ue, v) : void 0);
+    if (!(A === void 0 || (await Pgr([A], e)).length === 1)) throw m("subagent_launch", "subagent_teammate_not_offered"), new te(`Agent type '${v}' is not offered in this session.`);
+    let R = y ? await bse(y) : void 0;
+    if (y && !R) throw m("subagent_launch", "subagent_plugin_load_failed"), new te(`Agent type '${y.agentType}' could not be loaded from its plugin.`);
+    bt(fo);
+    let I = uc(e),
+      q = R ?? Psr(v),
+      S = await ddr({
+        tool_use_id: e.toolUseId ?? "",
+        prompt: x,
+        description: B,
+        agent: q,
+        agents: r,
+        model: Je,
+        parentModel: I,
+        parentAgentId: e.agentId,
+        permissionMode: Pe,
+        background: !0,
+        fork: !1,
+        isTeammate: !0,
+        name: D,
+        cwd: void 0,
+        signal: e.abortController.signal,
+        origin: e.hookOrigin
+      });
+    using re = S.starting;
+    if (S.deny !== void 0) throw m("subagent_launch", "subagent_spawn_denied_by_hook"), new F(`Subagent spawn denied by a plugin: ${S.deny}`);
+    e_r({
+      toolUseContext: e
+    }, S.isRewritten);
+    let j = S.spawn,
+      Q = await Cn({
+        tool: DVt,
+        raised: jt(n, {
+          prompt: x,
+          description: B,
+          subagentType: q.agentType,
+          model: Je,
+          background: !0,
+          cwd: void 0
+        }),
+        rewritten: jt(n, j),
+        context: e
+      });
+    if (Q) throw m("subagent_launch", "subagent_spawn_hook_rewrite_ruled"), new F(`A plugin's agent.spawn hook rewrote this spawn into one a permission rule ${Nn[Q.behavior]}: ${Q.message} Dispatch it directly.`);
+    let P = r.find((se) => se === S.agent && se !== q);
+    if (d6(P?.agentType, ue)) throw m("subagent_launch", "subagent_spawn_hook_teammate_rewrite"), new F(`A plugin's agent.spawn hook retyped a teammate into '${P?.agentType}', which does not run as a teammate.`);
+    if (P) {
+      if (R = await bse(P), !R) throw m("subagent_launch", "subagent_plugin_load_failed"), new te(`Agent type '${P.agentType}' could not be loaded from its plugin.`);
+      let se = On(R, [...e.getAppState().mcp.tools, ...e.options.tools.filter(ch)]);
+      if (se.length > 0) throw m("subagent_launch", "subagent_mcp_required_missing"), $D(new F(Pn(R.agentType, se)), {
+        kind: "mcp_required_missing",
+        servers: se
+      })
+    }
+    x = j.prompt, B = j.description.replace(/\s+/g, " ").trim();
+    let me = j.model,
+      Lt = R?.agentType ?? v;
+    if (bt(po), R?.color) Spt(P ? R.agentType : v ?? R.agentType, R.color);
+    let {
+      spawnTeammate: We
+    } = import.meta.require("B:/~BUN/root/chunk-7668gppr.js"), ye = await We({
+      name: D,
+      prompt: x,
+      description: B,
+      use_splitpane: !0,
+      plan_mode_required: Pe === "plan",
+      model: me ?? Ho(R, uc(e)),
+      modelSource: me ? "tool" : "frontmatter",
+      agent_type: Lt,
+      agentDefinition: R,
+      invokingRequestId: h?.requestId
+    }, e, _), $t = {
+      status: "teammate_spawned",
+      prompt: x,
+      agentId: ye.data.agent_id,
+      resolvedModel: It(ye.data.model ?? I),
+      ...ye.data
+    }, Ye = ye.loopAgentId ?? ye.data.teammate_id;
+    return Rco(Ye, e), re?.started({
+      agentId: Ye,
+      model: It(ye.data.model ?? I),
+      teammateId: ye.data.teammate_id
+    }), g("subagent_launch"), {
+      data: $t
+    }
+  }
+  let Kt = {
+      isolation: De,
+      querySource: e.options.querySource,
+      messages: e.messages
+    },
+    s, Xt = [];
+  if (G) {
+    let r = xn(Kt);
+    if (r) throw m("subagent_launch", r.code), new F(r.message);
+    s = Bz
+  } else {
+    let r = await rpe(ue, ve, ae, e);
+    Xt = r;
+    let y = r.map((I) => I.agentType);
+    if (v === void 0 && !Yn(ue, ve)) {
+      i("tengu_subagent_type_miss", {
+        requestedNormalized: b("OMITTED"),
+        availableCount: r.length
+      }), m("subagent_launch", "subagent_type_missing");
+      let I = Vt && xn(Kt) === null ? [VU, ...y] : y;
+      throw new te(`${Dqn}. Available agents: ${ct(I)}`)
+    }
+    let A = v ?? jz.agentType,
+      W = r.find((I) => I.agentType === A);
+    if (!W) {
+      let I = TSe(A),
+        q = new Set(y),
+        S = I ? ue.filter((Q) => TSe(Q.agentType) === I) : [],
+        re = Bde(I, S.length > 0 && S.every(gl)),
+        j = I.length;
+      if (S.length > 1) {
+        i("tengu_subagent_type_miss", {
+          requestedNormalized: re,
+          requestedLength: j,
+          availableCount: r.length,
+          ambiguousCount: S.length
+        }), m("subagent_launch", "subagent_type_ambiguous");
+        let Q = S.map((P) => P.agentType).filter((P) => q.has(P));
+        throw new te(`Agent type '${A}' is ambiguous \u2014 matches ${S.map((P)=>q.has(P.agentType)?P.agentType:`${P.agentType} (unavailable)`).join(", ")}. ${Q.length>0?`Use the exact name: ${Q.join(" or ")}`:`None of these are available. Available agents: ${ct(y)}`}`)
+      }
+      if (S.length === 1) {
+        let Q = S[0];
+        if (q.has(Q.agentType)) {
+          if (W = Q, W.color) Spt(A, W.color);
+          i("tengu_subagent_type_normalized", {
+            requestedNormalized: re,
+            matched: wye(W)
+          })
+        } else {
+          let P = Q.agentType,
+            me = mae(ae, ht, P);
+          if (me) throw m("subagent_launch", "subagent_type_denied"), new te(`Agent type '${P}' has been denied by permission rule '${ht}(${P})' from ${me.source}.`);
+          if (UYe(Q, ae)) throw m("subagent_launch", "subagent_type_tools_denied"), new te(BYe(P))
+        }
+      }
+      if (!W) throw i("tengu_subagent_type_miss", {
+        requestedNormalized: re,
+        requestedLength: j,
+        availableCount: r.length
+      }), m("subagent_launch", "subagent_type_not_found"), new te(`Agent type '${A}' not found. Available agents: ${ct(y)}`)
+    }
+    let R = await bse(W);
+    if (R === void 0) throw m("subagent_launch", "subagent_plugin_load_failed"), new te(`Agent type '${A}' could not be loaded from its plugin.`);
+    s = R
+  }
+  if (Se && s.background === !0) throw m("subagent_launch", "subagent_teammate_background_denied"), new F(`In-process teammates cannot spawn background agents. Agent '${s.agentType}' has background: true in its definition.`);
+  if ((De ?? s.isolation) === "worktree" && !Av(s)) {
+    if (DXt("agent worktree"), !m$e()) Dyr()
+  }
+  let Jt = da(),
+    Zt = _se(),
+    Ut = Zt && e.agentId !== void 0 && !e.innerCall && !Se && we(),
+    tn = Zt && kat() && !Se && !Ut,
+    _t = lte(),
+    Ce = qxt(),
+    tt = fan(),
+    nn = Ce !== void 0 && (fe === !0 || tt && fe !== !1) && !dgt() ? Sn(h, e.toolUseId, tt) : void 0,
+    Ne = Ce !== void 0 && nn !== void 0 ? LLn(Ce, {
+      toolUseId: nn,
+      callerAgentId: e.agentId,
+      signal: e.abortController.signal
+    }) : void 0,
+    Zn = Ce === void 0 ? _t : Ne === void 0,
+    on = Ce === void 0 ? _t : cgt(),
+    rn = (r, y) => yo({
+      agent: r,
+      wantsBackground: y,
+      isolation: De,
+      restricted: ae.restricted,
+      isCoordinator: Jt,
+      forceAsync: tn,
+      callerIsInProcessTeammate: Se,
+      callerIsHeadlessSubagent: Ut,
+      backgroundTasksDisabled: Zn
+    }),
+    {
+      effectiveIsolation: nt,
+      isRemoteLaunch: be,
+      shouldRunAsync: K
+    } = rn(s, fe);
+  if (!be) {
+    if (e.abortController.signal.aborted) {
+      let y = Ri(e.abortController.signal.reason);
+      if (!(K && y === "interrupt")) throw new Ke
+    }
+    let r = jn(e);
+    if (r) throw r
+  }
+  bt(K && !be);
+  let ot = s.requiredMcpServers,
+    kt = e.options.tools.filter(ch),
+    sn = () => e.getAppState().mcp,
+    Un = k?.mark("external");
+  if (ot?.length) {
+    let r = (y) => ot.some((A) => y.name.toLowerCase().includes(A.toLowerCase()));
+    await UCr(sn, (y, A) => r(y) && $Cr(y, A.tools), {
+      maxWaitMs: 30000,
+      until: (y) => y.clients.some((A) => A.type === "failed" && r(A))
+    })
+  }
+  if (!be) await o8e(sn);
+  Un?.();
+  let eo = e.getAppState();
+  if (ot?.length) {
+    let r = [];
+    for (let y of eo.mcp.tools.concat(kt)) {
+      let A = d8e(y);
+      if (A && !r.includes(A)) r.push(A)
+    }
+    if (!_hr(s, r)) {
+      let y = ot.filter((A) => !r.some((W) => W.toLowerCase().includes(A.toLowerCase())));
+      throw m("subagent_launch", "subagent_mcp_required_missing"), $D(new F(`Agent '${s.agentType}' requires MCP servers matching: ${y.join(", ")}. MCP servers with tools: ${r.length>0?r.join(", "):"none"}. Use /mcp to configure and authenticate the required MCP servers.`), {
+        kind: "mcp_required_missing",
+        servers: y
+      })
+    }
+  }
+  if (s.color) Spt(s.agentType, s.color);
+  let Tt = uc(e),
+    Ie = await ddr({
+      tool_use_id: e.toolUseId ?? "",
+      prompt: x,
+      description: B,
+      agent: s,
+      agents: Xt,
+      model: G ? void 0 : et,
+      parentModel: Tt,
+      parentAgentId: e.agentId,
+      permissionMode: Pe,
+      background: K,
+      fork: G,
+      name: D,
+      cwd: ne,
+      signal: e.abortController.signal,
+      origin: e.hookOrigin
+    });
+  using At = Ie.starting;
+  if (Hgr(e.abortController.signal, K && !be)) throw new Ke;
+  if (Ie.deny !== void 0) throw m("subagent_launch", "subagent_spawn_denied_by_hook"), new F(`Subagent spawn denied by a plugin: ${Ie.deny}`);
+  e_r({
+    toolUseContext: e
+  }, Ie.isRewritten);
+  let an = () => jt(n, {
+      prompt: x,
+      description: B,
+      subagentType: s.agentType,
+      model: G ? void 0 : et,
+      background: K,
+      cwd: ne
+    }),
+    to = an(),
+    {
+      spawn: ke
+    } = Ie,
+    rt = Ie.agent !== s,
+    St = rt || ke.background !== K;
+  if (s = Ie.agent, x = ke.prompt, B = ke.description.replace(/\s+/g, " ").trim(), ne = ke.cwd, ne !== xe) await Wn(ne, "a hook");
+  if (et = ke.model, St)({
+    effectiveIsolation: nt,
+    isRemoteLaunch: be,
+    shouldRunAsync: K
+  } = rn(s, ke.background));
+  if (rt && Gt(e)) throw m("subagent_launch", "subagent_spawn_hook_retype_unreviewed"), new F("A plugin's agent.spawn hook named another agent for a web-fetch dispatch admitted without classifier review; it cannot run unconfined. Dispatch that agent directly.");
+  let vt = await Cn({
+    tool: DVt,
+    raised: to,
+    rewritten: an(),
+    context: e
+  });
+  if (vt) throw m("subagent_launch", "subagent_spawn_hook_rewrite_ruled"), new F(`A plugin's agent.spawn hook rewrote this spawn into one a permission rule ${Nn[vt.behavior]}: ${vt.message} Dispatch it directly.`);
+  if (ke.cwd !== void 0 && ke.cwd !== xe && nt === "worktree") throw m("subagent_launch", "subagent_spawn_hook_cwd_worktree"), new F(`A plugin's agent.spawn hook set cwd on a spawn isolated in a worktree; cwd and isolation: "worktree" are mutually exclusive.`);
+  if (St && Hgr(e.abortController.signal, K && !be)) throw new Ke;
+  if (St && Se && K && !be) throw m("subagent_launch", "subagent_teammate_background_denied"), new F("In-process teammates cannot spawn background agents; a plugin's agent.spawn hook backgrounded this one.");
+  let Rt = rt ? On(s, [...e.getAppState().mcp.tools, ...kt]) : [];
+  if (Rt.length > 0) throw m("subagent_launch", "subagent_mcp_required_missing"), $D(new F(Pn(s.agentType, Rt)), {
+    kind: "mcp_required_missing",
+    servers: Rt
+  });
+  let un = rt ? s.color : void 0;
+  if (un) Spt(s.agentType, un);
+  let Ge = G ? "inherit" : et,
+    ee = z1(iSe(s, Tt), Tt, Ge, Pe);
+  if (!G && Ue !== void 0) s = {
+    ...s,
+    effort: Ue
+  };
+  let Fe = be ? void 0 : zAn({
+      agentDefinition: s,
+      isFork: G,
+      model: ee,
+      effortState: e.getAppState(),
+      inheritedLayers: e.permissionLayers,
+      recordedBudgetText: void 0
+    }),
+    st = ft !== void 0 && !G && Fe?.subagentEffort !== void 0 ? ZFs(ee, Fe.subagentEffort, ft === "higher" ? 1 : -1) : void 0,
+    ge = Fe !== void 0 && st !== void 0 ? {
+      ...Fe,
+      agentDefinition: {
+        ...Fe.agentDefinition,
+        effort: st
+      },
+      subagentEffort: st
+    } : Fe,
+    Et = G ? void 0 : st ?? Ue;
+  s = ge?.agentDefinition ?? s;
+  let He = wye(s);
+  e.agentLifecycle.markTypeInvoked(s.agentType);
+  let no = await yft(s, e.storageV5),
+    Dt = s.getSystemPrompt({
+      toolUseContext: e,
+      primedAgentMemory: no
+    }),
+    at = PSe(s) ? fc(s.plugin) : void 0;
+  if (PSe(s)) TC(s.plugin);
+  let Te = hp(e.agentContext) + 1;
+  if (PSe(s)) VL(s.plugin, "subagent", {
+    kind: "agent",
+    name: s.filename
+  });
+  let dn = () => (i("tengu_agent_tool_selected", {
+    agent_type: He,
+    model: wt(ee),
+    source: c(s.source),
+    color: pe(s.color),
+    is_built_in_agent: gl(s),
+    is_resume: !1,
+    is_async: K,
+    is_fork: G,
+    effort_param: pe(ft ?? Ue),
+    session_effort: pe(ge?.sessionEffort),
+    subagent_effort: pe(ge?.subagentEffort),
+    subagent_total_tokens_budget: ge?.totalTokensBudget,
+    subagent_budget_on_top_of_start: ge?.totalTokensBudget === void 0 ? void 0 : ge.isBudgetOnTopOfStart,
+    agent_depth: Te,
+    agent_system_prompt_chars: Dt.length,
+    ...at && $q(at.name, at.marketplace)
+  }), ZKe.of(e.session).recordSpawn({
+    agentType: s.agentType,
+    runInBackground: fe,
+    runsInBackground: K,
+    depth: Te
+  }));
+  if (be) {
+    if (ly()) throw m("subagent_launch", "subagent_remote_personal_config"), new gt(Fo);
+    let r = await rxe({
+      storageV5: e.storageV5,
+      credentials: e.credentials
+    });
+    if (!r.eligible) {
+      let S = r.errors.map(MSe).join(`
+`);
+      m("subagent_launch", "subagent_remote_ineligible");
+      let re = new gt(`Cannot launch cloud agent:
+${S}`);
+      throw r.errors.some((j) => j.type === "not_logged_in" && j.message === void 0) ? $D(re, acn(await Kg(e.credentials))) : re
+    }
+    let y, A = !1,
+      W = await YL({
+        initialMessage: x,
+        source: "remote_agent",
+        tags: [Xpt],
+        description: B,
+        model: ee,
+        ..._Rn(T_s({
+          declaredMode: s.permissionMode,
+          narrowOnly: $0s(s),
+          parentModeToHand: r9(Pe, Oe.proactivityLevel, nM(ae)),
+          model: ee
+        }), Oe.proactivityLevel),
+        branchName: await E_s(),
+        signal: e.abortController.signal,
+        onBundleFail: (S) => {
+          y = S
+        },
+        onCreateFail: (S, re, j) => {
+          y = S, A = re === "no_access_token" || j?.status === 401
+        },
+        storageV5: e.storageV5,
+        credentials: e.credentials
+      });
+    if (!W) {
+      m("subagent_launch", "subagent_remote_session_failed");
+      let S = new gt(y ?? "Failed to create cloud session");
+      throw A ? $D(S, acn(await Kg(e.credentials))) : S
+    }
+    let {
+      taskId: R,
+      sessionId: I
+    } = LHe({
+      remoteTaskType: "remote-agent",
+      session: {
+        id: W.id,
+        title: W.title || B
+      },
+      command: x,
+      context: e,
+      toolUseId: e.toolUseId,
+      permissionRelay: {
+        canUseTool: p,
+        toolUseContext: e,
+        allowedToolNames: new Set(qA(s, e.options.tools, !1, !1, !1, 0, gN(e).mode).resolvedTools.map((S) => S.name))
+      }
+    });
+    dn(), i("tengu_agent_tool_remote_launched", {
+      agent_type: He
+    }), g("subagent_launch");
+    let q = {
+      status: "remote_launched",
+      taskId: R,
+      sessionUrl: DSe(I),
+      description: B,
+      prompt: x,
+      outputFile: Wc(R)
+    };
+    return At?.started({
+      agentId: R,
+      model: ee
+    }), {
+      data: q
+    }
+  }
+  let Mt, Ot, Ae, it;
+  if (G) {
+    if (e.renderedSystemPrompt) Ot = e.renderedSystemPrompt;
+    else {
+      let r = Oe.agent ? Oe.agentDefinitions.activeAgents.find((A) => A.agentType === Oe.agent) : void 0,
+        y = await ex(e.options.tools, e.options.mainLoopModel);
+      Ot = wq({
+        mainThreadAgentDefinition: r,
+        toolUseContext: e,
+        customSystemPrompt: e.options.customSystemPrompt,
+        defaultSystemPrompt: y,
+        appendSystemPrompt: e.options.appendSystemPrompt
+      })
+    }
+    Ae = hlo(x, h)
+  } else {
+    try {
+      if (s.memory) i("tengu_agent_memory_loaded", {
+        ...!1,
+        scope: c(s.memory),
+        source: b("subagent")
+      });
+      Mt = await WXt([gl(s) ? YAe(Dt) : Dt], ee, ge?.totalTokensBudget)
+    } catch (r) {
+      t(`Failed to get system prompt for agent ${s.agentType}: ${d(r)}`)
+    }
+    it = SWs(e.messages, Mms(e)), Ae = [...it.copies, Re({
+      content: x
+    })]
+  }
+  let qe = a6(e.agentId, Y) ?? Ze(),
+    X = {
+      prompt: x,
+      resolvedAgentModel: ee,
+      isBuiltInAgent: gl(s),
+      startTime: Xn,
+      agentType: s.agentType,
+      isAsync: K,
+      agentDepth: Te,
+      source: s.source,
+      pluginId: at,
+      callerCanContinueAgents: Zat(e, qe),
+      persistedToolResultFiles: Av(s) ? xfe() : void 0
+    },
+    oo = {
+      ...ae,
+      mode: s.permissionMode ?? Pe
+    },
+    ro = e.getAppState(),
+    so = e.options.toolCatalog.assembleToolPool(oo, Mie(ro.mcp.tools.concat(kt)), {
+      skipReplFilter: !0,
+      machineMcpTools: VRe(e)
+    }),
+    ln = e.agentId ?? F8,
+    _e = s.observer ? XPn({
+      observedDefinition: s,
+      activeAgents: e.options.agentDefinitions.activeAgents,
+      observedIsObserver: !1
+    }) : oas({
+      parentPairing: yst(e.session, ln),
+      spawnedDefinition: s,
+      spawnedIsObserver: !1
+    }),
+    cn = _e?.inheritedArming ? {
+      toolUseContext: _e.inheritedArming.toolUseContext,
+      canUseTool: _e.inheritedArming.canUseTool,
+      persistedArmingMode: _e.inheritedArming.permissionMode,
+      inheritedFromKey: ln,
+      inheritedFromPairing: _e.inheritedArming.parentPairing
+    } : {
+      toolUseContext: e,
+      canUseTool: p
+    },
+    he = Cy(),
+    Be = e.agentId,
+    ao = e.agentContext !== void 0 && e.agentContext.agentType !== "main" && (e.agentContext.isBackgroundAgent ?? !1),
+    gn = vs(e.agentContext),
+    pn = u$e(e.messages, e.agentContext),
+    oe = null;
+  if (nt === "worktree") {
+    let r = k?.mark("external");
+    if (oe = await ZYe(dKs(he), {
+        storageV5: e.storageV5,
+        credentials: e.credentials
+      }), r?.(), oe.hookBased) {
+      let y = oe.worktreePath;
+      oe.vettedRealPath = await No(y).catch((A) => {
+        t(`Agent worktree ${y} could not be resolved after creation (${d(A)}); it will be kept at cleanup`, {
+          level: "warn"
+        });
+        return
+      })
+    }
+    B6n(he)
+  }
+  if (G && oe) Ae.push(Re({
+    content: ylo(ce(), oe.worktreePath)
+  }));
+  let mn = A_s({
+    taskRegistry: Y,
+    selectedAgent: s,
+    effectiveIsolation: nt,
+    cwd: ne,
+    parentCwd: e.session.project === null ? null : ce(),
+    parentAgentId: Be
+  });
+  if (mn) Ae.push(Re({
+    content: R_s
+  }));
+  if (G && ge?.totalTokensBudget !== void 0) Ae.push(en({
+    type: "total_tokens_reminder",
+    text: MXt("padded-countdown", ge.totalTokensBudget)
+  }));
+  let fn = mn && m$e(),
+    ut = {
+      agentDefinition: s,
+      promptMessages: Ae,
+      turnPrompt: x,
+      toolUseContext: e,
+      canUseTool: p,
+      name: D,
+      isAsync: K,
+      handbackOptIn: !G,
+      handbackTool: WAn,
+      persistedToolResultFiles: X.persistedToolResultFiles,
+      querySource: e.options.querySource ?? Toe(s.agentType, gl(s)),
+      spawnedBySkill: e.options.spawnedBySkill ?? e.options.activeSkill,
+      spawnedByForkedSkill: e.options.spawnedByForkedSkill,
+      model: Ge,
+      effort: Et,
+      ...Gt(e) && {
+        spawnMode: lt
+      },
+      override: G ? {
+        systemPrompt: Ot,
+        parentSystemPrompt: !0
+      } : Mt && !oe && !ne ? {
+        systemPrompt: _i(Mt)
+      } : void 0,
+      availableTools: G ? e.options.tools : so,
+      forkContextMessages: G ? e.messages : void 0,
+      ...G && {
+        useExactTools: !0
+      },
+      totalTokensReminderBudget: ge?.totalTokensBudget,
+      isTotalTokensReminderBudgetOnTopOfStart: ge?.isBudgetOnTopOfStart,
+      worktreePath: oe?.worktreePath,
+      worktreeBranch: oe?.worktreeBranch,
+      cwd: ne,
+      description: B,
+      preserveToolUseResults: !we(),
+      toolUseId: e.toolUseId,
+      ...!1,
+      onMcpServersBlocked: (r, y) => _?.({
+        type: "notification",
+        notification: {
+          key: `agent-mcp-blocked-${he}`,
+          text: `${s.agentType} agent MCP ${O(r.length,"server")} blocked by ${y}: ${r.join(", ")}`,
+          priority: "medium",
+          color: "warning",
+          timeoutMs: 1e4
+        }
+      }),
+      onModelRestricted: (r, y) => _?.({
+        type: "notification",
+        notification: {
+          key: `agent-model-restricted-${s.agentType}-${T_(r)}`,
+          text: `${s.agentType} agent: ${Tw(r,y)}`,
+          priority: "medium",
+          color: "warning",
+          timeoutMs: 1e4
+        }
+      })
+    },
+    Pt = ne ?? oe?.worktreePath,
+    Ct = e.session.withProject({
+      cwd: Pt
+    }),
+    Nt = Ct.project,
+    Le = async () => {
+      if (!oe) return {};
+      let {
+        worktreePath: r,
+        worktreeBranch: y,
+        headCommit: A,
+        baseChangeset: W,
+        sessionDir: R,
+        gitRoot: I,
+        hookBased: q,
+        vettedRealPath: S
+      } = oe;
+      if (oe = null, q && (W === void 0 || S === void 0)) return t(`Hook-based agent worktree kept at: ${r}`), {
+        worktreePath: r
+      };
+      if (Ldo(Y.get(he))) return t(`Agent worktree kept at ${r}: backgrounded owner awaits keepalive, resume pending`), {
+        worktreePath: r,
+        worktreeBranch: y
+      };
+      if (A || W !== void 0) {
+        if (!(A ? await UXt(r, A) : await KHe(r, void 0, {
+            hookBased: !0,
+            baseChangeset: W,
+            sessionDir: R,
+            vettedRealPath: S
+          }).then((j) => j.dirty || j.checkoutMoved === !0)) && (await xse(r, y, I, q ?? !1, "agent_tool")).outcome === "removed") return C7r({
+          agentId: Vr(he),
+          removedWorktreePath: r,
+          spawnMetadata: {
+            agentType: s.agentType,
+            ...s.agentType === VU && {
+              isFork: gl(s)
+            },
+            ...s.agentType === kT && {
+              isBuiltIn: gl(s)
+            },
+            ...ne && {
+              cwd: ne
+            },
+            description: B,
+            ...D && {
+              name: D
+            },
+            ...e.toolUseId && {
+              toolUseId: e.toolUseId
+            },
+            spawnDepth: Te,
+            ...Ldr(K, e.options.isNonInteractiveSession),
+            ...Ge && {
+              model: Ge
+            },
+            ...Et && {
+              effort: Et
+            }
+          },
+          storageV5: e.storageV5
+        }).catch((j) => t(`Failed to clear worktree metadata: ${nU(j)}`)), {}
+      }
+      if (I) await Ase(r, I);
+      return t(`Agent worktree kept at: ${r}`), {
+        worktreePath: r,
+        worktreeBranch: y
+      }
+    };
+  if (e.abortController.signal.aborted) {
+    let r = Ri(e.abortController.signal.reason);
+    if (!(K && r === "interrupt")) throw await Le(), new Ke
+  }
+  if (Nt === null && $4()) throw m("subagent_launch", "subagent_no_directory_in_cwd_scope"), new F("A subagent cannot be started from here in this session. Do the task without a subagent.");
+  let Ve = await Qn();
+  if (Ce !== void 0 && K) {
+    let r = Ne === void 0 ? {
+      kind: "closed",
+      message: ryr(tt)
+    } : Ne.confirm(e.abortController.signal);
+    if (r !== void 0) {
+      if (Ve(), await Le(), r.kind === "aborted") throw new Ke;
+      throw m("subagent_launch", "subagent_background_launch_closed"), new F(r.message)
+    }
+  }
+  let ze = dn();
+  X.spawnedSubagent = ze;
+  let hn = () => {
+      if (it !== void 0) wWs({
+        agentId: he,
+        deliveringLoop: e.agentId
+      }, it)
+    },
+    Ft = async (r) => {
+      try {
+        return await r
+      } catch (y) {
+        throw Ve(), y
+      }
+    }, yn = Ne !== void 0 && D && D !== Sh ? e.getAppState().agentNameRegistry.get(D) : void 0;
+  if (D && D !== Sh) e.agentLifecycle.registerName(D, Vr(he));
+  let dt = D && D !== Sh ? D : void 0;
+  Vn().agentSpawned.emit({
+    agentId: he,
+    agentType: s.agentType,
+    parentAgentId: Be,
+    taskRegistry: Y
+  });
+  let Bt = Ge === void 0 && !US(e);
+  if (K) {
+    let r = he,
+      y = Rse({
+        outputFileReadable: oM(e.options.tools),
+        ownerCanContinueAgents: X.callerCanContinueAgents,
+        agentId: r,
+        ownerAgentId: qe,
+        parentAgentId: Be,
+        spawnDepth: Te,
+        launchedWithDefaults: Bt,
+        description: B,
+        prompt: x,
+        model: ee,
+        selectedAgent: s,
+        taskRegistry: Y,
+        toolUseId: e.toolUseId,
+        cwd: Pt,
+        spawnedSubagent: ze,
+        sessionScratch: e.session.sessionScratch
+      });
+    if (Ne !== void 0 && !Ne.handOver({
+        agentId: y.agentId,
+        abortController: y.abortController
+      })) {
+      if (TT(y.agentId, Y, "system", void 0, {
+          lifecycleNotStarted: !0
+        }), Ve(), qP(y.agentId, Y), D && yn !== void 0) e.agentLifecycle.registerName(D, yn);
+      throw await Le(), m("subagent_launch", "subagent_background_launch_not_taken"), new F(ryr(tt))
+    }
+    if (!we()) Q0(qe, `agent:${r}`, Y);
+    if (rM() && !we() && (!D || D === Sh) && !eFt.has(s.agentType)) {
+      let R = e.agentLifecycle.allocateName(s.agentType);
+      e.agentLifecycle.registerName(R, Vr(r)), dt = R
+    }
+    if (_e) await Ft(QPn({
+      observedKey: r,
+      observedTaskId: r,
+      observedName: dt ?? D ?? s.agentType,
+      observedAgentType: s.agentType,
+      config: _e,
+      ...cn
+    }));
+    let A = {
+      agentId: r,
+      parentAgentId: Be,
+      depth: Te,
+      ...SJe(e) && {
+        spawnedByMainThread: !0
+      },
+      parentSessionId: bA(),
+      agentType: "subagent",
+      subagentName: s.agentType,
+      displayName: dt,
+      isAsync: !0,
+      isBackgroundAgent: !0,
+      ...gn && {
+        delegatedObservation: !0
+      },
+      isBuiltIn: gl(s),
+      ...G && s2(e.agentContext) && {
+        forkOfMainConversation: !0
+      },
+      invokingRequestId: h?.requestId,
+      invocationKind: "spawn",
+      invocationEmitted: !1,
+      parentPromptId: pn,
+      ...fB(e.agentContext)
+    };
+    Ox(A, () => kmn(Nt, () => x7({
+      taskId: y.agentId,
+      abortController: y.abortController,
+      makeStream: (R, I, q) => AR({
+        ...ut,
+        launchedWithDefaults: Bt,
+        session: Ct,
+        override: {
+          ...ut.override,
+          agentId: Vr(y.agentId),
+          agentContext: A,
+          abortController: y.abortController
+        },
+        onCacheSafeParams: R,
+        onQueryProgress: I,
+        onStreamTokenEstimate: q
+      }),
+      metadata: X,
+      description: B,
+      toolUseContext: e,
+      taskRegistry: Y,
+      agentIdForCleanup: r,
+      enableSummarization: sye() || (Jt || tn) && !we(),
+      getWorktreeResult: Le,
+      onRunSettled: Ve
+    }))), hn(), At?.started({
+      agentId: y.agentId,
+      model: ee
+    });
+    let W = !Av(s) && oM(e.options.tools);
+    return g("subagent_launch"), {
+      data: {
+        isAsync: !0,
+        status: "async_launched",
+        agentId: y.agentId,
+        description: B,
+        resolvedModel: ee,
+        prompt: x,
+        outputFile: y.outputFile ?? "",
+        canReadOutputFile: W,
+        canContinueAgent: Mv(e.options.tools),
+        ...fn && {
+          sharesCwd: !0
+        }
+      }
+    }
+  } else {
+    let r = Vr(he),
+      y = {
+        agentId: r,
+        parentAgentId: Be,
+        depth: Te,
+        ...SJe(e) && {
+          spawnedByMainThread: !0
+        },
+        parentSessionId: bA(),
+        agentType: "subagent",
+        subagentName: s.agentType,
+        displayName: dt,
+        isAsync: !1,
+        isBackgroundAgent: ao,
+        ...gn && {
+          delegatedObservation: !0
+        },
+        isBuiltIn: gl(s),
+        ...G && s2(e.agentContext) && {
+          forkOfMainConversation: !0
+        },
+        invokingRequestId: h?.requestId,
+        invocationKind: "spawn",
+        invocationEmitted: !1,
+        parentPromptId: pn,
+        ...fB(e.agentContext)
+      },
+      A = Ox(y, () => kmn(Nt, async () => {
+        let W = Date.now(),
+          R = ee,
+          I = yxn([], ee);
+        if (Ae.length > 0) {
+          let V = cf(Ae).find((ie) => ie.type === "user");
+          if (V && V.type === "user" && _) _({
+            type: "progress",
+            toolUseID: `agent_${h.message.id}`,
+            data: {
+              message: V,
+              type: "agent_progress",
+              prompt: x,
+              agentId: r,
+              agentType: s.agentType,
+              isBuiltIn: gl(s),
+              description: B,
+              resolvedModel: R,
+              modelsUsed: I
+            }
+          })
+        }
+        let q = chs({
+            outputFileReadable: oM(e.options.tools),
+            ownerCanContinueAgents: X.callerCanContinueAgents,
+            agentId: r,
+            ownerAgentId: qe,
+            parentAgentId: Be,
+            spawnDepth: Te,
+            description: B,
+            prompt: x,
+            model: ee,
+            selectedAgent: s,
+            taskRegistry: Y,
+            parentAbortController: e.abortController,
+            toolUseId: e.toolUseId,
+            autoBackgroundMs: on ? void 0 : Lo() || void 0,
+            isDirectCall: !e.innerCall && e.hookCaller === void 0,
+            cwd: Pt,
+            spawnedSubagent: ze,
+            ...trt() && {
+              launchedWithDefaults: Bt
+            }
+          }),
+          {
+            taskId: S,
+            cancelAutoBackground: re,
+            abortController: j,
+            detachParentAbortRelay: Q
+          } = q;
+        if (_e) await Ft(QPn({
+          observedKey: r,
+          observedTaskId: r,
+          observedName: D ?? s.agentType,
+          observedAgentType: s.agentType,
+          config: _e,
+          ...cn
+        }));
+        let P = !1;
+        g("subagent_launch");
+        let me = [],
+          Lt = e.options.forwardSubagentText,
+          We, ye = !1,
+          $t = (w) => {
+            if (P) return;
+            if (w.type === "query_model_change") {
+              R = w.toModel, I = yxn(I, w.toModel);
+              return
+            }
+            if (w.type === "spinner_mode") return;
+            if (w.type !== "api_metrics" && w.type !== "set_in_progress_tool_use_ids") me.push(w);
+            if (!_) return;
+            if (We !== void 0 && !(w.type === "system" && w.subtype === "api_error")) We = void 0, _({
+              type: "progress",
+              toolUseID: `agent_${h.message.id}`,
+              data: {
+                type: "agent_api_retry",
+                resolved: !0,
+                agentId: r,
+                agentType: s.agentType
+              }
+            });
+            if (w.type === "api_metrics") {
+              _(w);
+              return
+            }
+            if (w.type === "set_in_progress_tool_use_ids") return;
+            if (w.type === "progress" && (w.data.type === "bash_progress" || w.data.type === "powershell_progress")) _({
+              type: "progress",
+              toolUseID: w.toolUseID,
+              data: w.data
+            });
+            if (w.type === "system" && w.subtype === "api_error") {
+              let V = LDn(w.error),
+                ie = `${w.source??"request_retry"}:${w.retryAttempt}:${w.maxRetries}:${V}`;
+              if (ie !== We) We = ie, _({
+                type: "progress",
+                toolUseID: `agent_${h.message.id}`,
+                data: {
+                  type: "agent_api_retry",
+                  agentId: r,
+                  agentType: s.agentType,
+                  attempt: w.retryAttempt,
+                  maxRetries: w.maxRetries,
+                  retryDelayMs: w.retryInMs,
+                  errorStatus: w.error.status,
+                  errorCategory: V
+                }
+              });
+              return
+            }
+            if (A7(w)) {
+              if (XNe(e, w)) _(pxn(w));
+              return
+            }
+            if (w.type !== "assistant" && w.type !== "user") return;
+            if (w.type === "user" && w.isMeta && !ye) return;
+            if (w.type === "assistant") ye = !0;
+            if (w.type === "assistant") {
+              let V = TDn(w);
+              if (V > 0) _({
+                type: "response_length",
+                op: "add",
+                delta: V
+              })
+            }
+            for (let V of cf([w])) {
+              let ie = V.message.content[0];
+              if (!Lt && ie.type !== "tool_use" && ie.type !== "tool_result") continue;
+              _({
+                type: "progress",
+                toolUseID: `agent_${h.message.id}`,
+                data: {
+                  message: V,
+                  type: "agent_progress",
+                  prompt: "",
+                  agentId: r,
+                  agentType: s.agentType,
+                  isBuiltIn: gl(s),
+                  description: B,
+                  resolvedModel: R,
+                  modelsUsed: I
+                }
+              })
+            }
+          },
+          Ye = _t ? void 0 : setTimeout((w) => {
+            if (w.toolUseId) w.emitToolProgress?.({
+              kind: "background_hint",
+              toolUseId: w.toolUseId
+            })
+          }, Bo, e),
+          se = {},
+          bn = async () => (se = await Le(), se);
+        At?.started({
+          agentId: r,
+          model: ee
+        }), k?.mark("model");
+        let _n = x7({
+          taskId: S,
+          abortController: j,
+          makeStream: (w, V, ie) => AR({
+            ...ut,
+            session: Ct,
+            override: {
+              ...ut.override,
+              agentId: r,
+              agentContext: y,
+              abortController: j
+            },
+            onCacheSafeParams: w,
+            onQueryProgress: V,
+            onStreamTokenEstimate: ie
+          }),
+          metadata: X,
+          description: B,
+          toolUseContext: e,
+          taskRegistry: Y,
+          agentIdForCleanup: r,
+          enableSummarization: sye(),
+          getWorktreeResult: bn,
+          onMessage: $t,
+          shouldNotifyOwner: () => P,
+          onRunSettled: Ve
+        });
+        hn();
+        let je, wn;
+        try {
+          let w;
+          try {
+            w = on ? await _n.then(() => "done") : await Promise.race([_n.then(() => "done"), q.backgroundSignal.then(() => "backgrounded")])
+          } catch (J) {
+            if (w = "done", J instanceof Ke) {
+              let Xe = Ri(j.signal.reason) === "permission-stop";
+              if (Xe) wn = d(J);
+              if (i("tengu_agent_tool_terminated", {
+                  agent_type: He,
+                  model: wt(X.resolvedAgentModel),
+                  final_model: wt(I.at(-1) ?? X.resolvedAgentModel),
+                  model_swapped: I.length > 1,
+                  duration_ms: Date.now() - X.startTime,
+                  is_async: !1,
+                  is_built_in_agent: X.isBuiltInAgent,
+                  agent_depth: X.agentDepth,
+                  reason: Xe ? b("permission_stop_sync") : b("user_cancel_sync")
+                }), !Xe) ze.killed("user");
+              if (!(j.signal.aborted && !e.abortController.signal.aborted)) throw J;
+              je = H(J)
+            } else t(`Sync agent error: ${d(J)}`, {
+              level: "error"
+            }), je = H(J)
+          }
+          let V = w === "done" && !je && HSe(S, Y);
+          if (V) qYe(S, Y);
+          let ie = Y.get(S)?.status,
+            kn = w === "backgrounded" && !V && ie !== void 0 && ie !== "running" && !HSe(S, Y);
+          if (w === "backgrounded" && !kn || V) {
+            if (P = !0, w === "backgrounded" && !kn) uhs(S, Y, e.session.sessionScratch);
+            if (Q(), oUs(r), !we()) Q0(qe, `agent:${S}`, Y);
+            let J = !Av(s) && oM(e.options.tools);
+            return {
+              data: {
+                isAsync: !0,
+                status: "async_launched",
+                agentId: S,
+                description: B,
+                resolvedModel: R,
+                ...I.length > 1 && {
+                  modelsUsed: [...I]
+                },
+                prompt: x,
+                outputFile: q.outputFile ?? "",
+                canReadOutputFile: J,
+                canContinueAgent: Mv(e.options.tools),
+                ...fn && {
+                  sharesCwd: !0
+                }
+              }
+            }
+          }
+          let Tn = me.findLast((J) => J.type !== "system" && J.type !== "progress");
+          if (Tn && K0(Tn)) throw i("tengu_agent_tool_terminated", {
+            agent_type: He,
+            model: wt(X.resolvedAgentModel),
+            final_model: wt(I.at(-1) ?? X.resolvedAgentModel),
+            model_swapped: I.length > 1,
+            duration_ms: Date.now() - X.startTime,
+            is_async: !1,
+            is_built_in_agent: X.isBuiltInAgent,
+            agent_depth: X.agentDepth,
+            reason: b("user_cancel_sync")
+          }), ze.cancelledAfterCompletion(), new Ke;
+          let zt, Wt = me;
+          if (je) {
+            let J;
+            try {
+              J = Qos(je, me)
+            } catch (Xe) {
+              throw ze.failed(), Xe
+            }
+            zt = J.cutoffNote ?? wn, Wt = J.history, t(`Sync agent recovering from error with ${Wt.length} messages`)
+          }
+          let Z = Fdr(Wt, r, {
+              ...X,
+              modelsUsed: I
+            }, {
+              suppressTelemetry: !je,
+              handback: UBe(Y.get(r), r)
+            }),
+            io = le(e),
+            An = await ZTt({
+              handback: Z.handback,
+              agentMessages: me,
+              inheritedVerifiedHumanTurns: exe(e),
+              tools: e.options.tools,
+              rootToolSurface: e.rootToolSurface,
+              toolPermissionContext: io,
+              abortSignal: e.abortController.signal,
+              agentType: He,
+              totalToolUseCount: Z.totalToolUseCount,
+              finalResultText: Io(Z.content, `
+`),
+              agentId: e.agentId,
+              storageV5: e.storageV5,
+              credentials: e.credentials
+            }).catch((J) => {
+              if (e.abortController.signal.aborted) return null;
+              return l(J), {
+                warning: Ipe(""),
+                kind: "unavailable"
+              }
+            });
+          if (An) Z.content = [{
+            type: "text",
+            text: An.warning
+          }, ...Z.content], Z.harnessNoteCount = (Z.harnessNoteCount ?? 0) + 1, Z.harnessSectionHash = x8e(Z.content);
+          if (zt) Z.content = [{
+            type: "text",
+            text: zt
+          }, ...Z.content], Z.harnessNoteCount = (Z.harnessNoteCount ?? 0) + 1, Z.harnessSectionHash = x8e(Z.content);
+          return {
+            data: {
+              status: "completed",
+              prompt: x,
+              ...Z,
+              ...se,
+              canContinueAgent: Mv(e.options.tools)
+            }
+          }
+        } finally {
+          if (Ye) clearTimeout(Ye);
+          if (e.toolUseId) e.emitToolProgress?.({
+            kind: "clear",
+            toolUseId: e.toolUseId
+          });
+          if (re?.(), Q(), !P) {
+            SOe(S);
+            let w = Y.get(S),
+              V = vn(w) ? w.progress : void 0;
+            phs(S, Y), _a(S, w?.status === "failed" ? "failed" : w?.status === "killed" ? "stopped" : "completed", {
+              toolUseId: e.toolUseId,
+              summary: B,
+              usage: {
+                total_tokens: V?.tokenCount ?? 0,
+                tool_uses: V?.toolUseCount ?? 0,
+                duration_ms: Date.now() - W
+              }
+            })
+          }
+        }
+      }));
+    return Ft(A)
+  }
+}
+var DVt = Qt({
+  async prompt({
+    agents: n,
+    tools: e,
+    getToolPermissionContext: p,
+    allowedAgentTypes: h,
+    model: _,
+    leanPrompt: k,
+    leanRewrite: z,
+    delegationCostsFirst: v,
+    delegationCostsFirstText: fe,
+    querySource: D
+  }) {
+    let De = await p(),
+      pt = da(),
+      {
+        available: mt
+      } = qn(n, h, De),
+      xe = Yn(n, h);
+    return await x_s({
+      model: _,
+      isCoordinator: pt,
+      forkAvailable: mt,
+      generalPurposeAvailable: xe,
+      continueAvailable: Mv(e),
+      leanPrompt: k,
+      leanRewrite: z,
+      delegationCostsFirst: v,
+      delegationCostsFirstText: fe,
+      subagentBudgetNote: $n(D),
+      modelMix: Tgr(D)
+    })
+  },
+  name: ht,
+  searchHint: "delegate work to a subagent",
+  aliases: [Op],
+  backgrounding: "self",
+  maxResultSizeChars: wmt,
+  get preserveToolUseResultInSubagents() {
+    return ir("tengu_velvety_sprout", !1) === !0
+  },
+  async description() {
+    return "Launch a new agent"
+  },
+  get inputSchema() {
+    return VYr()
+  },
+  coerceInput: dDn,
+  get outputSchema() {
+    return xo()
+  },
+  create(n) {
+    return {
+      call(e, p) {
+        if (!p.runEngine) return Promise.reject(Error("Agent: launching needs the executor (call.runEngine)"));
+        return p.runEngine(Go, {
+          agentInput: e,
+          assistantMessage: p.parentMessage,
+          onProgress: p.onProgress,
+          timing: p.timing,
+          ...!1
+        })
+      },
+      async checkPermissions(e, p) {
+        if (!$s(n.permissions().mode)) return {
+          behavior: "allow",
+          updatedInput: e
+        };
+        if (await p.runEngine(Bn, {
+            input: e
+          })) return {
+          behavior: "allow",
+          updatedInput: e
+        };
+        return {
+          behavior: "passthrough",
+          message: "Agent tool requires permission to spawn subagents."
+        }
+      }
+    }
+  },
+  isReadOnly() {
+    return !0
+  },
+  toAutoClassifierInput(n) {
+    let e = n,
+      p = [e.subagent_type].filter((_) => _ !== void 0);
+    return `${p.length>0?`(${p.join(", ")}): `:": "}${e.prompt}`
+  },
+  isConcurrencySafe() {
+    return !0
+  },
+  userFacingName: dor,
+  getActivityDescription(n) {
+    return n?.description?.replace(/\s+/g, " ").trim() || "Running task"
+  },
+  restoreTransientForRemap: Ln,
+  mapToolResultToToolResultBlockParam(n, e) {
+    let p = n;
+    if (typeof p === "object" && p !== null && "status" in p && p.status === "teammate_spawned") {
+      let h = p;
+      return {
+        tool_use_id: e,
+        type: "tool_result",
+        content: [{
+          type: "text",
+          text: `Spawned successfully. (This tool result is internal metadata \u2014 never quote or paste any part of it, including the ID below, into a user-facing reply.)
+agent_id: ${h.agent_id}
+name: ${h.name}
+The agent is now running and will receive instructions via mailbox.`
+        }]
+      }
+    }
+    if (n.status === "remote_launched") {
+      let h = n;
+      return {
+        tool_use_id: e,
+        type: "tool_result",
+        content: [{
+          type: "text",
+          text: `Cloud agent launched. (This tool result is internal metadata \u2014 never quote or paste any part of it, including the ID below, into a user-facing reply.)
+taskId: ${h.taskId}
+session_url: ${h.sessionUrl}
+output_file: ${h.outputFile} (final results land here only after the completion notification; until then it holds a partial, still-growing event log)
+The agent is running in the cloud. You will be notified automatically when it completes. Do not report or predict its results before that notification arrives.
+In your own words, briefly tell the user what you launched \u2014 do not echo this tool result \u2014 and end your response.`
+        }]
+      }
+    }
+    if (n.status === "async_launched") {
+      let h = `Async agent launched successfully. (This tool result is internal metadata \u2014 never quote or paste any part of it, including the agentId below, into a user-facing reply.)
+agentId: ${n.agentId} (internal ID - do not mention to user.${n.canContinueAgent===!1?"":` Use ${Rn} with to: '${n.agentId}', summary: '<5-10 word recap>' to continue this agent.`})
+The agent is working in the background. You will be notified automatically when it completes. You know nothing about its results until that notification arrives \u2014 do not report, assume, or predict them; continue other work or respond to the user in the meantime.`,
+        _ = n.canReadOutputFile && n.outputFile ? `Do not duplicate this agent's work \u2014 avoid working with the same files or topics it is using.
+output_file: ${n.outputFile}
+Do NOT ${Qe} or tail this file via the shell tool \u2014 it is the full subagent JSONL transcript and reading it will overflow your context. If the user asks for progress, say the agent is still running; you'll get a completion notification.` : "In your own words, briefly tell the user what you launched \u2014 do not echo this tool result. Agent results will arrive in a subsequent message. If the user asks for progress, say the agent is still running.",
+        k = `${h}
+${_}${n.sharesCwd?`
+${C_s}`:""}`;
+      return {
+        tool_use_id: e,
+        type: "tool_result",
+        content: [{
+          type: "text",
+          text: k
+        }]
+      }
+    }
+    if (n.status === "completed") {
+      let h = n.worktreePath ? `
+worktreePath: ${n.worktreePath}${n.worktreeBranch?`
+worktreeBranch: ${n.worktreeBranch}`:""}` : "",
+        _ = n.content.length > 0 ? n.content : [{
+          type: "text",
+          text: "(Subagent completed but returned no output.)"
+        }],
+        k = wOe() ? Tzn(_, n.content.length > 0 ? n.harnessNoteCount : 0, n.content.length > 0 ? n.harnessTailCount : 0, n.harnessSectionHash) : _;
+      if (n.agentType && eFt.has(n.agentType) && !h) return {
+        tool_use_id: e,
+        type: "tool_result",
+        content: k
+      };
+      let z = n.canContinueAgent === !1 ? "" : ` (use ${Rn} with to: '${n.agentId}', summary: '<5-10 word recap>' to continue this agent)`,
+        v = `agentId: ${n.agentId}${z}${h}
+<usage>subagent_tokens: ${n.totalTokens}
+tool_uses: ${n.totalToolUseCount}
+duration_ms: ${n.totalDurationMs}</usage>`;
+      if (k !== _ && k.length === 1) return {
+        tool_use_id: e,
+        type: "tool_result",
+        content: [{
+          type: "text",
+          text: k[0].text + `
+` + v
+        }]
+      };
+      return {
+        tool_use_id: e,
+        type: "tool_result",
+        content: [...k, {
+          type: "text",
+          text: v
+        }]
+      }
+    }
+    throw m("subagent_launch", "subagent_unexpected_result_status"), Error(`Unexpected agent tool result status: ${n.status}`)
+  }
+});
+
+function qn(n, e, p) {
+  if (!_se() || n.some((_) => TSe(_.agentType) === VU) || !(e?.includes(VU) ?? !0)) return {
+    available: !1,
+    denyRule: null
+  };
+  let h = mae(p, ht, VU);
+  return {
+    available: h === null,
+    denyRule: h
+  }
+}
+
+function jn(n) {
+  let e = Jyr();
+  if (n.taskRegistry.getConcurrentSubagents() < e) return;
+  if (E("tengu_amber_kestrel", !1)) return;
+  let h = n.getAppState();
+  if (lg(h.ultracode, n.rootToolSurface.mainLoopModel)) return;
+  return m("subagent_launch", "subagent_concurrency_cap"), ZKe.of(n.session).recordRefused("concurrency_limit"), new F(`Concurrent subagent limit reached. You can run ${e} subagents at once. Do not retry. If the user wants more concurrent subagents, ask them to increase CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS.`)
+}
+
+function Yn(n, e) {
+  let p = TSe(jz.agentType),
+    h = n.filter((z) => TSe(z.agentType) === p),
+    _ = (z) => e?.includes(z.agentType) ?? !0,
+    k = h.find((z) => z.agentType === jz.agentType);
+  if (k) return _(k);
+  return h.length === 1 && _(h[0])
+}
+
+function xn({
+  isolation: n,
+  querySource: e,
+  messages: p
+}) {
+  if (n === "remote") return {
+    code: "subagent_fork_remote_isolation",
+    message: 'Fork cannot use isolation: "remote" \u2014 a remote session cannot inherit the conversation context. Omit isolation (or use "worktree"), or spawn a named agent type for remote work.'
+  };
+  if (e === `agent:builtin:${Bz.agentType}` || glo(p)) return {
+    code: "subagent_recursive_fork",
+    message: "Fork is not available inside a forked worker. Complete your task directly using your tools."
+  };
+  return null
+}
+
+function ct(n) {
+  return n.join(", ") || "none"
+}
+
+function Ho(n, e) {
+  if (!n) return;
+  let p = iSe(n, e);
+  return typeof p === "object" ? p.inheritCap : p
+}
+
+function Gn(n, e, p) {
+  let h = e.find((v) => v.agentType === p);
+  if (h) return h;
+  let _ = TSe(p);
+  if (!_) return;
+  let k = n.filter((v) => TSe(v.agentType) === _);
+  if (k.length !== 1) return;
+  let z = k[0];
+  return e.some((v) => v.agentType === z.agentType) ? z : void 0
+}
+
+function Kn() {
+  return M().optional().describe("@internal False when the calling agent cannot continue this agent with a follow-up message (it holds no messaging tool); absent means it can.")
+}
+export {
+  GYr,
+  dor,
+  cor,
+  VYr,
+  DVt
+};

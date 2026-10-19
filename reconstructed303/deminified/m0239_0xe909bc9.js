@@ -1,0 +1,499 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { at, j, we, de } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { d } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { Y, Nt, je } from "B:/~BUN/root/chunk-89mss1tj.js";
+import { B4n, LIe, Ky, ONr, INr, Jl, Gi, TJe, _Me, $m, Qi, En, E, r5, YN } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { l } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { g, m } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import { g5, oT, xpn, uTe } from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import { GR, pZt, E3e, Gvr, Vvr, y_ } from "B:/~BUN/root/chunk-s6jt7ap6.js";
+import { Ne } from "B:/~BUN/root/chunk-nvdqbkrt.js";
+import { I$s } from "B:/~BUN/root/chunk-t3p4x0tq.js";
+import { pK as budgetMs, aEo, xee, jBe } from "B:/~BUN/root/chunk-p95zaxtt.js";
+import { fr } from "B:/~BUN/root/chunk-c6mbjdcy.js";
+import { xl } from "B:/~BUN/root/chunk-648jq7hr.js";
+var H = o => _Me() || B4n(o);
+var v3e = o => B4n(o) && !_Me();
+var v = o => o.hasHeld || v3e(o);
+var Xdt = o => ONr.of(o).fetchHold;
+function Pwe() {
+  return Xdt(j().host);
+}
+var z = () => (we() || v(Pwe())) && H(Pwe()) && !Gi() && En(Ky, GR).source === "fallback";
+var iPe = () => $m() && En(Ky, GR).source === "disk" && Gvr();
+var V = () => v(Pwe()) && iPe() && y_();
+var A = () => H(Pwe()) && iPe() && !y_();
+var Z = () => A() && TJe();
+var uZt = () => r5(En(Ky, GR).source);
+function Vpe() {
+  try {
+    return En(Ky, GR).source === "disabled";
+  } catch (error) {
+    return l(error), !1;
+  }
+}
+var dN = () => xee() && fr() && (!uZt() || Vpe());
+function PXs() {
+  pZt.isFollowed = !0;
+}
+function jIt() {
+  let o = Ne();
+  if (dN() && o.hooksModulesWakeBound === "ahead") o.hooksModulesWakeBound = "passed", t(`the rollout flag (${Ky}) is not answered within this wake's wait: the organization's hooks modules load at what the switch reads, a person's wait for the answer`);
+}
+var R = 60000;
+var G = "Mods you installed aren't running in this session. Your organization's settings couldn't be read, so it isn't known whether it allows them.";
+var D = "the follow of the rollout switch did not end and is given up";
+function q(o) {
+  return o instanceof Error && o.message === D ? "timeout" : "load_failed";
+}
+var T = "installed mods are off for now: the rollout switch for them reads off; they load again when it reads on, and built-in mods keep running";
+function k() {
+  let hooksModulesSwitchRead = Ne().hooksModulesSwitchRead;
+  return hooksModulesSwitchRead !== void 0 && !iPe() && !dN() && (hooksModulesSwitchRead.isLoadOwed || hooksModulesSwitchRead.isOn !== y_());
+}
+function y() {
+  let hooksModulesSwitchRead_2 = Ne().hooksModulesSwitchRead;
+  return hooksModulesSwitchRead_2 !== void 0 && hooksModulesSwitchRead_2.isOn && k() && !y_();
+}
+function aUe(o, e, s) {
+  let r = Ne(),
+    {
+      hooksModulesSwitchRead: hooksModulesSwitchRead_3,
+      hooksModulesSwitchFollowing: hooksModulesSwitchFollowing
+    } = r;
+  if (hooksModulesSwitchFollowing !== void 0) return hooksModulesSwitchFollowing.then(() => y() ? aUe(o, e, s) ?? void 0 : void 0).catch(l);
+  if (hooksModulesSwitchRead_3 === void 0 || !k()) return null;
+  let is_turned_on = y_(),
+    c = r.loadedModules.length;
+  t(`installed plugins' hooks modules ${is_turned_on ? "load" : "unload"}: the rollout flag (${Ky}) reads ${is_turned_on ? "on" : "off"} in a running session`);
+  let p = () => {
+      r.hooksModulesSwitchRead = {
+        ...(r.hooksModulesSwitchRead ?? hooksModulesSwitchRead_3),
+        isOn: !1
+      };
+    },
+    h = (is_turned_on ? Promise.resolve() : Promise.resolve().then(s).then(p, l)).then(o),
+    L = () => {
+      r.hooksModulesSwitchRead = {
+        ...(r.hooksModulesSwitchRead ?? hooksModulesSwitchRead_3),
+        isLoadOwed: !0
+      };
+    };
+  h.catch(L);
+  let M = Nt(h, R, D).then(() => {
+    g("plugin_function_hooks_switch_followed", {
+      is_turned_on: is_turned_on
+    });
+  }, _ => {
+    L(), m("plugin_function_hooks_switch_followed", q(_), {
+      is_turned_on: is_turned_on
+    }), t(`installed plugins' hooks modules: the load that follows the rollout flag failed: ${d(_)}`, {
+      level: "error"
+    });
+  }).then(() => {
+    if (!is_turned_on && r.loadedModules.length < c) e(T);
+  }).catch(l).finally(() => {
+    r.hooksModulesSwitchFollowing = void 0;
+  });
+  return r.hooksModulesSwitchFollowing = M, M;
+}
+function Owe() {
+  let o = Ne().hooksModulesSwitchRead?.isManagedPending === !0;
+  try {
+    let e = !y_() && En(Ky, GR).source === "payload";
+    return o && xee() && fr() && !e;
+  } catch (error) {
+    return l(error), o;
+  }
+}
+function F(o, e, s) {
+  let r = Ne();
+  if (Vpe()) jIt();
+  let i = r.hooksModulesWakeBound === "taken",
+    n = r.hooksModulesWakeBound === "passed" && dN(),
+    u = !(r.hooksModulesWakeBound === "ahead" && dN()) && Owe();
+  if (!(r.hooksModulesSwitchRead !== void 0 && r.hooksModulesSwitchFollowing === void 0 && (n || u || i))) return null;
+  if (i && !u) {
+    if (r.hooksModulesWakeBound = "loaded", r.hooksModulesSwitchRead?.isPersonsOut === !0) e(G);
+    return null;
+  }
+  let c = Nt(o(), R, "the load at the end of the wake's wait did not end and is given up").then(() => {
+    let hooksModulesSwitchRead_4 = r.hooksModulesSwitchRead,
+      w = hooksModulesSwitchRead_4?.isManagedPending !== !0;
+    if (w) r.hooksModulesWakeBound = "loaded";
+    if (w && hooksModulesSwitchRead_4?.isPersonsOut === !0) e(G);
+  }, p => {
+    t(`the load of an organization's hooks modules at the end of the wake's wait failed: ${d(p)}`, {
+      level: "error"
+    });
+  }).finally(() => {
+    r.hooksModulesSwitchFollowing = void 0;
+  });
+  return r.hooksModulesSwitchFollowing = c, c.then(() => y() ? aUe(o, e, s) ?? void 0 : void 0).catch(l);
+}
+function OXs(o) {
+  let {
+      registry: registry
+    } = o,
+    s = o.isSetKnown && o.isLoadFaultless && o.unmet.length === 0,
+    r = !s && registry.hooksModulesWakeBound === "taken",
+    i = s && registry.hooksModulesWakeBound === "passed" && dN() && Vpe();
+  if (r) registry.hooksModulesWakeBound = "passed";
+  if (i) registry.hooksModulesWakeBound = "taken";
+}
+async function Q() {
+  return await Qi().catch(() => {
+    return;
+  }), Z() ? Qi().catch(() => {
+    return;
+  }) : void 0;
+}
+function P() {
+  return dN() ? a.CLAUDE_CODE_FLAG_FETCH_WAIT_MS ?? aEo : budgetMs;
+}
+var X = () => Math.max(0, P() - I$s());
+function J(o) {
+  let timedOut = o.timedOut,
+    s = !timedOut && Gi();
+  return timedOut ? `no answer within ${P()}ms` : s ? "the flag payload landed" : "the fetch settled with no payload";
+}
+async function x(initialize = Qi) {
+  let e = await jBe({
+    initialize: initialize,
+    budgetMs: X()
+  });
+  t(`installed plugins' hooks modules held ${Math.round(e.waitMs)}ms for the rollout flag (${Ky}): ` + J(e));
+}
+async function IXs() {
+  return uZt() ? void 0 : x();
+}
+var oo = 30000;
+function eo(o) {
+  return v3e(o) && INr() ? o.over.promise : Promise.resolve();
+}
+var U = o => je(eo(o), oo);
+async function MXs() {
+  await E3e();
+  let o = A(),
+    e = z() || V(),
+    s = (o || e) && !dN(),
+    r = o ? Q : Qi;
+  if (s) await U(Pwe());
+  return s ? x(r) : void 0;
+}
+var to = {
+  override: "from a local override",
+  payload: "from GrowthBook (this session's payload)",
+  disk: "from GrowthBook (the disk cache of an earlier session)",
+  disabled: "from the default (GrowthBook is off for this session: a third-party provider, or telemetry opted out)",
+  fallback: "from the default (a cold GrowthBook cache, no payload yet)"
+};
+var b = 60000;
+function ro(askedAt = Date.now()) {
+  let e = Ne(),
+    hooksModulesSwitchRereading = e.hooksModulesSwitchRereading;
+  if (hooksModulesSwitchRereading !== void 0) return hooksModulesSwitchRereading;
+  let hooksModulesSwitchRead_5 = e.hooksModulesSwitchRead;
+  if (!(hooksModulesSwitchRead_5 !== void 0 && fr() && askedAt - hooksModulesSwitchRead_5.askedAt >= b)) return null;
+  e.hooksModulesSwitchRead = {
+    ...hooksModulesSwitchRead_5,
+    askedAt: askedAt
+  };
+  let f = (hooksModulesSwitchRead_5.askedAt === 0 ? x() : jBe({
+    initialize: () => YN().then(Qi),
+    budgetMs: budgetMs
+  }).then(() => {
+    return;
+  })).finally(() => {
+    e.hooksModulesSwitchRereading = void 0;
+  });
+  return e.hooksModulesSwitchRereading = f, f;
+}
+function W(o, e, s) {
+  let r = () => aUe(o, e, s) ?? F(o, e, s),
+    i = ro();
+  return i !== null ? i.catch(l).then(() => (jIt(), r() ?? void 0)) : r();
+}
+var C = 1e4;
+function DXs(o) {
+  if (!(iPe() && !y_())) return;
+  let s = Jl(() => {
+    if (!Gi()) return;
+    if (s(), y_()) t(`installed plugins' hooks modules load late: the rollout flag (${Ky}) answered on after the load went on over a saved off`), o();
+  });
+}
+var k3e = {
+  served: "the rollout switch served off",
+  saved: "the rollout switch was saved off by an earlier session and is not refreshed yet",
+  unanswered: "this wake's flag fetch has not answered the rollout switch; they load at a turn start once it reads on",
+  unfetched: "this wake fetches no rollout switch; an organization's load at once, a person's once the organization's settings have been read",
+  unfetchedOut: "this wake fetches no rollout switch and the organization's settings could not be read; an organization's load at once, a person's stay out for this wake"
+};
+function mvs() {
+  let o = dN() && y_(),
+    e = iPe(),
+    s = o && Vpe();
+  if (s && Ne().hooksModulesSwitchRead?.isPersonsOut === !0) return k3e.unfetchedOut;
+  return s ? k3e.unfetched : o ? k3e.unanswered : e ? k3e.saved : k3e.served;
+}
+function so(o, e, s) {
+  let r = Ne(),
+    i = r.loadedModules.length;
+  return Promise.resolve().then(o).then(() => {
+    if (r.loadedModules.length < i) e(T);
+    s();
+  });
+}
+function LXs() {
+  if (xl()) return "in a tool server's daemon";
+  return to[En(Ky, GR).source];
+}
+var gvs = ["NODE_ENV", "DISABLE_GROWTHBOOK", "DISABLE_TELEMETRY", "DO_NOT_TRACK", "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC", "CLAUDE_CODE_GB_DISK_CACHE_WHEN_TELEMETRY_OFF", "CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST", "CLAUDE_CODE_CUSTOM_OAUTH_URL", "CLAUDE_INTERNAL_FC_OVERRIDES", ...LIe];
+function NXs(o, e, s) {
+  let r = W(o, e, s);
+  return r === null ? null : je(r, C).then(() => {
+    return;
+  }).catch(l);
+}
+var dZt = 180000;
+class io {
+  busy = !1;
+  running = null;
+  key = null;
+  edgeAt = 0;
+  busySince = 0;
+  idleWaiters = new Set();
+  endWaiters = new Set();
+  valveTimer = null;
+}
+var pe = new at(() => new io());
+function S() {
+  return pe.of(j());
+}
+function no(o) {
+  if (o.valveTimer !== null) clearTimeout(o.valveTimer), o.valveTimer = null;
+  let e = [...o.idleWaiters];
+  o.idleWaiters.clear(), ao(e);
+}
+function ao(o) {
+  for (let e of o) queueMicrotask(e);
+}
+function cZt(o, e = null) {
+  let s = S(),
+    r = e === null || e === s.key;
+  if (o ? s.busy && r : !s.busy || !r) return;
+  if (s.busy) no(s), ao([...s.endWaiters]), s.endWaiters.clear();
+  s.busy = o, s.running = o ? Symbol("foreground turn") : null, s.key = o ? e : null, s.busySince = o ? performance.now() : 0, s.edgeAt = Date.now();
+}
+function iUe() {
+  return S().busy;
+}
+function lo(o) {
+  let e = S();
+  if (e.busy) e.endWaiters.add(o);else queueMicrotask(o);
+}
+function uvs() {
+  return S().edgeAt;
+}
+function Bvr(o = performance.now(), e = dZt) {
+  let s = S();
+  return s.busy && o - s.busySince < e;
+}
+function pvs(o = performance.now(), e = dZt) {
+  let s = S();
+  return s.busy && o - s.busySince >= e;
+}
+function fvs(o, e, s = dZt) {
+  if (e.aborted) return () => {};
+  let r = S(),
+    i = !1,
+    n = () => {
+      if (e.removeEventListener("abort", u), !i && !e.aborted) o();
+    },
+    u = () => {
+      i = !0, r.idleWaiters.delete(n), e.removeEventListener("abort", u);
+    };
+  if (!Bvr(performance.now(), s)) return queueMicrotask(n), u;
+  if (r.idleWaiters.add(n), e.addEventListener("abort", u, {
+    once: !0
+  }), r.valveTimer === null) {
+    let f = r.busySince + s - performance.now();
+    r.valveTimer = setTimeout(no, Math.max(0, f), r), r.valveTimer.unref?.();
+  }
+  return u;
+}
+function FXs(o) {
+  let e = {
+    isStopped: !1,
+    isWaiting: !1
+  };
+  function s() {
+    if (e.isWaiting = !1, !e.isStopped && k()) o();
+  }
+  let r = Jl(() => {
+    if (!e.isWaiting && k()) e.isWaiting = !0, lo(s);
+  });
+  return () => {
+    e.isStopped = !0, r();
+  };
+}
+function HXs(o, e, s) {
+  let r = Ne();
+  if (!(r.hooksModulesWakeBound === "ahead" && r.hooksModulesSwitchRead !== void 0 && r.hooksModulesSwitchFollowing === void 0 && dN())) return null;
+  let n = U(Pwe()).then(() => x()).then(() => (r.hooksModulesSwitchFollowing = void 0, jIt(), aUe(o, e, s) ?? F(o, e, s) ?? void 0)).catch(l).finally(() => {
+    if (r.hooksModulesSwitchFollowing === n) r.hooksModulesSwitchFollowing = void 0;
+  });
+  return r.hooksModulesSwitchFollowing = n, n;
+}
+function oho() {
+  try {
+    return Gi() || En(Ky, GR).source === "payload";
+  } catch {
+    return !1;
+  }
+}
+var jvr = () => Vvr() !== E(Ky, GR);
+function $Xs(o) {
+  let hooksModulesSwitchRead_6 = o.registry.hooksModulesSwitchRead;
+  if (hooksModulesSwitchRead_6?.isManagedPending !== !0) return !1;
+  if (!(o.isSetKnown && o.isLoadFaultless && o.unmet.length === 0)) return t(`the load of an organization's hooks modules stays owed: its set ${o.isSetKnown ? "is known" : "is not known yet"}, the load ${o.isLoadFaultless ? "ran" : "did not run faultless"}, ${o.unmet.length} named plugin(s) not found or not loaded`), !1;
+  return o.registry.hooksModulesSwitchRead = o.isDecided ? {
+    ...hooksModulesSwitchRead_6,
+    isManagedPending: !1
+  } : void 0, !0;
+}
+var sho = "Your organization's mods could not be loaded, so this turn was not run.";
+async function fo(o, e, s, r) {
+  let i = Ne(),
+    n = {
+      isEnded: !1
+    },
+    u = {
+      wake: () => {}
+    },
+    f = new Set(),
+    abortController = new AbortController(),
+    p = Jl(() => u.wake()),
+    w = i.hookRegistrationEnded.subscribe(() => u.wake()),
+    h = {
+      hasMoved: !1,
+      passesBefore: 0
+    },
+    L = uTe(() => {
+      h.hasMoved = !0, h.passesBefore = i.hookRegistrationEpoch, u.wake();
+    }),
+    M = () => h.hasMoved && i.hookRegistrationEpoch === h.passesBefore,
+    _ = {
+      isPassed: !1
+    },
+    B = {
+      isMet: !1
+    },
+    N = () => !n.isEnded && !_.isPassed && !B.isMet && Owe(),
+    po = Y(s, abortController.signal).then(() => {
+      _.isPassed = !0;
+    });
+  e.then(() => {
+    n.isEnded = !0;
+  });
+  try {
+    while (N()) {
+      let K = {
+          isOver: !1
+        },
+        co = Y(b, abortController.signal, {
+          unref: !0
+        }).then(() => {
+          K.isOver = !0;
+        }),
+        ho = M(),
+        I = Promise.resolve().then(() => o(ho)).catch(l);
+      h.hasMoved = !1;
+      while (N() && !K.isOver && !(M() && f.has(I))) {
+        let promise = new Promise(O => {
+            u.wake = O;
+          }),
+          Oo = [I, i.hooksModulesSwitchFollowing, ...i.hookRegistrationsInFlight].flatMap(item => item === void 0 || f.has(item) ? [] : [item]).map(item => Promise.allSettled([item]).then(() => f.add(item)));
+        await Promise.race([co, po, e, promise, ...Oo]), B.isMet = !_.isPassed && f.has(I) && !M() && r();
+      }
+    }
+    return _.isPassed ? "limit" : B.isMet ? "dead-end" : "released";
+  } finally {
+    abortController.abort(), p(), w(), L();
+  }
+}
+var mo = 300000;
+var uo = "Waiting for your organization's mods to load.";
+function Wvr(o, e) {
+  let s = Ne(),
+    i = `${xpn() ? "ended" : "under way"} since reset ${g5()}`,
+    standing = oT() ?? i,
+    organizationsStatusLoad = s.organizationsStatusLoad;
+  if (!e && organizationsStatusLoad?.standing === standing) return organizationsStatusLoad.pass;
+  let pass = Promise.resolve().then(o),
+    c = {
+      standing: standing,
+      pass: pass
+    },
+    p = () => {
+      if (s.organizationsStatusLoad === c) s.organizationsStatusLoad = void 0;
+    };
+  return s.organizationsStatusLoad = c, pass.then(p, p), pass;
+}
+var zvr = "Your organization's policy could not be read, so this session cannot run a turn.";
+function UXs(o, e, s, r, i) {
+  if (!Owe()) return null;
+  let n = {
+      isEnded: !1
+    },
+    u = {
+      end: "released"
+    },
+    f = () => Ne().hooksModulesSwitchRead?.isManagedPending === !0,
+    c = () => aUe(o, e, s) ?? F(o, e, s);
+  return r.then(() => {
+    n.isEnded = !0;
+  }), Promise.resolve().then(() => e(uo)).catch(l).then(() => fo(p => W(p ? () => Wvr(o, !1) : o, e, s), r, mo, i)).then(p => {
+    u.end = p;
+  }).catch(l).then(() => !Owe() && f() ? je(so(s, e, c), C) : void 0).catch(l).then(() => {
+    let p = u.end === "dead-end";
+    if (!Owe()) return {
+      kind: "start"
+    };
+    return n.isEnded ? {
+      kind: "ended"
+    } : {
+      kind: "failed",
+      message: p ? zvr : sho
+    };
+  });
+}
+function hvs() {
+  let o = Ne();
+  if (o.hooksModulesSwitchRead === void 0 && ve()) o.hooksModulesSwitchRead = {
+    isOn: !1,
+    askedAt: 0,
+    isLoadOwed: !0,
+    isManagedPending: !0,
+    isPersonsOut: !1
+  };
+}
+function ve() {
+  try {
+    return !de() && dN();
+  } catch {
+    return !0;
+  }
+}
+export { v3e, dZt, cZt, iUe, uvs, Bvr, pvs, fvs, Xdt, Pwe, iPe, uZt, Vpe, dN, PXs, jIt, aUe, Owe, OXs, IXs, MXs, DXs, k3e, mvs, LXs, gvs, NXs, FXs, HXs, oho, jvr, $Xs, sho, Wvr, zvr, UXs, hvs };

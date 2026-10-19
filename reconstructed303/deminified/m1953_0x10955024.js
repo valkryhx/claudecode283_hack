@@ -1,0 +1,97 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import { Cn, zl, d7e } from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import { E } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { Ehe } from "B:/~BUN/root/chunk-b0487zs4.js";
+import { o, oe, u, fe } from "B:/~BUN/root/chunk-g3snhg6n.js";
+var l = f(() => u({
+    server_instructions: o().optional(),
+    server_instructions_by_server: fe(o(), o()).optional(),
+    tools: fe(o(), o()).optional(),
+    search_hints: fe(o(), o()).optional(),
+    param_descriptions: fe(o(), fe(o(), o())).optional(),
+    prompts: fe(o(), o()).optional(),
+    skills: fe(o(), o()).optional()
+  })),
+  g = f(() => fe(o(), oe()));
+function $_e(e) {
+  if (!e.pluginSource) return;
+  let {
+    name: name,
+    marketplace: marketplace
+  } = Cn(e.pluginSource);
+  if (!zl(marketplace) && !d7e(name, marketplace)) return;
+  let p = E("tengu_official_plugin_prompt_overrides", {}),
+    i = g().safeParse(p);
+  if (!i.success) {
+    t("tengu_official_plugin_prompt_overrides: GB payload is not an object; ignoring", {
+      level: "error"
+    });
+    return;
+  }
+  let a = i.data[name];
+  if (a === void 0) return;
+  let c = l().safeParse(a);
+  if (!c.success) {
+    t(`tengu_official_plugin_prompt_overrides: entry for '${name}' failed schema (${c.error.issues[0]?.message}); using baked-in text`, {
+      level: "error"
+    });
+    return;
+  }
+  let s = c.data;
+  if (Object.keys(s).length === 0) return;
+  return {
+    ...s,
+    server_instructions_by_server: d(s.server_instructions_by_server),
+    tools: d(s.tools),
+    search_hints: d(s.search_hints),
+    param_descriptions: d(s.param_descriptions),
+    prompts: d(s.prompts),
+    skills: d(s.skills)
+  };
+}
+function d(e) {
+  if (e === void 0) return;
+  let r = Object.create(null);
+  return Object.assign(r, e);
+}
+function ICn(e, r) {
+  if (!e) return;
+  let server_instructions_by_server = e.server_instructions_by_server;
+  if (server_instructions_by_server) {
+    let p = Ehe(r),
+      i = p && server_instructions_by_server[p.serverName];
+    if (i !== void 0) return i;
+  }
+  return e.server_instructions;
+}
+function MCn(e, r) {
+  if (!r || !e.properties) return e;
+  let properties = {
+      ...e.properties
+    },
+    p = !1;
+  for (let [i, description] of Object.entries(r)) {
+    let c = properties[i];
+    if (c !== null && typeof c === "object") properties[i] = {
+      ...c,
+      description: description
+    }, p = !0;
+  }
+  if (!p) return e;
+  return {
+    ...e,
+    properties: properties
+  };
+}
+export { $_e, ICn, MCn };

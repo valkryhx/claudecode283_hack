@@ -1,0 +1,482 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  _1r,
+  b1r,
+  ngn,
+  tSt,
+  n1
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+
+function h(e, o, s, n) {
+  var r = e.length,
+    i = s + (n ? 1 : -1);
+  while (n ? i-- : ++i < r)
+    if (o(e[i], i, e)) return i;
+  return -1
+}
+var y = h;
+
+function A(e) {
+  return e !== e
+}
+var R = A;
+
+function b(e, o, s) {
+  var n = s - 1,
+    r = e.length;
+  while (++n < r)
+    if (e[n] === o) return n;
+  return -1
+}
+var f = b;
+
+function g(e, o, s) {
+  return o === o ? f(e, o, s) : y(e, R, s)
+}
+var k = g;
+
+function E(e, o) {
+  var s = e == null ? 0 : e.length;
+  return !!s && k(e, o, 0) > -1
+}
+var _ = E;
+
+function D(e, o, s) {
+  var n = -1,
+    r = e == null ? 0 : e.length;
+  while (++n < r)
+    if (s(o, e[n])) return !0;
+  return !1
+}
+var O = D;
+
+function x() {}
+var k7e = x;
+var C = 1 / 0,
+  I = !(tSt && 1 / ngn(new tSt([, -0]))[1] == C) ? k7e : function(e) {
+    return new tSt(e)
+  },
+  S = I;
+var N = 200;
+
+function M(e, o, s) {
+  var n = -1,
+    r = _,
+    i = e.length,
+    u = !0,
+    l = [],
+    t = l;
+  if (s) u = !1, r = O;
+  else if (i >= N) {
+    var p = o ? null : S(e);
+    if (p) return ngn(p);
+    u = !1, r = b1r, t = new _1r
+  } else t = o ? [] : l;
+  e: while (++n < i) {
+    var a = e[n],
+      c = o ? o(a) : a;
+    if (a = s || a !== 0 ? a : 0, u && c === c) {
+      var m = t.length;
+      while (m--)
+        if (t[m] === c) continue e;
+      if (o) t.push(c);
+      l.push(a)
+    } else if (!r(t, c, s)) {
+      if (t !== l) t.push(c);
+      l.push(a)
+    }
+  }
+  return l
+}
+var i1t = M;
+
+function T(e, o) {
+  return e && e.length ? i1t(e, n1(o, 2)) : []
+}
+var vi = T;
+var tL = ["acceptEdits", "auto", "bypassPermissions", "default", "dontAsk", "plan"],
+  P = [...tL],
+  tE = P,
+  c$ = "manual";
+
+function Bh(e) {
+  return e === "manual" ? "default" : e
+}
+
+function _g(e) {
+  let o = Bh(e);
+  return P.find((s) => s === o)
+}
+var whe = `Cannot set permission mode: must be one of ${tL.join(", ")}`,
+  a1t = 32,
+  Bpn = /^[A-Za-z0-9_-]{1,64}$/,
+  jpn = {
+    dangerousRemoval: {
+      bypassImmune: !0,
+      classifierRouted: !0,
+      autoModeDeny: !0,
+      hostPersonOnly: !1,
+      localProjectionOnly: !1,
+      servedUnplaceable: !1
+    },
+    backgroundOperator: {
+      bypassImmune: !1,
+      classifierRouted: !0,
+      autoModeDeny: !1,
+      hostPersonOnly: !1,
+      localProjectionOnly: !1,
+      servedUnplaceable: !1
+    },
+    suspiciousWindowsPath: {
+      bypassImmune: !1,
+      classifierRouted: !0,
+      autoModeDeny: !1,
+      hostPersonOnly: !1,
+      localProjectionOnly: !1,
+      servedUnplaceable: !1
+    },
+    isolatePeerMachines: {
+      bypassImmune: !0,
+      classifierRouted: !1,
+      autoModeDeny: !1,
+      hostPersonOnly: !1,
+      localProjectionOnly: !1,
+      servedUnplaceable: !1
+    },
+    restrictedMode: {
+      bypassImmune: !0,
+      classifierRouted: !1,
+      autoModeDeny: !1,
+      hostPersonOnly: !1,
+      localProjectionOnly: !1,
+      servedUnplaceable: !1
+    },
+    outsideReadsBlocked: {
+      bypassImmune: !0,
+      classifierRouted: !1,
+      autoModeDeny: !1,
+      hostPersonOnly: !1,
+      localProjectionOnly: !1,
+      servedUnplaceable: !1
+    },
+    claudeSettingsFile: {
+      bypassImmune: !1,
+      classifierRouted: !1,
+      autoModeDeny: !1,
+      hostPersonOnly: !0,
+      localProjectionOnly: !1,
+      servedUnplaceable: !1
+    },
+    internalHardDeny: {
+      bypassImmune: !1,
+      classifierRouted: !1,
+      autoModeDeny: !1,
+      hostPersonOnly: !1,
+      localProjectionOnly: !1,
+      servedUnplaceable: !0
+    },
+    unfinishedCheck: {
+      bypassImmune: !0,
+      classifierRouted: !1,
+      autoModeDeny: !1,
+      hostPersonOnly: !0,
+      localProjectionOnly: !1,
+      servedUnplaceable: !1
+    },
+    ...{},
+    ...{}
+  };
+
+function w5(e) {
+  return d(e).some((o) => jpn[o]?.bypassImmune === !0)
+}
+
+function Wpn(e) {
+  return d(e).some((o) => jpn[o]?.servedUnplaceable === !0)
+}
+
+function d(e) {
+  return [...e.circuitBreaker !== void 0 ? [e.circuitBreaker] : [], ...e.also ?? []]
+}
+
+function iF(e) {
+  return e.circuitBreaker !== void 0 && jpn[e.circuitBreaker]?.classifierRouted === !0
+}
+
+function fTe(e) {
+  return e.circuitBreaker !== void 0 && jpn[e.circuitBreaker]?.autoModeDeny === !0
+}
+
+function IW(e) {
+  return d(e).some((o) => jpn[o]?.hostPersonOnly === !0)
+}
+
+function bBo(e) {
+  return d(e).some((o) => jpn[o]?.localProjectionOnly === !0)
+}
+
+function SBo(e) {
+  return e.decideLocation === "pre-ask"
+}
+
+function E7e(e, o) {
+  return e.behavior !== "allow" && e !== o && !xze(e)
+}
+
+function xze(e) {
+  return e.behavior === "deny" && e.invalidInput === !0
+}
+var G_t = ["rule", "mode", "subcommandResults", "permissionPromptTool", "hook", "asyncAgent", "sandboxOverride", "workingDir", "safetyCheck", "classifier", "other"];
+var T7e = "Auto-allowed with sandbox (autoAllowBashIfSandboxed enabled)",
+  vhe = "Read-only command is allowed",
+  zpn = "Command is read-only and safe to execute",
+  Gpn = "All pipeline commands are individually allowed, some only by the read-only allowlist",
+  Vpn = "Auto mode held this command for the server-side classifier to review",
+  _9n = "Auto mode reviews this action before it runs in the cloud environment",
+  wBo = "Path is outside allowed working directories",
+  qpn = "--restricted: path outside the working directory",
+  ZM = "Reads outside the working directories are blocked (permissions.blockReadsOutsideWorkingDirectories). Add the directory with /add-dir, or remove that setting.",
+  b9n = "permission check needs a working directory; the session has none",
+  C7e = "permission check needs a config or temp path; the session has none",
+  l1t = new Map([
+    ["python", new Set(["-c"])],
+    ["node", new Set(["-e", "--eval", "-p", "--print"])],
+    ["nodejs", new Set(["-e", "--eval", "-p", "--print"])],
+    ["bun", new Set(["-e", "--eval", "-p", "--print"])],
+    ["perl", new Set(["-e", "-E"])],
+    ["ruby", new Set(["-e"])],
+    ["php", new Set(["-r"])],
+    ["bash", new Set(["-c"])],
+    ["sh", new Set(["-c"])],
+    ["zsh", new Set(["-c"])],
+    ["dash", new Set(["-c"])],
+    ["ksh", new Set(["-c"])],
+    ["lua", new Set(["-e"])],
+    ["luajit", new Set(["-e"])],
+    ["tsx", new Set(["-e", "--eval", "-p", "--print"])],
+    ["deno", new Set(["eval"])],
+    ["Rscript", new Set(["-e"])],
+    ["julia", new Set(["-e", "-E"])],
+    ["osascript", new Set(["-e"])]
+  ]);
+
+function nL(e) {
+  return e?.type === "safetyCheck" && e.circuitBreaker === "outsideReadsBlocked"
+}
+
+function R7e(e, o) {
+  return e?.type === "sandboxOverride" && o.blockReadsOutsideWorkingDirectories === !0
+}
+
+function F_(e) {
+  let o = `${e} names a path that is computed at run time, which cannot be checked against the read block (permissions.blockReadsOutsideWorkingDirectories)`;
+  return {
+    behavior: "ask",
+    message: o,
+    decisionReason: {
+      type: "safetyCheck",
+      reason: o,
+      classifierApprovable: !1,
+      circuitBreaker: "outsideReadsBlocked"
+    }
+  }
+}
+
+function P2(e) {
+  let o = `${e}; under the read block (permissions.blockReadsOutsideWorkingDirectories) a command the shell parser cannot analyze asks the person`;
+  return {
+    behavior: "ask",
+    message: o,
+    decisionReason: {
+      type: "safetyCheck",
+      reason: o,
+      classifierApprovable: !1,
+      circuitBreaker: "outsideReadsBlocked"
+    },
+    suggestions: []
+  }
+}
+
+function Kpn() {
+  return {
+    behavior: "ask",
+    message: "This sed script is not on the allowlist and can read or write any file, which cannot be checked against the read block (permissions.blockReadsOutsideWorkingDirectories)",
+    decisionReason: {
+      type: "safetyCheck",
+      reason: "This sed script is not on the allowlist and can read or write any file, which cannot be checked against the read block (permissions.blockReadsOutsideWorkingDirectories)",
+      classifierApprovable: !1,
+      circuitBreaker: "outsideReadsBlocked"
+    }
+  }
+}
+var d1t = "bashCommandClamp: no clamp rule matches this command",
+  Ypn = "bashCommandClamp fail-closed: permission check crashed",
+  Pze = "Classifier unavailable",
+  S9n = "Auto mode unavailable \u2014 stopped after repeated responses with no safety verdict",
+  w9n = "Auto mode could not evaluate this action and is blocking it for safety",
+  A7e = "Auto mode classifier transcript exceeded context window \u2014 falling back to manual approval (try /compact to reduce conversation size)",
+  v9n = "Auto mode classifier transcript exceeded context window; will try to compact the conversation before the next request",
+  B = new Set([Pze, S9n, A7e, v9n]);
+
+function vBo(e) {
+  return B.has(e) ? `Blocked: ${e}` : e
+}
+
+function k9n(e) {
+  if (e.reason === Pze || e.reason === S9n) return "unavailable";
+  return e.noVerdict ? "no_verdict" : "block"
+}
+var V_t = "Memory is paused for this session; only the user can turn it back on.",
+  E9n = "memory access blocked by /pause-memory",
+  T9n = ["classifier_transcript_too_long", "outside_reads_blocked", "memory_paused"];
+
+function Tne(e) {
+  switch (e?.type) {
+    case "classifier":
+      return e.noVerdict === !0 && (e.reason === A7e || e.reason === v9n) ? "classifier_transcript_too_long" : void 0;
+    case "other":
+    case "safetyCheck":
+      switch (e.reason) {
+        case A7e:
+          return "classifier_transcript_too_long";
+        case ZM:
+          return "outside_reads_blocked";
+        case V_t:
+        case E9n:
+          return "memory_paused";
+        default:
+          return
+      }
+    case "subcommandResults": {
+      let o;
+      for (let s of e.reasons.values()) {
+        let n = Tne(s.decisionReason);
+        if (n === "outside_reads_blocked") return n;
+        o ??= n
+      }
+      return o
+    }
+    default:
+      return
+  }
+}
+var fUr = "ask rule on hook-rewritten input",
+  Xpn = {
+    type: "asyncAgent",
+    reason: fUr
+  },
+  mUr = {
+    type: "asyncAgent",
+    reason: "tool requires user interaction; no prompt available in headless mode"
+  },
+  gUr = "no approval surface in this session; permission request denied automatically",
+  kBo = {
+    type: "asyncAgent",
+    reason: gUr
+  },
+  EBo = {
+    type: "other",
+    reason: "MCP tool requires user interaction; not supported via --permission-prompt-tool"
+  },
+  x7e = "tool permission stream closed before response received",
+  Oze = "canUseTool returned a schema-invalid permission result",
+  M0e = "tool permission request failed",
+  Jpn = "tool permission request aborted",
+  TBo = {
+    type: "other",
+    reason: x7e
+  },
+  P7e = {
+    type: "other",
+    reason: Oze
+  },
+  hUr = "permission prompt tool no longer connected",
+  CBo = {
+    type: "other",
+    reason: hUr
+  },
+  yUr = {
+    type: "other",
+    reason: M0e
+  },
+  O7e = {
+    type: "other",
+    reason: Jpn
+  };
+export {
+  k7e,
+  i1t,
+  vi,
+  tL,
+  tE,
+  c$,
+  Bh,
+  _g,
+  whe,
+  a1t,
+  Bpn,
+  jpn,
+  w5,
+  Wpn,
+  iF,
+  fTe,
+  IW,
+  bBo,
+  SBo,
+  E7e,
+  xze,
+  G_t,
+  T7e,
+  vhe,
+  zpn,
+  Gpn,
+  Vpn,
+  _9n,
+  wBo,
+  qpn,
+  ZM,
+  b9n,
+  C7e,
+  l1t,
+  nL,
+  R7e,
+  F_,
+  P2,
+  Kpn,
+  d1t,
+  Ypn,
+  Pze,
+  S9n,
+  w9n,
+  A7e,
+  v9n,
+  vBo,
+  k9n,
+  V_t,
+  E9n,
+  T9n,
+  Tne,
+  fUr,
+  Xpn,
+  mUr,
+  gUr,
+  kBo,
+  EBo,
+  x7e,
+  Oze,
+  M0e,
+  Jpn,
+  TBo,
+  P7e,
+  hUr,
+  CBo,
+  yUr,
+  O7e
+};

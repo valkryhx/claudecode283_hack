@@ -1,0 +1,893 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  j,
+  ms,
+  Eg,
+  Lw
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  z
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  iMe,
+  Ji,
+  ao,
+  Pr,
+  gB,
+  En,
+  E
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  oP,
+  ju
+} from "B:/~BUN/root/chunk-gyr2a6wz.js";
+import {
+  Np,
+  y5n
+} from "B:/~BUN/root/chunk-ejm0pmyj.js";
+import {
+  Ec,
+  nVs
+} from "B:/~BUN/root/chunk-we0fhavr.js";
+import {
+  N$r
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  xs
+} from "B:/~BUN/root/chunk-6a9s3k2y.js";
+import {
+  gd,
+  Rne,
+  O2,
+  nE,
+  I2,
+  X_t,
+  O9n,
+  zn,
+  Sn
+} from "B:/~BUN/root/chunk-a0k8qg0d.js";
+import {
+  KHo
+} from "B:/~BUN/root/chunk-1gpjpba6.js";
+import {
+  $s,
+  dt,
+  Kt,
+  We,
+  xt
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  Xu
+} from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import {
+  ht
+} from "B:/~BUN/root/chunk-2fccb5hn.js";
+import {
+  go
+} from "B:/~BUN/root/chunk-y59h61rh.js";
+import {
+  pr
+} from "B:/~BUN/root/chunk-j1zjtkgf.js";
+import {
+  Ur,
+  nIe
+} from "B:/~BUN/root/chunk-hdc8p5sh.js";
+import {
+  Yi
+} from "B:/~BUN/root/chunk-s39maerh.js";
+import {
+  Qe
+} from "B:/~BUN/root/chunk-5k20pvvh.js";
+import {
+  KJ,
+  co,
+  uo,
+  si,
+  Cc,
+  PBo,
+  N7e,
+  OBo,
+  NKs
+} from "B:/~BUN/root/chunk-b0487zs4.js";
+import {
+  He
+} from "B:/~BUN/root/chunk-8znbjmp4.js";
+var k2n = ["mcp__Claude_Preview__", "mcp__Claude_Browser__", "mcp__remote-devices__Claude_Browser__"];
+var UCo = "mcp__claude-device__chrome_",
+  rke = ["mcp__claude-in-chrome__", "mcp__Claude_in_Chrome__", "mcp__remote-devices__claude-in-chrome__", "mcp__remote-devices__Claude_in_Chrome__", "mcp__claude-device__chrome_", ...k2n];
+
+function k(e) {
+  if (!e.startsWith("mcp__claude-device__chrome_")) return null;
+  let n = e.slice(27);
+  return n === "" || n.startsWith("_") || n.includes("__") ? null : n
+}
+
+function BCo(e) {
+  let n = k(e);
+  return n === null ? e : "mcp__claude-in-chrome__" + n
+}
+
+function iDs(e, n) {
+  let o = k(e);
+  return o !== null && n === "chrome_" + o ? o : n
+}
+var q = new RegExp("(?<![\\w-])mcp__claude-device__chrome_[\\w-]*", "g");
+
+function Yxr(e) {
+  return e.replace(q, (n) => n === "mcp__claude-device__chrome_" ? "mcp__claude-in-chrome__" : BCo(n))
+}
+
+function FC(e) {
+  return rke.some((n) => e.startsWith(n))
+}
+
+function Pon(e) {
+  return k2n.some((n) => e.startsWith(n))
+}
+var Q = "bot_protected_tengu_atomic_magpie",
+  Z = new Set(["session", "cliArg"]),
+  v = new z(() => ({
+    value: !1
+  }));
+
+function xon(e, n) {
+  if (e === Ec && !Np(n) && "url" in n && typeof n.url === "string" && y5n(n.url)) ms(v).value = !0
+}
+
+function pae(e) {
+  if (e !== pr && e !== Xu || !(ms(v).value || a.CLAUDE_CODE_PROJECTS_SESSION || iMe(Lw()))) return !1;
+  let n = En(Q, !1);
+  return !(n.value === !0 && n.source === "payload" && !gB())
+}
+
+function R(e) {
+  let n = typeof e !== "string",
+    o = !n && nE(e);
+  return [pr, Xu].some((r) => (n || o || gd(e) === r) && pae(r) && (!o || X_t(e, r)))
+}
+
+function C(e, n) {
+  return !Z.has(e) && pae(n)
+}
+
+function L() {
+  return pae(pr) || pae(Xu)
+}
+
+function M(e) {
+  if (typeof e !== "object" || e === null) return !0;
+  if (e.type !== "addRules" && e.type !== "replaceRules" && e.type !== "removeRules") return !1;
+  let n = "rules" in e ? e.rules : void 0;
+  return !Array.isArray(n) || n.some((o) => typeof o !== "object" || o === null || !("toolName" in o) || typeof o.toolName !== "string" || ("ruleContent" in o) && o.ruleContent !== void 0 && typeof o.ruleContent !== "string")
+}
+
+function D(e, n) {
+  if (e.type !== "removeRules" && e.type !== "replaceRules" || e.behavior === "allow") return;
+  if (e.type === "replaceRules") {
+    if (n === void 0) return e.rules.length === 0 ? [] : [{
+      type: "addRules",
+      rules: e.rules,
+      behavior: e.behavior,
+      destination: e.destination
+    }];
+    let r = (e.behavior === "deny" ? n.alwaysDenyRules : n.alwaysAskRules) ?? {},
+      s = Object.hasOwn(r, e.destination) ? r[e.destination] : void 0,
+      i = Array.isArray(s) ? s : [],
+      m = (c) => Sn(zn(c)),
+      l = new Set(e.rules.map((c) => m(Sn(c)))),
+      u = i.map((c) => zn(c)).filter((c) => R(c.toolName) && !l.has(m(Sn(c))));
+    return u.length === 0 ? void 0 : [{
+      ...e,
+      rules: [...e.rules, ...u]
+    }]
+  }
+  let o = e.rules.filter((r) => !R(r.toolName));
+  if (o.length === e.rules.length) return;
+  return o.length === 0 ? [] : [{
+    ...e,
+    rules: o
+  }]
+}
+
+function b2n(e, n) {
+  if (!L()) return e;
+  let o = !1,
+    r = e.flatMap((s) => {
+      if (M(s)) return o = !0, [];
+      let i = D(s, n);
+      if (i !== void 0) return o = !0, i;
+      if (s.type !== "addRules" && s.type !== "replaceRules" || s.behavior !== "allow") return [s];
+      let m = s.rules.filter((l) => !R(l.toolName));
+      if (m.length === s.rules.length) return [s];
+      return o = !0, m.length === 0 ? [] : [{
+        ...s,
+        rules: m
+      }]
+    });
+  return o ? r : e
+}
+
+function JLt(e, n) {
+  let o = Cc(e);
+  if (o === Xu) return {
+    toolName: o
+  };
+  let r = typeof n === "object" && n !== null && "url" in n ? n.url : void 0;
+  if (o !== pr || typeof r !== "string") return;
+  try {
+    let s = new URL(r).hostname;
+    return s.includes("*") ? void 0 : {
+      toolName: o,
+      ruleContent: `domain:${s}`
+    }
+  } catch {
+    return
+  }
+}
+
+function c3(e, n, o) {
+  if (!L()) return e;
+  let r = !1,
+    s = e.flatMap((i) => {
+      if (M(i)) return r = !0, [];
+      let m = D(i, o);
+      if (m !== void 0) return r = !0, m;
+      if (i.type !== "addRules" && i.type !== "replaceRules" || i.behavior !== "allow") return [i];
+      let l = i.rules.filter((f) => R(f.toolName));
+      if (l.length === 0) return [i];
+      r = !0;
+      let u = i.rules.filter((f) => !R(f.toolName)),
+        c = i.type === "addRules" && n !== void 0 ? l.filter((f) => gd(f.toolName) === n.toolName && f.ruleContent === n.ruleContent) : [];
+      return [...u.length > 0 ? [{
+        ...i,
+        rules: u
+      }] : [], ...c.length > 0 ? [{
+        ...i,
+        destination: "session",
+        rules: c
+      }] : []]
+    });
+  return r ? s : e
+}
+var ee = "tengu_cached_pebble";
+
+function sme() {
+  return E(ee, !1) === !0
+}
+
+function S2n(e) {
+  return ju() || !e && sme() && !Eg()
+}
+
+function w2n() {
+  return ju() && sme()
+}
+var F = He(new Set, (e) => e.clear());
+
+function v2n(e, n) {
+  let o = e.toolName;
+  if (F.has(o)) return;
+  F.add(o), t(n.mcpInfo ? `Allow rule "${o}" does not allow the tools named "${uo(n.mcpInfo.serverName)}<tool>": they belong to another MCP server than the rule names. To allow them, use "${uo(n.mcpInfo.serverName)}*".` : `Allow rule "${o}" does not allow "${n.name}": the name reads as more than one MCP server's. To allow it, use the tool's full name.`, {
+    level: "warn"
+  })
+}
+var ne = new z(() => new Set);
+
+function jCo(e, n) {
+  for (let o of n) x().add(si(e, o))
+}
+
+function w(e) {
+  if (!e.startsWith("mcp__")) return !1;
+  for (let n of x())
+    if (e === n || NKs(e, {
+        name: n
+      })) return !0;
+  return !1
+}
+
+function aDs() {
+  return x().size > 0
+}
+
+function x() {
+  return ne.of(j().host)
+}
+var oe = [],
+  E2n = [...oe, "python", "python3", "python2", "node", "deno", "tsx", "ruby", "perl", "php", "lua", "npx", "bunx", "npm run", "yarn run", "pnpm run", "bun run", "bash", "sh", "ssh"],
+  WCo = [...E2n, "zsh", "fish", "eval", "exec", "env", "xargs", "sudo"],
+  Xxr = ["curl", "wget", "kubectl", "aws", "gcloud", "gsutil"],
+  Jxr = [],
+  U = new Set([...Xxr, ...Jxr]),
+  H = {
+    kubectl: new Set(["exec", "apply", "create", "delete", "run", "cp", "port-forward", "proxy", "patch", "edit", "replace", "attach", "debug", "scale", "rollout", "drain", "cordon", "taint"]),
+    ...!1
+  },
+  V = [...WCo, ...[]];
+
+function Qxr(e, n) {
+  if (e !== We) return !1;
+  if (n === void 0 || n === "") return !0;
+  if (/^[\s*]+$/.test(n)) return !0;
+  return T2n(n, V)
+}
+
+function T2n(e, n) {
+  let o = e.trim().toLowerCase();
+  if (o === "*") return !0;
+  for (let r of n) {
+    let s = r.toLowerCase();
+    if (o === s) return !0;
+    if (o === `${s}:*` || o === `${s} *`) return !0;
+    if (o === `${s}*`) return !0;
+    if (o.startsWith(`${s} `) && o.endsWith("*")) {
+      let i = o.slice(s.length + 1);
+      if (U.has(s)) {
+        if (/[$`]/.test(i)) return !0;
+        let m = H[s];
+        if (m === "all") return !0;
+        let l = i.replace(/[\s:*]+$/, "").split(/\s+/).filter(Boolean),
+          u = 0;
+        for (; u < l.length; u++) {
+          let f = l[u];
+          if (!f.startsWith("-")) break;
+          if (!f.includes("=") && u + 1 < l.length && !l[u + 1].startsWith("-")) u++
+        }
+        let c = l[u];
+        if (c === void 0) {
+          if ((s === "curl" || s === "wget") && l.some((f) => f.includes("://"))) continue;
+          return !0
+        }
+        if (m?.has(c)) return !0;
+        continue
+      }
+      if (i.startsWith("-")) {
+        let m = i.slice(0, -1);
+        if (!(/^python[\d.]*$/.test(s) && /^-m\s+\w+\.[\w.]+(\s*:|\s+)$/.test(m))) return !0
+      }
+    }
+  }
+  return !1
+}
+
+function Zxr(e, n) {
+  if (e !== xt) return !1;
+  if (n === void 0 || n === "") return !0;
+  if (/^[\s*]+$/.test(n)) return !0;
+  let o = n.trim().toLowerCase();
+  if (o === "*") return !0;
+  let r = [...E2n, "pwsh", "powershell", "cmd", "wsl", "iex", "invoke-expression", "icm", "invoke-command", "start-process", "saps", "start", "start-job", "sajb", "start-threadjob", "invoke-wmimethod", "iwmi", "invoke-cimmethod", "icim", "wmic", "register-objectevent", "register-engineevent", "register-wmievent", "register-scheduledjob", "new-pssession", "nsn", "enter-pssession", "etsn", "add-type", "new-object"];
+  for (let s of r) {
+    if (o === s) return !0;
+    if (o === `${s}:*`) return !0;
+    if (o === `${s}*`) return !0;
+    if (o === `${s} *`) return !0;
+    if (o.startsWith(`${s} -`) && o.endsWith("*")) return !0;
+    let i = s.indexOf(" "),
+      m = i === -1 ? `${s}.exe` : `${s.slice(0,i)}.exe${s.slice(i)}`;
+    if (o === m) return !0;
+    if (o === `${m}:*`) return !0;
+    if (o === `${m}*`) return !0;
+    if (o === `${m} *`) return !0;
+    if (o.startsWith(`${m} -`) && o.endsWith("*")) return !0
+  }
+  return !1
+}
+
+function CJs(e, n) {
+  return gd(e) === ht
+}
+
+function te(e) {
+  return e === Yi
+}
+class W {
+  verdicts = new Map;
+  lookup(e) {
+    return this.verdicts.get(e)
+  }
+  remember(e, n) {
+    this.verdicts.set(e, n)
+  }
+  reset() {
+    this.verdicts.clear()
+  }
+}
+var B = new W;
+
+function g1e() {
+  return oP() || KHo()
+}
+
+function QLt(e, n) {
+  let o = `${e}\x00${n??""}`,
+    r = B.lookup(o);
+  if (r !== void 0) return r;
+  let s = Qxr(e, n) || Zxr(e, n) || CJs(e, n) || te(e) || e === import.meta.require("B:/~BUN/root/chunk-h1h124j8.js").APPIFACT_REPL_TOOL_NAME;
+  return B.remember(o, s), s
+}
+
+function ePr(e) {
+  return w(Cc(e)) || oP() && QLt(e.name, void 0)
+}
+
+function fae(e, n) {
+  if ((e === We || e === xt) && g1e()) return !0;
+  if (w(e)) return !0;
+  return QLt(e, n)
+}
+
+function lDs(e) {
+  if (e === We || e === xt) return g1e() ? void 0 : e;
+  if (FC(e) || fae(e, void 0) || C2n(e)) return;
+  return e === Kt || e === Ji ? dt : e
+}
+var se = new Set(Array.from(nVs, (e) => si(Ec, e)));
+
+function C2n(e) {
+  return se.has(e)
+}
+var UU = [...xs, "cliArg", "command", "session", "toolsNarrowing", "mcpServerPolicy", "hostCredential"],
+  h1e = ["toolsNarrowing", "command"],
+  ie = new Set([import.meta.require("B:/~BUN/root/chunk-wn2e3h4c.js").END_CONVERSATION_TOOL_NAME]);
+
+function u3(e) {
+  return !e.mcpInfo && ie.has(e.name)
+}
+
+function IN(e) {
+  if ($s(e.mode, e.servedCall === !0)) {
+    let r = a.CLAUDE_CODE_EVAL_CONFINED ? {
+        cliArg: e.alwaysAllowRules.cliArg
+      } : e.alwaysAllowRules,
+      s = [];
+    for (let i of UU) {
+      let m = r[i];
+      if (m === void 0) continue;
+      for (let l of m) {
+        let u = zn(l);
+        if (fae(u.toolName, u.ruleContent)) continue;
+        if (C2n(u.toolName)) continue;
+        if (C(i, u.toolName)) continue;
+        s.push({
+          source: i,
+          ruleBehavior: "allow",
+          ruleValue: u
+        })
+      }
+    }
+    return s
+  }
+  if (a.CLAUDE_CODE_EVAL_CONFINED) return y1e({
+    cliArg: e.alwaysAllowRules.cliArg
+  }, "allow");
+  let n = y1e(e.alwaysAllowRules, "allow"),
+    o;
+  for (let [r, s] of n.entries())
+    if (C(s.source, s.ruleValue.toolName)) o ??= n.slice(0, r);
+    else o?.push(s);
+  return o ?? n
+}
+
+function y1e(e, n) {
+  let o = [];
+  for (let r of UU) {
+    let s = e[r];
+    if (s === void 0) continue;
+    for (let i of s) o.push({
+      source: r,
+      ruleBehavior: n,
+      ruleValue: zn(i)
+    })
+  }
+  return o
+}
+
+function dc(e) {
+  return y1e(e.alwaysDenyRules, "deny")
+}
+
+function sg(e) {
+  return y1e(e.alwaysAskRules, "ask")
+}
+
+function Oon(e, n, o = {}) {
+  if (n.ruleValue.ruleContent !== void 0) return !1;
+  return y(e, n, o)
+}
+
+function y(e, n, {
+  proxyExpansion: o = !1,
+  globMatching: r = !1,
+  toolAliases: s
+} = {}, i = b(n), m = T(e, s)) {
+  let l = m.name;
+  if (n.ruleValue.toolName === l) return !0;
+  let u = "familyParentToolName" in e ? e.familyParentToolName : void 0;
+  if (u !== void 0 && e.mcpInfo === void 0 && n.ruleValue.toolName === u) return !0;
+  if (o && Rne(n.ruleValue.toolName, s).includes(l)) return !0;
+  let {
+    matchesGlob: c
+  } = i;
+  if (r && c !== void 0 && (c(l) || o && m.aliasSources().some(c))) return !0;
+  let f = i.coversMcpTool(m.mcpInfo());
+  if (n.ruleBehavior === "allow") {
+    if (!f) return !1;
+    if (OBo(n.ruleValue.toolName, e)) return !0;
+    return v2n(n.ruleValue, e), !1
+  }
+  return f || Y(n) && m.mcpServerRuleNames().includes(n.ruleValue.toolName)
+}
+
+function Y({
+  source: e,
+  ruleValue: n
+}) {
+  return e !== "mcpServerPolicy" && n.toolName.startsWith(KJ)
+}
+
+function b({
+  ruleValue: {
+    toolName: e
+  }
+}) {
+  let n, o;
+  return {
+    matchesGlob: nE(e) ? (r) => (n ??= O9n(e))(r) : void 0,
+    coversMcpTool: (r) => (o ??= PBo(e))(r)
+  }
+}
+
+function T(e, n) {
+  let o = Cc(e),
+    r, s, i;
+  return {
+    name: o,
+    mcpInfo: () => i === void 0 ? i = co(o) : i,
+    aliasSources: () => r ??= O2(o, n),
+    mcpServerRuleNames: () => s ??= N7e(e)
+  }
+}
+
+function _K(e, n) {
+  return IN(e).find((o) => Oon(n, o)) || null
+}
+
+function g(e) {
+  return e.source !== "cliArg" && e.source !== "toolsNarrowing"
+}
+
+function fO(e, n, o, r = b(o), s, i = !1) {
+  let m = {
+    proxyExpansion: g(o),
+    globMatching: !0,
+    toolAliases: e.toolAliases
+  };
+  if (y(n, o, m, r, s)) return !0;
+  if (("aliasSkillToolNames" in n ? n.aliasSkillToolNames : void 0)?.some((c) => y({
+      name: c
+    }, o, m, r))) return !0;
+  let u = "packagingAliasSkillToolNames" in n ? n.packagingAliasSkillToolNames : void 0;
+  if (u === void 0 || nE(o.ruleValue.toolName) && !S2n(i)) return !1;
+  return u.some((c) => y({
+    name: c
+  }, o, m, r))
+}
+
+function Ho(e, n, o, r = !1) {
+  if (u3(n)) return null;
+  let s;
+  return (o ?? dc(e)).find((i) => N(n, i, e, void 0, s ??= T(n, e.toolAliases), r)) || null
+}
+
+function zCo(e) {
+  return /^[\s*]+$/.test(e)
+}
+
+function le(e) {
+  return e.startsWith("//") && /^\/(?:\*\*\/)?\*+(?:\/\*\*)?$/.test(e.replace(/\/{2,}/g, "/"))
+}
+var G = [dt, Kt, Ji],
+  X = [Qe, Pr, ao],
+  ae = new Map([
+    [Qe, {
+      deny: [...X, dt, Kt],
+      ask: X
+    }],
+    [dt, {
+      deny: G,
+      ask: G
+    }]
+  ]);
+
+function S({
+  ruleBehavior: e,
+  ruleValue: {
+    toolName: n,
+    ruleContent: o
+  }
+}, r) {
+  if (o === void 0 || e === "allow") return !1;
+  return n === We ? r === We && zCo(o) : le(o) && (ae.get(n)?.[e] ?? []).includes(r)
+}
+
+function N(e, n, o, r, s, i = !1) {
+  if (n.ruleValue.ruleContent === void 0) return fO(o, e, n, r, s, i);
+  let {
+    name: m,
+    aliasSources: l
+  } = s ?? T(e, o.toolAliases), u = n.ruleValue.toolName === m, c = g(n);
+  return l().some((f) => f !== m && (c && S(n, f) || u && S(K(f, n), f)))
+}
+
+function K(e, n) {
+  return {
+    ...n,
+    ruleValue: {
+      ...n.ruleValue,
+      toolName: e
+    }
+  }
+}
+
+function ue(e) {
+  if (nE(e)) return !0;
+  let n = co(e);
+  return n !== null && n.toolName === void 0
+}
+
+function GCo(e, n) {
+  let o = new Set,
+    r = new Set,
+    s = new Set,
+    i = [],
+    m = [];
+  for (let l of n) {
+    let {
+      toolName: u,
+      ruleContent: c
+    } = l.ruleValue;
+    if (c !== void 0) {
+      if (Object.entries(e.toolAliases ?? {}).some(([d, _]) => S(l, d) || _ === u && S(K(d, l), d))) m.push(l);
+      continue
+    }
+    if (ue(u)) {
+      i.push({
+        rule: l,
+        ruleName: b(l)
+      });
+      continue
+    }
+    if (Y(l)) s.add(u);
+    r.add(u);
+    let f = g(l) ? Rne(u, e.toolAliases) : [u];
+    for (let d of f) o.add(d)
+  }
+  return {
+    names: o,
+    parentNames: r,
+    mcpServerNames: s,
+    patterns: i,
+    withContent: m
+  }
+}
+
+function ime(e) {
+  let n = dc(e);
+  return {
+    rules: n,
+    index: GCo(e, n)
+  }
+}
+
+function _9e(e, n, o) {
+  if (u3(o) || n.names.size === 0 && n.patterns.length === 0 && n.withContent.length === 0) return !1;
+  let r = T(o, e.toolAliases);
+  if (n.names.has(r.name)) return !0;
+  let s = "familyParentToolName" in o ? o.familyParentToolName : void 0;
+  if (s !== void 0 && o.mcpInfo === void 0 && n.parentNames.has(s)) return !0;
+  let i = "aliasSkillToolNames" in o ? o.aliasSkillToolNames : void 0;
+  if (i?.some((l) => n.names.has(l))) return !0;
+  let m = "packagingAliasSkillToolNames" in o ? o.packagingAliasSkillToolNames : void 0;
+  if (m?.some((l) => n.names.has(l))) return !0;
+  if (n.mcpServerNames.size > 0 && (r.mcpServerRuleNames().some((l) => n.mcpServerNames.has(l)) || [...i ?? [], ...m ?? []].some((l) => N7e({
+      name: l
+    }).some((u) => n.mcpServerNames.has(u))))) return !0;
+  return n.patterns.some(({
+    rule: l,
+    ruleName: u
+  }) => N(o, l, e, u, r)) || r.aliasSources().length > 0 && n.withContent.some((l) => N(o, l, e, void 0, r))
+}
+
+function dDs(e, n) {
+  if (!u3(n)) return !1;
+  if (IN(e).some((r) => r.ruleValue.toolName === n.name)) return !1;
+  return dc(e).some((r) => Oon(n, r, {
+    proxyExpansion: g(r),
+    globMatching: !0,
+    toolAliases: e.toolAliases
+  }))
+}
+
+function mae(e, n, o) {
+  return dc(e).find((r) => r.ruleValue.toolName === n && r.ruleValue.ruleContent === o) || null
+}
+
+function cDs(e, n, o) {
+  return sg(e).find((r) => r.ruleValue.toolName === n && r.ruleValue.ruleContent === o) || null
+}
+
+function uDs(e, n, o) {
+  let r = new Set;
+  for (let s of dc(n))
+    if (s.ruleValue.toolName === o && s.ruleValue.ruleContent !== void 0) r.add(s.ruleValue.ruleContent);
+  return e.filter((s) => !r.has(s.agentType))
+}
+
+function Ul(e, n, o) {
+  if (u3(n)) return null;
+  let r;
+  return (o ?? sg(e)).find((s) => N(n, s, e, void 0, r ??= T(n, e.toolAliases))) || null
+}
+
+function me(e) {
+  if (e === void 0 || e === null) return null;
+  if (typeof e !== "object") return String(e);
+  return null
+}
+
+function ce(e) {
+  let n = e.indexOf(":");
+  if (n <= 0) return null;
+  let o = e.slice(0, n).trim(),
+    r = e.slice(n + 1).trim();
+  return o === "" || r === "" ? null : {
+    key: o,
+    expected: r
+  }
+}
+
+function Aft(e, n) {
+  return `Permission to use ${e} with ${n.ruleValue.ruleContent} has been denied.`
+}
+
+function Bg(e, n, o, r) {
+  let s = Cc(n),
+    i = [..."aliasSkillToolNames" in n ? n.aliasSkillToolNames ?? [] : [], ..."packagingAliasSkillToolNames" in n ? n.packagingAliasSkillToolNames ?? [] : []],
+    m = [
+      [s, !1], ...i.map((u) => [u, !1]), ...O2(s, e.toolAliases).map((u) => [u, !0])
+    ];
+  for (let [u, c] of m) {
+    let f = oke(e, u, r).filter((d) => !c || g(d));
+    for (let [d = "", _] of new Map(f.map((p) => [p.ruleValue.ruleContent, p]))) {
+      let p = ce(d);
+      if (p === null) continue;
+      let {
+        key: P,
+        expected: h
+      } = p;
+      if (P === n.ruleContentField) continue;
+      let A = P === nIe && !Object.hasOwn(o, P) && Object.hasOwn(o, Ur) ? Ur : P;
+      if (!Object.hasOwn(o, A)) continue;
+      let O = me(o[A]);
+      if (O === null) continue;
+      if (I2(h, O.trim())) return _;
+      if (s === go && A === "skill") {
+        let J = O.trim(),
+          I = N$r(J);
+        if (I !== void 0) {
+          if ((!h.includes("*") || ju()) && I2(h, I)) return _
+        }
+      }
+    }
+  }
+  let l = "familyParentToolName" in n ? n.familyParentToolName : void 0;
+  if (l !== void 0 && n.mcpInfo === void 0 && n.toFamilyParentInput !== void 0) return Bg(e, {
+    name: l,
+    ruleContentField: n.ruleContentField
+  }, n.toFamilyParentInput(o), r);
+  return null
+}
+
+function gae(e, n, o) {
+  return MN(e, Cc(n), o)
+}
+
+function MN(e, n, o) {
+  let r = new Map;
+  for (let s of oke(e, n, o))
+    if (s.ruleValue.ruleContent !== void 0) r.set(s.ruleValue.ruleContent, s);
+  return r
+}
+
+function oke(e, n, o) {
+  let r = [];
+  switch (o) {
+    case "allow":
+      r = IN(e);
+      break;
+    case "deny":
+      r = dc(e);
+      break;
+    case "ask":
+      r = sg(e);
+      break
+  }
+  let s = [];
+  for (let i of r)
+    if (i.ruleValue.toolName === n && i.ruleValue.ruleContent !== void 0 && i.ruleBehavior === o) s.push(i);
+  return s
+}
+export {
+  xon,
+  pae,
+  b2n,
+  JLt,
+  c3,
+  sme,
+  S2n,
+  w2n,
+  v2n,
+  k2n,
+  UCo,
+  rke,
+  BCo,
+  iDs,
+  Yxr,
+  FC,
+  Pon,
+  jCo,
+  aDs,
+  E2n,
+  WCo,
+  Xxr,
+  Jxr,
+  Qxr,
+  T2n,
+  Zxr,
+  CJs,
+  g1e,
+  QLt,
+  ePr,
+  fae,
+  lDs,
+  C2n,
+  UU,
+  h1e,
+  u3,
+  IN,
+  y1e,
+  dc,
+  sg,
+  Oon,
+  _K,
+  fO,
+  Ho,
+  zCo,
+  GCo,
+  ime,
+  _9e,
+  dDs,
+  mae,
+  cDs,
+  uDs,
+  Ul,
+  Aft,
+  Bg,
+  gae,
+  MN,
+  oke
+};

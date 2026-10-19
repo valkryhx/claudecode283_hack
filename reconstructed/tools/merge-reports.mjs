@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, "..");
+const ROOT = process.env.RE_ROOT ? path.resolve(process.env.RE_ROOT) : path.resolve(__dirname, "..");
 const N = parseInt(process.argv[2] || "6", 10);
 
 function merge(base) {

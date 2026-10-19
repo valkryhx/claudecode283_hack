@@ -1,0 +1,2601 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  vfn,
+  Ct
+} from "B:/~BUN/root/chunk-28dw3zbk.js";
+import {
+  Fe,
+  ws
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  L,
+  j,
+  so,
+  we
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  z,
+  eo
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  g,
+  m,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  se,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  tWt
+} from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import {
+  D
+} from "B:/~BUN/root/chunk-psh1mp8h.js";
+import {
+  N5,
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  cI
+} from "B:/~BUN/root/chunk-j8w5f307.js";
+import {
+  aE
+} from "B:/~BUN/root/chunk-3q5m6gqn.js";
+import {
+  l0
+} from "B:/~BUN/root/chunk-q9dtdza4.js";
+import {
+  He
+} from "B:/~BUN/root/chunk-8znbjmp4.js";
+import {
+  ve,
+  R,
+  Ue
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+var j0e = R(function(Vt) {
+  Vt.HttpAuthLocation = void 0;
+  (function(e) {
+    e.HEADER = "header", e.QUERY = "query"
+  })(Vt.HttpAuthLocation || (Vt.HttpAuthLocation = {}));
+  Vt.HttpApiKeyAuthLocation = void 0;
+  (function(e) {
+    e.HEADER = "header", e.QUERY = "query"
+  })(Vt.HttpApiKeyAuthLocation || (Vt.HttpApiKeyAuthLocation = {}));
+  Vt.EndpointURLScheme = void 0;
+  (function(e) {
+    e.HTTP = "http", e.HTTPS = "https"
+  })(Vt.EndpointURLScheme || (Vt.EndpointURLScheme = {}));
+  Vt.AlgorithmId = void 0;
+  (function(e) {
+    e.MD5 = "md5", e.CRC32 = "crc32", e.CRC32C = "crc32c", e.SHA1 = "sha1", e.SHA256 = "sha256"
+  })(Vt.AlgorithmId || (Vt.AlgorithmId = {}));
+  var Xt = (e) => {
+      let n = [];
+      if (e.sha256 !== void 0) n.push({
+        algorithmId: () => Vt.AlgorithmId.SHA256,
+        checksumConstructor: () => e.sha256
+      });
+      if (e.md5 != null) n.push({
+        algorithmId: () => Vt.AlgorithmId.MD5,
+        checksumConstructor: () => e.md5
+      });
+      return {
+        addChecksumAlgorithm(r) {
+          n.push(r)
+        },
+        checksumAlgorithms() {
+          return n
+        }
+      }
+    },
+    Kt = (e) => {
+      let n = {};
+      return e.checksumAlgorithms().forEach((r) => {
+        n[r.algorithmId()] = r.checksumConstructor()
+      }), n
+    },
+    Wt = (e) => Xt(e),
+    zt = (e) => Kt(e);
+  Vt.FieldPosition = void 0;
+  (function(e) {
+    e[e.HEADER = 0] = "HEADER", e[e.TRAILER = 1] = "TRAILER"
+  })(Vt.FieldPosition || (Vt.FieldPosition = {}));
+  var Yt = "__smithy_context";
+  Vt.IniSectionType = void 0;
+  (function(e) {
+    e.PROFILE = "profile", e.SSO_SESSION = "sso-session", e.SERVICES = "services"
+  })(Vt.IniSectionType || (Vt.IniSectionType = {}));
+  Vt.RequestHandlerProtocol = void 0;
+  (function(e) {
+    e.HTTP_0_9 = "http/0.9", e.HTTP_1_0 = "http/1.0", e.TDS_8_0 = "tds/8.0"
+  })(Vt.RequestHandlerProtocol || (Vt.RequestHandlerProtocol = {}));
+  Vt.SMITHY_CONTEXT_KEY = Yt;
+  Vt.getDefaultClientConfiguration = Wt;
+  Vt.resolveDefaultRuntimeConfig = zt
+});
+var bg = R(function(on) {
+  var Zt = j0e(),
+    en = (e) => ({
+      setHttpHandler(n) {
+        e.httpHandler = n
+      },
+      httpHandler() {
+        return e.httpHandler
+      },
+      updateHttpClientConfig(n, r) {
+        e.httpHandler?.updateHttpClientConfig(n, r)
+      },
+      httpHandlerConfigs() {
+        return e.httpHandler.httpHandlerConfigs()
+      }
+    }),
+    tn = (e) => ({
+      httpHandler: e.httpHandler()
+    });
+  class Le {
+    name;
+    kind;
+    values;
+    constructor({
+      name: e,
+      kind: n = Zt.FieldPosition.HEADER,
+      values: r = []
+    }) {
+      this.name = e, this.kind = n, this.values = r
+    }
+    add(e) {
+      this.values.push(e)
+    }
+    set(e) {
+      this.values = e
+    }
+    remove(e) {
+      this.values = this.values.filter((n) => n !== e)
+    }
+    toString() {
+      return this.values.map((e) => e.includes(",") || e.includes(" ") ? `"${e}"` : e).join(", ")
+    }
+    get() {
+      return this.values
+    }
+  }
+  class ke {
+    entries = {};
+    encoding;
+    constructor({
+      fields: e = [],
+      encoding: n = "utf-8"
+    }) {
+      e.forEach(this.setField.bind(this)), this.encoding = n
+    }
+    setField(e) {
+      this.entries[e.name.toLowerCase()] = e
+    }
+    getField(e) {
+      return this.entries[e.toLowerCase()]
+    }
+    removeField(e) {
+      delete this.entries[e.toLowerCase()]
+    }
+    getByType(e) {
+      return Object.values(this.entries).filter((n) => n.kind === e)
+    }
+  }
+  class J {
+    method;
+    protocol;
+    hostname;
+    port;
+    path;
+    query;
+    headers;
+    username;
+    password;
+    fragment;
+    body;
+    constructor(e) {
+      this.method = e.method || "GET", this.hostname = e.hostname || "localhost", this.port = e.port, this.query = e.query || {}, this.headers = e.headers || {}, this.body = e.body, this.protocol = e.protocol ? e.protocol.slice(-1) !== ":" ? `${e.protocol}:` : e.protocol : "https:", this.path = e.path ? e.path.charAt(0) !== "/" ? `/${e.path}` : e.path : "/", this.username = e.username, this.password = e.password, this.fragment = e.fragment
+    }
+    static clone(e) {
+      let n = new J({
+        ...e,
+        headers: {
+          ...e.headers
+        }
+      });
+      if (n.query) n.query = nn(n.query);
+      return n
+    }
+    static isInstance(e) {
+      if (!e) return !1;
+      let n = e;
+      return "method" in n && "protocol" in n && "hostname" in n && "path" in n && typeof n.query === "object" && typeof n.headers === "object"
+    }
+    clone() {
+      return J.clone(this)
+    }
+  }
+
+  function nn(e) {
+    return Object.keys(e).reduce((n, r) => {
+      let o = e[r];
+      return {
+        ...n,
+        [r]: Array.isArray(o) ? [...o] : o
+      }
+    }, {})
+  }
+  class De {
+    statusCode;
+    reason;
+    headers;
+    body;
+    constructor(e) {
+      this.statusCode = e.statusCode, this.reason = e.reason, this.headers = e.headers || {}, this.body = e.body
+    }
+    static isInstance(e) {
+      if (!e) return !1;
+      let n = e;
+      return typeof n.statusCode === "number" && typeof n.headers === "object"
+    }
+  }
+
+  function rn(e) {
+    return /^[a-z0-9][a-z0-9\.\-]*[a-z0-9]$/.test(e)
+  }
+  on.Field = Le;
+  on.Fields = ke;
+  on.HttpRequest = J;
+  on.HttpResponse = De;
+  on.getHttpHandlerExtensionConfiguration = en;
+  on.isValidHostname = rn;
+  on.resolveHttpHandlerRuntimeConfig = tn
+});
+var t1o = R(function(gn) {
+  var Ie = (e) => encodeURIComponent(e).replace(/[!'()*]/g, pn),
+    pn = (e) => `%${e.charCodeAt(0).toString(16).toUpperCase()}`,
+    hn = (e) => e.split("/").map(Ie).join("/");
+  gn.escapeUri = Ie;
+  gn.escapeUriPath = hn
+});
+var n1o = R(function(En) {
+  var pe = t1o();
+
+  function Cn(e) {
+    let n = [];
+    for (let r of Object.keys(e).sort()) {
+      let o = e[r];
+      if (r = pe.escapeUri(r), Array.isArray(o))
+        for (let s = 0, i = o.length; s < i; s++) n.push(`${r}=${pe.escapeUri(o[s])}`);
+      else {
+        let s = r;
+        if (o || typeof o === "string") s += `=${pe.escapeUri(o)}`;
+        n.push(s)
+      }
+    }
+    return n.join("&")
+  }
+  En.buildQueryString = Cn
+});
+var sL = R(function(Hn) {
+  var Me = bg(),
+    je = n1o(),
+    Z = Ue("http"),
+    ee = Ue("https"),
+    qe = Ue("stream"),
+    he = Ue("http2"),
+    _n = ["ECONNRESET", "EPIPE", "ETIMEDOUT"],
+    Xe = (e) => {
+      let n = {};
+      for (let r of Object.keys(e)) {
+        let o = e[r];
+        n[r] = Array.isArray(o) ? o.join(",") : o
+      }
+      return n
+    },
+    H = {
+      setTimeout: (e, n) => setTimeout(e, n),
+      clearTimeout: (e) => clearTimeout(e)
+    },
+    Ne = 1000,
+    xn = (e, n, r = 0) => {
+      if (!r) return -1;
+      let o = (s) => {
+        let i = H.setTimeout(() => {
+            e.destroy(), n(Object.assign(Error(`@smithy/node-http-handler - the request socket did not establish a connection with the server within the configured timeout of ${r} ms.`), {
+              name: "TimeoutError"
+            }))
+          }, r - s),
+          c = (u) => {
+            if (u?.connecting) u.on("connect", () => {
+              H.clearTimeout(i)
+            });
+            else H.clearTimeout(i)
+          };
+        if (e.socket) c(e.socket);
+        else e.on("socket", c)
+      };
+      if (r < 2000) return o(0), 0;
+      return H.setTimeout(o.bind(null, Ne), Ne)
+    },
+    Sn = (e, n, r = 0, o, s) => {
+      if (r) return H.setTimeout(() => {
+        let i = `@smithy/node-http-handler - [${o?"ERROR":"WARN"}] a request has exceeded the configured ${r} ms requestTimeout.`;
+        if (o) {
+          let c = Object.assign(Error(i), {
+            name: "TimeoutError",
+            code: "ETIMEDOUT"
+          });
+          e.destroy(c), n(c)
+        } else i += " Init client requestHandler with throwOnRequestTimeout=true to turn this into an error.", s?.warn?.(i)
+      }, r);
+      return -1
+    },
+    Tn = 3000,
+    bn = (e, {
+      keepAlive: n,
+      keepAliveMsecs: r
+    }, o = Tn) => {
+      if (n !== !0) return -1;
+      let s = () => {
+        if (e.socket) e.socket.setKeepAlive(n, r || 0);
+        else e.on("socket", (i) => {
+          i.setKeepAlive(n, r || 0)
+        })
+      };
+      if (o === 0) return s(), 0;
+      return H.setTimeout(s, o)
+    },
+    $e = 3000,
+    Pn = (e, n, r = 0) => {
+      let o = (s) => {
+        let i = r - s,
+          c = () => {
+            e.destroy(), n(Object.assign(Error(`@smithy/node-http-handler - the request socket timed out after ${r} ms of inactivity (configured by client requestHandler).`), {
+              name: "TimeoutError"
+            }))
+          };
+        if (e.socket) e.socket.setTimeout(i, c), e.on("close", () => e.socket?.removeListener("timeout", c));
+        else e.setTimeout(i, c)
+      };
+      if (0 < r && r < 6000) return o(0), 0;
+      return H.setTimeout(o.bind(null, r === 0 ? 0 : $e), $e)
+    },
+    Be = 6000;
+  async function Ke(e, n, r = Be, o = !1) {
+    let s = n.headers ?? {},
+      i = s.Expect || s.expect,
+      c = -1,
+      u = !0;
+    if (!o && i === "100-continue") u = await Promise.race([new Promise((l) => {
+      c = Number(H.setTimeout(() => l(!0), Math.max(Be, r)))
+    }), new Promise((l) => {
+      e.on("continue", () => {
+        H.clearTimeout(c), l(!0)
+      }), e.on("response", () => {
+        H.clearTimeout(c), l(!1)
+      }), e.on("error", () => {
+        H.clearTimeout(c), l(!1)
+      })
+    })]);
+    if (u) vn(e, n.body)
+  }
+
+  function vn(e, n) {
+    if (n instanceof qe.Readable) {
+      n.pipe(e);
+      return
+    }
+    if (n) {
+      if (Buffer.isBuffer(n) || typeof n === "string") {
+        e.end(n);
+        return
+      }
+      let r = n;
+      if (typeof r === "object" && r.buffer && typeof r.byteOffset === "number" && typeof r.byteLength === "number") {
+        e.end(Buffer.from(r.buffer, r.byteOffset, r.byteLength));
+        return
+      }
+      e.end(Buffer.from(n));
+      return
+    }
+    e.end()
+  }
+  var wn = 0;
+  class te {
+    config;
+    configProvider;
+    socketWarningTimestamp = 0;
+    externalAgent = !1;
+    metadata = {
+      handlerProtocol: "http/1.1"
+    };
+    static create(e) {
+      if (typeof e?.handle === "function") return e;
+      return new te(e)
+    }
+    static checkSocketUsage(e, n, r = console) {
+      let {
+        sockets: o,
+        requests: s,
+        maxSockets: i
+      } = e;
+      if (typeof i !== "number" || i === 1 / 0) return n;
+      let c = 15000;
+      if (Date.now() - c < n) return n;
+      if (o && s)
+        for (let u in o) {
+          let l = o[u]?.length ?? 0,
+            f = s[u]?.length ?? 0;
+          if (l >= i && f >= 2 * i) return r?.warn?.(`@smithy/node-http-handler:WARN - socket usage at capacity=${l} and ${f} additional requests are enqueued.
+See https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/node-configuring-maxsockets.html
+or increase socketAcquisitionWarningTimeout=(millis) in the NodeHttpHandler config.`), Date.now()
+        }
+      return n
+    }
+    constructor(e) {
+      this.configProvider = new Promise((n, r) => {
+        if (typeof e === "function") e().then((o) => {
+          n(this.resolveDefaultConfig(o))
+        }).catch(r);
+        else n(this.resolveDefaultConfig(e))
+      })
+    }
+    resolveDefaultConfig(e) {
+      let {
+        requestTimeout: n,
+        connectionTimeout: r,
+        socketTimeout: o,
+        socketAcquisitionWarningTimeout: s,
+        httpAgent: i,
+        httpsAgent: c,
+        throwOnRequestTimeout: u
+      } = e || {}, l = !0, f = 50;
+      return {
+        connectionTimeout: r,
+        requestTimeout: n,
+        socketTimeout: o,
+        socketAcquisitionWarningTimeout: s,
+        throwOnRequestTimeout: u,
+        httpAgent: (() => {
+          if (i instanceof Z.Agent || typeof i?.destroy === "function") return this.externalAgent = !0, i;
+          return new Z.Agent({
+            keepAlive: !0,
+            maxSockets: 50,
+            ...i
+          })
+        })(),
+        httpsAgent: (() => {
+          if (c instanceof ee.Agent || typeof c?.destroy === "function") return this.externalAgent = !0, c;
+          return new ee.Agent({
+            keepAlive: !0,
+            maxSockets: 50,
+            ...c
+          })
+        })(),
+        logger: console
+      }
+    }
+    destroy() {
+      this.config?.httpAgent?.destroy(), this.config?.httpsAgent?.destroy()
+    }
+    async handle(e, {
+      abortSignal: n,
+      requestTimeout: r
+    } = {}) {
+      if (!this.config) this.config = await this.configProvider;
+      return new Promise((o, s) => {
+        let i = this.config,
+          c = void 0,
+          u = [],
+          l = async (C) => {
+            await c, u.forEach(H.clearTimeout), o(C)
+          }, f = async (C) => {
+            await c, u.forEach(H.clearTimeout), s(C)
+          };
+        if (n?.aborted) {
+          let C = Error("Request aborted");
+          C.name = "AbortError", f(C);
+          return
+        }
+        let h = e.protocol === "https:",
+          A = e.headers ?? {},
+          E = (A.Expect ?? A.expect) === "100-continue",
+          y = h ? i.httpsAgent : i.httpAgent;
+        if (E && !this.externalAgent) y = new(h ? ee.Agent : Z.Agent)({
+          keepAlive: !1,
+          maxSockets: 1 / 0
+        });
+        u.push(H.setTimeout(() => {
+          this.socketWarningTimestamp = te.checkSocketUsage(y, this.socketWarningTimestamp, i.logger)
+        }, i.socketAcquisitionWarningTimeout ?? (i.requestTimeout ?? 2000) + (i.connectionTimeout ?? 1000)));
+        let d = je.buildQueryString(e.query || {}),
+          T = void 0;
+        if (e.username != null || e.password != null) {
+          let C = e.username ?? "",
+            x = e.password ?? "";
+          T = `${C}:${x}`
+        }
+        let b = e.path;
+        if (d) b += `?${d}`;
+        if (e.fragment) b += `#${e.fragment}`;
+        let P = e.hostname ?? "";
+        if (P[0] === "[" && P.endsWith("]")) P = e.hostname.slice(1, -1);
+        else P = e.hostname;
+        let v = {
+            headers: e.headers,
+            host: P,
+            method: e.method,
+            path: b,
+            port: e.port,
+            agent: y,
+            auth: T
+          },
+          _ = (h ? ee.request : Z.request)(v, (C) => {
+            let x = new Me.HttpResponse({
+              statusCode: C.statusCode || -1,
+              reason: C.statusMessage,
+              headers: Xe(C.headers),
+              body: C
+            });
+            l({
+              response: x
+            })
+          });
+        if (_.on("error", (C) => {
+            if (_n.includes(C.code)) f(Object.assign(C, {
+              name: "TimeoutError"
+            }));
+            else f(C)
+          }), n) {
+          let C = () => {
+            _.destroy();
+            let x = Error("Request aborted");
+            x.name = "AbortError", f(x)
+          };
+          if (typeof n.addEventListener === "function") {
+            let x = n;
+            x.addEventListener("abort", C, {
+              once: !0
+            }), _.once("close", () => x.removeEventListener("abort", C))
+          } else n.onabort = C
+        }
+        let O = r ?? i.requestTimeout;
+        u.push(xn(_, f, i.connectionTimeout)), u.push(Sn(_, f, O, i.throwOnRequestTimeout, i.logger ?? console)), u.push(Pn(_, f, i.socketTimeout));
+        let k = v.agent;
+        if (typeof k === "object" && "keepAlive" in k) u.push(bn(_, {
+          keepAlive: k.keepAlive,
+          keepAliveMsecs: k.keepAliveMsecs
+        }));
+        c = Ke(_, e, O, this.externalAgent).catch((C) => (u.forEach(H.clearTimeout), s(C)))
+      })
+    }
+    updateHttpClientConfig(e, n) {
+      this.config = void 0, this.configProvider = this.configProvider.then((r) => ({
+        ...r,
+        [e]: n
+      }))
+    }
+    httpHandlerConfigs() {
+      return this.config ?? {}
+    }
+  }
+  class We {
+    sessions = [];
+    constructor(e) {
+      this.sessions = e ?? []
+    }
+    poll() {
+      if (this.sessions.length > 0) return this.sessions.shift()
+    }
+    offerLast(e) {
+      this.sessions.push(e)
+    }
+    contains(e) {
+      return this.sessions.includes(e)
+    }
+    remove(e) {
+      this.sessions = this.sessions.filter((n) => n !== e)
+    } [Symbol.iterator]() {
+      return this.sessions[Symbol.iterator]()
+    }
+    destroy(e) {
+      for (let n of this.sessions)
+        if (n === e) {
+          if (!n.destroyed) n.destroy()
+        }
+    }
+  }
+  class ze {
+    constructor(e) {
+      if (this.config = e, this.config.maxConcurrency && this.config.maxConcurrency <= 0) throw RangeError("maxConcurrency must be greater than zero.")
+    }
+    config;
+    sessionCache = new Map;
+    lease(e, n) {
+      let r = this.getUrlString(e),
+        o = this.sessionCache.get(r);
+      if (o) {
+        let u = o.poll();
+        if (u && !this.config.disableConcurrency) return u
+      }
+      let s = he.connect(r);
+      if (this.config.maxConcurrency) s.settings({
+        maxConcurrentStreams: this.config.maxConcurrency
+      }, (u) => {
+        if (u) throw Error("Fail to set maxConcurrentStreams to " + this.config.maxConcurrency + "when creating new session for " + e.destination.toString())
+      });
+      s.unref();
+      let i = () => {
+        s.destroy(), this.deleteSession(r, s)
+      };
+      if (s.on("goaway", i), s.on("error", i), s.on("frameError", i), s.on("close", () => this.deleteSession(r, s)), n.requestTimeout) s.setTimeout(n.requestTimeout, i);
+      let c = this.sessionCache.get(r) || new We;
+      return c.offerLast(s), this.sessionCache.set(r, c), s
+    }
+    deleteSession(e, n) {
+      let r = this.sessionCache.get(e);
+      if (!r) return;
+      if (!r.contains(n)) return;
+      r.remove(n), this.sessionCache.set(e, r)
+    }
+    release(e, n) {
+      let r = this.getUrlString(e);
+      this.sessionCache.get(r)?.offerLast(n)
+    }
+    destroy() {
+      for (let [e, n] of this.sessionCache) {
+        for (let r of n) {
+          if (!r.destroyed) r.destroy();
+          n.remove(r)
+        }
+        this.sessionCache.delete(e)
+      }
+    }
+    setMaxConcurrentStreams(e) {
+      if (e && e <= 0) throw RangeError("maxConcurrentStreams must be greater than zero.");
+      this.config.maxConcurrency = e
+    }
+    setDisableConcurrentStreams(e) {
+      this.config.disableConcurrency = e
+    }
+    getUrlString(e) {
+      return e.destination.toString()
+    }
+  }
+  class ge {
+    config;
+    configProvider;
+    metadata = {
+      handlerProtocol: "h2"
+    };
+    connectionManager = new ze({});
+    static create(e) {
+      if (typeof e?.handle === "function") return e;
+      return new ge(e)
+    }
+    constructor(e) {
+      this.configProvider = new Promise((n, r) => {
+        if (typeof e === "function") e().then((o) => {
+          n(o || {})
+        }).catch(r);
+        else n(e || {})
+      })
+    }
+    destroy() {
+      this.connectionManager.destroy()
+    }
+    async handle(e, {
+      abortSignal: n,
+      requestTimeout: r
+    } = {}) {
+      if (!this.config) {
+        if (this.config = await this.configProvider, this.connectionManager.setDisableConcurrentStreams(this.config.disableConcurrentStreams || !1), this.config.maxConcurrentStreams) this.connectionManager.setMaxConcurrentStreams(this.config.maxConcurrentStreams)
+      }
+      let {
+        requestTimeout: o,
+        disableConcurrentStreams: s
+      } = this.config, i = r ?? o;
+      return new Promise((c, u) => {
+        let l = !1,
+          f = void 0,
+          h = async (S) => {
+            await f, c(S)
+          }, A = async (S) => {
+            await f, u(S)
+          };
+        if (n?.aborted) {
+          l = !0;
+          let S = Error("Request aborted");
+          S.name = "AbortError", A(S);
+          return
+        }
+        let {
+          hostname: E,
+          method: y,
+          port: d,
+          protocol: T,
+          query: b
+        } = e, P = "";
+        if (e.username != null || e.password != null) {
+          let S = e.username ?? "",
+            I = e.password ?? "";
+          P = `${S}:${I}@`
+        }
+        let v = `${T}//${P}${E}${d?`:${d}`:""}`,
+          w = {
+            destination: new URL(v)
+          },
+          _ = this.connectionManager.lease(w, {
+            requestTimeout: this.config?.sessionTimeout,
+            disableConcurrentStreams: s || !1
+          }),
+          O = (S) => {
+            if (s) this.destroySession(_);
+            l = !0, A(S)
+          },
+          k = je.buildQueryString(b || {}),
+          C = e.path;
+        if (k) C += `?${k}`;
+        if (e.fragment) C += `#${e.fragment}`;
+        let x = _.request({
+          ...e.headers,
+          [he.constants.HTTP2_HEADER_PATH]: C,
+          [he.constants.HTTP2_HEADER_METHOD]: y
+        });
+        if (_.ref(), x.on("response", (S) => {
+            let I = new Me.HttpResponse({
+              statusCode: S[":status"] || -1,
+              headers: Xe(S),
+              body: x
+            });
+            if (l = !0, h({
+                response: I
+              }), s) _.close(), this.connectionManager.deleteSession(v, _)
+          }), i) x.setTimeout(i, () => {
+          x.close();
+          let S = Error(`Stream timed out because of no activity for ${i} ms`);
+          S.name = "TimeoutError", O(S)
+        });
+        if (n) {
+          let S = () => {
+            x.close();
+            let I = Error("Request aborted");
+            I.name = "AbortError", O(I)
+          };
+          if (typeof n.addEventListener === "function") {
+            let I = n;
+            I.addEventListener("abort", S, {
+              once: !0
+            }), x.once("close", () => I.removeEventListener("abort", S))
+          } else n.onabort = S
+        }
+        x.on("frameError", (S, I, X) => {
+          O(Error(`Frame type id ${S} in stream id ${X} has failed with code ${I}.`))
+        }), x.on("error", O), x.on("aborted", () => {
+          O(Error(`HTTP/2 stream is abnormally aborted in mid-communication with result code ${x.rstCode}.`))
+        }), x.on("close", () => {
+          if (_.unref(), s) _.destroy();
+          if (!l) O(Error("Unexpected error: http2 request did not get a response"))
+        }), f = Ke(x, e, i)
+      })
+    }
+    updateHttpClientConfig(e, n) {
+      this.config = void 0, this.configProvider = this.configProvider.then((r) => ({
+        ...r,
+        [e]: n
+      }))
+    }
+    httpHandlerConfigs() {
+      return this.config ?? {}
+    }
+    destroySession(e) {
+      if (!e.destroyed) e.destroy()
+    }
+  }
+  class Ye extends qe.Writable {
+    bufferedBytes = [];
+    _write(e, n, r) {
+      this.bufferedBytes.push(e), r()
+    }
+  }
+  var Rn = (e) => {
+      if (On(e)) return Ln(e);
+      return new Promise((n, r) => {
+        let o = new Ye;
+        e.pipe(o), e.on("error", (s) => {
+          o.end(), r(s)
+        }), o.on("error", r), o.on("finish", function() {
+          let s = new Uint8Array(Buffer.concat(this.bufferedBytes));
+          n(s)
+        })
+      })
+    },
+    On = (e) => typeof ReadableStream === "function" && e instanceof ReadableStream;
+  async function Ln(e) {
+    let n = [],
+      r = e.getReader(),
+      o = !1,
+      s = 0;
+    while (!o) {
+      let {
+        done: u,
+        value: l
+      } = await r.read();
+      if (l) n.push(l), s += l.length;
+      o = u
+    }
+    let i = new Uint8Array(s),
+      c = 0;
+    for (let u of n) i.set(u, c), c += u.length;
+    return i
+  }
+  Hn.DEFAULT_REQUEST_TIMEOUT = wn;
+  Hn.NodeHttp2Handler = ge;
+  Hn.NodeHttpHandler = te;
+  Hn.streamCollector = Rn
+});
+var xt = R(function(U) {
+  var rr = U && U.__createBinding || (Object.create ? function(e, n, r, o) {
+      if (o === void 0) o = r;
+      var s = Object.getOwnPropertyDescriptor(n, r);
+      if (!s || ("get" in s ? !n.__esModule : s.writable || s.configurable)) s = {
+        enumerable: !0,
+        get: function() {
+          return n[r]
+        }
+      };
+      Object.defineProperty(e, o, s)
+    } : function(e, n, r, o) {
+      if (o === void 0) o = r;
+      e[o] = n[r]
+    }),
+    or = U && U.__setModuleDefault || (Object.create ? function(e, n) {
+      Object.defineProperty(e, "default", {
+        enumerable: !0,
+        value: n
+      })
+    } : function(e, n) {
+      e.default = n
+    }),
+    At = U && U.__importStar || function(e) {
+      if (e && e.__esModule) return e;
+      var n = {};
+      if (e != null) {
+        for (var r in e)
+          if (r !== "default" && Object.prototype.hasOwnProperty.call(e, r)) rr(n, e, r)
+      }
+      return or(n, e), n
+    };
+  Object.defineProperty(U, "__esModule", {
+    value: !0
+  });
+  U.req = U.json = U.toBuffer = void 0;
+  var sr = At(Ue("http")),
+    ir = At(Ue("https"));
+  async function _t(e) {
+    let n = 0,
+      r = [];
+    for await (let o of e) n += o.length, r.push(o);
+    return Buffer.concat(r, n)
+  }
+  U.toBuffer = _t;
+  async function cr(e) {
+    let r = (await _t(e)).toString("utf8");
+    try {
+      return JSON.parse(r)
+    } catch (o) {
+      let s = o;
+      throw s.message += ` (input: ${r})`, s
+    }
+  }
+  U.json = cr;
+
+  function ar(e, n = {}) {
+    let o = ((typeof e === "string" ? e : e.href).startsWith("https:") ? ir : sr).request(e, n),
+      s = new Promise((i, c) => {
+        o.once("response", i).once("error", c).end()
+      });
+    return o.then = s.then.bind(s), o
+  }
+  U.req = ar
+});
+var u1o = R(function(N) {
+  var Tt = N && N.__createBinding || (Object.create ? function(e, n, r, o) {
+      if (o === void 0) o = r;
+      var s = Object.getOwnPropertyDescriptor(n, r);
+      if (!s || ("get" in s ? !n.__esModule : s.writable || s.configurable)) s = {
+        enumerable: !0,
+        get: function() {
+          return n[r]
+        }
+      };
+      Object.defineProperty(e, o, s)
+    } : function(e, n, r, o) {
+      if (o === void 0) o = r;
+      e[o] = n[r]
+    }),
+    ur = N && N.__setModuleDefault || (Object.create ? function(e, n) {
+      Object.defineProperty(e, "default", {
+        enumerable: !0,
+        value: n
+      })
+    } : function(e, n) {
+      e.default = n
+    }),
+    bt = N && N.__importStar || function(e) {
+      if (e && e.__esModule) return e;
+      var n = {};
+      if (e != null) {
+        for (var r in e)
+          if (r !== "default" && Object.prototype.hasOwnProperty.call(e, r)) Tt(n, e, r)
+      }
+      return ur(n, e), n
+    },
+    lr = N && N.__exportStar || function(e, n) {
+      for (var r in e)
+        if (r !== "default" && !Object.prototype.hasOwnProperty.call(n, r)) Tt(n, e, r)
+    };
+  Object.defineProperty(N, "__esModule", {
+    value: !0
+  });
+  N.Agent = void 0;
+  var fr = bt(Ue("net")),
+    St = bt(Ue("http")),
+    Pt = Ue("https");
+  lr(xt(), N);
+  var B = Symbol("AgentBaseInternalState");
+  class vt extends St.Agent {
+    constructor(e) {
+      super(e);
+      this[B] = {}
+    }
+    isSecureEndpoint(e) {
+      if (e) {
+        if (typeof e.secureEndpoint === "boolean") return e.secureEndpoint;
+        if (typeof e.protocol === "string") return e.protocol === "https:"
+      }
+      let {
+        stack: n
+      } = Error();
+      if (typeof n !== "string") return !1;
+      return n.split(`
+`).some((r) => r.indexOf("(https.js:") !== -1 || r.indexOf("node:https:") !== -1)
+    }
+    incrementSockets(e) {
+      if (this.maxSockets === 1 / 0 && this.maxTotalSockets === 1 / 0) return null;
+      if (!this.sockets[e]) this.sockets[e] = [];
+      let n = new fr.Socket({
+        writable: !1
+      });
+      return this.sockets[e].push(n), this.totalSocketCount++, n
+    }
+    decrementSockets(e, n) {
+      if (!this.sockets[e] || n === null) return;
+      let r = this.sockets[e],
+        o = r.indexOf(n);
+      if (o !== -1) {
+        if (r.splice(o, 1), this.totalSocketCount--, r.length === 0) delete this.sockets[e]
+      }
+    }
+    getName(e) {
+      if (typeof e.secureEndpoint === "boolean" ? e.secureEndpoint : this.isSecureEndpoint(e)) return Pt.Agent.prototype.getName.call(this, e);
+      return super.getName(e)
+    }
+    createSocket(e, n, r) {
+      let o = {
+          ...n,
+          secureEndpoint: this.isSecureEndpoint(n)
+        },
+        s = this.getName(o),
+        i = this.incrementSockets(s);
+      Promise.resolve().then(() => this.connect(e, o)).then((c) => {
+        if (this.decrementSockets(s, i), c instanceof St.Agent) try {
+          return c.addRequest(e, o)
+        } catch (u) {
+          return r(u)
+        }
+        this[B].currentSocket = c, super.createSocket(e, n, r)
+      }, (c) => {
+        this.decrementSockets(s, i), r(c)
+      })
+    }
+    createConnection() {
+      let e = this[B].currentSocket;
+      if (this[B].currentSocket = void 0, !e) throw Error("No socket was returned in the `connect()` function");
+      return e
+    }
+    get defaultPort() {
+      return this[B].defaultPort ?? (this.protocol === "https:" ? 443 : 80)
+    }
+    set defaultPort(e) {
+      if (this[B]) this[B].defaultPort = e
+    }
+    get protocol() {
+      return this[B].protocol ?? (this.isSecureEndpoint() ? "https:" : "http:")
+    }
+    set protocol(e) {
+      if (this[B]) this[B].protocol = e
+    }
+  }
+  N.Agent = vt
+});
+var wt = R(function(W) {
+  var dr = W && W.__importDefault || function(e) {
+    return e && e.__esModule ? e : {
+      default: e
+    }
+  };
+  Object.defineProperty(W, "__esModule", {
+    value: !0
+  });
+  W.parseProxyResponse = void 0;
+  var pr = dr(vfn()),
+    re = (0, pr.default)("https-proxy-agent:parse-proxy-response");
+
+  function hr(e) {
+    return new Promise((n, r) => {
+      let o = 0,
+        s = [];
+
+      function i() {
+        let h = e.read();
+        if (h) f(h);
+        else e.once("readable", i)
+      }
+
+      function c() {
+        e.removeListener("end", u), e.removeListener("error", l), e.removeListener("readable", i)
+      }
+
+      function u() {
+        c(), re("onend"), r(Error("Proxy connection ended before receiving CONNECT response"))
+      }
+
+      function l(h) {
+        c(), re("onerror %o", h), r(h)
+      }
+
+      function f(h) {
+        s.push(h), o += h.length;
+        let A = Buffer.concat(s, o),
+          E = A.indexOf(`\r
+\r
+`);
+        if (E === -1) {
+          re("have not received end of HTTP headers yet..."), i();
+          return
+        }
+        let y = A.slice(0, E).toString("ascii").split(`\r
+`),
+          d = y.shift();
+        if (!d) return e.destroy(), r(Error("No header received from proxy CONNECT response"));
+        let T = d.split(" "),
+          b = +T[1],
+          P = T.slice(2).join(" "),
+          v = {};
+        for (let w of y) {
+          if (!w) continue;
+          let _ = w.indexOf(":");
+          if (_ === -1) return e.destroy(), r(Error(`Invalid header from proxy CONNECT response: "${w}"`));
+          let O = w.slice(0, _).toLowerCase(),
+            k = w.slice(_ + 1).trimStart(),
+            C = v[O];
+          if (typeof C === "string") v[O] = [C, k];
+          else if (Array.isArray(C)) C.push(k);
+          else v[O] = k
+        }
+        re("got proxy server response: %o %o", d, v), c(), n({
+          connect: {
+            statusCode: b,
+            statusText: P,
+            headers: v
+          },
+          buffered: A
+        })
+      }
+      e.on("error", l), e.on("end", u), i()
+    })
+  }
+  W.parseProxyResponse = hr
+});
+var sbt = R(function(F) {
+  var gr = F && F.__createBinding || (Object.create ? function(e, n, r, o) {
+      if (o === void 0) o = r;
+      var s = Object.getOwnPropertyDescriptor(n, r);
+      if (!s || ("get" in s ? !n.__esModule : s.writable || s.configurable)) s = {
+        enumerable: !0,
+        get: function() {
+          return n[r]
+        }
+      };
+      Object.defineProperty(e, o, s)
+    } : function(e, n, r, o) {
+      if (o === void 0) o = r;
+      e[o] = n[r]
+    }),
+    mr = F && F.__setModuleDefault || (Object.create ? function(e, n) {
+      Object.defineProperty(e, "default", {
+        enumerable: !0,
+        value: n
+      })
+    } : function(e, n) {
+      e.default = n
+    }),
+    Ht = F && F.__importStar || function(e) {
+      if (e && e.__esModule) return e;
+      var n = {};
+      if (e != null) {
+        for (var r in e)
+          if (r !== "default" && Object.prototype.hasOwnProperty.call(e, r)) gr(n, e, r)
+      }
+      return mr(n, e), n
+    },
+    kt = F && F.__importDefault || function(e) {
+      return e && e.__esModule ? e : {
+        default: e
+      }
+    };
+  Object.defineProperty(F, "__esModule", {
+    value: !0
+  });
+  F.HttpsProxyAgent = void 0;
+  var oe = Ht(Ue("net")),
+    Rt = Ht(Ue("tls")),
+    yr = kt(Ue("assert")),
+    Cr = kt(vfn()),
+    Dt = u1o(),
+    It = Ue("url"),
+    Ut = wt(),
+    Q = (0, Cr.default)("https-proxy-agent"),
+    Ot = (e) => {
+      if (e.servername === void 0 && e.host && !oe.isIP(e.host)) return {
+        ...e,
+        servername: e.host
+      };
+      return e
+    };
+  class Se extends Dt.Agent {
+    constructor(e, n) {
+      super(n);
+      this.options = {
+        path: void 0
+      }, this.proxy = typeof e === "string" ? new It.URL(e) : e, this.proxyHeaders = n?.headers ?? {}, Q("Creating new HttpsProxyAgent instance: %o", this.proxy.href);
+      let r = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, ""),
+        o = this.proxy.port ? parseInt(this.proxy.port, 10) : this.proxy.protocol === "https:" ? 443 : 80;
+      this.connectOpts = {
+        ALPNProtocols: ["http/1.1"],
+        ...n ? Lt(n, "headers") : null,
+        host: r,
+        port: o
+      }
+    }
+    async connect(e, n) {
+      let {
+        proxy: r
+      } = this;
+      if (!n.host) throw TypeError('No "host" provided');
+      let o;
+      if (r.protocol === "https:") Q("Creating `tls.Socket`: %o", this.connectOpts), o = Rt.connect(Ot(this.connectOpts));
+      else Q("Creating `net.Socket`: %o", this.connectOpts), o = oe.connect(this.connectOpts);
+      let s = typeof this.proxyHeaders === "function" ? this.proxyHeaders() : {
+          ...this.proxyHeaders
+        },
+        i = oe.isIPv6(n.host) ? `[${n.host}]` : n.host,
+        c = `CONNECT ${i}:${n.port} HTTP/1.1\r
+`;
+      if (r.username || r.password) {
+        let A = `${decodeURIComponent(r.username)}:${decodeURIComponent(r.password)}`;
+        s["Proxy-Authorization"] = `Basic ${Buffer.from(A).toString("base64")}`
+      }
+      if (s.Host = `${i}:${n.port}`, !s["Proxy-Connection"]) s["Proxy-Connection"] = this.keepAlive ? "Keep-Alive" : "close";
+      for (let A of Object.keys(s)) c += `${A}: ${s[A]}\r
+`;
+      let u = Ut.parseProxyResponse(o);
+      o.write(`${c}\r
+`);
+      let {
+        connect: l,
+        buffered: f
+      } = await u;
+      if (e.emit("proxyConnect", l), this.emit("proxyConnect", l, e), l.statusCode === 200) {
+        if (e.once("socket", Er), n.secureEndpoint) return Q("Upgrading socket connection to TLS"), Rt.connect({
+          ...Lt(Ot(n), "host", "path", "port"),
+          socket: o
+        });
+        return o
+      }
+      o.destroy();
+      let h = new oe.Socket({
+        writable: !1
+      });
+      return h.readable = !0, e.once("socket", (A) => {
+        Q("Replaying proxy buffer for failed request"), (0, yr.default)(A.listenerCount("data") > 0), A.push(f), A.push(null)
+      }), h
+    }
+  }
+  Se.protocols = ["http", "https"];
+  F.HttpsProxyAgent = Se;
+
+  function Er(e) {
+    e.resume()
+  }
+
+  function Lt(e, ...n) {
+    let r = {},
+      o;
+    for (o in e)
+      if (!n.includes(o)) r[o] = e[o];
+    return r
+  }
+});
+var Pe = ve(sL(), 1);
+import {
+  isIP as $t
+} from "net";
+import {
+  homedir as Ar
+} from "os";
+var Nn = ["NODE_EXTRA_CA_CERTS", "SSL_CERT_FILE", "SSL_CERT_DIR"],
+  $n = {
+    NODE_EXTRA_CA_CERTS: D.rawStr(),
+    SSL_CERT_FILE: D.rawStr(),
+    SSL_CERT_DIR: D.rawStr(),
+    NODE_TLS_REJECT_UNAUTHORIZED: D.rawStr()
+  },
+  Ve = N5($n, null);
+
+function ne() {
+  let e = Ve.NODE_TLS_REJECT_UNAUTHORIZED;
+  return Nn.some((n) => Ve[n] !== void 0) || e !== void 0 && e !== "1"
+}
+var Ge = ["bundled", "system"],
+  ye = new Set;
+
+function q(e) {
+  if (ye.has(e)) return !1;
+  return ye.add(e), !0
+}
+class et {
+  extraCACerts = null;
+  certificates = eo(() => Xn(this));
+  runtimeStoreBundles = new WeakSet;
+  trustOverrideSeen = !1;
+  storeCertificates = void 0;
+  fromHost = null;
+  warnedExtraCerts = new Set
+}
+var Fn = new z(() => new et);
+
+function G() {
+  return Fn.of(j().host)
+}
+var eQ = l0(async () => {
+  let e = G();
+  if (e.trustOverrideSeen ||= ne(), e.fromHost) return !1;
+  let n = a.NODE_EXTRA_CA_CERTS;
+  if (!n) {
+    if (e.extraCACerts !== null) return e.extraCACerts = null, Ae(e), !0;
+    return !1
+  }
+  try {
+    let r = await se().readFile(n, {
+      encoding: "utf8"
+    });
+    if (e.extraCACerts?.path === n && e.extraCACerts.content === r) return !1;
+    e.extraCACerts = {
+      path: n,
+      content: r
+    }
+  } catch (r) {
+    if (t(`CA certs: Failed to read NODE_EXTRA_CA_CERTS file (${n}): ${r}`, {
+        level: "error"
+      }), q("read_failed")) m("ca_certs_load", "read_failed");
+    if (e.extraCACerts === null) return !1;
+    e.extraCACerts = null
+  }
+  return Ae(e), !0
+});
+
+function Bn() {
+  let e = a.CLAUDE_CODE_CERT_STORE;
+  if (e) {
+    let n = [];
+    for (let r of e.split(",")) {
+      let o = r.trim().toLowerCase();
+      if (o === "bundled" || o === "system") {
+        if (!n.includes(o)) n.push(o)
+      } else if (o) {
+        if (t(`CA certs: unrecognized CLAUDE_CODE_CERT_STORE source '${o}', ignoring`, {
+            level: "warn"
+          }), q("parse_skip")) p("ca_certs_load", "parse_skip")
+      }
+    }
+    if (n.length === 0 && q("parse_all_invalid")) p("ca_certs_load", "parse_all_invalid");
+    return n.length > 0 ? n : Ge
+  }
+  if (tWt("--use-system-ca") || tWt("--use-openssl-ca")) return ["system"];
+  return Ge
+}
+
+function Mn(e) {
+  let {
+    X509Certificate: n
+  } = Ue("crypto"), r = Date.now(), o = 0, s = e.filter((i) => {
+    try {
+      let c = new n(i),
+        u = new Date(c.validTo).getTime();
+      if (Number.isNaN(u) || u > r) return !0;
+      return o++, !1
+    } catch {
+      return !0
+    }
+  });
+  if (o > 0) {
+    if (t(`CA certs: Dropped ${o} expired certificate(s) from system store`), q("expired_dropped")) p("ca_certs_load", "expired_dropped", {
+      dropped_count: o
+    })
+  }
+  return s
+}
+var tt = [{
+    certificate: "86a1ecba089c4a8d3bbe2734c612ba341d813e043cf9e8a862cd5c57a36bbe6b",
+    key: "8d417db2dd8bf5e3084d1e3f196d583849d81bdd4c00c70b9d39369e96b8c782"
+  }, {
+    certificate: "bc4d809b15189d78db3e1d8cf4f9726a795da1643ca5f1358e1ddb0edc0d7eb3",
+    key: "eabc185c4e82d942b1a5978ba3c0181487d6b3b9974e5c49f72f6d0bd9637150"
+  }, {
+    certificate: "40f6af0346a99aa1cd1d555a4e9cce62c7f9634603ee406615833dc8c8d00367",
+    key: "376a1a7082a593dccc20d561d119e9ab8d30f11cc321d0a37fa41f0df284e01c"
+  }, {
+    certificate: "125609aa301da0a249b97a8239cb6a34216f44dcac9f3954b14292f2e8c8608f",
+    key: "b7408b4d2be0238ba37004dd34e276c6019bd2f24c9db7d4980f5f6c359a4bcc"
+  }],
+  Ce = new Set(tt.map((e) => e.certificate)),
+  jn = new Set(tt.map((e) => e.key));
+
+function Qe(e) {
+  let n = [],
+    r = e.indexOf("-----BEGIN "),
+    o = e.indexOf("-----END "),
+    s = -1;
+  while (o !== -1) {
+    if (r !== -1 && r < o) {
+      s = r, r = e.indexOf("-----BEGIN ", r + 1);
+      continue
+    }
+    let i = e.slice(o, o + 80),
+      c = i.indexOf("-----", 9);
+    if (c === -1 || i.slice(0, c).includes(`
+`)) {
+      o = e.indexOf("-----END ", o + 1);
+      continue
+    }
+    let u = o + c + 5;
+    if (s !== -1) n.push([s, u]), s = -1;
+    o = e.indexOf("-----END ", u)
+  }
+  return n
+}
+var me = 8;
+
+function Je(e) {
+  return e === "NODE_EXTRA_CA_CERTS" ? " (the whole file)" : ""
+}
+
+function Ze(e, n, r) {
+  let o = `${e}:${n}`;
+  if (r.has(o)) return;
+  r.add(o);
+  let s = {
+    block: "Claude Code ignored a block in the NODE_EXTRA_CA_CERTS file: the block holds a root certificate on the CLI's deny list, in a form Claude Code could not read. The other certificates in the file are still used.",
+    file: "Claude Code ignored all of the NODE_EXTRA_CA_CERTS file: it holds a root certificate on the CLI's deny list, in a form Claude Code could not read. Run Claude Code with --debug to write its SHA-256 fingerprint to the debug log, then remove that certificate from the file.",
+    nested: "Claude Code ignored all of the NODE_EXTRA_CA_CERTS file: it holds root certificates on the CLI's deny list nested too deeply to cut out. Remove them so the rest of the file is used."
+  } [e];
+  console.error(s)
+}
+
+function nt(e) {
+  let {
+    X509Certificate: n,
+    createHash: r
+  } = Ue("crypto");
+  return e.flatMap((o) => {
+    let s;
+    try {
+      s = new n(o).raw
+    } catch (u) {
+      return t(`CA certs: A bundled root does not parse: ${u}`, {
+        level: "error"
+      }), []
+    }
+    let i = r("sha256").update(s).digest("hex");
+    if (!Ce.has(i)) return [];
+    return [{
+      base64: s.subarray(0, s.length - s.length % 3).toString("base64"),
+      hash: i
+    }]
+  })
+}
+
+function Ee(e, n, r = new Set) {
+  let {
+    X509Certificate: o,
+    createHash: s,
+    createPublicKey: i
+  } = Ue("crypto"), c = (E) => s("sha256").update(E).digest("hex"), u = (E) => {
+    try {
+      return new o(E)
+    } catch {
+      return
+    }
+  }, l = (E) => {
+    let y = E.replace(/\s+/g, "");
+    return n.find(({
+      base64: d
+    }) => y.includes(d))
+  }, f = (E) => {
+    let y = c(E.raw);
+    if (Ce.has(y)) return y;
+    try {
+      let d = E.publicKey;
+      try {
+        d = i({
+          key: d.export({
+            format: "jwk"
+          }),
+          format: "jwk"
+        })
+      } catch {}
+      let T = d.export({
+        type: "spki",
+        format: "der"
+      });
+      return jn.has(c(T)) ? y : void 0
+    } catch {
+      return
+    }
+  }, h = (E) => {
+    let y = E.slice(E.indexOf("-----", 5) + 5, E.lastIndexOf("-----END")),
+      d = Buffer.from(y.replace(/[^A-Za-z0-9+/]/g, ""), "base64");
+    if (d[0] !== 48 || d.length < 2) return;
+    let T = (d[1] & 128) !== 0,
+      b = T ? d[1] & 127 : 0;
+    if (T && (b === 0 || b > 4) || d.length < 2 + b) return;
+    let P = T ? d.readUIntBE(2, b) : d[1];
+    if (2 + b + P > d.length) return;
+    let v = d.subarray(0, 2 + b + P),
+      w = c(v);
+    if (Ce.has(w)) return w;
+    let _;
+    try {
+      _ = new o(v)
+    } catch {
+      return
+    }
+    return f(_)
+  }, A = [];
+  for (let {
+      pem: E,
+      source: y
+    }
+    of e) {
+    let d = E,
+      T = 0,
+      b = !1;
+    for (; T <= me; T++) {
+      let w = [],
+        _ = 0,
+        O = 0,
+        k = !1;
+      for (let [C, x] of Qe(d)) {
+        let S = d.slice(C, x),
+          I = u(S),
+          X;
+        if (I) {
+          let Y = f(I);
+          X = Y ? `Dropped blocked certificate ${Y} from ${y}` : void 0
+        } else {
+          let Y = l(S)?.hash ?? h(S);
+          if (Y) b = !0, X = `Dropped an unreadable block from ${y}: the block contains blocked certificate ${Y}`
+        }
+        let Oe = Math.max(C, O);
+        if (O = x, X && Oe >= _) t(`CA certs: ${X}`), w.push(d.slice(_, Oe)), _ = x, k = !0
+      }
+      if (!k) break;
+      w.push(d.slice(_)), d = w.join("")
+    }
+    if (T > me) {
+      if (t(`CA certs: Ignored an entry from ${y}${Je(y)}: blocked certificates are nested in it more than ${me} deep`), y === "NODE_EXTRA_CA_CERTS") Ze("nested", c(E), r);
+      continue
+    }
+    let P = l(d),
+      v = !P && (T === 0 || Qe(d).some(([w, _]) => u(d.slice(w, _))));
+    if (P) t(`CA certs: Ignored an entry from ${y}${Je(y)}: it still contains blocked certificate ${P.hash}`);
+    if (y === "NODE_EXTRA_CA_CERTS" && (P || b)) Ze(v ? "block" : "file", c(E), r);
+    if (v) A.push(d)
+  }
+  return A
+}
+
+function qn(e, n, r = nt(n), o = new Set) {
+  let s = Ee(e, r, o);
+  if (s.length > 0) return s;
+  let i = n.map((u) => ({
+      pem: u,
+      source: "bundled"
+    })),
+    c = Ee(i, r);
+  if (c.length > 0) return c;
+  throw Error("No root certificates are left to trust: every root built into this runtime is on the CLI's deny list. Update Claude Code.")
+}
+
+function Jx() {
+  let e = G();
+  return e.fromHost ? e.fromHost.certificates : e.certificates()
+}
+
+function r1o(e) {
+  return Array.isArray(e) && G().runtimeStoreBundles.has(e)
+}
+
+function o1o() {
+  let e = G();
+  return e.trustOverrideSeen ||= ne(), e.trustOverrideSeen
+}
+
+function Xn(e) {
+  e.trustOverrideSeen ||= ne(), e.storeCertificates = void 0;
+  let n = Bn(),
+    r = a.NODE_EXTRA_CA_CERTS,
+    o = n.includes("bundled"),
+    s = n.includes("system");
+  t(`CA certs: stores=${n.join(",")}, extraCertsPath=${r}`);
+  let i = Ue("tls"),
+    c = i.getCACertificates;
+  if (!o && s && !c) {
+    if (t("CA certs: stores=system but system CA API unavailable, using bundled roots"), q("system_api_unavailable")) p("ca_certs_load", "system_api_unavailable")
+  }
+  let u = [],
+    l = (d, T) => {
+      for (let b of T) u.push({
+        pem: b,
+        source: d
+      })
+    },
+    f = [],
+    h = !1;
+  if (o) l("bundled", i.rootCertificates), t(`CA certs: Loaded ${i.rootCertificates.length} bundled root certificates`);
+  if (s) try {
+    let d = c?.("system");
+    if (d && d.length > 0) {
+      let T = Mn(d);
+      l("system", T), t(`CA certs: Loaded ${T.length} system CA certificates`)
+    } else if (t(`CA certs: system store ${c?"returned empty":"unavailable"}`), !o) l("bundled", i.rootCertificates)
+  } catch (d) {
+    if (t(`CA certs: Failed to load system CA certificates: ${d}`, {
+        level: "error"
+      }), q("system_store_failed")) p("ca_certs_load", "system_store_failed");
+    if (!o) l("bundled", i.rootCertificates)
+  }
+  let A = nt(i.rootCertificates),
+    E = qn(u, i.rootCertificates, A, e.warnedExtraCerts);
+  if (r) {
+    if (e.extraCACerts?.path !== r) try {
+      let d = se().readFileSync(r, {
+        encoding: "utf8"
+      });
+      e.extraCACerts = {
+        path: r,
+        content: d
+      }
+    } catch (d) {
+      if (t(`CA certs: Failed to read NODE_EXTRA_CA_CERTS file (${r}): ${d}`, {
+          level: "error"
+        }), q("read_failed")) m("ca_certs_load", "read_failed")
+    }
+    if (e.extraCACerts?.path === r) f = Ee([{
+      pem: e.extraCACerts.content,
+      source: "NODE_EXTRA_CA_CERTS"
+    }], A, e.warnedExtraCerts), h = f.length > 0, t(h ? `CA certs: Appended extra certificates from NODE_EXTRA_CA_CERTS (${r})` : `CA certs: Nothing from NODE_EXTRA_CA_CERTS (${r}) is left to append`)
+  }
+  let y = L([...E, ...f]);
+  if (e.storeCertificates = h ? L(E) : y, !h) e.runtimeStoreBundles.add(Object.freeze(y));
+  if (ye.size === 0 && q("ok")) g("ca_certs_load", {
+    cert_count: y.length,
+    store_bundled: o,
+    store_system: s,
+    extra_configured: Boolean(r)
+  });
+  return y
+}
+
+function bfn() {
+  Ae(G())
+}
+
+function Ae(e) {
+  e.certificates.cache.clear?.(), t("Cleared CA certificates cache")
+}
+import {
+  domainToASCII as rt
+} from "url";
+var ot = /[\u3002\uFF0E\uFF61]/g,
+  Kn = /[\uFF1A\uFE55\uFE13]/g;
+
+function E1t(e) {
+  return e.replace(ot, ".").replace(Kn, ":")
+}
+var st = /^(0|[1-9]\d{0,2})(\.(0|[1-9]\d{0,2})){3}$/,
+  Wn = /^(0x[0-9a-f]*|\d+)$/,
+  it = /[\x00-\x20\x7f#%/<>?@\\^|]|[\u180E\u206A-\u206F\u{2F868}\u{2F874}\u{2F91F}\u{2F95F}\u{2F9BF}]/u,
+  zn = /[\u00AD\u034F\u180B-\u180D\u180F\u200B\u2060\u2064\uFE00-\uFE0F\uFEFF\u{1BCA0}-\u{1BCA3}\u{E0100}-\u{E01EF}]/gu;
+
+function ct(e) {
+  let n = e;
+  if (n.includes("%")) try {
+    n = decodeURIComponent(n)
+  } catch {
+    return e.normalize("NFKC").toLowerCase()
+  }
+  return n.replace(zn, "").replace(ot, ".").normalize("NFKC").toLowerCase().replace(/\.$/, "")
+}
+
+function T1t(e) {
+  if (it.test(e)) return "";
+  let n = rt(e);
+  if (!st.test(n)) return n;
+  let r = ct(e);
+  return r === n ? n : r
+}
+
+function p4s(e) {
+  return !it.test(e) && st.test(rt(e))
+}
+
+function f4s(e) {
+  let n = ct(e),
+    r = n.split(".");
+  return r.length <= 4 && r.every((o) => Wn.test(o)) ? n : null
+}
+
+function _e(e) {
+  let n = E1t(e.toLowerCase()).replace(/\.+$/, ""),
+    r = T1t(n);
+  return r !== "" ? r.replace(/\.+$/, "") : n
+}
+
+function ut(e, n) {
+  let r;
+  if (e.startsWith("*.")) r = `*.${_e(e.slice(2))}`;
+  else r = _e(e);
+  let o = _e(n);
+  if (r === "*") return !0;
+  if (r === o) return !0;
+  if (r.startsWith("*.") && o.endsWith(r.slice(1))) return !0;
+  return !1
+}
+
+function s1o(e, n) {
+  return ut(n, e)
+}
+
+function i1o(e, n) {
+  for (let r of n)
+    if (ut(r, e)) return !0;
+  return !1
+}
+
+function L2(e, n) {
+  let r = n.lastIndexOf("/");
+  if (r < 0) return !1;
+  let o = n.slice(0, r),
+    s = n.slice(r + 1);
+  if (!/^\d+$/.test(s)) return !1;
+  let i = parseInt(s, 10),
+    c = at(o);
+  if (!c) return !1;
+  if (c.zone) return !1;
+  let u = at(e);
+  if (!u) return !1;
+  let l = Vn(u.bytes),
+    f = c.bytes;
+  if (l.length !== f.length) return !1;
+  let h = f.length * 8;
+  if (i < 0 || i > h) return !1;
+  return Yn(l, f, i)
+}
+
+function Yn(e, n, r) {
+  let o = r >> 3;
+  for (let c = 0; c < o; c++)
+    if (e[c] !== n[c]) return !1;
+  let s = r & 7;
+  if (s === 0) return !0;
+  let i = 255 << 8 - s & 255;
+  return ((e[o] ?? 0) & i) === ((n[o] ?? 0) & i)
+}
+
+function Vn(e) {
+  if (e.length !== 16) return e;
+  for (let n = 0; n < 10; n++)
+    if (e[n] !== 0) return e;
+  if (e[10] !== 255 || e[11] !== 255) return e;
+  return e.slice(12)
+}
+
+function at(e) {
+  if (e === "") return null;
+  let n = "",
+    r = e,
+    o = e.indexOf("%");
+  if (o >= 0) n = e.slice(o + 1), r = e.slice(0, o);
+  if (r.includes(":")) {
+    let i = Gn(r);
+    return i ? {
+      bytes: i,
+      zone: n
+    } : null
+  }
+  if (n) return null;
+  let s = lt(r);
+  return s ? {
+    bytes: s,
+    zone: ""
+  } : null
+}
+
+function lt(e) {
+  let n = e.split(".");
+  if (n.length !== 4) return null;
+  let r = new Uint8Array(4);
+  for (let o = 0; o < 4; o++) {
+    let s = n[o];
+    if (s === void 0 || s === "" || !/^\d{1,3}$/.test(s)) return null;
+    if (s.length > 1 && s.startsWith("0")) return null;
+    let i = parseInt(s, 10);
+    if (i > 255) return null;
+    r[o] = i
+  }
+  return r
+}
+
+function Gn(e) {
+  let n = null,
+    r = e,
+    o = e.lastIndexOf(":");
+  if (o >= 0 && e.slice(o + 1).includes(".")) {
+    if (n = lt(e.slice(o + 1)), !n) return null;
+    r = e.slice(0, o + 1)
+  }
+  let s = r.split("::");
+  if (s.length > 2) return null;
+  let i = [],
+    c = (l, f) => {
+      if (l === "") return [];
+      let h = l.split(":"),
+        A = [];
+      for (let E = 0; E < h.length; E++) {
+        let y = h[E];
+        if (y === "" && f && E === h.length - 1) continue;
+        if (y === void 0 || y === "" || !/^[0-9a-fA-F]{1,4}$/.test(y)) return null;
+        A.push(parseInt(y, 16))
+      }
+      return A
+    };
+  if (s.length === 1) {
+    let l = s[0] ?? "",
+      f = c(l, n !== null);
+    if (!f) return null;
+    i.push(...f);
+    let h = n ? 6 : 8;
+    if (i.length !== h) return null
+  } else {
+    let l = s[0] ?? "",
+      f = s[1] ?? "",
+      h = c(l, !1),
+      A = c(f, n !== null);
+    if (!h || !A) return null;
+    let E = n ? 2 : 0,
+      y = 8 - h.length - A.length - E;
+    if (y < 1) return null;
+    i.push(...h);
+    for (let d = 0; d < y; d++) i.push(0);
+    if (i.push(...A), i.length + E !== 8) return null
+  }
+  let u = new Uint8Array(16);
+  for (let l = 0; l < i.length; l++) {
+    let f = i[l];
+    if (f === void 0) return null;
+    u[l * 2] = f >> 8 & 255, u[l * 2 + 1] = f & 255
+  }
+  if (n) u[12] = n[0] ?? 0, u[13] = n[1] ?? 0, u[14] = n[2] ?? 0, u[15] = n[3] ?? 0;
+  return u
+}
+import {
+  createPrivateKey as Qn,
+  X509Certificate as Jn
+} from "crypto";
+import {
+  Agent as ht
+} from "https";
+import {
+  isDeepStrictEqual as Zn
+} from "util";
+class gt {
+  clientCert = null;
+  clientKey = null;
+  config = eo(() => nr(this));
+  agentCache = null;
+  fetchSessions = new Map
+}
+var er = new z(() => new gt);
+
+function K() {
+  return er.of(j().host)
+}
+var xe = "-----BEGIN ";
+
+function mt(e) {
+  let n = e.lastIndexOf(xe);
+  if (n === -1) return !1;
+  let r = e.indexOf("-----", n + xe.length);
+  if (r === -1) return !1;
+  let o = e.slice(n + xe.length, r);
+  return e.includes(`-----END ${o}-----`, r)
+}
+var iL = /-----BEGIN CERTIFICATE-----[\s\S]*?-----END CERTIFICATE-----/g;
+
+function tr(e, n) {
+  let r;
+  try {
+    r = Qn({
+      key: n,
+      ...a.CLAUDE_CODE_CLIENT_KEY_PASSPHRASE && {
+        passphrase: a.CLAUDE_CODE_CLIENT_KEY_PASSPHRASE
+      }
+    })
+  } catch {
+    return !1
+  }
+  let o = !1,
+    s = !1;
+  for (let i of e.match(iL) ?? []) try {
+    if (new Jn(i).checkPrivateKey(r)) return !1;
+    o = !0
+  } catch {
+    s = !0
+  }
+  return o && !s
+}
+var ft = 1048576;
+
+function yt(e, n) {
+  if (!e.isFile() || e.size > ft) return t(`mTLS: Ignoring ${n} \u2014 not a regular file or over ${ft} bytes`, {
+    level: "error"
+  }), !1;
+  return !0
+}
+
+function dt(e, n) {
+  try {
+    if (!yt(se().statSync(e), n)) return null;
+    let r = se().readFileSync(e, {
+      encoding: "utf8"
+    });
+    if (!mt(r)) return t(`mTLS: Ignoring incomplete ${n} \u2014 no PEM block`, {
+      level: "error"
+    }), null;
+    return t(`mTLS: Loaded ${n}`), {
+      path: e,
+      content: r
+    }
+  } catch (r) {
+    return t(`mTLS: Failed to load ${n}: ${r}`, {
+      level: "error"
+    }), null
+  }
+}
+async function pt(e, n) {
+  try {
+    if (!yt(await se().stat(e), n)) return null;
+    let r = await se().readFile(e, {
+      encoding: "utf8"
+    });
+    if (!mt(r)) return t(`mTLS: Ignoring incomplete ${n} \u2014 no PEM block`, {
+      level: "error"
+    }), null;
+    return t(`mTLS: Loaded ${n}`), {
+      path: e,
+      content: r
+    }
+  } catch (r) {
+    return t(`mTLS: Failed to load ${n}: ${r}`, {
+      level: "error"
+    }), null
+  }
+}
+var N2 = l0(async () => {
+  let e = K(),
+    n = a.CLAUDE_CODE_CLIENT_CERT,
+    r = a.CLAUDE_CODE_CLIENT_KEY,
+    [o, s] = await Promise.all([n ? pt(n, "client certificate from CLAUDE_CODE_CLIENT_CERT") : null, r ? pt(r, "client key from CLAUDE_CODE_CLIENT_KEY") : null]),
+    i = Boolean(n && !o || r && !s),
+    c = Boolean(!i && o && s && tr(o.content, s.content));
+  if (c) t("mTLS: Ignoring mismatched client cert/key pair \u2014 mid-rotation read", {
+    level: "error"
+  });
+  let u = i || c,
+    l = n ? u ? e.clientCert : o : null,
+    f = r ? u ? e.clientKey : s : null,
+    h = e.clientCert?.path !== l?.path || e.clientCert?.content !== l?.content || e.clientKey?.path !== f?.path || e.clientKey?.content !== f?.content;
+  if (e.clientCert = l, e.clientKey = f, h) Et(e);
+  return {
+    changed: h,
+    readFailed: u,
+    mismatched: c
+  }
+});
+
+function a1o() {
+  let e = K();
+  return {
+    certPath: e.clientCert?.path,
+    keyPath: e.clientKey?.path
+  }
+}
+
+function sE() {
+  return K().config()
+}
+
+function nr(e) {
+  let n = {},
+    r = a.CLAUDE_CODE_CLIENT_CERT;
+  if (r) {
+    if (e.clientCert?.path !== r) e.clientCert = dt(r, "client certificate from CLAUDE_CODE_CLIENT_CERT") ?? e.clientCert;
+    if (e.clientCert?.path === r) n.cert = e.clientCert.content
+  }
+  let o = a.CLAUDE_CODE_CLIENT_KEY;
+  if (o) {
+    if (e.clientKey?.path !== o) e.clientKey = dt(o, "client key from CLAUDE_CODE_CLIENT_KEY") ?? e.clientKey;
+    if (e.clientKey?.path === o) n.key = e.clientKey.content
+  }
+  let s = a.CLAUDE_CODE_CLIENT_KEY_PASSPHRASE;
+  if (s) n.passphrase = s, t("mTLS: Using client key passphrase");
+  if (Object.keys(n).length === 0) return;
+  return n
+}
+
+function obt() {
+  let e = K(),
+    n = sE(),
+    r = Jx();
+  if (e.agentCache && e.agentCache.config === n && e.agentCache.ca === r) return e.agentCache.agent;
+  let o;
+  if (n || r) {
+    let s = {
+      ...n,
+      ...r && {
+        ca: r
+      },
+      keepAlive: !0
+    };
+    t("mTLS: Creating HTTPS agent with custom certificates"), o = new ht(s)
+  }
+  return e.agentCache = {
+    config: n,
+    ca: r,
+    agent: o
+  }, o
+}
+
+function l1o() {
+  let e = sE(),
+    n = Jx();
+  return new ht({
+    ...e,
+    ...n && {
+      ca: n
+    },
+    keepAlive: !1
+  })
+}
+
+function ck() {
+  let e = sE(),
+    n = Jx();
+  if (!e && !n) return;
+  return {
+    ...e,
+    ...n && {
+      ca: n
+    }
+  }
+}
+
+function C1t() {
+  let e = sE(),
+    n = Jx();
+  if (!e && !n) return {};
+  return {
+    tls: {
+      ...e,
+      ...n && {
+        ca: n
+      }
+    }
+  }
+}
+
+function d1o(e) {
+  let n = typeof Bun > "u" ? void 0 : Bun.FetchSession;
+  if (!n) return;
+  let r = C1t(),
+    o = K().fetchSessions,
+    s = o.get(e);
+  if (s && Zn(s.tls, r.tls)) return s.tls = r.tls, s.session;
+  let i = new n(r);
+  return s?.session.close(), o.set(e, {
+    tls: r.tls,
+    session: i
+  }), i
+}
+
+function OUr() {
+  Et(K())
+}
+
+function Et(e) {
+  e.config.cache.clear?.(), e.agentCache = null, t("Cleared mTLS configuration cache")
+}
+
+function c1o() {
+  if (!sE()) return;
+  if (a.NODE_EXTRA_CA_CERTS) t("NODE_EXTRA_CA_CERTS detected - Node.js will automatically append to built-in CAs")
+}
+var Nt = ve(sbt(), 1);
+class Te extends Error {
+  connectStatus;
+  headers;
+  code = "ERR_PROXY_TUNNEL";
+  constructor(e, n) {
+    super("proxy refused the connection");
+    this.connectStatus = e;
+    this.headers = n;
+    this.name = "ProxyConnectRefusedError"
+  }
+}
+
+function x4(e) {
+  return e === 0 ? "unreadable reply" : `HTTP ${e}`
+}
+
+function e0(e) {
+  for (let n = e, r = 0; r < 4; r++) {
+    if (n instanceof Te) return n;
+    if (typeof n !== "object" || n === null || !("cause" in n)) return;
+    n = n.cause
+  }
+  return
+}
+class ibt extends Nt.HttpsProxyAgent {
+  async connect(...[e, n]) {
+    let r, o = (c) => {
+      if (c.statusCode !== 200) r = c
+    };
+    e.once("proxyConnect", o);
+    let s;
+    try {
+      s = await super.connect(e, n)
+    } finally {
+      e.removeListener("proxyConnect", o)
+    }
+    if (r === void 0) return s;
+    s.destroy();
+    let i = r.statusCode;
+    throw new Te(Number.isInteger(i) && i >= 100 && i <= 599 ? i : 0, r.headers)
+  }
+}
+class Mt {
+  keepAliveDisabled = !1;
+  agents = new Map;
+  proxyAuthHelperConfig = {
+    helper: void 0,
+    fromProjectOrLocal: !1,
+    trustAccepted: () => !1
+  };
+  proxyAuthCache = null;
+  proxyAuthPendingChallenge = void 0
+}
+var _r = new z(() => new Mt);
+
+function M() {
+  return _r.of(j().host)
+}
+
+function p1o() {
+  M().keepAliveDisabled = !0
+}
+
+function xr(e) {
+  switch (e.family) {
+    case 0:
+    case 4:
+    case 6:
+      return e.family;
+    case "IPv6":
+      return 6;
+    case "IPv4":
+    case void 0:
+      return 4;
+    default:
+      throw Error(`Unsupported address family: ${e.family}`)
+  }
+}
+var Sr = ["https_proxy", "HTTPS_PROXY", "http_proxy", "HTTP_PROXY"];
+
+function F2(e = process.env) {
+  let n = Sr.find((o) => e[o]),
+    r = n ? e[n] : void 0;
+  return n && r ? {
+    value: r,
+    source: n
+  } : void 0
+}
+
+function jze(e = process.env) {
+  return F2(e)?.value
+}
+
+function H2(e) {
+  try {
+    let n = new URL(e);
+    return n.host ? n : void 0
+  } catch {
+    return
+  }
+}
+
+function R1t(e, n) {
+  let r = n.replace(/\p{Cc}/gu, "");
+  return `Invalid proxy URL in ${e}: "${r}" cannot be parsed as a URL.
+Proxy settings must be a complete URL including the scheme, e.g. "http://proxy.example.com:8080".
+Fix or unset ${e} and restart Claude Code.`
+}
+var Ft = He(new Set, (e) => e.clear());
+
+function Ff(e = process.env) {
+  let n = F2(e);
+  if (!n) return;
+  if (!H2(n.value)) {
+    let r = `${n.source}=${n.value}`;
+    if (!Ft.has(r)) Ft.add(r), console.error(R1t(n.source, n.value));
+    return
+  }
+  return n.value
+}
+
+function IUr(e) {
+  let {
+    no_proxy: n,
+    NO_PROXY: r
+  } = e;
+  if (n && r && n !== r) return `${n},${r}`;
+  return n || r
+}
+
+function Wze(e = process.env) {
+  if (e.no_proxy === "*" || e.NO_PROXY === "*") return "*";
+  return IUr(e)
+}
+
+function Zy(e, n = Wze()) {
+  if (!n) return !1;
+  if (n === "*") return !0;
+  try {
+    let r = new URL(e),
+      o = r.hostname.toLowerCase(),
+      s = r.protocol === "https:" || r.protocol === "wss:",
+      i = r.port || (s ? "443" : "80"),
+      c = `${o}:${i}`;
+    return n.split(/[,\s]+/).filter(Boolean).some((l) => {
+      if (l = l.toLowerCase().trim(), l.includes(":")) return c === l;
+      if (l.startsWith(".")) {
+        let f = l;
+        return o === l.substring(1) || o.endsWith(f)
+      }
+      return o === l
+    })
+  } catch {
+    return !1
+  }
+}
+
+function Bt(e, n) {
+  if (Zy(e, n)) return !0;
+  if (!n) return !1;
+  let r;
+  try {
+    r = new URL(e).hostname.replace(/^\[|\]$/g, "")
+  } catch {
+    return !1
+  }
+  if ($t(r) === 0) return !1;
+  return n.split(/[,\s]+/).filter(Boolean).some((o) => {
+    if (o.includes("/")) return L2(r, o);
+    let s = $t(o);
+    if (s === 0) return !1;
+    return L2(r, `${o}/${s===4?32:128}`)
+  })
+}
+
+function jt(e) {
+  let n = sE(),
+    r = Jx();
+  return MUr(e, {
+    ...n && {
+      cert: n.cert,
+      key: n.key,
+      passphrase: n.passphrase
+    },
+    ...r && {
+      ca: r
+    }
+  })
+}
+
+function MUr(e, n) {
+  let r = {
+    ...n,
+    headers: () => {
+      let s = qt();
+      return s ? {
+        "Proxy-Authorization": s
+      } : {}
+    }
+  };
+  if (a.CLAUDE_CODE_PROXY_RESOLVES_HOSTS) r.lookup = (s, i, c) => {
+    c(null, s, xr(i))
+  };
+  let o = new ibt(e, r);
+  return o.options = {
+    ...o.options,
+    ...n
+  }, o
+}
+
+function Tr(e) {
+  let {
+    agents: n
+  } = M(), r = n.get(e);
+  if (!r) r = br(e), n.set(e, r);
+  return r
+}
+
+function br(e) {
+  let n = Ue("undici"),
+    r = sE(),
+    o = Jx(),
+    s = {
+      httpProxy: e,
+      httpsProxy: e,
+      noProxy: Wze({
+        no_proxy: a.no_proxy,
+        NO_PROXY: a.NO_PROXY
+      })
+    };
+  if (r || o) {
+    let i = {
+      ...r && {
+        cert: r.cert,
+        key: r.key,
+        passphrase: r.passphrase
+      },
+      ...o && {
+        ca: o
+      }
+    };
+    s.connect = i, s.requestTls = i
+  }
+  return new n.EnvHttpProxyAgent(s)
+}
+
+function iE(e) {
+  let n = Ff();
+  if (!n) return;
+  try {
+    if (aE(new URL(e).hostname)) return
+  } catch {}
+  if (Zy(e)) return;
+  return n
+}
+var Pr = 300000;
+
+function Sfn(e) {
+  M().proxyAuthHelperConfig = e
+}
+
+function zze() {
+  if (!a.CLAUDE_CODE_ENABLE_PROXY_AUTH_HELPER) return;
+  return M().proxyAuthHelperConfig.helper
+}
+
+function Re(e) {
+  return zze() !== void 0 && e.proxyAuthHelperConfig.fromProjectOrLocal
+}
+
+function vr() {
+  let e = a.CLAUDE_CODE_PROXY_AUTH_HELPER_TTL_MS;
+  if (e !== void 0 && e >= 0) return e;
+  return Pr
+}
+async function Gze() {
+  let e = zze();
+  if (!e) return null;
+  let n = M(),
+    r = n.proxyAuthHelperConfig.sources === "personAndPolicy";
+  if (r && Re(n)) return null;
+  if (Re(n) && !we() && !n.proxyAuthHelperConfig.trustAccepted()) return t("proxyAuthHelper configured in project/local settings but workspace trust not yet accepted \u2014 skipping", {
+    level: "warn"
+  }), null;
+  let o = n.proxyAuthPendingChallenge;
+  if (!o && n.proxyAuthCache && Date.now() - n.proxyAuthCache.timestamp < vr()) return n.proxyAuthCache.value;
+  n.proxyAuthPendingChallenge = void 0;
+  let s = jze(),
+    i;
+  try {
+    i = s ? new URL(s).hostname : void 0
+  } catch {
+    i = void 0
+  }
+  let c = r ? Ar() : so(),
+    u = await cI(e, {
+      ...c !== null && {
+        cwd: c
+      },
+      timeout: 30000,
+      reject: !1,
+      useToolMemoryCgroup: !1,
+      env: {
+        ...process.env,
+        ...s && {
+          CLAUDE_CODE_PROXY_URL: s
+        },
+        ...i && {
+          CLAUDE_CODE_PROXY_HOST: i
+        },
+        ...o && {
+          CLAUDE_CODE_PROXY_AUTHENTICATE: o
+        }
+      }
+    });
+  if (u.failed || !u.stdout?.trim()) {
+    let f = u.timedOut ? "timed out" : u.failed ? `exited ${u.exitCode}` : "did not return a value",
+      h = u.stderr?.trim();
+    return console.error(`proxyAuthHelper failed: ${h?`${f}: ${h}`:f}`), n.proxyAuthCache?.value ?? null
+  }
+  let l = u.stdout.trim();
+  return n.proxyAuthCache = {
+    value: l,
+    timestamp: Date.now()
+  }, l
+}
+
+function qt() {
+  return M().proxyAuthCache?.value ?? null
+}
+
+function wfn(e) {
+  let n = M();
+  n.proxyAuthCache = null, n.proxyAuthPendingChallenge = e
+}
+
+function f1o() {
+  if (!zze()) return;
+  let e = M();
+  if (Re(e) && !e.proxyAuthHelperConfig.trustAccepted()) return;
+  Gze()
+}
+
+function ra(e) {
+  let n = process.env.API_FORCE_IDLE_TIMEOUT,
+    r = Fe(n) ? !0 : ws(n) ? !1 : e.bodyIdleTimeout,
+    o = e.forAnthropicAPI && r !== !0 && (e.hasBodyIdleWatchdog || r === !1),
+    s = {
+      ...M().keepAliveDisabled && {
+        keepalive: !1
+      },
+      ...o && {
+        timeout: !1
+      }
+    };
+  if (e.forAnthropicAPI) {
+    let c = a.ANTHROPIC_UNIX_SOCKET;
+    if (c) return {
+      ...s,
+      unix: c
+    }
+  }
+  let i = Ff();
+  if (i) {
+    if (e.url && Zy(e.url)) return {
+      ...s,
+      ...C1t()
+    };
+    let c = qt();
+    return {
+      ...s,
+      proxy: c ? {
+        url: i,
+        headers: {
+          "Proxy-Authorization": c
+        }
+      } : i,
+      ...C1t()
+    }
+  }
+  if (e.fallbackProxy) {
+    if (e.url && (Bt(e.url, e.fallbackProxy.noProxy) || Bt(e.url, Wze()))) return {
+      ...s,
+      ...C1t()
+    };
+    let c = C1t();
+    return {
+      ...s,
+      proxy: e.fallbackProxy.url,
+      ...e.fallbackProxy.ca ? {
+        tls: {
+          ...c.tls,
+          ca: e.fallbackProxy.ca
+        }
+      } : c
+    }
+  }
+  return {
+    ...s,
+    ...C1t()
+  }
+}
+var ie, be = !1;
+
+function wb() {
+  let e = F2(),
+    n = Ff(),
+    r = obt();
+  if (ie !== void 0) Ct.interceptors.request.eject(ie), ie = void 0;
+  if (Ct.defaults.proxy = void 0, Ct.defaults.httpAgent = void 0, Ct.defaults.httpsAgent = void 0, e) Ct.defaults.proxy = !1;
+  if (n) {
+    let o = jt(n);
+    ie = Ct.interceptors.request.use((s) => {
+      if (s.socketPath) return s;
+      let i = Ct.getUri(s);
+      if (i && Zy(i))
+        if (s.httpsAgent ??= r, s.httpsAgent) s.httpAgent = void 0;
+        else delete s.httpsAgent, delete s.httpAgent;
+      else s.httpsAgent = o, s.httpAgent = o;
+      return s
+    }), Ue("undici").setGlobalDispatcher(Tr(n)), be = !0
+  } else {
+    if (be) {
+      let o = Ue("undici");
+      o.setGlobalDispatcher(new o.Agent), be = !1
+    }
+    if (r) Ct.defaults.httpsAgent = r
+  }
+}
+
+function Vze(e) {
+  return a.AWS_ENDPOINT_URL_STS || a.AWS_ENDPOINT_URL || `https://sts.${e}.amazonaws.com`
+}
+async function qze(e) {
+  let n = await tQ(e);
+  if (!n) return {};
+  let {
+    defaultProvider: r
+  } = await import("B:/~BUN/root/chunk-9yh3dfvm.js");
+  return {
+    requestHandler: n,
+    credentials: r({
+      clientConfig: {
+        requestHandler: n
+      },
+      parentClientConfig: {
+        requestHandler: n,
+        ...e.region !== void 0 && {
+          region: e.region
+        }
+      }
+    })
+  }
+}
+async function tQ(e) {
+  let n = Ff(),
+    r = e.requestTimeoutMs !== void 0 && {
+      requestTimeout: e.requestTimeoutMs,
+      throwOnRequestTimeout: !0
+    };
+  if (!n || e.url && Zy(e.url)) {
+    let s = obt();
+    if (!s) return null;
+    return new Pe.NodeHttpHandler({
+      httpsAgent: s,
+      ...r
+    })
+  }
+  let o = jt(n);
+  return new Pe.NodeHttpHandler({
+    httpAgent: o,
+    httpsAgent: o,
+    ...r
+  })
+}
+
+function nQ() {
+  M().agents.clear(), t("Cleared proxy agent cache")
+}
+export {
+  j0e,
+  bg,
+  t1o,
+  n1o,
+  sL,
+  eQ,
+  Jx,
+  r1o,
+  o1o,
+  bfn,
+  E1t,
+  T1t,
+  p4s,
+  f4s,
+  s1o,
+  i1o,
+  L2,
+  iL,
+  N2,
+  a1o,
+  sE,
+  obt,
+  l1o,
+  ck,
+  C1t,
+  d1o,
+  OUr,
+  c1o,
+  u1o,
+  sbt,
+  x4,
+  e0,
+  ibt,
+  p1o,
+  F2,
+  jze,
+  H2,
+  R1t,
+  Ff,
+  IUr,
+  Wze,
+  Zy,
+  MUr,
+  iE,
+  Sfn,
+  zze,
+  Gze,
+  wfn,
+  f1o,
+  ra,
+  wb,
+  Vze,
+  qze,
+  tQ,
+  nQ
+};

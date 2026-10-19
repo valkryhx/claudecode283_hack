@@ -1,0 +1,558 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  kd
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  I9t,
+  M9t,
+  Yfs,
+  e9,
+  jgr,
+  i9s,
+  l9s,
+  hat,
+  XDn,
+  F9s,
+  H9s,
+  Plt,
+  _6,
+  Mlt,
+  EFn,
+  p$e,
+  en,
+  Re,
+  Bt,
+  N6e,
+  CHn,
+  VOt
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  HMe
+} from "B:/~BUN/root/chunk-qp0344nb.js";
+import {
+  Ne
+} from "B:/~BUN/root/chunk-nvdqbkrt.js";
+import {
+  le
+} from "B:/~BUN/root/chunk-e7tskyjv.js";
+import {
+  K6e,
+  uIt
+} from "B:/~BUN/root/chunk-k382hx6g.js";
+import {
+  jc
+} from "B:/~BUN/root/chunk-183sjefx.js";
+import {
+  Qn,
+  eB,
+  Yme
+} from "B:/~BUN/root/chunk-nw686kdq.js";
+import {
+  L6
+} from "B:/~BUN/root/chunk-rhpppw15.js";
+import {
+  M0,
+  $Ke,
+  A1
+} from "B:/~BUN/root/chunk-tcj6992z.js";
+import {
+  tl
+} from "B:/~BUN/root/chunk-k8727s7d.js";
+import {
+  Ean,
+  n4n
+} from "B:/~BUN/root/chunk-g58w39t3.js";
+import {
+  N
+} from "B:/~BUN/root/chunk-nkxgam12.js";
+var K = (e, o) => o ? {
+  drop: o.resultText ?? "blocked by a UserPromptSubmit hook"
+} : {
+  text: e
+};
+import {
+  randomUUID as Se
+} from "crypto";
+var lPn = (e, o = "UserPromptSubmit") => en({
+  type: "hook_additional_context",
+  content: [...e],
+  hookName: o,
+  toolUseID: `hook-${Se()}`,
+  hookEvent: "UserPromptSubmit"
+});
+var _ = !0;
+var U = (e, o) => ({
+  messages: [{
+    ...Bt(e, "warning", void 0, _),
+    promptSubmitEnding: {
+      ending: o,
+      promptKept: !1
+    }
+  }],
+  shouldQuery: !1,
+  resultText: e
+});
+
+function J(e, o, r) {
+  return r === !0 ? e : `${e}
+
+Original prompt: ${o}`
+}
+var ECt = {
+  wasCancelled: !0
+};
+var B = (e) => e.wasCancelled === !0 && (e.blocked === void 0 || e.stopped !== void 0);
+var I = (e, o, r) => B(e) ? ECt : {
+  ended: o,
+  stopped: e.stopped,
+  text: r,
+  wasCancelled: e.wasCancelled
+};
+var X = () => U("Prompt blocked: the UserPromptSubmit hooks did not run over the submitted text.", {
+  kind: "no_verdict",
+  noVerdictKind: "hooks_never_ran"
+});
+
+function Y(e) {
+  let o = e.origin;
+  return o?.kind === "plugin" && o.asUser !== !0 ? VOt(e.text, o.name, {
+    midTurn: !1
+  }) : e.text
+}
+var Z = (e, o, r) => ({
+  proceeds: {
+    text: e,
+    sessionTitle: o,
+    ...r !== void 0 && r.length > 0 && {
+      context: r
+    }
+  }
+});
+var j = (e, o) => ({
+  ...e,
+  ...o?.length && {
+    context: o
+  }
+});
+var _e = (e, o, r) => !e ? {
+  ended: X()
+} : e.blocked ? j(I(e, e.blocked, o.text), o.context) : {
+  ...Z(Y(o), r, o.context),
+  wasCancelled: e.wasCancelled
+};
+var q = (e) => e.aborted;
+
+function ee(e) {
+  return e && (e.attachment.type !== "hook_success" || e.attachment.content) ? e : void 0
+}
+var oe = "the turn was interrupted while the prompt was checked";
+var te = (e) => e instanceof kd;
+var Ve = (e, o) => Qn(e) === Qn(o?.made);
+var D = (e, o) => e || q(o);
+var re = "the prompt did not go through prompt.submit (a command, bash mode, an input that did not query, or a failed pass)";
+var k8s = (e, o) => e.plugins !== o.plugins;
+
+function se() {
+  let e = new WeakMap,
+    o = 0;
+  return {
+    of: (r) => {
+      let s = e.get(r);
+      if (s === void 0) o += 1, s = o, e.set(r, s);
+      return s
+    }
+  }
+}
+var ne = se();
+
+function v() {
+  let e = uIt("prompt.submit");
+  return e.length === 0 ? "" : JSON.stringify([ne.of(K6e.plugins()), e.map((r) => [r.plugin, r.generation])])
+}
+var vcr = (e, o) => ({
+  ...Bt(e, "warning", void 0, _),
+  promptSubmitEnding: {
+    ending: o,
+    promptKept: !0
+  }
+});
+var pe = (e) => e === void 0 ? HMe : `${HMe}: ${e}`;
+var kcr = (e) => Re({
+  content: e,
+  isMeta: !0
+});
+var ie = (e, o, r) => ({
+  blocked: e,
+  stopped: o,
+  ...r && {
+    wasCancelled: !0
+  }
+});
+var me = (e, o) => XDn({
+  promptSource: e ?? "sdk",
+  wakeupSource: o
+});
+
+function ue(e, o) {
+  return e.message?.type === "attachment" && e.message.attachment.type === "hook_cancelled" && e.message.attachment.timedOut !== !0 && o.aborted
+}
+async function Ecr({
+  text: e,
+  typed: o,
+  context: r,
+  result: s,
+  promptSource: d,
+  wakeupSource: c,
+  tiers: a
+}) {
+  let g, u = r.abortController.signal.aborted,
+    S = A1();
+  try {
+    for await (let n of Plt(e, le(r).mode, r, me(d, c), a)) {
+      if (n.message?.type === "progress") continue;
+      if (ue(n, r.abortController.signal)) u = !0;
+      if (n.blockingError) {
+        let i = D(u, r.abortController.signal),
+          p = n.suppressOriginalPrompt === !0 || o !== e || M0(S) || $Ke({
+            isRunReached: !1
+          }),
+          f = n.blockingError.promptEnding;
+        return {
+          blocked: U(J(p$e(n.blockingError), e, p), f !== void 0 && "noVerdict" in f ? {
+            kind: "no_verdict",
+            noVerdictKind: f.noVerdict
+          } : {
+            kind: "blocked_by_hook",
+            ...CHn(f?.reason)
+          }),
+          ...i && {
+            wasCancelled: !0
+          }
+        }
+      }
+      if (n.preventContinuation) {
+        let i = pe(n.stopReason);
+        return s.messages = [...s.messages, kcr(i), vcr(i, {
+          kind: "stopped_by_hook",
+          ...CHn(n.stopReason)
+        })], s.shouldQuery = !1, s.resultText = i, s.allowedTools = void 0, ie(s, i, D(u, r.abortController.signal))
+      }
+      if (n.sessionTitle) g = n.sessionTitle;
+      let k = n.additionalContexts;
+      if (k !== void 0 && k.length > 0) s.messages = [...s.messages, lPn(k)];
+      let y = ee(n.message);
+      if (y) s.messages = [...s.messages, y]
+    }
+  } catch (n) {
+    let P = Ean(n, r.abortController.signal),
+      k = !te(n);
+    if (!P) throw n;
+    t(k ? "UserPromptSubmit hooks cancelled (interrupted while a hook ran)" : "UserPromptSubmit hooks cancelled (control stream closed)")
+  }
+  return D(u, r.abortController.signal) ? {
+    sessionTitle: g,
+    wasCancelled: !0
+  } : {
+    sessionTitle: g
+  }
+}
+var ae = (e) => ({
+  ...e,
+  messages: [...e.messages],
+  allowedTools: e.allowedTools && [...e.allowedTools]
+});
+var wZr = (e) => EFn(e) !== "" || v() !== "";
+var Tcr = () => Ne().loadedModules.some((e) => !L6(e.args.pluginStorageId) && jc(e) && (e.hooks("prompt.submit") || e.hooks("classic.UserPromptSubmit")));
+var po = (e) => e === void 0 || e.hooks !== "" || ["prompt.submit", "classic.UserPromptSubmit"].some((o) => uIt(o).some((r) => r.tier !== "builtin"));
+var lFe = (e) => ({
+  permissionMode: le(e).mode,
+  hooks: EFn(e),
+  plugins: v(),
+  hooksSkippedByTrust: _6()
+});
+
+function vZr(e, {
+  latch: o
+}) {
+  let r, s = !1;
+  return () => {
+    if (s || o && r) return r;
+    try {
+      r = lFe(e())
+    } catch (d) {
+      r = void 0, s = o, t(`could not read what screens a prompt now: ${d}`, {
+        level: "error"
+      })
+    }
+    return r
+  }
+}
+var D6t = (e, o) => e.hooks !== o.hooks || e.hooksSkippedByTrust !== o.hooksSkippedByTrust || e.plugins !== o.plugins || e.permissionMode !== o.permissionMode && o.hooks !== "";
+var de = (e, o) => ({
+  scratch: e,
+  blocked: o.blocked,
+  sessionTitle: o.sessionTitle,
+  stopped: o.stopped,
+  wasCancelled: o.wasCancelled
+});
+
+function lo({
+  typed: e,
+  result: o,
+  context: r,
+  promptSource: s,
+  wakeupSource: d
+}) {
+  let c, a, g = new Map,
+    u = new Set;
+  async function S(i, p) {
+    let f = p.managedHooksExcluded === !0,
+      T = ae(f ? a?.scratch ?? o : o),
+      l = de(T, await Ecr({
+        text: i,
+        typed: e,
+        context: r,
+        result: T,
+        promptSource: s,
+        wakeupSource: d,
+        tiers: p
+      }));
+    return g.delete(i), g.set(i, l), l
+  }
+
+  function n(i, p) {
+    let f = S(i, p);
+    return u.add(f), f.finally(() => u.delete(f))
+  }
+  async function P() {
+    while (u.size > 0) await Promise.allSettled([...u])
+  }
+
+  function k() {
+    let [i, p] = [...g].at(-1) ?? [];
+    return p?.blocked !== void 0 && p.stopped === void 0 ? i : void 0
+  }
+  async function E(i) {
+    let p = await n(i, Mlt);
+    return a = p, c = p.sessionTitle ?? c, p
+  }
+
+  function y(i) {
+    let p = g.get(i);
+    if (!p) return;
+    return o.messages = p.scratch.messages, o.allowedTools = p.scratch.allowedTools, o.shouldQuery = p.scratch.shouldQuery, o.resultText = p.scratch.resultText, c = p.sessionTitle ?? c, p
+  }
+  return {
+    managed: E,
+    pass: n,
+    commit: y,
+    settled: P,
+    blockedText: k,
+    managedRun: () => a,
+    sessionTitle: () => c
+  }
+}
+var fe = ({
+  submission: e,
+  attachments: o,
+  origin: r,
+  turnId: s,
+  shouldWait: d
+}) => ({
+  text: e.text,
+  wait: d,
+  ...o.length > 0 && {
+    attachments: o
+  },
+  origin: r,
+  ...s !== void 0 && {
+    turnId: s
+  },
+  ...e.command !== void 0 && {
+    command: e.command
+  },
+  ...e.isMeta === !0 && {
+    isMeta: e.isMeta
+  }
+});
+
+function E8s(e) {
+  let o = !1;
+  return {
+    origin: e?.origin,
+    settle(r) {
+      o = !0, e?.settle(r)
+    },
+    settleWhen(r) {
+      o = !0, r.then((s) => e?.settle(s), () => e?.settle({
+        drop: re
+      }))
+    },
+    [Symbol.dispose]() {
+      if (!o) o = !0, e?.settle({
+        drop: re
+      })
+    }
+  }
+}
+
+function ce(e, o) {
+  let r = tl("prompt.submit");
+  return !e || !r ? Promise.resolve() : e(o)
+}
+
+function ge(e, o) {
+  let r = new Set(o ?? []);
+  for (let s of e.toSorted((d, c) => c.index - d.index)) {
+    let d = s.returned,
+      c = N(d) ? d.context : void 0,
+      a = (eB(c) ?? []).filter((u) => !r.has(u));
+    if (a.length === 0) continue;
+    for (let u of a) r.add(u);
+    let g = a.reduce((u, S) => u + S.length, 0);
+    t(`prompt.submit: ${s.plugin} put ${a.length} context ${a.length===1?"entry":"entries"} (${g} characters) on its result after next(); not attached, the prompt had entered`, {
+      level: "warn"
+    })
+  }
+}
+async function dPn({
+  submission: e,
+  origin: o,
+  bridgeOrigin: r,
+  mode: s,
+  turnId: d,
+  shouldWait: c,
+  context: a,
+  result: g,
+  promptSource: u,
+  wakeupSource: S,
+  queued: n,
+  isStartInput: P,
+  enter: k,
+  bound: E
+}) {
+  if (!P) await e9.get();
+  E?.();
+  let {
+    signal: y
+  } = a.abortController, i = vZr(() => a, {
+    latch: !1
+  }), p = () => po(i()) || Tcr(), f = p(), T = () => f || p();
+  if (f && y.aborted) return n?.settle({
+    drop: oe
+  }), ECt;
+  let l = lo({
+      typed: e.text,
+      result: g,
+      context: a,
+      promptSource: u,
+      wakeupSource: S
+    }),
+    A = M9t(jgr),
+    {
+      unplaceable: H
+    } = e,
+    O = l9s(async (m, x) => {
+      if (H !== void 0 && m !== e.text) return {
+        drop: H
+      };
+      let b = await (x.managedHooksOnly ? l.managed(m) : l.pass(m, x));
+      if (B(b) && T()) throw Yme(y);
+      return K(m, b.blocked)
+    }, A.perform),
+    L, M = await n4n(I9t(A, F9s(H9s(e.input, e.pastedContents), a.options.mainLoopModel, (m) => hat({
+      signal: y,
+      origin: n?.origin,
+      core: {
+        "prompt.submit": O.core
+      },
+      managed: {
+        "prompt.submit": O.managed
+      },
+      trace: (x) => {
+        if (L) ge(x, L.context)
+      }
+    }).prompt.submit(fe({
+      submission: e,
+      attachments: m,
+      origin: Yfs({
+        origin: o,
+        bridgeOrigin: r,
+        wakeupSource: S,
+        mode: s,
+        promptSource: u
+      }),
+      turnId: d,
+      shouldWait: c
+    })))), y);
+  if (M === void 0) {
+    await l.settled();
+    let m = l.blockedText(),
+      x = m === void 0 ? void 0 : l.commit(m),
+      w = x?.blocked,
+      b = m !== void 0 && x !== void 0 && w !== void 0;
+    return t("prompt.submit: interrupted while a hook checked the prompt: " + (b ? "the block given beneath it stands" : "no verdict")), n?.settle(b ? K(m, w) : {
+      drop: oe
+    }), b ? j(I(x, w, m), O.arrivedContext()) : ECt
+  }
+  if (M.arrived) {
+    let m = M.arrived;
+    if (L = m, m.text !== e.text) t(`prompt.submit: text rewritten by a hook (${e.text.length} -> ${m.text.length} chars)`);
+    let x = _e(l.commit(m.text), m, l.sessionTitle()),
+      b = x.wasCancelled === !0 && T() && x.proceeds ? ECt : x,
+      z = ce(k, b);
+    return n?.settleWhen(z.then(() => m)), z.then(() => A.done(m), (ke) => A.failed(ke)), b
+  }
+  let R = M.answered,
+    h = O.runs.last(),
+    W = i9s(R, h?.made);
+  t(`prompt.submit: dropped (${W.drop})`), n?.settle(W);
+  let V = l.managedRun();
+  if (V?.blocked) return l.commit(e.text), I(V, V.blocked, e.text);
+  if (H !== void 0 && h?.made.drop === H) return {
+    ended: U(H, {
+      kind: "no_verdict",
+      noVerdictKind: "rewrite_unplaceable"
+    })
+  };
+  let C = h ? l.commit(h.input) : void 0,
+    Q = C?.blocked,
+    xe = R.drop !== void 0 && h !== void 0 && !Ve(R, h),
+    ye = O.arrivedContext();
+  if (h !== void 0 && C !== void 0 && Q !== void 0 && !xe) return j(I(C, Q, h.input), ye);
+  if (y.aborted && (C?.blocked === void 0 || B(C)) && T()) return ECt;
+  let G = R.drop !== void 0;
+  return {
+    ended: U(G ? `Prompt dropped by a hook: ${N6e(R.drop)}` : `Prompt not submitted: ${jgr}`, G ? {
+      kind: "dropped_by_hook",
+      ...CHn(R.drop)
+    } : {
+      kind: "not_passed_on"
+    })
+  }
+}
+export {
+  lPn,
+  ECt,
+  k8s,
+  vcr,
+  kcr,
+  Ecr,
+  wZr,
+  Tcr,
+  lFe,
+  vZr,
+  D6t,
+  E8s,
+  dPn
+};

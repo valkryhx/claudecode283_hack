@@ -1,0 +1,290 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Me } from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import { Bn } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { W } from "B:/~BUN/root/chunk-hg8ngszx.js";
+import { d, k, o_, fm } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { l } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { Ae } from "B:/~BUN/root/chunk-jjcfcfrs.js";
+import { V } from "B:/~BUN/root/chunk-tgzmva3g.js";
+import { e$ } from "B:/~BUN/root/chunk-8v3gkznb.js";
+import { WOs, zOs, Hk, aO, SH, GOs, uD } from "B:/~BUN/root/chunk-74f4ssah.js";
+import { cse } from "B:/~BUN/root/chunk-9grc6xh0.js";
+import { qt, Ee, P, B } from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import { yt } from "B:/~BUN/root/chunk-hz8x9zsh.js";
+B();
+import { watch as b } from "fs";
+var g = 5000,
+  T = 50,
+  f = 5000;
+class vnr {
+  #c = void 0;
+  #d = !1;
+  #n = null;
+  #f = null;
+  #i = !1;
+  #o = null;
+  #p = !1;
+  #l = null;
+  #t = null;
+  #b = null;
+  #y = Me();
+  #g = 0;
+  #a = !1;
+  #r;
+  #s;
+  #e = {
+    phase: "idle"
+  };
+  #R = 0;
+  #S = 0;
+  #m = 0;
+  #E;
+  constructor(s, i = globalThis, e = () => {}) {
+    this.#r = W() && s !== void 0 ? s : void 0, this.#s = i, this.#E = e;
+  }
+  #w(s) {
+    let i = this.#d;
+    if (this.#d = s, s && !i) this.#E();
+  }
+  getSnapshot = () => this.#d ? void 0 : this.#c;
+  subscribe = s => {
+    let i = this.#y.subscribe(s);
+    if (this.#g++, !this.#a) this.#a = !0, this.#b = WOs(this.#h), this.#k();
+    let e = !1;
+    return () => {
+      if (e) return;
+      if (e = !0, i(), this.#g--, this.#g === 0) this.#L();
+    };
+  };
+  #V() {
+    this.#y.emit();
+  }
+  #F(s) {
+    if (this.#r) {
+      this.#T(this.#r, s, !1);
+      return;
+    }
+    let i = SH(s);
+    if (i === this.#f && this.#n !== null) return;
+    this.#n?.close(), this.#n = null, this.#f = i;
+    try {
+      let e = b(i, this.#h);
+      e.on("error", r => {
+        if (t(`Task list watcher error: ${d(r)}`, {
+          level: "warn"
+        }), this.#n === e) {
+          if (this.#f = null, this.#i = !0, this.#t === null) this.#t = this.#s.setTimeout(this.#h, f), this.#t.unref();
+        }
+      }), e.unref(), this.#n = e, this.#i = !1;
+    } catch {}
+  }
+  #T(s, listId, onRetry) {
+    let r = this.#e;
+    if (r.phase !== "idle" && r.listId === listId && !onRetry) return;
+    if (r.phase === "live") r.subscription.unsubscribe();
+    let generation = ++this.#m;
+    this.#e = {
+      phase: "subscribing",
+      listId: listId,
+      generation: generation,
+      endedEarly: !1
+    }, this.#i = !0, this.#u();
+    let h = (subscription, p) => {
+        if (generation !== this.#m) {
+          subscription?.unsubscribe();
+          return;
+        }
+        let c = this.#e;
+        if (subscription && c.phase === "subscribing" && c.endedEarly) {
+          if (subscription.unsubscribe(), onRetry) this.#v(listId);else this.#T(s, listId, !0);
+          return;
+        }
+        if (subscription) {
+          this.#e = {
+            phase: "live",
+            listId: listId,
+            generation: generation,
+            subscription: subscription,
+            onRetry: onRetry
+          }, this.#i = !1, this.#h();
+          return;
+        }
+        if (t(`Task list subscription unavailable: ${p}`, {
+          level: "warn"
+        }), onRetry) {
+          this.#v(listId);
+          return;
+        }
+        this.#e = {
+          phase: "idle"
+        }, this.#i = !0, this.#u();
+      },
+      a;
+    try {
+      a = s.subscribe({
+        target: "scope",
+        scope: {
+          namespace: "task",
+          listId: aO(listId)
+        }
+      }, o => this.#x(o, generation));
+    } catch (error) {
+      h(null, d(error));
+      return;
+    }
+    a.then(o => o.ok ? h(o.value) : h(null, yt(o.error)), o => h(null, d(o)));
+  }
+  #x(s, i) {
+    let e = this.#e;
+    if (e.phase === "subscribing" && e.generation === i && !s.ok) {
+      e.endedEarly = !0;
+      return;
+    }
+    if (!this.#a || e.phase !== "live" || e.generation !== i) return;
+    if (s.ok) {
+      e.onRetry = !1, this.#h();
+      return;
+    }
+    if (t(`Task list subscription ended: ${yt(s.error)}`, {
+      level: "warn"
+    }), e.onRetry || !this.#r) {
+      e.subscription.unsubscribe(), this.#v(e.listId);
+      return;
+    }
+    this.#T(this.#r, e.listId, !0);
+  }
+  #v(listId_2) {
+    this.#m++, this.#e = {
+      phase: "givenUp",
+      listId: listId_2
+    }, this.#i = !0, this.#h();
+  }
+  #u() {
+    if (!this.#a) return;
+    if (this.#t) this.#s.clearTimeout(this.#t);
+    this.#t = this.#s.setTimeout(this.#h, f), this.#t.unref();
+  }
+  #h = () => {
+    if (this.#l) this.#s.clearTimeout(this.#l);
+    this.#l = this.#s.setTimeout(() => void this.#k(), T), this.#l.unref();
+  };
+  refetch = () => this.#k();
+  #k = async () => {
+    let s = ++this.#R,
+      i = Hk();
+    this.#F(i);
+    let e;
+    try {
+      e = await GOs(i, this.#r);
+    } catch (error) {
+      t(`Task list read failed: ${d(error)}`, {
+        level: "warn"
+      }), e = null;
+    }
+    if (this.#r && s < this.#S) return;
+    if (this.#S = s, e === null) {
+      if (this.#a) this.#i = !0, this.#u();
+      return;
+    }
+    if (this.#e.phase === "live") this.#i = !1;
+    let r = e.filter(item => !item.metadata?._internal);
+    if (!this.#a) return;
+    let n = r.some(item => item.status !== "completed"),
+      h = !y(this.#c, r);
+    if (h) this.#c = r;
+    if (n || r.length === 0) this.#w(r.length === 0), this.#C();else if (this.#o === null && !this.#d) if (this.#p) t("Task list reset still in flight; not arming another hide until it settles", {
+      level: "verbose"
+    });else this.#o = this.#s.setTimeout(this.#B.bind(this, i), g), this.#o.unref();
+    if (h) this.#V();
+    if (this.#t) this.#s.clearTimeout(this.#t), this.#t = null;
+    if (n || this.#i) {
+      if (this.#e.phase === "live") return;
+      this.#u();
+    }
+  };
+  #B(s) {
+    this.#o = null;
+    let i = Hk();
+    if (i !== s) return;
+    this.#p = !0, uD(i, this.#r).then(async e => {
+      if (e.length > 0 && e.every(item => item.status === "completed") && (await zOs(i, this.#r))) this.#c = [], this.#w(!0);
+      this.#V();
+    }).catch(e => {
+      if (this.#r) this.#u();
+      if (k(e) === "ELOCKED") {
+        t("Task list lock is busy (another session or process sharing this task list, or an in-flight task write, holds it); completed tasks stay visible and the reset is retried on the next refresh");
+        return;
+      }
+      if (fm(e) || o_(e)) {
+        t(`Task list reset failed on the tasks directory and will be retried on the next refresh: ${d(e)}`, {
+          level: "warn"
+        });
+        return;
+      }
+      l(e);
+    }).finally(() => {
+      this.#p = !1;
+    });
+  }
+  #C() {
+    if (this.#o) this.#s.clearTimeout(this.#o), this.#o = null;
+  }
+  #L() {
+    if (this.#n?.close(), this.#n = null, this.#e.phase === "live") this.#e.subscription.unsubscribe();
+    if (this.#e = {
+      phase: "idle"
+    }, this.#m++, this.#f = null, this.#b?.(), this.#b = null, this.#C(), this.#l) this.#s.clearTimeout(this.#l);
+    if (this.#t) this.#s.clearTimeout(this.#t);
+    this.#l = null, this.#t = null, this.#i = !1, this.#a = !1;
+  }
+}
+var knr = qt(null),
+  v = () => {};
+function u() {
+  let s = Ee(knr),
+    i = V(r => r.teamContext);
+  if (!(cse() && !Bn() && (!i || e$(i)))) return null;
+  if (!s) throw ReferenceError("useTasksV2 cannot be called outside of a TasksV2StoreContext provider (mounted by <AppStateProvider />)");
+  return s;
+}
+function lce() {
+  return Ae(u());
+}
+function p4r() {
+  let s = u();
+  P(() => {
+    if (!s) return;
+    return s.subscribe(v);
+  }, [s]);
+}
+function d9o() {
+  return Ae(u(), S) ?? !1;
+}
+function y(s, i) {
+  if (s === void 0 || s.length !== i.length) return !1;
+  for (let e = 0; e < i.length; e++) {
+    let r = s[e],
+      n = i[e];
+    if (r.id !== n.id || r.status !== n.status || r.subject !== n.subject || r.activeForm !== n.activeForm || r.owner !== n.owner || r.description !== n.description || !m(r.blockedBy, n.blockedBy) || !m(r.blocks, n.blocks)) return !1;
+  }
+  return !0;
+}
+function m(s, i) {
+  if (s.length !== i.length) return !1;
+  for (let e = 0; e < s.length; e++) if (s[e] !== i[e]) return !1;
+  return !0;
+}
+function S(s) {
+  return s !== void 0 && s.length > 0;
+}
+export { vnr, knr, lce, p4r, d9o };

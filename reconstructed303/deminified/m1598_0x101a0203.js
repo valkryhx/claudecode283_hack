@@ -1,0 +1,462 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Ze, ke } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { g, p } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import { X2 } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { li } from "B:/~BUN/root/chunk-mtfk0qfd.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { wNr } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { I } from "B:/~BUN/root/chunk-je1b1drr.js";
+import { u4 } from "B:/~BUN/root/chunk-v6pbq6dm.js";
+import { el } from "B:/~BUN/root/chunk-9grc6xh0.js";
+import { Ut } from "B:/~BUN/root/chunk-cx57tr4b.js";
+import { ZC } from "B:/~BUN/root/chunk-e4q58xft.js";
+import { ee } from "B:/~BUN/root/chunk-t63e78w2.js";
+import { Ki } from "B:/~BUN/root/chunk-19m6yp46.js";
+import { ph, fK, o3, Vfe, zDt, krn, gX } from "B:/~BUN/root/chunk-pwz0pnkt.js";
+import { DYt, $An, Grs, qrs, RQr } from "B:/~BUN/root/chunk-7qgtnbqd.js";
+import { abe, Kce, wxn, Oy, c_, M7r, sss, iss, ass, dss, css, V$, JRe, zV, rCt } from "B:/~BUN/root/chunk-4bgwjb4z.js";
+import { IAn, kQr, Gce } from "B:/~BUN/root/chunk-f7hn69zw.js";
+import { Mot } from "B:/~BUN/root/chunk-hscn9khv.js";
+import { GNe } from "B:/~BUN/root/chunk-5qc8qrsy.js";
+import { s3 } from "B:/~BUN/root/chunk-nbprdt7j.js";
+import { Ia } from "B:/~BUN/root/chunk-9xr0x7gd.js";
+var z = 1000,
+  Q = 200,
+  w = {
+    armable: new Set(),
+    yielded: new Set(),
+    undo: () => {}
+  };
+async function Z() {
+  let n = (await krn()).find(item => item.pid === process.pid);
+  return n === void 0 ? void 0 : {
+    sessionId: n.sessionId,
+    tmux: n.tmux
+  };
+}
+async function Bni(e) {
+  let n = await te(e).finally(() => e.claim?.end());
+  if (n.kind === "took_over") g("artifact_live_subscribe", {
+    took_over: !0,
+    holders: e.holders.length,
+    armable_count: n.armable.size,
+    yielded_count: n.yielded.size
+  });else p("artifact_live_subscribe", `takeover_${n.kind}`, {
+    holders: e.holders.length
+  });
+  return n;
+}
+async function te(e) {
+  if (!Ki()) return {
+    ...w,
+    kind: "messaging_off"
+  };
+  let n = gX();
+  if (n === void 0 || e.holders.length === 0) return {
+    ...w,
+    kind: "no_inbox"
+  };
+  let r = ZC(n),
+    a = e.transport?.ownRecord ?? Z,
+    s = await a().catch(() => {
+      return;
+    });
+  if (s?.sessionId !== e.conversationId) {
+    let o = e.transport?.timers ?? $An;
+    await new Promise(d => void o.setTimeout(d, Q)), s = await a().catch(() => {
+      return;
+    });
+  }
+  if (s?.sessionId !== e.conversationId) return {
+    ...w,
+    kind: "registry_stale"
+  };
+  let tmux = s.tmux;
+  if (e.holdersIncomplete === !0 && !e.alreadyReplying) return {
+    ...w,
+    kind: "holder_unreachable"
+  };
+  let f = e.slugs.filter(item => !(e.claim?.lost.has(item) ?? !1)).slice(0, DYt);
+  if (f.length === 0) return {
+    ...w,
+    kind: "nothing_freed"
+  };
+  let h = [];
+  for (let o of e.holders) {
+    if (o.sock === void 0 || o.sock === "" || !(o.peerFeatures?.includes(wNr) ?? !1) || ZC(o.sock) === r || IAn(o.kind)) {
+      if (e.alreadyReplying) continue;
+      return {
+        ...w,
+        kind: "holder_unreachable"
+      };
+    }
+    h.push({
+      sock: o.sock,
+      pid: o.pid
+    });
+  }
+  if (h.length === 0) return {
+    ...w,
+    kind: "holder_unreachable"
+  };
+  let c = e.transport?.send ?? zDt,
+    u = e.transport?.sendControl ?? Vfe,
+    Y = e.transport?.timers ?? $An,
+    T = e.transport?.now ?? Date.now,
+    G = u4(n),
+    P = expectPeerPid => I() !== "windows" ? {
+      expectPeerPid: expectPeerPid
+    } : {},
+    v = [],
+    D = new Set(),
+    {
+      wakes: wakes,
+      autoReact: autoReact,
+      durable: durable
+    } = ee(),
+    W = o => {
+      for (let d of o.yielded) {
+        let i = wakes.takenFrom.get(d) ?? [];
+        if (!i.some(item => item.msgId === o.msgId)) wakes.takenFrom.set(d, [...i, {
+          sock: o.sock,
+          pid: o.pid,
+          msgId: o.msgId
+        }]);
+        if (e.alreadyReplying && (autoReact.userDisarmed || durable.stopLatches.isStopped(d) || Oy(d) && !c_(d))) trs(d, u);
+      }
+    },
+    U = e.claim?.sentAt ?? T(),
+    A = (o, d, i) => {
+      let slugs = i?.precautionary !== void 0 ? [...i.precautionary] : [...o.yielded].filter(item => d === void 0 || d.has(item));
+      if (slugs.length === 0) return;
+      for (let m of slugs) o.yielded.delete(m);
+      g("artifact_live_subscribe", {
+        [i?.precautionary !== void 0 ? "takeover_unyield_precautionary" : "takeover_handed_back"]: slugs.length
+      });
+      let _ = {
+        action: "unyield_artifact_replies",
+        orig_msg_id: o.msgId,
+        slugs: slugs,
+        ...(i?.stopped === !0 && {
+          stopped: !0
+        })
+      };
+      u(o.sock, _, P(o.pid)).catch(m => {
+        if (t(`[reply-yield] unyield to ${ph(o.sock)} failed: ${fK(String(m))}`), o3(m) && !Ia(o.pid)) {
+          p("artifact_live_subscribe", "unyield_holder_gone");
+          return;
+        }
+        let k = () => void u(o.sock, _, P(o.pid)).catch(() => {
+          p("artifact_live_subscribe", "unyield_send_failed");
+        });
+        if (o3(m)) Y.setTimeout(k, z);else k();
+      });
+    },
+    N = [];
+  for (let o of h) {
+    let d = s3(),
+      i = {
+        sock: o.sock,
+        pid: o.pid,
+        msgId: d.msg_id,
+        yielded: new Set()
+      };
+    v.push(i);
+    let y = Grs(d.msg_id, f, {
+      sentAt: U,
+      expectPid: o.pid,
+      ...(e.transport?.timeoutMs !== void 0 && {
+        timeoutMs: e.transport.timeoutMs
+      }),
+      ...(e.transport?.timers !== void 0 && {
+        timers: e.transport.timers
+      }),
+      onLate: _ => {
+        if (_.kind !== "yielded") return;
+        for (let k of _.yielded) i.yielded.add(k);
+        let m = new Map([...(e.claim?.lost ?? []), ..._.lostTo]);
+        A(i, new Set([...i.yielded].filter(item => m.has(item) ? q(item, i, m, e.alreadyReplying === !0) : !e.alreadyReplying && !D.has(item)))), W(i);
+      }
+    });
+    N.push((async () => {
+      try {
+        await c(o.sock, {
+          action: "yield_artifact_replies",
+          from: G,
+          session_id: e.conversationId,
+          slugs: f,
+          reason: e.reason,
+          sent_at: T(),
+          claimed_at: U,
+          requester: {
+            cwd: ke(),
+            ...(tmux !== void 0 && {
+              tmux: tmux
+            })
+          }
+        }, d, P(o.pid));
+      } catch (error) {
+        if (o3(error)) {
+          let lostTo = qrs(d.msg_id),
+            lost = lostTo.map(([J]) => J);
+          return Ia(o.pid) ? {
+            kind: "unreachable",
+            lost: lost,
+            lostTo: lostTo
+          } : {
+            kind: "gone",
+            lost: lost,
+            lostTo: lostTo
+          };
+        }
+      }
+      return y;
+    })());
+  }
+  let B = await Promise.all(N),
+    x = new Map(),
+    L = new Map(),
+    C = new Map(),
+    S = new Map(e.claim?.lost ?? []),
+    O = !0,
+    K = !1,
+    F = 0;
+  B.forEach((item, index) => {
+    for (let [i, y] of item.lostTo) S.set(i, y);
+    if (item.kind === "gone") return;
+    if (F++, item.kind === "unreachable") {
+      O = !1;
+      return;
+    }
+    if (item.kind === "yielded") {
+      for (let i of item.yielded) v[index].yielded.add(i), x.set(i, (x.get(i) ?? 0) + 1);
+      for (let i of item.notHeld) L.set(i, (L.get(i) ?? 0) + 1);
+      for (let i of new Set([...item.yielded, ...item.notHeld])) C.set(i, (C.get(i) ?? 0) + 1);
+    } else if (O = !1, item.kind === "refused") K = !0;
+  });
+  let armable = new Set(),
+    yielded = new Set();
+  if (O && !K) for (let o of f) {
+    if (S.has(o) || (C.get(o) ?? 0) !== F) continue;
+    if ((x.get(o) ?? 0) > 0) armable.add(o), yielded.add(o);else if ((L.get(o) ?? 0) === F) armable.add(o);
+  }
+  for (let o of armable) D.add(o);
+  if (e.alreadyReplying) {
+    for (let o of v) for (let d of o.yielded) if (!S.has(d)) yielded.add(d);
+  }
+  for (let o of v) {
+    let d = new Set([...o.yielded].filter(item => S.has(item) ? q(item, o, S, e.alreadyReplying === !0) : !e.alreadyReplying && !armable.has(item)));
+    if (d.size > 0) A(o, d);
+  }
+  if (!e.alreadyReplying) B.forEach((item, index) => {
+    if (item.kind === "timeout") A(v[index], void 0, {
+      precautionary: f
+    });
+  });
+  for (let o of v) W(o);
+  return {
+    armable: armable,
+    yielded: yielded,
+    kind: armable.size > 0 ? "took_over" : "nothing_freed",
+    undo: o => {
+      for (let i of v) A(i, o);
+      let d = new Set(v.map(item => item.msgId));
+      for (let i of o ?? f) {
+        let y = (wakes.takenFrom.get(i) ?? []).filter(item => !d.has(item.msgId));
+        if (y.length > 0) wakes.takenFrom.set(i, y);else wakes.takenFrom.delete(i);
+      }
+    }
+  };
+}
+function q(e, n, r, a) {
+  let s = r.get(e);
+  return s !== void 0 && s === u4(n.sock) || !a && !V$(e);
+}
+function trs(e, n = Vfe) {
+  j(e, !0, n);
+}
+function c8s(e, n = Vfe) {
+  j(e, !1, n);
+}
+function j(e, n, r) {
+  let {
+      wakes: wakes_2
+    } = ee(),
+    s = wakes_2.takenFrom.get(e);
+  if (s === void 0 || V$(e)) return;
+  wakes_2.takenFrom.delete(e);
+  for (let l of s) {
+    let f = {
+        action: "unyield_artifact_replies",
+        orig_msg_id: l.msgId,
+        slugs: [e],
+        ...(n && {
+          stopped: !0
+        })
+      },
+      h = I() !== "windows" ? {
+        expectPeerPid: l.pid
+      } : {};
+    r(l.sock, f, h).catch(c => {
+      if (t(`[reply-yield] release to ${ph(l.sock)} failed: ${fK(String(c))}`), o3(c) && !Ia(l.pid)) return;
+      let u = () => void r(l.sock, f, h).catch(() => {
+        p("artifact_live_subscribe", "takeover_release_failed");
+      });
+      if (o3(c)) $An.setTimeout(u, z);else u();
+    });
+  }
+  g("artifact_live_subscribe", {
+    [n ? "takeover_stop_notified" : "takeover_released"]: s.length
+  });
+}
+function H(e) {
+  let n = e.slice(0, 2),
+    r = e.length - n.length;
+  return `${n.join(", ")}${r > 0 ? ` and ${r} more` : ""}`;
+}
+function $Jr(e, n, r, a) {
+  let s = kQr({
+      kind: "interactive",
+      ...(typeof r.cwd === "string" && {
+        cwd: r.cwd
+      }),
+      ...(typeof r.tmux === "string" && {
+        tmux: r.tmux
+      })
+    }, a),
+    l = n === "resume" ? `the session that just resumed this conversation in ${s}` : `another session of this conversation (${s}), which just published or resumed them there`;
+  return `Automatic replies to comments on ${H(e)} moved to ${l}; this session keeps watching for new versions only. To take them back here, publish the Artifact again or ask Claude to resume its replies.`;
+}
+function UJr(e) {
+  return `Automatic replies to comments on ${H(e)} are back in this session: the other session of this conversation did not keep them (it could not take them over, or it has since exited).`;
+}
+function BJr(e) {
+  return `Automatic replies to comments on ${H(e)} were stopped in the other session of this conversation, so they stay off here too. To turn them back on, publish the Artifact again or ask Claude to resume its replies.`;
+}
+var oe = "Automatic replies to comments on the Artifact(s) this session was answering moved to another session of this same conversation on this machine, at its request; this session keeps its version watch only. Nothing to do \u2014 do not stop or re-arm a watch on your own; a publish the user asks for here takes them back.",
+  ne = "The automatic comment replies this session had handed to another session of this conversation were stopped by the user there; they stay stopped here too. Nothing to do unless the user asks to resume them or to publish again.",
+  ie = "The automatic comment replies are back with this session: the other session of this conversation did not keep them (it could not take them over, or it has since exited).";
+function jni(e, n) {
+  let r = e === "yielded" ? `Comment replies on ${n} Artifact(s) moved to another session of this conversation` : e === "reverted" ? `Comment replies on ${n} Artifact(s) are back with this session` : `Comment replies on ${n} Artifact(s) were stopped in the other session`,
+    a = e === "yielded" ? oe : e === "reverted" ? ie : ne;
+  el({
+    value: li({
+      taskType: X2,
+      summary: Ut(r),
+      body: `
+<event>${Ut(a)}</event>`
+    }),
+    mode: "task-notification",
+    passive: !0,
+    priority: "next",
+    origin: {
+      kind: "task-notification",
+      source: X2
+    },
+    agentId: Ze()
+  });
+}
+function jJr(e) {
+  return RQr(n => {
+    let r = se(n.slugs, n.msgId),
+      newlyYielded = r.newlyYielded;
+    if (newlyYielded.length > 0) g("artifact_comments_autoreact", {
+      yielded_to_other_session: newlyYielded.length
+    });
+    return {
+      yielded: r.yielded,
+      notHeld: r.notHeld,
+      ...(newlyYielded.length > 0 && {
+        onDelivered: () => {
+          let s = newlyYielded.filter(item => V$(item));
+          for (let l of s) sss(l);
+          if (s.length > 0) e.yielded(s, n.reason, n.requester);
+        }
+      })
+    };
+  }, (n, r, a) => {
+    for (let u of r) if (a?.stopped?.has(u) ?? !1) dss(u, n);
+    let s = new Set(r.filter(item => css(item))),
+      l = new Set(r.filter(item => iss(item))),
+      f = re(n, r),
+      h = f.filter(item => l.has(item) && !Oy(item) && E(item) && !(a?.transferring?.has(item) ?? !1));
+    if (h.length > 0) e.reverted(h);
+    let c = f.filter(item => l.has(item) && s.has(item));
+    if (c.length > 0) e.stoppedElsewhere(c);
+    return f;
+  }), () => RQr(null);
+}
+function se(e, n) {
+  let {
+      live: live,
+      autoReact: autoReact_2,
+      durable: durable_2
+    } = ee(),
+    yielded_2 = [],
+    notHeld = [],
+    newlyYielded_2 = [];
+  for (let c of e) {
+    if (V$(c)) {
+      M7r(c, n), yielded_2.push(c);
+      continue;
+    }
+    let u = E(c),
+      Y = c_(c) && !JRe(c),
+      T = autoReact_2.enabledMemo !== !1 && !autoReact_2.userDisarmed && !durable_2.stopLatches.isStopped(c) && (!Oy(c) || Y);
+    if (!u || !T) {
+      notHeld.push(c);
+      continue;
+    }
+    M7r(c, n), Kce(c), wxn(c), zV(live, c), yielded_2.push(c), newlyYielded_2.push(c);
+  }
+  return {
+    yielded: yielded_2,
+    notHeld: notHeld,
+    newlyYielded: newlyYielded_2
+  };
+}
+function E(e) {
+  let {
+      live: live_2
+    } = ee(),
+    r = live_2.supervisors.get(e);
+  return r !== void 0 && !r.stopped && r.autoReactWiring !== void 0 || live_2.inFlightWiredIntent.has(e) || GNe().has(e);
+}
+function re(e, n) {
+  let {
+      live: live_3
+    } = ee(),
+    a = [];
+  for (let s of n) {
+    if (!ass(s, e)) continue;
+    if (zV(live_3, s), Oy(s) && !c_(s)) Mot(s), trs(s);
+    a.push(s);
+    let l = live_3.supervisors.get(s);
+    if (!Oy(s) && !E(s)) c8s(s);
+    let lastWakeArgs = abe(s).lastWakeArgs;
+    if (!Oy(s) && E(s) && l?.taskId !== void 0 && rCt(l.taskId) && lastWakeArgs !== null) Gce({
+      ...lastWakeArgs,
+      seed: !1,
+      confirm: void 0,
+      confirmBase: void 0,
+      confirmAfter: void 0,
+      reentry: void 0,
+      idlePass: void 0,
+      suppressSummonStatus: void 0
+    });
+  }
+  if (a.length > 0) g("artifact_comments_autoreact", {
+    yield_reverted: a.length
+  });
+  return a;
+}
+export { Bni, trs, c8s, $Jr, UJr, BJr, jni, jJr };

@@ -1,0 +1,26 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  jc
+} from "B:/~BUN/root/chunk-183sjefx.js";
+import {
+  Ne
+} from "B:/~BUN/root/chunk-nvdqbkrt.js";
+var aPe = (o) => Ne().loadedModules.find((e) => e.name === o && jc(e));
+var JP = (o) => aPe(o)?.args;
+var GZ = 110,
+  Zdt = 144;
+var Mwe = "cc-plugin-diff";
+export {
+  aPe,
+  JP,
+  GZ,
+  Zdt,
+  Mwe
+};

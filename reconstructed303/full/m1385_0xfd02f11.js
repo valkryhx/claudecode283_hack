@@ -1,0 +1,928 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  Fe
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  L,
+  j,
+  ke,
+  fgn,
+  Nzo,
+  bF,
+  qGe,
+  Bn,
+  t_,
+  KGe,
+  TVo
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  H
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  Nt
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  _ye
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  wS,
+  v9t,
+  bfs,
+  _He,
+  Tpe,
+  Ys,
+  My,
+  Iq,
+  rwr,
+  Yn,
+  Ns
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  wr,
+  mhn
+} from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  Hd
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  zln,
+  o2,
+  Ht,
+  Qi,
+  E,
+  yb,
+  Y$t,
+  Ms,
+  vm,
+  gA,
+  UM,
+  Ce,
+  ue,
+  XDo
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  g,
+  m,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  xe
+} from "B:/~BUN/root/chunk-8pmnanyd.js";
+import {
+  h4
+} from "B:/~BUN/root/chunk-1gpjpba6.js";
+import {
+  aA
+} from "B:/~BUN/root/chunk-429xgjya.js";
+import {
+  eUe
+} from "B:/~BUN/root/chunk-25j8tcak.js";
+import {
+  yw
+} from "B:/~BUN/root/chunk-9w4ppz44.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import {
+  anr
+} from "B:/~BUN/root/chunk-rq3efhmf.js";
+import {
+  KDe
+} from "B:/~BUN/root/chunk-a05n48hk.js";
+import {
+  uC
+} from "B:/~BUN/root/chunk-8aq76x8d.js";
+import {
+  Xre
+} from "B:/~BUN/root/chunk-3md9ngvz.js";
+import {
+  s,
+  n,
+  TR
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import {
+  Tvn,
+  O5s,
+  wYr
+} from "B:/~BUN/root/chunk-crm8tx9v.js";
+import {
+  $tt,
+  AF
+} from "B:/~BUN/root/chunk-35d1zgdy.js";
+import {
+  wot
+} from "B:/~BUN/root/chunk-6g3t7qy0.js";
+import {
+  fSn,
+  Y3o
+} from "B:/~BUN/root/chunk-bzy45thk.js";
+import {
+  MP,
+  PTt,
+  IJr
+} from "B:/~BUN/root/chunk-v1edtzvj.js";
+import {
+  sSn
+} from "B:/~BUN/root/chunk-9ex20mbk.js";
+import {
+  jEn
+} from "B:/~BUN/root/chunk-y2qqz0fg.js";
+import {
+  XVe
+} from "B:/~BUN/root/chunk-tz52j775.js";
+import {
+  Sst
+} from "B:/~BUN/root/chunk-adys8ehb.js";
+import {
+  OKo
+} from "B:/~BUN/root/chunk-bshaz6nc.js";
+import {
+  Owt
+} from "B:/~BUN/root/chunk-mg6ef2wv.js";
+import {
+  Bre
+} from "B:/~BUN/root/chunk-90dg0j6s.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  Lts
+} from "B:/~BUN/root/chunk-rhcs3fcg.js";
+import {
+  ae,
+  P,
+  A,
+  y,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+B();
+import {
+  openSync as Pe,
+  writeSync as Re
+} from "fs";
+import {
+  homedir as Ee
+} from "os";
+var Me = {
+  iterm: "iTerm",
+  "iterm.app": "iTerm",
+  ghostty: "Ghostty",
+  kitty: "kitty",
+  alacritty: "Alacritty",
+  wezterm: "WezTerm",
+  apple_terminal: "Terminal"
+};
+
+function se(o) {
+  return
+}
+class X {
+  frameDurations = [];
+  totalFrames = 0;
+  firstRenderTime;
+  lastRenderTime;
+  record(o) {
+    let d = performance.now();
+    if (this.firstRenderTime === void 0) this.firstRenderTime = d;
+    if (this.lastRenderTime = d, this.totalFrames++, this.frameDurations.push(o), this.frameDurations.length > 3600) this.frameDurations.splice(0, this.frameDurations.length >> 1)
+  }
+  getMetrics() {
+    if (this.totalFrames === 0 || this.firstRenderTime === void 0 || this.lastRenderTime === void 0) return;
+    let o = this.lastRenderTime - this.firstRenderTime;
+    if (o <= 0) return;
+    let d = this.totalFrames / (o / 1000),
+      h = this.frameDurations.slice().sort((D, b) => b - D),
+      M = Math.max(0, Math.ceil(h.length * 0.01) - 1),
+      C = h[M],
+      k = C > 0 ? 1000 / C : 0;
+    return {
+      averageFps: Math.round(d * 100) / 100,
+      low1PctFps: Math.round(k * 100) / 100
+    }
+  }
+}
+
+function Je(et) {
+  return et(!1)
+}
+
+function Ze(tt) {
+  return tt.execRelaunch()
+}
+
+function Qe(rt) {
+  rt(), import("B:/~BUN/root/chunk-9b0kte3c.js").then(Ze)
+}
+
+function Xe(ot) {
+  return {
+    ...ot,
+    phase: "save-failed"
+  }
+}
+
+function x3s(o) {
+  if (a.CLAUBBIT || !Ms()) return;
+  bF(!0), yw(o)
+}
+
+function P3s(o) {
+  Ce((d) => ({
+    ...d,
+    hasCompletedOnboarding: !0,
+    lastOnboardingVersion: {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.303",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-10-18T20:20:57Z",
+      GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION
+  }), o)
+}
+
+function PKo(o, d) {
+  return async (h) => {
+    let M = await fSn(o),
+      C = Sst();
+    if (M.pendingServers.length === 0) return null;
+    if (C.length > 0) {
+      let k = L(C.flatMap((D) => D.file ? [Hd(D.file)] : [])).join(", ");
+      return p("mcp_project_approval_dialog", "mcp_project_approval_skipped_settings_errors"), d({
+        key: "mcp-approval-skipped",
+        text: `skipping .mcp.json server approval (settings errors${k?` in ${k}`:""}) \xB7 run \`claude doctor\` to list them, fix them, then restart`
+      }), null
+    }
+    try {
+      return await Y3o(M, (k) => {
+        try {
+          let D = Ie(k);
+          if (D) d(D)
+        } catch (D) {
+          l(H(D))
+        } finally {
+          h()
+        }
+      }, o)
+    } catch (k) {
+      throw m("mcp_project_approval_dialog", "mcp_project_approval_dialog_threw"), k
+    }
+  }
+}
+
+function Ie(o) {
+  if (o.persistFailed) return m("mcp_project_approval_dialog", "mcp_approval_persist_failed"), {
+    key: "mcp-approval-persist-failed",
+    text: "one or more of your MCP server choices could not be saved (check permissions on .claude/settings.local.json) \xB7 you will be asked again next startup"
+  };
+  let d = gA();
+  if (fgn().some((h) => h.workspaceKey === d) && !vm() && UM({
+      onIndeterminate: "tracked"
+    })) return p("mcp_project_approval_dialog", "mcp_approval_persist_gated"), {
+    key: "mcp-approval-persist-gated",
+    text: "your MCP server choices apply to this session only (workspace not explicitly trusted; .claude/settings.local.json is gated) \xB7 to persist, add them to enabledMcpjsonServers in ~/.claude/settings.json"
+  };
+  return g("mcp_project_approval_dialog"), null
+}
+async function GZs(o, d, h) {
+  return WQn(o, d, {
+    color: "error",
+    beforeExit: h
+  })
+}
+async function WQn(o, d, h) {
+  let M = h?.color,
+    C = h?.exitCode ?? 1;
+  if (AF(o, M ? e(n, {
+      color: M,
+      children: d
+    }) : e(n, {
+      children: d
+    })), o.unmount(), await h?.beforeExit?.(), C !== 0) {
+    let {
+      setBgExitCause: R,
+      setBgExitDetail: O
+    } = await import("B:/~BUN/root/chunk-gb2dycz6.js");
+    R("exit_with_message"), O("exit_with_message", d)
+  }
+  let {
+    flushAnalyticsSinks: k
+  } = await import("B:/~BUN/root/chunk-awz1gsaf.js");
+  await k();
+  let {
+    drainRegisteredWriteQueues: D
+  } = await import("B:/~BUN/root/chunk-qks0s8d2.js"), {
+    withTimeout: b
+  } = await import("B:/~BUN/root/chunk-k3t3758w.js");
+  await b(D(), 2000, "write queue drain timeout (exitWithMessage)").catch(() => {}), process.exit(C)
+}
+
+function aCe(o, d, h) {
+  return new Promise((M, C) => {
+    $tt(o, [(k) => d((D) => {
+      M(D), k()
+    })], {
+      session: j(),
+      onChangeAppState: h?.onChangeAppState,
+      marksJobBlocked: !0
+    }).catch(C)
+  })
+}
+async function tzr(o, d, h, M, C) {
+  let k = AF(o, d);
+  XDo(), wYr(h, M, C);
+  try {
+    if (await Promise.race([o.waitUntilExit().then(() => "exited"), k.replaced.then(() => "replaced")]) === "replaced") return
+  } catch (D) {
+    let b = H(D),
+      O = await jEn().catch(() => !1) ? " It happened while the fullscreen renderer was starting, so the next launch will use the classic renderer (CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1 forces that any time)." : "";
+    if (Iq(`Claude Code exited after an unrecoverable interface error (${b.message}).${O}`), Ht() || mhn()) throw D;
+    try {
+      eUe(b, "unhandled_rejection")
+    } catch {}
+    await Yn(1, "other");
+    return
+  }
+  await rwr.of(h.host).runBeforeInteractiveShutdown(), await Yn(0)
+}
+var Oe = 2000,
+  le = "GB post-onboarding init";
+async function VZs(o, d, h, M, C, k, D, b, R, O, T) {
+  let v = {
+      onboardingShown: !1,
+      onboardingSkippedSignIn: !1,
+      mcpApprovalSkipWarning: null,
+      claudeInChromeAccepted: !1
+    },
+    I = (x) => {
+      v.mcpApprovalSkipWarning = x
+    };
+  if (Ht() || a.CLAUDE_BRIDGE_REATTACH_SESSION) {
+    let x = Ms(),
+      u = x || a.CLAUDE_BG_WORKSPACE_TRUSTED === !0 && _ye(ke(), Ee());
+    if (!u) t("Workspace trust is not recorded for this directory; continuing as an untrusted session (hooks and project settings env stay off)", {
+      level: "warn"
+    });
+    let f = [() => {
+      if (u) bF(!0);
+      if (Y$t({
+          preservePendingExposures: !0
+        }), Qi().catch((_) => l(H(_))), u) _He(o), import("B:/~BUN/root/chunk-p94xt7ba.js").then((_) => _.loadHooksModulesHeldForTrust(R, O)).catch((_) => l(H(_)));
+      return null
+    }, PKo(R, I), () => {
+      if (u) aA(), import("B:/~BUN/root/chunk-4pk5pzet.js").then((_) => _.maybePrewarmRecallIndex(o)), yw(R);
+      if (Tvn(o.host), sSn(), u) {
+        if (!x && !Bn() && !wr()) De(R, O);
+        setImmediate(KDe, R)
+      }
+      return null
+    }];
+    return await $tt(d, f, {
+      session: o,
+      storageV5: R
+    }), v
+  }
+  if (Fe(!1) || a.IS_DEMO) return x3s(R), Tvn(o.host), sSn(), v;
+  return await $tt(d, O3s({
+    session: o,
+    permissionMode: h,
+    allowDangerouslySkipPermissions: M,
+    commands: C,
+    claudeInChrome: k,
+    devChannels: D,
+    offerClaudeInChrome: b,
+    storageV5: R,
+    credentials: O,
+    askCloudDefaultReason: T
+  }, v), {
+    session: o,
+    onChangeAppState: Bre,
+    marksJobBlocked: !0,
+    storageV5: R
+  }), v
+}
+
+function O3s({
+  session: o,
+  permissionMode: d,
+  allowDangerouslySkipPermissions: h,
+  commands: M,
+  claudeInChrome: C,
+  devChannels: k,
+  offerClaudeInChrome: D,
+  storageV5: b,
+  credentials: R,
+  askCloudDefaultReason: O
+}, T) {
+  let v = ue(),
+    I = !1,
+    x = !0;
+  return [(u) => {
+    if (v.hasCompletedOnboarding && a.CLAUDE_CODE_POWERUP_ONBOARDING !== "banner" && a.CLAUDE_CODE_POWERUP_ONBOARDING !== "step") return null;
+    return T.onboardingShown = !0, import("B:/~BUN/root/chunk-tk7r2v5c.js").then(({
+      Onboarding: f
+    }) => e(f, {
+      host: o.host,
+      onDone: ({
+        skippedSignIn: _
+      }) => {
+        T.onboardingSkippedSignIn = _, P3s(b), u()
+      }
+    }))
+  }, (u) => {
+    if (a.CLAUBBIT) return null;
+    if (x = Ms(), x && !XVe()) return null;
+    return I = !0, (x ? Promise.resolve(!1) : Lts()).then((f) => {
+      if (f) return qGe(!0), null;
+      return import("B:/~BUN/root/chunk-fwfv3kn6.js").then(({
+        TrustDialog: _
+      }) => e(_, {
+        commands: M,
+        onDone: u
+      }))
+    })
+  }, () => {
+    if (a.CLAUBBIT) return null;
+    if (bF(!0), I) {
+      if (My("post-trust: re-discover project @skills-dir plugins"), Tpe(R)) Ys(b, R).catch(() => {})
+    }
+    if (import("B:/~BUN/root/chunk-p94xt7ba.js").then((u) => u.loadHooksModulesHeldForTrust(b, R)).catch((u) => l(H(u))), Y$t({
+        preservePendingExposures: !0
+      }), v.hasCompletedOnboarding) return Qi().catch((u) => l(H(u))), null;
+    return o2(), pe()
+  }, () => {
+    if (a.CLAUBBIT) return null;
+    return null
+  }, (u) => a.CLAUBBIT ? null : PKo(b, (f) => {
+    T.mcpApprovalSkipWarning = f
+  })(u), async (u) => {
+    if (a.CLAUBBIT || !await bfs(o, b)) return null;
+    let f = v9t(await wS(o, !0, b, R)),
+      {
+        ClaudeMdExternalIncludesDialog: _
+      } = await import("B:/~BUN/root/chunk-1kmyg56a.js");
+    return e(_, {
+      onDone: () => u(),
+      isStandaloneDialog: !0,
+      externalIncludes: f
+    })
+  }, () => {
+    if (OKo(b), se(b), aA(), Tvn(o.host), import("B:/~BUN/root/chunk-4pk5pzet.js").then((u) => u.maybePrewarmRecallIndex(o)), yw(b), sSn(), I && !x && !Bn() && !wr()) De(b, R);
+    return setImmediate(KDe, b), O5s(o.host, v) ? pe() : null
+  }, async (u) => null, async (u) => {
+    if (!await wot(b, R)) return null;
+    let {
+      GroveDialog: f
+    } = await import("B:/~BUN/root/chunk-e8gjdzy3.js");
+    return e(f, {
+      showIfAlreadyViewed: !1,
+      location: T.onboardingShown ? "onboarding" : "policy_update_modal",
+      onDone: (_) => {
+        if (_ !== "escape") {
+          u();
+          return
+        }
+        i("tengu_grove_policy_exited", {}), Ns(0), T.onboardingShown = !1, T.claudeInChromeAccepted = !1, u("stop")
+      }
+    })
+  }, async (u) => {
+    if (Owt().status !== "not_started") return null;
+    let {
+      ProTrialStartScreen: f
+    } = await import("B:/~BUN/root/chunk-26e02qtf.js");
+    return i("tengu_pro_trial_start_screen_shown", {}), e(f, {
+      onDone: () => u(),
+      storageV5: b,
+      credentials: R
+    })
+  }, async (u) => {
+    if (!T.onboardingShown) return null;
+    let {
+      resolvePowerupDiscoveryArm: f
+    } = await import("B:/~BUN/root/chunk-0kqt3zg9.js");
+    if (f() !== "step") return null;
+    let {
+      PowerupDiscoveryStep: _
+    } = await import("B:/~BUN/root/chunk-a7ez1734.js");
+    return e(_, {
+      onDone: () => u()
+    })
+  }, (u) => {
+    let f = zln();
+    if (!f) return null;
+    return import("B:/~BUN/root/chunk-7z9tqm2j.js").then(({
+      ApproveApiKey: _
+    }) => e(_, {
+      customApiKeyTruncated: f,
+      onDone: () => u()
+    }))
+  }, me("bedrock", b), me("vertex", b), async (u) => {
+    let f;
+    try {
+      f = await IJr()
+    } catch (F) {
+      return l(F), null
+    }
+    let {
+      lines: _,
+      hasHardFailure: U
+    } = f;
+    if (_.length === 0) return null;
+    return e(ye, {
+      afterMs: U ? 4000 : 1500,
+      onDone: u,
+      children: e(s, {
+        flexDirection: "column",
+        children: _.map((F) => e(n, {
+          color: "warning",
+          children: F
+        }, F))
+      })
+    })
+  }, (u) => {
+    if (d !== "bypassPermissions" && !h || h4()) return null;
+    return import("B:/~BUN/root/chunk-f0zehd97.js").then(({
+      BypassPermissionsModeDialog: f
+    }) => e(f, {
+      onAccept: () => u(),
+      storageV5: b
+    }))
+  }, ...[], async (u) => {
+    if (t_().length === 0 && (k?.length ?? 0) === 0) return null;
+    if (await yb("tengu_harbor"), !k || k.length === 0) return null;
+    let [{
+      isChannelsOffForSession: f
+    }, {
+      isChannelsPolicyBlocked: _
+    }, {
+      getSettingsForSource: U
+    }] = await Promise.all([import("B:/~BUN/root/chunk-49rg5kkp.js"), import("B:/~BUN/root/chunk-4av3k09b.js"), import("B:/~BUN/root/chunk-3pxr4gzq.js")]), F = () => {
+      let N = k.map((q) => ({
+        ...q,
+        dev: !0
+      }));
+      KGe(t_().concat(N)), TVo(!0)
+    };
+    if (f() || xe() !== "firstParty" || _(U("policySettings"))) return F(), null;
+    let {
+      DevChannelsDialog: z
+    } = await import("B:/~BUN/root/chunk-xtac3pkx.js");
+    return e(z, {
+      channels: k,
+      onAccept: () => {
+        F(), u()
+      }
+    })
+  }, (u) => {
+    if (!C || ue().hasCompletedClaudeInChromeOnboarding) return null;
+    return import("B:/~BUN/root/chunk-yf2eg6wb.js").then(({
+      ClaudeInChromeOnboarding: f
+    }) => e(f, {
+      onDone: () => u()
+    }))
+  }, async (u) => {
+    if (!D) return null;
+    let {
+      isChromeExtensionInstalled: f
+    } = await import("B:/~BUN/root/chunk-qr3nc3ve.js"), _ = await Nt(f(), 1500, "chrome extension scan timed out before offer").catch(() => !0), U = Boolean(ue().chromeExtension?.pairedDeviceId);
+    if (!_ && !U) return t("[Claude in Chrome] Skipping offer: extension not present locally (stale cache)"), null;
+    await Nt(Qi().catch(() => {}), 1500, "GrowthBook init timed out before chrome offer").catch(() => {});
+    let F = E("tengu_chrome_auto_enable", !1),
+      z = ue().claudeInChromeDefaultEnabled !== void 0,
+      {
+        isChromeServerPolicyDenied: N
+      } = await import("B:/~BUN/root/chunk-qdepr38p.js"),
+      {
+        isClaudeInChromeAllowed: q
+      } = await import("B:/~BUN/root/chunk-qr3nc3ve.js");
+    if (N() || !q()) return t("[Claude in Chrome] Skipping offer: blocked by enterprise MCP config, managed deniedMcpServers policy, or organization policy (allow_claude_browser_extension)"), null;
+    if (z) return t("[Claude in Chrome] Skipping offer: decision already recorded (another instance answered)"), T.claudeInChromeAccepted = ue().claudeInChromeDefaultEnabled === !0, null;
+    if (!F) return t("[Claude in Chrome] Skipping offer: tengu_chrome_auto_enable no longer set (stale GB cache)"), null;
+    let {
+      ChromeAutoEnableDialog: ne
+    } = await import("B:/~BUN/root/chunk-3zhqqp39.js");
+    return e(ne, {
+      onDone: (ie) => {
+        T.claudeInChromeAccepted = ie, u()
+      },
+      isDontAskMode: d === "dontAsk",
+      isAutoMode: d === "auto"
+    })
+  }]
+}
+async function pe() {
+  let o = Date.now();
+  try {
+    await Nt(Qi(), Oe, le), t(`[STARTUP] post-onboarding GB await ${Date.now()-o}ms`)
+  } catch (d) {
+    if (t(`[STARTUP] post-onboarding GB await ${Date.now()-o}ms: ${d}`, {
+        level: "warn"
+      }), !(d instanceof Error && d.message === le)) l(H(d))
+  }
+  return null
+}
+
+function ye(o) {
+  let C = w(4),
+    {
+      afterMs: d,
+      onDone: h,
+      children: M
+    } = o,
+    k, D;
+  if (C[0] !== d || C[1] !== h) k = () => {
+    let b = setTimeout(h, d);
+    return () => clearTimeout(b)
+  }, D = [d, h], C[0] = d, C[1] = h, C[2] = k, C[3] = D;
+  else k = C[2], D = C[3];
+  return P(k, D), M
+}
+var re = {
+  bedrock: {
+    accepted: "tengu_bedrock_upgrade_accepted",
+    declined: "tengu_bedrock_upgrade_declined",
+    saveFailed: "tengu_bedrock_upgrade_save_failed",
+    relaunch: "tengu_bedrock_upgrade_relaunch"
+  },
+  vertex: {
+    accepted: "tengu_vertex_upgrade_accepted",
+    declined: "tengu_vertex_upgrade_declined",
+    saveFailed: "tengu_vertex_upgrade_save_failed",
+    relaunch: "tengu_vertex_upgrade_relaunch"
+  }
+};
+
+function me(o, d) {
+  let h = re[o];
+  return async (M) => {
+    if (xe() !== o) return null;
+    try {
+      let [C, {
+        upgradeKey: k
+      }] = await Promise.all([o === "bedrock" ? import("B:/~BUN/root/chunk-taqdy4fx.js").then((v) => PTt("bedrock-upgrade", v.findBedrockUpgradeCandidates()).then((I) => I.map((x) => ({
+        ...x,
+        toId: x.toBedrockId
+      })))) : import("B:/~BUN/root/chunk-ebxvn4yg.js").then((v) => PTt("vertex-upgrade", v.findVertexUpgradeCandidates()).then((I) => I.map((x) => ({
+        ...x,
+        toId: x.toVertexId
+      })))), import("B:/~BUN/root/chunk-7p7r9p97.js")]), D = (o === "bedrock" ? ue().bedrockDeclinedUpgrades : ue().vertexDeclinedUpgrades) ?? {}, b = C.filter((v) => D[v.tier] !== k(v));
+      if (b.length === 0) return null;
+      let [{
+        updateSettingsForSource: R
+      }, {
+        ThirdPartyModelUpgradeDialog: O
+      }] = await Promise.all([import("B:/~BUN/root/chunk-3pxr4gzq.js"), import("B:/~BUN/root/chunk-kxft62zv.js")]);
+      async function T(v, I) {
+        let x = c(v.tier);
+        if (!I) return await Ce((_) => {
+          let U = o === "bedrock" ? "bedrockDeclinedUpgrades" : "vertexDeclinedUpgrades";
+          return {
+            ..._,
+            [U]: {
+              ..._[U],
+              [v.tier]: k(v)
+            }
+          }
+        }, d), i(h.declined, {
+          tier: x,
+          from_key: c(v.fromKey),
+          to_key: c(v.toKey)
+        }), !1;
+        let u = v.tier === "haiku" ? {
+            ANTHROPIC_DEFAULT_HAIKU_MODEL: v.toId,
+            ...v.envVar === "ANTHROPIC_SMALL_FAST_MODEL" && {
+              ANTHROPIC_SMALL_FAST_MODEL: v.toId
+            }
+          } : {
+            [v.envVar]: v.toId
+          },
+          {
+            error: f
+          } = await R("userSettings", {
+            env: u
+          }, void 0, d);
+        if (f) return i(h.saveFailed, {
+          tier: x
+        }), !1;
+        for (let _ of Object.keys(u)) process.env[_] = v.toId;
+        return i(h.accepted, {
+          tier: x,
+          from_key: c(v.fromKey),
+          to_key: c(v.toKey)
+        }), !0
+      }
+      return e(we, {
+        provider: o,
+        pending: b,
+        answer: T,
+        onDone: () => M(),
+        Dialog: O
+      })
+    } catch (C) {
+      return l(C), null
+    }
+  }
+}
+
+function we(o) {
+  let D = w(27),
+    {
+      provider: d,
+      pending: h,
+      answer: M,
+      onDone: C,
+      Dialog: k
+    } = o,
+    b;
+  if (D[0] === S) b = {
+    at: 0,
+    acceptedAny: !1,
+    phase: "asking"
+  }, D[0] = b;
+  else b = D[0];
+  let [R, O] = y(b), {
+    at: T,
+    acceptedAny: v,
+    phase: I
+  } = R, {
+    exit: x
+  } = TR(), u = A(null), f = h[T], _;
+  if (D[1] !== h.length) _ = (U) => O((F) => {
+    let z = F.acceptedAny || U;
+    if (F.at + 1 < h.length) {
+      return {
+        at: F.at + 1,
+        acceptedAny: z,
+        phase: "asking"
+      }
+    }
+    return {
+      ...F,
+      acceptedAny: z,
+      phase: z ? "relaunching" : "done"
+    }
+  }), D[1] = h.length, D[2] = _;
+  else _ = D[2];
+  let N = _,
+    q, oe;
+  if (D[3] !== N || D[4] !== x || D[5] !== C || D[6] !== I || D[7] !== d) q = () => {
+    if (I === "done") {
+      C();
+      return
+    }
+    if (I === "save-failed") {
+      let ne = setTimeout(Je, 2000, N);
+      return () => clearTimeout(ne)
+    }
+    if (I === "relaunching") {
+      i(re[d].relaunch, {});
+      let ie = setTimeout(Qe, 250, x);
+      return () => clearTimeout(ie)
+    }
+  }, oe = [I, d, N, C, x], D[3] = N, D[4] = x, D[5] = C, D[6] = I, D[7] = d, D[8] = q, D[9] = oe;
+  else q = D[8], oe = D[9];
+  if (P(q, oe), I === "relaunching" && v) {
+    let G;
+    if (D[10] === S) G = e(n, {
+      dimColor: !0,
+      children: "Restarting Claude Code to apply the new model\u2026"
+    }), D[10] = G;
+    else G = D[10];
+    return G
+  }
+  if (f === void 0 || I === "done") {
+    return null
+  }
+  if (I === "save-failed") {
+    const G = MP[f.tier];
+    let Y;
+    if (D[11] !== G) Y = r(n, {
+      color: "error",
+      children: ["Failed to save ", G, " upgrade to settings."]
+    }), D[11] = G, D[12] = Y;
+    else Y = D[12];
+    return Y
+  }
+  const G = MP[f.tier];
+  let Y;
+  if (D[13] !== N || D[14] !== M || D[15] !== T || D[16] !== f || D[17] !== C) Y = (Ae) => {
+    if (u.current === T) {
+      return
+    }
+    u.current = T, M(f, Ae).then((be) => {
+      if (Ae && !be) {
+        O(Xe);
+        return
+      }
+      N(be)
+    }, (Ve) => {
+      l(Ve), C()
+    })
+  }, D[13] = N, D[14] = M, D[15] = T, D[16] = f, D[17] = C, D[18] = Y;
+  else Y = D[18];
+  let Te;
+  if (D[19] !== k || D[20] !== T || D[21] !== f.fromMarketingName || D[22] !== f.toId || D[23] !== f.toMarketingName || D[24] !== G || D[25] !== Y) Te = e(k, {
+    tierLabel: G,
+    fromName: f.fromMarketingName,
+    toName: f.toMarketingName,
+    toProviderId: f.toId,
+    onDone: Y
+  }, T), D[19] = k, D[20] = T, D[21] = f.fromMarketingName, D[22] = f.toId, D[23] = f.toMarketingName, D[24] = G, D[25] = Y, D[26] = Te;
+  else Te = D[26];
+  return Te
+}
+
+function qZs(o) {
+  let d = 0,
+    h = uC(o);
+  if (h.stdin) i("tengu_stdin_interactive", {});
+  let M = new X,
+    C = anr();
+  Nzo(C);
+  let k = a.CLAUDE_CODE_FRAME_TIMING_LOG,
+    D = -1,
+    b = 0,
+    R = Math.max(1, a.CLAUDE_CODE_FRAME_TIMING_SAMPLE_EVERY || 1);
+  if (k) try {
+    D = Pe(k, "a")
+  } catch {}
+  return {
+    getFpsMetrics: () => M.getMetrics(),
+    stats: C,
+    renderOptions: {
+      ...h,
+      onFrame: (O) => {
+        if (M.record(O.durationMs), C.observe("frame_duration_ms", O.durationMs), D >= 0 && O.phases) {
+          let T = b++ % R === 0,
+            v = JSON.stringify({
+              total: O.durationMs,
+              at: Date.now(),
+              ...O.phases,
+              ...T && {
+                rss: process.memoryUsage.rss(),
+                cpu: process.cpuUsage()
+              }
+            }) + `
+`;
+          Re(D, v)
+        }
+        if (Xre()) return;
+        for (let T of O.flickers) {
+          if (T.reason === "resize") continue;
+          let v = Date.now();
+          if (v - d < 1000) i("tengu_flicker", {
+            desiredHeight: T.desiredHeight,
+            actualHeight: T.availableHeight,
+            reason: T.reason
+          });
+          d = v
+        }
+      }
+    }
+  }
+}
+
+function De(o, d) {
+  import("B:/~BUN/root/chunk-1spwgdtz.js").then((h) => h.startMemoryWatcher(o, d))
+}
+export {
+  x3s,
+  P3s,
+  PKo,
+  GZs,
+  WQn,
+  aCe,
+  tzr,
+  VZs,
+  O3s,
+  qZs
+};

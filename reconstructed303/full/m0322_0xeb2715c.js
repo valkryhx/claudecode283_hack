@@ -1,0 +1,1819 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  ui,
+  K
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  Ve,
+  Nr,
+  d
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  Nt,
+  je
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  m,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  J,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  bn,
+  nGs,
+  RLo,
+  zJe,
+  HD
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  _g,
+  whe
+} from "B:/~BUN/root/chunk-8z3a373v.js";
+import {
+  jbt
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  mge,
+  $h,
+  wle
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  Rt
+} from "B:/~BUN/root/chunk-vpgpdrbv.js";
+import {
+  oo
+} from "B:/~BUN/root/chunk-k9zm82w3.js";
+import {
+  Zu
+} from "B:/~BUN/root/chunk-q56gve2c.js";
+import {
+  ugt,
+  NOo
+} from "B:/~BUN/root/chunk-jmms813f.js";
+import {
+  Xt
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  o,
+  v,
+  T,
+  u,
+  U,
+  C
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  $f,
+  kZe,
+  Wne,
+  XB
+} from "B:/~BUN/root/chunk-3m71dqxd.js";
+var HMr = 32;
+
+function Wae(e) {
+  if (!Array.isArray(e)) return [];
+  return e.filter((r) => typeof r === "string" && r.length > 0 && r.length <= 64).slice(0, 32)
+}
+import {
+  randomUUID as M
+} from "crypto";
+var DMr = 8000;
+async function ue({
+  verdict: e,
+  deadlineMs: r,
+  respond: n,
+  inform: s
+}) {
+  let l = (b) => {
+      if (Array.isArray(b)) s(b.filter((w) => typeof w === "string").map(Xt))
+    },
+    h = e.then((b) => b ?? {
+      ok: !0
+    }),
+    I;
+  try {
+    I = await je(h, r)
+  } catch (b) {
+    return t(`set_model verdict rejected: ${d(b)}`, {
+      level: "error"
+    }), n({
+      subtype: "error",
+      error: "set_model failed"
+    })
+  }
+  if (I === void 0) return h.then((b) => l(b.ok ? [...Array.isArray(b.notices) ? b.notices : [], "The pending model switch was applied"] : de(b.error)), (b) => {
+    t(`set_model verdict rejected after the deadline reply: ${d(b)}`, {
+      level: "error"
+    }), l(["The pending model switch failed"])
+  }), n({
+    subtype: "error",
+    error: "This model switch is still pending (an earlier model request or a PreModelSwitch hook has not finished); it will apply when that completes unless it is refused"
+  });
+  if (I.ok) {
+    if (I.notices) l(I.notices);
+    return n({
+      subtype: "success"
+    })
+  }
+  let k = I.code,
+    y = RLo.find((b) => b === k);
+  return n({
+    subtype: "error",
+    error: de(I.error).map(Xt).join(`
+`),
+    ...y !== void 0 && {
+      error_code: y
+    }
+  })
+}
+
+function de(e) {
+  return typeof e === "string" ? e.split(`
+`) : [""]
+}
+
+function LMr(e) {
+  if (e == null || e === "") return {
+    valid: !0,
+    toolUseId: void 0
+  };
+  if (typeof e === "string") return {
+    valid: !0,
+    toolUseId: e
+  };
+  return {
+    valid: !1
+  }
+}
+var NMr = "Background tasks are disabled in this session.",
+  FMr = "background_tasks: tool_use_id must be a string";
+
+function YFt(e) {
+  return Te().safeParse(e).success
+}
+var Te = f(() => u({
+    max_thinking_tokens: v().refine((e) => Number.isInteger(e)).nullable().optional(),
+    thinking_display: U(zJe).nullable().optional()
+  })),
+  $Mr = `set_max_thinking_tokens: max_thinking_tokens must be an integer or null and thinking_display must be ${zJe.map((e)=>`"${e}"`).join(", ")}, or null`;
+var IOo = "display_only";
+
+function UMr(e) {
+  return (e.type === "user" || e.type === "assistant" || e.type === "system") && e.historical === !0 && e.display_only === !0
+}
+
+function BMr(e) {
+  return e !== null && typeof e === "object" && "type" in e && typeof e.type === "string"
+}
+
+function we(e) {
+  return e !== null && typeof e === "object" && "type" in e && e.type === "control_response" && "response" in e && e.response != null
+}
+
+function xe(e) {
+  return e !== null && typeof e === "object" && "type" in e && e.type === "control_request" && "request_id" in e && "request" in e && e.request != null
+}
+
+function AUs(e) {
+  oo().bridgeStateFramesGate = e
+}
+
+function zae(e) {
+  if ((e.type === "user" || e.type === "assistant") && e.isVirtual) return !1;
+  if (e.type === "attachment") {
+    if (e.attachment.type === "hook_system_message") return !0;
+    if (e.attachment.type === "tool_host_result_lines") return !0;
+    return e.attachment.type === "queued_command" && e.attachment.commandMode === "prompt" && !e.attachment.isMeta && $h(e.attachment.origin)
+  }
+  return e.type === "user" || e.type === "assistant" || e.type === "system" && (e.subtype === "local_command" || e.subtype === "model_consent_fallback" || e.subtype === "compact_boundary" && (oo().bridgeStateFramesGate?.() ?? !0))
+}
+
+function can(e) {
+  return e.type === "user" && !e.isCompactSummary && !nGs(e)
+}
+
+function jMr(e) {
+  return e.type === "attachment" || e.type === "system" && e.subtype === "model_consent_fallback"
+}
+
+function HKn(e) {
+  return e.type === "conversation_reset" || e.type === "stream_event" || e.type === "system" && e.subtype === "status" || e.subtype === "task_started" || e.subtype === "task_progress" || e.subtype === "task_updated" || e.subtype === "task_notification" || e.subtype === "background_tasks_changed" || e.subtype === "thinking_tokens" || e.subtype === "code_change_published" || e.subtype === "vcs_state_changed" || e.subtype === "file_attachments_missing"
+}
+
+function $Kn(e) {
+  if (!wle(e)) return;
+  let r = e.message.content,
+    n;
+  if (typeof r === "string") n = r;
+  else
+    for (let l of r)
+      if (l.type === "text") {
+        n = l.text;
+        break
+      } if (!n) return;
+  return jbt(n) || void 0
+}
+
+function xUs(e, r, n, s, l, h, I, k) {
+  try {
+    let y = ugt(J(e));
+    if (we(y)) {
+      t("[bridge:repl] Ingress message type=control_response"), l?.(y);
+      return
+    }
+    if (xe(y)) {
+      t(`[bridge:repl] Inbound control_request subtype=${y.request.subtype}`), h?.(y);
+      return
+    }
+    if (BMr(y) && y.type === "control_cancel_request" && "request_id" in y && typeof y.request_id === "string") {
+      t(`[bridge:repl] Inbound control_cancel_request request_id=${y.request_id}`), I?.(y.request_id);
+      return
+    }
+    if (Qe(y)) {
+      let w = He(y.notification);
+      if (w === void 0) {
+        if (k) t("[bridge:repl] Ingress message type=queued_notification"), k({
+          type: "queued_notification",
+          notification: y.notification
+        });
+        else t("[bridge:repl] Ignoring queued_notification: host has no notification buffer");
+        return
+      }
+      t("[bridge:repl] Ingress queued_notification from another session: delivering as its user frame"), y = w
+    }
+    if (!BMr(y)) return;
+    let b = "uuid" in y && typeof y.uuid === "string" ? y.uuid : void 0;
+    if (b && r.has(b)) {
+      t(`[bridge:repl] Ignoring echo: type=${y.type} uuid=${b}`);
+      return
+    }
+    if (b && n.has(b)) {
+      t(`[bridge:repl] Ignoring re-delivered inbound: type=${y.type} uuid=${b}`);
+      return
+    }
+    if (t(`[bridge:repl] Ingress message type=${y.type}${b?` uuid=${b}`:""}`), y.type === "user") {
+      if ("isReplay" in y && y.isReplay === !0) {
+        t(`[bridge:repl] Ignoring replay echo: uuid=${b??"none"}`);
+        return
+      }
+      if ("parent_tool_use_id" in y && y.parent_tool_use_id != null) {
+        t(`[bridge:repl] Ignoring parented user frame at ingress (echo/replay of a subagent frame): uuid=${b}`);
+        return
+      }
+      if (UMr(y)) {
+        t(`[bridge:repl] Ignoring fork display frame at ingress: uuid=${b??"none"}`);
+        return
+      }
+      if (b) n.add(b);
+      i("tengu_bridge_message_received", {
+        is_repl: !0
+      }), g("bridge_message_receive"), s?.(y)
+    } else t(`[bridge:repl] Ignoring non-user inbound message: type=${y.type}`)
+  } catch (y) {
+    t(`[bridge:repl] Failed to parse ingress message: ${d(y)}`), m("bridge_message_receive", "bridge_message_receive_parse_failed")
+  }
+}
+var Ne = new Set(["effortLevel", "ultracode"]),
+  Me = 5,
+  Oe = 40,
+  Pe = "This session is outbound-only. Enable Remote Control locally to allow inbound control.",
+  Ue = 8000,
+  Y = "get_workspace_diff timed out: the workspace diff is still being computed; retry shortly",
+  MOo = 660000,
+  XFt = "side_question timed out: the host did not answer in time",
+  $e = "(No answer available for this side question. Try again, or ask in the main conversation.)";
+
+function DOo(e) {
+  return e.response !== null && e.synthetic !== !1 ? {
+    ...e,
+    response: $e,
+    synthetic: !0
+  } : e
+}
+var Fe = f(() => u({
+    question: o(),
+    history: T(u({
+      question: o(),
+      response: o(),
+      fallback_notice: o().optional()
+    })).optional()
+  })),
+  Le = "This session is shutting down.",
+  Ke = new Set(["initialize", "file_suggestions", "read_file", "get_workspace_diff", "get_context_usage", "get_usage", "mcp_status"]);
+
+function ce(e, r) {
+  if (r instanceof Nr) return Xt(d(r));
+  if (Ve(r)) return Xt(d(r));
+  return t(`${e} failed: ${d(r)}`, {
+    level: "error"
+  }), `${e} failed`
+}
+
+function PUs(e) {
+  if (e.type === "connected") return;
+  if (e.type === "failed") {
+    if (e.error) t(`mcp_reconnect failed: ${e.error}`, {
+      level: "error"
+    });
+    throw new Nr("Connection failed")
+  }
+  throw new Nr(`Server status: ${e.type}`)
+}
+
+function N(e, r, n, s) {
+  z(e, r, n, s.then((l) => ({
+    subtype: "success",
+    response: l ?? {}
+  })))
+}
+
+function z(e, r, n, s) {
+  s.catch((l) => ({
+    subtype: "error",
+    error: ce(e.request.subtype, l)
+  })).then((l) => {
+    let I = {
+      ...l.subtype === "error" ? XB(e.request_id, l.error, "error_code" in l ? l.error_code : void 0) : Wne(e.request_id, l.response ?? {}),
+      session_id: n
+    };
+    r(I), t(`[bridge:repl] Sent control_response for ${e.request.subtype} request_id=${e.request_id} result=${l.subtype}`)
+  })
+}
+
+function le(e, r) {
+  if (r && r.ok === !1) return {
+    type: "control_response",
+    response: {
+      subtype: "error",
+      request_id: e,
+      error: Xt(r.error)
+    }
+  };
+  return {
+    type: "control_response",
+    response: {
+      subtype: "success",
+      request_id: e
+    }
+  }
+}
+
+function OUs(e, r) {
+  let {
+    transport: n,
+    sessionId: s,
+    outboundOnly: l,
+    getInitializeState: h,
+    claudeCodeVersion: I,
+    getCommands: k,
+    reportsInboundReadReceipts: y,
+    getPendingPrompts: b,
+    onInterrupt: w,
+    onStopTask: L,
+    onBackgroundTasks: B,
+    onCancelAsyncMessage: x,
+    onDialogKindsDeclared: F,
+    onClientInitialize: R,
+    onSetModel: W,
+    onSetMaxThinkingTokens: he,
+    onSetPermissionMode: De,
+    onApplyFlagSettings: X,
+    onRenameSession: ve,
+    onSetColor: Ie,
+    onFileSuggestions: Z,
+    onReadFile: ee,
+    onGetWorkspaceDiff: te,
+    onGetContextUsage: re,
+    onMcpAuthenticate: oe,
+    onMcpOauthCallbackUrl: ne,
+    onMcpReconnect: Re,
+    onMcpSetServers: se,
+    onForkConversation: ie,
+    hasPendingPrompts: Ae,
+    onSideQuestion: ae,
+    cancellableRequests: G
+  } = r;
+  if (!n) {
+    t("[bridge:repl] Cannot respond to control_request: transport not configured");
+    return
+  }
+  let A = r.writeFrame ?? ((a) => {
+      n.write(a)
+    }),
+    _;
+  if (bn() && !Ke.has(e.request.subtype)) {
+    t(`[bridge] refusing ${e.request.subtype}: this process is exiting`), _ = {
+      type: "control_response",
+      response: {
+        subtype: "error",
+        request_id: e.request_id,
+        error: Le
+      }
+    };
+    let a = {
+      ..._,
+      session_id: s
+    };
+    n.write(a);
+    return
+  }
+  if (l && e.request.subtype !== "initialize") {
+    _ = {
+      type: "control_response",
+      response: {
+        subtype: "error",
+        request_id: e.request_id,
+        error: Pe
+      }
+    };
+    let a = {
+      ..._,
+      session_id: s
+    };
+    n.write(a), t(`[bridge:repl] Rejected ${e.request.subtype} (outbound-only) request_id=${e.request_id}`);
+    return
+  }
+  let O = r.answerSharedControlRequest?.(e.request);
+  if (O instanceof Promise) {
+    z(e, A, s, O);
+    return
+  }
+  if (O !== void 0) {
+    let c = {
+      ...O.subtype === "error" ? {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: O.error
+        }
+      } : {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id,
+          ...O.response !== void 0 && {
+            response: O.response
+          }
+        }
+      },
+      session_id: s
+    };
+    n.write(c), t(`[bridge:repl] Sent control_response for ${e.request.subtype} request_id=${e.request_id} result=${O.subtype}`);
+    return
+  }
+  switch (e.request.subtype) {
+    case "initialize": {
+      try {
+        let D = Wae(e.request.supportedDialogKinds);
+        if (D.length > 0) F?.(D)
+      } catch (D) {
+        t(`[bridge:repl] dialog-kind capture failed; acking initialize anyway: ${d(D)}`)
+      }
+      let a = [];
+      if (!l) try {
+        a = k?.() ?? []
+      } catch (D) {
+        m("bridge_initialize_commands", "get_commands_threw"), t(`[bridge:repl] getCommands failed; acking initialize with commands: []: ${d(D)}`)
+      }
+      let c = b?.() ?? [],
+        S = c.filter((D) => D.request.subtype === "can_use_tool"),
+        E = c.filter((D) => D.request.subtype === "request_user_dialog");
+      _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id,
+          response: {
+            commands: a,
+            agents: [],
+            output_style: "normal",
+            available_output_styles: ["normal"],
+            models: [],
+            account: {},
+            pid: process.pid,
+            ...I !== void 0 && {
+              claude_code_version: I
+            },
+            ...!l && y?.() === !0 && {
+              inbound_read_receipts: !0
+            },
+            ...h?.()
+          },
+          pending_permission_requests: S,
+          pending_user_dialog_requests: E
+        }
+      };
+      try {
+        R?.()
+      } catch (D) {
+        t(`[bridge:repl] onClientInitialize failed; acking initialize anyway: ${d(D)}`)
+      }
+      break
+    }
+    case "set_model": {
+      let a = e.request.model;
+      if (a != null && typeof a !== "string") {
+        m("model_switch", "invalid_model_type"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "set_model: model must be a string"
+          }
+        };
+        break
+      }
+      let c = e.request.only_if_model_is_current;
+      if (c !== void 0 && c !== !1) {
+        m("model_switch", "only_if_model_is_current_unserved"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "set_model: Remote Control does not implement only_if_model_is_current. The request changed nothing."
+          }
+        };
+        break
+      }
+      let S = W?.(e.request.model ?? void 0);
+      if (S && "then" in S) {
+        ue({
+          verdict: S,
+          deadlineMs: r.setModelVerdictDeadlineMs ?? DMr,
+          respond: (E) => {
+            let qe = {
+              ...{
+                type: "control_response",
+                response: {
+                  ...E,
+                  request_id: e.request_id
+                }
+              },
+              session_id: s
+            };
+            A(qe), t(`[bridge:repl] Sent control_response for set_model request_id=${e.request_id} result=${E.subtype}`)
+          },
+          inform: (E) => {
+            for (let D of E) A({
+              type: "system",
+              subtype: "informational",
+              content: D,
+              level: "notice",
+              uuid: M(),
+              session_id: s
+            })
+          }
+        });
+        return
+      }
+      if (S && !S.ok) _ = {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: Xt(S.error)
+        }
+      };
+      else _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id
+        }
+      };
+      break
+    }
+    case "set_max_thinking_tokens": {
+      if (!YFt(e.request)) {
+        _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: $Mr
+          }
+        };
+        break
+      }
+      let a = he?.(e.request.max_thinking_tokens, e.request.thinking_display);
+      if (a && "then" in a) {
+        let c = e.request_id,
+          S = e.request.subtype;
+        a.then((E) => le(c, E), (E) => ({
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: c,
+            error: ce(S, E)
+          }
+        })).then((E) => {
+          let D = {
+            ...E,
+            session_id: s
+          };
+          A(D), t(`[bridge:repl] Sent control_response for set_max_thinking_tokens request_id=${c} result=${E.response.subtype}`)
+        });
+        return
+      }
+      _ = le(e.request_id, a);
+      break
+    }
+    case "set_permission_mode": {
+      let a = _g(e.request.mode),
+        c = a === void 0 ? {
+          ok: !1,
+          error: whe
+        } : De?.(a) ?? {
+          ok: !1,
+          error: "set_permission_mode is not supported in this context (onSetPermissionMode callback not registered)"
+        };
+      if (c.ok) _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id
+        }
+      };
+      else _ = {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: Xt(c.error)
+        }
+      };
+      break
+    }
+    case "rename_session": {
+      if (typeof e.request.title !== "string") {
+        _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "rename_session: title must be a string"
+          }
+        };
+        break
+      }
+      let c = ve?.(e.request.title) ?? {
+        ok: !1,
+        error: "rename_session is not supported in this context (onRenameSession callback not registered)"
+      };
+      if (c.ok) _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id
+        }
+      };
+      else _ = {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: Xt(c.error)
+        }
+      };
+      break
+    }
+    case "set_color": {
+      let a = Ie?.(e.request.color) ?? {
+        ok: !1,
+        error: "set_color is not supported in this context (onSetColor callback not registered)"
+      };
+      if (a.ok) _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id
+        }
+      };
+      else _ = {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: Xt(a.error)
+        }
+      };
+      break
+    }
+    case "file_suggestions": {
+      if (!Z) {
+        _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "file_suggestions is not supported in this context (onFileSuggestions callback not registered)"
+          }
+        };
+        break
+      }
+      N(e, A, s, Z(e.request.query).then((a) => ({
+        suggestions: a
+      })));
+      return
+    }
+    case "read_file": {
+      if (!ee) {
+        _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "read_file is not supported in this context (onReadFile callback not registered)"
+          }
+        };
+        break
+      }
+      N(e, A, s, ee(e.request.path, e.request.max_bytes, e.request.encoding, e.request.anchor).then(((a) => (c) => ({
+        ...c,
+        absPath: a
+      }))(e.request.path)));
+      return
+    }
+    case "get_workspace_diff": {
+      if (!te) {
+        _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "get_workspace_diff is not supported in this context (onGetWorkspaceDiff callback not registered)"
+          }
+        };
+        break
+      }
+      let a = new AbortController;
+      z(e, A, s, Nt(te(a.signal), Ue, Y).then((c) => ({
+        subtype: "success",
+        response: c
+      }), (c) => {
+        if (a.abort(), d(c) === Y) return {
+          subtype: "error",
+          error: Y,
+          error_code: "workspace_diff_pending"
+        };
+        throw c
+      }));
+      return
+    }
+    case "get_context_usage": {
+      if (!re) {
+        _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "get_context_usage is not supported in this context (onGetContextUsage callback not registered)"
+          }
+        };
+        break
+      }
+      N(e, A, s, re({
+        detail: e.request.detail
+      }).then((a) => ({
+        ...a,
+        memoryFiles: []
+      })));
+      return
+    }
+    case "get_usage":
+      _ = {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: "get_usage is not supported in this context"
+        }
+      };
+      break;
+    case "mcp_status":
+      _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id,
+          response: {
+            mcpServers: []
+          }
+        }
+      };
+      break;
+    case "mcp_authenticate":
+    case "mcp_oauth_callback_url":
+    case "mcp_reconnect": {
+      let a = e.request,
+        {
+          subtype: c,
+          serverName: S
+        } = a,
+        E = a.subtype === "mcp_authenticate" ? oe && ((D) => oe(D, a.redirectUri)) : a.subtype === "mcp_oauth_callback_url" ? ne && ((D) => ne(D, a.callbackUrl)) : Re;
+      if (!E) {
+        _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: `${c} is not supported in this context (callback not registered)`
+          }
+        };
+        break
+      }
+      N(e, A, s, E(S));
+      return
+    }
+    case "interrupt":
+      w?.(), _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id
+        }
+      };
+      break;
+    case "apply_flag_settings": {
+      let a = Ge(e.request.settings),
+        c;
+      if (!a.ok) c = a;
+      else if (!X) m("bridge_flag_settings", "not_registered"), c = {
+        ok: !1,
+        error: "apply_flag_settings is not supported in this context (onApplyFlagSettings callback not registered)"
+      };
+      else c = X(a.settings, e.request_id);
+      if (c.ok) g("bridge_flag_settings"), _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id
+        }
+      };
+      else _ = {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: c.error
+        }
+      };
+      break
+    }
+    case "mcp_set_servers": {
+      let a = e.request.servers,
+        c = "hint" in e.request ? e.request.hint : void 0,
+        S;
+      if (a === void 0 && typeof c === "string") t("[bridge:repl] mcp_set_servers carried an advisory hint and no servers; acknowledged, nothing to apply"), S = {
+        ok: !0,
+        added: [],
+        removed: [],
+        errors: {},
+        unknownServerCount: 0
+      };
+      else if (!_e(a)) S = {
+        ok: !1,
+        error: "mcp_set_servers: servers must be an object"
+      };
+      else if (!se) S = {
+        ok: !1,
+        error: "mcp_set_servers is not supported in this context (onMcpSetServers callback not registered)"
+      };
+      else try {
+        S = se(a)
+      } catch (E) {
+        t(`[bridge:repl] mcp_set_servers handler threw: ${d(E)}`, {
+          level: "error"
+        }), S = {
+          ok: !1,
+          error: "mcp_set_servers failed to apply"
+        }
+      }
+      _ = S.ok ? {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id,
+          response: {
+            added: S.added,
+            removed: S.removed,
+            errors: We(S.errors, S.unknownServerCount)
+          }
+        }
+      } : {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: Xt(S.error)
+        }
+      };
+      break
+    }
+    case "stop_task": {
+      let a = e.request.task_id;
+      if (typeof a !== "string") {
+        m("task_stop_user", "invalid_task_id"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "stop_task: task_id must be a string"
+          }
+        };
+        break
+      }
+      let c = a;
+      if (!L) {
+        m("task_stop_user", "not_supported"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "stop_task is not supported in this context (callback not registered)"
+          }
+        };
+        break
+      }
+      N(e, A, s, L(c));
+      return
+    }
+    case "background_tasks": {
+      let a = LMr(e.request.tool_use_id);
+      if (!a.valid) {
+        m("task_local_shell_background_all", "invalid_tool_use_id"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: FMr
+          }
+        };
+        break
+      }
+      let {
+        toolUseId: c
+      } = a;
+      if (!B) {
+        m("task_local_shell_background_all", "not_supported"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "background_tasks is not supported in this context (callback not registered)"
+          }
+        };
+        break
+      }
+      if (Zu()) {
+        m("task_local_shell_background_all", "disabled"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: NMr
+          }
+        };
+        break
+      }
+      N(e, A, s, Promise.resolve().then(() => B(c)).then((S) => c === void 0 ? {} : {
+        backgrounded: S
+      }));
+      return
+    }
+    case "cancel_async_message": {
+      let a = e.request.message_uuid;
+      if (typeof a !== "string") {
+        m("bridge_cancel_queued_message", "invalid_message_uuid"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "cancel_async_message: message_uuid must be a string"
+          }
+        };
+        break
+      }
+      if (!x) {
+        m("bridge_cancel_queued_message", "not_supported"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "cancel_async_message is not supported in this context (callback not registered)"
+          }
+        };
+        break
+      }
+      N(e, A, s, Promise.resolve().then(() => x(a)).then((c) => {
+        if (c) g("bridge_cancel_queued_message");
+        else p("bridge_cancel_queued_message", "not_queued");
+        return {
+          cancelled: c
+        }
+      }, (c) => {
+        throw m("bridge_cancel_queued_message", "failed"), c
+      }));
+      return
+    }
+    case "side_question": {
+      let a = Fe().safeParse(e.request);
+      if (!a.success) {
+        m("bridge_side_question", "invalid_request"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "side_question: question must be a string and history an array of {question, response} strings"
+          }
+        };
+        break
+      }
+      if (!ae) {
+        m("bridge_side_question", "not_registered"), _ = {
+          type: "control_response",
+          response: {
+            subtype: "error",
+            request_id: e.request_id,
+            error: "side_question is not supported in this context (onSideQuestion callback not registered)"
+          }
+        };
+        break
+      }
+      if (G?.has(e.request_id)) {
+        t(`[bridge:repl] side_question request_id=${e.request_id} already in flight \u2014 ignoring duplicate delivery`);
+        return
+      }
+      let c = new AbortController;
+      G?.set(e.request_id, c);
+      let S = Promise.resolve().then(() => ae(a.data, {
+        signal: c.signal,
+        onProgress: (E) => {
+          A({
+            type: "system",
+            subtype: "control_request_progress",
+            request_id: e.request_id,
+            ...E,
+            uuid: M(),
+            session_id: s
+          })
+        }
+      }));
+      N(e, A, s, Nt(S, r.sideQuestionDeadlineMs ?? MOo, XFt).then((E) => {
+        if (E.response === null) p("bridge_side_question", "no_response");
+        else if (E.synthetic !== !1) p("bridge_side_question", "synthetic");
+        else g("bridge_side_question");
+        return DOo(E)
+      }, (E) => {
+        if (d(E) === XFt) throw c.abort(), m("bridge_side_question", "deadline"), new Nr(XFt);
+        if (Ve(E)) p("bridge_side_question", "cancelled");
+        else m("bridge_side_question", "failed");
+        throw E
+      }).finally(() => {
+        if (G?.get(e.request_id) === c) G.delete(e.request_id)
+      }));
+      return
+    }
+    case "fork_conversation": {
+      if (ie) {
+        N(e, A, s, ie(e.request, {
+          promptPending: Ae?.() ?? !1,
+          requestId: e.request_id
+        }));
+        return
+      }
+      let a = {
+        forked: !1,
+        error: "unsupported",
+        reason: "requires_remote_control_server"
+      };
+      _ = {
+        type: "control_response",
+        response: {
+          subtype: "success",
+          request_id: e.request_id,
+          response: a
+        }
+      };
+      break
+    }
+    default:
+      _ = {
+        type: "control_response",
+        response: {
+          subtype: "error",
+          request_id: e.request_id,
+          error: `REPL bridge does not handle control_request subtype: ${Xt(String(e.request.subtype))}`
+        }
+      }
+  }
+  let Ce = {
+    ..._,
+    session_id: s
+  };
+  n.write(Ce), t(`[bridge:repl] Sent control_response for ${e.request.subtype} request_id=${e.request_id} result=${_.response.subtype}`)
+}
+
+function _e(e) {
+  return typeof e === "object" && e !== null && !Array.isArray(e)
+}
+var Be = "(servers not adopted)";
+
+function We(e, r) {
+  if (r <= 0) return e;
+  return {
+    ...e,
+    [Be]: `${r} server(s) not adopted: a Remote Control bridge only honors the injected Project servers`
+  }
+}
+
+function Ge(e) {
+  if (!_e(e)) return m("bridge_flag_settings", "invalid_shape"), {
+    ok: !1,
+    error: "apply_flag_settings: settings must be an object"
+  };
+  let r = Object.keys(e).filter((s) => !Ne.has(s));
+  if (r.length > 0) {
+    m("bridge_flag_settings", "unsupported_key");
+    let s = r.slice(0, Me).map((h) => Rt(h, Oe)),
+      l = r.length > s.length ? ` (+${r.length-s.length} more)` : "";
+    return {
+      ok: !1,
+      error: `apply_flag_settings: ${s.join(", ")}${l} cannot be changed over Remote Control (only effortLevel and ultracode can)`
+    }
+  }
+  let n = {};
+  if ("effortLevel" in e) {
+    let s = e.effortLevel;
+    if (s !== null && typeof s !== "string") return m("bridge_flag_settings", "invalid_type"), {
+      ok: !1,
+      error: "apply_flag_settings: effortLevel must be a string or null"
+    };
+    n.effortLevel = s
+  }
+  if ("ultracode" in e) {
+    let s = e.ultracode;
+    if (typeof s !== "boolean") return m("bridge_flag_settings", "invalid_type"), {
+      ok: !1,
+      error: "apply_flag_settings: ultracode must be a boolean"
+    };
+    n.ultracode = s
+  }
+  if (!("effortLevel" in n) && !("ultracode" in n)) return m("bridge_flag_settings", "nothing_to_apply"), {
+    ok: !1,
+    error: "apply_flag_settings: nothing to apply \u2014 only effortLevel and ultracode can be changed over Remote Control"
+  };
+  return {
+    ok: !0,
+    settings: n
+  }
+}
+
+function UKn(e, r) {
+  let n = r?.outcome,
+    s = n !== void 0 && HD(n.terminal_reason),
+    l = {
+      type: "result",
+      ...!s && r?.userMessageUuid && {
+        user_message_uuid: r.userMessageUuid
+      },
+      duration_ms: 0,
+      duration_api_ms: 0,
+      total_cost_usd: 0,
+      usage: {
+        ...$f
+      },
+      modelUsage: {},
+      permission_denials: [],
+      session_id: e,
+      uuid: M()
+    };
+  if (n === void 0 || s) return {
+    ...l,
+    subtype: "success",
+    is_error: !1,
+    num_turns: 0,
+    result: "",
+    stop_reason: null
+  };
+  let h = {
+    is_error: n.is_error,
+    num_turns: n.num_turns,
+    stop_reason: n.stop_reason,
+    ...n.terminal_reason !== void 0 && {
+      terminal_reason: n.terminal_reason
+    }
+  };
+  if (n.subtype === "success") return {
+    ...l,
+    ...h,
+    subtype: "success",
+    result: n.is_error && n.structured_output === void 0 ? n.result ?? "" : "",
+    ...n.api_error_status != null && {
+      api_error_status: n.api_error_status
+    },
+    ...n.api_error_code !== void 0 && {
+      api_error_code: n.api_error_code
+    },
+    ...n.api_error_origin !== void 0 && {
+      api_error_origin: n.api_error_origin
+    },
+    ...n.api_error !== void 0 && {
+      api_error: n.api_error
+    }
+  };
+  return {
+    ...l,
+    ...h,
+    subtype: n.subtype,
+    errors: []
+  }
+}
+
+function LOo(e, r) {
+  return {
+    type: "system",
+    subtype: "worker_shutting_down",
+    reason: r,
+    session_id: e,
+    uuid: M()
+  }
+}
+var Ye = "PushNotification";
+
+function IUs(e, r) {
+  return {
+    type: "assistant",
+    message: {
+      diagnostics: null,
+      id: M(),
+      container: null,
+      model: ui,
+      role: "assistant",
+      stop_details: null,
+      stop_reason: "tool_use",
+      stop_sequence: null,
+      type: "message",
+      usage: {
+        ...$f
+      },
+      content: [{
+        type: "tool_use",
+        id: M(),
+        name: Ye,
+        input: {
+          message: e,
+          status: "proactive"
+        }
+      }],
+      context_management: null
+    },
+    parent_tool_use_id: null,
+    is_meta: !0,
+    session_id: r,
+    uuid: M()
+  }
+}
+
+function WMr(e, r) {
+  return {
+    type: "assistant",
+    message: {
+      diagnostics: null,
+      id: M(),
+      container: null,
+      model: ui,
+      role: "assistant",
+      stop_details: null,
+      stop_reason: "stop_sequence",
+      stop_sequence: "",
+      type: "message",
+      usage: {
+        ...$f
+      },
+      content: [{
+        type: "text",
+        text: e,
+        citations: null
+      }],
+      context_management: null
+    },
+    parent_tool_use_id: null,
+    session_id: r,
+    uuid: M(),
+    timestamp: new Date().toISOString()
+  }
+}
+class qX {
+  capacity;
+  ring;
+  set = new Set;
+  writeIdx = 0;
+  constructor(e) {
+    this.capacity = e, this.ring = Array(e)
+  }
+  add(e) {
+    if (this.set.has(e)) return;
+    let r = this.ring[this.writeIdx];
+    if (r !== void 0) this.set.delete(r);
+    this.ring[this.writeIdx] = e, this.set.add(e), this.writeIdx = (this.writeIdx + 1) % this.capacity
+  }
+  has(e) {
+    return this.set.has(e)
+  }
+  clear() {
+    this.set.clear(), this.ring.fill(void 0), this.writeIdx = 0
+  }
+}
+var ze = f(() => u({
+  notification_id: o().min(1),
+  origin: C(mge),
+  content: o()
+}));
+
+function He(e) {
+  let r = ze().safeParse(e);
+  if (!r.success) return;
+  return {
+    type: "user",
+    uuid: r.data.notification_id,
+    message: {
+      role: "user",
+      content: r.data.content
+    },
+    parent_tool_use_id: null,
+    isSynthetic: !0,
+    inbound_origin: mge
+  }
+}
+
+function Qe(e) {
+  return typeof e === "object" && e !== null && "type" in e && e.type === "queued_notification"
+}
+var Xe = ["UNSPECIFIED", "ABSENT", "VERIFIED", "VERIFIED_BY_GATE", "INVALID", "UNCHECKED", "VERIFIED_KEYLESS_DEVICE", "SERVICE_VOUCHED", "SERVER_AUTHORED", "SERVER_REPLAYED", "TRANSITIVELY_VOUCHED"],
+  ge = "DEVICE_ATTESTATION_STATUS_",
+  Ze = ["UNSPECIFIED", "ABSENT", "VERIFIED", "VERIFIED_BY_GATE", "INVALID", "UNCHECKED"];
+
+function $ke(e) {
+  if (e === void 0 || e === null) return "UNSPECIFIED";
+  if (typeof e === "number") return Ze[e] ?? "UNSPECIFIED";
+  if (typeof e !== "string") return "UNSPECIFIED";
+  if (e === "server_authored") return "SERVER_AUTHORED";
+  if (e === "server_replayed") return "SERVER_REPLAYED";
+  if (e === "transitively_vouched") return "TRANSITIVELY_VOUCHED";
+  let r = e.startsWith(ge) ? e.slice(ge.length) : e;
+  return Xe.find((n) => n === r) ?? "UNSPECIFIED"
+}
+var V = ["VERIFIED", "VERIFIED_KEYLESS_DEVICE", "VERIFIED_BY_GATE"];
+
+function MUs(e, r) {
+  return V.indexOf(e) <= V.indexOf(r) ? e : r
+}
+
+function zMr(e, r) {
+  if (e === "SERVICE_VOUCHED") return !0;
+  let n = V.findIndex((s) => s === e);
+  return n !== -1 && n <= V.indexOf(r)
+}
+var GMr = {
+    enforce: !1,
+    acceptLevel: "VERIFIED",
+    acceptStatuses: new Set
+  },
+  Je = ["UNSPECIFIED", "ABSENT", "INVALID", "UNCHECKED"],
+  et = f(() => u({
+    accept_level: U(V).default("VERIFIED"),
+    accept_statuses: T(U(Je)).default([])
+  }));
+
+function VMr(e) {
+  let r = oo().attestation,
+    n = et().safeParse(e);
+  if (!n.success && !r.malformedConfigReported) {
+    r.malformedConfigReported = !0;
+    try {
+      t(`[bridge:attestation] malformed enforce config \u2014 failing closed to accept_level=VERIFIED with no accept_statuses: ${n.error.message}`, {
+        level: "error"
+      }), p("bridge_event_attestation", "malformed_config")
+    } catch (s) {
+      t(`[bridge:attestation] malformed-config report threw: ${d(s)}`, {
+        level: "error"
+      })
+    }
+  }
+  return {
+    enforce: !0,
+    acceptLevel: n.success ? n.data.accept_level : "VERIFIED",
+    acceptStatuses: new Set(n.success ? n.data.accept_statuses : [])
+  }
+}
+
+function DUs(e) {
+  try {
+    let r = oo().attestation.reportedCloudWorkerCodes;
+    if (r.has(e)) return;
+    r.add(e), t(`${q(!0)} the attestation policy header could not be read whole (${e})`, {
+      level: "error"
+    }), p("ccr_worker_attestation_policy", e)
+  } catch (r) {
+    t(`${q(!0)} policy-fault report threw: ${d(r)}`, {
+      level: "error"
+    })
+  }
+}
+
+function igt(e) {
+  oo().attestation.filterPolicy = e
+}
+
+function uan(e) {
+  oo().attestation.dropNotifier = e
+}
+
+function LUs(e) {
+  let r = oo().attestation;
+  if (r.dropNotifier === e) r.dropNotifier = void 0
+}
+
+function BKn(e) {
+  oo().attestation.senderDropWriter = e
+}
+
+function jKn(e) {
+  let r = oo().attestation;
+  if (r.senderDropWriter === e) r.senderDropWriter = void 0
+}
+var JFt = "[remote-io] warning: ";
+
+function qMr({
+  status: e,
+  payloadType: r,
+  subtype: n,
+  isCloud: s
+}) {
+  let l = s ? "The app that sent it doesn't sign its activity. Use an app that does." : "The app that sent it doesn't sign its activity. Use the terminal or an app that does.";
+  return {
+    what: r === "control_response" ? "permission response" : r === "control_request" ? `remote command (${n})` : "message",
+    hint: s && e === "ABSENT" ? "If you sent it, try again or sign in again." : s && e === "VERIFIED_BY_GATE" ? "If you sent it, signing in again may fix this." : e === "ABSENT" || e === "INVALID" ? "Re-pair the sending device in Trusted Devices." : e === "VERIFIED_BY_GATE" || e === "VERIFIED_KEYLESS_DEVICE" ? l : e === "TRANSITIVELY_VOUCHED" ? "It came from an automated cloud session, not from a person." : void 0
+  }
+}
+
+function QFt(e) {
+  let r = e.isCloud ? "This session" : "Remote Control";
+  if (e.windowCapped) return `${r} is rejecting a burst of unsigned remote activity; further warnings for this burst are suppressed.`;
+  let {
+    what: n,
+    hint: s
+  } = qMr(e);
+  return `${r} ignored a ${n} that arrived without a valid device signature (attestation: ${e.status}).${s?` ${s}`:""}`
+}
+
+function TXe(e) {
+  let {
+    what: r,
+    hint: n
+  } = qMr(e);
+  return `This ${r} arrived without a valid device signature (attestation: ${e.status}) and was ignored.${n?` ${n}`:""}`
+}
+
+function tt(e) {
+  if (e.payloadType === "control_request") return;
+  return WMr(e.windowCapped ? QFt(e) : TXe(e), K())
+}
+var rt = new Set(["set_model", "set_permission_mode", "interrupt", "stop_task", "background_tasks", "cancel_async_message", "set_max_thinking_tokens", "rename_session", "set_color", "mcp_authenticate", "mcp_oauth_callback_url", "mcp_reconnect", "apply_flag_settings", "side_question", "reload_plugins"]);
+
+function _je(e) {
+  let r = NOo(e);
+  return typeof r === "string" ? r : void 0
+}
+
+function be(e) {
+  let r = Se(e);
+  if (r === void 0 || !rt.has(r)) return;
+  return {
+    subtype: r,
+    requestId: e.payload ? _je(e.payload) : void 0
+  }
+}
+
+function Se(e) {
+  let r = e.payload?.request,
+    n = typeof r === "object" && r !== null && "subtype" in r ? r.subtype : void 0;
+  return typeof n === "string" ? n : void 0
+}
+var ot = new Set(["interrupt", "end_session"]),
+  nt = 2000,
+  j = 200,
+  Ee = 128,
+  st = 256;
+
+function P(e, r, n) {
+  if (e.delete(n), e.add(n), e.size > r)
+    for (let s of e) {
+      e.delete(s);
+      break
+    }
+}
+
+function pan(e) {
+  let r = oo().attestation;
+  return e.length > Ee || r.knownInboundRequestIds.has(e) || r.knownOutboundRequestIds.has(e) || r.elicitationOutboundRequestIds.has(e) || r.hostAskOutboundRequestIds.has(e)
+}
+
+function NUs(e) {
+  let r = oo().attestation;
+  return r.knownOutboundRequestIds.has(e) || r.elicitationOutboundRequestIds.has(e)
+}
+
+function WKn(e, {
+  automated: r
+}) {
+  let n = oo().attestation;
+  if (P(n.knownOutboundRequestIds, j, e), r) P(n.automatedOutboundRequestIds, j, e)
+}
+var it = 512;
+
+function FUs(e) {
+  P(oo().attestation.deviceOutboundRequestIds, it, e)
+}
+
+function HUs(e) {
+  P(oo().attestation.elicitationOutboundRequestIds, j, e)
+}
+
+function $Us(e) {
+  P(oo().attestation.hostAskOutboundRequestIds, j, e)
+}
+
+function at(e) {
+  let r = e.payload?.response;
+  if (typeof r !== "object" || r === null) return !1;
+  let n = _je(r),
+    s = oo().attestation;
+  return n !== void 0 && (s.automatedOutboundRequestIds.has(n) || s.deviceOutboundRequestIds.has(n) || s.hostAskOutboundRequestIds.has(n))
+}
+var dt = 200;
+
+function zKn(e) {
+  P(oo().attestation.resolvedPromptRequestIds, dt, e)
+}
+
+function ut(e) {
+  let r = e.payload?.response;
+  if (typeof r !== "object" || r === null) return !1;
+  let n = _je(r);
+  return n !== void 0 && oo().attestation.resolvedPromptRequestIds.has(n)
+}
+var pt = 60000,
+  fe = 10;
+
+function ye(e, r) {
+  let n = oo().attestation;
+  if (n.dropNotifier === void 0 && n.senderDropWriter === void 0) return;
+  if (n.recentDropEventIds.has(r)) return;
+  P(n.recentDropEventIds, st, r);
+  let s = e.payloadType === "control_request" ? n.commandDropNoticeWindow : n.messageDropNoticeWindow,
+    l = Date.now();
+  if (l - s.start >= pt) s.start = l, s.count = 0;
+  if (s.count++, s.count <= fe) me(e);
+  else if (s.count === fe + 1) me({
+    status: e.status,
+    payloadType: e.payloadType,
+    ...e.subtype !== void 0 && {
+      subtype: e.subtype
+    },
+    windowCapped: !0,
+    ...e.isCloud && {
+      isCloud: !0
+    }
+  })
+}
+
+function me(e) {
+  let r = oo().attestation;
+  if (r.dropNotifier !== void 0) try {
+    r.dropNotifier(e)
+  } catch (n) {
+    t(`${q(e.isCloud===!0)} drop notifier threw: ${d(n)}`, {
+      level: "error"
+    })
+  }
+  if (r.senderDropWriter !== void 0) try {
+    let n = tt(e);
+    if (n) r.senderDropWriter(n)
+  } catch (n) {
+    t(`${q(e.isCloud===!0)} drop sender writer threw: ${d(n)}`, {
+      level: "error"
+    })
+  }
+}
+
+function KMr(e) {
+  let n = (typeof e.payload?.type === "string" ? e.payload.type : e.event_type) === "control_request" && e.payload ? _je(e.payload) : void 0;
+  if (n !== void 0 && n.length <= Ee) P(oo().attestation.knownInboundRequestIds, nt, n)
+}
+
+function Q(e, r, n) {
+  if (r !== "control_request") return;
+  if (KMr(e), be(e) !== void 0) g(n ? "ccr_worker_control_request_attestation" : "bridge_control_request_attestation")
+}
+var lt = new Set(["bash_command", "update_environment_variables", "assistant", "system"]);
+
+function ct(e, r, n, s) {
+  try {
+    let l = oo().attestation,
+      h = s ? l.reportedCloudWorkerCodes : l.reportedStrayDropCodes,
+      I = n === "control_request" ? "control_request_other" : lt.has(n) ? n : "other_payload_type",
+      k = `${r.toLowerCase()}_${I}`;
+    if (h.has(k)) return;
+    h.add(k), t(`${q(s)} DROPPING unverified ${n} event_id=${e.event_id} status=${r} (stray payload class ${k}; counted once per process)`, {
+      level: "warn"
+    }), m(s ? "ccr_worker_stray_event_attestation" : "bridge_stray_event_attestation", k)
+  } catch (l) {
+    t(`${q(s)} stray-drop report threw: ${d(l)}`, {
+      level: "error"
+    })
+  }
+}
+
+function q(e) {
+  return e ? "[ccr-worker:attestation]" : "[bridge:attestation]"
+}
+
+function agt(e, r, {
+  isCloudWorker: n,
+  vouchWithheld: s = !1
+}) {
+  let l = !n && (e === "SERVER_AUTHORED" || e === "SERVER_REPLAYED") ? "UNSPECIFIED" : e,
+    h = !n && l === "TRANSITIVELY_VOUCHED" && zMr("VERIFIED_KEYLESS_DEVICE", r.acceptLevel) && !s;
+  return {
+    status: l,
+    meetsLevel: h || zMr(l, r.acceptLevel),
+    configException: r.acceptStatuses.has(l) || l === "TRANSITIVELY_VOUCHED" && r.acceptStatuses.has("UNSPECIFIED")
+  }
+}
+
+function ke(e, r, n) {
+  let s = typeof e.payload?.type === "string" ? e.payload.type : e.event_type,
+    l = s === "user" || s === "control_response",
+    h = $ke(e.device_attestation_status),
+    I = h === "TRANSITIVELY_VOUCHED" && s === "user" && !(typeof e.payload.inbound_origin === "string" && e.payload.inbound_origin !== ""),
+    {
+      status: k,
+      meetsLevel: y,
+      configException: b
+    } = agt(h, r, {
+      isCloudWorker: n,
+      vouchWithheld: I
+    }),
+    w = `${k.toLowerCase()}_${s}${I?"_unstamped":""}`,
+    L = e.payload?.request,
+    B = n && k === "SERVICE_VOUCHED" && s === "control_request" && (!ot.has(Se(e) ?? "") || typeof L === "object" && L !== null && kZe(L));
+  if (y && !B) {
+    if (l) g(n ? "ccr_worker_event_attestation" : "bridge_event_attestation");
+    return Q(e, s, n), !1
+  }
+  if (!r.enforce) {
+    if (Q(e, s, n), k === "UNSPECIFIED") return !1;
+    if (l) t(`${q(n)} accepting unverified ${s} event_id=${e.event_id} status=${k}`, {
+      level: "info"
+    }), p(n ? "ccr_worker_event_attestation" : "bridge_event_attestation", w);
+    return !1
+  }
+  let x = b,
+    F = !1;
+  if (l) {
+    let R = w;
+    if (t(`${q(n)} ${x?"accepting (config exception)":"DROPPING"} unverified ${s} event_id=${e.event_id} status=${k}`, {
+        level: x ? "info" : "warn"
+      }), x) p(n ? "ccr_worker_event_attestation" : "bridge_event_attestation", R);
+    else if (s === "control_response" && at(e)) F = !0, t(`${q(n)} dropped ${s} event_id=${e.event_id} status=${k} answers an automated outbound request; notice suppressed`, {
+      level: "info"
+    }), m(n ? "ccr_worker_event_attestation" : "bridge_event_attestation", `${R}_automated_reply`);
+    else if (s === "control_response" && ut(e)) F = !0, t(`${q(n)} dropped ${s} event_id=${e.event_id} status=${k} is a duplicate answer to an already-resolved prompt; notice suppressed`, {
+      level: "info"
+    }), m(n ? "ccr_worker_event_attestation" : "bridge_event_attestation", `${R}_resolved_duplicate`);
+    else F = !0, m(n ? "ccr_worker_event_attestation" : "bridge_event_attestation", R), ye({
+      status: k,
+      payloadType: s,
+      ...n && {
+        isCloud: !0
+      }
+    }, e.event_id)
+  } else if (s === "control_request" && !x) {
+    let R = be(e);
+    if (R) {
+      F = !0;
+      let W = R.requestId !== void 0 && pan(R.requestId) ? void 0 : R.requestId;
+      t(`${q(n)} DROPPING unverified control_request subtype=${R.subtype} event_id=${e.event_id} status=${k}${W===void 0&&R.requestId!==void 0?" (forged-id refusal suppressed, or the id is too long)":""}`, {
+        level: "warn"
+      }), m(n ? "ccr_worker_control_request_attestation" : "bridge_control_request_attestation", `${k.toLowerCase()}_${R.subtype}`), ye({
+        status: k,
+        payloadType: s,
+        subtype: R.subtype,
+        requestId: W,
+        ...n && {
+          isCloud: !0
+        }
+      }, e.event_id)
+    }
+  }
+  if (!x && !F) ct(e, k, s, n);
+  if (x) Q(e, s, n);
+  return !x
+}
+
+function GKn(e) {
+  return ke(e, oo().attestation.filterPolicy?.() ?? GMr, !1)
+}
+
+function UUs(e, r) {
+  if (e.source !== "client") {
+    try {
+      let n = oo().attestation.reportedCloudWorkerCodes;
+      if (!n.has("source_not_client")) n.add("source_not_client"), t(`${q(!0)} ${r.enforce?"DROPPING":"would drop"} event_id=${e.event_id}: not marked client-written (counted once per process)`, {
+        level: "warn"
+      }), m("ccr_worker_stray_event_attestation", "source_not_client")
+    } catch (n) {
+      t(`${q(!0)} source-drop report threw: ${d(n)}`, {
+        level: "error"
+      })
+    }
+    if (!r.enforce) KMr(e);
+    return r.enforce
+  }
+  return ke(e, r, !0)
+}
+export {
+  DMr,
+  LMr,
+  NMr,
+  FMr,
+  HMr,
+  Wae,
+  YFt,
+  $Mr,
+  IOo,
+  UMr,
+  BMr,
+  AUs,
+  zae,
+  can,
+  jMr,
+  HKn,
+  $Kn,
+  xUs,
+  MOo,
+  XFt,
+  DOo,
+  PUs,
+  OUs,
+  UKn,
+  LOo,
+  IUs,
+  WMr,
+  qX,
+  $ke,
+  MUs,
+  zMr,
+  GMr,
+  VMr,
+  DUs,
+  igt,
+  uan,
+  LUs,
+  BKn,
+  jKn,
+  JFt,
+  qMr,
+  QFt,
+  TXe,
+  _je,
+  pan,
+  NUs,
+  WKn,
+  FUs,
+  HUs,
+  $Us,
+  zKn,
+  KMr,
+  agt,
+  GKn,
+  UUs
+};

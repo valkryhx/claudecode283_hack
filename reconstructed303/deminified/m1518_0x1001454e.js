@@ -1,0 +1,519 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import "B:/~BUN/root/chunk-nggrknsv.js";
+import "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-frrkt2bs.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import { Gr } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import "B:/~BUN/root/chunk-jthpk6wv.js";
+import "B:/~BUN/root/chunk-3aez4b53.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import { Xc, Xt, she } from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import { nn, D_ } from "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-1kfn24jp.js";
+import "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import "B:/~BUN/root/chunk-yt0knyw7.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import "B:/~BUN/root/chunk-nxwmyxnk.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import "B:/~BUN/root/chunk-xrp58hm9.js";
+import "B:/~BUN/root/chunk-2zk4vqr8.js";
+import "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import "B:/~BUN/root/chunk-pjgzz98k.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import { I_, fn, wh, me, zx, sze, ca } from "B:/~BUN/root/chunk-1gpjpba6.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-8pmnanyd.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import { xd, nv } from "B:/~BUN/root/chunk-0n2201tc.js";
+import "B:/~BUN/root/chunk-vttg4n7q.js";
+import "B:/~BUN/root/chunk-q3srk2wz.js";
+import "B:/~BUN/root/chunk-hb6x4e3n.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import "B:/~BUN/root/chunk-kad4nq7y.js";
+import "B:/~BUN/root/chunk-28dw3zbk.js";
+import "B:/~BUN/root/chunk-07c8fw5z.js";
+import "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-h9p45fg5.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import "B:/~BUN/root/chunk-cx57tr4b.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import "B:/~BUN/root/chunk-efcxwmhb.js";
+import "B:/~BUN/root/chunk-d544j3ga.js";
+import "B:/~BUN/root/chunk-hhgqcegv.js";
+import "B:/~BUN/root/chunk-nvdqbkrt.js";
+import "B:/~BUN/root/chunk-472kxa0t.js";
+import "B:/~BUN/root/chunk-7qeqkjr8.js";
+import "B:/~BUN/root/chunk-c0j3f8cc.js";
+import { utr } from "B:/~BUN/root/chunk-6pawxab4.js";
+import "B:/~BUN/root/chunk-hcr6vzx1.js";
+import "B:/~BUN/root/chunk-f3f5k3wx.js";
+import { hO } from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import "B:/~BUN/root/chunk-y424etr5.js";
+import "B:/~BUN/root/chunk-b4xxgr0r.js";
+import "B:/~BUN/root/chunk-asrchj7k.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-dyer18a2.js";
+import "B:/~BUN/root/chunk-xpy44yvr.js";
+import "B:/~BUN/root/chunk-4qc55bxf.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+var T = ["add", "replace", "remove"],
+  K = 1e4,
+  M = 262144;
+function h(e) {
+  return typeof e === "object" && e !== null && !Array.isArray(e);
+}
+var A = new Set(["__proto__", "constructor", "prototype"]);
+function _(e) {
+  if (Array.isArray(e)) return e.some(_);
+  if (!h(e)) return !1;
+  return Object.keys(e).some(item => A.has(item) || _(e[item]));
+}
+function S(e, o) {
+  if (!h(e)) return {
+    ok: !1,
+    error: `edit_hook: ${o} must be an object`
+  };
+  if (_(e)) return {
+    ok: !1,
+    error: `edit_hook: ${o} has a key that is not allowed`
+  };
+  if (JSON.stringify(e).length > M) return {
+    ok: !1,
+    error: `edit_hook: ${o} is too large`
+  };
+  let t = she().safeParse(e);
+  if (!t.success) {
+    let a = t.error.issues[0],
+      r = a && a.path.length > 0 ? ` (${a.path.join(".")})` : "";
+    return {
+      ok: !1,
+      error: `edit_hook: ${o} is not a valid hook${r}: ${a?.message ?? "invalid"}`
+    };
+  }
+  return {
+    ok: !0,
+    hook: t.data
+  };
+}
+function x(matcher, o) {
+  if (matcher === void 0 || matcher === null) return {
+    ok: !0,
+    matcher: ""
+  };
+  if (typeof matcher !== "string") return {
+    ok: !1,
+    error: `edit_hook: ${o} must be a string`
+  };
+  if (matcher.length > K) return {
+    ok: !1,
+    error: `edit_hook: ${o} is too long`
+  };
+  if (matcher in {}) return {
+    ok: !1,
+    error: `edit_hook: ${o} is not allowed`
+  };
+  return {
+    ok: !0,
+    matcher: matcher
+  };
+}
+function F(e) {
+  let op = e.op;
+  if (typeof op !== "string" || !T.includes(op)) return {
+    ok: !1,
+    error: "edit_hook: op must be add, replace, or remove"
+  };
+  let source = e.source;
+  if (typeof source !== "string" || !D_.includes(source)) return {
+    ok: !1,
+    error: "edit_hook: source must be userSettings, projectSettings, or localSettings"
+  };
+  let event = e.event;
+  if (typeof event !== "string" || !Xc.includes(event)) return {
+    ok: !1,
+    error: "edit_hook: event is not a known hook event"
+  };
+  let r = x(e.matcher, "matcher");
+  if (!r.ok) return r;
+  let hook;
+  if (op === "add" || op === "replace") {
+    let c = S(e.hook, "hook");
+    if (!c.ok) return c;
+    hook = c.hook;
+  }
+  let target_2;
+  if (op === "replace" || op === "remove") {
+    let target = e.target;
+    if (!h(target)) return {
+      ok: !1,
+      error: "edit_hook: target must be an object for replace and remove"
+    };
+    let event_2 = target.event;
+    if (typeof event_2 !== "string" || !Xc.includes(event_2)) return {
+      ok: !1,
+      error: "edit_hook: target.event is not a known hook event"
+    };
+    let l = x(target.matcher, "target.matcher");
+    if (!l.ok) return l;
+    let s = S(target.hook, "target.hook");
+    if (!s.ok) return s;
+    target_2 = {
+      event: event_2,
+      matcher: l.matcher,
+      hook: s.hook
+    };
+  }
+  return {
+    ok: !0,
+    value: {
+      op: op,
+      source: source,
+      event: event,
+      matcher: r.matcher,
+      hook: hook,
+      target: target_2
+    }
+  };
+}
+function I() {
+  let e = me("policySettings");
+  if (e?.disableAllHooks === !0) return "edit_hook: hooks are disabled by managed settings";
+  if (e?.allowManagedHooksOnly === !0) return "edit_hook: managed settings allow managed hooks only";
+  if (xd("hooks")) return "edit_hook: managed settings restrict hooks to plugin sources";
+  if (nv()) return "edit_hook: managed settings could not be read, so hooks cannot be edited";
+  return null;
+}
+function L(e) {
+  if (!nn(e)) return `edit_hook: the ${e} source is disabled for this session (--setting-sources)`;
+  return null;
+}
+async function J(e, o) {
+  let outcome = null;
+  return {
+    error: (await ca(e.source, r => {
+      let n = N(r, e);
+      return outcome = n.outcome, n.partial;
+    }, {
+      legacyRevocation: "skip"
+    }, o)).error,
+    outcome: outcome
+  };
+}
+function g(e) {
+  if (Array.isArray(e)) return `[${e.map(g).join(",")}]`;
+  if (h(e)) return `{${Object.keys(e).sort().map(item => `${JSON.stringify(item)}:${g(e[item])}`).join(",")}}`;
+  return JSON.stringify(e) ?? "null";
+}
+function w(e, o) {
+  let t = she().safeParse(e);
+  if (!t.success) return !1;
+  return g(utr(t.data)) === g(utr(o));
+}
+function P(e) {
+  return g(e.type === "http" && e.headers !== void 0 ? {
+    ...e,
+    headers: hO(e.headers, (o, t) => t.toLowerCase())
+  } : e);
+}
+function B(e) {
+  let o = she().safeParse(e);
+  return o.success ? P(o.data) : null;
+}
+function O(e, o, t, a) {
+  let r = she().safeParse(t);
+  if (!r.success) return null;
+  let n = P(r.data),
+    i = !1;
+  for (let [c, u] of e.entries()) {
+    if (m(u) !== o) continue;
+    for (let [l, s] of u.hooks.entries()) {
+      if (a?.group === c && a.index === l) continue;
+      if (B(s) === n) return "exact";
+      if (w(s, r.data)) i = !0;
+    }
+  }
+  return i ? "by-headers" : null;
+}
+function v(e) {
+  return e === "exact" ? "duplicate" : "twin-by-headers";
+}
+function m(e) {
+  if (!h(e) || !Array.isArray(e.hooks)) return null;
+  let matcher_2 = e.matcher;
+  if (matcher_2 === void 0 || matcher_2 === null || matcher_2 === "") return "";
+  return typeof matcher_2 === "string" ? matcher_2 : null;
+}
+function R(e, o) {
+  let t = o,
+    a = {};
+  if (h(e)) {
+    let n = she().safeParse(e);
+    if (n.success) {
+      for (let i of Object.keys(e)) if (!(i in n.data) && !A.has(i)) a[i] = e[i];
+      if (n.data.type === "http" && t.type === "http") {
+        let i = n.data.headers ?? {};
+        if (t.headers === void 0) a.headers = n.data.headers;else {
+          let c = new Map(Object.entries(i).map(([u, l]) => [u.toLowerCase(), l]));
+          t = {
+            ...t,
+            headers: Gr(t.headers, (u, l) => u === "" ? (Object.hasOwn(i, l) ? i[l] : c.get(l.toLowerCase())) ?? "" : u)
+          };
+        }
+      }
+    }
+  }
+  let r = {
+    ...a,
+    ...t
+  };
+  if (r.type === "http" && h(r.headers) && Object.keys(r.headers).length === 0) delete r.headers;
+  return r;
+}
+function C(e, o) {
+  let t = e?.hooks;
+  if (!h(t) || !Array.isArray(t[o.event])) return 0;
+  let a = 0;
+  for (let r of t[o.event]) {
+    if (m(r) !== o.matcher) continue;
+    for (let n of r.hooks) if (w(n, o.hook)) a++;
+  }
+  return a;
+}
+function N(e, o) {
+  let t = e?.hooks;
+  if (t !== void 0 && !h(t)) return {
+    partial: null,
+    outcome: "not-a-list"
+  };
+  let a = t ?? {},
+    r = new Map(),
+    n = s => {
+      let k = r.get(s);
+      if (k) return k;
+      let d = a[s];
+      if (d !== void 0 && !Array.isArray(d)) return null;
+      let p = (d ?? []).map(item => h(item) && Array.isArray(item.hooks) ? {
+        ...item,
+        hooks: [...item.hooks]
+      } : item);
+      return r.set(s, p), p;
+    },
+    i;
+  if (o.op === "add") i = {
+    ...o.hook
+  };else {
+    let target_3 = o.target,
+      k = n(target_3.event);
+    if (k === null) return {
+      partial: null,
+      outcome: "not-a-list"
+    };
+    let d = null;
+    for (let groupIndex = 0; groupIndex < k.length && d === null; groupIndex++) {
+      let H = k[groupIndex];
+      if (m(H) !== target_3.matcher) continue;
+      let E = H.hooks,
+        index = E.findIndex(item => w(item, target_3.hook));
+      if (index >= 0) d = {
+        list: E,
+        index: index,
+        groupIndex: groupIndex
+      };
+    }
+    if (d === null) return {
+      partial: null,
+      outcome: "target-missing"
+    };
+    if (o.op === "replace" && o.event === target_3.event && o.matcher === target_3.matcher) {
+      i = R(d.list[d.index], o.hook);
+      let f = O(k, target_3.matcher, i, {
+        group: d.groupIndex,
+        index: d.index
+      });
+      if (f !== null) return {
+        partial: null,
+        outcome: v(f)
+      };
+      return d.list[d.index] = i, {
+        partial: y(a, r),
+        outcome: "applied"
+      };
+    }
+    let [p] = d.list.splice(d.index, 1);
+    if (d.list.length === 0) k.splice(d.groupIndex, 1);
+    if (o.op === "remove") return {
+      partial: y(a, r),
+      outcome: "applied"
+    };
+    i = R(p, o.hook);
+  }
+  let c = n(o.event);
+  if (c === null) return {
+    partial: null,
+    outcome: "not-a-list"
+  };
+  let u = O(c, o.matcher, i);
+  if (u !== null) return {
+    partial: null,
+    outcome: v(u)
+  };
+  let l = c.find(item => m(item) === o.matcher);
+  if (l) l.hooks.push(i);else {
+    let s = {
+      ...(o.matcher !== "" && {
+        matcher: o.matcher
+      }),
+      hooks: [i]
+    };
+    c.push(s);
+  }
+  return {
+    partial: y(a, r),
+    outcome: "applied"
+  };
+}
+function y(e, o) {
+  let hooks = {};
+  for (let [n, i] of o) hooks[n] = i.length > 0 ? i : void 0;
+  return Object.keys(e).filter(item => !(item in hooks) || hooks[item] !== void 0).length > 0 || Object.values(hooks).some(item => item !== void 0) ? {
+    hooks: hooks
+  } : {
+    hooks: void 0
+  };
+}
+async function Q(e, o) {
+  let t = (code, error, refusal) => ({
+      ok: !1,
+      error: error,
+      code: code,
+      ...(refusal !== void 0 && {
+        refusal: refusal
+      })
+    }),
+    a = I();
+  if (a !== null) return t("policy_locked", a);
+  if (!h(e)) return t("bad_request", "edit_hook: the edit must be a JSON object");
+  let r = F(e);
+  if (!r.ok) return t("bad_request", Xt(r.error));
+  let n = r.value,
+    i = L(n.source);
+  if (i !== null) return t("source_disabled", i);
+  let c = zx(n.source),
+    file = fn(n.source);
+  if (c === null && file !== void 0 && I_(file).errors.some(item => item.severity !== "warning")) return t("file_unloadable", `edit_hook: the ${n.source} file has errors and could not be loaded; fix it by hand first`, file === void 0 ? void 0 : {
+    code: "unloadable",
+    file: file
+  });
+  if (n.target !== void 0) {
+    let s = C(c, n.target);
+    if (n.source === "localSettings" && C(me(n.source), n.target) > s) {
+      let file_2 = wh();
+      return t("legacy_file", "edit_hook: that hook is defined in the launch directory\u2019s own .claude/settings.local.json, which this dialog cannot edit; edit that file directly", file_2 === void 0 ? void 0 : {
+        code: "legacy",
+        file: file_2
+      });
+    }
+    if (s === 0) return t("target_missing", `edit_hook: that hook is no longer in ${n.source}; it may have been changed outside this dialog`);
+    if (s > 1) return t("target_ambiguous", `edit_hook: more than one identical hook is configured for ${n.event} in ${n.source}; edit the file by hand`, file === void 0 ? void 0 : {
+      code: "twins",
+      file: file
+    });
+  }
+  let l = await J(n, o);
+  if (await sze(), l.error) return t("write_failed", `edit_hook: the settings write failed: ${Xt(l.error.message)}`);
+  switch (l.outcome) {
+    case "applied":
+      break;
+    case "duplicate":
+      return t("duplicate", `edit_hook: an identical hook is already configured for ${n.event} in ${n.source}`);
+    case "twin-by-headers":
+      return t("twin_by_headers", `edit_hook: a hook that differs from this one only in header values is already configured for ${n.event} in ${n.source}; this dialog could not tell the two apart afterwards, so edit the file by hand to keep both`);
+    case "not-a-list":
+      return t("not_a_list", `edit_hook: the ${n.event} entry in ${n.source} is not a list; fix the file by hand`, file === void 0 ? void 0 : {
+        code: "not-a-list",
+        file: file
+      });
+    default:
+      return t("target_missing", `edit_hook: that hook is no longer in ${n.source}; it may have been changed outside this dialog`);
+  }
+  return {
+    ok: !0
+  };
+}
+export { Q as runHookEdit };

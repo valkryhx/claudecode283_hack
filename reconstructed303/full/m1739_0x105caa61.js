@@ -1,0 +1,1213 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  _a,
+  yh,
+  Ox,
+  hp
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  Vr
+} from "B:/~BUN/root/chunk-9ka04m0y.js";
+import {
+  Me
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  Zne,
+  F,
+  L,
+  we
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  b,
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  Y
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  _,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  m,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  QO
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  zn
+} from "B:/~BUN/root/chunk-a0k8qg0d.js";
+import {
+  _i
+} from "B:/~BUN/root/chunk-8w42v0dp.js";
+import {
+  mr
+} from "B:/~BUN/root/chunk-jkv8n5r0.js";
+import {
+  Oa
+} from "B:/~BUN/root/chunk-v6pbq6dm.js";
+import {
+  VO
+} from "B:/~BUN/root/chunk-qp0344nb.js";
+import {
+  S2s
+} from "B:/~BUN/root/chunk-8v3gkznb.js";
+import {
+  cUn
+} from "B:/~BUN/root/chunk-0p489043.js";
+import {
+  yft,
+  Rj
+} from "B:/~BUN/root/chunk-c44qc88s.js";
+import {
+  Vd,
+  t6,
+  kf,
+  RSe,
+  Uz,
+  yse,
+  s6,
+  i6,
+  Tse,
+  rM,
+  KLn,
+  YLn,
+  XLn,
+  Qat,
+  Zxt,
+  ex,
+  QHe,
+  ppe,
+  a6e,
+  vxe,
+  J1,
+  fU,
+  hbr,
+  g$e,
+  cw,
+  rG,
+  Vse,
+  BQt,
+  Os,
+  Re
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  lae
+} from "B:/~BUN/root/chunk-h1tq8zce.js";
+import {
+  le
+} from "B:/~BUN/root/chunk-e7tskyjv.js";
+import {
+  c3
+} from "B:/~BUN/root/chunk-ses0c36n.js";
+import {
+  Pp
+} from "B:/~BUN/root/chunk-7j5tvnqj.js";
+import {
+  PC
+} from "B:/~BUN/root/chunk-1xwk1cwp.js";
+import {
+  rvr,
+  G6e,
+  ISs,
+  $R,
+  Adt,
+  P7t
+} from "B:/~BUN/root/chunk-k382hx6g.js";
+import {
+  xUe
+} from "B:/~BUN/root/chunk-r1z1wgpe.js";
+import {
+  Cnn
+} from "B:/~BUN/root/chunk-p7n9drc0.js";
+import {
+  Nfe,
+  uD,
+  KOs,
+  mko,
+  Pve,
+  vj,
+  S8e,
+  Zw,
+  RRr,
+  mOe,
+  wH,
+  gOe,
+  Nnn,
+  TBe,
+  fw,
+  qWn,
+  fDt,
+  _pt,
+  gDt,
+  bpt,
+  Unn,
+  Bnn,
+  vN,
+  jnn,
+  bDt
+} from "B:/~BUN/root/chunk-74f4ssah.js";
+import {
+  Fk,
+  PT,
+  Q6
+} from "B:/~BUN/root/chunk-f06s8ws5.js";
+import {
+  nUn
+} from "B:/~BUN/root/chunk-m42n0wc9.js";
+import {
+  Iqt,
+  Uqt,
+  Bqt,
+  R7o,
+  xrt,
+  xEn
+} from "B:/~BUN/root/chunk-ty76a0fm.js";
+import {
+  tss
+} from "B:/~BUN/root/chunk-aatsy169.js";
+import {
+  Ddr,
+  AR
+} from "B:/~BUN/root/chunk-fbgs9vjp.js";
+import {
+  u8r
+} from "B:/~BUN/root/chunk-xkkzvdyh.js";
+import {
+  Wsr
+} from "B:/~BUN/root/chunk-j3m1ners.js";
+import {
+  qPn,
+  Q6t,
+  Z6t
+} from "B:/~BUN/root/chunk-d66nsegc.js";
+import {
+  aDt,
+  DWn,
+  LWn
+} from "B:/~BUN/root/chunk-25qdy3nw.js";
+import {
+  Rn
+} from "B:/~BUN/root/chunk-hwnj8m4g.js";
+var Ve = 500,
+  Se = 500;
+
+function He(n, e, s, v, a) {
+  return async (I, f, S, y, D, H) => {
+    let A = H ?? await Tse(I, f, {
+      ...S,
+      asksNoHost: !0
+    }, y, D, t6, void 0, v);
+    if (A.behavior !== "ask") return A;
+    if (A.hostDisplay !== void 0) return m("permission_host_worded_ask", "teammate_lane"), ppe(I.name, "a teammate's permission request", {
+      hostWorded: !0,
+      remedy: "Ask the team lead to run this tool call itself. When the team lead runs it, the permission prompt shows the full disclosure."
+    });
+    let q = A.updatedInput ?? f;
+    if (e.signal.aborted) return {
+      behavior: "ask",
+      message: rG
+    };
+    let N = le(S),
+      E = () => I.description(q, {
+        isNonInteractiveSession: S.options.isNonInteractiveSession,
+        toolPermissionContext: N,
+        tools: S.options.tools
+      });
+    if (S.requestDialog !== void 0) {
+      let o = xEn.of(S.session).permissionContextSetter,
+        P = Uqt(I, f, S, y, D, v, (B) => {
+          o?.(B, {
+            preserveMode: !0
+          })
+        }),
+        T = await Iqt({
+          ctx: P,
+          updatedInput: A.updatedInput,
+          suggestions: A.suggestions,
+          permissionMode: N.mode,
+          askSuppressesAlwaysAllowRule: A.suppressAlwaysAllowRule === !0,
+          askIsPersonOnly: A.personOnly === !0
+        });
+      if (T) return T;
+      if (e.signal.aborted) return {
+        behavior: "ask",
+        message: rG
+      };
+      let R = await E();
+      if (e.signal.aborted) return {
+        behavior: "ask",
+        message: rG
+      };
+      let d = Date.now();
+      try {
+        return await new Promise((B, V) => {
+          Bqt({
+            ctx: P,
+            description: R,
+            result: A,
+            awaitAutomatedChecksBeforeDialog: !0
+          }, B).catch(V)
+        })
+      } finally {
+        s(Date.now() - d)
+      }
+    }
+    if (a6e(A) || A.forcedByCaller === !0) return ppe(I.name, "the teammate mailbox (a static-description wire)", {
+      hostWorded: A.hostDisplay !== void 0
+    });
+    let C = await E();
+    if (e.signal.aborted) return {
+      behavior: "ask",
+      message: rG
+    };
+    return new Promise((o) => {
+      let u = DWn({
+        toolName: I.name,
+        toolUseId: D,
+        input: q,
+        description: C,
+        permissionSuggestions: A.suggestions,
+        workerId: n.agentId,
+        workerName: n.agentName,
+        workerColor: n.color,
+        teamName: n.teamName
+      });
+      qPn({
+        requestId: u.id,
+        toolUseId: D,
+        toolName: u.toolName,
+        inputDigest: aDt(u.toolName, q),
+        onAllow(d, B, V, G) {
+          R();
+          let z = c3(B, void 0, le(S)),
+            ee = I.suppressesAllPermissionUpdates?.(q) === !0 ? i6(z) : I.suppressesAlwaysAllowRule?.(q) === !0 || A.suppressAlwaysAllowRule === !0 ? s6(z, I, le(S)) : z;
+          Rj(ee, S.storageV5).catch(l);
+          let ne = d && Object.keys(d).length > 0 ? d : q;
+          o({
+            behavior: "allow",
+            updatedInput: ne,
+            userModified: !1,
+            ...G && G.length > 0 && {
+              contentBlocks: G
+            }
+          })
+        },
+        onReject(d, B) {
+          R();
+          let V = d ? `${Vse}${d}` : rG;
+          o({
+            behavior: "ask",
+            message: V,
+            contentBlocks: B
+          })
+        },
+        onRefuse(d) {
+          R(), o({
+            behavior: "ask",
+            message: d
+          })
+        },
+        onUnboundVerdict() {}
+      }), LWn(u, S.storageV5).then((d) => {
+        if (!d) R(), o({
+          behavior: "ask",
+          message: "The permission request could not be delivered to the team lead (mailbox write failed). Retry the tool call."
+        })
+      });
+      let P = setInterval(async (d, B, V, G, z, ee, ne) => {
+          if (d.signal.aborted) {
+            B(), V({
+              behavior: "ask",
+              message: rG
+            });
+            return
+          }
+          let ae = await S8e(G.agentName, G.teamName, ee),
+            fe = Pve(ae.filter((K) => K && !K.read), vj(G.agentName, G.teamName), {
+              roster: ne(),
+              isPaneTeammate: !1
+            });
+          for (let K of ae)
+            if (K && !K.read && fe.get(K) !== "forged") {
+              let W = gDt(K.text);
+              if (W && W.request_id === z.id) {
+                if (await RRr(G.agentName, G.teamName, K, ee), K.from !== Oa) {
+                  t(`[InProcessRunner] Ignoring permission response from non-team-lead: ${K.from}`, {
+                    level: "warn"
+                  });
+                  continue
+                }
+                if (W.subtype === "success") Z6t({
+                  requestId: W.request_id,
+                  toolUseId: W.tool_use_id,
+                  approvedRequest: W.approved_request,
+                  decision: "approved",
+                  updatedInput: W.response?.updated_input,
+                  permissionUpdates: W.response?.permission_updates
+                });
+                else Z6t({
+                  requestId: W.request_id,
+                  toolUseId: W.tool_use_id,
+                  approvedRequest: W.approved_request,
+                  decision: "rejected",
+                  feedback: W.error
+                });
+                return
+              }
+            }
+        }, Ve, e, R, o, n, u, S.storageV5, a),
+        T = () => {
+          R(), o({
+            behavior: "ask",
+            message: rG
+          })
+        };
+      e.signal.addEventListener("abort", T, {
+        once: !0
+      });
+
+      function R() {
+        clearInterval(P), Q6t(u.id), e.signal.removeEventListener("abort", T)
+      }
+    })
+  }
+}
+
+function j(n, e, s) {
+  s.update(n, (v) => v.type === "in_process_teammate" ? e(v) : v)
+}
+async function Ye(n, e, s, v, a) {
+  return Zw(Oa, {
+    from: n,
+    text: e,
+    timestamp: new Date().toISOString(),
+    color: s
+  }, v, a)
+}
+async function Ie(n, e, s, v, a) {
+  let I = fDt(n, v),
+    f;
+  try {
+    f = await Ye(n, _(I), e, s, a)
+  } finally {
+    _pt(I, v?.result, f)
+  }
+  return f !== void 0
+}
+
+function Je(n) {
+  let e = new Set(n.filter((s) => s.status !== "completed").map((s) => s.id));
+  return n.find((s) => {
+    if (s.status !== "pending") return !1;
+    if (s.owner) return !1;
+    return s.blockedBy.every((v) => !e.has(v))
+  })
+}
+
+function ze(n) {
+  let e = `Complete all open tasks. Start with task #${n.id}: 
+
+ ${n.subject}`;
+  if (n.description) e += `
+
+${n.description}`;
+  return e
+}
+async function Le(n, e, s, v) {
+  if (!s) return;
+  try {
+    let a = await uD(n, v),
+      I = Je(a);
+    if (!I) return;
+    let f = await KOs(n, I.id, e, void 0, v);
+    if (!f.success) {
+      t(`[inProcessRunner] Failed to claim task #${I.id}: ${f.reason}`);
+      return
+    }
+    return await Nfe(n, I.id, {
+      status: "in_progress"
+    }, v), t(`[inProcessRunner] Claimed task #${I.id}: ${I.subject}`), ze(I)
+  } catch (a) {
+    t(`[inProcessRunner] Error checking task list: ${a}`);
+    return
+  }
+}
+async function ke(n, e, s, v, a, I) {
+  let f;
+  try {
+    f = await S8e(n.agentName, n.teamName, v, {
+      throwOnUnknownReadError: !0
+    }), a.readFailures = 0
+  } catch (o) {
+    return a.readFailures++, t(`[inProcessRunner] ${n.agentName} could not read mailbox (${a.readFailures} consecutive): ${o}`, {
+      level: "warn"
+    }), null
+  }
+  let S = Pve(f.filter((o) => o && !o.read), vj(n.agentName, n.teamName), {
+      roster: I,
+      isPaneTeammate: !1
+    }),
+    y = (o) => S.get(o) === "forged",
+    D = new Set(f.filter((o) => o && !o.read).map(wH));
+  for (let o of a.consumedUnmarked)
+    if (!D.has(o)) a.consumedUnmarked.delete(o);
+  let H = async (o) => {
+    let u = await g$e(o, {
+        provenanceOf: (T) => S.get(T) ?? "unverifiable",
+        agentId: n.resumableAgentId ?? n.agentId
+      }),
+      P = new Set(u.map(wH));
+    for (let T of o) {
+      let R = wH(T);
+      if (!P.has(R)) a.consumedUnmarked.add(R)
+    }
+    return u
+  }, A = -1, q = null;
+  for (let o = 0; o < f.length; o++) {
+    let u = f[o];
+    if (u && !u.read && !y(u)) {
+      let P = bpt(u.text),
+        R = (S.get(u) === "verified" || u.from === Oa || mko(u.from, I) !== void 0) && P?.from === u.from ? P : null;
+      if (R) {
+        A = o, q = R;
+        break
+      }
+    }
+  }
+  if (A !== -1) {
+    if (a.count > 0) {
+      let P = f.filter((T, R) => !T.read && R !== A && (y(T) || !vN(T.text)) && !a.deliveredUnmarked.has(wH(T)) && !a.consumedUnmarked.has(wH(T)));
+      if (P.length > 0) {
+        for (let d of P) a.deliveredUnmarked.add(wH(d));
+        let T = await gOe(n.agentName, n.teamName, P, v);
+        if (T) a.count = 0, a.reported = !1, a.deliveredUnmarked.clear();
+        else if (!a.reported) a.reported = !0, p("swarm_inbox_poll", "worker_mark_read_failed_streak");
+        t(`[inProcessRunner] ${n.agentName} delivering ${P.length} held message(s) ahead of a shutdown_request${T?"":" (mark still not landed)"}`, {
+          level: T ? "debug" : "warn"
+        });
+        let R = await H(P);
+        if (R.length > 0) return {
+          type: "new_messages",
+          messages: R
+        }
+      }
+    }
+    let o = f[A],
+      u = F(f.slice(0, A), (P) => !P.read);
+    return t(`[inProcessRunner] ${n.agentName} received shutdown request from ${q?.from} (prioritized over ${u} unread messages)`), await RRr(n.agentName, n.teamName, o, v), {
+      type: "shutdown_request",
+      request: q,
+      originalMessage: o.text,
+      entryFrom: o.from
+    }
+  }
+  let N = [],
+    E = [];
+  for (let o of f) {
+    if (!o || o.read) continue;
+    if (!y(o) && vN(o.text)) N.push(o);
+    else if (!a.consumedUnmarked.has(wH(o))) E.push(o)
+  }
+  let C = null;
+  if (N.length > 0) {
+    for (let u of N) {
+      let P = Unn(u.text);
+      if (P && u.from === Oa) {
+        let T = tss(e, P, s, v);
+        if (T) t(`[inProcessRunner] ${n.agentName} applied lead plan_approval_response: approved=${T.approved}`), C = jnn(T);
+        else t(`[inProcessRunner] ${n.agentName} ignoring stale plan_approval_response (not awaiting approval)`);
+        continue
+      }
+      if (Bnn(u.text)) {
+        t(`[inProcessRunner] ${n.agentName} dropping mode_set_request message: permission mode changes are never accepted from the inbox`, {
+          level: "warn"
+        });
+        continue
+      }
+      t(`[inProcessRunner] ${n.agentName} dropping protocol frame from ${u.from}: ${u.text.substring(0,80)}`, {
+        level: "warn"
+      })
+    }
+    if (!await gOe(n.agentName, n.teamName, N, v)) t(`[inProcessRunner] ${n.agentName} could not mark ${N.length} protocol frame(s) read; retrying next poll`, {
+      level: "warn"
+    })
+  }
+  if (C) return {
+    type: "new_message",
+    message: C,
+    from: Oa
+  };
+  if (E.length > 0) {
+    if (await gOe(n.agentName, n.teamName, E, v)) a.count = 0, a.reported = !1, a.deliveredUnmarked.clear();
+    else {
+      let P = ++a.count;
+      if (P < mOe) return t(`[inProcessRunner] ${n.agentName} could not mark ${E.length} message(s) read (${P}/${mOe}); delivery retried next poll`, {
+        level: "warn"
+      }), null;
+      if (t(`[inProcessRunner] ${n.agentName} could not mark ${E.length} message(s) read for ${P} poll(s); delivering the batch unmarked`, {
+          level: "warn"
+        }), !a.reported) a.reported = !0, p("swarm_inbox_poll", "worker_mark_read_failed_streak");
+      for (let T of E) a.deliveredUnmarked.add(wH(T))
+    }
+    t(`[inProcessRunner] ${n.agentName} draining ${E.length} message(s) from ${L(E.map((P)=>P.from)).join(", ")}`);
+    let u = await H(E);
+    if (u.length === 0) return null;
+    return {
+      type: "new_messages",
+      messages: u
+    }
+  }
+  if (a.count > 0) a.count = 0, a.reported = !1, a.deliveredUnmarked.clear();
+  return null
+}
+async function Xe(n, e, s, v, a, I, f, S, y, D = !1, H) {
+  t(`[inProcessRunner] ${n.agentName} starting poll loop (abort=${e.signal.aborted})`);
+  let A = Date.now(),
+    q = !1,
+    N = 0;
+  while (!e.signal.aborted) {
+    if (N > 0) await Y(Se);
+    N++;
+    let E = v(),
+      C = E.tasks[s];
+    if (C && C.type === "in_process_teammate" && C.pendingUserMessages.length > 0) {
+      let T = C.pendingUserMessages[0];
+      return j(s, (R) => ({
+        ...R,
+        pendingUserMessages: R.pendingUserMessages.slice(1)
+      }), a), t(`[inProcessRunner] ${n.agentName} found pending user message (poll #${N})`), {
+        type: "new_message",
+        message: T.text,
+        origin: T.origin,
+        from: "user"
+      }
+    }
+    let o = n.resumableAgentId !== void 0 && QHe(n.resumableAgentId, a),
+      u = D || C?.type === "in_process_teammate" && C.awaitingPlanApproval || E.viewingAgentTaskId === s || P7t(E.tasks, s) || o;
+    if (u) A = Date.now();
+    if (D && C?.type === "in_process_teammate" && C.evictAfter !== void 0) j(s, (T) => ({
+      ...T,
+      evictAfter: void 0
+    }), a);
+    if (C?.type === "in_process_teammate" && C.evictAfter !== void 0 && (o && C.evictAfter <= Date.now() + Se || q && !o)) j(s, (T) => ({
+      ...T,
+      evictAfter: Date.now() + $R
+    }), a);
+    if (q = o, e.signal.aborted) return t(`[inProcessRunner] ${n.agentName} aborted while waiting (poll #${N})`), {
+      type: "aborted"
+    };
+    if (f) {
+      if (rM()) {
+        if (!u && Date.now() - A >= Adt) return t(`[inProcessRunner] ${n.agentName} idle timeout after ${Adt}ms (poll #${N})`), {
+          type: "idle_timeout"
+        }
+      }
+      continue
+    }
+    t(`[inProcessRunner] ${n.agentName} poll #${N}: checking mailbox`);
+    try {
+      let T = await ke(n, s, a, H, y, v().teamContext?.teammates);
+      if (T) return T;
+      if (y.count > 0 && y.readFailures < mOe) {
+        A = Date.now();
+        let R = v().tasks[s];
+        if (R?.type === "in_process_teammate" && R.evictAfter !== void 0) j(s, (d) => ({
+          ...d,
+          evictAfter: Date.now() + $R
+        }), a);
+        continue
+      }
+    } catch (T) {
+      t(`[inProcessRunner] ${n.agentName} poll error: ${T}`)
+    }
+    let P = await Le(I, n.agentName, S, H);
+    if (P) return {
+      type: "new_message",
+      message: P,
+      from: "task-list"
+    };
+    if (rM()) {
+      if (!u && Date.now() - A >= Adt) return t(`[inProcessRunner] ${n.agentName} idle timeout after ${Adt}ms (poll #${N})`), {
+        type: "idle_timeout"
+      }
+    }
+  }
+  return t(`[inProcessRunner] ${n.agentName} exiting poll loop (abort=${e.signal.aborted}, polls=${N})`), {
+    type: "aborted"
+  }
+}
+async function Qe(n) {
+  let {
+    identity: e,
+    taskId: s,
+    prompt: v,
+    description: a,
+    spawnedAgentType: I,
+    agentDefinition: f,
+    teammateContext: S,
+    toolUseContext: y,
+    abortController: D,
+    model: H,
+    systemPrompt: A,
+    systemPromptMode: q,
+    allowedTools: N,
+    allowPermissionPrompts: E,
+    invokingRequestId: C,
+    standalone: o = !1,
+    resumeMessages: u,
+    resumeReplacementState: P,
+    initialFrom: T
+  } = n, {
+    setAppState: R,
+    taskRegistry: d
+  } = y, B = cUn(s), V = {
+    count: 0,
+    reported: !1,
+    deliveredUnmarked: new Set,
+    consumedUnmarked: new Set,
+    readFailures: 0
+  };
+  t(`[inProcessRunner] Starting agent loop for ${e.agentId}`);
+  let G = {
+      agentId: e.agentId,
+      parentAgentId: y.agentId,
+      depth: hp(y.agentContext),
+      parentSessionId: e.parentSessionId,
+      agentName: e.agentName,
+      teamName: e.teamName,
+      agentColor: e.color,
+      planModeRequired: e.planModeRequired,
+      isTeamLead: !1,
+      agentType: "teammate",
+      invokingRequestId: C,
+      invocationKind: "spawn",
+      invocationEmitted: !1,
+      isBackgroundAgent: !0
+    },
+    {
+      tools: z,
+      mainLoopModel: ee
+    } = y.rootToolSurface,
+    ne;
+  if (q === "replace" && A) ne = A;
+  else {
+    let Q = [...(await ex(z, ee, {
+      teammate: !0
+    })).filter((J) => J !== QO), u8r];
+    if (f) {
+      let J = f.getSystemPrompt({
+        toolUseContext: y,
+        primedAgentMemory: await yft(f, y.storageV5)
+      });
+      if (J) Q.push(`
+# Custom Agent Instructions
+${J}`);
+      if (f.memory) i("tengu_agent_memory_loaded", {
+        ...!1,
+        scope: c(f.memory),
+        source: b("in-process-teammate")
+      })
+    }
+    if (q === "append" && A) Q.push(A);
+    ne = Q.join(`
+`)
+  }
+  let ae = S.hasTaskListTools,
+    fe = [Rn, ...ae ? [Fk, Q6, PC, PT] : []],
+    K = f?.disallowedTools?.filter((h) => !fe.includes(zn(h).toolName)),
+    W = {
+      agentType: e.agentName,
+      whenToUse: `In-process teammate: ${e.agentName}`,
+      getSystemPrompt: () => ne,
+      tools: f?.tools ? L([...f.tools, ...fe]) : ["*"],
+      ...K?.length && {
+        disallowedTools: K
+      },
+      source: "projectSettings",
+      permissionMode: "default",
+      ...f?.model && {
+        model: f.model
+      },
+      ...f?.effort !== void 0 && {
+        effort: f.effort
+      },
+      ...f?.omitClaudeMd && {
+        omitClaudeMd: !0
+      },
+      ...f?.autoCompactWindow !== void 0 && {
+        autoCompactWindow: f.autoCompactWindow
+      }
+    },
+    O = u ? [...u] : [],
+    Ne = new Set(u?.map((h) => h.uuid)),
+    Be = {
+      taskKind: "in_process_teammate",
+      teamName: e.teamName,
+      color: e.color,
+      planModeRequired: e.planModeRequired,
+      ...f && {
+        customAgentType: f.agentType
+      },
+      ...I !== void 0 && {
+        spawnedAgentType: I
+      },
+      ...H && {
+        model: H
+      }
+    },
+    Ce = Nnn({
+      from: T ?? Oa,
+      text: v,
+      summary: a
+    }),
+    X = Ce,
+    ue = void 0,
+    Te = !1,
+    ie = !1,
+    Ee = (u?.length ?? 0) > 0,
+    $e = !1,
+    ye = u ? xrt(u).result : void 0,
+    Pe = !1,
+    xe = async (h) => {
+      switch (ie = !1, h.type) {
+        case "shutdown_request":
+          t(`[inProcessRunner] ${e.agentId} received shutdown request - passing to model`), X = Nnn({
+            from: typeof h.entryFrom === "string" && h.entryFrom !== "" ? h.entryFrom : fw,
+            text: bDt(qWn(h.originalMessage, h.entryFrom) ?? h.originalMessage, h.entryFrom)
+          }), ue = void 0, Wsr(s, Re({
+            content: X
+          }), d);
+          break;
+        case "new_message":
+          if (t(`[inProcessRunner] ${e.agentId} received new message from ${h.from}`), h.from === "user") X = h.message, ue = h.origin;
+          else X = Nnn({
+            from: h.from,
+            text: h.message,
+            color: h.color,
+            summary: h.summary
+          }), ue = void 0, Wsr(s, Re({
+            content: X
+          }), d);
+          break;
+        case "new_messages":
+          t(`[inProcessRunner] ${e.agentId} received ${h.messages.length} drained message(s)`), X = TBe(h.messages, {
+            recipientIsLead: !1
+          }), ue = void 0, Wsr(s, Re({
+            content: X
+          }), d);
+          break;
+        case "aborted":
+          t(`[inProcessRunner] ${e.agentId} aborted while waiting`), Te = !0;
+          break;
+        case "idle_timeout":
+          if (t(`[inProcessRunner] ${e.agentId} idle timeout \u2014 exiting loop`), !o) y.agentLifecycle.setTeammate(e.agentId, void 0), await Cnn(e.teamName, e.agentId, {
+            onlyIfJoinedBefore: Date.now()
+          }, y.storageV5);
+          Te = !0;
+          break
+      }
+    };
+  if (!o) await Le(e.parentSessionId, e.agentName, ae, y.storageV5);
+  try {
+    d.updateTranscript(s, (M) => {
+      let Z = M.messages;
+      if (u)
+        for (let ve of u.slice(-rvr)) Z = G6e(Z, ve);
+      return {
+        ...M,
+        messages: G6e(Z, Re({
+          content: Ce
+        }))
+      }
+    });
+    let h = y.contentReplacementState ? P ?? nUn() : void 0,
+      Q = Zne(),
+      J = Me();
+    while (!D.signal.aborted && !Te) {
+      t(`[inProcessRunner] ${e.agentId} processing prompt: ${X.substring(0,50)}...`);
+      let M = mr();
+      M.signal.addEventListener("abort", () => {
+        Pe = !0
+      }), j(s, (r) => ({
+        ...r,
+        currentWorkAbortController: M,
+        retryWake: J
+      }), d);
+      let Z = Re({
+          content: X,
+          origin: ue
+        }),
+        ve = [Z],
+        ce = O,
+        Ue = kf(O, yh(ee));
+      if (Ue > Uz(Vd(ee), Ddr(y.options.autoCompactWindow, W.autoCompactWindow))) {
+        t(`[inProcessRunner] ${e.agentId} compacting history (${Ue} tokens)`);
+        let r = {
+          ...y,
+          abortController: D,
+          agentId: e.resumableAgentId ?? Vr(e.agentId),
+          readFileState: lae(y.readFileState, {
+            stripSeededFromContext: !0
+          }),
+          memorySelector: yse(),
+          onCompactEvent: void 0,
+          onRetryStatus: B.setRetryStatus,
+          compactTranscriptUnavailable: !0
+        };
+        try {
+          let w = await hbr(O, r, {
+            systemPrompt: _i([]),
+            userContext: {},
+            systemContext: {},
+            toolUseContext: r,
+            forkContextMessages: O,
+            advisorModel: r.getAppState().advisorModel
+          }, !0, {
+            isAutoCompact: !0
+          });
+          if (ce = fU(w), h) h = nUn();
+          O.length = 0, O.push(...ce), Ne.clear(), d.updateTranscript(s, (k) => ({
+            ...k,
+            messages: [...ce, Z]
+          }))
+        } catch (w) {
+          if (w instanceof Error && w.message.startsWith(J1)) t(`[inProcessRunner] ${e.agentId} compaction blocked by PreCompact hook; continuing uncompacted`), $e = !0;
+          else if (D.signal.aborted || w instanceof Error && w.message === VO) {
+            t(`[inProcessRunner] ${e.agentId} aborted during compaction`), Te = !0;
+            break
+          } else throw w
+        }
+      }
+      let Fe = ce.length > 0 ? [...ce] : void 0;
+      O.push(Z), ye = void 0, Pe = M.signal.aborted;
+      let pe = KLn(),
+        _e = d.get(s);
+      if (_e !== void 0 && "progress" in _e && _e.progress !== void 0) pe.latestInputTokens = _e.progress.tokenCount;
+      let je = Zxt(z),
+        ge = [],
+        Ae = y.getAppState().tasks[s],
+        De = Ae && Ae.type === "in_process_teammate" ? Ae.permissionMode : "default",
+        Ge = {
+          ...W,
+          permissionMode: De
+        },
+        Oe = !1,
+        se = null;
+      if (await S2s(S, async () => Ox(G, async () => {
+          j(s, (r) => ({
+            ...r,
+            status: "running",
+            isIdle: !1,
+            idleNotificationOwedToLead: void 0,
+            evictAfter: void 0,
+            evictAfterHeldBySibling: void 0
+          }), d), d.updateTranscript(s, (r) => ({
+            ...r,
+            turnStartTime: Date.now()
+          })), B.setMode("responding");
+          for await (let r of AR({
+            agentDefinition: Ge,
+            promptMessages: ve,
+            turnPrompt: X,
+            toolUseContext: y,
+            canUseTool: He(e, M, (w) => {
+              j(s, (k) => ({
+                ...k,
+                totalPausedMs: (k.totalPausedMs ?? 0) + w
+              }), d)
+            }, RSe(R), () => y.getAppState().teamContext?.teammates),
+            isAsync: !0,
+            canShowPermissionPrompts: E ?? !0,
+            forkContextMessages: Fe,
+            querySource: "agent:custom",
+            override: {
+              abortController: M,
+              agentContext: G,
+              onRetryStatus: B.setRetryStatus,
+              subscribeRetryWake: J.subscribe,
+              ...e.resumableAgentId && {
+                agentId: e.resumableAgentId
+              }
+            },
+            ...e.resumableAgentId && {
+              recordedUuids: Ne,
+              name: e.agentName,
+              description: a,
+              extraMetadata: {
+                ...Be,
+                permissionMode: De
+              }
+            },
+            onStreamTokenEstimate: (w) => {
+              XLn(pe, w);
+              let k = Qat(pe);
+              j(s, (U) => U.progress?.tokenCount === k.tokenCount ? U : {
+                ...U,
+                progress: k
+              }, d)
+            },
+            model: H,
+            preserveToolUseResults: !0,
+            availableTools: z,
+            allowedTools: N,
+            contentReplacementState: h,
+            stickyBetas: Q,
+            isTeammate: !0,
+            teammateContext: S
+          })) {
+            if (D.signal.aborted) {
+              t(`[inProcessRunner] ${e.agentId} lifecycle aborted`);
+              break
+            }
+            if (M.signal.aborted) {
+              if (t(`[inProcessRunner] ${e.agentId} current work aborted (Escape pressed)`), r.type === "assistant" || r.type === "user" || r.type === "attachment" && cw(r)) ge.push(r), O.push(r), se = vxe(O, r, se);
+              Oe = !0;
+              break
+            }
+            if (r.type === "spinner_mode") {
+              B.setMode(r.mode);
+              continue
+            }
+            if (r.type === "api_metrics") continue;
+            if (r.type === "query_model_change") continue;
+            if (r.type === "set_in_progress_tool_use_ids") {
+              if (r.op.action !== "remove") continue;
+              let k = r.op.ids;
+              d.updateTranscript(s, (U) => {
+                let te = new Set(U.inProgressToolUseIDs),
+                  oe = !1;
+                for (let be of k)
+                  if (te.delete(be)) oe = !0;
+                return oe ? {
+                  ...U,
+                  inProgressToolUseIDs: te
+                } : U
+              });
+              continue
+            }
+            if (r.type === "system" && r.subtype === "api_error") continue;
+            ge.push(r), O.push(r), se = vxe(O, r, se), YLn(pe, r, je, z);
+            let w = Qat(pe);
+            j(s, (k) => ({
+              ...k,
+              progress: w
+            }), d), d.updateTranscript(s, (k) => {
+              let U = k.inProgressToolUseIDs;
+              if (r.type === "assistant") {
+                for (let te of r.message.content)
+                  if (te.type === "tool_use") U = new Set([...U, te.id])
+              } else if (r.type === "user") {
+                let te = r.message.content;
+                if (Array.isArray(te)) {
+                  for (let oe of te)
+                    if (typeof oe === "object" && "type" in oe && oe.type === "tool_result") {
+                      let be = new Set(U);
+                      be.delete(oe.tool_use_id), U = be
+                    }
+                }
+              }
+              return {
+                ...k,
+                messages: ISs(k.messages, r),
+                inProgressToolUseIDs: U
+              }
+            })
+          }
+          return {
+            success: !0,
+            messages: ge
+          }
+        })).finally(() => {
+          if (se) O.push(...se.preserved), se = null
+        }), j(s, (r) => ({
+          ...r,
+          currentWorkAbortController: void 0
+        }), d), D.signal.aborted) break;
+      let de = Oe || M.signal.aborted;
+      if (de) {
+        Pe = !0, t(`[inProcessRunner] ${e.agentId} work interrupted, returning to idle`);
+        let r = Os({
+          content: VO
+        });
+        d.updateTranscript(s, (w) => ({
+          ...w,
+          messages: G6e(w.messages, r)
+        }))
+      }
+      Ee ||= ge.some((r) => r.type === "assistant" && !r.isApiErrorMessage || r.type === "user" && !r.isMeta);
+      let re = !de ? BQt(ge) : void 0;
+      if (ie = re?.isTransient === !0 && !o && Ee, !o && !de) {
+        let r = null;
+        try {
+          r = await ke(e, s, d, y.storageV5, V, y.getAppState().teamContext?.teammates);
+          while (r === null && V.count > 0 && V.readFailures < mOe && !D.signal.aborted) await Y(Se), r = await ke(e, s, d, y.storageV5, V, y.getAppState().teamContext?.teammates)
+        } catch (w) {
+          t(`[inProcessRunner] ${e.agentName} turn-end mailbox check failed: ${w}`)
+        }
+        if (r) {
+          try {
+            let {
+              result: w,
+              summary: k
+            } = xrt(O, {
+              emitTelemetry: !0
+            });
+            if (w !== void 0 || re !== void 0) {
+              if (await Ie(e.agentName, e.color, e.teamName, {
+                  idleReason: re !== void 0 ? "failed" : void 0,
+                  summary: k,
+                  failureReason: re?.reason,
+                  result: w,
+                  senderReachable: !0
+                }, y.storageV5) && w !== void 0) ye = w
+            }
+          } catch (w) {
+            t(`[inProcessRunner] ${e.agentName} turn-end result delivery failed: ${w}`)
+          }
+          await xe(r);
+          continue
+        }
+      }
+      if (re?.isTransient) i("tengu_teammate_transient_turn_failure", {
+        error_kind: c(re.errorKind ?? "unknown"),
+        hold_evict: ie
+      });
+      let qe = y.getAppState().tasks[s],
+        We = !(qe?.type === "in_process_teammate" && qe.isIdle) && !o;
+      j(s, (r) => (r.onIdleCallbacks?.forEach((w) => w()), {
+        ...r,
+        isIdle: !0,
+        idleNotificationOwedToLead: We && we() || r.idleNotificationOwedToLead,
+        evictAfter: ie ? void 0 : Date.now() + $R,
+        onIdleCallbacks: []
+      }), d);
+      let he = re?.reason;
+      if (We) {
+        let r = xrt(O, {
+            emitTelemetry: !de
+          }),
+          w = de ? void 0 : r.result,
+          k = await Ie(e.agentName, e.color, e.teamName, {
+            idleReason: de ? "interrupted" : he !== void 0 ? "failed" : "available",
+            summary: r.summary,
+            failureReason: he,
+            result: w,
+            senderReachable: he === void 0 || ie
+          }, y.storageV5);
+        if (w !== void 0 && k) ye = w;
+        if (!k) j(s, (U) => U.idleNotificationOwedToLead ? {
+          ...U,
+          idleNotificationOwedToLead: void 0
+        } : U, d)
+      } else t(`[inProcessRunner] Skipping duplicate idle notification for ${e.agentName}`);
+      t(`[inProcessRunner] ${e.agentId} finished prompt, waiting for next`);
+      let Ke = await Xe(e, D, s, y.getAppState, d, e.parentSessionId, o, ae, V, ie, y.storageV5);
+      await xe(Ke)
+    }
+    let me = !1,
+      x;
+    if (j(s, (M) => {
+        if (M.status !== "running") return me = !0, M;
+        return x = M.toolUseId, M.onIdleCallbacks?.forEach((Z) => Z()), {
+          ...M,
+          status: "completed",
+          notified: !0,
+          endTime: Date.now(),
+          pendingUserMessages: [],
+          abortController: void 0,
+          currentWorkAbortController: void 0,
+          retryWake: void 0,
+          onIdleCallbacks: []
+        }
+      }, d), !me) d.updateTranscript(s, (M) => ({
+      ...M,
+      messages: M.messages.length ? [M.messages.at(-1)] : [],
+      inProgressToolUseIDs: new Set
+    }));
+    if (Pp(s), d.evictTerminal(s), !me) _a(s, "completed", {
+      toolUseId: x,
+      summary: e.agentId
+    });
+    if (xUe(e.agentId), $e) p("swarm_in_process_run", "compact_blocked_by_hook");
+    else g("swarm_in_process_run");
+    return {
+      success: !0,
+      messages: O
+    }
+  } catch (h) {
+    let Q = h instanceof Error ? h.message : "Unknown error";
+    t(`[inProcessRunner] Agent ${e.agentId} failed: ${Q}`);
+    let J = !1,
+      me;
+    if (j(s, (x) => {
+        if (x.status !== "running") return J = !0, x;
+        return me = x.toolUseId, x.onIdleCallbacks?.forEach((M) => M()), {
+          ...x,
+          status: "failed",
+          notified: !0,
+          error: Q,
+          isIdle: !0,
+          endTime: Date.now(),
+          onIdleCallbacks: [],
+          pendingUserMessages: [],
+          abortController: void 0,
+          currentWorkAbortController: void 0,
+          retryWake: void 0
+        }
+      }, d), !J) d.updateTranscript(s, (x) => ({
+      ...x,
+      messages: x.messages.length ? [x.messages.at(-1)] : [],
+      inProgressToolUseIDs: new Set
+    }));
+    if (Pp(s), d.evictTerminal(s), !J) _a(s, "failed", {
+      toolUseId: me,
+      summary: e.agentId
+    });
+    if (!o) {
+      let x;
+      try {
+        x = Pe ? void 0 : R7o(O)
+      } catch (M) {
+        t(`[inProcessRunner] ${e.agentName} failed to extract partial result: ${M}`)
+      }
+      if (x !== void 0 && x === ye) x = void 0;
+      await Ie(e.agentName, e.color, e.teamName, {
+        idleReason: "failed",
+        completedStatus: "failed",
+        failureReason: Q,
+        result: x
+      }, y.storageV5)
+    }
+    return xUe(e.agentId), m("swarm_in_process_run", "agent_loop_failed"), {
+      success: !1,
+      error: Q,
+      messages: O
+    }
+  }
+}
+
+function s8r(n) {
+  let e = n.identity.agentId;
+  Qe(n).catch((s) => {
+    t(`[inProcessRunner] Unhandled error in ${e}: ${s}`)
+  })
+}
+export {
+  s8r
+};

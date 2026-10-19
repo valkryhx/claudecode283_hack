@@ -1,0 +1,763 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { j } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { x, d } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { z } from "B:/~BUN/root/chunk-4bx17ygx.js";
+import { ne } from "B:/~BUN/root/chunk-nggrknsv.js";
+import { Jx, sE, H2, Ff, wb } from "B:/~BUN/root/chunk-07c8fw5z.js";
+import { cI } from "B:/~BUN/root/chunk-j8w5f307.js";
+import { sc } from "B:/~BUN/root/chunk-bgdxazfn.js";
+import { ml } from "B:/~BUN/root/chunk-46c1kmhs.js";
+import { randomBytes as ye, timingSafeEqual as ge } from "crypto";
+import { open as Ee } from "fs/promises";
+import { resolve as xe } from "path";
+import { createServer as Pe, connect as we } from "net";
+import { connect as Te } from "tls";
+var te = ["https_proxy", "HTTPS_PROXY", "http_proxy", "HTTP_PROXY"],
+  N_n = "SELF_HOSTED_RUNNER_PROXY_AUTHORIZATION_COMMAND",
+  F_n = "SELF_HOSTED_RUNNER_PROXY_AUTHORIZATION_FILE",
+  ve = "claude-self-hosted-runner";
+class ProxyAuthorizationMintError extends Error {
+  constructor(e) {
+    super(e);
+    this.name = "ProxyAuthorizationMintError";
+  }
+}
+var _e = 30000,
+  ee = 16384,
+  Le = 30000,
+  Ae = 30000,
+  J = 60000,
+  Se = 2000,
+  ae = 8,
+  Ce = 8192,
+  K = 16384,
+  Oe = 256,
+  Re = 65536,
+  F = /[\x00-\x08\x0a-\x1f\x7f-\x9f]/,
+  be = 4096,
+  Ne = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+:/;
+function b(e, r = 200) {
+  return ne(e.replace(/[\p{Cc}\p{Cs}]/gu, ""), r);
+}
+function He(e) {
+  if (e === void 0 || e === "") return;
+  if (Buffer.byteLength(e, "latin1") > be) return;
+  return F.test(e) ? void 0 : e;
+}
+function ue(e) {
+  let r = e.trim();
+  if (!r) throw new ProxyAuthorizationMintError("proxy authorization source returned an empty value");
+  if (Buffer.byteLength(r) > ee) throw new ProxyAuthorizationMintError(`proxy authorization value exceeds ${ee} bytes`);
+  if (F.test(r)) throw new ProxyAuthorizationMintError("proxy authorization value must be a single header line (control characters such as CR/LF are not allowed)");
+  return r;
+}
+function Ue(e) {
+  let {
+      source: source
+    } = e,
+    timeout = e.commandTimeoutMs ?? _e,
+    CLAUDE_CODE_PROXY_HOST;
+  try {
+    CLAUDE_CODE_PROXY_HOST = new URL(e.upstreamProxyUrl).hostname;
+  } catch {
+    CLAUDE_CODE_PROXY_HOST = void 0;
+  }
+  let i,
+    l = async CLAUDE_CODE_PROXY_AUTHENTICATE => {
+      if (source.kind === "file") {
+        if (i) throw new ProxyAuthorizationMintError("proxy authorization file could not be read: an earlier read has not returned yet (stalled mount?); not issuing another");
+        let h,
+          v = !1,
+          R = (async () => {
+            let S = await Ee(source.path, "r");
+            try {
+              let U = Buffer.alloc(ee + 1),
+                {
+                  bytesRead: bytesRead
+                } = await S.read(U, 0, U.length, 0);
+              return U.subarray(0, bytesRead).toString("utf8");
+            } finally {
+              await S.close();
+            }
+          })(),
+          _ = () => {
+            if (v = !0, i === R) i = void 0;
+          };
+        R.then(_, _);
+        try {
+          h = await ml(R, timeout, "read");
+        } catch (error) {
+          if (!v) i = R;
+          throw new ProxyAuthorizationMintError(`proxy authorization file could not be read: ${sc(d(error))}`);
+        }
+        return ue(h);
+      }
+      let env = {
+          ...(typeof e.commandEnv === "function" ? e.commandEnv() : e.commandEnv ?? process.env),
+          CLAUDE_CODE_PROXY_URL: e.upstreamProxyUrl,
+          ...(CLAUDE_CODE_PROXY_HOST && {
+            CLAUDE_CODE_PROXY_HOST: CLAUDE_CODE_PROXY_HOST
+          }),
+          ...(CLAUDE_CODE_PROXY_AUTHENTICATE && {
+            CLAUDE_CODE_PROXY_AUTHENTICATE: CLAUDE_CODE_PROXY_AUTHENTICATE
+          })
+        },
+        m = await cI(source.command, {
+          timeout: timeout,
+          reject: !1,
+          stdin: "ignore",
+          useToolMemoryCgroup: !1,
+          extendEnv: !1,
+          env: env
+        });
+      if (m.failed) {
+        let h = m.timedOut ? `timed out after ${timeout}ms` : `exited ${m.exitCode ?? m.signal ?? "abnormally"}`,
+          v = m.stderr?.trim();
+        throw new ProxyAuthorizationMintError(`proxy authorization command ${h}${v ? `: ${ne(sc(v), 500)}` : ""}`);
+      }
+      return ue(m.stdout ?? "");
+    },
+    a = new Map();
+  return {
+    source: source.kind,
+    mint(p) {
+      let y = p === void 0 ? "plain" : `remint:${p.challenge ?? ""}`,
+        m = a.get(y);
+      if (!m) m = l(p?.challenge).finally(() => {
+        a.delete(y);
+      }), a.set(y, m);
+      return m;
+    }
+  };
+}
+function D(e, r) {
+  let s = r.toLowerCase();
+  for (let n of e) {
+    let i = n.indexOf(":");
+    if (i > 0 && n.slice(0, i).trim().toLowerCase() === s) return n.slice(i + 1).trim();
+  }
+  return;
+}
+function de(e, r) {
+  let s = new Set(r.map(item => item.toLowerCase()));
+  return e.filter(item => {
+    let i = item.indexOf(":");
+    return i > 0 && s.has(item.slice(0, i).trim().toLowerCase());
+  });
+}
+function X(e, r) {
+  let s = new Set(r.map(item => item.toLowerCase()));
+  return e.filter(item => {
+    let i = item.indexOf(":");
+    return !(i > 0 && s.has(item.slice(0, i).trim().toLowerCase()));
+  });
+}
+var $e = 16;
+function Q(e, r) {
+  let s = Buffer.from(r, "utf8").toString("latin1"),
+    n = [s],
+    i = s.search(/[ \t]/);
+  if (i > 0) {
+    let l = s.slice(i).trim();
+    if (l.length >= $e) n.push(l);
+  }
+  return [e.startLine, ...e.headerLines].some(item => n.some(a => item.includes(a)));
+}
+var Y = ["proxy-authenticate", "proxy-authentication-info"];
+function ce(e, r, s, n, i) {
+  let l = s,
+    a = !1,
+    p = y => {
+      if (r.destroyed || !r.writable) return;
+      if (y.length > l && !a) a = !0, i();
+      if (l === 0 || y.length === 0) return;
+      let m = y.length <= l ? y : y.subarray(0, l);
+      if (l -= m.length, !r.write(m) && l > 0) e.pause(), r.once("drain", () => e.resume());
+    };
+  return p(n), e.on("data", p), e.resume(), () => {
+    e.removeListener("data", p);
+  };
+}
+function q(e, r, s, n = Buffer.alloc(0)) {
+  return new Promise((i, l) => {
+    let a = n,
+      p = !1,
+      y = (_, S) => {},
+      m = setTimeout(_ => _(Error("timed out waiting for the request/response head")), s, _ => y(_)),
+      h = _ => {
+        a = Buffer.concat([a, _]);
+        let S = a.indexOf(`\r
+\r
+`);
+        if (S === -1) {
+          if (a.length > r) y(Error("request/response head exceeded the size limit"));
+          return;
+        }
+        if (S > r) {
+          y(Error("request/response head exceeded the size limit"));
+          return;
+        }
+        let U = a.subarray(0, S).toString("latin1"),
+          [startLine = "", ...headerLines] = U.split(`\r
+`);
+        y(null, {
+          startLine: startLine,
+          headerLines: headerLines,
+          rest: a.subarray(S + 4)
+        });
+      },
+      v = () => y(Error("connection closed before the head was complete")),
+      R = _ => y(_);
+    if (y = (_, S) => {
+      if (p = !0, clearTimeout(m), e.removeListener("data", h), e.removeListener("close", v), e.removeListener("error", R), e.pause(), _) l(_);else i(S);
+    }, e.on("data", h), e.once("close", v), e.once("error", R), a.length > 0) h(Buffer.alloc(0));
+    if (!p) e.resume();
+  });
+}
+function E(e, r) {
+  if (e.destroyed) return;
+  if (e.resume(), e.writable) e.end(r);
+  setTimeout(s => s.destroy(), Se, e).unref();
+}
+function N(e) {
+  return Buffer.from(e, "latin1");
+}
+function ke() {
+  return `HTTP/1.1 407 Proxy Authentication Required\r
+Proxy-Authenticate: Basic realm="${ve}"\r
+Content-Length: 0\r
+Connection: close\r
+\r
+`;
+}
+function O(e, r, s) {
+  return `HTTP/1.1 ${e} ${r}\r
+Content-Type: text/plain\r
+Content-Length: ${Buffer.byteLength(s)}\r
+Connection: close\r
+\r
+` + s;
+}
+function Be(e) {
+  let r = e.startLine.match(/^([A-Z]+)\s+http:\/\/([^/?#\s]+)(\S*)\s+(HTTP\/1\.[01])$/i);
+  if (!r) return;
+  let [, s, n, i, l] = r,
+    a = n.match(/^(\[[0-9A-Fa-f:.]+\]|[^:@[\]]+)(?::(\d{1,5}))?$/);
+  if (!a || a[2] !== void 0 && Number(a[2]) > 65535) return;
+  let target = `${a[1]}:${a[2] ?? "80"}`,
+    y = i.startsWith("/") ? i : `/${i}`,
+    m = e.headerLines.filter(item => {
+      let v = item.slice(0, item.indexOf(":")).trim().toLowerCase();
+      return !v.startsWith("proxy-") && v !== "connection" && v !== "keep-alive";
+    });
+  if (D(m, "host") === void 0) m.push(`Host: ${n}`);
+  return {
+    target: target,
+    head: N(`${s} ${y} ${l}\r
+` + m.map(item => item + `\r
+`).join("") + `Connection: close\r
+\r
+`)
+  };
+}
+class ClientGoneError extends Error {
+  constructor() {
+    super("client closed before the upstream connection was ready");
+    this.name = "ClientGoneError";
+  }
+}
+function fe(e, r) {
+  let s = !1,
+    n = r.length > 0 ? [r] : [],
+    i = r.length,
+    l = p => {
+      if (n.push(p), i += p.length, i > Re) e.pause();
+    },
+    a = () => {
+      s = !0;
+    };
+  return e.on("data", l), e.once("end", a), e.once("close", a), e.resume(), {
+    gone: () => s || e.destroyed,
+    release: () => {
+      e.removeListener("data", l);
+      let p = n.length === 1 ? n[0] : Buffer.concat(n);
+      return n = [], i = 0, p;
+    }
+  };
+}
+async function $Gr(e) {
+  let r = new URL(e.upstreamProxyUrl),
+    s = r.protocol === "https:";
+  if (r.protocol !== "http:" && !s) throw Error("the upstream proxy URL must be http:// or https://");
+  let host = r.hostname.replace(/^\[(.*)\]$/, "$1"),
+    port = r.port ? Number(r.port) : s ? 443 : 80,
+    l = e.logLabel ?? "runner:egress-proxy";
+  if (r.username || r.password) e.onStatus(`[${l}] note: the upstream proxy URL carries user:password credentials; they are replaced by the minted Proxy-Authorization value on every request to the upstream proxy`);
+  let a = ye(24).toString("base64url"),
+    p = Buffer.from("Basic " + Buffer.from(`runner:${a}`).toString("base64")),
+    y = t => {
+      let o = D(t, "proxy-authorization");
+      if (o === void 0) return !1;
+      let f = Buffer.from(o);
+      return f.length === p.length && ge(f, p);
+    },
+    m = t => e.onDebug?.(`[${l}] ${t}`),
+    h = t => e.onStatus(`[${l}] ${t}`),
+    v = new Set(),
+    R = t => {
+      v.add(t), t.on("error", o => m(`socket: ${d(o)}`)), t.once("close", () => v.delete(t));
+    },
+    _ = () => {
+      e.onUpstreamFailure?.().catch(t => m(`reload after a failed upstream connection: ${d(t)}`));
+    },
+    S = () => new Promise((t, o) => {
+      let f = s ? Te({
+        host: host,
+        port: port,
+        servername: ze(host) ? void 0 : host,
+        ...(typeof e.upstreamTls === "function" ? e.upstreamTls() : e.upstreamTls)
+      }) : we({
+        host: host,
+        port: port
+      });
+      R(f);
+      let g = s ? "secureConnect" : "connect",
+        w = c => {},
+        u = setTimeout(c => c(Error("timed out connecting to the upstream proxy")), Ae, c => w(c)),
+        P = () => w(null),
+        T = c => w(c),
+        A = () => w(Error("upstream proxy closed the connection during connect"));
+      w = c => {
+        if (clearTimeout(u), f.removeListener(g, P), f.removeListener("error", T), f.removeListener("close", A), c) f.destroy(), _(), o(c);else t(f);
+      }, f.once(g, P), f.once("error", T), f.once("close", A);
+    }),
+    U = (t, o) => {
+      t.pipe(o), o.pipe(t);
+      let f = () => {
+        t.destroy(), o.destroy();
+      };
+      t.on("error", f), o.on("error", f), t.on("close", () => E(o, "")), o.on("close", () => E(t, "")), t.resume(), o.resume();
+    },
+    B = async (t, o, f, g) => {
+      let value = await e.minter.mint(f);
+      if (g()) throw new ClientGoneError();
+      let up = await S();
+      if (g()) throw up.destroy(), new ClientGoneError();
+      try {
+        up.write(Buffer.concat([N(`CONNECT ${t} HTTP/1.1\r
+Host: ${t}\r
+`), Buffer.from(`Proxy-Authorization: ${value}\r
+`), N(o.map(item => item + `\r
+`).join("") + `\r
+`)]));
+        let head = await q(up, K, J);
+        if (g()) throw new ClientGoneError();
+        return {
+          up: up,
+          head: head,
+          value: value
+        };
+      } catch (error) {
+        if (up.destroy(), !(error instanceof ClientGoneError)) _();
+        throw error;
+      }
+    },
+    I = t => {
+      let o = t.startLine.match(/^HTTP\/1\.[01]\s+(\d{3})(?=\s|$)/);
+      return o ? Number(o[1]) : 0;
+    },
+    re = (t, o, f) => {
+      if (o instanceof ClientGoneError || t.destroyed) {
+        t.destroy();
+        return;
+      }
+      let g = o instanceof ProxyAuthorizationMintError ? o.message : `upstream proxy connection failed: ${sc(d(o))}`;
+      h(`${g} (${b(f)} answered 502)`), E(t, O(502, "Bad Gateway", o instanceof ProxyAuthorizationMintError ? `proxy authorization could not be obtained (see the runner log)
+` : `upstream proxy connection failed (see the runner log)
+`));
+    },
+    me = (t, o, f, g) => {
+      o.destroy(), h(`upstream proxy rejected the minted Proxy-Authorization for ${b(f)} (${b(g)}); answering the client 502`), E(t, O(502, "Bad Gateway", `upstream proxy rejected the runner-minted Proxy-Authorization (407); see the runner log
+`));
+    },
+    G = (t, o, f, g) => {
+      o.destroy(), h(`upstream response to ${b(f)} (status ${g}) reflected the minted Proxy-Authorization in its head; withheld, answering the client 502`), E(t, O(502, "Bad Gateway", `upstream proxy response withheld: its head reflected the runner-minted Proxy-Authorization (see the runner log)
+`));
+    },
+    oe = async (t, o, f, g, w) => {
+      let u = de(f.headerLines, ["user-agent"]),
+        P = () => g.gone();
+      try {
+        let T = await B(o, u, void 0, P),
+          A = I(T.head);
+        if (A === 407) {
+          let challenge = He(D(T.head.headerLines, "proxy-authenticate"));
+          T.up.destroy(), m(`upstream answered 407 for CONNECT ${o}; re-minting once`), T = await B(o, u, {
+            challenge: challenge
+          }, P), A = I(T.head);
+        }
+        let {
+          up: up_2,
+          head: head_2,
+          value: value_2
+        } = T;
+        if (A !== 200 && Q(head_2, value_2)) {
+          G(t, up_2, `CONNECT ${o}`, A);
+          return;
+        }
+        if (A === 407) {
+          me(t, up_2, `CONNECT ${o}`, head_2.startLine);
+          return;
+        }
+        if (A < 100) {
+          up_2.destroy(), h(`upstream proxy sent an unparseable reply to CONNECT ${b(o)}; answering the client 502`), E(t, O(502, "Bad Gateway", `unparseable reply from upstream proxy
+`));
+          return;
+        }
+        if (A === 200) {
+          if (m(`tunnel established: CONNECT ${o}`), w === void 0) t.write(`HTTP/1.1 200 Connection Established\r
+\r
+`);
+          if (head_2.rest.length > 0) t.write(head_2.rest);
+          if (w !== void 0) {
+            up_2.write(w.head);
+            let ie = ce(t, up_2, w.bodyLength, g.release(), () => m("client sent bytes past its declared Content-Length on a plain HTTP request; not forwarded"));
+            up_2.pipe(t), up_2.once("close", () => {
+              ie(), E(t, "");
+            }), t.once("close", () => {
+              ie(), up_2.destroy();
+            });
+            return;
+          }
+          let C = g.release();
+          if (C.length > 0) up_2.write(C);
+          U(t, up_2);
+          return;
+        }
+        up_2.destroy(), h(`upstream proxy refused CONNECT ${b(o)}: ${b(head_2.startLine)}`);
+        let H = X(head_2.headerLines, ["connection", "proxy-connection", "keep-alive", "transfer-encoding", "content-length", ...Y]);
+        E(t, N(head_2.startLine + `\r
+` + H.map(item => item + `\r
+`).join("") + `Content-Length: 0\r
+Connection: close\r
+\r
+`));
+      } catch (error) {
+        re(t, error, `CONNECT ${o}`);
+      }
+    },
+    pe = async (t, o, f) => {
+      let g = X(o.headerLines, ["proxy-authorization", "proxy-connection", "connection", "keep-alive", "upgrade", "te", "trailer", "max-forwards"]),
+        w = Number(D(o.headerLines, "content-length") ?? "0"),
+        u,
+        P = () => {},
+        T = () => {
+          P(), u?.destroy(), t.destroy();
+        };
+      try {
+        {
+          let A = await e.minter.mint();
+          if (f.gone()) {
+            T();
+            return;
+          }
+          if (u = await S(), f.gone()) {
+            T();
+            return;
+          }
+          if (u.write(Buffer.concat([N(o.startLine + `\r
+` + g.map(item => item + `\r
+`).join("")), Buffer.from(`Proxy-Authorization: ${A}\r
+`), N(`Connection: close\r
+\r
+`)])), w > 0) P = ce(t, u, w, f.release(), () => m("client sent bytes past its declared Content-Length on a plain HTTP request; not forwarded"));
+          let c = await q(u, K, J),
+            L = I(c),
+            W = 0;
+          while (L >= 100 && L < 200 && L !== 101) {
+            if (f.gone()) {
+              T();
+              return;
+            }
+            if (Q(c, A)) {
+              P(), G(t, u, "a plain HTTP request", L);
+              return;
+            }
+            if (++W > ae) {
+              u.destroy(), P(), h(`upstream sent more than ${ae} interim responses to a plain HTTP request; answering the client 502`), E(t, O(502, "Bad Gateway", `too many interim responses from upstream
+`));
+              return;
+            }
+            t.write(N(c.startLine + `\r
+` + X(c.headerLines, Y).map(item => item + `\r
+`).join("") + `\r
+`)), c = await q(u, K, J, c.rest), L = I(c);
+          }
+          if (f.gone()) {
+            T();
+            return;
+          }
+          if (Q(c, A)) {
+            P(), G(t, u, "a plain HTTP request", L);
+            return;
+          }
+          if (L === 407) {
+            P(), u.destroy(), h(`upstream answered 407 to a plain HTTP request (${b(c.startLine)}); it may have come from the destination site rather than the proxy, and re-mint is only attempted for CONNECT tunnels; answering the client 502`), E(t, O(502, "Bad Gateway", `upstream answered 407 (Proxy Authentication Required) to a plain HTTP request; it may have come from the destination site rather than the proxy; see the runner log
+`));
+            return;
+          }
+          if (L < 100) {
+            u.destroy(), P(), h("upstream proxy sent an unparseable reply to a plain HTTP request; answering the client 502"), E(t, O(502, "Bad Gateway", `unparseable reply from upstream proxy
+`));
+            return;
+          }
+          if (L >= 400) {
+            u.destroy(), P(), h(`upstream answered ${b(c.startLine)} to a plain HTTP request; error body withheld from the client`), E(t, N(c.startLine + `\r
+` + X(c.headerLines, ["connection", "proxy-connection", "keep-alive", "transfer-encoding", "content-length", ...Y]).map(item => item + `\r
+`).join("") + `Content-Length: 0\r
+Connection: close\r
+\r
+`));
+            return;
+          }
+          if (t.write(N(c.startLine + `\r
+` + X(c.headerLines, ["connection", "proxy-connection", "keep-alive", ...Y]).map(item => item + `\r
+`).join("") + `Connection: close\r
+\r
+`)), c.rest.length > 0) t.write(c.rest);
+          let H = u;
+          H.pipe(t), H.on("error", () => t.destroy()), t.on("error", () => H.destroy()), H.on("close", () => E(t, "")), t.on("close", () => H.destroy()), H.resume(), t.resume();
+        }
+      } catch (error) {
+        P(), u?.destroy(), re(t, error, "plain HTTP request");
+      }
+    },
+    Z = 0,
+    he = e.maxPendingClients ?? Oe,
+    k = Pe({
+      pauseOnConnect: !0
+    }, t => {
+      if (R(t), t.on("error", () => t.destroy()), Z >= he) {
+        m("too many connections still sending a request head; refusing one"), t.destroy();
+        return;
+      }
+      Z++, (async () => {
+        let o;
+        try {
+          o = await q(t, Ce, Le);
+        } catch (error) {
+          if (m(`client: ${d(error)}`), !t.destroyed && t.writable && t.bytesRead > 0) E(t, O(400, "Bad Request", `malformed proxy request
+`));else t.destroy();
+          return;
+        } finally {
+          Z--;
+        }
+        if (F.test(o.startLine) || o.headerLines.some(item => F.test(item) || !Ne.test(item))) {
+          E(t, O(400, "Bad Request", `malformed header line
+`));
+          return;
+        }
+        let f = o.startLine.match(/^CONNECT\s+(\S+)\s+HTTP\/1\.[01]$/i),
+          g = !f && /^[A-Z]+\s+http:\/\/\S+\s+HTTP\/1\.[01]$/i.test(o.startLine);
+        if (!f && !g) {
+          E(t, O(400, "Bad Request", `this is a forward proxy: expected CONNECT host:port or an absolute-form http:// request
+`));
+          return;
+        }
+        if (!y(o.headerLines)) {
+          m(`client ${f ? "CONNECT" : "request"} without valid loopback credentials \u2192 407 challenge`), E(t, ke());
+          return;
+        }
+        if (g && /^TRACE\s/i.test(o.startLine)) {
+          E(t, O(405, "Method Not Allowed", `TRACE is not forwarded by this proxy
+`));
+          return;
+        }
+        if (g) {
+          let u = de(o.headerLines, ["content-length"]);
+          if (D(o.headerLines, "transfer-encoding") !== void 0) {
+            E(t, O(501, "Not Implemented", `request bodies with Transfer-Encoding are not forwarded by this proxy; send a Content-Length
+`));
+            return;
+          }
+          if (u.length > 1 || u.length === 1 && !/^content-length:[ \t]*\d{1,15}[ \t]*$/i.test(u[0])) {
+            E(t, O(400, "Bad Request", `a forwarded request may carry at most one numeric Content-Length
+`));
+            return;
+          }
+        }
+        if (g && e.connectOnly) {
+          let u = Be(o);
+          if (u === void 0) {
+            E(t, O(400, "Bad Request", `expected an absolute-form http://host[:port]/path request with no user info
+`));
+            return;
+          }
+          await oe(t, u.target, o, fe(t, o.rest), {
+            head: u.head,
+            bodyLength: Number(D(o.headerLines, "content-length") ?? "0")
+          });
+          return;
+        }
+        let w = fe(t, o.rest);
+        if (f) await oe(t, f[1], o, w);else await pe(t, o, w);
+      })().catch(o => {
+        h(`internal error handling a proxied connection: ${sc(d(o))}`), t.destroy();
+      });
+    });
+  if (await new Promise((t, o) => {
+    k.once("error", o), k.listen({
+      host: "127.0.0.1",
+      port: 0
+    }, () => {
+      k.removeListener("error", o), t();
+    });
+  }), k.on("error", t => h(`listener error: ${d(t)}`)), e.unrefListener) k.unref();
+  let port_2 = k.address().port;
+  return {
+    url: `http://runner:${a}@127.0.0.1:${port_2}`,
+    port: port_2,
+    openConnections: () => v.size,
+    close: () => new Promise(t => {
+      for (let o of v) o.destroy();
+      k.close(() => t());
+    })
+  };
+}
+function ze(e) {
+  return /^[\d.]+$/.test(e) || e.includes(":");
+}
+class le {
+  active;
+  handle;
+}
+var Ie = new z(() => new le());
+function V() {
+  return Ie.of(j().host);
+}
+function Q4o() {
+  return V().active;
+}
+function De(url, r) {
+  let s = te.map(item => [item, r[item]]),
+    original = {},
+    rewritten = [];
+  for (let [l, a] of s) {
+    if (a !== void 0) original[l] = a;
+    if (a) r[l] = url, rewritten.push(l);
+  }
+  return {
+    url: url,
+    rewritten: rewritten,
+    original: original
+  };
+}
+function Me(e = process.env) {
+  let active = V().active;
+  if (!active) return {
+    ...e
+  };
+  let s = {
+    ...e
+  };
+  for (let n of te) if (n in active.original) s[n] = active.original[n];
+  return s;
+}
+function Z4o(e = process.env) {
+  let active_2 = V().active;
+  if (!active_2) return {};
+  let s = {
+    [N_n]: void 0,
+    [F_n]: void 0,
+    NO_PROXY: e.NO_PROXY,
+    no_proxy: e.no_proxy,
+    CLAUDE_CODE_ENABLE_PROXY_AUTH_HELPER: void 0,
+    ALL_PROXY: void 0,
+    all_proxy: void 0
+  };
+  for (let n of te) s[n] = active_2.rewritten.includes(n) ? active_2.url : void 0;
+  return s;
+}
+function Xe(e, r = process.env) {
+  if (e.command !== void 0 && e.command.trim() === "" || e.file !== void 0 && e.file.trim() === "") throw Error("--proxy-authorization-command / --proxy-authorization-file must not be empty");
+  let command = (e.command ?? r[N_n])?.trim(),
+    n = (e.file ?? r[F_n])?.trim(),
+    path = n ? xe(n) : n,
+    l = command !== void 0 && command !== "",
+    a = path !== void 0 && path !== "";
+  if (l && a) throw Error("set only one of --proxy-authorization-command (SELF_HOSTED_RUNNER_PROXY_AUTHORIZATION_COMMAND) and --proxy-authorization-file (SELF_HOSTED_RUNNER_PROXY_AUTHORIZATION_FILE)");
+  if (l) return {
+    kind: "command",
+    command: command
+  };
+  if (a) return {
+    kind: "file",
+    path: path
+  };
+  return;
+}
+function eYo(e, r = process.env) {
+  let source_2 = Xe(e, r);
+  if (!source_2) return;
+  let upstreamProxyUrl = Ff(r),
+    i = upstreamProxyUrl ? H2(upstreamProxyUrl) : void 0;
+  if (!upstreamProxyUrl || !i) throw Error("--proxy-authorization-command / --proxy-authorization-file require HTTPS_PROXY (or HTTP_PROXY) to be set to the upstream proxy URL that the Proxy-Authorization value is for (ALL_PROXY alone is not consulted)");
+  if (i.protocol !== "http:" && i.protocol !== "https:") throw Error("--proxy-authorization-command / --proxy-authorization-file support http:// and https:// upstream proxies only (check the scheme of HTTPS_PROXY / HTTP_PROXY)");
+  return {
+    source: source_2,
+    upstreamProxyUrl: upstreamProxyUrl
+  };
+}
+async function tYo(e, r) {
+  let s = V(),
+    n = sE(),
+    ca = Jx(),
+    minter = Ue({
+      source: e.source,
+      upstreamProxyUrl: e.upstreamProxyUrl,
+      commandEnv: () => ({
+        ...Me(),
+        SELF_HOSTED_RUNNER_POOL_SECRET: void 0,
+        SELF_HOSTED_RUNNER_ENVIRONMENT_SECRET: void 0
+      })
+    }),
+    a = await $Gr({
+      upstreamProxyUrl: e.upstreamProxyUrl,
+      minter: minter,
+      upstreamTls: {
+        ...(n && {
+          cert: n.cert,
+          key: n.key,
+          passphrase: n.passphrase
+        }),
+        ...(ca && {
+          ca: ca
+        })
+      },
+      onStatus: r.onStatus,
+      onDebug: r.onDebug
+    }),
+    p = De(a.url, process.env);
+  if (s.active = p, new Set(p.rewritten.map(item => p.original[item])).size > 1) r.onStatus(`[runner:egress-proxy] note: ${p.rewritten.join("/")} named different proxies; all of them now go through the listener to ${sc(e.upstreamProxyUrl)} (the one this runner resolves for its own traffic)`);
+  if (wb(), process.env.CLAUDE_CODE_ENABLE_PROXY_AUTH_HELPER) r.onStatus("[runner:egress-proxy] note: CLAUDE_CODE_ENABLE_PROXY_AUTH_HELPER is set on the runner; it is cleared for sessions while --proxy-authorization-* is active (the runner now mints Proxy-Authorization for all proxied traffic, and a session-side proxyAuthHelper header would be refused by the loopback listener)");
+  return r.onStatus(`[runner:egress-proxy] enabled: minting Proxy-Authorization from the configured ${e.source.kind} for every CONNECT to the upstream proxy ${sc(e.upstreamProxyUrl)}; this runner and its sessions now use the loopback listener 127.0.0.1:${a.port} (rewrote ${p.rewritten.join(", ")})`), s.handle = {
+    ...a,
+    close: async () => {
+      await a.close(), s.active = void 0, s.handle = void 0;
+    }
+  }, s.handle;
+}
+function nYo(e, r = process.env) {
+  let s = e.find(item => item === "--proxy-authorization-command" || item === "--proxy-authorization-file") ?? [N_n, F_n].find(item => r[item]?.trim());
+  if (s !== void 0) throw new x(`${s} is not yet supported with the orchestrator subcommand (only worker runners mint Proxy-Authorization for their egress proxy today). Unset it for the orchestrator process; the runners it spawns can still use it.`, "proxy-authorization knob given to the orchestrator subcommand");
+}
+export { N_n, F_n, ProxyAuthorizationMintError as mCe, $Gr, Q4o, Z4o, eYo, tYo, nYo };

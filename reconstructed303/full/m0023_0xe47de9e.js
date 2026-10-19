@@ -1,0 +1,4691 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  ji,
+  Ga,
+  ne,
+  mk,
+  nt,
+  zr
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  hre,
+  Fe
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  ms,
+  K,
+  de
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  ESt,
+  W
+} from "B:/~BUN/root/chunk-hg8ngszx.js";
+import {
+  x,
+  k,
+  G,
+  hV,
+  tz
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  je
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  z,
+  $n,
+  jn,
+  n_,
+  r_,
+  ul,
+  C$,
+  dC,
+  Eb,
+  $de,
+  ure,
+  R$,
+  Na,
+  pl,
+  ZGe,
+  XS,
+  h0,
+  kI,
+  Qa,
+  Ds,
+  uT,
+  SL,
+  $Q
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  Pe,
+  vf
+} from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import {
+  XW,
+  izo
+} from "B:/~BUN/root/chunk-xf0m410v.js";
+import {
+  yt
+} from "B:/~BUN/root/chunk-hz8x9zsh.js";
+var lr = new RegExp("[\\p{M}\\uFF9E\\uFF9F]{32,}", "gu"),
+  cr = new RegExp("[\\p{M}\\uFF9E\\uFF9F]", "u");
+var Ue = new Map,
+  oe = [],
+  We = new Map;
+
+function Se(e, n) {
+  return e !== n && (e + n).normalize("NFD") === n + e
+}
+
+function It(e) {
+  let n = Ue.get(e);
+  if (n !== void 0) return n;
+  let r = String.fromCodePoint(e),
+    i = null;
+  if (r === "\u0334" || Se(r, "\u0334") || Se("\u0345", r)) {
+    let s = 0,
+      o = oe.length;
+    while (s < o && i === null) {
+      let a = s + o >> 1,
+        u = oe[a];
+      if (Se(r, u.sample)) s = a + 1;
+      else if (Se(u.sample, r)) o = a;
+      else i = u
+    }
+    if (i === null) {
+      i = {
+        order: s,
+        sample: r
+      }, oe.splice(s, 0, i);
+      for (let a = s + 1; a < oe.length; a++) oe[a].order = a
+    }
+  }
+  return Ue.set(e, i), i
+}
+
+function Dt(e) {
+  let n = We.get(e);
+  if (n === void 0) n = Array.from(String.fromCodePoint(e).normalize("NFKD"), (r) => r.codePointAt(0)), We.set(e, n);
+  return n
+}
+var Tt = 4096;
+
+function dr(e, n) {
+  let r = "";
+  for (let i = 0; i < n; i += Tt) r += String.fromCodePoint(...e.subarray(i, Math.min(i + Tt, n)));
+  return r
+}
+
+function fr(e) {
+  let n = new Int32Array(e.length + 16),
+    r = 0;
+  for (let a = 0; a < e.length;) {
+    let u = e.codePointAt(a);
+    a += u > 65535 ? 2 : 1;
+    for (let l of Dt(u)) {
+      if (r === n.length) {
+        let c = new Int32Array(n.length * 2);
+        c.set(n), n = c
+      }
+      n[r++] = l, It(l)
+    }
+  }
+  let i = new Int16Array(r);
+  for (let a = 0; a < r; a++) i[a] = Ue.get(n[a])?.order ?? -1;
+  let s = n.slice(0, r),
+    o = new Int32Array(oe.length);
+  for (let a = 0; a < r;) {
+    let u = a,
+      l = !0;
+    while (u < r && i[u] >= 0) l &&= u === a || i[u - 1] <= i[u], u++;
+    if (l) {
+      a = u + 1;
+      continue
+    }
+    o.fill(0);
+    for (let d = a; d < u; d++) o[i[d]]++;
+    let c = a;
+    for (let d = 0; d < o.length; d++) {
+      let p = o[d];
+      o[d] = c, c += p
+    }
+    for (let d = a; d < u; d++) s[o[i[d]]++] = n[d];
+    a = u
+  }
+  return dr(s, r)
+}
+
+function FWo(e) {
+  return e.length < 32 ? e : e.replace(lr, fr)
+}
+var Ct = 128;
+
+function Pt(e) {
+  if (e < 768) return !0;
+  let n = We.get(e);
+  if (n === void 0 && !cr.test(String.fromCodePoint(e))) return !0;
+  return It((n ?? Dt(e))[0]) === null
+}
+
+function gr(e, n) {
+  let r = n;
+  if (r < e.length && (e.charCodeAt(r) & 64512) === 56320 && (e.charCodeAt(r - 1) & 64512) === 55296) r++;
+  while (r < e.length) {
+    let i = e.codePointAt(r);
+    if (Pt(i)) break;
+    r += i > 65535 ? 2 : 1
+  }
+  return Math.min(r, e.length)
+}
+
+function pr(e) {
+  let n = e.length;
+  while (n > 0) {
+    if (n--, n > 0 && (e.charCodeAt(n) & 64512) === 56320 && (e.charCodeAt(n - 1) & 64512) === 55296) n--;
+    if (Pt(e.codePointAt(n))) return n
+  }
+  return 0
+}
+
+function Ft(e, n) {
+  let r = FWo(e);
+  if (r.length <= Ct) return r.normalize(n);
+  let i = [],
+    s = "";
+  for (let o = 0; o < r.length;) {
+    let a = gr(r, o + Ct),
+      u = (s + r.slice(o, a)).normalize(n),
+      l = a === r.length ? u.length : pr(u);
+    i.push(u.slice(0, l)), s = u.slice(l), o = a
+  }
+  return i.join("")
+}
+
+function z4(e) {
+  return Ft(e, "NFKC")
+}
+
+function j6s(e) {
+  return Ft(e, "NFKD")
+}
+var hr = /[\x00-\x1f\x7f-\x9f\u2028\u2029]/g,
+  QB = 256,
+  dJn = /[\x00-\x1f\x7f-\x9f\u2028\u2029<>]/;
+
+function mr(e) {
+  return e.length <= 256 && !dJn.test(e)
+}
+
+function Q2(e) {
+  return e.length > 0 && mr(e)
+}
+
+function HZe(e) {
+  return e.length <= 256 && /^[A-Za-z0-9_:.-]+$/.test(e)
+}
+
+function cJn(e) {
+  return e.length <= 256 && /^[\p{L}\p{M}\p{N}_:.-]+$/u.test(e)
+}
+
+function HWo(e) {
+  return e.length <= 256 && /^(?:\/(?!\.\.?(?:\/|$))[A-Za-z0-9._+@-]+)+$/.test(e)
+}
+
+function gR(e) {
+  return zd(e.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;"))
+}
+
+function zd(e) {
+  return e.replace(hr, (n) => `&#${n.charCodeAt(0)};`)
+}
+
+function ZB(e) {
+  return e.replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+}
+
+function Ru(e) {
+  return zd(ZB(String(e ?? "")))
+}
+
+function p1r(e) {
+  return Ru(e).replaceAll('"', "&quot;")
+}
+
+function pn(e) {
+  return Bun.stripANSI(e)
+}
+
+function kDe(e) {
+  return mk(pn(mk(String(e))))
+}
+
+function u0(e) {
+  return e.replace(/[^\n\r\v\f\x85\u2028\u2029]+/g, (n) => pn(n))
+}
+var $t = "\\p{Default_Ignorable_Code_Point}\\u2800",
+  z_ = `\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\u2028\\u2029${$t}`,
+  EDe = String.raw`\u00ad\u034f\u061c\u115f\u1160\u17b4\u17b5\u180b-\u180f\u200b-\u200f\u202a-\u202e\u2060-\u206f\u2800\u3164\ufe00-\ufe0f\uffa0\ufff0-\ufffb\uDC00-\uDFFF\uDB40-\uDB43`,
+  Ht = String.raw`\u0600-\u0605\u06dd\u070f\u0890\u0891\u08e2`,
+  $Ze = `[${EDe}${Ht}\\ufeff]*`,
+  W6s = new RegExp(`[${EDe}${Ht}\\ufeff]`);
+
+function xGe(e) {
+  return e.replace(/([a-z)])(?=[a-z(\[])/gi, `$1${$Ze}`).replace(/\[_-\]\?/g, `(?:[_-]${$Ze})?`)
+}
+var Ge = new RegExp(`[${z_}]+`, "gu"),
+  ze = "\\u200D\\uFE0E\\uFE0F",
+  yr = new RegExp(`(?:(?![${ze}])[${z_}])+`, "gu"),
+  br = new RegExp(`(?:(?![${ze}\\n])[${z_}])+`, "gu"),
+  Er = new RegExp(`(?<!\\S)[${ze}]+`, "gu"),
+  Sr = /\p{Cs}/gu;
+
+function hI(e, n, r) {
+  let i = pn(e.replace(Sr, "\u200B"));
+  if (r !== void 0 && "keepSpelledJoiners" in r) {
+    let a = new Set;
+    if (i.length <= Lr && Mt.test(i)) {
+      xe ??= new RegExp("\\p{RGI_Emoji}", "gv");
+      for (let u of [xe, Bt])
+        for (let {
+            index: l,
+            0: c
+          }
+          of i.matchAll(u))
+          for (let d = l; d < l + c.length; d++) a.add(d)
+    }
+    return i.replace(Ge, (u, l) => {
+      let c = "";
+      for (let d = 0; d < u.length; d++) c += a.has(l + d) ? u.charAt(d) : c.endsWith(n) ? "" : n;
+      return c
+    })
+  }
+  let s = r?.keepNewlines === !0 || r?.keepEmojiJoiners === !0,
+    o = i.replace(r?.keepNewlines ? br : s ? yr : Ge, n);
+  return s ? o.replace(Er, "") : o
+}
+var kr = new RegExp(`[${z_}]`, "u"),
+  xr = /(?! )\p{Zs}|[\uFFFC\u{1D159}\u{13441}\u{13442}\u{16FE4}]|^ | $/u,
+  pe = "[\\p{M}\\u1160-\\u11FF\\uD7B0-\\uD7FF]",
+  Ar = new RegExp(`(?<![\\p{L}\\p{N}\\p{M}])${pe}|${pe}{9}|\\p{Soft_Dotted}\\p{M}*\\u0307|[\\u0131\\u0237]\\p{M}|(?<=[\\p{sc=Latin}\\p{sc=Common}]${pe}*)(?!\\p{sc=Inherited})${pe}`, "u"),
+  wr = String.raw`\u0620\u0626\u0628\u062A-\u062E\u0633-\u063F\u0641-\u0647\u0649\u064A\u066E\u066F\u0678-\u0687\u069A-\u06BF\u06C1\u06C2\u06CC\u06CE\u06D0\u06D1\u06FA-\u06FC\u06FF\u0750-\u0758\u075C-\u076A\u076D-\u0770\u0772\u0775-\u0777\u077A-\u077F\u0886\u0889-\u088D\u088F\u08A0-\u08A9\u08AF\u08B0\u08B3-\u08B8\u08BA-\u08C8`,
+  Rr = String.raw`\u0620\u0622-\u063F\u0641-\u064A\u066E\u066F\u0671-\u0673\u0675-\u06D3\u06D5\u06EE\u06EF\u06FA-\u06FC\u06FF\u0750-\u077F\u0870-\u0882\u0886\u0889-\u088F\u08A0-\u08AC\u08AE-\u08C8`,
+  _r = [2304, 2432, 2688, 2816, 3072, 3200, 3328].map(vr),
+  Nt = String.raw`[\u0D9A-\u0DC6]`,
+  Bt = new RegExp([..._r, `\\u200D(?<=${Nt}\\u0DCA.)(?=${Nt})`, `\\u200C(?<=[${wr}](?:(?=[\\p{sc=Arabic}\\p{sc=Inherited}])(?!\\p{Default_Ignorable_Code_Point})\\p{Mn}){0,8}.)(?=[${Rr}])`].join("|"), "gu"),
+  Or = new RegExp(`\\u20E3|\\u263A${pe}`, "u"),
+  Mt = /[\u200C\u200D\uFE0F\u{E007F}]/u,
+  xe;
+
+function vr(e) {
+  let n = `[${ke(e+21)}-${ke(e+57)}]`,
+    r = e === 3328 ? "" : `${ke(e+60)}?`;
+  return `[\\u200C\\u200D](?<=${n}${r}${ke(e+77)}.)(?=${n})`
+}
+
+function ke(e) {
+  return `\\u{${e.toString(16)}}`
+}
+
+function Ke(e) {
+  if (!Mt.test(e)) return e;
+  return xe ??= new RegExp("\\p{RGI_Emoji}", "gv"), e.replace(xe, "\u263A").replace(Bt, "")
+}
+var Lr = 4096;
+
+function $Wo(e) {
+  return Tr(e) && !e.includes("  ") && !Ar.test(Ke(e))
+}
+
+function Tr(e) {
+  return Q2(e) && !kr.test(Ke(e)) && !Or.test(Ke(e)) && !/\uFE0F[\u{1F3FB}-\u{1F3FF}]/u.test(e) && !xr.test(e)
+}
+var Cr = new RegExp(`[\\p{Cf}\\p{Co}\\p{Cn}\\u2028\\u2029\\u007F-\\u009F${$t}]`, "gu");
+
+function Ir(e) {
+  let n = e.replace(/[\p{Cf}\p{Co}\p{Cn}]/gu, "");
+  return n = n.replace(/[\u200B-\u200F]/g, "").replace(/[\u202A-\u202E]/g, "").replace(/[\u2066-\u2069]/g, "").replace(/[\uFEFF]/g, "").replace(/[\uE000-\uF8FF]/g, ""), n
+}
+
+function Wf(e) {
+  let n = mk(e);
+  for (let r = 0; r < 10; r++) {
+    let i = Ir(n);
+    if (i === n) return n;
+    n = i
+  }
+  return n
+}
+var Dr = /\p{Default_Ignorable_Code_Point}/gu;
+
+function Fc(e) {
+  return zr(Wf(e).replace(Dr, ""))
+}
+
+function UWo(e) {
+  return !/[^\0-\x7f]/.test(e)
+}
+
+function UZe(e) {
+  if (UWo(e)) return e;
+  let n = e,
+    r = "",
+    i = 0,
+    s = 10;
+  while (n !== r && i < s) r = n, n = z4(n), n = Wf(n), i++;
+  if (i >= s) throw Error(`Unicode sanitization reached maximum iterations (${s}) for input: ${e.slice(0,100)}`);
+  return n
+}
+
+function sP(e) {
+  if (typeof e === "string") return UZe(e);
+  if (Array.isArray(e)) return e.map(sP);
+  if (e !== null && typeof e === "object") {
+    let n = {};
+    for (let [r, i] of Object.entries(e)) {
+      let s = sP(r);
+      if (s !== "__proto__") n[s] = sP(i)
+    }
+    return n
+  }
+  return e
+}
+
+function nc(e) {
+  return BZe(e.replace(/\\(?=u[0-9a-fA-F]{4})/g, "\\u005c"))
+}
+
+function BZe(e) {
+  return e.replace(/[^\x20-\x7e]/g, G5)
+}
+
+function _n(e) {
+  return e.replace(/[\p{Cc}\p{Cf}\u2028\u2029]+/gu, " ")
+}
+
+function mL(e) {
+  return e.replace(Cr, (n) => Array.from({
+    length: n.length
+  }, (r, i) => `\\u${n.charCodeAt(i).toString(16).padStart(4,"0")}`).join(""))
+}
+
+function z5(e) {
+  return mk(pn(e)).replace(Ge, " ")
+}
+
+function ti(e, n) {
+  let r = z5(e);
+  if (n?.drop) r = r.replace(n.drop, "");
+  if (r = r.replace(/\s+/g, " ").trim(), n?.maxCodeUnits !== void 0) r = ne(r, n.maxCodeUnits).trim();
+  return r
+}
+
+function z6s(e) {
+  return ti(e) === e
+}
+var jZe = 255;
+
+function MA(e) {
+  let n = ti(e, {
+    drop: /[`<>]/g
+  }).replace(/\]\(/g, "] (").replace(/!\[/g, "! [").replace(/\]\[/g, "] [").replace(/\]:/g, "] :");
+  return ne(n, jZe).trim()
+}
+var jmn = 2048,
+  uJn = /[`\[\]<>]/g;
+
+function Yne(e) {
+  let n = ti(e).replace(/\]\(/g, "] (").replace(/!\[/g, "! [").replace(/\]\[/g, "] [").replace(/\]:/g, "] :").replace(/</g, "< ").replace(/\s+/g, " ").trim();
+  return ne(n, jmn).trim()
+}
+
+function Jbt(e) {
+  return e.replace(/[\u007F-\u009F\u2028\u2029\p{Cf}]/gu, G5)
+}
+
+function G5(e) {
+  return e.split("").map((n) => "\\u" + n.charCodeAt(0).toString(16).padStart(4, "0")).join("")
+}
+
+function e1(e) {
+  let n = 0;
+  while (n < e.length && e.charCodeAt(n) <= 32) n++;
+  let r = e.slice(n),
+    i = /^([A-Za-z0-9][A-Za-z0-9+.-]*):\/\//.exec(r),
+    s = i?.[1]?.toLowerCase(),
+    o = i ? r.slice(i[0].length) : r,
+    a = o.indexOf(":"),
+    u = o.indexOf("/");
+  if (!(s !== void 0 ? s !== "file" : a !== -1 && (u === -1 || a < u) && !/^[A-Za-z]:/.test(o))) {
+    let m = i ? he(o) : o;
+    return m.includes("@[") || m.startsWith("[")
+  }
+  let c = he(o),
+    d = i ? /^(?:[^@/?#\\[\]]+@)?(\[[0-9A-Fa-f:.]+\])(?::\d*)?(?=\/|$)/.exec(c) : /^[^@:/[\]]+@(\[[0-9A-Fa-f:.]+\])(?=:)/.exec(c),
+    p = d !== null && !!TDe(`ssh://${d[1]}/`)?.hostname;
+  return /[[\]]/.test(c.slice(p ? d[0].length : 0))
+}
+
+function TDe(e) {
+  try {
+    return new URL(e)
+  } catch {
+    return null
+  }
+}
+
+function he(e) {
+  return e.replace(/%([0-9A-Fa-f]{2})/g, (n, r) => {
+    let i = parseInt(r, 16);
+    return i === 0 ? n : String.fromCharCode(i)
+  })
+}
+import {
+  appendFile as Rt,
+  mkdir as qn,
+  rename as Qn,
+  stat as vs,
+  symlink as Ls,
+  unlink as _t
+} from "fs/promises";
+import {
+  dirname as ge,
+  isAbsolute as Ts,
+  join as Q,
+  resolve as or
+} from "path";
+
+function Eh(e) {
+  return {
+    ok: !0,
+    value: e
+  }
+}
+
+function $p(e) {
+  return {
+    ok: !1,
+    error: e
+  }
+}
+class Ut extends Error {
+  constructor(e) {
+    super("Result was an error (see .error)");
+    this.name = "ResultError", Object.defineProperty(this, "error", {
+      value: e,
+      enumerable: !1
+    })
+  }
+}
+
+function $6s(e) {
+  if (e.ok) return e.value;
+  throw new Ut(e.error)
+}
+var Bf = {
+  home: (e) => ({
+    space: "home",
+    path: e
+  }),
+  workspace: (e) => ({
+    space: "workspace",
+    path: e
+  }),
+  system: (e) => ({
+    space: "system",
+    path: e
+  }),
+  userNamed: (e) => ({
+    space: "userNamed",
+    path: e
+  })
+};
+
+function IWo(e) {
+  if (typeof e !== "object" || e === null) return !1;
+  let n = Reflect.get(e, "code"),
+    r = Reflect.get(e, "telemetryCode");
+  return n === "Failed" && typeof r === "string" && (tz(r) !== void 0 || /^ERR_[A-Z0-9_]+$/.test(r))
+}
+
+function U6s(e) {
+  if (IWo(e)) {
+    if (e.cause instanceof Error) return e.cause;
+    return Object.assign(new x(yt(e), "host file operation refused by the storage backend"), {
+      code: e.telemetryCode,
+      cause: e
+    })
+  }
+  return Object.assign(new x(yt(e), "host file operation could not be performed by the storage backend"), {
+    cause: e
+  })
+}
+var Ve = globalThis.process?.getBuiltinModule?.("async_hooks"),
+  Wt = Ve !== void 0,
+  Je = Ve ? new Ve.AsyncLocalStorage : {
+    run: (e, n) => n(),
+    getStore: () => {
+      return
+    }
+  };
+
+function Ze({
+  writeBatch: e,
+  sizeOf: n,
+  flushIntervalMs: r = 1000,
+  maxBufferSize: i = 100,
+  maxBufferBytes: s = 1 / 0,
+  immediateMode: o = !1
+}) {
+  let a = [],
+    u = 0,
+    l = null,
+    c = null;
+
+  function d() {
+    if (l) clearTimeout(l), l = null
+  }
+
+  function p(g) {
+    try {
+      e(g)
+    } catch {}
+  }
+
+  function m() {
+    if (c) p(c), c = null;
+    if (a.length === 0) return;
+    p(a), a = [], u = 0, d()
+  }
+
+  function h() {
+    if (!l) l = setTimeout(m, r)
+  }
+
+  function A() {
+    if (c) {
+      c.push(...a), a = [], u = 0, d();
+      return
+    }
+    let g = a;
+    a = [], u = 0, d(), c = g, setImmediate(() => {
+      let y = c;
+      if (c = null, y) p(y)
+    })
+  }
+  return {
+    write(g) {
+      if (o) {
+        p([g]);
+        return
+      }
+      if (a.push(g), u += n(g), h(), a.length >= i || u >= s) A()
+    },
+    flush: m,
+    dispose() {
+      m()
+    }
+  }
+}
+
+function B6s({
+  writeFn: e,
+  flushIntervalMs: n,
+  maxBufferSize: r,
+  maxBufferBytes: i,
+  immediateMode: s
+}) {
+  return Ze({
+    writeBatch: (o) => e(o.join("")),
+    sizeOf: (o) => o.length,
+    flushIntervalMs: n,
+    maxBufferSize: r,
+    maxBufferBytes: i,
+    immediateMode: s
+  })
+}
+
+function Pr(e) {
+  if (typeof e === "function") return e;
+  if (Symbol.asyncDispose in e) return () => e[Symbol.asyncDispose]();
+  return () => e[Symbol.dispose]()
+}
+class Ye {
+  #e = new Set;
+  #t = !1;
+  get drainStarted() {
+    return this.#t
+  }
+  register(e) {
+    let n = Pr(e);
+    this.#e.add(n);
+    let r = () => {
+      this.#e.delete(n)
+    };
+    return Object.assign(r, {
+      [Symbol.dispose]: r
+    })
+  }
+  async drain() {
+    this.#t = !0;
+    let e = Array.from(this.#e);
+    this.#e.clear();
+    let r = (await Promise.allSettled(e.map(async (i) => i()))).find((i) => i.status === "rejected");
+    if (r !== void 0) throw r.reason
+  }
+  async [Symbol.asyncDispose]() {
+    await this.drain()
+  }
+  get sizeForTesting() {
+    return this.#e.size
+  }
+}
+class Gt {
+  cleanup = new Ye;
+  preExitFlush = new Ye
+}
+var Fr = new z(() => new Gt);
+
+function me() {
+  return ms(Fr)
+}
+var qne = 2000;
+
+function bt(e) {
+  return me().cleanup.register(e)
+}
+async function Vbt() {
+  await me().cleanup.drain()
+}
+
+function Km() {
+  return me().cleanup.drainStarted
+}
+
+function mI(e) {
+  return me().preExitFlush.register(e)
+}
+async function sJn() {
+  await me().preExitFlush.drain()
+}
+class zt {
+  parsed = new Map;
+  lookup(e) {
+    return this.parsed.get(e)
+  }
+  remember(e, n) {
+    this.parsed.set(e, n)
+  }
+  reset() {
+    this.parsed.clear()
+  }
+}
+var Kt = new zt;
+
+function Vt(e) {
+  let n = Kt.lookup(e);
+  if (n !== void 0) return n;
+  let r = Nr(e);
+  return Kt.remember(e, r), r
+}
+
+function Nr(e) {
+  if (!e || e.trim() === "") return null;
+  let n = e.split(",").map((o) => o.trim()).filter(Boolean);
+  if (n.length === 0) return null;
+  let r = n.some((o) => o.startsWith("!")),
+    i = n.some((o) => !o.startsWith("!"));
+  if (r && i) return null;
+  let s = n.map((o) => o.replace(/^!/, "").toLowerCase());
+  return {
+    include: r ? [] : s,
+    exclude: r ? s : [],
+    isExclusive: r
+  }
+}
+
+function $r(e) {
+  let n = [],
+    r = e.match(/^MCP server ["']([^"']+)["']/);
+  if (r && r[1]) n.push("mcp"), n.push(r[1].toLowerCase());
+  else {
+    let o = e.match(/^([^:[]+):/);
+    if (o && o[1]) n.push(o[1].trim().toLowerCase())
+  }
+  let i = e.match(/^\[([^\]]+)]/);
+  if (i && i[1]) n.push(i[1].trim().toLowerCase());
+  if (e.toLowerCase().includes("1p event:")) n.push("1p");
+  let s = e.match(/:\s*([^:]+?)(?:\s+(?:type|mode|status|event))?:/);
+  if (s && s[1]) {
+    let o = s[1].trim().toLowerCase();
+    if (o.length < 30 && !o.includes(" ")) n.push(o)
+  }
+  return Array.from(new Set(n))
+}
+
+function Hr(e, n) {
+  if (!n) return !0;
+  if (e.length === 0) return !1;
+  if (n.isExclusive) return !e.some((r) => n.exclude.includes(r));
+  else return e.some((r) => n.include.includes(r))
+}
+
+function jt(e, n) {
+  if (!n) return !0;
+  let r = $r(e);
+  return Hr(r, n)
+}
+import * as E from "fs";
+import {
+  appendFile as Vr,
+  chmod as jr,
+  copyFile as Jr,
+  link as Zr,
+  lstat as Xe,
+  mkdir as Yr,
+  open as Y,
+  readdir as Xr,
+  readFile as Zt,
+  readlink as qr,
+  realpath as Qr,
+  rename as ei,
+  rmdir as ni,
+  rm as ri,
+  stat as Yt,
+  symlink as ii,
+  unlink as si
+} from "fs/promises";
+import {
+  homedir as Xt
+} from "os";
+import * as f from "path";
+import {
+  realpath as Br
+} from "fs";
+var Mr = (e) => new Promise((n, r) => {
+  Br(e, (i, s) => i === null ? n(s) : r(i))
+});
+var Ur = 0xffffffffffffffffn;
+
+function gu(e) {
+  let n = BigInt(e);
+  return n === 0n || n === -1n || n === Ur || n === 1n << 64n
+}
+import {
+  writeFileSync as Wr
+} from "fs";
+var wo = (() => {
+  let e = process.env.CLAUDE_CODE_SLOW_OPERATION_THRESHOLD_MS;
+  if (e !== void 0) {
+    let n = Number(e);
+    if (!Number.isNaN(n) && n >= 0) return n
+  }
+  return 1 / 0
+})();
+var Gr = {
+  [Symbol.dispose]() {}
+};
+
+function Kr() {
+  return Gr
+}
+var Wh = Kr;
+
+function _(e, n, r) {
+  using i = Wh`JSON.stringify(${Ae(e)})`;
+  return JSON.stringify(e, n, r)
+}
+
+function b$(e) {
+  return JSON.stringify(e) + `
+`
+}
+
+function Bi(e) {
+  return JSON.stringify(e)
+}
+
+function iJn(e) {
+  using n = Wh`jsonlJoin(${e.length})`;
+  let r = "";
+  for (let i = 0; i < e.length; i++) r += JSON.stringify(e[i]) + `
+`;
+  return r
+}
+var J = (e, n) => {
+  using r = Wh`JSON.parse(${Ae(e)})`;
+  return typeof n > "u" ? JSON.parse(e) : JSON.parse(e, n)
+};
+
+function jo(e) {
+  return JSON.parse(e)
+}
+
+function bc(e, n) {
+  using r = Wh`structuredClone(${Ae(e)})`;
+  return structuredClone(e, n)
+}
+
+function LZe(e, n, r) {
+  using i = Wh`fs.writeFileSync(${e}, ${Ae(n)})`;
+  Wr(e, n, r)
+}
+
+function Ae(e) {
+  return typeof e === "string" ? e.length : e
+}
+var oi = "\u2192";
+
+function ai() {
+  return 0
+}
+
+function Vhe() {
+  return "r"
+}
+var ae = /[\\/]+/;
+
+function yjt(e, n) {
+  let r = (u) => u.split(ae).filter(Boolean),
+    i = f.resolve(e),
+    s = f.resolve(n),
+    o = r(i),
+    a = r(s);
+  return f.parse(i).root === f.parse(s).root && o.length < a.length && o.every((u, l) => u === a[l])
+}
+
+function ui(e) {
+  let n = "";
+  for (let i of e.split(/([\\/]+)/)) {
+    if (i === "." || i === "..") break;
+    n += i
+  }
+  let r = n.replace(/(?<=[^\\/])[\\/]+$/, "");
+  return r === "" ? e : r
+}
+
+function li(e) {
+  let n = f.join(e).replace(/(?<=[^\\/])[\\/]+$/, "");
+  if (jn(n) && !Qa(n)) return n;
+  return ui(e)
+}
+var di = li;
+
+function Re(e, n, r) {
+  let i = ul(e);
+  if (n.length === 0 || i || n.some((s) => s === "." || s === "..")) {
+    if (r !== void 0 && (n.length > 0 || i)) r(f.join(e, ...n));
+    return i ? di(e) : e
+  }
+  return f.join(e, ...n)
+}
+var Ey = "\x00unverified-ancestry",
+  NZe = "\x00opaque-link-text";
+
+function Qe(e) {
+  return n_(f.isAbsolute(e) ? e : e.replace(/^(?:\.\.(?:[\\/]+|$))+/, ""))
+}
+
+function aJn(e, n = !0) {
+  return e.includes("\uFFFD") || Qe(e) || n && (/^(?:[A-Za-z]:(?![\\/])|[\\/](?![\\/]))/.test(e) || /^[\\/]{2}\?[\\/]/.test(e) && !/^[\\/]{2}\?[\\/](?:[A-Za-z]:[\\/]|UNC[\\/])/i.test(e) || e.split(/[\\/]/).some((r) => r !== "." && r !== ".." && /[. ]$/.test(r)))
+}
+
+function MWo(e) {
+  return e !== void 0 && e !== Ey
+}
+
+function lJn(e) {
+  return Object.assign(Error("ELOOP: symbolic link chain too long to vet"), {
+    code: "ELOOP",
+    path: e
+  })
+}
+
+function qt(e, n, r = !1, i = !1, s = !1) {
+  if (n?.unreadableAncestry !== "unverified") return;
+  let o = e !== void 0 && typeof e === "object" && "errno" in e ? e.errno : void 0;
+  if (o === "ENOENT" || o === "ENOTDIR") return;
+  if (o === "ENAMETOOLONG" && !r && !i && !s) return;
+  return Ey
+}
+
+function te(e) {
+  return h0(e)
+}
+
+function we(e, n) {
+  return n !== void 0 && n.some((r) => h0(r) && !R$(e, r) && (nn(e, r) || Na(e)))
+}
+
+function Qt(e, n) {
+  return n !== void 0 && n.some((r) => h0(r) && nn(r, e))
+}
+
+function nn(e, n) {
+  let r = (o) => o.length > 1 ? o.replace(/\/+$/, "") : o,
+    [i, s] = [r(e), r(n)];
+  return i === s || i.startsWith(s === "/" ? s : s + "/")
+}
+
+function ue(e, n) {
+  return n === void 0 || n.every((r) => R$(e, r))
+}
+
+function _e(e, n) {
+  return n === void 0 || n.every((r) => $de(e, r))
+}
+
+function en(e, n, r) {
+  let i = Na(e) ? ZGe(e) : null;
+  if (i === null || !ue(i, n)) return;
+  let s = f.join(e);
+  if (Na(s) && ure(s) === ure(i)) return s;
+  return Re(e, [], r)
+}
+
+function rn(e) {
+  if (e?.anchors !== void 0 && e.anchors.length > 0) return e.anchors;
+  return e?.anchor !== void 0 ? [e.anchor] : void 0
+}
+
+function gI(e) {
+  return n_(e) || Ds(e) || pl(e) || XS(e) || jf(W_, e) !== void 0
+}
+async function qbt(e) {
+  return n_(e) || Ds(e) || pl(e) || XS(e) || await S$(W_, e) !== void 0
+}
+
+function DWo(e, n = W_) {
+  return n_(e) || Ds(e) || pl(e) || XS(e) || jf(n, e, {
+    surfaceNetworkRaw: !0,
+    unreadableAncestry: "unverified"
+  }) !== void 0
+}
+async function Tde(e, n = W_) {
+  return n_(e) || Ds(e) || pl(e) || XS(e) || await S$(n, e, {
+    surfaceNetworkRaw: !0,
+    unreadableAncestry: "unverified"
+  }) !== void 0
+}
+async function LTe(e, n, r = W_) {
+  if (n_(e)) return !0;
+  if (Ds(e)) return !0;
+  if (pl(e)) {
+    let i = ure(e);
+    if (i === null || n === null || i !== ure(n)) return !0
+  }
+  if (XS(e)) return !0;
+  return (await l1r(e, n, {
+    fsImpl: r
+  })).verdict !== "clean"
+}
+async function l1r(e, n, {
+  fsImpl: r = W_,
+  signal: i
+} = {}) {
+  let s = await S$(r, e, {
+    ...n === null ? {} : {
+      anchor: n
+    },
+    unreadableAncestry: "unverified",
+    surfaceNetworkRaw: !0
+  }, i);
+  if (s === void 0) return {
+    verdict: "clean"
+  };
+  if (s === Ey) return {
+    verdict: "unverified"
+  };
+  return {
+    verdict: "network",
+    reaches: s
+  }
+}
+
+function jf(e, n, r) {
+  return sn(Oe(n, r), (i) => {
+    if (i.kind === "lstat") return e.lstatSync(i.path);
+    if (i.kind === "opendirNofollow") return e.openDirNoFollowSync(i.path), "ok";
+    return e.readlinkSync(i.path)
+  })
+}
+
+function S$(e, n, r, i, s) {
+  return fi(Oe(n, r), i, async (o) => {
+    if (o.kind === "lstat") {
+      if (s === void 0) return e.lstat(o.path);
+      let a;
+      try {
+        a = await e.lstatBigint(o.path)
+      } catch (u) {
+        throw s(o.path, void 0), u
+      }
+      return s(o.path, a), a
+    }
+    if (o.kind === "opendirNofollow") return await e.openDirNoFollow(o.path), "ok";
+    return e.readlink(o.path)
+  })
+}
+
+function sn(e, n) {
+  let r;
+  for (;;) {
+    let i = e.next(r);
+    if (i.done) return i.value;
+    try {
+      r = n(i.value)
+    } catch (s) {
+      r = {
+        errno: k(s)
+      }
+    }
+  }
+}
+async function fi(e, n, r) {
+  let i;
+  for (;;) {
+    let s = e.next(i);
+    if (s.done) return s.value;
+    if (n?.aborted === !0) return Ey;
+    try {
+      i = await r(s.value)
+    } catch (o) {
+      i = {
+        errno: k(o)
+      }
+    }
+  }
+}
+async function gi(e, n, r, i) {
+  let s = Symbol("cut short"),
+    o, a = n === void 0 ? void 0 : new Promise((l) => {
+      o = () => l(s), n.addEventListener("abort", o, {
+        once: !0
+      })
+    }),
+    u;
+  try {
+    for (;;) {
+      let l = e.next(u);
+      if (l.done) return l.value;
+      if (n?.aborted === !0) return i;
+      let c = r(l.value).catch((p) => ({
+          errno: k(p)
+        })),
+        d = await (a === void 0 ? c : Promise.race([c, a]));
+      if (d === s) return i;
+      u = d
+    }
+  } finally {
+    if (o !== void 0) n?.removeEventListener("abort", o)
+  }
+}
+
+function* Oe(e, n) {
+  let r = rn(n);
+  if (te(e) && !we(e, r)) return e;
+  if (jn(e) && !Qa(e) && _e(e, r) || Na(e) && ue(e, r)) return;
+  let i = f.resolve(e),
+    s = f.parse(i).root,
+    o = s,
+    a = i.slice(s.length).split(ae).filter(Boolean),
+    u = 0,
+    l = a.length,
+    c = !1,
+    d = !1,
+    p, m = 64,
+    h = () => a.some((g) => ul(g)),
+    A = () => /[. ]$/.test(a[0]);
+  while (a.length > 0 && u < m) {
+    if (c && ul(a[0])) return Ey;
+    let g = f.join(o, a[0]);
+    if (Na(g) && ue(g, r) || te(g) && !(we(g, r) || Qt(g, r))) return Re(g, a.slice(1), n?.onCollapsedLanding);
+    if (Eb(g)) {
+      if (n?.surfaceNetworkRaw === !0 || n?.unreadableAncestry === "unverified") return Ey;
+      return Re(g, a.slice(1), n?.onCollapsedLanding)
+    }
+    let y = !1;
+    if (y && f.dirname(g) === "/dev/fd" && a.some((T, R) => R > 0 && (T === ".." || T === "."))) {
+      a.shift();
+      while (a[0] === "." && a.length > 1) a.shift();
+      o = g;
+      continue
+    }
+    let S = y ? {
+      errno: "ENOENT"
+    } : yield {
+      kind: "lstat",
+      path: g
+    };
+    if (S === void 0 || typeof S === "string" || "errno" in S) {
+      if (n?.launchAncestry && !d && typeof S === "object" && "errno" in S && (S.errno === "EPERM" || S.errno === "EACCES") && yjt(g, n.launchAncestry)) {
+        c = !0, a.shift(), o = g;
+        continue
+      }
+      if (typeof S === "object" && "errno" in S && (S.errno === "ENOENT" || S.errno === "ENOTDIR")) n?.onOutcome?.({
+        kind: "absent",
+        at: o,
+        remaining: [...a],
+        fromLinkTarget: a.length > l,
+        ...S.errno === "ENOTDIR" && {
+          notAFolder: !0
+        }
+      });
+      return qt(S, n, u > 0, h(), A())
+    }
+    let O = S;
+    if (d = !0, !O.isSymbolicLink()) {
+      a.shift(), o = g;
+      continue
+    }
+    u++;
+    let b = g + "\x00" + a.join("\x00");
+    if ((p ??= new Set).has(b)) return;
+    p.add(b);
+    let F = yield {
+      kind: "readlink",
+      path: g
+    };
+    if (typeof F !== "string") return qt(F, n, u > 0, h(), A());
+    let C = F;
+    if (n?.literalLinkText === "opaque" && aJn(C)) return NZe;
+    if (!f.isAbsolute(C)) {
+      let T = C.split(ae).filter(Boolean);
+      if (n?.surfaceNetworkRaw === !0) {
+        let R = en((o.endsWith(f.sep) ? o : o + f.sep) + [...T, ...a.slice(1)].join(f.sep), r, n?.onCollapsedLanding);
+        if (R !== void 0) return R
+      }
+      a.shift(), n?.onHop?.({
+        composed: f.resolve(o, C, ...a),
+        leaf: a.length === 0,
+        text: C
+      }), l = Math.min(l, a.length), a = [...T, ...a];
+      continue
+    }
+    let w = C;
+    if (n?.surfaceNetworkRaw === !0 && a.length > 1 && XS(w)) {
+      let T = en([w, ...a.slice(1)].join(f.sep), r, n?.onCollapsedLanding);
+      if (T !== void 0) return T
+    }
+    if (jn(w) && !Qa(w) && _e(w, r) || Na(w) && ue(w, r) || te(w) && !(we(w, r) || a.length > 1 && Qt(w, r))) return a.shift(), Re(w, a, n?.onCollapsedLanding);
+    if (n?.surfaceNetworkRaw === !0 && ul(w) && (jn(w) || pl(w) || h0(w) || XS(w))) return a.shift(), a.length === 0 ? w : w + f.sep + a.join(f.sep);
+    a.shift();
+    let D = f.parse(w).root || f.sep,
+      v = f.parse(g).root,
+      H = /^[\\/]$/.test(D) && v !== "" && !/^[\\/]$/.test(v);
+    if (H && (n?.surfaceNetworkRaw === !0 || n?.unreadableAncestry === "unverified")) return Ey;
+    n?.onHop?.({
+      composed: a.length === 0 ? w : f.resolve(w, ...a),
+      leaf: a.length === 0,
+      text: C
+    }), o = H ? v : D, d = !1, l = Math.min(l, a.length), a = [...w.slice(D.length).split(ae).filter(Boolean), ...a]
+  }
+  if (a.length > 0 && n?.literalLinkText === "opaque") return NZe;
+  if (a.length > 0) return Ey;
+  if (u > 0 && XS(o)) return o;
+  if (te(o) && !we(o, r)) return o;
+  if (a.length === 0) n?.onOutcome?.({
+    kind: "resolved",
+    path: o
+  });
+  return
+}
+
+function _o(e, n) {
+  if (jn(n) && !Qa(n) || Na(n) || kI(n)) return {
+    resolvedPath: n,
+    isSymlink: !1,
+    isCanonical: !1
+  };
+  let r = jf(e, n);
+  if (r === Ey) return {
+    resolvedPath: n,
+    isSymlink: !1,
+    isCanonical: !1
+  };
+  if (r !== void 0) return {
+    resolvedPath: r,
+    isSymlink: !0,
+    isCanonical: !1
+  };
+  try {
+    let i = Kne(e, n);
+    return {
+      resolvedPath: i,
+      isSymlink: i !== n,
+      isCanonical: !0
+    }
+  } catch (i) {
+    return {
+      resolvedPath: n,
+      isSymlink: !1,
+      isCanonical: !1
+    }
+  }
+}
+
+function NTe(e) {
+  let n = ESt();
+  if (n === null) return null;
+  try {
+    let r = f.resolve(n),
+      i = f.resolve(e.cwd()),
+      s = f.parse(r).root;
+    if (s !== f.parse(i).root) return null;
+    let o = r.slice(s.length).split(ae).filter(Boolean),
+      a = i.slice(s.length).split(ae).filter(Boolean),
+      u = 0;
+    while (u < o.length && u < a.length && o[u] === a[u]) u++;
+    return u > 0 ? f.join(s, ...o.slice(0, u)) : null
+  } catch {
+    return null
+  }
+}
+
+function Kne(e, n) {
+  try {
+    return e.realpathSync(n)
+  } catch (r) {
+    let i = k(r);
+    if (i !== "EPERM" && i !== "EACCES") throw r;
+    let s, o = NTe(e);
+    if (jf(e, n, {
+        unreadableAncestry: "unverified",
+        surfaceNetworkRaw: !0,
+        launchAncestry: o,
+        onOutcome: (u) => {
+          s = u
+        }
+      }) !== void 0 || s === void 0) throw r;
+    if (s.kind === "absent") throw Object.assign(Error("ENOENT: no such file or directory"), {
+      code: "ENOENT",
+      syscall: "realpath",
+      path: n
+    });
+    return $n(s.path)
+  }
+}
+var Kbt = "ERR_SYMLINK_TO_NETWORK_PATH";
+
+function JB(e, n, r) {
+  let {
+    asWritten: i,
+    opts: s
+  } = un(e, n, r), o, a;
+  return cn(jf(e, i, {
+    ...s,
+    onOutcome: (u) => {
+      o = on(u), a = an(u)
+    }
+  }), n, i), {
+    ...ln(i),
+    linksResolvedPath: o,
+    absentAt: a
+  }
+}
+async function KW(e, n, r) {
+  let {
+    asWritten: i,
+    opts: s,
+    ownHost: o
+  } = un(e, n, r), a, u, l, c, d = !o, p = !1, m, h = [], A = {
+    ...s,
+    onOutcome: (g) => {
+      p = !0, a = on(g), u = an(g);
+      let y = m,
+        S = g.kind === "resolved" && y?.path === g.path;
+      d = !S, c = S ? y.stats : void 0, l = S && !gu(y.stats.ino) ? {
+        dev: y.stats.dev,
+        ino: y.stats.ino,
+        ctimeNs: y.stats.ctimeNs
+      } : void 0
+    }
+  };
+  if (cn(await S$(e, i, A, void 0, r?.fileIdentity === !0 ? (g, y) => {
+      if (m = y === void 0 ? void 0 : {
+          path: g,
+          stats: y
+        }, y?.isSymbolicLink() === !0) h.push(y)
+    } : void 0), n, i), !p && m?.stats.isSymbolicLink() === !0) d = !0;
+  return {
+    ...ln(i),
+    linksResolvedPath: a,
+    absentAt: u,
+    ...l !== void 0 && {
+      identity: l
+    },
+    ...c !== void 0 && {
+      endStats: c
+    },
+    ...r?.fileIdentity === !0 && {
+      linksFollowed: h
+    },
+    ...r?.fileIdentity === !0 && d && {
+      noFileSeen: !0
+    }
+  }
+}
+
+function on(e) {
+  return e.kind === "resolved" ? $n(e.path) : void 0
+}
+
+function an(e) {
+  return e.kind === "absent" ? {
+    at: e.at,
+    remaining: e.remaining,
+    fromLinkTarget: e.fromLinkTarget,
+    ...e.notAFolder && {
+      notAFolder: !0
+    }
+  } : void 0
+}
+
+function un(e, n, r) {
+  let i = uT(n);
+  if (dC(i) || r_(i)) throw Object.assign(Error("Refusing to read a file whose path could not be vetted (a device-namespace spelling; use the plain drive or share path)"), {
+    code: Kbt,
+    path: n,
+    reason: "unexamined"
+  });
+  let s = f.isAbsolute(i) ? f.resolve(i) : f.resolve(process.cwd(), i),
+    o = uT(s);
+  if (dC(o) || r_(o)) throw Object.assign(Error("Refusing to read a file whose path could not be vetted (a device-namespace spelling; use the plain drive or share path)"), {
+    code: Kbt,
+    path: n,
+    reason: "unexamined"
+  });
+  let a = te(o) || Na(o) || jn(o) && !Qa(o);
+  return {
+    asWritten: o,
+    ownHost: a,
+    opts: {
+      ...a && {
+        anchors: [o]
+      },
+      surfaceNetworkRaw: !0,
+      ...(!a || r?.failClosed) && {
+        unreadableAncestry: "unverified",
+        launchAncestry: NTe(e)
+      }
+    }
+  }
+}
+
+function ln(e) {
+  return {
+    resolvedPath: e,
+    isSymlink: !1,
+    isCanonical: !1
+  }
+}
+
+function cn(e, n, r) {
+  if (e === void 0) return;
+  let i = (o) => Object.assign(Error("Refusing to read a file whose path could not be vetted (a component that could not be examined, or a symbolic link chain too long to follow)"), {
+    code: Kbt,
+    path: n,
+    reason: o
+  });
+  if (e === Ey) throw i("unexamined");
+  if (te(r) && e === r) return;
+  if (!(jn(e) || pl(e) || te(e) || XS(e))) throw i("unexamined");
+  throw Object.assign(Error("Refusing to read a file through a symbolic link that leads onto a network share or automount path; replace the link with a regular file to use it"), {
+    code: Kbt,
+    path: n,
+    reason: "network"
+  })
+}
+
+function d1r(e) {
+  return k(e) === Kbt
+}
+
+function LWo(e) {
+  if (!d1r(e)) return;
+  let n = e.reason;
+  return n === "network" || n === "unexamined" ? n : void 0
+}
+
+function Cde(e, n, r) {
+  let {
+    resolvedPath: i
+  } = _o(e, n);
+  if (r.has(i)) return !0;
+  return r.add(i), !1
+}
+var qe = /(^|[\\/])\.\.([\\/]|$)/;
+
+function pi(e, n = "win32") {
+  let r = e.replace(n === "win32" ? /[\\/]\.(?=[\\/]|$)/g : /\/\.(?=\/|$)/g, "");
+  if (r === "") return e[0];
+  if (n === "win32" && /^[A-Za-z]:$/.test(r)) return r + e[2];
+  return r
+}
+
+function w$(e, n, r) {
+  let i = rn(r);
+  if (jn(n) && !Qa(n) || Na(n) || kI(n)) {
+    if (i !== void 0 && (Na(n) && !ue(n, i) || jn(n) && !Qa(n) && !_e(n, i))) {
+      let c = jf(e, n, {
+        anchors: i,
+        surfaceNetworkRaw: r?.surfaceNetworkRaw
+      });
+      if (c === Ey && r?.surfaceNetworkRaw !== !0) {
+        if (r?.surfaceDotDotTargets === !0) throw lJn(n);
+        return n
+      }
+      return c
+    }
+    return n
+  }
+  let s = jf(e, n, r?.surfaceNetworkRaw === !0 ? {
+    surfaceNetworkRaw: !0,
+    anchors: i
+  } : void 0);
+  if (s === Ey && r?.surfaceNetworkRaw !== !0) {
+    if (r?.surfaceDotDotTargets === !0) throw lJn(n);
+    return
+  }
+  if (s !== void 0) return s;
+  let o = n,
+    a = [],
+    u = r?.surfaceDotDotTargets === !0,
+    l = (c) => a.length === 0 ? c : u && qe.test(c) ? [c, ...a].join(f.sep) : f.join(c, ...a);
+  while (o !== f.dirname(o)) {
+    let c, d;
+    try {
+      c = e.readlinkSync(o)
+    } catch (p) {
+      d = k(p)
+    }
+    if (c !== void 0) {
+      if (u && qe.test(c)) return l(f.isAbsolute(c) ? c : f.dirname(o) + f.sep + c);
+      let p = f.isAbsolute(c) ? c : f.resolve(f.dirname(o), c);
+      if (jn(p) && !Qa(p) || Na(p) || kI(p) || Eb(p) || r?.surfaceNetworkRaw === !0 && ul(p)) return r?.surfaceNetworkRaw === !0 && a.length > 0 ? p + f.sep + a.join(f.sep) : l(p);
+      try {
+        let m = Kne(e, o);
+        return l(m)
+      } catch {
+        let m = o,
+          h = 0,
+          A = 64;
+        while (h < A) {
+          let g;
+          try {
+            g = e.readlinkSync(m)
+          } catch {
+            break
+          }
+          if (u && qe.test(g)) {
+            m = f.isAbsolute(g) ? g : f.dirname(m) + f.sep + g;
+            break
+          }
+          let y = f.isAbsolute(g) ? u ? pi(g) : g : f.resolve(f.dirname(m), g);
+          if (jn(y) && !Qa(y) && _e(y, i) || Na(y) && ue(y, i) || kI(y) || Eb(y) || r?.surfaceNetworkRaw === !0 && ul(y)) {
+            m = y;
+            break
+          }
+          let S;
+          try {
+            S = e.lstatSync(y)
+          } catch {
+            m = y;
+            break
+          }
+          if (!S.isSymbolicLink()) {
+            m = y;
+            break
+          }
+          m = y, h++
+        }
+        if (h >= A && r?.surfaceNetworkRaw === !0) return Ey;
+        return r?.surfaceNetworkRaw === !0 && a.length > 0 && (jn(m) && !Qa(m) || Na(m) || kI(m) || Eb(m) || ul(m)) ? m + f.sep + a.join(f.sep) : l(m)
+      }
+    }
+    if (d === "ENOENT") {
+      a.unshift(f.basename(o)), o = f.dirname(o);
+      continue
+    }
+    try {
+      let p = Kne(e, o);
+      if (p !== o) return l(p)
+    } catch (p) {
+      if (u) throw p
+    }
+    return
+  }
+  return
+}
+
+function tn(e) {
+  return jn(e) && !Qa(e) || pl(e) || dC(e)
+}
+
+function c1r(e) {
+  return dn(e, !1) ?? e
+}
+
+function NWo(e) {
+  return dn(e, !0)
+}
+
+function dn(e, n) {
+  if (tn(e)) return e;
+  let r = e,
+    i = "";
+  for (;;) {
+    if (!ul(r)) {
+      let o = $Q(r);
+      if (o !== null) {
+        let a = i === "" ? o : o.endsWith(f.sep) ? o + i : o + f.sep + i;
+        if (tn(a)) return n ? a : e;
+        return a
+      }
+      if (n) try {
+        return E.lstatSync(r), null
+      } catch (a) {
+        if (!G(a)) return null
+      }
+    }
+    let s = f.dirname(r);
+    if (s === r) return e;
+    i = i === "" ? f.basename(r) : f.basename(r) + f.sep + i, r = s
+  }
+}
+
+function ci(e) {
+  return fn(e, "permission")
+}
+
+function Ybt(e, n) {
+  let r = se();
+  return gi(gn(e, "permission"), n, async (i) => {
+    switch (i.kind) {
+      case "lstat":
+        return r.lstat(i.path);
+      case "opendirNofollow":
+        return await r.openDirNoFollow(i.path), "ok";
+      case "readlink":
+        return r.readlink(i.path);
+      case "realpath":
+        return r === W_ ? $n(await Mr(i.path)) : r.realpath(i.path)
+    }
+  }, {
+    unresolved: !0,
+    requested: e,
+    spellings: [e],
+    stoppedAt: e,
+    leafIsSymlink: !1,
+    reason: "cut-short"
+  })
+}
+
+function W5(e) {
+  let n = fn(e, "screen");
+  return {
+    paths: n.spellings,
+    vetted: !n.unresolved
+  }
+}
+
+function fn(e, n) {
+  let r = se();
+  return sn(gn(e, n), (i) => {
+    switch (i.kind) {
+      case "lstat":
+        return r.lstatSync(i.path);
+      case "opendirNofollow":
+        return r.openDirNoFollowSync(i.path), "ok";
+      case "readlink":
+        return r.readlinkSync(i.path);
+      case "realpath":
+        return r.realpathSync(i.path)
+    }
+  })
+}
+
+function* gn(e, n) {
+  let r = e;
+  if (r === "~") r = Xt().normalize("NFC");
+  else if (r.startsWith("~/")) r = f.join(Xt().normalize("NFC"), r.slice(2));
+  let i = new Set([r]),
+    s = (R, L = !1) => ({
+      unresolved: !1,
+      requested: r,
+      spellings: Array.from(i),
+      landing: R,
+      leafIsSymlink: L
+    });
+  if (jn(r) && !Qa(r) || Na(r) || kI(r)) return s(r);
+  let o = se(),
+    a = NTe(o),
+    u, l, c = !1,
+    d = !1,
+    p = !1,
+    m = !1,
+    h = [],
+    A = new Set,
+    g = (R) => {
+      let L = f.resolve(R);
+      if (!A.has(L)) A.add(L), h.push(R)
+    },
+    y = r,
+    S, O = function*(R) {
+      let L;
+      for (;;) {
+        let B = R.next(L);
+        if (B.done) return B.value;
+        let Z = B.value;
+        if (y = Z.path, Z.kind === "readlink") d = !0;
+        else S = void 0;
+        if (L = yield Z, typeof L === "object" && "errno" in L)
+          if (Z.kind === "readlink") p = !0;
+          else S = L.errno, m ||= Z.kind === "opendirNofollow" && L.errno === "ELOOP"
+      }
+    },
+    b = yield* O(Oe(r, {
+      unreadableAncestry: "unverified",
+      launchAncestry: a,
+      ...{
+        literalLinkText: "opaque"
+      },
+      onCollapsedLanding: (R) => {
+        u = R
+      },
+      onOutcome: (R) => {
+        l = R
+      },
+      onHop: ({
+        composed: R,
+        leaf: L,
+        text: B
+      }) => {
+        if (L) i.add(R), c = !0;
+        if (n === "screen" && Qe(B)) g(R)
+      }
+    })), F = n === "permission" && !d && (S === "ENAMETOOLONG" || !1), C = () => {
+      let R = $n(r);
+      return i.add(R), s(R)
+    }, w = () => F ? C() : {
+      unresolved: !0,
+      requested: r,
+      spellings: Array.from(i),
+      stoppedAt: y,
+      leafIsSymlink: c,
+      reason: d || m ? "past-a-link" : "unexamined"
+    }, ee = 8, D = function*() {
+      for (let R = 0; R < h.length; R++) {
+        if (R >= ee) return !1;
+        let L = h[R];
+        if (jn(L) && !Qa(L) || Na(L) || kI(L)) {
+          i.add(L);
+          continue
+        }
+        let B = yield* O(Oe(L, {
+          unreadableAncestry: "unverified",
+          launchAncestry: a,
+          onHop: ({
+            composed: Z,
+            text: ie
+          }) => {
+            if (Qe(ie)) g(Z)
+          }
+        }));
+        if (B === Ey || p) return !1;
+        if (B !== void 0) i.add(B)
+      }
+      return !0
+    };
+  if (b === Ey || b === NZe) return w();
+  if (b !== void 0) {
+    if (n === "screen" && !(yield* D())) return w();
+    if (u !== void 0) i.add(u);
+    return i.delete(b), i.add(b), s(b, c)
+  }
+  if (l === void 0) {
+    if (n === "screen" && !p) return (yield* D()) ? C() : w();
+    return w()
+  }
+  if (l.kind === "absent" && (n === "screen" ? l.remaining.some((R) => ul(R)) : d && l.remaining.some((R) => C$(R)))) return w();
+  let v = l.kind === "absent" ? l.at : l.path,
+    H = l.kind === "absent" ? l.remaining.join(f.sep) : "",
+    j = $n(H === "" ? v : f.join(v, H));
+  if (d || v !== f.parse(v).root) i.add(j);
+  let T = hi(yield {
+    kind: "realpath",
+    path: v
+  }, v, H);
+  if (T !== void 0 && T !== j) i.delete(T), i.add(T);
+  if (n === "screen" && !(yield* D())) return w();
+  return s(j, c)
+}
+
+function hi(e, n, r) {
+  if (typeof e !== "string" || e === n) return;
+  return r === "" ? e : f.join(e, r)
+}
+
+function Xbt(e) {
+  return {
+    unresolved: !1,
+    requested: e,
+    spellings: [e],
+    landing: e,
+    leafIsSymlink: !1
+  }
+}
+
+function xo(e) {
+  return u1r(ci(e))
+}
+
+function u1r(e) {
+  if (!e.unresolved) return e.spellings;
+  let {
+    resolvedPath: n,
+    isCanonical: r,
+    isSymlink: i
+  } = _o(se(), e.requested);
+  return (r || i) && !e.spellings.includes(n) ? [...e.spellings, n] : e.spellings
+}
+var W_ = {
+  cwd() {
+    return process.cwd()
+  },
+  existsSync(e) {
+    using n = Wh`fs.existsSync(${e})`;
+    return E.existsSync(e)
+  },
+  async stat(e) {
+    return Yt(e)
+  },
+  async lstat(e) {
+    return Xe(e)
+  },
+  async openDirNoFollow(e) {
+    throw Error("openDirNoFollow is a POSIX-only examination probe")
+  },
+  openDirNoFollowSync(e) {
+    throw Error("openDirNoFollowSync is a POSIX-only examination probe")
+  },
+  async lstatBigint(e) {
+    return Xe(e, {
+      bigint: !0
+    })
+  },
+  async statBigint(e) {
+    return Yt(e, {
+      bigint: !0
+    })
+  },
+  async readdir(e) {
+    return Xr(e, {
+      withFileTypes: !0
+    })
+  },
+  async unlink(e) {
+    return si(e)
+  },
+  async rmdir(e) {
+    return ni(e)
+  },
+  async rm(e, n) {
+    return ri(e, n)
+  },
+  async mkdir(e, n) {
+    try {
+      await Yr(e, {
+        recursive: !0,
+        ...n
+      })
+    } catch (r) {
+      if (k(r) !== "EEXIST") throw r
+    }
+  },
+  async readFile(e, n) {
+    return Zt(e, {
+      encoding: n.encoding
+    })
+  },
+  async rename(e, n) {
+    return ei(e, n)
+  },
+  async realpath(e) {
+    return $n(await Qr(e))
+  },
+  async readlink(e) {
+    return qr(e)
+  },
+  async copyFile(e, n) {
+    return Jr(e, n)
+  },
+  async appendFile(e, n, r) {
+    if (r?.mode !== void 0) try {
+      let i = await Y(e, "ax", r.mode);
+      try {
+        await i.appendFile(n)
+      } finally {
+        await i.close()
+      }
+      return
+    } catch (i) {
+      if (k(i) !== "EEXIST") throw i
+    }
+    return Vr(e, n)
+  },
+  async symlink(e, n, r) {
+    return ii(e, n, r)
+  },
+  async link(e, n) {
+    return Zr(e, n)
+  },
+  async chmod(e, n) {
+    return jr(e, n)
+  },
+  statSync(e) {
+    using n = Wh`fs.statSync(${e})`;
+    return E.statSync(e)
+  },
+  lstatSync(e) {
+    using n = Wh`fs.lstatSync(${e})`;
+    return E.lstatSync(e)
+  },
+  readFileSync(e, n) {
+    using r = Wh`fs.readFileSync(${e})`;
+    return E.readFileSync(e, {
+      encoding: n.encoding
+    })
+  },
+  readSync(e, n) {
+    using r = Wh`fs.readSync(${e}, ${n.length} bytes)`;
+    let i = void 0;
+    try {
+      i = E.openSync(e, "r");
+      let s = [],
+        o = 0;
+      while (o < n.length) {
+        let u = Buffer.allocUnsafe(Math.min(65536, n.length - o)),
+          l = E.readSync(i, u, 0, u.length, o);
+        if (l === 0) break;
+        s.push(u.subarray(0, l)), o += l
+      }
+      return {
+        buffer: Buffer.concat(s, o),
+        bytesRead: o
+      }
+    } finally {
+      if (i !== void 0) E.closeSync(i)
+    }
+  },
+  appendFileSync(e, n, r) {
+    using i = Wh`fs.appendFileSync(${e}, ${n.length} chars)`;
+    if (r?.mode !== void 0) try {
+      let s = E.openSync(e, "ax", r.mode);
+      try {
+        E.appendFileSync(s, n)
+      } finally {
+        E.closeSync(s)
+      }
+      return
+    } catch (s) {
+      if (k(s) !== "EEXIST") throw s
+    }
+    E.appendFileSync(e, n)
+  },
+  unlinkSync(e) {
+    using n = Wh`fs.unlinkSync(${e})`;
+    E.unlinkSync(e)
+  },
+  renameSync(e, n) {
+    using r = Wh`fs.renameSync(${e} ${oi} ${n})`;
+    E.renameSync(e, n)
+  },
+  readlinkSync(e) {
+    using n = Wh`fs.readlinkSync(${e})`;
+    return E.readlinkSync(e)
+  },
+  realpathSync(e) {
+    using n = Wh`fs.realpathSync(${e})`;
+    return $n(E.realpathSync(e))
+  },
+  mkdirSync(e, n) {
+    using r = Wh`fs.mkdirSync(${e})`;
+    let i = {
+      recursive: !0
+    };
+    if (n?.mode !== void 0) i.mode = n.mode;
+    try {
+      E.mkdirSync(e, i)
+    } catch (s) {
+      if (k(s) !== "EEXIST") throw s
+    }
+  },
+  readdirSync(e) {
+    using n = Wh`fs.readdirSync(${e})`;
+    return E.readdirSync(e, {
+      withFileTypes: !0
+    })
+  },
+  rmSync(e, n) {
+    using r = Wh`fs.rmSync(${e})`;
+    E.rmSync(e, n)
+  },
+  createWriteStream(e) {
+    return E.createWriteStream(e)
+  },
+  async readFileBytes(e, n) {
+    if (n === void 0) return Zt(e);
+    let r = await Y(e, Vhe());
+    try {
+      if (!(await r.stat()).isFile()) return Buffer.alloc(0);
+      return await J2(r, n, "file")
+    } finally {
+      await r.close()
+    }
+  },
+  async readFileFdGated(e, n) {
+    try {
+      let r = ai();
+      if (r === 0) {
+        if (!(await Xe(e)).isFile()) return null
+      }
+      let i = await Y(e, E.constants.O_RDONLY | r);
+      try {
+        let s = await i.stat();
+        if (!s.isFile() || s.size > n) return null;
+        let o = Number(s.size),
+          a = Buffer.allocUnsafe(o),
+          u = 0;
+        while (u < o) {
+          let {
+            bytesRead: l
+          } = await i.read(a, u, o - u, u);
+          if (l === 0) break;
+          u += l
+        }
+        return {
+          content: (u < o ? a.subarray(0, u) : a).toString("utf8"),
+          stats: s
+        }
+      } finally {
+        await i.close()
+      }
+    } catch {
+      return null
+    }
+  }
+};
+
+function se() {
+  return W_
+}
+
+function vg(e) {
+  process.chdir(e);
+  try {
+    process.cwd()
+  } catch {}
+}
+async function AGe(e, n, r) {
+  await using i = typeof e === "string" ? await Y(e, "r") : null;
+  let s = typeof e === "string" ? i : e,
+    o = (await s.stat()).size;
+  if (o <= n) return null;
+  let a = Math.min(o - n, r),
+    u = Buffer.allocUnsafe(a),
+    l = 0;
+  while (l < a) {
+    let {
+      bytesRead: c
+    } = await s.read(u, l, a - l, n + l);
+    if (c === 0) break;
+    l += c
+  }
+  return {
+    content: u.toString("utf8", 0, l),
+    bytesRead: l,
+    bytesTotal: o
+  }
+}
+async function J2(e, n, r) {
+  let i = r !== void 0 ? r === "file" : (await e.stat()).isFile(),
+    s = [],
+    o = 0;
+  while (o < n) {
+    let a = Buffer.allocUnsafe(Math.min(65536, n - o)),
+      {
+        bytesRead: u
+      } = await e.read(a, 0, a.length, i ? o : null);
+    if (u === 0) break;
+    s.push(a.subarray(0, u)), o += u
+  }
+  return Buffer.concat(s, o)
+}
+async function mR(e, n) {
+  await using r = typeof e === "string" ? await Y(e, "r") : null;
+  let i = typeof e === "string" ? r : e,
+    s = (await i.stat()).size;
+  if (s === 0) return {
+    content: "",
+    bytesRead: 0,
+    bytesTotal: 0
+  };
+  let o = Math.max(0, s - n),
+    a = s - o,
+    u = Buffer.allocUnsafe(a),
+    l = 0;
+  while (l < a) {
+    let {
+      bytesRead: c
+    } = await i.read(u, l, a - l, o + l);
+    if (c === 0) break;
+    l += c
+  }
+  return {
+    content: u.toString("utf8", 0, l),
+    bytesRead: l,
+    bytesTotal: s
+  }
+}
+async function* Bmn(e, n = 65536) {
+  let r = await Y(e, "r"),
+    i = Buffer.alloc(n),
+    s = 0,
+    o = [],
+    a = 0;
+  try {
+    while (!0) {
+      let {
+        bytesRead: u
+      } = await r.read(i, 0, n, s);
+      if (u === 0) break;
+      s += u;
+      let l = i.subarray(0, u),
+        c = 0;
+      while (c < u) {
+        let d = l.indexOf(10, c);
+        if (d === -1) {
+          o.push(Buffer.from(l.subarray(c))), a += u - c;
+          break
+        }
+        if (a === 0) yield l.subarray(c, d);
+        else yield Buffer.concat([...o, l.subarray(c, d)], a + (d - c)), o = [], a = 0;
+        c = d + 1
+      }
+    }
+  } finally {
+    await r.close()
+  }
+  if (a > 0) yield o.length === 1 ? o[0] : Buffer.concat(o, a)
+}
+async function* FZe(e) {
+  let r = await Y(e, "r");
+  try {
+    let s = (await r.stat()).size,
+      o = Buffer.alloc(0),
+      a = Buffer.alloc(4096);
+    while (s > 0) {
+      let u = Math.min(4096, s);
+      s -= u, await r.read(a, 0, u, s);
+      let l = Buffer.concat([a.subarray(0, u), o]),
+        c = l.indexOf(10);
+      if (c === -1) {
+        o = l;
+        continue
+      }
+      o = Buffer.from(l.subarray(0, c));
+      let d = l.toString("utf8", c + 1).split(`
+`);
+      for (let p = d.length - 1; p >= 0; p--) {
+        let m = d[p];
+        if (m) yield m
+      }
+    }
+    if (o.length > 0) yield o.toString("utf8")
+  } finally {
+    await r.close()
+  }
+}
+
+function hn(e) {
+  let n = new Int32Array(e.length);
+  for (let r = 0; r < e.length; r++) n[r] = r;
+  return {
+    text: e,
+    origin: n
+  }
+}
+
+function mn(e, n, r) {
+  let i = [];
+  for (let s of e.text.matchAll(n)) {
+    let {
+      keep: o,
+      insert: a,
+      keepEnd: u = 0
+    } = r(s), l = s.index ?? 0, c = s[0].length, d = Math.min(Math.max(o | 0, 0), c), p = Math.min(Math.max(u | 0, 0), c - d);
+    i.push([l + d, l + c - p, a])
+  }
+  return ve(e, i)
+}
+
+function ve(e, n) {
+  if (n.length === 0) return e;
+  let {
+    text: r,
+    origin: i
+  } = e, s = r.length;
+  for (let [c, d, p] of n) s += p.length - (d - c);
+  let o = new Int32Array(s),
+    a = [],
+    u = 0,
+    l = 0;
+  for (let [c, d, p] of n) a.push(r.slice(u, c)), o.set(i.subarray(u, c), l), l += c - u, a.push(p), o.fill(-1, l, l + p.length), l += p.length, u = d;
+  return a.push(r.slice(u)), o.set(i.subarray(u), l), {
+    text: a.join(""),
+    origin: o
+  }
+}
+
+function et(e, n, r) {
+  return {
+    text: e.text.slice(n, r),
+    origin: e.origin.slice(n, r)
+  }
+}
+
+function Rde(e, {
+  asRewritten: n = !1
+} = {}) {
+  let r = e.trimStart(),
+    i = /^([A-Za-z][A-Za-z0-9+.-]*):\/\//.exec(r);
+  if (i) {
+    let s = i[1]?.toLowerCase();
+    if (s === "file") return null;
+    if (s === "http" || s === "https") {
+      let o = TDe(r);
+      return o?.hostname ? {
+        host: o.hostname,
+        path: o.pathname
+      } : null
+    }
+    return yn(_jt(r.slice(i[0].length)), "/")
+  }
+  return yn(n ? _jt(r) : r, ":")
+}
+
+function En(e, n) {
+  let r = e.indexOf("@["),
+    i = r === -1 ? 0 : r + 1,
+    s = e[i] === "[" ? i : -1,
+    o = s === -1 ? -1 : e.indexOf("]", s + 1),
+    a = e.indexOf(n, o === -1 ? 0 : o + 1);
+  return {
+    open: s,
+    close: o,
+    cut: a
+  }
+}
+
+function yn(e, n) {
+  let {
+    open: r,
+    close: i,
+    cut: s
+  } = En(e, n), o = r === -1 ? 0 : r, a = e.indexOf("/");
+  if (n === ":" && (s === -1 || a !== -1 && a < e.indexOf(":"))) return null;
+  let u = s === -1 ? "" : e.slice(n === ":" ? s + 1 : s);
+  if (i !== -1) {
+    let p = e.slice(i + 1, s === -1 ? e.length : s),
+      m = e.slice(0, o) + e.slice(o + 1, i),
+      h = bn(p) !== p ? m : bn(m),
+      A = h.slice(h.lastIndexOf("@") + 1),
+      g = TDe(`ssh://[${A}]/`)?.hostname;
+    return A ? {
+      host: g || A,
+      path: u
+    } : null
+  }
+  let l = s === -1 ? e : e.slice(0, s),
+    c = l.slice(l.lastIndexOf("@") + 1);
+  if (c.startsWith("[")) return null;
+  let d = n === "/" ? c.replace(/:\d*$/, "") : c;
+  return d ? {
+    host: d,
+    path: u
+  } : null
+}
+
+function Sn(e) {
+  let {
+    text: n,
+    from: r
+  } = mi(e), {
+    close: i,
+    cut: s
+  } = En(n, "/"), o = s === -1 ? n.length : s, a = [], u = (l, c) => {
+    let d = n.lastIndexOf("@", c - 1);
+    if (d >= l) a.push([r(l), r(d)])
+  };
+  if (i === -1) u(0, o);
+  else u(0, i), u(i + 1, o);
+  return a
+}
+
+function _jt(e) {
+  return e.replace(/(?:%(?!00)[0-9A-Fa-f]{2})+/g, (n) => {
+    try {
+      return decodeURIComponent(n)
+    } catch {
+      return he(n)
+    }
+  })
+}
+
+function mi(e) {
+  if (!e.includes("%")) return {
+    text: e,
+    from: (s) => s
+  };
+  let n = [],
+    r = "",
+    i = 0;
+  for (let s of e.matchAll(/(?:%(?!00)[0-9A-Fa-f]{2})+/g)) {
+    for (let c = i; c < s.index; c++) n.push(c);
+    r += e.slice(i, s.index);
+    let o, a;
+    try {
+      o = decodeURIComponent(s[0]), a = Array.from(o, (c) => {
+        let d = c.codePointAt(0);
+        return d < 128 ? 1 : d < 2048 ? 2 : d < 65536 ? 3 : 4
+      })
+    } catch {
+      o = he(s[0]), a = Array.from(o, () => 1)
+    }
+    let u = s.index,
+      l = 0;
+    for (let c of a) {
+      let d = o.codePointAt(l) > 65535 ? 2 : 1;
+      for (let p = 0; p < d; p++) n.push(u);
+      l += d, u += 3 * c
+    }
+    r += o, i = s.index + s[0].length
+  }
+  for (let s = i; s <= e.length; s++) n.push(s);
+  return {
+    text: r + e.slice(i),
+    from: (s) => n[s]
+  }
+}
+
+function bn(e) {
+  let n = e.indexOf(":"),
+    r = e.slice(n + 1);
+  if (n === -1 || !/^[ \t\n\v\f\r]*[+-]?\d+$/.test(r)) return e;
+  let i = Number.parseInt(r.trim(), 10);
+  return i >= 0 && i < 65536 ? e.slice(0, n) : e
+}
+var yi = /\s/g,
+  bi = /[\n\r\u2028\u2029]/g,
+  Ei = /(?:@|%40)(?:\[|%5B)/gi,
+  Si = /^(?:\[|%5B)/i,
+  ki = /\]|%5D/gi,
+  BWo = /(?:^|[^A-Za-z0-9+.-])(?:https?|wss?|ftps?)$/i,
+  wn = /(?:^|[^A-Za-z0-9+.-])(?:ssh|git|git\+ssh|ssh\+git)$/i,
+  xi = /[,;|&]/g,
+  Ai = /(?:^|[^A-Za-z0-9+.-])[A-Za-z][A-Za-z0-9+.-]{0,31}$/,
+  wi = /["'`|,;&<>()[\]\\@/?#]|%40|%5B/i,
+  Ri = /["'`]/,
+  _i = /[;|&\n]/g,
+  Oi = 64,
+  vi = 2048,
+  Li = /[\s"'`]/g;
+
+function tt(e) {
+  let n = [],
+    r = I(e, Li),
+    i = 0;
+  for (let s = e.indexOf("://"); s !== -1;) {
+    let o = s + 3;
+    if (s >= i && wn.test(e.slice(Math.max(0, s - 8), s))) {
+      i = Math.min(r(o), o + vi);
+      for (let [a, u] of Sn(e.slice(o, i))) n.push([o + a, o + u])
+    }
+    s = e.indexOf("://", o)
+  }
+  return n
+}
+
+function G6s(e) {
+  return Rn(e).spans
+}
+
+function Rn(e) {
+  let n = [],
+    r = [],
+    i = I(e, yi),
+    s = I(e, /\//g),
+    o = rt(e, Ei),
+    a = I(e, ki),
+    u = I(e, /\//g),
+    l = I(e, _i),
+    c = I(e, /[/?#]/g),
+    d = I(e, xi),
+    p = I(e, /@/g),
+    m = I(e, /%40/gi),
+    h = I(e, /\[REDACTED|\*\*\*:\*\*\*/g),
+    A = I(e, /[:%]/g),
+    g = I(e, /["'`,;|&<>{}()]/g),
+    y = An(e, !1),
+    S = An(e, !0);
+  for (let O = e.indexOf("://"); O !== -1;) {
+    let b = O + 3,
+      F, C = e.indexOf("://", b),
+      w = i(b),
+      ee = p(b),
+      D;
+    if (BWo.test(e.slice(Math.max(0, O - 8), O))) {
+      let v = Math.min(c(b), w),
+        H = Math.min(d(b), v);
+      if (D = ee < v ? Math.max(y(b, v), S(ee, v)) : Math.max(y(b, Math.min(s(b), w)), S(b, H)), D <= b) {
+        let j = Math.min(v, l(b));
+        r.push({
+          start: b,
+          fieldEnd: Math.min(H, j),
+          lastEncodedAt: S(b, j)
+        })
+      }
+    } else {
+      let v = Math.min(s(b), w),
+        H = Math.min(w, C === -1 ? e.length : C),
+        j = wn.test(e.slice(Math.max(0, O - 8), O)),
+        T = j ? o(b) : null,
+        R = j ? Si.exec(e.slice(b, b + 3)) : null,
+        L = [
+          [R !== null ? b + R[0].length : -1, H],
+          [T !== null && T.index < H ? T.index + T[0].length : -1, w]
+        ];
+      for (let [B, Z] of L) {
+        let ie = B === -1 ? w : a(B);
+        if (ie < Z) F = Math.max(F ?? ie, ie), v = Math.max(v, Math.min(u(ie), w))
+      }
+      D = Math.max(y(b, v), S(b, v))
+    }
+    if (D > b) n.push({
+      start: b,
+      end: D,
+      separatorEnd: D + (e[D] === "@" ? 1 : 3),
+      loginEnd: ee <= D ? ee : Math.min(m(b), D),
+      bracketClose: F
+    });
+    else {
+      let v = h(b);
+      if (v > b && v < Math.min(w, s(b), g(b)) && A(b) < v) n.push({
+        start: b,
+        end: v,
+        separatorEnd: v,
+        loginEnd: v
+      })
+    }
+    O = C
+  }
+  return {
+    spans: n,
+    hostParts: r
+  }
+}
+
+function On(e, n) {
+  let {
+    spans: r,
+    hostParts: i
+  } = Rn(e);
+  if (r.length === 0 && i.length === 0) return [];
+  let s = I(e, /[\s"'>}|,;&`)\]]/g),
+    o = I(e, /\s/g),
+    a = [],
+    u = [];
+  for (let h of r) a.push({
+    start: h.start,
+    end: h.end,
+    loginEnd: h.loginEnd
+  }), u.push({
+    ...h,
+    userinfo: h
+  });
+  let l = Le(e, n);
+  for (let h of i) {
+    let A = l(h.start)[0];
+    if (A && A.keyStart < h.fieldEnd && e.slice(h.start, A.keyStart).includes("%")) {
+      let g = h.lastEncodedAt > A.keyStart ? h.lastEncodedAt : A.valueStart;
+      a.push({
+        start: h.start,
+        end: g,
+        loginEnd: g
+      }), u.push(g > A.valueStart ? {
+        start: h.start,
+        end: g,
+        userinfo: {
+          start: h.start,
+          end: g,
+          separatorEnd: g + 3,
+          loginEnd: g
+        }
+      } : {
+        start: h.start,
+        end: g
+      })
+    }
+  }
+  if (u.length === 0) return [];
+  a.sort((h, A) => h.start - A.start);
+  let c = Le(e, n),
+    d = 0;
+  for (let h = 0, A = c(h); A[0] !== void 0;) {
+    let g, y = null;
+    for (let O of A)
+      if (y = O.valueEnd(), y !== null) {
+        g = O;
+        break
+      } if (g === void 0 || y === null) {
+      h = A[0].keyStart + 1, A = c(h);
+      continue
+    }
+    while (d < a.length && a[d].start <= g.keyStart) d++;
+    let S = a[d];
+    if (S !== void 0 && S.start < y) {
+      let O = e[g.valueStart] ?? "",
+        F = (O === '"' || O === "'") && y - 1 > g.valueStart && e[y - 1] === O ? Math.max(y, S.end) : o(Math.max(y, S.end, s(S.loginEnd + 1)));
+      u.push({
+        start: g.valueStart,
+        end: F
+      })
+    }
+    h = y, A = c(h)
+  }
+  let p = {
+      nextKey: Le(e, n),
+      plainKeys: Le(e, n),
+      nextLineEnd: I(e, bi),
+      span: 0,
+      lineEnd: -1,
+      resumeAt: 0,
+      overflowEnd: Ii(e, () => p.lineEnd)
+    },
+    m = [];
+  for (let h of Pi(u)) {
+    let A = m.at(-1);
+    m.push(A !== void 0 && h.start < A.end ? xn(e, {
+      start: m.pop().start,
+      end: Math.max(A.end, h.end)
+    }, p) : xn(e, h, p))
+  }
+  return m.map((h) => h.userinfo ? h : Di(e, h))
+}
+var kn = new WeakMap;
+
+function Ti(e) {
+  let n = kn.get(e);
+  if (!n) n = {
+    word: new RegExp(e.word, "gi"),
+    notTail: new RegExp(`(?!${e.tail})[^]`, "gi"),
+    separator: new RegExp(e.separator, "iy"),
+    value: new RegExp(e.value, "iy")
+  }, kn.set(e, n);
+  return n
+}
+
+function Le(e, n) {
+  let r = n.map((i) => {
+    let {
+      word: s,
+      notTail: o,
+      separator: a,
+      value: u
+    } = Ti(i), l = rt(e, s), c = I(e, o), d = -1, p = -1, m = -1, h = null, A = (O) => {
+      if (O !== m) m = O, u.lastIndex = O, h = u.test(e) ? u.lastIndex : null;
+      return h
+    }, g = (O) => {
+      if (O !== d) d = O, a.lastIndex = O, p = a.test(e) ? a.lastIndex : -1;
+      return p
+    }, y = -1, S = null;
+    return (O) => {
+      if (y !== -1 && O >= y && (S === null || O <= S.keyStart)) return S;
+      y = O, S = null;
+      for (let b = l(O); b !== null;) {
+        let F = b.index + b[0].length,
+          C = g(i.tail ? c(F) : F);
+        if (C !== -1) {
+          S = {
+            keyStart: b.index,
+            valueStart: C,
+            valueEnd: () => A(C)
+          };
+          break
+        }
+        b = l(b.index + 1)
+      }
+      return S
+    }
+  });
+  return (i) => {
+    let s = [];
+    for (let o of r) {
+      let a = o(i);
+      if (a && (!s[0] || a.keyStart <= s[0].keyStart)) s = s[0] && a.keyStart === s[0].keyStart ? [...s, a] : [a]
+    }
+    return s
+  }
+}
+
+function xn(e, n, r) {
+  if (n.userinfo && Ci(e, n.userinfo, r)) return n;
+  let i = n.end;
+  r.resumeAt = Math.max(r.resumeAt, n.start);
+  for (let s = r.nextKey(r.resumeAt); s[0] !== void 0 && s[0].keyStart < i;) {
+    let o = s[0].keyStart;
+    if (o > r.lineEnd) {
+      let c = r.nextLineEnd(o);
+      r.span = Oi * (c - r.lineEnd), r.lineEnd = c
+    }
+    let a = null,
+      u = s[0];
+    for (let c of s)
+      if (a = c.valueEnd(), a !== null) {
+        u = c;
+        break
+      } let l = a ?? u.valueStart;
+    if (r.span -= l - o, r.span < 0) return {
+      start: n.start,
+      end: Math.max(i, r.overflowEnd(n.start))
+    };
+    i = Math.max(i, l), r.resumeAt = u.valueStart, s = r.nextKey(r.resumeAt)
+  }
+  return i === n.end ? n : {
+    start: n.start,
+    end: i
+  }
+}
+
+function Ci(e, n, r) {
+  if (e[n.end] !== "@" || wi.test(e.slice(n.start, n.end)) || !Ai.test(e.slice(Math.max(0, n.start - 36), n.start - 3))) return !1;
+  for (let i = r.plainKeys(n.start); i[0] !== void 0 && i[0].keyStart < n.end; i = r.plainKeys(i[0].keyStart + 1))
+    if (i.some((s) => s.valueStart === n.end)) return !1;
+  return !0
+}
+
+function Ii(e, n) {
+  let r = I(e, /["'`]/g),
+    i = -1,
+    s = e.length;
+  return (o) => {
+    if (n() !== i) i = n(), s = r(o) < i ? e.length : i;
+    return s
+  }
+}
+
+function Di(e, n) {
+  let r = e[n.end - 1];
+  if (r === void 0 || !Ri.test(r)) return n;
+  return (e.slice(n.start, n.end).split(r).length - 1) % 2 === 1 ? {
+    start: n.start,
+    end: n.end - 1
+  } : n
+}
+
+function Pi(e) {
+  e.sort((r, i) => r.start - i.start || i.end - r.end);
+  let n = [];
+  for (let r of e) {
+    let i = n.at(-1);
+    if (i === void 0 || r.start >= i.end) n.push(r);
+    else n[n.length - 1] = {
+      start: i.start,
+      end: Math.max(i.end, r.end)
+    }
+  }
+  return n
+}
+
+function I(e, n) {
+  let r = rt(e, n);
+  return (i) => r(i)?.index ?? e.length
+}
+
+function rt(e, n) {
+  let r = -1,
+    i = null;
+  return (s) => {
+    if (r === -1 || s < r || i !== null && s > i.index) n.lastIndex = s, i = n.exec(e), r = s;
+    return i
+  }
+}
+
+function An(e, n) {
+  let r = null;
+  return (i, s) => {
+    if (r === null) {
+      r = new Int32Array(e.length + 1);
+      let a = -1;
+      for (let u = 0; u <= e.length; u++) {
+        if (n) {
+          if (u >= 3 && e.startsWith("%40", u - 3)) a = u - 3
+        } else if (u >= 1 && e[u - 1] === "@") a = u - 1;
+        r[u] = a
+      }
+    }
+    let o = r[Math.min(s, e.length)];
+    return o >= i ? o : -1
+  }
+}
+var ft = new RegExp(xGe(String.raw`api[_-]?key|secret|token|password|passwd|credential|bearer|authorization|auth[_-]?header|memory[_-]?request[_-]?mac|cookie|session[_-]?(?:id|key)|connection[_-]?string|(?:private|ssh|encryption|signing|access|deploy|master|license)[_-]?key|client[_-]?secret`), "i"),
+  fe = `[\\s\\u0085${EDe}]`,
+  re = `(?:${xGe("Bearer|Basic")})[${EDe}]*[\\s\\u0085]+`,
+  vn = "[^\\s\\u0085,;&}\\])]+",
+  Ln = "(?![\\w\\[({$/+=~!@%^?\\\\-])",
+  De = "\\n\\r\\x0b\\x0c\\u0085\\u2028\\u2029",
+  q = "[\\s\\u0085]",
+  jWo = new RegExp(fe),
+  V6s = new RegExp(`(?:[=:]|["']|\\b(?:${xGe("bearer|basic")}))$`, "i"),
+  Fi = `\\\\+(?:"[^"${De}]*(?<!\\\\)(?=\\\\+")|'[^'${De}]*(?<!\\\\)(?=\\\\+'))`,
+  Tn = `[^\\s\\u0085,;&})"'\\\\]+`,
+  Be = `"[^"${De}]*"|'[^'${De}]*'|"[^"]*"${Ln}|'[^']*'${Ln}|[^\\s-]{0,4}\\[REDACTED\\]['"\`]?|${re}(?:\\[REDACTED\\]|${vn})|${vn}`,
+  Ni = {
+    word: "\\b(?:Bearer|Basic)",
+    tail: "",
+    separator: `${q}+`,
+    value: "[A-Za-z0-9+/=._~-]{20,}"
+  },
+  $i = {
+    word: `(?:${ft.source})`,
+    tail: "[\\w.-]",
+    separator: `["']?${q}*[=:]${q}*`,
+    value: Be
+  },
+  Hi = {
+    word: "\\b(?:AWS|GOOGLE|GCP|GCLOUD|AZURE)_\\w",
+    tail: "\\w",
+    separator: `${q}*[=:]${q}*`,
+    value: Be
+  },
+  Mi = [$i, Hi, Ni],
+  Ui = ["sk", "ant", "api"].join("-"),
+  M = "[\\w=-]",
+  U = `${M}{20,}(?:\\.[0-9a-z]{9})?`,
+  Wi = "[\\w.-]{0,256}(?![\\w.-])",
+  Nn = `${q}*(?!${q})`,
+  gt = `(?:${ft.source})${Wi}`,
+  Hn = `\\b(?:${xGe("AWS|GOOGLE|GCP|GCLOUD|AZURE")})${$Ze}_\\w+`,
+  at = `${gt}(?:${$Ze}["'])?${fe}*[=:]${Nn}(${Be})`,
+  ut = `${Hn}${fe}*[=:]${q}*(${Be})`,
+  Bn = /\\["']/,
+  Mn = `${gt}${$Ze}\\\\+["']${fe}*[=:]${Nn}(${Fi}|${re}${Tn}|${Tn}|\\\\+["'][^\\s\\u0085,;&})"'\\\\]*)`,
+  X = `[^\\s\\u0085,;&}\\])"']{0,64}?(?:${gt}|${Hn})`,
+  Gi = `(?:${re})?(?:[{[(]{0,8}(?:"${X}"|'${X}')|${X})${fe}*[=:]`,
+  Ki = `(?:${re})?(?:[{[(]{0,8}(?:"${X}"|'${X}'|\\\\+"${X}\\\\+"|\\\\+'${X}\\\\+')|${X})${fe}*[=:]`,
+  Un = "\\][^\\s\"'>}|,;&`)\\]]*",
+  be = "[A-Za-z0-9_-]",
+  lt = `${be}{10}${be}*`,
+  Cn = `\\.${lt}\\.${lt}`,
+  pt = `(?<!${be})(?=${be}+${Cn})(?:${be}*?-)??(eyJ${lt}${Cn})`,
+  Wn = [{
+    id: "url-userinfo",
+    source: `:\\/\\/((["'])[^/@\\s]*\\2(?=@)|(?:[^/@\\s"'|,;&\`]+(?=@))|[^/@\\s"'|,;&\`]*["'|,;&\`][^/@\\s]*@)@?`,
+    confidence: "low"
+  }, {
+    id: "gcp-service-account",
+    source: "\\b([a-z0-9-]{1,64}@[a-z0-9-]+\\.iam\\.gserviceaccount\\.com)\\b",
+    flags: "i",
+    confidence: "low"
+  }, {
+    id: "loose-anthropic-key",
+    source: "\\b(sk-ant-?[\\w-]{10,})",
+    confidence: "low"
+  }, {
+    id: "http-auth-scheme",
+    source: `\\b${re}([A-Za-z0-9+/=._~-]{20,})`,
+    flags: "i",
+    confidence: "low"
+  }, {
+    id: "loose-jwt",
+    prefilter: /eyJ/,
+    source: pt,
+    confidence: "low"
+  }, {
+    id: "sensitive-assign",
+    source: at,
+    flags: "i",
+    confidence: "low"
+  }, {
+    id: "cloud-env-var",
+    source: ut,
+    flags: "i",
+    confidence: "low"
+  }, {
+    id: "url-userinfo-tail",
+    source: ":\\/\\/(\\[REDACTED\\](?!@|%40[^\\s\"'>}|,;&`)\\]@/]*(?:[\\s\"'>}|,;&`)\\]/]|$))[^\\s\"'>}|,;&`)\\]]*?(?=[\\s\"'>}|,;&`)\\]]|:\\/\\/|$))",
+    confidence: "low"
+  }, {
+    id: "url-userinfo-later-at",
+    source: ":\\/\\/(\\[REDACTED\\]@(?:[^\\s:/?#\"'>}|,;&`)\\]]|:(?!\\/\\/)){0,256})(?=@|%40)",
+    confidence: "low"
+  }, {
+    id: "url-userinfo-encoded",
+    source: ":\\/\\/((?:\\[REDACTED\\]@)?(?:(?:[^/?#@\\s\"',;&<>|)\\]{}`[]*[\"'`<>{}[\\]][^/?#@\\s,;&|{}\"'`<>[\\]()]*(?=%40))|[^/?#@\\s\"',;&<>|)\\]}`[]+(?=%40)|(?=[^/?#@\\s\"',;&<>|)\\]}`[]*?(?:%|:[^/?#@\\s\"',;&<>|)\\]}`[]))[^/?#@\\s\"',;&<>|)\\]}`[]+(?=\\[REDACTED\\])))",
+    confidence: "low"
+  }, {
+    id: "masked-value-rest",
+    source: `\\[REDACTED\\](${Un})`,
+    confidence: "low"
+  }, {
+    id: "sensitive-assign-escaped",
+    redactOnly: !0,
+    prefilter: Bn,
+    source: Mn,
+    flags: "i",
+    confidence: "low"
+  }, {
+    id: "aws-access-token",
+    source: "\\b((?:A3T[A-Z0-9]|AKIA|ASIA|ABIA|ACCA)[A-Z2-7]{16})\\b",
+    confidence: "high"
+  }, {
+    id: "gcp-api-key",
+    source: "\\b(AIza[\\w-]{35})(?![\\w-])",
+    confidence: "high"
+  }, {
+    id: "google-oauth-client-secret",
+    source: "\\bGOCSPX-[\\w-]{28}(?![\\w-])",
+    confidence: "high"
+  }, {
+    id: "azure-ad-client-secret",
+    source: `(?:^|[\\\\'"\\x60\\s>=:(,)])([a-zA-Z0-9_~.]{3}\\dQ~[a-zA-Z0-9_~.-]{31,34})(?:$|[\\\\'"\\x60\\s<),])`,
+    confidence: "high"
+  }, {
+    id: "digitalocean-pat",
+    source: `\\b(dop_v1_[a-f0-9]{64})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "digitalocean-access-token",
+    source: `\\b(doo_v1_[a-f0-9]{64})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "anthropic-api-key",
+    source: `\\b(${Ui}03-[a-zA-Z0-9_\\-]{93}AA)(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "anthropic-admin-api-key",
+    source: `\\b(sk-ant-admin01-[a-zA-Z0-9_\\-]{93}AA)(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "anthropic-oauth-token",
+    source: `\\b(sk-ant-(?:oat|ort)\\d{2}-[\\w-]{20,})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    run: "[\\w-]",
+    confidence: "high"
+  }, {
+    id: "openai-api-key",
+    source: "sk-[A-Za-z0-9_-]{8,200}T3BlbkFJ[A-Za-z0-9_-]{8,200}",
+    confidence: "high"
+  }, {
+    id: "openai-legacy-api-key",
+    source: "\\bsk-[a-zA-Z0-9]{48}(?![a-zA-Z0-9])",
+    confidence: "high"
+  }, {
+    id: "huggingface-access-token",
+    source: `\\b(hf_[a-zA-Z]{34})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "supabase-secret-key",
+    source: "\\bsb_secret_[A-Za-z0-9_-]{20,}",
+    confidence: "high"
+  }, {
+    id: "supabase-access-token",
+    source: "\\bsbp_[a-z0-9]{40,}",
+    confidence: "high"
+  }, {
+    id: "github-pat",
+    source: "ghp_[0-9a-zA-Z]{36}",
+    confidence: "high"
+  }, {
+    id: "github-fine-grained-pat",
+    source: "github_pat_\\w{82}",
+    confidence: "high"
+  }, {
+    id: "github-app-token",
+    source: "(?:ghu|ghs)_[0-9a-zA-Z]{36}",
+    confidence: "high"
+  }, {
+    id: "github-oauth",
+    source: "gho_[0-9a-zA-Z]{36}",
+    confidence: "high"
+  }, {
+    id: "github-refresh-token",
+    source: "ghr_[0-9a-zA-Z]{36}",
+    confidence: "high"
+  }, {
+    id: "gitlab-pat",
+    source: `glpat-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-deploy-token",
+    source: `gldt-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-runner-authentication-token",
+    source: `glrt-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-oauth-app-secret",
+    source: `gloas-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-pipeline-trigger-token",
+    source: `glptt-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-kubernetes-agent-token",
+    source: `glagent-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-incoming-mail-token",
+    source: `glimt-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-scim-oauth-token",
+    source: `glsoat-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-ci-build-token",
+    source: `glcbt-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-feed-token",
+    source: `glft-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "gitlab-feature-flag-client-token",
+    source: `glffct-${U}`,
+    displayRun: M,
+    confidence: "high"
+  }, {
+    id: "slack-bot-token",
+    source: "xoxb-[0-9]{10,13}-[0-9]{10,13}[a-zA-Z0-9-]*",
+    confidence: "high"
+  }, {
+    id: "slack-user-token",
+    source: "xox[a-z](?:-[0-9]{10,13}){3}-[a-zA-Z0-9-]{28,34}",
+    confidence: "high"
+  }, {
+    id: "slack-rotation-token",
+    source: "xoxe(?:\\.xox[a-z])?-[0-9]-[A-Za-z0-9-]{28,}",
+    confidence: "high"
+  }, {
+    id: "slack-app-token",
+    source: "xapp-\\d-[A-Z0-9]+-\\d+-[a-z0-9]+",
+    flags: "i",
+    confidence: "high"
+  }, {
+    id: "slack-workflow-token",
+    source: "\\bxwfp-[a-zA-Z0-9-]{20,}",
+    confidence: "high"
+  }, {
+    id: "slack-webhook-url",
+    source: "(?:https?://)?hooks\\.slack\\.com/(?:services|workflows|triggers)/[A-Za-z0-9+/_-]{40,}",
+    flags: "i",
+    confidence: "high"
+  }, {
+    id: "twilio-api-key",
+    source: "SK[0-9a-fA-F]{32}",
+    confidence: "high"
+  }, {
+    id: "sendgrid-api-token",
+    source: `\\b(SG\\.[a-zA-Z0-9=_\\-.]{66})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "npm-access-token",
+    source: `\\b(npm_[a-zA-Z0-9]{36})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "pypi-upload-token",
+    source: "pypi-AgEIcHlwaS5vcmc[\\w-]{50,1000}",
+    confidence: "high"
+  }, {
+    id: "databricks-api-token",
+    source: `\\b(dapi[a-f0-9]{32}(?:-\\d)?)(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "hashicorp-tf-api-token",
+    source: "[a-zA-Z0-9]{14}\\.atlasv1\\.[a-zA-Z0-9\\-_=]{60,70}",
+    confidence: "high"
+  }, {
+    id: "pulumi-api-token",
+    source: `\\b(pul-[a-f0-9]{40})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "postman-api-token",
+    source: `\\b(PMAK-[a-fA-F0-9]{24}-[a-fA-F0-9]{34})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "grafana-api-key",
+    source: `\\b(eyJrIjoi[A-Za-z0-9+/]{70,400}={0,3})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "grafana-cloud-api-token",
+    source: `\\b(glc_[A-Za-z0-9+/]{32,400}={0,3})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "grafana-service-account-token",
+    source: `\\b(glsa_[A-Za-z0-9]{32}_[A-Fa-f0-9]{8})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "sentry-user-token",
+    source: `\\b(sntryu_[a-f0-9]{64})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "sentry-org-token",
+    source: "\\bsntrys_eyJpYXQiO[a-zA-Z0-9+/]{10,200}(?:LCJyZWdpb25fdXJs|InJlZ2lvbl91cmwi|cmVnaW9uX3VybCI6)[a-zA-Z0-9+/]{10,200}={0,2}_[a-zA-Z0-9+/]{43}",
+    confidence: "high"
+  }, {
+    id: "stripe-access-token",
+    source: `\\b((?:sk|rk)_(?:test|live|prod)_[a-zA-Z0-9]{10,99})(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+    confidence: "high"
+  }, {
+    id: "shopify-access-token",
+    source: "shpat_[a-fA-F0-9]{32}",
+    confidence: "high"
+  }, {
+    id: "shopify-shared-secret",
+    source: "shpss_[a-fA-F0-9]{32}",
+    confidence: "high"
+  }],
+  zi = 64;
+
+function ct(e, n) {
+  let r = /-----BEGIN[ A-Z0-9_-]{0,100}?PRIVATE KEY(?: BLOCK)?-----/gi,
+    i = /-----END[ A-Z0-9_-]{0,100}?PRIVATE KEY(?: BLOCK)?-----/gi;
+  r.lastIndex = n;
+  let s = r.exec(e);
+  if (!s) return null;
+  i.lastIndex = s.index + s[0].length + zi;
+  let o = i.exec(e);
+  if (!o) return null;
+  return {
+    start: s.index,
+    end: o.index + o[0].length
+  }
+}
+
+function Vi(e) {
+  return ct(e, 0) !== null
+}
+
+function WWo(e) {
+  let n = Gn(e);
+  if (n.length === 0) return e;
+  let r = "",
+    i = 0;
+  for (let s of n) r += e.slice(i, s.start) + "[REDACTED]", i = s.end;
+  return r + e.slice(i)
+}
+
+function Gn(e) {
+  let n = e.indexOf("-----");
+  while (n !== -1) {
+    while (e.charCodeAt(n + 5) === 45) n++;
+    if ((e.charCodeAt(n + 5) | 32) === 98 && (e.charCodeAt(n + 6) | 32) === 101 && (e.charCodeAt(n + 7) | 32) === 103 && (e.charCodeAt(n + 8) | 32) === 105 && (e.charCodeAt(n + 9) | 32) === 110) break;
+    n = e.indexOf("-----", n + 5)
+  }
+  let r = [];
+  if (n === -1) return r;
+  for (let i = ct(e, n); i; i = ct(e, i.end)) r.push(i);
+  return r
+}
+var dt = `(?:[\\x60'"\\s;]|\\\\[nr]|$)`,
+  it = "(?=[^a-zA-Z0-9_\\-+=]|$)",
+  In = "(?<![a-zA-Z0-9_\\-])";
+
+function Ji() {
+  return Wn.map(({
+    id: e,
+    confidence: n,
+    source: r,
+    flags: i = "",
+    displayRun: s
+  }) => {
+    let o = {
+        id: e,
+        confidence: n
+      },
+      a = i.replace("g", "") + "g";
+    if (n !== "high") return {
+      ...o,
+      re: new RegExp(r, a)
+    };
+    let u = Kn(r);
+    if (s === void 0) return {
+      ...o,
+      re: new RegExp(In + u + it, a)
+    };
+    return {
+      ...o,
+      prefilter: new RegExp(u, i.replace("g", "")),
+      re: new RegExp(`(?<!${s})(?=${s}+${it})${s}*?${In}(${u})${it}`, a)
+    }
+  })
+}
+
+function ye(e) {
+  return Wn.map((n) => {
+    let r = (n.flags ?? "").replace("g", ""),
+      i = {
+        id: n.id,
+        confidence: n.confidence,
+        ...n.redactOnly === !0 && {
+          redactOnly: n.redactOnly
+        },
+        ...n.prefilter !== void 0 && {
+          prefilter: n.prefilter
+        }
+      };
+    if (n.run === void 0) return {
+      ...i,
+      re: new RegExp(n.source, e ? r + "g" : n.flags ?? "")
+    };
+    return {
+      ...i,
+      prefilter: new RegExp(Kn(n.source), r),
+      re: new RegExp(`(?:(?<!${n.run})|(?<=\\\\[nr]))(?=${n.run}+${dt})${n.run}*?${n.source}`, e ? r + "g" : r)
+    }
+  })
+}
+
+function Kn(e) {
+  return e.endsWith(dt) ? e.slice(0, -dt.length) : e
+}
+
+function Te(e, n) {
+  if (typeof n !== "string") return "[REDACTED]";
+  let r = n.length >= 2 && (n[0] === '"' || n[0] === "'") && n.at(-1) === n[0] ? n[0] : "",
+    i = e.lastIndexOf(n);
+  return `${e.slice(0,i)}${r}[REDACTED]${r}${e.slice(i+n.length)}`
+}
+
+function Zi(e) {
+  let n = e[1];
+  if (typeof n !== "string") return {
+    keep: 0,
+    insert: "[REDACTED]"
+  };
+  let r = n.length >= 2 && (n[0] === '"' || n[0] === "'") && n.at(-1) === n[0] ? 1 : 0,
+    i = e[0].lastIndexOf(n);
+  return {
+    keep: i + r,
+    insert: "[REDACTED]",
+    keepEnd: e[0].length - i - n.length + r
+  }
+}
+
+function Ne(e) {
+  let n = On(e, Mi).map(({
+      start: s,
+      end: o
+    }) => {
+      let a = /^(["'])[^]*\1$/.test(e.slice(s, o)) ? 1 : 0;
+      return [s + a, o - a]
+    }),
+    r = tt(e),
+    i = qi(e);
+  return r.length === 0 && i.length === 0 ? n : zn([...n, ...r, ...i])
+}
+var st, Yi = new RegExp(Un, "y"),
+  Xi = 512;
+
+function qi(e) {
+  st ??= {
+    plain: {
+      assign: new RegExp(`${at}|${ut}`, "gi"),
+      nextKey: new RegExp(Gi, "iy"),
+      valueWithWhitespace: new RegExp(`["']|${re}`, "iy"),
+      skipsStrays: !1
+    },
+    escaped: {
+      assign: new RegExp(`${at}|${ut}|${Mn}`, "gi"),
+      nextKey: new RegExp(Ki, "iy"),
+      valueWithWhitespace: new RegExp(`\\\\*["']|${re}`, "iy"),
+      skipsStrays: !0
+    }
+  };
+  let n = Dn(e, st.plain);
+  return Bn.test(e) ? [...n, ...Dn(e, st.escaped)] : n
+}
+
+function Dn(e, {
+  assign: n,
+  nextKey: r,
+  valueWithWhitespace: i,
+  skipsStrays: s
+}) {
+  let o = [],
+    a, u = 0,
+    l = Yi;
+  n.lastIndex = 0;
+  for (let c = n.exec(e); c !== null; c = n.exec(e)) {
+    let d = c[1] ?? c[2] ?? c[3],
+      p = c.index + c[0].length,
+      m = p - d.length;
+    r.lastIndex = m;
+    let h = d.length <= Xi && r.test(e) ? r.lastIndex : void 0;
+    if (h !== void 0 && h < p) {
+      if (i.lastIndex = h, !i.test(e)) h = void 0
+    }
+    if (s && a !== void 0 && c.index >= a && c.index < u && h === void 0) {
+      a = void 0, n.lastIndex = u;
+      continue
+    }
+    if (a !== void 0 && c.index < a) {
+      let A = /^(["'])[^]*\1$/.test(d),
+        g = A && u <= m ? 1 : 0;
+      l.lastIndex = p, o.push([m + g, !A && l.test(e) ? l.lastIndex : p - g])
+    }
+    if (u = p, a = h, a !== void 0) n.lastIndex = m
+  }
+  return o
+}
+
+function zn(e) {
+  let n = e.filter(([i, s]) => s > i).sort((i, s) => i[0] - s[0]),
+    r = [];
+  for (let [i, s] of n) {
+    let o = r.at(-1);
+    if (o !== void 0 && i <= o[1]) o[1] = Math.max(o[1], s);
+    else r.push([i, s])
+  }
+  return r
+}
+
+function ce(e, n) {
+  let {
+    text: r,
+    origin: i
+  } = e, s = [], o = 0;
+  for (let a = 0; a < r.length;) {
+    let u = i[a];
+    while (o < n.length && n[o][1] <= u) o++;
+    let l = n[o];
+    if (u < 0 || l === void 0 || u < l[0]) {
+      a++;
+      continue
+    }
+    let c = a;
+    while (c > 0 && i[c - 1] < 0) c--;
+    while (a < r.length && (i[a] < 0 || i[a] >= l[0] && i[a] < l[1])) a++;
+    let d = s.at(-1);
+    if (d !== void 0 && d[1] >= c) d[1] = a;
+    else s.push([c, a, "[REDACTED]"])
+  }
+  return ve(e, s)
+}
+var Qi = 512,
+  es = 512;
+class Vn {
+  testRules = null;
+  redactRules = null;
+  displayRules = null;
+  resultCache = new Map;
+  scan(e) {
+    this.testRules ??= ye(!1);
+    let n = [];
+    for (let r of this.testRules)
+      if (r.confidence === "high" && r.prefilter?.test(e) !== !1 && r.re.test(e)) n.push({
+        ruleId: r.id,
+        label: r.id.split("-").map((i) => Os[i] ?? Ga(i)).join(" ")
+      });
+    if (Vi(e)) n.push({
+      ruleId: "private-key",
+      label: "Private Key"
+    });
+    return n
+  }
+  redactContext(e, n = !1) {
+    this.redactRules ??= ye(!0);
+    let r = WWo(e);
+    for (let i of this.redactRules)
+      if (i.confidence === "low" && ot(i, n, r)) r = r.replace(i.re, Te);
+    return r
+  }
+  redactTokens(e) {
+    this.redactRules ??= ye(!0);
+    let n = e;
+    for (let r of this.redactRules)
+      if (r.confidence === "high" && r.prefilter?.test(n) !== !1) n = n.replace(r.re, Te);
+    return n
+  }
+  trackedByRules(e, n = !1) {
+    return this.trackedTokens(this.trackedContext(e, n))
+  }
+  trackedContext(e, n = !1) {
+    let r = ve(hn(e), Gn(e).map(({
+      start: i,
+      end: s
+    }) => [i, s, "[REDACTED]"]));
+    return this.trackedRules(r, "low", n)
+  }
+  redactOnlyRules(e) {
+    this.redactRules ??= ye(!0);
+    let n = e;
+    for (let r of this.redactRules)
+      if (r.redactOnly === !0 && ot(r, !0, n)) n = n.replace(r.re, Te);
+    return n
+  }
+  trackedTokens(e) {
+    return this.trackedRules(e, "high")
+  }
+  trackedRules(e, n, r = !1) {
+    this.redactRules ??= ye(!0);
+    let i = e;
+    for (let s of this.redactRules)
+      if (s.confidence === n && ot(s, r, i.text)) s.re.lastIndex = 0, i = mn(i, s.re, Zi);
+    return i
+  }
+  redactWithUrlRanges(e) {
+    let n = Ne(e);
+    return n.length === 0 ? this.redactTokens(this.redactContext(e, !0)) : ce(this.trackedByRules(e, !0), n).text
+  }
+  redactTracked(e) {
+    return ce(this.trackedByRules(e, !0), Ne(e))
+  }
+  redact(e) {
+    let n = e.length <= Qi;
+    if (n) {
+      let i = this.resultCache.get(e);
+      if (i !== void 0) return i
+    }
+    let r = this.redactWithUrlRanges(e);
+    if (n) {
+      if (this.resultCache.size >= es) this.resultCache.delete(this.resultCache.keys().next().value);
+      this.resultCache.set(e, r)
+    }
+    return r
+  }
+  redactForDisplay(e) {
+    this.displayRules ??= Ji();
+    let n = e;
+    for (let r of this.displayRules) {
+      if (r.confidence !== "high" || r.prefilter?.test(n) === !1) continue;
+      n = n.replace(r.re, rs)
+    }
+    return n
+  }
+}
+var P = new Vn;
+
+function Qbt(e) {
+  return P.scan(e)
+}
+
+function ps(e) {
+  return P.redact(e)
+}
+
+function wQ(e) {
+  return P.redactTokens(P.redactContext(e))
+}
+
+function zWo(e) {
+  return P.redactContext(e)
+}
+
+function pJn(e) {
+  return P.redactTokens(e)
+}
+var Vo = new RegExp(pt),
+  Jo = new RegExp(pt, "g");
+var PGe = 16384;
+
+function bjt(e, n) {
+  let r = Ne(e);
+  if (r.length === 0) return _s(P.redactContext(e, !0), n);
+  let i = P.trackedContext(e, !0);
+  for (let s = n + 2 * PGe;; s *= 2) {
+    if (i.text.length <= s) return ce(P.trackedTokens(i), r).text;
+    let o = P.trackedTokens(et(i, 0, s)),
+      a = o.text.length - PGe;
+    if (a >= n) {
+      let u = ne(o.text, a).length,
+        l = ce(et(o, 0, u), r);
+      if (l.text.length >= n) return l.text
+    }
+  }
+}
+var ts = /[$\x60|;&<>()\s]/,
+  ns = /[/.@:~*?\\]/;
+
+function rs(e, n) {
+  let r = typeof n === "string" ? n : e;
+  if (ts.test(r) || ns.test(r)) return e;
+  return Te(e, n)
+}
+
+function CDe(e) {
+  return P.redactForDisplay(e)
+}
+
+function vQ(e, n = ps) {
+  if (typeof e === "string") return n(e);
+  if (Array.isArray(e)) return e.map((r) => vQ(r, n));
+  if (e !== null && typeof e === "object") {
+    let r = Object.create(null),
+      i = Object.entries(e),
+      s = n === ps ? is(i.map(([o]) => o)) : void 0;
+    for (let [o, [a, u]] of i.entries()) {
+      let l = s ? s[o] : a;
+      if (typeof u === "string") {
+        if (n === ps) {
+          r[l] = GWo(a, u);
+          continue
+        }
+        let c = `${a}: `,
+          d = n(c + u);
+        r[l] = d.startsWith(c) ? d.slice(c.length) : n(u)
+      } else r[l] = vQ(u, n)
+    }
+    return r
+  }
+  return e
+}
+
+function GWo(e, n) {
+  let r = `${e}: `,
+    i = r + n,
+    s = Ne(i);
+  if (s.length === 0) {
+    let l = ps(i);
+    if (l.startsWith(r)) return l.slice(r.length);
+    let c = wQ(i);
+    return c.startsWith(r) ? P.redactOnlyRules(c.slice(r.length)) : ps(n)
+  }
+  let o = [];
+  for (let [l, c] of s)
+    if (c > r.length) o.push([Math.max(l, r.length), c]);
+  let a = P.trackedByRules(i, !0);
+  if (a.text.startsWith(r)) return ce(a, o).text.slice(r.length);
+  let u = P.trackedByRules(i);
+  return u.text.startsWith(r) ? P.redactOnlyRules(ce(u, o).text.slice(r.length)) : ps(n)
+}
+
+function is(e) {
+  let n = e.map((s) => ps(s));
+  if (n.every((s, o) => s === e[o])) return n;
+  let r = new Set(n.filter((s, o) => s === e[o])),
+    i = new Map;
+  return n.map((s, o) => {
+    if (s === e[o]) return s;
+    let a = s,
+      u = i.get(s) ?? 2;
+    while (r.has(a)) a = `${s} (${u})`, u++;
+    return i.set(s, u), r.add(a), a
+  })
+}
+
+function Wmn(e) {
+  let n = Object.create(null);
+  for (let [r, i] of Object.entries(e)) n[r] = ft.test(r) ? "[REDACTED]" : i;
+  return n
+}
+var sC = "[redacted URL]";
+
+function Pn(e) {
+  let n = N(e);
+  if (!/%(?:40|3a|5c)/i.test(n)) return e;
+  let r = /^(?:https?|wss?|ftp|file):/i.test(n);
+  return n.replace(r ? /%(40|3a)/gi : /%(40|3a|5c)/gi, (i, s) => String.fromCharCode(parseInt(s, 16)))
+}
+
+function ht(e, n, r) {
+  let i = n(e),
+    s = Pn(e);
+  if (i === r || s === e) return i;
+  return i !== null && Pn(i) === n(s) ? i : r
+}
+
+function zmn(e) {
+  return ht(e, ss, null)
+}
+
+function ss(e) {
+  try {
+    let n = new URL(e);
+    if (!n.host || St(e) || Et(n) || xt(e, n) || Yn(e)) return null;
+    return n.username = "", n.password = "", n.search = "", n.hash = "", n.toString().replace(/\/$/, "")
+  } catch {
+    return null
+  }
+}
+var VWo = /[@:]|\/\//;
+
+function f1r(e) {
+  let n = zmn(e);
+  if (n === null) return null;
+  let {
+    protocol: r,
+    host: i,
+    pathname: s
+  } = new URL(n);
+  if (!VWo.test(s)) return n;
+  let o = s.replace(/@/g, "%40").replace(/:/g, "%3A").replace(/\/{2,}/g, (a) => `/${ji("%2F",a.length-1)}`);
+  return `${r}//${i}${o}`
+}
+
+function fJn(e) {
+  let n = [],
+    r = 0;
+  for (let [i, s] of zn(tt(e))) n.push(e.slice(r, i), "[REDACTED]"), r = s;
+  return n.push(e.slice(r)), n.join("").replace(/:\/\/[^/?#]*(@|%40)/g, (i, s) => s === "@" ? "://" : "://[REDACTED]%40")
+}
+
+function G_(e) {
+  return ht(e, Ce, sC)
+}
+
+function Ce(e) {
+  if (!e) return e;
+  if (He(e) || Zn(e) || St(e)) return sC;
+  try {
+    let n = new URL(e);
+    if (!n.host) throw TypeError("opaque");
+    if ((n.username !== "" || n.password !== "") && `${n.pathname}${n.search}${n.hash}`.includes("@") || Et(n) || xt(e, n)) return sC;
+    return n.username = "", n.password = "", n.search = "", n.hash = "", n.toString().replace(/\/$/, "")
+  } catch {
+    let n = N(e),
+      r = At(n),
+      i = n.slice(r),
+      s = wt(i),
+      o = i.search(/[?#]/);
+    if (s !== -1 && o !== -1 && o < s) return sC;
+    let a = s === -1 ? i : i.slice(s + 1),
+      u = a.search(/[?#]/);
+    if (u !== -1 && a.includes("@", u) && (s !== -1 || !ks(a, u, r !== 0))) return sC;
+    let l = nt(nt(s === -1 ? n : n.slice(r + s + 1), "?"), "#"),
+      c = l.lastIndexOf("@"),
+      d = c === -1 ? l : l.slice(c + 1);
+    return le(d) && !le(n) && !/^:\d+\/?$/.test(d.startsWith("[") ? d.slice(d.indexOf("]") + 1) : d.slice(d.indexOf(":"))) ? sC : d
+  }
+}
+var mt = /^(?:(?:file:\/\/)?[a-z]:(?:\\|\/(?!\/))|\\\\)/i;
+
+function zf(e) {
+  return ht(e, os, sC)
+}
+
+function os(e) {
+  if (He(e) || St(e)) return sC;
+  if (mt.test(e)) {
+    let s = e.indexOf("?", e.startsWith("\\\\?\\") ? 4 : 0);
+    return s === -1 ? e : e.slice(0, s)
+  }
+  if (Zn(e) && !Ss(e)) return sC;
+  let n;
+  try {
+    n = new URL(e)
+  } catch {
+    return Ie(e, Fn(e) ? Ce(e) : e)
+  }
+  if (!n.host) return Ie(e, n.search || n.hash || Fn(e) ? Ce(e) : e);
+  if (xt(e, n)) return sC;
+  let r = n.username !== "" && kt(n.protocol.slice(0, -1)),
+    i = n.username !== "" && !/^[^:]*:\//.test(N(e));
+  return Ie(e, r || i || n.password || Me(n.username) || Et(n) || n.search || n.hash ? Ce(e) : e)
+}
+
+function WZe(e) {
+  return Ie(e, G_(e))
+}
+
+function qhe(e, n, r) {
+  return n === "" || n === r ? e : e.split(n).join(r)
+}
+
+function kQ(e, n) {
+  let r = typeof n === "string" || n === void 0 ? [n] : n;
+  for (let i of r) {
+    let s = as(i),
+      o = i && s.length > 0 ? zf(i) : "";
+    for (let a of s) e = qhe(e, a, o)
+  }
+  return hR(e)
+}
+
+function as(e) {
+  if (!e || !Xn.test(e) || zf(e) === e) return [];
+  let n = [e],
+    r = At(e),
+    i = e.slice(r),
+    s = i.indexOf("/");
+  for (let o of new Set([i.indexOf("@"), wt(i)]))
+    if (r !== 0 && o !== -1 && (s === -1 || o < s)) n.push(e.slice(0, r) + i.slice(o + 1));
+  return n
+}
+
+function us(e) {
+  let n = N(e),
+    r = At(n),
+    i = r !== 0,
+    s = n.indexOf("#");
+  if (n.includes("?") || s !== -1 && (i || n.includes("@", s))) return !0;
+  let o = n.slice(r),
+    a = wt(o);
+  if (a === -1) return !1;
+  let u = n.slice(0, r - 3),
+    l = /^(?:ftps?|wss?)$/i.test(u) ? o.slice(0, a).replace(/^[/\\]+/, "") : o.slice(0, a);
+  return Me(l) || i && (/https?$/i.test(u) || !l.includes("/") && kt(u))
+}
+var Gmn = /:|%3a/i;
+
+function Et(e) {
+  return !e.hostname.startsWith("[") && /%3a/i.test(e.hostname) && `${e.pathname}${e.search}${e.hash}`.includes("@")
+}
+
+function Me(e) {
+  return Gmn.test(e)
+}
+
+function St(e) {
+  let n = N(e),
+    r = n.indexOf(":"),
+    i = r === -1 ? "" : n.slice(0, r);
+  if (!/^[a-z][a-z0-9+.-]*$/i.test(i) || !/(?:ssh|git\+ssh|ssh\+git|git|file)$/i.test(i) || mt.test(n)) return !1;
+  let s = n.slice(r + 1),
+    o = nt(s.slice(/^\/*/.exec(s)[0].length), "/"),
+    a = o.search(/[?#]/);
+  if (!(/%40/i.test(o) || a !== -1 && o.includes("@", a))) return !1;
+  let u = o.replace(/%([0-9a-f]{2})/gi, (c, d) => String.fromCharCode(parseInt(d, 16))),
+    l = u.lastIndexOf("@");
+  return l !== -1 && u.slice(0, l).includes(":")
+}
+
+function le(e) {
+  let n = e.indexOf(":"),
+    r = e.indexOf("/");
+  return n > 0 && !e.includes("://") && (r === -1 || n < r)
+}
+
+function Ie(e, n) {
+  let r = (s, o) => {
+    let a = N(s);
+    return ls(s) || /^(?:ssh|git|git\+ssh|ssh\+git|file):\/\//i.test(a) && o !== s && !o.toLowerCase().startsWith(a.slice(0, a.indexOf("://") + 3).toLowerCase()) || le(s) && (cs(s) || /[\t\n\r]/.test(s) || ds(s, o))
+  };
+  return n !== e && le(n) && !le(e) || r(e, n) || r(n, n) ? sC : n
+}
+
+function ls(e) {
+  let n = e.replace(/^[\u0000-\u0020]+/, ""),
+    r = /^[a-z+\t\n\r]*:[\t\n\r]*\/[\t\n\r]*\//i.exec(n),
+    i = r !== null && /^(?:ssh|git|git\+ssh|ssh\+git|file):\/\/$/i.test(r[0].replace(/[\t\n\r]/g, "")) ? r : null;
+  if (!i && !le(e)) return !1;
+  let s = i ? /^(?:[\w.~+-]+(?::[^@/?#%\s[\]]*)?@)?(?:\w(?:[\w.-]*\w)?|\[[\da-f]*:[\da-f.]*:[\da-f:.]*\])?(?::[\w~-]*)?(?:\/|$)/i : /^(?:[\w.~+-]+@)?(?:\w(?:[\w.-]*\w)?|\[[\da-f]*:[\da-f.]*:[\da-f:.]*\]):/i,
+    o = i ? n.slice(i[0].length) : e,
+    a = i ? o.slice(Math.max(o.indexOf("/"), 0)) : "";
+  return !s.test(o) || /(?:@|%40)(?:\[|%5b)/i.test(a)
+}
+
+function cs(e) {
+  try {
+    return new URL(e).host !== ""
+  } catch {
+    return !1
+  }
+}
+
+function ds(e, n) {
+  let r = N(e),
+    i = r.indexOf(":"),
+    s = r.slice(0, i);
+  if (i <= 0 || /[/?#]/.test(s) || e.includes("://")) return !1;
+  let o = s.lastIndexOf("@"),
+    a = r.indexOf("@["),
+    u = a !== -1 ? a + 1 : r.startsWith("[") ? 0 : -1,
+    l = s.slice(o + 1);
+  if (u !== -1) {
+    let c = r.indexOf("]", u);
+    if (u !== o + 1 || r[c + 1] !== ":" || /[/?#@\\]/.test(r.slice(u + 1, c))) return !0;
+    l = r.slice(u, c + 1)
+  }
+  return n !== e && n !== sC && !n.startsWith(`${l}:`)
+}
+
+function Fn(e) {
+  return us(e) || fs(e)
+}
+
+function fs(e) {
+  let n = e.replace(/^[\u0000-\u0020]+/, ""),
+    r = n.indexOf("://");
+  if (r !== -1 && /[?#]/.test(n)) return !0;
+  let i = nt(r === -1 ? n : n.slice(r + 3), "/"),
+    s = i.lastIndexOf("@");
+  return s !== -1 && (Me(i.slice(0, s)) || r !== -1 && kt(n.slice(0, r)))
+}
+
+function kt(e) {
+  return !/^(?:ssh|git\+ssh|ssh\+git)$/i.test(e)
+}
+
+function N(e) {
+  return e.replace(/^[\u0000-\u0020]+/, "").replace(/[\t\n\r]/g, "")
+}
+var $e = "(^|[^a-z0-9+.-]|%[0-9a-f]{2})",
+  gs = "https?|wss?|ftps?",
+  Jn = "ssh\\+git|git\\+ssh|ssh|git",
+  hs = new RegExp(`[a-z](?:[a-z0-9+.-]{1,31}:\\/+|:\\/\\/)|(?:https?|ftps?):(?!\\/)|${$e}(?:wss?|file):(?!\\/)|${$e}(?:${Jn}):(?!\\/)(?=[^@/?#\\s]*?(?::|%3a))`, "i");
+
+function He(e, {
+  forDestination: n = !1
+} = {}) {
+  let r = N(e).replace(/\\/g, "/"),
+    i = r.search(/[?#]/),
+    s = i === -1 ? r : r.slice(0, i),
+    o = (n ? /^[a-z][a-z0-9+.-]*:\/*/i.exec(s) : null) ?? /:\/+/.exec(s);
+  if (!o) return !1;
+  let a = o.index + o[0].length,
+    u = (n ? hs : /[a-z][a-z0-9+.-]{1,31}:\/+/i).exec(s.slice(a)),
+    l = a + (u?.index ?? 0) + (u?.[0].length ?? 0);
+  return u !== null && (r.includes("@", l) || /%40/i.test(nt(r.slice(l), "/")))
+}
+
+function Zn(e) {
+  let n = N(e);
+  if (mt.test(n) || /^file:/i.test(n)) return !1;
+  return Yn(e)
+}
+
+function Yn(e) {
+  let n = N(e),
+    r = n.search(/[?#]/),
+    s = (r === -1 ? n : n.slice(0, r)).indexOf("\\");
+  return s !== -1 && n.includes("@", s)
+}
+
+function ys(e) {
+  let n = N(e),
+    r = /(?:ssh|git\+ssh|ssh\+git|git):\/\//i.exec(n);
+  if (!r) return !1;
+  let i = n.slice(r.index + r[0].length).replace(/%40/gi, "@").replace(/%5b/gi, "["),
+    s = i.search(/[/?#]/);
+  return s !== -1 && i.includes("@[", s)
+}
+
+function bs(e, n) {
+  if (!/^(?:ssh|git|git\+ssh|ssh\+git):$/i.test(n.protocol)) return !1;
+  let r = Rde(N(e))?.host;
+  return r !== void 0 && r.toLowerCase() !== _jt(n.hostname).toLowerCase()
+}
+
+function xt(e, n) {
+  return He(e, {
+    forDestination: !0
+  }) || He(n.href, {
+    forDestination: !0
+  }) || ys(e) || bs(e, n) || n.protocol === "file:" && Es(e)
+}
+
+function Es(e) {
+  let n = N(e),
+    r = n.search(/[?#]/),
+    s = (r === -1 ? n : n.slice(0, r)).indexOf("\\"),
+    o = n.lastIndexOf("@");
+  return s !== -1 && o > s && /:|%3a/i.test(n.slice(s, o))
+}
+
+function Ss(e) {
+  return /^[\w .+~@\\/-]*$/.test(e) && !/\\(?:[^A-Za-z0-9@]|$)| $|\.[_~+]*\.|(?:^|\/)[_~+]*\.[_~+]*$/.test(e) && !/(?:^|[^\\])@|@[^\\/ ]*(?:[/ ]|$)/.test(e)
+}
+
+function At(e) {
+  let n = e.indexOf("://");
+  return n !== -1 && /^[a-z][a-z0-9+.-]*$/i.test(e.slice(0, n)) ? n + 3 : 0
+}
+
+function wt(e) {
+  let n = e.indexOf("@");
+  if (n === -1) return -1;
+  let r = e.search(/[?#]/);
+  if (r !== -1 && r < n && e.lastIndexOf("/", r) !== -1) return -1;
+  let i = e.indexOf("/", n);
+  return e.lastIndexOf("@", i === -1 ? e.length : i)
+}
+
+function ks(e, n, r) {
+  let i = e.indexOf("/");
+  if (i <= 0 || i > n) return !1;
+  let s = e.slice(0, i).replace(/^\[[^\]]*\]/, "");
+  return !Me(r ? s.replace(/:\d+$/, "") : s)
+}
+var xs = /[a-z][a-z0-9+.-]{0,31}:\/\/[^\s'"`<>]+/gi,
+  Xn = /[\s'"`<>]/,
+  q6s = "whitespace, quotes, backticks or angle brackets";
+
+function K6s(e) {
+  return /^https?:\/\//i.test(e) && !Xn.test(e)
+}
+var As = /(^|[\s'"`<>])([^\s'"`<>]*(?:@|%40)[^\s'"`<>]*)/gi,
+  ws = new RegExp(`${$e}(?:${gs}):(?!\\/\\/)|${$e}(?:${Jn}):(?!\\/\\/)`, "gi");
+
+function Rs(e) {
+  let n = e.toLowerCase(),
+    r = Math.max(n.lastIndexOf("@"), n.lastIndexOf("%40"));
+  for (let i of e.matchAll(ws)) {
+    let s = i.index + i[0].length;
+    if (r < s) return -1;
+    let o = i.index + (i[1] ?? i[2] ?? "").length;
+    if (i[2] === void 0) return o;
+    let a = n.indexOf(":", s),
+      u = Math.min(a === -1 ? r : a, r);
+    if (a !== -1 && a < r || n.slice(s, u).includes("%3a")) return o
+  }
+  return -1
+}
+
+function hR(e) {
+  if (!e) return e;
+  return e.replace(xs, (n) => zf(n)).replace(As, (n, r, i) => {
+    let s = Rs(i);
+    return s === -1 ? r + i : r + i.slice(0, s) + zf(i.slice(s))
+  })
+}
+
+function ot(e, n, r) {
+  return (n || e.redactOnly !== !0) && (e.prefilter === void 0 || e.prefilter.test(r))
+}
+
+function _s(e, n) {
+  for (let r = n + 2 * PGe;; r *= 2) {
+    if (e.length <= r) return pJn(e);
+    let i = pJn(e.slice(0, r)),
+      s = i.length - PGe;
+    if (s >= n) return ne(i, s)
+  }
+}
+var Os = {
+  aws: "AWS",
+  gcp: "GCP",
+  api: "API",
+  pat: "PAT",
+  ad: "AD",
+  tf: "TF",
+  oauth: "OAuth",
+  npm: "NPM",
+  pypi: "PyPI",
+  jwt: "JWT",
+  ci: "CI",
+  scim: "SCIM",
+  github: "GitHub",
+  gitlab: "GitLab",
+  openai: "OpenAI",
+  digitalocean: "DigitalOcean",
+  huggingface: "HuggingFace",
+  hashicorp: "HashiCorp",
+  sendgrid: "SendGrid"
+};
+var vt = {
+    verbose: 0,
+    debug: 1,
+    info: 2,
+    warn: 3,
+    error: 4
+  },
+  Cs = new RegExp(`(?!\\t)[${z_}]`, "gu"),
+  Is = 10485760,
+  er = 1048576,
+  Ps = 1e4,
+  Fs = 262144,
+  Ns = 5000,
+  tr = 100,
+  $s = hre((e) => e());
+
+function Hs(e) {
+  return Object.hasOwn(vt, e)
+}
+
+function nr(e) {
+  return SL(e) ? null : or(e)
+}
+
+function rr() {}
+var Bs = {
+  arm: "v5",
+  target: null
+};
+
+function Ms(e, n) {
+  e.stuck = e.appendSince === n ? "yes" : "no"
+}
+var Us = {
+  sessionId: "",
+  fromBackend: !1
+};
+
+function ir(e, n, r, i) {
+  let s = Q(n, "debug"),
+    o = Q(s, `${e.sessionId}.txt`),
+    a;
+  if (r === null) a = o;
+  else if (i !== null && r === i) a = Q(i, `${e.sessionId}.txt`);
+  else a = r;
+  let u = !e.fromBackend && a === o ? "v5" : "raw";
+  return {
+    target: a,
+    arm: u,
+    configHome: n,
+    rotate: u === "raw" && !(ge(a) === s && a.endsWith(".txt")),
+    pointLatest: u === "raw" && a !== o
+  }
+}
+
+function Ot(e) {
+  return Bf.userNamed(Ts(e) ? e : or(e))
+}
+
+function Ws(e) {
+  return e.code === "Failed" && e.telemetryCode === "ENOENT"
+}
+
+function Gs(e, n = Wt) {
+  return n ? e : void 0
+}
+async function sr(e, n, r, i) {
+  let s = {
+      namespace: "log",
+      sessionId: n,
+      channel: "debug"
+    },
+    o = await Je.run(!0, () => e.append(s, [{
+      data: r
+    }], i ? {
+      markLatest: !0
+    } : void 0));
+  if (o.ok) return "landed";
+  return i && o.error.code === "InvalidArgument" && o.error.argument === "opts.markLatest" ? "refused" : "dropped"
+}
+class ar {
+  deps;
+  minLevel;
+  filter;
+  toStderr;
+  filePath;
+  runtimeDebugEnabled = !1;
+  hasFormattedOutput = !1;
+  debugFromLaunch;
+  storageV5;
+  writer = null;
+  redirect = null;
+  unflushedChunks = [];
+  backlog = {
+    chain: Promise.resolve(),
+    length: 0,
+    appendSince: 0,
+    stuck: "no",
+    droppedCount: 0,
+    droppedTotal: 0
+  };
+  appendOldest = this.appendOldestChunks.bind(this);
+  backendLinesLogged = 0;
+  exiting = !1;
+  exitHandlerRegistered = !1;
+  successor = null;
+  writtenBytes = -1;
+  rotating = !1;
+  resolvedLogPath = null;
+  overrideDirectory = null;
+  rotationTarget = null;
+  latestMarked = !1;
+  latestRefused = !1;
+  constructor(e) {
+    this.deps = e;
+    if (this.storageV5 = Gs(e.storageV5), e.launchIdentity !== void 0) {
+      this.minLevel = e.launchIdentity.minLevel, this.filter = e.launchIdentity.filter, this.toStderr = e.launchIdentity.toStderr, this.filePath = e.launchIdentity.filePath, this.debugFromLaunch = e.launchIdentity.debugFromLaunch;
+      return
+    }
+    let n = Array.isArray(e.argv) ? e.argv : [],
+      r = n.indexOf("--"),
+      i = r === -1 ? n : n.slice(0, r),
+      s = e.env.CLAUDE_CODE_DEBUG_LOG_LEVEL?.toLowerCase().trim();
+    this.minLevel = s && Hs(s) ? s : "debug";
+    let o = i.find((u) => u.startsWith("--debug="));
+    this.filter = o ? Vt(o.substring(8)) : null, this.toStderr = i.includes("--debug-to-stderr") || i.includes("-d2e");
+    let a = null;
+    for (let u = 0; u < i.length; u++) {
+      let l = i[u];
+      if (l.startsWith("--debug-file=")) {
+        a = nr(l.substring(13));
+        break
+      }
+      if (l === "--debug-file" && u + 1 < i.length) {
+        a = nr(i[u + 1]);
+        break
+      }
+    }
+    this.filePath = a, this.debugFromLaunch = Fe(e.env.DEBUG) || Fe(e.env.DEBUG_SDK) || i.includes("--debug") || i.includes("-d") || this.toStderr || o !== void 0 || this.filePath !== null
+  }
+  isDebugMode() {
+    return this.runtimeDebugEnabled || this.debugFromLaunch
+  }
+  drainsSyncAtExit() {
+    return !(W() && this.storageV5 !== void 0 && this.deps.syncExitDrain === !1)
+  }
+  launchIdentity() {
+    return {
+      minLevel: this.minLevel,
+      filter: this.filter,
+      toStderr: this.toStderr,
+      filePath: this.filePath,
+      debugFromLaunch: this.debugFromLaunch,
+      isAnt: this.deps.isAnt,
+      isTestEnvironment: this.deps.isTestEnvironment
+    }
+  }
+  enableDebugLogging() {
+    let e = this.isDebugMode() || this.deps.isAnt;
+    return this.runtimeDebugEnabled = !0, e
+  }
+  logPath() {
+    return this.filePath ?? (this.overrideDirectory !== null && this.overrideDirectory === this.deps.env.CLAUDE_CODE_DEBUG_LOGS_DIR ? Q(this.overrideDirectory, `${this.deps.sessionId()}.txt`) : null) ?? this.resolvedLogPath ?? this.deps.env.CLAUDE_CODE_DEBUG_LOGS_DIR ?? this.defaultLogPath()
+  }
+  defaultLogPath(e = this.deps.sessionId()) {
+    return Q(this.deps.configHomeDir(), "debug", `${e}.txt`)
+  }
+  learnedOverrideDirectory() {
+    return this.overrideDirectory
+  }
+  isArmed() {
+    return this.storageV5 !== void 0
+  }
+  log(e, {
+    level: n
+  } = {
+    level: "debug"
+  }) {
+    if (vt[n] < vt[this.minLevel]) return;
+    let r = this.deps.limits?.();
+    if (r === void 0) {
+      this.emit(e, n);
+      return
+    }
+    let i = e.length > r.maxMessageLength ? `debug message not logged: it has ${e.length} characters, over this log's fixed limit of ${r.maxMessageLength} per message` : e,
+      {
+        admitted: s,
+        leftOutBefore: o
+      } = r.admit(i.length);
+    if (!s) return;
+    r.timed(() => {
+      if (o > 0) this.emit(`debug messages not logged: ${o} since this log's last line, over its fixed limit on how much it logs at a time`, n);
+      this.emit(i, n)
+    })
+  }
+  emit(e, n) {
+    if (!this.shouldLog(e)) return;
+    let r = ps(e.trim());
+    r = r.includes(`
+`) ? mL(_(r)) : r.replace(Cs, G5);
+    let s = `${new Date().toISOString()} [${n.toUpperCase()}] ${r}
+`;
+    if (this.toStderr) {
+      this.deps.writeToStderr(s);
+      return
+    }
+    this.write(s)
+  }
+  write(e) {
+    let n = this.getWriter(),
+      r = Us;
+    if (this.storageV5 !== void 0) {
+      if (r = {
+          sessionId: this.deps.sessionId(),
+          fromBackend: Je.getStore() === !0
+        }, r.fromBackend) this.backendLinesLogged++
+    }
+    if (n.write({
+        origin: r,
+        content: e
+      }), this.exiting) n.flush()
+  }
+  async flush() {
+    let e = this.backendLinesLogged;
+    if (this.writer?.flush(), await this.drained(), this.storageV5 !== void 0 && this.successor) return this.successor.flush();
+    for (let n = 0; this.backendLinesLogged !== e && n < 3; n++) e = this.backendLinesLogged, this.writer?.flush(), await this.drained();
+    if (this.backlog.droppedCount > 0 && this.backlog.length === 0 && !this.successor) this.write(""), this.writer?.flush(), await this.drained()
+  }
+  async drained() {
+    if (this.isAppendStuck()) return;
+    let e = this.backlog.chain.then(() => !0);
+    do
+      if (await je(e, tr)) return; while (!this.isAppendStuck())
+  }
+  isAppendStuck() {
+    let e = this.backlog,
+      {
+        appendSince: n
+      } = e;
+    if (e.stuck === "no" && n !== 0 && Date.now() - n >= Ns) e.stuck = "suspected", setTimeout(Ms, tr, e, n).unref();
+    return e.stuck === "yes"
+  }
+  dispose(e) {
+    this.redirect = e;
+    try {
+      this.writer?.dispose()
+    } finally {
+      this.redirect = null, this.writer = null
+    }
+  }
+  succeed(e) {
+    this.runtimeDebugEnabled = e.runtimeDebugEnabled, this.hasFormattedOutput = e.hasFormattedOutput, this.unflushedChunks = e.unflushedChunks, this.backlog = e.backlog, this.exitHandlerRegistered = e.exitHandlerRegistered, e.successor = this, e.dispose((n) => {
+      this.write(n)
+    })
+  }
+  handleExit() {
+    if (this.successor) {
+      this.successor.handleExit();
+      return
+    }
+    if (this.exiting = !0, this.backlog.droppedCount > 0) try {
+      this.write("")
+    } catch {}
+    this.writer?.flush(), this.drainSync()
+  }
+  async maybeRotate(e, n, r = Is) {
+    let i = W() && this.storageV5 !== void 0 ? this.storageV5.hostFiles : void 0;
+    if (this.writtenBytes < 0)
+      if (i) {
+        let s = await i.stat(Ot(e));
+        this.writtenBytes = s.ok && s.value.kind !== "absent" ? s.value.size : 0
+      } else this.writtenBytes = await vs(e).then((s) => s.size).catch(() => 0);
+    else this.writtenBytes += n;
+    if (this.writtenBytes <= r || this.rotating) return;
+    this.rotating = !0;
+    try {
+      let s = e.endsWith(".txt") ? `${e.slice(0,-4)}.1.txt` : `${e}.1`;
+      if (i) {
+        let o = Ot(e),
+          a = Ot(s),
+          u = await i.rename(o, a);
+        if (!u.ok && !Ws(u.error)) {
+          if (await i.delete(a, {
+              missingOk: !0
+            }), !(await i.rename(o, a)).ok) await i.delete(o, {
+            missingOk: !0
+          })
+        }
+      } else try {
+        await Qn(e, s)
+      } catch (o) {
+        if (!G(o)) await _t(s).catch(() => {}), await Qn(e, s).catch(() => _t(e).catch(() => {}))
+      }
+      this.writtenBytes = 0
+    } finally {
+      this.rotating = !1
+    }
+  }
+  shouldLog(e) {
+    if (this.deps.isTestEnvironment && !this.toStderr && this.filePath === null) return !1;
+    if (!this.deps.isAnt && !this.isDebugMode()) return !1;
+    if (typeof process > "u" || typeof process.versions > "u" || typeof process.versions.node > "u") return !1;
+    return jt(e, this.filter)
+  }
+  resolveDirToFile(e) {
+    return this.resolvedLogPath = Q(e, `${this.deps.sessionId()}.txt`), this.resolvedLogPath
+  }
+  async appendGroup(e, n, r, i) {
+    if (this.storageV5 !== void 0 && e.arm === "v5") {
+      await this.appendV5AndMark(this.storageV5, n, r);
+      return
+    }
+    if (e.target === null || !this.writesFiles()) return;
+    if (i) await qn(ge(e.target), {
+      recursive: !0
+    }).catch(() => {});
+    let s = e;
+    try {
+      await Rt(e.target, r)
+    } catch (o) {
+      if (!hV(o)) throw o;
+      if (this.storageV5 === void 0) s = {
+        ...e,
+        target: this.resolveDirToFile(e.target)
+      }, await Rt(s.target, r);
+      else {
+        if (this.overrideDirectory = e.target, s = ir(n, e.configHome, e.target, e.target), s.arm === "v5") {
+          await this.appendV5AndMark(this.storageV5, n, r);
+          return
+        }
+        await qn(ge(s.target), {
+          recursive: !0
+        }).catch(() => {});
+        try {
+          await Rt(s.target, r)
+        } catch {
+          return
+        }
+      }
+    }
+    if (s.rotate) {
+      if (this.storageV5 !== void 0 && s.target !== this.rotationTarget) this.rotationTarget = s.target, this.writtenBytes = -1;
+      await this.maybeRotate(s.target, Buffer.byteLength(r)).catch(rr)
+    }
+    if (s.pointLatest) this.markLatestSymlink()
+  }
+  async appendV5AndMark(e, n, r) {
+    let i = W(),
+      s = i && !this.latestMarked && !this.latestRefused,
+      o = await sr(e, n.sessionId, r, s);
+    if (o === "refused") this.latestRefused = !0, o = await sr(e, n.sessionId, r, !1), this.log("debug log: the storage backend refused markLatest; <debug folder>/latest is not pointed in this process", {
+      level: "warn"
+    });
+    if (o !== "landed") return;
+    if (s && !this.latestRefused) this.latestMarked = !0;
+    else if (!i) this.markLatestSymlink()
+  }
+  markLatestSymlink() {
+    if (!this.latestMarked && this.writesFiles()) this.latestMarked = !0, this.updateLatestSymlink()
+  }
+  isSessionDiskless() {
+    try {
+      return this.deps.diskless?.() === !0
+    } catch {
+      return !0
+    }
+  }
+  writesFiles() {
+    if (this.isSessionDiskless()) return !1;
+    try {
+      return this.deps.defaultFile?.() !== !1 || this.filePath !== null || this.deps.env.CLAUDE_CODE_DEBUG_LOGS_DIR !== void 0
+    } catch {
+      return !1
+    }
+  }
+  async appendOldestChunks() {
+    let e = this.backlog,
+      n = this.unflushedChunks[0],
+      r = n?.queued;
+    if (r === void 0) return;
+    let i = 0,
+      s = 0,
+      o = !1;
+    for (let {
+        content: a,
+        queued: u
+      }
+      of this.unflushedChunks) {
+      if (u === void 0 || u.owner !== r.owner || u.decision.arm !== r.decision.arm || u.decision.target !== r.decision.target || u.origin.sessionId !== r.origin.sessionId || u.origin.fromBackend !== r.origin.fromBackend || i > 0 && s + a.length > Fs) break;
+      i++, s += a.length, o ||= u.needMkdir
+    }
+    if (e.appendSince = Date.now(), await r.owner.appendGroup(r.decision, r.origin, this.unflushedChunks.slice(0, i).map((a) => a.content).join(""), o).catch(rr), e.appendSince = 0, e.stuck = "no", this.unflushedChunks[0] === n) this.unflushedChunks.splice(0, i), e.length -= s
+  }
+  drainSync() {
+    if (this.unflushedChunks.length === 0) return;
+    if (this.backlog.length = 0, !this.drainsSyncAtExit() || !this.writesFiles() || this.isAppendStuck()) {
+      this.unflushedChunks.length = 0;
+      return
+    }
+    let e = [];
+    for (let n of this.unflushedChunks.splice(0)) {
+      if (n.target === null) continue;
+      let r = e.at(-1);
+      if (r !== void 0 && r.armed === n.armed && (!n.armed || r.target === n.target)) r.parts.push(n);
+      else e.push({
+        target: n.target,
+        armed: n.armed,
+        parts: [n]
+      })
+    }
+    for (let {
+        target: n,
+        armed: r,
+        parts: i
+      }
+      of e) {
+      let s = r ? n : this.logPath(),
+        o = i.map((a) => a.content).join("");
+      try {
+        se().mkdirSync(ge(s))
+      } catch {}
+      try {
+        se().appendFileSync(s, o)
+      } catch (a) {
+        if (hV(a)) try {
+          if (!r) se().appendFileSync(this.resolveDirToFile(s), o);
+          else {
+            let u = (d, p) => {
+                try {
+                  se().appendFileSync(Q(s, `${d}.txt`), p)
+                } catch {}
+              },
+              l = i[0]?.sessionId,
+              c = "";
+            for (let d of i) {
+              if (d.sessionId !== l) u(l, c), l = d.sessionId, c = "";
+              c += d.content
+            }
+            u(l, c)
+          }
+        } catch {}
+      }
+    }
+  }
+  droppedLineTotal() {
+    return this.backlog.droppedTotal
+  }
+  takeDroppedNote() {
+    let {
+      droppedCount: e
+    } = this.backlog;
+    if (e === 0) return "";
+    return this.backlog.droppedCount = 0, `${new Date().toISOString()} [WARN] debug messages not logged: ${e} since the line above, because writes to this log were over 10 s behind, with over 1 MiB waiting
+`
+  }
+  groupLines(e) {
+    let n = e[0];
+    if (n === void 0) return [];
+    let r = this.filePath ?? this.deps.env.CLAUDE_CODE_DEBUG_LOGS_DIR ?? null,
+      i = this.isSessionDiskless();
+    if (i && (this.storageV5 === void 0 || r !== null)) return [];
+    if (this.storageV5 === void 0) return [{
+      decision: {
+        target: this.logPath(),
+        arm: "raw",
+        configHome: "",
+        rotate: !0,
+        pointLatest: !0
+      },
+      origin: n.origin,
+      lines: e
+    }];
+    let s = [];
+    for (let o of e) {
+      if (i && o.origin.fromBackend) continue;
+      let a = s.at(-1);
+      if (a !== void 0 && a.origin.sessionId === o.origin.sessionId && a.origin.fromBackend === o.origin.fromBackend) a.lines.push(o);
+      else s.push({
+        decision: i ? Bs : ir(o.origin, this.deps.configHomeDir(), r, this.overrideDirectory),
+        origin: o.origin,
+        lines: [o]
+      })
+    }
+    return s
+  }
+  getWriter() {
+    if (this.writer) return this.writer;
+    let e = null,
+      n = this.storageV5 !== void 0;
+    if (this.writer = Ze({
+        writeBatch: (r) => {
+          if (this.redirect) {
+            this.redirect(r.map((o) => o.content).join(""));
+            return
+          }
+          if (this.exiting) {
+            for (let o of this.groupLines(r)) this.unflushedChunks.push({
+              target: o.decision.target,
+              sessionId: o.origin.sessionId,
+              armed: n,
+              content: this.takeDroppedNote() + o.lines.map((a) => a.content).join("")
+            });
+            this.drainSync();
+            return
+          }
+          let i = this.writesFiles(),
+            s = this.backlog;
+          this.isAppendStuck();
+          for (let o of this.groupLines(r)) {
+            if (o.decision.arm === "raw" && !i) continue;
+            if (s.droppedCount > 0 ? s.length >= er / 2 : s.length >= er && Date.now() - (this.unflushedChunks[0]?.queued?.at ?? 1 / 0) >= Ps) {
+              s.droppedCount += o.lines.length, s.droppedTotal += o.lines.length;
+              continue
+            }
+            let a = this.takeDroppedNote() + o.lines.map((c) => c.content).join("");
+            if (a === "") continue;
+            let u = o.decision.arm === "raw" ? ge(o.decision.target) : null,
+              l = u !== null && (o.origin.fromBackend || e !== u);
+            if (u !== null) e = u;
+            this.unflushedChunks.push({
+              target: o.decision.target,
+              sessionId: o.origin.sessionId,
+              armed: n,
+              content: a,
+              queued: {
+                at: Date.now(),
+                owner: this,
+                decision: o.decision,
+                origin: o.origin,
+                needMkdir: l
+              }
+            }), s.length += a.length, s.chain = $s(() => s.chain.then(this.appendOldest))
+          }
+        },
+        sizeOf: (r) => r.content.length,
+        flushIntervalMs: 1000,
+        maxBufferSize: 100,
+        immediateMode: this.isDebugMode()
+      }), this.deps.registerCleanup(async () => {
+        this.writer?.dispose(), await this.drained()
+      }), !this.exitHandlerRegistered) this.exitHandlerRegistered = !0, this.deps.onExit(this.handleExit.bind(this));
+    return this.writer
+  }
+  async updateLatestSymlink() {
+    try {
+      let e = this.logPath(),
+        n = Q(ge(e), "latest");
+      await _t(n).catch(() => {}), await Ls(e, n)
+    } catch {}
+  }
+}
+class ur {
+  instance = void 0;
+  init = {};
+  defaultFile = !0;
+  limits = void 0;
+  setInstance(e) {
+    this.instance = e
+  }
+  setInit(e) {
+    this.init = e
+  }
+  disableDefaultFile() {
+    this.defaultFile = !1
+  }
+  setLimits(e) {
+    this.limits = e
+  }
+}
+var Ks = new z(() => new ur);
+
+function Ee() {
+  return ms(Ks)
+}
+
+function Lt(e, n) {
+  return new ar({
+    argv: process.argv,
+    env: process.env,
+    sessionId: () => K(),
+    configHomeDir: () => Pe(),
+    onExit: (r) => {
+      process.on("exit", r)
+    },
+    registerCleanup: (r) => {
+      bt(r)
+    },
+    writeToStderr: (r) => {
+      XW(r, {
+        mayDrop: !0
+      })
+    },
+    isAnt: n?.isAnt ?? !1,
+    isTestEnvironment: n?.isTestEnvironment ?? !1,
+    launchIdentity: n,
+    storageV5: e.init.storageV5 !== void 0 && e.init.configHome === vf() ? e.init.storageV5 : void 0,
+    syncExitDrain: e.init.syncExitDrain,
+    diskless: () => de(),
+    defaultFile: () => e.defaultFile,
+    limits: () => e.limits
+  })
+}
+
+function G4(e) {
+  let n = Ee();
+  n.setInit({
+    storageV5: e.storageV5,
+    configHome: vf(),
+    syncExitDrain: e.syncExitDrain
+  });
+  let r = n.instance;
+  if (r) {
+    let i = Lt(n, r.launchIdentity());
+    n.setInstance(i), i.succeed(r)
+  }
+  if (e.syncExitDrain === !1 && !V().drainsSyncAtExit()) t("Sync exit drain off for this process: debug lines still queued at exit are dropped, so this log may end short")
+}
+
+function V() {
+  let e = Ee(),
+    n = e.instance;
+  if (n) return n;
+  let r = Lt(e);
+  return e.setInstance(r), r
+}
+
+function Vmn() {
+  return V().minLevel
+}
+
+function YW() {
+  return V().isDebugMode()
+}
+
+function V5() {
+  return V().toStderr
+}
+
+function qWo() {
+  return V().filePath
+}
+
+function KWo() {
+  return V().enableDebugLogging()
+}
+
+function YWo() {
+  let e = Ee(),
+    n = e.instance;
+  if (!n) return;
+  let r = Lt(e);
+  e.setInstance(r), r.succeed(n)
+}
+
+function RDe(e) {
+  V().hasFormattedOutput = e
+}
+
+function XWo() {
+  return V().hasFormattedOutput
+}
+async function FTe() {
+  await Ee().instance?.flush()
+}
+
+function mJn() {
+  return de() ? {} : {
+    debug_stderr_dropped_total: izo(),
+    debug_file_dropped_total: Ee().instance?.droppedLineTotal() ?? 0
+  }
+}
+
+function t(e, n = {
+  level: "debug"
+}) {
+  V().log(e, n)
+}
+
+function V4() {
+  return V().logPath()
+}
+
+function JWo(e, n) {
+  return e === V().defaultLogPath(n)
+}
+
+function Xne(e, n) {
+  return
+}
+export {
+  Eh,
+  $p,
+  $6s,
+  Bf,
+  IWo,
+  U6s,
+  B6s,
+  qne,
+  bt,
+  Vbt,
+  Km,
+  mI,
+  sJn,
+  gu,
+  Wh,
+  _,
+  b$,
+  Bi,
+  iJn,
+  J,
+  jo,
+  bc,
+  LZe,
+  Vhe,
+  yjt,
+  Ey,
+  NZe,
+  aJn,
+  MWo,
+  lJn,
+  gI,
+  qbt,
+  DWo,
+  Tde,
+  LTe,
+  l1r,
+  jf,
+  S$,
+  _o,
+  NTe,
+  Kne,
+  Kbt,
+  JB,
+  KW,
+  d1r,
+  LWo,
+  Cde,
+  w$,
+  c1r,
+  NWo,
+  ci,
+  Ybt,
+  W5,
+  Xbt,
+  xo,
+  u1r,
+  W_,
+  se,
+  vg,
+  AGe,
+  J2,
+  mR,
+  Bmn,
+  FZe,
+  FWo,
+  z4,
+  j6s,
+  QB,
+  dJn,
+  Q2,
+  HZe,
+  cJn,
+  HWo,
+  gR,
+  zd,
+  ZB,
+  Ru,
+  p1r,
+  pn,
+  kDe,
+  u0,
+  z_,
+  EDe,
+  $Ze,
+  W6s,
+  xGe,
+  hI,
+  $Wo,
+  Wf,
+  Fc,
+  UWo,
+  UZe,
+  sP,
+  nc,
+  BZe,
+  _n,
+  mL,
+  z5,
+  ti,
+  z6s,
+  jZe,
+  MA,
+  jmn,
+  uJn,
+  Yne,
+  Jbt,
+  G5,
+  e1,
+  TDe,
+  Rde,
+  _jt,
+  BWo,
+  G6s,
+  jWo,
+  V6s,
+  WWo,
+  Qbt,
+  ps,
+  wQ,
+  zWo,
+  pJn,
+  PGe,
+  bjt,
+  CDe,
+  vQ,
+  GWo,
+  Wmn,
+  sC,
+  zmn,
+  VWo,
+  f1r,
+  fJn,
+  G_,
+  zf,
+  WZe,
+  qhe,
+  kQ,
+  Gmn,
+  q6s,
+  K6s,
+  hR,
+  G4,
+  Vmn,
+  YW,
+  V5,
+  qWo,
+  KWo,
+  YWo,
+  RDe,
+  XWo,
+  FTe,
+  mJn,
+  t,
+  V4,
+  JWo,
+  Xne
+};

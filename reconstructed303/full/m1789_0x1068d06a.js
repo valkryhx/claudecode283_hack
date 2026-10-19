@@ -1,0 +1,2124 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  Wke,
+  YK,
+  fd,
+  pc,
+  Cw,
+  Fn,
+  Jb,
+  Et,
+  uJe,
+  Er,
+  ndn,
+  L0o,
+  F0o,
+  ILr,
+  dB,
+  XLr,
+  A$t,
+  gJe,
+  ZK,
+  b6n,
+  JLr,
+  ezs,
+  tzs,
+  Q0o,
+  E,
+  Ms
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  Jx,
+  sE,
+  sbt,
+  Ff,
+  Zy
+} from "B:/~BUN/root/chunk-07c8fw5z.js";
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import {
+  Fe
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  pSt,
+  J1r,
+  Z1r,
+  ret,
+  tjr,
+  MGo,
+  DGo,
+  njr,
+  LGo,
+  we,
+  Br,
+  pP,
+  de
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  _P,
+  d,
+  pi
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  ln
+} from "B:/~BUN/root/chunk-jpdys232.js";
+import {
+  qne,
+  bt,
+  _,
+  Bi,
+  G_,
+  XWo,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import {
+  nt
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  _$,
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  I,
+  SGe
+} from "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  m
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  xe
+} from "B:/~BUN/root/chunk-8pmnanyd.js";
+import {
+  nl,
+  FWe,
+  sm,
+  Jht
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  Da,
+  cm,
+  pv
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import "B:/~BUN/root/chunk-nxwmyxnk.js";
+import "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import "B:/~BUN/root/chunk-xrp58hm9.js";
+import "B:/~BUN/root/chunk-2zk4vqr8.js";
+import "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import "B:/~BUN/root/chunk-pjgzz98k.js";
+import "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import {
+  Zp,
+  eT
+} from "B:/~BUN/root/chunk-1gpjpba6.js";
+import {
+  yo
+} from "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import {
+  Ct
+} from "B:/~BUN/root/chunk-28dw3zbk.js";
+import {
+  Kyt,
+  yg
+} from "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import {
+  Ni,
+  IJ
+} from "B:/~BUN/root/chunk-h9p45fg5.js";
+import {
+  PB,
+  JEe
+} from "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import "B:/~BUN/root/chunk-cx57tr4b.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import {
+  sIr,
+  bke,
+  wke
+} from "B:/~BUN/root/chunk-yjayxywk.js";
+import {
+  uin,
+  kxo,
+  cIr,
+  X9e,
+  uIr,
+  IHs,
+  pIr,
+  fin
+} from "B:/~BUN/root/chunk-1s3ejbv6.js";
+import {
+  fx,
+  WTs,
+  a_o,
+  Kwe
+} from "B:/~BUN/root/chunk-r1z1wgpe.js";
+import {
+  vns
+} from "B:/~BUN/root/chunk-3zy0q0p2.js";
+import {
+  Wme
+} from "B:/~BUN/root/chunk-j4qesy5s.js";
+import {
+  lCs
+} from "B:/~BUN/root/chunk-nz6ywek4.js";
+import "B:/~BUN/root/chunk-efcxwmhb.js";
+import "B:/~BUN/root/chunk-d544j3ga.js";
+import "B:/~BUN/root/chunk-0n2201tc.js";
+import "B:/~BUN/root/chunk-q3srk2wz.js";
+import "B:/~BUN/root/chunk-hhgqcegv.js";
+import "B:/~BUN/root/chunk-nvdqbkrt.js";
+import "B:/~BUN/root/chunk-472kxa0t.js";
+import "B:/~BUN/root/chunk-183sjefx.js";
+import "B:/~BUN/root/chunk-hkh6hras.js";
+import "B:/~BUN/root/chunk-vttg4n7q.js";
+import "B:/~BUN/root/chunk-7gwemd3j.js";
+import "B:/~BUN/root/chunk-h2myanpn.js";
+import "B:/~BUN/root/chunk-qk52d0gf.js";
+import "B:/~BUN/root/chunk-1fjjnb3f.js";
+import "B:/~BUN/root/chunk-cvj1wxdh.js";
+import {
+  oJr
+} from "B:/~BUN/root/chunk-enqbzy18.js";
+import {
+  HNe
+} from "B:/~BUN/root/chunk-fpterrex.js";
+import {
+  sCs,
+  h_o
+} from "B:/~BUN/root/chunk-3a551r0y.js";
+import "B:/~BUN/root/chunk-nsa84wqe.js";
+import "B:/~BUN/root/chunk-f3f5k3wx.js";
+import "B:/~BUN/root/chunk-bhfm57j1.js";
+import "B:/~BUN/root/chunk-y424etr5.js";
+import "B:/~BUN/root/chunk-b4xxgr0r.js";
+import "B:/~BUN/root/chunk-6n2cf80v.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-dyer18a2.js";
+import "B:/~BUN/root/chunk-xpy44yvr.js";
+import "B:/~BUN/root/chunk-et37ax67.js";
+import {
+  QN,
+  Fdn
+} from "B:/~BUN/root/chunk-4qc55bxf.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import {
+  hs
+} from "B:/~BUN/root/chunk-qjf8jcwq.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+import {
+  ve
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+var C = ve(nl(), 1);
+var le = ve(sm(), 1),
+  N = ve(Jht(), 1);
+var oe = ve(sm());
+class ne {
+  export (e, r) {
+    this._sendLogRecords(e, r)
+  }
+  shutdown() {
+    return Promise.resolve()
+  }
+  _exportInfo(e) {
+    return {
+      resource: {
+        attributes: e.resource.attributes
+      },
+      instrumentationScope: e.instrumentationScope,
+      timestamp: oe.hrTimeToMicroseconds(e.hrTime),
+      traceId: e.spanContext?.traceId,
+      spanId: e.spanContext?.spanId,
+      traceFlags: e.spanContext?.traceFlags,
+      severityText: e.severityText,
+      severityNumber: e.severityNumber,
+      body: e.body,
+      attributes: e.attributes
+    }
+  }
+  _sendLogRecords(e, r) {
+    for (let o of e) console.dir(this._exportInfo(o), {
+      depth: 3
+    });
+    r?.({
+      code: oe.ExportResultCode.SUCCESS
+    })
+  }
+}
+var U = ve(HNe(), 1);
+var Ge = ve(sm()),
+  ze = ve(Jht());
+var P = ve(nl()),
+  Y = ve(sm());
+var x = ve(nl()),
+  S = ve(sm()),
+  w = ve(FWe());
+var Me = "exception";
+class me {
+  _spanContext;
+  kind;
+  parentSpanContext;
+  attributes = {};
+  links = [];
+  events = [];
+  startTime;
+  resource;
+  instrumentationScope;
+  _droppedAttributesCount = 0;
+  _droppedEventsCount = 0;
+  _droppedLinksCount = 0;
+  name;
+  status = {
+    code: x.SpanStatusCode.UNSET
+  };
+  endTime = [0, 0];
+  _ended = !1;
+  _duration = [-1, -1];
+  _spanProcessor;
+  _spanLimits;
+  _attributeValueLengthLimit;
+  _performanceStartTime;
+  _performanceOffset;
+  _startTimeProvided;
+  constructor(e) {
+    let r = Date.now();
+    if (this._spanContext = e.spanContext, this._performanceStartTime = S.otperformance.now(), this._performanceOffset = r - (this._performanceStartTime + S.getTimeOrigin()), this._startTimeProvided = e.startTime != null, this._spanLimits = e.spanLimits, this._attributeValueLengthLimit = this._spanLimits.attributeValueLengthLimit || 0, this._spanProcessor = e.spanProcessor, this.name = e.name, this.parentSpanContext = e.parentSpanContext, this.kind = e.kind, this.links = e.links || [], this.startTime = this._getTime(e.startTime ?? r), this.resource = e.resource, this.instrumentationScope = e.scope, e.attributes != null) this.setAttributes(e.attributes);
+    this._spanProcessor.onStart(this, e.context)
+  }
+  spanContext() {
+    return this._spanContext
+  }
+  setAttribute(e, r) {
+    if (r == null || this._isSpanEnded()) return this;
+    if (e.length === 0) return x.diag.warn(`Invalid attribute key: ${e}`), this;
+    if (!S.isAttributeValue(r)) return x.diag.warn(`Invalid attribute value set for key: ${e}`), this;
+    let {
+      attributeCountLimit: o
+    } = this._spanLimits;
+    if (o !== void 0 && Object.keys(this.attributes).length >= o && !Object.prototype.hasOwnProperty.call(this.attributes, e)) return this._droppedAttributesCount++, this;
+    return this.attributes[e] = this._truncateToSize(r), this
+  }
+  setAttributes(e) {
+    for (let [r, o] of Object.entries(e)) this.setAttribute(r, o);
+    return this
+  }
+  addEvent(e, r, o) {
+    if (this._isSpanEnded()) return this;
+    let {
+      eventCountLimit: n
+    } = this._spanLimits;
+    if (n === 0) return x.diag.warn("No events allowed."), this._droppedEventsCount++, this;
+    if (n !== void 0 && this.events.length >= n) {
+      if (this._droppedEventsCount === 0) x.diag.debug("Dropping extra events.");
+      this.events.shift(), this._droppedEventsCount++
+    }
+    if (S.isTimeInput(r)) {
+      if (!S.isTimeInput(o)) o = r;
+      r = void 0
+    }
+    let s = S.sanitizeAttributes(r);
+    return this.events.push({
+      name: e,
+      attributes: s,
+      time: this._getTime(o),
+      droppedAttributesCount: 0
+    }), this
+  }
+  addLink(e) {
+    return this.links.push(e), this
+  }
+  addLinks(e) {
+    return this.links.push(...e), this
+  }
+  setStatus(e) {
+    if (this._isSpanEnded()) return this;
+    if (this.status = {
+        ...e
+      }, this.status.message != null && typeof e.message !== "string") x.diag.warn(`Dropping invalid status.message of type '${typeof e.message}', expected 'string'`), delete this.status.message;
+    return this
+  }
+  updateName(e) {
+    if (this._isSpanEnded()) return this;
+    return this.name = e, this
+  }
+  end(e) {
+    if (this._isSpanEnded()) {
+      x.diag.error(`${this.name} ${this._spanContext.traceId}-${this._spanContext.spanId} - You can only call end() on a span once.`);
+      return
+    }
+    if (this._ended = !0, this.endTime = this._getTime(e), this._duration = S.hrTimeDuration(this.startTime, this.endTime), this._duration[0] < 0) x.diag.warn("Inconsistent start and end time, startTime > endTime. Setting span duration to 0ms.", this.startTime, this.endTime), this.endTime = this.startTime.slice(), this._duration = [0, 0];
+    if (this._droppedEventsCount > 0) x.diag.warn(`Dropped ${this._droppedEventsCount} events because eventCountLimit reached`);
+    this._spanProcessor.onEnd(this)
+  }
+  _getTime(e) {
+    if (typeof e === "number" && e <= S.otperformance.now()) return S.hrTime(e + this._performanceOffset);
+    if (typeof e === "number") return S.millisToHrTime(e);
+    if (e instanceof Date) return S.millisToHrTime(e.getTime());
+    if (S.isTimeInputHrTime(e)) return e;
+    if (this._startTimeProvided) return S.millisToHrTime(Date.now());
+    let r = S.otperformance.now() - this._performanceStartTime;
+    return S.addHrTimes(this.startTime, S.millisToHrTime(r))
+  }
+  isRecording() {
+    return this._ended === !1
+  }
+  recordException(e, r) {
+    let o = {};
+    if (typeof e === "string") o[w.ATTR_EXCEPTION_MESSAGE] = e;
+    else if (e) {
+      if (e.code) o[w.ATTR_EXCEPTION_TYPE] = e.code.toString();
+      else if (e.name) o[w.ATTR_EXCEPTION_TYPE] = e.name;
+      if (e.message) o[w.ATTR_EXCEPTION_MESSAGE] = e.message;
+      if (e.stack) o[w.ATTR_EXCEPTION_STACKTRACE] = e.stack
+    }
+    if (o[w.ATTR_EXCEPTION_TYPE] || o[w.ATTR_EXCEPTION_MESSAGE]) this.addEvent(Me, o, r);
+    else x.diag.warn(`Failed to record an exception ${e}`)
+  }
+  get duration() {
+    return this._duration
+  }
+  get ended() {
+    return this._ended
+  }
+  get droppedAttributesCount() {
+    return this._droppedAttributesCount
+  }
+  get droppedEventsCount() {
+    return this._droppedEventsCount
+  }
+  get droppedLinksCount() {
+    return this._droppedLinksCount
+  }
+  _isSpanEnded() {
+    if (this._ended) {
+      let e = Error(`Operation attempted on ended Span {traceId: ${this._spanContext.traceId}, spanId: ${this._spanContext.spanId}}`);
+      x.diag.warn(`Cannot execute the operation on ended Span {traceId: ${this._spanContext.traceId}, spanId: ${this._spanContext.spanId}}`, e)
+    }
+    return this._ended
+  }
+  _truncateToLimitUtil(e, r) {
+    if (e.length <= r) return e;
+    return e.substring(0, r)
+  }
+  _truncateToSize(e) {
+    let r = this._attributeValueLengthLimit;
+    if (r <= 0) return x.diag.warn(`Attribute value limit must be positive, got ${r}`), e;
+    if (typeof e === "string") return this._truncateToLimitUtil(e, r);
+    if (Array.isArray(e)) return e.map((o) => typeof o === "string" ? this._truncateToLimitUtil(o, r) : o);
+    return e
+  }
+}
+var ae = ve(nl()),
+  A = ve(sm());
+var M;
+(function(e) {
+  e[e.NOT_RECORD = 0] = "NOT_RECORD", e[e.RECORD = 1] = "RECORD", e[e.RECORD_AND_SAMPLED = 2] = "RECORD_AND_SAMPLED"
+})(M || (M = {}));
+class X {
+  shouldSample() {
+    return {
+      decision: M.NOT_RECORD
+    }
+  }
+  toString() {
+    return "AlwaysOffSampler"
+  }
+}
+class D {
+  shouldSample() {
+    return {
+      decision: M.RECORD_AND_SAMPLED
+    }
+  }
+  toString() {
+    return "AlwaysOnSampler"
+  }
+}
+var H = ve(nl()),
+  De = ve(sm());
+class W {
+  _root;
+  _remoteParentSampled;
+  _remoteParentNotSampled;
+  _localParentSampled;
+  _localParentNotSampled;
+  constructor(e) {
+    if (this._root = e.root, !this._root) De.globalErrorHandler(Error("ParentBasedSampler must have a root sampler configured")), this._root = new D;
+    this._remoteParentSampled = e.remoteParentSampled ?? new D, this._remoteParentNotSampled = e.remoteParentNotSampled ?? new X, this._localParentSampled = e.localParentSampled ?? new D, this._localParentNotSampled = e.localParentNotSampled ?? new X
+  }
+  shouldSample(e, r, o, n, s, p) {
+    let i = H.trace.getSpanContext(e);
+    if (!i || !H.isSpanContextValid(i)) return this._root.shouldSample(e, r, o, n, s, p);
+    if (i.isRemote) {
+      if (i.traceFlags & H.TraceFlags.SAMPLED) return this._remoteParentSampled.shouldSample(e, r, o, n, s, p);
+      return this._remoteParentNotSampled.shouldSample(e, r, o, n, s, p)
+    }
+    if (i.traceFlags & H.TraceFlags.SAMPLED) return this._localParentSampled.shouldSample(e, r, o, n, s, p);
+    return this._localParentNotSampled.shouldSample(e, r, o, n, s, p)
+  }
+  toString() {
+    return `ParentBased{root=${this._root.toString()}, remoteParentSampled=${this._remoteParentSampled.toString()}, remoteParentNotSampled=${this._remoteParentNotSampled.toString()}, localParentSampled=${this._localParentSampled.toString()}, localParentNotSampled=${this._localParentNotSampled.toString()}}`
+  }
+}
+var Be = ve(nl());
+class se {
+  _ratio;
+  _upperBound;
+  constructor(e = 0) {
+    this._ratio = e, this._ratio = this._normalize(e), this._upperBound = Math.floor(this._ratio * 4294967295)
+  }
+  shouldSample(e, r) {
+    return {
+      decision: Be.isValidTraceId(r) && this._accumulate(r) < this._upperBound ? M.RECORD_AND_SAMPLED : M.NOT_RECORD
+    }
+  }
+  toString() {
+    return `TraceIdRatioBased{${this._ratio}}`
+  }
+  _normalize(e) {
+    if (typeof e !== "number" || isNaN(e)) return 0;
+    return e >= 1 ? 1 : e <= 0 ? 0 : e
+  }
+  _accumulate(e) {
+    let r = 0;
+    for (let o = 0; o < e.length / 8; o++) {
+      let n = o * 8,
+        s = parseInt(e.slice(n, n + 8), 16);
+      r = (r ^ s) >>> 0
+    }
+    return r
+  }
+}
+var v;
+(function(e) {
+  e.AlwaysOff = "always_off", e.AlwaysOn = "always_on", e.ParentBasedAlwaysOff = "parentbased_always_off", e.ParentBasedAlwaysOn = "parentbased_always_on", e.ParentBasedTraceIdRatio = "parentbased_traceidratio", e.TraceIdRatio = "traceidratio"
+})(v || (v = {}));
+var ie = 1;
+
+function pe() {
+  return {
+    sampler: fe(),
+    forceFlushTimeoutMillis: 30000,
+    generalLimits: {
+      attributeValueLengthLimit: A.getNumberFromEnv("OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT") ?? 1 / 0,
+      attributeCountLimit: A.getNumberFromEnv("OTEL_ATTRIBUTE_COUNT_LIMIT") ?? 128
+    },
+    spanLimits: {
+      attributeValueLengthLimit: A.getNumberFromEnv("OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT") ?? 1 / 0,
+      attributeCountLimit: A.getNumberFromEnv("OTEL_SPAN_ATTRIBUTE_COUNT_LIMIT") ?? 128,
+      linkCountLimit: A.getNumberFromEnv("OTEL_SPAN_LINK_COUNT_LIMIT") ?? 128,
+      eventCountLimit: A.getNumberFromEnv("OTEL_SPAN_EVENT_COUNT_LIMIT") ?? 128,
+      attributePerEventCountLimit: A.getNumberFromEnv("OTEL_SPAN_ATTRIBUTE_PER_EVENT_COUNT_LIMIT") ?? 128,
+      attributePerLinkCountLimit: A.getNumberFromEnv("OTEL_SPAN_ATTRIBUTE_PER_LINK_COUNT_LIMIT") ?? 128
+    }
+  }
+}
+
+function fe() {
+  let e = A.getStringFromEnv("OTEL_TRACES_SAMPLER") ?? v.ParentBasedAlwaysOn;
+  switch (e) {
+    case v.AlwaysOn:
+      return new D;
+    case v.AlwaysOff:
+      return new X;
+    case v.ParentBasedAlwaysOn:
+      return new W({
+        root: new D
+      });
+    case v.ParentBasedAlwaysOff:
+      return new W({
+        root: new X
+      });
+    case v.TraceIdRatio:
+      return new se(Ue());
+    case v.ParentBasedTraceIdRatio:
+      return new W({
+        root: new se(Ue())
+      });
+    default:
+      return ae.diag.error(`OTEL_TRACES_SAMPLER value "${e}" invalid, defaulting to "${v.ParentBasedAlwaysOn}".`), new W({
+        root: new D
+      })
+  }
+}
+
+function Ue() {
+  let e = A.getNumberFromEnv("OTEL_TRACES_SAMPLER_ARG");
+  if (e == null) return ae.diag.error(`OTEL_TRACES_SAMPLER_ARG is blank, defaulting to ${ie}.`), ie;
+  if (e < 0 || e > 1) return ae.diag.error(`OTEL_TRACES_SAMPLER_ARG=${e} was given, but it is out of range ([0..1]), defaulting to ${ie}.`), ie;
+  return e
+}
+var J = ve(sm()),
+  mt = 128,
+  ft = 1 / 0;
+
+function ke(e) {
+  let r = {
+      sampler: fe()
+    },
+    o = pe(),
+    n = Object.assign({}, o, r, e);
+  return n.generalLimits = Object.assign({}, o.generalLimits, e.generalLimits || {}), n.spanLimits = Object.assign({}, o.spanLimits, e.spanLimits || {}), n
+}
+
+function $e(e) {
+  let r = Object.assign({}, e.spanLimits);
+  return r.attributeCountLimit = e.spanLimits?.attributeCountLimit ?? e.generalLimits?.attributeCountLimit ?? J.getNumberFromEnv("OTEL_SPAN_ATTRIBUTE_COUNT_LIMIT") ?? J.getNumberFromEnv("OTEL_ATTRIBUTE_COUNT_LIMIT") ?? mt, r.attributeValueLengthLimit = e.spanLimits?.attributeValueLengthLimit ?? e.generalLimits?.attributeValueLengthLimit ?? J.getNumberFromEnv("OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT") ?? J.getNumberFromEnv("OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT") ?? ft, Object.assign({}, e, {
+    spanLimits: r
+  })
+}
+var B = ve(nl()),
+  y = ve(sm());
+class he {
+  _exporter;
+  _maxExportBatchSize;
+  _maxQueueSize;
+  _scheduledDelayMillis;
+  _exportTimeoutMillis;
+  _isExporting = !1;
+  _finishedSpans = [];
+  _timer;
+  _shutdownOnce;
+  _droppedSpansCount = 0;
+  constructor(e, r) {
+    if (this._exporter = e, this._maxExportBatchSize = typeof r?.maxExportBatchSize === "number" ? r.maxExportBatchSize : y.getNumberFromEnv("OTEL_BSP_MAX_EXPORT_BATCH_SIZE") ?? 512, this._maxQueueSize = typeof r?.maxQueueSize === "number" ? r.maxQueueSize : y.getNumberFromEnv("OTEL_BSP_MAX_QUEUE_SIZE") ?? 2048, this._scheduledDelayMillis = typeof r?.scheduledDelayMillis === "number" ? r.scheduledDelayMillis : y.getNumberFromEnv("OTEL_BSP_SCHEDULE_DELAY") ?? 5000, this._exportTimeoutMillis = typeof r?.exportTimeoutMillis === "number" ? r.exportTimeoutMillis : y.getNumberFromEnv("OTEL_BSP_EXPORT_TIMEOUT") ?? 30000, this._shutdownOnce = new y.BindOnceFuture(this._shutdown, this), this._maxExportBatchSize > this._maxQueueSize) B.diag.warn("BatchSpanProcessor: maxExportBatchSize must be smaller or equal to maxQueueSize, setting maxExportBatchSize to match maxQueueSize"), this._maxExportBatchSize = this._maxQueueSize
+  }
+  forceFlush() {
+    if (this._shutdownOnce.isCalled) return this._shutdownOnce.promise;
+    return this._flushAll()
+  }
+  onStart(e, r) {}
+  onEnd(e) {
+    if (this._shutdownOnce.isCalled) return;
+    if ((e.spanContext().traceFlags & B.TraceFlags.SAMPLED) === 0) return;
+    this._addToBuffer(e)
+  }
+  shutdown() {
+    return this._shutdownOnce.call()
+  }
+  _shutdown() {
+    return Promise.resolve().then(() => this.onShutdown()).then(() => this._flushAll()).then(() => this._exporter.shutdown())
+  }
+  _addToBuffer(e) {
+    if (this._finishedSpans.length >= this._maxQueueSize) {
+      if (this._droppedSpansCount === 0) B.diag.debug("maxQueueSize reached, dropping spans");
+      this._droppedSpansCount++;
+      return
+    }
+    if (this._droppedSpansCount > 0) B.diag.warn(`Dropped ${this._droppedSpansCount} spans because maxQueueSize reached`), this._droppedSpansCount = 0;
+    this._finishedSpans.push(e), this._maybeStartTimer()
+  }
+  _flushAll() {
+    return new Promise((e, r) => {
+      let o = [],
+        n = Math.ceil(this._finishedSpans.length / this._maxExportBatchSize);
+      for (let s = 0, p = n; s < p; s++) o.push(this._flushOneBatch());
+      Promise.all(o).then(() => {
+        e()
+      }).catch(r)
+    })
+  }
+  _flushOneBatch() {
+    if (this._clearTimer(), this._finishedSpans.length === 0) return Promise.resolve();
+    return new Promise((e, r) => {
+      let o = setTimeout(() => {
+        r(Error("Timeout"))
+      }, this._exportTimeoutMillis);
+      B.context.with(y.suppressTracing(B.context.active()), () => {
+        let n;
+        if (this._finishedSpans.length <= this._maxExportBatchSize) n = this._finishedSpans, this._finishedSpans = [];
+        else n = this._finishedSpans.splice(0, this._maxExportBatchSize);
+        let s = () => this._exporter.export(n, (i) => {
+            if (clearTimeout(o), i.code === y.ExportResultCode.SUCCESS) e();
+            else r(i.error ?? Error("BatchSpanProcessor: span export failed"))
+          }),
+          p = null;
+        for (let i = 0, f = n.length; i < f; i++) {
+          let u = n[i];
+          if (u.resource.asyncAttributesPending && u.resource.waitForAsyncAttributes) p ??= [], p.push(u.resource.waitForAsyncAttributes())
+        }
+        if (p === null) s();
+        else Promise.all(p).then(s, (i) => {
+          y.globalErrorHandler(i), r(i)
+        })
+      })
+    })
+  }
+  _maybeStartTimer() {
+    if (this._isExporting) return;
+    let e = () => {
+      this._isExporting = !0, this._flushOneBatch().finally(() => {
+        if (this._isExporting = !1, this._finishedSpans.length > 0) this._clearTimer(), this._maybeStartTimer()
+      }).catch((r) => {
+        this._isExporting = !1, y.globalErrorHandler(r)
+      })
+    };
+    if (this._finishedSpans.length >= this._maxExportBatchSize) return e();
+    if (this._timer !== void 0) return;
+    if (this._timer = setTimeout(() => e(), this._scheduledDelayMillis), typeof this._timer !== "number") this._timer.unref()
+  }
+  _clearTimer() {
+    if (this._timer !== void 0) clearTimeout(this._timer), this._timer = void 0
+  }
+}
+class G extends he {
+  onShutdown() {}
+}
+class Q {
+  generateTraceId = Xe(16);
+  generateSpanId = Xe(8)
+}
+var ce = Buffer.allocUnsafe(16);
+
+function Xe(e) {
+  return function() {
+    for (let o = 0; o < e / 4; o++) ce.writeUInt32BE(Math.random() * 4294967296 >>> 0, o * 4);
+    for (let o = 0; o < e; o++)
+      if (ce[o] > 0) break;
+      else if (o === e - 1) ce[e - 1] = 1;
+    return ce.toString("hex", 0, e)
+  }
+}
+class Ee {
+  _sampler;
+  _generalLimits;
+  _spanLimits;
+  _idGenerator;
+  instrumentationScope;
+  _resource;
+  _spanProcessor;
+  constructor(e, r, o, n) {
+    let s = ke(r);
+    this._sampler = s.sampler, this._generalLimits = s.generalLimits, this._spanLimits = s.spanLimits, this._idGenerator = r.idGenerator || new Q, this._resource = o, this._spanProcessor = n, this.instrumentationScope = e
+  }
+  startSpan(e, r = {}, o = P.context.active()) {
+    if (r.root) o = P.trace.deleteSpan(o);
+    let n = P.trace.getSpan(o);
+    if (Y.isTracingSuppressed(o)) return P.diag.debug("Instrumentation suppressed, returning Noop Span"), P.trace.wrapSpanContext(P.INVALID_SPAN_CONTEXT);
+    let s = n?.spanContext(),
+      p = this._idGenerator.generateSpanId(),
+      i, f, u;
+    if (!s || !P.trace.isSpanContextValid(s)) f = this._idGenerator.generateTraceId();
+    else f = s.traceId, u = s.traceState, i = s;
+    let h = r.kind ?? P.SpanKind.INTERNAL,
+      T = (r.links ?? []).map((j) => ({
+        context: j.context,
+        attributes: Y.sanitizeAttributes(j.attributes)
+      })),
+      O = Y.sanitizeAttributes(r.attributes),
+      R = this._sampler.shouldSample(o, f, e, h, O, T);
+    u = R.traceState ?? u;
+    let L = R.decision === P.SamplingDecision.RECORD_AND_SAMPLED ? P.TraceFlags.SAMPLED : P.TraceFlags.NONE,
+      k = {
+        traceId: f,
+        spanId: p,
+        traceFlags: L,
+        traceState: u
+      };
+    if (R.decision === P.SamplingDecision.NOT_RECORD) return P.diag.debug("Recording is off, propagating context in a non-recording span"), P.trace.wrapSpanContext(k);
+    let F = Y.sanitizeAttributes(Object.assign(O, R.attributes));
+    return new me({
+      resource: this._resource,
+      scope: this.instrumentationScope,
+      context: o,
+      spanContext: k,
+      name: e,
+      kind: h,
+      links: T,
+      parentSpanContext: i,
+      attributes: F,
+      startTime: r.startTime,
+      spanProcessor: this._spanProcessor,
+      spanLimits: this._spanLimits
+    })
+  }
+  startActiveSpan(e, r, o, n) {
+    let s, p, i;
+    if (arguments.length < 2) return;
+    else if (arguments.length === 2) i = r;
+    else if (arguments.length === 3) s = r, i = o;
+    else s = r, p = o, i = n;
+    let f = p ?? P.context.active(),
+      u = this.startSpan(e, s, f),
+      h = P.trace.setSpan(f, u);
+    return P.context.with(h, i, void 0, u)
+  }
+  getGeneralLimits() {
+    return this._generalLimits
+  }
+  getSpanLimits() {
+    return this._spanLimits
+  }
+}
+var He = ve(sm());
+class _e {
+  _spanProcessors;
+  constructor(e) {
+    this._spanProcessors = e
+  }
+  forceFlush() {
+    let e = [];
+    for (let r of this._spanProcessors) e.push(r.forceFlush());
+    return new Promise((r) => {
+      Promise.all(e).then(() => {
+        r()
+      }).catch((o) => {
+        He.globalErrorHandler(o || Error("MultiSpanProcessor: forceFlush failed")), r()
+      })
+    })
+  }
+  onStart(e, r) {
+    for (let o of this._spanProcessors) o.onStart(e, r)
+  }
+  onEnd(e) {
+    for (let r of this._spanProcessors) r.onEnd(e)
+  }
+  shutdown() {
+    let e = [];
+    for (let r of this._spanProcessors) e.push(r.shutdown());
+    return new Promise((r, o) => {
+      Promise.all(e).then(() => {
+        r()
+      }, o)
+    })
+  }
+}
+var z;
+(function(e) {
+  e[e.resolved = 0] = "resolved", e[e.timeout = 1] = "timeout", e[e.error = 2] = "error", e[e.unresolved = 3] = "unresolved"
+})(z || (z = {}));
+class Z {
+  _config;
+  _tracers = new Map;
+  _resource;
+  _activeSpanProcessor;
+  constructor(e = {}) {
+    let r = Ge.merge({}, pe(), $e(e));
+    this._resource = r.resource ?? ze.defaultResource(), this._config = Object.assign({}, r, {
+      resource: this._resource
+    });
+    let o = [];
+    if (e.spanProcessors?.length) o.push(...e.spanProcessors);
+    this._activeSpanProcessor = new _e(o)
+  }
+  getTracer(e, r, o) {
+    let n = `${e}@${r||""}:${o?.schemaUrl||""}`;
+    if (!this._tracers.has(n)) this._tracers.set(n, new Ee({
+      name: e,
+      version: r,
+      schemaUrl: o?.schemaUrl
+    }, this._config, this._resource, this._activeSpanProcessor));
+    return this._tracers.get(n)
+  }
+  forceFlush() {
+    let e = this._config.forceFlushTimeoutMillis,
+      r = this._activeSpanProcessor._spanProcessors.map((o) => new Promise((n) => {
+        let s, p = setTimeout(() => {
+          n(Error(`Span processor did not completed within timeout period of ${e} ms`)), s = z.timeout
+        }, e);
+        o.forceFlush().then(() => {
+          if (clearTimeout(p), s !== z.timeout) s = z.resolved, n(s)
+        }).catch((i) => {
+          clearTimeout(p), s = z.error, n(i)
+        })
+      }));
+    return new Promise((o, n) => {
+      Promise.all(r).then((s) => {
+        let p = s.filter((i) => i !== z.resolved);
+        if (p.length > 0) n(p);
+        else o()
+      }).catch((s) => n([s]))
+    })
+  }
+  shutdown() {
+    return this._activeSpanProcessor.shutdown()
+  }
+}
+var ee = ve(sm());
+class te {
+  export (e, r) {
+    return this._sendSpans(e, r)
+  }
+  shutdown() {
+    return this._sendSpans([]), this.forceFlush()
+  }
+  forceFlush() {
+    return Promise.resolve()
+  }
+  _exportInfo(e) {
+    return {
+      resource: {
+        attributes: e.resource.attributes
+      },
+      instrumentationScope: e.instrumentationScope,
+      traceId: e.spanContext().traceId,
+      parentSpanContext: e.parentSpanContext,
+      traceState: e.spanContext().traceState?.serialize(),
+      name: e.name,
+      id: e.spanContext().spanId,
+      kind: e.kind,
+      timestamp: ee.hrTimeToMicroseconds(e.startTime),
+      duration: ee.hrTimeToMicroseconds(e.duration),
+      attributes: e.attributes,
+      status: e.status,
+      events: e.events,
+      links: e.links
+    }
+  }
+  _sendSpans(e, r) {
+    for (let o of e) console.dir(this._exportInfo(o), {
+      depth: 3
+    });
+    if (r) return r({
+      code: ee.ExportResultCode.SUCCESS
+    })
+  }
+}
+var q = ve(FWe(), 1),
+  rt = ve(sbt(), 1);
+import St from "http";
+import Pt from "https";
+import {
+  arch as Lt
+} from "os";
+
+function Ve() {
+  if (_$()) return !1;
+  let e = Er(),
+    r = Et() && (e === "enterprise" || e === "team");
+  return uJe() || r
+}
+
+function je() {
+  if (!Et()) return {
+    "user.customer_type": "api"
+  };
+  let e = Er();
+  return e ? {
+    "user.customer_type": "claude_ai",
+    "user.subscription_type": e
+  } : {
+    "user.customer_type": "claude_ai"
+  }
+}
+var b = ve(sm(), 1),
+  Te = ve(HNe(), 1);
+
+function ht(e) {
+  let {
+    kind: r,
+    status: o
+  } = pi(e);
+  switch (r) {
+    case "auth":
+      return [o === 401 ? "http_401" : "http_403", o];
+    case "timeout":
+      return ["timeout"];
+    case "network":
+      return ["network_error"];
+    default:
+      if (o !== void 0 && o >= 500) return ["http_5xx", o];
+      if (o !== void 0 && o >= 400) return ["http_4xx", o];
+      return o !== void 0 ? ["unknown_error", o] : ["unknown_error"]
+  }
+}
+
+function We(e) {
+  let {
+    status: r,
+    message: o
+  } = pi(e);
+  return r === void 0 ? o : `HTTP ${r}: ${o}`
+}
+var _t = 250;
+
+function Tt() {
+  return Math.max(0, Math.min(a.CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS ?? qne, qne) - _t)
+}
+
+function gt(e) {
+  if (!Ct.isAxiosError(e)) return !1;
+  let r = e.response?.status;
+  if (r === 401) return !0;
+  return r === 403 && typeof e.response?.data === "string" && e.response.data.includes("OAuth token has been revoked")
+}
+
+function Ot(e) {
+  e.reportInFlightAtShutdown()
+}
+class ge {
+  endpoint;
+  isAntEndpointOverride;
+  timeout;
+  storageV5;
+  pendingExports = [];
+  isShutdown = !1;
+  reportedFailures = new Set;
+  failures = new b6n("BigQuery metrics");
+  successReported = !1;
+  inFlight = 0;
+  oauthRefreshAttempted = !1;
+  constructor(e) {
+    let r = `${ln().BASE_API_URL}/api/claude_code/metrics`,
+      o = void 0;
+    this.isAntEndpointOverride = !1, this.endpoint = r, this.timeout = e.timeout || 5000, this.storageV5 = e.storageV5
+  }
+  async export (e, r) {
+    if (this.isShutdown) {
+      t(`${ZK} BigQuery metrics export arrived after shutdown, skipping`), r({
+        code: b.ExportResultCode.SUCCESS
+      });
+      return
+    }
+    let o = this.doExport(e, r);
+    this.pendingExports.push(o), o.finally(() => {
+      let n = this.pendingExports.indexOf(o);
+      if (n > -1) this.pendingExports.splice(n, 1)
+    })
+  }
+  async doExport(e, r) {
+    try {
+      if (!(Ms() || we())) {
+        t(`${ZK} BigQuery metrics export: trust not established, skipping`), r({
+          code: b.ExportResultCode.SUCCESS
+        });
+        return
+      }
+      if (!this.dispatchHostMatchesEndpoint()) {
+        t(`${ZK} BigQuery metrics export: WIF dispatch host differs from the metrics endpoint host, skipping`), r({
+          code: b.ExportResultCode.SUCCESS
+        });
+        return
+      }
+      let n = await dB(),
+        s = Wke(n, this.endpoint).reasonCode === "misrouted_credential";
+      if (s && !this.isAntEndpointOverride) {
+        t(`${ZK} BigQuery metrics export: credential does not belong to the metrics endpoint host, skipping`), r({
+          code: b.ExportResultCode.SUCCESS
+        });
+        return
+      }
+      let p = Wke(n, `${ln().BASE_API_URL}/api/claude_code/organizations/metrics_enabled`).reasonCode === "misrouted_credential";
+      if (!s && !p) {
+        let T = await vns(this.storageV5);
+        if (T.hasError) {
+          if (n.reasonCode === "wif_error") this.reportFailure("wif_error"), this.failures.record(`metrics opt-out check failed (WIF exchange failed: ${n.error}); skipping export`);
+          else this.failures.record("metrics opt-out check failed; skipping export");
+          r({
+            code: b.ExportResultCode.SUCCESS
+          });
+          return
+        }
+        if (!T.enabled) {
+          t(`${ZK} BigQuery metrics export disabled by organization setting, skipping`), r({
+            code: b.ExportResultCode.SUCCESS
+          });
+          return
+        }
+      }
+      let i = this.transformMetricsForInternal(e),
+        f = Wke(await dB(), this.endpoint),
+        u = f.reasonCode === "misrouted_credential";
+      if (f.error && !u) {
+        if (f.reasonCode === "wif_error") this.reportFailure("wif_error");
+        this.failures.record(f.error), r({
+          code: b.ExportResultCode.SUCCESS
+        });
+        return
+      }
+      let h;
+      try {
+        h = await this.postWithOAuth401Recovery(i, u ? {} : f.headers)
+      } catch (T) {
+        throw this.reportFailure(...ht(T)), T
+      }
+      if (t(`${ZK} BigQuery metrics exported successfully`), !this.successReported) this.successReported = !0, g("internal_metrics_export");
+      t(`${ZK} BigQuery API Response: ${_(h.data,null,2)}`), r({
+        code: b.ExportResultCode.SUCCESS
+      })
+    } catch (o) {
+      let {
+        kind: n,
+        status: s
+      } = pi(o);
+      if (n === "other" && s === void 0) t(`${ZK} BigQuery metrics export threw before the request: ${We(o)}`, {
+        level: "error"
+      });
+      this.failures.record(We(o)), r({
+        code: b.ExportResultCode.SUCCESS
+      })
+    }
+  }
+  reportFailure(e, r) {
+    let o = `${e}:${r??""}`;
+    if (this.reportedFailures.has(o)) return;
+    this.reportedFailures.add(o), m("internal_metrics_export", e, r === void 0 ? {} : {
+      http_status: r
+    })
+  }
+  dispatchHostMatchesEndpoint() {
+    if (!(Cw() === null && pc())) return !0;
+    let e = Wme();
+    if (e === void 0) return !1;
+    return (e === null ? "api.anthropic.com" : new URL(e).host) === new URL(this.endpoint).host
+  }
+  async postWithOAuth401Recovery(e, r) {
+    let o = Fn(),
+      n = o?.accessToken && o.refreshToken && r.Authorization === `Bearer ${o.accessToken}` ? o.accessToken : void 0;
+    this.inFlight++;
+    try {
+      return await this.postOnce(e, r)
+    } catch (s) {
+      if (!n || !gt(s)) throw s;
+      let p = Fn()?.accessToken;
+      if (p && p !== n) return await this.postOnce(e, {
+        ...r,
+        Authorization: `Bearer ${p}`
+      });
+      if (this.oauthRefreshAttempted) throw s;
+      this.oauthRefreshAttempted = !0;
+      try {
+        await Jb(n, void 0, this.storageV5)
+      } catch {
+        throw s
+      }
+      let i = Fn()?.accessToken;
+      if (!i || i === n) throw s;
+      let f = await this.postOnce(e, {
+        ...r,
+        Authorization: `Bearer ${i}`
+      });
+      return this.oauthRefreshAttempted = !1, f
+    } finally {
+      this.inFlight--
+    }
+  }
+  postOnce(e, r) {
+    let o = {
+        "Content-Type": "application/json",
+        "User-Agent": hs(),
+        ...r
+      },
+      n = JLr({
+        url: this.endpoint,
+        payload: e,
+        storageV5: this.storageV5
+      });
+    return Ct.post(this.endpoint, n?.body ?? e, {
+      timeout: this.timeout,
+      maxRedirects: 0,
+      headers: n ? {
+        ...o,
+        ...n.headers
+      } : o
+    })
+  }
+  transformMetricsForInternal(e) {
+    let r = e.resource.attributes,
+      o = {
+        "service.name": r["service.name"] || "claude-code",
+        "service.version": r["service.version"] || "unknown",
+        "os.type": r["os.type"] || "unknown",
+        "os.version": r["os.version"] || "unknown",
+        "host.arch": r["host.arch"] || "unknown",
+        "aggregation.temporality": this.selectAggregationTemporality() === Te.AggregationTemporality.DELTA ? "delta" : "cumulative"
+      };
+    if (r["wsl.version"]) o["wsl.version"] = r["wsl.version"];
+    Object.assign(o, je());
+    let s = IJ() || Ni("hipaa");
+    return {
+      resource_attributes: s ? Q0o(o, ezs) : o,
+      metrics: e.scopeMetrics.flatMap((i) => i.metrics.map((f) => ({
+        name: f.descriptor.name,
+        description: f.descriptor.description,
+        unit: f.descriptor.unit,
+        data_points: this.extractDataPoints(f, s)
+      })))
+    }
+  }
+  extractDataPoints(e, r) {
+    let o = e.dataPoints || [],
+      n = new Map;
+    for (let s of o) {
+      if (typeof s.value !== "number") continue;
+      let p = lCs(s.attributes),
+        i = this.convertAttributes(p),
+        f = r ? Q0o(i, tzs) : i,
+        u = this.hrTimeToISOString(s.endTime || s.startTime || [Date.now() / 1000, 0]),
+        h = Bi(Object.entries(r ? f : p).sort(([O], [R]) => O < R ? -1 : 1)),
+        T = n.get(h);
+      if (T) {
+        if (T.value += s.value, u > T.timestamp) T.timestamp = u;
+        continue
+      }
+      n.set(h, {
+        attributes: f,
+        value: s.value,
+        timestamp: u
+      })
+    }
+    return Array.from(n.values())
+  }
+  async shutdown() {
+    this.isShutdown = !0, await this.forceFlush(), t(`${ZK} BigQuery metrics exporter shutdown complete`)
+  }
+  armShutdownReport() {
+    let e = Tt();
+    if (e <= 0) return;
+    setTimeout(Ot, e, this).unref?.()
+  }
+  reportInFlightAtShutdown() {
+    if (this.inFlight === 0) return;
+    t(`${ZK} BigQuery metrics export still in flight at the shutdown budget (${this.inFlight})`), this.reportFailure("pending_at_shutdown")
+  }
+  async forceFlush() {
+    await Promise.all(this.pendingExports), this.failures.logSummary(), t(`${ZK} BigQuery metrics exporter flush complete`)
+  }
+  convertAttributes(e) {
+    let r = {};
+    if (e)
+      for (let [o, n] of Object.entries(e)) {
+        if (o.startsWith("vcs.")) continue;
+        if (n !== void 0 && n !== null) r[o] = String(n)
+      }
+    return r
+  }
+  hrTimeToISOString(e) {
+    let [r, o] = e;
+    return new Date(r * 1000 + o / 1e6).toISOString()
+  }
+  selectAggregationTemporality() {
+    return Te.AggregationTemporality.DELTA
+  }
+}
+var Oe = ve(sm(), 1),
+  Qe = 64,
+  Ye = {
+    code: Oe.ExportResultCode.SUCCESS
+  };
+
+function Ke(e) {
+  return {
+    code: Oe.ExportResultCode.FAILED,
+    error: Error(e)
+  }
+}
+
+function qe() {}
+class Re {
+  delegate;
+  buffer = [];
+  shutDown = !1;
+  setDelegate(e) {
+    if (this.shutDown) {
+      e.shutdown().catch(() => {});
+      return
+    }
+    this.delegate = e;
+    let r = this.buffer;
+    this.buffer = [];
+    for (let o of r) e.export(o, qe)
+  }
+  export (e, r) {
+    if (this.shutDown) {
+      r(Ke("Exporter has been shut down"));
+      return
+    }
+    if (this.delegate) {
+      this.delegate.export(e, r);
+      return
+    }
+    if (this.buffer.length >= Qe) this.buffer.shift();
+    this.buffer.push(e), r(Ye)
+  }
+  async forceFlush() {
+    if (this.delegate?.forceFlush) await this.delegate.forceFlush()
+  }
+  async shutdown() {
+    if (this.shutDown = !0, this.buffer = [], this.delegate) await this.delegate.shutdown()
+  }
+}
+class Se {
+  delegate;
+  buffer = [];
+  shutDown = !1;
+  setDelegate(e) {
+    if (this.shutDown) {
+      e.shutdown().catch(() => {});
+      return
+    }
+    this.delegate = e;
+    let r = this.buffer;
+    this.buffer = [];
+    for (let o of r) e.export(o, qe)
+  }
+  export (e, r) {
+    if (this.shutDown) {
+      r(Ke("Exporter has been shut down"));
+      return
+    }
+    if (this.delegate) {
+      this.delegate.export(e, r);
+      return
+    }
+    if (this.buffer.length >= Qe) this.buffer.shift();
+    this.buffer.push(e), r(Ye)
+  }
+  async shutdown() {
+    if (this.shutDown = !0, this.buffer = [], this.delegate) await this.delegate.shutdown()
+  }
+}
+var Je = ve(sm(), 1);
+
+function Rt(e, r) {
+  let o = typeof e === "object" && e !== null && "code" in e ? e.code : void 0;
+  if (typeof o === "number" && Number.isInteger(o)) {
+    if (r === "grpc" && o >= 0 && o <= 16) return {
+      errorCode: `grpc_${o}`
+    };
+    if (r !== "grpc" && o >= 300 && o < 600) return {
+      errorCode: o === 401 || o === 403 ? `http_${o}` : `http_${Math.floor(o/100)}xx`,
+      httpStatus: o
+    }
+  }
+  let n = L0o(e);
+  if (n !== void 0) return {
+    errorCode: `headers_helper_${n}`
+  };
+  if (_P(e, "Request Timeout")) return {
+    errorCode: "timeout"
+  };
+  if (_P(e, "Export failed with retryable status")) return {
+    errorCode: "http_retries_exhausted"
+  };
+  let s = yg(e);
+  return {
+    errorCode: s && (Kyt(s.code) ?? (s.isSSLError ? s.code : void 0)) || "other"
+  }
+}
+
+function Ze(e, r) {
+  let o = {
+      signal: c(e),
+      protocol: c(r.protocol === "grpc" ? "grpc" : r.protocol === "http/json" ? "http_json" : r.protocol === "http/protobuf" ? "http_protobuf" : "other"),
+      ...r.viaProxy === void 0 ? {} : {
+        via_proxy: r.viaProxy
+      }
+    },
+    n = !1,
+    s = new Set;
+  return (p) => {
+    if (p.code === Je.ExportResultCode.SUCCESS) {
+      if (!n) n = !0, g("otlp_export", o);
+      return
+    }
+    let {
+      errorCode: i,
+      httpStatus: f
+    } = Rt(p.error, r.protocol), u = `${i}:${f??""}`;
+    if (s.has(u)) return;
+    s.add(u), m("otlp_export", i, f === void 0 ? o : {
+      ...o,
+      http_status: f
+    })
+  }
+}
+var xt = 60000,
+  ot = 5000,
+  st = 5000,
+  Pe = 300000,
+  yt = 3600000;
+class Ae extends Error {}
+
+function ye(e, r) {
+  return new Promise((o, n) => {
+    setTimeout((s, p) => s(new Ae(p)), e, n, r).unref()
+  })
+}
+
+function At() {
+  if (C.context.setGlobalContextManager(wke), !a.OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE) process.env.OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE = "delta";
+  if (fx() && !ret()) at()
+}
+
+function ue() {
+  return X9e() ? nt({
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.303",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-10-18T20:20:57Z",
+    GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.VERSION, "-") : {
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.303",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-10-18T20:20:57Z",
+    GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.VERSION
+}
+
+function wt(e) {
+  switch (e) {
+    case "arm":
+      return "arm32";
+    case "ppc":
+      return "ppc32";
+    case "x64":
+      return "amd64";
+    default:
+      return e
+  }
+}
+
+function it() {
+  let e = MGo();
+  if (e) return e;
+  let r = I(),
+    o = {
+      [q.ATTR_SERVICE_NAME]: "claude-code",
+      [q.ATTR_SERVICE_VERSION]: ue()
+    };
+  if (r === "wsl") {
+    let O = SGe();
+    if (O) o["wsl.version"] = O
+  }
+  let n = N.resourceFromAttributes(o),
+    s = N.resourceFromAttributes(X9e() ? {} : N.osDetector.detect().attributes || {}),
+    p = N.resourceFromAttributes({
+      [q.SEMRESATTRS_HOST_ARCH]: wt(Lt())
+    }),
+    i = sIr(),
+    f = Object.keys(i).length > 0,
+    u = N.envDetector.detect().attributes || {},
+    h = N.resourceFromAttributes(fin() ? {} : f ? Da(u, (O, R) => R.startsWith("user.") || R.startsWith("identity.")) : u),
+    T = n.merge(s).merge(p).merge(h).merge(N.resourceFromAttributes(i));
+  return DGo(T), T
+}
+
+function at() {
+  let e = it(),
+    r = new Re,
+    o = new G(r, {
+      scheduledDelayMillis: st
+    }),
+    n = new Z({
+      resource: e,
+      spanProcessors: [o]
+    });
+  C.trace.setGlobalTracerProvider(n), tjr(n);
+  let s = new Se,
+    p = new A$t({
+      resource: e,
+      processors: [new gJe(s, {
+        scheduledDelayMillis: ot
+      })]
+    });
+  XLr.setGlobalLoggerProvider(p), J1r(p);
+  let i = XLr.getLogger("com.anthropic.claude_code.events", {
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.303",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-10-18T20:20:57Z",
+    GIT_SHA: "07df2aedd2d01d2f60907b8404acbda187b04072",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.VERSION);
+  Z1r(i, "beta"), process.on("beforeExit", async () => {
+    await p.forceFlush().catch(() => {}), await n.forceFlush().catch(() => {})
+  }), process.on("exit", () => {
+    p.forceFlush().catch(() => {}), n.forceFlush().catch(() => {})
+  }), vt(r, s).catch((f) => t(`Beta tracing exporter wiring failed: ${f}`, {
+    level: "error"
+  }))
+}
+async function vt(e, r) {
+  let o = a.BETA_TRACING_ENDPOINT;
+  if (!o) return;
+  let [{
+    OTLPTraceExporter: n
+  }, {
+    OTLPLogExporter: s
+  }] = await Promise.all([import("B:/~BUN/root/chunk-0rndvdfr.js"), import("B:/~BUN/root/chunk-fd6aajqg.js")]);
+  e.setDelegate(new n({
+    url: `${o}/v1/traces`
+  })), r.setDelegate(new s({
+    url: `${o}/v1/logs`
+  }))
+}
+async function It() {}
+
+function Ce(e) {
+  return (e || "").trim().split(",").filter(Boolean).map((r) => r.trim()).filter((r) => r !== "none")
+}
+
+function be(e, r) {
+  let o = !1,
+    n = r && Ze(e, r);
+  return (s) => {
+    let p = s instanceof U.ConsoleMetricExporter || s instanceof ne || s instanceof te ? void 0 : n,
+      i = s.export.bind(s);
+    return s.export = (f, u) => i(f, (h) => {
+      if (!o) o = !0, t(`[3P telemetry] First ${e} export: ${h.code===le.ExportResultCode.SUCCESS?"SUCCESS":`FAILED (${h.error?.message??"unknown"})`}`);
+      try {
+        p?.(h)
+      } catch (T) {
+        l(T)
+      }
+      u(h)
+    }), s
+  }
+}
+
+function Ie(e, r) {
+  return {
+    protocol: e,
+    viaProxy: e === "grpc" ? void 0 : r.httpAgentOptions === njr(!0)
+  }
+}
+async function Nt(e) {
+  let r = a.OTEL_METRIC_EXPORT_INTERVAL ?? xt;
+  t(`[3P telemetry] getOtlpReaders: types=${_(e)}, interval=${r}, protocol=${a.OTEL_EXPORTER_OTLP_PROTOCOL}, endpoint=${a.OTEL_EXPORTER_OTLP_ENDPOINT}`);
+  let o = [],
+    n;
+  for (let p of e)
+    if (p === "console") {
+      let i = new U.ConsoleMetricExporter,
+        f = i.export.bind(i);
+      i.export = (u, h) => {
+        if (u.resource && u.resource.attributes) t(`
+=== Resource Attributes ===`), t(_(u.resource.attributes)), t(`===========================
+`);
+        return f(u, h)
+      }, o.push(i)
+    } else if (p === "otlp") {
+    let i = a.OTEL_EXPORTER_OTLP_METRICS_PROTOCOL || a.OTEL_EXPORTER_OTLP_PROTOCOL,
+      f = Ne("metrics", i);
+    switch (n = Ie(i, f), i) {
+      case "grpc": {
+        let {
+          OTLPMetricExporter: u
+        } = await import("B:/~BUN/root/chunk-zr6v1ktf.js").then((m) => ve(m.default, 1));
+        o.push(new u);
+        break
+      }
+      case "http/json": {
+        let {
+          OTLPMetricExporter: u
+        } = await import("B:/~BUN/root/chunk-jnp5wsz8.js").then((m) => ve(m.default, 1));
+        o.push(new u(f));
+        break
+      }
+      case "http/protobuf": {
+        let {
+          OTLPMetricExporter: u
+        } = await import("B:/~BUN/root/chunk-nhsyky63.js");
+        o.push(new u(f));
+        break
+      }
+      default:
+        throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_METRICS_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: ${i}`)
+    }
+  } else if (p === "prometheus") {
+    let {
+      PrometheusExporter: i
+    } = await import("B:/~BUN/root/chunk-4eazj8ss.js").then((m) => ve(m.default, 1));
+    o.push(new i)
+  } else throw Error(`Unknown exporter type set in OTEL_METRICS_EXPORTER env var: ${p}`);
+  let s = be("metrics", n);
+  return o.map((p) => {
+    if ("export" in p) return new U.PeriodicExportingMetricReader({
+      exporter: s(p),
+      exportIntervalMillis: r
+    });
+    return p
+  })
+}
+async function Mt() {
+  let e = Ce(a.OTEL_LOGS_EXPORTER),
+    r = a.OTEL_EXPORTER_OTLP_LOGS_PROTOCOL || a.OTEL_EXPORTER_OTLP_PROTOCOL,
+    o = a.OTEL_EXPORTER_OTLP_ENDPOINT;
+  t(`[3P telemetry] getOtlpLogExporters: types=${_(e)}, protocol=${r}, endpoint=${o}`);
+  let n = [],
+    s;
+  for (let p of e)
+    if (p === "console") n.push(new ne);
+    else if (p === "otlp") {
+    let i = Ne("logs", r);
+    switch (s = Ie(r, i), r) {
+      case "grpc": {
+        let {
+          OTLPLogExporter: f
+        } = await import("B:/~BUN/root/chunk-rhya3581.js").then((m) => ve(m.default, 1));
+        n.push(new f);
+        break
+      }
+      case "http/json": {
+        let {
+          OTLPLogExporter: f
+        } = await import("B:/~BUN/root/chunk-fd6aajqg.js");
+        n.push(new f(i));
+        break
+      }
+      case "http/protobuf": {
+        let {
+          OTLPLogExporter: f
+        } = await import("B:/~BUN/root/chunk-sk9vk8kn.js");
+        n.push(new f(i));
+        break
+      }
+      default:
+        throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_LOGS_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: ${r}`)
+    }
+  } else throw Error(`Unknown exporter type set in OTEL_LOGS_EXPORTER env var: ${p}`);
+  return n.map(be("logs", s))
+}
+async function Dt() {
+  let e = Ce(a.OTEL_TRACES_EXPORTER),
+    r = [],
+    o;
+  for (let n of e)
+    if (n === "console") r.push(new te);
+    else if (n === "otlp") {
+    let s = uIr() !== null ? "http/protobuf" : a.OTEL_EXPORTER_OTLP_TRACES_PROTOCOL || a.OTEL_EXPORTER_OTLP_PROTOCOL,
+      p = Ne("traces", s);
+    if (!IHs()) o = Ie(s, p);
+    switch (s) {
+      case "grpc": {
+        let {
+          OTLPTraceExporter: i
+        } = await import("B:/~BUN/root/chunk-fq72zc3y.js").then((m) => ve(m.default, 1));
+        r.push(new i);
+        break
+      }
+      case "http/json": {
+        let {
+          OTLPTraceExporter: i
+        } = await import("B:/~BUN/root/chunk-0rndvdfr.js");
+        r.push(new i(p));
+        break
+      }
+      case "http/protobuf": {
+        let {
+          OTLPTraceExporter: i
+        } = await import("B:/~BUN/root/chunk-pcv0k0q7.js");
+        r.push(new i(p));
+        break
+      }
+      default:
+        throw Error(`Unknown protocol set in OTEL_EXPORTER_OTLP_TRACES_PROTOCOL or OTEL_EXPORTER_OTLP_PROTOCOL env var: ${s}`)
+    }
+  } else throw Error(`Unknown exporter type set in OTEL_TRACES_EXPORTER env var: ${n}`);
+  return r.map(be("traces", o))
+}
+
+function Bt() {
+  return Fe(process.env.CLAUDE_CODE_ENABLE_TELEMETRY)
+}
+
+function Ut() {
+  let e = E("tengu_cozy_dusk", Pe);
+  return typeof e === "number" && Number.isFinite(e) ? Math.min(Math.max(e, Pe), yt) : Pe
+}
+
+function kt(e) {
+  let r = new ge({
+    storageV5: e
+  });
+  return bt(() => r.armShutdownReport()), new U.PeriodicExportingMetricReader({
+    exporter: r,
+    exportIntervalMillis: Ut()
+  })
+}
+async function Dn(e, r) {
+  if (yo("telemetry_init_start"), At(), await It(), C.propagation.setGlobalPropagator(new le.W3CTraceContextPropagator), XWo())
+    for (let u of ["OTEL_METRICS_EXPORTER", "OTEL_LOGS_EXPORTER", "OTEL_TRACES_EXPORTER"]) {
+      let h = process.env[u];
+      if (h?.includes("console")) process.env[u] = h.split(",").map((T) => T.trim()).filter((T) => T !== "console").join(",")
+    }
+  C.diag.setLogger(new oJr, a.CLAUDE_CODE_IS_COWORK ? C.DiagLogLevel.WARN : C.DiagLogLevel.ERROR), WTs();
+  let o = [],
+    n = Bt(),
+    s = n ? Ce(a.OTEL_METRICS_EXPORTER) : [];
+  if (t(`[3P telemetry] isTelemetryEnabled=${n} (CLAUDE_CODE_ENABLE_TELEMETRY=${process.env.CLAUDE_CODE_ENABLE_TELEMETRY})`), n) o.push(...await Nt(s));
+  if (!r?.disableBigQuery && Ve()) o.push(kt(e));
+  let p = it();
+  if (fx()) {
+    if (!ret()) at();
+    let u = new U.MeterProvider({
+      resource: p,
+      views: [],
+      readers: o
+    });
+    return h_o(u), bt(async () => {
+      let T = a.CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS ?? 2000;
+      try {
+        Kwe();
+        let O = pSt(),
+          R = ret(),
+          L = [u.shutdown()];
+        if (O) L.push(bke.settledWithin(T / 2).then(() => O.forceFlush()).then(() => O.shutdown()));
+        if (R) L.push(R.forceFlush().then(() => R.shutdown()));
+        await Promise.race([Promise.all(L), ye(T, "OpenTelemetry shutdown timeout")])
+      } catch {}
+    }), {
+      meter: u.getMeter("com.anthropic.claude_code", ue()),
+      metricsExporterKinds: s
+    }
+  }
+  let i = new U.MeterProvider({
+    resource: p,
+    views: [],
+    readers: o
+  });
+  if (h_o(i), n && (!de() || X9e())) {
+    let u = await Mt();
+    if (t(`[3P telemetry] Created ${u.length} log exporter(s)`), u.length > 0) {
+      let h = new A$t({
+        resource: p,
+        processors: u.map((O) => new gJe(O, {
+          scheduledDelayMillis: a.OTEL_LOGS_EXPORT_INTERVAL ?? ot
+        }))
+      });
+      if (!de()) XLr.setGlobalLoggerProvider(h);
+      J1r(h);
+      let T = h.getLogger("com.anthropic.claude_code.events", ue());
+      Z1r(T, "org"), t("[3P telemetry] Event logger set successfully"), process.on("beforeExit", async () => {
+        await h?.forceFlush(), await ret()?.forceFlush()
+      }), process.on("exit", () => {
+        h?.forceFlush(), ret()?.forceFlush()
+      })
+    }
+  }
+  if (n && a_o() && !de()) {
+    let u = await Dt();
+    if (u.length > 0) {
+      pIr.freeze();
+      let T = fin() ? zt : void 0,
+        O = u.map((L) => new G(L, {
+          scheduledDelayMillis: a.OTEL_TRACES_EXPORT_INTERVAL ?? st,
+          ...T !== void 0 && {
+            maxExportBatchSize: T
+          }
+        })),
+        R = new Z({
+          resource: p,
+          spanProcessors: O
+        });
+      C.trace.setGlobalTracerProvider(R), tjr(R), process.on("beforeExit", async () => {
+        await R.forceFlush()
+      })
+    }
+  }
+  return bt(async () => {
+    let u = a.CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS ?? 2000;
+    try {
+      Kwe();
+      let h = [i.shutdown()],
+        T = pSt();
+      if (T) h.push(bke.settledWithin(u / 2).then(() => T.shutdown()));
+      let O = ret();
+      if (O) h.push(O.shutdown());
+      await Promise.race([Promise.all(h), ye(u, "OpenTelemetry shutdown timeout")])
+    } catch (h) {
+      if (h instanceof Error && h.message.includes("timeout")) t(`
+OpenTelemetry telemetry flush timed out after ${u}ms
+
+To resolve this issue, you can:
+1. Increase the timeout by setting CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS env var (e.g., 5000 for 5 seconds)
+2. Check if your OpenTelemetry backend is experiencing scalability issues
+3. Disable OpenTelemetry by unsetting CLAUDE_CODE_ENABLE_TELEMETRY env var
+
+Current timeout: ${u}ms
+`, {
+        level: "error"
+      });
+      throw h
+    }
+  }), {
+    meter: i.getMeter("com.anthropic.claude_code", ue()),
+    metricsExporterKinds: s
+  }
+}
+async function Bn() {
+  let e = sCs();
+  if (!e) return;
+  let r = a.CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS ?? 5000;
+  try {
+    let o = [e.forceFlush()],
+      n = pSt();
+    if (n) o.push(bke.settledWithin(r / 2).then(() => n.forceFlush()));
+    let s = ret();
+    if (s) o.push(s.forceFlush());
+    await Promise.race([Promise.all(o), ye(r, "OpenTelemetry flush timeout")]), t("Telemetry flushed successfully")
+  } catch (o) {
+    if (o instanceof Ae) t(`Telemetry flush timed out after ${r}ms. Some metrics may not be exported.`, {
+      level: "warn"
+    });
+    else t(`Telemetry flush failed: ${d(o)}`, {
+      level: "error"
+    })
+  }
+}
+
+function Ft() {
+  let e = {},
+    r = a.OTEL_EXPORTER_OTLP_HEADERS;
+  if (r)
+    for (let o of r.split(",")) {
+      let [n, ...s] = o.split("=");
+      if (n && s.length > 0) e[n.trim()] = s.join("=").trim()
+    }
+  return e
+}
+
+function Ne(e, r) {
+  let o = !!ndn(),
+    n = {},
+    s = Br(),
+    p = pP(s) ? $t(e, s, o) : null;
+  if (pP(s) && p === null) {
+    let T = s.url;
+    return n.url = `${T}/v1/${e}`, n.headers = async () => {
+      await YK();
+      let O = Br();
+      if (!O || O.url !== T) return {};
+      return {
+        Authorization: `Bearer ${O.jwt}`
+      }
+    }, n.httpAgentOptions = re(T), n
+  }
+  let i = pP(s) ? null : cIr(e);
+  if (i !== null) return n.url = i, n.headers = async () => {
+    if (cIr(e) !== i) return {};
+    return JEe(a.CLAUDE_CODE_SESSION_ACCESS_TOKEN)
+  }, n.httpAgentOptions = re(i), n;
+  let f = Ft(),
+    u = Gt(e, o),
+    h = Vt(e);
+  if (h.send) return n.url = h.url, n.headers = h.headers, n.httpAgentOptions = re(h.url), pIr.arm(), n;
+  if (o) {
+    if (n.headers = async () => {
+        let T = await ILr();
+        return {
+          ...f,
+          ...T
+        }
+      }, r === "http/json" || r === "http/protobuf") F0o()
+  } else if (u.send) return n.url = u.url, n.headers = u.headers, n.httpAgentOptions = re(u.url), n;
+  else if (Object.keys(f).length > 0) n.headers = async () => f;
+  if (n.httpAgentOptions = re(p ?? (process.env[`OTEL_EXPORTER_OTLP_${uin[e]}_ENDPOINT`]?.trim() || a.OTEL_EXPORTER_OTLP_ENDPOINT)), p !== null) {
+    n.url = p;
+    let T = s?.url,
+      O = n.headers;
+    n.headers = async () => {
+      if (Br()?.url !== T) throw Error("The Cloud gateway session that named this collector ended \u2014 dropping this telemetry batch");
+      return typeof O === "function" ? await O() : {}
+    }
+  }
+  return n
+}
+
+function $t(e, r, o) {
+  if (o) return null;
+  let n = ct(Xt()?.env, e);
+  if (n === null) return null;
+  if (pt(e) !== n || Ht(n, r) || !lt(n) || !ut(n, e)) return null;
+  return t(`[3P telemetry] ${e}: exporting to the collector the gateway's managed settings name (${G_(n)}), not through the gateway relay`), n
+}
+
+function Xt() {
+  if (eT() !== "remote") return null;
+  if (!cm() && pv() === void 0) return null;
+  return Zp()[0] ?? null
+}
+
+function pt(e) {
+  let r = uin[e];
+  return ct({
+    OTEL_EXPORTER_OTLP_ENDPOINT: a.OTEL_EXPORTER_OTLP_ENDPOINT,
+    [`OTEL_EXPORTER_OTLP_${r}_ENDPOINT`]: a[`OTEL_EXPORTER_OTLP_${r}_ENDPOINT`]
+  }, e)
+}
+
+function ct(e, r) {
+  if (!e) return null;
+  let o = new Map;
+  for (let [p, i] of Object.entries(e)) {
+    let f = p.toUpperCase();
+    if (i !== void 0 && (!o.has(f) || p === f)) o.set(f, i)
+  }
+  let n = o.get(`OTEL_EXPORTER_OTLP_${uin[r]}_ENDPOINT`);
+  if (n?.trim()) return K(n);
+  let s = o.get("OTEL_EXPORTER_OTLP_ENDPOINT");
+  if (!s?.trim() || K(s) === null) return null;
+  return K(`${s}${s.endsWith("/")?"":"/"}v1/${r}`)
+}
+
+function Ht(e, r) {
+  let o = et(e);
+  if (o === null) return !1;
+  let n = [r.url],
+    s = QN(r.jwt);
+  if (s !== null && typeof s === "object" && "iss" in s && typeof s.iss === "string") n.push(s.iss);
+  return n.some((p) => et(p) === o)
+}
+
+function et(e) {
+  let r = K(e);
+  return r === null ? null : new URL(r).host.replace(/\.(?=:|$)/, "")
+}
+
+function ut(e, r) {
+  let o = new URL(e);
+  return o.pathname.endsWith(`/v1/${r}`) && !o.search && !o.hash
+}
+
+function lt(e) {
+  let r = new URL(e);
+  return r.protocol === "https:" || r.protocol === "http:" && dt(r.href)
+}
+
+function K(e) {
+  try {
+    let r = new URL(e);
+    return (r.protocol === "https:" || r.protocol === "http:") && r.host ? r.href : null
+  } catch {
+    return null
+  }
+}
+
+function Gt(e, r) {
+  let o = {
+      send: !1
+    },
+    n = (f) => {
+      if (!f || K(f) === null) return null;
+      let u = K(`${f.replace(/\/+$/,"")}/v1/${e}`);
+      return u !== null && lt(u) && ut(u, e) ? u : null
+    };
+  if (!fd()) return o;
+  let s = xe();
+  if (s !== "firstParty" && s !== "gateway") return o;
+  if (!Fdn(a.ANTHROPIC_AUTH_TOKEN)) return o;
+  let p = () => kxo(e);
+  if (r || p()) return o;
+  let i = n(a.ANTHROPIC_BASE_URL);
+  if (!i) return o;
+  if (pt(e) !== i) return o;
+  return {
+    send: !0,
+    url: i,
+    headers: async () => {
+      let f = a.ANTHROPIC_AUTH_TOKEN;
+      return f && Fdn(f) && n(a.ANTHROPIC_BASE_URL) === i && !p() ? {
+        Authorization: `Bearer ${f}`
+      } : {}
+    }
+  }
+}
+var zt = 100;
+
+function Vt(e) {
+  let r = {
+    send: !1
+  };
+  if (e !== "traces") return r;
+  let o = uIr();
+  if (o === null) return r;
+  return {
+    send: !0,
+    url: o,
+    headers: async () => PB()
+  }
+}
+
+function dt(e) {
+  if (!e) return !1;
+  try {
+    let r = new URL(e).hostname.toLowerCase();
+    return r === "localhost" || r === "::1" || r === "[::1]" || /^127(\.\d{1,3}){3}$/.test(r)
+  } catch {
+    return !1
+  }
+}
+
+function tt(e, r) {
+  if (Buffer.isBuffer(e)) return e;
+  if (typeof e === "string") return typeof r === "string" ? Buffer.from(e, r) : Buffer.from(e);
+  if (e instanceof Uint8Array) return Buffer.from(e);
+  throw TypeError("OTLP request body chunk is not string or Uint8Array")
+}
+
+function Le(e) {
+  let r = e,
+    o = r.addRequest.bind(r);
+  return r.addRequest = function(s, ...p) {
+    if (!s.getHeader("content-length") && !s.getHeader("transfer-encoding")) {
+      let h = function() {
+          s.write = f, s.end = u
+        },
+        T = function(O) {
+          h(), s.destroy(O instanceof Error ? O : TypeError("OTLP request body chunk conversion failed"))
+        },
+        i = [],
+        f = s.write.bind(s),
+        u = s.end.bind(s);
+      s.write = function(R, L, k) {
+        try {
+          i.push(tt(R, L))
+        } catch (V) {
+          return T(V), !1
+        }
+        let F = typeof L === "function" ? L : k;
+        if (F) process.nextTick(F, null);
+        return !0
+      }, s.end = function(R, L, k) {
+        if (R != null && typeof R !== "function") try {
+          i.push(tt(R, L))
+        } catch (j) {
+          return T(j), s
+        }
+        let F = typeof R === "function" ? R : typeof L === "function" ? L : k,
+          V = Buffer.concat(i);
+        if (!s.headersSent) s.setHeader("Content-Length", String(V.byteLength));
+        return h(), u(V, F)
+      }
+    }
+    o(s, ...p)
+  }, e
+}
+
+function re(e) {
+  let r = Ff(),
+    o = !!(r && !dt(e) && !(e && Zy(e))),
+    n = njr(o);
+  if (n) return n;
+  let s = sE(),
+    p = Jx(),
+    i = {
+      ...s,
+      ...p && {
+        ca: p
+      }
+    },
+    f, u, h, T = (O) => {
+      if (o) {
+        if (!h) h = Le(new rt.HttpsProxyAgent(r, {
+          ...i,
+          keepAlive: !0,
+          maxSockets: 1
+        })), h.options = {
+          ...h.options,
+          ...i
+        };
+        return h
+      }
+      if (O === "http:") {
+        if (!f) f = Le(new St.Agent({
+          keepAlive: !0,
+          maxSockets: 1
+        }));
+        return f
+      }
+      if (!u) u = Le(new Pt.Agent({
+        ...i,
+        keepAlive: !0,
+        maxSockets: 1
+      }));
+      return u
+    };
+  return LGo(o, T), T
+}
+export {
+  Ut as bigQueryExportIntervalMs, At as bootstrapTelemetry, Bn as flushTelemetry, Ne as getOTLPExporterConfig, Mt as getOtlpLogExporters, wt as hostArchOf, Dn as initializeTelemetry, Bt as isTelemetryEnabled, ct as otlpEndpointIn, Ce as parseExporterTypes, Ft as parseOtelHeadersEnvVar, It as resolveInClusterOtlpTrust, Le as withContentLengthBuffering
+};

@@ -1,0 +1,146 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Fe, ws } from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import { we } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { p0 } from "B:/~BUN/root/chunk-nggrknsv.js";
+import { ut } from "B:/~BUN/root/chunk-1gpjpba6.js";
+import { g, m, p } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import { Ht, E } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { gar } from "B:/~BUN/root/chunk-sqnhzesh.js";
+import { By } from "B:/~BUN/root/chunk-c44qc88s.js";
+import { sM, HR, Re } from "B:/~BUN/root/chunk-9grc6xh0.js";
+function dot() {
+  let CLAUDE_CODE_ENABLE_AWAY_SUMMARY = process.env.CLAUDE_CODE_ENABLE_AWAY_SUMMARY;
+  if (ws(CLAUDE_CODE_ENABLE_AWAY_SUMMARY)) return !1;
+  if (Fe(CLAUDE_CODE_ENABLE_AWAY_SUMMARY)) return !0;
+  if (we()) return !1;
+  if (ut()?.awaySummaryEnabled === !1) return !1;
+  return !0;
+}
+function y() {
+  let CLAUDE_CODE_ENABLE_REMOTE_RECAP = a.CLAUDE_CODE_ENABLE_REMOTE_RECAP;
+  if (CLAUDE_CODE_ENABLE_REMOTE_RECAP !== void 0) return CLAUDE_CODE_ENABLE_REMOTE_RECAP;
+  return E("tengu_harbor_moth", !1);
+}
+function h4t(e, n) {
+  if (!n.onMetadataChanged) return;
+  if (Ht() || !gar() || !y()) return;
+  if (e.startedForTurnEnd) return;
+  e.startedForTurnEnd = !0, S(e, n);
+}
+function sXr(e) {
+  e.reset();
+}
+async function S(e, n) {
+  e.inFlight?.abort();
+  let abortController = new AbortController();
+  e.inFlight = abortController;
+  let o = await y4t(abortController.signal);
+  if (abortController.signal.aborted) return;
+  if (o.kind !== "ok") {
+    if (o.kind !== "no-turn") m("ccr_recap_generate", o.kind);
+    return;
+  }
+  if (n.getState() === "running") {
+    t("[awaySummary] ccr recap dropped: new turn already running");
+    return;
+  }
+  if (n.notifyMetadataChanged({
+    recap: o.text
+  }), o.capped) p("ccr_recap_generate", "capped");else g("ccr_recap_generate");
+}
+var content = "The user stepped away and is coming back. Recap in under 40 words, 1-2 plain sentences, no markdown. Lead with the overall goal and current task, then the one next action. Skip root-cause narrative, fix internals, secondary to-dos, and em-dash tangents.",
+  f = 400;
+async function y4t(e, n) {
+  let cacheSafeParams = sM();
+  if (!cacheSafeParams && n) {
+    if (e.aborted) return {
+      kind: "aborted"
+    };
+    try {
+      cacheSafeParams = await n();
+    } catch (error) {
+      return t(`[awaySummary] fallback params rebuild failed: ${error}`), {
+        kind: "failed"
+      };
+    }
+    if (e.aborted) return {
+      kind: "aborted"
+    };
+  }
+  if (!cacheSafeParams) return t("[awaySummary] no CacheSafeParams saved, skipping"), {
+    kind: "no-turn"
+  };
+  let abortController_2 = new AbortController();
+  e.addEventListener("abort", () => abortController_2.abort(), {
+    once: !0
+  });
+  try {
+    let {
+      messages: messages
+    } = await HR({
+      promptMessages: [Re({
+        content: content
+      })],
+      cacheSafeParams: cacheSafeParams,
+      overrides: {
+        abortController: abortController_2
+      },
+      canUseTool: async () => ({
+        behavior: "deny",
+        message: "Away summary cannot use tools",
+        decisionReason: {
+          type: "other",
+          reason: "away_summary"
+        }
+      }),
+      querySource: "away_summary",
+      forkLabel: "away_summary",
+      maxTurns: 1,
+      skipCacheWrite: !0,
+      skipTranscript: !0
+    });
+    if (e.aborted) return {
+      kind: "aborted"
+    };
+    let u = messages.find(item => item.type === "assistant" && item.isApiErrorMessage);
+    if (u) return {
+      kind: "api-error",
+      text: l([u], !0)
+    };
+    let text = l(messages, !1),
+      capped = text.length > f;
+    if (capped) {
+      let c = p0(text, f);
+      t(`[awaySummary] recap capped from ${text.length} to ${c.length} chars`), text = c;
+    }
+    return text ? {
+      kind: "ok",
+      text: text,
+      capped: capped
+    } : {
+      kind: "failed"
+    };
+  } catch (error) {
+    if (e.aborted) return {
+      kind: "aborted"
+    };
+    return t(`[awaySummary] generation failed: ${error}`), {
+      kind: "failed"
+    };
+  }
+}
+function l(e, n) {
+  return By(e.flatMap(item => item.type === "assistant" && (n || !item.isApiErrorMessage) ? item.message.content : []).filter(item => item.type === "text").map(item => "text" in item ? item.text : "").join("")).trim();
+}
+export { dot, h4t, sXr, y4t };

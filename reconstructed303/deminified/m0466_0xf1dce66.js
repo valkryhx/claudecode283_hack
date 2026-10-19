@@ -1,0 +1,257 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { c } from "B:/~BUN/root/chunk-jthpk6wv.js";
+import { k, Fr, pS } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { i } from "B:/~BUN/root/chunk-1kfn24jp.js";
+import { g, p } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { l } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { I } from "B:/~BUN/root/chunk-je1b1drr.js";
+import { Zs } from "B:/~BUN/root/chunk-wegca9zh.js";
+import { He } from "B:/~BUN/root/chunk-8znbjmp4.js";
+import { closeSync as N, constants as m, fstatSync as v, openSync as R, writeSync as A } from "fs";
+import { isatty as F } from "tty";
+var O = 4194304,
+  Q = 25,
+  L = Buffer.from("\x1B[0m"),
+  weakMap = new WeakMap(),
+  b = He(new Set(), e => e.clear());
+function bXr(e = 1) {
+  if (!(e === 1 ? process.stdout.isTTY : F(e))) return {
+    reason: "not_a_tty"
+  };
+  let n;
+  switch (I()) {
+    case "linux":
+    case "wsl":
+      n = `/proc/self/fd/${e}`;
+      break;
+    case "macos":
+      {
+        let d = Y(e);
+        if (d === void 0) return {
+          reason: "ttyname_unavailable"
+        };
+        n = d;
+        break;
+      }
+    default:
+      return {
+        reason: "unsupported_platform"
+      };
+  }
+  let fd;
+  try {
+    fd = R(n, m.O_WRONLY | m.O_NONBLOCK | m.O_NOCTTY | Zs);
+  } catch (error) {
+    return {
+      reason: "open_failed",
+      errno: k(error)
+    };
+  }
+  let r = {
+    reason: "not_same_tty"
+  };
+  try {
+    let d = v(fd),
+      s = v(e);
+    if (d.rdev === s.rdev && d.ino === s.ino) return {
+      fd: fd
+    };
+  } catch (error) {
+    r = {
+      reason: "fstat_failed",
+      errno: k(error)
+    };
+  }
+  try {
+    N(fd);
+  } catch {}
+  return r;
+}
+function S(e, n, errno) {
+  if (i("tengu_nonblocking_stdout", {
+    result: c(e),
+    reason: n === void 0 ? void 0 : c(n),
+    errno: errno
+  }), e === "installed") g("terminal_nonblocking_stdout");else if (n !== "not_a_tty" && n !== "unsupported_platform") p("terminal_nonblocking_stdout", n ?? "write_failed", errno === void 0 ? void 0 : {
+    errno: errno
+  });
+}
+function Y(e) {
+  try {
+    return Bun.ant.ttyName(e) ?? void 0;
+  } catch {
+    return;
+  }
+}
+function Fts(onEpisodeEnd, n = bXr) {
+  let o = weakMap.get(process.stdout);
+  if (o?.installedWrite !== void 0) return o.onEpisodeEnd = onEpisodeEnd, w(o);
+  let r = n();
+  if (r.fd === void 0) {
+    if (t(`nonBlockingStdout: not installed (${r.reason}${r.errno ? `, ${r.errno}` : ""})`), !b.has(r.reason)) b.add(r.reason), S("skipped", r.reason, pS(r.errno));
+    return null;
+  }
+  let d = {
+      fd: r.fd,
+      originalWrite: process.stdout.write,
+      installedWrite: void 0,
+      queue: [],
+      queuedBytes: 0,
+      dropping: !1,
+      timer: void 0,
+      retryMs: 0,
+      episode: {
+        startedMs: 0,
+        peakQueuedBytes: 0,
+        droppedBytes: 0
+      },
+      onEpisodeEnd: onEpisodeEnd,
+      onExit: () => y(d)
+    },
+    s = (f, a, M) => {
+      let q = typeof a === "string" ? a : void 0,
+        E = typeof a === "function" ? a : M;
+      if (d.installedWrite === void 0) return d.originalWrite.call(process.stdout, f, q, E);
+      return C(d, typeof f === "string" ? Buffer.from(f, q) : Buffer.from(f)), E?.(), !0;
+    };
+  return d.installedWrite = s, process.stdout.write = s, weakMap.set(process.stdout, d), process.on("exit", d.onExit), t("nonBlockingStdout: active"), S("installed"), w(d);
+}
+function w(e) {
+  return {
+    flush: () => y(e),
+    restore: () => _(e),
+    isActive: () => e.installedWrite !== void 0,
+    queuedBytes: () => e.queuedBytes
+  };
+}
+function Hts({
+  envOverride: envOverride,
+  isAnt: isAnt,
+  remoteFlag: remoteFlag
+}) {
+  return envOverride ?? (isAnt || remoteFlag());
+}
+function sRn() {
+  return weakMap.get(process.stdout)?.installedWrite !== void 0;
+}
+function iRn() {
+  let e = weakMap.get(process.stdout);
+  if (e?.installedWrite !== void 0) _(e);
+}
+function aRn() {
+  let e = weakMap.get(process.stdout);
+  if (e?.installedWrite !== void 0) y(e);
+}
+function W(e, n) {
+  try {
+    return A(e, n);
+  } catch (error) {
+    if (k(error) === "EAGAIN") return 0;
+    throw error;
+  }
+}
+function C(e, n) {
+  if (n.length === 0) return;
+  if (e.queue.length === 0) {
+    let o;
+    try {
+      o = W(e.fd, n);
+    } catch (error) {
+      h(e, error), process.stdout.write(n);
+      return;
+    }
+    if (o === n.length) return;
+    e.episode = {
+      startedMs: performance.now(),
+      peakQueuedBytes: 0,
+      droppedBytes: 0
+    }, B(e, n.subarray(o)), x(e, o > 0);
+    return;
+  }
+  if (e.dropping) {
+    e.episode.droppedBytes += n.length;
+    return;
+  }
+  if (e.queuedBytes + n.length > O) {
+    e.episode.droppedBytes += e.queuedBytes + n.length, e.queue = [], e.queuedBytes = 0, e.dropping = !0, t(`nonBlockingStdout: terminal stopped reading; dropped ${e.episode.droppedBytes} queued bytes, will repaint when it resumes`, {
+      level: "warn"
+    }), B(e, L);
+    return;
+  }
+  B(e, n);
+}
+function B(e, n) {
+  if (e.queue.push(n), e.queuedBytes += n.length, e.queuedBytes > e.episode.peakQueuedBytes) e.episode.peakQueuedBytes = e.queuedBytes;
+}
+function x(e, n) {
+  e.retryMs = n ? 0 : Math.min(Math.max(1, e.retryMs * 2), Q), e.timer = setTimeout(D, e.retryMs, e), e.timer.unref();
+}
+function D(e) {
+  e.timer = void 0;
+  let n = !1;
+  try {
+    while (e.queue.length > 0) {
+      if (n && e.queue.length > 1) e.queue = [Buffer.concat(e.queue, e.queuedBytes)];
+      let o = e.queue[0],
+        r = W(e.fd, o);
+      if (r === 0) {
+        x(e, n);
+        return;
+      }
+      if (n = !0, e.queuedBytes -= r, r < o.length) e.queue[0] = o.subarray(r);else e.queue.shift();
+    }
+  } catch (error) {
+    h(e, error);
+    return;
+  }
+  T(e, "drain");
+}
+function T(e, endedBy) {
+  e.dropping = !1, e.retryMs = 0;
+  try {
+    e.onEpisodeEnd({
+      durationMs: Math.round(performance.now() - e.episode.startedMs),
+      peakQueuedBytes: e.episode.peakQueuedBytes,
+      droppedBytes: e.episode.droppedBytes,
+      endedBy: endedBy
+    });
+  } catch (error) {
+    l(error);
+  }
+}
+function y(e) {
+  if (e.timer !== void 0) clearTimeout(e.timer), e.timer = void 0;
+  if (e.queue.length === 0) return;
+  let queue = e.queue;
+  e.queue = [], e.queuedBytes = 0;
+  try {
+    for (let o of queue) e.originalWrite.call(process.stdout, o);
+  } catch (error) {
+    h(e, error);
+    return;
+  }
+  T(e, "flush");
+}
+function h(e, n) {
+  t(`nonBlockingStdout: uninstalling (${n})`), e.queue = [], e.queuedBytes = 0, _(e), S("abandoned", void 0, Fr(n));
+}
+function _(e) {
+  if (e.installedWrite === void 0) return;
+  if (process.stdout.write === e.installedWrite) process.stdout.write = e.originalWrite;
+  e.installedWrite = void 0, weakMap.delete(process.stdout), process.off("exit", e.onExit);
+  try {
+    N(e.fd);
+  } catch {}
+  y(e);
+}
+export { bXr, Fts, Hts, sRn, iRn, aRn };

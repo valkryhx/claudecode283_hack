@@ -1,0 +1,5957 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { bt, _, ti, t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { La, nt } from "B:/~BUN/root/chunk-nggrknsv.js";
+import { e_ as repoRootOf } from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import { Me } from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import { L, so, bv, rre, hc } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { b, c, pe } from "B:/~BUN/root/chunk-jthpk6wv.js";
+import { Ke, d, k } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { Y, SP, je } from "B:/~BUN/root/chunk-89mss1tj.js";
+import { z } from "B:/~BUN/root/chunk-4bx17ygx.js";
+import { Pe as configHome } from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import { l as logError } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import { I } from "B:/~BUN/root/chunk-je1b1drr.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import { uLe as consentPath, f3o } from "B:/~BUN/root/chunk-h9mw6yna.js";
+import { i } from "B:/~BUN/root/chunk-1kfn24jp.js";
+import { g, m, p } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import { qm } from "B:/~BUN/root/chunk-nxwmyxnk.js";
+import { wy, a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import { UW } from "B:/~BUN/root/chunk-6ft8yhc8.js";
+import { it } from "B:/~BUN/root/chunk-ek28wssa.js";
+import { xs, ef } from "B:/~BUN/root/chunk-6a9s3k2y.js";
+import { is, Xc, lR } from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import { Gn } from "B:/~BUN/root/chunk-c44qc88s.js";
+import { mAr, IBe, EH, bG, Xnn, hx, wu, MBe, _Oe, pIs, ODt, fIs } from "B:/~BUN/root/chunk-r0jnxjth.js";
+import { fn, me } from "B:/~BUN/root/chunk-1gpjpba6.js";
+import { lfe, oee, h5e, sb, FUe, y5e, V9, pfe, __, lRs, QMt, q9, dRs, $Ue, uRs, S5e, LEr, UUe, BUe, jUe, ffe, mfe, NPe, gfe, Fen, FPe, HPe, hRs, yRs, ZMt, GBn, VBn, e0t, _Rs, BEr, Gs } from "B:/~BUN/root/chunk-dn8rakwm.js";
+import { Gi, ir, $M } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { GJe, h3n, We } from "B:/~BUN/root/chunk-kad4nq7y.js";
+import { ss } from "B:/~BUN/root/chunk-5g9fghtv.js";
+import { ug, ote, aje } from "B:/~BUN/root/chunk-429xgjya.js";
+import { hSe as placePath, Qit, gHe, Zit as PATH_2, txt, Qmr, eat as resolveProgram, Zmr, Nps, Fps, Q0n, n6, oxt, rat, u9t, ofs, sfs, nDn, oat, ifs, bDn, hFn as execHttp, AZ, Pbr, Olt, wFn, Buo as execCommand, vFn, Wuo, QSe } from "B:/~BUN/root/chunk-9grc6xh0.js";
+import { Nj, hVn, _Vn, bVn, rNs, sNs } from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import { Oft, lme } from "B:/~BUN/root/chunk-gjdk1btq.js";
+import { nm, JMr } from "B:/~BUN/root/chunk-r4y1700s.js";
+import { X0, vwe, Lq } from "B:/~BUN/root/chunk-k382hx6g.js";
+import { Hke } from "B:/~BUN/root/chunk-gygbhz84.js";
+import { FCe, DVe, LVe, kLe } from "B:/~BUN/root/chunk-9v0n3hy4.js";
+import { Swn } from "B:/~BUN/root/chunk-sajqdp4j.js";
+import { Abn, Xzt, Jzt, R6o, A6o, B2e, xbn, x6o, GZn } from "B:/~BUN/root/chunk-9s5kj04t.js";
+import { H4o, Y7n as timeoutMs_9, yk } from "B:/~BUN/root/chunk-tzmjp0wf.js";
+import { g6t } from "B:/~BUN/root/chunk-bz422xf8.js";
+import { T6o, C6o, utt, Rbn } from "B:/~BUN/root/chunk-r5j4gtpc.js";
+import { P6o, Rwt, O6o, Nye } from "B:/~BUN/root/chunk-znfad60d.js";
+import { awn } from "B:/~BUN/root/chunk-sgqbs920.js";
+import { EV } from "B:/~BUN/root/chunk-s1ge8s1b.js";
+import { ace, i_e } from "B:/~BUN/root/chunk-esxhprx0.js";
+import { P0 } from "B:/~BUN/root/chunk-a7fam7pz.js";
+import { Ed, Y4t } from "B:/~BUN/root/chunk-zta47hte.js";
+import { As } from "B:/~BUN/root/chunk-xnas864x.js";
+import { UK, jN } from "B:/~BUN/root/chunk-mbz8rhex.js";
+import { Qe } from "B:/~BUN/root/chunk-5k20pvvh.js";
+import { o, v, T, _t, U } from "B:/~BUN/root/chunk-g3snhg6n.js";
+import { st } from "B:/~BUN/root/chunk-7aw74be3.js";
+import { ye } from "B:/~BUN/root/chunk-shj1mfyk.js";
+var Bo = /^[0-9a-f]{64}$/;
+function __n(e) {
+  let {
+      description: description
+    } = e,
+    input = e.input;
+  if (typeof input !== "object" || input === null) return !1;
+  let s = Object.keys(input),
+    u = "content_digest" in input ? input.content_digest : void 0;
+  return typeof description === "string" && description.length <= UK && jN(description) && s.length === 1 && typeof u === "string" && Bo.test(u);
+}
+function Go() {
+  let e = new Map();
+  return {
+    known(n) {
+      let r = Math.max(e.get(n) ?? 0, 1);
+      return e.set(n, r), r;
+    },
+    next(n) {
+      let r = (e.get(n) ?? 0) + 1;
+      return e.set(n, r), r;
+    }
+  };
+}
+function Vo() {
+  return {
+    consentPin: f3o(),
+    generations: Go(),
+    pointedToCommand: {
+      shown: !1
+    },
+    setAsideSessions: new Set(),
+    decided: Me()
+  };
+}
+var qet = new z(Vo);
+import { realpath } from "fs/promises";
+var zo = /^[a-z_]{2,}:\[?[^/]*\]?$/;
+function ze(e) {
+  let r = [e.launchDirReal, e.launchDir, ...(e.sync !== void 0 ? [e.sync.rootReal, ...(e.sync.root !== void 0 ? [e.sync.root] : [])] : []), ...e.extraReach].filter(item => !zo.test(item)),
+    s = r.find(item => !hx(item));
+  if (s !== void 0) return t(`[deviceHooks] reach: a root that is not an absolute path (${JSON.stringify(s)}) \u2014 everything on this machine counts as in the cloud session's reach`, {
+    level: "warn"
+  }), [EH];
+  return r.map(item => wu(item.replace(/\/+$/, "")) || "/");
+}
+function vn(e, n) {
+  return e.length === 1 && e[0] === EH || n.some(item => !hx(item));
+}
+function Ko(e, n) {
+  let r = ze(n);
+  return vn(r, e) || e.some(item => r.some(u => _Oe(u, wu(item))));
+}
+function mt(e, n) {
+  let r = ze(n);
+  return vn(r, e) || e.some(item => r.some(u => _Oe(wu(item), u)));
+}
+function Jo(e) {
+  switch (e.type) {
+    case "command":
+      return e.args === void 0 ? e.command : [e.command, ...e.args].join(" ");
+    case "http":
+      return e.url;
+    case "prompt":
+    case "agent":
+      return e.prompt;
+    case "mcp_tool":
+      return `${e.server}/${e.tool}`;
+    case "script":
+      return e.file ?? BEr(e.script ?? "");
+  }
+}
+function Ae(e) {
+  return ti(Jo(e), {
+    maxCodeUnits: 200
+  });
+}
+async function bn(e, n, r, s = {}) {
+  let u = [...(s.sourceFile !== void 0 ? [s.sourceFile] : []), ...(s.pluginRoot !== void 0 ? [s.pluginRoot] : [])];
+  for (let A of u) {
+    let E = await r.realpath(A).catch(() => null);
+    if (E === null || mt([A, E], n) || A === s.pluginRoot && Ko([A, E], n)) return {
+      kind: "source_in_reach",
+      notice: `"${Ae(e)}" is configured in a place the cloud session can write on this machine (${ti(A, {
+        maxCodeUnits: 200
+      })}), so it is not run for the cloud session from this machine.`
+    };
+  }
+  if (e.type !== "command") return {
+    kind: "not_command",
+    hookType: e.type
+  };
+  let h = IBe(e, {
+    home: r.home,
+    projectDir: n.projectDir,
+    hookCwd: n.projectDirReal,
+    defaultShell: r.defaultShell,
+    shellPrefix: r.shellPrefix,
+    ...(s.pluginRoot !== void 0 && {
+      pluginRoot: s.pluginRoot
+    })
+  });
+  if (h.kind !== "script") return {
+    kind: "opaque",
+    reason: h.reason,
+    notice: `"${Ae(e)}" is not a single script this machine can pin, so it is not run for the cloud session from this machine: it would run whatever it names in the checkout, which the session may have written. Point it at one script outside the checkout (under ~/.claude, say).`
+  };
+  let rawPath = ti(h.rawPath, {
+      maxCodeUnits: 200
+    }),
+    {
+      located: located,
+      digest: digest
+    } = await Xo(h.resolvedPath, n, r, s.resolved);
+  if (located.realPath === null || digest === null || !digest.ok) return {
+    kind: "unverifiable",
+    rawPath: rawPath,
+    missing: located.realPath === null && located.missing,
+    notice: `${rawPath} could not be read and pinned (missing, too large, not a regular file, more than one hard link, or it resolves to a file this machine does not read as a hook script), so its hook is not run for the cloud session from this machine.`
+  };
+  let C = {
+    pinnedTarget: {
+      path: h.resolvedPath,
+      realPath: located.realPath,
+      sha256: digest.sha256
+    },
+    bytes: digest.bytes,
+    rawPath: rawPath,
+    interpreter: h.interpreter,
+    site: h.site
+  };
+  if (mt([h.resolvedPath, located.realPath], n)) return {
+    kind: "script_in_reach",
+    ...C,
+    notice: `"${Ae(e)}" sits where the cloud session can write on this machine (the checkout, the synced directory or a sandbox write inlet), so it is not run for the cloud session from this machine. Move the script outside the checkout (under ~/.claude, say).`
+  };
+  return {
+    kind: "script_outside_reach",
+    ...C
+  };
+}
+async function Xo(e, n, r, s) {
+  let u = s?.get(e);
+  if (u) return u;
+  let h = (async () => {
+    let located_2 = await pIs(e, n, r),
+      digest_2 = located_2.realPath === null ? null : await ODt(located_2.realPath, r);
+    return {
+      located: located_2,
+      digest: digest_2
+    };
+  })();
+  return s?.set(e, h), h;
+}
+function Rn() {
+  return {
+    stickyRoots: new Set(),
+    pinnedScopes: new Set(),
+    pinnedRoots: new Map(),
+    syncRoots: new Set(),
+    reachBaseline: null,
+    commonRoots: null
+  };
+}
+function En(e) {
+  let n = {
+      ...Zo(e.launchDir),
+      ...e.deps
+    },
+    {
+      memory: memory
+    } = e;
+  memory.reachBaseline ??= new Map(xs.map(item => [item, n.scopeWriteEntries(item)])), memory.commonRoots ??= n.commonWriteRoots();
+  let {
+      reachBaseline: reachBaseline,
+      commonRoots: commonRoots,
+      syncRoots: syncRoots,
+      stickyRoots: stickyRoots
+    } = memory,
+    noteSyncRoot = R => {
+      syncRoots.add(R), n.realpath(R).then(C => syncRoots.add(C), () => {});
+    },
+    S = async () => {
+      let R = n.addedDirectories().flatMap(item => {
+        try {
+          return [it(item, e.launchDir)];
+        } catch {
+          return [];
+        }
+      });
+      return [...R, ...(await Promise.all(R.map(item => n.realpath(item).catch(() => item))))];
+    };
+  return {
+    noteSyncRoot: noteSyncRoot,
+    async current() {
+      let R = !1,
+        C = P => n.realpath(P).then(O => hx(O) ? O : P, () => (R = !0, P)),
+        launchDirReal = await C(e.launchDir),
+        projectDirReal = await C(e.projectDir),
+        root = null;
+      try {
+        root = e.syncRoot();
+      } catch {
+        R = !0;
+      }
+      if (root !== null) syncRoots.add(root), syncRoots.add(await C(root));
+      let sync = root === null ? void 0 : {
+          rootReal: await C(root),
+          root: root
+        },
+        G = L([...(e.repoRoot !== null ? [e.repoRoot, await C(e.repoRoot)] : []), ...syncRoots, ...(await S())]),
+        configHomeReal = await C(e.configHome);
+      if (await FUe({
+        stickyRoots: stickyRoots,
+        pinnedScopes: memory.pinnedScopes,
+        pinnedRoots: memory.pinnedRoots,
+        baseRoots: [...h5e({
+          launchDir: e.launchDir,
+          launchDirReal: launchDirReal
+        }), ...G],
+        reachBaseline: reachBaseline,
+        scopeSettingsFile: n.scopeSettingsFile,
+        realpath: n.realpath,
+        commonRoots: () => commonRoots,
+        scopeRoots: n.scopeWriteRoots
+      }).catch(() => {
+        R = !0;
+      }), R) t("cloud session reach: a base root did not resolve (or sync state could not be read); every hook is treated as in reach for this answer", {
+        level: "warn"
+      });
+      return {
+        launchDir: e.launchDir,
+        launchDirReal: launchDirReal,
+        configHomeReal: configHomeReal,
+        projectDir: e.projectDir,
+        projectDirReal: projectDirReal,
+        ...(sync !== void 0 && {
+          sync: sync
+        }),
+        extraReach: R ? ["/"] : L([...G, ...stickyRoots])
+      };
+    }
+  };
+}
+function Zo(e) {
+  return {
+    realpath: oat().realpath,
+    commonWriteRoots: () => NPe(e),
+    scopeWriteRoots: (n, r) => gfe(e, n, r),
+    scopeWriteEntries: n => {
+      let r = mfe(n, e),
+        s = fn(n);
+      if (n === "policySettings" || !s) return r;
+      let u = lR(s, n === "flagSettings" ? bv() ?? rre() : void 0);
+      if (u.errors.some(item => (item.severity ?? "fatal") === "fatal")) return t(`cloud session reach: the ${n} settings file could not be read or parsed at attach; its write grants are unknown, so every hook counts as in the session's reach`, {
+        level: "warn"
+      }), [EH];
+      return L([...mfe(n, e, u.settings), ...r]);
+    },
+    scopeSettingsFile: n => fn(n) ?? null,
+    addedDirectories: () => hc()
+  };
+}
+function b_n(e) {
+  let n = {
+      realpath: realpath,
+      repoRootOf: repoRootOf,
+      consentPath: consentPath,
+      configHome: configHome,
+      ...e.deps
+    },
+    {
+      launchDir: r,
+      memory: memory_2
+    } = e,
+    u = null,
+    h = () => u ??= (async () => {
+      let y = E => n.realpath(E).catch(() => E),
+        w = await y(r),
+        S = L([r, w].map(item => n.repoRootOf(item)).filter(item => item !== null)),
+        repoRoots = L((await Promise.all(S.map(y))).concat(S)),
+        [repoRoot = null] = S;
+      return {
+        tracker: En({
+          launchDir: r,
+          projectDir: r,
+          repoRoot: repoRoot,
+          configHome: n.configHome(),
+          syncRoot: e.syncRoot,
+          memory: memory_2,
+          ...(n.tracker !== void 0 && {
+            deps: n.tracker
+          })
+        }),
+        launchRoots: L([r, w, ...repoRoots]),
+        repoRoots: repoRoots
+      };
+    })();
+  return {
+    async judge() {
+      try {
+        let {
+            tracker: tracker,
+            launchRoots: launchRoots,
+            repoRoots: repoRoots_2
+          } = await h(),
+          R = await tracker.current();
+        if (e.syncElsewhere !== !1) return "unknown";
+        let C = [...ze(R), ...repoRoots_2];
+        if (C.some(item => item === EH || !hx(item))) return "unknown";
+        let A = n.consentPath();
+        if (!A.startsWith("/")) return "unknown";
+        let E = await ZMt(A, C, n.realpath);
+        if (E === !1) return "outside";
+        if (E === "unresolvable") return "unknown";
+        let x = [A, await n.realpath(A).catch(() => A)];
+        if (sb(x, launchRoots)) return "in_launch_dir";
+        return sb(x, [...memory_2.syncRoots]) ? "in_sync_root" : "in_other_root";
+      } catch {
+        return "unknown";
+      }
+    }
+  };
+}
+function Qo() {
+  let e = new Map();
+  return {
+    reachFor(n) {
+      let r = e.get(n);
+      if (r !== void 0) return r;
+      let s = Rn();
+      return e.set(n, s), s;
+    }
+  };
+}
+var S_n = new z(Qo);
+import { realpath as realpath_2 } from "fs/promises";
+import { isAbsolute as ji } from "path";
+import { dirname as er } from "path";
+var Cn = {
+    execCommand: execCommand,
+    execHttp: execHttp
+  },
+  projectRoot = `${PATH_2}/project-folder-not-given-to-this-hook`,
+  nr = [["safe.bareRepository", "explicit"], ["core.hooksPath", "/dev/null"], ["core.fsmonitor", "false"], ["protocol.ext.allow", "never"], ["submodule.recurse", "false"], ["diff.ignoreSubmodules", "all"], ["status.submoduleSummary", "false"], ["fetch.recurseSubmodules", "false"], ["push.recurseSubmodules", "no"]];
+function Lt(e) {
+  if (e.omit.includes("CLAUDE_CODE_SHELL_PREFIX")) return;
+  let n = e.base.CLAUDE_CODE_SHELL_PREFIX?.trim() || void 0;
+  return n !== void 0 && n.startsWith("/") ? n : void 0;
+}
+async function An({
+  hook: hook,
+  event: n,
+  input: input_2,
+  timeoutMs: timeoutMs,
+  env: env,
+  startDirectory: h
+}, y, w, S) {
+  if (S.aborted) return hook.type === "http" ? {
+    kind: "http",
+    ok: !1,
+    body: "",
+    aborted: !0
+  } : {
+    kind: "command",
+    stdout: "",
+    stderr: "",
+    status: 1,
+    aborted: !0
+  };
+  let jsonInput = _(input_2);
+  if (hook.type === "http") try {
+    return {
+      kind: "http",
+      ...(await w.execHttp({
+        ...hook,
+        timeout: void 0
+      }, n, jsonInput, S, timeoutMs, txt(env)))
+    };
+  } catch (E) {
+    return {
+      kind: "http",
+      ok: !1,
+      body: "",
+      error: E instanceof Error ? E.message : String(E)
+    };
+  }
+  let {
+    signal: signal,
+    cleanup: cleanup
+  } = As(S, {
+    timeoutMs: timeoutMs
+  });
+  try {
+    return {
+      kind: "command",
+      ...(await w.execCommand({
+        hook: {
+          ...hook,
+          timeout: Math.ceil(timeoutMs / 1000) + 30
+        },
+        hookEvent: n,
+        jsonInput: jsonInput,
+        envContext: V9(input_2),
+        project: h === void 0 ? {
+          originalCwd: y.launchDir,
+          projectRoot: y.projectRoot
+        } : {
+          originalCwd: h,
+          projectRoot: projectRoot
+        },
+        cwd: h ?? input_2.cwd,
+        startsOutsideProject: h !== void 0,
+        signal: signal,
+        envBase: env.base,
+        envOmit: env.omit,
+        shellPrefix: Lt(env),
+        envExtra: {
+          ...env.extra,
+          CLAUDE_CODE_CLOUD_SESSION_ID: y.cloudSessionId,
+          ...UW(void 0, nr),
+          ...(h !== void 0 && {
+            GIT_CEILING_DIRECTORIES: er(h)
+          })
+        }
+      }))
+    };
+  } catch (error) {
+    return {
+      kind: "command",
+      stdout: "",
+      stderr: error instanceof Error ? error.message : String(error),
+      status: 1,
+      spawnFailed: !0
+    };
+  } finally {
+    cleanup();
+  }
+}
+function Ie(e, n) {
+  return ti(e, {
+    maxCodeUnits: 400
+  }) || n;
+}
+function Fe(e, n, r = {}) {
+  let s = "async" in r ? {} : r;
+  if (e !== "PreToolUse") return {
+    ...s,
+    decision: "block",
+    reason: n
+  };
+  let u = "hookSpecificOutput" in s ? s.hookSpecificOutput : void 0,
+    additionalContext = u?.hookEventName === "PreToolUse" ? u.additionalContext : void 0;
+  return {
+    ...s,
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "deny",
+      permissionDecisionReason: n,
+      ...(additionalContext !== void 0 && {
+        additionalContext: additionalContext
+      })
+    }
+  };
+}
+function In(e, n) {
+  let r = or(e, n);
+  if (r.answer === null) return r;
+  let {
+    answer: answer
+  } = pfe(r.answer, n.event);
+  if (r.exitClass === "2" && r.blocked && !QMt(answer) && e.kind === "command") {
+    let u = Fe(n.event, `[${n.label}]: ${e.stderr || "No stderr output"}`, answer);
+    return {
+      ...r,
+      answer: pfe(u, n.event).answer,
+      exitClass: "2",
+      blocked: !0
+    };
+  }
+  return {
+    ...r,
+    answer: answer,
+    blocked: __(answer)
+  };
+}
+function or(e, {
+  event: n,
+  label: label,
+  timedOut: timedOut,
+  timeoutMs: timeoutMs_2,
+  timeoutFailsClosed = !1
+}) {
+  if (e.aborted && !timedOut) return {
+    answer: null,
+    exitClass: "cancelled",
+    blocked: !1
+  };
+  if (e.aborted) {
+    let x = Math.round(timeoutMs_2 / 1000),
+      K = `[${label}]: timed out after ${x}s on the attached machine`;
+    if (timeoutFailsClosed && (n === "PreToolUse" || n === "UserPromptSubmit" || n === "UserPromptExpansion")) return {
+      answer: Fe(n, K, rat(n, K) ?? {}),
+      exitClass: "timeout",
+      blocked: !0
+    };
+    return {
+      answer: {},
+      exitClass: "timeout",
+      localWarning: `[${label}]: timed out after ${x}s \u2014 output discarded; raise the hook's "timeout" to allow more time`,
+      blocked: !1
+    };
+  }
+  if (e.kind === "http") {
+    if (e.error !== void 0 || !e.ok) {
+      let G = Ie(e.error ?? `HTTP ${e.statusCode ?? "request failed"}`, "request failed"),
+        W = e.error !== void 0 ? "the request to it could not be made from this machine" : `it answered HTTP ${e.statusCode ?? "with an error"}`,
+        answer_2 = xn(n, `[${label}]: not run \u2014 ${W}; retry`);
+      return {
+        answer: answer_2,
+        exitClass: "other",
+        localWarning: `[${label}]: ${G}`,
+        blocked: __(answer_2)
+      };
+    }
+    let {
+      json: x,
+      validationError: validationError
+    } = wFn(e.body);
+    if (validationError !== void 0 || x === void 0) return {
+      answer: {},
+      exitClass: "other",
+      localWarning: `[${label}]: ${Ie(validationError ?? "", "no JSON in the response")}`,
+      blocked: !1
+    };
+    return {
+      answer: x,
+      exitClass: "0",
+      blocked: __(x)
+    };
+  }
+  if (e.spawnFailed) {
+    let answer_3 = xn(n, `[${label}]: not run \u2014 it could not be started on this machine; retry`);
+    return {
+      answer: answer_3,
+      exitClass: "spawn_failed",
+      localWarning: `[${label}]: ${Ie(e.stderr, "failed to start")}`,
+      blocked: __(answer_3)
+    };
+  }
+  let y = e.status === 2 && vFn({
+    hookEvent: n,
+    stdout: e.stdout,
+    stderr: e.stderr,
+    stdioIncomplete: e.stdioIncomplete,
+    stdioClosedWithoutEnd: e.stdioClosedWithoutEnd
+  });
+  if (e.status === 2 && (e.stdioIncomplete === !0 || e.stdioClosedWithoutEnd === !0)) {
+    let answer_4 = rat(n, `[${label}]: ${e.stderr || "No stderr output"}`);
+    if (answer_4 !== void 0) return {
+      answer: answer_4,
+      exitClass: "2",
+      blocked: !0
+    };
+  }
+  let w = n !== "Stop" && n !== "SubagentStop" && n !== "StopFailure";
+  if (Pbr(e.stdout)) {
+    if (e.status === 2 && !y && w) return {
+      answer: Fe(n, `[${label}]: ${e.stderr || "No stderr output"}`),
+      exitClass: "2",
+      blocked: !0
+    };
+    return e.status === 0 ? {
+      answer: {},
+      exitClass: "0",
+      blocked: !1
+    } : {
+      answer: {},
+      exitClass: e.status === 2 ? "2" : "other",
+      localWarning: `[${label}]: announced async, then failed with status code ${e.status}: ${Ie(e.stderr, "No stderr output")}`,
+      blocked: !1
+    };
+  }
+  let {
+      json: json,
+      plainText: plainText,
+      validationError: validationError_2
+    } = AZ(e.stdout),
+    A = u9t(e, n, json),
+    E = oxt(e, n, e.stdout, A, x => AZ(x).json);
+  if (E !== void 0) {
+    let x = `[${label}]: output incomplete \u2014 its stdio was cut before end-of-stream on this machine; retry`,
+      answer_5 = n6.has(n) ? Fe(n, x, rat(n, x) ?? {}) : {};
+    return {
+      answer: answer_5,
+      exitClass: "0",
+      localWarning: `[${label}]: ${Ie(E, "stdio incomplete")}`,
+      blocked: __(answer_5)
+    };
+  }
+  if (validationError_2 !== void 0 && e.status !== 2) return {
+    answer: {},
+    exitClass: e.status === 0 ? "0" : "other",
+    localWarning: `[${label}]: ${Ie(Olt(validationError_2, e.status, e.stderr), "hook JSON output failed validation")}`,
+    blocked: !1
+  };
+  if (A !== void 0) {
+    if ("async" in A) return e.status === 2 && !y && w ? {
+      answer: Fe(n, `[${label}]: ${e.stderr || "No stderr output"}`),
+      exitClass: "2",
+      blocked: !0
+    } : e.status === 0 ? {
+      answer: {},
+      exitClass: "0",
+      blocked: !1
+    } : {
+      answer: {},
+      exitClass: e.status === 2 ? "2" : "other",
+      localWarning: `[${label}]: announced async, then failed with status code ${e.status}: ${Ie(e.stderr, "No stderr output")}`,
+      blocked: !1
+    };
+    let answer_6 = A;
+    if (e.status === 2 && !QMt(answer_6)) return {
+      answer: Fe(n, `[${label}]: ${e.stderr || "No stderr output"}`, answer_6),
+      exitClass: "2",
+      blocked: !0
+    };
+    return {
+      answer: answer_6,
+      exitClass: e.status === 0 ? "0" : e.status === 2 ? "2" : "other",
+      blocked: __(answer_6)
+    };
+  }
+  if (e.status === 0) {
+    let additionalContext_2 = (plainText ?? "").trim();
+    return (n === "UserPromptSubmit" || n === "UserPromptExpansion") && additionalContext_2 !== "" ? {
+      answer: {
+        hookSpecificOutput: {
+          hookEventName: n,
+          additionalContext: additionalContext_2
+        }
+      },
+      exitClass: "0",
+      blocked: !1
+    } : {
+      answer: {},
+      exitClass: "0",
+      blocked: !1
+    };
+  }
+  if (e.status === 2) {
+    if (y) return {
+      answer: {},
+      exitClass: "2",
+      localWarning: `[${label}]: the hook script appears to be missing (${Ie(e.stderr, "no such file")})`,
+      blocked: !1
+    };
+    return {
+      answer: Fe(n, `[${label}]: ${e.stderr || "No stderr output"}`),
+      exitClass: "2",
+      blocked: !0
+    };
+  }
+  return {
+    answer: {},
+    exitClass: "other",
+    localWarning: `[${label}]: failed with non-blocking status code ${e.status}: ${Ie(e.stderr, "No stderr output")}`,
+    blocked: !1
+  };
+}
+function xn(e, permissionDecisionReason) {
+  return e === "PreToolUse" ? {
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "deny",
+      permissionDecisionReason: permissionDecisionReason
+    }
+  } : {};
+}
+var rr = {
+  isAnsweredOn: () => LVe(),
+  isAnsweredOff: () => kLe({
+    cloudClient: !0
+  }) !== void 0
+};
+function Tn(e = rr) {
+  let n = !1;
+  return () => {
+    if (e.isAnsweredOff()) return "answered_off";
+    return n ||= e.isAnsweredOn(), n ? "answered_on" : "unanswered";
+  };
+}
+import { devNull as sr } from "os";
+import { basename as kt, delimiter as Pn, dirname as ar, isAbsolute as Ft, resolve as yt } from "path";
+var lr = 30000,
+  dr = 8,
+  Ut = 64,
+  cr = 1048576,
+  Mt = 2000,
+  Dn = 1000,
+  ur = 256,
+  dt = 256,
+  fr = 64,
+  hr = 8,
+  On = 256,
+  pr = sr,
+  mr = 'started in an empty folder \xB7 mark it "cloud": "device" if it needs the project',
+  jn = /^[A-Za-z0-9_.:-]{1,128}$/,
+  gr = /^[a-z]{1,16}$/,
+  wr = "Not running your hooks for the cloud session: the service could not vouch for the sender of its hook requests under your organization's trusted-device policy. The session goes on without them.";
+function kr(e) {
+  return e.deadlineMs !== void 0 && (e.ageMs === void 0 || e.ageMs > e.deadlineMs + lr);
+}
+function be(e) {
+  return jn.test(e) ? e : ti(e, {
+    maxCodeUnits: 64
+  });
+}
+function fe(e, n, r) {
+  return e === "PreToolUse" ? {
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "deny",
+      permissionDecisionReason: `[${n}]: ${r}`
+    }
+  } : {};
+}
+function $n(e, n, r) {
+  return n.rawPath === r ? e : nDn(e, n.site, r);
+}
+function Hn(e, n) {
+  if (typeof e !== "string" || n === null || !e.startsWith("/")) return !1;
+  if (e.trim() !== e || /^\/(?:proc|dev|net|network)(?:\/|$)/i.test(e)) return !1;
+  if (e.split("/").slice(1).some(item => item === "" || item === "." || item === "..")) return !1;
+  return !Xnn(e, Abn(n.containerProjectDir));
+}
+var St = R6o;
+function _r(e, n) {
+  if (St(e)) return !0;
+  let r = Jzt(e),
+    s = r[0] === "tool_calls" ? 2 : 0;
+  if (r[s] !== "tool_response") return !1;
+  let u = r.slice(0, s + 1).reduce((acc, item) => Ee(acc) ? acc[item] : void 0, n);
+  for (let h of r.slice(s + 1)) {
+    if (Array.isArray(u)) return !1;
+    u = Ee(u) ? u[h] : void 0;
+  }
+  return !0;
+}
+function yr(e, n, r) {
+  let s = Jzt(e),
+    u = s[0] === "tool_calls",
+    h = u ? s.slice(2) : s;
+  if (h[0] === "tool_response") return !0;
+  if (h[0] !== "tool_input" || h.length !== 2 || !Ee(n)) return !1;
+  let tool_calls = n.tool_calls,
+    w = u ? Ee(tool_calls) ? tool_calls[s[1] ?? ""] : void 0 : n,
+    S = Ee(w) ? w.tool_name : void 0,
+    R = typeof S === "string" ? xbn(S, r) : void 0;
+  return R !== void 0 && h[1] === R;
+}
+var Sr = /^[A-Za-z][A-Za-z0-9_-]{0,40}$/,
+  gt = Symbol("deviceHooks.disconnect"),
+  Nn = Symbol("deviceHooks.deadline");
+function vr(e) {
+  let n = [e.session_id, e.agent_id, e.prompt_id];
+  if ("tool_use_id" in e && typeof e.tool_use_id === "string") n.push(e.tool_use_id);
+  return n.every(item => item === void 0 || jn.test(item) && !item.includes("..")) && (e.permission_mode === void 0 || Sr.test(e.permission_mode)) && (e.effort === void 0 || gr.test(e.effort.level)) && (e.agent_type === void 0 || ti(e.agent_type, {
+    maxCodeUnits: 64
+  }) === e.agent_type);
+}
+function qn(e, n) {
+  if (e.type === "http") try {
+    return new URL(e.url).host || "http hook";
+  } catch {
+    return "http hook";
+  }
+  let r = n?.kind === "script" ? kt(n.rawPath) : kt(e.command.trim().split(/\s+/)[0] ?? "");
+  return ti(r, {
+    maxCodeUnits: 64
+  }) || "hook";
+}
+function Bn(e, n, r) {
+  if (r.wireLabel === "basename") return n;
+  if (e.type === "http") try {
+    return ti(new URL(e.url).origin, {
+      maxCodeUnits: 200
+    });
+  } catch {
+    return n;
+  }
+  return ti(e.command, {
+    maxCodeUnits: 200
+  });
+}
+function br(e, n) {
+  let r = {
+    ...e,
+    transcript_path: n
+  };
+  return "agent_transcript_path" in r ? {
+    ...r,
+    agent_transcript_path: n
+  } : r;
+}
+function Ee(e) {
+  return typeof e === "object" && e !== null;
+}
+function Wt(e, n) {
+  return Jzt(n).reduce((acc, item) => Ee(acc) ? acc[item] : void 0, e);
+}
+function Rr(e, n) {
+  let r = [],
+    s = (y, w, S, R) => {
+      if (r.length > dt || R > hr) return;
+      if (typeof w === "string") {
+        if (S && w !== "" && !Ft(w)) r.push(y);
+        return;
+      }
+      if (Array.isArray(w)) {
+        w.forEach((item, index) => s(`${y}/${index}`, item, S, R + 1));
+        return;
+      }
+      if (Ee(w)) {
+        let C = Object.keys(w).some(B2e);
+        for (let [A, E] of Object.entries(w)) s(`${y}/${Xzt(A)}`, E, S && !C || B2e(A), R + 1);
+      }
+    },
+    u = (y, w, S) => {
+      if (!Ee(S)) return;
+      let R = typeof w === "string" ? xbn(w, n) : void 0;
+      for (let [C, A] of Object.entries(S)) s(`${y}/tool_input/${Xzt(C)}`, A, C === R || B2e(C), 1);
+    },
+    h = (y, w) => {
+      if (!Ee(w) || Array.isArray(w)) return;
+      let S = (R, C, A) => {
+        if ((St(R) || A6o(R) || B2e(C)) && typeof A === "string" && A !== "" && !Ft(A) && A.length <= 4096 && !/\p{Cc}/u.test(A)) r.push(R);
+      };
+      for (let [R, C] of Object.entries(w)) {
+        let A = `${y}/tool_response/${Xzt(R)}`;
+        if (S(A, R, C), Ee(C) && !Array.isArray(C)) for (let [E, x] of Object.entries(C)) S(`${A}/${Xzt(E)}`, E, x);
+      }
+    };
+  if ("tool_input" in e) u("", "tool_name" in e ? e.tool_name : void 0, e.tool_input);
+  if ("tool_response" in e) h("", e.tool_response);
+  if ("tool_calls" in e && Array.isArray(e.tool_calls)) e.tool_calls.forEach((item, index) => {
+    if (Ee(item)) {
+      if (u(`/tool_calls/${index}`, item.tool_name, item.tool_input), "tool_response" in item) h(`/tool_calls/${index}`, item.tool_response);
+    }
+  });
+  return r;
+}
+async function wt(e, n) {
+  let r = e,
+    s = [];
+  for (;;) {
+    if (s.length > fr) return null;
+    try {
+      let u = await n.realpath(r);
+      return s.length === 0 ? u : yt(u, ...s);
+    } catch (error) {
+      if (k(error) !== "ENOENT") return null;
+      let h = await n.lstat(r).then(w => w.isSymbolicLink()).catch(() => !1),
+        y = ar(r);
+      if (h || y === r) return null;
+      s.unshift(kt(r)), r = y;
+    }
+  }
+}
+async function Ln(e, n, r, s) {
+  let u = y => y !== null && (bG(y, r.real) || bG(y, r.dir));
+  return (await Promise.all(e.map(async item => {
+    let w = Wt(n, item);
+    if (typeof w !== "string" || w === "") return null;
+    let S = Ft(w) ? w : yt(n.cwd, w);
+    return u(await wt(S, s)) ? null : item;
+  }))).filter(item => item !== null);
+}
+function Er(e) {
+  let n = 0,
+    r = [],
+    s = () => {
+      n -= 1;
+      let u = r.shift();
+      if (u !== void 0) n += 1, u.grant();
+    };
+  return {
+    acquire(u, h) {
+      if (h.aborted) return Promise.resolve(null);
+      if (n < dr) return n += 1, Promise.resolve(Mn(s));
+      if (u <= 0) return Promise.resolve(null);
+      return new Promise(y => {
+        let w = !1,
+          S = E => {
+            if (w) {
+              if (E !== null) E();
+              return;
+            }
+            w = !0, A.clear(), h.removeEventListener("abort", C);
+            let x = r.indexOf(R);
+            if (x !== -1) r.splice(x, 1);
+            y(E);
+          },
+          R = {
+            grant: () => S(Mn(s)),
+            refuse: () => S(null)
+          },
+          C = () => S(null),
+          A = e.setTimer(() => S(null), u);
+        h.addEventListener("abort", C, {
+          once: !0
+        }), r.push(R);
+      });
+    },
+    refuseAll() {
+      for (let u of r.splice(0)) u.refuse();
+    }
+  };
+}
+function Mn(e) {
+  let n = !1;
+  return () => {
+    if (n) return;
+    n = !0, e();
+  };
+}
+function Vn(e) {
+  let n = new Map(),
+    r = new Map(),
+    s = Er(e),
+    u = (D, H, V) => {
+      let B = H.local.hook.timeout !== void 0 && H.local.hook.timeout > 0 ? H.local.hook.timeout * 1000 : e.defaultTimeoutMs(q9(H.local.event) ? H.local.event : "Stop");
+      return (D.deadlineMs ?? 2 * B + 2 * Mt) - (e.now() - V) - Mt / 2;
+    },
+    h = new Set(),
+    y = new Map(),
+    {
+      repinned: repinned,
+      everInReach: everInReach,
+      answered: answered,
+      withdrawn: withdrawn
+    } = e.memory,
+    NEGATIVE_INFINITY = Number.NEGATIVE_INFINITY,
+    E = D => {
+      if (D.size > ur) {
+        let H = D.keys().next().value;
+        if (H !== void 0) D.delete(H);
+      }
+    },
+    x = (D, callbackId, answer_7) => {
+      answered.delete(D), answered.set(D, {
+        callbackId: callbackId,
+        answer: answer_7
+      }), E(answered);
+    },
+    K = D => {
+      withdrawn.delete(D), withdrawn.add(D), E(withdrawn);
+    },
+    G = (D, H, V) => {
+      if (h.has(D)) return;
+      h.add(D), e.onLine(H, V);
+    },
+    W = (D, H) => {
+      let V = e.now();
+      if (V - (y.get(D) ?? Number.NEGATIVE_INFINITY) < 60000) return;
+      y.set(D, V), e.onLine(H, "warning");
+    },
+    P = (D, H, attestation) => e.telemetry({
+      outcome: D.outcome,
+      event: D.event ?? null,
+      kind: D.kind ?? null,
+      exitClass: D.exitClass ?? null,
+      translatedPaths: D.translatedPaths ?? 0,
+      replay: D.replay ?? !1,
+      blocked: D.blocked ?? !1,
+      staged: D.staged ?? !1,
+      projectFrame: D.projectFrame ?? !1,
+      repinned: D.repinned ?? !1,
+      waitedMs: D.waitedMs ?? 0,
+      durationMs: Math.max(0, e.now() - H),
+      attestation: attestation
+    }),
+    O = async (D, H, V, B, te, Z) => {
+      let pinnedTarget = D.local.pinnedTarget,
+        q = ne => fe(te, B.wire, ne);
+      if (pinnedTarget === void 0) {
+        if (V !== null && V.kind === "script") {
+          let ne = await wt(V.resolvedPath, e.pin);
+          if (ne === null) return G(`unvouched:unjudgeable:${D.wire.id}`, `Not running ${B.local} for the cloud session: its file cannot be found or judged on this machine.`, "warning"), {
+            kind: "refuse",
+            answer: q(`not run \u2014 its file cannot be found or judged on ${Z.displayName}`),
+            outcome: "pin_unreadable"
+          };
+          let se = everInReach.has(D.wire.id) || sb([V.resolvedPath, ne], [...Z.cloudWritableRoots, ...e.extraWritableRoots()]);
+          if (se) everInReach.add(D.wire.id);
+          if (se && D.local.cloudOptIn !== !0) return G(`reach:${D.wire.id}`, `Not running ${B.local} for the cloud session: its file now sits where the session can write on this machine, and it is not marked cloud: "device".`, "info"), {
+            kind: "refuse",
+            answer: q(`not run \u2014 its file now sits where the cloud session can write on ${Z.displayName} and it is not marked cloud: "device"`),
+            outcome: "in_reach_refused"
+          };
+          if (se) return G(`unvouched:in_reach:${D.wire.id}`, `Not running ${B.local} for the cloud session: it could not be pinned when this session started and now sits where the session can write; review the file, then restart claude --cloud to offer it again.`, "warning"), {
+            kind: "refuse",
+            answer: q(`not run \u2014 its file could not be pinned on ${Z.displayName} and sits where the cloud session can write; review it there`),
+            outcome: "in_reach_refused"
+          };
+        }
+        return {
+          kind: "run",
+          hook: V !== null && V.kind === "script" ? $n(H, V, V.resolvedPath) : H,
+          staged: null,
+          repinned: !1
+        };
+      }
+      let sha256 = repinned.get(D.wire.id) ?? pinnedTarget.sha256,
+        J = await ofs({
+          ...pinnedTarget,
+          sha256: sha256
+        }, e.pin),
+        M = everInReach.has(D.wire.id) || sb([pinnedTarget.path, pinnedTarget.realPath, ...(J.realPath !== void 0 ? [J.realPath] : [])], [...Z.cloudWritableRoots, ...e.extraWritableRoots()]);
+      if (M) everInReach.add(D.wire.id);
+      if (M && D.local.cloudOptIn !== !0) return G(`reach:${D.wire.id}`, `Not running ${B.local} for the cloud session: its file now sits where the session can write on this machine, and it is not marked cloud: "device".`, "info"), {
+        kind: "refuse",
+        answer: q(`not run \u2014 its file now sits where the cloud session can write on ${Z.displayName} and it is not marked cloud: "device"; move it under ~/.claude or mark the entry`),
+        outcome: "in_reach_refused"
+      };
+      let ee,
+        re = sha256,
+        repinned_2 = repinned.has(D.wire.id);
+      if (J.ok) ee = J.bytes;else if (J.reason === "changed" && !M && Z.repinChangedScripts) repinned.set(D.wire.id, J.current.sha256), repinned_2 = !0, ee = J.current.bytes, re = J.current.sha256, G(`repin:${D.wire.id}:${J.current.sha256}`, `${B.local} changed on this machine since it was registered; the cloud session's runs use the current version.`, "info");else if (J.reason === "changed" && !M) {
+        let ne = Z.inventory.forwarded.some(item => item.wire.event === "PreToolUse" && item.local.pinnedTarget?.path === pinnedTarget.path);
+        return G(`changed:${pinnedTarget.path}${ne ? ":guard" : ""}`, `${B.local} changed since it was registered for this cloud session, so it won't run.${ne ? " Matching tool calls are blocked." : ""} If you edited it, restart claude --cloud. If not, check the file.`, "warning"), {
+          kind: "refuse",
+          answer: q(`not run \u2014 its file changed on ${Z.displayName} since it was registered; it runs again once that machine re-registers it`),
+          outcome: "pin_changed"
+        };
+      } else if (J.reason === "changed") return G(`pin:changed:${D.wire.id}`, `Not running ${B.local} for the cloud session: its file changed while the session could write to it on this machine \u2014 review the file before trusting it again.`, "warning"), {
+        kind: "refuse",
+        answer: q(`not run \u2014 its file changed on ${Z.displayName} while the cloud session could write to it; review the file there before trusting it again`),
+        outcome: "pin_refused"
+      };else if (J.reason === "multiply_linked" || J.reason === "relocated") {
+        let ne = J.reason === "multiply_linked" ? "it now has more than one hard link" : "its path now leads to a different file than the one registered";
+        return G(`pin:${J.reason}:${D.wire.id}`, `Not running ${B.local} for the cloud session: ${ne} on this machine \u2014 look at the file; if you re-linked or moved it yourself, relaunch claude --cloud here to register it again.`, "warning"), {
+          kind: "refuse",
+          answer: q(`not run \u2014 ${ne} on ${Z.displayName}; review it there`),
+          outcome: "pin_refused"
+        };
+      } else {
+        let ne = J.reason.replace("_", " ");
+        return G(`pin:${J.reason}:${D.wire.id}`, `Not running ${B.local} for the cloud session: the file it runs can no longer be read on this machine (${ne}).`, "warning"), {
+          kind: "refuse",
+          answer: q(`not run \u2014 its file on ${Z.displayName} can no longer be read (${ne}); it runs again once that machine re-registers it`),
+          outcome: M ? "pin_refused" : "pin_unreadable"
+        };
+      }
+      if (V?.kind !== "script" || V.resolvedPath !== pinnedTarget.path) return G(`pin:parse:${D.wire.id}`, `Not running ${B.local} for the cloud session: its command no longer reads as the script that was registered.`, "warning"), {
+        kind: "refuse",
+        answer: q(`not run \u2014 its command on ${Z.displayName} no longer names the script that was registered`),
+        outcome: "pin_refused"
+      };
+      if (!(Z.stageVerifiedBytes === "always" || Z.stageVerifiedBytes === "in_reach" && M)) return {
+        kind: "run",
+        hook: $n(H, V, pinnedTarget.path),
+        staged: null,
+        repinned: repinned_2
+      };
+      try {
+        let staged = await e.staging.stage(re, ee, kt(pinnedTarget.path));
+        return {
+          kind: "run",
+          hook: nDn(H, V.site, staged.path),
+          staged: staged,
+          repinned: repinned_2
+        };
+      } catch {
+        return G(`stage:${D.wire.id}`, `Not running ${B.local} for the cloud session: couldn't save a private copy of it.${te === "PreToolUse" ? " Matching tool calls are blocked." : ""} If the cloud session can write your temporary folder, set CLAUDE_CODE_TMPDIR to a folder it can't write to and restart claude --cloud.`, "warning"), {
+          kind: "refuse",
+          answer: q(`not run \u2014 ${Z.displayName} couldn't save a private copy of it. If this session can write the temporary folder on that machine, set CLAUDE_CODE_TMPDIR there to a folder it can't write to and restart claude --cloud.`),
+          outcome: "staging_failed"
+        };
+      }
+    },
+    F = async (D, H, V, B, te) => {
+      let event = V.local.event;
+      if (!q9(event)) return {
+        answer: {},
+        telemetry: {
+          outcome: "event_mismatch"
+        }
+      };
+      let hook_2 = V.local.hook;
+      if (hook_2.type !== "command" && hook_2.type !== "http") {
+        let answer_8 = fe(event, `hook on ${H.displayName}`, "not run \u2014 it is not a kind of hook that machine can run for a cloud session; retry");
+        return {
+          answer: answer_8,
+          telemetry: {
+            event: event,
+            outcome: "unsupported_kind",
+            blocked: __(answer_8)
+          }
+        };
+      }
+      let q = {
+          event: event,
+          kind: hook_2.type
+        },
+        Q = hook_2.type === "command" ? e.parseTarget(hook_2) : null,
+        local = qn(hook_2, Q),
+        M = {
+          local: local,
+          wire: Bn(hook_2, local, H)
+        };
+      if (kr(D)) {
+        G("stale", 'A hook request from the cloud session arrived already past its deadline (this machine was asleep, offline, or its stream was running behind). A guard answered "retry"; anything else had no opinion.', "warning");
+        let answer_9 = fe(event, M.wire, `not run \u2014 the request reached ${H.displayName} already past its deadline (that machine was asleep or its stream ran behind); retry`);
+        return {
+          answer: answer_9,
+          telemetry: {
+            ...q,
+            outcome: "stale",
+            blocked: __(answer_9)
+          }
+        };
+      }
+      let ee = 0;
+      try {
+        let oe = _(D.input);
+        ee = typeof oe === "string" ? Buffer.byteLength(oe, "utf8") : 0;
+      } catch {
+        ee = 0;
+      }
+      if (ee > cr) {
+        let answer_10 = Fn(V, H, e, "too_large");
+        return {
+          answer: answer_10,
+          telemetry: {
+            ...q,
+            outcome: "input_too_large",
+            blocked: __(answer_10)
+          }
+        };
+      }
+      let re = GJe().safeParse(D.input);
+      if (!re.success || !vr(re.data)) {
+        let answer_11 = fe(event, M.wire, `not run \u2014 the event could not be read on ${H.displayName}; retry`);
+        return {
+          answer: answer_11,
+          telemetry: {
+            ...q,
+            outcome: "invalid_input",
+            blocked: __(answer_11)
+          }
+        };
+      }
+      if (re.data.hook_event_name !== event) {
+        let answer_12 = fe(event, M.wire, `not run \u2014 the event does not match the hook it names on ${H.displayName}; retry`);
+        return {
+          answer: answer_12,
+          telemetry: {
+            ...q,
+            outcome: "event_name_mismatch",
+            blocked: __(answer_12)
+          }
+        };
+      }
+      if (H.roots === null) {
+        let answer_13 = fe(event, M.wire, `not run \u2014 ${H.displayName} does not know this session's directories yet; retry`);
+        return {
+          answer: answer_13,
+          telemetry: {
+            ...q,
+            outcome: "no_roots",
+            blocked: __(answer_13)
+          }
+        };
+      }
+      if (!e.trustAccepted()) {
+        let answer_14 = fe(event, M.wire, `not run \u2014 its folder is no longer marked trusted on ${H.displayName}`);
+        return {
+          answer: answer_14,
+          telemetry: {
+            ...q,
+            outcome: "untrusted",
+            blocked: __(answer_14)
+          }
+        };
+      }
+      let ie = e.toolAliases?.();
+      if (!QSe(re.data, V.local.matcher, ie)) return {
+        answer: {},
+        telemetry: {
+          ...q,
+          outcome: "event_mismatch"
+        }
+      };
+      let ae = x6o(re.data, H.roots, {
+          cloudSessionId: H.cloudSessionId
+        }, ie),
+        input_3 = ae.input,
+        se = Object.keys(input_3.cloud_session.original.paths),
+        translatedPaths = se.length,
+        X = {
+          dir: H.frame.launchDir,
+          real: H.launchDirReal
+        },
+        le = async oe => {
+          let ue = ge => bG(ge, X.real) || bG(ge, X.dir);
+          try {
+            return ue(await e.pin.realpath(oe)) ? "inside" : "unjudgeable";
+          } catch (error) {
+            if (k(error) !== "ENOENT") return "unjudgeable";
+            let Le = await wt(oe, e.pin);
+            return Le !== null && ue(Le) ? "missing" : "unjudgeable";
+          }
+        },
+        de = await le(input_3.cwd);
+      if (de !== "inside") e.debug(`[deviceHooks] ${be(D.requestId)}: translated cwd is ${de === "missing" ? "not an existing directory" : "not judgeable as a directory inside the launch directory"}; running from the launch directory`), input_3 = {
+        ...input_3,
+        cwd: X.dir
+      };
+      let _e = Rr(input_3, ie),
+        Se = [...se.filter(item => _r(item, input_3)), ..._e],
+        he = Se.length > dt ? Se : await Ln(Se, input_3, X, e.pin),
+        Ce = (ae.untranslated.includes("/cwd") || de === "unjudgeable") && _e.length > 0,
+        $e = ae.untranslated.flatMap(oe => {
+          let value = Wt(re.data, oe);
+          return St(oe) && !yr(oe, re.data, ie) && typeof value === "string" && Hn(value, H.roots) ? [{
+            pointer: oe,
+            value: value
+          }] : [];
+        }),
+        Ge = async oe => {
+          if (oe.length > dt) return {
+            waived: [],
+            namingFilesHere: oe.map(item => item.pointer)
+          };
+          let ue = await Promise.all(oe.map(async ({
+            pointer: pointer,
+            value: value_2
+          }) => {
+            let Re = await wt(value_2, e.pin),
+              ve = Re !== null && (bG(Re, X.real) || bG(Re, X.dir)),
+              Ve = Re !== null && !ve && (await e.pin.realpath(value_2).then(() => !1, $t => k($t) === "ENOENT"));
+            return {
+              pointer: pointer,
+              waived: ve || Ve
+            };
+          }));
+          return {
+            waived: ue.filter(item => item.waived).map(item => item.pointer),
+            namingFilesHere: ue.filter(item => !item.waived).map(item => item.pointer)
+          };
+        },
+        ht = await Ge($e),
+        namingFilesHere = ht.namingFilesHere,
+        Fo = H.denyUnjudgeablePaths ? [] : ht.waived,
+        un = [...ae.untranslated.filter(item => St(item) && !Fo.includes(item)), ...(Ce ? ["/cwd"] : []), ...he];
+      if (un.length > 0) {
+        let oe = !Ce && he.length === 0 && namingFilesHere.length === 0 && Se.length <= dt && un.every(item => Hn(Wt(re.data, item), H.roots));
+        if (!(oe && H.runWithUntranslatedPaths)) {
+          G(`untranslated:${V.wire.id}:${oe ? "container" : "unjudgeable"}`, oe ? `Skipped ${M.local} for the cloud session: the file it would look at exists only in the cloud, not in the synced project on this machine.` : `Not running ${M.local} for the cloud session: the event names a path this machine could not map to its own files.`, "info");
+          let answer_15 = !oe || H.denyUnjudgeablePaths ? fe(event, M.wire, oe ? "not run \u2014 the event names a file that exists only in the cloud, so this machine could not judge it" : "not run \u2014 the event names a path this machine could not map to its own files; retry with a plain path inside the project") : {};
+          return {
+            answer: answer_15,
+            telemetry: {
+              ...q,
+              outcome: "untranslated_skipped",
+              translatedPaths: translatedPaths,
+              blocked: __(answer_15)
+            }
+          };
+        }
+      }
+      let He = br(input_3, await e.emptyTranscriptPath().catch(() => pr));
+      if (hook_2.if) {
+        let oe;
+        try {
+          oe = await e.evaluateCondition(hook_2.if, He);
+        } catch {
+          oe = null;
+        }
+        if (oe === null) {
+          let answer_16 = fe(event, M.wire, "not run \u2014 its condition could not be evaluated on this machine; retry");
+          return {
+            answer: answer_16,
+            telemetry: {
+              ...q,
+              outcome: "condition_error",
+              translatedPaths: translatedPaths,
+              blocked: __(answer_16)
+            }
+          };
+        }
+        if (!oe) return {
+          answer: {},
+          telemetry: {
+            ...q,
+            outcome: "condition_false",
+            translatedPaths: translatedPaths
+          }
+        };
+      }
+      let we = hook_2.type === "command" ? await O(V, hook_2, Q, M, event, H) : {
+        kind: "run",
+        hook: hook_2,
+        staged: null,
+        repinned: !1
+      };
+      if (we.kind === "refuse") return {
+        answer: we.answer,
+        telemetry: {
+          ...q,
+          outcome: we.outcome,
+          translatedPaths: translatedPaths,
+          blocked: __(we.answer)
+        }
+      };
+      let Ne = null;
+      try {
+        if (te.aborted) return {
+          answer: null,
+          telemetry: {
+            ...q,
+            outcome: "cancelled"
+          }
+        };
+        let oe = hook_2.timeout !== void 0 && hook_2.timeout > 0 ? hook_2.timeout * 1000 : e.defaultTimeoutMs(event),
+          ue = () => D.deadlineMs !== void 0 ? D.deadlineMs - (e.now() - B) - Mt : oe,
+          ge = ue(),
+          Le = e.now(),
+          Re = await s.acquire(ge, te),
+          waitedMs = Math.max(0, e.now() - Le),
+          Ve = Re !== null && ue() < Dn;
+        if (Ve && Re !== null) Re(), Re = null;
+        if (Re === null) {
+          if (te.aborted) return {
+            answer: null,
+            telemetry: {
+              ...q,
+              outcome: "cancelled",
+              waitedMs: waitedMs
+            }
+          };
+          if (!Ve && e.now() - NEGATIVE_INFINITY >= 60000) NEGATIVE_INFINITY = e.now(), e.onLine('The cloud session is asking for more hooks at once than this machine can run in time; some were answered "retry" (guards) or with no opinion.', "warning");
+          let answer_17 = fe(event, M.wire, Ve ? `not run \u2014 too little time was left before the cloud session stops waiting for ${H.displayName}; retry` : `not run \u2014 ${H.displayName} is running too many hooks for the cloud session at once; retry`);
+          return {
+            answer: answer_17,
+            telemetry: {
+              ...q,
+              outcome: Ve ? "too_late" : "no_slot",
+              translatedPaths: translatedPaths,
+              blocked: __(answer_17),
+              waitedMs: waitedMs
+            }
+          };
+        }
+        let $t = Re;
+        try {
+          if (te.aborted) return {
+            answer: null,
+            telemetry: {
+              ...q,
+              outcome: "cancelled",
+              waitedMs: waitedMs
+            }
+          };
+          let Ye = He.cwd === X.dir ? "inside" : await le(He.cwd),
+            input_4 = He;
+          if (Ye !== "inside") input_4 = {
+            ...He,
+            cwd: X.dir
+          };
+          let hn = Ye === "unjudgeable" && _e.length > 0 || Se.length <= dt && (await Ln(Se, input_4, X, e.pin)).length > 0,
+            Wo = !hn && $e.length > 0 && (await Ge($e)).namingFilesHere.length > 0;
+          if (hn || Wo) {
+            let answer_18 = fe(event, M.wire, `not run \u2014 a path the event names moved outside the project on ${H.displayName} while it waited; retry`);
+            return {
+              answer: answer_18,
+              telemetry: {
+                ...q,
+                outcome: "untranslated_skipped",
+                translatedPaths: translatedPaths,
+                blocked: __(answer_18),
+                waitedMs: waitedMs
+              }
+            };
+          }
+          if (te.aborted) return {
+            answer: null,
+            telemetry: {
+              ...q,
+              outcome: "cancelled",
+              waitedMs: waitedMs
+            }
+          };
+          let timeoutMs_3 = Math.min(oe, ue());
+          if (ue() < Dn) {
+            let answer_19 = fe(event, M.wire, `not run \u2014 too little time was left before the cloud session stops waiting for ${H.displayName}; retry`);
+            return {
+              answer: answer_19,
+              telemetry: {
+                ...q,
+                outcome: "too_late",
+                translatedPaths: translatedPaths,
+                blocked: __(answer_19),
+                waitedMs: waitedMs
+              }
+            };
+          }
+          let et = e.hostEnv(),
+            pn = [H.frame.launchDir, H.launchDirReal, ...H.cloudWritableRoots, ...e.extraWritableRoots()],
+            mn = ce => ce !== EH && !hx(ce),
+            pt = I() === "windows" && pn.some(mn) ? [EH] : pn.filter(item => !mn(item)).map(item => item === EH ? item : wu(yt(item))),
+            tt = await e.childEnvironment(pt, et),
+            Uo = ce => pt.some(item => _Oe(wu(yt(ce)), item)) || I() === "windows" && Tr(ce, pt),
+            gn = Ir(et.CLAUDE_CODE_SHELL_PREFIX ?? "", {
+              home: et.HOME,
+              launchDir: H.frame.launchDir
+            }),
+            wn = await Promise.all(gn.map(item => e.placePath(item).then(De => De === "unreadable" ? Un : De === "absent" ? item : De))),
+            ot = (wn.includes(Un) || [...gn, ...wn].some(Uo)) && !tt.omit.includes("CLAUDE_CODE_SHELL_PREFIX") ? {
+              ...tt,
+              omit: [...tt.omit, "CLAUDE_CODE_SHELL_PREFIX"],
+              extra: is(tt.extra, "CLAUDE_CODE_SHELL_PREFIX")
+            } : tt;
+          if (et.CLAUDE_CODE_SHELL_PREFIX?.trim() && we.hook.type === "command" && we.hook.args === void 0 && Lt(ot) === void 0) G("prefix-unwrapped", 'Hooks marked cloud: "device" run for the cloud session WITHOUT your CLAUDE_CODE_SHELL_PREFIX here: this machine cannot vouch for that wrapper (it is not an absolute path outside what the session can write).', "warning");
+          let PATH = ot.extra.PATH,
+            env_2 = PATH === void 0 || PATH === "" ? {
+              ...ot,
+              extra: {
+                ...ot.extra,
+                PATH: PATH_2
+              }
+            } : ot,
+            jo = new Set((env_2.extra.PATH ?? "").split(Pn)),
+            at = (et.PATH ?? "").split(Pn).filter(item => item !== "" && !jo.has(item));
+          if (env_2.omit.length > 0) e.debug(`[deviceHooks] ${be(D.requestId)}: not passing on ${env_2.omit.join(", ")}`);
+          if (at.length > 0) G("search-path-trimmed", `Hooks the cloud session forwards here run without ${at.length} PATH entr${at.length === 1 ? "y" : "ies"} the session can write to or that cannot be resolved on this machine (${at.slice(0, 3).map(item => Gn(item)).join(", ")}${at.length > 3 ? ", \u2026" : ""}); a tool installed only there is "not found" for them.`, "debug");
+          let lt = we.hook.type !== "command" ? void 0 : we.hook.args !== void 0 ? we.hook.command.includes("/") ? void 0 : we.hook.command : Q?.kind === "script" && Q.interpreter !== null ? Q.interpreter : void 0;
+          if (lt !== void 0) {
+            if ((await e.resolveProgram(lt, env_2.extra.PATH ?? "", pt)) === "in_reach") {
+              G(`program:${lt}`, `Not running hooks through ${lt} for the cloud session: on this machine that name leads to a file the session can write.`, "warning");
+              let answer_20 = fe(event, M.wire, `not run \u2014 ${lt} on ${H.displayName} leads to a file the cloud session can write`);
+              return {
+                answer: answer_20,
+                telemetry: {
+                  ...q,
+                  outcome: "in_reach_refused",
+                  translatedPaths: translatedPaths,
+                  blocked: __(answer_20),
+                  waitedMs: waitedMs
+                }
+              };
+            }
+          }
+          if (we.hook.type === "command" && V.local.cloudOptIn !== !0 && H.unmarkedStartFolder === "private") {
+            if (Ne = await e.staging.runDirectory().catch(() => null), Ne === null) {
+              G(`run-folder:${V.wire.id}`, `Not running ${M.local} for the cloud session: this machine has no private folder to start it in.`, "warning");
+              let answer_21 = fe(event, M.wire, `not run \u2014 ${H.displayName} has no private folder to start it in`);
+              return {
+                answer: answer_21,
+                telemetry: {
+                  ...q,
+                  outcome: "staging_failed",
+                  translatedPaths: translatedPaths,
+                  blocked: __(answer_21),
+                  waitedMs: waitedMs
+                }
+              };
+            }
+          }
+          let qo = e.now(),
+            _n = await e.run({
+              hook: we.hook,
+              event: event,
+              input: input_4,
+              timeoutMs: timeoutMs_3,
+              env: env_2,
+              ...(Ne !== null && {
+                startDirectory: Ne.path
+              })
+            }, H.frame, te),
+            timedOut_2 = _n.aborted === !0 && !te.aborted,
+            ke = timedOut_2 && timeoutMs_3 < oe ? {
+              answer: fe(event, M.wire, `not run to completion \u2014 too little time was left before the cloud session stops waiting for ${H.displayName}; retry`),
+              exitClass: "timeout",
+              blocked: event === "PreToolUse",
+              localWarning: void 0
+            } : In(_n, {
+              event: event,
+              label: M.wire,
+              timedOut: timedOut_2,
+              timeoutMs: timeoutMs_3,
+              timeoutFailsClosed: H.timeoutFailsClosed
+            }),
+            Sn = e.now() - qo;
+          if (ke.localWarning !== void 0) W(`${V.wire.id}:${ke.exitClass}`, `cloud \u25B8 ${event} \u25B8 ${ke.localWarning}${Ne !== null && ke.exitClass === "other" ? ` \xB7 ${mr}` : ""}`);else if (ke.answer !== null && ke.blocked) e.onLine(`cloud \u25B8 ${event}${Wn(He)} \u25B8 ${M.local} \u25B8 ${lRs(ke.answer) ? "asked" : "blocked"} (${Sn} ms)`, "info");else if (ke.answer !== null && Cr(ke.answer)) e.onLine(`cloud \u25B8 ${event}${Wn(He)} \u25B8 ${M.local} \u25B8 added context (${Sn} ms)`, "debug");
+          return {
+            answer: ke.answer,
+            telemetry: {
+              ...q,
+              outcome: ke.answer === null ? "cancelled" : ke.exitClass === "spawn_failed" || ke.exitClass === "other" && ke.localWarning !== void 0 ? "run_error" : "answered",
+              exitClass: ke.exitClass,
+              translatedPaths: translatedPaths,
+              blocked: ke.blocked,
+              staged: we.staged !== null,
+              projectFrame: we.hook.type === "command" && Ne === null,
+              repinned: we.repinned,
+              waitedMs: waitedMs
+            }
+          };
+        } finally {
+          $t();
+        }
+      } finally {
+        await Promise.all([we.staged?.release(), Ne?.release()]);
+      }
+    };
+  return {
+    async serve(D, H) {
+      let V = e.now();
+      if (H === null) return {
+        kind: "silent",
+        reason: "no_state"
+      };
+      if (D.requestId.length > On || D.callbackId.length > On) return P({
+        outcome: "not_mine"
+      }, V, void 0), {
+        kind: "silent",
+        reason: "not_mine"
+      };
+      let B = Nye(D.callbackId),
+        te = B?.instanceId,
+        Z = te !== void 0 && H.retiredInstanceIds.has(te);
+      if (!Z && te !== H.instanceId) return P({
+        outcome: "not_mine"
+      }, V, void 0), {
+        kind: "silent",
+        reason: "not_mine"
+      };
+      let N = e.judgeSender(D.attestationStatus),
+        q = (j, X) => P(j, X, N?.attestation);
+      if (N?.heldBack === !0) return e.debug(`[deviceHooks] ${be(D.requestId)}: held back for its sender (attestation ${N.attestation.status}) \u2014 no opinion, nothing run`), G("unattested", wr, "warning"), q({
+        outcome: "unattested"
+      }, V), {
+        kind: "answer",
+        answer: {}
+      };
+      if (e.isMuted?.() === !0) return e.debug(`[deviceHooks] ${be(D.requestId)}: serving is switched off (emergency switch) \u2014 no opinion`), q({
+        outcome: "muted"
+      }, V), {
+        kind: "answer",
+        answer: {}
+      };
+      if (withdrawn.has(D.requestId)) return e.debug(`[deviceHooks] ${be(D.requestId)}: withdrawn earlier \u2014 staying silent`), q({
+        outcome: "withdrawn_replay",
+        replay: !0
+      }, V), {
+        kind: "silent",
+        reason: "withdrawn"
+      };
+      let Q = answered.get(D.requestId);
+      if (Q !== void 0 && Q.callbackId === D.callbackId) return e.debug(`[deviceHooks] ${be(D.requestId)}: replay \u2014 resending the earlier answer`), q({
+        outcome: "cached",
+        replay: !0
+      }, V), {
+        kind: "answer",
+        answer: Q.answer
+      };
+      if (Q !== void 0) {
+        let answer_22 = fe(B?.event === "PreToolUse" ? "PreToolUse" : "Stop", `hook on ${H.displayName}`, "not run \u2014 its request id was already used for another hook; retry");
+        return q({
+          outcome: "replay_mismatch",
+          blocked: __(answer_22)
+        }, V), {
+          kind: "answer",
+          answer: answer_22
+        };
+      }
+      if (n.has(D.requestId)) return {
+        kind: "silent",
+        reason: "running"
+      };
+      let J = Z ? void 0 : H.inventory.forwarded.find(item => item.wire.id === D.callbackId);
+      if (J === void 0) {
+        e.debug(`[deviceHooks] ${be(D.requestId)}: ${Z ? "retired instance" : "not in the current inventory"} \u2014 ${B?.event === "PreToolUse" ? "holding the guard" : "no opinion"}`);
+        let answer_23 = fe(B?.event === "PreToolUse" ? "PreToolUse" : "Stop", `hook on ${H.displayName}`, "not run \u2014 it belongs to a registration that machine has since replaced; retry");
+        return q({
+          outcome: "unknown_id",
+          blocked: __(answer_23)
+        }, V), {
+          kind: "answer",
+          answer: answer_23
+        };
+      }
+      if (n.size >= Ut) {
+        e.debug(`[deviceHooks] ${be(D.requestId)}: too many requests in hand \u2014 refusing`);
+        let answer_24 = Fn(J, H, e);
+        return q({
+          outcome: "overloaded",
+          blocked: __(answer_24)
+        }, V), {
+          kind: "answer",
+          answer: answer_24
+        };
+      }
+      let M = xr(J, D.input, e.defaultShell()),
+        ee = M === null ? void 0 : r.get(M.key);
+      if (ee !== void 0 && ee.requestId !== D.requestId) {
+        let abortController = new AbortController();
+        n.set(D.requestId, abortController);
+        let answer_26 = null;
+        try {
+          answer_26 = await new Promise(le => {
+            let de = e.setTimer(() => le("too_late"), Math.max(0, u(D, J, V)));
+            abortController.signal.addEventListener("abort", () => {
+              de.clear(), le(null);
+            }, {
+              once: !0
+            }), ee.answer.then(_e => {
+              de.clear(), le(_e);
+            });
+          });
+        } finally {
+          n.delete(D.requestId);
+        }
+        if (abortController.signal.aborted) {
+          if (abortController.signal.reason !== gt) K(D.requestId);
+          return q({
+            outcome: "cancelled",
+            blocked: !1
+          }, V), {
+            kind: "silent",
+            reason: "cancelled"
+          };
+        }
+        if (answer_26 === "too_late") {
+          let answer_25 = fe(q9(J.local.event) ? J.local.event : "Stop", `hook on ${H.displayName}`, `not run \u2014 ${H.displayName} could not decide it before the cloud session stops waiting; retry`);
+          return x(D.requestId, D.callbackId, answer_25), q({
+            outcome: "too_late",
+            blocked: __(answer_25)
+          }, V), {
+            kind: "answer",
+            answer: answer_25
+          };
+        }
+        if (answer_26 !== null) return x(D.requestId, D.callbackId, answer_26), e.debug(`[deviceHooks] ${be(D.requestId)}: the same hook and invocation as ${be(ee.requestId)} \u2014 answered from its run`), q({
+          outcome: "same_invocation",
+          blocked: __(answer_26)
+        }, V), {
+          kind: "answer",
+          answer: answer_26
+        };
+      }
+      let re = () => {};
+      if (M !== null) {
+        let j = new Promise(X => {
+          re = X;
+        });
+        r.delete(M.key), r.set(M.key, {
+          requestId: D.requestId,
+          answer: j
+        }), E(r);
+      }
+      let ie = null,
+        abortController_2 = new AbortController();
+      n.set(D.requestId, abortController_2);
+      let ne = !1,
+        se = F(D, H, J, V, abortController_2.signal).catch(j => {
+          e.logError(j);
+          let answer_27 = fe(q9(J.local.event) ? J.local.event : "Stop", `hook on ${H.displayName}`, "not run \u2014 an internal error while deciding it; retry");
+          return {
+            answer: answer_27,
+            telemetry: {
+              outcome: "decide_error",
+              blocked: __(answer_27)
+            }
+          };
+        });
+      se.finally(() => {
+        ne = !0;
+      });
+      try {
+        let {
+          answer: answer_28,
+          telemetry: telemetry
+        } = await new Promise(_e => {
+          let Se = u(D, J, V),
+            he = e.setTimer(() => {
+              if (abortController_2.signal.aborted) {
+                _e({
+                  answer: null,
+                  telemetry: {
+                    outcome: "cancelled",
+                    blocked: !1
+                  }
+                });
+                return;
+              }
+              abortController_2.abort(Nn);
+              let answer_29 = fe(q9(J.local.event) ? J.local.event : "Stop", `hook on ${H.displayName}`, `not run \u2014 ${H.displayName} could not decide it before the cloud session stops waiting; retry`);
+              _e({
+                answer: answer_29,
+                telemetry: {
+                  outcome: "too_late",
+                  blocked: __(answer_29)
+                }
+              });
+            }, Math.max(0, Se));
+          se.then(Ce => {
+            he.clear(), _e(Ce);
+          });
+        });
+        if (abortController_2.signal.reason !== Nn && (answer_28 === null || abortController_2.signal.aborted)) {
+          if (abortController_2.signal.reason !== gt) K(D.requestId);else if (answer_28 !== null) x(D.requestId, D.callbackId, answer_28);
+          return e.debug(`[deviceHooks] ${be(D.requestId)}: ${J.wire.id} withdrawn \u2014 nothing sent`), q({
+            ...telemetry,
+            outcome: "cancelled"
+          }, V), {
+            kind: "silent",
+            reason: "cancelled"
+          };
+        }
+        let answer_30 = answer_28 ?? {};
+        return ie = answer_30, x(D.requestId, D.callbackId, answer_30), e.debug(`[deviceHooks] ${be(D.requestId)}: ${J.wire.id} \u2192 ${telemetry.outcome}`), q(telemetry, V), {
+          kind: "answer",
+          answer: answer_30
+        };
+      } finally {
+        if (re(ie), M !== null && r.get(M.key)?.requestId === D.requestId) r.delete(M.key);
+        if (ne) n.delete(D.requestId);else se.finally(() => n.delete(D.requestId));
+      }
+    },
+    cancel(D, H = "worker") {
+      let V = n.get(D);
+      if (V === void 0) return !1;
+      if (H === "worker") K(D), V.abort();else V.abort(gt);
+      return !0;
+    },
+    cancelAll() {
+      let D = n.size;
+      for (let H of n.values()) H.abort(gt);
+      return s.refuseAll(), D;
+    },
+    inFlight: () => n.size
+  };
+}
+function xr(e, n, r) {
+  if (typeof n !== "object" || n === null) return null;
+  let hook_3 = e.local.hook,
+    u = hook_3.type === "command" ? `command\x00${hook_3.shell ?? r}\x00${hook_3.command}\x00${_(hook_3.args ?? null)}\x00${hook_3.if ?? ""}` : hook_3.type === "http" ? `http\x00${hook_3.url}\x00${hook_3.if ?? ""}` : null;
+  if (u === null) return null;
+  let h = "tool_use_id" in n && typeof n.tool_use_id === "string" ? `tool\x00${n.tool_use_id}` : `input\x00${st(_(n))}`;
+  return {
+    key: `${e.local.event}\x00${h}\x00${u}`
+  };
+}
+function Fn(e, n, r, s = "in_hand") {
+  let hook_4 = e.local.hook;
+  if (e.local.event !== "PreToolUse" || hook_4.type !== "command" && hook_4.type !== "http") return {};
+  let h = null;
+  try {
+    h = hook_4.type === "command" ? r.parseTarget(hook_4) : null;
+  } catch {}
+  let y = qn(hook_4, h);
+  return fe("PreToolUse", Bn(hook_4, y, n), s === "too_large" ? `not run \u2014 the event was too large to judge on ${n.displayName}; retry with less` : `not run \u2014 ${n.displayName} has too many hook requests from the cloud session in hand at once; retry`);
+}
+function Wn(e) {
+  return "tool_name" in e && typeof e.tool_name === "string" ? `:${ti(e.tool_name, {
+    maxCodeUnits: 48
+  })}` : "";
+}
+function Cr(e) {
+  if (__(e) || "async" in e) return !1;
+  let hookSpecificOutput = e.hookSpecificOutput;
+  return e.systemMessage !== void 0 || hookSpecificOutput !== void 0 && "additionalContext" in hookSpecificOutput && hookSpecificOutput.additionalContext !== void 0;
+}
+function defaultTimeoutMs(e) {
+  return GZn[e] * 1000;
+}
+var Ar = /^(?:PATH|CDPATH|PYTHONPATH|PYTHONHOME|NODE_PATH|RUBYLIB|PERL5LIB|PERLLIB|GEM_PATH|GEM_HOME|CLASSPATH|LD_LIBRARY_PATH|DYLD_\w+)$/,
+  Un = "\x00unplaceable";
+function Ir(e, {
+  home: home,
+  launchDir: launchDir
+}) {
+  let s = [],
+    raw = "",
+    text = "",
+    y = null,
+    w = () => {
+      if (raw !== "") s.push({
+        raw: raw,
+        text: text
+      });
+      raw = "", text = "";
+    };
+  for (let E of e.trim()) if (y !== null) {
+    if (raw += E, E === y) y = null;else text += E;
+  } else if (E === '"' || E === "'") y = E, raw += E;else if (E === " " || E === "\t") w();else raw += E, text += E;
+  w();
+  let S = I() === "windows",
+    R = E => S ? /[\\/]/.test(E) : E.includes("/"),
+    C = E => S ? /^(?:[A-Za-z]:[\\/]|[\\/])/.test(E) : E.startsWith("/"),
+    A = E => S && /^[A-Za-z]:(?![\\/])/.test(E);
+  return s.flatMap(({
+    raw: raw_2,
+    text: text_2
+  }) => {
+    if (S && raw_2.replace(/'[^']*'|"[^"]*"/g, "").includes("\\")) return [launchDir];
+    let K = text_2.replace(/^\$(?:HOME\b|\{HOME\})/, ""),
+      G = raw_2.replace(/'[^']*'/g, "").replace(/^"?\$\{HOME\}/, "");
+    if (/[`$;|&<>]/.test(K) || /[*?[{]/.test(G)) return [launchDir];
+    let W = text_2.match(/^(--?[\w-]+|[A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+    if (W) {
+      let O = W[2],
+        F = Ar.test(S ? W[1].toUpperCase() : W[1]),
+        D = A(O) ? [launchDir] : C(O) ? [O] : R(O) ? [`${launchDir}/${O}`] : [],
+        V = (S && !F ? O.split(":").reduce((acc, item) => {
+          let Z = acc.at(-1);
+          if (Z !== void 0 && /^[A-Za-z]$/.test(Z)) acc[acc.length - 1] = `${Z}:${item}`;else acc.push(item);
+          return acc;
+        }, []) : O.split(":")).flatMap(item => item === "" ? F || O.includes(":") ? [launchDir] : [] : A(item) ? [launchDir] : C(item) ? [item] : R(item) || F || item === "." || item === ".." ? [`${launchDir}/${item}`] : []);
+      return L([...D, ...V]);
+    }
+    let P = text_2;
+    if (home !== void 0 && home !== "") {
+      if (raw_2 === "~" || raw_2.startsWith("~/")) P = home + text_2.slice(1);else if (/^"?\$\{HOME\}(?=[/"]|$)/.test(raw_2) && (text_2 === "${HOME}" || text_2.startsWith("${HOME}/"))) P = home + text_2.slice(7);else if (/^"?\$HOME(?=[/"]|$)/.test(raw_2) && (text_2 === "$HOME" || text_2.startsWith("$HOME/"))) P = home + text_2.slice(5);
+    }
+    if (A(P)) return [launchDir];
+    if (C(P)) return [P];
+    return R(P) ? [`${launchDir}/${P}`] : [];
+  });
+}
+function Tr(e, n) {
+  return n.some(item => _Oe(wu(e), item));
+}
+import { posix as ft } from "path";
+import { posix as Gr } from "path";
+var Yn = new Set(["env", "nice", "nohup", "exec", "time", "caffeinate", "builtin", "command", "xargs", "sudo", "doas", "runuser", "coproc", "timeout", "gtimeout", "flock", "arch", "setsid", "stdbuf", "unbuffer", "chronic", "busybox", "strace", "ltrace", "entr"]),
+  Bt = new Set(["-w", "--wait", "--timeout", "-E", "--conflict-exit-code"]),
+  Pr = {
+    nice: new Set(["-n", "--adjustment"]),
+    timeout: new Set(["-s", "--signal", "-k", "--kill-after"]),
+    gtimeout: new Set(["-s", "--signal", "-k", "--kill-after"]),
+    sudo: new Set(["-u", "-g", "-C", "-D", "-h", "-p", "-R", "-T", "-U", "--user", "--group", "--host", "--prompt", "--close-from", "--chdir", "--role", "--type", "--other-user"]),
+    doas: new Set(["-u", "-C"]),
+    runuser: new Set(["-u", "-g", "-G", "--user", "--group", "--supp-group", "-w", "--whitelist-environment"]),
+    xargs: new Set(["-n", "-P", "-I", "-L", "-s", "-d", "-E", "-a", "--arg-file", "--max-args", "--max-procs", "--delimiter"]),
+    env: new Set(["-u", "-C", "-P", "--unset", "--chdir"]),
+    caffeinate: new Set(["-t", "-w"]),
+    exec: new Set(["-a"]),
+    flock: new Set([...Bt, "-c", "--command"]),
+    arch: new Set(["-arch", "-e", "-d"]),
+    stdbuf: new Set(["-i", "-o", "-e", "--input", "--output", "--error"]),
+    strace: new Set(["-e", "-o", "-p", "-s", "-P", "-E", "-u", "-a", "-X"]),
+    ltrace: new Set(["-e", "-o", "-p", "-s", "-n", "-u", "-a", "-F"]),
+    ionice: new Set(["-c", "--class", "-n", "--classdata", "-p", "--pid", "-P", "--pgid", "-u", "--uid"]),
+    chrt: new Set(["-T", "--sched-runtime", "-P", "--sched-period", "-D", "--sched-deadline"]),
+    "xvfb-run": new Set(["-n", "--server-num", "-s", "--server-args", "-f", "--auth-file", "-e", "--error-file", "-w", "--wait", "-p", "--xauth-protocol"])
+  },
+  Dr = {
+    timeout: 1,
+    gtimeout: 1,
+    flock: 1,
+    chrt: 1,
+    taskset: 1
+  };
+function anchored(e) {
+  return /^(?:\/|\$(?!\{?(?:CURDIR|PWD)\b)(?:[A-Za-z_][A-Za-z0-9_]*|\{[A-Za-z_][A-Za-z0-9_]*\})\/)/.test(e.text) || /^~(?:[A-Za-z_][A-Za-z0-9._-]*)?\//.test(Ue(e.raw));
+}
+var vt = {
+    anchored: anchored,
+    takesNext: (e, n) => e(n) || !n.startsWith("--") && Array.from(n).findIndex((item, index) => index > 0 && e("-" + item)) === n.length - 1,
+    alsoLaunchers: new Set(["ionice", "chrt", "taskset", "xvfb-run"]),
+    alsoValued: {
+      sudo: new Set(["-r", "-t"])
+    },
+    runuserIsSu: !0
+  },
+  Qn = [{
+    anchored: e => e.text.startsWith("/"),
+    takesNext: (e, n) => !n.includes("=") && (e(n) || /^-[a-zA-Z]{2,}$/.test(n) && e("-" + n.at(-1))),
+    alsoLaunchers: new Set(),
+    alsoValued: {},
+    runuserIsSu: !1
+  }, vt, {
+    ...vt,
+    alsoValued: {
+      ...vt.alsoValued,
+      time: new Set(["-f", "--format", "-o", "--output"]),
+      strace: new Set(["-I", "-b"]),
+      xargs: new Set(["-J"])
+    }
+  }, {
+    ...vt,
+    stepsPastVariable: !0
+  }];
+function eo(e) {
+  return Yn.has(e) || Qn.some(item => item.alsoLaunchers.has(e));
+}
+function Or(e) {
+  let n = Array(e.length + 1).fill(!1);
+  for (let r = e.length - 1; r >= 0; r -= 1) {
+    let s = e[r].text;
+    n[r] = s !== "--" && (/^(?:-[flmpPT]*u|--user(?:=|$))/.test(s) || n[r + 1]);
+  }
+  return n;
+}
+var to = new Set(["then", "do", "else", "elif", "if", "while", "until", "!"]),
+  $r = new Set(["fi", "done", "esac", "}", "]]"]),
+  Hr = new Set(["time", "coproc", "function", "fi", "done", "esac"]),
+  Nr = new Set(["coproc", "function"]),
+  Lr = /^[A-Za-z_][A-Za-z0-9_]*(?:\[[^\]]*\])?\+?=/,
+  Kn = 6,
+  jt = " \t",
+  Mr = ` 	
+;&|()<>`,
+  Je = String.fromCharCode(96),
+  Fr = /(?:^|[^\\])(?:\\\\)*\\\n/,
+  Wr = /(?:^|[^\\])(?:\\\\)*\\$/;
+function qt(e, n) {
+  let r = n;
+  while (e[r] === "\\" && e[r + 1] === `
+`) r += 2;
+  return r;
+}
+function Ue(e) {
+  if (!e.includes("\\\n")) return e;
+  let n = [],
+    r = 0,
+    s = -1;
+  for (let u = 0; u < e.length; u += 1) {
+    let h = e[u];
+    if (h === "\\") {
+      if (s === -1) s = u;
+      continue;
+    }
+    if (h === `
+` && s !== -1 && (u - s) % 2 === 1) n.push(e.slice(r, u - 1)), r = u + 1;
+    s = -1;
+  }
+  return n.push(e.slice(r)), n.join("");
+}
+function Ur(e) {
+  if (!e.includes("\\")) return e;
+  let n = "",
+    r = 0;
+  for (let s = 0; s < e.length; s += 1) {
+    if (e[s] !== "\\") continue;
+    let u = e[s + 1];
+    if (u === "$" || u === Je || u === "\\" || u === `
+`) n += e.slice(r, s), r = u === `
+` ? s + 2 : s + 1, s += 1;
+  }
+  return r === 0 ? e : n + e.slice(r);
+}
+var Jn = /[ \t\n|]/,
+  Xn = /@P\}/,
+  jr = /\$'[^']*\\|"[^"]*\\/;
+function Rt(e, n = {}) {
+  let r = new Xe(e, n.make === !0),
+    s = r.tokens("eof", 0),
+    commands = [];
+  for (let h of [s, ...r.bodies]) qr(h, n, commands);
+  return {
+    commands: commands,
+    unreadable: r.unreadable
+  };
+}
+function no(e) {
+  let n = new Xe(e, !1);
+  return n.tokens("eof", 0), n.comments;
+}
+function qr(e, n, r) {
+  let s = 0,
+    u = 0,
+    h = !1,
+    y = !1,
+    w = 0,
+    S = 0;
+  while (s < e.length) {
+    let R = e[s];
+    if (h) {
+      if (R.kind === "op" && R.op === `
+`) {
+        s += 1;
+        continue;
+      }
+      if (R.kind === "word" && R.word.text === "esac" && !R.word.quoted) {
+        u -= 1, h = !1, s += 1;
+        continue;
+      }
+      while (s < e.length) {
+        let O = e[s];
+        if (O.kind === "op" && O.op === ")" || O.kind === "word" && O.word.text === "esac" && !O.word.quoted) break;
+        s += 1;
+      }
+      if (e[s]?.kind === "op") s += 1;
+      h = !1, y = !1;
+      continue;
+    }
+    if (R.kind === "op") {
+      if (u > 0 && /^;[;&]|^;;&$/.test(R.op)) h = !0;
+      if (R.op === "(" || R.op === "{") {
+        if (S += 1, y && w === 0) w = S;
+      } else if (R.op === ")" || R.op === "}") {
+        if (S === w) w = 0;
+        S = Math.max(0, S - 1);
+      }
+      if (R.op === "|" || R.op === "|&") y = !0;else if (R.op !== `
+` && R.op !== "(" && R.op !== "{") y = !1;
+      s += 1;
+      continue;
+    }
+    let C = [],
+      redirects = [],
+      heredoc;
+    while (s < e.length && e[s].kind !== "op") {
+      let O = e[s];
+      if (O.kind === "word") C.push(O.word);else if (O.kind === "redirect") redirects.push({
+        op: O.op,
+        target: O.word
+      });else if (O.kind === "heredoc" && O.body !== null) heredoc = (heredoc ?? "") + O.body;
+      s += 1;
+    }
+    let piped = y || w > 0;
+    y = !1;
+    let [K, ...G] = oo(C, n),
+      W = K ?? (redirects.length > 0 || heredoc !== void 0 ? {
+        program: {
+          text: ":",
+          quoted: !1,
+          raw: ":"
+        },
+        args: [],
+        assignments: []
+      } : void 0);
+    if (W === void 0) continue;
+    let P = W.program.text;
+    if (!W.program.quoted) {
+      if (P === "case") {
+        u += 1;
+        let O = e[s];
+        if (O?.kind === "op" && O.op === ")" && W.args.some(item => item.text === "in")) s += 1;else h = !0;
+        continue;
+      }
+      if (P === "esac") {
+        u = Math.max(0, u - 1);
+        continue;
+      }
+      if (P === "[[") {
+        if (!C.some(item => item.text === "]]" && !item.quoted)) {
+          while (s < e.length) {
+            let O = e[s];
+            if (O.kind === "word" && O.word.text === "]]" || O.kind === "op" && O.op === `
+`) break;
+            s += 1;
+          }
+          if (e[s]?.kind === "word") s += 1;
+        }
+        continue;
+      }
+      if ($r.has(P)) {
+        if (redirects.length > 0 || heredoc !== void 0) r.push({
+          program: {
+            text: ":",
+            quoted: !1,
+            raw: ":"
+          },
+          args: [],
+          assignments: [],
+          redirects: redirects,
+          piped: piped,
+          ...(heredoc !== void 0 && {
+            heredoc: heredoc
+          })
+        });
+        continue;
+      }
+    }
+    for (let O of [W, ...G]) r.push({
+      ...O,
+      redirects: redirects,
+      piped: piped,
+      ...(heredoc !== void 0 && {
+        heredoc: heredoc
+      })
+    });
+  }
+}
+function Br(e, n, r) {
+  let assignments = [],
+    u,
+    h = !1,
+    y,
+    k_2 = 0;
+  for (;;) {
+    while (k_2 < e.length) {
+      let x = e[k_2];
+      if (Lr.test(Ue(x.raw))) assignments.push(x);else if (!(!x.quoted && to.has(x.text))) break;
+      k_2 += 1;
+    }
+    let program = e[k_2];
+    if (program === void 0) return assignments.length > 0 ? {
+      program: {
+        text: ":",
+        quoted: !1,
+        raw: ":"
+      },
+      args: [],
+      assignments: assignments
+    } : void 0;
+    if (n.make && !program.quoted && /^[@+-]+./.test(program.text)) {
+      let x = program.text.replace(/^[@+-]+/, "");
+      program = {
+        ...program,
+        text: x,
+        raw: x
+      };
+    }
+    let R = program.text.slice(program.text.lastIndexOf("/") + 1).toLowerCase();
+    if (!(Yn.has(R) || r.alsoLaunchers.has(R)) || /[ \t]/.test(program.text) || program.text.includes("/") && !r.anchored(program)) {
+      if (r.stepsPastVariable === !0 && h && program.text.startsWith("$") && e[k_2 + 1] !== void 0) {
+        y ??= {
+          k: k_2,
+          kept: assignments.length
+        }, assignments.push(program), k_2 += 1;
+        continue;
+      }
+      let x = program.text.startsWith("$") && !/^\$\((?:\u2026|\(\u2026\))\)/.test(program.text);
+      if (y !== void 0 && (program.text.startsWith("-") || !x && (program.quoted || program.expands === !0))) return {
+        program: e[y.k],
+        args: e.slice(y.k + 1),
+        assignments: assignments.slice(0, y.kept)
+      };
+      return {
+        program: program,
+        args: e.slice(k_2 + 1),
+        assignments: assignments
+      };
+    }
+    if (R === "command") {
+      let x = !1;
+      for (let K = k_2 + 1; e[K]?.text.startsWith("-") === !0; K += 1) x ||= Oft(e[K].text);
+      if (x) return {
+        program: program,
+        args: e.slice(k_2 + 1),
+        assignments: assignments
+      };
+    }
+    if (R === "runuser" && r.runuserIsSu) {
+      if (u ??= Or(e), !u[k_2 + 1]) return {
+        program: program,
+        args: e.slice(k_2 + 1),
+        assignments: assignments
+      };
+    }
+    if (R === "busybox") {
+      assignments.push(program), k_2 += 1;
+      continue;
+    }
+    assignments.push(program), h = !0, y = void 0, k_2 += 1;
+    let C = Dr[R] ?? 0,
+      A = x => (Pr[R]?.has(x) ?? !1) || (r.alsoValued[R]?.has(x) ?? !1),
+      E = !1;
+    while (k_2 < e.length) {
+      let x = e[k_2].text;
+      if (!E && x === "--") {
+        assignments.push(e[k_2]), E = !0, k_2 += 1;
+        continue;
+      }
+      if (!E && R === "env" && x === "-") {
+        assignments.push({
+          ...e[k_2],
+          text: "-i"
+        }), k_2 += 1;
+        continue;
+      }
+      if (!E && x.startsWith("-") && x !== "-") {
+        let K = r.takesNext(A, x);
+        if (assignments.push(e[k_2]), K && e[k_2 + 1] !== void 0) assignments.push(e[k_2 + 1]);
+        k_2 += K ? 2 : 1;
+        continue;
+      }
+      if (C > 0 && (R !== "chrt" || /^\d+$/.test(x))) {
+        assignments.push(e[k_2]), C -= 1, k_2 += 1;
+        continue;
+      }
+      break;
+    }
+  }
+}
+function oo(e, n) {
+  return Qn.flatMap(item => {
+    let s = Br(e, n, item);
+    return s === void 0 ? [] : [s];
+  }).filter((item, index, u) => u.findIndex(h => h.program.raw === item.program.raw && h.args.length === item.args.length) === index);
+}
+function Vt(e) {
+  return oo(e, {});
+}
+class Xe {
+  text;
+  make;
+  pos = 0;
+  unreadable = null;
+  bodies = [];
+  comments = [];
+  pending = [];
+  lineIndex = null;
+  strippedLineIndex = null;
+  constructor(e, n) {
+    this.text = e;
+    this.make = n;
+  }
+  fail(e) {
+    this.unreadable ??= e;
+  }
+  pastContinuations(e, n = !1) {
+    for (;;) {
+      let r = qt(this.text, e);
+      if (r !== e) e = r;else if (n && e < this.text.length && jt.includes(this.text[e])) e += 1;else return e;
+    }
+  }
+  tooDeep(e) {
+    if (e < Kn) return !1;
+    this.fail("command substitutions nested too deeply");
+    let n = 1;
+    while (this.pos < this.text.length && n > 0) {
+      let r = this.text[this.pos];
+      if (r === "(") n += 1;else if (r === ")") n -= 1;
+      this.pos += 1;
+    }
+    return !0;
+  }
+  tokens(e, n) {
+    let r = this.text,
+      s = r.length,
+      u = [],
+      pending = this.pending,
+      y = 0,
+      w = 0,
+      S = !1,
+      R = !1,
+      C = !0,
+      A = !1;
+    while (this.pos < s) {
+      let op_2 = r[this.pos];
+      if (jt.includes(op_2)) {
+        this.pos += 1;
+        continue;
+      }
+      if (op_2 === `
+`) {
+        if (this.pos += 1, pending.length > 0) this.readHeredocBodies(pending.splice(0), n);
+        if (e === "array") continue;
+        u.push({
+          kind: "op",
+          op: `
+`
+        }), C = !0;
+        continue;
+      }
+      if (op_2 === "\\" && r[this.pos + 1] === `
+`) {
+        this.pos += 2;
+        continue;
+      }
+      if (op_2 === "#") {
+        let D = r.indexOf(`
+`, this.pos),
+          H = D === -1 ? s : D;
+        this.comments.push([this.pos, H]), this.pos = H;
+        continue;
+      }
+      if (e === "array") {
+        if (op_2 === ")") return this.pos += 1, u;
+        if (";&|<>".includes(op_2) || op_2 === "(") {
+          this.fail("an array assignment holds something other than words"), this.pos += 1;
+          continue;
+        }
+        u.push({
+          kind: "word",
+          word: this.readWord(n)
+        });
+        continue;
+      }
+      let x = this.pastContinuations(this.pos + 1),
+        op = op_2 + (r[x] ?? ""),
+        G = this.pastContinuations(x + 1);
+      if (op === ";;" && r[G] === "&") {
+        u.push({
+          kind: "op",
+          op: ";;&"
+        }), this.pos = G + 1, R = w > 0, C = !0;
+        continue;
+      }
+      if (op === "&&" || op === "||" || op === ";;" || op === ";&" || op === "|&") {
+        if (u.push({
+          kind: "op",
+          op: op
+        }), this.pos = x + 1, (op === ";;" || op === ";&") && w > 0) R = !0;
+        C = !0;
+        continue;
+      }
+      if (op === "((" && C) {
+        let D = x + 1,
+          H = Zn(r, D);
+        if (H !== -1) {
+          this.collectExpansions(r.slice(D, H - 2), n), this.pos = H, C = !1;
+          continue;
+        }
+      }
+      if (op_2 === "(") {
+        if (this.pos += 1, R) continue;
+        y += 1, u.push({
+          kind: "op",
+          op: "("
+        }), C = !0;
+        continue;
+      }
+      if (op_2 === ")") {
+        if (this.pos += 1, R) {
+          u.push({
+            kind: "op",
+            op: ")"
+          }), R = !1, C = !0;
+          continue;
+        }
+        if (y > 0) {
+          y -= 1, u.push({
+            kind: "op",
+            op: ")"
+          }), C = !0;
+          continue;
+        }
+        if (e === "paren") return u;
+        this.fail("a closing parenthesis that closes nothing"), u.push({
+          kind: "op",
+          op: ")"
+        });
+        continue;
+      }
+      if (op_2 === "&" && r[x] === ">") {
+        if (this.pos = r[G] === ">" ? G + 1 : x + 1, this.pos = this.pastContinuations(this.pos, !0), this.pos < s && !`
+;&|()`.includes(r[this.pos])) u.push({
+          kind: "redirect",
+          op: "&>",
+          word: this.readWord(n)
+        });
+        C = !1;
+        continue;
+      }
+      if (op_2 === ";" || op_2 === "&" || op_2 === "|") {
+        u.push({
+          kind: "op",
+          op: op_2
+        }), this.pos += 1, C = !0;
+        continue;
+      }
+      if (op_2 === "<" || op_2 === ">") {
+        if (r[x] === "(") {
+          u.push({
+            kind: "word",
+            word: this.readWord(n)
+          }), C = !1;
+          continue;
+        }
+        let D = x,
+          H = op,
+          V = H === "<<" ? this.pastContinuations(D + 1) : D;
+        if (H === "<<" && r[V] !== "<") {
+          this.pos = V;
+          let strip = !1;
+          if (r[this.pos] === "-") {
+            if (V !== D + 1) this.fail('a heredoc "-" that only a joined line continuation puts next to the <<');
+            strip = !0, this.pos = this.pastContinuations(this.pos + 1);
+          }
+          this.pos = this.pastContinuations(this.pos, !0);
+          let Z = this.readWord(n, !0);
+          if (Z.raw !== "") {
+            if (jr.test(Ue(Z.raw))) this.fail("a heredoc delimiter this reading cannot spell as the shell does");
+            if (Z.text === "" && !Z.quoted) this.fail("a heredoc delimiter that reads as empty");
+            let token = {
+              kind: "heredoc",
+              body: null
+            };
+            u.push(token), C = !1, pending.push({
+              token: token,
+              delimiter: Z.text,
+              strip: strip,
+              expand: !Z.quoted
+            });
+          }
+          continue;
+        }
+        let op_3 = H === "<<" ? "<<<" : [">>", ">&", "<&", ">|", "<>"].includes(H) ? H : op_2;
+        if (this.pos = op_3 === "<<<" ? V + 1 : op_3.length === 2 ? D + 1 : this.pos + 1, this.pos = this.pastContinuations(this.pos, !0), this.pos < s && !`
+;&|()`.includes(r[this.pos])) u.push({
+          kind: "redirect",
+          op: op_3,
+          word: this.readWord(n)
+        });
+        C = !1;
+        continue;
+      }
+      if (op_2 === "{" || op_2 === "}") {
+        let D = this.pastContinuations(this.pos + 1),
+          H = D >= s || (jt + `
+;&|()<>`).includes(r[D]);
+        if (H && C) {
+          u.push({
+            kind: "op",
+            op: op_2
+          }), this.pos += 1, C = !0;
+          continue;
+        }
+        if (H && op_2 === "{") this.fail("a { that may open a group or may be an argument");
+      }
+      let W = /^[A-Za-z_][A-Za-z0-9_]*\+?=\(/.exec(r.slice(this.pos, this.pos + 256));
+      if (W !== null) {
+        let pos = this.pos;
+        if (this.pos += W[0].length, !this.tooDeep(n + 1)) this.tokens("array", n + 1);
+        let H = r.slice(pos, this.pos);
+        u.push({
+          kind: "word",
+          word: {
+            text: H,
+            quoted: !1,
+            raw: H
+          }
+        }), C = !1;
+        continue;
+      }
+      let word = this.readWord(n);
+      if (word.raw === "") {
+        this.pos += 1;
+        continue;
+      }
+      if (/^[0-9]+$/.test(Ue(word.raw)) && (r[this.pos] === "<" || r[this.pos] === ">")) continue;
+      if (u.push({
+        kind: "word",
+        word: word
+      }), !word.quoted) {
+        if (C && word.text === "case") S = !0;else if (S && word.text === "in") S = !1, w += 1, R = !0;else if (word.text === "esac" && w > 0 && (C || R)) w -= 1, R = !1;
+      }
+      let O = C,
+        F = A;
+      A = O && !word.quoted && Nr.has(word.text), C = F || O && !word.quoted && (to.has(word.text) || Hr.has(word.text));
+    }
+    if (e === "eof") pending.splice(0);
+    if (w > 0 || R) this.fail("a case statement that is never closed");
+    if (e !== "eof") this.fail(e === "array" ? "an array assignment that is never closed" : "a $( or ( that is never closed");
+    return u;
+  }
+  readWord(e, n = !1) {
+    let r = this.text,
+      s = r.length,
+      pos_2 = this.pos,
+      text_3 = "",
+      quoted = !1,
+      expands = !1;
+    while (this.pos < s) {
+      let R = r[this.pos];
+      if (R === "'") {
+        quoted = !0;
+        let C = r.indexOf("'", this.pos + 1);
+        if (C === -1) {
+          this.fail("a single quote that is never closed"), text_3 += r.slice(this.pos + 1), this.pos = s;
+          break;
+        }
+        text_3 += r.slice(this.pos + 1, C), this.pos = C + 1;
+        continue;
+      }
+      if (R === "$" && r[this.pos + 1] === "'") {
+        quoted = !0;
+        {
+          let C = r.indexOf("'", this.pos + 2);
+          if (r.slice(this.pos + 2, C === -1 ? s : C).includes("\\")) expands = !0;
+        }
+        this.pos += 2;
+        while (this.pos < s && r[this.pos] !== "'") if (r[this.pos] === "\\" && this.pos + 1 < s) text_3 += r[this.pos + 1], this.pos += 2;else text_3 += r[this.pos], this.pos += 1;
+        if (this.pos >= s) {
+          this.fail("a $' quote that is never closed");
+          break;
+        }
+        this.pos += 1;
+        continue;
+      }
+      if (R === '"' || R === "$" && r[this.pos + 1] === '"') {
+        quoted = !0, this.pos += R === "$" ? 2 : 1;
+        while (this.pos < s && r[this.pos] !== '"') {
+          let C = r[this.pos];
+          if (C === "\\" && this.pos + 1 < s) text_3 += r[this.pos + 1] === `
+` ? "" : r[this.pos + 1], this.pos += 2;else if (!n && C === "$" && r[this.pastContinuations(this.pos + 1)] === "(") text_3 += this.readDollarParen(e, this.pastContinuations(this.pos + 1));else if (!n && C === Je) text_3 += this.readBackticks(e);else if (C === "$" && r[this.pastContinuations(this.pos + 1)] === "{") text_3 += this.readParameterExpansion(e, this.pastContinuations(this.pos + 1)), expands = !0;else {
+            if (C === "$") expands = !0;
+            text_3 += C, this.pos += 1;
+          }
+        }
+        if (this.pos >= s) {
+          this.fail("a double quote that is never closed");
+          break;
+        }
+        this.pos += 1;
+        continue;
+      }
+      if (R === "\\" && this.pos + 1 < s) {
+        if (r[this.pos + 1] !== `
+`) text_3 += r[this.pos + 1], quoted = !0;
+        this.pos += 2;
+        continue;
+      }
+      if (R === "$" && r[this.pastContinuations(this.pos + 1)] === "{") {
+        text_3 += this.readParameterExpansion(e, this.pastContinuations(this.pos + 1)), expands = !0;
+        continue;
+      }
+      if (!n && R === "$" && r[this.pastContinuations(this.pos + 1)] !== "(") expands = !0;
+      if (!n && R === "$" && r[this.pastContinuations(this.pos + 1)] === "(") {
+        text_3 += this.readDollarParen(e, this.pastContinuations(this.pos + 1)), quoted = !0, expands = !0;
+        continue;
+      }
+      if (!n && R === Je) {
+        text_3 += this.readBackticks(e), quoted = !0, expands = !0;
+        continue;
+      }
+      if (!n && (R === "<" || R === ">") && r[this.pastContinuations(this.pos + 1)] === "(") {
+        if (this.pos = this.pastContinuations(this.pos + 1) + 1, !this.tooDeep(e + 1)) this.bodies.push(this.tokens("paren", e + 1));
+        text_3 += R + "(\u2026)", quoted = !0;
+        continue;
+      }
+      if (Mr.includes(R)) break;
+      text_3 += R, this.pos += 1;
+    }
+    let raw_3 = r.slice(pos_2, this.pos);
+    if (/\{[^{}'"]*(?:,|\.\.)[^{}'"]*\}/.test(raw_3.replace(/'[^']*'|"[^"]*"/g, ""))) expands = !0;
+    return {
+      text: text_3,
+      quoted: quoted,
+      raw: raw_3,
+      ...(expands && {
+        expands: expands
+      })
+    };
+  }
+  readParameterExpansion(e, n = this.pos + 1) {
+    let r = this.text,
+      s = r.length;
+    this.pos = n + 1;
+    let u = S => Jn.test(r[this.pastContinuations(S)] ?? "");
+    if (u(this.pos)) this.fail("a ${ \u2026; } command substitution");
+    let h = 1,
+      y = !1;
+    while (this.pos < s && h > 0) {
+      let S = r[this.pos];
+      if (S === "\\") this.pos += 2;else if (S === '"') y = !y, this.pos += 1;else if (S === "'" && !y) {
+        let R = r.indexOf("'", this.pos + 1),
+          C = R === -1 ? s : R;
+        this.collectExpansions(r.slice(this.pos + 1, C), e), this.pos = R === -1 ? s : R + 1;
+      } else if (S === "'") this.pos += 1;else if (S === "$" && r[this.pastContinuations(this.pos + 1)] === "(") this.readDollarParen(e, this.pastContinuations(this.pos + 1));else if (S === Je) this.readBackticks(e);else if (S === "$" && r[this.pastContinuations(this.pos + 1)] === "{") {
+        if (h += 1, this.pos = this.pastContinuations(this.pos + 1) + 1, u(this.pos)) this.fail("a ${ \u2026; } command substitution");
+      } else {
+        if (S === "}" && !y) h -= 1;
+        this.pos += 1;
+      }
+    }
+    if (h > 0) this.fail("a ${ that is never closed");
+    let w = Ue(r.slice(n, this.pos));
+    if (Xn.test(w)) this.fail("a ${ \u2026@P } expansion");
+    return "$" + w;
+  }
+  readDollarParen(e, n = this.pos + 1) {
+    let r = this.text;
+    if (r[n + 1] === "(") {
+      let h = Zn(r, n + 2);
+      if (h !== -1) return this.collectExpansions(r.slice(n + 2, h - 2), e), this.pos = h, "$((\u2026))";
+    }
+    if (this.pos = n + 1, this.tooDeep(e + 1)) return "$(\u2026)";
+    let pos_3 = this.pos,
+      u = this.tokens("paren", e + 1);
+    if (this.make) {
+      let h = u[0];
+      if (h?.kind === "word" && /^(?:shell|eval|call)$/.test(h.word.text)) return this.bodies.push(u.slice(1)), "$(\u2026)";
+      return "$(" + this.text.slice(pos_3, Math.max(pos_3, this.pos - 1)) + ")";
+    }
+    return this.bodies.push(u), "$(\u2026)";
+  }
+  readBackticks(e) {
+    let n = this.text,
+      r = n.length,
+      s = this.pos + 1;
+    while (s < r && n[s] !== Je) s += n[s] === "\\" ? 2 : 1;
+    if (s >= r) this.fail("a backtick that is never closed");
+    let u = new Xe(n.slice(this.pos + 1, Math.min(s, r)).replace(/\\([$\x60\\])/g, "$1"), this.make);
+    if (e + 1 > Kn) this.fail("command substitutions nested too deeply");else if (this.bodies.push(u.tokens("eof", e + 1), ...u.bodies), u.unreadable !== null) this.fail(u.unreadable);
+    return this.pos = Math.min(s + 1, r), "$(\u2026)";
+  }
+  collectExpansions(e, n) {
+    if (Xn.test(Ue(e))) this.fail("a ${ \u2026@P } expansion");
+    let r = 0;
+    while (r < e.length) {
+      let s = e[r],
+        u = s === "$" ? qt(e, r + 1) : r + 1;
+      if (s === "$" && e[u] === "(") {
+        let h = new Xe(e.slice(r), this.make);
+        if (h.readDollarParen(n, u - r), this.bodies.push(...h.bodies), h.unreadable !== null) this.fail(h.unreadable);
+        r += Math.max(h.pos, 1);
+        continue;
+      }
+      if (s === "$" && e[u] === "{") {
+        if (Jn.test(e[qt(e, u + 1)] ?? "")) this.fail("a ${ \u2026; } command substitution");
+      }
+      if (s === "\\") r += 2;else if (s === Je) {
+        let h = new Xe(e.slice(r), this.make);
+        if (h.readBackticks(n), this.bodies.push(...h.bodies), h.unreadable !== null) this.fail(h.unreadable);
+        r += Math.max(h.pos, 1);
+      } else r += 1;
+    }
+  }
+  readHeredocBodies(e, n) {
+    for (let r of e) {
+      let at_2 = this.findLine(r.delimiter, this.pos, r.strip),
+        lineEnd = at_2 === -1 ? -1 : this.text.indexOf(`
+`, at_2);
+      if (r.expand && at_2 !== -1 && this.unreadable === null && Fr.test(this.text.slice(this.pos, at_2))) ({
+        at: at_2,
+        lineEnd: lineEnd
+      } = this.findJoinedLine(r.delimiter, this.pos, r.strip));
+      if (at_2 === -1) {
+        this.fail("a heredoc is never terminated");
+        break;
+      }
+      let h = this.text.slice(this.pos, at_2);
+      if (r.expand) this.collectExpansions(Ue(h), n);
+      r.token.body = r.expand ? Ur(h) : h, this.pos = lineEnd === -1 ? this.text.length : lineEnd + 1;
+    }
+  }
+  findJoinedLine(e, n, r) {
+    let s = this.text,
+      at_3 = n;
+    while (at_3 <= s.length) {
+      let h = "",
+        y = at_3,
+        lineEnd_2 = -1;
+      for (;;) {
+        lineEnd_2 = s.indexOf(`
+`, y);
+        let S = s.slice(y, lineEnd_2 === -1 ? s.length : lineEnd_2),
+          R = lineEnd_2 !== -1 && Wr.test(S);
+        if (h += R ? S.slice(0, -1) : S, !R) break;
+        y = lineEnd_2 + 1;
+      }
+      if ((r ? h.replace(/^\t+/, "") : h) === e) return {
+        at: at_3,
+        lineEnd: lineEnd_2
+      };
+      if (lineEnd_2 === -1) return {
+        at: -1,
+        lineEnd: -1
+      };
+      at_3 = lineEnd_2 + 1;
+    }
+    return {
+      at: -1,
+      lineEnd: -1
+    };
+  }
+  findLine(e, n, r) {
+    if (this.lineIndex === null) {
+      let y = new Map(),
+        w = new Map(),
+        S = 0;
+      for (let R of this.text.split(`
+`)) {
+        let C = (A, E) => {
+          let x = A.get(E);
+          if (x === void 0) A.set(E, [S]);else x.push(S);
+        };
+        C(y, R), C(w, R.replace(/^\t+/, "")), S += R.length + 1;
+      }
+      this.lineIndex = y, this.strippedLineIndex = w;
+    }
+    let s = (r ? this.strippedLineIndex : this.lineIndex).get(e);
+    if (s === void 0) return -1;
+    let u = 0,
+      h = s.length;
+    while (u < h) {
+      let y = u + h >> 1;
+      if (s[y] < n) u = y + 1;else h = y;
+    }
+    return u < s.length ? s[u] : -1;
+  }
+}
+function Zn(e, n) {
+  let r = Math.min(e.length, n + 4096),
+    s = n,
+    u = 0;
+  while (s < r) {
+    let h = e[s];
+    if (h === "'" || h === '"') {
+      let y = e.indexOf(h, s + 1);
+      s = y === -1 ? r : y + 1;
+      continue;
+    }
+    if (h === "(") u += 1;else if (h === ")") {
+      if (u === 0) return e[s + 1] === ")" ? s + 2 : -1;
+      u -= 1;
+    }
+    s += 1;
+  }
+  return -1;
+}
+var Vr = new Set(["DEVELOPER_DIR", "MAKEFILES", "MAKEFLAGS", "GNUMAKEFLAGS", "AWKPATH", "AWKLIBPATH", "GOFLAGS", "RUSTFLAGS", "GIT_EDITOR", "GIT_SEQUENCE_EDITOR", "GIT_EXTERNAL_DIFF", "GIT_PROXY_COMMAND", "SUDO_ASKPASS", "ZDOTDIR", "CDPATH", "GCONV_PATH", "NLSPATH", "DOTNET_STARTUP_HOOKS", "npm_config_node_options", "NPM_CONFIG_NODE_OPTIONS", "LESSOPEN", "LESSCLOSE", "MANPAGER", "MAVEN_OPTS", "GRADLE_OPTS", "OPENSSL_ENGINES", "SHELLOPTS", "BASHOPTS", "PS4", "PROMPT_COMMAND", "GIT_SSH_COMMAND", "GIT_SSH", "GIT_EXEC_PATH", "GIT_ASKPASS", "SSH_ASKPASS", "GIT_PAGER", "PAGER", "EDITOR", "VISUAL", "BROWSER", "PYTHONWARNINGS", "PYTHONBREAKPOINT", "PERL5DB", "NODE_REPL_EXTERNAL_MODULE", "JAVA_TOOL_OPTIONS", "_JAVA_OPTIONS", "JDK_JAVA_OPTIONS", "NODE_OPTIONS", "NODE_COMPILE_CACHE", "PYTHONSTARTUP", "PYTHONHOME", "PYTHONUSERBASE", "BASH_ENV", "ENV", "PERL5OPT", "RUBYOPT", "GEM_HOME", "RUBYGEMS_GEMDEPS", "BUNDLE_GEMFILE", "OPENSSL_CONF", "OPENSSL_MODULES", "DYLD_INSERT_LIBRARIES", "LD_PRELOAD", "LD_AUDIT"]),
+  zr = /^(?:DYLD_|LD_|BASH_FUNC_|GIT_CONFIG_|LUA_C?PATH)/,
+  Kr = /^(?:GH_BROWSER|RSYNC_RSH|CVS_RSH|SOPS_GPG_EXEC|PERL5SHELL|RUBYSHELL|JAVACMD|CLOUDSDK_PYTHON|UV_PYTHON|RUSTC_WRAPPER|RUSTC_WORKSPACE_WRAPPER|npm_config_script_shell|NPM_CONFIG_SCRIPT_SHELL|R_(?:PROFILE|ENVIRON)(?:_USER)?|TAR_OPTIONS|BUN_OPTIONS|TF_CLI_ARGS\w*|CARGO_ALIAS_\w+|[A-Z0-9][A-Z0-9_]*_(?:EXTERNAL_DIFF|PAGER|EDITOR))$/,
+  Jr = /^(?![\/~$-])(?:[^\s]*\/[^\s]*|[^\s\/]+\.(?:sh|bash|zsh|fish|py|rb|pl|js|mjs|cjs|ts|php|lua|R|r|ps1|awk|tcl|exs?|jl))$/;
+function Xr(e) {
+  return Vr.has(e) || zr.test(e);
+}
+function fo(e) {
+  return (e.match(/(?:[^\s"']+|"[^"]*"|'[^']*')+/g) ?? []).map(item => item.replace(/["']/g, ""));
+}
+function Zr(e, n) {
+  let r = e.replace(/\/+$/, "");
+  if (!r.startsWith("/") || r === "") return [];
+  let s = n !== "" && n !== "/" && (r === n || r.startsWith(`${n}/`)) ? r.slice(n.length) : null,
+    u = s === "" ? "/" : s;
+  return s === null ? [r] : [r, `~${u}`, `$HOME${u}`, `$HOME"${u}`, `\${HOME}${u}`, `\${HOME}"${u}`];
+}
+var Yr = /(?:^|[\s"'=(`:;&|<>])\.\.?\/|\bprocess\.cwd\(\)|\bos\.getcwd\(\)|\bPath\.cwd\(\)|\bDir\.pwd\b|\bgit\b[^\n]{0,12}\brev-parse\b[^\n]{0,6}--show-toplevel\b/im,
+  Qr = /\$PWD\b|\$\{PWD\b|\$\(pwd(?:[ \t]+-[LP])?\)|`pwd`/im,
+  ei = /^(?:bash|sh|zsh|dash|ash|(?:pd|lo|o|m|r)?ksh[0-9]*|rbash|fish|csh|tcsh|yash|posh|[oy]sh)$/i,
+  Oe = new Set(["bash", "sh", "zsh", "dash", "ash", "ksh", "mksh", "rbash", "fish", "csh", "tcsh", "pwsh", "yash", "posh", "osh", "ysh", "pdksh", "loksh", "oksh"]),
+  Zt = new Set(["python", "pypy", "node", "nodejs", "ruby", "perl", "php", "lua", "tsx", "ts-node", "bb", "awk", "gawk", "osascript", "expect", "tclsh", "wish", "rscript", "irb", "erb", "nawk", "mawk", "sed", "gsed", "m4"]),
+  ni = {
+    julia: /\.jl$/,
+    elixir: /\.exs?$/,
+    groovy: /\.groovy$/,
+    racket: /\.rkt$/,
+    guile: /\.scm$/,
+    sbcl: /\.(?:lisp|cl)$/
+  },
+  oi = new Set(["bmake", "pmake", "gnumake", "make", "gmake", "ninja", "nix-build", "nix-instantiate", "nix-env", "ctest", "meson", "cmake", "bazel", "bazelisk", "npm", "npx", "pnpm", "yarn", "bun", "bunx", "lint-staged", "npm-run-all", "run-p", "run-s", "turbo", "nx", "lerna", "lefthook", "gulp", "grunt", "eslint", "prettier", "jest", "vitest", "mocha", "ava", "playwright", "cypress", "webpack", "rollup", "vite", "babel", "postcss", "tailwindcss", "next", "tsc", "commitlint", "stylelint", "uv", "pip", "pip3", "poetry", "pipenv", "hatch", "pdm", "rye", "pytest", "tox", "nox", "pylint", "flake8", "mypy", "pre-commit", "cargo", "rake", "bundle", "rspec", "rubocop", "rails", "composer", "phpunit", "phpstan", "psalm", "gradle", "gradlew", "mvn", "mvnw", "scons", "ant", "hg", "sbt", "lein", "clj", "clojure", "stack", "cabal", "mix", "dotnet", "msbuild", "swift", "xcodebuild", "pod", "fastlane", "just", "task", "terraform", "tofu", "terragrunt", "snakemake", "vagrant", "docker-compose", "podman-compose", "devbox", "mise", "asdf"]),
+  ro = /^--(?:version|help)$/,
+  ri = {
+    go: new Set(["generate", "run", "test", "build", "install", "get", "vet", "tool"]),
+    deno: new Set(["task", "test", "bench", "lint", "fmt", "check"]),
+    docker: new Set(["compose", "build", "buildx"]),
+    podman: new Set(["compose", "build"]),
+    nix: new Set(["develop", "run", "build", "shell", "flake", "eval", "profile", "bundle", "print-dev-env", "fmt", "repl"]),
+    node: new Set(["--run", "--test"])
+  },
+  io = {
+    python: new Set(["-W", "-X", "--check-hash-based-pycs"]),
+    pypy: new Set(["-W", "-X"]),
+    node: new Set(["-e", "--eval", "-p", "--print", "-r", "--require", "--import", "--loader", "--experimental-loader", "-C", "--conditions", "--input-type", "--title"]),
+    ruby: new Set(["-e", "-r", "--require", "-I", "-C", "-E", "-F"]),
+    perl: new Set(["-e", "-E", "-M", "-m", "-I"]),
+    php: new Set(["-r", "-d", "--define", "-c", "--php-ini", "-B", "-R", "-F", "-E", "-z", "--zend-extension", "-f", "--file"]),
+    osascript: new Set(["-l", "-s"]),
+    lua: new Set(["-e", "-l"]),
+    tsx: new Set(["-e", "--eval", "-r", "--require", "--import", "--tsconfig"]),
+    "ts-node": new Set(["-e", "--eval", "-r", "--require", "-P", "--project", "-O", "--compilerOptions"])
+  };
+function tn(e, n) {
+  switch (e) {
+    case "node":
+    case "nodejs":
+    case "tsx":
+    case "ts-node":
+      return /^(?:-e|--eval|-p|--print)$/.test(n) || /^-[a-zA-Z]*[ep]$/.test(n);
+    case "python":
+    case "pypy":
+      return /^-[bBdEhiIOPqRsSuvVx]*[cm]/.test(n);
+    case "perl":
+      return /^-[acfgnpsStTuUwWXl0-9]*[eE]$/.test(n);
+    case "ruby":
+      return /^-[acdhlnpsSUvwy]*e$/.test(n);
+    case "php":
+      return /^-[aeHilmnqsvw]*[rRBE]$/.test(n);
+    case "lua":
+    case "bb":
+    case "osascript":
+    case "rscript":
+    case "erb":
+      return n === "-e";
+    default:
+      return !1;
+  }
+}
+var ii = /\bimport\b|__import__|\bexec\b/;
+function Et(e) {
+  let n = e.text;
+  return n.slice(n.lastIndexOf("/") + 1).toLowerCase();
+}
+function si(e) {
+  return e.replace(/^(python|pypy|perl|ruby|php|lua|node|nodejs|ksh|tclsh|wish)[0-9.]+t?$/, "$1");
+}
+function ai(e) {
+  return Oe.has(e) || Zt.has(e) || mAr.test(e);
+}
+function ho(e) {
+  return /^[\/~$]|^[<>]\(/.test(e.text) && !/^~[+-]/.test(e.text);
+}
+function xe(e) {
+  return e !== void 0 && e.text !== "" && !ho(e) && !e.text.startsWith("-");
+}
+function It({
+  program: program_2,
+  args: args,
+  assignments: assignments_2,
+  redirects: redirects_2,
+  heredoc: heredoc_2,
+  piped: piped_2
+}, y, w = {
+  roots: [],
+  home: "",
+  fromPayload: !1
+}) {
+  let E = assignments_2.findIndex(item => Et(item) === "flock"),
+    x = E === -1 ? void 0 : wi(assignments_2, E),
+    K = [...assignments_2.filter((item, index) => index !== x?.at), ...(/^(?:export|declare|typeset|local|readonly)$/.test(program_2.text) ? args : [])],
+    G = co(K, w.shell === "zsh");
+  if (G !== void 0 && w.standing === void 0) return G;
+  let W = assignments_2.find(item => ct(item, w));
+  if (W !== void 0) return "it names " + W.text;
+  let P = gi(assignments_2, y, [program_2, ...args]);
+  if (P !== void 0 && (w.standing === void 0 || mo.has(P))) return Ct(P, w);
+  let O = program_2.text === ":" ? assignments_2.findIndex(item => /^(?:sudo|doas)$/.test(Et(item))) : -1;
+  if (O !== -1 && assignments_2.some((item, index) => index > O && (lme(item.text, "si") || item.text === "--shell" || item.text === "--login"))) return Ct(Qt.sudo, w);
+  if (x !== void 0) {
+    let N = wo(x.text, {
+      redirects: redirects_2,
+      heredoc: heredoc_2,
+      piped: piped_2
+    }, y, w);
+    if (N !== void 0 && w.standing === void 0) return N;
+  }
+  if (program_2.text === "setenv" || program_2.text === "set" && /^-[a-zA-Z]*x/.test(args[0]?.text ?? "")) {
+    let N = program_2.text === "setenv" ? 0 : 1,
+      q = args[N],
+      Q = co(q === void 0 ? [] : [{
+        ...q,
+        text: q.text + "=" + args.slice(N + 1).map(item => item.text).join(":")
+      }]);
+    if (Q !== void 0) return Q;
+  }
+  if (program_2.text === "unset" && args.some(item => item.text.startsWith("GIT_CONFIG"))) return "it unsets a GIT_CONFIG variable";
+  if (program_2.text === "unset" && args.some(item => item.text === "PATH")) return "it unsets PATH";
+  if (program_2.expands && !/^\$/.test(program_2.text)) return "it runs a command whose name is built by an expansion";
+  if (/^\$\(\u2026\)/.test(program_2.text)) return "it runs a command held in a variable or produced by another command";
+  if (/^\$/.test(program_2.text)) {
+    if (ct(program_2, w)) return "it names " + program_2.text;
+    let N = /^\$\{?([A-Za-z_][A-Za-z0-9_]*)\}?\//.exec(program_2.text)?.[1];
+    if (N !== void 0 && w.relativeNames?.has(N) === !0) return "it runs a file by a relative path";
+    if (/^\$[({](?:CURDIR|PWD)[)}]/.test(program_2.text)) return "it uses its working directory";
+    let q = program_2.text.replace(/^\$\{[^}]*\}|^\$\([^)]*\)|^\$[A-Za-z_][A-Za-z0-9_]*/, "");
+    if (q !== program_2.text && /^[^\/~$].*\//.test(q)) return "it runs a file by a relative path";
+    let text_4 = w.make === !0 && /^(?:\$[({][A-Za-z_]+[)}])*\$[({]MAKE[)}]$/.test(program_2.text) ? "make" : /:-([^}]+)\}$/.exec(program_2.text)?.[1];
+    if (text_4 === void 0) {
+      if (w.fromPayload) return "it runs a command held in a variable or produced by another command";
+      let J = args.find(item => !item.text.startsWith("-"));
+      if (J !== void 0 && xe(J) && (J.text.includes("/") || /\.[A-Za-z0-9]{1,5}$/.test(J.text))) return "it runs a file by a relative path";
+      if (!/^\/(?:.*\/)?[^\/$]+$/.test(q)) return;
+      let M = Et(program_2);
+      if (eo(M) && M !== "runuser") return anchored(program_2) && !/[ \t]/.test(program_2.text) ? void 0 : zt([{
+        text: M,
+        quoted: !1,
+        raw: M
+      }, ...args], piped_2, y, w, !0);
+    } else program_2 = {
+      ...program_2,
+      text: text_4
+    };
+  }
+  if (program_2.quoted && /[ \t]/.test(program_2.text) && !program_2.text.includes("/")) {
+    y.push(program_2.text);
+    return;
+  }
+  let F = si(Et(program_2)),
+    D = [program_2, ...args, ...redirects_2.map(item => item.target)].find(item => ct(item, w));
+  if (D !== void 0) return "it names " + D.text;
+  if (program_2.text.includes("/") && !ho(program_2) && !program_2.text.endsWith("/")) return "it runs a file by a relative path";
+  if (w.standing === void 0 && /(?:^|[^$])\{[-+]?\d*[.\/#%+]{0,4}\}/.test(program_2.text)) return "it runs a file by a relative path";
+  if (F === "for" || F === "select") return args.slice(args.findIndex(item => item.text === "in") + 1).some(item => xe(item) && /[\/*?[]/.test(item.text)) ? "it loops over files by a relative name" : void 0;
+  if (F === "source" || program_2.text === ".") {
+    let N = args[0]?.text === "--" ? args[1] : args[0];
+    if (N !== void 0 && qe(N)) {
+      if (heredoc_2 !== void 0 && N.text !== "<(\u2026)") {
+        y.push(heredoc_2);
+        return;
+      }
+      return "it runs a shell or interpreter whose program arrives on a pipe, a heredoc or a file descriptor";
+    }
+    return xe(N) ? "it sources a file by a relative name" : void 0;
+  }
+  let H = ki(F, args);
+  if (H === "reads_input") return Ct(Qt[F], w);
+  if (H !== void 0) {
+    if (H !== "held") for (let N of H.lines ?? []) y.push(N);
+    return H === "held" || H.held ? "it runs " + F + " with a command or file this machine cannot verify" : (H.words ?? []).map(item => zt(item, piped_2, y, w)).find(item => item !== void 0);
+  }
+  if (oi.has(F) || ao(F, args) !== void 0) return F !== "hg" && args.length > 0 && args.every(item => ro.test(item.text)) ? void 0 : "it runs a project tool, such as make or npm";
+  let V = F === "rscript" ? Ze(F, args) : void 0;
+  if (di.has(F) && !(F === "rscript" && (typeof V === "object" ? args.slice(0, args.indexOf(V)) : args).some(item => item.text === "--vanilla"))) return "it runs " + F;
+  if (Oe.has(F) || Zt.has(F) || program_2.text === ":" && x === void 0) {
+    let N = Oe.has(F),
+      q = program_2.text !== ":" && (N ? hi(F, args) : pi(F, args));
+    if (!q) {
+      for (let {
+        op: op_4,
+        target: target
+      } of redirects_2) {
+        if ((op_4 === "<" || op_4 === "<>") && (xe(target) || qe(target))) return program_2.text === ":" ? "it reads a compound command's input from a file in the launch directory" : "it runs a script by a relative name";
+        if (op_4 === "<<<" && Oe.has(F)) {
+          if (/^\$/.test(target.text.trim())) return "it runs a command held in a variable or produced by another command";
+          y.push(target.text);
+        }
+      }
+      if (heredoc_2 !== void 0 && Oe.has(F)) y.push(heredoc_2);
+    }
+    let Q = N && !q && heredoc_2 === void 0 && !redirects_2.some(item => /^<(?!>)/.test(item.op) || item.op === "<>");
+    if (!q && program_2.text !== ":" && (piped_2 || Q || !Oe.has(F) && (heredoc_2 !== void 0 || redirects_2.some(item => item.op === "<<<")))) return F === "python" || F === "pypy" ? uo(args) : "it runs a shell or interpreter whose program arrives on a pipe, a heredoc or a file descriptor";
+  }
+  if (Oe.has(F)) return ci(F, args, y, w, {
+    redirects: redirects_2,
+    heredoc: heredoc_2,
+    piped: piped_2
+  });
+  if (F === "python" || F === "pypy") {
+    let N = uo(args);
+    if (N !== void 0) return N;
+  } else if (F === "perl") {
+    if (args.some((item, index) => {
+      let Q = /^-[acnpsTtwWX]*(?:I([\s\S]*)|[Mm]lib(?:=([\s\S]*)|(\s[\s\S]*))?)$/.exec(item.text);
+      return Q !== null && (Q[1] !== void 0 ? ut(At(args, Q[1], index), w) : Q[3] !== void 0 ? Q[3].trim() !== "" : (Q[2] ?? "").split(",").some(J => J !== "" && ut({
+        value: J,
+        tildeLiteral: !0
+      }, w)));
+    })) return "it runs perl with -I or the lib pragma";
+  } else if (F === "ruby") {
+    let N = Ze("ruby", args),
+      q = typeof N === "object" && args.includes(N) ? args.slice(0, args.indexOf(N)) : args;
+    if (q.some((item, index) => {
+      let M = /^-[acdlnpsvwy]*I(.*)$/.exec(item.text);
+      if (M !== null) return At(q, M[1], index).value.split(":").some((ie, index, ne) => (ie !== "" || ne.length === 1) && ut({
+        value: ie,
+        tildeLiteral: !1
+      }, w));
+      let ee = /^(?:-[acdlnpsvwy]*r|--require=?)([\s\S]*)$/.exec(item.text);
+      if (ee === null) return !1;
+      let {
+        value: re
+      } = At(q, ee[1], index);
+      return /^\.\.?\//.test(re) || /^bundler(?:\/+setup(?:\.rb)?)?$/i.test(re) || ct({
+        text: re,
+        quoted: !1,
+        raw: re
+      }, w);
+    })) return "it runs ruby with -I or -r";
+  } else if (F === "node" || F === "nodejs" || F === "tsx" || F === "ts-node") {
+    if (args.some((item, index) => /^(?:-r|--require|--import|--(?:experimental-)?loader)(?:=|$)/.test(item.text) && !/^(?:\/|node:)/.test(item.text.includes("=") ? item.text.split("=")[1] ?? "" : args[index + 1]?.text ?? ""))) return "it runs node with --require, --import or --loader";
+    let N = args.findIndex(item => /^(?:-e|--eval|-p|--print|-pe|-ep)$/.test(item.text)),
+      q = N !== -1 ? args[N + 1]?.text : args.find(item => /^--(?:eval|print)=/.test(item.text))?.text.replace(/^--(?:eval|print)=/, "");
+    if (q !== void 0 && Si(q)) return "it runs node code that loads a module by a bare or relative name";
+  } else if (F === "lua") {
+    if (args.some(item => /^-l/.test(item.text))) return "it runs lua with -l";
+  } else if (F === "php") {
+    let N = Ri(args, w);
+    if (N !== void 0) return N;
+  }
+  if (Zt.has(F) || ai(F) && !Oe.has(F)) {
+    let N = Ze(F, args);
+    if (N === "unknown_option") return "it runs an interpreter with an option this version does not know";
+    if (N !== void 0 && qe(N) && F !== "python" && F !== "pypy") return "it runs a shell or interpreter whose program arrives on a pipe, a heredoc or a file descriptor";
+    if (N !== void 0 && (N.text === "{}" || xe(N))) return "it runs a script by a relative name";
+    return;
+  }
+  if (/^(?:emacs|vim?|nvim|gvim|view|ex)$/.test(F) && args.some((item, index) => {
+    let Q = /^(?:--?script|--load|-l|-S|-u)(?:=([\s\S]*))?$/.exec(item.text),
+      J = Q === null ? void 0 : Q[1] ?? args[index + 1]?.text ?? "-";
+    return J !== void 0 && !(item.text === "-u" && /^(?:NONE|NORC|DEFAULTS)$/.test(J)) && (J.startsWith("-") ? item.text === "-S" : !/^[\/~$]/.test(J));
+  })) return "it runs a script by a relative name";
+  let te = ni[F];
+  if (te !== void 0) {
+    if (args.some(item => item.text === "{}" || !item.text.startsWith("-") && te.test(item.text) && xe(item))) return "it runs a script by a relative name";
+    if (args.every(item => item.text.startsWith("-")) && (piped_2 || heredoc_2 !== void 0 || redirects_2.some(item => item.op.startsWith("<")))) return "it runs a shell or interpreter whose program arrives on a pipe, a heredoc or a file descriptor";
+  }
+  let Z = F === "dart" ? (args[0]?.text === "run" ? args.slice(1) : args).find(item => !item.text.startsWith("-")) : void 0;
+  if (Z !== void 0 && Z.text.endsWith(".dart") && xe(Z)) return "it runs a script by a relative name";
+  if (F === "git") return vi(args, assignments_2, y);
+  if (F === "java") {
+    let N = args.findIndex(item => item.text === "-jar"),
+      q = args.findIndex(item => /^(?:-cp|-classpath|--class-path)$/.test(item.text)),
+      Q = q === -1 ? args.find(item => item.text.startsWith("--class-path="))?.text.slice(13) : args[q + 1]?.text;
+    if (N !== -1) return xe(args[N + 1]) ? "it runs a file by a relative path" : void 0;
+    return args.length > 0 && args.every(item => ro.test(item.text)) ? void 0 : Q !== void 0 && Q.split(":").every(item => Te(item)) ? void 0 : "it runs java with the working directory on its class path";
+  }
+  if (F === "eval") {
+    y.push((args[0]?.text === "--" ? args.slice(1) : args).map(item => item.text).join(" "));
+    return;
+  }
+  if (F === "nix-shell" || F === "nix") {
+    let N = args.findIndex(item => /^(?:--run|--command|-c)$/.test(item.text));
+    if (N !== -1 && args[N + 1] !== void 0) y.push(args.slice(N + 1).map(item => item.text).join(" "));
+    return ao(F, args) !== void 0 || F === "nix-shell" ? "it runs a project tool, such as make or npm" : void 0;
+  }
+  if (F === "trap") {
+    let N = args[0]?.text === "--" ? args.slice(1) : args;
+    if (N.length >= 2 && !/^-[lp]$/.test(N[0].text) && N[0].text !== "-") y.push(N[0].text);
+    return;
+  }
+  if (F === "alias") {
+    for (let N of args) {
+      let q = N.text.indexOf("=");
+      if (q > 0) y.push(N.text.slice(q + 1));
+    }
+    return;
+  }
+  if (F === "enable" || F === "hash") {
+    let N = args.findIndex(item => item.text === (F === "enable" ? "-f" : "-p"));
+    return N !== -1 && xe(args[N + 1]) ? "it runs a file by a relative path" : void 0;
+  }
+  if (F === "exec" || F === ":") return;
+  if (F === "find") {
+    let N = [];
+    for (let q = 0; q < args.length; q += 1) {
+      if (!/^-(?:exec|execdir|ok|okdir)$/.test(args[q].text)) continue;
+      let Q = q + 1;
+      while (Q < args.length && args[Q].text !== ";" && args[Q].text !== "+") Q += 1;
+      let J = args.slice(q + 1, Q);
+      if (J.length === 0) continue;
+      let M = zt(J, !1, y, w);
+      N.push(J[0].text === "{}" || Vt(J).some(item => item.program.text === "{}") ? "it runs a file by a relative path" : M), q = Q;
+    }
+    return N.find(item => item !== void 0);
+  }
+  return;
+}
+function ao(e, n) {
+  let r = ri[e];
+  if (r === void 0) return;
+  return n.find(item => r.has(item.text.startsWith("--") ? nt(item.text, "=") : item.text))?.text;
+}
+var li = 4,
+  po = "it wraps a command in more than four layers of commands such as find -exec or parallel",
+  Yt = "it runs env with -P naming a relative directory",
+  Qt = {
+    parallel: "it runs parallel with no command of its own",
+    script: "it runs script with no command of its own",
+    su: "it runs su with no command",
+    runuser: "it runs runuser with no command",
+    sudo: "it starts a shell through sudo or doas with no command"
+  },
+  mo = new Set([po, Yt, ...Object.values(Qt)]);
+function Ct(e, n) {
+  if (mo.has(e)) n.standing?.push(e);
+  return e;
+}
+function zt(e, piped_3, r, s, u = !1) {
+  let nesting = (s.nesting ?? 0) + 1;
+  if (nesting > li) return Ct(po, s);
+  if (e.length === 0) return;
+  let y = [...(u ? [] : [{
+      program: e[0],
+      args: e.slice(1),
+      assignments: []
+    }]), ...Vt(e).filter(item => u || item.args.length !== e.length - 1)],
+    w = [];
+  for (let S of y) {
+    let R = It({
+      ...S,
+      redirects: [],
+      piped: piped_3
+    }, r, {
+      ...s,
+      nesting: nesting
+    });
+    if (R !== void 0 && s.standing === void 0) return R;
+    w.push(R);
+  }
+  return w.find(item => item !== void 0);
+}
+var di = new Set(["bun", "deno", "tsx", "ts-node", "lua", "rscript", "r", "bb"]);
+function Te(e) {
+  return /^[\/~$]/.test(e) && !/^~[+-]/.test(e) && e !== "";
+}
+function At(e, value_3, r) {
+  return value_3 !== "" ? {
+    value: value_3,
+    tildeLiteral: !0
+  } : {
+    value: e[r + 1]?.text ?? "",
+    tildeLiteral: e[r + 1]?.quoted ?? !1
+  };
+}
+function ut({
+  value: e,
+  tildeLiteral: tildeLiteral
+}, r) {
+  return tildeLiteral && e.startsWith("~") || !Te(e) || r.make === !0 && /^\$[({](?:CURDIR|PWD)[)}]/.test(e) || ct({
+    text: e,
+    quoted: !1,
+    raw: e
+  }, r);
+}
+function qe(e) {
+  return e !== void 0 && /^(?:\/dev\/(?:stdin|fd\/\d+)|\/proc\/(?:self|\d+)\/fd\/\d+|-|[<>]\(\u2026\))$/.test(e.text);
+}
+function ct(e, n) {
+  if (n.roots.length === 0) return !1;
+  let r = e.text;
+  if (/^\$(?:HOME|\{HOME\})(?=\/|$)/.test(r)) r = n.home + r.replace(/^\$(?:HOME|\{HOME\})/, "");else if (/^~[A-Za-z0-9._-]*(?=\/|$)/.test(r)) r = n.home + r.replace(/^~[A-Za-z0-9._-]*/, "");
+  if (!r.startsWith("/")) return !1;
+  let s = Gr.normalize(r);
+  return n.roots.some(item => MBe(s, item));
+}
+function ci(e, n, r, s, u) {
+  let y = u.piped || u.heredoc !== void 0 || u.redirects.some(item => item.op.startsWith("<")),
+    w = R => y && !/^\$/.test(R.text.trim()) ? wo(R.text, u, r, s) : mi(R, r),
+    S = !1;
+  for (let R = 0; R < n.length; R += 1) {
+    let C = n[R],
+      A = C.text;
+    if (A === "--") {
+      let x = n[R + 1];
+      if (x === void 0) return;
+      return S ? w(x) : !/^[\/~$]/.test(x.text) || /^~[+-]/.test(x.text) ? "it runs a script by a relative name" : void 0;
+    }
+    if (e === "fish") {
+      let x = /^(?:-C|--init-command(?:=([\s\S]*))?)$/.exec(A);
+      if (x !== null) {
+        let K = x[1] !== void 0 ? {
+            ...C,
+            text: x[1]
+          } : n[R + 1],
+          G = K === void 0 ? void 0 : w(K);
+        if (G !== void 0 && s.standing === void 0) return G;
+        R += x[1] !== void 0 ? 0 : 1;
+        continue;
+      }
+    }
+    if (go(e, A) && !A.startsWith("--command=")) {
+      if (e === "pwsh" && /^-e/i.test(A)) return "it hands pwsh an encoded command";
+      S = !0, R += en(e, A);
+      continue;
+    }
+    if (A.startsWith("--command=")) return w({
+      ...C,
+      text: A.slice(10)
+    });
+    if (/^--(?:rcfile|init-file)=/.test(A)) {
+      if (!Te(A.slice(A.indexOf("=") + 1))) return "it runs " + e + " with an rc file by a relative name";
+      continue;
+    }
+    let E = en(e, A);
+    if (E > 0) {
+      let x = n[R + 1]?.text;
+      if (R += E, /^--(?:rcfile|init-file)$/.test(A) && x !== void 0 && !Te(x)) return "it runs " + e + " with an rc file by a relative name";
+      continue;
+    }
+    if (A.startsWith("-") || A.startsWith("+")) continue;
+    if (S) {
+      let x = w(C);
+      return e === "pwsh" && R + 1 < n.length ? x ?? w({
+        ...C,
+        text: n.slice(R).map(item => item.text).join(" ")
+      }) : x;
+    }
+    return qe(C) ? "it runs a shell whose program arrives on a pipe, a heredoc or a file descriptor" : xe(C) ? "it runs a script by a relative name" : void 0;
+  }
+  return;
+}
+var ui = new Set(["bash", "sh", "dash", "ash", "ksh", "mksh", "zsh", "rbash"]);
+function en(e, n) {
+  if (/^--(?:rcfile|init-file)$/.test(n)) return 1;
+  if (ui.has(e)) {
+    let r = /^[-+]([a-zA-Z]+)$/.exec(n);
+    if (r === null) return 0;
+    if (e === "zsh" || e === "ksh" || e === "mksh") return (e === "zsh" ? /o$/ : /[oO]$/).test(r[1]) ? 1 : 0;
+    return (r[1].match(/[oO]/g) ?? []).length;
+  }
+  if (e === "fish") return /^(?:[+-]O|\+o|-C|--init-command|-p|--profile|-d|--debug|-D|--debug-stack-frames|-f|--features)$/.test(n) ? 1 : 0;
+  if (e === "pwsh") return /^-(?:o|of|outputformat|ex|ep|executionpolicy|wd|workingdirectory|config|configurationname|custompipename|if|inp|inputformat|settings|settingsfile|w|windowstyle|v|version)$/i.test(n) ? 1 : 0;
+  return n === "-o" || n === "+o" || n === "-O" || n === "+O" ? 1 : 0;
+}
+function fi(e, n) {
+  let r = new Set();
+  for (let s = 0; s < n.length; s += 1) {
+    let u = n[s].text;
+    if (u === "--") break;
+    if (u.startsWith("-") || u.startsWith("+")) {
+      let h = en(e, u);
+      for (let y = 1; y <= h; y += 1) r.add(s + y);
+      s += h;
+    }
+  }
+  return r;
+}
+function hi(e, n) {
+  let r = fi(e, n),
+    s = n.findIndex((item, index) => !r.has(index) && !/^[-+]./.test(item.text)),
+    u = s === -1 ? n : n.slice(0, s);
+  if (u.some(item => go(e, item.text))) return (s !== -1 || u.some(item => /^--command=./.test(item.text))) && !(e === "pwsh" && n[s]?.text === "-");
+  let h = e !== "fish" && e !== "pwsh" && u.some(item => lme(item.text, "s"));
+  return s !== -1 && !qe(n[s]) && !h;
+}
+function go(e, n) {
+  return e === "pwsh" ? /^-(?:c|command|cwa|commandwithargs|e|ec|encodedcommand)$/i.test(n) : lme(n, "c") || /^--command(?:=|$)/.test(n);
+}
+function pi(e, n) {
+  let r = Ze(e, n);
+  return n.some(item => tn(e, item.text)) || /^(?:[gnm]?awk|g?sed)$/.test(e) && n.some(item => !item.text.startsWith("-")) || typeof r === "object" && !qe(r);
+}
+function mi(e, n) {
+  if (/^\$/.test(e.text.trim())) return "it hands a shell a command held in a variable or produced by another command";
+  n.push(e.text);
+  return;
+}
+function wo(e, n, r, s) {
+  let {
+    commands: commands_2,
+    unreadable: unreadable
+  } = Rt(e, {
+    make: !1
+  });
+  if (unreadable !== null) return `it could not be read to the end as shell (${unreadable})`;
+  return commands_2.map(item => It(item.program.text === ":" && item.args.length === 0 && item.redirects.length === 0 ? item : {
+    ...item,
+    redirects: [...item.redirects, ...n.redirects.filter(item => item.op.startsWith("<"))],
+    heredoc: item.heredoc ?? n.heredoc,
+    piped: item.piped || n.piped
+  }, r, {
+    ...s,
+    fromPayload: !0
+  })).find(item => item !== void 0);
+}
+function gi(e, n, r = []) {
+  let s = Array(e.length + 1),
+    u = Array(e.length + 1).fill(!1),
+    h = Array(e.length + 3).fill(!1);
+  for (let A = e.length - 1; A >= 0; A -= 1) {
+    let E = e[A].text,
+      x = /^(?:-[iv0]*[uCP]|--unset|--chdir)$/.test(E) ? 2 : 1;
+    h[A] = E.startsWith("-") && (/^-[iv0]*P/.test(E) && !(E.replace(/^-[iv0]*P/, "") || (e[A + 1]?.text ?? "")).split(":").every(Te) || h[A + x]), s[A] = /^(?:-S.|--split-string=)/.test(E) ? E.replace(/^(?:-S|--split-string=)/, "") : s[A + 1];
+    let K = /^-[0oprtx]+a([\s\S]*)$/.exec(E),
+      G = /^(?:-a|--arg-file)$/.test(E) ? e[A + 1]?.text : E.startsWith("--arg-file=") ? E.slice(11) : E.startsWith("-a") && E.length > 2 ? E.slice(2) : K !== null ? K[1] || e[A + 1]?.text : void 0;
+    u[A] = G !== void 0 && !Te(G) || u[A + 1];
+  }
+  let y = e.map(item => item.text.slice(item.text.lastIndexOf("/") + 1).toLowerCase()),
+    w = y.indexOf("xargs"),
+    S = w === -1 ? [] : L(e.slice(w + 1).flatMap((item, index, x) => {
+      let K = /^-[0oprtx]*([IJi])([\s\S]*)$/.exec(item.text);
+      if (K === null) return /^--replace(?:=|$)/.test(item.text) ? [item.text.split("=")[1] ?? "{}"] : [];
+      return K[1] === "i" ? ["{}", ...(K[2] === "" ? [] : [K[2]]), ...(K[2].includes("=") ? [item.text.split("=")[1]] : [])] : [K[2] || x[index + 1]?.text].filter(item => item !== void 0);
+    })),
+    R = S.length > 64 || r.some(item => S.some(E => item.text.includes(E)));
+  y.forEach((item, index) => {
+    if (item === "env" && s[index + 1] !== void 0) n.push(s[index + 1]);
+  });
+  let C = y.map((item, index) => {
+    if (item === "env") return !e[index].text.startsWith("-") && h[index + 1] ? Yt : void 0;
+    if (item !== "xargs") return;
+    return R ? "it runs what xargs splices into the command from its input" : u[index + 1] ? "it runs xargs with its arguments read from a file by a relative name" : void 0;
+  });
+  return C.find(item => item === Yt) ?? C.find(item => item !== void 0);
+}
+function wi(e, n) {
+  let r = e.slice(n + 1),
+    s = r.findIndex((item, index) => !item.text.startsWith("-") && !Bt.has(r[index - 1]?.text ?? "")),
+    u = s === -1 ? "" : r[s + 1]?.text ?? "",
+    h = /^(?:-c|--command)$/.test(u) ? r[s + 2] : void 0;
+  if (h !== void 0) return {
+    at: n + s + 3,
+    text: h.text
+  };
+  return u.startsWith("--command=") ? {
+    at: n + s + 2,
+    text: u.slice(10)
+  } : void 0;
+}
+var Kt = new Set(["-j", "-P", "-a", "-S", "-C", "-N", "-n", "-L", "-s", "-I", "-U", "-d", "-E", "-J", "-D", "--jobs", "--max-procs", "--arg-file", "--sshlogin", "--sshloginfile", "--slf", "--colsep", "--max-replace-args", "--max-args", "--max-lines", "--max-chars", "--delimiter", "--eof", "--halt", "--halt-on-error", "--joblog", "--results", "--res", "--delay", "--timeout", "--retries", "--tmpdir", "--workdir", "--wd", "--tagstring", "--env", "--rpl", "--load", "--memfree", "--memsuspend", "--nice", "--limit", "--termseq", "--basefile", "--bf", "--return", "--profile", "--transferfile", "--tf", "--block", "--blocksize", "--block-size", "--recstart", "--recend", "--compress-program", "--header", "--id", "--semaphorename", "--semaphoretimeout", "--st", "--shellquote-ignore"]),
+  lo = new Set(["-t", "-F", "-E", "--echo", "-O", "--log-out", "-I", "--log-in", "-B", "--log-io", "-T", "--log-timing", "-m", "--logging-format", "-o", "--output-limit"]);
+function xt(e, n, r = !1) {
+  let s = 0;
+  while (s < e.length && e[s].text.startsWith("-")) {
+    let u = e[s].text;
+    s += n.has(u) || r && /^-[A-Za-z]{2,}$/.test(u) && n.has("-" + u.at(-1)) ? 2 : 1;
+  }
+  return e.slice(s);
+}
+function ki(e, n) {
+  let r = u => u >= 0 && u < n.length ? {
+      words: [n.slice(u)]
+    } : void 0,
+    s = u => u.filter((item, index) => item.length > 0 && u.findIndex(w => w.length === item.length && w.every((S, index) => S === item[index])) === index);
+  switch (e) {
+    case "su":
+    case "runuser":
+      {
+        let u = n.flatMap((item, index) => {
+            let R = /^(?:-[flmpPT]*c|--(?:session-)?command(?==|$))=?([\s\S]*)$/.exec(item.text);
+            return R === null ? [] : [R[1] !== "" ? R[1] : n[index + 1]?.text];
+          }),
+          h = n.some((item, index) => {
+            let R = /^(?:-[flmpPT]*s|--shell)(?:=?([\s\S]+))?$/.exec(item.text),
+              C = R === null ? void 0 : R[1] ?? n[index + 1]?.text;
+            return C !== void 0 && !/^[\/~$]/.test(C);
+          });
+        if (u.length === 0) {
+          if (e === "runuser" && n.some(item => /^(?:-[flmpPT]*u|--user(?:=|$))/.test(item.text)) || n.length > 0 && n.every(item => /^(?:--version|--help|-V|-h)$/.test(item.text))) return;
+          let w = n.filter((item, index) => !item.text.startsWith("-") && !/^(?:-[flmpPT]*[sgGwu]|--shell|--group|--supp-group|--whitelist-environment|--user)$/.test(n[index - 1]?.text ?? ""));
+          return w.length <= 1 ? "reads_input" : h ? "held" : {
+            words: [[{
+              text: "sh",
+              quoted: !1,
+              raw: "sh"
+            }, ...w.slice(1)]]
+          };
+        }
+        let lines = u.filter(item => item !== void 0);
+        return {
+          lines: lines,
+          held: lines.length < u.length || h
+        };
+      }
+    case "watch":
+      {
+        let u = L([/^(?:-n|--interval|-d|--differences|-q|--equexit)$/, /^(?:-[a-zA-Z]*[nq]|--interval|--equexit)$/].map(item => {
+          let y = 0;
+          while (y < n.length && n[y].text.startsWith("-")) y += item.test(n[y].text) ? 2 : 1;
+          return y;
+        })).filter(item => item < n.length);
+        return u.length === 0 ? void 0 : {
+          lines: u.map(item => n.slice(item).map(item => item.text).join(" "))
+        };
+      }
+    case "script":
+      {
+        let u = n.findIndex(item => /^(?:-[a-zA-Z]*c|--command)$/.test(item.text));
+        if (u !== -1) {
+          let S = n[u + 1]?.text;
+          return S === void 0 ? "held" : {
+            lines: [S]
+          };
+        }
+        let h = n.filter(item => !item.text.startsWith("-"));
+        if (h.length < 2) return n.length > 0 && n.every(item => /^(?:--version|--help|-V|-h)$/.test(item.text)) ? void 0 : "reads_input";
+        let y = xt(n, lo),
+          w = xt(n, lo, !0);
+        if (y.length <= 1 || w.length <= 1) return "reads_input";
+        return {
+          words: s([h.slice(1), n.slice(n.indexOf(h[0]) + 1), y.slice(1), w.slice(1)])
+        };
+      }
+    case "dotenv":
+      return "held";
+    case "direnv":
+      {
+        if (n[0]?.text !== "exec") return;
+        let u = n[1];
+        return u === void 0 || !Te(u.text) ? "held" : r(2);
+      }
+    case "op":
+      {
+        if (n[0]?.text !== "run") return;
+        let u = n.findIndex(item => /^--env-file(?:=|$)/.test(item.text));
+        if (u !== -1) {
+          let y = n[u].text.includes("=") ? n[u].text.slice(11) : n[u + 1]?.text ?? "";
+          if (!Te(y)) return "held";
+        }
+        let h = n.findIndex(item => item.text === "--");
+        return h === -1 ? void 0 : r(h + 1);
+      }
+    case "hyperfine":
+      {
+        let u = [],
+          h = /^(?:-p|--prepare|-s|--setup|-c|--cleanup|--conclude)$/,
+          y = /^(?:-w|--warmup|-r|--runs|-m|--min-runs|-M|--max-runs|-n|--command-name|--export-\w+|--output|--shell|--sort|-u|--time-unit|-D|--parameter-step-size)$/,
+          w = [];
+        for (let S = 0; S < n.length; S += 1) {
+          let R = n[S].text;
+          if (h.test(R)) u.push(n[S + 1]?.text ?? ""), S += 1;else if (/^(?:-L|--parameter-list)$/.test(R)) w.push(...(n[S + 2]?.text ?? "").split(",")), S += 2;else if (/^(?:-P|--parameter-scan)$/.test(R)) S += 3;else if (y.test(R)) S += 1;else if (!R.startsWith("-")) u.push(R);
+        }
+        return {
+          lines: [u.join(`
+`), ...(u.length > 1 ? u : []), ...w]
+        };
+      }
+    case "parallel":
+      {
+        let u = n.filter(item => !item.text.startsWith("-") && item.text !== ":::");
+        if (u.length === 0) return "reads_input";
+        let h = n.findIndex(item => !item.text.startsWith("-")),
+          y = n.slice(h),
+          w = y.findIndex(item => /^::::?\+?$/.test(item.text)),
+          S = y.filter(item => !/^::::?\+?$/.test(item.text)),
+          R = xt(n, Kt),
+          C = xt(n, Kt, !0);
+        if ([R, C].some(item => item.length === 0 || /^::::\+?$/.test(item[0].text))) return "reads_input";
+        let A = new Set(n.filter((item, index) => Kt.has(n[index - 1]?.text ?? "") && /^\{[-+]?\d*[.#%+]{0,4}\}$/.test(item.text))),
+          E = x => {
+            let K = x.findIndex(item => !A.has(item));
+            return K === -1 ? [] : x.slice(K);
+          };
+        return {
+          words: s([E(u), E(S), R.filter(item => !/^::::?\+?$/.test(item.text)), C.filter(item => !/^::::?\+?$/.test(item.text))]),
+          lines: w === 0 || [R, C].some(item => /^:::\+?$/.test(item[0].text)) ? S.map(item => item.text) : []
+        };
+      }
+    default:
+      return;
+  }
+}
+function Ze(e, n) {
+  if (e === "deno") return n[0]?.text === "run" ? n.slice(1).find(item => !item.text.startsWith("-")) : void 0;
+  if (e === "php") {
+    let php = io.php;
+    for (let h = 0; h < n.length; h += 1) {
+      let y = n[h].text,
+        w = /^(?:-[fF]|--file)(?:=?([\s\S]+))?$/.exec(y);
+      if (w !== null) return w[1] !== void 0 ? {
+        ...n[h],
+        text: w[1]
+      } : n[h + 1];
+      if (!y.startsWith("-") || y === "-" || y === "--") break;
+      if (php.has(y)) h += 1;
+    }
+  }
+  if (/^(?:[gnm]?awk|g?sed)$/.test(e)) {
+    let u = e.endsWith("awk"),
+      h = u ? /^-[a-zA-Z]*[fE]$/ : /^-[a-zA-Z]*f$/,
+      y = u ? /^-[fE]./ : /^-f./;
+    for (let w = 0; w < n.length; w += 1) {
+      let S = n[w].text;
+      if (h.test(S)) return n[w + 1];
+      if (y.test(S)) return {
+        ...n[w],
+        text: S.slice(2)
+      };
+      if (S.startsWith("--file=")) return {
+        ...n[w],
+        text: S.slice(7)
+      };
+    }
+    return;
+  }
+  let r = io[e] ?? new Set(),
+    s = !1;
+  for (let u = 0; u < n.length; u += 1) {
+    let h = n[u].text;
+    if (h === "--") return n[u + 1];
+    if (h === "-" || !h.startsWith("-")) return h === "-" ? n[u] : s ? "unknown_option" : n[u];
+    if (tn(e, h)) return;
+    if (r.has(h)) {
+      u += 1;
+      continue;
+    }
+    if ([...r].some(item => item.length === 2 && h.length > 2 && h.startsWith(item))) continue;
+    if (h.startsWith("--") && h.includes("=")) continue;
+    if (!_i[e]?.test(h)) s = !0;
+  }
+  return;
+}
+var _i = {
+    python: /^-[bBdEhiIOPqRsSuvVxE]+$|^--(?:version|help)$/,
+    pypy: /^-[bBdEhiIOqRsSuvVx]+$/,
+    node: /^--(?:enable-source-maps|no-warnings|no-deprecation|throw-deprecation|trace-warnings|trace-deprecation|pending-deprecation|experimental-strip-types|expose-gc|no-addons|preserve-symlinks|frozen-intrinsics|disallow-code-generation-from-strings|jitless|version|help)$|^-[civ]$/,
+    ruby: /^-[acdhlnpsSTUvwWy0]+$|^--[a-z][a-z-]*$/,
+    perl: /^-(?:[acfgnpsStTuUvwWX]|l[0-7]*|0[0-7]*|i\S*)+$/,
+    osascript: /^-i$/,
+    rscript: /^--[a-z][a-z-]*$/,
+    php: /^-[aeHilmnqsvw]+$|^--[a-z-]+$/,
+    lua: /^-[ivEW]$/,
+    tsx: /^--[a-z][a-z0-9-]*$/,
+    "ts-node": /^--[a-zA-Z][a-zA-Z0-9-]*$|^-[hvT]$/,
+    bb: /^--?[a-z][a-z-]*$/
+  },
+  yi = new Set(["assert", "async_hooks", "buffer", "child_process", "cluster", "console", "constants", "crypto", "dgram", "diagnostics_channel", "dns", "domain", "events", "fs", "http", "http2", "https", "inspector", "module", "net", "os", "path", "perf_hooks", "process", "punycode", "querystring", "readline", "repl", "stream", "string_decoder", "sys", "timers", "tls", "trace_events", "tty", "url", "util", "v8", "vm", "wasi", "worker_threads", "zlib", "test", "sqlite"]);
+function Si(e) {
+  for (let n of e.matchAll(/(?:\brequire\s*(?:\?\.)?\s*\(|\bimport\s*\(|\bimport\s+(?:[\w*{}\s,]+\s+from\s+)?|\bfrom\s+|\bcreateRequire\b[^'"]*)\s*['"]([^'"]+)['"]/g)) {
+    let r = n[1];
+    if (r.startsWith("/") || r.startsWith("node:")) continue;
+    if (!yi.has(nt(r, "/"))) return !0;
+  }
+  return /\bcreateRequire\b/.test(e);
+}
+function co(e, n = !1) {
+  for (let r of e) {
+    let s = /^([A-Za-z_][A-Za-z0-9_]*)(?:\[[^\]]*\])?\+?=([\s\S]*)$/.exec(r.text);
+    if (s === null) continue;
+    let u = s[1],
+      h = s[2],
+      y = S => S === "." || !/^[\/~$]/.test(S) || /^~[+-]|^\$\{?PWD\b|^\$\(/.test(S),
+      w = S => /^\$/.test(S) && !new RegExp(`^\\$\\{?(?:${u}|HOME|PATH)\\b`).test(S);
+    if (y5e.includes(u)) {
+      if (h.split(":").some(item => y(item) || w(item))) return `it sets ${u} with the working directory or a relative entry on it`;
+    } else if (n && /^(?:path|fpath|manpath|cdpath)$/.test(u)) {
+      let S = /^\(([\s\S]*)\)$/.exec(h)?.[1];
+      if ((S === void 0 ? [h] : fo(S)).some(y)) return `it sets ${u} with the working directory or a relative entry on it`;
+    } else if (u === "PHPRC" || u === "PHP_INI_SCAN_DIR") {
+      let S = u === "PHPRC" ? [h] : h.split(":").filter(item => item !== "");
+      if (h !== "" && S.some(y)) return `it sets ${u} to a php.ini location in the working directory`;
+    } else if (Xr(u) || /^GIT_CONFIG_(?:COUNT|KEY_\d+|VALUE_\d+|PARAMETERS|GLOBAL|SYSTEM)$/.test(u)) return `it sets ${u}, which makes a shell, an interpreter or git load what it names`;else if (Kr.test(u)) {
+      let S = h.split(/[\s=]+/).find(item => Jr.test(item));
+      if (S !== void 0) return `it sets ${u}, which a tool runs or loads, to a file in the working directory (${S})`;
+    }
+  }
+  return;
+}
+function vi(e, n, r) {
+  if (n.some(item => /^(?:env|-i|--ignore-environment|-u|--unset)$/.test(item.text.slice(item.text.lastIndexOf("/") + 1)) || item.text.startsWith("GIT_CONFIG"))) return "it runs git with the environment that switches its repository hooks off cleared or edited";
+  for (let s = 0; s < e.length; s += 1) {
+    let u = e[s].text,
+      h;
+    if (u === "-c" || u === "--config-env") s += 1, h = e[s]?.text;else if (u.startsWith("--config-env=")) h = u.slice(13);else if (/^-c./.test(u)) h = u.slice(2);else if (/^--exec-path=(?![\/~])/.test(u)) return "it runs git with an exec path in the launch directory (git-* commands come from there)";
+    if (h === void 0) {
+      if (/^(?:bisect|submodule|rebase)$/.test(u)) {
+        let R = e.slice(s + 1),
+          C = R.findIndex(item => /^(?:run|foreach|-x|--exec)$/.test(item.text));
+        if (C !== -1 && R[C + 1] !== void 0) r.push(R.slice(C + 1).map(item => item.text).join(" "));
+        break;
+      }
+      continue;
+    }
+    let y = h.indexOf("="),
+      w = y === -1 ? h : h.slice(0, y),
+      S = y === -1 ? "" : h.slice(y + 1);
+    if (/^core\.hookspath$/i.test(w)) {
+      if (!/^(?:\/|~\/)/.test(S) || /^~[+-]/.test(S)) return "it runs git with core.hooksPath set on the command line";
+    } else if (/^include(?:if\.[^=]*)?\.path$/i.test(w) && !Te(S)) return "it runs git with an include path set on the command line";else if (S.startsWith("!") || S.includes("/") && !/^[\/~$]/.test(S) || /^(?:core\.(?:fsmonitor|sshcommand|askpass|editor|pager|gitproxy)|credential\.helper|diff\.external|gpg\.(?:\w+\.)?program|sequence\.editor|uploadpack\.packobjectshook)$/i.test(w)) return `it runs git with ${w} set on the command line to something that runs from the checkout`;
+  }
+  return;
+}
+var bi = /^(?:auto_prepend_file|auto_append_file|include_path|extension_dir|(?:zend_)?extension|opcache\.(?:preload|file_cache)|ffi\.preload|phar\.cache_list|sendmail_path|sqlite3\.extension_dir)$/;
+function Ri(e, n) {
+  let r = Ze("php", e),
+    s = typeof r === "object" ? e.indexOf(r) : -1,
+    u = e.findIndex(item => item.text === "--"),
+    h = typeof r === "object" && s !== -1 && !/^(?:-[fF]|--file)$/.test(e[s - 1]?.text ?? "") ? e.slice(0, s) : e.filter((item, index) => index !== s && (u === -1 || index < u)),
+    y = (S, R) => At(h, S.replace(/^=/, ""), R);
+  return h.some((item, index) => {
+    let C = /^(?:-[zc]|--zend-extension=?|--php-ini=?)(.*)$/.exec(item.text);
+    if (C !== null) return ut(y(C[1], index), n);
+    let A = /^(?:-d|--define=?)(.*)$/.exec(item.text);
+    if (A === null) return !1;
+    let {
+        value: value_4
+      } = y(A[1], index),
+      x = value_4.indexOf("="),
+      K = (x === -1 ? value_4 : value_4.slice(0, x)).trim(),
+      G = x === -1 ? "1" : value_4.slice(x + 1);
+    if (!bi.test(K)) return !1;
+    let W = value_5 => ut({
+      value: value_5,
+      tildeLiteral: !0
+    }, n);
+    if (K === "include_path") return G.split(":").some(W);
+    if (/^(?:zend_)?extension$/.test(K) && !G.includes("/")) return !1;
+    return G !== "" && W(G);
+  }) ? "it runs php with -z, -c or a -d setting that loads a file" : void 0;
+}
+function uo(e) {
+  let r = Ze("python", e),
+    s = e.findIndex(item => item === r || tn("python", item.text));
+  if ((s === -1 ? e : e.slice(0, e[s] === r ? s : s + 1)).some(item => /^-[bBdEhIOPqRsSuvVx]*i/.test(item.text))) return "it runs python with -i";
+  for (let h = 0; h < e.length; h += 1) {
+    let y = e[h].text;
+    if (y === "-" || qe(e[h])) return "it runs python with -m, -c or a program on stdin, without -P or -I";
+    if (!y.startsWith("-") || y === "--") return;
+    if (y.startsWith("--")) {
+      if (y === "--version" || y === "--help") return;
+      if (y === "--check-hash-based-pycs") h += 1;
+      continue;
+    }
+    for (let w = 1; w < y.length; w += 1) {
+      let S = y[w];
+      if (S === "I" || S === "P") return;
+      if (S === "V" || S === "h") return;
+      if (S === "W" || S === "X") {
+        if (w === y.length - 1) h += 1;
+        break;
+      }
+      if (S === "m") return "it runs python with -m, -c or a program on stdin, without -P or -I";
+      if (S === "c") {
+        let R = w < y.length - 1 ? y.slice(w + 1) : e[h + 1]?.text ?? "";
+        return ii.test(R) ? "it runs python with -m, -c or a program on stdin, without -P or -I" : void 0;
+      }
+    }
+  }
+  return "it runs python with -m, -c or a program on stdin, without -P or -I";
+}
+var Ei = /^[ \t]*-?(?:s?include|load)[ \t]+(?!=)([^\n]*)$|^[ \t]*\.[ \t]*[ds-]?include[ \t]*("[^\n]*)$|^[ \t]*@(?:include|load)[ \t]*("[^\n]*)$/gm,
+  Jt = /^(?:[gbp]|gnu)?(?:make|[gnm]?awk)$/i;
+function Xt(e) {
+  let n = e.trim().split(/[ \t]+/),
+    r = 0;
+  if (/(?:^|\/)env$/.test(n[0] ?? "")) {
+    r = 1;
+    while (r < n.length && (n[r].startsWith("-") || /^[A-Za-z_][A-Za-z0-9_]*=/.test(n[r]))) r += /^-[A-Za-z]*[PuC]$|^--(?:unset|chdir)$/.test(n[r]) ? 2 : 1;
+  }
+  let s = n[r] ?? "";
+  return s.slice(s.lastIndexOf("/") + 1);
+}
+var xi = /\bCLAUDE_PROJECT_DIR\b/i,
+  Ci = /^[ \t]*#.*$/gm;
+function ko(e, n, home_2, s) {
+  let h = (e.includes(0) ? Buffer.from(e.filter(item => item !== 0)) : e).toString("utf8"),
+    y = h.indexOf(`
+`),
+    w = h.startsWith("#!") ? h.slice(2, y === -1 ? void 0 : y) : "",
+    S = Xt(w),
+    R = s !== void 0 && s !== null ? /^(?:bash|sh|zsh|dash|ash|ksh|mksh|rbash|fish)$/i.test(s) : S === "" || ei.test(S) || Jt.test(S),
+    C = h.startsWith("#!") ? y === -1 ? "" : h.slice(y + 1) : h,
+    A = w + `
+` + (R ? Ai(C) : h.replace(Ci, "")),
+    E = wu(A),
+    x = L(n).flatMap(item => Zr(item, home_2)).find(item => new RegExp(`(?<![\\w./~$-])${La(wu(item))}${item.endsWith("/") ? "" : "(?![\\w.-])"}`).test(E));
+  if (x !== void 0) return `it names ${x.replace('"', "")}`;
+  if (xi.test(E)) return "it reads $CLAUDE_PROJECT_DIR";
+  if (Yr.test(E) || R && Qr.test(E)) return "it uses its working directory";
+  let shell = (s ?? S).toLowerCase();
+  if (/^t?csh$/.test(shell) && Array.from(C.matchAll(/^[ \t]*set[ \t]+path[ \t]*=[ \t]*\(([^)\n]*)\)/gm)).some(item => fo(item[1]).some(item => item === "." || !/^[\/~$]/.test(item)))) return "it sets path with the working directory or a relative entry on it";
+  let G;
+  try {
+    let W = {
+      roots: L(n),
+      home: home_2,
+      fromPayload: !1,
+      shell: shell
+    };
+    G = (R ? nn(C, Jt.test(Xt(w)), W) : void 0) ?? Ti(w, W);
+  } catch {
+    G = "it could not be read as shell";
+  }
+  if (G !== void 0) return G;
+  if (Jt.test(Xt(w)) && Ii(A)) return "it includes another build file, plugin or awk source by a relative name";
+  return;
+}
+function Ai(e) {
+  let n = [],
+    r = 0;
+  for (let [s, u] of no(e)) n.push(e.slice(r, s)), r = u;
+  return n.push(e.slice(r)), n.join("");
+}
+function Ii(e) {
+  for (let n of e.matchAll(Ei)) {
+    let r = (n[1] ?? n[2] ?? n[3] ?? "").trim().replace(/^"|"$/g, "").split(/[ \t]+/).filter(Boolean);
+    if (r.length === 0 || r.some(item => !/^(?:\/|~\/|\$\(HOME\)|\$\{HOME\}|"\/|'\/|<)/.test(item))) return !0;
+  }
+  return !1;
+}
+function Ti(e, n) {
+  let r = [],
+    standing = [];
+  for (let u of Rt(e).commands) It(u, r, {
+    roots: [],
+    home: "",
+    fromPayload: !1,
+    standing: standing
+  });
+  return standing[0] ?? r.map(item => nn(item, !1, {
+    ...n,
+    fromPayload: !0
+  }, 1)).find(item => item !== void 0);
+}
+function nn(e, make, r, s = 0) {
+  let {
+      commands: commands_3,
+      unreadable: unreadable_2
+    } = Rt(e, {
+      make: make
+    }),
+    y = [],
+    relativeNames = new Set(r.relativeNames);
+  for (let {
+    program: program_3,
+    args: args_2,
+    assignments: assignments_3
+  } of commands_3) {
+    let A = /^(?:export|declare|typeset|local|readonly)$/.test(program_3.text) ? [...assignments_3, ...args_2] : assignments_3;
+    for (let E of A) {
+      let x = /^([A-Za-z_][A-Za-z0-9_]*)=([^\/~$][\s\S]*)$/.exec(E.text);
+      if (x !== null) relativeNames.add(x[1]);
+    }
+  }
+  for (let S of commands_3) {
+    let R = It(S, y, {
+      ...r,
+      make: make,
+      relativeNames: relativeNames
+    });
+    if (R !== void 0) return R;
+  }
+  if (unreadable_2 !== null) return `it could not be read to the end as shell (${unreadable_2})`;
+  for (let S of y) {
+    let R = s >= 3 ? "it hands shell code to a shell too many layers deep" : nn(S, !1, {
+      ...r,
+      fromPayload: !0
+    }, s + 1);
+    if (R !== void 0) return R;
+  }
+  return;
+}
+var on = 128,
+  _o = Ut,
+  rn = 8,
+  Pi = 512,
+  Di = 600,
+  Oi = {
+    user: "your user settings",
+    local: "this folder's settings.local.json",
+    flag: "the --settings file"
+  };
+function sn(e, n, r) {
+  let s = n.type === "command" ? `${n.shell ?? r}\x00${n.command}\x00${_(n.args ?? null)}` : n.url;
+  return `${e.event}\x00${e.matcher ?? ""}\x00${n.type}\x00${s}\x00${n.if ?? ""}`;
+}
+function Eo(e) {
+  return e !== void 0 && e > 0 ? Math.min(e, Di) : void 0;
+}
+async function Tt(e, n) {
+  try {
+    let r = await e.realpath(n);
+    return hx(r) ? r : n;
+  } catch {
+    return n;
+  }
+}
+var $i = {
+    reason: "source_in_sync_root",
+    cause: "the cloud session can change that file"
+  },
+  Pt = {
+    reason: "source_in_sync_root",
+    cause: "this machine could not check where that file is"
+  },
+  Hi = {
+    reason: "sync_root_is_config_dir",
+    cause: "a directory the cloud session can write on this machine is a Claude config directory"
+  };
+async function Ni(e, n) {
+  let r = n.opts.sync?.rootReal,
+    s = e.source === "local" ? void 0 : n.opts.reachMemory;
+  if (e.settingsFile === null || !s?.everInReach.has(e.source) && r === void 0 && n.roots.extraReach.length === 0) return null;
+  let settingsFile = e.settingsFile,
+    h = e.source === "local" ? n.opts.localSettingsLocation : void 0,
+    y = h?.current ?? null;
+  if (y === null) {
+    let W = await UUe(await BUe(settingsFile, n.opts.launchDir), n.opts.launchDir, ffe());
+    if (W.verdict !== "local") return Pt;
+    try {
+      y = [W.spelling, await n.deps.realpath(W.spelling)];
+    } catch {
+      return Pt;
+    }
+    if (h !== void 0) h.current ??= y, y = h.current;
+  }
+  let w = [settingsFile, ...y, ...(s?.knownSpellings.get(e.source) ?? [])].map(wu),
+    S = I() === "windows",
+    R = S ? /[\\/]/ : "/",
+    C = [...(r !== void 0 ? [r] : []), ...(n.opts.sync?.root !== void 0 ? [n.opts.sync.root] : []), ...n.roots.extraReach].map(item => S ? wu(item).replace(/[\\/]+$/, "") || "/" : wu(item.replace(/\/+$/, "") || "/"));
+  if (C.some(item => w.some(P => !bG(P, item) && _Oe(P, item)))) return Pt;
+  let A = C.filter(item => w.some(P => bG(P, item))),
+    E = w.flatMap(item => A.flatMap(P => bG(item, P) ? [item === P ? "" : item.slice(P === "/" ? 1 : P.length + 1)] : []));
+  if (E.length === 0) return s?.everInReach.has(e.source) ? Pt : null;
+  let x = L([n.roots.configHomeReal, n.opts.configHome].map(wu));
+  if (A.some(item => x.some(P => item === P || _Oe(item, P) || _Oe(P, item)) || item.split(R).includes(".claude"))) return Hi;
+  let G = E.every(item => item.split(R).some(item => item.startsWith(".")));
+  return e.source === "local" && G ? null : $i;
+}
+function yo(source) {
+  return Object.entries(source.hooks).flatMap(([event_2, r]) => (r ?? []).flatMap(item => item.hooks.map(u => ({
+    source: source,
+    event: event_2,
+    matcher: item.matcher,
+    hook: u
+  }))));
+}
+function So(e, n) {
+  let r = e.trim().split(/ +/);
+  return n === null ? r.length === 1 : (n === "python3" || n === "python") && r.length === 2;
+}
+function Li(e) {
+  return Xc.includes(e);
+}
+var Mi = new Set(["/usr/bin/env", "/bin/env"]);
+function Fi(e) {
+  let n = e.subarray(0, 512).toString("utf8");
+  if (!n.startsWith("#!")) return null;
+  let r = n.indexOf(`
+`),
+    s = n.slice(2, r === -1 ? void 0 : r).replace(/^[ \t]+|[ \t]+$/g, "").split(/[ \t]+/),
+    u = s[0];
+  if (u === void 0 || u === "") return null;
+  if (s.some(item => /[^\x21-\x7e]/.test(item))) return "unjudgeable";
+  if (!u.startsWith("/") || an.test(u)) return "unjudgeable";
+  let h = Nps;
+  if (!Mi.has(wu(ft.normalize(u)))) return s.slice(1).every(h) ? ft.normalize(u) : "unjudgeable";
+  let y = s[1] === "-S" ? s.slice(2) : s.slice(1),
+    w = y[0];
+  if (w === void 0 || w.startsWith("-") || w.includes("=") || !y.slice(1).every(h)) return "unjudgeable";
+  if (w.startsWith("/")) return an.test(w) ? "unjudgeable" : ft.normalize(w);
+  return /^[\w.+-]+$/.test(w) ? null : "unjudgeable";
+}
+var an = /(?:^|\/)\.\.(?:\/|$)/,
+  Wi = /^\/dev\/(?:null|zero|full|u?random|tty\d*|pts(?:\/.*)?|ptmx|std(?:in|out|err)|fd(?:\/.*)?|dtracehelper|autofs_nowait)$/;
+function xo(e) {
+  return e === "local";
+}
+async function vo(e, n, r = !1, s = !1) {
+  if (!q9(e.event)) return {
+    kind: "held",
+    reason: `event_${(Li(e.event) ? dRs(e.event) : null) ?? "container_internal"}`
+  };
+  let {
+    hook: hook_5
+  } = e;
+  if (hook_5.type !== "command" && hook_5.type !== "http") return {
+    kind: "held",
+    reason: "kind_unsupported"
+  };
+  let h = xo(e.source.source),
+    y = hook_5.cloud === "device" && !h,
+    w = hook_5.cloud === "device" && h ? ' Its "cloud": "device" mark is ignored in settings.local.json.' : "",
+    S = `"${Ae(hook_5)}" in ${Oi[e.source.source]} does not run for cloud work`,
+    R = uRs(e.event, e.matcher);
+  if (r) return R ? {
+    kind: "held",
+    reason: "after_edit"
+  } : {
+    kind: "forward",
+    event: e.event,
+    hook: hook_5
+  };
+  let {
+      hooksFolderInReach: hooksFolderInReach
+    } = n,
+    A = hooksFolderInReach || h ? "" : " Check the script, then move it to ~/.claude/hooks.";
+  if (R && hook_5.cloud === "skip") return {
+    kind: "held",
+    reason: "after_edit"
+  };
+  if (hook_5.cloud === "skip") return {
+    kind: "held",
+    reason: "author_skip",
+    notice: `${S}: its entry is marked "cloud": "skip" or a value this version does not know.`
+  };
+  let pinnedTarget_2,
+    x,
+    K,
+    G = !1,
+    W = !1,
+    P = !1,
+    O = !1,
+    F = !1,
+    templateTwinId,
+    H,
+    notice_2 = R && y ? `${S}: cloud edits change files in the cloud.${n.opts.inRepository ? " Put the hook in the repository's .claude/settings.json." : ""}` : void 0;
+  if (hook_5.type === "command") {
+    let B = await bn(hook_5, n.reach, n.deps, {
+      resolved: n.resolved
+    });
+    if (W = B.kind === "opaque" && B.reason === "private_dotdir", P = B.kind === "opaque" && B.reason === "shell_prefix", O = B.kind === "opaque" && (B.reason === "unsupported_platform" || B.reason === "unsupported_shell"), B.kind === "unverifiable") G = !0, x = {
+      kind: "held",
+      reason: "unverifiable_target",
+      notice: `${S}: ${B.missing ? "its script is missing" : "this machine could not verify its script"}.`,
+      ...(B.missing && {
+        cause: "script_missing"
+      })
+    };else if (B.kind === "script_in_reach" || B.kind === "script_outside_reach") {
+      G = !0;
+      let te = B.kind === "script_in_reach";
+      if (pinnedTarget_2 = B.pinnedTarget, te && !y) K = {
+        kind: "held",
+        reason: "in_reach",
+        notice: `${S}: the cloud session can change the hook's script.${A}${w}`,
+        ...(hooksFolderInReach && {
+          noRemedy: !0
+        })
+      };
+      let Z = ze(n.reach),
+        N = [...(B.site.form === "exec" && B.site.slot === "arg0" && hook_5.command.startsWith("/") ? [an.test(hook_5.command) ? "unjudgeable" : ft.normalize(hook_5.command)] : []), ...(B.interpreter === null ? [Fi(B.bytes)].filter(item => item !== null) : [])],
+        q;
+      for (let M of N) {
+        if (M === "unjudgeable") {
+          q = "this machine cannot check the interpreter the hook names";
+          break;
+        }
+        let ee = await UUe(await BUe(M, n.opts.launchDir), n.opts.launchDir, ffe()),
+          re = ee.verdict === "local" ? await n.deps.realpath(ee.spelling).catch(() => null) : null;
+        if (re === null) {
+          q = `its interpreter ${ti(M, {
+            maxCodeUnits: 200
+          })} could not be located on this machine`;
+          break;
+        }
+        if ([M, re].some(item => Z.some(ae => MBe(item, ae)))) {
+          q = `the cloud session can change its interpreter ${ti(M, {
+            maxCodeUnits: 200
+          })}`;
+          break;
+        }
+      }
+      if (q === void 0 && B.interpreter === null) {
+        let M = fIs(B.bytes);
+        if (M !== null && (M === "unjudgeable" || M.kind !== "absolute" && M.kind !== "env")) q = "its interpreter may load code the cloud session can change";
+      }
+      if (q !== void 0 && !te) if (y) F = !0;else K = {
+        kind: "held",
+        reason: "interpreter_unvouched",
+        notice: `${S}: ${q}.${h ? "" : " Use bash, python3 or node from your PATH."}${w}`
+      };
+      if (F = F || te && y, !te) {
+        let M = ko(B.bytes, [n.reach.launchDir, n.reach.launchDirReal, ...(n.reach.sync !== void 0 ? [n.reach.sync.rootReal, ...(n.reach.sync.root !== void 0 ? [n.reach.sync.root] : [])] : []), ...n.reach.extraReach].filter(item => !Wi.test(item)), n.deps.home, B.interpreter);
+        if (M !== void 0 && !y && K === void 0) K = {
+          kind: "held",
+          reason: "loads_from_reach",
+          notice: `${S}: its script may load files the cloud session can change. ${M.replace(/^it /, "The script ")}.${w}`
+        };else if (M !== void 0 && y) F = !0;
+      }
+      if (y && n.opts.optInPins !== void 0) {
+        let M = `${B.pinnedTarget.realPath}\x00${B.pinnedTarget.sha256}`,
+          ee = n.opts.optInPins.get(B.pinnedTarget.path);
+        if (ee === void 0 || !te && ee !== M) n.opts.optInPins.set(B.pinnedTarget.path, M);else if (ee !== M) x = {
+          kind: "held",
+          reason: "unverifiable_target",
+          notice: `${S}: its script changed and the cloud session can write to it. Check the file, then restart claude --cloud.`
+        }, pinnedTarget_2 = void 0, F = !1;
+      }
+      let Q = s ? void 0 : (n.deps.findTemplateByDigest ?? C6o)(B.pinnedTarget.sha256),
+        J = y && !R ? void 0 : Q;
+      if (y && Q !== void 0 && hook_5.args === void 0 && !hook_5.if && !hook_5.async && !hook_5.asyncRewake && !hook_5.once && So(hook_5.command, B.interpreter)) templateTwinId = Q.template.id;
+      if (J) {
+        let {
+            template: template,
+            label: label_2
+          } = J,
+          re = (n.opts.refusedTemplateIds ?? []).includes(template.id),
+          ie = !re && (n.opts.enabledTemplateIds ?? T6o()).includes(template.id);
+        if (re) notice_2 = R ? `${template.filename} is an after-edit hook, so it is not forwarded either: it does not run for this cloud session, only in local ones.` : void 0;else if (!ie) notice_2 = R ? `${template.filename} is not run in the cloud in this version, and as an after-edit hook it is not forwarded either, so it only runs in local sessions.` : `${template.filename} is not run in the cloud in this version; it runs on this machine instead.`;else if (template.event !== e.event) notice_2 = `${template.filename} is configured on ${e.event}; the cloud runs it only on ${template.event}, so it runs on this machine instead.`;else if (label_2 === "legacy" && !n.opts.allowLegacyTemplateDigests) notice_2 = `${template.filename} is an older copy of ${template.id}; the cloud will not run it. Update it.`;else if (hook_5.args !== void 0 || hook_5.if || hook_5.async || hook_5.asyncRewake || hook_5.once || !So(hook_5.command, B.interpreter)) notice_2 = `${template.filename} is run in a way the cloud cannot reproduce (arguments, a condition, async or once), so it runs on this machine instead.`;else if (e.matcher !== void 0 && !S5e(e.matcher) && (!bo(e.matcher) || !$Ue.test(e.matcher))) notice_2 = void 0;else if (!LEr(e.matcher, template.matcher)) notice_2 = `${template.filename} is configured with the matcher "${ti(e.matcher ?? "", {
+          maxCodeUnits: 200
+        })}" and the cloud runs it on "${template.matcher}", so it runs on this machine instead.`;else {
+          let timeout_s = Eo(hook_5.timeout);
+          H = {
+            entry: {
+              wire: {
+                template: template.id,
+                digest: B.pinnedTarget.sha256,
+                event: e.event,
+                ...(!S5e(e.matcher) && {
+                  matcher: e.matcher
+                }),
+                ...(timeout_s !== void 0 && {
+                  timeout_s: timeout_s
+                })
+              },
+              local: {
+                templateId: template.id,
+                label: label_2,
+                scriptRealPath: B.pinnedTarget.realPath,
+                bytes: B.bytes,
+                userMatcher: e.matcher,
+                source: e.source.source
+              }
+            },
+            ...(label_2 === "legacy" && {
+              legacyNotice: `${template.filename} is an older copy of ${template.id}; the cloud will run that copy. Update it to get fixes.`
+            }),
+            ...(e.matcher !== void 0 && !S5e(e.matcher) && !LEr(template.matcher, e.matcher) && {
+              narrowNotice: `${template.filename} is configured with the matcher "${ti(e.matcher, {
+                maxCodeUnits: 200
+              })}"; in the cloud it runs on "${template.matcher}" only.`
+            })
+          };
+        }
+        if (H === void 0 && R && ie) notice_2 = `${(notice_2 ?? `${template.filename} cannot move to the cloud here.`).replace(/(?:, so|; it) (?:it )?runs on this machine instead\.$/, ".").replace(/\.$/, "")}, and as an after-edit hook it is not forwarded either: it runs in local sessions only.`;
+      }
+    }
+  }
+  if (H !== void 0) {
+    let notice = [H.legacyNotice, H.narrowNotice].filter(item => item !== void 0).join(" ");
+    return {
+      kind: "template",
+      entry: H.entry,
+      event: e.event,
+      hook: hook_5,
+      ...(notice !== "" && {
+        notice: notice
+      })
+    };
+  }
+  if (R) return {
+    kind: "held",
+    reason: "after_edit",
+    ...(notice_2 !== void 0 && {
+      notice: notice_2
+    })
+  };
+  if (x !== void 0) return x;
+  if (e.matcher !== void 0 && !bo(e.matcher)) return {
+    kind: "held",
+    reason: "over_cap"
+  };
+  if (e.matcher !== void 0 && !S5e(e.matcher) && !$Ue.test(e.matcher)) return {
+    kind: "held",
+    reason: "pattern_matcher",
+    notice: `"${Ae(hook_5)}" does not run for cloud work: cloud sessions cannot take the pattern matcher "${ti(e.matcher, {
+      maxCodeUnits: 200
+    })}".${h ? "" : ` List the names to match${bDn.has(e.event) ? `, such as ${We}|${Qe}` : ""}.`}`
+  };
+  if (K !== void 0) return K;
+  if (hook_5.type === "command" && !G) {
+    if (!y) return {
+      kind: "held",
+      reason: "unpinned_command",
+      notice: P ? `${S}: it would run through your CLAUDE_CODE_SHELL_PREFIX, which this machine cannot verify.${e.source.source === "user" ? ' Marked "cloud": "device", it runs on this machine, unverified, when the cloud session asks.' : ""}${w}` : W ? `${S}: its script is in a dot-folder this machine does not read hooks from.${A}${w}` : `${S}: this machine cannot verify what the command runs.${hooksFolderInReach || O || h ? "" : " Put the command in one script in ~/.claude/hooks."}${w}`,
+      ...(P ? {
+        cause: "shell_prefix"
+      } : W && {
+        cause: "dot_folder"
+      }),
+      ...((hooksFolderInReach || O) && {
+        noRemedy: !0
+      })
+    };
+    F = !0;
+  }
+  return {
+    kind: "forward",
+    event: e.event,
+    hook: hook_5,
+    ...(pinnedTarget_2 !== void 0 && {
+      pinnedTarget: pinnedTarget_2
+    }),
+    ...(F && {
+      authorOptIn: !0
+    }),
+    ...(y && {
+      cloudDevice: !0
+    }),
+    ...(templateTwinId !== void 0 && {
+      templateTwinId: templateTwinId
+    }),
+    ...(notice_2 !== void 0 && {
+      notice: notice_2
+    })
+  };
+}
+function bo(e) {
+  return e.length <= Pi && !/[\p{Cc}\p{Cf}]/u.test(e);
+}
+function Ro(e) {
+  return `${e} is configured more than once; the cloud runs it once.`;
+}
+function Ui() {
+  return {
+    forwarded: [],
+    templates: [],
+    held: [],
+    heldCounts: {
+      after_edit: 0,
+      kind_unsupported: 0,
+      plugin: 0,
+      managed: 0,
+      other: 0
+    },
+    notices: []
+  };
+}
+async function z7n(e, opts, deps) {
+  let s = Ui();
+  if (e.kind === "none") return s;
+  let roots = {
+      launchDirReal: await Tt(deps, opts.launchDir),
+      projectDirReal: await Tt(deps, opts.projectDir),
+      configHomeReal: await Tt(deps, opts.configHome),
+      extraReach: L((await Promise.all([...(opts.repoRoot !== void 0 ? [opts.repoRoot] : []), ...(opts.extraReachRoots ?? [])].map(async item => {
+        let F = await UUe(await BUe(item, opts.launchDir), opts.launchDir, ffe());
+        return F.verdict === "local" ? [item, await Tt(deps, F.spelling)] : F.verdict === "foreign" ? [F.spelling] : [item, ...jUe(F, opts.launchDir)];
+      }))).flat())
+    },
+    reach = {
+      launchDir: opts.launchDir,
+      launchDirReal: roots.launchDirReal,
+      configHomeReal: roots.configHomeReal,
+      projectDir: opts.projectDir,
+      projectDirReal: roots.projectDirReal,
+      ...(opts.sync !== void 0 && {
+        sync: opts.sync
+      }),
+      extraReach: roots.extraReach
+    },
+    y = {
+      opts: opts,
+      deps: deps,
+      roots: roots,
+      reach: reach,
+      resolved: new Map(),
+      hooksFolderInReach: mt([ft.join(deps.home, ".claude", "hooks")], reach)
+    },
+    w = (O, reason, {
+      cause: cause,
+      noRemedy: noRemedy
+    } = {}) => {
+      if (s.held.push({
+        event: O.event,
+        ...(O.matcher !== void 0 && {
+          matcher: ti(O.matcher, {
+            maxCodeUnits: 200
+          })
+        }),
+        source: O.source.source,
+        command: Ae(O.hook),
+        reason: reason,
+        ...(cause !== void 0 && {
+          cause: cause
+        }),
+        ...((noRemedy || xo(O.source.source) || reason === "after_edit" && !opts.inRepository) && {
+          noRemedy: !0
+        })
+      }), reason === "after_edit") s.heldCounts.after_edit += 1;else if (reason === "kind_unsupported") s.heldCounts.kind_unsupported += 1;else s.heldCounts.other += 1;
+    },
+    S = new Set(),
+    R = O => {
+      if (O !== void 0 && !S.has(O)) S.add(O), s.notices.push(O);
+    },
+    C = O => {
+      if (S.delete(O)) s.notices = s.notices.filter(item => item !== O);
+    },
+    A = new Map(),
+    E = new Map(),
+    x = new Map(),
+    K = new Set(),
+    G = new Set(),
+    W = new Map();
+  if ([opts.launchDir, opts.configHome, opts.sync?.rootReal, opts.sync?.root, ...(opts.extraReachRoots ?? [])].some(item => item !== void 0 && !hx(item))) {
+    R("Hooks stay on this machine: its launch, config or sync directory is not an absolute path this version can place, so none are offered to the cloud session.");
+    for (let O of e.sources) for (let F of yo(O)) w(F, "unverifiable_target");
+    return s;
+  }
+  for (let O of e.sources) {
+    let F = await Ni(O, y),
+      D = yo(O);
+    if (F !== null && D.length > 0) R(`Hooks from ${ti(O.settingsFile ?? "", {
+      maxCodeUnits: 200
+    })} are not offered to the cloud session: ${F.cause}.`);
+    for (let site of D) {
+      let V = await vo(site, y, F !== null);
+      if (F !== null) {
+        w(site, V.kind === "held" && (V.reason.startsWith("event_") || V.reason === "kind_unsupported" || V.reason === "after_edit") ? V.reason : F.reason, {
+          noRemedy: !0
+        });
+        continue;
+      }
+      if (V.kind === "held") {
+        R(V.notice), w(site, V.reason, V);
+        continue;
+      }
+      let B = V;
+      if (B.kind === "template") {
+        let {
+            entry: entry
+          } = B,
+          ae = sn(site, B.hook, deps.defaultShell),
+          ne = W.get(entry.local.templateId),
+          se = E.get(ae),
+          j = ne !== void 0 && (ne.site.matcher ?? "") === (site.matcher ?? ""),
+          X = ne !== void 0 ? j : s.templates.length < rn;
+        if (se !== void 0 && X) {
+          if (w(se.site, "duplicate"), K.add(se.index), se.notice !== void 0) C(se.notice);
+          E.delete(ae);
+        }
+        if (ne !== void 0 && !j) {
+          if (B = await vo(site, y, !1, !0), B.kind === "held") {
+            w(site, B.reason, B), R(B.notice);
+            continue;
+          }
+        } else if (ne !== void 0) {
+          w(ne.site, "duplicate");
+          let le = sn(ne.site, ne.hook, deps.defaultShell);
+          if (le !== ae) x.delete(le);
+          if (x.set(ae, {
+            index: ne.index,
+            templateId: entry.local.templateId
+          }), s.templates[ne.index] = entry, ne.notice !== void 0) C(ne.notice);
+          W.set(entry.local.templateId, {
+            index: ne.index,
+            site: site,
+            hook: B.hook,
+            ...(B.notice !== void 0 && {
+              notice: B.notice
+            })
+          }), R(Ro(entry.local.templateId)), R(B.notice);
+          continue;
+        } else if (s.templates.length >= rn) {
+          w(site, "over_cap"), R(`Only ${rn} templates can run in the cloud session; the rest stay on this machine.`);
+          continue;
+        } else {
+          W.set(entry.local.templateId, {
+            index: s.templates.length,
+            site: site,
+            hook: B.hook,
+            ...(B.notice !== void 0 && {
+              notice: B.notice
+            })
+          }), x.set(ae, {
+            index: s.templates.length,
+            templateId: entry.local.templateId
+          }), s.templates.push(entry), R(B.notice);
+          continue;
+        }
+      }
+      if (B.kind !== "forward") continue;
+      let te = B,
+        timeout_s_2 = Eo(te.hook.timeout),
+        N = {
+          wire: {
+            id: "",
+            event: site.event,
+            ...(!S5e(site.matcher) && {
+              matcher: site.matcher
+            }),
+            kind: te.hook.type,
+            ...(timeout_s_2 !== void 0 && {
+              timeout_s: timeout_s_2
+            }),
+            source: O.source,
+            ...(te.hook.if && {
+              has_condition: !0
+            }),
+            ...(te.pinnedTarget !== void 0 && {
+              target_pinned: !0
+            }),
+            ...((te.authorOptIn || te.cloudDevice && te.hook.type === "command") && {
+              author_opt_in: !0
+            })
+          },
+          local: {
+            hook: te.hook,
+            matcher: site.matcher,
+            event: te.event,
+            source: O.source,
+            ...(te.pinnedTarget !== void 0 && {
+              pinnedTarget: te.pinnedTarget
+            }),
+            ...(te.cloudDevice && {
+              cloudOptIn: !0
+            }),
+            ...(te.templateTwinId !== void 0 && {
+              templateTwinId: te.templateTwinId
+            })
+          }
+        },
+        q = sn(site, te.hook, deps.defaultShell),
+        Q = x.get(q),
+        J = (A.get(site.event) ?? 0) < _o,
+        M = E.has(q) || s.forwarded.length < on && J;
+      if (Q !== void 0 && M) {
+        let ie = W.get(Q.templateId);
+        if (ie !== void 0 && ie.index === Q.index) {
+          if (w(ie.site, "duplicate"), ie.notice !== void 0) C(ie.notice);
+          C(Ro(Q.templateId)), W.delete(Q.templateId);
+        }
+        G.add(Q.index), x.delete(q);
+      }
+      let ee = E.get(q);
+      if (ee !== void 0) {
+        w(ee.site, "duplicate");
+        let id = s.forwarded[ee.index].wire.id;
+        if (s.forwarded[ee.index] = {
+          ...N,
+          wire: {
+            ...N.wire,
+            id: id
+          }
+        }, ee.notice !== void 0) C(ee.notice);
+        E.set(q, {
+          index: ee.index,
+          site: site,
+          ...(te.notice !== void 0 && {
+            notice: te.notice
+          })
+        }), R(te.notice);
+        continue;
+      }
+      if (s.forwarded.length >= on) {
+        w(site, "over_cap"), R(`Only the first ${on} hooks are offered to the cloud session; the rest stay on this machine.`);
+        continue;
+      }
+      if (!J) {
+        w(site, "over_cap"), R(`Only the first ${_o} ${site.event} hooks are offered to the cloud session; the rest stay on this machine.`);
+        continue;
+      }
+      let re = A.get(site.event) ?? 0;
+      A.set(site.event, re + 1), E.set(q, {
+        index: s.forwarded.length,
+        site: site,
+        ...(te.notice !== void 0 && {
+          notice: te.notice
+        })
+      }), R(te.notice), s.forwarded.push({
+        ...N,
+        wire: {
+          ...N.wire,
+          id: O6o(opts.instanceId, site.event, re)
+        }
+      });
+    }
+  }
+  s.forwarded = s.forwarded.filter((item, index) => !K.has(index)), s.templates = s.templates.filter((item, index) => !G.has(index));
+  let P = new Map(s.templates.map(item => [`${item.wire.template}\x00${item.wire.event}`, item.wire.template]));
+  return s.forwarded = s.forwarded.filter(item => {
+    let templateTwinId_2 = item.local.templateTwinId,
+      D = templateTwinId_2 === void 0 ? void 0 : P.get(`${templateTwinId_2}\x00${item.wire.event}`);
+    if (templateTwinId_2 === void 0 || D === void 0 || !LEr(utt(templateTwinId_2)?.matcher ?? "", item.local.matcher ?? "*")) return !0;
+    return s.held.push({
+      event: item.wire.event,
+      ...(item.local.matcher !== void 0 && {
+        matcher: ti(item.local.matcher, {
+          maxCodeUnits: 200
+        })
+      }),
+      source: item.local.source,
+      command: Ae(item.local.hook),
+      reason: "duplicate"
+    }), s.heldCounts.other += 1, R(`"${Ae(item.local.hook)}" is the same script the cloud already runs as ${D}; it is not also run on this machine.`), !1;
+  }), s;
+}
+function judgeSender(e) {
+  let attestation_2 = ace(e);
+  return attestation_2 === void 0 ? void 0 : {
+    attestation: attestation_2,
+    heldBack: i_e(attestation_2)
+  };
+}
+function qi(e) {
+  let n = e.forwarded + e.templateNames.length;
+  return `${n === 1 ? "One of your hooks" : `${n} of your hooks`} could run for cloud sessions started from this machine \u2014 run /hooks to decide (nothing from this machine runs for them until you do).`;
+}
+function G7n(e) {
+  return e.CLAUDE_CODE_SHELL_PREFIX?.trim() || void 0;
+}
+var Ao = 30000;
+function Bi(path, n, r = async s => ({
+  real: await realpath_2(s),
+  aliased: await Zmr(s)
+})) {
+  let s = {
+    path: path,
+    real: null,
+    env: n === void 0 ? void 0 : {
+      ...n
+    },
+    locate: () => {
+      s.retryAt = void 0, r(path).then(({
+        real: real,
+        aliased: aliased
+      }) => {
+        if (s.real = aliased ? "unresolvable" : real, aliased) s.retryAt = Date.now() + Ao;
+      }, u => {
+        if (s.real = "unresolvable", u?.code !== "ENOENT" && u?.code !== "ENOTDIR") s.retryAt = Date.now() + Ao;
+      });
+    }
+  };
+  return s.locate(), s;
+}
+function Vi(e, n = Date.now()) {
+  if (e.retryAt !== void 0 && n >= e.retryAt) e.locate?.();
+}
+function czt(e) {
+  return e.legacyConfigFile ??= Bi(wy(), Fps(e, ote())), Vi(e.legacyConfigFile), e.legacyConfigFile;
+}
+function V7n(e, n, r = s => me(s)?.env) {
+  let s = h => e.pinnedScopes.has(h) || h === "userSettings" && e.everInReach.has("user") || h === "flagSettings" && e.everInReach.has("flag"),
+    u = n.env !== void 0 && typeof n.real === "string" && n.real !== "unresolvable" && ji(n.path) && !sb([n.path, n.real], [...e.stickyRoots]);
+  return Object.assign({}, u ? n.env : {}, ...xs.filter(item => !ef.has(item) && !s(item)).map(item => aje(r(item), item) ?? {}));
+}
+function q7n(e) {
+  return so() ?? e;
+}
+function setTimer(e, n) {
+  let r = setTimeout(e, n);
+  return r.unref(), {
+    clear: () => clearTimeout(r)
+  };
+}
+function y_n() {
+  if (!(I() !== "windows" && nm() && JMr() && !a.CLAUDE_CODE_DISABLE_HOOK_FORWARDING)) return !1;
+  if (DVe()) {
+    if (!Rbn()) return !0;
+    return i("tengu_device_hooks_shelved", {
+      side: c("client")
+    }), !1;
+  }
+  return i("tengu_device_hooks_kept_back", {
+    flag: c(FCe),
+    own_flags_loaded: Gi()
+  }), !1;
+}
+function zi(e) {
+  let n = null,
+    r = !1,
+    s = new Set();
+  return {
+    state: () => n,
+    setState(u) {
+      n = r ? null : u;
+    },
+    async handleForwardedHook(u) {
+      if (r) return;
+      try {
+        let h = await e.servicer.serve(u, n);
+        if (r) return;
+        if (h.kind === "silent") {
+          if (h.reason === "not_mine" || h.reason === "no_state" || h.reason === "withdrawn") e.release(u.requestId);
+          return;
+        }
+        e.respond(u.requestId, h.answer);
+      } catch (error) {
+        if (e.logError(error), Nye(u.callbackId)?.event === "PreToolUse" && !r) try {
+          e.respond(u.requestId, {
+            hookSpecificOutput: {
+              hookEventName: "PreToolUse",
+              permissionDecision: "deny",
+              permissionDecisionReason: "A hook on your machine could not be run for this call (internal error); retry"
+            }
+          });
+        } catch {}
+      }
+    },
+    handleCancelled(u, h) {
+      if (r || !e.servicer.cancel(u, h) || h !== "worker") return;
+      for (let y of s) y();
+    },
+    onStoppedWhileRunning(u) {
+      return s.add(u), () => s.delete(u);
+    },
+    async dispose() {
+      r = !0, n = null, s.clear(), e.servicer.cancelAll(), await e.staging.dispose();
+    }
+  };
+}
+function Io({
+  launchDir: launchDir_2,
+  memory: memory_3,
+  getTools: getTools,
+  respond: respond,
+  release: release,
+  onLine: onLine,
+  trustAccepted = $M,
+  isMuted: isMuted
+}) {
+  let S = () => null,
+    staging = sfs(ifs(), () => [...(S()?.cloudWritableRoots ?? [launchDir_2]), ...Fen(launchDir_2)]),
+    C = bt(() => staging.dispose()),
+    projectDir = q7n(launchDir_2),
+    hookCwd = projectDir;
+  realpath_2(projectDir).then(O => {
+    hookCwd = O;
+  }, () => {});
+  let attached = {
+    ...ss()
+  };
+  Q0n(memory_3, czt(memory_3).env);
+  let K = memory_3.senderFor(launchDir_2),
+    hostEnv = () => {
+      let O = ss();
+      return Qit({
+        attached: attached,
+        beforeSettings: ug(),
+        ownEnv: V7n(K, czt(memory_3)),
+        childrenSee: F => Object.hasOwn(O, F)
+      });
+    },
+    servicer = Vn({
+      memory: memory_3.servicerFor(launchDir_2),
+      now: Date.now,
+      setTimer: setTimer,
+      trustAccepted: trustAccepted,
+      ...(isMuted && {
+        isMuted: isMuted
+      }),
+      judgeSender: judgeSender,
+      pin: oat(),
+      staging: staging,
+      run: (O, F, D) => qm(F.launchDir, () => An(O, F, Cn, D)),
+      evaluateCondition: (O, F) => Wuo(O, F, getTools(), F.cwd),
+      parseTarget: O => {
+        let F = hostEnv();
+        return IBe(O, {
+          home: gHe(F),
+          hookCwd: hookCwd,
+          projectDir: projectDir,
+          defaultShell: Nj(),
+          shellPrefix: G7n(F)
+        });
+      },
+      emptyTranscriptPath: () => staging.placeholder("cloud-transcript.jsonl"),
+      defaultTimeoutMs: defaultTimeoutMs,
+      onLine: (line, level) => onLine({
+        line: line,
+        level: level
+      }),
+      telemetry: O => {
+        let F = Ji(O.outcome);
+        if (F === "ok") g("device_hooks_serve");else if (F === "sad") p("device_hooks_serve", O.outcome);else if (F === "bad") m("device_hooks_serve", O.outcome);
+        i("tengu_device_hook_served", {
+          event: pe(O.event),
+          kind: pe(O.kind),
+          outcome: c(O.outcome),
+          exit_class: pe(O.exitClass),
+          duration_ms: O.durationMs,
+          translated_paths: O.translatedPaths,
+          replay: O.replay,
+          blocked: O.blocked,
+          staged: O.staged,
+          project_frame: O.projectFrame,
+          repinned: O.repinned,
+          waited_ms: O.waitedMs,
+          ...(O.attestation !== void 0 && {
+            attestation_mode: c(O.attestation.mode),
+            request_attestation: c(O.attestation.status),
+            attestation_verdict: c(O.attestation.verdict)
+          })
+        });
+      },
+      debug: O => t(O),
+      logError: logError,
+      extraWritableRoots: () => Fen(launchDir_2),
+      hostEnv: hostEnv,
+      childEnvironment: (O, F) => Qmr(O, F, ss()),
+      placePath: placePath,
+      resolveProgram: resolveProgram,
+      defaultShell: () => Nj()
+    }),
+    P = zi({
+      servicer: servicer,
+      staging: {
+        dispose: () => (C(), staging.dispose())
+      },
+      respond: respond,
+      release: release,
+      logError: O => {
+        logError(O), m("device_hooks_serve", "serve_threw");
+      }
+    });
+  return S = P.state, t("[deviceHooks] device hook session created for this attach"), P;
+}
+var servicerDefaults = {
+  stageVerifiedBytes: "always",
+  unmarkedStartFolder: "private",
+  repinChangedScripts: !1,
+  wireLabel: "basename",
+  denyUnjudgeablePaths: !1,
+  runWithUntranslatedPaths: !1,
+  timeoutFailsClosed: !1
+};
+function To({
+  launchDir: launchDir_3,
+  memory: memory_4,
+  cloudSessionId: cloudSessionId,
+  session: session,
+  sendControlRequest: sendControlRequest,
+  syncRoot: syncRoot,
+  servingMuted: servingMuted,
+  onLine: onLine_2,
+  storageV5: storageV5
+}) {
+  let R = oat().openNoFollow,
+    C = realpath_2(launchDir_3).catch(() => launchDir_3),
+    projectDir_2 = q7n(launchDir_3),
+    E = repoRootOf(launchDir_3),
+    x = E ?? launchDir_3,
+    K = memory_4.senderFor(launchDir_3),
+    attached_2 = {
+      ...ss()
+    };
+  Q0n(memory_4, czt(memory_4).env);
+  let W = () => {
+    let P = ss();
+    return Qit({
+      attached: attached_2,
+      beforeSettings: ug(),
+      ownEnv: V7n(K, czt(memory_4)),
+      childrenSee: O => Object.hasOwn(P, O)
+    });
+  };
+  return _Rs({
+    memory: K,
+    now: Date.now,
+    setTimer: setTimer,
+    hookFlags: Tn(),
+    capture: () => GBn(VBn()),
+    buildInventory: ({
+      captured: captured,
+      instanceId: instanceId,
+      syncRoot: syncRoot_2,
+      reachRoots: D,
+      withoutTemplates: withoutTemplates
+    }) => {
+      let V = W();
+      return z7n(captured, {
+        instanceId: instanceId,
+        launchDir: launchDir_3,
+        projectDir: projectDir_2,
+        configHome: configHome(),
+        ...(syncRoot_2 !== null && {
+          sync: {
+            rootReal: syncRoot_2.real,
+            root: syncRoot_2.root
+          }
+        }),
+        inRepository: E !== null,
+        ...(x !== launchDir_3 && {
+          repoRoot: x
+        }),
+        extraReachRoots: D,
+        allowLegacyTemplateDigests: !0,
+        refusedTemplateIds: [...withoutTemplates],
+        optInPins: K.optInPins,
+        reachMemory: K,
+        localSettingsLocation: K.localSettingsLocation
+      }, {
+        realpath: realpath_2,
+        open: R,
+        home: gHe(V),
+        defaultShell: Nj(),
+        shellPrefix: G7n(V)
+      });
+    },
+    mintInstanceId: () => P6o(),
+    displayName: Rwt(),
+    cloudSessionId: cloudSessionId,
+    launchDir: launchDir_3,
+    launchDirReal: () => C,
+    realpath: realpath_2,
+    projectRoot: x,
+    syncRoot: async () => {
+      let root_2 = syncRoot();
+      return root_2 === null ? null : {
+        root: root_2,
+        real: await realpath_2(root_2).catch(() => root_2)
+      };
+    },
+    servingMuted: servingMuted,
+    commonWriteRoots: () => NPe(launchDir_3),
+    scopeWriteRoots: (P, O) => gfe(launchDir_3, P, O),
+    scopeWriteEntries: P => mfe(P, launchDir_3),
+    scopeSettingsFile: P => fn(P) ?? null,
+    sendRequest: async (P, {
+      timeoutMs: timeoutMs_4,
+      onEchoed: onEchoed
+    }) => {
+      try {
+        return await sendControlRequest(P, {
+          timeoutMs: timeoutMs_4,
+          background: !0,
+          ...(onEchoed && {
+            onEchoed: onEchoed
+          })
+        });
+      } catch (error) {
+        let H = Lq(error);
+        if (H === "timeout" || H === "aborted") throw Error("timeout: no answer from the cloud worker in time");
+        if (H === "disconnected" || H === "not_connected") throw Error("disconnected: the session stream is not connected");
+        throw error;
+      }
+    },
+    ensureConsent: yRs({
+      deps: HPe(storageV5),
+      pin: memory_4.consentPin,
+      onNotAsked: P => {
+        i("tengu_device_hooks_consent_notice", {}), onLine_2({
+          line: qi(P),
+          level: "info"
+        });
+      },
+      isStoreInReach: P => ZMt(FPe(), P, realpath_2),
+      onUntrustedStore: P => {
+        let O = Gn(FPe());
+        onLine_2({
+          line: P === "writable" ? `The saved answer about this machine's hooks is ignored here: this cloud session can itself write ${O}. Decide for it in /hooks.` : `The saved answer about this machine's hooks is ignored here: ${O} could not be located to check who can write it. Decide for this session in /hooks.`,
+          level: "warning"
+        });
+      }
+    }),
+    arm: P => session.setState(P),
+    onLine: onLine_2,
+    telemetry: P => {
+      if (P.trigger === "renewal" && P.outcome === "registered") return;
+      let O = {
+        held_after_edit: P.heldAfterEdit,
+        held_kind_unsupported: P.heldByReason.kind_unsupported ?? 0,
+        held_event_runs_locally: P.heldByReason.event_runs_locally ?? 0,
+        held_event_later: P.heldByReason.event_later ?? 0,
+        held_event_low_value: P.heldByReason.event_low_value ?? 0,
+        held_event_container_internal: P.heldByReason.event_container_internal ?? 0,
+        held_source_in_sync_root: P.heldByReason.source_in_sync_root ?? 0,
+        held_sync_root_is_config_dir: P.heldByReason.sync_root_is_config_dir ?? 0,
+        held_unverifiable_target: P.heldByReason.unverifiable_target ?? 0,
+        held_in_reach: P.heldByReason.in_reach ?? 0,
+        held_interpreter_unvouched: P.heldByReason.interpreter_unvouched ?? 0,
+        held_loads_from_reach: P.heldByReason.loads_from_reach ?? 0,
+        held_unpinned_command: P.heldByReason.unpinned_command ?? 0,
+        held_author_skip: P.heldByReason.author_skip ?? 0,
+        held_duplicate: P.heldByReason.duplicate ?? 0,
+        held_over_cap: P.heldByReason.over_cap ?? 0,
+        held_pattern_matcher: P.heldByReason.pattern_matcher ?? 0
+      };
+      switch (i("tengu_device_hooks_client_register", {
+        outcome: c(P.outcome),
+        trigger: c(P.trigger),
+        forwarded: P.forwarded,
+        templates: P.templates,
+        ...O,
+        held_other: P.heldOther,
+        accepted: P.accepted,
+        ignored: P.ignored,
+        attempt: P.attempt,
+        after_flags_unanswered: P.afterFlagsUnanswered
+      }), P.outcome) {
+        case "registered":
+        case "unregistered":
+        case "nothing_to_offer":
+        case "dormant":
+        case "no_consent":
+        case "muted":
+        case "flag_off":
+          g("device_hooks_client_register", {
+            forwarded: P.forwarded
+          });
+          break;
+        case "not_ready":
+        case "stale_epoch":
+        case "superseded":
+        case "failed":
+        case "consent_distrusted":
+        case "flag_unanswered":
+          p("device_hooks_client_register", P.outcome);
+          break;
+        default:
+          m("device_hooks_client_register", P.outcome);
+      }
+    },
+    lapseTelemetry: P => i("tengu_device_hooks_lapse_line", {
+      kind: c(P)
+    }),
+    reachPinnedTelemetry: P => i("tengu_device_hooks_reach_pinned", {
+      source: c(P)
+    }),
+    sourcePinnedTelemetry: P => i("tengu_device_hooks_source_pinned", {
+      source: c(P.source),
+      changed: P.changed,
+      appeared: P.appeared,
+      vanished: P.vanished
+    }),
+    servicerDefaults: servicerDefaults
+  });
+}
+function Ji(e) {
+  switch (e) {
+    case "answered":
+    case "event_mismatch":
+    case "condition_false":
+    case "cancelled":
+    case "muted":
+      return "ok";
+    case "not_mine":
+    case "cached":
+    case "withdrawn_replay":
+    case "same_invocation":
+      return null;
+    case "unknown_id":
+    case "replay_mismatch":
+    case "event_name_mismatch":
+    case "input_too_large":
+    case "overloaded":
+    case "stale":
+    case "invalid_input":
+    case "unsupported_kind":
+    case "no_roots":
+    case "untrusted":
+    case "in_reach_refused":
+    case "pin_refused":
+    case "pin_changed":
+    case "pin_unreadable":
+    case "untranslated_skipped":
+    case "condition_error":
+    case "no_slot":
+    case "too_late":
+    case "run_error":
+    case "unattested":
+      return "sad";
+    case "staging_failed":
+    case "decide_error":
+      return "bad";
+    default:
+      return e;
+  }
+}
+var Xi = new Set(["userSettings", "localSettings", "flagSettings", "projectSettings", "policySettings"]);
+function w_n(e) {
+  let n = e.createSession ?? Io,
+    r = e.createSender ?? To,
+    s = e.isServingMuted ?? lfe,
+    servingMuted_2 = s(),
+    session_2 = n({
+      launchDir: e.launchDir,
+      memory: e.memory,
+      getTools: e.getTools,
+      respond: (W, P) => e.manager()?.respondToForwardedHook(W, P) ?? !1,
+      release: W => e.manager()?.releaseForwardedHook(W),
+      onLine: e.onLine,
+      ...(e.trustAccepted && {
+        trustAccepted: e.trustAccepted
+      }),
+      isMuted: () => servingMuted_2
+    }),
+    y = r({
+      launchDir: e.launchDir,
+      memory: e.memory,
+      cloudSessionId: e.cloudSessionId,
+      session: session_2,
+      sendControlRequest: (W, P) => {
+        let O = e.manager();
+        if (O === null) return Promise.reject(Error("[RemoteSessionManager] Cannot send: not connected"));
+        return O.sendControlRequest(W, P);
+      },
+      syncRoot: e.syncRoot,
+      servingMuted: servingMuted_2,
+      onLine: e.onLine,
+      storageV5: e.storageV5
+    }),
+    w = (e.onServingMuteRecheck ?? oee)(() => {
+      try {
+        let W = s();
+        if (W === servingMuted_2) return;
+        if (W) servingMuted_2 = !0, y.servingMute(!0);else y.servingMute(!1), servingMuted_2 = !1;
+      } catch (error) {
+        logError(error);
+      }
+    }),
+    S = e.registerCleanup(() => y.unregister(e0t)),
+    R = e.subscribeSettingsChanges(W => {
+      if (Xi.has(W)) y.settingsChanged();
+    }),
+    C = session_2.onStoppedWhileRunning(() => y.requestRegistration("stopped_while_running")),
+    E = (e.subscribeConsent ?? (W => hRs(e.memory.consentAnnounced, W)))(W => y.consentDecided(W)),
+    x = W => () => {
+      try {
+        y.requestRegistration(W);
+      } catch (error) {
+        logError(error);
+      }
+    },
+    K = e.memory.noteAttached(e.launchDir),
+    G = !1;
+  return {
+    callbacks: {
+      onForwardedHookCallback: W => {
+        session_2.handleForwardedHook(W);
+        let P = Nye(W.callbackId)?.instanceId,
+          {
+            registeredInstanceId: registeredInstanceId,
+            instanceId: instanceId_2
+          } = y.snapshot();
+        if (P !== void 0 && (P === registeredInstanceId || P === instanceId_2)) y.activity();
+      },
+      onForwardedHookCancelled: (W, P) => {
+        session_2.handleCancelled(W, P);
+      }
+    },
+    onStreamConnected: x("connected"),
+    onWorkerInit: x("init"),
+    onWorkerUp: x("worker_up"),
+    onTurnInFlight: () => y.turnInFlight(),
+    onTurnEnded: () => y.turnEnded(),
+    beforeSend: () => y.ensureRegistered(),
+    snapshot: () => y.snapshot(),
+    dispose: () => {
+      if (G) return;
+      G = !0, K(), w(), R(), C(), E(), S();
+      let W = y.unregister(e0t);
+      y.dispose();
+      let P = e.registerCleanup(() => W);
+      W.then(P, P), session_2.dispose();
+    }
+  };
+}
+import { randomUUID as ms } from "crypto";
+var Zi = f(() => _t({
+    status: U(["announced", "withdrawn"]),
+    passthrough_declined: U(["policy", "pending", "unavailable"]).optional().catch(void 0),
+    worker_epoch: v().int().positive().max(Number.MAX_SAFE_INTEGER).optional().catch(void 0),
+    protocol_version: v().nullable().optional().catch(void 0),
+    ignored_tools: T(o()).optional().catch(void 0),
+    passthrough_adopted: v().int().nonnegative().optional().catch(void 0),
+    worker_capabilities: T(o()).optional().catch(void 0)
+  })),
+  timeoutMs_5 = 15000,
+  reason_3 = "unverified_sender",
+  Ot = ["aborted", "no_answer", "post_failed", "post_lost", "replaced", "unreadable_ack"];
+function Qi(e) {
+  if (e instanceof vwe) return {
+    kind: "failed",
+    reason: "post_failed"
+  };
+  if (e instanceof X0) return {
+    kind: "failed",
+    reason: "no_answer"
+  };
+  if (e instanceof Ke) return {
+    kind: "failed",
+    reason: "aborted"
+  };
+  let reason_2 = d(e);
+  if (reason_2.startsWith("Unsupported control request subtype")) return {
+    kind: "unsupported"
+  };
+  if (reason_2.startsWith("remote_tools_disabled:") || reason_2.startsWith("invalid_announce:")) return {
+    kind: "refused",
+    reason: reason_2
+  };
+  if (reason_2.startsWith("remote_tools_not_ready:")) return {
+    kind: "retry",
+    reason: reason_2
+  };
+  if (reason_2.startsWith("stale_worker_epoch")) return {
+    kind: "retry",
+    reason: "stale_worker_epoch"
+  };
+  return {
+    kind: "failed",
+    reason: reason_2
+  };
+}
+async function Po(e, n, r = {}) {
+  g6t();
+  let abortController_3 = new AbortController(),
+    u,
+    h = R => {
+      u ??= R, abortController_3.abort();
+    },
+    y = "none",
+    w = Date.now(),
+    S = R => {
+      if (y !== "none") {
+        let C = Date.now(),
+          A = y === "waiting" ? C : y.endedAt;
+        i("tengu_remote_tools_announce_waited_for_worker", {
+          waited_ms: A - w,
+          after_wait_ms: C - A,
+          outcome: c(R.kind),
+          reason: pe(Ot.find(item => R.kind === "failed" && item === R.reason))
+        });
+      }
+      return R;
+    };
+  try {
+    let {
+      posted: posted,
+      response: response
+    } = e.postControlRequest(Dt(n), {
+      signal: r.signal ? AbortSignal.any([r.signal, abortController_3.signal]) : abortController_3.signal,
+      ...(r.timeoutMs !== void 0 && {
+        timeoutMs: r.timeoutMs
+      }),
+      ...(r.answerExpected === !1 ? {
+        answerExpected: !1
+      } : {
+        awaitWorkerStart: {
+          onChange: x => {
+            y = x ? "waiting" : {
+              endedAt: Date.now()
+            };
+          }
+        }
+      }),
+      background: !0,
+      onEchoed: x => {
+        if (x === "unverified") h({
+          kind: "refused",
+          reason: reason_3
+        });
+      }
+    });
+    posted.then(({
+      outcome: outcome
+    }) => outcome === "accepted" ? r.replaced?.then(() => "replaced") : "post_lost").then(reason_4 => {
+      if (reason_4 !== void 0 && y === "waiting") h({
+        kind: "failed",
+        reason: reason_4
+      });
+    });
+    let A = await response,
+      E = P0("remote_tools_announce", Zi(), A);
+    if (E === null) return S({
+      kind: "failed",
+      reason: "unreadable_ack"
+    });
+    return S({
+      kind: "announced",
+      status: E.status,
+      ...(E.passthrough_declined !== void 0 && {
+        passthroughDeclined: E.passthrough_declined
+      }),
+      workerEpoch: E.worker_epoch,
+      protocolVersion: E.protocol_version,
+      ignoredTools: E.ignored_tools ?? [],
+      ...(E.passthrough_adopted !== void 0 && {
+        passthroughAdopted: E.passthrough_adopted
+      }),
+      ...(E.worker_capabilities !== void 0 && {
+        workerCapabilities: E.worker_capabilities
+      })
+    });
+  } catch (error) {
+    return S((error instanceof Ke ? u : void 0) ?? Qi(error));
+  }
+}
+function Dt(e) {
+  return {
+    subtype: "remote_tools_announce",
+    instance_id: e.instance_id,
+    ...(e.worker_epoch !== void 0 && {
+      worker_epoch: e.worker_epoch
+    }),
+    host: e.host,
+    tools: e.tools.map(item => ({
+      ...item,
+      refused_input_fields: [...item.refused_input_fields],
+      protocol_versions: [...item.protocol_versions]
+    })),
+    passthrough: [...e.passthrough],
+    plumbing: [...e.plumbing]
+  };
+}
+function es(e) {
+  return e.slice(0, 200).replace(/[^\x20-\x7e]/g, "?");
+}
+var ts = 4,
+  baseMs = 2000,
+  Ho = 1048576;
+function ns(body) {
+  if (body.passthrough.length === 0 || _(Dt(body)).length <= Ho) return {
+    body: body,
+    trimmed: !1
+  };
+  return {
+    body: {
+      ...body,
+      passthrough: []
+    },
+    trimmed: !0
+  };
+}
+function os(e) {
+  let {
+    passthroughAdopted: passthroughAdopted,
+    ...r
+  } = e;
+  return r;
+}
+var rs = 60000,
+  as = 6,
+  ln = 3600000,
+  timeoutMs_7 = 1000,
+  ls = 6,
+  ds = 6,
+  cs = 60000,
+  timeoutMs_8 = 5000,
+  timeoutMs_6 = 1500;
+function No(e) {
+  let n = attempt => e.backoffMs !== void 0 ? e.backoffMs[attempt] : attempt < ts ? SP({
+      baseMs: baseMs,
+      attempt: attempt,
+      floorMs: baseMs * 2 ** attempt / 2
+    }) : void 0,
+    r = e.setTimer ?? ((M, ee) => {
+      let re = setTimeout(M, ee);
+      return {
+        clear: () => clearTimeout(re)
+      };
+    }),
+    s = !1,
+    u = null,
+    h = null,
+    y = 0,
+    w = null,
+    S = null,
+    R = null,
+    C = !1,
+    A,
+    E = null,
+    x = 0,
+    K = 0,
+    G = [],
+    W = !1,
+    P = [],
+    O = null,
+    F = !1,
+    D = [],
+    H = async reason_5 => {
+      if (V(reason_5) || reason_5 === "reconnected") K = 0;
+      if (O !== null || e.hostAsleep?.() === !0) {
+        h = te(h, reason_5);
+        return;
+      }
+      let ee = e.session(),
+        re = e.build();
+      if (ee === null || re === void 0 || !e.workerLive()) {
+        h = te(h, reason_5);
+        return;
+      }
+      let {
+        body: body_2,
+        trimmed: trimmed
+      } = ns(re);
+      if (trimmed && !C) C = !0, p("remote_tools_client_announce", "passthrough_over_frame"), t(`[remoteToolsAnnounce] the announce with this machine's ${re.passthrough.length} MCP tools is larger than the worker reads (${Ho} chars); announcing without them \u2014 they are not offered to this worker`, {
+        level: "warn"
+      });
+      h = null, N();
+      let {
+        promise: ne,
+        resolve: se
+      } = Promise.withResolvers();
+      u = {
+        replace: se,
+        reason: reason_5
+      }, A = body_2;
+      let j = W;
+      if (W = !1, reason_5 === "returned") G.push((e.now ?? Date.now)());
+      let X = await Po(ee, body_2, {
+        ...(e.signal && {
+          signal: e.signal
+        }),
+        timeoutMs: timeoutMs_5,
+        replaced: ne
+      });
+      if (u = null, X.kind === "failed" && j) W = !0;
+      if (s) return;
+      let le = trimmed && X.kind === "announced" ? os(X) : X,
+        de = reason_5 === "returned",
+        _e = le.kind === "failed" && le.reason === "no_answer",
+        Se = le.kind === "refused" && le.reason === reason_3;
+      K = !de && (_e || Se) ? K + 1 : 0;
+      let he = de && Se ? {
+        kind: "failed",
+        reason: reason_3
+      } : _e && K > 1 ? {
+        kind: "refused",
+        reason: "no_answer_parked"
+      } : Se && K === 1 ? {
+        kind: "retry",
+        reason: reason_3
+      } : le;
+      t(`[remoteToolsAnnounce] ${reason_5}: ${he.kind}${"reason" in he ? ` (${es(he.reason)})` : ""}`), e.onOutcome?.(he, reason_5);
+      let Ce = de || reason_5 === "retry" && F;
+      if (F = de && he.kind === "retry" && he.reason === "stale_worker_epoch", Ce && !F) if (he.kind === "announced") g("rtc_return_announce");else if (he.kind === "failed") {
+        let reason_6 = he.reason;
+        if (de && (reason_6 === "post_failed" || reason_6 === "post_lost")) G.pop();
+        p("rtc_return_announce", [...Ot, reason_3].find(item => item === reason_6) ?? "other");
+      } else p("rtc_return_announce", he.kind);
+      switch (he.kind) {
+        case "announced":
+          Z(), x = 0;
+          break;
+        case "refused":
+        case "unsupported":
+          Z(), x = 0, E = he.kind === "refused" && he.reason === "no_answer_parked" ? "silence" : "refusal";
+          break;
+        case "retry":
+          if (he.reason === "stale_worker_epoch" && ++x === 1 || he.reason === reason_3) h ??= "retry";else Q();
+          break;
+        case "failed":
+          if (!de) Q();
+          break;
+      }
+      let $e = h;
+      if ($e !== null) {
+        if (h = null, E === null || B($e)) E = null, Z(), H($e);
+      }
+    },
+    V = M => M === "worker_init" || M === "tools_changed" || M === "worker_asked",
+    B = M => V(M) || E === "silence" && M === "reconnected",
+    te = (M, ee) => M !== null && V(M) && !V(ee) ? M : ee,
+    Z = () => {
+      y = 0, w?.clear(), w = null;
+    },
+    N = () => {
+      R?.clear(), R = null, S = null;
+    },
+    q = (M, ms_2) => {
+      if (S !== null && S.ms <= ms_2) {
+        S = {
+          reason: te(S.reason, M),
+          ms: S.ms
+        };
+        return;
+      }
+      let re = S?.reason ?? null;
+      N(), S = {
+        reason: te(re, M),
+        ms: ms_2
+      }, R = r(() => {
+        let ie = S;
+        if (R = null, S = null, ie !== null) J.requestAnnounce(ie.reason);
+      }, ms_2);
+    },
+    Q = () => {
+      let M = w === null ? n(y) : void 0;
+      if (M === void 0) return;
+      y += 1, w = r(() => {
+        if (w = null, !s) H("retry");
+      }, M);
+    },
+    J = {
+      requestAnnounce(M, ee) {
+        if (s) return;
+        if (ee?.coalesceMs !== void 0 && ee.coalesceMs > 0) {
+          q(M, ee.coalesceMs);
+          return;
+        }
+        let re = S === null ? M : te(S.reason, M);
+        if (N(), B(re)) E = null;
+        if (y = 0, E !== null) return;
+        if (re === "returned" && !W) {
+          let ie = (e.now ?? Date.now)();
+          G = G.filter(item => item <= ie && ie - item < ln);
+          let ae = G.at(-1);
+          if (G.length >= as || ae !== void 0 && ie - ae < rs) {
+            p("rtc_return_announce", "rate_limited");
+            return;
+          }
+        }
+        if (w?.clear(), w = null, u) {
+          if (h = te(h, re), re === "tools_changed") u.replace();
+          return;
+        }
+        H(re);
+      },
+      outstanding: () => u !== null && u.reason !== "returned" || h !== null && h !== "returned",
+      workerLive() {
+        if (s || u || h === null || E !== null) return;
+        let M = h;
+        h = null, w?.clear(), w = null, H(M);
+      },
+      async withdraw() {
+        if (s) return;
+        s = !0, w?.clear(), N();
+        let M = e.session(),
+          ee = A === void 0 ? void 0 : e.build() ?? A;
+        if (M === null || ee === void 0 || !e.workerLive()) return;
+        await Po(M, {
+          ...ee,
+          tools: [],
+          passthrough: [],
+          plumbing: []
+        }, {
+          signal: AbortSignal.timeout(timeoutMs_6),
+          timeoutMs: timeoutMs_6,
+          answerExpected: !1
+        });
+      },
+      sayAsleep(worker_epoch) {
+        let ee = e.session();
+        if (s || ee === null || A === void 0 || !e.workerLive()) return null;
+        let re = (e.now ?? Date.now)();
+        if (P = P.filter(item => item <= re && re - item < ln), W || P.length >= ls) return p("rtc_sleep_notice", W ? "already_said" : "rate_limited"), null;
+        W = !0, P.push(re);
+        let {
+          posted: posted_2,
+          response: response_2
+        } = ee.postControlRequest(Dt({
+          ...A,
+          worker_epoch: worker_epoch,
+          host: {
+            ...A.host,
+            capabilities: [...(A.host.capabilities ?? []), hVn]
+          }
+        }), {
+          timeoutMs: timeoutMs_7,
+          answerExpected: !1,
+          background: !0
+        });
+        response_2.catch(() => {});
+        let ne = je(posted_2.then(({
+          outcome: outcome_2
+        }) => {
+          if (outcome_2 === "accepted") return g("rtc_sleep_notice"), !0;
+          return p("rtc_sleep_notice", "post_failed"), W = !1, P.pop(), !1;
+        }), timeoutMs_7, (se, j) => r(se, j).clear).then(se => (O = null, J.workerLive(), se !== !1));
+        return O = ne, ne;
+      },
+      sayStillHere(worker_epoch_2) {
+        let ee = e.session();
+        if (s || ee === null || A === void 0 || W || O !== null || e.hostAsleep?.() === !0 || !e.workerLive()) return !1;
+        let re = (e.now ?? Date.now)();
+        D = D.filter(item => item <= re && re - item < ln);
+        let ie = D.at(-1);
+        if (D.length >= ds || ie !== void 0 && re - ie < cs) return !1;
+        D.push(re);
+        let {
+          posted: posted_3,
+          response: response_3
+        } = ee.postControlRequest(Dt({
+          ...A,
+          passthrough: [],
+          worker_epoch: worker_epoch_2,
+          host: {
+            ...A.host,
+            capabilities: [_Vn, ...(A.host.capabilities ?? [])]
+          }
+        }), {
+          timeoutMs: timeoutMs_8,
+          answerExpected: !1,
+          background: !0
+        });
+        return response_3.catch(() => {}), posted_3.then(se => {
+          if (se.outcome === "accepted") {
+            g("rtc_still_here");
+            return;
+          }
+          if (!(se.outcome === "failed" && (se.cause === "network" || se.cause === "timeout"))) D = D.filter(item => item !== re);
+          if (se.outcome !== "failed" || se.cause !== "closed") p("rtc_still_here", "post_failed");
+        }), !0;
+      },
+      dispose() {
+        s = !0, w?.clear(), w = null, N();
+      }
+    };
+  return J;
+}
+function Lo({
+  serving: serving,
+  manager: manager,
+  observer: observer
+}) {
+  let s = new Map();
+  return {
+    onServedChannelRequest: u => {
+      let abortController_4 = new AbortController();
+      s.set(u.requestId, abortController_4);
+      let y = {
+        ...u,
+        signal: AbortSignal.any([u.signal, abortController_4.signal])
+      };
+      fs(y, serving, manager, observer).catch(w => {
+        logError(w), manager()?.releaseServedChannelRequest(u.requestId);
+      }).finally(() => s.delete(u.requestId));
+    },
+    onServedChannelRequestCancelled: () => {},
+    onControlRequestRefused: u => serving()?.noteUnlistedKind?.(u),
+    abandonInHand: () => {
+      for (let [u, h] of s) h.abort(), manager()?.releaseServedChannelRequest(u);
+      s.clear();
+    }
+  };
+}
+async function fs(e, n, r, observer_2) {
+  let u = E => {
+      t(`[servedChannel] ${e.subtype} ${yk(e.requestId)} not answered here: ${E}`), r()?.releaseServedChannelRequest(e.requestId);
+    },
+    h = n();
+  if (h === null) return u("nothing serving");
+  let y = performance.now(),
+    leg = e.subtype === "remote_tool_call" ? rNs(e.request) : void 0,
+    S = leg?.request.ok === !0 && leg.instance_id === h.instanceId ? {
+      callId: leg.request.value.call_id,
+      leg: leg.request.kind === "outcome_query" ? "outcome_of" : leg.request.value.approval === void 0 ? 1 : 2,
+      approval: leg.request.kind === "outcome_query" ? "none" : leg.request.value.approval?.decision ?? "none"
+    } : void 0;
+  dn(() => {
+    if (S !== void 0) Ed(S.callId, "leg received", {
+      leg: S.leg,
+      age_ms: e.ageMs === void 0 ? void 0 : Math.round(e.ageMs)
+    }, Y4t(S.leg));
+  });
+  let R = observer_2 !== void 0 && leg !== void 0 && leg.instance_id === h.instanceId ? {
+    observer: observer_2,
+    leg: leg
+  } : void 0;
+  dn(() => R?.observer.legStarted(R.leg, e.ageMs));
+  let C;
+  try {
+    C = await ps(e, h, leg);
+  } finally {
+    dn(() => R?.observer.legAnswered(R.leg, C?.result));
+  }
+  if (C === void 0) return u("not this client's to answer");
+  if (e.signal.aborted) return;
+  let A = Math.round(performance.now() - y);
+  if (r()?.respondToServedChannelRequest(e.requestId, C, S === void 0 ? void 0 : (E, x) => hs(S, A, E, x)) !== !0) t(`[servedChannel] ${e.subtype} ${yk(e.requestId)} answered after it was withdrawn \u2014 result dropped`);
+}
+function hs(e, serve_ms, r, reply_ms) {
+  let u = r.outcome === "accepted" ? r.signMs : void 0,
+    h = r.outcome === "accepted" ? r.postMs : void 0;
+  if (Ed(e.callId, "reply posted", {
+    leg: e.leg,
+    serve_ms: serve_ms,
+    reply_ms: reply_ms,
+    sign_ms: u,
+    post_ms: h,
+    post_outcome: r.outcome
+  }, Y4t(e.leg)), e.leg === "outcome_of") return;
+  i("tengu_remote_tool_serve", {
+    op: b("reply"),
+    call_id: ye(e.callId),
+    transport: b("session"),
+    second_leg: e.leg === 2,
+    approval_decision: c(e.approval),
+    serve_ms: serve_ms,
+    reply_ms: reply_ms,
+    reply_sign_ms: u,
+    reply_post_ms: h,
+    reply_accepted: r.outcome === "accepted"
+  });
+}
+function dn(e) {
+  try {
+    e();
+  } catch (error) {
+    logError(error);
+  }
+}
+async function ps(e, n, r) {
+  let s = {
+    signal: e.signal,
+    requestId: e.requestId,
+    ageMs: e.ageMs,
+    workerEpoch: e.workerEpoch,
+    attestationStatus: e.attestationStatus,
+    modeStamp: e.modeStamp
+  };
+  switch (e.subtype) {
+    case "remote_tool_call":
+      return r === void 0 ? void 0 : n.serveSessionToolCall(r, s);
+    case "remote_plumbing_call":
+      {
+        let u = sNs(e.request);
+        return u === void 0 ? void 0 : n.servePlumbingCall(u, s);
+      }
+    case "remote_tools_probe":
+      return e.request.instance_id === n.instanceId ? n.answerProbe() : void 0;
+    case "remote_tools_reannounce":
+      return;
+  }
+}
+var cn = e => e.tools.length + e.plumbing.length + (e.passthrough?.length ?? 0) === 0,
+  gs = 1e4,
+  ws = new Set([...Ot, "invalid_announce", "no_answer_parked", "remote_tools_disabled", "remote_tools_not_ready", "stale_worker_epoch", reason_3]);
+function ks(e) {
+  let n = /^[a-z_]+(?=:|$)/.exec(e)?.[0];
+  return n !== void 0 && ws.has(n) ? n : "other";
+}
+function _s(e) {
+  if (e.kind === "failed" && e.reason === "replaced") return;
+  if (e.kind === "announced") {
+    g("remote_tools_client_announce");
+    return;
+  }
+  p("remote_tools_client_announce", e.kind === "unsupported" ? "unsupported" : `${e.kind}_${ks(e.reason)}`);
+}
+function uzt(e) {
+  let instanceId_3 = `cc-${ms()}`,
+    r = null,
+    s = !1,
+    u = null,
+    h = null,
+    y = () => {},
+    kept,
+    S,
+    R,
+    C,
+    A,
+    E,
+    x,
+    K,
+    G = !1,
+    W = !1,
+    P = !1,
+    O = !1,
+    F = !1,
+    D = !1,
+    H,
+    V = new Map(),
+    B = No({
+      hostAsleep: () => D,
+      session: e.manager,
+      workerLive: () => e.manager()?.workerLive() ?? !1,
+      build: () => {
+        let j = r?.servedTools?.();
+        if (j === void 0) return;
+        return W = cn(j), E = kept ?? A, e.buildAnnounce(j, instanceId_3, kept);
+      },
+      onOutcome: (j, X) => {
+        let le = E;
+        A = void 0;
+        let de = X === "returned" && j.kind === "failed";
+        if (j.kind === "announced") {
+          if (j.workerEpoch !== void 0) x = Math.max(x ?? 0, j.workerEpoch);
+          if (j.workerEpoch !== void 0 && (kept === void 0 || j.workerEpoch >= kept)) kept = j.workerEpoch;else if (j.workerEpoch !== kept) Ed(void 0, "epoch ratchet ignored", {
+            heard: j.workerEpoch,
+            kept: kept
+          });
+          S = j.passthroughDeclined === "pending" ? void 0 : j.workerEpoch, R = void 0, C = void 0, G = !1, P = W, O = j.workerCapabilities?.includes(bVn) === !0;
+        } else if (!de) {
+          if (S = void 0, G = j.kind === "failed" || j.kind === "retry" || j.kind === "refused" && j.reason === "no_answer_parked", j.kind === "refused" && j.reason === "no_answer_parked") C = le;else if (j.kind === "refused" || j.kind === "unsupported") {
+            if (R = le, j.kind === "refused" && j.reason === reason_3 && !F) F = !0, e.onNotice?.("announce_unverified", Gs.announce_unverified(Hke()));
+          } else if (j.kind === "retry" && j.reason === "stale_worker_epoch") kept = void 0, x = void 0;
+        }
+        if (X !== "returned" || !de && j.kind !== "announced") _s(j);
+        e.onAnnounceOutcome?.(j, X);
+      },
+      ...(e.signal && {
+        signal: e.signal
+      }),
+      ...e.announcer
+    }),
+    te = j => {
+      if (s) {
+        j.dispose();
+        return;
+      }
+      if (r = j, Z(), y = j.onServedToolsChanged?.(X => {
+        Z(), requestAnnounce("tools_changed", {
+          coalesceMs: X === void 0 || X === "adopted" || X === "redescribed" ? 0 : Swn[X]
+        });
+      }) ?? y, u !== null) {
+        let {
+          reason: reason_7,
+          opts: opts_2
+        } = u;
+        u = null, requestAnnounce(reason_7, opts_2);
+      }
+    },
+    Z = () => {
+      if (s) return;
+      let j = r?.servedTools?.();
+      e.manager()?.markServing(j !== void 0 && !cn(j));
+    },
+    requestAnnounce = (reason_8, opts_3) => {
+      if (r === null) {
+        u = {
+          reason: reason_8,
+          ...(opts_3 && {
+            opts: opts_3
+          })
+        };
+        return;
+      }
+      if (reason_8 === "attached") Z();
+      if (reason_8 === "worker_asked") {
+        S = void 0, R = void 0, C = void 0, A = void 0, B.requestAnnounce("worker_asked");
+        return;
+      }
+      if (reason_8 === "returned") {
+        if (S === void 0 || P) {
+          requestAnnounce("reconnected");
+          return;
+        }
+        B.requestAnnounce("returned");
+        return;
+      }
+      if (reason_8 === "reconnected" && S !== void 0 || reason_8 === "attached" && (S !== void 0 || A !== void 0)) {
+        t(`[servedChannel] ${reason_8}: nothing to announce \u2014 worker epoch ${S ?? A} already has (or is being told) this machine's tools`);
+        return;
+      }
+      if (reason_8 === "worker_init" && opts_3?.workerEpoch !== void 0 && (opts_3.workerEpoch === S || opts_3.workerEpoch === R || opts_3.workerEpoch === C || opts_3.workerEpoch === A || kept !== void 0 && opts_3.workerEpoch < kept)) return;
+      if (S = void 0, reason_8 === "reconnected") C = void 0;
+      if (reason_8 === "worker_init") {
+        if (opts_3?.workerEpoch !== void 0) x = Math.max(x ?? 0, opts_3.workerEpoch);
+        A = opts_3?.workerEpoch;
+        let le = opts_3?.workerEpoch === void 0 || kept === void 0 || opts_3.workerEpoch === kept;
+        if (opts_3?.workerEpoch !== void 0) kept = opts_3.workerEpoch;
+        if (le && B.outstanding()) return;
+      } else if (reason_8 === "tools_changed") R = void 0, C = void 0;
+      B.requestAnnounce(reason_8, {
+        ...(opts_3?.coalesceMs !== void 0 && {
+          coalesceMs: opts_3.coalesceMs
+        })
+      });
+    },
+    q = j => {
+      e.manager()?.releaseServedChannelRequest(j.requestId);
+      let X = h3n().safeParse(j.request),
+        at_4 = Date.now(),
+        de = !X.success || j.ageMs === void 0 || j.ageMs > X.data.deadline_ms || i_e(ace(j.attestationStatus)) || x !== void 0 && X.data.worker_epoch < x || K?.epoch === X.data.worker_epoch && !G || K !== void 0 && at_4 - K.at < gs || B.outstanding();
+      if (!X.success || de) {
+        t("[servedChannel] remote_tools_reannounce not honoured: unreadable, undated, past its wait, from a sender held back, from an older worker, already answered, rate limited, or an announce is already out");
+        return;
+      }
+      K = {
+        epoch: X.data.worker_epoch,
+        at: at_4
+      }, G = !1, requestAnnounce("worker_asked");
+    },
+    Q = e.createServingContext({
+      sessionId: e.sessionId,
+      instanceId: instanceId_3,
+      ...(e.onNotice && {
+        onNotice: e.onNotice
+      })
+    }),
+    J = Q instanceof Promise ? Q.then(te).catch(j => {
+      logError(j);
+    }) : Promise.resolve(te(Q)),
+    M = () => {},
+    close = () => (h ??= (async () => {
+      s = !0, M();
+      for (let de of V.keys()) e.manager()?.releaseServedChannelRequest(de);
+      V.clear();
+      let j = r?.servedTools?.(),
+        X = j === void 0 || cn(j),
+        le = P && W && X ? Promise.resolve(B.dispose()) : B.withdraw();
+      e.manager()?.markServing(!1), await J, y(), await le, r?.dispose(), B.dispose();
+    })(), h),
+    {
+      abandonInHand: abandonInHand,
+      onServedChannelRequest: onServedChannelRequest,
+      ...ae
+    } = Lo({
+      serving: () => s ? null : r,
+      manager: e.manager,
+      observer: e.onServedCall
+    }),
+    ne = j => j.subtype === "remote_tools_reannounce" ? q(j) : onServedChannelRequest?.(j),
+    se = {
+      instanceId: instanceId_3,
+      callbacks: {
+        ...ae,
+        onServedChannelRequest: j => {
+          let request = j.subtype === "remote_tools_reannounce" ? j : {
+            ...j,
+            workerEpoch: j.workerEpoch ?? kept
+          };
+          if (request.subtype === "remote_tools_probe" && (D || H !== void 0 && request.ageMs !== void 0 && Date.now() - request.ageMs < H)) t(`[servedChannel] remote_tools_probe ${yk(request.requestId)} not answered: the host ${D ? "says this computer sleeps" : "had not yet said it woke when it was stored"}`), e.manager()?.releaseServedChannelRequest(request.requestId);else if (D && !s) t(`[servedChannel] ${request.subtype} ${yk(request.requestId)} held until the host says this computer woke`), V.set(request.requestId, {
+            request: request,
+            at: Date.now()
+          });else ne(request);
+        },
+        onWorkerLive: () => B.workerLive(),
+        onWorkerGone: () => {
+          S = void 0, r?.workerGone?.();
+        }
+      },
+      requestAnnounce: requestAnnounce,
+      sayAsleep: () => (D = !0, s || S === void 0 || P ? null : B.sayAsleep(S)),
+      sayStillHere: () => !s && !D && S !== void 0 && !P && O && B.sayStillHere(S),
+      hostWoke: j => {
+        if (!D) return;
+        D = !1;
+        let X = Date.now();
+        if (H = X, !j) B.workerLive();
+        let le = [...V.values()];
+        V.clear();
+        for (let {
+          request: request_2,
+          at: at_5
+        } of le) {
+          if (request_2.signal.aborted) continue;
+          try {
+            ne({
+              ...request_2,
+              ageMs: request_2.ageMs === void 0 ? void 0 : request_2.ageMs + (X - at_5)
+            });
+          } catch (error) {
+            logError(error), e.manager()?.releaseServedChannelRequest(request_2.requestId);
+          }
+        }
+      },
+      heldServedCall: j => s || r === null ? EV : r.heldServedCall?.(j) ?? EV,
+      servedHost: () => s ? void 0 : r?.servedTools?.()?.host,
+      close: close
+    };
+  if (M = e.onRevoked?.(j => {
+    t(`[servedChannel] serving revoked on this machine (${j}) \u2014 closing the channel`), abandonInHand(), e.manager()?.giveUpKeptServedResults(), close();
+  }) ?? M, s) M();
+  return se;
+}
+var ys = [400, 1200],
+  Ss = 5000,
+  AGr = "Switch permission modes away and back once to keep this session's mode: it couldn't be saved on the server, so the session may fall back to default after idling.",
+  vs = "Switch permission modes away and back once: this session's mode couldn't be saved on the server.",
+  bs = "This session's permission mode couldn't be saved: the server says the session isn't active. Switch modes away and back once it is.";
+function Rs(e) {
+  return e.outcome === "failed" && (e.cause === "network" || e.cause === "http" && (e.status >= 500 || e.status === 429));
+}
+function v_n({
+  manager: manager_2,
+  mode: n,
+  surface: surface,
+  sessionId: sessionId,
+  superseded: superseded,
+  observedMode: observedMode,
+  seededModeReported: seededModeReported,
+  onRefused: onRefused,
+  onGaveUp: onGaveUp,
+  onTaken: onTaken,
+  linkDown: linkDown
+}) {
+  let A = G => {
+      i("tengu_remote_create_permission_mode_push", {
+        surface: c(surface),
+        mode: c(n),
+        kind: c(G.kind),
+        posted_mode: c(G.postedMode),
+        outcome: c(G.outcome),
+        ...("cause" in G && {
+          cause: c(G.cause)
+        }),
+        ...("status" in G && {
+          status: G.status
+        }),
+        ...(G.attempt !== void 0 && {
+          attempt: G.attempt
+        }),
+        session_id: ye(sessionId)
+      });
+    },
+    E = () => {
+      let G = observedMode?.();
+      return superseded() || G !== void 0 && G !== n && (G !== "default" || (seededModeReported?.() ?? !1));
+    },
+    x = async (G, kind, P = Date.now(), attempt_2 = 1) => {
+      let abortController_5 = new AbortController(),
+        D = manager_2.postControlRequest({
+          subtype: "set_permission_mode",
+          mode: G
+        }, {
+          answerExpected: !1,
+          background: !0,
+          timeoutMs: timeoutMs_9,
+          signal: abortController_5.signal
+        });
+      D.response.catch(() => {});
+      let result = await D.posted;
+      if (A({
+        ...result,
+        kind: kind,
+        postedMode: G,
+        attempt: attempt_2
+      }), result.outcome === "accepted") return {
+        result: result,
+        response: D.response
+      };
+      if (abortController_5.abort(), E()) return A({
+        kind: kind,
+        postedMode: G,
+        outcome: "superseded"
+      }), {
+        result: result,
+        response: null
+      };
+      let V = ys[attempt_2 - 1];
+      if (V !== void 0 && Rs(result) && Date.now() - P < Ss) {
+        if (await Y(V), !E()) return x(G, kind, P, attempt_2 + 1);
+        return A({
+          kind: kind,
+          postedMode: G,
+          outcome: "superseded"
+        }), {
+          result: result,
+          response: null
+        };
+      }
+      if (A({
+        kind: kind,
+        postedMode: G,
+        outcome: "gave_up"
+      }), m("remote_create_mode_push", `${kind}_gave_up`), !(result.outcome === "failed" && result.cause === "closed")) onGaveUp?.(result.outcome === "session_inactive" ? bs : kind === "push" ? AGr : vs);
+      return {
+        result: result,
+        response: null
+      };
+    },
+    K = G => {
+      G.then(() => {
+        A({
+          kind: "push",
+          postedMode: n,
+          outcome: "taken"
+        }), onTaken?.(), g("remote_create_mode_push"), t(`[remote] The session took its create's ${n} permission mode as a live request`);
+      }, W => {
+        let P = Lq(W);
+        if (t(`[remote] The create's ${n} permission mode push was not taken (${P}): ${ti(d(W), {
+          maxCodeUnits: 200
+        })}`), !(P === "server_error" || (P === "disconnected" || P === "not_connected") && linkDown !== void 0 && !linkDown())) {
+          A({
+            kind: "push",
+            postedMode: n,
+            outcome: "unanswered"
+          }), p("remote_create_mode_push", "unanswered");
+          return;
+        }
+        if (A({
+          kind: "push",
+          postedMode: n,
+          outcome: "refused"
+        }), p("remote_create_mode_push", "refused"), E() || n === "default") return;
+        let F = x("default", "converge");
+        F.then(({
+          response: response_4
+        }) => response_4?.catch(H => {
+          t(`[remote] The default mode sent after that refusal was not taken either: ${ti(d(H), {
+            maxCodeUnits: 200
+          })}`);
+        })), onRefused?.(F.then(({
+          result: result_2
+        }) => result_2));
+      });
+    };
+  return x(n, "push").then(({
+    result: result_3,
+    response: response_5
+  }) => {
+    if (response_5 !== null) K(response_5);
+    return result_3;
+  });
+}
+function F4o({
+  posted: posted_4,
+  mode: mode,
+  latch: latch,
+  retire: retire,
+  now = Date.now
+}) {
+  let h = posted_4.then(y => y.outcome === "accepted", () => !1);
+  return h.then(y => {
+    if (y) retire();else latch.notTakenAtMs ??= now();
+  }), async ({
+    submittedAtMs: submittedAtMs
+  }) => {
+    let w = submittedAtMs ?? now();
+    if (await h) return;
+    if (w - (latch.notTakenAtMs ?? w) < H4o) return {
+      go: !1,
+      reason: `the session's ${mode} permission mode couldn't be saved on the server first`
+    };
+    retire();
+    return;
+  };
+}
+var Es = 60000,
+  Cs = 180000,
+  k_n = "Cloud session may be unresponsive. Attempting to reconnect\u2026",
+  E_n = "Claude is waiting for you to answer its request and will continue with this message once you do.";
+function T_n(e) {
+  return e ? Cs : Es;
+}
+class pzt {
+  holdsWhileAsked;
+  openRequests = new Set();
+  watched = null;
+  watch(onSilent, schedule) {
+    let r = this.holds();
+    if (r) this.clear();
+    let s = {
+      onSilent: onSilent,
+      schedule: schedule,
+      cancel: null
+    };
+    if (this.watched = s, r && this.openRequests.size > 0) return g("remote_response_watch_hold"), !1;
+    return this.start(s), !0;
+  }
+  clear() {
+    this.watched?.cancel?.(), this.watched = null;
+  }
+  requestOpened(e) {
+    if (this.openRequests.add(e), this.holds() && this.watched?.cancel) this.watched.cancel(), this.watched.cancel = null, g("remote_response_watch_hold");
+  }
+  requestClosed(e) {
+    if (this.openRequests.delete(e), this.openRequests.size === 0 && this.watched?.cancel === null) this.start(this.watched);
+  }
+  holds() {
+    return this.holdsWhileAsked ??= awn(), this.holdsWhileAsked;
+  }
+  start(e) {
+    e.cancel = e.schedule(() => {
+      if (this.watched === e) this.watched = null;
+      e.onSilent();
+    });
+  }
+}
+var Is = "tengu_violin_colophony";
+function awt() {
+  try {
+    return ir(Is, !1) === !0;
+  } catch {
+    return !1;
+  }
+}
+export { qet, z7n, G7n, czt, V7n, q7n, setTimer as K7n, y_n, __n, b_n, S_n, w_n, reason_3 as pCe, uzt, AGr, v_n, F4o, k_n, E_n, T_n, pzt, awt };

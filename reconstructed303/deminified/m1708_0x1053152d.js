@@ -1,0 +1,1530 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import "B:/~BUN/root/chunk-hkh6hras.js";
+import { c, pe } from "B:/~BUN/root/chunk-jthpk6wv.js";
+import { Ke, x, d, k, HA } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { _, t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { nt, Khe } from "B:/~BUN/root/chunk-nggrknsv.js";
+import "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import "B:/~BUN/root/chunk-pm2vnc51.js";
+import "B:/~BUN/root/chunk-01qdq3qc.js";
+import { Pr, E, ir } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { Vt } from "B:/~BUN/root/chunk-9ka04m0y.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import { L, at, j, ke, ii, de } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { W } from "B:/~BUN/root/chunk-hg8ngszx.js";
+import { ka } from "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import { a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import { Zx, I4, aF, ude } from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import { i } from "B:/~BUN/root/chunk-1kfn24jp.js";
+import { g, p } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-nxwmyxnk.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import { AA } from "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import "B:/~BUN/root/chunk-xrp58hm9.js";
+import "B:/~BUN/root/chunk-pjgzz98k.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import { uE } from "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import "B:/~BUN/root/chunk-8ye9n4fk.js";
+import "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import "B:/~BUN/root/chunk-1gpjpba6.js";
+import "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-8pmnanyd.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import { We } from "B:/~BUN/root/chunk-kad4nq7y.js";
+import "B:/~BUN/root/chunk-28dw3zbk.js";
+import "B:/~BUN/root/chunk-07c8fw5z.js";
+import "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-8w42v0dp.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-h9p45fg5.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import "B:/~BUN/root/chunk-cx57tr4b.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import { Age } from "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import { rB } from "B:/~BUN/root/chunk-7h4t08m3.js";
+import "B:/~BUN/root/chunk-nw686kdq.js";
+import "B:/~BUN/root/chunk-h2myanpn.js";
+import "B:/~BUN/root/chunk-tqyz3ejx.js";
+import "B:/~BUN/root/chunk-w2mafqxc.js";
+import "B:/~BUN/root/chunk-183sjefx.js";
+import "B:/~BUN/root/chunk-nvdqbkrt.js";
+import "B:/~BUN/root/chunk-d544j3ga.js";
+import "B:/~BUN/root/chunk-472kxa0t.js";
+import "B:/~BUN/root/chunk-7gwemd3j.js";
+import { WX, sn, If } from "B:/~BUN/root/chunk-zayh6xmh.js";
+import { JCo, CH } from "B:/~BUN/root/chunk-9w4ppz44.js";
+import "B:/~BUN/root/chunk-2fccb5hn.js";
+import { vt, Qt } from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import "B:/~BUN/root/chunk-z8fd2x5s.js";
+import { p1e, f1e } from "B:/~BUN/root/chunk-c44qc88s.js";
+import "B:/~BUN/root/chunk-bn7mrnb3.js";
+import "B:/~BUN/root/chunk-vfmvkxsr.js";
+import { $Oe, kX, Dh, g2n } from "B:/~BUN/root/chunk-h1tq8zce.js";
+import "B:/~BUN/root/chunk-0n2201tc.js";
+import "B:/~BUN/root/chunk-q3srk2wz.js";
+import "B:/~BUN/root/chunk-efcxwmhb.js";
+import "B:/~BUN/root/chunk-hhgqcegv.js";
+import "B:/~BUN/root/chunk-9080897a.js";
+import "B:/~BUN/root/chunk-qk52d0gf.js";
+import "B:/~BUN/root/chunk-ggdk44cm.js";
+import "B:/~BUN/root/chunk-z84amwaw.js";
+import "B:/~BUN/root/chunk-mgb2hezz.js";
+import "B:/~BUN/root/chunk-x4gdh7dq.js";
+import "B:/~BUN/root/chunk-f25646gd.js";
+import "B:/~BUN/root/chunk-dq7zfs8r.js";
+import "B:/~BUN/root/chunk-8y0chnnr.js";
+import "B:/~BUN/root/chunk-gy660jgx.js";
+import "B:/~BUN/root/chunk-pmw6knpp.js";
+import "B:/~BUN/root/chunk-e7tskyjv.js";
+import "B:/~BUN/root/chunk-cvj1wxdh.js";
+import "B:/~BUN/root/chunk-v1j2tw52.js";
+import "B:/~BUN/root/chunk-gjdk1btq.js";
+import "B:/~BUN/root/chunk-3d7bmmrg.js";
+import "B:/~BUN/root/chunk-e3hz52nd.js";
+import { dc, sg, fO } from "B:/~BUN/root/chunk-ses0c36n.js";
+import "B:/~BUN/root/chunk-2zdc0br5.js";
+import "B:/~BUN/root/chunk-f0ytfwhx.js";
+import "B:/~BUN/root/chunk-r0jnxjth.js";
+import "B:/~BUN/root/chunk-7j5tvnqj.js";
+import "B:/~BUN/root/chunk-bp7zxkzq.js";
+import { LMt, Een, Bct, Ten } from "B:/~BUN/root/chunk-dn8rakwm.js";
+import "B:/~BUN/root/chunk-429xgjya.js";
+import "B:/~BUN/root/chunk-7qeqkjr8.js";
+import "B:/~BUN/root/chunk-7qatwz9y.js";
+import "B:/~BUN/root/chunk-b0vcwsh9.js";
+import "B:/~BUN/root/chunk-r4y1700s.js";
+import { w_, uBe } from "B:/~BUN/root/chunk-6vykeeak.js";
+import { Vd, gC, Uz, llt, _co, bco, Dse, Tq, mwr } from "B:/~BUN/root/chunk-9grc6xh0.js";
+import "B:/~BUN/root/chunk-8gzvb73z.js";
+import "B:/~BUN/root/chunk-cw2ph5fw.js";
+import "B:/~BUN/root/chunk-fb07w30y.js";
+import "B:/~BUN/root/chunk-7ybsx93y.js";
+import "B:/~BUN/root/chunk-yjayxywk.js";
+import "B:/~BUN/root/chunk-t3p4x0tq.js";
+import "B:/~BUN/root/chunk-rx39nt6a.js";
+import "B:/~BUN/root/chunk-vttg4n7q.js";
+import "B:/~BUN/root/chunk-1fjjnb3f.js";
+import "B:/~BUN/root/chunk-r1z1wgpe.js";
+import "B:/~BUN/root/chunk-1s3ejbv6.js";
+import "B:/~BUN/root/chunk-9y4mcm7b.js";
+import "B:/~BUN/root/chunk-9tkh434c.js";
+import "B:/~BUN/root/chunk-m3ka5wpr.js";
+import "B:/~BUN/root/chunk-19m6yp46.js";
+import "B:/~BUN/root/chunk-vqar0j99.js";
+import "B:/~BUN/root/chunk-tsyp86a9.js";
+import "B:/~BUN/root/chunk-pwz0pnkt.js";
+import "B:/~BUN/root/chunk-c8j3aby6.js";
+import "B:/~BUN/root/chunk-7fsmvr58.js";
+import "B:/~BUN/root/chunk-j4qesy5s.js";
+import "B:/~BUN/root/chunk-ks7h6f0s.js";
+import "B:/~BUN/root/chunk-d69870x4.js";
+import "B:/~BUN/root/chunk-t78esase.js";
+import "B:/~BUN/root/chunk-x73fxyt1.js";
+import "B:/~BUN/root/chunk-h6hab5w2.js";
+import "B:/~BUN/root/chunk-vm7ta03q.js";
+import "B:/~BUN/root/chunk-25j8tcak.js";
+import "B:/~BUN/root/chunk-j2ppas05.js";
+import "B:/~BUN/root/chunk-k382hx6g.js";
+import "B:/~BUN/root/chunk-0x8xex6w.js";
+import "B:/~BUN/root/chunk-1xwk1cwp.js";
+import "B:/~BUN/root/chunk-r9swysv9.js";
+import "B:/~BUN/root/chunk-3tj0rd0x.js";
+import "B:/~BUN/root/chunk-j97yjp75.js";
+import "B:/~BUN/root/chunk-vd11ggb1.js";
+import "B:/~BUN/root/chunk-r81hcemr.js";
+import "B:/~BUN/root/chunk-q0t5e1bx.js";
+import "B:/~BUN/root/chunk-hcz3kjms.js";
+import "B:/~BUN/root/chunk-0m6vvjrw.js";
+import "B:/~BUN/root/chunk-mtfk0qfd.js";
+import "B:/~BUN/root/chunk-9tx73f8x.js";
+import "B:/~BUN/root/chunk-p4t63p2q.js";
+import "B:/~BUN/root/chunk-tkcgmvh7.js";
+import "B:/~BUN/root/chunk-s6jt7ap6.js";
+import "B:/~BUN/root/chunk-72n790j1.js";
+import "B:/~BUN/root/chunk-2vhqkymb.js";
+import "B:/~BUN/root/chunk-nz6ywek4.js";
+import "B:/~BUN/root/chunk-vnmfp48d.js";
+import "B:/~BUN/root/chunk-qegjq8ky.js";
+import "B:/~BUN/root/chunk-ervhay8x.js";
+import "B:/~BUN/root/chunk-t63e78w2.js";
+import "B:/~BUN/root/chunk-66hg7026.js";
+import "B:/~BUN/root/chunk-gt1x0gdb.js";
+import "B:/~BUN/root/chunk-ydtn2zrk.js";
+import "B:/~BUN/root/chunk-2vz2n6bw.js";
+import "B:/~BUN/root/chunk-4zxf96ry.js";
+import "B:/~BUN/root/chunk-wje8pvrc.js";
+import "B:/~BUN/root/chunk-rhpppw15.js";
+import "B:/~BUN/root/chunk-q5ca2nsw.js";
+import "B:/~BUN/root/chunk-p64g0hj8.js";
+import "B:/~BUN/root/chunk-0p489043.js";
+import "B:/~BUN/root/chunk-fvn1tqbf.js";
+import "B:/~BUN/root/chunk-703q5f7c.js";
+import "B:/~BUN/root/chunk-7abd7f1e.js";
+import "B:/~BUN/root/chunk-raq9cfnw.js";
+import "B:/~BUN/root/chunk-jwh3r245.js";
+import "B:/~BUN/root/chunk-74f4ssah.js";
+import "B:/~BUN/root/chunk-bvhc5fp3.js";
+import "B:/~BUN/root/chunk-p7n9drc0.js";
+import "B:/~BUN/root/chunk-8pqw0dhk.js";
+import "B:/~BUN/root/chunk-b0envsq0.js";
+import "B:/~BUN/root/chunk-qdaqzk6w.js";
+import "B:/~BUN/root/chunk-7z3ndmqr.js";
+import "B:/~BUN/root/chunk-aqd86p9a.js";
+import "B:/~BUN/root/chunk-m42n0wc9.js";
+import "B:/~BUN/root/chunk-m1mbrj05.js";
+import "B:/~BUN/root/chunk-tkkhtfwq.js";
+import "B:/~BUN/root/chunk-n0e205s6.js";
+import "B:/~BUN/root/chunk-351qj2sm.js";
+import "B:/~BUN/root/chunk-3m56hntj.js";
+import "B:/~BUN/root/chunk-00v9f07q.js";
+import "B:/~BUN/root/chunk-gk5jpppj.js";
+import "B:/~BUN/root/chunk-yq5myw2y.js";
+import "B:/~BUN/root/chunk-qj8q07z1.js";
+import "B:/~BUN/root/chunk-8zz6429p.js";
+import "B:/~BUN/root/chunk-1g2t7gtx.js";
+import "B:/~BUN/root/chunk-pbq7kcha.js";
+import "B:/~BUN/root/chunk-8d9x5cx1.js";
+import "B:/~BUN/root/chunk-rnh5g2g4.js";
+import "B:/~BUN/root/chunk-arcgcnq8.js";
+import "B:/~BUN/root/chunk-maccjk0y.js";
+import "B:/~BUN/root/chunk-gygbhz84.js";
+import "B:/~BUN/root/chunk-w6et565n.js";
+import "B:/~BUN/root/chunk-4mz5gtvt.js";
+import "B:/~BUN/root/chunk-5y3z8s12.js";
+import "B:/~BUN/root/chunk-6s78sa1b.js";
+import "B:/~BUN/root/chunk-78zw0pmb.js";
+import "B:/~BUN/root/chunk-89m6ef17.js";
+import "B:/~BUN/root/chunk-dbpgrm5a.js";
+import "B:/~BUN/root/chunk-c0j3f8cc.js";
+import "B:/~BUN/root/chunk-kcbxq7ta.js";
+import "B:/~BUN/root/chunk-hjwx01fc.js";
+import "B:/~BUN/root/chunk-fvbmxrbm.js";
+import "B:/~BUN/root/chunk-5ec3ghdy.js";
+import "B:/~BUN/root/chunk-f06s8ws5.js";
+import "B:/~BUN/root/chunk-5vcgesja.js";
+import "B:/~BUN/root/chunk-s81ha78q.js";
+import "B:/~BUN/root/chunk-esg2vqtm.js";
+import "B:/~BUN/root/chunk-k8twyg23.js";
+import "B:/~BUN/root/chunk-0sbppzkc.js";
+import "B:/~BUN/root/chunk-3thbj98m.js";
+import "B:/~BUN/root/chunk-ewwghe6s.js";
+import "B:/~BUN/root/chunk-c1tegkb3.js";
+import "B:/~BUN/root/chunk-57vwkt3t.js";
+import { vU } from "B:/~BUN/root/chunk-nj6es8gv.js";
+import "B:/~BUN/root/chunk-3d6wa55r.js";
+import "B:/~BUN/root/chunk-qvd6ab1g.js";
+import "B:/~BUN/root/chunk-0hq7zw7b.js";
+import "B:/~BUN/root/chunk-xyxdcn7p.js";
+import "B:/~BUN/root/chunk-2wpqgvtg.js";
+import "B:/~BUN/root/chunk-xf25v2pj.js";
+import "B:/~BUN/root/chunk-2ppwmg0p.js";
+import "B:/~BUN/root/chunk-ks90p42g.js";
+import "B:/~BUN/root/chunk-nq10jsxs.js";
+import "B:/~BUN/root/chunk-45m7jrth.js";
+import { V8, Rso, BFe, ics, acs, kMn, lcs, Aso, dcs, xso, ccs, ucs, YY, cAt } from "B:/~BUN/root/chunk-senfjyw4.js";
+import { vMn, Afr, H1, UFe } from "B:/~BUN/root/chunk-djhaep1s.js";
+import "B:/~BUN/root/chunk-p8gd2veh.js";
+import "B:/~BUN/root/chunk-0bjget2c.js";
+import "B:/~BUN/root/chunk-gvcmagy5.js";
+import "B:/~BUN/root/chunk-wxq7ypdv.js";
+import "B:/~BUN/root/chunk-c2nm18xm.js";
+import "B:/~BUN/root/chunk-906np0vb.js";
+import "B:/~BUN/root/chunk-k798mzph.js";
+import "B:/~BUN/root/chunk-mrkvqm9w.js";
+import "B:/~BUN/root/chunk-rx9rjzse.js";
+import "B:/~BUN/root/chunk-nt0g6kgc.js";
+import "B:/~BUN/root/chunk-0x393xyp.js";
+import "B:/~BUN/root/chunk-9g7m04dd.js";
+import "B:/~BUN/root/chunk-m5caq93p.js";
+import "B:/~BUN/root/chunk-4gqhj4xs.js";
+import "B:/~BUN/root/chunk-5mwc5s4z.js";
+import "B:/~BUN/root/chunk-g52e2dzb.js";
+import "B:/~BUN/root/chunk-mbp55gyg.js";
+import "B:/~BUN/root/chunk-jcpnv8z5.js";
+import "B:/~BUN/root/chunk-3a551r0y.js";
+import "B:/~BUN/root/chunk-f29awv9y.js";
+import "B:/~BUN/root/chunk-13n9yynj.js";
+import "B:/~BUN/root/chunk-pp32733x.js";
+import "B:/~BUN/root/chunk-6t9vgqfx.js";
+import "B:/~BUN/root/chunk-455kgrq5.js";
+import "B:/~BUN/root/chunk-nsa84wqe.js";
+import "B:/~BUN/root/chunk-25qdy3nw.js";
+import "B:/~BUN/root/chunk-92fjqg3t.js";
+import "B:/~BUN/root/chunk-6wyzmyt1.js";
+import "B:/~BUN/root/chunk-8vgph9ej.js";
+import "B:/~BUN/root/chunk-cxg2mbf6.js";
+import "B:/~BUN/root/chunk-cv2x0a47.js";
+import { MU } from "B:/~BUN/root/chunk-0k9rq8e2.js";
+import { tl } from "B:/~BUN/root/chunk-k8727s7d.js";
+import "B:/~BUN/root/chunk-7df33jce.js";
+import "B:/~BUN/root/chunk-f3f5k3wx.js";
+import "B:/~BUN/root/chunk-46bqx6b8.js";
+import "B:/~BUN/root/chunk-ma5pke8s.js";
+import "B:/~BUN/root/chunk-cc0we03s.js";
+import "B:/~BUN/root/chunk-p95zaxtt.js";
+import "B:/~BUN/root/chunk-6bmmxtvh.js";
+import "B:/~BUN/root/chunk-3hya8nsv.js";
+import "B:/~BUN/root/chunk-f561y43v.js";
+import "B:/~BUN/root/chunk-xnas864x.js";
+import "B:/~BUN/root/chunk-ft39p62b.js";
+import "B:/~BUN/root/chunk-nbprdt7j.js";
+import "B:/~BUN/root/chunk-th6c28ah.js";
+import "B:/~BUN/root/chunk-bhfm57j1.js";
+import "B:/~BUN/root/chunk-rzekebyp.js";
+import "B:/~BUN/root/chunk-stjjr4k8.js";
+import "B:/~BUN/root/chunk-y424etr5.js";
+import "B:/~BUN/root/chunk-3npegs3h.js";
+import "B:/~BUN/root/chunk-410t5g3b.js";
+import "B:/~BUN/root/chunk-b4xxgr0r.js";
+import "B:/~BUN/root/chunk-0p1hpv0s.js";
+import "B:/~BUN/root/chunk-hdc8p5sh.js";
+import "B:/~BUN/root/chunk-hgpj62j5.js";
+import "B:/~BUN/root/chunk-4yrr52wq.js";
+import "B:/~BUN/root/chunk-6n2cf80v.js";
+import "B:/~BUN/root/chunk-asrchj7k.js";
+import "B:/~BUN/root/chunk-0zewma8k.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-9929fpp1.js";
+import "B:/~BUN/root/chunk-mbz8rhex.js";
+import "B:/~BUN/root/chunk-r0sre1ss.js";
+import "B:/~BUN/root/chunk-q56gve2c.js";
+import "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-g58w39t3.js";
+import "B:/~BUN/root/chunk-dyer18a2.js";
+import "B:/~BUN/root/chunk-xpy44yvr.js";
+import "B:/~BUN/root/chunk-et37ax67.js";
+import "B:/~BUN/root/chunk-4qc55bxf.js";
+import { Qe } from "B:/~BUN/root/chunk-5k20pvvh.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import { N } from "B:/~BUN/root/chunk-nkxgam12.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import { o, v, M, oe, T, u, De, Jr, fe, U, C } from "B:/~BUN/root/chunk-g3snhg6n.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import { U_, st } from "B:/~BUN/root/chunk-7aw74be3.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-3m71dqxd.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+import { HTe, um } from "B:/~BUN/root/chunk-hz8x9zsh.js";
+import { He } from "B:/~BUN/root/chunk-8znbjmp4.js";
+import { createHash as _t } from "crypto";
+import { constants as mt } from "fs";
+import { open as wt, realpath as ue, stat as gt } from "fs/promises";
+import { isAbsolute as we, join as Ue, sep as Ee, resolve as ee } from "path";
+var dt = "Note: `original` is not available in this session and was ignored.",
+  ut = "Note: `if_version` is not available in this session and was ignored: this call did not check whether the doc had changed.";
+function ye(e, {
+  originalOffered: originalOffered,
+  docVersionsOffered: docVersionsOffered
+}) {
+  if (!N(e)) return null;
+  let s = typeof e.force === "boolean",
+    l = !originalOffered && "original" in e,
+    h = !docVersionsOffered && "if_version" in e;
+  if (!s && !l && !h) return null;
+  let input = {
+      ...e
+    },
+    w = [];
+  if (s) delete input.force, w.push("legacy_force");
+  if (l) delete input.original, w.push("original_while_off");
+  if (h) delete input.if_version, w.push("if_version_while_off");
+  let b = [...(l && e.original === !0 ? [dt] : []), ...(h ? [ut] : [])];
+  return {
+    input: input,
+    shapeClass: w.join("+"),
+    ...(b.length > 0 && {
+      resultNote: b.join(`
+`)
+    })
+  };
+}
+var je = "tengu_breezy_pelican",
+  ht = 0.16666666666666666,
+  ft = 200000;
+function be(e) {
+  let n = s => e.some(item => vt(item, s));
+  if (!n(Qe) || !n(We) || !pt()) return;
+  let r = n(Pr) ? Pr : "`grep`";
+  return `local_file is for reading only: read the parts you need with ${Qe}'s offset and limit, or search it with ${r}. Edits to it never reach the project, and project_write rejects it as local_path. To change the document or make a file from it, run \`cat /path/of/local_file > new-name\` in the working directory, where new-name is a name that no file there has, and work on that file. To save a change, call project_write with the document's path and that file as local_path. If the document is an upload such as a PDF, that saves a new text document and leaves the upload as it is.`;
+}
+function pt() {
+  return E(je, null)?.copy_hint === !0;
+}
+function Te({
+  model: model,
+  configuredWindow: configuredWindow,
+  messages: messages
+}) {
+  let s = E(je, null);
+  if (s?.mode !== "always" && s?.mode !== "after_compaction") return;
+  let l = Vd(model),
+    h = Uz(l, configuredWindow);
+  if (!(h > 0) || h > ft) return;
+  if (s.mode === "after_compaction" && !mwr(messages)) return;
+  let {
+    fraction: fraction
+  } = s;
+  return {
+    maxTokens: Math.round(h * (typeof fraction === "number" && fraction > 0 && fraction <= 1 ? fraction : ht)),
+    bytesPerToken: l.bytesPerToken
+  };
+}
+var te = new at(() => ({}));
+function Se() {
+  return te.peek(j())?.host !== void 0;
+}
+var Ge = (e, n) => De({
+  method: U(["project_info", "project_read", "project_search", "project_write", "project_delete", "project_memory_list", "project_memory_read"]),
+  path: o().min(1).max(255).optional().describe('project_read/project_write/project_delete: doc path. project_write: an existing path is replaced in place; a new bare filename (no "/") is namespaced to "claude/<name>". project_memory_read: memory file path as listed by project_memory_list.'),
+  content: o().optional().describe(e),
+  local_path: o().min(1).optional().describe(n),
+  present_to_user: M().optional().describe("project_write: true marks this doc as the file the user needs to " + "see \u2014 the deliverable they asked for or must act on. Defaults to " + "false; leave it unset for routine saves, notes, and bulk writes."),
+  if_version: o().optional().describe("project_write to an existing doc: the `version` that came with the copy you worked from (from project_read or project_write). The write is refused if the doc has changed since. Omit for a new doc."),
+  query: o().min(1).optional().describe("project_search: knowledge-base query"),
+  n: v().int().min(1).max(15).optional().describe("project_search: number of hits (default 5)"),
+  original: M().optional().describe("project_read: true saves the original file of a document-kind upload (PDF, docx) to a local file and returns its path, in place of its extracted text. Ignored for text docs and other uploads.")
+});
+function Y() {
+  return w_()?.maxBytes !== 0 && ir("tengu_mossy_wirth", !1);
+}
+var ae = f(() => Ge("project_write: inline doc text. Mutually exclusive with local_path. Use local_path for anything you have on disk.", "project_write: a file inside the working directory to upload. The " + "tool reads, encodes, and uploads directly \u2014 contents never enter " + "your context. Mutually exclusive with content.")),
+  se = f(() => Ge("project_write: inline doc text. Mutually exclusive with local_path.", "project_write: the absolute path of a file that you have read or written in full in this session. Mutually exclusive with content.")),
+  yt = f(() => ae().omit({
+    original: !0
+  })),
+  jt = f(() => se().omit({
+    original: !0
+  })),
+  bt = f(() => ae().omit({
+    if_version: !0
+  })),
+  Tt = f(() => se().omit({
+    if_version: !0
+  })),
+  St = f(() => ae().omit({
+    original: !0,
+    if_version: !0
+  })),
+  Et = f(() => se().omit({
+    original: !0,
+    if_version: !0
+  })),
+  K = {
+    notice: o().optional()
+  },
+  ve = {
+    version: o().optional().describe("@internal Lowercase hex SHA-256 of the UTF-8 bytes of a text doc's whole text. Set only where docVersionsOffered.")
+  },
+  kt = f(() => u({
+    knowledge_size: v(),
+    max_knowledge_size: v()
+  })),
+  At = f(() => Jr("method", [u({
+    method: C("project_info"),
+    ...K,
+    name: o(),
+    description: o(),
+    instructions: o(),
+    docs: T(u({
+      path: o(),
+      created_at: o().nullable()
+    })),
+    files: T(u({
+      path: o(),
+      file_kind: o(),
+      created_at: o().nullable()
+    })).optional(),
+    sync_sources: T(u({
+      type: o().nullable(),
+      config: fe(o(), oe())
+    })).optional(),
+    knowledge: kt()
+  }), u({
+    method: C("project_read"),
+    ...K,
+    path: o(),
+    ...ve,
+    file_kind: o().optional(),
+    content: o().optional(),
+    local_file: o().optional(),
+    size_bytes: v().optional().describe("@internal Size in UTF-8 bytes of the document's whole text. Set only when the text is in local_file and project_read had a token limit on inline text."),
+    created_at: o().nullable()
+  }), u({
+    method: C("project_search"),
+    ...K,
+    rag: M(),
+    hits: T(u({
+      name: o().optional(),
+      doc_uuid: o().optional(),
+      text: o().optional()
+    })).optional(),
+    docs: T(o()).optional()
+  }), u({
+    method: C("project_write"),
+    ...K,
+    path: o(),
+    doc_uuid: o(),
+    ...ve,
+    replaced: M(),
+    present_to_user: M().optional(),
+    local_path: o().optional()
+  }), u({
+    method: C("project_delete"),
+    ...K,
+    path: o(),
+    deleted: M()
+  }), u({
+    method: C("project_memory_list"),
+    ...K,
+    files: T(u({
+      path: o(),
+      size_bytes: v(),
+      updated_at: o().nullable(),
+      truncated: M()
+    })),
+    truncated: M()
+  }), u({
+    method: C("project_memory_read"),
+    ...K,
+    path: o(),
+    content: o().optional(),
+    local_file: o().optional(),
+    size_bytes: v(),
+    updated_at: o().nullable(),
+    truncated: M()
+  })])),
+  Rt = {
+    project_info: [],
+    project_read: ["path"],
+    project_search: ["query"],
+    project_write: ["path"],
+    project_delete: ["path"],
+    project_memory_list: [],
+    project_memory_read: ["path"]
+  };
+function Ot(e) {
+  return e === "project_info" || e === "project_read" || e === "project_search" || e === "project_memory_list" || e === "project_memory_read";
+}
+function Ve(e) {
+  let n = ii();
+  if (n !== null) return ee(n, e);
+  return we(e) ? ee(e) : e;
+}
+function ne(e) {
+  switch (e?.method) {
+    case "project_info":
+      return "Read project info";
+    case "project_read":
+      return e.path ? `Read ${e.path}` : "Read project doc";
+    case "project_search":
+      return e.query ? `Search "${e.query}"` : "Search project";
+    case "project_write":
+      {
+        let n = e.path ?? "?",
+          r = e.local_path ? ` from ${Ve(e.local_path)}` : "";
+        return `Write ${n}${r}`;
+      }
+    case "project_delete":
+      return e.path ? `Delete ${e.path}` : "Delete project doc";
+    case "project_memory_list":
+      return "List project memory";
+    case "project_memory_read":
+      return e.path ? `Read memory ${e.path}` : "Read project memory file";
+    default:
+      return "Project";
+  }
+}
+function Ct(e) {
+  switch (e) {
+    case "custom_client":
+      return 'The claude.ai login uses a custom OAuth client, which cannot be granted project scopes. Run /login with the standard "Claude account with subscription" flow to use Projects.';
+    case "save_failed":
+      return "Could not save the refreshed claude.ai credentials (secure storage was unavailable), and the server has already consumed the stored ones. Run /login to reconnect, then retry.";
+    case "no_token":
+      return 'Run /login and select "Claude account with subscription", then retry \u2014 the "Anthropic Console account" option does not provide claude.ai credentials.';
+    case "no_refresh":
+      return "The claude.ai login cannot be refreshed in this session \u2014 the token was supplied via CLAUDE_CODE_OAUTH_TOKEN, or its refresh token has expired or was revoked. Run /login to reconnect.";
+    case "expand_failed":
+      return 'Could not add project scopes to the token. Run /login, select "Claude account with subscription", and retry.';
+    case "lock_contended":
+      return "Another Claude Code process is refreshing the OAuth token. Retry in a moment.";
+    case "wrong_provider":
+      return "Projects is only available with claude.ai authentication. It is not supported through Bedrock, Vertex, or other third-party providers.";
+    case "essential_traffic_only":
+      return "Projects is unavailable while nonessential network traffic is restricted (CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC is set).";
+    case "policy_disabled":
+      {
+        let {
+          featureLabel: featureLabel,
+          verb: verb
+        } = WX("allow_projects_tool");
+        return If("allow_projects_tool", featureLabel, verb) ?? Age(featureLabel);
+      }
+  }
+}
+var Ae = "Upgraded your claude.ai login to include project access (user:projects:read, user:projects:write). This lets the session read and write the project's knowledge docs on claude.ai.";
+class ProjectsPreconditionError extends Error {
+  reasonCode;
+  constructor(e, n) {
+    super(e);
+    this.reasonCode = n;
+    this.name = "ProjectsPreconditionError";
+  }
+}
+async function xt(e) {
+  let n = await vMn(e);
+  if (!n.ok) {
+    let r = n.reason === "wrong_provider" || n.reason === "essential_traffic_only" || n.reason === "policy_disabled" || n.reason === "lock_contended" || n.reason === "custom_client" || n.reason === "save_failed" ? "" : "Projects needs a claude.ai login. ",
+      s = n.detail ? ` (${n.detail})` : "";
+    throw new ProjectsPreconditionError(`${r}${Ct(n.reason)}${s}`);
+  }
+  return {
+    accessToken: n.accessToken,
+    expanded: n.expanded
+  };
+}
+function Re() {
+  return a.CLAUDE_PROJECT_UUID;
+}
+var Rn = Qt({
+    name: llt,
+    searchHint: "read and write the session's attached claude.ai project",
+    backgrounding: "never",
+    maxResultSizeChars: 300000,
+    persistenceThresholdCeiling: 300000,
+    isEnabled() {
+      return sn("allow_projects_tool") && Re() !== void 0;
+    },
+    async description() {
+      return bco({
+        localUploads: he(),
+        memory: !de(),
+        original: Y(),
+        versions: UFe()
+      });
+    },
+    async prompt() {
+      return bco({
+        localUploads: he(),
+        memory: !de(),
+        original: Y(),
+        versions: UFe()
+      });
+    },
+    get inputSchema() {
+      let e = he() === "elsewhere";
+      if (!UFe()) {
+        if (e) return Y() ? Tt() : Et();
+        return Y() ? bt() : St();
+      }
+      if (e) return Y() ? se() : jt();
+      return Y() ? ae() : yt();
+    },
+    get outputSchema() {
+      return At();
+    },
+    isConcurrencySafe() {
+      return !1;
+    },
+    isReadOnly(e) {
+      return Ot(e.method);
+    },
+    isDestructive(e) {
+      return e.method === "project_write" || e.method === "project_delete";
+    },
+    userFacingName(e) {
+      return `Project: ${ne(e)}`;
+    },
+    getToolUseSummary(e) {
+      return e?.method ? ne(e) : null;
+    },
+    toAutoClassifierInput(e) {
+      return ne(e);
+    },
+    renderToolUseMessage(e) {
+      return ne(e);
+    },
+    coerceInput(e) {
+      return ye(e, {
+        originalOffered: Y(),
+        docVersionsOffered: UFe()
+      });
+    },
+    create(e) {
+      return {
+        async validateInput(n) {
+          let r = Rt[n.method].filter(item => n[item] === void 0);
+          if (r.length > 0) return {
+            result: !1,
+            message: `${n.method} requires: ${r.join(", ")}.`,
+            errorCode: 1
+          };
+          if (n.method === "project_write") {
+            let s = n.content !== void 0,
+              l = n.local_path !== void 0;
+            if (s === l) return {
+              result: !1,
+              message: 'project_write requires exactly one of "content" or "local_path".',
+              errorCode: 1
+            };
+            if (n.if_version !== void 0 && !U_.test(n.if_version)) return {
+              result: !1,
+              message: "Nothing was changed. if_version must be the 64-character `version` that came with the copy you worked from, copied exactly. If you do not have it, project_read the doc. Omit it for a new doc.",
+              errorCode: 1
+            };
+          }
+          return {
+            result: !0
+          };
+        },
+        async call(n, r) {
+          let s = r.signal,
+            l = Re();
+          if (!l) throw new ProjectsPreconditionError("No project attached to this session. Project tools are available when the session is started inside a claude.ai Project.");
+          let h = "";
+          try {
+            let m = await xt(e.credentials);
+            h = m.accessToken;
+            let w = await so(n, l, e.session, s, e.storageV5, e.credentials, $t(n, r, e), () => {
+              let b = w_();
+              return (b === void 0 ? f1e(e) : b.maxBytes > 0) ? Te({
+                model: e.model(),
+                configuredWindow: e.autoCompactWindow(),
+                messages: e.messages()
+              }) : void 0;
+            }, () => w_() === void 0 ? be(e.tools) : void 0, e.permissions, e.agentId === void 0 ? te.peek(e.session)?.host : void 0, e.agentId === void 0 ? e.readFileState : void 0);
+            return {
+              data: m.expanded ? {
+                ...w,
+                notice: w.notice ? `${Ae}
+
+${w.notice}` : Ae
+              } : w
+            };
+          } catch (error) {
+            if (n.method === "project_write" && n.local_path !== void 0) Kt(error, s, e.agentId === void 0 ? te.peek(e.session)?.host : void 0);
+            if (s.aborted) throw new Ke();
+            let w = error instanceof q ? error.cause : error,
+              b = ucs(d(w), h);
+            if (w instanceof ProjectsPreconditionError) throw new ProjectsPreconditionError(b, w.reasonCode);
+            if (n.method === "project_write" && w instanceof YY && w.errorCode === "project_knowledge_full") throw new ProjectsPreconditionError(tt, "project_knowledge_full");
+            let S = k(w) ?? (W() && e.storageV5 !== void 0 && w instanceof Error && HTe(w.cause) ? um(w.cause) : void 0),
+              B = error instanceof q ? Wt(error) : "",
+              O = Error(B === "" ? b : `${b.replace(/[.\s]*$/, "")}.${B}`);
+            if (HA(S) && S !== "EACCES" && S !== "EPERM" || S === "EISDIR" || S === "ENOSPC" || S === "EDQUOT" || S === "EIO") O.code = S;
+            throw O;
+          }
+        }
+      };
+    },
+    mapToolResultToToolResultBlockParam(e, tool_use_id) {
+      return {
+        tool_use_id: tool_use_id,
+        type: "tool_result",
+        content: _(e)
+      };
+    }
+  }),
+  Ye = {
+    NFD: "canonical",
+    NFKD: "compatibility"
+  },
+  It = 36,
+  Pt = 1024;
+function qe(e, n, r) {
+  let s = Math.min(It * e.length, Pt),
+    l = e.normalize(r),
+    [h, m] = L(n.filter(item => item.length <= s && item.normalize(r) === l));
+  return m === void 0 ? h : void 0;
+}
+function Xe(e, n, r, s) {
+  if (n.includes(e)) return e;
+  for (let l of r) {
+    let h = qe(e, n, l);
+    if (h !== void 0) return s(h, Ye[l]) ? h : e;
+  }
+  return e;
+}
+function Je(e) {
+  let n = e.replace(/^\.\//, "");
+  return n.includes("/") ? [n] : [n, `claude/${n}`];
+}
+function Nt(e, n, r, s) {
+  let l = Je(e),
+    h = l.find(item => n.includes(item));
+  if (h !== void 0) return {
+    path: h,
+    listed: h
+  };
+  for (let path of l) {
+    let listed = Xe(path, [...n, ...r], ["NFD"], (S, B) => n.includes(S) && s(S, B));
+    if (listed !== path) return {
+      path: path,
+      listed: listed
+    };
+  }
+  let m = l.at(-1) ?? l[0];
+  return {
+    path: m,
+    listed: m
+  };
+}
+function zt(e, n, r) {
+  let s = Je(e),
+    l = s.find(item => n.includes(item));
+  if (l !== void 0) return l === e || r(l, "respelled") ? l : e;
+  for (let h of ["NFD", "NFKD"]) for (let m of s) {
+    let w = qe(m, n, h);
+    if (w !== void 0) return r(w, Ye[h]) ? w : e;
+  }
+  return e;
+}
+function Ze(e) {
+  return [e.toolAliases, e.permissions().toolAliases];
+}
+function et(e) {
+  let n = Ze(e).flatMap(item => Object.entries(item ?? {})),
+    r = n.flatMap(([s, l]) => [...(l === llt ? [s] : []), ...(s === llt ? [l] : [])]);
+  return [llt, ...r, ...n.flatMap(([s, l]) => r.includes(l) ? [s] : [])];
+}
+function Dt(e) {
+  let n = e.permissions(),
+    r = et(e);
+  return [...dc(n), ...sg(n)].some(item => nt(item.ruleValue.ruleContent ?? "", ":").trim() === "path" && r.some(l => fO(n, {
+    name: l
+  }, item)));
+}
+function Mt(toolInput, n, r) {
+  let s = n.permissionPhase?.pipeline,
+    l = s?.result.decisionReason?.type;
+  if (n.innerCall === !0 || n.remoteCall !== void 0 || s?.result.behavior !== "allow" || s.answered !== void 0 || s.input.path !== toolInput.path || s.input.method !== toolInput.method || l !== void 0 && l !== "mode" && l !== "rule") return "not_plain_allow";
+  try {
+    if (et(r).some(h => tl("tool.call", {
+      tool: h
+    }) || tl("tool.check", {
+      tool: h
+    }, MU("tool.check"))) || vU("PostToolBatch") || Tq("PostToolBatch", r.sessionHooksRegistry, gC(r, "PostToolBatch", r.session.id)) || ["PreToolUse", "PostToolUse"].some(h => Ze(r).some(m => Dse({
+      hookEvent: h,
+      toolName: llt,
+      toolInput: toolInput,
+      tools: r.tools,
+      toolAliases: m,
+      sessionHooks: r.sessionHooksRegistry,
+      sessionId: gC(r, h, r.session.id)
+    })))) return "hook";
+    return Dt(r) ? "path_rule" : void 0;
+  } catch (error) {
+    return t(`Projects: could not check hooks and permission rules for a listed name other than the path as typed, so the path was used as typed: ${d(error)}`, {
+      level: "error"
+    }), "error";
+  }
+}
+function $t(e, n, r) {
+  return (s, l) => {
+    let h = Mt(e, n, r);
+    return i("tengu_projects_unicode_name_match", {
+      method: c(e.method),
+      form: c(l),
+      blocked_by: pe(h)
+    }), h === void 0;
+  };
+}
+var Ft = 4,
+  tt = "Write refused; nothing in the project was changed. This write would put the project over its maximum size. Any doc already at this path still holds its old content; do not delete it to retry, because the retry can be refused too, and the content would then be lost. Do not delete other docs to make room unless the user asks. Tell the user the project is out of room: they can remove docs or files they no longer need, or ask you to write less.",
+  Lt = "Write refused; nothing in the project was changed. The doc at this path is no longer the version in if_version: someone else, another session, or an earlier save of yours has changed it. Call project_read on this path, make your change in the text that it returns, and write again with the version that it returns as if_version, up to two retries in total. If it is still refused, tell the user that the new content was not saved, and offer it to them another way. Do not drop if_version to force the write, and do not delete the doc.",
+  Oe = "Write refused; nothing in the project was changed. This session cannot check if_version. Call project_read on this path, make your change in the text that it returns, and write again without if_version.",
+  notice_2 = "This tool cannot undo a delete. To change a doc, do not delete it first: project_write to its path replaces the content in place.";
+class q extends Error {
+  cause;
+  at;
+  constructor(e, n) {
+    super("a project save failed");
+    this.cause = e;
+    this.at = n;
+  }
+}
+var Ht = new Set([408, 429, 500, 502, 503, 504]),
+  Ut = new Set(["EAI_AGAIN", "ECONNABORTED", "ECONNREFUSED", "ECONNRESET", "EPIPE", "ETIMEDOUT"]),
+  ot = "Call project_read on this path before any other write or delete: if it returns the new content, stop and tell the user that an earlier copy may need removing from the project in claude.ai; if not, you may retry the write once, and only once in total unless the user asks you to try again.";
+function Wt({
+  cause: cause,
+  at: at_2
+}) {
+  let r = cause instanceof YY ? cause.status : void 0,
+    s = r === void 0 ? Ut.has(k(cause) ?? "") ? "may_pass" : "unknown" : r === 404 || r === 410 ? "gone" : Ht.has(r) ? "may_pass" : r === 0 || r >= 400 && r < 500 ? "refused" : "unknown",
+    l = "and offer it to them another way.";
+  if (s === "gone" || s === "refused" && at_2 === "no_doc") return " Tell the user that the content was not saved, and offer it to them another way.";
+  let h = "Tell the user that the new content may not have been saved, and offer it to them another way.";
+  if (at_2 === "no_doc") return s === "may_pass" ? " The content may not be in the project. Call project_read on this path: if it returns the content, the save went through late; if not, try the same project_write again, up to two retries in total. If it still fails, tell the user that it was not saved, and offer it to them another way." : " The content may not be in the project. Tell the user that it may not have been saved, and offer it to them another way.";
+  let m = "Do not delete it to retry: this tool cannot undo a delete, and if the retry failed too, the doc would be lost.";
+  if (s === "refused") return ` This call changed nothing: the doc at this path is still there. ${m} Tell the user that this save did not go through, and offer the new content to them another way.`;
+  if (at_2 === "doc_beside_new") {
+    let b = `The old doc at this path was not removed. ${m} The new content may have been saved late as a second doc at this path.`;
+    return s === "may_pass" ? ` ${b} ${ot} If that fails too, tell the user that the new content may not have been saved, and offer it to them another way.` : ` ${b} ${h}`;
+  }
+  let w = "The doc at this path was not removed: it holds its old content, or the new content if the save went through late.";
+  return s === "may_pass" ? ` ${w} ${m} Try the same project_write again, up to two retries in total. If it still fails, tell the user that the new content was not saved, and offer it to them another way.` : ` ${w} ${m} ${h}`;
+}
+function Gt(e, n) {
+  if (e.max_knowledge_size <= 0) return;
+  let r = Math.ceil(n / Ft);
+  if (e.knowledge_size + r > e.max_knowledge_size) throw new ProjectsPreconditionError(tt, "write_would_exceed_project_size_limit");
+}
+var Ce = 26214400,
+  rt = "project_write: local_path is not available in this session; pass the text as content.",
+  Yt = 1048576;
+function he() {
+  return !de() ? "here" : Se() ? "elsewhere" : "none";
+}
+var qt = ["local_path_not_available", "local_path_not_absolute", "local_path_too_long", "local_path_outside_cwd", "local_path_no_file", "local_path_os_permission_denied", "local_path_not_regular_file", "local_path_protected_file", "local_path_read_needs_permission", "local_path_file_not_read_yet", "local_path_file_differs_from_read", "local_path_notebook", "local_path_hard_link", "local_path_file_too_large", "local_path_container_unreachable", "local_path_other_container_refusal", "content_has_nul", "write_would_exceed_project_size_limit", "project_knowledge_full"];
+function P(e, n) {
+  return new ProjectsPreconditionError(e, n);
+}
+function Z(e, n, r = {}) {
+  i("tengu_projects_write_by_local_path", {
+    outcome: c(e),
+    reason: pe(r.reason),
+    failed_step: pe(r.failedStep),
+    read_from: c(n !== void 0 ? "tool_container" : de() ? "none" : "local_disk"),
+    replaced: r.replaced,
+    saved_bytes: r.savedBytes,
+    via_ccr_bridge: V8()
+  });
+}
+function Kt(e, n, r) {
+  let s = e instanceof q ? e.cause : e;
+  if (n.aborted) Z("cancelled", r);else if (s instanceof ProjectsPreconditionError) Z("refused", r, {
+    reason: qt.find(item => item === s.reasonCode)
+  });else if (s instanceof YY && s.errorCode === "project_knowledge_full") Z("refused", r, {
+    reason: "project_knowledge_full"
+  });else Z("failed", r, {
+    failedStep: e instanceof q ? "save" : "other"
+  });
+}
+async function Xt(e, n, r, s) {
+  if (!we(e) || e.length > Een) throw P(`project_write: local_path must be an absolute path of at most ${Een} characters in this session.`, we(e) ? "local_path_too_long" : "local_path_not_absolute");
+  if (n.ruleItCannotApply(r) !== void 0) throw P(rt, "local_path_not_available");
+  if (AA(ee(e.trim()))) throw P("project_write: a notebook is not uploaded by local_path in this session. Pass its text as content.", "local_path_notebook");
+  let l = await n.read(e, s);
+  if (l.ok && l.text.length <= Yt) return l.text;
+  switch (l.ok ? "over_the_cap" : l.code) {
+    case "read_it_first":
+      throw P("project_write: Read the whole file at local_path first (again, if you read, wrote or edited it earlier in this chat), or pass its text as content.", "local_path_file_not_read_yet");
+    case "not_as_read":
+      throw P("project_write: the file at local_path has changed since you read or wrote it. Read it again, or pass its text as content.", "local_path_file_differs_from_read");
+    case "over_the_cap":
+      throw P("project_write: the file at local_path is over 1 MiB, too long to upload by path in this session; pass its text as content.", "local_path_file_too_large");
+    case "container_unreachable":
+    case "no_answer":
+      throw P("project_write: this session's cloud environment could not be reached, so the file at local_path was not read and nothing was written. Try again, or pass its text as content.", "local_path_container_unreachable");
+    case "refused":
+      throw P("project_write: the file at local_path cannot be uploaded by path: it is missing or unreadable, or its location, name or type is not allowed. If its text is fit to share, pass it as content.", "local_path_other_container_refusal");
+    default:
+      throw P("project_write: the file at local_path cannot be uploaded by path; pass its text as content.", "local_path_other_container_refusal");
+  }
+}
+async function xe(e, n, r) {
+  return r ? LMt(n) || (await Ten(n)) : Bct(e, n);
+}
+function Ie(e, n, r) {
+  return e.some(item => {
+    let l = n.get(item);
+    return kX(l) && (r === void 0 || (l.readBaseline !== void 0 ? $Oe(l.readBaseline, Dh(r)) : g2n(l, r)));
+  });
+}
+async function Jt(e, n, r) {
+  if (de()) throw P(rt, "local_path_not_available");
+  let s = D => D.endsWith(Ee) ? D : D + Ee,
+    l = ee(ke()),
+    h = ee(l, e),
+    m = r !== void 0 && uE() && CH(a.CLAUDE_CODE_REMOTE_SESSION_ID, a.CLAUDE_CODE_ENVIRONMENT_KIND) ? JCo() : [],
+    w = [l, ...m].find(item => h === item || h.startsWith(s(item)));
+  if (w === void 0) throw P("project_write: local_path must be inside the working directory.", "local_path_outside_cwd");
+  if (h.length > Een) throw P("project_write: no file exists at local_path.", "local_path_too_long");
+  let b = "project_write: local_path must not name a credential file, a device, or a file that Claude Code keeps for itself (its config and token folders).",
+    S = D => {
+      let F = p1e([D], n(), {
+        refuseAutomounterShapes: !0
+      });
+      if (F.layer !== "allow" && !(F.layer === "path-mode-ask" && F.decision.decisionReason?.type === "workingDir")) throw P("project_write: this session may not read the file at local_path without asking (a permission rule or setting, a network path, or links that cannot be followed), so it cannot be uploaded by path.", "local_path_read_needs_permission");
+    },
+    B = w !== l && w === m[0];
+  if (await xe(h, h, B)) throw P(b, "local_path_protected_file");
+  S(h);
+  let O, G;
+  try {
+    [O, G] = await Promise.all([ue(h), w !== l ? w : ue(w)]);
+  } catch (error) {
+    let F = k(error);
+    if (F === "ENOENT" || F === "ENOTDIR" || F === "ENAMETOOLONG") throw P("project_write: no file exists at local_path.", "local_path_no_file");
+    if (F === "EACCES" || F === "EPERM") throw P("project_write: local_path is not readable.", "local_path_os_permission_denied");
+    throw error;
+  }
+  if (O !== G && !O.startsWith(s(G))) throw Error("project_write: local_path resolves outside the working directory.");
+  if (await xe(h, O, B)) throw P(b, "local_path_protected_file");
+  S(O);
+  let A = "project_write: Read the whole file at local_path first, or pass its text as content. Outside the working directory, a file is uploaded by path only when this session has read all of it and it has not changed since.",
+    y = [h, O];
+  if (w !== l && y.some(AA)) throw P("project_write: a notebook outside the working directory is not uploaded by local_path. Pass its text as content.", "local_path_notebook");
+  if (w !== l && !(r && Ie(y, r))) throw P(A, "local_path_file_not_read_yet");
+  let R = 0,
+    I = 0,
+    V = 0,
+    z;
+  try {
+    z = await wt(O, mt.O_RDONLY | R | V | I);
+  } catch (error) {
+    let F = k(error);
+    if (F === "ENOENT") throw P("project_write: no file exists at local_path.", "local_path_no_file");
+    if (F === "EACCES" || F === "EPERM") throw P("project_write: local_path is not readable.", "local_path_os_permission_denied");
+    if (F === "EISDIR" || F === "ENXIO" || F === "EOPNOTSUPP") throw P("project_write: local_path must be a regular file.", "local_path_not_regular_file");
+    if (F === "ELOOP") throw Error("project_write: local_path was replaced during the upload.");
+    throw error;
+  }
+  try {
+    let D = await z.stat({
+        bigint: !0
+      }),
+      F = "project_write: local_path was replaced during the upload.",
+      J,
+      le;
+    try {
+      J = await ue(h), le = await gt(J, {
+        bigint: !0
+      });
+    } catch {
+      throw Error("project_write: local_path was replaced during the upload.");
+    }
+    if (J !== O) throw Error("project_write: local_path was replaced during the upload.");
+    if (le.dev !== D.dev) throw Error("project_write: local_path was replaced during the upload.");
+    if (D.ino !== 0n && le.ino !== D.ino) throw Error("project_write: local_path was replaced during the upload.");
+    if (!D.isFile()) throw P("project_write: local_path must be a regular file.", "local_path_not_regular_file");
+    if (D.nlink > 1n) throw P("project_write: the file at local_path has a second name (a hard link), so its name does not say what it is. Pass its text as content instead.", "local_path_hard_link");
+    if (D.size > BigInt(Ce)) throw P(`project_write: file at local_path exceeds the ${Ce}-byte limit.`, "local_path_file_too_large");
+    let ce = (await z.readFile()).toString("utf8");
+    if (w === l) return ce;
+    if (!(r && Ie(y, r, ce))) throw P(A, "local_path_file_differs_from_read");
+    return Dh(ce);
+  } finally {
+    await z.close();
+  }
+}
+var _e = 262144;
+async function Pe(path_2, n, r, s, l, h, m, w, notice, version) {
+  let B = await it(n, "project-doc", r, s, h, m, w);
+  return {
+    method: "project_read",
+    path: path_2,
+    ...(version !== void 0 && {
+      version: version
+    }),
+    ...B,
+    ...(m !== void 0 && "local_file" in B && {
+      size_bytes: Buffer.byteLength(n, "utf8")
+    }),
+    ...(notice !== void 0 && "local_file" in B && {
+      notice: notice
+    }),
+    ...l
+  };
+}
+async function it(content, n, r, s, l, h, m = null) {
+  let w = Buffer.byteLength(content, "utf8");
+  if (w <= _e) return h !== void 0 && Zt(content, w, h, m) ? eo(content, w, r, s, l) : {
+    content: content
+  };
+  let b = w_();
+  if (b !== void 0) {
+    let S = n === "project-doc" ? " project_search still covers the whole doc." : "",
+      B = Khe(content, b.maxBytes),
+      data = Buffer.from(B, "utf8"),
+      G = data.byteLength === 0 ? null : await uBe(b, {
+        leafName: ge(n, r),
+        data: data
+      });
+    if (G !== null) return B === content ? {
+      local_file: G.path
+    } : {
+      local_file: G.path,
+      notice: `Only the first ${data.byteLength} of ${w} bytes were saved to local_file, the most this session keeps in one file.${S}`
+    };
+    let A = b.maxBytes === 0 ? ": this session does not keep larger results as files." : "; the rest could not be saved to a file this session can open.";
+    return {
+      content: Khe(content, _e),
+      notice: `Only the first ${_e} of ${w} bytes are shown${A}${S}`
+    };
+  }
+  return {
+    local_file: await lt(n, r, content, s, l)
+  };
+}
+function Zt(e, n, r, s) {
+  let l = Math.min(s !== null && s > 0 ? s : Math.ceil(n / r.bytesPerToken), n);
+  if (l <= r.maxTokens) return !1;
+  let h = 0;
+  for (let m of e.split(`
+`)) h = Math.max(h, Buffer.byteLength(m));
+  if (h / n * l > rB().maxTokens / 2) return p("projects_tool_read_to_file", "long_line"), !1;
+  return !0;
+}
+async function eo(content_2, n, r, s, l) {
+  let h = w_();
+  if (h !== void 0) {
+    let m = n > h.maxBytes ? null : await uBe(h, {
+      leafName: ge("project-doc", r),
+      data: Buffer.from(content_2, "utf8")
+    });
+    if (m === null) return p("projects_tool_read_to_file", "not_stored"), {
+      content: content_2
+    };
+    return g("projects_tool_read_to_file"), {
+      local_file: m.path
+    };
+  }
+  try {
+    let local_file = await lt("project-doc", r, content_2, s, l);
+    return g("projects_tool_read_to_file"), {
+      local_file: local_file
+    };
+  } catch (error) {
+    return t(`project_read: could not save the document to a file, so returning all ${n} bytes inline: ${d(error)}`, {
+      level: "warn"
+    }), p("projects_tool_read_to_file", "write_failed"), {
+      content: content_2
+    };
+  }
+}
+function ge(e, n) {
+  return `${e}-${n.replace(/[^a-zA-Z0-9-]/g, "_")}.txt`;
+}
+async function lt(e, n, r, s, l) {
+  let h = Zx(s),
+    m = ge(e, n),
+    w = Ue(h, m);
+  if (await aF(h, l), await ct(l, h, m, r, e === "project-memory" ? "project_memory_read" : "project_read")) return w;
+  return await ude(w, Buffer.from(r, "utf8"), 384), w;
+}
+async function ct(e, n, r, s, l) {
+  if (W() && e !== void 0) {
+    let h = I4(n, r);
+    if (h !== void 0) {
+      let m = await e.write(h, s, {
+        publishDiscipline: "inPlace",
+        mode: 384
+      });
+      if (!m.ok) throw l === "project_read" ? Error("project_read: spill to tool-results failed", {
+        cause: m.error
+      }) : Error("project_memory_read: spill to tool-results failed", {
+        cause: m.error
+      });
+      return !0;
+    }
+  }
+  return !1;
+}
+var re = "only its extracted text can be read here (project_read without `original`). If that is not enough, tell the user the original cannot be opened here.";
+async function Ne({
+  projectUuid: projectUuid,
+  path: path_3,
+  fileUuid: fileUuid,
+  signal: signal,
+  credentials: credentials,
+  originalAsked: originalAsked
+}) {
+  try {
+    return await lcs(projectUuid, fileUuid, signal, credentials);
+  } catch (error) {
+    if (originalAsked && error instanceof YY && error.errorCode === "file_read_too_large") throw new ProjectsPreconditionError(`project_read: "${H1(path_3)}" is above the ${kMn}-byte limit for in-session downloads. So ${re}`, "project_original_too_large");
+    throw error;
+  }
+}
+async function to(projectUuid_2, path_4, r, s, signal_2, h, credentials_2, originalAsked_2) {
+  let b = w_();
+  if (b?.maxBytes === 0) return {
+    method: "project_read",
+    path: path_4,
+    file_kind: r.file_kind,
+    created_at: r.created_at ?? null,
+    notice: `"${H1(path_4)}" is a ${H1(r.file_kind)} upload with no text extract, and this session does not keep files, so it was not downloaded; tell the user this file cannot be opened here.`
+  };
+  let S = z => {
+      if (z > kMn) throw new ProjectsPreconditionError(`project_read: "${H1(path_4)}" is ${z} bytes, above the ${kMn}-byte limit for in-session downloads.` + (originalAsked_2 ? ` So ${re}` : ""), originalAsked_2 ? "project_original_too_large" : void 0);
+    },
+    B = {
+      projectUuid: projectUuid_2,
+      path: path_4,
+      fileUuid: r.file_uuid,
+      signal: signal_2,
+      credentials: credentials_2,
+      originalAsked: originalAsked_2
+    },
+    O = await Ne(B);
+  S(O.file_size_bytes);
+  let data_2 = Buffer.from(O.content_base64, "base64");
+  if (data_2.byteLength !== O.file_size_bytes) {
+    if (O = await Ne(B), S(O.file_size_bytes), data_2 = Buffer.from(O.content_base64, "base64"), data_2.byteLength !== O.file_size_bytes) throw Error("project_read: downloaded bytes do not match the reported file size (corrupt response, or the file is being modified " + "concurrently \u2014 retry if a save was just issued).");
+  }
+  if (O.uuid !== r.file_uuid) throw Error("project_read: server returned a different file.");
+  if (Vt(O.uuid) === null) throw Error("project_read: server returned a malformed file id.");
+  let A = (O.file_name.split(/[/\\]/).pop() ?? "").replace(/[^a-zA-Z0-9._-]/g, "_").slice(-64).replace(/^\.+/, "") || "file",
+    leafName = `project-file-${O.uuid}-${A}`,
+    R = `"${H1(path_4)}" is a ${H1(O.file_kind)} upload${originalAsked_2 ? "" : " with no text extract"}; its original bytes (${O.file_size_bytes}) `,
+    local_file_2,
+    V = `${R}could not be saved to a file this session can open; ${originalAsked_2 ? re : "tell the user this file could not be opened."}`;
+  if (b === void 0) local_file_2 = await oo(leafName, data_2, s, h);else if (data_2.byteLength > b.maxBytes) local_file_2 = null, V = `${R}are more than this session keeps in one file (${b.maxBytes} bytes), so they were not saved; ${originalAsked_2 ? re : "tell the user this file cannot be opened here."}`;else {
+    let z = await uBe(b, {
+      leafName: leafName,
+      data: data_2
+    });
+    local_file_2 = z === null ? null : z.path;
+  }
+  return {
+    method: "project_read",
+    path: path_4,
+    file_kind: O.file_kind,
+    ...(local_file_2 !== null && {
+      local_file: local_file_2
+    }),
+    created_at: O.created_at ?? null,
+    notice: local_file_2 !== null ? `${R}were saved to local_file. Open it with file-appropriate tooling.` : V
+  };
+}
+async function oo(e, n, r, s) {
+  let l = Zx(r),
+    h = Ue(l, e);
+  if (await aF(l, s), await ct(s, l, e, n, "project_read")) return h;
+  return await ude(h, n, 384), h;
+}
+var no = 600000,
+  ze = He({
+    lackedUpdateAt: Number.NEGATIVE_INFINITY
+  }, e => {
+    e.lackedUpdateAt = Number.NEGATIVE_INFINITY;
+  });
+async function ro(e, n, r, s, l, h, m, w) {
+  if (!h || Date.now() - ze.lackedUpdateAt >= no) try {
+    return await dcs(e, n, s, l, m, w);
+  } catch (error) {
+    if (error instanceof YY && error.errorCode === "project_doc_stale") throw new ProjectsPreconditionError(Lt, "project_doc_stale");
+    if (h && w !== void 0 && error instanceof YY && error.status === 400 && error.errorCode === void 0 && !Rso(error)) throw new ProjectsPreconditionError(Oe, "if_version_not_served");
+    if (!h || !Rso(error)) throw new q(error, "doc_updated");
+    ze.lackedUpdateAt = Date.now();
+  }
+  if (l.aborted) throw new Ke();
+  if (w !== void 0) throw new ProjectsPreconditionError(Oe, "if_version_not_served");
+  let b = await Aso(e, r, s, void 0, m).catch(S => {
+    throw new q(S, "doc_beside_new");
+  });
+  if (typeof b?.uuid !== "string" || b.uuid === n) throw new x(`project_write: could not confirm that the new content was saved. Nothing was removed, so the project may now list this path twice. ${ot}`, "project_write could not confirm that the new content was saved");
+  try {
+    await xso(e, n, void 0, m);
+  } catch (error) {
+    throw t(`Projects: the replaced doc ${n} could not be removed: ${d(error)}`, {
+      level: "error"
+    }), Error("project_write: the new content was saved, but the earlier copy of this doc may not have been removed, so the project may now list this path twice. project_read returns the new content. Do not repeat this write, and do not call project_delete: it would remove the new content, not the earlier copy. Tell the user that the earlier copy may need removing from the project in claude.ai.");
+  }
+  return b;
+}
+function me(e, n) {
+  let r = e.documents.find(item => item.file_name === n);
+  return r ? {
+    uuid: r.uuid,
+    created_at: r.created_at ?? null
+  } : void 0;
+}
+function Me(e, n) {
+  return (e.files ?? []).find(item => item.file_name === n);
+}
+function Q(e) {
+  return e.documents.map(item => item.file_name).filter(item => typeof item === "string");
+}
+function ie(e) {
+  return (e.files ?? []).map(item => item.file_name).filter(item => typeof item === "string");
+}
+function $e(e, n, r) {
+  let s = [...Q(e), ...ie(e)].map(H1),
+    l = s.length > 0 ? ` Available: ${s.slice(0, 30).join(", ")}${s.length > 30 ? `, \u2026 and ${s.length - 30} more` : ""}` : " The project has no docs or files.";
+  if (r === "project_read" && (e.sync_sources ?? []).length > 0) l = s.length > 0 ? `${l}. Files from the project's synced sources, such as GitHub or Google Drive, are not listed and cannot be read by name here.` : " Files from the project's synced sources, such as GitHub or Google Drive, are not listed and cannot be read by name here.";
+  return new ProjectsPreconditionError(`No doc or file at "${H1(n)}".${l}`);
+}
+function io(e, n) {
+  let r = e.files.map(item => H1(item.path)),
+    s = r.length > 0 ? ` Available: ${r.slice(0, 30).join(", ")}${r.length > 30 ? `, \u2026 and ${r.length - 30} more` : ""}` : " The project has no memory files.";
+  return new ProjectsPreconditionError(`No memory file at "${H1(n)}".${s}`);
+}
+function Fe(e) {
+  if (e) throw new ProjectsPreconditionError(de() ? `This tool does not serve project memory in this session: it runs through the remote-session bridge, which has no memory route. ${_co} The project's docs are still available through the other methods.` : "Project memory is not available in this session: it runs through the remote-session bridge, which has no memory access. The project's docs are still available through the other methods.");
+}
+var ao = 500,
+  notice_3 = "No project memory is available in this session. It may be turned off, or this server may not serve it yet. It is checked again when this session's context is next rebuilt (for example after /clear or a compaction) and in a new session.",
+  Be = "Memory as read at this session's start or its last context refresh; not live.";
+function X(e, n, r) {
+  if (e === void 0) throw new ProjectsPreconditionError(`${r} requires "${n}"`);
+  return e;
+}
+async function so(e, n, r, s, l, h, m, w, b, S, B, O) {
+  let G = V8();
+  switch (e.method) {
+    case "project_info":
+      {
+        let A = await BFe(n, s, h);
+        return {
+          method: "project_info",
+          name: A.name,
+          description: A.description ?? "",
+          instructions: A.prompt_template ?? "",
+          docs: A.documents.flatMap(item => item.file_name !== null ? [{
+            path: item.file_name,
+            created_at: item.created_at ?? null
+          }] : []),
+          files: (A.files ?? []).flatMap(item => item.file_name !== null ? [{
+            path: item.file_name,
+            file_kind: item.file_kind,
+            created_at: item.created_at ?? null
+          }] : []),
+          sync_sources: (A.sync_sources ?? []).map(item => ({
+            type: item.type,
+            config: item.config
+          })),
+          knowledge: {
+            knowledge_size: A.knowledge_stats.knowledge_size,
+            max_knowledge_size: A.knowledge_stats.max_knowledge_size
+          }
+        };
+      }
+    case "project_read":
+      {
+        let A = X(e.path, "path", e.method),
+          y = await BFe(n, s, h),
+          R = zt(A, [...Q(y), ...ie(y)], m),
+          I = me(y, R);
+        if (!I) {
+          let z = Me(y, R);
+          if (!z) throw $e(y, R, e.method);
+          let D = z.file_kind === "document" && e.original === !0 && Y();
+          if (z.file_kind === "document" && !D) {
+            let F = await acs(n, z.file_uuid, s, h);
+            if (F.file_kind === "document") return Pe(R, F.content, z.file_uuid, r, {
+              file_kind: F.file_kind,
+              created_at: F.created_at ?? null
+            }, l, w(), null, b());
+          }
+          return to(n, R, z, r, s, l, h, D);
+        }
+        let V = await ics(n, I.uuid, s, h);
+        return Pe(R, V.content, I.uuid, r, {
+          created_at: V.created_at ?? null
+        }, l, w(), V.estimated_token_count, b(), UFe() ? st(V.content) : void 0);
+      }
+    case "project_search":
+      {
+        let A = X(e.query, "query", e.method),
+          y = e.n ?? 5;
+        try {
+          let R = await ccs(n, A, y, s, h);
+          return {
+            method: "project_search",
+            rag: !0,
+            hits: lo(R)
+          };
+        } catch (error) {
+          if (error instanceof YY && error.status === 403) {
+            let I = await BFe(n, s, h);
+            return {
+              method: "project_search",
+              rag: !1,
+              docs: Q(I)
+            };
+          }
+          throw error;
+        }
+      }
+    case "project_write":
+      {
+        let A = X(e.path, "path", e.method),
+          y = e.local_path !== void 0 ? B !== void 0 ? await Xt(e.local_path, B, S(), s) : await Jt(e.local_path, S, O) : X(e.content, "content", e.method);
+        if (y.includes("\x00")) throw P("Write refused; nothing in the project was changed. The content contains NUL bytes, which project docs cannot store (usually a binary or UTF-16 file). Convert it to UTF-8 text (re-encode UTF-16, extract the text from a binary, or remove the NUL bytes), then write again.", "content_has_nul");
+        let R = await BFe(n, s, h),
+          {
+            path: path_5,
+            listed: listed_2
+          } = Nt(A, Q(R), ie(R), m),
+          z = me(R, listed_2);
+        if (!z) Gt(R.knowledge_stats, Buffer.byteLength(y, "utf8"));
+        let D = await (z ? ro(n, z.uuid, listed_2, y, s, G, h, e.if_version) : Aso(n, path_5, y, s, h).catch(J => {
+            throw new q(J, "no_doc");
+          })).finally(Afr),
+          F = {
+            method: "project_write",
+            path: path_5,
+            doc_uuid: D.uuid,
+            ...(UFe() && {
+              version: st(y)
+            }),
+            replaced: z !== void 0,
+            present_to_user: e.present_to_user ?? !1,
+            ...(e.local_path !== void 0 ? {
+              local_path: Ve(e.local_path)
+            } : {})
+          };
+        if (z && UFe()) g("projects_tool_if_version", {
+          sent: e.if_version !== void 0
+        });
+        if (e.local_path !== void 0) Z("saved", B, {
+          replaced: z !== void 0,
+          savedBytes: Buffer.byteLength(y, "utf8")
+        });
+        return F;
+      }
+    case "project_delete":
+      {
+        let path_6 = X(e.path, "path", e.method),
+          y = await BFe(n, s, h),
+          R = Xe(path_6, [...Q(y), ...ie(y)], ["NFD"], m),
+          I = me(y, R);
+        if (!I) {
+          if (Me(y, R)) throw Error(`"${H1(path_6)}" is a file upload; project_delete only removes text docs. File uploads can be removed from the project in claude.ai.`);
+          throw $e(y, path_6, e.method);
+        }
+        return await xso(n, I.uuid, s, h).finally(Afr), {
+          method: "project_delete",
+          path: path_6,
+          deleted: !0,
+          notice: notice_2
+        };
+      }
+    case "project_memory_list":
+      {
+        Fe(G);
+        let A = await ka(cAt(n, h), s, () => new Ke());
+        if (A === null) return {
+          method: "project_memory_list",
+          files: [],
+          truncated: !1,
+          notice: notice_3
+        };
+        let y = A.files.slice(0, ao),
+          R = A.files.length - y.length;
+        return {
+          method: "project_memory_list",
+          files: y.map(item => ({
+            path: item.path,
+            size_bytes: item.size_bytes,
+            updated_at: item.updated_at,
+            truncated: item.truncated
+          })),
+          truncated: R > 0 || A.truncated,
+          notice: [Be, ...(R > 0 ? [`Showing the first ${y.length} of ${A.files.length} memory files; there is no way to list the rest in this session.`] : A.truncated ? ["More memory files exist than the server returned."] : [])].join(" ")
+        };
+      }
+    case "project_memory_read":
+      {
+        Fe(G);
+        let A = X(e.path, "path", e.method),
+          y = await ka(cAt(n, h), s, () => new Ke());
+        if (y === null) throw new ProjectsPreconditionError(notice_3);
+        let R = y.files.find(item => item.path === A);
+        if (R === void 0) throw io(y, A);
+        let I = _t("sha256").update(A).digest("hex"),
+          V = await it(R.content, "project-memory", I, r, l);
+        return {
+          method: "project_memory_read",
+          path: R.path,
+          ...V,
+          size_bytes: R.size_bytes,
+          updated_at: R.updated_at,
+          truncated: R.truncated,
+          notice: [Be, ...("notice" in V && V.notice !== void 0 ? [V.notice] : []), ...(R.truncated ? ["Only the first part of this file is returned: the server cut it at its size cap."] : [])].join(" ")
+        };
+      }
+  }
+}
+function lo(e) {
+  if (e === null || typeof e !== "object") return [];
+  let n = e,
+    r = [];
+  for (let s of ["text_results", "rich_content_results"]) {
+    let l = n[s];
+    if (!Array.isArray(l)) continue;
+    for (let h of l) {
+      if (h === null || typeof h !== "object") continue;
+      let m = h,
+        w = m.chunk !== null && typeof m.chunk === "object" ? m.chunk : void 0;
+      r.push({
+        name: typeof m.name === "string" ? m.name : void 0,
+        doc_uuid: typeof m.doc_uuid === "string" ? m.doc_uuid : void 0,
+        text: w && typeof w.text === "string" ? w.text : void 0
+      });
+    }
+  }
+  return r;
+}
+export { Rn as ProjectsTool };

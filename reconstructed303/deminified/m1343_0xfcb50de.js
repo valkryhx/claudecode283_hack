@@ -1,0 +1,468 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Ct } from "B:/~BUN/root/chunk-28dw3zbk.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import "B:/~BUN/root/chunk-jthpk6wv.js";
+import { d } from "B:/~BUN/root/chunk-3aez4b53.js";
+import "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import "B:/~BUN/root/chunk-nggrknsv.js";
+import { rL } from "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import { a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import { zMe, Y3n, Eyt } from "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import "B:/~BUN/root/chunk-pjgzz98k.js";
+import "B:/~BUN/root/chunk-cx57tr4b.js";
+import { W8e } from "B:/~BUN/root/chunk-tsyp86a9.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-8pqw0dhk.js";
+import { A6n } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import "B:/~BUN/root/chunk-1kfn24jp.js";
+import "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-kad4nq7y.js";
+import "B:/~BUN/root/chunk-2zk4vqr8.js";
+import { Tu, er } from "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-nxwmyxnk.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import "B:/~BUN/root/chunk-xrp58hm9.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import "B:/~BUN/root/chunk-frrkt2bs.js";
+import "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import "B:/~BUN/root/chunk-8ye9n4fk.js";
+import "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import "B:/~BUN/root/chunk-1gpjpba6.js";
+import "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-8pmnanyd.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import "B:/~BUN/root/chunk-07c8fw5z.js";
+import "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-h9p45fg5.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import "B:/~BUN/root/chunk-zayh6xmh.js";
+import "B:/~BUN/root/chunk-tkcgmvh7.js";
+import { Frn, wG } from "B:/~BUN/root/chunk-1g2t7gtx.js";
+import { Tx } from "B:/~BUN/root/chunk-7ybsx93y.js";
+import { Fae, Dme, Ymt } from "B:/~BUN/root/chunk-rsxy354n.js";
+import "B:/~BUN/root/chunk-8d9x5cx1.js";
+import "B:/~BUN/root/chunk-429xgjya.js";
+import "B:/~BUN/root/chunk-7qeqkjr8.js";
+import "B:/~BUN/root/chunk-dq7zfs8r.js";
+import "B:/~BUN/root/chunk-ks7h6f0s.js";
+import "B:/~BUN/root/chunk-2fccb5hn.js";
+import "B:/~BUN/root/chunk-9tkh434c.js";
+import "B:/~BUN/root/chunk-bp7zxkzq.js";
+import "B:/~BUN/root/chunk-7z3ndmqr.js";
+import "B:/~BUN/root/chunk-bn7mrnb3.js";
+import "B:/~BUN/root/chunk-cw2ph5fw.js";
+import { sGn } from "B:/~BUN/root/chunk-fb07w30y.js";
+import "B:/~BUN/root/chunk-4hz43zp6.js";
+import "B:/~BUN/root/chunk-y83prpab.js";
+import "B:/~BUN/root/chunk-t3p4x0tq.js";
+import { IAe } from "B:/~BUN/root/chunk-81mfv0s3.js";
+import "B:/~BUN/root/chunk-dam0g4d0.js";
+import "B:/~BUN/root/chunk-2ppwmg0p.js";
+import "B:/~BUN/root/chunk-8y0chnnr.js";
+import "B:/~BUN/root/chunk-gy660jgx.js";
+import "B:/~BUN/root/chunk-pmw6knpp.js";
+import { OTo, wGn, $To } from "B:/~BUN/root/chunk-aqd86p9a.js";
+import "B:/~BUN/root/chunk-3tj0rd0x.js";
+import "B:/~BUN/root/chunk-ewvp948s.js";
+import "B:/~BUN/root/chunk-atk141qr.js";
+import "B:/~BUN/root/chunk-w6et565n.js";
+import "B:/~BUN/root/chunk-2w966ew9.js";
+import "B:/~BUN/root/chunk-rnh5g2g4.js";
+import { VX, OMr, FS, jae, UH, _Ie, Hke } from "B:/~BUN/root/chunk-gygbhz84.js";
+import "B:/~BUN/root/chunk-xf25v2pj.js";
+import "B:/~BUN/root/chunk-0s9qz1dg.js";
+import "B:/~BUN/root/chunk-81z6g28t.js";
+import "B:/~BUN/root/chunk-3hya8nsv.js";
+import { Kzn } from "B:/~BUN/root/chunk-f561y43v.js";
+import "B:/~BUN/root/chunk-xnas864x.js";
+import { Wve } from "B:/~BUN/root/chunk-ft39p62b.js";
+import { s3 } from "B:/~BUN/root/chunk-nbprdt7j.js";
+import "B:/~BUN/root/chunk-hdc8p5sh.js";
+import "B:/~BUN/root/chunk-hgpj62j5.js";
+import "B:/~BUN/root/chunk-4yrr52wq.js";
+import "B:/~BUN/root/chunk-6n2cf80v.js";
+import "B:/~BUN/root/chunk-asrchj7k.js";
+import "B:/~BUN/root/chunk-0zewma8k.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-9929fpp1.js";
+import "B:/~BUN/root/chunk-mbz8rhex.js";
+import "B:/~BUN/root/chunk-r0sre1ss.js";
+import "B:/~BUN/root/chunk-q56gve2c.js";
+import "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-4qc55bxf.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-3m71dqxd.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+import { randomUUID as N } from "crypto";
+function B(e) {
+  switch (e.status) {
+    case "archived":
+      return "archived";
+    case "failed":
+      return "failed";
+    case "paused":
+      return e.worker_status === "requires_action" ? "requires_action" : "idle";
+    default:
+      switch (e.worker_status) {
+        case void 0:
+        case "":
+        case "WORKER_STATUS_UNSPECIFIED":
+          return "pending";
+        case "running":
+          return e.connection_status === "disconnected" ? "idle" : "running";
+        case "requires_action":
+          return "requires_action";
+        default:
+          return "idle";
+      }
+  }
+}
+var I = 5;
+async function de(e, o) {
+  let {
+      prepareApiRequest: prepareApiRequest,
+      sessionsApiWire: sessionsApiWire
+    } = await import("B:/~BUN/root/chunk-268y702m.js"),
+    {
+      getOauthConfig: getOauthConfig
+    } = await import("B:/~BUN/root/chunk-69y508b9.js"),
+    accessToken,
+    orgUUID;
+  try {
+    ({
+      accessToken: accessToken,
+      orgUUID: orgUUID
+    } = await prepareApiRequest(o));
+  } catch (error) {
+    if (t(`[bridge:peers] auth prep failed: ${d(error)}`), e) e.failed = !0;
+    return [];
+  }
+  let g = wG(),
+    b = sessionsApiWire(g ? "v1alpha2" : "v1", getOauthConfig().BASE_API_URL, accessToken),
+    headers = {
+      ...b.headers,
+      ...(!g && {
+        "x-organization-uuid": orgUUID
+      })
+    },
+    S = await FS();
+  if (S) headers["X-Trusted-Device-Token"] = S;
+  let D = wGn(),
+    E = D ? er(D) : void 0,
+    l = [],
+    c = new Set(),
+    m = null,
+    _ = !1,
+    A = !1;
+  for (let f = 0; f < I; f++) {
+    let uRLSearchParams = new URLSearchParams();
+    if (g) uRLSearchParams.set("limit", "200"), uRLSearchParams.append("statuses", "active"), uRLSearchParams.append("statuses", "paused");
+    if (m) uRLSearchParams.set(g ? "cursor" : "after_id", m);
+    let y = uRLSearchParams.toString(),
+      P = y ? `${b.url}?${y}` : b.url,
+      s;
+    try {
+      s = await Ct.get(P, {
+        headers: headers,
+        timeout: 15000,
+        validateStatus: r => r < 500
+      });
+    } catch (error) {
+      if (t(`[bridge:peers] list request failed: ${d(error)}`), e) e.failed = !0;
+      return l;
+    }
+    let p = s.status === 403 && !A ? Dme(s.data) : void 0;
+    if (p !== void 0 && Ymt(p)) {
+      A = !0;
+      let r = await _Ie(S);
+      if (r) {
+        headers["X-Trusted-Device-Token"] = r, S = r, f--;
+        continue;
+      }
+    } else if (p !== void 0) jae("[bridge:peers]", p), UH();
+    if (s.status !== 200) {
+      if (t(`[bridge:peers] list failed ${s.status}`), e) e.failed = !0;
+      return l;
+    }
+    if (s.data === null || typeof s.data !== "object" || !Array.isArray(s.data.data)) {
+      if (t("[bridge:peers] list body `data` not an array; stopping"), e) e.failed = !0;
+      return l;
+    }
+    for (let r of s.data.data) try {
+      let i = "session_status" in r,
+        status = i ? r.session_status : B(r);
+      if (status === "archived") continue;
+      let id = i ? r.id : Tu(r.id),
+        C = er(id);
+      if (E && C === E) {
+        OTo(r.title);
+        continue;
+      }
+      if (c.has(C)) continue;
+      c.add(C), l.push({
+        id: id,
+        title: i ? r.title : r.title || null,
+        status: status,
+        updated_at: (i ? r.updated_at : r.last_event_at) ?? "",
+        ...(A6n(r.environment_kind) && {
+          environmentKind: r.environment_kind
+        }),
+        ...((r.connection_status === "connected" || r.connection_status === "disconnected") && {
+          connected: r.connection_status === "connected"
+        }),
+        ...(i ? {
+          inboundReportUnavailable: !0
+        } : Kzn(r.external_metadata))
+      });
+    } catch (error) {
+      t(`[bridge:peers] skipping malformed session row: ${d(error)}`);
+    }
+    let n = g ? s.data.next_cursor ?? null : s.data.has_more ? s.data.last_id ?? null : null;
+    if (!n) break;
+    if (m = n, f === I - 1) _ = !0, t(`[bridge:peers] page budget exhausted with more sessions remaining (scanned ${I} pages)`);
+  }
+  if (t(`[bridge:peers] listed ${l.length} peer sessions${_ ? ` \u2014 TRUNCATED at ${I} pages (more sessions exist)` : ""}`, _ ? {
+    level: "warn"
+  } : void 0), e) e.truncated = _;
+  return l;
+}
+function ue(e) {
+  if (!e) return !1;
+  if (e.startsWith("auth:")) return !1;
+  if (e.startsWith("invalid session ID format")) return !1;
+  let o = /^HTTP (\d{3})/.exec(e);
+  if (o) {
+    let u = Number(o[1]);
+    if (u === 401 || u === 403) return !1;
+    if (u >= 500) return !1;
+  }
+  if (/status code 5\d\d/.test(e)) return !1;
+  return !0;
+}
+function le(e) {
+  if (!e) return "other";
+  if (e.startsWith("auth:")) return "bridge_auth";
+  if (e.startsWith("invalid session ID format")) return "invalid_target";
+  let o = /^HTTP (\d)\d\d/.exec(e);
+  if (o) return o[1] === "5" ? "bridge_http_5xx" : "bridge_http_4xx";
+  if (/status code 5\d\d/.test(e)) return "bridge_http_5xx";
+  if (/timeout/i.test(e)) return "timeout";
+  return "other";
+}
+async function ce(e, o, u, file_attachments, U, x, k, from_plugin) {
+  let {
+      prepareApiRequest: prepareApiRequest_2,
+      getOAuthRequestHeaders: getOAuthRequestHeaders,
+      CCR_BYOC_BETA: CCR_BYOC_BETA
+    } = await import("B:/~BUN/root/chunk-268y702m.js"),
+    {
+      getOauthConfig: getOauthConfig_2
+    } = await import("B:/~BUN/root/chunk-69y508b9.js"),
+    accessToken_2,
+    orgUUID_2;
+  try {
+    ({
+      accessToken: accessToken_2,
+      orgUUID: orgUUID_2
+    } = await prepareApiRequest_2(k));
+  } catch (i) {
+    return {
+      ok: !1,
+      error: `auth: ${d(i)}`
+    };
+  }
+  let session_id = Tu(e);
+  if (!/^session_[A-Za-z0-9_-]+$/.test(session_id)) return {
+    ok: !1,
+    error: `invalid session ID format: ${e}`
+  };
+  let m = wGn() ?? Wve(),
+    _ = m ? zMe(m) : "unknown",
+    content = Eyt(_, $To() ?? u, o, void 0, Y3n(U, m ? W8e(_) : void 0), x),
+    f = s3(),
+    h = {
+      ...f,
+      type: "user",
+      message: {
+        role: "user",
+        content: content
+      },
+      parent_tool_use_id: null,
+      session_id: session_id,
+      uuid: N(),
+      ...(from_plugin !== void 0 && {
+        from_plugin: from_plugin
+      }),
+      ...((file_attachments?.length ?? 0) > 0 && {
+        file_attachments: file_attachments
+      })
+    },
+    {
+      url: url,
+      body: body
+    } = sGn(getOauthConfig_2().BASE_API_URL, session_id, [h], Frn()),
+    headers_2 = {
+      ...getOAuthRequestHeaders(accessToken_2),
+      "anthropic-beta": CCR_BYOC_BETA,
+      "x-organization-uuid": orgUUID_2
+    },
+    p = await FS();
+  if (p) headers_2["X-Trusted-Device-Token"] = p;
+  let n;
+  try {
+    n = await Ct.post(url, body, {
+      headers: headers_2,
+      timeout: 1e4,
+      validateStatus: i => i < 500
+    });
+  } catch (i) {
+    return {
+      ok: !1,
+      error: d(i)
+    };
+  }
+  O(session_id, n);
+  let r = n.status === 403 ? Dme(n.data) : void 0;
+  if (r !== void 0) {
+    if (a.CLAUDE_CODE_REMOTE === !0 && !p && !a.CLAUDE_TRUSTED_DEVICE_TOKEN) return {
+      ok: !1,
+      error: `auth: ${OMr}`
+    };
+    let i = Ymt(r);
+    if (!i) jae("[bridge:peers]", r), UH();
+    let T = i ? await _Ie(p) : void 0;
+    if (T) {
+      try {
+        n = await Ct.post(url, body, {
+          headers: {
+            ...headers_2,
+            "X-Trusted-Device-Token": T
+          },
+          timeout: 1e4,
+          validateStatus: C => C < 500
+        });
+      } catch (C) {
+        return {
+          ok: !1,
+          error: d(C)
+        };
+      }
+      O(session_id, n);
+    }
+    let R = n.status === 403 ? Dme(n.data) : void 0;
+    if (R !== void 0) {
+      if (VX()) return {
+        ok: !1,
+        error: `auth: ${Hke(R)}`
+      };
+    }
+  }
+  if (n.status === 403 && Fae(n.data) === "session_stale_relogin") return {
+    ok: !1,
+    error: `auth: ${IAe({
+      terminal: !0,
+      reason: "session_stale_relogin"
+    })}`
+  };
+  if (!H(n.status)) {
+    if (n.status === 401 && a.CLAUDE_CODE_REMOTE === !0) return {
+      ok: !1,
+      error: `auth: ${L}`
+    };
+    return {
+      ok: !1,
+      error: `HTTP ${n.status}`
+    };
+  }
+  return t(`[bridge:peers] posted to ${session_id}: ${o.slice(0, 60)}`), {
+    ok: !0,
+    msgId: f.msg_id
+  };
+}
+var L = "this cloud session cannot message other sessions yet \u2014 its credential is accepted for its own work but not for delivering to another session, so a reply from here is not possible; say so in your response instead of retrying";
+function H(e) {
+  return e === 200 || e === 201 || e === 204;
+}
+function O(e, o) {
+  if (H(o.status)) return;
+  let u = Tx(o.data);
+  t(`[bridge:peers] post to ${e} rejected: HTTP ${o.status}${u ? ` \u2014 ${rL(u)}` : ""}`, {
+    level: "warn"
+  });
+}
+export { le as classifyBridgeSendError, ue as isLikelyStaleBridgeError, de as listBridgePeerSessions, ce as postInterClaudeMessage };

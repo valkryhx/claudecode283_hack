@@ -1,0 +1,177 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Te } from "B:/~BUN/root/chunk-smy4yvhm.js";
+import { w } from "B:/~BUN/root/chunk-rysqv8v1.js";
+import { s, n } from "B:/~BUN/root/chunk-damrp3r8.js";
+import { wc } from "B:/~BUN/root/chunk-1jz9m9yh.js";
+import { PI } from "B:/~BUN/root/chunk-dwajd7kx.js";
+import { Q, e, r } from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import { S_, Kd, Mm, B } from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import { ie } from "B:/~BUN/root/chunk-t7350kw8.js";
+B();
+function re(ce) {
+  return S_.toArray(ce.props.children);
+}
+function le(de) {
+  return de.header !== void 0;
+}
+function ae(me) {
+  return me.header;
+}
+var k = {
+    start: "flex-start",
+    center: "center",
+    end: "flex-end"
+  },
+  columnGap = 2,
+  evt = 12;
+function I(l) {
+  if (typeof l === "string" || typeof l === "number") return !0;
+  if (Mm(l) && l.type === Kd) return !0;
+  return !1;
+}
+function H(children, o, h) {
+  if (!I(children)) return children;
+  return e(n, {
+    dimColor: o.dim && !h,
+    bold: o.bold || h,
+    children: children
+  });
+}
+function M(l) {
+  return ie(PI(l));
+}
+function S(l, o, h, b) {
+  let y = l.length,
+    c = l.map((item, index) => {
+      let f = h ? M(item.header) : 0;
+      for (let d of o) f = Math.max(f, M(d[index]));
+      return f;
+    }),
+    p = Array(y),
+    a = [];
+  for (let t = 0; t < y; t++) {
+    let width = l[t].width;
+    if (width === "fill") p[t] = 0;else if (typeof width === "number") p[t] = width;else if (width && "ratio" in width && width.ratio !== void 0) a.push(t), p[t] = 0;else if (width) p[t] = wc(c[t], width.min ?? 0, width.max ?? 1 / 0);else p[t] = c[t];
+  }
+  if (a.length > 0) {
+    let t = p.reduce((acc, item) => acc + item, 0),
+      i = Math.max(0, b - columnGap * (y - 1) - t),
+      f = a.reduce((acc, item) => acc + (l[item].width.ratio ?? 0), 0);
+    for (let d of a) {
+      let width_2 = l[d].width,
+        u = f > 0 ? Math.floor(i * (width_2.ratio ?? 0) / f) : 0;
+      p[d] = wc(u, width_2.min ?? 1, width_2.max ?? 1 / 0);
+    }
+  }
+  return p;
+}
+function W(l) {
+  let i = w(16),
+    {
+      cells: cells,
+      columns: columns,
+      widths: widths,
+      isHeader: isHeader
+    } = l,
+    c = columns.length - 1,
+    p = columns[c]?.width,
+    a = p === "fill" ? evt : p === void 0 ? Math.min(evt, widths[c] ?? 0) : 0;
+  const flexWrap = a > 0 ? "wrap" : "nowrap";
+  let children_2;
+  if (i[0] !== cells || i[1] !== columns || i[2] !== a || i[3] !== isHeader || i[4] !== c || i[5] !== widths) {
+    let d;
+    if (i[7] !== cells || i[8] !== a || i[9] !== isHeader || i[10] !== c || i[11] !== widths) d = (m, u) => m.width === "fill" ? e(s, {
+      flexGrow: 1,
+      flexShrink: 1,
+      flexBasis: 0,
+      minWidth: u === c ? a : 1,
+      justifyContent: k[m.align ?? "start"],
+      children: H(cells[u], m, isHeader)
+    }, u) : e(s, {
+      width: widths[u] || void 0,
+      flexShrink: u === c && m.width === void 0 ? 1 : 0,
+      flexBasis: u === c && a > 0 ? a : void 0,
+      flexGrow: u === c && a > 0 ? 1 : 0,
+      maxWidth: u === c && a > 0 ? widths[u] : void 0,
+      justifyContent: k[m.align ?? "start"],
+      children: H(cells[u], m, isHeader)
+    }, u), i[7] = cells, i[8] = a, i[9] = isHeader, i[10] = c, i[11] = widths, i[12] = d;else d = i[12];
+    children_2 = columns.map(d);
+    i[0] = cells, i[1] = columns, i[2] = a, i[3] = isHeader, i[4] = c, i[5] = widths, i[6] = children_2;
+  } else children_2 = i[6];
+  let d;
+  if (i[13] !== flexWrap || i[14] !== children_2) d = e(s, {
+    flexDirection: "row",
+    columnGap: columnGap,
+    flexWrap: flexWrap,
+    children: children_2
+  }), i[13] = flexWrap, i[14] = children_2, i[15] = d;else d = i[15];
+  return d;
+}
+function Row(l) {
+  let h = w(2),
+    {
+      children: children_3
+    } = l,
+    b;
+  if (h[0] !== children_3) b = e(Q, {
+    children: children_3
+  }), h[0] = children_3, h[1] = b;else b = h[1];
+  return b;
+}
+function P(l) {
+  let p = w(12),
+    {
+      columns: columns_2,
+      children: children_4,
+      forceWidth: forceWidth
+    } = l,
+    {
+      columns: columns_3
+    } = Te(),
+    c = forceWidth ?? columns_3,
+    a,
+    flexDirection,
+    i,
+    f;
+  if (p[0] !== children_4 || p[1] !== columns_2 || p[2] !== c) {
+    let d = S_.toArray(children_4).filter(Mm);
+    let m = d.map(re);
+    let u = columns_2.some(le);
+    let widths_2 = S(columns_2, m, u, c);
+    a = s;
+    flexDirection = "column";
+    i = u && e(W, {
+      cells: columns_2.map(ae),
+      columns: columns_2,
+      widths: widths_2,
+      isHeader: !0
+    });
+    f = m.map((se, index) => e(W, {
+      cells: se,
+      columns: columns_2,
+      widths: widths_2,
+      isHeader: !1
+    }, d[index].key ?? index));
+    p[0] = children_4, p[1] = columns_2, p[2] = c, p[3] = a, p[4] = flexDirection, p[5] = i, p[6] = f;
+  } else a = p[3], flexDirection = p[4], i = p[5], f = p[6];
+  let Z;
+  if (p[7] !== a || p[8] !== flexDirection || p[9] !== i || p[10] !== f) Z = r(a, {
+    flexDirection: flexDirection,
+    children: [i, f]
+  }), p[7] = a, p[8] = flexDirection, p[9] = i, p[10] = f, p[11] = Z;else Z = p[11];
+  return Z;
+}
+var lp = Object.assign(P, {
+  Row: Row
+});
+export { evt, lp };

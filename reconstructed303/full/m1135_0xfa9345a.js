@@ -1,0 +1,2611 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  b,
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  x,
+  Nr,
+  d
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  F,
+  L,
+  j,
+  oye,
+  $De,
+  vI
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-hg8ngszx.js";
+import {
+  z
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  _,
+  MA,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  Nw
+} from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import {
+  At
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  Tt,
+  ce
+} from "B:/~BUN/root/chunk-nxwmyxnk.js";
+import {
+  RW,
+  Xle,
+  Wl,
+  kA,
+  Xt,
+  P8n,
+  WBt,
+  mu
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  tE
+} from "B:/~BUN/root/chunk-8z3a373v.js";
+import {
+  qJ,
+  y9n,
+  v7e,
+  I0e,
+  Upn
+} from "B:/~BUN/root/chunk-x50ytcx8.js";
+import {
+  nn
+} from "B:/~BUN/root/chunk-6a9s3k2y.js";
+import {
+  me,
+  ut,
+  In,
+  Xge,
+  l_t,
+  Nun,
+  d_t
+} from "B:/~BUN/root/chunk-1gpjpba6.js";
+import {
+  Xce,
+  I8,
+  K$
+} from "B:/~BUN/root/chunk-bz422xf8.js";
+import {
+  pd
+} from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import {
+  tge,
+  wt,
+  $o,
+  Ax,
+  XG,
+  nge,
+  MO,
+  DO,
+  JG,
+  GH,
+  Yr,
+  KIe,
+  Bl,
+  PD,
+  Hln,
+  rJe,
+  gp,
+  CWe,
+  n5,
+  $m,
+  E,
+  vEe,
+  nUt,
+  Mx,
+  Ce,
+  ue,
+  NJe,
+  JN,
+  Sa,
+  vMe
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  Dks,
+  uMt,
+  eee,
+  RUn,
+  AUn,
+  Pct
+} from "B:/~BUN/root/chunk-8w42v0dp.js";
+import {
+  Ne
+} from "B:/~BUN/root/chunk-nvdqbkrt.js";
+import {
+  Zee,
+  HX
+} from "B:/~BUN/root/chunk-8y0chnnr.js";
+import {
+  bs,
+  HK
+} from "B:/~BUN/root/chunk-gy660jgx.js";
+import {
+  lxo,
+  oin,
+  Wg,
+  cxo,
+  xme,
+  Aqn
+} from "B:/~BUN/root/chunk-pmw6knpp.js";
+import {
+  oon,
+  cft,
+  xOe,
+  LGn,
+  C0s,
+  R0s
+} from "B:/~BUN/root/chunk-c44qc88s.js";
+import {
+  Ywe,
+  a5e
+} from "B:/~BUN/root/chunk-dn8rakwm.js";
+import {
+  XU,
+  zme,
+  Qj
+} from "B:/~BUN/root/chunk-r4y1700s.js";
+import {
+  oAe
+} from "B:/~BUN/root/chunk-62ynkm2y.js";
+import {
+  Rje
+} from "B:/~BUN/root/chunk-nw686kdq.js";
+import {
+  EHe,
+  D9t,
+  yDn,
+  Jfs,
+  Ams,
+  hXt,
+  ILn,
+  ZA,
+  l9,
+  tH,
+  n6e,
+  uNn,
+  pNn,
+  Xyr,
+  ays,
+  L_r,
+  wZ,
+  f9,
+  iw,
+  z0,
+  Lb,
+  f_,
+  gpe,
+  Ise,
+  VSe,
+  qz,
+  Nlt
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  hm,
+  Lwe
+} from "B:/~BUN/root/chunk-01qdq3qc.js";
+import {
+  as
+} from "B:/~BUN/root/chunk-j97yjp75.js";
+import {
+  hH
+} from "B:/~BUN/root/chunk-q0t5e1bx.js";
+import {
+  ma
+} from "B:/~BUN/root/chunk-7fsmvr58.js";
+import {
+  xr
+} from "B:/~BUN/root/chunk-vttg4n7q.js";
+import {
+  ldt,
+  Iwr
+} from "B:/~BUN/root/chunk-9tx73f8x.js";
+import {
+  lFt,
+  SIr,
+  hin
+} from "B:/~BUN/root/chunk-66hg7026.js";
+import {
+  Ife,
+  tWn
+} from "B:/~BUN/root/chunk-m1mbrj05.js";
+import {
+  SG,
+  _x,
+  eft,
+  Zie,
+  eae,
+  TTo
+} from "B:/~BUN/root/chunk-1g2t7gtx.js";
+import {
+  Ov
+} from "B:/~BUN/root/chunk-78zw0pmb.js";
+import {
+  jss
+} from "B:/~BUN/root/chunk-wsa799f1.js";
+import {
+  BI
+} from "B:/~BUN/root/chunk-gyjdf492.js";
+import {
+  Yxn,
+  Xxn
+} from "B:/~BUN/root/chunk-qc6mvzn1.js";
+import {
+  aFe
+} from "B:/~BUN/root/chunk-fgt31khr.js";
+import {
+  G7r
+} from "B:/~BUN/root/chunk-4s8ceg71.js";
+import {
+  iKn,
+  dPo,
+  cPo
+} from "B:/~BUN/root/chunk-tpg9ctbs.js";
+import {
+  c8t
+} from "B:/~BUN/root/chunk-tjbs3qzv.js";
+import {
+  eFe,
+  d6t,
+  Dxn,
+  Lxn,
+  Nxn
+} from "B:/~BUN/root/chunk-q56kvjwa.js";
+import {
+  AKe,
+  Xdr,
+  c6t,
+  u6t
+} from "B:/~BUN/root/chunk-ce7rdtzh.js";
+import {
+  Jdr
+} from "B:/~BUN/root/chunk-zc6q737r.js";
+import {
+  X7r,
+  $xn
+} from "B:/~BUN/root/chunk-hm421xh4.js";
+import {
+  Uxn
+} from "B:/~BUN/root/chunk-94cmrrwr.js";
+import {
+  fbe
+} from "B:/~BUN/root/chunk-5j27n8w4.js";
+import {
+  eAe,
+  Ww,
+  yT,
+  bu,
+  R1,
+  oZr,
+  sZr,
+  Jce,
+  Poe
+} from "B:/~BUN/root/chunk-1bymmb2s.js";
+import {
+  P6t
+} from "B:/~BUN/root/chunk-xdhhxjd5.js";
+import {
+  ege,
+  ale
+} from "B:/~BUN/root/chunk-xpy44yvr.js";
+import {
+  _4
+} from "B:/~BUN/root/chunk-j0ghr71r.js";
+import {
+  an
+} from "B:/~BUN/root/chunk-31x8pa20.js";
+import {
+  j4s
+} from "B:/~BUN/root/chunk-pp80ffk4.js";
+
+function go(n) {
+  return xr("themes") && Boolean(BI(n)) ? `${n} (disabled in safe mode)` : n
+}
+var Vdr = (n) => ({
+  id: "theme",
+  label: "Theme",
+  value: go(n.themeSetting),
+  type: "managedEnum",
+  options: I0e,
+  optionsHint: "For custom themes, use /theme.",
+  onChange: n.setTheme
+});
+
+function le(n, s) {
+  return VSe() ? s : n
+}
+
+function qdr(n) {
+  switch (n) {
+    case "terminal_bell":
+      return "bell";
+    case "iterm2_with_bell":
+      return "iterm2+bell";
+    case "notifications_disabled":
+      return "none";
+    default:
+      return n
+  }
+}
+var Ge = ["never", "60s", "5m", "10m"],
+  $e = ["default", "60s", "5m", "10m", "never"],
+  Be = ["default", ...WBt];
+
+function Kdr() {
+  return {
+    ...!1,
+    askUserQuestionTimeout: l_t(),
+    dialogExpiry: Nun(),
+    crossSessionInbound: Ve("crossSessionInbound")?.value,
+    modelProposedGoals: d_t(),
+    enableArtifact: lFt().enabled
+  }
+}
+
+function Ve(n) {
+  return Xge(n).find((s) => nn(s.source))
+}
+
+function Ee(n) {
+  let s = Ve(n)?.source;
+  return s !== void 0 && s !== "userSettings"
+}
+
+function po(n) {
+  return n === "model" || n === "fast" || n === "thinking" || n === "useAutoModeDuringPlan" || n === "autoCompact" || n === "idleCompaction" || n === "autoContinueAtUsageLimit" || n === "precomputeCompactionEnabled" || n === "checkpoints" || n === "outputStyle" || n === "defaultView"
+}
+
+function s6t() {
+  let n = ue(),
+    s = ut();
+  return {
+    ...n,
+    theme: s.theme ?? K(n, "theme"),
+    editorMode: s.editorMode ?? K(n, "editorMode"),
+    verbose: s.verbose ?? K(n, "verbose"),
+    preferredNotifChannel: s.preferredNotifChannel ?? K(n, "preferredNotifChannel"),
+    autoCompactEnabled: s.autoCompactEnabled ?? K(n, "autoCompactEnabled"),
+    autoScrollEnabled: s.autoScrollEnabled ?? K(n, "autoScrollEnabled"),
+    fileCheckpointingEnabled: s.fileCheckpointingEnabled ?? K(n, "fileCheckpointingEnabled"),
+    showTurnDuration: s.showTurnDuration ?? K(n, "showTurnDuration"),
+    showMessageTimestamps: s.showMessageTimestamps ?? K(n, "showMessageTimestamps"),
+    terminalProgressBarEnabled: s.terminalProgressBarEnabled ?? K(n, "terminalProgressBarEnabled"),
+    todoFeatureEnabled: s.todoFeatureEnabled ?? K(n, "todoFeatureEnabled"),
+    teammateMode: s.teammateMode ?? K(n, "teammateMode"),
+    remoteControlAtStartup: NJe(),
+    autoUploadSessions: s.autoUploadSessions ?? nUt("autoUploadSessions", n.autoUploadSessions),
+    inputNeededNotifEnabled: s.inputNeededNotifEnabled ?? K(n, "inputNeededNotifEnabled"),
+    agentPushNotifEnabled: s.agentPushNotifEnabled ?? K(n, "agentPushNotifEnabled")
+  }
+}
+
+function K(n, s) {
+  return vEe(s, n[s]) ?? Mx[s]
+}
+
+function mo() {
+  let n = KIe();
+  return ["default", ..._4.filter((s) => (n || !s.includes("fable")) && !oZr(s) && !sZr(s) && Yr(s))]
+}
+var So = new Map([
+  ["jp", "ja"],
+  ["kr", "ko"],
+  ["cn", "zh"],
+  ["tw", "zh-Hant"]
+]);
+
+function bo(n) {
+  let s = Xt(n).trim();
+  if (!s || s.toLowerCase() === "default") return "default";
+  if (s.length <= 3) {
+    let r = s.toLowerCase(),
+      u = So.get(r) ?? r;
+    try {
+      let f = j4s().of(u);
+      if (f && f !== u) return f
+    } catch {}
+  }
+  return s.split(/\s+/).map((r) => r.charAt(0).toUpperCase() + r.slice(1).toLowerCase()).join(" ")
+}
+var fe = () => {},
+  We = {
+    setGlobalConfig: fe,
+    setSettingsData: fe,
+    changeLog: {
+      record: fe,
+      clear: fe,
+      toggle: fe
+    }
+  };
+
+function ho(n) {
+  return ma.orgMemoryWritesRowSeen ||= n, ma.orgMemoryWritesRowSeen
+}
+
+function Co(n) {
+  return ma.orgMemoryReadRowSeen ||= n, ma.orgMemoryReadRowSeen
+}
+
+function yo(n) {
+  return ma.remoteHomeSettingsRowSeen ||= n, ma.remoteHomeSettingsRowSeen
+}
+
+function Lss() {
+  return !1
+}
+var j7r = {
+    unsupported: "Could not turn this on: forwarding settings to cloud sessions is not available in this version",
+    flag_off: "Could not turn this on: forwarding settings to cloud sessions is not enabled for you right now"
+  },
+  W7r = "Could not save this to the config file, so nothing changed.";
+
+function RKe(n) {
+  let {
+    globalConfig: s,
+    settingsData: r,
+    themeSetting: u,
+    currentOutputStyle: f,
+    currentLanguage: m,
+    externalIncludesApproved: S,
+    thinkingEnabled: y,
+    verbose: C,
+    mainLoopModel: M,
+    currentModel: w,
+    isFastMode: D,
+    promptSuggestionEnabled: O,
+    awaySummaryEnabled: Q,
+    showDefaultViewPicker: ne,
+    pushTogglesVisible: te,
+    crossSessionInboxRowVisible: oe,
+    isConnectedToIde: B,
+    inAppSelection: ie,
+    tabsStandIn: se,
+    isFileCheckpointingAvailable: q,
+    workflowsToggleable: J,
+    workflowSizeGuidelineToggleable: Ze,
+    autoContinueAtUsageLimitToggleable: eo,
+    artifactToggleable: oo,
+    remoteToolServingOn: no,
+    launchDirectoryKeys: No,
+    shouldShowExternalIncludesToggle: to,
+    autoUpdaterDisabledReason: io,
+    modelSwitchHooks: U,
+    setAppState: Y,
+    setTheme: so,
+    setGlobalConfig: v,
+    setSettingsData: T,
+    changeLog: N,
+    storageV5: H,
+    promptSuggestionRun: ro,
+    mayBeAuthoredByNonOwner: ao
+  } = n;
+
+  function P(e) {
+    return W() && H !== void 0 ? In("userSettings", e, void 0, H) : In("userSettings", e)
+  }
+
+  function pe(e) {
+    return W() && H !== void 0 ? In("localSettings", e, void 0, H) : In("localSettings", e)
+  }
+
+  function V(e, o) {
+    if (W() && H !== void 0) HK(e, o, H);
+    else HK(e, o)
+  }
+
+  function G(e) {
+    if (W() && H !== void 0) Ce(e, H);
+    else Ce(e)
+  }
+  async function Me(e, o) {
+    i("tengu_config_model_changed", {
+      from_model: wt(M),
+      to_model: wt(e)
+    });
+    let h = Poe(e),
+      k = e === null ? GH(Bl(), "switch") : null;
+    if (k !== null) return {
+      error: new Nr(k, "default model blocked by managed settings")
+    };
+    let R = "";
+    if (U) {
+      let {
+        session: Z,
+        readState: ke
+      } = U;
+      if (f9(Z) || z0.of(Z).pending > 0) {
+        let co = ++U.latestPick.current,
+          ae = await Lb(Z, () => yT(Z, ke, e, "command"));
+        if (co !== U.latestPick.current) return;
+        if (ae.decision !== "proceed") return p("model_switch", "blocked_by_hook"), {
+          error: new Nr(R1(e, ae.decision === "ask" ? `${ae.reason??"confirmation required"} (run /model to confirm)` : ae.reason, ae.messages), "model switch blocked by a PreModelSwitch hook")
+        };
+        if (ae.messages.length > 0) R = ` \xB7 ${ae.messages.map(bu).join(" \xB7 ")}`
+      }
+      iw(Z, ke(), e, "command")
+    }
+    if (o !== void 0) HX(o, Jce(e), void 0, H);
+    if (oye(), $o()) JG();
+    let A = !1,
+      I = !1;
+    Y((Z) => (A = !!Z.fastMode, I = $o() ? MO(e, Z.fastMode) : A, {
+      ...Z,
+      mainLoopModel: e,
+      mainLoopModelForSession: null,
+      ...o !== void 0 && {
+        sessionEffort: Zee(o)
+      },
+      ...I !== A && {
+        fastMode: I
+      }
+    })), DO(A, I);
+    let X = eAe(A, I, e);
+    N.record("model", PD(e) + X + R + (h ? " \xB7 this session only \u2014 /model to set up" : ""), {
+      moveToEnd: !0
+    });
+    let we = h ? void 0 : await P({
+        model: e ?? void 0
+      }),
+      re = X + R;
+    if (we?.error) return {
+      error: we.error,
+      ...re && {
+        messageSuffix: re
+      }
+    };
+    if (re) return {
+      messageSuffix: re
+    }
+  }
+
+  function Oe(e) {
+    V("verbose", e), v((o) => ({
+      ...o,
+      verbose: e
+    })), Y((o) => ({
+      ...o,
+      verbose: e
+    })), N.toggle("verbose", e)
+  }
+
+  function he(e) {
+    V("preferredNotifChannel", e), v((o) => ({
+      ...o,
+      preferredNotifChannel: e
+    }))
+  }
+
+  function Ae(e) {
+    V("inputNeededNotifEnabled", e), v((o) => ({
+      ...o,
+      inputNeededNotifEnabled: e
+    })), G7r(), i("tengu_push_notif_pref_changed", {
+      key: b("inputNeededNotifEnabled"),
+      value: e
+    })
+  }
+
+  function Pe(e) {
+    V("agentPushNotifEnabled", e), v((o) => ({
+      ...o,
+      agentPushNotifEnabled: e
+    })), G7r(), i("tengu_push_notif_pref_changed", {
+      key: b("agentPushNotifEnabled"),
+      value: e
+    })
+  }
+  let Fe = Iwr(s.workflowSizeGuideline, xme());
+
+  function xe(e) {
+    if (e !== "false") {
+      let l = eft();
+      if (l !== null) return {
+        error: new x(l, "Remote Control setting locked by org policy")
+      }
+    }
+    if (e === "default") V("remoteControlAtStartup", void 0), G((l) => {
+      if (l.remoteControlAtStartup === void 0) return l;
+      let h = {
+        ...l
+      };
+      return delete h.remoteControlAtStartup, h
+    }), v((l) => ({
+      ...l,
+      remoteControlAtStartup: void 0
+    }));
+    else {
+      let l = e === "true";
+      V("remoteControlAtStartup", l), v((h) => ({
+        ...h,
+        remoteControlAtStartup: l
+      }))
+    }
+    let o = eae();
+    Y((l) => TTo(l, o));
+    return
+  }
+
+  function lo() {
+    let e = eft();
+    if (e !== null) return {
+      id: "remoteControl",
+      label: "Enable Remote Control for all sessions",
+      value: "disabled",
+      lock: {
+        reason: e,
+        source: SG() ? "managed" : "policy",
+        writableWhileLocked: ["false"]
+      },
+      options: ["true", "false", "default"],
+      type: "managedEnum",
+      onChange(o) {
+        if (o !== "false") return {
+          error: new x(e, "Remote Control setting locked by org policy")
+        };
+        return xe(o)
+      }
+    };
+    return {
+      id: "remoteControl",
+      label: "Enable Remote Control for all sessions",
+      value: s.remoteControlAtStartup === void 0 ? "default" : String(s.remoteControlAtStartup),
+      options: ["true", "false", "default"],
+      type: "enum",
+      onChange: xe
+    }
+  }
+  let Ie = Jce(w),
+    Se = Hln(Ie),
+    ye = [...Ov() ? [{
+      id: "defaultToAgentsView",
+      label: "Open agents view by default",
+      value: s.defaultToAgentsView ?? !1,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          defaultToAgentsView: e
+        })), v((o) => ({
+          ...o,
+          defaultToAgentsView: e
+        }))
+      }
+    }] : [], ...aFe() ? [{
+      id: "leftArrowOpensAgents",
+      label: `${RW} opens agents`,
+      value: s.leftArrowOpensAgents ?? !0,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          leftArrowOpensAgents: e
+        })), v((o) => ({
+          ...o,
+          leftArrowOpensAgents: e
+        }))
+      }
+    }] : []],
+    uo = se ? ye.filter((e) => e.id !== "leftArrowOpensAgents") : ye,
+    Le = {
+      id: "notifChannel",
+      label: "Local notifications",
+      value: s.preferredNotifChannel,
+      options: [...qJ],
+      type: "enum",
+      onChange: he
+    },
+    De = te ? [...tWn() ? [{
+      id: "inputNeededNotifEnabled",
+      label: "Push when actions required",
+      value: s.inputNeededNotifEnabled ?? !1,
+      type: "boolean",
+      onChange: Ae
+    }] : [], {
+      id: "agentPushNotifEnabled",
+      label: "Push when Claude decides",
+      value: s.agentPushNotifEnabled ?? !1,
+      type: "boolean",
+      onChange: Pe
+    }] : [],
+    Ue = bs("idleCompaction", !0).source,
+    fo = Ue === "userSettings" || Ue === "default" && nn("userSettings"),
+    He = [{
+      id: "autoCompact",
+      label: "Auto-compact",
+      value: s.autoCompactEnabled,
+      type: "boolean",
+      onChange(e) {
+        V("autoCompactEnabled", e), v((o) => ({
+          ...o,
+          autoCompactEnabled: e
+        })), i("tengu_auto_compact_setting_changed", {
+          enabled: e
+        })
+      }
+    }, ...Ams() && fo ? [{
+      id: "idleCompaction",
+      label: "Idle compaction",
+      value: r?.idleCompaction ?? !0,
+      type: "boolean",
+      async onChange(e) {
+        T((l) => ({
+          ...l,
+          idleCompaction: e
+        }));
+        let o = await P({
+          idleCompaction: e
+        });
+        if (o?.error) {
+          let l = Pct();
+          return T((h) => ({
+            ...h,
+            idleCompaction: l
+          })), {
+            error: o.error
+          }
+        }
+        i("tengu_idle_compaction_setting_changed", {
+          enabled: e
+        }), N.toggle("idleCompaction", e)
+      }
+    }] : [], ...eo ? [{
+      id: "autoContinueAtUsageLimit",
+      label: "Continue automatically at usage limit",
+      value: r?.autoContinueAtUsageLimit ?? !0,
+      type: "boolean",
+      consentGated: !0,
+      async onChange(e) {
+        T((l) => ({
+          ...l,
+          autoContinueAtUsageLimit: e
+        }));
+        let o = await P({
+          autoContinueAtUsageLimit: e
+        });
+        if (o?.error) {
+          let l = Yxn();
+          return T((h) => ({
+            ...h,
+            autoContinueAtUsageLimit: l
+          })), {
+            error: o.error
+          }
+        }
+        i("tengu_quota_auto_resume_setting_changed", {
+          enabled: e
+        })
+      }
+    }] : [], ...yo(Qj(XU()) || s.remoteHomeSettingsMode === "forward") ? [{
+      id: "remoteHomeSettings",
+      label: "Use this machine's settings in cloud sessions",
+      value: s.remoteHomeSettingsMode === "forward" && hXt() && (XU() || !Ywe()),
+      isDefaultValue: !y9n.some((e) => e === s.remoteHomeSettingsMode),
+      consentGated: !0,
+      canWithdraw: () => Ywe() && s.remoteHomeSettingsMode !== "keep_local",
+      grantBlocker: zme(!0) ?? void 0,
+      type: "boolean",
+      onChange(e) {
+        if (e) return {
+          error: new Nr("Turn this on from the /config panel, which shows what will be sent")
+        };
+        let o = "keep_local",
+          l = s.remoteHomeSettingsMode;
+        return v((h) => ({
+          ...h,
+          remoteHomeSettingsMode: o
+        })), ILn(o, W() ? H : void 0).then((h) => {
+          switch (h) {
+            case "written":
+              return;
+            case "unconfirmed":
+              return {
+                messageSuffix: " (could not confirm it was written to the config file; check /config after restarting Claude Code)"
+              };
+            case "not_stored":
+              return v((k) => ({
+                ...k,
+                remoteHomeSettingsMode: ue().remoteHomeSettingsMode
+              })), {
+                error: new Nr(W7r)
+              };
+            case "refused":
+              return v((k) => ({
+                ...k,
+                remoteHomeSettingsMode: l
+              })), {
+                error: new Nr("Cloud settings forwarding is not available right now; nothing was changed")
+              }
+          }
+        })
+      }
+    }] : [], ...[], ...Dxn(no) ? [{
+      id: "unattendedServing",
+      label: "Unattended commands from cloud sessions on this computer",
+      value: eFe[I8()],
+      options: [eFe.declined, eFe.accepted],
+      type: "enum",
+      pickToCommit: !0,
+      consentGated: !0,
+      canWithdraw: Lxn,
+      ...K$() && {
+        lock: {
+          reason: d6t(),
+          source: "managed",
+          writableWhileLocked: [eFe.declined]
+        }
+      },
+      onChange(e) {
+        return Nxn(e === eFe.accepted ? "accepted" : "declined").then((o) => {
+          if (o === "forbidden") return {
+            error: new Nr(d6t())
+          };
+          if (v((l) => ({
+              ...l
+            })), o === "not_saved") return {
+            error: new Nr("The answer could not be saved; nothing was changed")
+          };
+          return
+        })
+      }
+    }] : [], ...AUn() ? [{
+      id: "switchModelsOnFlag",
+      label: Dks,
+      value: wo(r?.switchModelsOnFlag),
+      options: [eee.switchAutomatically, eee.askEachTime],
+      type: "enum",
+      pickToCommit: !0,
+      coerce(e) {
+        let o = e.trim().toLowerCase();
+        if (["true", "1", "on", "yes"].includes(o) || o === eee.switchAutomatically.toLowerCase()) return eee.switchAutomatically;
+        if (["false", "0", "off", "no"].includes(o) || o === eee.askEachTime.toLowerCase()) return eee.askEachTime;
+        return
+      },
+      onChange(e) {
+        let o = e === eee.switchAutomatically;
+        return T((l) => ({
+          ...l,
+          switchModelsOnFlag: o
+        })), RUn(o, "config", W() ? H : void 0).then(({
+          error: l
+        }) => l ? {
+          error: l
+        } : void 0)
+      }
+    }] : [], ...[], {
+      id: "tips",
+      label: "Show tips",
+      value: r?.spinnerTipsEnabled ?? !0,
+      type: "boolean",
+      onChange(e) {
+        pe({
+          spinnerTipsEnabled: e
+        }), T((o) => ({
+          ...o,
+          spinnerTipsEnabled: e
+        })), i("tengu_tips_setting_changed", {
+          enabled: e
+        })
+      }
+    }, ...X7r() ? [{
+      id: "feedbackDrafts",
+      label: "Claude-drafted feedback",
+      value: r?.feedbackDrafts ?? "notify",
+      options: ["notify", "quiet", "off"],
+      type: "enum",
+      onChange(e) {
+        let o = e;
+        $xn(o, {
+          storageV5: H,
+          via: "config"
+        }), T((l) => ({
+          ...l,
+          feedbackDrafts: o
+        }))
+      }
+    }] : [], {
+      id: "reduceMotion",
+      label: "Reduce motion",
+      value: r?.prefersReducedMotion ?? !1,
+      type: "boolean",
+      onChange(e) {
+        pe({
+          prefersReducedMotion: e
+        }), T((o) => ({
+          ...o,
+          prefersReducedMotion: e
+        })), Y((o) => ({
+          ...o,
+          settings: {
+            ...o.settings,
+            prefersReducedMotion: e
+          }
+        })), i("tengu_reduce_motion_setting_changed", {
+          enabled: e
+        })
+      }
+    }, {
+      id: "thinking",
+      label: "Thinking mode",
+      value: rJe(Ie, y),
+      type: "boolean",
+      ...Se !== void 0 && {
+        lock: {
+          reason: Se,
+          source: "managed",
+          reasonShipsOffBox: !0,
+          writableWhileLocked: ["true", "1", "on", "yes"]
+        }
+      },
+      onChange(e) {
+        if (!e && Se !== void 0) return {
+          error: new Nr(Se, "Thinking can't be turned off for this model")
+        };
+        Y((o) => ({
+          ...o,
+          thinkingEnabled: e
+        })), P({
+          alwaysThinkingEnabled: e ? void 0 : !1
+        }), i("tengu_thinking_toggled", {
+          enabled: e
+        }), g("thinking_toggle")
+      }
+    }, ...$o() && Ax() ? [{
+      id: "fast",
+      label: `Fast mode (${XG()})`,
+      value: !!D,
+      type: "boolean",
+      async onChange(e) {
+        let o = (l, h, k) => {
+          if (h) {
+            let A = !1;
+            if (Y((I) => {
+                let X = fbe(I);
+                return A = X !== void 0 && X !== l, I
+              }), A) return {
+              error: new Nr("Fast mode was not enabled: the model changed while PreModelSwitch hooks ran; try again", "fast mode promotion stale after hooks")
+            }
+          }
+          JG(), P({
+            fastMode: !0
+          });
+          let R;
+          if (Y((A) => {
+              let I = fbe(A),
+                X = I !== void 0 && (!h || I === l);
+              if (X && U) iw(U.session, A, I, "command");
+              return R = X ? I : void 0, {
+                ...A,
+                ...X && {
+                  mainLoopModel: I,
+                  mainLoopModelForSession: null
+                },
+                fastMode: !0
+              }
+            }), R !== void 0) N.record("model", R ?? nge());
+          return N.record("Fast mode", "ON"), k ? {
+            messageSuffix: k
+          } : void 0
+        };
+        if (e && U && (f9(U.session) || z0.of(U.session).pending > 0)) {
+          let {
+            session: l,
+            readState: h
+          } = U, k = ++U.latestFastPick.current;
+          return Lb(l, async () => {
+            let R = fbe(h());
+            if (R === void 0 || !f9(l)) {
+              if (k !== U.latestFastPick.current) return;
+              return o(void 0, !1, "")
+            }
+            let A = await yT(l, h, R, "command");
+            if (k !== U.latestFastPick.current) return;
+            if (A.decision !== "proceed") return p("model_switch", "blocked_by_hook"), {
+              error: new Nr(R1(R, A.decision === "ask" ? `${A.reason??"confirmation required"} (run /model to switch, then enable fast mode)` : A.reason, A.messages), "model switch blocked by a PreModelSwitch hook")
+            };
+            return o(R, !0, A.messages.length > 0 ? ` \xB7 ${A.messages.map(bu).join(" \xB7 ")}` : "")
+          })
+        }
+        if (e) return o(void 0, !1, "");
+        else {
+          let l = () => {
+            JG(), P({
+              fastMode: void 0
+            }), Y((h) => ({
+              ...h,
+              fastMode: !1
+            })), N.record("Fast mode", "OFF")
+          };
+          if (U && z0.of(U.session).pending > 0) await Lb(U.session, async () => l());
+          else l()
+        }
+      }
+    }] : [], ...E("tengu_chomp_inflection", !1) ? [{
+      id: "promptSuggestionEnabled",
+      label: "Prompt suggestions",
+      value: O,
+      type: "boolean",
+      onChange(e) {
+        if (Y((o) => ({
+            ...o,
+            promptSuggestionEnabled: e
+          })), P({
+            promptSuggestionEnabled: e ? void 0 : !1
+          }), e && !O) jss(W() ? H : void 0, ro)
+      }
+    }] : [], {
+      id: "recap",
+      label: "Session recap",
+      value: Q,
+      type: "boolean",
+      onChange(e) {
+        Y((o) => ({
+          ...o,
+          awaySummaryEnabled: e
+        })), P({
+          awaySummaryEnabled: e ? void 0 : !1
+        }), T((o) => ({
+          ...o,
+          awaySummaryEnabled: e ? void 0 : !1
+        }))
+      }
+    }, ...q ? [{
+      id: "checkpoints",
+      label: "Rewind code (checkpoints)",
+      value: s.fileCheckpointingEnabled,
+      type: "boolean",
+      onChange(e) {
+        V("fileCheckpointingEnabled", e), v((o) => ({
+          ...o,
+          fileCheckpointingEnabled: e
+        })), i("tengu_file_history_snapshots_setting_changed", {
+          enabled: e
+        })
+      }
+    }] : [], ...Co(C0s()) ? [{
+      id: "orgMemoryRead",
+      label: "Synced project memory (this directory; applies next session)",
+      value: Sa().orgMemoryRead ?? !0,
+      type: "boolean",
+      onChange(e) {
+        R0s(e, H), v((o) => ({
+          ...o
+        }))
+      }
+    }] : [], ...ho(!oon() && (cft() || Sa().orgMemoryWrites === !0)) ? [{
+      id: "orgMemoryWrites",
+      label: Sa().orgMemoryRead === !1 ? "Synced project memory writes (enable reads first)" : "Synced project memory writes (this directory; applies next session)",
+      value: xOe(),
+      canWithdraw: () => Sa().orgMemoryWrites === !0,
+      type: "boolean",
+      consentGated: !0,
+      onChange(e) {
+        let o = e && !xOe() && Sa().orgMemoryWrites === !0;
+        LGn(o ? !1 : e, H), v((l) => ({
+          ...l
+        }))
+      }
+    }] : [], ...J ? [{
+      id: "workflows",
+      label: "Dynamic workflows",
+      value: r?.disableWorkflows === !0 ? !1 : r?.enableWorkflows ?? cxo(),
+      type: "boolean",
+      onChange(e) {
+        let o = e === cxo() ? void 0 : e;
+        P({
+          enableWorkflows: o,
+          disableWorkflows: void 0
+        }), T((l) => ({
+          ...l,
+          enableWorkflows: o,
+          disableWorkflows: void 0
+        })), N.record("workflows", e ? "on" : "off")
+      }
+    }, {
+      id: "workflowKeywordTriggerEnabled",
+      label: "Ultracode keyword trigger",
+      value: r?.workflowKeywordTriggerEnabled ?? !0,
+      type: "boolean",
+      onChange(e) {
+        let o = e ? void 0 : !1;
+        P({
+          workflowKeywordTriggerEnabled: o
+        }), T((l) => ({
+          ...l,
+          workflowKeywordTriggerEnabled: o
+        })), N.record("ultracodeKeywordTrigger", e ? "on" : "off")
+      }
+    }] : [], ...Ze && (J || Wg()) ? [{
+      id: "workflowSizeGuideline",
+      label: "Dynamic workflow size",
+      value: Fe.size,
+      isDefaultValue: Fe.isDefault,
+      options: [...lxo],
+      type: "enum",
+      onChange(e) {
+        let o = oin(e) ?? "unrestricted";
+        G((l) => {
+          if (l.workflowSizeGuideline === o) return l;
+          return {
+            ...l,
+            workflowSizeGuideline: o
+          }
+        }), v((l) => ({
+          ...l,
+          workflowSizeGuideline: o
+        })), N.record("workflowSizeGuideline", o)
+      }
+    }] : [], ...oo ? [{
+      id: "artifacts",
+      label: "Artifacts",
+      value: r?.enableArtifact ?? SIr(),
+      type: "boolean",
+      async onChange(e) {
+        let o = e === SIr() ? void 0 : e;
+        T((h) => ({
+          ...h,
+          enableArtifact: e
+        }));
+        let l = await P({
+          enableArtifact: o,
+          disableArtifact: void 0
+        });
+        if (l?.error) return T((h) => ({
+          ...h,
+          enableArtifact: lFt().enabled
+        })), {
+          error: l.error
+        };
+        N.record("artifacts", e ? "on" : "off")
+      }
+    }] : [], {
+      id: "verbose",
+      label: le("Verbose output", "Verbose"),
+      value: C,
+      type: "boolean",
+      onChange: Oe
+    }, {
+      id: "progressBar",
+      label: "Terminal progress bar",
+      value: s.terminalProgressBarEnabled,
+      type: "boolean",
+      onChange(e) {
+        V("terminalProgressBarEnabled", e), v((o) => ({
+          ...o,
+          terminalProgressBarEnabled: e
+        })), i("tengu_terminal_progress_bar_setting_changed", {
+          enabled: e
+        })
+      }
+    }, ...E("tengu_terminal_sidebar", !1) ? [{
+      id: "showStatusInTerminalTab",
+      label: "Show status in terminal tab",
+      value: s.showStatusInTerminalTab ?? !1,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          showStatusInTerminalTab: e
+        })), v((o) => ({
+          ...o,
+          showStatusInTerminalTab: e
+        })), i("tengu_terminal_tab_status_setting_changed", {
+          enabled: e
+        })
+      }
+    }] : [], {
+      id: "turnDuration",
+      label: "Show turn duration",
+      value: s.showTurnDuration,
+      type: "boolean",
+      onChange(e) {
+        V("showTurnDuration", e), v((o) => ({
+          ...o,
+          showTurnDuration: e
+        })), i("tengu_show_turn_duration_setting_changed", {
+          enabled: e
+        })
+      }
+    }, ...E("tengu_sepia_moth", !1) ? [{
+      id: "precomputeCompactionEnabled",
+      label: "Precompute compaction",
+      value: r?.precomputeCompactionEnabled ?? !0,
+      type: "boolean",
+      onChange(e) {
+        P({
+          precomputeCompactionEnabled: e
+        }), T((o) => ({
+          ...o,
+          precomputeCompactionEnabled: e
+        })), i("tengu_precompute_compaction_setting_changed", {
+          enabled: e
+        })
+      }
+    }] : [], ...E("tengu_silk_hinge", !1) ? [{
+      id: "timestamps",
+      label: "Show message timestamps",
+      value: s.showMessageTimestamps,
+      type: "boolean",
+      onChange(e) {
+        V("showMessageTimestamps", e), v((o) => ({
+          ...o,
+          showMessageTimestamps: e
+        })), Y((o) => ({
+          ...o,
+          showMessageTimestamps: e
+        })), i("tengu_show_message_timestamps_setting_changed", {
+          enabled: e
+        })
+      }
+    }] : [], {
+      id: "timeFormat",
+      label: "Time format",
+      value: Jdr(r?.timeFormat ?? "auto"),
+      options: [...v7e],
+      type: "enum",
+      pickToCommit: !0,
+      onChange(e) {
+        let o = v7e.find((l) => l === e);
+        if (!o) return;
+        P({
+          timeFormat: o
+        }), T((l) => ({
+          ...l,
+          timeFormat: o
+        })), N.record("timeFormat", o), i("tengu_time_format_setting_changed", {
+          value: c(o)
+        })
+      }
+    }, {
+      id: "permissionMode",
+      label: "Default permission mode",
+      value: r?.permissions?.defaultMode || "default",
+      options: (() => {
+        let e = ["default", "plan"],
+          o = tE,
+          l = ["bypassPermissions"];
+        return [...e, ...o.filter((h) => !e.includes(h) && !l.includes(h))]
+      })(),
+      type: "enum",
+      async onChange(e) {
+        let o = kA(e),
+          l = Xle(o) ? Wl(o) : o,
+          h = r?.permissions?.defaultMode;
+        T((R) => ({
+          ...R,
+          permissions: {
+            ...R?.permissions,
+            defaultMode: l
+          }
+        })), N.record("permissionMode", e);
+        let k = await P({
+          permissions: {
+            defaultMode: l
+          }
+        });
+        if (k.error) return T((R) => ({
+          ...R,
+          permissions: {
+            ...R?.permissions,
+            defaultMode: h
+          }
+        })), N.clear("permissionMode"), t(`Failed to update default permission mode setting: ${k.error.message}`, {
+          level: "error"
+        }), {
+          error: k.error
+        }
+      }
+    }, {
+      id: "worktreeBaseRef",
+      label: "Worktree base ref",
+      value: r?.worktree?.baseRef ?? "fresh",
+      options: ["fresh", "head"],
+      type: "enum",
+      async onChange(e) {
+        let o = e,
+          l = r?.worktree?.baseRef;
+        T((k) => ({
+          ...k,
+          worktree: {
+            ...k?.worktree,
+            baseRef: o
+          }
+        })), N.record("worktreeBaseRef", o);
+        let h = await P({
+          worktree: {
+            baseRef: o
+          }
+        });
+        if (h.error) return T((k) => ({
+          ...k,
+          worktree: {
+            ...k?.worktree,
+            baseRef: l
+          }
+        })), N.clear("worktreeBaseRef"), t(`Failed to update worktree.baseRef in user settings: ${h.error.message}`, {
+          level: "error"
+        }), {
+          error: h.error
+        }
+      }
+    }, {
+      id: "useAutoModeDuringPlan",
+      label: "Use auto mode during plan",
+      value: r?.useAutoModeDuringPlan ?? !0,
+      type: "boolean",
+      onChange(e) {
+        P({
+          useAutoModeDuringPlan: e
+        }), T((o) => ({
+          ...o,
+          useAutoModeDuringPlan: e
+        })), Y((o) => {
+          let l = oAe(o.toolPermissionContext);
+          if (l === o.toolPermissionContext) return o;
+          return {
+            ...o,
+            toolPermissionContext: l
+          }
+        }), N.record("Use auto mode during plan", e)
+      }
+    }, {
+      id: "gitignore",
+      label: "Respect .gitignore in file picker",
+      value: s.respectGitignore ?? Mx.respectGitignore,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          respectGitignore: e
+        })), v((o) => ({
+          ...o,
+          respectGitignore: e
+        })), i("tengu_respect_gitignore_setting_changed", {
+          enabled: e
+        })
+      }
+    }, {
+      id: "copyFullResponse",
+      label: "Skip the /copy picker",
+      value: s.copyFullResponse ?? Mx.copyFullResponse,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          copyFullResponse: e
+        })), v((o) => ({
+          ...o,
+          copyFullResponse: e
+        }))
+      }
+    }, ...ie ? [{
+      id: "copyOnSelect",
+      label: "Copy on select",
+      value: s.copyOnSelect ?? !0,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          copyOnSelect: e
+        })), v((o) => ({
+          ...o,
+          copyOnSelect: e
+        }))
+      }
+    }, {
+      id: "autoScroll",
+      label: le("Auto-scroll", "Auto-scroll output"),
+      value: s.autoScrollEnabled,
+      type: "boolean",
+      onChange(e) {
+        V("autoScrollEnabled", e), v((o) => ({
+          ...o,
+          autoScrollEnabled: e
+        }))
+      }
+    }] : [], ...VSe() && !se ? Ov() || aFe() ? [{
+      id: "agentsView",
+      label: "Agents view",
+      value: aFe() && (s.leftArrowOpensAgents ?? !0) || Ov() && (s.defaultToAgentsView ?? !1) ? "on" : "off",
+      type: "managedEnum",
+      onChange() {}
+    }] : [] : uo, ...[], io ? {
+      id: "autoUpdatesChannel",
+      label: "Auto-update channel",
+      value: "disabled",
+      type: "managedEnum",
+      onChange() {}
+    } : {
+      id: "autoUpdatesChannel",
+      label: "Auto-update channel",
+      value: Eo(r?.autoUpdatesChannel),
+      type: "managedEnum",
+      onChange() {}
+    }, Vdr({
+      themeSetting: u,
+      setTheme: so
+    }), ...VSe() ? [{
+      id: "notifChannel",
+      label: "Notifications",
+      value: qdr(s.preferredNotifChannel),
+      type: "managedEnum",
+      options: [...qJ],
+      onChange: he
+    }] : [Le, ...De], {
+      id: "outputStyle",
+      label: "Output style",
+      value: xr("outputStyles") && !Object.hasOwn(l9, f) ? `${f} (disabled in safe mode)` : f,
+      type: "managedEnum",
+      options: Object.keys(l9),
+      optionsHint: "For custom styles, open /config.",
+      async onChange(e) {
+        if (ao) {
+          let l = await tH(ce(), H);
+          if (!n6e(l[e])) return {
+            error: new Nr(uNn)
+          }
+        }
+        if (e === f) return {
+          messageSuffix: " (already the current style)"
+        };
+        if (!nn("localSettings")) return {
+          error: new Nr(pNn)
+        };
+        T((l) => ({
+          ...l,
+          outputStyle: e
+        }));
+        let o = await pe({
+          outputStyle: e
+        });
+        if (o?.error) return {
+          error: o.error
+        };
+        vI("output_style")
+      }
+    }, ...ne ? [{
+      id: "defaultView",
+      label: "Default view",
+      value: r?.defaultView === void 0 ? "default" : String(r.defaultView),
+      options: ["transcript", "chat", "default"],
+      type: "enum",
+      onChange(e) {
+        let o = e === "default" ? void 0 : e;
+        pe({
+          defaultView: o
+        }), T((h) => ({
+          ...h,
+          defaultView: o
+        }));
+        let l = o === "chat";
+        $De(l), Y((h) => {
+          if (h.isBriefOnly === l) return h;
+          return {
+            ...h,
+            isBriefOnly: l
+          }
+        }), N.record("Default view", e), i("tengu_default_view_setting_changed", {
+          value: c(o ?? "unset")
+        })
+      }
+    }] : [], {
+      id: "language",
+      label: "Language",
+      value: m ?? "Default (English)",
+      type: "managedEnum",
+      coerce: bo,
+      optionsHint: "Any language name or ISO code (e.g. 'ja'); use 'default' for English.",
+      async onChange(e) {
+        let o = e.toLowerCase() === "default" ? void 0 : e;
+        T((h) => ({
+          ...h,
+          language: o
+        }));
+        let l = await P({
+          language: o
+        });
+        if (l?.error) return {
+          error: l.error
+        }
+      }
+    }, {
+      id: "editor",
+      label: "Editor mode",
+      value: s.editorMode === "emacs" ? "normal" : s.editorMode || "normal",
+      options: ["normal", "vim"],
+      type: "enum",
+      onChange(e) {
+        let o = e;
+        V("editorMode", o), v((l) => ({
+          ...l,
+          editorMode: o
+        })), i("tengu_editor_mode_changed", {
+          mode: c(o),
+          source: b("config_panel")
+        })
+      }
+    }, ...Ee("askUserQuestionTimeout") ? [] : [{
+      id: "askUserQuestionTimeout",
+      label: "Question auto-continue timeout",
+      consentGated: !0,
+      value: r?.askUserQuestionTimeout ?? l_t() ?? "never",
+      options: [...Ge],
+      type: "enum",
+      async onChange(e) {
+        let o = Ge.find((k) => k === e);
+        if (!o) return;
+        let l = r.askUserQuestionTimeout;
+        T((k) => ({
+          ...k,
+          askUserQuestionTimeout: o
+        }));
+        let h = await P({
+          askUserQuestionTimeout: o
+        });
+        if (h?.error) return T((k) => ({
+          ...k,
+          askUserQuestionTimeout: l
+        })), {
+          error: h.error
+        };
+        i("tengu_ask_user_question_timeout_changed", {
+          value: c(o),
+          source: b("config_panel")
+        })
+      }
+    }], ...Uxn() ? [{
+      id: "modelProposedGoals",
+      label: "Claude-proposed goals",
+      value: r?.modelProposedGoals ?? d_t(),
+      options: [...Upn],
+      type: "enum",
+      consentGated: !0,
+      async onChange(e) {
+        let o = Upn.find((h) => h === e);
+        if (!o) return;
+        T((h) => ({
+          ...h,
+          modelProposedGoals: o
+        }));
+        let l = await P({
+          modelProposedGoals: o
+        });
+        if (l?.error) return {
+          error: l.error
+        };
+        i("tengu_model_proposed_goals_changed", {
+          value: c(o),
+          source: b("config_panel")
+        })
+      }
+    }] : [], {
+      id: "externalEditorContext",
+      label: le("Show last response in external editor", "Show responses in IDE"),
+      value: s.externalEditorContext ?? !1,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          externalEditorContext: e
+        })), v((o) => ({
+          ...o,
+          externalEditorContext: e
+        })), i("tengu_external_editor_context_changed", {
+          enabled: e
+        })
+      }
+    }, {
+      id: "prStatus",
+      label: le("Show PR status footer", "Show PR status"),
+      value: s.prStatusFooterEnabled ?? !0,
+      type: "boolean",
+      onChange(e) {
+        G((o) => {
+          if (o.prStatusFooterEnabled === e) return o;
+          return {
+            ...o,
+            prStatusFooterEnabled: e
+          }
+        }), v((o) => ({
+          ...o,
+          prStatusFooterEnabled: e
+        })), i("tengu_pr_status_footer_setting_changed", {
+          enabled: e
+        })
+      }
+    }, {
+      id: "model",
+      label: "Model",
+      value: w === null ? "Default (recommended)" : MA(w),
+      type: "managedEnum",
+      options: mo(),
+      optionsHint: "For a specific model ID, use /model.",
+      onChange(e) {
+        let o = e === "default" ? null : e;
+        if (Poe(o)) return p("model_fable_consent", "config_shorthand_blocked"), {
+          error: new Nr("needs usage-credits consent \u2014 run /model first")
+        };
+        return Me(o)
+      }
+    }, ...B ? [{
+      id: "diffTool",
+      label: "Diff tool",
+      value: s.diffTool ?? "auto",
+      options: ["terminal", "auto"],
+      type: "enum",
+      onChange(e) {
+        let o = e;
+        G((l) => ({
+          ...l,
+          diffTool: o
+        })), v((l) => ({
+          ...l,
+          diffTool: o
+        })), i("tengu_diff_tool_changed", {
+          tool: c(o),
+          source: b("config_panel")
+        })
+      }
+    }] : [], ...!qz() ? [{
+      id: "autoConnectIde",
+      label: "Auto-connect to IDE (external terminal)",
+      value: s.autoConnectIde ?? !1,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          autoConnectIde: e
+        })), v((o) => ({
+          ...o,
+          autoConnectIde: e
+        })), i("tengu_auto_connect_ide_changed", {
+          enabled: e,
+          source: b("config_panel")
+        })
+      }
+    }] : [], ...qz() ? [{
+      id: "autoInstallIdeExtension",
+      label: "Auto-install IDE extension",
+      value: s.autoInstallIdeExtension ?? !0,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          autoInstallIdeExtension: e
+        })), v((o) => ({
+          ...o,
+          autoInstallIdeExtension: e
+        })), i("tengu_auto_install_ide_extension_changed", {
+          enabled: e,
+          source: b("config_panel")
+        })
+      }
+    }] : [], {
+      id: "chrome",
+      label: le("Claude in Chrome enabled by default", "Claude in Chrome"),
+      ...E("tengu_joyful_parasol", !0) !== !1 && {
+        consentGated: !0
+      },
+      value: s.claudeInChromeDefaultEnabled ?? !1,
+      type: "boolean",
+      onChange(e) {
+        G((o) => ({
+          ...o,
+          claudeInChromeDefaultEnabled: e
+        })), v((o) => ({
+          ...o,
+          claudeInChromeDefaultEnabled: e
+        })), i("tengu_claude_in_chrome_setting_changed", {
+          enabled: e
+        })
+      }
+    }, ...as() ? (() => {
+      let e = dPo();
+      return [{
+        id: "teammateMode",
+        label: e ? `Teammate mode [overridden: ${e}]` : "Teammate mode",
+        value: s.teammateMode ?? iKn,
+        options: ["auto", "tmux", "iterm2", "in-process"],
+        type: "enum",
+        onChange(l) {
+          if (l !== "auto" && l !== "tmux" && l !== "iterm2" && l !== "in-process") return;
+          cPo(l), c8t(), V("teammateMode", l), v((h) => ({
+            ...h,
+            teammateMode: l
+          })), i("tengu_teammate_mode_changed", {
+            mode: c(l)
+          })
+        }
+      }]
+    })() : [], ..._x() || SG() ? [lo()] : [], ...Ee("dialogExpiry") ? [] : [{
+      id: "dialogExpiry",
+      label: "Dialog expiry",
+      consentGated: !0,
+      value: r.dialogExpiry ?? "default",
+      options: [...$e],
+      type: "enum",
+      async onChange(e) {
+        let o = $e.find((R) => R === e);
+        if (!o) return;
+        let l = o === "default" ? void 0 : o,
+          h = r.dialogExpiry;
+        T((R) => ({
+          ...R,
+          dialogExpiry: l
+        }));
+        let k = await P({
+          dialogExpiry: l
+        });
+        if (k?.error) return T((R) => ({
+          ...R,
+          dialogExpiry: h
+        })), {
+          error: k.error
+        };
+        i("tengu_dialog_expiry_changed", {
+          value: c(o),
+          source: b("config_panel")
+        })
+      }
+    }], ...oe && !Ee("crossSessionInbound") ? [{
+      id: "crossSessionInbound",
+      label: "Messages from your other sessions",
+      consentGated: !0,
+      pickToCommit: !0,
+      value: r.crossSessionInbound ?? "default",
+      options: [...Be],
+      type: "enum",
+      async onChange(e) {
+        let o = Be.find((R) => R === e);
+        if (!o) return;
+        let l = o === "default" ? void 0 : o,
+          h = r.crossSessionInbound;
+        T((R) => ({
+          ...R,
+          crossSessionInbound: l
+        }));
+        let k = await P({
+          crossSessionInbound: l
+        });
+        if (k?.error) return T((R) => ({
+          ...R,
+          crossSessionInbound: h
+        })), {
+          error: k.error
+        };
+        i("tengu_cross_session_inbound_changed", {
+          value: c(o),
+          source: b("config_panel")
+        })
+      }
+    }] : [], ...[], ...(_x(), []), ...[], ...to ? [{
+      id: "showExternalIncludesDialog",
+      label: le("External CLAUDE.md includes", "External CLAUDE.md files"),
+      value: S ? "true" : "false",
+      type: "managedEnum",
+      onChange() {}
+    }] : [], ...a.ANTHROPIC_API_KEY && !Nw() ? [{
+      id: "apiKey",
+      consentGated: !0,
+      label: "Use custom API key: ",
+      labelBoldSuffix: tge(a.ANTHROPIC_API_KEY),
+      searchText: "Use custom API key",
+      value: Boolean(a.ANTHROPIC_API_KEY && JN(s).approved.includes(tge(a.ANTHROPIC_API_KEY))),
+      type: "boolean",
+      onChange(e) {
+        G((o) => {
+          if (!a.ANTHROPIC_API_KEY) return o;
+          let {
+            approved: l,
+            rejected: h
+          } = JN(o), k = tge(a.ANTHROPIC_API_KEY), R = l.filter((I) => I !== k), A = h.filter((I) => I !== k);
+          return {
+            ...o,
+            customApiKeyResponses: e ? {
+              approved: [...R, k],
+              rejected: A
+            } : {
+              approved: R,
+              rejected: [...A, k]
+            }
+          }
+        }), v(s6t())
+      }
+    }] : []];
+  return {
+    settings: Tt() ? He.filter((e) => !po(e.id)) : He,
+    dialogFieldRows: [...ye, Le, ...De],
+    helpers: {
+      onChangeMainModelConfig: Me,
+      onChangeVerbose: Oe,
+      changeNotifChannel: he,
+      changeInputNeededNotif: Ae,
+      changeAgentPushNotif: Pe
+    }
+  }
+}
+
+function wo(n) {
+  if (n !== void 0) return n ? eee.switchAutomatically : eee.askEachTime;
+  return ko() ? eee.notAskedYet : eee.switchAutomatically
+}
+
+function ko() {
+  if (CWe(uMt)) return E(uMt, !1) === !0;
+  if (!$m()) return !1;
+  return n5()[uMt] === !0
+}
+
+function Eo(n) {
+  return n === "rc" ? "slow" : n ?? "latest"
+}
+
+function i6t(n) {
+  let s = n.trim();
+  if (!s || !s.includes("=")) return null;
+  let r = s.split(/\s+/);
+  if (F(r, (f) => f.includes("=")) === 1) {
+    let f = s.indexOf("="),
+      m = s.slice(0, f);
+    if (!m || /\s/.test(m)) return null;
+    return [{
+      key: m,
+      raw: s.slice(f + 1)
+    }]
+  }
+  let u = [];
+  for (let f of r) {
+    let m = f.indexOf("=");
+    if (m <= 0) return null;
+    u.push({
+      key: f.slice(0, m),
+      raw: f.slice(m + 1)
+    })
+  }
+  return u
+}
+
+function ze(n, s) {
+  let r = n.toLowerCase(),
+    u = s.filter((f) => f.id.toLowerCase() === r);
+  return s.find((f) => f.id === n) ?? (u.length === 1 ? u[0] : void 0)
+}
+var _o = new Map([
+  ["agentsView", "/config (Agents view row)"],
+  ["autoUpdatesChannel", "/channel"],
+  ["showExternalIncludesDialog", "/config (External CLAUDE.md row)"]
+]);
+
+function _e(n, s) {
+  return n.lock !== void 0 && !n.lock.writableWhileLocked?.some((r) => r.toLowerCase() === s.toLowerCase())
+}
+async function oCt(n, s, r) {
+  let u = de(s, r);
+  await Xce().catch(() => {
+    return
+  });
+  let f = je(RKe(u).settings, s);
+  if (n.some(({
+      key: y,
+      raw: C
+    }) => {
+      let M = ze(y, f);
+      return M !== void 0 && M.lock?.source !== "managed" && _e(M, C)
+    })) await Zie().catch(() => {}), f = je(RKe(de(s, r)).settings, s);
+  let S = [];
+  for (let {
+      key: y,
+      raw: C
+    }
+    of n) S.push(await vo(y, C, f));
+  return S
+}
+async function vo(n, s, r) {
+  let u = ze(n, r);
+  if (i("tengu_config_shorthand", {
+      key_hash: an(n),
+      matched: u !== void 0
+    }), !u) {
+    let m = r.filter((S) => S.id.toLowerCase() === n.toLowerCase());
+    return {
+      ok: !1,
+      kind: "refusal",
+      message: m.length > 1 ? `${Xt(n)} matches ${m.map((S)=>Xt(S.id)).join(" and ")}; type one exactly.` : `${Xt(n)} isn't a /config setting. Run /config to see what's available.`
+    }
+  }
+  let f = ("labelBoldSuffix" in u ? u.searchText : void 0) ?? u.label;
+  if (_e(u, s)) return {
+    ok: !1,
+    kind: u.lock?.reason === qe || u.lock?.reasonShipsOffBox ? "refusal" : "locked",
+    message: `Couldn't save ${f}: ${u.lock?.reason}`
+  };
+  if (u.consentGated) {
+    let m = AKe(s) === !1,
+      S = u.type === "boolean" && m || u.lock !== void 0 && !_e(u, s),
+      y = u.value === !0 || u.canWithdraw?.() === !0;
+    if (S && !y) return {
+      ok: !0,
+      kind: "refusal",
+      message: `${n} is already off.`
+    };
+    if (!(S && y)) return {
+      ok: !1,
+      kind: "refusal",
+      message: `${f} can't be enabled with key=value \u2014 open /config to change it from the panel.`
+    }
+  }
+  switch (u.type) {
+    case "boolean": {
+      let m = AKe(s);
+      if (m === void 0) return {
+        ok: !1,
+        kind: "refusal",
+        message: `${f} takes true or false, not "${Xt(s)}".`
+      };
+      let S = await u.onChange(m);
+      if (S?.error) {
+        if (S.error instanceof Nr) return {
+          ok: !1,
+          kind: "refusal",
+          message: `${f}: ${S.error.message}${S?.messageSuffix??""}`
+        };
+        return {
+          ok: !1,
+          kind: "save-failure",
+          message: `Couldn't save ${f}: ${S.error.message}${S?.messageSuffix??""}`
+        }
+      }
+      return {
+        ok: !0,
+        kind: "refusal",
+        message: `Set ${f} to ${m?"true":"false"}${S?.messageSuffix??""}`
+      }
+    }
+    case "enum":
+    case "managedEnum": {
+      let m = u.coerce;
+      if (!u.options && !m) return {
+        ok: !1,
+        kind: "refusal",
+        message: `${f} can't be set with key=value \u2014 use ${_o.get(u.id)??"/config"}.`
+      };
+      let S = m ? m(s) : u.options?.find((C) => C.toLowerCase() === s.toLowerCase());
+      if (S === void 0) {
+        let C = u.type === "managedEnum" && u.optionsHint ? ` ${u.optionsHint}` : "";
+        return {
+          ok: !1,
+          kind: "refusal",
+          message: u.options ? `${f} takes one of: ${u.options.join(", ")}.${C}` : `${f} doesn't accept "${Xt(s)}".${C}`
+        }
+      }
+      let y = await u.onChange(S);
+      if (y?.error) {
+        if (y.error instanceof Nr) return {
+          ok: !1,
+          kind: "refusal",
+          message: `${f}: ${y.error.message}${y?.messageSuffix??""}`
+        };
+        return {
+          ok: !1,
+          kind: "save-failure",
+          message: `Couldn't save ${f}: ${y.error.message}${y?.messageSuffix??""}`
+        }
+      }
+      return {
+        ok: !0,
+        kind: "refusal",
+        message: `Set ${f} to ${Xt(S)}${y?.messageSuffix??""}`
+      }
+    }
+  }
+}
+
+function sCt(n, s) {
+  if (!s) return n.message;
+  switch (n.kind) {
+    case "save-failure":
+      return Je;
+    case "locked":
+      return "Couldn't save this setting: a trusted policy owns it (detail withheld on this connection).";
+    case "refusal":
+      return n.message
+  }
+}
+
+function a6t(n) {
+  return ve(RKe(de(n)).settings, n).flatMap((r) => {
+    if (r.consentGated) return [];
+    let u = r.type === "boolean" ? "true|false" : r.options ? r.options.join("|") : r.type === "managedEnum" && r.coerce ? "<value>" : null;
+    return u ? [`  ${r.id}=${u}`] : []
+  }).sort().join(`
+`)
+}
+
+function iri(n, s) {
+  let r = Ro.of(j().host).lookup(),
+    u = s.indexOf("=");
+  if (u === -1) {
+    let y = s.toLowerCase();
+    return r.filter((C) => C.id.toLowerCase().startsWith(y)).sort((C, M) => C.id.localeCompare(M.id)).map((C) => ({
+      value: `${C.id}=`,
+      description: C.options?.slice(0, 4).join(" | ") ?? C.hint,
+      isFinal: !1,
+      appendSpace: !1
+    }))
+  }
+  let f = s.slice(0, u),
+    m = s.slice(u + 1).toLowerCase(),
+    S = r.find((y) => y.id.toLowerCase() === f.toLowerCase());
+  if (!S?.options) return [];
+  return S.options.filter((y) => y.toLowerCase().startsWith(m)).map((y) => ({
+    value: `${S.id}=${y}`,
+    isFinal: !0
+  }))
+}
+class Ye {
+  keys = void 0;
+  remoteWorkspace = !1;
+  lookup() {
+    if (this.remoteWorkspace !== Tt()) this.remoteWorkspace = !this.remoteWorkspace, this.keys = void 0;
+    return this.keys ??= To(), this.keys
+  }
+}
+var Ro = new z(() => new Ye);
+
+function To() {
+  let n = {
+      getAppState: () => ({
+        thinkingEnabled: !1,
+        verbose: !1,
+        mainLoopModel: null,
+        mainLoopModelForSession: null,
+        fastMode: !1,
+        promptSuggestionEnabled: !1,
+        awaySummaryEnabled: !1,
+        toolPermissionContext: pd()
+      }),
+      setAppState: () => {},
+      options: {
+        mcpClients: []
+      }
+    },
+    {
+      settings: s
+    } = RKe(de(n));
+  return s.flatMap((r) => {
+    if (r.consentGated) return [];
+    let u = r.type === "boolean" ? ["true", "false"] : ("options" in r) && r.options ? r.options : void 0;
+    if (u || r.type === "managedEnum" && r.coerce) return [{
+      id: r.id,
+      options: u,
+      hint: r.type === "managedEnum" ? r.optionsHint : void 0
+    }];
+    return []
+  })
+}
+
+function de(n, s) {
+  let r = n.getAppState(),
+    u = {
+      ...ut(),
+      ...Kdr(),
+      autoContinueAtUsageLimit: P6t() ?? !0
+    },
+    f = s6t(),
+    m = bs("disableWorkflows", !1),
+    S = bs("enableWorkflows", !1),
+    y = Aqn() && (m.value !== !0 || m.source === "userSettings") && (S.source === "default" || S.source === "userSettings"),
+    C = !ldt(),
+    M = Xxn(),
+    w = hin(),
+    D = import.meta.require("B:/~BUN/root/chunk-f9zc7xz9.js").isBriefEntitled();
+  return {
+    globalConfig: f,
+    settingsData: u,
+    storageV5: n.storageV5,
+    mayBeAuthoredByNonOwner: hH(n),
+    themeSetting: f.theme,
+    currentOutputStyle: u?.outputStyle || ZA,
+    currentLanguage: u?.language,
+    externalIncludesApproved: !1,
+    thinkingEnabled: r.thinkingEnabled,
+    verbose: r.verbose,
+    mainLoopModel: r.mainLoopModel,
+    currentModel: wZ(r),
+    isFastMode: $o() ? r.fastMode : !1,
+    promptSuggestionEnabled: r.promptSuggestionEnabled,
+    awaySummaryEnabled: r.awaySummaryEnabled,
+    showDefaultViewPicker: D,
+    pushTogglesVisible: Ife() && !At() && gp(),
+    crossSessionInboxRowVisible: !1,
+    isConnectedToIde: Nlt(n.options.mcpClients),
+    inAppSelection: !0,
+    tabsStandIn: !1,
+    isFileCheckpointingAvailable: !a.CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING,
+    workflowsToggleable: y,
+    workflowSizeGuidelineToggleable: C,
+    autoContinueAtUsageLimitToggleable: M,
+    artifactToggleable: w,
+    remoteToolServingOn: a5e(),
+    launchDirectoryKeys: null,
+    shouldShowExternalIncludesToggle: !1,
+    autoUpdaterDisabledReason: vMe(),
+    promptSuggestionRun: n.session?.promptSuggestion,
+    modelSwitchHooks: n.session ? {
+      session: n.session,
+      readState: () => n.getAppState(),
+      latestPick: {
+        current: 0
+      },
+      latestFastPick: {
+        current: 0
+      }
+    } : null,
+    setAppState: (O) => n.setAppState(O),
+    setTheme: s?.setTheme ?? ((O) => W() && n.storageV5 !== void 0 ? HK("theme", O, n.storageV5) : HK("theme", O)),
+    ...We
+  }
+}
+var qe = "a plugin's settings can't be changed over Remote Control or from a relayed message \u2014 open /config in the session itself",
+  Mo = "Set by your organization's managed settings (pluginConfigs)",
+  Oo = "Set by --settings for this session (pluginConfigs)";
+
+function Ao(n, s, r) {
+  return ege(n).options?.[s] ?? r
+}
+
+function Po(n, s) {
+  let r = (u) => {
+    let f = me(u)?.pluginConfigs;
+    return ale(n).some((m) => f?.[m]?.options?.[s] !== void 0)
+  };
+  if (r("policySettings")) return Mo;
+  return r("flagSettings") ? Oo : void 0
+}
+async function Fo(n, s, r, u) {
+  let f = hm(n),
+    m = typeof r === "object" ? [...r] : r,
+    S = `${f}\x00${s}`,
+    y = ge.has(S) ? ge.get(S) : me("userSettings")?.pluginConfigs?.[f]?.options?.[s];
+  if (_(y) === _(m)) return;
+  ge.set(S, m);
+  let C = await In("userSettings", {
+    pluginConfigs: {
+      [f]: {
+        options: {
+          [s]: m
+        }
+      }
+    }
+  }, void 0, u).finally(() => {
+    if (ge.get(S) === m) ge.delete(S)
+  });
+  if (C.error) return {
+    error: C.error
+  };
+  return Lwe(), xo(n, s)
+}
+var ge = new Map;
+async function xo(n, s) {
+  let r = hm(n),
+    u = Ne().loadedModules.find((S) => S.name === n.name);
+  if (u !== void 0 && u.args.pluginStorageId !== r) return {
+    messageSuffix: " \xB7 saved; /reload-plugins applies it"
+  };
+  let f = await ays();
+  L_r(f);
+  let m = f.find((S) => S.name === n.name);
+  if (m !== void 0 && m.kind !== "reloaded") {
+    let S = m.kind === "refused" ? m.result.refused : m.kind === "held" ? m.reason : d(m.error);
+    return t(`/config ${n.name}.${s}: saved; ${S}`), {
+      messageSuffix: " \xB7 saved, but the plugin did not reload; /reload-plugins applies it"
+    }
+  }
+}
+
+function Ydr(n, s = {}) {
+  let r = [];
+  for (let u of n) {
+    if (u.enabled === !1) continue;
+    let f = u.manifest.userConfig ?? {},
+      m = hm(u),
+      S = Xt(u.name),
+      C = n.some((M) => M !== u && M.enabled !== !1 && Xt(M.name).toLowerCase() === S.toLowerCase()) ? m : u.name;
+    for (let [M, w] of Object.entries(f)) {
+      if (w.sensitive === !0 || w.multiple === !0) continue;
+      let D = `${C}.${M}`,
+        O = Po(m, M) ?? s.refusal,
+        Q = O === void 0 ? void 0 : {
+          reason: O,
+          source: "managed"
+        },
+        ne = Xt(w.title),
+        te = Xt(w.description),
+        oe = {
+          id: D,
+          label: ne,
+          searchText: `${ne} ${u.name} ${te}`,
+          ...Q !== void 0 && {
+            lock: Q
+          }
+        },
+        B = s.shown?.get(D) ?? Ao(m, M, w.default),
+        ie = async (q) => {
+          if (Q !== void 0) return {
+            error: new Nr(Q.reason)
+          };
+          s.onShown?.(D, q);
+          let J = await Fo(u, M, q, s.storageV5);
+          if (J?.error && B !== void 0) s.onShown?.(D, B);
+          return J
+        };
+      if (w.type === "boolean") {
+        r.push({
+          ...oe,
+          value: Xdr(B),
+          type: "boolean",
+          provided: {
+            plugin: S,
+            pluginId: m,
+            description: te,
+            kind: "boolean"
+          },
+          onChange: ie
+        });
+        continue
+      }
+      if (w.type === "string" && w.options !== void 0) {
+        let q = L(w.options.map(Xt)).filter((J) => J !== "");
+        r.push({
+          ...oe,
+          value: B === void 0 ? "" : String(B),
+          options: q,
+          type: "enum",
+          pickToCommit: !0,
+          provided: {
+            plugin: S,
+            pluginId: m,
+            description: te,
+            kind: "choice"
+          },
+          onChange: ie
+        });
+        continue
+      }
+      let se = w.type === "number";
+      r.push({
+        ...oe,
+        value: B === void 0 ? "" : String(B),
+        type: "managedEnum",
+        coerce: (q) => {
+          if (!se) return q;
+          let J = u6t(q, w);
+          return J === void 0 ? void 0 : String(J)
+        },
+        optionsHint: se ? c6t(w) : void 0,
+        provided: {
+          plugin: S,
+          pluginId: m,
+          description: te,
+          kind: se ? "number" : "text"
+        },
+        onChange: (q) => ie(se ? Number(q) : q)
+      })
+    }
+  }
+  return r
+}
+
+function l6t(n) {
+  let s = String(n.value);
+  return n.provided !== void 0 && n.type !== "boolean" ? P8n(mu(s.replace(/[\t\n\r]/g, " "))) : s
+}
+
+function ve(n, s) {
+  let r = s.getAppState().plugins?.enabled ?? [];
+  return [...n, ...Ydr(r, {
+    storageV5: s.storageV5,
+    ...hH(s) && {
+      refusal: qe
+    }
+  })]
+}
+
+function je(n, s) {
+  let r = hH(s) ? {
+    kind: "bridge"
+  } : yDn;
+  return ve(n, s).map((u) => Pxn(u, r))
+}
+
+function Re(n) {
+  let s = n.provided,
+    r = n.type === "boolean" ? "boolean" : s?.kind ?? (n.type === "enum" ? "choice" : n.coerce !== void 0 ? "text" : n.options !== void 0 ? "choice" : "text"),
+    u = n.type === "boolean" ? void 0 : n.options ?? void 0,
+    f = r === "number" && typeof n.value === "string" ? Number(n.value) : Number.NaN,
+    m = typeof n.value === "string" && n.value.trim() !== "" && Number.isFinite(f) ? f : n.value;
+  return {
+    row: {
+      key: n.id,
+      label: n.label,
+      ...s !== void 0 && {
+        description: s.description
+      },
+      kind: r,
+      value: m,
+      ...r === "choice" && u !== void 0 && {
+        options: u
+      },
+      provider: s === void 0 ? Rje : EHe(s.pluginId),
+      isLocked: n.lock !== void 0
+    },
+    ...n.lock !== void 0 && {
+      lockReason: n.lock.reason
+    }
+  }
+}
+async function Qe(n, s) {
+  let r = ("labelBoldSuffix" in n ? n.searchText : void 0) ?? n.label;
+  if (n.consentGated) {
+    if (!(n.type === "boolean" && s === !1 && (n.value === !0 || n.canWithdraw?.() === !0))) return n.type === "boolean" && s === !1 ? void 0 : `${r} can only be turned on from the /config panel.`
+  }
+  let u = async (f) => {
+    let m = await f;
+    return m?.error ? `${m.error.message}${m.messageSuffix??""}` : void 0
+  };
+  switch (n.type) {
+    case "boolean":
+      return typeof s === "boolean" ? u(n.onChange(s)) : `${r} takes true or false.`;
+    case "enum":
+    case "managedEnum": {
+      let f = n.type === "managedEnum" ? n.coerce : void 0;
+      if (!n.options && !f) return `${r} can only be changed from the /config panel.`;
+      let m = typeof s === "string" ? s : String(s),
+        S = f ? f(m) : n.options?.find((y) => y.toLowerCase() === m.toLowerCase());
+      if (S === void 0) {
+        let y = n.type === "managedEnum" && n.optionsHint ? ` ${n.optionsHint}` : "";
+        return n.options ? `${r} takes one of: ${n.options.join(", ")}.` : `${r} doesn't accept "${Xt(m)}".${y}`
+      }
+      return u(n.onChange(S))
+    }
+  }
+}
+
+function Io(n) {
+  return {
+    ...Re(n),
+    write: (s) => Qe(n, s)
+  }
+}
+
+function ari(n) {
+  return ve(RKe(de(n)).settings, n).map(Io)
+}
+
+function Lo(n, s) {
+  if (n.type === "boolean") return typeof s === "boolean" ? s : void 0;
+  if (typeof s === "number") return String(s);
+  return typeof s === "string" ? s : void 0
+}
+
+function Te(n, s, r, u = yDn, f) {
+  let {
+    row: m
+  } = Re(n), S = m.kind === "number" && typeof s === "string" ? Number(s) : s, C = m.kind === "choice" && typeof S === "string" && !(m.options ?? []).includes(S) ? {
+    ...m,
+    kind: "text",
+    options: void 0
+  } : m, M, w = !1;
+  return Jfs({
+    row: C,
+    value: S,
+    origin: u,
+    signal: f,
+    write: async (D) => {
+      if (f?.aborted) return `${C.label}: the change was cancelled`;
+      let O = Lo(n, D);
+      if (O === void 0) return `${C.label}: a ${C.kind} row cannot hold that value`;
+      let Q = n.type === "managedEnum" ? n.coerce : void 0,
+        ne = _(D) !== _(S),
+        oe = ne && m.kind === "choice" && Q === void 0 && typeof O === "string" && !(m.options ?? []).includes(O) ? void 0 : ne && Q !== void 0 && typeof O === "string" ? Q(O) : O;
+      if (oe === void 0) {
+        let ie = n.type === "managedEnum" && n.optionsHint ? ` ${n.optionsHint}` : "";
+        return `${C.label} doesn't accept "${Xt(String(D))}".${ie}`
+      }
+      M = r(oe);
+      let B = await M;
+      return w = B?.error !== void 0, B?.error ? `${B.error.message}${B.messageSuffix??""}` : void 0
+    }
+  }).then((D) => {
+    if (D.deny === void 0 || w) return M;
+    let O = Xt(D.deny);
+    return {
+      error: f?.aborted ? new x(O, "config.set withdrawn before it was written") : new x(O, "config.set denied by a hook")
+    }
+  })
+}
+
+function Pxn(n, s = yDn) {
+  let r = n.onChange;
+  return {
+    ...n,
+    onChange: (f) => D9t() ? Te(n, f, r, s) : r(f)
+  }
+}
+
+function QRe(n, s, r, u) {
+  return n !== void 0 && D9t() ? Te(n, s, r, yDn, u) : r(s)
+}
+var Je = "Couldn't save this setting (detail withheld on this connection).";
+
+function Xe(n, s) {
+  return s() ? Je : n
+}
+var Do = "The model changed while a plugin's hook was deciding; pick again";
+async function Oxn(n, s, r, u, f = {}) {
+  let m = D9t() ? RKe(de(r)).settings.find((w) => w.id === n) : void 0;
+  if (m === void 0) {
+    let w = await u();
+    return w?.error === void 0 ? {
+      written: s
+    } : {
+      refusal: Ke(n, w)
+    }
+  }
+  let S = {},
+    y = async (w) => {
+      if (f.isSuperseded?.()) return ee("a later pick replaced this one");
+      if (w !== s && f.refuseRewrite !== void 0) return ee(f.refuseRewrite === !0 ? "a plugin's hook changed the value; this command writes only what was picked (use /config)" : f.refuseRewrite);
+      let D = w === s ? await Promise.resolve().then(u).catch((O) => (S.thrown = {
+        error: O
+      }, ee("the write failed"))) : await Qe(m, w).then((O) => O === void 0 ? void 0 : ee(O));
+      if (D?.error === void 0) S.written = w;
+      return D
+    }, C = await Te(m, s, (w) => S.outcome ??= y(w), hH(r) ? {
+      kind: "bridge"
+    } : yDn);
+  if (S.thrown !== void 0) throw S.thrown.error;
+  if (S.written !== void 0) return {
+    written: S.written
+  };
+  let M = ("labelBoldSuffix" in m ? m.searchText : void 0) ?? m.label;
+  if (C?.error !== void 0) return {
+    refusal: Ke(M, C)
+  };
+  return {
+    refusal: `Couldn't save ${M}: a plugin's hook answered without writing`
+  }
+}
+
+function Ke(n, s) {
+  return `Couldn't save ${n}: ${s.error?.message??""}${s.messageSuffix??""}`
+}
+
+function ee(n) {
+  return {
+    error: new x(n, "a row commit from a command was not written")
+  }
+}
+async function ZNe(n, s, r, u) {
+  let f = n ?? "default",
+    m = "",
+    S, y, C = await Oxn("model", f, s, async () => {
+      if (u.hasModelMoved?.()) return S = Do, ee(S);
+      let w = await r();
+      if (typeof w === "string") {
+        m = w;
+        return
+      }
+      if ("unsaved" in w) return y = w.unsaved, ee("the default was not saved");
+      return S = w.refused, ee(w.refused)
+    }, {
+      isSuperseded: u.isSuperseded
+    });
+  if (S !== void 0) return {
+    text: S,
+    isRefusal: !0,
+    isOwnRefusal: !0
+  };
+  if (y !== void 0) return {
+    text: y,
+    isRefusal: !1
+  };
+  if ("refusal" in C) return {
+    text: Xe(C.refusal, u.persistsOffBox),
+    isRefusal: !0
+  };
+  if (C.written === f) return {
+    text: m,
+    isRefusal: !1
+  };
+  let M = C.written === "default" ? null : String(C.written);
+  return {
+    text: `${gpe}${f_(Ww(M))}${Ise}`,
+    isRefusal: !1,
+    rewrittenTo: M
+  }
+}
+var ZRe = Symbol("fast toggle not applied");
+async function iCt(n, s, r, u) {
+  let f = {},
+    m = await Oxn("fast", n, s, async () => {
+      let S = await r();
+      if (f.isDone = !0, S === ZRe) return ee("nothing was applied");
+      return f.refusal = S, S === void 0 ? void 0 : ee(S)
+    }, {
+      refuseRewrite: !0
+    });
+  if (f.isDone) return f.refusal;
+  return "refusal" in m ? Xe(m.refusal, u) : void 0
+}
+async function z7r(n) {
+  let s = new Map;
+  return await Promise.all(n.map(async (r) => {
+    let {
+      row: u
+    } = Re(r), f = await Xyr(u);
+    if (f === void 0) s.set(r.id, {
+      label: u.label,
+      hidden: !0
+    });
+    else if (f !== u) s.set(r.id, {
+      label: Xt(f.label),
+      hidden: !1
+    })
+  })), s
+}
+var lri = {
+  isHooked: () => D9t(),
+  savedModelPickReply: ZNe,
+  savedFastModeToggle: iCt
+};
+export {
+  Vdr,
+  qdr,
+  Kdr,
+  s6t,
+  Lss,
+  j7r,
+  W7r,
+  RKe,
+  i6t,
+  oCt,
+  sCt,
+  a6t,
+  iri,
+  Ydr,
+  l6t,
+  ari,
+  Pxn,
+  QRe,
+  Oxn,
+  ZNe,
+  ZRe,
+  iCt,
+  z7r,
+  lri
+};

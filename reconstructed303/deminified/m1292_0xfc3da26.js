@@ -1,0 +1,423 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import { at, Sc } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import "B:/~BUN/root/chunk-jthpk6wv.js";
+import { Ke } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { Ay, Y } from "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import "B:/~BUN/root/chunk-yt0knyw7.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import { ne } from "B:/~BUN/root/chunk-nggrknsv.js";
+import "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import "B:/~BUN/root/chunk-cx57tr4b.js";
+import "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import { lHr, dHr, nne } from "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import "B:/~BUN/root/chunk-h9p45fg5.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-1gpjpba6.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-2zk4vqr8.js";
+import { i } from "B:/~BUN/root/chunk-1kfn24jp.js";
+import { m } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-nxwmyxnk.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import "B:/~BUN/root/chunk-xrp58hm9.js";
+import "B:/~BUN/root/chunk-pjgzz98k.js";
+import "B:/~BUN/root/chunk-8ye9n4fk.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import "B:/~BUN/root/chunk-8pmnanyd.js";
+import "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import "B:/~BUN/root/chunk-28dw3zbk.js";
+import "B:/~BUN/root/chunk-07c8fw5z.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import { Kg, E } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import "B:/~BUN/root/chunk-kad4nq7y.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import { acn } from "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import "B:/~BUN/root/chunk-bp7zxkzq.js";
+import "B:/~BUN/root/chunk-7z3ndmqr.js";
+import { ev, Rd, zrn } from "B:/~BUN/root/chunk-aqd86p9a.js";
+import "B:/~BUN/root/chunk-7ybsx93y.js";
+import "B:/~BUN/root/chunk-rsxy354n.js";
+import "B:/~BUN/root/chunk-rnh5g2g4.js";
+import "B:/~BUN/root/chunk-atk141qr.js";
+import { yit, OAe, jFe, xMn } from "B:/~BUN/root/chunk-90qdynnd.js";
+import "B:/~BUN/root/chunk-mtfk0qfd.js";
+import { nit as name, Qpr, Zpr } from "B:/~BUN/root/chunk-hpx3b0p0.js";
+import { Soo } from "B:/~BUN/root/chunk-c8kg7ar7.js";
+import "B:/~BUN/root/chunk-8pqw0dhk.js";
+import "B:/~BUN/root/chunk-3tj0rd0x.js";
+import "B:/~BUN/root/chunk-ewvp948s.js";
+import "B:/~BUN/root/chunk-zg0dbxts.js";
+import { KIn } from "B:/~BUN/root/chunk-navxvybr.js";
+import "B:/~BUN/root/chunk-429xgjya.js";
+import "B:/~BUN/root/chunk-7qeqkjr8.js";
+import "B:/~BUN/root/chunk-xf25v2pj.js";
+import "B:/~BUN/root/chunk-zayh6xmh.js";
+import "B:/~BUN/root/chunk-tkcgmvh7.js";
+import "B:/~BUN/root/chunk-1g2t7gtx.js";
+import "B:/~BUN/root/chunk-8d9x5cx1.js";
+import "B:/~BUN/root/chunk-gygbhz84.js";
+import { woo } from "B:/~BUN/root/chunk-d5yv6khb.js";
+import "B:/~BUN/root/chunk-z84amwaw.js";
+import { vt, Qt } from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import "B:/~BUN/root/chunk-mgb2hezz.js";
+import "B:/~BUN/root/chunk-nvdqbkrt.js";
+import "B:/~BUN/root/chunk-0n2201tc.js";
+import "B:/~BUN/root/chunk-q3srk2wz.js";
+import "B:/~BUN/root/chunk-qk52d0gf.js";
+import "B:/~BUN/root/chunk-f25646gd.js";
+import "B:/~BUN/root/chunk-dq7zfs8r.js";
+import "B:/~BUN/root/chunk-z8fd2x5s.js";
+import "B:/~BUN/root/chunk-2fccb5hn.js";
+import "B:/~BUN/root/chunk-8y0chnnr.js";
+import "B:/~BUN/root/chunk-gy660jgx.js";
+import "B:/~BUN/root/chunk-pmw6knpp.js";
+import "B:/~BUN/root/chunk-e7tskyjv.js";
+import "B:/~BUN/root/chunk-9rt7ms4d.js";
+import "B:/~BUN/root/chunk-rzekebyp.js";
+import "B:/~BUN/root/chunk-stjjr4k8.js";
+import "B:/~BUN/root/chunk-y424etr5.js";
+import "B:/~BUN/root/chunk-3npegs3h.js";
+import "B:/~BUN/root/chunk-410t5g3b.js";
+import "B:/~BUN/root/chunk-b4xxgr0r.js";
+import "B:/~BUN/root/chunk-hdc8p5sh.js";
+import "B:/~BUN/root/chunk-hgpj62j5.js";
+import "B:/~BUN/root/chunk-4yrr52wq.js";
+import "B:/~BUN/root/chunk-asrchj7k.js";
+import "B:/~BUN/root/chunk-0zewma8k.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-9929fpp1.js";
+import "B:/~BUN/root/chunk-mbz8rhex.js";
+import "B:/~BUN/root/chunk-r0sre1ss.js";
+import "B:/~BUN/root/chunk-q56gve2c.js";
+import "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-4qc55bxf.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import { o, M, u, De } from "B:/~BUN/root/chunk-g3snhg6n.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-3m71dqxd.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+var baseMs = 5000,
+  capMs = 20000,
+  z = 300000;
+class w {
+  unservedInARow = 0;
+  waitMs = 0;
+  waitSetAt = 0;
+  remainingMs(e) {
+    return Math.max(0, this.waitSetAt + this.waitMs - e);
+  }
+  noteUnserved(e, s) {
+    if (e < this.waitSetAt) return;
+    if (s - this.waitSetAt > z) this.unservedInARow = 0;
+    this.unservedInARow += 1, this.waitMs = Ay({
+      attempt: this.unservedInARow,
+      baseMs: baseMs,
+      capMs: capMs
+    }), this.waitSetAt = s;
+  }
+  noteAnswered(e) {
+    if (e < this.waitSetAt) return;
+    this.unservedInARow = 0, this.waitMs = 0;
+  }
+}
+var v = new at(() => new w());
+var P = f(() => De({
+    file_id: o().regex(yit, "must be the file_id from the notification").describe("The file_id from the session-inbox notification you received")
+  })),
+  N = f(() => u({
+    ok: M(),
+    file_id: o().optional(),
+    message_id: o().optional(),
+    enveloped_text: o().optional(),
+    body: o().optional(),
+    sender_display: o().optional(),
+    sender_kind: o().optional(),
+    source: o().optional(),
+    slack_permalink: o().optional(),
+    received_at: o().optional(),
+    attachments_prefix: o().optional(),
+    reason: o().optional()
+  }));
+function x(e) {
+  return nne(e, [lHr, dHr]) ? "project" : void 0;
+}
+function ue(e, s) {
+  return vt(e, name) && x(s) === "project" ? "IP:" : "";
+}
+var F = new Set(["not_found", "forbidden", "untrusted_device", "relogin", "feature_disabled", "wrong_session"]),
+  fe = Qt({
+    name: name,
+    searchHint: "read a relayed inbox message from a linked thread",
+    backgrounding: "never",
+    maxResultSizeChars: 20000,
+    skipAggregateToolResultBudget: !0,
+    userFacingName: () => "FetchInboxMessage",
+    get inputSchema() {
+      return P();
+    },
+    get outputSchema() {
+      return N();
+    },
+    shouldDefer: !0,
+    isEnabled() {
+      return Sc() || zrn() !== void 0;
+    },
+    isConcurrencySafe() {
+      return !0;
+    },
+    isReadOnly() {
+      return !0;
+    },
+    toAutoClassifierInput(e) {
+      return e.file_id ? `read inbox message ${e.file_id}` : "read inbox message";
+    },
+    async description(e, {
+      tools: tools
+    }) {
+      return Qpr(x(tools));
+    },
+    async prompt({
+      tools: tools_2
+    }) {
+      return Zpr(x(tools_2));
+    },
+    mapToolResultToToolResultBlockParam(e, tool_use_id) {
+      let content;
+      if (e.ok && e.enveloped_text) content = e.enveloped_text;else switch (e.reason) {
+        case "not_found":
+          content = `No inbox message at ${e.file_id ?? "that id"} for this session (unknown id, another session's message, or expired \u2014 messages are kept about a week).`;
+          break;
+        case "wrong_session":
+          content = `No inbox message at ${e.file_id ?? "that id"} for this session (it names a different session, so it was not read).`;
+          break;
+        case "untrusted_device":
+          content = "The session service refused the read because this device is not trusted for this session. Tell the user; don't retry.";
+          break;
+        case "relogin":
+          content = "The session service refused the read because the login on this device is stale (run /login again). Tell the user; do not retry.";
+          break;
+        case "forbidden":
+          content = "The session service refused the read for this session (not a device-trust problem). Tell the user; do not retry.";
+          break;
+        case "owner_changed":
+          content = "Remote Control on this device switched to another account, so this session can no longer read its inbox from here. Tell the user; do not retry.";
+          break;
+        case "no_token":
+          content = "This machine is not signed in to claude.ai for Remote Control (or is not on the first-party API), so the session inbox cannot be read from here. Tell the user; do not retry.";
+          break;
+        case "owner_unverified":
+          content = "This device's Remote Control login could not be verified just now (a login or account change may still be in progress), so the inbox was not read. Try again in a moment; if it keeps failing, tell the user.";
+          break;
+        case "feature_disabled":
+          content = "The session inbox isn't enabled for this organization, so there is nothing to read.";
+          break;
+        case "no_bridge":
+          content = "Remote Control is not connected, so the session inbox is unreachable right now.";
+          break;
+        case "traffic_disabled":
+          content = "Nonessential network traffic is disabled on this device, so the session inbox cannot be read from here. Tell the user; do not retry.";
+          break;
+        case "base_url_override":
+          content = "The Remote Control API host is overridden by a settings file rather than this process's own environment, so the inbox was not read. Tell the user; don't retry.";
+          break;
+        default:
+          content = `Couldn't read inbox message ${e.file_id ?? ""} (${e.reason ?? "error"}). Check the debug log for [bridge] inbox fetch.`;
+      }
+      return {
+        tool_use_id: tool_use_id,
+        type: "tool_result",
+        content: content
+      };
+    },
+    renderToolUseMessage(e) {
+      return e.file_id ? `read ${ne(e.file_id, 13)}` : "";
+    },
+    create({
+      credentials: credentials,
+      storageV5: storageV5,
+      session: session,
+      messageQueue: messageQueue,
+      messages: messages
+    }) {
+      return {
+        async checkPermissions() {
+          return {
+            behavior: "allow",
+            updatedInput: void 0
+          };
+        },
+        async call({
+          file_id: file_id
+        }, {
+          signal: signal
+        }) {
+          let h = Rd() ?? ev(),
+            g = v.of(session),
+            clock = session.host.clock,
+            p = clock.monotonicNow();
+          if (!h?.outboundOnly) {
+            for (let d = g.remainingMs(p); d > 0; d = g.remainingMs(p)) t(`[bridge] inbox fetch: waiting ${Math.ceil(d)}ms after a read the service did not serve`), await Y(d, signal, {
+              clock: clock,
+              abortError: () => new Ke()
+            }), p = clock.monotonicNow();
+            h = Rd() ?? ev();
+          }
+          let r;
+          if (h?.outboundOnly) m("bridge_inbox_fetch", "no_bridge"), r = {
+            ok: !1,
+            reason: "no_bridge"
+          };else r = h ? await h.fetchInboxMessage(file_id) : await woo(file_id, {
+            credentials: credentials,
+            storageV5: storageV5
+          });
+          if (r.ok || F.has(r.reason)) g.noteAnswered(p);else if (r.reason === "request_failed" || r.reason === "http_error" || r.reason === "malformed") g.noteUnserved(p, clock.monotonicNow());
+          let R = KIn.peek(session)?.wasAnnouncedAsOwners(file_id) === !0;
+          if (KIn.peek(session)?.noteFetchAttempt(file_id, r, messageQueue), !r.ok) return {
+            data: {
+              ok: !1,
+              file_id: file_id,
+              reason: r.reason
+            },
+            ...(r.reason === "relogin" && {
+              remedy: acn(await Kg(credentials))
+            })
+          };
+          let a = r.message,
+            _ = r.envelopedText;
+          if (a.senderKind === "rc_owner" && E("tengu_humming_star", !0) && !R && !messages().some(item => H(item, file_id))) {
+            let {
+              attachments: attachments,
+              senderDisplay: senderDisplay,
+              ...O
+            } = a;
+            a = {
+              ...O,
+              senderKind: "unknown"
+            }, _ = xMn(a), t("[bridge] inbox fetch: the message says it is the owner's, but no server notice announced its file_id to this session as the owner's; read as third-party", {
+              level: "warn"
+            }), i("tengu_inbox_owner_kind_unannounced", {});
+          }
+          let attachments_prefix,
+            S = a.attachments ?? [];
+          if (S.length > 0) {
+            let {
+                resolveInboundAttachments: resolveInboundAttachments
+              } = await import("B:/~BUN/root/chunk-d0z36esr.js"),
+              {
+                prefix: prefix
+              } = await resolveInboundAttachments(S, !1, !1, storageV5, credentials, r.download);
+            attachments_prefix = prefix, _ = xMn(a, attachments_prefix.trim());
+          }
+          return {
+            data: {
+              ok: !0,
+              file_id: file_id,
+              message_id: a.messageId,
+              enveloped_text: _,
+              body: a.body,
+              sender_display: a.senderDisplay,
+              sender_kind: a.senderKind,
+              source: a.source,
+              slack_permalink: a.slackPermalink,
+              received_at: a.createdAt,
+              attachments_prefix: attachments_prefix
+            }
+          };
+        }
+      };
+    },
+    extractSearchText(e) {
+      if (!e.ok) return e.reason ?? "";
+      return [jFe(e.sender_kind), OAe(e.sender_display ?? "") || e.sender_kind, e.attachments_prefix, e.body, e.slack_permalink, e.received_at].filter(Boolean).join(`
+`);
+    }
+  });
+function H(e, s) {
+  switch (e.type) {
+    case "user":
+      return A(e.origin, e.message.content, s);
+    case "attachment":
+      return e.attachment.type === "queued_command" && A(e.attachment.origin, e.attachment.prompt, s);
+    default:
+      return !1;
+  }
+}
+function A(e, s, n) {
+  return (typeof s === "string" ? [s] : s.flatMap(item => item.type === "text" ? [item.text] : [])).some(item => Soo(e, item) === n);
+}
+export { fe as FetchInboxMessageTool, ue as inboxSurfaceCacheKeyBit };

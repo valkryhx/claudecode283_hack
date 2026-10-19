@@ -1,0 +1,1667 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  Fe
+} from "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  at,
+  j,
+  Th,
+  gc,
+  ygn,
+  JW,
+  _gn,
+  ore,
+  zGe,
+  YJn
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  pe
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  H
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  ta,
+  LB,
+  HB,
+  kA,
+  eL,
+  N_
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  Sy
+} from "B:/~BUN/root/chunk-gyr2a6wz.js";
+import {
+  Bh,
+  _g
+} from "B:/~BUN/root/chunk-8z3a373v.js";
+import {
+  pt
+} from "B:/~BUN/root/chunk-cqkcn3bx.js";
+import {
+  Rr,
+  kl
+} from "B:/~BUN/root/chunk-nxwmyxnk.js";
+import {
+  xs,
+  Wo,
+  nn,
+  ef
+} from "B:/~BUN/root/chunk-6a9s3k2y.js";
+import {
+  $Vs,
+  fn,
+  rk,
+  me,
+  eTe,
+  Zp,
+  ut,
+  SA,
+  M_,
+  une,
+  In,
+  FQe
+} from "B:/~BUN/root/chunk-1gpjpba6.js";
+import {
+  _l,
+  L_,
+  c_t,
+  xe,
+  Sd,
+  T2
+} from "B:/~BUN/root/chunk-8pmnanyd.js";
+import {
+  tYn,
+  Ste,
+  BDr,
+  njs,
+  qXe,
+  ijs,
+  Yr,
+  l$t,
+  Xv,
+  nLr,
+  rWe,
+  r0o,
+  Bl,
+  qe,
+  Sm,
+  It,
+  p$t,
+  OD,
+  YIe,
+  uEe,
+  dht,
+  wn,
+  tMe,
+  Ht,
+  En,
+  E,
+  Ce,
+  ue,
+  Il,
+  iLo
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  Ni,
+  cVs
+} from "B:/~BUN/root/chunk-h9p45fg5.js";
+import {
+  Fs
+} from "B:/~BUN/root/chunk-dq7zfs8r.js";
+import {
+  Wg
+} from "B:/~BUN/root/chunk-pmw6knpp.js";
+import {
+  X1e
+} from "B:/~BUN/root/chunk-4yrr52wq.js";
+import {
+  WUs
+} from "B:/~BUN/root/chunk-jmms813f.js";
+import {
+  Pt,
+  yc,
+  XD
+} from "B:/~BUN/root/chunk-j0ghr71r.js";
+import {
+  an
+} from "B:/~BUN/root/chunk-31x8pa20.js";
+import {
+  o,
+  oe,
+  fe
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  resolve as ke
+} from "path";
+var ye = new at(() => ({
+  layers: []
+}));
+
+function W() {
+  return ye.peek(j())?.layers ?? []
+}
+
+function pmt(e, n, r) {
+  let s = O(O(e.autoCompactOffer, n), r);
+  if (typeof s !== "object" || s === null || typeof s.eligibleLoggedAt !== "number") return;
+  let {
+    escCount: d,
+    resolved: u
+  } = s, c = typeof u === "object" && u !== null, {
+    choice: S,
+    tokens: m
+  } = c ? u : {};
+  return {
+    eligibleLoggedAt: s.eligibleLoggedAt,
+    isAnswered: c,
+    ...typeof d === "number" && Number.isInteger(d) && d > 0 && {
+      escCount: d
+    },
+    ...(S === "accept" || S === "keep") && typeof m === "number" && {
+      resolved: {
+        choice: S,
+        tokens: m
+      }
+    }
+  }
+}
+
+function qOr(e, n, r, s) {
+  if (pmt(e, n, r) !== void 0) return e;
+  let d = O(e.autoCompactOffer, n);
+  return {
+    ...e,
+    autoCompactOffer: {
+      ...e.autoCompactOffer,
+      [n]: {
+        ...d,
+        [r]: {
+          ...O(d, r),
+          eligibleLoggedAt: s
+        }
+      }
+    }
+  }
+}
+
+function jFs(e, n, r) {
+  let s = pmt(e, n, r);
+  return Z(e, n, r, {
+    escCount: (s?.escCount ?? 0) + 1
+  })
+}
+
+function WFs(e, n, r, s) {
+  return Z(e, n, r, {
+    resolved: s
+  })
+}
+
+function Z(e, n, r, s) {
+  let d = O(e.autoCompactOffer, n),
+    u = O(d, r),
+    c = pmt(e, n, r);
+  if (c === void 0 || c.isAnswered || !u) return e;
+  return {
+    ...e,
+    autoCompactOffer: {
+      ...e.autoCompactOffer,
+      [n]: {
+        ...d,
+        [r]: {
+          ...u,
+          ...s
+        }
+      }
+    }
+  }
+}
+
+function O(e, n) {
+  return typeof e === "object" && e !== null && Object.hasOwn(e, n) ? e[n] : void 0
+}
+
+function ee(e, n, r) {
+  let s = pmt(e, n, r);
+  return s !== void 0 && (s.isAnswered || (s.escCount ?? 0) > 0)
+}
+
+function Eme(e, n, r) {
+  switch (e) {
+    case "ask":
+      return n.isAutoModeAvailable ? "auto" : "default";
+    case "default": {
+      if (n.isAutoModeAvailable) return "auto";
+      let s = r ?? "default";
+      if (s === "auto" || s === "bypassPermissions" && !n.isBypassPermissionsModeAvailable) return "default";
+      return s
+    }
+    case "proactive":
+      if (n.isBypassPermissionsModeAvailable) return "bypassPermissions";
+      return n.isAutoModeAvailable ? "auto" : "acceptEdits"
+  }
+}
+
+function G(e, n) {
+  if (n === "auto" || e === "proactive" && n === "acceptEdits") return n;
+  return
+}
+
+function KOr(e) {
+  return zj(e) ?? K1e(e)
+}
+
+function re() {
+  let {
+    value: e,
+    source: n
+  } = En("tengu_auto_mode_config", {});
+  if (e?.enabled !== "disabled") return !1;
+  return n === "override" || n === "payload"
+}
+
+function YOr(e) {
+  let {
+    cli: n,
+    env: r,
+    settings: s,
+    agentFrontmatter: d
+  } = e, u = Bh(n.permissionMode), c = Bh(n.inheritPermissionMode), S = n.dangerouslySkipPermissions, m = d?.permissionMode, y = Boolean(S || u || m);
+  if (Fe(r.CLAUDE_CODE_SUBPROCESS_ENV_SCRUB)) {
+    let g = S || u && u !== "default" || c && c !== "default" || m && m !== "default",
+      M = "Permission mode forced to default \u2014 CLAUDE_CODE_SUBPROCESS_ENV_SCRUB is set " + "(allowed_non_write_users hardening). Declare allowedTools explicitly, or set CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=0 to opt out.";
+    return {
+      mode: "default",
+      notification: g ? M : void 0,
+      fromAutoFallback: !1,
+      baselineMode: "default",
+      decidedByProactivityLevel: !1,
+      modeSuppliedOnInvocation: !0,
+      autoDefaultWithheldForPendingVerdict: !1,
+      levelPickHeldForPendingVerdict: void 0,
+      autoStartWithheldForHipaaTaint: !1
+    }
+  }
+  let h = s.permissions?.disableBypassPermissionsMode === "disable",
+    v = re() || !1,
+    x = !v && !J(s),
+    p = [],
+    b, D = c ? ne(c, v, "inherited auto mode dropped \u2014 auto mode killswitch active (override- or payload-served)") : void 0,
+    P = c ? D?.mode ?? kA(c) : void 0;
+  if (S)
+    if (Zsn("bypassPermissions")) b = fmt, p.push("default");
+    else p.push("bypassPermissions");
+  if (u) {
+    let g = ne(u, v, "auto mode killswitch active (override- or payload-served) \u2014 falling back to default");
+    if (g) {
+      if (g.unconsented) b = fmt;
+      p.push(g.mode)
+    }
+  }
+  if (m)
+    if (m === "auto" && v) t("agent frontmatter requested auto mode but circuit breaker active \u2014 falling through", {
+      level: "warn"
+    });
+    else if (P && HB(m, P) === void 0) t(`agent frontmatter permissionMode "${m}" ignored \u2014 it would widen the agent view's inherited mode (effective "${P}"), and the dispatched agent name is repo-controllable (settings \`agent\`)`, {
+    level: "warn"
+  }), i("tengu_agent_frontmatter_mode_widening_carry_ignored", {});
+  else p.push(m);
+  if (Sy()) {
+    let g = !gqn() ? void 0 : z().map((M) => Bh(me(M)?.permissions?.defaultMode)).find((M) => M != null);
+    if (g != null && Fe(r.CLAUDE_CODE_REMOTE) && !V(g)) {
+      if (t(`settings defaultMode "${g}" is not supported in CLAUDE_CODE_REMOTE \u2014 only acceptEdits, plan, default, and auto are allowed`, {
+          level: "warn"
+        }), p.length === 0) i("tengu_ccr_unsupported_default_mode_ignored", {
+        mode_hash: an(g)
+      }), p.push("default")
+    } else if (g === "bypassPermissions") {
+      if (S || n.allowDangerouslySkipPermissions)
+        if (Zsn("bypassPermissions")) {
+          if (p.length === 0) b = fmt, process.stderr.write(`\u26A0 ${b}
+`);
+          p.push("default")
+        } else p.push(g);
+      else if (p.length === 0) b = 'Permission mode bypassPermissions from settings was ignored \u2014 enable the "Claude Code: Allow Dangerously Skip Permissions" setting in VS Code to consent to it', t('settings defaultMode "bypassPermissions" ignored for a VS Code-owned session without the allow-bypass setting', {
+        level: "warn"
+      }), i("tengu_settings_bypass_unconsented_noninteractive_ignored", {}), process.stderr.write(`\u26A0 ${b}
+`), p.push("default")
+    } else if (g === "auto")
+      if (!v) p.push(g);
+      else t('settings defaultMode "auto" ignored for the IDE session \u2014 auto-mode circuit breaker is active', {
+        level: "warn"
+      });
+    else if (g != null) p.push(g)
+  } else if (s.permissions?.defaultMode) {
+    let g = Bh(s.permissions.defaultMode);
+    if (Fe(r.CLAUDE_CODE_REMOTE) && !V(g)) t(`settings defaultMode "${g}" is not supported in CLAUDE_CODE_REMOTE \u2014 only acceptEdits, plan, default, and auto are allowed`, {
+      level: "warn"
+    }), i("tengu_ccr_unsupported_default_mode_ignored", {
+      mode_hash: an(g)
+    });
+    else if (g === "bypassPermissions")
+      if (!T("bypassPermissions")) {
+        if (t('settings defaultMode "bypassPermissions" ignored \u2014 only policy/user/flag settings may grant bypass mode (projectSettings and localSettings are repo-controllable)', {
+            level: "warn"
+          }), i("tengu_settings_bypass_mode_untrusted_source_ignored", {}), !c) p.push("default")
+      } else if (Zsn("bypassPermissions")) {
+      if (p.length === 0) b = fmt;
+      p.push("default")
+    } else p.push(g);
+    else if (g !== "auto")
+      if (P && !T(g) && HB(g, P) === void 0) t(`settings defaultMode "${g}" ignored \u2014 it would widen the agent view's inherited mode (effective "${P}"), and only policy/user/flag settings may do that (projectSettings and localSettings are repo-controllable)`, {
+        level: "warn"
+      }), i("tengu_settings_mode_widening_carry_ignored", {});
+      else p.push(g);
+    else if (!T("auto")) t('settings defaultMode "auto" ignored \u2014 only policy/user/flag settings may grant auto mode (projectSettings and localSettings are repo-controllable)', {
+      level: "warn"
+    }), i("tengu_settings_auto_mode_untrusted_source_ignored", {});
+    else if (v) t("auto mode killswitch active (override- or payload-served) \u2014 falling back to default", {
+      level: "warn"
+    });
+    else if (Fe(r.CLAUDE_CODE_BRIDGE_CHILD_AUTO_DEFAULT) && J(s)) t('settings defaultMode "auto" ignored \u2014 disableAutoMode is set and this is an unattended Remote Control machine session', {
+      level: "warn"
+    });
+    else p.push("auto")
+  }
+  if (c) {
+    let g = D;
+    if (g) {
+      if (g.unconsented && p.length === 0) b = fmt;
+      p.push(g.mode)
+    }
+  }
+  let L;
+  for (let g of p) {
+    if (g === "bypassPermissions" && h) {
+      t("bypassPermissions mode is disabled by settings", {
+        level: "warn"
+      }), b = "Bypass permissions mode was disabled by settings";
+      continue
+    }
+    L = {
+      mode: g,
+      notification: b
+    };
+    break
+  }
+  let C = !1,
+    w = !1,
+    I, F = !1;
+  if (!L) {
+    let g = x && (!Fe(r.CLAUDE_CODE_REMOTE) && gqn() && (!n.isNonInteractiveSession || Sy() || E("tengu_moss_anchor", !1)) || Fe(r.CLAUDE_CODE_BRIDGE_CHILD_AUTO_DEFAULT)),
+      M = "default";
+    if (g) {
+      let A = XOr(),
+        k = Fe(r.CLAUDE_CODE_BRIDGE_CHILD_AUTO_DEFAULT);
+      if (A === void 0 || A === "pending" && k) M = "auto", C = !0;
+      else if (A === "taint") b ??= ve, F = !0;
+      else if (A === "pending") w = !0
+    }
+    L = {
+      mode: M,
+      notification: b
+    }
+  }
+  let N = L.mode,
+    Q = !1;
+  if (e.proactivityLevel && e.proactivityLevel !== "default" && !y) {
+    let g = Eme(e.proactivityLevel, {
+        isAutoModeAvailable: x,
+        isBypassPermissionsModeAvailable: !1
+      }, N),
+      M = G(e.proactivityLevel, g),
+      A = rIe(e.proactivityLevel, g, N),
+      k = A === "pending" && Fe(r.CLAUDE_CODE_BRIDGE_CHILD_AUTO_DEFAULT) ? void 0 : A;
+    if (M !== void 0 && k === "taint") L.notification ??= se(M), F = !0;
+    else if (k === "pending") w = !0, I = M;
+    L = {
+      mode: k === void 0 ? g : "default",
+      notification: L.notification
+    }, C = !1, Q = !0
+  }
+  return {
+    mode: L.mode,
+    notification: L.notification,
+    fromAutoFallback: C,
+    baselineMode: N,
+    decidedByProactivityLevel: Q,
+    modeSuppliedOnInvocation: y,
+    autoDefaultWithheldForPendingVerdict: w,
+    levelPickHeldForPendingVerdict: I,
+    autoStartWithheldForHipaaTaint: F
+  }
+}
+var ie = {
+    auto: "Auto mode",
+    acceptEdits: "Accept edits"
+  },
+  ve = se("auto");
+
+function se(e) {
+  return `${ie[e]} isn't the default for your organization \xB7 Shift+Tab to switch`
+}
+
+function zFs(e) {
+  return `${ie[e]} didn't start: your organization's policy hasn't loaded \xB7 Shift+Tab to switch`
+}
+
+function rIe(e, n, r) {
+  let s = G(e, n);
+  if (s === void 0 || s === r) return;
+  return XOr()
+}
+
+function XOr() {
+  let e = cVs();
+  if (Ni("hipaa") || e === "unobtainable_seen_hipaa") return "taint";
+  return e === "pending" ? "pending" : void 0
+}
+
+function GFs(e) {
+  let n = e.cli.fallbackModel ?? (Array.isArray(e.settings.fallbackModel) ? e.settings.fallbackModel : void 0);
+  if (n === void 0) return;
+  return he(n, Yr)
+}
+
+function QAo(e) {
+  return e.split(",").map((n) => n.trim()).filter((n) => n !== "")
+}
+
+function he(e, n) {
+  let r = typeof e === "string" ? QAo(e) : e,
+    s = new Set,
+    d = [];
+  for (let u of r) {
+    let c = typeof u === "string" ? u.trim() : "";
+    if (c === "") continue;
+    let S = It(c === "default" ? Bl() : c);
+    if (s.has(S)) continue;
+    if (!n(S)) continue;
+    if (s.add(S), d.push(S), d.length === be) break
+  }
+  return d.length > 0 ? d : void 0
+}
+var be = 3;
+
+function _e(e) {
+  switch (e) {
+    case "userSettings":
+      return "user_settings";
+    case "projectSettings":
+      return "project_settings";
+    case "localSettings":
+      return "local_settings";
+    case "flagSettings":
+      return "flag_settings";
+    case "policySettings":
+      return "policy_settings";
+    case null:
+      return "settings"
+  }
+}
+
+function Me(e) {
+  switch (e) {
+    case "env":
+    case "user_settings":
+    case "project_settings":
+    case "local_settings":
+    case "flag_settings":
+    case "policy_settings":
+    case "settings":
+    case "agent_frontmatter":
+    case "routine_frontmatter":
+      return !0;
+    default:
+      return !1
+  }
+}
+
+function Le(e, n, r) {
+  if (Ste()) {
+    let v = ijs();
+    if (v !== null && !n && zGe().includes("userSettings") && new Date(v).getTime() > new Date(ue().lastSeenOrgDefaultUpdatedAt ?? 0).getTime()) Ce((p) => p.lastSeenOrgDefaultUpdatedAt === v ? p : {
+      ...p,
+      lastSeenOrgDefaultUpdatedAt: v
+    }, r);
+    if (rWe() === null) return e;
+    let x = e ? SA("model") : null;
+    if (x === "policySettings" || x === "flagSettings") return e;
+    return
+  }
+  let s = qXe();
+  if (!s || nLr() === null) return e;
+  let d = e ? SA("model") : null;
+  if (d === "policySettings" || d === "flagSettings") return e;
+  let u = zGe().includes("userSettings"),
+    c = ue().lastSeenOrgDefaultUpdatedAt,
+    S = new Date(s.updated_at).getTime() > new Date(c ?? 0).getTime(),
+    m = S && !n && u,
+    y = () => Ce((v) => v.lastSeenOrgDefaultUpdatedAt === s.updated_at ? v : {
+      ...v,
+      lastSeenOrgDefaultUpdatedAt: s.updated_at
+    }, r);
+  if (s.override_user_selection) {
+    if (m) y();
+    return
+  }
+  if (n) return e;
+  let h = u ? me("userSettings")?.model : void 0;
+  if (S && h) {
+    if (In("userSettings", {
+        model: void 0
+      }, void 0, r).then((v) => {
+        if (!v.error) y()
+      }), d === "userSettings") return
+  } else if (m) y();
+  return e
+}
+
+function ZAo(e, n) {
+  let {
+    cli: r,
+    env: s,
+    settings: d,
+    agentFrontmatter: u
+  } = e, c = r.model === "default" ? Bl() : r.model, S = c, m = null;
+  if (c) m = r.model === "default" ? "cli_default" : "cli";
+  let y = u?.model,
+    h;
+  if (!c && y && y !== "inherit") h = y, c = It(y), S = y, m = u?.modelSource === "routine" ? "routine_frontmatter" : "agent_frontmatter";
+  let v = !1,
+    x, p = c;
+  if (p === void 0) {
+    if (s.ANTHROPIC_MODEL) p = s.ANTHROPIC_MODEL, m = "env";
+    else if (p = Le(d.model || void 0, r.isNonInteractiveSession === !0, n) || void 0, p !== void 0) m = _e(SA("model"));
+    S = p
+  }
+  let b;
+  if (p && !Yr(p)) {
+    let C = h !== void 0 && !v ? h : p,
+      w = v ? null : Xv(C);
+    if (w !== null) {
+      if (b = C, p = w, c !== void 0) c = w
+    } else {
+      if (!(C.trim().toLowerCase() === "default" || r0o(C)) && !v) b = C;
+      p = void 0, S = void 0, m = null, c = void 0
+    }
+  }
+  let D;
+  if (p && l$t(p, Me(m) ? "persisted" : "explicit")) D = p, p = void 0, S = void 0, m = null, c = void 0;
+  let P = p || null,
+    L = It(P ?? Bl());
+  return {
+    effectiveModel: c,
+    initialMainLoopModel: P,
+    resolvedInitialModel: L,
+    rawModelRequest: S || null,
+    restrictedModel: b,
+    unservedModelSpelling: D,
+    settingLayer: m,
+    modelWithoutStartupOverride: x
+  }
+}
+
+function VFs(e) {
+  let n = e.cli.systemPrompt,
+    r = e.cli.appendSystemPrompt,
+    s = $Vs();
+  if (s) r = r ? `${r}
+
+${s}` : s;
+  return {
+    systemPrompt: n,
+    appendSystemPrompt: r
+  }
+}
+
+function gqn() {
+  return E("tengu_harbor_willow", !0) || iLo()?.meadow_lantern === !0
+}
+var Pe = xs.filter((e) => !ef.has(e)).toReversed(),
+  we = ["acceptEdits", "plan", "default", "auto"];
+
+function V(e) {
+  return we.includes(e)
+}
+
+function z() {
+  return Pe.filter(nn)
+}
+
+function T(e) {
+  return z().some((n) => me(n)?.permissions?.defaultMode === e)
+}
+
+function J(e) {
+  return e.permissions?.disableAutoMode === "disable" || e.disableAutoMode === "disable"
+}
+
+function JNt(e) {
+  return !J(e) && !re()
+}
+
+function Ae(e) {
+  return z().map((r) => Bh(me(r)?.permissions?.defaultMode)).find((r) => r != null) === "plan" && Bh(e.permissions?.defaultMode) !== "plan"
+}
+
+function exo() {
+  let e = xs.filter(nn).map((n) => ({
+    source: n,
+    mode: (n === "policySettings" ? une().length > 0 || M_().some((r) => r.userWritable === !0 && r.path === "") || ore() && eTe() || eL() !== !1 && !N_() : rk(n).some((r) => r.severity !== "warning")) ? "unreadable" : me(n)?.permissions?.defaultMode
+  })).findLast(({
+    source: n,
+    mode: r
+  }) => r !== void 0 && (r !== "auto" || !ef.has(n)));
+  return e === void 0 || e.mode === "auto" ? void 0 : e.mode === "unreadable" ? "settings_unreadable" : "stored_default"
+}
+
+function hqn({
+  settings: e,
+  scrubbed: n,
+  typedLevel: r,
+  carriedMode: s
+}) {
+  let d = r !== void 0 && r !== "default";
+  return {
+    autoSeedable: JNt(e) && !n,
+    storedDefaultBar: exo(),
+    otherChoiceTyped: d || s !== void 0 && s !== "auto",
+    carriedPlanHolds: s === "plan" && !d,
+    trustedPlanDisplaced: Ae(e)
+  }
+}
+
+function Oe(e) {
+  let n = Bh(e.permissions?.defaultMode);
+  if (n == null || !V(n)) return;
+  if (n !== "auto") return n;
+  return T("auto") && JNt(e) ? "auto" : void 0
+}
+
+function yqn({
+  gateOn: e,
+  permissionModeTyped: n,
+  dangerouslySkipPermissions: r,
+  scrubbed: s,
+  settings: d,
+  effort: u
+}) {
+  let c = !n && !r && !s,
+    S = c ? Oe(d) : void 0;
+  return {
+    considered: e && c,
+    settingsDefaultModePresent: d.permissions?.defaultMode != null,
+    settingsDefault: S,
+    permissionMode: e ? S : void 0,
+    effort: e ? u : void 0
+  }
+}
+
+function qFs({
+  sentMode: e,
+  repositorySettings: n
+}) {
+  if (e === "auto") return;
+  if (e !== void 0) return e;
+  let r = Y(n?.permissions?.defaultMode);
+  return r !== void 0 && r !== "auto" && V(r) ? r : "default"
+}
+
+function KFs({
+  seed: e,
+  settingsMode: n,
+  sentMode: r,
+  startsIn: s
+}) {
+  if (!e.considered || !e.settingsDefaultModePresent || e.permissionMode !== void 0 || n === void 0 || r !== void 0 && Y(n) === r) return null;
+  let d = Y(n) === "auto" ? "auto mode could not be requested from this machine (it is off here, or only the repository asked for it)" : "not a mode a cloud session can start in";
+  return {
+    text: `Settings kept on this machine: the default permission mode in your settings (${n}) \u2014 ${d}${s!==void 0?`; the session starts in ${s} mode`:""}`,
+    level: "info"
+  }
+}
+
+function Y(e) {
+  return e === void 0 ? void 0 : _g(e)
+}
+var txo = 'bypass in a background worker needs consent recorded in your user settings \u2014 add "skipDangerousModePermissionPrompt": true to ~/.claude/settings.json (accepting the interactive disclaimer writes the same key, but that dialog is skipped while consent already exists in .claude/settings.local.json or via --settings, which does not count here)',
+  fmt = `Permission mode downgraded to default: ${txo}`;
+
+function Zsn(e) {
+  if (!Ht()) return !1;
+  if (e === "bypassPermissions") return !FQe() && !ue().bypassPermissionsModeAccepted;
+  return !1
+}
+
+function ne(e, n, r) {
+  let s = kA(e);
+  if (Zsn(s)) return {
+    mode: "default",
+    unconsented: !0
+  };
+  if (s === "auto" && n) {
+    t(r, {
+      level: "warn"
+    });
+    return
+  }
+  return {
+    mode: s
+  }
+}
+
+function Tme(e, n) {
+  return Sm(It(e)) === Sm(It(n))
+}
+var De = "tengu_loggia_passage";
+
+function U() {
+  return E(De, !1)
+}
+
+function YFs({
+  sent: e,
+  turnEffort: n,
+  hookEffortValue: r
+}) {
+  if (e === void 0) return {
+    carry: null,
+    withheld: "none_sent"
+  };
+  if (r !== void 0) return {
+    carry: null,
+    withheld: "hook"
+  };
+  if (n !== void 0) return {
+    carry: null,
+    withheld: "turn_layer"
+  };
+  return U() ? {
+    carry: null,
+    withheld: "killed"
+  } : {
+    carry: e
+  }
+}
+
+function ein(e) {
+  return {
+    refused_effort_level: pe(e.carry),
+    refused_effort_withheld: pe(e.carry === null ? e.withheld : void 0)
+  }
+}
+
+function nxo({
+  refusedEffort: e,
+  fallbackModel: n,
+  heldBySession: r,
+  loopOverride: s,
+  loopEffort: d
+}) {
+  if (r) return {
+    latchEffort: e.carry ?? void 0,
+    loopEffort: void 0
+  };
+  let u = e.carry ?? rxo(s, d);
+  return {
+    latchEffort: void 0,
+    loopEffort: u === void 0 ? void 0 : {
+      model: n,
+      level: u
+    }
+  }
+}
+
+function rxo(e, n) {
+  return n !== void 0 && n.model === e ? n.level : void 0
+}
+
+function de() {
+  return JW()?.carriedEffort !== void 0
+}
+
+function R(e) {
+  let n = JW(),
+    r = gc();
+  if (n?.carriedEffort === void 0 || r == null || U()) return;
+  try {
+    return Tme(r, n.fallbackModel) && Tme(e, n.fallbackModel) ? n.carriedEffort : void 0
+  } catch (s) {
+    l(H(s));
+    return
+  }
+}
+
+function _qn({
+  loopEffort: e,
+  continuesMainConversation: n
+}, r) {
+  if (e !== void 0) return U() ? null : e;
+  return (n ? R(r) : void 0) ?? null
+}
+
+function XFs({
+  carried: e,
+  withIt: n,
+  withoutIt: r,
+  isSavedSetAside: s
+}) {
+  if (n === r) return n === e ? "moot" : "no_effect";
+  if (n !== e) return "clamped";
+  return s ? "applied_over_saved" : "applied"
+}
+
+function bqn() {
+  _gn("effort_change")
+}
+
+function JFs(e) {
+  let n = JW();
+  if (n !== void 0 && !Tme(e, n.fallbackModel)) _gn("model_change")
+}
+
+function QFs() {
+  let e = JW();
+  if (e?.carriedEffort === void 0) return;
+  let n = gc();
+  if (U()) _gn("kill_switch");
+  else if (n == null || !Tme(n, e.fallbackModel)) _gn("model_change")
+}
+
+function Cme() {
+  return a.CLAUDE_CODE_MAX_EFFORT_REMINDER ?? E("tengu_proud_clover", !1)
+}
+
+function Vb(e) {
+  if (YJn(e)) return !1;
+  let n = YIe(e, "effort");
+  if (n !== void 0) return n;
+  let r = qe(e),
+    s = c_t("effort", r);
+  if (s !== void 0) return s;
+  let d = BDr(e, r);
+  if (d !== void 0) return d.length > 0;
+  if (r.includes("claude-3-") || r === "claude-opus-4-0" || r === "claude-opus-4-1" || r === "claude-sonnet-4-0" || r === "claude-sonnet-4-5" || r === "claude-haiku-4-5") return !1;
+  if (a.CLAUDE_CODE_ALWAYS_ENABLE_EFFORT) return !0;
+  if (L_(r, "effort", e) || r === "claude-mythos-5") return !0;
+  return T2(Sd(e))
+}
+
+function Cae(e) {
+  if (YJn(e)) return !1;
+  let n = YIe(e, "max_effort");
+  if (n !== void 0) return n;
+  let r = qe(e),
+    s = ce("max_effort", e, r);
+  if (s !== void 0) return s;
+  let d = BDr(e, r);
+  if (d !== void 0) return d.includes("max");
+  if (r.includes("claude-3-") || r === "claude-opus-4-0" || r === "claude-opus-4-1" || r === "claude-opus-4-5" || r === "claude-sonnet-4-0" || r === "claude-sonnet-4-5" || r === "claude-haiku-4-5") return !1;
+  if (L_(r, "max_effort", e) || r === "claude-mythos-5") return !0;
+  return T2(Sd(e))
+}
+
+function mmt(e) {
+  if (YJn(e)) return !1;
+  let n = YIe(e, "xhigh_effort");
+  if (n !== void 0) return n;
+  let r = qe(e),
+    s = ce("xhigh_effort", e, r);
+  if (s !== void 0) return s;
+  let d = BDr(e, r);
+  if (d !== void 0) return d.includes("xhigh");
+  if (r.includes("claude-3-") || r === "claude-opus-4-0" || r === "claude-opus-4-1" || r === "claude-opus-4-5" || r === "claude-opus-4-6" || r === "claude-sonnet-4-0" || r === "claude-sonnet-4-5" || r === "claude-sonnet-4-6" || r === "claude-haiku-4-5") return !1;
+  if (L_(r, "xhigh_effort", e) || r === "claude-mythos-5") return !0;
+  return T2(Sd(e))
+}
+
+function ce(e, n, r) {
+  if (c_t("effort", r) === !1) return !1;
+  let s = c_t(e, r);
+  if (s === void 0) return;
+  return s && Vb(n)
+}
+
+function Re(e) {
+  return mmt(e)
+}
+
+function CM(e) {
+  return Wg() && (e === void 0 || Re(e))
+}
+
+function lg(e, n) {
+  return e === !0 && CM(n)
+}
+
+function Sqn(e, n, r) {
+  if (n.sessionEffort?.kind === "level") {
+    let s = n.sessionEffort.value;
+    return !(r === s || typeof r === "string" && DS(r) && FX(r, e) === s)
+  }
+  return oA(e, Od(n)) !== oA(e, r)
+}
+
+function wqn(e, n, r) {
+  if (r.sessionEffort?.kind === "level" || typeof n !== "string") return !1;
+  let s = ww(e, Od(r, e)),
+    d = ww(e, Od(r, e, {
+      withHold: !1
+    }), {
+      carriedEffort: null
+    });
+  return kD(n) === s && s !== d
+}
+
+function DS(e) {
+  return ta.includes(e)
+}
+
+function _(e) {
+  return ta.indexOf(e)
+}
+var gmt = "high";
+
+function JOr(e) {
+  return DS(e) && _(e) > _(gmt)
+}
+
+function QOr(e) {
+  let n = qe(e);
+  return L_(n, "thinking_disabled_effort_cap", e) ?? n === "claude-opus-5"
+}
+
+function ge(e) {
+  let n = [...Zp(), ...Wo().map((d) => me(d)), ...W()],
+    r = n.some((d) => Object.values(d?.modelSettings ?? {}).some((u) => u?.maxEffortLevel !== void 0)) ? HG(e) : void 0,
+    s = null;
+  for (let d of n) {
+    if (!d) continue;
+    let u;
+    if (r !== void 0)
+      for (let [c, S] of Object.entries(d.modelSettings ?? {})) {
+        let m = S?.maxEffortLevel;
+        if (m !== void 0 && (u === void 0 || _(m) < _(u)) && HG(c) === r) u = m
+      }
+    if (u ??= d.maxEffortLevel, u !== void 0 && u !== "max" && (s === null || _(u) < _(s))) s = u
+  }
+  return s
+}
+
+function tin(e) {
+  let n = ge(e),
+    r = null,
+    s = xe();
+  if (s === "firstParty" || s === "gateway") {
+    let u = qe(OD(e.trim().toLowerCase()), {
+        identity: !0
+      }),
+      c = uEe().find((S) => qe(OD(S.apiName.trim().toLowerCase()), {
+        identity: !0
+      }) === u)?.maxEffortLevel;
+    r = c != null && DS(c) ? c : null
+  }
+  let d = r === null ? n : n === null ? r : _(n) < _(r) ? n : r;
+  return d === "max" ? null : d
+}
+
+function q1e(e) {
+  if (xe() !== "firstParty") return null;
+  let n = dht();
+  if (n === null) return null;
+  let r = n.default_effort_level;
+  if (r == null || !DS(r)) return null;
+  let s = qe(OD(e.trim().toLowerCase()), {
+    identity: !0
+  });
+  return qe(OD(n.name.trim().toLowerCase()), {
+    identity: !0
+  }) === s ? r : null
+}
+
+function ZOr(e) {
+  return dht()?.override_user_effort === !0 && q1e(e) !== null
+}
+
+function eIr(e, n) {
+  let r = tin(n);
+  return r === null || _(e) <= _(r)
+}
+
+function Rme(e) {
+  return ta.filter((n) => eIr(n, e))
+}
+
+function FX(e, n) {
+  let r = tin(n);
+  return r !== null && _(e) > _(r) ? r : e
+}
+
+function K(e, n) {
+  if (n === "xhigh") return mmt(e);
+  if (n === "max") return Cae(e);
+  return !0
+}
+
+function ZFs(e, n, r) {
+  let s = Rme(e).filter((d) => d !== "max" && K(e, d));
+  return r === 1 ? s.find((d) => _(d) > _(n)) : s.findLast((d) => _(d) < _(n))
+}
+
+function eHs(e) {
+  let n = tin(e);
+  return n !== null && ta.some((r) => _(r) > _(n) && K(e, r))
+}
+
+function tHs(e, n) {
+  if (typeof e !== "string" || !DS(e)) return null;
+  let r = tin(n);
+  if (r === null || _(e) <= _(r)) return null;
+  let s = ww(n, e) ?? r;
+  return `Effort '${e}' exceeds the cap for ${n} set by your settings or organization; using '${s}'.`
+}
+var Ee = {
+    med: "medium"
+  },
+  Se = {
+    ultracode: "xhigh"
+  };
+
+function Ame(e) {
+  if (typeof e !== "string") return;
+  let n = e.trim().toLowerCase();
+  return Object.hasOwn(Se, n) ? n : void 0
+}
+
+function K1e(e) {
+  let n = Ame(e);
+  return n === void 0 ? void 0 : Se[n]
+}
+
+function OK(e) {
+  return String(e)
+}
+
+function kD(e) {
+  let n = e.trim().toLowerCase(),
+    r = Ee[n] ?? n;
+  return DS(r) ? r : void 0
+}
+
+function hmt(e) {
+  let n = kD(e);
+  if (n !== void 0) return {
+    level: n,
+    warning: void 0
+  };
+  let r = Ame(e);
+  if (r !== void 0) return {
+    level: r,
+    warning: void 0
+  };
+  return {
+    level: void 0,
+    warning: `Unknown --effort value '${e}' \u2014 ignoring it and using the default effort. Valid values: ${ta.join(", ")}.`
+  }
+}
+
+function zj(e) {
+  if (e === void 0 || e === null || e === "") return;
+  if (typeof e === "number" && ae(e)) return e;
+  let n = String(e).toLowerCase(),
+    r = Ee[n] ?? n;
+  if (DS(r)) return r;
+  let s = parseInt(n, 10);
+  if (!isNaN(s) && ae(s)) return s;
+  return
+}
+
+function _ke(e) {
+  if (e === "low" || e === "medium" || e === "high" || e === "xhigh") return e;
+  return
+}
+
+function ymt(e) {
+  return ut().ultracode === !0 || Ame(e) === "ultracode"
+}
+
+function kx() {
+  let e = a.CLAUDE_CODE_EFFORT_LEVEL;
+  return e?.toLowerCase() === "unset" || e?.toLowerCase() === "auto" ? null : zj(e)
+}
+var X = Object.freeze({
+    kind: "inherit"
+  }),
+  Te = Object.freeze({
+    kind: "default"
+  });
+
+function Zee(e) {
+  return {
+    kind: "level",
+    value: e
+  }
+}
+
+function _mt(e) {
+  return e === void 0 ? Te : Zee(e)
+}
+
+function Ve(e) {
+  return e === void 0 ? X : Zee(e)
+}
+
+function nHs(e) {
+  return e.kind === "level" ? String(e.value) : null
+}
+
+function vqn(e) {
+  return typeof e === "string" && e !== "" && e.length <= WUs ? e : null
+}
+
+function Rae(e, n) {
+  return e === n || e.kind === n.kind && (e.kind !== "level" || n.kind === "level" && e.value === n.value)
+}
+var Ue = new Set(["claude-3-5-haiku", "claude-3-5-sonnet", "claude-3-7-sonnet", "claude-haiku-4-5", "claude-sonnet-4-0", "claude-sonnet-4-5", "claude-sonnet-4-6", "claude-sonnet-5", "claude-opus-4-0", "claude-opus-4-1", "claude-opus-4-5", "claude-opus-4-6", "claude-opus-4-7", "claude-opus-4-8", "claude-opus-5", "claude-fable-5", "claude-fable-5-1", "claude-mythos-5", "claude-mythos-5-1"]),
+  le = new Map;
+
+function oxo(e) {
+  let n = le.get(e);
+  if (n === void 0) n = Ue.has(e) || !XD(yc(e)), le.set(e, n);
+  return n
+}
+
+function Be() {
+  let e = ue();
+  if (e.firstStartVersion !== void 0) return [];
+  let n = [];
+  if (!e.unpinOpus47LaunchEffort) n.push("claude-opus-4-7");
+  if (!e.unpinOpus48LaunchEffort) n.push("claude-opus-4-8");
+  if (!e.unpinFable5LaunchEffort) {
+    n.push("claude-fable-5");
+    let r = a.ANTHROPIC_DEFAULT_FABLE_MODEL;
+    if (r && !X1e(qe(It(r), {
+        deterministic: !0,
+        identity: !0
+      }))) n.push(HG(r))
+  }
+  return n
+}
+
+function QNt() {
+  let e = new Set,
+    n = [];
+  for (let r of Wo()) {
+    if (r === "flagSettings") {
+      let [u, c] = W();
+      if (u !== void 0) n.push({
+        source: "projectSettings",
+        settings: u
+      });
+      if (c !== void 0) n.push({
+        source: "localSettings",
+        settings: c
+      })
+    }
+    let s = fn(r);
+    if (s !== void 0) {
+      let u = ke(s);
+      if (e.has(u) && r !== "flagSettings") continue;
+      e.add(u)
+    }
+    let d = me(r);
+    if (d !== void 0 && d !== null) n.push({
+      source: r,
+      settings: d
+    })
+  }
+  return n
+}
+
+function tIr() {
+  let e = QNt(),
+    n = dht(),
+    r = n !== null && ZOr(n.name) ? HG(n.name) : void 0,
+    s, d, u = [];
+  for (let {
+      source: y,
+      settings: h
+    }
+    of e) {
+    let v = h.effortLevel !== void 0;
+    if (y === "userSettings") {
+      s = _ke(h.effortLevel), u.push({
+        source: y,
+        setsTopLevel: !1,
+        settings: h
+      });
+      continue
+    }
+    if (v) d = {
+      level: _ke(h.effortLevel)
+    };
+    u.push({
+      source: y,
+      setsTopLevel: v,
+      settings: h
+    })
+  }
+  u.reverse();
+  let c = u.map(({
+      settings: y
+    }) => {
+      let h = new Map;
+      for (let [v, x] of Object.entries(y.modelSettings ?? {})) {
+        let p = x?.effortLevel;
+        if (p === void 0) continue;
+        let b = HG(v);
+        if (v === b || !h.has(b)) h.set(b, p)
+      }
+      return h
+    }),
+    S = new Set;
+  if (r !== void 0) S.add(r);
+  for (let y of c)
+    for (let h of y.keys()) S.add(h);
+  let m = {};
+  for (let y of S) {
+    if (y === r) m[y] = void 0;
+    for (let h = 0; h < u.length; h++) {
+      if (y === r && !Ie(u[h].source)) continue;
+      let v = c[h].get(y);
+      if (v !== void 0) {
+        m[y] = _ke(v);
+        break
+      }
+      if (u[h].setsTopLevel) {
+        m[y] = _ke(u[h].settings.effortLevel);
+        break
+      }
+    }
+  }
+  if (d !== void 0) s = void 0;
+  if (s !== void 0) {
+    for (let y of Be())
+      if (!Object.hasOwn(m, y) && !Object.hasOwn(Object.prototype, y)) m[y] = void 0
+  }
+  return {
+    default: d?.level,
+    legacyUserEffort: s,
+    byModel: m
+  }
+}
+
+function Ie(e) {
+  return e === "policySettings" || e === "flagSettings"
+}
+
+function kqn(e) {
+  if (!ZOr(e)) return null;
+  return FN(B(nIr(tIr(), e) ?? Tqn(e), e))
+}
+
+function nIr(e, n) {
+  let r = HG(n);
+  if (Object.hasOwn(e.byModel, r)) return e.byModel[r];
+  if (e.default !== void 0 || e.legacyUserEffort === void 0) return e.default;
+  return oxo(r) ? e.legacyUserEffort : void 0
+}
+
+function Ne(e) {
+  if (e.legacyUserEffort !== void 0) return !1;
+  for (let n in e.byModel) return !1;
+  return !0
+}
+
+function HG(e) {
+  return Pt(qe(p$t(e), {
+    deterministic: !0,
+    identity: !0
+  }))
+}
+
+function He(e, n) {
+  return sxo(e, {
+    effortLevel: n
+  }, {
+    effortLevel: n
+  })
+}
+
+function sxo(e, n, r) {
+  let s = HG(e);
+  return Object.hasOwn(Object.prototype, s) ? r : {
+    modelSettings: {
+      [s]: n
+    }
+  }
+}
+
+function rHs(e) {
+  let n = wn()?.accountUuid;
+  return n !== void 0 && ee(ue(), n, e)
+}
+
+function Od(e, n, {
+  withHold: r = !0
+} = {}) {
+  let s = e.sessionEffort ?? X;
+  switch (s.kind) {
+    case "level":
+      return s.value;
+    case "default":
+      return;
+    case "inherit": {
+      if (e.settingsEffortTable === void 0) return;
+      if (Ne(e.settingsEffortTable) && !de()) return e.settingsEffortTable.default;
+      let d = n ?? It(e.mainLoopModelForSession ?? e.mainLoopModel ?? Bl());
+      return r && ZNt(d) !== void 0 ? void 0 : nIr(e.settingsEffortTable, d)
+    }
+  }
+}
+
+function Eqn(e, n) {
+  return HG(e) === HG(n)
+}
+
+function oHs(e, n) {
+  return Od(ixo(e), n, {
+    withHold: !1
+  })
+}
+
+function ixo(e) {
+  return e.sessionEffort?.kind === "level" ? {
+    ...e,
+    sessionEffort: X
+  } : e
+}
+
+function bmt(e) {
+  return e.kind === "level" && typeof e.value === "string" ? e.value : void 0
+}
+
+function ww(e, n, {
+  turnEffort: r,
+  hookEffortValue: s,
+  carriedEffort: d = R(e)
+} = {}) {
+  if (!Vb(e)) return;
+  let u = ge(e) !== null;
+  if (s !== void 0) {
+    let y = typeof s === "number" && u ? FN(s) : s;
+    return B(y, e)
+  }
+  let c = kx();
+  if (c === null && !u) return;
+  let S = Tqn(e, d),
+    m = c ?? (c === null ? S : void 0) ?? r ?? n ?? S;
+  if (typeof m === "number" && u) m = FN(m);
+  return B(m, e)
+}
+
+function nin(e, n) {
+  if (!Vb(e) || kx() !== void 0) return;
+  if (typeof n === "string") return FX(n, e);
+  if (n === void 0 && q1e(e)) return ete(e);
+  return
+}
+
+function B(e, n) {
+  let r = e;
+  if (typeof r === "string" && DS(r)) r = FX(r, n);
+  if (r === "max" && !Cae(n)) r = "high";
+  if (r === "xhigh" && !mmt(n)) r = "high";
+  return r
+}
+
+function ete(e) {
+  return FN(B(Tqn(e), e))
+}
+
+function Y1e(e, n, r, s, d) {
+  if (!d) return !1;
+  let u = Th();
+  if (u === 0 || u === s) return !1;
+  if (!Vb(r)) return !1;
+  if (typeof ww(r, e) !== "number" && typeof ww(r, n) !== "number" && tYn(r, qe(r)) && !Fs().rootLatestRequestThreaded) return !1;
+  if (ww(r, e, {
+      carriedEffort: null
+    }) === ww(r, n)) return !1;
+  if (kl() && e !== void 0 && _ke(typeof e === "string" ? FX(e, r) : e) === void 0) return !1;
+  return !0
+}
+async function je(e, n, r) {
+  return In("userSettings", He(n, e), void 0, r)
+}
+async function HX(e, n, r = !0, s) {
+  let d = e !== void 0 ? _ke(e) : void 0;
+  if (r && (e === void 0 || d !== void 0) && !Rr()) {
+    let u = await je(d, n, s);
+    if (u.error) return u.error
+  }
+  return
+}
+
+function Smt(e) {
+  let n = {
+    sessionEffort: Ve(KOr(e)),
+    settingsEffortTable: tIr()
+  };
+  return ygn(n), n
+}
+
+function oA(e, n, r) {
+  let s = ww(e, n, {
+    turnEffort: r
+  }) ?? "high";
+  return FN(s)
+}
+
+function ay(e, n, r) {
+  return Vb(e) ? oA(e, n, r) : void 0
+}
+
+function rin(e, n, r) {
+  if (n === void 0 && r === void 0) return "";
+  let s = ww(e, n, {
+    turnEffort: r
+  });
+  if (s === void 0) return "";
+  return ` with ${OK(FN(s))} effort`
+}
+
+function ae(e) {
+  return Number.isInteger(e)
+}
+
+function FN(e) {
+  if (typeof e === "string") return DS(e) ? e : "high";
+  return "high"
+}
+
+function We(e) {
+  switch (e) {
+    case "low":
+      return "Quick, straightforward implementation with minimal overhead";
+    case "medium":
+      return "Balanced approach with standard implementation and testing";
+    case "high":
+      return "Comprehensive implementation with extensive testing and documentation";
+    case "xhigh":
+      return "Deeper reasoning than high, just below maximum (on supported models)";
+    case "max":
+      return `Maximum capability with deepest reasoning. ${LB}`
+  }
+}
+
+function axo(e) {
+  if (typeof e === "string") {
+    let n = We(e);
+    if (e === "high" && tMe() && E("tengu_slate_finch", !1)) return `${n} \xB7 burns fastest \u2014 medium handles most tasks`;
+    return n
+  }
+  return "Balanced approach with standard implementation and testing"
+}
+
+function Tqn(e, n) {
+  let r = q(e);
+  return (r === void 0 ? n : void 0) ?? q1e(e) ?? r ?? Ye(e) ?? Ge(e) ?? ze(e)
+}
+
+function Ge(e) {
+  let n = Il(e)?.default_effort;
+  return typeof n === "string" && DS(n) && K(e, n) ? n : void 0
+}
+
+function ZNt(e) {
+  let n = R(e);
+  return n !== void 0 && q(e) === void 0 ? n : void 0
+}
+
+function sHs(e) {
+  return q1e(e) !== null || q(e) !== void 0 || R(e) !== void 0
+}
+var $e = "tengu_witty_wand",
+  Je = f(() => fe(o(), oe()));
+
+function q(e) {
+  let n = E($e, {});
+  if (typeof n === "string") n = pt(n, !1);
+  let r = Je().safeParse(n);
+  if (!r.success) return;
+  let s = r.data[Pt(qe(e))],
+    d = typeof s === "string" ? s.trim().toLowerCase() : void 0;
+  return d !== void 0 && DS(d) ? d : void 0
+}
+
+function Ye(e) {
+  let n = njs(e, qe(e));
+  return n !== void 0 && DS(n) ? n : void 0
+}
+
+function ze(e) {
+  return _l(qe(e))?.default_effort ?? "high"
+}
+export {
+  pmt,
+  qOr,
+  jFs,
+  WFs,
+  Eme,
+  KOr,
+  YOr,
+  zFs,
+  rIe,
+  XOr,
+  GFs,
+  QAo,
+  ZAo,
+  VFs,
+  gqn,
+  JNt,
+  exo,
+  hqn,
+  yqn,
+  qFs,
+  KFs,
+  txo,
+  fmt,
+  Zsn,
+  Tme,
+  YFs,
+  ein,
+  nxo,
+  rxo,
+  _qn,
+  XFs,
+  bqn,
+  JFs,
+  QFs,
+  Cme,
+  Vb,
+  Cae,
+  mmt,
+  CM,
+  lg,
+  Sqn,
+  wqn,
+  DS,
+  gmt,
+  JOr,
+  QOr,
+  tin,
+  q1e,
+  ZOr,
+  eIr,
+  Rme,
+  FX,
+  ZFs,
+  eHs,
+  tHs,
+  Ame,
+  K1e,
+  OK,
+  kD,
+  hmt,
+  zj,
+  _ke,
+  ymt,
+  kx,
+  Zee,
+  _mt,
+  nHs,
+  vqn,
+  Rae,
+  oxo,
+  QNt,
+  tIr,
+  kqn,
+  nIr,
+  HG,
+  sxo,
+  rHs,
+  Od,
+  Eqn,
+  oHs,
+  ixo,
+  bmt,
+  ww,
+  nin,
+  ete,
+  Y1e,
+  HX,
+  Smt,
+  oA,
+  ay,
+  rin,
+  FN,
+  axo,
+  Tqn,
+  ZNt,
+  sHs
+};

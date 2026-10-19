@@ -1,0 +1,123 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  jGe,
+  WGe
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  Y
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  c5,
+  Ble,
+  Yyt,
+  jle,
+  uBt
+} from "B:/~BUN/root/chunk-rfp1pa77.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-yrjpmz6e.js";
+var W6r = [250, 500, 500, 750, 1000];
+
+function g() {
+  return a.CLAUDE_SESSION_INGRESS_TOKEN_FILE ?? jle
+}
+
+function C(r) {
+  return a.CLAUDE_CODE_REMOTE && !a.CLAUDE_CODE_SESSION_ACCESS_TOKEN && !a.CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR && r.some((e) => e === "--sdk-url" || e.startsWith("--sdk-url=")) && !c5()
+}
+var I = 250,
+  w = 50;
+
+function d() {
+  return uBt(Ble, "OAuth token").token !== null || uBt(Yyt, "API key").token !== null
+}
+async function UJo(r, {
+  delaysMs: e = W6r,
+  siblingGraceMs: o = I,
+  siblingStepMs: f = w
+} = {}) {
+  if (!C(r)) return;
+  let i = performance.now(),
+    S = e.reduce((s, k) => s + k, 0),
+    E = g(),
+    {
+      token: l,
+      miss: _
+    } = uBt(E, "session ingress token"),
+    n = 0;
+  while (!l && n < e.length) {
+    let s = e[n];
+    t(`[spare-claim] session ingress token file not readable yet (${_}), re-checking in ${s}ms (${n+1}/${e.length})`, {
+      level: "warn"
+    }), await Y(s), n++, {
+      token: l,
+      miss: _
+    } = uBt(E, "session ingress token")
+  }
+  if (!l) {
+    X("error", "cli_worker_lifecycle_claim_token_wait", {
+      attempts: n,
+      recovered: !1,
+      last_miss: _ ?? "other",
+      waited_ms: Math.round(performance.now() - i)
+    });
+    return
+  }
+  let u = n > 0 ? Math.max(S - (performance.now() - i), o) : o,
+    p = performance.now(),
+    c = 0,
+    m = d();
+  while (!m && performance.now() - p < u) await Y(f), c++, m = d();
+  if (n > 0 || c > 0) X("info", "cli_worker_lifecycle_claim_token_wait", {
+    attempts: n,
+    recovered: !0,
+    sibling_attempts: c,
+    sibling_present: m,
+    waited_ms: Math.round(performance.now() - i)
+  })
+}
+
+function BJo() {
+  let r = !!a.CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR;
+  if (jGe() !== null) return {
+    recovered: !1,
+    diag: {
+      fd_env_set: r
+    }
+  };
+  let {
+    token: e,
+    miss: o
+  } = uBt(g(), "session ingress token");
+  if (!e) return {
+    recovered: !1,
+    diag: {
+      fd_env_set: r,
+      last_miss: o ?? "other"
+    }
+  };
+  return WGe(e), t("Session ingress token re-read from well-known file"), {
+    recovered: !0,
+    diag: {
+      fd_env_set: r
+    }
+  }
+}
+export {
+  W6r,
+  UJo,
+  BJo
+};

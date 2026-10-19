@@ -1,0 +1,49 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { ee } from "B:/~BUN/root/chunk-t63e78w2.js";
+import { randomUUID as s } from "crypto";
+var m = 256;
+function IPn(e = s(), t) {
+  if (t !== void 0) {
+    let laneNoticeSlugs = ee().laneNoticeSlugs;
+    laneNoticeSlugs.set(e, t), r(laneNoticeSlugs);
+  }
+  return e;
+}
+function Uis(e) {
+  return ee().laneNoticeSlugs.get(e);
+}
+function Bis(e, slug, ownWordsOnly) {
+  let n = ee(),
+    i = Date.now();
+  if (e !== void 0) n.commentReads.set(e, {
+    slug: slug,
+    ownWordsOnly: ownWordsOnly
+  }), r(n.commentReads);
+  if (n.commentReadAtBySlug.delete(slug), n.commentReadAtBySlug.set(slug, i), r(n.commentReadAtBySlug) || !ownWordsOnly) n.lastOthersCommentReadAt = i;
+}
+function jis(e) {
+  return ee().commentReads.get(e);
+}
+function MPn(e, t) {
+  for (let [o, n] of ee().commentReadAtBySlug) if (o !== e && !(Number.isFinite(t) && n < t)) return !0;
+  return !1;
+}
+function DPn() {
+  return ee().lastOthersCommentReadAt;
+}
+function r(e) {
+  if (e.size <= m) return !1;
+  let t = e.keys().next().value;
+  if (t !== void 0) e.delete(t);
+  return !0;
+}
+export { IPn, Uis, Bis, jis, MPn, DPn };

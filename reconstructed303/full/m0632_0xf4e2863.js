@@ -1,0 +1,1369 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  Cy
+} from "B:/~BUN/root/chunk-9ka04m0y.js";
+import {
+  L,
+  yu,
+  we,
+  dP,
+  Ty,
+  hye,
+  MQ,
+  pet,
+  lV
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  b,
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  Q2,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  qS
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  du
+} from "B:/~BUN/root/chunk-c44qc88s.js";
+import {
+  aEe,
+  Lln,
+  iht,
+  cB,
+  qy,
+  hp,
+  fB,
+  ao,
+  Pr
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  m,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  nT,
+  m5,
+  nS,
+  tde
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  ea
+} from "B:/~BUN/root/chunk-53tmhe2j.js";
+import {
+  So,
+  kjn,
+  mj,
+  Tfe,
+  KPe,
+  SN
+} from "B:/~BUN/root/chunk-q0t5e1bx.js";
+import {
+  Xl,
+  Qt
+} from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import {
+  QVn
+} from "B:/~BUN/root/chunk-nvdqbkrt.js";
+import {
+  O1e
+} from "B:/~BUN/root/chunk-hhgqcegv.js";
+import {
+  le
+} from "B:/~BUN/root/chunk-e7tskyjv.js";
+import {
+  _K,
+  gae
+} from "B:/~BUN/root/chunk-ses0c36n.js";
+import {
+  Jwe,
+  gN,
+  Rs,
+  Rie,
+  Gen,
+  PRs
+} from "B:/~BUN/root/chunk-dn8rakwm.js";
+import {
+  wT,
+  tU,
+  oZ,
+  dSe,
+  R0n,
+  A0n,
+  Wit,
+  X8,
+  NAt,
+  GL,
+  Nue,
+  Fue,
+  dq,
+  JAt,
+  VL,
+  FDn,
+  HDn,
+  Ext,
+  ASe,
+  gl,
+  Lhr,
+  c9,
+  Ths,
+  QXt,
+  WSe,
+  nH,
+  p6,
+  guo,
+  Ap,
+  TZ,
+  HJt,
+  $Jt,
+  tpo,
+  w_s,
+  v_s,
+  y6e,
+  k_s,
+  jlt,
+  g_,
+  Re,
+  cf,
+  Ly
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  TC,
+  rMt,
+  Xpe,
+  Aho,
+  $6,
+  $9,
+  IZt,
+  Jpe
+} from "B:/~BUN/root/chunk-vnmfp48d.js";
+import {
+  Xo
+} from "B:/~BUN/root/chunk-9tkh434c.js";
+import {
+  GTt,
+  VTt
+} from "B:/~BUN/root/chunk-7pf9r0sr.js";
+import {
+  A7,
+  pxn,
+  XNe,
+  AR,
+  qA,
+  TKe,
+  JNe
+} from "B:/~BUN/root/chunk-fbgs9vjp.js";
+import {
+  ACt
+} from "B:/~BUN/root/chunk-62ynkm2y.js";
+import {
+  IY
+} from "B:/~BUN/root/chunk-aatsy169.js";
+import {
+  ZAn,
+  exn,
+  txn,
+  g7r,
+  VYt
+} from "B:/~BUN/root/chunk-d7f7kq5q.js";
+import {
+  oxn
+} from "B:/~BUN/root/chunk-tabp3jhw.js";
+import {
+  RFs,
+  go
+} from "B:/~BUN/root/chunk-y59h61rh.js";
+import {
+  rv
+} from "B:/~BUN/root/chunk-hdc8p5sh.js";
+import {
+  mb
+} from "B:/~BUN/root/chunk-97bdq2mm.js";
+import {
+  Lae
+} from "B:/~BUN/root/chunk-0zewma8k.js";
+import {
+  Qe
+} from "B:/~BUN/root/chunk-5k20pvvh.js";
+import {
+  o,
+  M,
+  T,
+  u,
+  De,
+  $e,
+  C
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  ye
+} from "B:/~BUN/root/chunk-shj1mfyk.js";
+
+function D7o(e) {
+  return O1e(e) || m5(e.source)
+}
+
+function jsr(e) {
+  switch (e.type) {
+    case "generic-error":
+    case "manifest-validation-error":
+    case "path-not-found":
+      return e.plugin === void 0 ? e.path : void 0;
+    default:
+      return
+  }
+}
+var Te = {
+  "path-not-found": "path not found",
+  "manifest-validation-error": "manifest invalid",
+  "dependency-unsatisfied": "unmet dependency",
+  "dependency-version-unsatisfied": "unmet dependency"
+};
+
+function ve(e) {
+  return e.flatMap((n) => {
+    let r = Te[n.type] ?? "load error",
+      s = jsr(n);
+    if (s !== void 0) {
+      let l = n.type === "generic-error" ? n.manifestName : void 0,
+        a = jlt(s, nS(n.source) ?? "");
+      return [{
+        names: l ? [l, a] : [a],
+        category: r
+      }]
+    }
+    return O1e(n) ? [{
+      names: [n.plugin],
+      category: r
+    }] : []
+  })
+}
+
+function ce(e, n, r) {
+  let s = ve(n);
+  if (s.length === 0) return;
+  let l = e.indexOf(":"),
+    a = l > 0 ? e.slice(0, l) : void 0,
+    S = a === void 0 || r.has(a) ? void 0 : s.find((d) => d.names.includes(a));
+  if (S !== void 0) return `The plugin "${a}" did not load in this session (${S.category}): tell the user the plugin could not be loaded here, not that the skill is not installed.`;
+  let _ = L(s.map((d) => d.category)).join(", ");
+  return `${s.length===1?`1 plugin did not load in this session (${_}); if this skill belongs to it`:`${s.length} plugins did not load in this session (${_}); if this skill belongs to one of them`}, tell the user its plugin could not be loaded here, not that the skill is not installed.`
+}
+
+function fe({
+  skill: e
+}, {
+  commands: n,
+  teammateAuthorOf: r
+}) {
+  if (!e) return null;
+  let s = e.trim(),
+    l = s.startsWith("/") ? s.substring(1) : s,
+    a = n?.find((k) => k.name === l),
+    S = a?.loadedFrom === "commands_DEPRECATED" ? `/${l}` : l,
+    _ = r?.(a?.type === "prompt" ? a.source : void 0, l) ?? null;
+  return _ ? `${S} \xB7 by ${_}` : S
+}
+
+function Ae(e) {
+  let n = new Map,
+    r = (s) => Boolean(s.disableModelInvocation) || X8(s);
+  for (let s of e) {
+    let l = n.get(s.name);
+    if (l === void 0 || r(l) && !r(s) && s.type === "prompt" && !(Tfe(l) && !Tfe(s))) n.set(s.name, s)
+  }
+  return [...n.values()]
+}
+
+function Ce(e) {
+  if (!ea().claim(`skill_reserved_namespace_rule_held_back_${e}`)) return;
+  p("skill_reserved_namespace", e === "nonholder" ? "nonholder_allow_rule" : "prefix_at_namespace_boundary", {
+    interactive: !we(),
+    host_prompt: dP() !== void 0
+  })
+}
+async function oe(e) {
+  let n = TZ(await Ap(yu(), e.storageV5)),
+    r = e.mcpCommands(),
+    s = RFs(r.filter((S) => S.type === "prompt" && S.loadedFrom === "mcp"), n),
+    l = Jwe(),
+    a = dq(n, r);
+  return Nue(Ae([...a, ...l, ...s]))
+}
+
+function de(e, n) {
+  let r = e.filter(Fue);
+  return n ? Rie(r, lV()) : r
+}
+
+function ge(e, n) {
+  return e.type === "prompt" && e.source === "plugin" && e.name !== n && (e.aliases?.includes(n) ?? !1)
+}
+
+function ie(e, n, r) {
+  let s = r.agentId === void 0,
+    l = Rs(e, n);
+  if (l !== void 0) {
+    let S = ge(l, e) ? de(n, s) : [];
+    if (S.includes(l)) {
+      let _ = S.filter((k) => ge(k, e) || k.type === "prompt" && k.loadedFrom !== "syncedSkills" && k.name.endsWith(`:${e}`));
+      if (_.length > 1) return {
+        kind: "ambiguous",
+        command: void 0,
+        candidates: _
+      }
+    }
+    return {
+      kind: "exact",
+      command: l
+    }
+  }
+  if (guo(e) || n.some((S) => NAt(S, e))) return {
+    kind: "none",
+    command: void 0
+  };
+  let a = PRs(e, de(n, s));
+  switch (a.kind) {
+    case "unique":
+      return {
+        kind: "suggestion", command: void 0, suggestion: a.command
+      };
+    case "ambiguous":
+      return {
+        kind: "ambiguous", command: void 0, candidates: a.candidates
+      };
+    case "none":
+      return {
+        kind: "none", command: void 0
+      }
+  }
+}
+
+function he(e, n) {
+  return e.type === "prompt" && (e.context === "fork" || e.getContext !== void 0 && n.spawnedByForkedSkill === !0) && n.spawnedBySkill === GL(e)
+}
+async function Ee(e, n, r, s) {
+  if (!r.some((S) => S.type === "prompt" && S.pluginInfo?.namedFolderYield?.yielded.includes(e) === !0)) return !0;
+  let a = await Ap(yu(), s, void 0, !0);
+  return Rs(e, a)?.name === n.name
+}
+
+function Me(e, n) {
+  if (n.agentId !== void 0) return !1;
+  let r = k_s(e);
+  for (let s = n.messages.length - 1; s >= n.turnStartIndex; s--) {
+    let l = n.messages[s];
+    if (l.type !== "user" || l.isMeta || l.isCompactSummary || !qy(l.origin) || l.verifiedSlackHumanTurn === !0 || l.handedOff === !0 || l.textNotTyped === !0) continue;
+    let a = l.message.content;
+    if (typeof a === "string") {
+      if (a.includes(`<${qS}>`)) continue
+    } else if (a.some((S) => S.type === "tool_result")) continue;
+    if (r.test(Ly(l) ?? "")) return !0
+  }
+  return !1
+}
+async function Pe(e, n, r, s, l, a, S, _, k) {
+  let d = Date.now(),
+    y = Cy(),
+    w = nH().has(n),
+    V = $9(e),
+    I = e.source === "bundled",
+    {
+      sanitizedName: A,
+      skillNameHash: h
+    } = $6({
+      rawName: n,
+      canonicalName: e.name,
+      isMcp: e.loadedFrom === "mcp",
+      isBuiltIn: w,
+      isBundled: I,
+      isOfficial: V
+    }),
+    D = s.queryTracking?.depth ?? 0,
+    U = D > 0 ? "nested-skill" : "claude-proactive",
+    j = s.agentId;
+  if (e.pluginInfo) VL(e.pluginInfo.repository, "skill", JAt(e, e.pluginInfo.pluginManifest.name));
+  i("tengu_skill_tool_invocation", {
+    command_name: A,
+    _PROTO_skill_name: n,
+    ...h,
+    execution_context: b("fork"),
+    invocation_trigger: c(U),
+    query_depth: D,
+    ...s.queryTracking && {
+      query_chain_id: ye(s.queryTracking.chainId)
+    },
+    ...Aho(S, S !== void 0 && p6().has(S)),
+    ...j && {
+      parent_agent_id: ye(j)
+    },
+    ...Xpe(e.source, e.loadedFrom, e.kind, e.createdBy),
+    ...VTt(e.source, n),
+    attribution_shown: GTt(s.session, e.source, n) !== null,
+    skill_content_chars: e.contentLength,
+    ...!1,
+    ...e.pluginInfo && IZt(e),
+    ...Jpe(e)
+  }), rMt(n, e, U);
+  let B = {
+      agentId: y,
+      parentAgentId: s.agentId,
+      depth: hp(s.agentContext) + 1,
+      agentType: "subagent",
+      isAsync: !1,
+      isBackgroundAgent: s.agentContext.agentType === "main" ? !1 : s.agentContext.isBackgroundAgent,
+      ...fB(s.agentContext)
+    },
+    F = ZAn(e, s),
+    P = F || s.spawnedByWorkflowRunId !== void 0,
+    {
+      modifiedGetAppState: O,
+      contextLayers: v,
+      recordInvocation: N,
+      baseAgent: z,
+      promptMessages: Y,
+      skillContent: K,
+      forkReadFileState: se,
+      availableTools: Q,
+      webFetchReadmissionAllowed: X,
+      frozenCommandDenies: re
+    } = await HJt(e, r || "", s, B, {
+      replaceCommandRules: P,
+      freezeCommandDenies: P,
+      deferInvocationRecording: P
+    }),
+    ee = await VYt(e, yu(), {
+      options: {
+        tools: qA(z, X ? c9(z, Q, le(s), {
+          activeAgents: s.options.agentDefinitions.activeAgents
+        }) : Q, F, !1, !1, 0, gN(s).mode).resolvedTools,
+        spawnedBySkill: GL(e)
+      },
+      storageV5: s.storageV5
+    });
+  if (ee) Y.push(ee);
+  let J = e.getEffort?.(r || "", s) ?? e.getDefaultEffort?.(r || "", s)?.value ?? e.effort,
+    q = J !== void 0 ? {
+      ...z,
+      effort: J
+    } : z,
+    H = [];
+  if (t(`SkillTool executing forked skill ${n} with agent ${q.agentType}`), F) {
+    let E = await exn({
+      agentId: y,
+      agentDefinition: q,
+      command: e,
+      description: `/${So(e)} ${r??""}`.trim(),
+      prompt: K,
+      promptMessages: Y,
+      context: s,
+      canUseTool: l,
+      getAppState: O,
+      permissionLayers: v.length > 0 ? [...s.permissionLayers ?? [], ...v] : s.permissionLayers,
+      readFileState: se,
+      availableTools: Q,
+      webFetchReadmissionAllowed: X,
+      spawnedBySkill: GL(e),
+      recordInvocationOnSuccess: N,
+      frozenCommandDenies: re
+    });
+    if (E) return g("skill_invoke"), {
+      data: {
+        success: !0,
+        commandName: n,
+        status: "forked",
+        background: !0,
+        agentId: y,
+        result: `Running in the background as @${E.name}`
+      }
+    };
+    N()
+  }
+  let te = {
+      ...B,
+      subagentName: q.agentType,
+      isBuiltIn: gl(q)
+    },
+    ae = s.options.forwardSubagentText,
+    G = (E, W) => {
+      _?.({
+        type: "progress",
+        toolUseID: `skill_${a.message.id}`,
+        data: {
+          message: E,
+          type: "skill_progress",
+          prompt: W,
+          agentId: y,
+          agentType: q.agentType,
+          description: e.description
+        }
+      })
+    },
+    ne = txn({
+      agentId: y,
+      parentAgentId: j,
+      spawnDepth: hp(te),
+      skillName: So(e),
+      prompt: K,
+      selectedAgent: q,
+      taskRegistry: s.taskRegistry,
+      toolUseId: s.toolUseId,
+      callerAbortController: s.abortController
+    }),
+    Z = "failed";
+  try {
+    let E = cf(Y).find((R) => R.type === "user");
+    if (E) G({
+      ...E,
+      isMeta: void 0
+    }, K);
+    let W = !1,
+      Se = k?.mark("model");
+    for await (let R of AR({
+      agentDefinition: q,
+      promptMessages: Y,
+      turnPrompt: K,
+      onModelRestricted: oxn(GL(e), _),
+      toolUseContext: {
+        ...s,
+        getAppState: O,
+        permissionLayers: v.length > 0 ? [...s.permissionLayers ?? [], ...v] : s.permissionLayers
+      },
+      canUseTool: l,
+      isAsync: !1,
+      querySource: "agent:custom",
+      spawnedBySkill: GL(e),
+      spawnedByForkedSkill: !0,
+      model: e.model,
+      availableTools: Q,
+      webFetchReadmissionAllowed: X,
+      override: {
+        agentId: y,
+        agentContext: te,
+        abortController: ne.abortController,
+        shareFileHistory: !0,
+        readFileState: se
+      }
+    })) {
+      if (R.type === "api_metrics") {
+        _?.(R);
+        continue
+      }
+      if (R.type === "set_in_progress_tool_use_ids" || R.type === "spinner_mode" || R.type === "query_model_change") continue;
+      if (H.push(R), A7(R)) {
+        if (XNe(s, R)) _?.(pxn(R));
+        continue
+      }
+      if (R.type !== "assistant" && R.type !== "user") continue;
+      if (!_) continue;
+      if (R.type === "user" && R.isMeta && !W) continue;
+      if (R.type === "assistant") W = !0;
+      for (let me of cf([R])) {
+        let pe = me.message.content[0];
+        if (!ae && pe?.type !== "tool_use" && pe?.type !== "tool_result") continue;
+        G(me, "")
+      }
+    }
+    Se?.();
+    let ue = TKe(g_(H));
+    if (!ue) {
+      if (JNe(y, s), s.spawnedByWorkflowRunId !== void 0) N()
+    }
+    let _e = WSe(H) + $Jt(H, "Skill execution completed");
+    H.length = 0;
+    let be = Date.now() - d;
+    return t(`SkillTool forked skill ${n} completed in ${be}ms`), g("skill_invoke"), Z = ue ? "failed" : "completed", {
+      data: {
+        success: !0,
+        commandName: n,
+        status: "forked",
+        agentId: y,
+        result: _e
+      }
+    }
+  } finally {
+    ne.remove(Z), pet(y)
+  }
+}
+var xe = f(() => u({
+    skill: o().describe("The name of a skill from the available-skills list. Do not guess names."),
+    args: o().optional().describe("Optional arguments for the skill")
+  })),
+  Oe = f(() => {
+    let e = u({
+        success: M().describe("Whether the skill is valid"),
+        commandName: o().describe("The name of the skill"),
+        allowedTools: T(o()).optional().describe("Tools allowed by this skill"),
+        model: o().optional().describe("Resolved model the skill turn runs on when a frontmatter model override took effect; omitted otherwise"),
+        status: C("inline").optional().describe("Execution status"),
+        readOnly: M().optional().describe("True when the skill instructions were loaded read-only (nothing was executed)")
+      }),
+      n = u({
+        success: M().describe("Whether the skill completed successfully"),
+        commandName: o().describe("The name of the skill"),
+        status: C("forked").describe("Execution status"),
+        agentId: o().describe("The ID of the sub-agent that executed the skill"),
+        result: o().describe("The result from the forked skill execution"),
+        background: M().optional().describe("True when the sub-agent was launched in the background: `result` describes the launch, and the skill outcome arrives later as a task notification.")
+      });
+    return $e([e, n])
+  });
+
+function Ne(e) {
+  return {
+    storageV5: e.storageV5,
+    mcpCommands: () => e.getAppState().mcp.commands
+  }
+}
+async function Ue({
+  input: {
+    skill: e,
+    args: n
+  },
+  toolUseContext: r,
+  canUseTool: s,
+  parentMessage: l,
+  onProgress: a,
+  timing: S
+}) {
+  if (r.agentId !== void 0 && tU(r.agentId)) throw m("subagent_launch", "skill_fork_spawner_stop_pending"), Error("This agent has been stopped and its stop is still completing; it cannot launch skills.");
+  let _ = e.trim(),
+    k = _.startsWith("/") ? _.substring(1) : _,
+    d = r.options.activeSkill,
+    y = d ?? r.options.spawnedBySkill;
+  r.options.activeSkill = k;
+  let w = Lae(r),
+    V = !1;
+  try {
+    let I = await oe(Ne(r)),
+      A = ie(k, I, r);
+    if (A.kind === "ambiguous") {
+      let E = A.candidates.every((W) => Q2(W.name)) ? `: ${A.candidates.map((W)=>W.name).join(", ")}` : "";
+      throw new x(`Skill ${k} now matches several skills${E} \u2014 invoke one by its full name.`, "Skill tool: bare name ambiguous at dispatch")
+    }
+    let h = A.command;
+    if (h) r.options.activeSkill = GL(h);
+    if (!w) {
+      if (QXt(r.session, h?.name ?? k, r.storageV5, k), h?.type === "prompt" && h.pluginInfo) TC(h.pluginInfo.repository)
+    }
+    if (h?.type === "prompt" && kjn(h, n || "", r) === "fork" && !w) try {
+      return await Pe(h, k, n, r, s, l, y, a, S)
+    } finally {
+      r.options.activeSkill = d
+    }
+    let D = `${r.agentId??""}:${h?.name??k}`,
+      U = MQ().get(D),
+      {
+        processPromptSlashCommand: j
+      } = await import("B:/~BUN/root/chunk-yjds479p.js"),
+      B = r.toolUseId ?? je(l, go),
+      F = B !== void 0 && Lhr(l.handedOffLive)?.has(B) === !0,
+      P = await j(k, n || "", I, r, w, F);
+    if (!P.shouldQuery) throw m("skill_invoke", "skill_invoke_process_failed"), Error("Command processing failed");
+    let O = w ? [] : P.allowedTools || [],
+      v = w ? void 0 : aEe(P.model),
+      N = w ? void 0 : P.effort,
+      z = nH().has(k),
+      Y = h?.type === "prompt" && h.source === "bundled",
+      K = h?.type === "prompt" && $9(h),
+      {
+        sanitizedName: se,
+        skillNameHash: Q
+      } = $6({
+        rawName: k,
+        canonicalName: h?.name ?? k,
+        isMcp: h?.loadedFrom === "mcp",
+        isBuiltIn: z,
+        isBundled: Y,
+        isOfficial: K
+      }),
+      X = r.queryTracking?.depth ?? 0,
+      re = X > 0 ? "nested-skill" : "claude-proactive",
+      ee = r.agentId,
+      J = h?.type === "prompt" ? h.source : void 0,
+      q = 0;
+    for (let E of P.messages) q += HDn(E)?.length ?? 0;
+    if (h?.type === "prompt" && h.pluginInfo && !w) VL(h.pluginInfo.repository, "skill", JAt(h, h.pluginInfo.pluginManifest.name));
+    i("tengu_skill_tool_invocation", {
+      command_name: se,
+      _PROTO_skill_name: k,
+      ...Q,
+      execution_context: w ? b("read-only") : b("inline"),
+      invocation_trigger: c(re),
+      query_depth: X,
+      ...r.queryTracking && {
+        query_chain_id: ye(r.queryTracking.chainId)
+      },
+      ...Aho(y, y !== void 0 && p6().has(y)),
+      ...ee && {
+        parent_agent_id: ye(ee)
+      },
+      ...Xpe(J, h?.loadedFrom, h?.kind, h?.type === "prompt" ? h.createdBy : void 0),
+      ...VTt(J, k),
+      attribution_shown: GTt(r.session, J, k) !== null,
+      ...h?.type === "prompt" && {
+        skill_content_chars: h.contentLength
+      },
+      skill_body_chars: q,
+      ...!1,
+      ...h?.type === "prompt" && h.pluginInfo && IZt(h),
+      ...h?.type === "prompt" && Jpe(h)
+    }), rMt(k, h, re);
+    let H = P.messages.filter((E) => {
+        if (E.type === "progress") return !1;
+        if (E.type === "user" && "message" in E) {
+          let W = E.message.content;
+          if (typeof W === "string" && W.includes(`<${qS}>`)) return !1
+        }
+        return !0
+      }),
+      te = w ? H.map(HDn).find((E) => E !== null) ?? void 0 : void 0,
+      ae = ze(Le({
+        messages: H,
+        contextMessages: r.messages,
+        commandName: k,
+        args: n,
+        priorContent: U?.content ?? te,
+        renderedContent: MQ().get(D)?.content ?? te
+      }), B);
+    t(`SkillTool returning ${ae.length} newMessages for skill ${k}`), g("skill_invoke");
+    let G = [];
+    if (O.length > 0) G.push({
+      kind: "allowed_tools",
+      allowedTools: O
+    });
+    let ne = r.getAppState(),
+      Z = v && iht({
+        skillModel: v,
+        mode: ne.toolPermissionContext.mode,
+        fastMode: ne.fastMode ?? !1
+      }) ? Lln(v, r.options.mainLoopModel) : void 0;
+    if (Z) G.push({
+      kind: "model",
+      mainLoopModel: Z
+    });
+    if (N !== void 0) G.push({
+      kind: "effort",
+      effort: N
+    });
+    return V = !0, {
+      data: {
+        success: !0,
+        commandName: k,
+        allowedTools: O.length > 0 ? O : void 0,
+        model: Z,
+        ...w && {
+          readOnly: !0
+        }
+      },
+      newMessages: ae,
+      ...G.length > 0 && {
+        contextLayers: G
+      }
+    }
+  } finally {
+    if (w || !V) r.options.activeSkill = d
+  }
+}
+var Prt = Qt({
+    name: go,
+    searchHint: "invoke a slash-command skill",
+    isEnabled() {
+      return !Ty()
+    },
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    get inputSchema() {
+      return xe()
+    },
+    get outputSchema() {
+      return Oe()
+    },
+    description: async ({
+      skill: e
+    }) => `Execute skill: ${e}`,
+    prompt: async ({
+      model: e,
+      leanRewrite: n
+    }) => Ths({
+      model: e,
+      leanRewrite: n
+    }),
+    toAutoClassifierInput: ({
+      skill: e
+    }) => e ?? "",
+    create(e) {
+      let n = e;
+      return {
+        async validateInput({
+          skill: r
+        }) {
+          let s = r.trim();
+          if (!s) return m("skill_invoke", "skill_invoke_empty_name"), {
+            result: !1,
+            message: `Invalid skill format: ${r}`,
+            errorCode: 1
+          };
+          let l = s.startsWith("/");
+          if (l) i("tengu_skill_tool_slash_prefix", {});
+          let a = l ? s.substring(1) : s,
+            S, _ = !1,
+            k = await oe(n),
+            d = ie(a, k, n),
+            y = d.command,
+            w = nT(a);
+          if (oZ(n.session) && (!y || Wit(y)) && (y !== void 0 || A0n(w))) {
+            let A = await dSe(w);
+            if (!A.ok) S = A.reason, _ = A.withheld === !0;
+            else k = await oe(n), d = ie(a, k, n), y = d.command
+          }
+          if (y?.type === "prompt" && y.loadDefinition !== void 0) await y.loadDefinition(), k = await oe(n), d = ie(a, k, n), y = d.command;
+          if (S !== void 0 && (!y || Wit(y))) return m("skill_invoke", _ ? "skill_invoke_withheld" : "skill_invoke_not_materialized"), {
+            result: !1,
+            message: _ ? `${R0n(a)} Proceed without it.` : `Skill ${a} could not be downloaded (${S}). Proceed without it.`,
+            errorCode: 10
+          };
+          if (y && ASe(y)) return m("skill_invoke", SN(y) ? "skill_invoke_host_catalog_withheld" : "skill_invoke_sync_vetoed"), {
+            result: !1,
+            message: `Unknown skill: ${a}`,
+            errorCode: 13
+          };
+          if (!y) {
+            let A = g7r(k, a, n.spawnedBySkill);
+            if (A.length > 0) {
+              let v = d.kind === "ambiguous" ? d.candidates.filter((N) => !NAt(N, a) && Q2(N.name)) : [];
+              if (d.kind === "ambiguous") i("tengu_skill_tool_suffix_match", {
+                candidate_count: d.candidates.length
+              });
+              return m("skill_invoke", "skill_invoke_not_found"), {
+                result: !1,
+                message: v.length > 0 ? `Unknown skill: ${a}. Several skills match that name: ${[...v,...A].map((N)=>N.name).join(", ")} \u2014 invoke one by its full name; the directory-scoped variants apply to the files under their directory.` : `Unknown skill: ${a}. Directory-scoped variants exist: ${A.map((N)=>N.name).join(", ")} \u2014 invoke the variant whose directory contains the files you are working on.`,
+                errorCode: 2
+              }
+            }
+            if (d.kind === "suggestion") {
+              if (i("tengu_skill_tool_suffix_match", {
+                  candidate_count: 1
+                }), Q2(d.suggestion.name)) return m("skill_invoke", "skill_invoke_not_found"), {
+                result: !1,
+                message: `Unknown skill: ${a}. Did you mean ${d.suggestion.name}? Invoke it by that full name.`,
+                errorCode: 2
+              }
+            }
+            if (d.kind === "ambiguous") {
+              i("tengu_skill_tool_suffix_match", {
+                candidate_count: d.candidates.length
+              });
+              let v = d.candidates.filter((z) => !NAt(z, a)),
+                N = v.length === 1 ? v[0] : void 0;
+              if (v.length > 0 && v.every((z) => Q2(z.name))) return m("skill_invoke", "skill_invoke_not_found"), {
+                result: !1,
+                message: N !== void 0 ? `Unknown skill: ${a}. Did you mean ${N.name}? Invoke it by that full name.` : `Unknown skill: ${a}. Several skills match that name: ${v.map((z)=>z.name).join(", ")} \u2014 invoke one by its full name.`,
+                errorCode: 2
+              }
+            }
+            let h = tde(a, k.map((v) => ({
+                name: So(v),
+                aliases: v.aliases
+              })), {
+                maxEditDistance: 2
+              }),
+              D = n.agentId === void 0,
+              U = h === void 0 && w !== a ? de(k, D).find((v) => v.name === w && Gen(v)) : void 0,
+              j = U !== void 0 && Q2(w) && !mj(w) && !he(U, n) && y6e(U, {
+                commandName: w,
+                userTypedThisTurn: !1,
+                isMainSession: D,
+                permissionContext: n.permissions()
+              }) === null;
+            if (j) i("tengu_skill_tool_unprefixed_match", {});
+            let B = h ?? (j ? w : void 0);
+            m("skill_invoke", "skill_invoke_not_found");
+            let F = await QVn()?.catch(() => {
+                return
+              }),
+              P = F && ce(a, F.errors, new Set(F.enabled.map((v) => v.name))),
+              O = B ? `Unknown skill: ${a}. Did you mean ${B}?` : `Unknown skill: ${a}`;
+            return {
+              result: !1,
+              message: P ? `${O}${B?"":"."} ${P}` : O,
+              errorCode: 2
+            }
+          }
+          if (he(y, n)) return m("skill_invoke", "skill_invoke_fork_recursion"), i("tengu_skill_tool_fork_recursion_blocked", {}), {
+            result: !1,
+            message: `Skill ${a} is already executing in this forked context \u2014 you are the subagent running it. Execute the instructions in the skill body directly instead of re-invoking the ${go} tool.`,
+            errorCode: 9
+          };
+          let V = await Ee(a, y, k, n.storageV5),
+            I = y6e(y, {
+              commandName: V ? a : y.name,
+              userTypedThisTurn: !Lae(n) && Me(a, {
+                agentId: n.agentId,
+                messages: n.messages(),
+                turnStartIndex: n.turnStartIndex
+              }) && V,
+              isMainSession: n.agentId === void 0,
+              permissionContext: void 0
+            });
+          if (I !== null) {
+            switch (I.reason) {
+              case "disable_model_invocation": {
+                let {
+                  sanitizedName: A,
+                  skillNameHash: h
+                } = $6({
+                  rawName: a,
+                  canonicalName: y.name,
+                  isMcp: y.loadedFrom === "mcp",
+                  isBuiltIn: nH().has(a),
+                  isBundled: y.type === "prompt" && y.source === "bundled",
+                  isOfficial: y.type === "prompt" && $9(y)
+                });
+                m("skill_invoke", "skill_invoke_model_disabled", {
+                  command_name: A,
+                  ...h
+                });
+                break
+              }
+              case "not_loaded":
+                m("skill_invoke", "skill_invoke_not_materialized");
+                break;
+              case "not_allowlisted":
+                m("skill_invoke", "skill_invoke_not_allowlisted");
+                break;
+              case "override_disabled":
+                m("skill_invoke", I.hiddenBehindPlugin ? "skill_invoke_hidden_behind_plugin" : I.killSwitchOnly ? "skill_invoke_bundled_skills_disabled" : "skill_invoke_override_disabled");
+                break;
+              case "not_prompt_type":
+                m("skill_invoke", "skill_invoke_not_prompt_type");
+                break;
+              case "mcp_prompt":
+                break;
+              case "deny_rule":
+                break
+            }
+            return {
+              result: !1,
+              message: I.message,
+              errorCode: I.errorCode
+            }
+          }
+          return {
+            result: !0
+          }
+        },
+        async checkPermissions({
+          skill: r,
+          args: s
+        }) {
+          let l = r.trim(),
+            a = l.startsWith("/") ? l.substring(1) : l,
+            S = n.permissions(),
+            _ = await oe(n),
+            k = ie(a, _, n),
+            d = k.command,
+            y = k.kind === "ambiguous" ? k.candidates : [d],
+            w = gae(S, Prt, "deny");
+          for (let [F, P] of w.entries())
+            if (y.some((O) => tpo(F, a, O))) return {
+              behavior: "deny",
+              message: "Skill execution blocked by permission rules",
+              decisionReason: {
+                type: "rule",
+                rule: P
+              }
+            };
+          let V = gae(S, Prt, "allow"),
+            I;
+          for (let [F, P] of V.entries()) {
+            let O = w_s(F, a, d);
+            if (O === "allow") return {
+              behavior: "allow",
+              updatedInput: {
+                skill: r,
+                args: s
+              },
+              decisionReason: {
+                type: "rule",
+                rule: P
+              }
+            };
+            if (O === "held-back-nonholder") I = {
+              rule: F,
+              kind: "nonholder"
+            };
+            else if (O === "held-back-boundary") I ??= {
+              rule: F,
+              kind: "boundary"
+            }
+          }
+          if (d?.type === "prompt" && (Be(d) || Lae(n))) return {
+            behavior: "allow",
+            updatedInput: {
+              skill: r,
+              args: s
+            },
+            decisionReason: void 0
+          };
+          let A = d?.type === "prompt" && d.source === "plugin" ? d.pluginInfo?.pluginManifest.name : void 0,
+            h = KPe() && mj(a) && !(d !== void 0 && Tfe(d)),
+            D = I === void 0 ? void 0 : h ? "nonholder" : I.kind;
+          if (D !== void 0 && S.mode !== "bypassPermissions" && _K(S, Prt) === null) Ce(D);
+          let U = I === void 0 || D === void 0 ? void 0 : v_s(I.rule, d?.name ?? a, D === "nonholder" ? {
+              kind: "nonholder",
+              pluginName: A
+            } : {
+              kind: "boundary"
+            }),
+            j = U === void 0 ? void 0 : {
+              type: "other",
+              reason: U
+            };
+          if (h) return {
+            behavior: "ask",
+            message: `Execute skill: ${a}${U?` \u2014 ${U}`:""}`,
+            decisionReason: j,
+            suppressAlwaysAllowRule: !0,
+            updatedInput: {
+              skill: r,
+              args: s
+            },
+            metadata: d ? {
+              command: d
+            } : void 0
+          };
+          let B = [{
+            type: "addRules",
+            rules: [{
+              toolName: go,
+              ruleContent: a
+            }],
+            behavior: "allow",
+            destination: "localSettings"
+          }, {
+            type: "addRules",
+            rules: [{
+              toolName: go,
+              ruleContent: `${a}:*`
+            }],
+            behavior: "allow",
+            destination: "localSettings"
+          }];
+          return {
+            behavior: "ask",
+            message: `Execute skill: ${a}${U?` \u2014 ${U}`:""}`,
+            decisionReason: j,
+            suggestions: B,
+            updatedInput: {
+              skill: r,
+              args: s
+            },
+            metadata: d ? {
+              command: d
+            } : void 0
+          }
+        },
+        call(r, s) {
+          if (!s.runEngine) return Promise.reject(Error("Skill: invoking needs the executor (call.runEngine)"));
+          return s.runEngine(Ue, {
+            input: r,
+            parentMessage: s.parentMessage,
+            onProgress: s.onProgress,
+            timing: s.timing
+          })
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, n) {
+      if ("status" in e && e.status === "forked") return {
+        type: "tool_result",
+        tool_use_id: n,
+        content: e.background ? `Skill "${e.commandName}" launched (forked execution, running in the background).
+
+${e.result}` : `Skill "${e.commandName}" completed (forked execution).
+
+Result:
+${e.result}`
+      };
+      if ("readOnly" in e && e.readOnly) return {
+        type: "tool_result",
+        tool_use_id: n,
+        content: `Loaded skill instructions (read-only): ${e.commandName}. Nothing was executed; delegate execution to a worker.`
+      };
+      return {
+        type: "tool_result",
+        tool_use_id: n,
+        content: `Launching skill: ${e.commandName}`
+      }
+    },
+    renderToolUseMessage: fe
+  }),
+  Fe = new Set(["type", "progressMessage", "contentLength", "contentHash", "getLoadedSkillMd", "skillFile", "argNames", "model", "effort", "source", "pluginInfo", "serverAttribution", "disableNonInteractive", "skillRoot", "skillDir", "context", "agent", "background", "getPromptForCommand", "getEffort", "getDefaultEffort", "onUserTypedArgs", "getContext", "formatForegroundForkResult", "declaredFields", "pluginSource", "metadata", "createdBy", "fallback", "unqualifiedName", "denyMatchNames", "bareNameReserved", "reservedLabels", "fromHostCatalog", "shedAliases", "name", "description", "menuDescription", "hasUserSpecifiedDescription", "isEnabled", "isHidden", "aliases", "subcommands", "subcommandsBareOnly", "isMcp", "mcpInfo", "argumentHint", "whenToUse", "paths", "version", "disableModelInvocation", "disableBridgeInvocation", "userInvocable", "loadedFrom", "immediate", "userFacingName", "getArgumentCompletions"]);
+
+function Be(e) {
+  for (let n of Object.keys(e)) {
+    if (Fe.has(n)) continue;
+    let r = e[n];
+    if (r === void 0 || r === null) continue;
+    if (Array.isArray(r) && r.length === 0) continue;
+    if (typeof r === "object" && !Array.isArray(r) && Object.keys(r).length === 0) continue;
+    return !1
+  }
+  return !0
+}
+
+function Le({
+  messages: e,
+  contextMessages: n,
+  commandName: r,
+  args: s,
+  priorContent: l,
+  renderedContent: a
+}) {
+  if (!l || !a) return e;
+  if (e.some((d) => d.type === "user" && d.promptShellHandOff !== void 0)) return e;
+  let S = Ext(n, l);
+  if (!S) return e;
+  if (l !== a) {
+    let d = l.endsWith(FDn) ? `(Re-invocation of /${r} \u2014 the previously loaded copy was truncated by compaction; the full instructions follow.)` : `(Re-invocation of /${r} \u2014 the skill instructions were previously loaded; the arguments or dynamic output below are new.)`;
+    return [Re({
+      content: d,
+      isMeta: !0
+    }), ...e]
+  }
+  let _ = !1,
+    k = e.map((d) => {
+      if (HDn(d) !== a) return d;
+      return _ = !0, Re({
+        content: S === "attachment" ? `Skill /${r} was loaded earlier (see the invoked-skills reminder above); this is a NEW invocation \u2014 follow those instructions now, including any setup steps.${s?` Arguments: ${s}`:""}` : `Skill /${r} is already loaded above; instructions unchanged.${s?` Arguments: ${s}`:""}`,
+        isMeta: !0
+      })
+    });
+  if (_) t(`SkillTool eliding byte-identical re-invocation of skill ${r}`);
+  return k
+}
+
+function ze(e, n) {
+  if (!n) return e;
+  return e.map((r) => {
+    if (r.type === "user") return {
+      ...r,
+      sourceToolUseID: n
+    };
+    return r
+  })
+}
+
+function je(e, n) {
+  let r = e.message.content.find((s) => s.type === "tool_use" && s.name === n);
+  return r && r.type === "tool_use" ? r.id : void 0
+}
+
+function We() {
+  return cB() === "default" ? " (use the Agent tool instead)" : ""
+}
+
+function qe() {
+  return `## What Happens in Plan Mode
+
+In plan mode, you'll:
+1. Thoroughly explore the codebase using ${wT()&&Xl()?`\`find\`/${ao}, \`grep\`/${Pr}, and ${Qe}`:`${ao}, ${Pr}, and ${Qe}`}
+2. Understand existing patterns and architecture
+3. Design an implementation approach
+4. Present your plan to the user for approval
+5. Use ${Xo} if you need to clarify approaches
+6. Exit plan mode with ${mb} when ready to implement
+
+`
+}
+
+function Ve() {
+  let e = We();
+  return `Use this tool proactively when you're about to start a non-trivial implementation task. Getting user sign-off on your approach before writing code prevents wasted effort and ensures alignment. This tool transitions you into plan mode where you can explore the codebase and design an implementation approach for user approval.
+
+## When to Use This Tool
+
+**Prefer using EnterPlanMode** for implementation tasks unless they're simple. Use it when ANY of these conditions apply:
+
+1. **New Feature Implementation**: Adding meaningful new functionality
+   - Example: "Add a logout button" - where should it go? What should happen on click?
+   - Example: "Add form validation" - what rules? What error messages?
+
+2. **Multiple Valid Approaches**: The task can be solved in several different ways
+   - Example: "Add caching to the API" - could use Redis, in-memory, file-based, etc.
+   - Example: "Improve performance" - many optimization strategies possible
+
+3. **Code Modifications**: Changes that affect existing behavior or structure
+   - Example: "Update the login flow" - what exactly should change?
+   - Example: "Refactor this component" - what's the target architecture?
+
+4. **Architectural Decisions**: The task requires choosing between patterns or technologies
+   - Example: "Add real-time updates" - WebSockets vs SSE vs polling
+   - Example: "Implement state management" - Redux vs Context vs custom solution
+
+5. **Multi-File Changes**: The task will likely touch more than 2-3 files
+   - Example: "Refactor the authentication system"
+   - Example: "Add a new API endpoint with tests"
+
+6. **Unclear Requirements**: You need to explore before understanding the full scope
+   - Example: "Make the app faster" - need to profile and identify bottlenecks
+   - Example: "Fix the bug in checkout" - need to investigate root cause
+
+7. **User Preferences Matter**: The implementation could reasonably go multiple ways
+   - If you would use ${Xo} to clarify the approach, use EnterPlanMode instead
+   - Plan mode lets you explore first, then present options with context
+
+## When NOT to Use This Tool
+
+Only skip EnterPlanMode for simple tasks:
+- Single-line or few-line fixes (typos, obvious bugs, small tweaks)
+- Adding a single function with clear requirements
+- Tasks where the user has given very specific, detailed instructions
+- Pure research/exploration tasks${e}
+
+${qe()}## Examples
+
+### GOOD - Use EnterPlanMode:
+User: "Add user authentication to the app"
+- Requires architectural decisions (session vs JWT, where to store tokens, middleware structure)
+
+User: "Optimize the database queries"
+- Multiple approaches possible, need to profile first, significant impact
+
+User: "Implement dark mode"
+- Architectural decision on theme system, affects many components
+
+User: "Add a delete button to the user profile"
+- Seems simple but involves: where to place it, confirmation dialog, API call, error handling, state updates
+
+User: "Update the error handling in the API"
+- Affects multiple files, user should approve the approach
+
+### BAD - Don't use EnterPlanMode:
+User: "Fix the typo in the README"
+- Straightforward, no planning needed
+
+User: "Add a console.log to debug this function"
+- Simple, obvious implementation
+
+User: "What files handle routing?"
+- Research task, not implementation planning
+
+## Important Notes
+
+- This tool REQUIRES user approval - they must consent to entering plan mode
+- If unsure whether to use it, err on the side of planning - it's better to get alignment upfront than to redo work
+- Users appreciate being consulted before significant changes are made to their codebase
+`
+}
+
+function ke() {
+  return Ve()
+}
+var He = f(() => De({})),
+  Ge = f(() => u({
+    message: o().describe("Confirmation that plan mode was entered")
+  })),
+  PEn = Qt({
+    name: rv,
+    searchHint: "switch to plan mode to design an approach before coding",
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    async description() {
+      return "Requests permission to enter plan mode for complex tasks requiring exploration and design"
+    },
+    async prompt() {
+      return ke()
+    },
+    get inputSchema() {
+      return He()
+    },
+    get outputSchema() {
+      return Ge()
+    },
+    userFacingName() {
+      return ""
+    },
+    shouldDefer: !0,
+    isEnabled() {
+      return IY.isEnabled()
+    },
+    isConcurrencySafe() {
+      return !0
+    },
+    isReadOnly() {
+      return !0
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create(e) {
+      return {
+        async validateInput(n) {
+          if (e.agentId) return {
+            result: !1,
+            message: "Only the main session can enter plan mode.",
+            errorCode: 1
+          };
+          return {
+            result: !0
+          }
+        },
+        async call(n) {
+          if (e.agentId) throw Error("EnterPlanMode tool cannot be used in agent contexts");
+          return hye(e.permissions().mode, "plan"), e.setToolPermissionContext((r) => du(ACt(r), {
+            type: "setMode",
+            mode: "plan",
+            destination: "session"
+          })), {
+            data: {
+              message: "Entered plan mode. You should now focus on exploring the codebase and designing an implementation approach."
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam({
+      message: e
+    }, n) {
+      return {
+        type: "tool_result",
+        content: `${e}
+
+In plan mode, you should:
+1. Thoroughly explore the codebase to understand existing patterns
+2. Identify similar features and architectural approaches
+3. Consider multiple approaches and their trade-offs
+4. Use ${Xo} if you need to clarify the approach
+5. Design a concrete implementation strategy
+6. When ready, use ${mb} to present your plan for approval
+
+Remember: DO NOT write or edit any files yet. This is a read-only exploration and planning phase.`,
+        tool_use_id: n
+      }
+    }
+  });
+export {
+  PEn,
+  D7o,
+  jsr,
+  Prt
+};

@@ -1,0 +1,1435 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import { LA, Gf, cye } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import { b, c } from "B:/~BUN/root/chunk-jthpk6wv.js";
+import { d, G } from "B:/~BUN/root/chunk-3aez4b53.js";
+import "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import { w } from "B:/~BUN/root/chunk-rysqv8v1.js";
+import { bl, us } from "B:/~BUN/root/chunk-b900np4s.js";
+import "B:/~BUN/root/chunk-3md9ngvz.js";
+import { Te } from "B:/~BUN/root/chunk-smy4yvhm.js";
+import { qu } from "B:/~BUN/root/chunk-1jz9m9yh.js";
+import { s, n, xa, pce } from "B:/~BUN/root/chunk-damrp3r8.js";
+import "B:/~BUN/root/chunk-vw193yjw.js";
+import { Pe } from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import "B:/~BUN/root/chunk-yt0knyw7.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import { _ } from "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import { O, ld, $t } from "B:/~BUN/root/chunk-nggrknsv.js";
+import { l } from "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import "B:/~BUN/root/chunk-d69870x4.js";
+import "B:/~BUN/root/chunk-2efkaa0v.js";
+import "B:/~BUN/root/chunk-hb6x4e3n.js";
+import "B:/~BUN/root/chunk-g5gf7tps.js";
+import "B:/~BUN/root/chunk-vfmvkxsr.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-vttg4n7q.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-frrkt2bs.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import "B:/~BUN/root/chunk-gyjdf492.js";
+import "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import { i } from "B:/~BUN/root/chunk-1kfn24jp.js";
+import { g, m, p, Kr, jt } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-8pmnanyd.js";
+import "B:/~BUN/root/chunk-kad4nq7y.js";
+import { Ow, eE, mu } from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import { ce } from "B:/~BUN/root/chunk-nxwmyxnk.js";
+import { Es } from "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import "B:/~BUN/root/chunk-xrp58hm9.js";
+import { G0e } from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import { mv } from "B:/~BUN/root/chunk-pjgzz98k.js";
+import { ef } from "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import { fn, s_t, dne as readLive } from "B:/~BUN/root/chunk-1gpjpba6.js";
+import "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import "B:/~BUN/root/chunk-28dw3zbk.js";
+import "B:/~BUN/root/chunk-07c8fw5z.js";
+import "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-8w42v0dp.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-h9p45fg5.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import "B:/~BUN/root/chunk-cx57tr4b.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import "B:/~BUN/root/chunk-gy660jgx.js";
+import "B:/~BUN/root/chunk-2jzp4p89.js";
+import "B:/~BUN/root/chunk-j2ppas05.js";
+import "B:/~BUN/root/chunk-psvhak2h.js";
+import "B:/~BUN/root/chunk-0x8xex6w.js";
+import "B:/~BUN/root/chunk-3xc6vbb9.js";
+import "B:/~BUN/root/chunk-7abd7f1e.js";
+import "B:/~BUN/root/chunk-b5bxtj5p.js";
+import "B:/~BUN/root/chunk-t78esase.js";
+import "B:/~BUN/root/chunk-x73fxyt1.js";
+import "B:/~BUN/root/chunk-ervhay8x.js";
+import "B:/~BUN/root/chunk-w2mafqxc.js";
+import "B:/~BUN/root/chunk-q5ca2nsw.js";
+import "B:/~BUN/root/chunk-vbtp6nn1.js";
+import "B:/~BUN/root/chunk-1d35msqn.js";
+import "B:/~BUN/root/chunk-7fsmvr58.js";
+import "B:/~BUN/root/chunk-mxxcv7nt.js";
+import "B:/~BUN/root/chunk-t7y4rt40.js";
+import "B:/~BUN/root/chunk-sk7eej8z.js";
+import "B:/~BUN/root/chunk-dwajd7kx.js";
+import { rc, cs, Xe } from "B:/~BUN/root/chunk-nbjke4gr.js";
+import "B:/~BUN/root/chunk-ps74es0g.js";
+import "B:/~BUN/root/chunk-raq9cfnw.js";
+import "B:/~BUN/root/chunk-a3hh790f.js";
+import { q } from "B:/~BUN/root/chunk-bf7csy4f.js";
+import "B:/~BUN/root/chunk-1nevq7mk.js";
+import "B:/~BUN/root/chunk-653rvs3k.js";
+import "B:/~BUN/root/chunk-9h1egpkt.js";
+import "B:/~BUN/root/chunk-jjcfcfrs.js";
+import "B:/~BUN/root/chunk-tgzmva3g.js";
+import "B:/~BUN/root/chunk-mvgarwbg.js";
+import "B:/~BUN/root/chunk-jh7dpafw.js";
+import "B:/~BUN/root/chunk-aw9w2cra.js";
+import { No, El } from "B:/~BUN/root/chunk-5xxjpbgm.js";
+import { rt } from "B:/~BUN/root/chunk-pw5vpw1q.js";
+import "B:/~BUN/root/chunk-3tj0rd0x.js";
+import "B:/~BUN/root/chunk-gk5jpppj.js";
+import { Se } from "B:/~BUN/root/chunk-7dpyfa5r.js";
+import "B:/~BUN/root/chunk-275mme56.js";
+import "B:/~BUN/root/chunk-exdm7pa7.js";
+import "B:/~BUN/root/chunk-7qeqkjr8.js";
+import "B:/~BUN/root/chunk-c0j3f8cc.js";
+import { Z1n, Otn } from "B:/~BUN/root/chunk-dn8rakwm.js";
+import "B:/~BUN/root/chunk-rxj6qxcq.js";
+import "B:/~BUN/root/chunk-9grc6xh0.js";
+import "B:/~BUN/root/chunk-z84amwaw.js";
+import "B:/~BUN/root/chunk-hkc0g0wr.js";
+import "B:/~BUN/root/chunk-mgb2hezz.js";
+import "B:/~BUN/root/chunk-nvdqbkrt.js";
+import "B:/~BUN/root/chunk-0n2201tc.js";
+import "B:/~BUN/root/chunk-q3srk2wz.js";
+import "B:/~BUN/root/chunk-x4gdh7dq.js";
+import "B:/~BUN/root/chunk-qk52d0gf.js";
+import "B:/~BUN/root/chunk-f25646gd.js";
+import "B:/~BUN/root/chunk-dq7zfs8r.js";
+import "B:/~BUN/root/chunk-z8fd2x5s.js";
+import "B:/~BUN/root/chunk-2fccb5hn.js";
+import "B:/~BUN/root/chunk-8y0chnnr.js";
+import "B:/~BUN/root/chunk-zayh6xmh.js";
+import "B:/~BUN/root/chunk-pmw6knpp.js";
+import "B:/~BUN/root/chunk-e7tskyjv.js";
+import "B:/~BUN/root/chunk-9tkh434c.js";
+import "B:/~BUN/root/chunk-1xwk1cwp.js";
+import "B:/~BUN/root/chunk-c44qc88s.js";
+import "B:/~BUN/root/chunk-tqyz3ejx.js";
+import "B:/~BUN/root/chunk-q0t5e1bx.js";
+import "B:/~BUN/root/chunk-9w4ppz44.js";
+import "B:/~BUN/root/chunk-bn7mrnb3.js";
+import "B:/~BUN/root/chunk-h1tq8zce.js";
+import "B:/~BUN/root/chunk-efcxwmhb.js";
+import "B:/~BUN/root/chunk-d544j3ga.js";
+import "B:/~BUN/root/chunk-hhgqcegv.js";
+import "B:/~BUN/root/chunk-472kxa0t.js";
+import "B:/~BUN/root/chunk-9080897a.js";
+import "B:/~BUN/root/chunk-ggdk44cm.js";
+import "B:/~BUN/root/chunk-cvj1wxdh.js";
+import "B:/~BUN/root/chunk-v1j2tw52.js";
+import "B:/~BUN/root/chunk-gjdk1btq.js";
+import "B:/~BUN/root/chunk-3d7bmmrg.js";
+import "B:/~BUN/root/chunk-e3hz52nd.js";
+import "B:/~BUN/root/chunk-ses0c36n.js";
+import "B:/~BUN/root/chunk-2zdc0br5.js";
+import "B:/~BUN/root/chunk-f0ytfwhx.js";
+import "B:/~BUN/root/chunk-r0jnxjth.js";
+import "B:/~BUN/root/chunk-7j5tvnqj.js";
+import "B:/~BUN/root/chunk-bp7zxkzq.js";
+import "B:/~BUN/root/chunk-429xgjya.js";
+import "B:/~BUN/root/chunk-7qatwz9y.js";
+import "B:/~BUN/root/chunk-b0vcwsh9.js";
+import "B:/~BUN/root/chunk-r4y1700s.js";
+import "B:/~BUN/root/chunk-hcz3kjms.js";
+import "B:/~BUN/root/chunk-7gwemd3j.js";
+import "B:/~BUN/root/chunk-72n790j1.js";
+import "B:/~BUN/root/chunk-t63e78w2.js";
+import "B:/~BUN/root/chunk-66hg7026.js";
+import "B:/~BUN/root/chunk-gt1x0gdb.js";
+import "B:/~BUN/root/chunk-cw2ph5fw.js";
+import "B:/~BUN/root/chunk-ydtn2zrk.js";
+import "B:/~BUN/root/chunk-2vz2n6bw.js";
+import "B:/~BUN/root/chunk-p4t63p2q.js";
+import "B:/~BUN/root/chunk-vd11ggb1.js";
+import "B:/~BUN/root/chunk-tkcgmvh7.js";
+import "B:/~BUN/root/chunk-r9swysv9.js";
+import "B:/~BUN/root/chunk-j97yjp75.js";
+import "B:/~BUN/root/chunk-fb07w30y.js";
+import "B:/~BUN/root/chunk-yjayxywk.js";
+import "B:/~BUN/root/chunk-7ybsx93y.js";
+import "B:/~BUN/root/chunk-t3p4x0tq.js";
+import "B:/~BUN/root/chunk-rx39nt6a.js";
+import "B:/~BUN/root/chunk-r81hcemr.js";
+import "B:/~BUN/root/chunk-vqar0j99.js";
+import "B:/~BUN/root/chunk-tsyp86a9.js";
+import "B:/~BUN/root/chunk-pwz0pnkt.js";
+import "B:/~BUN/root/chunk-0m6vvjrw.js";
+import "B:/~BUN/root/chunk-19m6yp46.js";
+import "B:/~BUN/root/chunk-c8j3aby6.js";
+import "B:/~BUN/root/chunk-j4qesy5s.js";
+import "B:/~BUN/root/chunk-ks7h6f0s.js";
+import "B:/~BUN/root/chunk-h6hab5w2.js";
+import "B:/~BUN/root/chunk-vm7ta03q.js";
+import "B:/~BUN/root/chunk-25j8tcak.js";
+import { Cdt } from "B:/~BUN/root/chunk-k382hx6g.js";
+import "B:/~BUN/root/chunk-9y4mcm7b.js";
+import "B:/~BUN/root/chunk-183sjefx.js";
+import "B:/~BUN/root/chunk-hkh6hras.js";
+import "B:/~BUN/root/chunk-h2myanpn.js";
+import "B:/~BUN/root/chunk-1fjjnb3f.js";
+import "B:/~BUN/root/chunk-r1z1wgpe.js";
+import "B:/~BUN/root/chunk-mtfk0qfd.js";
+import "B:/~BUN/root/chunk-6vykeeak.js";
+import "B:/~BUN/root/chunk-9tx73f8x.js";
+import "B:/~BUN/root/chunk-01qdq3qc.js";
+import "B:/~BUN/root/chunk-s6jt7ap6.js";
+import "B:/~BUN/root/chunk-8gzvb73z.js";
+import "B:/~BUN/root/chunk-2vhqkymb.js";
+import "B:/~BUN/root/chunk-nz6ywek4.js";
+import "B:/~BUN/root/chunk-vnmfp48d.js";
+import "B:/~BUN/root/chunk-1s3ejbv6.js";
+import "B:/~BUN/root/chunk-qegjq8ky.js";
+import "B:/~BUN/root/chunk-nw686kdq.js";
+import "B:/~BUN/root/chunk-7h4t08m3.js";
+import "B:/~BUN/root/chunk-pm2vnc51.js";
+import "B:/~BUN/root/chunk-703q5f7c.js";
+import "B:/~BUN/root/chunk-fvn1tqbf.js";
+import "B:/~BUN/root/chunk-rhpppw15.js";
+import "B:/~BUN/root/chunk-m3ka5wpr.js";
+import "B:/~BUN/root/chunk-w6et565n.js";
+import "B:/~BUN/root/chunk-4mz5gtvt.js";
+import "B:/~BUN/root/chunk-b0envsq0.js";
+import "B:/~BUN/root/chunk-4zxf96ry.js";
+import "B:/~BUN/root/chunk-wje8pvrc.js";
+import "B:/~BUN/root/chunk-p64g0hj8.js";
+import "B:/~BUN/root/chunk-0p489043.js";
+import "B:/~BUN/root/chunk-jwh3r245.js";
+import "B:/~BUN/root/chunk-74f4ssah.js";
+import "B:/~BUN/root/chunk-bvhc5fp3.js";
+import "B:/~BUN/root/chunk-p7n9drc0.js";
+import "B:/~BUN/root/chunk-8pqw0dhk.js";
+import "B:/~BUN/root/chunk-pbq7kcha.js";
+import { O9, Bwr as version, jwr, wSs, vSs, Wwr, Dpe } from "B:/~BUN/root/chunk-qdaqzk6w.js";
+import "B:/~BUN/root/chunk-7z3ndmqr.js";
+import "B:/~BUN/root/chunk-aqd86p9a.js";
+import "B:/~BUN/root/chunk-m42n0wc9.js";
+import "B:/~BUN/root/chunk-m1mbrj05.js";
+import "B:/~BUN/root/chunk-tkkhtfwq.js";
+import "B:/~BUN/root/chunk-n0e205s6.js";
+import "B:/~BUN/root/chunk-351qj2sm.js";
+import "B:/~BUN/root/chunk-3m56hntj.js";
+import "B:/~BUN/root/chunk-00v9f07q.js";
+import "B:/~BUN/root/chunk-yq5myw2y.js";
+import "B:/~BUN/root/chunk-qj8q07z1.js";
+import "B:/~BUN/root/chunk-8zz6429p.js";
+import "B:/~BUN/root/chunk-1g2t7gtx.js";
+import "B:/~BUN/root/chunk-8d9x5cx1.js";
+import "B:/~BUN/root/chunk-rnh5g2g4.js";
+import "B:/~BUN/root/chunk-arcgcnq8.js";
+import "B:/~BUN/root/chunk-maccjk0y.js";
+import "B:/~BUN/root/chunk-gygbhz84.js";
+import "B:/~BUN/root/chunk-5y3z8s12.js";
+import "B:/~BUN/root/chunk-6s78sa1b.js";
+import "B:/~BUN/root/chunk-78zw0pmb.js";
+import "B:/~BUN/root/chunk-89m6ef17.js";
+import "B:/~BUN/root/chunk-dbpgrm5a.js";
+import "B:/~BUN/root/chunk-kcbxq7ta.js";
+import "B:/~BUN/root/chunk-hjwx01fc.js";
+import "B:/~BUN/root/chunk-k8twyg23.js";
+import "B:/~BUN/root/chunk-f06s8ws5.js";
+import "B:/~BUN/root/chunk-0sbppzkc.js";
+import "B:/~BUN/root/chunk-3thbj98m.js";
+import "B:/~BUN/root/chunk-ewwghe6s.js";
+import "B:/~BUN/root/chunk-3d6wa55r.js";
+import "B:/~BUN/root/chunk-xyxdcn7p.js";
+import "B:/~BUN/root/chunk-2wpqgvtg.js";
+import "B:/~BUN/root/chunk-xf25v2pj.js";
+import "B:/~BUN/root/chunk-2ppwmg0p.js";
+import "B:/~BUN/root/chunk-ks90p42g.js";
+import "B:/~BUN/root/chunk-nq10jsxs.js";
+import "B:/~BUN/root/chunk-45m7jrth.js";
+import "B:/~BUN/root/chunk-fvbmxrbm.js";
+import "B:/~BUN/root/chunk-5ec3ghdy.js";
+import "B:/~BUN/root/chunk-5vcgesja.js";
+import "B:/~BUN/root/chunk-s81ha78q.js";
+import "B:/~BUN/root/chunk-esg2vqtm.js";
+import "B:/~BUN/root/chunk-c1tegkb3.js";
+import "B:/~BUN/root/chunk-57vwkt3t.js";
+import "B:/~BUN/root/chunk-nj6es8gv.js";
+import "B:/~BUN/root/chunk-qvd6ab1g.js";
+import "B:/~BUN/root/chunk-0hq7zw7b.js";
+import "B:/~BUN/root/chunk-54b5252d.js";
+import "B:/~BUN/root/chunk-a8k6kvgb.js";
+import "B:/~BUN/root/chunk-v3vx38xn.js";
+import { tn } from "B:/~BUN/root/chunk-2fh8t7m0.js";
+import "B:/~BUN/root/chunk-hq7vjyyz.js";
+import "B:/~BUN/root/chunk-cbtzavb5.js";
+import { qo } from "B:/~BUN/root/chunk-327wfkv3.js";
+import { a_ } from "B:/~BUN/root/chunk-rq3efhmf.js";
+import "B:/~BUN/root/chunk-xc1c9t20.js";
+import "B:/~BUN/root/chunk-t70eh59h.js";
+import "B:/~BUN/root/chunk-jynk66qn.js";
+import "B:/~BUN/root/chunk-gbjd0mrd.js";
+import "B:/~BUN/root/chunk-pe22710m.js";
+import "B:/~BUN/root/chunk-cztbaswn.js";
+import "B:/~BUN/root/chunk-f66jfn8z.js";
+import "B:/~BUN/root/chunk-nnc7bx19.js";
+import "B:/~BUN/root/chunk-nj2k6zhp.js";
+import "B:/~BUN/root/chunk-bjn0ckra.js";
+import "B:/~BUN/root/chunk-r8g7sjc6.js";
+import "B:/~BUN/root/chunk-8tjgv4bf.js";
+import "B:/~BUN/root/chunk-neajqqs3.js";
+import "B:/~BUN/root/chunk-0620nbja.js";
+import "B:/~BUN/root/chunk-dt8mvd2y.js";
+import "B:/~BUN/root/chunk-36awbxtc.js";
+import "B:/~BUN/root/chunk-bb0js010.js";
+import "B:/~BUN/root/chunk-grt0b3xy.js";
+import "B:/~BUN/root/chunk-nqfs3a2f.js";
+import "B:/~BUN/root/chunk-khznyweq.js";
+import "B:/~BUN/root/chunk-4bgwjb4z.js";
+import "B:/~BUN/root/chunk-q9twqrh6.js";
+import "B:/~BUN/root/chunk-hscn9khv.js";
+import "B:/~BUN/root/chunk-qxrfwvgh.js";
+import "B:/~BUN/root/chunk-64czng1s.js";
+import "B:/~BUN/root/chunk-t0dcjzj9.js";
+import "B:/~BUN/root/chunk-sqnhzesh.js";
+import "B:/~BUN/root/chunk-62ynkm2y.js";
+import "B:/~BUN/root/chunk-ynq7sbnz.js";
+import "B:/~BUN/root/chunk-w6w8tkbb.js";
+import "B:/~BUN/root/chunk-wsa799f1.js";
+import "B:/~BUN/root/chunk-tmfad5yp.js";
+import "B:/~BUN/root/chunk-tq0ftdgn.js";
+import { unt, e_e, W5o } from "B:/~BUN/root/chunk-tynpy1t1.js";
+import "B:/~BUN/root/chunk-qc6mvzn1.js";
+import "B:/~BUN/root/chunk-t5twnmpa.js";
+import "B:/~BUN/root/chunk-v1edtzvj.js";
+import "B:/~BUN/root/chunk-aaxpf4ns.js";
+import { uC } from "B:/~BUN/root/chunk-8aq76x8d.js";
+import { cg, To } from "B:/~BUN/root/chunk-z1p6g436.js";
+import { _R } from "B:/~BUN/root/chunk-tzxd23kc.js";
+import { Jer } from "B:/~BUN/root/chunk-m74bnkg1.js";
+import { Bre } from "B:/~BUN/root/chunk-90dg0j6s.js";
+import { vk, xI, ds } from "B:/~BUN/root/chunk-xa5s55y7.js";
+import "B:/~BUN/root/chunk-5xpqz53z.js";
+import "B:/~BUN/root/chunk-91at02k2.js";
+import "B:/~BUN/root/chunk-wa0v8rz4.js";
+import "B:/~BUN/root/chunk-qzg0d2gn.js";
+import "B:/~BUN/root/chunk-mkmzcfhg.js";
+import "B:/~BUN/root/chunk-k0dt33zg.js";
+import "B:/~BUN/root/chunk-vs438w4e.js";
+import "B:/~BUN/root/chunk-88ayp7r7.js";
+import "B:/~BUN/root/chunk-44n8zjk2.js";
+import { e, r } from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import "B:/~BUN/root/chunk-mtfjz3py.js";
+import "B:/~BUN/root/chunk-4b5pvd1y.js";
+import "B:/~BUN/root/chunk-34t4kgx5.js";
+import "B:/~BUN/root/chunk-wrc71zzx.js";
+import "B:/~BUN/root/chunk-g8583f1n.js";
+import { eRe } from "B:/~BUN/root/chunk-crm8tx9v.js";
+import "B:/~BUN/root/chunk-8cxc88ry.js";
+import "B:/~BUN/root/chunk-hmwh3b50.js";
+import "B:/~BUN/root/chunk-em3vcka2.js";
+import "B:/~BUN/root/chunk-a9ypqc22.js";
+import "B:/~BUN/root/chunk-6a5s81az.js";
+import "B:/~BUN/root/chunk-w2w7b0v5.js";
+import "B:/~BUN/root/chunk-dvjfq0e0.js";
+import "B:/~BUN/root/chunk-hz18r0wg.js";
+import "B:/~BUN/root/chunk-0eewnx21.js";
+import "B:/~BUN/root/chunk-8n6xn43n.js";
+import "B:/~BUN/root/chunk-trxfp62p.js";
+import "B:/~BUN/root/chunk-pj523hfd.js";
+import "B:/~BUN/root/chunk-5qc8qrsy.js";
+import "B:/~BUN/root/chunk-5nr49wcm.js";
+import "B:/~BUN/root/chunk-3z0gpazq.js";
+import "B:/~BUN/root/chunk-5gazt5rq.js";
+import "B:/~BUN/root/chunk-10ydm3ka.js";
+import "B:/~BUN/root/chunk-s69xt8gc.js";
+import "B:/~BUN/root/chunk-cy4hjzy6.js";
+import "B:/~BUN/root/chunk-dsby0gnt.js";
+import "B:/~BUN/root/chunk-e0vc8zq3.js";
+import "B:/~BUN/root/chunk-xdhhxjd5.js";
+import "B:/~BUN/root/chunk-yp8sghfs.js";
+import "B:/~BUN/root/chunk-21sxe603.js";
+import "B:/~BUN/root/chunk-2tf4j7v3.js";
+import "B:/~BUN/root/chunk-tx0dq5y3.js";
+import "B:/~BUN/root/chunk-0s9qz1dg.js";
+import "B:/~BUN/root/chunk-0bjget2c.js";
+import "B:/~BUN/root/chunk-gvcmagy5.js";
+import "B:/~BUN/root/chunk-wxq7ypdv.js";
+import "B:/~BUN/root/chunk-c2nm18xm.js";
+import "B:/~BUN/root/chunk-906np0vb.js";
+import "B:/~BUN/root/chunk-k798mzph.js";
+import "B:/~BUN/root/chunk-mrkvqm9w.js";
+import "B:/~BUN/root/chunk-rx9rjzse.js";
+import "B:/~BUN/root/chunk-nt0g6kgc.js";
+import "B:/~BUN/root/chunk-0x393xyp.js";
+import "B:/~BUN/root/chunk-9g7m04dd.js";
+import "B:/~BUN/root/chunk-m5caq93p.js";
+import "B:/~BUN/root/chunk-4gqhj4xs.js";
+import "B:/~BUN/root/chunk-5mwc5s4z.js";
+import "B:/~BUN/root/chunk-g52e2dzb.js";
+import "B:/~BUN/root/chunk-mbp55gyg.js";
+import "B:/~BUN/root/chunk-jcpnv8z5.js";
+import "B:/~BUN/root/chunk-3a551r0y.js";
+import { Z, A, y, B } from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import "B:/~BUN/root/chunk-f29awv9y.js";
+import "B:/~BUN/root/chunk-13n9yynj.js";
+import "B:/~BUN/root/chunk-pp32733x.js";
+import "B:/~BUN/root/chunk-6t9vgqfx.js";
+import "B:/~BUN/root/chunk-455kgrq5.js";
+import "B:/~BUN/root/chunk-nsa84wqe.js";
+import "B:/~BUN/root/chunk-25qdy3nw.js";
+import "B:/~BUN/root/chunk-92fjqg3t.js";
+import "B:/~BUN/root/chunk-6wyzmyt1.js";
+import "B:/~BUN/root/chunk-8vgph9ej.js";
+import "B:/~BUN/root/chunk-cxg2mbf6.js";
+import "B:/~BUN/root/chunk-cv2x0a47.js";
+import "B:/~BUN/root/chunk-0k9rq8e2.js";
+import "B:/~BUN/root/chunk-k8727s7d.js";
+import "B:/~BUN/root/chunk-7df33jce.js";
+import "B:/~BUN/root/chunk-f3f5k3wx.js";
+import "B:/~BUN/root/chunk-46bqx6b8.js";
+import "B:/~BUN/root/chunk-ma5pke8s.js";
+import "B:/~BUN/root/chunk-cc0we03s.js";
+import "B:/~BUN/root/chunk-p95zaxtt.js";
+import "B:/~BUN/root/chunk-6bmmxtvh.js";
+import "B:/~BUN/root/chunk-3hya8nsv.js";
+import "B:/~BUN/root/chunk-f561y43v.js";
+import "B:/~BUN/root/chunk-xnas864x.js";
+import "B:/~BUN/root/chunk-ft39p62b.js";
+import "B:/~BUN/root/chunk-nbprdt7j.js";
+import "B:/~BUN/root/chunk-th6c28ah.js";
+import "B:/~BUN/root/chunk-bhfm57j1.js";
+import "B:/~BUN/root/chunk-rzekebyp.js";
+import "B:/~BUN/root/chunk-stjjr4k8.js";
+import "B:/~BUN/root/chunk-y424etr5.js";
+import "B:/~BUN/root/chunk-3npegs3h.js";
+import "B:/~BUN/root/chunk-410t5g3b.js";
+import "B:/~BUN/root/chunk-b4xxgr0r.js";
+import "B:/~BUN/root/chunk-0p1hpv0s.js";
+import "B:/~BUN/root/chunk-hdc8p5sh.js";
+import "B:/~BUN/root/chunk-hgpj62j5.js";
+import "B:/~BUN/root/chunk-4yrr52wq.js";
+import "B:/~BUN/root/chunk-ac9kwvf4.js";
+import "B:/~BUN/root/chunk-6n2cf80v.js";
+import { Lin, NIr } from "B:/~BUN/root/chunk-aap3xx9k.js";
+import "B:/~BUN/root/chunk-asrchj7k.js";
+import "B:/~BUN/root/chunk-0zewma8k.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-9929fpp1.js";
+import { EOo, hh } from "B:/~BUN/root/chunk-mbz8rhex.js";
+import "B:/~BUN/root/chunk-r0sre1ss.js";
+import "B:/~BUN/root/chunk-q56gve2c.js";
+import "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-g58w39t3.js";
+import "B:/~BUN/root/chunk-dyer18a2.js";
+import "B:/~BUN/root/chunk-xpy44yvr.js";
+import "B:/~BUN/root/chunk-et37ax67.js";
+import "B:/~BUN/root/chunk-4qc55bxf.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import { ie } from "B:/~BUN/root/chunk-t7350kw8.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-3m71dqxd.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+import { lstatSync as Ne, realpathSync as ut } from "fs";
+import { homedir as lt } from "os";
+import { basename as Xt, dirname as me, join as ee, resolve as fe } from "path";
+B();
+var vt = 8,
+  Ct = 8,
+  kt = 2,
+  Fe = 3,
+  Rt = 3,
+  enlarge = "Enlarge the terminal (or reduce the font size) and run /settings-review again to see the whole change before accepting; or discard it.",
+  header = "Staged change to ",
+  children_4 = "A linked path; accepting writes the file it points to \u2192",
+  first_2 = "Accepting writes \u2192 ";
+var xt = /[\x00-\x08\x0a-\x1f\x7f-\x9f\u2028\u2029\u2800\p{Cf}\p{Cs}\p{Default_Ignorable_Code_Point}]/gu;
+function pe(t, o) {
+  return t.replace(xt, "\uFFFD").replaceAll("\t", o);
+}
+function Le(t, o) {
+  return hh(pe(t, o));
+}
+function nt(t) {
+  return /[\p{Mn}\p{Me}]/u.test(t) && ie(t) === 0;
+}
+function Ve(t) {
+  return !nt(t);
+}
+function Je(t) {
+  return EOo(t) && !nt(t);
+}
+function de(t, o) {
+  let h = 0;
+  for (let u of t) if (o(u)) h++;
+  return h;
+}
+function Ie(t, o) {
+  return de(o, Ve) >= de(t, Ve) && de(o, Je) === de(t, Je) && (!G0e.test(o) || G0e.test(t));
+}
+function K(t) {
+  return Le(Es(t), "\uFFFD").replace(/ +/g, " ");
+}
+var ot = "    ";
+function At(t) {
+  return Le(t, ot);
+}
+function ge(t) {
+  return Le(t, "\uFFFD").replace(/ +/g, " ");
+}
+function H(t, o, h) {
+  let rows = Jer(t, Math.max(1, o));
+  if (rows.length <= h) return {
+    rows: rows,
+    cut: 0
+  };
+  let a = [...t].length,
+    rows_2 = rows.slice(0, h),
+    f = ` \u2026 (+${a} chars)`.length + 1,
+    C = Jer(rows_2[h - 1], Math.max(1, o - f))[0] ?? "";
+  rows_2[h - 1] = C;
+  let cut = a - rows_2.reduce((acc, item) => acc + [...item].length, 0);
+  return rows_2[h - 1] = `${C} \u2026 (+${cut} chars)`, {
+    rows: rows_2,
+    cut: cut
+  };
+}
+function Ft(t, o) {
+  return $t(qu(t, Math.max(1, o), "wrap"), `
+`) + 1;
+}
+var It = /[\x00-\x08\x0b-\x1f\x7f]|[^\x00-\x7f]/gu,
+  Dt = /[\x00-\x1f\x7f]|[^\x00-\x7f]/gu;
+function ue(t, o) {
+  return t.match(o === "path" ? Dt : It)?.length ?? 0;
+}
+function Qe(t) {
+  let o = ld(ge(t.by.sessionId), 8);
+  return t.by.origin === "served" ? `by a cloud session (\u2026${o}) this computer served` : `by a session on this computer (\u2026${o})`;
+}
+function $e(t) {
+  return t.resolvedPath === t.path;
+}
+var it = /["\u00ab\u00bb\u201c-\u201f\u2033\u2036\u301d-\u301f\uff02]/g;
+function Pt(t, o) {
+  let h = [...t],
+    u = 0,
+    a = h.length;
+  while (a > 0) {
+    let S = h[a - 1],
+      f = S.length === 1 && S < "\x80" ? 1 : 2;
+    if (u + f > o) break;
+    u += f, a--;
+  }
+  return a === 0 ? t : `\u2026${h.slice(a).join("")}`;
+}
+function Lt(t) {
+  return `File: "${Pt(K(t.path).replace(it, "'"), 60)}"`;
+}
+function outcome(t) {
+  switch (t) {
+    case "applied":
+      return "Applied the staged change: the file is written and this session has reloaded it; settings that are only read at startup take effect next launch.";
+    case "conflict":
+      return "The file changed after this proposal was staged, so it was not applied. Discard it, or ask Claude to make the change again.";
+    case "stale":
+      return "The staged proposal changed while you were reviewing it, so it was not applied. Run /settings-review again to see the current one.";
+    case "redirected":
+      return "The path no longer leads to the file it did when this change was staged (a directory on the way now points elsewhere, or a link has appeared at it), so it was not applied. Discard it, or ask Claude to make the change again.";
+    case "hard_linked":
+      return "This settings file has other names on disk (a hard link), so it could not be rewritten safely and the change was not applied. It stays staged. Remove the extra link, then accept it again.";
+    case "gone":
+      return "The staged change is no longer in the review store.";
+    case "not_writable":
+      return "The file could not be written (a managed, read-only or locked location), so the change was not applied. It stays staged.";
+    case "tampered":
+      return "The proposal file shown to your ConfigChange hooks changed while they ran, so nothing was applied. It stays staged.";
+    case "blocked":
+      return `A ConfigChange hook blocked the change (hooks are shown the proposed content in a ${jwr}* file beside the settings file), so it was not applied: the file was never touched, and the change stays staged.`;
+  }
+}
+var Ot = {
+  header: header,
+  listTitle: t => `${t} settings ${t === 1 ? "change" : "changes"} staged for your review`,
+  listIntro: "Claude changed these Claude Code settings files without you approving it here, so the changes were held instead of applied. Nothing takes effect until you accept it.",
+  listMore: t => `+${t} more staged ${t === 1 ? "change" : "changes"} not listed; review these first`,
+  listNote: (t, o) => `${mv(new Date(t.stagedAt))} \xB7 ${Qe(t)}${o === "unreadable" ? " \xB7 file unreadable, cannot apply" : o === "changed" ? " \xB7 file changed since, cannot apply" : ""}`,
+  byline: t => `${t.by.tool} \xB7 ${mv(new Date(t.stagedAt))} \xB7 ${Qe(t)}`,
+  acceptLabel: "Accept and apply this change",
+  discardLabel: "Discard this change",
+  enlarge: enlarge,
+  underReview: "proposal",
+  unreadable: t => `This file could not be read (${t}), so the proposal cannot be applied here. Fix what keeps the file from being read, or discard it.`,
+  notApplicable: "This file changed after this was staged (or the proposal no longer matches what was recorded), so it cannot be applied. Discard it, or ask Claude to make the change again.",
+  diffUnavailable: "The diff for this proposal could not be computed, so it cannot be accepted here. Compare the file with what Claude proposed yourself, or discard it.",
+  later: t => `Left the staged change for later \xB7 /settings-review. ${t}`,
+  outcome: outcome,
+  failed: (t, o, h) => `Could not ${t} the staged change. Nothing was applied; it stays staged. Error: "${o}" ${h}`
+};
+function Nt(t, o, h) {
+  let shown = [],
+    a = o,
+    hiddenLines = 0,
+    f = !1;
+  for (let C of t) {
+    if (f) {
+      hiddenLines += C.lines.length;
+      continue;
+    }
+    if (shown.length > 0) a -= 1;
+    let k = [];
+    for (let v of C.lines) {
+      if (f) {
+        hiddenLines++;
+        continue;
+      }
+      let R = v.slice(1),
+        F = At(R),
+        rows_3 = Jer(F, h);
+      if (rows_3.length <= a && Ie(pe(R, ot), F)) {
+        let D = v[0];
+        k.push({
+          marker: D === "+" || D === "-" ? D : " ",
+          rows: rows_3
+        }), a -= rows_3.length;
+      } else f = !0, hiddenLines++;
+    }
+    if (k.length > 0) shown.push(k);
+  }
+  return {
+    shown: shown,
+    hiddenLines: hiddenLines
+  };
+}
+function Wt({
+  change: change,
+  current: current
+}) {
+  let rawHunks = Dpe({
+      filePath: change.path,
+      oldContent: current ?? "",
+      newContent: change.proposedContent,
+      rawText: !0
+    }),
+    rawSummary = Wwr(current, change.proposedContent);
+  return {
+    rawHunks: rawHunks,
+    diffUnavailable: rawHunks.length === 0 && (current ?? "") !== change.proposedContent,
+    rawSummary: rawSummary,
+    hiddenCodepoints: ue(change.path, "path") + ($e(change) ? 0 : ue(change.resolvedPath, "path")) + ue(change.proposedContent, "text") + rawSummary.reduce((acc, item) => acc + ue(item, "path"), 0)
+  };
+}
+function Q(t) {
+  let S = w(11),
+    {
+      first: first,
+      rows: rows_4,
+      bold: bold,
+      color: color
+    } = t,
+    children;
+  if (S[0] !== bold || S[1] !== color || S[2] !== first || S[3] !== rows_4) {
+    let C;
+    if (S[5] !== bold || S[6] !== color || S[7] !== first) C = (k, v) => r(n, {
+      bold: bold,
+      color: color,
+      children: [v === 0 ? first : " ".repeat(first.length), k]
+    }, v), S[5] = bold, S[6] = color, S[7] = first, S[8] = C;else C = S[8];
+    children = rows_4.map(C);
+    S[0] = bold, S[1] = color, S[2] = first, S[3] = rows_4, S[4] = children;
+  } else children = S[4];
+  let C;
+  if (S[9] !== children) C = e(s, {
+    flexDirection: "column",
+    children: children
+  }), S[9] = children, S[10] = C;else C = S[10];
+  return C;
+}
+var children_2 = "\u2502",
+  Ut = 4;
+function st(t) {
+  let u = w(7),
+    {
+      marker: marker,
+      rows: rows_5
+    } = t,
+    children_3;
+  if (u[0] !== marker || u[1] !== rows_5) {
+    let S;
+    if (u[3] !== marker) S = (f, C) => r(n, {
+      dimColor: marker === " ",
+      children: [e(n, {
+        dimColor: !0,
+        children: children_2
+      }), r(n, {
+        backgroundColor: marker === "+" ? "diffAdded" : marker === "-" ? "diffRemoved" : void 0,
+        children: [C === 0 ? marker : " ", " ", f]
+      })]
+    }, C), u[3] = marker, u[4] = S;else S = u[4];
+    children_3 = rows_5.map(S);
+    u[0] = marker, u[1] = rows_5, u[2] = children_3;
+  } else children_3 = u[2];
+  let S;
+  if (u[5] !== children_3) S = e(s, {
+    flexDirection: "column",
+    children: children_3
+  }), u[5] = children_3, u[6] = S;else S = u[6];
+  return S;
+}
+function at({
+  changes: changes,
+  deps: deps,
+  onDone: onDone,
+  wording = Ot
+}) {
+  let {
+      columns: columns,
+      rows: rows_6
+    } = us(Te()),
+    f = bl(),
+    C = Math.max(8, columns - 2 * (f ? xI : vk)),
+    [k, v] = y(changes.length === 1 ? changes[0] : void 0),
+    [isDisabled, F] = y(!1),
+    T = A(!1),
+    D = xa(),
+    W = A(Date.now()),
+    {
+      refusedWithin: refusedWithin,
+      noteRefused: noteRefused,
+      epoch: epoch
+    } = cs(),
+    I = rc(`${k?.change.id ?? ""}:${epoch}`, No);
+  function refuseInput() {
+    if (El(D, W.current, No) || refusedWithin(No)) return noteRefused(), !0;
+    return !1;
+  }
+  let oe = qo(() => onDone());
+  rt("confirm:no", () => onDone(), {
+    context: "Confirmation",
+    isActive: k === void 0
+  });
+  let Me = Z(() => k === void 0 ? void 0 : Wt(k), [k]);
+  if (k === void 0 || Me === void 0) {
+    let x = changes.slice(0, vt),
+      P = changes.length - x.length,
+      E = C - 4;
+    return e(ds, {
+      color: "permission",
+      children: r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [e(n, {
+          bold: !0,
+          children: wording.listTitle(changes.length)
+        }), e(n, {
+          dimColor: !0,
+          children: wording.listIntro
+        }), r(tn, {
+          onSelect: N => {
+            let le = x[N];
+            if (le === void 0) {
+              onDone();
+              return;
+            }
+            W.current = Date.now(), v(le);
+          },
+          children: [x.map(({
+            change: change_2,
+            applicable: applicable,
+            readError: readError
+          }) => e(tn.Item, {
+            label: H(K(change_2.path), E, 1).rows[0] ?? "",
+            description: H(`${wording.listNote(change_2, readError !== null ? "unreadable" : applicable ? void 0 : "changed")}${$e(change_2) ? "" : ` \xB7 writes \u2192 ${K(change_2.resolvedPath)}`}`, E, 1).rows[0]
+          }, `open:${change_2.id}`)), e(tn.Item, {
+            label: "Done"
+          }, "done")]
+        }), P > 0 && e(n, {
+          dimColor: !0,
+          children: wording.listMore(P)
+        }), e(_R, {
+          exitActive: !1,
+          children: oe.pending ? `Press ${oe.keyName} again to close` : r(Se, {
+            children: [e(q, {
+              chord: "enter",
+              action: "open"
+            }), e(q, {
+              chord: "escape",
+              action: "close"
+            })]
+          })
+        })]
+      })
+    });
+  }
+  let {
+      change: change_3,
+      readError: readError_2,
+      applicable: applicable_2
+    } = k,
+    {
+      rawHunks: rawHunks_2,
+      diffUnavailable: diffUnavailable,
+      rawSummary: rawSummary_2,
+      hiddenCodepoints: hiddenCodepoints
+    } = Me,
+    j = !$e(change_3),
+    ye = H(K(change_3.path), C - wording.header.length, Fe),
+    be = j ? K(change_3.resolvedPath) : "",
+    wt = Ie(pe(Es(change_3.path), "\uFFFD").replace(/ +/g, " "), K(change_3.path)) && (!j || Ie(pe(Es(change_3.resolvedPath), "\uFFFD").replace(/ +/g, " "), be)),
+    ve = j ? H(be, C - 2, Fe) : {
+      rows: [],
+      cut: 0
+    },
+    Ce = j ? H(be, C - first_2.length, Fe) : {
+      rows: [],
+      cut: 0
+    },
+    re = rawSummary_2.slice(0, Ct).map(item => H(ge(item), C - 2, kt).rows),
+    ke = rawSummary_2.length - re.length,
+    children_5 = wording.byline(change_3),
+    children_6 = ke > 0 ? `+${ke} more top-level ${O(ke, "key")} changed, not listed; the diff below has them` : "",
+    children_7 = hiddenCodepoints > 0 ? `${hiddenCodepoints} ${O(hiddenCodepoints, "character")} in this ${wording.underReview} ${O(hiddenCodepoints, "is", "are")} not plain ASCII (such characters may not display as written, or may look like others; controls show here as \uFFFD). Compare the file yourself before accepting; what you accept is the ${wording.underReview} as written.` : "",
+    children_9 = readError_2 !== null ? wording.unreadable(H(ge(readError_2), 48, 1).rows[0] ?? "") : !applicable_2 ? wording.notApplicable : diffUnavailable ? wording.diffUnavailable : "",
+    V = children_9 === "",
+    children_10 = V && hiddenCodepoints > 0 ? `Accepting applies ${hiddenCodepoints} ${O(hiddenCodepoints, "character")} that ${O(hiddenCodepoints, "is", "are")} not plain ASCII` : "",
+    U = x => x === "" ? 0 : Ft(x, C),
+    Y = x => x > 0 ? x + 1 : 0,
+    yt = Rt + (f ? 0 : 2) + Y(ye.rows.length + (j ? U(children_4) + ve.rows.length : 0) + U(children_5)) + Y(re.reduce((acc, item) => acc + item.length, 0) + U(children_6)) + Y(U(children_7)) + Y(U(children_10)) + Y(Ce.rows.length) + U(`+${rawHunks_2.reduce((acc, item) => acc + item.lines.length, 0)} more changed lines are not shown; the path is too long to show whole; the file it points to is too long to show whole \u2014 ${wording.enlarge}`) + Y(3),
+    {
+      shown: shown_2,
+      hiddenLines: hiddenLines_2
+    } = V ? Nt(rawHunks_2, Math.max(0, rows_6 - yt), C - Ut) : {
+      shown: [],
+      hiddenLines: 0
+    },
+    Ae = [hiddenLines_2 > 0 ? `${hiddenLines_2} more changed ${O(hiddenLines_2, "line")} ${O(hiddenLines_2, "is", "are")} not shown` : "", ye.cut > 0 || !wt ? "the path is too long to show whole" : "", ve.cut > 0 || Ce.cut > 0 ? "the file it points to is too long to show whole" : ""].filter(item => item !== ""),
+    children_8 = V && Ae.length > 0 ? `+${Ae.join("; ")} \u2014 ${wording.enlarge}` : "",
+    ae = V && Ae.length === 0,
+    J = Lt(change_3);
+  async function Ke(x) {
+    if (T.current || refuseInput()) return;
+    if (T.current = !0, x === "later") {
+      if (changes.length === 1) onDone(wording.later(J));else T.current = !1, v(void 0);
+      return;
+    }
+    F(!0);
+    let age_ms = Date.now() - Date.parse(change_3.stagedAt);
+    try {
+      if (x === "discard") {
+        let N = await vSs(change_3.id, deps);
+        if (i("tengu_settings_change_reviewed", {
+          action: c(N ? "discard" : "discard_gone"),
+          origin: c(change_3.by.origin),
+          age_ms: age_ms
+        }), N) g("settings_quarantine"), onDone(`Discarded the staged change. The file was not touched. ${J}`);else p("settings_quarantine", "discard_gone"), onDone(`The staged proposal changed while you were reviewing it, so nothing was discarded. Run /settings-review again to see the current one. ${J}`);
+        return;
+      }
+      if (!ae) return;
+      let E = await wSs(change_3, deps);
+      if (i("tengu_settings_change_reviewed", {
+        action: c(E === "applied" ? "accept" : E),
+        origin: c(change_3.by.origin),
+        age_ms: age_ms
+      }), E === "applied") g("settings_quarantine");else p("settings_quarantine", `accept_${E}`);
+      onDone(`${wording.outcome(E)} ${J}`);
+    } catch (error) {
+      m("settings_quarantine", "review_action_failed"), onDone(wording.failed(x, H(ge(d(error)).replace(it, "'"), 120, 1).rows[0] ?? "", J));
+    } finally {
+      T.current = !1, F(!1);
+    }
+  }
+  return e(ds, {
+    color: "permission",
+    children: r(s, {
+      flexDirection: "column",
+      gap: 1,
+      children: [r(s, {
+        flexDirection: "column",
+        children: [e(Q, {
+          first: wording.header,
+          rows: ye.rows,
+          bold: !0
+        }), j && r(s, {
+          flexDirection: "column",
+          children: [e(n, {
+            children: children_4
+          }), e(Q, {
+            first: "  ",
+            rows: ve.rows
+          })]
+        }), e(n, {
+          dimColor: !0,
+          children: children_5
+        })]
+      }), re.length > 0 && r(s, {
+        flexDirection: "column",
+        children: [re.map((x, index) => e(Q, {
+          first: "\xB7 ",
+          rows: x
+        }, index)), children_6 !== "" && e(n, {
+          dimColor: !0,
+          children: children_6
+        })]
+      }), children_7 !== "" && e(n, {
+        color: "warning",
+        children: children_7
+      }), V ? r(s, {
+        flexDirection: "column",
+        children: [shown_2.map((item, index) => r(s, {
+          flexDirection: "column",
+          children: [index > 0 && r(n, {
+            dimColor: !0,
+            children: [children_2, " ..."]
+          }), item.map((item, index) => e(st, {
+            marker: item.marker,
+            rows: item.rows
+          }, index))]
+        }, index)), children_8 !== "" && e(n, {
+          color: "warning",
+          children: children_8
+        })]
+      }) : e(n, {
+        color: "warning",
+        children: children_9
+      }), ae && children_10 !== "" && e(n, {
+        color: "warning",
+        children: children_10
+      }), ae && j && e(Q, {
+        first: first_2,
+        rows: Ce.rows,
+        color: "warning"
+      }), e(Xe, {
+        isDisabled: isDisabled,
+        hideIndexes: !0,
+        refuseInput: refuseInput,
+        options: [...(ae ? [{
+          label: wording.acceptLabel,
+          value: "accept"
+        }] : []), ...(wording.discardLabel !== void 0 ? [{
+          label: wording.discardLabel,
+          value: "discard"
+        }] : []), {
+          label: "Decide later",
+          value: "later"
+        }],
+        defaultFocusValue: "later",
+        onChange: x => {
+          Ke(x).catch(l);
+        },
+        onCancel: () => {
+          Ke("later").catch(l);
+        }
+      }, I.remountKey), e(_R, {
+        exitActive: !1,
+        children: oe.pending ? `Press ${oe.keyName} again to close` : r(Se, {
+          children: [e(q, {
+            chord: "enter",
+            action: "choose"
+          }), e(q, {
+            chord: "escape",
+            action: "decide later"
+          })]
+        })
+      })]
+    })
+  });
+}
+var te = `claude ${Lin}`;
+function ct(t) {
+  return mu(Es(t));
+}
+var zt = ["project", "local", "legacy"],
+  dt = {
+    own: eE.default,
+    own_cowork: eE.cowork
+  };
+function we(t) {
+  return t === "own" || t === "own_cowork";
+}
+function Oe(t) {
+  let o = (h, u) => {
+    try {
+      let a = Ne(h);
+      return a.isSymbolicLink() || u && a.isFile() && a.nlink > 1;
+    } catch (error) {
+      return !G(error);
+    }
+  };
+  return o(me(t), !1) || o(t, !0);
+}
+function qt(t) {
+  return [t.project, t.local, t.legacy].flatMap(item => item === null ? [] : [me(me(item))]);
+}
+function Vt(t, o) {
+  let h = v => {
+      try {
+        return [fe(v), ut(v)];
+      } catch {
+        return [fe(v)];
+      }
+    },
+    u = o.flatMap(h),
+    a = v => u.some(item => Cdt(v, item)),
+    S = (v, R) => Cdt(v, R) && Cdt(R, v);
+  if (!S(fe(t), fe(lt(), ".claude")) && h(t).some(a)) return !0;
+  let f = Ee(t);
+  if (f === "absent") return !1;
+  if (f === "unfollowable") return !0;
+  let C = Ee(lt());
+  if (!(typeof C === "object" && S(f.path, ee(C.path, ".claude"))) && a(f.path)) return !0;
+  for (let v of Object.values(eE)) {
+    let R = ee(t, v);
+    try {
+      let T = Ne(R);
+      if (T.isFile() && T.nlink > 1) return !0;
+    } catch (error) {
+      if (G(error)) continue;
+      return !0;
+    }
+    let F = Ee(R);
+    if (F === "absent") continue;
+    if (F === "unfollowable" || !S(F.path, ee(f.path, v)) && a(F.path)) return !0;
+  }
+  return !1;
+}
+function Ee(t) {
+  try {
+    return {
+      path: ut(t)
+    };
+  } catch (error) {
+    if (!G(error)) return "unfollowable";
+  }
+  try {
+    return Ne(t), "unfollowable";
+  } catch (error) {
+    return G(error) ? "absent" : "unfollowable";
+  }
+}
+function Jt(t) {
+  if (!t.stdinIsTTY || !t.stdoutIsTTY) return `${te} shows you changes and waits for your answer, so it needs a terminal. Run it yourself in a terminal in the project folder.`;
+  if (!t.verbFirst || t.settingsGivenOnCommandLine || t.allowedSources.some(item => ef.has(item))) return `Run it as "${te}", with nothing between "claude" and "${Lin}": it has to start with this folder's own settings files switched off.`;
+  if (t.configHomeRedirectedIntoFolder) return "Run it with CLAUDE_CONFIG_DIR set outside this folder: it points into the folder, so the settings this process itself reads are this folder's own files, and it has to start with those switched off.";
+  return;
+}
+function ht(t, o, h, u = Oe) {
+  let files = [],
+    S = [],
+    f = [],
+    C = t.folder(o.key);
+  for (let slot of zt) {
+    let path = o[slot];
+    if (path === null) continue;
+    if (o.linkedAway.includes(slot) || u(path)) {
+      f.push(path);
+      continue;
+    }
+    let F = h(path);
+    if (u(path)) {
+      f.push(path);
+      continue;
+    }
+    if (F === "unreadable") {
+      S.push(path);
+      continue;
+    }
+    let live = F === "absent" ? null : O9(F.text),
+      movedFrom = typeof C === "object" ? C[slot] : path,
+      W = C === "unreadable" ? "unreadable" : movedFrom === null ? "none" : t.file(movedFrom);
+    if (W === "unreadable") {
+      files.push({
+        slot: slot,
+        path: path,
+        accepted: null,
+        live: live,
+        note: "record_unreadable"
+      });
+      continue;
+    }
+    if (W === "none") {
+      if (typeof C === "object" && live !== null) files.push({
+        slot: slot,
+        path: path,
+        accepted: null,
+        live: live,
+        note: "new_here"
+      });
+      continue;
+    }
+    if (unt(live) === W.sha256) continue;
+    files.push(movedFrom !== null && movedFrom !== path ? {
+      slot: slot,
+      path: path,
+      accepted: W.text,
+      live: live,
+      note: "moved",
+      movedFrom: movedFrom
+    } : {
+      slot: slot,
+      path: path,
+      accepted: W.text,
+      live: live,
+      note: "changed"
+    });
+  }
+  let k = v => C !== "none" || t.file(v) !== "none";
+  return {
+    files: files,
+    unreadable: S.filter(k),
+    linked: f.filter(k)
+  };
+}
+function gt(t, o) {
+  let h = o(t);
+  if (h === "unreadable") return "unreadable";
+  if (h === "absent") return null;
+  let {
+    settings: settings
+  } = Ow(O9(h.text), t);
+  return settings === null ? "unreadable" : Otn(Z1n(settings));
+}
+function Qt(t) {
+  if (t === void 0) return [];
+  let o = me(t);
+  return [{
+    slot: "own",
+    path: ee(o, dt.own)
+  }, {
+    slot: "own_cowork",
+    path: ee(o, dt.own_cowork)
+  }];
+}
+function pt(t, {
+  slot: slot_2,
+  path: path_2
+}, u) {
+  let a = t.file(path_2);
+  if (a === "none") return;
+  let live_2 = gt(path_2, u);
+  if (live_2 === "unreadable") return "unreadable";
+  let f = a === "unreadable" || a.text === null ? null : Ow(a.text, path_2).settings;
+  if (a === "unreadable" || a.text !== null && f === null) return {
+    slot: slot_2,
+    path: path_2,
+    accepted: null,
+    live: live_2,
+    note: "record_unreadable"
+  };
+  let accepted = f === null ? null : Otn(Z1n(f)),
+    k = Otn({});
+  return (accepted ?? k) === (live_2 ?? k) ? void 0 : {
+    slot: slot_2,
+    path: path_2,
+    accepted: accepted,
+    live: live_2,
+    note: "changed"
+  };
+}
+function Zt(t, o) {
+  return t.map(item => {
+    let proposedContent = item.live ?? "";
+    return {
+      change: {
+        id: item.slot,
+        path: item.path,
+        resolvedPath: item.path,
+        baseSha256: unt(item.accepted),
+        proposedSha256: unt(proposedContent) ?? "",
+        proposedContent: proposedContent,
+        stagedAt: o.toISOString(),
+        by: {
+          tool: "Write",
+          origin: "local",
+          sessionId: ""
+        }
+      },
+      current: item.accepted,
+      readError: null,
+      applicable: !0
+    };
+  });
+}
+var en = {
+  own: "user_settings",
+  own_cowork: "user_settings",
+  project: "project_settings",
+  local: "local_settings",
+  legacy: "local_settings"
+};
+function nn(t) {
+  let o = new Map(t.files.map(item => [item.path, item])),
+    reviewed = Zt(t.files, t.now()),
+    entries = reviewed.map(({
+      change: change_4
+    }) => change_4),
+    a = 0,
+    S = f => {
+      if (we(f.slot)) {
+        let k = pt(t.store, {
+          slot: f.slot,
+          path: f.path
+        }, t.readLive);
+        return k === void 0 || k === "unreadable" ? f.live : k.accepted;
+      }
+      let C = ht(t.store, t.slots, t.readLive).files.find(item => item.slot === f.slot);
+      return C === void 0 ? f.live : C.accepted;
+    };
+  return {
+    accepted: () => a,
+    reviewed: reviewed,
+    readStore: async () => _({
+      version: version,
+      entries: entries
+    }),
+    writeStore: async () => {},
+    deleteStore: async () => {},
+    readTarget: async f => {
+      let C = o.get(f);
+      return C === void 0 ? null : S(C);
+    },
+    locate: async f => f,
+    isSettingsFile: async f => o.has(f),
+    configChangeBlocked: async (f, C, k) => {
+      let v = o.get(f);
+      return v === void 0 || t.gate === void 0 ? !0 : t.gate(en[v.slot], k);
+    },
+    afterApplied: () => {},
+    now: t.now,
+    writeTarget: async ({
+      path: path_3,
+      content: C,
+      blockedOnceWritten: blockedOnceWritten
+    }) => {
+      let v = o.get(path_3);
+      if (v === void 0 || C !== (v.live ?? "")) return "changed";
+      let R = await W5o({
+        name: Xt(path_3),
+        text: C,
+        ...(t.shownDir !== void 0 && {
+          dir: t.shownDir
+        })
+      }, blockedOnceWritten);
+      if (R !== "allowed") return R;
+      if (S(v) !== v.accepted) return "changed";
+      if (we(v.slot)) {
+        if (gt(path_3, t.readLive) !== v.live) return "changed";
+        return t.store.recordFile(path_3, v.live, "person"), a++, "written";
+      }
+      if (Oe(path_3)) return "redirected";
+      let F = t.readLive(path_3);
+      if (F === "unreadable" || unt(F === "absent" ? null : O9(F.text)) !== unt(v.live)) return "changed";
+      if (Oe(path_3)) return "redirected";
+      t.store.recordFile(path_3, v.live, "person");
+      let T = t.store.folder(t.slots.key);
+      if (T === "unreadable") t.store.recordFolder(t.slots.key, {
+        project: t.slots.project,
+        local: t.slots.local,
+        legacy: t.slots.legacy
+      });else if (T !== "none" && T[v.slot] !== path_3) t.store.recordFolder(t.slots.key, {
+        ...T,
+        [v.slot]: path_3
+      });
+      return a++, "written";
+    }
+  };
+}
+function outcome_2(t) {
+  switch (t) {
+    case "applied":
+      return "Accepted. Cloud sessions use this version from the next time this computer starts serving one. A session that is using this computer now keeps the version it started with.";
+    case "conflict":
+    case "stale":
+    case "gone":
+      return `The file, or what you last accepted, changed while you were looking, so nothing was accepted. Run ${te} again to see it as it is now.`;
+    case "redirected":
+    case "hard_linked":
+      return "The path no longer leads to the file it did when this was shown, so nothing was accepted.";
+    case "not_writable":
+      return "This computer's record of what you accept could not be written, so nothing was accepted.";
+    case "tampered":
+      return "The copy shown to your ConfigChange hooks changed while they ran, so nothing was accepted.";
+    case "blocked":
+      return "A ConfigChange hook blocked this change (hooks are shown a copy of the new content), so nothing was accepted. The file itself was not touched.";
+  }
+}
+function rn(t) {
+  let o = new Map(t.map(item => [item.slot, item])),
+    h = a => {
+      let S = o.get(a.id);
+      if (S !== void 0 && we(S.slot) && S.note === "changed") return S.live === null ? "Your own settings file is gone; cloud sessions keep using what you accepted" : "Your own settings, the part kept for cloud sessions: not what you accepted, which cloud sessions keep using";
+      switch (S?.note) {
+        case "new_here":
+          return "Cloud sessions have used this folder before, and never with a file at this path, so nothing in it counts until you accept it";
+        case "moved":
+          return "This folder's settings file used to be somewhere else; what you accepted there still counts until you accept this one";
+        case "record_unreadable":
+          return "This computer's record of what you accepted could not be read, so the whole file is shown as new and none of it counts until you accept it";
+        case "changed":
+        case void 0:
+          return S?.live === null ? "The file is gone; cloud sessions keep using the version you accepted" : S?.accepted === null ? "There was no file here when you last accepted, so nothing in it counts until you accept it" : "Different from the version you accepted; cloud sessions keep using that one";
+      }
+    },
+    u = t.some(item => we(item.slot));
+  return {
+    header: "Not accepted for cloud sessions yet: ",
+    listTitle: a => `${a} ${u ? "" : "project "}settings ${a === 1 ? "file is" : "files are"} not what you accepted for cloud sessions`,
+    listIntro: u ? "Cloud sessions that use this computer keep the version of each file that you last accepted. A cloud session runs commands here, so look at each change before you accept it. Nothing changes until you do." : "Cloud sessions that use this computer keep the version of each file that you last accepted. A cloud session can write to this folder, so look at each change before you accept it. Nothing changes until you do.",
+    listMore: a => `+${a} more not listed; review these first`,
+    listNote: h,
+    byline: h,
+    acceptLabel: "Accept this version for cloud sessions",
+    discardLabel: void 0,
+    enlarge: `Enlarge the terminal (or reduce the font size) and run ${te} again to see the whole change before accepting.`,
+    underReview: "file",
+    unreadable: a => `What you last accepted could not be read (${a}), so this cannot be accepted here.`,
+    notApplicable: `What you last accepted changed since this was shown. Run ${te} again.`,
+    diffUnavailable: "The difference could not be computed, so this cannot be accepted here. Compare the file with what you expect yourself.",
+    later: a => `Left as it is. Cloud sessions keep the version you accepted before. ${a}`,
+    outcome: outcome_2,
+    failed: (a, S, f) => `Could not accept, so nothing was accepted: "${S}" ${f}`
+  };
+}
+async function sn(t, session, h, deps_2, a) {
+  return new Promise(onDone_2 => {
+    t.render(e(a_, {
+      session: session,
+      onChangeAppState: f => Bre(f, session),
+      children: e(at, {
+        changes: deps_2.reviewed,
+        deps: deps_2,
+        wording: rn(h),
+        onDone: onDone_2
+      }, a)
+    }));
+  });
+}
+async function Co(t, o, h) {
+  let slots = s_t(),
+    a = Jt({
+      stdinIsTTY: process.stdin.isTTY === !0,
+      stdoutIsTTY: process.stdout.isTTY === !0,
+      verbFirst: NIr(),
+      settingsGivenOnCommandLine: LA() !== void 0 || Gf() !== null,
+      allowedSources: cye(),
+      configHomeRedirectedIntoFolder: Vt(Pe(), [ce(), ...qt(slots)])
+    });
+  if (a !== void 0) {
+    cg(a), await jt("remote_served_settings_freeze", "accept_refused"), await To(1);
+    return;
+  }
+  let store = e_e(),
+    gate = eRe(t, o, h),
+    C,
+    accepted_2 = 0,
+    v = [],
+    R = Qt(fn("userSettings"));
+  for (let F = 0;; F++) {
+    let T = ht(store, slots, readLive),
+      D = R.map(item => ({
+        path: item.path,
+        waiting: pt(store, item, readLive)
+      })),
+      W = D.flatMap(item => item.waiting === "unreadable" ? [item.path] : []),
+      files_2 = [...D.flatMap(item => item.waiting === void 0 || item.waiting === "unreadable" ? [] : [item.waiting]), ...T.files];
+    if (F === 0) {
+      for (let I of [...W, ...T.unreadable]) v.push(`${ct(I)} could not be read, so it cannot be shown or accepted. Cloud sessions keep using what you accepted before.`);
+      for (let I of T.linked) v.push(`${ct(I)} cannot be taken as this folder's own file: it is a link to another file, has a second name (a hard link), sits in a .claude folder that is a link, or could not be examined. So it cannot be accepted here, and cloud sessions keep using what you accepted before. A plain file with no other name, in a plain .claude folder you can read, changes that.`);
+    }
+    if (files_2.length === 0) {
+      if (accepted_2 === 0 && W.length === 0 && T.unreadable.length === 0 && T.linked.length === 0) v.push("Nothing is waiting. Cloud sessions already use your settings and this folder's on this computer.");
+      break;
+    }
+    let z = nn({
+      store: store,
+      slots: slots,
+      files: files_2,
+      readLive: readLive,
+      gate: gate,
+      now: () => new Date()
+    });
+    C ??= await pce(uC(!1));
+    let ne = await sn(C, t, files_2, z, F);
+    if (ne !== void 0) v.push(ne);
+    if (z.accepted() === 0) break;
+    accepted_2 += z.accepted();
+  }
+  C?.unmount(), process.stdout.write(`${v.join(`
+`)}
+`), await Kr("remote_served_settings_freeze", {
+    op: b("accept_command"),
+    accepted: accepted_2
+  }), await To(0);
+}
+export { Co as applyProjectSettingsHandler };

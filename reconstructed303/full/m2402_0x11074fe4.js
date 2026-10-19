@@ -1,0 +1,353 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  x
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  Y
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  z
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  vo
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  _
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  ld
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  Qx
+} from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import {
+  I
+} from "B:/~BUN/root/chunk-je1b1drr.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  We
+} from "B:/~BUN/root/chunk-kad4nq7y.js";
+import {
+  Ese
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  VWr
+} from "B:/~BUN/root/chunk-qcwdfn4k.js";
+import {
+  EWt
+} from "B:/~BUN/root/chunk-vtmhmnh7.js";
+import {
+  AWt,
+  QWr
+} from "B:/~BUN/root/chunk-bpg2qaye.js";
+import {
+  qUt
+} from "B:/~BUN/root/chunk-7wsxhgty.js";
+import {
+  Dn
+} from "B:/~BUN/root/chunk-pystvv3m.js";
+import {
+  o,
+  v,
+  oe,
+  T,
+  u,
+  De,
+  $e,
+  fe,
+  U,
+  C
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  I5,
+  BYs,
+  xTe,
+  Bne
+} from "B:/~BUN/root/chunk-7j1crw74.js";
+import {
+  readdir as wt,
+  readFile as st
+} from "fs/promises";
+var jhn = "RunMonitorCommand",
+  _t = "refuse_under_other_rules",
+  at = "monitor_input",
+  Ct = "this environment read no permission settings when it started, so it can't tell which rules apply and runs no monitor. Retrying won't help.",
+  St = "this environment was started with a permission rule that can't be fully applied to a monitor, so it runs none, whatever the command. Retrying won't help.",
+  Rt = 600000,
+  bt = 4,
+  gt = 2000,
+  Mt = 1e5,
+  Et = 64,
+  yt = 1024,
+  it = 33554432,
+  Tt = 250,
+  Ot = 500,
+  vt = 1500,
+  At = 5,
+  xt = f(() => De({
+    command: o().min(1).max(Mt).refine(Qx, "command contains control characters"),
+    timeout_ms: v().int().min(1000),
+    deny_rules: T(o().max(yt)).max(Et).default([]),
+    [at]: fe(o(), oe()).optional(),
+    [_t]: C(!0)
+  })),
+  te = f(() => De({
+    monitor_event: $e([De({
+      started: C(!0)
+    }), De({
+      lines: o(),
+      suppressed: v().int().positive().optional()
+    })])
+  })),
+  ee = f(() => u({
+    ended: U(["exited", "deadline", "too_much_output", "call_ended"]),
+    exitCode: v(),
+    finalLines: o().optional(),
+    suppressed: v().int().positive().optional(),
+    stderrTail: o().optional()
+  }));
+
+function It({
+  tryConsume: m,
+  killAfterMs: h,
+  quietGapMs: t,
+  now: i,
+  send: e,
+  onFlood: c
+}) {
+  let n = 0,
+    s, S = 0,
+    b = !1;
+  return {
+    take: (L) => {
+      if (b) return;
+      if (m()) {
+        if (e({
+            lines: L,
+            ...n > 0 && {
+              suppressed: n
+            }
+          }), n = 0, i() - S > t) s = void 0;
+        return
+      }
+      if (n += 1, S = i(), s ??= S, S - s > h) b = !0, c()
+    },
+    unreported: () => n
+  }
+}
+var kt = new z(() => ({
+  running: 0
+}));
+async function Lt(m) {
+  let h = await wt("/proc").catch(() => []),
+    t = new Map,
+    i = 0;
+  return await Promise.all(h.filter((e) => /^\d+$/.test(e)).map(async (e) => {
+    let c = await st(`/proc/${e}/stat`, "utf8").catch(() => ""),
+      n = I5(c);
+    if (BYs(c) === m && n !== void 0) t.set(Number(e), n), i += Bne(xTe(c)) ? 0 : 1
+  })), {
+    pinned: t,
+    alive: i
+  }
+}
+async function Pt(m) {
+  let h = m.pid;
+  if (h <= 1) return;
+  let t = async (e) => {
+    if (I() !== "linux" && I() !== "wsl") try {
+      return process.kill(-h, e)
+    } catch {
+      return !1
+    }
+    let {
+      pinned: c,
+      alive: n
+    } = await Lt(h), s = c.get(h);
+    if (s !== void 0 && s !== m.startToken) return !1;
+    if (e !== 0) await qUt(c, e);
+    return n > 0
+  }, i = await t("SIGTERM");
+  for (let e = Date.now() + vt; i && Date.now() < e;) await Y(50), i = await t(0);
+  for (let e = 0; i && e < At; e++) i = await t("SIGKILL")
+}
+async function MWr(m, h, t) {
+  let i = QWr(jhn, m, t.launchPermissionContext),
+    {
+      command: e,
+      timeout_ms: c,
+      deny_rules: n,
+      [at]: s
+    } = xt().parse(i.args),
+    S = EWt(t.meta);
+  if (s !== void 0 && !S) throw Error("RunMonitorCommand was not run: its monitor_input goes with a ToolHost permission request that this server decides, and it brought none, or this server decides none. Retrying won't help.");
+  if (S && (s === void 0 || n.length > 0 || Dn(m) && (AWt in m))) throw Error("RunMonitorCommand was not run: a ToolHost permission request goes with the monitor_input it judged, and with no rules of its own. Retrying won't help.");
+  let b = t.reportProgress;
+  if (b === void 0) throw Error("RunMonitorCommand was not run: the call sent no progress token, so the command's output would have nowhere to go. Call again with _meta.progressToken set.");
+  let g = t.launchPermissionContext;
+  if (g === void 0) throw new x(`RunMonitorCommand was not run: ${Ct}`, "RunMonitorCommand: read no launch settings");
+  let L = Ese().filter((d) => VWr([d]).length === 0);
+  if (s === void 0 && [g.alwaysDenyRules, g.alwaysAskRules].flatMap((d) => Object.values(d).flatMap((R) => R ?? [])).some((d) => !n.includes(d) && !L.includes(d))) throw new x(`RunMonitorCommand was not run: ${St}`, "RunMonitorCommand: holds a rule that the call did not bring");
+  let P = vo(t.session).cwd,
+    q = !1,
+    dt = t.session.subscribe(() => {
+      q ||= vo(t.session).cwd !== P
+    }),
+    p, N, X;
+  try {
+    if (s === void 0) p = await t.checkAsServedTool(We, {
+      command: e
+    }, n, i.rules);
+    else {
+      let {
+        checkMonitorRun: d
+      } = await import("B:/~BUN/root/chunk-cajh6mc2.js"), R = await d({
+        name: jhn,
+        meta: t.meta,
+        input: s,
+        command: e,
+        toolUseContext: t.toolUseContext(),
+        launchPermissionContext: g
+      });
+      if (p = R, "claim" in R) N = R
+    }
+    X = "toolUseContext" in p ? vo(p.toolUseContext.session).cwd : P
+  } finally {
+    dt()
+  }
+  if ("rejection" in p && s !== void 0) throw new x(p.rejection, "RunMonitorCommand: refused by the ToolHost check");
+  if ("rejection" in p) throw new x(p.rejection, "RunMonitorCommand: refused by the served Bash check");
+  let {
+    session: V,
+    abortController: D
+  } = p.toolUseContext;
+  if (q || vo(t.session).cwd !== P) throw Error("RunMonitorCommand was not run: another call changed the working directory while this one was being checked. Send it again to have it checked where it would now start.");
+  let H = kt.of(V.host);
+  if (H.running >= bt) throw Error("RunMonitorCommand was not run: this environment already runs as many monitors as it allows at once. Stop one first.");
+  let J = N?.claim();
+  if (J === "barred") throw Error("RunMonitorCommand was not run: this session was already told that this call had not started, so it can no longer run. Send a new call.");
+  if (J === "started_before") throw Error("RunMonitorCommand was not run again: this very call was already started here once. Check what it did before you send a new call.");
+  let a = new AbortController;
+  H.running += 1, a.signal.addEventListener("abort", () => {
+    H.running -= 1
+  }, {
+    once: !0
+  });
+  let W = () => D.signal.aborted || t.callerGone?.aborted === !0,
+    M = () => a.abort();
+  D.signal.addEventListener("abort", M, {
+    once: !0
+  }), t.callerGone?.addEventListener("abort", M, {
+    once: !0
+  });
+  let j = (d) => ({
+      summary: "stopped with its call",
+      output: {
+        ended: "call_ended",
+        exitCode: d
+      }
+    }),
+    F, G;
+  try {
+    if (W()) return j(-1);
+    let [{
+      exec: d
+    }, {
+      shouldUseSandbox: R
+    }, E, w] = await Promise.all([import("B:/~BUN/root/chunk-5dq0w99g.js"), import("B:/~BUN/root/chunk-gvpj2v7g.js"), import("B:/~BUN/root/chunk-c5gy5a1r.js"), import("B:/~BUN/root/chunk-t304k7s3.js")]), y = "exited", O, A = (r) => {
+      if (!a.signal.aborted) y = r, O = r === "deadline" ? K.drain() : void 0, a.abort()
+    }, Z = (r) => {
+      b(_({
+        monitor_event: r
+      })).catch(() => {})
+    }, Q = !1, tt = () => {
+      if (!Q) Q = !0, Z({
+        started: !0
+      })
+    }, ut = (r) => {
+      tt(), Z(r)
+    }, lt = w.createTokenBucket(w.BUCKET_CAPACITY, w.TOKEN_REFILL_MS), B = It({
+      tryConsume: () => lt.tryConsume(),
+      killAfterMs: E.SUSTAINED_SUPPRESSION_KILL_MS,
+      quietGapMs: w.TOKEN_REFILL_MS * 3,
+      now: Date.now,
+      send: ut,
+      onFlood: () => A("too_much_output")
+    }), K = E.createStreamLineBatcher((r) => {
+      if (!a.signal.aborted) B.take(r)
+    }), et = Math.min(c, Rt), nt = 0, {
+      storageV5: mt,
+      sessionEnvVars: ct,
+      toolUseId: pt
+    } = p.toolUseContext, l = await d(e, a.signal, "bash", {
+      session: V,
+      cwd: X,
+      storageV5: mt,
+      sessionEnvVars: ct,
+      sandboxAttributionId: pt,
+      preventCwdChanges: !0,
+      shouldUseSandbox: R({
+        command: e
+      }),
+      timeout: et + 60000,
+      onStdout: (r) => {
+        if (a.signal.aborted) return;
+        if (nt += r.length, nt > it) {
+          A("too_much_output");
+          return
+        }
+        K.onData(r)
+      }
+    }), ot = l.pid === void 0 ? void 0 : {
+      pid: l.pid,
+      startToken: I5(await st(`/proc/${l.pid}/stat`, "utf8").catch(() => ""))
+    };
+    try {
+      let r = l.status === "completed" ? (await l.result).preSpawnError : void 0;
+      if (r !== void 0) throw new x(r, "RunMonitorCommand: the shell could not be started");
+      if (l.status === "killed") return j(-1);
+      tt(), F = setTimeout(A, et, "deadline"), G = setInterval((ft, ht) => {
+        if (ft.totalBytes > it) ht("too_much_output")
+      }, Tt, l.taskOutput, A);
+      let k = await l.result;
+      if (clearTimeout(F), clearInterval(G), !a.signal.aborted) await Promise.race([l.outputEnded, Y(Ot, a.signal)]);
+      if (W()) return j(k.code);
+      if (!a.signal.aborted) O = K.drain(), a.abort();
+      let rt = ld(k.stderr, gt);
+      return {
+        summary: y === "exited" ? `exit ${k.code}` : y === "deadline" ? "stopped at its time limit" : "stopped for printing too much",
+        output: {
+          ended: y,
+          exitCode: k.code,
+          ...O !== void 0 && {
+            finalLines: O
+          },
+          ...B.unreported() > 0 && {
+            suppressed: B.unreported()
+          },
+          ...rt !== "" && {
+            stderrTail: rt
+          }
+        }
+      }
+    } finally {
+      if (l.cleanup(), ot !== void 0) await Pt(ot);
+      await l.taskOutput.flush(), await l.taskOutput.deleteOutputFile()
+    }
+  } finally {
+    clearTimeout(F), clearInterval(G), a.abort(), N?.release(), D.signal.removeEventListener("abort", M), t.callerGone?.removeEventListener("abort", M)
+  }
+}
+export {
+  jhn,
+  MWr
+};

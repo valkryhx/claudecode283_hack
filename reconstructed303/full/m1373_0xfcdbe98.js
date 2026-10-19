@@ -1,0 +1,609 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import {
+  oh
+} from "B:/~BUN/root/chunk-275mme56.js";
+import {
+  oc
+} from "B:/~BUN/root/chunk-t7y4rt40.js";
+import {
+  zte,
+  he
+} from "B:/~BUN/root/chunk-4qqgabd5.js";
+import {
+  s,
+  n,
+  Go,
+  dn,
+  ot,
+  Kre,
+  Aa
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import {
+  LF
+} from "B:/~BUN/root/chunk-1jz9m9yh.js";
+import {
+  Ro
+} from "B:/~BUN/root/chunk-exdm7pa7.js";
+import {
+  br
+} from "B:/~BUN/root/chunk-g5gf7tps.js";
+import {
+  xy,
+  X2t,
+  qvt,
+  Ant
+} from "B:/~BUN/root/chunk-vw193yjw.js";
+import {
+  Dao,
+  Lao,
+  Fao,
+  Hao
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  WCe,
+  Vu
+} from "B:/~BUN/root/chunk-44n8zjk2.js";
+import {
+  Q,
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  Kn
+} from "B:/~BUN/root/chunk-dsby0gnt.js";
+import {
+  xds
+} from "B:/~BUN/root/chunk-tx0dq5y3.js";
+import {
+  eb
+} from "B:/~BUN/root/chunk-gvcmagy5.js";
+import {
+  P,
+  Z,
+  A,
+  y,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  iQ
+} from "B:/~BUN/root/chunk-pp80ffk4.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+B();
+var it = "clipboard-image-hint",
+  st = 1000,
+  nt = 30000,
+  Oe = {
+    id: "clipboard-image-hint",
+    deps: (t) => [t.isTerminalFocused, t.canPasteImages, t.addNotification, t.clock],
+    setup() {
+      let t = null,
+        h = 0,
+        i = null;
+      return ({
+        isTerminalFocused: p,
+        canPasteImages: d,
+        addNotification: m,
+        clock: c
+      }) => {
+        let o = t ?? p;
+        if (t = p, !d || !p || o) return;
+        return i?.(), i = c.setTimeout(async () => {
+          i = null;
+          let g = Date.now();
+          if (g - h < nt) return;
+          if (await xds()) h = g, m({
+            key: it,
+            kind: "contextual",
+            text: `Image in clipboard \xB7 ${eb("chat:imagePaste","Chat","ctrl+v")} to paste`,
+            priority: "immediate",
+            timeoutMs: 8000
+          })
+        }, st), () => {
+          i?.(), i = null
+        }
+      }
+    }
+  };
+B();
+
+function $wn(t, h) {
+  let [i] = y(() => t.map((d) => {
+    let m = d.setup();
+    return {
+      effect: typeof m === "function" ? m : m.effect,
+      dispose: typeof m === "function" ? void 0 : m.dispose,
+      deps: null,
+      cleanup: void 0
+    }
+  })), p = A(h);
+  P(() => {
+    p.current = h;
+    let d = () => p.current,
+      m = [];
+    t.forEach((c, o) => {
+      let g = i[o];
+      if (!g) return;
+      let u = c.deps ? c.deps(h) : [];
+      if (g.deps !== null && lt(g.deps, u)) return;
+      m.push({
+        slot: g,
+        deps: u
+      })
+    });
+    for (let {
+        slot: c
+      }
+      of m) c.cleanup?.(), c.cleanup = void 0;
+    for (let {
+        slot: c,
+        deps: o
+      }
+      of m) c.deps = o, c.cleanup = c.effect(h, d)
+  }), P(() => () => {
+    for (let d of i) d.cleanup?.(), d.cleanup = void 0, d.deps = null, d.dispose?.()
+  }, [i])
+}
+
+function lt(t, h) {
+  if (t.length !== h.length) return !1;
+  for (let i = 0; i < t.length; i++)
+    if (!Object.is(t[i], h[i])) return !1;
+  return !0
+}
+var at = [Oe];
+
+function Uwn({
+  isTerminalFocused: t,
+  canPasteImages: h
+}) {
+  let {
+    addNotification: i
+  } = Ro(), p = dn();
+  $wn(at, {
+    isTerminalFocused: t,
+    canPasteImages: h,
+    addNotification: i,
+    clock: p
+  })
+}
+B();
+B();
+
+function Vvt(t) {
+  let b = w(3),
+    {
+      char: h,
+      index: i,
+      glimmerIndex: p,
+      messageColor: d,
+      shimmerColor: m
+    } = t,
+    c = i === p,
+    o = Math.abs(i - p) === 1;
+  const u = c || o ? m : d;
+  let k;
+  if (b[0] !== h || b[1] !== u) k = e(n, {
+    color: u,
+    children: h
+  }), b[0] = h, b[1] = u, b[2] = k;
+  else k = b[2];
+  return k
+}
+
+function Ht(H) {
+  return H.shimmerColor
+}
+
+function oe(t) {
+  let p = w(25),
+    {
+      text: h,
+      highlights: i
+    } = t,
+    d;
+  if (p[0] !== i || p[1] !== h) {
+    let m = Lao(h, i);
+    d = [
+      []
+    ];
+    let c = 0;
+    for (const o of m) {
+      let g = o.text.split(`
+`);
+      for (let u = 0; u < g.length; u++) {
+        if (u > 0) d.push([]), c = c + 1;
+        let b = g[u];
+        if (b.length > 0) d.at(-1).push({
+          text: b,
+          highlight: o.highlight,
+          start: c
+        });
+        c = c + b.length
+      }
+    }
+    p[0] = i, p[1] = h, p[2] = d
+  } else d = p[2];
+  let k;
+  if (p[3] !== i) k = i.some(Ht), p[3] = i, p[4] = k;
+  else k = p[4];
+  let D = k,
+    T = 0,
+    v = 1;
+  if (D) {
+    let N = Infinity;
+    let R = -Infinity;
+    if (p[5] !== R || p[7] !== i || p[8] !== N) {
+      p[6] = R, p[9] = N;
+      for (const F of i) {
+        if (F.shimmerColor) N = Math.min(N, F.start), R = Math.max(R, F.end)
+      }
+      p[5] = p[6], p[7] = i, p[8] = p[9], p[10] = N, p[11] = R
+    } else N = p[10], R = p[11];
+    T = N - 10, v = R - N + 20
+  }
+  let q;
+  if (p[12] !== v || p[13] !== D || p[14] !== d || p[15] !== T) q = {
+    lines: d,
+    hasShimmer: D,
+    sweepStart: T,
+    cycleLength: v
+  }, p[12] = v, p[13] = D, p[14] = d, p[15] = T, p[16] = q;
+  else q = p[16];
+  let {
+    lines: _,
+    hasShimmer: Se,
+    sweepStart: ve,
+    cycleLength: Te
+  } = q, He = Vu(), W = Se && !He, [K, ne] = Aa(W ? 50 : null), O = W ? ve + Math.floor(ne / 50) % Te : WCe, j;
+  if (p[17] !== O || p[18] !== _) {
+    let E;
+    if (p[20] !== O) E = (C, Ne) => e(s, {
+      children: C.length === 0 ? e(n, {
+        children: " "
+      }) : C.map((f, G) => {
+        if (f.highlight?.shimmerColor && f.highlight.color) {
+          return e(n, {
+            children: f.text.split("").map((X, M) => e(Vvt, {
+              char: X,
+              index: f.start + M,
+              glimmerIndex: O,
+              messageColor: f.highlight.color,
+              shimmerColor: f.highlight.shimmerColor
+            }, M))
+          }, G)
+        }
+        return e(n, {
+          color: f.highlight?.color,
+          backgroundColor: f.highlight?.backgroundColor,
+          dimColor: f.highlight?.dimColor,
+          bold: f.highlight?.bold,
+          italic: f.highlight?.italic,
+          underline: f.highlight?.underline,
+          strikethrough: f.highlight?.strikethrough,
+          children: e(Go, {
+            children: f.text
+          })
+        }, G)
+      })
+    }, Ne), p[20] = O, p[21] = E;
+    else E = p[21];
+    j = _.map(E);
+    p[17] = O, p[18] = _, p[19] = j
+  } else j = p[19];
+  let E;
+  if (p[22] !== K || p[23] !== j) E = e(s, {
+    ref: K,
+    flexDirection: "column",
+    children: j
+  }), p[22] = K, p[23] = j, p[24] = E;
+  else E = p[24];
+  return E
+}
+
+function K2t(t) {
+  let q = w(7),
+    {
+      inputState: h,
+      children: i,
+      terminalFocus: p,
+      invert: d,
+      hidePlaceholderText: m,
+      cursorCellPainted: c,
+      ...o
+    } = t,
+    {
+      handleKeyDown: g,
+      renderedValue: u,
+      cursorLine: b,
+      cursorColumn: k
+    } = h,
+    D = o.focus && o.showCursor && o.parkCursor !== !1 ? {
+      line: b,
+      column: k,
+      visible: !c
+    } : void 0,
+    {
+      handleKeyDown: v,
+      handlePaste: N,
+      isPasting: R
+    } = Ant({
+      onPaste: o.onPaste,
+      handleKeyDown: (T) => {
+        if (o.onKeyDownBefore?.(T), T.defaultPrevented || T.didStopImmediatePropagation()) {
+          return
+        }
+        g(T)
+      },
+      onImagePaste: o.onImagePaste
+    }),
+    {
+      onIsPastingChange: F
+    } = o;
+  P(() => {
+    if (F) F(R)
+  }, [R, F]);
+  let _;
+  if (q[0] === S) _ = LF(), q[0] = _;
+  else _ = q[0];
+  let Se = _,
+    ve = ot(),
+    {
+      showPlaceholder: Te,
+      renderedPlaceholder: He
+    } = Je({
+      placeholder: o.placeholder,
+      value: o.value,
+      showCursor: o.showCursor && !Se,
+      focus: o.focus,
+      terminalFocus: p,
+      invert: d,
+      hidePlaceholderText: m || ve
+    }),
+    W = Te ? He : void 0,
+    K = o.focus !== !1,
+    ne = A(null);
+  xy(ne, K);
+  let O = {
+      ref: ne,
+      autoFocus: K,
+      disabled: !K,
+      caret: D,
+      onKeyDown: v,
+      onPaste: N,
+      allowPrintableKeybindings: o.allowPrintableKeybindings
+    },
+    j = o.value && o.value.trim().indexOf(" ") === -1 || o.value && o.value.endsWith(" "),
+    E = Boolean(o.argumentHint && o.value && j && o.value.startsWith("/")),
+    C = h.shown,
+    Ne = C && o.showCursor ? {
+      start: C.cursorOffset,
+      end: C.cursorOffset + iQ(C.text.text.slice(C.cursorOffset)).length
+    } : void 0,
+    G = C !== void 0 && C.text.spans.some((f) => f.start === C.cursorOffset),
+    M = o.showCursor && o.highlights && !G ? o.highlights.filter((X) => X.dimColor || o.cursorOffset < X.start || o.cursorOffset >= X.end) : o.highlights,
+    H = o.leadingPill?.text ?? "",
+    z = H ? [{
+      start: 0,
+      end: H.length - 1,
+      color: "ide",
+      priority: 30
+    }, ...(M ?? []).map((Y) => ({
+      ...Y,
+      start: Y.start + H.length,
+      end: Y.end + H.length
+    }))] : M,
+    L = C ? [...Fao(z ?? [], C.text), ...Hao(C.text, Ne)] : z,
+    V = L && L.length > 0 ? Dao(L, u, h.renderedRowStartOffsets) : L;
+  if (V && V.length > 0 && !W) {
+    return r(Kre, {
+      ...O,
+      children: [e(s, {
+        flexShrink: 0,
+        "aria-preserve-whitespace": !0,
+        children: e(oe, {
+          text: u,
+          highlights: V
+        })
+      }), E && r(n, {
+        dimColor: !0,
+        wrap: "truncate-end",
+        children: [o.value?.endsWith(" ") ? "" : " ", o.argumentHint]
+      }), i]
+    })
+  }
+  const le = n,
+    et = "truncate-end",
+    tt = o.dimColor,
+    Re = W ? r(Q, {
+      children: [H ? e(n, {
+        color: "ide",
+        children: H
+      }) : null, e(Go, {
+        children: W
+      })]
+    }) : e(n, {
+      "aria-preserve-whitespace": !0,
+      children: e(Go, {
+        children: u
+      })
+    }),
+    ke = E && r(n, {
+      dimColor: !0,
+      children: [o.value?.endsWith(" ") ? "" : " ", o.argumentHint]
+    });
+  let rt;
+  if (q[1] !== le || q[2] !== i || q[3] !== o || q[4] !== Re || q[5] !== ke) rt = r(le, {
+    wrap: et,
+    dimColor: tt,
+    children: [Re, ke, i]
+  }), q[1] = le, q[2] = i, q[3] = o, q[4] = Re, q[5] = ke, q[6] = rt;
+  else rt = q[6];
+  return e(Kre, {
+    ...O,
+    children: rt
+  })
+}
+
+function Je({
+  placeholder: t,
+  value: h,
+  showCursor: i,
+  focus: p,
+  terminalFocus: d = !0,
+  invert: m = zte,
+  hidePlaceholderText: c = !1
+}) {
+  let o = void 0;
+  if (t) {
+    if (c) o = i && p && d ? m(" ") : "";
+    else if (o = he.dim(t), i && p && d) o = t.length > 0 ? m(t[0]) + he.dim(t.slice(1)) : m(" ")
+  }
+  let g = h.length === 0 && Boolean(t);
+  return {
+    renderedPlaceholder: o,
+    showPlaceholder: g
+  }
+}
+
+function oo(le) {
+  return le.voiceState
+}
+
+function ro(et) {
+  return et
+}
+
+function io(tt) {
+  return tt
+}
+
+function Lr(t) {
+  let p = w(58),
+    [h] = br(),
+    i = oc(),
+    d;
+  if (p[0] === S) d = LF(), p[0] = d;
+  else d = p[0];
+  let m = d,
+    c = ot(),
+    g = oh(oo) === "recording",
+    [u, b] = qvt();
+  const k = !!t.onImagePaste;
+  let D;
+  if (p[1] !== i || p[2] !== k) D = {
+    isTerminalFocused: i,
+    canPasteImages: k
+  }, p[1] = i, p[2] = k, p[3] = D;
+  else D = p[3];
+  Uwn(D);
+  let T;
+  if (p[4] !== b || p[5] !== i) T = !i ? ro : b ? () => he.hex(b.hex)(b.char) : m ? io : zte, p[4] = b, p[5] = i, p[6] = T;
+  else T = p[6];
+  let v = T;
+  const {
+    value: N,
+    onChange: R,
+    onSubmit: F,
+    onExit: q,
+    onExitMessage: _,
+    onEscapeMessage: Se,
+    historyOnClear: ve,
+    onLeftArrowOnEmpty: Te,
+    leftArrowConfirmHint: He,
+    onHistoryReset: W,
+    onHistoryUp: K,
+    onHistoryDown: ne,
+    focus: O,
+    mask: j,
+    multiline: E,
+    disableBackslashReturn: C,
+    clearOnSubmit: Ne,
+    disableCtrlCClear: f
+  } = t, G = t.showCursor && !c ? " " : "", X = t.highlightPastedText;
+  let M;
+  if (p[7] !== h) M = Kn("text", h), p[7] = h, p[8] = M;
+  else M = p[8];
+  const H = c ? void 0 : t.virtualTexts;
+  let Y;
+  if (p[9] !== v || p[10] !== c || p[11] !== t.clearOnSubmit || p[12] !== t.columns || p[13] !== t.commitEdit || p[14] !== t.cursorOffset || p[15] !== t.disableBackslashReturn || p[16] !== t.disableCtrlCClear || p[17] !== t.disableCursorMovementForUpDownKeys || p[18] !== t.disableEscapeDoublePress || p[19] !== t.editRelay || p[20] !== t.focus || p[21] !== t.getInputMode || p[22] !== t.getPastedContents || p[23] !== t.highlightPastedText || p[24] !== t.historyOnClear || p[25] !== t.inlineGhostText || p[26] !== t.inputFilter || p[27] !== t.leadingPill || p[28] !== t.leftArrowConfirmHint || p[29] !== t.mask || p[30] !== t.maxVisibleLines || p[31] !== t.multiline || p[32] !== t.onChange || p[33] !== t.onChangeCursorOffset || p[34] !== t.onEscapeMessage || p[35] !== t.onExit || p[36] !== t.onExitMessage || p[37] !== t.onHistoryDown || p[38] !== t.onHistoryReset || p[39] !== t.onHistoryUp || p[40] !== t.onImagePaste || p[41] !== t.onLeftArrowOnEmpty || p[42] !== t.onSubmit || p[43] !== t.value || p[44] !== G || p[45] !== M || p[46] !== H) Y = {
+    value: N,
+    onChange: R,
+    onSubmit: F,
+    onExit: q,
+    onExitMessage: _,
+    onEscapeMessage: Se,
+    historyOnClear: ve,
+    onLeftArrowOnEmpty: Te,
+    leftArrowConfirmHint: He,
+    onHistoryReset: W,
+    onHistoryUp: K,
+    onHistoryDown: ne,
+    focus: O,
+    mask: j,
+    multiline: E,
+    disableBackslashReturn: C,
+    clearOnSubmit: Ne,
+    disableCtrlCClear: f,
+    cursorChar: G,
+    preserveTrailingWhitespace: c,
+    highlightPastedText: X,
+    invert: v,
+    themeText: M,
+    columns: t.columns,
+    leadingPill: t.leadingPill,
+    maxVisibleLines: t.maxVisibleLines,
+    onImagePaste: t.onImagePaste,
+    disableCursorMovementForUpDownKeys: t.disableCursorMovementForUpDownKeys,
+    disableEscapeDoublePress: t.disableEscapeDoublePress,
+    externalOffset: t.cursorOffset,
+    onOffsetChange: t.onChangeCursorOffset,
+    inputFilter: t.inputFilter,
+    editRelay: t.editRelay,
+    commitEdit: t.commitEdit,
+    getPastedContents: t.getPastedContents,
+    getInputMode: t.getInputMode,
+    inlineGhostText: t.inlineGhostText,
+    dim: he.dim,
+    virtualTexts: H
+  }, p[9] = v, p[10] = c, p[11] = t.clearOnSubmit, p[12] = t.columns, p[13] = t.commitEdit, p[14] = t.cursorOffset, p[15] = t.disableBackslashReturn, p[16] = t.disableCtrlCClear, p[17] = t.disableCursorMovementForUpDownKeys, p[18] = t.disableEscapeDoublePress, p[19] = t.editRelay, p[20] = t.focus, p[21] = t.getInputMode, p[22] = t.getPastedContents, p[23] = t.highlightPastedText, p[24] = t.historyOnClear, p[25] = t.inlineGhostText, p[26] = t.inputFilter, p[27] = t.leadingPill, p[28] = t.leftArrowConfirmHint, p[29] = t.mask, p[30] = t.maxVisibleLines, p[31] = t.multiline, p[32] = t.onChange, p[33] = t.onChangeCursorOffset, p[34] = t.onEscapeMessage, p[35] = t.onExit, p[36] = t.onExitMessage, p[37] = t.onHistoryDown, p[38] = t.onHistoryReset, p[39] = t.onHistoryUp, p[40] = t.onImagePaste, p[41] = t.onLeftArrowOnEmpty, p[42] = t.onSubmit, p[43] = t.value, p[44] = G, p[45] = M, p[46] = H, p[47] = Y;
+  else Y = p[47];
+  let z = X2t(Y);
+  const L = b != null;
+  let V;
+  if (p[48] !== v || p[49] !== i || p[50] !== g || p[51] !== t || p[52] !== L || p[53] !== z) V = e(K2t, {
+    inputState: z,
+    terminalFocus: i,
+    highlights: t.highlights,
+    invert: v,
+    hidePlaceholderText: g,
+    cursorCellPainted: L,
+    ...t
+  }), p[48] = v, p[49] = i, p[50] = g, p[51] = t, p[52] = L, p[53] = z, p[54] = V;
+  else V = p[54];
+  let Ze;
+  if (p[55] !== u || p[56] !== V) Ze = e(s, {
+    ref: u,
+    children: V
+  }), p[55] = u, p[56] = V, p[57] = Ze;
+  else Ze = p[57];
+  return Ze
+}
+export {
+  $wn,
+  Uwn,
+  Vvt,
+  K2t,
+  Lr
+};

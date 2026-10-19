@@ -1,0 +1,1257 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import {
+  b,
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  Ke,
+  d,
+  k
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import "B:/~BUN/root/chunk-8ye9n4fk.js";
+import "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  zd,
+  Ru,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import {
+  O
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import "B:/~BUN/root/chunk-8pmnanyd.js";
+import "B:/~BUN/root/chunk-kad4nq7y.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import {
+  rL
+} from "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import "B:/~BUN/root/chunk-nxwmyxnk.js";
+import {
+  it
+} from "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import "B:/~BUN/root/chunk-xrp58hm9.js";
+import {
+  di
+} from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import "B:/~BUN/root/chunk-pjgzz98k.js";
+import "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import {
+  oTe
+} from "B:/~BUN/root/chunk-1gpjpba6.js";
+import "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import "B:/~BUN/root/chunk-28dw3zbk.js";
+import "B:/~BUN/root/chunk-07c8fw5z.js";
+import "B:/~BUN/root/chunk-hb6x4e3n.js";
+import "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import {
+  pQe,
+  gy,
+  Q3n
+} from "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import "B:/~BUN/root/chunk-h9p45fg5.js";
+import "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import "B:/~BUN/root/chunk-cx57tr4b.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import {
+  Sh,
+  lo,
+  d4,
+  Mcn
+} from "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import "B:/~BUN/root/chunk-8w42v0dp.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import {
+  sn
+} from "B:/~BUN/root/chunk-zayh6xmh.js";
+import "B:/~BUN/root/chunk-z84amwaw.js";
+import {
+  vt,
+  Qt
+} from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import "B:/~BUN/root/chunk-mgb2hezz.js";
+import "B:/~BUN/root/chunk-nvdqbkrt.js";
+import "B:/~BUN/root/chunk-0n2201tc.js";
+import "B:/~BUN/root/chunk-q3srk2wz.js";
+import "B:/~BUN/root/chunk-x4gdh7dq.js";
+import "B:/~BUN/root/chunk-qk52d0gf.js";
+import "B:/~BUN/root/chunk-f25646gd.js";
+import "B:/~BUN/root/chunk-dq7zfs8r.js";
+import "B:/~BUN/root/chunk-z8fd2x5s.js";
+import "B:/~BUN/root/chunk-2fccb5hn.js";
+import "B:/~BUN/root/chunk-8y0chnnr.js";
+import "B:/~BUN/root/chunk-gy660jgx.js";
+import "B:/~BUN/root/chunk-pmw6knpp.js";
+import "B:/~BUN/root/chunk-e7tskyjv.js";
+import "B:/~BUN/root/chunk-7ybsx93y.js";
+import "B:/~BUN/root/chunk-8pqw0dhk.js";
+import {
+  TMt,
+  CMt,
+  Ict,
+  kUe,
+  YUn,
+  jq,
+  VEs,
+  qEs
+} from "B:/~BUN/root/chunk-0hq7zw7b.js";
+import "B:/~BUN/root/chunk-bp7zxkzq.js";
+import "B:/~BUN/root/chunk-7z3ndmqr.js";
+import "B:/~BUN/root/chunk-aqd86p9a.js";
+import {
+  UCn,
+  ZEt,
+  bNe,
+  p4t,
+  f4t,
+  Xqe,
+  yoe,
+  $I,
+  eTt,
+  tTt,
+  nTt,
+  h7
+} from "B:/~BUN/root/chunk-pcra2gst.js";
+import "B:/~BUN/root/chunk-9080897a.js";
+import {
+  Xf,
+  NC
+} from "B:/~BUN/root/chunk-c44qc88s.js";
+import "B:/~BUN/root/chunk-bn7mrnb3.js";
+import "B:/~BUN/root/chunk-vfmvkxsr.js";
+import "B:/~BUN/root/chunk-tqyz3ejx.js";
+import "B:/~BUN/root/chunk-h1tq8zce.js";
+import "B:/~BUN/root/chunk-efcxwmhb.js";
+import "B:/~BUN/root/chunk-d544j3ga.js";
+import "B:/~BUN/root/chunk-hhgqcegv.js";
+import "B:/~BUN/root/chunk-472kxa0t.js";
+import "B:/~BUN/root/chunk-ggdk44cm.js";
+import "B:/~BUN/root/chunk-cvj1wxdh.js";
+import "B:/~BUN/root/chunk-9w4ppz44.js";
+import "B:/~BUN/root/chunk-v1j2tw52.js";
+import "B:/~BUN/root/chunk-gjdk1btq.js";
+import "B:/~BUN/root/chunk-3d7bmmrg.js";
+import "B:/~BUN/root/chunk-e3hz52nd.js";
+import {
+  Ho,
+  Ul
+} from "B:/~BUN/root/chunk-ses0c36n.js";
+import "B:/~BUN/root/chunk-2zdc0br5.js";
+import "B:/~BUN/root/chunk-7j5tvnqj.js";
+import {
+  cXt,
+  CQt
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import "B:/~BUN/root/chunk-0m6vvjrw.js";
+import "B:/~BUN/root/chunk-mtfk0qfd.js";
+import "B:/~BUN/root/chunk-6vykeeak.js";
+import "B:/~BUN/root/chunk-vd11ggb1.js";
+import "B:/~BUN/root/chunk-9tx73f8x.js";
+import "B:/~BUN/root/chunk-dn8rakwm.js";
+import "B:/~BUN/root/chunk-r4y1700s.js";
+import "B:/~BUN/root/chunk-p4t63p2q.js";
+import "B:/~BUN/root/chunk-tkcgmvh7.js";
+import "B:/~BUN/root/chunk-q0t5e1bx.js";
+import "B:/~BUN/root/chunk-f0ytfwhx.js";
+import "B:/~BUN/root/chunk-r0jnxjth.js";
+import "B:/~BUN/root/chunk-429xgjya.js";
+import "B:/~BUN/root/chunk-7qeqkjr8.js";
+import "B:/~BUN/root/chunk-7qatwz9y.js";
+import "B:/~BUN/root/chunk-b0vcwsh9.js";
+import "B:/~BUN/root/chunk-hcz3kjms.js";
+import "B:/~BUN/root/chunk-t3p4x0tq.js";
+import "B:/~BUN/root/chunk-9tkh434c.js";
+import "B:/~BUN/root/chunk-1xwk1cwp.js";
+import "B:/~BUN/root/chunk-r9swysv9.js";
+import "B:/~BUN/root/chunk-3tj0rd0x.js";
+import "B:/~BUN/root/chunk-j97yjp75.js";
+import "B:/~BUN/root/chunk-cw2ph5fw.js";
+import "B:/~BUN/root/chunk-fb07w30y.js";
+import "B:/~BUN/root/chunk-yjayxywk.js";
+import "B:/~BUN/root/chunk-rx39nt6a.js";
+import "B:/~BUN/root/chunk-r81hcemr.js";
+import "B:/~BUN/root/chunk-t63e78w2.js";
+import "B:/~BUN/root/chunk-7fsmvr58.js";
+import "B:/~BUN/root/chunk-j4qesy5s.js";
+import "B:/~BUN/root/chunk-ks7h6f0s.js";
+import "B:/~BUN/root/chunk-d69870x4.js";
+import "B:/~BUN/root/chunk-t78esase.js";
+import "B:/~BUN/root/chunk-x73fxyt1.js";
+import "B:/~BUN/root/chunk-h6hab5w2.js";
+import "B:/~BUN/root/chunk-vm7ta03q.js";
+import "B:/~BUN/root/chunk-25j8tcak.js";
+import "B:/~BUN/root/chunk-j2ppas05.js";
+import "B:/~BUN/root/chunk-k382hx6g.js";
+import "B:/~BUN/root/chunk-19m6yp46.js";
+import "B:/~BUN/root/chunk-vqar0j99.js";
+import "B:/~BUN/root/chunk-tsyp86a9.js";
+import {
+  Upt,
+  Bpt,
+  UAr,
+  jpt,
+  CEo,
+  o3
+} from "B:/~BUN/root/chunk-pwz0pnkt.js";
+import "B:/~BUN/root/chunk-c8j3aby6.js";
+import "B:/~BUN/root/chunk-9y4mcm7b.js";
+import "B:/~BUN/root/chunk-0x8xex6w.js";
+import "B:/~BUN/root/chunk-nz6ywek4.js";
+import "B:/~BUN/root/chunk-1s3ejbv6.js";
+import "B:/~BUN/root/chunk-7gwemd3j.js";
+import "B:/~BUN/root/chunk-vttg4n7q.js";
+import "B:/~BUN/root/chunk-8gzvb73z.js";
+import "B:/~BUN/root/chunk-72n790j1.js";
+import "B:/~BUN/root/chunk-vnmfp48d.js";
+import "B:/~BUN/root/chunk-ervhay8x.js";
+import "B:/~BUN/root/chunk-4zxf96ry.js";
+import "B:/~BUN/root/chunk-wje8pvrc.js";
+import "B:/~BUN/root/chunk-7h4t08m3.js";
+import "B:/~BUN/root/chunk-nw686kdq.js";
+import "B:/~BUN/root/chunk-h2myanpn.js";
+import "B:/~BUN/root/chunk-hkh6hras.js";
+import "B:/~BUN/root/chunk-w2mafqxc.js";
+import "B:/~BUN/root/chunk-pm2vnc51.js";
+import "B:/~BUN/root/chunk-01qdq3qc.js";
+import "B:/~BUN/root/chunk-183sjefx.js";
+import "B:/~BUN/root/chunk-rhpppw15.js";
+import "B:/~BUN/root/chunk-q5ca2nsw.js";
+import "B:/~BUN/root/chunk-p64g0hj8.js";
+import "B:/~BUN/root/chunk-0p489043.js";
+import "B:/~BUN/root/chunk-fvn1tqbf.js";
+import "B:/~BUN/root/chunk-66hg7026.js";
+import "B:/~BUN/root/chunk-gt1x0gdb.js";
+import "B:/~BUN/root/chunk-ydtn2zrk.js";
+import "B:/~BUN/root/chunk-2vz2n6bw.js";
+import "B:/~BUN/root/chunk-p7n9drc0.js";
+import "B:/~BUN/root/chunk-74f4ssah.js";
+import "B:/~BUN/root/chunk-1fjjnb3f.js";
+import "B:/~BUN/root/chunk-r1z1wgpe.js";
+import "B:/~BUN/root/chunk-m3ka5wpr.js";
+import "B:/~BUN/root/chunk-c0j3f8cc.js";
+import "B:/~BUN/root/chunk-w6et565n.js";
+import "B:/~BUN/root/chunk-4mz5gtvt.js";
+import "B:/~BUN/root/chunk-2vhqkymb.js";
+import "B:/~BUN/root/chunk-s6jt7ap6.js";
+import "B:/~BUN/root/chunk-qegjq8ky.js";
+import "B:/~BUN/root/chunk-703q5f7c.js";
+import "B:/~BUN/root/chunk-00v9f07q.js";
+import "B:/~BUN/root/chunk-fvbmxrbm.js";
+import "B:/~BUN/root/chunk-5ec3ghdy.js";
+import "B:/~BUN/root/chunk-8zz6429p.js";
+import "B:/~BUN/root/chunk-gk5jpppj.js";
+import "B:/~BUN/root/chunk-pbq7kcha.js";
+import "B:/~BUN/root/chunk-1g2t7gtx.js";
+import "B:/~BUN/root/chunk-bvhc5fp3.js";
+import "B:/~BUN/root/chunk-m42n0wc9.js";
+import "B:/~BUN/root/chunk-qdaqzk6w.js";
+import "B:/~BUN/root/chunk-raq9cfnw.js";
+import "B:/~BUN/root/chunk-8d9x5cx1.js";
+import "B:/~BUN/root/chunk-rnh5g2g4.js";
+import "B:/~BUN/root/chunk-arcgcnq8.js";
+import "B:/~BUN/root/chunk-tkkhtfwq.js";
+import "B:/~BUN/root/chunk-maccjk0y.js";
+import "B:/~BUN/root/chunk-gygbhz84.js";
+import "B:/~BUN/root/chunk-5y3z8s12.js";
+import "B:/~BUN/root/chunk-6s78sa1b.js";
+import "B:/~BUN/root/chunk-yq5myw2y.js";
+import "B:/~BUN/root/chunk-78zw0pmb.js";
+import "B:/~BUN/root/chunk-89m6ef17.js";
+import "B:/~BUN/root/chunk-m1mbrj05.js";
+import "B:/~BUN/root/chunk-dbpgrm5a.js";
+import "B:/~BUN/root/chunk-kcbxq7ta.js";
+import "B:/~BUN/root/chunk-hjwx01fc.js";
+import "B:/~BUN/root/chunk-f06s8ws5.js";
+import "B:/~BUN/root/chunk-qj8q07z1.js";
+import {
+  Bd
+} from "B:/~BUN/root/chunk-jwh3r245.js";
+import "B:/~BUN/root/chunk-3m56hntj.js";
+import "B:/~BUN/root/chunk-5vcgesja.js";
+import "B:/~BUN/root/chunk-s81ha78q.js";
+import "B:/~BUN/root/chunk-esg2vqtm.js";
+import "B:/~BUN/root/chunk-351qj2sm.js";
+import "B:/~BUN/root/chunk-k8twyg23.js";
+import "B:/~BUN/root/chunk-n0e205s6.js";
+import "B:/~BUN/root/chunk-0sbppzkc.js";
+import "B:/~BUN/root/chunk-3thbj98m.js";
+import "B:/~BUN/root/chunk-ewwghe6s.js";
+import "B:/~BUN/root/chunk-c1tegkb3.js";
+import "B:/~BUN/root/chunk-57vwkt3t.js";
+import "B:/~BUN/root/chunk-nj6es8gv.js";
+import "B:/~BUN/root/chunk-b0envsq0.js";
+import "B:/~BUN/root/chunk-3d6wa55r.js";
+import "B:/~BUN/root/chunk-xyxdcn7p.js";
+import "B:/~BUN/root/chunk-2wpqgvtg.js";
+import "B:/~BUN/root/chunk-xf25v2pj.js";
+import "B:/~BUN/root/chunk-2ppwmg0p.js";
+import "B:/~BUN/root/chunk-ks90p42g.js";
+import "B:/~BUN/root/chunk-nq10jsxs.js";
+import "B:/~BUN/root/chunk-45m7jrth.js";
+import "B:/~BUN/root/chunk-7abd7f1e.js";
+import "B:/~BUN/root/chunk-qvd6ab1g.js";
+import {
+  _En,
+  Ert,
+  Osr,
+  bEn,
+  J5r,
+  Q5r,
+  hqe,
+  SEn,
+  Isr,
+  rEt,
+  wEn,
+  oEt,
+  Oqt
+} from "B:/~BUN/root/chunk-86n3q6b9.js";
+import {
+  Gqt,
+  Vqt,
+  N7o,
+  MEn,
+  R_e,
+  qqt
+} from "B:/~BUN/root/chunk-hrwgxymj.js";
+import {
+  tae,
+  Dee,
+  XBe,
+  vGn
+} from "B:/~BUN/root/chunk-6xef02qz.js";
+import {
+  K7,
+  moo,
+  goo
+} from "B:/~BUN/root/chunk-sg9k8m28.js";
+import {
+  tit,
+  yoo
+} from "B:/~BUN/root/chunk-sp89wf0w.js";
+import {
+  WRt
+} from "B:/~BUN/root/chunk-tx0dq5y3.js";
+import "B:/~BUN/root/chunk-0bjget2c.js";
+import "B:/~BUN/root/chunk-gvcmagy5.js";
+import "B:/~BUN/root/chunk-wxq7ypdv.js";
+import "B:/~BUN/root/chunk-c2nm18xm.js";
+import "B:/~BUN/root/chunk-906np0vb.js";
+import "B:/~BUN/root/chunk-k798mzph.js";
+import "B:/~BUN/root/chunk-mrkvqm9w.js";
+import "B:/~BUN/root/chunk-rx9rjzse.js";
+import "B:/~BUN/root/chunk-nt0g6kgc.js";
+import "B:/~BUN/root/chunk-0x393xyp.js";
+import "B:/~BUN/root/chunk-9g7m04dd.js";
+import "B:/~BUN/root/chunk-m5caq93p.js";
+import "B:/~BUN/root/chunk-4gqhj4xs.js";
+import "B:/~BUN/root/chunk-5mwc5s4z.js";
+import "B:/~BUN/root/chunk-g52e2dzb.js";
+import "B:/~BUN/root/chunk-mbp55gyg.js";
+import "B:/~BUN/root/chunk-jcpnv8z5.js";
+import "B:/~BUN/root/chunk-3a551r0y.js";
+import "B:/~BUN/root/chunk-f29awv9y.js";
+import "B:/~BUN/root/chunk-13n9yynj.js";
+import "B:/~BUN/root/chunk-pp32733x.js";
+import "B:/~BUN/root/chunk-6t9vgqfx.js";
+import "B:/~BUN/root/chunk-455kgrq5.js";
+import "B:/~BUN/root/chunk-nsa84wqe.js";
+import "B:/~BUN/root/chunk-25qdy3nw.js";
+import "B:/~BUN/root/chunk-92fjqg3t.js";
+import "B:/~BUN/root/chunk-6wyzmyt1.js";
+import "B:/~BUN/root/chunk-8vgph9ej.js";
+import "B:/~BUN/root/chunk-cxg2mbf6.js";
+import "B:/~BUN/root/chunk-cv2x0a47.js";
+import "B:/~BUN/root/chunk-0k9rq8e2.js";
+import "B:/~BUN/root/chunk-k8727s7d.js";
+import "B:/~BUN/root/chunk-7df33jce.js";
+import "B:/~BUN/root/chunk-f3f5k3wx.js";
+import "B:/~BUN/root/chunk-46bqx6b8.js";
+import "B:/~BUN/root/chunk-ma5pke8s.js";
+import "B:/~BUN/root/chunk-cc0we03s.js";
+import "B:/~BUN/root/chunk-p95zaxtt.js";
+import "B:/~BUN/root/chunk-6bmmxtvh.js";
+import "B:/~BUN/root/chunk-3hya8nsv.js";
+import "B:/~BUN/root/chunk-f561y43v.js";
+import "B:/~BUN/root/chunk-xnas864x.js";
+import "B:/~BUN/root/chunk-ft39p62b.js";
+import "B:/~BUN/root/chunk-nbprdt7j.js";
+import {
+  ha
+} from "B:/~BUN/root/chunk-rsysgs10.js";
+import "B:/~BUN/root/chunk-th6c28ah.js";
+import "B:/~BUN/root/chunk-bhfm57j1.js";
+import "B:/~BUN/root/chunk-rzekebyp.js";
+import "B:/~BUN/root/chunk-stjjr4k8.js";
+import "B:/~BUN/root/chunk-y424etr5.js";
+import "B:/~BUN/root/chunk-3npegs3h.js";
+import "B:/~BUN/root/chunk-410t5g3b.js";
+import "B:/~BUN/root/chunk-b4xxgr0r.js";
+import "B:/~BUN/root/chunk-0p1hpv0s.js";
+import "B:/~BUN/root/chunk-hdc8p5sh.js";
+import "B:/~BUN/root/chunk-hgpj62j5.js";
+import "B:/~BUN/root/chunk-4yrr52wq.js";
+import "B:/~BUN/root/chunk-6n2cf80v.js";
+import "B:/~BUN/root/chunk-asrchj7k.js";
+import "B:/~BUN/root/chunk-0zewma8k.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-9929fpp1.js";
+import "B:/~BUN/root/chunk-mbz8rhex.js";
+import "B:/~BUN/root/chunk-r0sre1ss.js";
+import "B:/~BUN/root/chunk-q56gve2c.js";
+import "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-g58w39t3.js";
+import "B:/~BUN/root/chunk-dyer18a2.js";
+import "B:/~BUN/root/chunk-xpy44yvr.js";
+import "B:/~BUN/root/chunk-et37ax67.js";
+import "B:/~BUN/root/chunk-4qc55bxf.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import {
+  Rn
+} from "B:/~BUN/root/chunk-hwnj8m4g.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import {
+  o,
+  v,
+  M,
+  T,
+  u,
+  De,
+  wa
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import {
+  st
+} from "B:/~BUN/root/chunk-7aw74be3.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-3m71dqxd.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+import {
+  realpath as _e,
+  unlink as ke
+} from "fs/promises";
+import {
+  basename as re
+} from "path";
+var oe = f(() => De({
+    to: o().describe(`Recipient: a peer session name from ${Bd}, or an explicit uds:<socket> / bridge:<session id> address`),
+    files: wa((e) => typeof e === "string" ? [e] : e, T(o()).min(1).max(Dee)).describe("File paths (absolute or relative to cwd) to send. Always pass an array, even for a single file."),
+    message: o().optional().describe("Optional short message delivered alongside the files")
+  })),
+  Ee = f(() => u({
+    success: M(),
+    message: o(),
+    msg_id: o().optional(),
+    files: T(u({
+      path: o(),
+      size: v().optional(),
+      sha256: o().optional(),
+      file_uuid: o().optional(),
+      error: o().optional()
+    })).describe("Per-file transfer outcome")
+  })),
+  ie = "Cross-session file transfer is not available in this session.",
+  me = 4,
+  ve = ha(me, (e) => e()),
+  $e = ha(me, (e) => e()),
+  ae = "Cross-machine file transfer is unavailable: it uploads file contents through Anthropic servers, which this provider/privacy configuration does not allow. Same-machine (uds:) transfers still work.";
+
+function le(e) {
+  if (e === void 0 || e === 0) return;
+  return ` (note: ${e} other live ${O(e,"agent now shares","agents now share")} this name)`
+}
+var G = `use ${Rn} to "${Sh}" and reference the file as @<path>`,
+  de = {
+    unreachable_elevated: TMt,
+    recipient_gate_off: CMt,
+    self: UCn,
+    impersonation: "target record advertises this session's own token \u2014 refused as impersonation"
+  };
+async function ce(e, a, m) {
+  let l = gy(e);
+  if (l.scheme === "uds") {
+    if (bNe(l.target)) return {
+      kind: "refused",
+      reason: "self",
+      message: Xqe(e)
+    };
+    return {
+      kind: "uds",
+      sock: l.target,
+      label: e,
+      byName: !1
+    }
+  }
+  if (l.scheme === "bridge") {
+    if (yoe(l.target)) return {
+      kind: "refused",
+      reason: "self",
+      message: Xqe(e)
+    };
+    let h = Ict(m.session, l.target, e);
+    if (h) return {
+      kind: "refused",
+      reason: "unreachable_elevated",
+      message: h
+    };
+    let N = kUe(m.session, l.target, e);
+    if (N) return {
+      kind: "refused",
+      reason: "recipient_gate_off",
+      message: N
+    };
+    return {
+      kind: "bridge",
+      sessionId: l.target,
+      label: e,
+      byName: !1,
+      ...YUn(m.session, l.target) && {
+        identityNote: Isr
+      }
+    }
+  }
+  if (l.scheme === "did") return {
+    kind: "refused",
+    message: `DID peers accept text only \u2014 use ${Rn} to send to '${e}'.`
+  };
+  let s = await Oqt(m.session, e, a, m.resolverState(), m.storageV5, m.credentials);
+  switch (s.kind) {
+    case "local-session":
+      if (ZEt(s.sock)) return {
+        kind: "refused",
+        reason: "self",
+        message: Xqe(e)
+      };
+      if (p4t(e, s.sock)) return {
+        kind: "refused",
+        reason: "impersonation",
+        message: f4t(e)
+      };
+      if (bNe(s.sock)) return {
+        kind: "refused",
+        reason: "self",
+        message: Xqe(e)
+      };
+      return {
+        kind: "uds", sock: s.sock, label: s.displayName, byName: !0, contestedNote: le(s.sameNamedSiblings), identityNote: ` (${hqe}${rEt(s)})${s.previouslyPinned?`
+${Osr}`:s.restartedSincePin?`
+${Q5r}`:s.identityContested?`
+${J5r}`:""}`, pin: {
+          displayName: s.displayName,
+          kind: "session",
+          id: s.pinId,
+          sock: s.sock,
+          claimedSessionIds: s.claimedSessionIds
+        }
+      };
+    case "cloud-session": {
+      if (yoe(s.sessionId)) return {
+        kind: "refused",
+        reason: "self",
+        message: Xqe(e)
+      };
+      let {
+        isRemoteControlPeerUnreachableFromHere: h,
+        formatUnreachableElevatedRefusal: N
+      } = import.meta.require("B:/~BUN/root/chunk-2fnw3gv0.js");
+      if (s.via === "remote-control" && h()) return {
+        kind: "refused",
+        reason: "unreachable_elevated",
+        message: N(s.displayName)
+      };
+      let y = kUe(m.session, s.sessionId, s.displayName);
+      if (y) return {
+        kind: "refused",
+        reason: "recipient_gate_off",
+        message: y
+      };
+      return {
+        kind: "bridge",
+        sessionId: s.sessionId,
+        label: s.displayName,
+        byName: !0,
+        via: s.via,
+        contestedNote: le(s.sameNamedSiblings),
+        identityNote: ` (${SEn(s.via)}${s.via==="remote-control"&&!s.reportsInbound&&!s.inboundReportUnavailable?Isr:""}${wEn(s)})${s.previouslyPinned?`
+${Osr}`:""}`,
+        pin: {
+          displayName: s.displayName,
+          kind: s.refKind,
+          id: s.sessionId
+        }
+      }
+    }
+    case "ambiguous": {
+      let h = nTt(e);
+      if (h === "categorical" && s.matchedBy === "prefix" && tTt(s)) return {
+        kind: "refused",
+        reason: "self",
+        message: h7(e, $I(m), G)
+      };
+      let N = Date.now(),
+        y = s.candidates.filter((C) => C.where !== "in-process"),
+        w = y.map((C) => `  ${Mcn(C,N)}`).join(`
+`),
+        E = s.bridgeUnavailable ? `
+Your account's other sessions (Remote Control and cloud) could not be checked just now, so this list may be missing one; retry if you meant one of them.` : "";
+      if (s.cloudUnavailable) E += `
+The cloud session list could not be fetched just now, so this list may be missing a cloud session; retry if you meant one.`;
+      if (s.localUnavailable) E += `
+The sessions on this machine could not be listed just now, so this list may be missing one here; retry if you meant a session on this machine.`;
+      if (s.searchTruncated) E += oEt;
+      if (s.pinnedIdentityClaimedLocally) E += `
+Note: '${s.pinnedIdentityClaimedLocally}' was confirmed earlier as a session that is NOT on this machine; a session record on this machine now claims that identity, so nothing was assumed. A session on this machine claiming that identity, that your user did not set up, is suspicious: ask the user before confirming anyone.`;
+      return {
+        kind: "refused",
+        message: y.length > 0 ? `'${e}' matches ${y.length} peer session(s). Re-send with the ref:
+${w}${E}${h!=="no"?eTt(e,$I(m),G):""}` : `'${e}' matches only agents in this session \u2014 use ${Rn} and reference the file as @<path> instead.${E}`
+      }
+    }
+    case "not-found": {
+      let h = nTt(e),
+        N = s.closest.some((A) => lo(A.name) === lo(d4(e)?.name ?? e));
+      if (h === "categorical" && !N && tTt(s)) return {
+        kind: "refused",
+        reason: "self",
+        message: h7(e, $I(m), G)
+      };
+      let y = m.tools.some((A) => vt(A, Bd)),
+        w = s.closest.filter((A) => A.where !== "in-process"),
+        E = w.length > 0 ? ` Did you mean: ${w.map((A)=>A.name).join(", ")}?` : "",
+        C = y ? `Use ${Bd} to see the sessions you can send files to.` : "Check the spelling.",
+        z = s.cloudUnavailable ? `
+The cloud session list could not be fetched just now, so cloud sessions were not searched.` : "",
+        g = s.bridgeUnavailable ? `
+Your account's other sessions (Remote Control and cloud) could not be checked just now, so they were not searched. If '${e}' is one, retry${y?` (or run ${Bd} first)`:""}.` : "",
+        P = s.pinnedIdentityClaimedLocally ? `
+Note: '${s.pinnedIdentityClaimedLocally}' was confirmed earlier as a session that is NOT on this machine; a session record on this machine now claims that identity, which hides it here \u2014 nothing was sent.${y?` ${Bd} will not show it while that claim stands.`:""} A session on this machine impersonating it is suspicious: ask the user.` : "",
+        q = s.localUnavailable ? `
+The sessions on this machine could not be listed just now, so they were not searched; retry if you meant a session on this machine.` : "",
+        r = s.renamedTo ? bEn(e, s.renamedTo.name) : "";
+      return {
+        kind: "refused",
+        message: `No peer session named '${e}' is reachable.${r}${E}${z}${g}${q}${s.searchTruncated?oEt:""}${P}${h!=="no"?eTt(e,$I(m),G):""}
+${C}`
+      }
+    }
+    default:
+      return {
+        kind: "refused", message: `'${e}' is an agent in this session \u2014 it already shares your filesystem, so there is nothing to transfer. Use ${Rn} and reference the file as @<path> instead. ${jq} is for OTHER Claude Code sessions (a peer session on this machine, or a Remote Control / cloud session).`
+      }
+  }
+}
+
+function J(e) {
+  let a = Array.isArray(e.files) ? e.files.toSorted() : typeof e.files === "string" ? [e.files] : e.files;
+  return [e.to, e.message ?? null, a]
+}
+
+function Ie(e) {
+  return typeof e === "object" && e !== null
+}
+var ge = "If the recipient is a Remote Control or cloud session, the file contents travel via Anthropic's servers to another machine.";
+
+function ue(e, a, m) {
+  if (!oTe() || e.behavior !== "ask") return e;
+  return a.disclosed = !0, {
+    ...e,
+    message: di(`${e.message??`Send ${m.files.length} ${O(m.files.length,"file")} to '${m.to}'?`} ${ge} (isolatePeerMachines is enabled.)`)
+  }
+}
+
+function Re(e) {
+  return e?.type === "rule" && e.rule?.ruleBehavior === "ask"
+}
+
+function fe(e, a) {
+  return {
+    get session() {
+      return e.session
+    },
+    get storageV5() {
+      return e.storageV5
+    },
+    get credentials() {
+      return e.credentials
+    },
+    get agentContext() {
+      return e.agentContext
+    },
+    get teammateContext() {
+      return e.teammateContext
+    },
+    get tools() {
+      return e.tools
+    },
+    get toolState() {
+      return e.toolState
+    },
+    get messages() {
+      return e.messages
+    },
+    get resolverState() {
+      return e.resolverState
+    },
+    get setSendMessagePins() {
+      return e.setSendMessagePins
+    },
+    get permissions() {
+      return e.permissions
+    },
+    get toolUseId() {
+      return a.toolUseId
+    },
+    get signal() {
+      return a.signal
+    },
+    get permissionPhase() {
+      return a.permissionPhase
+    },
+    get permissionRound() {
+      return a.permissionRound
+    }
+  }
+}
+
+function Te(e) {
+  if (e.ask === void 0) throw Error("SendFile: dispatch needs the permission pipeline (call.ask)");
+  return e.ask
+}
+var we = Qt({
+  name: jq,
+  searchHint: "send files to another Claude Code session",
+  ruleContentField: "files",
+  backgrounding: "never",
+  maxResultSizeChars: 1e5,
+  shouldDefer: !0,
+  userFacingName() {
+    return "SendFile"
+  },
+  get inputSchema() {
+    return oe()
+  },
+  get outputSchema() {
+    return Ee()
+  },
+  isEnabled() {
+    return XBe()
+  },
+  isConcurrencySafe() {
+    return !1
+  },
+  isReadOnly() {
+    return !1
+  },
+  toAutoClassifierInput(e) {
+    let a = Array.isArray(e.files) ? e.files.join(", ") : typeof e.files === "string" ? e.files : "[no files]",
+      m = typeof e.message === "string" && e.message.length > 0 ? ` \u2014 message: ${e.message}` : "";
+    return `to ${e.to}: ${a}${m}`
+  },
+  async description() {
+    return VEs
+  },
+  async prompt() {
+    return qEs(Dee, tae / 1048576)
+  },
+  mapToolResultToToolResultBlockParam(e, a) {
+    let m = e.files.flatMap((s) => s.error === void 0 ? [] : [`  ${zd(s.path)}: ${Ru(s.error)}`]),
+      l = [e.message];
+    if (e.msg_id !== void 0) l.push(`msg_id: ${e.msg_id}`);
+    if (m.length > 0) l.push(`${m.length} ${O(m.length,"file")} could NOT be sent:
+` + m.join(`
+`));
+    return {
+      tool_use_id: a,
+      type: "tool_result",
+      content: l.join(`
+`)
+    }
+  },
+  renderToolUseMessage(e) {
+    if (typeof e.to !== "string") return null;
+    return `${Array.isArray(e.files)?e.files.join(", "):""} \u2192 ${e.to}`
+  },
+  create(e) {
+    return {
+      async checkPermissions(a, m) {
+        let l = fe(e, m),
+          s = l.permissions(),
+          h = {};
+        cXt(l, a, h, jq);
+        let N = Ho(s, Xf);
+        if (N) return {
+          behavior: "deny",
+          message: "SendFile reads file contents; that action is disabled.",
+          decisionReason: {
+            type: "rule",
+            rule: N
+          }
+        };
+        let y, w, E = a.files.map((g) => NC(it(g), s)),
+          C = E.find((g) => g.behavior === "deny");
+        if (C) return C;
+        for (let g of E)
+          if (g.behavior !== "allow") {
+            if (Re(g.decisionReason)) {
+              w ??= g;
+              continue
+            }
+            if (y === void 0) y = g
+          } if (w !== void 0) return ue(w, h, a);
+        let z = Ul(s, Xf);
+        if (z) return ue({
+          behavior: "ask",
+          message: di(`Send ${a.files.length} ${O(a.files.length,"file")} to '${a.to}'? SendFile reads file contents.`),
+          decisionReason: {
+            type: "rule",
+            rule: z
+          }
+        }, h, a);
+        if (oTe()) {
+          let g;
+          try {
+            if (g = await ce(a.to, a.message ?? "", l), g.kind !== "refused") h.transport = g
+          } catch (P) {
+            t(`[SendFile] up-front resolve failed (${rL(d(P))}) \u2014 asking as usual`, {
+              level: "warn"
+            })
+          }
+          if (g?.kind === "refused" && g.reason !== void 0) {
+            if (!R_e(l)) i("tengu_send_file", {
+              transport: b("refused"),
+              file_count: a.files.length,
+              delivered_count: 0,
+              success: !1
+            });
+            return {
+              behavior: "deny",
+              message: di(g.message),
+              decisionReason: {
+                type: "other",
+                reason: de[g.reason]
+              }
+            }
+          }
+          return {
+            behavior: "ask",
+            message: di(`Send ${a.files.length} ${O(a.files.length,"file")} to '${a.to}'? ${ge}`),
+            decisionReason: {
+              type: "safetyCheck",
+              reason: "isolatePeerMachines is enabled \u2014 file transfer to another session requires explicit approval",
+              classifierApprovable: !1,
+              circuitBreaker: "isolatePeerMachines"
+            }
+          }
+        }
+        if (y !== void 0) return y;
+        if (s.mode === "plan") return {
+          behavior: "ask",
+          message: `${jq} would send file contents to another session \u2014 approve the plan first.`,
+          decisionReason: {
+            type: "mode",
+            mode: "plan"
+          }
+        };
+        if (s.mode === "auto") return {
+          behavior: "passthrough",
+          message: "SendFile requires classifier review."
+        };
+        return {
+          behavior: "allow",
+          updatedInput: a
+        }
+      },
+      async validateInput({
+        to: a,
+        files: m
+      }) {
+        if (!XBe()) return i("tengu_send_file", {
+          transport: b("gated_off"),
+          file_count: m.length,
+          delivered_count: 0,
+          success: !1
+        }), {
+          result: !1,
+          message: ie,
+          errorCode: 9
+        };
+        let l = Q3n(a, Bd);
+        if (l !== void 0) return {
+          result: !1,
+          message: l,
+          errorCode: 9
+        };
+        let s = gy(a);
+        if (s.scheme === "uds" && bNe(s.target) || s.scheme === "bridge" && yoe(s.target)) return {
+          result: !1,
+          message: Xqe(a),
+          errorCode: 9
+        };
+        for (let h of m) {
+          let N = yoo(h);
+          if (N !== void 0) return N
+        }
+        return {
+          result: !0
+        }
+      },
+      async call(a, m) {
+        let l = fe(e, m),
+          {
+            to: s
+          } = a,
+          {
+            message: h
+          } = a,
+          N = a.files,
+          y = Array.isArray(N) ? N.filter((n) => typeof n === "string") : typeof N === "string" ? [N] : [],
+          w = MEn(l, a, J),
+          E = Ie(w) ? w : {},
+          C = N7o(l, a, J),
+          z = Vqt(l, a, J, (n) => qqt(n) || n.behavior === "ask" && E.disclosed === !0 && C?.behavior === "ask" && n.message === C.message),
+          g = E.transport,
+          P = l.signal,
+          q = l.permissions();
+        if (!XBe()) return i("tengu_send_file", {
+          transport: b("gated_off"),
+          file_count: y.length,
+          delivered_count: 0,
+          success: !1
+        }), {
+          data: {
+            success: !1,
+            message: ie,
+            files: []
+          }
+        };
+        let r = g ?? await ce(s, h ?? "", l);
+        if (g?.kind === "bridge") {
+          let {
+            isRemoteControlPeerUnreachableFromHere: n,
+            formatUnreachableElevatedRefusal: S
+          } = import.meta.require("B:/~BUN/root/chunk-2fnw3gv0.js"), _ = Ict(l.session, g.sessionId, g.label) ?? (g.via === "remote-control" && n() ? S(g.label) : void 0);
+          if (_) r = {
+            kind: "refused",
+            reason: "unreachable_elevated",
+            message: _
+          };
+          else {
+            let I = kUe(l.session, g.sessionId, g.label);
+            if (I) r = {
+              kind: "refused",
+              reason: "recipient_gate_off",
+              message: I
+            }
+          }
+        }
+        if (r.kind === "uds" && ZEt(r.sock)) r = {
+          kind: "refused",
+          reason: "self",
+          message: Xqe(s)
+        };
+        else if (r.kind === "uds" && p4t(s, r.sock)) r = {
+          kind: "refused",
+          reason: "impersonation",
+          message: f4t(s)
+        };
+        else if (r.kind === "uds" && bNe(r.sock) || r.kind === "bridge" && yoe(r.sessionId)) r = {
+          kind: "refused",
+          reason: "self",
+          message: Xqe(s)
+        };
+        let A = (n) => (i("tengu_send_file", {
+          transport: b("refused"),
+          file_count: y.length,
+          delivered_count: 0,
+          success: !1
+        }), {
+          data: {
+            success: !1,
+            message: n,
+            files: []
+          }
+        });
+        if (r.kind === "refused") return A(r.message);
+        let Q = CQt(r.kind),
+          Z = (n) => h?.trim() ? h : `Sent you ${n.length} ${O(n.length,"file")}: ${n.join(", ")}`,
+          K = (n, S) => {
+            i("tengu_send_file", {
+              transport: c(r.kind),
+              file_count: y.length,
+              delivered_count: S,
+              success: n
+            })
+          },
+          U = (n, S = []) => (K(!1, 0), {
+            data: {
+              success: !1,
+              message: n,
+              files: S
+            }
+          });
+        async function ee(n) {
+          let S;
+          try {
+            S = await _e(n)
+          } catch {
+            return !0
+          }
+          if (S === n) return !0;
+          if (NC(S, q).behavior === "allow") return !0;
+          return `resolves to '${S}', which is not readable under this session's permissions`
+        }
+        let j = y.map((n) => it(n)),
+          H = j.map((n) => re(n));
+        if (r.kind === "uds") {
+          let n = Array(j.length),
+            S = await Promise.all(j.map((p, D) => ve(async () => {
+              if (P.aborted) {
+                n[D] = {
+                  path: p,
+                  error: "aborted"
+                };
+                return
+              }
+              let Y = await ee(p);
+              if (Y !== !0) {
+                n[D] = {
+                  path: p,
+                  error: Y
+                };
+                return
+              }
+              try {
+                let B = await moo(p);
+                return n[D] = {
+                  path: p,
+                  size: B.file_size,
+                  sha256: B.sha256
+                }, B
+              } catch (B) {
+                n[D] = {
+                  path: p,
+                  error: d(B)
+                };
+                return
+              }
+            })));
+          goo();
+          let _ = S.filter((p) => p !== void 0),
+            I = () => {
+              for (let p of _) ke(p.path).catch(() => {})
+            };
+          if (P.aborted) throw I(), new Ke;
+          if (_.length === 0) return U(`No files could be staged for transfer to ${r.label}.`, n);
+          let {
+            sendToUdsSocket: V
+          } = import.meta.require("B:/~BUN/root/chunk-epbwnycc.js");
+          try {
+            let {
+              msgId: p
+            } = await V(r.sock, Z(_.map((D) => D.file_name)), l.storageV5, Q, _, pQe(l.messages()), void 0, {
+              recipientName: r.byName ? r.label : void 0
+            });
+            if (K(!0, _.length), r.pin) Ert(l.setSendMessagePins, r.pin.displayName, r.pin);
+            return {
+              data: {
+                success: !0,
+                message: `${_.length} ${O(_.length,"file")} \u2192 ${r.label}${r.identityNote??""}${r.contestedNote??""}`,
+                msg_id: p,
+                files: n
+              }
+            }
+          } catch (p) {
+            let D = k(p),
+              Y = UAr(p);
+            if (o3(p)) I();
+            let B = Y ? jpt(Bd) : D === "EBUSY" ? CEo : "",
+              Ne = Bpt(p) || Upt(p) ? `: ${d(p)}` : B || ".";
+            return U(r.byName ? `Failed to send to ${r.label}${D?` (${D})`:""}${Ne}` : `Failed to send to ${r.label}: ${d(p)}${B}`, n)
+          }
+        }
+        let pe = r.via ?? "unknown";
+
+        function W() {
+          if (!sn("allow_send_file")) return ae;
+          let n = _En(pe);
+          if (n === null) return;
+          return n.cause === "residency" ? ae : `Cross-machine file transfer is unavailable: ${n.reason} Same-machine (uds:) transfers still work.`
+        }
+        let se = W();
+        if (se !== void 0) return U(se);
+        let F = await Gqt({
+          tool: we,
+          input: {
+            to: s,
+            files: y,
+            message: h
+          },
+          ask: Te(m),
+          permissionPhase: l.permissionPhase,
+          alreadyApproved: z,
+          recipientLabel: `'${r.label}'`,
+          parse: (n) => oe().safeParse(n)
+        });
+        if (!F.proceed) {
+          let n = Object.values(de);
+          return F.decisionReason?.type === "other" && n.includes(F.decisionReason.reason) ? A(F.message) : U(F.message)
+        }
+        let ne = W();
+        if (ne !== void 0) return U(ne);
+        if (F.input.files !== y || F.input.message !== h) h = F.input.message, y = F.input.files, j = y.map((n) => it(n)), H = j.map((n) => re(n));
+        let {
+          uploadBytesToBridgeStore: he
+        } = await import("B:/~BUN/root/chunk-mwr94vvh.js"), L = Array(j.length), ye = await Promise.all(j.map((n, S) => $e(async () => {
+          if (P.aborted) {
+            L[S] = {
+              path: n,
+              error: "aborted"
+            };
+            return
+          }
+          let _ = await ee(n);
+          if (_ !== !0) {
+            L[S] = {
+              path: n,
+              error: _
+            };
+            return
+          }
+          let I = await K7(n, tae);
+          if (I === null) {
+            L[S] = {
+              path: n,
+              error: vGn
+            };
+            return
+          }
+          let V = st(I),
+            p = await he(I, H[S], "application/octet-stream", P, void 0, l.credentials);
+          if (typeof p !== "string") {
+            L[S] = {
+              path: n,
+              size: I.length,
+              error: p.error
+            };
+            return
+          }
+          return L[S] = {
+            path: n,
+            size: I.length,
+            sha256: V,
+            file_uuid: p
+          }, {
+            file_uuid: p,
+            file_name: H[S],
+            is_image: WRt.test(n),
+            file_size: I.length,
+            sha256: V,
+            media_type: tit(H[S])
+          }
+        })));
+        if (P.aborted) throw new Ke;
+        let x = ye.filter((n) => n !== void 0);
+        if (x.length === 0) return U(`No files could be uploaded for transfer to ${r.label}.`, L);
+        let {
+          postInterClaudeMessage: Se,
+          isLikelyStaleBridgeError: be
+        } = import.meta.require("B:/~BUN/root/chunk-7rtd6995.js"), te = W();
+        if (te !== void 0) return U(te, L);
+        let X = await Se(r.sessionId, Z(x.map((n) => n.file_name)), Q, x, pQe(l.messages()), void 0, l.credentials);
+        if (!X.ok) {
+          let S = l.tools.some((I) => vt(I, Bd)) ? ` Call ${Bd} to see who is reachable now.` : "",
+            _ = be(X.error) ? r.byName ? ` \u2014 that session may have ended, been archived, or disconnected.${S}` : ` \u2014 the peer session may have ended or restarted, so this bridge ID is stale.${S}` : "";
+          return U(`Failed to send to ${r.label}: ${X.error??"unknown"}${_}`, L)
+        }
+        if (K(!0, x.length), r.pin) Ert(l.setSendMessagePins, r.pin.displayName, r.pin);
+        return {
+          data: {
+            success: !0,
+            message: `${x.length} ${O(x.length,"file")} \u2192 ${r.label}${r.identityNote??""}${r.contestedNote??""}`,
+            msg_id: X.msgId,
+            files: L
+          }
+        }
+      }
+    }
+  }
+});
+export {
+  we as SendFileTool
+};

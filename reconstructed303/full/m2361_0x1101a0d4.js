@@ -1,0 +1,1223 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  Nn,
+  Qr,
+  gc,
+  Bp
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import {
+  b
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  pT,
+  Ve,
+  H,
+  qi
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import {
+  Y,
+  je
+} from "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  hr
+} from "B:/~BUN/root/chunk-7gwemd3j.js";
+import {
+  g,
+  m,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-yt0knyw7.js";
+import {
+  Bi,
+  se,
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  ne
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  is,
+  Yg,
+  ta,
+  G$o,
+  jJ,
+  $Bt,
+  I_t,
+  GBt,
+  nT,
+  Pi,
+  yhe,
+  Oi,
+  rr
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  dr
+} from "B:/~BUN/root/chunk-6a9s3k2y.js";
+import {
+  Df
+} from "B:/~BUN/root/chunk-h2myanpn.js";
+import {
+  xr
+} from "B:/~BUN/root/chunk-vttg4n7q.js";
+import {
+  XT
+} from "B:/~BUN/root/chunk-v6pbq6dm.js";
+import {
+  SD,
+  Zf,
+  b3
+} from "B:/~BUN/root/chunk-hhgqcegv.js";
+import {
+  _Be,
+  kee,
+  sO
+} from "B:/~BUN/root/chunk-8gzvb73z.js";
+import {
+  uh,
+  cp,
+  Wvo,
+  vOs,
+  kOs,
+  EOs
+} from "B:/~BUN/root/chunk-72n790j1.js";
+import {
+  Awo,
+  qPe,
+  SN,
+  gM,
+  eK,
+  Pwo
+} from "B:/~BUN/root/chunk-q0t5e1bx.js";
+import {
+  ag
+} from "B:/~BUN/root/chunk-472kxa0t.js";
+import {
+  Ne
+} from "B:/~BUN/root/chunk-nvdqbkrt.js";
+import {
+  XY,
+  Cue,
+  Rue,
+  sYe,
+  yAt,
+  lmr,
+  Iit,
+  lse,
+  dSe,
+  A0n,
+  sZ,
+  V8t,
+  gYe,
+  mC,
+  tms,
+  ASe,
+  Que,
+  fZ,
+  Zue,
+  xHe,
+  xms,
+  epe,
+  PHe,
+  Eat,
+  f6,
+  cd,
+  $se,
+  S$e,
+  lw,
+  Ys,
+  rwe,
+  dQt,
+  Pwr,
+  Wxe,
+  Mq,
+  Cmo,
+  Xbs,
+  z$e,
+  G$e
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  ht
+} from "B:/~BUN/root/chunk-2fccb5hn.js";
+import {
+  vt
+} from "B:/~BUN/root/chunk-hkc0g0wr.js";
+import {
+  gx
+} from "B:/~BUN/root/chunk-qj8q07z1.js";
+import {
+  _X
+} from "B:/~BUN/root/chunk-8zz6429p.js";
+import {
+  E1
+} from "B:/~BUN/root/chunk-hw809fek.js";
+import {
+  Mvn,
+  yce
+} from "B:/~BUN/root/chunk-9f50y83h.js";
+import {
+  bRe
+} from "B:/~BUN/root/chunk-j9be31pr.js";
+import {
+  YWr
+} from "B:/~BUN/root/chunk-5xe63htx.js";
+import {
+  wre,
+  TWt
+} from "B:/~BUN/root/chunk-90mm1g9e.js";
+import {
+  Pet
+} from "B:/~BUN/root/chunk-dszcj90e.js";
+import {
+  go
+} from "B:/~BUN/root/chunk-y59h61rh.js";
+import {
+  o,
+  v,
+  M,
+  oe,
+  T,
+  u,
+  De,
+  $e,
+  Jr,
+  fe,
+  U,
+  C
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+import {
+  U_,
+  st
+} from "B:/~BUN/root/chunk-7aw74be3.js";
+import {
+  He
+} from "B:/~BUN/root/chunk-8znbjmp4.js";
+import {
+  dirname as ot,
+  resolve as rt
+} from "path";
+import {
+  basename as pe,
+  dirname as Ue,
+  join as Se
+} from "path";
+var Oe = 1e4,
+  Te = Pwo,
+  le = {
+    reason: "timed_out"
+  };
+async function ue(e) {
+  if (!GBt(e)) return {
+    reason: "file_absent"
+  };
+  let n = cp().hostCatalog,
+    s = n.texts.get(e);
+  if (s !== void 0) return s;
+  let r = n.readingForCalls.get(e);
+  if (r === void 0) {
+    if (vOs()) return {
+      reason: "earlier_work_outstanding"
+    };
+    if (n.readingForCalls.size >= Te) return {
+      reason: "too_many_reads"
+    };
+    let d = n.lastReadForCalls.then((S) => Ie(n, e, S));
+    n.lastReadForCalls = d.then(({
+      probed: S
+    }) => S, () => {
+      return
+    }), r = {
+      reading: d.then(({
+        outcome: S
+      }) => S).finally(() => {
+        if (n.readingForCalls.delete(e), n.readingForCalls.size === 0) n.lastReadForCalls = Promise.resolve(void 0)
+      }),
+      since: performance.now()
+    }, n.readingForCalls.set(e, r)
+  }
+  let i = r.since + Oe - performance.now();
+  return (i > 0 ? await je(r.reading, i) : void 0) ?? {
+    reason: "timed_out"
+  }
+}
+async function Ie(e, n, s) {
+  let r = () => cp().hostCatalog === e;
+  if (s === void 0) await Yg();
+  let i = s ?? await Wvo(async () => r() ? kOs() : le);
+  if ("reason" in i) return {
+    outcome: i,
+    probed: void 0
+  };
+  await Yg();
+  let d = await Wvo(async () => {
+    let c = r() ? await EOs(i.root, n, i.device) : le;
+    if (!("reason" in c)) e.texts.set(n, c);
+    return c
+  });
+  return {
+    outcome: d,
+    probed: "reason" in d ? void 0 : i
+  }
+}
+import {
+  join as Fe
+} from "path";
+var nKo = "ListProjectCommands",
+  ve = 8388608,
+  de = 2000,
+  ce = f(() => u({
+    name: o().min(1).max(1024),
+    loadedFrom: U(["skills", "commands_DEPRECATED"]),
+    text: o().max(Iit)
+  })),
+  Ht = f(() => u({
+    commands: T(ce()).max(de),
+    cut: M(),
+    refused: v().int().min(0)
+  }));
+
+function V(e) {
+  return hr().skillFiles.get(e) ?? (e.skillRoot ? Fe(e.skillRoot, "SKILL.md") : "")
+}
+async function ee(e) {
+  let n = V(e);
+  if (n === "") return null;
+  try {
+    return await XT(se(), n, Iit)
+  } catch {
+    return null
+  }
+}
+
+function ket(e) {
+  return Buffer.byteLength(Bi(e))
+}
+async function rKo(e, n, s) {
+  let {
+    storageV5: r
+  } = s.toolUseContext();
+  Mq(), dr();
+  let i = [...await Wxe(Qr(), r), ...G$e(), ...z$e()];
+  n.throwIfAborted();
+  let d = new Set,
+    c = [],
+    S = 0,
+    y = !1,
+    _ = 0;
+  for (let P of i) {
+    if (P.type !== "prompt" || d.has(P.name)) continue;
+    d.add(P.name);
+    let {
+      name: k,
+      loadedFrom: h
+    } = P;
+    if (P.source !== "projectSettings" || h !== "skills" && h !== "commands_DEPRECATED" || qPe(P) || mC(P)) continue;
+    let x = await ee(P);
+    n.throwIfAborted();
+    let z = ce().safeParse({
+      name: k,
+      loadedFrom: h,
+      text: x
+    });
+    if (!z.success) {
+      _++, t(`ListProjectCommands: ${k} refused from the listing`, {
+        level: "warn"
+      });
+      continue
+    }
+    if (c.length === de) {
+      y = !0;
+      break
+    }
+    let w = ket(z.data);
+    if (S + w > ve) {
+      y = !0;
+      continue
+    }
+    S += w, c.push(z.data)
+  }
+  return {
+    summary: `${c.length} commands${y?", cut at a limit":""}${_>0?`, ${_} refused`:""}`,
+    output: {
+      commands: c,
+      cut: y,
+      refused: _
+    }
+  }
+}
+var oKo = "ReadSkill",
+  sKo = "RenderSkill",
+  iKo = "RenderPinnedSkill",
+  aKo = "RenderBuiltInCommand",
+  ye = 110000,
+  Ce = 2000,
+  j = 1e5,
+  Be = lmr,
+  Ge = 60000,
+  Xe = 4096,
+  he = 256,
+  _e = 256,
+  Pe = 32768,
+  Ke = [ht, gx, go],
+  ge = He({
+    last: Promise.resolve()
+  }, (e) => {
+    e.last = Promise.resolve()
+  }),
+  ke = f(() => C(!0).optional().catch(void 0)),
+  Ye = f(() => u({
+    name: o().min(1).max(1024),
+    updatedAt: o().max(64).nullable(),
+    waitMs: v().int().min(0).max(ye),
+    fromHostCatalog: ke()
+  })),
+  xe = f(() => u({
+    outcome: C("missing"),
+    syncing: M(),
+    fromHostCatalog: C(!0).optional(),
+    withheld: C(!0).optional()
+  })),
+  On = f(() => Jr("outcome", [u({
+    outcome: C("found"),
+    text: o().max(uh),
+    fromHostCatalog: C(!0).optional()
+  }), xe()])),
+  B = f(() => oe().optional()),
+  We = f(() => u({
+    name: o().min(1).max(1024),
+    args: o().max(j),
+    readOnly: M(),
+    waitMs: v().int().min(0).max(ye),
+    fromHostCatalog: ke(),
+    expectSha256: o().regex(U_).optional(),
+    sessionRules: B()
+  })),
+  Je = f(() => u({
+    name: o().min(1).max(1024),
+    args: o().max(j),
+    readOnly: M(),
+    sessionRules: B(),
+    model: o().min(1).max(256),
+    session: u({
+      tools: T(o().min(1).max(he)).max(Xe).catch([]),
+      isSkillPreload: M().optional().catch(void 0),
+      modelScheduledOrigin: M().optional().catch(void 0),
+      remoteSessionId: o().min(1).max(256).optional().catch(void 0),
+      effort: $e([U(ta), v().int().min(0).max(1000)]).optional().catch(void 0)
+    }).optional().catch(void 0)
+  })),
+  G = f(() => u({
+    outcome: C("rendered"),
+    blocks: T(u({
+      type: C("text"),
+      text: o().max(Be)
+    })).max(16),
+    handedOff: T(De({
+      command: o().min(1).max(Pe),
+      tool: o().max(he)
+    })).max(_e).optional(),
+    fromHostCatalog: C(!0).optional()
+  })),
+  ie = f(() => u({
+    outcome: C("failed"),
+    message: o().max(Ce)
+  })),
+  Tn = f(() => Jr("outcome", [G(), xe(), ie()]));
+async function lKo(e, n, {
+  toolUseContext: s
+}) {
+  let {
+    name: r,
+    updatedAt: i,
+    waitMs: d,
+    fromHostCatalog: c
+  } = Ye().parse(e), S = c ? await ze(r) : await re(r, d, n, s(), i), y = S && F(S);
+  if (y !== void 0) return {
+    summary: "no such skill",
+    output: D(y, c)
+  };
+  let _ = c ? S?.getLoadedSkillMd?.() ?? null : S?.skillRoot === void 0 ? null : await XT(se(), Se(S.skillRoot, "SKILL.md"), uh).catch(() => null);
+  return _ === null ? {
+    summary: "no such skill",
+    output: D(void 0, c)
+  } : {
+    summary: "found",
+    output: {
+      outcome: "found",
+      text: _,
+      ...c && {
+        fromHostCatalog: c
+      }
+    }
+  }
+}
+async function TWr(e, n, {
+  toolUseContext: s,
+  launchPermissionContext: r
+}) {
+  let {
+    name: i,
+    args: d,
+    readOnly: c,
+    waitMs: S,
+    fromHostCatalog: y,
+    expectSha256: _,
+    sessionRules: P
+  } = We().parse(e), k = X(s(), c, P, r), h = y ? await ze(i) : await re(i, S, n, k);
+  if (h?.source === "projectSettings") Mq(), h = await re(i, S, n, k);
+  let x = h && F(h);
+  if (h === void 0 || x !== void 0) return {
+    summary: "no such skill",
+    output: D(x, y)
+  };
+  if (_ !== void 0) {
+    if (h = await qe(h, _), h === void 0 || F(h) !== void 0) return {
+      summary: "changed since listed",
+      output: {
+        outcome: "failed",
+        message: "this skill's file changed after the session listed it, so it was not rendered; a new session lists the current file"
+      }
+    }
+  }
+  let z = await K(h, d, k, n);
+  return y && z.output.outcome === "rendered" ? {
+    ...z,
+    output: {
+      ...z.output,
+      fromHostCatalog: y
+    }
+  } : z
+}
+
+function X(e, n, s, r) {
+  if (!n && s === void 0) return e;
+  let i = n ? void 0 : YWr(s, r);
+  if (i === void 0) return {
+    ...e,
+    options: {
+      ...e.options,
+      readOnlySkillLoad: !0
+    }
+  };
+  let {
+    toolPermissionContext: d
+  } = i;
+  return {
+    ...e,
+    getAppState: () => ({
+      ...wre(),
+      toolPermissionContext: d
+    }),
+    ...i.offersHandOff && {
+      promptShellHandOff: []
+    },
+    ...i.classifiesEveryCall && {
+      promptShellCallerClassifiesAll: !0
+    }
+  }
+}
+async function qe(e, n) {
+  let s = SN(e) ? e.getLoadedSkillMd?.() ?? null : await ee(e);
+  if (s === null || st(s) !== n) return;
+  try {
+    let r = Pwr({
+      content: s,
+      skillFilePath: V(e),
+      skillName: e.name,
+      source: e.source,
+      baseDir: e.skillRoot,
+      loadedFrom: e.loadedFrom ?? "skills",
+      serverAttribution: e.serverAttribution
+    });
+    return r?.type === "prompt" ? r : void 0
+  } catch (r) {
+    l(H(r));
+    return
+  }
+}
+async function dKo(e, n, {
+  toolUseContext: s,
+  launchPermissionContext: r
+}) {
+  let {
+    name: i,
+    args: d,
+    readOnly: c,
+    sessionRules: S,
+    model: y,
+    session: _
+  } = Je().parse(e), P = X(s(), c, S, r), k = _?.effort, h = {
+    ...P,
+    ...k !== void 0 && {
+      permissionLayers: [...P.permissionLayers ?? [], {
+        kind: "effort",
+        effort: k
+      }]
+    },
+    options: {
+      ...P.options,
+      mainLoopModel: y,
+      ..._ && {
+        tools: [...P.options.tools, ...TWt(!1).filter((z) => Ke.some((w) => vt(z, w)) && _.tools.some((w) => vt(z, w)) && !P.options.tools.some((w) => vt(w, z.name)))],
+        isSkillPreload: _.isSkillPreload,
+        modelScheduledOrigin: _.modelScheduledOrigin
+      }
+    }
+  }, x = Qe(i);
+  if (x === void 0 || F(x) !== void 0) return {
+    summary: "no such command",
+    output: D()
+  };
+  return Ze(y, () => tms(_?.remoteSessionId, () => K(x, d, h, n)))
+}
+
+function Qe(e) {
+  bRe();
+  for (let n of [..._X(), ...f6()])
+    if (n.type === "prompt" && n.name === e && Awo(n)) return n;
+  return
+}
+async function Ze(e, n) {
+  let s = ge.last.then(async () => {
+    let r = gc();
+    Bp(e);
+    try {
+      return await n()
+    } finally {
+      Bp(r)
+    }
+  });
+  return ge.last = s.then(() => {
+    return
+  }, () => {
+    return
+  }), s
+}
+async function K(e, n, s, r) {
+  try {
+    let i = await e.getPromptForCommand(n, s),
+      d = i.flatMap((S) => S.type === "text" ? [{
+        type: S.type,
+        text: S.text
+      }] : []),
+      c = G().safeParse({
+        outcome: "rendered",
+        blocks: d,
+        ...s.promptShellHandOff?.length && {
+          handedOff: s.promptShellHandOff
+        }
+      });
+    if (d.length !== i.length || !c.success) return {
+      summary: "render refused",
+      output: {
+        outcome: "failed",
+        message: s.promptShellHandOff?.length ? `the rendered skill is not plain text of a usable size, or it leaves Claude more than ${_e} inline shell commands or one longer than ${Pe} characters` : "the rendered skill is not plain text of a usable size"
+      }
+    };
+    return {
+      summary: "rendered",
+      output: c.data
+    }
+  } catch (i) {
+    if (Ve(i) || r.aborted) throw i;
+    if (!(i instanceof pT)) l(H(i));
+    return {
+      summary: "render failed",
+      output: {
+        outcome: "failed",
+        message: i instanceof pT ? ne(i.message, Ce) : "the skill could not be rendered"
+      }
+    }
+  }
+}
+
+function D(e, n) {
+  return {
+    outcome: "missing",
+    syncing: cp().firstSyncPromise !== null,
+    ...e === "account_skill_off" && {
+      withheld: !0
+    },
+    ...n && {
+      fromHostCatalog: n
+    }
+  }
+}
+async function re(e, n, s, r, i = null) {
+  let d = cp(),
+    c = Y(n, s, {
+      unref: !0
+    }),
+    S = (k) => Promise.race([k.catch(() => {
+      return
+    }), c]),
+    y = await te(e, r, i),
+    _ = nT(e);
+  if (y === void 0 && A0n(_)) await S(dSe(_)), s.throwIfAborted(), y = await te(e, r, i);
+  if (y !== void 0 || !d.firstSyncPromise) return y;
+  let P = d.firstSyncPromise;
+  if (d.firstRoundSettled) {
+    let k = Date.now();
+    if (k - d.missingSkillResyncAt >= Ge) {
+      d.missingSkillResyncAt = k;
+      let h = Mvn(r.session, r.storageV5, r.credentials).finally(() => {
+        if (d.missingSkillResync === h) d.missingSkillResync = null
+      });
+      d.missingSkillResync = h
+    }
+    P = d.missingSkillResync ?? d.syncPromise
+  }
+  if (!P) return;
+  return await S(P), s.throwIfAborted(), yce(), te(e, r, i)
+}
+async function ze(e) {
+  let n = nT(e);
+  if (!GBt(n) || !Cmo()) return;
+  let s = cp().hostCatalog,
+    r = {
+      fromMemory: s.texts.has(n),
+      inLine: s.readingForCalls.size,
+      at: performance.now()
+    },
+    i, d, c = !1;
+  try {
+    let S = await ue(n);
+    if ("reason" in S) d = S;
+    else {
+      let y = Xbs(S);
+      i = y?.type === "prompt" && y.name === e ? y : void 0
+    }
+  } catch (S) {
+    c = !0, l(H(S))
+  } finally {
+    try {
+      tt({
+        served: i,
+        miss: d,
+        threw: c,
+        asked: r
+      })
+    } catch (S) {
+      l(H(S))
+    }
+  }
+  return i
+}
+var et = new Set(["timed_out", "earlier_work_outstanding", "too_many_reads"]);
+
+function tt({
+  served: e,
+  miss: n,
+  threw: s,
+  asked: r
+}) {
+  let i = e !== void 0 && eK(e),
+    d = {
+      from: b("call"),
+      named: 1,
+      loaded: e === void 0 ? 0 : 1,
+      withheld: i ? 1 : 0,
+      from_memory: r.fromMemory,
+      in_line: r.inLine,
+      waited_ms: Math.round(performance.now() - r.at),
+      ...n !== void 0 && {
+        [`mount_miss_${n.reason}`]: 1
+      },
+      ...s && {
+        threw: s
+      }
+    };
+  if (i) p("skill_host_catalog", "all_withheld", d);
+  else if (e !== void 0) g("skill_host_catalog", d);
+  else m("skill_host_catalog", n !== void 0 && et.has(n.reason) ? "not_in_time" : "none_loaded", d)
+}
+
+function F(e) {
+  dr();
+  let n = gM(e);
+  if (mC(e)) return n ? "account_skill_off" : "other";
+  if (qPe(e)) return "other";
+  return ASe(e) ? "other" : void 0
+}
+async function te(e, n, s) {
+  let r = nT(e) !== e,
+    i = await Wxe(Qr(), n.storageV5);
+  for (let d of [...i, ...G$e(), ...z$e()])
+    if (d.type === "prompt" && d.name === e && (d.loadedFrom === "syncedSkills" || !r) && !SN(d)) return await nt(d, s) ? void 0 : d;
+  return
+}
+async function nt(e, n) {
+  if (n === null || e.loadedFrom !== "syncedSkills" || e.skillRoot === void 0) return !1;
+  let s = Ue(e.skillRoot),
+    r = await Cue(Se(s, SD), null),
+    i = r === null ? null : Rue(r, yAt(), null);
+  if (i === null) return !1;
+  let d = Zf(pe(e.skillRoot)),
+    c = !1;
+  for (let S of XY(sYe(), i.skills)) {
+    try {
+      if (Zf(pe(b3(S.name, s))) !== d) continue
+    } catch {
+      continue
+    }
+    if (S.updatedAt === _Be) {
+      c = !0;
+      continue
+    }
+    return S.updatedAt !== null && Date.parse(S.updatedAt) < Date.parse(n)
+  }
+  return c
+}
+var cKo = "ListPluginCommands",
+  uKo = "RenderPluginCommand",
+  pKo = "RenderPinnedPluginCommand",
+  it = 60000,
+  at = f(() => $e([$Bt(), u({
+    source: C("claudeai"),
+    marketplaceId: o(),
+    organizationUuid: o(),
+    scope: U(I_t).optional()
+  }), u({
+    source: C("pluginDirectory")
+  })])),
+  lt = f(() => u({
+    commandName: o(),
+    filePath: o(),
+    baseDir: o(),
+    sourceName: o(),
+    pluginManifest: jJ(),
+    pluginPath: o(),
+    provenance: u({
+      officiallyAttested: M().optional(),
+      marketplaceSource: at().optional(),
+      npmResolution: u({
+        packageName: o(),
+        tarballUrl: o()
+      }).optional(),
+      home: o().optional()
+    }).optional(),
+    isSkill: M(),
+    config: u({
+      isSkillMode: M(),
+      serverAttribution: u({
+        skillId: o().optional(),
+        pluginId: o().optional()
+      }).optional(),
+      metadata: G$o().optional()
+    })
+  })),
+  ut = f(() => u({
+    filePath: o(),
+    pluginName: o(),
+    namespace: T(o()).readonly(),
+    sourceName: o(),
+    pluginPath: o(),
+    pluginManifest: jJ()
+  })),
+  Ee = f(() => o().refine((e) => rt(e) === e && ot(e) !== e).optional().catch(void 0)),
+  we = f(() => u({
+    source: lt(),
+    text: o(),
+    pluginDataDir: Ee(),
+    sha256: o().regex(U_).optional().catch(void 0)
+  })),
+  po = f(() => u({
+    commands: T(we()),
+    skills: T(we()),
+    agents: T(u({
+      source: ut(),
+      text: o(),
+      pluginDataDir: Ee()
+    })),
+    resynced: M().optional(),
+    syncsSessionRefs: M().optional(),
+    settingsRan: M().optional(),
+    comparesSource: M().optional()
+  })),
+  IQn = f(() => T(o().max(64000)).max(1000).nullable().optional().catch(null)),
+  mt = f(() => u({
+    registeredHooks: fe(o(), IQn()).optional().catch(void 0),
+    resync: M().optional(),
+    waitMs: v().int().positive().optional().catch(void 0),
+    hashes: M().optional().catch(void 0),
+    dataDirs: M().optional().catch(void 0)
+  }));
+async function fKo(e, n, s) {
+  let r = mt().safeParse(e ?? {}).data,
+    i = r?.resync === !0,
+    {
+      session: d,
+      storageV5: c,
+      credentials: S
+    } = s.toolUseContext(),
+    y = r?.registeredHooks;
+  dr();
+  let _ = Y(Math.min(sZ(), r?.waitMs ?? 1 / 0), n, {
+      unref: !0
+    }),
+    {
+      resynced: P
+    } = await CWr(d, S, {
+      resync: i,
+      deadline: _
+    });
+  n.throwIfAborted(), cd(c, S);
+  let k = await Promise.race([RWr(d, c, S), _.then(() => !1)]);
+  n.throwIfAborted();
+  let [h, x, z] = await Promise.all([epe(c), PHe(c), xr("agents") ? [] : Eat(c, S)]), w = await Ys(c, S), R = d.pluginsSync.settingsInstall.loaded;
+  await dQt([...w.enabled, ...R?.plugins.enabled ?? []], c).catch(l);
+  let O = Me(w, R?.plugins),
+    N = await q([...be(z, w, y), ...R === null ? [] : be(R.agents, R.plugins, y, O)]),
+    A = await rwe(c),
+    L = new Set(N.map(({
+      source: E
+    }) => E.sourceName));
+  for (let {
+      source: E
+    }
+    of A.enabled) L.delete(E);
+  let Q = await Le([...w.enabled, ...R?.plugins.enabled ?? []].filter((E) => L.has(E.source)), c),
+    ae = r?.hashes === !0 ? pt : ft,
+    Z = (E) => r?.dataDirs === !0 ? gt(E) : E,
+    I = {
+      commands: Z(ae(await q([...J(h), ...J(R?.commands ?? [], O)], r?.hashes === !0))),
+      skills: Z(ae(await q([...J(x), ...J(R?.skills ?? [], O)]))),
+      agents: Z(N.filter(({
+        source: E
+      }) => !FSt(E, L.has(E.sourceName) ? Q : A, y?.[S$e(E.pluginPath)]))),
+      resynced: P,
+      syncsSessionRefs: sO(d),
+      settingsRan: k,
+      comparesSource: !0
+    };
+  return {
+    summary: `${I.commands.length} commands, ${I.skills.length} skills, ${I.agents.length} agents`,
+    output: I
+  }
+}
+async function CWr(e, n, {
+  resync: s,
+  deadline: r
+}) {
+  let i = await Promise.race([V8t(e, n).catch(() => !1), r.then(() => {
+    return
+  })]);
+  if (i !== !1 && !(s && i !== void 0)) return {
+    resynced: !1
+  };
+  return {
+    resynced: await Promise.race([gYe(e, n).then(() => !0, () => !1), r.then(() => !1)]) && e.pluginsSync.lastRoundListed
+  }
+}
+
+function RWr(e, n, s) {
+  if (xr("plugins")) return Promise.resolve(!0);
+  let r = e.pluginsSync.settingsInstall;
+  return r.next ??= dt(e, n, s).then(() => !0, (i) => (l(i), !1)), r.next
+}
+async function dt(e, n, s) {
+  let r = e.pluginsSync.settingsInstall;
+  await r.current, r.current = r.next, r.next = null, await Promise.allSettled([E1()]), a.unset("CLAUDE_CODE_SYNC_PLUGIN_INSTALL"), await Promise.allSettled([Pet(void 0, n, s), e.pluginsSync.firstSyncPromise]), cd(n, s);
+  let i = lw(n, s);
+  await i, cd(n, s), Ne().pluginLoadCacheOnly = i;
+  let d = Promise.all([epe(n), PHe(n), xr("agents") ? [] : Eat(n, s), i]);
+  cd(n, s);
+  let [c, S, y, _] = await d;
+  r.loaded = {
+    commands: c,
+    skills: S,
+    agents: y,
+    plugins: _
+  }
+}
+var ct = f(() => u({
+    name: o().min(1).max(1024),
+    listedAs: U(["command", "skill"]),
+    args: o().max(j),
+    readOnly: M(),
+    sessionRules: B(),
+    sourceName: o().max(1024).optional(),
+    registeredHooks: IQn(),
+    expectSha256: o().regex(U_).optional()
+  })),
+  So = f(() => Jr("outcome", [G().extend({
+    sourceName: o().optional()
+  }), ie().extend({
+    sourceName: o().optional()
+  }), u({
+    outcome: C("missing")
+  }), u({
+    outcome: C("changed")
+  }), u({
+    outcome: C("guarded")
+  })]));
+async function AWr(e, n, s) {
+  let {
+    name: r,
+    listedAs: i,
+    args: d,
+    readOnly: c,
+    sessionRules: S,
+    sourceName: y,
+    registeredHooks: _,
+    expectSha256: P
+  } = ct().parse(e), k = s.toolUseContext(), h = await W(r, i, k);
+  if (h === void 0) {
+    let A = Y(sZ(), n, {
+      unref: !0
+    });
+    if (await xWr(s, n, async () => (h = await W(r, i, k), h !== void 0)), h ??= await W(r, i, k), h === void 0) {
+      let L = k.session.pluginsSync.settingsInstall;
+      await Promise.race([L.next ?? L.current, A]), n.throwIfAborted(), h = await W(r, i, k)
+    }
+  }
+  let x = h?.command,
+    z = !1;
+  if (x !== void 0 && P !== void 0) {
+    let [A] = x.pluginSource === void 0 ? [] : await q([x.pluginSource], !0, (Q) => {
+      z = !qi(Q)
+    }), L = A !== void 0 && Re(A.source, A.text) === P ? xms(A.source, A.text) : null;
+    x = L?.type === "prompt" ? L : void 0
+  }
+  dr();
+  let w = h === void 0 ? void 0 : await Que(h.command);
+  if (dr(), h === void 0 || (y ?? h.command.pluginSource?.sourceName) !== h.command.pluginSource?.sourceName || Oi(h.command.pluginSource?.sourceName ?? "") === Pi && kee()) return {
+    summary: "no such plugin entry",
+    output: {
+      outcome: "missing"
+    }
+  };
+  if (Zue(w)) return fZ(h.command, w), {
+    summary: "no such plugin entry",
+    output: {
+      outcome: "missing"
+    }
+  };
+  let {
+    judgedBy: R
+  } = h;
+  if (z) return {
+    summary: "entry not read",
+    output: {
+      outcome: "failed",
+      message: "its file could not be read where its plugin is kept, so it was not run",
+      sourceName: h.command.pluginSource?.sourceName
+    }
+  };
+  if (x === void 0) return {
+    summary: "changed since listed",
+    output: {
+      outcome: "changed"
+    }
+  };
+  if (x.hooks !== void 0 || R.some((A) => FSt(x.pluginSource, A, _))) return {
+    summary: "guarded entry",
+    output: {
+      outcome: "guarded"
+    }
+  };
+  let {
+    summary: O,
+    output: N
+  } = await K(x, d, X(k, c, S, s.launchPermissionContext), n);
+  return {
+    summary: O,
+    output: {
+      ...N,
+      sourceName: x.pluginSource?.sourceName
+    }
+  }
+}
+
+function Re(e, n) {
+  let {
+    serverAttribution: s,
+    ...r
+  } = e.config;
+  return st(st(n) + lse({
+    ...e,
+    config: r
+  }))
+}
+async function W(e, n, {
+  session: s,
+  storageV5: r,
+  credentials: i
+}) {
+  let d = Ae(await (n === "skill" ? PHe : epe)(r), e),
+    c = s.pluginsSync.settingsInstall.loaded,
+    S = d ? await Ys(r, i) : c?.plugins;
+  if (S === void 0) return;
+  dr();
+  let y = await rwe(r),
+    _ = Me(y, S),
+    P = d ?? Ae((n === "skill" ? c?.skills : c?.commands) ?? [], e, _),
+    k = P?.pluginSource?.sourceName ?? "",
+    h = y.enabled.some((x) => x.source === k);
+  if (P === void 0 || !(h || _.has(k))) return;
+  return {
+    command: P,
+    judgedBy: [S, h ? y : await Le(S.enabled.filter((x) => x.source === k), r)]
+  }
+}
+async function Le(e, n) {
+  let s = await Promise.allSettled(e.map(({
+    path: r,
+    source: i,
+    name: d
+  }) => $se(r, i, !0, d, !0, n, void 0, {
+    noTelemetry: !0
+  })));
+  return {
+    enabled: s.flatMap((r) => r.status === "fulfilled" ? [r.value.plugin] : []),
+    errors: s.flatMap((r) => r.status === "fulfilled" ? r.value.errors : [])
+  }
+}
+
+function Ae(e, n, s) {
+  for (let r of e)
+    if (r.type === "prompt" && r.name === n && r.pluginSource !== void 0 && !Df(r.pluginSource.sourceName) && s?.has(r.pluginSource.sourceName) !== !1) return r;
+  return
+}
+async function xWr(e, n, s) {
+  let {
+    session: r,
+    storageV5: i,
+    credentials: d
+  } = e.toolUseContext(), c = r.pluginsSync.missingEntry, S = Y(sZ(), n, {
+    unref: !0
+  }).then(() => {
+    return
+  }), y = await Promise.race([V8t(r, d).catch(() => !1), S]);
+  if (n.throwIfAborted(), y === void 0) return !1;
+  let _ = () => {
+    if (c.resync === null && !c.swept) c.swept = !0, cd(i, d)
+  };
+  if (_(), y && await s()) return !1;
+  if (n.throwIfAborted(), c.resync === null && Date.now() - c.resyncAt >= it) {
+    c.resyncAt = Date.now();
+    let k = gYe(r, d).catch(() => !1).finally(() => {
+      c.resync = null, c.swept = !1
+    });
+    c.resync = k
+  }
+  let P = c.resync;
+  if (P !== null) await Promise.race([P, S]), n.throwIfAborted();
+  return _(), P !== null && c.resync !== P
+}
+
+function Me({
+  enabled: e,
+  errors: n
+}, s) {
+  let r = new Set(e.flatMap(yhe).map(rr)),
+    i = new Set;
+  for (let c of n)
+    if (c.type === "plugin-cache-miss") i.add(c.source);
+  let d = new Set;
+  for (let c of s?.enabled ?? [])
+    if (i.has(c.source) && !r.has(rr(c.name))) d.add(c.source);
+  return d
+}
+
+function J(e, n) {
+  return e.flatMap((s) => s.type === "prompt" && s.pluginSource !== void 0 && !Df(s.pluginSource.sourceName) && n?.has(s.pluginSource.sourceName) !== !1 ? [s.pluginSource] : [])
+}
+
+function be(e, n, s, r) {
+  return e.flatMap((i) => i.source === "plugin" && i.pluginSource !== void 0 && !Df(i.pluginSource.sourceName) && r?.has(i.pluginSource.sourceName) !== !1 && !FSt(i.pluginSource, n, s?.[S$e(i.pluginSource.pluginPath)]) ? [i.pluginSource] : [])
+}
+
+function ft(e) {
+  return e
+}
+
+function pt(e) {
+  return e.map((n) => ({
+    ...n,
+    sha256: Re(n.source, n.text)
+  }))
+}
+
+function gt(e) {
+  return e.map((n) => ({
+    ...n,
+    pluginDataDir: ag(n.source.sourceName)
+  }))
+}
+async function q(e, n = !1, s) {
+  let r = se();
+  return (await Promise.all(e.map(async (d) => {
+    let c = d.config?.metadata?.content,
+      y = (n && c === "" ? void 0 : c) ?? await XT(r, d.filePath, xHe).catch((_) => (s?.(_), null));
+    if (y === null) return t(`ListPluginCommands: ${d.filePath} could not be read again`, {
+      level: "warn"
+    }), [];
+    return [{
+      source: d,
+      text: y
+    }]
+  }))).flat()
+}
+
+function FSt(e, {
+  enabled: n,
+  errors: s
+}, r) {
+  let i = n.find((S) => S.source === e?.sourceName);
+  if (i === void 0 || i.modulePath !== void 0 || r === null) return !0;
+  let d = i.hooksConfig === void 0 ? i.manifest.hooks === void 0 && [] : St(i.hooksConfig),
+    c = r?.toSorted() ?? [];
+  return !d || !Nn(d, c) || d.length > 0 && (Oi(i.source) !== Pi || i.path !== e?.pluginPath) || s.some((S) => ("plugin" in S) && S.plugin === i.name)
+}
+
+function St(e) {
+  let n = [];
+  for (let [s, r] of Object.entries(e))
+    for (let {
+        matcher: i,
+        hooks: d
+      }
+      of r ?? [])
+      for (let c of d) {
+        if (c.type !== "command") return;
+        n.push(lse([s, i ?? "", is(c, c.onFailure === "block" ? ["cloud"] : ["cloud", "onFailure"])]))
+      }
+  return n.sort()
+}
+export {
+  nKo,
+  ket,
+  rKo,
+  oKo,
+  sKo,
+  iKo,
+  aKo,
+  lKo,
+  TWr,
+  dKo,
+  cKo,
+  uKo,
+  pKo,
+  IQn,
+  fKo,
+  CWr,
+  RWr,
+  AWr,
+  xWr,
+  FSt
+};

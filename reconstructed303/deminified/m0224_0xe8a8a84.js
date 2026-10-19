@@ -1,0 +1,493 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { x$t, XWs, E, Ce, ue } from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import { c } from "B:/~BUN/root/chunk-jthpk6wv.js";
+import { pk, a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import { J, t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { i } from "B:/~BUN/root/chunk-1kfn24jp.js";
+import { g, p } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import { _f } from "B:/~BUN/root/chunk-8pmnanyd.js";
+import { sE, Ff, Zy } from "B:/~BUN/root/chunk-07c8fw5z.js";
+import { ug } from "B:/~BUN/root/chunk-429xgjya.js";
+import { Fs } from "B:/~BUN/root/chunk-dq7zfs8r.js";
+import { fr } from "B:/~BUN/root/chunk-c6mbjdcy.js";
+import { o, v, u, C } from "B:/~BUN/root/chunk-g3snhg6n.js";
+var T = "tengu_gentle_hammock",
+  L = "tengu_golden_popcorn",
+  D = 4096,
+  j = 1024,
+  M = 604800000,
+  N = 8192;
+function n0s() {
+  let e = a.CLAUDE_CODE_GZIP_REQUEST_BODY_LEVEL ?? E(L, 0);
+  return Number.isInteger(e) && e >= 1 && e <= 9 ? e : void 0;
+}
+function O(e) {
+  return e === "ccr_worker" ? a.CLAUDE_CODE_GZIP_CCR_REQUEST_BODIES : a.CLAUDE_CODE_GZIP_REQUEST_BODIES;
+}
+function U(e) {
+  return e === "ccr_worker" ? j : D;
+}
+function H(e) {
+  if (a.ANTHROPIC_UNIX_SOCKET) return "unix_socket";
+  if (Ff() !== void 0 && !Zy(e)) return "proxy";
+  let n = sE();
+  if (n?.cert !== void 0 || n?.key !== void 0) return "mtls";
+  if (a.NODE_EXTRA_CA_CERTS) {
+    let r = ug();
+    if (!(fr() || a.CLAUDE_CODE_ENTRYPOINT === "local-agent" && (r === void 0 || r.NODE_EXTRA_CA_CERTS !== void 0))) return "custom_ca";
+  }
+  return;
+}
+function JDt(e, n, r, s = "api") {
+  if (!_f(e)) return;
+  let bodyChars = typeof n === "string" ? n.length : void 0,
+    l = O(s);
+  if (l === !1) return {
+    gzip: !1,
+    reason: "env_off",
+    bodyChars: bodyChars
+  };
+  if (!pk()) return {
+    gzip: !1,
+    reason: "not_bun_runtime",
+    bodyChars: bodyChars
+  };
+  if (bodyChars === void 0) return {
+    gzip: !1,
+    reason: "non_string_body",
+    bodyChars: bodyChars
+  };
+  if (bodyChars < U(s)) return {
+    gzip: !1,
+    reason: "below_min_size",
+    bodyChars: bodyChars
+  };
+  if (l === !0) return Fs().gzipRequestBody.rejectedThisProcess ? {
+    gzip: !1,
+    reason: "latched_off",
+    bodyChars: bodyChars
+  } : {
+    gzip: !0,
+    bodyChars: bodyChars
+  };
+  let reason = H(e);
+  if (reason !== void 0) return {
+    gzip: !1,
+    reason: reason,
+    bodyChars: bodyChars
+  };
+  if (s === "ccr_worker" && !E(T, !1)) return {
+    gzip: !1,
+    reason: "flag_off",
+    bodyChars: bodyChars
+  };
+  if (te(r)) return {
+    gzip: !1,
+    reason: "latched_off",
+    bodyChars: bodyChars
+  };
+  return {
+    gzip: !0,
+    bodyChars: bodyChars
+  };
+}
+var Y = f(() => u({
+    type: C("error"),
+    error: u({
+      type: o(),
+      message: o()
+    })
+  })),
+  F = f(() => u({
+    latchedAt: v().finite(),
+    status: v()
+  })),
+  K = f(() => u({
+    error: o(),
+    reason: o()
+  })),
+  Q = ["The request body is not valid JSON", "Failed to parse request: could not parse request body as JSON"],
+  k = /^bad json: (?:invalid character |unexpected EOF$|unexpected end of JSON input$|EOF$)/;
+function facts_2(e) {
+  return {
+    status: e.status,
+    header: n => e.headers.get(n) ?? void 0,
+    bodyText: () => Z(e)
+  };
+}
+function W(e) {
+  return (e.header("request-id")?.startsWith("req_") ?? !1) || e.header("cf-ray") !== void 0;
+}
+async function Z(e) {
+  let n = e.clone().body?.getReader();
+  if (!n) return "";
+  let textDecoder = new TextDecoder(),
+    s = "",
+    d = N;
+  try {
+    while (d > 0) {
+      let {
+        done: done,
+        value: value
+      } = await n.read();
+      if (done) break;
+      let y = value.subarray(0, d);
+      d -= y.byteLength, s += textDecoder.decode(y, {
+        stream: !0
+      });
+    }
+  } catch {} finally {
+    n.cancel().catch(() => {});
+  }
+  return s;
+}
+function V(e) {
+  let n;
+  try {
+    n = J(e);
+  } catch {
+    return k.test(e.trimEnd());
+  }
+  let r = Y().safeParse(n);
+  if (r.success) return Q.some(item => r.data.error.message.startsWith(item));
+  let s = K().safeParse(n);
+  return s.success && s.data.reason === "bad_json" && k.test(s.data.error);
+}
+async function h(e) {
+  if (e.status !== 400 && e.status !== 403 && e.status !== 415) return null;
+  if (!W(e)) return "non_anthropic_rejection";
+  if (e.status === 400 && V(await e.bodyText())) return "invalid_json_at_origin";
+  return null;
+}
+async function sTo(e) {
+  if (e.ok) return null;
+  return h(facts_2(e));
+}
+async function X(e) {
+  if ((await h(e)) !== null) return "same_rejection";
+  return e.header("request-id")?.startsWith("req_") ? "api_response" : "not_api_response";
+}
+function ee() {
+  let e;
+  try {
+    e = ue().gzipRequestBodiesLatchedOff;
+  } catch {
+    return "unavailable";
+  }
+  if (e === void 0) return;
+  let n = F().safeParse(e);
+  return n.success ? n.data : "malformed";
+}
+function G(e, n) {
+  Ce(r => {
+    let s = F().safeParse(r.gzipRequestBodiesLatchedOff);
+    return (s.success ? s.data.latchedAt === e : r.gzipRequestBodiesLatchedOff !== void 0) ? {
+      ...r,
+      gzipRequestBodiesLatchedOff: void 0
+    } : r;
+  }, n);
+}
+function te(e) {
+  let gzipRequestBody = Fs().gzipRequestBody;
+  if (gzipRequestBody.latchedOff) return !0;
+  if (gzipRequestBody.persistedLatchChecked) return !1;
+  let r = ee();
+  if (r === "unavailable") return !1;
+  if (gzipRequestBody.persistedLatchChecked = !0, r === void 0) return !1;
+  if (r === "malformed") return G(void 0, e), i("tengu_gzip_request_body_latch_cleared", {
+    reason: c("malformed")
+  }), !1;
+  let s = Date.now() - r.latchedAt;
+  if (s >= 0 && s < M) return gzipRequestBody.latchedOff = !0, gzipRequestBody.persistedLatchInEffect = !0, !0;
+  return G(r.latchedAt, e), i("tengu_gzip_request_body_latch_cleared", {
+    reason: s < 0 ? c("malformed") : c("expired"),
+    latchedStatus: r.status,
+    latchedAgeHours: Math.max(0, Math.round(s / 3600000))
+  }), !1;
+}
+function q() {
+  let gzipRequestBody_2 = Fs().gzipRequestBody;
+  gzipRequestBody_2.latchedOff = !0, gzipRequestBody_2.rejectedThisProcess = !0, gzipRequestBody_2.persistedLatchChecked = !0;
+}
+function S({
+  persist: persist,
+  status: status,
+  storageV5: storageV5,
+  rollout = "api"
+}) {
+  q();
+  let gzipRequestBody_3 = Fs().gzipRequestBody;
+  if (persist && !gzipRequestBody_3.persistedLatchInEffect && O(rollout) !== !0) gzipRequestBody_3.persistedLatchInEffect = !0, Ce(l => ({
+    ...l,
+    gzipRequestBodiesLatchedOff: {
+      latchedAt: Date.now(),
+      status: status
+    }
+  }), storageV5);
+  return gzipRequestBody_3.persistedLatchInEffect ? "persisted" : "process";
+}
+function x(e, n) {
+  switch (e) {
+    case "api":
+      if (n === "fell_back") p("api_gzip_request_body", "fell_back");else if (Fs().once("gzip_request_body_ok")) g("api_gzip_request_body");
+      return;
+    case "ccr_worker":
+      if (n === "fell_back") p("ccr_worker_gzip_request_body", "fell_back");else if (Fs().once("ccr_worker_gzip_request_body_ok")) g("ccr_worker_gzip_request_body");
+      return;
+    case "frame_publish":
+      if (n === "fell_back") p("artifact_publish_gzip_request_body", "fell_back");else if (Fs().once("artifact_publish_gzip_request_body_ok")) g("artifact_publish_gzip_request_body");
+      return;
+  }
+}
+function Mrn(e = "api") {
+  x(e, "sent");
+}
+function ne(e, n) {
+  if (e !== "ccr_worker") return;
+  let ccrWorkerSkipReasonsLogged = Fs().gzipRequestBody.ccrWorkerSkipReasonsLogged;
+  if (ccrWorkerSkipReasonsLogged.has(n.reason)) return;
+  ccrWorkerSkipReasonsLogged.add(n.reason), i("tengu_gzip_request_body_skipped", {
+    rollout: c(e),
+    reason: c(n.reason),
+    requestBodyChars: n.bodyChars
+  });
+}
+function A({
+  rejection: rejection,
+  status: status_2,
+  viaCloudflare: viaCloudflare,
+  retryOutcome: retryOutcome,
+  retryStatus: retryStatus,
+  latched: latched,
+  bodyChars: _,
+  rollout: rollout_2 = "api"
+}) {
+  x(rollout_2, "fell_back"), t(`[API REQUEST] gzip request body rejected (rollout=${rollout_2} status=${status_2} kind=${rejection}); re-sent uncompressed \u2192 ${retryOutcome}${retryStatus !== void 0 ? ` status=${retryStatus}` : ""}; gzip latched off: ${latched}`, {
+    level: "warn"
+  }), i("tengu_gzip_request_body_fallback", {
+    rollout: c(rollout_2),
+    rejection: c(rejection),
+    status: status_2,
+    viaCloudflare: viaCloudflare,
+    retryOutcome: c(retryOutcome),
+    retryStatus: retryStatus,
+    latched: c(latched),
+    requestBodyChars: _
+  });
+}
+async function w({
+  rejection: rejection_2,
+  first: first,
+  resend: resend,
+  facts: facts,
+  aborted: aborted,
+  bodyChars: bodyChars_2,
+  storageV5: storageV5_2,
+  rollout: rollout_3
+}) {
+  let z = {
+      rejection: rejection_2,
+      status: first.status,
+      viaCloudflare: first.header("cf-ray") !== void 0,
+      bodyChars: bodyChars_2,
+      rollout: rollout_3
+    },
+    m;
+  try {
+    m = await resend();
+  } catch (error) {
+    throw A({
+      ...z,
+      retryOutcome: aborted() ? "aborted" : "network_error",
+      retryStatus: void 0,
+      latched: S({
+        persist: !1,
+        status: first.status,
+        storageV5: storageV5_2,
+        rollout: rollout_3
+      })
+    }), error;
+  }
+  let b = facts(m),
+    retryOutcome_2 = await X(b),
+    latched_2 = S({
+      persist: rollout_3 !== "ccr_worker" && rejection_2 === "non_anthropic_rejection" && retryOutcome_2 === "api_response",
+      status: first.status,
+      storageV5: storageV5_2,
+      rollout: rollout_3
+    });
+  return A({
+    ...z,
+    retryOutcome: retryOutcome_2,
+    retryStatus: b.status,
+    latched: latched_2
+  }), m;
+}
+async function iTo({
+  res: res,
+  dispatch: dispatch,
+  finalInit: finalInit,
+  identityBody: s,
+  clientRequestId: clientRequestId,
+  storageV5: storageV5_3,
+  rollout: rollout_4 = "api"
+}) {
+  let rejection_3 = await sTo(res);
+  if (rejection_3 === null) return res;
+  q(), res.body?.cancel().catch(() => {});
+  let {
+      compress: compress,
+      ...m
+    } = finalInit,
+    b = {
+      ...m,
+      body: s
+    };
+  if (clientRequestId !== void 0) {
+    let B = Fs().gzipRequestBody.telemetryByClientRequestId.get(clientRequestId);
+    aTo(clientRequestId, {
+      requestBodyEncoding: "identity",
+      requestBodyChars: s.length,
+      gzipFallbackStatus: res.status,
+      ...(B !== void 0 && "gzipBlocks" in B && {
+        gzipBlocks: B.gzipBlocks
+      })
+    });
+  }
+  return w({
+    rejection: rejection_3,
+    first: facts_2(res),
+    resend: () => dispatch(b),
+    facts: facts_2,
+    aborted: () => finalInit.signal?.aborted === !0,
+    bodyChars: s.length,
+    storageV5: storageV5_3,
+    rollout: rollout_4
+  });
+}
+async function r0s({
+  answer: answer,
+  facts: facts_3,
+  resendIdentity: r,
+  aborted: aborted_2,
+  bodyChars: bodyChars_3,
+  storageV5: storageV5_4,
+  rollout: rollout_5
+}) {
+  let first_2 = facts_3(answer),
+    rejection_4 = await h(first_2);
+  if (rejection_4 === null) return answer;
+  return q(), w({
+    rejection: rejection_4,
+    first: first_2,
+    resend: r,
+    facts: facts_3,
+    aborted: aborted_2,
+    bodyChars: bodyChars_3,
+    storageV5: storageV5_4,
+    rollout: rollout_5
+  });
+}
+function Jpt(rollout_6, storageV5_5) {
+  return async (r, s, dispatch_2) => {
+    let l = JDt(r, s.body, storageV5_5, rollout_6);
+    if (!l?.gzip) {
+      if (l !== void 0) ne(rollout_6, l);
+      return dispatch_2(s);
+    }
+    Mrn(rollout_6);
+    let finalInit_2 = {
+        ...s,
+        compress: "gzip",
+        body: x$t(s.body)
+      },
+      res_2 = await dispatch_2(finalInit_2);
+    return iTo({
+      res: res_2,
+      dispatch: dispatch_2,
+      finalInit: finalInit_2,
+      identityBody: s.body,
+      clientRequestId: void 0,
+      storageV5: storageV5_5,
+      rollout: rollout_6
+    });
+  };
+}
+function aTo(e, n) {
+  Fs().gzipRequestBody.telemetryByClientRequestId.set(e, n);
+}
+function Drn(e, n) {
+  if (e === null) return;
+  let telemetryByClientRequestId = Fs().gzipRequestBody.telemetryByClientRequestId,
+    s = telemetryByClientRequestId.get(e);
+  if (s?.requestBodyEncoding !== "gzip") return;
+  telemetryByClientRequestId.set(e, {
+    ...s,
+    gzipBlocks: s.gzipBlocks?.outcome === "as_blocks" ? {
+      ...s.gzipBlocks,
+      outcome: "rejected"
+    } : n
+  });
+}
+function o0s(e, n) {
+  Fs().gzipRequestBody.dispatchAtByClientRequestId.set(e, n);
+}
+function s0s(e) {
+  if (e === void 0) return;
+  let dispatchAtByClientRequestId = Fs().gzipRequestBody.dispatchAtByClientRequestId,
+    r = dispatchAtByClientRequestId.get(e);
+  return dispatchAtByClientRequestId.delete(e), r;
+}
+function QDt(e) {
+  if (e === void 0) return;
+  let telemetryByClientRequestId_2 = Fs().gzipRequestBody.telemetryByClientRequestId,
+    r = telemetryByClientRequestId_2.get(e);
+  return telemetryByClientRequestId_2.delete(e), r;
+}
+function hGn(e) {
+  if (e === void 0) return {};
+  return {
+    requestBodyEncoding: c(e.requestBodyEncoding),
+    requestBodyChars: e.requestBodyChars,
+    ...(e.requestBodyEncoding === "gzip" && e.requestBodyGzipLevel !== void 0 && {
+      requestBodyGzipLevel: e.requestBodyGzipLevel
+    }),
+    ...("requestPrepareMs" in e && e.requestPrepareMs !== void 0 && {
+      requestPrepareMs: e.requestPrepareMs
+    }),
+    ...("gzipBlocks" in e && e.gzipBlocks !== void 0 && {
+      requestBodyGzipBlocksMode: e.gzipBlocks.mode,
+      requestBodyGzipBlocksOutcome: c(e.gzipBlocks.outcome),
+      ...(e.gzipBlocks.planned !== void 0 && {
+        requestBodyGzipBlockCount: e.gzipBlocks.planned.blockCount,
+        requestBodyGzipReusedBlockCount: e.gzipBlocks.planned.reusedBlockCount,
+        requestBodyGzipReusedBytes: e.gzipBlocks.planned.reusedBytes,
+        requestBodyGzipBlocksMs: e.gzipBlocks.planned.spentMs,
+        ...(e.gzipBlocks.planned.gzippedBytes !== void 0 && {
+          requestBodyGzippedBytes: e.gzipBlocks.planned.gzippedBytes
+        }),
+        requestBodyGzipStoredBytes: e.gzipBlocks.planned.storedBytes,
+        requestBodyGzipEvictedBlockCount: e.gzipBlocks.planned.evictedForSpaceCount
+      })
+    }),
+    ...("gzipSkipReason" in e && {
+      gzipSkipReason: c(e.gzipSkipReason)
+    }),
+    ...("gzipFallbackStatus" in e && {
+      gzipFallback: !0,
+      gzipFallbackStatus: e.gzipFallbackStatus
+    })
+  };
+}
+XWs(JDt);
+export { n0s, JDt, sTo, Mrn, iTo, r0s, Jpt, aTo, Drn, o0s, s0s, QDt, hGn };

@@ -1,0 +1,543 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  z2,
+  TZe
+} from "B:/~BUN/root/chunk-gyr2a6wz.js";
+import {
+  sft
+} from "B:/~BUN/root/chunk-3tj0rd0x.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-frrkt2bs.js";
+import {
+  vyt,
+  X3n,
+  GWe
+} from "B:/~BUN/root/chunk-v6pbq6dm.js";
+import {
+  $1
+} from "B:/~BUN/root/chunk-atk141qr.js";
+import {
+  mge,
+  aMe,
+  fWe
+} from "B:/~BUN/root/chunk-hb6x4e3n.js";
+import {
+  o,
+  T,
+  u,
+  $e,
+  C
+} from "B:/~BUN/root/chunk-g3snhg6n.js";
+var H = f(() => T($e([o(), T($e([u({
+    type: C("text"),
+    text: o()
+  }), u({
+    type: o()
+  })]))]))),
+  N = 1000;
+
+function Wfr(e) {
+  if (e == null) return {
+    texts: []
+  };
+  if (Array.isArray(e)) {
+    let a = e.length;
+    for (let d = 0; d < e.length && a <= N; d++) {
+      let l = e[d];
+      if (Array.isArray(l)) a += l.length
+    }
+    if (a > N) return {
+      texts: [],
+      problem: "too_many_items"
+    }
+  }
+  let n = H().safeParse(e);
+  if (!n.success) return {
+    texts: [],
+    problem: "malformed"
+  };
+  let r = !1,
+    s = n.data.map((a) => {
+      if (typeof a === "string") return a;
+      let d = [];
+      for (let l of a)
+        if (l.type === "text" && "text" in l && typeof l.text === "string") d.push(l.text);
+        else r = !0;
+      return d.join(`
+`)
+    }).filter((a) => a.trim() !== "");
+  return r ? {
+    texts: s,
+    problem: "non_text_ignored"
+  } : {
+    texts: s
+  }
+}
+var K = 100;
+
+function Tcs(e) {
+  if (e == null) return {
+    texts: []
+  };
+  if (!Array.isArray(e)) return {
+    texts: [],
+    problem: "malformed_inline_pastes"
+  };
+  let n = [];
+  for (let r = 0; r < e.length; r++) {
+    let s = e[r];
+    if (typeof s !== "string") return {
+      texts: [],
+      problem: "malformed_inline_pastes"
+    };
+    if (s.trim() === "") continue;
+    if (n.length === K) return {
+      texts: n,
+      problem: "inline_pastes_cut"
+    };
+    n.push(s)
+  }
+  return {
+    texts: n
+  }
+}
+var B = new Set(["ios", "android", "web_claude_ai", "desktop_app"]);
+
+function E(e) {
+  return B.has(e) || !1
+}
+
+function Zbe(e) {
+  return e !== void 0 && B.has(e)
+}
+
+function $Mn(e) {
+  return e === "claude_code_cli" || e === "claude_code_vscode"
+}
+
+function Jso(e, n) {
+  if (n) return;
+  return $Mn(e) ? {
+    kind: "human"
+  } : void 0
+}
+var b = new Set(["scheduled_trigger", "force_run_trigger", "github_webhook_trigger", "fire_routine", "pr_steward"]),
+  W = new Set(["trigger_fire"]),
+  vit = "session_inbox",
+  w = new Set(["github_webhook", "pr_steward", "signal_subscription"]);
+
+function Ccs(e) {
+  return e !== void 0 && (w.has(e) || e === vit)
+}
+var z = "projects-relay";
+
+function Qso({
+  relayMessageIds: e,
+  isSynthetic: n
+}) {
+  return e !== void 0 || n !== !0
+}
+var Y = "triggerFireReason";
+
+function Rcs(e, n) {
+  if (e?.kind !== "task-notification" || e.subkind !== "scheduled-trigger") return e;
+  let r = Zso(n);
+  return r === void 0 ? e : {
+    ...e,
+    fireReason: r
+  }
+}
+
+function y(e) {
+  if (e && W.has(e)) return {
+    kind: "task-notification",
+    subkind: "scheduled-trigger"
+  };
+  if (e === vit) return {
+    kind: "task-notification",
+    subkind: "session-inbox"
+  };
+  return {
+    kind: "task-notification"
+  }
+}
+var Q = new Set(["scheduled_trigger", "force_run_trigger", "fire_routine"]);
+
+function Zso(e) {
+  return k(e, Y)
+}
+
+function m8t(e, n, r, s) {
+  if (e === "now") return e;
+  let a = r !== void 0 && q.has(r) && (r !== "trigger_fire" || s !== void 0);
+  return n && Q.has(n) || a ? "later" : e
+}
+var L = new Set(["claude-in-slack", "claude_in_slack"]),
+  M = "slack_human",
+  D = new Set([aMe]),
+  U = "claude-in-teams",
+  G = "teams_human",
+  V = "owner_relay",
+  I = "hearth_human";
+
+function UMn(e) {
+  return e === I
+}
+
+function g8t(e) {
+  return e === I || e === fWe
+}
+
+function X(e) {
+  if (e === I || e === fWe) return !0;
+  return e !== void 0 && e.startsWith("hearth")
+}
+var q = new Set(["trigger_fire", "plugin_fire"]),
+  J = "receiver_grouping_id";
+
+function eio(e) {
+  return k(e, J)
+}
+
+function k(e, n) {
+  let r = e[n];
+  return typeof r === "string" ? r : void 0
+}
+var Z = "activity_observation";
+
+function tio(e) {
+  return k(e, Z)
+}
+
+function v() {
+  return z2()
+}
+
+function ee() {
+  return TZe()
+}
+
+function ne(e, n) {
+  return e !== void 0 && L.has(e) && n === M && v()
+}
+
+function re(e, n) {
+  return e === U && n === G && ee()
+}
+
+function Tue(e, n) {
+  return ne(e, n) || re(e, n)
+}
+
+function x(e, n) {
+  return n === void 0 && e !== void 0 && E(e) || Tue(e, n)
+}
+
+function BMn(e, n, r) {
+  return e ? e.kind === "human" : x(n, r)
+}
+
+function Acs(e, n, r, s) {
+  if (e) return e.kind === "human";
+  if (!n) return !0;
+  return x(r, s) || Jso(r, s) !== void 0
+}
+
+function jMn(e, n, r = !1) {
+  let s;
+  try {
+    s = Y4e(e)
+  } catch {
+    return !1
+  }
+  if (!s || mAt(s.content)) return !1;
+  let {
+    clientPlatform: a,
+    inboundOrigin: d
+  } = s;
+  if (d !== void 0) return n === "bridge" ? Tue(a, d) : kit(d, r);
+  return x(a, void 0) || n === "remote-worker" && $Mn(a)
+}
+
+function kit(e, n = !1) {
+  return e === M || e === G || e === V || n && e === I
+}
+
+function WMn({
+  isRelayHuman: e,
+  isSynthetic: n,
+  ccrTurnId: r,
+  isProjectsUser: s = !1
+}) {
+  if (!e) return {};
+  return {
+    ...!n && {
+      verifiedSlackHumanTurn: !0
+    },
+    ...!n && s && {
+      projectsUserTurn: !0
+    },
+    ...r !== void 0 && {
+      ccrTurnId: r
+    }
+  }
+}
+
+function h8t(e, n, r, s, a, d, l) {
+  let m = mAt(e);
+  if (m) return {
+    kind: "peer",
+    from: m,
+    inbound_origin: r,
+    ...l !== void 0 && {
+      plugin: l
+    },
+    ...GWe(e)
+  };
+  if (r === vit) return y(r);
+  if (r && w.has(r)) return y(r);
+  let _ = X(r);
+  if (!_ && r === void 0 && n && E(n)) return {
+    kind: "human"
+  };
+  if (!_ && Tue(n, r)) return {
+    kind: "human"
+  };
+  if (!_ && n && b.has(n)) return y(r);
+  if (r === mge && s) return {
+    kind: "task-notification",
+    subkind: "peer-send-message"
+  };
+  t(`[bridge] demoting unwrapped inbound message to peer origin: client_platform=${n||"(absent)"}`, {
+    level: "warn"
+  });
+  let S = !n ? "absent" : n.startsWith("claude_code") ? "claude_code" : L.has(n) ? r === aMe && v() ? "slack_bot_observation" : "slack_relay" : n === U ? "teams_relay" : "other";
+  return i("tengu_bridge_ingress_demoted", {
+    platform_class: c(S)
+  }), {
+    kind: "peer",
+    from: "unknown",
+    inbound_origin: r,
+    ...GWe(e),
+    ...d !== void 0 && r !== void 0 && D.has(r) && {
+      activityObservation: d
+    }
+  }
+}
+
+function q4e(e, n, r) {
+  if (e && e.kind !== "peer" && e.kind !== "slack-ping") return e;
+  if (n && b.has(n)) return y(r);
+  if (n && E(n)) return {
+    kind: "human"
+  };
+  return
+}
+
+function nio(e, n, r, s, a, d = !1, l = !1, m) {
+  let _ = mAt(e);
+  if (_) return {
+    kind: "peer",
+    from: _,
+    inbound_origin: r,
+    ...GWe(e),
+    ...m !== void 0 && {
+      plugin: m
+    }
+  };
+  if (r && !D.has(r)) {
+    if (r === I)
+      if (d) g("bridge_projects_human_origin");
+      else p("bridge_projects_human_origin", "disabled_by_flag");
+    if (kit(r, d)) return {
+      kind: "human"
+    };
+    if (r === fWe && l) return {
+      kind: "task-notification",
+      subkind: z
+    };
+    if (r === mge && s) return {
+      kind: "task-notification",
+      subkind: "peer-send-message"
+    };
+    return y(r)
+  }
+  if ($Mn(n)) return {
+    kind: "human"
+  };
+  if (n?.startsWith("claude_code")) return;
+  return h8t(e, n, r, s, void 0, a, m)
+}
+
+function K4e(e) {
+  return e.verifiedSlackHumanTurn === !0 && e.priority !== "now"
+}
+
+function xcs(e, n) {
+  if (e === "now") return e;
+  return n ? "later" : e
+}
+
+function eSe(e) {
+  let s = e.trimStart(),
+    a = !1;
+  while (s.startsWith("<system-reminder>")) {
+    let l = s.indexOf("</system-reminder>");
+    if (l < 0) break;
+    s = s.slice(l + 18).trimStart(), a = !0
+  }
+  let d = (a ? s : e).trimEnd();
+  while (d.endsWith("</system-reminder>")) {
+    let l = d.lastIndexOf(`
+`);
+    if (!(l < 0 ? d : d.slice(l + 1)).startsWith("<system-reminder>")) break;
+    d = (l < 0 ? "" : d.slice(0, l)).trimEnd(), a = !0
+  }
+  if (!a) return e;
+  return d === "" ? e : d
+}
+
+function rio(e) {
+  let n;
+  for (let r = 0; r < e.length; r++) {
+    let s = e[r];
+    if (s.type !== "text") continue;
+    let a = eSe(s.text);
+    if (a === s.text) continue;
+    n ??= [...e], n[r] = {
+      ...s,
+      text: a
+    }
+  }
+  return n ?? e
+}
+
+function Y4e(e) {
+  if (e.type !== "user") return;
+  let n = "pasted_content" in e ? e.pasted_content : void 0,
+    r = "inline_pastes" in e ? e.inline_pastes : void 0,
+    s = $1(e).length > 0 || Wfr(n).texts.length > 0,
+    a = e.message?.content;
+  if (!a && !s) return;
+  if (Array.isArray(a) && a.length === 0 && !s) return;
+  let d = "uuid" in e && typeof e.uuid === "string" ? e.uuid : void 0,
+    l = k(e, "client_platform"),
+    m = k(e, "inbound_origin"),
+    _ = "wake_envelope" in e ? e.wake_envelope : void 0,
+    S = eio(e),
+    A = tio(e),
+    F = vyt("from_plugin" in e ? e.from_plugin : void 0),
+    j, h = Array.isArray(a) ? oio(rio(te(a))) : eSe(a ?? "");
+  if (Array.isArray(h) && h.length === 0 && !s) return;
+  return {
+    content: h,
+    uuid: d,
+    clientPlatform: l,
+    inboundOrigin: m,
+    wakeEnvelope: _,
+    receiverGroupingId: S,
+    slackOrigin: j,
+    activityObservation: A,
+    pastedContent: n,
+    inlinePastes: r,
+    fromPlugin: F
+  }
+}
+
+function mAt(e) {
+  if (typeof e !== "string") return;
+  return e.match(X3n)?.[1]
+}
+
+function KFe(e) {
+  if (typeof e === "string") return mAt(e) !== void 0;
+  if (!Array.isArray(e)) return !1;
+  return e.some((n) => typeof n === "object" && n !== null && ("type" in n) && n.type === "text" && ("text" in n) && typeof n.text === "string" && mAt(n.text) !== void 0)
+}
+
+function oio(e) {
+  if (!e.some(O)) return e;
+  return e.filter((n) => !O(n))
+}
+
+function O(e) {
+  if (e.type !== "text") return !1;
+  return typeof e.text !== "string" || e.text.trim() === ""
+}
+
+function te(e) {
+  if (!e.some(P)) return e;
+  return e.map((n) => {
+    if (!P(n)) return n;
+    let r = n.source,
+      s = typeof r.mediaType === "string" && r.mediaType ? r.mediaType : sft(n.source.data);
+    return {
+      ...n,
+      source: {
+        type: "base64",
+        media_type: s,
+        data: n.source.data
+      }
+    }
+  })
+}
+
+function P(e) {
+  if (e.type !== "image" || e.source?.type !== "base64") return !1;
+  return !e.source.media_type
+}
+export {
+  Wfr,
+  Tcs,
+  Zbe,
+  $Mn,
+  Jso,
+  vit,
+  Ccs,
+  Qso,
+  Rcs,
+  Zso,
+  m8t,
+  UMn,
+  g8t,
+  eio,
+  tio,
+  Tue,
+  BMn,
+  Acs,
+  jMn,
+  kit,
+  WMn,
+  h8t,
+  q4e,
+  nio,
+  K4e,
+  xcs,
+  eSe,
+  rio,
+  Y4e,
+  mAt,
+  KFe,
+  oio
+};

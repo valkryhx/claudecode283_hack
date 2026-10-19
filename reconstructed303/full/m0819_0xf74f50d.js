@@ -1,0 +1,454 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  re
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  Ps,
+  b_t
+} from "B:/~BUN/root/chunk-8ye9n4fk.js";
+import {
+  qa,
+  Ak,
+  Q_,
+  Mhs,
+  cQt,
+  Ic,
+  Oo
+} from "B:/~BUN/root/chunk-9grc6xh0.js";
+import {
+  Jn
+} from "B:/~BUN/root/chunk-q0t5e1bx.js";
+import {
+  AT
+} from "B:/~BUN/root/chunk-k382hx6g.js";
+import {
+  bE
+} from "B:/~BUN/root/chunk-jynk66qn.js";
+import {
+  s9o,
+  a_e,
+  Cwn,
+  Lvt,
+  $2t
+} from "B:/~BUN/root/chunk-qzg0d2gn.js";
+import {
+  D$
+} from "B:/~BUN/root/chunk-mkmzcfhg.js";
+import {
+  J_
+} from "B:/~BUN/root/chunk-pj523hfd.js";
+import {
+  Aoe,
+  O8
+} from "B:/~BUN/root/chunk-5gazt5rq.js";
+import {
+  xoe
+} from "B:/~BUN/root/chunk-10ydm3ka.js";
+import {
+  gke
+} from "B:/~BUN/root/chunk-b4xxgr0r.js";
+import {
+  Ai
+} from "B:/~BUN/root/chunk-0r89607w.js";
+import {
+  uo,
+  _c
+} from "B:/~BUN/root/chunk-b0487zs4.js";
+
+function f() {
+  return import.meta.require("B:/~BUN/root/chunk-xk11xf74.js").mcpClientModule()
+}
+
+function v(n) {
+  Ai(n.client).onclose = void 0, f().clearServerCache(n.name, n.config).catch(() => {})
+}
+
+function x(n, t, i) {
+  return {
+    tools: D$(n.tools, (e) => e.name?.startsWith(i)),
+    commands: D$(n.commands, (e) => Q_(e, t)),
+    resources: Ak(n.resources, t),
+    resourceTemplates: Ak(n.resourceTemplates, t)
+  }
+}
+class bnt {
+  #e;
+  constructor(n) {
+    this.#e = n
+  }
+  static over(n) {
+    return new bnt(gke(n.getState, n.setState, "mcp"))
+  }
+  get() {
+    return this.#e.get()
+  }
+  markNeedsAuth(n) {
+    this.#e.set((t) => s9o(t, n))
+  }
+  async clearNeedsAuth(n) {
+    let t = this.get().clients.find((e) => e.name === n);
+    if (t?.type !== "needs-auth") return;
+    let i = await f().peekSettledConnection(n, t.config);
+    if (i?.type !== "connected") return;
+    this.#e.set((e) => ({
+      ...e,
+      clients: e.clients.map((s) => s === t ? Aoe(i, t.config) : s)
+    }))
+  }
+  adoptServer(n, t, i) {
+    let e = "adopted";
+    return this.#e.set((s) => {
+      if (i?.asked === !0) return a_e({
+        mcp: s
+      }, n, t).mcp;
+      let r = s.clients.find((c) => c.name === n);
+      if (e = H(r, t) ?? "adopted", r === void 0) return s;
+      if (e !== "adopted") return w(s, r, e);
+      return a_e({
+        mcp: s
+      }, n, G(r, t), {
+        appendIfAbsent: !1
+      }).mcp
+    }), e
+  }
+  markReconnectDiscarded(n, t) {
+    this.#e.set((i) => {
+      let e = i.clients.find((s) => s.name === n);
+      if (e === void 0 || Jn(n, e.config) !== Jn(n, t)) return i;
+      if (Oo(n)) return w(i, e, "disabled");
+      if (Ic(n, e.config) !== null) return w(i, e, "policy-blocked");
+      if (e.type !== "connected") return i;
+      return {
+        ...i,
+        clients: i.clients.map((s) => s === e ? {
+          name: n,
+          type: "failed",
+          config: e.config,
+          error: "Its connection was closed while signing in again"
+        } : s),
+        ...I(i, n)
+      }
+    })
+  }
+  swapServerTools(n, t, i) {
+    let e = !1;
+    return this.#e.set((s) => {
+      let r = $2t(s.clients.find((l) => l.name === n), t, i);
+      if (r === void 0) return re(n, "A re-queried tool list was not applied: another server holds the name"), s;
+      let c = Cwn({
+        mcp: s
+      }, n, r);
+      return e = c.mcp !== s, c.mcp
+    }), e
+  }
+  setSuppressedClaudeAiConnectors(n) {
+    this.#e.set((t) => cQt(t.suppressedClaudeAiConnectors ?? [], n) ? t : {
+      ...t,
+      suppressedClaudeAiConnectors: n
+    })
+  }
+  setReservedNameRefusals(n) {
+    this.#e.set((t) => {
+      let i = t.reservedNameRefusals ?? [];
+      return i.length === n.length && i.every((s, r) => s.scope === n[r]?.scope && s.name === n[r]?.name) ? t : {
+        ...t,
+        reservedNameRefusals: n
+      }
+    })
+  }
+  addPendingServers(n) {
+    this.#e.set((t) => {
+      let i = O(t, n);
+      if (i.length === 0) return t;
+      return {
+        ...t,
+        clients: [...t.clients, ...i]
+      }
+    })
+  }
+  reconcileConfiguredServers(n, t, i) {
+    this.#e.set((e) => {
+      let {
+        stale: s,
+        ...r
+      } = Mhs(e, n, t);
+      i(s);
+      let c = O(r, n);
+      if (c.length === 0 && s.length === 0) {
+        if (e.clientsInitialized) return e;
+        return {
+          ...e,
+          clientsInitialized: !0
+        }
+      }
+      return {
+        ...e,
+        ...r,
+        clientsInitialized: !0,
+        clients: [...r.clients, ...c]
+      }
+    })
+  }
+  applyIdentityBoundary(n, t) {
+    let i = [...n, ...t];
+    if (i.length === 0) return;
+    this.#e.set((e) => {
+      let s = i.map((c) => [c, uo(c)]),
+        r = (c) => s.some(([l, u]) => _c(c, l, u));
+      return {
+        ...e,
+        clients: e.clients.flatMap((c) => t.has(c.name) ? [] : n.has(c.name) ? [{
+          name: c.name,
+          type: "pending",
+          config: c.config
+        }] : [c]),
+        tools: D$(e.tools, r),
+        commands: D$(e.commands, (c) => i.some((l) => Q_(c, l))),
+        resources: Ak(e.resources, i),
+        resourceTemplates: Ak(e.resourceTemplates, i)
+      }
+    })
+  }
+  applyQueuedUpdates(n, t) {
+    this.#e.set((i) => {
+      let e = i;
+      for (let s of n) {
+        if (s.epoch !== t.currentEpoch && bE(s.config)) {
+          if (s.type === "connected") f().detachAndCloseConnection(s);
+          continue
+        }
+        let r = e.clients.find((d) => d.name === s.name),
+          c = K(r, s),
+          l = c === "stands" && r !== void 0 ? L(r, s) : s,
+          {
+            tools: u,
+            commands: S,
+            resources: m,
+            resourceTemplates: A,
+            replaceOnly: g,
+            epoch: J,
+            asked: V,
+            superseded: U,
+            ...Q
+          } = l,
+          o = Q,
+          h = o.type === "disabled" || o.type === "failed",
+          b = h ? u ?? [] : u,
+          T = h ? S ?? [] : S,
+          C = h ? m ?? [] : m,
+          y = h ? A ?? [] : A,
+          M = uo(o.name),
+          p = e.clients.findIndex((d) => d.name === o.name),
+          a = p !== -1 ? e.clients[p] : void 0,
+          j = o.type === "connected" && a?.type === "connected" && a.client === o.client,
+          R = Ps(o) && Ic(o.name, o.config) === "managed-policy";
+        if (o.type !== "disabled" && !j && Oo(o.name) && !(R && a?.type !== "disabled")) {
+          if (R) t.onDoorDenied(o.name);
+          if (o.type === "connected") v(o);
+          if (t.onOrphanedDisable(o.name), a && a.type !== "disabled" && (a.type !== "connected" || !Ps(o))) e = {
+            ...e,
+            clients: e.clients.map((d) => d.name === o.name ? {
+              name: o.name,
+              type: "disabled",
+              config: c === "elsewhere" ? d.config : o.config
+            } : d),
+            ...x(e, o.name, M)
+          };
+          continue
+        }
+        if (c === "elsewhere" && a !== void 0) {
+          if (o.type !== "disabled") {
+            if (o.type === "connected") v(o);
+            re(o.name, `A late ${o.type} result was dropped: another server holds the name`);
+            continue
+          }
+          if (a.type === "connected") v(a);
+          o = {
+            name: o.name,
+            type: "disabled",
+            config: a.config
+          }
+        }
+        let k = Ps(o) ? Ic(o.name, o.config) : null;
+        if (k) {
+          t.onDoorDenied(o.name);
+          let d = o.config;
+          if (o.type === "connected") Ai(o.client).onclose = void 0;
+          else if (a?.type === "connected") Ai(a.client).onclose = void 0, d = a.config;
+          if (f().clearServerCache(o.name, d).catch(() => {}), p === -1) continue;
+          e = {
+            ...e,
+            clients: e.clients.map((P) => P.name === o.name ? {
+              name: o.name,
+              type: "failed",
+              config: o.config,
+              ...J_(k, o.name, o.config)
+            } : P),
+            ...x(e, o.name, M)
+          };
+          continue
+        }
+        if (g && p !== -1 && (e.clients[p]?.type === "needs-auth" || e.clients[p]?.type === "disabled")) {
+          if (o.type === "connected") Ai(o.client).onclose = void 0, f().clearServerCache(o.name, o.config).catch(() => {});
+          continue
+        }
+        if (p === -1 && (g || c === "nowhere" && !U)) {
+          if (o.type === "connected") Ai(o.client).onclose = void 0, f().clearServerCache(o.name, o.config).catch(() => {});
+          if (!g) t.onOrphanedDisable(o.name), re(o.name, `A late ${o.type} result was dropped: no row holds the name`);
+          continue
+        }
+        if (g && qa() && p !== -1 && Jn(o.name, e.clients[p].config) !== Jn(o.name, o.config)) {
+          if (o.type === "connected") f().detachAndCloseConnection(o);
+          continue
+        }
+        if (p !== -1 && !b_t(e.clients[p], o)) {
+          if (c === "asked") e = _(e, o);
+          continue
+        }
+        let B = p === -1 ? [...e.clients, o] : e.clients.map((d) => d.name === o.name ? o : d),
+          E = b === void 0 ? e.tools : [...D$(e.tools, (d) => d.name?.startsWith(M)), ...b],
+          F = T === void 0 ? e.commands : [...D$(e.commands, (d) => Q_(d, o.name)), ...T],
+          z = C === void 0 ? e.resources : C.length > 0 ? {
+            ...e.resources,
+            [o.name]: C
+          } : Ak(e.resources, o.name),
+          W = y === void 0 ? e.resourceTemplates : y.length > 0 ? {
+            ...e.resourceTemplates,
+            [o.name]: y
+          } : Ak(e.resourceTemplates, o.name);
+        e = {
+          ...e,
+          clients: B,
+          tools: E,
+          commands: F,
+          resources: z,
+          resourceTemplates: W
+        }
+      }
+      return e
+    })
+  }
+}
+
+function O(n, t) {
+  let i = new Set(n.clients.map((e) => e.name));
+  return Object.entries(t).filter(([e]) => !i.has(e)).map(([e, s]) => ({
+    name: e,
+    type: Oo(e) ? "disabled" : "pending",
+    config: s
+  }))
+}
+
+function D(n, t) {
+  return n.mcpInfo?.serverName === void 0 ? Q_(n, t) : n.mcpInfo.serverName === t
+}
+
+function I(n, t) {
+  let i = uo(t);
+  return {
+    tools: D$(n.tools, (e) => _c(e, t, i)),
+    commands: D$(n.commands, (e) => D(e, t)),
+    resources: Ak(n.resources, t),
+    resourceTemplates: Ak(n.resourceTemplates, t)
+  }
+}
+
+function K(n, t) {
+  if (t.asked === !0) return "asked";
+  if (n === void 0) return "nowhere";
+  return Jn(t.name, n.config) === Jn(t.name, t.config) ? "stands" : "elsewhere"
+}
+
+function L(n, t) {
+  let i = {
+    name: t.name,
+    config: n.config
+  };
+  return {
+    ...Lvt(t, n.config),
+    ...t.tools !== void 0 && {
+      tools: O8(i, t.tools)
+    },
+    ...t.commands !== void 0 && {
+      commands: xoe(i, t.commands)
+    }
+  }
+}
+
+function _(n, t) {
+  let i = n.clients.find((m) => m.name === t.name);
+  if (i === void 0 || Jn(t.name, i.config) !== Jn(t.name, t.config)) return n;
+  let e = Lvt(i, t.config);
+  if (e === i) return n;
+  let s = {
+      name: t.name,
+      config: t.config
+    },
+    r = uo(t.name),
+    [c, l] = AT(n.tools, (m) => _c(m, t.name, r)),
+    [u, S] = AT(n.commands, (m) => D(m, t.name));
+  return {
+    ...n,
+    clients: n.clients.map((m) => m === i ? e : m),
+    tools: [...l, ...O8(s, c)],
+    commands: [...S, ...xoe(s, u)]
+  }
+}
+
+function H(n, t) {
+  let {
+    name: i
+  } = t.client;
+  if (n === void 0) return "no-row";
+  if (Jn(i, n.config) !== Jn(i, t.client.config)) return "another-server";
+  if (Oo(i)) return "disabled";
+  if (Ic(i, n.config) !== null) return "policy-blocked";
+  return
+}
+
+function w(n, t, i) {
+  if (i !== "disabled" && i !== "policy-blocked") return n;
+  let {
+    name: e,
+    config: s
+  } = t, r = i === "policy-blocked" ? Ic(e, s) : null;
+  if (r === null && t.type === "disabled") return n;
+  let c = r === null ? {
+    name: e,
+    type: "disabled",
+    config: s
+  } : {
+    name: e,
+    type: "failed",
+    config: s,
+    ...J_(r, e, s)
+  };
+  return {
+    ...n,
+    clients: n.clients.map((l) => l === t ? c : l),
+    ...I(n, e)
+  }
+}
+
+function G(n, t) {
+  let i = {
+    name: n.name,
+    config: n.config
+  };
+  return {
+    ...t,
+    client: Lvt(t.client, n.config),
+    tools: O8(i, t.tools),
+    commands: xoe(i, t.commands)
+  }
+}
+export {
+  bnt
+};

@@ -1,0 +1,269 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import {
+  us
+} from "B:/~BUN/root/chunk-b900np4s.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-c09hf5e4.js";
+import {
+  s,
+  n
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import {
+  fY
+} from "B:/~BUN/root/chunk-f66jfn8z.js";
+import {
+  Og
+} from "B:/~BUN/root/chunk-3md9ngvz.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  qt,
+  Ee,
+  P,
+  Mo,
+  y,
+  Dt,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  Ume
+} from "B:/~BUN/root/chunk-mbz8rhex.js";
+import {
+  ie
+} from "B:/~BUN/root/chunk-t7350kw8.js";
+B();
+B();
+var Btt = qt(null);
+
+function X3o() {
+  let a = Ee(Btt),
+    i = Ee(fY);
+  return () => {
+    if (a === null || !i) return;
+    try {
+      i.getState().open.find((t) => t.id === a)?.onClaimed?.()
+    } catch (t) {
+      l(t)
+    }
+  }
+}
+
+function j() {
+  let a = Ee(Btt),
+    i = Ee(fY),
+    t = a === null || !i ? void 0 : i.getState().open.find((o) => o.id === a)?.countedAsk,
+    d = t === void 0 ? void 0 : i?.askTally;
+  return Dt(d?.subscribe ?? U, () => t === void 0 || !d ? null : d.positionLabel(t))
+}
+
+function lY(a, i, {
+  perReveal: t = !1
+} = {}) {
+  let d = Ee(Btt),
+    o = Ee(fY),
+    k = Mo(i),
+    [c] = y(() => t && d !== null && o ? o.getState().open.find((p) => p.id === d)?.revealSeq ?? 0 : 0);
+  P(() => {
+    if (d !== null && o) {
+      if (!o.firstReveal(d, t ? `${a}@${c}` : a)) return
+    }
+    k()
+  }, [d, o, a, t, c])
+}
+
+function U() {
+  return () => {}
+}
+
+function h(a) {
+  let i = Ume(a);
+  return i === null ? void 0 : String(i)
+}
+
+function YQ(a) {
+  let m = w(25),
+    {
+      title: i,
+      subtitle: t,
+      color: d,
+      requestSource: o,
+      srPrefix: k,
+      aside: c
+    } = a,
+    p = d === void 0 ? "permission" : d,
+    f;
+  se: switch (o?.type) {
+    case "workflow-agent": {
+      let u;
+      if (m[0] !== o.workflowName) u = h(o.workflowName), m[0] = o.workflowName, m[1] = u;
+      else u = m[1];
+      let T = u;
+      f = T !== void 0 ? `from the "${T}" workflow` : "from a workflow";
+      break se
+    }
+    case "subagent": {
+      let u;
+      if (m[2] !== o.agentName) u = h(o.agentName), m[2] = o.agentName, m[3] = u;
+      else u = m[3];
+      let C = u;
+      f = C !== void 0 ? `from the ${C} agent` : "from a subagent";
+      break se
+    }
+    case "remote-agent": {
+      f = "from a remote cloud agent";
+      break se
+    }
+    case "plugin": {
+      let u;
+      if (m[4] !== o.pluginName) u = h(o.pluginName), m[4] = o.pluginName, m[5] = u;
+      else u = m[5];
+      let N = u;
+      f = N === void 0 ? "from a plugin" : `from the ${N} plugin`
+    }
+  }
+  const u = k !== void 0 ? `${k} ${i}` : void 0;
+  let R;
+  if (m[6] !== p || m[7] !== u || m[8] !== i) R = e(n, {
+    "aria-label": u,
+    bold: !0,
+    color: p,
+    children: i
+  }), m[6] = p, m[7] = u, m[8] = i, m[9] = R;
+  else R = m[9];
+  let g;
+  if (m[10] !== f) g = f !== void 0 && r(n, {
+    children: [e(n, {
+      dimColor: !0,
+      children: "\xB7 "
+    }), f]
+  }), m[10] = f, m[11] = g;
+  else g = m[11];
+  let L;
+  if (m[12] !== R || m[13] !== g) L = r(s, {
+    flexDirection: "row",
+    gap: 1,
+    children: [R, g]
+  }), m[12] = R, m[13] = g, m[14] = L;
+  else L = m[14];
+  let S = L,
+    x = c !== void 0 && ie(i) + (f === void 0 ? 0 : 1 + ie(`\xB7 ${f}`)) + 1 + ie(c.text) <= c.rowColumns;
+  const q = x ? 1 : void 0;
+  let D;
+  if (m[15] !== c || m[16] !== x || m[17] !== S) D = x ? r(s, {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: 1,
+    children: [S, e(n, {
+      dimColor: !0,
+      children: c.text
+    })]
+  }) : S, m[15] = c, m[16] = x, m[17] = S, m[18] = D;
+  else D = m[18];
+  let X;
+  if (m[19] !== t) X = t != null && (typeof t === "string" ? e(n, {
+    dimColor: !0,
+    wrap: "truncate-start",
+    children: t
+  }) : t), m[19] = t, m[20] = X;
+  else X = m[20];
+  let Q;
+  if (m[21] !== q || m[22] !== D || m[23] !== X) Q = r(s, {
+    flexDirection: "column",
+    flexGrow: q,
+    children: [D, X]
+  }), m[21] = q, m[22] = D, m[23] = X, m[24] = Q;
+  else Q = m[24];
+  return Q
+}
+
+function Ea(a) {
+  let g = w(21),
+    {
+      title: i,
+      subtitle: t,
+      color: d,
+      titleColor: o,
+      innerPaddingX: k,
+      requestSource: c,
+      titleRight: p,
+      srPrefix: f,
+      children: m
+    } = a,
+    u = d === void 0 ? "permission" : d,
+    T = k === void 0 ? 1 : k,
+    se = f === void 0 ? "Permission Required:" : f,
+    C = j(),
+    {
+      columns: N
+    } = us(Ee(Og) ?? {
+      rows: 0,
+      columns: 0
+    });
+  const R = se ?? void 0;
+  let L;
+  if (g[0] !== C || g[1] !== N || g[2] !== p) L = p === void 0 && C !== null ? {
+    text: C,
+    rowColumns: N - 2
+  } : void 0, g[0] = C, g[1] = N, g[2] = p, g[3] = L;
+  else L = g[3];
+  let S;
+  if (g[4] !== c || g[5] !== t || g[6] !== R || g[7] !== L || g[8] !== i || g[9] !== o) S = e(YQ, {
+    title: i,
+    subtitle: t,
+    color: o,
+    requestSource: c,
+    srPrefix: R,
+    aside: L
+  }), g[4] = c, g[5] = t, g[6] = R, g[7] = L, g[8] = i, g[9] = o, g[10] = S;
+  else S = g[10];
+  let x;
+  if (g[11] !== S || g[12] !== p) x = e(s, {
+    paddingX: 1,
+    flexDirection: "column",
+    children: r(s, {
+      justifyContent: "space-between",
+      children: [S, p]
+    })
+  }), g[11] = S, g[12] = p, g[13] = x;
+  else x = g[13];
+  let q;
+  if (g[14] !== m || g[15] !== T) q = e(s, {
+    flexDirection: "column",
+    paddingX: T,
+    children: m
+  }), g[14] = m, g[15] = T, g[16] = q;
+  else q = g[16];
+  let D;
+  if (g[17] !== u || g[18] !== x || g[19] !== q) D = r(s, {
+    flexDirection: "column",
+    borderStyle: "round",
+    borderColor: u,
+    borderLeft: !1,
+    borderRight: !1,
+    borderBottom: !1,
+    marginTop: 1,
+    children: [x, q]
+  }), g[17] = u, g[18] = x, g[19] = q, g[20] = D;
+  else D = g[20];
+  return D
+}
+export {
+  Btt,
+  X3o,
+  lY,
+  YQ,
+  Ea
+};

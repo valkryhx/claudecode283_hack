@@ -1,0 +1,385 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import {
+  K,
+  we
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import {
+  c
+} from "B:/~BUN/root/chunk-jthpk6wv.js";
+import {
+  G
+} from "B:/~BUN/root/chunk-3aez4b53.js";
+import "B:/~BUN/root/chunk-89mss1tj.js";
+import {
+  rf
+} from "B:/~BUN/root/chunk-4bx17ygx.js";
+import {
+  Tt,
+  ce
+} from "B:/~BUN/root/chunk-nxwmyxnk.js";
+import {
+  dre
+} from "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import {
+  ne
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import "B:/~BUN/root/chunk-yt0knyw7.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import {
+  kn,
+  aGe,
+  ks
+} from "B:/~BUN/root/chunk-yw21pggd.js";
+import {
+  ct
+} from "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-1kfn24jp.js";
+import {
+  g,
+  p
+} from "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-rvc0n7zm.js";
+import "B:/~BUN/root/chunk-ek28wssa.js";
+import "B:/~BUN/root/chunk-4bgg5sdy.js";
+import {
+  Cbt,
+  fR
+} from "B:/~BUN/root/chunk-xrp58hm9.js";
+import {
+  yr,
+  Ot,
+  R5,
+  Q7e
+} from "B:/~BUN/root/chunk-2zk4vqr8.js";
+import "B:/~BUN/root/chunk-k9zm82w3.js";
+import "B:/~BUN/root/chunk-yrjpmz6e.js";
+import "B:/~BUN/root/chunk-fsp20me0.js";
+import "B:/~BUN/root/chunk-nvgn0qsr.js";
+import "B:/~BUN/root/chunk-wegca9zh.js";
+import "B:/~BUN/root/chunk-pjgzz98k.js";
+import "B:/~BUN/root/chunk-d9rmnpx3.js";
+import "B:/~BUN/root/chunk-hb6x4e3n.js";
+import "B:/~BUN/root/chunk-cqkcn3bx.js";
+import "B:/~BUN/root/chunk-frrkt2bs.js";
+import "B:/~BUN/root/chunk-gyr2a6wz.js";
+import "B:/~BUN/root/chunk-ejm0pmyj.js";
+import "B:/~BUN/root/chunk-5ygt6t95.js";
+import "B:/~BUN/root/chunk-we0fhavr.js";
+import "B:/~BUN/root/chunk-a3eqgdv2.js";
+import "B:/~BUN/root/chunk-8ye9n4fk.js";
+import "B:/~BUN/root/chunk-6a9s3k2y.js";
+import "B:/~BUN/root/chunk-7c8rc0p5.js";
+import "B:/~BUN/root/chunk-8z3a373v.js";
+import "B:/~BUN/root/chunk-x50ytcx8.js";
+import "B:/~BUN/root/chunk-vpgpdrbv.js";
+import "B:/~BUN/root/chunk-a0k8qg0d.js";
+import "B:/~BUN/root/chunk-k8003a0x.js";
+import "B:/~BUN/root/chunk-1gpjpba6.js";
+import "B:/~BUN/root/chunk-9kme2ye7.js";
+import "B:/~BUN/root/chunk-8pmnanyd.js";
+import "B:/~BUN/root/chunk-4sfz9tbn.js";
+import "B:/~BUN/root/chunk-4qqgabd5.js";
+import "B:/~BUN/root/chunk-kad4nq7y.js";
+import "B:/~BUN/root/chunk-28dw3zbk.js";
+import "B:/~BUN/root/chunk-07c8fw5z.js";
+import "B:/~BUN/root/chunk-245a2x6v.js";
+import "B:/~BUN/root/chunk-q4sexgb0.js";
+import "B:/~BUN/root/chunk-vr6ev6st.js";
+import "B:/~BUN/root/chunk-pej55jax.js";
+import "B:/~BUN/root/chunk-53tmhe2j.js";
+import "B:/~BUN/root/chunk-2ypz4cxh.js";
+import "B:/~BUN/root/chunk-m3q01n4y.js";
+import "B:/~BUN/root/chunk-mndtcf0c.js";
+import "B:/~BUN/root/chunk-rfp1pa77.js";
+import "B:/~BUN/root/chunk-h9p45fg5.js";
+import "B:/~BUN/root/chunk-jkv8n5r0.js";
+import "B:/~BUN/root/chunk-htbmes7q.js";
+import "B:/~BUN/root/chunk-v6pbq6dm.js";
+import "B:/~BUN/root/chunk-41gwd5bj.js";
+import "B:/~BUN/root/chunk-s6czymtt.js";
+import "B:/~BUN/root/chunk-236sa1fp.js";
+import "B:/~BUN/root/chunk-m94tqsvv.js";
+import "B:/~BUN/root/chunk-cx57tr4b.js";
+import "B:/~BUN/root/chunk-hvvs3ef6.js";
+import "B:/~BUN/root/chunk-qp0344nb.js";
+import "B:/~BUN/root/chunk-k2ekj8re.js";
+import "B:/~BUN/root/chunk-e4q58xft.js";
+import "B:/~BUN/root/chunk-8v3gkznb.js";
+import "B:/~BUN/root/chunk-bsjrnca2.js";
+import "B:/~BUN/root/chunk-5g9fghtv.js";
+import "B:/~BUN/root/chunk-vqar0j99.js";
+import {
+  iO,
+  Hk,
+  uD
+} from "B:/~BUN/root/chunk-74f4ssah.js";
+import "B:/~BUN/root/chunk-429xgjya.js";
+import "B:/~BUN/root/chunk-7qeqkjr8.js";
+import "B:/~BUN/root/chunk-f0ytfwhx.js";
+import "B:/~BUN/root/chunk-qk52d0gf.js";
+import {
+  xie
+} from "B:/~BUN/root/chunk-dn8rakwm.js";
+import "B:/~BUN/root/chunk-r0jnxjth.js";
+import {
+  sn
+} from "B:/~BUN/root/chunk-zayh6xmh.js";
+import "B:/~BUN/root/chunk-472kxa0t.js";
+import "B:/~BUN/root/chunk-nvdqbkrt.js";
+import "B:/~BUN/root/chunk-cvj1wxdh.js";
+import "B:/~BUN/root/chunk-0n2201tc.js";
+import "B:/~BUN/root/chunk-q3srk2wz.js";
+import "B:/~BUN/root/chunk-efcxwmhb.js";
+import "B:/~BUN/root/chunk-d544j3ga.js";
+import "B:/~BUN/root/chunk-hhgqcegv.js";
+import "B:/~BUN/root/chunk-c44qc88s.js";
+import "B:/~BUN/root/chunk-9080897a.js";
+import "B:/~BUN/root/chunk-bn7mrnb3.js";
+import "B:/~BUN/root/chunk-vfmvkxsr.js";
+import "B:/~BUN/root/chunk-tqyz3ejx.js";
+import "B:/~BUN/root/chunk-h1tq8zce.js";
+import "B:/~BUN/root/chunk-2fccb5hn.js";
+import "B:/~BUN/root/chunk-hkc0g0wr.js";
+import "B:/~BUN/root/chunk-z8fd2x5s.js";
+import "B:/~BUN/root/chunk-ggdk44cm.js";
+import "B:/~BUN/root/chunk-z84amwaw.js";
+import "B:/~BUN/root/chunk-mgb2hezz.js";
+import "B:/~BUN/root/chunk-f25646gd.js";
+import "B:/~BUN/root/chunk-dq7zfs8r.js";
+import "B:/~BUN/root/chunk-8y0chnnr.js";
+import "B:/~BUN/root/chunk-gy660jgx.js";
+import "B:/~BUN/root/chunk-pmw6knpp.js";
+import "B:/~BUN/root/chunk-e7tskyjv.js";
+import "B:/~BUN/root/chunk-9w4ppz44.js";
+import "B:/~BUN/root/chunk-v1j2tw52.js";
+import "B:/~BUN/root/chunk-gjdk1btq.js";
+import "B:/~BUN/root/chunk-3d7bmmrg.js";
+import "B:/~BUN/root/chunk-e3hz52nd.js";
+import "B:/~BUN/root/chunk-ses0c36n.js";
+import "B:/~BUN/root/chunk-2zdc0br5.js";
+import "B:/~BUN/root/chunk-7j5tvnqj.js";
+import "B:/~BUN/root/chunk-bp7zxkzq.js";
+import "B:/~BUN/root/chunk-b0vcwsh9.js";
+import "B:/~BUN/root/chunk-r4y1700s.js";
+import {
+  hlr,
+  Qns,
+  FJr
+} from "B:/~BUN/root/chunk-jadjnm81.js";
+import "B:/~BUN/root/chunk-92fjqg3t.js";
+import "B:/~BUN/root/chunk-8vgph9ej.js";
+import "B:/~BUN/root/chunk-cxg2mbf6.js";
+import "B:/~BUN/root/chunk-cc0we03s.js";
+import {
+  L8e,
+  zpt
+} from "B:/~BUN/root/chunk-2vhqkymb.js";
+import "B:/~BUN/root/chunk-th6c28ah.js";
+import "B:/~BUN/root/chunk-bhfm57j1.js";
+import "B:/~BUN/root/chunk-rzekebyp.js";
+import "B:/~BUN/root/chunk-stjjr4k8.js";
+import "B:/~BUN/root/chunk-y424etr5.js";
+import "B:/~BUN/root/chunk-3npegs3h.js";
+import "B:/~BUN/root/chunk-410t5g3b.js";
+import "B:/~BUN/root/chunk-b4xxgr0r.js";
+import "B:/~BUN/root/chunk-0p1hpv0s.js";
+import "B:/~BUN/root/chunk-hdc8p5sh.js";
+import "B:/~BUN/root/chunk-hgpj62j5.js";
+import "B:/~BUN/root/chunk-4yrr52wq.js";
+import "B:/~BUN/root/chunk-asrchj7k.js";
+import "B:/~BUN/root/chunk-0zewma8k.js";
+import "B:/~BUN/root/chunk-vfvzs0rk.js";
+import "B:/~BUN/root/chunk-9929fpp1.js";
+import "B:/~BUN/root/chunk-mbz8rhex.js";
+import "B:/~BUN/root/chunk-r0sre1ss.js";
+import {
+  ya
+} from "B:/~BUN/root/chunk-6k93vgm0.js";
+import "B:/~BUN/root/chunk-dyer18a2.js";
+import "B:/~BUN/root/chunk-xpy44yvr.js";
+import "B:/~BUN/root/chunk-4qc55bxf.js";
+import "B:/~BUN/root/chunk-qd9ks09p.js";
+import "B:/~BUN/root/chunk-cqw1xaqm.js";
+import "B:/~BUN/root/chunk-c6mbjdcy.js";
+import "B:/~BUN/root/chunk-dq3y90rd.js";
+import "B:/~BUN/root/chunk-j2tkftkw.js";
+import "B:/~BUN/root/chunk-7wsxhgty.js";
+import "B:/~BUN/root/chunk-j0ghr71r.js";
+import "B:/~BUN/root/chunk-b0487zs4.js";
+import "B:/~BUN/root/chunk-31x8pa20.js";
+import "B:/~BUN/root/chunk-59tbtn9n.js";
+import "B:/~BUN/root/chunk-3rzwkd15.js";
+import "B:/~BUN/root/chunk-bp5d1azq.js";
+import "B:/~BUN/root/chunk-eya7pdzx.js";
+import "B:/~BUN/root/chunk-80e5c2dj.js";
+import "B:/~BUN/root/chunk-648jq7hr.js";
+import "B:/~BUN/root/chunk-shj1mfyk.js";
+import {
+  appendFile as Ee,
+  lstat as w,
+  mkdir as ae,
+  mkdtemp as ke,
+  readFile as ue,
+  readdir as Ce,
+  rm as oe
+} from "fs/promises";
+import {
+  homedir as Te
+} from "os";
+import {
+  isAbsolute as de,
+  join as s,
+  relative as Ie
+} from "path";
+var F = ".claude/RESUME.md",
+  D = "refs/claude/checkpoint-",
+  f = 30000,
+  ye = 25000,
+  xe = 2147483648,
+  re = 500;
+
+function O(o) {
+  let t = o.replace(/[\x00-\x1f\x7f-\x9f\u061c\u200b-\u200f\u2028-\u202e\u2066-\u2069\ufeff]+/g, " ");
+  return t.length > re ? `${ne(t,re)}\u2026` : t
+}
+var Ne = "tengu_virtual_pine",
+  se = "claude-checkpoint-index-",
+  Pe = 1209600;
+async function ft(o) {
+  let t = Qns();
+  if (t !== null) return t;
+  hlr(null);
+  let n = (async () => {
+    let a = o.todos;
+    if (a.length === 0 && iO()) try {
+      a = (await uD(Hk())).map((d) => ({
+        content: d.subject,
+        status: d.status,
+        activeForm: d.activeForm ?? d.subject
+      }))
+    } catch {}
+    return Se({
+      todos: a,
+      trigger: o.trigger
+    })
+  })();
+  FJr(n);
+  let r;
+  try {
+    r = await n
+  } finally {
+    FJr(null)
+  }
+  if (hlr(r), r.committed) g("usage_limit_checkpoint_commit", {
+    trigger: c(o.trigger)
+  }), i("tengu_rl_checkpoint_a1_shown", {});
+  else p("usage_limit_checkpoint_commit", r.skipReason, {
+    trigger: c(o.trigger)
+  });
+  return r
+}
+
+function A(o, t) {
+  if (o === t) return !0;
+  let n = Ie(t, o);
+  return n !== "" && !n.startsWith("..") && !de(n)
+}
+async function Se(o) {
+  if (we()) return {
+    committed: !1,
+    skipReason: "non_interactive"
+  };
+  return {
+    committed: !1,
+    skipReason: "platform_unsupported"
+  }
+}
+async function be(o, t) {
+  if ((await Promise.all(["MERGE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "BISECT_LOG", "rebase-merge", "rebase-apply"].map((a) => w(s(o, a)).then(() => !0, () => !1)))).includes(!0)) return !0;
+  let r = await zpt(o, L8e, t);
+  return r === null ? null : r.size > 0
+}
+async function ve(o, t) {
+  let n = await t(["rev-parse", "--git-path", "info/exclude"], {
+    cwd: o
+  });
+  if (n.code !== 0) return;
+  let r = de(n.stdout.trim()) ? n.stdout.trim() : s(o, n.stdout.trim());
+  for (let u of [s(r, ".."), r]) try {
+    let m = await w(u);
+    if (m.isSymbolicLink()) return;
+    if (!m.isFile() && !m.isDirectory()) return;
+    if (u === r && m.isFile() && m.size > 65536) return
+  } catch {}
+  let a = await ue(r, "utf-8").catch(() => ""),
+    l = `/${F}`;
+  if (a.split(/\r?\n/).includes(l)) return;
+  await ae(s(r, ".."), {
+    recursive: !0
+  }).catch(() => {});
+  let d = a.length > 0 && !a.endsWith(`
+`) ? `
+` : "";
+  await Ee(r, `${d}${l}
+`, "utf-8").catch(() => {})
+}
+async function Oe(o, t, n) {
+  let r = await n(["for-each-ref", "--format=%(refname)%00%(committerdate:unix)%00%(symref)", `${D}*`], {
+    cwd: o
+  });
+  if (r.code !== 0) return;
+  let a = Math.floor(Date.now() / 1000);
+  for (let l of r.stdout.split(`
+`)) {
+    let [d, u, m] = l.split("\x00");
+    if (d === void 0 || d === t || !d.startsWith(D) || m !== void 0 && m.length > 0) continue;
+    let E = a - Number(u);
+    if (!Number.isFinite(E) || E < Pe) continue;
+    await n(["update-ref", "--no-deref", "-d", d], {
+      cwd: o
+    })
+  }
+}
+
+function Ae(o) {
+  let t = ["# Claude Code \u2014 resume checkpoint", "", `Session: ${o.sessionId}`, `Written: ${new Date().toISOString()}`, `Trigger: ${o.trigger==="near_limit"?"near-limit":"rate-limited"}`, `Ref with your in-progress files: ${o.ref}`, "", "## To resume", "", `    claude --resume ${o.sessionId}`, "", "(or open Claude Code in this directory and run /resume)", "", "## Plan (from TodoWrite state)", ""];
+  if (o.todos.length === 0) t.push("No task list was active; see transcript via the resume command above.");
+  else {
+    let n, r;
+    for (let a of o.todos)
+      if (a.status === "completed") t.push(`- [x] ${O(a.content)}`);
+      else if (a.status === "in_progress") {
+      let l = O(a.activeForm);
+      t.push(`- [>] ${l}    \u2190 current step`), r ??= l
+    } else {
+      let l = O(a.content);
+      t.push(`- [ ] ${l}`), n ??= l
+    }
+    t.push("", "## What's next", ""), t.push(n !== void 0 ? n : r !== void 0 ? `finish: ${r}` : "All tasks completed.")
+  }
+  return t.push("", "---", "", "Don't want these changes? Resume this session (above), then run", "`/rewind` to roll back the turn's tool edits (bash-made changes", `excluded). ${o.ref} holds a full snapshot until this session's`, "next checkpoint, or for up to ~2 weeks.", ""), t.join(`
+`)
+}
+export {
+  ft as performRateLimitCheckpoint
+};

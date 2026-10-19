@@ -1,0 +1,524 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  w
+} from "B:/~BUN/root/chunk-rysqv8v1.js";
+import {
+  ZS,
+  bl,
+  us,
+  u_e,
+  Ont
+} from "B:/~BUN/root/chunk-b900np4s.js";
+import {
+  Te
+} from "B:/~BUN/root/chunk-smy4yvhm.js";
+import {
+  b1
+} from "B:/~BUN/root/chunk-1jz9m9yh.js";
+import {
+  BA
+} from "B:/~BUN/root/chunk-x9aty6p8.js";
+import {
+  s,
+  n,
+  Ek,
+  zCe,
+  n7,
+  Ws
+} from "B:/~BUN/root/chunk-damrp3r8.js";
+import {
+  he
+} from "B:/~BUN/root/chunk-4qqgabd5.js";
+import {
+  on
+} from "B:/~BUN/root/chunk-pw5vpw1q.js";
+import {
+  hS
+} from "B:/~BUN/root/chunk-a8k6kvgb.js";
+import {
+  wk
+} from "B:/~BUN/root/chunk-wwnnc3mv.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-x2hkxw5q.js";
+import {
+  qt,
+  ae,
+  Ee,
+  Jt,
+  Z,
+  ny,
+  A,
+  y,
+  B
+} from "B:/~BUN/root/chunk-5hr2ysa5.js";
+import {
+  ie
+} from "B:/~BUN/root/chunk-t7350kw8.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-ef0msk7r.js";
+B();
+
+function ko(dt) {
+  return [dt.props.id ?? dt.props.title, dt.props.title]
+}
+
+function xo(Qo) {
+  return Qo + 1
+}
+
+function To(Xo, d) {
+  let [, xn] = d;
+  return Xo + (xn ? ie(xn) : 0) + 2 + 1
+}
+
+function Fo(x) {
+  return x + 1
+}
+
+function Co(C) {
+  return C - 1
+}
+var m = qt({
+  selectedTab: void 0,
+  width: void 0,
+  headerFocused: !1,
+  focusHeader: () => {},
+  blurHeader: () => {},
+  registerOptIn: () => () => {},
+  registerNavigationOwner: () => () => {}
+});
+
+function gS(d) {
+  let h = w(52),
+    {
+      title: l,
+      color: a,
+      defaultTab: c,
+      children: u,
+      hidden: t,
+      useFullWidth: b,
+      selectedTab: x,
+      onTabChange: C,
+      banner: v,
+      disableNavigation: me,
+      initialHeaderFocused: H,
+      contentHeight: R,
+      stableHeight: ne,
+      navFromContent: Ge
+    } = d,
+    L = H === void 0 ? !0 : H,
+    p = ne === void 0 ? !1 : ne,
+    jt = Ge === void 0 ? !1 : Ge,
+    {
+      columns: ge
+    } = Te(),
+    g = u.map(ko),
+    ve = c ? g.findIndex((oe) => c === oe[0]) : 0,
+    Ue = x !== void 0,
+    [Ho, Ro] = y(ve !== -1 ? ve : 0),
+    Gt = Ue ? g.findIndex((yo) => yo[0] === x) : -1,
+    I = Ue ? Gt !== -1 ? Gt : 0 : Ho,
+    we = Ee(ZS),
+    D = u_e(),
+    N = Ont(),
+    Ye = A(null),
+    [ke, So] = y(0),
+    re = A(null),
+    [xe, Io] = y(1),
+    Ut;
+  if (h[0] !== ke || h[1] !== xe) Ut = () => {
+    let Yt = Ye.current ? Ws(Ye.current).height : 0;
+    if (Yt !== ke) So(Yt);
+    let _t = re.current ? Math.max(1, Ws(re.current).height) : 1;
+    if (_t !== xe) Io(_t)
+  }, h[0] = ke, h[1] = xe, h[2] = Ut;
+  else Ut = h[2];
+  Jt(Ut);
+  let le = (t ? 0 : xe + 1) + ke,
+    zt, Qt;
+  if (h[3] !== N || h[4] !== le) zt = () => {
+    if (!N) {
+      return
+    }
+    return N(le), () => N(null)
+  }, Qt = [N, le], h[3] = N, h[4] = le, h[5] = zt, h[6] = Qt;
+  else zt = h[5], Qt = h[6];
+  Jt(zt, Qt);
+  let Xt;
+  if (h[7] === S) Xt = {
+    rows: 0,
+    columns: 0
+  }, h[7] = Xt;
+  else Xt = h[7];
+  let {
+    rows: Do
+  } = us(Xt), O = N !== null && D !== null, _e = D?.attach, Fe = O ? Do - le : void 0, Zt;
+  if (h[8] !== we || h[9] !== O) Zt = we && O ? {
+    ...we,
+    claimScrollBox: null
+  } : null, h[8] = we, h[9] = O, h[10] = Zt;
+  else Zt = h[10];
+  let qe = Zt,
+    wr = !0,
+    de = A(null),
+    ze = A(null),
+    {
+      focus: M,
+      activeElement: j,
+      focusDirection: Je,
+      blur: Qe
+    } = zCe(),
+    [G, se] = y(L),
+    $t;
+  if (h[11] !== j || h[12] !== M) $t = () => {
+    if (!0 && re.current) M(re.current);
+    else if (!1 && de.current) {
+      if (j && j !== de.current && b1(j, de.current)) ze.current = j;
+      M(de.current)
+    }
+    se(!0)
+  }, h[11] = j, h[12] = M, h[13] = $t;
+  else $t = h[13];
+  let en = $t,
+    tn;
+  if (h[14] !== Qe || h[15] !== M) tn = (nn) => {
+    if (!0 && nn) M(nn);
+    else Qe();
+    ze.current = null, se(!1)
+  }, h[14] = Qe, h[15] = M, h[16] = tn;
+  else tn = h[16];
+  let No = tn,
+    [W, Oo] = te(),
+    [Mo, Wo] = te(),
+    E = me || Mo,
+    rn = G || !W,
+    Xe = A(null),
+    Bo = n7(Xe),
+    Eo = !0 && !W ? !Bo : rn,
+    [an, Ao] = ny(xo, 0),
+    ln = A(null),
+    dn;
+  if (h[17] === S) dn = () => {
+    ze.current = null
+  }, h[17] = dn;
+  else dn = h[17];
+  Jt(dn, [I]);
+  let un = (Ze, sn) => {
+      let Po = sn === void 0 ? !1 : sn;
+      ln.current = {
+        epoch: an,
+        index: Ze
+      }, Ao();
+      let cn = g[Ze]?.[0];
+      if (Ue && C && cn) C(cn);
+      else Ro(Ze);
+      if (Po) {
+        return
+      }
+      en()
+    },
+    Ce = (Vo, hn) => {
+      let Ko = hn === void 0 ? !1 : hn;
+      let fn = ln.current;
+      let Lo = fn?.epoch === an ? fn.index : I;
+      un((Lo + g.length + Vo) % g.length, Ko)
+    };
+  const $e = !t && !E && rn;
+  let bn;
+  if (h[18] !== $e) bn = {
+    context: "Tabs",
+    isActive: $e
+  }, h[18] = $e, h[19] = bn;
+  else bn = h[19];
+  on({
+    "tabs:next": () => Ce(1),
+    "tabs:previous": () => Ce(-1)
+  }, bn);
+  let pn;
+  if (h[20] !== E || h[21] !== Je || h[22] !== G || h[23] !== t || h[24] !== W) pn = (f) => {
+    if (t || E) {
+      return
+    }
+    if (!G) {
+      if (f.key === "left" || f.key === "right" || f.key === "tab" || W && (f.key === "up" || f.key === "down")) f.preventDefault();
+      return
+    }
+    if (f.key === "left" || f.key === "right" || f.key === "tab") f.preventDefault();
+    else if (f.key === "down" && W) f.preventDefault(), Je("down"), se(!1)
+  }, h[20] = E, h[21] = Je, h[22] = G, h[23] = t, h[24] = W, h[25] = pn;
+  else pn = h[25];
+  let mn = pn;
+  const et = jt && !G && W && !t && !E;
+  let gn;
+  if (h[26] !== et) gn = {
+    context: "Tabs",
+    isActive: et
+  }, h[26] = et, h[27] = gn;
+  else gn = h[27];
+  on({
+    "tabs:next": () => Ce(1, !0),
+    "tabs:previous": () => Ce(-1, !0)
+  }, gn);
+  let jo = l ? ie(l) + 1 : 0,
+    Go = g.reduce(To, 0),
+    Uo = jo + Go,
+    vn = b ? Math.max(0, ge - Uo) : 0,
+    ce = b ? ge : void 0;
+  const Yo = {
+      selectedTab: g[I][0],
+      width: ce,
+      headerFocused: G,
+      focusHeader: en,
+      blurHeader: No,
+      registerOptIn: Oo,
+      registerNavigationOwner: Wo
+    },
+    tt = s,
+    nt = !0 ? void 0 : de,
+    _o = "column",
+    ot = !0 ? void 0 : 0,
+    rt = !0 ? void 0 : L,
+    it = !0 ? void 0 : mn,
+    at = D ? 0 : void 0,
+    lt = !t && r(s, {
+      ref: re,
+      tabIndex: !0 ? 0 : void 0,
+      autoFocus: !0 ? L : void 0,
+      onFocus: !0 ? () => se(!0) : void 0,
+      onBlur: !0 ? () => se(!1) : void 0,
+      onKeyDown: !0 ? mn : void 0,
+      flexDirection: "row",
+      flexWrap: "wrap",
+      columnGap: 1,
+      flexShrink: D ? 0 : void 0,
+      alignSelf: !0 && !b ? "flex-start" : void 0,
+      children: [l !== null && e(s, {
+        flexShrink: 0,
+        children: e(n, {
+          bold: !0,
+          color: a,
+          children: l
+        })
+      }), g.map((qo, wn) => {
+        let [zo, Jo] = qo;
+        return e(je, {
+          title: Jo,
+          isCurrent: I === wn,
+          headerFocused: Eo && !E,
+          color: a ?? (!0 ? "suggestion" : void 0),
+          onClick: E ? void 0 : () => un(wn)
+        }, zo)
+      }), vn > 0 && e(n, {
+        children: " ".repeat(vn)
+      })]
+    });
+  let He;
+  if (h[28] !== v) He = v != null && e(s, {
+    ref: Ye,
+    flexDirection: "column",
+    flexShrink: 0,
+    children: v
+  }), h[28] = v, h[29] = He;
+  else He = h[29];
+  let Re;
+  if (h[30] !== _e || h[31] !== qe || h[32] !== u || h[33] !== R || h[34] !== ce || h[35] !== t || h[36] !== D || h[37] !== O || h[38] !== Fe || h[39] !== I || h[40] !== p) Re = O ? e(s, {
+    ref: Xe,
+    width: ce,
+    marginTop: t ? 0 : 1,
+    flexShrink: 0,
+    children: e(BA, {
+      ref: _e,
+      flexDirection: "column",
+      flexShrink: 0,
+      height: p ? Fe : void 0,
+      maxHeight: p ? void 0 : Fe,
+      stickyScroll: !1,
+      children: e(ZS, {
+        value: qe,
+        children: u
+      })
+    }, I)
+  }) : e(s, {
+    ref: Xe,
+    width: ce,
+    marginTop: t ? 0 : 1,
+    height: p ? void 0 : R,
+    minHeight: p ? R : void 0,
+    overflowY: R !== void 0 && !p ? "hidden" : void 0,
+    flexShrink: D ? 0 : void 0,
+    children: u
+  }), h[30] = _e, h[31] = qe, h[32] = u, h[33] = R, h[34] = ce, h[35] = t, h[36] = D, h[37] = O, h[38] = Fe, h[39] = I, h[40] = p, h[41] = Re;
+  else Re = h[41];
+  let kn;
+  if (h[42] !== tt || h[43] !== nt || h[44] !== ot || h[45] !== rt || h[46] !== it || h[47] !== at || h[48] !== lt || h[49] !== He || h[50] !== Re) kn = r(tt, {
+    ref: nt,
+    flexDirection: _o,
+    tabIndex: ot,
+    autoFocus: rt,
+    onKeyDown: it,
+    flexShrink: at,
+    children: [lt, He, Re]
+  }), h[42] = tt, h[43] = nt, h[44] = ot, h[45] = rt, h[46] = it, h[47] = at, h[48] = lt, h[49] = He, h[50] = Re, h[51] = kn;
+  else kn = h[51];
+  return e(m.Provider, {
+    value: Yo,
+    children: kn
+  })
+}
+
+function je(d) {
+  let H = w(18),
+    {
+      title: l,
+      isCurrent: a,
+      headerFocused: c,
+      color: u,
+      onClick: t
+    } = d,
+    [b, x] = y(!1),
+    C = hS(),
+    v = t !== void 0;
+  const me = a && c;
+  let R;
+  if (H[0] !== me) R = {
+    line: 0,
+    column: 1,
+    active: me
+  }, H[0] = me, H[1] = R;
+  else R = H[1];
+  let ne = Ek(R),
+    Ge = he.level === 0,
+    L = u && a && c && !Ge,
+    p;
+  if (H[2] !== t || H[3] !== C) p = t === void 0 ? void 0 : (jt) => {
+    if (C(jt)) {
+      return
+    }
+    t()
+  }, H[2] = t, H[3] = C, H[4] = p;
+  else p = H[4];
+  let ge, g;
+  if (H[5] === S) ge = () => x(!0), g = () => x(!1), H[5] = ge, H[6] = g;
+  else ge = H[5], g = H[6];
+  let oe;
+  if (H[7] !== v || H[8] !== u || H[9] !== L || H[10] !== b || H[11] !== a || H[12] !== l) oe = L ? e(wk, {
+    color: u,
+    bold: !0,
+    padded: !0,
+    children: l
+  }) : r(n, {
+    inverse: a,
+    bold: a,
+    underline: b && v,
+    children: [" ", l, " "]
+  }), H[7] = v, H[8] = u, H[9] = L, H[10] = b, H[11] = a, H[12] = l, H[13] = oe;
+  else oe = H[13];
+  let ve;
+  if (H[14] !== ne || H[15] !== p || H[16] !== oe) ve = e(s, {
+    ref: ne,
+    flexShrink: 0,
+    onClick: p,
+    onMouseEnter: ge,
+    onMouseLeave: g,
+    children: oe
+  }), H[14] = ne, H[15] = p, H[16] = oe, H[17] = ve;
+  else ve = H[17];
+  return ve
+}
+
+function rl(d) {
+  let C = w(4),
+    {
+      title: l,
+      id: a,
+      children: c
+    } = d,
+    {
+      selectedTab: u,
+      width: t
+    } = Ee(m),
+    b = bl();
+  if (u !== (a ?? l)) {
+    return null
+  }
+  const x = b ? 0 : void 0;
+  let v;
+  if (C[0] !== c || C[1] !== x || C[2] !== t) v = e(s, {
+    width: t,
+    flexShrink: x,
+    children: c
+  }), C[0] = c, C[1] = x, C[2] = t, C[3] = v;
+  else v = C[3];
+  return v
+}
+
+function ivt() {
+  let {
+    width: d
+  } = Ee(m);
+  return d
+}
+
+function i_() {
+  let u = w(6),
+    {
+      headerFocused: d,
+      focusHeader: l,
+      blurHeader: a,
+      registerOptIn: c
+    } = Ee(m),
+    t;
+  if (u[0] !== c) t = [c], u[0] = c, u[1] = t;
+  else t = u[1];
+  Jt(c, t);
+  let b;
+  if (u[2] !== a || u[3] !== l || u[4] !== d) b = {
+    headerFocused: d,
+    focusHeader: l,
+    blurHeader: a
+  }, u[2] = a, u[3] = l, u[4] = d, u[5] = b;
+  else b = u[5];
+  return b
+}
+
+function te() {
+  let a = w(3),
+    [d, l] = y(0),
+    c;
+  if (a[0] === S) c = () => (l(Fo), () => l(Co)), a[0] = c;
+  else c = a[0];
+  let u = c;
+  const t = d > 0;
+  let b;
+  if (a[1] !== t) b = [t, u], a[1] = t, a[2] = b;
+  else b = a[2];
+  return b
+}
+
+function Ytt() {
+  let l = w(2),
+    {
+      registerNavigationOwner: d
+    } = Ee(m),
+    a;
+  if (l[0] !== d) a = [d], l[0] = d, l[1] = a;
+  else a = l[1];
+  Jt(d, a)
+}
+export {
+  gS,
+  rl,
+  ivt,
+  i_,
+  Ytt
+};

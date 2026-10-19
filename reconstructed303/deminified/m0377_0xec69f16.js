@@ -1,0 +1,747 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { at, j } from "B:/~BUN/root/chunk-rpez7z7a.js";
+import { d } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { Y } from "B:/~BUN/root/chunk-89mss1tj.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { tc } from "B:/~BUN/root/chunk-eya7pdzx.js";
+import { randomUUID as S } from "crypto";
+class u {
+  #e = new Map();
+  #n = new Set();
+  note(e, r, n) {
+    if (this.#n.has(e)) return;
+    let s = this.#e.get(e);
+    if (s !== void 0) {
+      if (s.has(r)) return;
+      if (s.size >= 4) {
+        this.#t(e);
+        return;
+      }
+      s.set(r, n);
+      return;
+    }
+    if (this.#e.size >= 256) {
+      let l = 128;
+      for (let i of this.#e.keys()) if (this.#t(i), --l === 0) break;
+    }
+    this.#e.set(e, new Map([[r, n]]));
+  }
+  #t(e) {
+    this.#e.delete(e), this.#n.add(e);
+  }
+  take(e, r) {
+    let n = this.#e.get(e);
+    return this.#e.delete(e), n?.get(r);
+  }
+}
+class p {
+  #e;
+  #n;
+  #t;
+  #r = !1;
+  constructor(e, r, n) {
+    this.#e = e, this.#n = r, this.#t = n;
+  }
+  settle(e) {
+    if (this.#r) return;
+    if (this.#r = !0, this.#e.get(this.#n) !== this.#t) return;
+    if (this.#t.pending--, e.wasWatching || e.teardown !== "unsent") this.#t.confirmed = !0;
+    if (this.#t.pending === 0 && !this.#t.confirmed) this.#e.delete(this.#n);
+  }
+}
+class c {
+  #e = new Map();
+  #n = 1;
+  #t = new Set();
+  #r = new u();
+  isStopped(e) {
+    return this.#e.has(e);
+  }
+  stoppedSlugs() {
+    return this.#e.keys();
+  }
+  latchGeneration(e) {
+    return this.#e.get(e)?.generation;
+  }
+  recordStop(e) {
+    this.#t.delete(e);
+    let r = this.#e.get(e);
+    if (r === void 0) r = {
+      pending: 0,
+      confirmed: !1,
+      generation: this.#n++
+    }, this.#e.set(e, r);else r.generation = this.#n++;
+    return r.pending++, new p(this.#e, e, r);
+  }
+  reaffirmStop(e) {
+    this.#t.delete(e);
+    let r = this.#e.get(e);
+    if (r === void 0) this.confirmStop(e);else r.confirmed = !0;
+  }
+  confirmStop(e) {
+    this.#t.delete(e);
+    let r = this.#e.get(e);
+    if (r === void 0) this.#e.set(e, {
+      pending: 0,
+      confirmed: !0,
+      generation: this.#n++
+    });else r.confirmed = !0, r.generation = this.#n++;
+  }
+  noteRelatchAsk(e, r) {
+    this.#r.note(e, r, this.latchGeneration(r));
+  }
+  takeRelatchAsk(e, r) {
+    return this.#r.take(e, r);
+  }
+  clearByApprovedRewatch(e, r) {
+    let n = this.#e.get(e);
+    if (n === void 0 || n.generation !== r) return;
+    this.#e.delete(e), this.#t.add(e);
+  }
+  noteApprovedWatch(e) {
+    if (!this.#e.has(e)) this.#t.add(e);
+  }
+  wasClearedByRewatch(e) {
+    return this.#t.has(e) && !this.#e.has(e);
+  }
+}
+var b = {
+    baseMs: 1000,
+    capMs: 30000,
+    minUptimeMs: 60000,
+    maxConsecutiveFailures: 10,
+    spreadMinMs: 1000,
+    spreadMaxMs: 20000,
+    seedDeferMaxMs: 180000,
+    idleTtlMs: 12600000,
+    handshakeDeadlineMs: 150000,
+    stallThresholdMs: 1e4,
+    stallMinMs: 30000,
+    stallMaxMs: 60000,
+    longStallMinMs: 120000,
+    longStallMaxMs: 240000,
+    maxStallMs: 1800000,
+    stallOutJitterMs: 900000
+  },
+  activityRefreshMs = 30000,
+  activityEdgeDebounceMs = 100,
+  g = {
+    baseMs: 1000,
+    capMs: 30000,
+    minUptimeMs: 60000,
+    stallThresholdMs: 1e4,
+    stallMinMs: 60000,
+    stallMaxMs: 600000,
+    maxConsecutiveRefusals: 10,
+    handshakeDeadlineMs: 30000
+  },
+  y = {
+    ...g,
+    presenceMs: 15000
+  },
+  w = {
+    ...g,
+    keepaliveMs: 25000
+  };
+function qU(e, r) {
+  return `${e ?? "main"}
+${r}`;
+}
+function m(e) {
+  let r = [...e.codeliveredFollowups.values()];
+  e.codeliveredFollowups.clear();
+  for (let {
+    revoke: revoke
+  } of r) revoke("reset");
+  e.coordinatorEditors.clear(), e.editorSettleWatch?.(), e.editorSettleWatch = null;
+}
+function Oin(e, r, n) {
+  let current = a().current;
+  if (current === void 0) return;
+  for (let [l, i] of current.codeliveredFollowups) if (i.slug === e && i.agentId !== n?.exceptAgentId) current.codeliveredFollowups.delete(l), i.revoke(r);
+}
+var max = 64,
+  Wk = 25,
+  Pke = 3 * Wk;
+function A() {
+  return {
+    live: {
+      handoffGeneration: 0,
+      inFlightSubscribes: new Set(),
+      inFlightWiredIntent: new Set(),
+      retiredInFlightArms: new Set(),
+      armSettleWaiters: new Map(),
+      bootingWiredArms: new Map(),
+      pendingInFlightWiring: new Map(),
+      supervisors: new Map(),
+      heardVersions: new Map(),
+      heardAheadOfClockReported: !1,
+      commentCensus: new Map(),
+      pendingRegistrations: 0,
+      rewatchTiming: {
+        ...b
+      },
+      mostRecentPublishSlug: void 0,
+      pendingSubagentArms: new Map(),
+      finishedSubagentAdopters: new Set(),
+      activitySenders: new Map(),
+      agentActivitySinks: new Map(),
+      activityRefreshTimer: void 0,
+      activityOnsetTimer: void 0,
+      activityClearTimer: void 0,
+      activityRefreshMs: activityRefreshMs,
+      activityEdgeDebounceMs: activityEdgeDebounceMs,
+      activityUnsubscribe: void 0,
+      disposed: !1,
+      activityOkReported: !1,
+      summonDeclared: new Map(),
+      summonArmOkReported: !1,
+      armOutcomes: new Map(),
+      mcpWriteSlugs: new Map(),
+      announcedArmFailures: new Set(),
+      nonEditorSlugs: new Set(),
+      repliesConsent: {
+        outstanding: new Map(),
+        declined: new Map(),
+        approved: new Set()
+      },
+      inFlightGenerations: new Map(),
+      lastArtifactToolCallAt: 0,
+      endAll: void 0
+    },
+    liveDocWatch: {
+      ownSeqs: new Map(),
+      rebases: new Map(),
+      pendingOwnEdits: new Map(),
+      watches: new Map(),
+      stopCounts: new Map(),
+      retiredWatches: new Map(),
+      arming: new Map(),
+      notLiveDoc: new Set(),
+      noticeBudgets: new Map(),
+      journalUnavailable: new Set(),
+      journalNegotiations: new Set(),
+      headSinks: new Map(),
+      stopAll: void 0,
+      stop: void 0
+    },
+    liveEditOps: {
+      lastOwnAck: new Map(),
+      unansweredKeys: new Map()
+    },
+    liveReplicas: {
+      replicas: new Map(),
+      unanswered: new Map(),
+      unavailable: new Map(),
+      tooOld: new Set(),
+      cloudUnserved: new Map(),
+      opening: new Map(),
+      binding: new Map(),
+      transport: void 0,
+      engine: void 0,
+      renderLevel: void 0,
+      headMoved: void 0,
+      workingCopyPath: void 0,
+      settleFileChange: void 0,
+      liveFileEnded: void 0,
+      pushHeldSaves: void 0,
+      heldSavesExitCleanup: void 0
+    },
+    autoReact: {
+      artifacts: new Map(),
+      optIn: null,
+      responderDispatchOptIn: null,
+      userDisarmed: !1,
+      enabledMemo: null,
+      unattendedReplies: new Map(),
+      postSeq: 0,
+      probeSeq: 0,
+      coalesceMsOverride: null,
+      maxAutoTurnsOverride: null,
+      confirmDwellMsOverride: null,
+      readRetryDelaysMsOverride: null,
+      fastAckFlagRefresh: null,
+      fastAckFlagRefreshDeadlineMsOverride: null,
+      fastAckSelectDeadlineMsOverride: null,
+      pendingLedger: null,
+      ledgerLastWritten: null,
+      ledgerLastWriteAt: null,
+      ledgerLastWriteSid: null,
+      ledgerLastWriteAccount: void 0,
+      ledgerFailureSeqAtWrite: null,
+      ledgerDeferredSince: null,
+      ledgerLastAppend: null,
+      ledgerOwnerSid: null,
+      ledgerRetiredSids: new Set(),
+      ledgerExitCleanup: void 0,
+      ledgerExitReStamp: void 0,
+      ledgerTimer: void 0,
+      ledgerStorageV5: void 0,
+      ledgerMaxAgeMsOverride: null,
+      ledgerDebounceMsOverride: null,
+      composeDeadlineMsOverride: null
+    },
+    summonSeeds: {
+      claims: new Set(),
+      readClaims: new Set(),
+      graceMsOverride: null,
+      open: new Map(),
+      settled: new Set()
+    },
+    wakes: {
+      wakes: new Map(),
+      stoppedSlugs: new Set(),
+      sweptSlugs: new Set(),
+      orphanedSweptSlugs: new Set(),
+      yieldedSlugs: new Map(),
+      takenFrom: new Map(),
+      latchChangedAt: new Map(),
+      liftedAtScanGeneration: new Map(),
+      humanTurnAtScanGeneration: null,
+      pendingResumeDisclosure: new Set(),
+      scanGeneration: 0,
+      slugEpochs: new Map(),
+      stopGenerations: new Map(),
+      resumeSights: new u()
+    },
+    autoEditAttribution: {
+      staged: new Map(),
+      chainPublishIds: new Set(),
+      chainPublishSlots: new Map()
+    },
+    summonAnswers: new Map(),
+    pipelineReplyOrigins: new Map(),
+    summonStatus: {
+      sidBySlug: new Map(),
+      seqBySid: new Map(),
+      routeAbsentSince: null,
+      handOffs: new Map()
+    },
+    noticeCoalesce: new Map(),
+    shareStatus: {
+      bySlug: new Map(),
+      probeBoots: new Map(),
+      filePathToSlug: new Map(),
+      pendingNoticeSlugs: new Map(),
+      otherComments: new Map(),
+      otherCommentSeq: 0,
+      noticeReadSights: {
+        comments: new u(),
+        read_db: new u(),
+        read: new u(),
+        read_page_data: new u(),
+        verify: new u(),
+        webfetch: new u()
+      },
+      shareProbesInFlight: new Map(),
+      capsReadsInFlight: new Map()
+    },
+    noticeTap: void 0,
+    templateLanes: {
+      prototypeArmed: !1,
+      boundSlugs: new Map(),
+      heli: {
+        armed: null,
+        boards: new Map()
+      }
+    },
+    postedReplyIds: new Set(),
+    cleanReplyIds: new Set(),
+    frameRelay: {
+      declinedUntil: new Map(),
+      tunnelDeclinedUntil: new Map(),
+      hopFailedUntil: new Map(),
+      servedUntil: new Map(),
+      vouched: new Set(),
+      directRefusedUntil: new Map(),
+      mcpAdvert: void 0,
+      mcpAdvertAsked: void 0,
+      mcpNarrower: new Set(),
+      botContextNoted: !1
+    },
+    contentHostEgressDenied: new Set(),
+    contentHostEgressProbed: new Map(),
+    contentHostEgressUnanswered: new Set(),
+    contentHostEgressInFlight: new Map(),
+    sessionHintsRefusedAt: void 0,
+    leaveOutMissingRefusedAt: void 0,
+    sandboxEgress: new Map(),
+    roster: void 0,
+    rosterHeard: void 0,
+    rosterWait: void 0,
+    rosterWaitOver: !1,
+    assetsOnRoster: !1,
+    accountEpoch: 0,
+    conversationEpoch: 0,
+    ownPrincipalTokens: new Map(),
+    ownPrincipalTokenAccount: null,
+    ownPrincipalTokenEpoch: 0,
+    profileNames: new Map(),
+    profileIdsServed: new Map(),
+    profileIdsForgets: new Map(),
+    authoringProgress: {
+      slotsByBlockIndex: new Map(),
+      failureReported: !1
+    },
+    mintedStoredPageProbes: new WeakSet(),
+    strandedMints: new Map(),
+    reservedMints: new Set(),
+    mintedRoundTripPublishSignals: new WeakSet(),
+    durable: {
+      rows: new Map(),
+      registrySink: null,
+      registryPublished: "null",
+      unwatchedSlugs: new Set(),
+      orphanTriggers: new Set(),
+      pendingRestoredRows: new Map(),
+      slugOps: new Map(),
+      stopLatches: new c(),
+      liveDocArmDeclined: new Set(),
+      liveDocRegrantSights: new u(),
+      firstWatchAskSights: new u(),
+      pendingOps: new Set(),
+      originatorRefused: !1,
+      subscribeForbidden: null,
+      subscribeUnrelayed: null,
+      watchUrlWithheld: null,
+      watchUrlGranted: !1,
+      armsInFlight: new Map(),
+      armOutcomes: new Map(),
+      announcedArmFailures: new Set()
+    },
+    room: {
+      conns: new Map(),
+      nonces: new Map(),
+      endedOwners: new Map(),
+      timing: {
+        ...y
+      }
+    },
+    presence: {
+      conns: new Map(),
+      declined: new Set(),
+      timing: {
+        ...w
+      }
+    },
+    commentMonitorIntent: {
+      sid: null,
+      bySlug: new Map(),
+      pendingRestore: null,
+      lastWritten: null,
+      wroteCurrentLine: !1,
+      failureSeqAtWrite: 0,
+      storageV5: void 0,
+      unsubscribeSwitch: void 0,
+      unregisterExitDrain: void 0,
+      transcriptPath: null,
+      parked: new Map(),
+      writeChain: Promise.resolve(),
+      owedLines: new Map(),
+      pendingLines: new Map(),
+      exitStamped: !1,
+      tornStops: new Set(),
+      forgottenAt: new Map(),
+      leftWith: null,
+      unsubscribeMaterialized: void 0,
+      earlySeed: void 0,
+      onFile: !1,
+      adoptPendingFor: null
+    },
+    interactionSchemas: void 0,
+    approvedRootBases: new Map(),
+    commentTargets: new Map(),
+    refusedPublishBodies: new Map(),
+    approvedSourcePins: new Map(),
+    verifiedAttachments: new Map(),
+    approvedCopySources: new Map(),
+    gatedThumbnailHrefs: new Map(),
+    approvalStashEvicted: !1,
+    publishObservationNonce: S(),
+    consumedPublishApprovals: new Set(),
+    crashedPublishChecks: new Set(),
+    readDeliveries: new Map(),
+    pendingHandoverReads: new Map(),
+    frozenReadPageDataSchemaNames: void 0,
+    frozenWatchRail: void 0,
+    frozenArtifactTypes: void 0,
+    frozenAssets: void 0,
+    frozenCopyFrom: void 0,
+    frozenPublishEdits: void 0,
+    frozenHotUpdate: void 0,
+    frozenPathPin: void 0,
+    frozenPathPinAck: void 0,
+    pathPinSeq: 0,
+    pathPins: new Map(),
+    frozenDbStrReplace: void 0,
+    frozenArtifactPins: void 0,
+    frozenMultiFile: void 0,
+    createdFromType: new Map(),
+    deferredSurface: new Map(),
+    remoteControlSkippedSlugs: new Set(),
+    typeInstanceFiles: new Map(),
+    typeCatalogVouch: new Map(),
+    typeDescriptions: new Map(),
+    attestedTypeArtifacts: new Map(),
+    typeCapabilityReads: new Map(),
+    verify: {
+      lastPublish: void 0,
+      reads: new Map()
+    },
+    ownPublishedSlugs: new Map(),
+    ownCreatedSlugs: new Map(),
+    roomJoinArming: new Set(),
+    roomStoppedByUser: new Set(),
+    roomArmAsked: new Map(),
+    roomArmRefusedByUser: new Set(),
+    coordinatorEditors: new Map(),
+    editorSettleWatch: null,
+    codeliveredFollowups: new Map(),
+    prReviewComposeLatch: null,
+    whiteboardVariantLatch: null,
+    liveEditGateLatch: null,
+    livePathsGateLatch: null,
+    toolsetLatch: null,
+    resultNotes: {
+      kindSaid: !1,
+      watchCodesSaid: new Set(),
+      previewedPaths: new Set(),
+      previewHintedPaths: new Set()
+    },
+    inheritedTypeGrantLatch: null,
+    routineRunTainted: !1,
+    routineTypeInstances: new Map(),
+    routineRelayNotCarried: null,
+    routineRepublishedPaths: new Set(),
+    laneNoticeSlugs: new Map(),
+    commentReads: new Map(),
+    commentReadAtBySlug: new Map(),
+    commentRepublishedPaths: new Set(),
+    askClassConsent: new Set(),
+    askClassPersonConsent: new Set(),
+    askClassOutsideOrgConsent: new Set(),
+    askNamedOtherOrg: new Map(),
+    askClassRequestShown: new Map(),
+    askConnectorsShown: new Map(),
+    askClassPending: new Map(),
+    notedUnreadRefusals: new Map(),
+    askCards: new Map(),
+    askClassCards: new Map(),
+    askCardFacts: new Map(),
+    dbWriteOpSights: new u(),
+    askClassTaken: new Map(),
+    askClassPersonAsked: new Map(),
+    askClassNoClassifier: new Map(),
+    askClassTakenByPerson: new Map(),
+    askTelemetry: new Map(),
+    consentCheckScopes: new Map(),
+    consentCheckScopesEvicted: !1,
+    designGuardFired: !1,
+    quickstartGuidanceToolUseId: void 0,
+    quickstartRan: new Map(),
+    designSystemTypeSlug: void 0,
+    artifactDisabledSessionEvaluated: !1,
+    artifactWithheldReasonsLogged: [],
+    artifactWithheldRecoveryLogged: !1,
+    artifactRegisteredSeen: !1,
+    artifactWithheldListedLogged: !1,
+    artifactPolicyFetchAnswer: null,
+    heldStartupTelemetry: null,
+    anchorSnippets: new Map(),
+    marked: {
+      plain: void 0,
+      inertHtml: void 0,
+      prReviewSubset: void 0
+    },
+    bundleEmbedVerdicts: {
+      hljs: void 0
+    },
+    blockStripVerdicts: {
+      hljs: void 0,
+      mermaid: void 0
+    },
+    prReviewTemplate: {
+      chrome: null,
+      parts: null
+    },
+    workshopBlessedHashes: void 0,
+    rejectBreaker: new tc({
+      max: max
+    })
+  };
+}
+function Iin(e) {
+  if (e.stopped = !0, e.abort.abort(), e.timer !== void 0) clearTimeout(e.timer), e.timer = void 0;
+  delete e.lease, delete e.renewable, delete e.wake;
+}
+class f {
+  current = void 0;
+}
+var C = new at(() => new f());
+function a() {
+  return C.of(j());
+}
+function ee() {
+  let e = a();
+  return e.current ??= A(), e.current;
+}
+function l$s(e, r) {
+  let n = a().current?.autoReact.artifacts.get(e)?.threads.get(r);
+  if (n !== void 0) n.lastAutoReplyAt = Date.now();
+}
+function pIe() {
+  let current_2 = a().current;
+  if (current_2 === void 0) return;
+  for (let r of current_2.liveDocWatch.noticeBudgets.values()) r.disclosed = !1;
+}
+function Umt() {
+  let current_3 = a().current;
+  if (current_3 === void 0) return;
+  current_3.refusedPublishBodies.clear(), aPo();
+}
+function aPo() {
+  let current_4 = a().current;
+  if (current_4 === void 0) return;
+  for (let r of current_4.pendingHandoverReads.values()) r.linesReturned.clear(), r.linesPrepared.clear(), r.completedBy.clear(), r.confirmsResendFor.clear();
+  current_4.readDeliveries.clear();
+}
+function d$s(e) {
+  let current_5 = a().current;
+  if (current_5 === void 0) return;
+  let refusedPublishBodies = current_5.refusedPublishBodies,
+    s = qU(void 0, "");
+  for (let [l, i] of refusedPublishBodies) {
+    if (!l.startsWith(s)) continue;
+    if (!e.has(i.batch)) refusedPublishBodies.delete(l);else if (i.observedFrom !== void 0 && i.observedFrom !== "" && !e.has(i.observedFrom)) delete i.observedFrom;
+  }
+}
+function Min() {
+  return a().current?.room;
+}
+function c$s() {
+  return a().current?.presence;
+}
+function sKn(e) {
+  let r = a().current?.presence;
+  r?.disposeSlug?.(r, e);
+}
+function u$s(e) {
+  let r = a().current?.presence;
+  r?.retireSlug?.(r, e);
+}
+function p$s(e) {
+  return a().current?.presence.declined.has(e) === !0;
+}
+function nje() {
+  return a().current !== void 0;
+}
+function f$s() {
+  let e = Min();
+  e?.consentChanged?.(e);
+}
+function m$s(e) {
+  let r = Min();
+  r?.accountChanged?.(r, e);
+}
+function rje() {
+  let e = Min();
+  e?.dispose?.(e);
+}
+function P(e) {
+  k(e);
+  for (let r of e.docs.values()) T(r);
+}
+function k(e) {
+  e.journalPos = void 0, e.journalPosOrd = void 0;
+}
+function T(e) {
+  e.journalFence = void 0, e.journalGen += 1;
+}
+function D(e) {
+  let journal = e.journal;
+  e.journal = void 0, e.journalCap = void 0, P(e);
+  for (let n of e.docs.values()) {
+    if (n.batchTimer !== void 0) clearTimeout(n.batchTimer), n.batchTimer = void 0;
+    n.batch = void 0, n.batchPos = void 0, n.batchHeardAt = void 0, n.settling = void 0;
+  }
+  journal?.stop({
+    killTask: !1
+  });
+}
+function lPo(e) {
+  e.ownPrincipalTokens.clear(), e.ownPrincipalTokenAccount = null, e.ownPrincipalTokenEpoch++;
+}
+function g$s(e = "signed_out", r) {
+  let current_6 = a().current;
+  if (current_6 === void 0) return;
+  if (lPo(current_6), current_6.profileNames.clear(), current_6.profileIdsServed.clear(), e !== "same_account") {
+    current_6.frameRelay.mcpAdvert = {
+      tools: new Set(),
+      until: 0
+    }, current_6.frameRelay.mcpNarrower.clear(), current_6.roster = void 0, current_6.rosterHeard = void 0, current_6.rosterWait = void 0, current_6.rosterWaitOver = !1, current_6.assetsOnRoster = !1, current_6.accountEpoch++, current_6.askClassOutsideOrgConsent.clear(), current_6.askNamedOtherOrg.clear(), current_6.postedReplyIds.clear(), current_6.commentTargets.clear(), current_6.summonStatus.handOffs.clear(), current_6.verify.lastPublish = void 0, current_6.verify.reads.clear(), current_6.ownPublishedSlugs.clear(), current_6.ownCreatedSlugs.clear(), current_6.routineTypeInstances.clear(), current_6.strandedMints.clear(), current_6.reservedMints.clear(), current_6.live.heardVersions.clear(), current_6.roomJoinArming.clear(), m(current_6);
+    for (let i of current_6.live.supervisors.values()) delete i.lease, delete i.renewable;
+    current_6.live.nonEditorSlugs.clear(), current_6.laneNoticeSlugs.clear(), current_6.commentReads.clear(), current_6.lastOthersCommentReadAt = Date.now(), current_6.cleanReplyIds.clear();
+    for (let i of current_6.shareStatus.otherComments.values()) i.judged.clear(), i.judgedSends.clear();
+    current_6.live.pendingSubagentArms.clear(), current_6.live.finishedSubagentAdopters.clear(), current_6.live.repliesConsent.outstanding.clear(), current_6.live.repliesConsent.declined.clear(), current_6.live.repliesConsent.approved.clear();
+    for (let i of current_6.autoReact.artifacts.values()) {
+      i.heldReplyDeclined = !1, i.heldReplyChain = null;
+      for (let o of i.threads.values()) o.ownReplyIds.clear(), o.ownReplyIdsIncomplete = !1;
+    }
+    current_6.liveDocWatch.journalUnavailable.clear();
+    for (let i of current_6.liveDocWatch.journalNegotiations) i.abort();
+    current_6.liveDocWatch.journalNegotiations.clear();
+    for (let i of current_6.liveDocWatch.arming.values()) for (let o of i.reviving) D(o);
+    current_6.liveDocWatch.stopAll?.(e), current_6.live.endAll?.(e);
+    for (let i of current_6.liveReplicas.replicas.values()) i.watcher?.close(), clearTimeout(i.pushHold?.due);
+    current_6.liveReplicas.replicas.clear(), current_6.liveReplicas.unavailable.clear(), current_6.liveReplicas.tooOld.clear(), current_6.liveReplicas.cloudUnserved.clear(), current_6.liveReplicas.opening.clear(), current_6.liveReplicas.unanswered.clear(), current_6.createdFromType.clear(), current_6.deferredSurface.clear(), current_6.remoteControlSkippedSlugs.clear(), current_6.typeInstanceFiles.clear(), current_6.pathPins.clear(), current_6.typeCatalogVouch.clear(), current_6.typeDescriptions.clear(), current_6.attestedTypeArtifacts.clear(), current_6.typeCapabilityReads.clear(), current_6.quickstartRan.clear(), current_6.anchorSnippets.clear(), current_6.shareStatus.accountBoundaryAt = Date.now(), current_6.shareStatus.probeBoots.clear();
+    for (let [i, o] of current_6.shareStatus.bySlug) if (o.probeErrorCode !== void 0 || o.role !== void 0 || o.outsideOrgReader !== void 0 || o.external !== void 0 || o.endpointConnectors !== void 0 || o.connectorsIssuedAt !== void 0 || o.lastConnectorsReadToolUseId !== void 0) {
+      let {
+        probeErrorCode: probeErrorCode,
+        probeGone: probeGone,
+        role: role,
+        outsideOrgReader: outsideOrgReader,
+        external: external,
+        endpointConnectors: endpointConnectors,
+        connectorsIssuedAt: connectorsIssuedAt,
+        lastConnectorsReadToolUseId: lastConnectorsReadToolUseId,
+        ...h
+      } = o;
+      current_6.shareStatus.bySlug.set(i, h);
+    }
+  }
+  let {
+    room: room,
+    presence: presence
+  } = current_6;
+  room.accountChanged?.(room, r), presence.accountChanged?.(presence, r);
+}
+async function h$s(e) {
+  if (e === "same_account") return;
+  let current_7 = a().current;
+  if (current_7 === void 0 || current_7.liveReplicas.replicas.size === 0) return;
+  let n = [],
+    pushHeldSaves = current_7.liveReplicas.pushHeldSaves;
+  if (pushHeldSaves !== void 0) n.push(pushHeldSaves().then(() => t("[liveReplica] held saves pushed before logout"), l => t(`[liveReplica] held saves not pushed before logout: ${d(l)}`)));
+  for (let [l, i] of current_7.liveReplicas.replicas) n.push(i.replica.sendFinalReport().then(o => t(`[liveReplica] final divergence report before logout ${l}: ${o ? "tried" : "nothing due"}`), o => t(`[liveReplica] final divergence report before logout ${l} failed: ${d(o)}`)));
+  await Promise.race([Promise.all(n), Y(2000)]);
+}
+function Bmt() {
+  let current_8 = a().current;
+  if (current_8?.liveDocWatch.stopAll?.("clear"), current_8 !== void 0) for (let [r, n] of current_8.liveReplicas.replicas) n.replica.sendFinalReport().then(s => t(`[liveReplica] final divergence report at conversation retire ${r}: ${s ? "tried" : "nothing due"}`), s => t(`[liveReplica] final divergence report at conversation retire ${r} failed: ${d(s)}`));
+}
+function jmt(e) {
+  let current_9 = a().current;
+  if (current_9 === void 0) return;
+  if (e?.continuesConversation !== !0) current_9.conversationEpoch++, current_9.ownPublishedSlugs.clear(), current_9.ownCreatedSlugs.clear(), current_9.routineTypeInstances.clear(), current_9.strandedMints.clear(), current_9.reservedMints.clear(), current_9.live.heardVersions.clear(), current_9.roomJoinArming.clear(), current_9.roomStoppedByUser.clear(), current_9.roomArmAsked.clear(), current_9.roomArmRefusedByUser.clear(), m(current_9), current_9.live.nonEditorSlugs.clear(), current_9.live.pendingSubagentArms.clear(), current_9.live.finishedSubagentAdopters.clear(), current_9.live.repliesConsent.outstanding.clear(), current_9.live.repliesConsent.declined.clear(), current_9.live.repliesConsent.approved.clear(), current_9.deferredSurface.clear(), current_9.remoteControlSkippedSlugs.clear();
+  if (current_9.createdFromType.clear(), current_9.verify.lastPublish = void 0, current_9.verify.reads.clear(), e?.continuesConversation !== !0) current_9.pathPins.clear(), current_9.resultNotes.kindSaid = !1, current_9.resultNotes.watchCodesSaid.clear(), current_9.resultNotes.previewedPaths.clear(), current_9.resultNotes.previewHintedPaths.clear();
+}
+export { qU, Oin, Wk, Pke, Iin, ee, l$s, pIe, Umt, aPo, d$s, Min, c$s, sKn, u$s, p$s, nje, f$s, m$s, rje, lPo, g$s, h$s, Bmt, jmt };

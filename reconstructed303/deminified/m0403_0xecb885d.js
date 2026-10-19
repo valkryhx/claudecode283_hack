@@ -1,0 +1,201 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import { Ct } from "B:/~BUN/root/chunk-28dw3zbk.js";
+import { d, pi } from "B:/~BUN/root/chunk-3aez4b53.js";
+import { g, m } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import { t } from "B:/~BUN/root/chunk-6za2ez23.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import { Tx, HH } from "B:/~BUN/root/chunk-7ybsx93y.js";
+import { Tu } from "B:/~BUN/root/chunk-k9zm82w3.js";
+import { o, T, u } from "B:/~BUN/root/chunk-g3snhg6n.js";
+import { hs, kh } from "B:/~BUN/root/chunk-qjf8jcwq.js";
+var R = "2023-06-01",
+  e1e = "https://github.com/apps/claude/installations/new";
+function ift(e) {
+  if (!e || typeof e !== "object") return;
+  let r = "error" in e ? e.error : e;
+  if (r && typeof r === "object" && "reason" in r && typeof r.reason === "string") return r.reason;
+  return;
+}
+var P = "ccr-byoc-2025-07-29";
+async function Y8e(e, r) {
+  let {
+      sessionId: sessionId,
+      repo: repo,
+      prNumber: p,
+      baseUrl: baseUrl,
+      getAccessToken: getAccessToken,
+      getTrustedDeviceToken: getTrustedDeviceToken
+    } = r,
+    _ = KTo(e),
+    s = getAccessToken();
+  if (!s) return t(`[bridge] No access token for ${e}-pr`), m(_, "no_token"), {
+    ok: !1,
+    reason: "no_token"
+  };
+  let y = `${baseUrl}/v1/code/github/${e}-pull-request`,
+    w = {
+      session_id: Tu(sessionId),
+      repo: repo,
+      pr_number: p
+    },
+    l;
+  try {
+    l = await Ct.post(y, w, {
+      headers: hxr(s, {
+        trustedDeviceToken: await getTrustedDeviceToken?.()
+      }),
+      timeout: 1e4,
+      validateStatus: a => a < 500
+    });
+  } catch (error) {
+    return t(`[bridge] ${e}-pr request failed: ${d(error)}`), m(_, "request_failed"), {
+      ok: !1,
+      reason: "request_failed"
+    };
+  }
+  if (!(l.status >= 200 && l.status < 300 || l.status === 409)) {
+    let reason = ift(l.data),
+      h = Tx(l.data);
+    return t(`[bridge] ${e}-pr failed ${l.status}${reason ? ` [${reason}]` : ""}${h ? `: ${h}` : ""}`), m(_, reason === "github_app_not_installed" ? reason : "http_error"), {
+      ok: !1,
+      reason: reason,
+      detail: HH(l.data)
+    };
+  }
+  return t(`[bridge] ${e}-pr ${repo}#${p} ok`), g(_), {
+    ok: !0
+  };
+}
+function KTo(e) {
+  return e === "subscribe" ? "bridge_pr_subscribe" : "bridge_pr_unsubscribe";
+}
+function hxr(e, {
+  orgUUID: orgUUID,
+  trustedDeviceToken: trustedDeviceToken
+} = {}) {
+  let n = {
+    Authorization: `Bearer ${e}`,
+    "Content-Type": "application/json",
+    "anthropic-version": R,
+    "anthropic-beta": P,
+    "anthropic-client-platform": kh(),
+    "User-Agent": hs()
+  };
+  if (orgUUID !== void 0) n["x-organization-uuid"] = orgUUID;
+  if (trustedDeviceToken !== void 0) n["X-Trusted-Device-Token"] = trustedDeviceToken;
+  return n;
+}
+var YTo = "/worker/record-created-pr";
+async function S0s(e) {
+  let r = `${e.sessionUrl.replace(/\/+$/, "")}${YTo}`;
+  try {
+    return {
+      ok: !0,
+      status: (await Ct.post(r, {
+        owner: e.owner,
+        repo: e.repo,
+        pr_number: e.prNumber,
+        head_ref: e.headRef
+      }, {
+        headers: {
+          Authorization: `Bearer ${e.workerToken}`,
+          "Content-Type": "application/json",
+          "anthropic-version": R,
+          "anthropic-client-platform": kh(),
+          "User-Agent": hs()
+        },
+        timeout: e.timeoutMs
+      })).status
+    };
+  } catch (error) {
+    let {
+      kind: kind,
+      status: status
+    } = pi(error);
+    return {
+      ok: !1,
+      kind: kind,
+      status: status
+    };
+  }
+}
+var j = f(() => u({
+    results: T(u({
+      path: o(),
+      error_reason: o().optional()
+    }))
+  })),
+  x = /^chan_[A-Za-z0-9_-]{1,120}$/;
+async function w0s(e) {
+  let {
+    door: door,
+    items: items,
+    signal: signal
+  } = e;
+  if (!x.test(door.channelId)) return m("bridge_project_files_write", "invalid_channel"), {
+    ok: !1,
+    reason: "invalid_channel"
+  };
+  let p = door.getBearerToken();
+  if (!p) return m("bridge_project_files_write", "no_token"), {
+    ok: !1,
+    reason: "no_token"
+  };
+  let b = `${door.apiBaseUrl}/v1/code/sessions/${encodeURIComponent(door.sessionId)}/worker/channels/${encodeURIComponent(door.channelId)}/files:write`,
+    k = {
+      session_id: door.sessionId,
+      channel_id: door.channelId,
+      worker_epoch: door.getWorkerEpoch(),
+      files: items.map(item => ({
+        path: item.path,
+        content: item.content.toString("base64")
+      }))
+    },
+    c;
+  try {
+    c = await Ct.post(b, k, {
+      headers: hxr(p),
+      timeout: 90000,
+      maxBodyLength: 1 / 0,
+      signal: signal,
+      validateStatus: s => s < 500
+    });
+  } catch (error) {
+    if (Ct.isCancel(error)) return m("bridge_project_files_write", "aborted"), {
+      ok: !1,
+      reason: "aborted"
+    };
+    return t(`[bridge] project files write request failed: ${d(error)}`), m("bridge_project_files_write", "request_failed"), {
+      ok: !1,
+      reason: "request_failed"
+    };
+  }
+  if (c.status !== 200) {
+    let code = ift(c.data);
+    return t(`[bridge] project files write refused: status=${c.status}${code ? ` [${code}]` : ""}`), m("bridge_project_files_write", "http_error"), {
+      ok: !1,
+      reason: "http_error",
+      status: c.status,
+      code: code
+    };
+  }
+  let _ = j().safeParse(c.data);
+  if (!_.success) return m("bridge_project_files_write", "bad_response"), {
+    ok: !1,
+    reason: "bad_response"
+  };
+  return g("bridge_project_files_write"), {
+    ok: !0,
+    results: _.data.results
+  };
+}
+export { e1e, ift, Y8e, KTo, hxr, YTo, S0s, w0s };

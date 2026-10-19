@@ -1,0 +1,344 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.303
+import "B:/~BUN/root/chunk-jthpk6wv.js";
+import "B:/~BUN/root/chunk-3aez4b53.js";
+import "B:/~BUN/root/chunk-9ka04m0y.js";
+import "B:/~BUN/root/chunk-rwkgcmm8.js";
+import "B:/~BUN/root/chunk-rpez7z7a.js";
+import "B:/~BUN/root/chunk-hg8ngszx.js";
+import "B:/~BUN/root/chunk-89mss1tj.js";
+import "B:/~BUN/root/chunk-4bx17ygx.js";
+import "B:/~BUN/root/chunk-1kfn24jp.js";
+import { po } from "B:/~BUN/root/chunk-kzgf20y6.js";
+import "B:/~BUN/root/chunk-fbyz9h0p.js";
+import "B:/~BUN/root/chunk-psh1mp8h.js";
+import { a } from "B:/~BUN/root/chunk-yt0knyw7.js";
+import "B:/~BUN/root/chunk-jpdys232.js";
+import { _, J } from "B:/~BUN/root/chunk-6za2ez23.js";
+import "B:/~BUN/root/chunk-xf0m410v.js";
+import { ne } from "B:/~BUN/root/chunk-nggrknsv.js";
+import "B:/~BUN/root/chunk-c09hf5e4.js";
+import "B:/~BUN/root/chunk-je1b1drr.js";
+import "B:/~BUN/root/chunk-j8w5f307.js";
+import "B:/~BUN/root/chunk-nxwmyxnk.js";
+import "B:/~BUN/root/chunk-d8fk23v1.js";
+import "B:/~BUN/root/chunk-yw21pggd.js";
+import { lt } from "B:/~BUN/root/chunk-6ft8yhc8.js";
+import "B:/~BUN/root/chunk-j704adqd.js";
+import { f } from "B:/~BUN/root/chunk-frrkt2bs.js";
+import "B:/~BUN/root/chunk-p4t63p2q.js";
+import { DZt, LZt } from "B:/~BUN/root/chunk-kcbxq7ta.js";
+import "B:/~BUN/root/chunk-8vgph9ej.js";
+import { ge, St } from "B:/~BUN/root/chunk-rm2gz7kj.js";
+import { appendFile as I, chmod as P, mkdir as B, readdir as b, rmdir as E, unlink as y } from "fs/promises";
+import { createServer as N } from "net";
+import { hostname as M, platform as d } from "os";
+import { join as F } from "path";
+var native_host_version = "1.0.0",
+  w = 1048576,
+  T = 64,
+  timeout = 2000,
+  k = void 0;
+function s(e, ...t) {
+  if (k) {
+    let n = new Date().toISOString(),
+      r = t.length > 0 ? " " + _(t) : "",
+      i = `[${n}] [Claude Chrome Native Host] ${e}${r}
+`;
+    I(k, i).catch(() => {});
+  }
+  console.error(`[Claude Chrome Native Host] ${e}`, ...t);
+}
+var C;
+async function L() {
+  let e = C ??= z();
+  try {
+    let t = await e;
+    if (t !== void 0) return t;
+  } catch {
+    s("Computer name lookup failed");
+  }
+  if (C === e) C = void 0;
+  try {
+    return h(M());
+  } catch {
+    return;
+  }
+}
+function h(e) {
+  let t = e.replace(/\p{Cc}/gu, "").trim().replace(/\.local$/i, "").trim();
+  return t ? ne(t, T) : void 0;
+}
+async function z() {
+  switch (d()) {
+    case "darwin":
+      {
+        let {
+          stdout: stdout,
+          code: code
+        } = await lt("/usr/sbin/scutil", ["--get", "ComputerName"], {
+          timeout: timeout,
+          useCwd: !1,
+          stderr: "ignore"
+        });
+        return code === 0 ? h(stdout) : void 0;
+      }
+    case "win32":
+      return h(a.COMPUTERNAME ?? "");
+    default:
+      return h(M());
+  }
+}
+function c(e) {
+  let t = Buffer.from(e, "utf-8"),
+    n = Buffer.alloc(4);
+  n.writeUInt32LE(t.length, 0), process.stdout.write(n), process.stdout.write(t);
+}
+async function te() {
+  return po("chrome_native_host_run", async () => {
+    s("Initializing...");
+    let e = new S(),
+      t = new R();
+    await e.start();
+    while (!0) {
+      let n = await t.read();
+      if (n === null) break;
+      await e.handleMessage(n);
+    }
+    await e.stop();
+  });
+}
+var D = f(() => St({
+  type: ge()
+}).passthrough());
+class S {
+  mcpClients = new Map();
+  nextClientId = 1;
+  server = null;
+  running = !1;
+  socketPath = null;
+  async start() {
+    if (this.running) return;
+    if (this.socketPath = LZt(), d() !== "win32") {
+      let e = DZt();
+      await y(e).catch(() => {}), await B(e, {
+        recursive: !0,
+        mode: 448
+      }), await P(e, 448).catch(() => {});
+      try {
+        let t = await b(e);
+        for (let n of t) {
+          if (!n.endsWith(".sock")) continue;
+          let r = parseInt(n.replace(".sock", ""), 10);
+          if (isNaN(r)) continue;
+          try {
+            process.kill(r, 0);
+          } catch {
+            await y(F(e, n)).catch(() => {}), s(`Removed stale socket for PID ${r}`);
+          }
+        }
+      } catch {}
+    }
+    if (s(`Creating socket listener: ${this.socketPath}`), this.server = N(e => this.handleMcpClient(e)), await new Promise((e, t) => {
+      this.server.listen(this.socketPath, () => {
+        s("Socket server listening for connections"), this.running = !0, e();
+      }), this.server.on("error", n => {
+        s("Socket server error:", n), t(n);
+      });
+    }), d() !== "win32") try {
+      await P(this.socketPath, 384), s("Socket permissions set to 0600");
+    } catch (error) {
+      s("Failed to set socket permissions:", error);
+    }
+  }
+  async stop() {
+    if (!this.running) return;
+    for (let [, e] of this.mcpClients) e.socket.destroy();
+    if (this.mcpClients.clear(), this.server) await new Promise(e => {
+      this.server.close(() => e());
+    }), this.server = null;
+    if (d() !== "win32" && this.socketPath) {
+      try {
+        await y(this.socketPath), s("Cleaned up socket file");
+      } catch {}
+      try {
+        let e = DZt();
+        if ((await b(e)).length === 0) await E(e), s("Removed empty socket directory");
+      } catch {}
+    }
+    this.running = !1;
+  }
+  async isRunning() {
+    return this.running;
+  }
+  async handleMessage(e) {
+    let t;
+    try {
+      t = J(e);
+    } catch (i) {
+      s("Invalid JSON from Chrome:", i.message), c(_({
+        type: "error",
+        error: "Invalid message format"
+      }));
+      return;
+    }
+    let n = D().safeParse(t);
+    if (!n.success) {
+      s("Invalid message from Chrome:", n.error.message), c(_({
+        type: "error",
+        error: "Invalid message format"
+      }));
+      return;
+    }
+    let r = n.data;
+    switch (s(`Handling Chrome message type: ${r.type}`), r.type) {
+      case "ping":
+        s("Responding to ping"), c(_({
+          type: "pong",
+          timestamp: Date.now()
+        }));
+        break;
+      case "get_status":
+        L().then(computer_name => c(_({
+          type: "status_response",
+          native_host_version: native_host_version,
+          computer_name: computer_name
+        }))).catch(i => s("Failed to send status_response:", i));
+        break;
+      case "tool_response":
+        {
+          if (this.mcpClients.size > 0) {
+            s(`Forwarding tool response to ${this.mcpClients.size} MCP clients`);
+            let {
+                type: type,
+                ...l
+              } = r,
+              o = Buffer.from(_(l), "utf-8"),
+              u = Buffer.alloc(4);
+            u.writeUInt32LE(o.length, 0);
+            let m = Buffer.concat([u, o]);
+            for (let [p, g] of this.mcpClients) try {
+              g.socket.write(m);
+            } catch (error) {
+              s(`Failed to send to MCP client ${p}:`, error);
+            }
+          }
+          break;
+        }
+      case "notification":
+        {
+          if (this.mcpClients.size > 0) {
+            s(`Forwarding notification to ${this.mcpClients.size} MCP clients`);
+            let {
+                type: type_2,
+                ...l
+              } = r,
+              o = Buffer.from(_(l), "utf-8"),
+              u = Buffer.alloc(4);
+            u.writeUInt32LE(o.length, 0);
+            let m = Buffer.concat([u, o]);
+            for (let [p, g] of this.mcpClients) try {
+              g.socket.write(m);
+            } catch (error) {
+              s(`Failed to send notification to MCP client ${p}:`, error);
+            }
+          }
+          break;
+        }
+      default:
+        s(`Unknown message type: ${r.type}`), c(_({
+          type: "error",
+          error: `Unknown message type: ${r.type}`
+        }));
+    }
+  }
+  handleMcpClient(socket) {
+    let id = this.nextClientId++,
+      n = {
+        id: id,
+        socket: socket,
+        buffer: Buffer.alloc(0)
+      };
+    this.mcpClients.set(id, n), s(`MCP client ${id} connected. Total clients: ${this.mcpClients.size}`), c(_({
+      type: "mcp_connected"
+    })), socket.on("data", r => {
+      n.buffer = Buffer.concat([n.buffer, r]);
+      while (n.buffer.length >= 4) {
+        let i = n.buffer.readUInt32LE(0);
+        if (i === 0 || i > w) {
+          s(`Invalid message length from MCP client ${id}: ${i}`), socket.destroy();
+          return;
+        }
+        if (n.buffer.length < 4 + i) break;
+        let l = n.buffer.slice(4, 4 + i);
+        n.buffer = n.buffer.slice(4 + i);
+        try {
+          let o = J(l.toString("utf-8"));
+          s(`Forwarding tool request from MCP client ${id}: ${o.method}`), c(_({
+            type: "tool_request",
+            method: o.method,
+            params: o.params
+          }));
+        } catch (error) {
+          s(`Failed to parse tool request from MCP client ${id}:`, error);
+        }
+      }
+    }), socket.on("error", r => {
+      s(`MCP client ${id} error: ${r}`);
+    }), socket.on("close", () => {
+      s(`MCP client ${id} disconnected. Remaining clients: ${this.mcpClients.size - 1}`), this.mcpClients.delete(id), c(_({
+        type: "mcp_disconnected"
+      }));
+    });
+  }
+}
+class R {
+  buffer = Buffer.alloc(0);
+  pendingResolve = null;
+  closed = !1;
+  constructor() {
+    process.stdin.on("data", e => {
+      this.buffer = Buffer.concat([this.buffer, e]), this.tryProcessMessage();
+    }), process.stdin.on("end", () => {
+      if (this.closed = !0, this.pendingResolve) this.pendingResolve(null), this.pendingResolve = null;
+    }), process.stdin.on("error", () => {
+      if (this.closed = !0, this.pendingResolve) this.pendingResolve(null), this.pendingResolve = null;
+    });
+  }
+  tryProcessMessage() {
+    if (!this.pendingResolve) return;
+    if (this.buffer.length < 4) return;
+    let e = this.buffer.readUInt32LE(0);
+    if (e === 0 || e > w) {
+      s(`Invalid message length: ${e}`), this.pendingResolve(null), this.pendingResolve = null;
+      return;
+    }
+    if (this.buffer.length < 4 + e) return;
+    let t = this.buffer.subarray(4, 4 + e);
+    this.buffer = this.buffer.subarray(4 + e);
+    let n = t.toString("utf-8");
+    this.pendingResolve(n), this.pendingResolve = null;
+  }
+  async read() {
+    if (this.closed) return null;
+    if (this.buffer.length >= 4) {
+      let e = this.buffer.readUInt32LE(0);
+      if (e > 0 && e <= w && this.buffer.length >= 4 + e) {
+        let t = this.buffer.subarray(4, 4 + e);
+        return this.buffer = this.buffer.subarray(4 + e), t.toString("utf-8");
+      }
+    }
+    return new Promise(e => {
+      this.pendingResolve = e, this.tryProcessMessage();
+    });
+  }
+}
+export { te as runChromeNativeHost };

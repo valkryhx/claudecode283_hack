@@ -1,0 +1,423 @@
+// @bun @bytecode
+// Claude Code is a Beta product per Anthropic's Commercial Terms of Service.
+// By using Claude Code, you agree that all code acceptance or rejection decisions you make,
+// and the associated conversations in context, constitute Feedback under Anthropic's Commercial Terms,
+// and may be used to improve Anthropic's products, including training models.
+// You are responsible for reviewing any code suggestions before use.
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.303
+import {
+  _n
+} from "B:/~BUN/root/chunk-6za2ez23.js";
+import {
+  ji
+} from "B:/~BUN/root/chunk-nggrknsv.js";
+import {
+  ge,
+  mn,
+  Vo,
+  ec,
+  sr,
+  St,
+  hg,
+  Fp,
+  Ld
+} from "B:/~BUN/root/chunk-rm2gz7kj.js";
+import {
+  h9n
+} from "B:/~BUN/root/chunk-pystvv3m.js";
+import {
+  ie
+} from "B:/~BUN/root/chunk-t7350kw8.js";
+import {
+  F
+} from "B:/~BUN/root/chunk-rpez7z7a.js";
+var R = ["manifest_invalid", "disabled_by_default", "identity_unverified", "archive_not_probed", "will_not_load"];
+
+function $qo(e) {
+  let t = 0,
+    n = 0;
+  for (let s of e) {
+    if (s.with_only) continue;
+    if (n += s.weight, s.passed) t += s.weight
+  }
+  return n > 0 ? t / n : 0
+}
+
+function _Wr(e) {
+  if (e.length === 0) return {
+    score: 0,
+    passRate: 0
+  };
+  let t = e.reduce((s, a) => s + a.score, 0) / e.length,
+    n = F(e, (s) => s.score >= 1) / e.length;
+  return {
+    score: t,
+    passRate: n
+  }
+}
+
+function Uqo(e) {
+  let t = [],
+    n = e.cases.map((r) => ({
+      ...r,
+      name: _n(r.name)
+    })),
+    s = Math.max(4, ...n.map((r) => ie(r.name))),
+    a = e.cases.some((r) => r.runs_without !== void 0);
+  if (a) t.push(o("CASE", s) + "  " + o("WITH", 6) + o("W/OUT", 6) + o("\u0394", 7) + o("RUNS", 5) + o("COST", 8) + "NOTES");
+  else t.push(o("CASE", s) + "  " + o("SCORE", 6) + o("PASS%", 6) + o("RUNS", 5) + o("COST", 8) + "NOTES");
+  for (let r of n) {
+    let c = r.runs.length + (r.runs_without?.length ?? 0),
+      g = r.runs.reduce((i, u) => i + u.cost_usd, 0) + (r.runs_without?.reduce((i, u) => i + u.cost_usd, 0) ?? 0),
+      p = S(r);
+    if (a) {
+      let {
+        score_without: i,
+        delta: u
+      } = r;
+      t.push(o(r.name, s) + "  " + o(r.score.toFixed(2), 6) + o(i !== void 0 ? i.toFixed(2) : "\u2014", 6) + o(u !== void 0 ? _(u) : "\u2014", 7) + o(String(c), 5) + o(`$${g.toFixed(2)}`, 8) + (p ?? ""))
+    } else t.push(o(r.name, s) + "  " + o(r.score.toFixed(2), 6) + o(`${Math.round(r.pass_rate*100)}%`, 6) + o(String(r.runs.length), 5) + o(`$${g.toFixed(2)}`, 8) + (p ?? ""))
+  }
+  t.push("");
+  let l = e.partial ? ` \xB7 \u26A0 partial (${x[e.partial_reason??"interrupted"]})` : "";
+  if (a) {
+    let r = e.cases.filter((c) => c.delta !== void 0);
+    if (r.length > 0) {
+      let c = r.reduce((g, p) => g + (p.delta ?? 0), 0) / r.length;
+      return t.push(`${e.cases.length} case(s) \xB7 mean \u0394 ${_(c)} \xB7 ${e.duration_seconds}s \xB7 $${e.cost_usd.toFixed(2)}${l}`), t.join(`
+`)
+    }
+  }
+  return t.push(`${e.cases.length} case(s) \xB7 ${e.duration_seconds}s \xB7 $${e.cost_usd.toFixed(2)}${l}`), t.join(`
+`)
+}
+
+function _(e) {
+  return `${e>0?"+":""}${e.toFixed(2)}`
+}
+
+function S(e) {
+  let t = null;
+  for (let n of e.runs) {
+    for (let s of n.graders)
+      if (!s.passed && (!t || s.weight > t.weight)) t = s;
+    if (n.error) return _n(n.error)
+  }
+  if (t !== null) {
+    let n = t.name,
+      s = e.advisories?.find((l) => l.grader === n),
+      a = e.runs.some((l) => l.graders.some((r) => r.name === n && r.passed));
+    if (s !== void 0 && !a) return _n(s.text)
+  }
+  return t ? _n(`${t.name}: ${t.explanation}`) : null
+}
+
+function o(e, t) {
+  let n = ie(e);
+  return n > t ? `${e} ` : e + ji(" ", t - n)
+}
+
+function SWt(e, t, n, s, a, l) {
+  let r = e.reduce((c, {
+    report: g
+  }) => c + g.runs.reduce((p, i) => p + i.cost_usd, 0) + (g.runs_without?.reduce((p, i) => p + i.cost_usd, 0) ?? 0), 0);
+  return {
+    schema_version: "1.0",
+    claude_version: s,
+    started_at: t.toISOString(),
+    duration_seconds: Math.round((Date.now() - t.getTime()) / 1000),
+    cost_usd: r,
+    partial: n !== void 0,
+    partial_reason: n,
+    concurrency: l,
+    plugins: a,
+    cases: e.map((c) => c.report)
+  }
+}
+var x = {
+  interrupted: "interrupted",
+  cost_ceiling: "cost ceiling hit",
+  auth_failed: "stopped: authentication failed"
+};
+var y = 1;
+
+function f() {
+  return St({
+    score: mn(),
+    passed: Vo(),
+    turns: mn(),
+    costUsd: mn(),
+    judgeCostUsd: mn(),
+    durationSeconds: mn().optional(),
+    startedAt: ge().optional(),
+    error: ge().nullable(),
+    tracePath: ge(),
+    skippedPaidGraders: Vo(),
+    aborted: St({
+      server: ge(),
+      tool: ge(),
+      reason: ge()
+    }).optional(),
+    mocks: St({
+      servers: sr(St({
+        server: ge(),
+        kind: Ld(["shadow", "standalone"]),
+        withheld: Fp(!0).optional(),
+        replayPinned: mn().optional(),
+        tools: sr(St({
+          tool: ge(),
+          responder: Ld(["fixed", "agent"])
+        }))
+      })),
+      warnings: sr(ge()),
+      calls: St({
+        total: mn(),
+        errors: mn(),
+        unmocked: sr(St({
+          tool: ge(),
+          count: mn()
+        })),
+        costUsd: mn().optional(),
+        replay: St({
+          hits: mn(),
+          misses: mn()
+        }).optional()
+      })
+    }).optional(),
+    graders: sr(St({
+      name: ge(),
+      passed: Vo(),
+      weight: mn(),
+      explanation: ge(),
+      withOnly: Vo(),
+      scored: Vo().optional(),
+      judgeVotes: sr(Vo()).optional(),
+      evidence: ge().optional()
+    }))
+  })
+}
+
+function E() {
+  return St({
+    name: ge(),
+    dir: ge(),
+    source: ge(),
+    promptMarkdown: ge(),
+    model: ge().optional(),
+    runsPerCase: mn(),
+    timeoutSeconds: mn(),
+    maxTurns: mn(),
+    graders: sr(St({
+      name: ge(),
+      type: ge(),
+      weight: mn(),
+      graderMarkdown: ge().optional(),
+      config: hg(ge(), ec())
+    })),
+    arms: St({
+      with: sr(f()),
+      without: sr(f()).optional()
+    }),
+    advisories: sr(ge()).optional(),
+    aggregates: St({
+      score: mn(),
+      passRate: mn(),
+      scoreWithout: mn().optional(),
+      passRateWithout: mn().optional(),
+      delta: mn().optional()
+    })
+  })
+}
+
+function Bqo() {
+  return C(Ld(R).optional())
+}
+
+function C(e) {
+  return St({
+    schemaVersion: Fp(y),
+    claudeVersion: ge(),
+    startedAt: ge(),
+    durationSeconds: mn(),
+    costUsd: mn(),
+    partial: Vo(),
+    partialReason: Ld(["cost_ceiling", "interrupted", "auth_failed"]).optional(),
+    suite: St({
+      root: ge(),
+      ablation: Ld(["none", "with-without"]),
+      modelOverride: ge().optional(),
+      judgeModel: ge().optional(),
+      caseFilter: ge().optional(),
+      tagFilters: sr(ge()).optional(),
+      threshold: mn(),
+      concurrency: mn().int().positive().optional(),
+      pluginId: ge().optional(),
+      plugins: sr(St({
+        name: ge(),
+        version: ge().optional(),
+        path: ge(),
+        problem: e
+      }))
+    }),
+    cases: sr(E()),
+    aggregates: St({
+      casesTotal: mn(),
+      casesPassed: mn(),
+      overallScore: mn(),
+      overallPassRate: mn(),
+      meanDelta: mn().optional()
+    })
+  })
+}
+var P = ["ablation", "aborted", "advisories", "aggregates", "arms", "calls", "caseFilter", "cases", "casesPassed", "casesTotal", "claudeVersion", "concurrency", "config", "costUsd", "count", "delta", "dir", "durationSeconds", "error", "errors", "evidence", "explanation", "graderMarkdown", "graders", "hits", "judgeCostUsd", "judgeModel", "judgeVotes", "kind", "maxTurns", "meanDelta", "misses", "mocks", "model", "modelOverride", "name", "overallPassRate", "overallScore", "partial", "partialReason", "passRate", "passRateWithout", "passed", "path", "pluginId", "plugins", "problem", "promptMarkdown", "reason", "replay", "replayPinned", "responder", "root", "runsPerCase", "schemaVersion", "score", "scoreWithout", "scored", "server", "servers", "skippedPaidGraders", "source", "startedAt", "suite", "tagFilters", "threshold", "timeoutSeconds", "tool", "tools", "total", "tracePath", "turns", "type", "unmocked", "version", "warnings", "weight", "with", "withOnly", "withheld", "without"],
+  j = ["config"],
+  W = h9n(P),
+  K = new Set(j);
+
+function v(e) {
+  return {
+    score: e.score,
+    passed: e.score >= 1,
+    turns: e.turns,
+    costUsd: e.cost_usd,
+    judgeCostUsd: e.judge_cost_usd,
+    durationSeconds: e.duration_seconds,
+    startedAt: e.started_at,
+    error: e.error,
+    tracePath: e.trace_path,
+    skippedPaidGraders: e.skipped_paid_graders ?? !1,
+    ...e.aborted && {
+      aborted: e.aborted
+    },
+    ...e.mocks && {
+      mocks: e.mocks
+    },
+    graders: e.graders.map((t) => ({
+      name: t.name,
+      passed: t.passed,
+      weight: t.weight,
+      explanation: t.explanation,
+      withOnly: t.with_only ?? !1,
+      scored: t.scored ?? !(t.with_only ?? !1),
+      judgeVotes: t.judge_votes,
+      evidence: t.evidence
+    }))
+  }
+}
+
+function A(e, t) {
+  return {
+    name: t.name,
+    dir: t.dir,
+    source: t.source,
+    promptMarkdown: e.execution.prompt ?? "",
+    model: e.execution.model,
+    runsPerCase: e.runs,
+    timeoutSeconds: e.execution.timeout_seconds,
+    maxTurns: e.execution.max_turns,
+    graders: e.graders.map((n) => {
+      let {
+        name: s,
+        type: a,
+        weight: l,
+        ...r
+      } = n;
+      return {
+        name: s,
+        type: a,
+        weight: l,
+        graderMarkdown: n.type === "llm" || n.type === "baseline" ? n.criteria : void 0,
+        config: r
+      }
+    }),
+    arms: {
+      with: t.runs.map(v),
+      without: t.runs_without?.map(v)
+    },
+    ...t.advisories && {
+      advisories: t.advisories.map((n) => n.text)
+    },
+    aggregates: {
+      score: t.score,
+      passRate: t.pass_rate,
+      scoreWithout: t.score_without,
+      passRateWithout: t.pass_rate_without,
+      delta: t.delta
+    }
+  }
+}
+
+function jqo(e) {
+  let {
+    aggregate: t,
+    resolvedCases: n,
+    root: s,
+    ablation: a,
+    pluginId: l,
+    modelOverride: r,
+    judgeModel: c,
+    caseFilter: g,
+    tagFilters: p,
+    threshold: i
+  } = e, u = n.map(({
+    case_: d,
+    report: m
+  }) => A(d, m)), b = u.map((d) => d.aggregates.delta).filter((d) => d !== void 0);
+  return {
+    schemaVersion: y,
+    claudeVersion: t.claude_version,
+    startedAt: t.started_at,
+    durationSeconds: t.duration_seconds,
+    costUsd: t.cost_usd,
+    partial: t.partial,
+    partialReason: t.partial_reason,
+    suite: {
+      root: s,
+      ablation: a,
+      pluginId: l,
+      modelOverride: r,
+      judgeModel: c,
+      caseFilter: g,
+      tagFilters: p,
+      threshold: i,
+      concurrency: t.concurrency,
+      plugins: t.plugins.map(({
+        name: d,
+        version: m,
+        path: w,
+        problem: h
+      }) => ({
+        name: d,
+        ...m !== void 0 && {
+          version: m
+        },
+        path: w,
+        ...h !== void 0 && {
+          problem: h
+        }
+      }))
+    },
+    cases: u,
+    aggregates: {
+      casesTotal: u.length,
+      casesPassed: F(u, (d) => d.aggregates.score >= i),
+      overallScore: LSt(u.map((d) => d.aggregates.score)),
+      overallPassRate: LSt(u.map((d) => d.aggregates.passRate)),
+      meanDelta: b.length > 0 ? LSt(b) : void 0
+    }
+  }
+}
+
+function LSt(e) {
+  return e.length === 0 ? 0 : e.reduce((t, n) => t + n, 0) / e.length
+}
+export {
+  $qo,
+  _Wr,
+  Uqo,
+  SWt,
+  Bqo,
+  jqo,
+  LSt
+};
