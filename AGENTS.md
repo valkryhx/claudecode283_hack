@@ -56,11 +56,16 @@
 
 | 路径 | 说明 |
 | --- | --- |
-| `claudecode283/claude.exe` | **唯一必需输入物**，Claude Code v2.1.283，244,960,928 B，Bun `--compile` 产物 |
+| `claudecode283/claude.exe` | **主输入物**，Claude Code v2.1.283，244,960,928 B，Bun `--compile` 产物 |
 | `claudecode283/MANIFEST.md` | 输入物快照 + SHA256 + PE 事实 |
 | `claudecode283/modules/` | 从 `.bun` 段抠出的 **2135 个明文 JS 模块**（minify 未混淆） |
 | `claudecode283/modules/INDEX.tsv` | 模块索引：idx / 偏移 / 大小 / workflow 命中数 / 文件 / 符号 |
-| `claudecode283/extracted/` | 上游分析产物：工具描述、authoring reference、`dynamic-workflow-internals.md` |
+| `claudecode283/extracted/` | 283 上游分析产物：工具描述、authoring reference、`dynamic-workflow-internals.md` |
+| `claudecode303/claude.exe` | **对照输入物**，Claude Code v2.1.303，290,228,384 B，Bun `--compile` 产物；SHA256 `1787C60619BAD78543C67E4D9D8A868869C35A904F2A85EB9EA46C4808AF196B`，BUILD_TIME `2026-10-18T20:20:57Z`，GIT_SHA `07df2aedd2d01d2f60907b8404acbda187b04072` |
+| `claudecode303/MANIFEST.md` | 303 输入物快照、PE 段、Bun 载荷、模块统计、跳过区与复现命令 |
+| `claudecode303/modules/` | 从 303 `.bun` 段提取的 **2,431 个有效明文 JS 模块**（6 MiB 上限；2,433 个 marker，2 个 span 跳过）。注意：2,431 是有效模块数，marker 数不等于模块数 |
+| `claudecode303/modules/INDEX.tsv` | 303 模块索引：idx / off / size / wf_hits / file / tokens（2,431 条数据行） |
+| `claudecode303/extracted/` | 303 总览、283→303 入口映射、hooks、mods、跨版本候选；详见 §6 |
 | `claude.exe.i64` | IDA 数据库，1.1 GB，**对本任务无用**（源码不在原生代码里） |
 
 > 为什么源码能直接读 → `docs/why-source-is-readable.md`
@@ -68,7 +73,9 @@
 
 ---
 
-## 3. 产物地图（`reconstructed/`）
+## 3. 产物地图（283 与 303 必须分目录）
+
+### 3.1 283：`reconstructed/`
 
 | 目录 / 文件 | 内容 | 规模 |
 | --- | --- | --- |
@@ -84,6 +91,27 @@
 | `manifest.json` | 线 C 抽取清单 | 1278 |
 | `naming-map.json` | 线 C 人工命名映射（含证据等级） | — |
 | `tools/` | 全部可复现脚本（见 §5） | — |
+
+### 3.2 303：`reconstructed303/`
+
+| 目录 / 文件 | 内容 | 规模 / 状态 |
+| --- | --- | --- |
+| `full/` | 303 线 A：全部模块仅格式化，符号仍压缩 | 2,431 |
+| `deminified/` | 303 线 B：证据驱动去混淆 ★ | 2,431 |
+| `full-report.json` | 303 格式化报告 | 2,431 行 |
+| `deminify-names.json` | 303 改名账本（S/A/B/C 证据） | **90,771** 条改名 |
+| `deminify-report.json` | 303 去混淆执行报告 | 2,431 行 |
+| `deminify-verify.json` | 303 语义复验 | 2,431/2,431 `ok:true` |
+
+303 的已验证事实（来自 `claudecode303/MANIFEST.md` 与总览；本轮已复核 SHA256、文件数、INDEX 数据行数、full/deminified 文件数与 verify 报告）：
+
+- `claude.exe` SHA256 与 MANIFEST 一致；
+- `modules/` 有 **2,431** 个 `m*.js`；`INDEX.tsv` 共 2,432 行 = 1 行表头 + **2,431** 行数据；
+- `reconstructed303/full/` 与 `reconstructed303/deminified/` 各 **2,431** 个文件；
+- 改名总数 **90,771**（S 29,768 / A 32,996 / B 5,650 / C 22,357）；
+- 3 个 >1 MiB 模块 `m0459_0xecff32a.js`、`m1496_0xfe682a4.js`、`m1635_0x101da730.js` 的 `deminified` 复用 `full/`，**符号仍是压缩名**；
+- 4 个 beautifier 失败并安全回退原文：`m0775_0xf6ccb47.js`、`m1474_0xfe0bcdb.js`、`m1697_0x1045e023.js`、`m1777_0x10644bf2.js`；
+- 303 不是 283 的模块平移：模块编号、大小、共享 chunk 都变了。**禁止用模块号直接套用**，必须用导出名、字符串、属性名或调用链复核。
 
 ---
 
@@ -130,6 +158,24 @@ node hooks-rename.mjs && node verify-hooks-semantic.mjs
 node deminify.mjs --only m0869
 ```
 
+### 5.1 303 复现（独立目录，不覆盖 283）
+
+`full.mjs` / `deminify.mjs` / `verify-full.mjs` / `verify-deminified.mjs` / `merge-reports.mjs`
+支持环境变量覆盖，默认仍指向 283。303 使用：
+
+```bash
+cd reconstructed/tools
+export RE_ROOT="D:/git_codes/claudecode283_hack/reconstructed303"
+export RE_MODULES="D:/git_codes/claudecode283_hack/claudecode303/modules"
+export RE_FULL="D:/git_codes/claudecode283_hack/reconstructed303/full"
+export RE_DEMINIFIED="D:/git_codes/claudecode283_hack/reconstructed303/deminified"
+node verify-full.mjs
+node verify-deminified.mjs
+```
+
+> 303 提取时使用 **6 MiB** 上限（283 用 4 MiB）。完整命令与 PE/Bun 事实见
+> `claudecode303/MANIFEST.md`。
+
 > 坑：`m0357_0xc63ba04.js` 是 4.1 MB 的超大模块，Babel 处理极慢（分钟级、GB 级内存）。
 > `deminify.mjs` 对 >1MB 的模块**跳过 AST 改名**，直接复用 `full/`（规则见 `AUTO-NAMING.md` §3 规则 5）。
 
@@ -157,6 +203,14 @@ node deminify.mjs --only m0869
 | **Workflow 工具描述 / DSL 参考** | `claudecode283/extracted/workflow-{tool-description,authoring-reference}.md` |
 | **Dynamic Workflow 复刻指南**（面向自研 Agent / Codex 开发者的实现蓝图 + 逐 API 源码核对 + 坑清单 + §9 执行期 UI/交互与“再跑历史 workflow”） | `docs/20261012-复刻dynamic-workflow指南.md` |
 | **Skill 渐进式披露 / 通用 tool_result 预算**（L1/L2/L3、Skill 正文/工具结果分通道、50K/2K/500K 阈值、持久化与截断、GA 复刻映射） | `docs/20261017-CC-skill渐进式披露调研.md` |
+| **CC 的 ACP 支持与 adapter 机制**（原生 stream-json control protocol vs 外部 `claude-agent-acp`、JSON-RPC session/update、permission/cancel 映射、GA 复刻边界） | `docs/20261019-CC-ACP支持调研.md` |
+| **303 输入物 / 模块 / 格式化 / 去混淆总览**（2,431 模块、90,771 改名、复验、限制、检索方法） | `claudecode303/MANIFEST.md` + `claudecode303/extracted/20261020-303源码提取与可读化总览.md` |
+| **283→303 入口映射**（workflow / rewind / Agent Team / hooks / mods；含“已核对 / 候选 / 未确认”状态） | `claudecode303/extracted/20261020-283到303入口映射.md` |
+| **303 hooks 全链路**（33 事件、5 类型、输入输出 schema、执行器、async/worker、安全门禁） | `claudecode303/extracted/20261020-hooks入口分析.md` |
+| **本机 Claude Code 2.1.303 的 Stop beep 实例**（配置、脚本、stdin/stdout、Stop 与内部 Turn 的区别） | `docs/20261020-beep-stop-hook实施记录.md` + `claudecode303/extracted/20261020-hooks入口分析.md` §15 |
+| **GA hooks 设计与实现方案**（本地 command hook、Stop beep、接入点、分阶段实施与 DoD；不含云端会话） | `docs/20261020-GA-hooks设计与实现方案.md` |
+| **303 mods / plugin hooks module**（`mods` 不是独立目录 API；plugin、hooks module、内置安全 plugin、加载链） | `claudecode303/extracted/20261020-mods入口分析.md` |
+| **303 跨版本候选附录**（61 个 283 模块的算法候选；相似度不是等价证明） | `claudecode303/extracted/20261020-cross-version-candidates.md` + `cross-version-candidates.json` |
 
 **命名方法一句话**：Bun `--compile` 是 minify 不是混淆，只压标识符，
 **字符串 / 属性名 / 解构键 / 对象键一律保留**——所有真名只能从这四类保留物里读出来。
@@ -164,17 +218,22 @@ node deminify.mjs --only m0869
 
 ---
 
-## 7. 当前状态（截至 v2.1.283 全量完成）
+## 7. 当前状态（283 全量完成；303 基础产物完成）
 
 | 项 | 状态 |
 | --- | --- |
-| 线 A 格式化 | ✅ 2135/2135（3 个超大模块退回原文） |
-| 线 B 去混淆 | ✅ 2135/2135，**79325** 处改名（S 25466 / A 29507 / B 5089 / C 19263） |
-| 线 B 语义复验 | ✅ 2135/2135（字符串/属性名/节点类型不变；228 处悬垂 else 补括号已放行） |
-| 线 C 声明级精读 | ✅ workflow 1278 声明（精确子串 + 未动字符串/属性名） |
-| Agent Team 专项可读化 | ✅ 3 模块 / 22 处改名，语义复验 0 差异 |
-| hooks 专项可读化 | ✅ 4 模块 / 204 处改名，语义复验 0 差异 |
-| 解析失败退回原文 | 0 |
+| 283 线 A 格式化 | ✅ 2135/2135（3 个超大模块退回原文） |
+| 283 线 B 去混淆 | ✅ 2135/2135，**79325** 处改名（S 25466 / A 29507 / B 5089 / C 19263） |
+| 283 线 B 语义复验 | ✅ 2135/2135（字符串/属性名/节点类型不变；228 处悬垂 else 补括号已放行） |
+| 283 线 C 声明级精读 | ✅ workflow 1278 声明（精确子串 + 未动字符串/属性名） |
+| 283 Agent Team 专项可读化 | ✅ 3 模块 / 22 处改名，语义复验 0 差异 |
+| 283 hooks 专项可读化 | ✅ 4 模块 / 204 处改名，语义复验 0 差异 |
+| 303 模块提取 | ✅ 2,431 个有效模块（2,433 个 marker，2 个 span 跳过）；MANIFEST 记录逐字节对比 2,431/2,431 匹配 |
+| 303 格式化 | ✅ 2,431/2,431 可解析（4 个 beautifier 回退原文） |
+| 303 去混淆 | ✅ 2,431/2,431，**90,771** 处改名；3 个 >1 MiB 模块复用 full |
+| 303 语义复验 | ✅ 2,431/2,431 `ok:true`，0 失败 |
+| 303 专项分析 | ✅ hooks、mods、workflow / rewind / Agent Team 入口映射已落盘；跨版本候选仍需逐项人工复核 |
+| 解析失败退回原文 | 283: 0；303: 4 个 beautifier 回退（不是模块损坏） |
 
 ---
 
@@ -209,4 +268,8 @@ node deminify.mjs --only m0869
 - ❌ 不要删减 / 取舍源码（铁律 §0）。
 - ❌ 不要覆盖前一阶段目录；新阶段开新目录。
 - ❌ 不要在没有证据的情况下改名（会污染可读性，比压缩名更糟）。
+- ❌ 不要把 283 的模块号直接套到 303：跨版本必须按导出名、字符串、属性名或调用链复核。
+- ❌ 不要把 `cross-version-candidates` 的相似度当成等价证明；状态不是“已核对”就不能写成源码事实。
+- ❌ 不要把 303 的 `mods` 当成独立 `mods/` 目录 API；它是 installed plugins / plugin function hooks / built-in security plugin 的产品层称呼。
+- ❌ 不要覆盖 `reconstructed/` 去写 303；303 只能写 `reconstructed303/`。
 - ❌ 不要 `rm -rf` / 递归删除（本机安全规则）。
