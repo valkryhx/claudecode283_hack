@@ -1,0 +1,13 @@
+{
+  "session": "2026-10-20T12-39-03",
+  "call_id": "call_00_da4DSplCK8m7TuI9Ktfr8383",
+  "arguments_json_chars": 31923,
+  "cmd_chars": 30845,
+  "cmd_utf8_bytes": 40460,
+  "cmd_utf16_units": 30845,
+  "cmd_lines": 706,
+  "heredoc_end_marker_present": true,
+  "tail_had_python_verification": true,
+  "bash_warning": "Chunk ID: ab5999\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 25\nOutput:\n/usr/bin/bash: line 219: warning: here-document at line 2 delimited by end-of-file (wanted `EOF')",
+  "conclusion": "Bash received only the prefix through the heredoc body. The EOF marker and trailing Python verification command existed in the original command model but never reached Bash; therefore the command was truncated in the Codex tool-call/transport path, not by Windows CreateProcessW."
+}
