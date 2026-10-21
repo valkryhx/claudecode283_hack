@@ -65,9 +65,10 @@
    - ASCII/代码：**不超过 8KB**；
    - 无论语言，单条命令的目标总长 **≤ 8KB**，绝不超过 12KB。
 3. 超过预算时，按 Markdown 章节边界拆分：
-   - 第一段用 `cat > file <<'EOF'`；
-   - 后续段用 `cat >> file <<'EOF'`；
-   - 每段必须独立闭合 heredoc。
+   - 第一段用 `cat > file <<'MDOC_20261021_A7F3'`；
+   - 后续段用 `cat >> file <<'MDOC_20261021_A7F3'`；
+   - 每次使用新的唯一 delimiter，正文结束后用完全相同的单独一行闭合；
+   - **禁止用裸 `EOF` 包裹可能包含 `EOF` 行的长文**：引号只关闭 shell 展开，不改变 delimiter 的匹配规则。
 4. 不要拆开以下结构：
    - 成对的 code fence；
    - 一个 JSON object；
@@ -106,10 +107,8 @@ MDOC_9c1b
 
 ### 4.3 截断后的正确响应
 
-看到 `here-document ... delimited by end-of-file (wanted EOF)` 时：
+看到 `here-document ... delimited by end-of-file (wanted ...)` 时，按顺序区分两类原因：
 
-1. 判定为命令未完整到达，不要认为文档已经正确；
-2. 检查当前文件尾部；
-3. 从最后一个确认完整的章节边界继续；
-4. 改用更小的分段；
-5. 不得原样重试同一条大命令。
+1. **同名 delimiter 碰撞**：正文中存在与外层 delimiter 完全相同的单独一行，heredoc 被提前结束；检查文件中该 delimiter 行，换唯一 delimiter 重写该段；
+2. **命令截断**：原命令末尾的闭合 delimiter 没到达 Bash；检查文件尾部，从最后一个完整章节继续，并改用更小的分段；
+3. 两种情况都不得原样重试同一条大命令。

@@ -54,8 +54,10 @@
   - Windows `CreateProcessW` 的命令行硬上限是 **32767 UTF-16 code units**；本机 `bash -c` 脚本体实测最大 **32735**，32736 报 `WinError 206`。
   - 但 Codex tool-call 参数会在远低于 OS 上限时出现截断；本项目实际出现过约 3.1 万字符 / 4 万 UTF-8 字节的 heredoc 只写入前半段，末尾 `EOF` 未到达。
   - 因而禁止把整篇长文塞进一次 `exec_command`。**中文正文每段约 2K-4K 字符，ASCII/代码每段不超过 8KB；单条命令目标总长 ≤ 8KB，绝不超过 12KB。**
-  - 长文第一段用 `cat > file <<'EOF'`，后续段用 `cat >> file <<'EOF'`；按 Markdown 章节边界拆，不拆 code fence、JSON object、表格行或源码片段的中间。
-  - 每段独立闭合 heredoc。看到 `here-document ... delimited by end-of-file (wanted EOF)` 就是命令未完整到达：检查文件尾部，从最后完整章节继续，并缩小下一段；禁止原样重试同一大命令。
+  - 长文第一段用 `cat > file <<'MDOC_20261021_A7F3'`，后续段用 `cat >> file <<'MDOC_20261021_A7F3'`；每次都使用**本次唯一的 delimiter**，并在正文结束后用完全相同的单独一行闭合。
+  - **禁止在包裹长文时使用裸 `EOF`。** 引号 heredoc（`<<'EOF'`）只阻止变量展开，不能阻止正文里单独一行的 `EOF` 提前结束 heredoc；写“包含 heredoc 示例的 Markdown”时，外层 delimiter 必须不同于所有内层示例 delimiter。
+  - 按 Markdown 章节边界拆，不拆 code fence、JSON object、表格行或源码片段的中间；每段独立闭合 heredoc。
+  - 看到 `here-document ... delimited by end-of-file (wanted ...)` 时，先检查是命令截断还是正文中出现了同名的 delimiter 行：检查文件尾部与 delimiter 出现位置，从最后完整章节继续，换一个新的唯一 delimiter，并缩小下一段；禁止原样重试同一大命令。
   - 完整机制、证据和模板见 `docs/20261021-Codex长文本写入边界与AGENTS约束.md`；OS 边界探针见 `docs/probes/20261021-codex-command-length-probe.py`。
 
 

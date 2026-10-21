@@ -11,3 +11,7 @@
 | `../20261021-codex-command-length-probe.py` | Windows `CreateProcessW` / Git Bash argv 边界探针 |
 
 核心结论：**运行脚本文件比把长脚本文本直接塞进 `exec_command` 的 `-c` 参数稳定。**
+
+## delimiter 碰撞探针
+
+外层 heredoc 使用 `<<'EOF'`、正文中又包含单独一行 `EOF` 时，Bash 会在正文中的第一个 `EOF` 处结束读取，后续正文会被当成命令执行。复现时应换用唯一 delimiter（例如 `MDOC_20261021_A7F3`），而不是只给 `EOF` 加引号。
