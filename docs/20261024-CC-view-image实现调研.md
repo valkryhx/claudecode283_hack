@@ -73,7 +73,7 @@
 
 | 项 | 坐标 |
 | --- | --- |
-| 工具对象 | `m0459_0xecff32a.js:172704`（`name: Qe`，`Qe = "Read"` 见 `m0144:12`） |
+| 工具对象 | `m0459_0xecff32a.js:172710`（`name: Qe`，`Qe = "Read"` 见 `m0144:12`） |
 | 检索提示 | `m0459:172712` → `"read files, images, PDFs, notebooks"` |
 | 工具描述文本 | `m0281_0xe9549eb.js:4180`（`ENs`）、`4184`（`CNs` 生成器） |
 | 输入 schema | `m0459:172729`（`IXr()`） |
@@ -808,7 +808,7 @@ async function handlePastedText(text) {
 
 | 功能 | 模块:行 |
 | --- | --- |
-| `Read` 工具对象 | `m0459_0xecff32a.js:172704` |
+| `Read` 工具对象 | `m0459_0xecff32a.js:172710` |
 | 检索提示 | `m0459:172712` |
 | 工具描述文本 | `m0281_0xe9549eb.js:4180` / `4184` |
 | 读文件主逻辑 `cOn` | `m0459:173311` |
@@ -828,7 +828,7 @@ async function handlePastedText(text) {
 | 图片扩展名白名单 `scn` | `m0144_0xe71d3d2.js:14` |
 | 预算常量 `aL` / `xne` | `m0086_0xe58fa2b.js:388` / `357` |
 | 远程上限 `BUr` | `m0086:368` |
-| patch 估算 `dbt` | `m0086:383` |
+| patch 估算 `dbt` | `m0086:384` |
 | 输出 token 上限 `rB` / `JIo` | `m0155_0xe7edd37.js:43` / `16` |
 | 剪贴板读图 `mue` | `m0549_0xf39f1f6.js:85` |
 | 平台命令表 | `m0549:48` |
