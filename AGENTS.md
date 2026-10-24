@@ -284,3 +284,5 @@ node verify-deminified.mjs
 - ❌ 不要把 303 的 `mods` 当成独立 `mods/` 目录 API；它是 installed plugins / plugin function hooks / built-in security plugin 的产品层称呼。
 - ❌ 不要覆盖 `reconstructed/` 去写 303；303 只能写 `reconstructed303/`。
 - ❌ 不要 `rm -rf` / 递归删除（本机安全规则）。
+| **CC 看图（view image）实现**（无独立 view_image 工具；用户粘贴/路径 → image block、Read 工具图片分支、magic bytes 校验、预算常量、tool_result 数组结构、OpenAI 兼容降级、复刻代码骨架） | `docs/20261024-CC-view-image实现调研.md` |
+| **CC 输入框预测补全（prompt suggestion）实现**（四层开关、焦点/plan/限流/缓存门禁、复用父前缀的 forked query、固定指令全文、14 条过滤规则与中日韩词数加权、placeholder 展示、Tab/→ 接受、20 次未用的退避机制、SDK `prompt_suggestion` 帧与 `set_prompt_suggestions_paused`、复刻骨架） | `docs/20261024-CC-prompt-suggestion实现调研.md` |
