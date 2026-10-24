@@ -286,3 +286,55 @@ node verify-deminified.mjs
 - ❌ 不要 `rm -rf` / 递归删除（本机安全规则）。
 | **CC 看图（view image）实现**（无独立 view_image 工具；用户粘贴/路径 → image block、Read 工具图片分支、magic bytes 校验、预算常量、tool_result 数组结构、OpenAI 兼容降级、复刻代码骨架） | `docs/20261024-CC-view-image实现调研.md` |
 | **CC 输入框预测补全（prompt suggestion）实现**（四层开关、焦点/plan/限流/缓存门禁、复用父前缀的 forked query、固定指令全文、14 条过滤规则与中日韩词数加权、placeholder 展示、Tab/→ 接受、20 次未用的退避机制、SDK `prompt_suggestion` 帧与 `set_prompt_suggestions_paused`、复刻骨架） | `docs/20261024-CC-prompt-suggestion实现调研.md` |
+
+---
+
+## 10. 上下文预算铁律（读源码必须局部读）
+
+背景：本机曾用第三方中转（上游上下文硬顶 256K / 262144 tokens）时，一次请求实际发出 281247 tokens，
+被上游 400 拒收（`"type":"context_length","limit":262144`）。**已发给模型的工具返回结果会完整留在历史里，
+之后每一轮都要重发一遍**，所以一次整文件 `Read` 的代价不是一次，而是之后每一轮都在付。
+
+本仓库的 `reconstructed303/deminified/` 普遍是几百 KB 级文件，`m0357_*` 一类超大模块可达 4 MB，
+**任何一次整文件读取都可能单独把上下文撑爆**。
+
+### 10.1 铁律
+
+1. **禁止对 `reconstructed/`、`reconstructed303/`、`claudecode283/modules/`、`claudecode303/modules/` 下的文件整文件 `Read`**（>1 MB 的模块绝对禁止）。
+2. 一律走 **`grep 定位 → sed 取窗口`** 两步：
+
+   ```bash
+   # ① 定位：找到关键字的文件与行号
+   grep -rn "关键字" reconstructed303/deminified/ --include=*.js | head -50
+
+   # ② 取窗口：只读命中的那一段（前后各 30-40 行）
+   sed -n '8000,8060p' reconstructed303/deminified/m0357_0xc63ba04.js
+
+   # 看结构：先拿声明行号，再按行号取窗口
+   grep -n "^\s*\(async \)\?function \|^\s*class " file.js
+   ```
+
+3. **先看规模再决定读法**：`wc -l file.js` / `ls -l file.js`，超过约 1000 行或 200 KB 就只准走 10.1 第 2 条。
+4. **所有检索类命令都必须截断**：`grep ... | head -50`、`| wc -l`，不要裸跑 `grep -rn` 或不带 `head` 的 `cat`。
+5. **大范围分析派子 agent 去做**（`Agent` 工具，`Explore` / `general-purpose`），主会话只接收结论，不接收文件内容。
+6. 换任务先 `/clear`；同一任务跑长了手动 `/compact`，不要等自动压缩兜底。
+7. `AGENTS.md` 自身可以整读（约 300 行），但 `docs/` 下的长文档同样遵循局部读。
+
+### 10.2 配套的本地配置（settings.json，不在仓库内）
+
+供参考，落到本机 `~/.claude/settings.json`；第三方中转的上游硬顶未知时按 256K 算：
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "150000",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "16000",
+    "ENABLE_TOOL_SEARCH": "false",
+    "BASH_MAX_OUTPUT_LENGTH": "15000"
+  }
+}
+```
+
+- `AUTO_COMPACT_WINDOW` 必须显著小于上游硬顶：系统提示、工具 schema、以及**上游分词器与 Anthropic 分词器的估算偏差**
+  都不进这个窗口的预算，贴太近必然在压缩触发前被拒。
+- 参数只能降低触发概率；**单轮峰值**（一次贴大文件 / 一次超大工具输出）靠参数救不回来，只能靠 §10.1。
