@@ -22,32 +22,42 @@
 
 ## 1. 环境铁律（Windows / Git Bash）
 
-- **交互命令统一走 Git Bash**。`exec_command` 的默认 shell 是 **PowerShell**，所以每次调用必须**显式**传 `shell="bash"` 与 `login=false`：
+- **交互命令统一走 Git Bash**。`exec_command` 的默认 shell 是 **PowerShell**。**禁止使用 `shell="bash"`**：本机该值会命中 WSL 存根，不是 Git Bash。统一用 PowerShell 包装器调用绝对路径 Git Bash：
 
   ```text
-  exec_command(cmd="<bash script>", shell="bash", login=false, workdir=...)
+  exec_command(
+    cmd="& '<Git Bash 可执行文件绝对路径>' -lc '<script>'",
+    shell="powershell",
+    login=false,
+    workdir=...
+  )
   ```
 
-  - ✅ 本机实测：`shell="bash"` 命中 **Git Bash**（`0=/usr/bin/bash`、`BASH_VERSION=5.2.37`、`MINGW64`），并**自动注入** `LANG=C.UTF-8` / `LC_ALL=C.UTF-8`；不会命中 WSL。
   - ❗ 不显式传参时走的是 **PowerShell**（`PSVersion=...`）——这就是之前“嘴上说 Git Bash、实际跑 PowerShell”、以致中文与 heredoc 报错的根因。**不要依赖默认值，也不要只“声称”在 Git Bash。**
-  - 🛡 兼容兜底（当某环境下 `shell="bash"` 真的命中 WSL 别名时）：用 PowerShell 包装器调**绝对路径** Git Bash。该方式实测同样可用，不依赖 PATH，最确定：
+  - ⚠️ **本机实测（2026-10-19）**：`shell="bash"` 会命中 **WSL 存根**，报“没有已安装的分发版”，不是 Git Bash。此时必须用下面的绝对路径兜底，不能把 WSL 的失败当成命令本身失败。
+  - 🛡 Git Bash 绝对路径兜底：先用 `where.exe bash` / `where.exe git` 确认本机安装位置，再用 PowerShell 包装器调用，最确定：
 
     ```powershell
-    & 'D:\Git\bin\bash.exe' -lc '<script>'
+    & '<Git Bash 可执行文件绝对路径>' -lc '<script>'
     ```
-- 路径映射：`D:\x` → `/d/x`。
-- **路径格式不可混用**：Git Bash 内用 POSIX 路径（`/d/...` 或相对路径）；Windows 程序（`python` / `node`）**不认** `/d/...`，要传原生路径（`D:\...` 或 `D:/...`）。同一条命令里不要混用两种。
+
+  - 📍 **Git Bash / gitconfig / node 的具体安装路径是机器相关的，不写进本文件**；本机路径另见 `docs/20261026-GitBash本机路径.md`（不入库），其他机器按该文档的探测方法自行确认。
+
+  - ✅ 判定是否真的进入 Git Bash：输出应包含 `bash=/usr/bin/bash`、`MINGW64_NT-...`、`LANG=C.UTF-8`；不要只看命令是否返回 0。
+- 路径映射：盘符 `X:\x` → `/x/x`（如 `D:\x` → `/d/x`）。
+- **路径格式不可混用**：Git Bash 内用 POSIX 路径（`<盘符>/...` 或相对路径）；Windows 程序（`python` / `node`）**不认** POSIX 路径，要传原生路径（`X:\...` / `X:/...`）。同一条命令里不要混用两种。
 - Python 用 **`python`**（不是 `python3`，后者命中 WindowsApps 存根）。
-- Node 用 `/d/nodejs/node`（v22.17.0）。
+- Node 用 `node`（本机实测 v25.2.1；路径与版本因机器而异，以 `where.exe node` / `node --version` 为准）。
 - Git Bash 的 `find -printf` 可能不可用；没有 `strings` 命令（用 `grep -a`）。
 - 写含 `$` 的文件时，用**单引号** here-string（`@'...'@`），否则 `$` 会被 PowerShell 展开。
-- **git 行尾**：系统级 `D:\Git\etc\gitconfig` 里 `core.autocrlf=true`（Git for Windows 默认），会让 `git add` 刷 LF/CRLF 警告、`git status` 出幽灵 diff。**本仓库已用仓库内 `.gitattributes`（`* text=auto eol=lf`）统一为 LF 根治**——只影响本仓库，不动系统级 `core.autocrlf=true`。**遇到行尾/CRLF 警告不要再排查，看 `docs/git-line-endings-policy.md`。**
+- **git 行尾**：系统级 gitconfig（`git config --list --show-origin` 可查位置）里 `core.autocrlf=true`（Git for Windows 安装器默认），会让 `git add` 刷 LF/CRLF 警告、`git status` 出幽灵 diff。**本仓库已用仓库内 `.gitattributes`（`* text=auto eol=lf`）统一为 LF 根治**——只影响本仓库，不动系统级 `core.autocrlf=true`。**遇到行尾/CRLF 警告不要再排查，看 `docs/git-line-endings-policy.md`。**
 - **写文件一律 LF**：编辑/生成任何文本文件都直接写成 LF（`\n`），不要 CRLF。
+
   - 仓库已用 `.gitattributes`（`* text=auto eol=lf`）在入库时自动规范化。**看到"整文件 diff"先怀疑行尾，一步确认即可，
     不要展开排查、不要反复 checkout/重写** —— 那是纯 token 浪费。
   - 程序化写文件的坑（本机实测）：**Python `open(p,"w")` 在 Windows 会把 `\n` 翻成 `\r\n`**
     → 必须 `open(p,"w",newline="\n")`（或写二进制）；Node `fs.writeFileSync` 默认原样写，确保字符串里是 `\n`。
-  - 快速校验（期望 0）：`grep -c $'\r' <file>`
+  - 快速校验（期望 0）：`python -c "import sys; print(open(sys.argv[1], 'rb').read().count(b'\r'))" '<file>'`
 - **md / 文档命名**：新建 markdown 及文档时，文件名一律用 `日期-名字` 格式（日期 `YYYYMMDD`），例如 `docs/20261012-研究workflow.md`；不要用无日期的裸名字。
 
 - **长文本写入必须分段（Windows / Codex 实测）**：
@@ -88,20 +98,20 @@
 
 ### 3.1 283：`reconstructed/`
 
-| 目录 / 文件 | 内容 | 规模 |
-| --- | --- | --- |
-| `full/` | 线 A：全部模块，**只格式化**，标识符仍是压缩名 | 2135 |
-| `deminified/` | 线 B：全部模块，**证据驱动的去混淆重命名** ★ | 2135 |
-| `deminified-rewind/` | rewind 专项可读化：m0357 里 20 个符号改真名 | 1 |
-| `deminified-agent-team/` | Agent Team 专项可读化：m1578/m0511/m0527 共 22 个符号改真名 | 3 |
-| `deminified-hooks/` | hooks 专项可读化：m0357/m0247/m0094/m0052 共 204 个符号改真名 | 4 |
-| `raw/ readable/ renamed/` | 线 C：workflow 子系统的**声明级精读版**（人工命名） | 1278 |
-| `deminify-names.json` | **改名账本**：每条 `{file, old, new, level, why}` | 79325 条 |
-| `deminify-report.json` / `deminify-verify.json` | 线 B 的执行报告 / 语义复验结果 | 2135 行 |
-| `rewind-rename-report.json` / `agent-team-rename-report.json` / `hooks-rename-report.json` | 专项可读化改名报告 | 3 |
-| `manifest.json` | 线 C 抽取清单 | 1278 |
-| `naming-map.json` | 线 C 人工命名映射（含证据等级） | — |
-| `tools/` | 全部可复现脚本（见 §5） | — |
+| 目录 / 文件                                                                                | 内容                                                          | 规模     |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------- | -------- |
+| `full/`                                                                                    | 线 A：全部模块，**只格式化**，标识符仍是压缩名                | 2135     |
+| `deminified/`                                                                              | 线 B：全部模块，**证据驱动的去混淆重命名** ★                  | 2135     |
+| `deminified-rewind/`                                                                       | rewind 专项可读化：m0357 里 20 个符号改真名                   | 1        |
+| `deminified-agent-team/`                                                                   | Agent Team 专项可读化：m1578/m0511/m0527 共 22 个符号改真名   | 3        |
+| `deminified-hooks/`                                                                        | hooks 专项可读化：m0357/m0247/m0094/m0052 共 204 个符号改真名 | 4        |
+| `raw/ readable/ renamed/`                                                                  | 线 C：workflow 子系统的**声明级精读版**（人工命名）           | 1278     |
+| `deminify-names.json`                                                                      | **改名账本**：每条 `{file, old, new, level, why}`             | 79325 条 |
+| `deminify-report.json` / `deminify-verify.json`                                            | 线 B 的执行报告 / 语义复验结果                                | 2135 行  |
+| `rewind-rename-report.json` / `agent-team-rename-report.json` / `hooks-rename-report.json` | 专项可读化改名报告                                            | 3        |
+| `manifest.json`                                                                            | 线 C 抽取清单                                                 | 1278     |
+| `naming-map.json`                                                                          | 线 C 人工命名映射（含证据等级）                               | —        |
+| `tools/`                                                                                   | 全部可复现脚本（见 §5）                                       | —        |
 
 ### 3.2 303：`reconstructed303/`
 
@@ -215,6 +225,9 @@ node verify-deminified.mjs
 | **Dynamic Workflow 复刻指南**（面向自研 Agent / Codex 开发者的实现蓝图 + 逐 API 源码核对 + 坑清单 + §9 执行期 UI/交互与“再跑历史 workflow”） | `docs/20261012-复刻dynamic-workflow指南.md` |
 | **Skill 渐进式披露 / 通用 tool_result 预算**（L1/L2/L3、Skill 正文/工具结果分通道、50K/2K/500K 阈值、持久化与截断、GA 复刻映射） | `docs/20261017-CC-skill渐进式披露调研.md` |
 | **CC 的 ACP 支持与 adapter 机制**（原生 stream-json control protocol vs 外部 `claude-agent-acp`、JSON-RPC session/update、permission/cancel 映射、GA 复刻边界） | `docs/20261019-CC-ACP支持调研.md` |
+| **CC 看图（view image）实现**（无独立 view_image 工具；用户粘贴/路径 → image block、Read 工具图片分支、magic bytes 校验、预算常量、tool_result 数组结构、OpenAI 兼容降级、复刻代码骨架） | `docs/20261024-CC-view-image实现调研.md` |
+| **CC 输入框预测补全（prompt suggestion）实现**（四层开关、焦点/plan/限流/缓存门禁、复用父前缀的 forked query、固定指令全文、14 条过滤规则与中日韩词数加权、placeholder 展示、Tab/→ 接受、20 次未用的退避机制、SDK `prompt_suggestion` 帧与 `set_prompt_suggestions_paused`、复刻骨架） | `docs/20261024-CC-prompt-suggestion实现调研.md` |
+| **CC 执行中继续输入（边跑边收）机理**（统一命令队列、now/next/later 优先级、prompt.submit hook 与 screeningPending、轮内 fold 的 queued_command attachment 与包装文本、drain 循环与 followers 合并、now→abort 中断、低延迟提交 background/interrupt/cancel、Esc 清队列、上箭头编辑与 queued_turn_count、复刻清单） | `docs/20261024-CC-执行中继续输入机理调研.md` |
 | **303 输入物 / 模块 / 格式化 / 去混淆总览**（2,431 模块、90,771 改名、复验、限制、检索方法） | `claudecode303/MANIFEST.md` + `claudecode303/extracted/20261020-303源码提取与可读化总览.md` |
 | **283→303 入口映射**（workflow / rewind / Agent Team / hooks / mods；含“已核对 / 候选 / 未确认”状态） | `claudecode303/extracted/20261020-283到303入口映射.md` |
 | **303 hooks 全链路**（33 事件、5 类型、输入输出 schema、执行器、async/worker、安全门禁） | `claudecode303/extracted/20261020-hooks入口分析.md` |
@@ -222,6 +235,8 @@ node verify-deminified.mjs
 | **GA hooks 设计与实现方案**（本地 command hook、Stop beep、接入点、分阶段实施与 DoD；不含云端会话） | `docs/20261020-GA-hooks设计与实现方案.md` |
 | **303 mods / plugin hooks module**（`mods` 不是独立目录 API；plugin、hooks module、内置安全 plugin、加载链） | `claudecode303/extracted/20261020-mods入口分析.md` |
 | **303 跨版本候选附录**（61 个 283 模块的算法候选；相似度不是等价证明） | `claudecode303/extracted/20261020-cross-version-candidates.md` + `cross-version-candidates.json` |
+| **303 resume / 会话转录机制**（JSONL 事件流、uuid/parentUuid/logicalParentUuid、按类型持久化策略、compact_boundary + preservedMessages、`cnn`/`rer`/`ter` 两种视图与 `Rx=4096` 裁剪、fork、列表轻量扫描） | `docs/20261025-CC-resume机制调研.md` |
+| **GA resume 只显示部分历史的根因与优化设计**（history_replace 未重置视口、compact 无锚点、深度相等推断失效、转录 v2 uuid 事件、backend adapter、分阶段实施） | `docs/20261025-GA-resume优化设计.md` |
 
 **命名方法一句话**：Bun `--compile` 是 minify 不是混淆，只压标识符，
 **字符串 / 属性名 / 解构键 / 对象键一律保留**——所有真名只能从这四类保留物里读出来。
@@ -269,9 +284,9 @@ node verify-deminified.mjs
 
 ## 9. 禁忌清单
 
-- ❌ 不要依赖默认 shell（它是 PowerShell）；每次显式传 `shell="bash"`。不要只“声称”在 Git Bash 而不传参。
+- ❌ **禁止使用 `shell="bash"`**：本机该值会命中 WSL 存根，不是 Git Bash。统一用 `shell="powershell"` + `& '<Git Bash 绝对路径>' -lc ...`；不要只“声称”在 Git Bash 而不验证 `$0` / `uname`。
 - ❌ 中文内容不要经 `python -c` 参数或 shell 变量往返（会损坏编码）；用单引号 heredoc 直写文件（`cat > file << 'EOF'`）。
-- ❌ 反斜杠会被吃：内容**直写文件**（`cat > f << 'EOF'`）安全；但内容若**穿过 Python 字符串字面量 / 嵌套 shell 层**（如 `python - << 'EOF'` 里写 `"D:\Git\bin"`），`\b`/`\a`/`\G` 会被当转义吃掉。此时用 raw string 或 `chr(92)` 构造，源码里不出现字面反斜杠。
+- ❌ 反斜杠会被吃：内容**直写文件**（`cat > f << 'EOF'`）安全；但内容若**穿过 Python 字符串字面量 / 嵌套 shell 层**（如 `python - << 'EOF'` 里写 `"C:\Git\bin"`），`\b`/`\a`/`\G` 会被当转义吃掉。此时用 raw string 或 `chr(92)` 构造，源码里不出现字面反斜杠。
 - ❌ 中文正确性**看字节不看终端回显**：`open(p,"rb").read().decode("utf-8")` 不报错即合法；输出中文用 `sys.stdout.buffer.write(...encode("utf-8"))`。控制台代码页 GBK 会误导。
 - ❌ 跨 bash/python 传文件时不要用 `/tmp`：Git Bash 的 `/tmp` 与 Windows 版 `python` 不互通（`FileNotFoundError`）；用工作区内 Windows 路径。
 - ❌ 单文件删除用 Python `os.remove()`，不用 `rm -f`；绝不递归删除。
@@ -284,8 +299,6 @@ node verify-deminified.mjs
 - ❌ 不要把 303 的 `mods` 当成独立 `mods/` 目录 API；它是 installed plugins / plugin function hooks / built-in security plugin 的产品层称呼。
 - ❌ 不要覆盖 `reconstructed/` 去写 303；303 只能写 `reconstructed303/`。
 - ❌ 不要 `rm -rf` / 递归删除（本机安全规则）。
-| **CC 看图（view image）实现**（无独立 view_image 工具；用户粘贴/路径 → image block、Read 工具图片分支、magic bytes 校验、预算常量、tool_result 数组结构、OpenAI 兼容降级、复刻代码骨架） | `docs/20261024-CC-view-image实现调研.md` |
-| **CC 输入框预测补全（prompt suggestion）实现**（四层开关、焦点/plan/限流/缓存门禁、复用父前缀的 forked query、固定指令全文、14 条过滤规则与中日韩词数加权、placeholder 展示、Tab/→ 接受、20 次未用的退避机制、SDK `prompt_suggestion` 帧与 `set_prompt_suggestions_paused`、复刻骨架） | `docs/20261024-CC-prompt-suggestion实现调研.md` |
 
 ---
 
