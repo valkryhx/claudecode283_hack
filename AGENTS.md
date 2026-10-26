@@ -70,6 +70,31 @@
   - 看到 `here-document ... delimited by end-of-file (wanted ...)` 时，先检查是命令截断还是正文中出现了同名的 delimiter 行：检查文件尾部与 delimiter 出现位置，从最后完整章节继续，换一个新的唯一 delimiter，并缩小下一段；禁止原样重试同一大命令。
   - 完整机制、证据和模板见 `docs/20261021-Codex长文本写入边界与AGENTS约束.md`；OS 边界探针见 `docs/probes/20261021-codex-command-length-probe.py`。
 
+- **heredoc 只用于「写死内容」，不用于「跑逻辑」（2026-10-26 补充）**：
+  - 判定标准只有一条：**这段内容是不是原样落盘**。是 → 可以用 heredoc；需要循环、正则、读现有文件、条件分支、多步改动 → **一律写成独立 `.py` / `.mjs` 脚本再执行**，禁止用 `python - <<'X'` 跑脚本。
+  - ❌ 反面例（本仓库实际踩过）：`python - <<'PY_X' && echo done` —— 正文和闭合行都没写，bash 报 `here-document ... delimited by end-of-file`，`python -` 读到空 stdin 进入 REPL，后面的 `&& echo` 照样执行，于是**既没改文件也没报错**。
+  - ✅ 正面例（插入表格行 / 改行 / 条件写入这类“要判断”的活）：
+
+    ```bash
+    cat > work/_patch.py <<'PY_PATCH_20261026_0713'
+    import sys
+    path = sys.argv[1]
+    text = open(path, encoding="utf-8", newline="").read()
+    if "已插入" in text:
+        print("skip: already patched")
+        sys.exit(0)
+    ...  # 真实逻辑
+    PY_PATCH_20261026_0713
+    python work/_patch.py AGENTS.md
+    ```
+
+  - 闭合行必须**独占一行且后面不接 `&&` / `;` / `|`**；命令里出现第二个命令时，把 heredoc 段写成单独一条 `exec_command`。
+  - **heredoc 正文里不要出现“单独一行的 delimiter 候选”**，尤其别写 `EOF`、`END`、`DONE`、`PY`、`PYTHON` 这类通用词；统一用 `用途_日期_随机4位`，如 `PY_PATCH_20261026_K3M9`。
+  - 每条一次写入的正文 ≤ 2K-4K 中文字符 / ≤ 8KB ASCII；超了就按 Markdown 章节或函数边界拆成多条 `cat >>`，每条独立闭合。
+  - 需要写“包含 heredoc 示例的 Markdown”时，**外层 delimiter 必须与正文里所有内层 delimiter 不同**，且外层不要用 `MD`、`EOF` 这类会被示例正文命中的词。
+  - **自查（写完必跑一条）**：`tail -c 200 <file>` 看结尾是否完整；`grep -c $'\r' <file>` 期望 0；含中文再 `python -c "open('<file>','rb').read().decode('utf-8')"`。
+  - **写坏后的恢复顺序**（不要原样重试同一条命令）：① 看 `tail -c 300 <file>` 判断是“截断”还是“正文里撞了 delimiter”；② 若是截断，从最后一个完整章节/函数边界继续，换新 delimiter、缩小下一段；③ 若是撞 delimiter，只重写被截断的那一段；④ 逻辑类命令直接删掉 heredoc，改独立脚本重做。
+
 
 ---
 
@@ -289,6 +314,8 @@ node verify-deminified.mjs
 
 - ❌ **禁止使用 `shell="bash"`**：本机该值会命中 WSL 存根，不是 Git Bash。统一用 `shell="powershell"` + `& '<Git Bash 绝对路径>' -lc ...`；不要只“声称”在 Git Bash 而不验证 `$0` / `uname`。
 - ❌ 中文内容不要经 `python -c` 参数或 shell 变量往返（会损坏编码）；用单引号 heredoc 直写文件（`cat > file << 'EOF'`）。
+- ❌ 不要用 heredoc 跑逻辑：`python - <<'X'` / `node - <<'X'` 一旦命令被截断，正文和闭合行一起消失，程序会读到空 stdin（Python 直接进 REPL）而表面不报错；把逻辑写成 `work/_xxx.py` 再执行。
+- ❌ heredoc 闭合行后不要接 `&&` / `;` / `|`；正文里不要出现 `EOF`、`END`、`PY` 这类通用 delimiter 词。
 - ❌ 反斜杠会被吃：内容**直写文件**（`cat > f << 'EOF'`）安全；但内容若**穿过 Python 字符串字面量 / 嵌套 shell 层**（如 `python - << 'EOF'` 里写 `"C:\Git\bin"`），`\b`/`\a`/`\G` 会被当转义吃掉。此时用 raw string 或 `chr(92)` 构造，源码里不出现字面反斜杠。
 - ❌ 中文正确性**看字节不看终端回显**：`open(p,"rb").read().decode("utf-8")` 不报错即合法；输出中文用 `sys.stdout.buffer.write(...encode("utf-8"))`。控制台代码页 GBK 会误导。
 - ❌ 跨 bash/python 传文件时不要用 `/tmp`：Git Bash 的 `/tmp` 与 Windows 版 `python` 不互通（`FileNotFoundError`）；用工作区内 Windows 路径。
