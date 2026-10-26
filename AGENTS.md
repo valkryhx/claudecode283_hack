@@ -234,6 +234,9 @@ node verify-deminified.mjs
 | **本机 Claude Code 2.1.303 的 Stop beep 实例**（配置、脚本、stdin/stdout、Stop 与内部 Turn 的区别） | `docs/20261020-beep-stop-hook实施记录.md` + `claudecode303/extracted/20261020-hooks入口分析.md` §15 |
 | **GA hooks 设计与实现方案**（本地 command hook、Stop beep、接入点、分阶段实施与 DoD；不含云端会话） | `docs/20261020-GA-hooks设计与实现方案.md` |
 | **303 mods / plugin hooks module**（`mods` 不是独立目录 API；plugin、hooks module、内置安全 plugin、加载链） | `claudecode303/extracted/20261020-mods入口分析.md` |
+| **303 WebFetch 调研与 GA 落地建议**（工具契约、直连/代理链路、登录与付费边界、SSRF/DNS 安全设计、Phase 1/2 计划） | `docs/20261021-CC-WebFetch功能调研.md` |
+| **GA WebFetch A 方案（当前实施契约）**（透明网络出口、CC 行为对齐、基础 URL/大小/超时、GA 接入与验收） | `docs/20261021-GA-WebFetch-A方案.md`；GA 仓库实施副本 `D:/git_codes/GenericAgent/docs/superpowers/plans/2026-10-21-ga-web-fetch.md` |
+| **GA WebFetch B 参考方案（A 完成后再做）**（direct SSRF、DNS rebinding、peer 复核、trusted-proxy） | `docs/20261021-GA-WebFetch设计与实现方案.md` |
 | **303 跨版本候选附录**（61 个 283 模块的算法候选；相似度不是等价证明） | `claudecode303/extracted/20261020-cross-version-candidates.md` + `cross-version-candidates.json` |
 | **303 resume / 会话转录机制**（JSONL 事件流、uuid/parentUuid/logicalParentUuid、按类型持久化策略、compact_boundary + preservedMessages、`cnn`/`rer`/`ter` 两种视图与 `Rx=4096` 裁剪、fork、列表轻量扫描） | `docs/20261025-CC-resume机制调研.md` |
 | **GA resume 只显示部分历史的根因与优化设计**（history_replace 未重置视口、compact 无锚点、深度相等推断失效、转录 v2 uuid 事件、backend adapter、分阶段实施） | `docs/20261025-GA-resume优化设计.md` |
