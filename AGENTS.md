@@ -20,21 +20,32 @@
 
 ---
 
-## 1. 环境铁律（Windows / Git Bash）
+## 1. 环境铁律（Windows：外层 PowerShell，内层 Git Bash）
 
-- **交互命令统一走 Git Bash**。`exec_command` 的默认 shell 是 **PowerShell**。**禁止使用 `shell="bash"`**：本机该值会命中 WSL 存根，不是 Git Bash。统一用 PowerShell 包装器调用绝对路径 Git Bash：
+- **命令内容在 Git Bash 子进程执行，但工具外层永远不是 Bash。** `exec_command` 的默认 shell 是 **PowerShell**；**禁止使用 `shell="bash"`**，本机该值可能命中 WSL 存根，并且会把下面的 PowerShell wrapper 当成 Bash 语法而报错。唯一允许的调用骨架是：
 
   ```text
   exec_command(
-    cmd="& '<Git Bash 可执行文件绝对路径>' -lc '<script>'",
+    cmd="& '<Git Bash 可执行文件绝对路径>' -lc '<bash-payload>'",
     shell="powershell",
     login=false,
     workdir=...
   )
   ```
 
+  多行 payload 用 PowerShell 单引号 here-string 传入：
+
+  ```text
+  $script = @'
+  ... bash payload ...
+  '@
+  & '<Git Bash 可执行文件绝对路径>' -lc $script
+  ```
+
+  `$script = @'`、`'@` 和开头的 `&` 都是 **PowerShell 语法**，不能作为 `shell="bash"` 的 `cmd`。看到 `export`、heredoc、`bash $'\r'`、`&&`、管道等 Bash 语法时，也只说明它们是 `-lc` 的内部 payload，绝不代表应把工具参数改成 `shell="bash"`。
+
   - ❗ 不显式传参时走的是 **PowerShell**（`PSVersion=...`）——这就是之前“嘴上说 Git Bash、实际跑 PowerShell”、以致中文与 heredoc 报错的根因。**不要依赖默认值，也不要只“声称”在 Git Bash。**
-  - ⚠️ **本机实测（2026-10-19）**：`shell="bash"` 会命中 **WSL 存根**，报“没有已安装的分发版”，不是 Git Bash。此时必须用下面的绝对路径兜底，不能把 WSL 的失败当成命令本身失败。
+  - ⚠️ **本机实测（2026-10-19）**：`shell="bash"` 会命中 **WSL 存根**，不是 Git Bash；即使某次没有命中 WSL，也会把 PowerShell wrapper 当成 Bash 语法并报 `syntax error near unexpected token '&'`。两种情况都不得改用 `shell="bash"`。
   - 🛡 Git Bash 绝对路径兜底：先用 `where.exe bash` / `where.exe git` 确认本机安装位置，再用 PowerShell 包装器调用，最确定：
 
     ```powershell
@@ -211,13 +222,27 @@ node deminify.mjs --only m0869
 
 ```bash
 cd reconstructed/tools
-export RE_ROOT="D:/git_codes/claudecode283_hack/reconstructed303"
-export RE_MODULES="D:/git_codes/claudecode283_hack/claudecode303/modules"
-export RE_FULL="D:/git_codes/claudecode283_hack/reconstructed303/full"
-export RE_DEMINIFIED="D:/git_codes/claudecode283_hack/reconstructed303/deminified"
+export RE_ROOT="../../reconstructed303"
+export RE_MODULES="../../claudecode303/modules"
+export RE_FULL="../../reconstructed303/full"
+export RE_DEMINIFIED="../../reconstructed303/deminified"
 node verify-full.mjs
 node verify-deminified.mjs
 ```
+
+> 性能提示：`verify-deminified.mjs` **单进程跑全量约 2 分钟**（本机 303 实测 121.7s，2431/2431 ok）。
+> 要反复跑，用 §5 那套 6 分片并行写法明显更快（每片只校验 `i % 6 == shardIdx` 的文件）：
+>
+> ```bash
+> cd reconstructed/tools
+> export RE_ROOT="../../reconstructed303"
+> export RE_MODULES="../../claudecode303/modules"
+> export RE_FULL="../../reconstructed303/full"
+> export RE_DEMINIFIED="../../reconstructed303/deminified"
+> for i in 0 1 2 3 4 5; do node verify-deminified.mjs --shard $i/6 & done; wait
+> ```
+>
+> 单分片输出形如 `[verify shard 0/6] ok: N bad: 0 big: ...`；各片 ok 相加应等于 2431。
 
 > 303 提取时使用 **6 MiB** 上限（283 用 4 MiB）。完整命令与 PE/Bun 事实见
 > `claudecode303/MANIFEST.md`。
@@ -233,7 +258,7 @@ node verify-deminified.mjs
 | --- | --- |
 | **怎么从 exe 抠出源码**（Bun 单文件逆向全流程） | `docs/bun-standalone-re.md` |
 | **为什么源码能直接读**（Bun `--compile` 原理） | `docs/why-source-is-readable.md` |
-| **Windows 上 Git Bash / 中文 UTF-8 怎么正确调用**（实测结论、兜底方案、编码坑） | `docs/20261012-codex-shell-utf8执行指引.md` + `docs/windows-git-bash-execution-note.md` |
+| **Windows 上 Git Bash / 中文 UTF-8 怎么正确调用**（以本文件 §1 为唯一现行契约；`docs/windows-git-bash-execution-note.md` 仅作历史说明；`docs/20261012-codex-shell-utf8执行指引.md` 中 `shell="bash"` 建议已废弃，禁止照抄） | `docs/windows-git-bash-execution-note.md` |
 | **Git 行尾策略**（为什么总刷 LF/CRLF 警告 / 本仓库统一 LF 的做法与验证） | `docs/git-line-endings-policy.md` |
 | **自动去混淆怎么做**（四级证据 / 五条安全规则 / 怎么扩展） | `reconstructed/AUTO-NAMING.md` ★ |
 | **人工命名怎么做**（SOP / 范例 / 反模式） | `reconstructed/NAMING-METHOD.md` |
@@ -312,7 +337,7 @@ node verify-deminified.mjs
 
 ## 9. 禁忌清单
 
-- ❌ **禁止使用 `shell="bash"`**：本机该值会命中 WSL 存根，不是 Git Bash。统一用 `shell="powershell"` + `& '<Git Bash 绝对路径>' -lc ...`；不要只“声称”在 Git Bash 而不验证 `$0` / `uname`。
+- ❌ **禁止使用 `shell="bash"`，没有例外。** Git Bash 只能作为 PowerShell 的子进程运行：`shell="powershell"` + `cmd="& '<Git Bash 绝对路径>' -lc '<bash-payload>'"`。不要因为命令里出现 `export`、heredoc 或其他 Bash 语法就切换外层 `shell`；不要只“声称”在 Git Bash 而不验证 `$0` / `uname`。
 - ❌ 中文内容不要经 `python -c` 参数或 shell 变量往返（会损坏编码）；用单引号 heredoc 直写文件（`cat > file << 'EOF'`）。
 - ❌ 不要用 heredoc 跑逻辑：`python - <<'X'` / `node - <<'X'` 一旦命令被截断，正文和闭合行一起消失，程序会读到空 stdin（Python 直接进 REPL）而表面不报错；把逻辑写成 `work/_xxx.py` 再执行。
 - ❌ heredoc 闭合行后不要接 `&&` / `;` / `|`；正文里不要出现 `EOF`、`END`、`PY` 这类通用 delimiter 词。
