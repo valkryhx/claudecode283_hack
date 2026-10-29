@@ -290,6 +290,7 @@ node verify-deminified.mjs
 | **303 跨版本候选附录**（61 个 283 模块的算法候选；相似度不是等价证明） | `claudecode303/extracted/20261020-cross-version-candidates.md` + `cross-version-candidates.json` |
 | **303 resume / 会话转录机制**（JSONL 事件流、uuid/parentUuid/logicalParentUuid、按类型持久化策略、compact_boundary + preservedMessages、`cnn`/`rer`/`ter` 两种视图与 `Rx=4096` 裁剪、fork、列表轻量扫描） | `docs/20261025-CC-resume机制调研.md` |
 | **GA resume 只显示部分历史的根因与优化设计**（history_replace 未重置视口、compact 无锚点、深度相等推断失效、转录 v2 uuid 事件、backend adapter、分阶段实施） | `docs/20261025-GA-resume优化设计.md` |
+| **CC 子 agent 工作目录管理（软提示 + 代码硬切换）与 GA 对比**（283/303 证据坐标、workflow/Agent Team 双机制、GA 现状对齐、A/B/C 优化建议） | `docs/20261029-CC子agent工作目录管理与GA对比.md` |
 
 **命名方法一句话**：Bun `--compile` 是 minify 不是混淆，只压标识符，
 **字符串 / 属性名 / 解构键 / 对象键一律保留**——所有真名只能从这四类保留物里读出来。
