@@ -127,3 +127,43 @@ skill 加"禁止硬编码仓库绝对根、用相对路径或 `${args.workspaceP
 ## 6. 一句话回答
 
 CC 是"**代码硬切换 cwd（所有子 agent 通用）+ 仅在路径会变/并发写同目录时追加软提示**"，绝对路径从不进 prompt。GA 骨架已经一样；本次是 prompt 作者的软提示错误，被 GA 默认 `unrestricted` 放大。按 A（已修）+ B（建议）即可，C 作为后续可选。
+
+## 7. 附加问题：CC 为什么能任意位置读写，跟目录管理冲突吗
+
+不冲突。CC 里有两层正交机制：**cwd/目录管理** 与 **权限引擎**。
+
+### 7.1 两层各管什么
+
+- cwd / working directory：只决定两件事——(1) 相对路径的默认解析基准；(2) 自动放行区（"在 working directory 内"才自动 allow）。它本身**不是**访问边界。
+- 权限引擎（`m0200_0xc34af12.js` 约 36660-36760，判定函数 `LE` 一带）：对每个工具调用逐个给出 allow / ask / deny，综合显式 allow 规则、deny 规则、沙箱写白名单、read-before-write、以及 `--restricted` 模式。
+
+关键：`isInWorkingDir = qy(path, ...)`（`m0200:36700`）只是"自动放行区"的一个条件。在 working dir 内：读、或 `acceptEdits` 档 → 直接 allow（`m0200:36701-36704`）。**在 working dir 外**：不自动放行，继续走显式规则 / 沙箱写白名单（`m0200:36719` vWn）/ deny 规则；都没命中则落到"需人工批准"，而不是硬拒绝。
+
+### 7.2 "任意位置读写"怎么成立
+
+1. working directory 之外的操作不是被禁，只是不自动放行 → 走规则匹配或**弹权限询问**由用户批准。
+2. 权限档位（`m0094_0xc0d9ae5.js:6611`）与 cwd 正交：`default`（危险操作询问）/ `acceptEdits`（自动接受编辑）/ `bypassPermissions`（跳过所有检查，需 allowDangerouslySkipPermissions）/ `plan`（不执行）/ `dontAsk`（不询问、未预授权即拒）/ `auto`（模型分类器判定）。选 `acceptEdits`/`bypassPermissions` 时，cwd 外的编辑也能自动放行。
+3. 多工作目录：cwd 之外还能通过 `--add-dir` / SDK `additionalDirectories` 追加 working directory root（`m0094:9362`、`m0094:9390`；`m0200:34609` 把它们并入自动放行集合），`/add-dir` 也走同一"注册目录"管线。加进来的目录同样进入自动放行区。
+4. 唯一硬墙是 `--restricted`：它把文件操作硬限制在 working dir 内（`m0530_0xcd4bd34.js:128` "Attachment ... is outside the working directory; --restricted only sends files from inside it"）。
+
+### 7.3 几处具体的安全门（不是位置禁令）
+
+- Write 覆盖 cwd 外的**已存在**文件：必须先 Read 该文件，否则失败（`m0241_0xc49ca30.js:85-96`）。这是 read-before-write 安全，不是位置禁令。
+- Bash 写到 cwd 外：含 `..` 穿越、brace 展开等可疑写目标要求人工批准（`m0200:36916`、`m0200:36924`）。
+
+一句话：CC 能任意位置读写 = "cwd 外不硬禁、改走询问/规则/沙箱 + 可调权限档 + 可 add-dir"；cwd 管理只负责默认根与默认自动区，与"能否访问"正交，因此不冲突。
+
+### 7.4 GA 对应关系
+
+GA 同样是两层（目录层 + 权限层），结构对齐：
+
+- 目录层：`_child_cwd` -> handler/`code_run` cwd；run 级 `workspacePath`。
+- 权限层：`workflow/permissions.py`（`allow/deny/ask` 三态，`permissions.py:55/90`）+ 主 agent `core/permissions/policy.py`（`READ_ONLY`/`ASK`/`FULL_ACCESS`，`policy.py:26-28`）。
+
+差异只在**默认姿态**，不在结构：
+
+- GA 主 agent 默认 `FULL_ACCESS`（`policy.py:31`），即默认放行；CC 默认 `default`（危险操作询问）。
+- GA workflow 子 agent 默认 profile `inherit-current-permissions` -> 直接 `allow`（`permissions.py:81-82`），`pathPolicy` 默认 `unrestricted`（无 path ACL）。所以 GA 子 agent 也"能任意位置读写"——这是**权限层默认宽松**，不是目录层算错。
+- GA 的 `pathPolicy:"workspace"` 是比 CC 默认更强的**显式硬墙**（CC 只有 `--restricted` 才有类似硬限），属可选的额外安全门。
+
+因此：#1 的 workspacePath 修复（约束"产物默认写到哪、prompt 怎么写"）与"权限层允许任意访问"是两件事，互不影响、也不矛盾。GA 能任意读写不是目录管理 bug，而是权限默认宽松——与 CC 的 `bypassPermissions`/`acceptEdits` 同理。
