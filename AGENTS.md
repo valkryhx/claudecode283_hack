@@ -275,6 +275,7 @@ node verify-deminified.mjs
 | **Dynamic Workflow 复刻指南**（面向自研 Agent / Codex 开发者的实现蓝图 + 逐 API 源码核对 + 坑清单 + §9 执行期 UI/交互与“再跑历史 workflow”） | `docs/20261012-复刻dynamic-workflow指南.md` |
 | **Skill 渐进式披露 / 通用 tool_result 预算**（L1/L2/L3、Skill 正文/工具结果分通道、50K/2K/500K 阈值、持久化与截断、GA 复刻映射） | `docs/20261017-CC-skill渐进式披露调研.md` |
 | **CC 的 ACP 支持与 adapter 机制**（原生 stream-json control protocol vs 外部 `claude-agent-acp`、JSON-RPC session/update、permission/cancel 映射、GA 复刻边界） | `docs/20261019-CC-ACP支持调研.md` |
+| **CC 被外部调用面全景（303 复核）**（ACP 0 命中；8 条通道：headless / 双向 stream-json / `--sdk-url` / 后台会话 / 预热池 / `mcp serve` / 内置 SDK / hooks 与权限代答；控制子类型清单与报文；GA 复刻分期） | `docs/20261106-CC被外部调用面调研.md` |
 | **CC 看图（view image）实现**（无独立 view_image 工具；用户粘贴/路径 → image block、Read 工具图片分支、magic bytes 校验、预算常量、tool_result 数组结构、OpenAI 兼容降级、复刻代码骨架） | `docs/20261024-CC-view-image实现调研.md` |
 | **CC 输入框预测补全（prompt suggestion）实现**（四层开关、焦点/plan/限流/缓存门禁、复用父前缀的 forked query、固定指令全文、14 条过滤规则与中日韩词数加权、placeholder 展示、Tab/→ 接受、20 次未用的退避机制、SDK `prompt_suggestion` 帧与 `set_prompt_suggestions_paused`、复刻骨架） | `docs/20261024-CC-prompt-suggestion实现调研.md` |
 | **CC 执行中继续输入（边跑边收）机理**（统一命令队列、now/next/later 优先级、prompt.submit hook 与 screeningPending、轮内 fold 的 queued_command attachment 与包装文本、drain 循环与 followers 合并、now→abort 中断、低延迟提交 background/interrupt/cancel、Esc 清队列、上箭头编辑与 queued_turn_count、复刻清单） | `docs/20261024-CC-执行中继续输入机理调研.md` |
