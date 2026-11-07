@@ -1,18 +1,28 @@
 On Windows, always run commands through Git Bash.
 
-Use exec_command with shell="bash" and login=false. The tool's DEFAULT shell is
-PowerShell, so you MUST pass shell="bash" explicitly on every call - do not rely on
-the default and do not merely claim you are in Git Bash. Use login=true only when
-shell startup files are explicitly required.
+Do not use exec_command with shell="bash" on this machine: it resolves to the WSL
+stub and fails with "no installed distributions". The tool's DEFAULT shell is
+PowerShell. Use the PowerShell wrapper with the absolute Git Bash path:
+  & 'E:\Git\bin\bash.exe' -lc '<script>'
+
+Do not rely on the default shell and do not merely claim you are in Git Bash. Verify
+with printf '%s\n' "$0" and uname -s; Git Bash should report /usr/bin/bash and
+MINGW64_NT-*. Use login=true only when shell startup files are explicitly required.
 
 For any command that touches Chinese paths, arguments, or output, set at the top of
 the script:
   export LANG=C.UTF-8
   export LC_ALL=C.UTF-8
 
-Path formats are not interchangeable. Inside Git Bash use POSIX paths (/d/... or
-./relative). Windows programs (python, node) do NOT understand /d/... - pass them
-native paths (D:\... or D:/...). Never mix the two in one command.
+Path formats are not interchangeable. The repository is on D:, so inside Git Bash use
+POSIX paths (/d/... or ./relative). The Git Bash installation is on E:, so use /e/...
+for its files. Windows programs (python, node) do NOT understand /d/... or /e/... -
+pass native paths (D:\... / D:/... or E:\... / E:/...). Never mix the two in one
+command.
+
+Node is installed at G:\nodejs and is available inside Git Bash as /g/nodejs/node.
+Use node --version to check the current version; do not hard-code an old version.
+Use python (not python3, which may resolve to the WindowsApps stub).
 
 Write text files as UTF-8 without BOM and with LF endings. In Python use
 open(path, "w", encoding="utf-8", newline="\n"). Never use GBK / code page

@@ -27,7 +27,7 @@
 Git 配置分层，最底层的系统级开关是罪魁：
 
 ```
-系统级   D:\Git\etc\gitconfig      core.autocrlf = true     ← Git for Windows 安装器默认
+系统级   E:\Git\etc\gitconfig      core.autocrlf = true     ← Git for Windows 安装器默认
 全局级   ~/.gitconfig               (未设置)
 仓库级   <repo>/.git/config         (无覆盖)
 ```
@@ -36,7 +36,7 @@ Git 配置分层，最底层的系统级开关是罪魁：
 
 ```bash
 git config --show-origin --get-all core.autocrlf
-# file:D:/Git/etc/gitconfig   true      ← 真正的元凶
+# file:E:/Git/etc/gitconfig   true      ← 真正的元凶
 ```
 
 `core.autocrlf=true` 的语义：提交时 CRLF→LF，检出时 LF→CRLF。
@@ -44,7 +44,7 @@ git config --show-origin --get-all core.autocrlf
 
 ## 3. 最终方案：仓库内 `.gitattributes` 统一 LF
 
-文件 `D:\git_codes\claudecode283_hack\.gitattributes`（**入库，随 clone 走**）：
+文件 `D:\git_repos\claude_hack\.gitattributes`（**入库，随 clone 走**）：
 
 ```gitattributes
 # 默认：所有文件按文本处理，入库与检出统一 LF
