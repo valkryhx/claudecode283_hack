@@ -71,13 +71,31 @@
 
 ```js
 function zi({taskId, toolUseId, taskType, outputFile, status, summary, body, trailing}) {
-  let d = [["task-id", taskId], ["tool-use-id", toolUseId], ["task-type", taskType],
-           ["output-file", outputFile], ["status", status], ["summary", summary]];
-  let o = "<task-notification>";
-  for (let [k, v] of d) if (v) o += `\n<${k}>${v}</${k}>`;
-  return `${o}${body ?? ""}\n</task-notification>${trailing ?? ""}`;
+  let d = [[vM, taskId], [R5, toolUseId], [Ej, taskType], [Yqe, outputFile], [av, status], [M_, summary]],
+    o = `<${Bu}>`;
+  for (let [a, T] of d) if (T) o += `
+<${a}>${T}</${a}>`;
+  let f = (trailing ?? "").replaceAll(new RegExp(`<(?=\\s*/\\s*${Bu}\\b)`, "gi"), "&lt;");
+  return `${o}${body ?? ""}
+</${Bu}>${f}`;
 }
 ```
+
+常量在 `m0051_0x1126c209.js:71-99`（`m0502` 通过 `chunk-xrwdh0g4.js` import 进来），都是**保留的字符串**（真名，非改名）：
+
+```js
+var Bu = "task-notification", vM = "task-id", R5 = "tool-use-id", Ej = "task-type";
+var Yqe = "output-file", av = "status", M_ = "summary", oB = "note",
+    nne = "Background command ";
+var dcn = 'Agent "', Mjs = "finished", Djs = `" ${Mjs}`;
+```
+
+注意两处细节，都是实测能对上、脑补对不上的：
+
+1. **`trailing` 会被转义**（`<` 紧跟 `\/task-notification` 时替换成 `&lt;`），防止被嵌套内容伪造闭合标签。
+2. **`nne` / `dcn` 是两个不同的 summary 前缀**：`"Background command "` 与 `'Agent "'`，
+   分别对应 bash 类与 agent 类通知——这解释了实测里两类通知长得不一样（§10.9 末）。
+   另有 `vHr()`（`m0051:93`）= `` ` (exit code ${t}${e ? `: ${e}` : ""})` ``，正是 bash 通知尾部那段。
 
 配套还有一个**反向解析正则** `aDn`（同文件第 22 行），用于从历史里把通知再读回来：
 
@@ -1062,16 +1080,33 @@ sessions：`0c4e9c58-30b0-4f8e-84a3-60213c58218b`（66 行）
 两次通知的 `<task-id>` 都是 `ae2e02e1e35a765c5`，但 `origin.runId` 从 `0mw6lw4p5-c47ba542` 变成 `0mw6lw9y3-726e5c73`，`<usage>` 从 `19910 tok / 1584 ms` 变成 `19948 tok / 8126 ms`。
 这正好印证 §2.1 第 3 条与 `<note>` 原文：「the same task-id may notify more than once」的**实现方式是换 `runId`、保留 `taskId`**。
 
-**② `SendMessage` 的返回值精确对应 `m1928:3096-3112` 的 `in_process` 分支。**
+**② 返回值只有 `success` / `message` / `resumedAgentId` / `pin`，没有 `revivedAgentId`——但这一条不能用来判定走了哪条分支。**
 
-```js
-return { data: { success:!0,
-  ...(V.inlineHandback ? Us(...) : { message: `Resuming agent ${os(r.agentName)}` }),
-  ...(K ? {} : { resumedAgentId: C, revivedAgentId: C }),   // ← 注意
-  ...we } };                                                 // we = { pin } 
+实测：
+
+```json
+{"success":true,"message":"Resuming agent ae2e02e","resumedAgentId":"ae2e02e1e35a765c5",
+ "pin":{"id":"ae2e02e1e35a765c5","name":"ae2e02e1e35a765c5","ref":"ae4211"}}
 ```
 
-实测结果里**有 `resumedAgentId` 和 `pin`、但没有 `revivedAgentId`**，说明命中的是 3105 那条更早的分支（`m1928:3096-3112`），而非 3264。两条分支的差别在 `!H && L`（`L` = 当前 owner 是否为自己），运行时 `L` 为真所以只回 `resumedAgentId`。**静态分析里没区分这两条分支，实测把它区分开了。**
+源码里 `revivedAgentId` 出现在两个分支（`m1928:3111` 的 `case "agent-stopped"` 和 `m1928:3265` 的 `case "agent-evicted"`），
+**两个分支都带它**，所以「有没有它」区分不了分支。
+
+更关键的是：这个字段**根本到不了模型眼前**。`SendMessage` 的 `mapToolResultToToolResultBlockParam`（`m1928:1977-1990`）在解构时把它主动摘掉了：
+
+```js
+let { display, revivedAgentId, inlineHandback, ...b } = { display:void 0, revivedAgentId:void 0, inlineHandback:void 0, ...s };
+// 之后只用 b，revivedAgentId 被丢弃
+```
+
+它是给**宿主内部**用的信号——`m2068:557` 读它来做 `ie.set(revivedAgentId, Re)`（把 agent 记进某张表）。
+所以「运行时没看到 `revivedAgentId`」只有「被 mapper 剥掉了」这一个解释，**不构成分支证据**。
+
+> ⚠️ 这一条是**自我更正**：初版据此断言「命中的是 3108 那条分支」，那个推断不成立，已撤回。
+> 分支实际由 `X()`（`m1921:619-641`）从 task 状态判定：`running` → `agent-live`；
+> `stoppedByUser` → `agent-stopped-by-user`；其余已结束 → `agent-stopped`；不在表里 → `agent-evicted`。
+> 本次已完成的 agent 是 `LocalAgentTask` 且仍在注册表里，按此应落 `agent-stopped`（`m1928:3068`），
+> **但这是静态推断，未做运行时确认**——要确认得在 `X()` 上打点，本轮没做。
 
 **③ `pin` 与 `ref` 是防「同名换人」的守卫（静态分析漏掉的一整块）。**
 
