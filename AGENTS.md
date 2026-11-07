@@ -87,6 +87,10 @@
 | `claudecode303/modules/` | 从 303 `.bun` 段提取的 **2,431 个有效明文 JS 模块**（6 MiB 上限；2,433 个 marker，2 个 span 跳过）。注意：2,431 是有效模块数，marker 数不等于模块数 |
 | `claudecode303/modules/INDEX.tsv` | 303 模块索引：idx / off / size / wf_hits / file / tokens（2,431 条数据行） |
 | `claudecode303/extracted/` | 303 总览、283→303 入口映射、hooks、mods、跨版本候选；详见 §6 |
+| `claudecode319/claude.exe` | **本机现行输入物**，Claude Code v2.1.319，344,807,072 B，Bun `--compile` 产物；SHA256 `2E055732C9D03D22700D9046251A8370B673607BFCC9E4D16A1B0E8FB1345CBD`，BUILD_TIME `2026-11-05T18:14:18Z`，GIT_SHA `fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2` |
+| `claudecode319/MANIFEST.md` | 319 输入物快照、PE 段、Bun 载荷、产物统计、跳过区与复现命令 |
+| `claudecode319/modules/` | 从 319 `.bun` 段提取的 **2,882 个有效明文 JS 模块**（6 MiB 上限 + `--carve-head`；2,883 个 marker，1 个 span 跳过、1 个 span 切出模块头） |
+| `claudecode319/modules/INDEX.tsv` | 319 模块索引：idx / off / size / wf_hits / file / tokens（2,882 条数据行） |
 | `claude.exe.i64` | IDA 数据库，1.1 GB，**对本任务无用**（源码不在原生代码里） |
 
 > 为什么源码能直接读 → `docs/why-source-is-readable.md`
@@ -133,6 +137,38 @@
 - 3 个 >1 MiB 模块 `m0459_0xecff32a.js`、`m1496_0xfe682a4.js`、`m1635_0x101da730.js` 的 `deminified` 复用 `full/`，**符号仍是压缩名**；
 - 4 个 beautifier 失败并安全回退原文：`m0775_0xf6ccb47.js`、`m1474_0xfe0bcdb.js`、`m1697_0x1045e023.js`、`m1777_0x10644bf2.js`；
 - 303 不是 283 的模块平移：模块编号、大小、共享 chunk 都变了。**禁止用模块号直接套用**，必须用导出名、字符串、属性名或调用链复核。
+
+### 3.3 319：`reconstructed319/`（2026-11-07 新增）
+
+| 目录 / 文件 | 内容 | 规模 / 状态 |
+| --- | --- | --- |
+| `full/` | 319 线 A：全部模块仅格式化，符号仍压缩 | 2,882 |
+| `deminified/` | 319 线 B：证据驱动去混淆 ★ | 2,882 |
+| `full-report.json` | 319 格式化报告 | 2,882 行 |
+| `deminify-names.json` | 319 改名账本（S/A/B/C 证据） | **100,496** 条改名 |
+| `deminify-report.json` | 319 去混淆执行报告 | 2,882 行 |
+| `deminify-verify.json` | 319 语义复验 | 2,882/2,882 `ok:true` |
+| `spans/` | **被跳过 marker span 的逐字节归档**（48 个切片 + `REPORT.md`） | 3.62 MB |
+| `extracted/` | 319 分析文档（被跳过 span 完整分析） | 1 |
+
+319 的已验证事实（来自 `claudecode319/MANIFEST.md`；复制 exe 后已复核 SHA256、文件数、INDEX 数据行数、full/deminified 文件数与 verify 报告）：
+
+- 本机 `claude` 命令解析到 `C:\Users\Administrator\.local\bin\claude.exe`，v2.1.319；
+- `claude.exe` 344,807,072 B，SHA256 `2E055732C9D03D22700D9046251A8370B673607BFCC9E4D16A1B0E8FB1345CBD`，BUILD_TIME `2026-11-05T18:14:18Z`，GIT_SHA `fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2`；
+- `.bun` 段 `0x941e400`，2,883 个 marker，**2,882** 个有效模块，模块总字节 53,398,027；
+- `modules/` 有 **2,882** 个 `m*.js`；`INDEX.tsv` 共 2,883 行 = 1 行表头 + **2,882** 行数据；
+- `reconstructed319/full/` 与 `reconstructed319/deminified/` 各 **2,882** 个文件；
+- 改名总数 **100,496**（S 33,104 / A 35,788 / B 5,968 / C 25,636）；
+- 4 个 >1 MiB 模块 `m0591_0x11be624e.js`（5.4 MB）、`m2124_0x1363573f.js`、`m1764_0x12ee5476.js`、`m0302_0x117cfe48.js` 的 `deminified` 复用 `full/`，**符号仍是压缩名**；
+- 5 个 beautifier 失败并回退：`m0769_0x124037e1.js`、`m1738_0x12e7929f.js`、`m1957_0x133528ed.js`、`m2041_0x134ee180.js`、`m2136_0x1383a002.js`；已逐字节审计，与原文**仅差结尾 1 个 NUL 被写成空格**，正文未改，且线 B 对它们正常改名；
+- 319 不是 303 的模块平移：模块编号、大小、共享 chunk 都变了。**禁止用模块号直接套用**；
+- **1 个 span 被跳过、1 个 span 被切出模块头**，均已完整分析并逐字节归档到 `claudecode319/spans/`（详见 `claudecode319/extracted/20261107-被跳过span完整分析.md`）：
+  - marker 1（141 MB）从 `.rdata` 伪起点跨 **15 个 PE 段**，内部 **0 个模块标记**，只有 Bun 运行时字符串表 → **不含业务源码，仍跳过**；
+  - marker 2882 前 **4,482 B 是完整真实模块**（原子状态库 `chunk-sa45ym56.js`，16 个内部文件、导出 jose 的 JWT API），其后是 chunk 索引表 → **含独有源码，已用 `--carve-head` 收入 `modules/` 并走完线 A/B（改名 2 处）**；该模块在其余 2,881 个模块里检索命中数为 0，且被 `m1764` 显式 import；
+  - 切点规则：`\x00` 只有其后 64 B 可打印率 < 0.95 才算模块结束 —— marker 2882 在偏移 422 有游离 NUL，靠此规则才没提前截断；
+  - 2,883 marker 中有 2 个在 `.rdata` 是伪标记（marker 0 的 18 B 就是 `// @bun @bytecode\n` 本身）→ **marker 数 ≠ 模块数**；
+  - `spans/` 48 个切片逐一比对 **ok=48 bad=0**；
+- 线 C（声明级精读）与子系统专项可读化（rewind / Agent Team / hooks）**尚未对 319 执行**；跨版本对照也尚未生成。
 
 ---
 
@@ -197,6 +233,59 @@ node verify-deminified.mjs
 > 303 提取时使用 **6 MiB** 上限（283 用 4 MiB）。完整命令与 PE/Bun 事实见
 > `claudecode303/MANIFEST.md`。
 
+### 5.2 319 复现（独立目录，不覆盖 283 / 303）
+
+同一套工具，只换 4 个环境变量。319 全量跑完实测：线 A 约 110 s，线 B 6 分片约 264 s。
+
+```bash
+cd reconstructed/tools
+export RE_ROOT="D:/git_repos/claude_hack/reconstructed319"
+export RE_MODULES="D:/git_repos/claude_hack/claudecode319/modules"
+export RE_FULL="D:/git_repos/claude_hack/reconstructed319/full"
+export RE_DEMINIFIED="D:/git_repos/claude_hack/reconstructed319/deminified"
+
+# 线 A
+node full.mjs && node verify-full.mjs
+
+# 线 B（6 分片并行）
+for i in 0 1 2 3 4 5; do node deminify.mjs --shard $i/6 --quiet & done; wait
+node merge-reports.mjs 6
+for i in 0 1 2 3 4 5; do node verify-deminified.mjs --shard $i/6 & done; wait
+node merge-reports.mjs 6
+```
+
+模块提取（319 同样用 6 MiB 上限）：
+
+```bash
+cd /d/git_repos/claude_hack
+python tools/extract_bun_modules.py \
+  "D:/git_repos/claude_hack/claudecode319/claude.exe" \
+  "D:/git_repos/claude_hack/claudecode319/modules" \
+  --max-size 6M --carve-head
+```
+
+> ⚠️ `--carve-head` 是 319 专用：让提取器在"真模块 + 二进制尾"的 span 里只保留模块头。
+> **不加会得到 2,881 个模块，少了 `m2882_0x144f842f.js`（原子状态库）。**
+> 283/303 的已发布产物没用这个开关，模块数仍是 2,135 / 2,431。
+
+> ⚠️ 本机 `claude` 是**自更新**的，`C:\Users\Administrator\.local\bin\claude.exe` 会随版本变化。
+> 复现前先核对 SHA256 是否仍为 `2E055732C9D03D22700D9046251A8370B673607BFCC9E4D16A1B0E8FB1345CBD`；
+> 若已升级，说明本机版本不再是 319，应新建版本目录而不是覆盖 `claudecode319/`。
+> 完整命令与 PE/Bun 事实见 `claudecode319/MANIFEST.md`。
+
+被跳过的 2 个 marker span（不进 `modules/`，但字节全部归档）：
+
+```bash
+cd /d/git_repos/claude_hack
+python tools/carve_skipped_spans.py \
+  "D:/git_repos/claude_hack/claudecode319/claude.exe" \
+  "D:/git_repos/claude_hack/claudecode319/spans"
+# 产出 48 个逐字节切片 + REPORT.md；命名里的 0xOFFSET 是源文件绝对偏移，可直接复算
+```
+
+> 该工具复用与 `extract_bun_modules.py` **完全相同**的跳过判据（6 MiB 上限 + 非模块尾部），
+> 因此重跑时选中的 span 不会漂移。
+
 > 坑：`m0357_0xc63ba04.js` 是 4.1 MB 的超大模块，Babel 处理极慢（分钟级、GB 级内存）。
 > `deminify.mjs` 对 >1MB 的模块**跳过 AST 改名**，直接复用 `full/`（规则见 `AUTO-NAMING.md` §3 规则 5）。
 
@@ -237,6 +326,13 @@ node verify-deminified.mjs
 | **303 跨版本候选附录**（61 个 283 模块的算法候选；相似度不是等价证明） | `claudecode303/extracted/20261020-cross-version-candidates.md` + `cross-version-candidates.json` |
 | **303 resume / 会话转录机制**（JSONL 事件流、uuid/parentUuid/logicalParentUuid、按类型持久化策略、compact_boundary + preservedMessages、`cnn`/`rer`/`ter` 两种视图与 `Rx=4096` 裁剪、fork、列表轻量扫描） | `docs/20261025-CC-resume机制调研.md` |
 | **GA resume 只显示部分历史的根因与优化设计**（history_replace 未重置视口、compact 无锚点、深度相等推断失效、转录 v2 uuid 事件、backend adapter、分阶段实施） | `docs/20261025-GA-resume优化设计.md` |
+| **319 输入物 / 模块 / 格式化 / 去混淆总览**（2,882 模块、100,496 改名、复验、限制、复现命令） | `claudecode319/MANIFEST.md` |
+| **319 被跳过 span 的完整分析**（marker 1 跨 15 个 PE 段、只有 Bun 运行时表；marker 2882 头部是独有原子状态库 `chunk-sa45ym56.js`；marker 数 ≠ 模块数的原因；**§8 二进制尾三段解剖：141 帧 zstd 内嵌文档 7.74 MB + 2,878×2 的 chunk 名表 + 247 条资源索引；「5,756 个 chunk 名」实为 2,878×2 条目数，真正无引用仅 7 个**） | `claudecode319/extracted/20261107-被跳过span完整分析.md` |
+| **subagent 异步执行 + agent 间通信四通道**（`task-notification` 推送与 fold 点、`SendMessage` 五路由与 `in_process` 分派、`SubagentHandback` 一次性上缴、`notify_when_idle` 订阅；含「不阻塞但也不抢占」的准确语义、反权限洗白三条硬规则、复刻清单） | `docs/20261108-CC-subagent异步与agent间通信机制调研.md` |
+| **319 插件状态库 + 静态扫描 + 授权校验**（`atom/derive/memberOf/read/update` 5 个 API；`"claude-code"` 虚拟模块；强制 plugin/key 字面量→`{reads,writes}` 清单；`PluginState` 声明合并；`xn()` 两条硬规则；`mod` ≡ `plugin`；**外部插件与内置插件共用唯一扫描入口 `Baa()`，全链路只有 1 处按来源分流**） | `claudecode319/extracted/20261107-插件状态库与静态扫描机制.md` |
+| **CC 内置工具实现调研（Bash / PowerShell / Read / Write / Edit / Glob / Grep / WebFetch / WebSearch / Todo / Task / AskUserQuestion / ToolSearch）**（Windows 不吃 PS 语法错的根因：强制 Git Bash + 平台分支提示词；shell snapshot；32767 命令行上限的分段携带 + sha256；只读证明→免权限；结果预算与 `<persisted-output>`；并发分组；路径安全层；复刻清单与常量速查；**§21 为第三方对抗式核验记录：183 条 `模块:行号` 坐标已全部复算落到实码，含 24 处符号/坐标错配与 3 处结论订正**） | `docs/20261107-CC内置工具实现调研.md` |
+| **CC 执行期 UI 渲染对标（283 的字形/文案层）**（具名字形表、`⎿` 结果行、折叠组件 `Hj`、动态键位提示、spinner 帧与 190 个动词、转录模式头） | `docs/20261016-CC-UI渲染对标调研.md` |
+| **CC UX/UI 设计深挖与 319 源码对标（机制层：为什么丝滑/不抖/不跳）**（帧节流 16ms/输入优先 4ms/stdout 背压；双缓冲逐格 diff；`CSI ?2026h` 同步输出包帧；DECSTBM 滚动区 + 已滚出行跳过；`ScrollBox` 与 `pendingScrollDelta` 衰减 + 滚轮加速度曲线；粘底/HWM/锚点；高度锁 `LG`；根限高 + 正文 `overflow:scroll` + 底栏 `flexShrink:0` 的三层分区；底栏单提示优先级状态机 + 三级宽度降级；折叠计数单调化；**§7 复刻清单 P0/P1/P2 + §8 反模式对照表**） | `docs/20261107-CC-UXUI设计深挖与319源码对标.md` |
 
 **命名方法一句话**：Bun `--compile` 是 minify 不是混淆，只压标识符，
 **字符串 / 属性名 / 解构键 / 对象键一律保留**——所有真名只能从这四类保留物里读出来。
@@ -244,7 +340,7 @@ node verify-deminified.mjs
 
 ---
 
-## 7. 当前状态（283 全量完成；303 基础产物完成）
+## 7. 当前状态（283 全量完成；303 基础产物完成；319 线 A/B 完成）
 
 | 项 | 状态 |
 | --- | --- |
@@ -259,7 +355,12 @@ node verify-deminified.mjs
 | 303 去混淆 | ✅ 2,431/2,431，**90,771** 处改名；3 个 >1 MiB 模块复用 full |
 | 303 语义复验 | ✅ 2,431/2,431 `ok:true`，0 失败 |
 | 303 专项分析 | ✅ hooks、mods、workflow / rewind / Agent Team 入口映射已落盘；跨版本候选仍需逐项人工复核 |
-| 解析失败退回原文 | 283: 0；303: 4 个 beautifier 回退（不是模块损坏） |
+| 319 模块提取 | ✅ 2,882 个有效模块（2,883 个 marker；1 个 span 跳过、1 个 span 用 `--carve-head` 切出模块头）；复制 exe 后 SHA256 复核一致 |
+| 319 格式化 | ✅ 2,882/2,882 可解析（5 个 beautifier 回退，已审计仅末字节 NUL→空格） |
+| 319 去混淆 | ✅ 2,882/2,882，**100,496** 处改名；4 个 >1 MiB 模块复用 full |
+| 319 语义复验 | ✅ 2,882/2,882 `ok:true`，0 失败；悬垂 else 补括号 231 处 |
+| 319 专项分析 | ⬜ 未开始：线 C、rewind / Agent Team / hooks 专项可读化、跨版本对照；✅ 已完成：UX/UI 机制层对标（`docs/20261107-CC-UXUI设计深挖与319源码对标.md`） |
+| 解析失败退回原文 | 283: 0；303: 4 个；319: 5 个 beautifier 回退（均不是模块损坏） |
 
 ---
 
