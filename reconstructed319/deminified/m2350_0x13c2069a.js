@@ -1,0 +1,289 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { L5r, N5o, nui } from "B:/~BUN/root/chunk-z2e0ksra.js";
+import { R, F, d } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { ee } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { ae } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import { x } from "B:/~BUN/root/chunk-mwfggkjt.js";
+import { ao } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import { Mo, BB } from "B:/~BUN/root/chunk-4rgskab2.js";
+import { ba } from "B:/~BUN/root/chunk-wthaftk0.js";
+import { Kn } from "B:/~BUN/root/chunk-gvasf6q6.js";
+import { FB } from "B:/~BUN/root/chunk-s7zmwmdt.js";
+import { m1e } from "B:/~BUN/root/chunk-5d6w0m6e.js";
+import { Zi } from "B:/~BUN/root/chunk-r2kdqtaa.js";
+import { randomBytes as C } from "crypto";
+import { createServer as _ } from "http";
+import { parse as b } from "url";
+var E = 300000,
+  T = 30000,
+  v = 60;
+function x_n(r) {
+  try {
+    let t = new URL(r);
+    return t.pathname = t.pathname.replace(/\/+$/, ""), t.host = t.host.toLowerCase(), t.toString();
+  } catch {
+    return r.replace(/\/+$/, "");
+  }
+}
+async function G7n(r) {
+  let n = (await Kn().readAsync())?.mcpXaaIdp?.[x_n(r)];
+  if (!n) return;
+  if (n.expiresAt - Date.now() <= v * 1000) return;
+  return n.idToken;
+}
+async function P(r, idToken, expiresAt) {
+  await Kn().mutate(n => ({
+    ...n,
+    mcpXaaIdp: {
+      ...n.mcpXaaIdp,
+      [x_n(r)]: {
+        idToken: idToken,
+        expiresAt: expiresAt
+      }
+    }
+  }));
+}
+async function zga(r, t) {
+  let e = A(t),
+    n = e ? e * 1000 : Date.now() + 3600000;
+  return await P(r, t, n), n;
+}
+async function n4r(r) {
+  let t = x_n(r);
+  try {
+    await Kn().mutate(e => {
+      if (!e.mcpXaaIdp?.[t]) return e;
+      let mcpXaaIdp = {
+        ...e.mcpXaaIdp
+      };
+      return delete mcpXaaIdp[t], {
+        ...e,
+        mcpXaaIdp: mcpXaaIdp
+      };
+    });
+  } catch (error) {
+    ae("xaa", `clearIdpIdToken(${Mo(t)}) failed: ${d(error)}`);
+  }
+}
+async function Gga(r, clientSecret) {
+  try {
+    return await Kn().mutate(e => ({
+      ...e,
+      mcpXaaIdpConfig: {
+        ...e.mcpXaaIdpConfig,
+        [x_n(r)]: {
+          clientSecret: clientSecret
+        }
+      }
+    }));
+  } catch (error) {
+    return {
+      success: !1,
+      warning: d(error)
+    };
+  }
+}
+async function r4r(r) {
+  return (await Kn().readAsync())?.mcpXaaIdpConfig?.[x_n(r)]?.clientSecret;
+}
+async function Vga(r) {
+  let t = x_n(r);
+  try {
+    await Kn().mutate(e => {
+      if (!e.mcpXaaIdpConfig?.[t]) return e;
+      let mcpXaaIdpConfig = {
+        ...e.mcpXaaIdpConfig
+      };
+      return delete mcpXaaIdpConfig[t], {
+        ...e,
+        mcpXaaIdpConfig: mcpXaaIdpConfig
+      };
+    });
+  } catch (error) {
+    ae("xaa", `clearIdpClientSecret(${Mo(t)}) failed: ${d(error)}`);
+  }
+}
+function fetchFn(r, t) {
+  return fetch(r, {
+    ...t,
+    ...ba({
+      url: String(r)
+    }),
+    signal: AbortSignal.timeout(T)
+  }).catch(e => BB(e, r));
+}
+async function V7n(r) {
+  let t = r.endsWith("/") ? r : r + "/";
+  if (!URL.canParse(".well-known/openid-configuration", t)) throw new R(`XAA IdP: OIDC discovery failed: issuer is not a valid URL: ${Mo(r)}`, "XAA IdP: OIDC discovery failed: issuer is not a valid URL");
+  let e = new URL(".well-known/openid-configuration", t),
+    n = await fetchFn(e, {
+      headers: {
+        Accept: "application/json"
+      }
+    });
+  if (!n.ok) throw Error(`XAA IdP: OIDC discovery failed: HTTP ${n.status} at ${Mo(e.href)}`);
+  let o;
+  try {
+    o = await n.json();
+  } catch {
+    throw Error(`XAA IdP: OIDC discovery returned non-JSON at ${Mo(e.href)} (captive portal or proxy?)`);
+  }
+  let i = L5r.safeParse(o);
+  if (!i.success) throw Error(`XAA IdP: invalid OIDC metadata: ${i.error.message}`);
+  if (!URL.canParse(i.data.token_endpoint) || new URL(i.data.token_endpoint).protocol !== "https:") throw Error(`XAA IdP: refusing non-HTTPS token endpoint: ${Mo(i.data.token_endpoint)}`);
+  return i.data;
+}
+function A(r) {
+  let t = r.split(".");
+  if (t.length !== 3) return;
+  try {
+    let e = ee(Buffer.from(t[1], "base64url").toString("utf-8"));
+    return typeof e.exp === "number" ? e.exp : void 0;
+  } catch {
+    return;
+  }
+}
+function O(r, t, e, n) {
+  let o = null,
+    i = null,
+    l = null,
+    m = () => {
+      if (o?.removeAllListeners(), o?.on("error", () => {}), o?.close(), o = null, i) clearTimeout(i), i = null;
+      if (e && l) e.removeEventListener("abort", l), l = null;
+    };
+  return new Promise((f, g) => {
+    let p = !1,
+      h = a => {
+        if (p) return;
+        p = !0, m(), f(a);
+      },
+      c = a => {
+        if (p) return;
+        p = !0, m(), g(a);
+      };
+    if (e) {
+      if (l = () => c(Error("XAA IdP: login cancelled")), e.aborted) {
+        l();
+        return;
+      }
+      e.addEventListener("abort", l, {
+        once: !0
+      });
+    }
+    o = _((a, s) => {
+      let u = b(a.url || "", !0);
+      if (u.pathname !== "/callback") {
+        s.writeHead(404), s.end();
+        return;
+      }
+      let y = u.query.code,
+        state = u.query.state,
+        I = u.query.error;
+      if (I) {
+        let error_description = u.query.error_description;
+        s.writeHead(400, {
+          "Content-Type": "text/html"
+        }), s.end(FB({
+          ok: !1,
+          heading: "Sign-in failed",
+          message: "Close this tab and try again from Claude Code.",
+          detail: `${I}: ${error_description ?? ""}`
+        })), c(Error(`XAA IdP: ${I}${error_description ? ` \u2014 ${error_description}` : ""}`));
+        return;
+      }
+      if (state !== t) {
+        s.writeHead(400, {
+          "Content-Type": "text/html"
+        }), s.end(FB({
+          ok: !1,
+          heading: "Sign-in failed",
+          message: "State mismatch. Close this tab and try again."
+        })), c(Error("XAA IdP: state mismatch (possible CSRF)"));
+        return;
+      }
+      if (!y) {
+        s.writeHead(400, {
+          "Content-Type": "text/html"
+        }), s.end(FB({
+          ok: !1,
+          heading: "Sign-in failed",
+          message: "No authorization code received. Close this tab and try again."
+        })), c(Error("XAA IdP: callback missing code"));
+        return;
+      }
+      s.writeHead(200, {
+        "Content-Type": "text/html"
+      }), s.end(FB({
+        ok: !0,
+        heading: "Sign-in complete",
+        message: "You can close this tab and return to Claude Code."
+      })), h(y);
+    }), o.on("error", a => {
+      if (a.code === "EADDRINUSE") {
+        let s = x() === "windows" ? `netstat -ano | findstr :${r}` : `lsof -ti:${r} -sTCP:LISTEN`;
+        c(Error(`XAA IdP: callback port ${r} is already in use. Run \`${s}\` to find the holder.`));
+      } else c(Error(`XAA IdP: callback server failed: ${a.message}`));
+    }), o.listen(r, "127.0.0.1", () => {
+      try {
+        n();
+      } catch (error) {
+        c(F(error));
+      }
+    }), o.unref(), i = setTimeout(a => a(Error("XAA IdP: login timed out")), E, c), i.unref();
+  });
+}
+async function $2o(r) {
+  return ao("mcp_xaa_idp_login", async () => {
+    let {
+        idpIssuer: idpIssuer,
+        idpClientId: e
+      } = r,
+      n = await G7n(idpIssuer);
+    if (n) return ae("xaa", `Using cached id_token for ${Mo(idpIssuer)}`), n;
+    ae("xaa", `No cached id_token for ${Mo(idpIssuer)}; starting OIDC login`);
+    let metadata = await V7n(idpIssuer),
+      i = r.callbackPort ?? (await m1e()),
+      l = `http://localhost:${i}/callback`,
+      state_2 = C(32).toString("base64url"),
+      clientInformation = {
+        client_id: e,
+        ...(r.idpClientSecret && {
+          client_secret: r.idpClientSecret
+        })
+      },
+      {
+        authorizationUrl: authorizationUrl,
+        codeVerifier: codeVerifier
+      } = await N5o(idpIssuer, {
+        metadata: metadata,
+        clientInformation: clientInformation,
+        redirectUrl: l,
+        scope: "openid",
+        state: state_2
+      }),
+      authorizationCode = await O(i, state_2, r.abortSignal, () => {
+        if (r.onAuthorizationUrl(authorizationUrl.toString()), !r.skipBrowserOpen) ae("xaa", "Opening browser to IdP authorization endpoint"), Zi(authorizationUrl.toString());
+      }),
+      c = await nui(idpIssuer, {
+        metadata: metadata,
+        clientInformation: clientInformation,
+        authorizationCode: authorizationCode,
+        codeVerifier: codeVerifier,
+        redirectUri: l,
+        fetchFn: fetchFn
+      });
+    if (!c.id_token) throw Error("XAA IdP: token response missing id_token (check scope=openid)");
+    let a = A(c.id_token),
+      s = a ? a * 1000 : Date.now() + (c.expires_in ?? 3600) * 1000;
+    try {
+      await P(idpIssuer, c.id_token, s), ae("xaa", `Cached id_token for ${Mo(idpIssuer)} (expires ${new Date(s).toISOString()})`);
+    } catch (error) {
+      ae("xaa", `id_token cache write failed: ${d(error)}`);
+    }
+    return c.id_token;
+  });
+}
+export { x_n, G7n, zga, n4r, Gga, r4r, Vga, V7n, $2o };

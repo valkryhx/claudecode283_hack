@@ -1,0 +1,27561 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  Pe,
+  De
+} from "B:/~BUN/root/chunk-vz9zea4j.js";
+import {
+  Rl,
+  Zus,
+  kZ,
+  hXe
+} from "B:/~BUN/root/chunk-3qkmk2e4.js";
+import {
+  Pr
+} from "B:/~BUN/root/chunk-q78ga0zw.js";
+import {
+  g0,
+  L_,
+  Zm,
+  If,
+  l4e,
+  H,
+  Po,
+  z,
+  Bnt,
+  Ee,
+  Oo,
+  Nwe,
+  Fwe,
+  ye,
+  Ml,
+  S0,
+  lv,
+  Pc,
+  w7,
+  $we,
+  tw,
+  $ae,
+  q,
+  er,
+  Pj,
+  LC,
+  oVs,
+  YKn,
+  dVs,
+  x$r,
+  mIo,
+  gVs,
+  xn,
+  NVs,
+  FVs,
+  ns
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  b,
+  f,
+  de,
+  bo,
+  ka
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  Ke,
+  We,
+  R,
+  qe,
+  F,
+  d,
+  k,
+  tr,
+  Lh,
+  Ak,
+  K,
+  qt,
+  nx,
+  H_,
+  jIo,
+  vY,
+  yqn,
+  yun,
+  Ai
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  J,
+  zt,
+  we,
+  Ao
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  Oc,
+  yS,
+  dqn,
+  z$r,
+  Cl,
+  Ks,
+  Jv,
+  wh,
+  T0,
+  I$e
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  g,
+  m,
+  c,
+  ao
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  $Pr,
+  Dbe,
+  xa,
+  z1,
+  Ti,
+  ls,
+  i$t,
+  Az,
+  uo,
+  Afe,
+  k3i,
+  N3,
+  OZe,
+  _ko,
+  LPs,
+  NPs,
+  Zse,
+  _4,
+  C3i,
+  a$t,
+  A3i,
+  kOr,
+  JNe,
+  hBn,
+  bko,
+  BPs,
+  ID,
+  QNe,
+  Bbe,
+  Xon,
+  ERe,
+  Sko,
+  Qee,
+  JPs,
+  QPs,
+  Gx,
+  nyt,
+  POr,
+  zy,
+  rt,
+  Cw,
+  Vt,
+  oT,
+  IRe,
+  SO,
+  nJ,
+  pOs,
+  DRe,
+  Oko,
+  mOs,
+  Ef,
+  Qa,
+  iFe,
+  La,
+  ul,
+  Rt,
+  fp,
+  Vf,
+  pFe,
+  hn,
+  dr,
+  qZe,
+  nd,
+  gi,
+  cc,
+  Kx,
+  LD,
+  nS,
+  jvo,
+  Hfe,
+  jt,
+  Qr,
+  _r,
+  iH,
+  KRe,
+  ql,
+  qL,
+  qi,
+  ms,
+  pn,
+  v,
+  rn,
+  Vyt,
+  z$t,
+  K8i,
+  JIs,
+  hEo,
+  $fe,
+  JRe,
+  ZIs,
+  eMs,
+  EU,
+  vl,
+  fJ,
+  Us,
+  Xh,
+  sM,
+  Wfe,
+  Le,
+  fe
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  Ue,
+  Nr,
+  Zr
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  $c,
+  wj,
+  i,
+  Ar
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  nn
+} from "B:/~BUN/root/chunk-y1kkrqy9.js";
+import {
+  Fb,
+  yh,
+  vt,
+  t,
+  _,
+  AN,
+  ee,
+  ds,
+  Ri,
+  m7,
+  dWs,
+  ie,
+  e4e,
+  Iwe
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  Qo,
+  P,
+  Q,
+  tt,
+  CM,
+  Pf
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  tf,
+  wwt,
+  DH,
+  bi,
+  HHr,
+  nK
+} from "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  St,
+  EM,
+  a,
+  Gs
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  Xo,
+  czn,
+  yi,
+  $o,
+  Kt,
+  Ib,
+  kpe
+} from "B:/~BUN/root/chunk-6n5g80b8.js";
+import {
+  aP,
+  Vpe,
+  SSt,
+  um,
+  _dn,
+  XBs,
+  Jpe,
+  Nxo,
+  fr,
+  tg,
+  ty,
+  Gi,
+  CH,
+  eY,
+  Pt,
+  RH,
+  Qu,
+  bM,
+  dxe,
+  dae,
+  K1t,
+  Edn,
+  bFr,
+  zxo
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import {
+  jn
+} from "B:/~BUN/root/chunk-rr294jrm.js";
+import {
+  Ct,
+  pe
+} from "B:/~BUN/root/chunk-thn0wk2x.js";
+import {
+  Yta,
+  V
+} from "B:/~BUN/root/chunk-f9dwrymq.js";
+import {
+  au,
+  OFr,
+  MFr,
+  WSt
+} from "B:/~BUN/root/chunk-gq1er5y2.js";
+import {
+  yn,
+  fS,
+  njt,
+  tme,
+  ys
+} from "B:/~BUN/root/chunk-88zb3509.js";
+import {
+  ut,
+  lt
+} from "B:/~BUN/root/chunk-3mm90xb6.js";
+import {
+  jr,
+  fo,
+  Sxe,
+  sme,
+  cna
+} from "B:/~BUN/root/chunk-46ahshhq.js";
+import {
+  bN
+} from "B:/~BUN/root/chunk-d10hhz4p.js";
+import {
+  qFr,
+  qO,
+  SN,
+  zn,
+  eK
+} from "B:/~BUN/root/chunk-nsneqfcc.js";
+import {
+  C2n,
+  Bte
+} from "B:/~BUN/root/chunk-x1xft50h.js";
+import {
+  djs,
+  pG,
+  lHr,
+  Zu,
+  TN,
+  vk,
+  OT,
+  Ek
+} from "B:/~BUN/root/chunk-65j2302z.js";
+import {
+  Dn
+} from "B:/~BUN/root/chunk-9jpwd6f1.js";
+import {
+  U2n,
+  Hr,
+  Ve
+} from "B:/~BUN/root/chunk-myfamxtp.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import {
+  bt
+} from "B:/~BUN/root/chunk-ja520myc.js";
+import {
+  zo,
+  SAe,
+  mKe,
+  eHe,
+  wAe,
+  e7i,
+  i0r,
+  q_t,
+  Iie,
+  ZUt
+} from "B:/~BUN/root/chunk-5az22yft.js";
+import {
+  ran,
+  $u,
+  kDr,
+  MUt,
+  J3,
+  CJ
+} from "B:/~BUN/root/chunk-grwykqvw.js";
+import {
+  Jl
+} from "B:/~BUN/root/chunk-nzh2qzgc.js";
+import {
+  Xd
+} from "B:/~BUN/root/chunk-q8eknvfd.js";
+import {
+  ln,
+  ku,
+  Ds,
+  UJ,
+  hHe,
+  xE,
+  MO,
+  zSe,
+  Qd,
+  aLr,
+  VQi,
+  KQi,
+  iZi,
+  Sk,
+  Yp,
+  Bbt,
+  wT,
+  kT,
+  Fpe,
+  h1t
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  Et
+} from "B:/~BUN/root/chunk-2f1svh63.js";
+import {
+  le
+} from "B:/~BUN/root/chunk-begxsvab.js";
+import {
+  Xl,
+  Upe,
+  h5,
+  mn
+} from "B:/~BUN/root/chunk-44q965xg.js";
+import {
+  xHe,
+  lqe,
+  gr,
+  to,
+  OHe
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  IO,
+  r5,
+  Pan,
+  LJ,
+  un,
+  Ym,
+  be,
+  t0,
+  $ie,
+  cHe,
+  yt,
+  zv,
+  Uie,
+  Ob,
+  xKe
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import {
+  tn
+} from "B:/~BUN/root/chunk-1fg2bpc3.js";
+import {
+  sd,
+  ts,
+  Te,
+  Fn,
+  Pd,
+  cM,
+  us,
+  sbt
+} from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import {
+  Zd
+} from "B:/~BUN/root/chunk-3vtkd50k.js";
+import {
+  BD,
+  CMs,
+  vet,
+  Ky,
+  tUt,
+  rAe,
+  hd,
+  T9i,
+  IFe,
+  Ou,
+  Tf,
+  ajn,
+  P9i,
+  DFe,
+  ySe,
+  aDs,
+  aUt
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  Wt
+} from "B:/~BUN/root/chunk-b91sxvrb.js";
+import {
+  ba
+} from "B:/~BUN/root/chunk-wthaftk0.js";
+import {
+  lBt
+} from "B:/~BUN/root/chunk-zn7b14jn.js";
+import {
+  Okr,
+  Xoe
+} from "B:/~BUN/root/chunk-yhafkw66.js";
+import {
+  aXi,
+  ZMr
+} from "B:/~BUN/root/chunk-xgg9zsk6.js";
+import {
+  Mr
+} from "B:/~BUN/root/chunk-xqymp2nr.js";
+import {
+  zm
+} from "B:/~BUN/root/chunk-amar4116.js";
+import {
+  dt,
+  Yt,
+  Me
+} from "B:/~BUN/root/chunk-9kvvd0hy.js";
+import {
+  XJ,
+  iFr,
+  yBs,
+  _Bs,
+  aFr,
+  ota,
+  Ztt,
+  TT,
+  UA
+} from "B:/~BUN/root/chunk-1x03q1j7.js";
+import {
+  _Ae,
+  Yjn,
+  IV,
+  Z3
+} from "B:/~BUN/root/chunk-3v92y8yw.js";
+import {
+  bu
+} from "B:/~BUN/root/chunk-5h4fwkjy.js";
+import {
+  eN,
+  E_t
+} from "B:/~BUN/root/chunk-trd3c21n.js";
+import {
+  Cf,
+  es
+} from "B:/~BUN/root/chunk-0s9zh2h6.js";
+import {
+  Xvs,
+  Ezi,
+  Jvs,
+  pgo,
+  Iv,
+  _g,
+  ht,
+  wn,
+  Mv
+} from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  pd
+} from "B:/~BUN/root/chunk-838fxqce.js";
+import {
+  $e
+} from "B:/~BUN/root/chunk-fg0appz9.js";
+import {
+  BS,
+  aZe,
+  lon,
+  OHt
+} from "B:/~BUN/root/chunk-2gz7xsvb.js";
+import {
+  wTe,
+  kq,
+  aca,
+  ufs,
+  bce,
+  QJt,
+  hL,
+  F6,
+  TZ
+} from "B:/~BUN/root/chunk-0s00dkj6.js";
+import {
+  Ebe,
+  uxr,
+  eUn,
+  nT,
+  mfe,
+  Mbo,
+  IAs,
+  nUn,
+  MAs,
+  DAs,
+  Mrn,
+  Drn,
+  fxr,
+  pxr,
+  Lrn,
+  LAs,
+  lHt,
+  NAs,
+  FAs,
+  zQe,
+  rUn,
+  HAs,
+  oUn,
+  $As,
+  Tbe,
+  Nrn,
+  Frn,
+  Nbo,
+  Fbo,
+  Hbo,
+  UAs,
+  $bo,
+  x2e,
+  hfe,
+  Ubo,
+  vz,
+  pRe,
+  jbo,
+  Hrn,
+  QI,
+  Wbo,
+  dUn,
+  hxr,
+  $rn,
+  zbo,
+  Gbo,
+  Vbo,
+  ONe,
+  vgt,
+  P2e,
+  yxr,
+  Urn,
+  O2e,
+  jse,
+  r4i,
+  cHt,
+  Ez,
+  _xr,
+  B1,
+  qbo,
+  SR,
+  uHt,
+  fHt,
+  Brn,
+  INe,
+  qQe,
+  Ybo,
+  MNe,
+  mRe,
+  fUn,
+  Xbo,
+  pHt,
+  Jbo,
+  YQe,
+  Cbe,
+  Qbo,
+  Egt,
+  jrn,
+  Tgt,
+  bxr,
+  Sxr,
+  Wrn,
+  wxr,
+  Zbo,
+  eSo,
+  tSo,
+  kxr,
+  nSo,
+  vxr,
+  rSo,
+  oSo,
+  Exr,
+  DNe,
+  mUn,
+  Txr,
+  hUn,
+  sSo,
+  Cgt,
+  Cxr,
+  iSo,
+  aSo,
+  dSo,
+  cSo,
+  Axr,
+  uSo,
+  fSo,
+  xxr,
+  pSo,
+  mSo,
+  hSo,
+  Rgt,
+  gSo,
+  ySo,
+  Agt,
+  _So,
+  gUn,
+  Pxr,
+  Oxr,
+  Ixr,
+  Mxr,
+  zrn,
+  Dxr,
+  Lxr,
+  Nxr,
+  bSo,
+  yUn,
+  Grn,
+  SSo,
+  VAs,
+  JQe,
+  wSo,
+  lua,
+  uua,
+  kSo,
+  gHt,
+  qrn,
+  gfe,
+  _Un,
+  Hxr,
+  $xr,
+  vSo,
+  Uxr,
+  Yrn,
+  ESo,
+  TSo,
+  Bxr,
+  jxr,
+  yHt,
+  Wxr,
+  JAs,
+  CSo,
+  Sp,
+  yfe,
+  hua,
+  Wse,
+  rxs,
+  Mgt,
+  nZe,
+  _O,
+  yRe
+} from "B:/~BUN/root/chunk-n98vg3jf.js";
+import {
+  L2e,
+  ton,
+  AHt,
+  Mxs,
+  F4i,
+  KF,
+  ewo
+} from "B:/~BUN/root/chunk-zstr1969.js";
+import {
+  Js
+} from "B:/~BUN/root/chunk-yr3hf5bg.js";
+import {
+  I3,
+  Tz
+} from "B:/~BUN/root/chunk-nwv7r07s.js";
+import {
+  Yxs,
+  Ae
+} from "B:/~BUN/root/chunk-eds8xkh8.js";
+import {
+  Bf
+} from "B:/~BUN/root/chunk-sjvfcp1z.js";
+import {
+  qHi,
+  pZt,
+  XHi,
+  GW
+} from "B:/~BUN/root/chunk-e8znf4zw.js";
+import {
+  uAr
+} from "B:/~BUN/root/chunk-xfqs9tac.js";
+import {
+  qr,
+  QCe
+} from "B:/~BUN/root/chunk-vmp6vbba.js";
+import {
+  Sys
+} from "B:/~BUN/root/chunk-zymc6pem.js";
+import {
+  xNe,
+  gn,
+  wE,
+  w2e,
+  HQe,
+  Use
+} from "B:/~BUN/root/chunk-f0zgv0ya.js";
+import {
+  nC
+} from "B:/~BUN/root/chunk-eswth6m1.js";
+import {
+  td,
+  Z1i,
+  jen,
+  use,
+  LNn,
+  qLt,
+  oU,
+  ok,
+  oz,
+  vEr,
+  Wg,
+  TEr,
+  Rue,
+  Uq,
+  XLt,
+  eT,
+  zen,
+  bks,
+  rho,
+  qen,
+  cji,
+  mji,
+  HLe,
+  Yen,
+  eC,
+  sho,
+  Gmt,
+  IEr,
+  uho,
+  bji,
+  fee,
+  wji,
+  BNn,
+  kji,
+  vks,
+  Fx,
+  Wk,
+  fho,
+  vji,
+  _7e,
+  RGe,
+  Eji,
+  L_e,
+  RCe,
+  ctn
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  RNt
+} from "B:/~BUN/root/chunk-78494p3w.js";
+import {
+  Kht,
+  yNe,
+  lh
+} from "B:/~BUN/root/chunk-gezr7m08.js";
+import {
+  fd,
+  PEs
+} from "B:/~BUN/root/chunk-79dw4seg.js";
+import {
+  nnn
+} from "B:/~BUN/root/chunk-fzefftbw.js";
+import {
+  Ptn,
+  lz
+} from "B:/~BUN/root/chunk-tdekz3md.js";
+import {
+  b3,
+  que,
+  Zq,
+  DL
+} from "B:/~BUN/root/chunk-wxhfn3za.js";
+import {
+  kee,
+  GGe
+} from "B:/~BUN/root/chunk-pdtjaehv.js";
+import {
+  vf,
+  Kzi,
+  XTr,
+  Tgo,
+  QTr,
+  Cgo,
+  Vtn,
+  z7e,
+  nCr,
+  HS
+} from "B:/~BUN/root/chunk-x6frvp1m.js";
+import {
+  ur
+} from "B:/~BUN/root/chunk-y5gyn2hc.js";
+import {
+  h3,
+  fCr
+} from "B:/~BUN/root/chunk-9t9ygsbp.js";
+import {
+  Ah
+} from "B:/~BUN/root/chunk-vzhm698f.js";
+import {
+  tWi
+} from "B:/~BUN/root/chunk-v29ccgfa.js";
+import {
+  vi
+} from "B:/~BUN/root/chunk-knfpag6d.js";
+import {
+  nwr,
+  UQt,
+  HDn,
+  QT,
+  Ge
+} from "B:/~BUN/root/chunk-z7bs0q82.js";
+import {
+  J$,
+  Iq,
+  Ofo,
+  LI,
+  AJe
+} from "B:/~BUN/root/chunk-s89g0dw7.js";
+import {
+  cCe
+} from "B:/~BUN/root/chunk-xgwmwbnb.js";
+import {
+  kg
+} from "B:/~BUN/root/chunk-2392ztjf.js";
+import {
+  PFt,
+  bQe
+} from "B:/~BUN/root/chunk-m749kjym.js";
+import {
+  o_e,
+  Hoe,
+  kL,
+  F0e
+} from "B:/~BUN/root/chunk-cj2cn5y2.js";
+import {
+  ZDt,
+  Ox,
+  Gce,
+  ypt,
+  jW,
+  puo,
+  U0e
+} from "B:/~BUN/root/chunk-6bx54the.js";
+import {
+  out,
+  vW,
+  WCi,
+  Mso,
+  zCi,
+  ADe,
+  Cmr
+} from "B:/~BUN/root/chunk-m1v50w96.js";
+import {
+  U$
+} from "B:/~BUN/root/chunk-4tz0m6qq.js";
+import {
+  Lbr
+} from "B:/~BUN/root/chunk-nk59bmc9.js";
+import {
+  rze
+} from "B:/~BUN/root/chunk-vy4t7613.js";
+import {
+  cs
+} from "B:/~BUN/root/chunk-kfm993xq.js";
+import {
+  Noe,
+  r_e,
+  I0e
+} from "B:/~BUN/root/chunk-wt8tyqt4.js";
+import {
+  Lx,
+  sLt,
+  kLn,
+  YZt,
+  k1
+} from "B:/~BUN/root/chunk-jmka9ye7.js";
+import {
+  vNe
+} from "B:/~BUN/root/chunk-w0nyevkg.js";
+import {
+  Xhs,
+  Jhs,
+  eJe
+} from "B:/~BUN/root/chunk-pjcve3z9.js";
+import {
+  qLi
+} from "B:/~BUN/root/chunk-mjx3yttm.js";
+import {
+  f0n,
+  Uwr,
+  cHi,
+  Wze
+} from "B:/~BUN/root/chunk-m8dg5txf.js";
+import {
+  P_e,
+  uks,
+  fks
+} from "B:/~BUN/root/chunk-s9vv4h32.js";
+import {
+  Yu
+} from "B:/~BUN/root/chunk-kfnabvp7.js";
+import {
+  pE,
+  Bg,
+  XE
+} from "B:/~BUN/root/chunk-c86vwcts.js";
+import {
+  sC,
+  iC
+} from "B:/~BUN/root/chunk-r1gg0qbg.js";
+import {
+  Oze
+} from "B:/~BUN/root/chunk-2f6ykbbh.js";
+import {
+  Toe,
+  $ps,
+  H$,
+  jps,
+  OTe
+} from "B:/~BUN/root/chunk-tdg0k3wq.js";
+import {
+  U6
+} from "B:/~BUN/root/chunk-x9bz04wf.js";
+import {
+  BJt,
+  hIi
+} from "B:/~BUN/root/chunk-05q1awc0.js";
+import {
+  I6
+} from "B:/~BUN/root/chunk-w0kge9aq.js";
+import {
+  P$,
+  Zmr,
+  x9e
+} from "B:/~BUN/root/chunk-2fedt3ag.js";
+import {
+  M9e
+} from "B:/~BUN/root/chunk-kexqfgtm.js";
+import {
+  Kr
+} from "B:/~BUN/root/chunk-jmt91fq8.js";
+import {
+  sR
+} from "B:/~BUN/root/chunk-vxbt81wk.js";
+import {
+  _ce
+} from "B:/~BUN/root/chunk-gknte1ng.js";
+import {
+  l_r
+} from "B:/~BUN/root/chunk-twnkh0s0.js";
+import {
+  Mft,
+  pps
+} from "B:/~BUN/root/chunk-4xx5w1am.js";
+import {
+  ya
+} from "B:/~BUN/root/chunk-6cgv9p77.js";
+import {
+  f_,
+  vb,
+  Aq
+} from "B:/~BUN/root/chunk-az6xed3t.js";
+import {
+  u1
+} from "B:/~BUN/root/chunk-gg9ygjtf.js";
+import {
+  Li
+} from "B:/~BUN/root/chunk-zeshc0ep.js";
+import {
+  V9,
+  a_e,
+  zSr
+} from "B:/~BUN/root/chunk-hskja58z.js";
+import {
+  RF
+} from "B:/~BUN/root/chunk-pp5rqp7s.js";
+import {
+  Rys,
+  i0n,
+  QFi,
+  Ays,
+  Dwr,
+  lfo
+} from "B:/~BUN/root/chunk-7wcc5pbk.js";
+import {
+  nk
+} from "B:/~BUN/root/chunk-j7y9vsxb.js";
+import {
+  rm
+} from "B:/~BUN/root/chunk-bmb3dt02.js";
+import {
+  Ja
+} from "B:/~BUN/root/chunk-v91d7hbv.js";
+import {
+  uX
+} from "B:/~BUN/root/chunk-kd0f2gn5.js";
+import {
+  yg
+} from "B:/~BUN/root/chunk-m1zmpfya.js";
+import {
+  yTr
+} from "B:/~BUN/root/chunk-e99p2x0p.js";
+import {
+  Ztn,
+  Qb,
+  UNt
+} from "B:/~BUN/root/chunk-ynpwd78y.js";
+import {
+  Vg
+} from "B:/~BUN/root/chunk-jjs9d8eg.js";
+import {
+  $r
+} from "B:/~BUN/root/chunk-xbnyqyft.js";
+import {
+  Da
+} from "B:/~BUN/root/chunk-tc6a3318.js";
+import {
+  mz
+} from "B:/~BUN/root/chunk-j0enspnr.js";
+import {
+  _t
+} from "B:/~BUN/root/chunk-3a409jmn.js";
+import {
+  jS
+} from "B:/~BUN/root/chunk-m4hycz0k.js";
+import {
+  hZe
+} from "B:/~BUN/root/chunk-1ppr2tqn.js";
+import {
+  u4
+} from "B:/~BUN/root/chunk-z35xf1k7.js";
+import {
+  go
+} from "B:/~BUN/root/chunk-eyrj3wyr.js";
+import {
+  ze
+} from "B:/~BUN/root/chunk-xwzn0yxv.js";
+import {
+  kt
+} from "B:/~BUN/root/chunk-86hj8bna.js";
+import {
+  bSe
+} from "B:/~BUN/root/chunk-5g14jzvf.js";
+import {
+  Ta,
+  GFe
+} from "B:/~BUN/root/chunk-e0q1m1z9.js";
+import {
+  ge,
+  Mn,
+  ws,
+  vr,
+  Ft,
+  Ec
+} from "B:/~BUN/root/chunk-b3kw6jpx.js";
+import {
+  OKe,
+  vo
+} from "B:/~BUN/root/chunk-h7w5pt14.js";
+import {
+  $t,
+  Gn,
+  Db,
+  nc,
+  MR
+} from "B:/~BUN/root/chunk-zpne314q.js";
+import {
+  it
+} from "B:/~BUN/root/chunk-09e9xfa4.js";
+import {
+  D
+} from "B:/~BUN/root/chunk-8mqsat26.js";
+import {
+  kn
+} from "B:/~BUN/root/chunk-t7d2hp9h.js";
+import {
+  cS
+} from "B:/~BUN/root/chunk-44b8s34m.js";
+import {
+  o,
+  E,
+  I,
+  oe,
+  C,
+  u,
+  xt,
+  Be,
+  Dr,
+  kk,
+  me,
+  B,
+  T
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  g5
+} from "B:/~BUN/root/chunk-9ewk1qr5.js";
+import {
+  gN
+} from "B:/~BUN/root/chunk-q15wjdnk.js";
+import {
+  no
+} from "B:/~BUN/root/chunk-qszgzq5m.js";
+import {
+  qa
+} from "B:/~BUN/root/chunk-qzcyr88d.js";
+import {
+  ume
+} from "B:/~BUN/root/chunk-4hj5k2m3.js";
+import {
+  lu
+} from "B:/~BUN/root/chunk-xfdxa8bd.js";
+import {
+  vN
+} from "B:/~BUN/root/chunk-tx4kppkg.js";
+import {
+  fm,
+  nt
+} from "B:/~BUN/root/chunk-tq5dzbq9.js";
+import {
+  en
+} from "B:/~BUN/root/chunk-mdq0dxn3.js";
+import {
+  mme
+} from "B:/~BUN/root/chunk-99vcrndq.js";
+import {
+  WA,
+  TVn,
+  PHr,
+  zjs,
+  Lra,
+  Gjs,
+  Vjs,
+  Kjs
+} from "B:/~BUN/root/chunk-tr26qctc.js";
+import {
+  WHr,
+  zHr,
+  f$e,
+  Ht
+} from "B:/~BUN/root/chunk-cbjnh04j.js";
+import {
+  Je
+} from "B:/~BUN/root/chunk-9wbhv9z5.js";
+import {
+  ui,
+  HKs
+} from "B:/~BUN/root/chunk-xwsv2hvn.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-g9pw24zp.js";
+import {
+  U,
+  L,
+  js
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  Rr
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+import {
+  he
+} from "B:/~BUN/root/chunk-fet34rqr.js";
+var sTe = {};
+Rr(sTe, {
+  MAX_READING_INSTANCES: () => Pu,
+  REDRAW_INTERVAL_MS: () => Eu,
+  REFERENCE_SHAPE: () => Ma,
+  STATE_SET_KEYS: () => Mu,
+  addressProblem: () => Fs,
+  bumpInstances: () => Ns,
+  clearStateSession: () => nao,
+  commitReads: () => Yh,
+  createStateSession: () => Yxs,
+  default: () => sTe,
+  dropUnheldVersion: () => Kh,
+  entryKeyOf: () => jDe,
+  flushStale: () => oJt,
+  flushTrailing: () => vu,
+  forgetInstance: () => Au,
+  holdInstance: () => Pxi,
+  landValue: () => yOn,
+  noteStale: () => Ls,
+  noteWrite: () => Vh,
+  onStale: () => qh,
+  previousStamped: () => Oxi,
+  redrawInstances: () => Oa,
+  redrawSite: () => tao,
+  stateGet: () => sao,
+  stateGetProblem: () => rao,
+  stateSession: () => Jw,
+  stateSet: () => iao,
+  stateSetProblem: () => oao,
+  unfollow: () => Hs,
+  valuesFor: () => Iu
+});
+var Ius = {};
+Rr(Ius, {
+  ENGINE_CALLER: () => Pyr,
+  SETTINGS_SOURCE_NAMES: () => Aus,
+  SETTING_SOURCE_OF: () => dXe,
+  default: () => Ius,
+  deliveredNamesOf: () => qio,
+  deliveredReaderSlot: () => cOn,
+  deliveredServers: () => Tus,
+  engineMergeRead: () => Mda,
+  fittedValue: () => Eus,
+  isSchemaKey: () => vus,
+  originMarked: () => Cus,
+  ownValue: () => ulo,
+  policyAsDelivered: () => Rus,
+  servedBy: () => flo,
+  serverFilePresenceSlot: () => nnn,
+  settingsComputed: () => Oyr,
+  settingsCopy: () => DJt,
+  settingsLayers: () => xus,
+  settingsOfSource: () => LJt,
+  settingsRead: () => Pus,
+  settingsReadInputOf: () => Iyr,
+  settingsReadPlugins: () => Dda,
+  settingsSourceProblem: () => Ous
+});
+var Fus = {};
+Rr(Fus, {
+  builtinToolSchemasOf: () => Nus,
+  default: () => Fus,
+  outputJsonSchemaOf: () => Lus
+});
+var xW = {};
+Rr(xW, {
+  BOOLEAN_PROPS: () => Mbo,
+  BORDER_ROWS: () => IAs,
+  BORDER_STYLES: () => nUn,
+  CHARACTER_CLASSES: () => QI,
+  COLOR_PROPS: () => MAs,
+  CONCEALING_PROPS: () => HAs,
+  CONTROL_CHARACTER: () => qbo,
+  DIALOG_FRAME_COLUMNS: () => Frn,
+  DIALOG_FRAME_ROWS_MAX: () => Nbo,
+  ELEMENT_KIND: () => Tgt,
+  ESCAPE_CHARACTER: () => Wbo,
+  HOVER_PROPS: () => DAs,
+  INPUT_TEXT_PROPS: () => vxr,
+  ITERM_CELL: () => dUn,
+  LEAF_PROBLEM: () => mSo,
+  LINE_SCRUB: () => Ez,
+  LONE_SURROGATE: () => zbo,
+  MAX_DEPTH: () => Tbe,
+  MAX_LINE_NUMBER: () => pHt,
+  MAX_LINK_HREF_CHARS: () => Cgt,
+  MAX_NODES: () => hfe,
+  MAX_PRESSABLE_LINKS: () => Cxr,
+  MAX_REASON_CHARS: () => zrn,
+  MAX_SCOPE_CHARS: () => wxr,
+  MAX_SELECT_OPTIONS: () => Axr,
+  MAX_SHARED_DRAWS: () => Tcs,
+  MAX_SVG_PIXELS: () => mUn,
+  MAX_SVG_SOURCE_CHARS: () => xxr,
+  MAX_TEXT_CHARS: () => uHt,
+  MAX_TREE_IMAGE_BYTES: () => Pxr,
+  MAX_TREE_RASTER_CELLS: () => Oxr,
+  MAX_TREE_TEXT_CHARS: () => $bo,
+  NAME_CHARS: () => Lao,
+  NOTHING_LEFT: () => FWe,
+  NUMBER_PROPS: () => LAs,
+  OBJECT_FIELDS: () => eSo,
+  OFFSET_PROPS: () => lHt,
+  ONE_ENGINE_NODE_COMPONENT: () => x2e,
+  OPENING_MARK: () => $rn,
+  OWN_FRAME_ROWS_MAX: () => Fbo,
+  OWN_FRAME_SURFACES: () => Hbo,
+  PLACEHOLDER_CHARACTER: () => Gbo,
+  PROP_VALUES: () => NAs,
+  RASTER_PROP_NAMES: () => dSo,
+  RENDER_EVENT: () => VE,
+  RENDER_PROPS: () => FAs,
+  RENDER_SITE: () => Lgr,
+  RENDER_SITES: () => ONe,
+  ROWS_PER_UNIT: () => $As,
+  SHOWN_KEY_CHARS: () => _xr,
+  SHOWN_TEXT_MAX: () => yHt,
+  SIZE_LIMIT: () => zQe,
+  SIZE_PROPS: () => rUn,
+  SPACE_AXIS: () => fxr,
+  SPACE_CELLS: () => Mrn,
+  SPACE_PAIRS: () => pxr,
+  SPACE_PROPS: () => Lrn,
+  SPREAD_CELL: () => hxr,
+  UNATTRIBUTED_LEAD: () => hcs,
+  WELL_FORMED_SLACK: () => P2e,
+  answers: () => $ao,
+  autoFocusProblem: () => cHt,
+  boxKeyProblem: () => Brn,
+  buttonProblem: () => Ybo,
+  chainModules: () => DOn,
+  chainTeller: () => fTe,
+  characterCount: () => jbo,
+  clientProblem: () => Xbo,
+  codeHunks: () => YQe,
+  codeProblem: () => Qbo,
+  coreHandler: () => gcs,
+  countLeftEmpty: () => NPi,
+  countRefused: () => Dao,
+  createRenderDraws: () => Ccs,
+  currentVersion: () => JDe,
+  cutLeaf: () => ESo,
+  cutMark: () => Uxr,
+  cutProps: () => Yrn,
+  cutValue: () => $gr,
+  default: () => xW,
+  desktopTicketOf: () => jcs,
+  dialogFrameOf: () => UAs,
+  diffHunksOf: () => Jbo,
+  dispatchRenderSite: () => kcs,
+  drawersOf: () => Hao,
+  drawnHref: () => Egt,
+  drawnText: () => jrn,
+  drawnTextProblem: () => Cbe,
+  firstThrowReport: () => NOn,
+  handedSubtrees: () => VAs,
+  hasControlCharacter: () => SR,
+  hasOnlyKeys: () => INe,
+  hasPlacedBox: () => Sxr,
+  hasRenderHooks: () => bMt,
+  hasRenderHooksFor: () => EJt,
+  heldByTree: () => Jut,
+  heldFor: () => Uao,
+  heldLinks: () => Fao,
+  heldProblem: () => qQe,
+  heldRenderInput: () => wJt,
+  heldTexts: () => Wrn,
+  hoverProblem: () => kxr,
+  imageProblem: () => nSo,
+  inputProblem: () => rSo,
+  isBlockLeafType: () => oSo,
+  isElementType: () => Exr,
+  isHref: () => DNe,
+  isInterruptedCall: () => pce,
+  isPlacingRecord: () => bxr,
+  isPlainCodeSaid: () => LOn,
+  isSpaceStep: () => Drn,
+  isStamped: () => MNe,
+  isSvgPixels: () => Txr,
+  isUnknownBorder: () => hUn,
+  keyedBox: () => TSo,
+  keyedPropsOf: () => sSo,
+  leadOf: () => Mgr,
+  leafRows: () => ySo,
+  leafTexts: () => gSo,
+  ledgersByTree: () => ycs,
+  linkProblem: () => _So,
+  linkText: () => gUn,
+  linksByLedger: () => Scs,
+  loadOf: () => Dgr,
+  logLine: () => pTe,
+  markdownProblem: () => aSo,
+  maySelectInstance: () => eao,
+  memoizedStableKey: () => vcs,
+  namesLength: () => Hgr,
+  notOverBudget: () => Ixr,
+  onScreenOf: () => Bao,
+  optionProblem: () => uSo,
+  plainCodeFinding: () => Mxr,
+  plainCodeNote: () => Dxr,
+  plainCodeText: () => Ngr,
+  plainKey: () => kJt,
+  plainLinkFinding: () => Lxr,
+  plainLinkNote: () => Nxr,
+  plainLinkProblem: () => yUn,
+  pressableLinksProblem: () => iSo,
+  propValueProblem: () => oUn,
+  propsKey: () => Ecs,
+  rasterProblem: () => cSo,
+  refusedText: () => _cs,
+  renderDraws: () => mTe,
+  renderInstanceKey: () => w2,
+  renderModulesForInstance: () => rgr,
+  renderPluginsFor: () => Hut,
+  renderPluginsForInstance: () => $ut,
+  sayOnce: () => Fgr,
+  sayPlainCode: () => XDe,
+  scopeProblem: () => Zbo,
+  selectProblem: () => fSo,
+  sharedDrawOf: () => WPi,
+  sharedDrawStore: () => zPi,
+  sharedPropsKey: () => jao,
+  shownKey: () => B1,
+  shownNode: () => jxr,
+  shownTextLine: () => bcs,
+  siteVersionOf: () => Qut,
+  spacingInCells: () => Grn,
+  stampsByKind: () => SSo,
+  standingLinks: () => BPi,
+  svgProblem: () => pSo,
+  tellOnce: () => D6,
+  tellOwnProps: () => HPi,
+  tellPlainCode: () => MPi,
+  tellPlainLink: () => DPi,
+  tellRefused: () => FPi,
+  tellShownText: () => $Pi,
+  tellThrown: () => Bgr,
+  tellUnknownBorder: () => jPi,
+  tellerOf: () => SJt,
+  textColumns: () => hSo,
+  textLength: () => Nao,
+  textPropProblem: () => mRe,
+  textPropsProblem: () => fUn,
+  textRoom: () => Wxr,
+  thrownKey: () => Ugr,
+  thrownTeller: () => jgr,
+  thrownText: () => wcs,
+  toldRefusals: () => dL,
+  twiceProblem: () => kSo,
+  unknownBorderNote: () => Wgr,
+  unplainPartOf: () => tSo,
+  unusableKeyProblem: () => fHt,
+  validateTree: () => gHt,
+  valueKeyOf: () => zgr,
+  valueKind: () => vz,
+  weightAndBold: () => qrn,
+  wellFormed: () => O2e,
+  wellFormedLeaves: () => gfe,
+  wellFormedText: () => yxr,
+  wellFormedValue: () => Urn,
+  wholeControl: () => Bxr,
+  wireHrefProblem: () => bSo,
+  withKnownBorders: () => _Un,
+  withPlainCode: () => Hxr,
+  withPlainLinks: () => $xr,
+  withRemoteProps: () => vSo,
+  withShownProps: () => UPi,
+  withShownText: () => JAs,
+  withUsableBoxKeys: () => CSo,
+  wrapRows: () => Rgt,
+  writtenHref: () => Agt
+});
+var Jgr = {};
+Rr(Jgr, {
+  CLIENT_SURFACE: () => _Mt,
+  MAX_DRAWN_INSTANCES: () => Acs,
+  MODULE_KEY_SCHEME: () => Ics,
+  RUNTIME_MODULE_KEY: () => Ygr,
+  RUNTIME_MODULE_SOURCE: () => Fcs,
+  TYPES_MODULE_KEY: () => HOn,
+  TYPES_MODULE_SOURCE: () => Hcs,
+  UNLINKED_KEY_SCHEME: () => qgr,
+  clientPressArgumentOf: () => Rcs,
+  createClientFaultRunner: () => GPi,
+  createDesktopModules: () => Ucs,
+  createDrawnClients: () => Pcs,
+  default: () => Jgr,
+  desktopModuleOf: () => $cs,
+  desktopModules: () => qao,
+  desktopSiteOf: () => FOn,
+  drawnAddressKey: () => Ggr,
+  drawnDesktopClients: () => eXe,
+  drawnInstanceKey: () => Vgr,
+  isToldDrawn: () => Kgr,
+  keyedFileOf: () => Ncs,
+  messageQueueOf: () => Bcs,
+  moduleHashesOf: () => VPi,
+  moduleKeyOf: () => vJt,
+  rewriteSpecifiers: () => Dcs,
+  runClientMessage: () => KPi,
+  runClientPress: () => qPi,
+  specifierSpansOf: () => Mcs,
+  unlinkedKeyOf: () => Lcs,
+  versionReaderOf: () => xcs
+});
+
+function Cao(e) {
+  if (typeof e === "string") return;
+  if (e.type === "engine") return e.ref === 0 ? void 0 : e.ref;
+  if (e.type === "Button" || e.type === "Input" || e.type === "Select") return;
+  for (let r of e.children ?? []) {
+    let s = Cao(r);
+    if (s !== void 0) return s
+  }
+  return
+}
+var jw = () => ({
+  installed: go(),
+  pending: new Set,
+  attached: new Map
+});
+var Kl = (e) => ({
+  props: e,
+  rewritten: !1,
+  tree: {
+    type: "engine",
+    ref: 0
+  },
+  clientModules: {},
+  drawnBy: []
+});
+var Gw = (e) => ({
+  run: (n) => e.installed.get()?.run(n) ?? Promise.resolve(Kl(n.props)),
+  hooked: () => e.installed.get()?.hooked() ?? !1,
+  press: (n) => e.installed.get()?.press(n) ?? Promise.resolve(void 0),
+  input: (n) => e.installed.get()?.input(n) ?? Promise.resolve(void 0),
+  select: (n) => e.installed.get()?.select(n) ?? Promise.resolve(void 0),
+  clientModule: (n) => e.installed.get()?.clientModule(n),
+  clientPress: (n) => e.installed.get()?.clientPress(n) ?? Promise.resolve(void 0),
+  clientMessage: (n) => e.installed.get()?.clientMessage(n) ?? Promise.resolve(void 0),
+  clientFault: (n) => e.installed.get()?.clientFault(n) ?? Promise.resolve(void 0),
+  onInvalidate: (n) => {
+    let r = e.installed.get();
+    if (r) return r.onInvalidate(n);
+    return e.pending.add(n), () => {
+      e.pending.delete(n), e.attached.get(n)?.(), e.attached.delete(n)
+    }
+  }
+});
+
+function Af() {
+  let e = jw();
+  return {
+    install: (n) => {
+      e.installed.set(n);
+      for (let r of e.pending) e.attached.set(r, n.onInvalidate(r));
+      e.pending.clear()
+    },
+    render: Gw(e)
+  }
+}
+var Ii = Af();
+var Yw = (e) => {
+  Ii.install(e)
+};
+var Y9e = Ii.render;
+var RI = Object.freeze([]);
+var dcs = (e, n) => e.spans.reduce((r, s) => r - Math.max(0, Math.min(n, s.end) - s.start), n);
+
+function X9e(e, n) {
+  let r = e.length === 0,
+    s = e.map((h) => ({
+      ...h,
+      start: h.start + n,
+      end: h.end + n
+    }));
+  return r ? RI : s
+}
+var J9e = (e, n, r) => e.spans.filter((s) => r === "after" ? s.run.start <= n : s.run.start < n).reduce((s, h) => s + h.end - h.start, n);
+
+function ROn(e, n) {
+  let r = 0,
+    s = n.map((h) => {
+      let y = h.start + r;
+      return r += (h.virtualText ?? "").length, {
+        start: y,
+        end: h.start + r,
+        run: h
+      }
+    });
+  return {
+    draft: e,
+    text: n.map((h, y) => e.slice(n[y - 1]?.start ?? 0, h.start) + (h.virtualText ?? "")).join("") + e.slice(n.at(-1)?.start ?? 0),
+    spans: s
+  }
+}
+import {
+  join as Yf
+} from "path";
+var Mf = new WeakSet;
+
+function pds() {
+  let e = Object.freeze({});
+  return Mf.add(e), e
+}
+
+function RW(e) {
+  return typeof e === "object" && e !== null && Mf.has(e)
+}
+
+function UP(e) {
+  return e.getMessages?.() ?? e.messages
+}
+
+function wF(e) {
+  return e.dispatchedOverBridge === !0 || e.submissionVerifiedSlackHumanTurn === !0
+}
+
+function mds(e) {
+  return nd(e.submissionOrigin) && !wF(e) && (e.promptSource === "typed" || e.promptSource === "queued")
+}
+
+function $Ai(e) {
+  return e.isMidTurn === !0 && e.promptSource === void 0 ? nd(e.submissionOrigin) && !wF(e) : mds(e) && RW(e.submittedFromComposer)
+}
+
+function Put(e) {
+  return e.submittedOnLocalStdin === !0 && !wF(e)
+}
+
+function UAi(e) {
+  return Put(e) || nd(e.submissionOrigin) && e.submissionVerifiedSlackHumanTurn !== !0
+}
+
+function Uhr(e) {
+  return e.submittedBySessionChannelPerson === !0 && !wF(e)
+}
+
+function ice(e) {
+  return (e.getIsResponseStreaming?.() ?? e.isMidTurn) === !0
+}
+
+function BAi(e) {
+  return e?.type === "local-jsx" && e.runsBesideTurns?.() === !0
+}
+
+function Ts(e) {
+  return e.userFacingName?.() ?? e.name
+}
+
+function Fio(e) {
+  if (e.type === "prompt" && e.userFacingName !== void 0) e.shedAliases = [...e.shedAliases ?? [], e.userFacingName()];
+  e.userFacingName = void 0
+}
+
+function Cd(e) {
+  if (!hds(e)) return !1;
+  return e.isEnabled?.() ?? !0
+}
+
+function hds(e) {
+  let n;
+  try {
+    n = e.policyGate
+  } catch {
+    return !1
+  }
+  if (n == null) return !0;
+  return lBt(n.policy)
+}
+
+function Bhr(e, n) {
+  let r = e.trimStart();
+  if (!r.startsWith("/")) return !1;
+  let s = r.slice(1).match(/^[a-zA-Z0-9:_-]+/)?.[0],
+    h = r.slice(1).split(/\s/, 1)[0];
+  if (s !== void 0 && n(s)) return !0;
+  return h !== void 0 && h !== s && h.length > 0 && n(h)
+}
+
+function jhr(e, n, r) {
+  return e.getContext?.(n, r) ?? e.context ?? "inline"
+}
+
+function HDe(e, n, r) {
+  let s = e?.immediate;
+  return typeof s === "function" ? s(n, r) : s === !0
+}
+var Q9e = "\u2726 Team setup guide",
+  Vl = String.raw`Pasted text|Image|\.\.\.Truncated text|${"\u2726 Team setup guide"}`,
+  Rao = new RegExp(String.raw`\[(${Vl}) #(\d+)(?: \+\d+ lines)?(\.)*\]`, "g");
+
+function Z9e(e) {
+  return e.startsWith("[Image")
+}
+
+function lk(e, n) {
+  return e.name === n || Ts(e) === n || (e.aliases?.includes(n) ?? !1)
+}
+
+function ni(e, n) {
+  let r, s;
+  return n.find((y) => {
+    if (y.name === e) return !0;
+    if (r === void 0 && lk(y, e)) r = y;
+    if (s !== null && y.type === "prompt" && y.directoryListingName === e) s = s === void 0 || s.name === y.name ? s ?? y : null;
+    return !1
+  }) ?? r ?? s ?? void 0
+}
+
+function Tgr(e) {
+  let n = new Map;
+  for (let r of e)
+    if (!n.has(r.name)) n.set(r.name, r);
+  for (let r of e)
+    for (let s of [Ts(r), ...r.aliases ?? []])
+      if (!n.has(s)) n.set(s, r);
+  return n
+}
+
+function dTe(e, n) {
+  return ni(e, n) !== void 0
+}
+
+function YDe(e, n) {
+  if (n.trim() === "") return !1;
+  let {
+    isSensitive: r
+  } = e;
+  return typeof r === "function" ? r(n) : r === !0
+}
+
+function uce(e, n, r) {
+  let s = r ?? e.registeredBy;
+  return {
+    command: Ts(e),
+    args: YDe(e, n) ? "***" : n,
+    ...s !== void 0 && {
+      plugin: s
+    }
+  }
+}
+var ck = new RegExp(String.raw`\[(?:Pasted text|\.\.\.Truncated text|${Q9e}) #\d+`),
+  uk = new RegExp(String.raw`^(\/[^\s[]+)\[(?=(?:${Vl}) #\d+)`);
+var Di = 65536,
+  dk = 2 * T9i;
+
+function AOn(e, n, {
+  pastedTexts: r = []
+} = {}) {
+  if (r.some(Yl)) return !0;
+  let s = e.trim();
+  if (s.startsWith("!")) {
+    if (s = s.slice(1).trimStart(), Yl(s)) return !0
+  }
+  if (!s.startsWith("/")) return !1;
+  let {
+    name: h,
+    args: y
+  } = uX(s.replace(uk, "$1 [")), S = ni(h, n);
+  if (!S?.isSensitive) return Yl(s.slice(1));
+  return YDe(S, y) || r.length > 0 && ck.test(y)
+}
+
+function Lye(e, n) {
+  if (n === void 0) return e;
+  return e.filter((r) => n.some((s) => r.name === s || (r.loadedFrom === "syncedSkills" ? r.aliases?.includes(s) ?? !1 : xOn(r) && r.name.endsWith(`:${s}`))))
+}
+
+function xOn(e) {
+  return !Xvs(e) && !(e.type === "prompt" && (e.source === "memoryStore" || e.source === "mcp" || e.allowlistedByFullNameOnly === !0))
+}
+
+function gPi(e, n) {
+  if (e === "" || e.includes(":")) return {
+    kind: "none"
+  };
+  let r = `:${e}`,
+    s = n.filter((y) => y.type === "prompt" && y.loadedFrom !== "syncedSkills" && y.name.endsWith(r));
+  if (s.length > 1) return {
+    kind: "ambiguous",
+    candidates: s
+  };
+  let h = s[0];
+  if (h === void 0 || h.source !== "plugin") return {
+    kind: "none"
+  };
+  return {
+    kind: "unique",
+    command: h
+  }
+}
+
+function POn(e, n) {
+  let r = ni(e, n);
+  if (!r) throw ReferenceError(`Command ${e} not found. Available commands: ${n.map((s)=>{let h=Ts(s);return s.aliases?`${h} (aliases: ${s.aliases.join(", ")})`:h}).sort((s,h)=>s.localeCompare(h)).join(", ")}`);
+  return r
+}
+
+function Yl(e) {
+  if (e.length <= Di) return IFe(e);
+  let n = Di - dk;
+  for (let r = 0; r < e.length; r += n)
+    if (IFe(e.slice(r, r + Di))) return !0;
+  return !1
+}
+
+function oR(e) {
+  if (typeof e === "string") return e;
+  let n = e.at(-1);
+  return n?.type === "text" ? n.text : null
+}
+import {
+  createHash as Df
+} from "crypto";
+import {
+  constants as fk,
+  createReadStream as pk
+} from "fs";
+import {
+  open as mk,
+  stat as hk
+} from "fs/promises";
+var Mut = {
+  stale: 1e4,
+  retries: {
+    retries: 3,
+    minTimeout: 50
+  }
+};
+
+function Lds(e) {
+  return e.split("\r").flatMap((n) => {
+    if (!/[\u2028\u2029]/.test(n)) return [n];
+    try {
+      return JSON.parse(n), [n]
+    } catch {
+      return n.split(/[\u2028\u2029]/)
+    }
+  })
+}
+async function* Nds(e) {
+  for await (let n of M9e(e)) yield* Lds(n)
+}
+async function Fds(e, n, r, {
+  fileMode: s = "default",
+  beforeWrite: h
+} = {}) {
+  let y = [],
+    S = 0;
+  try {
+    for await (let A of Nds(pk(e, {
+      encoding: "utf8"
+    }))) if (n(A)) S++;
+    else if (r === "filter") y.push(A)
+  } catch (A) {
+    if (K(A)) return 0;
+    throw A
+  }
+  if (r !== "filter" || S === 0) return S;
+  h?.();
+  let w = s === "preserve" ? (await hk(e)).mode & 511 : void 0;
+  return await eK(e, y.length ? `${y.join(`
+`)}
+` : "", {
+    exactMode: w
+  }), S
+}
+class eJt extends Error {}
+var Nf = 4194304;
+async function Hds(e, n, {
+  start: r,
+  end: s,
+  tail: h,
+  expect: y,
+  verifiedHead: S,
+  residueBytes: w = 0
+}) {
+  let A = [],
+    O = 0,
+    M = (re) => {
+      let _e = re.endsWith("\r") ? re.slice(0, -1) : re;
+      if (n(_e)) O++;
+      else A.push(_e)
+    },
+    j = !0,
+    G = !1,
+    N = (re) => {
+      j = !1;
+      let _e = re.toString("utf8"),
+        Se = _e.endsWith("\r") ? _e.slice(0, -1) : _e;
+      if (w <= 0 || re.length <= w || !n(Se)) {
+        M(_e);
+        return
+      }
+      G = !0, M(re.subarray(0, w).toString("utf8")), M(re.subarray(w).toString("utf8"))
+    },
+    Z = 0,
+    te = Buffer.alloc(0),
+    Y = Df("sha256"),
+    ne;
+  try {
+    ne = await mk(e, fk.O_RDONLY)
+  } catch (re) {
+    let _e = k(re);
+    if (_e === "ELOOP" || _e === "ENXIO") throw new eJt("history.jsonl is not a regular file at open");
+    throw re
+  }
+  try {
+    let re = await ne.stat();
+    if (!re.isFile() || y !== void 0 && (y.ino !== 0 && re.ino !== y.ino || re.birthtimeMs !== y.birthtimeMs)) throw new eJt("history.jsonl changed between its screen and the scan");
+    if (S !== void 0) {
+      let Se = Df("sha256"),
+        ce = 0;
+      while (ce < S.bytes) {
+        let xe = Buffer.alloc(Math.min(Nf, S.bytes - ce)),
+          {
+            bytesRead: ve
+          } = await ne.read(xe, 0, xe.length, ce);
+        if (ve === 0) break;
+        Se.update(xe.subarray(0, ve)), ce += ve
+      }
+      if (ce !== S.bytes || Se.digest("hex") !== S.digest) throw new eJt("history.jsonl was rewritten under the head an earlier scan judged")
+    }
+    let _e = Math.max(0, s - r);
+    while (Z < _e) {
+      let Se = Buffer.alloc(Math.min(Nf, _e - Z)),
+        ce = 0;
+      while (ce < Se.length) {
+        let {
+          bytesRead: Ie
+        } = await ne.read(Se, ce, Se.length - ce, r + Z + ce);
+        if (Ie === 0) break;
+        ce += Ie
+      }
+      if (ce === 0) break;
+      Z += ce;
+      let xe = te.length ? Buffer.concat([te, Se.subarray(0, ce)]) : Se.subarray(0, ce),
+        ve = xe.lastIndexOf(10);
+      if (ve === -1) {
+        te = xe;
+        continue
+      }
+      Y.update(xe.subarray(0, ve + 1));
+      let Oe = 0;
+      if (j) {
+        let Ie = xe.indexOf(10);
+        N(xe.subarray(0, Ie)), Oe = Ie + 1
+      }
+      let Ne = xe.toString("utf8", Oe, ve + 1).split(`
+`);
+      Ne.pop();
+      for (let Ie of Ne) M(Ie);
+      te = xe.subarray(ve + 1)
+    }
+  } finally {
+    await ne.close()
+  }
+  let se = te.length === 0,
+    ae = Z - te.length;
+  if (h === "judge" && te.length > 0) {
+    if (Y.update(te), j) N(te);
+    else M(te.toString("utf8"));
+    ae = Z
+  }
+  return {
+    kept: A,
+    dropped: O,
+    consumed: r + ae,
+    digest: Y.digest("hex"),
+    terminated: se,
+    split: G
+  }
+}
+
+function Jr(e) {
+  let n = new Uint16Array(e.length);
+  for (let r = 0; r < e.length; r++) n[r] = e.charCodeAt(r);
+  return n
+}
+
+function Zl(e) {
+  let n = new Int32Array(e.length);
+  for (let r = 1, s = 0; r < e.length; r++) {
+    while (s > 0 && e[r] !== e[s]) s = n[s - 1];
+    if (e[r] === e[s]) s++;
+    n[r] = s
+  }
+  return n
+}
+var gk = 8,
+  yk = 1024;
+
+function Cgr(e) {
+  let n, r = new Map;
+  return (s) => {
+    let h = r.get(s);
+    if (h !== void 0) return h;
+    let y = s.slice(0, gk),
+      S = s.length > e.length ? -1 : e.indexOf(y);
+    if (S === -1) {
+      let Z = () => -1;
+      return r.set(s, Z), Z
+    }
+    let w = Jr(s),
+      A = Zl(w),
+      O = w.length - A.at(-1),
+      M = [],
+      j = [],
+      G = n ??= Jr(e);
+    for (let Z = S, te = 0; Z < G.length; Z++) {
+      if (te === 0) {
+        let ne = e.indexOf(y, Z);
+        if (ne === -1) break;
+        Z = ne + y.length - 1, te = y.length - 1
+      }
+      let Y = G[Z];
+      while (te > 0 && Y !== w[te]) te = A[te - 1];
+      if (Y === w[te]) te++;
+      if (te === w.length) {
+        let ne = Z + 1 - w.length,
+          se = j.length - 1;
+        if (se >= 0 && ne - j[se] === O) j[se] = ne;
+        else M.push(ne), j.push(ne);
+        te = A[te - 1]
+      }
+    }
+    let N = (Z) => {
+      let te = 0,
+        Y = j.length;
+      while (te < Y) {
+        let se = te + Y >> 1;
+        if (j[se] < Z) te = se + 1;
+        else Y = se
+      }
+      let ne = M[te];
+      if (ne === void 0) return -1;
+      return Z > ne ? ne + Math.ceil((Z - ne) / O) * O : ne
+    };
+    if (M.length <= yk) r.set(s, N);
+    return N
+  }
+}
+var _k = /[\p{L}\p{N}_@#./\\]/u;
+
+function ec(e, n, r, s, h, y, S) {
+  if (!y) {
+    let A = n - 1;
+    while (A >= s && Vjs.test(e[A])) A = A <= S.openersTo && A >= S.openersFrom ? S.openersFrom - 1 : A - 1;
+    if (n - 1 >= s && A < n - 1) S.openersFrom = Math.max(A + 1, s), S.openersTo = n - 1;
+    if (A >= s && _k.test(e[A])) return !1
+  }
+  let w = r;
+  while (w < h && Kjs.test(e[w])) w = w >= S.closersFrom && w < S.closersTo ? S.closersTo : w + 1;
+  if (w = Math.min(w, h), w > r) S.closersFrom = r, S.closersTo = w;
+  return w >= h || /\s/.test(e[w])
+}
+
+function Lf() {
+  return {
+    openersFrom: 0,
+    openersTo: -1,
+    closersFrom: 0,
+    closersTo: 0
+  }
+}
+
+function hJt(e, n, r = Cgr(e)) {
+  let s = tc(e, n, r, !0, "anyCopy");
+  return Ni([...s.spans, ...tc(e, n, r, !1, "anyCopy").spans, ...s.skipped ? tc(e, n, r, !0, "standingCopy").spans : []])
+}
+
+function tc(e, n, r, s, h) {
+  let y = [],
+    S = [],
+    w = !1,
+    A = L(n).filter((O) => O !== "").sort((O, M) => M.length - O.length);
+  for (let O of A) {
+    let M = r(O),
+      j = [],
+      G = [],
+      N = Lf(),
+      Z = 0,
+      te = 0,
+      Y = y[0]?.from ?? e.length,
+      ne = 0,
+      se = 0;
+    for (;;) {
+      let ae = M(ne);
+      if (ae === -1) break;
+      let re = ae + O.length;
+      if (re > Y || ae < te) {
+        while (Z < y.length && ae >= y[Z].from) te = y[Z].to, Z++;
+        if (Y = y[Z]?.from ?? e.length, re <= te) {
+          ne = te - O.length + 1;
+          continue
+        }
+        let _e = ae >= te && re <= Y,
+          Se = !1;
+        if (!_e && ec(e, ae, re, te, Y, ae === se, N)) {
+          let ce = ae < te ? M(te) : -1,
+            xe = ce !== -1 && ce < Math.min(re, Y);
+          if (xe && h === "standingCopy") {
+            let ve = te;
+            while (ve < ce && /\s/.test(e[ve])) ve++;
+            xe = ve === ce && ec(e, ce, ce + O.length, te, Y, ce === te, Lf())
+          }
+          if (xe) w = !0;
+          else G.push({
+            from: ae,
+            to: re
+          }), Se = !0
+        }
+        if (ae >= te && re > Y) te = y[Z].to, Z++, Y = y[Z]?.from ?? e.length, ne = re;
+        else ne = Math.max(ae, te);
+        se = s && Se ? Math.max(re, te) : te;
+        continue
+      }
+      if (ec(e, ae, re, te, Y, ae === se, N)) j.push({
+        from: ae,
+        to: re
+      }), se = re;
+      ne = re
+    }
+    if (s) {
+      if (j.length > 0 || G.length > 0) y = Ni([...y, ...j, ...G]);
+      continue
+    }
+    if (j.length > 0) y = [...y, ...j].sort((ae, re) => ae.from - re.from);
+    if (G.length > 0) S = Ni([...S, ...G])
+  }
+  return {
+    spans: S.length === 0 ? y : Ni([...y, ...S]),
+    skipped: w
+  }
+}
+
+function Ni(e) {
+  let n = [];
+  for (let r of e.sort((s, h) => s.from - h.from)) {
+    let s = n.at(-1);
+    if (s !== void 0 && r.from < s.to) s.to = Math.max(s.to, r.to);
+    else n.push({
+      ...r
+    })
+  }
+  return n
+}
+
+function ccs(e) {
+  let n = [];
+  for (let r of [...e].sort((s, h) => s.from - h.from)) {
+    let s = n.at(-1);
+    if (s !== void 0 && r.from <= s.to) s.to = Math.max(s.to, r.to);
+    else n.push({
+      ...r
+    })
+  }
+  return n
+}
+
+function bk(e, n) {
+  let r = Zl(n);
+  if (r.at(-1) === 0) return;
+  let s = [];
+  for (let h = 0, y = 0; h < e.length; h++) {
+    while (y > 0 && e[h] !== n[y]) y = r[y - 1];
+    if (e[h] === n[y]) y++;
+    if (y === n.length) {
+      let S = h + 1 - n.length,
+        w = s.at(-1);
+      if (w !== void 0 && S <= w.to) w.to = h + 1;
+      else s.push({
+        from: S,
+        to: h + 1
+      });
+      y = r[y - 1]
+    }
+  }
+  return s
+}
+
+function yPi(e, n, r = Cgr(e)) {
+  let s = [],
+    h;
+  for (let y of L(n)) {
+    if (y === "") continue;
+    let S = r(y),
+      w = y.includes("<") && S(0) !== -1 ? bk(h ??= Jr(e), Jr(y)) : void 0;
+    if (w !== void 0) {
+      for (let A of w) s.push(A);
+      continue
+    }
+    for (let A = S(0); A !== -1; A = S(A + y.length)) s.push({
+      from: A,
+      to: A + y.length
+    })
+  }
+  return ccs(s)
+}
+
+function wk(e) {
+  let n = [];
+  for (let [r, s] of [
+      [PHr, !0],
+      [Lra, !1]
+    ])
+    for (let h = e.indexOf(r); h !== -1; h = e.indexOf(r, h + 1)) {
+      let y = h + r.length,
+        S = e.slice(y, y + TVn),
+        w = y + TVn;
+      if (!Gjs(S)) continue;
+      if (s) {
+        if (e.startsWith(zjs, w)) n.push({
+          at: h,
+          end: w + zjs.length,
+          id: S,
+          opens: s
+        })
+      } else if (e.startsWith('">', w) && (h === 0 || e[h - 1] === `
+`)) n.push({
+        at: h,
+        end: w + 2,
+        id: S,
+        opens: s
+      })
+    }
+  return n.sort((r, s) => r.at - s.at)
+}
+
+function _Pi(e, n = [], r = []) {
+  let s = wk(e),
+    h = (A) => r.some((O) => O !== "" && e.slice(Math.max(0, A.at - O.length + 1), A.end + O.length - 1).includes(O)),
+    y = Array(s.length + 1).fill(s.length);
+  for (let A = s.length - 1; A >= 0; A--) {
+    let O = s[A];
+    y[A] = xk(n, O.at, O.end) === -1 && !h(O) ? A : y[A + 1]
+  }
+  let S = new Map;
+  s.forEach((A, O) => {
+    if (!A.opens) {
+      let M = S.get(A.id);
+      if (M === void 0) S.set(A.id, [O]);
+      else M.push(O)
+    }
+  });
+  let w = [];
+  return s.forEach((A, O) => {
+    if (!A.opens) return;
+    let M = S.get(A.id) ?? [],
+      j = y[O + 1],
+      G = 0,
+      N = M.length;
+    while (G < N) {
+      let Y = G + N >> 1;
+      if (M[Y] <= j) G = Y + 1;
+      else N = Y
+    }
+    let Z = M[G - 1];
+    if (Z === void 0 || Z <= O || s[Z].at < A.end) return;
+    let te = s[Z];
+    w.push({
+      from: A.at,
+      to: e[te.end] === `
+` ? te.end + 1 : te.end,
+      bodyFrom: A.end,
+      bodyTo: Math.max(A.end, te.at - 1)
+    })
+  }), w
+}
+
+function xk(e, n, r) {
+  let s = 0,
+    h = e.length;
+  while (s < h) {
+    let y = s + h >> 1;
+    if (e[y].to <= n) s = y + 1;
+    else h = y
+  }
+  return s < e.length && e[s].from < r ? s : -1
+}
+
+function bPi(e, n) {
+  let r = [...n, ...e.map((h) => ({
+      ...h,
+      bodyFrom: h.from,
+      bodyTo: h.to
+    }))].sort((h, y) => h.from - y.from || y.to - h.to),
+    s = [];
+  for (let h of r) {
+    let y = s.at(-1);
+    if (y !== void 0 && h.from < y.to) {
+      if (h.to > y.to) y.to = h.to, y.bodyTo = h.bodyTo
+    } else s.push({
+      ...h
+    })
+  }
+  return s
+}
+
+function SPi(e, n, r, s) {
+  let h = [],
+    y = 0,
+    S = !0,
+    w = (j) => {
+      if (j === "") return;
+      h.push(j), S = !1;
+      let G = 0;
+      while (G < j.length && j[j.length - 1 - G] === `
+`) G++;
+      y = G === j.length ? y + G : G
+    },
+    A = 0,
+    O = !1,
+    M = (j) => {
+      let G = s(e.slice(A, j));
+      if (G !== "") w((O ? `
+` : "") + G)
+    };
+  for (let j of n) {
+    let G = j.from;
+    while (G > A && e[G - 1] === `
+`) G--;
+    M(G);
+    let N = r(e.slice(j.bodyFrom, j.bodyTo));
+    w(S || y === 0 ? `
+
+` : y === 1 ? `
+` : ""), w(`${N.opener}${N.body}
+${N.closer}`), A = j.to;
+    while (e[A] === `
+`) A++;
+    O = !0
+  }
+  return M(e.length), h.join("")
+}
+var Yut = (e) => e.promptSubmitted === void 0 && (e.screeningPending === !0 || e.screeningOwed === !0);
+var gJt = (e, n) => n === e ? void 0 : n;
+
+function Hf(e, n, r) {
+  let {
+    screened: s,
+    unanswered: h
+  } = r, y = e.historyEntry, S = s?.dropped === !0 || h === "skipped" && s === void 0 && Yut(e);
+  if (y === void 0 || S) return;
+  let w = s === void 0 ? gJt(e.value, e.promptSubmitted?.text) : s.rewritten;
+  return w === void 0 ? y : n(y, w)
+}
+import {
+  createHash as Rk
+} from "crypto";
+import {
+  join as os
+} from "path";
+var $f = "paste-cache",
+  Ff = 1e7;
+class Uf {
+  inFlight = new Map;
+  retainedFailed = new Map;
+  retainedFailedChars = 0;
+  retainedCap = Ff;
+  markInFlight(e, n) {
+    this.inFlight.set(e, n)
+  }
+  settle(e) {
+    this.inFlight.delete(e);
+    let n = this.retainedFailed.get(e);
+    if (n !== void 0) this.retainedFailedChars -= n.length, this.retainedFailed.delete(e)
+  }
+  retainFailed(e, n) {
+    this.inFlight.delete(e);
+    let r = this.retainedFailed.get(e);
+    if (r !== void 0) this.retainedFailedChars -= r.length, this.retainedFailed.delete(e);
+    if (n.length > this.retainedCap) return;
+    this.retainedFailed.set(e, n), this.retainedFailedChars += n.length;
+    while (this.retainedFailedChars > this.retainedCap) {
+      let s = this.retainedFailed.keys().next().value;
+      this.retainedFailedChars -= this.retainedFailed.get(s).length, this.retainedFailed.delete(s)
+    }
+  }
+  get(e) {
+    return this.inFlight.get(e) ?? this.retainedFailed.get(e)
+  }
+  clear() {
+    this.inFlight.clear(), this.retainedFailed.clear(), this.retainedFailedChars = 0, this.retainedCap = Ff
+  }
+}
+var Tk = new W(() => new Uf);
+
+function jf() {
+  return Tk.of(H().host)
+}
+
+function Hi() {
+  return os(Ue(), $f)
+}
+
+function Wf(e) {
+  return Rk("sha256").update(e).digest("hex").slice(0, 16)
+}
+var Ck = /^[0-9a-f]{16}$/;
+
+function rc(e) {
+  if (!Ck.test(e)) throw Error("invalid paste-content hash")
+}
+
+function oc(e) {
+  return rc(e), os(Hi(), `${e}.txt`)
+}
+
+function zf(e) {
+  return rc(e), Ve.paste(e)
+}
+
+function Gf(e, n, r) {
+  let s = jf();
+  return s.markInFlight(e, n), Pk(e, n, r, s)
+}
+async function Pk(e, n, r, s) {
+  try {
+    if (fJ(r)) {
+      rc(e), s.retainFailed(e, n), IO("paste", os($f, `${e}.txt`)), c("paste_store", "diskless_skipped");
+      return
+    }
+    let h = !q(),
+      y = Dn();
+    if (h) await y.mkdir(Hi());
+    if (X() && r) {
+      let w = await r.write(zf(e), n, {
+        publishDiscipline: "inPlace",
+        mode: 384
+      });
+      if (!w.ok) throw t(`Paste write refused: ${Ht(w.error)}`), Error("paste write refused by the storage backend")
+    } else await y.write(oc(e), n, 384);
+    s.settle(e);
+    let S = h ? `to ${oc(e)}` : "in the storage backend";
+    t(`Stored paste ${e} ${S}`), g("paste_store")
+  } catch (h) {
+    s.retainFailed(e, n), t(`Failed to store paste: ${h}`), c("paste_store", "paste_store_write_failed")
+  }
+}
+async function Kf(e, n) {
+  let r = jf().get(e);
+  if (r !== void 0) return r;
+  try {
+    if (n) {
+      let h = await n.read([zf(e)]);
+      if (!h.ok) return t(`Failed to retrieve paste ${e}: ${Ht(h.error)}`), null;
+      let y = h.value.items[0];
+      return y.found ? Buffer.from(y.value).toString("utf8") : null
+    }
+    let s = oc(e);
+    return await Dn().read(s)
+  } catch (s) {
+    if (!K(s)) t(`Failed to retrieve paste ${e}: ${s}`);
+    return null
+  }
+}
+async function vxi(e, n) {
+  if (n !== void 0) return Ok(n, e.getTime());
+  let r = Dn(),
+    s = Hi(),
+    h;
+  try {
+    h = await r.list(s)
+  } catch {
+    return
+  }
+  let y = e.getTime();
+  for (let S of h) {
+    if (!S.endsWith(".txt") && !S.includes(".txt.tmp.")) continue;
+    let w = os(s, S);
+    try {
+      if ((await r.stat(w)).mtimeMs < y) await r.delete(w), t(`Cleaned up old paste: ${w}`)
+    } catch {}
+  }
+}
+async function Ok(e, n) {
+  let r = [];
+  if ((await qa((h) => e.listEntries({
+      namespace: "paste"
+    }, h !== void 0 ? {
+      cursor: h
+    } : void 0), (h) => {
+      for (let y of h)
+        if (y.kind === "key" && y.key.namespace === "paste" && y.mtimeMs !== void 0 && y.mtimeMs < n) r.push(y.key)
+    })).status !== "error") {
+    for (let h of r)
+      if ((await e.delete(h)).ok) t(`Cleaned up old paste: ${h.id}`)
+  }
+  await Mk(Hi(), n)
+}
+async function Mk(e, n) {
+  let r = Dn(),
+    s;
+  try {
+    s = await r.list(e)
+  } catch {
+    return
+  }
+  for (let h of s) {
+    if (!h.includes(".txt.tmp.")) continue;
+    let y = os(e, h);
+    try {
+      if ((await r.stat(y)).mtimeMs < n) await r.delete(y), t(`Cleaned up old paste staging file: ${y}`)
+    } catch {}
+  }
+}
+var qf = {
+  "`": "`",
+  '"': '"',
+  "<": ">",
+  "{": "}",
+  "[": "]",
+  "(": ")",
+  "'": "'"
+};
+
+function Fi(e, n) {
+  if (!new RegExp(n, "i").test(e)) return [];
+  if (e.startsWith("/")) return [];
+  let s = [],
+    h = null,
+    y = 0,
+    S = (M) => !!M && /[\p{L}\p{N}_]/u.test(M);
+  for (let M = 0; M < e.length; M++) {
+    let j = e[M];
+    if (h) {
+      if (h === "[" && j === "[") {
+        y = M;
+        continue
+      }
+      if (j !== qf[h]) continue;
+      if (h === "'" && S(e[M + 1])) continue;
+      s.push({
+        start: y,
+        end: M + 1
+      }), h = null
+    } else if (j === "<" && M + 1 < e.length && /[a-zA-Z/]/.test(e[M + 1]) || j === "'" && !S(e[M - 1]) || j !== "<" && j !== "'" && j in qf) h = j, y = M
+  }
+  let w = [],
+    A = new RegExp(`\\b${n}\\b`, "gi"),
+    O = e.matchAll(A);
+  for (let M of O) {
+    if (M.index === void 0) continue;
+    let j = M.index,
+      G = j + M[0].length;
+    if (s.some((te) => j >= te.start && j < te.end)) continue;
+    let N = e[j - 1],
+      Z = e[G];
+    if (N === "/" || N === "\\" || N === "-") continue;
+    if (Z === "/" || Z === "\\" || Z === "-" || Z === "?") continue;
+    if (Z === "." && S(e[G + 1])) continue;
+    w.push({
+      word: M[0],
+      start: j,
+      end: G
+    })
+  }
+  return w
+}
+
+function sc(e) {
+  return Fi(e, "ultraplan")
+}
+
+function _ds(e) {
+  return Fi(e, "ultrareview")
+}
+
+function Iye(e) {
+  return Fi(e, "ultrathink")
+}
+
+function oMt(e) {
+  return Fi(e, "ultracode")
+}
+
+function GAi(e) {
+  return oMt(e).length > 0
+}
+
+function sMt(e) {
+  return e.replace(/(ultra)(code|plan|review|think)/gi, "$1-$2")
+}
+
+function zhr(e) {
+  let [n] = sc(e);
+  if (!n) return e;
+  let r = e.slice(0, n.start),
+    s = e.slice(n.end);
+  if (!(r + s).trim()) return "";
+  return r = r.replace(/\b(a)n(\s+)$/i, "$1$2"), r + n.word.slice(5) + s
+}
+var ic = 100,
+  Ik = 10,
+  Dk = 1e7,
+  Nk = 1024,
+  Lk = p(() => u({
+    id: E(),
+    type: B(["text", "image"]),
+    content: o().optional(),
+    contentHash: o().optional(),
+    mediaType: o().optional(),
+    filename: o().optional()
+  }));
+
+function T2(e) {
+  return (e.match(/\r\n|\r|\n/g) || []).length
+}
+
+function fce(e, n, r = "Pasted text") {
+  if (n === 0) return `[${r} #${e}]`;
+  return `[${r} #${e} +${n} lines]`
+}
+
+function foe(e) {
+  return `[Image #${e}]`
+}
+
+function df(e) {
+  if (!e) return [];
+  return [...e.matchAll(Rao)].map((r) => ({
+    id: parseInt(r[2] || "0"),
+    match: r[0],
+    index: r.index
+  })).filter((r) => r.id > 0)
+}
+
+function OOn(e) {
+  return Number.isInteger(e) && e > 0 && e < 4294967296
+}
+
+function Rgr(e, n) {
+  let r = df(e);
+  if (r.length === 0) return e;
+  let s = e;
+  for (let y = r.length - 1; y >= 0; y--) {
+    let S = r[y];
+    s = s.slice(0, S.index) + S.match.replace(`#${S.id}`, "#_") + s.slice(S.index + S.match.length)
+  }
+  let h = r.map((y) => {
+    let S = n?.[y.id];
+    if (!S) return `literal:${y.id}`;
+    if (S.unavailable) return "dead";
+    return S.contentHash !== void 0 ? `hash:${S.contentHash}` : `inline:${S.content??""}`
+  });
+  return `${s}\x00${h.join("\x01")}`
+}
+
+function Nye(e, n, r, s) {
+  return ep(Zf(e, df(e), n, !1, r), s, r, Fye(n))
+}
+var Hk = /^[\p{M}\u1161-\u1175\u11A8-\u11C2\u{16D67}\u{16D68}]+/u;
+
+function yJt(e) {
+  let n = e.normalize("NFC"),
+    r = n.replace(Hk, "").trimStart();
+  return L([e, n, r]).filter((s) => s !== "")
+}
+
+function Fye(e, n = !1) {
+  let r = new Set;
+  for (let s of Object.values(e))
+    if (s.type === "text" && s.inline && s.content !== "" && (n || !s.slashNameOnly))
+      for (let h of yJt(s.content)) r.add(h);
+  return [...r].sort((s, h) => h.length - s.length)
+}
+
+function ucs(e, n, r = !1) {
+  if (n === void 0) return [];
+  let s = Fye(n, r);
+  if (s.length === 0) return [];
+  let h = [],
+    y = (A, O) => {
+      let M = A;
+      for (let [j, G] of [...h].sort((N, Z) => N[0] - Z[0])) {
+        if (G <= M || j >= O) continue;
+        if (j > M) h.push([M, j]);
+        M = Math.max(M, G)
+      }
+      if (M < O) h.push([M, O])
+    },
+    S = (A, O) => {
+      let M = e.slice(A, O);
+      for (let j of s) {
+        let G = M.indexOf(j);
+        while (G !== -1) y(A + G, A + G + j.length), G = M.indexOf(j, G + 1)
+      }
+    },
+    w = 0;
+  for (let A of df(e)) {
+    if (n[A.id] === void 0) continue;
+    S(w, A.index), w = A.index + A.match.length
+  }
+  return S(w, e.length), h.sort((A, O) => A[0] - O[0])
+}
+
+function Agr(e, n) {
+  if (n === void 0) return e;
+  let r = "",
+    s = 0;
+  for (let h of df(e)) {
+    let y = n[h.id];
+    if (y?.type === "text" && !y.inline && h.match.startsWith("[...Truncated text")) r += e.slice(s, h.index) + y.content, s = h.index + h.match.length
+  }
+  return r + e.slice(s)
+}
+
+function Aao(e, n) {
+  let r = Fye(n ?? {}),
+    s = sc(e);
+  if (r.length === 0) return s;
+  if (r.some((y) => /ultraplan/i.test(y) && !e.includes(y))) return [];
+  let h = ucs(e, n);
+  return s.filter((y) => !Fk(y.start, y.end, h))
+}
+
+function IOn(e, n) {
+  return Aao(e, n).length > 0
+}
+
+function Fk(e, n, r) {
+  return r.some(([s, h]) => e < h && n > s)
+}
+
+function Qf(e) {
+  return e.startsWith("[Pasted text") || e.startsWith(`[${Q9e}`)
+}
+
+function wPi(e, n) {
+  return df(e).flatMap((r) => {
+    let s = n[r.id];
+    return s?.type === "text" && s.unavailable !== !0 && Qf(r.match) ? [s.content] : []
+  })
+}
+
+function Zf(e, n, r, s, h) {
+  let y = [],
+    S = e.length;
+  for (let w = n.length - 1; w >= 0; w--) {
+    let A = n[w];
+    y.unshift({
+      text: e.slice(A.index + A.match.length, S),
+      typed: !0
+    }), S = A.index;
+    let O = r[A.id];
+    if (O?.unavailable === !0) {
+      if (!s || A.match.startsWith("[Image")) y.unshift({
+        text: A.match,
+        typed: !0
+      });
+      continue
+    }
+    if (O?.type !== "text") {
+      y.unshift({
+        text: A.match,
+        typed: !0
+      });
+      continue
+    }
+    if (!Qf(A.match) || !h) {
+      y.unshift({
+        text: O.content,
+        typed: !0
+      });
+      continue
+    }
+    y.unshift({
+      text: h(O.content),
+      typed: !1
+    })
+  }
+  return y.unshift({
+    text: e.slice(0, S),
+    typed: !0
+  }), y
+}
+
+function ep(e, n, r, s = []) {
+  if (!n && !r) return e.map((O) => O.text).join("");
+  let h = n ?? ((O) => O),
+    y = [],
+    S = "",
+    w = () => {
+      if (S === "") return;
+      if (r && s.length > 0) y.push(...$k(S, s, r).map((O) => O.typed ? {
+        text: h(O.text),
+        typed: !0
+      } : O));
+      else y.push({
+        text: h(S),
+        typed: !0
+      });
+      S = ""
+    };
+  for (let O of e) {
+    if (O.typed) {
+      S += O.text;
+      continue
+    }
+    w(), y.push(O)
+  }
+  w();
+  let A = "";
+  for (let O = 0; O < y.length; O++) {
+    let M = y[O];
+    A += M.text;
+    let j = y[O + 1]?.text ?? "";
+    if (!M.typed && j !== "" && !j.startsWith(`
+`)) A += `
+`
+  }
+  return A
+}
+
+function $k(e, n, r) {
+  let s = [],
+    h = 0;
+  for (let y of hJt(e, n)) {
+    if (y.from > h) s.push({
+      text: e.slice(h, y.from),
+      typed: !0
+    });
+    s.push({
+      text: r(e.slice(y.from, y.to)),
+      typed: !1
+    }), h = y.to
+  }
+  if (h < e.length || s.length === 0) s.push({
+    text: e.slice(h),
+    typed: !0
+  });
+  return s
+}
+
+function Uk(e, n) {
+  let {
+    stripped: r,
+    removed: s
+  } = tp(e, n);
+  return {
+    input: r,
+    removed: s
+  }
+}
+
+function tp(e, n, r, s) {
+  let h = df(e),
+    y = [],
+    S = e;
+  for (let A = h.length - 1; A >= 0; A--) {
+    let O = h[A];
+    if (!O.match.startsWith("[Image") && n[O.id]?.unavailable === !0) S = S.slice(0, O.index) + S.slice(O.index + O.match.length), y.unshift({
+      id: O.id,
+      label: O.match.startsWith("[...Truncated text") ? "Truncated text" : "Pasted text"
+    })
+  }
+  let w = ep(Zf(e, h, n, !0, r), s, r, Fye(n));
+  return {
+    stripped: S,
+    expanded: w,
+    removed: y
+  }
+}
+
+function xgr(e, n, r, s) {
+  return tp(e, n, r, s)
+}
+
+function Xf(e, n) {
+  if (!n) return [];
+  let r = new Set(df(e).map((s) => s.id));
+  return Object.entries(n).filter((s) => s[1].type === "text" && !s[1].unavailable && r.has(Number(s[0])))
+}
+
+function xao(e) {
+  let n = np(e),
+    r = n.join(", ");
+  return n.length === 1 ? `${r} is no longer available and was removed from the prompt` : `${r} are no longer available and were removed from the prompt`
+}
+
+function kPi(e) {
+  let n = np(e);
+  return `Not sent: ${n.join(", ")} ${n.length===1?"is":"are"} no longer available. Put that text back in place of its placeholder and send again.`
+}
+
+function np(e) {
+  return L(e.map((n) => `${n.label} #${n.id}`))
+}
+var Xut = 1e5;
+
+function MOn(e, n) {
+  let r = null;
+  for (let h of df(e)) {
+    let y = n[h.id];
+    if (y?.type !== "text" || y.unavailable) continue;
+    if (!r || h.id > r.id) r = h
+  }
+  if (!r) return null;
+  let s = n[r.id].content;
+  if (s.length > Xut) return null;
+  return {
+    expanded: e.slice(0, r.index) + s + e.slice(r.index + r.match.length),
+    id: r.id,
+    cursorOffset: r.index + s.length
+  }
+}
+var Bk = 200,
+  jk = 262144;
+async function* zk(e) {
+  let n;
+  for (;;) {
+    let r = await e.readRecords(Ve.history(), {
+      order: "backward",
+      ...n === void 0 ? {
+        limit: Bk
+      } : {
+        maxBytes: jk,
+        fromSeq: n
+      }
+    });
+    if (!r.ok) {
+      if (r.error.code === "NotFound") return;
+      throw Error("history readRecords failed", {
+        cause: r.error
+      })
+    }
+    for (let h of r.value.items) {
+      let y = Buffer.from(h.data.buffer, h.data.byteOffset, h.data.byteLength).toString("utf8"),
+        S = y.endsWith(`
+`) ? y.slice(0, -1) : y;
+      if (S) yield S
+    }
+    let s = r.value.nextSeq;
+    if (s === void 0) return;
+    if (n !== void 0 && s >= n) throw Error("history readRecords cursor failed to advance", {
+      cause: {
+        fromSeq: n,
+        nextSeq: s
+      }
+    });
+    n = s
+  }
+}
+var Gk = p(() => u({
+  display: o(),
+  pastedContents: me(o(), oe()).catch({}).transform((e) => Object.fromEntries(Object.entries(e).flatMap(([n, r]) => {
+    let s = Lk().safeParse(r);
+    if (s.success) return [
+      [n, s.data]
+    ];
+    return t(`Dropping a malformed paste record from a history line (${op(s.error)})`), []
+  }))),
+  timestamp: E(),
+  project: o(),
+  sessionId: o().optional().catch(void 0)
+}));
+
+function op(e) {
+  return e.issues.map((n) => `${n.path.join(".")||"value"}: ${n.message}`).join("; ")
+}
+
+function Kk(e) {
+  try {
+    let n = ds(e),
+      r = Gk().safeParse(n);
+    if (r.success) return {
+      entry: r.data,
+      droppedPasteRecords: Vk(n, r.data)
+    };
+    return t(`Skipping malformed history line (${op(r.error)})`), {
+      rejection: "shape_rejected"
+    }
+  } catch (n) {
+    return t(`Failed to parse history line: ${n}`), {
+      rejection: "parse_failed"
+    }
+  }
+}
+
+function Vk(e, n) {
+  if (typeof e !== "object" || e === null || !("pastedContents" in e)) return !1;
+  let r = e.pastedContents;
+  if (r === null) return !1;
+  if (typeof r !== "object" || Array.isArray(r)) return !0;
+  return Object.keys(r).length > Object.keys(n.pastedContents).length
+}
+
+function qk(e) {
+  return Object.values(e).reduce((n, r) => n + (r.content?.length ?? 0), 0)
+}
+var Yk = 32768,
+  Xk = 4194304;
+
+function fcs(e, n) {
+  let r = {};
+  for (let [s, h] of Object.entries(n)) r[Number(s)] = h.type === "text" ? {
+    ...h,
+    content: Q(h.content, Yk)
+  } : h;
+  return Nye(e, r)
+}
+var Pao = ["session", "project", "everywhere"];
+
+function Jf(e) {
+  let {
+    prev: n,
+    next: r,
+    project: s,
+    sessionId: h
+  } = e;
+  if (!n || n.display !== r.display) return !1;
+  if (n.project !== s || n.sessionId !== h) return !1;
+  return !(Object.keys(n.pastedContents).length > 0) && !r.hasPastes
+}
+class rp {
+  getSensitiveCommands = null;
+  pendingEntries = [];
+  isWriting = !1;
+  currentFlushPromise = null;
+  exitFlushHandle = null;
+  lastAddedEntry = null;
+  lastStoredEntry = null;
+  lastAssignedTimestamp = 0;
+  storedEntryGeneration = 0;
+  lastAddWasDeduped = !1;
+  skippedKeys = new Set;
+  pendingPasteWrites = new Set;
+  pendingPasteContents = new Map;
+  inFlightFlushEntries = null;
+  reportedLostPasteHashes = new Set;
+  clearedDrafts = [];
+  immediateFlush = vN((e) => this.flushEntriesToDisk(e));
+  async * readLogEntries(e) {
+    let n = this.pendingEntries.slice(),
+      r = new Set(n.map((A) => `${A.timestamp}\x00${A.sessionId??""}`));
+    for (let A = n.length - 1; A >= 0; A--) yield n[A];
+    let s = Yf(Ue(), "history.jsonl"),
+      h = !1,
+      y = !1,
+      S = !1,
+      w = !1;
+    try {
+      let A = e ? zk(e) : Iwe(s, void 0, {
+        strict: !1
+      });
+      for await (let M of A) {
+        let j = Kk(M);
+        if (!j.entry) {
+          if (j.rejection === "parse_failed") h = !0;
+          else y = !0;
+          continue
+        }
+        if (j.droppedPasteRecords) S = !0;
+        let G = j.entry,
+          N = `${G.timestamp}\x00${G.sessionId??""}`;
+        if (this.skippedKeys.has(N) || r.has(N)) continue;
+        w = !0, yield G
+      }
+      let O = h ? "history_load_parse_failed" : y ? "history_load_shape_rejected" : S ? "history_load_paste_record_dropped" : void 0;
+      if (O) c("history_load", O, {
+        parse_failed: h,
+        shape_rejected: y,
+        paste_record_dropped: S
+      });
+      else g("history_load")
+    } catch (A) {
+      if (k(A) === "ENOENT") {
+        g("history_load");
+        return
+      }
+      if (w || n.length > 0) c("history_load", "history_load_read_interrupted");
+      else m("history_load", "history_load_read_failed");
+      throw A
+    }
+  }
+  async * readEntries(e) {
+    for await (let n of this.readLogEntries(e)) yield await this.toHistoryEntry(n, e)
+  }
+  async * readTimestamped(e = "project", n) {
+    let r = Oo(),
+      s = z(),
+      h = new Set,
+      y = 0;
+    for await (let S of this.readLogEntries(n)) {
+      if (e === "project" && S.project !== r) continue;
+      if (e === "session" && S.sessionId !== s) continue;
+      let w = Rgr(S.display, S.pastedContents);
+      if (h.has(w)) continue;
+      h.add(w);
+      let A = {};
+      if (y < Xk)
+        for (let [M, j] of Object.entries(S.pastedContents)) {
+          let G = j.type === "text" ? await this.resolveStoredPastedContent(j, n) : null;
+          if (G) A[Number(M)] = G
+        }
+      let O = fcs(S.display, A);
+      if (O !== S.display) y += O.length;
+      yield {
+        display: S.display,
+        expandedDisplay: O,
+        timestamp: S.timestamp,
+        textLength: S.display.length + (O === S.display ? qk(S.pastedContents) : O.length),
+        resolve: () => this.toHistoryEntry(S, n)
+      }
+    }
+  }
+  async countForProject(e, n) {
+    let r = Oo(),
+      s = 0,
+      h = 0;
+    try {
+      for await (let S of this.readLogEntries(n)) {
+        if (S.project !== r) continue;
+        if (s++, !e || e(S.display)) h++;
+        if (s >= ic) break
+      }
+    } catch {
+      return null
+    }
+    let y = z();
+    for (let {
+        entry: S,
+        project: w,
+        sessionId: A
+      }
+      of this.clearedDrafts)
+      if (w === r && A === y && (!e || e(S.display))) h++;
+    return h
+  }
+  async * readForProject(e, {
+    withClearedDrafts: n = !1
+  } = {}) {
+    let r = Oo(),
+      s = z(),
+      h = [],
+      y = 0,
+      S = n ? this.clearedDrafts.filter((A) => A.project === r && A.sessionId === s) : [],
+      w = S.length - 1;
+    for await (let A of this.readLogEntries(e)) {
+      if (A.project !== r) continue;
+      if (A.sessionId === s) {
+        for (; w >= 0 && S[w].timestamp > A.timestamp; w--) yield S[w].entry;
+        yield await this.toHistoryEntry(A, e), y++
+      } else h.push(A);
+      if (y + h.length >= ic) break
+    }
+    for (; w >= 0; w--) yield S[w].entry;
+    for (let A of h) {
+      if (y >= ic) return;
+      yield await this.toHistoryEntry(A, e), y++
+    }
+  }
+  async resolveStoredPastedContent(e, n) {
+    if (e.content) return {
+      id: e.id,
+      type: e.type,
+      content: e.content,
+      mediaType: e.mediaType,
+      filename: e.filename
+    };
+    if (e.contentHash) {
+      let r = await this.resolvePastedTextByHash(e.contentHash, n);
+      if (r) return {
+        id: e.id,
+        type: e.type,
+        content: r,
+        mediaType: e.mediaType,
+        filename: e.filename
+      }
+    }
+    return null
+  }
+  reportLostPasteContent(e) {
+    let n = e ?? "missing-hash";
+    if (this.reportedLostPasteHashes.has(n)) return;
+    this.reportedLostPasteHashes.add(n), c("paste_store", "paste_store_content_lost")
+  }
+  async resolvePastedTextByHash(e, n) {
+    return this.pendingPasteContents.get(e) ?? await Kf(e, n)
+  }
+  registerPastedTextForRecall(e, n) {
+    let r = Wf(e);
+    this.pendingPasteContents.set(r, e);
+    let s = Gf(r, e, n);
+    return this.pendingPasteWrites.add(s), s.then(() => this.pendingPasteContents.delete(r)).finally(() => this.pendingPasteWrites.delete(s)), r
+  }
+  async toHistoryEntry(e, n) {
+    let r = {};
+    for (let [s, h] of Object.entries(e.pastedContents)) {
+      let y = await this.resolveStoredPastedContent(h, n);
+      if (!y && h.type === "text") this.reportLostPasteContent(h.contentHash);
+      r[Number(s)] = y ?? {
+        id: h.id,
+        type: h.type,
+        content: "",
+        unavailable: !0
+      }
+    }
+    return {
+      display: e.display,
+      pastedContents: r
+    }
+  }
+  async flushEntriesToDisk(e) {
+    if (this.pendingEntries.length === 0) return !0;
+    let n = this.pendingEntries.slice();
+    this.inFlightFlushEntries = new Set(n);
+    while (this.pendingPasteWrites.size > 0) await Promise.all(this.pendingPasteWrites);
+    if (e) try {
+      let s = await e.append(Ve.history(), n.map((y) => ({
+        data: _(y) + `
+`
+      })));
+      if (!s.ok) {
+        t(`Failed to write prompt history: ${s.error.code}`);
+        let y = "telemetryCode" in s.error && (s.error.telemetryCode === "LockContended" || s.error.telemetryCode === "LockAcquireFailed");
+        return c("history_save", y ? "history_save_lock_failed" : "history_save_write_failed"), !1
+      }
+      let h = new Set(n);
+      return this.pendingEntries = this.pendingEntries.filter((y) => !h.has(y)), g("history_save"), !0
+    } catch (s) {
+      return t(`Failed to write prompt history: ${s}`), c("history_save", "history_save_write_failed"), !1
+    } finally {
+      this.inFlightFlushEntries = null
+    }
+    let r;
+    try {
+      let s = Yf(Ue(), "history.jsonl");
+      await Dn().append(s, "", 384), r = await Zd(s, {
+        ...Mut,
+        onCompromised: (S) => t(`History lock compromised: ${S}`, {
+          level: "error"
+        })
+      });
+      let h = n.map((S) => _(S) + `
+`);
+      await Dn().append(s, h.join(""), 384);
+      let y = new Set(n);
+      return this.pendingEntries = this.pendingEntries.filter((S) => !y.has(S)), g("history_save"), !0
+    } catch (s) {
+      if (t(`Failed to write prompt history: ${s}`), r) c("history_save", "history_save_write_failed");
+      else c("history_save", "history_save_lock_failed");
+      return !1
+    } finally {
+      if (this.inFlightFlushEntries = null, r) await r().catch(a)
+    }
+  }
+  async flushWithRetries(e, n) {
+    if (this.isWriting || this.pendingEntries.length === 0) return;
+    if (e > 5) return;
+    this.isWriting = !0;
+    let r = !1;
+    try {
+      r = await this.immediateFlush(n)
+    } finally {
+      if (this.isWriting = !1, this.pendingEntries.length > 0) await J(500), this.currentFlushPromise = this.flushWithRetries(r ? 0 : e + 1, n)
+    }
+  }
+  async addEntry(e, n, r, s = !0) {
+    let h = typeof e === "string" ? {
+        display: e,
+        pastedContents: {}
+      } : e,
+      {
+        input: y,
+        removed: S
+      } = Uk(h.display, h.pastedContents ?? {}),
+      w = y.trim();
+    if (S.length > 0 && w === "") return;
+    if (S.length > 0 && h.display.trimStart().startsWith("!")) {
+      if (s && r !== void 0 && r !== "bash") this.lastAddWasDeduped = !0;
+      return
+    }
+    if (S.length > 0 && h.display.trimStart().startsWith("/")) return;
+    if (S.length > 0) {
+      let te = h.display.trimStart();
+      if (w.startsWith("/") && !te.startsWith("/") || w.startsWith("!") && !te.startsWith("!") || w.startsWith("@") && !te.startsWith("@")) {
+        if (s) this.lastAddWasDeduped = !0;
+        return
+      }
+    }
+    if (S.length > 0) {
+      let te = new Map;
+      for (let se of df(h.display)) te.set(se.id, (te.get(se.id) ?? 0) + 1);
+      let Y = new Map;
+      for (let se of df(y)) Y.set(se.id, (Y.get(se.id) ?? 0) + 1);
+      let ne = !1;
+      for (let [se, ae] of Y) {
+        if (ae <= (te.get(se) ?? 0)) continue;
+        let re = h.pastedContents?.[se];
+        if (re !== void 0 && re.type !== "image" && !re.unavailable) {
+          ne = !0;
+          break
+        }
+      }
+      if (ne) {
+        if (s) this.lastAddWasDeduped = !0;
+        return
+      }
+    }
+    let A = S.length > 0 ? {
+        ...h,
+        display: y
+      } : h,
+      O = Oo(),
+      M = z(),
+      j = Xf(A.display, A.pastedContents);
+    if (Jf({
+        prev: this.lastStoredEntry,
+        next: {
+          display: A.display,
+          hasPastes: j.length > 0
+        },
+        project: O,
+        sessionId: M
+      })) {
+      if (s) this.lastAddWasDeduped = !0;
+      return
+    }
+    let G = {};
+    for (let [te, Y] of j)
+      if (Y.content.length <= Nk) G[Number(te)] = {
+        id: Y.id,
+        type: Y.type,
+        content: Y.content,
+        mediaType: Y.mediaType,
+        filename: Y.filename
+      };
+      else G[Number(te)] = {
+        id: Y.id,
+        type: Y.type,
+        contentHash: this.registerPastedTextForRecall(Y.content, n),
+        mediaType: Y.mediaType,
+        filename: Y.filename
+      };
+    let N = Math.max(Date.now(), this.lastAssignedTimestamp + 1);
+    this.lastAssignedTimestamp = N;
+    let Z = {
+      ...A,
+      pastedContents: G,
+      timestamp: N,
+      project: O,
+      sessionId: M
+    };
+    if (this.pendingEntries.push(Z), this.lastStoredEntry = Z, this.storedEntryGeneration++, this.dropClearedDraftCopies(A, O, M), s) this.lastAddedEntry = Z, this.lastAddWasDeduped = !1;
+    this.currentFlushPromise = this.flushWithRetries(0, n), this.currentFlushPromise
+  }
+  async flushOnExit(e) {
+    let n = null;
+    while (this.currentFlushPromise && this.currentFlushPromise !== n) n = this.currentFlushPromise, await n;
+    if (this.pendingEntries.length > 0) {
+      if (!await this.immediateFlush(e)) m("history_save", "history_save_exit_flush_failed")
+    }
+    while (this.pendingPasteWrites.size > 0) await Promise.all(this.pendingPasteWrites)
+  }
+  add(e, n, r) {
+    if (Pe(process.env.CLAUDE_CODE_SKIP_PROMPT_HISTORY) || E_t()) return;
+    if (this.isSensitive(typeof e === "string" ? {
+        display: e,
+        pastedContents: {}
+      } : e)) {
+      if (r?.armUndo !== !1) this.lastAddWasDeduped = !0;
+      return
+    }
+    this.registerExitFlush(n), this.addEntry(e, n, r?.submitMode, r?.armUndo).catch(a)
+  }
+  registerExitFlush(e) {
+    if (this.exitFlushHandle) return;
+    this.exitFlushHandle = vt(() => this.flushOnExit(e))
+  }
+  registerSensitiveCommands(e) {
+    this.getSensitiveCommands = e
+  }
+  keepClearedDraft(e, n) {
+    let r = Oo(),
+      s = z();
+    if (this.isSensitive(e) || !1 || Jf({
+        prev: this.lastStoredEntry,
+        next: {
+          display: e.display,
+          hasPastes: Object.keys(e.pastedContents).length > 0
+        },
+        project: r,
+        sessionId: s
+      })) return;
+    this.dropClearedDraftCopies(e, r, s), this.clearedDrafts.push({
+      entry: e,
+      timestamp: n,
+      project: r,
+      sessionId: s,
+      length: Object.values(e.pastedContents).reduce((y, S) => y + S.content.length, e.display.length)
+    });
+    let h = this.clearedDrafts.reduce((y, S) => y + S.length, 0);
+    while (this.clearedDrafts.length > Ik || h > Dk) h -= this.clearedDrafts.shift().length;
+    this.storedEntryGeneration++
+  }
+  dropClearedDraftCopies({
+    display: e,
+    pastedContents: n
+  }, r, s) {
+    if (this.clearedDrafts.length === 0) return;
+    let h = Rgr(e, n);
+    this.clearedDrafts = this.clearedDrafts.filter((y) => y.project !== r || y.sessionId !== s || Rgr(y.entry.display, y.entry.pastedContents) !== h)
+  }
+  isSensitive({
+    display: e,
+    pastedContents: n
+  }) {
+    return AOn(e, (this.getSensitiveCommands ?? ip().get)(), {
+      pastedTexts: Xf(e, n).map(([, r]) => r.content)
+    })
+  }
+  getGeneration() {
+    return this.storedEntryGeneration
+  }
+  clearPending() {
+    this.pendingEntries = [], this.clearedDrafts = [], this.lastAddedEntry = null, this.lastStoredEntry = null, this.lastAddWasDeduped = !1, this.getSensitiveCommands = () => [], this.skippedKeys.clear(), this.pendingPasteContents.clear(), this.exitFlushHandle?.(), this.exitFlushHandle = null
+  }
+  disarmUndo() {
+    this.lastAddedEntry = null, this.lastAddWasDeduped = !1
+  }
+  removeLast() {
+    if (this.lastAddWasDeduped) {
+      this.lastAddWasDeduped = !1;
+      return
+    }
+    if (!this.lastAddedEntry) return;
+    let e = this.lastAddedEntry;
+    if (this.lastAddedEntry = null, this.lastStoredEntry === e) this.lastStoredEntry = null;
+    this.storedEntryGeneration++;
+    let n = this.pendingEntries.lastIndexOf(e);
+    if (n !== -1) {
+      if (this.pendingEntries.splice(n, 1), this.inFlightFlushEntries?.has(e)) this.skippedKeys.add(`${e.timestamp}\x00${e.sessionId??""}`)
+    } else this.skippedKeys.add(`${e.timestamp}\x00${e.sessionId??""}`)
+  }
+}
+var Jk = new W(() => new rp);
+
+function Wn() {
+  return Jk.of(H().host)
+}
+class sp {
+  get = () => []
+}
+var Qk = new W(() => new sp);
+
+function ip() {
+  return Qk.of(H().host)
+}
+
+function pcs(e) {
+  return Wn().readEntries(e)
+}
+
+function Oao(e) {
+  if (e instanceof e4e) return !0;
+  let n = e instanceof Error ? e.cause : void 0;
+  if (f$e(n) && n.code === "Unavailable" && vY(n.telemetryCode) === void 0) return !0;
+  let r = k(e) ?? nx(e);
+  return yun(r) || jIo(r)
+}
+
+function vPi(e = "project", n) {
+  return Wn().readTimestamped(e, n)
+}
+
+function EPi(e, n) {
+  return Wn().countForProject(e, n)
+}
+
+function Iao(e, n) {
+  return Wn().readForProject(e, n)
+}
+
+function cTe(e, n, r) {
+  Wn().add(e, n, r)
+}
+
+function uTe(e, n, r) {
+  let s = !1;
+  for (let h of e) try {
+    let y = Hf(h, r.placed, {
+      screened: r.screened?.get(h),
+      unanswered: r.unanswered ?? "skipped"
+    });
+    if (!y) continue;
+    s = !0, cTe(y, n, {
+      submitMode: h.mode,
+      armUndo: r.armUndo
+    })
+  } catch (y) {
+    a(y)
+  }
+  if (!s && r.armUndo !== !1 && r.screened === void 0) Wn().disarmUndo()
+}
+
+function mMt(e, n, r) {
+  cTe(e, n, {
+    submitMode: r,
+    armUndo: !1
+  })
+}
+
+function TPi(e) {
+  Wn().registerExitFlush(e)
+}
+
+function CPi(e) {
+  ip().get = e
+}
+
+function RPi(e, n) {
+  Wn().keepClearedDraft(e, n)
+}
+
+function hMt() {
+  return Wn().getGeneration()
+}
+
+function APi() {
+  Wn().removeLast()
+}
+var VE = "ui.render";
+var Hut = (e) => F6(VE, {
+  component: e
+});
+var ap = "capability_rejected: ";
+
+function bds(e) {
+  return `${ap}${e}`
+}
+
+function kF(e, n) {
+  let r = bds(n),
+    s = 0;
+  for (;;) {
+    let h = e.indexOf(r, s);
+    if (h === -1) return !1;
+    let y = e[h + r.length];
+    if (y === void 0 || !/[A-Za-z0-9_:.-]/.test(y)) return !0;
+    s = h + 1
+  }
+}
+
+function VAi(e) {
+  return e.includes(`${ap}beta_header:`)
+}
+
+function Uio(e) {
+  let n = e.toLowerCase();
+  return n.includes("prompt is too long") || n.includes("input is too long for requested model")
+}
+
+function Ghr(e) {
+  let n = e.trim().replace(/^400 /, "");
+  return n.startsWith("{") ? /"message":\s*"input is too long\.?"/i.test(n) && !n.includes('"policy_blocked"') : /^input is too long\.?$/i.test(n)
+}
+
+function Bio(e) {
+  return e.toLowerCase().includes("context window")
+}
+
+function Sds(e) {
+  return e.toLowerCase().includes("input length and `max_tokens` exceed context limit")
+}
+var tx = ["could not process image", "image exceeds", "image dimensions exceed", "image does not match the provided media type", "image cannot be empty", "exceeds api limit", "images exceed the api limit", "unable to resize image", "unable to compress image", "image file is empty"],
+  lp = ["does not support pdf input", "does not support pdfs"];
+
+function jio(e) {
+  let n = e.toLowerCase();
+  return lp.some((r) => n.includes(r))
+}
+var ox = ["could not process pdf", "pdf pages", "the pdf specified was not valid", "the pdf specified is password protected", "pdf cannot be empty", ...lp, "too much media"];
+
+function wds(e) {
+  let n = e.toLowerCase().replaceAll("`", "");
+  if (n.includes("signature in thinking block")) return !0;
+  if (n.includes("invalid data in redacted_thinking block")) return !0;
+  if (n.includes("thinking.signature") && n.includes("field required")) return !0;
+  return (n.includes("thinking block") || n.includes("redacted_thinking")) && (n.includes("cannot be modified") || n.includes("invalid signature"))
+}
+
+function kds(e) {
+  let n = /thinking\.type[^a-z]{1,8}(enabled|adaptive)[^]*?not supported/i.exec(e) ?? /\b(adaptive) thinking is not supported/i.exec(e);
+  return n?.[1] ? n[1].toLowerCase() : void 0
+}
+
+function rx(e) {
+  let n = e.toLowerCase();
+  if (n.includes("effort parameter") && n.includes("not support")) return !0;
+  return n.includes("output_config") && (n.includes("extra inputs are not permitted") || n.includes("requires a model that supports"))
+}
+
+function vds(e) {
+  return e.toLowerCase().includes("output_config.format: extra inputs are not permitted")
+}
+
+function sx(e) {
+  return e.toLowerCase().includes("too much media")
+}
+
+function Eds(e) {
+  let n = e.match(/messages[.[](\d+)[\].]+content[.[](\d+)[\].]+(?:tool_result[.[]content[.[](\d+)[\].]+)?(image|document|pdf)/);
+  if (n) return {
+    messageIdx: Number(n[1]),
+    contentIdx: Number(n[2]),
+    ...n[3] !== void 0 && {
+      nestedContentIdx: Number(n[3])
+    },
+    kind: n[4] === "image" ? "image" : "document"
+  };
+  let r = e.toLowerCase();
+  if (tx.some((s) => r.includes(s))) return {
+    kind: "image"
+  };
+  if (ox.some((s) => r.includes(s))) return {
+    kind: "document"
+  };
+  return
+}
+var cp = /system messages?\b|role .{0,2}system/i,
+  ix = /(?:messages\.(\d{1,6}): )?(?:role .{0,2}system.{0,2} must (?:precede an|follow a)|use the top-level .{0,2}system.{0,2} parameter for the initial system prompt)/i,
+  ax = /text-only role .{0,2}system.{0,2} messages require/i,
+  lx = /(?:unknown variant .{0,2}system\b.{0,2}, expected|Input should be) [\\'"`]{1,2}(?:user|assistant)\b.{0,2} or [\\'"`]{1,2}(?:user|assistant)\b/i;
+
+function Tds(e) {
+  let n = ix.exec(e);
+  if (!n) return;
+  return {
+    messageIndex: n[1] === void 0 ? void 0 : Number(n[1])
+  }
+}
+
+function iOn(e, n) {
+  return e.includes(n) && /anthropic[-_]beta/.test(e)
+}
+
+function KAi(e, n) {
+  return iOn(e, n) || kF(e, `beta_header:${n}`)
+}
+
+function Cds(e) {
+  if (iOn(e, vet)) return !0;
+  if (Tds(e) !== void 0 || ax.test(e)) return !0;
+  if (e.includes("Unexpected role") && e.includes("input message role") || lx.test(e)) return !0;
+  if (e.includes("cache_control") && cp.test(e)) return !0;
+  return e.includes("not supported") && /role .{0,2}system/i.test(e)
+}
+
+function Wio(e) {
+  if (!e.includes("cache_control")) return !1;
+  if (cp.test(e)) return !1;
+  if (e.includes("empty text block")) return !1;
+  if (/\bsystem\.\d+\./.test(e) || e.includes("tool_result")) return !1;
+  if (/\bttl\b/i.test(e)) return !1;
+  let n = e.toLowerCase();
+  return n.includes("not permitted") || n.includes("cannot be set") || n.includes("unknown name") || n.includes("unknown field") || n.includes("unrecognized") || n.includes("additional propert")
+}
+
+function zio(e, n, r) {
+  if (e === 413) return Bio(n) || Uio(n) ? "prompt_too_long" : void 0;
+  if (e !== 400) return;
+  if (Cds(n)) return "mid_conv_system";
+  if (Wio(n)) return "cache_control_field";
+  if (wds(n)) return "thinking_signature";
+  let s = kds(n);
+  if (s) return `thinking_type:${s}`;
+  if (vds(n)) return "structured_outputs_unsupported";
+  if (rx(n)) return "effort_unsupported";
+  if (sx(n)) return "media_budget";
+  let h = Eds(n);
+  if (h) return h.kind === "image" ? "image_block" : "document_block";
+  if (Uio(n)) return "prompt_too_long";
+  if (Sds(n)) return "max_tokens_context_overflow";
+  for (let y of r ?? []) {
+    let S = y.trim();
+    if (S && iOn(n, S)) return `beta_header:${S}`
+  }
+  return
+}
+var cx = ["max_uses_exceeded", "too_many_requests", "overloaded", "prompt_too_long", "execution_time_exceeded", "unavailable"];
+
+function lc(e) {
+  if (!("content" in e)) return;
+  let n = e.content;
+  if (typeof n !== "object" || n === null || !("type" in n)) return;
+  return n
+}
+
+function qAi(e) {
+  let n = lc(e);
+  if (n === void 0 || n.type !== "advisor_tool_result_error") return;
+  if (!("error_code" in n) || typeof n.error_code !== "string") return "unknown";
+  let r = n.error_code;
+  return cx.find((s) => s === r) ?? "unknown"
+}
+var ux = {
+    end_turn: !0,
+    max_tokens: !0,
+    stop_sequence: !0,
+    tool_use: !0,
+    pause_turn: !0,
+    compaction: !0,
+    refusal: !0,
+    model_context_window_exceeded: !0
+  },
+  Rds = Object.keys(ux);
+
+function Ads(e) {
+  let n = lc(e);
+  if (n === void 0 || n.type !== "advisor_result" && n.type !== "advisor_redacted_result") return;
+  if (!("stop_reason" in n) || typeof n.stop_reason !== "string") return;
+  let r = n.stop_reason;
+  return Rds.find((s) => s === r) ?? "unknown"
+}
+
+function AWe(e) {
+  return Ads(e) === "refusal"
+}
+
+function YXt(e) {
+  if (!AWe(e)) return;
+  let n = lc(e);
+  if (n?.type !== "advisor_result" || !("text" in n)) return;
+  let r = n.text;
+  return typeof r === "string" && r ? r : void 0
+}
+var nTe = "advisor",
+  up = !1;
+
+function YAi() {
+  up = !0
+}
+var ac = new Set,
+  dp = null;
+
+function XAi(e) {
+  dp = e
+}
+
+function pp() {
+  try {
+    return dp?.() ?? "default"
+  } catch {
+    return "default"
+  }
+}
+
+function JAi() {
+  ac.add(pp())
+}
+
+function dx() {
+  return up || ac.size > 0 && ac.has(pp())
+}
+
+function XXt() {
+  if (i.CLAUDE_CODE_DISABLE_ADVISOR_TOOL || dx()) return !1;
+  let e = Te();
+  return (e === "firstParty" || cM(e)) && Ky()
+}
+
+function fA() {
+  if (!XXt()) return !1;
+  if (i.CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOL) return !0;
+  return v("tengu_sage_compass2", {
+    enabled: cM(Te())
+  }).enabled ?? !1
+}
+
+function uc() {
+  return i.CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOL
+}
+var fx = 2;
+
+function $i(e) {
+  return sd(rt(Vt(e)))?.advisor_rank
+}
+
+function Ui(e) {
+  let n = rt(Vt(e));
+  if (!ye()) {
+    if (Bbe(n) && (!ERe() || Qee(e) !== null)) return;
+    if (Xon(n) && !Sko(n)) return
+  }
+  return sd(n)?.advisor_rank
+}
+
+function O9(e) {
+  if (uc()) return !0;
+  return $i(e) !== void 0
+}
+var px = ["fable", "opus", "sonnet"];
+
+function Out(e) {
+  return rTe(Gn(Vt(e)))
+}
+
+function _Z() {
+  return px.filter((e) => {
+    let n = Gn(Vt(e));
+    return Out(e) || oTe(n)
+  })
+}
+
+function mp(e) {
+  if (uc()) return !0;
+  let n = Ui(e);
+  return n !== void 0 && n >= fx
+}
+
+function rTe(e) {
+  let n = Vt(e);
+  if (!uo(e)) return !1;
+  if (Xoe(n)) return !1;
+  return mp(e)
+}
+
+function oTe(e) {
+  let n = Vt(e);
+  if (!Xoe(n)) return !1;
+  if (!uo(e)) return !1;
+  if (Okr(rt(n))) return !1;
+  return mp(e)
+}
+
+function iMt(e) {
+  return `${Cw(Vt(e))} as the advisor bills to usage credits, which need to be set up for your account.`
+}
+
+function aMt(e) {
+  let n = Vt(e),
+    r = Afe(Cw(n)).toLowerCase();
+  if (!Db(r)) return "/model";
+  let s = nc(n);
+  return MR(s) && !Xoe(Vt(r)) && Xoe(n) ? `/model ${s.base}` : `/model ${r}`
+}
+
+function UDe(e, n) {
+  if (uc()) return !0;
+  let r = $i(e),
+    s = Ui(n);
+  if (r === void 0 || s === void 0) return !0;
+  return r <= s
+}
+
+function aOn(e, n) {
+  let r = $i(e),
+    s = Ui(n);
+  if (r === void 0 || s === void 0) return !0;
+  return r <= s
+}
+
+function QAi(e, n) {
+  let r = $i(e),
+    s = Ui(n);
+  return r !== void 0 && s !== void 0 && r <= s
+}
+
+function Iut(e, n) {
+  return rt(Vt(e)) === rt(Vt(n))
+}
+
+function xWe(e, n) {
+  if (!fA() || !e) return;
+  let r = Gn(Vt(e));
+  if (!O9(n)) {
+    if (t(`[AdvisorTool] Skipping advisor - base model ${n} does not support advisor`), xa().claim("advisor_unranked_base_warning")) console.warn(`Warning: Advisor disabled \u2014 base model '${n}' has no advisor rank in the model catalog. Switch to a public model alias (opus, sonnet, fable) or set CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOL=1.`);
+    return
+  }
+  if (!rTe(r)) {
+    t(`[AdvisorTool] Skipping advisor - ${r} is not a valid advisor model`);
+    return
+  }
+  if (!UDe(n, r)) {
+    t(`[AdvisorTool] Skipping advisor - ${r} cannot advise ${n} (advisor must be at least as capable as the base model)`);
+    return
+  }
+  return t(`[AdvisorTool] Server-side tool enabled with ${r} as the advisor model`), r
+}
+
+function ZAi(e, n) {
+  return e !== void 0 && XXt() && O9(n) ? e : void 0
+}
+
+function Vhr() {
+  if (!fA()) return;
+  return xds(yt())
+}
+
+function xds(e) {
+  return typeof e.advisorModel === "string" && e.advisorModel !== "" ? e.advisorModel : void 0
+}
+
+function exi(e) {
+  return (e.iterations ?? []).filter((n) => n.type === "advisor_message")
+}
+var hp = `# Advisor Tool
+
+You have access to an \`advisor\` tool backed by a stronger reviewer model. It takes NO parameters -- when you call advisor(), your entire conversation history is automatically forwarded. They see the task, every tool call you've made, every result you've seen.
+
+Call advisor BEFORE substantive work -- before writing, before committing to an interpretation, before building on an assumption. If the task requires orientation first (finding files, fetching a source, seeing what's there), do that, then call advisor. Orientation is not substantive work. Writing, editing, and declaring an answer are.
+
+Also call advisor:
+- When you believe the task is complete. BEFORE this call, make your deliverable durable: write the file, save the result, commit the change. The advisor call takes time; if the session ends during it, a durable result persists and an unwritten one doesn't.
+- When stuck -- errors recurring, approach not converging, results that don't fit.
+- When considering a change of approach.
+
+On tasks longer than a few steps, call advisor at least once before committing to an approach and once before declaring done. On short reactive tasks where the next action is dictated by tool output you just read, you don't need to keep calling -- the advisor adds most of its value on the first call, before the approach crystallizes.
+
+Give the advice serious weight. If you follow a step and it fails empirically, or you have primary-source evidence that contradicts a specific claim (the file says X, the paper states Y), adapt. A passing self-test is not evidence the advice is wrong -- it's evidence your test doesn't check what the advice is checking.
+
+If you've already retrieved data pointing one way and the advisor points another: don't silently switch. Surface the conflict in one more advisor call -- "I found X, you suggest Y, which constraint breaks the tie?" The advisor saw your evidence but may have underweighted it; a reconcile call is cheaper than committing to the wrong branch.`;
+var Gio = p(() => Dr("available", [u({
+    available: T(!0),
+    model: o(),
+    abbreviated: I().optional(),
+    toolChange: T("add").optional()
+  }), u({
+    available: T(!1),
+    model: o().optional(),
+    toolChange: T("remove").optional(),
+    byBase: T(!0).optional()
+  })])),
+  mx = "The advisor tool is no longer available; disregard the earlier advisor instructions.",
+  hx = "The advisor tool is available; the advisor instructions announced earlier apply.";
+
+function JXt(e) {
+  for (let n = e.length - 1; n >= 0; n--) {
+    let r = e[n];
+    if (r === void 0 || r.type !== "attachment" || r.attachment.type !== "advisor_tool") continue;
+    let s = Gio().safeParse(r.attachment);
+    if (!s.success) continue;
+    return s.data.available ? {
+      available: !0,
+      model: s.data.model,
+      toolChange: s.data.toolChange !== void 0,
+      byBase: !1
+    } : {
+      available: !1,
+      model: s.data.model,
+      toolChange: s.data.toolChange !== void 0,
+      byBase: s.data.byBase === !0
+    }
+  }
+  return
+}
+
+function Khr(e) {
+  for (let n = e.length - 1; n >= 0; n--) {
+    let r = e[n];
+    if (r.type === "attachment" && r.attachment.type === "advisor_tool" && r.attachment.toolChange !== void 0) return r.attachment.toolChange
+  }
+  return
+}
+
+function txi(e) {
+  return e.some((n) => {
+    if (n.type !== "attachment" || n.attachment.type !== "advisor_tool") return !1;
+    let r = Gio().safeParse(n.attachment);
+    return r.success && r.data.available && r.data.abbreviated !== !0
+  })
+}
+
+function nxi(e, n) {
+  if (!e) return mx;
+  return n === !0 ? hx : hp
+}
+
+function PWe(e) {
+  return ("/" + e).replace(/\/{2,}/g, "/")
+}
+var i1 = new W(() => ({
+  port: null
+}));
+var h1 = p(() => u({
+  method: o()
+}));
+var S1 = new W(() => ({
+  handle: null,
+  undelivered: null
+}));
+var gp = "coordinator",
+  yp = "anthropic/memory",
+  Vio = "read_only",
+  dc = "none",
+  gx = 4096,
+  Zo = {
+    all: 0,
+    read_only: 1,
+    none: 2
+  },
+  _p = p(() => u({
+    subagent_memory: B(["all", "read_only", "none"]).optional().catch(dc),
+    subagent_note: o().max(gx).optional().catch(void 0),
+    coordinator_memory: B(["all", "read_only", "none"]).optional().catch(dc),
+    callers: C(o()).optional().catch(void 0)
+  }));
+
+function Kio(e, n) {
+  let r, s, h, y = !1;
+  for (let O of e ?? []) {
+    if (!$fe(O)) continue;
+    if (O.type !== "connected") {
+      y ||= O.type !== "disabled";
+      continue
+    }
+    let M = O.capabilities.experimental?.[yp];
+    if (M === void 0) continue;
+    let j = _p().safeParse(M),
+      G = j.success ? j.data.subagent_memory : dc,
+      N = j.success ? Tz(j.data.subagent_note ?? "").trim() || void 0 : void 0;
+    if (G === void 0) h ??= N;
+    else if (r === void 0 || Zo[G] > Zo[r]) r = G, s = N
+  }
+  let S = r === void 0 ? n : n === void 0 || Zo[r] >= Zo[n] ? r : n,
+    w = S === void 0 ? "default" : S === r ? "served" : "fallback",
+    A = r === void 0 || S === r;
+  if (r === void 0) s = h;
+  return {
+    mode: S ?? Vio,
+    source: w,
+    ...s !== void 0 && A && {
+      note: s
+    },
+    ...S === void 0 && y && {
+      serverPending: !0
+    }
+  }
+}
+
+function fc(e) {
+  return K8i.has(e)
+}
+
+function qhr(e) {
+  let n;
+  return (r) => {
+    let s = r.mcpInfo;
+    if (s?.accountMemoryServer !== !0) return !1;
+    if (n === void 0) {
+      let h = e(),
+        y = Sys(h) ? "none" : void 0;
+      for (let S of h) {
+        if (!$fe(S)) continue;
+        let w = wp(S) && !hEo(S, yg) && bp(S)?.coordinator_memory || "none";
+        if (y === void 0 || Zo[w] > Zo[y]) y = w
+      }
+      n = y ?? "none"
+    }
+    return n !== "none" && (fc(s.toolName) || n === "all" && s.cliOwned !== !0)
+  }
+}
+
+function bp(e) {
+  if (e.type !== "connected") return;
+  let n = _p().safeParse(e.capabilities.experimental?.[yp]);
+  return n.success ? n.data : void 0
+}
+
+function wp(e) {
+  return bp(e)?.callers?.includes(gp) === !0
+}
+
+function QXt(e, n) {
+  return e.mcpInfo?.accountMemoryServer === !0 && Pds(e.mcpInfo.toolName, n)
+}
+
+function Pds(e, n) {
+  return n === "none" || !fc(e)
+}
+
+function kp(e) {
+  return e.mcpRequestMeta?.[JRe] === ZIs
+}
+
+function yx(e, n, r) {
+  if (!e || kp(n)) return;
+  let s = n.memoryCaller ?? (Da() && wp(r) ? gp : void 0);
+  return s && {
+    [JRe]: s
+  }
+}
+
+function Yhr(e, n, r, s) {
+  let h = yx(n, r, s)?.[JRe] ?? r.mcpRequestMeta?.[JRe];
+  if (h === void 0) delete e[JRe];
+  else e[JRe] = h
+}
+
+function ZXt(e, n, r) {
+  let s = r.agentContext?.agentType !== "main" || r.agentId !== void 0 || r.memoryCaller !== void 0;
+  return e && s && !kp(r) && !fc(n) ? "Only the session's main agent can change the user's account memory; a subagent, teammate, fork or backgrounded query cannot. If something should be saved, say so in your reply so the main agent can save it." : void 0
+}
+
+function rxi({
+  isTeammate: e,
+  isBackground: n
+}) {
+  return e || n ? "worker" : "subagent"
+}
+
+function oxi(e) {
+  return e.mode === "none" ? void 0 : e.note
+}
+var Wi = null;
+
+function Pp(e) {
+  return null
+}
+var xp = "/memory_context";
+var _x = "tengu_fancy_crab",
+  bx = 900,
+  wx = 60000,
+  kx = 2000,
+  pc = 5000,
+  Rp = 1e4;
+var xx = 3600000,
+  Op = 262144,
+  Mp = 4 * Op + 1024,
+  Ip = 4096,
+  tG = Mp + 4 * Ip;
+var Dp = p(() => o().regex(/^[A-Za-z0-9._:+/=-]{1,256}$/)),
+  Rx = p(() => u({
+    version: Dp(),
+    content: o().min(1).max(Op),
+    versions: me(o(), o()).optional().catch(void 0),
+    guidance: o().min(1).max(Ip).optional().catch(void 0),
+    variant: B(["tools"]).optional().catch(void 0),
+    post_turn_instruction: o().min(1).max(JIs).optional().catch(void 0)
+  }));
+
+function mc(e, n, r, s) {
+  if (n) g(e, {
+    outcome: f(r),
+    ...s
+  });
+  else g(e)
+}
+var Bt = new W(() => ({
+  answeredForSession: void 0,
+  answeredUnderRepoRead: void 0,
+  answeredWithRepoReadProof: !1,
+  lists: new Map,
+  listChanges: 0,
+  inflightFor: void 0,
+  held: void 0,
+  inflight: void 0,
+  kicked: void 0,
+  epoch: 0,
+  firstWaitSpent: !1,
+  withdrawalOwed: !1,
+  gateReported: void 0,
+  lastCheck: void 0,
+  memoryWriteCutAt: void 0,
+  turnEndCheck: void 0,
+  turnEndGet: void 0,
+  shown: new Set,
+  shownRecall: [],
+  failures: 0,
+  notBefore: void 0,
+  tools: !1,
+  subagentMode: void 0,
+  lastGetUnanswered: !1,
+  placeTool: void 0,
+  servedVersions: new Set,
+  withdrawnVersions: new Set,
+  gaveBlockUp: !1
+}));
+
+function mo() {
+  return Np() && v("tengu_misty_anchor", !1)
+}
+
+function Np() {
+  let e = Zu(),
+    n = i.SYSTEM_REMINDER_MEMORY_CONTEXT && (e === void 0 || djs.has(e));
+  return Boolean((pG() || n) && z1())
+}
+
+function zi() {
+  return "closed"
+}
+
+function Xhr() {
+  if (w2e()) {
+    if (HQe()) return "denied";
+    if (!Use()) return "pending"
+  } else if (wE()) return "pending";
+  return gn("allow_memory_sync") ? "open" : "denied"
+}
+
+function vp(e, n) {
+  if (n === "open" || n === "closed") {
+    e.gateReported = void 0;
+    return
+  }
+  if (e.gateReported !== n) e.gateReported = n, c("laptop_memory_context", n === "pending" ? "policy_pending" : n === "denied" ? "policy_denied" : n)
+}
+
+function lOn() {
+  return "closed"
+}
+
+function dOn() {
+  return !1
+}
+
+function sxi(e, n, r = !1, s = void 0) {
+  let h = ho(),
+    y = Bt.of(e),
+    S = h !== void 0 && !Tn(h) && !r && !gc(h) ? Bi(e, y, h) : void 0,
+    w = h === "ccr" ? {} : {
+      leg: "laptop"
+    };
+  if (S?.content == null) {
+    if (n === void 0) return;
+    let O = h === void 0 && Np(),
+      M = (h === "ccr" || O) && !r && !Tn("ccr") && y.held?.content !== null && typeof n === "string" && !Hp(y, n) && s !== void 0 && Fp(s, n) === "standing";
+    return V("info", "cowork_memory_context_not_held_for_spawned_loop", {
+      leg: h ?? (z1() ? "ccr" : "laptop"),
+      kept: M
+    }), M ? void 0 : hc(h)
+  }
+  if (n === S.version) return;
+  let A = (S.guidance ?? "") + S.content;
+  if (h === "laptop") y.shown.add(A);
+  return uAr(e, A), {
+    type: "cowork_memory_context",
+    version: S.version,
+    content: A,
+    ...w
+  }
+}
+
+function Ods(e, n) {
+  let r = or(n);
+  if (r === null || r.content === null) return [];
+  let s = Bt.of(e),
+    h = zi(),
+    y = ho(h),
+    S = Lp(e, s, y, r, n),
+    w = S !== void 0 || s.held?.content === null;
+  if (!w) {
+    if (y === void 0 && z1()) return [];
+    if (w = y !== void 0 ? Tn(y) || gc(y) : h !== "pending" && s.held !== void 0, !w && s.held === void 0 && s.inflight !== void 0) return []
+  }
+  if (!w) return [];
+  return V("info", "cowork_memory_context_withdrawn_from_spawned_loop", {
+    leg: y ?? (z1() ? "ccr" : "laptop")
+  }), [S ?? hc(y)]
+}
+
+function ixi(e, n, r) {
+  return Lp(e, Bt.of(e), ho(), or(n), n, {
+    conversation: r
+  })
+}
+
+function Lp(e, n, r, s, h, y) {
+  if (s !== null && s.content !== null && s.version !== null && (Hp(n, s.version) || y !== void 0 && !n.servedVersions.has(s.version) && vx(n, s.version, y.conversation))) return hc(r);
+  return r === "laptop" && Bp(e, n, h) ? yc() : void 0
+}
+
+function Hp(e, n) {
+  return e.withdrawnVersions.has(n) || e.gaveBlockUp && !e.servedVersions.has(n)
+}
+
+function vx(e, n, r) {
+  let s = r === void 0 ? "unknown" : Fp(r, n);
+  if (s === "unknown") return e.held?.content != null && e.held.version !== n;
+  return s === "withdrawn"
+}
+
+function Fp(e, n) {
+  for (let r = e.length - 1; r >= 0; r--) {
+    let s = e[r];
+    if (s === void 0) continue;
+    if (pZt(s)) return "withdrawn";
+    if (Kr(s)) return "unknown";
+    if (s.type === "attachment" && s.attachment.type === "cowork_memory_context" && !s.attachment.anchor && s.attachment.version === n) return "standing"
+  }
+  return "unknown"
+}
+
+function hc(e) {
+  return e === "ccr" || e === void 0 && z1() ? {
+    type: "cowork_memory_context",
+    version: null,
+    content: null
+  } : yc()
+}
+
+function axi(e) {
+  return e.leg === "laptop" && e.content !== null ? {
+    type: "cowork_memory_context",
+    version: e.version,
+    content: null,
+    anchor: !0
+  } : void 0
+}
+
+function lxi(e, n) {
+  let r = ho(),
+    s = r === "laptop" && !Tn(r) && !gc(r) ? Bi(e, Bt.of(e), r) : void 0;
+  if (s?.content == null || n === null || s.version !== n) return;
+  let h = Bt.of(e),
+    y = (s.guidance ?? "") + s.content;
+  return h.shown.add(y), uAr(e, y), {
+    type: "cowork_memory_context",
+    version: s.version,
+    content: y,
+    leg: "laptop"
+  }
+}
+
+function D$(e) {
+  return Kio(_g(e), Jhr(e.session.host))
+}
+
+function Jhr(e) {
+  return Bt.of(e).subagentMode
+}
+
+function ho(e = zi()) {
+  if (mo()) return "ccr";
+  if (e === "open") return "laptop";
+  return
+}
+
+function Tn(e) {
+  return S0() && (e === "laptop" || !pG())
+}
+
+function gc(e) {
+  return e === "laptop" && Wi?.emergencyOffStands() === !0
+}
+
+function $p() {
+  if (mo()) return Tn("ccr");
+  switch (zi()) {
+    case "open":
+      return Tn("laptop");
+    case "account_off":
+    case "local_memory_off":
+    case "denied":
+      return !0;
+    case "pending":
+    case "closed":
+      return !1
+  }
+}
+qHi($p);
+
+function dxi(e) {
+  if (z1()) return;
+  let n = Bt.of(e);
+  Io(n), rs(n)
+}
+
+function Ids(e, n) {
+  let r = n.flatMap((h) => {
+      if (h.type !== "attachment") return [];
+      let {
+        attachment: y
+      } = h;
+      if (y.type === "account_memory_recall") return [y.content];
+      return y.type === "cowork_memory_context" && y.leg === "laptop" && y.content !== null ? [y.content] : []
+    }),
+    s = Bt.of(e);
+  return L([...s.shown, ...s.shownRecall, ...r])
+}
+
+function cxi(e, n) {
+  let r = n.flatMap((s) => s.type === "attachment" && s.attachment.type === "cowork_memory_context" && s.attachment.leg !== "laptop" && s.attachment.content !== null ? [s.attachment.content] : []);
+  return L([...Ids(e, n), ...r])
+}
+
+function Bi(e, n, r) {
+  return r === "laptop" && n.held?.stop !== !0 && (n.answeredForSession !== z() || Up(e, n)) ? void 0 : n.held
+}
+
+function Up(e, n) {
+  return n.answeredWithRepoReadProof && jp(e, n)
+}
+
+function yc() {
+  return {
+    type: "cowork_memory_context",
+    version: null,
+    content: null,
+    leg: "laptop"
+  }
+}
+
+function Ex(e, n, r) {
+  return typeof r === "string" && n.lists.has(r) && n.lists.get(r) !== Pp(e)?.repoReadEpoch(e)
+}
+
+function Bp(e, n, r) {
+  if (n.lists.size === 0) return !1;
+  for (let s = r.length - 1; s >= 0; s--) {
+    let h = r[s];
+    if (h?.type !== "attachment" || h.attachment.type !== "cowork_memory_context" || h.attachment.anchor) continue;
+    if (h.attachment.content === null) return !1;
+    if (Ex(e, n, h.attachment.version)) return !0
+  }
+  return !1
+}
+
+function jp(e, n) {
+  return n.answeredUnderRepoRead !== void 0 && n.answeredUnderRepoRead !== Pp(e)?.repoReadEpoch(e)
+}
+
+function uxi(e, n) {
+  Bt.of(e).servedVersions.add(n)
+}
+
+function fxi(e) {
+  let n = Bt.of(e),
+    r = mo() ? n.held?.version : void 0;
+  for (let s of n.servedVersions)
+    if (s !== r) n.withdrawnVersions.add(s), n.servedVersions.delete(s);
+  n.gaveBlockUp = !0
+}
+
+function Io(e) {
+  for (let n of e.servedVersions) e.withdrawnVersions.add(n);
+  e.servedVersions.clear(), e.gaveBlockUp = !0
+}
+
+function rs(e) {
+  e.epoch++, e.withdrawalOwed ||= e.held !== void 0, e.held = void 0, e.lastCheck = void 0, e.inflight = void 0, e.inflightFor = void 0, e.kicked = void 0, e.firstWaitSpent = !1, e.failures = 0, e.notBefore = void 0, e.subagentMode = void 0, e.answeredForSession = void 0, e.answeredUnderRepoRead = void 0, e.answeredWithRepoReadProof = !1
+}
+
+function Ep(e, n, r, s, h) {
+  return Io(n), rs(n), n.withdrawalOwed = !1, nr(e, n, {
+    version: null,
+    content: null
+  }, r, s, h)
+}
+
+function Mds(e, n = {}, r) {
+  let s = ho();
+  if (s !== void 0 && !Tn(s)) Wp(e.host, s, n, r)
+}
+
+function pxi(e) {
+  if (!mo() || Tn("ccr")) return !1;
+  return Wp(e.host, "ccr", {}), !0
+}
+
+function mxi(e, n = {}, r) {
+  let s = Bt.of(e.host);
+  if ((s.held !== void 0 || s.inflight !== void 0) && !mo()) {
+    rs(s);
+    return
+  }
+  let h = () => {
+    if (r?.aborted !== !0 && s.held === void 0 && s.lastCheck === void 0 && s.inflight === void 0) Mds(e, n)
+  };
+  if (s.inflight === void 0) h();
+  else s.inflight.then(h, h).catch(() => {})
+}
+
+function Wp(e, n, r, s) {
+  let h = performance.now(),
+    y = Ki(e, n, r);
+  if (y === void 0) return;
+  s?.asked(h), y.then(() => {
+    let S = performance.now();
+    s?.answered(S), qr("memory_context_fetch_ms", S - h, h);
+    let w = QCe("input_ready_ms");
+    qr("memory_context_boot_spillover_ms", w === void 0 ? 0 : S - w)
+  }).catch(() => {})
+}
+
+function Qhr(e, n = {}) {
+  let r = ho();
+  if (r !== void 0 && !Tn(r)) Gp(e.host, r, n)
+}
+
+function hxi(e) {
+  if (!mo() || Tn("ccr")) return;
+  let {
+    host: n
+  } = e, r = Bt.of(n), s = r.lastCheck;
+  if (s === void 0 || r.held?.stop || r.inflight !== void 0 || r.lastGetUnanswered || ji(s, wx)) return;
+  let h = Sc();
+  if (!(h > 0) || ji(s, h / 2)) return;
+  let y = Math.round(Math.max(Date.now() - s.wall, performance.now() - s.monotonic)),
+    S = r.held?.version,
+    w = r.epoch,
+    A = performance.now(),
+    O = {
+      answered: !1,
+      disowned: !1
+    },
+    M = Ki(n, "ccr", {}, O);
+  if (M === void 0) return;
+  r.turnEndGet = {
+    get: M,
+    outcome: O
+  }, M.then(() => {
+    if (O.answered && r.lastCheck !== void 0) r.turnEndCheck = {
+      check: r.lastCheck,
+      replaced: s
+    };
+    V("info", "memory_context_turn_end_get", {
+      earlier_check_age_ms: y,
+      get_took_ms: Math.round(performance.now() - A),
+      answer_applied: O.answered,
+      replaced_by_next_turn: !O.answered && O.disowned,
+      discarded_by_memory_reset: !O.answered && !O.disowned && r.epoch !== w,
+      version_changed: O.answered && r.held?.version !== S
+    })
+  }).catch(() => {})
+}
+
+function gxi(e, n) {
+  if (!mo()) return;
+  if (n.some((s) => s.type === "assistant" && Array.isArray(s.message.content) && s.message.content.some((h) => h.type === "tool_use" && z$t.has(h.name))) && Sc() > 0) Bt.of(e).memoryWriteCutAt = performance.now()
+}
+
+function yxi(e, n) {
+  let r = Bt.of(e);
+  if (r.held?.content == null || Tn("ccr") || !mo()) return [];
+  let s = nr(e, r, r.held, or(n), n, "ccr");
+  if (s.length > 0) V("info", "memory_context_turn_collected", {
+    leg: "ccr",
+    attached_mid_turn: !0
+  });
+  return s
+}
+
+function Tp(e) {
+  return e.lastCheck !== void 0 && e.memoryWriteCutAt !== void 0 && e.lastCheck.monotonic <= e.memoryWriteCutAt
+}
+
+function Sc() {
+  let e = 0;
+  try {
+    e = v(_x, 0)
+  } catch (n) {
+    a(n), V("warn", "cowork_memory_context_window_flag_failed")
+  }
+  return typeof e === "number" ? Math.min(e, bx) * 1000 : 0
+}
+
+function ji(e, n) {
+  let r = Date.now() - e.wall;
+  return r >= 0 && r < n && performance.now() - e.monotonic < n
+}
+
+function zp(e, n, r) {
+  if (r === "laptop" && n.held?.stop !== !0 && Up(e, n)) Io(n), rs(n)
+}
+
+function Gp(e, n, r) {
+  let s = Bt.of(e);
+  zp(e, s, n);
+  let h = n === "ccr" ? s.turnEndGet : void 0;
+  if (h !== void 0 && s.inflight === h.get) h.outcome.disowned = !0, s.inflight = void 0, s.inflightFor = void 0;
+  let y = s.inflight !== void 0,
+    S = s.lastCheck,
+    A = {
+      answered: Ki(e, n, r),
+      joined: y,
+      sentFor: s.inflightFor,
+      checkAtKick: S
+    };
+  return s.kicked = A.answered === void 0 ? void 0 : A, A
+}
+
+function Tx(e) {
+  return () => e.options?.tools
+}
+
+function _xi(e, n, r) {
+  if (n.agentId || ls(r) !== "main") return;
+  let s = n.session.host;
+  Bt.of(s).placeTool = mz(Tx(n));
+  let h = zi(),
+    y = ho(h);
+  if (y === void 0) {
+    if (z1()) return;
+    let Ie = Bt.of(n.session.host);
+    if (vp(Ie, h), h === "pending") {
+      if (Ie.held === void 0 && Ie.withdrawalOwed) return Ie.withdrawalOwed = !1, Io(Ie), Promise.resolve(nr(s, Ie, {
+        version: null,
+        content: null
+      }, or(e), e, "laptop"));
+      return
+    }
+    if (Ie.held === void 0 && !Ie.withdrawalOwed) {
+      if (Ie.inflight !== void 0) rs(Ie);
+      return
+    }
+    return Promise.resolve(Ep(s, Ie, or(e), e, "laptop"))
+  }
+  let S = Bt.of(n.session.host);
+  if (y === "laptop") vp(S, h);
+  let w = or(e);
+  if (Tn(y)) return Promise.resolve(Ep(s, S, w, e, y));
+  zp(s, S, y);
+  let A = S.kicked ?? Gp(n.session.host, y, n),
+    {
+      answered: O,
+      joined: M,
+      sentFor: j
+    } = A;
+  S.kicked = void 0;
+  let G = !1,
+    N, Z = S.held?.stop === !0;
+  if (y === "ccr" && S.lastCheck !== void 0 && !Z) {
+    let Ie = Sc();
+    G = ji(S.lastCheck, Ie), N = S.turnEndCheck?.check === S.lastCheck ? {
+      last_check_sent_at_turn_end: !0,
+      earlier_check_still_in_window: ji(S.turnEndCheck.replaced, Ie)
+    } : {
+      last_check_sent_at_turn_end: !1
+    }
+  }
+  let te = y === "ccr" && !Z && i.CLAUDE_CODE_MEMORY_CONTEXT_NO_WAIT,
+    Y = G && Cx(S.held, w, e),
+    ne = G && Tp(S),
+    se = y === "laptop" && !Z && jp(s, S),
+    ae = se ? void 0 : Bi(s, S, y);
+  if (te || ae !== void 0 && !Y && !ne && (y === "laptop" || G)) {
+    if (y === "ccr") {
+      let Ie = ae?.version,
+        Ye = S.epoch,
+        pt = performance.now();
+      O?.then(() => {
+        let ct = S.epoch !== Ye;
+        V("info", "memory_context_per_turn_wait", {
+          leg: y,
+          wait_ms: 0,
+          joined: M,
+          cut: !1,
+          first: !1,
+          waited: !1,
+          answered: !ct && S.lastCheck !== A.checkAtKick,
+          get_ended_after_ms: Math.round(performance.now() - pt),
+          missed_change: Ie !== void 0 && !ct && S.held?.version !== Ie,
+          ...N
+        })
+      }).catch(() => {})
+    }
+    return Promise.resolve(nr(s, S, S.held, w, e, y))
+  }
+  let re = S.epoch,
+    _e = () => Bi(s, S, y),
+    Se = (Ie) => {
+      if (y === "laptop" && Ie && S.epoch === re) S.firstWaitSpent = !0;
+      if (y === "laptop" && S.held === void 0 && S.withdrawalOwed) return S.withdrawalOwed = !1, Io(S), nr(s, S, {
+        version: null,
+        content: null
+      }, w, e, y);
+      return nr(s, S, _e(), w, e, y)
+    };
+  if (O === void 0) return Promise.resolve(Se(!1));
+  let ce = (_e() === void 0 || se) && w === null && !(y === "laptop" && S.firstWaitSpent) ? pc : kx,
+    xe = performance.now(),
+    ve = !1,
+    Oe = !1,
+    Ce = O.then(() => {
+      if (S.epoch !== re) return;
+      return ve = y === "ccr" && S.held?.stop !== !0 && Tp(S), Oe = y === "ccr" && M && S.held === void 0 && S.lastCheck === void 0, ve || Oe || y === "laptop" && j !== void 0 && j !== z() ? Ki(n.session.host, y, n) : void 0
+    }),
+    Ne = Ao(Ce.then(() => !0), n.abortController.signal, () => new Ke);
+  return we(Ne, ce).then((Ie) => {
+    let Ye = Math.round(performance.now() - xe);
+    if (V("info", "memory_context_per_turn_wait", {
+        leg: y,
+        wait_ms: Ye,
+        joined: M,
+        cut: !Ie,
+        first: ce === pc,
+        ...(ne || Y) && {
+          waited: !0,
+          reason: ne ? "rewind_removed_memory_write" : "stale_notice_due"
+        },
+        ...ve && {
+          second_check: !0
+        },
+        ...Oe && {
+          joined_ended_unanswered: !0
+        },
+        ...Z && {
+          route_stopped: !0
+        }
+      }), y === "laptop") l("tengu_laptop_memory_context_wait", {
+      wait_ms: Ye,
+      cut: !Ie,
+      first: ce === pc
+    });
+    return Se(Ie !== !0)
+  }, () => Se(!1))
+}
+
+function or(e) {
+  for (let n = e.length - 1; n >= 0; n--) {
+    let r = e[n];
+    if (r?.type === "attachment" && r.attachment.type === "cowork_memory_context" && !r.attachment.anchor) return r.attachment
+  }
+  return null
+}
+
+function Cx(e, n, r) {
+  if (!e?.versions || e.content === null || n?.version === e.version) return !1;
+  try {
+    return Kp(e.versions, r).length > 0
+  } catch {
+    return !1
+  }
+}
+
+function nr(e, n, r, s, h, y) {
+  let S = y === "laptop" ? {
+    leg: y
+  } : {};
+  if (r === void 0) return y === "laptop" && Bp(e, n, h) ? [yc()] : [];
+  if (r.content !== null) {
+    if (s?.version === r.version) return [];
+    let M = "",
+      j = (r.guidance ?? "") + M + r.content + Dds(r.versions, h);
+    if (y === "laptop") n.shown.add(j);
+    return uAr(e, j), [...[], {
+      type: "cowork_memory_context",
+      version: r.version,
+      content: j,
+      ...S
+    }]
+  }
+  if (s !== null && s.content !== null) return [{
+    type: "cowork_memory_context",
+    version: r.version,
+    content: null,
+    ...S
+  }];
+  return $p() && XHi(h, n.placeTool) ? [{
+    type: "cowork_memory_context",
+    version: r.version,
+    content: null,
+    toolsOnly: !0,
+    ...S
+  }] : []
+}
+
+function Ki(e, n, r, s, h = !1) {
+  let y = Bt.of(e);
+  if (n === "laptop" && !h && y.held?.stop !== !0 && Wi?.emergencyOffStands() === !0) Io(y), y.held = {
+    version: null,
+    content: null,
+    stop: !0
+  };
+  if (y.held?.stop) return Promise.resolve();
+  if (y.inflight !== void 0) return y.inflight;
+  if (n === "laptop" && y.notBefore !== void 0) {
+    let w = y.notBefore - Date.now();
+    if (w > 0 && w <= xx) return
+  }
+  let S = Ax(e, n, r, s).finally(() => {
+    if (y.inflight === S) y.inflight = void 0, y.inflightFor = void 0
+  });
+  return y.inflight = S, y.inflightFor = z(), S
+}
+async function Ax(e, n, r, s) {
+  let h = Bt.of(e),
+    {
+      epoch: y
+    } = h,
+    S = {
+      again: !1
+    };
+  if (await Cp(e, n, r, s, S), S.again && h.epoch === y && ho() === n && !Tn(n)) await Cp(e, n, r, s)
+}
+async function Cp(e, n, {
+  credentials: r,
+  storageV5: s
+}, h, y) {
+  let S = Bt.of(e),
+    w = S.held?.version,
+    A = S.epoch,
+    O = z(),
+    M = n === "ccr" ? "ccr_memory_context" : "laptop_memory_context",
+    j = !1,
+    G, N, Z, te = !1,
+    Y = !1,
+    ne = !1,
+    se = !1;
+  try {
+    let {
+      path: ae,
+      opts: re
+    } = {
+      path: i.CLAUDE_CODE_MEMORY_CONTEXT_NO_WAIT ? `${xp}?takes_late_ms=${Rp}` : xp,
+      opts: {
+        host: "ccr-session",
+        auth: "session-jwt",
+        maxContentLength: Mp
+      }
+    }, _e = void 0, Se = null, ce = !1, xe = () => S.epoch !== A || h?.disowned === !0, ve = {};
+    Z = null?.repoReadEpoch(e);
+    let Oe = null?.repoReadLogin();
+    te = Object.keys(ve).length > 0, G = "failed";
+    let Ce = {
+        wall: Date.now(),
+        monotonic: performance.now()
+      },
+      Ne = await jt.get(ae, {
+        ...re,
+        ...re.refreshOAuth && {
+          refreshOAuth: !1
+        },
+        headers: {
+          ...re.headers,
+          "anthropic-version": "2023-06-01",
+          ...!1,
+          ...ve,
+          ...w && !0 && S.answeredUnderRepoRead === Z && S.answeredWithRepoReadProof === te && {
+            "If-None-Match": `"${w}"`
+          }
+        },
+        timeout: Rp,
+        ...te && {
+          maxRedirects: 0
+        },
+        validateStatus: () => !0,
+        ...!1
+      });
+    if (xe()) return;
+    if (Ne.ok, !Ne.ok) {
+      V("warn", "cowork_memory_context_gated", {
+        leg: n,
+        reason: Ne.reason
+      }), c(M, Ne.reason.replaceAll("-", "_")), G = void 0;
+      return
+    }
+    let Ie = Ne.response.headers;
+    switch (N = Ie["retry-after"], Ne.status) {
+      case 200: {
+        let Ye = Rx().safeParse(Ne.data);
+        if (!Ye.success) {
+          V("warn", "cowork_memory_context_malformed", {
+            leg: n
+          }), m(M, "malformed");
+          return
+        }
+        let pt = Tz(Ye.data.content);
+        S.servedVersions.add(Ye.data.version), S.withdrawnVersions.delete(Ye.data.version), S.held = {
+          version: Ye.data.version,
+          content: pt,
+          versions: Ye.data.versions,
+          ...!1,
+          ...!1,
+          ...Ye.data.post_turn_instruction !== void 0 && {
+            postTurnInstruction: Tz(Ye.data.post_turn_instruction)
+          }
+        }, uAr(e, (S.held.guidance ?? "") + pt), G = "answered", S.lastCheck = Ce, V("info", "cowork_memory_context_fetched", {
+          leg: n
+        }), mc(M, !1, "fetched", void 0);
+        return
+      }
+      case 304:
+        G = "answered", Y = !0, S.lastCheck = Ce, V("info", "cowork_memory_context_unchanged", {
+          leg: n
+        }), mc(M, !1, "unchanged");
+        return;
+      case 204: {
+        let Ye = Ie.etag,
+          pt = Dp().safeParse(typeof Ye === "string" ? Ye.replace(/^(?:W\/)?"(.*)"$/, "$1") : Ye),
+          ct = !pt.success;
+        Io(S), S.held = {
+          version: pt.success ? pt.data : null,
+          content: null,
+          ...ct && {
+            stop: !0
+          }
+        }, G = "answered", S.lastCheck = Ce, V("info", "cowork_memory_context_none", {
+          leg: n,
+          stop: ct
+        }), mc(M, !1, ct ? "stop_org" : pt.success ? "none" : "none_no_etag");
+        return
+      }
+      case 401:
+      case 403:
+        break;
+      case 429:
+      case 503:
+        V("info", "cowork_memory_context_not_built", {
+          leg: n,
+          status: Ne.status
+        }), c(M, "not_built");
+        return;
+      default:
+        break
+    }
+    V("warn", "cowork_memory_context_http_error", {
+      leg: n,
+      status: Ne.status
+    }), c(M, `http_${Ne.status}`)
+  } catch (ae) {
+    let {
+      kind: re
+    } = Ai(ae);
+    if (h?.disowned !== !0) V("warn", "cowork_memory_context_exception", {
+      leg: n,
+      kind: re
+    }), c(M, re)
+  } finally {
+    if (h !== void 0) h.answered = G === "answered";
+    if (n === "ccr" && S.epoch === A && h?.disowned !== !0) S.lastGetUnanswered = G !== "answered"
+  }
+}
+
+function bxi(e) {
+  return Bt.of(e).held?.versions
+}
+
+function Sxi(e) {
+  return Bt.of(e).held?.postTurnInstruction
+}
+
+function wxi(e, n, r) {
+  let s = Bt.of(e),
+    h = s.held;
+  if (h?.versions !== n) return;
+  let y;
+  try {
+    y = bc(r).last
+  } catch {
+    V("warn", "cowork_memory_context_pass_versions_failed");
+    return
+  }
+  if (y.size === 0) return;
+  s.held = {
+    ...h,
+    versions: {
+      ...h.versions,
+      ...Object.fromEntries(y)
+    }
+  }
+}
+
+function Dds(e, n, r = Kp) {
+  if (!e) return "";
+  try {
+    return jx(r(e, n))
+  } catch {
+    return V("warn", "cowork_memory_context_notice_failed"), ""
+  }
+}
+var Px = new RegExp(`^${Vyt}(read|write|str_replace|append)$`),
+  _c = /^[^\n]*?\[version: ([0-9a-f]{12})\]/,
+  Mx = /^=== (.+) ===$/gm,
+  Ix = `${Vyt}search`,
+  Dx = /^Files in <memory_document_([0-9a-f]{16})> elements below are shown in full, as memory_read returns them\.\n/;
+
+function Ap(e, n) {
+  if (typeof e !== "object" || e === null || pd(e)) return;
+  let r = Object.getOwnPropertyDescriptor(e, n);
+  return r !== void 0 && "value" in r ? r.value : void 0
+}
+
+function Nx(e) {
+  if (typeof e !== "object" || e === null || pd(e) || !Array.isArray(e)) return [];
+  let n = e.length;
+  if (!Number.isSafeInteger(n) || n > jS) return [];
+  let r = [];
+  for (let s = 0; s < n; s++) {
+    let h = Object.getOwnPropertyDescriptor(e, s);
+    if (h && "value" in h && typeof h.value === "string") r.push(h.value)
+  }
+  return r
+}
+
+function Hx(e) {
+  let n = [...e.matchAll(Mx)];
+  return n.flatMap((r, s) => {
+    let h = r.index + r[0].length + 1,
+      y = n[s + 1]?.index ?? e.length,
+      S = _c.exec(e.slice(h, y))?.[1];
+    return S ? [
+      [PWe(r[1]), S]
+    ] : []
+  })
+}
+
+function $x(e) {
+  let n = Dx.exec(e)?.[1];
+  if (n === void 0) return [];
+  let r = `memory_document_${n}`,
+    s = `
+</${r}>`,
+    h = `
+<${r} `,
+    y, S, w = [];
+  for (let A of e.matchAll(new RegExp(`^<${r} path="([^"
+]*)">
+`, "gm"))) {
+    let O = A.index + A[0].length;
+    if (y === void 0 || y >= 0 && y < O) y = e.indexOf(s, O);
+    if (S === void 0 || S >= 0 && S < O) S = e.indexOf(h, O);
+    let M = y + s.length;
+    if (y < 0 || M < e.length && e[M] !== `
+` || S >= 0 && S + h.length <= y) continue;
+    let j = _c.exec(e.slice(O, y))?.[1];
+    if (j) w.push([PWe(A[1]), j])
+  }
+  return w
+}
+
+function Kp(e, n) {
+  let {
+    read: r,
+    written: s
+  } = bc(n);
+  return [...r].filter(([h, y]) => {
+    let S = e[h],
+      w = s.get(h);
+    return S !== void 0 && S !== y && !w?.has(y) && !w?.has(S)
+  }).map(([h]) => h).sort()
+}
+
+function kxi(e, n) {
+  let {
+    carried: r
+  } = bc(n);
+  return [...r].filter(([s, h]) => {
+    let y = e[s];
+    return y !== void 0 && !h.has(y)
+  }).map(([s]) => s).sort()
+}
+
+function bc(e) {
+  let n = new Map,
+    r = new Map,
+    s = new Map,
+    h = new Map,
+    y = new Map,
+    S = (A, O) => {
+      h.set(A, O), y.set(A, (y.get(A) ?? new Set).add(O))
+    },
+    w = new Map;
+  for (let A of e)
+    if (A.type === "assistant")
+      for (let O of A.message.content) {
+        if (O.type !== "tool_use") continue;
+        if (O.name === Ix) {
+          n.set(O.id, {
+            search: !0
+          });
+          continue
+        }
+        let M = Px.exec(O.name);
+        if (!M) continue;
+        let j = Ap(O.input, "path");
+        if (typeof j === "string") {
+          let G = Ap(O.input, "if_version");
+          n.set(O.id, {
+            path: PWe(j),
+            write: M[1] !== "read",
+            ifVersion: M[1] !== "read" && typeof G === "string" ? G : void 0
+          })
+        } else if (M[1] === "read") {
+          let G = Nx(j);
+          if (G.length === 1) n.set(O.id, {
+            path: PWe(G[0]),
+            write: !1,
+            ifVersion: void 0
+          });
+          else if (G.length > 1) n.set(O.id, {
+            multi: !0,
+            listed: new Set(G.map(PWe))
+          })
+        }
+      } else if (A.type === "user" && Array.isArray(A.message.content))
+        for (let O of A.message.content) {
+          let M = O.type === "tool_result" && !O.is_error && n.get(O.tool_use_id);
+          if (!M) continue;
+          let j = typeof O.content === "string" ? O.content : (O.content ?? []).map((N) => N.type === "text" ? N.text : "").join("");
+          if ("search" in M) {
+            for (let [N, Z] of $x(j)) r.set(N, Z), w.delete(N), S(N, Z);
+            continue
+          }
+          if ("multi" in M) {
+            for (let [N, Z] of Hx(j))
+              if (M.listed.has(N)) r.set(N, Z), w.delete(N), S(N, Z);
+            continue
+          }
+          let G = _c.exec(j)?.[1];
+          if (!G) continue;
+          if (S(M.path, G), M.write) {
+            if (s.set(M.path, (s.get(M.path) ?? new Set).add(G)), M.ifVersion !== void 0) y.get(M.path).add(M.ifVersion)
+          } else r.set(M.path, G), w.delete(M.path)
+        } else if (A.type === "attachment") {
+          if (A.attachment.type === "account_memory_recall")
+            for (let O of A.attachment.files) {
+              let M = PWe(O.path);
+              r.set(M, O.version), w.set(M, O.version), S(M, O.version)
+            } else if (A.attachment.type === "cowork_memory_context" && A.attachment.content === null && A.attachment.leg === "laptop" && !A.attachment.anchor) {
+              for (let [O, M] of w) {
+                r.delete(O);
+                let j = y.get(O);
+                if (j?.delete(M) && j.size === 0) y.delete(O);
+                if (h.get(O) === M) h.delete(O)
+              }
+              w.clear()
+            }
+        } return {
+    read: r,
+    written: s,
+    last: h,
+    carried: y
+  }
+}
+var Ux = `[This memory_read result is stale \u2014 the file has been modified since this read. After you re-read, the fresh content is the only source: anything you said earlier that is not in the new read was removed and is no longer true.
+Call memory_read again on the same path for the current content.]`,
+  Bx = `<memory_updates>
+The memory files below changed since your reads in earlier turns; those earlier-turn reads are outdated. The state as of this turn's start is shown below \u2014 any memory_read or memory_write you make this turn supersedes it.
+This block is machine-generated bookkeeping from the memory system, not part of the user's message, and the user cannot see it \u2014 text repeated from it reaches them as confusing system output. Never quote, paraphrase, summarize, or otherwise reproduce this block, its markers, its tags, or its diff lines in your reply, even when asked what changed. If the user asks about their memory, answer from the memory files' contents in your own words \u2014 at most, say in plain language that your view of their memory files was refreshed.
+
+`;
+
+function jx(e) {
+  return e.length === 0 ? "" : `
+` + Bx + e.map((n) => `## ${Tz(n).replaceAll(`
+`," ")}
+${Ux}`).join(`
+
+`) + `
+</memory_updates>`
+}
+import {
+  mkdir as _v,
+  rm as bv,
+  stat as ph
+} from "fs/promises";
+import {
+  isAbsolute as mh,
+  join as ou,
+  relative as mr,
+  sep as Es
+} from "path";
+import {
+  AsyncLocalStorage as Vx
+} from "async_hooks";
+var uG = new Vx;
+var FAi = 600000;
+class Vp {
+  logged = !1;
+  claim() {
+    if (this.logged) return !1;
+    return this.logged = !0, !0
+  }
+}
+var UG = new W(() => new Vp);
+var qx = /\.purge\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.tmp$/,
+  qp = /^\.[0-9a-f]{16}\.tmp$/,
+  Yx = /^\.[0-9a-f]{16}\.tmp~$/,
+  Xx = new RegExp(`(${qp.source})|(${Yx.source})|(\\.tmp\\.[0-9a-f]{8}$)|(${qx.source})`);
+var Jx = /(^\..*\.tmp~?$)|(\.tmp[.~][0-9a-f]{8}$)|(\.lock$)|(\.purge\..*\.tmp$)|(^apply\.marker$)/;
+
+function sce(e) {
+  return qp.test(e)
+}
+
+function Xp(e, n) {
+  return U2n(e) || (n ? Xx.test(e) : Jx.test(e))
+}
+var HAi = 60000;
+import {
+  constants as eu
+} from "fs";
+import {
+  open as fv,
+  readdir as pv,
+  realpath as mv
+} from "fs/promises";
+import {
+  join as ah
+} from "path";
+class Jp {
+  loaderSide = null;
+  register(e) {
+    this.loaderSide = e
+  }
+}
+var Qp = new Jp;
+
+function jAi(e) {
+  Qp.register(e)
+}
+
+function Zp() {
+  let e = Qp.loaderSide;
+  if (!e) throw Error("MCP skill builders not registered \u2014 loadSkillsDir.ts has not been evaluated yet");
+  return e
+}
+import {
+  isAbsolute as Qx
+} from "path";
+var ace = (e, n, r) => ({
+    frontmatterAsWritten: e,
+    ...r !== void 0 && {
+      frontmatterProblem: r
+    },
+    ...n !== void 0 && Qx(n) && {
+      path: n
+    }
+  }),
+  WAi = (e) => ({
+    frontmatterAsWritten: {},
+    frontmatterProblem: e
+  });
+
+function Hio(e, n) {
+  let r = {
+      copies: new Map,
+      hasCollided: !1
+    },
+    {
+      frontmatterAsWritten: s,
+      asWrittenProblem: h
+    } = e,
+    y, S;
+  try {
+    y = tm(s, r), S = h && wc(h)
+  } catch {
+    return ace({}, n, "could not be scrubbed")
+  }
+  return r.hasCollided ? ace({}, n, "has two keys that read the same once scrubbed") : ace(y, n, S)
+}
+var wc = (e) => pgo(wwt(e).replace(/[\u2028\u2029]/g, ""));
+
+function em(e, n) {
+  if (typeof e === "string") return wc(e);
+  if (typeof e !== "object" || e === null) return e;
+  let r = n.copies.get(e);
+  if (r !== void 0) return r;
+  if (!Array.isArray(e)) return tm(e, n);
+  let s = [];
+  n.copies.set(e, s);
+  for (let h of e) s.push(em(h, n));
+  return s
+}
+
+function tm(e, n) {
+  let r = {};
+  n.copies.set(e, r);
+  for (let [s, h] of Object.entries(e)) {
+    let y = wc(s);
+    n.hasCollided ||= Object.hasOwn(r, y), Object.defineProperty(r, y, {
+      value: em(h, n),
+      enumerable: !0,
+      writable: !0,
+      configurable: !0
+    })
+  }
+  return r
+}
+import {
+  randomUUID as aR
+} from "crypto";
+import {
+  link as bm,
+  lstat as Qi,
+  lutimes as lm,
+  mkdir as Bc,
+  open as lR,
+  readdir as _s,
+  readFile as Zi,
+  rmdir as cR,
+  stat as ea,
+  unlink as hs,
+  utimes as uR,
+  writeFile as dR
+} from "fs/promises";
+import {
+  dirname as Cc,
+  join as Sn,
+  relative as Ac,
+  resolve as ro,
+  sep as bn
+} from "path";
+var Zx = ["ELOOP", "ENXIO", "EISDIR"],
+  gds = new Set(Zx);
+
+function yZ(e) {
+  return e !== void 0 && gds.has(e)
+}
+
+function Whr(e) {
+  return e.code === "Failed" && yZ(e.telemetryCode)
+}
+import {
+  StringDecoder as tR
+} from "string_decoder";
+var eR = 200;
+
+function yo(e = {}) {
+  let n = e.yieldBudgetMs ?? eR,
+    r = e.maxConcurrent,
+    s = performance.now();
+  async function h() {
+    if (performance.now() - s <= n) return;
+    await ku(), s = performance.now()
+  }
+  let y = 0,
+    S = [],
+    w = 0;
+
+  function A() {
+    if (r === void 0 || y < r) return y++, Promise.resolve();
+    return new Promise((j) => {
+      S.push(() => {
+        y++, j()
+      })
+    })
+  }
+
+  function O() {
+    if (y--, w >= S.length) return;
+    let j = S[w];
+    if (w++, w === S.length) S.length = 0, w = 0;
+    j()
+  }
+  async function M(j) {
+    await A();
+    let G;
+    try {
+      G = await j()
+    } finally {
+      O()
+    }
+    return await h(), G
+  }
+  return {
+    maybeYield: h,
+    runBounded: M
+  }
+}
+var kc = 60000,
+  xc = 300000,
+  nm = p(() => xt({
+    type: o()
+  })),
+  nR = p(() => xt({
+    type: T("memory"),
+    id: LNn(),
+    path: o(),
+    content: o(),
+    content_sha256: o(),
+    updated_at: o()
+  })),
+  om = p(() => xt({
+    type: T("complete"),
+    memory_count: E().int().nonnegative(),
+    error_count: E().int().nonnegative().optional()
+  }));
+class ss extends Error {
+  constructor(e) {
+    super(`NDJSON line exceeds ${e} bytes`);
+    this.name = "LineTooLongError"
+  }
+}
+class is extends Error {
+  constructor() {
+    super("NDJSON stream exceeded its line budget");
+    this.name = "TooManyLinesError"
+  }
+}
+async function* sm(e, n, r = kc, s, h = xc) {
+  let y = new tR("utf8"),
+    S = "",
+    w = 0,
+    A = Date.now() + h,
+    O = e.stream[Symbol.asyncIterator]();
+  try {
+    while (!0) {
+      let M = A - Date.now();
+      if (M <= 0) throw Error("export stream exceeded its overall deadline");
+      let j = await zt(O.next(), Math.min(r, M), M < r ? "export stream exceeded its overall deadline" : "export stream stalled");
+      if (j.done) break;
+      let G = j.value;
+      S += typeof G === "string" ? G : y.write(G);
+      let N;
+      while ((N = S.indexOf(`
+`)) >= 0) {
+        let Z = S.slice(0, N);
+        if (S = S.slice(N + 1), s !== void 0 && ++w > s) throw new is;
+        if (Z.endsWith("\r")) Z = Z.slice(0, -1);
+        if (Z.length > n) throw new ss(n);
+        if (Z !== "") yield Z
+      }
+      if (S.length > n) throw new ss(n)
+    }
+    if (S += y.end(), S !== "" && S !== "\r") {
+      if (s !== void 0 && ++w > s) throw new is;
+      yield S.endsWith("\r") ? S.slice(0, -1) : S
+    }
+  } finally {
+    e.destroy(), O.return?.().catch(() => {
+      return
+    })
+  }
+}
+async function im({
+  source: e,
+  handleMemory: n,
+  maxConcurrentWrites: r,
+  maxLineLength: s,
+  stallTimeoutMs: h = kc,
+  deadlineMs: y = xc,
+  maxLines: S
+}) {
+  let w = new Set,
+    A, O = 0,
+    M = 0,
+    j = null,
+    G = yo();
+  async function N() {
+    await Promise.all(w)
+  }
+  async function Z(te) {
+    return await N(), {
+      ok: !1,
+      reason: te
+    }
+  }
+  try {
+    for await (let te of sm(e, s, h, S, y)) {
+      if (j !== null) return await Z("parse_failed");
+      let Y;
+      try {
+        Y = ds(te)
+      } catch {
+        return await Z("parse_failed")
+      }
+      let ne = nm().safeParse(Y);
+      if (!ne.success) return await Z("parse_failed");
+      switch (ne.data.type) {
+        case "store":
+          break;
+        case "memory": {
+          let se = nR().safeParse(Y);
+          if (!se.success) return await Z("parse_failed");
+          O++;
+          while (w.size >= r) await Promise.race(w);
+          if (A !== void 0) return await Z("write_failed");
+          let ae = {
+              path: se.data.path,
+              content: se.data.content,
+              contentSha256: se.data.content_sha256,
+              memoryId: se.data.id,
+              updatedAt: se.data.updated_at
+            },
+            re = n(ae).catch((_e) => {
+              A ??= _e
+            }).finally(() => {
+              w.delete(re)
+            });
+          w.add(re);
+          break
+        }
+        case "memory_error":
+          M++;
+          break;
+        case "complete": {
+          let se = om().safeParse(Y);
+          if (!se.success) return await Z("parse_failed");
+          j = {
+            memoryCount: se.data.memory_count,
+            errorCount: se.data.error_count ?? 0
+          };
+          break
+        }
+        default:
+          break
+      }
+      await G.maybeYield()
+    }
+  } catch (te) {
+    if (await N(), te instanceof ss) return {
+      ok: !1,
+      reason: "oversized_line"
+    };
+    if (te instanceof is) return {
+      ok: !1,
+      reason: "too_many_entries"
+    };
+    return {
+      ok: !1,
+      reason: "stream_error"
+    }
+  }
+  if (await N(), A !== void 0) return {
+    ok: !1,
+    reason: "write_failed"
+  };
+  if (j === null) return {
+    ok: !1,
+    reason: "stream_truncated"
+  };
+  if (j.memoryCount !== O) return {
+    ok: !1,
+    reason: "count_mismatch"
+  };
+  if (j.errorCount > 0 || M > 0) return {
+    ok: !1,
+    reason: "decrypt_errors"
+  };
+  return {
+    ok: !0,
+    memoryLines: O
+  }
+}
+var rR = p(() => xt({
+    type: T("store"),
+    view: o().optional()
+  })),
+  iR = p(() => xt({
+    type: T("memory"),
+    id: LNn(),
+    path: o(),
+    content_sha256: o(),
+    content_size_bytes: E().int().nonnegative().optional()
+  }));
+async function am({
+  source: e,
+  maxLineLength: n,
+  maxEntries: r,
+  stallTimeoutMs: s = kc,
+  deadlineMs: h = xc
+}) {
+  let y = [],
+    S = !1,
+    w = 0,
+    A = null,
+    O = yo();
+  try {
+    for await (let M of sm(e, n, s, r * 2 + 2, h)) {
+      if (A !== null) return {
+        ok: !1,
+        reason: "parse_failed"
+      };
+      let j;
+      try {
+        j = ds(M)
+      } catch {
+        return {
+          ok: !1,
+          reason: "parse_failed"
+        }
+      }
+      let G = nm().safeParse(j);
+      if (!G.success) return {
+        ok: !1,
+        reason: "parse_failed"
+      };
+      switch (G.data.type) {
+        case "store": {
+          if (S) return {
+            ok: !1,
+            reason: "parse_failed"
+          };
+          let N = rR().safeParse(j);
+          if (!N.success) return {
+            ok: !1,
+            reason: "parse_failed"
+          };
+          if (N.data.view !== "basic") return {
+            ok: !1,
+            reason: "view_not_honored"
+          };
+          S = !0;
+          break
+        }
+        case "memory": {
+          if (!S) return {
+            ok: !1,
+            reason: "view_not_honored"
+          };
+          let N = iR().safeParse(j);
+          if (!N.success) return {
+            ok: !1,
+            reason: "parse_failed"
+          };
+          if (y.length >= r) return {
+            ok: !1,
+            reason: "too_many_entries"
+          };
+          y.push({
+            id: N.data.id,
+            path: N.data.path,
+            sha256: N.data.content_sha256,
+            sizeBytes: N.data.content_size_bytes
+          });
+          break
+        }
+        case "memory_error":
+          if (!S) return {
+            ok: !1,
+            reason: "view_not_honored"
+          };
+          w++;
+          break;
+        case "complete": {
+          if (!S) return {
+            ok: !1,
+            reason: "parse_failed"
+          };
+          let N = om().safeParse(j);
+          if (!N.success) return {
+            ok: !1,
+            reason: "parse_failed"
+          };
+          A = {
+            memoryCount: N.data.memory_count,
+            errorCount: N.data.error_count ?? 0
+          };
+          break
+        }
+        default:
+          break
+      }
+      await O.maybeYield()
+    }
+  } catch (M) {
+    if (M instanceof ss) return {
+      ok: !1,
+      reason: "oversized_line"
+    };
+    if (M instanceof is) return {
+      ok: !1,
+      reason: "too_many_entries"
+    };
+    return {
+      ok: !1,
+      reason: "stream_error"
+    }
+  }
+  if (A === null) return {
+    ok: !1,
+    reason: "stream_truncated"
+  };
+  if (A.memoryCount !== y.length) return {
+    ok: !1,
+    reason: "count_mismatch"
+  };
+  if (A.errorCount > 0 || w > 0) return {
+    ok: !1,
+    reason: "decrypt_errors"
+  };
+  return {
+    ok: !0,
+    entries: y
+  }
+}
+var Pn = qLt,
+  Qn = nt(""),
+  So = "0".repeat(64),
+  ir = 6,
+  jc = 6,
+  fs = Pn * 6 + 16384,
+  fR = 1800000,
+  Mc = 3,
+  pR = 2,
+  mR = 600000,
+  wm = 2000,
+  Ic = wm,
+  Wc = 30000;
+
+function bs() {
+  let e = i.CLAUDE_CODE_MEMORY_PUSH_DELETE_MODE;
+  if (e !== void 0) return e;
+  let n = v("tengu_mem_push_delete_mode", "corroborate");
+  return n === "immediate" || n === "never" || n === "recorded" ? n : "corroborate"
+}
+
+function Do(e) {
+  switch (e) {
+    case "corroborate":
+    case "immediate":
+      return !0;
+    case "never":
+    case "recorded":
+      return !1
+  }
+}
+
+function _o() {
+  return v("tengu_typed_koala", !0)
+}
+
+function wo(e) {
+  return typeof e === "string" && e !== "empty_store" && _o()
+}
+var hR = 50,
+  gR = 0.1,
+  yR = 60000,
+  _R = "tengu_cozy_teacup";
+
+function km(e) {
+  if (i.CLAUDE_CODE_DISABLE_MEMORY_MASS_DELETE_HOLD) return Number.POSITIVE_INFINITY;
+  return Math.max(hR, Math.floor(e * gR))
+}
+
+function Dc(e) {
+  let n = Date.now();
+  return e.namedDeletesSentAtMs = e.namedDeletesSentAtMs?.filter((r) => n - r < yR), e.namedDeletesSentAtMs?.length ?? 0
+}
+async function xm(e, n, r) {
+  for (let s of e) {
+    let h = km(s.remoteHashes.size);
+    if (s.remoteHashes.size + Dc(s) <= h || !(zc(s) || cr(s))) continue;
+    let y = ro(s.mountDir) + bn,
+      S = new Set(n.filter((M) => M.startsWith(y)).map((M) => "/" + M.slice(y.length).split(bn).join("/")).filter((M) => s.remoteHashes.has(M)));
+    if (S.size === 0) continue;
+    let w = new Set;
+    await lr([...s.remoteHashes.keys()], jc, async (M) => {
+      let j = Sn(y, M);
+      if (j.startsWith(y) && await so(r, s, j).then(() => !1, K)) w.add(M)
+    });
+    let A = U([...S], (M) => !w.has(M)),
+      O = w.size + Dc(s);
+    if (O + A > h) return {
+      threshold: h,
+      missingNow: O,
+      targetsOnDisk: A
+    }
+  }
+  return null
+}
+
+function ar(e) {
+  return e.backend.mode !== "ro" && ((e.source ?? "env") !== "discovery" || Uq(e.backend.partitionId) === "rw" && Rue())
+}
+
+function zc(e) {
+  return ar(e) && Do(bs())
+}
+
+function cr(e) {
+  let n = process.env.CLAUDE_CODE_MEMORY_PUSH_DELETE_MODE,
+    r = bs();
+  return e.scope !== "account" && ar(e) && (r === "recorded" && (n === void 0 || i.CLAUDE_CODE_MEMORY_PUSH_DELETE_MODE === r) || r === "never" && n === void 0 && _t(_R, {
+    safe: !1
+  }))
+}
+
+function Nc(e, n, r) {
+  let s = e.namedRemovals?.get(n);
+  return s?.id === r.id && s.sha256 === r.sha256 && cr(e)
+}
+
+function Rm(e, n) {
+  for (let r of e.namedRemovals?.keys() ?? [])
+    if (n.has(r)) e.namedRemovals?.delete(r)
+}
+async function vm(e, n, r) {
+  let s = [];
+  for (let h of e) {
+    if (!cr(h)) continue;
+    let y = ro(h.mountDir) + bn;
+    for (let S of n) {
+      if (!S.startsWith(y)) continue;
+      let w = "/" + S.slice(y.length).split(bn).join("/"),
+        A = h.remoteHashes.get(w);
+      if (A !== void 0 && await so(r, h, S).then(() => !0, () => !1)) s.push({
+        store: h,
+        path: w,
+        absolutePath: S,
+        ref: A
+      })
+    }
+  }
+  return s
+}
+async function Em(e, n) {
+  let r = new Set;
+  for (let s of e) {
+    let {
+      store: h,
+      path: y,
+      absolutePath: S,
+      ref: w
+    } = s;
+    if (cr(h) && await so(n, h, S).then(() => !1, K))(h.namedRemovals ??= new Map).set(y, w), s.recorded = !0, r.add(h)
+  }
+  return r
+}
+
+function ta(e) {
+  return cr(e) ? `To delete a file from shared memory, run a command that is only an rm of its full path under ${tf(e.mountDir)}.` : "Files here cannot be deleted from shared memory right now."
+}
+
+function na(e) {
+  if (e.suppressedReason === null) return !1;
+  let n = e.suppressedUntilMs ?? null;
+  return n === null || Date.now() < n
+}
+
+function oa(e, n, r, s = Date.now()) {
+  if (e.length !== n.length) throw Error("createMultiStoreState: length mismatch");
+  return {
+    stores: e.map((h, y) => {
+      let S = n[y],
+        w = typeof S === "string" ? {
+          mount: S,
+          scope: "team",
+          source: "env"
+        } : S,
+        A = w.scope === "user";
+      return {
+        backend: h,
+        mountName: w.mount,
+        notices: r,
+        scope: w.scope,
+        source: w.source,
+        writeDir: w.writeDir ?? "",
+        firstWriteEmitted: !1,
+        mountDir: fho(w),
+        v5MemoryBase: wji(w.scope, fho(w)),
+        excludeKey: A ? vW : null,
+        remoteHashes: new Map,
+        createdAtMs: s,
+        pullWritten: new Map,
+        pullDropped: new Set,
+        pulled: !1,
+        suppressedReason: null,
+        suppressedUntilMs: null,
+        consecutivePermanentFailures: 0,
+        invalidatedBasis: null,
+        conflictRefetches: new Map,
+        walkHashes: new Map
+      }
+    }),
+    inFlight: null
+  }
+}
+var Kn = vEr,
+  Tm = 1,
+  Cm = (e) => u({
+    v: T(e),
+    partition: o()
+  }),
+  bR = p(() => Cm(Tm));
+async function Ji(e, n, r) {
+  let s = await oo(e.mountDir, r, e.v5MemoryBase);
+  if (s.state === "present" && s.manifest.partition === e.backend.partitionId) return e.manifestSeenThisSession = !0, !1;
+  if (n?.expectPresent) {
+    if (Xt(e)) c("team_memory_multistore_conflict", "manifest_changed_mid_pull");
+    return !1
+  }
+  if (s.state === "present" && e.scope !== "user") Yi(e);
+  let h = _({
+      v: Tm,
+      partition: e.backend.partitionId
+    }),
+    y = wR(r, e),
+    S = r !== void 0 && y !== void 0 ? {
+      storageV5: r,
+      manifestKey: y
+    } : void 0;
+  if (S === void 0) await Bc(e.mountDir, {
+    recursive: !0
+  });
+  if (s.state === "absent" && e.scope !== "user") {
+    let w = await kR(e, h, S?.manifestKey, S?.storageV5);
+    return e.manifestSeenThisSession = !0, w
+  }
+  if (S !== void 0) {
+    let w = await S.storageV5.write(S.manifestKey, h, {
+      publishDiscipline: "atomic",
+      mode: 438 & ~process.umask()
+    });
+    if (!w.ok) throw new R(`manifest write failed: ${Ht(w.error)}`, "memory-sync manifest write failed");
+    return e.manifestSeenThisSession = !0, !0
+  }
+  return await zn(Sn(e.mountDir, Kn), h), e.manifestSeenThisSession = !0, !0
+}
+
+function Gc(e, n, r, s) {
+  return X() && e !== void 0 && n !== void 0 ? BNn(n, r, Sn(r, s)) : void 0
+}
+
+function wR(e, n) {
+  return Gc(e, n.v5MemoryBase, n.mountDir, Kn)
+}
+
+function Kc(e, n) {
+  return Gc(e, n.v5MemoryBase, n.mountDir, ra)
+}
+
+function Yi(e) {
+  if (Xt(e)) c("team_memory_multistore_conflict", "manifest_foreign_at_write");
+  throw Error("mount dir holds another store's .memory-sync manifest at write time (fail closed)")
+}
+async function kR(e, n, r, s) {
+  if (s !== void 0 && r !== void 0) {
+    let S = await s.write(r, n, {
+      precondition: {
+        type: "ifAbsent"
+      },
+      mode: 438 & ~process.umask()
+    });
+    if (S.ok) return !0;
+    if (S.error.code !== "AlreadyExists") throw new R(`manifest create failed: ${Ht(S.error)}`, "memory-sync manifest create failed");
+    let w = await oo(e.mountDir, s, e.v5MemoryBase);
+    if (w.state === "present" && w.manifest.partition === e.backend.partitionId) return !1;
+    Yi(e)
+  }
+  let h = Sn(e.mountDir, Kn),
+    y = Sn(e.mountDir, `${Kn}.${aR()}.stage`);
+  try {
+    await dR(y, n);
+    try {
+      return await bm(y, h), !0
+    } catch (w) {
+      if (k(w) === "EEXIST") {
+        let A = await oo(e.mountDir);
+        if (A.state === "present" && A.manifest.partition === e.backend.partitionId) return !1;
+        Yi(e)
+      }
+    }
+    let S = await oo(e.mountDir);
+    if (S.state === "present") {
+      if (S.manifest.partition === e.backend.partitionId) return !1;
+      Yi(e)
+    }
+    return await zn(h, n), !0
+  } finally {
+    await hs(y).catch(() => {})
+  }
+}
+async function oo(e, n, r) {
+  let s;
+  try {
+    let S = Sn(e, Kn);
+    if (!(await Qi(S)).isFile()) return {
+      state: "torn"
+    };
+    let w = Gc(n, r, e, Kn);
+    if (n !== void 0 && w !== void 0) {
+      let A = await n.read([w]);
+      if (!A.ok) return {
+        state: "torn"
+      };
+      let O = A.value.items[0];
+      if (!O.found) return {
+        state: "absent"
+      };
+      s = Buffer.from(O.value).toString("utf8")
+    } else s = await Zi(S, "utf8")
+  } catch (S) {
+    return k(S) === "ENOENT" ? {
+      state: "absent"
+    } : {
+      state: "torn"
+    }
+  }
+  let h;
+  try {
+    h = ee(s)
+  } catch {
+    return {
+      state: "torn"
+    }
+  }
+  let y = bR().safeParse(h);
+  if (!y.success) return {
+    state: "torn"
+  };
+  return {
+    state: "present",
+    manifest: y.data
+  }
+}
+async function Vc(e, n, r, s) {
+  let h = await oo(e, r, s);
+  return h.state === "present" && h.manifest.partition === n
+}
+var ra = `${Kn}-basis`,
+  Am = 1,
+  Vi = Yen * 512,
+  xR = p(() => Cm(Am).extend({
+    entries: C(kk([o(), o(), o()])),
+    deletes: C(kk([o(), E(), E()])),
+    held: oe().optional(),
+    entriesWereOnDisk: oe().optional()
+  })),
+  RR = p(() => C(kk([o(), o().regex(fm)])).max(Yen));
+async function Pm(e, n) {
+  if (e.basisLoaded) return null;
+  let r;
+  try {
+    let j = Sn(e.mountDir, ra);
+    if (!(await Qi(j)).isFile()) return {
+      ok: !1,
+      reason: "not_regular_file"
+    };
+    let G = Kc(n, e);
+    if (n !== void 0 && G !== void 0) {
+      let N = await n.read([{
+        key: G,
+        offset: 0,
+        length: Vi + 1
+      }]);
+      if (!N.ok) return {
+        ok: !1,
+        reason: "read_error"
+      };
+      if (!N.value.items[0].found) return {
+        ok: !1,
+        reason: "absent"
+      };
+      let Z = N.value.items[0].value;
+      if (Z.byteLength > Vi) return t(`multi-store-sync[${e.mountName}]: persisted basis exceeds size cap, ignoring`, {
+        level: "warn"
+      }), {
+        ok: !1,
+        reason: "over_cap"
+      };
+      r = Buffer.from(Z).toString("utf8")
+    } else {
+      let N = await lR(j, "r");
+      try {
+        let {
+          size: Z
+        } = await N.stat(), te = Buffer.alloc(Math.min(Z, Vi) + 1), {
+          bytesRead: Y
+        } = await N.read(te, 0, te.length, 0);
+        if (Y > Vi) return t(`multi-store-sync[${e.mountName}]: persisted basis exceeds size cap, ignoring`, {
+          level: "warn"
+        }), {
+          ok: !1,
+          reason: "over_cap"
+        };
+        r = te.toString("utf8", 0, Y)
+      } finally {
+        await N.close()
+      }
+    }
+  } catch (j) {
+    return {
+      ok: !1,
+      reason: k(j) === "ENOENT" ? "absent" : "read_error"
+    }
+  }
+  let s = xR().safeParse(et(r, !1));
+  if (!s.success) return {
+    ok: !1,
+    reason: "parse_failed"
+  };
+  if (s.data.partition !== e.backend.partitionId) return {
+    ok: !1,
+    reason: "partition_mismatch"
+  };
+  let h = [];
+  if (_o() && s.data.held !== void 0) {
+    let j = RR().safeParse(s.data.held);
+    if (!j.success) return {
+      ok: !1,
+      reason: "parse_failed"
+    };
+    h = j.data
+  }
+  let y = s.data.held !== void 0 && !(Array.isArray(s.data.held) && s.data.held.length === 0);
+  if (s.data.entries.length === 0 && !y) return {
+    ok: !1,
+    reason: "empty_store"
+  };
+  let S = new Map;
+  for (let [j, G, N] of s.data.entries)
+    if (ADe(j) && !(e.excludeKey && e.excludeKey(j.replace(/^\/+/, "")))) S.set(j, {
+      id: G,
+      sha256: N
+    });
+  let w = new Map;
+  for (let [j, G] of h)
+    if (j.startsWith("/") && !j.includes("//") && ADe(j) && !(e.excludeKey && e.excludeKey(j.slice(1))) && !S.has(j)) w.set(j, G);
+  if (S.size === 0 && (w.size === 0 || s.data.entries.length > 0)) return {
+    ok: !1,
+    reason: "zero_entries"
+  };
+  let A = new Map,
+    O = Date.now(),
+    M = s.data.entriesWereOnDisk === !0;
+  for (let [j, , G] of M ? s.data.deletes : [])
+    if (S.has(j)) A.set(j, {
+      firstMissingAtMs: O,
+      missingWalks: Math.max(0, Math.min(G, 1))
+    });
+  return e.lastPersistedBasisBody = r, t(`multi-store-sync[${e.mountName}]: loaded persisted basis (${S.size} entries, ${A.size} pending delete(s)${M?"":", no entriesWereOnDisk mark, so its pending deletes are ignored and files missing from disk are downloaded again"})`, {
+    level: "debug"
+  }), {
+    ok: !0,
+    basis: {
+      entries: S,
+      deletes: A,
+      held: w,
+      entriesWereOnDisk: M
+    }
+  }
+}
+async function Om(e, n, r, s, {
+  walkTrusted: h,
+  hold: y
+}) {
+  let S = e.basisUnusable;
+  if (S === void 0 || S === null) return;
+  e.basisUnusable = null;
+  let w = e.heldLocal ??= new Map,
+    A = new Set;
+  for (let [M, j] of await vR(e, n, r, s))
+    if (A.add(M), y) w.set(M, j.sha256);
+  let O = e.notices.rejoinOffNoticed.has(e.mountDir);
+  if (O || y && w.size > 0) eh(e, y ? [...w.keys()].sort() : [], O);
+  if (e.notices.rejoinOffNoticed.delete(e.mountDir), !h) return;
+  e.basisUnusableReport = {
+    reason: S,
+    localOnly: A,
+    held: y ? w.size : 0,
+    uploaded: 0,
+    uploadFailed: 0,
+    emitted: !1
+  }
+}
+async function vR(e, n, r, s) {
+  let h = Mm(e, n, r),
+    y = new Set;
+  return await lr(h, ir, async ([S]) => {
+    if (await rr(e, S, s)) y.add(S)
+  }), h.filter(([S]) => !y.has(S))
+}
+async function ER(e, n, r, s) {
+  for (let [h] of Mm(e, n, r))
+    if (!await rr(e, h, s)) return !0;
+  return !1
+}
+
+function Mm(e, n, r) {
+  return [...n].filter(([s, h]) => !r.has(s) && h.sha256 !== Qn && (e.pullWritten.get(s)?.sha256 ?? h.sha256) === h.sha256)
+}
+async function gs(e, n) {
+  try {
+    let r = _o() ? [...e.heldLocal ?? []] : [],
+      s = _({
+        v: Am,
+        partition: e.backend.partitionId,
+        entries: [...e.remoteHashes].map(([y, S]) => [y, S.id, S.sha256]),
+        deletes: [...e.pendingDeletes ?? new Map].map(([y, S]) => [y, S.firstMissingAtMs, S.missingWalks]),
+        ...r.length > 0 && {
+          held: r
+        },
+        entriesWereOnDisk: !0
+      });
+    if (s === e.lastPersistedBasisBody) return;
+    if (!await Vc(e.mountDir, e.backend.partitionId, n, e.v5MemoryBase)) return;
+    let h = Kc(n, e);
+    if (n !== void 0 && h !== void 0) {
+      let y = await n.write(h, s, {
+        parent: "mustExist",
+        publishDiscipline: "atomic",
+        mode: 438 & ~process.umask()
+      });
+      if (!y.ok) throw new R(`basis write failed: ${Ht(y.error)}`, "memory-sync basis write failed")
+    } else await zn(Sn(e.mountDir, ra), s);
+    e.lastPersistedBasisBody = s, e.emptyReceiptOnDisk = !e.pulled
+  } catch (r) {
+    t(`multi-store-sync[${e.mountName}]: basis write failed: ${d(r)}`, {
+      level: "warn"
+    })
+  }
+}
+async function Ss(e, n) {
+  e.basisUnusable = null, await Im(e, n)
+}
+async function Im(e, n) {
+  e.lastPersistedBasisBody = void 0;
+  let r = Kc(n, e),
+    s = n !== void 0 && r !== void 0 ? await n.delete(r).then((h) => h.ok || h.error.code === "NotFound") : await hs(Sn(e.mountDir, ra)).then(() => !0, (h) => K(h));
+  if (s) e.emptyReceiptOnDisk = !1;
+  return s
+}
+async function Dm(e, n) {
+  if (e.emptyReceiptOnDisk !== !0 || e.pulled) return;
+  let r = await Pm(e, n),
+    s = r?.ok === !1 ? r.reason : null;
+  if (s !== "empty_store" && s !== "absent" && s !== "read_error") {
+    e.emptyReceiptOnDisk = !1;
+    return
+  }
+  if (s === "read_error" || !await Im(e, n)) throw new R("multi-store-sync: empty store receipt not removed", "multi-store-sync: empty store receipt not removed");
+  e.removedEmptyReceipt = !0
+}
+
+function Nm(e, n) {
+  return X() && n !== void 0 && e.v5MemoryBase !== void 0 ? {
+    storageV5: n,
+    base: e.v5MemoryBase,
+    manifestSeen: e.manifestSeenThisSession === !0
+  } : void 0
+}
+var cm = 64;
+async function TR(e, n) {
+  async function r(s, h) {
+    let y;
+    try {
+      y = await _s(s, {
+        withFileTypes: !0
+      })
+    } catch (A) {
+      return k(A) !== "ENOENT"
+    }
+    let S = y.find((A) => !Hr(A.name) || A.isDirectory() && Xp(A.name, !0));
+    if (S) return t(`[memory-sync] mount walk goes direct this cycle: ${h||"."} holds a name the storage interface cannot list (${!Hr(S.name)?"outside the key grammar":"a staging-shaped directory"})`), !0;
+    return (await Promise.all(y.filter((A) => A.isDirectory() && !A.name.startsWith(".")).map((A) => {
+      let O = h ? `${h}/${A.name}` : A.name;
+      return n && n(O) ? !1 : r(Sn(s, A.name), O)
+    }))).some(Boolean)
+  }
+  return r(e, "")
+}
+
+function Rc(e) {
+  throw new R(`mount walk failed: ${Ht(e)}`, "multi-store-sync: mount walk failed through the storage interface")
+}
+async function ks(e, n, r, s, h, y, S) {
+  if (X() && r !== void 0 && s !== void 0 && !await TR(e, n)) return OR(e, n, {
+    storageV5: r,
+    base: s,
+    manifestSeen: h === !0
+  }, S);
+  let A = new Map,
+    O = new Set,
+    M = [],
+    j = [],
+    G = !0,
+    N = !1,
+    Z = Date.now(),
+    te = yo({
+      maxConcurrent: jc
+    });
+  async function Y(ne) {
+    let se;
+    try {
+      se = await _s(ne, {
+        withFileTypes: !0
+      })
+    } catch (ae) {
+      let re = k(ae);
+      if (re === "ENOENT") {
+        if (G = !1, ne === e) N = !0;
+        return
+      }
+      if (re === "EACCES" || re === "EPERM") {
+        G = !1;
+        return
+      }
+      throw ae
+    }
+    await Promise.all(se.map(async (ae) => {
+      let re = Sn(ne, ae.name);
+      if (ae.isDirectory()) {
+        if (ae.name.startsWith(".")) return;
+        if (n) {
+          let _e = Ac(e, re).split(bn).join("/");
+          if (n(_e)) return
+        }
+        await Y(re), await te.maybeYield();
+        return
+      }
+      if (!ae.isFile() || !Mso(ae.name)) return;
+      await te.runBounded(async () => {
+        let _e = "/" + Ac(e, re).split(bn).join("/");
+        O.add(_e);
+        try {
+          let Se = await ea(re);
+          if (Se.size > Pn) {
+            j.push({
+              path: _e,
+              size: Se.size
+            }), t(`multi-store-sync: skipping oversized ${_e} (${Se.size}B)`, {
+              level: "warn"
+            });
+            return
+          }
+          let ce = CR(y, _e, Se.mtimeMs, Se.ctimeMs, Se.size);
+          if (ce !== void 0 && !Lm(S, _e, ce.sha256)) {
+            A.set(_e, ce);
+            return
+          }
+          let xe = await Zi(re, "utf8"),
+            ve = nt(xe);
+          AR(y, _e, Se.mtimeMs, Se.ctimeMs, Se.size, ve, Z), A.set(_e, Hm(_e, xe, ve, S, M))
+        } catch (Se) {
+          let ce = k(Se);
+          if (ce === "ENOENT") return;
+          if (ce === "EACCES" || ce === "EPERM") {
+            G = !1;
+            return
+          }
+          throw Se
+        }
+      })
+    }))
+  }
+  if (await Y(e), G && !N) PR(y, A);
+  return {
+    entries: A,
+    diskPaths: O,
+    diskTrusted: G,
+    rootMissing: N,
+    skippedSecretPaths: M,
+    skippedOversizedPaths: j
+  }
+}
+
+function Lm(e, n, r) {
+  return e !== void 0 && e.get(n)?.sha256 !== r
+}
+
+function Hm(e, n, r, s, h) {
+  if (!Lm(s, e, r)) return {
+    sha256: r
+  };
+  if (Cmr(n).length > 0) return h.push(e), t(`multi-store-sync: skipping ${e} (secret detected)`, {
+    level: "warn"
+  }), {
+    sha256: r
+  };
+  return {
+    sha256: r,
+    content: n
+  }
+}
+
+function CR(e, n, r, s, h) {
+  let y = e.get(n);
+  return y !== void 0 && y.mtimeMs === r && y.ctimeMs === s && y.size === h ? y.entry : void 0
+}
+
+function AR(e, n, r, s, h, y, S) {
+  if (S - r > wm) e.set(n, {
+    mtimeMs: r,
+    ctimeMs: s,
+    size: h,
+    entry: {
+      sha256: y
+    }
+  });
+  else e.delete(n)
+}
+
+function PR(e, n) {
+  for (let r of e.keys())
+    if (!n.has(r)) e.delete(r)
+}
+async function OR(e, n, r, s) {
+  let h = new Map,
+    y = new Set,
+    S = [],
+    w = [],
+    A = !0,
+    O = !1,
+    M = kji(r.base),
+    j = r.base.baseRelPath.length,
+    G = yo({
+      maxConcurrent: jc
+    }),
+    N = [],
+    Z = [],
+    te, Y = !1,
+    ne = async (ce) => {
+      let xe = [],
+        ve = !0,
+        Oe = await qa((Ce) => r.storageV5.listEntries(ce, {
+          ...Ce !== void 0 && {
+            cursor: Ce
+          },
+          skipKeyStats: !0,
+          skipScopeStats: !0
+        }), (Ce) => {
+          for (let Ne of Ce) {
+            if (ve = !1, Ne.kind === "key") {
+              N.push(Ne);
+              continue
+            }
+            if (Ne.scope.namespace !== "memory" || Ne.viaSymlink === !0) continue;
+            let Ie = (Ne.scope.relPath ?? []).slice(j),
+              Ye = Ie.at(-1);
+            if (Ye === void 0 || Ye.startsWith(".")) continue;
+            if (n && n(Ie.join("/"))) continue;
+            xe.push(Ne.scope)
+          }
+        });
+      if (Oe.status === "error") {
+        if (Oe.error.code !== "InvalidArgument" && Oe.error.failureClass === "permission") {
+          A = !1;
+          return
+        }
+        te ??= Oe.error;
+        return
+      }
+      if (Oe.status === "capped") Y = !0;
+      if (ve && ce !== M) Z.push(ce);
+      await Promise.all(xe.map(ne))
+    };
+  if (await ne(M), te !== void 0) Rc(te);
+  if (Y) A = !1;
+  if (A && Z.length > 0) {
+    let ce = new Map;
+    for (let ve of Z) {
+      let Oe = (ve.relPath ?? []).slice(0, -1),
+        {
+          relPath: Ce,
+          ...Ne
+        } = M;
+      ce.set(Oe.join("/"), {
+        ...Ne,
+        ...Oe.length > 0 && {
+          relPath: Oe
+        }
+      })
+    }
+    let xe = new Set;
+    for (let ve of ce.values())
+      if ((await qa((Ce) => r.storageV5.listEntries(ve, {
+          ...Ce !== void 0 && {
+            cursor: Ce
+          },
+          skipKeyStats: !0,
+          skipScopeStats: !0
+        }), (Ce) => {
+          for (let Ne of Ce)
+            if (Ne.kind === "scope" && Ne.scope.namespace === "memory") xe.add((Ne.scope.relPath ?? []).join("/"))
+        })).status !== "done") A = !1;
+    if (Z.some((ve) => !xe.has((ve.relPath ?? []).join("/")))) A = !1
+  }
+  if (N.length === 0 && r.manifestSeen) {
+    let ce = BNn(r.base, e, Sn(e, Kn)),
+      xe = ce === void 0 ? void 0 : await r.storageV5.statMeta(ce);
+    if (xe === void 0 || !xe.ok) A = !1, O = xe === void 0 || xe.error.code === "NotFound";
+    return {
+      entries: h,
+      diskPaths: y,
+      diskTrusted: A,
+      rootMissing: O,
+      skippedSecretPaths: S,
+      skippedOversizedPaths: w
+    }
+  }
+  let se = (ce, xe) => {
+      h.set(ce, Hm(ce, xe, nt(xe), s, S))
+    },
+    ae = [];
+  for (let ce of N) {
+    if (ce.key.namespace !== "memory") continue;
+    let xe = ce.key.relPath.slice(j),
+      ve = xe.at(-1);
+    if (ve === void 0) continue;
+    let Oe = xe.slice(0, -1);
+    if (Oe.some((Ne) => Ne.startsWith("."))) continue;
+    if (n && Oe.some((Ne, Ie) => n(Oe.slice(0, Ie + 1).join("/")))) continue;
+    if (ce.viaSymlink === !0 || !Mso(ve)) continue;
+    let Ce = "/" + xe.join("/");
+    if (y.add(Ce), ce.size !== void 0 && ce.size > Pn) {
+      w.push({
+        path: Ce,
+        size: ce.size
+      }), t(`multi-store-sync: skipping oversized ${Ce} (${ce.size}B)`, {
+        level: "warn"
+      });
+      continue
+    }
+    ae.push({
+      relPath: Ce,
+      key: ce.key
+    })
+  }
+  let re = [];
+  for (let ce = 0; ce < ae.length; ce += cm) re.push(ae.slice(ce, ce + cm));
+  let _e = await Promise.all(re.map((ce) => G.runBounded(() => r.storageV5.read(ce.map((xe) => ({
+      key: xe.key,
+      offset: 0,
+      length: Pn + 1
+    })))))),
+    Se = [];
+  for (let [ce, xe] of _e.entries()) {
+    let ve = re[ce];
+    if (xe.ok) {
+      Se.push({
+        batch: ve,
+        items: xe.value.items
+      });
+      continue
+    }
+    if (xe.error.code === "InvalidArgument" || xe.error.failureClass !== "permission") Rc(xe.error);
+    A = !1;
+    for (let Oe of ve) {
+      let Ce = await r.storageV5.read([{
+        key: Oe.key,
+        offset: 0,
+        length: Pn + 1
+      }]);
+      if (Ce.ok) Se.push({
+        batch: [Oe],
+        items: Ce.value.items
+      });
+      else if (Ce.error.code === "InvalidArgument" || Ce.error.failureClass !== "permission") Rc(Ce.error)
+    }
+  }
+  for (let {
+      batch: ce,
+      items: xe
+    }
+    of Se)
+    for (let [ve, Oe] of xe.entries()) {
+      let {
+        relPath: Ce
+      } = ce[ve];
+      if (!Oe.found) continue;
+      if (Oe.totalBytes > Pn) {
+        w.push({
+          path: Ce,
+          size: Oe.totalBytes
+        }), t(`multi-store-sync: skipping oversized ${Ce} (${Oe.totalBytes}B)`, {
+          level: "warn"
+        });
+        continue
+      }
+      se(Ce, Buffer.from(Oe.value).toString("utf8")), await G.maybeYield()
+    }
+  return {
+    entries: h,
+    diskPaths: y,
+    diskTrusted: A,
+    rootMissing: O,
+    skippedSecretPaths: S,
+    skippedOversizedPaths: w
+  }
+}
+async function Vn(e, n) {
+  let r = n.replace(/^\/+/, ""),
+    s = await ov(e, r);
+  if (!s.normalize("NFC").startsWith(e.mountDir)) throw new Fx(`path escapes mount ${e.mountName}: ${n}`);
+  return s
+}
+
+function xs(e, n, r) {
+  if (e === void 0 || n.v5MemoryBase === void 0) return;
+  let s = BNn(n.v5MemoryBase, n.mountDir, r);
+  return s === void 0 ? void 0 : {
+    backend: e,
+    key: s
+  }
+}
+async function so(e, n, r) {
+  let s = xs(e, n, r);
+  if (s === void 0) return ea(r);
+  let h = await s.backend.statMeta(s.key);
+  if (!h.ok) throw Object.assign(new R(`local entry not statable via storage: ${Ht(h.error)}`, "memory-sync: local entry not statable via storage"), {
+    cause: h.error,
+    viaStorage: !0
+  }, h.error.code === "NotFound" ? {
+    code: "ENOENT"
+  } : Whr(h.error) ? {
+    code: h.error.telemetryCode
+  } : {});
+  return h.value
+}
+async function Fm(e, n, r) {
+  let s = xs(e, n, r);
+  if (s === void 0) return Zi(r, "utf8");
+  let h = await s.backend.readText([s.key]);
+  if (!h.ok) throw Object.assign(new R(`local entry not readable via storage: ${Ht(h.error)}`, "memory-sync: local entry not readable via storage"), {
+    cause: h.error
+  });
+  let y = h.value.items[0];
+  if (!y.found) throw Object.assign(Error("local entry absent via storage"), {
+    code: "ENOENT"
+  });
+  return y.value
+}
+
+function Lc(e) {
+  return e.pulled || (e.invalidatedBasis ?? null) !== null
+}
+async function qc(e, n, r, s, h) {
+  let y = await Vn(e, n),
+    S = e.backend.publishFence;
+  if (S !== void 0 && !await IR(S)) return await as(e, n, y), "dropped";
+  await Dm(e, h), e.walkHashes.delete(n);
+  let w = () => Qi(y).catch((M) => {
+      if (K(M)) return null;
+      throw M
+    }),
+    A = xs(h, e, y);
+  if (A !== void 0 && S !== void 0) throw Error("multi-store-sync: a publishFence is not honoured on the storage write arm: add the publish-time check there before giving a storage-keyed store one");
+  if (A !== void 0) {
+    let M = (N) => {
+        throw Object.assign(new R(`multi-store-sync: local entry not writable via storage: ${Ht(N)}`, "multi-store-sync: local entry not writable via storage"), {
+          cause: N
+        })
+      },
+      j = async () => {
+        let N = await w(),
+          Z = await A.backend.write(A.key, r, {
+            publishDiscipline: "atomic",
+            ...N?.isFile() === !0 && {
+              exactMode: N.mode & 511
+            },
+            mode: 438 & ~process.umask()
+          });
+        if (Z.ok) return;
+        if (N?.isFile() === !0) {
+          let te = await dm(h, e, y, r),
+            Y = te === "absent" ? "removed" : te === "tornPrefix" && (NR(Z.error) || N.size === 0) ? "torn" : null;
+          if (Y !== null) {
+            t(`multi-store-sync[${e.mountName}]: ${n} was ${Y==="removed"?"removed":"left torn"} by a failed publish; writing an empty marker to re-fetch over`, {
+              level: "warn"
+            });
+            let ne = new Date(Date.now() - 2 * Ic),
+              se = await A.backend.write(A.key, "", {
+                ...Y === "removed" && {
+                  precondition: {
+                    type: "ifAbsent"
+                  }
+                },
+                publishDiscipline: "atomic",
+                parent: "mustExist",
+                exactMode: N.mode & 511
+              });
+            if (se.ok) e.failedWritesMarked = (e.failedWritesMarked ?? 0) + 1, await lm(y, ne, ne).catch(() => {});
+            else t(`multi-store-sync[${e.mountName}]: empty marker for ${n} not written: ${Ht(se.error)}`, {
+              level: "warn"
+            })
+          }
+        }
+        M(Z.error)
+      };
+    if (Lc(e)) return await j(), "published";
+    let G = await A.backend.write(A.key, r, {
+      precondition: {
+        type: "ifAbsent"
+      },
+      publishDiscipline: "atomic",
+      mode: 438 & ~process.umask()
+    });
+    if (!G.ok) {
+      if (G.error.code !== "AlreadyExists" && !Whr(G.error)) M(G.error);
+      return await j(), "published"
+    }
+  } else await Bc(Cc(y), {
+    recursive: !0
+  });
+  if (A === void 0) {
+    let M = await w(),
+      j = !1;
+    if (M === null) {
+      let G = await qO(y, r, 438);
+      try {
+        if (S !== void 0) {
+          if (!await Xi(S) || !S.mayPublish()) return await as(e, n, y), "dropped"
+        }
+        await bm(G, y), j = !0
+      } catch {
+        M = await w()
+      } finally {
+        await hs(G).catch(() => {})
+      }
+    }
+    if (!j) {
+      let G = M?.isFile() ? M.mode & 511 : null,
+        N = G !== null ? {
+          exactMode: G,
+          inPlaceOnTempCreateRefused: !0
+        } : {
+          createMode: 438
+        };
+      if (S !== void 0 && !await Xi(S)) return await as(e, n, y), "dropped";
+      try {
+        await eK(y, r, {
+          ...N,
+          ...S !== void 0 && {
+            beforePublish: () => S.mayPublish()
+          }
+        })
+      } catch (Z) {
+        if (Z instanceof qFr) return await as(e, n, y), "dropped";
+        let te = Um(Z),
+          Y = te === "partial" && await dm(h, e, y, r) === "tornPrefix" ? () => eK(y, "", N) : te === "removed" && G !== null ? () => SN(y, "", G) : null;
+        if (Y !== null) {
+          t(`multi-store-sync[${e.mountName}]: ${n} was ${te==="removed"?"removed":"left torn"} by a failed in-place write; writing an empty marker to re-fetch over`, {
+            level: "warn"
+          });
+          let ne = new Date(Date.now() - 2 * Ic);
+          await Y().then(() => (e.failedWritesMarked = (e.failedWritesMarked ?? 0) + 1, lm(y, ne, ne).catch(() => {}))).catch((se) => t(`multi-store-sync[${e.mountName}]: empty marker for ${n} not written: ${d(se)}`, {
+            level: "warn"
+          }))
+        }
+        throw Z
+      }
+    }
+    if (S !== void 0 && !await Xi(S)) return await hs(y).catch(() => {}), await as(e, n, y), "dropped";
+    if (M !== null) return "published"
+  }
+  if (Lc(e)) return "published";
+  let O = new Date(s);
+  if (!Number.isNaN(O.getTime()) && O.getTime() <= Date.now()) await uR(y, O, O).catch(() => {});
+  return "published"
+}
+async function IR(e) {
+  return await Xi(e) && e.mayPublish()
+}
+async function Xi(e) {
+  try {
+    return await Qi(e.path), !0
+  } catch {
+    return !1
+  }
+}
+async function as(e, n, r) {
+  e.pullDropped.add(n), await DR(e.mountDir, r)
+}
+async function DR(e, n) {
+  let r = ro(e).normalize("NFC");
+  for (let s = Cc(n); s.normalize("NFC") !== r && s.normalize("NFC").startsWith(r + bn); s = Cc(s)) try {
+    await cR(s)
+  } catch {
+    return
+  }
+}
+
+function $m(e) {
+  return e.size === 0 && Date.now() - e.mtimeMs > Ic
+}
+
+function Um(e) {
+  return e instanceof Error && "targetOutcome" in e ? e.targetOutcome : null
+}
+async function dm(e, n, r, s) {
+  let h = Buffer.from(s, "utf8"),
+    y = (w) => w.length > 0 && w.length < h.length && h.subarray(0, w.length).equals(w),
+    S = xs(e, n, r);
+  try {
+    if (S !== void 0) {
+      let O = await S.backend.read([{
+        key: S.key,
+        offset: 0,
+        length: h.length
+      }], {
+        symlinks: "refuse"
+      });
+      if (!O.ok) return "other";
+      let M = O.value.items[0];
+      if (!M.found) return "absent";
+      return M.totalBytes < h.length && y(M.value) ? "tornPrefix" : "other"
+    }
+    let w = await aP(r);
+    if (!w.ok) return w.error.kind === "absent" ? "absent" : "other";
+    let A = w.value;
+    try {
+      let O = Buffer.alloc(h.length),
+        M = 0;
+      while (M < O.length) {
+        let {
+          bytesRead: j
+        } = await A.read(O, M, O.length - M, M);
+        if (j === 0) break;
+        M += j
+      }
+      return y(O.subarray(0, M)) ? "tornPrefix" : "other"
+    } finally {
+      await A.close().catch(() => {})
+    }
+  } catch {
+    return "other"
+  }
+}
+
+function NR(e) {
+  return e.code === "Failed" && Um(e.cause) === "partial"
+}
+async function Hc(e, n, r) {
+  try {
+    let s = await Vn(e, n);
+    return $m(await so(r, e, s))
+  } catch {
+    return !1
+  }
+}
+async function rr(e, n, r) {
+  if (e.pulled) return !1;
+  try {
+    let s = await Vn(e, n),
+      h = await so(r, e, s);
+    if ($m(h)) return !1;
+    let y = e.pullWritten.get(n)?.mtimeMs;
+    if (y !== void 0) return h.mtimeMs > y;
+    return h.mtimeMs >= e.createdAtMs - 1000
+  } catch (s) {
+    let h = s instanceof Error && "viaStorage" in s && yZ(k(s));
+    if (h) t(`multi-store-sync[${e.mountName}]: ${n} is a leaf the storage backend will not stat; kept as a local edit`);
+    return h
+  }
+}
+async function Bm(e, n, r, s) {
+  try {
+    let h = await Vn(e, n),
+      y = await so(s, e, h);
+    if (y.size > Pn || y.size !== Buffer.byteLength(r, "utf8")) return !1;
+    return await Fm(s, e, h) === r
+  } catch {
+    return !1
+  }
+}
+async function sa(e, n, r, s) {
+  try {
+    let h = await Vn(e, n),
+      y = await so(s, e, h);
+    e.pullWritten.set(n, {
+      mtimeMs: y.mtimeMs,
+      sha256: r
+    })
+  } catch {}
+}
+
+function pm(e, n, r, s) {
+  if (!r.has(s.path)) return {
+    id: s.id,
+    sha256: So
+  };
+  let h = n.get(s.path)?.sha256,
+    y = e.pulled ? h : e.pullWritten.get(s.path)?.sha256 ?? h;
+  return {
+    id: s.id,
+    sha256: y ?? So
+  }
+}
+async function jm(e, n, r) {
+  try {
+    let s = await Vn(e, n),
+      h = xs(r, e, s);
+    if (h !== void 0) {
+      let y = await h.backend.delete(h.key);
+      if (!y.ok) throw Object.assign(new R(`multi-store-sync: local entry not deletable via storage: ${Ht(y.error)}`, "multi-store-sync: local entry not deletable via storage"), {
+        cause: y.error
+      })
+    } else await hs(s)
+  } catch (s) {
+    if (s instanceof Fx) {
+      t(`multi-store-sync[${e.mountName}]: refusing to delete escaping path ${n}`, {
+        level: "warn"
+      });
+      return
+    }
+    if (k(s) !== "ENOENT") throw s
+  }
+  e.pullWritten.delete(n)
+}
+
+function ps(e) {
+  return d(e) || k(e) || e instanceof Error && e.name || "unknown error"
+}
+async function lr(e, n, r) {
+  let s = 0,
+    h = Array.from({
+      length: Math.min(n, e.length)
+    }, async () => {
+      while (s < e.length) {
+        let y = s++;
+        await r(e[y])
+      }
+    });
+  await Promise.all(h)
+}
+async function Wm(e, n) {
+  let r = await oo(e.mountDir, n, e.v5MemoryBase),
+    s = r.state === "present" && r.manifest.partition === e.backend.partitionId,
+    h = r.state === "torn" && _o();
+  if (s || h) e.manifestSeenThisSession = !0;
+  if (!e.pulled) return s ? "matched" : h ? "torn" : "other";
+  if (s) return "matched";
+  if (r.state === "present" && e.scope !== "user") return Yc(e, "midSession"), "other";
+  if (e.remoteHashes.size === 0) return "other";
+  if (t(`multi-store-sync[${e.mountName}]: .memory-sync manifest ${r.state==="present"?"partition mismatch":r.state} \u2014 invalidating basis`, {
+      level: "warn"
+    }), Xt(e)) c("team_memory_multistore_conflict", r.state !== "present" ? "manifest_absent" : "manifest_mismatch");
+  if (l("tengu_team_mem_push_manifest_gate", {
+      absent: r.state !== "present",
+      remote_entries: e.remoteHashes.size
+    }), e.invalidatedBasis = e.remoteHashes, e.remoteHashes = new Map, e.pulled = !1, e.pendingDeletes?.clear(), e.namedRemovals?.clear(), r.state !== "present") await Ss(e, n);
+  return "other"
+}
+
+function LR(e) {
+  if (e.suppressedReason = "mount_dir_unmanifested_nonempty", e.suppressedUntilMs = null, e.remoteHashes = new Map, e.pulled = !1, t(`multi-store-sync[${e.mountName}]: mount dir exists without a .memory-sync manifest and is not empty \u2014 suppressing sync (remove or rename the dir to mount this store)`, {
+      level: "warn"
+    }), Xt(e)) c("team_memory_multistore_conflict", "unmanifested_nonempty_dir");
+  l("tengu_team_mem_foreign_partition_suppressed", {
+    trigger: f("firstPullUnmanifested")
+  })
+}
+async function Gm(e) {
+  try {
+    return (await _s(e, {
+      withFileTypes: !0
+    })).some((r) => r.name !== Kn && !(r.name.startsWith(".") && r.isFile())) ? "occupied" : "empty"
+  } catch (n) {
+    return k(n) === "ENOENT" ? "empty" : "unreadable"
+  }
+}
+async function Km(e, n) {
+  if (!n.rootMissing) return !1;
+  try {
+    return (await _s(e.mountDir, {
+      withFileTypes: !0
+    })).every((s) => s.name.startsWith(".") || s.isDirectory() && e.excludeKey?.(s.name) === !0)
+  } catch {
+    return !1
+  }
+}
+async function Vm(e) {
+  let n = await _s(e, {
+    withFileTypes: !0
+  });
+  for (let r of n) {
+    if (r.name === Kn) continue;
+    if (r.name.startsWith(".")) {
+      if (r.isFile()) continue;
+      return !1
+    }
+    if (r.isDirectory()) {
+      if (!await Vm(Sn(e, r.name))) return !1
+    } else if (!r.isFile()) return !1
+  }
+  return !0
+}
+async function HR(e, n) {
+  let r = X(),
+    s = Nm(e, n),
+    h;
+  try {
+    h = await e.backend.list()
+  } catch (A) {
+    return {
+      outcome: "failed",
+      error: d(A),
+      ...A instanceof Wg && {
+        permanent: A.reason
+      }
+    }
+  }
+  let y = new Map(h.map((A) => [A.path, A.sha256])),
+    S;
+  try {
+    S = await ks(e.mountDir, e.excludeKey, n, e.v5MemoryBase, e.manifestSeenThisSession, e.walkHashes, void 0)
+  } catch (A) {
+    return {
+      outcome: "failed",
+      error: d(A)
+    }
+  }
+  if (!S.diskTrusted) return {
+    outcome: "failed",
+    error: "mount dir enumeration untrusted (permission failure)"
+  };
+  let w;
+  try {
+    w = await Vm(e.mountDir)
+  } catch (A) {
+    return {
+      outcome: "failed",
+      error: d(A)
+    }
+  }
+  if (!w) return {
+    outcome: "mismatch"
+  };
+  for (let A of S.diskPaths) {
+    let O = y.get(A);
+    if (O === void 0) return {
+      outcome: "mismatch"
+    };
+    let M = S.entries.get(A)?.sha256;
+    if (M === void 0) {
+      let j = Sn(e.mountDir, A.replace(/^\/+/, "")),
+        G = s !== void 0 ? BNn(s.base, e.mountDir, j) : void 0;
+      if (r && s !== void 0 && G !== void 0) {
+        let N = await s.storageV5.read([{
+            key: G,
+            offset: 0,
+            length: fs + 1
+          }]),
+          Z = N.ok ? N.value.items[0] : void 0;
+        if (Z === void 0 || !Z.found || Z.totalBytes > fs) return {
+          outcome: "mismatch"
+        };
+        M = nt(Buffer.from(Z.value).toString("utf8"))
+      } else try {
+        if ((await ea(j)).size > fs) return {
+          outcome: "mismatch"
+        };
+        M = nt(await Zi(j, "utf8"))
+      } catch {
+        return {
+          outcome: "mismatch"
+        }
+      }
+    }
+    if (O !== M) return {
+      outcome: "mismatch"
+    }
+  }
+  return {
+    outcome: "match"
+  }
+}
+
+function Yc(e, n) {
+  if (e.suppressedReason = "mount_dir_foreign_partition", e.suppressedUntilMs = null, e.remoteHashes = new Map, e.pulled = !1, e.pendingDeletes?.clear(), e.namedRemovals?.clear(), t(`multi-store-sync[${e.mountName}]: mount dir holds a different partition's .memory-sync \u2014 suppressing sync (remove the dir to re-mount)`, {
+      level: "warn"
+    }), Xt(e)) c("team_memory_multistore_conflict", "foreign_partition_dir");
+  l("tengu_team_mem_foreign_partition_suppressed", {
+    trigger: f(n)
+  })
+}
+var FR = new Set(["mount_dir_foreign_partition", "mount_dir_unmanifested_nonempty"]);
+
+function qm(e) {
+  return e !== null && FR.has(e)
+}
+
+function $R(e) {
+  return qm(e.suppressedReason)
+}
+async function UR(e, n, r) {
+  let s = e.suppressedReason;
+  if (!qm(s)) return !1;
+  let h = n.state === "present" && n.manifest.partition === e.backend.partitionId,
+    y = n.state !== "present" && await Gm(e.mountDir) === "empty";
+  if (!h && !y) {
+    if (s === "mount_dir_unmanifested_nonempty" && n.state === "present") Yc(e, "firstPull");
+    return !1
+  }
+  if (e.suppressedReason = null, e.suppressedUntilMs = null, e.recoveryUnconfirmedReason = s, e.consecutivePermanentFailures = 0, e.refusedWrites?.clear(), e.invalidatedBasis = null, await Ss(e, r), t(`multi-store-sync[${e.mountName}]: ${s} condition cleared \u2014 re-adopting the mount dir`, {
+      level: "info"
+    }), Xt(e)) g("team_memory_multistore_conflict");
+  return l("tengu_team_mem_foreign_partition_recovered", {
+    reason: f(s)
+  }), !0
+}
+
+function mm(e) {
+  e.streamListSuccessStreak = 0;
+  let n = (e.streamListFailureStreak ?? 0) + 1;
+  if (e.streamListFailureStreak = Math.min(n, Mc), n >= Mc) e.streamListRetryAfterMs = Date.now() + mR;
+  return n
+}
+
+function Xt(e) {
+  return e.scope !== "account"
+}
+async function BR(e) {
+  let n = e.backend;
+  if (n.exportMetadata && !e.streamListUnsupported && Date.now() >= (e.streamListRetryAfterMs ?? 0) && !i.CLAUDE_CODE_DISABLE_MEMORY_STREAM_LIST && v("tengu_memory_stream_list", !0)) {
+    let r = `multi-store-sync[${e.mountName}]`;
+    try {
+      let s = await n.exportMetadata(),
+        h = await am({
+          source: s,
+          maxLineLength: fs,
+          maxEntries: Yen
+        });
+      if (h.ok) {
+        let y = (e.streamListSuccessStreak ?? 0) + 1;
+        if (y >= pR) e.streamListSuccessStreak = 0, e.streamListFailureStreak = Math.max(0, (e.streamListFailureStreak ?? 0) - 1);
+        else e.streamListSuccessStreak = y;
+        if (Xt(e)) g("team_memory_multistore_stream_list");
+        return h.entries.map((S) => ({
+          ...S,
+          path: eC(S.path)
+        }))
+      }
+      if (Xt(e)) c("team_memory_multistore_stream_list", h.reason);
+      if (mm(e), h.reason === "view_not_honored") e.streamListUnsupported = !0;
+      t(`${r}: metadata stream incomplete (${h.reason}) \u2014 using paged list`, {
+        level: "debug"
+      })
+    } catch (s) {
+      let h = mm(e);
+      if (s instanceof oz) {
+        if (Xt(e)) c("team_memory_multistore_stream_list", s.retryAfterMs !== void 0 ? "backed_off" : "unavailable");
+        let y = s.retryAfterMs !== void 0;
+        if (h < Mc && (e.pulled || y)) throw s
+      } else {
+        let y = s instanceof ok ? "not_found" : s instanceof Wg ? s.reason : "error";
+        if (s instanceof ok) e.streamListUnsupported = !0;
+        if (Xt(e)) c("team_memory_multistore_stream_list", y)
+      }
+      t(`${r}: metadata stream unavailable (${d(s)}) \u2014 using paged list`, {
+        level: "debug"
+      })
+    }
+  }
+  return n.list()
+}
+
+function Xc(e) {
+  if ((e.source ?? "env") !== "discovery") return !1;
+  let n = eT();
+  return n.state === "parked" || n.state === "ended"
+}
+
+function Xm(e) {
+  if ((e.source ?? "env") !== "discovery" || !XLt()) return !1;
+  if (Uq(e.backend.partitionId) !== void 0) return e.notices.rearmMirrorAllUncovered(), !1;
+  if (!zen().some((r) => Uq(r.path) !== void 0)) return e.notices.emitMirrorAllUncoveredOnce(), !1;
+  return e.notices.rearmMirrorAllUncovered(), !0
+}
+async function jR(e, n) {
+  let r = await WR(e, n);
+  if (!e.pulled) e.lastPersistedBasisBody = void 0;
+  if (!r.success && wo(e.basisUnusable) && !e.notices.rejoinOffNoticed.has(e.mountDir)) e.notices.rejoinOffNoticed.add(e.mountDir), ZR(e);
+  else if (r.success && e.pulled && e.notices.rejoinOffNoticed.delete(e.mountDir)) eh(e, th(e), !0);
+  let s = e.rejoinOff ?? null;
+  if (s !== null && e.pulled && !wo(e.basisUnusable)) e.rejoinOff = null, l("tengu_team_mem_rejoin", {
+    scope: f(e.scope),
+    reason: f(s.reason),
+    off_ms: Date.now() - s.sinceMs,
+    pull_attempts: s.pullAttempts,
+    held_count: e.heldLocal?.size ?? 0
+  });
+  return r
+}
+async function WR(e, n) {
+  if (await Qc(e)) return {
+    success: !1,
+    entriesListed: 0,
+    filesWritten: 0,
+    filesDeleted: 0,
+    error: "mount dir canonicity check failed (fail closed)"
+  };
+  if (Xc(e)) return Fc;
+  if (Xm(e)) return Fc;
+  let r = await Wm(e, n),
+    s = r === "matched";
+  if (e.suppressedReason !== null) return sr;
+  let h = (s || r === "torn") && !e.pulled && e.remoteHashes.size === 0 && (e.invalidatedBasis ?? null) === null ? await Pm(e, n) : null,
+    y = h?.ok === !1 ? h.reason : null;
+  if (h !== null && e.basisUnusable !== null && !(e.removedEmptyReceipt === !0 && y === "absent")) e.basisUnusable = y ?? void 0;
+  if (y === "empty_store") e.emptyReceiptOnDisk = !0;
+  else if (h !== null && y !== "read_error") e.emptyReceiptOnDisk = !1;
+  let S = h?.ok === !0 ? h.basis : null,
+    w = e.basisUnusable,
+    A = wo(w);
+  if (A && w) {
+    if (!e.rejoinOff) e.rejoinOff = {
+      sinceMs: Date.now(),
+      reason: w,
+      pullAttempts: 0
+    };
+    e.rejoinOff.reason = w, e.rejoinOff.pullAttempts++
+  }
+  let O = S === null ? await zR(e, s, n) : "not-attempted";
+  if (O !== "not-attempted" && O !== "fell-back") return e.downloadsDeferred = 0, O;
+  let M = O === "fell-back",
+    j, G = null;
+  try {
+    j = await BR(e)
+  } catch (Re) {
+    let at = Uc(e, Re),
+      Dt = (e.invalidatedBasis ?? S?.entries ?? e.remoteHashes).size === 0;
+    if (Re instanceof ok && Dt && e.scope !== "account") {
+      if (j = [], A) G = Re
+    } else {
+      if (Re instanceof ok) t(`multi-store-sync[${e.mountName}]: list 404 on a previously-synced store or the account mirror \u2014 skipping pull (no reap)`, {
+        level: "warn"
+      });
+      if (M && Xt(e)) m("team_memory_multistore_bulk_inflate", "fallback_failed");
+      return {
+        success: !1,
+        entriesListed: 0,
+        filesWritten: 0,
+        filesDeleted: 0,
+        permanent: Re instanceof Wg ? Re.reason : void 0,
+        ...Re instanceof ok && {
+          cause: "not_found"
+        },
+        error: d(Re),
+        ...Re instanceof ok && {
+          notFound: !0
+        },
+        ...at && {
+          backedOff: !0,
+          cause: "backed_off"
+        }
+      }
+    }
+  }
+  let N = new Map;
+  for (let Re of j) N.set(Re.id, Re.path);
+  let Z = new Map;
+  for (let Re of j)
+    if (N.get(Re.id) === Re.path) Z.set(Re.path, Re);
+  j = [...Z.values()], j = j.filter((Re) => ADe(Re.path) && !(e.excludeKey && e.excludeKey(Re.path.replace(/^\/+/, ""))));
+  let te = new Map;
+  for (let Re of j) te.set(Re.path, {
+    id: Re.id,
+    sha256: Re.sha256
+  });
+  let Y = await ks(e.mountDir, e.excludeKey, n, e.v5MemoryBase, e.manifestSeenThisSession, e.walkHashes, void 0),
+    ne = e.invalidatedBasis ?? null,
+    se = ne ?? S?.entries ?? e.remoteHashes;
+  if (!Y.diskTrusted && (A ? !await Km(e, Y) : se.size > 0 && !Y.rootMissing)) return t(`multi-store-sync[${e.mountName}]: mount dir walk untrusted with a non-empty basis or a pending rejoin \u2014 soft-failing pull`, {
+    level: "warn"
+  }), {
+    success: !1,
+    entriesListed: j.length,
+    filesWritten: 0,
+    filesDeleted: 0,
+    cause: "walk_untrusted",
+    error: "mount dir walk untrusted with a non-empty basis or a pending rejoin (soft fail)",
+    ...!e.pulled && {
+      permanent: "mount_dir_unreadable"
+    }
+  };
+  if (G !== null && await ER(e, Y.entries, te, n)) {
+    if (t(`multi-store-sync[${e.mountName}]: list 404 while sync is off with local files to hold, staying off`, {
+        level: "warn"
+      }), M) m("team_memory_multistore_bulk_inflate", "fallback_failed");
+    return {
+      success: !1,
+      entriesListed: 0,
+      filesWritten: 0,
+      filesDeleted: 0,
+      cause: "not_found",
+      error: d(G)
+    }
+  }
+  let ae = zc(e);
+  Rm(e, Y.diskPaths);
+  let re = new Set,
+    _e = !ae && ar(e),
+    Se = new Set,
+    ce = new Set(j.filter((Re) => Re.sha256 !== Qn && Y.entries.get(Re.path)?.sha256 === Qn && se.get(Re.path)?.sha256 === Re.sha256).map((Re) => Re.path)),
+    xe = 0,
+    ve = j.filter((Re) => {
+      if (Y.entries.get(Re.path)?.sha256 === Re.sha256) return !1;
+      if (e.scope === "account") return !0;
+      if (ce.has(Re.path)) return !0;
+      if ((ne !== null || Y.rootMissing) && !Y.diskPaths.has(Re.path)) return !0;
+      if (!ae && Y.diskTrusted && !Y.diskPaths.has(Re.path) && !Nc(e, Re.path, Re)) {
+        if (_e && e.pulled && se.has(Re.path)) Se.add(Re.path);
+        if (e.pulled && ar(e)) re.add(Re.path);
+        return !0
+      }
+      if (S?.entriesWereOnDisk === !1 && Y.diskTrusted && !Y.diskPaths.has(Re.path)) {
+        if (se.get(Re.path)?.sha256 === Re.sha256) xe++;
+        return !0
+      }
+      return se.get(Re.path)?.sha256 !== Re.sha256
+    }),
+    Oe = Y.diskTrusted ? [...Y.diskPaths].filter((Re) => !te.has(Re) && (se.has(Re) || e.scope === "account")) : [];
+  for (let Re of ve) te.delete(Re.path);
+  let Ce = 0,
+    Ne = 0,
+    Ie = 0,
+    Ye = 0,
+    pt = 0,
+    ct = !1,
+    gt = 0,
+    sn = 0,
+    ke, Fe, Xe = new Map,
+    ft = [];
+  if (ve.length > 0) try {
+    await Dm(e, n)
+  } catch (Re) {
+    return {
+      success: !1,
+      entriesListed: j.length,
+      filesWritten: 0,
+      filesDeleted: 0,
+      error: d(Re)
+    }
+  }
+  let mt = _o() ? new Set(Y.skippedOversizedPaths.map((Re) => Re.path)) : new Set;
+  await lr(ve, ir, async (Re) => {
+    if (ct) {
+      gt++;
+      return
+    }
+    try {
+      let at = await e.backend.read(Re.id),
+        Dt = nt(at.content);
+      if (Dt !== at.sha256) Ne++;
+      if (re.has(Re.path)) {
+        if (Nc(e, Re.path, Re)) {
+          Se.delete(Re.path), te.set(Re.path, {
+            id: Re.id,
+            sha256: Re.sha256
+          });
+          return
+        }
+        if (await Vn(e, Re.path).then((Eo) => so(n, e, Eo)).then(() => !0, () => !1)) {
+          Ce++, Se.delete(Re.path), te.set(Re.path, {
+            id: Re.id,
+            sha256: se.get(Re.path)?.sha256 ?? So
+          });
+          return
+        }
+      }
+      if (!(ne !== null && Y.diskPaths.has(Re.path)) && await rr(e, Re.path, n)) {
+        Ce++, te.set(Re.path, pm(e, se, Y.diskPaths, Re));
+        return
+      }
+      if (ce.has(Re.path) && !await Hc(e, Re.path, n)) {
+        Ce++, te.set(Re.path, {
+          id: Re.id,
+          sha256: Re.sha256
+        });
+        return
+      }
+      let Nt = Y.entries.get(Re.path)?.sha256;
+      if (Nt !== Dt && await qc(e, Re.path, at.content, at.updatedAt, n) === "dropped") return;
+      let Ro = e.pullWritten.get(Re.path)?.sha256;
+      await sa(e, Re.path, Dt, n);
+      let Jn = {
+        id: Re.id,
+        sha256: Dt
+      };
+      te.set(Re.path, Jn), Xe.set(Re.path, Jn);
+      let Un = se.get(Re.path)?.sha256,
+        cn = mt.has(Re.path),
+        Ko = cn || Nt !== Un && (Ro === void 0 || Nt !== Ro),
+        Hn = _o() ? e.heldLocal?.get(Re.path) ?? S?.held.get(Re.path) : void 0,
+        An = Hn !== void 0 && (Nt !== void 0 || cn) && Nt !== Dt && Ko;
+      if (Nt === Qn) {
+        if (Un !== Qn && Dt !== Qn) Ie++
+      } else if (e.scope !== "account" && (An || (Un !== void 0 || Lc(e)) && Y.diskPaths.has(Re.path) && Ko)) {
+        let $n = An && Nt === Hn;
+        for (let Eo of e.namedRemovals?.keys() ?? []) await rh(e, Eo, Re.path);
+        e.namedRemovals?.clear(), await eo(e, Re.path, $n ? nv(Re.path) : sh(Re.path, Un === So)), l("tengu_team_mem_conflict_recovered", {
+          scope: f(e.scope),
+          op: f("pull"),
+          held: $n
+        })
+      }
+    } catch (at) {
+      if (at instanceof ok) {
+        let Dt = e.heldLocal?.get(Re.path) ?? S?.held.get(Re.path),
+          Nt = A && !e.pullWritten.has(Re.path) || Dt !== void 0 && Dt === Y.entries.get(Re.path)?.sha256;
+        if (Y.diskPaths.has(Re.path) && !Nt) te.set(Re.path, pm(e, se, Y.diskPaths, Re));
+        return
+      }
+      if (at instanceof Fx) {
+        t(`multi-store-sync[${e.mountName}]: refusing to write escaping path ${Re.path}`, {
+          level: "warn"
+        });
+        return
+      }
+      if (at instanceof Wg) Fe ??= at.reason;
+      if (Uc(e, at)) ct = !0, sn++;
+      Ye++, ke ??= ps(at)
+    }
+  });
+  for (let Re of Oe) try {
+    let at = Y.entries.get(Re)?.sha256;
+    if (e.scope !== "account" && (at === void 0 || at !== se.get(Re)?.sha256 && !(at === Qn && await Hc(e, Re, n)))) {
+      let Nt = at !== void 0 && e.backend.mode !== "ro";
+      e.refusedWrites?.delete(Re), await eo(e, Re, `The memory file ${Cn(Re)} was deleted from shared memory by another session, but your local copy has changes that were never saved there. ` + (Nt ? "Your local copy was kept and will be re-saved to shared memory on the next sync unless it contains a detected secret. " : "Your local copy was kept, but it cannot be re-saved to shared memory automatically (over the sync size limit or the store is read-only) \u2014 save its contents elsewhere or trim it if you want it persisted. ") + (Nt && _e ? ta(e) : "If the deletion was intended, delete the file.")), t(`multi-store-sync[${e.mountName}]: preserving locally-modified ${Re} despite remote delete`, {
+        level: "info"
+      });
+      continue
+    }
+    if (await rr(e, Re, n)) {
+      Ce++;
+      continue
+    }
+    await jm(e, Re, n), ft.push(Re)
+  } catch (at) {
+    pt++, ke ??= ps(at)
+  }
+  if (Ie > 0) Qm(e, Ie);
+  if (Ne > 0) t(`multi-store-sync[${e.mountName}]: ${Ne} read body/bodies did not match their declared sha256; recorded under the computed sha`, {
+    level: "warn"
+  });
+  let Tt = [...Se].filter((Re) => Xe.has(Re)).sort();
+  if (Ye + pt + gt > 0) {
+    if (t(`multi-store-sync[${e.mountName}]: pull failed: ${Ye} of ${ve.length} download(s) and ${pt} of ${Oe.length} local removal(s) failed${gt>0?`, ${gt} download(s) not started after the server asked sync to wait (waiting at least ${Math.max(0,Math.ceil(((e.serverBackoffUntilMs??0)-Date.now())/1000))}s)`:""}, first error: ${ke}; the sync record is unchanged for those files and a later sync retries them${e.pulled?"":"; nothing is uploaded from this store until a pull succeeds"}`, {
+        level: "warn"
+      }), M && Xt(e)) m("team_memory_multistore_bulk_inflate", "fallback_failed");
+    if (e.pulled && (Xe.size > 0 || ft.length > 0)) {
+      for (let [Re, at] of Xe) e.remoteHashes.set(Re, at);
+      for (let Re of ft) e.remoteHashes.delete(Re);
+      await gs(e, n)
+    }
+    return e.downloadsDeferred = gt + sn, {
+      success: !1,
+      entriesListed: j.length,
+      shaMismatches: Ne,
+      emptyRestored: Ie,
+      filesWritten: Xe.size,
+      filesDeleted: ft.length,
+      fetchesFailed: Ye,
+      permanent: Fe,
+      error: ke,
+      backedOff: ct || void 0,
+      ...Tt.length > 0 && {
+        putBackWhileDeletesOff: Tt
+      }
+    }
+  }
+  if (e.downloadsDeferred = 0, await Om(e, Y.entries, te, n, {
+      walkTrusted: Y.diskTrusted,
+      hold: A
+    }), e.notices.rejoinOffNoticed.has(e.mountDir)) {
+    let Re = S?.held ?? new Map;
+    await lr([...Re.keys()], ir, async (at) => {
+      if (await rr(e, at, n)) Re.delete(at)
+    })
+  }
+  e.remoteHashes = te, e.pulled = !0, e.invalidatedBasis = null;
+  for (let Re of e.namedRemovals?.keys() ?? [])
+    if (!te.has(Re)) e.namedRemovals?.delete(Re);
+  if (e.basisLoaded = !0, S !== null && S.held.size > 0) {
+    if (e.heldLocal = S.held, !e.notices.rejoinOffNoticed.has(e.mountDir)) ev(e)
+  }
+  if (S !== null && S.deletes.size > 0) {
+    let Re = e.pendingDeletes ??= new Map;
+    for (let [at, Dt] of S.deletes)
+      if (te.has(at)) Re.set(at, Dt)
+  }
+  if (await Ji(e, {
+      expectPresent: s
+    }, n).catch((Re) => t(`multi-store-sync[${e.mountName}]: manifest write failed: ${d(Re)}`, {
+      level: "warn"
+    })), await gs(e, n), Ce > 0) {
+    if (Xt(e)) g("team_memory_multistore_concurrent_write_preserved");
+    t(`multi-store-sync[${e.mountName}]: preserved ${Ce} concurrent local write(s)`, {
+      level: "info"
+    })
+  }
+  return {
+    success: !0,
+    entriesListed: j.length,
+    shaMismatches: Ne,
+    emptyRestored: Ie,
+    filesWritten: Xe.size,
+    filesDeleted: ft.length,
+    filesSkippedConcurrent: Ce,
+    entriesWithoutRef: U(j, (Re) => !te.has(Re.path)),
+    unmarkedReceiptRefetched: xe,
+    ...Tt.length > 0 && {
+      putBackWhileDeletesOff: Tt
+    }
+  }
+}
+async function zR(e, n, r) {
+  if (e.pulled || e.remoteHashes.size > 0 || (e.invalidatedBasis ?? null) !== null) return "not-attempted";
+  let s = e.backend;
+  if (!s.exportAll) return "not-attempted";
+  if (i.CLAUDE_CODE_DISABLE_MEMORY_BULK_INFLATE) return "not-attempted";
+  if (!v("tengu_memory_bulk_inflate", !0)) return "not-attempted";
+  if (e.rejoinWalkUntrusted === !0 && wo(e.basisUnusable)) return "not-attempted";
+  let h = `multi-store-sync[${e.mountName}]`,
+    y;
+  try {
+    y = await s.exportAll()
+  } catch (ce) {
+    let xe = ce instanceof ok ? "not_found" : "http_error";
+    if (ce instanceof ok) e.streamListUnsupported = !0;
+    if (Xt(e)) c("team_memory_multistore_bulk_inflate", xe);
+    return t(`${h}: bulk inflate unavailable (${d(ce)}) \u2014 using per-file pull`, {
+      level: "debug"
+    }), "fell-back"
+  }
+  let S = new Map,
+    w = new Map,
+    A = new Map,
+    O = new Set,
+    M = new Set,
+    j = new Set,
+    G = new Set,
+    N = 0,
+    Z = 0,
+    te = new Map,
+    Y = new Map,
+    ne = 0,
+    se = await im({
+      source: y,
+      maxConcurrentWrites: ir,
+      maxLineLength: fs,
+      maxLines: Yen * 2 + 2,
+      deadlineMs: fR,
+      handleMemory: async (ce) => {
+        let xe = eC(ce.path),
+          ve = ADe(xe) && !(e.excludeKey && e.excludeKey(xe.replace(/^\/+/, "")));
+        if (w.set(ce.memoryId, ve ? xe : null), !ve) return;
+        let Oe = nt(ce.content);
+        if (Oe !== ce.contentSha256) N++;
+        let Ce = A.get(xe);
+        if (Ce !== void 0) {
+          if (Ce.id !== ce.memoryId || Ce.sha256 !== Oe) O.add(xe);
+          let Ie = Y.get(xe);
+          if (Ie === void 0) Ie = new Set([Ce.sha256]), Y.set(xe, Ie);
+          Ie.add(Oe);
+          let Ye = te.get(xe);
+          if (Ye === void 0) Ye = new Set([Ce.id]), te.set(xe, Ye);
+          Ye.delete(ce.memoryId), Ye.add(ce.memoryId)
+        }
+        A.set(xe, {
+          id: ce.memoryId,
+          sha256: Oe
+        });
+        let Ne = Oe;
+        try {
+          if (await rr(e, xe, r)) ne++, j.add(xe), Ne = e.pullWritten.get(xe)?.sha256 ?? So;
+          else if (!await Bm(e, xe, ce.content, r)) {
+            if (Oe !== Qn && await Hc(e, xe, r)) Z++;
+            if (await qc(e, xe, ce.content, ce.updatedAt, r) === "dropped") return;
+            await sa(e, xe, Oe, r), M.add(xe)
+          }
+        } catch (Ie) {
+          if (Ie instanceof Fx) {
+            t(`${h}: refusing to write escaping path ${xe}`, {
+              level: "warn"
+            });
+            return
+          }
+          throw Ie
+        }
+        S.set(xe, {
+          id: ce.memoryId,
+          sha256: Ne
+        })
+      }
+    }),
+    ae = async (ce) => {
+      try {
+        let xe = await Vn(e, ce);
+        if ((await so(r, e, xe)).size > Pn) return !0;
+        let Oe = nt(await Fm(r, e, xe)),
+          Ce = Y.get(ce);
+        if (Ce !== void 0) return !Ce.has(Oe);
+        return A.get(ce)?.sha256 !== Oe
+      } catch (xe) {
+        return k(xe) !== "ENOENT"
+      }
+    }, re = !1;
+  for (let [ce, xe] of S)
+    if (w.get(xe.id) !== ce || O.has(ce)) {
+      if (M.delete(ce), await ae(ce)) {
+        let ve = te.get(ce),
+          Oe = ve && [...ve].findLast((Ce) => w.get(Ce) === ce);
+        if (Oe !== void 0) S.set(ce, {
+          id: Oe,
+          sha256: So
+        });
+        else S.delete(ce), G.add(ce);
+        continue
+      }
+      S.delete(ce);
+      try {
+        await jm(e, ce, r)
+      } catch (ve) {
+        t(`${h}: failed to remove superseded ${ce} (${d(ve)})`, {
+          level: "warn"
+        }), re = !0
+      }
+    } let _e = M.size;
+  if (Z > 0) Qm(e, Z);
+  if (!se.ok || re) {
+    let ce = se.ok ? "dedupe_unlink_failed" : se.reason;
+    if (Xt(e)) c("team_memory_multistore_bulk_inflate", ce);
+    return t(`${h}: bulk inflate incomplete (${ce}) after ${_e} file(s) \u2014 using per-file pull`, {
+      level: "warn"
+    }), "fell-back"
+  }
+  let Se = U([...w.values()], (ce) => ce !== null);
+  if (e.basisUnusable !== void 0 && e.basisUnusable !== null) {
+    let ce = null;
+    try {
+      ce = await ks(e.mountDir, e.excludeKey, r, e.v5MemoryBase, e.manifestSeenThisSession, e.walkHashes, void 0)
+    } catch (ve) {
+      t(`${h}: basis_unusable walk failed: ${d(ve)}`, {
+        level: "warn"
+      })
+    }
+    let xe = wo(e.basisUnusable);
+    if (xe && (ce === null || !ce.diskTrusted && !await Km(e, ce))) return c("team_memory_multistore_bulk_inflate", "walk_untrusted"), e.rejoinWalkUntrusted = !0, "fell-back";
+    if (ce === null) e.basisUnusable = null;
+    else await Om(e, ce.entries, S, r, {
+      walkTrusted: ce.diskTrusted,
+      hold: xe
+    })
+  }
+  if (e.remoteHashes = S, e.pulled = !0, await Ji(e, {
+      expectPresent: n
+    }, r).catch((ce) => t(`${h}: manifest write failed: ${d(ce)}`, {
+      level: "warn"
+    })), await gs(e, r), Xt(e)) g("team_memory_multistore_bulk_inflate");
+  if (Xt(e) && [...j].some((ce) => S.has(ce) || G.has(ce))) g("team_memory_multistore_concurrent_write_preserved");
+  return t(`${h}: bulk inflated ${_e} file(s) from ${se.memoryLines} exported memory line(s)` + (N ? `, ${N} declared-sha mismatch(es)` : ""), {
+    level: "info"
+  }), {
+    success: !0,
+    entriesListed: Se,
+    shaMismatches: N,
+    emptyRestored: Z,
+    filesWritten: _e,
+    filesDeleted: 0,
+    filesSkippedConcurrent: ne,
+    entriesWithoutRef: Math.max(0, Se - S.size)
+  }
+}
+var GR = 3,
+  KR = 300000;
+
+function hm(e, n) {
+  let r = Date.now(),
+    s = e.conflictRefetches ??= new Map,
+    h = s.get(n);
+  if (!h || r - h.windowStartMs >= KR) return s.set(n, {
+    count: 1,
+    windowStartMs: r
+  }), !0;
+  if (h.count >= GR) return !1;
+  return h.count++, !0
+}
+class Jc {
+  pending = new Map;
+  rejoinPending = new Map;
+  oversizeNoticed = new Map;
+  roUnsavedNoticed = new Map;
+  putBackTold = new Map;
+  mirrorAllUncoveredEmitted = !1;
+  rejoinOffNoticed = new Set;
+  heldFilesNoticed = new Set;
+  rearmMirrorAllUncovered() {
+    this.mirrorAllUncoveredEmitted = !1
+  }
+  emitMirrorAllUncoveredOnce() {
+    if (!this.mirrorAllUncoveredEmitted) this.mirrorAllUncoveredEmitted = !0, l("tengu_org_memory_mirror_all_uncovered", {})
+  }
+  queue(e, n) {
+    this.pending.set(e, n)
+  }
+  queueRejoin(e, n) {
+    this.rejoinPending.set(e, n)
+  }
+  take(e, n) {
+    if (this.pending.size === 0 && this.rejoinPending.size === 0) return null;
+    let r = [this.rejoinPending, this.pending];
+    if (e !== void 0) {
+      let h = ro(e),
+        y = [];
+      for (let S of r)
+        for (let [w, A] of S) {
+          if (!VR(w, A, h)) continue;
+          if (y.push(A.text), !n?.peek) S.delete(w)
+        }
+      return y.length > 0 ? y.join(`
+
+`) : null
+    }
+    let s = r.flatMap((h) => [...h.values()].map((y) => y.text));
+    for (let h of r) h.clear();
+    return s.join(`
+
+`)
+  }
+  oversizeNoticedFor(e) {
+    let n = this.oversizeNoticed.get(e);
+    if (n === void 0) n = new Set, this.oversizeNoticed.set(e, n);
+    return n
+  }
+}
+
+function Cn(e) {
+  return Jm(e.slice(e.lastIndexOf("/") + 1), e.replaceAll("/", "?"), 64)
+}
+
+function ko(e) {
+  return Jm(e.replace(/^\/+/, ""), e, 80)
+}
+
+function Jm(e, n, r) {
+  let s = (e || n).replace(/[^A-Za-z0-9._ /-]/g, "?").replace(/ +/g, " ");
+  if (s.length > r) s = `\u2026${s.slice(-r)}`;
+  return `"${s}"`
+}
+
+function VR(e, n, r) {
+  if (e === r) return !0;
+  if (!e.endsWith(bn) || !r.startsWith(e)) return !1;
+  if (n.excludeKey) {
+    let s = Ac(e, r).split(bn).join("/");
+    if (n.excludeKey(s)) return !1
+  }
+  return !0
+}
+var ia = {
+    store_full: "The shared memory store is full \u2014 the server is rejecting new memory files (updates to already-synced files still work). " + "Consolidate or delete memory files to free space; sync then resumes automatically.",
+    content_too_large: "The server rejected a memory file over its per-file size limit. Split the file's content into smaller files.",
+    content_secret: "The server rejected a memory file that appears to contain a credential or API key. Remove the credential from the file (and rotate it if it is real).",
+    content_screened: "The server's safety check rejected a memory file's content. It does not say which part; rewrite or remove the content the file does not need.",
+    index_too_large: "The server rejected the memory index file (MEMORY.md) over its size cap, which is far smaller than the per-file limit. Shorten the index: one short line per memory, with the detail in the memory files.",
+    invalid_path: "The server rejected a memory file's path (too long, too deep, or containing invalid characters). Rename the offending file.",
+    store_archived: "The memory store has been archived server-side and no longer accepts writes.",
+    mount_dir_unreadable: "Part of this memory store's local folder could not be read (for example, permission denied, or a folder removed while sync was reading it), so sync cannot verify or persist local files. Check the folder and its permissions; sync then resumes automatically."
+  },
+  qR = new Set(["content_too_large", "content_secret", "content_screened", "index_too_large", "invalid_path"]),
+  YR = 21600000;
+
+function aa(e, n) {
+  if (e.scope === "account") return;
+  e.notices.queue(ro(e.mountDir) + bn, {
+    text: n,
+    excludeKey: e.excludeKey
+  })
+}
+
+function XR(e, n, r) {
+  let s = /^[a-z0-9_]{1,40}$/.test(n) ? n : "sync_error",
+    h = ia[n],
+    y = r !== void 0 && /^http_4(00|22)$/.test(n) ? `The server refused a change to the memory file ${ko(r)} and gave no reason this client recognizes, so that file may be the cause. ` : "";
+  aa(e, h !== void 0 ? `Memory sync is paused for one of your memory stores (${s}): ${y}${h} Affected memory writes are NOT being persisted to shared memory and will be lost when this session's machine is recycled.` : `Memory sync is paused for one of your memory stores after repeated failures (${s}). ${y}Recent memory writes are saved locally but are NOT being persisted to shared memory. Sync retries automatically every few minutes.`)
+}
+
+function JR(e, n) {
+  let r = e.refusedWrites?.size ?? 0;
+  aa(e, (n > 0 ? `Memory sync recovered for a previously-paused memory store: ${n} pending local change(s) were pushed to shared memory.` : "Memory sync recovered for a previously-paused memory store; memory files are syncing normally again.") + (r > 0 ? ` The server still refuses ${r} memory file(s), named in earlier notices; those stay local only.` : ""))
+}
+
+function Qm(e, n) {
+  aa(e, `Memory sync restored ${n} memory file(s) that were empty (0 bytes) on this machine from shared memory \u2014 an empty file is never synced over a memory's shared content.` + (zc(e) ? " To remove a memory, delete its file; emptying it does not." : ""))
+}
+
+function QR(e, n, r, s) {
+  aa(e, (s > 0 ? `Memory sync did NOT delete anything more from shared memory this cycle: ${n} synced memory files are missing from this session's disk or were just deleted, too many at once. ${s} of them were already deleted from shared memory within the last minute and will not come back. The others will be restored on the next sync. ` : `Memory sync did NOT delete anything from shared memory this cycle: ${n} synced memory files went missing from this session's disk at once, which almost always means the local memory folder was wiped rather than deliberately cleared. Shared memory is unchanged and the missing files will be restored on the next sync. `) + `If you really do intend to remove that many memories, wait until the missing files have been restored, then delete at most ${r} at a time${cr(e)?", naming each file by its full path in a command that is only that rm,":""} with about a minute between batches so memory sync can apply each one.`)
+}
+var vc = 5;
+
+function ZR(e) {
+  e.notices.queueRejoin(ro(e.mountDir) + bn, {
+    text: `Memory sync for the ${Cn(e.mountName)} memory store is off for now: its folder has no usable record of what shared memory held, and it could not be rebuilt from shared memory yet. Memory files you write are kept on this machine in the meantime.`,
+    excludeKey: e.excludeKey
+  })
+}
+
+function eh(e, n, r) {
+  if (n.length > 0) e.notices.heldFilesNoticed.add(e.mountDir);
+  let s = Cn(e.mountName),
+    h = n.length === 0 ? "" : `had no usable record of what shared memory held, so ${n.length} older memory file(s) that shared memory did not list were kept on this machine and not saved there: ${oh(n)}. ` + nh;
+  e.notices.queueRejoin(ro(e.mountDir) + bn, {
+    text: r ? `Memory sync for the ${s} memory store is back on.` + (h === "" ? "" : ` The folder ${h}`) : `The folder of the ${s} memory store ${h}`,
+    excludeKey: e.excludeKey
+  })
+}
+
+function ev(e) {
+  let n = th(e);
+  if (n.length === 0 || e.notices.heldFilesNoticed.has(e.mountDir)) return;
+  e.notices.heldFilesNoticed.add(e.mountDir), e.notices.queueRejoin(ro(e.mountDir) + bn, {
+    text: `In the ${Cn(e.mountName)} memory store, ${n.length} older memory file(s) that shared memory did not list are kept on this machine and not saved there: ${oh(n)}. ` + nh,
+    excludeKey: e.excludeKey
+  })
+}
+
+function th(e) {
+  return [...e.heldLocal?.keys() ?? []].filter((n) => !e.remoteHashes.has(n)).sort()
+}
+var nh = "They may be copies of memories another session deleted. Editing one ends its hold, so sync treats it like any other memory file. Ask the user before deleting any of them.";
+
+function oh(e) {
+  let n = e.slice(0, vc).map(ko).join(", "),
+    r = e.length > vc ? ` and ${e.length-vc} more` : "";
+  return n + r
+}
+async function rh(e, n, r) {
+  let s = ko(n),
+    h = ko(r);
+  t(`multi-store-sync[${e.mountName}]: not deleting ${n}: ${r} is not saved`, {
+    level: "warn"
+  }), await eo(e, n, `Memory sync did not delete ${s} from shared memory, because ${h} did not save, and the text of ${s} may have moved into it. This stopped every delete from an rm in this store in that sync. ${s} comes back on this machine at the next sync. To remove it after that, first check that its text is saved, then run a command that is only an rm of its full path.`)
+}
+async function eo(e, n, r, s) {
+  try {
+    let h = ro(await Vn(e, n)),
+      y = s?.keepPending ? e.notices.pending.get(h) : void 0;
+    e.notices.queue(h, {
+      text: y !== void 0 && y.text !== r ? `${y.text}
+
+${r}` : r
+    })
+  } catch (h) {
+    t(`multi-store-sync[${e.mountName}]: dropping conflict notice for unresolvable path (${d(h)})`, {
+      level: "warn"
+    })
+  }
+}
+async function tv(e, n) {
+  let r = e.notices.oversizeNoticedFor(e.mountDir),
+    s = new Set(n.map((h) => h.path));
+  for (let h of r)
+    if (!s.has(h)) r.delete(h);
+  for (let h of n) {
+    if (r.has(h.path)) continue;
+    r.add(h.path), await eo(e, h.path, `The memory file ${Cn(h.path)} is ${en(h.size)}, over the ${en(Pn)} per-file sync limit \u2014 it is saved locally but is NOT synced to shared memory, so its changes will be lost when this session's machine is recycled and other sessions only see the last version that was under the limit. ` + "Split its content into smaller files under the limit (or trim it), then delete or shrink this one. Tell the user this memory file is not being persisted.")
+  }
+}
+async function Tc(e, n) {
+  let r = eC(n),
+    s = r.slice(0, r.lastIndexOf("/") + 1);
+  return (await e.backend.list(s, {
+    depthOne: !0
+  })).find((y) => y.path === r) ?? null
+}
+
+function sh(e, n) {
+  return `Your recent write to the memory file ${Cn(e)} was NOT saved to shared memory: ` + (n ? "this session did not have the shared version of that file when it wrote it. " : "another session updated the file first (concurrent-write conflict). ") + "The file on disk now has the shared version. Re-read it and re-apply your change if it is still wanted."
+}
+
+function nv(e) {
+  return `The local copy of the memory file ${Cn(e)}, kept on this machine and never saved to shared memory, was replaced: another session saved a file at that path. The file on disk now has the shared version. Re-read it. The local copy was not kept, so anything from it that is still wanted has to come from the user.`
+}
+async function gm(e, n, r, s) {
+  e.remoteHashes.set(n, r), e.conflictRefetches?.delete(n), await sa(e, n, r.sha256, s)
+}
+async function ym(e, n, r, s, h) {
+  try {
+    let y = await e.backend.read(r);
+    if (!await Bm(e, n, y.content, h) && await qc(e, n, y.content, y.updatedAt, h) === "dropped") return !1;
+    let S = nt(y.content);
+    return await sa(e, n, S, h), e.remoteHashes.set(n, {
+      id: r,
+      sha256: S
+    }), await eo(e, n, s === "delete" ? `Your recent deletion of the memory file ${Cn(n)} was NOT applied to shared memory: another session updated the file first (concurrent-write conflict). The file on disk has been restored with the server's current version. Re-read it and delete it again if that is still wanted.` : sh(n, s === "unsynced")), l("tengu_team_mem_conflict_recovered", {
+      scope: f(e.scope),
+      op: f(s)
+    }), !0
+  } catch (y) {
+    return t(`multi-store-sync[${e.mountName}]: conflict refetch failed (${d(y)}) \u2014 next pull resolves`, {
+      level: "warn"
+    }), !1
+  }
+}
+var Zn = {
+  success: !0,
+  filesWritten: 0,
+  filesDeleted: 0,
+  conflicts: 0,
+  secretsSkipped: 0,
+  oversizedSkipped: 0
+};
+async function ov(e, n) {
+  switch (e.scope) {
+    case "user":
+      return WCi(n);
+    case "account":
+      throw new Fx("Key refused: this build has no account memory store");
+    case "team":
+      return Eji(Sn(e.mountName, n).split(bn).join("/"))
+  }
+}
+async function ih(e) {
+  switch (e.scope) {
+    case "user":
+      return RGe(e.mountDir);
+    case "account":
+      return "escape";
+    case "team":
+      return RGe(e.mountDir, "team", e.mountName)
+  }
+}
+async function Qc(e) {
+  if (e.scope === "team" && await RGe(Wk(), "team") === "escape") return t(`multi-store-sync[${e.mountName}]: team memory root escapes its canonical location \u2014 failing closed`, {
+    level: "error"
+  }), !0;
+  if (await ih(e) === "escape") return t(`multi-store-sync[${e.mountName}]: mount dir escapes its canonical location \u2014 failing closed`, {
+    level: "error"
+  }), !0;
+  return !1
+}
+async function rv(e, n, r) {
+  if (!n || i.CLAUDE_CODE_DISABLE_MEMORY_RO_UNSAVED_NOTICE || await Qc(e)) return [];
+  let s;
+  try {
+    s = await ks(e.mountDir, e.excludeKey, r, e.v5MemoryBase, e.manifestSeenThisSession, e.walkHashes, void 0)
+  } catch (w) {
+    return t(`multi-store-sync[${e.mountName}]: unsaved-write scan failed: ${d(w)}`, {
+      level: "warn"
+    }), []
+  }
+  if (s.rootMissing) return [];
+  let h = e.notices.roUnsavedNoticed.get(e.mountDir),
+    y = s.diskTrusted ? new Set : new Set(h),
+    S = [];
+  for (let [w, A] of s.entries) {
+    if (e.remoteHashes.get(w)?.sha256 === A.sha256) continue;
+    if (y.add(w), !h?.has(w)) S.push(w)
+  }
+  return e.notices.roUnsavedNoticed.set(e.mountDir, y), S.sort()
+}
+async function Rs(e, n, r) {
+  let s = e.basisUnusableReport ?? null;
+  try {
+    return await sv(e, s, n, r)
+  } finally {
+    if (s !== null && e.basisUnusableReport === s) {
+      if (e.basisUnusableReport = null, !s.emitted) s.emitted = !0, l("tengu_team_mem_basis_unusable", {
+        scope: f(e.scope),
+        reason: f(s.reason),
+        local_only_count: s.localOnly.size,
+        held_count: s.held,
+        uploaded_count: s.uploaded,
+        upload_failed_count: s.uploadFailed
+      })
+    }
+  }
+}
+async function sv(e, n, r, s) {
+  if (e.backend.mode === "ro") {
+    let ke = await rv(e, r?.allowDeletes === !0, s);
+    if (ke.length === 0) return Zn;
+    return l("tengu_memory_sync_ro_unsaved", {
+      scope: f(e.scope),
+      count: ke.length
+    }), {
+      ...Zn,
+      unsavedReadOnlyPaths: ke
+    }
+  }
+  if (Xc(e)) return {
+    ...Zn,
+    skipped: !0
+  };
+  if ((e.source ?? "env") === "discovery" && (Uq(e.backend.partitionId) !== "rw" || !Rue())) return {
+    ...Zn,
+    skipped: !0
+  };
+  if (await Qc(e)) {
+    if (Xt(e)) c("team_memory_multistore_conflict", "root_escape");
+    return Zn
+  }
+  if (await Wm(e, s), !e.pulled) return Zn;
+  let h = X(),
+    y = Nm(e, s),
+    S = e.heldLocal;
+  if (S !== void 0 && !_o()) S.clear();
+  let w = e.remoteHashes;
+  if (S !== void 0 && S.size > 0) {
+    let ke = new Map(e.remoteHashes);
+    for (let [Fe, Xe] of S)
+      if (!ke.has(Fe)) ke.set(Fe, {
+        sha256: Xe
+      });
+    w = ke
+  }
+  let A = await ks(e.mountDir, e.excludeKey, s, e.v5MemoryBase, e.manifestSeenThisSession, e.walkHashes, w);
+  if (await tv(e, A.skippedOversizedPaths), S !== void 0) {
+    let ke = {
+      edited: 0,
+      deleted: 0,
+      server_listed: 0
+    };
+    for (let [Fe, Xe] of S) {
+      let ft = A.entries.get(Fe);
+      if (e.remoteHashes.has(Fe)) ke.server_listed++;
+      else if (ft === void 0) {
+        if (!A.diskTrusted || A.diskPaths.has(Fe)) continue;
+        ke.deleted++
+      } else if (ft.sha256 !== Xe) ke.edited++;
+      else continue;
+      S.delete(Fe)
+    }
+    if (ke.edited + ke.deleted + ke.server_listed) l("tengu_team_mem_held_released", {
+      scope: f(e.scope),
+      ...ke
+    })
+  }
+  let O = A.skippedOversizedPaths[0]?.path ?? A.skippedSecretPaths[0],
+    M = 0,
+    j = e.refusedWrites ??= new Map;
+  for (let ke of j.keys()) {
+    let Fe = A.entries.get(ke);
+    if (Fe === void 0 ? A.diskTrusted && !A.diskPaths.has(ke) : e.remoteHashes.get(ke)?.sha256 === Fe.sha256) j.delete(ke)
+  }
+  let G = [];
+  for (let [ke, Fe] of A.entries) {
+    let Xe = e.remoteHashes.get(ke);
+    if (Xe?.sha256 === Fe.sha256 || Fe.content === void 0) continue;
+    if (Fe.sha256 === Qn) {
+      M++;
+      continue
+    }
+    if (Xe === void 0 && S?.get(ke) === Fe.sha256) continue;
+    let ft = j.get(ke);
+    if (ft?.sha256 === Fe.sha256 && Date.now() - ft.atMs < YR) {
+      O ??= ke;
+      continue
+    }
+    G.push({
+      path: ke,
+      content: Fe.content,
+      sha256: Fe.sha256,
+      known: Xe
+    })
+  }
+  if (M > 0) t(`multi-store-sync[${e.mountName}]: not pushing ${M} empty (0-byte) file(s)`, {
+    level: "warn"
+  });
+  let N = await oo(e.mountDir, s, e.v5MemoryBase),
+    Z = N.state === "present" && N.manifest.partition === e.backend.partitionId,
+    te = N.state === "present" && !Z,
+    Y = bs(),
+    ne = [],
+    se = 0,
+    ae = 0,
+    re = e.pendingDeletes ??= new Map;
+  for (let ke of re.keys())
+    if (A.diskPaths.has(ke)) re.delete(ke), ae++;
+  if (Rm(e, A.diskPaths), r?.allowDeletes && A.diskTrusted && Z) {
+    let ke = Date.now();
+    for (let [Fe, Xe] of e.remoteHashes) {
+      if (A.diskPaths.has(Fe)) continue;
+      if (!Do(Y)) {
+        if (Nc(e, Fe, Xe)) ne.push({
+          path: Fe,
+          ref: Xe
+        });
+        else se++;
+        continue
+      }
+      if (Y === "immediate") {
+        ne.push({
+          path: Fe,
+          ref: Xe
+        });
+        continue
+      }
+      let ft = re.get(Fe);
+      if (ft === void 0) re.set(Fe, {
+        firstMissingAtMs: ke,
+        missingWalks: 1
+      }), se++;
+      else if (ft.missingWalks++, ft.missingWalks >= 2 && ke - ft.firstMissingAtMs >= Wc) ne.push({
+        path: Fe,
+        ref: Xe
+      });
+      else se++
+    }
+    for (let Fe of re.keys())
+      if (!e.remoteHashes.has(Fe)) re.delete(Fe)
+  }
+  let _e = 0;
+  if (ne.length > 0) {
+    let ke = Dc(e),
+      Fe = U([...e.remoteHashes.keys()], (ft) => !A.diskPaths.has(ft)) + ke,
+      Xe = km(e.remoteHashes.size);
+    if (Fe > Xe) _e = ne.length, ne.length = 0, t(`multi-store-sync[${e.mountName}]: holding ${_e} delete(s): ${Fe} synced files are missing locally or were just deleted, of ${e.remoteHashes.size} tracked (mass-delete guard)`, {
+      level: "warn"
+    }), QR(e, Fe, Xe, ke), e.invalidatedBasis = e.remoteHashes, e.remoteHashes = new Map, e.pulled = !1, re.clear(), e.namedRemovals?.clear(), await Ss(e, s)
+  }
+  let Se = 0,
+    ce = 0,
+    xe = 0,
+    ve = 0,
+    Oe = !1,
+    Ce = !1,
+    Ne = !1,
+    Ie = 0,
+    Ye, pt, ct, gt;
+
+  function sn(ke, Fe) {
+    if (t(`multi-store-sync[${e.mountName}]: push failed for ${Fe??"<store>"}: ${ps(ke)}`, {
+        level: "warn"
+      }), Oe = !0, Fe !== void 0 && n?.localOnly.has(Fe) === !0) n.uploadFailed++;
+    if (ke instanceof Wg) pt ??= ke.reason, gt ??= ke.reason;
+    else if (ke instanceof oz) gt ??= "unavailable", Ce = Uc(e, ke) || Ce;
+    else gt ??= "error";
+    Ye ??= ps(ke)
+  }
+  if (await lr(te ? [] : G, ir, async (ke) => {
+      if (Ce) {
+        Ie++;
+        return
+      }
+      let Fe, Xe = ke.known,
+        ft = !1;
+      try {
+        let mt;
+        if (Xe) try {
+          mt = await e.backend.update(Xe.id, ke.content, Xe.sha256)
+        } catch (Tt) {
+          if (!(Tt instanceof ok && await Tc(e, ke.path).then((at) => at === null, () => !1))) throw Tt;
+          e.remoteHashes.delete(ke.path), Xe = void 0, ft = !0
+        }
+        if (mt === void 0) try {
+          if (mt = await e.backend.create(ke.path, ke.content, {
+              precondition: "not_exists"
+            }), !e.firstWriteEmitted && (e.source ?? "env") === "discovery" && e.writeDir !== void 0 && e.writeDir !== "" && eC(ke.path).replace(/^\//, "").startsWith(e.writeDir)) e.firstWriteEmitted = !0, l("tengu_org_memory_first_write_into_write_home", {})
+        } catch (Tt) {
+          if (!(Tt instanceof oU) || Tt.conflictingPath !== void 0 && Tt.conflictingPath !== Tt.path) throw Tt;
+          let Re = await Tc(e, ke.path);
+          if (Re === null) {
+            O ??= ke.path, sn(Tt, ke.path);
+            return
+          }
+          if (Fe = Re.id, Re.sha256 !== ke.sha256) throw Tt;
+          await gm(e, ke.path, {
+            id: Re.id,
+            sha256: Re.sha256
+          }, s), j.delete(ke.path), t(`multi-store-sync[${e.mountName}]: adopted ${ke.path} (identical content \u2192 ${Re.id})`, {
+            level: "debug"
+          });
+          return
+        }
+        if (await gm(e, ke.path, mt, s), j.delete(ke.path), Se++, n?.localOnly.has(ke.path) === !0) n.uploaded++;
+        if (t(`multi-store-sync[${e.mountName}]: pushed ${ke.path} (${Xe?"update":"create"} \u2192 ${mt.id})`, {
+            level: "debug"
+          }), ft) await eo(e, ke.path, `The memory file ${Cn(ke.path)} was deleted from shared memory by another session while you had local changes. Your local version has been saved to shared memory as a new copy. ` + (!Do(Y) ? ta(e) : "If the deletion was intended, delete the file."))
+      } catch (mt) {
+        if (mt instanceof Wg && mt.reason === "store_full") Ne = !0;
+        else O ??= ke.path;
+        if (mt instanceof oU) {
+          if (t(`multi-store-sync[${e.mountName}]: push conflict on ${ke.path}: ${d(mt)}`, {
+              level: "debug"
+            }), xe++, n?.localOnly.has(ke.path) === !0) n.uploadFailed++;
+          let Tt = Xe?.id ?? Fe;
+          if (Tt) {
+            if (hm(e, ke.path) && await ym(e, ke.path, Tt, Xe === void 0 && !ft || Xe?.sha256 === So ? "unsynced" : "update", s)) ve++;
+            else if (!Xe) e.remoteHashes.set(ke.path, {
+              id: Tt,
+              sha256: So
+            })
+          } else await eo(e, ke.path, `Your recent write to the memory file ${Cn(ke.path)} was NOT saved to shared memory: its path conflicts with an existing memory (a file exists where this path needs a directory, or the reverse). Re-read the memory directory and rename this file, or delete the conflicting one, if the change is still wanted.`);
+          return
+        }
+        if (mt instanceof Wg && qR.has(mt.reason)) {
+          let Tt = j.get(ke.path),
+            Re = Tt?.sha256 === ke.sha256 && Tt.reason === mt.reason;
+          if (j.set(ke.path, {
+              sha256: ke.sha256,
+              reason: mt.reason,
+              atMs: Date.now()
+            }), t(`multi-store-sync[${e.mountName}]: server refused ${ke.path}; other files keep syncing: ${d(mt)}`, {
+              level: "warn"
+            }), !Re) await eo(e, ke.path, `The memory file ${ko(ke.path)} was NOT saved to shared memory (${mt.reason}). ${ia[mt.reason]??""} Your other memory files keep syncing. This file stays local only, and its changes will be lost when this session's machine is recycled. Once you change or delete it, the next sync tries again. Tell the user this memory file is not being persisted.`, {
+            keepPending: !0
+          });
+          return
+        }
+        if (mt instanceof Wg && pt === void 0) ct = ke.path;
+        sn(mt, ke.path)
+      }
+    }), await lr(ne, ir, async (ke) => {
+      if (Ce) {
+        Ie++;
+        return
+      }
+      try {
+        let Xe = await Vn(e, ke.path),
+          ft = y !== void 0 ? BNn(y.base, e.mountDir, Xe) : void 0;
+        if (h && y !== void 0 && ft !== void 0) {
+          let mt = !1;
+          try {
+            let Tt = await y.storageV5.statMeta(ft);
+            mt = !Tt.ok && Tt.error.code === "NotFound"
+          } catch {}
+          if (!mt) {
+            re.delete(ke.path), e.namedRemovals?.delete(ke.path), ae++;
+            return
+          }
+        } else {
+          await ea(Xe), re.delete(ke.path), e.namedRemovals?.delete(ke.path), ae++;
+          return
+        }
+      } catch {}
+      let Fe = () => {
+        e.remoteHashes.delete(ke.path), re.delete(ke.path), e.namedRemovals?.delete(ke.path), e.pullWritten.delete(ke.path)
+      };
+      if (Ce) {
+        Ie++;
+        return
+      }
+      if (!Do(Y) && O !== void 0) {
+        e.namedRemovals?.delete(ke.path), se++, await rh(e, ke.path, O);
+        return
+      }
+      try {
+        if (await e.backend.delete(ke.ref.id, ke.ref.sha256), e.namedRemovals?.has(ke.path))(e.namedDeletesSentAtMs ??= []).push(Date.now());
+        Fe(), ce++, t(`multi-store-sync[${e.mountName}]: pushed ${ke.path} (delete ${ke.ref.id})`, {
+          level: "debug"
+        })
+      } catch (Xe) {
+        if (Xe instanceof oU) {
+          if (t(`multi-store-sync[${e.mountName}]: delete conflict on ${ke.path}: ${d(Xe)}`, {
+              level: "debug"
+            }), re.delete(ke.path), xe++, hm(e, ke.path) && await ym(e, ke.path, ke.ref.id, "delete", s)) ve++;
+          return
+        }
+        if (Xe instanceof ok) {
+          if (await Tc(e, ke.path).then((mt) => mt === null, () => !1)) Fe();
+          else t(`multi-store-sync[${e.mountName}]: delete of ${ke.path} 404'd but the path is still listed (or the listing failed) \u2014 retrying next cycle`, {
+            level: "debug"
+          });
+          return
+        }
+        if (!Do(Y) && Xe instanceof Wg && Xe.reason !== "store_archived" && Xe.reason !== "no_oauth" && Xe.reason !== "http_401") {
+          t(`multi-store-sync[${e.mountName}]: could not delete ${ke.path}, so the next pull restores it: ${ps(Xe)}`, {
+            level: "warn"
+          }), e.namedRemovals?.delete(ke.path), await eo(e, ke.path, `Memory sync could not delete ${Cn(ke.path)} from shared memory, so it stays there and will be restored on this machine at the next sync.`);
+          return
+        }
+        sn(Xe, ke.path)
+      }
+    }), Ie > 0) t(`multi-store-sync[${e.mountName}]: ${Ie} upload(s)/delete(s) not started this cycle after the server asked sync to wait; a later sync sends them (waiting at least ${Math.max(0,Math.ceil(((e.serverBackoffUntilMs??0)-Date.now())/1000))}s)`, {
+    level: "warn"
+  });
+  if (Z && _e === 0) await gs(e, s);
+  if (se > 0 || ae > 0 || _e > 0 || !Do(Y) && ce > 0) l("tengu_team_mem_push_delete_deferred", {
+    scope: f(e.scope),
+    mode: f(Y),
+    deferred: se,
+    reappeared: ae,
+    held: _e,
+    executed: ce,
+    pending: re.size
+  });
+  return {
+    success: !Oe,
+    filesWritten: Se,
+    filesDeleted: ce,
+    conflicts: xe,
+    conflictRecoveries: ve,
+    secretsSkipped: A.skippedSecretPaths.length,
+    oversizedSkipped: A.skippedOversizedPaths.length,
+    retryWrites: Ne && ce > 0 && !Do(Y) || void 0,
+    deletesDeferred: se,
+    deletesReappeared: ae,
+    deletesHeld: _e,
+    diskTrusted: A.diskTrusted,
+    emptySkipped: M,
+    filesRefused: j.size,
+    backedOff: Ce || void 0,
+    permanent: pt,
+    permanentPath: ct,
+    failureReason: gt,
+    error: Ye
+  }
+}
+var iv = 60,
+  av = 1;
+
+function Zc() {
+  if (i.CLAUDE_CODE_DISABLE_MEMORY_PERIODIC_RESYNC) return 0;
+  let e = v("tengu_memory_store_resync_interval_minutes", iv);
+  if (!Number.isFinite(e) || e <= 0) return 0;
+  return Math.max(e, av) * 60000
+}
+var sr = {
+    success: !0,
+    skipped: !0,
+    entriesListed: 0,
+    filesWritten: 0,
+    filesDeleted: 0
+  },
+  Fc = sr,
+  Sm = {
+    ...sr,
+    cause: "backed_off",
+    backedOff: !0
+  },
+  cv = {
+    ...Zn,
+    skipped: !0,
+    backedOff: !0
+  };
+
+function Uc(e, n) {
+  if (!(n instanceof oz) || n.retryAfterMs === void 0) return !1;
+  return e.serverBackoffUntilMs = Math.max(e.serverBackoffUntilMs ?? 0, Date.now() + n.retryAfterMs), !0
+}
+var uv = 3,
+  _m = 300000;
+async function ca(e, n = "watch", r, s = 0) {
+  if (e.inFlight) return e.inFlight;
+  let h = dv(e, n, r, s);
+  e.inFlight = h;
+  try {
+    return await h
+  } finally {
+    e.inFlight = null
+  }
+}
+async function dv(e, n, r, s) {
+  let h = {},
+    y = {},
+    w = await RGe(Wk(), "team") === "escape";
+  if (w) t("multi-store-sync: team memory root escapes its canonical location \u2014 failing all stores closed", {
+    level: "error"
+  });
+  await Promise.all(e.stores.map(async (N) => {
+    if (Xc(N) || Xm(N)) {
+      h[N.mountName] = Fc;
+      return
+    }
+    let Z = (N.serverBackoffUntilMs ?? 0) - Date.now();
+    if (Z > 0) {
+      t(`multi-store-sync[${N.mountName}]: sitting this cycle out: the server asked sync to wait, ${Math.ceil(Z/1000)}s left`, {
+        level: "debug"
+      }), h[N.mountName] = Sm;
+      return
+    }
+    let te = N.suppressedUntilMs ?? null;
+    if (N.suppressedReason !== null && te !== null && Date.now() >= te) t(`multi-store-sync[${N.mountName}]: suppression window elapsed \u2014 retrying (was: ${N.suppressedReason})`, {
+      level: "info"
+    }), N.recoveryUnconfirmedReason = N.suppressedReason, N.suppressedReason = null, N.suppressedUntilMs = null;
+    if (N.suppressedReason !== null && !$R(N)) {
+      h[N.mountName] = sr;
+      return
+    }
+    let Y = (ne, se) => {
+      h[N.mountName] = {
+        success: !1,
+        entriesListed: 0,
+        filesWritten: 0,
+        filesDeleted: 0,
+        ...se !== void 0 && {
+          permanent: se
+        },
+        error: ne
+      }
+    };
+    if (w && N.scope === "team") {
+      Y("team memory root canonicity check failed (fail closed)");
+      return
+    }
+    try {
+      if (await Bc(N.mountDir, {
+          recursive: !0,
+          ...N.scope === "account" && {
+            mode: 448
+          }
+        }), await ih(N) === "escape") {
+        t(`multi-store-sync[${N.mountName}]: mount dir escapes its canonical location \u2014 skipping pull+push (fail closed)`, {
+          level: "error"
+        }), Y("mount dir canonicity check failed (fail closed)");
+        return
+      }
+      if (!N.pulled && N.scope !== "user") {
+        let se = await oo(N.mountDir, r, N.v5MemoryBase);
+        if (N.suppressedReason !== null && !await UR(N, se, r)) {
+          h[N.mountName] = sr;
+          return
+        }
+        if (se.state === "present" && se.manifest.partition !== N.backend.partitionId) Yc(N, "firstPull");
+        else if (se.state !== "present" && (N.source ?? "env") === "discovery") {
+          let ae = await Gm(N.mountDir);
+          if (ae === "unreadable") {
+            Y("mount dir enumeration failed (fail closed)");
+            return
+          }
+          if (ae === "occupied") {
+            let re = await HR(N, r);
+            if (re.outcome === "mismatch") LR(N);
+            else if (re.outcome === "failed") {
+              Y(re.error, re.permanent);
+              return
+            } else {
+              await Ss(N, r);
+              try {
+                await Ji(N, {}, r)
+              } catch (_e) {
+                if (Xt(N)) c("team_memory_multistore_conflict", "manifest_materialization_failed");
+                Y(`manifest restamp failed (fail closed): ${d(_e)}`);
+                return
+              }
+              if (Xt(N)) c("team_memory_multistore_conflict", "manifest_restamped");
+              t(`multi-store-sync[${N.mountName}]: ${se.state} manifest over content matching the store \u2014 restamped and adopting`, {
+                level: "info"
+              })
+            }
+          } else {
+            if ((await oo(N.mountDir, r, N.v5MemoryBase)).state !== "present") await Ss(N, r);
+            let _e;
+            try {
+              _e = await Ji(N, {}, r)
+            } catch (Se) {
+              if (Xt(N)) c("team_memory_multistore_conflict", "manifest_materialization_failed");
+              Y(`manifest materialization failed (fail closed): ${d(Se)}`);
+              return
+            }
+            if (_e) {
+              if (_o()) await gs(N, r)
+            } else N.basisUnusable = null
+          }
+        }
+        if (N.suppressedReason !== null) {
+          h[N.mountName] = sr;
+          return
+        }
+      }
+      h[N.mountName] = await jR(N, r)
+    } catch (ne) {
+      h[N.mountName] = {
+        success: !1,
+        entriesListed: 0,
+        filesWritten: 0,
+        filesDeleted: 0,
+        error: d(ne)
+      }
+    }
+  })), await Promise.all(e.stores.map(async (N) => {
+    if (N.suppressedReason !== null) {
+      y[N.mountName] = Zn;
+      return
+    }
+    if (h[N.mountName] === Sm || Date.now() < (N.serverBackoffUntilMs ?? 0)) {
+      y[N.mountName] = cv;
+      return
+    }
+    try {
+      y[N.mountName] = await Rs(N, {
+        allowDeletes: h[N.mountName]?.success === !0 && h[N.mountName]?.skipped !== !0
+      }, r)
+    } catch (Z) {
+      y[N.mountName] = {
+        ...Zn,
+        success: !1,
+        failureReason: "exception",
+        error: d(Z)
+      }
+    }
+  }));
+  for (let N of e.stores) {
+    if (N.suppressedReason !== null) continue;
+    if (y[N.mountName]?.retryWrites) {
+      N.consecutivePermanentFailures = 0;
+      continue
+    }
+    if (h[N.mountName]?.skipped === !0) continue;
+    let Z = h[N.mountName]?.permanent ?? y[N.mountName]?.permanent;
+    if (!Z) {
+      if (N.consecutivePermanentFailures = 0, (N.recoveryUnconfirmedReason ?? null) !== null && h[N.mountName]?.success && h[N.mountName]?.skipped !== !0 && y[N.mountName]?.success && y[N.mountName]?.skipped !== !0) {
+        let Y = y[N.mountName];
+        JR(N, Y.filesWritten + Y.filesDeleted), N.recoveryUnconfirmedReason = null
+      }
+      continue
+    }
+    if (N.consecutivePermanentFailures = (N.consecutivePermanentFailures ?? 0) + 1, N.consecutivePermanentFailures < uv) continue;
+    N.suppressedReason = Z, N.suppressedUntilMs = Date.now() + _m, XR(N, Z, h[N.mountName]?.permanent === void 0 ? y[N.mountName]?.permanentPath : void 0);
+    let te = h[N.mountName]?.error ?? y[N.mountName]?.error;
+    t(`multi-store-sync[${N.mountName}]: suppressing further sync (${Z}) after ${N.consecutivePermanentFailures} consecutive failures \u2014 retrying in ${_m/60000}m` + (te !== void 0 ? ` (last error: ${te})` : ""), {
+      level: "warn"
+    })
+  }
+  let A = {
+    stores: e.stores.length,
+    stores_suppressed: U(e.stores, (N) => N.suppressedReason !== null),
+    stores_backed_off: U(e.stores, (N) => (N.serverBackoffUntilMs ?? 0) > Date.now()),
+    pull_written: Object.values(h).reduce((N, Z) => N + Z.filesWritten, 0),
+    pull_deleted: Object.values(h).reduce((N, Z) => N + Z.filesDeleted, 0),
+    push_written: Object.values(y).reduce((N, Z) => N + Z.filesWritten, 0),
+    push_deleted: Object.values(y).reduce((N, Z) => N + Z.filesDeleted, 0),
+    push_deletes_deferred: Object.values(y).reduce((N, Z) => N + (Z.deletesDeferred ?? 0), 0),
+    conflicts: Object.values(y).reduce((N, Z) => N + Z.conflicts, 0),
+    conflict_recoveries: Object.values(y).reduce((N, Z) => N + (Z.conflictRecoveries ?? 0), 0),
+    secrets_skipped: Object.values(y).reduce((N, Z) => N + Z.secretsSkipped, 0),
+    oversized_skipped: Object.values(y).reduce((N, Z) => N + (Z.oversizedSkipped ?? 0), 0),
+    push_empty_skipped: Object.values(y).reduce((N, Z) => N + (Z.emptySkipped ?? 0), 0),
+    push_files_refused: Object.values(y).reduce((N, Z) => N + (Z.filesRefused ?? 0), 0),
+    pull_failed_write_marked: e.stores.reduce((N, Z) => N + (Z.failedWritesMarked ?? 0), 0),
+    pull_empty_restored: Object.values(h).reduce((N, Z) => N + (Z.emptyRestored ?? 0), 0),
+    pull_sha_mismatches: Object.values(h).reduce((N, Z) => N + (Z.shaMismatches ?? 0), 0),
+    pull_entries_listed: Object.values(h).reduce((N, Z) => N + Z.entriesListed, 0),
+    pull_entries_fetch_failed: Object.values(h).reduce((N, Z) => N + (Z.fetchesFailed ?? 0), 0),
+    pull_entries_without_ref: Object.values(h).reduce((N, Z) => N + (Z.entriesWithoutRef ?? 0), 0),
+    pull_old_receipt_missing_refetched: Object.values(h).reduce((N, Z) => N + (Z.unmarkedReceiptRefetched ?? 0), 0),
+    pull_failures: U(Object.values(h), (N) => !N.success),
+    push_failures: U(Object.values(y), (N) => !N.success)
+  };
+  for (let N of e.stores) N.failedWritesMarked = 0;
+  if (e.stores.length > 0 && e.stores.every((N) => N.scope === "account")) return {
+    pulls: h,
+    pushes: y
+  };
+  let O = Object.values(y).find((N) => !N.success)?.failureReason,
+    M = e.stores.filter((N) => wo(N.basisUnusable)),
+    j = M.map((N) => h[N.mountName]).find((N) => N !== void 0 && (N.skipped === !0 || !N.success)),
+    G = j === void 0 ? void 0 : j.cause ?? (j.skipped ? "suppressed" : j.permanent !== void 0 ? "permanent" : "unavailable");
+  if (l("tengu_team_mem_multistore_sync", {
+      ...A,
+      trigger: f(n),
+      off_retries: s,
+      off_store_count: M.length,
+      off_pull_failure: de(G),
+      ...O !== void 0 && {
+        push_failure_reason: Ak(O)
+      }
+    }), A.pull_failures > 0) m("team_memory_multistore_pull", "multistore_pull_failed");
+  else if (Object.values(h).some((N) => N.backedOff === !0)) c("team_memory_multistore_pull", "backed_off");
+  else g("team_memory_multistore_pull");
+  if (A.push_failures > 0) m("team_memory_multistore_push", "multistore_push_failed");
+  else if (A.push_files_refused > 0) c("team_memory_multistore_push", "file_refused");
+  else if (Object.values(y).some((N) => N.backedOff === !0)) c("team_memory_multistore_push", "backed_off");
+  else g("team_memory_multistore_push");
+  if (A.conflicts > 0) g("team_memory_multistore_conflict");
+  return t(`multi-store-sync: ${A.stores} store(s) \u2014 ` + `pull \u2193${A.pull_written}/\u2212${A.pull_deleted}, ` + `push \u2191${A.push_written}/\u2212${A.push_deleted}` + (A.conflicts ? `, ${A.conflicts} conflict(s)` : "") + (A.pull_failures || A.push_failures ? `, failures pull=${A.pull_failures} push=${A.push_failures}` : ""), {
+    level: "info"
+  }), {
+    pulls: h,
+    pushes: y
+  }
+}
+var ch = "memories::",
+  nu = 131072,
+  tu = 100;
+class uh {
+  commands = [];
+  nameStableSnapshot = this.commands;
+  replace(e) {
+    let n = new Set(this.commands.map((h) => h.name)),
+      r = new Set(e.map((h) => h.name));
+    this.commands = e;
+    let s = r.size !== n.size || [...r].some((h) => !n.has(h));
+    if (s) this.nameStableSnapshot = e;
+    return s
+  }
+  changed = De()
+}
+var hv = new W(() => new uh);
+
+function vs() {
+  return hv.of(H().host)
+}
+
+function $De() {
+  return vs().commands
+}
+
+function zAi() {
+  return vs().nameStableSnapshot
+}
+
+function $io(e) {
+  return vs().changed.subscribe(e)
+}
+async function dh(e, n, r) {
+  try {
+    let s = e.filter((j) => (j.skillsDirs ?? []).length > 0);
+    if (s.length === 0) return;
+    if (x() === "windows") {
+      t("memory-skills: store skills are not loaded on Windows (no O_NOFOLLOW)", {
+        level: "warn"
+      }), c("memory_store_skills", "windows_unsupported");
+      return
+    }
+    if (tw()) {
+      t("memory-skills: not loaded with slash commands disabled (no surface reads the registry)", {
+        level: "warn"
+      }), c("memory_store_skills", "slash_commands_disabled");
+      return
+    }
+    if (fd("skills")) {
+      t("memory-skills: not loaded under strictPluginOnlyCustomization (memoryStore is not an admin-trusted source)", {
+        level: "warn"
+      }), c("memory_store_skills", "plugin_only_policy");
+      let j = vs();
+      if (j.replace([])) j.changed.emit();
+      return
+    }
+    let h = new Map(n.map((j) => [j.mountName, j])),
+      y = [],
+      S = new Set,
+      w = !1,
+      A = !1,
+      O = (j, G) => {
+        w = !0, t(`memory-skills: skipping ${j} \u2014 ${G}`, {
+          level: "warn"
+        })
+      };
+    for (let j of s) {
+      if (j.scope !== "team") {
+        O(j.mount, "skillsDirs is team-store only");
+        continue
+      }
+      let G = h.get(j.mount);
+      if (!G) {
+        O(j.mount, "no sync state for mount");
+        continue
+      }
+      let N = await RGe(G.mountDir, "team", j.mount);
+      if (N === "absent") {
+        O(j.mount, "mount dir does not exist");
+        continue
+      }
+      if (N !== "ok") {
+        O(j.mount, "mount dir escapes its canonical location");
+        continue
+      }
+      if (!await Vc(G.mountDir, G.backend.partitionId)) {
+        O(j.mount, "mount dir not adopted by this partition");
+        continue
+      }
+      let te = r && vks(G.mountDir);
+      for (let Y of j.skillsDirs ?? []) {
+        let ne = vji({
+            scope: "team",
+            mount: j.mount
+          }, Y),
+          se = Y.split("/"),
+          ae = await RGe(ne, "team", j.mount, ...se);
+        if (ae === "absent") continue;
+        if (ae !== "ok") {
+          O(j.mount, `skills dir ${Y} resolves through a symlink or escapes the mount`);
+          continue
+        }
+        let re = await _7e("team", j.mount, ...se),
+          _e = await gv(re, O, j, r, te && {
+            projectKey: te.projectKey,
+            relPath: [...te.relPath, ...se]
+          });
+        for (let Se of _e.commands) {
+          if (S.has(Se.name)) {
+            t(`memory-skills: ${Se.name} already registered by an earlier skills dir \u2014 ignoring the copy in ${Y} (${j.mount})`);
+            continue
+          }
+          S.add(Se.name), y.push(Se)
+        }
+        A ||= _e.truncated
+      }
+    }
+    let M = vs();
+    if (M.replace(y)) M.changed.emit();
+    if (y.length > 0) t(`memory-skills: registered ${y.length} skill(s) under ${ch}`);
+    if (w) c("memory_store_skills", "store_skipped");
+    if (A) c("memory_store_skills", "skills_truncated");
+    if (!w && !A) g("memory_store_skills")
+  } catch (s) {
+    a(s), m("memory_store_skills", "register_failed")
+  }
+}
+async function gv(e, n, r, s, h) {
+  let {
+    createSkillCommand: y,
+    parseSkillFrontmatterFields: S
+  } = Zp(), w;
+  if (s && h) {
+    let M = await yv(s, h);
+    if (!M.ok) return n(r.mount, `listing failed for ${e} (${M.error})`), {
+      commands: [],
+      truncated: !1
+    };
+    w = M.value
+  } else {
+    let M;
+    try {
+      M = await pv(e, {
+        withFileTypes: !0
+      })
+    } catch (j) {
+      if (!K(j)) n(r.mount, `readdir failed for ${e} (${k(j)??"unknown"})`);
+      return {
+        commands: [],
+        truncated: !1
+      }
+    }
+    w = M.filter((j) => j.isDirectory() || j.isSymbolicLink()).map((j) => ({
+      name: j.name,
+      symlink: j.isSymbolicLink()
+    }))
+  }
+  w.sort((M, j) => M.name < j.name ? -1 : 1);
+  let A = !1;
+  if (w.length > tu) t(`memory-skills: ${e} has ${w.length} skill folders \u2014 loading only the first ${tu}`, {
+    level: "warn"
+  }), A = !0, w = w.slice(0, tu);
+  let O = [];
+  for (let M of w) {
+    if (M.name.length > 256 || M.symlink || !jen(M.name)) {
+      n(r.mount, `unsafe or symlinked skill folder in ${e}`);
+      continue
+    }
+    let j = ah(e, M.name, "SKILL.md"),
+      G;
+    if (s && h) {
+      let re = await Sv(s, Ve.memory(h.projectKey, [...h.relPath, M.name, "SKILL.md"]));
+      if (re.kind === "absent") continue;
+      if (re.kind !== "ok") {
+        n(r.mount, re.kind === "notAtLocation" ? `${j} is not at its apparent location` : re.kind === "moved" ? `${j} is not where its key says (moved during open, or the home path is too long to verify)` : re.kind === "otherNames" ? `${j} skipped this cycle (a second name on the file, or the backend's own publish in flight) \u2014 retried at the next sync` : re.kind === "notPlainSmallFile" ? `${j} is not a plain small file` : `read failed for ${j} (${re.reason})`);
+        continue
+      }
+      G = re.content
+    } else {
+      let re;
+      try {
+        re = await mv(j)
+      } catch (_e) {
+        let Se = k(_e);
+        if (Se !== "ENOENT" && Se !== "ENOTDIR") n(r.mount, `realpath failed for ${j} (${Se??"unknown"})`);
+        continue
+      }
+      if (re !== j) {
+        n(r.mount, `${j} is not at its apparent location`);
+        continue
+      }
+      try {
+        let _e = await fv(j, eu.O_RDONLY | eu.O_NOFOLLOW | eu.O_NONBLOCK);
+        try {
+          let Se = await _e.stat();
+          if (await puo(_e, re, Se) === "moved") {
+            n(r.mount, `${j} moved during open`);
+            continue
+          }
+          if (!Se.isFile() || Se.nlink > 1 || Se.size > nu) {
+            n(r.mount, `${j} is not a plain small file`);
+            continue
+          }
+          G = (await _e.readFile({
+            encoding: "utf8"
+          })).toString()
+        } finally {
+          await _e.close()
+        }
+      } catch (_e) {
+        if (!K(_e)) n(r.mount, `open failed for ${j} (${k(_e)??"unknown"})`);
+        continue
+      }
+    }
+    try {
+      G = DH(G)
+    } catch {
+      n(r.mount, `${j} failed content sanitization`);
+      continue
+    }
+    let N = td(G, j, {
+        normalizeKeys: !0,
+        untrusted: !0
+      }),
+      {
+        frontmatter: Z,
+        content: te,
+        parseError: Y
+      } = N;
+    if (Y !== void 0) {
+      n(r.mount, `${j} frontmatter was not read`);
+      continue
+    }
+    let ne = pgo(te),
+      se = `${ch}${M.name}`,
+      ae = S(Z, ne, se);
+    O.push(y({
+      ...ae,
+      skillName: se,
+      markdownContent: ne,
+      source: "memoryStore",
+      baseDir: ah(e, M.name),
+      loadedFrom: "memoryStore",
+      skillFile: Hio(N, j),
+      ...Ezi(),
+      ...Jvs(ae),
+      userInvocable: !1
+    }))
+  }
+  return {
+    commands: O.filter((M) => M !== void 0),
+    truncated: A
+  }
+}
+async function yv(e, n) {
+  let r = [],
+    s = await qa((h) => e.listEntries({
+      namespace: "memory",
+      projectKey: n.projectKey,
+      relPath: n.relPath
+    }, {
+      skipKeyStats: !0,
+      skipScopeStats: !0,
+      ...h !== void 0 && {
+        cursor: h
+      }
+    }), (h) => {
+      for (let y of h) {
+        if (y.kind !== "scope" || y.scope.namespace !== "memory") continue;
+        let S = y.scope.relPath?.at(-1);
+        if (S !== void 0 && y.scope.relPath?.length === n.relPath.length + 1) r.push({
+          name: S,
+          symlink: y.viaSymlink === !0
+        })
+      }
+    });
+  switch (s.status) {
+    case "done":
+      return Fb(r);
+    case "error":
+      return yh(Ht(s.error));
+    case "capped":
+      return yh("the listing did not finish")
+  }
+}
+async function Sv(e, n) {
+  let r = await e.readText([{
+    key: n,
+    offset: 0,
+    length: nu + 1
+  }], {
+    hardened: !0
+  });
+  if (!r.ok) {
+    let h = r.error.code === "Failed" ? r.error.telemetryCode : "";
+    return h === "ELOOP" ? {
+      kind: "notAtLocation"
+    } : h === zHr ? {
+      kind: "moved"
+    } : h === WHr ? {
+      kind: "otherNames"
+    } : h === "ENXIO" ? {
+      kind: "notPlainSmallFile"
+    } : {
+      kind: "failed",
+      reason: Ht(r.error)
+    }
+  }
+  let [s] = r.value.items;
+  if (!s.found) return {
+    kind: "absent"
+  };
+  if (s.totalBytes > nu) return {
+    kind: "notPlainSmallFile"
+  };
+  return {
+    kind: "ok",
+    content: s.value
+  }
+}
+class fh {
+  pending = [];
+  enqueue(e) {
+    this.pending.push(e)
+  }
+  drain() {
+    let e = this.pending;
+    return this.pending = [], e
+  }
+}
+var yds = new W(() => new fh);
+
+function ua(e) {
+  yds.of(H().host).enqueue(e)
+}
+var wv = 2000,
+  ru = 10,
+  xv = 1500,
+  Rv = typeof Bun < "u",
+  vv = 2000;
+
+function da() {
+  return {
+    debounceTimer: null,
+    pushInProgress: !1,
+    hasPendingChanges: !1,
+    changeSeq: 0,
+    currentPushPromise: null,
+    lastSyncCompletedAt: null,
+    offRetries: 0,
+    offRetryJitterMs: pa(),
+    backoffRetryAtMs: null,
+    backoffWakes: 0
+  }
+}
+var Ev = 1000,
+  Tv = 10,
+  Cv = 2,
+  Av = 1,
+  Pv = 60,
+  Ov = 5000,
+  Dv = {
+    team: new Set(["http_413", "store_full"]),
+    user: new Set
+  };
+
+function Nv(e, n) {
+  return Dv[e].has(n)
+}
+
+function fa(e) {
+  let n = vl(),
+    r = mr(n, e).replaceAll(Es, "/");
+  if (r === "" || r.startsWith("..")) return null;
+  let s = r.split("/");
+  if (out(s[0]) === "team") return "team";
+  if (vW(r)) return null;
+  return "user"
+}
+
+function pr() {
+  return IEr()
+}
+
+function su(e) {
+  return e.stores.some((n) => wo(n.basisUnusable))
+}
+
+function pa() {
+  return Math.random() * Cv * 60000
+}
+var hh = /^(no_oauth|server_unavailable|http_\d{3}|mount_dir_(foreign_partition|unmanifested_nonempty|unreadable)|malformed_response|list_page_limit|store_full|content_too_large|content_secret|content_screened|index_too_large|invalid_path|store_archived|auth|forbidden|timeout|network|conflict|parse|aborted|unknown)$/;
+
+function Lv(e, n = {}) {
+  let r = mr(vl(), e).replaceAll(Es, "/");
+  if (r === "" || r.startsWith("..")) return !1;
+  let s = r.split("/"),
+    h = s.at(-1);
+  if (n.stats?.isFile() === !0 && zCi(h)) return !0;
+  if (out(s[0]) === "team") return h.startsWith(vEr) || n.backendStaging === !0 && sce(h);
+  return vW(r)
+}
+class gh {
+  watcher = null;
+  started = !1;
+  stopping = !1;
+  notices = new Jc;
+  resyncTimer = null;
+  deleteConfirmTimers = {
+    team: null,
+    user: null
+  };
+  scopeStates = {
+    team: da(),
+    user: da()
+  };
+  multiStoreState = null;
+  userMultiStoreState = null;
+  storeSkillConfigs = null;
+  orgWriteNoticeShown = new Set;
+  storageV5 = void 0;
+  credentials = void 0;
+  stopAwaitingPolicyVerdict = null;
+  firstStorePullOwed = !1;
+  firstStartAtMs = null;
+  startHeldByPolicy = !1;
+  reset(e) {
+    if (this.watcher = null, this.storeSkillConfigs = e?.storeSkillConfigs ?? null, this.storageV5 = e?.storageV5, this.credentials = e?.credentials, this.resyncTimer) clearTimeout(this.resyncTimer), this.resyncTimer = null;
+    this.orgWriteNoticeShown.clear(), this.clearDeleteConfirmTimers(), this.clearPolicyVerdictWait(), this.firstStartAtMs = null, this.startHeldByPolicy = !1, this.started = e?.skipWatcher ?? !1, this.stopping = !1, this.multiStoreState = e?.multiStoreState ?? null, this.userMultiStoreState = e?.userMultiStoreState ?? null, this.scopeStates.team = da(), this.scopeStates.team.lastSyncCompletedAt = e?.teamLastSyncCompletedAt ?? null, this.scopeStates.user = da(), this.scopeStates.user.lastSyncCompletedAt = e?.userLastSyncCompletedAt ?? null
+  }
+  refreshStoreSkills() {
+    if (this.storeSkillConfigs === null) return;
+    dh(this.storeSkillConfigs, [...this.multiStoreState?.stores ?? [], ...this.userMultiStoreState?.stores ?? []], this.storageV5)
+  }
+  async executePush(e, n = "watch") {
+    let r = this.scopeStates[e],
+      s = e === "team" ? this.multiStoreState : this.userMultiStoreState;
+    if (!s) return;
+    r.pushInProgress = !0, r.backoffRetryAtMs = null;
+    let h = r.changeSeq;
+    try {
+      let y = s.stores,
+        S = new Set(y.filter((G) => G.suppressedReason !== null).map((G) => G.mountName)),
+        w = await ca(s, n, this.storageV5, r.offRetries);
+      this.refreshStoreSkills(), this.enqueueUnsavedReadOnlyNotices(s, w), this.enqueuePutBackNotices(s, w);
+      let A = Object.values(w.pushes),
+        O = A.some((G) => !G.success),
+        M = y.some((G) => G.suppressedReason !== null),
+        j = y.some((G) => w.pushes[G.mountName]?.backedOff === !0);
+      if (!O && !M && !j && r.changeSeq === h) r.hasPendingChanges = !1;
+      if (this.noteBackoffWake(r, y, w), e === "team") {
+        for (let G of y)
+          if (G.suppressedReason !== null && !S.has(G.mountName)) l("tengu_team_mem_push_suppressed", {
+            reason: Ak(G.suppressedReason),
+            multistore: !0,
+            mount: Z1i(G.mountName),
+            consecutive_failures: G.consecutivePermanentFailures,
+            expiring: (G.suppressedUntilMs ?? null) !== null
+          })
+      }
+      if (bs() === "corroborate" && A.some((G) => (G.deletesDeferred ?? 0) > 0) || A.some((G) => G.retryWrites)) this.armDeleteConfirmTimer(e)
+    } catch (y) {
+      t(`memory-watcher[${e}]: multi-store sync error: ${d(y)}`, {
+        level: "warn"
+      })
+    } finally {
+      rho(s.stores), r.lastSyncCompletedAt = Date.now(), r.pushInProgress = !1, r.currentPushPromise = null, this.armResyncTimer()
+    }
+  }
+  massDeleteHoldExposure(e) {
+    return xm([...this.multiStoreState?.stores ?? [], ...this.userMultiStoreState?.stores ?? []], e, this.storageV5)
+  }
+  namedRemovalCandidates(e) {
+    return vm([...this.multiStoreState?.stores ?? [], ...this.userMultiStoreState?.stores ?? []], e, this.storageV5)
+  }
+  async recordNamedRemovals(e) {
+    let n = await Em(e, this.storageV5);
+    await Promise.all([this.multiStoreState?.stores.some((r) => n.has(r)) ? this.syncNow("team") : void 0, this.userMultiStoreState?.stores.some((r) => n.has(r)) ? this.syncNow("user") : void 0])
+  }
+  async syncNow(e) {
+    if (this.stopping) return;
+    let n = this.scopeStates[e];
+    if (this.schedulePush(e), await n.currentPushPromise, n.pushInProgress) await n.currentPushPromise;
+    else if (!this.stopping && pr()) n.currentPushPromise = this.executePush(e), await n.currentPushPromise
+  }
+  tellUnsentNamedRemovals(e) {
+    if (!pr()) return;
+    let n = e.filter((S) => S.recorded === !0),
+      r = n.filter((S) => S.store.remoteHashes.has(S.path) || !S.store.pulled);
+    if (r.length === 0) {
+      if (n.length > 0) g("memory_named_delete");
+      return
+    }
+    c("memory_named_delete", "not_confirmed");
+    let s = r.some((S) => S.store.namedRemovals?.has(S.path)),
+      h = r.slice(0, ru),
+      y = r.length - h.length;
+    ua(`Shared memory has not confirmed deleting ${h.map((S)=>ko(S.path)).join(", ")}${y>0?` (+${y} more)`:""}. ${s?"The delete may have been refused, the file may have changed elsewhere, or memory sync may still send the delete.":"Memory sync dropped the delete or the server refused it, so sync will not send it."} If you told the user a file was removed, say that is not confirmed yet. If a file comes back and should still go, run a command that is only an rm of its full path.`)
+  }
+  enqueueUnsavedReadOnlyNotices(e, n) {
+    for (let r of e.stores) {
+      let s = n.pushes[r.mountName]?.unsavedReadOnlyPaths ?? [];
+      if (s.length === 0) continue;
+      let h = s.slice(0, ru),
+        y = s.length - h.length,
+        S = this.writableDirsRemedy(r);
+      ua(`${s.length} file(s) under ${tf(r.mountDir)} were NOT saved to shared memory: that store is read-only in this session, so they exist only in this machine's local copy, are not visible to other sessions or people, and are discarded when a hosted session ends: ${h.map(Cn).join(", ")}${y>0?` (+${y} more)`:""}. ` + (S !== null ? `To keep content you wrote, ${S}. If you told the user this was saved or remembered, tell them plainly that it was not shared and where you re-saved it (describe the memory location in plain terms, not as a filesystem path).` : "There is no writable memory store in this session. If you told the user this was saved or remembered, tell them plainly that it was not."))
+    }
+  }
+  enqueuePutBackNotices(e, n) {
+    for (let r of e.stores) {
+      let s = n.pulls[r.mountName],
+        h = s?.putBackWhileDeletesOff ?? [],
+        y = r.notices.putBackTold.get(r.mountDir) ?? new Set,
+        S = h.filter((O) => !y.has(O));
+      if (r.notices.putBackTold.set(r.mountDir, new Set(s?.success === !0 && s.skipped !== !0 ? h : [...y, ...h])), S.length === 0) continue;
+      let w = S.slice(0, ru),
+        A = S.length - w.length;
+      g("memory_put_back_notice", {
+        count: S.length
+      }), ua(`${S.length} memory file(s) under ${tf(r.mountDir)} were missing and have been put back: ${w.map(ko).join(", ")}${A>0?` (+${A} more)`:""}. A missing file is not a delete here, so they are still in shared memory for everyone who shares it (a renamed file is back under its old name as well). ${ta(r)} If the user asked you to forget one of them, tell them it has not been removed.`)
+    }
+  }
+  writableDirsRemedy(e) {
+    let n = [this.multiStoreState, this.userMultiStoreState].flatMap((h) => h?.stores ?? []).filter((h) => (e.scope === "team" || h.scope === "user") && ar(h) && !na(h)).sort((h, y) => +(y.scope === e.scope) - +(h.scope === e.scope)).map((h) => tf(ou(h.mountDir, h.writeDir ?? "")));
+    if (n.length === 0) return null;
+    let r = tf(e.mountDir),
+      s = n.some((h) => {
+        let y = mr(h, r);
+        return y === "" || !y.startsWith("..") && !mh(y)
+      });
+    return `save it under ${n.join(" or ")} instead${s?` (anywhere except under ${r})`:""}`
+  }
+  schedulePush(e) {
+    let n = this.scopeStates[e];
+    if (n.hasPendingChanges = !0, n.changeSeq++, n.debounceTimer) clearTimeout(n.debounceTimer);
+    n.debounceTimer = setTimeout((r) => this.firePush(r), wv, e)
+  }
+  armDeleteConfirmTimer(e) {
+    if (this.deleteConfirmTimers[e]) return;
+    let n = setTimeout((r) => {
+      this.deleteConfirmTimers[r] = null, this.schedulePush(r)
+    }, Wc + Ov, e);
+    n.unref?.(), this.deleteConfirmTimers[e] = n
+  }
+  clearDeleteConfirmTimers() {
+    for (let e of ["team", "user"]) {
+      let n = this.deleteConfirmTimers[e];
+      if (n) clearTimeout(n), this.deleteConfirmTimers[e] = null
+    }
+  }
+  firePush(e) {
+    let n = this.scopeStates[e];
+    if (!pr()) {
+      if (n.debounceTimer) clearTimeout(n.debounceTimer), n.debounceTimer = null;
+      t(`memory-watcher[${e}]: sync disabled mid-session \u2014 pausing (reversible)`, {
+        level: "info"
+      });
+      return
+    }
+    if (n.pushInProgress) {
+      this.schedulePush(e);
+      return
+    }
+    if (!n.hasPendingChanges) return;
+    n.currentPushPromise = this.executePush(e)
+  }
+  maybeResyncStaleStores() {
+    try {
+      if (!this.started) return;
+      let e = Zc(),
+        n = Date.now();
+      for (let r of ["team", "user"]) {
+        let s = r === "team" ? this.multiStoreState : this.userMultiStoreState;
+        if (!s) continue;
+        let h = this.scopeStates[r];
+        if (h.pushInProgress || h.lastSyncCompletedAt === null) continue;
+        let y = e > 0 && n - h.lastSyncCompletedAt > this.resyncIntervalFor(h, s, e),
+          S = h.backoffRetryAtMs !== null && n >= h.backoffRetryAtMs;
+        if (!y && !S) continue;
+        if (!pr()) continue;
+        let w;
+        if (y && su(s)) h.offRetries++, h.offRetryJitterMs = pa(), w = "off_retry";
+        else if (y) w = "periodic";
+        else h.backoffWakes++, w = "backoff_retry";
+        h.currentPushPromise = this.executePush(r, w)
+      }
+    } catch (e) {
+      t(`memory-watcher: stale-store check failed: ${d(e)}`, {
+        level: "warn"
+      })
+    }
+  }
+  armResyncTimer() {
+    if (this.resyncTimer) clearTimeout(this.resyncTimer), this.resyncTimer = null;
+    if (!this.started) return;
+    for (let y of ["team", "user"]) {
+      let S = y === "team" ? this.multiStoreState : this.userMultiStoreState;
+      if (S && !su(S)) {
+        let w = this.scopeStates[y];
+        w.offRetries = 0, w.offRetryJitterMs = pa()
+      }
+    }
+    let e = Zc(),
+      n = Date.now(),
+      r = null;
+    for (let y of ["team", "user"]) {
+      let S = y === "team" ? this.multiStoreState : this.userMultiStoreState;
+      if (!S) continue;
+      let w = this.scopeStates[y];
+      if (w.pushInProgress || w.lastSyncCompletedAt === null) continue;
+      let A = pr();
+      if (e > 0) {
+        let O = A ? w.lastSyncCompletedAt + this.resyncIntervalFor(w, S, e) : n + e;
+        if (r === null || O < r) r = O
+      }
+      if (A && w.backoffRetryAtMs !== null) {
+        if (r === null || w.backoffRetryAtMs < r) r = w.backoffRetryAtMs
+      }
+    }
+    if (r === null) return;
+    let s = Math.max(r - n, Ev),
+      h = setTimeout(() => {
+        this.resyncTimer = null, this.maybeResyncStaleStores(), this.armResyncTimer()
+      }, s);
+    h.unref?.(), this.resyncTimer = h
+  }
+  resyncIntervalFor(e, n, r) {
+    if (!su(n)) return r;
+    let s = Tv * 60000 * 2 ** e.offRetries;
+    return Math.min(r, s + e.offRetryJitterMs)
+  }
+  noteBackoffWake(e, n, r) {
+    let s = Date.now(),
+      h = null;
+    for (let S of n) {
+      let w = r.pulls[S.mountName],
+        A = r.pushes[S.mountName];
+      if (w?.backedOff !== !0 && A?.backedOff !== !0) continue;
+      if (!(!S.pulled || (S.downloadsDeferred ?? 0) > 0 || e.hasPendingChanges || A?.backedOff === !0 && A.skipped !== !0)) continue;
+      let M = S.serverBackoffUntilMs ?? s;
+      if (h === null || M < h) h = M
+    }
+    if (h === null) {
+      e.backoffRetryAtMs = null, e.backoffWakes = 0;
+      return
+    }
+    let y = e.backoffWakes === 0 ? 0 : Math.min(Av * 2 ** (e.backoffWakes - 1), Pv) * 60000;
+    e.backoffRetryAtMs = Math.max(h, s + y) + pa()
+  }
+  scopeActive(e) {
+    return e === "team" ? this.multiStoreState !== null : this.userMultiStoreState !== null
+  }
+  async startFileWatcher(e) {
+    if (this.started) return;
+    this.started = !0, await _v(e, {
+      recursive: !0
+    }).catch((s) => t(`memory-watcher: mkdir ${e} failed: ${d(s)}`, {
+      level: "warn"
+    }));
+    let n = (s) => {
+        let h = fa(s);
+        if (h === null || !this.scopeActive(h)) return;
+        this.schedulePush(h)
+      },
+      r = (s) => {
+        let h = fa(s);
+        if (h === null || !this.scopeActive(h)) return;
+        let y = h === "team" ? this.multiStoreState : this.userMultiStoreState;
+        for (let S of y?.stores ?? [])
+          if (S.suppressedReason !== null && Nv(h, S.suppressedReason)) t(`memory-watcher[${h}]: unlink cleared store suppression for ${S.mountName} (was: ${S.suppressedReason})`, {
+            level: "info"
+          }), S.recoveryUnconfirmedReason = S.suppressedReason, S.suppressedReason = null, S.suppressedUntilMs = null, S.consecutivePermanentFailures = 0;
+        this.schedulePush(h)
+      };
+    this.watcher = nC.watch(e, {
+      persistent: !0,
+      ignoreInitial: !0,
+      usePolling: Rv,
+      interval: vv,
+      ignorePermissionErrors: !0,
+      ignored: (s, h) => Lv(s, {
+        backendStaging: this.storageV5 !== void 0,
+        stats: h
+      })
+    }), this.watcher.on("add", n), this.watcher.on("change", n), this.watcher.on("unlink", r), this.watcher.on("error", (s) => {
+      t(`memory-watcher: watcher error: ${d(s)}`, {
+        level: "warn"
+      })
+    }), t(`memory-watcher: watching ${e}`, {
+      level: "debug"
+    }), this.armResyncTimer()
+  }
+  async start(e, n) {
+    if (this.storageV5 = e, this.credentials = n, q()) return;
+    if (!Us()) return;
+    switch (this.firstStartAtMs ??= Date.now(), Gmt()) {
+      case "closed":
+        if (uho()) this.startHeldByPolicy = !0, this.awaitPolicyVerdictThenStart();
+        if (i.CLAUDE_MEMORY_STORES && bji()) c("team_memory_sync_watcher_start", uho() ? "policy_closed_without_verdict" : "policy_denied");
+        return;
+      case "held":
+        this.firstStorePullOwed = !0, this.startHeldByPolicy = !0, this.awaitPolicyVerdictThenStart();
+        return;
+      case "open":
+        break
+    }
+    if (!i.CLAUDE_MEMORY_STORES) {
+      l("tengu_org_memory_connected_mode", {
+        active: HLe()
+      });
+      let O = await cji(this.storageV5, this.credentials).catch((M) => (t(`memory-watcher: org-memory discovery rejected: ${d(M)}`), null));
+      if (O !== null && mji(O)) g("org_memory_picker", {
+        mounted: !0
+      });
+      return
+    }
+    let r = null;
+    try {
+      r = use()
+    } catch (O) {
+      t(`memory-watcher: CLAUDE_MEMORY_STORES invalid, disabling sync: ${d(O)}`, {
+        level: "error"
+      }), l("tengu_team_mem_multistore_config_invalid", {
+        ...zm(O)
+      }), m("team_memory_sync_watcher_start", "config_invalid");
+      return
+    }
+    if (vt(async () => this.stop()), r === null) return;
+    let s = r.filter((O) => O.scope === "team"),
+      h = r.filter((O) => O.scope === "user");
+    if (s.length > 0) this.multiStoreState = oa(sho(s), s.map((O) => ({
+      mount: O.mount,
+      scope: O.scope,
+      source: "env",
+      writeDir: I3(O.promptIndex)
+    })), this.notices, this.firstStartAtMs);
+    if (h.length > 0) this.userMultiStoreState = oa(sho(h), h.map((O) => ({
+      mount: O.mount,
+      scope: O.scope,
+      source: "env"
+    })), this.notices, this.firstStartAtMs);
+    let y = async (O, M) => {
+      if (!M) return;
+      let j = this.scopeStates[O];
+      j.pushInProgress = !0;
+      let G = ca(M, "startup", this.storageV5);
+      j.currentPushPromise = G.then(() => {
+        return
+      }).catch(() => {
+        return
+      });
+      try {
+        let N = await G;
+        this.enqueueUnsavedReadOnlyNotices(M, N), this.noteBackoffWake(j, M.stores, N)
+      } catch (N) {
+        t(`memory-watcher[${O}]: multi-store initial sync failed: ${d(N)}`, {
+          level: "warn"
+        })
+      } finally {
+        rho(M.stores), j.lastSyncCompletedAt = Date.now(), j.pushInProgress = !1, j.currentPushPromise = null, this.armResyncTimer()
+      }
+    }, S = performance.now();
+    if (await y("team", this.multiStoreState), await y("user", this.userMultiStoreState), this.multiStoreState || this.userMultiStoreState) {
+      let O = performance.now();
+      qr("memory_store_pull_ms", O - S, S);
+      let M = QCe("input_ready_ms");
+      qr("memory_store_pull_boot_spillover_ms", M === void 0 ? 0 : O - M)
+    }
+    this.storeSkillConfigs = r, this.refreshStoreSkills();
+    let w = this.startHeldByPolicy,
+      A = w && this.firstStartAtMs !== null ? Date.now() - this.firstStartAtMs : 0;
+    if (this.multiStoreState) g("team_memory_sync_watcher_start"), l("tengu_team_mem_sync_started", {
+      multistore: !0,
+      stores: this.multiStoreState.stores.length,
+      watcher_started: !0,
+      config_source: f("env"),
+      policy_held: w,
+      held_ms: A
+    });
+    if (this.userMultiStoreState) g("personal_memory_sync_watcher_start"), l("tengu_personal_mem_sync_started", {
+      multistore: !0,
+      watcher_started: !0,
+      policy_held: w,
+      held_ms: A
+    });
+    await this.startFileWatcher(this.userMultiStoreState ? vl() : Wk())
+  }
+  awaitPolicyVerdictThenStart() {
+    if (this.stopAwaitingPolicyVerdict) return;
+    t(Gmt() === "held" ? "memory-watcher: org policy verdict not loaded yet; sync start held until it settles" : "memory-watcher: no org policy verdict obtainable and sync stays off without one (HIPAA evidence on this machine, or a taint); waiting for a verdict"), this.stopAwaitingPolicyVerdict = xNe(() => {
+      let e = Gmt();
+      if (this.stopAwaitingPolicyVerdict === null || e === "held") return;
+      if (e === "closed" && uho()) {
+        if (this.firstStorePullOwed) {
+          if (t("memory-watcher: org policy route gave no verdict (unreachable); sync stays off on this machine \u2014 HIPAA evidence or a taint \u2014 and will start if a later verdict allows it"), this.releaseOwedFirstStorePull(), i.CLAUDE_MEMORY_STORES) c("team_memory_sync_watcher_start", "policy_closed_without_verdict")
+        }
+        return
+      }
+      if (this.stopAwaitingPolicyVerdict(), this.stopAwaitingPolicyVerdict = null, t(`memory-watcher: org policy wait over; sync ${e==="open"?"starting":"stays off for the session"}`), e === "open") qen("policy_verdict");
+      queueMicrotask(() => {
+        this.start(this.storageV5, this.credentials).catch((n) => t(`memory-watcher: start after policy verdict failed: ${d(n)}`, {
+          level: "warn"
+        })).finally(() => {
+          if (this.stopAwaitingPolicyVerdict === null || Gmt() !== "held") this.releaseOwedFirstStorePull()
+        })
+      })
+    })
+  }
+  clearPolicyVerdictWait() {
+    this.stopAwaitingPolicyVerdict?.(), this.stopAwaitingPolicyVerdict = null, this.releaseOwedFirstStorePull()
+  }
+  releaseOwedFirstStorePull() {
+    if (!this.firstStorePullOwed) return;
+    this.firstStorePullOwed = !1, bks()
+  }
+  memoryKeyForPath(e) {
+    let n = vl(),
+      r = fee(n);
+    if (r === void 0) return;
+    let s = mr(n, e);
+    if (s === "" || s.startsWith("..") || mh(s)) return;
+    let h = s.split(Es);
+    return h.every(Hr) ? Ve.memory(r, h) : void 0
+  }
+  teamMountScope(e) {
+    let n = this.memoryKeyForPath(e);
+    return n?.namespace === "memory" && n.relPath.length === 2 && n.relPath[0] === "team" ? {
+      namespace: "memory",
+      projectKey: n.projectKey,
+      relPath: n.relPath
+    } : void 0
+  }
+  async manifestPresent(e) {
+    let n = this.storageV5,
+      r = n && this.memoryKeyForPath(e);
+    if (n && r) {
+      let s = await n.statMeta(r);
+      return s.ok || s.error.code !== "NotFound"
+    }
+    return ph(e).then(() => !0, (s) => k(s) !== "ENOENT")
+  }
+  async memoryFileSize(e) {
+    let n = this.storageV5,
+      r = n && this.memoryKeyForPath(e);
+    if (n && r) {
+      let s = await n.statMeta(r);
+      if (s.ok) return s.value.size
+    }
+    return (await ph(e)).size
+  }
+  async reapMountDir(e) {
+    let n = this.storageV5,
+      r = n && this.teamMountScope(e.mountDir);
+    if (n && r) {
+      let s = await n.deleteScope(r),
+        h = await RGe(e.mountDir, "team", e.mountName);
+      if (h !== "ok") {
+        if (h === "escape") t(`memory-watcher: reap ${e.mountName} \u2014 the mount is no longer canonical after the backend sweep (${s.ok?"ok":s.error.code}); left in place`, {
+          level: "warn"
+        });
+        return
+      }
+      if (!s.ok) t(`memory-watcher: reap ${e.mountName} \u2014 backend sweep ${s.error.code}, completing directly`, {
+        level: "warn"
+      })
+    }
+    await bv(e.mountDir, {
+      recursive: !0,
+      force: !0
+    })
+  }
+  async getPersistenceWarning(e) {
+    let n = fa(e);
+    if (n === null) return null;
+    if (!this.scopeActive(n)) {
+      if (n === "team") {
+        let w = Wk(),
+          A = mr(w, e);
+        if (A !== "" && !A.startsWith("..")) {
+          let O = A.split(Es).slice(0, -1),
+            M = w;
+          for (let j of O)
+            if (M = ou(M, j), await this.manifestPresent(ou(M, vEr))) return i.CLAUDE_MEMORY_STORES ? "This file's directory belongs to a synced project memory store that is not mounted in this session. The write was saved locally but is NOT being synced, and a future session with the store mounted will overwrite it with server content. Move the content out of this directory to keep it." : "This file's directory is a leftover local copy of a project memory store that is no longer synced. The write was saved locally only: it is not shared with the project and memory recall does not read this directory. Move the content into your memory directory to keep using it."
+        }
+      }
+      return null
+    }
+    let r = n === "team" ? this.multiStoreState : this.userMultiStoreState,
+      s = null,
+      h = null;
+    for (let w of r?.stores ?? []) {
+      let A = mr(w.mountDir, e);
+      if (A !== "" && !A.startsWith("..")) {
+        s = w, h = "/" + A.split(Es).join("/");
+        break
+      }
+    }
+    if (s !== null && h !== null && !ADe(h)) return null;
+    if (s !== null && h !== null && s.backend.mode === "ro" && (s.suppressedReason === null || (s.suppressedUntilMs ?? null) !== null)) {
+      let w = s.notices.roUnsavedNoticed;
+      w.set(s.mountDir, (w.get(s.mountDir) ?? new Set).add(h));
+      let A = this.writableDirsRemedy(s);
+      return "This file's memory store is mounted read-only: writes are never synced, and the next sync pull will overwrite local edits with server content. This write was saved locally only and is NOT in shared memory." + (A !== null ? ` To keep content you wrote, ${A}.` : "")
+    }
+    if (s !== null && (s.source ?? "env") === "discovery") {
+      let w = eT();
+      if (w.state === "parked" || w.state === "ended") return `Synced project memory is ${w.state} for this session, so this store is not syncing. This write was saved locally but is NOT being persisted to shared memory.`
+    }
+    let y = s?.suppressedReason ?? null;
+    if (s !== null && y !== null) {
+      let w = hh.test(y) ? y : "sync_error";
+      if (w === "mount_dir_foreign_partition") return `Memory sync is disabled for this file's directory: it already holds the synced memory of a different memory store (mount_dir_foreign_partition), so writes here are saved locally but are NOT synced to shared/server memory. To resolve it, rename or relocate the conflicting directory team/${s.mountName}/ \u2014 sync re-enables automatically on the next sync cycle once it is out of the way (within the hour at most, sooner on the next write or restart); deleting it instead discards any unsynced files inside it, and writing new files into it first keeps sync disabled \u2014 ` + "or save this content to a different memory directory. Tell the user the memory directory has a conflict that needs attention.";
+      if (w === "mount_dir_unmanifested_nonempty") return `Memory sync is disabled for this file's directory: it held content before this memory store was mounted (mount_dir_unmanifested_nonempty), so writes here are saved locally but are NOT synced to shared/server memory. To resolve it, rename or relocate the pre-existing directory team/${s.mountName}/ \u2014 the store mounts automatically on the next sync cycle once the directory is empty or gone (within the hour at most, sooner on the next write or restart); deleting its files instead discards them, and writing new files into it first keeps sync disabled \u2014 ` + "or save this content to a different memory directory. Tell the user the memory directory has a conflict that needs attention.";
+      let A = ia[w];
+      if (A !== void 0) return `Memory sync is paused for this file's memory store (${w}): ${A} This write was saved locally but is NOT being persisted to shared memory.`;
+      let O = (s.suppressedUntilMs ?? null) !== null;
+      return `Memory sync is currently paused after repeated sync failures (${w}). This write was saved locally but is NOT being synced` + (O ? " yet \u2014 sync retries automatically and will push it if the server recovers while this session is still running." : " to shared/server memory.")
+    }
+    let S = s?.recoveryUnconfirmedReason ?? null;
+    if (S !== null) return `Memory sync for this file's memory store recently failed (${hh.test(S)?S:"sync_error"}) and is retrying \u2014 recovery is not yet confirmed. ` + "This write was saved locally; treat it as NOT yet persisted to shared memory until sync succeeds.";
+    if (s !== null && (s.source ?? "env") === "discovery" && s.backend.mode === "rw") {
+      let w = Uq(s.backend.partitionId);
+      if (!Rue() || w !== void 0 && w !== "rw") return "Synced project memory writes are off for this store this session (the write opt-in or the write grant was withdrawn) \u2014 this write was saved locally only, " + "and the store is read-only in this session, so it stays local even once sync recovers.";
+      if (w === void 0) return "The synced project memory write grant is being re-established, so this write was saved locally and is NOT yet persisted to shared memory; treat it as not yet persisted until sync succeeds at the next credential renewal."
+    }
+    if (s !== null && h !== null) try {
+      let w = await this.memoryFileSize(e);
+      if (w > Pn) return `This memory file is ${en(w)}, over the ${en(Pn)} sync limit \u2014 ` + "it was saved locally but will NOT be synced to shared/server memory. Split it into smaller files under the limit."
+    } catch {}
+    if (s !== null && (s.source ?? "env") === "discovery" && s.backend.mode === "rw" && Uq(s.backend.partitionId) === "rw" && Rue() && eT().state === "on" && !this.orgWriteNoticeShown.has(s.mountName)) return this.orgWriteNoticeShown.add(s.mountName), 'Note: synced project memory writes are enabled for this directory (the "Synced project memory writes" /config setting), so this file syncs to the shared synced project memory store.';
+    return null
+  }
+  notifyWrite(e) {
+    let n = fa(e);
+    if (n === null || !this.scopeActive(n)) return;
+    this.schedulePush(n)
+  }
+  async stop() {
+    if (this.stopping = !0, this.clearPolicyVerdictWait(), this.resyncTimer) clearTimeout(this.resyncTimer), this.resyncTimer = null;
+    this.clearDeleteConfirmTimers();
+    for (let e of ["team", "user"]) {
+      let n = this.scopeStates[e];
+      if (n.debounceTimer) clearTimeout(n.debounceTimer), n.debounceTimer = null
+    }
+    if (this.watcher) await this.watcher.close().catch(() => {}), this.watcher = null;
+    if (await Promise.all(["team", "user"].map(async (e) => {
+        let n = this.scopeStates[e];
+        if (n.currentPushPromise) try {
+          await n.currentPushPromise
+        } catch {}
+      })), this.resyncTimer) clearTimeout(this.resyncTimer), this.resyncTimer = null;
+    this.clearDeleteConfirmTimers(), await Promise.all(["team", "user"].map(async (e) => {
+      let n = this.scopeStates[e];
+      if (!n.hasPendingChanges) return;
+      if (!pr()) {
+        n.hasPendingChanges = !1, t(`memory-watcher[${e}]: sync disabled \u2014 skipping shutdown flush`, {
+          level: "info"
+        });
+        return
+      }
+      let r = e === "team" ? this.multiStoreState : this.userMultiStoreState;
+      if (!r) return;
+      try {
+        await Promise.all(r.stores.map((s) => {
+          if (!na(s)) return Rs(s, {
+            allowDeletes: !1
+          }, this.storageV5);
+          if ((s.suppressedUntilMs ?? null) === null) return Promise.resolve();
+          return zt(Rs(s, {
+            allowDeletes: !1
+          }, this.storageV5), xv, `suppressed-store shutdown flush for ${s.mountName}`).catch(() => {})
+        }))
+      } catch {}
+    }))
+  }
+  async rebuildStoreSet(e) {
+    if (!this.started) return;
+    if (!IEr()) return;
+    let n = this.scopeStates.team,
+      r = !1;
+    while (n.currentPushPromise) {
+      r = !0;
+      let w = n.currentPushPromise;
+      if (await w.catch(() => {}), n.currentPushPromise === w) n.currentPushPromise = null
+    }
+    if (n.pushInProgress) return;
+    if (n.pushInProgress = !0, n.backoffRetryAtMs = null, n.debounceTimer) clearTimeout(n.debounceTimer), n.debounceTimer = null;
+    let s = this.multiStoreState,
+      {
+        hasPendingChanges: h,
+        changeSeq: y
+      } = n,
+      S = (async () => {
+        let w = new Set((s?.stores ?? []).filter((te) => na(te) || !te.pulled || te.backend.mode === "ro").map((te) => te.mountName));
+        if (s) await Promise.all(s.stores.filter((te) => !w.has(te.mountName)).map(async (te) => {
+          let Y = await Rs(te, void 0, this.storageV5).catch(() => null);
+          if (Y === null || !Y.success || !te.pulled || Y.secretsSkipped > 0 || (Y.filesRefused ?? 0) > 0 || Y.conflicts > 0 || Y.diskTrusted === !1) w.add(te.mountName)
+        }));
+        let A = (e ?? []).filter((te) => te.scope !== "user"),
+          O = Boolean(i.CLAUDE_MEMORY_STORES),
+          M = O ? void 0 : {
+            getAuthorization: TEr
+          },
+          j = A.length > 0 ? oa(sho(A, M), A.map((te) => ({
+            mount: te.mount,
+            scope: te.scope,
+            source: O ? "env" : "discovery",
+            writeDir: I3(te.promptIndex)
+          })), this.notices) : null,
+          G = new Set;
+        if (j && s) {
+          let te = new Map(s.stores.map((Y) => [Y.mountDir, Y]));
+          j.stores = j.stores.map((Y) => {
+            let ne = te.get(Y.mountDir);
+            if (ne?.backend.partitionId !== Y.backend.partitionId) return Y;
+            return G.add(Y.mountDir), {
+              ...Y,
+              remoteHashes: ne.remoteHashes,
+              pulled: ne.pulled,
+              createdAtMs: ne.createdAtMs,
+              pullWritten: ne.pullWritten,
+              suppressedReason: ne.suppressedReason,
+              suppressedUntilMs: ne.suppressedUntilMs,
+              recoveryUnconfirmedReason: ne.recoveryUnconfirmedReason,
+              consecutivePermanentFailures: ne.consecutivePermanentFailures,
+              serverBackoffUntilMs: ne.serverBackoffUntilMs,
+              downloadsDeferred: ne.downloadsDeferred,
+              refusedWrites: ne.refusedWrites,
+              firstWriteEmitted: ne.firstWriteEmitted,
+              conflictRefetches: ne.conflictRefetches,
+              invalidatedBasis: ne.invalidatedBasis,
+              basisUnusable: ne.basisUnusable,
+              basisUnusableReport: ne.basisUnusableReport,
+              heldLocal: ne.heldLocal,
+              rejoinWalkUntrusted: ne.rejoinWalkUntrusted,
+              rejoinOff: ne.rejoinOff,
+              streamListUnsupported: ne.streamListUnsupported,
+              streamListFailureStreak: ne.streamListFailureStreak,
+              streamListSuccessStreak: ne.streamListSuccessStreak,
+              streamListRetryAfterMs: ne.streamListRetryAfterMs
+            }
+          })
+        }
+        if (n.changeSeq !== y)
+          for (let te of s?.stores ?? []) w.add(te.mountName);
+        if (this.multiStoreState = j, n.changeSeq === y && w.size === 0) n.hasPendingChanges = !1;
+        n.lastSyncCompletedAt = null;
+        let N = (s?.stores ?? []).filter((te) => te.scope !== "user" && /^[A-Za-z0-9_-]+$/.test(te.mountName) && !G.has(te.mountDir) && !w.has(te.mountName) && (te.heldLocal?.size ?? 0) === 0),
+          Z = [];
+        for (let te of N)
+          if (await RGe(te.mountDir, "team", te.mountName) === "ok") Z.push(te);
+        if (await Promise.all(Z.map((te) => this.reapMountDir(te).catch((Y) => t(`memory-watcher: reap ${te.mountName} failed: ${d(Y)}`, {
+            level: "warn"
+          })))), l("tengu_team_mem_store_set_rebuilt", {
+            old_stores: s?.stores.length ?? 0,
+            new_stores: j?.stores.length ?? 0,
+            dirs_reaped: Z.length,
+            flush_failed_stores: w.size,
+            had_in_flight: r,
+            had_pending_flush: h
+          }), j) {
+          try {
+            let te = await ca(j, "rebuild", this.storageV5, this.scopeStates.team.offRetries);
+            this.enqueueUnsavedReadOnlyNotices(j, te), this.enqueuePutBackNotices(j, te), this.noteBackoffWake(n, j.stores, te)
+          } catch (te) {
+            t(`memory-watcher: rebuild initial sync failed: ${d(te)}`, {
+              level: "warn"
+            })
+          }
+          rho(j.stores), n.lastSyncCompletedAt = Date.now()
+        }
+      })();
+    n.currentPushPromise = S.catch(() => {});
+    try {
+      await S
+    } finally {
+      n.pushInProgress = !1, n.currentPushPromise = null, this.armResyncTimer()
+    }
+  }
+}
+var RWe = new W(() => new gh);
+async function tSa(e, n) {
+  if (e !== void 0) t(`memory-watcher: started with the storage interface (credentials store: ${n===void 0?"none":"handed"})`);
+  await EU().warmCanonicalWcRoot();
+  let r = RWe.of(H().host);
+  try {
+    await r.start(e, n)
+  } finally {
+    if (!r.firstStorePullOwed) bks()
+  }
+}
+
+function zh(e) {
+  try {
+    e()
+  } catch (n) {
+    if (!We(n)) a(n)
+  }
+}
+var Fv = (e, {
+  surface: n,
+  component: r,
+  requestId: s
+}, h) => ({
+  instanceKey: e,
+  instance: {
+    surface: n,
+    component: r,
+    requestId: s
+  },
+  pluginsOf: h,
+  isInFlight: !0,
+  versionsRead: new Map
+});
+
+function Zhr(e) {
+  if (e?.scope && e.scope.owner === e) e.scope.isEnded = !0, e.scope.values = void 0
+}
+import {
+  AsyncLocalStorage as Bv
+} from "async_hooks";
+var hr = new Bv;
+
+function egr() {
+  let e = hr.getStore();
+  return e?.isEnded ? void 0 : e
+}
+var iu = (e = {}) => ({
+  ...e,
+  isEnded: !1
+});
+
+function Kv(e) {
+  if (!e) return;
+  if (!e.scope || e.scope.isEnded) e.scope = iu({
+    owner: e
+  });
+  return e.scope
+}
+var uOn = (e, n) => e ? hr.run(e, n) : n();
+import {
+  AsyncLocalStorage as Xv
+} from "async_hooks";
+var yr = new Xv;
+var fOn = () => yr.getStore();
+var Sh = (e) => new Set((be("policySettings")?.hooks?.[e] ?? []).map((n) => Js(n)));
+
+function lMt(e) {
+  let n = {
+    isHolding: Ztn(),
+    isFaulted: !1,
+    managedKeys: new Set
+  };
+  if (!n.isHolding) return n;
+  try {
+    n.isHolding = Qb() || be("policySettings")?.allowManagedHooksOnly === !0
+  } catch (r) {
+    a(r), n.isFaulted = !0
+  }
+  if (!n.isHolding) return n;
+  try {
+    n.managedKeys = Sh(e)
+  } catch (r) {
+    a(r), n.isFaulted = !0
+  }
+  return n
+}
+var cu = (e) => e.reduce((n, r) => n + r.hooks.length, 0);
+var dMt = (e) => u4(e) || fCr(e);
+var ma = (e) => e.pluginRoot === void 0 && e.deviceOwner === void 0 && e.hooks.every((n) => n.type === "callback" || n.type === "function");
+
+function tgr(e, n) {
+  let r = () => e.deviceOwner === void 0 && n.managedKeys.has(Js(e));
+  return e.pluginId !== void 0 ? dMt(e.pluginId) : ma(e) || r()
+}
+
+function _h(e, n) {
+  try {
+    return tgr(e, n)
+  } catch {
+    return ma(e)
+  }
+}
+
+function Yio(e) {
+  try {
+    let n = hZe(e);
+    return n !== void 0 && Ptn(n)
+  } catch {
+    return !1
+  }
+}
+
+function bh(e, n, r) {
+  if (!(e.pluginId === void 0 && e.hooks.some((S) => hZe(S) !== void 0))) return _h(e, n) === r ? [] : [e];
+  let h = e.hooks.filter((S) => Yio(S) !== r),
+    y = h.length === e.hooks.length;
+  if (y || h.length === 0) return y ? [e] : [];
+  return [{
+    ...e,
+    hooks: h
+  }]
+}
+
+function Lut(e, n, r) {
+  if (r === "included") return e;
+  let s = r === "only",
+    h = lMt(n);
+  if (!h.isHolding) return s ? [] : e;
+  let y = e.flatMap((w) => bh(w, h, s));
+  if (s ? y.length > 0 : cu(y) < cu(e)) UNt();
+  return y
+}
+var nE = 2048,
+  oE = /[\u0000-\u001F\u007F-\u009F\u2028\u2029]/;
+
+function Exi(e) {
+  return e.length >= 1 && e.length <= nE && Xio(e)
+}
+
+function Xio(e) {
+  return !oE.test(e)
+}
+var rE = /^(?:-n|-n?-?\d+|--adjustment(?:=.*)?)$/,
+  sE = /^\+?(?:(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?|0[xX](?:[\da-fA-F]+\.?[\da-fA-F]*|\.[\da-fA-F]+)(?:[pP][+-]?\d+)?|[iI][nN][fF](?:[iI][nN][iI][tT][yY])?)[smhd]?$/,
+  kh = /^-(?=[acl])[cl]*(?:a(.*))?$/,
+  $ds = "(?:\\[[^\\]]*\\])?\\+?=",
+  uu = new RegExp("^[A-Za-z_][A-Za-z0-9_]*(?:\\[[^\\]]*\\])?\\+?="),
+  iE = new Set(["--git-dir", "--separate-git-dir", "--work-tree", "--namespace", "--super-prefix", "--config-env"]),
+  Jio = new Set(["-C", "-c", "--attr-source", "--shallow-file", ...iE]);
+
+function xh(e) {
+  return /(?:^|[\\/])git(?:\.exe)?$/.test(e)
+}
+
+function Uds(e, n, r) {
+  let s = n ? -1 : void 0,
+    h = 0;
+  while (h < e.length && uu.test(e[h])) h++;
+  while (h < e.length) {
+    let y = e[h];
+    switch (y) {
+      case "noglob":
+      case "nocorrect":
+        h++;
+        continue;
+      case "builtin":
+        if (h++, e[h] !== void 0 && xh(e[h])) return -1;
+        continue;
+      case "command":
+        if (h++, e[h] === "-p") h++;
+        if (e[h] === "--") h++;
+        continue;
+      case "exec":
+        h++;
+        for (let S = kh.exec(e[h] ?? ""); S !== null; S = kh.exec(e[h] ?? "")) h += S[1] === "" ? 2 : 1;
+        if (e[h] === "--") h++;
+        continue;
+      case "nohup":
+        if (h++, e[h] === "--") h++;
+        continue;
+      case "time":
+        if (h++, e[h] === "-p") h++;
+        if (e[h] === "--") h++;
+        while (h < e.length && uu.test(e[h])) h++;
+        continue;
+      case "nice":
+        h++;
+        for (let S = e[h]; S !== void 0 && rE.test(S); S = e[h]) h += S === "-n" || S === "--adjustment" ? 2 : 1;
+        if (e[h] === "--") h++;
+        continue;
+      case "env":
+        h++;
+        while (e[h] === "-i" || e[h] === "-" || e[h] === "--ignore-environment") h++;
+        if (e[h] === "--") h++;
+        while (h < e.length && /^[^-=][^=]*=/.test(e[h])) h++;
+        if (e[h]?.startsWith("-") === !0) return -1;
+        continue;
+      case "timeout":
+      case "gtimeout": {
+        h++;
+        while (h < e.length && e[h].startsWith("-")) {
+          let w = e[h];
+          if (w === "--") {
+            h++;
+            break
+          }
+          if (w === "-k" || w === "-s" || w === "--kill-after" || w === "--signal") h += 2;
+          else if (w === "--preserve-status" || w === "--foreground" || w === "-v" || w === "--verbose" || w.startsWith("--kill-after=") || w.startsWith("--signal=") || /^-[ks]\S+$/.test(w)) h++;
+          else return -1
+        }
+        let S = e[h];
+        if (S === void 0) return s;
+        if (!sE.test(S)) return -1;
+        h++;
+        continue
+      }
+      default:
+        return r(y) ? h : -1
+    }
+  }
+  return s
+}
+
+function Bds(e) {
+  return /\bgit\b(?:\s+(?:-C\s+\S+|-c\s+\S+=\S+|--\S+))*\s+commit(?:\s|$)/.test(e)
+}
+
+function Txi(e, n) {
+  let r = [/\[\w+[^\]]*\]\s+/, /create mode/, /\d+ files? changed/, /\d+ insertions?/, /\d+ deletions?/],
+    s = e + n;
+  return r.some((h) => h.test(s))
+}
+var Rh = new Set([a_e, V9]),
+  vh = "(?:\\./)?(?:(?:npx|bunx|uvx|uv\\s+run)\\s+)?",
+  iY = [/^(?:bun|npm|yarn|pnpm|deno)\s+(?:run\s+)?test\b/, /^(?:\.\/)?(?:go|cargo|make|mvn|gradle|gradlew|dotnet|swift|mix|sbt|lein|rake|zig|bazel|nx|turbo)\s+test\b/, new RegExp(`^${vh}(?:pytest|jest|vitest|rspec|phpunit|ctest)\\b`), /^(?:bun|npm|yarn|pnpm)\s+run\s+test:\S/],
+  aY = [/^(?:bun|npm|yarn|pnpm)\s+run\s+typecheck\b/, new RegExp(`^${vh}(?:tsc|mypy)\\b`)];
+var lE = "automated-test",
+  cE = "typecheck";
+
+function BDe(e) {
+  return Rh.has(e) ? `/${e}` : null
+}
+var lY = new Set([lE, cE, ...Array.from(Rh, (e) => `/${e}`)]);
+var Cxi = "*",
+  Eh = 64;
+import {
+  realpath as _E
+} from "fs";
+import {
+  stat as bE
+} from "fs/promises";
+import {
+  isAbsolute as Os,
+  join as Dh,
+  relative as du,
+  sep as Sr
+} from "path";
+import {
+  promisify as kE
+} from "util";
+import {
+  basename as Ph,
+  extname as uE,
+  isAbsolute as Th,
+  posix as ha,
+  relative as dE,
+  sep as Oh
+} from "path";
+var fE = new Set(["package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock", "composer.lock", "gemfile.lock", "cargo.lock", "poetry.lock", "pipfile.lock", "shrinkwrap.json", "npm-shrinkwrap.json"]),
+  Ch = new Set([".lock", ".min.js", ".min.css", ".min.html", ".bundle.js", ".bundle.css", ".generated.ts", ".generated.js", ".d.ts"]),
+  mE = ["/dist/", "/build/", "/out/", "/output/", "/node_modules/", "/vendor/", "/vendored/", "/third_party/", "/third-party/", "/external/", "/.next/", "/.nuxt/", "/.svelte-kit/", "/coverage/", "/__pycache__/", "/.tox/", "/venv/", "/.venv/", "/target/release/", "/target/debug/", ".generated/", "/__snapshots__/"],
+  hE = [/^.*\.min\.[a-z]+$/i, /^.*-min\.[a-z]+$/i, /^.*\.bundle\.[a-z]+$/i, /^.*\.generated\.[a-z]+$/i, /^.*\.gen\.[a-z]+$/i, /^.*\.auto\.[a-z]+$/i, /^.*_generated\.[a-z]+$/i, /^.*_gen\.[a-z]+$/i, /^.*\.pb\.(go|js|ts|py|rb)$/i, /^.*_pb2?\.py$/i, /^.*\.pb\.h$/i, /^.*\.grpc\.[a-z]+$/i, /^.*\.swagger\.[a-z]+$/i, /^.*\.openapi\.[a-z]+$/i, /\.snap$/i];
+
+function Qio(e) {
+  let n = ha.sep + e.split(Oh).join(ha.sep).replace(/^\/+/, ""),
+    r = Ph(e).toLowerCase(),
+    s = uE(e).toLowerCase();
+  if (fE.has(r)) return !0;
+  if (Ch.has(s)) return !0;
+  let h = r.split(".");
+  if (h.length > 2) {
+    let y = "." + h.slice(-2).join(".");
+    if (Ch.has(y)) return !0
+  }
+  for (let y of mE)
+    if (n.includes(y)) return !0;
+  for (let y of hE)
+    if (y.test(r)) return !0;
+  return !1
+}
+var As = 10485760,
+  Ps = 1e4;
+class pOn extends Error {
+  name = "GitListingError"
+}
+
+function ga(e, n) {
+  let r = n.stderr.trim() || n.error || "";
+  return new pOn(n.maxBufferExceeded ? `${e}: output exceeded ${As} bytes` : n.timedOut ? `${e} timed out after ${Ps}ms` : `${e} failed (code ${n.code}): ${Q(r,200)}`)
+}
+async function Mh(e, n, r) {
+  let s = new Set,
+    h = um().linguistGeneratedByPath,
+    y = (r.repoArgs ?? []).join(" "),
+    S = [];
+  for (let O of e) {
+    if (Qio(O)) {
+      s.add(O);
+      continue
+    }
+    if (!gE(O, n)) continue;
+    let M = h.get(`${n}\x00${O}\x00${y}`);
+    if (M === void 0) S.push(O);
+    else if (M) s.add(O)
+  }
+  if (S.length === 0 || !(r.inRepo ?? ty(n) !== null)) return s;
+  let w = await lt(Pt(), [...r.repoArgs ?? [], "check-attr", "-z", "--stdin", "linguist-generated"], {
+    cwd: n,
+    timeout: Ps,
+    input: S.join("\x00") + "\x00",
+    maxBuffer: As,
+    env: r.env,
+    extendEnv: !1
+  });
+  if (w.code !== 0 || w.maxBufferExceeded) throw ga("git check-attr", w);
+  let A = w.stdout.split("\x00");
+  for (let O = 0; O + 3 < A.length; O += 3) {
+    let M = A[O + 2].toLowerCase(),
+      j = M === "set" || M === "true";
+    if (h.set(`${n}\x00${A[O]}\x00${y}`, j), j) s.add(A[O])
+  }
+  return s
+}
+
+function gE(e, n) {
+  let r = Th(e) ? dE(n, e) : e;
+  return r !== "" && !Th(r) && !bN(r)
+}
+var yE = ["/test/", "/tests/", "/spec/", "/specs/", "/__tests__/", "/__mocks__/", "/__snapshots__/", "/__fixtures__/", "/fixtures/", "/testdata/"],
+  SE = [/\.test\.[a-z]+$/i, /\.spec\.[a-z]+$/i, /_test\.[a-z]+$/i, /_spec\.[a-z]+$/i, /\.snap$/i];
+
+function jds(e) {
+  let n = ha.sep + e.split(Oh).join(ha.sep).replace(/^\/+/, ""),
+    r = Ph(e);
+  for (let s of yE)
+    if (n.includes(s)) return !0;
+  for (let s of SE)
+    if (s.test(r)) return !0;
+  return !1
+}
+var Ih = [
+  ["fable-5-1", "claude-fable-5-1"],
+  ["fable-5", "claude-fable-5"],
+  ["mythos-5-1", "claude-mythos-5-1"],
+  ["mythos-5", "claude-mythos-5"],
+  ["opus-5-5", "claude-opus-5-5"],
+  ["opus-5", "claude-opus-5"],
+  ["opus-4-8", "claude-opus-4-8"],
+  ["opus-4-7", "claude-opus-4-7"],
+  ["opus-4-6", "claude-opus-4-6"],
+  ["opus-4-5", "claude-opus-4-5"],
+  ["opus-4-1", "claude-opus-4-1"],
+  ["opus-4", "claude-opus-4"],
+  ["sonnet-5-5", "claude-sonnet-5-5"],
+  ["sonnet-5", "claude-sonnet-5"],
+  ["sonnet-4-6", "claude-sonnet-4-6"],
+  ["sonnet-4-5", "claude-sonnet-4-5"],
+  ["sonnet-4", "claude-sonnet-4"],
+  ["sonnet-3-7", "claude-sonnet-3-7"],
+  ["haiku-5-5", "claude-haiku-5-5"],
+  ["haiku-4-5", "claude-haiku-4-5"],
+  ["haiku-3-5", "claude-haiku-3-5"]
+];
+var Nh = [],
+  RE = /^[a-z0-9.-]+(?::[0-9]+)?\/[a-z0-9._-]+\/[a-z0-9._-]+$/;
+
+function Nut(e) {
+  if (!/^https?:\/\//.test(e) && !/^ssh:\/\//.test(e) && !/^git@/.test(e)) return !1;
+  if (/[?#\\]/.test(tt(e.replace(/^(?:https?|ssh):\/\//, ""), "/"))) return !1;
+  if (nK(e) || Bte(e)) return !1;
+  let n = e.replace(/^https?:\/\//, "").replace(/^ssh:\/\//, "").replace(/^[^@/]+@/, "").replace(/\/$/, "");
+  if (bFr() && zxo(tt(n, "/"))) {
+    let r = dae(e);
+    if (r && !n.includes("@") && RE.test(r)) return Nh.includes(r)
+  }
+  if (C2n(n)) return !1;
+  return Nh.some((r) => {
+    if (!n.startsWith(r)) return !1;
+    let s = n.slice(r.length);
+    return s === "" || s === ".git" || s.startsWith("/")
+  })
+}
+
+function Fut() {
+  let e = pe();
+  return fr(e) ?? Ee()
+}
+var vE = !1;
+
+function EE(e) {
+  return vE || fr(e) === null
+}
+
+function TE(e) {
+  return r5(e) ?? Gi(e) ?? e
+}
+var Zio = vN(async (e, n, r) => {
+  if (r !== void 0) {
+    let A = await Nxo(r.gitDir, r.commonDir);
+    return A !== null && Nut(A)
+  }
+  let s = TE(e),
+    h = um().repoClassByCanonicalRoot,
+    y = h.get(s);
+  if (y !== void 0) return y === "internal";
+  let S = await Jpe(e);
+  if (!S) return h.set(s, "none"), !1;
+  let w = Nut(S);
+  return h.set(s, w ? "internal" : "external"), w
+});
+
+function Rxi(e) {
+  let n = Ih.find(([r]) => e.includes(r));
+  return n ? n[1] : "claude"
+}
+
+function CE() {
+  return i.CLAUDE_CODE_ENTRYPOINT ?? "cli"
+}
+
+function Fh(e, n) {
+  return Os(e) ? mu(e, n).key : e
+}
+
+function pu(e = Fut()) {
+  let n = e;
+  try {
+    n = ie().realpathSync(e)
+  } catch {}
+  return {
+    cwd: e,
+    keyRoot: n,
+    root: wh(e) ?? e
+  }
+}
+
+function mu(e, n) {
+  let r = ie(),
+    s = n?.cwd ?? Fut();
+  if (Os(e) && EE(s)) return {
+    key: wh(e) ?? e,
+    root: void 0
+  };
+  if (!Os(e)) return {
+    key: e,
+    root: n?.root ?? wh(s) ?? s
+  };
+  let {
+    keyRoot: h,
+    root: y
+  } = n ?? pu(s), S = e;
+  try {
+    S = r.realpathSync(e)
+  } catch {}
+  if (S.startsWith(h + Sr) || S === h) return {
+    key: du(h, S).replaceAll(Sr, "/"),
+    root: y
+  };
+  if (e.startsWith(s + Sr) || e === s) return {
+    key: du(s, e).replaceAll(Sr, "/"),
+    root: y
+  };
+  return {
+    key: e,
+    root: void 0
+  }
+}
+
+function cMt() {
+  return {
+    fileStates: new Map,
+    surface: CE(),
+    startingHeadSha: null,
+    promptCount: 0,
+    promptCountAtLastCommit: 0,
+    permissionPromptCount: 0,
+    permissionPromptCountAtLastCommit: 0,
+    escapeCount: 0,
+    escapeCountAtLastCommit: 0,
+    verificationMethods: [],
+    verificationMethodsByCheckout: {}
+  }
+}
+
+function $h(e, n, r, s, h, y) {
+  let {
+    key: S,
+    root: w
+  } = mu(n, y);
+  try {
+    let A;
+    if (r === "" || s === "") A = r === "" ? s.length : r.length;
+    else {
+      let j = Math.min(r.length, s.length),
+        G = 0;
+      while (G < j && r[G] === s[G]) G++;
+      let N = 0;
+      while (N < j - G && r[r.length - 1 - N] === s[s.length - 1 - N]) N++;
+      let Z = r.length - G - N,
+        te = s.length - G - N;
+      A = Math.max(Z, te)
+    }
+    let M = e.get(S)?.claudeContribution ?? 0;
+    return {
+      contentHash: nt(s),
+      claudeContribution: M + A,
+      mtime: h,
+      ...w !== void 0 && {
+        root: w
+      }
+    }
+  } catch (A) {
+    return a(A), null
+  }
+}
+
+function AE(e, n, r, s, h = Date.now()) {
+  let y = pu(),
+    S = Fh(n, y),
+    w = $h(e.fileStates, n, r, s, h, y);
+  if (!w) return e;
+  let A = new Map(e.fileStates);
+  return A.set(S, w), t(`Attribution: Tracked ${w.claudeContribution} chars for ${S}`), {
+    ...e,
+    fileStates: A
+  }
+}
+
+function PE(e) {
+  return e.contentHash === ""
+}
+
+function OE(e, n) {
+  let r = new Map(e.fileStates),
+    s = pu();
+  for (let h of n) {
+    let y = h.mtime ?? Date.now();
+    if (h.type === "deleted") {
+      let {
+        key: S,
+        root: w
+      } = mu(h.path, s), O = r.get(S)?.claudeContribution ?? 0, M = h.oldContent.length;
+      r.set(S, {
+        contentHash: "",
+        claudeContribution: O + M,
+        mtime: y,
+        ...w !== void 0 && {
+          root: w
+        }
+      }), t(`Attribution: Tracked deletion of ${S} (${M} chars removed, total contribution: ${O+M})`)
+    } else {
+      let S = $h(r, h.path, h.oldContent, h.newContent, y, s);
+      if (S) {
+        let w = Fh(h.path, s);
+        r.set(w, S), t(`Attribution: Tracked ${S.claudeContribution} chars for ${w}`)
+      }
+    }
+  }
+  return {
+    ...e,
+    fileStates: r
+  }
+}
+
+function fu(e, n) {
+  if (!Os(e)) return null;
+  let r = du(n, e);
+  return r !== "" && !Os(r) && r !== ".." && !r.startsWith(`..${Sr}`) ? r.replaceAll(Sr, "/") : null
+}
+
+function Axi(e, n) {
+  let r = !1;
+  for (let h of e.fileStates.keys())
+    if (fu(h, n) !== null) {
+      r = !0;
+      break
+    } if (!r) return e;
+  let s = new Map;
+  for (let [h, y] of e.fileStates) {
+    let S = fu(h, n) ?? h,
+      w = s.get(S);
+    s.set(S, w === void 0 ? y : {
+      ...y.mtime >= w.mtime ? y : w,
+      claudeContribution: w.claudeContribution + y.claudeContribution
+    })
+  }
+  return {
+    ...e,
+    fileStates: s
+  }
+}
+
+function ngr(e, n) {
+  switch (n.kind) {
+    case "trackEdit":
+      return AE({
+        ...e,
+        surface: n.surface
+      }, n.filePath, n.oldContent, n.newContent, n.mtime);
+    case "trackBulk":
+      return OE({
+        ...e,
+        surface: n.surface
+      }, n.changes);
+    case "commitBoundary":
+      return {
+        ...e, promptCountAtLastCommit: n.promptCountAtLastCommit, permissionPromptCountAtLastCommit: n.permissionPromptCountAtLastCommit, escapeCountAtLastCommit: n.escapeCountAtLastCommit
+      };
+    case "incrementPermissionPrompt":
+      return {
+        ...e, permissionPromptCount: e.permissionPromptCount + 1
+      };
+    case "recordVerification": {
+      let r = e.verificationMethods.includes(n.method),
+        s = e.verificationMethodsByCheckout,
+        h = n.checkout === void 0 ? void 0 : s[n.checkout] ?? [];
+      if (r && (h === void 0 || h.includes(n.method))) return e;
+      let y = h?.length === 0 && Object.keys(s).length >= Eh ? Object.fromEntries(Object.entries(s).slice(1)) : s;
+      return {
+        ...e,
+        verificationMethods: r ? e.verificationMethods : [...e.verificationMethods, n.method],
+        verificationMethodsByCheckout: n.checkout === void 0 || h === void 0 || h.includes(n.method) ? s : {
+          ...y,
+          [n.checkout]: [...h, n.method]
+        }
+      }
+    }
+  }
+}
+
+function hu(e, n) {
+  return n === void 0 ? [] : [`--git-dir=${n}`, `--work-tree=${e}`]
+}
+var ME = kE(_E.native);
+async function Hh(e) {
+  try {
+    return Jv(await ME(e))
+  } catch {
+    return e
+  }
+}
+async function xxi(e, n, r = {
+  staged: !0
+}) {
+  let s = r.repoRoot ?? Fut(),
+    h = z(),
+    y = Fut(),
+    S = await Hh(y),
+    w = s === y ? S : await Hh(s),
+    A = w === S,
+    O = new Map,
+    M = [],
+    j = new Set,
+    G = new Map,
+    N = 0,
+    Z = 0,
+    te = new Map;
+  for (let ve of e) {
+    j.add(ve.surface);
+    let Oe = ve.fileStates instanceof Map ? ve.fileStates : new Map(Object.entries(ve.fileStates ?? {}));
+    for (let [Ce, Ne] of Oe) {
+      let Ie = te.get(Ce);
+      if (Ie) te.set(Ce, {
+        ...Ne,
+        claudeContribution: Ie.claudeContribution + Ne.claudeContribution
+      });
+      else te.set(Ce, Ne)
+    }
+  }
+  let Y = r.gitDir !== void 0 || ty(s) !== null,
+    [ne, se] = await Promise.all([Mh(n, s, {
+      env: gu(s),
+      inRepo: Y,
+      repoArgs: hu(s, r.gitDir)
+    }), Y ? NE({
+      ...r,
+      repoRoot: s
+    }) : new Set]),
+    ae, re = async (ve) => Y ? (await (ae ??= DE({
+      ...r,
+      repoRoot: s
+    }))).get(ve) ?? 0 : 0, _e = await Promise.all(n.map(async (ve) => {
+      if (ne.has(ve)) return {
+        type: "generated",
+        file: ve
+      };
+      let Oe = Dh(s, ve),
+        Ce = A ? ve : fu(Dh(w, ve), S),
+        Ne = A ? void 0 : te.get(ve),
+        Ie = te.get(Oe) ?? (Ce === null ? void 0 : te.get(Ce)) ?? (Ne?.root === w ? Ne : void 0),
+        Ye = e[0].surface,
+        pt = 0,
+        ct = 0;
+      if (se.has(ve))
+        if (Ie && PE(Ie)) pt = Ie.claudeContribution, ct = 0;
+        else if (Ie) return null;
+      else {
+        let ke = await re(ve);
+        ct = ke > 0 ? ke : 100
+      } else try {
+        let ke = await bE(Oe);
+        if (Ie) pt = Ie.claudeContribution, ct = 0;
+        else {
+          let Fe = await re(ve);
+          ct = Fe > 0 ? Fe : ke.size
+        }
+      } catch (ke) {
+        if (ke instanceof pOn) throw ke;
+        return null
+      }
+      pt = Math.max(0, pt), ct = Math.max(0, ct);
+      let gt = pt + ct,
+        sn = gt > 0 ? Math.round(pt / gt * 100) : 0;
+      return {
+        type: "file",
+        file: ve,
+        claudeChars: pt,
+        humanChars: ct,
+        percent: sn,
+        surface: Ye
+      }
+    }));
+  for (let ve of _e) {
+    if (!ve) continue;
+    if (ve.type === "generated") {
+      M.push(ve.file);
+      continue
+    }
+    O.set(ve.file, {
+      claudeChars: ve.claudeChars,
+      humanChars: ve.humanChars,
+      percent: ve.percent,
+      surface: ve.surface
+    }), N += ve.claudeChars, Z += ve.humanChars, G.set(ve.surface, (G.get(ve.surface) ?? 0) + ve.claudeChars)
+  }
+  let Se = N + Z,
+    ce = Se > 0 ? Math.round(N / Se * 100) : 0,
+    xe = new Map;
+  for (let [ve, Oe] of G) {
+    let Ce = Se > 0 ? Math.round(Oe / Se * 100) : 0;
+    xe.set(ve, {
+      claudeChars: Oe,
+      percent: Ce
+    })
+  }
+  return {
+    version: 1,
+    summary: {
+      claudePercent: ce,
+      claudeChars: N,
+      humanChars: Z,
+      surfaces: Array.from(j)
+    },
+    files: Object.fromEntries(O),
+    surfaceBreakdown: Object.fromEntries(xe),
+    excludedGenerated: M,
+    sessions: [h]
+  }
+}
+
+function IE(e = {}, {
+  envGrants: n = !0,
+  base: r,
+  userLocale: s
+} = {}) {
+  let h = r ?? process.env,
+    y = {};
+  for (let S of ["GIT_CONFIG_GLOBAL", "GIT_CONFIG_SYSTEM"]) {
+    let w = Ds(h, S);
+    if (w !== void 0) y[S] = w
+  }
+  return ys({
+    ...y,
+    ...n ? Pan(h) : {},
+    ...e
+  }, {
+    base: r,
+    userLocale: s
+  })
+}
+
+function gu(e, {
+  userLocale: n
+} = {}) {
+  let r = U$(void 0),
+    s = Ee();
+  return e === s || e === fr(s) ? IE({}, {
+    base: r,
+    userLocale: n
+  }) : ys(void 0, {
+    base: r,
+    userLocale: n
+  })
+}
+async function DE(e = {
+  staged: !0
+}) {
+  let n = e.repoRoot ?? Fut(),
+    r = new Map,
+    s = [...hu(n, e.gitDir), "diff", fS];
+  if (e.staged) s.push("--cached");
+  s.push("--numstat", "--no-renames", "--relative", "-z");
+  let h = await lt(Pt(), s, {
+    cwd: n,
+    timeout: Ps,
+    maxBuffer: As,
+    env: gu(n, {
+      userLocale: !e.staged
+    }),
+    extendEnv: !1
+  });
+  if (h.code !== 0 || h.maxBufferExceeded) throw ga("git diff --numstat", h);
+  for (let y of h.stdout.split("\x00")) {
+    let S = y.match(/^(\d+)\t(\d+)\t(.+)$/s);
+    if (S) {
+      let w = parseInt(S[1], 10) + parseInt(S[2], 10);
+      r.set(S[3], w * 40)
+    }
+  }
+  return r
+}
+async function NE(e = {
+  staged: !0
+}) {
+  let n = e.repoRoot ?? Fut(),
+    r = [...hu(n, e.gitDir), "diff", fS];
+  if (e.staged) r.push("--cached");
+  r.push("--name-only", "--diff-filter=D", "--no-renames", "--relative", "-z");
+  let s = await lt(Pt(), r, {
+    cwd: n,
+    timeout: Ps,
+    maxBuffer: As,
+    env: gu(n, {
+      userLocale: !e.staged
+    }),
+    extendEnv: !1
+  });
+  if (s.code !== 0 || s.maxBufferExceeded) throw ga("git diff --diff-filter=D", s);
+  return new Set(s.stdout.split("\x00").filter(Boolean))
+}
+var mOn = (e) => e === void 0 ? void 0 : ee(_(e));
+var AW = () => Ae().renderVersions;
+
+function Sa(e) {
+  AW().setState((n) => {
+    let r = new Map(n);
+    return r.set(e, (n.get(e) ?? 0) + 1), r
+  })
+}
+
+function Uh({
+  bump: e,
+  plugin: n,
+  now: r
+}) {
+  e(n, r())
+}
+var _a = " live";
+var WE = (e) => e.endsWith(_a);
+var zE = (e) => e + _a;
+var wa = (e, n) => n === "live" ? zE(e) : e;
+
+function hOn(e, n = "steady") {
+  Sa(e === void 0 ? VE : wa(e, n))
+}
+
+function Su({
+  pace: e,
+  now: n,
+  intervalMs: r,
+  onBump: s
+}) {
+  let h = new Map;
+
+  function y(S, w) {
+    let A = h.get(S)?.pending;
+    if (A !== void 0) clearTimeout(A);
+    h.set(S, {
+      lastAt: w,
+      pending: void 0
+    }), hOn(S, e), s?.(S, w)
+  }
+  return {
+    bump: y,
+    call: (S) => {
+      let w = h.get(S) ?? {
+        lastAt: Number.NEGATIVE_INFINITY,
+        pending: void 0
+      };
+      if (w.pending) return !1;
+      let A = n(),
+        O = r - Math.max(0, A - w.lastAt);
+      if (O <= 0) return y(S, A), !0;
+      let M = setTimeout(Uh, O, {
+        bump: y,
+        plugin: S,
+        now: n
+      });
+      return M.unref(), h.set(S, {
+        lastAt: w.lastAt,
+        pending: M
+      }), !1
+    },
+    drop: () => {
+      for (let {
+          pending: S
+        }
+        of h.values()) clearTimeout(S);
+      h.clear()
+    }
+  }
+}
+var gOn = he(go(), (e) => e.set(void 0));
+var Ra = () => gOn.get() !== !0;
+var eao = (e, n) => Array.isArray(e) ? e.some((r) => eao(r, n)) : OHt(e, "surface", n.surface) && OHt(e, "component", n.component) && OHt(e, "requestId", n.requestId);
+var rgr = (e) => Ae().loadedModules.filter((n) => n.hooks(VE) && Bf(n) && eao(n.matcherFor(VE), e));
+var $ut = (e) => rgr(e).map((n) => n.name);
+
+function sT(e) {
+  let n = Rl().getState().shownId,
+    r = Ra() && Hut("AbovePrompt").includes(e),
+    s = n !== null && $ut({
+      surface: "terminal",
+      component: "Pane",
+      requestId: n
+    }).includes(e),
+    h = Hut("PromptHint").includes(e);
+  return r || s || h
+}
+var va = he(new Map, (e) => e.clear());
+var Bh = 1000;
+
+function Ea(e, n = Date.now()) {
+  for (let r of e) va.set(r, n + Bh)
+}
+
+function jh(e, n) {
+  let r = va.get(e);
+  return r !== void 0 && n < r
+}
+var Ca = 34;
+
+function dT(e, n, r = Date.now()) {
+  if (n > Ca) Ea(e, r)
+}
+var Wh = 16;
+
+function pT(e, n, r = Date.now()) {
+  if (n > Wh) Ea(e, r)
+}
+
+function wu(e) {
+  let n = e.surface === "terminal",
+    r = e.component === "AbovePrompt" && Ra(),
+    s = e.component === "PromptHint",
+    h = e.component === "Pane" && Rl().getState().shownId === e.requestId;
+  return n && (r || s || h) ? "live" : "steady"
+}
+var rJt = 100;
+
+function xda(e = Date.now, n = sT) {
+  let r = Su({
+      pace: "live",
+      now: e,
+      intervalMs: Ca
+    }),
+    s = Su({
+      pace: "steady",
+      now: e,
+      intervalMs: rJt,
+      onBump: r.bump
+    });
+  return {
+    invalidate: (h) => {
+      if (!s.call(h) && !jh(h, e()) && n(h)) r.call(h)
+    },
+    drop: () => {
+      s.drop(), r.drop()
+    }
+  }
+}
+var Aa = "\x00state";
+var xu = (e) => e + Aa;
+var Gh = (e) => e.endsWith(Aa);
+
+function xT() {
+  let e = AW(),
+    n = [...e.getState().keys()].filter(Gh);
+  if (n.length === 0) return;
+  e.setState((r) => {
+    let s = new Map(r);
+    for (let h of n) s.delete(h);
+    return s
+  })
+}
+
+function Ru(e) {
+  let n = AW(),
+    r = e.map(xu).filter((s) => n.getState().has(s));
+  if (r.length === 0) return;
+  n.setState((s) => {
+    let h = new Map(s);
+    for (let y of r) h.delete(y);
+    return h
+  })
+}
+var ogr = () => hOn();
+var sgr = `${VE} viewport`;
+var Pda = () => Sa(sgr);
+
+function Pa(e, n, r = "steady") {
+  if (n === void 0) {
+    let h = "";
+    for (let [y, S] of e)
+      if (y !== sgr && !WE(y) && !Gh(y)) h += `${y}\x00${S}\x00`;
+    return h
+  }
+  let s = String(e.get(VE) ?? 0);
+  for (let h of n) {
+    let y = e.get(wa(h, r)) ?? 0;
+    s += `\x00${h}\x00${y}`
+  }
+  return s
+}
+
+function AT(e) {
+  let n = AW(),
+    r = Pa(n.getState());
+  return n.subscribe(() => {
+    let s = Pa(n.getState());
+    if (s !== r) r = s, e()
+  })
+}
+
+function MT(e, n, r) {
+  let s = n.get(xu(r));
+  return s === void 0 ? e : `${e}\x00\x00${s}`
+}
+
+function Ns(e, n) {
+  if (e.length === 0) return;
+  n.bumps += 1;
+  let r = n.bumps;
+  AW().setState((s) => {
+    let h = new Map(s);
+    for (let y of e) h.set(xu(y), r);
+    return h
+  })
+}
+var w2 = (e) => `${e.surface}\x00${e.component}\x00${e.requestId}`;
+var Jw = () => Ae().pluginState;
+
+function Kh(e) {
+  let {
+    mounted: n,
+    readers: r
+  } = Jw(), s = w2(e);
+  if (!(n.has(s) || r.has(s))) Ru([s])
+}
+
+function Oa(e, n) {
+  if (e.size === 0) return;
+  Ns([...e.keys()], n);
+  let r = [...e.values()].map((s) => s.instance);
+  for (let s of n.staleListeners) s(r)
+}
+
+function oJt(e, n) {
+  let r = Jw(),
+    s = r.folds[e];
+  if (s.pending !== void 0) clearTimeout(s.pending);
+  s.pending = void 0, s.lastAt = n;
+  let h = new Map([...s.stale].flatMap((y) => {
+    let S = r.readers.get(y);
+    return S === void 0 ? [] : [
+      [y, S]
+    ]
+  }));
+  s.stale.clear(), Oa(h, r)
+}
+
+function vu(e, n) {
+  oJt(e, n())
+}
+var Eu = {
+  steady: rJt,
+  live: Ca
+};
+
+function Ls(e, n = Date.now) {
+  let r = Jw(),
+    s = new Set;
+  for (let h of e) {
+    let y = r.readers.get(h);
+    if (y !== void 0) {
+      let S = n(),
+        A = y.plugins.some((O) => jh(O, S)) ? "steady" : wu(y.instance);
+      r.folds[A].stale.add(h), s.add(A)
+    }
+  }
+  for (let h of s) {
+    let y = r.folds[h];
+    if (y.pending !== void 0) continue;
+    let S = n(),
+      w = Eu[h] - Math.max(0, S - y.lastAt);
+    if (w <= 0) oJt(h, S);
+    else y.pending = setTimeout(vu, w, h, n), y.pending.unref()
+  }
+}
+
+function Vh(e) {
+  let n = Jw().readersOf.get(e);
+  if (n !== void 0 && n.size > 0) Ls([...n])
+}
+
+function qh(e) {
+  let {
+    staleListeners: n
+  } = Jw();
+  return n.add(e), () => {
+    n.delete(e)
+  }
+}
+
+function tao(...e) {
+  let n = Jw();
+  Ns(e.map(w2), n);
+  for (let r of n.staleListeners) r(e)
+}
+
+function nao() {
+  let e = Jw();
+  for (let r of [e.folds.steady, e.folds.live]) {
+    if (r.pending !== void 0) clearTimeout(r.pending);
+    r.pending = void 0, r.stale.clear(), r.lastAt = Number.NEGATIVE_INFINITY
+  }
+  let n = new Map(e.readers);
+  for (let r of e.values.getState().values()) e.versionFloor = Math.max(e.versionFloor, r.version);
+  e.faultRuns.clear(), e.readers.clear(), e.readersOf.clear(), e.values.setState((r) => r.size === 0 ? r : new Map), xT(), Oa(n, e)
+}
+var jDe = ({
+  plugin: e,
+  key: n,
+  id: r
+}) => r === void 0 ? `${e}\x00${n}` : `${e}\x00${n}\x00${r}`;
+
+function yOn(e, n) {
+  let r = _(n);
+  if (!(typeof r === "string" && r.length <= yRe)) throw new $e(`a value of state is JSON data of at most ${yRe} characters`);
+  let {
+    values: h,
+    versionFloor: y
+  } = Jw(), S = Math.max(h.getState().get(e)?.version ?? 0, y) + 1;
+  return hr.exit(() => {
+    h.setState((w) => {
+      let A = new Map(w);
+      return A.set(e, {
+        value: aZe(ee(r)),
+        version: S
+      }), A
+    }), Vh(e)
+  }), S
+}
+
+function Hs(e) {
+  let n = Jw(),
+    r = n.readers.get(e);
+  if (r === void 0) return;
+  for (let s of r.reads) {
+    let h = n.readersOf.get(s);
+    if (h?.delete(e), h?.size === 0) n.readersOf.delete(s)
+  }
+  n.readers.delete(e)
+}
+
+function Au(e) {
+  let {
+    folds: n
+  } = Jw();
+  Hs(e), n.steady.stale.delete(e), n.live.stale.delete(e), Ru([e])
+}
+var Pu = 4000;
+
+function Yh(e) {
+  let {
+    instanceKey: n,
+    instance: r,
+    versionsRead: s
+  } = e, h = Jw();
+  if (Hs(n), s.size === 0) return;
+  h.readers.set(n, {
+    instance: r,
+    plugins: e.pluginsOf(),
+    reads: new Set(s.keys())
+  });
+  let y = h.values.getState(),
+    S = !1;
+  for (let [w, A] of s) {
+    let O = h.readersOf.get(w) ?? new Set;
+    O.add(n), h.readersOf.set(w, O), S ||= (y.get(w)?.version ?? 0) !== A
+  }
+  for (let w of h.readers.keys()) {
+    if (h.readers.size <= Pu) break;
+    if (!h.mounted.has(w)) Au(w)
+  }
+  if (S) Ls([n])
+}
+
+function Pxi(e) {
+  let {
+    mounted: n,
+    readers: r
+  } = Jw();
+  return n.set(e, (n.get(e) ?? 0) + 1), () => {
+    let s = (n.get(e) ?? 1) - 1;
+    if (s > 0) {
+      n.set(e, s);
+      return
+    }
+    if (n.delete(e), !r.has(e)) Ru([e])
+  }
+}
+var Oxi = (e) => ({
+  ...e,
+  previous: Jw().values.getState().get(jDe(e))?.value
+});
+var Ma = "takes a reference { plugin, key } (id for a family member)";
+
+function Fs(e) {
+  if (!D(e)) return Ma;
+  let {
+    plugin: n,
+    key: r,
+    id: s
+  } = e;
+  if (!(typeof n === "string" && n !== "" && typeof r === "string" && r !== "" && (s === void 0 || typeof s === "string"))) return Ma;
+  return [n, r, s ?? ""].some((S) => S.includes("\x00")) ? "a plugin, key or id holding the NUL character" : void 0
+}
+
+function rao(e) {
+  let n = Fs(e);
+  if (n !== void 0 || !D(e)) return n;
+  let r = Object.keys(e).find((s) => s !== "plugin" && s !== "key" && s !== "id");
+  if (r === void 0) return;
+  return `takes { plugin, key, id? } and nothing else (got ${r})`
+}
+var Mu = new Set(["plugin", "key", "id", "value", "previous", "ifVersion"]);
+
+function oao(e, n) {
+  let r = Fs(e);
+  if (r !== void 0 || !D(e)) return r;
+  let s = Object.keys(e).find((O) => !Mu.has(O));
+  if (s !== void 0) return `takes { plugin, key, id?, value, ifVersion? } and nothing else (got ${s})`;
+  if (e.value === void 0) return "takes a value (JSON data, never undefined)";
+  let h = Zus(e.value);
+  if (h !== void 0) return h;
+  let {
+    ifVersion: y
+  } = e;
+  if (y !== void 0 && !(Number.isSafeInteger(y) && Number(y) >= 0)) return "ifVersion is a version $.state.get answered (a whole number)";
+  if (n.scopeHolder?.scope?.drawing?.isInFlight === !0) return "denied: it was made while ui.render is being dispatched, and drawing is pure (a render hook reads state and returns a tree; write from a handler such as onPress, or from another event)";
+  let w = String(e.plugin);
+  return w === n.plugin ? void 0 : `denied: ${w} owns that value and only its owner writes it (to change what is written, hook ${w}'s state.set and rewrite e.value)`
+}
+
+function Iu(e) {
+  let n = Jw().values.getState();
+  if (e === void 0) return n;
+  return e.values ??= n, e.values
+}
+
+function sao(e, n) {
+  let r = jDe(e),
+    s = Kv(n.scopeHolder),
+    h = Iu(s).get(r),
+    y = h?.version ?? 0,
+    S = s?.drawing;
+  if (S?.isInFlight === !0 && !S.versionsRead.has(r)) S.versionsRead.set(r, y);
+  return Promise.resolve({
+    value: h?.value,
+    version: y
+  })
+}
+
+function iao(e, n) {
+  let r = jDe(e),
+    {
+      values: s
+    } = Jw(),
+    h = s.getState().get(r)?.version ?? 0,
+    y = e.ifVersion !== void 0 && e.ifVersion !== h,
+    S = y ? h : yOn(r, e.value),
+    w = n.scopeHolder?.scope;
+  if (w?.values !== void 0) w.values = s.getState();
+  return Promise.resolve({
+    isSet: !y,
+    version: S
+  })
+}
+var dL = he(new Set, (e) => e.clear());
+
+function D6({
+  key: e,
+  lead: n,
+  text: r
+}) {
+  if (!wTe() || dL.has(e)) return;
+  dL.add(e), kq(n, r)
+}
+var gC = {
+    USD: "$",
+    EUR: "\u20AC",
+    GBP: "\xA3",
+    JPY: "\xA5",
+    BRL: "R$",
+    CAD: "CA$",
+    AUD: "A$",
+    NZD: "NZ$",
+    SGD: "S$"
+  },
+  yC = new Set(["JPY", "KRW", "VND"]);
+
+function aXe(e) {
+  let n = e.toUpperCase();
+  return gC[n] ?? `${n} `
+}
+
+function Ms(e, n, r = "precise") {
+  let s = n.toUpperCase(),
+    h = aXe(s);
+  if (yC.has(s)) return `${h}${Math.round(e).toLocaleString("en-US")}`;
+  let y = e / 100;
+  if (r === "whole") return `${h}${Math.round(y).toLocaleString("en-US")}`;
+  if (r === "fit" && y % 1 === 0) return `${h}${y.toLocaleString("en-US")}`;
+  return `${h}${y.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}`
+}
+var _On = new Set(["Notification", "SessionStart", "SessionEnd", "Setup", "StopFailure", "SubagentStart", "PostToolUseFailure", "PostCompact", "PostModelSwitch", "PermissionDenied", "WorktreeCreate", "WorktreeRemove", "InstructionsLoaded", "CwdChanged", "FileChanged", "DirectoryAdded", "MessageDisplay", "StatusLine", "FileSuggestion"]);
+
+function uMt(e) {
+  return _On.has(e) ? au("hooks") : {}
+}
+
+function* Zh() {
+  yield* PEs(), yield oVs(), yield gVs(), yield* Yta()
+}
+var Qh = new Set(["UserPromptSubmit", "UserPromptExpansion", "PreToolUse", "PermissionRequest", "PermissionDenied", "PostToolUse", "PostToolUseFailure", "PostToolBatch", "SubagentStart", "SubagentStop", "TaskCreated", "TaskCompleted", "Elicitation", "ElicitationResult", "WorktreeCreate", "WorktreeRemove"]);
+
+function Ixi() {
+  let e = new Set;
+  for (let {
+      event: n,
+      hook: r
+    }
+    of Lbr())
+    if (Qh.has(n) && r.type === "mcp_tool") e.add(r.server);
+  for (let n of Zh()) {
+    if (!n) continue;
+    for (let [r, s] of Object.entries(n)) {
+      if (!Qh.has(r)) continue;
+      for (let h of s ?? [])
+        for (let y of h.hooks ?? [])
+          if (y.type === "mcp_tool" && y.server) e.add(y.server)
+    }
+  }
+  return e
+}
+
+function Uut(e) {
+  for (let {
+      event: n,
+      hook: r
+    }
+    of Lbr())
+    if (!_On.has(n) && r.type === "mcp_tool" && r.server === e) return !0;
+  for (let n of Zh()) {
+    if (!n) continue;
+    for (let [r, s] of Object.entries(n)) {
+      if (_On.has(r) || !s) continue;
+      for (let h of s)
+        for (let y of h.hooks ?? [])
+          if (y.type === "mcp_tool" && y.server === e) return !0
+    }
+  }
+  return !1
+}
+var SC = 64;
+class eg {
+  servers = [];
+  unsubscribe = void 0;
+  clear() {
+    this.servers = [], this.unsubscribe?.(), this.unsubscribe = void 0
+  }
+}
+var _C = new W(() => new eg);
+
+function Du() {
+  return Po(_C)
+}
+
+function igr(e, n, r = OFr) {
+  try {
+    let s = Du();
+    s.unsubscribe ??= dVs(bC);
+    let h = r.readStarttime(n);
+    if (h === void 0) return;
+    if (Nu(s), Uut(e) && MFr(n, h, r)) return;
+    if (s.servers.length >= SC) {
+      let y = MFr(n, h, r);
+      t(`tool cgroup: mcp pid ${n} not tracked (full); ${y?"released instead":"release refused"}`);
+      return
+    }
+    s.servers.push({
+      name: e,
+      pid: n,
+      starttime: h,
+      fs: r
+    })
+  } catch (s) {
+    t(`tool cgroup: mcp pid ${n} not tracked (${s})`)
+  }
+}
+
+function bC() {
+  try {
+    let e = Du();
+    Nu(e), e.servers = e.servers.filter((n) => !(Uut(n.name) && MFr(n.pid, n.starttime, n.fs)))
+  } catch (e) {
+    t(`tool cgroup: mcp release recheck skipped (${e})`)
+  }
+}
+
+function Mxi(e, n) {
+  if (_On.has(n)) return;
+  try {
+    let r = Du();
+    if (!r.servers.some((s) => s.name === e)) return;
+    Nu(r), r.servers = r.servers.filter((s) => {
+      if (s.name !== e) return !0;
+      let h = MFr(s.pid, s.starttime, s.fs);
+      return t(`tool cgroup: mcp server backing a ${n} hook was still capped at fire time; ${h?"released now":"release refused"}`), !h
+    })
+  } catch (r) {
+    t(`tool cgroup: mcp release at hook fire skipped (${r})`)
+  }
+}
+
+function Nu(e) {
+  e.servers = e.servers.filter((n) => n.fs.readStarttime(n.pid) === n.starttime)
+}
+
+function But(e) {
+  let n = [e.launchDir, e.launchDirReal, e.syncRoot, e.syncRootReal, ...e.extra ?? []].filter((r) => r !== void 0);
+  return n.some((r) => !LI(r)) ? [J$] : L(n)
+}
+
+function kb(e, n) {
+  return e.some((r) => n.some((s) => AJe(r, s)))
+}
+
+function aao(e, n) {
+  let r = x() === "windows" ? (s) => Ofo(s).toLowerCase() : x() === "macos" ? (s) => s.normalize("NFC").toLowerCase() : (s) => s;
+  return e.some((s) => n.some((h) => LI(h) && Iq(r(s), r(h))))
+}
+var wC = ["projectSettings", "localSettings"];
+async function z9e({
+  stickyRoots: e,
+  pinnedScopes: n,
+  pinnedRoots: r,
+  baseRoots: s,
+  reachBaseline: h,
+  scopeSettingsFile: y,
+  realpath: S,
+  commonRoots: w,
+  scopeRoots: A
+}) {
+  let O = new Map,
+    M = new Set;
+  for (let Z of yi) {
+    let te = y(Z);
+    if (te !== null) {
+      let Y = [te];
+      await S(te).then((ne) => Y.push(ne), () => {
+        if (Z !== "policySettings") M.add(Z)
+      }), O.set(Z, Y)
+    }
+  }
+  let j = (Z, te) => kb(O.get(Z) ?? [], te),
+    G = (Z) => {
+      n.add(Z);
+      let te = r.get(Z);
+      if (te === void 0) te = A(Z, h.get(Z) ?? []), r.set(Z, te);
+      for (let Y of te) e.add(Y)
+    };
+  for (let Z of [...s, ...w()]) e.add(Z);
+  for (let Z of yi)
+    if (n.has(Z) || wC.includes(Z) || M.has(Z)) G(Z);
+  let N = new Set;
+  for (;;) {
+    let Z = () => yi.filter((se) => !n.has(se) && !N.has(se));
+    for (let se = !0; se;) {
+      se = !1;
+      let ae = [...e, ...[...n].flatMap((re) => A(re, null))];
+      for (let re of Z())
+        if (j(re, [...ae, ...A(re, h.get(re) ?? [])])) G(re), se = !0
+    }
+    let te = Z();
+    if (te.length === 0) return [...e];
+    let Y = new Map(te.map((se) => [se, A(se, null)])),
+      ne = te.filter((se) => !te.some((ae) => ae !== se && j(se, [...Y.get(ae) ?? [], ...A(ae, h.get(ae) ?? [])])));
+    if (ne.length === 0) {
+      for (let se of te) G(se);
+      return [...e]
+    }
+    for (let se of ne) {
+      N.add(se);
+      for (let ae of Y.get(se) ?? []) e.add(ae)
+    }
+  }
+}
+
+function jut(e) {
+  let n = {
+    CLAUDECODE: "1",
+    CLAUDE_CODE_SESSION_ID: e.sessionId,
+    CLAUDE_CODE_CHILD_SESSION: "1",
+    CLAUDE_CODE_SESSION_ATTENDED: TN() ? "1" : "0",
+    CLAUDE_PID: String(process.pid)
+  };
+  if (e.source === "agent") n.AI_AGENT = HKs("agent");
+  if (e.effortLevel !== void 0) n.CLAUDE_EFFORT = e.effortLevel;
+  if (sbt()) {
+    let r = rze();
+    if (r !== void 0) n.TRACEPARENT = r
+  }
+  return n
+}
+
+function doe(e) {
+  return {
+    sessionId: e.session_id,
+    effortLevel: e.effort?.level,
+    source: "harness"
+  }
+}
+
+function coe() {
+  return Boolean(i.CLAUDE_CODE_CHILD_SESSION || i.CLAUDECODE)
+}
+var Ia = p(() => B(["allow", "deny", "ask"])),
+  Na = p(() => u({
+    toolName: o(),
+    ruleContent: o().optional()
+  }));
+var wr = p(() => B(["userSettings", "projectSettings", "localSettings", "session", "cliArg"])),
+  I9 = p(() => Dr("type", [u({
+    type: T("addRules"),
+    rules: C(Na()),
+    behavior: Ia(),
+    destination: wr()
+  }), u({
+    type: T("replaceRules"),
+    rules: C(Na()),
+    behavior: Ia(),
+    destination: wr()
+  }), u({
+    type: T("removeRules"),
+    rules: C(Na()),
+    behavior: Ia(),
+    destination: wr()
+  }), u({
+    type: T("setMode"),
+    mode: aLr(),
+    destination: wr()
+  }), u({
+    type: T("addDirectories"),
+    directories: C(o()),
+    destination: wr()
+  }), u({
+    type: T("removeDirectories"),
+    directories: C(o()),
+    destination: wr()
+  })]));
+import {
+  isDeepStrictEqual as ng
+} from "util";
+var kC = {
+    reason: 2000,
+    stopReason: 2000,
+    systemMessage: 4000,
+    additionalContext: 8000,
+    permissionDecisionReason: 2000
+  },
+  og = 200,
+  xC = {
+    reason: 20,
+    stopReason: 20,
+    systemMessage: 20,
+    additionalContext: og,
+    permissionDecisionReason: 20
+  };
+
+function Wds(e, n, r = og) {
+  return HHr(e, {
+    maxCodeUnits: n,
+    maxLines: r
+  })
+}
+
+function RC(e) {
+  if (e === cs) return !0;
+  return !1
+}
+var vC = "A hook from the user's own Claude Code files tried to change this tool call's input. In this session such hooks may block or ask about a call but not change it, so the call was not made. Retrying will not help while the hook keeps changing the input: go on without this call, and tell the user their hook's change to it was refused.",
+  EC = "A hook from your own Claude Code files tried to change your answer to Claude's question. Claude read your answer as you gave it.",
+  TC = "A hook from your own Claude Code files tried to change the Slack messages Claude read. Claude read them unchanged.";
+
+function xo(e, n, r) {
+  if (typeof r !== "string") return;
+  if (e.options.personal === !0) return r;
+  let {
+    text: s,
+    truncated: h
+  } = Wds(r, kC[n], xC[n]);
+  if (h) e.report.truncated.push(n);
+  return s.trim() === "" ? void 0 : s
+}
+
+function It(e, n, r) {
+  if (r && !e.report.dropped.includes(n)) e.report.dropped.push(n)
+}
+
+function In(e, n, r) {
+  let s = xo(e, "additionalContext", r.additionalContext);
+  return {
+    hookEventName: n,
+    ...s !== void 0 && {
+      additionalContext: s
+    }
+  }
+}
+
+function CC(e, n, r) {
+  if (n.hookEventName !== r) {
+    It(e, "hookSpecificOutput_event_mismatch", !0);
+    return
+  }
+  switch (n.hookEventName) {
+    case "PreToolUse": {
+      if (e.options.personal === !0 && n.permissionDecision !== "deny" && n.updatedInput !== void 0 && !ng(n.updatedInput, e.options.toolInput)) return It(e, "updatedInput", !0), {
+        hookEventName: "PreToolUse",
+        permissionDecision: "deny",
+        permissionDecisionReason: vC
+      };
+      let h = e.options.personal === !0 && n.permissionDecision === "defer" ? "ask" : n.permissionDecision,
+        y = h === "deny" || h === "ask";
+      It(e, "allow", h === "allow"), It(e, "defer", h === "defer"), It(e, "updatedInput", n.updatedInput !== void 0), It(e, "permissionDecisionReason", !y && n.permissionDecisionReason !== void 0);
+      let S = y ? xo(e, "permissionDecisionReason", n.permissionDecisionReason) : void 0,
+        w = xo(e, "additionalContext", n.additionalContext);
+      return {
+        hookEventName: "PreToolUse",
+        ...y && {
+          permissionDecision: h
+        },
+        ...S !== void 0 && {
+          permissionDecisionReason: S
+        },
+        ...w !== void 0 && {
+          additionalContext: w
+        }
+      }
+    }
+    case "UserPromptSubmit":
+      return It(e, "sessionTitle", n.sessionTitle !== void 0), {
+        ...In(e, "UserPromptSubmit", n),
+        ...n.suppressOriginalPrompt === !0 && {
+          suppressOriginalPrompt: !0
+        }
+      };
+    case "PostToolUse": {
+      let s = e.options.personal === !0 && !RC(e.options.toolName);
+      if (e.options.personal === !0 && !s && [n.updatedToolOutput, n.updatedMCPToolOutput].some((h) => h !== void 0 && !ng(h, e.options.toolResponse))) e.wordsReplaced = !0;
+      return It(e, "updatedToolOutput", !s && n.updatedToolOutput !== void 0), It(e, "updatedMCPToolOutput", !s && n.updatedMCPToolOutput !== void 0), It(e, "classifierContext", n.classifierContext !== void 0), {
+        ...In(e, "PostToolUse", n),
+        ...s && n.updatedToolOutput !== void 0 && {
+          updatedToolOutput: n.updatedToolOutput
+        },
+        ...s && n.updatedMCPToolOutput !== void 0 && {
+          updatedMCPToolOutput: n.updatedMCPToolOutput
+        }
+      }
+    }
+    case "UserPromptExpansion":
+      return {
+        ...In(e, "UserPromptExpansion", n), ...n.suppressOriginalPrompt === !0 && {
+          suppressOriginalPrompt: !0
+        }
+      };
+    case "PostToolUseFailure":
+      return In(e, "PostToolUseFailure", n);
+    case "PostToolBatch":
+      return In(e, "PostToolBatch", n);
+    case "Stop":
+      return In(e, "Stop", n);
+    case "SubagentStop":
+      return In(e, "SubagentStop", n);
+    case "SubagentStart":
+      return In(e, "SubagentStart", n);
+    case "PermissionDenied":
+      return It(e, "retry", n.retry !== void 0), {
+        hookEventName: "PermissionDenied"
+      };
+    default:
+      return e.options.personal === !0 ? AC(e, n) : rg(e)
+  }
+}
+
+function rg(e) {
+  It(e, "hookSpecificOutput_unsupported_event", !0);
+  return
+}
+
+function AC(e, n) {
+  switch (n.hookEventName) {
+    case "PermissionRequest": {
+      if (n.decision.behavior !== "deny") {
+        It(e, "allow", !0);
+        return
+      }
+      let r = xo(e, "reason", n.decision.message);
+      return {
+        hookEventName: "PermissionRequest",
+        decision: {
+          behavior: "deny",
+          ...r !== void 0 && {
+            message: r
+          },
+          ...n.decision.interrupt === !0 && {
+            interrupt: !0
+          }
+        }
+      }
+    }
+    case "PreModelSwitch": {
+      let r = n.permissionDecision === "deny" || n.permissionDecision === "ask";
+      It(e, "allow", n.permissionDecision === "allow");
+      let s = r ? xo(e, "permissionDecisionReason", n.permissionDecisionReason) : void 0;
+      return {
+        hookEventName: "PreModelSwitch",
+        ...r && {
+          permissionDecision: n.permissionDecision
+        },
+        ...s !== void 0 && {
+          permissionDecisionReason: s
+        }
+      }
+    }
+    case "SessionStart":
+      return It(e, "initialUserMessage", n.initialUserMessage !== void 0), It(e, "sessionTitle", n.sessionTitle !== void 0), {
+        ...In(e, "SessionStart", n),
+        ...n.watchPaths !== void 0 && {
+          watchPaths: n.watchPaths
+        },
+        ...n.reloadSkills === !0 && {
+          reloadSkills: !0
+        }
+      };
+    case "Setup":
+      return In(e, "Setup", n);
+    case "PostModelSwitch":
+      return In(e, "PostModelSwitch", n);
+    case "Notification":
+      return In(e, "Notification", n);
+    case "Elicitation":
+    case "ElicitationResult": {
+      let r = n.action === "decline" || n.action === "cancel";
+      return It(e, "allow", n.action === "accept"), It(e, "content", n.content !== void 0), {
+        hookEventName: n.hookEventName,
+        ...r && {
+          action: n.action
+        }
+      }
+    }
+    case "CwdChanged":
+    case "FileChanged":
+      return {
+        hookEventName: n.hookEventName, ...n.watchPaths !== void 0 && {
+          watchPaths: n.watchPaths
+        }
+      };
+    default:
+      return rg(e)
+  }
+}
+
+function aTe(e, n, r = {}) {
+  let s = {
+    report: {
+      dropped: [],
+      truncated: []
+    },
+    options: r
+  };
+  if ("async" in e) return It(s, "async", !0), {
+    answer: {},
+    report: s.report
+  };
+  let h = e;
+  It(s, "approve", h.decision === "approve"), It(s, "reason", h.decision === "approve" && h.reason !== void 0);
+  let y = r.personal === !0;
+  It(s, "terminalSequence", !y && h.terminalSequence !== void 0), It(s, "metrics", h.metrics !== void 0), It(s, "rewakeSummary", h.rewakeSummary !== void 0);
+  let S = xo(s, "stopReason", h.stopReason),
+    w = h.decision === "approve" ? void 0 : xo(s, "reason", h.reason),
+    A = xo(s, "systemMessage", h.systemMessage),
+    O = h.hookSpecificOutput,
+    M = typeof O === "object" && O !== null && !Array.isArray(O);
+  It(s, "hookSpecificOutput_not_object", O !== void 0 && !M);
+  let j = M ? CC(s, O, n) : void 0,
+    G = s.wordsReplaced ? [A, r.toolName === cs ? EC : TC].filter((N) => N !== void 0).join(`
+`) : A;
+  return {
+    answer: {
+      ...h.continue === !1 && {
+        continue: !1
+      },
+      ...y && h.terminalSequence !== void 0 && {
+        terminalSequence: h.terminalSequence
+      },
+      ...h.suppressOutput === !0 && {
+        suppressOutput: !0
+      },
+      ...S !== void 0 && {
+        stopReason: S
+      },
+      ...h.decision === "block" && {
+        decision: "block"
+      },
+      ...G !== void 0 && {
+        systemMessage: G
+      },
+      ...w !== void 0 && {
+        reason: w
+      },
+      ...j !== void 0 && {
+        hookSpecificOutput: j
+      }
+    },
+    report: s.report
+  }
+}
+
+function pw(e) {
+  if ("decision" in e && e.decision === "block") return !0;
+  if ("continue" in e && e.continue === !1) return !0;
+  let n = "hookSpecificOutput" in e ? e.hookSpecificOutput : void 0;
+  return n !== void 0 && typeof n === "object" && n !== null && "permissionDecision" in n && (n.permissionDecision === "deny" || n.permissionDecision === "ask")
+}
+
+function Dxi(e) {
+  if (sJt(e) || "continue" in e && e.continue === !1) return !1;
+  let n = "hookSpecificOutput" in e ? e.hookSpecificOutput : void 0;
+  return n !== void 0 && typeof n === "object" && n !== null && "permissionDecision" in n && n.permissionDecision === "ask"
+}
+
+function sJt(e) {
+  if ("decision" in e && e.decision === "block") return !0;
+  let n = "hookSpecificOutput" in e ? e.hookSpecificOutput : void 0;
+  return n !== void 0 && typeof n === "object" && n !== null && "permissionDecision" in n && n.permissionDecision === "deny"
+}
+var PC = p(() => B(["allow", "deny", "ask", "defer"])),
+  OC = p(() => u({
+    continue: I().describe("Whether Claude should continue after hook (default: true)").optional(),
+    suppressOutput: I().describe("Hide stdout from transcript (default: false)").optional(),
+    stopReason: o().describe("Message shown when continue is false").optional(),
+    decision: B(["approve", "block"]).optional(),
+    reason: o().describe("Explanation for the decision").optional(),
+    systemMessage: o().describe("Warning message shown to the user").optional(),
+    terminalSequence: o().describe("A terminal escape sequence (e.g. OSC 9 / OSC 777 desktop-notification) for Claude Code to emit on your behalf. Only notification/title OSCs (0, 1, 2, 9, 99, 777) and BEL are permitted; anything else is dropped.").optional(),
+    hookSpecificOutput: Be([u({
+      hookEventName: T("PreToolUse"),
+      permissionDecision: PC().optional(),
+      permissionDecisionReason: o().optional(),
+      updatedInput: me(o(), oe()).optional(),
+      additionalContext: o().optional(),
+      permissionDisplay: aDs().optional().catch(void 0).describe("@internal Desktop host only (coreSchemas.ts).")
+    }), u({
+      hookEventName: T("UserPromptSubmit"),
+      additionalContext: o().optional(),
+      sessionTitle: o().describe("Set the session title").optional(),
+      suppressOriginalPrompt: I().describe('When decision is "block", omit the original prompt from the block message').optional()
+    }), u({
+      hookEventName: T("UserPromptExpansion"),
+      additionalContext: o().optional(),
+      suppressOriginalPrompt: I().describe('When decision is "block", omit the original prompt from the block message').optional()
+    }), u({
+      hookEventName: T("SessionStart"),
+      additionalContext: o().optional(),
+      initialUserMessage: o().optional(),
+      sessionTitle: o().describe("Set the session title").optional(),
+      watchPaths: C(o()).describe("Absolute paths to watch for FileChanged hooks").optional(),
+      reloadSkills: I().describe("Re-scan skill and command directories after SessionStart hooks complete, so skills installed by the hook are available in the same session").optional()
+    }), u({
+      hookEventName: T("Setup"),
+      additionalContext: o().optional()
+    }), u({
+      hookEventName: T("PreModelSwitch"),
+      permissionDecision: B(["allow", "deny", "ask"]).optional(),
+      permissionDecisionReason: o().optional()
+    }), u({
+      hookEventName: T("PostModelSwitch"),
+      additionalContext: o().optional()
+    }), u({
+      hookEventName: T("SubagentStart"),
+      additionalContext: o().optional()
+    }), u({
+      hookEventName: T("PostToolUse"),
+      additionalContext: o().optional(),
+      classifierContext: o().describe("Host-asserted context shown to the auto-mode permission classifier alongside this tool call's result. In the live session the classifier may weigh a user statement relayed here as user intent (it can satisfy a consent bar a user turn would satisfy, never a hard boundary); values restored from saved session state are treated as unverified context only. Relay discipline is the host's obligation: put ONLY genuine user statements in intent-bearing positions \u2014 never tool output or model text dressed as one. Capped at 2000 UTF-16 code units, a budget shared across all hooks that contribute to one call (surrogate-pair-safe; emoji and other astral characters count as two). Honored on synchronous hook responses only: an async hook's late response arrives after the result message is frozen and this field in it is silently ignored. Security note: do not copy untrusted tool output or third-party text into it blindly \u2014 content placed here reaches the permission classifier with host-application framing. Applies only to calls the classifier transcript shows: read-only lookups the transcript omits (file reads, searches)" + (le() ? ", inner REPL calls, and" : " and") + " remote-engine shells produce no per-result line, and context attached to them is silently unused. Not a delivery channel: it is bound to a single call id and sized for a short assertion, not for relaying messages or events. Rewrite integrity: if this assertion describes output you are rewriting, return it in the SAME hook result as the rewrite \u2014 it is then dropped automatically if your rewrite is rejected or superseded by a later hook's rewrite; assertions returned without a rewrite are never invalidated by other hooks' rewrites, so a non-rewriting hook should assert only what holds regardless of other hooks' rewrites \u2014 hosts that need an assertion bound to exact output bytes should make it in the hook that produces those bytes. (Do NOT return an identity rewrite just to pair an assertion: hooks run in parallel on the ORIGINAL output, so an identity rewrite competes last-write-wins with sibling rewrites and can clobber a real redaction.)").optional(),
+      updatedToolOutput: oe().describe("Replaces the tool output before it is sent to the model").optional(),
+      updatedMCPToolOutput: oe().describe("Replaces the output for MCP tools only. Prefer updatedToolOutput, which works for all tools").optional()
+    }), u({
+      hookEventName: T("PostToolUseFailure"),
+      additionalContext: o().optional()
+    }), u({
+      hookEventName: T("PostToolBatch"),
+      additionalContext: o().optional()
+    }), u({
+      hookEventName: T("Stop"),
+      additionalContext: o().optional()
+    }), u({
+      hookEventName: T("SubagentStop"),
+      additionalContext: o().optional()
+    }), u({
+      hookEventName: T("PermissionDenied"),
+      retry: I().optional()
+    }), u({
+      hookEventName: T("Notification"),
+      additionalContext: o().optional()
+    }), u({
+      hookEventName: T("PermissionRequest"),
+      decision: Be([u({
+        behavior: T("allow"),
+        updatedInput: me(o(), oe()).optional(),
+        updatedPermissions: C(I9()).optional()
+      }), u({
+        behavior: T("deny"),
+        message: o().optional(),
+        interrupt: I().optional()
+      })])
+    }), u({
+      hookEventName: T("Elicitation"),
+      action: B(["accept", "decline", "cancel"]).optional(),
+      content: me(o(), oe()).optional()
+    }), u({
+      hookEventName: T("ElicitationResult"),
+      action: B(["accept", "decline", "cancel"]).optional(),
+      content: me(o(), oe()).optional()
+    }), u({
+      hookEventName: T("CwdChanged"),
+      watchPaths: C(o()).describe("Absolute paths to watch for FileChanged hooks").optional()
+    }), u({
+      hookEventName: T("FileChanged"),
+      watchPaths: C(o()).describe("Absolute paths to watch for FileChanged hooks").optional()
+    }), u({
+      hookEventName: T("WorktreeCreate"),
+      worktreePath: o()
+    }), u({
+      hookEventName: T("MessageDisplay"),
+      displayContent: o().describe("Text displayed in place of the delta. Omit (or return the delta unchanged) to display the original.").optional()
+    })]).optional()
+  })),
+  Mye = p(() => {
+    let e = u({
+      async: T(!0),
+      asyncTimeout: E().optional()
+    });
+    return Be([e, OC()])
+  });
+
+function TI(e) {
+  return !(("async" in e) && e.async === !0)
+}
+
+function WDe(e) {
+  return "async" in e && e.async === !0
+}
+var MC = ["PreToolUse", "PostToolUse", "PostToolUseFailure", "PostToolBatch", "UserPromptSubmit", "UserPromptExpansion", "Stop", "StopFailure", "SubagentStart", "SubagentStop", "PermissionDenied"],
+  IC = new Set(MC),
+  DC = {
+    SessionStart: "runs_locally",
+    SessionEnd: "runs_locally",
+    Notification: "runs_locally",
+    PermissionRequest: "later",
+    Setup: "low_value",
+    PreCompact: "low_value",
+    PostCompact: "low_value",
+    PreModelSwitch: "later",
+    PostModelSwitch: "later",
+    TeammateIdle: "low_value",
+    TaskCreated: "low_value",
+    TaskCompleted: "low_value",
+    Elicitation: "low_value",
+    ElicitationResult: "low_value",
+    ConfigChange: "container_internal",
+    WorktreeCreate: "container_internal",
+    WorktreeRemove: "container_internal",
+    InstructionsLoaded: "container_internal",
+    CwdChanged: "container_internal",
+    FileChanged: "container_internal",
+    DirectoryAdded: "container_internal",
+    MessageDisplay: "container_internal"
+  };
+
+function uoe(e) {
+  return IC.has(e)
+}
+
+function Lxi(e) {
+  return uoe(e) ? null : DC[e]
+}
+var NC = ["Write", "Edit", "MultiEdit", "NotebookEdit"],
+  sg = new Set(NC);
+
+function Ha(e, n) {
+  if (e === void 0) return !1;
+  let r = Xl(e);
+  return sg.has(r) || h5(r, n).some((s) => sg.has(Xl(s)))
+}
+
+function Nxi(e, n) {
+  switch (e.hook_event_name) {
+    case "PostToolUse":
+    case "PostToolUseFailure":
+      return Ha(e.tool_name, n);
+    case "PostToolBatch":
+      return (e.tool_calls ?? []).some((r) => Ha(r.tool_name, n));
+    default:
+      return !1
+  }
+}
+var G9e = /^[a-zA-Z0-9_|, -]+$/;
+
+function Fxi(e, n, r) {
+  if (e !== "PostToolUse" && e !== "PostToolUseFailure") return !1;
+  if (!n || n === "*" || !G9e.test(n)) return !1;
+  let s = ig(n, r);
+  return s.length > 0 && s.every((h) => Ha(h, r))
+}
+
+function Hxi(e, n) {
+  if (e === "PostToolBatch") return !0;
+  if (e !== "PostToolUse" && e !== "PostToolUseFailure") return !1;
+  if (n === void 0 || Wut(n) || !G9e.test(n)) return !0;
+  return ig(n).some((r) => Ha(r))
+}
+
+function ig(e, n) {
+  return e.split(/[|,]/).map((r) => r.trim()).filter(Boolean).flatMap((r) => Upe(Xl(r), n))
+}
+
+function Wut(e) {
+  return !e || e === "*" || e === ".*"
+}
+
+function lao(e, n) {
+  if (e === void 0 || Wut(e)) return !0;
+  if (Wut(n) || !G9e.test(n) || !G9e.test(e)) return !1;
+  let r = new Set(e.split(/[|,]/).map((h) => Xl(h.trim())).filter(Boolean)),
+    s = n.split(/[|,]/).map((h) => Xl(h.trim())).filter(Boolean);
+  return s.length > 0 && s.every((h) => r.has(h))
+}
+
+function zds(e) {
+  return typeof e === "object" && e !== null && "deviceOwner" in e && typeof e.deviceOwner === "string"
+}
+
+function ag(e, n, r) {
+  if (!zds(e) || e.deviceOwner !== n) return !1;
+  let s = e.deviceTemplate !== void 0;
+  return r === "both" || r === "templates" === s
+}
+
+function lg(e, n) {
+  let r = LC() ?? {},
+    s = {};
+  for (let [h, y] of Object.entries(r)) {
+    let S = (y ?? []).filter(e);
+    if (S.length > 0) s[h] = S
+  }
+  for (let [h, y] of Object.entries(n))
+    if (y !== void 0 && y.length > 0) s[h] = [...s[h] ?? [], ...y];
+  if (YKn(), Object.keys(s).length > 0) Pj(s)
+}
+
+function agr(e, n, r, s) {
+  let h = {};
+  for (let [y, S] of Object.entries(n)) {
+    if (!uoe(y)) continue;
+    h[y] = (S ?? []).map((w) => ({
+      ...{
+        ...w.matcher !== void 0 && {
+          matcher: w.matcher
+        },
+        hooks: w.hooks.map(({
+          callback: O,
+          timeout: M
+        }) => ({
+          type: "callback",
+          callback: O,
+          ...M !== void 0 && {
+            timeout: M
+          }
+        }))
+      },
+      deviceOwner: e,
+      ...r === "templates" && {
+        deviceTemplate: s?.(y, w) ?? "template"
+      }
+    }))
+  }
+  lg((y) => !ag(y, e, r), h)
+}
+
+function lgr(e, n) {
+  lg((r) => !ag(r, e, n), {})
+}
+
+function dao(e, n) {
+  let r = n === "macos" || n === "unknown";
+  return e.allowAppleEvents === !0 || e.enableWeakerNestedSandbox === !0 || n !== "macos" && n !== "windows" && e.allowNestedUserNamespaces === !0 || r && e.enableWeakerNetworkIsolation === !0 || (r || n === "windows") && e.network?.allowLocalBinding === !0 || (e.network?.allowMachLookup?.length ?? 0) > 0
+}
+import {
+  homedir as $C
+} from "os";
+import {
+  join as Hu
+} from "path";
+var lce = "joined_retry",
+  OWe = "replaced_by_retry",
+  dgr = new Set(["denied_by_session", "withdrawn", OWe, lce]),
+  zut = "disowned",
+  bOn = "lost_in_restart",
+  HC = {
+    maxCalls: 1024,
+    maxResults: 64,
+    maxResultBytes: 8388608,
+    resultTtlMs: 1800000
+  },
+  FC = 10;
+
+function $xi(e = HC, n = Date.now) {
+  let r = new Map,
+    s = 0,
+    h = !1,
+    y = (N) => {
+      s -= N.result?.bytes ?? 0, N.result = void 0
+    },
+    S = (N) => N.summary.state === "completed" || N.summary.state === "failed",
+    w = (N) => {
+      if (!S(N)) return !1;
+      if (N.summary.code !== lce || N.summary.joinedCallId === void 0) return !0;
+      let Z = r.get(N.summary.joinedCallId);
+      return Z === void 0 || S(Z)
+    },
+    A = (N, Z) => {
+      r.set(N, Z);
+      let te = [...r].filter(([Y, ne]) => Y !== N && w(ne)).slice(0, Math.max(0, r.size - e.maxCalls));
+      for (let [Y, ne] of te) y(ne), r.delete(Y);
+      h ||= te.some(([, Y]) => Y.priorEpoch === void 0)
+    },
+    O = (N) => {
+      let {
+        summary: Z,
+        receivedAt: te,
+        result: Y,
+        priorEpoch: ne,
+        outputSoFar: se
+      } = j(N);
+      return {
+        summary: Z,
+        receivedAt: te,
+        result: Y?.value,
+        ...ne !== void 0 && {
+          priorEpoch: ne
+        },
+        ...se !== void 0 && {
+          outputSoFar: se
+        }
+      }
+    },
+    M = (N, Z) => ({
+      callId: N,
+      call: O(Z)
+    }),
+    j = (N) => {
+      if (N.result !== void 0 && n() - N.summary.servedAt > e.resultTtlMs) y(N);
+      return N
+    },
+    G = (N, Z) => {
+      let te = n(),
+        Y = r.get(N);
+      if (Y) {
+        let se = S(Y);
+        if (se && !S({
+            ...Y,
+            summary: {
+              ...Z,
+              servedAt: te
+            }
+          })) return Y;
+        if (y(Y), Y.summary = {
+            ...Z,
+            servedAt: te
+          }, Z.state !== "running" || Z.started !== !0) Y.outputSoFar = void 0;
+        if (!se && S(Y)) {
+          let ae = [...r].filter(([re, _e]) => re === N || _e.summary.joinedCallId === N);
+          for (let [re, _e] of ae) r.delete(re), r.set(re, _e)
+        }
+        return Y
+      }
+      let ne = {
+        summary: {
+          ...Z,
+          servedAt: te
+        },
+        receivedAt: te,
+        result: void 0,
+        retryKey: void 0,
+        workerEpoch: void 0,
+        late: !1,
+        priorEpoch: void 0,
+        queriesSinceReported: 0,
+        reportedQueryStatus: void 0,
+        outputSoFar: void 0
+      };
+      return A(N, ne), ne
+    };
+  return {
+    lookup(N) {
+      let Z = r.get(N);
+      return Z === void 0 ? void 0 : O(Z)
+    },
+    receive(N, Z) {
+      if (r.has(N)) return !1;
+      let te = n();
+      return A(N, {
+        summary: {
+          state: "received",
+          servedAt: te
+        },
+        receivedAt: te,
+        result: void 0,
+        retryKey: Z?.retryKey,
+        workerEpoch: Z?.workerEpoch,
+        late: Z?.late === !0,
+        priorEpoch: void 0,
+        queriesSinceReported: 0,
+        reportedQueryStatus: void 0,
+        outputSoFar: void 0
+      }), !0
+    },
+    rekey(N, Z) {
+      let te = r.get(N);
+      if (te !== void 0) te.retryKey = Z
+    },
+    seed({
+      callId: N,
+      summary: Z,
+      servedAt: te,
+      priorEpoch: Y
+    }) {
+      if (r.has(N)) return;
+      A(N, {
+        summary: {
+          ...Z,
+          servedAt: te
+        },
+        receivedAt: te,
+        result: void 0,
+        retryKey: void 0,
+        workerEpoch: void 0,
+        late: !1,
+        priorEpoch: Y,
+        queriesSinceReported: 0,
+        reportedQueryStatus: void 0,
+        outputSoFar: void 0
+      })
+    },
+    remember(N, Z) {
+      G(N, Z)
+    },
+    noteOutput(N, Z) {
+      let te = r.get(N),
+        Y = te?.summary.code === lce && te.summary.joinedCallId !== void 0 ? r.get(te.summary.joinedCallId) : te;
+      if (Y?.summary.state === "running" && Y.summary.started === !0) Y.outputSoFar = Z
+    },
+    settle(N, Z, te) {
+      let Y = G(N, te),
+        ne = HS(Z);
+      if (ne > e.maxResultBytes) return;
+      let se = [...r.values()].filter((re) => re.result !== void 0),
+        ae = se.length + 1 - e.maxResults;
+      for (let re of se) {
+        if (ae <= 0 && s + ne <= e.maxResultBytes) break;
+        y(re), ae -= 1
+      }
+      y(Y), Y.result = {
+        value: Z,
+        bytes: ne
+      }, s += ne
+    },
+    retryOf(N) {
+      let Z = r.get(N);
+      if (Z?.retryKey === void 0 || Z.workerEpoch === void 0) return;
+      let te = (se) => {
+          if (se.summary.code === lce || se.summary.code === OWe || se.summary.code === "stale") return !1;
+          return !S(se) || se.summary.servedAt > Z.receivedAt
+        },
+        Y = new Map;
+      for (let se of r.values())
+        if (se.summary.joinedCallId !== void 0) {
+          let ae = se.workerEpoch === void 0 ? Number.POSITIVE_INFINITY : se.late ? se.workerEpoch : se.workerEpoch + 1,
+            re = Y.get(se.summary.joinedCallId);
+          Y.set(se.summary.joinedCallId, re === void 0 ? ae : Math.max(re, ae))
+        } let ne;
+      for (let [se, ae] of r)
+        if (se !== N && ae.retryKey === Z.retryKey && ae.workerEpoch !== void 0 && ae.workerEpoch < Z.workerEpoch && te(ae)) {
+          let re = Y.get(se);
+          if (re === void 0) return M(se, ae);
+          if (ne === void 0 && Z.workerEpoch >= re) ne = {
+            id: se,
+            entry: ae
+          }
+        } return ne === void 0 ? void 0 : M(ne.id, ne.entry)
+    },
+    carryQuestion(N, Z, te) {
+      let Y = r.get(N),
+        ne = r.get(Z);
+      if (Y === void 0 || ne === void 0 || ne.summary.code !== lce || ne.summary.joinedCallId !== N || Y.workerEpoch === void 0 || ne.workerEpoch === void 0 || ne.workerEpoch <= Y.workerEpoch) return !1;
+      return y(ne), ne.summary = {
+        state: "asked",
+        askId: te,
+        servedAt: n()
+      }, G(N, {
+        state: "failed",
+        code: lce,
+        joinedCallId: Z
+      }), !0
+    },
+    newestRetryJoinedTo(N) {
+      let Z = r.get(N);
+      if (Z?.workerEpoch === void 0) return;
+      let te;
+      for (let [Y, ne] of r)
+        if (ne.summary.code === lce && ne.summary.joinedCallId === N && ne.workerEpoch !== void 0 && ne.workerEpoch > Z.workerEpoch && (te === void 0 || ne.workerEpoch > te.epoch)) te = {
+          id: Y,
+          epoch: ne.workerEpoch
+        };
+      return te?.id
+    },
+    countOutcomeQuery(N, Z) {
+      let te = r.get(N);
+      if (te === void 0) return;
+      te.queriesSinceReported += 1;
+      let Y = te.queriesSinceReported,
+        ne = te.reportedQueryStatus !== Z || Y >= FC;
+      if (ne) te.queriesSinceReported = 0, te.reportedQueryStatus = Z;
+      return {
+        report: ne,
+        sinceReported: Y
+      }
+    },
+    get forgotAny() {
+      return h
+    },
+    get retainedBytes() {
+      return s
+    }
+  }
+}
+var UC = 1,
+  Lu = 4194304,
+  BC = 6,
+  jC = 20000,
+  WC = 256,
+  zC = 2000,
+  cg = 64;
+
+function gq() {
+  return Hu($C(), ".claude", "state", "served-calls")
+}
+var GC = /^\d{8}T\d{6}Z_[A-Za-z0-9-]{1,128}\.jsonl$/,
+  KC = p(() => {
+    let e = o().min(1).max(512);
+    return Dr("t", [u({
+      t: T("started"),
+      at: o(),
+      epoch: e,
+      caller: e,
+      call_id: e
+    }), u({
+      t: T("disowned"),
+      at: o(),
+      epoch: e,
+      caller: e,
+      call_id: e
+    }), u({
+      t: T("leg"),
+      at: o(),
+      epoch: e,
+      caller: e,
+      call_id: e,
+      record: u({
+        state: B(["received", "running", "asked", "completed", "failed"]),
+        code: o().min(1).max(64).optional(),
+        ended_as: o().min(1).max(64).optional(),
+        ran_nothing: I().optional(),
+        is_error: I().optional()
+      })
+    })])
+  }),
+  VC = p(() => B([...Tgo, ...Cgo, ...Vtn, zut, lce, OWe, bOn])),
+  qC = p(() => B(QTr).exclude(["unrecognized"]));
+
+function Uxi(e) {
+  let {
+    epoch: n
+  } = e, r = e.dir ?? gq(), s = e.storage ?? Dn(), h = e.now ?? (() => new Date), y = Promise.resolve(), S, w, A = !1, O = new Set, M = new Set, j = (Y, ne) => {
+    let se = k(ne) ?? (ne instanceof Error ? ne.name : "unknown");
+    if (!O.has(`${Y}:${se}`)) O.add(`${Y}:${se}`), t(`[remote-tools] served-call log ${Y}: ${se}`, {
+      level: "warn"
+    });
+    if (!M.has(Y)) M.add(Y), c("remote_tool_call_log", Y)
+  }, G, N, Z = async () => {
+    let Y;
+    try {
+      Y = await s.list(r)
+    } catch (_e) {
+      if (K(_e)) return new Map;
+      throw _e
+    }
+    let ne = `_${n}.jsonl`,
+      se = Y.filter((_e) => GC.test(_e) && !_e.endsWith(ne)).sort().reverse().slice(0, BC),
+      ae = new Map;
+    for (let _e of se) {
+      let Se;
+      try {
+        Se = await s.readTail(Hu(r, _e), Lu, {
+          noFollow: !0
+        })
+      } catch (xe) {
+        j("load_failed", xe);
+        continue
+      }
+      let ce = Se.toString("utf8");
+      if (Se.length >= Lu) {
+        let xe = ce.indexOf(`
+`);
+        ce = xe === -1 ? "" : ce.slice(xe + 1)
+      }
+      for (let xe of ce.split(`
+`)) {
+        let ve = YC(xe),
+          Oe = ve === void 0 ? NaN : Date.parse(ve.at);
+        if (ve === void 0 || ve.epoch === n || !Number.isFinite(Oe)) continue;
+        let Ce = `${ve.caller}\x00${ve.call_id}`,
+          Ne = ae.get(Ce);
+        if (Ne === void 0 && ae.size >= jC) continue;
+        if (Ne === void 0 || ve.t !== "disowned" && Ne.line.t === "disowned" || Oe >= Ne.at && (ve.t !== "disowned" || Ne.line.t === "disowned")) ae.set(Ce, {
+          line: ve,
+          at: Oe
+        })
+      }
+    }
+    let re = new Map;
+    for (let {
+        line: _e,
+        at: Se
+      }
+      of ae.values()) {
+      let ce = re.get(_e.caller) ?? [];
+      ce.push(XC(_e, Se)), re.set(_e.caller, ce)
+    }
+    for (let [_e, Se] of re) Se.sort((ce, xe) => ce.servedAt - xe.servedAt), re.set(_e, Se.slice(-WC));
+    return re
+  }, te = {
+    day: "",
+    bySort: new Map
+  };
+  return {
+    note(Y) {
+      let ne = h(),
+        se = `${ne.toISOString().replace(/[-:]/g,"").slice(0,15)}Z`,
+        ae = se.slice(0, 8),
+        re = !1;
+      if (Y.t === "refused_request") {
+        if (te.day !== ae) te = {
+          day: ae,
+          bySort: new Map
+        };
+        let Ne = `${Y.caller}\x00${Y.what}\x00${Y.variant_of_listed}`,
+          Ie = te.bySort.get(Ne) ?? new Set,
+          Ye = `${Y.length}\x00${Y.name_hash}`;
+        if (Ie.has(Ye) || Ie.size >= cg) return;
+        te.bySort.set(Ne, Ie.add(Ye)), re = Ie.size === cg
+      }
+      let {
+        t: _e,
+        ...Se
+      } = Y, ce = AN({
+        t: _e,
+        at: ne.toISOString(),
+        epoch: n,
+        ...Se,
+        ...re && {
+          more_not_written: !0
+        }
+      }), xe = Buffer.byteLength(ce, "utf8"), ve = "";
+      if (w === void 0 || w.day !== ae || w.bytes + xe > Lu) {
+        let Ne = `${se}_${n}.jsonl`;
+        if (w === void 0 || Ne !== w.name) ve = AN({
+          t: "segment",
+          v: UC,
+          epoch: n,
+          pid: process.pid,
+          started_at: ne.toISOString(),
+          handle_hash: kn(e.targetName)
+        }), w = {
+          name: Ne,
+          day: ae,
+          bytes: Buffer.byteLength(ve, "utf8")
+        }
+      }
+      w.bytes += xe;
+      let Oe = Hu(r, w.name),
+        Ce = ve + ce;
+      y = y.then(async () => {
+        try {
+          if (S ??= s.mkdir(r, 448).catch((Ne) => {
+              throw S = void 0, Ne
+            }), await S, await s.append(Oe, Ce, 384), !A) A = !0, g("remote_tool_call_log")
+        } catch (Ne) {
+          if (K(Ne)) S = void 0;
+          j("append_failed", Ne)
+        }
+      })
+    },
+    get priorLoaded() {
+      return G !== void 0
+    },
+    loadPrior() {
+      if (N === void 0) {
+        let Y = Z().then((se) => {
+            G = se
+          }, (se) => {
+            G ??= new Map, j("load_failed", se)
+          }),
+          ne = new Promise((se) => {
+            let ae = setTimeout(() => {
+              if (G === void 0) G = new Map, j("load_timeout", Error("load_timeout"));
+              se()
+            }, e.loadTimeoutMs ?? zC);
+            Y.then(() => clearTimeout(ae))
+          });
+        N = Promise.race([Y, ne])
+      }
+      return N
+    },
+    priorCallsFor: (Y) => G?.get(Y) ?? [],
+    flush: () => y
+  }
+}
+
+function YC(e) {
+  if (e === "") return;
+  try {
+    let n = KC().safeParse(ds(e));
+    return n.success ? n.data : void 0
+  } catch {
+    return
+  }
+}
+
+function XC(e, n) {
+  let r = {
+    callId: e.call_id,
+    servedAt: n,
+    priorEpoch: e.epoch
+  };
+  switch (e.t) {
+    case "disowned":
+      return {
+        ...r, summary: {
+          state: "failed",
+          code: zut
+        }
+      };
+    case "started":
+      return {
+        ...r, summary: {
+          state: "failed",
+          code: bOn
+        }
+      };
+    case "leg":
+      switch (e.record.state) {
+        case "completed":
+          return {
+            ...r, summary: {
+              state: "completed",
+              isError: e.record.is_error
+            }
+          };
+        case "failed": {
+          let s = e.record.code === void 0 ? void 0 : VC().safeParse(e.record.code),
+            h = qC().safeParse(e.record.ended_as);
+          return {
+            ...r,
+            summary: {
+              state: "failed",
+              ...s !== void 0 && {
+                code: s.success ? s.data : "unrecognized"
+              },
+              ...h.success && {
+                endedAs: h.data
+              },
+              ...e.record.ran_nothing === !0 && {
+                ranNothing: !0
+              }
+            }
+          }
+        }
+        case "asked":
+          return {
+            ...r, summary: {
+              state: "failed",
+              code: "withdrawn",
+              endedAs: "host_stopped"
+            }
+          };
+        case "received":
+        case "running":
+          return {
+            ...r, summary: {
+              state: "failed",
+              code: bOn
+            }
+          }
+      }
+  }
+}
+import {
+  hostname as JC
+} from "os";
+import {
+  dirname as QC,
+  join as ZC
+} from "path";
+var dg = p(() => u({
+    version: T(1),
+    choice: B(["accepted", "declined"]),
+    decidedAt: o(),
+    hostname: o()
+  })),
+  fg = "device-hooks-consent";
+
+function ug() {
+  return Ve.state(fg)
+}
+
+function IWe() {
+  return ZC(Ue(), "state", `${fg}.json`)
+}
+async function cao(e) {
+  try {
+    let n = await e.readText();
+    if (n === void 0) return "unset";
+    let r = dg().safeParse(ee(n));
+    return r.success && r.data.hostname === e.hostname() ? r.data.choice : "unset"
+  } catch {
+    return "unset"
+  }
+}
+async function Gds(e, n) {
+  try {
+    return await n.writeText(_({
+      version: 1,
+      choice: e,
+      decidedAt: n.now().toISOString(),
+      hostname: n.hostname()
+    }, null, 2) + `
+`), !0
+  } catch {
+    return !1
+  }
+}
+
+function MWe(e) {
+  return {
+    readText: async () => {
+      if (e) {
+        let n = await e.readText([ug()]);
+        if (!n.ok) throw Error("device-hooks consent read failed");
+        let r = n.value.items[0];
+        return r.found ? r.value : void 0
+      }
+      return Dn().read(IWe())
+    },
+    writeText: async (n) => {
+      if (e) {
+        if (!(await e.write(ug(), n, {
+            mode: 384
+          })).ok) throw Error("device-hooks consent write failed");
+        return
+      }
+      let r = IWe();
+      await Dn().mkdir(QC(r)), await Dn().atomicWrite(r, n, 384)
+    },
+    now: () => new Date,
+    hostname: JC
+  }
+}
+
+function pg() {
+  return {
+    current: null,
+    noticed: !1
+  }
+}
+
+function Vds(e, n) {
+  e.current = {
+    value: Promise.resolve(n),
+    origin: "given"
+  }
+}
+
+function eA(e, n) {
+  if (e.current === null) e.current = {
+    value: cao(n),
+    origin: "read"
+  };
+  return e.current
+}
+async function Kds(e, n) {
+  let r = await Fu(e, n);
+  if (r.stored !== "accepted" || r.origin !== "read") return r;
+  let s = await tA(n);
+  if (e.current?.origin === "given") return Fu(e, n);
+  if (s === null) return r;
+  return e.current = {
+    value: Promise.resolve(s),
+    origin: "read"
+  }, {
+    stored: s,
+    origin: "read"
+  }
+}
+async function tA(e) {
+  try {
+    let n = await e.readText();
+    if (n === void 0) return "unset";
+    let r = dg().safeParse(ee(n));
+    return r.success && r.data.hostname === e.hostname() && r.data.choice === "declined" ? "declined" : null
+  } catch (n) {
+    return K(n) ? "unset" : null
+  }
+}
+async function Fu(e, n) {
+  let r = eA(e, n),
+    s = await r.value.catch(() => "unset");
+  return e.current === r ? {
+    stored: s,
+    origin: r.origin
+  } : Fu(e, n)
+}
+
+function hg() {
+  return De()
+}
+
+function qds(e, n) {
+  try {
+    e.emit(n)
+  } catch (r) {
+    t(`[deviceHooks] a consent listener failed: ${r instanceof Error?r.message:String(r)}`, {
+      level: "warn"
+    })
+  }
+}
+
+function Bxi(e, n) {
+  return e.subscribe(n)
+}
+
+function jxi({
+  deps: e,
+  pin: n,
+  onNotAsked: r,
+  isStoreInReach: s,
+  onUntrustedStore: h
+}) {
+  let y = !1;
+  return async (S, w, A) => {
+    let O = S === null && n.current === null ? await cao(e) : null,
+      {
+        stored: M,
+        origin: j
+      } = O !== null && n.current === null ? {
+        stored: O,
+        origin: "read"
+      } : await Kds(n, e);
+    if (M !== "unset" && j === "read") {
+      let G = await Promise.resolve().then(() => s?.(A) ?? !1).catch(() => "unresolvable");
+      if (G !== !1) {
+        if (S !== null && !y) y = !0, h?.(G);
+        if (G === "unresolvable") return "distrusted"
+      } else return M
+    } else if (M !== "unset") return M;
+    if (S !== null && !w.aborted && !n.noticed) n.noticed = !0, r?.(S);
+    return "not_now"
+  }
+}
+async function iJt(e, n, r) {
+  try {
+    let s = await r(e);
+    return kb([e, s], n) ? "writable" : !1
+  } catch {
+    return "unresolvable"
+  }
+}
+
+function gg() {
+  return {
+    repinned: new Map,
+    everInReach: new Set,
+    answered: new Map,
+    withdrawn: new Set
+  }
+}
+import {
+  realpathSync as nA
+} from "fs";
+import {
+  resolve as oA
+} from "path";
+
+function rA(e, n) {
+  try {
+    return e.realpath(n)
+  } catch {
+    return n
+  }
+}
+var Sg = [
+    ["userSettings", "user"],
+    ["localSettings", "local"],
+    ["flagSettings", "flag"]
+  ],
+  bg = Sg.map(([, e]) => e);
+
+function Fa(e) {
+  return Kt(e) && be(e)?.disableAllHooks === !0
+}
+
+function Uu(e) {
+  return Object.values(e).some((n) => Array.isArray(n) && n.length > 0)
+}
+
+function cgr(e) {
+  if (e.policyUnreadable()) return {
+    kind: "none",
+    reason: "policy_unreadable"
+  };
+  let n = e.getSettingsForSource("policySettings");
+  if (n?.disableAllHooks === !0) return {
+    kind: "none",
+    reason: "policy_disable_all"
+  };
+  if (n?.allowManagedHooksOnly === !0 || e.isSafeMode()) return {
+    kind: "none",
+    reason: "managed_only"
+  };
+  if (e.isRestrictedToPluginOnly()) return {
+    kind: "none",
+    reason: "plugin_only"
+  };
+  let r = e.disableAllHooksByUser();
+  if (r.length > 0) return {
+    kind: "none",
+    reason: "disabled_by_settings",
+    switchSources: r.filter((S) => S !== "flag" || !e.flagSettingsInline())
+  };
+  if (e.isBare()) return {
+    kind: "none",
+    reason: "bare"
+  };
+  if (e.hooksSkippedForTrust()) return {
+    kind: "none",
+    reason: "untrusted_workspace"
+  };
+  let s = new Set,
+    h = [];
+  return {
+    kind: "captured",
+    sources: Sg.flatMap(([S, w]) => {
+      if (!e.isSettingSourceEnabled(S)) return [];
+      if (S === "flagSettings" && e.flagPatchHasHooks()) return h.push({
+        source: w,
+        reason: "runtime_patch"
+      }), [];
+      let A = S === "flagSettings" && e.flagSettingsInline() ? null : e.getSettingsFilePathForSource(S) ?? null,
+        O = e.getSettingsForSource(S)?.hooks;
+      if (!O || !Uu(O)) return [];
+      if (S === "localSettings" && !e.isWorkspaceTrusted()) return h.push({
+        source: w,
+        reason: "untrusted"
+      }), [];
+      if (S === "localSettings" && e.servesWithNoTerminal()) return h.push({
+        source: w,
+        reason: "served_folder"
+      }), [];
+      if (S === "localSettings" && e.isLocalSettingsGitTracked()) return h.push({
+        source: w,
+        reason: "repo_provenance"
+      }), [];
+      if (A !== null && S !== "flagSettings") {
+        let M = rA(e, oA(A));
+        if (s.has(M)) return [];
+        s.add(M)
+      }
+      return [{
+        source: w,
+        settingsFile: A,
+        hooks: O
+      }]
+    }),
+    withheld: h,
+    capturedAtMs: e.now(),
+    ...e.disableAllHooksInCheckout() && {
+      checkoutDisablesAllHooks: !0
+    }
+  }
+}
+
+function ugr() {
+  return {
+    getSettingsForSource: (e) => e === "localSettings" ? t0("localSettings") : be(e),
+    getSettingsFilePathForSource: un,
+    disableAllHooksByUser: () => [...Fa("userSettings") ? ["user"] : [], ...Fa("flagSettings") ? ["flag"] : []],
+    disableAllHooksInCheckout: () => Fa("projectSettings") || Fa("localSettings") || Kt("localSettings") && t0("localSettings")?.disableAllHooks === !0,
+    isWorkspaceTrusted: () => Xh(),
+    servesWithNoTerminal: LJ,
+    isLocalSettingsGitTracked: () => (Wfe(), sM({
+      onIndeterminate: "untracked"
+    })),
+    flagSettingsInline: () => lv() !== void 0,
+    realpath: nA,
+    policyUnreadable: () => xKe(Ob()).length > 0 || w7() && cHe(),
+    hooksSkippedForTrust: () => !Xh(),
+    flagPatchHasHooks: () => {
+      let e = Pc()?.hooks;
+      return typeof e === "object" && e !== null && Object.keys(e).length > 0
+    },
+    isSafeMode: Zr,
+    isRestrictedToPluginOnly: () => fd("hooks"),
+    isBare: () => ur("hooks"),
+    isSettingSourceEnabled: Kt,
+    now: Date.now
+  }
+}
+var wg = 180,
+  sA = 3000,
+  $a = 120000,
+  iA = 8,
+  aJt = 1500,
+  Ua = 15000,
+  aA = 30000,
+  lA = [2000, 4000, 8000, 16000],
+  cA = 1000,
+  uA = 5000,
+  xg = {
+    settings: 5,
+    consent: 4,
+    mute: 3,
+    worker_up: 3,
+    template_fallback: 3,
+    stopped_while_running: 3,
+    connected: 2,
+    retry: 1,
+    renewal: 1,
+    send: 1,
+    init: 0
+  },
+  dA = 120;
+
+function pA(e) {
+  return `${e} ${P(e,"hook")} ${P(e,"starts","start")} in an empty folder for cloud sessions. A hook in your user settings marked "cloud": "device" starts in the project instead, where the cloud session can change files.`
+}
+class kr extends Error {
+  constructor() {
+    super("superseded")
+  }
+}
+
+function Rg(e) {
+  if (e instanceof P$) return "timeout";
+  let n = e instanceof Error ? e.message : String(e);
+  if (n.startsWith("Unsupported control request subtype")) return "unsupported";
+  let r = /^([a-z_]+):/.exec(n);
+  return r ? r[1] : "failed"
+}
+
+function Bu(e) {
+  let n = e instanceof Error ? e.message : String(e);
+  return bi(n.replace(/^[a-z_]+:\s*/, ""), {
+    maxCodeUnits: dA
+  })
+}
+var vg = {
+    flag_off: "the feature is not switched on for your account in the cloud",
+    policy: "a managed policy in the cloud session allows only its own hooks",
+    disabled: "it is switched off in that cloud environment",
+    entrypoint: "this kind of cloud session does not support it",
+    not_managed_cloud_worker: "this kind of cloud session does not support it",
+    hermetic: "that session is sealed off from outside input"
+  },
+  Eg = {
+    interpreter_unavailable: "its interpreter is missing in the cloud",
+    install_failed: "it could not be installed there",
+    event_not_allowed: "it is set on an event or matcher the cloud does not run it under",
+    disabled: "cloud-run templates are off there",
+    awaiting_upload: "its copy has not reached the cloud yet",
+    version_mismatch: "the cloud expects a different copy of it",
+    digest_mismatch: "its copy did not arrive intact",
+    too_large: "its copy is too large",
+    unknown_template: "this cloud session does not know that template"
+  },
+  Tg = {
+    user: "your user settings.json",
+    local: "this folder's .claude/settings.local.json",
+    flag: "the --settings file"
+  },
+  mA = {
+    userSettings: "your user settings.json",
+    projectSettings: "this folder's .claude/settings.json",
+    localSettings: "this folder's .claude/settings.local.json",
+    flagSettings: "the --settings file",
+    policySettings: "the managed settings file"
+  },
+  Yds = "Not running this machine's hooks for the cloud session: it hasn't answered and doesn't recognize this machine as a trusted device. To run them, start a session from this machine with claude --cloud.",
+  hA = "Remote tool serving was turned off by Anthropic (emergency switch). Your hooks are not offered to cloud sessions from this computer until it is turned back on.",
+  gA = "Remote tool serving was turned back on by Anthropic. Your hooks are offered to this cloud session again.",
+  yA = "A settings file in this checkout switches all hooks off (disableAllHooks); that holds for this terminal, but not for the cloud session \u2014 this machine's hooks are still offered to it, because the session itself could have written that file. Put disableAllHooks in your user settings to switch them off for cloud sessions too.",
+  SA = {
+    policy_disable_all: "Hooks are switched off on this machine by an org policy (disableAllHooks); nothing from this machine is offered to the cloud session.",
+    managed_only: "Only managed hooks run on this machine (an org policy, or safe mode); hooks from your own settings are not offered to the cloud session.",
+    plugin_only: "This machine is restricted to plugin hooks; hooks from your settings files are not offered to the cloud session.",
+    bare: "This terminal runs with hooks off (bare mode); nothing from this machine is offered to the cloud session.",
+    disabled_by_settings: "All hooks are switched off in your user settings or --settings file (disableAllHooks); nothing from this machine is offered to the cloud session.",
+    policy_unreadable: "This machine's managed policy could not be read, so its hook switches are unknown; nothing from this machine is offered to the cloud session until it can be.",
+    untrusted_workspace: "This folder is not a trusted workspace; hooks from this machine are not offered to the cloud session started here."
+  },
+  _A = {
+    untrusted: "this folder is not marked trusted on this machine",
+    repo_provenance: "that file is committed to the repository (or its provenance could not be read), so the cloud session's own copy is what applies",
+    runtime_patch: "hooks given with --settings cannot be told apart from ones added at run time",
+    served_folder: "the cloud session this computer serves can write that file, and nobody is at a terminal here to vouch for it"
+  },
+  bA = {
+    after_edit: "after-edit",
+    kind_unsupported: "not a command hook",
+    event_runs_locally: "event not forwarded",
+    event_later: "event not forwarded",
+    event_low_value: "event not forwarded",
+    event_container_internal: "event not forwarded",
+    source_in_sync_root: "in a settings file the cloud session may change",
+    sync_root_is_config_dir: "in a settings file the cloud session may change",
+    unverifiable_target: "script unreadable",
+    in_reach: "where the cloud session can write",
+    interpreter_unvouched: "an interpreter this machine cannot vouch for",
+    loads_from_reach: "loads from where the cloud session can write",
+    unpinned_command: "not a single script",
+    duplicate: "duplicate",
+    over_cap: "over the limit",
+    pattern_matcher: "a pattern matcher",
+    author_skip: 'marked cloud: "skip"'
+  };
+
+function Ba(e, n) {
+  return (Object.hasOwn(e, n) ? e[n] : void 0) ?? `the cloud session said "${bi(n.replace(/_/g," "),{maxCodeUnits:60})}"`
+}
+
+function SOn(e, n) {
+  switch (e.standing.kind) {
+    case "dormant":
+      return e.standing.registeredBefore ? "dormant" : "not_registered";
+    case "registered":
+      return e.lapsesUnusedAt !== null && n >= e.lapsesUnusedAt ? "dormant" : null;
+    case "idle":
+    case "kept_none":
+    case "paused":
+    case "stopped":
+      return null
+  }
+}
+
+function Pg() {
+  return {
+    baseline: null,
+    baselineLocated: !1,
+    refusedTemplates: new Set,
+    refusedTemplatesLife: null,
+    refusedTemplatesSession: null,
+    optInPins: new Map,
+    standing: {
+      kind: "idle"
+    },
+    lapsesUnusedAt: null,
+    stickyRoots: new Set,
+    lastSyncRoot: null,
+    knownSpellings: new Map,
+    everInReach: new Set,
+    localSettingsLocation: {
+      current: null
+    },
+    reachBaseline: null,
+    pinnedScopes: new Set,
+    commonRoots: null,
+    pinnedRoots: new Map
+  }
+}
+
+function Cg(e) {
+  let n = new Map;
+  for (let r of e) n.set(r, (n.get(r) ?? 0) + 1);
+  return [...n].map(([r, s]) => `${r} \xD7${s}`).join(", ")
+}
+async function Xds(e, n, r) {
+  for (let s of n) {
+    if (s === "local" || r.everInReach?.has(s)) return !0;
+    let h = r.scopeSettingsFile(s === "user" ? "userSettings" : "flagSettings");
+    if (h === null) continue;
+    let y = await r.realpath(h).catch(() => null);
+    if (kb(y === null ? [h] : [h, y], e) || y === null && s === "user") return !0
+  }
+  return !1
+}
+
+function ju(e, n) {
+  let r = [],
+    s = e.forwarded.length,
+    h = n !== void 0 && n.ignored > 0 ? ` \u2014 the cloud session accepted ${n.accepted} and ignored ${n.ignored}` : "";
+  if (r.push(s === 0 ? "no hook runs on this machine for the cloud session" : `${s} ${P(s,"hook")} ${P(s,"runs","run")} on this machine when the cloud session asks (${Cg(e.forwarded.map((y)=>y.wire.event))})${h}`), e.held.length > 0) r.push(`${e.held.length} ${P(e.held.length,"stays","stay")} local-only (${Cg(e.held.map((y)=>bA[y.reason]))})`);
+  if (e.templates.length > 0) r.push(`${e.templates.length} ${P(e.templates.length,"runs","run")} in the cloud (${e.templates.map((y)=>y.local.templateId).join(", ")})`);
+  return `Hooks \u25B8 ${r.join("; ")}.`
+}
+
+function Gut(e) {
+  return e.kind === "captured" && e.sources.some((n) => Uu(n.hooks))
+}
+
+function Ag(e) {
+  return e.kind === "captured" ? _(e.sources.map((n) => [n.source, n.settingsFile, n.hooks])) : `none:${e.reason}`
+}
+
+function Wxi(e) {
+  if (e.memory.standing = e.servingMuted ? {
+      kind: "stopped",
+      reason: "muted"
+    } : {
+      kind: "idle"
+    }, e.memory.lapsesUnusedAt = null, e.memory.refusedTemplatesSession !== e.cloudSessionId) e.memory.refusedTemplates.clear(), e.memory.refusedTemplatesLife = null, e.memory.refusedTemplatesSession = e.cloudSessionId;
+  let n = new Set,
+    r = {
+      number: 0,
+      instanceId: e.mintInstanceId(),
+      captured: null,
+      inventory: null,
+      inventoryDirty: !0
+    },
+    s = e.memory;
+  if (s.baseline === null) {
+    let ue = e.capture();
+    if (s.baseline = ue, ue.kind === "captured") {
+      for (let He of ue.sources)
+        if (He.settingsFile !== null) s.knownSpellings.set(He.source, new Set([He.settingsFile]))
+    }
+  }
+  let h = s.baseline;
+  s.reachBaseline ??= new Map(yi.map((ue) => [ue, e.scopeWriteEntries(ue)]));
+  let y = s.reachBaseline;
+  s.commonRoots ??= e.commonWriteRoots();
+  let {
+    commonRoots: S,
+    stickyRoots: w,
+    refusedTemplates: A
+  } = s, O = null, M = null, j = wg, G = {}, N = new Set, Z = !1, te = null, Y = e.servingMuted ? "stopped" : "idle", ne = e.servingMuted ? "muted" : void 0, se = e.servingMuted, ae = !1, re = !1, _e = null, Se = null, ce = !1, xe = null, ve = !1, Oe = !1, Ce = !1, Ne = 0, Ie = !1, Ye = !1, pt = (ue, He) => {
+    Ne = e.now() + He.lease_s * 1000, Ie = He.templates.length > 0, Ye = !0, ke(ue)
+  }, ct = [], gt = (ue) => ct.filter((He) => He.withTemplates || ue < He.mayBeHeldUntil), sn = (ue, He, Qe) => {
+    let ot = e.now() + Qe + j * 1000;
+    if (ue === te?.instanceId) Ne = Math.max(Ne, ot);
+    let Mt = e.now(),
+      st = [...ct.filter((je) => je.instanceId !== ue && (je.withTemplates || Mt < je.mayBeHeldUntil)), {
+        instanceId: ue,
+        withTemplates: He || ct.some((je) => je.instanceId === ue && je.withTemplates),
+        mayBeHeldUntil: ot
+      }];
+    ct = [...st.filter((je) => je.withTemplates), ...st.filter((je) => !je.withTemplates).slice(-iA)]
+  }, ke = (ue) => {
+    ct = ct.filter((He) => He.instanceId !== ue)
+  }, Fe = null, Xe = 0, ft = 0, mt = 0, Tt = null, Re = null, at = !1, Dt = null, Nt = !1, {
+    knownSpellings: Ro,
+    everInReach: Jn
+  } = s, Un = new Map, cn = !1, Ko = new AbortController, Hn = new Set, An = null, $n = null, Eo = null, Dl = null, Iw = () => $n, ff = Number.NEGATIVE_INFINITY, pf = null, Nl = 0, Ll = !1, Vo = null, qo = 0, Yo = !1, Hl = new Set, Dw = e.formatClock ?? ((ue) => new Date(ue).toLocaleTimeString(void 0, {
+    hour: "numeric",
+    minute: "2-digit"
+  })), Nw = "run /hooks to change that", Fl = () => {
+    At("declined", `Hooks stay on this machine only \u2014 you chose not to run them for cloud sessions (${Nw}).`, "debug"), co("declined")
+  }, At = (ue, He, Qe = "info") => {
+    if (Hn.has(ue)) return;
+    Hn.add(ue), e.onLine({
+      line: He,
+      level: Qe
+    })
+  }, mf = () => At("checkout-disable-all", yA, "warning"), hf = () => {
+    if (h === null || !Gut(h)) return;
+    Hn.delete("unmuted"), At("muted", hA), re = !0
+  }, Lw = () => {
+    if (!re || $n === "declined") return;
+    re = !1, At("unmuted", gA)
+  }, Jt = (ue, He, Qe = {
+    accepted: 0,
+    ignored: 0
+  }, ot = r) => {
+    let Mt = ot.inventory;
+    pf = ue;
+    let st = {};
+    for (let je of Mt?.held ?? []) st[je.reason] = (st[je.reason] ?? 0) + 1;
+    if (e.telemetry({
+        outcome: ue,
+        trigger: He,
+        forwarded: Mt?.forwarded.length ?? 0,
+        templates: Mt?.templates.length ?? 0,
+        heldAfterEdit: Mt?.heldCounts.after_edit ?? 0,
+        heldOther: Mt === null ? 0 : U(Mt.held, (je) => je.reason !== "after_edit"),
+        heldByReason: st,
+        accepted: Qe.accepted,
+        ignored: Qe.ignored,
+        attempt: Nl,
+        afterFlagsUnanswered: Ll
+      }), ue === "registered" || ue === "unregistered" || ue === "nothing_to_offer" || ue === "no_consent" || ue === "dormant") Nl = 0
+  }, xi = () => {
+    xe?.clear(), xe = null, ve = !1, s.lapsesUnusedAt = null, Ce = !1, Fe?.clear(), Fe = null
+  }, Xr = (ue, He) => e.sendRequest({
+    subtype: "register_device_hooks",
+    instance_id: ue,
+    display_name: e.displayName,
+    ...O !== null && {
+      worker_epoch: O
+    },
+    hooks: [],
+    templates: []
+  }, {
+    timeoutMs: He
+  }).then(() => {}, () => {}), To = async (ue) => {
+    let He = te,
+      Qe = e.now(),
+      ot = (Ze) => _e !== null && _e.sent && _e.instanceId === Ze,
+      Mt = He !== null && ot(He.instanceId),
+      st = He !== null && gt(Qe).some((Ze) => Ze.instanceId === He.instanceId),
+      je = Ne !== 0 && Qe >= Ne && !Ie && !Mt && !st;
+    if (M = null, te = null, ve = !1, s.lapsesUnusedAt = null, Y !== "stopped") Y = "idle", s.standing = {
+      kind: "idle"
+    };
+    let Lt = gt(Qe).filter((Ze) => Ze.instanceId !== He?.instanceId && !ot(Ze.instanceId));
+    ct = ct.filter((Ze) => ot(Ze.instanceId)), await Promise.all([...Lt.map((Ze) => Xr(Ze.instanceId, ue)), He === null || je ? void 0 : Xr(He.instanceId, ue)])
+  }, co = (ue) => {
+    if (Y = "stopped", s.standing = {
+        kind: "stopped",
+        reason: ue
+      }, ne = ue, xi(), M = null, ue !== "muted") e.arm(null);
+    To(aJt)
+  }, Ei = () => {
+    n.add(r.instanceId), r = {
+      number: r.number + 1,
+      instanceId: e.mintInstanceId(),
+      captured: null,
+      inventory: null,
+      inventoryDirty: !0
+    }
+  }, gf = (ue) => {
+    M = null, Y = "idle", s.standing = {
+      kind: "paused"
+    }, xe?.clear(), xe = null, Fe?.clear(), Fe = null, ft = 0, ve = !1, s.lapsesUnusedAt = null, An = null, qo = e.now() + Math.max(30000, j * 500), e.arm(null), At(`lapse:${ue}`, ue, "warning"), Hl.add(`lapse:${ue}`)
+  }, yf = () => {
+    xe?.clear(), xe = e.setTimer(() => {
+      if (xe = null, Co()) return;
+      if (Oe || Ce) {
+        Bn("renewal");
+        return
+      }
+      ve = !0, s.lapsesUnusedAt = M
+    }, Math.max(30000, j * 500))
+  }, $l = () => {
+    if (Co(), Oe = !0, ve && Y === "registered") ve = !1, s.lapsesUnusedAt = null, Bn("renewal");
+    else if (s.standing.kind === "dormant" && _e === null) Bn("init", !1)
+  }, Sf = () => !Oe && !Ce && (ve && Y === "registered" || s.standing.kind === "dormant" || Y === "registered" && M !== null && e.now() >= M - j * 500), Ci = () => gt(e.now()).length === 0 && (te === null || Ne !== 0 && e.now() >= Ne && !Ie), _f = () => {
+    if (at = !0, s.lapsesUnusedAt = null, s.standing.kind === "dormant") s.standing = {
+      kind: "idle"
+    };
+    e.arm(null)
+  }, Ul = (ue, He, Qe = !1) => {
+    Jt("dormant", ue, void 0, He), xi(), ft = 0, Oe = !1, M = null, O = null, Y = "idle", s.standing = {
+      kind: "dormant",
+      registeredBefore: Ye,
+      ...Qe && {
+        senderUnverified: Qe
+      }
+    }, e.arm(null)
+  }, Co = (ue = "renewal") => {
+    if (cn || Nt || _e !== null || Fe !== null && e.now() - Xe < Math.max(30000, j * 500) || Y !== "registered" || M === null || e.now() < M) return !1;
+    return Ul(ue), !0
+  }, Bl = () => {
+    let ue = lA[ft];
+    if (ue === void 0) return ft = 0, !1;
+    ft += 1, Fe?.clear();
+    let He = e.now() + ue;
+    return Xe = He, Fe = e.setTimer(() => {
+      if (Fe = null, e.now() - He >= Math.max(30000, j * 500)) {
+        if (ft = 0, !Co() && Y === "idle" && !cn && !Nt) Ul("retry");
+        return
+      }
+      Bn("retry")
+    }, ue), !0
+  }, dn = (ue) => {
+    if (cn || Nt || ue.number !== r.number) throw new kr
+  }, jl = async (ue) => {
+    let He = await e.realpath(e.projectRoot).catch(() => e.projectRoot);
+    await z9e({
+      stickyRoots: w,
+      pinnedScopes: s.pinnedScopes,
+      pinnedRoots: s.pinnedRoots,
+      baseRoots: [...But({
+        launchDir: e.launchDir,
+        launchDirReal: await e.launchDirReal(),
+        ...ue !== null && {
+          syncRoot: ue.root,
+          syncRootReal: ue.real
+        }
+      }), ...[e.projectRoot, He].filter(LI)],
+      reachBaseline: y,
+      scopeSettingsFile: e.scopeSettingsFile,
+      realpath: e.realpath,
+      commonRoots: () => S,
+      scopeRoots: e.scopeWriteRoots
+    });
+    for (let Qe of s.pinnedScopes)
+      if (!Hn.has(`reach:${Qe}`) && _(e.scopeWriteEntries(Qe)) !== _(y.get(Qe) ?? [])) At(`reach:${Qe}`, `The places Claude may write in ${mA[Qe]} changed during this cloud session. Because the cloud session can write that file, this session keeps judging which of this machine's hooks it may run by what the file held when you launched \u2014 restart claude --cloud to apply your edit. If neither you nor another session on this machine changed it, the cloud session may have: check that file before relaunching, since a relaunch trusts whatever it says.`, "warning"), e.reachPinnedTelemetry?.(Qe);
+    return [...w]
+  }, Hw = (ue, He) => Xds(ue, He, {
+    realpath: e.realpath,
+    scopeSettingsFile: e.scopeSettingsFile,
+    everInReach: Jn
+  }), Fw = async (ue, He) => {
+    let Qe = s.baseline;
+    if (Qe === null) return ue;
+    if (ue.kind === "none") {
+      if (ue.reason === "disabled_by_settings" && Qe.kind === "captured" && await Hw(He, ue.switchSources ?? ["user", "flag"])) {
+        if (Gut(Qe)) At("none:settings", "All hooks were switched off in a settings file during this cloud session; for the cloud session this machine keeps the hooks it had when you launched \u2014 restart claude --cloud to apply the change. If you did not change it, the cloud session may have.", "warning");
+        return Qe
+      }
+      return ue
+    }
+    if (Qe.kind === "none" && Qe.reason === "disabled_by_settings") {
+      if (Gut(ue)) At("none:lifted", "All hooks were switched off in a settings file when this cloud session started and that switch has since been removed; for the cloud session this machine keeps them off \u2014 restart claude --cloud to offer them. If you did not change it, the cloud session may have.", "warning");
+      return Qe
+    }
+    let ot = Qe.kind === "captured" ? Qe.sources : [],
+      Mt = async (Ze, Qt) => {
+        let fn = Ro.get(Ze) ?? new Set;
+        if (Qt !== null) fn.add(Qt), await e.realpath(Qt).then((po) => fn.add(po), () => Jn.add(Ze));
+        return Ro.set(Ze, fn), [...fn]
+      }, st = new Map(ue.sources.map((Ze) => [Ze.source, Ze])), je = [];
+    for (let Ze of bg) {
+      let Qt = st.get(Ze) ?? null,
+        fn = ot.find((Mi) => Mi.source === Ze) ?? null,
+        po = Qt?.settingsFile ?? fn?.settingsFile ?? null,
+        Oi = await Mt(Ze, po),
+        Ut = Jn.has(Ze) || kb(Oi, He);
+      if (Ut) Jn.add(Ze);
+      if (!Ut) {
+        if (Qt !== null) je.push(Qt);
+        continue
+      }
+      let Jo = po === null ? Tg[Ze] : Mr(po);
+      if (fn === null) {
+        if (Qt !== null) At(`appeared:${Ze}`, `A hooks file appeared at ${Jo} during this cloud session, where the session itself can write; it is ignored for this session.`, "warning"), e.sourcePinnedTelemetry?.({
+          source: Ze,
+          changed: !1,
+          appeared: !0,
+          vanished: !1
+        });
+        continue
+      }
+      if (Qt === null || _(Qt.hooks) !== _(fn.hooks)) At(`pinned:${Ze}`, Ze === "local" ? `Hooks changed in ${Jo}, which the cloud session can write. The change is ignored for this session. Check the file, then restart claude --cloud.` : `${Jo} changed during this cloud session. If neither you nor another session on this machine changed it, the cloud session may have: check that file before relaunching.`, "warning"), e.sourcePinnedTelemetry?.({
+        source: Ze,
+        changed: !0,
+        appeared: !1,
+        vanished: Qt === null
+      });
+      je.push(fn)
+    }
+    let Lt = new Set(je.map((Ze) => Ze.source));
+    return {
+      ...ue,
+      sources: je,
+      withheld: ue.withheld.filter((Ze) => !Lt.has(Ze.source))
+    }
+  }, bf = async (ue) => {
+    if (ue.inventory !== null && !ue.inventoryDirty) return ue.inventory;
+    let He = await e.syncRoot();
+    dn(ue), s.lastSyncRoot = He;
+    let Qe = await jl(He);
+    if (dn(ue), ue.captured === null) {
+      let je = e.capture();
+      h = je, Re = Ag(je), s.baseline ??= je;
+      let Lt = s.baseline;
+      if (!s.baselineLocated && Lt.kind === "captured") {
+        s.baselineLocated = !0;
+        for (let Ze of Lt.sources)
+          if (Ze.settingsFile !== null) {
+            let Qt = Ro.get(Ze.source) ?? new Set;
+            if (Qt.add(Ze.settingsFile), await e.realpath(Ze.settingsFile).then((fn) => Qt.add(fn), () => Jn.add(Ze.source)), Ro.set(Ze.source, Qt), kb([...Qt], Qe)) Jn.add(Ze.source)
+          } dn(ue)
+      }
+      ue.captured = je === s.baseline ? je : await Fw(je, Qe), dn(ue)
+    }
+    let ot = await e.buildInventory({
+      captured: ue.captured,
+      instanceId: ue.instanceId,
+      syncRoot: He,
+      reachRoots: Qe,
+      withoutTemplates: A
+    });
+    dn(ue), ue.inventory = ot;
+    let Mt = await e.ensureConsent(null, Ko.signal, Qe);
+    if (dn(ue), Eo = Mt === "declined", Eo) return ot;
+    ue.inventoryDirty = !1;
+    for (let je of ot.notices) At(`notice:${je}`, je);
+    let st = e.servicerDefaults.unmarkedStartFolder === "private" ? U(ot.forwarded, (je) => je.local.hook.type === "command" && je.local.cloudOptIn !== !0) : 0;
+    if (st > 0) At("start-outside-project", pA(st));
+    if (ue.captured.kind === "captured") {
+      for (let {
+          source: je,
+          reason: Lt
+        }
+        of ue.captured.withheld) At(`withheld:${je}:${Lt}`, `Hooks from ${Tg[je]} are not offered to the cloud session: ${_A[Lt]}.`);
+      if (ue.captured.checkoutDisablesAllHooks && Gut(ue.captured) || h?.kind === "captured" && h.checkoutDisablesAllHooks && Gut(h)) mf()
+    } else At(`none:${ue.captured.reason}`, SA[ue.captured.reason]);
+    return ot
+  }, $w = async (ue, He, Qe, ot) => {
+    let Mt = await jl(await e.syncRoot());
+    if (dn(ue), $n === "declined") return;
+    e.arm({
+      instanceId: ue.instanceId,
+      retiredInstanceIds: new Set(n),
+      displayName: e.displayName,
+      cloudSessionId: e.cloudSessionId,
+      inventory: He,
+      roots: {
+        containerProjectDir: Qe.project_dir,
+        containerCwd: Qe.cwd,
+        deviceLaunchDir: e.launchDir
+      },
+      frame: {
+        launchDir: e.launchDir,
+        projectRoot: e.launchDir,
+        cloudSessionId: e.cloudSessionId
+      },
+      launchDirReal: ot,
+      cloudWritableRoots: Mt,
+      ...e.servicerDefaults
+    })
+  }, Uw = async (ue, He) => {
+    if (Z) return !1;
+    let Qe = !1;
+    for (let ot of He.templates) {
+      let Mt = `${ot.wire.template}:${ot.wire.digest}`;
+      if (N.has(Mt)) continue;
+      try {
+        await e.sendRequest({
+          subtype: "upload_device_hook_template",
+          template: ot.wire.template,
+          digest: ot.wire.digest,
+          content_base64: ot.local.bytes.toString("base64"),
+          ...O !== null && {
+            worker_epoch: O
+          }
+        }, {
+          timeoutMs: M === null || e.now() >= M ? $a : aA
+        }), dn(ue), N.add(Mt)
+      } catch (st) {
+        if (st instanceof kr) throw st;
+        dn(ue);
+        let je = Rg(st);
+        if (je === "unsupported") {
+          Z = !0;
+          for (let Lt of He.templates) A.add(Lt.local.templateId);
+          return At("template:unsupported", `This cloud session cannot take hook templates (${He.templates.map((Lt)=>Lt.local.templateId).join(", ")}); they stay on this machine for it.`), He.templates.length > 0
+        }
+        if (je === "template_refused" || je === "invalid_upload") {
+          At(`template:${ot.local.templateId}:${je}`, `${ot.local.templateId} could not be moved to the cloud (${Ba(Eg,Bu(st))}); it runs on this machine instead.`), A.add(ot.local.templateId), Qe = !0;
+          continue
+        }
+        throw st
+      }
+    }
+    return Qe
+  }, Bw = async (ue, He, Qe, ot) => {
+    let Mt = e.hookFlags();
+    if (Mt === "unanswered") {
+      if (!Ll) Ll = !0, Jt("flag_unanswered", He);
+      return
+    }
+    if (Mt === "answered_off") {
+      Jt("flag_off", He), At("flag_off", "Hooks from this machine are not offered to this cloud session: the feature is not switched on for your account.", "debug"), co("flag_off");
+      return
+    }
+    Nl += 1;
+    let st = await bf(ue);
+    if (st.forwarded.length === 0 && st.templates.length === 0 && (te !== null || !Ci())) {
+      Jt("unregistered", He), xe?.clear(), xe = null, An = null, e.arm(null), await To(Ua);
+      return
+    }
+    if (st.forwarded.length === 0 && st.templates.length === 0 && M === null) {
+      if (_f(), Jt("nothing_to_offer", He), st.held.length > 0) At(`summary:${ju(st)}`, ju(st), "debug");
+      return
+    }
+    ce = !1;
+    let je = await e.ensureConsent({
+      forwarded: st.forwarded.length,
+      templateNames: st.templates.map((wt) => wt.local.templateId)
+    }, Ko.signal, await jl(await e.syncRoot()));
+    if (dn(ue), je !== "accepted") {
+      if (je !== "distrusted" || Dl !== "distrusted") Jt(je === "distrusted" ? "consent_distrusted" : "no_consent", He);
+      if (Dl = je, je === "declined") {
+        Fl();
+        return
+      }
+      if (at = je === "not_now", xe?.clear(), xe = null, ve = !1, M = null, s.lapsesUnusedAt = null, s.standing.kind === "dormant") s.standing = {
+        kind: "idle"
+      };
+      if (An = null, e.arm(null), te !== null || !Ci()) await To(Ua);
+      if (dn(ue), je === "distrusted") yf();
+      return
+    }
+    if (at = !1, Dl = "accepted", await Uw(ue, st)) {
+      if (ue.inventoryDirty = !0, te?.instanceId === ue.instanceId) throw dn(ue), Pi(), Se = "template_fallback", new kr;
+      st = await bf(ue)
+    }
+    let Lt = st.templates.filter((wt) => !A.has(wt.local.templateId)).map((wt) => wt.wire);
+    if (st.forwarded.length === 0 && Lt.length === 0) {
+      if (te !== null || !Ci()) {
+        Jt("unregistered", He), xe?.clear(), xe = null, An = null, e.arm(null), await To(Ua);
+        return
+      }
+      if (M === null) {
+        _f(), Jt("nothing_to_offer", He);
+        return
+      }
+    }
+    dn(ue);
+    let Ze = await e.launchDirReal();
+    dn(ue);
+    let Qt = He !== "retry" && (M === null || e.now() >= M) ? $a : Ua;
+    if (_e?.instanceId === ue.instanceId) _e.sent = !0, _e.listenMs = Qt, sn(ue.instanceId, Lt.length > 0, Qt);
+    let fn = await e.sendRequest({
+        subtype: "register_device_hooks",
+        instance_id: ue.instanceId,
+        display_name: e.displayName,
+        lease_s: wg,
+        ...O !== null && {
+          worker_epoch: O
+        },
+        hooks: st.forwarded.map((wt) => wt.wire),
+        templates: Lt,
+        held: {
+          after_edit: st.heldCounts.after_edit,
+          kind_unsupported: st.heldCounts.kind_unsupported,
+          other: st.heldCounts.other
+        }
+      }, {
+        timeoutMs: Qt,
+        onEchoed: ot
+      }),
+      po = Dt !== null && (Dt.instanceId === void 0 || Dt.instanceId === ue.instanceId) ? Dt : null;
+    if (po !== null) {
+      Dt = null;
+      let wt = aUt().safeParse(fn);
+      if (te = wt.success && wt.data.status === "registered" ? {
+          instanceId: ue.instanceId
+        } : null, wt.success) {
+        if (O = wt.data.worker_epoch, ke(ue.instanceId), wt.data.status === "registered") pt(ue.instanceId, wt.data)
+      }
+      await To(po.budgetMs);
+      return
+    }
+    if (ue.number !== r.number) {
+      let wt = aUt().safeParse(fn);
+      if (wt.success) ke(ue.instanceId);
+      if (wt.success && wt.data.status === "registered") te = {
+        instanceId: ue.instanceId
+      }, O = wt.data.worker_epoch, pt(ue.instanceId, wt.data)
+    }
+    dn(ue);
+    let Oi = aUt().safeParse(fn);
+    if (!Oi.success) {
+      if (Jt("invalid", He), At("invalid_reply", "The cloud session answered the hook registration in a form this version of Claude Code cannot read (try claude update); hooks from this machine won't run for it.", "warning"), te?.instanceId !== ue.instanceId) ke(ue.instanceId), await Xr(ue.instanceId, aJt).catch(() => {});
+      co("invalid");
+      return
+    }
+    let Ut = Oi.data;
+    if (ft = 0, Fe?.clear(), Fe = null, Se === "retry") Se = null;
+    if (mt = 0, Yo = !1, Tt !== null && Tt !== Ut.worker_epoch) {
+      if (N.clear(), Un.clear(), Z = !1, He !== "init") Ce = !1
+    }
+    let Jo = `${e.cloudSessionId}\x00${Ut.worker_epoch}`;
+    if (s.refusedTemplatesLife !== null && s.refusedTemplatesLife !== Jo && A.size > 0) A.clear(), ue.inventoryDirty = !0;
+    s.refusedTemplatesLife = Jo, Tt = Ut.worker_epoch, O = Ut.worker_epoch;
+    let Wl = (wt) => {
+      let wf = new Set(Lt.map((Zt) => Zt.template)),
+        Mo = !1;
+      for (let Zt of wt) {
+        if (!wf.has(Zt.template)) continue;
+        if (Zt.status === "installed") Un.delete(Zt.template);
+        if (Zt.status === "awaiting_upload") {
+          let kf = (Un.get(Zt.template) ?? 0) + 1;
+          if (Un.set(Zt.template, kf), kf >= 2) {
+            A.add(Zt.template), At(`fallback:${Zt.template}:awaiting_twice`, `${Zt.template} could not be handed to this cloud session (it kept asking for the copy); it runs on this machine instead.`), ue.inventoryDirty = !0, Mo = !0;
+            continue
+          }
+          for (let xf of [...N])
+            if (xf.startsWith(`${Zt.template}:`)) N.delete(xf);
+          Mo = !0
+        } else if (Zt.status !== "installed") Un.delete(Zt.template), A.add(Zt.template), At(`fallback:${Zt.template}:${Zt.status}`, `${Zt.template} cannot run in this cloud session (${Ba(Eg,Zt.status)}); it runs on this machine instead.`), ue.inventoryDirty = !0, Mo = !0
+      }
+      return Mo
+    };
+    if (Ut.status === "unregistered") {
+      let wt = st.forwarded.length + Lt.length > 0;
+      if (ke(ue.instanceId), M = null, xe?.clear(), xe = null, ve = !1, s.lapsesUnusedAt = null, Y = "idle", s.standing = {
+          kind: "idle"
+        }, te = null, An = null, at = !0, G = Object.fromEntries((Ut.templates ?? []).map((Mo) => [Mo.template, Mo.status])), Jt("unregistered", He), e.arm(null), Wl(Ut.templates ?? [])) {
+        if (ue.inventoryDirty) Pi();
+        Se = "template_fallback"
+      } else if (wt) s.standing = {
+        kind: "kept_none"
+      }, At("kept_none", "The cloud session kept none of this machine's hooks (it ignored every entry offered); they won't run for it.", "warning");
+      return
+    }
+    Hn.delete("kept_none");
+    for (let wt of Hl) Hn.delete(wt);
+    Hl.clear(), qo = 0, Yo = !1, M = e.now() + Ut.lease_s * 1000, pt(ue.instanceId, Ut), Oe = !1, ve = !1, s.lapsesUnusedAt = null, j = Ut.lease_s, te = {
+      instanceId: ue.instanceId
+    }, G = Object.fromEntries(Ut.templates.map((wt) => [wt.template, wt.status])), Y = "registered", s.standing = {
+      kind: "registered"
+    };
+    let Mi = {
+      accepted: Ut.accepted,
+      ignored: Ut.ignored
+    };
+    if (Jt("registered", He, Mi), Lw(), $n === "declined") {
+      Fl();
+      return
+    }
+    if (yf(), !ce) {
+      if (await $w(ue, st, Ut, Ze), Iw() === "declined") {
+        Fl();
+        return
+      }
+    }
+    let zl = Ut.away_since === void 0 ? null : Date.parse(Ut.away_since);
+    if (zl !== null && !Number.isNaN(zl) && Vo === null) e.onLine({
+      line: `The cloud session stopped running this machine's hooks at ${Dw(zl)} after two went unanswered in a row; it is asking again now.`,
+      level: "warning"
+    }), e.lapseTelemetry?.("away_since");
+    if (Vo !== null && Vo <= Qe) Vo = null;
+    if (Ut.replaced_owner !== void 0 && !n.has(Ut.replaced_owner) && Ut.replaced_owner !== ue.instanceId) At(`replaced:${Ut.replaced_owner}`, "This window now runs your hooks for the cloud session (another attached window did until now).", "debug");
+    let Gl = ju(st, Mi);
+    if (Gl !== An) An = Gl, e.onLine({
+      line: Gl,
+      level: "debug"
+    });
+    for (let wt of st.templates)
+      if (wt.local.label === "legacy" && !A.has(wt.local.templateId)) At(`legacy:${wt.local.templateId}`, `${wt.local.templateId} on this machine is an older copy; the cloud runs that copy \u2014 update it for fixes.`);
+    if (Wl(Ut.templates)) {
+      if (ue.inventoryDirty) Pi();
+      Se = "template_fallback"
+    }
+  }, Pi = () => {
+    n.add(r.instanceId), r = {
+      number: r.number + 1,
+      instanceId: e.mintInstanceId(),
+      captured: r.captured,
+      inventory: null,
+      inventoryDirty: !0
+    }
+  }, Bn = (ue, He = !0) => {
+    if (ue === "consent" && $n === "accepted" && Y === "stopped" && ne === "declined" && !cn && !Nt) {
+      if (Y = "idle", s.standing = {
+          kind: "idle"
+        }, ne = void 0, An = null, Hn.delete("declined"), Ei(), se) Y = "stopped", ne = "muted", s.standing = {
+        kind: "stopped",
+        reason: "muted"
+      }
+    }
+    if (cn || Nt) return;
+    if (Y === "stopped") {
+      if (ne === "muted" && !ae) ae = !0, hf(), Jt("muted", ue);
+      return
+    }
+    if (He && (ue === "init" || ue === "send")) {
+      if (Co(ue), ue === "init") Ce = !0;
+      Oe = !0, ve = !1, s.lapsesUnusedAt = null
+    }
+    if (ue === "stopped_while_running" && Vo === null) Vo = e.now(), e.onLine({
+      line: "The cloud session stopped waiting for a hook still running on this machine (deadline passed or turn interrupted) and went on without its answer; checking that its hooks are still offered.",
+      level: "warning"
+    }), e.lapseTelemetry?.("withdrawn_while_running");
+    if (ue === "connected" || ue === "consent") at = !1;
+    if (ue === "worker_up") {
+      if (e.now() - ff < uA) return;
+      if (at && s.standing.kind === "kept_none") at = !1;
+      if (at) return;
+      O = null, Yo = !1, qo = 0
+    }
+    if (ue === "init" && Yo) Yo = !1, qo = 0;
+    else if (ue === "init" && (at || e.now() < qo) || (ue === "init" || (ue === "renewal" || ue === "connected") && !He) && M !== null && e.now() < M - j * 500) return;
+    if (_e === null) {
+      if (ue !== "retry" && Co(ue) && ue === "renewal") return;
+      if (ue === "connected" && Sf()) return;
+      if (ue === "settings" && Sf() && Ci()) return
+    }
+    if (ue === "send" && (M !== null && e.now() < M - j * 500 || _e?.trigger === "send")) return;
+    if (ue === "init") qo = 0;
+    let Qe = e.now();
+    if (_e !== null) {
+      if (ue === "consent") ce = !0;
+      if (ue === "stopped_while_running") return;
+      if (ue === "send" && Se === null) return;
+      if (ue === "settings" || ue === "consent" || _e.trigger !== ue || Qe - _e.at >= cA) Se = Se !== null && xg[Se] > xg[ue] ? Se : ue;
+      return
+    }
+    if (ue === "worker_up") ff = e.now();
+    if (Y = Y === "registered" ? "registered" : "registering", r.inventory !== null && r.inventoryDirty && te?.instanceId === r.instanceId) Pi();
+    let ot = r,
+      Mt = !1,
+      st = Bw(ot, ue, Qe, (je) => {
+        Mt = je === "unverified"
+      }).catch((je) => {
+        let Lt = Rg(je);
+        if (!(je instanceof kr) && Lt !== "timeout" && Lt !== "failed") ke(ot.instanceId);
+        if (je instanceof kr || cn || Nt || ot.number !== r.number) {
+          if (!cn && !Nt) Jt("superseded", ue, void 0, ot);
+          return
+        }
+        if (Y === "stopped") return;
+        switch (Lt) {
+          case "hook_forwarding_not_ready":
+          case "timeout":
+            if (Lt === "timeout" && (M === null || e.now() >= M) && (ue !== "renewal" && ue !== "retry" || e.now() - Qe >= (_e?.listenMs ?? $a) + Math.max(30000, j * 500))) {
+              if (Se !== "consent" && Se !== "settings" && Se !== "worker_up" && Se !== "mute") Se = null;
+              if (Ul(ue, ot, Mt), Mt) At("sender_unverified", Yds, "warning");
+              return
+            }
+            if (Jt("not_ready", ue, void 0, ot), !Bl()) gf("The cloud session is not answering this machine's hook registration yet (it may still be starting); hooks from this machine are paused for it and are offered again as soon as it reports in."), Yo = !0, s.standing = {
+              kind: "paused"
+            };
+            return;
+          case "hook_forwarding_disabled": {
+            Jt("disabled", ue, void 0, ot);
+            let Ze = Bu(je);
+            if (Ze === "policy" || Ze === "disabled") At("disabled", `The cloud session stopped consulting this machine's hooks: ${Ba(vg,Ze)}.`, "warning");
+            else At("disabled", `This cloud session won't run hooks from this machine: ${Ba(vg,Ze)}.`);
+            co("disabled");
+            return
+          }
+          case "unsupported":
+            Jt("unsupported", ue, void 0, ot), At("unsupported", "This cloud session was created before hooks from your machine could run for it; start a new cloud session to use them. Hooks from this machine won't run for this one."), co("unsupported");
+            return;
+          case "stale_worker_epoch":
+            if (Jt("stale_epoch", ue, void 0, ot), O = null, Ce = !1, mt += 1, mt === 1) Se = "retry";
+            else if (!Bl()) At("stale_storm", "The cloud session keeps calling this machine's registration out of date; hooks from this machine won't run for it. Start a new cloud session if this persists.", "warning"), co("stale");
+            return;
+          case "invalid_registration":
+            Jt("invalid", ue, void 0, ot), At("invalid_registration", `The cloud session refused this machine's hook registration (it said "${Bu(je)}"); hooks from this machine won't run for it \u2014 worth a bug report.`, "warning"), co("invalid");
+            return;
+          default:
+            if (Jt("failed", ue, void 0, ot), ue === "renewal" || ue === "retry") {
+              if (!Bl()) gf("This machine's hook registration with the cloud session could not be renewed; hooks from this machine are paused for it until the connection recovers.")
+            }
+        }
+      }).finally(() => {
+        if (Dt?.instanceId === ot.instanceId) Dt = null;
+        if (_e = null, Y === "registering") Y = M === null ? "idle" : "registered";
+        let je = Se;
+        if (Se = null, je !== null && !cn && !Nt) Bn(je, !1)
+      });
+    _e = {
+      trigger: ue,
+      at: Qe,
+      done: st,
+      instanceId: ot.instanceId,
+      sent: !1,
+      listenMs: $a
+    }
+  };
+  return {
+    requestRegistration: Bn,
+    consentDecided(ue) {
+      if ($n = ue, ue === "declined") e.arm(null);
+      Bn("consent")
+    },
+    turnInFlight() {
+      Co(), Ce = !0, $l()
+    },
+    turnEnded() {
+      Ce = !1
+    },
+    activity() {
+      $l()
+    },
+    ensureRegistered() {
+      if (Co("send"), cn || Nt || s.standing.kind !== "dormant") return $l(), Promise.resolve();
+      Bn("send");
+      let ue = _e;
+      if (ue === null) return Promise.resolve();
+      let He = ue.done.then(() => {}, () => {});
+      return new Promise((Qe) => {
+        let ot = e.setTimer(Qe, sA);
+        He.then(() => {
+          ot.clear(), Qe()
+        })
+      })
+    },
+    settingsChanged() {
+      if (cn || Y === "stopped") return;
+      let ue = e.capture();
+      if (h = ue, ue.kind === "captured" && ue.checkoutDisablesAllHooks && Gut(ue))
+        if (Eo === !1 && $n !== "declined") mf();
+        else r.inventoryDirty = !0;
+      let He = Ag(ue);
+      if (Re !== null && He === Re) return;
+      Re = He, at = !1, Ei(), Bn("settings")
+    },
+    servingMute(ue) {
+      if (se = ue, cn || Nt) return;
+      if (ue) {
+        if (Y === "stopped") return;
+        if (ae = !0, hf(), Jt("muted", "mute"), _e !== null)
+          if (_e.sent) Xr(_e.instanceId, aJt), Dt = {
+            budgetMs: aJt,
+            instanceId: _e.instanceId
+          };
+          else Ei();
+        co("muted");
+        return
+      }
+      if (Y !== "stopped" || ne !== "muted") return;
+      e.arm(null), Y = "idle", s.standing = {
+        kind: "idle"
+      }, ne = void 0, ae = !1, An = null, Hn.delete("muted"), Ei(), Bn("mute")
+    },
+    async unregister(ue) {
+      if (xi(), e.arm(null), Nt = !0, Se = null, _e !== null) {
+        Dt = {
+          budgetMs: ue
+        };
+        let He = _e;
+        await Promise.all([!He.sent || te?.instanceId === He.instanceId ? Promise.resolve() : Xr(He.instanceId, ue), To(ue)]);
+        return
+      }
+      await To(ue)
+    },
+    dispose() {
+      cn = !0, Ko.abort(), xi()
+    },
+    snapshot: () => ({
+      phase: Y,
+      instanceId: r.instanceId,
+      registeredInstanceId: te?.instanceId ?? null,
+      inventory: r.inventory,
+      leaseExpiresAt: M,
+      workerEpoch: O,
+      templateStatuses: G,
+      lastOutcome: pf,
+      ...ne !== void 0 && {
+        stoppedReason: ne
+      }
+    })
+  }
+}
+
+function wA() {
+  let e = new Map,
+    n = new Map,
+    r = new Map;
+  return {
+    servicerFor: (s) => Og(e, s, gg),
+    senderFor: (s) => Og(n, s, Pg),
+    consentPin: pg(),
+    consentAnnounced: hg(),
+    noteAttached: (s) => {
+      r.set(s, (r.get(s) ?? 0) + 1);
+      let h = !1;
+      return () => {
+        if (h) return;
+        h = !0;
+        let y = (r.get(s) ?? 1) - 1;
+        if (y > 0) r.set(s, y);
+        else r.delete(s)
+      }
+    },
+    isAttached: (s) => (r.get(s) ?? 0) > 0,
+    legacyConfigFile: void 0,
+    legacyEnvPin: void 0,
+    servedSettingsChanged: De()
+  }
+}
+var L6 = new W(wA);
+
+function Og(e, n, r) {
+  let s = e.get(n);
+  if (s !== void 0) return s;
+  let h = r();
+  return e.set(n, h), h
+}
+import {
+  resolve as TA
+} from "path";
+import {
+  homedir as kA
+} from "os";
+import {
+  isAbsolute as xA,
+  join as RA
+} from "path";
+var zxi = "CLAUDE_SCRIPT_HOOK_ACK",
+  X8 = VQi * 3,
+  vA = ["${CLAUDE_PROJECT_DIR}", "${CLAUDE_PLUGIN_ROOT}", "${CLAUDE_PLUGIN_DATA}"];
+
+function Gxi(e) {
+  let n = KQi(e);
+  if (n !== void 0) throw new R(`script hook: ${n}`, "script hook: file spelling cannot be anchored");
+  if (xA(e) || vA.some((r) => e.startsWith(r))) return e;
+  if (e === "~" || /^~[\\/]/.test(e)) return RA(kA(), e.slice(2));
+  return `\${CLAUDE_PROJECT_DIR}/${e}`
+}
+
+function Vxi(e, n) {
+  let r = e.replaceAll("${CLAUDE_PROJECT_DIR}", () => n.projectDir);
+  if (n.pluginRoot !== void 0) r = r.replaceAll("${CLAUDE_PLUGIN_ROOT}", () => n.pluginRoot);
+  if (n.pluginData !== void 0) r = r.replaceAll("${CLAUDE_PLUGIN_DATA}", () => n.pluginData);
+  return r.includes("${") ? void 0 : r
+}
+
+function Jds(e, n) {
+  throw Error("script hooks are not available in this build")
+}
+var EA = 60;
+
+function uao(e) {
+  let n = CM(e).split(`
+`).map((h) => h.trim()).find((h) => h.length > 0) ?? "",
+    r = Q(n, EA),
+    s = r.length < n.length || e.trim().includes(`
+`);
+  return `script: ${r}${s?"\u2026":""}`
+}
+
+function CI(e) {
+  switch (e.type) {
+    case "command":
+      return e.args ? [e.command, ...e.args].join(" ") : e.command;
+    case "prompt":
+      return e.prompt;
+    case "agent":
+      return e.prompt;
+    case "http":
+      return e.url;
+    case "mcp_tool":
+      return `${e.server}/${e.tool}`;
+    case "script":
+      return e.file !== void 0 ? Pf(e.file) : uao(e.script ?? "");
+    case "callback":
+      return "callback";
+    case "function":
+      return "function"
+  }
+}
+
+function lJt(e) {
+  return {
+    command: Pf(CI(e)),
+    statusMessage: "statusMessage" in e && e.statusMessage ? Pf(e.statusMessage) : void 0
+  }
+}
+
+function k2(e) {
+  return `${e.type} hook`
+}
+
+function fgr(e) {
+  return e.type === "command" || e.type === "http" || e.type === "script"
+}
+
+function dJt(e) {
+  return Pf("statusMessage" in e && e.statusMessage ? e.statusMessage : CI(e))
+}
+
+function Kxi(e, n = e) {
+  let r = new Map,
+    s = Map.groupBy([...n, ...e].filter(fgr), (h) => h.type);
+  for (let h of e.filter(fgr)) {
+    let y = L((s.get(h.type) ?? []).map(CI)),
+      S = k2(h);
+    r.set(h, y.length === 1 ? S : `${S} ${y.indexOf(CI(h))+1}`)
+  }
+  return r
+}
+
+function pgr(e, n) {
+  return n !== void 0 && !(("statusMessage" in e) && e.statusMessage) ? n : dJt(e)
+}
+
+function qxi(e) {
+  let n = [];
+  if (be("policySettings")?.allowManagedHooksOnly !== !0) {
+    let y = Ib.filter(Kt),
+      S = new Set;
+    for (let w of y) {
+      let A = un(w);
+      if (A) {
+        let M = TA(A);
+        if (S.has(M)) continue;
+        S.add(M)
+      }
+      let O = be(w);
+      if (!O?.hooks) continue;
+      for (let [M, j] of Object.entries(O.hooks))
+        for (let G of j)
+          for (let N of G.hooks) n.push({
+            event: M,
+            config: N,
+            matcher: G.matcher,
+            source: w
+          })
+    }
+  }
+  let h = z();
+  for (let [y, S] of e.get(h).entries())
+    for (let w of S)
+      for (let A of w.hooks) n.push({
+        event: y,
+        config: A,
+        matcher: w.matcher,
+        source: "sessionHook"
+      });
+  return n
+}
+var Wu = {
+  userSettings: {
+    description: "User settings (~/.claude/settings.json)",
+    header: "User Settings",
+    inline: "User"
+  },
+  projectSettings: {
+    description: "Project settings (.claude/settings.json)",
+    header: "Project Settings",
+    inline: "Project"
+  },
+  localSettings: {
+    description: "Local settings (.claude/settings.local.json)",
+    header: "Local Settings",
+    inline: "Local"
+  },
+  policySettings: {
+    description: "policySettings",
+    header: "policySettings",
+    inline: "policySettings"
+  },
+  pluginHook: {
+    description: "Plugin hooks (~/.claude/plugins/*/hooks/hooks.json)",
+    header: "Plugin Hooks",
+    inline: "Plugin"
+  },
+  sessionHook: {
+    description: "Session hooks (in-memory, temporary)",
+    header: "Session Hooks",
+    inline: "Session"
+  },
+  builtinHook: {
+    description: "Built-in hooks (registered internally by Claude Code)",
+    header: "Built-in Hooks",
+    inline: "Built-in"
+  }
+};
+
+function wOn(e) {
+  return Wu[e]?.description ?? e
+}
+
+function mgr(e) {
+  return Wu[e]?.header ?? e
+}
+
+function kOn(e) {
+  return Wu[e]?.inline ?? e
+}
+
+function Yxi(e, n, r) {
+  let s = kpe.reduce((h, y, S) => (h[y] = S, h), {});
+  return [...e].sort((h, y) => {
+    let S = n[r]?.[h] || [],
+      w = n[r]?.[y] || [],
+      A = L(S.map((N) => N.source)),
+      O = L(w.map((N) => N.source)),
+      M = (N) => N === "pluginHook" || N === "builtinHook" ? 999 : s[N],
+      j = Math.min(...A.map(M)),
+      G = Math.min(...O.map(M));
+    if (j !== G) return j - G;
+    return h.localeCompare(y)
+  })
+}
+var la = {
+  "consent.unattended.title": "Let cloud sessions run commands on this computer in auto mode?",
+  "consent.unattended.body": `${"This computer is serving tools to your cloud session. In auto mode, the cloud session decides which commands to run here without asking you each time \u2014 the same way auto mode works locally. Your deny rules and hooks on this computer still apply. Answer once per computer;"} change it later in /config.`,
+  "consent.unattended.body.host": `${"This computer is serving tools to your cloud session. In auto mode, the cloud session decides which commands to run here without asking you each time \u2014 the same way auto mode works locally. Your deny rules and hooks on this computer still apply. Answer once per computer;"} change it later in Settings \u203A Claude Code.`,
+  "consent.unattended.detail": "Until you answer, a cloud session in auto mode asks you before most commands here, as in Manual mode. Whatever you answer, a session set to edit files without asking can still create, edit, move and delete files here, in its folder and any other folder you or your settings let Claude work in, as it would locally.",
+  consent_unattended_saved(e) {
+    return `Yes and No are saved for this computer; to change the answer later, ${e}.`
+  },
+  "auto_off.reason.consent_unset": "Unattended commands from cloud sessions are not yet allowed on this computer. Allow them in /config in claude, or in the Claude desktop app under Remote Control.",
+  "auto_off.reason.consent_declined": "Unattended commands from cloud sessions are turned off on this computer. Turn them on in /config in claude, or in the Claude desktop app under Remote Control.",
+  "auto_off.reason.sandbox_off": "Unattended commands need this computer's sandbox. Pick a mode in /sandbox there, then start claude remote-control again so the change is read.",
+  "auto_off.reason.consent_unknown": "This computer could not read its unattended commands setting. If this repeats, check its Claude Code settings.",
+  "auto_off.reason.consent_forced_off": "This computer's settings turn off unattended commands from cloud sessions in auto mode (remoteTools.allowUnattendedServing).",
+  "auto_off.reason.settings": "This computer's settings turn auto mode off (disableAutoMode).",
+  "auto_off.reason.breaker": "Auto mode is turned off for the Claude Code process running on this computer. Restarting it checks again.",
+  auto_off_notice(e, n) {
+    return `Cloud sessions ask you before most commands on ${e}. ${n}`
+  },
+  "ask.outside_sandbox": "Runs outside the sandbox.",
+  "ask.settings_person_only": "This may change Claude Code's settings or credentials, so only you can approve it.",
+  ask_runs_in_vm(e) {
+    return `This runs in a ${e} VM on this computer, not on the computer itself.`
+  },
+  "serving_off.muted": "Remote tool serving was turned off by Anthropic (emergency switch). No new command is accepted until it is turned back on. A command Claude is waiting on may go on until the cloud session cancels it.",
+  "serving_on.unmuted": "Remote tool serving was turned back on by Anthropic. Commands can run on this computer again.",
+  "serving_off.profile_dirs_unreadable": "This computer's tools are not offered to your cloud session: Windows did not say where your profile folders are (AppData, the Start Menu, and Documents, where your PowerShell profile lives). Restarting Claude Code tries again; the debug log says why.",
+  "serving_off.mount_table_unreadable": "This computer's tools are not offered to your cloud session: the list of mounted drives (/proc/self/mountinfo) could not be read in full. It is read again every few minutes; if this lasts, see the debug log.",
+  "serving_off.bridge_trusted_devices": "This computer's tools are not offered to your cloud session over the device bridge. The bridge cannot check a device's proof, and trusted devices may be required for your organization or could not be checked. Remove the off switch for the session channel from your environment to serve over it instead.",
+  "serving_off.vm_starting": "Your cloud session's calls wait on this computer for now: the VM they must run in is still starting. They run as soon as it is ready.",
+  "serving_off.vm_unavailable": "Your cloud session's calls are refused on this computer: it is set to run them only inside a VM, and the VM is not available.",
+  "call_refused.settings_unreadable": "A call from your cloud session was refused: this computer could not read all of its settings, so it could not tell whether tools must run inside a VM. Its tools are still offered, and the next call is judged afresh. Check that your settings files are valid and that your organization's settings have loaded.",
+  "served_settings.folder_config_not_used": "This folder's hooks and plugin settings are not used while this computer serves a cloud session. The session may have written them: review them first; put only your own in ~/.claude/settings.json.",
+  "served_settings.changed_while_attached": "This project's Claude Code settings changed while a cloud session was using this computer, so the change waits. Run claude apply-project-settings in a terminal in this folder to review. Cloud sessions keep using what you accepted. The cloud session may have made the change.",
+  "served_settings.held_back": "This project's Claude Code settings differ from what you accepted for cloud sessions, which keep using what you accepted. Run claude apply-project-settings in a terminal in this folder to review. A cloud session may have made the change.",
+  "served_settings.own_waiting": "Run claude apply-project-settings in a terminal: cloud sessions are not using your own Claude Code settings as they stand, and a change in them waits for you.",
+  "served_settings.own_waiting.session_note": "The person's own Claude Code settings on this computer hold something they have not accepted for cloud sessions, so allow rules in them may not count here and a command may be asked about. Tell the user: to review, run claude apply-project-settings in a terminal on this computer.",
+  "served_settings.taken_as_found": "A cloud session used this computer before: check .claude/settings.json and settings.local.json. Cloud sessions use them as they are; later changes wait until you run claude apply-project-settings.",
+  "served_settings.record_unavailable": "Cloud sessions cannot use this computer until it can read and save its record of this folder's Claude Code settings. Check free disk space and that ~/.claude/state can be written, then reconnect it.",
+  "served_settings.project_env_not_applied": "This project's Claude Code settings set environment variables not applied while this computer serves a cloud session. The session may have set them; put only your own in ~/.claude/settings.json here.",
+  "refused.sandbox_custody": "This computer can't run this command inside its sandbox while protecting its credential files (a protected directory could not be prepared). Nothing was run. Ask the user to run it themselves on this computer, or continue without it.",
+  "refused.path_too_long"(e, n) {
+    return `${e} cannot open this path: written out in full it comes to ${n.toLocaleString("en-US")} bytes or more, and its operating system takes no path that long. Nothing was read or written.`
+  },
+  "computer_folder.prompt.name": "Use a folder on your computer",
+  "computer_folder.prompt.question": "Let this cloud session use a folder on your computer?",
+  "computer_folder.prompt.meaning": "Claude in this cloud session can then run commands and read and change files in that folder, including in auto mode, under that computer\u2019s own sandbox, rules and hooks. To end it, stop claude remote-control on that computer or disconnect it in the Claude app.",
+  "computer_folder.prompt.folder"(e) {
+    return `folder: ${e}`
+  },
+  "computer_folder.prompt.computer"(e) {
+    return `on: ${e}`
+  },
+  "repository_trust.state.trusted": "Repositories trusted",
+  "repository_trust.state.no_repository": "No repository attached",
+  "repository_trust.state.declined": "Repository trust declined",
+  "repository_trust.state.not_marked": "Repositories not marked trusted",
+  "repository_trust.prompt.meaning": "Answering yes marks everything attached to this cloud session as trusted, which lets the session act on your computer with your authority. Say yes only if you trust all of it.",
+  "repository_trust.prompt.unbound": "This terminal is not the computer this cloud session is bound to, so an answer given here cannot prove which device it came from. Answer on a device that can: claude.ai on the web, the desktop app or the mobile app.",
+  "repository_trust.prompt.not_shown_here": "Open claude.ai or the desktop or mobile app and say whether you trust what's attached to this session. The question can't be shown in full here. The session waits; esc stops this turn.",
+  "repository_trust.prompt.answer_elsewhere"(e) {
+    return `Open ${e} or the desktop or mobile app and say whether you trust what's attached to this session. A yes here doesn't count. The session waits for your answer.`
+  },
+  "repository_trust.folder_waits.required": "Before this session can use a folder on your computer, it needs you to confirm you trust what is attached to it. It asks next.",
+  "repository_trust.folder_waits.declined": "This session cannot use a folder on your computer: you declined to trust what is attached to it. Send it a new message if you want it to ask again.",
+  "repository_trust.folder_waits.unavailable": "This session cannot use a folder on your computer right now: the service could not read what is attached to it. It can try again.",
+  "repository_trust.folder_waits.not_elevated": "Before this session can use a folder on your computer, it needs you to agree to limit it to your trusted devices, for good. If it can ask you, it does so next; answer in Claude on the web or in the desktop app.",
+  "repository_trust.folder_waits.marker": "(The service's own message to Claude is not shown here; the transcript view shows it.)",
+  "repository_trust.served_calls.unattested": "This computer refused a call from the cloud session: the service could not vouch for the call's sender under your organization's trusted-device policy.",
+  "repository_trust.served_calls.unattested_untrusted_repo.not_marked": "This computer refused a call from the cloud session, because you have not yet said you trust what is attached to it. Ask Claude in that session to connect to this computer again. If you are then asked whether you trust what is attached, or to allow the folder again, a yes lets its calls through. If you are not asked, or your yes changes nothing, start a new session with no repository and none of your files.",
+  "repository_trust.served_calls.unattested_untrusted_repo": "This computer refused a call from the cloud session: the session's attached repositories were not marked trusted. Answer the session's trust question to let its calls through.",
+  "forwarding_off.reason.disabled_switch_off": "running tools there is not turned on for this session's cloud environment",
+  "forwarding_off.reason.disabled_flag_off": "running tools there is not enabled for this account",
+  "forwarding_off.reason.disabled_device_policy": "this session cannot confirm that it is limited to trusted devices",
+  "forwarding_off.reason.not_ready": "it has not been able to check whether running tools there is enabled for this account",
+  "forwarding_off.retracted": "Correction: this session now offers device tools that act on the user's computer, so the earlier note that it cannot run tools there no longer holds for them. When the user asks for something on their computer, use those tools.",
+  forwarding_off(e) {
+    return `The user's computer has connected to this cloud session, but this session cannot run tools on it, because ${e}. Do the work in this session's own cloud environment. When the user asks for something on their computer, tell them plainly that this session cannot reach it and why, and that you are working in the cloud environment instead. Do not describe this environment as their computer. Do not retry or look for another route: a tool that only reports information about that computer cannot run anything on it, and if it says the computer is not connected or may be back in a few seconds, this is the cause and waiting will not change it.`
+  },
+  forwarding_off_for_now(e) {
+    return `The user's computer has connected to this cloud session, but this session cannot run tools on it yet, because ${e}. If that changes, the computer's tools are listed for you. Until then, do the work in this session's own cloud environment and do not describe this environment as their computer. When the user asks for something on their computer, tell them plainly that this session cannot reach it yet and why, that there is nothing to change on their computer, and that a new session may help if it stays this way.`
+  },
+  "serving_off.computer_too_old": "Local tools are off: Claude on this computer is too old for this cloud session. Update the Claude app or Claude Code, then open this session again.",
+  "serving_off.session_too_old": "Local tools are off: this cloud session's Claude Code is too old for this computer. Start a new session.",
+  announce_unverified(e) {
+    return `The cloud session did not accept the device proof on this machine's requests, so commands meant for this machine are not routed here and the session uses its own environment instead \u2014 ${e}.`
+  }
+};
+var CA = "confirm_repository_trust",
+  zDe = "request_computer_folder",
+  AA = "request_browser",
+  GDe = "list_computer_folders";
+
+function ja(e, n) {
+  return e === `mcp__${Xd}__${n}`
+}
+
+function DWe(e) {
+  return ja(e, CA)
+}
+
+function yq(e) {
+  return ja(e, zDe)
+}
+
+function Xxi(e) {
+  return ja(e, AA)
+}
+
+function Qds(e) {
+  return ja(e, GDe)
+}
+
+function hgr(e) {
+  return {
+    subtype: e.subtype,
+    tool_name: e.tool_name,
+    input: e.input,
+    tool_use_id: e.tool_use_id,
+    ...e.mcp_server !== void 0 && {
+      mcp_server: e.mcp_server
+    },
+    ...e.title !== void 0 && {
+      title: e.title
+    },
+    ...e.display_name !== void 0 && {
+      display_name: e.display_name
+    },
+    ...e.description !== void 0 && {
+      description: e.description
+    },
+    ...e.agent_id !== void 0 && {
+      agent_id: e.agent_id
+    },
+    suppress_always_allow_rule: !0,
+    default_to_no: !0,
+    requires_user_interaction: !0
+  }
+}
+
+function ggr(e) {
+  return Object.keys(e).length === 3 && ["environment_id", "computer_name", "folder"].every((r) => {
+    let s = e[r];
+    return typeof s === "string" && s.trim() !== ""
+  })
+}
+
+function ygr(e) {
+  return {
+    subtype: e.subtype,
+    tool_name: e.tool_name,
+    input: e.input,
+    tool_use_id: e.tool_use_id,
+    ...e.mcp_server !== void 0 && {
+      mcp_server: e.mcp_server
+    },
+    ...e.agent_id !== void 0 && {
+      agent_id: e.agent_id
+    },
+    ...e.server_prompt !== void 0 && {
+      server_prompt: e.server_prompt
+    },
+    ...e.computer_folder !== void 0 && {
+      computer_folder: e.computer_folder
+    },
+    default_to_no: !0,
+    suppress_always_allow_rule: !0,
+    requires_user_interaction: !0
+  }
+}
+
+function Jxi(e, n) {
+  let r = e.path.split(/[\\/]+/).filter(Boolean).at(-1);
+  return typeof n.computer_name === "string" && typeof n.folder === "string" && typeof n.environment_id === "string" && n.computer_name === e.computer_name && r !== void 0 && r === n.folder
+}
+var PA = "config:repo-trusted",
+  OA = "config:no-git-repo",
+  MA = "config:repo-trust-declined";
+
+function IA(e) {
+  let n = new Set(Array.isArray(e) ? e.filter((r) => typeof r === "string") : []);
+  if (n.has(PA)) return "trusted";
+  if (n.has(OA)) return "no_repository";
+  return n.has(MA) ? "declined" : "not_marked"
+}
+
+function Qxi(e, n) {
+  return IA(e.tags)
+}
+
+function Zds(e) {
+  return e === "not_marked" || e === "declined" || e === "nothing_to_mark"
+}
+
+function _gr(e, n) {
+  return (e === "not_marked" || e === "nothing_to_mark") && !n ? void 0 : e
+}
+
+function Zxi(e) {
+  return e === "nothing_to_mark" ? void 0 : e
+}
+
+function ePi(e) {
+  return la[`repository_trust.state.${e}`]
+}
+var DA = new RegExp(`^(?:<tool_use_error>)?\\s*(${zDe}|${GDe}): \\[(?:repository_trust_(required|declined|unavailable)|session_(not_elevated))\\]`);
+
+function NA(e) {
+  return e === "required" || e === "declined" || e === "unavailable" || e === "not_elevated"
+}
+
+function tPi(e, n) {
+  let r = yq(e) ? zDe : Qds(e) ? GDe : void 0;
+  if (r === void 0) return;
+  let s = Array.isArray(n) ? n[0] : n,
+    h = typeof s === "string" ? s : typeof s === "object" && s !== null && ("text" in s) && typeof s.text === "string" ? s.text : "",
+    y = DA.exec(h);
+  if (y === null || y[1] !== r) return;
+  let S = y[2] ?? y[3];
+  return NA(S) ? S : void 0
+}
+var vOn = "served-calls-unattested",
+  nPi = "served-calls-unattested-untrusted-repo",
+  LA = 30000;
+
+function rPi({
+  read: e,
+  initial: n,
+  now: r = Date.now
+}) {
+  let s, h, y, S, w, A = De(),
+    O = (j) => {
+      let G = j.then((N) => {
+        if (y = h = r(), N !== s) s = N, A.emit()
+      }, () => {
+        y = r()
+      }).catch(() => {}).then(() => {
+        if (S === G) S = void 0;
+        return s
+      });
+      return S = G, G
+    },
+    M = () => O(Promise.resolve().then(e));
+  if (n !== void 0) O(n);
+  return {
+    current: () => s,
+    held: () => s === void 0 || h === void 0 ? void 0 : {
+      state: s,
+      ageMs: r() - h
+    },
+    refresh: (j) => {
+      if (S !== void 0) {
+        if (j?.force !== !0) return S;
+        return w ??= S.then(() => (w = void 0, M())), w
+      }
+      if (j?.force !== !0 && y !== void 0 && r() - y < LA) return Promise.resolve(s);
+      return M()
+    },
+    onChanged: (j) => A.subscribe(j)
+  }
+}
+
+function Ql(e) {
+  return typeof e === "object" && e !== null && "type" in e && e.type === "local_bash"
+}
+
+function Mg() {
+  return import.meta.require("B:/~BUN/root/chunk-j5s59wc5.js")
+}
+
+function lTe(e) {
+  return Mv(e, Z3)
+}
+async function Kut(e) {
+  try {
+    let n = Mg();
+    if (n === null || !e.some(lTe)) return;
+    await n.awaitArtifactRosterForSchemaFreeze()
+  } catch (n) {
+    a(qe(F(n), "Artifact roster wait failed"))
+  }
+}
+async function aPi(e) {
+  try {
+    let n = Mg();
+    return n === null || await n.artifactRosterSettled(e)
+  } catch (n) {
+    return t(`Artifact roster status check failed; context-size telemetry leaves the Artifact tools out: ${d(n)}`), !1
+  }
+}
+
+function Gu() {
+  return {
+    async: !1,
+    breaks: !1,
+    extensions: null,
+    gfm: !0,
+    hooks: null,
+    pedantic: !1,
+    renderer: null,
+    silent: !1,
+    tokenizer: null,
+    walkTokens: null
+  }
+}
+var Lo = Gu();
+
+function Fg(e) {
+  Lo = e
+}
+var Ws = {
+  exec: () => null
+};
+
+function Ot(e, n = "") {
+  let r = typeof e === "string" ? e : e.source,
+    s = {
+      replace: (h, y) => {
+        let S = typeof y === "string" ? y : y.source;
+        return S = S.replace(_n.caret, "$1"), r = r.replace(h, S), s
+      },
+      getRegex: () => new RegExp(r, n)
+    };
+  return s
+}
+var _n = {
+    codeRemoveIndent: /^(?: {1,4}| {0,3}\t)/gm,
+    outputLinkReplace: /\\([\[\]])/g,
+    indentCodeCompensation: /^(\s+)(?:```)/,
+    beginningSpace: /^\s+/,
+    endingHash: /#$/,
+    startingSpaceChar: /^ /,
+    endingSpaceChar: / $/,
+    nonSpaceChar: /[^ ]/,
+    newLineCharGlobal: /\n/g,
+    tabCharGlobal: /\t/g,
+    multipleSpaceGlobal: /\s+/g,
+    blankLine: /^[ \t]*$/,
+    doubleBlankLine: /\n[ \t]*\n[ \t]*$/,
+    blockquoteStart: /^ {0,3}>/,
+    blockquoteSetextReplace: /\n {0,3}((?:=+|-+) *)(?=\n|$)/g,
+    blockquoteSetextReplace2: /^ {0,3}>[ \t]?/gm,
+    listReplaceTabs: /^\t+/,
+    listReplaceNesting: /^ {1,4}(?=( {4})*[^ ])/g,
+    listIsTask: /^\[[ xX]\] /,
+    listReplaceTask: /^\[[ xX]\] +/,
+    anyLine: /\n.*\n/,
+    hrefBrackets: /^<(.*)>$/,
+    tableDelimiter: /[:|]/,
+    tableAlignChars: /^\||\| *$/g,
+    tableRowBlankLine: /\n[ \t]*$/,
+    tableAlignRight: /^ *-+: *$/,
+    tableAlignCenter: /^ *:-+: *$/,
+    tableAlignLeft: /^ *:-+ *$/,
+    startATag: /^<a /i,
+    endATag: /^<\/a>/i,
+    startPreScriptTag: /^<(pre|code|kbd|script)(\s|>)/i,
+    endPreScriptTag: /^<\/(pre|code|kbd|script)(\s|>)/i,
+    startAngleBracket: /^</,
+    endAngleBracket: />$/,
+    pedanticHrefTitle: /^([^'"]*[^\s])\s+(['"])(.*)\2/,
+    unicodeAlphaNumeric: /[\p{L}\p{N}]/u,
+    escapeTest: /[&<>"']/,
+    escapeReplace: /[&<>"']/g,
+    escapeTestNoEncode: /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/,
+    escapeReplaceNoEncode: /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/g,
+    unescapeTest: /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig,
+    caret: /(^|[^\[])\^/g,
+    percentDecode: /%25/g,
+    findPipe: /\|/g,
+    splitPipe: / \|/,
+    slashPipe: /\\\|/g,
+    carriageReturn: /\r\n|\r/g,
+    spaceLine: /^ +$/gm,
+    notSpaceStart: /^\S*/,
+    endingNewline: /\n$/,
+    listItemRegex: (e) => new RegExp(`^( {0,3}${e})((?:[	 ][^\\n]*)?(?:\\n|$))`),
+    nextBulletRegex: (e) => new RegExp(`^ {0,${Math.min(3,e-1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`),
+    hrRegex: (e) => new RegExp(`^ {0,${Math.min(3,e-1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`),
+    fencesBeginRegex: (e) => new RegExp(`^ {0,${Math.min(3,e-1)}}(?:\`\`\`|~~~)`),
+    headingBeginRegex: (e) => new RegExp(`^ {0,${Math.min(3,e-1)}}#`),
+    htmlBeginRegex: (e) => new RegExp(`^ {0,${Math.min(3,e-1)}}<(?:[a-z].*>|!--)`, "i")
+  },
+  HA = /^(?:[ \t]*(?:\n|$))+/,
+  FA = /^((?: {4}| {0,3}\t)[^\n]+(?:\n(?:[ \t]*(?:\n|$))*)?)+/,
+  $A = /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,
+  qs = /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,
+  BA = /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,
+  $g = /(?:[*+-]|\d{1,9}[.)])/,
+  Ug = Ot(/^(?!bull |blockCode|fences|blockquote|heading|html)((?:.|\n(?!\s*?\n|bull |blockCode|fences|blockquote|heading|html))+?)\n {0,3}(=+|-+) *(?:\n+|$)/).replace(/bull/g, $g).replace(/blockCode/g, /(?: {4}| {0,3}\t)/).replace(/fences/g, / {0,3}(?:`{3,}|~{3,})/).replace(/blockquote/g, / {0,3}>/).replace(/heading/g, / {0,3}#{1,6}/).replace(/html/g, / {0,3}<[^\n>]+>\n/).getRegex(),
+  Ku = /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/,
+  jA = /^[^\n]+/,
+  Vu = /(?!\s*\])(?:\\.|[^\[\]\\])+/,
+  zA = Ot(/^ {0,3}\[(label)\]: *(?:\n[ \t]*)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n[ \t]*)?| *\n[ \t]*)(title))? *(?:\n+|$)/).replace("label", Vu).replace("title", /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/).getRegex(),
+  GA = Ot(/^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/).replace(/bull/g, $g).getRegex(),
+  Ga = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul",
+  qu = /<!--(?:-?>|[\s\S]*?(?:-->|$))/,
+  KA = Ot("^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n[ \t]*)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n[ \t]*)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n[ \t]*)+\\n|$))", "i").replace("comment", qu).replace("tag", Ga).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex(),
+  jg = Ot(Ku).replace("hr", qs).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", Ga).getRegex(),
+  VA = Ot(/^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/).replace("paragraph", jg).getRegex(),
+  Xu = {
+    blockquote: VA,
+    code: FA,
+    def: zA,
+    fences: $A,
+    heading: BA,
+    hr: qs,
+    html: KA,
+    lheading: Ug,
+    list: GA,
+    newline: HA,
+    paragraph: jg,
+    table: Ws,
+    text: jA
+  },
+  Ig = Ot("^ *([^\\n ].*)\\n {0,3}((?:\\| *)?:?-+:? *(?:\\| *:?-+:? *)*(?:\\| *)?)(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)").replace("hr", qs).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("blockquote", " {0,3}>").replace("code", "(?: {4}| {0,3}\t)[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", Ga).getRegex(),
+  qA = {
+    ...Xu,
+    table: Ig,
+    paragraph: Ot(Ku).replace("hr", qs).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("table", Ig).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", Ga).getRegex()
+  },
+  YA = {
+    ...Xu,
+    html: Ot(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment", qu).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+    def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+    heading: /^(#{1,6})(.*)(?:\n+|$)/,
+    fences: Ws,
+    lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+    paragraph: Ot(Ku).replace("hr", qs).replace("heading", ` *#{1,6} *[^
+]`).replace("lheading", Ug).replace("|table", "").replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").replace("|tag", "").getRegex()
+  },
+  XA = /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
+  JA = /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
+  zg = /^( {2,}|\\)\n(?!\s*$)/,
+  QA = /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,
+  Ka = /[\p{P}\p{S}]/u,
+  Ju = /[\s\p{P}\p{S}]/u,
+  Gg = /[^\s\p{P}\p{S}]/u,
+  ZA = Ot(/^((?![*_])punctSpace)/, "u").replace(/punctSpace/g, Ju).getRegex(),
+  Kg = /(?!~)[\p{P}\p{S}]/u,
+  eP = /(?!~)[\s\p{P}\p{S}]/u,
+  tP = /(?:[^\s\p{P}\p{S}]|~)/u,
+  nP = /\[[^[\]]*?\]\((?:\\.|[^\\\(\)]|\((?:\\.|[^\\\(\)])*\))*\)|`[^`]*?`|<[^<>]*?>/g,
+  qg = /^(?:\*+(?:((?!\*)punct)|[^\s*]))|^_+(?:((?!_)punct)|([^\s_]))/,
+  oP = Ot(qg, "u").replace(/punct/g, Ka).getRegex(),
+  rP = Ot(qg, "u").replace(/punct/g, Kg).getRegex(),
+  Yg = "^[^_*]*?__[^_*]*?\\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\\*)punct(\\*+)(?=[\\s]|$)|notPunctSpace(\\*+)(?!\\*)(?=punctSpace|$)|(?!\\*)punctSpace(\\*+)(?=notPunctSpace)|[\\s](\\*+)(?!\\*)(?=punct)|(?!\\*)punct(\\*+)(?!\\*)(?=punct)|notPunctSpace(\\*+)(?=notPunctSpace)",
+  sP = Ot(Yg, "gu").replace(/notPunctSpace/g, Gg).replace(/punctSpace/g, Ju).replace(/punct/g, Ka).getRegex(),
+  iP = Ot(Yg, "gu").replace(/notPunctSpace/g, tP).replace(/punctSpace/g, eP).replace(/punct/g, Kg).getRegex(),
+  lP = Ot("^[^_*]*?\\*\\*[^_*]*?_[^_*]*?(?=\\*\\*)|[^_]+(?=[^_])|(?!_)punct(_+)(?=[\\s]|$)|notPunctSpace(_+)(?!_)(?=punctSpace|$)|(?!_)punctSpace(_+)(?=notPunctSpace)|[\\s](_+)(?!_)(?=punct)|(?!_)punct(_+)(?!_)(?=punct)", "gu").replace(/notPunctSpace/g, Gg).replace(/punctSpace/g, Ju).replace(/punct/g, Ka).getRegex(),
+  cP = Ot(/\\(punct)/, "gu").replace(/punct/g, Ka).getRegex(),
+  uP = Ot(/^<(scheme:[^\s\x00-\x1f<>]*|email)>/).replace("scheme", /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/).replace("email", /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/).getRegex(),
+  dP = Ot(qu).replace("(?:-->|$)", "-->").getRegex(),
+  fP = Ot("^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>").replace("comment", dP).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex(),
+  za = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/,
+  pP = Ot(/^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/).replace("label", za).replace("href", /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex(),
+  Xg = Ot(/^!?\[(label)\]\[(ref)\]/).replace("label", za).replace("ref", Vu).getRegex(),
+  Jg = Ot(/^!?\[(ref)\](?:\[\])?/).replace("ref", Vu).getRegex(),
+  mP = Ot("reflink|nolink(?!\\()", "g").replace("reflink", Xg).replace("nolink", Jg).getRegex(),
+  ed = {
+    _backpedal: Ws,
+    anyPunctuation: cP,
+    autolink: uP,
+    blockSkip: nP,
+    br: zg,
+    code: JA,
+    del: Ws,
+    emStrongLDelim: oP,
+    emStrongRDelimAst: sP,
+    emStrongRDelimUnd: lP,
+    escape: XA,
+    link: pP,
+    nolink: Jg,
+    punctuation: ZA,
+    reflink: Xg,
+    reflinkSearch: mP,
+    tag: fP,
+    text: QA,
+    url: Ws
+  },
+  hP = {
+    ...ed,
+    link: Ot(/^!?\[(label)\]\((.*?)\)/).replace("label", za).getRegex(),
+    reflink: Ot(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", za).getRegex()
+  },
+  zu = {
+    ...ed,
+    emStrongRDelimAst: iP,
+    emStrongLDelim: rP,
+    url: Ot(/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/, "i").replace("email", /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/).getRegex(),
+    _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
+    del: /^(~~?)(?=[^\s~])((?:\\.|[^\\])*?(?:\\.|[^\s~\\]))\1(?=[^~]|$)/,
+    text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
+  },
+  gP = {
+    ...zu,
+    br: Ot(zg).replace("{2,}", "*").getRegex(),
+    text: Ot(zu.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
+  },
+  Wa = {
+    normal: Xu,
+    gfm: qA,
+    pedantic: YA
+  },
+  $s = {
+    normal: ed,
+    gfm: zu,
+    breaks: gP,
+    pedantic: hP
+  },
+  yP = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  },
+  Dg = (e) => yP[e];
+
+function qn(e, n) {
+  if (n) {
+    if (_n.escapeTest.test(e)) return e.replace(_n.escapeReplace, Dg)
+  } else if (_n.escapeTestNoEncode.test(e)) return e.replace(_n.escapeReplaceNoEncode, Dg);
+  return e
+}
+
+function Ng(e) {
+  try {
+    e = encodeURI(e).replace(_n.percentDecode, "%")
+  } catch {
+    return null
+  }
+  return e
+}
+
+function Lg(e, n) {
+  let r = e.replace(_n.findPipe, (y, S, w) => {
+      let A = !1,
+        O = S;
+      while (--O >= 0 && w[O] === "\\") A = !A;
+      if (A) return "|";
+      else return " |"
+    }),
+    s = r.split(_n.splitPipe),
+    h = 0;
+  if (!s[0].trim()) s.shift();
+  if (s.length > 0 && !s.at(-1)?.trim()) s.pop();
+  if (n)
+    if (s.length > n) s.splice(n);
+    else
+      while (s.length < n) s.push("");
+  for (; h < s.length; h++) s[h] = s[h].trim().replace(_n.slashPipe, "|");
+  return s
+}
+
+function Bs(e, n, r) {
+  let s = e.length;
+  if (s === 0) return "";
+  let h = 0;
+  while (h < s)
+    if (e.charAt(s - h - 1) === n) h++;
+    else break;
+  return e.slice(0, s - h)
+}
+
+function SP(e, n) {
+  if (e.indexOf(n[1]) === -1) return -1;
+  let r = 0;
+  for (let s = 0; s < e.length; s++)
+    if (e[s] === "\\") s++;
+    else if (e[s] === n[0]) r++;
+  else if (e[s] === n[1]) {
+    if (r--, r < 0) return s
+  }
+  return -1
+}
+
+function Hg(e, n, r, s, h) {
+  let y = n.href,
+    S = n.title || null,
+    w = e[1].replace(h.other.outputLinkReplace, "$1");
+  if (e[0].charAt(0) !== "!") {
+    s.state.inLink = !0;
+    let A = {
+      type: "link",
+      raw: r,
+      href: y,
+      title: S,
+      text: w,
+      tokens: s.inlineTokens(w)
+    };
+    return s.state.inLink = !1, A
+  }
+  return {
+    type: "image",
+    raw: r,
+    href: y,
+    title: S,
+    text: w
+  }
+}
+
+function _P(e, n, r) {
+  let s = e.match(r.other.indentCodeCompensation);
+  if (s === null) return n;
+  let h = s[1];
+  return n.split(`
+`).map((y) => {
+    let S = y.match(r.other.beginningSpace);
+    if (S === null) return y;
+    let [w] = S;
+    if (w.length >= h.length) return y.slice(h.length);
+    return y
+  }).join(`
+`)
+}
+class iTe {
+  options;
+  rules;
+  lexer;
+  constructor(e) {
+    this.options = e || Lo
+  }
+  space(e) {
+    let n = this.rules.block.newline.exec(e);
+    if (n && n[0].length > 0) return {
+      type: "space",
+      raw: n[0]
+    }
+  }
+  code(e) {
+    let n = this.rules.block.code.exec(e);
+    if (n) {
+      let r = n[0].replace(this.rules.other.codeRemoveIndent, "");
+      return {
+        type: "code",
+        raw: n[0],
+        codeBlockStyle: "indented",
+        text: !this.options.pedantic ? Bs(r, `
+`) : r
+      }
+    }
+  }
+  fences(e) {
+    let n = this.rules.block.fences.exec(e);
+    if (n) {
+      let r = n[0],
+        s = _P(r, n[3] || "", this.rules);
+      return {
+        type: "code",
+        raw: r,
+        lang: n[2] ? n[2].trim().replace(this.rules.inline.anyPunctuation, "$1") : n[2],
+        text: s
+      }
+    }
+  }
+  heading(e) {
+    let n = this.rules.block.heading.exec(e);
+    if (n) {
+      let r = n[2].trim();
+      if (this.rules.other.endingHash.test(r)) {
+        let s = Bs(r, "#");
+        if (this.options.pedantic) r = s.trim();
+        else if (!s || this.rules.other.endingSpaceChar.test(s)) r = s.trim()
+      }
+      return {
+        type: "heading",
+        raw: n[0],
+        depth: n[1].length,
+        text: r,
+        tokens: this.lexer.inline(r)
+      }
+    }
+  }
+  hr(e) {
+    let n = this.rules.block.hr.exec(e);
+    if (n) return {
+      type: "hr",
+      raw: Bs(n[0], `
+`)
+    }
+  }
+  blockquote(e) {
+    let n = this.rules.block.blockquote.exec(e);
+    if (n) {
+      let r = Bs(n[0], `
+`).split(`
+`),
+        s = "",
+        h = "",
+        y = [];
+      while (r.length > 0) {
+        let S = !1,
+          w = [],
+          A;
+        for (A = 0; A < r.length; A++)
+          if (this.rules.other.blockquoteStart.test(r[A])) w.push(r[A]), S = !0;
+          else if (!S) w.push(r[A]);
+        else break;
+        r = r.slice(A);
+        let O = w.join(`
+`),
+          M = O.replace(this.rules.other.blockquoteSetextReplace, `
+    $1`).replace(this.rules.other.blockquoteSetextReplace2, "");
+        s = s ? `${s}
+${O}` : O, h = h ? `${h}
+${M}` : M;
+        let j = this.lexer.state.top;
+        if (this.lexer.state.top = !0, this.lexer.blockTokens(M, y, !0), this.lexer.state.top = j, r.length === 0) break;
+        let G = y.at(-1);
+        if (G?.type === "code") break;
+        else if (G?.type === "blockquote") {
+          let N = G,
+            Z = N.raw + `
+` + r.join(`
+`),
+            te = this.blockquote(Z);
+          y[y.length - 1] = te, s = s.substring(0, s.length - N.raw.length) + te.raw, h = h.substring(0, h.length - N.text.length) + te.text;
+          break
+        } else if (G?.type === "list") {
+          let N = G,
+            Z = N.raw + `
+` + r.join(`
+`),
+            te = this.list(Z);
+          y[y.length - 1] = te, s = s.substring(0, s.length - G.raw.length) + te.raw, h = h.substring(0, h.length - N.raw.length) + te.raw, r = Z.substring(y.at(-1).raw.length).split(`
+`);
+          continue
+        }
+      }
+      return {
+        type: "blockquote",
+        raw: s,
+        tokens: y,
+        text: h
+      }
+    }
+  }
+  list(e) {
+    let n = this.rules.block.list.exec(e);
+    if (n) {
+      let r = n[1].trim(),
+        s = r.length > 1,
+        h = {
+          type: "list",
+          raw: "",
+          ordered: s,
+          start: s ? +r.slice(0, -1) : "",
+          loose: !1,
+          items: []
+        };
+      if (r = s ? `\\d{1,9}\\${r.slice(-1)}` : `\\${r}`, this.options.pedantic) r = s ? r : "[*+-]";
+      let y = this.rules.other.listItemRegex(r),
+        S = !1;
+      while (e) {
+        let A = !1,
+          O = "",
+          M = "";
+        if (!(n = y.exec(e))) break;
+        if (this.rules.block.hr.test(e)) break;
+        O = n[0], e = e.substring(O.length);
+        let j = n[2].split(`
+`, 1)[0].replace(this.rules.other.listReplaceTabs, (ne) => " ".repeat(3 * ne.length)),
+          G = e.split(`
+`, 1)[0],
+          N = !j.trim(),
+          Z = 0;
+        if (this.options.pedantic) Z = 2, M = j.trimStart();
+        else if (N) Z = n[1].length + 1;
+        else Z = n[2].search(this.rules.other.nonSpaceChar), Z = Z > 4 ? 1 : Z, M = j.slice(Z), Z += n[1].length;
+        if (N && this.rules.other.blankLine.test(G)) O += G + `
+`, e = e.substring(G.length + 1), A = !0;
+        if (!A) {
+          let ne = this.rules.other.nextBulletRegex(Z),
+            se = this.rules.other.hrRegex(Z),
+            ae = this.rules.other.fencesBeginRegex(Z),
+            re = this.rules.other.headingBeginRegex(Z),
+            _e = this.rules.other.htmlBeginRegex(Z);
+          while (e) {
+            let Se = e.split(`
+`, 1)[0],
+              ce;
+            if (G = Se, this.options.pedantic) G = G.replace(this.rules.other.listReplaceNesting, "  "), ce = G;
+            else ce = G.replace(this.rules.other.tabCharGlobal, "    ");
+            if (ae.test(G)) break;
+            if (re.test(G)) break;
+            if (_e.test(G)) break;
+            if (ne.test(G)) break;
+            if (se.test(G)) break;
+            if (ce.search(this.rules.other.nonSpaceChar) >= Z || !G.trim()) M += `
+` + ce.slice(Z);
+            else {
+              if (N) break;
+              if (j.replace(this.rules.other.tabCharGlobal, "    ").search(this.rules.other.nonSpaceChar) >= 4) break;
+              if (ae.test(j)) break;
+              if (re.test(j)) break;
+              if (se.test(j)) break;
+              M += `
+` + G
+            }
+            if (!N && !G.trim()) N = !0;
+            O += Se + `
+`, e = e.substring(Se.length + 1), j = ce.slice(Z)
+          }
+        }
+        if (!h.loose) {
+          if (S) h.loose = !0;
+          else if (this.rules.other.doubleBlankLine.test(O)) S = !0
+        }
+        let te = null,
+          Y;
+        if (this.options.gfm) {
+          if (te = this.rules.other.listIsTask.exec(M), te) Y = te[0] !== "[ ] ", M = M.replace(this.rules.other.listReplaceTask, "")
+        }
+        h.items.push({
+          type: "list_item",
+          raw: O,
+          task: !!te,
+          checked: Y,
+          loose: !1,
+          text: M,
+          tokens: []
+        }), h.raw += O
+      }
+      let w = h.items.at(-1);
+      if (w) w.raw = w.raw.trimEnd(), w.text = w.text.trimEnd();
+      else return;
+      h.raw = h.raw.trimEnd();
+      for (let A = 0; A < h.items.length; A++)
+        if (this.lexer.state.top = !1, h.items[A].tokens = this.lexer.blockTokens(h.items[A].text, []), !h.loose) {
+          let O = h.items[A].tokens.filter((j) => j.type === "space"),
+            M = O.length > 0 && O.some((j) => this.rules.other.anyLine.test(j.raw));
+          h.loose = M
+        } if (h.loose)
+        for (let A = 0; A < h.items.length; A++) h.items[A].loose = !0;
+      return h
+    }
+  }
+  html(e) {
+    let n = this.rules.block.html.exec(e);
+    if (n) return {
+      type: "html",
+      block: !0,
+      raw: n[0],
+      pre: n[1] === "pre" || n[1] === "script" || n[1] === "style",
+      text: n[0]
+    }
+  }
+  def(e) {
+    let n = this.rules.block.def.exec(e);
+    if (n) {
+      let r = n[1].toLowerCase().replace(this.rules.other.multipleSpaceGlobal, " "),
+        s = n[2] ? n[2].replace(this.rules.other.hrefBrackets, "$1").replace(this.rules.inline.anyPunctuation, "$1") : "",
+        h = n[3] ? n[3].substring(1, n[3].length - 1).replace(this.rules.inline.anyPunctuation, "$1") : n[3];
+      return {
+        type: "def",
+        tag: r,
+        raw: n[0],
+        href: s,
+        title: h
+      }
+    }
+  }
+  table(e) {
+    let n = this.rules.block.table.exec(e);
+    if (!n) return;
+    if (!this.rules.other.tableDelimiter.test(n[2])) return;
+    let r = Lg(n[1]),
+      s = n[2].replace(this.rules.other.tableAlignChars, "").split("|"),
+      h = n[3]?.trim() ? n[3].replace(this.rules.other.tableRowBlankLine, "").split(`
+`) : [],
+      y = {
+        type: "table",
+        raw: n[0],
+        header: [],
+        align: [],
+        rows: []
+      };
+    if (r.length !== s.length) return;
+    for (let S of s)
+      if (this.rules.other.tableAlignRight.test(S)) y.align.push("right");
+      else if (this.rules.other.tableAlignCenter.test(S)) y.align.push("center");
+    else if (this.rules.other.tableAlignLeft.test(S)) y.align.push("left");
+    else y.align.push(null);
+    for (let S = 0; S < r.length; S++) y.header.push({
+      text: r[S],
+      tokens: this.lexer.inline(r[S]),
+      header: !0,
+      align: y.align[S]
+    });
+    for (let S of h) y.rows.push(Lg(S, y.header.length).map((w, A) => ({
+      text: w,
+      tokens: this.lexer.inline(w),
+      header: !1,
+      align: y.align[A]
+    })));
+    return y
+  }
+  lheading(e) {
+    let n = this.rules.block.lheading.exec(e);
+    if (n) return {
+      type: "heading",
+      raw: n[0],
+      depth: n[2].charAt(0) === "=" ? 1 : 2,
+      text: n[1],
+      tokens: this.lexer.inline(n[1])
+    }
+  }
+  paragraph(e) {
+    let n = this.rules.block.paragraph.exec(e);
+    if (n) {
+      let r = n[1].charAt(n[1].length - 1) === `
+` ? n[1].slice(0, -1) : n[1];
+      return {
+        type: "paragraph",
+        raw: n[0],
+        text: r,
+        tokens: this.lexer.inline(r)
+      }
+    }
+  }
+  text(e) {
+    let n = this.rules.block.text.exec(e);
+    if (n) return {
+      type: "text",
+      raw: n[0],
+      text: n[0],
+      tokens: this.lexer.inline(n[0])
+    }
+  }
+  escape(e) {
+    let n = this.rules.inline.escape.exec(e);
+    if (n) return {
+      type: "escape",
+      raw: n[0],
+      text: n[1]
+    }
+  }
+  tag(e) {
+    let n = this.rules.inline.tag.exec(e);
+    if (n) {
+      if (!this.lexer.state.inLink && this.rules.other.startATag.test(n[0])) this.lexer.state.inLink = !0;
+      else if (this.lexer.state.inLink && this.rules.other.endATag.test(n[0])) this.lexer.state.inLink = !1;
+      if (!this.lexer.state.inRawBlock && this.rules.other.startPreScriptTag.test(n[0])) this.lexer.state.inRawBlock = !0;
+      else if (this.lexer.state.inRawBlock && this.rules.other.endPreScriptTag.test(n[0])) this.lexer.state.inRawBlock = !1;
+      return {
+        type: "html",
+        raw: n[0],
+        inLink: this.lexer.state.inLink,
+        inRawBlock: this.lexer.state.inRawBlock,
+        block: !1,
+        text: n[0]
+      }
+    }
+  }
+  link(e) {
+    let n = this.rules.inline.link.exec(e);
+    if (n) {
+      let r = n[2].trim();
+      if (!this.options.pedantic && this.rules.other.startAngleBracket.test(r)) {
+        if (!this.rules.other.endAngleBracket.test(r)) return;
+        let y = Bs(r.slice(0, -1), "\\");
+        if ((r.length - y.length) % 2 === 0) return
+      } else {
+        let y = SP(n[2], "()");
+        if (y > -1) {
+          let w = (n[0].indexOf("!") === 0 ? 5 : 4) + n[1].length + y;
+          n[2] = n[2].substring(0, y), n[0] = n[0].substring(0, w).trim(), n[3] = ""
+        }
+      }
+      let s = n[2],
+        h = "";
+      if (this.options.pedantic) {
+        let y = this.rules.other.pedanticHrefTitle.exec(s);
+        if (y) s = y[1], h = y[3]
+      } else h = n[3] ? n[3].slice(1, -1) : "";
+      if (s = s.trim(), this.rules.other.startAngleBracket.test(s))
+        if (this.options.pedantic && !this.rules.other.endAngleBracket.test(r)) s = s.slice(1);
+        else s = s.slice(1, -1);
+      return Hg(n, {
+        href: s ? s.replace(this.rules.inline.anyPunctuation, "$1") : s,
+        title: h ? h.replace(this.rules.inline.anyPunctuation, "$1") : h
+      }, n[0], this.lexer, this.rules)
+    }
+  }
+  reflink(e, n) {
+    let r;
+    if ((r = this.rules.inline.reflink.exec(e)) || (r = this.rules.inline.nolink.exec(e))) {
+      let s = (r[2] || r[1]).replace(this.rules.other.multipleSpaceGlobal, " "),
+        h = n[s.toLowerCase()];
+      if (!h) {
+        let y = r[0].charAt(0);
+        return {
+          type: "text",
+          raw: y,
+          text: y
+        }
+      }
+      return Hg(r, h, r[0], this.lexer, this.rules)
+    }
+  }
+  emStrong(e, n, r = "") {
+    let s = this.rules.inline.emStrongLDelim.exec(e);
+    if (!s) return;
+    if (s[3] && r.match(this.rules.other.unicodeAlphaNumeric)) return;
+    if (!(s[1] || s[2]) || !r || this.rules.inline.punctuation.exec(r)) {
+      let y = [...s[0]].length - 1,
+        S, w, A = y,
+        O = 0,
+        M = s[0][0] === "*" ? this.rules.inline.emStrongRDelimAst : this.rules.inline.emStrongRDelimUnd;
+      M.lastIndex = 0, n = n.slice(-1 * e.length + y);
+      while ((s = M.exec(n)) != null) {
+        if (S = s[1] || s[2] || s[3] || s[4] || s[5] || s[6], !S) continue;
+        if (w = [...S].length, s[3] || s[4]) {
+          A += w;
+          continue
+        } else if (s[5] || s[6]) {
+          if (y % 3 && !((y + w) % 3)) {
+            O += w;
+            continue
+          }
+        }
+        if (A -= w, A > 0) continue;
+        w = Math.min(w, w + A + O);
+        let j = [...s[0]][0].length,
+          G = e.slice(0, y + s.index + j + w);
+        if (Math.min(y, w) % 2) {
+          let Z = G.slice(1, -1);
+          return {
+            type: "em",
+            raw: G,
+            text: Z,
+            tokens: this.lexer.inlineTokens(Z)
+          }
+        }
+        let N = G.slice(2, -2);
+        return {
+          type: "strong",
+          raw: G,
+          text: N,
+          tokens: this.lexer.inlineTokens(N)
+        }
+      }
+    }
+  }
+  codespan(e) {
+    let n = this.rules.inline.code.exec(e);
+    if (n) {
+      let r = n[2].replace(this.rules.other.newLineCharGlobal, " "),
+        s = this.rules.other.nonSpaceChar.test(r),
+        h = this.rules.other.startingSpaceChar.test(r) && this.rules.other.endingSpaceChar.test(r);
+      if (s && h) r = r.substring(1, r.length - 1);
+      return {
+        type: "codespan",
+        raw: n[0],
+        text: r
+      }
+    }
+  }
+  br(e) {
+    let n = this.rules.inline.br.exec(e);
+    if (n) return {
+      type: "br",
+      raw: n[0]
+    }
+  }
+  del(e) {
+    let n = this.rules.inline.del.exec(e);
+    if (n) return {
+      type: "del",
+      raw: n[0],
+      text: n[2],
+      tokens: this.lexer.inlineTokens(n[2])
+    }
+  }
+  autolink(e) {
+    let n = this.rules.inline.autolink.exec(e);
+    if (n) {
+      let r, s;
+      if (n[2] === "@") r = n[1], s = "mailto:" + r;
+      else r = n[1], s = r;
+      return {
+        type: "link",
+        raw: n[0],
+        text: r,
+        href: s,
+        tokens: [{
+          type: "text",
+          raw: r,
+          text: r
+        }]
+      }
+    }
+  }
+  url(e) {
+    let n;
+    if (n = this.rules.inline.url.exec(e)) {
+      let r, s;
+      if (n[2] === "@") r = n[0], s = "mailto:" + r;
+      else {
+        let h;
+        do h = n[0], n[0] = this.rules.inline._backpedal.exec(n[0])?.[0] ?? ""; while (h !== n[0]);
+        if (r = n[0], n[1] === "www.") s = "http://" + n[0];
+        else s = n[0]
+      }
+      return {
+        type: "link",
+        raw: n[0],
+        text: r,
+        href: s,
+        tokens: [{
+          type: "text",
+          raw: r,
+          text: r
+        }]
+      }
+    }
+  }
+  inlineText(e) {
+    let n = this.rules.inline.text.exec(e);
+    if (n) {
+      let r = this.lexer.state.inRawBlock;
+      return {
+        type: "text",
+        raw: n[0],
+        text: n[0],
+        escaped: r
+      }
+    }
+  }
+}
+class hq {
+  tokens;
+  options;
+  state;
+  tokenizer;
+  inlineQueue;
+  constructor(e) {
+    this.tokens = [], this.tokens.links = Object.create(null), this.options = e || Lo, this.options.tokenizer = this.options.tokenizer || new iTe, this.tokenizer = this.options.tokenizer, this.tokenizer.options = this.options, this.tokenizer.lexer = this, this.inlineQueue = [], this.state = {
+      inLink: !1,
+      inRawBlock: !1,
+      top: !0
+    };
+    let n = {
+      other: _n,
+      block: Wa.normal,
+      inline: $s.normal
+    };
+    if (this.options.pedantic) n.block = Wa.pedantic, n.inline = $s.pedantic;
+    else if (this.options.gfm)
+      if (n.block = Wa.gfm, this.options.breaks) n.inline = $s.breaks;
+      else n.inline = $s.gfm;
+    this.tokenizer.rules = n
+  }
+  static get rules() {
+    return {
+      block: Wa,
+      inline: $s
+    }
+  }
+  static lex(e, n) {
+    return new hq(n).lex(e)
+  }
+  static lexInline(e, n) {
+    return new hq(n).inlineTokens(e)
+  }
+  lex(e) {
+    e = e.replace(_n.carriageReturn, `
+`), this.blockTokens(e, this.tokens);
+    for (let n = 0; n < this.inlineQueue.length; n++) {
+      let r = this.inlineQueue[n];
+      this.inlineTokens(r.src, r.tokens)
+    }
+    return this.inlineQueue = [], this.tokens
+  }
+  blockTokens(e, n = [], r = !1) {
+    if (this.options.pedantic) e = e.replace(_n.tabCharGlobal, "    ").replace(_n.spaceLine, "");
+    while (e) {
+      let s;
+      if (this.options.extensions?.block?.some((y) => {
+          if (s = y.call({
+              lexer: this
+            }, e, n)) return e = e.substring(s.raw.length), n.push(s), !0;
+          return !1
+        })) continue;
+      if (s = this.tokenizer.space(e)) {
+        e = e.substring(s.raw.length);
+        let y = n.at(-1);
+        if (s.raw.length === 1 && y !== void 0) y.raw += `
+`;
+        else n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.code(e)) {
+        e = e.substring(s.raw.length);
+        let y = n.at(-1);
+        if (y?.type === "paragraph" || y?.type === "text") y.raw += `
+` + s.raw, y.text += `
+` + s.text, this.inlineQueue.at(-1).src = y.text;
+        else n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.fences(e)) {
+        e = e.substring(s.raw.length), n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.heading(e)) {
+        e = e.substring(s.raw.length), n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.hr(e)) {
+        e = e.substring(s.raw.length), n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.blockquote(e)) {
+        e = e.substring(s.raw.length), n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.list(e)) {
+        e = e.substring(s.raw.length), n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.html(e)) {
+        e = e.substring(s.raw.length), n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.def(e)) {
+        e = e.substring(s.raw.length);
+        let y = n.at(-1);
+        if (y?.type === "paragraph" || y?.type === "text") y.raw += `
+` + s.raw, y.text += `
+` + s.raw, this.inlineQueue.at(-1).src = y.text;
+        else if (!this.tokens.links[s.tag]) this.tokens.links[s.tag] = {
+          href: s.href,
+          title: s.title
+        };
+        continue
+      }
+      if (s = this.tokenizer.table(e)) {
+        e = e.substring(s.raw.length), n.push(s);
+        continue
+      }
+      if (s = this.tokenizer.lheading(e)) {
+        e = e.substring(s.raw.length), n.push(s);
+        continue
+      }
+      let h = e;
+      if (this.options.extensions?.startBlock) {
+        let y = 1 / 0,
+          S = e.slice(1),
+          w;
+        if (this.options.extensions.startBlock.forEach((A) => {
+            if (w = A.call({
+                lexer: this
+              }, S), typeof w === "number" && w >= 0) y = Math.min(y, w)
+          }), y < 1 / 0 && y >= 0) h = e.substring(0, y + 1)
+      }
+      if (this.state.top && (s = this.tokenizer.paragraph(h))) {
+        let y = n.at(-1);
+        if (r && y?.type === "paragraph") y.raw += `
+` + s.raw, y.text += `
+` + s.text, this.inlineQueue.pop(), this.inlineQueue.at(-1).src = y.text;
+        else n.push(s);
+        r = h.length !== e.length, e = e.substring(s.raw.length);
+        continue
+      }
+      if (s = this.tokenizer.text(e)) {
+        e = e.substring(s.raw.length);
+        let y = n.at(-1);
+        if (y?.type === "text") y.raw += `
+` + s.raw, y.text += `
+` + s.text, this.inlineQueue.pop(), this.inlineQueue.at(-1).src = y.text;
+        else n.push(s);
+        continue
+      }
+      if (e) {
+        let y = "Infinite loop on byte: " + e.charCodeAt(0);
+        if (this.options.silent) {
+          console.error(y);
+          break
+        } else throw Error(y)
+      }
+    }
+    return this.state.top = !0, n
+  }
+  inline(e, n = []) {
+    return this.inlineQueue.push({
+      src: e,
+      tokens: n
+    }), n
+  }
+  inlineTokens(e, n = []) {
+    let r = e,
+      s = null;
+    if (this.tokens.links) {
+      let S = Object.keys(this.tokens.links);
+      if (S.length > 0) {
+        while ((s = this.tokenizer.rules.inline.reflinkSearch.exec(r)) != null)
+          if (S.includes(s[0].slice(s[0].lastIndexOf("[") + 1, -1))) r = r.slice(0, s.index) + "[" + "a".repeat(s[0].length - 2) + "]" + r.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex)
+      }
+    }
+    while ((s = this.tokenizer.rules.inline.blockSkip.exec(r)) != null) r = r.slice(0, s.index) + "[" + "a".repeat(s[0].length - 2) + "]" + r.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
+    while ((s = this.tokenizer.rules.inline.anyPunctuation.exec(r)) != null) r = r.slice(0, s.index) + "++" + r.slice(this.tokenizer.rules.inline.anyPunctuation.lastIndex);
+    let h = !1,
+      y = "";
+    while (e) {
+      if (!h) y = "";
+      h = !1;
+      let S;
+      if (this.options.extensions?.inline?.some((A) => {
+          if (S = A.call({
+              lexer: this
+            }, e, n)) return e = e.substring(S.raw.length), n.push(S), !0;
+          return !1
+        })) continue;
+      if (S = this.tokenizer.escape(e)) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      if (S = this.tokenizer.tag(e)) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      if (S = this.tokenizer.link(e)) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      if (S = this.tokenizer.reflink(e, this.tokens.links)) {
+        e = e.substring(S.raw.length);
+        let A = n.at(-1);
+        if (S.type === "text" && A?.type === "text") A.raw += S.raw, A.text += S.text;
+        else n.push(S);
+        continue
+      }
+      if (S = this.tokenizer.emStrong(e, r, y)) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      if (S = this.tokenizer.codespan(e)) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      if (S = this.tokenizer.br(e)) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      if (S = this.tokenizer.del(e)) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      if (S = this.tokenizer.autolink(e)) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      if (!this.state.inLink && (S = this.tokenizer.url(e))) {
+        e = e.substring(S.raw.length), n.push(S);
+        continue
+      }
+      let w = e;
+      if (this.options.extensions?.startInline) {
+        let A = 1 / 0,
+          O = e.slice(1),
+          M;
+        if (this.options.extensions.startInline.forEach((j) => {
+            if (M = j.call({
+                lexer: this
+              }, O), typeof M === "number" && M >= 0) A = Math.min(A, M)
+          }), A < 1 / 0 && A >= 0) w = e.substring(0, A + 1)
+      }
+      if (S = this.tokenizer.inlineText(w)) {
+        if (e = e.substring(S.raw.length), S.raw.slice(-1) !== "_") y = S.raw.slice(-1);
+        h = !0;
+        let A = n.at(-1);
+        if (A?.type === "text") A.raw += S.raw, A.text += S.text;
+        else n.push(S);
+        continue
+      }
+      if (e) {
+        let A = "Infinite loop on byte: " + e.charCodeAt(0);
+        if (this.options.silent) {
+          console.error(A);
+          break
+        } else throw Error(A)
+      }
+    }
+    return n
+  }
+}
+class Vs {
+  options;
+  parser;
+  constructor(e) {
+    this.options = e || Lo
+  }
+  space(e) {
+    return ""
+  }
+  code({
+    text: e,
+    lang: n,
+    escaped: r
+  }) {
+    let s = (n || "").match(_n.notSpaceStart)?.[0],
+      h = e.replace(_n.endingNewline, "") + `
+`;
+    if (!s) return "<pre><code>" + (r ? h : qn(h, !0)) + `</code></pre>
+`;
+    return '<pre><code class="language-' + qn(s) + '">' + (r ? h : qn(h, !0)) + `</code></pre>
+`
+  }
+  blockquote({
+    tokens: e
+  }) {
+    return `<blockquote>
+${this.parser.parse(e)}</blockquote>
+`
+  }
+  html({
+    text: e
+  }) {
+    return e
+  }
+  heading({
+    tokens: e,
+    depth: n
+  }) {
+    return `<h${n}>${this.parser.parseInline(e)}</h${n}>
+`
+  }
+  hr(e) {
+    return `<hr>
+`
+  }
+  list(e) {
+    let {
+      ordered: n,
+      start: r
+    } = e, s = "";
+    for (let S = 0; S < e.items.length; S++) {
+      let w = e.items[S];
+      s += this.listitem(w)
+    }
+    let h = n ? "ol" : "ul",
+      y = n && r !== 1 ? ' start="' + r + '"' : "";
+    return "<" + h + y + `>
+` + s + "</" + h + `>
+`
+  }
+  listitem(e) {
+    let n = "";
+    if (e.task) {
+      let r = this.checkbox({
+        checked: !!e.checked
+      });
+      if (e.loose)
+        if (e.tokens[0]?.type === "paragraph") {
+          if (e.tokens[0].text = r + " " + e.tokens[0].text, e.tokens[0].tokens && e.tokens[0].tokens.length > 0 && e.tokens[0].tokens[0].type === "text") e.tokens[0].tokens[0].text = r + " " + qn(e.tokens[0].tokens[0].text), e.tokens[0].tokens[0].escaped = !0
+        } else e.tokens.unshift({
+          type: "text",
+          raw: r + " ",
+          text: r + " ",
+          escaped: !0
+        });
+      else n += r + " "
+    }
+    return n += this.parser.parse(e.tokens, !!e.loose), `<li>${n}</li>
+`
+  }
+  checkbox({
+    checked: e
+  }) {
+    return "<input " + (e ? 'checked="" ' : "") + 'disabled="" type="checkbox">'
+  }
+  paragraph({
+    tokens: e
+  }) {
+    return `<p>${this.parser.parseInline(e)}</p>
+`
+  }
+  table(e) {
+    let n = "",
+      r = "";
+    for (let h = 0; h < e.header.length; h++) r += this.tablecell(e.header[h]);
+    n += this.tablerow({
+      text: r
+    });
+    let s = "";
+    for (let h = 0; h < e.rows.length; h++) {
+      let y = e.rows[h];
+      r = "";
+      for (let S = 0; S < y.length; S++) r += this.tablecell(y[S]);
+      s += this.tablerow({
+        text: r
+      })
+    }
+    if (s) s = `<tbody>${s}</tbody>`;
+    return `<table>
+<thead>
+` + n + `</thead>
+` + s + `</table>
+`
+  }
+  tablerow({
+    text: e
+  }) {
+    return `<tr>
+${e}</tr>
+`
+  }
+  tablecell(e) {
+    let n = this.parser.parseInline(e.tokens),
+      r = e.header ? "th" : "td";
+    return (e.align ? `<${r} align="${e.align}">` : `<${r}>`) + n + `</${r}>
+`
+  }
+  strong({
+    tokens: e
+  }) {
+    return `<strong>${this.parser.parseInline(e)}</strong>`
+  }
+  em({
+    tokens: e
+  }) {
+    return `<em>${this.parser.parseInline(e)}</em>`
+  }
+  codespan({
+    text: e
+  }) {
+    return `<code>${qn(e,!0)}</code>`
+  }
+  br(e) {
+    return "<br>"
+  }
+  del({
+    tokens: e
+  }) {
+    return `<del>${this.parser.parseInline(e)}</del>`
+  }
+  link({
+    href: e,
+    title: n,
+    tokens: r
+  }) {
+    let s = this.parser.parseInline(r),
+      h = Ng(e);
+    if (h === null) return s;
+    e = h;
+    let y = '<a href="' + e + '"';
+    if (n) y += ' title="' + qn(n) + '"';
+    return y += ">" + s + "</a>", y
+  }
+  image({
+    href: e,
+    title: n,
+    text: r
+  }) {
+    let s = Ng(e);
+    if (s === null) return qn(r);
+    e = s;
+    let h = `<img src="${e}" alt="${r}"`;
+    if (n) h += ` title="${qn(n)}"`;
+    return h += ">", h
+  }
+  text(e) {
+    return "tokens" in e && e.tokens ? this.parser.parseInline(e.tokens) : ("escaped" in e) && e.escaped ? e.text : qn(e.text)
+  }
+}
+class Va {
+  strong({
+    text: e
+  }) {
+    return e
+  }
+  em({
+    text: e
+  }) {
+    return e
+  }
+  codespan({
+    text: e
+  }) {
+    return e
+  }
+  del({
+    text: e
+  }) {
+    return e
+  }
+  html({
+    text: e
+  }) {
+    return e
+  }
+  text({
+    text: e
+  }) {
+    return e
+  }
+  link({
+    text: e
+  }) {
+    return "" + e
+  }
+  image({
+    text: e
+  }) {
+    return "" + e
+  }
+  br() {
+    return ""
+  }
+}
+class Nn {
+  options;
+  renderer;
+  textRenderer;
+  constructor(e) {
+    this.options = e || Lo, this.options.renderer = this.options.renderer || new Vs, this.renderer = this.options.renderer, this.renderer.options = this.options, this.renderer.parser = this, this.textRenderer = new Va
+  }
+  static parse(e, n) {
+    return new Nn(n).parse(e)
+  }
+  static parseInline(e, n) {
+    return new Nn(n).parseInline(e)
+  }
+  parse(e, n = !0) {
+    let r = "";
+    for (let s = 0; s < e.length; s++) {
+      let h = e[s];
+      if (this.options.extensions?.renderers?.[h.type]) {
+        let S = h,
+          w = this.options.extensions.renderers[S.type].call({
+            parser: this
+          }, S);
+        if (w !== !1 || !["space", "hr", "heading", "code", "table", "blockquote", "list", "html", "paragraph", "text"].includes(S.type)) {
+          r += w || "";
+          continue
+        }
+      }
+      let y = h;
+      switch (y.type) {
+        case "space": {
+          r += this.renderer.space(y);
+          continue
+        }
+        case "hr": {
+          r += this.renderer.hr(y);
+          continue
+        }
+        case "heading": {
+          r += this.renderer.heading(y);
+          continue
+        }
+        case "code": {
+          r += this.renderer.code(y);
+          continue
+        }
+        case "table": {
+          r += this.renderer.table(y);
+          continue
+        }
+        case "blockquote": {
+          r += this.renderer.blockquote(y);
+          continue
+        }
+        case "list": {
+          r += this.renderer.list(y);
+          continue
+        }
+        case "html": {
+          r += this.renderer.html(y);
+          continue
+        }
+        case "paragraph": {
+          r += this.renderer.paragraph(y);
+          continue
+        }
+        case "text": {
+          let S = y,
+            w = this.renderer.text(S);
+          while (s + 1 < e.length && e[s + 1].type === "text") S = e[++s], w += `
+` + this.renderer.text(S);
+          if (n) r += this.renderer.paragraph({
+            type: "paragraph",
+            raw: w,
+            text: w,
+            tokens: [{
+              type: "text",
+              raw: w,
+              text: w,
+              escaped: !0
+            }]
+          });
+          else r += w;
+          continue
+        }
+        default: {
+          let S = 'Token with "' + y.type + '" type was not found.';
+          if (this.options.silent) return console.error(S), "";
+          else throw Error(S)
+        }
+      }
+    }
+    return r
+  }
+  parseInline(e, n = this.renderer) {
+    let r = "";
+    for (let s = 0; s < e.length; s++) {
+      let h = e[s];
+      if (this.options.extensions?.renderers?.[h.type]) {
+        let S = this.options.extensions.renderers[h.type].call({
+          parser: this
+        }, h);
+        if (S !== !1 || !["escape", "html", "link", "image", "strong", "em", "codespan", "br", "del", "text"].includes(h.type)) {
+          r += S || "";
+          continue
+        }
+      }
+      let y = h;
+      switch (y.type) {
+        case "escape": {
+          r += n.text(y);
+          break
+        }
+        case "html": {
+          r += n.html(y);
+          break
+        }
+        case "link": {
+          r += n.link(y);
+          break
+        }
+        case "image": {
+          r += n.image(y);
+          break
+        }
+        case "strong": {
+          r += n.strong(y);
+          break
+        }
+        case "em": {
+          r += n.em(y);
+          break
+        }
+        case "codespan": {
+          r += n.codespan(y);
+          break
+        }
+        case "br": {
+          r += n.br(y);
+          break
+        }
+        case "del": {
+          r += n.del(y);
+          break
+        }
+        case "text": {
+          r += n.text(y);
+          break
+        }
+        default: {
+          let S = 'Token with "' + y.type + '" type was not found.';
+          if (this.options.silent) return console.error(S), "";
+          else throw Error(S)
+        }
+      }
+    }
+    return r
+  }
+}
+class zs {
+  options;
+  block;
+  constructor(e) {
+    this.options = e || Lo
+  }
+  static passThroughHooks = new Set(["preprocess", "postprocess", "processAllTokens"]);
+  preprocess(e) {
+    return e
+  }
+  postprocess(e) {
+    return e
+  }
+  processAllTokens(e) {
+    return e
+  }
+  provideLexer() {
+    return this.block ? hq.lex : hq.lexInline
+  }
+  provideParser() {
+    return this.block ? Nn.parse : Nn.parseInline
+  }
+}
+class W9e {
+  defaults = Gu();
+  options = this.setOptions;
+  parse = this.parseMarkdown(!0);
+  parseInline = this.parseMarkdown(!1);
+  Parser = Nn;
+  Renderer = Vs;
+  TextRenderer = Va;
+  Lexer = hq;
+  Tokenizer = iTe;
+  Hooks = zs;
+  constructor(...e) {
+    this.use(...e)
+  }
+  walkTokens(e, n) {
+    let r = [];
+    for (let s of e) switch (r = r.concat(n.call(this, s)), s.type) {
+      case "table": {
+        let h = s;
+        for (let y of h.header) r = r.concat(this.walkTokens(y.tokens, n));
+        for (let y of h.rows)
+          for (let S of y) r = r.concat(this.walkTokens(S.tokens, n));
+        break
+      }
+      case "list": {
+        let h = s;
+        r = r.concat(this.walkTokens(h.items, n));
+        break
+      }
+      default: {
+        let h = s;
+        if (this.defaults.extensions?.childTokens?.[h.type]) this.defaults.extensions.childTokens[h.type].forEach((y) => {
+          let S = h[y].flat(1 / 0);
+          r = r.concat(this.walkTokens(S, n))
+        });
+        else if (h.tokens) r = r.concat(this.walkTokens(h.tokens, n))
+      }
+    }
+    return r
+  }
+  use(...e) {
+    let n = this.defaults.extensions || {
+      renderers: {},
+      childTokens: {}
+    };
+    return e.forEach((r) => {
+      let s = {
+        ...r
+      };
+      if (s.async = this.defaults.async || s.async || !1, r.extensions) r.extensions.forEach((h) => {
+        if (!h.name) throw Error("extension name required");
+        if ("renderer" in h) {
+          let y = n.renderers[h.name];
+          if (y) n.renderers[h.name] = function(...S) {
+            let w = h.renderer.apply(this, S);
+            if (w === !1) w = y.apply(this, S);
+            return w
+          };
+          else n.renderers[h.name] = h.renderer
+        }
+        if ("tokenizer" in h) {
+          if (!h.level || h.level !== "block" && h.level !== "inline") throw Error("extension level must be 'block' or 'inline'");
+          let y = n[h.level];
+          if (y) y.unshift(h.tokenizer);
+          else n[h.level] = [h.tokenizer];
+          if (h.start) {
+            if (h.level === "block")
+              if (n.startBlock) n.startBlock.push(h.start);
+              else n.startBlock = [h.start];
+            else if (h.level === "inline")
+              if (n.startInline) n.startInline.push(h.start);
+              else n.startInline = [h.start]
+          }
+        }
+        if ("childTokens" in h && h.childTokens) n.childTokens[h.name] = h.childTokens
+      }), s.extensions = n;
+      if (r.renderer) {
+        let h = this.defaults.renderer || new Vs(this.defaults);
+        for (let y in r.renderer) {
+          if (!(y in h)) throw Error(`renderer '${y}' does not exist`);
+          if (["options", "parser"].includes(y)) continue;
+          let S = y,
+            w = r.renderer[S],
+            A = h[S];
+          h[S] = (...O) => {
+            let M = w.apply(h, O);
+            if (M === !1) M = A.apply(h, O);
+            return M || ""
+          }
+        }
+        s.renderer = h
+      }
+      if (r.tokenizer) {
+        let h = this.defaults.tokenizer || new iTe(this.defaults);
+        for (let y in r.tokenizer) {
+          if (!(y in h)) throw Error(`tokenizer '${y}' does not exist`);
+          if (["options", "rules", "lexer"].includes(y)) continue;
+          let S = y,
+            w = r.tokenizer[S],
+            A = h[S];
+          h[S] = (...O) => {
+            let M = w.apply(h, O);
+            if (M === !1) M = A.apply(h, O);
+            return M
+          }
+        }
+        s.tokenizer = h
+      }
+      if (r.hooks) {
+        let h = this.defaults.hooks || new zs;
+        for (let y in r.hooks) {
+          if (!(y in h)) throw Error(`hook '${y}' does not exist`);
+          if (["options", "block"].includes(y)) continue;
+          let S = y,
+            w = r.hooks[S],
+            A = h[S];
+          if (zs.passThroughHooks.has(y)) h[S] = (O) => {
+            if (this.defaults.async) return Promise.resolve(w.call(h, O)).then((j) => A.call(h, j));
+            let M = w.call(h, O);
+            return A.call(h, M)
+          };
+          else h[S] = (...O) => {
+            let M = w.apply(h, O);
+            if (M === !1) M = A.apply(h, O);
+            return M
+          }
+        }
+        s.hooks = h
+      }
+      if (r.walkTokens) {
+        let h = this.defaults.walkTokens,
+          y = r.walkTokens;
+        s.walkTokens = function(S) {
+          let w = [];
+          if (w.push(y.call(this, S)), h) w = w.concat(h.call(this, S));
+          return w
+        }
+      }
+      this.defaults = {
+        ...this.defaults,
+        ...s
+      }
+    }), this
+  }
+  setOptions(e) {
+    return this.defaults = {
+      ...this.defaults,
+      ...e
+    }, this
+  }
+  lexer(e, n) {
+    return hq.lex(e, n ?? this.defaults)
+  }
+  parser(e, n) {
+    return Nn.parse(e, n ?? this.defaults)
+  }
+  parseMarkdown(e) {
+    return (r, s) => {
+      let h = {
+          ...s
+        },
+        y = {
+          ...this.defaults,
+          ...h
+        },
+        S = this.onError(!!y.silent, !!y.async);
+      if (this.defaults.async === !0 && h.async === !1) return S(Error("marked(): The async option was set to true by an extension. Remove async: false from the parse options object to return a Promise."));
+      if (typeof r > "u" || r === null) return S(Error("marked(): input parameter is undefined or null"));
+      if (typeof r !== "string") return S(Error("marked(): input parameter is of type " + Object.prototype.toString.call(r) + ", string expected"));
+      if (y.hooks) y.hooks.options = y, y.hooks.block = e;
+      let w = y.hooks ? y.hooks.provideLexer() : e ? hq.lex : hq.lexInline,
+        A = y.hooks ? y.hooks.provideParser() : e ? Nn.parse : Nn.parseInline;
+      if (y.async) return Promise.resolve(y.hooks ? y.hooks.preprocess(r) : r).then((O) => w(O, y)).then((O) => y.hooks ? y.hooks.processAllTokens(O) : O).then((O) => y.walkTokens ? Promise.all(this.walkTokens(O, y.walkTokens)).then(() => O) : O).then((O) => A(O, y)).then((O) => y.hooks ? y.hooks.postprocess(O) : O).catch(S);
+      try {
+        if (y.hooks) r = y.hooks.preprocess(r);
+        let O = w(r, y);
+        if (y.hooks) O = y.hooks.processAllTokens(O);
+        if (y.walkTokens) this.walkTokens(O, y.walkTokens);
+        let M = A(O, y);
+        if (y.hooks) M = y.hooks.postprocess(M);
+        return M
+      } catch (O) {
+        return S(O)
+      }
+    }
+  }
+  onError(e, n) {
+    return (r) => {
+      if (r.message += `
+Please report this to https://github.com/markedjs/marked.`, e) {
+        let s = "<p>An error occurred:</p><pre>" + qn(r.message + "", !0) + "</pre>";
+        if (n) return Promise.resolve(s);
+        return s
+      }
+      if (n) return Promise.reject(r);
+      throw r
+    }
+  }
+}
+var No = new W9e;
+
+function Iy(e, n) {
+  return No.parse(e, n)
+}
+Iy.options = Iy.setOptions = function(e) {
+  return No.setOptions(e), Iy.defaults = No.defaults, Fg(Iy.defaults), Iy
+};
+Iy.getDefaults = Gu;
+Iy.defaults = Lo;
+Iy.use = function(...e) {
+  return No.use(...e), Iy.defaults = No.defaults, Fg(Iy.defaults), Iy
+};
+Iy.walkTokens = function(e, n) {
+  return No.walkTokens(e, n)
+};
+Iy.parseInline = No.parseInline;
+Iy.Parser = Nn;
+Iy.parser = Nn.parse;
+Iy.Renderer = Vs;
+Iy.TextRenderer = Va;
+Iy.Lexer = hq;
+Iy.lexer = hq.lex;
+Iy.Tokenizer = iTe;
+Iy.Hooks = zs;
+Iy.parse = Iy;
+var {
+  options: RZ,
+  setOptions: vZ,
+  use: EZ,
+  walkTokens: CZ,
+  parseInline: AZ
+} = Iy;
+var PZ = Nn.parse,
+  OZ = hq.lex;
+
+function KDe(e, n, r) {
+  let s = Math.min(Math.max(Math.trunc(r) || 0, 0), e.length);
+  if (n.length > e.length - s) return -1;
+  if (n === "") return s;
+  let h = new Int32Array(n.length);
+  for (let y = 1, S = 0; y < n.length; y++) {
+    let w = n.charCodeAt(y);
+    while (S > 0 && w !== n.charCodeAt(S)) S = h[S - 1];
+    if (w === n.charCodeAt(S)) S++;
+    h[y] = S
+  }
+  for (let y = s, S = 0; y < e.length; y++) {
+    let w = e.charCodeAt(y);
+    while (S > 0 && w !== n.charCodeAt(S)) S = h[S - 1];
+    if (w === n.charCodeAt(S)) S++;
+    if (S === n.length) return y - S + 1
+  }
+  return -1
+}
+
+function pMt() {
+  return rn("tengu_graceful_hoare", !1)
+}
+
+function lPi(e, n) {
+  let r = (h) => h.replaceAll(`\r
+`, `
+`),
+    s = r(e);
+  for (let [h, y] of n.entries()) {
+    let [S, w] = [r(y.old_string), r(y.new_string)], A = KDe(s, S, 0);
+    if (A === -1) return {
+      edit: h + 1,
+      isRepeated: !1
+    };
+    if (KDe(s, S, A + 1) !== -1) return {
+      edit: h + 1,
+      isRepeated: !0
+    };
+    s = s.slice(0, A) + w + s.slice(A + S.length)
+  }
+  return {
+    skillMd: s
+  }
+}
+
+function gao(e) {
+  if (!it(e) || !Array.isArray(e.proposals)) return e;
+  return {
+    ...e,
+    proposals: e.proposals.map((n) => it(n) && ("edits" in n) ? vo(n, "skillMd") : n)
+  }
+}
+var yao = "save_skill",
+  bP = `# Saving skills
+
+To create a skill for the user, or update one they ask to change, use the \`${yao}\` tool. Skill files on disk \u2014 including synced copies of the user's account skills \u2014 are a read-only cache: editing them does not change the user's saved skill.`,
+  wP = `# Saving skills
+
+To create a skill for the user, or change one they ask to change, call the \`${Aq}\` tool: it shows them a review card where they can save it. When the user wants a skill added or updated, the proposal is the deliverable \u2014 draft the content any way that helps, then propose it; don't send them a SKILL.md or a packaged skill file to save themselves. Skill files on disk \u2014 including synced copies of the user's account skills \u2014 are a read-only cache: editing them, or writing a new skill file, does not change the user's skills.`,
+  kP = " When the user saves a proposal it replaces that skill's whole SKILL.md. To change an existing skill, read its current SKILL.md first and propose the complete updated file.",
+  xP = " To change an existing skill, read its current SKILL.md first and propose your changes as edits.",
+  scs = "Whether they can then save it as a skill (from the file card, or by uploading it themselves where their app allows) depends on their organization's settings, which you cannot see. So say in the text of your reply, not only in a caption (some apps don't show captions), that they can download it from the file card, or save it as a skill there if their organization allows that; never tell them outright to save it, and describe using the skill only conditionally ('if you add it as a skill, \u2026'), never as a given ('once it's saved \u2026', 'once added \u2026').",
+  RP = `# Saving skills
+
+To create a skill for the user, or change one of their existing skills, write the complete skill as a single \`SKILL.md\` (or a packaged \`.skill\` zip archive) and send it to them with the \`${bu}\` tool. ${scs} You get no signal whether they saved it: report the skill as delivered, never as saved. Skill files on disk \u2014 including synced copies of the user's account skills \u2014 are a read-only cache: editing them, or writing a skill file without sending it, does not change the user's skills. A SKILL.md or .skill file named like one of the user's existing skills replaces that skill entirely if they save it, so start from the skill's current SKILL.md and deliver the complete updated file, never only the changes.`,
+  vP = `# Saving skills
+
+Skills can't be created or changed from here. Skill files on disk \u2014 including synced copies of the user's account skills \u2014 are a read-only cache: editing them, or writing a new skill file, does not change the user's skills. If asked to create or change a skill, say plainly that you can't do that here and point the user to their claude.ai settings.`,
+  EP = {
+    save_tool: bP,
+    propose_tool: wP,
+    send_file: RP,
+    no_save_tool: vP
+  },
+  TP = ` Skills that are part of an installed plugin are the exception: if this session includes the \`${zSr}\` skill, customize those through it \u2014 it edits the plugin and repackages it.`;
+
+function _ao(e) {
+  if (!lHr()) return null;
+  let n = ics(e);
+  return EP[n] + (n !== "propose_tool" ? "" : pMt() ? xP : kP) + TP
+}
+
+function ics(e) {
+  return e.some((n) => ht(n, yao)) ? "save_tool" : e.some((n) => ht(n, Aq)) ? "propose_tool" : e.some((n) => ht(n, bu)) ? "send_file" : "no_save_tool"
+}
+
+function od(e, n) {
+  return e !== null && n !== null && RF(e, n, !0)
+}
+
+function bao(e, n, r) {
+  return od(e, n) ? ` (this path differs from the registered spelling only by letter case \u2014 respell it to match ${r} exactly)` : ""
+}
+
+function Dye() {
+  return Qg("WorktreeCreate").length > 0
+}
+
+function Sao() {
+  return Qg("WorktreeRemove").length > 0
+}
+
+function Qg(e) {
+  return Lut([...h3(e)], e)
+}
+import {
+  closeSync as OP,
+  fstatSync as MP,
+  lstatSync as Tr,
+  openSync as IP,
+  readSync as DP,
+  readdirSync as uy,
+  realpathSync as NP
+} from "fs";
+import {
+  lstat as Cr,
+  open as LP,
+  readdir as dy
+} from "fs/promises";
+import {
+  basename as xr,
+  dirname as vn,
+  isAbsolute as fy,
+  join as Gt,
+  resolve as io
+} from "path";
+import {
+  lstat as CP
+} from "fs/promises";
+import {
+  basename as t7,
+  isAbsolute as AP,
+  join as rd,
+  normalize as n7,
+  relative as ny,
+  sep as Zg
+} from "path";
+var dPi = /\p{Cc}/u,
+  wao = /[\p{Cc}\p{Cf}]/u;
+
+function mJt(e) {
+  return rd(e, ".claude", "worktrees")
+}
+
+function vgr(e) {
+  return {
+    dir: mJt(e),
+    anchor: e,
+    below: [".claude", "worktrees"]
+  }
+}
+
+function kao(e, n) {
+  return {
+    dir: rd(n, ...e.below),
+    anchor: n,
+    below: e.below
+  }
+}
+
+function cPi(e, n) {
+  let r = e.split(/[\r\n]/);
+  return [`fatal: '${n}' is already used by worktree at `, `fatal: '${n}' is already checked out at `, `fatal: cannot force update the branch '${n}' used by worktree at `, `fatal: cannot force update the branch '${n}' checked out at `].some((s) => r.some((h) => h.startsWith(s)))
+}
+
+function uPi(e, n) {
+  let r = ny(n, e);
+  if (r === ".." || r.startsWith(`..${Zg}`) || AP(r)) return "a location outside the repository (not shown)";
+  return r === "" || r.split(Zg).every((s) => PP.test(s)) ? u1(e) : "a location inside the repository (not shown)"
+}
+var PP = /^[a-zA-Z0-9._+-]+$/;
+
+function ey(e, n) {
+  return `${u1(ny(e,n))} in the repository`
+}
+async function fPi(e, n) {
+  let r = [...e.below.map((s, h, y) => rd(e.anchor, ...y.slice(0, h + 1))), n];
+  for (let s of r) {
+    let h;
+    try {
+      h = await CP(s)
+    } catch (y) {
+      if (K(y)) continue;
+      return {
+        ok: !1,
+        reason: "lstat_failed",
+        message: `Cannot create worktree: failed to lstat ${ey(e.anchor,s)}: it could not be read${k(y)?` (${k(y)})`:""}`
+      }
+    }
+    if (h.isSymbolicLink()) return {
+      ok: !1,
+      reason: "symlink",
+      message: `Cannot create worktree: ${ey(e.anchor,s)} is a symlink. A repository-committed symlink at .claude, .claude/worktrees, or .claude/worktrees/<name> could redirect worktree creation outside the repository. Remove the symlink and retry.`
+    }
+  }
+  return {
+    ok: !0
+  }
+}
+
+function vao(e) {
+  return vgr(e)
+}
+
+function TOn(e) {
+  return [vao(e)]
+}
+
+function dce(e) {
+  let n = I$e(e);
+  return n === null ? null : {
+    checkout: n,
+    home: vgr(n)
+  }
+}
+async function qDe(e, n, r = [], s) {
+  let [h, y] = await Promise.all([oy(e), FP(e)]), S = gy(e, h), w = new Set(n), A = new Set(r), O = L([...n, ...r]), M = s?.requireWitnessForSelfOwningPins === !0, j = s?.declineSelfOwningPinUnderLiveRoot === !0;
+  if (typeof S.ids !== "object") return Xa(e, S, y, O, w, A, [], M, j);
+  let G = await Promise.all(py(O, S.ids).map(async (N) => ({
+    root: N,
+    ...await oy(N)
+  })));
+  return Xa(e, S, y, O, w, A, G, M, j)
+}
+
+function pPi(e, n, r = [], s) {
+  let h = gy(e, ry(e)),
+    y = $P(e),
+    S = new Set(n),
+    w = new Set(r),
+    A = L([...n, ...r]),
+    O = s?.requireWitnessForSelfOwningPins === !0,
+    M = s?.declineSelfOwningPinUnderLiveRoot === !0;
+  if (typeof h.ids !== "object") return Xa(e, h, y, A, S, w, [], O, M);
+  let j = py(A, h.ids).map((G) => ({
+    root: G,
+    ...ry(G)
+  }));
+  return Xa(e, h, y, A, S, w, j, O, M)
+}
+
+function Xa(e, n, r, s, h, y, S, w = !1, A = !1) {
+  if (r) return Rn(e, "it is a symbolic link, so the tree it would isolate into cannot be pinned down");
+  if (n.entry === "unverifiable") return Rn(e, "its .git entry exists but could not be examined");
+  let O = n.ids;
+  if (O === "error") return Rn(e, "git could not be run to resolve it");
+  if (typeof O === "object" && O.isBare === !0) return Rn(e, "it is a bare repository, not a working tree");
+  if (O === "no-repo") {
+    if (n.entry !== "absent") return Rn(e, "a .git entry exists there but git could not resolve it");
+    let Y = n.hostRegistration,
+      ne = Y.kind === "none" ? null : Y.host;
+    if (ne === null) {
+      if (Y.kind === "unknown" && !Y.gone) return Rn(e, "its own path could not be resolved")
+    } else {
+      let se = an(ne, "that checkout");
+      return {
+        ok: !1,
+        reason: "unverifiable",
+        message: mg(Y.kind === "unknown" ? Y.leftLayout ? `Refusing to use ${e} as an isolation worktree: ${vn(io(e))} or the directory above it is a symbolic link or junction (or the checkout's own path could not be resolved), so the tree is not really inside the checkout its path names, and it holds no git repository of its own. Claude Code never creates such a link: open the tree by its real path, or treat it as tampered with and recreate the worktree from ${se}.` : `Refusing to use ${e} as an isolation worktree: it holds no git repository and the checkout whose .claude/worktrees its path names gave no answer about it (that checkout's own repository could not be confirmed, or its worktree list could not be read). Fix that checkout first, or recreate the worktree from it.` : `Refusing to use ${e} as an isolation worktree: it holds no git repository of its own, yet it is inside the .claude/worktrees of ${ne}, which holds one, and git could not find that repository from it (a .git file or directory between them, under .claude, stops the search). Remove that entry, or recreate the worktree from ${se}.`)
+      }
+    }
+    for (let se of s) {
+      if (!h.has(se)) continue;
+      if (Xs(e, se)) return {
+        ok: !1,
+        reason: "pin-is-protected-checkout",
+        message: mg(`Refusing to use ${e} as an isolation worktree: it contains the protected checkout ${se}, so adopting it would disarm every isolation check for that checkout.`)
+      }
+    }
+    for (let se of y)
+      if (Xs(e, se)) return {
+        ok: !1,
+        reason: "pin-is-own-launch-tree",
+        message: mg(`This resume was started from inside ${e}, a non-git directory \u2014 nothing can confirm it as a separate isolation tree from there. Run the resume from the project checkout instead.`)
+      };
+    return {
+      ok: !0,
+      reason: "not-a-git-worktree"
+    }
+  }
+  if (O.symlinkedRefStore.length > 0) return {
+    ok: !1,
+    reason: "invalid-linked-worktree",
+    message: mg(`Refusing to use ${e} as an isolation worktree: its git metadata has symbolic links in place of ${O.symlinkedRefStore.join(", ")}, which aliases another repository's refs into this tree. Recreate the worktree with git worktree add, then retry.`)
+  };
+  if (O.unexaminableRefStore.length > 0) return Rn(e, `its ref storage could not be fully examined (${O.unexaminableRefStore[0]})`);
+  let M = uL(O.topLevel, e);
+  if (M === "indeterminate") return Rn(e, `its working tree resolves to a path that cannot be safely compared (${O.topLevel})`);
+  if (M === "distinct") return {
+    ok: !1,
+    reason: "work-tree-elsewhere",
+    message: mg(`Refusing to use ${e} as an isolation worktree: git resolves its working tree to ${O.topLevel} (a core.worktree redirect, or a checkout discovered above it), so commands run there would write outside the worktree. Remove the redirect, restore the worktree's own .git, or recreate the worktree, then retry.`)
+  };
+  let j = uL(O.commonDir, O.gitDir) !== "distinct";
+  for (let Y of S) {
+    let ne = s.includes(Y.root),
+      se = Qs(Y.root, e);
+    if (se !== "same" && y.has(Y.root) && !h.has(Y.root) && Xs(e, Y.root)) {
+      if (!j && cy(e, O.commonDir)) continue;
+      if (!j) return {
+        ok: !1,
+        reason: "pin-is-own-launch-tree",
+        message: mg(`The worktree ${e} contains the directory this resume ran from, and nothing in this session vouches for its worktree registration \u2014 an isolation worktree never contains its own launch position. Run the resume from the project checkout instead.`)
+      };
+      return {
+        ok: !1,
+        reason: "pin-is-own-launch-tree",
+        message: mg(`This resume was started from inside ${e} (or a directory it contains), which is its own repository \u2014 it cannot be confirmed as a separate isolation worktree from there. Run the resume from the project checkout instead.`)
+      }
+    }
+    if (se === "same") {
+      if (ne && h.has(Y.root)) return {
+        ok: !1,
+        reason: "pin-is-protected-checkout",
+        message: mg(`Refusing to use ${e} as an isolation worktree: it is the checkout this session launched from. An honest launch-from-inside and a forged record are indistinguishable here, so both are refused \u2014 launch from the parent checkout to enter or resume this worktree.`)
+      };
+      if (ne && j) return {
+        ok: !1,
+        reason: "pin-is-own-launch-tree",
+        message: mg(`This resume was started from inside ${e}, which is its own repository \u2014 it cannot be confirmed as a separate isolation worktree from there. Run the resume from the project checkout instead.`)
+      };
+      continue
+    }
+    if (Y.entry === "unverifiable") return Rn(e, `the protected checkout ${Y.root} has a .git entry that could not be examined`);
+    if (typeof Y.ids !== "object") {
+      if (Y.ids === "no-repo") continue;
+      return Rn(e, `the protected checkout ${Y.root} has git metadata that could not be resolved`)
+    }
+    let ae = Qs(O.gitDir, Y.ids.gitDir);
+    if (ae === "indeterminate") return Rn(e, `its git directory (${O.gitDir}) could not be safely compared with the protected checkout's`);
+    if (ae === "same") return {
+      ok: !1,
+      reason: "shared-git-dir",
+      message: mg(`Refusing to use ${e} as an isolation worktree: its git directory is the shared checkout's own (${O.gitDir}), so git commands there move the protected checkout's branches and refs. This usually means the worktree's .git file is stale or was rewritten \u2014 recreate the worktree, then retry.`)
+    }
+  }
+  if (j && h.size === 0) {
+    if (w) return {
+      ok: !1,
+      reason: "pin-is-own-launch-tree",
+      message: mg(`The worktree ${e} is its own repository and nothing vouches for it from this session \u2014 it cannot be resumed or re-entered. Re-create it (a fresh isolated tree); the existing tree and its work remain on disk at ${e} for manual recovery.`)
+    };
+    if (A) {
+      for (let Y of y)
+        if (Qs(Y, e) !== "same" && Xs(Y, e)) return {
+          ok: !1,
+          reason: "pin-is-own-launch-tree",
+          message: mg(`The worktree ${e} sits under the directory this resume ran from, and nothing else vouches for it \u2014 it cannot be resumed or re-entered. Re-create it (a fresh isolated tree); the existing tree and its work remain on disk at ${e} for manual recovery. Where it has a parent checkout, resuming from there also works.`)
+        }
+    }
+  }
+  for (let Y of s) {
+    if (Qs(Y, e) === "same") continue;
+    if (!Xs(e, Y)) continue;
+    if (y.has(Y) && !h.has(Y)) {
+      if (!j && cy(e, O.commonDir)) continue;
+      if (!j) return {
+        ok: !1,
+        reason: "pin-is-own-launch-tree",
+        message: mg(`The worktree ${e} contains the directory this resume ran from, and nothing in this session vouches for its worktree registration \u2014 an isolation worktree never contains its own launch position. Run the resume from the project checkout instead.`)
+      };
+      return {
+        ok: !1,
+        reason: "pin-is-own-launch-tree",
+        message: mg(`This resume was started from inside ${e} (or a directory it contains), which is its own repository \u2014 it cannot be confirmed as a separate isolation worktree from there. Run the resume from the project checkout instead.`)
+      }
+    }
+    return {
+      ok: !1,
+      reason: "pin-is-protected-checkout",
+      message: mg(`Refusing to use ${e} as an isolation worktree: it contains the protected checkout ${Y}, so adopting it would disarm every isolation check for that checkout.`)
+    }
+  }
+  let G = n.hostRegistration,
+    N = io(vn(O.topLevel));
+  if (G.kind === "unknown") {
+    let {
+      host: Y,
+      registry: ne
+    } = G;
+    if (Y === null) return Rn(e, "its own path could not be resolved");
+    let se = an(Y, "that checkout");
+    if (G.leftLayout) {
+      let ae = vn(io(e));
+      return {
+        ok: !1,
+        reason: "unverifiable",
+        message: mg(`Refusing to use ${e} as an isolation worktree: ${ae} or ${vn(ae)} is a symbolic link or junction (or ${Y}'s own path could not be resolved), so the worktree is not really inside ${Y} and cannot be checked against ${Y}'s own records. Claude Code never creates such a link. If you made it yourself, open the worktree by its real path instead, or replace the link with a real directory and recreate the worktree from ${se}. If you did not, treat the worktree as tampered with: run no git in it, copy out what you need, delete it, and recreate it from ${se}.`)
+      }
+    }
+    return {
+      ok: !1,
+      reason: "unverifiable",
+      message: mg(ne === null ? `Refusing to use ${e} as an isolation worktree: it is under ${N}, so ${Y} must list it as a worktree, but ${Y}'s own repository could not be confirmed. Usual causes: its .git is a pointer file or symlink whose target does not name it back (a --separate-git-dir clone, for one) or is empty or left over, a stray file named commondir in its git directory (for an ordinary checkout, ${an(Gt(Y,".git","commondir"),"the commondir file in its .git")} \u2014 deleting that one file is the fix), or ${Y} itself sitting in another checkout's .claude/worktrees. Fix that (or remove a left-over .git file) and retry, or create the worktree somewhere that is not inside ${an(N,"that directory")}.` : `Refusing to use ${e} as an isolation worktree: the list of linked worktrees ${Y} keeps in ${ne} could not be read in full, or something other than a plain directory (a symbolic link, say) stands in its place, so whether it registers this worktree could not be checked. Look at it by hand before any git worktree command in ${se}: if a symbolic link stands there, remove it with unlink \u2014 not rm with a trailing slash, and not git worktree prune, which both follow the link into the directory it points to (code running in a worktree can plant one); if it is a directory that cannot be read or holds more entries than git made for your worktrees, make it readable and delete by hand every entry that is not named by the .git file of a worktree you have; then retry.`)
+    }
+  }
+  let Z = n.entryIsDirectory && xr(O.gitDir) === ".git" && uL(vn(O.gitDir), e) === "same";
+  if (G.kind === "registered") {
+    let Y = G.adminDirs.map((re) => uL(O.gitDir, re)),
+      ne = uL(O.commonDir, G.hostCommonDir),
+      se = Y.includes("same") && ne === "same",
+      ae = G.adminDirs[0] ?? "";
+    if (!se && ne !== "distinct" && !Y.every((re) => re === "distinct")) return Rn(e, `its git metadata could not be safely compared with ${G.host}'s registration of it (${Ys(ae)})`);
+    if (!se) {
+      let re = an(G.host, "that checkout"),
+        _e = my(re, an(Gt(G.hostCommonDir, "worktrees"), "that checkout's worktree registry (the worktrees directory in its git directory)"));
+      return {
+        ok: !1,
+        reason: "invalid-linked-worktree",
+        message: mg(Z ? `Refusing to use ${e} as an isolation worktree: ${G.host}'s worktree list has an entry for it (${Ys(ae)}), but a .git directory of its own stands in place of the .git file that registration gave it. If you cloned a repository here yourself, move it outside ${an(Gt(G.host,".claude","worktrees"),"that checkout's .claude/worktrees")}; if you did not, run no git in it: copy out what you need and delete it. ${_e}` : Y.includes("same") ? `Refusing to use ${e} as an isolation worktree: ${G.host} registers it (${Ys(ae)}) and its .git leads to that entry, but the entry's commondir file now names another repository, ${an(O.commonDir,"one whose path is not repeated here")}, not ${G.hostCommonDir}. Unless you edited that file yourself (git wrote ../.. there), treat the worktree as tampered with: run no git in it, copy out what you need and delete it. ${_e}` : `Refusing to use ${e} as an isolation worktree: ${G.host} registers it (${Ys(ae)}), but its .git now leads to ${an(O.gitDir,"another directory (its path is not repeated here)")} instead of that entry. Unless you re-pointed it yourself, treat the worktree as tampered with: run no git in it, and do not re-link it with git worktree repair, which points each of that checkout's worktrees, this one included, at whichever entry names it \u2014 code running in a worktree can add such an entry. Copy out what you need and delete it. ${_e}`)
+      }
+    }
+    if (!G.adminDirs.some((re) => Ya(O.gitDir, re)) || !Ya(O.commonDir, G.hostCommonDir)) return {
+      ok: !1,
+      reason: "unverifiable",
+      message: mg(`Refusing to use ${e} as an isolation worktree: git located its repository at ${an(O.gitDir,"a path not repeated here")} (common dir ${an(O.commonDir,"not repeated here")}), which is ${G.host}'s registration of it (${Ys(ae)}) reached by a different path, not the registered path itself, so its git identity could not be verified. If that path lies inside the worktree itself, treat the worktree as tampered with: run no git in it. Otherwise the usual causes are a symbolic link or junction inside ${an(G.hostCommonDir,"that checkout's git directory")} or on the way to it, or a git too old to print link-resolved paths: remove the link or update git, then retry; if neither applies, do not trust the worktree or run git in it.`)
+    }
+  } else if (G.kind === "unregistered") {
+    let Y = G.host,
+      ne = Ya(vn(e), N) ? "" : ` (addressed as ${vn(e)})`;
+    return {
+      ok: !1,
+      reason: "unverifiable",
+      message: mg(Z ? `Refusing to use ${e} as an isolation worktree: it is a repository of its own (a .git directory, not a worktree's .git file) inside ${N}${ne}, where only worktrees that the checkout ${Y} itself made are accepted. If you or a WorktreeCreate hook cloned it there, move the clone somewhere that is not inside any checkout's .claude/worktrees directory. If nobody meant a repository to be here, do not trust it or run git in it.` : HP(e, O, Y, G.hostCommonDir, N, ne))
+    }
+  }
+  let te = uL(O.commonDir, O.gitDir);
+  if (te === "indeterminate") return Rn(e, `its git metadata (common dir ${O.commonDir}) could not be safely compared`);
+  if (te === "distinct") {
+    let Y = uL(vn(O.gitDir), Gt(O.commonDir, "worktrees")),
+      ne = O.backPointer !== null && uL(io(O.gitDir, O.backPointer), Gt(e, ".git")) === "same";
+    if (Y !== "same" || !ne) return {
+      ok: !1,
+      reason: "invalid-linked-worktree",
+      message: mg(`Refusing to use ${e} as an isolation worktree: it uses another repository's refs (${O.commonDir}) without being a registered worktree of it (its admin directory or back-pointer does not check out). Recreate the worktree with git worktree add, then retry.`)
+    }
+  }
+  return {
+    ok: !0,
+    reason: "verified"
+  }
+}
+
+function py(e, n) {
+  let r = xr(n.commonDir) === ".git" ? vn(n.commonDir) : null;
+  return L([...e, ...r !== null ? [r] : []])
+}
+
+function Ya(e, n) {
+  return Za(io(e)) === Za(io(n))
+}
+
+function Za(e) {
+  switch (x()) {
+    case "macos":
+      return Tf(e.normalize("NFC"));
+    case "windows":
+      return Tf(e);
+    default:
+      return e
+  }
+}
+
+function HP(e, n, r, s, h, y) {
+  let S = an(r, "that checkout"),
+    w = `it is inside ${h}${y}, where only worktrees that the checkout ${r} itself made (git worktree add, run in that checkout) are accepted`,
+    A = uL(n.commonDir, s);
+  if (A === "distinct") return `Refusing to use ${e} as an isolation worktree: ${w}, and its .git leads to a different repository, ${an(n.commonDir,"whose path is not repeated here")}. If you or a WorktreeCreate hook made this worktree, recreate it somewhere that is not inside any checkout's .claude/worktrees directory; if ${S} was never meant to be a repository, its .git is stray \u2014 look at what it holds, then remove it; if nobody meant to put a worktree here, do not trust it or run git in it.`;
+  if (!(A === "same" && Ya(vn(n.gitDir), Gt(s, "worktrees")))) return `Refusing to use ${e} as an isolation worktree: ${w}, and its .git leads to ${an(n.gitDir,"a directory (its path is not repeated here)")}, which is not one of ${r}'s own worktree entries. If this worktree is yours, copy out what you need and recreate it; otherwise do not trust it or run git in it.`;
+  let M = xr(n.gitDir),
+    j = xr(io(e)),
+    G = Za(M) === Za(j) ? "" : `${Zs(M)&&Zs(j)?` That entry is named ${M}, not ${j}.`:" That entry's name is not this worktree's."} If that entry is another worktree of yours, it is its own, whatever it names now \u2014 do not re-link it.`,
+    N = Zs(M) ? `${n.gitDir}, an entry in ${r}'s own worktree list` : `an entry in ${r}'s own worktree list (its name is not repeated here)`,
+    Z = n.backPointer !== null && xr(n.backPointer) === ".git" ? io(n.gitDir, n.backPointer) : null,
+    te = `If this worktree is yours, copy out what you need and delete it rather than re-link it: git worktree repair could also point other worktrees of that checkout, or this one, at an entry that code in a worktree added. ${my(S,an(Gt(s,"worktrees"),"that checkout's worktree registry (the worktrees directory in its git directory)"))} If it is not yours, do not trust it or run git in it.`;
+  if (Z === null) return `Refusing to use ${e} as an isolation worktree: its .git leads to ${N} that no longer names any worktree back (its gitdir file is missing, unreadable or does not name a .git file).${G} ${te}`;
+  let Y = an(Z, "") !== "" ? vn(Z) : `another path (not repeated here; git worktree list, run in ${S}, shows it)`;
+  return `Refusing to use ${e} as an isolation worktree: its .git leads to ${N} that names ${Y}, not this worktree (git worktree repair run inside any worktree can re-point an entry like that).${G} ${te}`
+}
+
+function my(e, n) {
+  return `Before any git worktree command in ${e}, look through ${n} by hand: git keeps one plain directory there per linked worktree, the one that worktree's .git file names (gitdir: followed by its path). Remove any symbolic link with unlink (never rm with a trailing slash, which follows the link) and delete every entry that is not named by the .git file of a worktree you have, a second entry for the same worktree included \u2014 code running in a worktree can plant any of these, git worktree prune follows a planted link and empties the directory it points to, and of two entries naming one worktree it keeps whichever name sorts first. Then run git worktree prune in ${e}; if git worktree list there still shows this path, run git worktree unlock on it and prune again, until it is no longer listed. Then recreate the worktree (on a new branch if git says the old one is already used by a worktree elsewhere).`
+}
+
+function hy(e) {
+  return /^[A-Za-z0-9._/\\:+@=,-]{1,1024}$/.test(e)
+}
+
+function Zs(e) {
+  return hy(e) && e.length <= 255 && (e.match(/[._/\\:+@=,-]/g) ?? []).length <= 8
+}
+
+function an(e, n) {
+  return hy(e) && e.split(/[\\/]/).every((r) => r === "" || Zs(r)) ? e : n
+}
+
+function Ys(e) {
+  return Zs(xr(e)) ? e : `an entry under ${vn(e)} whose name is not repeated here`
+}
+
+function Rn(e, n) {
+  return {
+    ok: !1,
+    reason: "unverifiable",
+    message: mg(`Refusing to use ${e} as an isolation worktree: ${n}, so its git identity could not be verified. Isolation is refused rather than assumed \u2014 recreate the worktree (or remove the corrupt .git entry) and retry.`)
+  }
+}
+async function oy(e) {
+  let [n, r] = await Promise.all([yy(Gt(e, ".git")), jP(e)]);
+  return {
+    entry: n.state,
+    entryIsDirectory: n.isDirectory,
+    ids: r
+  }
+}
+
+function ry(e) {
+  let n = Sy(Gt(e, ".git"));
+  return {
+    entry: n.state,
+    entryIsDirectory: n.isDirectory,
+    ids: WP(e)
+  }
+}
+
+function gy(e, n) {
+  let r = ajn() ? P9i(e, typeof n.ids === "object" ? n.ids.gitDir : void 0) : {
+    kind: "none"
+  };
+  return {
+    ...n,
+    hostRegistration: r
+  }
+}
+async function yy(e) {
+  try {
+    return {
+      state: "present",
+      isDirectory: (await Cr(e)).isDirectory()
+    }
+  } catch (n) {
+    return {
+      state: Yn(n),
+      isDirectory: !1
+    }
+  }
+}
+
+function Sy(e) {
+  try {
+    return {
+      state: "present",
+      isDirectory: Tr(e).isDirectory()
+    }
+  } catch (n) {
+    return {
+      state: Yn(n),
+      isDirectory: !1
+    }
+  }
+}
+async function FP(e) {
+  try {
+    return (await Cr(e)).isSymbolicLink()
+  } catch {
+    return !1
+  }
+}
+
+function $P(e) {
+  try {
+    return Tr(e).isSymbolicLink()
+  } catch {
+    return !1
+  }
+}
+
+function Yn(e) {
+  let n = k(e);
+  return n === "ENOENT" || n === "ENOTDIR" ? "absent" : "unverifiable"
+}
+var el = 2000,
+  _y = [...yn, "rev-parse", "--absolute-git-dir", "--show-toplevel", "--git-common-dir"];
+async function jP(e) {
+  let n = await lt(Pt(), [..._y], {
+    cwd: e,
+    env: ys(),
+    timeout: el,
+    useToolMemoryCgroup: !1,
+    preserveOutputOnError: !0
+  });
+  if (n.code !== 0) {
+    if (await KP(e)) return "no-repo";
+    if (ky(n.stderr)) {
+      let y = await lt(Pt(), [...yn, "rev-parse", "--absolute-git-dir", "--git-common-dir"], {
+        cwd: e,
+        env: ys(),
+        timeout: el,
+        useToolMemoryCgroup: !1,
+        preserveOutputOnError: !0
+      });
+      if (y.code === 0) {
+        let S = xy(e, y.stdout);
+        if (S !== null) {
+          let [w, A] = await Promise.all([sy(S.gitDir), ay(S.gitDir)]);
+          return {
+            ...S,
+            backPointer: w,
+            symlinkedRefStore: A.symlinks,
+            unexaminableRefStore: A.unexaminable
+          }
+        }
+      }
+      return "error"
+    }
+    if (by(n.stderr)) return "no-repo";
+    if (typeof n.exitCode === "number" && await zP(e)) return "no-repo";
+    return "error"
+  }
+  let r = Ry(e, n.stdout);
+  if (r === null) return "error";
+  let [s, h] = await Promise.all([sy(r.gitDir), ay(r.gitDir)]);
+  return {
+    ...r,
+    backPointer: s,
+    symlinkedRefStore: h.symlinks,
+    unexaminableRefStore: h.unexaminable
+  }
+}
+
+function WP(e) {
+  let n;
+  try {
+    n = WSt(Pt(), [..._y], {
+      cwd: e,
+      env: ys(),
+      reject: !1,
+      timeout: el,
+      useToolMemoryCgroup: !1,
+      stdio: ["ignore", "pipe", "pipe"]
+    })
+  } catch {
+    return "error"
+  }
+  if (n.exitCode !== 0) {
+    if (VP(e)) return "no-repo";
+    if (ky(n.stderr)) {
+      let h;
+      try {
+        h = WSt(Pt(), [...yn, "rev-parse", "--absolute-git-dir", "--git-common-dir"], {
+          cwd: e,
+          env: ys(),
+          reject: !1,
+          timeout: el,
+          useToolMemoryCgroup: !1,
+          stdio: ["ignore", "pipe", "pipe"]
+        })
+      } catch {
+        return "error"
+      }
+      if (h.exitCode === 0) {
+        let y = xy(e, h.stdout);
+        if (y !== null) {
+          let S = ly(y.gitDir);
+          return {
+            ...y,
+            backPointer: iy(y.gitDir),
+            symlinkedRefStore: S.symlinks,
+            unexaminableRefStore: S.unexaminable
+          }
+        }
+      }
+      return "error"
+    }
+    if (by(n.stderr)) return "no-repo";
+    if (typeof n.exitCode === "number" && n.timedOut !== !0 && GP(e)) return "no-repo";
+    return "error"
+  }
+  let r = Ry(e, n.stdout);
+  if (r === null) return "error";
+  let s = ly(r.gitDir);
+  return {
+    ...r,
+    backPointer: iy(r.gitDir),
+    symlinkedRefStore: s.symlinks,
+    unexaminableRefStore: s.unexaminable
+  }
+}
+
+function mg(e) {
+  return e.replace(/[\u0000-\u001f\u007f-\u009f]/g, " ")
+}
+
+function by(e) {
+  return /not a git repository/i.test(e) || /gitfile does not point to a valid repository/i.test(e)
+}
+async function zP(e) {
+  let n = wy(e);
+  if (n === null) return !1;
+  return (await Promise.all(n.map((s) => yy(s)))).every((s) => s.state === "absent")
+}
+
+function GP(e) {
+  let n = wy(e);
+  return n !== null && n.every((r) => Sy(r).state === "absent")
+}
+
+function wy(e) {
+  if (x() === "windows") return null;
+  if (Ox(e).canonical === null) return null;
+  let n;
+  try {
+    let s = NP.native(e, {
+      encoding: "buffer"
+    });
+    if (n = s.toString("utf8"), !Buffer.from(n, "utf8").equals(s)) return null
+  } catch {
+    return null
+  }
+  let r = [];
+  for (let s = n;;) {
+    r.push(Gt(s, ".git"), Gt(s, "HEAD"));
+    let h = vn(s);
+    if (h === s) return r;
+    s = h
+  }
+}
+async function KP(e) {
+  try {
+    return await Cr(e), !1
+  } catch (n) {
+    let r = k(n);
+    return r === "ENOENT" || r === "ENOTDIR"
+  }
+}
+
+function VP(e) {
+  try {
+    return Tr(e), !1
+  } catch (n) {
+    let r = k(n);
+    return r === "ENOENT" || r === "ENOTDIR"
+  }
+}
+
+function ky(e) {
+  return e.includes("this operation must be run in a work tree")
+}
+
+function xy(e, n) {
+  let r = n.split(`
+`).filter((h) => h.length > 0);
+  if (r.length !== 2) return null;
+  if (r.some((h) => /[\u0000-\u001f\u007f-\u009f]/.test(h))) return null;
+  let s = r[1];
+  return {
+    gitDir: r[0],
+    topLevel: e,
+    commonDir: fy(s) ? s : Gt(e, s),
+    isBare: !0
+  }
+}
+
+function Ry(e, n) {
+  let r = n.split(`
+`).filter((h) => h.length > 0);
+  if (r.length !== 3) return null;
+  if (r.some((h) => /[\u0000-\u001f\u007f-\u009f]/.test(h))) return null;
+  let s = r[2];
+  return {
+    gitDir: r[0],
+    topLevel: r[1],
+    commonDir: fy(s) ? s : io(e, s)
+  }
+}
+var Er = 65536;
+async function sy(e) {
+  try {
+    if (!(await Cr(Gt(e, "gitdir"))).isFile()) return null;
+    let r = await LP(Gt(e, "gitdir"), "r");
+    try {
+      if ((await r.stat()).size > Er) return null;
+      let s = Buffer.alloc(Er),
+        {
+          bytesRead: h
+        } = await r.read(s, 0, Er, 0);
+      return s.toString("utf-8", 0, h).trim()
+    } finally {
+      await r.close()
+    }
+  } catch {
+    return null
+  }
+}
+
+function iy(e) {
+  try {
+    if (!Tr(Gt(e, "gitdir")).isFile()) return null;
+    let n = IP(Gt(e, "gitdir"), "r");
+    try {
+      if (MP(n).size > Er) return null;
+      let r = Buffer.alloc(Er),
+        s = DP(n, r, 0, Er, 0);
+      return r.toString("utf-8", 0, s).trim()
+    } finally {
+      OP(n)
+    }
+  } catch {
+    return null
+  }
+}
+var vy = 12,
+  tl = 4096;
+async function ay(e) {
+  let n = [],
+    r = [],
+    s;
+  try {
+    s = await dy(e)
+  } catch (h) {
+    if (Yn(h) !== "absent") r.push("(git dir unreadable)");
+    s = []
+  }
+  if (s.length > tl) r.push("(over-cap top-level entries)"), s = [];
+  return await Promise.all(s.map(async (h) => {
+    try {
+      if ((await Cr(Gt(e, h))).isSymbolicLink()) n.push(h)
+    } catch (y) {
+      if (Yn(y) !== "absent") r.push(h)
+    }
+  })), await Ey(Gt(e, "refs"), "refs", 0, n, r, {
+    entries: tl
+  }), {
+    symlinks: n,
+    unexaminable: r
+  }
+}
+async function Ey(e, n, r, s, h, y) {
+  if (r > vy) {
+    h.push(`${n} (too deep to examine)`);
+    return
+  }
+  if (y.entries <= 0) {
+    h.push(`${n} (too many entries to examine)`);
+    return
+  }
+  let S;
+  try {
+    S = await dy(e)
+  } catch (w) {
+    if (Yn(w) !== "absent") h.push(`${n} (unreadable)`);
+    return
+  }
+  for (let w of S) {
+    if (--y.entries < 0) {
+      h.push(`${n} (too many entries to examine)`);
+      return
+    }
+    let A = Gt(e, w),
+      O = `${n}/${w}`;
+    try {
+      let M = await Cr(A);
+      if (M.isSymbolicLink()) s.push(O);
+      else if (M.isDirectory()) await Ey(A, O, r + 1, s, h, y)
+    } catch (M) {
+      if (Yn(M) !== "absent") h.push(`${O} (unreadable)`)
+    }
+  }
+}
+
+function ly(e) {
+  let n = [],
+    r = [],
+    s;
+  try {
+    s = uy(e)
+  } catch (h) {
+    if (Yn(h) !== "absent") r.push("(git dir unreadable)");
+    s = []
+  }
+  if (s.length > tl) r.push("(over-cap top-level entries)"), s = [];
+  for (let h of s) try {
+    if (Tr(Gt(e, h)).isSymbolicLink()) n.push(h)
+  } catch (y) {
+    if (Yn(y) !== "absent") r.push(h)
+  }
+  return Ty(Gt(e, "refs"), "refs", 0, n, r, {
+    entries: tl
+  }), {
+    symlinks: n,
+    unexaminable: r
+  }
+}
+
+function Ty(e, n, r, s, h, y) {
+  if (r > vy) {
+    h.push(`${n} (too deep to examine)`);
+    return
+  }
+  if (y.entries <= 0) {
+    h.push(`${n} (too many entries to examine)`);
+    return
+  }
+  let S;
+  try {
+    S = uy(e)
+  } catch (w) {
+    if (Yn(w) !== "absent") h.push(`${n} (unreadable)`);
+    return
+  }
+  for (let w of S) {
+    if (--y.entries < 0) {
+      h.push(`${n} (too many entries to examine)`);
+      return
+    }
+    let A = Gt(e, w),
+      O = `${n}/${w}`;
+    try {
+      let M = Tr(A);
+      if (M.isSymbolicLink()) s.push(O);
+      else if (M.isDirectory()) Ty(A, O, r + 1, s, h, y)
+    } catch (M) {
+      if (Yn(M) !== "absent") h.push(`${O} (unreadable)`)
+    }
+  }
+}
+
+function Cy(e, n, r) {
+  let s = Ox(e),
+    h = Ox(n);
+  if (jW(s) || jW(h)) return "indeterminate";
+  if (s.skipped !== h.skipped) return "indeterminate";
+  return r(s, h) && r(h, s) ? "same" : "distinct"
+}
+
+function Xs(e, n) {
+  let r = Ox(e),
+    s = Ox(n);
+  if (jW(r) || jW(s)) return !0;
+  if (r.skipped !== s.skipped) return !0;
+  return Gce(s, r)
+}
+
+function Qs(e, n) {
+  return Cy(e, n, Gce)
+}
+
+function uL(e, n) {
+  return Cy(e, n, ypt)
+}
+
+function cy(e, n) {
+  let r = dce(e);
+  return r !== null && Qs(r.checkout, vn(n)) === "same"
+}
+
+function mPi(e, n) {
+  let r = I$e(e);
+  if (r === null) return !1;
+  let s = tg(e);
+  if (s === null || uL(s, e) !== "same") return !1;
+  let h = CH(e);
+  if (h === null || uL(r, h) !== "same") return !1;
+  return n.some((y) => {
+    let S = Gi(y);
+    return S !== null && uL(r, S) === "same"
+  })
+}
+
+function oD(e, ...n) {
+  if (Ks(e) || Cl(e)) return [];
+  return L([fr(e), Gi(e), ...n].filter((r) => r !== null && r !== void 0 && !Ks(r) && !Cl(r)))
+}
+
+function acs(e, n) {
+  {
+    let r = Eao(e, n);
+    if (r.escaped) {
+      if (jW(r.dir)) return `This command was blocked because its working directory is spelled in a form that cannot be safely resolved (for example through a symlink storing a raw dot segment, a network-share or device-namespace shape, or an unreadable ancestor directory). If the directory is inside the worktree ${n}, re-run the command from its direct symlink-free path.`;
+      if (r.dir.skipped && !r.roots.some((S) => S.skipped || jW(S))) return `This command was blocked because its working directory is network-shaped (a UNC share or /net automount spelling) while the protected checkout is local. If the directory is genuinely inside the worktree ${n}, re-run the command from its local, plainly-spelled path.`;
+      let {
+        noun: s,
+        possessive: h
+      } = qut(n), y = U0e() ? null : lcs(r);
+      if (y !== null) {
+        let S = mg(n);
+        return `${s} is isolated in the worktree ${S}, but this command's working directory (${mg(e)}) is in a different worktree (${mg(y)}). Refusing to run it there \u2014 ${h} commands must run inside its own worktree. Re-run the command from ${S}.`
+      }
+      return `${s} is isolated in the worktree ${n}, but this command's working directory resolved to the shared checkout (${e}). Refusing to run it there \u2014 ${h} commands must run inside its worktree. Re-run the command from ${n}.${bao(r.dir.canonical,r.worktree.canonical,n)}`
+    }
+  }
+  return null
+}
+
+function lcs(e) {
+  let n = e.dir.canonical,
+    r = e.worktree.canonical;
+  if (n === null || r === null || od(n, r)) return null;
+  return eY(n) ? fr(n) : null
+}
+
+function qut(e) {
+  return ql()?.worktreePath === e ? {
+    noun: "This session",
+    possessive: "a worktree-isolated session's"
+  } : {
+    noun: "This agent",
+    possessive: "a worktree-isolated agent's"
+  }
+}
+
+function Egr(e, n) {
+  return Eao(e, n).escaped
+}
+
+function Eao(e, n) {
+  let r = Ox(e),
+    s = ql(),
+    h = null,
+    y = L((s !== null && s.worktreePath === n ? [s.originalCwd] : [Ee(), s?.originalCwd]).filter((Z) => Z !== void 0 && Z !== "")),
+    S = s?.liveLaunchAnchor !== void 0 && s.liveLaunchAnchor !== "" ? s.liveLaunchAnchor : void 0,
+    w = S !== void 0 && (Ks(S) || Cl(S)),
+    A = () => YP(n),
+    O = S !== void 0 && !w ? [fr(S), Gi(S)].filter((Z) => Z !== null && Z !== void 0) : [],
+    M = A(),
+    j = O.length > 0,
+    G = [...y.flatMap((Z) => Ks(Z) || Cl(Z) ? [Z] : [fr(Z) ?? Z, Gi(Z)]), ...O, ...S !== void 0 && !j ? [S] : [], M],
+    N = L(G.filter((Z) => Z !== null)).map((Z) => Ox(Z));
+  if (!N.some((Z) => Gce(r, Z))) return {
+    dir: r,
+    worktree: h,
+    roots: N,
+    escaped: !1
+  };
+  if (h ??= Ox(n), ypt(r, h)) return {
+    dir: r,
+    worktree: h,
+    roots: N,
+    escaped: !1
+  };
+  return {
+    dir: r,
+    worktree: h,
+    roots: N,
+    escaped: !0
+  }
+}
+
+function qP(e) {
+  if (!eY(e)) return Vpe;
+  let n = Ox(e);
+  if (!XP(fr(e), n.lexical)) return Vpe;
+  return Gi(e) ?? Vpe
+}
+
+function YP(e) {
+  let n = SSt(um().linkedFromRootByPin, e, qP);
+  return n === Vpe ? null : n
+}
+
+function XP(e, n, r = "win32") {
+  if (e === null) return !1;
+  let s = r === "darwin" ? T0(e) : e;
+  if (r !== "win32") s = dqn(s, r);
+  else s = ZDt(z$r(s));
+  return s === n
+}
+var JP = Object.freeze({});
+class Ay {
+  #e;
+  register(e) {
+    this.#e ??= e
+  }
+  get runtime() {
+    return this.#e ?? JP
+  }
+  get registered() {
+    return this.#e !== void 0
+  }
+}
+var QP = new W(() => new Ay);
+
+function Py() {
+  return QP.of(H().host)
+}
+
+function hPi(e) {
+  Py().register(e)
+}
+
+function q9e() {
+  return Py().runtime
+}
+import {
+  isDeepStrictEqual as ZP
+} from "util";
+var eO = ["session", "bridge", "loopback"],
+  tO = {
+    session: !1,
+    bridge: !0,
+    loopback: !0
+  };
+class r1 {
+  #e = new Map;
+  get defaultHost() {
+    return {
+      kind: "local",
+      name: Zq(),
+      enforcement: "host"
+    }
+  }
+  hosts() {
+    return [this.defaultHost, ...this.#t()]
+  }
+  resolve(e) {
+    if (DL(e)) return {
+      kind: "local",
+      host: this.defaultHost
+    };
+    let n = this.#t(),
+      r = n.find((y) => y.name === e);
+    if (r) return {
+      kind: "remote",
+      host: r
+    };
+    let [s, h] = n.filter((y) => que(e, y.name));
+    return s !== void 0 && h === void 0 ? {
+      kind: "remote",
+      host: s
+    } : {
+      kind: "unknown"
+    }
+  }
+  replaceRemoteHosts(e, n) {
+    if (n.find((M) => M.source !== e)) throw Error("replaceRemoteHosts was handed a ToolHost registered by another source");
+    let s = Oy(this.#t()),
+      h = this.#e.get(e) ?? new Map,
+      y = new Map,
+      S = n.flatMap((M) => {
+        if (!b3(M.name) || y.has(M.name)) return [M.name];
+        return y.set(M.name, M), []
+      }),
+      w = y.size > 0 || !tO[e] ? [] : [...h.values()].map((M) => [M.name, {
+        ...M,
+        status: "offline"
+      }]),
+      A = new Map(this.#e);
+    A.set(e, new Map([...w, ...y])), this.#e = A;
+    let O = Oy(this.#t());
+    return {
+      changed: !ZP(s, O),
+      dropped: S
+    }
+  }
+  passthroughHost(e) {
+    return this.#n().find((n) => n.passthroughTools?.has(e) === !0)
+  }
+  sourceHosts(e) {
+    return [...this.#e.get(e)?.values() ?? []]
+  }
+  #t() {
+    return [...this.#n().reduce((n, r) => {
+      let s = n.get(r.name);
+      if (s === void 0) return n.set(r.name, r);
+      let h = s.passthroughTools === void 0 && r.passthroughTools !== void 0 ? {
+        ...s,
+        passthroughTools: r.passthroughTools,
+        ...r.rejectedPassthroughTools !== void 0 && {
+          rejectedPassthroughTools: r.rejectedPassthroughTools
+        }
+      } : s;
+      return h === s ? n : n.set(r.name, h)
+    }, new Map).values()].sort((n, r) => n.name.localeCompare(r.name))
+  }
+  #n() {
+    let e = eO.flatMap((n) => [...this.#e.get(n)?.values() ?? []]);
+    return [...e.filter((n) => n.status === "online"), ...e.filter((n) => n.status !== "online")]
+  }
+}
+
+function Oy(e) {
+  return {
+    remotes: e.map(({
+      source: n,
+      name: r,
+      status: s,
+      enforcement: h,
+      description: y,
+      servedTools: S,
+      passthroughTools: w,
+      rejectedPassthroughTools: A,
+      protocol: O,
+      transport: M,
+      takenOverAt: j,
+      asleep: G,
+      busy: N,
+      lastHeardAt: Z
+    }) => ({
+      source: n,
+      name: r,
+      status: s,
+      enforcement: h,
+      description: y,
+      servedTools: [...S].sort(),
+      passthroughTools: [...w?.keys() ?? []].sort(),
+      rejectedPassthroughTools: [...A ?? []].sort(),
+      protocol: O,
+      transport: M.kind,
+      takenOverAt: j,
+      asleep: G,
+      busy: N,
+      lastHeardAt: Z
+    }))
+  }
+}
+
+function cce() {
+  return !kg().backgroundCompletionNoticeDisabled
+}
+
+function Tao() {
+  return cce() && !OT()
+}
+var COn = "Nothing notifies you when the command finishes: read the output file that the result names to check on it. The file gets no line when the command ends, so if you need to know that it has, end the command with an `echo` of your own.";
+var oO = 8;
+class My {
+  #e = [];
+  #t = new WeakSet;
+  #n = !1;
+  #i = null;
+  #a = null;
+  countBackgroundWork = null;
+  openGate() {
+    this.#n = !0
+  }
+  get gateOpen() {
+    return this.#n
+  }
+  markCopyCleared(e) {
+    this.#i = e
+  }
+  get copyCleared() {
+    return this.#i
+  }
+  markSyncedFolder(e) {
+    this.#a = e
+  }
+  get syncedFolder() {
+    return this.#a
+  }
+  stage(e, n = !1) {
+    let r = {
+        text: e,
+        isNeverDropped: n
+      },
+      s = [...this.#e.filter((S) => S.text !== e), r],
+      h = new Set(s.filter((S) => !S.isNeverDropped).slice(0, -oO));
+    this.#e = s.filter((S) => !h.has(S));
+    let y = () => {
+      if (this.#e.includes(r)) return "waiting";
+      return this.#t.has(r) ? "taken" : "gone"
+    };
+    return {
+      get state() {
+        return y()
+      },
+      revise: (S) => {
+        if (y() !== "waiting") return;
+        let w = S === null ? null : {
+          text: S,
+          isNeverDropped: n
+        };
+        this.#e = this.#e.flatMap((A) => A !== r ? [A] : w === null ? [] : [w]), r = w ?? r
+      }
+    }
+  }
+  get pending() {
+    return this.#e.length
+  }
+  take() {
+    let e = this.#e;
+    return this.#e = [], e.forEach((n) => this.#t.add(n)), e.map((n) => n.text)
+  }
+}
+var SMt = new Je(() => new My);
+
+function YPi(e) {
+  return (SMt.peek(e)?.pending ?? 0) > 0
+}
+
+function rO(e) {
+  return SMt.peek(e)?.gateOpen ?? !1
+}
+
+function Wcs(e) {
+  return rO(e)
+}
+
+function zcs(e) {
+  return null
+}
+
+function Qgr(e) {
+  return zcs(e) ?? Ee()
+}
+
+function Zgr(e) {
+  return SMt.peek(e)?.copyCleared ?? null
+}
+class Ny {
+  converted = new WeakMap;
+  lookup(e) {
+    return this.converted.get(e)
+  }
+  remember(e, n) {
+    this.converted.set(e, n)
+  }
+  reset() {
+    this.converted = new WeakMap
+  }
+}
+var Dy = new Ny;
+
+function o1(e) {
+  let n = Dy.lookup(e);
+  if (n) return n;
+  let r = Bbt(e, {
+    unrepresentable: "throw"
+  });
+  return Dy.remember(e, r), r
+}
+import {
+  createHash as sO
+} from "crypto";
+var iO = "59cf53e54c78";
+
+function aO(e) {
+  let n = e.find((s) => s.type === "user" && !s.isMeta);
+  if (!n) return "";
+  let r = n.message.content;
+  if (typeof r === "string") return r;
+  if (Array.isArray(r)) {
+    let s = r.find((h) => h.type === "text");
+    if (s && s.type === "text") return s.text
+  }
+  return ""
+}
+
+function id(e, n) {
+  let s = [4, 7, 20].map((S) => e[S] || "0").join(""),
+    h = `${iO}${s}${n}`;
+  return sO("sha256").update(h).digest("hex").slice(0, 3)
+}
+
+function XPi(e) {
+  let n = aO(e);
+  return id(n, {
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.319",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-11-05T18:14:18Z",
+    GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.VERSION)
+}
+var lO = "x-amzn-requestid";
+
+function tXe(e, n) {
+  if (e) return e;
+  try {
+    return n?.get(lO) || null
+  } catch (r) {
+    return a(F(r)), null
+  }
+}
+class TJt {
+  #e = new Map;
+  #t = null;
+  clear() {
+    this.#e.clear(), this.#t = null
+  }
+  describe(e, n, r = !1) {
+    let s = r ? `loaded\x00${e}` : e,
+      h = this.#e.get(s);
+    if (h) return h;
+    let y = wn(n, e),
+      S = y ? y.prompt({
+        getToolPermissionContext: async () => ({
+          mode: "default",
+          additionalWorkingDirectories: new Map,
+          alwaysAllowRules: {},
+          alwaysDenyRules: {},
+          alwaysAskRules: {},
+          isBypassPermissionsModeAvailable: !1,
+          mcpPermissionModeOverrides: {}
+        }),
+        tools: n,
+        agents: [],
+        loadedThroughToolSearch: r
+      }) : Promise.resolve("");
+    return this.#e.set(s, S), S
+  }
+  maybeInvalidate(e) {
+    let n = e.map((r) => r.name).sort().join(",");
+    if (this.#t !== n) t("ToolSearchTool: cache invalidated - deferred tools changed"), this.#e.clear(), this.#t = n
+  }
+}
+
+function Ly(e) {
+  let n = e.name,
+    r = e.mcpInfo ?? gr(n);
+  if (r) {
+    let h = [r.serverName, r.toolName].filter((S) => Boolean(S)).map((S) => S.toLowerCase()),
+      y = h.flatMap((S) => S.split(/[\s_.]+/)).filter(Boolean);
+    return {
+      parts: y,
+      coarseParts: h,
+      full: y.join(" "),
+      isMcp: !0
+    }
+  }
+  let s = n.replace(/([a-z])([A-Z])/g, "$1 $2").replaceAll("_", " ").toLowerCase().split(/\s+/).filter(Boolean);
+  return {
+    parts: s,
+    coarseParts: [n.toLowerCase()],
+    full: s.join(" "),
+    isMcp: !1
+  }
+}
+var By = 16384,
+  Hy = 32,
+  Fy = 64,
+  cO = 20,
+  $y = yTr,
+  UOn = /^select:(.+)$/i;
+
+function Gcs(e) {
+  let n = Q(e, By),
+    r = UOn.test(n) ? n : jy(n),
+    s = UOn.exec(r)?.[1];
+  if (s === void 0) return r;
+  let h = s.split(",");
+  return h.length <= Fy ? r : r.slice(0, -s.length) + h.slice(0, Fy).join(",")
+}
+
+function jy(e) {
+  let n = Q(e, By),
+    r = n.trim().split(/\s+/);
+  return r.length <= Hy ? n : r.slice(0, Hy).join(" ")
+}
+async function Uy(e, n, r) {
+  let s = [];
+  for (let h of e) s.push(await r(h)), await n.maybeYield();
+  return s
+}
+
+function uO(e) {
+  let n = new Map;
+  for (let r of e)
+    if (!n.has(r)) n.set(r, new RegExp(`\\b${Qo(r)}\\b`));
+  return n
+}
+async function wMt(e, n, r, s, h, y) {
+  let S = lqe(jy(e).trim()).toLowerCase(),
+    w = n.find((Y) => Y.name.toLowerCase() === S) ?? s.find((Y) => Y.name.toLowerCase() === S);
+  if (w) return [w.name];
+  if (S.startsWith("mcp__") && S.length > 5) {
+    let Y = n.filter((ne) => ne.name.toLowerCase().startsWith(S)).slice(0, h).map((ne) => ne.name);
+    if (Y.length > 0) return Y
+  }
+  let A = S.split(/\s+/).filter((Y) => Y.length > 0),
+    O = [],
+    M = [];
+  for (let Y of A)
+    if (Y.startsWith("+") && Y.length > 1) O.push(Y.slice(1));
+    else M.push(Y);
+  let j = O.length > 0 ? [...O, ...M] : A,
+    G = uO(j),
+    N = yo({
+      yieldBudgetMs: cO
+    }),
+    Z = n;
+  if (O.length > 0) Z = (await Uy(n, N, async (ne) => {
+    let se = Ly(ne),
+      re = (await y.describe(ne.name, r)).toLowerCase(),
+      _e = ne.searchHint?.slice(0, $y).toLowerCase() ?? "";
+    return O.every((ce) => {
+      let xe = G.get(ce);
+      return se.parts.includes(ce) || se.parts.some((ve) => ve.includes(ce)) || se.coarseParts.includes(ce) || se.coarseParts.some((ve) => ve.includes(ce)) || xe.test(re) || _e && xe.test(_e)
+    }) ? ne : null
+  })).filter((ne) => ne !== null);
+  return (await Uy(Z, N, async (Y) => {
+    let ne = Ly(Y),
+      ae = (await y.describe(Y.name, r)).toLowerCase(),
+      re = Y.searchHint?.slice(0, $y).toLowerCase() ?? "",
+      _e = 0;
+    for (let Se of j) {
+      let ce = G.get(Se);
+      if (ne.parts.includes(Se)) _e += ne.isMcp ? 12 : 10;
+      else if (ne.parts.some((xe) => xe.includes(Se))) _e += ne.isMcp ? 6 : 5;
+      if (ne.coarseParts.includes(Se)) _e += ne.isMcp ? 12 : 10;
+      else if (ne.coarseParts.some((xe) => xe.includes(Se))) _e += ne.isMcp ? 4 : 3;
+      if (ne.full.includes(Se) && _e === 0) _e += 3;
+      if (re && ce.test(re)) _e += 4;
+      if (ce.test(ae)) _e += 2
+    }
+    return {
+      name: Y.name,
+      score: _e
+    }
+  })).filter((Y) => Y.score > 0).sort((Y, ne) => ne.score - Y.score).slice(0, h).map((Y) => Y.name)
+}
+
+function VOn(e, n = !1) {
+  if (Ct() || e !== "fullscreen") return "inline";
+  return x9e() || n ? "fullscreen" : "inline"
+}
+
+function KOn() {
+  return z1() || xn()
+}
+
+function QOn(e) {
+  return (e.voice?.enabled ?? e.voiceEnabled) === !0
+}
+
+function VOi(e) {
+  return e.voice?.enabled !== void 0 || e.voiceEnabled !== void 0
+}
+
+function ilo() {
+  try {
+    if (!Qa()) return !1;
+    return Vf()
+  } catch {
+    return !1
+  }
+}
+
+function alo() {
+  return gn("allow_voice_mode")
+}
+
+function PMt() {
+  return ilo() && alo()
+}
+var Wy = "tengu_review_bughunter_config";
+
+function hTe() {
+  return v(Wy, null)
+}
+
+function mce() {
+  let e = hTe()?.cost_note;
+  return typeof e === "string" && e.length > 0 ? e : "$10-$20"
+}
+
+function BOn() {
+  let e = hTe()?.typical_cost_usd;
+  return typeof e === "number" && e >= 1 && e <= 1e4 ? Math.round(e) : null
+}
+
+function _q() {
+  let e = hTe()?.duration_note;
+  return typeof e === "string" && e.length > 0 ? e : "~10\u201320 min"
+}
+
+function QPi() {
+  let e = hTe()?.model;
+  return typeof e === "string" && e.length > 0 ? e : void 0
+}
+var dO = 45,
+  fO = 30,
+  pO = 55;
+
+function HWe() {
+  let e = hTe()?.client_wait_minutes;
+  return typeof e === "number" && Number.isFinite(e) && e >= fO && e <= pO ? Math.floor(e) : dO
+}
+
+function CJt() {
+  let e = hTe(),
+    n = (r, s) => typeof r === "number" && Number.isFinite(r) && r > 0 ? Math.floor(r) : s;
+  return {
+    maxFiles: n(e?.max_diff_files, 500),
+    maxLines: n(e?.max_diff_lines, 8000)
+  }
+}
+
+function Xcs() {
+  return hTe()?.empty_tree_fallback_enabled !== !1
+}
+
+function ZPi() {
+  return hTe()?.github_access_precheck_enabled !== !1
+}
+
+function eOi() {
+  return hTe()?.branch_preflight_required !== !1
+}
+
+function L$() {
+  return kMt() && sLt()
+}
+
+function tOi() {
+  return L$() && hTe()?.eval_enabled === !0
+}
+
+function nOi() {
+  if (L$()) return null;
+  let e = pn(Wy, null);
+  if (e.source === "fallback" && !qi()) return "config_unavailable";
+  if (e.value?.enabled !== !0) return "kill_switch";
+  if (!Fn()) return "third_party_provider";
+  if (k1()) return "remote_environment";
+  if (!Lx()) return "non_first_party_base_url";
+  return "entitlement"
+}
+
+function kMt() {
+  return hTe()?.enabled === !0 && Fn() && !k1()
+}
+
+function vMt() {
+  return v("tengu_ultrareview_post_enabled", !0)
+}
+async function tyr() {
+  let e = i.CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK;
+  if (!e) {
+    if (await ms().catch(() => {}), _t("tengu_twinkly_breeze", {
+        safe: !0
+      })) return !0
+  }
+  return c("cli_ultrareview_workspace_trust", e ? "check_switched_off_by_env" : "check_switched_off"), !1
+}
+
+function nyr() {
+  if (!kMt() || L$()) return null;
+  switch (kLn()) {
+    case "api_key_auth":
+      return `${YZt({prefix:"ultra (cloud review) requires claude.ai account auth.",suffix:"to use ultra."})} See https://code.claude.com/docs/en/ultrareview.`;
+    case "no_profile_scope": {
+      let {
+        source: e
+      } = La();
+      if (e === "CLAUDE_CODE_OAUTH_TOKEN") return `ultra (cloud review) requires a full-scope login token. ${iFe(e)} Then run \`claude auth login\` to use it; see https://code.claude.com/docs/en/ultrareview.`;
+      return "ultra (cloud review) requires a full-scope login token \u2014 run `claude auth login` to use it; see https://code.claude.com/docs/en/ultrareview."
+    }
+    case "not_in_rollout":
+      return "ultra (cloud review) isn't enabled for your account yet \u2014 run `claude auth login` to refresh your entitlements; see https://code.claude.com/docs/en/ultrareview.";
+    default:
+      return "ultra (cloud review) requires a claude.ai account \u2014 sign in to claude.ai to use it; see https://code.claude.com/docs/en/ultrareview."
+  }
+}
+var EMt = "Cloud sessions are unavailable in an evaluation run.";
+async function Jcs(e) {
+  if (X() && e !== void 0) {
+    if (!await qZe(e)) return !1;
+    return ul({
+      credentials: e
+    })
+  }
+  if (!Rt()) return !1;
+  return ul()
+}
+async function mO() {
+  return await Edn({
+    ignoreUntracked: !0
+  })
+}
+async function rOi(e, n) {
+  try {
+    return await GW(void 0, e, n)
+  } catch (r) {
+    if (Wt.isAxiosError(r) && r.response?.status === 401) throw r;
+    return t(`fetchRemoteEnvironmentsForEligibility failed: ${d(r)}`), null
+  }
+}
+async function RJt(e) {
+  let n = e ?? pe();
+  if (fr(n) !== null) return !0;
+  let {
+    stdout: r,
+    code: s
+  } = await lt(Pt(), [...yn, "rev-parse", "--is-inside-work-tree"], {
+    cwd: n
+  });
+  return s === 0 && r.trim() === "true"
+}
+var ryr = 15000,
+  Qcs = 1000;
+async function gTe(e, n, r, s) {
+  if (!Fn()) return t("checkGithubAppInstalled: not on the first-party provider, skipping the GitHub app check"), {
+    appInstalled: !1,
+    defaultBranch: null,
+    transient: !1,
+    linkedAccountAccess: "inconclusive",
+    httpStatus: null
+  };
+  try {
+    let h = nS(),
+      y = await jvo(h);
+    if (!y) return t("checkGithubAppInstalled: No access token found, assuming app not installed"), {
+      appInstalled: !1,
+      defaultBranch: null,
+      transient: !1,
+      linkedAccountAccess: "inconclusive",
+      httpStatus: null
+    };
+    let S = await Hfe(h);
+    if (!S) {
+      let j = fp();
+      return t(j ? "checkGithubAppInstalled: No org UUID found (profile fetch null \u2014 possibly transient), assuming app not installed" : "checkGithubAppInstalled: No org UUID found (token lacks user:profile scope \u2014 deterministic), assuming app not installed"), {
+        appInstalled: !1,
+        defaultBranch: null,
+        transient: j,
+        linkedAccountAccess: "inconclusive",
+        httpStatus: null
+      }
+    }
+    let w = `${nn().BASE_API_URL}/api/oauth/organizations/${S}/code/repos/${e}/${n}`,
+      A = {
+        ...Kx(y),
+        "x-organization-uuid": S
+      };
+    t(`Checking GitHub app installation for ${e}/${n}`);
+    let O = Date.now(),
+      M = await Wt.get(w, {
+        headers: A,
+        timeout: ryr,
+        signal: r
+      });
+    if (M.status === 200) {
+      let j = M.data.repo?.default_branch || null;
+      if (M.data.status) {
+        let G = M.data.status.app_installed;
+        return t(`GitHub app ${G?"is":"is not"} installed on ${e}/${n}`), {
+          appInstalled: G,
+          defaultBranch: j,
+          transient: !1,
+          linkedAccountAccess: "ok",
+          httpStatus: M.status
+        }
+      }
+      if (M.data.status === null) {
+        let G = ryr - (Date.now() - O);
+        if (s?.resyncUndetermined === !1 || G < Qcs) return t(`GitHub app status for ${e}/${n} is undetermined; not asking the server to resync it`), {
+          appInstalled: !1,
+          defaultBranch: j,
+          transient: !0,
+          linkedAccountAccess: "ok",
+          httpStatus: M.status
+        };
+        return {
+          ...await hO({
+            orgUUID: S,
+            accessToken: y,
+            owner: M.data.repo?.owner?.login || e,
+            repo: M.data.repo?.name || n,
+            timeoutMs: G,
+            signal: r
+          }),
+          defaultBranch: j,
+          linkedAccountAccess: "ok",
+          httpStatus: M.status
+        }
+      }
+      return t(`checkGithubAppInstalled: 200 without a status field for ${e}/${n}; treating the install state as unknown`), {
+        appInstalled: !1,
+        defaultBranch: j,
+        transient: !0,
+        linkedAccountAccess: "inconclusive",
+        httpStatus: M.status
+      }
+    }
+    return t(`checkGithubAppInstalled: Unexpected response status ${M.status}`), {
+      appInstalled: !1,
+      defaultBranch: null,
+      transient: !0,
+      linkedAccountAccess: "inconclusive",
+      httpStatus: M.status
+    }
+  } catch (h) {
+    if (Wt.isAxiosError(h)) {
+      let y = h.response?.status,
+        S = h.response?.headers ?? {},
+        w = h.response?.data,
+        A = gO(y, h.response?.data),
+        O = qy(y, h.response?.data),
+        M = y === 403 && (S["x-ratelimit-remaining"] === "0" || S["retry-after"] !== void 0 || [w?.error, w?.message].some((j) => typeof j === "string" && /rate limit/i.test(j)));
+      if (y && y >= 400 && y < 500 && y !== 408 && y !== 429 && y !== 401 && !M) return t(`checkGithubAppInstalled: Got ${y} error, app likely not installed on ${e}/${n} (linked-account access: ${A})`), {
+        appInstalled: !1,
+        defaultBranch: null,
+        transient: !1,
+        linkedAccountAccess: A,
+        httpStatus: y,
+        ...O && {
+          serverMessage: O
+        }
+      };
+      return t(`checkGithubAppInstalled error: ${d(h)} (linked-account access: ${A})`), {
+        appInstalled: !1,
+        defaultBranch: null,
+        transient: A !== "github_not_connected",
+        linkedAccountAccess: A,
+        httpStatus: y ?? null,
+        ...O && {
+          serverMessage: O
+        }
+      }
+    }
+    return t(`checkGithubAppInstalled error: ${d(h)}`), {
+      appInstalled: !1,
+      defaultBranch: null,
+      transient: !0,
+      linkedAccountAccess: "inconclusive",
+      httpStatus: null
+    }
+  }
+}
+var Gy = {
+  ip_allowlist: "Your GitHub organization has an IP allowlist that is blocking Claude. Add Claude's IP ranges to your GitHub allowlist.",
+  sso_required: "Your GitHub organization requires single sign-on. Disconnect and reconnect GitHub on the Connectors page in Claude on the web, click Authorize next to your organization when GitHub asks, then try again.",
+  idp_conditional_access: "Your GitHub organization's identity provider (Microsoft Entra ID) has a Conditional Access policy that is blocking Claude. Ask your GitHub Enterprise or Entra ID admin to allow Claude in that policy."
+};
+async function hO({
+  orgUUID: e,
+  accessToken: n,
+  owner: r,
+  repo: s,
+  timeoutMs: h,
+  signal: y
+}) {
+  t(`GitHub app status for ${r}/${s} is undetermined; asking the server to resync it`);
+  try {
+    let S = `${nn().BASE_API_URL}/api/oauth/organizations/${e}/code/repos/resync`,
+      w = await Wt.post(S, {
+        owner: r,
+        repo: s
+      }, {
+        headers: {
+          ...Kx(n),
+          "x-organization-uuid": e
+        },
+        timeout: h,
+        signal: y
+      });
+    if (w.data?.app_installed === !0) return t(`Resync: GitHub app is installed on ${r}/${s}`), {
+      appInstalled: !0,
+      transient: !1
+    };
+    let A = typeof w.data?.reason === "string" ? w.data.reason : null;
+    if (t(`Resync answered app_installed=false for ${r}/${s} (reason: ${A??"none"})`), A === "installation_not_found" || A === "user_no_access") return {
+      appInstalled: !1,
+      transient: !1
+    };
+    let O = A !== null && Object.hasOwn(Gy, A) ? Gy[A] : void 0;
+    if (O !== void 0) return {
+      appInstalled: !1,
+      transient: !1,
+      serverMessage: O
+    };
+    return {
+      appInstalled: !1,
+      transient: !0
+    }
+  } catch (S) {
+    let w = Wt.isAxiosError(S) ? qy(S.response?.status, S.response?.data) : void 0;
+    if (t(`Resync of ${r}/${s} failed; ${w?"reporting the server's reason":"treating the install state as unknown"}: ${d(S)}`), w) return {
+      appInstalled: !1,
+      transient: !1,
+      serverMessage: w
+    };
+    return {
+      appInstalled: !1,
+      transient: !0
+    }
+  }
+}
+
+function oOi({
+  linkedAccountAccess: e,
+  serverMessage: n,
+  transient: r
+}) {
+  return e === "github_not_connected" ? {
+    kind: "not_connected"
+  } : e === "github_repo_not_found" ? {
+    kind: "repo_not_found"
+  } : n ? {
+    kind: "policy_block",
+    serverMessage: n
+  } : {
+    kind: r ? "transient" : "other_no"
+  }
+}
+var Vy = p(() => u({
+  error: u({
+    message: o().optional().catch(void 0),
+    details: u({
+      error_code: o().optional(),
+      type: o().optional(),
+      error_visibility: o().optional().catch(void 0)
+    })
+  })
+}));
+
+function gO(e, n) {
+  if (e !== 401 && e !== 404) return "inconclusive";
+  let r = Vy().safeParse(n),
+    s = r.success ? r.data.error.details : void 0;
+  if (e === 401 && s?.error_code === "auth_required" && s.type === "github") return "github_not_connected";
+  if (e === 404 && s?.error_code === "github_resource_not_found") return "github_repo_not_found";
+  return "inconclusive"
+}
+
+function qy(e, n) {
+  if (e !== 403) return;
+  let r = Vy().safeParse(n);
+  if (!r.success) return;
+  let {
+    message: s,
+    details: h
+  } = r.data.error;
+  if (!s || h.error_visibility !== "user_facing") return;
+  if (h.error_code !== "github_ip_allowlist" && h.error_code !== "github_app_suspended" && h.error_code !== "github_saml_sso_required" && h.error_code !== "github_idp_conditional_access") return;
+  return Et(s, 300)
+}
+async function sOi(e, n, r) {
+  return (await gTe(e, n, r)).appInstalled
+}
+async function yO() {
+  try {
+    let e = nS(),
+      n = await jvo(e);
+    if (!n) return t("checkGithubTokenSynced: No access token found"), !1;
+    let r = await Hfe(e);
+    if (!r) return t("checkGithubTokenSynced: No org UUID found"), !1;
+    let s = `${nn().BASE_API_URL}/api/oauth/organizations/${r}/sync/github/auth`,
+      h = {
+        ...Kx(n),
+        "x-organization-uuid": r
+      };
+    t("Checking if GitHub token is synced via web-setup");
+    let y = await Wt.get(s, {
+        headers: h,
+        timeout: 15000
+      }),
+      S = y.status === 200 && y.data?.is_authenticated === !0;
+    return t(`GitHub token synced: ${S} (status=${y.status}, data=${_(y.data)})`), S
+  } catch (e) {
+    if (Wt.isAxiosError(e)) {
+      let n = e.response?.status;
+      if (n && n >= 400 && n < 500) return t(`checkGithubTokenSynced: Got ${n}, token not synced`), !1
+    }
+    return t(`checkGithubTokenSynced error: ${d(e)}`), !1
+  }
+}
+async function iOi(e, n) {
+  let r = await gTe(e, n);
+  if (r.appInstalled) return {
+    hasAccess: !0,
+    method: "github-app"
+  };
+  if (r.linkedAccountAccess === "github_not_connected") return {
+    hasAccess: !1,
+    method: "none",
+    reason: "github_not_connected"
+  };
+  if (!St() && await yO()) return {
+    hasAccess: !0,
+    method: "token-sync"
+  };
+  return {
+    hasAccess: !1,
+    method: "none",
+    reason: r.transient ? "transient" : "no_access"
+  }
+}
+async function jOn(e, n) {
+  let r = new Set,
+    [s, h] = await Promise.all([!n.has("needsLogin") && Jcs(e), n.has("needsGitStash") || !1 || mO()]);
+  if (s) r.add("needsLogin");
+  if (!h) r.add("needsGitStash");
+  return r
+}
+var bO = new W(() => new Map);
+
+function wO() {
+  return bO.of(H().host)
+}
+
+function Yy(e, n) {
+  return wO().get(e)?.has(n) === !0
+}
+var nl = "ui://",
+  ei = "ui/resourceUri",
+  Xy = 4096,
+  Jy = ["model", "app"],
+  kO = "mcp-app",
+  xO = 1024,
+  ol = "[!#$%&'*+.^_`|~0-9A-Za-z-]+",
+  RO = new RegExp(`^[ \\t]*(${ol})/(${ol})`),
+  ad = new RegExp(`[ \\t\\r\\n]*;[ \\t\\r\\n]*(?:(${ol})=(?:(${ol})|"((?:[^"\\\\]|\\\\.)*)")(?=[ \\t\\r\\n]*(?:;|$)))?`, "y"),
+  vO = p(() => u({
+    ui: xt({
+      resourceUri: o().startsWith(nl).optional(),
+      visibility: C(B(Jy)).optional()
+    }).refine((e) => _(e).length <= Xy).optional().catch(void 0),
+    [ei]: o().startsWith(nl).max(Xy).optional().catch(void 0)
+  }));
+
+function Qy(e) {
+  let n = e?.ui;
+  if (n === void 0 || n === null) return;
+  if (typeof n !== "object" || Array.isArray(n)) return [];
+  let r = Object.hasOwn(n, "visibility") ? Reflect.get(n, "visibility") : void 0;
+  if (r === void 0 || r === null) return;
+  return Array.isArray(r) ? Jy.filter((s) => r.includes(s)) : []
+}
+
+function EO(e) {
+  return Qy(e)?.includes("model") === !1
+}
+
+function uJt({
+  uri: e,
+  mimeType: n
+}) {
+  if (e.slice(0, nl.length).toLowerCase() === nl) return !0;
+  if (n === void 0 || n.length > xO) return !1;
+  let r = RO.exec(n);
+  if (r?.[1]?.toLowerCase() !== "text" || r[2]?.toLowerCase() !== "html") return !1;
+  ad.lastIndex = r[0].length;
+  for (let s = ad.exec(n); s !== null; s = ad.exec(n)) {
+    let [, h, y, S] = s, w = y ?? S?.replace(/\\(.)/g, "$1");
+    if (h?.toLowerCase() === "profile" && w?.toLowerCase() === kO) return !0
+  }
+  return !1
+}
+
+function Sgr(e, n, r) {
+  if (Yy(n, r)) return t(`MCP server "${n}": tool "${r}" is kept from the model because this session keeps this tool, or every tool of this server, from it (toolsKeptFromModel.ts); hosts still see it in mcp_status`), !0;
+  let s = EO(e);
+  if (s) t(`MCP server "${n}": tool "${r}" is kept from the model (its _meta.ui.visibility omits "model" or cannot be read); hosts still see it in mcp_status`);
+  return s
+}
+var TO = 256,
+  ld = he(new Set, (e) => e.clear());
+
+function LWe(e) {
+  let n = new Map,
+    r = e.filter((s) => {
+      if (!s.mcpInfo) return !0;
+      if (s.mcpInfo.hiddenFromModel === !0) return !1;
+      if (s.name.length <= xHe) return !0;
+      if (ld.size < TO && !ld.has(s.name)) {
+        ld.add(s.name);
+        let {
+          serverName: h
+        } = s.mcpInfo;
+        n.set(h, (n.get(h) ?? 0) + 1), Gs(h, `Tool "${s.name}" is not sent to Claude: its name has ${s.name.length} characters and the API accepts at most ${xHe}`)
+      }
+      return !1
+    });
+  for (let [s, h] of n) l("tengu_mcp_degraded", {
+    reason: b("tool_name_too_long"),
+    skippedCount: h,
+    mcpServerKeyHash: qL(s)
+  });
+  return r
+}
+
+function iPi(e) {
+  return e?.ui?.resourceUri !== void 0 || e?.[ei] !== void 0
+}
+
+function wgr(e) {
+  if (e?.ui === void 0 && e?.[ei] === void 0) return;
+  let n = vO().safeParse(e ?? {}).data ?? {},
+    {
+      ui: r,
+      [ei]: s
+    } = n,
+    h = r ? void 0 : Qy(e),
+    y = r ?? (h && {
+      visibility: h
+    }),
+    S = {
+      ...y !== void 0 && {
+        ui: y
+      },
+      ...s !== void 0 && {
+        [ei]: s
+      }
+    };
+  return Object.keys(S).length > 0 ? S : void 0
+}
+
+function Zcs() {
+  try {
+    return v("tengu_breezy_fairy", !1)
+  } catch {
+    return !1
+  }
+}
+async function aOi() {
+  if (!Zcs() || !vNe()) return {
+    kind: "off"
+  };
+  let e = await LD().catch(() => ({}));
+  return Object.keys(e).length > 0 ? {
+    kind: "ask",
+    proofHeaders: e
+  } : {
+    kind: "no_token"
+  }
+}
+
+function lOi(e) {
+  return e.kind !== "off"
+}
+var CO = p(() => u({
+  session: u({
+    security_tier: B(["elevated", "standard"])
+  })
+}));
+
+function dOi(e) {
+  let n = CO().safeParse(e);
+  return n.success ? n.data.session.security_tier : void 0
+}
+var eus = p(() => u({
+  error: u({
+    message: oe().optional(),
+    reason: o().optional().catch(void 0),
+    resource: o().optional().catch(void 0),
+    sub_reason: o().optional().catch(void 0)
+  })
+}));
+
+function tus(e) {
+  let n = eus().safeParse(e);
+  if (!n.success) return "refused";
+  let {
+    reason: r,
+    resource: s,
+    sub_reason: h
+  } = n.data.error;
+  if (r === "security_tier_request_unsupported") return "unsupported";
+  if (h !== "security_tier_request") return "refused";
+  switch (s) {
+    case "untrusted_device":
+      return "untrusted_device";
+    case "device_check_unavailable":
+      return "unavailable";
+    default:
+      return "refused"
+  }
+}
+
+function nus(e) {
+  if (e === "honored") g("cloud_elevated_create");
+  else c("cloud_elevated_create", e)
+}
+var oyr = "Background task",
+  syr = "Remote task";
+
+function WOn(e) {
+  return e.normalize("NFC").toLowerCase().normalize("NFC")
+}
+var AO = /[\u017f\u212a\ufb00-\ufb06]/;
+var PO = /^\/mnt\/[a-z](?:\/|$)/i,
+  OO = /^\/mnt(?:\/[a-z])?\/?$/i;
+
+function cd(e) {
+  return x() === "wsl" && OO.test(e)
+}
+
+function Jao(e) {
+  switch (x()) {
+    case "macos":
+    case "windows":
+      return !0;
+    case "wsl":
+      return e !== void 0 && PO.test(e);
+    default:
+      return !1
+  }
+}
+
+function cOi(e) {
+  return AO.test(e)
+}
+var Zy = /\p{Default_Ignorable_Code_Point}/gu,
+  DO = new RegExp(`(${Zy.source}+)`, "u");
+
+function C2(e) {
+  return e.replace(Zy, "").normalize("NFKD").toLowerCase().toUpperCase().toLowerCase().replace(/i\u0307/g, "i").replace(/\u03c2/g, "\u03C3").normalize("NFC")
+}
+
+function uOi(e) {
+  let n = e.split(DO);
+  return n.length === 1 ? null : n.map((r, s) => s % 2 === 1 ? r : C2(r)).join("")
+}
+
+function fOi(e) {
+  let n = e.split("/");
+  return n.slice(0, -1).map((r, s) => n.slice(0, s + 1).join("/"))
+}
+
+function pOi(e) {
+  let n = new Set;
+  return e.flatMap((r) => {
+    let s = [];
+    for (let h = r.lastIndexOf("/"); h !== -1; h = h === 0 ? -1 : r.lastIndexOf("/", h - 1)) {
+      let y = r.slice(0, h);
+      if (n.has(y)) break;
+      n.add(y), s.push(y)
+    }
+    return s.reverse()
+  })
+}
+import {
+  join as $O
+} from "path";
+import {
+  readdirSync as NO
+} from "fs";
+var LO = ["project", "local", "legacy"],
+  tS = [
+    ["permissions", "deny"],
+    ["permissions", "ask"],
+    ["sandbox", "filesystem", "denyRead"],
+    ["sandbox", "filesystem", "denyWrite"],
+    ["sandbox", "network", "deniedDomains"]
+  ],
+  oS = [
+    ["permissions", "allow"],
+    ["permissions", "additionalDirectories"],
+    ["sandbox", "filesystem", "allowRead"],
+    ["sandbox", "filesystem", "allowWrite"],
+    ["sandbox", "network", "allowedDomains"],
+    ["sandbox", "network", "allowUnixSockets"],
+    ["sandbox", "excludedCommands"]
+  ],
+  Or = ["sandbox", "enabled"];
+
+function rl(e, n) {
+  let r = xE(e, n);
+  return Array.isArray(r) ? r : []
+}
+
+function Ir(e, n, r = !1) {
+  let s = structuredClone(e ?? {});
+  for (let h of tS) {
+    let y = rl(e, h),
+      S = new Set(y.map((A) => _(A))),
+      w = rl(n, h).filter((A) => !S.has(_(A)));
+    if (w.length > 0) MO(s, h, [...y, ...w])
+  }
+  for (let h of oS) {
+    let y = rl(e, h),
+      S = new Set(rl(n, h).map((A) => _(A))),
+      w = y.filter((A) => S.has(_(A)));
+    if (w.length !== y.length) MO(s, h, w)
+  }
+  for (let h of rS()) {
+    if (!r && ln(h.path, Or)) continue;
+    let y = zSe(h, n);
+    if (ud(h, y) < ud(h, zSe(h, e))) MO(s, h.path, y)
+  }
+  return e === null && Object.keys(s).length === 0 ? null : s
+}
+
+function rS() {
+  return UJ().filter((e) => e.path[0] === "sandbox")
+}
+
+function ud(e, n) {
+  let r = hHe(e.restrictive).indexOf(n);
+  return r === -1 ? Number.POSITIVE_INFINITY : r
+}
+
+function sS(e) {
+  let n = {};
+  for (let r of [...tS, ...oS]) {
+    let s = xE(e, r);
+    if (Array.isArray(s)) MO(n, r, s)
+  }
+  for (let r of rS().filter((s) => !ln(s.path, Or))) {
+    let s = zSe(r, e);
+    if (Number.isFinite(ud(r, s))) MO(n, r.path, s)
+  }
+  return n
+}
+
+function HO(e, n) {
+  return e === n || eS(e) && eS(n)
+}
+
+function eS(e) {
+  if (e === null || e.trim() === "") return !0;
+  let n = et(e, !1);
+  return typeof n === "object" && n !== null && !Array.isArray(n) && Object.keys(n).length === 0
+}
+
+function FO(e) {
+  return {
+    settings: null,
+    errors: [{
+      file: e,
+      path: "",
+      message: "What was accepted for this settings file could not be read, so it is not applied to cloud sessions. Run claude apply-project-settings in a terminal in this folder to accept it again.",
+      severity: "fatal"
+    }],
+    loadState: "didNotLoad"
+  }
+}
+
+function iyr(e, n, r, s, h = () => !1, y = () => !1) {
+  let S = {
+      seeds: new Map,
+      heldBack: [],
+      firstSeen: [],
+      unreadable: !1,
+      matching: new Set,
+      hookWaiting: !1,
+      sandboxTurnedOn: !1
+    },
+    w = e.folder(n.key),
+    A = [];
+  for (let O of LO) {
+    let M = n[O];
+    if (M === null) continue;
+    let j = r(M),
+      G = j === "absent" || j === "unreadable" ? null : I6(j.text),
+      N = n.linkedAway.includes(O) || h(M),
+      Z = G === null || N ? null : kT(G, M),
+      te = O === "local" && xE(Z?.settings ?? null, Or) === !0 && y(),
+      Y = typeof w === "object" ? w[O] : M,
+      ne;
+    if (w === "unreadable") ne = "unreadable";
+    else if (Y === null) ne = {
+      text: null
+    };
+    else {
+      let xe = e.file(Y);
+      if (xe === "unreadable" || xe === "none" && w !== "none") ne = "unreadable";
+      else if (xe === "none") {
+        let ve = N ? null : G;
+        if (ne = {
+            text: ve
+          }, S.firstSeen.push({
+            slot: O,
+            present: j !== "absent",
+            widening: Z?.settings != null && !ln(Ir(null, Z.settings) ?? {}, Z.settings)
+          }), s === "engage") e.recordFile(M, ve, "first_attach")
+      } else ne = {
+        text: xe.text
+      }, A.push(Y)
+    }
+    let se = Z?.settings?.hooks?.PreToolUse,
+      ae = se !== void 0 && se.length > 0;
+    if (ne === "unreadable") {
+      S.unreadable = !0, S.heldBack.push(O), S.hookWaiting ||= ae;
+      let xe = Ir(null, Z?.settings ?? null, te);
+      S.sandboxTurnedOn ||= xE(xe, Or) === !0, S.seeds.set(M, {
+        ...FO(M),
+        settings: xe
+      });
+      continue
+    }
+    let re = !HO(ne.text, G);
+    if (!(j === "unreadable" || re || Y !== M)) {
+      if (!N) S.matching.add(M);
+      S.seeds.set(M, Z ?? (ne.text === null ? Fpe() : kT(ne.text, M)));
+      continue
+    }
+    if (re || j === "unreadable") S.heldBack.push(O);
+    let Se = ne.text === null ? Fpe() : kT(ne.text, M);
+    S.hookWaiting ||= ae && !ln(se, Se.settings?.hooks?.PreToolUse);
+    let ce = Ir(Se.settings, Z?.settings ?? null, te);
+    S.sandboxTurnedOn ||= xE(ce, Or) === !0 && xE(Se.settings, Or) !== !0, S.seeds.set(M, ce === null && Se.settings === null ? Se : {
+      ...Se,
+      settings: ce
+    })
+  }
+  if (s === "engage") {
+    if (w === "none") e.recordFolder(n.key, {
+      project: n.project,
+      local: n.local,
+      legacy: n.legacy
+    });
+    e.noteServed(n.key, A)
+  }
+  return S
+}
+
+function mOi(e = gq()) {
+  try {
+    return NO(e).some((n) => n.endsWith(".jsonl") || n.endsWith(".seen"))
+  } catch (n) {
+    return !K(n)
+  }
+}
+var Fr = "tengu_quiet_locket",
+  hOi = Object.freeze({
+    held: !0,
+    settings: Object.freeze({}),
+    took: "unbound"
+  }),
+  lS = [{
+    name: "read_block",
+    paths: [
+      ["permissions", "blockReadsOutsideWorkingDirectories"]
+    ]
+  }, {
+    name: "write_block",
+    paths: [
+      ["permissions", "blockWritesOutsideWorkingDirectories"]
+    ]
+  }, {
+    name: "auto_mode_off",
+    paths: [
+      ["disableAutoMode"],
+      ["permissions", "disableAutoMode"]
+    ]
+  }, {
+    name: "plan_asks_a_person",
+    paths: [
+      ["useAutoModeDuringPlan"]
+    ]
+  }, {
+    name: "unattended_serving_off",
+    paths: [
+      ["remoteTools", "allowUnattendedServing"]
+    ]
+  }];
+class uS {
+  #e;
+  #t = new Set;
+  noteRefusalsOf(e) {
+    for (let {
+        name: n,
+        paths: r
+      }
+      of lS)
+      if (r.some((h) => {
+          let y = UJ().find((S) => ln(S.path, h));
+          return y === void 0 || zSe(y, e) === y.restrictive
+        })) this.#t.add(n)
+  }
+  refuses(e) {
+    return this.#t.has(e)
+  }
+  get() {
+    return this.#e === void 0 ? void 0 : Ri(this.#e)
+  }
+  keep(e) {
+    this.#e = Ri(e)
+  }
+}
+var ti = new W(() => new uS);
+
+function ayr() {
+  let e = jO();
+  if (!e.held) return e;
+  try {
+    let n = ti.of(H().host),
+      r = n.get(),
+      s = e.took === "ok",
+      h = r === void 0 ? e.settings : BO(md(Ir(r, s ? e.settings : null) ?? {}), e.settings);
+    if (s || r === void 0) n.keep(h);
+    if (s) n.noteRefusalsOf(e.settings);
+    return {
+      held: !0,
+      settings: h,
+      took: e.took
+    }
+  } catch (n) {
+    return a(F(n)), Qao(), {
+      held: !0,
+      settings: {},
+      took: "failed"
+    }
+  }
+}
+
+function lyr(e) {
+  let n = UO(e);
+  try {
+    switch (n) {
+      case "recorded":
+      case "first_attach":
+        g("remote_served_user_rules_at_attach", {
+          op: b("record_held"),
+          first_attach: n === "first_attach"
+        });
+        break;
+      case "first_attach_unread":
+      case "path_not_accepted":
+      case "record_unreadable":
+      case "failed":
+        c("remote_served_user_rules_at_attach", n);
+        break;
+      case "already_held":
+      case "not_held":
+        break
+    }
+  } catch (r) {
+    a(F(r))
+  }
+  return n
+}
+
+function UO(e) {
+  try {
+    if (!_t(Fr, {
+        safe: !0
+      }) || !Kt("userSettings")) return "not_held";
+    let n = un("userSettings");
+    if (n === void 0) return "not_held";
+    let r = ti.of(H().host);
+    if (r.get() !== void 0) return "already_held";
+    let s = e.file(n);
+    if (s === "unreadable") return r.keep({}), "record_unreadable";
+    let h = s === "none";
+    if (h && e.file(dd()) !== "none") return e.recordFile(n, null, "first_attach"), r.keep({}), "path_not_accepted";
+    if (h) e.recordFile(dd(), null, "first_attach");
+    let y = h ? $ie(n) : void 0,
+      S = s !== "none" ? s.text : y === void 0 || y === "absent" || y === "unreadable" ? null : I6(y.text),
+      w = S === null ? {} : kT(S, n).settings;
+    if (y === "unreadable" || w === null) {
+      if (h) e.recordFile(n, null, "first_attach");
+      return r.keep({}), h ? "first_attach_unread" : "record_unreadable"
+    }
+    let A = dyr(w);
+    if (h) e.recordFile(n, S === null ? null : zOn(A), "first_attach");
+    r.noteRefusalsOf(A), r.keep(A);
+    try {
+      e.noteServed(n, [n, dd()])
+    } catch (O) {
+      a(F(O))
+    }
+    return h ? "first_attach" : "recorded"
+  } catch (n) {
+    return a(F(n)), Qao(), "failed"
+  }
+}
+var gOi = "served-own-settings-waiting";
+
+function yOi(e) {
+  try {
+    if (!_t(Fr, {
+        safe: !0
+      }) || !Kt("userSettings")) return !1;
+    let n = un("userSettings"),
+      r = n === void 0 ? "none" : e.file(n);
+    if (n === void 0 || r === "none") return !1;
+    let s = $ie(n);
+    if (r === "unreadable" || s === "unreadable") return !0;
+    let h = iS(r.text, n),
+      y = iS(s === "absent" ? null : I6(s.text), n);
+    return h === void 0 || h !== y
+  } catch (n) {
+    return a(F(n)), !1
+  }
+}
+
+function iS(e, n) {
+  let r = e === null ? {} : kT(e, n).settings;
+  return r === null ? void 0 : zOn(dyr(r))
+}
+
+function dd() {
+  return $O(gq(), "owner-settings-met")
+}
+
+function dyr(e) {
+  let n = sS(e);
+  for (let s of lS)
+    for (let h of s.paths) {
+      let y = UJ().find((S) => ln(S.path, h));
+      if (y !== void 0 && zSe(y, e) === y.restrictive) MO(n, h, xE(e, h))
+    }
+  let r = e.sandbox?.credentials?.files ?? [];
+  if (r.length > 0) MO(n, ["sandbox", "credentials", "files"], r.map((s) => ({
+    path: s.path,
+    mode: "deny"
+  })));
+  return n
+}
+
+function zOn(e) {
+  return `${_(e,null,2)}
+`
+}
+
+function Qao() {
+  try {
+    let e = ti.of(H().host);
+    if (e.get() === void 0) e.keep({})
+  } catch (e) {
+    a(F(e))
+  }
+}
+
+function rXe(e) {
+  try {
+    return _t(Fr, {
+      safe: !0
+    }) && ti.of(H().host).refuses(e)
+  } catch (n) {
+    return a(F(n)), !0
+  }
+}
+
+function _Oi() {
+  try {
+    return _t(Fr, {
+      safe: !0
+    }) ? ti.of(H().host).get() : void 0
+  } catch (e) {
+    return a(F(e)), {}
+  }
+}
+
+function BO(e, n) {
+  let r = e.sandbox?.credentials?.files ?? [],
+    s = new Set(r.map((y) => y.path)),
+    h = [];
+  for (let y of n.sandbox?.credentials?.files ?? [])
+    if (!s.has(y.path)) s.add(y.path), h.push({
+      path: y.path,
+      mode: "deny"
+    });
+  return h.length === 0 ? e : {
+    ...e,
+    sandbox: {
+      ...e.sandbox,
+      credentials: {
+        ...e.sandbox?.credentials,
+        files: [...r, ...h]
+      }
+    }
+  }
+}
+
+function jO() {
+  if (!_t(Fr, {
+      safe: !0
+    })) return {
+    held: !1,
+    why: "switch_off"
+  };
+  let e = {},
+    n;
+  try {
+    if (!Kt("userSettings")) return {
+      held: !0,
+      settings: {},
+      took: "source_disabled"
+    };
+    let r = un("userSettings"),
+      s = r === void 0 ? void 0 : wT(r);
+    if (s?.settings === null && s.errors.length > 0) n = "unreadable";
+    else e = md(s?.settings ?? {}), n = "ok"
+  } catch (r) {
+    a(F(r)), e = {}, n = "failed"
+  }
+  try {
+    switch (n) {
+      case "ok":
+        g("remote_served_user_rules_at_attach", {
+          op: b("taken"),
+          flag_source: f(pn(Fr, !0).source)
+        });
+        break;
+      case "unreadable":
+        c("remote_served_user_rules_at_attach", "take_unreadable");
+        break;
+      case "failed":
+        c("remote_served_user_rules_at_attach", "take_failed");
+        break
+    }
+  } catch (r) {
+    a(F(r))
+  }
+  return {
+    held: !0,
+    settings: e,
+    took: n
+  }
+}
+
+function WO(e, n) {
+  let r = n.held ? Ir(n.settings, e) : e;
+  return r === null ? null : md(r)
+}
+
+function zO(e, n, r) {
+  if (!n.held) return {
+    rules: e.slice(),
+    allowsSetAside: 0,
+    refusalsKept: 0
+  };
+  let s = lz(WO(r, n), "userSettings"),
+    h = new Set(s.map(Lr)),
+    y = new Set,
+    S = [],
+    w = 0;
+  for (let O of e) {
+    if (O.source !== "userSettings") {
+      S.push(O);
+      continue
+    }
+    switch (O.ruleBehavior) {
+      case "allow":
+        if (h.has(Lr(O))) S.push(O);
+        else w += 1;
+        break;
+      case "deny":
+      case "ask":
+        y.add(Lr(O)), S.push(O);
+        break
+    }
+  }
+  let A = 0;
+  for (let O of s) {
+    let M = Lr(O);
+    if (O.ruleBehavior === "allow" || y.has(M)) continue;
+    y.add(M), S.push(O), A += 1
+  }
+  return {
+    rules: S,
+    allowsSetAside: w,
+    refusalsKept: A
+  }
+}
+
+function rus(e, n, r) {
+  if (n === void 0 || !n.held) return e;
+  try {
+    if (r) return [...e, ...aS(n.settings, ["deny"])];
+    return zO(e, n, Kt("userSettings") ? be("userSettings") : null).rules
+  } catch (s) {
+    a(F(s));
+    let h = e.filter((y) => y.source !== "userSettings" || y.ruleBehavior !== "allow");
+    try {
+      let y = new Set(h.map(Lr));
+      return [...h, ...aS(n.settings, ["deny", "ask"]).filter((S) => !y.has(Lr(S)))]
+    } catch (y) {
+      return a(F(y)), h
+    }
+  }
+}
+
+function aS(e, n) {
+  return lz(e, "userSettings").filter((r) => r.ruleBehavior !== "allow" && n.includes(r.ruleBehavior))
+}
+
+function Lr(e) {
+  return `${e.ruleBehavior}\x00${mn(e.ruleValue)}`
+}
+
+function md(e) {
+  if (!h1t.some((r) => (r in e))) return e;
+  let n = {
+    ...e
+  };
+  for (let r of h1t) delete n[r];
+  return n
+}
+var dS = {
+    project: "a --project session cannot be bound yet",
+    launched_from_home: "this folder is never bound because it or its repository is your home directory, is in a hidden folder there, or is another such place \u2014 start from a project folder such as ~/code/my-app",
+    endpoint: "the new session-create endpoint is off for this client",
+    pool: "self-hosted pool sessions are never bound",
+    environment: "only sessions in an Anthropic cloud environment can be bound, and this session's environment is not one",
+    correlation: "a session with a correlation id is never bound",
+    profile: "a Console-profile sign-in has no trusted-device token to bind with (the token belongs to a claude.ai login)",
+    gate: "the device feature flag was off or unreadable at create time",
+    egress: "device traffic is disallowed here, or that check failed",
+    account: "no stored claude.ai login on this machine (run /login)",
+    account_mismatch: "the host's token is for a different account than this machine's (claude /logout)",
+    no_device_proof: "no trusted-device token here, and this machine was not given one (an organization that does not require trusted devices gives none; otherwise try again, and --debug logs why)",
+    trusted_devices_off: "trusted devices are not switched on for this account, so this machine has no device token to bind with",
+    enrollment_paused: "no trusted-device token here, and enrolling new trusted devices is temporarily disabled; try again later",
+    register: "registering this machine as a device failed",
+    no_keychain: "this Mac account has no login keychain to keep a device key in",
+    limit_reached: "this account has reached its device limit",
+    registration_unavailable: "device registration is unavailable to this account",
+    device_revoked: "this machine was removed from your account's devices on claude.ai (to register it again, run claude --cloud without -p from a project folder here and choose Yes when asked)",
+    sign: "signing the bind attestation failed",
+    create_refused: "the server refused it (server-side bind flag likely off)",
+    target_device_unsupported: "the server refused the binding (not turned on for your organization, or not possible in this session's environment)",
+    target_device_requires_account: "binding needs a claude.ai account login, and this session was created without one",
+    invalid_target_device_id: "this machine's stored device id is malformed, so the server rejected it",
+    bind_attestation_stale: "this machine's clock is too far off",
+    untrusted_device: "the server does not trust this machine's device token",
+    bound_session_unattested_write: "the server refused an initial event or field sent with the bind",
+    device_unknown: "the server did not recognize this device, even after registering it again",
+    silent_drop: "the server accepted the create but ignored the bind"
+  },
+  GO = {
+    session_unreadable: "the session could not be read to check its binding (re-attach to retry)",
+    other_device: "this session is bound to another device (a different machine or config directory)",
+    no_device_here: "this machine holds no device registration for this account",
+    local_device_unreadable: "this machine's device registration could not be read",
+    session_unbound: "this session was created without a device binding",
+    device_tools_off: "device tools are switched off for this client"
+  },
+  KO = {
+    ...dS,
+    ...GO
+  };
+
+function bOi(e) {
+  return Object.hasOwn(dS, e)
+}
+
+function cyr(e) {
+  return e === "trusted_devices_off" ? `This session began unbound (no local commands): ${$We(e)}` : `Start a new session to attach this machine; this one began unbound (no local commands): ${$We(e)}`
+}
+
+function SOi(e) {
+  switch (e) {
+    case "project":
+    case "launched_from_home":
+    case "endpoint":
+    case "pool":
+    case "environment":
+    case "target_device_unsupported":
+    case "correlation":
+    case "profile":
+      return !1;
+    default:
+      return !0
+  }
+}
+
+function $We(e) {
+  return KO[e]
+}
+var gd = "Not bound to this machine (local tools off): ";
+
+function uyr(e) {
+  let n = e === "device_revoked" ? "removed from claude.ai devices" : $We(e);
+  return `${gd}${n}`
+}
+var yd = "Local tools off in this window: ",
+  pS = "run in this session's approved folder, not in this window",
+  mS = `Local tools ${pS}`;
+
+function hS(e, n) {
+  switch (e) {
+    case "detached":
+      return `this session runs them in its approved folder. If that folder is disconnected, ask Claude to use it again; or start a new session ${n}`;
+    case "other_state":
+    case "unreadable":
+    case "unstated":
+      return "Claude Code cannot tell how this session is linked to this computer. Attaching again or updating Claude Code may help"
+  }
+}
+
+function wOi(e) {
+  return e === "connected" || e === "requested" ? {
+    text: mS,
+    toast: !1
+  } : {
+    text: `${yd}${hS(e,"here")}`,
+    toast: e !== "detached"
+  }
+}
+
+function kOi(e) {
+  return e === "connected" || e === "requested" ? void 0 : `This client runs no tools for this session: ${hS(e,"from this folder")}`
+}
+
+function vOi(e) {
+  if (e.startsWith(gd)) return `not bound to this computer: ${e.slice(gd.length)}`;
+  if (e.startsWith(yd)) return `off in this window: ${e.slice(yd.length)}`;
+  if (e === mS) return pS;
+  for (let n of ["Start ", "This "])
+    if (e.startsWith(n)) return `${n.toLowerCase()}${e.slice(n.length)}`;
+  return e
+}
+var ous = "remote-device-not-bound";
+
+function EOi(e) {
+  return {
+    key: ous,
+    kind: "warning",
+    text: e,
+    color: "warning",
+    priority: "high",
+    timeoutMs: 30000
+  }
+}
+async function TOi(e, n) {
+  return !1
+}
+
+function fyr() {
+  return {}
+}
+import {
+  realpathSync as YO
+} from "fs";
+import {
+  homedir as _S
+} from "os";
+import XO, {
+  dirname as Sne,
+  isAbsolute as gS,
+  parse as JO,
+  resolve as QO
+} from "path";
+
+function COi(e, n = {}, r = ZO(e)) {
+  let s = [e, ...r].map(sl);
+  if (s.some((O) => O === JO(O).root || cd(O))) return "folder_is_root";
+  let h = gS(n.home ?? _S()),
+    y = gS(n.configHome ?? Ue()),
+    {
+      home: S,
+      configHome: w,
+      foldCase: A
+    } = tM({
+      ...n,
+      folder: s[0]
+    });
+  for (let O of s) {
+    if (h && Sd(O, S, A)) return "folder_is_home";
+    if (y && (Sd(O, w, A) || Sd(w, O, A))) return "folder_holds_config"
+  }
+  return null
+}
+
+function ZO(e, n = Gi) {
+  let r = sl(e),
+    s = n(e) ?? e,
+    h = n(r) ?? r;
+  return s === h ? [h] : [s, h]
+}
+
+function SS(e, n) {
+  return n ? e.normalize("NFC").toLowerCase() : e
+}
+
+function Sd(e, n, r, {
+  isAbsolute: s,
+  relative: h,
+  sep: y
+} = XO) {
+  let S = h(SS(e, r), SS(n, r));
+  return S === "" || S !== ".." && !S.startsWith(".." + y) && !s(S)
+}
+
+function bS(e) {
+  return x() === "macos" ? e.normalize("NFC") : e
+}
+
+function eM(e, n = (r) => r()) {
+  if (Oc(e)) return {
+    unresolved: Object.assign(Error("realpath would read a backslash in this path as a separator"), {
+      code: "EBACKSLASH"
+    })
+  };
+  try {
+    return {
+      resolved: bS(n(() => YO.native(e)))
+    }
+  } catch (r) {
+    return {
+      unresolved: r
+    }
+  }
+}
+
+function sl(e) {
+  let n = eM(e);
+  return "resolved" in n ? n.resolved : bS(QO(e))
+}
+
+function tM({
+  folder: e,
+  home: n = _S(),
+  configHome: r = Ue()
+} = {}) {
+  let s = {
+    home: sl(n),
+    configHome: sl(r)
+  };
+  return {
+    ...s,
+    foldCase: [e, s.home, s.configHome].some((h) => Jao(h)),
+    wholeDrive: e !== void 0 && cd(e)
+  }
+}
+var nM = 86400000;
+
+function kS(e, n) {
+  return typeof e === "number" && Number.isFinite(e) ? Math.abs(n - e) > nM : !0
+}
+class xS {
+  inFlight = null
+}
+var oM = new W(() => new xS);
+
+function rM() {
+  return oM.of(H().host)
+}
+var iM = {
+  "no-auth": "no_auth",
+  "data-residency": "data_residency",
+  "essential-traffic-only": "essential_traffic_only"
+};
+class _d extends Error {
+  errorCode;
+  constructor(e, n) {
+    super(e);
+    this.name = "ReferralEligibilityUnavailableError", this.errorCode = n
+  }
+}
+
+function aM(e) {
+  if (e instanceof _d) return e.errorCode;
+  let {
+    kind: n,
+    status: r
+  } = Ai(e);
+  switch (n) {
+    case "timeout":
+      return "timeout";
+    case "network":
+      return "network_error";
+    case "auth":
+    case "http":
+      return r !== void 0 ? `http_${r}` : "network_error";
+    case "other":
+      return "request_failed"
+  }
+}
+async function lM(e, n) {
+  let r = await jt.get(`/api/oauth/organizations/:orgUUID/referral/eligibility?campaign=${encodeURIComponent(e)}`, {
+    auth: "teleport-org",
+    timeout: 5000,
+    credentials: n
+  });
+  if (!r.ok) throw new _d(r.reason === "no-auth" ? r.detail : `Referral eligibility unavailable: ${r.reason}`, iM[r.reason]);
+  return r.data
+}
+async function KOi(e, n) {
+  return ao("api_referral_redemptions_fetch", async () => {
+    let r = await jt.get(`/api/oauth/organizations/:orgUUID/referral/redemptions?campaign=${encodeURIComponent(e)}`, {
+      auth: "teleport-org",
+      timeout: 1e4,
+      credentials: n
+    });
+    if (!r.ok) throw Error(r.reason === "no-auth" ? r.detail : `Referral redemptions unavailable: ${r.reason}`);
+    return r.data
+  })
+}
+
+function RS() {
+  let e = dr();
+  return !!(hn()?.organizationUuid && Rt() && fp() && (e === "max" || e === "pro"))
+}
+
+function OMt() {
+  if (!RS()) return {
+    eligible: !1,
+    needsRefresh: !1,
+    hasCache: !1
+  };
+  let e = hn()?.organizationUuid;
+  if (!e) return {
+    eligible: !1,
+    needsRefresh: !1,
+    hasCache: !1
+  };
+  let r = fe().passesEligibilityCache?.[e];
+  if (!r) return {
+    eligible: !1,
+    needsRefresh: !0,
+    hasCache: !1
+  };
+  let {
+    eligible: s,
+    timestamp: h
+  } = r, y = kS(h, Date.now());
+  return {
+    eligible: s,
+    needsRefresh: y,
+    hasCache: !0
+  }
+}
+
+function lXe(e) {
+  return Ms(e.amount_minor_units, e.currency, "fit")
+}
+var uM = p(() => u({
+  amount_minor_units: E(),
+  currency: o().regex(/^[A-Za-z]{3}$/)
+}));
+
+function vS(e) {
+  let n = uM().safeParse(e);
+  return n.success ? n.data : null
+}
+var dM = p(() => u({
+  campaign: o(),
+  code: o(),
+  referral_link: o().transform((e, n) => {
+    try {
+      let r = new URL(e);
+      if (r.protocol === "https:" || r.protocol === "http:") return r.href
+    } catch {}
+    return n.addIssue({
+      code: "custom",
+      message: "not an http(s) URL"
+    }), g5
+  })
+}));
+
+function fM(e) {
+  let n = dM().safeParse(e);
+  return n.success ? n.data : void 0
+}
+
+function oft() {
+  let e = hn()?.organizationUuid;
+  if (!e) return null;
+  let r = fe().passesEligibilityCache?.[e];
+  return vS(r?.referrer_reward)
+}
+
+function vyr() {
+  let e = hn()?.organizationUuid;
+  if (!e) return null;
+  let r = fe().passesEligibilityCache?.[e]?.remaining_passes;
+  return typeof r === "number" ? r : null
+}
+async function wS(e, n) {
+  let r = rM();
+  if (r.inFlight) return t("Passes: Reusing in-flight eligibility fetch"), r.inFlight;
+  let s = hn()?.organizationUuid;
+  if (!s) return null;
+  return r.inFlight = (async () => {
+    try {
+      let h = await lM("claude_code_guest_pass", e),
+        y = {
+          ...h,
+          timestamp: Date.now()
+        };
+      return await Le((S) => ({
+        ...S,
+        passesEligibilityCache: {
+          ...S.passesEligibilityCache,
+          [s]: y
+        }
+      }), n), t(`Passes eligibility cached for org ${s}: ${h.eligible}`), g("api_referral_eligibility_fetch"), h
+    } catch (h) {
+      return t(`Failed to fetch and cache passes eligibility: ${h instanceof Error?h.message:String(h)}`, {
+        level: "error"
+      }), c("api_referral_eligibility_fetch", aM(h)), null
+    } finally {
+      r.inFlight = null
+    }
+  })(), r.inFlight
+}
+async function pus(e, n) {
+  if (!RS()) return null;
+  let r = hn()?.organizationUuid;
+  if (!r) return null;
+  let h = fe().passesEligibilityCache?.[r],
+    y = Date.now();
+  if (!h) return t("Passes: No cache, fetching eligibility in background (command unavailable this session)"), wS(e, n), null;
+  if (kS(h.timestamp, y)) t("Passes: Cache stale, returning cached data and refreshing in background"), wS(e, n);
+  else t("Passes: Using fresh cached eligibility data");
+  let {
+    timestamp: S,
+    ...w
+  } = h;
+  return {
+    ...w,
+    referral_code_details: fM(w.referral_code_details),
+    referrer_reward: vS(w.referrer_reward)
+  }
+}
+async function qOi(e, n) {
+  if (St()) return;
+  pus(e, n)
+}
+import {
+  chmod as IS,
+  mkdir as NS,
+  readFile as LS,
+  writeFile as FS
+} from "fs/promises";
+import {
+  homedir as TM
+} from "os";
+import {
+  join as Ho
+} from "path";
+
+function pao() {
+  return i.CLAUDE_CODE_BRIDGE_CHILD_MACHINE_SETTINGS === !0 && !$ae()
+}
+import {
+  lstat as TS,
+  readlink as pM,
+  realpath as mM
+} from "fs/promises";
+import {
+  dirname as hM,
+  join as gM,
+  resolve as yM,
+  sep as ES
+} from "path";
+var SM = ES + gM("claude", "versions") + ES;
+async function nJt(e) {
+  if (x() === "windows") return !0;
+  try {
+    return await CS(e, await TS(e))
+  } catch (n) {
+    return K(n)
+  }
+}
+async function CS(e, n) {
+  if (!n.isSymbolicLink()) return !1;
+  let r = await pM(e);
+  return yM(hM(e), r).includes(SM)
+}
+async function Dut(e) {
+  let n = await mM(e);
+  return n.endsWith(".js") || n.includes("node_modules")
+}
+async function AS(e) {
+  if (x() === "windows") return !0;
+  try {
+    let n = await TS(e);
+    if (!n.isSymbolicLink()) return !1;
+    return await CS(e, n) || await Dut(e)
+  } catch (n) {
+    if (k(n) !== void 0) return !1;
+    throw n
+  }
+}
+import {
+  readdir as PS
+} from "fs/promises";
+import {
+  homedir as _M
+} from "os";
+import {
+  join as oi
+} from "path";
+var v2 = "https://claude.ai/chrome",
+  wM = "fcoeoabgfenejglbffodgkkbkcdhcgfn";
+
+function kM() {
+  return [wM]
+}
+var xM = ["chrome", "brave", "arc", "edge", "chromium", "vivaldi", "opera"],
+  RM = {
+    chrome: {
+      macos: ["Library", "Application Support", "Google", "Chrome"],
+      linux: [".config", "google-chrome"],
+      windows: {
+        path: ["Google", "Chrome", "User Data"]
+      }
+    },
+    brave: {
+      macos: ["Library", "Application Support", "BraveSoftware", "Brave-Browser"],
+      linux: [".config", "BraveSoftware", "Brave-Browser"],
+      windows: {
+        path: ["BraveSoftware", "Brave-Browser", "User Data"]
+      }
+    },
+    arc: {
+      macos: ["Library", "Application Support", "Arc", "User Data"],
+      linux: [],
+      windows: {
+        path: ["Arc", "User Data"]
+      }
+    },
+    chromium: {
+      macos: ["Library", "Application Support", "Chromium"],
+      linux: [".config", "chromium"],
+      windows: {
+        path: ["Chromium", "User Data"]
+      }
+    },
+    edge: {
+      macos: ["Library", "Application Support", "Microsoft Edge"],
+      linux: [".config", "microsoft-edge"],
+      windows: {
+        path: ["Microsoft", "Edge", "User Data"]
+      }
+    },
+    vivaldi: {
+      macos: ["Library", "Application Support", "Vivaldi"],
+      linux: [".config", "vivaldi"],
+      windows: {
+        path: ["Vivaldi", "User Data"]
+      }
+    },
+    opera: {
+      macos: ["Library", "Application Support", "com.operasoftware.Opera"],
+      linux: [".config", "opera"],
+      windows: {
+        path: ["Opera Software", "Opera Stable"],
+        useRoaming: !0
+      }
+    }
+  };
+
+function OS() {
+  let e = _M(),
+    n = [];
+  for (let r of xM) {
+    let s = RM[r],
+      h;
+    switch ("win32") {
+      case "darwin":
+        h = s.macos;
+        break;
+      case "linux":
+        h = s.linux;
+        break;
+      case "win32": {
+        if (s.windows.path.length > 0) {
+          let y = s.windows.useRoaming ? oi(e, "AppData", "Roaming") : oi(e, "AppData", "Local");
+          n.push({
+            browser: r,
+            path: oi(y, ...s.windows.path)
+          })
+        }
+        continue
+      }
+    }
+    if (h && h.length > 0) n.push({
+      browser: r,
+      path: oi(e, ...h)
+    })
+  }
+  return n
+}
+async function vM(e, n) {
+  if (e.length === 0) return n?.("[Claude in Chrome] No browser paths to check"), {
+    isInstalled: !1,
+    browser: null
+  };
+  let r = kM();
+  for (let {
+      browser: s,
+      path: h
+    }
+    of e) {
+    let y = [];
+    try {
+      y = await PS(h, {
+        withFileTypes: !0
+      })
+    } catch (w) {
+      if (qt(w)) continue;
+      throw w
+    }
+    let S = y.filter((w) => w.isDirectory()).filter((w) => w.name === "Default" || w.name.startsWith("Profile ")).map((w) => w.name);
+    if (S.length > 0) n?.(`[Claude in Chrome] Found ${s} profiles: ${S.join(", ")}`);
+    for (let w of S)
+      for (let A of r) {
+        let O = oi(h, w, "Extensions", A);
+        try {
+          return await PS(O), n?.(`[Claude in Chrome] Extension ${A} found in ${s} ${w}`), {
+            isInstalled: !0,
+            browser: s
+          }
+        } catch {}
+      }
+  }
+  return n?.("[Claude in Chrome] Extension not found in any browser"), {
+    isInstalled: !1,
+    browser: null
+  }
+}
+async function MS(e, n) {
+  return (await vM(e, n)).isInstalled
+}
+var NWe = "https://clau.de/chrome/reconnect",
+  bd = "com.anthropic.claude_code_browser_extension",
+  DS = `${bd}.json`;
+
+function BP() {
+  return gn("allow_claude_browser_extension")
+}
+
+function fMt(e) {
+  if (!BP()) return !1;
+  if (!pFe()) return t("[Claude in Chrome] Disabled: OAuth token has no scope accepted by /api/oauth/validate (needs user:profile, user:office, or user:ccr_inference; env-var and setup-token sessions default to user:inference only)"), !1;
+  if (e === !0) return !0;
+  if (e === !1) return !1;
+  if (Nr()) return !1;
+  if (i.CLAUDE_CODE_ENABLE_CFC === !0) return !0;
+  if (i.CLAUDE_CODE_ENABLE_CFC === !1) return !1;
+  if (ye() && !pao()) return !1;
+  let n = fe();
+  if (n.claudeInChromeDefaultEnabled && !kgr()) return t('[Claude in Chrome] Ignoring "Enabled by default": a remote or Cowork session connects Chrome at start-up only with --chrome or with CLAUDE_CODE_ENABLE_CFC=1 in the environment it is started with'), !1;
+  if (n.claudeInChromeDefaultEnabled !== void 0) return n.claudeInChromeDefaultEnabled;
+  return !1
+}
+
+function kgr() {
+  return !bQe()
+}
+
+function mao() {
+  return $we() !== !1 && i.CLAUDE_CODE_ENABLE_CFC !== !1 && fe().claudeInChromeDefaultEnabled === void 0 && kgr() && Ml() && Rt() && pFe()
+}
+
+function hao() {
+  let e = fe();
+  return e.cachedChromeExtensionInstalled === !0 || Boolean(e.chromeExtension?.pairedDeviceId)
+}
+
+function ecs(e) {
+  if (!BP()) return !1;
+  let n = vi();
+  if (n.shouldAutoEnable !== void 0) return n.shouldAutoEnable;
+  return n.shouldAutoEnable = mao() && (IM(e) || hao()) && v("tengu_chrome_auto_enable", !1), n.shouldAutoEnable
+}
+
+function VDe() {
+  return vi().wiredThisSession
+}
+
+function fJt() {
+  vi().wiredThisSession = !1
+}
+
+function K9e(e) {
+  if (e === Ta) fJt()
+}
+
+function tcs() {
+  vi().wiredThisSession = !0
+}
+
+function ncs({
+  isSSHPending: e,
+  isRemoteMode: n,
+  hasTeleport: r,
+  isSafeMode: s,
+  permissionMode: h,
+  isBypassPermissionsModeAvailable: y,
+  teammateAgentId: S
+}) {
+  return e || n || r || s || h === "bypassPermissions" || h === "plan" && y || S !== void 0
+}
+
+function Vut(e) {
+  let n = [],
+    r = {};
+  if ($ae()) r.CLAUDE_CHROME_PERMISSION_MODE = "skip_all_permission_checks";
+  let s = Object.keys(r).length > 0;
+  return (async () => {
+    if (i.CLAUDE_CODE_CHROME_LATE_MCP_SERVER === !0 && tn()) return;
+    let h = Noe() && !await AS(I0e()),
+      {
+        cmd: y,
+        prefixArgs: S
+      } = r_e({
+        pinToCurrentBinary: h
+      }),
+      w = await MM([y, ...S, "--chrome-native-host"]);
+    await PM(w, e)
+  })().catch((h) => t(`[Claude in Chrome] Failed to install native host: ${h}`, {
+    level: "error"
+  })), vi().wiredThisSession = !0, {
+    mcpConfig: {
+      [Ta]: {
+        ...GFe(),
+        ...s && {
+          env: r
+        }
+      }
+    },
+    allowedTools: n,
+    systemPrompt: i.CLAUDE_CODE_DISABLE_CFC_PROMPT === !0 ? "" : yNe(Kht(lh()))
+  }
+}
+
+function rcs(e) {
+  let n = e[Ta];
+  return n !== void 0 && n.scope === "dynamic" && iH(n)
+}
+
+function ocs() {
+  return vi().wiredThisSession = !0, {
+    systemPrompt: i.CLAUDE_CODE_DISABLE_CFC_PROMPT === !0 ? "" : yNe(Kht(lh()))
+  }
+}
+
+function pJt(e) {
+  vi().systemPromptSection = e
+}
+
+function AM() {
+  if (x() === "windows") {
+    let n = TM(),
+      r = i.APPDATA || Ho(n, "AppData", "Local");
+    return [Ho(r, "Claude Code", "ChromeNativeHost")]
+  }
+  return Xhs().map(({
+    path: n
+  }) => n)
+}
+async function PM(e, n) {
+  return ao("chrome_native_host_install", async () => {
+    let r = AM();
+    if (r.length === 0) throw Error("Claude in Chrome Native Host not supported on this platform");
+    let s = {
+        name: bd,
+        description: "Claude Code Browser Extension Native Host",
+        path: e,
+        type: "stdio",
+        allowed_origins: ["chrome-extension://fcoeoabgfenejglbffodgkkbkcdhcgfn/", ...[]]
+      },
+      h = _(s, null, 2),
+      y = !1,
+      S = !1;
+    for (let w of r) {
+      let A = Ho(w, DS),
+        O = !1,
+        M = await LS(A, "utf-8").catch((j) => (O = K(j), null));
+      if (!O) y = !0;
+      if (M === h) continue;
+      try {
+        if (await NS(w, {
+            recursive: !0
+          }), await FS(A, h), t(`[Claude in Chrome] Installed native host manifest at: ${A}`), O) S = !0
+      } catch (j) {
+        t(`[Claude in Chrome] Failed to install manifest at ${A}: ${j}`)
+      }
+    }
+    if (x() === "windows") {
+      let w = Ho(r[0], DS);
+      OM(w)
+    }
+    if (S && !y && !n?.skipReconnectAutoOpen) E2().then((w) => {
+      if (w) t("[Claude in Chrome] First-time install detected, opening reconnect page in browser"), eJe(NWe).catch(a);
+      else t("[Claude in Chrome] First-time install detected, but extension not installed, skipping reconnect")
+    }).catch((w) => t(`[Claude in Chrome] Failed to check extension installation during manifest install: ${w}`, {
+      level: "error"
+    }))
+  })
+}
+
+function OM(e) {
+  let n = Jhs();
+  for (let {
+      browser: r,
+      key: s
+    }
+    of n) {
+    let h = `${s}\\${bd}`;
+    lt("reg", ["add", h, "/ve", "/t", "REG_SZ", "/d", e, "/f"]).then((y) => {
+      if (y.code === 0) t(`[Claude in Chrome] Registered native host for ${r} in Windows registry: ${h}`);
+      else t(`[Claude in Chrome] Failed to register native host for ${r} in Windows registry: ${y.stderr}`)
+    })
+  }
+}
+async function MM(e) {
+  let n = x(),
+    r = Ho(Ue(), "chrome"),
+    s = n === "windows" ? Ho(r, "chrome-native-host.bat") : Ho(r, "chrome-native-host"),
+    h = n === "windows" ? `@echo off
+REM Chrome native host wrapper script
+REM Generated by Claude Code - do not edit manually
+${e.map((S)=>`"${S.replaceAll("%","%%")}"`).join(" ")}
+` : `#!/bin/sh
+# Chrome native host wrapper script
+# Generated by Claude Code - do not edit manually
+exec ${no(e)}
+`;
+  if (await LS(s, "utf-8").catch(() => null) === h) {
+    if (n !== "windows") await IS(s, 493).catch((S) => t(`[Claude in Chrome] Could not repair wrapper exec bit: ${S}`, {
+      level: "error"
+    }));
+    return s
+  }
+  if (await NS(r, {
+      recursive: !0
+    }), await FS(s, h), n !== "windows") await IS(s, 493);
+  return t(`[Claude in Chrome] Created Chrome native host wrapper script: ${s}`), s
+}
+
+function IM(e) {
+  return E2().then((r) => {
+    if (!r) return;
+    if (fe().cachedChromeExtensionInstalled !== r) Le((h) => ({
+      ...h,
+      cachedChromeExtensionInstalled: r
+    }), e)
+  }).catch((r) => t(`[Claude in Chrome] Failed to check extension installation during cache refresh: ${r}`, {
+    level: "error"
+  })), fe().cachedChromeExtensionInstalled ?? !1
+}
+async function E2() {
+  let e = OS();
+  if (e.length === 0) return t(`[Claude in Chrome] Unsupported platform for extension detection: ${x()}`), !1;
+  return MS(e, t)
+}
+var DM = 3600000,
+  elo = 32;
+class tlo {
+  urls = new lu({
+    max: 1024,
+    ttl: DM
+  });
+  clear() {
+    this.urls.clear()
+  }
+}
+
+function oXe(e, {
+  tools: n,
+  memoryMechanicsPrompt: r,
+  appendSystemPrompt: s
+}) {
+  return f0n(e, [
+    ["session", r],
+    ["shared", _ao(n)],
+    ["session", tWi(n)],
+    ["shared", qLi(n)],
+    ["session", PFt()?.prompt],
+    ["shared", RNt()],
+    ["session", s]
+  ], nJ())
+}
+var NM = ["UnrecognizedClientException", "ExpiredTokenException", "InvalidSignatureException", "RequestTimeTooSkewed", "TokenRefreshRequired", "CredentialsProviderError"],
+  LM = "you don't have access to the model with the specified model id",
+  HM = /\banthropic\.\S+ is not available for this account/,
+  FM = "marketplace subscription for this model cannot be completed",
+  $M = "the provided model identifier is invalid",
+  UM = "on-demand throughput",
+  BM = /is not authorized to perform: bedrock:InvokeModel/i,
+  jM = "is not servable in region",
+  WM = "model does not serve requests restricted by vpcsc";
+
+function zM(e) {
+  let n = e,
+    r = typeof n?.status === "number" ? n.status : void 0,
+    s = typeof n?.message === "string" ? n.message : "",
+    h;
+  try {
+    h = n?.headers?.get?.("x-amzn-errortype") ?? void 0
+  } catch {
+    h = void 0
+  }
+  return {
+    status: r,
+    message: s,
+    errorType: h
+  }
+}
+
+function GM(e, n) {
+  let r = String(e?.name ?? "");
+  return tUt(e) || rAe(n.errorType, n.message) || NM.some((s) => r.includes(s) || n.message.includes(s) || (n.errorType?.includes(s) ?? !1))
+}
+
+function tJt(e, n) {
+  let r = zM(n);
+  if ((e === "bedrock" || e === "mantle") && GM(n, r)) return "credential";
+  if (r.status === 401) return "credential";
+  if (ZMr(n)) return "outdated";
+  let s = r.message.toLowerCase();
+  if (e === "bedrock") {
+    if (r.status === 403 && (s.includes(LM) || HM.test(s) || s.includes(FM))) return "refused";
+    if (r.status === 400 && s.includes($M) && !s.includes(UM)) return "refused";
+    if (r.status === 403 && BM.test(r.message)) return "denied";
+    return "unknown"
+  }
+  if (e === "vertex") {
+    if (r.status === 404 && s.includes("publisher model") && s.includes("not found")) return "refused";
+    if (r.status === 400 && s.includes("failed_precondition") && (s.includes("publisher model") && s.includes(jM) || s.includes(WM))) return "refused";
+    return "unknown"
+  }
+  if (e === "foundry") return aXi(n) ? "refused" : "unknown";
+  return "unknown"
+}
+var byr = 20000,
+  KM = 8000,
+  VM = 4000;
+
+function qOn(e) {
+  return e + byr - KM - VM
+}
+var Fo = Object.keys(ts);
+
+function eft(e, n = ID, r = QNe) {
+  return {
+    sonnet: {
+      envVarPriority: ["ANTHROPIC_DEFAULT_SONNET_MODEL"],
+      ...wd("sonnet", n)
+    },
+    opus: {
+      envVarPriority: ["ANTHROPIC_DEFAULT_OPUS_MODEL"],
+      ...wd("opus", e)
+    },
+    haiku: {
+      envVarPriority: ["ANTHROPIC_SMALL_FAST_MODEL", "ANTHROPIC_DEFAULT_HAIKU_MODEL"],
+      ...wd("haiku", r)
+    }
+  }
+}
+
+function dus() {
+  return $Pr()
+}
+
+function wd(e, n) {
+  let r = JPs(e);
+  if (r === void 0 || PW(r.key !== void 0 ? String(Dbe()[r.key]) : r.modelId)) return {
+    defaultKey: n
+  };
+  if (r.key !== void 0) return r.key === n ? {
+    defaultKey: r.key
+  } : {
+    defaultKey: r.key,
+    fromDocument: !0
+  };
+  return {
+    defaultKey: n,
+    documentTarget: {
+      modelId: r.modelId,
+      ...r.overrideKey !== void 0 && {
+        overrideKey: r.overrideKey
+      },
+      name: r.name
+    },
+    fromDocument: !0
+  }
+}
+
+function kd(e) {
+  return e.replace(/\d+$/, "")
+}
+
+function ri(e) {
+  let n = kd(e);
+  return n === "sonnet" || n === "opus" || n === "haiku" ? n : void 0
+}
+
+function il(e) {
+  let n = zy(e);
+  for (let r of Fo)
+    if (zy(ts[r].firstParty) === n) return r;
+  return
+}
+
+function nSa(e) {
+  return `${e.fromKey}-to-${e.toKey}`
+}
+
+function YOn(e, n) {
+  let r = [],
+    s = be("policySettings")?.env ?? {};
+  for (let h of Object.keys(e)) {
+    let y = e[h],
+      S, w;
+    for (let j of y.envVarPriority) {
+      let G = process.env[j]?.trim();
+      if (!G) continue;
+      if (Object.hasOwn(s, j)) break;
+      if (US(j)) continue;
+      if (n?.(G)) continue;
+      let N = il(G);
+      if (!N || ri(N) !== h || N === y.defaultKey) continue;
+      S = j, w = N;
+      break
+    }
+    if (!S || !w) continue;
+    let A = y.defaultKey,
+      O = Fo.indexOf(w),
+      M = Fo.indexOf(A);
+    if (O >= M) continue;
+    r.push({
+      tier: h,
+      envVar: S,
+      pinnedKey: w,
+      defaultKey: A
+    })
+  }
+  return r
+}
+
+function tft(e, n) {
+  let r = e?.trim();
+  if (!r) return;
+  if (i.CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST) return;
+  let s = il(r);
+  if (!s) return;
+  let h = ri(s);
+  if (!h) return;
+  if (h === "haiku") return;
+  let y = n[h];
+  if ($S(y, yt().modelOverrides)) return;
+  return {
+    tier: h,
+    envVar: y.envVarPriority.at(-1),
+    value: r
+  }
+}
+
+function $S(e, n) {
+  let r = e.documentTarget === void 0 ? ts[e.defaultKey].firstParty : e.documentTarget.overrideKey;
+  return r !== void 0 && Boolean(n?.[r])
+}
+
+function nft(e, n) {
+  let r = [];
+  for (let s of Object.keys(e)) {
+    let h = e[s];
+    if ($S(h, n)) continue;
+    if (h.envVarPriority.some((S) => {
+        let w = process.env[S]?.trim();
+        if (!w) return !1;
+        if (US(S) && !k3i(S)) return !1;
+        let A = il(w);
+        if (!A) return !0;
+        return ri(A) === s
+      })) continue;
+    r.push({
+      tier: s,
+      envVar: h.envVarPriority.at(-1),
+      defaultKey: h.defaultKey
+    })
+  }
+  return r
+}
+
+function PW(e) {
+  return Gx(e) === !1
+}
+var qM = {
+  check: "skipped the availability check of",
+  fallback: "not falling back to",
+  upgrade: "not offering an upgrade to"
+};
+
+function sXe(e, n, r) {
+  let s = r.length === 1 ? "this id" : "these ids",
+    h = n === "check" ? "; the tier is left as it is" : "";
+  return `${e}: ${qM[n]} ${r.join(", ")} because managed settings do not allow ${s} as spelled here (matched by no enforced availableModels entry, named in deniedModels, or the settings failed to load)${h}`
+}
+
+function US(e) {
+  switch (e) {
+    case "ANTHROPIC_DEFAULT_OPUS_MODEL":
+      return N3("opus");
+    case "ANTHROPIC_DEFAULT_SONNET_MODEL":
+      return N3("sonnet");
+    case "ANTHROPIC_DEFAULT_HAIKU_MODEL":
+      return N3("haiku");
+    default:
+      return !1
+  }
+}
+
+function $Oi(e) {
+  let n = il(e);
+  if (!n) return [];
+  let r = kd(n);
+  return Fo.slice(0, Fo.indexOf(n)).filter((s) => kd(s) === r).reverse().map((s) => ts[s].firstParty)
+}
+
+function yTe(e, n, r = !1) {
+  let s = Fo.indexOf(e),
+    h = [];
+  for (let y = r ? s : s - 1; y >= 0; y--) {
+    let S = Fo[y];
+    if (ri(S) === n) h.push(S)
+  }
+  return h
+}
+async function XOn(e, n) {
+  let r = QPs().filter((h) => {
+    let y = h.key !== void 0 ? ts[h.key].firstParty : h.overrideKey;
+    return y === void 0 || !n?.[y]
+  });
+  return (await Promise.all(r.map(async (h) => {
+    let y = h.key !== void 0 ? ri(h.key) : YM(h.family);
+    return await e(h.model, y) ? null : {
+      candidate: h.candidate,
+      modelId: h.model,
+      name: h.name,
+      tier: y
+    }
+  }))).filter((h) => h !== null)
+}
+
+function YM(e) {
+  return e === "sonnet" || e === "opus" || e === "haiku" ? e : void 0
+}
+
+function OJt(e, n) {
+  return tJt(Pd(e), n)
+}
+
+function QDe(e) {
+  return !Ou() || SO(e)
+}
+
+function nlo(e, n) {
+  let r = $t(e) + n.slice($t(n).length);
+  return !a$t(r) && !bko(n).includes(r)
+}
+
+function Syr(e, n) {
+  return nlo(e, n) || hBn(n, $t(e) + n.slice($t(n).length), BPs)
+}
+
+function uus(e) {
+  if (!us() || OZe() || !v("tengu_nifty_finch", !0)) return;
+  let n = $t(e),
+    r = e.slice(n.length),
+    s = [n, ...$Oi(n)],
+    h = s.findIndex((S) => Az(S) || i$t(S)),
+    y = (h < 0 ? s : s.slice(0, h)).slice(1).find((S) => (r === "" || IRe(S)) && uo(S + r) && !JNe(e, S + r));
+  return y === void 0 ? void 0 : y + r
+}
+var WS = 600000,
+  XM = 60000,
+  JM = new W(() => new Map);
+
+function wyr(e, n, r = "denied", s = Date.now()) {
+  if (!POr(e) || nyt()) return;
+  let h = NPs(e);
+  if (h === void 0) return;
+  if (r === "refused") _4(e, n);
+  let y = `${h.provider}:${h.tier}`,
+    S = JM.of(H().host),
+    w = S.get(y);
+  if (w !== void 0 && s - w < WS) return;
+  S.set(y, s);
+  let A = () => S.set(y, s - WS + XM);
+  (async () => {
+    for (let O of h.below) {
+      if (a$t(O) || Syr(O, e)) continue;
+      if (!QDe(O)) {
+        A();
+        return
+      }
+      let M = await fus(O);
+      if (M === "accessible") {
+        if (POr(e) && !nyt() && (C3i(e) ?? 0) < s && !Syr(O, e) && QDe(O)) _4(e, n), kyr(e, "refused"), kOr(O + e.slice($t(e).length), Syr, QDe);
+        return
+      }
+      if (M !== "refused") {
+        if (M === void 0 || M === "temporary") A();
+        return
+      }
+      _4(O, Zse(O))
+    }
+  })().catch((O) => {
+    A(), t(`[model-access] background tier check failed: ${O}`)
+  })
+}
+
+function fus(e, n) {
+  let r = $t(e),
+    s;
+  try {
+    s = oT(r)
+  } catch {
+    return Promise.resolve(void 0)
+  }
+  let h = Pd(r);
+  if (h !== "bedrock" && h !== "vertex") return Promise.resolve(void 0);
+  let y = LPs(s);
+  return A3i(r, async () => {
+    let S = {},
+      w = (A) => {
+        S.verdict = A
+      };
+    try {
+      if (h === "bedrock") {
+        let {
+          probeBedrockModel: A
+        } = await import("B:/~BUN/root/chunk-dq8astcr.js");
+        await A(s, y, {
+          live: !0,
+          versionTooOld: "unavailable",
+          onVerdict: w
+        })
+      } else {
+        let {
+          probeVertexModel: A
+        } = await import("B:/~BUN/root/chunk-czekav7k.js");
+        await A(s, {
+          live: !0,
+          versionTooOld: "unavailable",
+          onVerdict: w
+        })
+      }
+    } catch {
+      return
+    }
+    return S.verdict
+  }, n)
+}
+
+function kyr(e, n) {
+  let r = _ko(e),
+    s = $t(e);
+  if (r === "bedrock") import("B:/~BUN/root/chunk-dq8astcr.js").then((h) => h.rememberBedrockModelAccess(s, LPs(e), n)).catch(() => {});
+  else if (r === "vertex") import("B:/~BUN/root/chunk-czekav7k.js").then((h) => h.rememberVertexModelAccess(s, n)).catch(() => {})
+}
+var QM = "org-connector-",
+  ZM = new Map([
+    [SAe, {
+      id: q_t,
+      at: "/api/mcp/claude_ai"
+    }],
+    [mKe, {
+      id: ZUt,
+      at: "/api/cowork/widgets_mcp"
+    }],
+    [wAe, {
+      id: e7i,
+      at: "https://sandbox.claudemcpcontent.com/imagine_mcp"
+    }]
+  ]),
+  eI = new Map([
+    [i0r, "/v1/code/mcp/cowork"],
+    ["ccr-slack-thread", "/v2/ccr-sessions/-/slack-thread/mcp"],
+    ["amb", "/v2/ccr-sessions/-/amb/mcp"],
+    ["sms_reply", "/v2/ccr-sessions/-/amb/mcp"],
+    ["imessage_reply", "/v2/ccr-sessions/-/amb/mcp"],
+    ["linq_reply", "/v2/ccr-sessions/-/linq/mcp"],
+    [eHe, "/v2/ccr-sessions/-/email/mcp"]
+  ]),
+  tI = 2048,
+  nI = /^https:\/\/(?:[^/?#@\\\s]*@)?(\[[0-9a-f:.]+\]|[a-z0-9._-]+)(?::[0-9]*)?(?:[/?#][^@\\\t\r\n]*)?$/i,
+  si = {
+    serverProvenance: void 0,
+    serverUrl: void 0
+  },
+  KS = {
+    serverProvenance: "configured",
+    serverUrl: void 0
+  };
+
+function zS(e) {
+  return e.scope === "dynamic" && !Qd(e)
+}
+
+function sPi(e, n) {
+  if (i.CLAUDE_CODE_REMOTE === !0 && (!i.CLAUDE_CODE_ENVIRONMENT_KIND || i.CLAUDE_CODE_ENVIRONMENT_KIND === "anthropic_cloud") && !vk() && !Ek() && "url" in n && typeof n.url === "string") {
+    let r = "headers" in n ? n.headers : void 0;
+    if (kL(r, Hoe).length > 0) return;
+    let s = bt();
+    s.ccrLaunchMcpUrls.set(e, n.url), s.ccrLaunchMcpOrigins.set(e, kL(r, o_e))
+  }
+}
+
+function VS(e) {
+  let n = nI.exec(e)?.[1];
+  if (!n?.startsWith("[") && !/\.[^.]/.test(n ?? "")) return;
+  let r = CJ({
+    type: "http",
+    url: e
+  });
+  return r?.startsWith("https://") && r.length <= tI && !r.includes("@") ? r : void 0
+}
+var oI = "url-redacted.invalid";
+
+function Ln(e) {
+  let n = e === void 0 ? void 0 : VS(e);
+  if (n === void 0) return {
+    serverProvenance: "connector",
+    serverUrl: void 0
+  };
+  let {
+    hostname: r,
+    pathname: s
+  } = new URL(n), h = r.replace(/\.+$/, "");
+  return {
+    serverProvenance: "connector",
+    serverUrl: h === oI || h.endsWith(".localhost") || s.split("/").some((y) => y.startsWith("redacted-")) ? void 0 : n
+  }
+}
+
+function GS(e) {
+  return U([/[A-Z]/, /[a-z]/, /[0-9]/], (n) => n.test(e))
+}
+
+function rI(e) {
+  let n;
+  try {
+    n = decodeURIComponent(e)
+  } catch {
+    return !0
+  }
+  return /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i.test(n) || n.length >= 20 && /^sk[-_]/iu.test(n) || (n.match(/[A-Za-z0-9]{20,}/g) ?? []).some((r) => GS(r) >= 2) || (n.match(/[A-Za-z0-9_+/-]{20,}/g) ?? []).some((r) => GS(r) === 3)
+}
+
+function bgr(e) {
+  return e !== void 0 && URL.canParse(e) && !new URL(e).pathname.split("/").some(rI) ? e : void 0
+}
+
+function sI(e, n) {
+  return n === "directory" || n === "statsig" ? bgr(e) : void 0
+}
+
+function iI(e, n) {
+  if (er()) {
+    let s = F0e.peek(H())?.read?.(e, n);
+    return kL(s, Hoe).length > 0 ? [] : kL(s, o_e)
+  }
+  let r = bt();
+  return r.ccrLaunchMcpUrls.get(e) === n ? r.ccrLaunchMcpOrigins.get(e) ?? [] : []
+}
+
+function aI(e) {
+  return e.relayed === !0 ? Ln(void 0) : KS
+}
+
+function V9e(e) {
+  try {
+    let {
+      config: n
+    } = e;
+    switch (n.type) {
+      case "claudeai-proxy":
+        return Ln(n.scope === "claudeai" && n.urlReportable === !0 ? n.noDirectoryEntry === !0 ? bgr(n.url) : n.url : void 0);
+      case "sdk": {
+        if (er() && !P_e(n)) return aI(n);
+        let r = fks(e);
+        if (typeof r?.serverId !== "string") return si;
+        return Ln(r.serverId === uks(e) && typeof r.serverUrl === "string" ? r.serverUrl : void 0)
+      }
+      case "http":
+      case "sse":
+      case "ws": {
+        if (e.name === zo && n.scope === "dynamic") return Ln(void 0);
+        if ($u(n.url)) {
+          if (!zS(n)) return Ln(void 0);
+          if (MUt(n.url)) return si;
+          if (!KRe(n.url, ["mcp_url", "mcp_server_url", "toolbox_mcp_server_id"])) return Ln(void 0);
+          let {
+            hostname: s,
+            pathname: h,
+            search: y,
+            searchParams: S
+          } = new URL(n.url);
+          if (h === eI.get(e.name) && y === "" && ran(s)) return Ln(n.url);
+          let w = S.get("mcp_url") || S.get("mcp_server_url") || void 0,
+            A = iI(e.name, n.url);
+          if (A.length === 1 && A[0] !== "") return Ln(sI(w, A[0]));
+          let O = ZM.get(e.name),
+            M = J3(n.url),
+            j = VS(M?.upstreamUrl ?? "");
+          if (O === void 0 || M === null || j === void 0 || M.toolboxMcpServerId !== O.id || Iie(n) !== O.id || !Jl.ownCcrSessionIds.some((N) => jn(N) === jn(M.sessionSegment)) || !kDr(jn(M.sessionSegment), e.name).includes(M.mcpServerId)) return Ln(void 0);
+          let {
+            hostname: G
+          } = new URL(j);
+          return Ln((O.at.startsWith("/") ? ran(G) && j === `https://${G}${O.at}` : j === O.at) ? j : void 0)
+        }
+        let r = URL.canParse(n.url) ? new URL(n.url).hostname.replace(/\.$/, "") : "";
+        if (cS(r)) return si;
+        if (e.name.startsWith(QM) && zS(n)) return Ln(bt().ccrLaunchMcpUrls.get(e.name) === n.url ? bgr(n.url) : void 0);
+        return KS
+      }
+      default:
+        return si
+    }
+  } catch (n) {
+    a(F(n));
+    let {
+      type: r
+    } = e.config;
+    return r === void 0 || r === "stdio" || r === "sse-ide" || r === "ws-ide" ? si : Ln(void 0)
+  }
+}
+
+function XS(e) {
+  return typeof e === "object" && e !== null && "verified" in e && e.verified === !1 && "owner" in e && e.owner === "mcp" && (!("server_url" in e) || typeof e.server_url === "string")
+}
+
+function JS(e, n) {
+  if (e.serverProvenance === void 0 || e.serverProvenance === "configured" && !n.configuredServers) return;
+  return {
+    verified: !1,
+    owner: "mcp",
+    ...e.serverUrl !== void 0 && {
+      server_url: e.serverUrl
+    }
+  }
+}
+
+function lI(e, n) {
+  let r = e.mcpInfo;
+  return r === void 0 || QS(e) ? void 0 : JS({
+    serverProvenance: r.serverProvenance,
+    serverUrl: r.serverUrl
+  }, n)
+}
+
+function _us(e, n, r) {
+  if (r === void 0) return () => {
+    return
+  };
+  let s = new Map(e.map((y) => [y.name, y])),
+    h = new Map;
+  return (y) => {
+    if (!h.has(y)) {
+      let S = s.get(y);
+      h.set(y, S !== void 0 && QS(S) ? void 0 : !cI(y) ? Ur : S !== void 0 ? lI(S, r) : uI(y, n, r))
+    }
+    return h.get(y)
+  }
+}
+var Ur = {
+  verified: !1,
+  owner: "mcp"
+};
+
+function QS(e) {
+  return e.mcpInfo?.isAuthStub === !0
+}
+
+function cI(e) {
+  try {
+    return !e.startsWith("mcp__") || OHe({
+      name: e
+    }).length === 1
+  } catch (n) {
+    return a(F(n)), !1
+  }
+}
+
+function uI(e, n, r) {
+  try {
+    if (!e.startsWith("mcp__")) return i.CLAUDE_AGENT_SDK_MCP_NO_PREFIX && n.some((y) => y.config.type === "sdk") ? Ur : void 0;
+    let s = n.filter((y) => e.startsWith(to(y.name))).map((y) => y.config.type === "sdk" && y.capabilities === void 0 ? Ur : JS(V9e(y), r)),
+      [h] = s;
+    return s.length > 0 && s.every((y) => y === void 0 === (h === void 0) && y?.server_url === h?.server_url) ? h : Ur
+  } catch (s) {
+    return a(F(s)), Ur
+  }
+}
+
+function ZDe(e) {
+  let n = pOs();
+  return e.catch(() => {}).then(() => {
+    if (n()) l4e(ns(), BD)
+  })
+}
+
+function bus(e, n, r = !1) {
+  try {
+    if (r || DRe()) return {
+      betas: qS(n),
+      coverage: void 0
+    };
+    let s = n.includes(BD);
+    if (s && !If(e, BD)) {
+      if (!L_(e, BD)) g("api_tool_provenance");
+      g0(e, BD)
+    } else if (!L_(e, BD)) Zm(e, BD);
+    if (L_(e, BD) && Oko()) return {
+      betas: s ? n : [...n, BD],
+      coverage: {
+        configuredServers: mOs()
+      }
+    }
+  } catch (s) {
+    a(F(s))
+  }
+  return {
+    betas: qS(n),
+    coverage: void 0
+  }
+}
+
+function qS(e) {
+  return e.filter((n) => n !== BD)
+}
+
+function llo(e, n) {
+  return {
+    header: n,
+    serverUrls: !If(e, CMs) && !NVs()
+  }
+}
+
+function al(e, n, r) {
+  return {
+    ...e,
+    [n]: r
+  }
+}
+
+function ZS(e) {
+  return e.startsWith("mcp__") ? Ur : void 0
+}
+
+function ii(e) {
+  try {
+    return e()
+  } catch (n) {
+    a(F(n));
+    return
+  }
+}
+
+function e_(e) {
+  return ii(() => ee(_(e, (n, r) => n === "ownership_metadata" ? void 0 : r)))
+}
+
+function t_(e, n) {
+  if (!n.header || e === void 0) return;
+  if (n.serverUrls) return e;
+  let {
+    server_url: r,
+    ...s
+  } = e;
+  return s
+}
+
+function n_(e, n) {
+  return n === void 0 ? e === void 0 : XS(e) && e.server_url === n.server_url && Object.keys(e).length === Object.keys(n).length
+}
+
+function xd(e, n, r) {
+  let s = !1,
+    h = e.map((y) => {
+      let S = "ownership_metadata" in y ? y.ownership_metadata : void 0,
+        w = "name" in y && "input_schema" in y ? t_(r(y.name), n) : void 0;
+      if (n_(S, w)) return y;
+      s = !0;
+      let {
+        ownership_metadata: A,
+        ...O
+      } = {
+        ownership_metadata: void 0,
+        ...y
+      };
+      return w === void 0 ? O : al(O, "ownership_metadata", w)
+    });
+  return s ? h : e
+}
+
+function Cyr(e, n, r) {
+  try {
+    return xd(e, n, r)
+  } catch (s) {
+    return a(F(s)), ii(() => xd(e, n, ZS)) ?? ii(() => xd(e, n, () => {
+      return
+    })) ?? e_(e) ?? []
+  }
+}
+
+function Ryr(e) {
+  return Cyr([...e], {
+    header: !1,
+    serverUrls: !1
+  }, () => {
+    return
+  })
+}
+
+function Rd(e, n, r) {
+  let s = !1,
+    h = e.map((y) => {
+      let {
+        content: S
+      } = y;
+      if (typeof S === "string" || !S.some(Ays)) return y;
+      let w = S.map((A) => {
+        let O = QFi(A),
+          M = O === void 0 ? void 0 : t_(r(O), n);
+        return n_(Dwr(A), M) ? A : lfo(A, M)
+      });
+      if (w.every((A, O) => A === S[O])) return y;
+      return s = !0, al(y, "content", w)
+    });
+  return s ? h : e
+}
+
+function Sus(e, n, r) {
+  try {
+    return Rd(e, n, r)
+  } catch (s) {
+    return a(F(s)), ii(() => Rd(e, n, ZS)) ?? ii(() => Rd(e, n, () => {
+      return
+    })) ?? e_(e) ?? []
+  }
+}
+
+function YS(e) {
+  return XS(e) && e.server_url === Rys
+}
+
+function wus(e) {
+  try {
+    let n = e.messages.map(({
+      content: s
+    }) => typeof s === "string" ? 0 : U(s, (h) => YS(Dwr(h))));
+    return {
+      cuts: U(e.tools ?? [], (s) => ("ownership_metadata" in s) && YS(s.ownership_metadata)) + n.reduce((s, h) => s + h, 0),
+      messages: n.flatMap((s, h) => s > 0 ? [h] : [])
+    }
+  } catch (n) {
+    return a(F(n)), {
+      cuts: 0,
+      messages: []
+    }
+  }
+}
+
+function dlo(e) {
+  try {
+    let n = e.tools?.map((s) => {
+        let h = "ownership_metadata" in s ? s.ownership_metadata : void 0,
+          y = i0n(h);
+        return y === h ? s : al(s, "ownership_metadata", y)
+      }),
+      r = e.messages.map((s) => {
+        let {
+          content: h
+        } = s;
+        if (typeof h === "string" || !h.some(Ays)) return s;
+        let y = h.map((S) => lfo(S, i0n(Dwr(S))));
+        return y.every((S, w) => S === h[w]) ? s : al(s, "content", y)
+      });
+    return {
+      ...e,
+      ...n && {
+        tools: n
+      },
+      messages: r
+    }
+  } catch (n) {
+    a(F(n));
+    return
+  }
+}
+
+function kus(e, n, r) {
+  try {
+    if (!n || !r) return !1;
+    return Zm(e, CMs), FVs(), c("api_tool_provenance", "server_url_refused"), t("[tool-provenance] the API refused a server_url; marking tools without addresses and retrying", {
+      level: "warn"
+    }), !0
+  } catch (s) {
+    return a(F(s)), !1
+  }
+}
+
+function dI(e) {
+  let n = e.find((h) => h.role === "user");
+  if (!n) return "";
+  let r = n.content;
+  if (typeof r === "string") return r;
+  let s = r.find((h) => h.type === "text");
+  return s?.type === "text" ? s.text : ""
+}
+
+function cus({
+  messages: e,
+  system: n,
+  skipSystemPromptPrefix: r,
+  forceAttributionHeader: s,
+  agentContext: h
+}) {
+  let y = dI(e),
+    S = id(y, {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION);
+  return cHi([...r ? [] : [{
+    type: "text",
+    text: Uwr({
+      isNonInteractive: !1,
+      hasAppendSystemPrompt: !1
+    })
+  }], ...Array.isArray(n) ? n : n ? [{
+    type: "text",
+    text: n
+  }] : []], {
+    fingerprint: S,
+    agentContext: h,
+    forceAttributionHeader: s
+  })
+}
+
+function AMt(e) {
+  let n = [{
+      role: "user",
+      content: "."
+    }],
+    r = {
+      model: e,
+      max_tokens: 1,
+      messages: n
+    };
+  try {
+    return {
+      ...r,
+      system: cus({
+        messages: n,
+        agentContext: cc()
+      }),
+      metadata: Wze()
+    }
+  } catch (s) {
+    return t(`[model-check] sending the ${e} start-up check without the Claude Code billing block and metadata: ${d(s)}`, {
+      level: "warn"
+    }), r
+  }
+}
+import {
+  isAbsolute as vI,
+  resolve as EI
+} from "path";
+import {
+  readdir as fI
+} from "fs/promises";
+import {
+  isAbsolute as pI,
+  join as o_,
+  normalize as mI
+} from "path";
+class r_ {
+  resultsByHost = new Map;
+  inFlightByHost = new Map
+}
+var hI = new W(() => new r_),
+  gI = 500;
+
+function s_() {
+  return hI.of(H().host)
+}
+async function i_(e) {
+  let n = await vd(e);
+  return n.kind === "token" ? n.token : null
+}
+async function vd(e) {
+  let {
+    resultsByHost: n,
+    inFlightByHost: r
+  } = s_(), s = n.get(e);
+  if (s !== void 0) return s;
+  let h = r.get(e);
+  if (h !== void 0) return h;
+  let y = yI(e).then((S) => {
+    if (r.get(e) === y) n.set(e, S);
+    return S
+  }).finally(() => {
+    if (r.get(e) === y) r.delete(e)
+  });
+  return r.set(e, y), y
+}
+
+function Ed(e) {
+  let {
+    resultsByHost: n,
+    inFlightByHost: r
+  } = s_();
+  n.delete(e), r.delete(e)
+}
+async function yI(e) {
+  let n = fo(e) ? process.env.GH_TOKEN || process.env.GITHUB_TOKEN : Sxe(process.env.GH_HOST, e) ? process.env.GH_ENTERPRISE_TOKEN || process.env.GITHUB_ENTERPRISE_TOKEN : void 0;
+  if (n) return {
+    kind: "token",
+    token: n
+  };
+  if (!await $c("gh")) return {
+    kind: "gh-missing"
+  };
+  let s = {
+    ...es(),
+    GH_TOKEN: "",
+    GITHUB_TOKEN: "",
+    GH_ENTERPRISE_TOKEN: "",
+    GITHUB_ENTERPRISE_TOKEN: ""
+  };
+  if (tn() && x() === "linux") {
+    let w = s.XDG_CONFIG_HOME || s.HOME && o_(s.HOME, ".config"),
+      A = s.GH_CONFIG_DIR || w && o_(w, "gh"),
+      O = A && pI(A) ? await zt(fI(mI(A)), gI, "listing the gh config directory timed out").catch((M) => K(M) ? [] : null) : null;
+    if (O !== null && !O.includes("hosts.yml") && !O.includes("config.yml")) return {
+      kind: "no-token"
+    }
+  }
+  let {
+    stdout: h,
+    code: y
+  } = await ut("gh", ["auth", "token", "--hostname", e], {
+    timeout: 5000,
+    preserveOutputOnError: !1,
+    env: s,
+    extendEnv: !1
+  });
+  if (y !== 0) return {
+    kind: "no-token"
+  };
+  let S = h.trim();
+  return S.length > 0 ? {
+    kind: "token",
+    token: S
+  } : {
+    kind: "no-token"
+  }
+}
+
+function Yao() {
+  if (i.CLAUDE_CODE_EVAL_CONFINED) return !1;
+  let e = Ar.CLAUDE_CODE_AUTO_MODE_REPO_VISIBILITY;
+  if (e !== void 0) return e;
+  return Yu()?.repoVisibility === !0
+}
+var _I = "2022-11-28",
+  a_ = 3000;
+class l_ {
+  visibilityByHostSlug = new Map;
+  policyDeniedLogged = new Set;
+  inFlightByHostSlug = new Map;
+  lookup(e, n) {
+    return this.visibilityByHostSlug.get(`${e}/${n}`)
+  }
+  markPolicyDenied(e, n) {
+    let r = `${e}/${n}`;
+    if (this.policyDeniedLogged.has(r)) return !1;
+    return this.policyDeniedLogged.add(r), !0
+  }
+  record(e, n, r) {
+    this.visibilityByHostSlug.set(`${e}/${n}`, r)
+  }
+  running(e, n) {
+    return this.inFlightByHostSlug.get(`${e}/${n}`)
+  }
+  track(e, n, r, s) {
+    let h = `${e}/${n}`,
+      y = r.then((S) => {
+        if (this.inFlightByHostSlug.get(h) === y) s(S);
+        return S
+      }).finally(() => {
+        if (this.inFlightByHostSlug.get(h) === y) this.inFlightByHostSlug.delete(h)
+      });
+    return this.inFlightByHostSlug.set(h, y), y
+  }
+  entries() {
+    return Array.from(this.visibilityByHostSlug, ([e, n]) => {
+      let r = e.indexOf("/");
+      return {
+        host: e.slice(0, r),
+        slug: e.slice(r + 1),
+        visibility: n
+      }
+    })
+  }
+  clear() {
+    this.visibilityByHostSlug.clear(), this.policyDeniedLogged.clear(), this.inFlightByHostSlug.clear()
+  }
+}
+var bI = new W(() => new l_);
+
+function ai() {
+  return bI.of(H().host)
+}
+var Vcs = {
+  lookup: (e, n) => ai().lookup(e, n),
+  record: (e, n, r) => ai().record(e, n, r),
+  entries: () => ai().entries(),
+  clear: () => ai().clear()
+};
+
+function nXe(e) {
+  return e.replace(/[^a-zA-Z0-9._/-]/g, "").slice(0, 128)
+}
+var wI = p(() => Ft({
+  visibility: Ec(["public", "private", "internal"]).optional(),
+  private: ws().optional()
+}));
+
+function eyr(e) {
+  if (e.visibility === "public" || e.visibility === "private") return e.visibility;
+  return Nut(`https://${e.host}/${e.slug}`) ? "private" : e.visibility
+}
+async function Xao(e, n) {
+  let r = await TT(e, {
+    skipCache: !0
+  });
+  if (!r) return null;
+  return ll(r.host, r.owner, r.name, n)
+}
+async function ll(e, n, r, s) {
+  let h = `${n}/${r}`,
+    y = ai(),
+    S = y.lookup(e, h);
+  if (S !== void 0) {
+    if (s !== void 0) s.lookup = "hit";
+    return {
+      slug: h,
+      host: e,
+      visibility: S
+    }
+  }
+  let w = y.running(e, h);
+  if (w !== void 0) {
+    if (s !== void 0) s.lookup = "joined";
+    return {
+      slug: h,
+      host: e,
+      visibility: await w
+    }
+  }
+  if (s !== void 0) s.lookup = "fetched";
+  let A = {},
+    O = await y.track(e, h, xI(e, n, r, A), (M) => {
+      if (kI(A), M === "unverified") {
+        if (y.markPolicyDenied(e, h)) li("policy_denied")
+      } else y.record(e, h, M)
+    });
+  return {
+    slug: h,
+    host: e,
+    visibility: O
+  }
+}
+
+function kI(e) {
+  if (e.tokenMs === void 0) return;
+  try {
+    l("tengu_auto_mode_repo_visibility_lookup_timed", {
+      token_ms: e.tokenMs,
+      had_token: e.hadToken,
+      request_ms: e.requestMs
+    })
+  } catch (n) {
+    a(n)
+  }
+}
+
+function li(e) {
+  l("tengu_auto_mode_repo_visibility_lookup_failed", {
+    reason: f(e)
+  })
+}
+async function xI(e, n, r, s) {
+  if (!fo(e)) {
+    let w = gN(e);
+    return li(w === "gitlab" || w === "bitbucket" ? w : "other_host"), "unknown"
+  }
+  let h = `${sme(e)}/repos/${encodeURIComponent(n)}/${encodeURIComponent(r)}`;
+  if (EM()) return "unknown";
+  if (!gn("allow_repo_visibility_probe")) return "unverified";
+  let y, S = () => {
+    if (s !== void 0 && y !== void 0) s.requestMs ??= Date.now() - y
+  };
+  try {
+    let w = Date.now(),
+      A = await i_(e);
+    if (s !== void 0) s.tokenMs = Date.now() - w, s.hadToken = A !== null;
+    y = Date.now();
+    let {
+      data: O
+    } = await hd.get(h, {
+      headers: {
+        ...A && {
+          Authorization: `Bearer ${A}`
+        },
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": _I,
+        "User-Agent": ui()
+      },
+      timeout: a_,
+      signal: AbortSignal.timeout(a_),
+      maxRedirects: 0
+    });
+    S();
+    let M = wI().safeParse(O);
+    if (!M.success) return li("parse_error"), "unknown";
+    let j = M.data.visibility;
+    if (j === "public") return "public";
+    if (j === "private" || j === "internal") return "private";
+    if (M.data.private === !0) return "private";
+    if (M.data.private === !1) return "public";
+    return li("missing_fields"), "unknown"
+  } catch {
+    return S(), li("http_error"), "unknown"
+  }
+}
+var AI = 5000,
+  PI = String.raw`([^&|;\n]*)`,
+  OI = new RegExp(String.raw`\bgh\s+(pr\s+create|pr\s+merge|pr\s+comment|issue\s+create|issue\s+comment|release\s+create|release\s+upload|repo\s+fork)\b${PI}`, "g"),
+  MI = new Set(["-c", "-C", "--git-dir"]);
+
+function Kcs(e) {
+  let n = [];
+  for (let r of e.split(/[&|;\n]/)) {
+    let s = r.trim().split(/\s+/).filter(Boolean),
+      h = 0;
+    while (h < s.length) {
+      let y = s[h];
+      if (y !== "git" && !y.endsWith("/git")) {
+        h++;
+        continue
+      }
+      let S = [],
+        w = h + 1;
+      for (; w < s.length; w++) {
+        let O = s[w];
+        if (!O.startsWith("-")) break;
+        if (S.push(O), MI.has(O) && w + 1 < s.length) S.push(s[++w])
+      }
+      let A = s[w];
+      if (A === "push") {
+        n.push({
+          kind: "push",
+          optsSpan: S.join(" "),
+          rest: s.slice(w + 1).join(" ")
+        });
+        break
+      }
+      if (A === "remote" && (s[w + 1] === "set-url" || s[w + 1] === "add")) {
+        n.push({
+          kind: "remote-mutate",
+          optsSpan: S.join(" "),
+          rest: s.slice(w + 2).join(" ")
+        });
+        break
+      }
+      h = Math.max(w, h + 1)
+    }
+  }
+  return n
+}
+
+function II(e, n) {
+  return [...n.matchAll(e)]
+}
+
+function Br(e) {
+  return e.replace(/^['"]|['"]$/g, "")
+}
+
+function qcs(e) {
+  let n = e.match(/-C\s+(\S+)/);
+  if (n?.[1]) return Br(n[1]);
+  let r = e.match(/--git-dir[=\s]+(\S+)/);
+  if (r?.[1]) return Br(r[1]);
+  return
+}
+
+function d_(e, n, r) {
+  let s = e.trim().split(/\s+/),
+    h = [];
+  for (let y = 0; y < s.length && h.length < r; y++) {
+    let S = s[y];
+    if (S === "") continue;
+    if (S.startsWith("-")) {
+      if (n.has(S)) y++;
+      continue
+    }
+    if (/^[\d*]*[<>]/.test(S)) continue;
+    h.push(Br(S))
+  }
+  return h
+}
+
+function p_(e, n) {
+  return d_(e, n, 1)[0]
+}
+var DI = new Set(["-o", "--push-option", "--receive-pack", "--exec", "--repo"]);
+
+function Ycs(e) {
+  let n = [],
+    r = p_(e, DI);
+  if (r !== void 0) n.push(r);
+  let s = [...e.matchAll(/(?:^|\s)--repo[=\s]+(\S+)/g)].at(-1)?.[1];
+  if (s) {
+    let h = Br(s);
+    if (!n.includes(h)) n.push(h)
+  }
+  return n
+}
+var NI = new Set(["-t", "-m"]);
+
+function HI(e) {
+  return d_(e, NI, 2)[1]
+}
+
+function FI(e) {
+  let r = [...e.matchAll(/(?:^|\s)(?:--repo|-R)[=\s]+(\S+)/g)].at(-1)?.[1];
+  return r ? Br(r) : void 0
+}
+
+function $I(e) {
+  let r = [...e.matchAll(/(?:^|\s)--head[=\s]+(\S+)/g)].at(-1)?.[1],
+    s = r ? Br(r) : void 0;
+  if (!s || !s.includes(":")) return;
+  return tt(s, ":") || void 0
+}
+var UI = new Set(["--org", "--fork-name", "--remote-name"]),
+  BI = /^[A-Za-z0-9._-]+$/;
+
+function ci(e) {
+  return BI.test(e) && !e.startsWith("-") && e !== "." && e !== ".."
+}
+
+function jI(e) {
+  if (e.includes("://") || e.startsWith("git@")) return UA(e);
+  if (e.startsWith("/") || e.startsWith(".")) return null;
+  let n = e.replace(/\.git$/, "").split("/");
+  if (n.length === 2 && ci(n[0]) && ci(n[1])) return {
+    host: jr,
+    owner: n[0],
+    name: n[1]
+  };
+  if (n.length === 3 && n[0].includes(".") && ci(n[0]) && ci(n[1]) && ci(n[2])) return {
+    host: n[0],
+    owner: n[1],
+    name: n[2]
+  };
+  return null
+}
+class m_ {
+  stateByDir = new Map;
+  namedRemoteUrlsByDir = new Map;
+  seedDir(e, n) {
+    this.stateByDir.set(e, n)
+  }
+  seedNamedRemoteUrl(e, n, r) {
+    let s = this.namedRemoteUrlsByDir.get(e) ?? new Map;
+    s.set(n, r), this.namedRemoteUrlsByDir.set(e, s)
+  }
+  hasDir(e) {
+    return this.stateByDir.has(e)
+  }
+  dirState(e) {
+    return this.stateByDir.get(e)
+  }
+  namedRemoteUrl(e, n) {
+    return this.namedRemoteUrlsByDir.get(e)?.get(n)
+  }
+  clear() {
+    this.stateByDir.clear(), this.namedRemoteUrlsByDir.clear()
+  }
+}
+var WI = new W(() => new m_);
+
+function zI() {
+  return WI.of(H().host)
+}
+async function di(e, n, r) {
+  try {
+    let {
+      stdout: s,
+      code: h
+    } = await lt(Pt(), [...tme, ...n], {
+      cwd: e,
+      timeout: njt,
+      maxBuffer: 1e5,
+      abortSignal: r,
+      preserveOutputOnError: !1,
+      useToolMemoryCgroup: !1
+    });
+    if (h !== 0) return;
+    return s.trim() || void 0
+  } catch {
+    return
+  }
+}
+async function GI(e, n, r) {
+  if (e.hasDir(n)) return e.dirState(n)?.branch;
+  return di(n, ["rev-parse", "--abbrev-ref", "HEAD"], r)
+}
+async function KI(e, n) {
+  if (e.hasDir(n)) {
+    let r = e.dirState(n);
+    return r ? {
+      slug: r.slug,
+      host: r.host,
+      visibility: r.visibility
+    } : null
+  }
+  return Xao(n)
+}
+async function VI(e, n, r, s) {
+  if (e.hasDir(n)) return "origin";
+  if (r !== void 0 && r !== "HEAD") {
+    let y = await di(n, ["config", "--get", `branch.${r}.remote`], s);
+    if (y !== void 0) return y
+  }
+  return await di(n, ["config", "--get", "remote.pushDefault"], s) ?? "origin"
+}
+async function qI(e, n, r, s) {
+  if (e.hasDir(n)) return e.namedRemoteUrl(n, r);
+  let h = await di(n, ["config", "--get", `remote.${r}.pushurl`], s);
+  if (h !== void 0) return h;
+  return di(n, ["config", "--get", `remote.${r}.url`], s)
+}
+
+function c_(e, n) {
+  let r = [],
+    s = new Set,
+    h = !1;
+  for (let S of e.origins.values())
+    if (S.state) {
+      let w = `${S.state.host}/${S.state.slug}`;
+      if (!s.has(w)) s.add(w), r.push({
+        remote: nXe(S.state.slug),
+        ...S.branch !== void 0 && {
+          branch: nXe(S.branch)
+        },
+        visibility: eyr(S.state)
+      })
+    } else h = !0;
+  let y = [];
+  for (let S of e.targets)
+    if (S === "unresolved") h = !0;
+    else y.push(S);
+  y.sort((S, w) => `${S.host}/${S.slug}`.localeCompare(`${w.host}/${w.slug}`));
+  for (let S of y) {
+    let w = `${S.host}/${S.slug}`;
+    if (s.has(w)) continue;
+    s.add(w), r.push({
+      remote: nXe(S.slug),
+      visibility: eyr(S)
+    })
+  }
+  if (n && e.pendingTargets > 0) h = !0;
+  if (h) r.push({
+    remote: "",
+    visibility: "unknown"
+  });
+  return r
+}
+
+function h_(e) {
+  return e.includes("://") || e.startsWith("git@")
+}
+async function Td(e) {
+  let n = h_(e) ? UA(e) : null;
+  if (!n) return "unresolved";
+  return ll(n.host, n.owner, n.name)
+}
+async function u_(e, n, r, s, h) {
+  if (r === "origin") return await s.stateP, s.state ? null : "unresolved";
+  let y = await qI(e, n, r, h);
+  if (y === void 0) return "unresolved";
+  return Td(y)
+}
+async function JPi(e, n, r, s = AI) {
+  try {
+    if (!Yao()) return null;
+    if (e !== Me && e !== kt || Iv(e)) return null;
+    if (n === null || typeof n !== "object" || !("command" in n) || typeof n.command !== "string") return null;
+    let y = n.command,
+      S = Kcs(y),
+      w = II(OI, y);
+    if (!S.length && !w.length) return null;
+    let A = pe(),
+      O = zI(),
+      M = {
+        origins: new Map,
+        targets: [],
+        pendingTargets: 0
+      },
+      j = [],
+      G = (ae) => {
+        let re = M.origins.get(ae);
+        if (re === void 0) {
+          let _e = {};
+          _e.branchP = GI(O, ae, r).then((Se) => {
+            _e.branch = Se
+          }), _e.stateP = KI(O, ae).then((Se) => {
+            _e.state = Se
+          }), re = _e, M.origins.set(ae, re), j.push(re.branchP, re.stateP)
+        }
+        return re
+      },
+      N = (ae) => {
+        M.pendingTargets++, j.push(ae.then((re) => {
+          if (M.pendingTargets--, re !== null) M.targets.push(re)
+        }))
+      },
+      Z = async (ae) => {
+        let re = jI(ae);
+        if (!re) return "unresolved";
+        return ll(re.host, re.owner, re.name)
+      };
+    G(A);
+    let te = (ae) => {
+      let re = qcs(ae);
+      if (re === void 0) return A;
+      return vI(re) ? re : EI(A, re)
+    };
+    for (let ae of S) {
+      let re = te(ae.optsSpan),
+        _e = G(re);
+      if (ae.kind === "remote-mutate") {
+        let ce = HI(ae.rest);
+        if (ce !== void 0) N(Td(ce));
+        continue
+      }
+      let Se = Ycs(ae.rest);
+      if (Se.length === 0) {
+        N((async () => {
+          await _e.branchP;
+          let ce = await VI(O, re, _e.branch, r);
+          return u_(O, re, ce, _e, r)
+        })());
+        continue
+      }
+      for (let ce of Se)
+        if (h_(ce)) N(Td(ce));
+        else N(u_(O, re, ce, _e, r))
+    }
+    for (let ae of w) {
+      let re = (ae[1] ?? "").replace(/\s+/g, " "),
+        _e = ae[2] ?? "",
+        Se = FI(_e),
+        ce = re === "repo fork" && Se === void 0 ? p_(_e, UI) : void 0,
+        xe = Se ?? ce;
+      if (xe !== void 0) N(Z(xe));
+      if (re === "pr create" && $I(_e) !== void 0) N(Promise.resolve("unresolved"))
+    }
+    let Y = Promise.all(j).then(() => c_(M, !1)),
+      ne = new AbortController,
+      se = J(s, ne.signal).then(() => null);
+    try {
+      let ae = await Promise.race([Y, se]);
+      if (ae !== null) return ae.length > 0 ? ae : null;
+      let re = c_(M, !0);
+      return re.length > 0 ? re : null
+    } finally {
+      ne.abort(), Y.catch(() => {})
+    }
+  } catch {
+    return null
+  }
+}
+
+function Ida(e, {
+  requireStarted: n
+}) {
+  let r = g_(e);
+  if (r !== void 0) return {
+    confined: !1,
+    reason: r
+  };
+  if (!n) return {
+    confined: !0
+  };
+  if (e.started !== !0 || e.config === void 0) return {
+    confined: !1,
+    reason: "sandbox_failed_to_start"
+  };
+  let s = YI(e.config);
+  return s === void 0 ? {
+    confined: !0
+  } : {
+    confined: !1,
+    reason: s
+  }
+}
+
+function g_(e) {
+  if (!e.sandboxingEnabled) {
+    if (!e.enabledInSettings) return "sandbox_unavailable";
+    return e.supportedHere ? "sandbox_failed_to_start" : "sandbox_unsupported"
+  }
+  if (e.filesystemPolicy !== "strict" || e.scrubMode) return "sandbox_unconfined";
+  return
+}
+
+function YI(e) {
+  if (e.weakensIsolation || e.ripgrepOverridden) return "sandbox_weakened";
+  if (e.allowsUnixSockets) return "sandbox_allows_unix_sockets";
+  if (e.seccompUnavailable) return "sandbox_seccomp_unavailable";
+  if (e.injectsCredentials) return "sandbox_injects_credentials";
+  return
+}
+
+function ROi() {
+  let e = Ge.isSandboxingEnabled(),
+    n = Ge.getConfig(),
+    r = x();
+  return {
+    sandboxingEnabled: e,
+    enabledInSettings: Ge.isSandboxEnabledInSettings(),
+    supportedHere: Ge.passesCheapSandboxGates(),
+    filesystemPolicy: QT(),
+    scrubMode: Cf(),
+    ...n !== void 0 && {
+      config: {
+        allowsUnixSockets: n.network?.allowAllUnixSockets === !0 || (n.network?.allowUnixSockets?.length ?? 0) > 0,
+        seccompUnavailable: e && r !== "macos" && r !== "windows" && !n.seccomp?.argv0 && nwr(n.seccomp?.applyPath) === null,
+        injectsCredentials: [...n.credentials?.envVars ?? [], ...n.credentials?.files ?? []].some((s) => s.mode === "mask" && (s.injectHosts === void 0 || s.injectHosts.length > 0)),
+        weakensIsolation: dao(n, r),
+        ripgrepOverridden: r !== "macos" && r !== "windows" && HDn(["ripgrep"]) === void 0 && UQt().some((s) => s?.sandbox?.ripgrep !== void 0)
+      }
+    }
+  }
+}
+async function sus() {
+  if (!Ge.isSandboxingEnabled()) return;
+  await Ge.initialize(), await Ge.waitForNetworkInitialization()
+}
+async function UWe() {
+  let e = g_(ROi());
+  if (e !== void 0) return {
+    confined: !1,
+    reason: e
+  };
+  await Ge.initialize();
+  let n = await Ge.waitForNetworkInitialization();
+  return Ida({
+    ...ROi(),
+    started: n
+  }, {
+    requireStarted: !0
+  })
+}
+import {
+  readFile as sD
+} from "fs/promises";
+import {
+  join as iD
+} from "path";
+var XI = 2500,
+  y_ = /^\s*\S+ has not been authenticated with glab\s*$/m;
+class b_ {
+  glabOnPath;
+  unauthenticatedHosts = new Set;
+  okEmitted = !1;
+  isGlabOnPath() {
+    if (this.glabOnPath === void 0) this.glabOnPath = wj("glab") !== null;
+    return this.glabOnPath
+  }
+  emitOkOnce() {
+    if (this.okEmitted) return;
+    g("gitlab_mr_badge"), this.okEmitted = !0
+  }
+}
+var JI = new W(() => new b_);
+
+function ZI() {
+  try {
+    let e = Gi(pe());
+    if (!e) return null;
+    let n = K1t(e);
+    if (!n) return null;
+    return tt(n, "/") || null
+  } catch (e) {
+    return t(`glab MR badge repo probe failed: ${e}`, {
+      level: "warn"
+    }), null
+  }
+}
+var eD = p(() => u({
+  iid: E().int().min(1).max(Number.MAX_SAFE_INTEGER),
+  state: o(),
+  draft: I().optional(),
+  detailed_merge_status: o().optional(),
+  web_url: o()
+}));
+
+function S_(e) {
+  try {
+    return ee(e)
+  } catch {
+    return
+  }
+}
+
+function __(e) {
+  return typeof e === "object" && e !== null && "error" in e && typeof e.error === "object" && e.error !== null
+}
+
+function tD(e, n) {
+  if (e.length > Ztt || !ota.test(e)) return !1;
+  return Number(e.slice(e.lastIndexOf("/") + 1)) === n
+}
+
+function nD(e, n, r) {
+  if (e !== "opened") return null;
+  if (n) return "draft";
+  return r === "mergeable" ? "approved" : "pending"
+}
+
+function cl(e) {
+  return m("gitlab_mr_badge", e), t(`glab MR badge poll failed: ${e}`, {
+    level: "warn"
+  }), "fetch-failed"
+}
+async function w_(e) {
+  if (St()) return null;
+  let n = JI.of(e);
+  if (!n.isGlabOnPath()) return null;
+  let r = ZI();
+  if (r === null) return null;
+  if (gN(r) === "github") return null;
+  if (n.unauthenticatedHosts.has(r)) return null;
+  let s = await ut("glab", ["mr", "view", "-F", "json"], {
+    timeout: XI,
+    preserveOutputOnError: !0,
+    useCwd: !0,
+    env: {
+      ...process.env,
+      GITLAB_TOKEN: void 0,
+      GITLAB_ACCESS_TOKEN: void 0,
+      OAUTH_TOKEN: void 0
+    }
+  });
+  if (s.code !== 0) {
+    if (y_.test(s.stdout) || y_.test(s.stderr)) return n.unauthenticatedHosts.add(r), null;
+    let A = S_(s.stdout);
+    if (A === void 0) return cl("glab_unresponsive");
+    if (__(A)) return null;
+    return cl("glab_unresponsive")
+  }
+  let h = S_(s.stdout);
+  if (h === void 0) return cl("parse_failed");
+  if (__(h)) return null;
+  let y = eD().safeParse(h);
+  if (!y.success) return cl("parse_failed");
+  let S = y.data;
+  if (!tD(S.web_url, S.iid)) return m("gitlab_mr_badge", "web_url_rejected"), null;
+  let w = nD(S.state, S.draft === !0, S.detailed_merge_status);
+  if (w === null) return null;
+  return n.emitOkOnce(), {
+    number: S.iid,
+    url: S.web_url,
+    reviewState: w,
+    kind: "mr"
+  }
+}
+var rD = /^https:\/\/([\w.-]+)\/([\w.-]+)\/([\w.-]+)\/pull\/(\d+)\b/;
+
+function TMt(e) {
+  let n = e.match(rD);
+  if (!n) return null;
+  return {
+    url: e,
+    host: n[1],
+    owner: n[2],
+    repo: n[3],
+    num: Number(n[4])
+  }
+}
+var Ad = 60000;
+class C_ {
+  #e = De();
+  bump = {
+    ...this.#e,
+    emit: () => {
+      this.pollerNotModifiedStreak = 0, this.#e.emit()
+    }
+  };
+  pollerDisabled = !1;
+  pollerBadStreak = 0;
+  pollerNotModifiedStreak = 0;
+  directState = null;
+  lastLoggedGhAuthState = null;
+  malformedBatchNodeLogged = !1;
+  batchReplyOverCapLogged = !1;
+  baseRepoCache = void 0;
+  prStatusByUrl = ume(wD, 30000);
+  ghBackoffUntil = 0;
+  lastPersistedCacheBody = "";
+  directStateForBranch(e) {
+    if (this.directState?.branch !== e) this.directState = {
+      branch: e,
+      etag: null,
+      pr: null,
+      reviewDecision: "",
+      lastReviewFetchAt: 0,
+      redirectedListUrl: null
+    };
+    return this.directState
+  }
+  logAuthState(e) {
+    if (e === this.lastLoggedGhAuthState) return;
+    this.lastLoggedGhAuthState = e, l("tengu_gh_pr_status_auth_state", {
+      auth_state: f(e)
+    })
+  }
+  rememberBaseRepo(e) {
+    return this.baseRepoCache = e, e
+  }
+  backOffUntil(e) {
+    this.ghBackoffUntil = e
+  }
+  backOffFromResponse(e) {
+    let n = Number(e.headers.get("retry-after")),
+      r = Number(e.headers.get("x-ratelimit-reset"));
+    this.ghBackoffUntil = Number.isFinite(n) && n > 0 ? Date.now() + n * 1000 : Number.isFinite(r) && r > 0 ? r * 1000 : Date.now() + Ad
+  }
+  notePersistedCacheBody(e) {
+    if (e === this.lastPersistedCacheBody) return !1;
+    return this.lastPersistedCacheBody = e, !0
+  }
+  reset() {
+    this.pollerDisabled = !1, this.pollerBadStreak = 0, this.pollerNotModifiedStreak = 0, this.directState = null, this.lastLoggedGhAuthState = null, this.malformedBatchNodeLogged = !1, this.batchReplyOverCapLogged = !1, this.baseRepoCache = void 0, this.ghBackoffUntil = 0, this.lastPersistedCacheBody = "", this.prStatusByUrl.cache.clear()
+  }
+}
+var aD = new W(() => new C_);
+
+function fL() {
+  return aD.of(H().host)
+}
+
+function pyr(e) {
+  switch (e) {
+    case "needs-auth":
+      return "gh auth login for PR status";
+    case "gh-missing":
+      return "install gh for PR status"
+  }
+}
+var fl = 5000;
+
+function lD(e, n) {
+  if (e) return "draft";
+  switch (n) {
+    case "APPROVED":
+      return "approved";
+    case "CHANGES_REQUESTED":
+      return "changes_requested";
+    default:
+      return "pending"
+  }
+}
+async function Zao(e) {
+  if (!await RH()) return null;
+  let [r, s] = await Promise.all([Qu(), bM()]);
+  if (r === s) return null;
+  return await (() => pD(r))() ?? await w_(e)
+}
+var cD = 300000,
+  A_ = "2022-11-28",
+  uD = new Set([301, 302, 307, 308]),
+  dD = p(() => vr(Ft({
+    number: Mn(),
+    html_url: ge(),
+    draft: ws()
+  }))),
+  fD = p(() => Ft({
+    data: Ft({
+      repository: Ft({
+        pullRequest: Ft({
+          reviewDecision: ge().nullable()
+        }).nullable()
+      }).nullable()
+    })
+  }));
+async function pD(e) {
+  let n = Date.now();
+  if (St() || dl()) return null;
+  if (e === "main" || e === "master") return null;
+  let r = await hD();
+  if (!r) return null;
+  let s = await vd(r.host);
+  if (s.kind !== "token") {
+    if (!fo(r.host) && !Sxe(process.env.GH_HOST, r.host)) return null;
+    return fL().logAuthState(s.kind === "gh-missing" ? "gh_missing" : "needs_auth"), Ed(r.host), s.kind === "gh-missing" ? "gh-missing" : "needs-auth"
+  }
+  fL().logAuthState("token_present");
+  let h = s.token,
+    y = await yD(r, h),
+    S = fL().directStateForBranch(e),
+    w = S.pr && {
+      ...S.pr,
+      reviewDecision: S.reviewDecision
+    },
+    A = sme(r.host),
+    O = new URL(A).origin,
+    M = `${A}/repos/${y.owner}/${y.repo}/pulls?head=${encodeURIComponent(r.owner)}:${encodeURIComponent(e)}&state=open&per_page=1`,
+    j = !1,
+    G;
+  try {
+    let ae = AbortSignal.timeout(fl),
+      re = {
+        Authorization: `Bearer ${h}`,
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": A_,
+        "User-Agent": ui(),
+        ...S.etag && {
+          "If-None-Match": S.etag
+        }
+      },
+      _e = (ve) => fetch(ve, {
+        ...ba({
+          url: ve
+        }),
+        keepalive: !1,
+        method: "GET",
+        headers: re,
+        redirect: "manual",
+        signal: ae
+      }),
+      Se = await _e(S.redirectedListUrl ?? M),
+      ce = uD.has(Se.status) ? Se.headers.get("location") : null,
+      xe = ce ? new URL(ce, M) : null;
+    if (xe?.origin === O) S.redirectedListUrl = xe.href, Se = await _e(xe.href);
+    if (G = Se.status, Se.status === 304);
+    else if (Se.ok) {
+      S.etag = Se.headers.get("etag"), j = !0;
+      let ve = dD().safeParse(await Se.json()),
+        Oe = ve.success ? ve.data[0] : void 0;
+      if (Oe && S.pr?.number !== Oe.number) S.reviewDecision = "";
+      S.pr = Oe ? {
+        number: Oe.number,
+        url: Oe.html_url,
+        isDraft: Oe.draft
+      } : null
+    } else {
+      if (Se.status === 401) Ed(r.host);
+      else if (Se.status === 403 || Se.status === 429) fL().backOffFromResponse(Se);
+      return m("github_pr_status_direct", Se.status === 401 ? "unauthorized" : Se.status === 403 || Se.status === 429 ? "rate_limited" : "http_error", {
+        http_status: bo(Se.status)
+      }), t(`[ghPrStatus] REST list ${Se.status} on ${r.host}`, {
+        level: "debug"
+      }), "fetch-failed"
+    }
+  } catch (ae) {
+    return m("github_pr_status_direct", "fetch_threw", {
+      error_name: Lh(ae) ?? b("unknown"),
+      errno_code: tr(ae) ?? tr(ae?.cause) ?? b("")
+    }), "fetch-failed"
+  }
+  let N = S.pr;
+  if (!N) return g("github_pr_status_direct", {
+    http_status: bo(G),
+    pr_found: !1,
+    review_fetched: !1
+  }), null;
+  let Z = S.reviewDecision,
+    te = !1,
+    Y = j || Date.now() - S.lastReviewFetchAt >= cD;
+  if (Y) {
+    let ae = await mD({
+      host: r.host,
+      owner: y.owner,
+      repo: y.repo
+    }, h, N.number);
+    if (ae !== null) {
+      if (Z = ae, S.pr?.number === N.number) S.reviewDecision = ae, S.lastReviewFetchAt = n
+    } else te = !0
+  }
+  let ne = {
+    http_status: bo(G),
+    pr_found: !0,
+    review_fetched: Y
+  };
+  if (te) c("github_pr_status_direct", "review_decision_unavailable", ne);
+  else g("github_pr_status_direct", ne);
+  let se = !te && w?.number === N.number && w.url === N.url && w.isDraft === N.isDraft && w.reviewDecision === Z;
+  return {
+    number: N.number,
+    url: N.url,
+    reviewState: lD(N.isDraft, Z),
+    ...se && {
+      notModified: !0
+    }
+  }
+}
+async function mD(e, n, r) {
+  let s = cna(e.host),
+    h = _({
+      query: "query($o:String!,$r:String!,$n:Int!){repository(owner:$o,name:$r){pullRequest(number:$n){reviewDecision}}}",
+      variables: {
+        o: e.owner,
+        r: e.repo,
+        n: r
+      }
+    });
+  try {
+    let y = await fetch(s, {
+      ...ba({
+        url: s
+      }),
+      keepalive: !1,
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${n}`,
+        "Content-Type": "application/json",
+        "User-Agent": ui()
+      },
+      body: h,
+      redirect: "error",
+      signal: AbortSignal.timeout(fl)
+    });
+    if (!y.ok) return null;
+    let S = fD().safeParse(await y.json());
+    return S.success ? S.data.data.repository?.pullRequest?.reviewDecision ?? "" : null
+  } catch {
+    return null
+  }
+}
+async function hD() {
+  let e = await dxe();
+  return e ? P_(e) : null
+}
+
+function P_(e) {
+  let n = dae(e);
+  if (!n) return null;
+  let r = n.split("/");
+  if (r.length < 3) return null;
+  let s = r[0];
+  if (/^[\d.]+$/.test(s) || /^\[?[0-9a-f:]+\]?$/i.test(s)) return null;
+  return {
+    host: s,
+    owner: r[1],
+    repo: r[2]
+  }
+}
+var gD = p(() => Ft({
+  parent: Ft({
+    name: ge(),
+    owner: Ft({
+      login: ge()
+    })
+  }).nullish()
+}));
+async function yD(e, n) {
+  let r = `${e.host}/${e.owner}/${e.repo}`,
+    s = fL().baseRepoCache;
+  if (s?.forOrigin === r) return s;
+  let h = await SD(),
+    y = h ? P_(h) : null;
+  if (y && y.host === e.host) return fL().rememberBaseRepo({
+    forOrigin: r,
+    owner: y.owner,
+    repo: y.repo
+  });
+  let S = await _D(e, n);
+  return fL().rememberBaseRepo({
+    forOrigin: r,
+    ...S ?? {
+      owner: e.owner,
+      repo: e.repo
+    }
+  })
+}
+async function SD() {
+  let {
+    stdout: e,
+    code: n
+  } = await ut("git", ["config", "--get", "remote.upstream.url"], {
+    timeout: 2000,
+    preserveOutputOnError: !1
+  });
+  return n === 0 && e.trim() ? e.trim() : null
+}
+async function _D(e, n) {
+  let s = `${sme(e.host)}/repos/${e.owner}/${e.repo}`;
+  try {
+    let h = await fetch(s, {
+      ...ba({
+        url: s
+      }),
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${n}`,
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": A_,
+        "User-Agent": ui()
+      },
+      redirect: "error",
+      signal: AbortSignal.timeout(fl)
+    });
+    if (!h.ok) return null;
+    let y = gD().safeParse(await h.json()),
+      S = y.success ? y.data.parent : null;
+    return S ? {
+      owner: S.owner.login,
+      repo: S.name
+    } : null
+  } catch {
+    return null
+  }
+}
+
+function myr(e) {
+  switch (e.state) {
+    case "MERGED":
+      return "merged";
+    case "CLOSED":
+    case "DRAFT":
+      return "inactive";
+    case "OPEN": {
+      if (e.checks.failed > 0 || e.review === "CHANGES_REQUESTED") return "error";
+      if (e.checks.pending === 0 && e.review !== "REVIEW_REQUIRED") return "success";
+      return "warning"
+    }
+  }
+}
+
+function bD(e) {
+  let n = 0,
+    r = 0,
+    s = 0;
+  for (let h of e ?? []) {
+    let y = (h.conclusion ?? h.state)?.toUpperCase();
+    if (y === "SUCCESS" || y === "NEUTRAL" || y === "SKIPPED") n++;
+    else if (y === "FAILURE" || y === "ERROR") r++;
+    else if (y == null || y === "ACTION_REQUIRED" || y === "PENDING" || y === "EXPECTED" || h.status?.toUpperCase() !== "COMPLETED") s++;
+    else r++
+  }
+  return {
+    passed: n,
+    failed: r,
+    pending: s
+  }
+}
+async function wD(e) {
+  let {
+    stdout: n,
+    code: r
+  } = await ut("gh", ["pr", "view", e, "--json", "number,title,state,isDraft,statusCheckRollup,reviewDecision,additions,deletions"], {
+    timeout: fl,
+    preserveOutputOnError: !1
+  });
+  if (r !== 0 || !n.trim()) return null;
+  try {
+    let s = ee(n);
+    return {
+      number: s.number,
+      title: s.title,
+      state: s.state === "MERGED" ? "MERGED" : s.state === "CLOSED" ? "CLOSED" : s.isDraft ? "DRAFT" : "OPEN",
+      checks: bD(s.statusCheckRollup),
+      review: s.reviewDecision === "APPROVED" || s.reviewDecision === "CHANGES_REQUESTED" || s.reviewDecision === "REVIEW_REQUIRED" ? s.reviewDecision : null,
+      additions: s.additions,
+      deletions: s.deletions
+    }
+  } catch {
+    return null
+  }
+}
+
+function AOi(e) {
+  if (St() || dl()) return Promise.resolve(null);
+  return fL().prStatusByUrl(e).catch(() => null)
+}
+
+function kD(e, n) {
+  if (!n) return e;
+  let r = TMt(e);
+  if (!r) return e;
+  return n.replaceAll("{host}", r.host).replaceAll("{owner}", r.owner).replaceAll("{repo}", r.repo).replaceAll("{number}", String(r.num)).replaceAll("{url}", e)
+}
+
+function moe(e, n) {
+  if (n) return kD(e, n);
+  return e
+}
+var xD = p(() => {
+    let e = vr(Ft({
+        state: ge(),
+        count: Mn()
+      })).nullable(),
+      n = Ft({
+        contexts: Ft({
+          checkRunCountsByState: e,
+          statusContextCountsByState: e
+        }).nullable()
+      }),
+      r = Ft({
+        commit: Ft({
+          statusCheckRollup: n.nullable()
+        })
+      });
+    return Ft({
+      number: Mn(),
+      title: ge(),
+      state: ge(),
+      isDraft: ws(),
+      reviewDecision: ge().nullable(),
+      additions: Mn(),
+      deletions: Mn(),
+      commits: Ft({
+        nodes: vr(r.nullable())
+      })
+    })
+  }),
+  RD = ["number", "title", "state", "isDraft", "reviewDecision", "additions", "deletions", "commits", "nodes", "commit", "statusCheckRollup", "contexts", "checkRunCountsByState", "statusContextCountsByState", "count"];
+
+function vD(e, n) {
+  let r = 0,
+    s = 0,
+    h = 0;
+  for (let {
+      state: y,
+      count: S
+    }
+    of e ?? []) switch (y) {
+    case "SUCCESS":
+    case "NEUTRAL":
+    case "SKIPPED":
+      r += S;
+      break;
+    case "FAILURE":
+    case "CANCELLED":
+    case "TIMED_OUT":
+    case "STALE":
+    case "STARTUP_FAILURE":
+      s += S;
+      break;
+    case "ACTION_REQUIRED":
+    case "IN_PROGRESS":
+    case "QUEUED":
+    case "PENDING":
+    case "WAITING":
+    case "REQUESTED":
+    case "COMPLETED":
+      h += S;
+      break;
+    default:
+      s += S
+  }
+  for (let {
+      state: y,
+      count: S
+    }
+    of n ?? []) switch (y) {
+    case "SUCCESS":
+      r += S;
+      break;
+    case "FAILURE":
+    case "ERROR":
+      s += S;
+      break;
+    default:
+      h += S
+  }
+  return {
+    passed: r,
+    failed: s,
+    pending: h
+  }
+}
+
+function ED(e) {
+  let n = e.commits.nodes[0]?.commit.statusCheckRollup ?? null;
+  return {
+    number: e.number,
+    title: e.title,
+    state: e.state === "MERGED" ? "MERGED" : e.state === "CLOSED" ? "CLOSED" : e.isDraft ? "DRAFT" : "OPEN",
+    checks: vD(n?.contexts?.checkRunCountsByState, n?.contexts?.statusContextCountsByState),
+    review: e.reviewDecision === "APPROVED" || e.reviewDecision === "CHANGES_REQUESTED" || e.reviewDecision === "REVIEW_REQUIRED" ? e.reviewDecision : null,
+    additions: e.additions,
+    deletions: e.deletions
+  }
+}
+
+function TD(e) {
+  return e !== null && typeof e === "object" && !("cost" in e)
+}
+
+function x_(e, n) {
+  let r = new Map;
+  for (let s of e) {
+    let h = n(s),
+      y = r.get(h);
+    if (y) y.push(s);
+    else r.set(h, [s])
+  }
+  return r
+}
+var CD = `fragment pr on PullRequest {
+  number title state isDraft additions deletions
+  reviewDecision
+  commits(last:1){nodes{commit{statusCheckRollup{
+    state
+    contexts(first:0){
+      checkRunCountsByState{state count}
+      statusContextCountsByState{state count}
+    }
+  }}}}
+}`,
+  R_ = 20,
+  AD = 6,
+  PD = 15000,
+  v_ = 200000,
+  OD = "30s",
+  E_ = /rate limit/i;
+
+function dl() {
+  return Date.now() < fL().ghBackoffUntil
+}
+async function xOi(e) {
+  let n = new Map,
+    r = [],
+    s = null;
+  if (e.length === 0 || St() || dl()) {
+    for (let w of e) n.set(w, null);
+    return {
+      statuses: n,
+      rateLimit: s,
+      unbatched: []
+    }
+  }
+  let h = [];
+  for (let w of e) {
+    let A = TMt(w);
+    if (A) h.push(A);
+    else if (/\/pull\/\d+/.test(w)) r.push(w)
+  }
+  h.sort((w, A) => w.url.localeCompare(A.url));
+  let y = [];
+  for (let [w, A] of x_(h, (O) => O.host))
+    for (let O = 0; O < A.length; O += R_) y.push({
+      host: w,
+      chunk: A.slice(O, O + R_)
+    });
+  let S = Ja(AD, async ({
+    host: w,
+    chunk: A
+  }) => {
+    if (dl()) {
+      for (let ae of A) n.set(ae.url, null);
+      return
+    }
+    let O = new Map,
+      j = [...x_(A, (ae) => `${ae.owner}/${ae.repo}`)].map(([ae, re], _e) => {
+        let [Se, ce] = ae.split("/"), xe = re.map((ve, Oe) => {
+          let Ce = `p${_e}_${Oe}`;
+          return O.set(Ce, ve.url), `${Ce}: pullRequest(number: ${ve.num}) { ...pr }`
+        }).join(" ");
+        return `r${_e}: repository(owner:"${Se}", name:"${ce}") { ${xe} }`
+      }),
+      G = `${CD}
+query { rateLimit{cost remaining resetAt} ${j.join(" ")} }`,
+      {
+        stdout: N,
+        stderr: Z,
+        code: te,
+        maxBufferExceeded: Y
+      } = await ut("gh", ["api", "graphql", "--hostname", w, "--cache", OD, "-F", "query=@-"], {
+        timeout: PD,
+        input: G,
+        preserveOutputOnError: !0,
+        maxBuffer: v_
+      }),
+      ne = null;
+    if (N.trim()) try {
+      ne = ee(N)
+    } catch {
+      ne = null
+    }
+    if (!ne?.data) {
+      if (Y) {
+        if (t(`[ghPrStatus] batch reply from ${w} is over the cap of ${v_} characters; keeping last-known`), !fL().batchReplyOverCapLogged) fL().batchReplyOverCapLogged = !0, c("github_pr_status_batch", "reply_over_cap", {
+          github_dot_com: fo(w)
+        })
+      } else if (E_.test(Z) || E_.test(N)) fL().backOffUntil(Date.now() + Ad), t(`[ghPrStatus] GitHub rate-limited on ${w}; backing off 60s`, {
+        level: "warn"
+      });
+      else t(`[ghPrStatus] batch query failed on ${w} (exit ${te}); keeping last-known`);
+      for (let ae of A) n.set(ae.url, null);
+      return
+    }
+    let se = ne.data.rateLimit;
+    if (se) {
+      if (!s || se.remaining < s.remaining) s = se;
+      if (se.remaining < 50) fL().backOffUntil(Date.parse(se.resetAt) || Date.now() + Ad)
+    }
+    for (let [ae, re] of Object.entries(ne.data)) {
+      if (!ae.startsWith("r") || !TD(re)) continue;
+      for (let [_e, Se] of Object.entries(re)) {
+        let ce = O.get(_e);
+        if (!ce) continue;
+        let xe = xD().safeParse(Se);
+        if (!xe.success && Se !== null) {
+          let {
+            issues: ve
+          } = xe.error, Oe = ve.slice(0, 8).map((Ne) => Ne.path.join(".") || "the node itself"), Ce = Array.isArray(ne.errors) ? ne.errors.length : 0;
+          if (t(`[ghPrStatus] a PR in the batch reply from ${w} has an unexpected shape (gh exit ${te}; GraphQL errors: ${Ce}; bad or missing: ${Oe.join(", ")}); keeping its last-known status`), !fL().malformedBatchNodeLogged) {
+            fL().malformedBatchNodeLogged = !0;
+            let Ne = new Set(ve.map((Ie) => Ie.path.findLast((Ye) => typeof Ye === "string")));
+            c("github_pr_status_batch", "malformed_node", {
+              gh_exit_nonzero: te !== 0,
+              graphql_errors: Ce,
+              github_dot_com: fo(w),
+              bad_fields: ka(RD.filter((Ie) => Ne.has(Ie)))
+            })
+          }
+        }
+        n.set(ce, xe.success ? ED(xe.data) : null)
+      }
+    }
+    for (let ae of O.values())
+      if (!n.has(ae)) n.set(ae, null)
+  });
+  return await Promise.all(y.map(S)), {
+    statuses: n,
+    rateLimit: s,
+    unbatched: r
+  }
+}
+var O_ = () => iD(Ue(), "gh-pr-status-cache.json"),
+  M_ = Ve.state("gh-pr-status-cache");
+
+function POi(e, n) {
+  let r = {};
+  for (let [h, y] of e)
+    if (y) r[h] = y;
+  let s = _(r);
+  if (s === "{}" || !fL().notePersistedCacheBody(s)) return Promise.resolve();
+  if (X() && n) return Promise.resolve().then(() => n.write(M_, s, {
+    mode: 438 & ~process.umask()
+  })).then((h) => {
+    if (!h.ok) t(`persistPrStatusCache: ${h.error.code}`)
+  }).catch((h) => {
+    t(`persistPrStatusCache: ${d(h)}`)
+  });
+  return zn(O_(), s).catch(() => {})
+}
+var MD = p(() => Ft({
+  number: Mn(),
+  title: ge(),
+  state: Ec(["OPEN", "MERGED", "CLOSED", "DRAFT"]),
+  checks: Ft({
+    passed: Mn(),
+    failed: Mn(),
+    pending: Mn()
+  }),
+  review: Ec(["APPROVED", "CHANGES_REQUESTED", "REVIEW_REQUIRED"]).nullable(),
+  additions: Mn(),
+  deletions: Mn()
+}));
+
+function T_(e) {
+  let n = new Map,
+    r;
+  try {
+    r = ee(e)
+  } catch {
+    return n
+  }
+  if (r === null || typeof r !== "object" || Array.isArray(r)) return n;
+  let s = 0;
+  for (let [h, y] of Object.entries(r)) {
+    let S = MD().safeParse(y);
+    if (S.success) n.set(h, S.data);
+    else s++
+  }
+  if (s > 0) t(`loadPrStatusCache: dropped ${s} malformed cache entries`);
+  return n
+}
+async function OOi(e) {
+  if (e) {
+    let n;
+    try {
+      n = await e.read([M_])
+    } catch (h) {
+      return t(`loadPrStatusCache: ${d(h)}`), new Map
+    }
+    if (!n.ok) return t(`loadPrStatusCache: ${n.error.code}`), new Map;
+    let r = n.value.items[0];
+    if (!r?.found) return new Map;
+    let s;
+    try {
+      s = Buffer.from(r.value).toString("utf-8")
+    } catch (h) {
+      return t(`loadPrStatusCache: ${d(h)}`), new Map
+    }
+    return T_(s)
+  }
+  try {
+    let n = await sD(O_(), "utf8");
+    return T_(n)
+  } catch {
+    return new Map
+  }
+}
+var DD = /^([a-z0-9-]+)\.googlesource\.com\//,
+  ND = /^Change-Id:\s*(I[0-9a-f]{40})\s*$/gm,
+  I_ = 4000;
+async function D_() {
+  if (St() || !Xh(pe())) return null;
+  let e = Gi(pe()),
+    n = e ? K1t(e) : null,
+    r = n ? DD.exec(n) : null,
+    s = r?.[1],
+    h = r ? n.slice(r[0].length).replace(/^a\//, "") : void 0;
+  if (!s || !h || s.endsWith("-review")) return null;
+  let {
+    stdout: y,
+    code: S
+  } = await ut(Pt(), [...yn, "log", "-1", "--format=%B"], {
+    timeout: I_,
+    maxBuffer: 65536,
+    preserveOutputOnError: !1,
+    useCwd: !0
+  }), w = S === 0 ? [...y.matchAll(ND)].at(-1)?.[1] : void 0;
+  if (!w) return null;
+  let A = `${s}-review.googlesource.com`,
+    O;
+  try {
+    let G = await hd.get(`https://${A}/changes/?q=change:${w}+status:open&n=5`, {
+        timeout: I_,
+        responseType: "text",
+        maxRedirects: 0,
+        withCredentials: !1,
+        transformResponse: (Z) => Z
+      }),
+      N = typeof G.data === "string" ? G.data : "";
+    O = ee(N.startsWith(")]}'") ? N.slice(4) : N)
+  } catch {
+    return null
+  }
+  let M = Array.isArray(O) ? O.find((G) => typeof G?.project === "string" && G.project.toLowerCase() === h) : void 0;
+  if (!M || typeof M._number !== "number") return null;
+  let j = `https://${A}/c/${M.project}/+/${M._number}`;
+  return aFr.test(j) ? {
+    url: j,
+    project: M.project,
+    number: M._number
+  } : null
+}
+
+function Bo(e, n = "") {
+  return new RegExp(`\\bgit(?:\\s+-[cC]\\s+\\S+|\\s+--[^\\s=]+=\\S+)*\\s+${e}\\b${n}`)
+}
+var gl = Bo("commit");
+
+function IOi(e) {
+  return gl.test(e)
+}
+var Wr = Bo("push"),
+  FD = Bo(String.raw`cl\s+upload`),
+  pl = /(?:^|\s)(?:-n|--dry-run)(?=\s|$)/,
+  $D = Bo("cherry-pick"),
+  UD = Bo("merge", "(?!-)"),
+  jD = Bo("rebase"),
+  CMt = p(() => u({
+    commit: u({
+      sha: o(),
+      kind: B(["committed", "amended", "cherry-picked"]),
+      branch: o().optional()
+    }).optional(),
+    push: u({
+      branch: o()
+    }).optional(),
+    branch: u({
+      ref: o(),
+      action: B(["merged", "rebased"])
+    }).optional(),
+    pr: u({
+      number: E(),
+      url: o().optional(),
+      action: B(["created", "edited", "merged", "commented", "closed", "reopened", "ready", "draft", "auto-merge-enabled", "auto-merge-disabled"])
+    }).optional()
+  }));
+
+function lo(e, n = "") {
+  return new RegExp(`\\bgh\\s+pr\\s+${e}\\b${n}`)
+}
+var WD = lo("checkout", String.raw`[^&|;]*\s(\d+)(?=\s|$|[&|;])`),
+  j_ = new RegExp(`^${XJ}/${XJ}$`),
+  mi = [{
+    re: lo("create"),
+    action: "created",
+    op: "pr_create"
+  }, {
+    re: lo("edit"),
+    action: "edited",
+    op: "pr_edit"
+  }, {
+    re: lo("merge"),
+    action: "merged",
+    op: "pr_merge"
+  }, {
+    re: lo("comment"),
+    action: "commented",
+    op: "pr_comment"
+  }, {
+    re: lo("close"),
+    action: "closed",
+    op: "pr_close"
+  }, {
+    re: lo("reopen"),
+    action: "reopened",
+    op: "pr_reopen"
+  }, {
+    re: lo("ready"),
+    action: "ready",
+    op: "pr_ready"
+  }],
+  yl = [{
+    re: /\bglab\s+mr\s+create\b/,
+    action: "created",
+    op: "pr_create"
+  }, {
+    re: /\bglab\s+mr\s+update\b/,
+    action: "edited",
+    op: "pr_edit"
+  }, {
+    re: /\bglab\s+mr\s+merge\b/,
+    action: "merged",
+    op: "pr_merge"
+  }, {
+    re: /\bglab\s+mr\s+note\b/,
+    action: "commented",
+    op: "pr_comment"
+  }, {
+    re: /\bglab\s+mr\s+close\b/,
+    action: "closed",
+    op: "pr_close"
+  }, {
+    re: /\bglab\s+mr\s+reopen\b/,
+    action: "reopened",
+    op: "pr_reopen"
+  }];
+
+function Md(e) {
+  let n = mi.find((h) => h.re.test(e))?.action,
+    r = e.replace(Uo, " ");
+  if (n === "merged") {
+    if (/--disable-auto\b/.test(r)) return "auto-merge-disabled";
+    if (/--auto\b/.test(r)) return "auto-merge-enabled"
+  } else if (n === "ready" && /--undo\b/.test(r)) return "draft";
+  if (n) return n;
+  let s = yl.find((h) => h.re.test(e))?.action;
+  if (s === "edited") {
+    if (/--ready\b/.test(r)) return "ready";
+    if (/--draft\b/.test(r)) return "draft"
+  }
+  return s
+}
+
+function zD(e) {
+  let n = -1;
+  for (let {
+      re: r
+    }
+    of [...mi, ...yl]) {
+    let s = new RegExp(r.source, "g");
+    for (let h = s.exec(e); h; h = s.exec(e)) n = Math.max(n, h.index)
+  }
+  return n < 0 ? void 0 : Md(e.slice(n))
+}
+var GD = lo("review"),
+  Uo = /"(?:[^"\\]|\\.)*"|'[^']*'/g;
+
+function KD(e) {
+  let n = e.replace(Uo, " "),
+    r = new RegExp(GD.source, "g");
+  for (let s = r.exec(n); s !== null; s = r.exec(n)) {
+    let h = n.lastIndexOf(`
+`, s.index) + 1;
+    if (/(^|\s)#/.test(n.slice(h, s.index))) continue;
+    return (n.slice(s.index + s[0].length).split(/[&|;\n]/)[0] ?? "").split(/\s#/)[0] ?? ""
+  }
+  return null
+}
+var VD = /\bgh\s+repo\s+(?:create|new)\b/,
+  qD = new Set(["-d", "--description", "-h", "--homepage", "-t", "--team", "-p", "--template", "-s", "--source", "-r", "--remote", "-g", "--gitignore", "-l", "--license"]),
+  YD = new Map([
+    ["--public", "public"],
+    ["--private", "private"],
+    ["--internal", "internal"]
+  ]);
+
+function XD(e) {
+  if (!VD.test(e)) return [];
+  let n = [];
+  for (let r of Bg(e)) {
+    let s = XE(r);
+    if (s[0] !== "gh" || s[1] !== "repo" || s[2] !== "create" && s[2] !== "new") continue;
+    let h, y;
+    for (let S = 3; S < s.length; S++) {
+      let w = s[S],
+        A = YD.get(w);
+      if (A !== void 0) y = A;
+      else if (w.startsWith("-")) {
+        if (!w.includes("=") && qD.has(w)) S++
+      } else if (h === void 0) h = w
+    }
+    n.push({
+      repo: h,
+      visibility: y
+    })
+  }
+  return n
+}
+var JD = new RegExp(`^https://github\\.com/(${XJ}/${XJ})/?$`, "gm");
+
+function QD(e, n, r) {
+  let s = e === void 0 ? r ? n : [] : n.filter((h) => e.includes("/") ? h.toLowerCase() === e.toLowerCase() : h.slice(h.indexOf("/") + 1).toLowerCase() === e.toLowerCase());
+  return s.length === 1 ? s[0] : void 0
+}
+
+function ZD(e, n) {
+  if (n === void 0) return;
+  let r = XD(e);
+  if (r.length === 0) return;
+  let h = [...L([...n.matchAll(JD)].map((y) => y[1]))];
+  for (let {
+      repo: y,
+      visibility: S
+    }
+    of r) {
+    let w = QD(y, h, r.length === 1);
+    if (w === void 0) continue;
+    h.splice(h.indexOf(w), 1);
+    let A = y !== void 0 && j_.test(y) ? y : void 0;
+    l("tengu_gh_repo_created", {
+      visibility: de(S),
+      repo_hash: kn(A ?? w)
+    })
+  }
+}
+var hyr = /https?:\/\/[^/\s"]+\/([^\s"]+?)\/(?:pull|pull-requests|-\/merge_requests)\/(\d+)/,
+  W_ = new RegExp(String.raw`https://${_Bs}/c/((?:${XJ}/)*${XJ})/\+/(\d{1,9})(?!\d)`),
+  e0 = new RegExp(String.raw`^remote:\s+(${W_.source})`, "m"),
+  n0 = /^remote:[ \t]+View merge request for \S+:[ \t]*\r?\n[ \t]*remote:[ \t]+(https?:\/\/[^/\s"]+\/[^\s"]+?\/-\/merge_requests\/\d{1,9})(?!\d)/m;
+
+function Zut(e) {
+  let n = e.match(hyr) ?? e.match(W_);
+  if (n?.[1] && n?.[2]) return {
+    prNumber: parseInt(n[2], 10),
+    prUrl: n[0],
+    prRepository: n[1],
+    provider: o0(n[0])
+  };
+  return null
+}
+
+function o0(e) {
+  if (e.includes("/-/merge_requests/")) return "gitlab";
+  if (aFr.test(e)) return "gerrit";
+  if (e.includes("/pull-requests/")) return "bitbucket";
+  let n;
+  try {
+    n = new URL(e).hostname
+  } catch {
+    return "github-enterprise"
+  }
+  return fo(n) ? "github" : "github-enterprise"
+}
+var r0 = new RegExp(`^https?://${iFr}(?::\\d{1,5})?/(?:${XJ}/${XJ}/(?:pull|pull-requests|cr)|projects/${XJ}/repos/${XJ}/pull-requests|${yBs}` + String.raw`)/\d+$`);
+
+function AJt(e) {
+  return e.length <= Ztt && (r0.test(e) || aFr.test(e))
+}
+var s0 = /^(?!HEAD$)(?!-)(?!.*@\{)[A-Za-z0-9._\/+@#-]{1,255}$/;
+
+function xJt(e) {
+  return s0.test(e) && !e.includes("..") && !e.endsWith(".") && e.split("/").every((n) => n !== "" && !n.startsWith(".") && !n.endsWith(".lock"))
+}
+
+function ml(e) {
+  if (!AJt(e.prUrl)) return !1;
+  return Ti({
+    type: "system",
+    subtype: "code_change_published",
+    provider: e.provider,
+    url: e.prUrl,
+    repo: e.prRepository,
+    identifier: e.identifier,
+    action: e.action,
+    ...(e.provider === "gerrit" || e.action === "created") && e.branch && xJt(e.branch) && {
+      branch: e.branch
+    }
+  }), !0
+}
+
+function gyr(e, n, r) {
+  let s = [];
+  if (e.commit) s.push({
+    kind: "commit",
+    branch: e.commit.branch
+  });
+  let h = r.command.replace(Uo, " ");
+  if (!e.push && r.exitCode === 0 && Wr.test(h) && !pl.test(hl(h))) s.push({
+    kind: "push"
+  });
+  if (e.push) {
+    let S = c0(n),
+      w = S.filter(Dd);
+    if (w.length < Math.max(S.length, 1)) s.push({
+      kind: "push"
+    });
+    for (let A of w) s.push({
+      kind: "push",
+      branch: A
+    })
+  }
+  if (e.branch) {
+    let S = {
+      merged: "merge",
+      rebased: "rebase"
+    };
+    s.push({
+      kind: S[e.branch.action]
+    })
+  }
+  for (let S of s) Ti({
+    type: "system",
+    subtype: "vcs_state_changed",
+    kind: S.kind,
+    ..."branch" in S && S.branch !== void 0 && {
+      branch: S.branch
+    },
+    cwd: r.cwd
+  })
+}
+
+function Id(e) {
+  let n = e.match(new RegExp(hyr.source, "g"));
+  return n ? Zut(n.at(-1)) : null
+}
+var i0 = 10;
+
+function z_(e, n = i0) {
+  let r = new Map;
+  for (let s of e) {
+    let h = Zut(s);
+    if (h) r.delete(h.prUrl), r.set(h.prUrl, h)
+  }
+  return [...r.values()].slice(-n)
+}
+
+function N_(e, n) {
+  return z_(e.match(new RegExp(hyr.source, "g")) ?? [], n)
+}
+
+function G_(e, n) {
+  let r = 0;
+  for (let s of e) {
+    let h = ml({
+      ...s,
+      identifier: String(s.prNumber),
+      action: n
+    });
+    r += h ? 1 : 0
+  }
+  return r
+}
+var a0 = 8192;
+async function yyr(e, n) {
+  if (!n) return e;
+  try {
+    let {
+      content: r
+    } = await cCe(n, a0);
+    return r ? `${e}
+${r}` : e
+  } catch (r) {
+    if (K(r));
+    else if (yqn(r) || H_(r)) t(`withSpilledOutputTail ${k(r)}: scanning head only`, {
+      level: "error"
+    });
+    else a(r);
+    return e
+  }
+}
+
+function K_(e) {
+  return e.replace(/\x1b\[[0-9;]*K/g, "").replace(/\x1b\[[0-9]*G/g, `
+`).replace(/\r/g, `
+`)
+}
+var l0 = /^\[(?:([\w./-]+)|detached HEAD)(?: \(root-commit\))? ([0-9a-f]{4,})\]/m;
+
+function V_(e) {
+  let n = K_(e).match(l0);
+  if (n?.[2] === void 0) return;
+  return {
+    sha: n[2],
+    ...n[1] !== void 0 && {
+      branch: n[1]
+    }
+  }
+}
+async function MOi(e, n, r) {
+  let s = V_(e);
+  if (!s) return r === void 0 ? void 0 : XBs(r);
+  let h = n === null ? null : await _dn(n);
+  return {
+    commitId: h?.startsWith(s.sha) ? h : s.sha,
+    ...s.branch !== void 0 && {
+      branch: s.branch
+    }
+  }
+}
+var q_ = /^\s*[+\-*!= ]?\s*(?:\[new branch\]|[0-9a-f]+\.\.+[0-9a-f]+)\s+\S+\s*->\s*(\S+)/m;
+
+function c0(e) {
+  let n = K_(e).split(`
+`).filter((s) => s !== ""),
+    r = new Set;
+  for (let s = 0; s < n.length; s++) {
+    if (!n[s].startsWith("To ")) continue;
+    for (let h = s + 1; h < n.length && /^\s/.test(n[h]); h++) {
+      let y = n[h].match(q_)?.[1];
+      if (y) r.add(y)
+    }
+  }
+  return [...r]
+}
+
+function u0(e) {
+  let n = (e.replace(Uo, " ").split(/\bgh\s+api\b/)[1] ?? "").split(/[&|;\n]/)[0];
+  if (!n || !/(?:^|\s)\/?repos\/[^\s/]+\/[^\s/]+\/pulls(?=\s|$)/.test(n)) return !1;
+  let r = n.match(/(?:^|\s)(?:-X|--method)(?:\s+|=)([A-Za-z]+)/)?.[1];
+  return r ? r.toUpperCase() === "POST" : /(?:^|\s)(?:-f|-F|--field|--raw-field)(?:\s|=)/.test(n)
+}
+
+function hl(e) {
+  return (e.split(Wr)[1] ?? "").split(/[&|;\n]/)[0] ?? ""
+}
+
+function Y_(e) {
+  let n = e.match(/[Pp]ull request (?:(\S+)#)?#?(\d{1,9})\b/);
+  return n?.[2] ? {
+    prNumber: parseInt(n[2], 10),
+    prRepository: n[1]
+  } : void 0
+}
+
+function F_(e, n) {
+  let r = e.split(Bo(n))[1];
+  if (!r) return;
+  for (let s of r.trim().split(/\s+/)) {
+    if (/^(?:[\d*]*[<>]|[&|;])/.test(s)) break;
+    if (s.startsWith("-")) continue;
+    return s
+  }
+  return
+}
+
+function PJt(e, n) {
+  let r = {},
+    s = $D.test(e);
+  if (gl.test(e) || s) {
+    let y = V_(n);
+    if (y) r.commit = {
+      sha: y.sha,
+      kind: s ? "cherry-picked" : /--amend\b/.test(e) ? "amended" : "committed",
+      ...y.branch !== void 0 && {
+        branch: y.branch
+      }
+    }
+  }
+  if (Wr.test(e)) {
+    let y = hl(e);
+    if (!pl.test(y)) {
+      let S = n.match(q_)?.[1];
+      if (S) r.push = {
+        branch: S
+      }
+    }
+  }
+  if (UD.test(e) && /(Fast-forward|Merge made by)/.test(n)) {
+    let y = F_(e, "merge");
+    if (y) r.branch = {
+      ref: y,
+      action: "merged"
+    }
+  }
+  if (jD.test(e) && /Successfully rebased/.test(n)) {
+    let y = F_(e, "rebase");
+    if (y) r.branch = {
+      ref: y,
+      action: "rebased"
+    }
+  }
+  let h = Md(e);
+  if (h) {
+    let y = Id(n);
+    if (y) r.pr = {
+      number: y.prNumber,
+      url: y.prUrl,
+      action: h
+    };
+    else if (mi.some((S) => S.re.test(e))) {
+      let S = Y_(n);
+      if (S) r.pr = {
+        number: S.prNumber,
+        action: h
+      }
+    }
+  }
+  return r
+}
+var d0 = 8,
+  f0 = 5,
+  p0 = /\b(?:git|gh|glab|curl)\b/;
+var X_ = (e, n) => `${e}\x00${n}`,
+  Dd = (e) => e !== "HEAD" && !e.startsWith("-") && !/^#?\d+$/.test(e);
+
+function m0(e, n, r) {
+  if (St()) return;
+  let s = X_(n, r);
+  if (e.delete(s), e.size >= d0) e.delete(e.keys().next().value);
+  e.set(s, {
+    cwd: n,
+    branch: r,
+    attempts: 0
+  })
+}
+
+function h0(e, n) {
+  for (let [r, s] of e)
+    if (s.cwd === n) e.delete(r)
+}
+async function $_(e, n, r, s) {
+  let h = await s,
+    y = await r;
+  if (y === void 0 || !Dd(y)) return;
+  if (h) e.delete(X_(n, y));
+  else m0(e, n, y)
+}
+
+function U_(e) {
+  let n = e.match(/\b(?:gh|glab)\s+\S+(?:\s+\S+)?/g) ?? [],
+    r = /^gh\s+pr\s+create$|^glab\s+mr\s+create$/,
+    s = /^(?:gh|glab)\s+(?:auth|config)\b|^(?:gh|glab)\s+api\s+\/?user$/;
+  return !e.includes("--dry-run") && n.some((h) => r.test(h)) && n.every((h) => r.test(h) || s.test(h))
+}
+
+function Od(e, n = "created", r = !1, s = Promise.resolve(void 0)) {
+  let h = e ? Id(e) : null;
+  if (!e || !h) return null;
+  let y = (AJt(h.prUrl) ? 1 : 0) + (r ? G_(N_(e).slice(0, -1), "created") : 0);
+  return l("tengu_git_created_prs", {
+    printedPrs: N_(e, 1 / 0).length,
+    announcedPrs: y
+  }), Xn(s.then((S) => pi(h, n, S))), h0(x$r(), pe()), h
+}
+var y0 = 2000;
+
+function B_(e, n) {
+  let r = e.replace(Uo, (w) => " ".repeat(w.length)),
+    s = n === "gh" ? /\bgh\s+pr\s+create\b/g : /\bglab\s+mr\s+create\b/g,
+    h = [...r.matchAll(s)].at(-1)?.index;
+  if (h === void 0) return Promise.resolve(void 0);
+  let S = (r.slice(h).split(/[&|;\n]/)[0] ?? "").match(n === "gh" ? /(?:^|\s)(?:--head|-H)(?==|\s)/ : /(?:^|\s)(?:--source-branch|-s)(?==|\s)/);
+  if (S?.index !== void 0) {
+    let w = e.slice(h + S.index + S[0].length).match(/^(?:=|\s+)(?:"([^"\\$`]*)"|'([^']*)'|([^\s"'`$;&|]+))/),
+      A = w?.[1] ?? w?.[2] ?? w?.[3],
+      O = n === "gh" ? A?.replace(/^[^:]*:/, "") : A;
+    if (O && xJt(O)) return Promise.resolve(O)
+  }
+  return we(Qu(pe()).catch(() => {
+    return
+  }), y0)
+}
+
+function _0(e) {
+  if (!e || !v("tengu_record_created_pr_to_ccr", !1) || !AJt(e.prUrl)) return;
+  let n = pe();
+  Xn(import("B:/~BUN/root/chunk-zzj9em4x.js").then((r) => r.recordCreatedPrToCcr(e, n)))
+}
+
+function b0(e) {
+  let n = x$r();
+  if (n.size === 0 || !p0.test(e)) return;
+  let r = pe();
+  for (let [s, h] of n) {
+    if (h.cwd !== r) continue;
+    if (h.attempts >= f0) {
+      n.delete(s);
+      continue
+    }
+    h.attempts++, Xn(fi("pushed", h.branch).then((y) => {
+      if (y) n.delete(s)
+    }))
+  }
+}
+var w0 = 1e4;
+
+function J_(e, n) {
+  return /\bcurl\b/.test(e) && (/-X\s*POST\b/i.test(e) || /--request\s*=?\s*POST\b/i.test(e) || /\s-d\s/.test(e)) && /https?:\/\/[^\s'"]*\/(?:pulls|pull-requests|merge[-_]requests)(?!\/\d)/i.test(e) || !n && u0(e)
+}
+
+function DOi(e) {
+  if (e.length > w0) return;
+  if (gl.test(e)) pps()?.add(1);
+  let n = [mi.find((s) => s.re.test(e)), yl.find((s) => s.re.test(e))],
+    r = U(n, (s) => s?.action === "created") + (J_(e, n.some(Boolean)) ? 1 : 0);
+  if (r > 0) Mft()?.add(r)
+}
+
+function _yr(e, n, r, s) {
+  if (r !== 0) return {
+    prResolved: !1
+  };
+  let y = !1;
+  try {
+    ZD(n, s)
+  } catch (ne) {
+    a(ne)
+  }
+  if (gl.test(n)) {
+    if (l("tengu_git_operation", {
+        operation: b("commit")
+      }), n.match(/--amend\b/)) l("tengu_git_operation", {
+      operation: b("commit_amend")
+    });
+    pps()?.add(1)
+  }
+  let S = n.replace(Uo, "''"),
+    w = Wr.test(S) || FD.test(S);
+  if (Wr.test(n) || w) l("tengu_git_operation", {
+    operation: b("push")
+  }), fL().bump.emit();
+  let A = mi.find((ne) => ne.re.test(n)),
+    O = yl.find((ne) => ne.re.test(n)),
+    M = A ?? O,
+    j = Md(n),
+    G = zD(n);
+  if (M) l("tengu_git_operation", {
+    operation: f(M.op)
+  }), fL().bump.emit();
+  let N = KD(n);
+  if (N !== null) {
+    if (l("tengu_git_operation", {
+        operation: b("pr_review")
+      }), /--approve\b/.test(N) || /(?:^|\s)-a(?=\s|$)/.test(N)) l("tengu_git_operation", {
+      operation: b("pr_review_approve")
+    });
+    else if (/--request-changes\b/.test(N) || /(?:^|\s)-r(?=\s|$)/.test(N)) l("tengu_git_operation", {
+      operation: b("pr_review_request_changes")
+    });
+    fL().bump.emit()
+  }
+  if (j === "merged" || j === "closed") y = !0;
+  if (A?.action === "created") {
+    if (Mft()?.add(1), O?.action === "created") Mft()?.add(1);
+    let ne = n.replace(Uo, " "),
+      se = /(?:^|\s)--dry-run(?=\s|$)/.test(ne),
+      ae = Od(s, G, U_(n), B_(n, "gh"));
+    if (!se) _0(ae)
+  } else if (O?.action === "created") Mft()?.add(1), Od(s, G, U_(n), B_(n, "glab"));
+  else if (G && s) {
+    let ne = Id(s);
+    if (ne) Xn(pi(ne, G).then((se) => se === "linked" ? g("pr_contribute_link") : m("pr_contribute_link", se)));
+    else if (!O || A) {
+      let se = s.match(/^\u2713.*$/m)?.[0],
+        ae = se ? Y_(se) : void 0;
+      if (ae) Xn(fi(G, String(ae.prNumber), ae.prRepository).then((re) => re ? g("pr_contribute_link") : m("pr_contribute_link", "gh_view_failed")))
+    }
+  }
+  let Z = n.match(WD),
+    te = w && !M && s && !pl.test(hl(n)) ? z_([e0, n0].flatMap((ne) => [...s.matchAll(new RegExp(ne, "gm"))]).sort((ne, se) => ne.index - se.index).map((ne) => ne[1] ?? "")) : [],
+    Y = te.at(-1);
+  if (Z?.[1]) Xn(fi("checked-out", Z[1]));
+  else if (Y) G_(te.slice(0, -1), "pushed"), Xn(Y.provider === "gerrit" ? Qu(pe()).then((ne) => pi(Y, "pushed", ne)) : pi(Y, "pushed"));
+  else if (Wr.test(n) && !M) {
+    let ne = hl(n),
+      se = ne.match(/\S+/g)?.filter((ve) => !ve.startsWith("-"))[1],
+      ae = se ? se.indexOf(":") : -1,
+      re = se && ae > 0 && ae < se.length - 1 ? se.slice(ae + 1).replace(/^refs\/heads\//, "") : void 0,
+      _e = pe(),
+      Se = x$r(),
+      ce = pl.test(ne),
+      xe = ce || St() ? void 0 : Qu(_e);
+    if (re && Dd(re) && !ce) Xn($_(Se, _e, re, fi("pushed", re)));
+    Xn($_(Se, _e, xe, ce ? Promise.resolve(!1) : fi("pushed")))
+  }
+  if (J_(n, M !== void 0)) l("tengu_git_operation", {
+    operation: b("pr_create")
+  }), Mft()?.add(1), fL().bump.emit(), Od(s);
+  return b0(n), {
+    prResolved: y
+  }
+}
+
+function Xn(e) {
+  let n = mIo(),
+    r = e.catch(() => {
+      return
+    });
+  n.add(r), r.finally(() => n.delete(r))
+}
+var k0 = 2000;
+async function RMt() {
+  let e = mIo();
+  if (e.size === 0) return;
+  await we(Promise.allSettled([...e]), k0)
+}
+
+function ius(e) {
+  if (St() || !Xh(pe())) return Promise.resolve();
+  let n = x0(e);
+  return Xn(n), n
+}
+async function x0(e) {
+  let [n, r] = await Promise.all([Zao(e), Qu(pe())]);
+  if (n === "fetch-failed") {
+    m("pr_started_announce", "lookup_failed");
+    return
+  }
+  if (n === null || typeof n === "string") {
+    let h = await D_();
+    if (h) g("pr_started_announce"), ml({
+      provider: "gerrit",
+      prUrl: h.url,
+      prRepository: h.project,
+      identifier: String(h.number),
+      action: "started",
+      branch: r
+    });
+    return
+  }
+  g("pr_started_announce");
+  let s = Zut(n.url);
+  if (!s) return;
+  ml({
+    ...s,
+    identifier: String(n.number),
+    action: "started",
+    branch: r
+  })
+}
+async function pi(e, n, r) {
+  if (!AJt(e.prUrl)) return "url_rejected";
+  let [{
+    linkSessionToPR: s
+  }, {
+    getSessionId: h
+  }] = await Promise.all([import("B:/~BUN/root/chunk-22k7hq31.js"), import("B:/~BUN/root/chunk-vtqz71wt.js")]), y = h();
+  if (!y) return "no_session";
+  return ml({
+    ...e,
+    identifier: String(e.prNumber),
+    action: n,
+    branch: r
+  }), await s(y, e.prNumber, e.prUrl, e.prRepository), "linked"
+}
+var R0 = /(?:^|[;&|]|\b(?:then|do)\b)\s*gh\s+(?!auth\b|help\b|version\b|alias\b|completion\b|config\b)/,
+  v0 = /API rate limit (?:already )?exceeded|exceeded a secondary rate limit|\bRATE_LIMITED\b/i,
+  E0 = 60000;
+class aus {
+  backoffUntil = 0
+}
+
+function LOi(e, n, r) {
+  if (!R0.test(e) || !v0.test(n) || Date.now() < r.backoffUntil) return;
+  return r.backoffUntil = Date.now() + E0, "<system-reminder>GitHub API rate limit exceeded (5,000/hr shared across all tools and agents). Run `gh api rate_limit --jq .resources` and sleep until reset before further gh calls. If polling in a loop, use ScheduleWakeup instead of retrying.</system-reminder>"
+}
+var C0 = 5000;
+async function fi(e, n, r) {
+  if (St()) return !1;
+  if (r !== void 0 && !j_.test(r)) return !1;
+  let s = n && !n.startsWith("-") && !/^[a-z][a-z0-9+.-]*:\/\//i.test(n) ? n : void 0,
+    h = ["pr", "view", ...s ? [s] : [], ...r ? ["--repo", r] : [], "--json", "url"],
+    {
+      code: y,
+      stdout: S
+    } = await ut("gh", h, {
+      timeout: C0,
+      preserveOutputOnError: !1,
+      useCwd: !0
+    });
+  if (y !== 0) return !1;
+  let w = ee(S)?.url;
+  if (!w) return !1;
+  let A = Zut(w);
+  if (!A) return !1;
+  return await pi(A, e), !0
+}
+
+function n1(e, n, r, s) {
+  return Q_(e, n, r) ?? Z_(m7(n), r, s)
+}
+async function oPi(e, n, r) {
+  return Q_(e, n, r) ?? Z_(await dWs(n), r)
+}
+
+function Q_(e, n, r) {
+  let s = e.trim(),
+    h = s === n ? [n] : [s, n];
+  for (let y of h) {
+    let S = Nd(y, r);
+    if (S !== void 0) return S
+  }
+  return
+}
+
+function Z_({
+  paths: e,
+  vetted: n,
+  linkTextClimbs: r
+}, s, h) {
+  if (!n) return {
+    ok: !1,
+    reason: "unvettable_chain"
+  };
+  for (let y of e) {
+    let S = Nd(y, s);
+    if (S !== void 0) return S
+  }
+  if (r && !h?.allowLinkTextClimbs) return {
+    ok: !1,
+    reason: "link_text_climbs"
+  };
+  return {
+    ok: !0,
+    pathsToCheck: e
+  }
+}
+
+function cL(e, n) {
+  return Nd(e, n)?.reason
+}
+
+function Nd(e, n) {
+  if (yS(e)) return {
+    ok: !1,
+    reason: "nt_namespace"
+  };
+  if (L_e(e, n)) return {
+    ok: !1,
+    reason: "untrusted_unc"
+  };
+  if (RCe(e, n)) return {
+    ok: !1,
+    reason: "untrusted_automount"
+  };
+  let r = ctn(e, n);
+  if (r !== void 0) return {
+    ok: !1,
+    reason: "suspicious_windows_spelling",
+    spelling: r
+  };
+  return
+}
+
+function A0(e, n, r) {
+  var s = e.length;
+  return r = r === void 0 ? s : r, !n && r >= s ? e : OKe(e, n, r)
+}
+var eb = A0;
+var P0 = "\\ud800-\\udfff",
+  O0 = "\\u0300-\\u036f",
+  M0 = "\\ufe20-\\ufe2f",
+  I0 = "\\u20d0-\\u20ff",
+  D0 = O0 + M0 + I0,
+  N0 = "\\ufe0e\\ufe0f",
+  L0 = "\\u200d",
+  H0 = RegExp("[" + L0 + P0 + D0 + N0 + "]");
+
+function F0(e) {
+  return H0.test(e)
+}
+var Sl = F0;
+
+function $0(e) {
+  return e.split("")
+}
+var tb = $0;
+var nb = "\\ud800-\\udfff",
+  U0 = "\\u0300-\\u036f",
+  B0 = "\\ufe20-\\ufe2f",
+  j0 = "\\u20d0-\\u20ff",
+  W0 = U0 + B0 + j0,
+  z0 = "\\ufe0e\\ufe0f",
+  G0 = "[" + nb + "]",
+  Ld = "[" + W0 + "]",
+  Hd = "\\ud83c[\\udffb-\\udfff]",
+  K0 = "(?:" + Ld + "|" + Hd + ")",
+  ob = "[^" + nb + "]",
+  rb = "(?:\\ud83c[\\udde6-\\uddff]){2}",
+  sb = "[\\ud800-\\udbff][\\udc00-\\udfff]",
+  V0 = "\\u200d",
+  ib = K0 + "?",
+  ab = "[" + z0 + "]?",
+  q0 = "(?:" + V0 + "(?:" + [ob, rb, sb].join("|") + ")" + ab + ib + ")*",
+  Y0 = ab + ib + q0,
+  X0 = "(?:" + [ob + Ld + "?", Ld, rb, sb, G0].join("|") + ")",
+  J0 = RegExp(Hd + "(?=" + Hd + ")|" + X0 + Y0, "g");
+
+function Q0(e) {
+  return e.match(J0) || []
+}
+var lb = Q0;
+
+function Z0(e) {
+  return Sl(e) ? lb(e) : tb(e)
+}
+var cb = Z0;
+
+function tN(e) {
+  return function(n) {
+    n = mme(n);
+    var r = Sl(n) ? cb(n) : void 0,
+      s = r ? r[0] : n.charAt(0),
+      h = r ? eb(r, 1).join("") : n.slice(1);
+    return s[e]() + h
+  }
+}
+var ub = tN;
+var nN = ub("toUpperCase"),
+  fao = nN;
+
+function oN(e) {
+  return fao(mme(e).toLowerCase())
+}
+var EOn = oN;
+import {
+  basename as rN
+} from "path";
+var cJt = {
+    cursor: {
+      ideKind: "vscode",
+      displayName: "Cursor",
+      processKeywordsMac: ["Cursor Helper", "Cursor.app"],
+      processKeywordsWindows: ["cursor.exe"],
+      processKeywordsLinux: ["cursor"]
+    },
+    windsurf: {
+      ideKind: "vscode",
+      displayName: "Devin Desktop",
+      processKeywordsMac: ["Windsurf Helper", "Windsurf.app", "Devin Helper", "Devin.app"],
+      processKeywordsWindows: ["windsurf.exe", "Devin.exe"],
+      processKeywordsLinux: ["windsurf", "devin-desktop"]
+    },
+    vscode: {
+      ideKind: "vscode",
+      displayName: "VS Code",
+      processKeywordsMac: ["Visual Studio Code", "Code Helper"],
+      processKeywordsWindows: ["code.exe"],
+      processKeywordsLinux: ["code"]
+    },
+    intellij: {
+      ideKind: "jetbrains",
+      displayName: "IntelliJ IDEA",
+      processKeywordsMac: ["IntelliJ IDEA"],
+      processKeywordsWindows: ["idea64.exe"],
+      processKeywordsLinux: ["idea", "intellij"]
+    },
+    pycharm: {
+      ideKind: "jetbrains",
+      displayName: "PyCharm",
+      processKeywordsMac: ["PyCharm"],
+      processKeywordsWindows: ["pycharm64.exe"],
+      processKeywordsLinux: ["pycharm"]
+    },
+    webstorm: {
+      ideKind: "jetbrains",
+      displayName: "WebStorm",
+      processKeywordsMac: ["WebStorm"],
+      processKeywordsWindows: ["webstorm64.exe"],
+      processKeywordsLinux: ["webstorm"]
+    },
+    phpstorm: {
+      ideKind: "jetbrains",
+      displayName: "PhpStorm",
+      processKeywordsMac: ["PhpStorm"],
+      processKeywordsWindows: ["phpstorm64.exe"],
+      processKeywordsLinux: ["phpstorm"]
+    },
+    rubymine: {
+      ideKind: "jetbrains",
+      displayName: "RubyMine",
+      processKeywordsMac: ["RubyMine"],
+      processKeywordsWindows: ["rubymine64.exe"],
+      processKeywordsLinux: ["rubymine"]
+    },
+    clion: {
+      ideKind: "jetbrains",
+      displayName: "CLion",
+      processKeywordsMac: ["CLion"],
+      processKeywordsWindows: ["clion64.exe"],
+      processKeywordsLinux: ["clion"]
+    },
+    goland: {
+      ideKind: "jetbrains",
+      displayName: "GoLand",
+      processKeywordsMac: ["GoLand"],
+      processKeywordsWindows: ["goland64.exe"],
+      processKeywordsLinux: ["goland"]
+    },
+    rider: {
+      ideKind: "jetbrains",
+      displayName: "Rider",
+      processKeywordsMac: ["Rider"],
+      processKeywordsWindows: ["rider64.exe"],
+      processKeywordsLinux: ["rider"]
+    },
+    datagrip: {
+      ideKind: "jetbrains",
+      displayName: "DataGrip",
+      processKeywordsMac: ["DataGrip"],
+      processKeywordsWindows: ["datagrip64.exe"],
+      processKeywordsLinux: ["datagrip"]
+    },
+    appcode: {
+      ideKind: "jetbrains",
+      displayName: "AppCode",
+      processKeywordsMac: ["AppCode"],
+      processKeywordsWindows: ["appcode.exe"],
+      processKeywordsLinux: ["appcode"]
+    },
+    dataspell: {
+      ideKind: "jetbrains",
+      displayName: "DataSpell",
+      processKeywordsMac: ["DataSpell"],
+      processKeywordsWindows: ["dataspell64.exe"],
+      processKeywordsLinux: ["dataspell"]
+    },
+    aqua: {
+      ideKind: "jetbrains",
+      displayName: "Aqua",
+      processKeywordsMac: [],
+      processKeywordsWindows: ["aqua64.exe"],
+      processKeywordsLinux: []
+    },
+    gateway: {
+      ideKind: "jetbrains",
+      displayName: "Gateway",
+      processKeywordsMac: [],
+      processKeywordsWindows: ["gateway64.exe"],
+      processKeywordsLinux: []
+    },
+    fleet: {
+      ideKind: "jetbrains",
+      displayName: "Fleet",
+      processKeywordsMac: [],
+      processKeywordsWindows: ["fleet.exe"],
+      processKeywordsLinux: []
+    },
+    androidstudio: {
+      ideKind: "jetbrains",
+      displayName: "Android Studio",
+      processKeywordsMac: ["Android Studio"],
+      processKeywordsWindows: ["studio64.exe"],
+      processKeywordsLinux: ["android-studio"]
+    }
+  },
+  db = {
+    code: "VS Code",
+    cursor: "Cursor",
+    windsurf: "Devin Desktop",
+    antigravity: "Antigravity",
+    vi: "Vim",
+    vim: "Vim",
+    nano: "nano",
+    notepad: "Notepad",
+    "start /wait notepad": "Notepad",
+    emacs: "Emacs",
+    subl: "Sublime Text",
+    atom: "Atom"
+  };
+
+function kv(e) {
+  if (!e) return "IDE";
+  let n = cJt[e];
+  if (n) return n.displayName;
+  let r = db[e.toLowerCase().trim()];
+  if (r) return r;
+  let s = tt(e, " "),
+    h = s ? rN(s).toLowerCase() : null;
+  if (h) {
+    let y = db[h];
+    if (y) return y;
+    return EOn(h)
+  }
+  return EOn(e)
+}
+var mus = p(() => u({
+  state: o()
+}));
+
+function Eyr(e) {
+  let n = [],
+    r = e.length - 1;
+  for (; r >= 0; r--) {
+    let h = e[r];
+    if (h === void 0 || h.type === "assistant") break;
+    if (h.type === "user" && Array.isArray(h.message.content)) {
+      for (let y of h.message.content)
+        if (y.type === "tool_result" && y.is_error !== !0) n.push(y)
+    }
+  }
+  if (n.length === 0) return;
+  let s = new Map;
+  for (; r >= 0; r--) {
+    let h = e[r];
+    if (h === void 0 || h.type === "user") break;
+    if (h.type === "assistant") {
+      for (let y of h.message.content)
+        if (y.type === "tool_use") s.set(y.id, y.name)
+    }
+  }
+  for (let h of n) {
+    let y = s.get(h.tool_use_id);
+    if (y === void 0 || !yq(y)) continue;
+    let S = typeof h.content === "string" ? h.content : h.content?.[0],
+      w = typeof S === "string" ? S : S?.type === "text" ? S.text : void 0,
+      A = mus().safeParse(et(w, !1));
+    if (A.success && A.data.state === "attached") return h.tool_use_id
+  }
+  return
+}
+
+function MJt(e) {
+  let n = e.findLast((r) => r.type === "attachment" && r.attachment.type === "tool_hosts_notice");
+  return n?.type === "attachment" && n.attachment.type === "tool_hosts_notice" ? {
+    lines: js(n.attachment.lines),
+    away: js(n.attachment.away)
+  } : void 0
+}
+var sN = 32;
+class Ayr {
+  #e = new Map;
+  #t;
+  attached(e) {
+    this.#t = e
+  }
+  refused(e, n) {
+    this.#t = void 0, this.#e.delete(e), this.#e.set(e, n);
+    for (let r of this.#e.keys()) {
+      if (this.#e.size <= sN) break;
+      this.#e.delete(r)
+    }
+  }
+  withdrew(e) {
+    this.#t = void 0, this.#e.delete(e)
+  }
+  clear() {
+    this.#t = void 0, this.#e.clear()
+  }
+  reason() {
+    return [...this.#e.values()].at(-1) ?? this.#t
+  }
+}
+var iN = new Set(["get_device_info", "list_devices"]);
+
+function aN(e) {
+  return e.some((n) => n.mcpInfo?.serverName === zo && !iN.has(n.mcpInfo.toolName))
+}
+
+function lN(e) {
+  return _g(e).some((n) => n.name === zo && n.type === "pending")
+}
+var cN = ["disabled_switch_off", "disabled_flag_off", "disabled_device_policy", "not_ready"];
+
+function ZOi(e, n) {
+  try {
+    return e.get(Ayr).reason() !== void 0 || Eyr(n) !== void 0
+  } catch (r) {
+    return a(F(r)), !1
+  }
+}
+
+function fb(e) {
+  let n = la[`forwarding_off.reason.${e}`];
+  return [e === "not_ready" ? la.forwarding_off_for_now(n) : la.forwarding_off(n)]
+}
+
+function uN() {
+  return [la["forwarding_off.retracted"]]
+}
+
+function dN(e) {
+  return cN.some((n) => pb(e, fb(n)))
+}
+
+function pb(e, n) {
+  return e.length === n.length && e.every((r, s) => r === n[s])
+}
+
+function xyr(e, n, r, s) {
+  let h = e.toolState.get(Ayr),
+    y = h.reason() === void 0 && Eyr(n) !== void 0 ? s() : void 0;
+  if (y !== void 0) h.attached(y);
+  let S = h.reason() === "not_ready" ? s() : h.reason();
+  if (S === void 0 || e.agentId !== void 0 || lN(e) || !r()) return [];
+  let w = MJt(n)?.lines ?? [];
+  if (aN(e.options.tools)) return dN(w) ? [{
+    type: "tool_hosts_notice",
+    lines: uN()
+  }] : [];
+  let A = fb(S);
+  return pb(w, A) ? [] : [{
+    type: "tool_hosts_notice",
+    lines: A
+  }]
+}
+var hus = 600000,
+  fN = {
+    cleared: 1,
+    timed_out: 2,
+    aborted: 3
+  };
+
+function Tyr() {
+  let e = Bnt();
+  return _l(e, e.gaveUpOn) || bl(e, e.gaveUpOnBeside)
+}
+
+function _l(e, n) {
+  return e.messagesArriving > e.besideLine && e.lastInLine !== n
+}
+
+function bl(e, n) {
+  return e.besideLine > 0 && e.lastBesideLine !== n
+}
+
+function YOi(e) {
+  let n = Bnt();
+  return _l(n, n.gaveUpOn) && n.pathsArriving.has(e) || bl(n, n.gaveUpOnBeside) && n.pathsArrivingBeside.has(e)
+}
+
+function gus(e, n = [], r) {
+  let s = Bnt();
+  s.messagesArriving++, mb(s.pathsArriving, n), s.messagesInLine.push(r);
+  let h = s.lastInLine.then(e);
+  return s.lastInLine = h.then(() => {}, () => {}).then(() => {
+    s.messagesArriving--, hb(s.pathsArriving, n), s.messagesInLine.shift()
+  }), h
+}
+
+function XOi(e) {
+  let {
+    messagesInLine: n
+  } = Bnt();
+  return n.length > 0 && n.every((r) => r !== void 0 && e.has(r))
+}
+
+function yus(e) {
+  let n = Bnt();
+  n.messagesArriving++, n.besideLine++;
+  let r = [],
+    s = !1,
+    h = n.lastBesideLine.then(() => e((y) => {
+      if (!s) r.push(...y), mb(n.pathsArrivingBeside, y)
+    }));
+  return n.lastBesideLine = h.then(() => {}, () => {}).then(() => {
+    n.messagesArriving--, n.besideLine--, s = !0, hb(n.pathsArrivingBeside, r)
+  }), h
+}
+
+function mb(e, n) {
+  for (let r of n) e.set(r, (e.get(r) ?? 0) + 1)
+}
+
+function hb(e, n) {
+  for (let r of n) {
+    let s = e.get(r) ?? 0;
+    if (s > 1) e.set(r, s - 1);
+    else e.delete(r)
+  }
+}
+
+function JOi() {
+  return Bnt().besideLine > 0
+}
+
+function QOi() {
+  let e = Bnt();
+  return e.messagesArriving > e.besideLine ? e.lastInLine : void 0
+}
+async function IMt(e, {
+  timeoutMs: n = hus,
+  atTurnEnd: r = !1,
+  activityAgentId: s
+} = {}) {
+  try {
+    let h = Bnt();
+    if (!_l(h, h.gaveUpOn) && (r || !bl(h, h.gaveUpOnBeside))) return "cleared";
+    if (e.aborted) return "aborted";
+    let y = performance.now(),
+      S = h.messagesArriving,
+      {
+        gaveUpOn: w,
+        gaveUpOnBeside: A
+      } = h,
+      O = r || h.toolCallsWaiting === 0,
+      M = new AbortController,
+      j = J(n, AbortSignal.any([e, M.signal])).then(() => "expired"),
+      G = "cleared",
+      N = !1,
+      Z = !1,
+      te = !1;
+    if (!r) h.toolCallsWaiting++;
+    try {
+      sC("files_arriving", s), N = !0;
+      for (;;) {
+        if (Z = _l(h, w), te = !r && bl(h, A), !Z && !te) break;
+        let ne = (Z ? h.lastInLine : h.lastBesideLine).then(() => "cleared");
+        if (await Promise.race([ne, j]) === "expired") {
+          G = e.aborted ? "aborted" : "timed_out";
+          break
+        }
+      }
+    } finally {
+      if (!r) h.toolCallsWaiting--;
+      if (M.abort(), N) iC("files_arriving", s)
+    }
+    if (G === "timed_out" && Z) h.gaveUpOn = h.lastInLine;
+    if (G === "timed_out" && te) h.gaveUpOnBeside = h.lastBesideLine;
+    if (O || G === "timed_out") {
+      let Y = {
+        waited_ms: Math.round(performance.now() - y),
+        messages_arriving_at_start: S,
+        messages_arriving_at_end: h.messagesArriving,
+        at_turn_end: r
+      };
+      if (G === "cleared") g("bridge_attachment_files_wait", Y);
+      else c("bridge_attachment_files_wait", G, Y);
+      V(G === "timed_out" ? "warn" : "info", "waited_for_message_files", {
+        outcome: G,
+        outcome_code: fN[G],
+        ...Y
+      })
+    }
+    return G
+  } catch (h) {
+    return a(h), "failed"
+  }
+}
+var NOi = "claude-cloud-trash",
+  FOi = ".claude-cloud-trash",
+  HOi = ".gitignore";
+
+function zr({
+  byDrawing: e,
+  plugin: n,
+  except: r,
+  handle: s
+}) {
+  for (let [h, y] of e)
+    if (h !== r && h.startsWith(`${n}\x00`)) {
+      let S = y.get(s);
+      if (S !== void 0) return S
+    } return
+}
+
+function gb({
+  previous: e,
+  handles: n,
+  ...r
+}) {
+  let s = new Set(n);
+  return new Map([...e, ...[...e].flatMap(([h, y], S) => {
+    let w = n[S];
+    return w !== void 0 && !e.has(w) && !s.has(h) && zr({
+      ...r,
+      handle: h
+    }) === void 0 && zr({
+      ...r,
+      handle: w
+    }) === void 0 ? [
+      [w, y]
+    ] : []
+  })])
+}
+var Fd = (e, n) => `${e}\x00${n.component}\x00${n.requestId}\x00${n.surface}`;
+var yb = 1073741824;
+var Sb = () => Math.floor(Math.random() * yb);
+
+function _b() {
+  let e = new Map,
+    n = new Map,
+    r = new Map,
+    s = Sb();
+  return {
+    heldPress: (h, y, S) => {
+      let w = e.get(y);
+      return w?.plugin === h && (S === void 0 || S === "" || w.element === S) ? w : void 0
+    },
+    holdDrawing(h, {
+      drawn: y,
+      ...S
+    }, w) {
+      let A = Fd(h, S),
+        O = n.get(A) ?? new Map,
+        M = new Map,
+        G = y !== void 0 && y === r.get(A) && w.length === O.size ? gb({
+          byDrawing: n,
+          plugin: h,
+          except: A,
+          previous: O,
+          handles: w.map((te) => te.handle)
+        }) : O;
+      for (let {
+          tag: te,
+          handle: Y,
+          element: ne,
+          pressableLinks: se,
+          options: ae
+        }
+        of w) {
+        let re = G.get(Y) ?? zr({
+          byDrawing: n,
+          plugin: h,
+          except: A,
+          handle: Y
+        }) ?? ++s;
+        M.set(Y, re), e.set(re, {
+          tag: te,
+          plugin: h,
+          handle: Y,
+          element: ne,
+          ...se !== void 0 && {
+            pressableLinks: se
+          },
+          ...ae !== void 0 && {
+            options: ae
+          },
+          ...S
+        })
+      }
+      let N = [],
+        Z = new Set(M.values());
+      for (let [te, Y] of O)
+        if (!M.has(te) && zr({
+            byDrawing: n,
+            plugin: h,
+            except: A,
+            handle: te
+          }) === void 0) {
+          if (!Z.has(Y)) e.delete(Y);
+          N.push(te)
+        } return M.size === 0 ? n.delete(A) : n.set(A, M), M.size === 0 ? r.delete(A) : r.set(A, y), {
+        hosted: M,
+        released: N
+      }
+    },
+    holdersOf: (h) => Array.from(n.keys()).filter((y) => y.endsWith(Fd("", h))).map((y) => y.slice(0, y.indexOf("\x00"))),
+    forgetPresses(h) {
+      for (let [y, S] of e)
+        if (S.plugin === h) e.delete(y);
+      for (let y of n.keys())
+        if (y.startsWith(`${h}\x00`)) n.delete(y), r.delete(y)
+    },
+    heldByKeyOf({
+      tag: h,
+      plugin: y,
+      element: S,
+      surface: w,
+      component: A,
+      requestId: O
+    }) {
+      let M = [...e.values()].filter((G) => G.tag === h && G.plugin === y && G.element === S && G.surface === w && G.component === A && (O === void 0 || G.requestId === O));
+      return M.length === 1 ? M[0] : void 0
+    },
+    hostedButtonsOf: (h, y) => [...e].filter(([, S]) => S.plugin === h && S.element === y).map(([S, w]) => ({
+      hosted: S,
+      button: w
+    })),
+    heldPressCount: () => e.size
+  }
+}
+var poe = _b();
+
+function xPi(e, n, r) {
+  let s = n === void 0 ? void 0 : e.get(n);
+  return s?.environmentId === r ? s.press : void 0
+}
+
+function PPi(e, n) {
+  for (let [r, s] of e)
+    if (s.environmentId === n) e.delete(r)
+}
+import {
+  AsyncLocalStorage as IN
+} from "async_hooks";
+var _Jt = new IN;
+
+function OPi(e, n, r) {
+  let s = _Jt.getStore();
+  if (s !== void 0) e.set(n, {
+    environmentId: r,
+    press: s,
+    isAnswered: !1
+  })
+}
+
+function bb(e, n) {
+  return e?.clientId === n ? e.pressId : void 0
+}
+
+function IPi(e, n) {
+  let r = e.get(n);
+  if (r === void 0) return;
+  e.set(n, {
+    ...r,
+    isAnswered: !0
+  });
+  let s = [...e].filter(([, y]) => y.isAnswered && y.environmentId === r.environmentId).map(([y]) => y),
+    h = Math.max(...s);
+  for (let y of s.filter((S) => S < h)) e.delete(y)
+}
+
+function Oda(e, n) {
+  let r = bb(e, n);
+  if (r !== void 0) g("plugin_function_hooks_press_fill");
+  if (e !== void 0 && r === void 0) c("plugin_function_hooks_press_fill", e.clientId === void 0 ? "no_client" : "other_client");
+  return r
+}
+import {
+  isDeepStrictEqual as BN
+} from "util";
+var jN = (e, n, r) => ({
+  ...r,
+  run: (s, ...h) => _Jt.run(BN(s, n) ? e : void 0, () => r.run(s, ...h))
+});
+var xb = new Set(["session.identity"]);
+var clo = new Set(["ui.open", "ui.toast", "ui.notify", "ui.status", "ui.log", "ui.notice", "ui.ask", "tool.register", "command.register", "agent.register", "prompt.fill", "prompt.suggest"]);
+var Rb = (e, n) => ({
+  raise: e.raise,
+  among: e.among,
+  drawn: n
+});
+async function e0e({
+  event: e,
+  args: n,
+  caller: r,
+  bottom: s,
+  raise: h,
+  among: y
+}) {
+  if (s !== void 0 && _ce(e, r.origin, y)) return uOn(r.scopeHolder?.scope, () => s.run(n, r));
+  let S = new Map,
+    w = hL(e, r.origin, Rb({
+      raise: h,
+      among: y
+    }, (ne, se) => {
+      S.set(ne, se)
+    })),
+    O = xb.has(e) ? w.filter((ne) => Mgt(ne) !== "user") : w,
+    M = r.scopeHolder?.scope;
+  if (O.length === 0 && s) return uOn(M, () => s.run(n, r));
+  let j = QJt({
+    event: e,
+    e: n,
+    origin: r.origin
+  }, r.signal);
+  if (j !== void 0) return await j, e0e({
+    event: e,
+    args: n,
+    caller: r,
+    bottom: s,
+    raise: h
+  });
+  let G = ton(e) && !D(n),
+    N = clo.has(e);
+  if (G) throw new $e(`${r.plugin}: $.${e}: its input is no object, which the hooks on it (${O.map((ne)=>ne.name).join(", ")}) take as e; pass one`);
+  let Z = {
+      sent: n,
+      hooked: () => O.map((ne) => {
+        let se = S.get(ne);
+        if (se === void 0) t(`${r.plugin}: $.${e}: no module is on record for the hook of ${ne.name}; what it passed down is judged a person's`, {
+          level: "warn"
+        });
+        return se
+      })
+    },
+    Y = await uOn(M, () => _O({
+      e: n,
+      handlers: O,
+      site: yfe(e, h),
+      signal: r.signal,
+      origin: TZ(r.origin),
+      bottom: s && (async (ne) => {
+        let se = N ? gfe(ne) : ne,
+          ae = s.check?.(se, r);
+        if (ae !== void 0) throw new $e(`${e}: ${ae} (host check)`);
+        return {
+          value: await s.run(se, r, Z)
+        }
+      })
+    }));
+  if (Y.deny !== void 0) throw new $e(`${r.plugin}: $.${e}: ${Y.deny}`);
+  return Y.value
+}
+var bZ = zo,
+  hce = new Set([Me, kt, ze, Yt, dt, Qr, _r]),
+  UOi = "device_bash",
+  iXe = new Set(["sync_files"]);
+
+function BOi(e) {
+  return e.filter((n) => {
+    if (n.mcpInfo?.serverName !== bZ) return !0;
+    let r = n.mcpInfo.toolName,
+      s = Oze(r);
+    return !hce.has(r) && r !== ya && (s === void 0 || !hce.has(s))
+  })
+}
+
+function jOi(e) {
+  return e.filter((n) => n.mcpInfo?.serverName !== bZ || !iXe.has(n.mcpInfo.toolName))
+}
+
+function gce(e) {
+  if (e.agentId) return e.agentId;
+  let n = eN();
+  return n ? Pr(n.agentId) : void 0
+}
+
+function xMt(e, n) {
+  if (e === void 0) return !0;
+  return e === n
+}
+
+function JOn(e) {
+  return e ?? "main session"
+}
+
+function M9() {
+  try {
+    return v("tengu_violin_varnish", !1) === !0
+  } catch {
+    return !1
+  }
+}
+var VN = 64,
+  qN = 15000,
+  Tb = 31622400000,
+  YN = 16384,
+  WOi = /^[\w-]{1,64}$/;
+
+function IJt(e) {
+  return e.description?.capabilities?.includes("background_shells") === !0 && M9()
+}
+
+function $d(e) {
+  return hce.has(e) || e === ya && M9()
+}
+class rft {
+  #e = new Map;
+  started(e, n) {
+    this.#e.set(e, this.#e.get(e) ?? n);
+    let r = [...this.#e].filter(([, s]) => s.hostName === n.hostName);
+    if (r.length > VN) this.#e.delete(r[0]?.[0] ?? e)
+  }
+  find(e, n) {
+    let r = this.#e.get(e);
+    return r && xMt(n, r.agentId) ? r : void 0
+  }
+}
+async function zOi(e, n, r, s) {
+  let h = r.get(rft).find(e, n);
+  if (h === void 0) return;
+  let {
+    hostName: y,
+    callId: S
+  } = h, w = r.get(r1).resolve(y), A = w.kind === "remote" ? await w.host.transport.call(Me, {}, z7e(S), {
+    signal: s,
+    deadlineMs: qN,
+    toolUseId: S
+  }).catch(() => {
+    return
+  }) : void 0, O = A?.kind === "result" ? A.envelope : void 0, M = O?.outcome === "completed" ? u({
+    background: u({
+      state: o(),
+      exit_code: E().optional(),
+      ran_ms: E().nonnegative().max(Tb),
+      ended_ms_ago: E().nonnegative().max(Tb).optional()
+    })
+  }).safeParse(O.output).data?.background : void 0;
+  if (O?.outcome !== "completed" || M === void 0) throw new R(`${y} did not say what became of background command ${e}: it is not attached or did not answer in time, or it no longer reports on the command (it keeps the last 16 that ended, and its record goes with a restart of Claude Code there or with background commands being switched off there).`, "no status for a background command on an attached machine");
+  let {
+    content: j
+  } = O, G = typeof j === "string" ? j : j.map((Y) => Y.type === "text" ? Y.text : "").join(""), N = `[from ${y}, about background command ${e}]
+${Q(G,YN)}`, Z = Date.now() - (M.ended_ms_ago ?? 0), te = {
+    taskId: e,
+    createdAt: new Date(Z - M.ran_ms).toISOString(),
+    lastUpdatedAt: new Date(Z).toISOString()
+  };
+  return M.state === "exited" ? {
+    ...te,
+    status: "completed",
+    statusMessage: `Exited on ${y}.`,
+    result: {
+      content: [{
+        type: "text",
+        text: N
+      }],
+      isError: M.exit_code !== 0
+    }
+  } : {
+    ...te,
+    status: M.state === "running" ? "working" : "cancelled",
+    statusMessage: N
+  }
+}
+var XN = {
+  version: 1,
+  min_version: 1
+};
+
+function rlo(e, n, r = kee) {
+  if (e.kind === "incompatible") return {
+    ...e,
+    cause: "wire"
+  };
+  let s = GGe(r, n ?? XN);
+  switch (s.kind) {
+    case "agreed":
+      return {
+        ...e, interfaceVersion: s.version
+      };
+    case "peer_too_old":
+      return {
+        kind: "incompatible", cause: "interface", older: "computer"
+      };
+    case "self_too_old":
+      return {
+        kind: "incompatible", cause: "interface", older: "session"
+      }
+  }
+}
+class OW {
+  #e = new Map;
+  get(e) {
+    let n = this.#e.get(e);
+    if (n instanceof e) return n;
+    let r = new e;
+    return this.#e.set(e, r), r
+  }
+}
+var olo = new Je(() => ({
+  toolState: new OW
+}));
+
+function GOi(e, n) {
+  olo.of(e).toolState = n
+}
+var Cb = 256;
+
+function slo(e) {
+  return e.tools.length === 0 && e.passthrough.length === 0 && e.plumbing.length === 0 && e.ignored.length === 0
+}
+class Qw {
+  #e = new Map;
+  #t = 0;
+  #n = new Set;
+  #i = !1;
+  #a = void 0;
+  #r = new Map;
+  #u = new Map;
+  #l = new Map;
+  #o = new Map;
+  #s = new Map;
+  #c = De();
+  #f = De();
+  #h = De();
+  #d;
+  constructor(e = Date.now) {
+    this.#d = e
+  }
+  accept(e, {
+    instanceId: n,
+    now: r,
+    transport: s
+  }) {
+    let h = e.host.name,
+      y = e.tools.filter((G) => !$d(G.name)).map((G) => G.name),
+      S = [...e.ignored, ...y],
+      w = [...this.#e.values()].filter((G) => G.instanceId === n).map((G) => G.name);
+    if (slo(e)) {
+      this.#e = Ab(this.#e, w);
+      let G = this.#e.get(h),
+        N = G !== void 0 && G.instanceId !== n,
+        Z = w.includes(h),
+        te = Kzi(e.host.capabilities);
+      for (let Y of N || Z ? w : [...w, h]) {
+        if (!this.#r.has(Y) && this.#r.size < Cb) this.#r.set(Y, Y !== h || Z ? r : void 0);
+        let ne = this.#l.get(Y);
+        if (this.#r.has(Y) && (ne === void 0 || ne === n))
+          if (te === void 0) this.#u.delete(Y);
+          else this.#u.set(Y, te);
+        this.#m(Y)
+      }
+      return this.#t++, this.#p(), {
+        status: "withdrawn",
+        ignoredTools: S,
+        removed: w,
+        heldByAnother: N
+      }
+    }
+    let A = this.#e.get(h),
+      O = e.tools.filter((G) => $d(G.name)),
+      M = rlo(nCr((O[0] ?? e.tools[0])?.protocol_versions ?? [vf]), e.host.tool_host_interface),
+      j = {
+        name: h,
+        instanceId: n,
+        description: e.host,
+        servedTools: new Set(O.map((G) => G.name)),
+        plumbing: e.plumbing,
+        passthrough: new Map(e.passthrough.map((G) => [G.name, G])),
+        protocol: M,
+        status: "online",
+        awayReason: void 0,
+        asleepSince: void 0,
+        takenOverAt: A === void 0 ? void 0 : A.instanceId !== n ? r : A.takenOverAt,
+        lastHeardAt: r,
+        lastStillHereAt: void 0,
+        transport: s
+      };
+    if (this.#e = new Map([...Ab(this.#e, w), [h, j]]), this.#r.delete(h), this.#u.delete(h), this.#l.has(h) || this.#l.size < Cb) this.#l.set(h, n);
+    for (let G of w)
+      if (G !== h) this.#m(G);
+    return this.#t++, this.#S(h), this.#p(), {
+      status: "announced",
+      served: j.servedTools.size,
+      passthroughAdopted: j.passthrough.size,
+      protocol: M,
+      ignoredTools: S,
+      displaced: A !== void 0 && A.instanceId !== n ? A.instanceId : void 0
+    }
+  }
+  hasAnnouncedThisLife() {
+    return this.#i
+  }
+  withdrawnThisLife(e) {
+    return this.#r.has(e)
+  }
+  withdrawnAt(e) {
+    return this.#r.get(e)
+  }
+  withdrawnFor(e) {
+    return this.#u.get(e)
+  }
+  onNextAnnounce(e) {
+    return this.#n.add(e), () => {
+      this.#n.delete(e)
+    }
+  }
+  announceWaitExpired() {
+    return this.#a
+  }
+  markAnnounceWaitExpired(e) {
+    this.#a = e
+  }
+  #p() {
+    this.#i = !0;
+    let e = [...this.#n];
+    this.#n.clear();
+    for (let n of e) try {
+      n()
+    } catch {}
+  }
+  heard(e, n, r) {
+    let s = this.#y(e, (h) => ({
+      ...h,
+      status: "online",
+      awayReason: void 0,
+      asleepSince: void 0,
+      lastHeardAt: n,
+      lastStillHereAt: void 0,
+      description: r !== void 0 && r !== h.description.epoch ? {
+        ...h.description,
+        epoch: r
+      } : h.description
+    }));
+    if (s !== void 0) this.#S(s)
+  }
+  noteStillHere(e, n) {
+    let r = this.entries().find((s) => s.instanceId === e);
+    if (r === void 0 || r.awayReason === "asleep") return !1;
+    return this.#y(e, (s) => ({
+      ...s,
+      lastStillHereAt: Math.max(s.lastStillHereAt ?? n, n)
+    })), !0
+  }
+  markAway(e, n) {
+    let r = this.#y(e, (y) => ({
+      ...y,
+      status: "offline",
+      awayReason: y.awayReason === "asleep" ? "asleep" : n
+    }));
+    if (r === void 0 || this.#o.has(r)) return;
+    let s = this.#s.get(r)?.toldModel ?? !1;
+    this.#s.delete(r);
+    let h = this.#d();
+    this.#o.set(r, {
+      awaySince: h,
+      lastHeardAt: this.#e.get(r)?.lastHeardAt ?? h,
+      toldModel: s
+    }), this.#g(() => this.#c.emit({
+      name: r,
+      change: "away",
+      toldModel: s
+    }))
+  }
+  now() {
+    return this.#d()
+  }
+  awayEpisode(e) {
+    return this.#o.get(e)
+  }
+  noteModelToldAway(e) {
+    let n = this.#o.get(e);
+    if (n === void 0 || n.toldModel) return;
+    this.#o.set(e, {
+      ...n,
+      toldModel: !0
+    }), this.#g(() => this.#f.emit(e))
+  }
+  backNotePending(e) {
+    return this.#s.get(e)?.toldModel === !0
+  }
+  takeBackNote(e) {
+    let n = this.#s.get(e);
+    return this.#s.delete(e), n
+  }
+  onHostStatusChange(e) {
+    return this.#c.subscribe(e)
+  }
+  onModelToldAway(e) {
+    return this.#f.subscribe(e)
+  }
+  onAwayEpisodeDropped(e) {
+    return this.#h.subscribe(e)
+  }
+  #m(e) {
+    if (this.#s.delete(e), !this.#o.delete(e)) return;
+    this.#g(() => this.#h.emit(e))
+  }
+  #S(e) {
+    let n = this.#o.get(e);
+    if (n === void 0) return;
+    this.#o.delete(e);
+    let r = this.#d(),
+      s = Math.max(0, r - n.awaySince),
+      h = {
+        backAt: r,
+        awayMs: s,
+        sinceHeardMs: Math.max(s, r - n.lastHeardAt),
+        toldModel: n.toldModel
+      };
+    this.#s.set(e, h), this.#g(() => this.#c.emit({
+      name: e,
+      change: "back",
+      ...h
+    }))
+  }
+  #g(e) {
+    try {
+      e()
+    } catch (n) {
+      t(`[remote-tools] an away-episode listener threw: ${d(n)}`, {
+        level: "error"
+      })
+    }
+  }
+  clear() {
+    this.#e = new Map;
+    for (let e of [...this.#o.keys()]) this.#m(e);
+    this.#s.clear(), this.#t++
+  }
+  generation() {
+    return this.#t
+  }
+  entries() {
+    return [...this.#e.values()]
+  }
+  markAsleep(e, n) {
+    this.#y(e, (r) => ({
+      ...r,
+      awayReason: "asleep",
+      asleepSince: n,
+      lastStillHereAt: void 0
+    })), this.markAway(e, "probe_missed")
+  }
+  handleFor(e) {
+    let n = this.#e.get(e);
+    if (n === void 0) return;
+    let {
+      instanceId: r
+    } = n;
+    return {
+      instanceId: r,
+      hostName: e,
+      live: () => {
+        let s = this.#e.get(e);
+        return s !== void 0 && s.instanceId === r ? {
+          status: s.status,
+          lastHeardAt: s.lastHeardAt,
+          ...s.asleepSince !== void 0 && {
+            asleepSince: s.asleepSince
+          },
+          ...s.lastStillHereAt !== void 0 && {
+            lastStillHereAt: s.lastStillHereAt
+          }
+        } : void 0
+      },
+      epoch: () => {
+        let s = this.#e.get(e);
+        return s !== void 0 && s.instanceId === r ? s.description.epoch : void 0
+      },
+      heard: (s, h) => {
+        let y = this.entries().find((S) => S.instanceId === r)?.asleepSince;
+        if (y === void 0 || s < y || s - y >= XTr) this.heard(r, s, h)
+      },
+      markAway: (s) => this.markAway(r, s)
+    }
+  }
+  hostsForTable() {
+    return this.entries().map((e) => ({
+      kind: "remote",
+      source: "session",
+      name: e.name,
+      status: e.status,
+      enforcement: "self",
+      description: e.description,
+      servedTools: e.servedTools,
+      ...e.plumbing.some((n) => iXe.has(n)) && {
+        plumbingTools: new Set(e.plumbing.filter((n) => iXe.has(n)))
+      },
+      ...e.passthrough.size > 0 && {
+        passthroughTools: new Map([...e.passthrough.values()].map((n) => [n.name, {
+          localName: n.local_name
+        }]))
+      },
+      protocol: e.protocol,
+      transport: e.transport,
+      ...e.takenOverAt !== void 0 && {
+        takenOverAt: e.takenOverAt
+      },
+      ...e.awayReason === "asleep" && {
+        asleep: !0
+      },
+      ...e.status === "offline" && e.awayReason !== "asleep" && e.lastStillHereAt !== void 0 && e.lastStillHereAt > e.lastHeardAt && {
+        busy: !0
+      },
+      ...e.status === "offline" && {
+        lastHeardAt: e.awayReason === "asleep" ? this.#o.get(e.name)?.awaySince ?? e.asleepSince ?? e.lastHeardAt : e.lastHeardAt
+      }
+    }))
+  }
+  #y(e, n) {
+    let r = this.entries().find((h) => h.instanceId === e);
+    if (r === void 0) return;
+    let s = n(r);
+    if (this.#e = new Map([...this.#e, [r.name, s]]), s.status !== r.status || s.awayReason !== r.awayReason || s.description !== r.description) this.#t++;
+    return r.name
+  }
+}
+
+function Ab(e, n) {
+  return new Map([...e].filter(([r]) => !n.includes(r)))
+}
+var Pb = 2 * H$;
+import {
+  randomUUID as QN
+} from "crypto";
+async function Mb({
+  entries: e,
+  limit: n,
+  event: r,
+  storageV5: s
+}) {
+  let h = e.join(`
+
+`),
+    y = await OTe(h, `${r}-${QN()}`, "additionalContext", {
+      threshold: n,
+      storageV5: s
+    }).catch((M) => {
+      if (!We(M)) a(M);
+      return `${Q(h,n)}
+
+[${r} context of ${h.length} characters cut at ${n}: writing it to disk failed]`
+    }),
+    w = e.length === 1 ? "a context entry" : `${e.length} context entries`,
+    O = y.startsWith(Toe) ? "written to disk, its head and path kept" : "not written to disk (the persist failed), its head kept inline";
+  return t(`${r}: ${w} of ${h.length} characters ${O} (${eUn} an entry, ${uxr} a dispatch; nothing refused)`), y
+}
+async function gMt(e, n, r) {
+  let s = [],
+    h = 0,
+    y = 0;
+  while (y < e.length) {
+    let S = e[y] ?? "",
+      w = uxr - h,
+      A = S.length <= Math.min(eUn, w),
+      M = A || w >= Pb ? [S] : e.slice(y),
+      j = A ? S : await Mb({
+        entries: M,
+        limit: Math.max(0, Math.min(eUn, w)),
+        event: n,
+        storageV5: r
+      });
+    s.push(j), h += j.length, y += M.length
+  }
+  return s
+}
+import {
+  resolve as oL
+} from "path";
+var rL = 500,
+  sL = 8,
+  iL = 4,
+  aL = "\x00",
+  lL = 20,
+  hi = 1000,
+  Nb = 1e5,
+  pL = 86400,
+  mL = new Set([nk, f_, vb, ya, Vg, $r]),
+  gL = new Set([dt, Yt]),
+  yL = new Set(["tail", "head", "grep", "egrep", "fgrep", "rg", "sed", "awk", "gawk", "wc", "cut", "sort", "uniq", "tr", "column", "nl", "jq", "tee", "less", "more", "cat"]),
+  Lb = /^-[if]|system|getline|[>|]/,
+  Hb = {
+    sed: /^(-[A-Za-z]*i|--in-place)/,
+    sort: /^(-[A-Za-z]*o|--output)/,
+    awk: Lb,
+    gawk: Lb
+  },
+  SL = new Set(["echo", "true", "false"]),
+  _L = new Set(["cd", "pushd", "popd", "source", ".", "set", "shopt", "ulimit", "umask", "alias", "unalias", "exit", "return"]),
+  bL = new Set(["declaration_command", "unset_command", "variable_assignment", "variable_assignments"]),
+  wL = /(^|\/)activate(\.\w+)?$/,
+  xL = /^(--fix.*|--write|-w|-i|--in-place|--apply.*|--unsafe-fixes|-a|-A|--autocorrect.*|-F|-u|-update|--update.*|--snapshot-update|--force-regen|--bless|--accept|[A-Z0-9_]*(UPDATE|ACCEPT|BLESS|REGEN|OVERWRITE|RECORD)[A-Z0-9_]*=.*|(.*[-_:/])?(fix|fmt|format|write)([-_:].*)?|(.*\/)?(black|isort|rustfmt|autopep8|yapf|pre-commit))$/,
+  RL = /^(--check.*|--diff|--dry-run)$/,
+  vL = new Set(["add", "commit", "push", "fetch", "tag", "branch", "remote"]),
+  EL = /^(-[aAmqufvnspdDM]+|--(all|amend|no-edit|no-verify|no-gpg-sign|quiet|verbose|force|force-with-lease|set-upstream|tags|no-tags|follow-tags|message|update|prune|signoff|allow-empty|delete|list|dry-run|depth(=\d+)?)?)$/,
+  $b = /\b(cd|pushd|popd)\b/,
+  Ub = /[`]|[$<>]\(/,
+  TL = new Set([">", ">>", ">&", "&>", "&>>", ">|"]),
+  CL = new Set(["&&", "||", ";", "&"]),
+  AL = /^[\w@%+=:,./][\w@%+=:,./ -]*$/;
+
+function lus(e) {
+  return Si(() => {
+    if (EM() || bSe()) return !1;
+    let n = 0.1,
+      r = v("tengu_vivid_peach", void 0),
+      s = r === void 0 ? n : typeof r === "number" && r >= 0 && r <= 1 ? r : 0;
+    return Number(BigInt(WA(`bash repeat meter\x00${e}`)) % 2n ** 32n) / 4294967296 < s
+  }, !1)
+}
+class GOn {
+  #e = new Map;
+  #t = new Map;
+  #n = new Map;
+  #i = 0;
+  #a = 0;
+  #r = 0;
+  #u = 0;
+  #l = 0;
+  #o = 0;
+  #s = 0;
+  #c = 0;
+  #f = 0;
+  begin(e) {
+    return Si(() => this.#h(e), new wl(this, void 0, {}, [0, 0, 0, 0, 0, 0], !1))
+  }
+  skip() {
+    return this.#c++, new wl(this, void 0, {}, this.#p(), !0)
+  }
+  #h(e) {
+    let n = Nwe() + Fwe();
+    this.#i += n < this.#a ? n : n - this.#a, this.#a = n;
+    let {
+      toolUseId: r,
+      messages: s
+    } = e;
+    if (r === void 0 || s.length === 0) return this.skip();
+    let {
+      command: h,
+      description: y,
+      timeout: S,
+      run_in_background: w,
+      ...A
+    } = e.input, O = PL(h, e.cwd, e.isReadOnly), M = O.some((Ce) => Ce.heavy && !Ce.onlyOnFailure), j = e.agentId ?? "", G = _({
+      ...A,
+      dangerouslyDisableSandbox: A.dangerouslyDisableSandbox === !0,
+      ...!1
+    }), N = WA(O.map((Ce) => [Ce.place, Ce.stem].join("\x00")).join(`
+`)), Z = this.#p(), te = 0, Y = 0, ne = 0, se = [], ae = 0, re, _e, Se;
+    for (let Ce of O.length > 0 ? O : [{
+        place: e.cwd,
+        stem: h.trim(),
+        text: h.trim(),
+        heavy: !1,
+        testsOrLints: !1,
+        keepsTheFiles: !1,
+        onlyOnFailure: !1,
+        ranOnlyIf: void 0,
+        goesOnRunning: !1
+      }]) {
+      let Ne = !Ce.onlyOnFailure && (!M || Ce.heavy),
+        Ie = Ud(j, G, Ce),
+        Ye = Ud(aL, G, Ce),
+        pt = WA(Ce.text),
+        ct = Ne ? this.#e.get(Ie) : void 0;
+      if (ct !== void 0) {
+        let gt = this.#d(ct, pt, N, Z, te, Y, ne);
+        if (gt.lines + gt.writes === 0) ae++;
+        if (Bb(gt, re)) re = gt
+      }
+      if (Ne) {
+        _e ??= this.#n.get(Ye)?.find((gt) => gt !== j);
+        for (let gt of this.#t.get(Ye)?.toReversed() ?? []) {
+          let sn = gt === j ? void 0 : this.#e.get(Ud(gt, G, Ce));
+          if (sn === void 0) continue;
+          let ke = this.#d(sn, pt, N, Z, te, Y, ne);
+          if (Bb(ke, Se?.between)) Se = {
+            between: ke,
+            agent: gt,
+            ranItLast: ct === void 0 || ct.returnedAt < sn.returnedAt
+          }
+        }
+      }
+      if (Ce.testsOrLints) ne++;
+      else if (O.length > 0) te++, Y += Ce.keepsTheFiles ? 1 : 0;
+      if (Ne) se.push({
+        key: Ie,
+        workKey: Ye,
+        textHash: pt,
+        writes: te,
+        records: Y,
+        checks: ne,
+        ranOnlyIf: Ce.ranOnlyIf
+      })
+    }
+    let ce = re === void 0 ? -1 : jb(s, re.earlier),
+      xe = Object.values(e.taskRegistry.all()).filter((Ce) => Ql(Ce) && Ce.isBackgrounded && Ce.status === "running"),
+      ve = _e ?? Se?.agent,
+      Oe = new wl(this, {
+        pieces: se,
+        agent: j,
+        lineHash: N,
+        writes: te,
+        records: Y,
+        checks: ne,
+        goesOnRunning: O.some((Ce) => Ce.goesOnRunning),
+        toolUseId: r,
+        startsInBackground: w === !0,
+        backgroundCommandsAtStart: xe.length
+      }, {
+        repeat: re !== void 0,
+        compared_statements: se.length,
+        unchanged_repeats: ae,
+        ...j !== "" && {
+          subagent_in_agent_worktree: e.inAgentWorktree
+        },
+        other_agent_repeat: ve !== void 0,
+        ...ve !== void 0 && {
+          other_agent_direction: f(j === "" ? "main_after_subagent" : ve === "" ? "subagent_after_main" : "subagent_after_subagent"),
+          other_agent_call_running_at_start: _e !== void 0 || xe.some((Ce) => Ce.toolUseId === Se?.between.earlier.toolUseId)
+        },
+        ..._e === void 0 && Se !== void 0 && {
+          other_agent_same_text_as_earlier_call: Se.between.sameText,
+          other_agent_seconds_since_that_call: zb(Se.between.earlier),
+          ...(Se.between.lines > 0 || Se.between.unseen === 0) && {
+            other_agent_lines_changed_since_that_call: Math.min(Se.between.lines, Nb)
+          },
+          other_agent_possible_writes_since_that_call: Math.min(Se.between.writes, hi),
+          other_agent_possible_writes_by_running_commands: Math.min(Se.between.running, hi),
+          other_agent_tests_and_lints_since_that_call: Math.min(Se.between.checks, hi),
+          other_agent_changed_since_that_call: f(Wb(Se.between)),
+          other_agent_earlier_call_outcome: f(Se.between.earlier.outcome),
+          other_agent_ran_it_last: Se.ranItLast,
+          other_agent_earlier_result_in_context: jb(s, Se.between.earlier) >= 0
+        },
+        ...re !== void 0 && {
+          same_text_as_earlier_call: re.sameText,
+          seconds_since_that_call: zb(re.earlier),
+          changed_since_that_call: f(Wb(re)),
+          ...(re.lines > 0 || re.unseen === 0) && {
+            lines_changed_since_that_call: Math.min(re.lines, Nb)
+          },
+          possible_writes_since_that_call: Math.min(re.writes, hi),
+          tests_and_lints_since_that_call: Math.min(re.checks, hi),
+          ...ce >= 0 && {
+            new_message_since_that_call: s.slice(ce + 1).some((Ce) => Ce.type === "attachment" ? Ce.attachment.type === "queued_command" : Ce.type === "user" && (!Ce.isMeta || Ce.origin !== void 0) && !Ce.isVirtual && !(Array.isArray(Ce.message.content) && Ce.message.content.some((Ne) => Ne.type === "tool_result")))
+          },
+          earlier_call_outcome: f(re.earlier.outcome),
+          ...re.earlier.testOutcome !== void 0 && {
+            earlier_test_outcome: re.earlier.testOutcome
+          },
+          earlier_result_in_context: ce >= 0,
+          ...re.earlier.longOutput !== void 0 && {
+            earlier_output_persisted: re.earlier.longOutput.persisted,
+            earlier_output_end_shown: re.earlier.longOutput.endShown
+          },
+          earlier_tail_input_candidate: re.earlier.tailInputLine === "check",
+          earlier_tail_input_candidate_other: re.earlier.tailInputLine === "other",
+          ...re.earlier.tailInputFlagOn !== void 0 && {
+            earlier_tail_input_flag_on: re.earlier.tailInputFlagOn
+          },
+          ...re.earlier.tailInputKept !== void 0 && {
+            earlier_tail_input_kept: re.earlier.tailInputKept
+          }
+        }
+      }, Z, te + ne > 0);
+    if (Oe.countedAsRunning) this.#c++;
+    for (let {
+        workKey: Ce
+      }
+      of se) this.#n.set(Ce, [...this.#n.get(Ce) ?? [], j]);
+    return Oe
+  }
+  #d(e, n, r, [s, h, y, S, w, A], O, M, j) {
+    let G = e.backgroundCommandsAtStart + this.#c + this.#f;
+    return {
+      earlier: e,
+      sameText: e.textHashes.includes(n),
+      lines: s - e.linesChanged,
+      writes: h - e.possibleWrites + G + O,
+      running: G,
+      inThisLine: O - M,
+      sameLine: e.lineHash === r,
+      mcpCalls: w - e.mcpCalls,
+      records: A - e.gitRecords + M,
+      checks: y - e.testsAndLints + j,
+      unseen: S - e.unseenWrites + G + O + j
+    }
+  }
+  #p() {
+    return [this.#i, this.#r, this.#u, this.#l, this.#o, this.#s]
+  }
+  noteOtherToolCall(e, n) {
+    Si(() => {
+      if (!n || e.name === Me || gL.has(e.underlyingV1ToolName ?? e.name) || mL.has(e.name)) return;
+      if (e.name === gi) this.#i++;
+      else this.#r++, this.#l++, this.#o += rm(e) ? 1 : 0
+    }, void 0)
+  }
+  clear() {
+    this.#e.clear(), this.#t.clear(), this.#f = 0
+  }
+  settle(e) {
+    Si(() => this.#m(e), void 0)
+  }
+  #m(e) {
+    let {
+      call: n,
+      outcome: r,
+      mayHaveWritten: s,
+      linesWritten: h
+    } = e;
+    if (e.countedAsRunning) this.#c--;
+    for (let {
+        workKey: Y
+      }
+      of n?.pieces ?? []) {
+      let ne = this.#n.get(Y) ?? [],
+        se = ne.indexOf(n?.agent ?? ""),
+        ae = se === -1 ? ne : ne.toSpliced(se, 1);
+      if (ae.length > 0) this.#n.set(Y, ae);
+      else this.#n.delete(Y)
+    }
+    let y = r !== void 0 || s,
+      S = y ? n?.checks ?? 0 : 0,
+      w = y ? n?.writes ?? (s ? 1 : 0) : 0,
+      A = w + S > 0 && !e.diffTaken ? 1 : 0;
+    if (this.#i += h, this.#r += w, this.#s += y ? n?.records ?? 0 : 0, this.#u += S, this.#l += A, y && n?.goesOnRunning) this.#f++;
+    if (n === void 0 || r === void 0) return;
+    let [O, M, j, G, N, Z] = e.countsAtStart, te = n.pieces.filter((Y) => r === "succeeded" && e.exitedZero ? Y.ranOnlyIf !== "unknown" : Y.ranOnlyIf === void 0 && (r === "succeeded" || r === "failed" || Y.writes + Y.checks <= 1));
+    for (let Y of te) {
+      let ne = Y.writes === n.writes && Y.checks === n.checks,
+        se = this.#e.get(Y.key)?.textHashes.filter((re) => re !== Y.textHash) ?? [];
+      this.#e.delete(Y.key), this.#e.set(Y.key, {
+        textHashes: [...se, Y.textHash].slice(-sL),
+        lineHash: n.lineHash,
+        toolUseId: n.toolUseId,
+        returnedAt: Date.now(),
+        linesChanged: O + (ne ? h : 0),
+        possibleWrites: M + Y.writes,
+        testsAndLints: j + Y.checks,
+        unseenWrites: G + (ne ? A : 0),
+        mcpCalls: N,
+        gitRecords: Z + Y.records,
+        backgroundCommandsAtStart: n.backgroundCommandsAtStart,
+        outcome: r,
+        testOutcome: e.testOutcome,
+        longOutput: e.longOutput,
+        tailInputLine: e.tailInputLine,
+        tailInputFlagOn: e.tailInputFlagOn,
+        tailInputKept: e.tailInputKept
+      });
+      let ae = this.#t.get(Y.workKey)?.filter((re) => re !== n.agent) ?? [];
+      this.#t.delete(Y.workKey), this.#t.set(Y.workKey, [...ae, n.agent].slice(-iL))
+    }
+    for (let Y of [this.#e, this.#t])
+      while (Y.size > rL) Y.delete(Y.keys().next().value ?? "")
+  }
+}
+class wl {
+  meter;
+  call;
+  fields;
+  countsAtStart;
+  countedAsRunning;
+  outcome;
+  exitedZero = !1;
+  longOutput;
+  testOutcome;
+  tailInputLine;
+  tailInputFlagOn;
+  tailInputKept;
+  mayHaveWritten = !1;
+  linesWritten = 0;
+  diffTaken = !1;
+  constructor(e, n, r, s, h) {
+    this.meter = e;
+    this.call = n;
+    this.fields = r;
+    this.countsAtStart = s;
+    this.countedAsRunning = h
+  }
+  forSettleRow() {
+    let {
+      repeat: e,
+      compared_statements: n,
+      changed_since_that_call: r,
+      earlier_test_outcome: s,
+      other_agent_repeat: h,
+      other_agent_direction: y,
+      other_agent_call_running_at_start: S,
+      other_agent_seconds_since_that_call: w,
+      other_agent_lines_changed_since_that_call: A,
+      other_agent_possible_writes_since_that_call: O,
+      other_agent_tests_and_lints_since_that_call: M,
+      other_agent_changed_since_that_call: j,
+      other_agent_earlier_call_outcome: G,
+      other_agent_ran_it_last: N,
+      other_agent_earlier_result_in_context: Z
+    } = this.fields;
+    return {
+      repeat: e,
+      compared_statements: n,
+      changed_since_that_call: r,
+      earlier_test_outcome: s,
+      other_agent_repeat: h,
+      other_agent_direction: y,
+      other_agent_call_running_at_start: S,
+      other_agent_seconds_since_that_call: w,
+      other_agent_lines_changed_since_that_call: A,
+      other_agent_possible_writes_since_that_call: O,
+      other_agent_tests_and_lints_since_that_call: M,
+      other_agent_changed_since_that_call: j,
+      other_agent_earlier_call_outcome: G,
+      other_agent_ran_it_last: N,
+      other_agent_earlier_result_in_context: Z
+    }
+  }
+  ended(e, n, r, s, h) {
+    return this.longOutput = e.outputFileSize === void 0 ? void 0 : r, this.testOutcome = h, this.tailInputLine = s.line, this.tailInputFlagOn = s.flagOn, this.tailInputKept = e.backgroundTaskId === void 0 ? s.kept : void 0, this.exitedZero = e.code === 0, this.outcome = e.backgroundTaskId !== void 0 ? this.call?.startsInBackground ? "started_in_background" : e.timedOutAfterMs !== void 0 ? "moved_to_background_at_timeout" : "moved_to_background" : e.timedOut ? "killed_at_timeout" : e.interrupted ? "interrupted" : n ? "failed" : "succeeded", {
+      ...this.fields,
+      ...e.outputFileSize !== void 0 && {
+        output_total_bytes: e.outputFileSize,
+        output_persisted: r.persisted
+      }
+    }
+  }
+  sawEditDiff(e, n) {
+    if (!n || e?.unavailable || e?.shared || e?.skipped) return;
+    this.diffTaken = !0, this.linesWritten = Si(() => (e?.files ?? []).reduce((r, s) => r + Math.max(1, U(s.hunks.flatMap((h) => h.lines), (h) => h.startsWith("+") || h.startsWith("-"))), e?.moreFiles ?? 0), 1)
+  } [Symbol.dispose]() {
+    this.meter.settle(this)
+  }
+}
+
+function PL(e, n, r) {
+  let s = e.length <= pE ? Ah()?.parse(e) ?? null : null,
+    h = [];
+  for (let N of s?.type === "program" ? jd(s) : [])
+    if (CL.has(N.type)) {
+      if (h.length > 0) h.at(-1).then = N.type
+    } else if (N.type.endsWith("_redirect")) h.at(-1)?.redirects.push(N);
+  else h.push({
+    node: N,
+    redirects: [],
+    then: ";"
+  });
+  if (h.length === 0 || h.length > lL) return [{
+    place: n,
+    stem: e.trim(),
+    text: e.trim(),
+    heavy: !1,
+    testsOrLints: !1,
+    keepsTheFiles: !1,
+    onlyOnFailure: !1,
+    ranOnlyIf: void 0,
+    goesOnRunning: !1
+  }];
+  let y = n,
+    S = !1,
+    w = [],
+    A = h.slice(0, -1).findLastIndex(({
+      then: N
+    }) => N !== "&&") + 1,
+    O = h.findLastIndex(({
+      node: N,
+      then: Z
+    }, te) => N.text === "wait" && Z !== "&" && [";", "&"].includes(h[te - 1]?.then ?? "")),
+    M = !1,
+    j = !1,
+    G = [];
+  for (let [N, {
+      node: Z,
+      redirects: te,
+      then: Y
+    }] of h.entries()) {
+    let ne = [Z, ...te].map((ke) => ke.text).join(" "),
+      se = h[N - 1]?.then;
+    if (se !== "&&") M = !1, j = !1;
+    let [ae, ...re] = Z.type === "redirected_statement" ? Z.children : [Z], _e = [...re, ...te].some(kl), Se = !1;
+    if (ae !== void 0 && (bL.has(ae.type) || _L.has(Bd(ae)))) {
+      let [ke, Fe, ...Xe] = ae.children, ft = Fe?.type === "raw_string" || Fe?.type === "string" && Fe.children.every((Re) => Re.type === '"' || Re.type === "string_content"), mt = ft ? Fe?.text.slice(1, -1) : Fe?.text, Tt = ["cd", "pushd", "popd"].includes(ke?.text ?? "");
+      if (ke?.text === "cd" && !S && !_e && Y !== "||" && Y !== "&" && se !== "||" && Xe.length === 0 && (ft || Fe?.type === "word") && mt !== void 0 && AL.test(mt)) {
+        y = oL(y, mt);
+        continue
+      }
+      if (Y !== "&") w.push(ne), S ||= Tt, Se = !0;
+      if (Y !== "&" && !_e && !Ub.test(ne) && (ke?.text !== "source" && ke?.text !== "." || wL.test(mt ?? ""))) continue
+    }
+    let ce = new Set(String(U6(Z.text).bash_command_kinds).split(",")),
+      xe = ce.has("builds") || ce.has("installs_packages"),
+      ve = !xe && (ce.has("runs_tests") || ce.has("lints")),
+      Oe = xe || ve;
+    if (!Oe && !_e && (SL.has(Bd(Z)) && !Ub.test(Z.text) || r(Z.text))) {
+      if ($b.test(Z.text)) w.push(ne), S = !0;
+      j = !0;
+      continue
+    }
+    let [Ce, ...Ne] = Gb(Z, !Oe), Ie = Ce?.type === "pipeline" ? Ce.children : Ce ? [Ce] : [], Ye = Ie.length;
+    while (Ye >= 3) {
+      let ke = Ie[Ye - 1],
+        Fe = Bd(ke),
+        Xe = Object.hasOwn(Hb, Fe) ? Hb[Fe] : void 0;
+      if (!yL.has(Fe) || zd(ke)?.children.some((ft) => Xe?.test(ft.text))) break;
+      Ye -= 2
+    }
+    if (!Oe && Ye === 1 && Ie.length > 1 && r(Ie[0].text)) Ye = Ie.length;
+    let pt = [...Ie.slice(0, Ye - 1), ...Ie.slice(Ye - 1, Ye).flatMap((ke) => Gb(ke, !Oe)), ...Ne, ...te.filter((ke) => !Gd(ke) || !Oe && kl(ke))].map((ke) => ke.text).concat(Y === "&" ? ["&"] : []).join(" "),
+      ct = pt.split(/\s+/),
+      gt = zd(Ie[0] ?? Z)?.children.map((ke) => ke.text) ?? [],
+      sn = gt.slice(gt[1] === "-C" ? 3 : 1);
+    if (G.push({
+        place: [y, ...w].join("\x00"),
+        stem: pt,
+        text: ne,
+        heavy: Oe,
+        testsOrLints: ve && (!ct.some((ke) => xL.test(ke)) || ct.some((ke) => RL.test(ke))),
+        keepsTheFiles: !Oe && !_e && gt[0] === "git" && vL.has(sn[0] ?? "") && sn.every((ke) => !/^['"\\]*-/.test(ke) || EL.test(ke)) && Ie.slice(1).every((ke) => ke.type.startsWith("|") || r(ke.text)) && [Z, ...te].every((ke) => Wd(ke, r)),
+        onlyOnFailure: se === "||",
+        ranOnlyIf: M ? N >= A ? "the line exited 0" : "unknown" : j ? "light work succeeded" : void 0,
+        goesOnRunning: Y === "&" && N > O
+      }), M ||= Oe, j = !0, !Se && Z.type !== "subshell" && $b.test(Z.text)) w.push(ne), S = !0
+  }
+  return G
+}
+
+function Ud(e, n, r) {
+  return WA([e, n, r.place, r.stem].join("\x00"))
+}
+
+function Bb(e, n) {
+  return n === void 0 || e.lines + e.writes < n.lines + n.writes || e.lines + e.writes === n.lines + n.writes && e.checks < n.checks
+}
+
+function jb(e, n) {
+  return e.findLastIndex((r) => r.type === "user" && !r.isVirtual && Array.isArray(r.message.content) && r.message.content.some((s) => s.type === "tool_result" && s.tool_use_id === n.toolUseId && (n.longOutput?.persisted ? s.content !== $ps : jps(s.content))))
+}
+
+function Wb(e) {
+  let {
+    writes: n,
+    running: r,
+    inThisLine: s,
+    mcpCalls: h,
+    records: y
+  } = e;
+  if (e.lines > 0) return "lines_changed";
+  if (n > r) return r > 0 || n > s + h + y ? "possible_writes" : s > 0 ? e.sameLine ? "same_command_may_write" : "other_command_may_write" : h === 0 ? "git_records_only" : y === 0 ? "mcp_calls_only" : "mcp_calls_and_git_records_only";
+  return r > 0 ? "running_commands_only" : e.checks > 0 ? "tests_and_lints_only" : "nothing"
+}
+
+function zb(e) {
+  return Math.min(Math.max(0, Math.round((Date.now() - e.returnedAt) / 1000)), pL)
+}
+
+function Si(e, n) {
+  try {
+    return e()
+  } catch (r) {
+    return t(`Bash repeat meter: ${d(r)}`), a(Error("The Bash repeat meter threw")), n
+  }
+}
+
+function jd(e) {
+  switch (e.type) {
+    case "program":
+    case "list":
+      return e.children.flatMap(jd);
+    case "comment":
+      return [];
+    case "redirected_statement":
+      return e.children[0]?.type === "list" ? e.children.flatMap(jd) : [e];
+    default:
+      return [e]
+  }
+}
+
+function Gd(e) {
+  return e.type === "file_redirect" && e.children.some((n) => TL.has(n.type))
+}
+
+function kl(e) {
+  let n = e.children.at(-1)?.text ?? "";
+  return Gd(e) && n !== "/dev/null" && !(e.children.some((r) => r.type === ">&") && /^(\d+|-)$/.test(n))
+}
+
+function Gb(e, n) {
+  return e.type !== "redirected_statement" ? [e] : e.children.filter((r) => !Gd(r) || n && kl(r))
+}
+
+function Wd(e, n) {
+  switch (e.type) {
+    case "command_substitution":
+      return n(e.children.slice(1, -1).map((r) => r.text).join(`
+`));
+    case "process_substitution":
+      return !1;
+    case "file_redirect":
+      return !kl(e) && e.children.every((r) => Wd(r, n));
+    default:
+      return e.children.every((r) => Wd(r, n))
+  }
+}
+
+function zd(e) {
+  let n = e.type === "redirected_statement" ? e.children[0] : e;
+  return n?.type === "command" ? n : void 0
+}
+
+function Bd(e) {
+  let n = zd(e)?.children.find((r) => r.type === "command_name")?.text;
+  return n?.slice(n.lastIndexOf("/") + 1) ?? ""
+}
+
+function qio({
+  servers: e,
+  errors: n
+}) {
+  let r = (y) => y.mcpErrorMetadata?.severity === "warning";
+  if (!n.every(r)) throw Error("managed-mcp.json could not be read whole, so the servers it delivers cannot be named");
+  let h = n.flatMap((y) => {
+    let S = y.mcpErrorMetadata,
+      w = S?.serverName;
+    return S?.skipReason !== void 0 && w !== void 0 ? [w] : []
+  });
+  return L([...Object.keys(e), ...h])
+}
+var cOn = Ef();
+var Pyr = Object.freeze({
+  plugin: "engine",
+  origin: Object.freeze([])
+});
+var vus = (e) => iZi(e);
+
+function Eus(e, n) {
+  let s = n !== void 0 && vus(e) ? Sk(e)?.safeParse(n) : void 0;
+  if (s === void 0) return {
+    isFit: !0,
+    value: n
+  };
+  return s.success ? {
+    isFit: s.data !== void 0,
+    value: s.data
+  } : {
+    isFit: !1,
+    value: void 0
+  }
+}
+var ulo = (e, n) => Object.hasOwn(e, n) ? e[n] : void 0;
+var dXe = Object.freeze({
+  user: "userSettings",
+  project: "projectSettings",
+  local: "localSettings",
+  flag: "flagSettings",
+  policy: "policySettings"
+});
+
+function Oyr() {
+  let e = yt(),
+    {
+      answers: n,
+      computed: r
+    } = Xo().hookedMerge;
+  return n === null || r === null ? e : r
+}
+
+function DJt(e) {
+  let n = mOn(e);
+  return D(n) ? n : {}
+}
+var flo = new WeakMap;
+
+function Tus() {
+  let e = Xo().policy,
+    n = flo.get(e),
+    r = cOn.get();
+  if (n !== void 0 || r === null) return n ?? [];
+  let h = r();
+  return flo.set(e, h), h
+}
+
+function Cus(e) {
+  let n = zv() === "remote" && !Yp();
+  return e !== null && (!Uie() || n) ? {
+    ...e,
+    personWritablePolicy: !0
+  } : e
+}
+
+function Rus(e) {
+  let n = Cus(e);
+  try {
+    let r = Tus();
+    return r.length === 0 ? n : {
+      ...n,
+      managedMcpServers: {
+        ...Object.fromEntries(r.map((h) => [h, {}])),
+        ...e?.managedMcpServers
+      }
+    }
+  } catch {
+    return {
+      ...n,
+      managedMcpServersUnreadable: !0
+    }
+  }
+}
+
+function LJt(e) {
+  return e === "policy" ? Rus(be("policySettings")) : be(dXe[e])
+}
+var Aus = Object.freeze(["user", "project", "local", "flag", "policy"]);
+
+function xus() {
+  let e = new Set($o()),
+    n = Ym(),
+    r = czn();
+  return [...r === void 0 ? [] : [{
+    source: "plugin",
+    settings: r
+  }], ...Aus.filter((h) => e.has(dXe[h]) && !(h === "project" && n)).flatMap((h) => {
+    let y = LJt(h);
+    return y === null ? [] : [{
+      source: h,
+      settings: y
+    }]
+  })]
+}
+
+function Iyr(e) {
+  if (Ebe()) return {
+    ...e,
+    layers: []
+  };
+  let {
+    source: n
+  } = e;
+  return {
+    ...e,
+    layers: (n === void 0 ? xus() : [{
+      source: n,
+      settings: LJt(n)
+    }]).map((s) => ({
+      source: s.source,
+      settings: DJt(s.settings)
+    }))
+  }
+}
+async function Mda() {
+  if (!Li("settings.read")) return;
+  let {
+    layers: e = []
+  } = Iyr({}), n = Oyr(), r = await e0e({
+    event: "settings.read",
+    args: {
+      layers: e
+    },
+    caller: Pyr,
+    bottom: {
+      run: () => Promise.resolve(DJt(n))
+    }
+  }).catch((s) => (t(`settings.read: refused to the engine (${d(s)}); the settings' own values stand`), n));
+  return L([...Object.keys(r), ...Object.keys(n)]).flatMap((s) => {
+    let h = ulo(r, s),
+      y = Eus(s, h),
+      S = e.findLast((M) => Object.hasOwn(M.settings, s))?.source,
+      w = S !== void 0 && S !== "plugin",
+      A = Js(h) === Js(ulo(n, s)),
+      O = A || !y.isFit;
+    if (!A && !y.isFit) t(`settings.read: the answer for ${s} is no value the key can hold; the settings' own value stands`, {
+      level: "warn"
+    });
+    return O ? [] : [{
+      key: s,
+      value: y.value,
+      source: w ? dXe[S] : void 0
+    }]
+  })
+}
+
+function Pus(e) {
+  let {
+    source: n,
+    layers: r
+  } = e, s = n === void 0;
+  return new Promise((h) => {
+    h(DJt(s ? Oyr() : r?.[0]?.settings ?? LJt(n)))
+  })
+}
+
+function Dda() {
+  return F6("settings.read", {}, Pyr.origin)
+}
+
+function Ous(e) {
+  return e === void 0 || typeof e === "string" && Object.hasOwn(dXe, e) ? void 0 : `takes { source } naming one of ${Object.keys(dXe).join(", ")} (got ${typeof e==="string"?e:typeof e})`
+}
+var Kd = he(new Map, (e) => e.clear());
+var xl = he(new Map, (e) => e.clear());
+var Vb = 60000;
+
+function Vd(e, n) {
+  return e !== void 0 && n - e.openedAt < Vb ? e : void 0
+}
+
+function El({
+  subject: e,
+  event: n,
+  reason: r
+}, s) {
+  let h = `${e} ${r}`,
+    y = performance.now(),
+    S = Kd.get(h) ?? "",
+    w = Vd(xl.get(S), y) !== void 0,
+    A = w ? void 0 : sR(s()),
+    O = w ? S : `${A?.pluginStorageId??""} ${r}`,
+    M = xl.get(O),
+    j = Vd(M, y),
+    G = j !== void 0;
+  return xl.set(O, G ? {
+    ...j,
+    held: j.held + 1
+  } : {
+    openedAt: y,
+    held: 0
+  }), Kd.set(h, O), G ? void 0 : {
+    hook_event: L2e(n) ? f(n) : b("other"),
+    is_hosted: tn(),
+    suppressed: M?.held ?? 0,
+    ...A && {
+      plugin_id_hash: kZ(A).plugin_id_hash,
+      tier: f(A.tier)
+    }
+  }
+}
+var Yb = Object.freeze(["threw", "budget", "shape", "lingered"]);
+var Tl = he(new Map, (e) => e.clear());
+
+function LPi({
+  plugin: e,
+  event: n,
+  effect: r,
+  skip: s
+}) {
+  if (s?.refusedSubject !== void 0) Tl.set(s.refusedSubject, e);
+  let y = s === void 0 && r === rxs ? "caught" : Yb.find((A) => A === s?.kind);
+  if (y === void 0 || s?.isCallRejected === !0 || n === "engine.create") return;
+  let w = El({
+    subject: e,
+    event: n,
+    reason: y
+  }, () => e);
+  if (w !== void 0) c("plugin_function_hooks_run", y, w)
+}
+var qd = (e) => e.replace(/\s+/g, " ").trim().replace(/\*\//g, "* /");
+
+function Jb(e, n) {
+  let {
+    description: r
+  } = e, h = typeof r === "string" ? qd(r) : "";
+  return h === "" ? "" : `${n}/** ${h} */
+`
+}
+var Mus = (e) => l_r.test(e) ? e : _(e);
+
+function Zb(e) {
+  return typeof e === "string" || typeof e === "number" || typeof e === "boolean" || e === null ? _(e) : "unknown"
+}
+var hH = 32;
+
+function t0e(e, n = "", r = 0) {
+  if (e === !0 || r > hH) return "unknown";
+  if (e === !1) return "never";
+  if (!D(e)) return "unknown";
+  if ("const" in e) return Zb(e.const);
+  if (Array.isArray(e.enum)) return e.enum.map(Zb).join(" | ") || "never";
+  if (Array.isArray(e.anyOf) || Array.isArray(e.oneOf)) {
+    let s = (e.anyOf ?? e.oneOf).map((h) => t0e(h, n, r + 1));
+    return s.length === 0 ? "unknown" : L(s).join(" | ")
+  }
+  if (Array.isArray(e.allOf)) {
+    let s = e.allOf.map((y) => t0e(y, n, r + 1));
+    return s.length === 0 ? "unknown" : s.map((y) => y.includes(" | ") ? `(${y})` : y).join(" & ")
+  }
+  if (Array.isArray(e.type)) return L(e.type.map((s) => t0e({
+    ...e,
+    type: s
+  }, n, r + 1))).join(" | ") || "unknown";
+  switch (e.type) {
+    case "string":
+      return "string";
+    case "number":
+    case "integer":
+      return "number";
+    case "boolean":
+      return "boolean";
+    case "null":
+      return "null";
+    case "array": {
+      if (Array.isArray(e.items)) return `[${e.items.map((y)=>t0e(y,n,r+1)).join(", ")}]`;
+      let s = t0e(e.items, n, r + 1);
+      return s.includes(" | ") || s.includes(" & ") || s.includes("/*") ? `Array<${s}>` : `${s}[]`
+    }
+    case "object":
+    case void 0: {
+      if (!D(e.properties)) {
+        let w = e.type === "object",
+          A = "$ref" in e;
+        return w ? "{}" : A ? `unknown /* $ref ${qd(String(e.$ref))} */` : "unknown"
+      }
+      let s = new Set(Array.isArray(e.required) ? e.required.map(String) : []),
+        h = `${n}  `,
+        y = Object.entries(e.properties).map(([w, A]) => {
+          let O = D(A) ? Jb(A, h) : "",
+            M = s.has(w) ? "" : "?",
+            j = t0e(A, h, r + 1);
+          return `${O}${h}${Mus(w)}${M}: ${j}`
+        });
+      return y.length === 0 ? "{}" : `{
+${y.join(`
+`)}
+${n}}`
+    }
+    default:
+      return "unknown"
+  }
+}
+var _i = (e, n, r = (s) => t0e(s.inputSchema, "    ")) => ["declare module 'claude-code' {", `  interface ${e} {`, ...[...n].sort((s, h) => s.name.localeCompare(h.name)).map((s) => {
+  let y = s.description === void 0 ? "" : Jb({
+      description: s.description
+    }, "    "),
+    S = Mus(s.name);
+  return `${y}    ${S}: ${r(s)}`
+}), "  }", "}"];
+var Dus = (e) => ["// The inputs of the built-in tools this build has, from each tool's", "// input schema. Merges into ToolCallInput (BuiltinToolInputs) so", '// `e.tool === "Bash"` narrows to the tool\'s arguments.', ..._i("BuiltinToolInputs", e), "", "// The structured results of the same tools, from each tool's output", "// schema. Merges into ToolCallResult (BuiltinToolResults) so after", '// `e.tool === "Bash"` the `result` of `next(e)` is the tool\'s record.', ..._i("BuiltinToolResults", e, (n) => n.outputSchema !== void 0 ? t0e(n.outputSchema, "    ") : "unknown"), ""].join(`
+`);
+
+function Lus(e) {
+  try {
+    let n = Bbt(e, {
+        unrepresentable: "any"
+      }),
+      {
+        properties: r
+      } = n;
+    if (typeof r === "object" && r !== null && "codeModeRouted" in r) {
+      let {
+        codeModeRouted: s,
+        ...h
+      } = r;
+      return {
+        ...n,
+        properties: h
+      }
+    }
+    return n
+  } catch (n) {
+    t(`tool types: an output schema did not convert: ${n}`);
+    return
+  }
+}
+var Nus = (e) => e.filter((n) => n.isMcp !== !0).map((n) => ({
+  name: n.name,
+  inputSchema: n.inputJSONSchema ?? o1(n.inputSchema),
+  ...n.outputSchema !== void 0 && {
+    outputSchema: Lus(n.outputSchema)
+  }
+}));
+var Lda = (e) => ["// The inputs of the MCP tools the session had connected when this mod", "// was last saved, from each server's tools/list inputSchema.", "// Merges into the engine's ToolCallInput (types/ McpToolInputs) so", '// `e.tool === "mcp__<server>__<tool>"` narrows to the tool\'s arguments.', "// Written again at a save of the mod with a server connected.", "export {}", ..._i("McpToolInputs", e), ""].join(`
+`);
+
+function Nda(e) {
+  let n = [];
+  for (let r of e) {
+    if (!r.name.startsWith("mcp__")) continue;
+    if (r.inputJSONSchema === void 0) {
+      t(`tool types: ${r.name} has no inputJSONSchema; skipped`);
+      continue
+    }
+    n.push({
+      name: r.name,
+      inputSchema: r.inputJSONSchema,
+      ...r.description !== void 0 && {
+        description: r.description
+      }
+    })
+  }
+  return n
+}
+
+function pce(e) {
+  if (e?.type !== "user") return !1;
+  let n = e.message.content.at(0);
+  if (n?.type !== "tool_result" || n.is_error !== !0) return !1;
+  let r = n.content;
+  if (e.toolUseResult === Yjn) return IV(r, e, ySe);
+  return typeof r === "string" && IV(r, e, DFe) && _Ae.some((s) => r.startsWith(s))
+}
+
+function nw() {
+  let e = new Map,
+    n = 0;
+  return {
+    hold(r, s) {
+      let h = - ++n,
+        y = e.get(r) ?? new Map;
+      return y.set(h, s), e.set(r, y), h
+    },
+    runnerFor: (r, s) => s < 0 ? e.get(r)?.get(s) : void 0,
+    release(r, s) {
+      let h = e.get(r);
+      if (h === void 0) return;
+      for (let y of s) h.delete(y);
+      if (h.size === 0) e.delete(r)
+    },
+    forget(r) {
+      e.delete(r)
+    },
+    count: () => [...e.values()].reduce((r, s) => r + s.size, 0)
+  }
+}
+var ow = (e) => e < 0;
+var yMt = nw();
+var Al = (e, n, r, s) => ({
+  name: e.plugin,
+  tier: "core",
+  async run(h) {
+    let y = Ae().loadedModules.find((w) => w.name === e.plugin);
+    if (!y) throw new $e(`${n}: ${e.plugin}, which drew ${h.element}, is not loaded`);
+    if (!Bf(y)) return s(h);
+    let S = yMt.runnerFor(e.plugin, e.handle);
+    if (S !== void 0) return _Jt.run(void 0, () => S(h)), s(h);
+    y.enter();
+    try {
+      await yr.run(r, () => y.press(e.handle, h))
+    } finally {
+      y.leave()
+    }
+    return s(h)
+  }
+});
+
+function jo() {
+  let e = new Map;
+  return (n) => {
+    let r = e.get(n);
+    if (r) return r;
+    let s = hXe();
+    return e.set(n, s), s
+  }
+}
+
+function bJt(e, n, r) {
+  yMt.release(e, n.filter(ow));
+  let s = n.filter((y) => !ow(y));
+  if (s.length === 0) return;
+  let h = Ae().loadedModules.find((y) => y.name === e);
+  if (!h) {
+    t(`ui.render (${r.component} ${r.requestId}): ${e} drew Buttons but is not loaded; nothing to release`);
+    return
+  }
+  h.releasePresses(s)
+}
+
+function mcs(e, n) {
+  let r = new Map;
+  for (let S of JQe(e)) {
+    let {
+      tag: w,
+      plugin: A,
+      handle: O,
+      element: M,
+      pressableLinks: j,
+      options: G
+    } = S;
+    r.set(A, [...r.get(A) ?? [], {
+      tag: w,
+      handle: O,
+      element: M,
+      ...j !== void 0 && {
+        pressableLinks: j
+      },
+      ...G !== void 0 && {
+        options: G
+      }
+    }])
+  }
+  let h = r.size > 0 ? {
+      ...n,
+      drawn: lua(e)
+    } : n,
+    y = new Map;
+  for (let S of new Set([...poe.holdersOf(n), ...r.keys()])) {
+    let {
+      hosted: w,
+      released: A
+    } = poe.holdDrawing(S, h, r.get(S) ?? []);
+    y.set(S, w), bJt(S, A, n)
+  }
+  return uua(e, (S, w) => y.get(S)?.get(w))
+}
+var sw = ({
+  held: e,
+  surface: n,
+  kind: r,
+  value: s
+}) => ({
+  plugin: e.plugin,
+  element: e.element,
+  component: e.component,
+  requestId: e.requestId,
+  surface: n,
+  kind: r,
+  value: s
+});
+var ef = jo();
+var nf = Sp["ui.input"];
+var iw = ({
+  plugin: e,
+  handle: n,
+  element: r
+}) => poe.heldPress(e, n, r) !== void 0 || r !== void 0 && poe.hostedButtonsOf(e, r).length > 0;
+
+function of(e) {
+  let r = /^www\./i.test(e) ? `http://${e}` : Zmr(e) ?? e;
+  try {
+    return new URL(r).href
+  } catch {
+    return r
+  }
+}
+
+function Mao(e, n) {
+  if (n === void 0) return !0;
+  let r = of(e);
+  return n.some((s) => of(s) === r)
+}
+var aw = (e, n, r) => ({
+  plugin: e.plugin,
+  element: e.element,
+  component: e.component,
+  requestId: e.requestId,
+  surface: n,
+  ...r !== void 0 && {
+    link: {
+      href: r.href
+    }
+  }
+});
+var rf = Sp["ui.press"];
+
+function zH(e, n, r) {
+  if (e === n) return;
+  let s = Map.groupBy(JQe(n), (h) => h.plugin);
+  for (let [h, y] of Map.groupBy(JQe(e), (S) => S.plugin)) {
+    let S = new Set(s.get(h)?.map((w) => w.handle));
+    bJt(h, y.filter((w) => !S.has(w.handle) && !poe.hostedButtonsOf(h, w.element).some((A) => A.button.handle === w.handle)).map((w) => w.handle), r)
+  }
+}
+
+function KH(e, n) {
+  let r = new Map;
+  for (let {
+      plugin: s,
+      handle: h
+    }
+    of JQe(e)) r.set(s, [...r.get(s) ?? [], h]);
+  for (let [s, h] of r) bJt(s, h, n)
+}
+async function Pl(e) {
+  let n = fOn(),
+    {
+      event: r,
+      tag: s,
+      plugin: h,
+      handle: y,
+      element: S,
+      component: w,
+      surface: A
+    } = e,
+    {
+      requestId: O
+    } = e,
+    j = S !== void 0 && w !== void 0 ? {
+      tag: s,
+      plugin: h,
+      element: S,
+      surface: A,
+      component: w,
+      ...O !== void 0 && {
+        requestId: O
+      }
+    } : void 0,
+    G = poe.heldPress(h, y, S) ?? (j === void 0 ? void 0 : poe.heldByKeyOf(j));
+  if (G?.tag !== s) {
+    t(`${r}: no ${s} of ${h} is held under handle ${y}; nothing ran`);
+    return
+  }
+  if (e.admits !== void 0 && !e.admits(G)) {
+    t(`${r}: the ${s} ${h}/${G.element} does not take that value; nothing ran`);
+    return
+  }
+  let N = e.argumentOf(G),
+    Z = performance.now(),
+    te = await _O({
+      e: N,
+      handlers: [...hL(r, void 0, {
+        gestureAt: n
+      }), Al(G, r, n, (Y) => ({
+        element: Y.element,
+        value: Y.value
+      }))],
+      site: e.site
+    });
+  return t(`${r} ${h}/${G.element}${e.detail} in ${G.component} from ${A}: settled in ${(performance.now()-Z).toFixed(1)}ms`), te
+}
+var lw = ({
+  kind: e,
+  value: n,
+  ...r
+}) => Pl({
+  ...r,
+  event: "ui.input",
+  tag: "Input",
+  site: nf,
+  detail: ` (${e})`,
+  argumentOf: (s) => sw({
+    held: s,
+    surface: r.surface,
+    kind: e,
+    value: n
+  })
+});
+var cw = ({
+  held: e,
+  surface: n,
+  value: r
+}) => ({
+  plugin: e.plugin,
+  element: e.element,
+  component: e.component,
+  requestId: e.requestId,
+  surface: n,
+  value: r
+});
+var sf = Sp["ui.select"];
+var uw = ({
+  value: e,
+  ...n
+}) => Pl({
+  ...n,
+  event: "ui.select",
+  tag: "Select",
+  site: sf,
+  detail: "",
+  argumentOf: (r) => cw({
+    held: r,
+    surface: n.surface,
+    value: e
+  }),
+  admits: (r) => r.options === void 0 || r.options.includes(e)
+});
+var dw = (e, n) => yr.run(e, n);
+
+function Ol(e, n, r) {
+  let s = performance.now();
+  return iw(e) ? n(e.plugin)(() => dw(s, () => r(e))) : Promise.resolve(void 0)
+}
+var Pgr = (e) => Ol(e, ef, lw);
+async function Ogr({
+  plugin: e,
+  handle: n,
+  element: r,
+  surface: s,
+  link: h,
+  pagePress: y
+}) {
+  let S = performance.now(),
+    w = poe.heldPress(e, n, r),
+    A = h === void 0 ? "Button" : "Markdown";
+  if (!(w !== void 0 && w.tag === A)) {
+    t(`ui.press: no ${A} of ${e} is held under handle ${n}${r!==void 0&&r!==""?" and the key the press names":""}; nothing ran`);
+    return
+  }
+  if (h !== void 0 && !Mao(h.href, w.pressableLinks)) {
+    t(`ui.press: the Markdown ${e} holds under handle ${n} names that link none of its own; nothing ran`);
+    return
+  }
+  let j = aw(w, s, h),
+    G = performance.now(),
+    N = await _O({
+      e: j,
+      handlers: [...hL("ui.press", void 0, {
+        gestureAt: S
+      }), jN(y, j, Al(w, "ui.press", S, (te) => ({
+        element: te.element
+      })))],
+      site: rf
+    }),
+    Z = h === void 0 ? "" : " (a link)";
+  return t(`ui.press ${e}/${j.element}${Z} in ${j.component} from ${s}: settled in ${(performance.now()-G).toFixed(1)}ms`), N
+}
+var af = jo();
+var Igr = (e) => Ol(e, af, uw);
+var DOn = (e, n) => bce(VE, n, {
+  e
+}).filter((r) => OHt(r.matcherFor(VE), "component", e.component));
+var hcs = "hooks";
+
+function Mgr(e) {
+  let [n, ...r] = e;
+  return n !== void 0 && r.length === 0 ? n : hcs
+}
+var Dgr = (e) => e.map((n) => `${n.name}#${n.environmentId}`).join();
+var SJt = (e) => ({
+  load: Dgr(e),
+  lead: Mgr(e.map((n) => n.name))
+});
+var fTe = (e, n) => SJt(DOn(e, n));
+var gcs = (e, n) => ({
+  name: "core",
+  isCore: !0,
+  budgetMs: 0,
+  run: (r) => Promise.resolve({
+    type: "engine",
+    ref: e.keep(n(r), void 0)
+  })
+});
+var Lgr = Sp["ui.render"];
+
+function ycs() {
+  let e = new WeakMap;
+  return {
+    get: (n) => e.get(n),
+    set: (n, r) => {
+      e.set(n, r)
+    }
+  }
+}
+var Jut = ycs();
+var wJt = (e, n) => Jut.get(e)?.of(n)?.input;
+var pTe = (e) => e.replace(Ez, "?");
+var LOn = (e) => dL.has(`noted ${e}`) && (dL.has(e) || !wTe());
+var Ngr = (e, n) => `ui.render (${e}): ${n}`;
+
+function XDe({
+  key: e,
+  lead: n,
+  text: r
+}) {
+  let s = `noted ${e}`;
+  if (!dL.has(s)) dL.add(s), t(`${n}: ${r}`, {
+    level: "warn"
+  });
+  D6({
+    key: e,
+    lead: n,
+    text: r
+  })
+}
+
+function kJt(e, n) {
+  let r = vgt.has(e.component);
+  return [Ae().loadedModules.map((s) => `${s.name}#${s.environmentId}`).join(), r ? e.component : `${e.component} ${e.requestId}`, n].join(" ")
+}
+
+function MPi({
+  input: e,
+  drawnPlain: n,
+  origin: r
+}) {
+  let s = kJt(e, Mxr(n));
+  if (LOn(s)) return;
+  XDe({
+    key: s,
+    lead: fTe(e, r).lead,
+    text: Ngr(e.component, Dxr(n))
+  })
+}
+
+function DPi({
+  input: e,
+  drawnPlain: n,
+  origin: r
+}) {
+  let s = kJt(e, `${e.surface} ${Lxr(n)}`);
+  if (LOn(s)) return;
+  XDe({
+    key: s,
+    lead: fTe(e, r).lead,
+    text: Ngr(e.component, Nxr(n))
+  })
+}
+var FWe = Object.freeze({
+  AbovePrompt: "nothing was drawn",
+  Backdrop: "nothing was drawn",
+  Pane: "the pane was closed"
+});
+
+function Dao(e, n) {
+  let r = FWe[e] !== void 0,
+    s = r ? "tree_refused_left_empty" : "tree_refused",
+    h = El({
+      subject: e,
+      event: VE,
+      reason: s
+    }, n);
+  if (h === void 0) return;
+  r ? m("plugin_function_hooks_draw", s, h) : c("plugin_function_hooks_draw", s, h)
+}
+
+function NPi(e, n) {
+  let {
+    component: r
+  } = e, s = Lgr.refusedSubject?.(e) ?? r, h = Tl.get(s);
+  if (Tl.delete(s), h !== void 0 && FWe[r] !== void 0 && n.type === "engine") Dao(r, () => h)
+}
+
+function _cs(e, n) {
+  let s = FWe[e] !== void 0 ? "nothing was drawn" : "the engine drew its own";
+  return `ui.render (${e}) refused: ${n}; ${s}`
+}
+
+function FPi({
+  input: e,
+  problem: n,
+  origin: r
+}) {
+  if (!wTe()) return;
+  let {
+    load: s,
+    lead: h
+  } = fTe(e, r);
+  D6({
+    key: [s, e.component, n].join(" "),
+    lead: h,
+    text: _cs(e.component, n)
+  })
+}
+
+function Fgr({
+  input: e,
+  origin: n
+}, r, s) {
+  let {
+    load: h,
+    lead: y
+  } = fTe(e, n);
+  XDe({
+    key: [h, e.component, r].join(" "),
+    lead: y,
+    text: s
+  })
+}
+var bcs = (e, {
+  written: n,
+  drawn: r
+}) => `ui.render (${e}): ${n} characters of text are drawn up to the first ${r}`;
+var HPi = (e) => Fgr(e, "own props", `ui.render (${e.input.component}): props.${e.names.join(", props.")} rewritten with more than ${yHt} characters of keys and short strings, or nested past ${Tbe} deep; the engine's own is drawn`);
+var $Pi = (e) => Fgr(e, "text cut", bcs(e.input.component, e.clipped));
+var Lao = 256;
+
+function Hgr(e, n) {
+  if (typeof e === "string") return e.length <= Lao ? e.length : 0;
+  let r = Array.isArray(e);
+  if (!r && !BS(e)) return 0;
+  return n > Tbe ? 1 / 0 : r ? nT(e).reduce((h, y) => h + Hgr(y, n + 1), 0) : Object.entries(e).reduce((h, [y, S]) => h + y.length + Hgr(S, n + 1), 0)
+}
+
+function $gr(e, n) {
+  if (typeof e === "string") return e.length <= Lao ? e : n.shown(e, " ");
+  if (Array.isArray(e)) {
+    let y = nT(e),
+      S = y.map((A) => $gr(A, n));
+    return S.every((A, O) => A === y[O]) ? e : S
+  }
+  if (!BS(e)) return e;
+  let r = Object.entries(e),
+    s = r.map(([y, S]) => [y, $gr(S, n)]);
+  return s.every(([, y], S) => y === r[S]?.[1]) ? e : Object.fromEntries(s)
+}
+var Nao = (e) => Hrn(e).reduce((n, r) => n + r.length, 0);
+
+function UPi(e, n, r) {
+  let s = n.props,
+    h = Wxr(),
+    y = Object.entries(e.props).flatMap(([A, O]) => {
+      if (O === s[A] || Nao(O) <= Nao(s[A])) return [];
+      let j = Hgr(O, 0) > yHt,
+        G = j ? s[A] : $gr(O, h);
+      return G === O ? [] : [{
+        key: A,
+        drawn: G,
+        isOwn: j
+      }]
+    }),
+    S = y.filter((A) => A.isOwn).map((A) => A.key);
+  if (h.isCut()) r.cut({
+    written: h.written(),
+    drawn: yHt
+  });
+  if (S.length > 0) r.own(S);
+  return y.length === 0 ? e : {
+    ...e,
+    props: {
+      ...e.props,
+      ...Object.fromEntries(y.map((A) => [A.key, A.drawn]))
+    }
+  }
+}
+var Scs = () => new WeakMap;
+var Fao = Scs();
+
+function Hao(e, n) {
+  let r = n && Jut.get(n),
+    s = (r && Fao.get(r))?.flatMap((y) => e.some((S) => S.name === y) ? [y] : y.split("+")),
+    h = e.filter((y) => s?.includes(y.name));
+  return h.length === 0 ? e : h
+}
+var Ugr = (e, n) => [n.load, e, "threw while drawn"].join(" ");
+
+function NOn(e, n, r) {
+  let s = `reported ${r} ${Ugr(e,n)}`;
+  if (dL.has(s)) return null;
+  dL.add(s);
+  let h = sR(n.lead),
+    y = h && kZ(h),
+    S = {
+      ...y,
+      component: f(e)
+    },
+    w = r === "Client";
+  return !w && FWe[e] !== void 0 ? m("plugin_function_hooks_draw", "threw_while_drawn", S) : c("plugin_function_hooks_draw", w ? "client_threw_while_drawn" : "threw_while_drawn", S), `ui.render (${e}): a plugin's ${r} threw while drawn (plugin ${y?.plugin_name_redacted??"unattributed"}, ${y?.provenance??"unattributed"})`
+}
+import {
+  isDeepStrictEqual as yw
+} from "util";
+var BPi = (e) => e.filter((n, r) => {
+  let s = e[r + 1],
+    h = s !== void 0 && yw(n.received, s.received) && yw(n.returned, s.returned);
+  return n.plugin !== Wse && n.outcome !== "skipped" && !h
+}).map((n) => n.plugin);
+var wcs = (e, n) => `ui.render (${e}) threw while drawn: ${n}; ` + (FWe[e] ?? "the engine drew its own");
+
+function Bgr({
+  component: e,
+  teller: n,
+  error: r
+}) {
+  let s = Ugr(e, n);
+  if (LOn(s)) return;
+  XDe({
+    key: s,
+    lead: n.lead,
+    text: wcs(e, pTe(String(d(r))))
+  })
+}
+var jgr = (e, n) => SJt(Hao(e, n));
+
+function Wgr(e) {
+  return `Box borderStyle ${typeof e==="string"?`"${B1(e)}" is not a border style`:`is ${vz(e)}, not a style name`} (the styles are ${[...nUn].join(", ")}); the Box is drawn with no border`
+}
+
+function jPi({
+  input: e,
+  style: n,
+  origin: r
+}) {
+  let s = kJt(e, "borderStyle");
+  if (LOn(s)) return;
+  XDe({
+    key: s,
+    lead: fTe(e, r).lead,
+    text: Ngr(e.component, Wgr(n))
+  })
+}
+async function kcs({
+  input: e,
+  signal: n,
+  origin: r
+}) {
+  let s = nZe(),
+    h = (re) => $Pi({
+      input: e,
+      clipped: re,
+      origin: r
+    }),
+    y = gcs(s, (re) => UPi(re, e, {
+      cut: h,
+      own: (_e) => HPi({
+        input: e,
+        names: _e,
+        origin: r
+      })
+    })),
+    S = Ebe() ? [] : [y],
+    w = Fv(w2(e), e, () => $ut(e)),
+    A = iu({
+      drawing: w
+    }),
+    O = [],
+    M = await hr.run(A, () => _O({
+      e,
+      handlers: [...hL(VE, r, {
+        e
+      }), ...S],
+      site: Lgr,
+      signal: n,
+      ...e.surface === "vscode" && {
+        isUnfolded: !0
+      },
+      origin: TZ(r),
+      trace: (re) => {
+        O = re
+      }
+    })).finally(() => {
+      w.isInFlight = !1, A.isEnded = !0, A.values = void 0
+    });
+  if (e.requestId !== "" && !n.aborted) Yh(w);
+  let G = O2e(M),
+    N = e.component === x2e,
+    Z = 0,
+    te = gHt(G, e.component, {
+      surface: e.surface,
+      note: (re) => t(`ui.render (${e.component}): ${pTe(re)}`),
+      ...N && {
+        clientRows: (re) => {
+          let _e = jse.clientRows(r4i(e, re));
+          return Z += _e, _e
+        },
+        measured: (re) => jse.recordOwn(e, re - Z)
+      }
+    });
+  if (NPi(e, G), te !== void 0) return t(`ui.render (${e.component}): the chain settled on a tree that does not validate (${pTe(te)}); drawing the engine's own`, {
+    level: "warn"
+  }), FPi({
+    input: e,
+    problem: te,
+    origin: r
+  }), KH(G, e), Dao(e.component, () => fTe(e, r).lead), mfe;
+  let Y = _Un(CSo(G), (re) => jPi({
+      input: e,
+      style: re,
+      origin: r
+    })),
+    ne = vSo(Y, e.surface),
+    se = $xr(ne, e.surface, (re) => DPi({
+      input: e,
+      drawnPlain: re,
+      origin: r
+    })),
+    ae = Hxr(JAs(se, h), (re) => MPi({
+      input: e,
+      drawnPlain: re,
+      origin: r
+    }));
+  return zH(G, ae, e), Jut.set(ae, s), Fao.set(s, BPi(O)), ae
+}
+
+function vcs() {
+  let e = new WeakMap;
+  return (n) => {
+    let r = e.get(n);
+    if (r !== void 0) return r;
+    let s = nt(Js(n));
+    return e.set(n, s), s
+  }
+}
+var Ecs = vcs();
+var zgr = (e) => [e.viewport?.columns ?? "", e.viewport?.isFullscreen ?? "", Ecs(e.props)].join("\x00");
+var $ao = (e, n, r) => e.settled !== void 0 && e.propsKey === n && e.versions === AW() && e.version === r;
+var Qut = (e, n) => MT(Pa(e, $ut(n), wu(n)), e, w2(n));
+var JDe = (e) => Qut(AW().getState(), e);
+var Uao = (e, n) => n.then((r) => {
+  let s = mcs(r, {
+      component: e.component,
+      requestId: e.requestId,
+      surface: e.surface
+    }),
+    h = Jut.get(r);
+  if (h !== void 0) Jut.set(s, h);
+  return s
+});
+var Tcs = 500;
+
+function Bao(e) {
+  let n = Object.hasOwn(e.props, "onScreen") ? e.props.onScreen : void 0,
+    r = typeof n === "object" ? n : void 0,
+    s = r && "first" in r ? r.first : null,
+    h = r && "last" in r ? r.last : null,
+    y = r && "of" in r ? r.of : null;
+  return typeof s === "number" && typeof h === "number" && typeof y === "number" ? {
+    first: s,
+    last: h,
+    of: y
+  } : n === null ? null : void 0
+}
+
+function WPi(e, n) {
+  let r = AW();
+  return {
+    ...e,
+    versions: r,
+    engineVersion: r.getState().get(VE) ?? 0,
+    heldRows: void 0,
+    drawn: n,
+    settled: void 0
+  }
+}
+
+function zPi() {
+  let e = new Map,
+    n, r = 0,
+    s = 0;
+  return {
+    get: (h) => e.get(h),
+    set: (h, y) => {
+      if (y.versions !== n || y.engineVersion !== r) e.clear(), n = y.versions, r = y.engineVersion;
+      e.delete(h), e.set(h, y);
+      for (let w of e.keys()) {
+        if (e.size <= Tcs) break;
+        e.delete(w)
+      }
+    },
+    drop: (h, y) => {
+      if (e.get(h) === y) e.delete(h)
+    },
+    size: () => e.size,
+    reused: () => s,
+    countReuse: () => {
+      s += 1
+    }
+  }
+}
+var jao = (e, n) => `${aca(n)}\x00${zgr(e)}`;
+
+function Ccs() {
+  let e = zPi();
+  async function n(h, {
+    signal: y,
+    origin: S
+  }) {
+    if (Ebe()) return Uao(h, kcs({
+      input: h,
+      signal: y,
+      origin: S
+    }));
+    let w = w2(h),
+      A = jao(h, S),
+      O = JDe(h),
+      M = h.requestId === "" ? void 0 : e.get(w);
+    if (M && $ao(M, A, O)) return e.countReuse(), t(`ui.render (${h.component} ${h.requestId}): ${h.surface} reuses its settled evaluation (one dispatch per draw)`), Uao(h, M.drawn);
+    let j = Date.now(),
+      N = wu(h) === "live" ? $ut(h) : [],
+      Z = M === void 0,
+      te = kcs({
+        input: h,
+        signal: y,
+        origin: S
+      });
+    if (h.requestId !== "") {
+      let Y = WPi({
+        propsKey: A,
+        version: O,
+        onScreen: Bao(h)
+      }, te);
+      e.set(w, Y), te.then((ne) => {
+        if (Y.settled = ne, !Z) dT(N, Date.now() - j)
+      }, (ne) => t(`ui.render (${h.component} ${h.requestId}): evaluation failed: ${d(ne)}`, {
+        level: "error"
+      })), y.addEventListener("abort", () => {
+        if (!Y.settled) e.drop(w, Y), pT(N, Date.now() - j)
+      }, {
+        once: !0
+      })
+    }
+    return Uao(h, te)
+  }
+
+  function r(h, y) {
+    let S = e.get(w2(h));
+    return h.requestId !== "" && S !== void 0 && $ao(S, S.propsKey, JDe(h)) && S.propsKey === jao({
+      viewport: h.viewport,
+      props: {
+        ...h.props,
+        onScreen: S.onScreen
+      }
+    }, y) ? S : void 0
+  }
+
+  function s(h, y) {
+    if (h.requestId === "") return;
+    let S = e.get(w2(h));
+    return S !== void 0 && $ao(S, jao(h, y), JDe(h)) ? S.settled : void 0
+  }
+  return {
+    uiRender: n,
+    settled: s,
+    held: (h) => e.get(w2(h))?.settled,
+    askedOnScreen: (h, y) => r(h, y)?.onScreen,
+    heldRowsOf: (h, y) => r(h, y)?.heldRows,
+    noteHeldRows: (h, y) => {
+      let S = e.get(w2(h));
+      if (S?.onScreen === null) S.heldRows = y
+    },
+    noteThrown: (h, y) => {
+      let S = e.get(w2(h));
+      if (S !== void 0 && (S.settled === void 0 || Jut.get(S.settled) !== Jut.get(y))) return;
+      if (S !== void 0) S.settled = mfe, S.drawn = Promise.resolve(mfe);
+      mcs(mfe, h)
+    },
+    reuseCount: e.reused,
+    sharedCount: e.size
+  }
+}
+var _Mt = "desktop";
+var Rcs = (e) => ({
+  plugin: e.plugin,
+  element: e.element,
+  component: e.component,
+  requestId: e.requestId,
+  surface: _Mt
+});
+var FOn = ({
+  component: e,
+  requestId: n
+}) => ({
+  surface: "desktop",
+  component: e,
+  requestId: n
+});
+var Ggr = (e) => [e.plugin, e.module, e.key].join("\x00");
+var Vgr = (e, n) => `${e}\x00${n}`;
+var Acs = 1024;
+var xcs = (e, n) => () => Qut(e, n);
+
+function Pcs() {
+  let e = new Map,
+    n = 0;
+
+  function r(s, h) {
+    e.delete(s), e.set(s, h);
+    let [y] = e.keys();
+    if (e.size > Acs && y !== void 0) e.delete(y)
+  }
+  return {
+    begin(s, h) {
+      let y = Vgr(s, h),
+        {
+          keys: S = new Map,
+          failed: w = new Map
+        } = e.get(y) ?? {};
+      return n += 1, r(y, {
+        generation: n,
+        keys: S,
+        failed: w
+      }), {
+        instance: y,
+        generation: n,
+        version: xcs(AW().getState(), FOn({
+          component: s,
+          requestId: h
+        }))
+      }
+    },
+    record({
+      instance: s,
+      generation: h,
+      version: y
+    }, S) {
+      let w = e.get(s);
+      if (w?.generation !== h) return;
+      if (S.length === 0) {
+        e.delete(s);
+        return
+      }
+      let A = y(),
+        O = S.map(Ggr);
+      r(s, {
+        generation: h,
+        keys: new Map(O.map((M) => [M, w.failed.has(M) ? A : w.keys.get(M) ?? A])),
+        failed: new Map(O.filter((M) => w.failed.get(M) === A).map((M) => [M, A]))
+      })
+    },
+    isDrawn({
+      component: s,
+      requestId: h,
+      ...y
+    }) {
+      let S = Vgr(s, h),
+        w = e.get(S),
+        A = w?.keys.has(Ggr(y)) === !0;
+      if (A) r(S, w);
+      return A
+    },
+    toldFailed({
+      component: s,
+      requestId: h,
+      ...y
+    }) {
+      let S = Vgr(s, h),
+        w = e.get(S),
+        A = Ggr(y),
+        O = FOn({
+          component: s,
+          requestId: h
+        }),
+        M = w?.keys.get(A);
+      if (w === void 0 || M === void 0) return;
+      if (w.failed.has(A)) return () => JDe(O);
+      return r(S, {
+        ...w,
+        failed: new Map([...w.failed, [A, JDe(O)]])
+      }), () => M
+    },
+    count: () => e.size
+  }
+}
+var eXe = Pcs();
+
+function Kgr(e, n, r) {
+  let s = r(n);
+  if (!s) t(`${e}: no desktop Client ${n.plugin}/${n.key} (${n.module}) is drawn in ${n.component} ${n.requestId}; nothing ran`);
+  return s
+}
+var bw = Object.freeze({
+  name: "core",
+  isCore: !0,
+  budgetMs: 0,
+  run: () => Promise.resolve({})
+});
+var ww = Sp["ui.fault"];
+
+function kw({
+  site: e,
+  bornAt: n
+}) {
+  let r = Jw().faultRuns.get(w2(e))?.versions;
+  return !(r?.has(n) && r.has(JDe(e)))
+}
+var xw = (e, n) => bce("ui.fault", void 0, {
+  only: e
+}).some((r) => {
+  let s = r.matcherFor("ui.fault");
+  try {
+    return s === void 0 || lon(s, n)
+  } catch (h) {
+    return t(`hooks module ${r.label}: on('ui.fault') matcher threw on the host (${d(h)}); taken as heard`), !0
+  }
+});
+var Rw = 4096;
+
+function vw(e, n = tao) {
+  let {
+    faultRuns: r
+  } = Jw(), s = w2(e), h = r.get(s), y = h?.versions.has(JDe(e)) === !0;
+  try {
+    n(e)
+  } finally {
+    r.delete(s), r.set(s, {
+      site: e,
+      versions: new Set([...y ? h.versions : [], JDe(e)])
+    });
+    let [S] = r;
+    if (r.size > Rw && S !== void 0) r.delete(S[0]), Kh(S[1].site)
+  }
+}
+var Ew = ({
+  plugin: e,
+  fault: n,
+  sites: r
+}, s) => zh(() => {
+  for (let h of xw(e, n) ? r() : []) zh(() => {
+    if (h.site.requestId !== "" && kw(h)) vw(h.site, s)
+  })
+});
+async function Tw(e, n) {
+  let {
+    plugin: r,
+    fault: s
+  } = e, h = performance.now();
+  try {
+    let y = await _O({
+        e: s,
+        handlers: [...hL("ui.fault", void 0, {
+          only: r
+        }), bw],
+        site: ww
+      }),
+      S = (performance.now() - h).toFixed(1);
+    return t(`ui.fault ${r}/${s.element} (${s.module}) in ${s.component} from ${s.surface}, ${s.phase}: dispatched, settled in ${S}ms`), y ?? {}
+  } finally {
+    Ew(e, n)
+  }
+}
+
+function Wao(e = tao) {
+  let n = jo();
+  return (r) => n(r.plugin)(() => Tw(r, e))
+}
+var lf = 500;
+
+function Aw(e) {
+  let n = e.replace(Ez, " ");
+  return n.length > lf ? `${Q(n,lf)}\u2026` : n
+}
+var zao = "the module failed without a message";
+
+function Gao(e, n, r) {
+  let s = `${e}: `,
+    h = `Client ${n}: `,
+    y = Aw(r),
+    w = y.startsWith(s) ? y.slice(s.length) : y,
+    O = w.startsWith(h) ? w.slice(h.length) : w;
+  return O.trim() === "" ? zao : O
+}
+var cf = "\u2026";
+var Pw = new RegExp(String.raw`[\u{2028}\u{2029}]`, "gu");
+var uf = 200;
+
+function Ow(e, n) {
+  let r = Gao(e.plugin, e.module, n).replace(Pw, " ");
+  return r.length > uf ? Q(r, uf - cf.length) + cf : r
+}
+var Ocs = (e, n, r) => ({
+  plugin: e.plugin,
+  fault: {
+    surface: n,
+    component: e.component,
+    requestId: e.requestId,
+    element: e.key,
+    module: e.module,
+    phase: r.phase,
+    reason: Ow(e, r.reason)
+  },
+  sites: r.sites
+});
+
+function GPi(e = eXe, n = Wao()) {
+  return async ({
+    address: r,
+    report: s
+  }) => {
+    let h = Kgr("ui.fault", r, e.isDrawn) ? e.toldFailed(r) : void 0;
+    if (h === void 0) return;
+    return n(Ocs(r, "desktop", {
+      ...s,
+      sites: () => e.isDrawn(r) ? [{
+        site: FOn(r),
+        bornAt: h()
+      }] : []
+    }))
+  }
+}
+import {
+  createHash as uU
+} from "crypto";
+import {
+  relative as V$,
+  sep as q$
+} from "path";
+var Ics = "surface:///";
+var vJt = (e, n) => Ics + V$(n.pluginRoot, e).split(q$).map(encodeURIComponent).join("/");
+
+function Mcs(e) {
+  let n = [];
+  return KF(e, ({
+    node: r
+  }) => {
+    let h = r.type === "ImportDeclaration" || r.type === "ExportAllDeclaration" || r.type === "ExportNamedDeclaration" || r.type === "ImportExpression" ? r.source : void 0;
+    if (h === void 0 || h === null) return;
+    if (h.type === "Literal" && typeof h.value === "string") {
+      let {
+        start: y,
+        end: S
+      } = h;
+      n.push({
+        kind: "literal",
+        spelled: h.value,
+        start: y,
+        end: S
+      })
+    } else if (r.type === "ImportExpression") n.push({
+      kind: "computed",
+      start: h.start,
+      end: h.end
+    })
+  }), n.toSorted((r, s) => r.start - s.start)
+}
+var qgr = "surface-unlinked:///";
+
+function Dcs(e, n) {
+  let r = Mxs().parse(e, {
+      ecmaVersion: "latest",
+      sourceType: "module"
+    }),
+    s = _(`${qgr}computed#`),
+    h = [],
+    y = e;
+  for (let S of Mcs(r).toReversed()) {
+    let w = S.end + h.filter((j) => j.span.start >= S.start && j.span.end <= S.end).reduce((j, G) => j + G.grewBy, 0),
+      A = y.slice(S.start, w),
+      M = S.kind === "literal" ? _(n(S.spelled)) : `(${s} + String(${A}))`;
+    y = y.slice(0, S.start) + M + y.slice(w), h.push({
+      span: S,
+      grewBy: M.length - A.length
+    })
+  }
+  return y
+}
+var HOn = "claude:hooks-types";
+var Lcs = (e) => qgr + encodeURIComponent(e);
+
+function Ncs(e, n, r) {
+  let s = new Map(r.filter((S) => S.from === e.file).map((S) => [S.spelled, S.file])),
+    h = F4i(e.file, e.source, n.pluginName);
+
+  function y(S) {
+    let w = s.get(S),
+      O = S === AHt ? HOn : Lcs(S);
+    return w === void 0 ? O : vJt(w, n)
+  }
+  return {
+    key: vJt(e.file, n),
+    source: Dcs(h, y)
+  }
+}
+var Ygr = "claude:surface-runtime";
+var Vao = String.raw`((host, limits) => {
+  const { freeze, defineProperty, defineProperties, keys: _keys } = Object
+  const _isArray = Array.isArray
+  const _Map = Map
+  const _stringify = JSON.stringify
+  const _Error = Error
+  const _TypeError = TypeError
+  const _isFinite = Number.isFinite
+  const _String = String
+  const _Promise = Promise
+  const _resolve = _Promise.resolve.bind(_Promise)
+  const _then = _Promise.prototype.then
+  const _h = h
+  const instances = new _Map()
+  let pending = null
+
+  // surface.elements (types/ ClientElements), the one table every
+  // instance's surface hands out: the terminal's names less Client (nothing
+  // nests in a Client), Raster and Image, each a constructor over this
+  // environment's h, so <Box> from it and h('Box', ...) are one tree. What
+  // $.ui.resolve(e) is to a hooks module, with no $ and no hook between. A
+  // Markdown draws here without onLinkPress: a surface module answers its
+  // own pointer (surface.onPointer), and exportTree refuses one that has it.
+  const ELEMENT_NAMES =
+    ['Box', 'Text', 'Button', 'Input', 'Select', 'Link', 'Code', 'Markdown']
+  const elements = { __proto__: null }
+  for (const name of ELEMENT_NAMES) {
+    elements[name] = freeze(props => {
+      const { children, ...rest } = props ?? {}
+      const childList = children === undefined
+        ? []
+        : _isArray(children) ? children : [children]
+      return _h(name, rest, ...childList)
+    })
+  }
+  freeze(elements)
+
+  // The trampoline. Client code that calls it finds nothing staged.
+  defineProperty(globalThis, '__surface__', {
+    value: freeze({
+      __proto__: null,
+      run: () => {
+        const staged = pending
+        pending = null
+        return staged === null ? undefined : staged()
+      },
+    }),
+    enumerable: false,
+    writable: false,
+    configurable: false,
+  })
+
+  const fail = (message, Ctor = _Error) => { throw new Ctor(message) }
+  const instanceOf = id => instances.get(id) ?? fail('no client instance ' + id)
+  const listener = (fn, what) =>
+    typeof fn === 'function' ? fn : fail(what + ' takes a function', _TypeError)
+
+  function surfaceOf(id, instance) {
+    const surface = { __proto__: null }
+    defineProperties(surface, {
+      elements: { value: elements, enumerable: true },
+      state: { get: () => instance.state, enumerable: true },
+      columns: { get: () => instance.columns, enumerable: true },
+      rows: { get: () => instance.rows, enumerable: true },
+      setState: {
+        value: next => {
+          instance.state = next
+          if (!instance.scheduled) {
+            host.schedule(id)
+            instance.scheduled = true
+          }
+        },
+        enumerable: true,
+      },
+      every: {
+        value: (ms, fn) => {
+          listener(fn, 'every')
+          const interval =
+            typeof ms === 'number' && _isFinite(ms) && ms > 0 ? ms : 0
+          const timer = host.startTimer(id, interval)
+          instance.timers.set(timer, fn)
+          return () => {
+            if (instance.timers.delete(timer)) host.stopTimer(id, timer)
+          }
+        },
+        enumerable: true,
+      },
+      onPointer: {
+        value: fn => {
+          instance.pointer = listener(fn, 'onPointer')
+          return () => { if (instance.pointer === fn) instance.pointer = null }
+        },
+        enumerable: true,
+      },
+      onKey: {
+        value: fn => {
+          instance.key = listener(fn, 'onKey')
+          return () => { if (instance.key === fn) instance.key = null }
+        },
+        enumerable: true,
+      },
+      post: {
+        value: data => {
+          let text
+          try { text = _stringify(data) } catch (error) {
+            fail('post takes plain data (' + error.message + ')', _TypeError)
+          }
+          if (typeof text !== 'string') {
+            fail('post takes plain data, not ' + typeof data, _TypeError)
+          }
+          host.post(id, text)
+        },
+        enumerable: true,
+      },
+    })
+    return freeze(surface)
+  }
+
+  const PRESSABLE = {
+    __proto__: null, Button: 'onPress', Input: 'onEvent', Select: 'onEvent',
+  }
+
+  // The module's tree read HERE, never by the host: every node, every
+  // props value and every hover rebuilt into fresh plain structures of ours
+  // (getters run here, under the call budget; a toJSON is never consulted,
+  // functions and undefined drop), each element closure held under a number
+  // of the instance's in its place, then one JSON text of those fresh
+  // structures alone. The host parses that text; nothing of the module's
+  // crosses.
+  function exportTree(instance, tree) {
+    const budget = { nodes: 0, values: 0 }
+    const tooMany = () =>
+      fail('props of more than ' + limits.values + ' values')
+    // Mirrors the host's plainDataProblem, one props payload at a time (the
+    // count restarts per element; the tree's own bound is limits.nodes):
+    // every value counts, an array by its length up front, a hole refused,
+    // so an oversize or sparse array fails by name at once.
+    const propsOf = value => {
+      budget.values = 0
+      return plain(value, 0)
+    }
+    const plain = (value, depth) => {
+      if (++budget.values > limits.values) tooMany()
+      if (value === null) return null
+      const kind = typeof value
+      if (kind === 'string' || kind === 'boolean') return value
+      if (kind === 'number') return _isFinite(value) ? value : null
+      if (kind !== 'object') return undefined
+      if (depth > limits.dataDepth) {
+        fail('props nesting deeper than ' + limits.dataDepth)
+      }
+      if (_isArray(value)) {
+        if (value.length > limits.values - budget.values) tooMany()
+        const out = []
+        for (let i = 0; i < value.length; i++) {
+          if (!(i in value)) fail('props with a hole in an array')
+          const item = plain(value[i], depth + 1)
+          out.push(item === undefined ? null : item)
+        }
+        return out
+      }
+      const out = {}
+      for (const key of _keys(value)) {
+        const item = plain(value[key], depth + 1)
+        if (item !== undefined) {
+          defineProperty(out, key, {
+            value: item, enumerable: true, writable: true, configurable: true,
+          })
+        }
+      }
+      return out
+    }
+    const walk = (node, depth) => {
+      if (typeof node === 'string') return node
+      if (typeof node !== 'object' || node === null || _isArray(node)) {
+        fail('a child that is neither a string nor an element')
+      }
+      if (++budget.nodes > limits.nodes) {
+        fail('a tree of more than ' + limits.nodes + ' nodes')
+      }
+      if (depth > limits.depth) fail('a tree deeper than ' + limits.depth)
+      const tag = node.type
+      if (typeof tag !== 'string') fail('an element without a type')
+      if (tag === 'Client') {
+        fail('a Client inside the tree; a surface module draws elements, ' +
+          'not nested Clients')
+      }
+      if (tag === 'Raster') {
+        fail('a Raster inside the tree; a hooks module draws a Raster and ' +
+          'repaints it with $.ui.blit, a surface module draws elements')
+      }
+      if (tag === 'Image') {
+        fail('an Image inside the tree; a hooks module draws an Image, a ' +
+          'surface module draws elements')
+      }
+      if (tag === 'engine') {
+        fail('an engine node inside the tree; nothing of the engine draws ' +
+          'inside a Client')
+      }
+      if (tag === 'Markdown' && node.press !== undefined) {
+        fail('a Markdown with onLinkPress inside the tree; a surface ' +
+          'module answers its own pointer with surface.onPointer')
+      }
+      const out = { type: tag }
+      if (node.props !== undefined) out.props = propsOf(node.props)
+      if (node.hover !== undefined) out.hover = propsOf(node.hover)
+      const closureKey = PRESSABLE[tag]
+      if (closureKey !== undefined) {
+        const closure = node[closureKey]
+        if (typeof closure !== 'function') {
+          fail('a ' + tag + ' without its handler (build it with ' +
+            'surface.elements.' + tag + ')')
+        }
+        const handle = ++instance.heldCounter
+        instance.held.set(handle, closure)
+        out.held = handle
+        if (tag !== 'Button') return out
+      }
+      const children = node.children
+      if (children !== undefined) {
+        if (!_isArray(children)) fail('children that are not an array')
+        const copied = []
+        for (let i = 0; i < children.length; i++) {
+          copied.push(walk(children[i], depth + 1))
+        }
+        out.children = copied
+      }
+      return out
+    }
+    const text = _stringify(walk(tree, 0))
+    if (text.length > limits.chars) {
+      fail('a tree serializing to more than ' + limits.chars + ' characters')
+    }
+    return text
+  }
+
+  // What a rejection says, read here and handed to the host as text.
+  const reasonText = error => {
+    try {
+      const isError = typeof error === 'object' && error !== null
+      const message = isError ? error.message : error
+      return typeof message === 'string' ? message : _String(message)
+    } catch {
+      return 'a rejection that could not be read'
+    }
+  }
+
+  // Tells the host a fault. A desktop frame is served this script as it is,
+  // and one shipped before \`fault\` hands over a host without it: there the
+  // reason is thrown on whole, as it came out when nobody heard.
+  const faulted = (id, error) => {
+    if (typeof host.fault !== 'function') throw error
+    host.fault(id, reasonText(error))
+  }
+
+  // What a user function returned, heard when it is a promise: an async
+  // handler that throws rejects one, and a rejection nobody hears is the
+  // process's to end a session over. Heard, it is the instance's fault.
+  const heard = (id, out) => {
+    const isHeld =
+      (typeof out === 'object' && out !== null) || typeof out === 'function'
+    if (!isHeld) return out
+    try {
+      _then.call(_resolve(out), undefined, error => faulted(id, error))
+    } catch (error) {
+      faulted(id, error)
+    }
+    return out
+  }
+
+  // Every user function is called bare (no receiver): its \`this\` is
+  // undefined, never the instance record. Only render answers anything: the
+  // tree's JSON text; a listener's return value stays here, heard.
+  function act(id, instance, kind, payload) {
+    switch (kind) {
+      case 'render': {
+        instance.scheduled = false
+        const render = instance.fn
+        return exportTree(
+          instance,
+          heard(id, render(instance.props, instance.surface)),
+        )
+      }
+      case 'pointer': {
+        const listener = instance.pointer
+        if (listener !== null) heard(id, listener(payload))
+        return undefined
+      }
+      case 'key': {
+        const listener = instance.key
+        if (listener !== null) heard(id, listener(payload))
+        return undefined
+      }
+      case 'tick': {
+        const fn = instance.timers.get(payload)
+        if (fn !== undefined) heard(id, fn())
+        return undefined
+      }
+      case 'held': {
+        const fn = instance.held.get(payload.handle)
+        if (fn !== undefined) heard(id, fn(payload.event))
+        return undefined
+      }
+      default:
+        return fail('unknown surface call ' + kind)
+    }
+  }
+
+  return freeze({
+    __proto__: null,
+    mount: (id, fn, props) => {
+      if (typeof fn !== 'function') {
+        fail('the surface module export is not a function', _TypeError)
+      }
+      const instance = {
+        fn, props, state: undefined, columns: 0, rows: 0, scheduled: false,
+        pointer: null, key: null, timers: new _Map(), surface: null,
+        held: new _Map(), heldCounter: 0,
+      }
+      instance.surface = surfaceOf(id, instance)
+      instances.set(id, instance)
+    },
+    setProps: (id, props) => { instanceOf(id).props = props },
+    resize: (id, columns, rows) => {
+      const instance = instanceOf(id)
+      instance.columns = columns
+      instance.rows = rows
+    },
+    stage: (id, kind, payload) => {
+      const instance = instanceOf(id)
+      pending = () => act(id, instance, kind, payload)
+    },
+    // The closures exportTree held for elements a redraw retired.
+    dropHeld: (id, handles) => {
+      const instance = instances.get(id)
+      if (instance === undefined) return
+      for (let i = 0; i < handles.length; i++) instance.held.delete(handles[i])
+    },
+    hasListener: (id, kind) => {
+      const instance = instances.get(id)
+      if (instance === undefined) return false
+      const listener = kind === 'pointer' ? instance.pointer : instance.key
+      return listener !== null
+    },
+    unmount: id => {
+      const instance = instances.get(id)
+      if (instance === undefined) return
+      instances.delete(id)
+      instance.timers.clear()
+      instance.held.clear()
+      instance.pointer = null
+      instance.key = null
+    },
+  })
+})`;
+var Fcs = `const jsx = ${Vbo}
+export const h = jsx.h
+export const Fragment = jsx.Fragment
+export const install = ${Vao}
+`;
+var Hcs = ewo;
+var Kao = () => ({
+  nodes: hfe,
+  depth: Tbe,
+  chars: $bo,
+  values: Ubo,
+  dataDepth: Nrn
+});
+
+function $cs(e, n) {
+  let r = Kao(),
+    s = new Map([
+      [Ygr, {
+        key: Ygr,
+        source: Fcs
+      }],
+      [HOn, {
+        key: HOn,
+        source: Hcs
+      }]
+    ]);
+  for (let S of n) {
+    let w = [{
+      file: S.modulePath,
+      source: S.source
+    }, ...S.linked];
+    for (let A of w) {
+      let O = vJt(A.file, e);
+      if (!s.has(O)) s.set(O, Ncs(A, e, S.links))
+    }
+  }
+  let h = [...s.values()],
+    y = n.map((S) => ({
+      module: S.module,
+      entry: vJt(S.modulePath, e),
+      component: S.component
+    }));
+  return {
+    plugin: e.pluginName,
+    hash: uU("sha256").update(_({
+      files: h,
+      modules: y,
+      limits: r
+    })).digest("hex"),
+    modules: y,
+    runtime: Ygr,
+    limits: r,
+    files: h
+  }
+}
+
+function Ucs() {
+  let e = new Map;
+  return {
+    moduleFor(n) {
+      let r = Ae().loadedModules.find((A) => A.name === n),
+        s = r?.args.surfaceModules;
+      if (!r || !s || !Bf(r)) {
+        e.delete(n);
+        return
+      }
+      let h = e.get(n);
+      if (h?.environmentId === r.environmentId) return h.built;
+      let {
+        pluginRoot: y,
+        pluginName: S
+      } = r.args, w = $cs({
+        pluginRoot: y,
+        pluginName: S
+      }, s);
+      return e.set(n, {
+        environmentId: r.environmentId,
+        built: w
+      }), w
+    }
+  }
+}
+var qao = Ucs();
+var Bcs = jo();
+
+function VPi(e) {
+  let n = {};
+  for (let r of new Set(e.map((s) => s.plugin))) {
+    let s = qao.moduleFor(r)?.hash;
+    if (s !== void 0) n[r] = s
+  }
+  return n
+}
+var Xgr = (e, n, r) => ({
+  plugin: e.plugin,
+  message: {
+    surface: n,
+    component: e.component,
+    requestId: e.requestId,
+    element: e.key,
+    module: e.module,
+    data: r
+  }
+});
+var Mw = Sp["ui.message"];
+async function $On({
+  plugin: e,
+  message: n
+}) {
+  let r = performance.now(),
+    s = await _O({
+      e: n,
+      handlers: [...hL("ui.message", void 0, {
+        only: e
+      }), {
+        name: "core",
+        isCore: !0,
+        budgetMs: 0,
+        run: () => Promise.resolve({})
+      }],
+      site: Mw,
+      origin: {
+        plugin: hua,
+        tier: TZ([e]).tier
+      }
+    });
+  return t(`ui.message ${e}/${n.element} (${n.module}) in ${n.component} from ${n.surface}: dispatched, settled in ${(performance.now()-r).toFixed(1)}ms`), s ?? {}
+}
+async function KPi(e) {
+  let {
+    data: n,
+    ...r
+  } = e;
+  if (!Kgr("ui.message", r, eXe.isDrawn)) return;
+  let s = pRe(n);
+  if (s !== void 0) throw new $e(`${r.plugin}: Client ${r.module}: post: the data ${s}; not sent`);
+  return Bcs(r.plugin)(() => $On(Xgr(r, _Mt, n)))
+}
+async function qPi(e, n = eXe.isDrawn) {
+  let {
+    element: r,
+    event: s,
+    ...h
+  } = e;
+  if (!n(h)) {
+    t(`ui.${s.type}: no desktop Client ${h.plugin}/${h.key} (${h.module}) is drawn in ${h.component} ${h.requestId}; nothing ran`);
+    return
+  }
+  let y = Rcs(e),
+    S = performance.now(),
+    w;
+  async function A() {
+    return {
+      result: await _O({
+        e: y,
+        handlers: hL("ui.press"),
+        site: rf,
+        bottom: (Z) => (w = Z, Promise.resolve({
+          element: Z.element
+        }))
+      }),
+      ...w !== void 0 && {
+        reached: w
+      }
+    }
+  }
+  async function O(N, Z) {
+    return {
+      result: await _O({
+        e: Z,
+        handlers: hL(N.event),
+        site: N,
+        bottom: (Y) => {
+          w = Y;
+          let ne = {
+            element: Y.element,
+            value: Y.value
+          };
+          return Promise.resolve(ne)
+        }
+      }),
+      ...w !== void 0 && {
+        reached: w
+      }
+    }
+  }
+
+  function M() {
+    switch (s.type) {
+      case "press":
+        return A();
+      case "input":
+        return ef(h.plugin)(() => O(nf, {
+          ...y,
+          kind: s.kind,
+          value: s.value
+        }));
+      case "select":
+        return af(h.plugin)(() => O(sf, {
+          ...y,
+          value: s.value
+        }))
+    }
+  }
+  let j = await M(),
+    G = j.reached === void 0 ? "withheld" : "reached";
+  return t(`ui.${s.type} ${h.plugin}/${r} in Client ${h.key} (${h.module}) of ${h.component} from desktop: settled in ${(performance.now()-S).toFixed(1)}ms, ${G}`), j
+}
+
+function jcs(e) {
+  return e.surface === "desktop" ? eXe.begin(e.component, e.requestId) : void 0
+}
+var bMt = (e) => Li(VE, e === void 0 ? void 0 : {
+  component: e
+});
+var EJt = (e) => Ae().loadedModules.some((n) => n.hooks(VE) && Bf(n) && OHt(n.matcherFor(VE), "component", e.component) && ufs(n, VE, e));
+var mTe = Ccs();
+hIi(Object.keys(ONe).map((e) => ({
+  event: VE,
+  component: e,
+  drawnBy: ONe[e]
+})));
+Yw({
+  async run(e) {
+    let n = e.props,
+      r = jcs(e);
+    if (!EJt(e)) {
+      if (r !== void 0) eXe.record(r, []);
+      return Kl(n)
+    }
+    let s = await mTe.uiRender(e, {
+        signal: new AbortController().signal
+      }),
+      h = Cao(s),
+      y = h === void 0 ? void 0 : wJt(s, h),
+      w = y !== void 0 && y.component === e.component ? y.props : n,
+      A = wSo(s);
+    if (r !== void 0) eXe.record(r, A);
+    return {
+      props: w,
+      rewritten: w !== n,
+      tree: s,
+      clientModules: VPi(A),
+      drawnBy: BJt(Hao(DOn(e), s))
+    }
+  },
+  hooked: bMt,
+  onInvalidate: (e) => {
+    let n = AT(() => e()),
+      r = qh((s) => {
+        let h = s.filter((y) => y.surface !== "terminal");
+        if (h.length > 0) e(h)
+      });
+    return () => {
+      n(), r()
+    }
+  },
+  press: ({
+    surface: e = "desktop",
+    ...n
+  }) => Ogr({
+    ...n,
+    surface: e
+  }),
+  input: ({
+    surface: e = "desktop",
+    ...n
+  }) => Pgr({
+    ...n,
+    surface: e
+  }),
+  select: ({
+    surface: e = "desktop",
+    ...n
+  }) => Igr({
+    ...n,
+    surface: e
+  }),
+  clientModule: (e) => qao.moduleFor(e),
+  clientPress: (e) => qPi(e),
+  clientMessage: (e) => KPi(e),
+  clientFault: GPi()
+});
+export {
+  FAi,
+  sce,
+  HAi,
+  pds,
+  RW,
+  UP,
+  wF,
+  mds,
+  $Ai,
+  Put,
+  UAi,
+  Uhr,
+  ice,
+  BAi,
+  Ts,
+  Fio,
+  Cd,
+  hds,
+  Bhr,
+  jhr,
+  HDe,
+  jAi,
+  ace,
+  WAi,
+  Hio,
+  gds,
+  yZ,
+  Whr,
+  $De,
+  zAi,
+  $io,
+  yds,
+  RWe,
+  tSa,
+  zh,
+  _ds,
+  Iye,
+  oMt,
+  GAi,
+  sMt,
+  zhr,
+  bds,
+  kF,
+  VAi,
+  Uio,
+  Ghr,
+  Bio,
+  Sds,
+  jio,
+  wds,
+  kds,
+  vds,
+  Eds,
+  Tds,
+  iOn,
+  KAi,
+  Cds,
+  Wio,
+  zio,
+  qAi,
+  Rds,
+  Ads,
+  AWe,
+  YXt,
+  nTe,
+  YAi,
+  XAi,
+  JAi,
+  XXt,
+  fA,
+  O9,
+  Out,
+  _Z,
+  rTe,
+  oTe,
+  iMt,
+  aMt,
+  UDe,
+  aOn,
+  QAi,
+  Iut,
+  xWe,
+  ZAi,
+  Vhr,
+  xds,
+  exi,
+  Gio,
+  JXt,
+  Khr,
+  txi,
+  nxi,
+  PWe,
+  Vio,
+  Kio,
+  qhr,
+  QXt,
+  Pds,
+  Yhr,
+  ZXt,
+  rxi,
+  oxi,
+  Xhr,
+  lOn,
+  dOn,
+  sxi,
+  Ods,
+  ixi,
+  axi,
+  lxi,
+  D$,
+  Jhr,
+  dxi,
+  Ids,
+  cxi,
+  uxi,
+  fxi,
+  Mds,
+  pxi,
+  mxi,
+  Qhr,
+  hxi,
+  gxi,
+  yxi,
+  _xi,
+  bxi,
+  Sxi,
+  wxi,
+  Dds,
+  kxi,
+  Mut,
+  Lds,
+  Nds,
+  Fds,
+  eJt,
+  Hds,
+  tJt,
+  nJt,
+  Dut,
+  vxi,
+  qio,
+  cOn,
+  Zhr,
+  egr,
+  uOn,
+  fOn,
+  lMt,
+  dMt,
+  tgr,
+  Yio,
+  Lut,
+  Exi,
+  Xio,
+  $ds,
+  Jio,
+  Uds,
+  Bds,
+  Txi,
+  BDe,
+  Cxi,
+  Qio,
+  pOn,
+  jds,
+  Nut,
+  Fut,
+  Zio,
+  Rxi,
+  cMt,
+  Axi,
+  ngr,
+  xxi,
+  mOn,
+  AW,
+  VE,
+  hOn,
+  gOn,
+  Hut,
+  eao,
+  rgr,
+  $ut,
+  rJt,
+  xda,
+  ogr,
+  sgr,
+  Pda,
+  w2,
+  Jw,
+  oJt,
+  tao,
+  nao,
+  jDe,
+  yOn,
+  Pxi,
+  Oxi,
+  rao,
+  oao,
+  sao,
+  iao,
+  sTe,
+  dL,
+  D6,
+  iTe,
+  hq,
+  W9e,
+  Iy,
+  _On,
+  uMt,
+  Ixi,
+  Uut,
+  igr,
+  Mxi,
+  But,
+  kb,
+  aao,
+  z9e,
+  jut,
+  doe,
+  coe,
+  I9,
+  Wds,
+  aTe,
+  pw,
+  Dxi,
+  sJt,
+  Mye,
+  TI,
+  WDe,
+  uoe,
+  Lxi,
+  Nxi,
+  G9e,
+  Fxi,
+  Hxi,
+  Wut,
+  lao,
+  zds,
+  agr,
+  lgr,
+  dao,
+  lce,
+  OWe,
+  dgr,
+  zut,
+  bOn,
+  $xi,
+  gq,
+  Uxi,
+  IWe,
+  cao,
+  Gds,
+  MWe,
+  Vds,
+  Kds,
+  qds,
+  Bxi,
+  jxi,
+  iJt,
+  cgr,
+  ugr,
+  aJt,
+  Yds,
+  SOn,
+  Xds,
+  Gut,
+  Wxi,
+  L6,
+  zxi,
+  Gxi,
+  Vxi,
+  Jds,
+  uao,
+  CI,
+  lJt,
+  k2,
+  fgr,
+  dJt,
+  Kxi,
+  pgr,
+  qxi,
+  wOn,
+  mgr,
+  kOn,
+  Yxi,
+  la,
+  zDe,
+  GDe,
+  DWe,
+  yq,
+  Xxi,
+  Qds,
+  hgr,
+  ggr,
+  ygr,
+  Jxi,
+  Qxi,
+  Zds,
+  _gr,
+  Zxi,
+  ePi,
+  tPi,
+  vOn,
+  nPi,
+  rPi,
+  Ql,
+  n1,
+  oPi,
+  cL,
+  fao,
+  EOn,
+  cJt,
+  kv,
+  sPi,
+  bgr,
+  V9e,
+  uJt,
+  Sgr,
+  LWe,
+  iPi,
+  wgr,
+  pao,
+  v2,
+  NWe,
+  BP,
+  fMt,
+  kgr,
+  mao,
+  hao,
+  ecs,
+  VDe,
+  fJt,
+  K9e,
+  tcs,
+  ncs,
+  Vut,
+  rcs,
+  ocs,
+  pJt,
+  E2,
+  lTe,
+  Kut,
+  aPi,
+  KDe,
+  pMt,
+  lPi,
+  gao,
+  yao,
+  scs,
+  _ao,
+  ics,
+  bao,
+  Dye,
+  Sao,
+  dPi,
+  wao,
+  mJt,
+  vgr,
+  kao,
+  cPi,
+  uPi,
+  fPi,
+  vao,
+  TOn,
+  dce,
+  qDe,
+  pPi,
+  mg,
+  uL,
+  mPi,
+  oD,
+  acs,
+  lcs,
+  qut,
+  Egr,
+  Eao,
+  hPi,
+  q9e,
+  r1,
+  cce,
+  Tao,
+  COn,
+  Cao,
+  Y9e,
+  RI,
+  dcs,
+  X9e,
+  J9e,
+  ROn,
+  Q9e,
+  Rao,
+  Z9e,
+  ni,
+  Tgr,
+  dTe,
+  YDe,
+  uce,
+  AOn,
+  Lye,
+  xOn,
+  gPi,
+  POn,
+  oR,
+  Cgr,
+  hJt,
+  ccs,
+  yPi,
+  _Pi,
+  bPi,
+  SPi,
+  Yut,
+  gJt,
+  T2,
+  fce,
+  foe,
+  df,
+  OOn,
+  Rgr,
+  Nye,
+  yJt,
+  Fye,
+  ucs,
+  Agr,
+  Aao,
+  IOn,
+  wPi,
+  xgr,
+  xao,
+  kPi,
+  Xut,
+  MOn,
+  fcs,
+  Pao,
+  pcs,
+  Oao,
+  vPi,
+  EPi,
+  Iao,
+  cTe,
+  uTe,
+  mMt,
+  TPi,
+  CPi,
+  RPi,
+  hMt,
+  APi,
+  gMt,
+  _Jt,
+  yMt,
+  poe,
+  bJt,
+  mcs,
+  Mao,
+  Pgr,
+  xPi,
+  PPi,
+  OPi,
+  IPi,
+  Oda,
+  Ogr,
+  Igr,
+  DOn,
+  hcs,
+  Mgr,
+  Dgr,
+  SJt,
+  fTe,
+  gcs,
+  Lgr,
+  ycs,
+  Jut,
+  wJt,
+  pTe,
+  LOn,
+  Ngr,
+  XDe,
+  kJt,
+  MPi,
+  DPi,
+  LPi,
+  FWe,
+  Dao,
+  NPi,
+  _cs,
+  FPi,
+  Fgr,
+  bcs,
+  HPi,
+  $Pi,
+  Lao,
+  Hgr,
+  $gr,
+  Nao,
+  UPi,
+  Scs,
+  Fao,
+  Hao,
+  Ugr,
+  NOn,
+  BPi,
+  wcs,
+  Bgr,
+  jgr,
+  Wgr,
+  jPi,
+  kcs,
+  vcs,
+  Ecs,
+  zgr,
+  $ao,
+  Qut,
+  JDe,
+  Uao,
+  Tcs,
+  Bao,
+  WPi,
+  zPi,
+  jao,
+  Ccs,
+  _Mt,
+  Rcs,
+  FOn,
+  Ggr,
+  Vgr,
+  Acs,
+  xcs,
+  Pcs,
+  eXe,
+  Kgr,
+  Wao,
+  zao,
+  Gao,
+  Ocs,
+  GPi,
+  Ics,
+  vJt,
+  Mcs,
+  qgr,
+  Dcs,
+  HOn,
+  Lcs,
+  Ncs,
+  Ygr,
+  Vao,
+  Fcs,
+  Hcs,
+  Kao,
+  $cs,
+  Ucs,
+  qao,
+  Bcs,
+  VPi,
+  Xgr,
+  $On,
+  KPi,
+  qPi,
+  Jgr,
+  jcs,
+  bMt,
+  EJt,
+  mTe,
+  pce,
+  xW,
+  SMt,
+  YPi,
+  Wcs,
+  zcs,
+  Qgr,
+  Zgr,
+  o1,
+  XPi,
+  tXe,
+  TJt,
+  UOn,
+  Gcs,
+  wMt,
+  Yao,
+  Vcs,
+  nXe,
+  eyr,
+  Xao,
+  Kcs,
+  qcs,
+  Ycs,
+  JPi,
+  hTe,
+  mce,
+  BOn,
+  _q,
+  QPi,
+  HWe,
+  CJt,
+  Xcs,
+  ZPi,
+  eOi,
+  L$,
+  tOi,
+  nOi,
+  kMt,
+  vMt,
+  tyr,
+  nyr,
+  EMt,
+  Jcs,
+  rOi,
+  RJt,
+  ryr,
+  Qcs,
+  gTe,
+  oOi,
+  sOi,
+  iOi,
+  jOn,
+  Zcs,
+  aOi,
+  lOi,
+  dOi,
+  eus,
+  tus,
+  nus,
+  oyr,
+  syr,
+  WOn,
+  Jao,
+  cOi,
+  C2,
+  uOi,
+  fOi,
+  pOi,
+  iyr,
+  mOi,
+  hOi,
+  ayr,
+  lyr,
+  gOi,
+  yOi,
+  dyr,
+  zOn,
+  Qao,
+  rXe,
+  _Oi,
+  rus,
+  bOi,
+  cyr,
+  SOi,
+  $We,
+  uyr,
+  wOi,
+  kOi,
+  vOi,
+  ous,
+  EOi,
+  TOi,
+  fyr,
+  COi,
+  Ida,
+  ROi,
+  sus,
+  UWe,
+  TMt,
+  fL,
+  pyr,
+  Zao,
+  myr,
+  AOi,
+  moe,
+  xOi,
+  POi,
+  OOi,
+  IOi,
+  CMt,
+  hyr,
+  Zut,
+  AJt,
+  xJt,
+  gyr,
+  yyr,
+  MOi,
+  PJt,
+  DOi,
+  _yr,
+  RMt,
+  ius,
+  aus,
+  LOi,
+  NOi,
+  FOi,
+  HOi,
+  elo,
+  tlo,
+  lus,
+  GOn,
+  oXe,
+  VOn,
+  KOn,
+  byr,
+  qOn,
+  eft,
+  dus,
+  nSa,
+  YOn,
+  tft,
+  nft,
+  PW,
+  sXe,
+  $Oi,
+  yTe,
+  XOn,
+  cus,
+  AMt,
+  OJt,
+  QDe,
+  nlo,
+  Syr,
+  uus,
+  wyr,
+  fus,
+  kyr,
+  rlo,
+  bZ,
+  hce,
+  UOi,
+  iXe,
+  BOi,
+  jOi,
+  gce,
+  xMt,
+  JOn,
+  M9,
+  WOi,
+  IJt,
+  rft,
+  zOi,
+  OW,
+  olo,
+  GOi,
+  slo,
+  Qw,
+  QOn,
+  VOi,
+  ilo,
+  alo,
+  PMt,
+  aXe,
+  Ms,
+  KOi,
+  OMt,
+  lXe,
+  oft,
+  vyr,
+  pus,
+  qOi,
+  mus,
+  Eyr,
+  hus,
+  Tyr,
+  YOi,
+  gus,
+  XOi,
+  yus,
+  JOi,
+  QOi,
+  IMt,
+  _us,
+  ZDe,
+  bus,
+  llo,
+  Cyr,
+  Ryr,
+  Sus,
+  wus,
+  dlo,
+  kus,
+  MJt,
+  Ayr,
+  ZOi,
+  xyr,
+  clo,
+  e0e,
+  Pyr,
+  vus,
+  Eus,
+  ulo,
+  dXe,
+  Oyr,
+  DJt,
+  flo,
+  Tus,
+  Cus,
+  Rus,
+  LJt,
+  Aus,
+  xus,
+  Iyr,
+  Mda,
+  Pus,
+  Dda,
+  Ous,
+  Ius,
+  Mus,
+  t0e,
+  Dus,
+  Lus,
+  Nus,
+  Fus,
+  Lda,
+  Nda
+};

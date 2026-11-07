@@ -1,0 +1,802 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  _P,
+  zWs
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  We,
+  R,
+  d
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  J
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  a,
+  ae
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  g,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  Qd,
+  Ui,
+  HBt
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  Er
+} from "B:/~BUN/root/chunk-pc24rkga.js";
+import {
+  to,
+  Dd
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  R_
+} from "B:/~BUN/root/chunk-1fg2bpc3.js";
+import {
+  Uo
+} from "B:/~BUN/root/chunk-4vxp7kvb.js";
+import {
+  rM
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  bt
+} from "B:/~BUN/root/chunk-ja520myc.js";
+import {
+  zw,
+  Vd,
+  kdt,
+  vdt,
+  JTn,
+  Gw,
+  Kve,
+  k3t,
+  W5e,
+  s9,
+  Edt,
+  odr,
+  gF,
+  nxn,
+  t9e,
+  u9t,
+  rxn,
+  Ex,
+  Gu,
+  fw,
+  jo
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import {
+  UEe
+} from "B:/~BUN/root/chunk-mcdkvptw.js";
+import {
+  Zl
+} from "B:/~BUN/root/chunk-1tbewxs3.js";
+import {
+  qr,
+  QCe
+} from "B:/~BUN/root/chunk-vmp6vbba.js";
+import {
+  zr,
+  fI,
+  GRt
+} from "B:/~BUN/root/chunk-7jbamvvk.js";
+import {
+  WM
+} from "B:/~BUN/root/chunk-bf9d8yv4.js";
+import {
+  Ns
+} from "B:/~BUN/root/chunk-4rgskab2.js";
+import {
+  NG
+} from "B:/~BUN/root/chunk-59sqv3yw.js";
+import {
+  Dui,
+  BRt
+} from "B:/~BUN/root/chunk-pcgcya2e.js";
+import {
+  I8
+} from "B:/~BUN/root/chunk-ryr6jnq0.js";
+import {
+  Cu
+} from "B:/~BUN/root/chunk-2d2hmxhb.js";
+import {
+  RS,
+  Ssr
+} from "B:/~BUN/root/chunk-pyp8n05h.js";
+import {
+  ffi
+} from "B:/~BUN/root/chunk-eb8f1fhs.js";
+import {
+  ed,
+  XTe
+} from "B:/~BUN/root/chunk-nk52yc3v.js";
+import {
+  Wwe
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+class U extends Error {}
+var F = "Call the tool again: it is checked again each time, and Claude Code replaces it with the server's own tool once that is loaded.",
+  ee = /^[A-Za-z0-9_-]+$/;
+
+function W(n) {
+  return n.every((o) => ee.test(o.name)) && new Set(n.map((o) => o.name)).size === n.length
+}
+
+function K(n, o, e, C, u) {
+  let s = {
+    row: n,
+    dialer: C,
+    isHandshakeHanded: u,
+    handedByName: new Map(W(e) ? e.map((m) => [m.name, m]) : []),
+    ask: void 0,
+    passed: new Set
+  };
+  for (let m of o) ne(s, m)
+}
+
+function ne(n, o) {
+  let e = o.mcpInfo?.toolName,
+    {
+      call: C,
+      validateInput: u,
+      checkPermissions: s,
+      askInputPreparer: m
+    } = o;
+  if (o.call = async (f, r, ...p) => {
+      let y = await H(n, o, e, r);
+      if (y !== void 0) throw new R(y, "MCP tool refused by the check of its handed listing");
+      return C(f, r, ...p)
+    }, o.validateInput = async (f, r) => {
+      let p = await H(n, o, e, r);
+      if (p !== void 0) return {
+        result: !1,
+        message: p,
+        errorCode: 3
+      };
+      return await u?.(f, r) ?? {
+        result: !0
+      }
+    }, o.checkPermissions = async (f, r) => {
+      let p = await H(n, o, e, r);
+      if (p !== void 0) return {
+        behavior: "deny",
+        message: p,
+        decisionReason: {
+          type: "other",
+          reason: p
+        }
+      };
+      return s(f, r)
+    }, m !== void 0) o.askInputPreparer = async (f, r, p) => {
+    let y = await H(n, o, e, r);
+    return y === void 0 ? m(f, r, p) : {
+      prepare: async () => ({
+        error: y
+      })
+    }
+  }
+}
+async function H(n, o, e, C) {
+  let {
+    row: u,
+    handedByName: s,
+    passed: m
+  } = n;
+  if (e === void 0) return D(u, o.name, "Claude Code could not tell which of the server's tools this is");
+  let {
+    signal: f
+  } = C.abortController;
+  if (m.has(e)) return;
+  let r = n.ask ??= te(n, C.toolUseId),
+    p;
+  try {
+    p = await WM(r.answer, {
+      signal: f,
+      timeoutMs: 2 * ed(),
+      serverName: u.name,
+      context: "MCP tool check"
+    })
+  } catch (h) {
+    if (V(n, r), We(h)) throw h;
+    if (!r.hasAnswered || h instanceof U) {
+      let M = r.hasAnswered ? d(h) : "the server did not answer in time";
+      return I(n, r, "not_compared", `${D(u,e,M)} Try the call again.`)
+    }
+    return I(n, r, "not_compared", h instanceof R ? d(h) : D(u, e, Y(h, u)))
+  }
+  if (n.isHandshakeHanded && p.hasOtherHandshake) return I(n, r, "handshake", `MCP server "${u.name}" does not match what Claude Code was given at start-up (in its capabilities, name, version or instructions), so the call was not made. ${F}`);
+  let y = p.tools.get(e);
+  if (y === void 0 && p.mayListMore) return I(n, r, "not_compared", `${D(u,e,"the server's list could not be matched tool by tool")} ${F}`);
+  if (!s.has(e)) return I(n, r, "not_compared", `${D(u,e,"the list given at start-up could not be matched tool by tool")} ${F}`);
+  if (y === void 0) return I(n, r, "tool_gone", `MCP server "${u.name}" no longer offers the tool "${e}", so the call was not made.`);
+  if (!_P(y, s.get(e))) return I(n, r, "tool_differs", `MCP server "${u.name}" lists the tool "${e}" differently from the definition that Claude Code was given at start-up, so the call was not made. ${F}`);
+  g("mcp_handed_listing_check"), m.add(e);
+  return
+}
+
+function te(n, o) {
+  let e = {
+    answer: oe(n, o),
+    hasAnswered: !1
+  };
+  return e.answer.finally(() => {
+    e.hasAnswered = !0
+  }).catch(() => {}), e
+}
+async function oe({
+  row: n,
+  dialer: o,
+  isHandshakeHanded: e
+}, C) {
+  let u = await o.ensureConnectedClient(n, {
+      context: "MCP tool call",
+      toolUseId: C
+    }),
+    s = u.instructions !== n.instructions;
+  if (e && s) c("mcp_handed_listing_check", "instructions_differ");
+  let m = !_P(u.capabilities, n.capabilities) || u.serverInfo?.name !== n.serverInfo?.name || u.serverInfo?.version !== n.serverInfo?.version;
+  if (e && m) c("mcp_handed_listing_check", "handshake_differs");
+  let f = await o.listToolsRaw(u.client, {
+      timeout: ed()
+    }).catch((p) => {
+      if (We(p)) throw p;
+      throw new U(Y(p, n))
+    }),
+    r = W(f.tools);
+  return {
+    tools: new Map(r ? f.tools.map((p) => [p.name, p]) : []),
+    mayListMore: f.nextCursor !== void 0 || !r,
+    hasOtherHandshake: s || m
+  }
+}
+
+function V(n, o) {
+  if (n.ask === o) n.ask = void 0
+}
+
+function I(n, o, e, C) {
+  if (V(n, o), e !== "handshake") c("mcp_handed_listing_check", e);
+  return ae(n.row.name, C), C
+}
+
+function D(n, o, e) {
+  return `The tool "${o}" could not be checked against what MCP server "${n.name}" lists (${e}), so the call was not made.`
+}
+
+function Y(n, o) {
+  return Zl(Cu(o.name, o.config, Ns(n, o.config)))
+}
+
+function A() {
+  return import.meta.require("B:/~BUN/root/chunk-y5d9tpmg.js").mcpClientModule()
+}
+
+function Z(n) {
+  let o = performance.now();
+  try {
+    let e = A();
+    if (QCe("mcp_client_module_load_ms") === void 0) qr("mcp_client_module_load_ms", performance.now() - o, o);
+    return e
+  } catch (e) {
+    a(e), t(`[MCP] ${n} connect error: ${e}`);
+    return
+  }
+}
+var D6s = 1000,
+  Ffn = [500, 1500, 4000],
+  re = Ffn.reduce((n, o) => n + o, 0);
+
+function L6s(n) {
+  let {
+    regularMcpConfigs: o,
+    claudeaiConfigPromise: e,
+    state: C,
+    storageV5: u,
+    credentials: s,
+    dialInConnect: m,
+    onDialStart: f,
+    dialFirst: r,
+    dialOptions: p,
+    leaveAlwaysLoadWaitTo: y
+  } = n, h = n.knownListings && Er(n.knownListings, (L) => Array.isArray(L) ? {
+    tools: L
+  } : L), M = zr(), P = i.MCP_CONNECTION_NONBLOCKING !== !1;
+  zWs(P);
+  let O = P;
+  async function _() {
+    Uo("before_mcp_connect_user"), Uo("before_mcp_connect_connector");
+    let L = tLo({
+        configs: o,
+        label: "regular",
+        nonBlocking: P,
+        dialInConnect: m,
+        onDialStart: f,
+        dialFirst: r,
+        dialOptions: p,
+        state: C,
+        storageV5: u,
+        credentials: s,
+        knownListings: h,
+        leaveAlwaysLoadWaitTo: y
+      }).then(() => Uo("after_mcp_connect_user")),
+      w = z(P, () => e.then((S) => Q({
+        claudeaiConfigs: S,
+        regularMcpConfigs: o,
+        state: C,
+        deferConnect: O,
+        storageV5: u,
+        epoch: M
+      })).then((S) => S === "superseded" ? [] : S), "claude.ai connectors").then(() => Uo("after_mcp_connect_connector"));
+    await Promise.all([L, w])
+  }
+  return {
+    connect: _
+  }
+}
+
+function N6s(n) {
+  return i.CLAUDE_CODE_MCP_ALWAYS_LOAD_JOIN_BEFORE_INPUT === !0 && Boolean(n) && !R_()
+}
+
+function tLo(n) {
+  let {
+    configs: o,
+    label: e,
+    nonBlocking: C,
+    state: u,
+    storageV5: s,
+    credentials: m,
+    knownListings: f,
+    dialInConnect: r,
+    onDialStart: p,
+    dialFirst: y,
+    dialOptions: h,
+    leaveAlwaysLoadWaitTo: M
+  } = n, P = (S, b) => S.alwaysLoad === !0 || f !== void 0 && Object.hasOwn(f, b), O = M === void 0 ? {} : rM(o, (S, b) => S.alwaysLoad === !0 && S.scope === "dynamic" && !Qd(S) && !(f !== void 0 && Object.hasOwn(f, b))), _ = rM(o, (S, b) => P(S, b) && !Object.hasOwn(O, b)), L = rM(o, (S, b) => !P(S, b)), w = Object.keys(_).length > 0;
+  if (Object.keys(O).length > 0) {
+    let S = x(O, `${e}-required`, u, !1, s, m, f, p, y, h);
+    M?.(() => z(!1, () => S, "--mcp-config alwaysLoad servers"))
+  }
+  return Promise.all([...w ? [z(!1, () => x(_, `${e}-required`, u, !1, s, m, f, p, y, h), "--mcp-config alwaysLoad servers")] : [], z(C, () => x(L, e, u, C && !r, s, m, f, p, y, h), "--mcp-config servers")]).then(() => {})
+}
+
+function x(n, o, e, C = !1, u, s, m, f, r, p) {
+  let y = Object.keys(n);
+  if (y.length === 0) return [];
+  let h = m && Er(m, (S) => S.tools);
+  e.applyMcpUpdate((S) => ({
+    ...S,
+    clients: [...S.clients, ...Object.entries(n).map(([b, k]) => ({
+      name: b,
+      type: "pending",
+      config: k
+    }))]
+  }));
+  let M = new Map,
+    P = y.map((S) => new Promise((b) => M.set(S, b))),
+    O = Promise.withResolvers(),
+    _ = new Set,
+    L = (S) => {
+      for (let b of Object.keys(S)) _.add(b);
+      $fn(S, e, u, void 0, O.promise).catch((b) => t(`[MCP] ${o} retry error: ${b}`)).finally(() => {
+        for (let b of Object.keys(S)) _.delete(b)
+      })
+    },
+    w = () => {
+      let S = Z(o);
+      if (!S) {
+        for (let k of M.values()) k();
+        return
+      }
+      if (f !== void 0 && y.some((k) => !Object.hasOwn(h ?? {}, k))) f();
+      let b = r === void 0 ? n : {
+        ...rM(n, (k, v) => r(v)),
+        ...n
+      };
+      S.getMcpToolsCommandsAndResources((k) => {
+        let {
+          client: v
+        } = k, B = Object.hasOwn(m ?? {}, v.name) ? m?.[v.name] : void 0, T = B?.handshake;
+        if (v.type === "cached" && B !== void 0) v.listedByHost = !0;
+        if (v.type === "cached" && T !== void 0) {
+          v.capabilities = T.capabilities, v.serverInfo = {
+            name: T.serverInfo.name,
+            version: T.serverInfo.version
+          };
+          let j = S.capMcpInstructions(T.instructions, v.name, I8(v.config));
+          if (j !== void 0) v.instructions = j
+        }
+        if (v.type === "cached" && B?.comparedBeforeUse) K(v, k.tools, B.tools, S, T !== void 0);
+        n1r(e, k), ffi();
+        let {
+          name: E
+        } = k.client;
+        if (M.get(E)?.(), !_.has(E)) {
+          let j = rM(n, (le, X) => X === E);
+          if (KYn(j, e).length > 0) L(j)
+        }
+      }, b, u, s, h, !0, void 0, p).catch((k) => t(`[MCP] ${o} connect error: ${k}`)).finally(() => {
+        for (let k of M.values()) k();
+        O.resolve(performance.now()), L(rM(n, (k, v) => !_.has(v)))
+      })
+    };
+  if (C) setImmediate(w);
+  else w();
+  return P
+}
+
+function n1r(n, o) {
+  let {
+    client: e,
+    tools: C,
+    commands: u,
+    attemptEpoch: s
+  } = o, m, f = "applied", r = GRt(e.config, s);
+  return n.applyMcpUpdate((p) => {
+    f = "applied", m = void 0;
+    let y = p.clients.find((M) => M.name === e.name);
+    if (!y || y.config !== e.config && !A().areMcpConfigsEqual(y.config, e.config)) {
+      if (e.type === "connected") ae(e.name, y ? "applyConnectionResult: disposing orphaned connect (slot config changed mid-flight)" : "applyConnectionResult: disposing orphaned connect (slot removed mid-flight)"), m = () => N(e);
+      return f = "dropped", p
+    }
+    if (r) {
+      if (ae(e.name, "applyConnectionResult: settlement superseded by an account switch \u2014 closed, not installed (the identity boundary owns the row)"), e.type === "connected") m = () => {
+        A().detachAndCloseConnection(e).catch(() => {})
+      };
+      return f = "superseded", p
+    }
+    let h = e.type !== "failed" && e.type !== "disabled" ? Gu(e.name, e.config) : null;
+    if (h !== "managed-policy" && !Ssr(e) && jo(e.name) && e.type !== "disabled") {
+      let M = e.type === "connected" && y.type === "connected" && y.client === e.client;
+      if (e.type === "connected" && !M) ae(e.name, "applyConnectionResult: disposing connect that settled after a disable"), m = () => N(e);
+      if (f = "refused", y.type === "disabled" || y.type === "connected" && Ui(e)) return p;
+      return G(p, {
+        name: e.name,
+        type: "disabled",
+        config: y.config
+      })
+    }
+    if (h) {
+      if (e.type === "connected") ae(e.name, `applyConnectionResult: disposing connect that settled after a ${h} deny`);
+      return m = () => {
+        if (e.type === "connected") N(e);
+        A().dropDiscoveryEntry(e.name, e.config).catch(() => {})
+      }, f = "refused", G(p, {
+        name: e.name,
+        type: "failed",
+        config: y.config,
+        ...RS(h, e.name, e.config)
+      })
+    }
+    if (!HBt(y, e)) return f = "dropped", p;
+    return {
+      ...p,
+      clients: p.clients.map((M) => M.name === e.name ? e : M),
+      tools: Wwe([...p.tools, ...C], (M) => M.name),
+      commands: Wwe([...p.commands, ...u], (M) => M.name)
+    }
+  }), m?.(), f
+}
+
+function KYn(n, o, e = !0) {
+  let C = o.getClients();
+  return Object.entries(n).filter(([u, s]) => {
+    let m = C.find((f) => f.name === u);
+    return m !== void 0 && (kdt(m) || e && vdt(m)) && A().areMcpConfigsEqual(m.config, s)
+  })
+}
+
+function Hfn(n) {
+  let o = (e) => {
+    let C = bt().transientRetryPasses;
+    for (let u of n) {
+      let s = (C.get(u) ?? 0) + e;
+      if (s > 0) C.set(u, s);
+      else C.delete(u)
+    }
+  };
+  return o(1), {
+    [Symbol.dispose]: () => o(-1)
+  }
+}
+async function $fn(n, o, e, C = (s) => n1r(o, s), u) {
+  let s = () => KYn(n, o);
+  if (s().length === 0) return;
+  using m = Hfn(Object.keys(n));
+  let f = zr(),
+    {
+      signal: r
+    } = o,
+    p = performance.now(),
+    y = 0;
+  for (let [M, P] of Ffn.entries()) {
+    let O = M === Ffn.length - 1;
+    if (await J(P, r), u !== void 0 && O) {
+      let v = await u + re + y;
+      await J(Math.max(0, v - performance.now()), r)
+    }
+    if (r?.aborted) return;
+    if (zr() !== f) {
+      t("[MCP] Retry: identity changed during backoff, stopping (these rows belong to the previous account)");
+      return
+    }
+    let _ = KYn(n, o, O);
+    if (_.length === 0) {
+      if (s().length > 0) continue;
+      t("[MCP] Retry: all remote servers recovered, stopping");
+      return
+    }
+    t(`[MCP] Retry attempt ${M+1}: ${_.length} transiently-failed remote server(s)`);
+    let L = [];
+    for (let v of _) {
+      if (!await A().discardMemoizedConnectResult(...v)) continue;
+      let [B, T] = v, E = Gu(B, T);
+      if (E) {
+        C({
+          client: {
+            name: B,
+            type: "failed",
+            config: T,
+            ...RS(E, B, T)
+          },
+          tools: [],
+          commands: [],
+          attemptEpoch: f
+        });
+        continue
+      }
+      L.push(v)
+    }
+    if (L.length === 0 || r?.aborted) continue;
+    let w = 0,
+      S = 0,
+      b = performance.now(),
+      k = Math.round(b - p);
+    if (await A().getMcpToolsCommandsAndResources((v) => {
+        if (!r?.aborted) {
+          if (C(v), v.client.type === "connected") w++;
+          else if (JTn(v.client)) S++
+        } else if (v.client.type === "connected") A().detachAndCloseConnection(v.client).catch(() => {})
+      }, Object.fromEntries(L), e), y += performance.now() - b, !r?.aborted) l("tengu_mcp_connect_retry_attempt", {
+      attempt: M + 1,
+      delayMs: P,
+      sincePassStartMs: k,
+      retryable: _.length,
+      dialed: L.length,
+      recovered: w,
+      stillRetryable: S
+    });
+    if (s().length === 0) {
+      t("[MCP] Retry: all remote servers recovered, stopping");
+      return
+    }
+  }
+  let h = s();
+  if (h.length > 0) t(`[MCP] Retry: ${h.length} remote server(s) still failed after all retries: ${h.map(([M])=>M).join(", ")}`)
+}
+async function z(n, o, e) {
+  if (n) {
+    Promise.resolve(o()).catch(() => {}), t(`[MCP] ${e} running fully async (nonblocking)`);
+    return
+  }
+  let C = o(),
+    u = Date.now(),
+    s = XTe(),
+    m;
+  if (Array.isArray(C)) m = C;
+  else {
+    let y, h = await Promise.race([C.catch((M) => (a(M), "failed")), new Promise((M) => {
+      y = setTimeout((P) => P("deadline"), s, M)
+    })]);
+    if (clearTimeout(y), h === "deadline") {
+      t(`[MCP] ${e} config fetch not ready after ${s}ms \u2014 proceeding; background connection continues`);
+      return
+    }
+    if (h === "failed") {
+      t(`[MCP] ${e} batch failed to start \u2014 proceeding without waiting on it`);
+      return
+    }
+    m = h
+  }
+  let f = Math.max(0, s - (Date.now() - u));
+  if (m.length === 0) return;
+  let r = Z(e);
+  if (!r) return;
+  let p = await r.awaitEachWithDeadline(m, f);
+  if (p > 0) t(`[MCP] ${e}: ${p}/${m.length} not ready after ${s}ms \u2014 proceeding; background connection continues`)
+}
+
+function F6s(n, o, e) {
+  Edt(), odr();
+  let C = zr(),
+    u = (async () => {
+      let s = await s9(e);
+      if (!fI(C)) return q("list fetch");
+      let {
+        allowed: m,
+        blocked: f
+      } = Ex(s);
+      if (W5e(), f.length > 0) t(`[MCP] claude.ai connectors blocked by enterprise policy after account switch: ${f.join(", ")}`);
+      let r = await ie(n, o),
+        p = Object.fromEntries([...Object.entries(r), ...n.getClients().filter((y) => y.config.scope !== "claudeai").map((y) => [y.name, y.config])]);
+      return Q({
+        claudeaiConfigs: m,
+        regularMcpConfigs: p,
+        state: n,
+        deferConnect: !1,
+        storageV5: o,
+        epoch: C,
+        restorablePlugins: r
+      })
+    })();
+  return {
+    mounted: u.then((s) => s === "superseded" ? s : "mounted"),
+    settled: u.then((s) => s === "superseded" ? [] : Promise.all(s)).then(() => {})
+  }
+}
+
+function q(n) {
+  return t(`[MCP] claude.ai connector list superseded by an account switch (${n}) \u2014 not mounting`), "superseded"
+}
+async function Q(n) {
+  if (!fI(n.epoch)) return q("list fetch");
+  let o = await ce(n);
+  if (!fI(n.epoch)) return q("dedup");
+  return [...se(n.restorablePlugins ?? {}, o.suppressedPlugins, n.state, n.storageV5), ...de(o, n.state, n.deferConnect, n.storageV5)]
+}
+async function ie(n, o) {
+  let e = n.getSuppressedPluginServers();
+  if (e.length === 0) return {};
+  let {
+    servers: C,
+    warnings: u
+  } = await fw({}, {
+    storageV5: o
+  }), s = rxn(u), m = {}, f = new Set;
+  for (let r of e) {
+    let p = C[r];
+    if (p && p.pluginSource !== void 0) m[r] = p;
+    else if (!s.has(r)) f.add(r)
+  }
+  if (f.size > 0) t(`[MCP] Dropping ${f.size} suppressed plugin server(s) whose plugin is no longer installed/enabled: ${[...f].join(", ")}`), n.applyMcpUpdate((r) => ({
+    ...r,
+    suppressedPluginMcpServers: (r.suppressedPluginMcpServers ?? []).filter((p) => !f.has(p))
+  }));
+  return m
+}
+
+function se(n, o, e, C) {
+  let u = new Set(e.getClients().map((r) => r.name)),
+    s = new Set,
+    m = {};
+  for (let [r, p] of Object.entries(n)) {
+    if (o.has(r)) continue;
+    if (s.add(r), !u.has(r)) m[r] = p
+  }
+  if (s.size === 0) return [];
+  e.applyMcpUpdate((r) => ({
+    ...r,
+    suppressedPluginMcpServers: (r.suppressedPluginMcpServers ?? []).filter((p) => !s.has(p))
+  }));
+  let f = Object.keys(m);
+  if (f.length > 0) t(`[MCP] Restoring ${f.length} plugin server(s) no longer duplicated by claude.ai connectors after account switch: ${f.join(", ")}`);
+  return x(m, "plugin-restore", e, !1, C)
+}
+async function ce(n) {
+  let {
+    claudeaiConfigs: o,
+    regularMcpConfigs: e,
+    state: C
+  } = n, u = u9t(e), s = new Set(u);
+  if (u.length > 0) t(`[MCP] Removing ${u.length} plugin server(s) that the organization's connector settings block: ${u.join(", ")}`);
+  if (Object.keys(o).length > 0 || s.size > 0) {
+    let f = new Set,
+      r = new Set;
+    for (let h of Object.values(o)) {
+      let M = gF(h);
+      if (M)(BRt(h) ? r : f).add(M)
+    }
+    let p = [],
+      y;
+    for (let [h, M] of Object.entries(e)) {
+      if (!h.startsWith("plugin:")) continue;
+      if (s.has(h)) continue;
+      let P = gF(M);
+      if (!P) continue;
+      if (f.has(P)) s.add(h);
+      else if (r.has(P)) {
+        if (p.push(h), y ??= Dui(), !y) s.add(h)
+      }
+    }
+    if (p.length > 0) l("tengu_mcp_plugin_beside_ineligible_connector", {
+      plugin_server_count: p.length,
+      kept: y
+    });
+    if (y) t(`[MCP] Lazy dedup: keeping ${p.length} plugin server(s) whose only duplicate claude.ai connectors are ineligible: ${p.join(", ")}`);
+    if (s.size > 0) {
+      if (s.size > u.length) {
+        let h = new Set(u);
+        t(`[MCP] Lazy dedup: suppressing ${s.size-u.length} plugin server(s) that duplicate claude.ai connectors: ${[...s].filter((M)=>!h.has(M)).join(", ")}`)
+      }
+      for (let h of C.getClients()) {
+        if (!s.has(h.name) || !(Ui(h) || h.type === "pending")) continue;
+        if (h.type === "connected") UEe(h, void 0), A().clearServerCache(h.name, h.config).catch(() => {});
+        else A().disposeServerConnectionDetached(h.name, h.config)
+      }
+      C.applyMcpUpdate((h) => {
+        let {
+          clients: M,
+          tools: P,
+          commands: O,
+          resources: _
+        } = h;
+        M = M.filter((w) => !s.has(w.name)), P = P.filter((w) => !w.mcpInfo || !s.has(w.mcpInfo.serverName));
+        for (let w of s) O = Kve(O, w), _ = k3t(_, w);
+        let L = [...(h.suppressedPluginMcpServers ?? []).filter((w) => !s.has(w)), ...s];
+        return {
+          ...h,
+          clients: M,
+          tools: P,
+          commands: O,
+          resources: _,
+          suppressedPluginMcpServers: L
+        }
+      })
+    }
+  }
+  let m = rM(e, (f, r) => !r.startsWith("plugin:"));
+  return {
+    ...await t9e(o, m),
+    suppressedPlugins: s
+  }
+}
+
+function de({
+  servers: n,
+  suppressed: o
+}, e, C, u) {
+  return e.applyMcpUpdate((s) => nxn(s.suppressedClaudeAiConnectors ?? [], o) ? s : {
+    ...s,
+    suppressedClaudeAiConnectors: o
+  }), x(n, "claudeai", e, C, u)
+}
+
+function G(n, o) {
+  let e = to(o.name);
+  return {
+    ...n,
+    clients: n.clients.map((C) => C.name === o.name ? o : C),
+    tools: NG(n.tools, (C) => Dd(C, o.name, e)),
+    commands: NG(n.commands, (C) => Gw(C, o.name)),
+    resources: zw(n.resources, o.name),
+    resourceTemplates: zw(n.resourceTemplates, o.name)
+  }
+}
+
+function N(n) {
+  if (Vd()) UEe(n, void 0);
+  n.cleanup().catch(() => {}), A().clearServerCache(n.name, n.config).catch(() => {})
+}
+export {
+  D6s,
+  Ffn,
+  L6s,
+  N6s,
+  tLo,
+  n1r,
+  KYn,
+  Hfn,
+  $fn,
+  F6s
+};

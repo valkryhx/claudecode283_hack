@@ -1,0 +1,14 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+function uz(n) {
+  return typeof n === "string" ? n.replace(/[\p{Cc}\p{Cf}\p{Cs}\p{Zl}\p{Zp}]/gu, "") : ""
+}
+
+function Hht(n) {
+  return typeof n === "string" ? n.replace(/(?![\n\t])[\p{Cc}\p{Cf}\p{Cs}\p{Zl}\p{Zp}]/gu, "") : ""
+}
+export {
+  uz,
+  Hht
+};

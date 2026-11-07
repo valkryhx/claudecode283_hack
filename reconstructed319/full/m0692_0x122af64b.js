@@ -1,0 +1,792 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  H,
+  sf
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  Rwe,
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  qE
+} from "B:/~BUN/root/chunk-apgsnbqk.js";
+import {
+  ZR,
+  h_n,
+  sw
+} from "B:/~BUN/root/chunk-9957329g.js";
+import {
+  Ew
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  mZ,
+  Xw,
+  bF,
+  fy,
+  NIt,
+  AXt,
+  xXt,
+  _ls,
+  DRi
+} from "B:/~BUN/root/chunk-bfwh5k9e.js";
+import {
+  SM,
+  zl,
+  S1s,
+  ant,
+  ov,
+  fae,
+  ywe,
+  RT,
+  X1t,
+  Adn,
+  Gta,
+  Vta,
+  k1s,
+  Kta,
+  qta
+} from "B:/~BUN/root/chunk-1w2vha2y.js";
+import {
+  Mhn,
+  mEt,
+  d9s,
+  e8n,
+  t8n,
+  u2t,
+  c9s,
+  n8n,
+  _B,
+  bB,
+  f2t,
+  p2t,
+  VPe,
+  u9s,
+  f9s,
+  o8n
+} from "B:/~BUN/root/chunk-pnm80mz6.js";
+import {
+  nb
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  e
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import {
+  Jt,
+  ue,
+  ve,
+  Z,
+  j
+} from "B:/~BUN/root/chunk-czy5r8bc.js";
+import {
+  Oe
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+class E {
+  value = void 0;
+  get() {
+    let r = h_n(),
+      n = sf(),
+      o = n?.wheelFlood ?? S$o(),
+      u = n ? Rwe.includes(n.terminal ?? "") : qE.isJetBrainsIdeTerminal(),
+      s = n?.wtSession ?? !!i.WT_SESSION,
+      p = sw(),
+      a = this.value;
+    if (a && a.xtversion === (r ?? "(no reply)") && a.wheelFlood === o && a.jediTerm === u && a.wtSession === s && a.xtermJs === p) return a;
+    let d = "win32";
+    return this.value = {
+      useDecayCurve: !o && (p || d === "win32" || s),
+      useAdaptiveDrain: p,
+      base: u ? 2 : ne(p, o, s),
+      xtermJs: p,
+      wheelFlood: o,
+      jediTerm: u,
+      termProgram: i.TERM_PROGRAM ?? "unset",
+      termProgramVersion: i.TERM_PROGRAM_VERSION ?? "unset",
+      xtversion: r ?? "(no reply)",
+      wtSession: s,
+      scrollSpeedEnv: i.CLAUDE_CODE_SCROLL_SPEED ?? "unset",
+      platform: d
+    }, this.value
+  }
+  invalidate() {
+    this.value = void 0
+  }
+}
+var g = new W(() => new E);
+
+function q7() {
+  return g.of(H().host).get()
+}
+
+function S$o() {
+  if (process.env.CURSOR_TRACE_ID !== void 0) return !0;
+  if (i.VSCODE_GIT_ASKPASS_MAIN?.includes("cursor")) return !0;
+  if (i.TERM_PROGRAM === "vscode") {
+    let r = re(i.TERM_PROGRAM_VERSION);
+    if (r !== null) return r >= 1092000 && r < 1105000
+  }
+  return h_n()?.startsWith("xterm.js") ?? !1
+}
+
+function re(r) {
+  if (!r) return null;
+  let n = /^(\d+)\.(\d+)\.(\d+)/.exec(r);
+  if (!n) return null;
+  return +n[1] * 1e6 + +n[2] * 1000 + +n[3]
+}
+
+function Gzr(r, n, o) {
+  return !n && (r || !0) ? 3 : 1
+}
+
+function ne(r, n, o) {
+  let u = Gzr(r, n, o),
+    s = i.CLAUDE_CODE_SCROLL_SPEED;
+  if (!s) return u;
+  let p = parseFloat(s);
+  return Number.isNaN(p) || p <= 0 ? u : Math.min(p, 20)
+}
+
+function xhn() {
+  g.of(H().host).invalidate()
+}
+var y = Oe(nb(), 1);
+var S = zl(0, "f");
+
+function a9s() {
+  if (qE.windowsConsoleSupportsVirtualTerminalSequences()) return RT + X1t + ov;
+  else return RT + S;
+  return RT + X1t + ov
+}
+
+function v$o() {
+  if (!qE.windowsConsoleSupportsVirtualTerminalSequences()) return RT + S;
+  return RT + ov
+}
+
+function uEt(r) {
+  return ov + (ywe + S1s(1)).repeat(r) + ov
+}
+
+function l9s() {
+  if (i.TMUX && ZR().get("synchronizedOutput").state === "pending") return;
+  return DUe()
+}
+
+function phe() {
+  return v({
+    beforeTheAnswer: !1
+  })
+}
+
+function DUe() {
+  return v({
+    beforeTheAnswer: !0
+  })
+}
+
+function v({
+  beforeTheAnswer: r
+}) {
+  if (i.CLAUDE_BG_BACKEND === "daemon") return sf()?.syncOutput !== !1;
+  if (!i.TMUX && i.CLAUDE_CODE_FORCE_SYNC_OUTPUT) return !0;
+  let n = ZR().get("synchronizedOutput");
+  if (n.state === "settled") return n.value;
+  return r && n.likely
+}
+
+function Vzr(r = phe()) {
+  if (i.CLAUDE_BG_BACKEND === "daemon") return !1;
+  return r && i.TMUX == null && process.env.ZELLIJ == null && !qE.isJetBrainsIdeTerminal() && !sw() && i.WT_SESSION == null
+}
+
+function fEt() {
+  let r = sf()?.progressReporting;
+  if (r !== void 0) return r;
+  if (!process.stdout.isTTY) return !1;
+  if (i.WT_SESSION) return !1;
+  if (i.ConEmuANSI || i.ConEmuPID || i.ConEmuTask) return !0;
+  let n = y.coerce(i.TERM_PROGRAM_VERSION);
+  if (!n) return !1;
+  if (i.TERM_PROGRAM === "ghostty") return Ew(n.version, "1.2.0");
+  if (i.TERM_PROGRAM === "iTerm.app") return Ew(n.version, "3.6.6");
+  return !1
+}
+
+function h(r) {
+  if (r != null) return _ls.includes(r);
+  return ZR().now("extendedKeys")
+}
+
+function Phn(r = i.terminal, n = ZR()) {
+  if (i.TMUX || i.STY || !n.now("extendedKeys")) return !1;
+  return r === null || !DRi.includes(r) || n.confirmed("kittyKeyboard")
+}
+
+function IYe() {
+  return !mZ() && (h() || ZR().now("kittyKeyboard")) ? k1s : ""
+}
+
+function l2t() {
+  return mZ() ? "" : qta
+}
+
+function d2t(r) {
+  return h() ? k1s + (r?.legacyKitty ? Vta : Gta) + Kta : ""
+}
+
+function c2t(r) {
+  return f2t + RT + ov + d2t(r)
+}
+
+function mhe() {
+  return IYe() + p2t + l2t()
+}
+var X5n = 5000;
+
+function Ohn() {
+  return !0
+}
+var Kzr = Vzr(DUe());
+
+function qzr(r, n, o) {
+  let u = performance.now(),
+    s = r.slowestWrite;
+  if (s === void 0 || u - n >= s.endedMs - s.startedMs) r.slowestWrite = {
+    startedMs: n,
+    endedMs: u,
+    bytes: o
+  }
+}
+
+function J5n(r, n) {
+  if (r.stdoutDead) return;
+  let o = performance.now(),
+    u = Buffer.byteLength(n);
+  try {
+    r.stdout.write(n)
+  } catch (s) {
+    if (r.tolerateDeadStdout && (b(s) === "EIO" || b(s) === "EPIPE")) {
+      r.stdoutDead = !0, qzr(r, o, u);
+      return
+    }
+    throw s
+  }
+  qzr(r, o, u)
+}
+
+function E$o(r, n, o = !1, u, s = "") {
+  let p = u !== void 0 && u > 1 ? u - 1 : void 0;
+  if (n.length === 0) {
+    if (s !== "") J5n(r, s);
+    return
+  }
+  let a = !o,
+    d = s + (a ? Mhn : "");
+  for (let c of n) switch (c.type) {
+    case "stdout":
+      d += c.content;
+      break;
+    case "clear":
+      if (c.count > 0) d += Adn(c.count);
+      break;
+    case "clearTerminal":
+      d += c.altScreen ? a9s() : uEt(c.viewportRows);
+      break;
+    case "cursorHide":
+      d += bB;
+      break;
+    case "cursorShow":
+      d += _B;
+      break;
+    case "cursorMove":
+      d += fae(c.x, p !== void 0 ? Math.max(-p, Math.min(p, c.y)) : c.y);
+      break;
+    case "cursorTo":
+      d += ant(c.col);
+      break;
+    case "carriageReturn":
+      d += "\r";
+      break;
+    case "hyperlink":
+      d += NIt(c.uri);
+      break;
+    case "styleStr":
+      d += c.str;
+      break
+  }
+  if (a) d += mEt;
+  J5n(r, d)
+}
+
+function b(r) {
+  return r && typeof r === "object" && "code" in r ? String(r.code) : void 0
+}
+class cEt {
+  _didStopImmediatePropagation = !1;
+  didStopImmediatePropagation() {
+    return this._didStopImmediatePropagation
+  }
+  stopImmediatePropagation() {
+    this._didStopImmediatePropagation = !0
+  }
+}
+import {
+  EventEmitter as oe
+} from "events";
+class Ahn extends oe {
+  constructor() {
+    super();
+    this.setMaxListeners(0)
+  }
+  emit(r, ...n) {
+    if (r === "error") return super.emit(r, ...n);
+    let o = this.rawListeners(r);
+    if (o.length === 0) return !1;
+    let u = n[0] instanceof cEt ? n[0] : null;
+    for (let s of o)
+      if (s.apply(this, n), u?.didStopImmediatePropagation()) break;
+    return !0
+  }
+}
+
+function a2t() {
+  return {
+    lastWheelTime: 0,
+    lastWheelDownTime: 0,
+    bugConfirmed: !1,
+    notified: !1,
+    trackpadGesture: !1,
+    pendingArrowBoost: 0
+  }
+}
+
+function ie(r) {
+  r.bugConfirmed = !0, r.trackpadGesture = !0, r.pendingArrowBoost++
+}
+
+function T(r) {
+  r.trackpadGesture = !1, r.pendingArrowBoost = 0
+}
+
+function s9s(r) {
+  let n = r.pendingArrowBoost;
+  return r.pendingArrowBoost = 0, n
+}
+
+function w$o(r) {
+  if (r.bugConfirmed) return !0;
+  if (process.env.INTELLIJ_TERMINAL_COMMAND_BLOCKS_REWORKED !== void 0 || process.env.INTELLIJ_TERMINAL_COMMAND_BLOCKS !== void 0) return r.bugConfirmed = !0, !0;
+  return !1
+}
+var se = 75,
+  ae = 250,
+  k$o = 200;
+
+function i9s(r, n, o, u) {
+  if (!q7().jediTerm) return T(r), n;
+  let s = null;
+  for (let p = 0; p < n.length; p++) {
+    let a = n[p];
+    if (a.kind !== "key") {
+      s?.push(a);
+      continue
+    }
+    if (a.name === "wheelup" || a.name === "wheeldown") {
+      if (o - r.lastWheelTime > k$o) r.lastWheelDownTime = 0, T(r);
+      if (r.lastWheelTime = o, a.name === "wheeldown") r.lastWheelDownTime = o;
+      if (a.name === "wheelup" && o - r.lastWheelDownTime < ae && w$o(r)) {
+        s ??= n.slice(0, p), s.push({
+          ...a,
+          name: "wheeldown"
+        });
+        continue
+      }
+      s?.push(a);
+      continue
+    }
+    if ((a.name === "up" || a.name === "down") && !a.ctrl && !a.meta && !a.shift && o - r.lastWheelTime < se) {
+      if (!r.notified) r.notified = !0, u();
+      ie(r), s ??= n.slice(0, p);
+      continue
+    }
+    s?.push(a)
+  }
+  return s ?? n
+}
+
+function yB(r, n) {
+  if (r === void 0) return;
+  if (Number.isInteger(r)) return;
+  t(`${n} should be an integer, got ${r}`, {
+    level: "warn"
+  })
+}
+
+function Q5n(r, n, o, u, s) {
+  if (r === void 0 && n === void 0 && o === void 0 && u === void 0 && s === void 0) return;
+  return {
+    hidden: r,
+    label: n,
+    role: o,
+    state: u,
+    preserveWhitespace: s
+  }
+}
+
+function de({
+  children: r,
+  ref: n,
+  tabIndex: o,
+  autoFocus: u,
+  onClick: s,
+  onFocus: p,
+  onBlur: a,
+  onMouseEnter: d,
+  onMouseLeave: c,
+  onPointer: A,
+  hoverIgnoresBlankCells: C,
+  hoverFollowsPaint: M,
+  renderEvent: P,
+  renderComponent: k,
+  drawPending: O,
+  elementKey: N,
+  elementPlugin: D,
+  onKeyDown: K,
+  onKeyDownCapture: L,
+  onPaste: B,
+  onPasteCapture: G,
+  onWheel: F,
+  onWheelCapture: J,
+  keybindingScope: U,
+  textEntry: Y,
+  onAction: q,
+  onActionCapture: X,
+  "aria-hidden": V,
+  "aria-label": z,
+  "aria-role": Q,
+  "aria-state": ee,
+  "aria-preserve-whitespace": te,
+  ...l
+}) {
+  if (yB(l.margin, "margin"), yB(l.marginX, "marginX"), yB(l.marginY, "marginY"), yB(l.marginTop, "marginTop"), yB(l.marginBottom, "marginBottom"), l.marginLeft !== "auto") yB(l.marginLeft, "marginLeft");
+  if (l.marginRight !== "auto") yB(l.marginRight, "marginRight");
+  return yB(l.padding, "padding"), yB(l.paddingX, "paddingX"), yB(l.paddingY, "paddingY"), yB(l.paddingTop, "paddingTop"), yB(l.paddingBottom, "paddingBottom"), yB(l.paddingLeft, "paddingLeft"), yB(l.paddingRight, "paddingRight"), yB(l.gap, "gap"), yB(l.columnGap, "columnGap"), yB(l.rowGap, "rowGap"), l.flexWrap ??= "nowrap", l.flexDirection ??= "row", l.flexGrow ??= 0, l.flexShrink ??= 1, l.overflowX = l.overflowX ?? l.overflow ?? "visible", l.overflowY = l.overflowY ?? l.overflow ?? "visible", e("ink-box", {
+    ref: n,
+    tabIndex: o,
+    autoFocus: u,
+    onClick: s,
+    onFocus: p,
+    onBlur: a,
+    onMouseEnter: d,
+    onMouseLeave: c,
+    onPointer: A,
+    hoverIgnoresBlankCells: C,
+    hoverFollowsPaint: M,
+    renderEvent: P,
+    renderComponent: k,
+    drawPending: O,
+    elementKey: N,
+    elementPlugin: D,
+    onKeyDown: K,
+    onKeyDownCapture: L,
+    onPaste: B,
+    onPasteCapture: G,
+    onWheel: F,
+    onWheelCapture: J,
+    keybindingScope: U,
+    textEntry: Y,
+    onAction: q,
+    onActionCapture: X,
+    accessibility: Q5n(V, z, Q, ee, te),
+    style: l,
+    children: r
+  })
+}
+var Sf = de;
+j();
+var R = Jt({
+  stdin: process.stdin,
+  internal_eventEmitter: new Ahn,
+  setRawMode() {},
+  isRawModeSupported: !1,
+  internal_querier: null,
+  internal_jediTermInput: a2t()
+});
+R.displayName = "InternalStdinContext";
+var GPe = R;
+j();
+var nh = Jt(null);
+j();
+
+function x({
+  background: r,
+  foreground: n
+}) {
+  return Xw(fy.SET_BG_COLOR, r) + Xw(fy.SET_FG_COLOR, n)
+}
+
+function w() {
+  return Xw(fy.RESET_BG_COLOR) + Xw(fy.RESET_FG_COLOR)
+}
+var f = {
+  bracketedPaste: 0,
+  themeReports: 0,
+  extendedKeys: 0,
+  altScreen: 1,
+  altScreenKeys: 2,
+  mouse: 2,
+  mousePixels: 2,
+  surface: 3,
+  focusEvents: 4
+};
+
+function I(r) {
+  switch (r) {
+    case "bracketedPaste":
+      return {
+        mode: r, on: d9s, off: e8n
+      };
+    case "themeReports":
+      return {
+        mode: r, on: c9s, off: n8n
+      };
+    case "focusEvents":
+      return {
+        mode: r, on: t8n, off: u2t
+      };
+    case "mousePixels":
+      return {
+        mode: r, on: u9s, off: f9s
+      };
+    case "extendedKeys":
+      return {
+        mode: r, get on() {
+          return d2t()
+        }, get off() {
+          return l2t() + IYe()
+        }
+      };
+    case "altScreen":
+      return {
+        mode: r, on: f2t + RT + ov, get off() {
+          return p2t + l2t()
+        }
+      };
+    case "altScreenKeys":
+      return {
+        mode: r, get on() {
+          return d2t()
+        }, get off() {
+          return IYe()
+        }
+      }
+  }
+}
+class pEt {
+  entries = [];
+  suspended = !1;
+  kept;
+  get isSuspended() {
+    return this.suspended
+  }
+  isSet(r) {
+    return this.entries.some((n) => n.mode === r)
+  }
+  set(r, n) {
+    if (this.isSet(r)) return "";
+    let o = this.add(this.entry(r, n));
+    if (r === "altScreen") o += this.add(I("altScreenKeys"));
+    return this.suspended ? "" : o
+  }
+  reset(r) {
+    if (!this.isSet(r)) return "";
+    let n = r === "altScreen" ? this.remove("altScreenKeys") : "",
+      o = this.remove(r);
+    if (this.suspended && r === this.kept) return this.kept = void 0, o;
+    return this.suspended ? "" : n + o
+  }
+  reassert(r) {
+    if (this.suspended) return "";
+    return this.entries.find((n) => n.mode === r)?.on ?? ""
+  }
+  reassertKeys() {
+    if (this.suspended) return "";
+    let r = this.isSet("altScreen") ? "altScreenKeys" : "extendedKeys";
+    return this.entries.find((n) => n.mode === r)?.on ?? ""
+  }
+  reassertFrom(r) {
+    if (this.suspended || !this.isSet(r)) return "";
+    return this.entries.filter((n) => f[n.mode] >= f[r]).reduce((n, o) => n + o.on, "")
+  }
+  suspend(r) {
+    if (this.suspended) return "";
+    return this.suspended = !0, this.kept = r, this.entries.reduceRight((n, o) => o.mode === r ? n : n + o.off, "")
+  }
+  resume({
+    clearKeys: r = !1
+  } = {}) {
+    if (!this.suspended) return "";
+    this.suspended = !1, this.kept = void 0;
+    let n = this.isSet("altScreen"),
+      o = r ? l2t() + (n ? "" : IYe()) : "";
+    return this.entries.reduce((u, s) => u + s.on + (r && s.mode === "altScreen" ? IYe() : ""), o)
+  }
+  resetAll() {
+    let r = this.suspended ? this.entries.filter((n) => n.mode === this.kept) : this.entries;
+    return this.entries = [], this.kept = void 0, r.reduceRight((n, o) => n + o.off, "")
+  }
+  entry(r, n) {
+    switch (r) {
+      case "mouse": {
+        let o = typeof n === "string" ? n : "off";
+        return {
+          mode: r,
+          on: o8n(o),
+          off: o === "off" ? "" : VPe
+        }
+      }
+      case "surface":
+        return {
+          mode: r, on: typeof n === "object" ? x(n) : "", off: w()
+        };
+      default:
+        return I(r)
+    }
+  }
+  add(r) {
+    let n = this.entries.findIndex((o) => f[o.mode] > f[r.mode]);
+    if (n === -1) this.entries.push(r);
+    else this.entries.splice(n, 0, r);
+    return r.on
+  }
+  remove(r) {
+    let n = this.entries.findIndex((o) => o.mode === r);
+    if (n === -1) return "";
+    return this.entries.splice(n, 1)[0].off
+  }
+}
+var _ = Jt(new pEt);
+_.displayName = "InternalTerminalModesContext";
+var Ihn = _;
+j();
+
+function m(r) {
+  let n = "";
+  for (let o = 0; o < r.length; o++) {
+    let u = r.charCodeAt(o);
+    n += u < 32 || u >= 127 && u <= 159 ? " " : r[o]
+  }
+  return n
+}
+var wK = Jt(null),
+  Z5n = wK.Provider;
+
+function QH() {
+  let r = ve(wK);
+  if (!r) throw Error("useTerminalNotification must be used within TerminalWriteProvider");
+  let n = ue(({
+      message: a,
+      title: d
+    }) => {
+      let c = d ? `${d}: ${a}` : a;
+      r(bF(Xw(fy.ITERM2, m(c))))
+    }, [r]),
+    o = ue(({
+      message: a,
+      title: d,
+      id: c
+    }) => {
+      r(bF(Xw(fy.KITTY, `i=${c}:d=0:p=title`, m(d)))), r(bF(Xw(fy.KITTY, `i=${c}:p=body`, m(a)))), r(bF(Xw(fy.KITTY, `i=${c}:d=1:a=focus`, "")))
+    }, [r]),
+    u = ue(({
+      message: a,
+      title: d
+    }) => {
+      r(bF(Xw(fy.GHOSTTY, "notify", m(d), m(a))))
+    }, [r]),
+    s = ue(() => {
+      r(SM)
+    }, [r]),
+    p = ue((a, d) => {
+      if (!fEt()) return;
+      if (!a) {
+        r(bF(Xw(fy.ITERM2, AXt.PROGRESS, xXt.CLEAR, "")));
+        return
+      }
+      let c = Math.max(0, Math.min(100, Math.round(d ?? 0)));
+      switch (a) {
+        case "completed":
+          r(bF(Xw(fy.ITERM2, AXt.PROGRESS, xXt.CLEAR, "")));
+          break;
+        case "error":
+          r(bF(Xw(fy.ITERM2, AXt.PROGRESS, xXt.ERROR, c)));
+          break;
+        case "indeterminate":
+          r(bF(Xw(fy.ITERM2, AXt.PROGRESS, xXt.INDETERMINATE, "")));
+          break;
+        case "running":
+          r(bF(Xw(fy.ITERM2, AXt.PROGRESS, xXt.SET, c)));
+          break;
+        case null:
+          break
+      }
+    }, [r]);
+  return Z(() => ({
+    notifyITerm2: n,
+    notifyKitty: o,
+    notifyGhostty: u,
+    notifyBell: s,
+    progress: p
+  }), [n, o, u, s, p])
+}
+export {
+  cEt,
+  yB,
+  Ahn,
+  q7,
+  S$o,
+  Gzr,
+  xhn,
+  a2t,
+  s9s,
+  w$o,
+  k$o,
+  i9s,
+  GPe,
+  a9s,
+  v$o,
+  uEt,
+  l9s,
+  phe,
+  DUe,
+  Vzr,
+  fEt,
+  Phn,
+  IYe,
+  l2t,
+  d2t,
+  c2t,
+  mhe,
+  X5n,
+  Ohn,
+  Kzr,
+  qzr,
+  J5n,
+  E$o,
+  Q5n,
+  Sf,
+  nh,
+  pEt,
+  Ihn,
+  wK,
+  Z5n,
+  QH
+};

@@ -1,0 +1,3595 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  Ee
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  R
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  _
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  P,
+  Wn,
+  Dt,
+  Yr,
+  _l
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  yFe,
+  On
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  Br
+} from "B:/~BUN/root/chunk-vxjrk7vf.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import {
+  Se
+} from "B:/~BUN/root/chunk-x24hm796.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  LO,
+  nP,
+  Qg,
+  nLr
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  CHe,
+  Q$s
+} from "B:/~BUN/root/chunk-r8p1hzqw.js";
+import {
+  T_
+} from "B:/~BUN/root/chunk-2f1svh63.js";
+import {
+  dS,
+  IGn,
+  yr,
+  mn
+} from "B:/~BUN/root/chunk-44q965xg.js";
+import {
+  gr
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  Lte
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import {
+  ks
+} from "B:/~BUN/root/chunk-d10hhz4p.js";
+import {
+  vqe,
+  ai
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import {
+  Hc,
+  ct,
+  AH,
+  lG,
+  gwe,
+  XU
+} from "B:/~BUN/root/chunk-bkfncj77.js";
+import {
+  Mr,
+  uH,
+  qS,
+  KVe,
+  qVe,
+  Ojn
+} from "B:/~BUN/root/chunk-xqymp2nr.js";
+import {
+  AV,
+  CE,
+  kc,
+  Fc,
+  RO
+} from "B:/~BUN/root/chunk-trd3c21n.js";
+import {
+  oa,
+  Rn,
+  ot,
+  s,
+  n,
+  qs,
+  sl,
+  Ia,
+  Vr,
+  qN,
+  Ss
+} from "B:/~BUN/root/chunk-qey16aan.js";
+import {
+  fke,
+  Zc,
+  Dm
+} from "B:/~BUN/root/chunk-31b4g6te.js";
+import {
+  I9
+} from "B:/~BUN/root/chunk-cxcakgnv.js";
+import {
+  kWe
+} from "B:/~BUN/root/chunk-2fedt3ag.js";
+import {
+  WEr
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  G,
+  ar,
+  Gr,
+  xs
+} from "B:/~BUN/root/chunk-tmdrwqnv.js";
+import {
+  Zce
+} from "B:/~BUN/root/chunk-az0cmmyt.js";
+import {
+  w7o,
+  LEn
+} from "B:/~BUN/root/chunk-wrza91j9.js";
+import {
+  pK
+} from "B:/~BUN/root/chunk-weefacy8.js";
+import {
+  Bl,
+  As
+} from "B:/~BUN/root/chunk-q8sf8fhe.js";
+import {
+  Re
+} from "B:/~BUN/root/chunk-qr2xxkqa.js";
+import {
+  mK,
+  Bj
+} from "B:/~BUN/root/chunk-6651s0bp.js";
+import {
+  Sn,
+  Mm
+} from "B:/~BUN/root/chunk-v95bwhaa.js";
+import {
+  oI
+} from "B:/~BUN/root/chunk-tzwf3sbj.js";
+import {
+  tdt,
+  al,
+  H5t
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import {
+  Y,
+  pb
+} from "B:/~BUN/root/chunk-c1v460b9.js";
+import {
+  n_
+} from "B:/~BUN/root/chunk-bvcekd4j.js";
+import {
+  ia
+} from "B:/~BUN/root/chunk-q793s85g.js";
+import {
+  Lo
+} from "B:/~BUN/root/chunk-npkbazqf.js";
+import {
+  re
+} from "B:/~BUN/root/chunk-xkw95p5n.js";
+import {
+  qas,
+  dut
+} from "B:/~BUN/root/chunk-bw0w9zyr.js";
+import {
+  VC
+} from "B:/~BUN/root/chunk-x12sgt91.js";
+import {
+  ti,
+  Ze
+} from "B:/~BUN/root/chunk-cpzw87wr.js";
+import {
+  Ce
+} from "B:/~BUN/root/chunk-cync0e08.js";
+import {
+  ua
+} from "B:/~BUN/root/chunk-kbk5awdm.js";
+import {
+  Jjr
+} from "B:/~BUN/root/chunk-r2775wd7.js";
+import {
+  qot
+} from "B:/~BUN/root/chunk-cb9g6n6d.js";
+import {
+  hK
+} from "B:/~BUN/root/chunk-wcj4tqqj.js";
+import {
+  Cot
+} from "B:/~BUN/root/chunk-hmkdp6v1.js";
+import {
+  iy
+} from "B:/~BUN/root/chunk-55xtzph3.js";
+import {
+  $_
+} from "B:/~BUN/root/chunk-zmwb0jn3.js";
+import {
+  Bi
+} from "B:/~BUN/root/chunk-zmr09f3k.js";
+import {
+  Ul
+} from "B:/~BUN/root/chunk-dr6mv0j8.js";
+import {
+  fb
+} from "B:/~BUN/root/chunk-a2fp3xgm.js";
+import {
+  Gd
+} from "B:/~BUN/root/chunk-jx2rmjhh.js";
+import {
+  Ic
+} from "B:/~BUN/root/chunk-c7kw6nqt.js";
+import {
+  Hh
+} from "B:/~BUN/root/chunk-81tfbmye.js";
+import {
+  ne,
+  e,
+  r
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import {
+  ES
+} from "B:/~BUN/root/chunk-09wqth96.js";
+import {
+  BY
+} from "B:/~BUN/root/chunk-zh1rck2m.js";
+import {
+  Idi
+} from "B:/~BUN/root/chunk-p18mw08q.js";
+import {
+  F8o
+} from "B:/~BUN/root/chunk-ffe7s8s6.js";
+import {
+  Jt,
+  ue,
+  ve,
+  O,
+  qo,
+  Zt,
+  Z,
+  A,
+  y,
+  j
+} from "B:/~BUN/root/chunk-czy5r8bc.js";
+import {
+  pbe,
+  dc,
+  US,
+  jy,
+  Fv,
+  ygt,
+  lfe,
+  lRe,
+  W$n,
+  Ki,
+  Eg,
+  eHt,
+  $1,
+  ma
+} from "B:/~BUN/root/chunk-4jfmvmew.js";
+import {
+  ze
+} from "B:/~BUN/root/chunk-xwzn0yxv.js";
+import {
+  Det,
+  rXi,
+  oXi,
+  IDs
+} from "B:/~BUN/root/chunk-97r06se6.js";
+import {
+  Ep
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  mxe
+} from "B:/~BUN/root/chunk-63176a0t.js";
+import {
+  ce
+} from "B:/~BUN/root/chunk-w7vsj9wa.js";
+import {
+  Zn,
+  $a
+} from "B:/~BUN/root/chunk-12nc74pv.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  w,
+  Pn
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+
+function oo(o) {
+  return WEr(o)
+}
+
+function Fs(o) {
+  let t = [];
+  for (let i of o) {
+    if (i === null || typeof i !== "object") continue;
+    if (i.type !== "addRules") {
+      t.push(i);
+      continue
+    }
+    if (!Array.isArray(i.rules)) continue;
+    let u = i.rules.filter((m) => m !== null && typeof m === "object" && typeof m.toolName === "string" && (m.ruleContent === void 0 || typeof m.ruleContent === "string") && (m.ruleContent === void 0 ? Ct(m.toolName) : oo({
+      toolName: m.toolName,
+      ruleContent: m.ruleContent
+    })));
+    if (u.length > 0) t.push({
+      ...i,
+      rules: u
+    })
+  }
+  return t
+}
+var j4e = 8,
+  Y$e = 64,
+  Okt = 160,
+  Ls = new Set(["localSettings", "session"]);
+
+function sr(o, t, i, u = Ls) {
+  let m = Fs(o).filter((d) => {
+      if (!t.has(d.type)) return !1;
+      if ((d.type === "addRules" || d.type === "replaceRules" || d.type === "removeRules") && d.behavior !== "allow") return !1;
+      return d.destination !== void 0 && u.has(d.destination)
+    }),
+    c = [];
+  for (let d of m) {
+    if (d.type !== "addRules") {
+      if (d.type === "addDirectories") {
+        if (!Array.isArray(d.directories)) continue;
+        let g = d.directories.filter((b) => typeof b === "string" && b.trim() !== "" && ce(b) > 0 && lfe(b));
+        if (g.length === 0) continue;
+        c.push({
+          ...d,
+          directories: g
+        });
+        continue
+      }
+      c.push(d);
+      continue
+    }
+    if (d.rules === void 0) continue;
+    let f = d.rules.filter((g) => lfe(mn({
+        toolName: g.toolName,
+        ...g.ruleContent !== void 0 && {
+          ruleContent: g.ruleContent
+        }
+      }))),
+      h = i === void 0 ? f : f.filter(i);
+    if (h.length > 0) c.push({
+      ...d,
+      rules: h
+    })
+  }
+  return c
+}
+var s1r = new Set(["addRules", "addDirectories"]),
+  H6s = new Set(["addRules"]);
+
+function Bs(o) {
+  return o.trim() !== o || o === "" || pbe(o) || ai(o) !== o || /[\t\n]/.test(o) || ce(o) === 0
+}
+
+function Ct(o) {
+  if (o === Det) return !1;
+  if (Bs(o)) return !1;
+  let t = yr(mn({
+    toolName: o
+  }));
+  if (t.toolName !== o || t.ruleContent !== void 0) return !1;
+  if (dS(o)) return !1;
+  let i = gr(o);
+  if (i !== null && !i.toolName) return !1;
+  return !0
+}
+
+function lr(o) {
+  if (typeof o !== "string" || o.trim() === "" || ce(o) === 0 || !lfe(o)) return null;
+  return oXi(o)
+}
+
+function ro(o) {
+  switch (o.length) {
+    case 0:
+      return "";
+    case 1:
+      return e(n, {
+        bold: !0,
+        children: o[0]
+      });
+    case 2:
+      return r(n, {
+        children: [e(n, {
+          bold: !0,
+          children: o[0]
+        }), " and ", e(n, {
+          bold: !0,
+          children: o[1]
+        })]
+      });
+    default:
+      return r(n, {
+        children: [e(n, {
+          bold: !0,
+          children: o.slice(0, -1).join(", ")
+        }), ", and", " ", e(n, {
+          bold: !0,
+          children: o.slice(-1)[0]
+        })]
+      })
+  }
+}
+
+function zrt(o) {
+  if (o.length === 0) return "";
+  if (o.length === 1) return e(n, {
+    bold: !0,
+    children: o[0]
+  });
+  if (o.length === 2) return r(n, {
+    children: [e(n, {
+      bold: !0,
+      children: o[0]
+    }), " and ", e(n, {
+      bold: !0,
+      children: o[1]
+    })]
+  });
+  return r(n, {
+    children: [o.slice(0, -1).map((t, i) => r(n, {
+      children: [e(n, {
+        bold: !0,
+        children: t
+      }), ",", " "]
+    }, i)), "and ", e(n, {
+      bold: !0,
+      children: o.at(-1)
+    })]
+  })
+}
+
+function Bfn(o) {
+  return IGn((o?.replace(/\/\*\*$/, "") || "").replace(/^\.\//, "").replace(/^\/\//, "/"))
+}
+
+function io(o) {
+  if (!o) return "";
+  return o.endsWith(":*") || o.endsWith(" *") ? o.slice(0, -2) : o
+}
+
+function jfn(o, t, i) {
+  if (o.toolName === t) {
+    let u = io(o.ruleContent);
+    if (!u) return !1;
+    return Boolean(i ? i(u) : u)
+  }
+  if (o.toolName === ze) return Boolean(Bfn(o.ruleContent));
+  return !1
+}
+
+function Wme(o) {
+  return o !== void 0 && ai(o) === o && !/[\t\n\u2028\u2029]/.test(o) && !pbe(o) ? rXi(o) : void 0
+}
+
+function Ij(o) {
+  return eHt(o)
+}
+
+function i1r(o, t, i, u) {
+  if (!Array.isArray(o)) return null;
+  if (o.length > Y$e) return null;
+  if (o.some((k) => k === null || typeof k !== "object")) return null;
+  let m = o.filter((k) => k.type === "addRules").flatMap((k) => k.rules || []),
+    c = o.filter((k) => k.type === "addDirectories").flatMap((k) => Array.isArray(k.directories) ? k.directories : []);
+  if (m.some((k) => k === null || typeof k !== "object" || typeof k.toolName !== "string" || k.ruleContent !== void 0 && typeof k.ruleContent !== "string")) return null;
+  if (m.length + c.length > j4e) return null;
+  let d = m.filter((k) => k.toolName === ze),
+    f = m.filter((k) => k.toolName === t);
+  if (c.some((k) => typeof k !== "string" || k.trim() === "" || ce(k) === 0 || !lfe(k))) return null;
+  let h = L(c),
+    g = L(d.flatMap((k) => k.ruleContent && Bfn(k.ruleContent) ? k.ruleContent : []));
+  if (g.some((k) => !lfe(k))) return null;
+  let b = L(f.flatMap((k) => {
+    if (!k.ruleContent) return [];
+    return io(k.ruleContent) ? [k.ruleContent] : []
+  }));
+  if (b.some((k) => !lfe(k))) return null;
+  let C = lRe(b, (k) => {
+      let E = io(k) || k;
+      return Ij(i ? i(E) : E)
+    }),
+    D = lRe([...g, ...h], (k) => g.includes(k) ? Ij(Bfn(k)) : Ij(k)),
+    x = D.slice(0, g.length),
+    T = D.slice(g.length);
+  if (ce([...C, ...x, ...T].join(" and ")) > Okt) return null;
+  let N = h.length > 0,
+    v = x.length > 0,
+    F = C.length > 0;
+  if (v && !N && !F) return r(n, {
+    children: ["Yes, allow reading from ", zrt(x), " from this project"]
+  });
+  if (N && !v && !F) return r(n, {
+    children: ["Yes, and always allow access to ", zrt(T), " from this project"]
+  });
+  if (F && !N && !v) return r(n, {
+    children: ["Yes, and don't ask again for ", ro(C), " commands", " ", u === void 0 ? r(ne, {
+      children: ["in", " ", e(n, {
+        bold: !0,
+        children: Mr(Ee())
+      })]
+    }) : r(ne, {
+      children: ["on ", e(n, {
+        bold: !0,
+        children: u
+      })]
+    })]
+  });
+  if ((N || v) && !F) {
+    let k = [...T, ...x];
+    return r(n, {
+      children: ["Yes, and always allow access to ", zrt(k), " from this project"]
+    })
+  }
+  if ((N || v) && F) {
+    let k = [...T, ...x];
+    if (k.length === 1 && C.length === 1) return r(n, {
+      children: ["Yes, and allow access to ", zrt(k), " and", " ", ro(C), " commands"]
+    });
+    return r(n, {
+      children: ["Yes, and allow ", zrt(k), " access and", " ", ro(C), " commands"]
+    })
+  }
+  return null
+}
+var je = Symbol("ConsentRow mint token");
+class Ie {
+  #e = !0;
+  node;
+  applies;
+  constructor(o, t, i) {
+    if (o !== je) throw Error("ConsentRow may only be constructed by the consentRows factories");
+    this.node = t, this.applies = i, Object.freeze(this)
+  }
+  static is(o) {
+    return typeof o === "object" && o !== null && #e in o
+  }
+}
+var $C = Ie.is,
+  $6s = p(() => Ep($C));
+
+function Tt(o) {
+  if (o.length > Y$e) return null;
+  let t = [];
+  for (let i of o) {
+    let u;
+    try {
+      u = I9().safeParse(i)
+    } catch {
+      return null
+    }
+    if (!u.success) return null;
+    t.push(u.data)
+  }
+  return IDs(t)
+}
+
+function GH(o, t) {
+  if (!Array.isArray(o)) return null;
+  let i;
+  try {
+    i = o.length
+  } catch {
+    return null
+  }
+  if (typeof i !== "number" || !Number.isSafeInteger(i) || i < 0 || i > Y$e) return null;
+  let u = 0,
+    m = [];
+  for (let g = 0; g < i; g++) try {
+    let b = o[g],
+      C = b !== null && typeof b === "object" ? {
+        ...b
+      } : b,
+      D = !1;
+    if (C !== null && typeof C === "object") {
+      let x = C;
+      for (let T of ["rules", "directories"]) {
+        let M = x[T];
+        if (!Array.isArray(M)) continue;
+        let N = M.length;
+        if (typeof N !== "number" || !Number.isSafeInteger(N) || N < 0) {
+          D = !0;
+          break
+        }
+        if (u += N, u > Y$e * j4e) return null;
+        let v = [];
+        for (let F = 0; F < N; F++) v.push(M[F]);
+        x[T] = v
+      }
+    }
+    if (D) continue;
+    m.push(C)
+  } catch {}
+  let c = [];
+  for (let g of m) {
+    let b;
+    try {
+      b = I9().safeParse(g)
+    } catch {
+      continue
+    }
+    if (b.success) c.push(b.data)
+  }
+  if (c.length === 0) return null;
+  let d = sr(c, t.displayedTypes, t.labelPredicate, t.displayedDestinations);
+  if (d.length === 0) return null;
+  let f = IDs(d),
+    h = t.renderLabel(f);
+  if (h == null || typeof h === "boolean" || h === "") return null;
+  return new Ie(je, h, f)
+}
+var Us = {
+  default: "default (ask each time)",
+  acceptEdits: "accept edits (auto-approve file edits and common file commands)",
+  auto: "auto (no routine prompts; a reviewer model screens actions)",
+  dontAsk: "don't ask (auto-deny anything that would prompt)",
+  plan: "plan mode (research and propose changes without making them)",
+  bypassPermissions: "BYPASS PERMISSIONS (no further prompts)"
+};
+
+function J$e(o, t) {
+  if (o === "bypassPermissions" && t?.isBypassPermissionsModeAvailable === !1) return null;
+  let i = Tt([{
+    type: "setMode",
+    destination: "session",
+    mode: o
+  }]);
+  if (i === null) throw Error("setModeRow: schema rejected a designed setMode update");
+  if (t?.labelVariant === "plan-keep-context") {
+    let u = o === "acceptEdits" ? "Yes, auto-accept edits" : o === "default" ? "Yes, manually approve edits" : null;
+    if (u !== null) return new Ie(je, e(n, {
+      children: u
+    }), i)
+  }
+  return new Ie(je, r(n, {
+    children: ["Yes, and switch to ", e(n, {
+      bold: !0,
+      children: Us[o]
+    }), " for this session"]
+  }), i)
+}
+
+function QYn(o) {
+  if (!Array.isArray(o)) return null;
+  let t;
+  try {
+    t = o.length
+  } catch {
+    return null
+  }
+  if (typeof t !== "number" || !Number.isSafeInteger(t) || t < 0 || t > Y$e) return null;
+  let i = [];
+  for (let d = 0; d < t; d++) try {
+    let f = o[d],
+      h = lr(f);
+    if (h !== null) i.push(h)
+  } catch {}
+  let u = L(i);
+  if (u.length === 0) return null;
+  if (u.length > j4e) return null;
+  let m = $1(u, (d) => eHt(d));
+  if (ce(m.join(", ")) > Okt) return null;
+  let c = Tt([{
+    type: "addDirectories",
+    destination: "session",
+    directories: u
+  }]);
+  if (c === null) return null;
+  return new Ie(je, r(n, {
+    children: ["Yes, and always allow access to ", e(n, {
+      bold: !0,
+      children: m.join(", ")
+    }), " for this session"]
+  }), c)
+}
+
+function c1r(o, t, i) {
+  if (typeof o !== "string" || Wme(o) !== o) return null;
+  if (typeof t !== "string") return null;
+  let u = t.trim();
+  if (u === "" || Wme(u) !== u) return null;
+  if (u === "*") {
+    if (!Ct(i)) return null;
+    let c = Tt([{
+      type: "addRules",
+      rules: [{
+        toolName: i
+      }],
+      behavior: "allow",
+      destination: "localSettings"
+    }]);
+    if (c === null) return null;
+    return new Ie(je, `Yes, and don\u2019t ask again for any ${i} command`, c)
+  }
+  if (!Ct(i) || !oo({
+      toolName: i,
+      ruleContent: u
+    })) return null;
+  let m = Tt([{
+    type: "addRules",
+    rules: [{
+      toolName: i,
+      ruleContent: u
+    }],
+    behavior: "allow",
+    destination: "localSettings"
+  }]);
+  if (m === null) return null;
+  return new Ie(je, `Yes, and don\u2019t ask again for: ${u}`, m)
+}
+var lLo = {
+    workflow: "Yes, and switch to auto mode",
+    "exit-plan-resume": "Yes, and use auto mode"
+  },
+  Ws = (() => {
+    let o = Tt([]);
+    if (o === null) throw Error("NO_DISPLAYED_UPDATES: empty intake rejected");
+    return o
+  })();
+
+function Vrt(o) {
+  return new Ie(je, lLo[o], Ws)
+}
+
+function u1r(o, ...t) {
+  let i = [o, ...t];
+  for (let c of i)
+    if (!$C(c)) throw Error("combineRows accepts only constructor-produced ConsentRows");
+  let u = i.flatMap((c) => [...c.applies]);
+  if (u.length > Y$e) throw Error("combineRows: combined updates exceed the display intake cap");
+  let m = Tt(u);
+  if (m === null) throw Error("combineRows: schema rejected already-minted updates");
+  return new Ie(je, e(n, {
+    children: i.map((c, d) => r(n, {
+      children: [d > 0 ? "; " : "", c.node]
+    }, d))
+  }), m)
+}
+
+function hPe(o) {
+  return kWe(o.viewingAgentTaskId, o.tasks).teammate
+}
+
+function Z5(o) {
+  let {
+    teammate: t,
+    localAgent: i
+  } = kWe(o.viewingAgentTaskId, o.tasks);
+  if (t) return {
+    type: "viewed",
+    task: t
+  };
+  if (i) return {
+    type: "named_agent",
+    task: i
+  };
+  return {
+    type: "leader"
+  }
+}
+
+function aLo(o) {
+  let t = Z5(o);
+  switch (t.type) {
+    case "leader":
+      return;
+    case "viewed":
+      return t.task.identity.agentName;
+    case "named_agent": {
+      for (let [i, u] of o.agentNameRegistry)
+        if (u === t.task.id) return i;
+      return t.task.agentType
+    }
+  }
+}
+
+function Krt(o) {
+  let d = S(27),
+    {
+      banner: t,
+      columns: i,
+      fastModeTag: u,
+      borderOnly: m
+    } = o,
+    c = ot(),
+    f, h, g, b, C;
+  if (d[0] !== t.bgColor || d[1] !== t.text || d[2] !== m || d[3] !== i || d[4] !== u || d[5] !== c) {
+    C = Pn;
+    x: {
+      let D = Yr($a(t.text));f = t.bgColor === "promptBorder" ? void 0 : t.bgColor;
+      if (c) {
+        if (m || !D && !u) {
+          C = null;
+          break x
+        }
+        let T;
+        if (d[11] !== u) T = u && r(n, {
+          color: "fastMode",
+          children: [" ", u]
+        }), d[11] = u, d[12] = T;
+        else T = d[12];
+        C = r(n, {
+          color: t.bgColor,
+          children: [D && e(fb, {
+            color: f,
+            padded: !0,
+            children: D
+          }), T]
+        });
+        break x
+      }
+      h = u ? ce(u) + 2 : 0;
+      let M = i - h - 3;g = M > 0 ? ct(D, M) : "";b = g ? ce(g) + 2 : 0
+    }
+    d[0] = t.bgColor, d[1] = t.text, d[2] = m, d[3] = i, d[4] = u, d[5] = c, d[6] = f, d[7] = h, d[8] = g, d[9] = b, d[10] = C
+  } else f = d[6], h = d[7], g = d[8], b = d[9], C = d[10];
+  if (C !== Pn) return C;
+  let N = b,
+    v = h || N ? "\u2500" : "",
+    F = Math.max(0, i - h - N - v.length);
+  const T = t.bgColor;
+  let k;
+  if (d[13] !== F) k = "\u2500".repeat(F), d[13] = F, d[14] = k;
+  else k = d[14];
+  let E;
+  if (d[15] !== m || d[16] !== f || d[17] !== N || d[18] !== u || d[19] !== h || d[20] !== g || d[21] !== v) E = m ? "\u2500".repeat(h + N + v.length) : r(ne, {
+    children: [u ? ` ${u} ` : null, g ? e(fb, {
+      color: f,
+      padded: !0,
+      children: g
+    }) : null, v]
+  }), d[15] = m, d[16] = f, d[17] = N, d[18] = u, d[19] = h, d[20] = g, d[21] = v, d[22] = E;
+  else E = d[22];
+  let H;
+  if (d[23] !== t.bgColor || d[24] !== k || d[25] !== E) H = r(n, {
+    color: T,
+    children: [k, E]
+  }), d[23] = t.bgColor, d[24] = k, d[25] = E, d[26] = H;
+  else H = d[26];
+  return H
+}
+j();
+
+function Wfn() {
+  let o = G((d) => d.teamContext);
+  G((d) => d.viewingAgentTaskId);
+  let t = Gr(),
+    [i, u] = y(null);
+  O(() => {
+    Zce().then(u)
+  }, []);
+  let {
+    agent: m,
+    tmuxHint: c
+  } = Hs({
+    state: t.getState(),
+    teamContext: o,
+    insideTmux: i
+  });
+  return {
+    agent: lo(m),
+    tmuxHint: lo(c)
+  }
+}
+
+function Hs({
+  state: o,
+  teamContext: t,
+  insideTmux: i
+}) {
+  if (Fc() && !AV()) {
+    let c = CE();
+    if (c && kc()) return {
+      agent: {
+        text: `@${c}`,
+        bgColor: cn(RO())
+      },
+      tmuxHint: null
+    }
+  }
+  if (t?.teammates && Object.keys(t.teammates).length > 1) {
+    let c = hPe(o),
+      d = cn(c?.identity.color),
+      f = LEn(),
+      h = w7o()?.isNative ?? !1;
+    if (i === !1 && !f && !h) return {
+      agent: null,
+      tmuxHint: {
+        text: `View teammates: \`tmux -L ${Ojn()} a\``,
+        bgColor: d
+      }
+    };
+    if ((i === !0 || f || h) && c) return {
+      agent: {
+        text: `@${c.identity.agentName}`,
+        bgColor: d
+      },
+      tmuxHint: null
+    }
+  }
+  let m = Z5(o);
+  if (m.type === "named_agent") {
+    let c = m.task,
+      d;
+    for (let [f, h] of o.agentNameRegistry)
+      if (h === c.id) {
+        d = f;
+        break
+      } return {
+      agent: {
+        text: d ? `@${d}` : c.description,
+        bgColor: qVe(c.agentType) ?? "cyan_FOR_SUBAGENTS_ONLY"
+      },
+      tmuxHint: null
+    }
+  }
+  return {
+    agent: null,
+    tmuxHint: null
+  }
+}
+
+function zfn(o) {
+  let t = G((c) => c.standaloneAgentContext),
+    i = G((c) => c.remoteSessionName),
+    u = G((c) => c.agent),
+    m = Gr();
+  return lo(Gs({
+    state: m.getState(),
+    standaloneAgentContext: t,
+    remoteSessionName: i,
+    agent: u,
+    hideSessionTitle: o?.hideSessionTitle
+  }))
+}
+
+function Gs({
+  state: o,
+  standaloneAgentContext: t,
+  remoteSessionName: i,
+  agent: u,
+  hideSessionTitle: m
+}) {
+  let c = u ? o.agentDefinitions.activeAgents.find((h) => h.agentType === u) : void 0,
+    d = Idi({
+      standaloneAgentContext: t,
+      remoteSessionName: i
+    }),
+    f = t?.color;
+  if (!m && (d || f)) return {
+    text: d || u || "",
+    bgColor: cn(KVe({
+      userOverride: f,
+      agentDefinitionColor: c?.color
+    }), "promptBorder")
+  };
+  if (u) return {
+    text: u,
+    bgColor: cn(c?.color, "promptBorder")
+  };
+  return null
+}
+
+function lo(o) {
+  let t = o?.text,
+    i = o?.bgColor;
+  return Z(() => t !== void 0 && i !== void 0 ? {
+    text: t,
+    bgColor: i
+  } : null, [t, i])
+}
+
+function cn(o, t = "cyan_FOR_SUBAGENTS_ONLY") {
+  return o && qS.includes(o) ? uH[o] : t
+}
+var Ys = 24;
+
+function yzt(o) {
+  let m = S(11),
+    {
+      mode: t,
+      agent: i,
+      maxWidth: u
+    } = o,
+    c;
+  if (m[0] !== i || m[1] !== u || m[2] !== t) c = Dkt({
+    mode: t,
+    agent: i,
+    maxWidth: u
+  }), m[0] = i, m[1] = u, m[2] = t, m[3] = c;
+  else c = m[3];
+  let d = c;
+  if (t === "bash") {
+    let f;
+    if (m[4] !== d) f = e(n, {
+      color: "bashBorder",
+      children: d
+    }), m[4] = d, m[5] = f;
+    else f = m[5];
+    return f
+  }
+  if (i) {
+    let f;
+    if (m[6] !== i.bgColor || m[7] !== d) f = e(n, {
+      color: i.bgColor,
+      children: d
+    }), m[6] = i.bgColor, m[7] = d, m[8] = f;
+    else f = m[8];
+    return f
+  }
+  let f;
+  if (m[9] !== d) f = e(n, {
+    dimColor: !0,
+    children: d
+  }), m[9] = d, m[10] = f;
+  else f = m[10];
+  return f
+}
+
+function Dkt({
+  mode: o,
+  agent: t,
+  maxWidth: i
+}) {
+  return (o === "bash" ? "!" : t ? ct(T_(t.text), Math.max(1, Math.min(Ys, i - 1))) : re.pointer) + nLr
+}
+
+function dLo(o) {
+  return ce(o) + 1
+}
+j();
+var Mt = 2,
+  Ks = 6,
+  Xs = 20;
+
+function a1r(o, t, i, u = 0) {
+  let m = Zc(o, Math.max(1, t), "wrap").split(`
+`),
+    c = Math.max(Mt, i);
+  if (m.length <= c) return {
+    text: o,
+    hiddenRows: 0,
+    hiddenAbove: 0,
+    nextStart: 0
+  };
+  let d = c - 1,
+    f = Math.min(Math.max(0, u), m.length - d),
+    h = m.slice(f, f + d),
+    g = m.length - f - h.length;
+  return {
+    text: h.join(`
+`),
+    hiddenRows: g,
+    hiddenAbove: f,
+    nextStart: g === 0 ? 0 : f + h.length
+  }
+}
+
+function zs(o, t, i) {
+  let u = o?.chromeWithout ?? o?.chromeWith ?? null,
+    m = o?.chromeWith ?? o?.chromeWithout ?? null;
+  if (o === null || u === null || m === null) return {
+    offersStanding: i === "standing",
+    isStandingHeld: i === "standing",
+    room: Mt,
+    settles: null
+  };
+  let c = o.overdraw === 0 && m + t <= o.available;
+  if (i === "bare" || i === "unsettled" && !c) return {
+    offersStanding: !1,
+    isStandingHeld: !1,
+    room: Math.max(Mt, o.available - u - o.overdraw),
+    settles: o.chromeWithout === null ? null : "bare"
+  };
+  return {
+    offersStanding: !0,
+    isStandingHeld: !c,
+    room: c ? t : Math.max(Mt, o.available - m - o.overdraw),
+    settles: o.chromeWith === null ? null : "standing"
+  }
+}
+
+function Ywe(o, {
+  isActive: t,
+  isCut: i,
+  contentKey: u,
+  maxRows: m,
+  lateBody: c,
+  keptForRequest: d
+}) {
+  let f = A(null),
+    h = A(null),
+    g = Bj(),
+    b = Re(),
+    {
+      rows: C
+    } = As(b),
+    D = Bl(),
+    {
+      subscribeLayout: x
+    } = ve(Dm),
+    [T, M] = y(null),
+    N = T?.contentKey === u ? T : null,
+    v = N?.columns ?? Math.max(Xs, b.columns - Ks),
+    F = Z(() => t ? Dt(Zc(o, Math.max(1, v), "wrap"), `
+`) + 1 : 0, [t, o, v]),
+    [k, E] = y(null),
+    H = k !== null && k.contentKey === u && k.columns === v ? k.start : 0,
+    [q, X] = y(() => d?.has("bare") === !0 ? "bare" : "unsettled"),
+    ee = N === null && q === "standing" && T !== null ? T.fit : N?.fit ?? null,
+    B = t && c === "pending",
+    {
+      offersStanding: W,
+      isStandingHeld: K,
+      room: le,
+      settles: ge
+    } = t ? zs(ee, F, B && q === "unsettled" ? "standing" : q) : {
+      offersStanding: !0,
+      isStandingHeld: !1,
+      room: F,
+      settles: null
+    },
+    oe = Vr(t && q === "unsettled" ? oI : null);
+  if (t && q === "unsettled") {
+    if (ge !== null && N !== null && c === void 0) X(ge);
+    else if (oe) X(W ? "standing" : "bare")
+  }
+  let V = K || B,
+    [z, U] = y(() => d?.has("held") ?? !1);
+  if (t && q === "standing" && (N !== null || B) && V && !z) U(!0);
+  let we = V || z;
+  Zt(() => {
+    if (d === void 0) return;
+    if (z) d.keep("held");
+    if (q === "bare") d.keep("bare")
+  }, [d, z, q]);
+  let Q = Z(() => t && i ? a1r(o, v, Math.min(le, m ?? le), H) : {
+      text: o,
+      hiddenRows: 0,
+      hiddenAbove: 0,
+      nextStart: 0
+    }, [t, i, o, v, le, m, H]),
+    he = (W ? N?.fit.chromeWith : N?.fit.chromeWithout) ?? null,
+    xe = t && N !== null && he !== null ? Math.max(0, he + Mt + N.fit.overdraw - N.fit.available) : 0,
+    te = Q.nextStart,
+    ke = ue(() => E({
+      contentKey: u,
+      columns: v,
+      start: te
+    }), [u, v, te]),
+    Me = qo(() => {
+      if (!t || f.current === null || h.current === null) return;
+      let de = g?.box.current ?? f.current;
+      while (g === null && de.parentNode !== void 0) de = de.parentNode;
+      let Te = Ss(f.current).height;
+      if (Te === 0) return;
+      let se = Ss(de).height,
+        pe = se - Te;
+      if (pe <= 0) return;
+      let Be = D ? g?.rows ?? C : fr(de, b.rows, g?.reserve ?? mK),
+        wt = qN(f.current, de),
+        De = Ss(h.current),
+        ae = {
+          contentKey: u,
+          text: o,
+          columns: De.width,
+          terminalRows: b.rows,
+          terminalColumns: b.columns
+        },
+        Ot = Q.hiddenRows + Q.hiddenAbove === 0 ? F : Dt(Q.text, `
+`) + 1;
+      M((J) => {
+        let me = J !== null && J.contentKey === ae.contentKey && J.columns === ae.columns && J.terminalRows === ae.terminalRows && J.terminalColumns === ae.terminalColumns ? J.fit : {
+            available: Be,
+            chromeWithout: null,
+            chromeWith: null,
+            overdraw: 0
+          },
+          nt = Math.max(J?.text === o && J.columns === ae.columns ? J.fit.overdraw : 0, v === ae.columns ? De.height - Ot : 0),
+          Ae = W ? me.chromeWith : me.chromeWithout,
+          _e = Math.min(Te, Mt + nt),
+          Ue = (D ? wt + _e : se - wt - Te + _e) <= Be && (me !== J?.fit || J.isBodyOnScreen);
+        if (me === J?.fit && Ae === pe && me.available === Be && me.overdraw === nt && J.isBodyOnScreen === Ue) return J;
+        return {
+          ...ae,
+          isBodyOnScreen: Ue,
+          fit: {
+            ...me,
+            available: Be,
+            overdraw: nt,
+            chromeWith: W ? pe : me.chromeWith,
+            chromeWithout: W ? me.chromeWithout : pe
+          }
+        }
+      })
+    });
+  return Zt(() => (Me(), x(Me)), [x]), Mm((de, Te) => {
+    if (Te.wheelUp || Te.wheelDown) return !1;
+    if (d !== void 0 && !W) d.keep("bare");
+    return X((se) => se === "unsettled" ? W ? "standing" : "bare" : se), !1
+  }, {
+    isActive: t && q === "unsettled"
+  }), {
+    text: Q.text,
+    hiddenRows: Q.hiddenRows,
+    hiddenAbove: Q.hiddenAbove,
+    showNextRows: ke,
+    offersStanding: W,
+    isStandingHeld: we,
+    isHeldForGood: z,
+    isMeasured: ge !== null && N !== null && N.terminalRows === b.rows && N.terminalColumns === b.columns,
+    fitsScreen: ge !== null && N !== null && N.terminalRows === b.rows && N.terminalColumns === b.columns && ((W ? N.fit.chromeWith : N.fit.chromeWithout) ?? Number.POSITIVE_INFINITY) + Math.min(F, le) + N.fit.overdraw <= N.fit.available,
+    box: f,
+    textBox: h,
+    columns: v,
+    shortRows: xe,
+    isBodyOnScreen: N?.isBodyOnScreen ?? null
+  }
+}
+
+function gPe() {
+  let o = A(null),
+    t = Re(),
+    i = Bj()?.reserve ?? mK,
+    u = ve(pK);
+
+  function m() {
+    if (o.current === null) return null;
+    let d = u?.() ?? null;
+    return d === null ? fr(o.current, t.rows, i, !0) : d + Ss(o.current).height
+  }
+  let c = Ia(m);
+  return {
+    box: o,
+    rows: c ?? t.rows - i,
+    rowsNow: () => m() ?? t.rows - i,
+    isCutFromTheBottom: u !== null
+  }
+}
+
+function fr(o, t, i, u = !1) {
+  let m = 0,
+    c = o;
+  while (c.parentNode !== void 0) {
+    let d = c.parentNode;
+    if ((d.style.overflowY ?? d.style.overflow) === "scroll") {
+      let f = Ss(d).height - (d.yogaNode?.getComputedPadding(1) ?? 0) - (d.yogaNode?.getComputedPadding(3) ?? 0);
+      return Math.min(f, t - mK) - m
+    }
+    for (let f of d.childNodes.slice(d.childNodes.indexOf(c) + 1))
+      if (f.nodeName !== "#text" && f.style.position !== "absolute" && !(f.style.flexGrow ?? 0)) m += Ss(f).height + (u ? (f.yogaNode?.getComputedMargin(1) ?? 0) + (f.yogaNode?.getComputedMargin(3) ?? 0) : 0);
+    c = d
+  }
+  return t - Math.max(i, mK + m)
+}
+
+function W4e(o) {
+  let {
+    columns: t,
+    rows: i
+  } = Re(), [u, m] = y({
+    columns: t,
+    rows: i,
+    overflow: -1 / 0
+  }), c = u.columns === t && u.rows === i;
+  return Zt(() => {
+    if (!c) m({
+      columns: t,
+      rows: i,
+      overflow: -1 / 0
+    });
+    else if (o > u.overflow) m({
+      columns: t,
+      rows: i,
+      overflow: o
+    })
+  }, [c, t, i, o, u.overflow]), oa() ? o : Math.max(o, c ? u.overflow : -1 / 0)
+}
+j();
+var hr = 4;
+
+function Gfn(o) {
+  let f = S(25),
+    {
+      hideSessionTitle: t
+    } = o,
+    i = t === void 0 ? !1 : t,
+    {
+      columns: u
+    } = Re(),
+    m = $t(i);
+  if (m === null) {
+    return null
+  }
+  if (m.drawsPromptCharacter) {
+    let c = m.banner;
+    let d = u - hr;
+    let h, g, b, C, D, x, T;
+    if (f[0] !== c || f[1] !== d || f[2] !== u) {
+      let M = Dkt({
+        mode: "prompt",
+        agent: c,
+        maxWidth: d
+      });
+      g = s;
+      D = "row";
+      x = "100%";
+      if (f[10] !== c || f[11] !== d) T = e(yzt, {
+        mode: "prompt",
+        agent: c,
+        maxWidth: d
+      }), f[10] = c, f[11] = d, f[12] = T;
+      else T = f[12];
+      h = Gd;
+      b = u;
+      C = ce(M);
+      f[0] = c, f[1] = d, f[2] = u, f[3] = h, f[4] = g, f[5] = b, f[6] = C, f[7] = D, f[8] = x, f[9] = T
+    } else h = f[3], g = f[4], b = f[5], C = f[6], D = f[7], x = f[8], T = f[9];
+    const N = b - C;
+    let v;
+    if (f[13] !== h || f[14] !== N) v = e(h, {
+      width: N
+    }), f[13] = h, f[14] = N, f[15] = v;
+    else v = f[15];
+    let F;
+    if (f[16] !== g || f[17] !== D || f[18] !== x || f[19] !== T || f[20] !== v) F = r(g, {
+      flexDirection: D,
+      width: x,
+      children: [T, v]
+    }), f[16] = g, f[17] = D, f[18] = x, f[19] = T, f[20] = v, f[21] = F;
+    else F = f[21];
+    return F
+  }
+  let b;
+  if (f[22] !== m.banner || f[23] !== u) b = e(Krt, {
+    banner: m.banner,
+    columns: u,
+    fastModeTag: void 0
+  }), f[22] = m.banner, f[23] = u, f[24] = b;
+  else b = f[24];
+  return b
+}
+
+function f1r(o) {
+  return $t(o) === null ? 0 : 1
+}
+var ZYn = Jt(0);
+
+function I7() {
+  return ve(ZYn)
+}
+
+function $t(o) {
+  let d = S(16),
+    t = $_(),
+    i = ot(),
+    {
+      columns: u
+    } = Re(),
+    {
+      agent: m,
+      tmuxHint: c
+    } = Wfn(),
+    f;
+  if (d[0] !== o) f = {
+    hideSessionTitle: o
+  }, d[0] = o, d[1] = f;
+  else f = d[1];
+  let h = zfn(f),
+    g = t ? m : m ?? c ?? h;
+  if (!g) {
+    return null
+  }
+  let b, C, D, x;
+  if (d[2] !== g || d[3] !== u || d[4] !== t || d[5] !== i) {
+    x = Pn;
+    M: {
+      let T = _l(Zn(g.text));
+      if (!T) {
+        x = null;
+        break M
+      }
+      D = t;b = g;C = i ? ct(T, Math.max(1, u - 2)) : T
+    }
+    d[2] = g, d[3] = u, d[4] = t, d[5] = i, d[6] = b, d[7] = C, d[8] = D, d[9] = x
+  } else b = d[6], C = d[7], D = d[8], x = d[9];
+  if (x !== Pn) return x;
+  let N;
+  if (d[10] !== b || d[11] !== C) N = {
+    ...b,
+    text: C
+  }, d[10] = b, d[11] = C, d[12] = N;
+  else N = d[12];
+  let v;
+  if (d[13] !== D || d[14] !== N) v = {
+    drawsPromptCharacter: D,
+    banner: N
+  }, d[13] = D, d[14] = N, d[15] = v;
+  else v = d[15];
+  return v
+}
+j();
+j();
+j();
+
+function ga(W) {
+  return W + 1
+}
+
+function yPe(o) {
+  let c = S(18),
+    {
+      permissionResult: t
+    } = o,
+    i = t?.behavior === "ask" ? t.denialLimitFallback?.deadlineEpochMs ?? t.autoDenyWindow?.deadlineEpochMs : void 0,
+    u = ot(),
+    m = Rn(),
+    d;
+  if (c[0] !== m) d = m.now(), c[0] = m, c[1] = d;
+  else d = c[1];
+  let f;
+  if (c[2] === w) f = Date.now(), c[2] = f;
+  else f = c[2];
+  let h;
+  if (c[3] !== d) h = {
+    clockAt: d,
+    epochAt: f
+  }, c[3] = d, c[4] = h;
+  else h = c[4];
+  let g = h,
+    b;
+  if (c[5] !== g.clockAt || c[6] !== g.epochAt || c[7] !== m) b = () => g.epochAt + (m.now() - g.clockAt), c[5] = g.clockAt, c[6] = g.epochAt, c[7] = m, c[8] = b;
+  else b = c[8];
+  let C = b,
+    [, D] = y(0),
+    x;
+  if (c[9] === w) x = () => D(ga), c[9] = x;
+  else x = c[9];
+  if (sl(x, i !== void 0 && !u ? 1000 : null), i === void 0) {
+    return null
+  }
+  if (u) {
+    let T = Math.max(0, i - C());
+    let M;
+    if (c[10] !== T) {
+      let N = Math.round(T / 60000);
+      let v = Math.max(1, Math.round(T / 1000));
+      M = T >= 60000 ? `about ${N} ${P(N,"minute")}` : `about ${v} ${P(v,"second")}`;
+      c[10] = T, c[11] = M
+    } else M = c[11];
+    let F = M;
+    const k = `${Qg} Claude Code will automatically block this request in ${F}, to avoid holding up an unattended session`;
+    let E;
+    if (c[12] !== k) E = e(s, {
+      marginBottom: 1,
+      children: e(n, {
+        color: "warning",
+        children: k
+      })
+    }), c[12] = k, c[13] = E;
+    else E = c[13];
+    return E
+  }
+  let H = Math.max(0, i - C()),
+    q = Math.floor(H / 60000),
+    X = Math.floor(H % 60000 / 1000);
+  const M = String(X);
+  let k;
+  if (c[14] !== M) k = M.padStart(2, "0"), c[14] = M, c[15] = k;
+  else k = c[15];
+  let ee = `${q}:${k}`;
+  const E = `${Qg} Claude Code will automatically block this request in ${ee}, to avoid holding up an unattended session`;
+  let B;
+  if (c[16] !== E) B = e(s, {
+    marginBottom: 1,
+    children: e(n, {
+      color: "warning",
+      children: E
+    })
+  }), c[16] = E, c[17] = B;
+  else B = c[17];
+  return B
+}
+
+function Ea(St) {
+  return St.toolPermissionContext.mode
+}
+var xn = "/permissions to update rules",
+  rx = 7;
+
+function ha(o) {
+  if (o?.startsWith("plugin")) return "plugin hooks.json";
+  if (o?.startsWith("skill")) return "SKILL.md";
+  return "settings.json"
+}
+
+function kn(o) {
+  if (o?.type === "rule" && o.rule.ruleBehavior === "ask") return o.rule;
+  if (o?.type === "subcommandResults") {
+    for (let t of o.reasons.values())
+      if (t.behavior === "ask") {
+        let i = kn(t.decisionReason);
+        if (i) return i
+      }
+  }
+  return
+}
+
+function Ge(o, t, i) {
+  if (!o) return null;
+  let u = (m) => Ki(m).text;
+  if (o.type === "classifier") {
+    if (o.classifier === "auto-mode") return {
+      reasonString: `Auto mode needs your confirmation for this ${t}.
+${u(tdt(o.reason))}`,
+      configString: void 0,
+      themeColor: "error"
+    };
+    return {
+      reasonString: `Classifier ${Se.bold(u(o.classifier))} requires confirmation for this ${t}.
+${u(o.reason)}`,
+      configString: void 0
+    }
+  }
+  if (o.type === "subcommandResults") {
+    let m = kn(o);
+    if (m) return Ge({
+      type: "rule",
+      rule: m
+    }, t, i);
+    for (let c of o.reasons.values())
+      if (c.behavior === "ask" || c.behavior === "passthrough") {
+        let d = Ge(c.decisionReason, t, i);
+        if (d) return d
+      }
+  }
+  switch (o.type) {
+    case "rule": {
+      let m = Se.bold(u(mn(o.rule.ruleValue)));
+      if (i === "auto" && o.rule.ruleBehavior === "ask" && o.rule.source !== "policySettings") return {
+        reasonString: `Ask rule ${m} overrides auto mode for this ${t}.`,
+        configString: "/permissions to let auto mode decide"
+      };
+      return {
+        reasonString: `Permission rule ${m} requires confirmation for this ${t}.`,
+        configString: o.rule.source === "policySettings" ? void 0 : xn
+      }
+    }
+    case "hook": {
+      let m = o.reason ? `:
+${u(o.reason)}` : ".",
+        c = o.hookSource ? ` ${Se.dim(`[${u(o.hookSource)}]`)}` : "";
+      return {
+        reasonString: `Hook ${Se.bold(u(o.hookName))} requires confirmation for this ${t}${m}${c}`,
+        configString: `${ha(o.hookSource)} to update hooks`
+      }
+    }
+    case "safetyCheck":
+    case "other":
+      return {
+        reasonString: o.reason === CHe ? Q$s : u(o.reason), configString: void 0
+      };
+    case "workingDir":
+      return {
+        reasonString: u(o.reason), configString: xn
+      };
+    case "sandboxOverride": {
+      let m = o.replaces;
+      if (m === void 0) return null;
+      let c = Ge(m.decisionReason, t, i);
+      if (c !== null) return {
+        ...c,
+        configString: void 0
+      };
+      return m.message === void 0 ? null : {
+        reasonString: u(m.message),
+        configString: void 0
+      }
+    }
+    default:
+      return null
+  }
+}
+
+function bS(o) {
+  let V = S(35),
+    {
+      permissionResult: t,
+      toolType: i,
+      rowBudget: u,
+      rowColumns: m,
+      framed: c,
+      hideAskRuleHint: d,
+      onConsentDrawn: f
+    } = o,
+    h = c === void 0 ? !1 : c,
+    g = G(Ea),
+    b = t?.behavior === "ask" ? t.denialLimitFallback?.disclosure : void 0,
+    C = Ge(t?.decisionReason, i, g),
+    D = b !== void 0 && b !== t?.decisionReason ? Ge(b, i, g) : null,
+    {
+      columns: x,
+      rows: T
+    } = Re(),
+    M = I7(),
+    N = Math.min(12, Math.max(rx, u ?? T - 13 - M)),
+    v = Math.max(1, m ?? x - 8),
+    le = (F, k, E) => {
+      let H = E === void 0 ? !0 : E;
+      if (!q) {
+        return F
+      }
+      let X = k;
+      let B = Hc(F, v, {
+        trim: !0,
+        hard: !0
+      }).split(`
+`).map((ee) => ct(ee, v));
+      if (B.length <= X) {
+        return B.join(`
+`)
+      }
+      let W = Math.max(1, X - 1);
+      let K = `\u2026 (+${B.length-W} more lines)`;
+      return [...B.slice(0, W), ...H ? [ct(K, v)] : []].join(`
+`)
+    },
+    ge = t?.behavior === "ask" ? t.matchedAskRule : void 0,
+    oe = ge !== void 0 && kn(t?.decisionReason) === void 0 ? Ge({
+      type: "rule",
+      rule: ge
+    }, i, g) : null,
+    z;
+  if (V[0] !== v) z = (U, we) => U === void 0 ? 0 : Dt(Hc(U, v, {
+    trim: we,
+    hard: !0
+  }), `
+`) + 1, V[0] = v, V[1] = z;
+  else z = V[1];
+  let Q = z,
+    q = b !== void 0 || u !== void 0 || t?.decisionReason?.type === "sandboxOverride" || Q(C?.reasonString, !1) + Q(oe?.reasonString, !1) > N,
+    he;
+  if (V[2] !== q || V[3] !== Q) he = (xe) => q ? Q(xe, !0) : 0, V[2] = q, V[3] = Q, V[4] = he;
+  else he = V[4];
+  let te = he,
+    ke = u !== void 0 || N < 12,
+    Me = D && ke ? [ct(Wn(D.reasonString), v), ...D.reasonString.split(`
+`).slice(1)].join(`
+`) : D?.reasonString,
+    de = {
+      consent: te(C?.reasonString),
+      streak: te(Me),
+      askRule: te(oe?.reasonString)
+    },
+    Te;
+  if (V[5] !== ke) Te = ke ? {
+    consent: 2,
+    streak: 3,
+    askRule: 2
+  } : {
+    consent: 4,
+    streak: 4,
+    askRule: 4
+  }, V[5] = ke, V[6] = Te;
+  else Te = V[6];
+  let se = Te,
+    pe = {
+      consent: Math.min(de.consent, se.consent),
+      streak: Math.min(de.streak, se.streak),
+      askRule: Math.min(de.askRule, se.askRule)
+    },
+    Be = N - (pe.consent + pe.streak + pe.askRule);
+  for (const wt of ke ? ["streak", "consent", "askRule"] : ["consent", "streak", "askRule"]) {
+    if (Be <= 0) {
+      break
+    }
+    let De = Math.min(de[wt] - pe[wt], Be);
+    pe[wt] = pe[wt] + De, Be = Be - De
+  }
+  let ae = C !== null && C !== void 0 ? le(C.reasonString, pe.consent) : void 0,
+    Ot = C !== null && C !== void 0 ? le(C.reasonString, pe.consent, !1) : void 0;
+  O(() => {
+    f?.(Ot)
+  }, [f, Ot]);
+  let J = Me !== void 0 ? le(Me, pe.streak) : void 0,
+    me = oe ? le(oe.reasonString, pe.askRule) : void 0,
+    nt;
+  if (V[7] !== t) nt = e(yPe, {
+    permissionResult: t
+  }), V[7] = t, V[8] = nt;
+  else nt = V[8];
+  let Ae = nt;
+  if (!C && !oe && !D) {
+    return Ae
+  }
+  let _e = C?.themeColor ?? (t?.decisionReason?.type === "hook" && g === "auto" ? "warning" : void 0),
+    or;
+  if (V[9] !== h) or = (Ue, rt) => e(Bi, {
+    multiline: h || US(Ue),
+    children: rt
+  }), V[9] = h, V[10] = or;
+  else or = V[10];
+  let ye = or,
+    rr = h ? xn : void 0,
+    We = C?.configString === rr ? void 0 : C?.configString,
+    xt = oe?.configString === rr ? void 0 : oe?.configString,
+    Rt;
+  if (V[11] !== ae || V[12] !== ye || V[13] !== C || V[14] !== _e) Rt = C && ye(ae ?? C.reasonString, _e ? e(n, {
+    color: _e,
+    children: ae ?? C.reasonString
+  }) : e(n, {
+    children: e(qs, {
+      children: ae ?? C.reasonString
+    })
+  })), V[11] = ae, V[12] = ye, V[13] = C, V[14] = _e, V[15] = Rt;
+  else Rt = V[15];
+  let vt;
+  if (V[16] !== We) vt = We && e(n, {
+    dimColor: !0,
+    children: We
+  }), V[16] = We, V[17] = vt;
+  else vt = V[17];
+  let Pe;
+  if (V[18] !== xt || V[19] !== oe || V[20] !== me || V[21] !== We || V[22] !== ye || V[23] !== d) Pe = oe && r(ne, {
+    children: [ye(me ?? oe.reasonString, e(n, {
+      children: e(qs, {
+        children: me ?? oe.reasonString
+      })
+    })), xt && d !== !0 && xt !== We && e(n, {
+      dimColor: !0,
+      children: xt
+    })]
+  }), V[18] = xt, V[19] = oe, V[20] = me, V[21] = We, V[22] = ye, V[23] = d, V[24] = Pe;
+  else Pe = V[24];
+  let It;
+  if (V[25] !== J || V[26] !== ye || V[27] !== D) It = D && ye(J ?? D.reasonString, D.themeColor ? e(n, {
+    color: D.themeColor,
+    children: J ?? D.reasonString
+  }) : e(n, {
+    children: e(qs, {
+      children: J ?? D.reasonString
+    })
+  })), V[25] = J, V[26] = ye, V[27] = D, V[28] = It;
+  else It = V[28];
+  let Ft;
+  if (V[29] !== Ae || V[30] !== Pe || V[31] !== It || V[32] !== Rt || V[33] !== vt) Ft = r(s, {
+    marginBottom: 1,
+    flexDirection: "column",
+    children: [Rt, vt, Pe, It, Ae]
+  }), V[29] = Ae, V[30] = Pe, V[31] = It, V[32] = Rt, V[33] = vt, V[34] = Ft;
+  else Ft = V[34];
+  return Ft
+}
+j();
+var Kr = 2,
+  qr = 8,
+  Cn = 2,
+  _a = 10;
+
+function Xr(o, t) {
+  let i = Math.max(_a, t),
+    u = Zc(o.split(`
+`).filter((g) => Fv(g)).join(`
+`), i, "wrap").split(`
+`).map((g) => g.trimEnd()).filter((g) => Fv(g));
+  if (u.length <= Cn) return u.join(`
+`);
+  let m = u.length - Cn,
+    c = XU(m, "line"),
+    d = ce(c) <= i ? c : `${fke} +${m}`,
+    f = i - ce(d) - 1,
+    h = u[Cn - 1] ?? "";
+  return [...u.slice(0, Cn - 1), f < 1 ? ct(d, i) : `${ce(h)<=f?h:lG(h,f)} ${d}`].join(`
+`)
+}
+
+function Ikt(o) {
+  return o !== "yes" && o !== "no"
+}
+
+function l1r(o, t) {
+  return t === void 0 ? o : o.map((i) => {
+    if (!Ikt(i.value)) return i;
+    if (i.type !== "input" || i.value === t) return {
+      ...i,
+      disabled: !0
+    };
+    let u = i.labelValueSeparator ?? ", ",
+      m = i.initialValue ?? "";
+    return {
+      value: i.value,
+      disabled: !0,
+      label: m === "" ? i.label : typeof i.label === "string" ? `${i.label}${u}${m}` : r(ne, {
+        children: [i.label, u, m]
+      })
+    }
+  })
+}
+
+function Grt(o) {
+  let f = S(24),
+    {
+      commandDisplay: t,
+      description: i,
+      refinedPrefix: u
+    } = o,
+    [m] = y(Hh),
+    c = ot(),
+    d = Re().columns,
+    h;
+  if (f[0] !== t || f[1] !== i || f[2] !== u) h = {
+    commandDisplay: t,
+    description: i,
+    refinedPrefix: u
+  }, f[0] = t, f[1] = i, f[2] = u, f[3] = h;
+  else h = f[3];
+  let g = h,
+    b = !c && m;
+  const C = m && t.kind === "full";
+  let D;
+  if (f[4] !== g || f[5] !== b || f[6] !== C) D = {
+    isActive: C,
+    isCut: b,
+    contentKey: g
+  }, f[4] = g, f[5] = b, f[6] = C, f[7] = D;
+  else D = f[7];
+  let x = Ywe(t.kind === "full" ? t.text : "", D),
+    [T, M] = y(),
+    N;
+  if (f[8] !== T) N = T !== void 0 && Ikt(T) ? T : null, f[8] = T, f[9] = N;
+  else N = f[9];
+  let v = N,
+    [F, k] = y();
+  if (x.isHeldForGood && F === void 0) k(v);
+  let E = x.showNextRows,
+    H;
+  if (f[10] !== E) H = [{
+    action: "app:toggleTranscript",
+    run: E
+  }], f[10] = E, f[11] = H;
+  else H = f[11];
+  let q = H,
+    X;
+  if (f[12] !== x.columns || f[13] !== i || f[14] !== b) X = b ? Xr(i, x.columns - 2) : i, f[12] = x.columns, f[13] = i, f[14] = b, f[15] = X;
+  else X = f[15];
+  let ee = X,
+    B = Math.max(1, t.kind !== "full" ? d - qr : x.columns - (t.needsGutter ? 0 : Kr));
+  const W = !x.isStandingHeld ? void 0 : F !== void 0 ? F : v;
+  let K;
+  if (f[16] !== x || f[17] !== b || f[18] !== m || f[19] !== q || f[20] !== B || f[21] !== ee || f[22] !== W) K = {
+    isFitted: m,
+    isCut: b,
+    reasonColumns: B,
+    moreBindings: q,
+    body: x,
+    description: ee,
+    noteFocus: M,
+    fieldLeftOpen: W
+  }, f[16] = x, f[17] = b, f[18] = m, f[19] = q, f[20] = B, f[21] = ee, f[22] = W, f[23] = K;
+  else K = f[23];
+  return K
+}
+
+function X$e(o) {
+  let m = S(4),
+    {
+      fitted: t,
+      children: i
+    } = o;
+  if (!t.isFitted) {
+    return i
+  }
+  const u = t.body.hiddenRows > 0 || t.body.hiddenAbove > 0;
+  let c;
+  if (m[0] !== i || m[1] !== t.moreBindings || m[2] !== u) c = e(n_, {
+    bindings: t.moreBindings,
+    active: u,
+    flexDirection: "column",
+    children: i
+  }), m[0] = i, m[1] = t.moreBindings, m[2] = u, m[3] = c;
+  else c = m[3];
+  return c
+}
+var Ha = 6;
+
+function z4e({
+  hiddenRows: o,
+  hiddenAbove: t,
+  hint: i,
+  columns: u
+}) {
+  let m = XU(o, "line"),
+    c = t === 0 ? [m] : o === 0 ? [`${XU(t,"line")} above`, `${fke} +${t} above`, `${LO}${t}`] : [`${m}, +${t} above`, `${fke} +${o}, +${t} above`, `${LO}${t} ${nP}${o}`],
+    d = c.find((h) => ce(h) <= u) ?? ct(c.at(-1) ?? m, u),
+    f = u - ce(d) - 1;
+  return f < Ha || i === "" ? d : `${d} ${ct(i,f)}`
+}
+
+function d1r(o) {
+  let c = S(7),
+    {
+      body: t
+    } = o,
+    i = ia("app:toggleTranscript", "Global", "ctrl+o"),
+    {
+      hiddenRows: u,
+      hiddenAbove: m
+    } = t;
+  if (u === 0 && m === 0) {
+    return null
+  }
+  let d;
+  if (c[0] !== t.columns || c[1] !== m || c[2] !== u || c[3] !== i) d = z4e({
+    hiddenRows: u,
+    hiddenAbove: m,
+    hint: pb({
+      chord: i,
+      action: u > 0 ? "see more" : "see the first lines",
+      parens: !0,
+      format: {
+        keyCase: "lower"
+      }
+    }),
+    columns: t.columns
+  }), c[0] = t.columns, c[1] = m, c[2] = u, c[3] = i, c[4] = d;
+  else d = c[4];
+  let f;
+  if (c[5] !== d) f = e(n, {
+    dimColor: !0,
+    wrap: "truncate-end",
+    children: d
+  }), c[5] = d, c[6] = f;
+  else f = c[6];
+  return f
+}
+
+function Mkt({
+  commandDisplay: o,
+  fitted: t,
+  inset: i = 1
+}) {
+  if (!t.isFitted || o.kind !== "full") return e(Ul, {
+    paddingX: i,
+    children: e(Bi, {
+      multiline: o.kind === "full" && o.needsGutter,
+      children: e(n, {
+        children: o.kind === "withheld" ? o.marker : o.text
+      })
+    })
+  });
+  return e(Ul, {
+    paddingX: i,
+    children: r(s, {
+      ref: t.body.box,
+      flexDirection: "column",
+      children: [e(Bi, {
+        multiline: o.needsGutter,
+        children: e(s, {
+          ref: t.body.textBox,
+          flexDirection: "column",
+          flexGrow: 1,
+          children: e(n, {
+            children: t.body.text
+          })
+        })
+      }), e(d1r, {
+        body: t.body
+      })]
+    })
+  })
+}
+j();
+
+function Ja(M) {
+  return M.toolPermissionContext
+}
+var _zt = "\xB7 workflows run best with it on";
+
+function Lkt(o) {
+  let m = S(10),
+    t = G(Ja),
+    i = ar(),
+    {
+      addNotification: u
+    } = Lo(),
+    c;
+  if (m[0] !== t) c = (t.mode === "default" || t.mode === "acceptEdits") && BY(t), m[0] = t, m[1] = c;
+  else c = m[1];
+  let d = c,
+    f = o?.type === "workflow-agent" && d,
+    h;
+  if (m[2] !== u || m[3] !== i || m[4] !== t) h = (g) => {
+    let b = g === void 0 ? "workflow_permission_prompt" : g;
+    if (!VC("auto", t, (C) => i((D) => {
+        let x = C(D.toolPermissionContext);
+        if (x === D.toolPermissionContext) {
+          return D
+        }
+        return {
+          ...D,
+          toolPermissionContext: x
+        }
+      }), b).ok) {
+      return u({
+        key: "workflow-auto-mode-unavailable",
+        kind: "warning",
+        text: H5t(),
+        color: "warning",
+        priority: "high"
+      }), !1
+    }
+    return !0
+  }, m[2] = u, m[3] = i, m[4] = t, m[5] = h;
+  else h = m[5];
+  let T = h,
+    g;
+  if (m[6] !== d || m[7] !== T || m[8] !== f) g = {
+    offered: f,
+    canOfferAutoMode: d,
+    enableAutoMode: T
+  }, m[6] = d, m[7] = T, m[8] = f, m[9] = g;
+  else g = m[9];
+  return g
+}
+j();
+
+function wl(se) {
+  return {
+    ...se,
+    attribution: {
+      ...se.attribution,
+      escapeCount: se.attribution.escapeCount + 1
+    }
+  }
+}
+
+function Vfn(o) {
+  return o === "yes" ? "accept" : o === "no" ? "reject" : void 0
+}
+
+function Q$e(o) {
+  let H = S(35),
+    {
+      feedbackTypeOf: t,
+      toolName: i,
+      isMcp: u,
+      initialFocusedType: m
+    } = o,
+    c = ar(),
+    d = ot(),
+    [f, h] = y(""),
+    [g, b] = y(""),
+    [C, D] = y(!1),
+    [x, T] = y(!1),
+    [M, N] = y(!1),
+    [v, F] = y(!1),
+    [k, E] = y(void 0),
+    q;
+  if (H[0] !== t || H[1] !== k || H[2] !== m) q = k === void 0 ? m : t(k), H[0] = t, H[1] = k, H[2] = m, H[3] = q;
+  else q = H[3];
+  let X = q,
+    ee;
+  if (H[4] !== C || H[5] !== t || H[6] !== u || H[7] !== x || H[8] !== i) ee = (B) => {
+    let W = t(B);
+    let K = {
+      toolName: i,
+      isMcp: u
+    };
+    if (W === "accept") {
+      if (C) D(!1), l("tengu_accept_feedback_mode_collapsed", K);
+      else D(!0), N(!0), l("tengu_accept_feedback_mode_entered", K)
+    } else if (W === "reject") {
+      if (x) T(!1), l("tengu_reject_feedback_mode_collapsed", K);
+      else T(!0), F(!0), l("tengu_reject_feedback_mode_entered", K)
+    }
+  }, H[4] = C, H[5] = t, H[6] = u, H[7] = x, H[8] = i, H[9] = ee;
+  else ee = H[9];
+  let le = ee,
+    ge;
+  if (H[10] !== f || H[11] !== C || H[12] !== t || H[13] !== g || H[14] !== x) ge = (oe) => {
+    let V = t(oe);
+    if (V !== "accept" && C && !f.trim()) D(!1);
+    if (V !== "reject" && x && !g.trim()) T(!1);
+    E(oe)
+  }, H[10] = f, H[11] = C, H[12] = t, H[13] = g, H[14] = x, H[15] = ge;
+  else ge = H[15];
+  let z = ge,
+    U;
+  if (H[16] !== M || H[17] !== u || H[18] !== v || H[19] !== i) U = (we, Q) => {
+    l(we === "accept" ? "tengu_accept_submitted" : "tengu_reject_submitted", {
+      toolName: i,
+      isMcp: u,
+      has_instructions: !!Q,
+      instructions_length: Q?.length ?? 0,
+      entered_feedback_mode: we === "accept" ? M : v
+    })
+  }, H[16] = M, H[17] = u, H[18] = v, H[19] = i, H[20] = U;
+  else U = H[20];
+  let he = U,
+    xe;
+  if (H[21] !== c) xe = () => {
+    l("tengu_permission_request_escape", {}), c(wl)
+  }, H[21] = c, H[22] = xe;
+  else xe = H[22];
+  let te = xe,
+    ke = !d && (X === "accept" && !C || X === "reject" && !x),
+    Me;
+  if (H[23] !== ke) Me = ke && e(Y, {
+    chord: "tab",
+    action: "amend"
+  }), H[23] = ke, H[24] = Me;
+  else Me = H[24];
+  let de = Me,
+    Te;
+  if (H[25] !== f || H[26] !== C || H[27] !== z || H[28] !== le || H[29] !== de || H[30] !== te || H[31] !== he || H[32] !== g || H[33] !== x) Te = {
+    acceptFeedback: f,
+    rejectFeedback: g,
+    setAcceptFeedback: h,
+    setRejectFeedback: b,
+    acceptInputMode: C,
+    rejectInputMode: x,
+    handleInputModeToggle: le,
+    handleFocus: z,
+    logSubmitted: he,
+    logEscape: te,
+    hintNode: de
+  }, H[25] = f, H[26] = C, H[27] = z, H[28] = le, H[29] = de, H[30] = te, H[31] = he, H[32] = g, H[33] = x, H[34] = Te;
+  else Te = H[34];
+  return Te
+}
+
+function Sl(g) {
+  return g.notifications.current?.key === "kill-agents-confirm"
+}
+var yi = {
+  keyCase: "lower"
+};
+
+function G4e(o) {
+  let c = S(6),
+    t = ia("chat:killAgents", "Chat", "ctrl+x ctrl+k"),
+    i = xs(Sl);
+  if (!((o?.type === "subagent" || o?.type === "workflow-agent") && o.stoppableByKillAgents === !0) || t === "") {
+    return null
+  }
+  const m = i === !0 ? "again to stop background agents" : "twice to stop background agents";
+  let d;
+  if (c[0] !== t || c[1] !== m) d = e(Y, {
+    chord: t,
+    action: m,
+    format: yi,
+    terse: !0
+  }), c[0] = t, c[1] = m, c[2] = d;
+  else d = c[2];
+  let f = d,
+    h;
+  if (c[3] !== i || c[4] !== f) h = i === !0 ? e(n, {
+    color: "text",
+    children: f
+  }) : f, c[3] = i, c[4] = f, c[5] = h;
+  else h = c[5];
+  return h
+}
+j();
+var Hi = {
+  accept: "tell Claude what to do next",
+  reject: "tell Claude what to do differently"
+};
+
+function PY({
+  options: o,
+  onSelect: t,
+  onCancel: i,
+  question: u = "Do you want to proceed?",
+  toolAnalyticsContext: m,
+  defaultFocusValue: c,
+  hideIndexes: d,
+  requestSource: f,
+  frameTitle: h,
+  children: g,
+  frameHints: b = []
+}) {
+  let [C, D] = y(c);
+  O(() => {
+    D(void 0)
+  }, []);
+  let x = ue((V) => o.find((z) => z.value === V)?.feedbackConfig?.type, [o]),
+    {
+      acceptFeedback: T,
+      rejectFeedback: M,
+      setAcceptFeedback: N,
+      setRejectFeedback: v,
+      acceptInputMode: F,
+      rejectInputMode: k,
+      handleInputModeToggle: E,
+      handleFocus: H,
+      logSubmitted: q,
+      logEscape: X,
+      hintNode: ee
+    } = Q$e({
+      feedbackTypeOf: x,
+      toolName: m?.toolName,
+      isMcp: m?.isMcp ?? !1
+    }),
+    B = G4e(f),
+    W = Z(() => o.map((V) => {
+      let {
+        value: z,
+        label: U,
+        feedbackConfig: we
+      } = V;
+      if (!we) return {
+        label: U,
+        value: z,
+        description: V.description,
+        disabled: V.disabled
+      };
+      let {
+        type: Q,
+        placeholder: he
+      } = we, xe = Q === "accept" ? F : k, te = Q === "accept" ? N : v, ke = Hi[Q];
+      if (xe) return {
+        type: "input",
+        label: U,
+        value: z,
+        placeholder: he ?? ke,
+        onChange: te,
+        allowEmptySubmitToCancel: !0
+      };
+      return {
+        label: U,
+        value: z,
+        description: V.description,
+        disabled: V.disabled
+      }
+    }), [o, F, k]),
+    K = ue((V) => {
+      let z = o.find((he) => he.value === V);
+      if (!z || z.disabled) return;
+      let U = z.feedbackConfig,
+        we, Q = "";
+      if (U) {
+        if (Q = (U.type === "accept" ? T : M).trim(), Q) we = Q
+      }
+      if (t(V, we) === !1) return !1;
+      if (U) q(U.type, Q)
+    }, [o, T, M, t, q]),
+    le = Z(() => {
+      let V = o.find((U) => U.feedbackConfig?.type === "accept" && F || U.feedbackConfig?.type === "reject" && k),
+        z = {};
+      for (let U of o)
+        if (U.keybinding) z[U.keybinding] = () => V ? E(V.value) : K(U.value);
+      return z
+    }, [o, F, k, E, K]);
+  Sn(le, {
+    context: "Confirmation"
+  });
+  let ge = ue(() => {
+      if (i?.() === !1) return;
+      X()
+    }, [i, X]),
+    oe = e(Ze, {
+      selectedValue: ti,
+      options: W,
+      defaultFocusValue: C,
+      hideIndexes: d,
+      inlineDescriptions: !0,
+      onChange: K,
+      onCancel: ge,
+      onFocus: H,
+      onInputModeToggle: E
+    });
+  if (h !== void 0) return r(ua, {
+    title: h,
+    requestSource: f,
+    frame: {
+      onCancel: ge,
+      hints: [ee && e(Y, {
+        chord: "tab",
+        action: "amend",
+        terse: !0,
+        format: {
+          keyCase: "lower"
+        }
+      }, "amend"), ...b, B]
+    },
+    children: [g, oe]
+  });
+  return r(s, {
+    flexDirection: "column",
+    children: [typeof u === "string" ? e(n, {
+      children: u
+    }) : u, oe, e(s, {
+      marginTop: 1,
+      children: e(n, {
+        dimColor: !0,
+        wrap: B ? "truncate" : void 0,
+        children: r(Ce, {
+          children: [e(Y, {
+            chord: "escape",
+            action: "cancel"
+          }), ee, B]
+        })
+      })
+    })]
+  })
+}
+
+function ed(o) {
+  let {
+    style: le
+  } = o;
+  return le === "value"
+}
+
+function td(o) {
+  let {
+    style: ge
+  } = o;
+  return ge !== "value"
+}
+
+function nd(o, oe) {
+  let {
+    text: V,
+    style: z
+  } = o;
+  return e(n, {
+    bold: z === "question",
+    children: V
+  }, oe)
+}
+
+function od(o, U) {
+  let {
+    text: we
+  } = o;
+  return e(n, {
+    dimColor: !0,
+    children: we
+  }, `value-${U}`)
+}
+var gt = 12,
+  Kfn = 60,
+  e6n = gt * Kfn,
+  t6n = 4,
+  jl = /^(?:replacing|source|into|type|artifact)(?: \d+)?: https?:\/\/[^\s/]+\/(?:[^\s/]+\/)*(?:artifact|frame)\/(?:[A-Za-z0-9_-]*-)?(?:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[A-Za-z0-9_-]{22})\/?$/;
+
+function Hl(o, t) {
+  if (ce(o) <= t) return o;
+  let i = lG(o, Math.floor(t / 2));
+  return i + AH(o, t - ce(i))
+}
+
+function n6n(o, t) {
+  let i = Math.max(1, t),
+    u = [...o.question === void 0 ? [] : [{
+      text: o.question,
+      style: "question"
+    }], ...o.lines.map((d) => ({
+      text: d,
+      style: "line"
+    })), ...o.values.map((d) => ({
+      text: d,
+      style: "value"
+    }))],
+    m = -1,
+    c = u.flatMap(({
+      text: d,
+      style: f
+    }) => {
+      let h = d.replace(/\r\n|[\r\n\u2028\u2029]/g, " "),
+        g = f === "value" ? m += 1 : void 0;
+      return f === "value" && !jl.test(h) ? [{
+        text: Hl(h, i),
+        style: f,
+        value: g
+      }] : Hc(f === "value" ? h : d, i, {
+        trim: !0,
+        hard: !0
+      }).split(`
+`).map((b) => ({
+        text: ct(b, i),
+        style: f,
+        ...g !== void 0 && {
+          value: g
+        }
+      }))
+    });
+  return {
+    rows: c,
+    gutter: o.values.length > 0 || o.lines.length > 0 || c.length > u.length || u.some(({
+      text: d
+    }) => US(d))
+  }
+}
+
+function qfn(o) {
+  let i = S(31),
+    {
+      card: t
+    } = o;
+  if (t.rows.length === 0) {
+    return null
+  }
+  let u, m, c, d, f, h, g, b, C, D;
+  if (i[0] !== t.gutter || i[1] !== t.rows) {
+    let x = t.rows.filter(ed);
+    let T = t.rows.filter(td);
+    let M = t.rows.length <= gt;
+    let N = x;
+    if (!M) {
+      let v = gt - 3;
+      let F = 0;
+      while (F < x.length) {
+        let k = x[F].value;
+        let E = F;
+        while (E < x.length && x[E].value === k) E = E + 1;
+        if (E > v) {
+          break
+        }
+        F = E
+      }
+      N = x.slice(0, F)
+    }
+    d = x.length - N.length;
+    let H = gt - 1 - N.length - (d > 0 ? 1 : 0);
+    let q = M ? T : T.slice(0, Math.max(1, H));
+    let X = T.length - q.length;
+    c = s;
+    D = "column";
+    m = Bi;
+    C = t.gutter;
+    u = s;
+    f = "column";
+    h = q.map(nd);
+    if (i[12] !== X) g = X > 0 && r(n, {
+      dimColor: !0,
+      children: ["\u2026 (+", X, " more lines)"]
+    }), i[12] = X, i[13] = g;
+    else g = i[13];
+    b = N.map(od);
+    i[0] = t.gutter, i[1] = t.rows, i[2] = u, i[3] = m, i[4] = c, i[5] = d, i[6] = f, i[7] = h, i[8] = g, i[9] = b, i[10] = C, i[11] = D
+  } else u = i[2], m = i[3], c = i[4], d = i[5], f = i[6], h = i[7], g = i[8], b = i[9], C = i[10], D = i[11];
+  let ee;
+  if (i[14] !== d) ee = d > 0 && r(n, {
+    dimColor: !0,
+    children: ["\u2026 (+", d, " more lines)"]
+  }), i[14] = d, i[15] = ee;
+  else ee = i[15];
+  let B;
+  if (i[16] !== u || i[17] !== f || i[18] !== h || i[19] !== g || i[20] !== b || i[21] !== ee) B = r(u, {
+    flexDirection: f,
+    children: [h, g, b, ee]
+  }), i[16] = u, i[17] = f, i[18] = h, i[19] = g, i[20] = b, i[21] = ee, i[22] = B;
+  else B = i[22];
+  let W;
+  if (i[23] !== m || i[24] !== C || i[25] !== B) W = e(m, {
+    multiline: C,
+    children: B
+  }), i[23] = m, i[24] = C, i[25] = B, i[26] = W;
+  else W = i[26];
+  let K;
+  if (i[27] !== c || i[28] !== D || i[29] !== W) K = e(c, {
+    flexDirection: D,
+    children: W
+  }), i[27] = c, i[28] = D, i[29] = W, i[30] = K;
+  else K = i[30];
+  return K
+}
+j();
+var ht = 200000,
+  Jo = ht,
+  rd = 1e4,
+  id = 1000,
+  sd = 200000;
+
+function qi(o) {
+  return typeof o === "string" && o.length <= 256
+}
+var tn = 80,
+  ad = new Set(["channel_id", "channel"]),
+  ld = new Set(["ts", "thread_ts"]),
+  dd = /^\d{10}\.\d{6}$/,
+  ud = /\b\d{4}\b/,
+  cd = /\d{1,2}:\d{2}/;
+
+function Je(o, t, i, u) {
+  return ce(o) + 2 + ce(t) + (i === void 0 ? 0 : ce(i) + 3) <= Math.min(tn, u - 2)
+}
+var pd = 64;
+
+function tr(o, t, i = 0, u = {
+  remaining: rd,
+  unitsRemaining: ht
+}) {
+  if (typeof o === "string") {
+    if (o.length + 2 > u.unitsRemaining) throw Error("value exceeds the units display budget");
+    let m = _(o);
+    if (u.unitsRemaining -= m.length, u.unitsRemaining < 0) throw Error("value exceeds the units display budget");
+    return m
+  }
+  if (o === null || typeof o === "number" || typeof o === "boolean") {
+    let m = String(o);
+    if (u.unitsRemaining -= m.length, u.unitsRemaining < 0) throw Error("value exceeds the units display budget");
+    return m
+  }
+  if (i >= pd) throw Error("value exceeds the display depth bound");
+  if (Array.isArray(o)) {
+    if (o.length === 0) return "[]";
+    let m = o.length;
+    if (typeof m !== "number" || !Number.isSafeInteger(m) || m < 0) throw Error("value exceeds the element display budget");
+    if (u.remaining -= m, u.remaining < 0) throw Error("value exceeds the element display budget");
+    let c = [];
+    for (let h = 0; h < m; h++) c.push(tr(o[h], t + 1, i + 1, u));
+    if (c.every((h) => !h.includes(`
+`))) {
+      let h = `[${c.join(", ")}]`;
+      if (ce(h) <= tn) return h
+    }
+    let d = "  ".repeat(t + 1),
+      f = "  ".repeat(t);
+    return `[
+${c.map((h)=>d+h).join(`,
+`)}
+${f}]`
+  }
+  if (typeof o === "object") {
+    let m = Object.entries(o);
+    if (m.length === 0) return "{}";
+    if (u.remaining -= m.length, u.remaining < 0) throw Error("value exceeds the element display budget");
+    for (let [g] of m) {
+      if (g.length > sd) throw Error("nested key exceeds the display bound");
+      if (g.length > u.unitsRemaining) throw Error("keys exceed the units display budget");
+      if (jy(g) !== g) throw Error("nested key display would drop code points");
+      u.unitsRemaining -= g.length
+    }
+    let c = W$n(m.map(([g]) => g));
+    for (let [g] of m) {
+      let b = c.get(g) ?? g;
+      if (b.length > g.length) {
+        if (u.unitsRemaining -= b.length - g.length, u.unitsRemaining < 0) throw Error("keys exceed the units display budget")
+      }
+    }
+    let d = m.map(([g, b]) => `${c.get(g)??g}: ${tr(b,t+1,i+1,u)}`);
+    if (d.every((g) => !g.includes(`
+`))) {
+      let g = `{ ${d.join(", ")} }`;
+      if (ce(g) <= tn) return g
+    }
+    let f = "  ".repeat(t + 1),
+      h = "  ".repeat(t);
+    return `{
+${d.map((g)=>f+g).join(`,
+`)}
+${h}}`
+  }
+  if (typeof o === "bigint") throw Error("bigint value cannot be rendered");
+  return "undefined"
+}
+var Zi = /^(\d{4})-(\d{2})-(\d{2})[Tt ](\d{2}):(\d{2})(?::(\d{2})(?:\.\d{1,9})?)?(?:[Zz]|[+-]\d{2}:?\d{2})?$/;
+
+function Xi(o) {
+  let t = o.trim(),
+    i = t.match(Zi);
+  if (!i) return null;
+  let u = Number(i[1] ?? ""),
+    m = Number(i[2] ?? ""),
+    c = Number(i[3] ?? ""),
+    d = Number(i[4] ?? ""),
+    f = Number(i[5] ?? ""),
+    h = i[6] === void 0 ? 0 : Number(i[6]);
+  if (u < 100) return null;
+  let g = new Date(Date.UTC(u, m, 0)).getUTCDate();
+  if (m < 1 || m > 12 || c < 1 || c > g) return null;
+  if (d > 24 || f > 59 || h > 59 || d === 24 && (f > 0 || h > 0)) return null;
+  let b = Date.parse(t);
+  if (Number.isNaN(b)) return null;
+  if (!/(?:[Zz]|[+-]\d{2}:?\d{2})$/.test(t)) {
+    let x = new Date(Date.UTC(u, m - 1, c, d, f)),
+      T = new Date(b);
+    if (T.getFullYear() !== x.getUTCFullYear() || T.getMonth() !== x.getUTCMonth() || T.getDate() !== x.getUTCDate() || T.getHours() !== x.getUTCHours() || T.getMinutes() !== x.getUTCMinutes()) return null
+  }
+  let D = Date.UTC(u, m - 1, c, d, f, h);
+  if (Math.abs(b - D) > 50400000) return null;
+  return new Date(b).toLocaleString(void 0, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short"
+  })
+}
+
+function r6n(o, t, i = tn) {
+  if (o === null || typeof o !== "object" || Array.isArray(o)) return [{
+    kind: "inline",
+    key: "input",
+    text: "(parameters are not an object \u2014 deny unless expected)",
+    unrenderable: !0
+  }];
+  let u = Object.entries(o),
+    m = Lte(o);
+  if (m !== null) return [{
+    kind: "inline",
+    key: "input",
+    text: m,
+    unrenderable: !0,
+    parseFailureSentinel: !0
+  }];
+  let c = [],
+    d = u.length;
+  if (d > id) return [{
+    kind: "inline",
+    key: "input",
+    text: `(${d} parameters \u2014 too many to show \u2014 deny unless expected)`,
+    unrenderable: !0
+  }];
+  let f = [],
+    h = 0,
+    g = 0;
+  for (let [x, T] of u) {
+    if (x.length > ht) {
+      h += 1;
+      continue
+    }
+    if (f.push(x), g += x.length, typeof T === "string" && T.length <= ht) g += T.length
+  }
+  if (g > Jo) return [{
+    kind: "inline",
+    key: "input",
+    text: `(parameters total ${g.toLocaleString()} characters \u2014 too much to show \u2014 deny unless expected)`,
+    unrenderable: !0
+  }];
+  if (h > 0) c.push({
+    kind: "inline",
+    key: "input",
+    text: `(${h} parameter ${h===1?"name is":"names are"} too large to show \u2014 deny unless expected)`,
+    unrenderable: !0
+  });
+  let b = W$n(f),
+    C = u.find(([x]) => x === "language")?.[1],
+    D = 0;
+  for (let [x, T] of u) {
+    if (x.length > ht) continue;
+    let M = b.get(x) ?? x;
+    if (jy(x) !== x) {
+      D += 1;
+      continue
+    }
+    if (typeof T === "string") {
+      if (T.length > ht) {
+        let K = `(value of ${T.length.toLocaleString()} characters cannot be shown \u2014 deny unless expected)`;
+        if (!Je(M, K, void 0, i)) c.push({
+          kind: "block",
+          key: M,
+          text: K,
+          unrenderable: !0
+        });
+        else c.push({
+          kind: "inline",
+          key: M,
+          text: K,
+          unrenderable: !0
+        });
+        continue
+      }
+      let k = dc(T),
+        E = jy(k);
+      if (vqe.test(E) || E !== k) {
+        let K = `(value of ${T.length.toLocaleString()} characters cannot be shown in full \u2014 deny unless expected)`;
+        if (!Je(M, K, void 0, i)) c.push({
+          kind: "block",
+          key: M,
+          text: K,
+          unrenderable: !0
+        });
+        else c.push({
+          kind: "inline",
+          key: M,
+          text: K,
+          unrenderable: !0
+        });
+        continue
+      }
+      let H = E.replace(/\t/g, " ");
+      if (E.includes(`
+`) || ce(E) > tn) {
+        let K = x === "code" && qi(C) ? dc(C) : void 0;
+        c.push({
+          kind: "block",
+          key: M,
+          text: H,
+          language: K
+        });
+        continue
+      }
+      let q = _(E),
+        X = t?.[x] === "date-time" && ud.test(E) && cd.test(E),
+        B = ld.has(x) && dd.test(E) ? Xi(new Date(Number(E) * 1000).toISOString()) ?? void 0 : X || Zi.test(E) ? Xi(E) ?? void 0 : void 0;
+      if (!Je(M, q, B, i)) {
+        let K = x === "code" && qi(C) ? dc(C) : void 0;
+        c.push({
+          kind: "block",
+          key: M,
+          text: H,
+          annotation: B,
+          language: K
+        });
+        continue
+      }
+      let W = ad.has(x) ? F8o(E) ?? void 0 : /^https?:\/\/\S+$/.test(E) && !pbe(E) ? E : void 0;
+      c.push({
+        kind: "inline",
+        key: M,
+        text: q,
+        linkUrl: W,
+        annotation: B
+      });
+      continue
+    }
+    if (T === null || typeof T === "number" || typeof T === "boolean") {
+      let k = String(T);
+      if (!Je(M, k, void 0, i)) {
+        c.push({
+          kind: "block",
+          key: M,
+          text: k
+        });
+        continue
+      }
+      c.push({
+        kind: "inline",
+        key: M,
+        text: k
+      });
+      continue
+    }
+    let N, v = "",
+      F = 0;
+    try {
+      let k = tr(T, 0);
+      if (F = k.length, k.length > ht) {
+        let E = `(value of ${k.length.toLocaleString()} formatted characters cannot be shown \u2014 deny unless expected)`;
+        if (!Je(M, E, void 0, i)) c.push({
+          kind: "block",
+          key: M,
+          text: E,
+          unrenderable: !0
+        });
+        else c.push({
+          kind: "inline",
+          key: M,
+          text: E,
+          unrenderable: !0
+        });
+        continue
+      }
+      v = dc(k), N = jy(v)
+    } catch {
+      if (!Je(M, "(value too large or too deeply nested to render \u2014 deny unless expected)", void 0, i)) c.push({
+        kind: "block",
+        key: M,
+        text: "(value too large or too deeply nested to render \u2014 deny unless expected)",
+        unrenderable: !0
+      });
+      else c.push({
+        kind: "inline",
+        key: M,
+        text: "(value too large or too deeply nested to render \u2014 deny unless expected)",
+        unrenderable: !0
+      });
+      continue
+    }
+    if (g += F, g > Jo) return [{
+      kind: "inline",
+      key: "input",
+      text: `(parameters total over ${Jo.toLocaleString()} rendered characters \u2014 too much to show \u2014 deny unless expected)`,
+      unrenderable: !0
+    }];
+    if (vqe.test(N) || jy(v) !== v) {
+      let k = `(value of ${F.toLocaleString()} formatted characters cannot be shown in full \u2014 deny unless expected)`;
+      if (!Je(M, k, void 0, i)) c.push({
+        kind: "block",
+        key: M,
+        text: k,
+        unrenderable: !0
+      });
+      else c.push({
+        kind: "inline",
+        key: M,
+        text: k,
+        unrenderable: !0
+      });
+      continue
+    }
+    if (!N.includes(`
+`) && Je(M, N, void 0, i)) c.push({
+      kind: "inline",
+      key: M,
+      text: N
+    });
+    else c.push({
+      kind: "block",
+      key: M,
+      text: N,
+      language: "javascript"
+    })
+  }
+  if (D > 0) c.push({
+    kind: "inline",
+    key: "input",
+    text: `(${D} parameter ${D===1?"name":"names"} cannot be shown in full \u2014 deny unless expected)`,
+    unrenderable: !0
+  });
+  return c
+}
+
+function md(o, t) {
+  return o.language !== void 0 && t !== null && qas(o.text, dut(o.language) ?? o.language) && t.supportsLanguage(o.language)
+}
+
+function Qi(o) {
+  let u = S(38),
+    {
+      keyText: t,
+      contentColumns: i
+    } = o,
+    m, c, d, f, h, g, b, C, D, x, T, M, N, v, F, k;
+  if (u[0] !== i || u[1] !== t) {
+    C = Pn;
+    q: {
+      let E = Hc(`${t}:`, Math.max(10, i - 2), {
+        hard: !0,
+        trim: !1
+      });
+      let H = E.indexOf(`
+`);
+      if (H === -1) {
+        C = e(n, {
+          dimColor: !0,
+          children: E
+        });
+        break q
+      }
+      d = s;g = "column";b = e(n, {
+        dimColor: !0,
+        children: E.slice(0, H)
+      });c = s;x = 2;T = "single";M = !0;N = !1;v = !1;F = !1;k = !0;h = 1;m = n;f = !0;D = Hc(E.slice(H + 1).replace(/\n/g, ""), Math.max(10, i - 4), {
+        hard: !0,
+        trim: !1
+      })
+    }
+    u[0] = i, u[1] = t, u[2] = m, u[3] = c, u[4] = d, u[5] = f, u[6] = h, u[7] = g, u[8] = b, u[9] = C, u[10] = D, u[11] = x, u[12] = T, u[13] = M, u[14] = N, u[15] = v, u[16] = F, u[17] = k
+  } else m = u[2], c = u[3], d = u[4], f = u[5], h = u[6], g = u[7], b = u[8], C = u[9], D = u[10], x = u[11], T = u[12], M = u[13], N = u[14], v = u[15], F = u[16], k = u[17];
+  if (C !== Pn) return C;
+  let X;
+  if (u[18] !== m || u[19] !== f || u[20] !== D) X = e(m, {
+    dimColor: f,
+    children: D
+  }), u[18] = m, u[19] = f, u[20] = D, u[21] = X;
+  else X = u[21];
+  let ee;
+  if (u[22] !== c || u[23] !== h || u[24] !== X || u[25] !== x || u[26] !== T || u[27] !== M || u[28] !== N || u[29] !== v || u[30] !== F || u[31] !== k) ee = e(c, {
+    marginLeft: x,
+    borderStyle: T,
+    borderLeft: M,
+    borderRight: N,
+    borderTop: v,
+    borderBottom: F,
+    borderDimColor: k,
+    paddingLeft: h,
+    children: X
+  }), u[22] = c, u[23] = h, u[24] = X, u[25] = x, u[26] = T, u[27] = M, u[28] = N, u[29] = v, u[30] = F, u[31] = k, u[32] = ee;
+  else ee = u[32];
+  let B;
+  if (u[33] !== d || u[34] !== g || u[35] !== b || u[36] !== ee) B = r(d, {
+    flexDirection: g,
+    children: [b, ee]
+  }), u[33] = d, u[34] = g, u[35] = b, u[36] = ee, u[37] = B;
+  else B = u[37];
+  return B
+}
+
+function Yfn({
+  entries: o,
+  contentColumns: t
+}) {
+  let [i] = Br(), m = Ic().syntaxHighlightingDisabled ?? !1, c = A(new Map), d = Z(() => {
+    let b = m ? null : hK(),
+      C = new Map,
+      D = o.map((x) => {
+        if (x.kind !== "block") return null;
+        let T = `${i}\x00${m}\x00${x.language??""}\x00${x.text}`,
+          M = C.get(T) ?? c.current.get(T);
+        if (M === void 0) M = md(x, b) && x.language !== void 0 && b !== null ? b.highlight(x.text, {
+          language: x.language
+        }) : pbe(x.text) ? x.text : Jjr(x.text, i);
+        return C.set(T, M), M
+      });
+    return c.current = C, D
+  }, [o, i, m]), f = Z(() => d.map((b) => b === null ? null : Hc(b, Math.max(10, t - 4), {
+    hard: !0,
+    trim: !1
+  })), [d, t]), h = qot(), g = o.length === 1 && o[0].kind === "inline" && o[0].parseFailureSentinel === !0 ? o[0] : null;
+  if (g !== null) return e(n, {
+    dimColor: !0,
+    children: g.text
+  });
+  if (o.length === 0) return null;
+  return e(s, {
+    flexDirection: "column",
+    children: o.map((b, C) => b.kind === "inline" ? r(n, {
+      children: [r(n, {
+        dimColor: !0,
+        children: [b.key, ": "]
+      }), e(qs, {
+        children: b.linkUrl !== void 0 && h ? ES(b.linkUrl, b.text) : b.text
+      }), b.annotation !== void 0 && r(n, {
+        dimColor: !0,
+        children: [" (", b.annotation, ")"]
+      })]
+    }, C) : r(s, {
+      flexDirection: "column",
+      children: [e(Qi, {
+        keyText: b.key,
+        contentColumns: t
+      }), e(s, {
+        marginLeft: 2,
+        borderStyle: "single",
+        borderLeft: !0,
+        borderRight: !1,
+        borderTop: !1,
+        borderBottom: !1,
+        borderDimColor: !0,
+        paddingLeft: 1,
+        children: e(qs, {
+          children: f[C] ?? b.text
+        })
+      }), b.annotation !== void 0 && e(s, {
+        marginLeft: 2,
+        children: r(n, {
+          dimColor: !0,
+          children: ["(", b.annotation, ")"]
+        })
+      })]
+    }, C))
+  })
+}
+j();
+
+function Fd(jd) {
+  return jd.unrenderable === !0
+}
+
+function Ld(Hd) {
+  return Fv(Hd)
+}
+
+function Bd(Yd) {
+  return !Yd
+}
+
+function Ud(Vd, Is) {
+  return Vd + ce(Is) + (Is.split(/\r\n|[\r\n\u2028\u2029]/).length - 1) * Kfn
+}
+
+function p1r(o, t, i, u) {
+  switch (o) {
+    case "yes":
+    case "yes-enable-auto-mode":
+      return {
+        behavior: "allow", updatedInput: t.input, ...u && {
+          feedback: u
+        }
+      };
+    case "yes-dont-ask-again": {
+      if (i === null || !$C(i)) return {
+        behavior: "allow",
+        updatedInput: t.input
+      };
+      return {
+        behavior: "allow",
+        updatedInput: t.input,
+        permissionUpdates: i.applies
+      }
+    }
+    case "no":
+      return {
+        behavior: "deny", ...u && {
+          feedback: u
+        }
+      }
+  }
+}
+
+function m1r(o, t) {
+  return GH([{
+    type: "addRules",
+    rules: [{
+      toolName: o.toolName
+    }],
+    behavior: "allow",
+    destination: "localSettings"
+  }], {
+    displayedTypes: gd,
+    renderLabel: (i) => {
+      let u = i.length === 1 ? i[0] : void 0;
+      if (u === void 0 || u.type !== "addRules" || u.rules.length !== 1 || u.rules[0]?.toolName !== o.toolName || u.rules[0]?.ruleContent !== void 0) return null;
+      let m = String(o.userFacingName);
+      if (ce(m) >= ygt || m.includes("\u2026")) return null;
+      if (t.cwd.includes("\u2026")) return null;
+      let c = Math.max(24, t.maxLabelWidth),
+        d = (C) => `Yes, and don't ask again for ${o.userFacingName} commands in ${C}`,
+        f = Mr(t.cwd);
+      if (ce(d(f)) <= c) return d(f);
+      if (f !== t.cwd) return null;
+      let h = ks(t.cwd);
+      if (ce(d(h)) <= c) return d(h);
+      let g = mxe(h),
+        b = "";
+      for (let C = 0; C < g.length; C++) {
+        let D = b + g[C];
+        if (ce(d(`${D}\u2026`)) > c) break;
+        b = D
+      }
+      if (b.length > 0) return d(`${b}\u2026`);
+      return null
+    }
+  })
+}
+var gd = new Set(["addRules"]);
+
+function o6n(o) {
+  let t = o.permissionResult.decisionReason;
+  return al(t, (u) => !u.classifierApprovable) !== void 0 || o.isAskCappedByOrg || o.permissionResult.inPlaceOfClassifier === !0 || o.permissionResult.oneTimeAnswersOnly === !0 || yFe(o.requestSource)
+}
+
+function Nkt(o) {
+  return o.showAlwaysAllow && !o6n(o) && Ct(o.toolName)
+}
+var Ji = 2,
+  hd = 16,
+  yd = 24,
+  bd = 80;
+
+function h1r(o, t) {
+  return o && t.columns >= bd ? Math.max(Ji, Math.min(hd, t.rows - yd)) : Ji
+}
+
+function g1r(o) {
+  let d = S(164),
+    {
+      payload: t,
+      answer: i,
+      wouldTakeAnswer: u
+    } = o,
+    m = A(null),
+    c = Re(),
+    f;
+  if (d[0] !== c.columns) f = () => Math.max(20, Math.min(40, c.columns - 6)), d[0] = c.columns, d[1] = f;
+  else f = d[1];
+  let [h, g] = y(f), b;
+  if (d[2] === w) b = () => {
+    if (m.current) {
+      let {
+        width: C
+      } = Ss(m.current);
+      if (C > 0) g(Math.max(20, C - 2))
+    }
+  }, d[2] = b;
+  else b = d[2];
+  let D;
+  if (d[3] !== c.columns || d[4] !== c.rows) D = [c.columns, c.rows], d[3] = c.columns, d[4] = c.rows, d[5] = D;
+  else D = d[5];
+  O(b, D);
+  let x = Math.min(h, Math.max(20, c.columns - 6)),
+    T;
+  if (d[6] !== x || d[7] !== t.input || d[8] !== t.isMcp || d[9] !== t.paramFormatHints) T = t.isMcp ? r6n(t.input, t.paramFormatHints, x) : null, d[6] = x, d[7] = t.input, d[8] = t.isMcp, d[9] = t.paramFormatHints, d[10] = T;
+  else T = d[10];
+  let M = T,
+    [N] = Br(),
+    v;
+  k: {
+    if (t.renderedToolUseMessage != null) {
+      let F;
+      if (d[11] !== t.renderedToolUseMessage) F = {
+        node: t.renderedToolUseMessage,
+        threw: !1
+      }, d[11] = t.renderedToolUseMessage, d[12] = F;
+      else F = d[12];
+      v = F;
+      break k
+    };
+    try {
+      let E;
+      if (d[13] !== t.input || d[14] !== t.toolName || d[15] !== N) E = Cot(t.toolName, t.input, {
+        theme: N,
+        verbose: !0
+      }), d[13] = t.input, d[14] = t.toolName, d[15] = N, d[16] = E;
+      else E = d[16];
+      let H;
+      if (d[17] !== E) H = {
+        node: E,
+        threw: !1
+      }, d[17] = E, d[18] = H;
+      else H = d[18];
+      v = H
+    } catch (F) {
+      let q = F;
+      let E;
+      if (d[19] !== t.toolName) E = (a(new R(`Error rendering tool use line for ${t.toolName}: ${q}`, "Error rendering tool use line (permission dialog table fallback)")), {
+        node: null,
+        threw: !0
+      }), d[19] = t.toolName, d[20] = E;
+      else E = d[20];
+      v = E
+    }
+  }
+  let {
+    node: X,
+    threw: ee
+  } = v, F;
+  if (d[21] !== X) F = typeof X === "string" ? Eg(X) : null, d[21] = X, d[22] = F;
+  else F = d[22];
+  let B = F,
+    E;
+  if (d[23] !== M || d[24] !== B?.kind || d[25] !== t.toolUseRenderFailed || d[26] !== ee) E = (M?.some(Fd) ?? !1) || t.toolUseRenderFailed === !0 || ee || B?.kind === "withheld", d[23] = M, d[24] = B?.kind, d[25] = t.toolUseRenderFailed, d[26] = ee, d[27] = E;
+  else E = d[27];
+  let W = E,
+    H;
+  if (d[28] !== t) H = Nkt(t), d[28] = t, d[29] = H;
+  else H = d[29];
+  let K = H,
+    {
+      offered: le,
+      enableAutoMode: ge
+    } = Lkt(t.requestSource),
+    oe;
+  if (d[30] === w) oe = Ee(), d[30] = oe;
+  else oe = d[30];
+  let V = oe,
+    z;
+  if (d[31] !== K || d[32] !== x || d[33] !== W || d[34] !== t) z = K && !W ? m1r(t, {
+    cwd: V,
+    maxLabelWidth: x - 8
+  }) : null, d[31] = K, d[32] = x, d[33] = W, d[34] = t, d[35] = z;
+  else z = d[35];
+  let U = z,
+    we;
+  if (d[36] !== t) we = o6n(t), d[36] = t, d[37] = we;
+  else we = d[37];
+  let Q = we,
+    he;
+  if (d[38] !== le || d[39] !== W || d[40] !== Q) he = le && !W && !Q ? Vrt("workflow") : null, d[38] = le, d[39] = W, d[40] = Q, d[41] = he;
+  else he = d[41];
+  let xe = he,
+    te = t.permissionResult.defaultToNo === !0,
+    ke;
+  if (d[42] !== U || d[43] !== i || d[44] !== ge || d[45] !== t || d[46] !== u) ke = (Me) => {
+    let {
+      value: de,
+      feedback: Te
+    } = Me;
+    if (!u()) {
+      return !1
+    }
+    if (de === "yes-enable-auto-mode") ge();
+    return i(p1r(de, t, U, Te))
+  }, d[42] = U, d[43] = i, d[44] = ge, d[45] = t, d[46] = u, d[47] = ke;
+  else ke = d[47];
+  let se = iy(ke),
+    pe = se.answer,
+    Me;
+  if (d[48] !== pe) Me = (Be, wt) => pe({
+    value: Be,
+    feedback: wt
+  }), d[48] = pe, d[49] = Me;
+  else Me = d[49];
+  let De = Me,
+    ae = se.refused === null ? te ? "no" : void 0 : se.refused.value === "yes" && !te ? "yes" : "no",
+    Ot;
+  if (d[50] !== i) Ot = () => i({
+    behavior: "cancelled"
+  }), d[50] = i, d[51] = Ot;
+  else Ot = d[51];
+  let J = Ot;
+  const me = typeof t.description === "string" ? t.description : "";
+  let nt;
+  if (d[52] !== me) nt = me.split(`
+`).filter(Ld).join(`
+`).trim(), d[52] = me, d[53] = nt;
+  else nt = d[53];
+  let Ae = nt,
+    _e;
+  or: {
+    if (B === null) {
+      _e = X;
+      break or
+    }
+    if (B.kind === "withheld") {
+      _e = B.marker;
+      break or
+    }
+    let Ue;
+    if (d[54] !== B.text) Ue = ma(B.text).replace(/\s+/g, " ").trim(),
+    d[54] = B.text,
+    d[55] = Ue;
+    else Ue = d[55];_e = Ue
+  }
+  let rt = _e,
+    ye = t.isMcp ? Math.max(10, x - 2) : x,
+    rr = I7();
+  const Ue = t.roomyDescription === !0,
+    We = c.rows - rr;
+  let xt;
+  if (d[56] !== Ue || d[57] !== We || d[58] !== c.columns) xt = h1r(Ue, {
+    columns: c.columns,
+    rows: We
+  }), d[56] = Ue, d[57] = We, d[58] = c.columns, d[59] = xt;
+  else xt = d[59];
+  let Rt = xt,
+    vt;
+  if (d[60] !== Rt || d[61] !== ye || d[62] !== Ae) vt = gwe(Ae, ye, Rt), d[60] = Rt, d[61] = ye, d[62] = Ae, d[63] = vt;
+  else vt = d[63];
+  let Pe = vt,
+    It;
+  if (d[64] !== ye || d[65] !== Ae) It = gwe(Ae, ye, Number.MAX_SAFE_INTEGER), d[64] = ye, d[65] = Ae, d[66] = It;
+  else It = d[66];
+  let Ft = It,
+    St = Ft !== Pe,
+    [Xn, Wd] = y(!1),
+    ir = ia("app:toggleTranscript", "Global", "ctrl+o"),
+    Ms;
+  if (d[67] === w) Ms = [{
+    action: "app:toggleTranscript",
+    run: () => Wd(Bd)
+  }], d[67] = Ms;
+  else Ms = d[67];
+  let $d = Ms,
+    Ps;
+  if (d[68] === w) Ps = {
+    label: "Yes",
+    value: "yes",
+    feedbackConfig: {
+      type: "accept"
+    }
+  }, d[68] = Ps;
+  else Ps = d[68];
+  let Ns = Ps,
+    Ds;
+  if (d[69] === w) Ds = {
+    label: "No",
+    value: "no",
+    feedbackConfig: {
+      type: "reject"
+    }
+  }, d[69] = Ds;
+  else Ds = d[69];
+  let Es = Ds,
+    sn;
+  if (d[70] !== U || d[71] !== xe || d[72] !== te) {
+    sn = te ? [Es, Ns] : [Ns];
+    if (U !== null) {
+      if (typeof U.node === "string") {
+        let $e;
+        if (d[74] !== U.node) $e = {
+          label: U.node,
+          value: "yes-dont-ask-again"
+        }, d[74] = U.node, d[75] = $e;
+        else $e = d[75];
+        sn.push($e)
+      }
+    }
+    if (xe !== null) {
+      if (typeof xe.node === "string") {
+        let $e;
+        if (d[76] !== xe.node) $e = {
+          label: xe.node,
+          description: _zt,
+          value: "yes-enable-auto-mode"
+        }, d[76] = xe.node, d[77] = $e;
+        else $e = d[77];
+        sn.push($e)
+      }
+    }
+    if (!te) sn.push(Es);
+    d[70] = U, d[71] = xe, d[72] = te, d[73] = sn
+  } else sn = d[73];
+  let Lt = sn,
+    $e;
+  if (d[78] !== t.toolName) $e = On(t.toolName), d[78] = t.toolName, d[79] = $e;
+  else $e = d[79];
+  let _s;
+  if (d[80] !== t.isMcp || d[81] !== $e) _s = {
+    toolName: $e,
+    isMcp: t.isMcp
+  }, d[80] = t.isMcp, d[81] = $e, d[82] = _s;
+  else _s = d[82];
+  let Bt = _s,
+    Oe = t.toolUseRenderFailed === !0 ? void 0 : t.card;
+  if (Oe !== void 0 && [Oe.question, ...Oe.lines, ...Oe.values].reduce(Ud, 0) <= e6n) {
+    let Os = t.requestSource === void 0 && !Oe.question.includes(`
+`) && ce(Oe.question) <= Math.min(x, c.columns - 2);
+    const Ut = Os ? void 0 : Oe.question;
+    let zn;
+    if (d[83] !== Oe || d[84] !== h || d[85] !== Ut || d[86] !== c.columns) zn = n6n({
+      ...Oe,
+      question: Ut
+    }, Math.min(h, c.columns - 6) - t6n), d[83] = Oe, d[84] = h, d[85] = Ut, d[86] = c.columns, d[87] = zn;
+    else zn = d[87];
+    let an = zn;
+    const it = Os ? Oe.question : t.userFacingName;
+    let qe;
+    if (d[88] !== an) qe = an.rows.length > 0 && e(Ul, {
+      children: e(qfn, {
+        card: an
+      })
+    }), d[88] = an, d[89] = qe;
+    else qe = d[89];
+    let st;
+    if (d[90] !== qe) st = e(s, {
+      ref: m,
+      width: "100%",
+      flexDirection: "column",
+      children: qe
+    }), d[90] = qe, d[91] = st;
+    else st = d[91];
+    const at = an.rows.length === 0 ? 1 : 0;
+    let lt;
+    if (d[92] !== J || d[93] !== De || d[94] !== te || d[95] !== Lt || d[96] !== t.requestSource || d[97] !== se.attempts || d[98] !== ae || d[99] !== Bt) lt = e(PY, {
+      question: null,
+      options: Lt,
+      defaultFocusValue: ae,
+      hideIndexes: te,
+      onSelect: De,
+      onCancel: J,
+      toolAnalyticsContext: Bt,
+      requestSource: t.requestSource
+    }, se.attempts), d[92] = J, d[93] = De, d[94] = te, d[95] = Lt, d[96] = t.requestSource, d[97] = se.attempts, d[98] = ae, d[99] = Bt, d[100] = lt;
+    else lt = d[100];
+    let Xe;
+    if (d[101] !== at || d[102] !== lt) Xe = e(s, {
+      paddingX: 1,
+      marginTop: at,
+      children: lt
+    }), d[101] = at, d[102] = lt, d[103] = Xe;
+    else Xe = d[103];
+    let kt;
+    if (d[104] !== t.requestSource || d[105] !== it || d[106] !== st || d[107] !== Xe) kt = r(ua, {
+      title: it,
+      innerPaddingX: 0,
+      requestSource: t.requestSource,
+      children: [st, Xe]
+    }), d[104] = t.requestSource, d[105] = it, d[106] = st, d[107] = Xe, d[108] = kt;
+    else kt = d[108];
+    return kt
+  }
+  let Ut;
+  if (d[109] !== Pe || d[110] !== Xn || d[111] !== St || d[112] !== ir || d[113] !== Ft || d[114] !== M?.length || d[115] !== t.isMcp || d[116] !== t.userFacingName) Ut = Pe !== "" && r(s, {
+    width: "100%",
+    flexDirection: "column",
+    paddingX: 1,
+    marginTop: M?.length === 0 ? 1 : 0,
+    marginBottom: t.isMcp ? 1 : 0,
+    children: [t.isMcp && r(n, {
+      italic: !0,
+      wrap: "truncate-end",
+      children: ["About the ", e(n, {
+        bold: !0,
+        children: t.userFacingName
+      }), " Tool:"]
+    }), e(s, {
+      borderStyle: "single",
+      borderLeft: !0,
+      borderRight: !1,
+      borderTop: !1,
+      borderBottom: !1,
+      borderDimColor: !0,
+      paddingLeft: 1,
+      children: e(n, {
+        dimColor: !0,
+        italic: t.isMcp,
+        children: Xn ? Ft : Pe
+      })
+    }), St && e(n, {
+      dimColor: !0,
+      children: e(Y, {
+        chord: ir,
+        action: Xn ? "collapse description" : "expand description",
+        parens: !0,
+        format: {
+          keyCase: "lower"
+        }
+      })
+    })]
+  }), d[109] = Pe, d[110] = Xn, d[111] = St, d[112] = ir, d[113] = Ft, d[114] = M?.length, d[115] = t.isMcp, d[116] = t.userFacingName, d[117] = Ut;
+  else Ut = d[117];
+  let Qn = Ut;
+  const zn = t.requestSource;
+  let it;
+  if (d[118] !== Pe || d[119] !== Qn || d[120] !== M?.length || d[121] !== t.hasMcpSuffix || d[122] !== t.isMcp || d[123] !== t.userFacingName) it = t.isMcp ? r(s, {
+    flexDirection: "row",
+    paddingX: 1,
+    marginBottom: M?.length === 0 && Pe === "" ? 1 : 0,
+    children: [e(n, {
+      wrap: "truncate-end",
+      children: r(n, {
+        bold: !0,
+        children: [t.userFacingName, " Tool:"]
+      })
+    }), t.hasMcpSuffix ? e(s, {
+      flexShrink: 0,
+      children: e(n, {
+        dimColor: !0,
+        children: " (MCP)"
+      })
+    }) : null]
+  }) : Qn, d[118] = Pe, d[119] = Qn, d[120] = M?.length, d[121] = t.hasMcpSuffix, d[122] = t.isMcp, d[123] = t.userFacingName, d[124] = it;
+  else it = d[124];
+  let qe;
+  if (d[125] !== rt || d[126] !== x || d[127] !== M || d[128] !== t.hasMcpSuffix || d[129] !== t.userFacingName) qe = (M === null || M.length > 0) && e(Ul, {
+    children: M !== null ? e(Yfn, {
+      entries: M,
+      contentColumns: x
+    }) : e(Bi, {
+      multiline: typeof rt === "string" && US(`${t.userFacingName}(${rt})`),
+      children: r(n, {
+        children: [t.userFacingName, rt != null && rt !== "" && r(ne, {
+          children: ["(", rt, ")"]
+        }), t.hasMcpSuffix ? e(n, {
+          dimColor: !0,
+          children: " (MCP)"
+        }) : ""]
+      })
+    })
+  }), d[125] = rt, d[126] = x, d[127] = M, d[128] = t.hasMcpSuffix, d[129] = t.userFacingName, d[130] = qe;
+  else qe = d[130];
+  const st = t.isMcp && Qn;
+  let at;
+  if (d[131] !== it || d[132] !== qe || d[133] !== st) at = r(s, {
+    ref: m,
+    width: "100%",
+    flexDirection: "column",
+    children: [it, qe, st]
+  }), d[131] = it, d[132] = qe, d[133] = st, d[134] = at;
+  else at = d[134];
+  const lt = t.permissionResult.inPlaceOfClassifier === !0 ? rx : void 0;
+  let Xe;
+  if (d[135] !== t.permissionResult || d[136] !== lt) Xe = e(bS, {
+    permissionResult: t.permissionResult,
+    toolType: "tool",
+    rowBudget: lt
+  }), d[135] = t.permissionResult, d[136] = lt, d[137] = Xe;
+  else Xe = d[137];
+  let kt;
+  if (d[138] !== U || d[139] !== t.takesOverServerName) kt = t.takesOverServerName === !0 && U !== null && e(n, {
+    children: `Another MCP server owns this server's name. "Don't ask again" moves the name to this server on this computer: allow rules for that name, in every project, will apply to this server, not the other one. Plain "Yes" moves nothing.`
+  }), d[138] = U, d[139] = t.takesOverServerName, d[140] = kt;
+  else kt = d[140];
+  let Jn;
+  if (d[141] !== t.note) Jn = t.note !== void 0 && e(n, {
+    children: t.note
+  }), d[141] = t.note, d[142] = Jn;
+  else Jn = d[142];
+  let eo;
+  if (d[143] !== J || d[144] !== De || d[145] !== te || d[146] !== Lt || d[147] !== t.requestSource || d[148] !== se.attempts || d[149] !== ae || d[150] !== Bt) eo = e(PY, {
+    options: Lt,
+    defaultFocusValue: ae,
+    hideIndexes: te,
+    onSelect: De,
+    onCancel: J,
+    toolAnalyticsContext: Bt,
+    requestSource: t.requestSource
+  }, se.attempts), d[143] = J, d[144] = De, d[145] = te, d[146] = Lt, d[147] = t.requestSource, d[148] = se.attempts, d[149] = ae, d[150] = Bt, d[151] = eo;
+  else eo = d[151];
+  let to;
+  if (d[152] !== Xe || d[153] !== kt || d[154] !== Jn || d[155] !== eo) to = r(s, {
+    flexDirection: "column",
+    paddingX: 1,
+    children: [Xe, kt, Jn, eo]
+  }), d[152] = Xe, d[153] = kt, d[154] = Jn, d[155] = eo, d[156] = to;
+  else to = d[156];
+  let no;
+  if (d[157] !== t.requestSource || d[158] !== at || d[159] !== to) no = r(ua, {
+    title: "Tool use",
+    innerPaddingX: 0,
+    requestSource: zn,
+    children: [at, to]
+  }), d[157] = t.requestSource, d[158] = at, d[159] = to, d[160] = no;
+  else no = d[160];
+  let vs;
+  if (d[161] !== St || d[162] !== no) vs = e(n_, {
+    bindings: $d,
+    active: St,
+    flexDirection: "column",
+    children: no
+  }), d[161] = St, d[162] = no, d[163] = vs;
+  else vs = d[163];
+  return vs
+}
+export {
+  hPe,
+  Z5,
+  aLo,
+  j4e,
+  Y$e,
+  Okt,
+  s1r,
+  H6s,
+  zrt,
+  Bfn,
+  jfn,
+  Wme,
+  Ij,
+  i1r,
+  a1r,
+  Ywe,
+  gPe,
+  W4e,
+  Ikt,
+  l1r,
+  Grt,
+  X$e,
+  z4e,
+  d1r,
+  Mkt,
+  $C,
+  $6s,
+  GH,
+  J$e,
+  QYn,
+  c1r,
+  lLo,
+  Vrt,
+  u1r,
+  Krt,
+  Wfn,
+  zfn,
+  yzt,
+  Dkt,
+  dLo,
+  Gfn,
+  f1r,
+  ZYn,
+  I7,
+  yPe,
+  rx,
+  bS,
+  _zt,
+  Lkt,
+  Vfn,
+  Q$e,
+  G4e,
+  PY,
+  Kfn,
+  e6n,
+  t6n,
+  n6n,
+  qfn,
+  r6n,
+  Yfn,
+  p1r,
+  m1r,
+  o6n,
+  Nkt,
+  h1r,
+  g1r
+};

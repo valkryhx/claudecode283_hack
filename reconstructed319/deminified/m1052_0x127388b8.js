@@ -1,0 +1,166 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { sf } from "B:/~BUN/root/chunk-game8aqv.js";
+import { b, f, Yn } from "B:/~BUN/root/chunk-drx9cnw1.js";
+import { t } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { ut } from "B:/~BUN/root/chunk-3mm90xb6.js";
+import { l } from "B:/~BUN/root/chunk-mb9chr1y.js";
+import { g, m } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import { Qie } from "B:/~BUN/root/chunk-acjt1b7f.js";
+import { Ei } from "B:/~BUN/root/chunk-sgy380eg.js";
+import { s6, T$ } from "B:/~BUN/root/chunk-27h4st9h.js";
+import { M2t, V8n } from "B:/~BUN/root/chunk-v2gnbkgg.js";
+var h = /^[A-Za-z0-9][A-Za-z0-9._+-]{0,63}$/;
+function Mmn(e) {
+  if (e == null) return;
+  if (h.test(e)) return Yn(e);
+  return b("nonconforming");
+}
+var u = new Set(["Apple_Terminal", "contour", "foot", "ghostty", "iTerm.app", "iTerm2", "kitty", "Konsole", "libghostty", "libvterm", "mintty", "Rio", "ShellFish", "SwiftTerm", "Tabby", "terminology", "Termius", "tmux", "VTE", "Warp", "WezTerm", "xterm", "xterm-ghostty", "XTerm", "xterm.js", "Zap", "Zellij"]),
+  T = [/^(?:next-)?v?\d{1,8}(?:\.\d{1,8}){0,5}[a-z]?$/, /^\d{1,8}\.\d{1,8}\.\d{1,8}-?(?:alpha|beta|rc|pre|dev)\.?\d{0,8}$/, /^\d{8}[-_]\d{6}[-_][0-9a-f]{8}$/, /^v\d\.\d{4}(?:\.\d{2}){4}\.(?:stable|preview|beta|dev)_\d{2}$/],
+  N = /^\d{1,8}(?:\.\d{1,8}){1,3}/,
+  S = /^([A-Za-z][A-Za-z0-9_.]*)(.*)$/,
+  O = /^([A-Za-z][A-Za-z0-9_.-]*[A-Za-z0-9_.])(.*)$/,
+  v = /[):]{1,4}$/;
+function R8s(e) {
+  if (e === void 0) return b("no_reply");
+  let n = e.length <= 128 ? S.exec(e) : null;
+  if (!n) return b("other");
+  let o = O.exec(e),
+    [, r = "", a = ""] = o && u.has(o[1] ?? "") ? o : n;
+  if (!u.has(r)) return b("other");
+  if (a === "") return Yn(r);
+  let s = a[0],
+    c = a.slice(1).replace(v, "");
+  if (c === "") return Yn(s === "(" ? `${r}()` : r);
+  let d = T.some(item => item.test(c)) ? c : N.exec(c)?.[0] ?? "other";
+  switch (s) {
+    case "(":
+      return Yn(`${r}(${d})`);
+    case " ":
+    case "-":
+      return Yn(`${r}${s}${d}`);
+    default:
+      return Yn(`${r} ${d}`);
+  }
+}
+async function Uj(e, n, o = {}) {
+  await rHo(e, n, o);
+}
+async function rHo(e, n, {
+  storageV5: storageV5,
+  credentials: credentials,
+  hookOrigin: hookOrigin
+} = {}) {
+  let s = Ei("preferredNotifChannel", "auto").value;
+  await T$(s6(), e, {
+    storageV5: storageV5,
+    credentials: credentials,
+    hookOrigin: hookOrigin
+  });
+  let c = await A(s, e, n);
+  if (c === "error") m("notification_show", "send_failed");else g("notification_show");
+  return l("tengu_notification_method_used", {
+    configured_channel: f(Qie.includes(s) ? s : "invalid"),
+    notification_type: f(e.notificationType),
+    method_used: f(c),
+    term: Mmn(i.terminal),
+    attacher_term: Mmn(sf()?.terminal)
+  }), c;
+}
+var p = "Claude Code";
+async function A(e, n, o) {
+  if (e === "auto") {
+    let a = await I();
+    return y(a, n, o), a;
+  }
+  let r;
+  switch (e) {
+    case "iterm2":
+    case "iterm2_with_bell":
+    case "kitty":
+    case "ghostty":
+    case "terminal_bell":
+      r = e;
+      break;
+    case "notifications_disabled":
+      r = "disabled";
+      break;
+    default:
+      r = "none";
+  }
+  try {
+    return y(r, n, o), r;
+  } catch {
+    return "error";
+  }
+}
+async function I() {
+  switch (sf()?.terminal ?? i.terminal) {
+    case "Apple_Terminal":
+      return (await w()) ? "terminal_bell" : "no_method_available";
+    case "iTerm.app":
+      return "iterm2";
+    case "kitty":
+      return "kitty";
+    case "ghostty":
+      return "ghostty";
+    default:
+      return "no_method_available";
+  }
+}
+function y(e, n, o) {
+  switch (e) {
+    case "iterm2":
+      o.notifyITerm2(n);
+      return;
+    case "iterm2_with_bell":
+      o.notifyITerm2(n), o.notifyBell();
+      return;
+    case "kitty":
+      o.notifyKitty({
+        ...n,
+        title: n.title || p,
+        id: E()
+      });
+      return;
+    case "ghostty":
+      o.notifyGhostty({
+        ...n,
+        title: n.title || p
+      });
+      return;
+    case "terminal_bell":
+      o.notifyBell();
+      return;
+    case "disabled":
+    case "none":
+    case "no_method_available":
+      return;
+  }
+}
+function E() {
+  return Math.floor(Math.random() * 1e4);
+}
+async function w() {
+  try {
+    let n = (await ut("osascript", ["-e", 'tell application "Terminal" to name of current settings of front window'])).stdout.trim();
+    if (!n) return !1;
+    let o = await ut("defaults", ["export", "com.apple.Terminal", "-"]);
+    if (o.code !== 0) return !1;
+    let r = V8n(o.stdout);
+    if (!M2t(r)) return t("Failed to read Apple Terminal bell setting: defaults export is not a plist dict"), !1;
+    let a = r["Window Settings"],
+      s = M2t(a) ? a[n] : void 0;
+    if (!M2t(s)) return t("Failed to read Apple Terminal bell setting: no settings dict for the current profile"), !1;
+    return s.Bell === !1;
+  } catch (error) {
+    return t(`Failed to read Apple Terminal bell setting: ${error instanceof Error ? error.message : String(error)}`, {
+      level: "error"
+    }), !1;
+  }
+}
+export { Mmn, R8s, Uj, rHo };

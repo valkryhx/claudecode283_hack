@@ -1,0 +1,1879 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-crjx6seq.js";
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import { Nt } from "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import { z, Ee, rzs, MN, Ml, IT, Jp, gS } from "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import { b, f } from "B:/~BUN/root/chunk-drx9cnw1.js";
+import { d } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { J, we } from "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import { i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import { t, _ } from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import { Q, DE } from "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import { St, a } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-apgsnbqk.js";
+import "B:/~BUN/root/chunk-9957329g.js";
+import { Yd, Oyt, Iyt, Hvo, tb, Gt, wc, v } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-bfwh5k9e.js";
+import "B:/~BUN/root/chunk-dwg8my6z.js";
+import "B:/~BUN/root/chunk-vxjrk7vf.js";
+import { S } from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import "B:/~BUN/root/chunk-eswth6m1.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-y5gyn2hc.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import { p } from "B:/~BUN/root/chunk-z6138ats.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-gh4155re.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import { l } from "B:/~BUN/root/chunk-mb9chr1y.js";
+import { g, m, c } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-8f4z6bdn.js";
+import { _n } from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import "B:/~BUN/root/chunk-sy1h8mf0.js";
+import { fo } from "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-fkr27nhj.js";
+import { pe } from "B:/~BUN/root/chunk-thn0wk2x.js";
+import { ks } from "B:/~BUN/root/chunk-d10hhz4p.js";
+import "B:/~BUN/root/chunk-t4qpmjt5.js";
+import { gf, xT } from "B:/~BUN/root/chunk-5xx1vfdh.js";
+import { _dn, fr, Qu } from "B:/~BUN/root/chunk-1g25msn4.js";
+import { kN, jn } from "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import { Wt } from "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import "B:/~BUN/root/chunk-yhafkw66.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import { IA } from "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import { PO } from "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import { X3 } from "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import { TT } from "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-0s9zh2h6.js";
+import "B:/~BUN/root/chunk-sgy380eg.js";
+import "B:/~BUN/root/chunk-waswqpwd.js";
+import "B:/~BUN/root/chunk-p2ta953m.js";
+import { s, n } from "B:/~BUN/root/chunk-qey16aan.js";
+import "B:/~BUN/root/chunk-sc660841.js";
+import "B:/~BUN/root/chunk-31b4g6te.js";
+import "B:/~BUN/root/chunk-chv9g988.js";
+import "B:/~BUN/root/chunk-dwbkkfd6.js";
+import "B:/~BUN/root/chunk-rmd6bs96.js";
+import "B:/~BUN/root/chunk-b5ry9py2.js";
+import "B:/~BUN/root/chunk-de98q5we.js";
+import "B:/~BUN/root/chunk-ddamx62b.js";
+import "B:/~BUN/root/chunk-wzeexm6f.js";
+import "B:/~BUN/root/chunk-c0m1y3zd.js";
+import "B:/~BUN/root/chunk-pnm80mz6.js";
+import "B:/~BUN/root/chunk-gr5se97s.js";
+import "B:/~BUN/root/chunk-dsgmffrq.js";
+import "B:/~BUN/root/chunk-emd6eb45.js";
+import "B:/~BUN/root/chunk-y781qzhe.js";
+import { Ze } from "B:/~BUN/root/chunk-cpzw87wr.js";
+import { rCe, zW, sLe, Q6, B0n, Ffo } from "B:/~BUN/root/chunk-e8znf4zw.js";
+import "B:/~BUN/root/chunk-68y6snsb.js";
+import "B:/~BUN/root/chunk-qdyt0gq6.js";
+import "B:/~BUN/root/chunk-tmdrwqnv.js";
+import "B:/~BUN/root/chunk-n8t98fhm.js";
+import "B:/~BUN/root/chunk-cacx0j4x.js";
+import "B:/~BUN/root/chunk-7g0t7h3t.js";
+import "B:/~BUN/root/chunk-v95bwhaa.js";
+import "B:/~BUN/root/chunk-tzwf3sbj.js";
+import "B:/~BUN/root/chunk-q8sf8fhe.js";
+import "B:/~BUN/root/chunk-qr2xxkqa.js";
+import "B:/~BUN/root/chunk-fnf5t6te.js";
+import "B:/~BUN/root/chunk-qk8tvzkn.js";
+import "B:/~BUN/root/chunk-q793s85g.js";
+import { Y } from "B:/~BUN/root/chunk-c1v460b9.js";
+import "B:/~BUN/root/chunk-hh79wmvd.js";
+import "B:/~BUN/root/chunk-xt7xbt1n.js";
+import "B:/~BUN/root/chunk-9ezywpz7.js";
+import "B:/~BUN/root/chunk-dw9hahea.js";
+import "B:/~BUN/root/chunk-2htsebsg.js";
+import "B:/~BUN/root/chunk-7vfy9z2g.js";
+import { Ce } from "B:/~BUN/root/chunk-cync0e08.js";
+import "B:/~BUN/root/chunk-z8bb1299.js";
+import "B:/~BUN/root/chunk-npkbazqf.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import { zc } from "B:/~BUN/root/chunk-wt8tyqt4.js";
+import "B:/~BUN/root/chunk-j6ahtce9.js";
+import "B:/~BUN/root/chunk-7pxn9dsp.js";
+import "B:/~BUN/root/chunk-n0v0c6zt.js";
+import "B:/~BUN/root/chunk-2x2z0t2k.js";
+import "B:/~BUN/root/chunk-42915bn6.js";
+import "B:/~BUN/root/chunk-vk5b2c7t.js";
+import "B:/~BUN/root/chunk-tjfmeakx.js";
+import "B:/~BUN/root/chunk-076mmgjt.js";
+import "B:/~BUN/root/chunk-y1b1g4ac.js";
+import { UP, ice } from "B:/~BUN/root/chunk-cxcakgnv.js";
+import "B:/~BUN/root/chunk-39zyvd3e.js";
+import "B:/~BUN/root/chunk-wxhfn3za.js";
+import "B:/~BUN/root/chunk-pdtjaehv.js";
+import "B:/~BUN/root/chunk-x6frvp1m.js";
+import "B:/~BUN/root/chunk-eds8xkh8.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import "B:/~BUN/root/chunk-9t9ygsbp.js";
+import "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import { G_e } from "B:/~BUN/root/chunk-6j3fjnhn.js";
+import "B:/~BUN/root/chunk-hvykkx00.js";
+import "B:/~BUN/root/chunk-f0zgv0ya.js";
+import "B:/~BUN/root/chunk-22y97556.js";
+import { se, Wue } from "B:/~BUN/root/chunk-9bs2y8fc.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import { CGe } from "B:/~BUN/root/chunk-j05gjqgd.js";
+import "B:/~BUN/root/chunk-4tp5kqnx.js";
+import "B:/~BUN/root/chunk-nwv7r07s.js";
+import "B:/~BUN/root/chunk-78494p3w.js";
+import "B:/~BUN/root/chunk-gezr7m08.js";
+import "B:/~BUN/root/chunk-tdekz3md.js";
+import { Ny } from "B:/~BUN/root/chunk-ke150ry1.js";
+import "B:/~BUN/root/chunk-wss0tnsx.js";
+import "B:/~BUN/root/chunk-vzhm698f.js";
+import "B:/~BUN/root/chunk-4xvtrfzh.js";
+import "B:/~BUN/root/chunk-jh04j3yr.js";
+import "B:/~BUN/root/chunk-v29ccgfa.js";
+import "B:/~BUN/root/chunk-detjgwj4.js";
+import "B:/~BUN/root/chunk-knfpag6d.js";
+import "B:/~BUN/root/chunk-hr1m6fe3.js";
+import "B:/~BUN/root/chunk-cvaa202c.js";
+import "B:/~BUN/root/chunk-2r9r3hfm.js";
+import "B:/~BUN/root/chunk-jbf2dde1.js";
+import "B:/~BUN/root/chunk-rv3pfsrw.js";
+import "B:/~BUN/root/chunk-8qv1t8b3.js";
+import "B:/~BUN/root/chunk-b7bhhce8.js";
+import "B:/~BUN/root/chunk-s89g0dw7.js";
+import "B:/~BUN/root/chunk-dcmvdxnm.js";
+import "B:/~BUN/root/chunk-psjm1gcn.js";
+import { ots, Bbi, ZK, Sje, keo as message_5, u8e, bOt, D8e, SOt, Fd, Ma, lq, tu, ji, noe, dq, Vo, Bt, T9, wm } from "B:/~BUN/root/chunk-27h4st9h.js";
+import "B:/~BUN/root/chunk-6v74v9ar.js";
+import "B:/~BUN/root/chunk-eak7wp7z.js";
+import "B:/~BUN/root/chunk-mbh2s41k.js";
+import "B:/~BUN/root/chunk-sjvfcp1z.js";
+import "B:/~BUN/root/chunk-s9vv4h32.js";
+import "B:/~BUN/root/chunk-7thhw21a.js";
+import "B:/~BUN/root/chunk-wm0axmjp.js";
+import "B:/~BUN/root/chunk-1012essb.js";
+import "B:/~BUN/root/chunk-kpr2et3s.js";
+import "B:/~BUN/root/chunk-kfm993xq.js";
+import "B:/~BUN/root/chunk-ckdgegnz.js";
+import "B:/~BUN/root/chunk-x9bz04wf.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import "B:/~BUN/root/chunk-z7bs0q82.js";
+import "B:/~BUN/root/chunk-5g1gmfkv.js";
+import "B:/~BUN/root/chunk-xgwmwbnb.js";
+import "B:/~BUN/root/chunk-2392ztjf.js";
+import "B:/~BUN/root/chunk-pw7914mv.js";
+import "B:/~BUN/root/chunk-hjds4dtx.js";
+import "B:/~BUN/root/chunk-sx264pby.js";
+import "B:/~BUN/root/chunk-cj2cn5y2.js";
+import "B:/~BUN/root/chunk-6bx54the.js";
+import "B:/~BUN/root/chunk-7rwbs73j.js";
+import "B:/~BUN/root/chunk-m1v50w96.js";
+import "B:/~BUN/root/chunk-yg4ttpr7.js";
+import "B:/~BUN/root/chunk-6h5p2dxf.js";
+import "B:/~BUN/root/chunk-tdg0k3wq.js";
+import "B:/~BUN/root/chunk-n98vg3jf.js";
+import "B:/~BUN/root/chunk-838fxqce.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-2gz7xsvb.js";
+import "B:/~BUN/root/chunk-02j0cm13.js";
+import "B:/~BUN/root/chunk-0s00dkj6.js";
+import "B:/~BUN/root/chunk-hevmq1yj.js";
+import "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-0aq7t0nw.js";
+import "B:/~BUN/root/chunk-ajvcvya3.js";
+import "B:/~BUN/root/chunk-63btkzab.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-vke7wtay.js";
+import "B:/~BUN/root/chunk-6g8w5kyh.js";
+import "B:/~BUN/root/chunk-jmt91fq8.js";
+import "B:/~BUN/root/chunk-5x4j33v9.js";
+import "B:/~BUN/root/chunk-m8dg5txf.js";
+import "B:/~BUN/root/chunk-ekqreyhv.js";
+import "B:/~BUN/root/chunk-mf9c9p38.js";
+import "B:/~BUN/root/chunk-875j4y83.js";
+import "B:/~BUN/root/chunk-t4pbv0np.js";
+import "B:/~BUN/root/chunk-jxvayzd7.js";
+import "B:/~BUN/root/chunk-xfqs9tac.js";
+import { AD, bz } from "B:/~BUN/root/chunk-5w7xhbnh.js";
+import "B:/~BUN/root/chunk-vmp6vbba.js";
+import "B:/~BUN/root/chunk-dxwyqd26.js";
+import "B:/~BUN/root/chunk-k5mszhcg.js";
+import "B:/~BUN/root/chunk-z4janqzm.js";
+import "B:/~BUN/root/chunk-zymc6pem.js";
+import "B:/~BUN/root/chunk-mjgazsjk.js";
+import "B:/~BUN/root/chunk-2f6ykbbh.js";
+import "B:/~BUN/root/chunk-ghar8fn5.js";
+import "B:/~BUN/root/chunk-8cgm9m8p.js";
+import "B:/~BUN/root/chunk-5gm1xyqv.js";
+import "B:/~BUN/root/chunk-rpagz3p9.js";
+import "B:/~BUN/root/chunk-rzc1dapy.js";
+import "B:/~BUN/root/chunk-hh77nseb.js";
+import "B:/~BUN/root/chunk-7pj7keyk.js";
+import "B:/~BUN/root/chunk-3kdxvefh.js";
+import "B:/~BUN/root/chunk-vs3bcjd7.js";
+import "B:/~BUN/root/chunk-pmr34yc8.js";
+import "B:/~BUN/root/chunk-mwy4xyee.js";
+import "B:/~BUN/root/chunk-ajpcs9fs.js";
+import "B:/~BUN/root/chunk-gq4ywexf.js";
+import "B:/~BUN/root/chunk-rhdsefgz.js";
+import { BEe, Rye } from "B:/~BUN/root/chunk-2fedt3ag.js";
+import "B:/~BUN/root/chunk-kexqfgtm.js";
+import "B:/~BUN/root/chunk-5bb21frh.js";
+import "B:/~BUN/root/chunk-vp8vb7t8.js";
+import "B:/~BUN/root/chunk-xkw95p5n.js";
+import "B:/~BUN/root/chunk-sa4785jr.js";
+import "B:/~BUN/root/chunk-nk59bmc9.js";
+import "B:/~BUN/root/chunk-n7ta2s3w.js";
+import "B:/~BUN/root/chunk-65j4e9bn.js";
+import "B:/~BUN/root/chunk-ex2shtaj.js";
+import "B:/~BUN/root/chunk-64qg3pvz.js";
+import "B:/~BUN/root/chunk-jv4ech2n.js";
+import "B:/~BUN/root/chunk-5fdpyc78.js";
+import "B:/~BUN/root/chunk-ybkgfvgz.js";
+import "B:/~BUN/root/chunk-gknte1ng.js";
+import "B:/~BUN/root/chunk-4tz0m6qq.js";
+import "B:/~BUN/root/chunk-3qkmk2e4.js";
+import "B:/~BUN/root/chunk-b3jc87kv.js";
+import "B:/~BUN/root/chunk-11wz0rq6.js";
+import "B:/~BUN/root/chunk-vy4t7613.js";
+import "B:/~BUN/root/chunk-kfnabvp7.js";
+import "B:/~BUN/root/chunk-jj9s326a.js";
+import "B:/~BUN/root/chunk-p8dysp9f.js";
+import "B:/~BUN/root/chunk-5m83sh3a.js";
+import "B:/~BUN/root/chunk-pm850sj6.js";
+import "B:/~BUN/root/chunk-c86vwcts.js";
+import "B:/~BUN/root/chunk-6sbka0ts.js";
+import "B:/~BUN/root/chunk-05q1awc0.js";
+import "B:/~BUN/root/chunk-k5xd4a86.js";
+import "B:/~BUN/root/chunk-98qgaht2.js";
+import "B:/~BUN/root/chunk-r1gg0qbg.js";
+import "B:/~BUN/root/chunk-rc0vwsyy.js";
+import "B:/~BUN/root/chunk-w0kge9aq.js";
+import "B:/~BUN/root/chunk-teehnwdh.js";
+import { Ad } from "B:/~BUN/root/chunk-x4zqd4cy.js";
+import { cd } from "B:/~BUN/root/chunk-ysxmr1nk.js";
+import "B:/~BUN/root/chunk-8rnfdnh3.js";
+import "B:/~BUN/root/chunk-7wcc5pbk.js";
+import "B:/~BUN/root/chunk-kk81ayzj.js";
+import "B:/~BUN/root/chunk-400x0tcq.js";
+import "B:/~BUN/root/chunk-1tbewxs3.js";
+import "B:/~BUN/root/chunk-rrf8gvt4.js";
+import "B:/~BUN/root/chunk-ftj46fnn.js";
+import { hA } from "B:/~BUN/root/chunk-45td50dx.js";
+import "B:/~BUN/root/chunk-3vrk9h6f.js";
+import "B:/~BUN/root/chunk-0xtfwyhv.js";
+import "B:/~BUN/root/chunk-z2c6k7e2.js";
+import "B:/~BUN/root/chunk-h6zqt1s4.js";
+import { ZZ } from "B:/~BUN/root/chunk-jmka9ye7.js";
+import "B:/~BUN/root/chunk-fc7k1zas.js";
+import "B:/~BUN/root/chunk-nw79m6g4.js";
+import { jPn, Mhr, P9, $k } from "B:/~BUN/root/chunk-4vcs773m.js";
+import "B:/~BUN/root/chunk-1ratk947.js";
+import "B:/~BUN/root/chunk-wznngf8b.js";
+import "B:/~BUN/root/chunk-2ys4h17s.js";
+import "B:/~BUN/root/chunk-wxztkjve.js";
+import "B:/~BUN/root/chunk-wjxjrbnh.js";
+import "B:/~BUN/root/chunk-yrh147c7.js";
+import { sen } from "B:/~BUN/root/chunk-taw9ve37.js";
+import { _Xe } from "B:/~BUN/root/chunk-vyjvp8sa.js";
+import "B:/~BUN/root/chunk-jypg1bby.js";
+import { Lv } from "B:/~BUN/root/chunk-w0nyevkg.js";
+import "B:/~BUN/root/chunk-z5apdcem.js";
+import "B:/~BUN/root/chunk-d5rmf5x5.js";
+import "B:/~BUN/root/chunk-8x466dw5.js";
+import "B:/~BUN/root/chunk-17caj8fw.js";
+import "B:/~BUN/root/chunk-hhd7smkx.js";
+import "B:/~BUN/root/chunk-cejfpzdt.js";
+import "B:/~BUN/root/chunk-0q69tvcp.js";
+import "B:/~BUN/root/chunk-0jhmwh3q.js";
+import "B:/~BUN/root/chunk-j3efez3c.js";
+import "B:/~BUN/root/chunk-6cgv9p77.js";
+import "B:/~BUN/root/chunk-9ajgj3y1.js";
+import "B:/~BUN/root/chunk-pjcve3z9.js";
+import "B:/~BUN/root/chunk-cjmntjcn.js";
+import "B:/~BUN/root/chunk-43aygqej.js";
+import { Coe } from "B:/~BUN/root/chunk-y7em5h10.js";
+import "B:/~BUN/root/chunk-tmn2g637.js";
+import "B:/~BUN/root/chunk-mjx3yttm.js";
+import "B:/~BUN/root/chunk-wdfwarp2.js";
+import "B:/~BUN/root/chunk-0ypwt1ew.js";
+import "B:/~BUN/root/chunk-3eq12f11.js";
+import "B:/~BUN/root/chunk-mcdkvptw.js";
+import { ELe, gLt, BSs, E1 } from "B:/~BUN/root/chunk-q2s07yzr.js";
+import { $_o } from "B:/~BUN/root/chunk-3aa152x8.js";
+import "B:/~BUN/root/chunk-ymawhbhz.js";
+import "B:/~BUN/root/chunk-rbfkfjk4.js";
+import "B:/~BUN/root/chunk-az0cmmyt.js";
+import "B:/~BUN/root/chunk-bw0w9zyr.js";
+import "B:/~BUN/root/chunk-hydnwtf3.js";
+import "B:/~BUN/root/chunk-15eyam7k.js";
+import "B:/~BUN/root/chunk-ynneeax2.js";
+import "B:/~BUN/root/chunk-4ffx6rrs.js";
+import "B:/~BUN/root/chunk-8ytf4evt.js";
+import "B:/~BUN/root/chunk-33ssadqt.js";
+import "B:/~BUN/root/chunk-trf406sb.js";
+import "B:/~BUN/root/chunk-4zhce32x.js";
+import "B:/~BUN/root/chunk-bsbbs1xs.js";
+import "B:/~BUN/root/chunk-mq0pq26y.js";
+import "B:/~BUN/root/chunk-dgbjmrqs.js";
+import "B:/~BUN/root/chunk-h37egt7q.js";
+import "B:/~BUN/root/chunk-jdm4aq80.js";
+import "B:/~BUN/root/chunk-hfz1e87n.js";
+import { Ws } from "B:/~BUN/root/chunk-x2k0mb6b.js";
+import "B:/~BUN/root/chunk-h6416p81.js";
+import "B:/~BUN/root/chunk-apcs0eny.js";
+import "B:/~BUN/root/chunk-0hrp5wpd.js";
+import "B:/~BUN/root/chunk-wcj4tqqj.js";
+import "B:/~BUN/root/chunk-415ykk3s.js";
+import "B:/~BUN/root/chunk-gappgpaq.js";
+import "B:/~BUN/root/chunk-cyz63hzp.js";
+import "B:/~BUN/root/chunk-qxtmkh4q.js";
+import "B:/~BUN/root/chunk-cb9g6n6d.js";
+import "B:/~BUN/root/chunk-qa713fy8.js";
+import "B:/~BUN/root/chunk-jvwc5v08.js";
+import "B:/~BUN/root/chunk-d0mxnbww.js";
+import "B:/~BUN/root/chunk-n5qt0bp0.js";
+import "B:/~BUN/root/chunk-k3kse5n8.js";
+import "B:/~BUN/root/chunk-fh7pby6f.js";
+import "B:/~BUN/root/chunk-4swxab5a.js";
+import "B:/~BUN/root/chunk-jmh99pxs.js";
+import "B:/~BUN/root/chunk-fs4prsr3.js";
+import "B:/~BUN/root/chunk-bnbh68ja.js";
+import "B:/~BUN/root/chunk-206ebgh5.js";
+import "B:/~BUN/root/chunk-ve4gzwvf.js";
+import { Oa } from "B:/~BUN/root/chunk-rzvkfy4m.js";
+import { xzt } from "B:/~BUN/root/chunk-05jd4ktf.js";
+import "B:/~BUN/root/chunk-wv4xq162.js";
+import "B:/~BUN/root/chunk-zr04rj0q.js";
+import "B:/~BUN/root/chunk-83f94s4f.js";
+import "B:/~BUN/root/chunk-7e6w46ha.js";
+import "B:/~BUN/root/chunk-xxsb2zge.js";
+import "B:/~BUN/root/chunk-mfj52jen.js";
+import "B:/~BUN/root/chunk-96cvq31w.js";
+import "B:/~BUN/root/chunk-wgm0dv7j.js";
+import { Io } from "B:/~BUN/root/chunk-03yjyf4y.js";
+import "B:/~BUN/root/chunk-cvm7zk4p.js";
+import "B:/~BUN/root/chunk-7jbamvvk.js";
+import "B:/~BUN/root/chunk-j6qn83yk.js";
+import "B:/~BUN/root/chunk-8n55xd0b.js";
+import "B:/~BUN/root/chunk-r92qsn81.js";
+import "B:/~BUN/root/chunk-3dbnj73j.js";
+import "B:/~BUN/root/chunk-ab1ryk8w.js";
+import "B:/~BUN/root/chunk-tj9bpqjb.js";
+import "B:/~BUN/root/chunk-qx88ee6a.js";
+import "B:/~BUN/root/chunk-gvv6aaq0.js";
+import "B:/~BUN/root/chunk-gnvjfqfc.js";
+import "B:/~BUN/root/chunk-thggwabf.js";
+import "B:/~BUN/root/chunk-syedbbsr.js";
+import "B:/~BUN/root/chunk-5jbxkytw.js";
+import "B:/~BUN/root/chunk-gjq813eb.js";
+import "B:/~BUN/root/chunk-eahns82c.js";
+import "B:/~BUN/root/chunk-61tvx6vn.js";
+import "B:/~BUN/root/chunk-eqb5w0h9.js";
+import "B:/~BUN/root/chunk-3md6z7eb.js";
+import "B:/~BUN/root/chunk-435hgmb7.js";
+import { Hke } from "B:/~BUN/root/chunk-d3pgwd75.js";
+import "B:/~BUN/root/chunk-a4zd2bs8.js";
+import "B:/~BUN/root/chunk-s3ja9yx6.js";
+import "B:/~BUN/root/chunk-t7h5ha99.js";
+import "B:/~BUN/root/chunk-x12sgt91.js";
+import "B:/~BUN/root/chunk-p22cr4v3.js";
+import "B:/~BUN/root/chunk-w5e3m3tb.js";
+import "B:/~BUN/root/chunk-5a1d0ksr.js";
+import "B:/~BUN/root/chunk-dzqzc2ax.js";
+import "B:/~BUN/root/chunk-mgjkrehs.js";
+import "B:/~BUN/root/chunk-wb281zpj.js";
+import "B:/~BUN/root/chunk-0d7anwa7.js";
+import "B:/~BUN/root/chunk-xf5c537t.js";
+import "B:/~BUN/root/chunk-x29v5gdt.js";
+import "B:/~BUN/root/chunk-xj85wdtk.js";
+import { Vqt, Rtr, Atr, K6e } from "B:/~BUN/root/chunk-dqprk713.js";
+import "B:/~BUN/root/chunk-0yg1pq2n.js";
+import "B:/~BUN/root/chunk-mb8474dz.js";
+import "B:/~BUN/root/chunk-pfdcv2sc.js";
+import "B:/~BUN/root/chunk-nkakgqwa.js";
+import "B:/~BUN/root/chunk-hzscex2k.js";
+import "B:/~BUN/root/chunk-r9p4g17h.js";
+import "B:/~BUN/root/chunk-6twbgvt6.js";
+import "B:/~BUN/root/chunk-bvcekd4j.js";
+import "B:/~BUN/root/chunk-6651s0bp.js";
+import "B:/~BUN/root/chunk-bdxfgzxk.js";
+import "B:/~BUN/root/chunk-9yf7mr11.js";
+import "B:/~BUN/root/chunk-7qzy1jjf.js";
+import "B:/~BUN/root/chunk-h0jtmv4t.js";
+import "B:/~BUN/root/chunk-58807hdh.js";
+import "B:/~BUN/root/chunk-cv2qv9sx.js";
+import "B:/~BUN/root/chunk-yd5nr5hc.js";
+import "B:/~BUN/root/chunk-t85n63bg.js";
+import "B:/~BUN/root/chunk-gwgz8y8r.js";
+import "B:/~BUN/root/chunk-9capcwwy.js";
+import "B:/~BUN/root/chunk-7cfvhpwb.js";
+import "B:/~BUN/root/chunk-weefacy8.js";
+import "B:/~BUN/root/chunk-md70d2gd.js";
+import "B:/~BUN/root/chunk-r2n11d64.js";
+import "B:/~BUN/root/chunk-55xtzph3.js";
+import "B:/~BUN/root/chunk-kbk5awdm.js";
+import "B:/~BUN/root/chunk-fw3bvjzd.js";
+import "B:/~BUN/root/chunk-h1gvz23d.js";
+import "B:/~BUN/root/chunk-nrpn88d7.js";
+import "B:/~BUN/root/chunk-hr0t9ny0.js";
+import "B:/~BUN/root/chunk-nv86p234.js";
+import { jY, p4r, h8, fBe, TB, Cle, Eit } from "B:/~BUN/root/chunk-gghehvvc.js";
+import "B:/~BUN/root/chunk-36ba1zg7.js";
+import { y2r } from "B:/~BUN/root/chunk-b3z6ptmm.js";
+import { BXr, v7o } from "B:/~BUN/root/chunk-0kvadftg.js";
+import { drn, U_o } from "B:/~BUN/root/chunk-9hk6qhrz.js";
+import "B:/~BUN/root/chunk-36ftm27n.js";
+import "B:/~BUN/root/chunk-dx5230jd.js";
+import { t3s } from "B:/~BUN/root/chunk-ybw75g4r.js";
+import { f6n } from "B:/~BUN/root/chunk-n3x9hdw4.js";
+import "B:/~BUN/root/chunk-1rry0pgg.js";
+import "B:/~BUN/root/chunk-s4zq7e5r.js";
+import "B:/~BUN/root/chunk-6x8efz0k.js";
+import "B:/~BUN/root/chunk-qz9h7t3x.js";
+import "B:/~BUN/root/chunk-59dyvtcg.js";
+import "B:/~BUN/root/chunk-fh0ef5mp.js";
+import "B:/~BUN/root/chunk-a2fp3xgm.js";
+import "B:/~BUN/root/chunk-xtz0pgac.js";
+import "B:/~BUN/root/chunk-w2rkhp43.js";
+import "B:/~BUN/root/chunk-jx2rmjhh.js";
+import "B:/~BUN/root/chunk-w3jccevj.js";
+import "B:/~BUN/root/chunk-28bb8488.js";
+import "B:/~BUN/root/chunk-4b1p6ngb.js";
+import "B:/~BUN/root/chunk-fd5dzvk6.js";
+import "B:/~BUN/root/chunk-c7kw6nqt.js";
+import "B:/~BUN/root/chunk-qk0n7exe.js";
+import "B:/~BUN/root/chunk-j9h732qg.js";
+import "B:/~BUN/root/chunk-59sqv3yw.js";
+import "B:/~BUN/root/chunk-9d0b66j5.js";
+import "B:/~BUN/root/chunk-sx03ea6s.js";
+import "B:/~BUN/root/chunk-81tfbmye.js";
+import "B:/~BUN/root/chunk-nyy541yq.js";
+import { e, r } from "B:/~BUN/root/chunk-t16eynda.js";
+import "B:/~BUN/root/chunk-12sstdsz.js";
+import "B:/~BUN/root/chunk-t6wq64cz.js";
+import "B:/~BUN/root/chunk-j5m7a98b.js";
+import "B:/~BUN/root/chunk-4w2c6jye.js";
+import { Lg } from "B:/~BUN/root/chunk-e7wx2kwq.js";
+import { kgn, f2r } from "B:/~BUN/root/chunk-k5gsnmk0.js";
+import "B:/~BUN/root/chunk-5z7p4cv1.js";
+import "B:/~BUN/root/chunk-4z0wj4qn.js";
+import "B:/~BUN/root/chunk-af319kny.js";
+import "B:/~BUN/root/chunk-daywa44q.js";
+import { iit } from "B:/~BUN/root/chunk-9ygmp0tr.js";
+import "B:/~BUN/root/chunk-09wqth96.js";
+import "B:/~BUN/root/chunk-ggpp2a6r.js";
+import "B:/~BUN/root/chunk-39etksx8.js";
+import "B:/~BUN/root/chunk-x76hpay7.js";
+import "B:/~BUN/root/chunk-0dhvsb89.js";
+import "B:/~BUN/root/chunk-3bc3h4jr.js";
+import "B:/~BUN/root/chunk-q42n6mwr.js";
+import "B:/~BUN/root/chunk-e4dm7qmm.js";
+import "B:/~BUN/root/chunk-xp5ya8v1.js";
+import "B:/~BUN/root/chunk-df199zqm.js";
+import "B:/~BUN/root/chunk-jydryja2.js";
+import "B:/~BUN/root/chunk-dq64svjd.js";
+import { _4o, fer, per, mer } from "B:/~BUN/root/chunk-r99fy052.js";
+import "B:/~BUN/root/chunk-vj4qhrtm.js";
+import "B:/~BUN/root/chunk-9katj9cn.js";
+import "B:/~BUN/root/chunk-3namn0f2.js";
+import "B:/~BUN/root/chunk-815nev8v.js";
+import "B:/~BUN/root/chunk-qed5a8pe.js";
+import "B:/~BUN/root/chunk-75wha2r5.js";
+import "B:/~BUN/root/chunk-hx5a1a0a.js";
+import "B:/~BUN/root/chunk-v9az3a6f.js";
+import "B:/~BUN/root/chunk-vy0a90jx.js";
+import "B:/~BUN/root/chunk-6dpcedmk.js";
+import "B:/~BUN/root/chunk-yjbw4jd5.js";
+import "B:/~BUN/root/chunk-dmmmg90e.js";
+import "B:/~BUN/root/chunk-jzac91sc.js";
+import "B:/~BUN/root/chunk-pyp8n05h.js";
+import "B:/~BUN/root/chunk-p1qj2aq3.js";
+import "B:/~BUN/root/chunk-6dms8sre.js";
+import "B:/~BUN/root/chunk-1403xdv8.js";
+import "B:/~BUN/root/chunk-dt45jjk2.js";
+import "B:/~BUN/root/chunk-n7rjc97z.js";
+import "B:/~BUN/root/chunk-bwk2g6e0.js";
+import "B:/~BUN/root/chunk-1b2nf93s.js";
+import "B:/~BUN/root/chunk-q7dbkm6t.js";
+import "B:/~BUN/root/chunk-pgm29tvd.js";
+import "B:/~BUN/root/chunk-992ex3nd.js";
+import "B:/~BUN/root/chunk-h2qbvrp4.js";
+import "B:/~BUN/root/chunk-0wyf4zb9.js";
+import "B:/~BUN/root/chunk-vxbt81wk.js";
+import "B:/~BUN/root/chunk-v04fapnf.js";
+import "B:/~BUN/root/chunk-rsz72fpd.js";
+import "B:/~BUN/root/chunk-69k97bnp.js";
+import "B:/~BUN/root/chunk-q82am8wz.js";
+import "B:/~BUN/root/chunk-spc3jrd3.js";
+import { Ko } from "B:/~BUN/root/chunk-kgvnwy91.js";
+import "B:/~BUN/root/chunk-p25ahy45.js";
+import "B:/~BUN/root/chunk-4xx5w1am.js";
+import "B:/~BUN/root/chunk-pgf3n8rv.js";
+import { O, A, y, j } from "B:/~BUN/root/chunk-czy5r8bc.js";
+import "B:/~BUN/root/chunk-stfp5qgr.js";
+import "B:/~BUN/root/chunk-az6xed3t.js";
+import "B:/~BUN/root/chunk-w179eqqe.js";
+import "B:/~BUN/root/chunk-p8898990.js";
+import "B:/~BUN/root/chunk-fkz77yzp.js";
+import "B:/~BUN/root/chunk-zy4xrndc.js";
+import "B:/~BUN/root/chunk-we53d1t3.js";
+import "B:/~BUN/root/chunk-1jrzd264.js";
+import "B:/~BUN/root/chunk-zz0hj0zg.js";
+import "B:/~BUN/root/chunk-md18120p.js";
+import "B:/~BUN/root/chunk-zwf5p7y7.js";
+import "B:/~BUN/root/chunk-k3f9rj85.js";
+import "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-8zx74r55.js";
+import "B:/~BUN/root/chunk-xagk1yaq.js";
+import "B:/~BUN/root/chunk-zeshc0ep.js";
+import "B:/~BUN/root/chunk-vvwzzpy4.js";
+import "B:/~BUN/root/chunk-4hx27rd1.js";
+import "B:/~BUN/root/chunk-jjjspatt.js";
+import "B:/~BUN/root/chunk-6bss7gp5.js";
+import "B:/~BUN/root/chunk-h29cx855.js";
+import "B:/~BUN/root/chunk-yjr7e11x.js";
+import "B:/~BUN/root/chunk-tnfsxzpz.js";
+import "B:/~BUN/root/chunk-pp5rqp7s.js";
+import "B:/~BUN/root/chunk-ea8gze25.js";
+import "B:/~BUN/root/chunk-z1wt3cb2.js";
+import "B:/~BUN/root/chunk-cjd8dpgw.js";
+import "B:/~BUN/root/chunk-yscb2r3d.js";
+import "B:/~BUN/root/chunk-s20ae4sg.js";
+import "B:/~BUN/root/chunk-n3m61sfz.js";
+import "B:/~BUN/root/chunk-nk52yc3v.js";
+import "B:/~BUN/root/chunk-kt29vc17.js";
+import "B:/~BUN/root/chunk-a5dg1k4h.js";
+import "B:/~BUN/root/chunk-kj33sgq2.js";
+import "B:/~BUN/root/chunk-kh33ctc6.js";
+import "B:/~BUN/root/chunk-x6ny3ghw.js";
+import "B:/~BUN/root/chunk-0p5dw980.js";
+import "B:/~BUN/root/chunk-dx2wvwvf.js";
+import "B:/~BUN/root/chunk-fcp4egnh.js";
+import "B:/~BUN/root/chunk-frv0tk8w.js";
+import "B:/~BUN/root/chunk-ym6b88b3.js";
+import "B:/~BUN/root/chunk-zx0hhrva.js";
+import "B:/~BUN/root/chunk-s937snw9.js";
+import "B:/~BUN/root/chunk-j5zjtxy5.js";
+import "B:/~BUN/root/chunk-vdqpev1m.js";
+import "B:/~BUN/root/chunk-kd0f2gn5.js";
+import "B:/~BUN/root/chunk-ymgf3kpk.js";
+import "B:/~BUN/root/chunk-dzjj3jwh.js";
+import "B:/~BUN/root/chunk-xbhv3nhf.js";
+import "B:/~BUN/root/chunk-21s8ygah.js";
+import "B:/~BUN/root/chunk-e99p2x0p.js";
+import "B:/~BUN/root/chunk-36r971cb.js";
+import "B:/~BUN/root/chunk-ynpwd78y.js";
+import "B:/~BUN/root/chunk-eyvtcj15.js";
+import "B:/~BUN/root/chunk-r6enj9cw.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import "B:/~BUN/root/chunk-3yw7hnm6.js";
+import "B:/~BUN/root/chunk-r2kdqtaa.js";
+import "B:/~BUN/root/chunk-j0enspnr.js";
+import "B:/~BUN/root/chunk-xr3thd43.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-62khcyrb.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import "B:/~BUN/root/chunk-4jfmvmew.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-cbv74thb.js";
+import "B:/~BUN/root/chunk-dc99dkg2.js";
+import "B:/~BUN/root/chunk-b37tyqej.js";
+import "B:/~BUN/root/chunk-dqan51g7.js";
+import "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-z35xf1k7.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import { o, E, I, u, Be, Dr, T } from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import { X } from "B:/~BUN/root/chunk-g9pw24zp.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+import { w } from "B:/~BUN/root/chunk-4qfwb3rf.js";
+j();
+import { stat as Oo } from "fs/promises";
+import { dirname as No } from "path";
+function Te(h) {
+  return;
+}
+function He(h) {
+  if (h.toolPermissionContext.mode === "plan") return "plan";
+  return;
+}
+function Ho(h) {
+  return !Ko(h.status) && !Rye(h) && !BEe(h) && (h.type === "remote_agent" || h.type === "mcp_task" || h.type === "monitor_ws");
+}
+function Fe(h) {
+  let C = z();
+  if (Vo() || _n()) return P("shutting_down", "Claude Code is exiting, so this session wasn't moved to the cloud.");
+  if (ice(h)) return P("turn_running", "Not moved: Claude is still working. Wait for it to finish, then run /teleport again.");
+  if (wm().getCommandQueueSnapshot().some(item => T9(item) && !Vqt(item.uuid))) return P("queued_command", "Not moved: a message or command is waiting to run in this session, and moving would lose it. Run /teleport again once it has run.");
+  {
+    let B = y2r();
+    if (B !== void 0) return P("code_mode", B);
+  }
+  let k = u8e();
+  if (k !== null) return P("restricted", `Can't move this session to the cloud. ${k.message}`);
+  let R = gS();
+  if (R !== void 0 && !Mhr(R, h.options.agentDefinitions.activeAgents)) return P("agent_not_carried", `Can't move this session to the cloud: it runs as the agent ${f2r([R])}, and the cloud session would run without it. It stays here. A new conversation can go to the cloud (start one with \`claude --cloud "your task"\`).`);
+  if (Gt() || wc() || tb() !== null) return P("background_session", `This session runs in the background, and moving it would restart it. Stop it from \`claude agents\`, then run \`claude --cloud ${C}\` to move it.`);
+  if (i.CLAUDE_CODE_CLIENT_DATA_URL !== void 0) return P("client_data_url", "Can't move this session to the cloud: it runs with a client data URL (--client-data-url or CLAUDE_CODE_CLIENT_DATA_URL), which moving doesn't support. Keep working here.");
+  if (!Ml()) return P("no_terminal", `Can't move this session to the cloud from here: moving restarts Claude Code in this terminal, which isn't an interactive one. To move it, exit and run \`claude --cloud ${C}\` in an interactive terminal.`);
+  if (!process.stdin.isTTY) return P("no_terminal", `Can't move this session to the cloud from here: its input comes from a pipe or a file, and moving needs input from the terminal. To move it, exit and run \`claude --cloud ${C}\` in a terminal, without a pipe or file as its input.`);
+  if (rzs()) return P("launch_flags", `Can't move this session to the cloud: it runs with launch options that moving would drop (such as --settings or --tools), typed when it started or carried over when Claude Code restarted it. To move it without them, exit and run \`claude --cloud ${C}\`.`);
+  let M = se(h);
+  if (M.mode === "dontAsk" || M.mode === "plan" && M.prePlanMode === "dontAsk") return P("mode_not_carried", "Can't move this session to the cloud in don't-ask mode, or in plan mode entered from it: a move doesn't keep don't-ask mode, so the cloud session could allow actions that mode refuses. It stays here. Switch to another mode, then run /teleport again.");
+  let N = P9(M, MN());
+  if (N.length > 0) return P("uncarriable", `Can't move this session to the cloud: moving restarts Claude Code, which would drop ${N.join("; ")}. It stays here. To move it without them, exit and run \`claude --cloud ${C}\`.`);
+  if ((M.alwaysDenyRules.toolsNarrowing ?? []).length > 0) return P("tools_not_carried", `Can't move this session to the cloud: some tools are turned off in this session, and the cloud session would have them on. It stays here.${CGe() ? ` The setting permissions.blockWritesOutsideWorkingDirectories turns off ${hA} and ${Coe}, and this session keeps them off until Claude Code restarts. To move it, turn that setting off, exit, run \`claude --resume ${C}\`, then run /teleport. If your organization sets it, this session can't move.` : ""}`);
+  {
+    let B = new Set(Sje().denyRules),
+      H = (M.alwaysDenyRules.cliArg ?? []).filter(item => !B.has(item));
+    if (H.length > 0) return P("deny_rules_not_carried", `Can't move this session to the cloud: deny rules were added to this session after it started (${f2r(H)}), and the cloud session wouldn't apply them. It stays here.`);
+  }
+  if (Hke(h.taskRegistry.all())) return P("work_running", "Not moved: moving restarts Claude Code, which would stop the work running in the background. Let it finish or stop it in /tasks, then run /teleport again.");
+  if (Jp().length > 0) return P("scheduled_tasks", "Not moved: moving restarts Claude Code, which would stop this session's scheduled tasks. Ask Claude to cancel them, then run /teleport again.");
+  if (Object.values(h.taskRegistry.all()).some(Ho)) return P("results_awaited", "Not moved: a remote agent, an MCP task or an artifact watch is still running, and its results would come back to this session, not the cloud one. Stop it in /tasks or let it finish, then run /teleport again.");
+  if (Ma()) return P("saving_off", "Can't move this session to the cloud: this session isn't being saved to disk, so restarting would lose what it hasn't saved. It stays here.");
+  let U = Fd();
+  if (U === null) return P("not_written", "Can't move this session to the cloud: it hasn't been saved to disk yet. Send a message first, then run /teleport again.");
+  if (lq() !== 0) return P("write_failed", `Can't move this session to the cloud: part of it couldn't be saved to disk, so the move would miss it. To move what was saved, exit and run \`claude --cloud ${C}\`.`);
+  let L = Eit(),
+    W = IA(ks(L));
+  if (!xT(L, Ee())) return P("worktree", `Can't move this session to the cloud: it's working in ${IA(ks(Ee()))}, but Claude Code would restart in ${W}. Ask Claude to leave the worktree, then run /teleport again; the cloud session will start from ${W}.`);
+  if (!xT(Ny(L), No(U))) return P("other_folder", `Can't move this session to the cloud from here: Claude Code would restart in ${W}, which isn't this session's folder. Run \`claude --cloud ${C}\` from the folder this session belongs to.`);
+  let F = Pe(C);
+  if (F !== void 0) return P(F.code, `This session can't be moved to the cloud, so it stays here: ${F.words}`);
+  return;
+}
+function Pe(h, {
+  exiting: exiting
+} = {
+  exiting: !1
+}) {
+  let k = import.meta.require("B:/~BUN/root/chunk-5kzvqa2y.js"),
+    reason = k.withheldInThisProcess(ji(h));
+  if (reason === void 0) return;
+  let M = import.meta.require("B:/~BUN/root/chunk-82ztsaq0.js");
+  return {
+    code: reason === "conversation_marked" ? "marked_here" : "held_here",
+    words: reason !== "history_held_back" ? M.refusalWords({
+      outcome: "refused",
+      reason: reason
+    }, h) : exiting ? M.HISTORY_HELD_BACK : M.historyHeldBackInSessionWords(h)
+  };
+}
+async function ze(h, C) {
+  let k = Nt(C);
+  if (k === null) return P("bad_id", "Can't move this session to the cloud: its id isn't one a cloud session can take. It stays here.");
+  let R = Eit();
+  if (!(await Oo(R).then(() => !0, () => !1))) return P("no_folder", `Can't move this session to the cloud: its folder, ${IA(ks(R))}, can't be found. It stays here.`);
+  if (!(await gf(zc().target))) return P("no_launcher", "Can't move this session to the cloud: the installed version of Claude Code wasn't found, so it can't restart. It stays here. To check your installs, run /doctor.");
+  let N = SOt(bOt);
+  if (N !== void 0) return P("above_max_version", `Can't move this session to the cloud: it would have to restart on version ${N}, which is on hold. It stays here.`);
+  let U = D8e(zc().target);
+  if (U.kind === "older") return P("older_launcher", `Can't move this session to the cloud: it would have to restart on version ${U.version}, which is older than this one. It stays here. Try again once Claude Code is installed at version ${{
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.319",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-11-05T18:14:18Z",
+    GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.VERSION} or later.`);
+  let L = import.meta.require("B:/~BUN/root/chunk-5kzvqa2y.js");
+  if (!(await L.isConversationMoveAllowed())) return P("not_allowed", "This session can't be moved to the cloud: Claude Code couldn't confirm that moving is allowed on this computer, for this account or for its organization. It stays here.");
+  let W = import.meta.require("B:/~BUN/root/chunk-82ztsaq0.js"),
+    F = Yd();
+  if (F?.accountUuid === void 0 || F.accountUuid === "" || F.organizationUuid === void 0 || F.organizationUuid === "") return P("not_signed_in", "Moving a session to the cloud needs a claude.ai login, with its organization, stored on this computer. Run /login, then /teleport again.");
+  if ((await W.thisSessionMoveDestination(k, h.storageV5)) === void 0 && zW(Q6().id)) return P("self_hosted_default", "Can't move this session to the cloud: your default environment (remote.defaultEnvironmentId, set in your settings or by your organization) is self-hosted, and a moved conversation needs one of Anthropic's cloud environments. If it's in your own settings, run /remote-env to pick one of them, then run /teleport again. It stays here.");
+  let H = {
+      account: {
+        accountUuid: F.accountUuid,
+        organizationUuid: F.organizationUuid
+      },
+      storageV5: h.storageV5,
+      credentials: h.credentials,
+      host: h.session.host,
+      activeAgents: h.options.agentDefinitions.activeAgents
+    },
+    V = await W.liveHolderOf(k, h.storageV5);
+  switch (V?.kind) {
+    case void 0:
+      break;
+    case "unreadable":
+      return P("holders_unreadable", "Couldn't check whether this conversation is open elsewhere, so it wasn't moved. Try again.");
+    case "window":
+      return P("held_in_window", "This conversation is also open in another Claude Code window. Exit it there, then run /teleport again.");
+    case "background":
+      return P("held_in_background", `This conversation is also running in the background. ${V.jobId === void 0 ? "Stop it from `claude agents`" : `Stop it with \`claude stop ${V.jobId}\``}, then run /teleport again.`);
+  }
+  let ee = await W.thisSessionCopyRefusal(k, H);
+  if (ee !== void 0) return c("teleport_move_by_copy", `copy_${ee.reason}`), ee.words;
+  return;
+}
+function P(h, C) {
+  return c("teleport_move_by_copy", h), C;
+}
+function Ve(h) {
+  return {};
+}
+function Ge(h) {
+  return [];
+}
+var Xe = "Anything you haven\u2019t pushed stays on this computer.",
+  Fo = ["rebase", "merge", "cherry-pick", "revert", "bisect"],
+  Po = p(() => {
+    let h = o().catch(""),
+      error = Dr("type", [u({
+        type: T("source_revision_not_on_remote_error"),
+        result: h,
+        revision: h,
+        default_branch: h
+      }), u({
+        type: T("source_revision_stale_on_remote_error"),
+        revision: h,
+        unpushed_commit_count: E().int().nonnegative().catch(0),
+        is_dirty: I().catch(!1),
+        mid_operation: h
+      })]);
+    return Be([u({
+      error: error
+    }).transform(k => k.error), error]);
+  });
+function Je(h) {
+  let C = Po().safeParse(h);
+  if (!C.success) return;
+  let k = C.data,
+    revision = Le(k.revision);
+  switch (k.type) {
+    case "source_revision_not_on_remote_error":
+      return Ke(k.result) === "not_on_remote" ? {
+        kind: "not_on_remote",
+        revision: revision,
+        defaultBranch: Le(k.default_branch)
+      } : {
+        kind: "inconclusive",
+        revision: revision
+      };
+    case "source_revision_stale_on_remote_error":
+      return {
+        kind: "stale",
+        revision: revision,
+        unpushedCount: k.unpushed_commit_count,
+        isDirty: k.is_dirty,
+        midOperation: Fo.find(item => item === Ke(k.mid_operation)) ?? null
+      };
+  }
+}
+function eo(h) {
+  switch (h.kind) {
+    case "not_on_remote":
+      return {
+        notice: [`${h.revision || "This branch"} isn\u2019t on the remote yet. The cloud session starts from the default branch${h.defaultBranch && `, ${h.defaultBranch},`} instead.`, `Staying on this computer: your work on ${h.revision || "this branch"}.`],
+        fallback: "default_branch"
+      };
+    case "stale":
+      return {
+        notice: De(to(h.revision || "this branch"), no(h.unpushedCount || null, h.isDirty, h.midOperation)),
+        fallback: "proceed_as_is"
+      };
+    case "inconclusive":
+      return {
+        notice: [`Couldn\u2019t confirm ${h.revision || "this branch"} is on the remote. If it isn\u2019t, the cloud session may not start.`, "The cloud session starts from what the remote has. Anything you haven\u2019t pushed stays on this computer."],
+        fallback: "proceed_as_is"
+      };
+  }
+}
+function oo(h) {
+  if (h === null || h.submodules_unverified) return {
+    notice: [`Couldn\u2019t check your git state. ${Qe("this branch")}`, Xe],
+    covers: ["proceed_as_is", "default_branch"]
+  };
+  let C = h.branch === null ? "this commit" : Le(h.branch) || "this branch",
+    k = no(h.unpushed_count, h.is_dirty, h.mid_operation);
+  if (h.unpushed_count === null) return {
+    notice: De(Qe(C), k),
+    covers: ["proceed_as_is", "default_branch"]
+  };
+  return k.length > 0 ? {
+    notice: De(to(C), k),
+    covers: ["proceed_as_is"]
+  } : void 0;
+}
+function Ke(h) {
+  return h.replace(/^REVISION_PREFLIGHT_RESULT_/, "").toLowerCase();
+}
+function Le(h) {
+  let C = h.replace(/^refs\/heads\//, "");
+  return /\s/u.test(C) ? "" : Iyt(C, "");
+}
+function to(h) {
+  return `The cloud session starts from ${h} as it was last pushed.`;
+}
+function Qe(h) {
+  return `The cloud session starts from ${h} as it was last pushed, or from the default branch if it isn\u2019t on the remote.`;
+}
+function no(h, C, k) {
+  let R = [...(h ? [`${h} unpushed ${h === 1 ? "commit" : "commits"}`] : []), ...(C ? ["uncommitted changes"] : []), ...(k ? [`a ${k} in progress`] : [])];
+  return h === null && R.length > 0 ? [...R, "anything else you haven\u2019t pushed"] : R;
+}
+function De(h, C) {
+  return C.length > 0 ? [`Some changes won\u2019t come with you. ${h}`, `Staying on this computer: ${new Intl.ListFormat("en", {
+    type: "conjunction"
+  }).format(C)}.`] : [h, Xe];
+}
+var Lo = "tengu_teleport_permission_mode_refused";
+async function Se(h) {
+  let {
+      sessionId: sessionId,
+      baseUrl: baseUrl,
+      accessToken: accessToken,
+      environmentId: M,
+      trustedDeviceToken: trustedDeviceToken,
+      outcomeBranch: U,
+      permissionMode: L,
+      timeoutMs: W = 15000
+    } = h,
+    F = `${baseUrl}/v1/code/sessions/${sessionId}/move-to-cloud`,
+    headers = drn(accessToken);
+  if (trustedDeviceToken) headers["X-Trusted-Device-Token"] = trustedDeviceToken;
+  let H;
+  try {
+    H = await Wt.post(F, {
+      environment_id: M,
+      ...(U && {
+        outcome_branch: U
+      }),
+      ...(L && {
+        permission_mode: L
+      }),
+      ...Do(h.sourceRevision),
+      ...Uo(h.memoryMode),
+      ...(h.revisionFallback && {
+        revision_fallback: h.revisionFallback
+      })
+    }, {
+      headers: headers,
+      timeout: W,
+      validateStatus: G => G < 600
+    });
+  } catch (error) {
+    let q = error !== null && typeof error === "object" && "code" in error ? String(error.code) : "",
+      te = q === "ENOTFOUND" || q === "ECONNREFUSED",
+      message = `Couldn't reach the server \u2014 ${d(error)}${te ? "" : ". The move may still have gone through \u2014 check the session in the web UI."}`;
+    if (!te) h.onMayHaveMoved?.(message);
+    return {
+      ok: !1,
+      message: message,
+      mayHaveCommitted: !te
+    };
+  }
+  if (H.status === 200 || H.status === 201) {
+    h.onMoved?.();
+    let G = Bo(H.data),
+      environmentKind = G?.environment_kind ?? "cloud",
+      environmentId = G?.environment_id ?? M;
+    return t(`[code-session] move-to-cloud ${sessionId} \u2192 ${environmentKind} (env ${environmentId})`), {
+      ok: !0,
+      environmentKind: environmentKind,
+      environmentId: environmentId,
+      sessionId: sessionId,
+      ...Wo(h.sourceRevision, H.data),
+      ...$o(h.memoryMode, H.data),
+      ...Ve(H.data)
+    };
+  }
+  if (H.status === 401 && h.onAuth401 !== void 0) {
+    let onAuth401 = h.onAuth401,
+      q = PO(H.config),
+      accessToken_2;
+    try {
+      accessToken_2 = await onAuth401(accessToken, q);
+    } catch (error) {
+      t(`[code-session] move-to-cloud ${sessionId}: the 401 handler failed, not resending: ${d(error)}`);
+    }
+    if (accessToken_2 !== void 0 && (q || accessToken_2 !== accessToken)) return Se({
+      ...h,
+      accessToken: accessToken_2,
+      onAuth401: (re, ae) => (onAuth401(re, ae).catch(() => {}), Promise.resolve(void 0))
+    });
+  }
+  let message_2 = H.status >= 500 ? `The server responded with ${H.status}. The move may still have gone through \u2014 check the session in the web UI.` : void 0;
+  if (message_2 !== void 0) h.onMayHaveMoved?.(message_2);
+  let ee = AD(H.data) ?? "",
+    reason_2 = sen(H.data);
+  if (message_2 === void 0 && L && reason_2 === "move_permission_mode_refused") {
+    t(`[code-session] move-to-cloud ${sessionId} refused for its permission mode (${H.status})${ee ? `: ${ee}` : ""}; moving without one`);
+    let G = await Se({
+      ...h,
+      permissionMode: void 0
+    });
+    try {
+      l(Lo, {
+        retry_without_mode: b(G.ok ? "success" : G.mayHaveCommitted ? "maybe_committed" : "failed")
+      });
+    } catch {}
+    return G;
+  }
+  let message_3 = H.status === 400 && reason_2 === "session_not_bridge" ? "This session is already on cloud \u2014 refresh the web UI to see it." : void 0;
+  if (message_3 !== void 0) h.onMayHaveMoved?.(message_3);
+  if (t(`[code-session] move-to-cloud ${sessionId} failed ${H.status}${reason_2 ? ` [${reason_2}]` : ""}${ee ? `: ${ee}` : ""}`), message_2 !== void 0) return {
+    ok: !1,
+    message: message_2,
+    mayHaveCommitted: !0
+  };
+  if (message_3 !== void 0) return {
+    ok: !1,
+    message: message_3,
+    mayHaveCommitted: !0
+  };
+  let ie = bz(H.data),
+    message_4 = /^the request was invalid\.?$/i.test(ie ?? "") ? void 0 : ie;
+  return h.onRefusal?.({
+    status: H.status,
+    codes: U_o(H.data),
+    message: message_4
+  }), {
+    ok: !1,
+    message: message_4 ?? `The server couldn\u2019t move this session (HTTP ${H.status}). Run with --debug to see the raw response.`,
+    mayHaveCommitted: !1,
+    reason: reason_2,
+    revisionConflict: H.status === 409 ? Je(H.data) : void 0
+  };
+}
+function Bo(h) {
+  if (h === null || typeof h !== "object" || !("session" in h) || h.session === null || typeof h.session !== "object") return;
+  let session = h.session;
+  return {
+    environment_kind: typeof session.environment_kind === "string" ? session.environment_kind : void 0,
+    environment_id: typeof session.environment_id === "string" ? session.environment_id : void 0
+  };
+}
+function Do(h) {
+  return {};
+}
+function Uo(h) {
+  return {};
+}
+function $o(h, C) {
+  return {};
+}
+function Wo(h, C) {
+  return {};
+}
+async function xo(h) {
+  if (!fr(pe())) return {
+    kind: "no-git"
+  };
+  let C = Ee(),
+    k = await Qu(C),
+    [checkout, localWork] = await Promise.all([co(k), v7o(C, k === "HEAD" ? null : k)]);
+  return {
+    kind: "ready",
+    outcomeBranch: `claude/teleport-${h.slice(-8)}`,
+    checkout: checkout,
+    localWork: localWork
+  };
+}
+var message_7 = "Couldn\u2019t confirm this session\u2019s Remote Control connection and git branch are unchanged, so nothing moved. Run /teleport again.";
+async function lo(h) {
+  if (IT()) return m("teleport_to_cloud", "restricted_session"), {
+    kind: "precondition",
+    message: message_5
+  };
+  {
+    let message_6 = y2r();
+    if (message_6 !== void 0) return m("teleport_to_cloud", "repl_mode_not_carried"), {
+      kind: "precondition",
+      message: message_6
+    };
+  }
+  let C = Re(Ad()),
+    sessionId_2 = C?.bridgeSessionId;
+  if (!C || !sessionId_2) return m("teleport_to_cloud", "no_bridge"), {
+    kind: "precondition",
+    message: "This session isn\u2019t connected to Remote Control. Run /remote-control first, then try again."
+  };
+  let accessToken_3 = X() && h.credentials !== void 0 ? await gLt(h.credentials) : ELe();
+  if (!accessToken_3) return m("teleport_to_cloud", "no_auth"), {
+    kind: "precondition",
+    message: "Not signed in to claude.ai. Run /login with your claude.ai account and try again."
+  };
+  let M = await xo(sessionId_2);
+  switch (M.kind) {
+    case "no-git":
+      return m("teleport_to_cloud", "no_git"), {
+        kind: "precondition",
+        message: `${pe()} isn\u2019t a git repository. The cloud session clones your repo from its remote, so there\u2019s nothing for it to check out here \u2014 try again from inside a git repo that has a remote.`
+      };
+    case "ready":
+      break;
+    default:
+      return M;
+  }
+  if (C.gitRepoUrl === null) return m("teleport_to_cloud", "no_git_remote"), {
+    kind: "precondition",
+    message: "This session has nothing for the cloud to clone, because moving needs a remote named origin in a repository not rooted at your home folder. A new session started from such a repository can move."
+  };
+  let {
+      checkout: checkout_2,
+      outcomeBranch: outcomeBranch
+    } = M,
+    L = oo(M.localWork),
+    W = L === void 0 ? C.publishGitStateBeforeHandoff?.() : void 0,
+    F = St() ? null : await jo(C),
+    B = F && fo(F.host) && v("tengu_teleport_github_access_precheck", !0) ? mer(F.owner, F.name).catch(() => null) : null,
+    H;
+  try {
+    H = await iit(h.storageV5, h.credentials);
+  } catch (error) {
+    return m("teleport_to_cloud", "env_lookup_failed"), {
+      kind: "precondition",
+      message: `Couldn\u2019t look up cloud environments \u2014 ${d(error)}`
+    };
+  }
+  let V = K => K.kind !== "bridge" && !rCe(K),
+    ee = H.selectedTarget && V(H.selectedTarget) ? H.selectedTarget : sLe(H.availableTargets, V);
+  if (!ee || rCe(ee)) {
+    if (H.environmentsError) return m("teleport_to_cloud", "env_lookup_failed"), {
+      kind: "precondition",
+      message: `Couldn\u2019t look up cloud environments \u2014 ${H.environmentsError}`
+    };
+    return m("teleport_to_cloud", "no_environment"), {
+      kind: "precondition",
+      message: "No cloud environment available. Create one from the web UI (or run /web-setup), then try again." + (rCe(H.selectedTarget) ? " Your default target is a self-hosted environment \u2014 continuing in the cloud needs a managed environment." : "")
+    };
+  }
+  let oe = await B;
+  if (F && (oe?.verdict === "github_not_connected" || oe?.verdict === "github_repo_not_found")) return m("teleport_to_cloud", oe.verdict), {
+    kind: "precondition",
+    message: oe.verdict === "github_not_connected" ? fer({
+      subject: `Cloud sessions clone ${F.owner}/${F.name}`,
+      ...Ue()
+    }) : per({
+      owner: F.owner,
+      name: F.name,
+      ...Ue(),
+      apostrophe: "\u2019"
+    })
+  };
+  await W;
+  let memoryModeAtNotice,
+    ie = C;
+  if (L !== void 0) {
+    memoryModeAtNotice = Te();
+    let K = await ro(h, L.notice, sessionId_2, checkout_2);
+    if (K.kind !== "confirmed") return K;
+    ie = K.handle, await ie.publishGitStateBeforeHandoff?.();
+  }
+  l("tengu_teleport_to_cloud", {
+    action: b("start")
+  });
+  let sessionUrl = cd(sessionId_2, ie.sessionIngressUrl, {
+      from: "cli"
+    }),
+    G = {
+      sessionUrl: sessionUrl,
+      accessToken: accessToken_3,
+      environmentId: ee.environment_id,
+      outcomeBranch: outcomeBranch,
+      checkout: checkout_2
+    },
+    {
+      result: q,
+      memoryMode: te
+    } = await io(h, ie, {
+      ...G,
+      memoryModeAtNotice: memoryModeAtNotice,
+      isAfterYes: L !== void 0
+    }),
+    re = new Set(L?.covers),
+    revisionFallback;
+  while (!q.ok && q.revisionConflict !== void 0 && revisionFallback === void 0) {
+    Ffo(sessionId_2);
+    let {
+        notice: notice,
+        fallback: fallback
+      } = eo(q.revisionConflict),
+      ye = !re.has(fallback),
+      ge = await ro(h, ye ? notice : void 0, sessionId_2, checkout_2);
+    if (ge.kind !== "confirmed") return ge;
+    if (re.add(fallback), ye && fallback === "default_branch") await ge.handle.publishGitStateBeforeHandoff?.();else revisionFallback = fallback;
+    ({
+      result: q,
+      memoryMode: te
+    } = await io(h, ge.handle, {
+      ...G,
+      memoryModeAtNotice: te,
+      isAfterYes: !0,
+      revisionFallback: revisionFallback
+    }));
+  }
+  if (!q.ok) {
+    let K = !q.mayHaveCommitted && q.reason === "github_token_missing";
+    if (q.mayHaveCommitted) c("teleport_to_cloud", "maybe_committed");else m("teleport_to_cloud", K ? "github_not_connected" : q.reason === "unconfirmed_before_move" ? "unconfirmed_before_move" : "request_failed"), Ffo(sessionId_2);
+    return l("tengu_teleport_to_cloud", {
+      action: b(q.mayHaveCommitted ? "maybe_committed" : "failed")
+    }), {
+      kind: "server-error",
+      failure: K ? {
+        ...q,
+        message: `No GitHub account is connected to your Claude account (or the connection expired). ${_4o(Ue())}`
+      } : q,
+      sessionId: sessionId_2
+    };
+  }
+  let Ae = !1;
+  if (revisionFallback !== void 0) c("teleport_to_cloud", `revision_${revisionFallback}`);else g("teleport_to_cloud");
+  let {
+    environmentKind: environmentKind_2
+  } = q;
+  l("tengu_teleport_to_cloud", {
+    action: b("success"),
+    environment_kind: Oyt(environmentKind_2) ? f(environmentKind_2) : b(environmentKind_2 === "cloud" ? "cloud" : "other")
+  });
+  let ke = Ge(q);
+  return {
+    kind: "ok",
+    success: q,
+    sessionUrl: sessionUrl,
+    ...(ke.length > 0 && {
+      afterMove: ke.join(`
+`)
+    })
+  };
+}
+async function ro(h, C, k, R) {
+  if (C !== void 0) {
+    let N = await h.confirmMove?.(C);
+    if (N !== !0) {
+      if (N === !1) l("tengu_teleport_to_cloud", {
+        action: b("declined")
+      });
+      return {
+        kind: "precondition",
+        message: "Teleport cancelled"
+      };
+    }
+  }
+  let handle = await uo(k, R);
+  if (handle === null) return m("teleport_to_cloud", "unconfirmed_before_move"), l("tengu_teleport_to_cloud", {
+    action: b("failed")
+  }), {
+    kind: "precondition",
+    message: message_7
+  };
+  return {
+    kind: "confirmed",
+    handle: handle
+  };
+}
+async function uo(h, C) {
+  let k = await BXr(Qu(Ee()).then(co)).catch(M => {
+      t(`[teleport] the checkout could not be read again: ${d(M)}`);
+      return;
+    }),
+    R = Re(Ad());
+  return R?.bridgeSessionId === h && k === C ? R : null;
+}
+async function co(h) {
+  return h === "HEAD" ? _dn(Ee()) : h;
+}
+async function io(h, C, k) {
+  B0n(C.bridgeSessionId);
+  let R = !1;
+  try {
+    C.stopLocalPreview?.(), await C.settleUploadsBeforeHandoff?.();
+    let accessToken_4 = (await gLt(h.credentials)) ?? k.accessToken,
+      trustedDeviceToken_2 = await Lv();
+    if (k.isAfterYes && (await uo(C.bridgeSessionId, k.checkout)) === null) return {
+      result: {
+        ok: !1,
+        message: message_7,
+        mayHaveCommitted: !1,
+        reason: "unconfirmed_before_move"
+      },
+      memoryMode: k.memoryModeAtNotice
+    };
+    let permissionMode = t3s(),
+      memoryMode = Te(k.memoryModeAtNotice);
+    return R = !0, {
+      result: await Se({
+        onMoved: () => {
+          h.onMoved?.(k.sessionUrl), so(h);
+        },
+        onMayHaveMoved: F => {
+          h.onMayHaveMoved?.(F), so(h);
+        },
+        sessionId: C.bridgeSessionId,
+        baseUrl: E1(),
+        accessToken: accessToken_4,
+        onAuth401: (F, B) => BSs(F, h.credentials, B),
+        environmentId: k.environmentId,
+        trustedDeviceToken: trustedDeviceToken_2,
+        outcomeBranch: k.outcomeBranch,
+        permissionMode: permissionMode,
+        memoryMode: memoryMode,
+        revisionFallback: k.revisionFallback
+      }),
+      memoryMode: memoryMode
+    };
+  } catch (error) {
+    if (!R) Ffo(C.bridgeSessionId);
+    throw error;
+  }
+}
+function so(h) {
+  try {
+    h.beforeMove?.();
+  } catch (error) {
+    t(`[teleport] the step at the move's commit point failed: ${d(error)}`, {
+      level: "error"
+    });
+  }
+}
+function mo(oldSessionId) {
+  return ZZ() ? {
+    kind: "reconnect",
+    oldSessionId: oldSessionId
+  } : {
+    kind: "disconnect"
+  };
+}
+var be = "/remote-control is no longer active. Run /remote-control to start a new session.";
+function $e(h, C) {
+  let k = `Session now in the cloud: ${h}`;
+  switch (C.kind) {
+    case "disconnected":
+      return `${k}
+${be}`;
+    case "reconnected":
+      return `${k}
+New /remote-control session is active \xB7 Continue here, on your phone, or at ${C.newUrl}`;
+    case "reconnect-pending":
+      return `${k}
+Starting a new /remote-control session \u2014 it\u2019ll show as /rc shortly.`;
+  }
+}
+function Re(h) {
+  return h && !h.outboundOnly ? h : null;
+}
+function jo(h) {
+  if (h.gitRepoUrl === void 0) return TT();
+  return h.gitRepoUrl ? $_o(h.gitRepoUrl) : Promise.resolve(null);
+}
+function Ue() {
+  return {
+    webSetupHint: _Xe() ? "run /web-setup to reuse your GitHub CLI login" : "",
+    rerun: "then run /teleport again"
+  };
+}
+var Yo = 1e4,
+  qo = 100,
+  po = 250;
+function We(h, C = !1) {
+  h.setAppState(k => {
+    if (!k.replBridgeEnabled) return k;
+    return {
+      ...k,
+      replBridgeSkipNextArchive: !0,
+      replBridgeEnabled: !1,
+      replBridgeExplicit: !1,
+      replBridgeOutboundOnly: !1,
+      ...(C && {
+        replBridgeSessionGroupingId: void 0
+      })
+    };
+  });
+}
+function zo(h) {
+  h.setAppState(C => {
+    if (C.replBridgeEnabled) return C;
+    return {
+      ...C,
+      replBridgeEnabled: !0
+    };
+  });
+}
+async function Go(h, C, k = Yo) {
+  let R = Date.now() + k;
+  while (Date.now() < R) {
+    if (C.aborted) return null;
+    let M = Ad()?.bridgeSessionId;
+    if (M && M !== h) return M;
+    await J(qo, C);
+  }
+  return null;
+}
+async function go(h, C) {
+  let k, R, M;
+  try {
+    return await Qo(h, C, {
+      onMoved: N => {
+        k = N;
+      },
+      onAfterMove: N => {
+        R = N;
+      },
+      onMayHaveMoved: N => {
+        M = N;
+      }
+    });
+  } catch (error) {
+    if (k !== void 0) return a(error), `Session now in the cloud: ${k}
+Claude Code didn\u2019t finish updating Remote Control in this terminal after the move (${d(error)}).${R === void 0 ? "" : `
+${R}`}`;
+    if (M !== void 0) return a(error), `${M}
+Claude Code didn\u2019t finish updating Remote Control in this terminal (${d(error)}).`;
+    throw error;
+  }
+}
+async function ho(h) {
+  let C = Re(Ad()),
+    k = C?.bridgeSessionId ?? dq()?.id;
+  if (!k || !kN(k)) return;
+  let R = await Hvo(k, void 0, h.credentials).catch(L => {
+    t(`[teleport] Couldn't read Remote Control session ${k} to see whether it was moved elsewhere, so the move goes on: ${d(L)}`, {
+      level: "error"
+    });
+    return;
+  });
+  if (R === void 0 || jn(String(R.session.id)) !== jn(k)) return;
+  let environment_kind = R.session.environment_kind;
+  if (typeof environment_kind !== "string" || environment_kind === "" || environment_kind === "bridge" || environment_kind === "chat") return;
+  let U = `Can't move this session to the cloud: it was already moved there from another device or app. Continue it at ${cd(k, C?.sessionIngressUrl, {
+    from: "cli"
+  })}`;
+  if (C === null) return B0n(k), noe(void 0, void 0, void 0, h.storageV5), U;
+  return vo(h, k), `${U}
+${be}`;
+}
+async function Qo(h, confirmMove, k) {
+  let R = !1,
+    M;
+  try {
+    M = await lo({
+      beforeMove: () => {
+        if (R = Atr("cloud_handoff"), R) h.applyMessageOp({
+          type: "append",
+          messages: [Bt(Rtr.cloud_handoff, "warning")]
+        });
+      },
+      onMoved: k.onMoved,
+      onMayHaveMoved: N => k.onMayHaveMoved(`Couldn\u2019t teleport: ${N}`),
+      credentials: h.credentials,
+      storageV5: h.storageV5,
+      confirmMove: confirmMove
+    });
+  } finally {
+    K6e();
+  }
+  switch (M.kind) {
+    case "precondition":
+      return M.message;
+    case "server-error":
+      {
+        if (M.failure.mayHaveCommitted) return k.onMayHaveMoved(h8(`Couldn\u2019t teleport: ${M.failure.message}`, R)), vo(h, M.sessionId), h8(`Couldn\u2019t teleport: ${M.failure.message}
+${be}`, R);
+        return h8(`Couldn\u2019t teleport: ${M.failure.message}`, R);
+      }
+    case "ok":
+      {
+        k.onAfterMove(M.afterMove), B0n(M.success.sessionId), noe(void 0, void 0, void 0, h.storageV5);
+        let sessionUrl_2 = M.sessionUrl,
+          {
+            afterMove: afterMove
+          } = M,
+          L = B => afterMove === void 0 ? B : `${B}
+${afterMove}`,
+          W = mo(M.success.sessionId);
+        if (W.kind === "disconnect") return setTimeout(We, po, h, !0), L($e(sessionUrl_2, {
+          kind: "disconnected"
+        }));
+        We(h), await J(0), zo(h);
+        let F = await Go(W.oldSessionId, h.abortController.signal);
+        return L($e(sessionUrl_2, F ? {
+          kind: "reconnected",
+          newUrl: cd(F, void 0, {
+            from: "cli"
+          })
+        } : {
+          kind: "reconnect-pending"
+        }));
+      }
+  }
+}
+function vo(h, C) {
+  B0n(C), noe(void 0, void 0, void 0, h.storageV5), setTimeout(We, po, h, !0);
+}
+function ot(children) {
+  return e(n, {
+    children: children
+  }, children);
+}
+function xe(h) {
+  let N = S(21),
+    {
+      title: C,
+      moveLabel: k,
+      lines: lines,
+      onAnswer: onAnswer
+    } = h,
+    U;
+  if (N[0] !== C) U = e(n, {
+    bold: !0,
+    children: C
+  }), N[0] = C, N[1] = U;else U = N[1];
+  let children_2;
+  if (N[2] !== lines) children_2 = lines.map(ot), N[2] = lines, N[3] = children_2;else children_2 = N[3];
+  let W;
+  if (N[4] !== children_2) W = e(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    gap: 1,
+    children: children_2
+  }), N[4] = children_2, N[5] = W;else W = N[5];
+  let F;
+  if (N[6] === w) F = {
+    label: "Cancel",
+    value: "cancel"
+  }, N[6] = F;else F = N[6];
+  let options;
+  if (N[7] !== k) options = [F, {
+    label: k,
+    value: "move"
+  }], N[7] = k, N[8] = options;else options = N[8];
+  let onCancel, onChange;
+  if (N[9] !== onAnswer) onCancel = () => onAnswer(!1), onChange = ee => onAnswer(ee === "move"), N[9] = onAnswer, N[10] = onCancel, N[11] = onChange;else onCancel = N[10], onChange = N[11];
+  let oe;
+  if (N[12] !== options || N[13] !== onCancel || N[14] !== onChange) oe = e(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    children: e(Ze, {
+      options: options,
+      onCancel: onCancel,
+      onChange: onChange
+    })
+  }), N[12] = options, N[13] = onCancel, N[14] = onChange, N[15] = oe;else oe = N[15];
+  let ne;
+  if (N[16] === w) ne = e(s, {
+    marginTop: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: r(Ce, {
+        children: [e(Y, {
+          chord: ["up", "down"],
+          action: "navigate"
+        }), e(Y, {
+          chord: "enter",
+          action: "select"
+        }), e(Y, {
+          chord: "escape",
+          action: "cancel"
+        })]
+      })
+    })
+  }), N[16] = ne;else ne = N[16];
+  let ie;
+  if (N[17] !== U || N[18] !== W || N[19] !== oe) ie = r(s, {
+    flexDirection: "column",
+    padding: 1,
+    children: [U, W, oe, ne]
+  }), N[17] = U, N[18] = W, N[19] = oe, N[20] = ie;else ie = N[20];
+  return ie;
+}
+function wo({
+  lines: lines_2,
+  onAnswer: onAnswer_2
+}) {
+  return null;
+}
+function Co() {
+  return null;
+}
+var tt = 5000;
+function ko(toolPermissionContext, proactivityLevel) {
+  return _([toolPermissionContext.mode, toolPermissionContext.prePlanMode, proactivityLevel, He({
+    toolPermissionContext: toolPermissionContext,
+    proactivityLevel: proactivityLevel
+  }), toolPermissionContext.alwaysDenyRules.cliArg, toolPermissionContext.alwaysDenyRules.session, toolPermissionContext.alwaysDenyRules.toolsNarrowing, toolPermissionContext.alwaysAskRules.cliArg, toolPermissionContext.alwaysAskRules.session]);
+}
+function Mo(h) {
+  l("tengu_teleport_menu", {
+    action: f(h)
+  });
+}
+function Ja({
+  onExit: onExit,
+  context: context,
+  exposure: exposure,
+  retireOnSurface: retireOnSurface,
+  canSend: canSend,
+  sendsByCopy = !1
+}) {
+  let [U, L] = y(exposure.isMoveByCopyStarted === !0 ? "sending" : "menu"),
+    [lines_3, F] = y(),
+    B = A(null),
+    H = A(!1),
+    V = A(!1),
+    [ee, oe] = y(),
+    [ne, ie] = y(!1),
+    [ue, G] = y(),
+    [q, te] = y(),
+    re = A(void 0);
+  function ae(D) {}
+  function Ae() {
+    let current = re.current;
+    if (re.current = void 0, current !== void 0) ae(current);
+  }
+  let he = A(exposure.pendingOffer ?? null);
+  O(() => {}, [canSend, sendsByCopy, context.session, context.credentials, context.storageV5]);
+  let ke = Io();
+  O(() => (H.current = !1, () => {
+    if (H.current = !0, B.current) V.current = !0, B.current(void 0), B.current = null;
+  }), []), O(() => {
+    if (!exposure.logged) exposure.logged = !0, Mo(sendsByCopy ? "shown_by_copy" : canSend ? "shown" : "shown_no_bridge");
+  }, [exposure, canSend, sendsByCopy]);
+  let K = A(!1),
+    de = D => {
+      if (K.current) return !1;
+      return K.current = !0, Mo(D), !0;
+    },
+    ye = () => {
+      he.current?.abandon(), exposure.importHold?.close("unused"), Oe("not_moved"), exposure.isOfferAnswered = !0, exposure.pendingOffer = null, he.current = null;
+    },
+    onCancel_2 = () => {
+      if (de("cancel")) ye(), onExit("Teleport cancelled", {
+        display: "system"
+      });
+    },
+    je = Ws(onCancel_2, void 0, U === "menu");
+  function To(D, Z) {}
+  function Oe(D) {
+    exposure.moveEnded ??= D;
+    let heldCopy = exposure.heldCopy;
+    if (exposure.heldCopy = void 0, heldCopy === void 0) return;
+    if (exposure.moveEnded === "moved") {
+      let x = heldCopy.held.take();
+      if (x !== void 0) try {
+        if (To(x, !1), heldCopy.line !== void 0) ae(heldCopy.line);
+      } catch (error) {
+        a(error);
+      }
+      return;
+    }
+    heldCopy.held.letGo();
+  }
+  function nt(D, Z = !1) {}
+  function So() {
+    let D = me => {
+        exposure.isMoveByCopyStarted = !1, onExit(me, {
+          display: "system"
+        });
+      },
+      Z = Fe(context);
+    if (Z !== void 0) {
+      D(Z);
+      return;
+    }
+    let x = z();
+    exposure.isMoveByCopyStarted = !0, L("sending");
+    let le = J(Lg * 2),
+      ce = {
+        restarting: !1
+      };
+    TB(UP(context), context.storageV5).then(async () => {
+      if ((await we(tu().then(() => !0), tt)) !== !0) {
+        c("teleport_move_by_copy", "save_timed_out"), D("Can't move this session to the cloud yet: its latest messages are still being saved to disk. Try again in a moment.");
+        return;
+      }
+      let fe = await ze(context, x);
+      if (fe !== void 0) {
+        D(fe);
+        return;
+      }
+      let Me = await ho(context);
+      if (Me !== void 0) {
+        c("teleport_move_by_copy", "moved_elsewhere"), D(Me);
+        return;
+      }
+      if (await le, z() !== x) {
+        c("teleport_move_by_copy", "session_changed"), D("Not moved: a different conversation was opened here (for example by a /clear sent from Remote Control) while the move was being checked. Run /teleport again to move the conversation that's open now.");
+        return;
+      }
+      let Ie = Fe(context);
+      if (Ie !== void 0) {
+        D(Ie);
+        return;
+      }
+      let toolPermissionContext_2 = se(context),
+        proactivityLevel_2 = context.getProactivityLevel(),
+        Ro = ko(toolPermissionContext_2, proactivityLevel_2),
+        Eo = new Set(ZK()),
+        qe = (toolPermissionContext_2.alwaysDenyRules.cliArg ?? []).filter(item => !Eo.has(item)),
+        rt = kgn(qe),
+        Ao = qe;
+      ce.restarting = !0, await Cle();
+      let _e = await jY(UP(context), "cloud_handoff", {}, context.storageV5);
+      if (_e) await TB(UP(context), context.storageV5);
+      await fBe(_e, {
+        args: ["--cloud", x, ...$k("--permission-mode", He({
+          toolPermissionContext: toolPermissionContext_2,
+          proactivityLevel: proactivityLevel_2
+        })), ...$k("--model", jPn()), ...$k("--effort", G_e(Wue(context))), ...Ao.flatMap(item => ["--disallowed-tools", item])],
+        env: {
+          CLAUDE_CODE_TELEPORT_MOVE: "1",
+          ...X3()
+        },
+        onShutdownClaimed: () => {
+          g("teleport_move_by_copy"), onExit(void 0, {
+            display: "skip"
+          });
+        },
+        preSpawn: () => {
+          process.stdout.write(`Moving this session to the cloud\u2026
+`);
+        },
+        refuseAtSpawn: () => {
+          let ve = Pe(x, {
+            exiting: !0
+          });
+          return ve !== void 0 ? h8(`Not moved to the cloud: ${ve.words} To continue it here, run \`claude --resume ${x}\`.`, _e, {
+            exitsAfterward: !0
+          }) : ko(se(context), context.getProactivityLevel()) !== Ro ? h8(`Not moved to the cloud: this session's permissions changed during the move, and the cloud session wouldn't have the new ones. To continue it here, run \`claude --resume ${x}\`.`, _e, {
+            exitsAfterward: !0
+          }) : void 0;
+        },
+        failedLine: `Claude Code couldn't restart. Your conversation is saved: run \`claude --resume ${x}\` to pick it up.${_e ? `
+${p4r}` : ""}`
+      }, context.storageV5);
+    }).catch(me => {
+      a(me);
+      let fe = Q(DE(d(me)), 200).replace(/\.$/, "");
+      if (ce.restarting) m("teleport_move_by_copy", "restart_failed"), D(`Couldn\u2019t restart Claude Code to move this session: ${fe}. It stays here.`);else m("teleport_move_by_copy", "check_failed"), D(`Couldn\u2019t move this session to the cloud: ${fe}. It stays here.`);
+    });
+  }
+  function bo(D = !1) {
+    oe(ots() ? Bbi() : void 0), L("sending");
+    let Z = !1;
+    go(context, x => new Promise(le => {
+      if (H.current) {
+        V.current = !0, le(void 0);
+        return;
+      }
+      B.current = le;
+      let current_2 = re.current;
+      F(current_2 === void 0 ? x : [current_2, ...x]);
+    })).then(x => {
+      if (!V.current) Oe(x.startsWith("Session now in the cloud") ? "moved" : "not_moved"), exposure.importHold?.close("unused"), Z = !0, Ae(), onExit(x, {
+        display: "system"
+      });
+    }).catch(x => {
+      if (a(x), !V.current && !Z) Oe("not_moved"), exposure.importHold?.close("unused"), Ae(), onExit(`Couldn\u2019t teleport: ${d(x)}`, {
+        display: "system"
+      });
+    });
+  }
+  if (U === "resume") return e(xzt, {
+    onComplete: D => {
+      f6n(context, D.log, retireOnSurface, ke), onExit("Session resumed successfully", {
+        display: "system"
+      });
+    },
+    onCancel: () => onExit("Teleport cancelled", {
+      display: "system"
+    }),
+    onError: D => onExit(D, {
+      display: "system"
+    }),
+    isEmbedded: !0,
+    source: "localCommand"
+  });
+  if (U === "sending" && lines_3 !== void 0) {
+    let onAnswer_3 = Z => {
+      let current_3 = B.current;
+      if (!current_3) return;
+      if (Z && exposure.importHold?.isEndTold === !1) {
+        G(lines_3), F(void 0);
+        return;
+      }
+      if (B.current = null, F(void 0), G(void 0), ie(Z), Z) re.current = void 0;
+      current_3(Z);
+    };
+    return ee === void 0 ? e(xe, {
+      title: "Continue this session in the cloud?",
+      moveLabel: "Continue in the cloud",
+      lines: lines_3,
+      onAnswer: onAnswer_3
+    }) : e(wo, {
+      lines: lines_3,
+      onAnswer: onAnswer_3
+    });
+  }
+  if (U === "sending" && ee !== void 0 && !ne) return e(Co, {});
+  if (U === "sending") return r(s, {
+    flexDirection: "column",
+    padding: 1,
+    children: [r(s, {
+      flexDirection: "row",
+      children: [e(Oa, {}), e(n, {
+        bold: !0,
+        children: "Moving this session to the cloud\u2026"
+      })]
+    }), (ee !== void 0 || !ne) && e(s, {
+      marginLeft: 2,
+      children: e(n, {
+        dimColor: !0,
+        children: sendsByCopy ? "Checking this session, then restarting Claude Code to move it to a new cloud session\u2026" : ee ?? "It continues from your branch\u2019s last push."
+      })
+    })]
+  });
+  return r(s, {
+    flexDirection: "column",
+    padding: 1,
+    children: [e(n, {
+      bold: !0,
+      children: "Teleport"
+    }), !1, e(s, {
+      flexDirection: "column",
+      marginTop: 1,
+      children: e(Ze, {
+        options: [{
+          label: "Continue this session in the cloud",
+          value: "send",
+          disabled: !canSend,
+          description: canSend ? void 0 : "Not connected \xB7 /remote-control"
+        }, {
+          label: "Resume a session from cloud",
+          value: "resume"
+        }],
+        defaultFocusValue: canSend && !sendsByCopy ? void 0 : "resume",
+        onCancel: onCancel_2,
+        onChange: D => {
+          if (D === "resume") {
+            if (de("resume")) ye(), L("resume");
+            return;
+          }
+          if (!de(sendsByCopy ? "send_by_copy" : "send")) return;
+          if (sendsByCopy) {
+            So();
+            return;
+          }
+          bo();
+        }
+      })
+    }), e(s, {
+      marginTop: 1,
+      children: e(n, {
+        dimColor: !0,
+        children: je.pending ? `Press ${je.keyName} again to cancel` : r(Ce, {
+          children: [e(Y, {
+            chord: ["up", "down"],
+            action: "navigate"
+          }), e(Y, {
+            chord: "enter",
+            action: "select"
+          }), e(Y, {
+            chord: "escape",
+            action: "cancel"
+          })]
+        })
+      })
+    })]
+  });
+}
+export { Ja as TeleportMenu };

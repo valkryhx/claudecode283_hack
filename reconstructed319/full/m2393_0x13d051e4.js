@@ -1,0 +1,1195 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  k
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  or,
+  jb
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  lK
+} from "B:/~BUN/root/chunk-q78ga0zw.js";
+import {
+  Ee
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  one
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  Se
+} from "B:/~BUN/root/chunk-x24hm796.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import {
+  Fe,
+  ow
+} from "B:/~BUN/root/chunk-vxjrk7vf.js";
+import {
+  DAe,
+  mp
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  Zte
+} from "B:/~BUN/root/chunk-0w2htvr6.js";
+import {
+  As
+} from "B:/~BUN/root/chunk-q8sf8fhe.js";
+import {
+  Rn,
+  s,
+  n
+} from "B:/~BUN/root/chunk-qey16aan.js";
+import {
+  Wu
+} from "B:/~BUN/root/chunk-emd6eb45.js";
+import {
+  pt
+} from "B:/~BUN/root/chunk-v95bwhaa.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  Qu
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import {
+  zdn
+} from "B:/~BUN/root/chunk-t4qpmjt5.js";
+import {
+  ct,
+  x_,
+  I2n
+} from "B:/~BUN/root/chunk-bkfncj77.js";
+import {
+  VWe
+} from "B:/~BUN/root/chunk-apgsnbqk.js";
+import {
+  Ws
+} from "B:/~BUN/root/chunk-x2k0mb6b.js";
+import {
+  Re
+} from "B:/~BUN/root/chunk-qr2xxkqa.js";
+import {
+  hyr,
+  Zut
+} from "B:/~BUN/root/chunk-cxcakgnv.js";
+import {
+  rw,
+  cv
+} from "B:/~BUN/root/chunk-s3r3s87f.js";
+import {
+  XR
+} from "B:/~BUN/root/chunk-03yjyf4y.js";
+import {
+  eke
+} from "B:/~BUN/root/chunk-54ym9nhn.js";
+import {
+  uje,
+  Tde,
+  fje,
+  Apr,
+  k9,
+  ug,
+  hye,
+  gye
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import {
+  Y
+} from "B:/~BUN/root/chunk-c1v460b9.js";
+import {
+  Ce
+} from "B:/~BUN/root/chunk-cync0e08.js";
+import {
+  vS
+} from "B:/~BUN/root/chunk-zk8rd694.js";
+import {
+  Ir
+} from "B:/~BUN/root/chunk-39zyvd3e.js";
+import {
+  Jwe,
+  Qwe
+} from "B:/~BUN/root/chunk-jqf6v8bz.js";
+import {
+  Ze
+} from "B:/~BUN/root/chunk-cpzw87wr.js";
+import {
+  bs
+} from "B:/~BUN/root/chunk-s4zq7e5r.js";
+import {
+  So
+} from "B:/~BUN/root/chunk-r9p4g17h.js";
+import {
+  fa
+} from "B:/~BUN/root/chunk-t99rgr48.js";
+import {
+  fv,
+  Si
+} from "B:/~BUN/root/chunk-w2rkhp43.js";
+import {
+  gt
+} from "B:/~BUN/root/chunk-sx03ea6s.js";
+import {
+  ne,
+  e,
+  r
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import {
+  ue,
+  IZ,
+  O,
+  Z,
+  A,
+  y,
+  j
+} from "B:/~BUN/root/chunk-czy5r8bc.js";
+import {
+  ce
+} from "B:/~BUN/root/chunk-w7vsj9wa.js";
+import {
+  no
+} from "B:/~BUN/root/chunk-qszgzq5m.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+import {
+  basename as gn,
+  sep as xn
+} from "path";
+j();
+j();
+
+function St(o) {
+  let f = S(36),
+    {
+      log: a,
+      onExit: c,
+      onSelect: d
+    } = o,
+    [u, m] = y(null),
+    {
+      storageV5: C
+    } = Fe(),
+    N, v;
+  if (f[0] !== a || f[1] !== C) N = () => {
+    if (m(null), hye(a)) gye(a, {
+      storageV5: C
+    }).then(m)
+  }, v = [a, C], f[0] = a, f[1] = C, f[2] = N, f[3] = v;
+  else N = f[2], v = f[3];
+  O(N, v);
+  let E = hye(a) && u === null,
+    g = u ?? a,
+    q;
+  if (f[4] !== g.messages) q = uje(Tde(fje(g.messages)), {
+    site: "preview"
+  }), f[4] = g.messages, f[5] = q;
+  else q = f[5];
+  let R = q,
+    xe;
+  if (f[6] !== g) xe = ug(g) || "", f[6] = g, f[7] = xe;
+  else xe = f[7];
+  let de = xe,
+    z;
+  if (f[8] === w) z = vS(), f[8] = z;
+  else z = f[8];
+  let be = z,
+    _;
+  if (f[9] === w) _ = {
+    context: "Confirmation"
+  }, f[9] = _;
+  else _ = f[9];
+  pt("confirm:no", c, _);
+  let P;
+  if (f[10] !== u || f[11] !== a || f[12] !== d) P = () => {
+    d(u ?? a)
+  }, f[10] = u, f[11] = a, f[12] = d, f[13] = P;
+  else P = f[13];
+  let H = P,
+    Qe;
+  if (f[14] === w) Qe = {
+    context: "Confirmation"
+  }, f[14] = Qe;
+  else Qe = f[14];
+  if (pt("confirm:yes", H, Qe), E) {
+    let re;
+    if (f[15] === w) re = e(So, {
+      message: "Loading session\u2026"
+    }), f[15] = re;
+    else re = f[15];
+    let U;
+    if (f[16] === w) U = r(s, {
+      flexDirection: "column",
+      padding: 1,
+      children: [re, e(n, {
+        dimColor: !0,
+        children: e(Ce, {
+          children: e(gt, {
+            action: "confirm:no",
+            context: "Confirmation",
+            fallback: "Esc",
+            description: "cancel"
+          })
+        })
+      })]
+    }), f[16] = U;
+    else U = f[16];
+    return U
+  }
+  let re;
+  if (f[17] === w) re = e(Jwe, {
+    latchAnnouncementSlot: !1
+  }), f[17] = re;
+  else re = f[17];
+  let U;
+  if (f[18] !== de || f[19] !== R) U = {
+    kind: "static",
+    messages: R,
+    conversationId: de
+  }, f[18] = de, f[19] = R, f[20] = U;
+  else U = f[20];
+  let se;
+  if (f[21] === w) se = [], f[21] = se;
+  else se = f[21];
+  let ye;
+  if (f[22] !== U) ye = e(Qwe, {
+    source: U,
+    tools: be,
+    commands: se,
+    screen: "transcript",
+    history: "all"
+  }), f[22] = U, f[23] = ye;
+  else ye = f[23];
+  let X;
+  if (f[24] !== g.modified) X = x_(g.modified), f[24] = g.modified, f[25] = X;
+  else X = f[25];
+  const J = g.gitBranch ? ` \xB7 ${g.gitBranch}` : "";
+  let F;
+  if (f[26] !== g.messageCount || f[27] !== X || f[28] !== J) F = r(n, {
+    children: [X, " \xB7", " ", g.messageCount, " messages", J]
+  }), f[26] = g.messageCount, f[27] = X, f[28] = J, f[29] = F;
+  else F = f[29];
+  let Q;
+  if (f[30] === w) Q = e(n, {
+    dimColor: !0,
+    children: r(Ce, {
+      children: [e(Y, {
+        chord: "enter",
+        action: "resume"
+      }), e(gt, {
+        action: "confirm:no",
+        context: "Confirmation",
+        fallback: "Esc",
+        description: "cancel"
+      })]
+    })
+  }), f[30] = Q;
+  else Q = f[30];
+  let Te;
+  if (f[31] !== F) Te = r(s, {
+    flexShrink: 0,
+    flexDirection: "column",
+    borderTopDimColor: !0,
+    borderBottom: !1,
+    borderLeft: !1,
+    borderRight: !1,
+    borderStyle: "single",
+    paddingLeft: 2,
+    children: [F, Q]
+  }), f[31] = F, f[32] = Te;
+  else Te = f[32];
+  let K;
+  if (f[33] !== ye || f[34] !== Te) K = r(s, {
+    flexDirection: "column",
+    children: [re, ye, Te]
+  }), f[33] = ye, f[34] = Te, f[35] = K;
+  else K = f[35];
+  return K
+}
+j();
+
+function fo(ve) {
+  let Be = "";
+  if (ve.hasChildren) Be = ve.isExpanded ? "\u25BC " : "\u25B6 ";
+  else if (ve.depth > 0) Be = "  \u25B8 ";
+  return Be + ve.node.label
+}
+
+function It(o) {
+  let _ = S(45),
+    {
+      nodes: a,
+      onSelect: c,
+      onCancel: d,
+      onFocus: u,
+      focusNodeId: m,
+      visibleOptionCount: C,
+      layout: f,
+      isDisabled: N,
+      hidePromptWhileDisabled: v,
+      hideIndexes: E,
+      isNodeExpanded: g,
+      onExpand: q,
+      onCollapse: R,
+      onUpFromFirstItem: xe
+    } = o,
+    de = f === void 0 ? "expanded" : f,
+    z = N === void 0 ? !1 : N,
+    be = E === void 0 ? !1 : E,
+    P;
+  if (_[0] === w) P = new Set, _[0] = P;
+  else P = _[0];
+  let [H, Qe] = y(P), re = A(!1), U = A(null), se;
+  if (_[1] !== H || _[2] !== g) se = (ye) => {
+    if (g) {
+      return g(ye)
+    }
+    return H.has(ye)
+  }, _[1] = H, _[2] = g, _[3] = se;
+  else se = _[3];
+  let X = se,
+    J;
+  if (_[4] !== X || _[5] !== a) {
+    J = [];
+
+    function Ke(F, Q, Te) {
+      let K = !!F.children && F.children.length > 0;
+      let it = X(F.id);
+      if (J.push({
+          node: F,
+          depth: Q,
+          isExpanded: it,
+          hasChildren: K,
+          parentId: Te
+        }), K && it && F.children) {
+        for (const Le of F.children) Ke(Le, Q + 1, F.id)
+      }
+    }
+    for (const we of a) Ke(we, 0);
+    _[4] = X, _[5] = a, _[6] = J
+  } else J = _[6];
+  let V = J,
+    _t = fo,
+    at;
+  if (_[7] !== V) at = V.map((le) => ({
+    label: _t(le),
+    description: le.node.description,
+    dimDescription: le.node.dimDescription ?? !0,
+    value: le.node.id
+  })), _[7] = V, _[8] = at;
+  else at = _[8];
+  let Ve = at,
+    Ge;
+  if (_[9] !== V) {
+    let dt = new Map;
+    Ge = (V.forEach((qe) => dt.set(qe.node.id, qe.node)), dt);
+    _[9] = V, _[10] = Ge
+  } else Ge = _[10];
+  let B = Ge,
+    lt;
+  if (_[11] !== V) lt = (ee) => V.find((ze) => ze.node.id === ee), _[11] = V, _[12] = lt;
+  else lt = _[12];
+  let W = lt,
+    ut;
+  if (_[13] !== W || _[14] !== R || _[15] !== q) ut = (De, ft) => {
+    let Xe = W(De);
+    if (!Xe || !Xe.hasChildren) {
+      return
+    }
+    if (ft) {
+      if (q) q(De);
+      else Qe((mt) => new Set(mt).add(De))
+    } else if (R) R(De);
+    else Qe((Rt) => {
+      let pe = new Set(Rt);
+      return pe.delete(De), pe
+    })
+  }, _[13] = W, _[14] = R, _[15] = q, _[16] = ut;
+  else ut = _[16];
+  let Ie = ut,
+    T;
+  if (_[17] !== W || _[18] !== m || _[19] !== z || _[20] !== B || _[21] !== u || _[22] !== Ie) T = (L) => {
+    if (!m || z) {
+      return
+    }
+    let te = W(m);
+    if (!te) {
+      return
+    }
+    if (L.key === "right" && te.hasChildren) L.preventDefault(), Ie(m, !0);
+    else if (L.key === "left") {
+      if (te.hasChildren && te.isExpanded) L.preventDefault(), Ie(m, !1);
+      else if (te.parentId !== void 0) {
+        if (L.preventDefault(), re.current = !0, Ie(te.parentId, !1), u) {
+          let Ye = B.get(te.parentId);
+          if (Ye) u(Ye)
+        }
+      }
+    }
+  }, _[17] = W, _[18] = m, _[19] = z, _[20] = B, _[21] = u, _[22] = Ie, _[23] = T;
+  else T = _[23];
+  let ie = T,
+    ke;
+  if (_[24] !== B || _[25] !== c) ke = (Pt) => {
+    let ht = B.get(Pt);
+    if (!ht) {
+      return
+    }
+    c(ht)
+  }, _[24] = B, _[25] = c, _[26] = ke;
+  else ke = _[26];
+  let Je = ke,
+    Ne;
+  if (_[27] !== B || _[28] !== u) Ne = (ae) => {
+    if (re.current) {
+      re.current = !1;
+      return
+    }
+    if (U.current === ae) {
+      return
+    }
+    if (U.current = ae, u) {
+      let G = B.get(ae);
+      if (G) u(G)
+    }
+  }, _[27] = B, _[28] = u, _[29] = Ne;
+  else Ne = _[29];
+  let Oe = Ne,
+    oe;
+  if (_[30] !== m || _[31] !== Je || _[32] !== Oe || _[33] !== be || _[34] !== v || _[35] !== z || _[36] !== de || _[37] !== d || _[38] !== xe || _[39] !== Ve || _[40] !== C) oe = e(Ze, {
+    options: Ve,
+    onChange: Je,
+    onFocus: Oe,
+    onCancel: d,
+    defaultFocusValue: m,
+    visibleOptionCount: C,
+    layout: de,
+    isDisabled: z,
+    hidePromptWhileDisabled: v,
+    hideIndexes: be,
+    onUpFromFirstItem: xe
+  }), _[30] = m, _[31] = Je, _[32] = Oe, _[33] = be, _[34] = v, _[35] = z, _[36] = de, _[37] = d, _[38] = xe, _[39] = Ve, _[40] = C, _[41] = oe;
+  else oe = _[41];
+  let Me;
+  if (_[42] !== ie || _[43] !== oe) Me = e(s, {
+    tabIndex: 0,
+    autoFocus: !0,
+    onKeyDown: ie,
+    children: oe
+  }), _[42] = ie, _[43] = oe, _[44] = Me;
+  else Me = _[44];
+  return Me
+}
+
+function mo(o, a) {
+  let c = o.replace(/\s+/g, " ").trim();
+  return ct(c, a)
+}
+var ho = 2,
+  go = 4,
+  xo = 2000,
+  bn = 1000,
+  yn = 50000,
+  bo = 0.3;
+var yo = {
+    format: {
+      modCase: "title",
+      charCase: "upper"
+    }
+  },
+  Co = 60000,
+  To = 50,
+  Eo = 5;
+
+function Sn({
+  before: o,
+  match: a,
+  after: c
+}, d) {
+  return Se.dim(o) + d(a) + Se.dim(c)
+}
+
+function Lo(o) {
+  return o.replace(new RegExp(hyr.source + '[^,\\s"]*', "g"), (a) => {
+    let c = Zut(a);
+    return c ? `PR #${c.prNumber} ${c.prRepository}` : a
+  })
+}
+
+function wo(o, a, c) {
+  let d = o.toLowerCase().indexOf(a.toLowerCase());
+  if (d === -1) return null;
+  let u = d + a.length,
+    m = Math.max(0, d - c),
+    C = Math.min(o.length, u + c),
+    f = o.slice(m, d),
+    N = o.slice(d, u),
+    v = o.slice(u, C);
+  return {
+    before: (m > 0 ? "\u2026" : "") + f.replace(/\s+/g, " ").trimStart(),
+    match: N.trim(),
+    after: v.replace(/\s+/g, " ").trimEnd() + (C < o.length ? "\u2026" : "")
+  }
+}
+
+function Nt(o, a, c) {
+  let {
+    isGroupHeader: d = !1,
+    isChild: u = !1,
+    forkCount: m = 0
+  } = c || {}, C = d && m > 0 ? ho : u ? go : 0, f = d && m > 0 ? ` (+${m} other ${m===1?"session":"sessions"})` : "", N = o.isSidechain ? " (sidechain)" : "", v = o.artifactCount !== void 0 && o.artifactCount > 0 ? `  ${mp} ${o.artifactCount}` : "", E = a - C - N.length - f.length - ce(v);
+  return `${mo(one(o),E)}${N}${f}${v}`
+}
+
+function vt(o, a) {
+  let {
+    isChild: c = !1,
+    showProjectPath: d = !1
+  } = a || {}, u = c ? "    " : "", m = I2n(o), C = d && o.projectPath ? ` \xB7 ${o.projectPath}` : "";
+  return u + m + C
+}
+
+function b6n({
+  logs: o,
+  maxHeight: a = 1 / 0,
+  forceWidth: c,
+  onCancel: d,
+  onSelect: u,
+  onLogsChanged: m,
+  onLoadMore: C,
+  initialSearchQuery: f,
+  isLoading: N = !1,
+  reloadGeneration: v = 0,
+  showAllProjects: E = !1,
+  onToggleAllProjects: g,
+  currentSessionId: q,
+  footerNote: R
+}) {
+  let {
+    storageV5: xe
+  } = Fe(), de = As(Re()), z = c === void 0 ? de.columns : c, be = Ws(d), _ = !1, P = fa(!1), H = yo, Qe = "show all projects", re = 2, U = Wu(), se = Rn(), ye = !1, X = ow(), J = Z(() => (t) => VWe(t, X.warning), [X.warning]), F = Z(() => R === void 0 ? 0 : ce(R.join(" \xB7 ")), [R]), [Q, Te] = y(null), [K, it] = y(!0), [Le, Ke] = y(!1), [we, V] = y(!1), [_t, at] = y(null), [le, Ve] = y(null), [Ge, dt] = y([]), [qe, B] = y(!1), lt = XR(), [ee] = y(() => lt.originalCwd), [ze, W] = y(""), [ut, De] = y(0), [ft, Xe] = y(new Set), [mt, Rt] = y(null), [pe, Ie] = y(1), [T, L] = y(f ? "search" : "list"), [te, Ye] = y(null), {
+    query: ie,
+    setQuery: ke,
+    cursorOffset: Pt,
+    handleKeyDown: ht,
+    handlePaste: Je
+  } = rw({
+    isActive: T === "search",
+    onExit: () => {
+      L("list"), l("tengu_session_search_toggled", {
+        enabled: !1
+      })
+    },
+    onExitUp: () => {
+      L("list"), l("tengu_session_search_toggled", {
+        enabled: !1
+      })
+    },
+    passthroughCtrlKeys: o.length === 0 ? ["n", "a"] : ["n"],
+    initialQuery: f || ""
+  }), Ne = Lo(ie), ae = IZ(Ne), [G, Oe] = y("");
+  O(() => {
+    if (!ae) {
+      Oe("");
+      return
+    }
+    return se.setTimeout(() => Oe(ae), 300)
+  }, [ae, se]);
+  let [oe, Me] = y(null), ve = !1;
+  O(() => {
+    Qu().then((i) => Te(i));
+    let t = Date.now();
+    zdn(ee).then(async (i) => (i.length, i)).then((i) => {
+      l("tengu_worktree_detection", {
+        duration_ms: Date.now() - t,
+        worktree_count: i.length,
+        success: !0
+      }), V(i.length > 1), dt(i), at(i[0] ?? null);
+      let h = i.filter((p) => ee === p || ee.startsWith(p + xn));
+      h.sort((p, D) => D.length - p.length), Ve(h[0] ?? null), B(!0)
+    }).catch(() => {
+      l("tengu_worktree_detection", {
+        duration_ms: Date.now() - t,
+        worktree_count: 0,
+        success: !1
+      }), B(!0)
+    })
+  }, [ee]);
+  let Be = Z(() => new Map(o.map((t) => [t, vo(t)])), [o]),
+    kt = Z(() => null, [o, Be, !1]),
+    We = Z(() => {
+      let t = o.filter((i) => {
+        let h = ug(i);
+        if (q && h === q) return !0;
+        if (i.customTitle ?? i.aiTitle) return !0;
+        if (Apr(i.messages)) return !0;
+        if (i.firstPrompt || i.customTitle || i.aiTitle) return !0;
+        return !1
+      });
+      if (!K && Q) t = t.filter((i) => i.gitBranch === Q);
+      if (we && !Le && !E) {
+        let i = le ?? ee;
+        t = t.filter((h) => {
+          if (h.isAlias) return !0;
+          let p = h.projectPath;
+          if (p === void 0) return !1;
+          let D = null;
+          for (let b of Ge)
+            if (p === b || p.startsWith(b + xn)) {
+              if (D === null || b.length > D.length) D = b
+            } if (D === null) return p === i;
+          return D === i
+        })
+      }
+      return t
+    }, [o, q, K, Q, we, Le, E, ee, le, Ge]),
+    Ft = Z(() => {
+      if (!Ne) return We;
+      let t = Ne.toLowerCase();
+      return We.filter((i) => {
+        let h = one(i).toLowerCase(),
+          p = (i.gitBranch || "").toLowerCase(),
+          D = (i.tag || "").toLowerCase(),
+          b = i.prNumber ? `pr #${i.prNumber} ${i.prRepository||""}`.toLowerCase() : "";
+        return h.includes(t) || p.includes(t) || D.includes(t) || b.includes(t)
+      })
+    }, [We, Ne]);
+  O(() => {
+    Me(null);
+    return
+  }, [G, ae, kt, !1, se]);
+  let {
+    filteredLogs: M,
+    snippets: xt
+  } = Z(() => {
+    let t = new Map,
+      i = Ft;
+    if (oe && G && oe.query === G) {
+      for (let b of oe.results)
+        if (b.searchableText) {
+          let nt = wo(b.searchableText, G, To);
+          if (nt) t.set(b.log, nt)
+        } let h = new Set(i.map((b) => b.messages[0]?.uuid)),
+        p = new Set(We),
+        D = oe.results.map((b) => b.log).filter((b) => !h.has(b.messages[0]?.uuid) && p.has(b));
+      i = [...i, ...D]
+    }
+    return {
+      filteredLogs: i,
+      snippets: t
+    }
+  }, [Ft, oe, G, We]), bt = z - 2 * fv, et = Math.max(30, bt - 4), En = Z(() => {
+    let t = _o(M);
+    return Array.from(t.entries()).map(([i, h]) => {
+      let p = h[0],
+        D = xt.get(p),
+        b = D ? Sn(D, J) : null;
+      if (h.length === 1) {
+        let fe = vt(p, {
+          showProjectPath: E
+        });
+        return {
+          id: `log:${i}:0`,
+          value: {
+            log: p
+          },
+          label: Nt(p, et),
+          description: b ? `${fe}
+  ${b}` : fe,
+          dimDescription: !0
+        }
+      }
+      let nt = h.length - 1,
+        Mn = h.slice(1).map((fe, Bn) => {
+          let Ht = xt.get(fe),
+            Ut = Ht ? Sn(Ht, J) : null,
+            jt = vt(fe, {
+              isChild: !0,
+              showProjectPath: E
+            });
+          return {
+            id: `log:${i}:${Bn+1}`,
+            value: {
+              log: fe
+            },
+            label: Nt(fe, et, {
+              isChild: !0
+            }),
+            description: Ut ? `${jt}
+      ${Ut}` : jt,
+            dimDescription: !0
+          }
+        }),
+        At = vt(p, {
+          showProjectPath: E
+        });
+      return {
+        id: `group:${i}`,
+        value: {
+          log: p
+        },
+        label: Nt(p, et, {
+          isGroupHeader: !0,
+          forkCount: nt
+        }),
+        description: b ? `${At}
+  ${b}` : At,
+        dimDescription: !0,
+        children: Mn
+      }
+    })
+  }, [M, et, E, xt, J]), I = mt?.value.log ?? null, Ln = () => {
+    if (!I) return "";
+    let t = ug(I);
+    if (!t) return "";
+    let i = M.filter((b) => ug(b) === t);
+    if (!(i.length > 1)) return "";
+    let p = ft.has(t);
+    if (i.indexOf(I) > 0 || p) return e(Y, {
+      chord: "left",
+      action: "collapse",
+      ...P
+    });
+    return e(Y, {
+      chord: "right",
+      action: "expand",
+      ...P
+    })
+  }, wn = async () => {
+    let t = I ? ug(I) : void 0;
+    if (!I || !t) {
+      L("list"), W("");
+      return
+    }
+    if (ze.trim()) {
+      if (await k9(t, ze.trim(), I.fullPath, "user", xe), m) m()
+    }
+    L("list"), W("")
+  }, Dn = () => {
+    L("list"), ke(""), l("tengu_session_search_toggled", {
+      enabled: !1
+    })
+  }, In = () => {
+    L("search"), l("tengu_session_search_toggled", {
+      enabled: !0
+    })
+  };
+  O(() => {
+    if (v === 0) return;
+    Me(null)
+  }, [v]);
+  let Nn = (t) => {
+    Rt(t);
+    let i = M.findIndex((h) => ug(h) === ug(t.value.log));
+    if (i >= 0) Ie(i + 1)
+  };
+  pt("confirm:no", () => {
+    L("list"), W("")
+  }, {
+    context: "Settings",
+    isActive: T === "rename"
+  });
+
+  function vn(t) {
+    if (T === "preview") return;
+    if (T === "rename");
+    else if (T === "search") {
+      if (ht(t), t.ctrl && t.key === "n") t.preventDefault(), Dn();
+      else if (t.ctrl && t.key === "a" && g && o.length === 0) t.preventDefault(), g(), l("tengu_session_all_projects_toggled", {
+        enabled: E
+      })
+    } else {
+      if (M.length === 0 && (t.key === "up" || t.key === "down" || t.key === "return")) {
+        t.preventDefault(), L("search");
+        return
+      }
+      let i = !t.ctrl && !t.meta,
+        h = t.key.toLowerCase();
+      if (t.ctrl && t.key === "a" && g) t.preventDefault(), g(), l("tengu_session_all_projects_toggled", {
+        enabled: E
+      });
+      else if (t.ctrl && t.key === "b") {
+        t.preventDefault();
+        let p = !K;
+        it(p), l("tengu_session_branch_filter_toggled", {
+          enabled: !p
+        })
+      } else if (t.ctrl && t.key === "w" && we) {
+        t.preventDefault();
+        let p = !Le;
+        Ke(p), l("tengu_session_worktree_filter_toggled", {
+          enabled: !p
+        })
+      } else if (h === "/" && i) t.preventDefault(), L("search"), l("tengu_session_search_toggled", {
+        enabled: !0
+      });
+      else if (t.ctrl && t.key === "r" && I) t.preventDefault(), L("rename"), W(""), l("tengu_session_rename_started", {});
+      else if ((t.key === " " && i || t.ctrl && t.key === "v") && I) t.preventDefault(), Ye(I), L("preview"), l("tengu_session_preview_opened", {
+        messageCount: I.messageCount
+      });
+      else if (!t.defaultPrevented && i && t.key.length === 1 && t.key !== " ") t.preventDefault(), L("search"), ke(t.key), l("tengu_session_search_toggled", {
+        enabled: !0
+      })
+    }
+  }
+
+  function _n(t) {
+    if (T === "search") {
+      Je(t);
+      return
+    }
+    let i = (t.text.split(/\r\n|\r|\n/, 2)[0] ?? "").trim();
+    if (T === "preview" || T === "rename" || !I || !i) return;
+    t.preventDefault(), L("search"), ke(i), l("tengu_session_search_toggled", {
+      enabled: !0
+    })
+  }
+  let _e = [],
+    Ot = !!g && !E && qe,
+    Mt = _t ?? ee;
+  if (Ot) _e.push(gn(Mt));
+  if (!K && Q) _e.push(Q);
+  if (we && !Le && !E) {
+    let t = le ?? ee;
+    if (!(Ot && Mt === t)) _e.push(gn(t))
+  }
+  let Pn = !!g && !E && !qe,
+    Bt = (_e.length > 0 || Pn) && T !== "search",
+    Wt = 3,
+    kn = 5 + Wt + (Bt ? 1 : 0),
+    $t = R !== void 0 && T !== "rename" && F <= bt - 2 && a - (5 + Wt + 1) - 3 >= 3,
+    Fn = 2 + ($t ? 1 : 0),
+    $e = Math.max(1, Math.floor((a - kn - Fn) / 3)),
+    On = o.length,
+    tt = A({
+      focusedIndex: -1,
+      visible: -1,
+      empty: 0
+    });
+  if (O(() => {
+      if (!C) return;
+      let t = tt.current;
+      if (t.focusedIndex !== pe || t.visible !== M.length) tt.current = {
+        focusedIndex: pe,
+        visible: M.length,
+        empty: 0
+      };
+      let i = $e * 2;
+      if (pe + i >= M.length && tt.current.empty < Eo) tt.current.empty++, C($e * 3)
+    }, [pe, $e, M.length, On, C]), o.length === 0 && !g) return null;
+  if (T === "preview" && te) return e(St, {
+    log: te,
+    onExit: () => {
+      L("list"), Ye(null)
+    },
+    onSelect: u
+  });
+  return e(s, {
+    flexDirection: "column",
+    maxHeight: a - 1,
+    onKeyDown: vn,
+    onPaste: _n,
+    children: r(Tn, {
+      isRedesign: !1,
+      titleDetail: r(ne, {
+        children: [T === "list" && M.length > $e && r(n, {
+          dimColor: !0,
+          children: [" ", "(", pe, " of ", M.length, ")"]
+        }), N && e(n, {
+          dimColor: !0,
+          children: " \xB7 Refreshing\u2026"
+        })]
+      }),
+      children: [e(cv, {
+        query: ie,
+        isFocused: T === "search",
+        isTerminalFocused: U,
+        cursorOffset: Pt,
+        isSearchLineUnpadded: !0
+      }), Bt && (_e.length > 0 ? e(s, {
+        flexShrink: 0,
+        paddingLeft: 2,
+        children: e(n, {
+          dimColor: !0,
+          children: e(Ce, {
+            children: _e
+          })
+        })
+      }) : e(s, {
+        flexShrink: 0,
+        height: 1
+      })), e(s, {
+        flexShrink: 0,
+        children: e(n, {
+          children: " "
+        })
+      }), (T === "search" || T === "list") && Boolean(ie.trim()) && M.length === 0 && !ve && !N && e(s, {
+        paddingLeft: 1,
+        marginBottom: 1,
+        flexShrink: 0,
+        children: r(bs, {
+          children: ['No sessions match "', ie, '".']
+        })
+      }), o.length === 0 && T === "list" && !N && !ie.trim() && e(s, {
+        paddingLeft: 1,
+        marginBottom: 1,
+        flexShrink: 0,
+        children: e(bs, {
+          hint: E ? void 0 : e(Y, {
+            chord: "ctrl+a",
+            action: "show all projects",
+            ...H
+          }),
+          children: E ? "No conversations found." : "No conversations found in this project."
+        })
+      }), T === "rename" && I ? r(s, {
+        paddingLeft: 2,
+        flexDirection: "column",
+        children: [e(n, {
+          bold: !0,
+          children: "Rename session:"
+        }), e(s, {
+          paddingTop: 1,
+          children: e(Ir, {
+            value: ze,
+            onChange: W,
+            onSubmit: wn,
+            placeholder: one(I, "Enter new session name"),
+            columns: bt - 2,
+            cursorOffset: ut,
+            onChangeCursorOffset: De,
+            showCursor: !0,
+            focus: !0
+          })
+        })]
+      }) : e(It, {
+        nodes: En,
+        onSelect: (t) => {
+          u(t.value.log)
+        },
+        onFocus: Nn,
+        onCancel: d,
+        focusNodeId: mt?.id,
+        visibleOptionCount: $e,
+        layout: "expanded",
+        isDisabled: T === "search",
+        hidePromptWhileDisabled: !0,
+        hideIndexes: !1,
+        isNodeExpanded: (t) => {
+          if (T === "search" || !K) return !0;
+          let i = typeof t === "string" && t.startsWith("group:") ? t.substring(6) : null;
+          return i ? ft.has(i) : !1
+        },
+        onExpand: (t) => {
+          let i = typeof t === "string" && t.startsWith("group:") ? t.substring(6) : null;
+          if (i) Xe((h) => new Set(h).add(i)), l("tengu_session_group_expanded", {})
+        },
+        onCollapse: (t) => {
+          let i = typeof t === "string" && t.startsWith("group:") ? t.substring(6) : null;
+          if (i) Xe((h) => {
+            let p = new Set(h);
+            return p.delete(i), p
+          })
+        },
+        onUpFromFirstItem: In
+      }), $t && e(s, {
+        paddingLeft: 2,
+        flexShrink: 0,
+        children: e(n, {
+          dimColor: !0,
+          wrap: "truncate-end",
+          children: e(Ce, {
+            children: R
+          })
+        })
+      }), e(s, {
+        paddingLeft: 2,
+        children: be.pending ? r(n, {
+          dimColor: !0,
+          italic: !1,
+          children: ["Press ", be.keyName, " again to exit"]
+        }) : T === "rename" ? e(n, {
+          dimColor: !0,
+          italic: !1,
+          children: r(Ce, {
+            children: [e(Y, {
+              chord: "enter",
+              action: "save",
+              ...P
+            }), e(gt, {
+              action: "confirm:no",
+              context: "Confirmation",
+              fallback: "Esc",
+              description: "cancel",
+              ...P
+            })]
+          })
+        }) : T === "search" ? e(n, {
+          dimColor: !0,
+          italic: !1,
+          children: r(Ce, {
+            children: [e(n, {
+              children: "Type to Search"
+            }), o.length === 0 && g && e(Y, {
+              chord: "ctrl+a",
+              action: E ? "only show current repo" : "show all projects",
+              ...H
+            }), e(Y, {
+              chord: "enter",
+              action: "select",
+              ...P
+            }), e(gt, {
+              action: "confirm:no",
+              context: "Confirmation",
+              fallback: "Esc",
+              description: "clear",
+              ...P
+            })]
+          })
+        }) : e(n, {
+          dimColor: !0,
+          italic: !1,
+          children: r(Ce, {
+            children: [g && e(Y, {
+              chord: "ctrl+a",
+              action: E ? "only show current repo" : "show all projects",
+              ...H
+            }), Q && e(Y, {
+              chord: "ctrl+b",
+              action: K ? "only show current branch" : "show all branches",
+              ...H
+            }), we && e(Y, {
+              chord: "ctrl+w",
+              action: Le ? "only show current worktree" : "show all worktrees",
+              ...H
+            }), I && e(Y, {
+              chord: "space",
+              action: "preview",
+              ...P
+            }), I && e(Y, {
+              chord: "ctrl+r",
+              action: "rename",
+              ...H
+            }), e(n, {
+              children: "Type to search"
+            }), e(gt, {
+              action: "confirm:no",
+              context: "Confirmation",
+              fallback: "Esc",
+              description: "cancel",
+              format: P.format
+            }), Ln()]
+          })
+        })
+      })]
+    })
+  })
+}
+
+function Tn(o) {
+  let d = S(5),
+    {
+      titleDetail: a,
+      children: c
+    } = o,
+    u;
+  if (d[0] !== a) u = e(s, {
+    flexShrink: 0,
+    children: r(n, {
+      bold: !0,
+      color: "suggestion",
+      children: ["Resume session", a]
+    })
+  }), d[0] = a, d[1] = u;
+  else u = d[1];
+  let m;
+  if (d[2] !== c || d[3] !== u) m = r(Si, {
+    color: "suggestion",
+    children: [u, c]
+  }), d[2] = c, d[3] = u, d[4] = m;
+  else m = d[4];
+  return m
+}
+
+function No(o) {
+  if (o.type !== "user" && o.type !== "assistant") return "";
+  let a = "message" in o ? o.message?.content : void 0;
+  if (!a) return "";
+  let c = o.type === "user" && o.isCompactSummary ? o.modelOnlyText : void 0;
+  if (typeof a === "string") return eke(Zte(a, o.type === "user" ? o.pluginPrompt : void 0), c);
+  if (Array.isArray(a)) return a.map((d) => {
+    if (typeof d === "string") return d;
+    if ("text" in d && typeof d.text === "string") return eke(d.text, c);
+    return ""
+  }).filter(Boolean).join(" ");
+  return ""
+}
+
+function vo(o) {
+  let c = (o.messages.length <= xo ? o.messages : [...o.messages.slice(0, bn), ...o.messages.slice(-bn)]).map(No).filter(Boolean).join(" "),
+    u = `${[o.customTitle,o.aiTitle,o.summary,o.firstPromptShown??o.firstPrompt,o.gitBranch,o.tag,o.prNumber?`PR #${o.prNumber}`:void 0,o.prRepository].filter(Boolean).join(" ")} ${c}`.trim();
+  return u.length > yn ? u.slice(0, yn) : u
+}
+
+function _o(o) {
+  let a = new Map;
+  for (let c of o) {
+    let d = ug(c);
+    if (d) {
+      let u = a.get(d);
+      if (u) u.push(c);
+      else a.set(d, [c])
+    }
+  }
+  return a.forEach((c) => c.sort((d, u) => new Date(u.modified).getTime() - new Date(d.modified).getTime())), a
+}
+import {
+  lstat as Ro
+} from "fs/promises";
+import {
+  posix as Po,
+  sep as ko,
+  win32 as Fo
+} from "path";
+
+function D1r() {
+  return x() === "windows" ? ";" : "&&"
+}
+async function S6n(o, a, c) {
+  let d = Ee();
+  if (!a || !o.projectPath || o.projectPath === d) return null;
+  if (c.some((f) => o.projectPath === f || o.projectPath.startsWith(f + ko))) return null;
+  if (!or(o.projectPath) && !jb(o.projectPath) && !await Oo(o.projectPath)) return null;
+  let m = ug(o),
+    C = lK(m) ? ` ${m}` : "";
+  return `cd ${no([o.projectPath])} ${D1r()} claude --resume${C}`
+}
+async function Oo(o) {
+  let a = x() === "windows",
+    {
+      parse: c,
+      sep: d
+    } = a ? Fo : Po,
+    u = a ? c(o).root.replaceAll("/", d) : c(o).root,
+    m = o.slice(c(o).root.length).split(a ? /[\\/]+/ : d).filter(Boolean),
+    C = u;
+  for (let f of m) {
+    C = C === "" || C.endsWith(d) ? C + f : C + d + f;
+    try {
+      if ((await Ro(C)).isSymbolicLink()) return !0
+    } catch (N) {
+      let v = k(N);
+      return v !== "ENOENT" && v !== "ENOTDIR"
+    }
+  }
+  return !0
+}
+export {
+  b6n,
+  D1r,
+  S6n
+};

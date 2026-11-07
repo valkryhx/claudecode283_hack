@@ -1,0 +1,874 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  ove,
+  Jne
+} from "B:/~BUN/root/chunk-ahv8vexc.js";
+import {
+  Nke
+} from "B:/~BUN/root/chunk-m0t2mx64.js";
+import {
+  GIe
+} from "B:/~BUN/root/chunk-gvv6aaq0.js";
+import {
+  _S
+} from "B:/~BUN/root/chunk-q78ga0zw.js";
+import {
+  H,
+  QA,
+  oK
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  qe,
+  F,
+  d,
+  k,
+  qt
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  vt,
+  t,
+  _
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  JTt,
+  QTt,
+  Hhe
+} from "B:/~BUN/root/chunk-bq1zhyqz.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  pe
+} from "B:/~BUN/root/chunk-thn0wk2x.js";
+import {
+  LA
+} from "B:/~BUN/root/chunk-6n5g80b8.js";
+import {
+  un,
+  Jg
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import {
+  at,
+  iEo,
+  Wsn,
+  ZIr,
+  I1n
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  Xn,
+  Ju,
+  $l
+} from "B:/~BUN/root/chunk-vmcmhkh2.js";
+import {
+  dbe
+} from "B:/~BUN/root/chunk-ckdgegnz.js";
+import {
+  kg
+} from "B:/~BUN/root/chunk-2392ztjf.js";
+import {
+  h$,
+  _lr,
+  qge,
+  IP,
+  fts,
+  Kw,
+  $h,
+  o8t,
+  mct,
+  s8t,
+  el,
+  wm,
+  sas,
+  xTi
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import {
+  NZ
+} from "B:/~BUN/root/chunk-nk59bmc9.js";
+import {
+  wn,
+  Jb
+} from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  xD
+} from "B:/~BUN/root/chunk-f0zgv0ya.js";
+import {
+  Fi
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  Rd
+} from "B:/~BUN/root/chunk-xgwmwbnb.js";
+import {
+  OW
+} from "B:/~BUN/root/chunk-cxcakgnv.js";
+import {
+  p0e,
+  m0e
+} from "B:/~BUN/root/chunk-vke7wtay.js";
+import {
+  tk
+} from "B:/~BUN/root/chunk-kk81ayzj.js";
+import {
+  mq
+} from "B:/~BUN/root/chunk-2fedt3ag.js";
+import {
+  h9n
+} from "B:/~BUN/root/chunk-a32crq0f.js";
+import {
+  eCt
+} from "B:/~BUN/root/chunk-dsf173dz.js";
+import {
+  SB
+} from "B:/~BUN/root/chunk-vsw8ycmm.js";
+import {
+  vS,
+  c8
+} from "B:/~BUN/root/chunk-zk8rd694.js";
+import {
+  TA
+} from "B:/~BUN/root/chunk-sc660841.js";
+import {
+  Fme,
+  P4e,
+  Hme,
+  skt,
+  ikt,
+  O4e,
+  o4s,
+  GMo
+} from "B:/~BUN/root/chunk-bk8e5jj0.js";
+import {
+  I4e
+} from "B:/~BUN/root/chunk-5n9rt7jw.js";
+import {
+  TEt
+} from "B:/~BUN/root/chunk-1zre46ws.js";
+import {
+  _gn
+} from "B:/~BUN/root/chunk-w6ejqas5.js";
+import {
+  ZCt
+} from "B:/~BUN/root/chunk-xa8mb85y.js";
+import {
+  $x,
+  _E
+} from "B:/~BUN/root/chunk-xbhv3nhf.js";
+var De = 30000;
+
+function J(r, u, o = De) {
+  if (r === void 0) return {
+    report: void 0,
+    [Symbol.dispose]() {}
+  };
+  let l = 0,
+    f = 0,
+    b = (h, E) => (f = h > f ? h : f + 0.001, u({
+      method: "notifications/progress",
+      params: {
+        progressToken: r,
+        progress: f,
+        message: E
+      }
+    })),
+    y = setInterval(() => {
+      l += 1;
+      let h = l * o / 1000;
+      b(h, `Running for ${h}s`).catch((E) => {
+        t(`MCP server: progress heartbeat not sent: ${d(E)}`)
+      })
+    }, o);
+  return y.unref?.(), {
+    report: (h) => b(0, h),
+    [Symbol.dispose]() {
+      clearInterval(y)
+    }
+  }
+}
+var Ie = "anthropic/shellDirectory",
+  ye = "anthropic/shellDirectoryHeld";
+
+function pUr(r, u) {
+  return {
+    ...r,
+    _meta: {
+      ...r._meta,
+      [Ie]: u
+    }
+  }
+}
+import {
+  stat as je
+} from "fs/promises";
+var Ee = "claudecode/repoHooksStamp",
+  Rqs = 4096,
+  Tun = ["userSettings", ...LA];
+async function _Mo() {
+  let r = [...Tun.map(un), Jg()];
+  return (await Promise.all(r.map(async (o) => {
+    if (o === void 0) return "-";
+    try {
+      let {
+        ino: l,
+        size: f,
+        ctimeNs: b
+      } = await je(o, {
+        bigint: !0
+      });
+      return `${l}:${f}:${b}`
+    } catch (l) {
+      return qt(l) ? "-" : `?${k(l)}`
+    }
+  }))).join("|")
+}
+var le = new W(() => ({}));
+
+function Aqs(r, u, o = () => !1) {
+  let l = le.of(r);
+  if (l.tell = u, l.stop !== void 0) return;
+  let f = Fi.subscribe((b) => {
+    if (!o() && !Tun.some((h) => h === b)) return;
+    if (l.tell === void 0) {
+      c("mcp_serve_repo_settings_notice", "no_caller");
+      return
+    }
+    l.tell().then(() => g("mcp_serve_repo_settings_notice")).catch((h) => {
+      c("mcp_serve_repo_settings_notice", "not_sent"), t(`repo settings notice not sent: ${d(h)}`)
+    })
+  });
+  l.stop = () => {
+    f(), l.stop = void 0
+  }, Fi.initialize(async () => !1)
+}
+
+function Re(r, u) {
+  let o = le.of(r);
+  if (o.stop !== void 0) o.tell = u
+}
+
+function he(r, u) {
+  let o = le.of(r);
+  if (o.tell === u) o.tell = void 0
+}
+
+function Pe(r, u, o, l) {
+  r.setRequestHandler(u, async (f, b) => {
+    let y = await l(f, b);
+    if (!o || f.params._meta?.[Ee] !== "1") return y;
+    return {
+      ...y,
+      _meta: {
+        ...y._meta,
+        [Ee]: await _Mo()
+      }
+    }
+  })
+}
+
+function Ue(r) {
+  return "closeSSEStream" in r
+}
+var jqn = "callerGone";
+async function zpa(r, u, o, l, f, b) {
+  $h(r);
+  let y = mUr(u, o, H(), "stdio", l, f, b),
+    h = new _gn;
+  await y.connect(h), vt(() => y.close())
+}
+class be extends OW {
+  #e;
+  constructor(r) {
+    super();
+    this.#e = r
+  }
+  get(r) {
+    return this.#e.get(r)
+  }
+}
+
+function mUr(r, u, o, l, f, b = "raw", y = {
+  kind: "absent"
+}, h) {
+  let E = y.kind === "parsed" ? y.context : void 0,
+    ce = TA(f),
+    p = l === "http";
+  I1n(o.host, Wsn);
+  let Q = kg();
+  if (Q.disableBackgroundAgentLaunch(), Q.disableRemoteAgentIsolation(), Q.disableBackgroundDeadline(), Q.disableForkSubagent(), p) GMo(kg());
+  else Q.disableBackgroundCompletionNotice();
+  if (xTi(sas()), h$(), QA()) h9n(f).catch(a);
+  if (NZ(), oK()) _lr().catch(a);
+  let we = _E($x, void 0, p),
+    ke = new OW,
+    re = {
+      activeAgents: [],
+      allAgents: []
+    },
+    de = p ? Promise.resolve() : IP(pe(), f).then((e) => {
+      re = qge(e, e.allAgents.filter((T) => {
+        if (p0e(T)) return !0;
+        return m0e(T, "subagent", "definition"), !1
+      }))
+    }).catch((e) => {
+      a(e)
+    }),
+    x = new Nke({
+      name: "claude/tengu",
+      version: {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.319",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-11-05T18:14:18Z",
+        GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION
+    }, {
+      capabilities: {
+        tools: {
+          listChanged: !0
+        }
+      }
+    }),
+    ue = Xn(),
+    U = () => O4e(p);
+  if (p) {
+    let {
+      toolOutputServerCapabilities: e
+    } = import.meta.require("B:/~BUN/root/chunk-tng2788x.js"), T = e(U, E);
+    if (T !== void 0) {
+      if (x.registerCapabilities(T), !dbe()) {
+        let {
+          backgroundCommands: C,
+          keepsBackgroundCommandsCapability: M
+        } = import.meta.require("B:/~BUN/root/chunk-090gxr0p.js");
+        x.registerCapabilities(M(C.of(o.host).life))
+      }
+    }
+    if (E !== void 0) {
+      let {
+        holdsSafetyAsksCapability: C
+      } = import.meta.require("B:/~BUN/root/chunk-nfj3kcp8.js");
+      x.registerCapabilities(C());
+      let {
+        rendersUnderSessionRulesCapability: M
+      } = import.meta.require("B:/~BUN/root/chunk-bbha33b8.js");
+      x.registerCapabilities(M())
+    }
+    let {
+      interfaceVersionCapability: i
+    } = import.meta.require("B:/~BUN/root/chunk-ajbmvhc8.js");
+    x.registerCapabilities(i())
+  }
+  let q = null,
+    xe = () => {
+      if (q === null) return;
+      let e = U().map((i) => i.name).join(`
+`);
+      if (e === q) return;
+      let T = q;
+      q = e, x.sendToolListChanged().catch((i) => {
+        if (q === e) q = T;
+        t(`mcp serve: tools/list_changed not sent: ${d(i)}`)
+      })
+    },
+    me = !1,
+    Ae = xD(() => {
+      queueMicrotask(() => {
+        if (me) return;
+        try {
+          xe()
+        } catch (e) {
+          t(`mcp serve: tool re-list on policy verdict failed: ${d(e)}`, {
+            level: "error"
+          })
+        }
+      })
+    }),
+    se = () => x.sendToolListChanged();
+  x.oninitialized = () => {
+    Re(o.host, se)
+  }, x.onclose = () => {
+    he(o.host, se), me = !0, Ae(), ue.abort($l("shutdown"))
+  }, x.setRequestHandler(ove, async () => {
+    await de;
+    let e = await o4s(l, {
+      agentDefinitions: re
+    });
+    return q = e.map((T) => T.name).join(`
+`), {
+      tools: e
+    }
+  });
+  let Oe = {
+    session: o,
+    run: (e) => e(),
+    bind: (e) => e,
+    [Symbol.dispose]: () => {}
+  };
+
+  function X(e, T, i) {
+    let C = Ju(ue),
+      M = () => C.abort($l("remote-cancel"));
+    if (e.aborted) M();
+    else e.addEventListener("abort", M, {
+      once: !0
+    });
+    let B = new be(ke),
+      K, L = () => {
+        if (K ??= {
+            ...Fme(),
+            ...y.kind === "parsed" && {
+              toolPermissionContext: y.context
+            }
+          }, !p) return K;
+        return {
+          ...K,
+          toolPermissionContext: I4e(K.toolPermissionContext)
+        }
+      };
+    return {
+      toolUseContext: {
+        abortController: C,
+        messageQueue: wm(),
+        session: i,
+        agentContext: {
+          agentType: "main",
+          agentId: _S()
+        },
+        options: {
+          commands: [],
+          tools: T,
+          toolCatalog: c8,
+          mainLoopModel: at(),
+          thinkingConfig: {
+            type: "disabled",
+            mechanical: !0
+          },
+          mcpClients: [],
+          mcpResources: {},
+          isNonInteractiveSession: !0,
+          runQuery: SB,
+          debug: r,
+          verbose: u,
+          agentDefinitions: re
+        },
+        getAppState: L,
+        setAppState: () => {},
+        markPrResolvedThisSession: () => {},
+        isUltrareviewOverageConfirmed: () => !1,
+        markUltrareviewOverageConfirmed: () => {},
+        getAdvisorSetting: () => L().advisorModel,
+        getMcp: () => L().mcp,
+        getProactivityLevel: () => L().proactivityLevel,
+        getWebBrowser: () => L().webBrowser,
+        setToolPermissionContext: () => {},
+        setSessionToolPermissionContext: () => {},
+        taskRegistry: mq,
+        queuedNotificationsRegistry: eCt,
+        sessionHooksRegistry: TEt,
+        setWebBrowserSlice: () => {},
+        setArtifactReadVersion: () => {},
+        getArtifactReadObservation: GIe(L),
+        artifactRegistries: JTt(),
+        setArtifactContractTarget: () => {},
+        getArtifactContractTarget: () => ({
+          targetSlug: void 0,
+          pins: {}
+        }),
+        enqueuePendingMemoryUpdate: () => {},
+        agentLifecycle: ZCt,
+        teammateColors: QTt,
+        rootToolSurface: {
+          tools: T,
+          mainLoopModel: at()
+        },
+        messages: [],
+        turnStartIndex: 0,
+        readFileState: we,
+        toolState: B,
+        toolDecisions: new Map,
+        permissionRelays: Hhe,
+        getFileHistoryState: () => {
+          return
+        },
+        applyFileHistoryOp: () => {},
+        applyAttributionOp: () => {},
+        storageV5: f,
+        credentials: ce
+      },
+      toolState: B
+    }
+  }
+  return Pe(x, Jne, p, async ({
+    params: {
+      name: e,
+      arguments: T,
+      _meta: i
+    }
+  }, {
+    signal: C,
+    sendNotification: M,
+    authInfo: B,
+    requestId: K
+  }) => {
+    let {
+      transport: L
+    } = x;
+    using Le = p ? import.meta.require("B:/~BUN/root/chunk-gb5w7ax4.js").servingCall(o.host) : void 0;
+    let Z = async (n) => {
+      if (p) {
+        let v = import.meta.require("B:/~BUN/root/chunk-gb5w7ax4.js");
+        return v.withCpuReport(n, o.host, i, await v.lookAtOtherPrograms(o.host, i))
+      }
+      return n
+    }, ne = p && L !== void 0 && I1n(o.host, i?.[iEo]), fe = () => {
+      if (L !== void 0 && Ue(L)) L.closeSSEStream(K)
+    };
+    if (C.aborted) fe();
+    else C.addEventListener("abort", fe, {
+      once: !0
+    });
+    if (await de, p) {
+      let {
+        refuseCallerInterface: n
+      } = import.meta.require("B:/~BUN/root/chunk-ajbmvhc8.js"), {
+        bringsToolHostPermissionRequest: v
+      } = import.meta.require("B:/~BUN/root/chunk-tng2788x.js"), S = v(i) ? void 0 : n(e, i);
+      if (S !== void 0) return S
+    }
+    if (y.kind === "unreadable") {
+      let n = `${e} was not run: this server could not read its launch settings (CLAUDE_CODE_MCP_SERVE_SETTINGS), so it runs nothing.`;
+      return t(`MCP server: ${n}`, {
+        level: "error"
+      }), {
+        isError: !0,
+        content: [{
+          type: "text",
+          text: n
+        }]
+      }
+    }
+    if (p && L !== void 0) {
+      let {
+        takeSessionEndHooks: n
+      } = import.meta.require("B:/~BUN/root/chunk-yf96qzrb.js");
+      n(i?.[ZIr], {
+        session: o,
+        storageV5: f,
+        credentials: ce
+      })
+    }
+    if (p && E !== void 0) {
+      let {
+        takeShellDirectoryHeld: n
+      } = import.meta.require("B:/~BUN/root/chunk-5zkqx6ah.js");
+      n(i?.[ye], o)
+    }
+    if (p && e !== (await import("B:/~BUN/root/chunk-sw70dqt3.js")).RUN_MONITOR_COMMAND_CALL) {
+      let {
+        bringsToolHostPermissionRequest: n,
+        refusedResult: v
+      } = import.meta.require("B:/~BUN/root/chunk-tng2788x.js");
+      if (n(i)) {
+        let {
+          handleToolHostPermissionRequest: S
+        } = await import("B:/~BUN/root/chunk-2ma8q72f.js"), D = await S({
+          name: e,
+          args: T,
+          meta: i,
+          servedTools: U,
+          launchPermissionContext: E,
+          newCall: () => {
+            let O = X(P4e.has(e) ? _e(C, B) : C, U(), o);
+            return {
+              toolUseContext: O.toolUseContext,
+              release: () => oe(O.toolState)
+            }
+          },
+          startHeartbeat: () => J(i?.progressToken, M),
+          callerLogsSharedEvents: ne
+        });
+        return await Z(D ?? v({
+          code: "unsupported_protocol",
+          message: `${e} was not run: this server gave no answer to the permission request sent with it. Retrying won't help.`
+        }))
+      }
+    }
+    let Se = T?.deny_rules;
+    using A = E === void 0 && !(Array.isArray(Se) && Se.length > 0) ? Oe : (await import("B:/~BUN/root/chunk-genacfpv.js")).ownCallDirectory(o, C);
+    if (p) {
+      let {
+        countedUnlessRepeated: n,
+        SERVED_FILE_CALLS: v
+      } = await import("B:/~BUN/root/chunk-1exy9hh0.js"), S = v.get(e);
+      if (S) {
+        using D = J(i?.progressToken, M);
+        let O, w = B?.extra?.[jqn];
+        try {
+          let {
+            summary: V,
+            output: N
+          } = await n(e, A.bind(() => S(T, C, {
+            tellToolListChanged: se,
+            toolUseContext: () => (O ??= X(C, U(), A.session)).toolUseContext,
+            session: A.session,
+            launchPermissionContext: E,
+            workspaceRoot: h,
+            ...ne && {
+              callerLogsSharedEvents: !0
+            },
+            reportProgress: D.report,
+            callerGone: w instanceof AbortSignal ? w : void 0,
+            meta: i,
+            checkAsServedTool: async (G, s, I) => {
+              let Y = wn(U(), G);
+              if (!Y?.isEnabled()) return {
+                rejection: `${e} was not run: this server does not serve ${G}.`
+              };
+              let z = Jb(Y, s);
+              if (!z.success) return {
+                rejection: `${e} was not run: its input is not valid for ${G}: ${z.error.message}`
+              };
+              let {
+                toolUseContext: Te
+              } = O ??= X(C, U(), A.session), ae = await Y.validateInput?.(z.data, Te);
+              if (ae && !ae.result) return {
+                rejection: `${e} was not run: ${G} refused its input: ${ae.message}`
+              };
+              let Ce = E && I4e(E),
+                ve = I.length === 0 ? Ce : (await import("B:/~BUN/root/chunk-t9trdqw5.js")).withDenyRulesOfOneCall(Ce, I);
+              if (I.length > 0 && ve === void 0) return {
+                rejection: `${e} was not run: one of the deny rules sent with it could not be read. Retrying won't help.`
+              };
+              let {
+                checkPlainCall: Me
+              } = await import("B:/~BUN/root/chunk-tng2788x.js");
+              return Me(Y, z.data, Te, ve, i)
+            }
+          }))), {
+            encodeServedOutput: j
+          } = await import("B:/~BUN/root/chunk-qjm5jsts.js");
+          return await Z(A.run(() => j(V, N)))
+        } catch (V) {
+          let {
+            ServedCallError: N
+          } = await import("B:/~BUN/root/chunk-s80b9xvx.js");
+          return await Z({
+            isError: !0,
+            content: [{
+              type: "text",
+              text: d(V)
+            }],
+            ...V instanceof N && V.meta !== void 0 && {
+              _meta: V.meta
+            }
+          })
+        } finally {
+          if (O) oe(O.toolState)
+        }
+      }
+    }
+    let ee = U(),
+      te = p && P4e.has(e),
+      ge = ne;
+    if (p && !te) {
+      let {
+        answerToolOutputRequest: n
+      } = await import("B:/~BUN/root/chunk-tng2788x.js"), v = await A.run(() => n({
+        name: e,
+        args: T,
+        meta: i,
+        tools: ee,
+        launchPermissionContext: E,
+        newCall: () => {
+          let S = X(C, ee, A.session);
+          return {
+            toolUseContext: S.toolUseContext,
+            release: () => oe(S.toolState)
+          }
+        },
+        startHeartbeat: () => J(i?.progressToken, M)
+      }));
+      if (v !== void 0) return v
+    }
+    let R = te ? tk(vS(), e) : tk(ee, e);
+    if (!R) throw Error(`Tool ${e} not found`);
+    let {
+      toolUseContext: ie,
+      toolState: He
+    } = X(te ? _e(C, B) : C, ee, A.session);
+    try {
+      if (!R.isEnabled()) {
+        let s = `Tool ${e} is not enabled`;
+        return t(`MCP server: ${s}`, {
+          level: "error"
+        }), {
+          isError: !0,
+          content: [{
+            type: "text",
+            text: s
+          }]
+        }
+      }
+      let n = {
+          ...T ?? {}
+        },
+        v = p ? Hme.filter((s) => (s in n)) : [],
+        S = p ? skt(R, n) : Jb(R, n);
+      if (!S.success) {
+        let s = `Tool ${e} arguments failed schema validation: ${S.error.message}`;
+        return t(`MCP server: ${s}`, {
+          level: "error"
+        }), {
+          isError: !0,
+          content: [{
+            type: "text",
+            text: s
+          }]
+        }
+      }
+      let D = await A.run(() => R.validateInput?.(S.data, ie));
+      if (D && !D.result) {
+        let s = `Tool ${e} input is invalid: ${D.message}`;
+        return t(`MCP server: ${s}`, {
+          level: "error"
+        }), {
+          isError: !0,
+          content: [{
+            type: "text",
+            text: s
+          }]
+        }
+      }
+      let O = !1;
+      if (p && b === "rendered") {
+        let {
+          asksForEditResult: s
+        } = await import("B:/~BUN/root/chunk-c6xwthbe.js");
+        O = s(R.name, i)
+      }
+      let w = await A.run(async () => (await import("B:/~BUN/root/chunk-tng2788x.js")).checkPlainCall(R, S.data, ie, p && E !== void 0 ? I4e(E) : E, i));
+      if ("rejection" in w) return t(`MCP server: ${w.rejection}`, {
+        level: "error"
+      }), {
+        isError: !0,
+        content: [{
+          type: "text",
+          text: w.rejection
+        }],
+        ...w.meta !== void 0 && {
+          _meta: w.meta
+        }
+      };
+      using V = J(i?.progressToken, M);
+      let N = await A.run(() => R.call(S.data, {
+          ...w.toolUseContext,
+          permissionPhase: w.toolUseContext.permissionPhase ?? {}
+        }, Kw, el({
+          content: []
+        }), void 0, b === "raw" ? {
+          gitDiffRead: !0
+        } : O ? {
+          smallResultAsked: !0
+        } : void 0)),
+        j, G = !1;
+      if (te) {
+        let {
+          encodeUnlistedToolResult: s
+        } = await import("B:/~BUN/root/chunk-qjm5jsts.js");
+        j = A.run(() => s(R, N))
+      } else if (b === "rendered") {
+        let {
+          renderToolResultForMCP: s,
+          withinAnswerLimit: I
+        } = await import("B:/~BUN/root/chunk-wvn4pn5q.js"), {
+          answer: Y,
+          tooLarge: z
+        } = I(R, await A.run(() => s(R, N, ie)));
+        j = O ? await (await import("B:/~BUN/root/chunk-c6xwthbe.js")).withEditResult(Y, N) : Y, G = z
+      }
+      if (j === void 0) {
+        let s = N.data,
+          I = typeof s === "object" && s !== null && "backgroundTaskId" in s && typeof s.backgroundTaskId === "string" ? {
+            ...s,
+            backgroundOutputPath: Rd(s.backgroundTaskId)
+          } : s;
+        j = {
+          content: [{
+            type: "text",
+            text: _(I)
+          }]
+        }
+      }
+      if (v.length > 0) {
+        let s = ikt(v),
+          I = j.content.at(-1);
+        if (I?.type === "text") I.text += `
+${s}`;
+        else j.content.push({
+          type: "text",
+          text: s
+        })
+      }
+      if (!ge)
+        if (G) c(o8t(R.name), "result_too_large");
+        else g(o8t(R.name));
+      return await Z(j)
+    } catch (n) {
+      let S = (n instanceof Error ? fts(n) : [String(n)]).filter(Boolean).join(`
+`).trim() || "Error";
+      if (mct(n)) t(`MCP server tool call '${e}' aborted`);
+      else {
+        let {
+          code: D,
+          isSad: O
+        } = s8t(n);
+        if (O) {
+          if (t(`MCP server tool call '${e}' failed: ${S}`, {
+              level: "error"
+            }), !ge) c(o8t(R.name), D)
+        } else {
+          let w = F(n);
+          a("telemetryMessage" in w ? w : qe(w, `mcp server tool '${R.name}' threw`)), m(o8t(R.name), D)
+        }
+      }
+      return await Z({
+        isError: !0,
+        content: [{
+          type: "text",
+          text: S
+        }]
+      })
+    } finally {
+      oe(He)
+    }
+  }), x
+}
+
+function oe(r) {}
+
+function _e(r, u) {
+  let o = u?.extra?.[jqn];
+  return o instanceof AbortSignal ? AbortSignal.any([r, o]) : r
+}
+export {
+  pUr,
+  Rqs,
+  Tun,
+  _Mo,
+  Aqs,
+  jqn,
+  zpa,
+  mUr
+};

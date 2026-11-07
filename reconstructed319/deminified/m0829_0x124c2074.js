@@ -1,0 +1,154 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { g, c } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import { p } from "B:/~BUN/root/chunk-z6138ats.js";
+import { ee } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { o, oe, C, u, me, T } from "B:/~BUN/root/chunk-4bfd0jkf.js";
+var saa = '<wake reason="external-event"';
+function kci(e) {
+  return e.startsWith(saa);
+}
+var A = /^[a-z0-9-]{1,32}$/,
+  O = /^[a-z0-9_.-]{1,64}$/,
+  b = 2048,
+  f = /([a-z][a-z-]*)="([^"\s]{0,256})"/g,
+  W = new Set(["reason", "current-time"]),
+  N = new Set(["source", "kind", "from", "trust", "untrusted-keys"]),
+  P = p(() => me(o(), oe()));
+function d(e) {
+  return e.trim() === "";
+}
+function Zke(e) {
+  if (!kci(e)) return null;
+  let n = e.indexOf(">");
+  if (n === -1 || n > b) return null;
+  let r = e.slice(5, n);
+  if (!d(r.replace(f, " "))) return null;
+  for (let i of r.matchAll(f)) if (!W.has(i[1])) return null;
+  let t = e.indexOf("<event ", n + 1);
+  if (t === -1 || !d(e.slice(n + 1, t))) return null;
+  let s = e.indexOf(">", t);
+  if (s === -1 || s - t > b) return null;
+  let E = e.indexOf("</event>", s + 1);
+  if (E === -1) return null;
+  let y = E + 8,
+    m = e.indexOf("</wake>", y);
+  if (m === -1 || !d(e.slice(y, m))) return null;
+  if (!d(e.slice(m + 7))) return null;
+  let a = new Map(),
+    h = e.slice(t + 6, s);
+  if (!d(h.replace(f, " "))) return null;
+  for (let i of h.matchAll(f)) {
+    if (!N.has(i[1])) return null;
+    let S = i[1];
+    if (!a.has(S)) a.set(S, i[2]);
+  }
+  let source = a.get("source"),
+    kind = a.get("kind");
+  if (source === void 0 || kind === void 0 || !A.test(source) || !O.test(kind)) return null;
+  let l = e.slice(s + 1, E),
+    x = l.indexOf("<!--");
+  if (x !== -1) {
+    if (!d(l.slice(0, x))) return null;
+    let i = l.indexOf("-->", x + 4);
+    if (i === -1) return null;
+    l = l.slice(i + 3);
+  }
+  let data = w(l);
+  if (data === null) return null;
+  let R = a.get("from"),
+    untrustedKeys = (a.get("untrusted-keys") ?? "").split(",").filter(item => item !== "");
+  return {
+    source: source,
+    kind: kind,
+    ...(R !== void 0 && {
+      from: R
+    }),
+    data: data,
+    untrustedKeys: untrustedKeys
+  };
+}
+var v = /^[^"'<>&\s]{0,256}$/,
+  j = /^[^"'<>&\s,]{1,256}$/,
+  K = p(() => u({
+    reason: T("external-event"),
+    current_time: o().regex(v),
+    event: u({
+      source: o().regex(A),
+      kind: o().regex(O),
+      from: o().regex(v),
+      trust: o().regex(v),
+      untrusted_keys: C(o().regex(j)).refine(e => e.join(",").length <= 256).optional(),
+      guidance: o().refine(e => !e.includes("--") && !e.includes("</event>")).optional(),
+      data: o()
+    })
+  }));
+function p_a(e, n) {
+  if (!kci(e)) return null;
+  let r = K().safeParse(n);
+  if (!r.success) {
+    if (B().safeParse(n).success) c("ccr_external_event_record", "malformed_record");
+    return Zke(e);
+  }
+  let {
+    event: event
+  } = r.data;
+  if (D(r.data) !== e) return c("ccr_external_event_record", "text_mismatch"), Zke(e);
+  let data_2 = w(event.data);
+  if (data_2 === null) return c("ccr_external_event_record", "malformed_record"), Zke(e);
+  return g("ccr_external_event_record"), {
+    source: event.source,
+    kind: event.kind,
+    from: event.from,
+    data: data_2,
+    untrustedKeys: event.untrusted_keys ?? []
+  };
+}
+var B = p(() => u({
+  reason: T("external-event")
+}));
+function D({
+  current_time: current_time,
+  event: event_2
+}) {
+  let r = event_2.untrusted_keys === void 0 || event_2.untrusted_keys.length === 0 ? "" : ` untrusted-keys="${event_2.untrusted_keys.join(",")}"`,
+    t = event_2.guidance === void 0 || event_2.guidance === "" ? "" : `    <!-- ${event_2.guidance} -->
+`,
+    s = event_2.data.replaceAll("<", "\\u003c").replaceAll(">", "\\u003e").replaceAll("&", "\\u0026");
+  return `<wake reason="external-event" current-time="${current_time}">
+  <event source="${event_2.source}" kind="${event_2.kind}" from="${event_2.from}" trust="${event_2.trust}"${r}>
+` + t + `    ${s}
+  </event>
+</wake>`;
+}
+function w(e) {
+  let n = e.trim();
+  if (!n.startsWith("{")) return null;
+  let r;
+  try {
+    r = ee(n);
+  } catch {
+    return null;
+  }
+  if (typeof r !== "object" || r === null || Array.isArray(r)) return null;
+  let t = P().safeParse(r);
+  return t.success ? t.data : null;
+}
+function t3e(e) {
+  return e.source === "session-inbox" && e.kind === "message.received";
+}
+function Lnr(e) {
+  return e?.kind === "task-notification" && e.subkind === "session-inbox";
+}
+function mRt(e) {
+  return t3e(e) && e.from === "rc_owner" && e.data.sender_kind === "rc_owner";
+}
+function z3o(e, n) {
+  if (!Lnr(e)) return;
+  let r = Zke(n),
+    t = r !== null && mRt(r) ? r.data.file_id : void 0;
+  return typeof t === "string" ? t : void 0;
+}
+export { saa, kci, Zke, p_a, t3e, Lnr, mRt, z3o };

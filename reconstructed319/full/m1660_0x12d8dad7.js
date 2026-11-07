@@ -1,0 +1,475 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  Mw
+} from "B:/~BUN/root/chunk-bkfncj77.js";
+import {
+  bi,
+  $Hr
+} from "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  D
+} from "B:/~BUN/root/chunk-8mqsat26.js";
+import {
+  Mi
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  Fw,
+  L
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+var y = {
+  assistant: !0,
+  user: !0,
+  result: !0,
+  system: !0,
+  stream_event: !0,
+  tool_progress: !0,
+  tool_use_summary: !0,
+  rate_limit_event: !0,
+  prompt_suggestion: !0,
+  conversation_reset: !0,
+  command_lifecycle: !0,
+  transcript_mirror: !1,
+  auth_status: !1,
+  active_goal: !1,
+  autocompact_state: !1,
+  keep_alive: !1,
+  control_request: !1,
+  control_response: !1,
+  control_cancel_request: !1
+};
+
+function W0o(e) {
+  return Object.hasOwn(y, e) ? y[e] : void 0
+}
+
+function Brt(e) {
+  return W0o(e) !== void 0
+}
+var Dfn = 30000,
+  Lfn = 120000;
+
+function M(e) {
+  return typeof e === "string" ? bi(e, {
+    maxCodeUnits: 512
+  }) : void 0
+}
+
+function _(e) {
+  return bi(e, {
+    maxCodeUnits: 64
+  })
+}
+var b = 32,
+  z0o = "Starting Claude Code",
+  B = 1000,
+  w = 86400000,
+  C = 5;
+
+function S(e) {
+  if (typeof e !== "string") return;
+  let s = $Hr(e, C);
+  return s.length === 0 ? void 0 : s
+}
+
+function R(e) {
+  if (typeof e === "number") return Number.isSafeInteger(e) ? e : void 0;
+  return typeof e === "string" && /^-?\d{1,15}$/.test(e) ? Number(e) : void 0
+}
+var E = 300000;
+
+function Nfn(e, s) {
+  let n = e.data?.timestamp;
+  if (typeof n !== "string") return !1;
+  let o = Date.parse(n);
+  return !Number.isNaN(o) && s - o > E
+}
+var h = ["provision", "clone", "setup_script", "start_cc"];
+
+function r6s(e) {
+  return h.includes(e)
+}
+var T = 60000,
+  F = 5000;
+
+function I(e, s, n) {
+  let o = e.data?.timestamp;
+  if (typeof o !== "string") return !1;
+  let r = Date.parse(o);
+  return Number.isFinite(r) && Math.abs(s - r) <= T && r >= n - F
+}
+
+function V$e(e, {
+  wake: s
+}) {
+  return {
+    steps: h.map((n) => ({
+      id: n,
+      status: "pending"
+    })),
+    sessionMode: null,
+    setupSource: null,
+    wake: s,
+    startedAt: e,
+    hasStructuredSteps: !1,
+    terminal: !1,
+    dismissed: !1,
+    sawLiveFrame: !1,
+    hadLiveCycle: !1,
+    queuedCount: 0
+  }
+}
+
+function H4e(e) {
+  let s = e.data?.extra;
+  return {
+    stepId: typeof s?.step_id === "string" ? _(s.step_id) : null,
+    stepStatus: typeof s?.step_status === "string" ? s.step_status : null
+  }
+}
+
+function o6s(e, s) {
+  if (e === null || !e.hasStructuredSteps || e.terminal) return null;
+  return x(s)
+}
+
+function x(e) {
+  switch (e.type) {
+    case "system":
+      return e.subtype === "init_milestone" || e.subtype === "informational" ? "notice" : null;
+    case "assistant":
+      return e.isApiErrorMessage === !0 && D(e.message) && e.message.model === Mi ? "notice" : null;
+    case "result":
+      return D(e.runner_exit) && "phase" in e.runner_exit ? "failed" : null;
+    default:
+      return null
+  }
+}
+
+function s6s(e) {
+  return Brt(e.type) && x(e) === null
+}
+
+function i6s(e, s) {
+  let o = e.steps.findLast((r) => r.status === "running") ?? e.steps.find((r) => r.status === "pending");
+  if (o === void 0 || e.steps.some((r) => r.status === "failed")) return e;
+  return {
+    ...e,
+    steps: e.steps.map((r) => r === o ? {
+      ...r,
+      status: "failed",
+      completedAt: s,
+      detail: void 0
+    } : r)
+  }
+}
+
+function FYn(e, s, n, o, r) {
+  let d = s.data?.extra,
+    {
+      stepId: c,
+      stepStatus: a
+    } = H4e(s),
+    t = (e.terminal || c === "provision" && a !== "failed" && e.steps.some((i) => i.status === "failed")) && c !== null && a !== null ? {
+      ...V$e(o, {
+        wake: !0
+      }),
+      dismissed: e.hadLiveCycle,
+      hadLiveCycle: e.hadLiveCycle
+    } : e;
+  if (c !== null && a !== null && !t.sawLiveFrame && I(s, o, r)) t = {
+    ...t,
+    sawLiveFrame: !0
+  };
+  if (typeof d?.session_mode === "string") {
+    let i = d.session_mode;
+    if ((i === "new" || i === "resume" || i === "resume-cached" || i === "setup-only") && t.sessionMode !== i) t = {
+      ...t,
+      sessionMode: i
+    }
+  }
+  let l = d?.setup_source;
+  if ((l === "checkpoint" || l === "building_checkpoint" || l === "checkpoint_restore_failed") && t.setupSource !== l) t = {
+    ...t,
+    setupSource: l
+  };
+  let p = R(d?.setup_script_duration_ms);
+  if (p !== void 0 && p >= B && p <= w && t.setupScriptDurationMs !== p && !t.steps.some((i) => i.id === "setup_script" && i.status === "completed")) t = {
+    ...t,
+    setupScriptDurationMs: p
+  };
+  if (typeof d?.expected_steps === "string") {
+    let i = L(d.expected_steps.split(",").map((u) => _(u)).filter((u) => u !== "")).slice(0, b);
+    if (i.length > 0) {
+      let u = new Map(t.steps.map((m) => [m.id, m])),
+        g = i.map((m) => u.get(m) ?? {
+          id: m,
+          status: "pending"
+        }),
+        A = t.steps.filter((m) => !i.includes(m.id) && m.status !== "pending");
+      t = {
+        ...t,
+        steps: [...A, ...g]
+      }
+    }
+  }
+  if (c !== null && a !== null) t = P(t, {
+    stepId: c,
+    stepStatus: a,
+    extra: d,
+    line: n,
+    now: o
+  });
+  else if (n !== "") {
+    let i = t.steps.findIndex((u) => u.status === "running");
+    if (i !== -1 && t.steps[i].detail !== n) {
+      let u = t.steps.slice();
+      u[i] = {
+        ...u[i],
+        detail: n
+      }, t = {
+        ...t,
+        steps: u
+      }
+    }
+  }
+  return t
+}
+
+function P(e, {
+  stepId: s,
+  stepStatus: n,
+  extra: o,
+  line: r,
+  now: d
+}) {
+  let c = _(s),
+    a = e.steps,
+    f = a.findIndex((u) => u.id === c);
+  if (f === -1) {
+    if (a.length >= b) return e;
+    let u = M(o?.step_label) || r;
+    a = [...a, {
+      id: c,
+      label: u,
+      status: "pending"
+    }], f = a.length - 1
+  }
+  let t = a[f],
+    l = typeof o?.progress_label === "string" && r !== "" ? r : M(o?.step_detail),
+    p = null;
+  switch (n) {
+    case "started":
+      if (t.status === "pending") p = {
+        ...t,
+        status: "running",
+        startedAt: d,
+        detail: l,
+        output: S(o?.output)
+      };
+      else {
+        let u = l ?? t.detail,
+          g = (t.status === "running" ? S(o?.output) : void 0) ?? t.output;
+        if (u !== t.detail || !Fw(g, t.output)) p = {
+          ...t,
+          detail: u,
+          output: g
+        }
+      }
+      break;
+    case "completed":
+      if (c === "clone" && (l || typeof o?.clone_phase === "string")) break;
+      if (t.status !== "completed") p = {
+        ...t,
+        status: "completed",
+        completedAt: d,
+        completedMode: $4e(e),
+        detail: void 0,
+        output: void 0
+      };
+      break;
+    case "failed": {
+      let u = {
+        ...t,
+        status: "failed",
+        completedAt: t.status === "failed" ? t.completedAt : d,
+        error: r || void 0,
+        output: S(o?.output) ?? t.output,
+        exitCode: R(o?.exit_code) ?? t.exitCode
+      };
+      if (t.status !== "failed" || t.error !== u.error || t.exitCode !== u.exitCode || !Fw(t.output, u.output)) p = u;
+      break
+    }
+    case "skipped":
+      if (t.status === "pending" || t.status === "running") p = {
+        ...t,
+        status: "skipped",
+        detail: void 0
+      };
+      break;
+    default:
+      break
+  }
+  if (p !== null) a = a === e.steps ? e.steps.slice() : a, a[f] = p;
+  if (a === e.steps) return e;
+  let i = {
+    ...e,
+    steps: a,
+    hasStructuredSteps: !0
+  };
+  if (c === "start_cc" && n === "completed") i = G0o(i, d);
+  return i
+}
+
+function G0o(e, s) {
+  if (e.terminal) return e;
+  let n = $4e(e),
+    o = e.steps.map((r) => r.status === "pending" ? {
+      ...r,
+      status: "skipped"
+    } : r.status === "running" ? {
+      ...r,
+      status: "completed",
+      completedAt: s,
+      completedMode: n
+    } : r);
+  return {
+    ...e,
+    steps: o,
+    terminal: !0,
+    completedAt: s,
+    hadLiveCycle: e.hadLiveCycle || e.sawLiveFrame
+  }
+}
+
+function $4e(e) {
+  switch (e.sessionMode) {
+    case "resume":
+      return "resume";
+    case "resume-cached":
+      switch (e.setupSource) {
+        case "checkpoint":
+          return "restored";
+        case "checkpoint_restore_failed":
+        case "building_checkpoint":
+          return "new";
+        case null:
+          break
+      }
+      return e.wake ? "resume" : "new";
+    case "new":
+    case "setup-only":
+    case null:
+      return "new"
+  }
+}
+
+function K$e(e, s) {
+  let n = e.status === "completed",
+    o = (n ? e.completedMode : void 0) ?? s;
+  switch (e.id) {
+    case "provision":
+      if (o === "resume") return n ? "Resumed your cloud container" : "Resuming your cloud container";
+      return n ? "Set up a cloud container" : "Setting up a cloud container";
+    case "clone":
+      if (o !== "new") return n ? "Refreshed repository" : "Refreshing repository";
+      return n ? "Cloned repository" : "Cloning repository";
+    case "setup_script":
+      if (e.status === "failed") return "Setup script failed";
+      if (n) return o === "restored" ? "Restored from snapshot" : "Ran setup script";
+      return "Running setup script";
+    case "start_cc":
+      return n ? "Started Claude Code" : z0o;
+    default:
+      return e.label || e.id
+  }
+}
+
+function pzt(e, s = !1) {
+  if (s) return e === "resume" ? "Cloud session didn't resume" : "Cloud session didn't start";
+  switch (e) {
+    case "new":
+      return "Setting up remote session";
+    case "resume":
+      return "Resuming remote session";
+    case "restored":
+      return "Restored from snapshot of setup script"
+  }
+}
+
+function V0o(e, s, n) {
+  if (s.status === "completed") return (s.completedMode ?? n) === "restored" && e.setupScriptDurationMs !== void 0 ? ` \xB7 saved about ${Mw(e.setupScriptDurationMs)}` : "";
+  if (s.status !== "pending" && s.status !== "running") return "";
+  switch (e.setupSource) {
+    case "building_checkpoint":
+      return " \xB7 saving so your next session skips this";
+    case "checkpoint_restore_failed":
+      return " \xB7 couldn't use snapshot";
+    case "checkpoint":
+    case null:
+      return ""
+  }
+}
+
+function a6s(e) {
+  let s = e.terminal ? null : e.sessionMode,
+    n = $4e({
+      sessionMode: s ?? (e.hadLiveCycle ? "resume" : null),
+      setupSource: e.setupSource,
+      wake: e.wake
+    }),
+    o = e.steps.findLast((r) => r.status === "running");
+  return o && K$e(o, n) || pzt(n)
+}
+
+function HYn(e) {
+  let s = $4e(e),
+    n = (e.completedAt ?? e.startedAt) - e.startedAt,
+    o = k(n);
+  switch (s) {
+    case "new":
+      return `Remote session ready in ${o}`;
+    case "resume":
+      return `Remote session resumed in ${o}`;
+    case "restored":
+      return `Remote session ready in ${o} \xB7 restored from snapshot`
+  }
+}
+
+function Pkt(e, s) {
+  if (e.startedAt === void 0) return "";
+  if (e.status === "completed") return e.completedAt === void 0 ? "" : ` (${k(e.completedAt-e.startedAt)})`;
+  let n = Math.max(0, s - e.startedAt);
+  return e.status === "running" && n >= 5000 ? ` (${Math.round(n/1000)}s)` : ""
+}
+
+function k(e) {
+  if (e < 1e4) return `${(Math.max(e,100)/1000).toFixed(1)}s`;
+  let s = Math.round(e / 1000);
+  if (s < 60) return `${s}s`;
+  return `${Math.floor(s/60)}m ${s%60}s`
+}
+export {
+  W0o,
+  Brt,
+  Dfn,
+  Lfn,
+  z0o,
+  Nfn,
+  r6s,
+  V$e,
+  H4e,
+  o6s,
+  s6s,
+  i6s,
+  FYn,
+  G0o,
+  $4e,
+  K$e,
+  pzt,
+  V0o,
+  a6s,
+  HYn,
+  Pkt
+};

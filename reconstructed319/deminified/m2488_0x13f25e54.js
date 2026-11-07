@@ -1,0 +1,1928 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import { z } from "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import { f } from "B:/~BUN/root/chunk-drx9cnw1.js";
+import { Ke, R, d, k, K, Ai } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { ga, J, P0, we } from "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import { i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { t, ee, Iwe } from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import { mwt, St, a } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import { l } from "B:/~BUN/root/chunk-mb9chr1y.js";
+import { g, m, c } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-z6138ats.js";
+import "B:/~BUN/root/chunk-8f4z6bdn.js";
+import { AR, ta, Yfe } from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import { Hr, zR, Ve } from "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import { le } from "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import "B:/~BUN/root/chunk-sy1h8mf0.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-fkr27nhj.js";
+import "B:/~BUN/root/chunk-thn0wk2x.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import { Om, Qte } from "B:/~BUN/root/chunk-t4qpmjt5.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import { eg, PSt } from "B:/~BUN/root/chunk-1g25msn4.js";
+import { tjs, Ld, jn } from "B:/~BUN/root/chunk-rr294jrm.js";
+import { V } from "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import { YHt, bU, QHt, B3, eIr, Kbe, gu, Ife, ul, mFe, Yd, eSe, Le, fe, EE } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-zn7b14jn.js";
+import { Bs, Kn } from "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import { tc, qS } from "B:/~BUN/root/chunk-xqymp2nr.js";
+import { El } from "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import { oKe } from "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import { Fc } from "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-0s9zh2h6.js";
+import "B:/~BUN/root/chunk-yhafkw66.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import { uBt } from "B:/~BUN/root/chunk-qfq22jk9.js";
+import { Xn } from "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-7pj7keyk.js";
+import { bA, JW, pD, ELe as getAccessToken, gLt, E1, VJe } from "B:/~BUN/root/chunk-q2s07yzr.js";
+import "B:/~BUN/root/chunk-ckdgegnz.js";
+import "B:/~BUN/root/chunk-2392ztjf.js";
+import { ibe, PKi, $Ft } from "B:/~BUN/root/chunk-teehnwdh.js";
+import { gmo, r7e } from "B:/~BUN/root/chunk-x4zqd4cy.js";
+import { mxt, xje, sxn, Fd, cxn, gss, uxn, k9, XOt, T6, pDe, Opr, mDe, Lct, Coo, Roo, mye, gxn, JOt, yxn, jde, ji, eoe, LEe, _xn, w9t, l9e, qss, sZ, k9t, iZ, Yss, Nk, noe, dq, cy, roe, Fct, _F, bm } from "B:/~BUN/root/chunk-27h4st9h.js";
+import "B:/~BUN/root/chunk-7pxn9dsp.js";
+import "B:/~BUN/root/chunk-n0v0c6zt.js";
+import "B:/~BUN/root/chunk-2x2z0t2k.js";
+import "B:/~BUN/root/chunk-42915bn6.js";
+import "B:/~BUN/root/chunk-vk5b2c7t.js";
+import "B:/~BUN/root/chunk-tjfmeakx.js";
+import "B:/~BUN/root/chunk-j6ahtce9.js";
+import "B:/~BUN/root/chunk-jxvayzd7.js";
+import "B:/~BUN/root/chunk-838fxqce.js";
+import { H0t, z_s, Dx } from "B:/~BUN/root/chunk-e8znf4zw.js";
+import { hO } from "B:/~BUN/root/chunk-5w7xhbnh.js";
+import "B:/~BUN/root/chunk-xfqs9tac.js";
+import "B:/~BUN/root/chunk-nwv7r07s.js";
+import "B:/~BUN/root/chunk-vmp6vbba.js";
+import "B:/~BUN/root/chunk-dxwyqd26.js";
+import "B:/~BUN/root/chunk-k5mszhcg.js";
+import "B:/~BUN/root/chunk-z4janqzm.js";
+import "B:/~BUN/root/chunk-cxcakgnv.js";
+import "B:/~BUN/root/chunk-zymc6pem.js";
+import "B:/~BUN/root/chunk-hvykkx00.js";
+import { gn, xd, WRs } from "B:/~BUN/root/chunk-f0zgv0ya.js";
+import "B:/~BUN/root/chunk-kpr2et3s.js";
+import "B:/~BUN/root/chunk-rpagz3p9.js";
+import "B:/~BUN/root/chunk-rzc1dapy.js";
+import "B:/~BUN/root/chunk-ghar8fn5.js";
+import "B:/~BUN/root/chunk-8cgm9m8p.js";
+import { b0n } from "B:/~BUN/root/chunk-5gm1xyqv.js";
+import "B:/~BUN/root/chunk-hh77nseb.js";
+import "B:/~BUN/root/chunk-7rwbs73j.js";
+import "B:/~BUN/root/chunk-gr5se97s.js";
+import "B:/~BUN/root/chunk-78494p3w.js";
+import "B:/~BUN/root/chunk-6j3fjnhn.js";
+import "B:/~BUN/root/chunk-sgy380eg.js";
+import "B:/~BUN/root/chunk-22y97556.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import "B:/~BUN/root/chunk-1012essb.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import "B:/~BUN/root/chunk-wxhfn3za.js";
+import "B:/~BUN/root/chunk-pdtjaehv.js";
+import "B:/~BUN/root/chunk-x6frvp1m.js";
+import { $d } from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import "B:/~BUN/root/chunk-eds8xkh8.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import "B:/~BUN/root/chunk-y5gyn2hc.js";
+import "B:/~BUN/root/chunk-9t9ygsbp.js";
+import "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import "B:/~BUN/root/chunk-9bs2y8fc.js";
+import "B:/~BUN/root/chunk-knfpag6d.js";
+import "B:/~BUN/root/chunk-hr1m6fe3.js";
+import "B:/~BUN/root/chunk-cvaa202c.js";
+import "B:/~BUN/root/chunk-detjgwj4.js";
+import "B:/~BUN/root/chunk-6v74v9ar.js";
+import "B:/~BUN/root/chunk-eak7wp7z.js";
+import "B:/~BUN/root/chunk-mbh2s41k.js";
+import "B:/~BUN/root/chunk-jh04j3yr.js";
+import "B:/~BUN/root/chunk-v29ccgfa.js";
+import "B:/~BUN/root/chunk-2r9r3hfm.js";
+import "B:/~BUN/root/chunk-sjvfcp1z.js";
+import "B:/~BUN/root/chunk-s9vv4h32.js";
+import "B:/~BUN/root/chunk-7thhw21a.js";
+import "B:/~BUN/root/chunk-wm0axmjp.js";
+import "B:/~BUN/root/chunk-3kdxvefh.js";
+import "B:/~BUN/root/chunk-4tp5kqnx.js";
+import "B:/~BUN/root/chunk-m8dg5txf.js";
+import "B:/~BUN/root/chunk-ekqreyhv.js";
+import "B:/~BUN/root/chunk-apgsnbqk.js";
+import "B:/~BUN/root/chunk-vs3bcjd7.js";
+import "B:/~BUN/root/chunk-pmr34yc8.js";
+import "B:/~BUN/root/chunk-b5ry9py2.js";
+import "B:/~BUN/root/chunk-de98q5we.js";
+import "B:/~BUN/root/chunk-mwy4xyee.js";
+import "B:/~BUN/root/chunk-ajpcs9fs.js";
+import "B:/~BUN/root/chunk-gq4ywexf.js";
+import "B:/~BUN/root/chunk-p2ta953m.js";
+import { Em, VLe } from "B:/~BUN/root/chunk-ke150ry1.js";
+import "B:/~BUN/root/chunk-j05gjqgd.js";
+import "B:/~BUN/root/chunk-eswth6m1.js";
+import "B:/~BUN/root/chunk-gezr7m08.js";
+import "B:/~BUN/root/chunk-tdekz3md.js";
+import "B:/~BUN/root/chunk-wss0tnsx.js";
+import "B:/~BUN/root/chunk-vzhm698f.js";
+import "B:/~BUN/root/chunk-4xvtrfzh.js";
+import "B:/~BUN/root/chunk-jbf2dde1.js";
+import "B:/~BUN/root/chunk-xgwmwbnb.js";
+import "B:/~BUN/root/chunk-rhdsefgz.js";
+import "B:/~BUN/root/chunk-2fedt3ag.js";
+import "B:/~BUN/root/chunk-bfwh5k9e.js";
+import "B:/~BUN/root/chunk-psjm1gcn.js";
+import "B:/~BUN/root/chunk-kfm993xq.js";
+import "B:/~BUN/root/chunk-6h5p2dxf.js";
+import "B:/~BUN/root/chunk-tdg0k3wq.js";
+import "B:/~BUN/root/chunk-n98vg3jf.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-2gz7xsvb.js";
+import "B:/~BUN/root/chunk-02j0cm13.js";
+import "B:/~BUN/root/chunk-0s00dkj6.js";
+import "B:/~BUN/root/chunk-hevmq1yj.js";
+import "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-ddamx62b.js";
+import "B:/~BUN/root/chunk-0aq7t0nw.js";
+import "B:/~BUN/root/chunk-fnf5t6te.js";
+import "B:/~BUN/root/chunk-ajvcvya3.js";
+import "B:/~BUN/root/chunk-63btkzab.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-vke7wtay.js";
+import "B:/~BUN/root/chunk-x9bz04wf.js";
+import "B:/~BUN/root/chunk-6g8w5kyh.js";
+import { Kr, Es } from "B:/~BUN/root/chunk-jmt91fq8.js";
+import "B:/~BUN/root/chunk-5x4j33v9.js";
+import "B:/~BUN/root/chunk-mf9c9p38.js";
+import "B:/~BUN/root/chunk-2htsebsg.js";
+import "B:/~BUN/root/chunk-875j4y83.js";
+import "B:/~BUN/root/chunk-t4pbv0np.js";
+import "B:/~BUN/root/chunk-yg4ttpr7.js";
+import "B:/~BUN/root/chunk-mjgazsjk.js";
+import "B:/~BUN/root/chunk-2f6ykbbh.js";
+import "B:/~BUN/root/chunk-z7bs0q82.js";
+import "B:/~BUN/root/chunk-5g1gmfkv.js";
+import "B:/~BUN/root/chunk-s89g0dw7.js";
+import "B:/~BUN/root/chunk-rv3pfsrw.js";
+import "B:/~BUN/root/chunk-pw7914mv.js";
+import "B:/~BUN/root/chunk-hjds4dtx.js";
+import "B:/~BUN/root/chunk-8qv1t8b3.js";
+import "B:/~BUN/root/chunk-b7bhhce8.js";
+import "B:/~BUN/root/chunk-sx264pby.js";
+import "B:/~BUN/root/chunk-cj2cn5y2.js";
+import "B:/~BUN/root/chunk-6bx54the.js";
+import "B:/~BUN/root/chunk-m1v50w96.js";
+import "B:/~BUN/root/chunk-076mmgjt.js";
+import "B:/~BUN/root/chunk-5bb21frh.js";
+import "B:/~BUN/root/chunk-vp8vb7t8.js";
+import "B:/~BUN/root/chunk-xkw95p5n.js";
+import "B:/~BUN/root/chunk-sa4785jr.js";
+import "B:/~BUN/root/chunk-nk59bmc9.js";
+import "B:/~BUN/root/chunk-n7ta2s3w.js";
+import "B:/~BUN/root/chunk-65j4e9bn.js";
+import "B:/~BUN/root/chunk-ex2shtaj.js";
+import "B:/~BUN/root/chunk-64qg3pvz.js";
+import "B:/~BUN/root/chunk-jv4ech2n.js";
+import "B:/~BUN/root/chunk-5fdpyc78.js";
+import "B:/~BUN/root/chunk-ybkgfvgz.js";
+import "B:/~BUN/root/chunk-gknte1ng.js";
+import "B:/~BUN/root/chunk-4tz0m6qq.js";
+import "B:/~BUN/root/chunk-3qkmk2e4.js";
+import "B:/~BUN/root/chunk-b3jc87kv.js";
+import "B:/~BUN/root/chunk-11wz0rq6.js";
+import "B:/~BUN/root/chunk-vy4t7613.js";
+import "B:/~BUN/root/chunk-kexqfgtm.js";
+import "B:/~BUN/root/chunk-wt8tyqt4.js";
+import "B:/~BUN/root/chunk-kfnabvp7.js";
+import "B:/~BUN/root/chunk-jj9s326a.js";
+import "B:/~BUN/root/chunk-p8dysp9f.js";
+import "B:/~BUN/root/chunk-dcmvdxnm.js";
+import "B:/~BUN/root/chunk-kk81ayzj.js";
+import { dh } from "B:/~BUN/root/chunk-rc0vwsyy.js";
+import "B:/~BUN/root/chunk-c86vwcts.js";
+import "B:/~BUN/root/chunk-6sbka0ts.js";
+import "B:/~BUN/root/chunk-05q1awc0.js";
+import "B:/~BUN/root/chunk-wzeexm6f.js";
+import "B:/~BUN/root/chunk-dwbkkfd6.js";
+import "B:/~BUN/root/chunk-k5xd4a86.js";
+import "B:/~BUN/root/chunk-98qgaht2.js";
+import "B:/~BUN/root/chunk-r1gg0qbg.js";
+import "B:/~BUN/root/chunk-5m83sh3a.js";
+import "B:/~BUN/root/chunk-pm850sj6.js";
+import "B:/~BUN/root/chunk-w0kge9aq.js";
+import "B:/~BUN/root/chunk-ysxmr1nk.js";
+import "B:/~BUN/root/chunk-8rnfdnh3.js";
+import "B:/~BUN/root/chunk-7wcc5pbk.js";
+import "B:/~BUN/root/chunk-400x0tcq.js";
+import "B:/~BUN/root/chunk-1tbewxs3.js";
+import "B:/~BUN/root/chunk-rrf8gvt4.js";
+import "B:/~BUN/root/chunk-7vfy9z2g.js";
+import "B:/~BUN/root/chunk-ftj46fnn.js";
+import "B:/~BUN/root/chunk-45td50dx.js";
+import "B:/~BUN/root/chunk-3vrk9h6f.js";
+import "B:/~BUN/root/chunk-0xtfwyhv.js";
+import "B:/~BUN/root/chunk-z2c6k7e2.js";
+import "B:/~BUN/root/chunk-h6zqt1s4.js";
+import { Lx, uSs, Rpo, gvr, qZt, QZ, pSs, SLe, ySs, _Ss, Ppo } from "B:/~BUN/root/chunk-jmka9ye7.js";
+import "B:/~BUN/root/chunk-qk8tvzkn.js";
+import "B:/~BUN/root/chunk-fc7k1zas.js";
+import "B:/~BUN/root/chunk-nw79m6g4.js";
+import "B:/~BUN/root/chunk-4vcs773m.js";
+import "B:/~BUN/root/chunk-1ratk947.js";
+import "B:/~BUN/root/chunk-wznngf8b.js";
+import "B:/~BUN/root/chunk-2ys4h17s.js";
+import "B:/~BUN/root/chunk-wxztkjve.js";
+import "B:/~BUN/root/chunk-wjxjrbnh.js";
+import { obe, m$n } from "B:/~BUN/root/chunk-yrh147c7.js";
+import "B:/~BUN/root/chunk-taw9ve37.js";
+import "B:/~BUN/root/chunk-vyjvp8sa.js";
+import "B:/~BUN/root/chunk-jypg1bby.js";
+import { FFt, ENe, NCs } from "B:/~BUN/root/chunk-w0nyevkg.js";
+import "B:/~BUN/root/chunk-z5apdcem.js";
+import "B:/~BUN/root/chunk-d5rmf5x5.js";
+import "B:/~BUN/root/chunk-8x466dw5.js";
+import "B:/~BUN/root/chunk-17caj8fw.js";
+import "B:/~BUN/root/chunk-hhd7smkx.js";
+import "B:/~BUN/root/chunk-cejfpzdt.js";
+import "B:/~BUN/root/chunk-0q69tvcp.js";
+import "B:/~BUN/root/chunk-0jhmwh3q.js";
+import { Bft } from "B:/~BUN/root/chunk-j3efez3c.js";
+import "B:/~BUN/root/chunk-6cgv9p77.js";
+import "B:/~BUN/root/chunk-9ajgj3y1.js";
+import "B:/~BUN/root/chunk-pjcve3z9.js";
+import "B:/~BUN/root/chunk-cjmntjcn.js";
+import "B:/~BUN/root/chunk-43aygqej.js";
+import "B:/~BUN/root/chunk-y7em5h10.js";
+import "B:/~BUN/root/chunk-tmn2g637.js";
+import "B:/~BUN/root/chunk-mjx3yttm.js";
+import "B:/~BUN/root/chunk-wdfwarp2.js";
+import "B:/~BUN/root/chunk-0ypwt1ew.js";
+import "B:/~BUN/root/chunk-3eq12f11.js";
+import "B:/~BUN/root/chunk-mq0pq26y.js";
+import "B:/~BUN/root/chunk-trf406sb.js";
+import "B:/~BUN/root/chunk-mcdkvptw.js";
+import "B:/~BUN/root/chunk-ymawhbhz.js";
+import "B:/~BUN/root/chunk-rbfkfjk4.js";
+import "B:/~BUN/root/chunk-az0cmmyt.js";
+import "B:/~BUN/root/chunk-bw0w9zyr.js";
+import "B:/~BUN/root/chunk-hydnwtf3.js";
+import "B:/~BUN/root/chunk-15eyam7k.js";
+import "B:/~BUN/root/chunk-ynneeax2.js";
+import "B:/~BUN/root/chunk-4ffx6rrs.js";
+import "B:/~BUN/root/chunk-8ytf4evt.js";
+import "B:/~BUN/root/chunk-33ssadqt.js";
+import "B:/~BUN/root/chunk-4zhce32x.js";
+import "B:/~BUN/root/chunk-bsbbs1xs.js";
+import "B:/~BUN/root/chunk-3aa152x8.js";
+import { eIe, iwn } from "B:/~BUN/root/chunk-d0f9meh1.js";
+import { qYn } from "B:/~BUN/root/chunk-qpxtzqde.js";
+import { Pli } from "B:/~BUN/root/chunk-v9fer0d0.js";
+import "B:/~BUN/root/chunk-az86sdh0.js";
+import { JKt } from "B:/~BUN/root/chunk-ra105wwp.js";
+import { B4e } from "B:/~BUN/root/chunk-cb4cdgp6.js";
+import "B:/~BUN/root/chunk-kxp3hy4n.js";
+import "B:/~BUN/root/chunk-9y5bmv7e.js";
+import "B:/~BUN/root/chunk-qf9ct1qb.js";
+import { nLo } from "B:/~BUN/root/chunk-rsd2es3y.js";
+import { Der, Ler } from "B:/~BUN/root/chunk-sytehx8j.js";
+import { I$o as classifyFailedOAuthRefresh } from "B:/~BUN/root/chunk-hjgexrft.js";
+import "B:/~BUN/root/chunk-agzytztq.js";
+import "B:/~BUN/root/chunk-dh9acrmw.js";
+import { w6t } from "B:/~BUN/root/chunk-ej3zjem0.js";
+import { ymi } from "B:/~BUN/root/chunk-rmqqhv88.js";
+import { d5e, xve, c5e, u5e, zAt } from "B:/~BUN/root/chunk-820v0aja.js";
+import { kar } from "B:/~BUN/root/chunk-ecxkb505.js";
+import "B:/~BUN/root/chunk-9hk6qhrz.js";
+import { XPe, _2t } from "B:/~BUN/root/chunk-7fayc109.js";
+import { F3n } from "B:/~BUN/root/chunk-fc0ah6p6.js";
+import { _Ue } from "B:/~BUN/root/chunk-arzyzazz.js";
+import { u8n } from "B:/~BUN/root/chunk-5c6j7mkw.js";
+import { cst } from "B:/~BUN/root/chunk-dfbqvpz6.js";
+import "B:/~BUN/root/chunk-mhb4gvpw.js";
+import "B:/~BUN/root/chunk-hcxmn0z0.js";
+import "B:/~BUN/root/chunk-ty3rgkxp.js";
+import "B:/~BUN/root/chunk-a4r2251c.js";
+import "B:/~BUN/root/chunk-mvd8n96a.js";
+import "B:/~BUN/root/chunk-5kj9dj0y.js";
+import { j7o, Pmi, v6t } from "B:/~BUN/root/chunk-hq421jf1.js";
+import "B:/~BUN/root/chunk-1403xdv8.js";
+import "B:/~BUN/root/chunk-dt45jjk2.js";
+import "B:/~BUN/root/chunk-n7rjc97z.js";
+import "B:/~BUN/root/chunk-bwk2g6e0.js";
+import "B:/~BUN/root/chunk-1b2nf93s.js";
+import "B:/~BUN/root/chunk-q7dbkm6t.js";
+import "B:/~BUN/root/chunk-pgm29tvd.js";
+import "B:/~BUN/root/chunk-992ex3nd.js";
+import "B:/~BUN/root/chunk-h2qbvrp4.js";
+import "B:/~BUN/root/chunk-0wyf4zb9.js";
+import "B:/~BUN/root/chunk-vxbt81wk.js";
+import "B:/~BUN/root/chunk-v04fapnf.js";
+import "B:/~BUN/root/chunk-rsz72fpd.js";
+import "B:/~BUN/root/chunk-69k97bnp.js";
+import "B:/~BUN/root/chunk-q82am8wz.js";
+import "B:/~BUN/root/chunk-spc3jrd3.js";
+import "B:/~BUN/root/chunk-kgvnwy91.js";
+import "B:/~BUN/root/chunk-p25ahy45.js";
+import "B:/~BUN/root/chunk-4xx5w1am.js";
+import "B:/~BUN/root/chunk-pgf3n8rv.js";
+import "B:/~BUN/root/chunk-stfp5qgr.js";
+import "B:/~BUN/root/chunk-az6xed3t.js";
+import "B:/~BUN/root/chunk-w179eqqe.js";
+import "B:/~BUN/root/chunk-p8898990.js";
+import "B:/~BUN/root/chunk-fkz77yzp.js";
+import "B:/~BUN/root/chunk-zy4xrndc.js";
+import "B:/~BUN/root/chunk-we53d1t3.js";
+import "B:/~BUN/root/chunk-1jrzd264.js";
+import "B:/~BUN/root/chunk-zz0hj0zg.js";
+import "B:/~BUN/root/chunk-md18120p.js";
+import "B:/~BUN/root/chunk-zwf5p7y7.js";
+import "B:/~BUN/root/chunk-k3f9rj85.js";
+import "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-8zx74r55.js";
+import "B:/~BUN/root/chunk-xagk1yaq.js";
+import "B:/~BUN/root/chunk-zeshc0ep.js";
+import "B:/~BUN/root/chunk-vvwzzpy4.js";
+import "B:/~BUN/root/chunk-4hx27rd1.js";
+import "B:/~BUN/root/chunk-jjjspatt.js";
+import "B:/~BUN/root/chunk-6bss7gp5.js";
+import "B:/~BUN/root/chunk-h29cx855.js";
+import "B:/~BUN/root/chunk-yjr7e11x.js";
+import "B:/~BUN/root/chunk-tnfsxzpz.js";
+import "B:/~BUN/root/chunk-pp5rqp7s.js";
+import "B:/~BUN/root/chunk-ea8gze25.js";
+import "B:/~BUN/root/chunk-z1wt3cb2.js";
+import "B:/~BUN/root/chunk-cjd8dpgw.js";
+import "B:/~BUN/root/chunk-yscb2r3d.js";
+import "B:/~BUN/root/chunk-s20ae4sg.js";
+import "B:/~BUN/root/chunk-n3m61sfz.js";
+import "B:/~BUN/root/chunk-nk52yc3v.js";
+import "B:/~BUN/root/chunk-kt29vc17.js";
+import "B:/~BUN/root/chunk-a5dg1k4h.js";
+import "B:/~BUN/root/chunk-kj33sgq2.js";
+import "B:/~BUN/root/chunk-kh33ctc6.js";
+import "B:/~BUN/root/chunk-x6ny3ghw.js";
+import "B:/~BUN/root/chunk-0p5dw980.js";
+import "B:/~BUN/root/chunk-dx2wvwvf.js";
+import "B:/~BUN/root/chunk-fcp4egnh.js";
+import "B:/~BUN/root/chunk-frv0tk8w.js";
+import "B:/~BUN/root/chunk-ym6b88b3.js";
+import "B:/~BUN/root/chunk-zx0hhrva.js";
+import { Ja } from "B:/~BUN/root/chunk-v91d7hbv.js";
+import "B:/~BUN/root/chunk-s937snw9.js";
+import "B:/~BUN/root/chunk-j5zjtxy5.js";
+import "B:/~BUN/root/chunk-vdqpev1m.js";
+import "B:/~BUN/root/chunk-kd0f2gn5.js";
+import "B:/~BUN/root/chunk-ymgf3kpk.js";
+import "B:/~BUN/root/chunk-dzjj3jwh.js";
+import "B:/~BUN/root/chunk-xbhv3nhf.js";
+import "B:/~BUN/root/chunk-21s8ygah.js";
+import "B:/~BUN/root/chunk-e99p2x0p.js";
+import "B:/~BUN/root/chunk-36r971cb.js";
+import "B:/~BUN/root/chunk-ynpwd78y.js";
+import "B:/~BUN/root/chunk-eyvtcj15.js";
+import "B:/~BUN/root/chunk-r6enj9cw.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import { mz } from "B:/~BUN/root/chunk-j0enspnr.js";
+import { h2e } from "B:/~BUN/root/chunk-xr3thd43.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-62khcyrb.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import "B:/~BUN/root/chunk-4jfmvmew.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-cbv74thb.js";
+import "B:/~BUN/root/chunk-dc99dkg2.js";
+import "B:/~BUN/root/chunk-b37tyqej.js";
+import "B:/~BUN/root/chunk-dqan51g7.js";
+import "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-z35xf1k7.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import { qa, jFr } from "B:/~BUN/root/chunk-qzcyr88d.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import { Ht } from "B:/~BUN/root/chunk-cbjnh04j.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import { X } from "B:/~BUN/root/chunk-g9pw24zp.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+var en = 5000,
+  rr = 160000;
+async function nt({
+  site: site,
+  fileLogin: u,
+  owner: owner,
+  attributions: attributions,
+  writerHonorsVouch: writerHonorsVouch
+}) {
+  if (!writerHonorsVouch || !owner.accountUuid || !u?.accountUuid || gu(u, owner) || !Ppo() || !Lx() || bA() !== void 0 || !B3()) return {
+    source: "file",
+    login: u
+  };
+  let bearer = JW(),
+    w = bearer !== void 0 && !St(),
+    B = w ? attributions.get(bearer) : void 0;
+  if (w && B === void 0) {
+    if (B = await v6t(bearer), B !== void 0) attributions.set(bearer, B);
+  }
+  let _ = B === void 0 ? w ? "unattributed" : "not_asked" : gu(B, owner) ? "owner" : "other_account";
+  return l("tengu_bridge_owner_check_attributed", {
+    site: f(site),
+    outcome: f(_)
+  }), t(`[bridge:owner-check] ${site}: the identity file names another account than the recorded owner, but this session runs on a host-injected bearer \u2014 server attribution: ${_}`), bearer !== void 0 && B !== void 0 && _ === "owner" ? {
+    source: "server",
+    login: B,
+    bearer: bearer
+  } : {
+    source: "unconfirmed",
+    login: void 0,
+    attributed: B,
+    bearer: bearer,
+    mismatchAgainst: B?.accountUuid ?? u.accountUuid
+  };
+}
+function qe({
+  login: login,
+  bearer: bearer_2,
+  attributions: attributions_2
+}) {
+  let o = bearer_2,
+    y,
+    S = !1,
+    w = 0,
+    B = en,
+    _ = !1;
+  function b() {
+    if (_) return !1;
+    let E = JW();
+    if (E === void 0) return !1;
+    if (y !== void 0 && E !== y) return _ = !0, !1;
+    if (E === o) return !0;
+    if (login === void 0 || St() || !Ppo()) return _ = !0, !1;
+    let T = attributions_2.get(E);
+    if (T !== void 0 && !gu(T, login)) return _ = !0, !1;
+    if (T !== void 0) return o = E, y = void 0, !0;
+    if (y = E, !S && Date.now() >= w) S = !0, v6t(E).then(A => {
+      if (S = !1, A !== void 0) {
+        if (attributions_2.set(E, A), y = void 0, B = en, !gu(A, login)) _ = !0;
+      } else if (B > rr) _ = !0;else w = Date.now() + B, B *= 2;
+    });
+    return !1;
+  }
+  return () => {
+    try {
+      return b();
+    } catch (error) {
+      return _ = !0, a(error), !1;
+    }
+  };
+}
+var or = 3000;
+async function tn(s, u) {
+  if (!(await j7o(u)) || !Yd()?.accountUuid) return;
+  return p => ir(p, s, u);
+}
+async function ir(s, u, p) {
+  let o = await we(sr(u, p), or).then(y => y ?? "unknown_timeout", () => "unknown_error");
+  return t(`[bridge:signed-out] site=${s} verdict=${o}`), l("tengu_bridge_token_absence_classified", {
+    site: f(s),
+    verdict: f(o)
+  }), o;
+}
+async function sr(s, u) {
+  let p = Kn(),
+    o = await EE(s),
+    y = !o?.accountUuid && Boolean(Yd()?.accountUuid);
+  if (o?.accountUuid || y) {
+    if ((await p.readAsync(u))?.claudeAiOauth?.refreshToken === "") return "refresh_token_dead";
+    return y ? "unknown_identity_cached_only" : "unknown_identity_present";
+  }
+  let S = await p.readAsyncStrict?.(u);
+  if (S === void 0 || S === Bs) return "unknown_store_unreadable";
+  if (S?.claudeAiOauth?.refreshToken === "") return "refresh_token_dead";
+  if (S?.claudeAiOauth !== void 0) return "unknown_identity_absent_token_present";
+  return "signed_out";
+}
+async function nn(s) {
+  let u = jn(s),
+    p = await b0n().catch(() => {
+      return;
+    });
+  if (p === void 0) {
+    c("bridge_resume_guard", "registry_read_failed");
+    return;
+  }
+  for (let o of p) {
+    if (o.pid === process.pid || o.bridgeSessionId === void 0 || jn(o.bridgeSessionId) !== u) continue;
+    let y = o.procStartFt ?? o.procStart;
+    if (y === void 0 || !El(o.pid)) continue;
+    let S = await tc(o.pid, {
+      skipCache: !0
+    });
+    if (S === void 0) {
+      t(`[bridge:repl] pid ${o.pid} advertises bridge session ${s} but its start token is unreadable \u2014 not treated as a holder`);
+      continue;
+    }
+    if (S === y) return {
+      pid: o.pid,
+      startedAt: o.startedAt
+    };
+  }
+  return;
+}
+import { stat as ar } from "fs/promises";
+import { sep as rn } from "path";
+var on = 20,
+  sn = 4,
+  dr = 2000,
+  lr = 300000;
+async function cn(s, u, p, o, signal, S, w, B, budget) {
+  if (T6()) return t("[persistence-sync] Refusing backfill: conversation carries a history-suppression taint"), {
+    uploadedMain: 0,
+    uploadedSubagents: 0
+  };
+  let b = z(),
+    E = Fd(),
+    T = E !== null && mye(b, E) ? E : gxn(b),
+    A = await u.readMain(signal),
+    v = new Set(rt(A?.events));
+  t(`[persistence-sync] Server has ${A === null ? "an unread number of" : v.size} main events since compaction`);
+  let F = ur(b);
+  if (F !== void 0) return F;
+  let M = await an(T, v, !0, S, w, B, A === null && !o ? null : At(A?.events ?? []), {
+    signal: signal,
+    budget: budget
+  });
+  if (M === "aborted" || M === "too-many-rows") return "rows_owed";
+  if (M === "budget-exhausted") {
+    let P = sZ(ji(b));
+    if (eoe(ji(b)), LEe(ji(b)), !P) _xn(ji(b));
+    return t("[persistence-sync] Taint sweep budget exhausted: refusing this backfill (precautionary hold, no durable stamp)"), "rows_owed";
+  }
+  if (M === "tainted") return yxn(ji(b)), t("[persistence-sync] Main transcript tainted: aborting sync (subagents included), healing the in-memory flag"), {
+    uploadedMain: 0,
+    uploadedSubagents: 0
+  };
+  if (A === null && !o) return t("[persistence-sync] Main server read failed: nothing uploaded, subagents included"), "read_failed";
+  let N = void 0;
+  if (N !== void 0) return N;
+  if (ln(s, M, v), b !== z()) return t("[persistence-sync] Skipping subagent backfill: session id changed during the main read (mid-sync /resume)"), "rows_owed";
+  let x = await cr(p, S),
+    [W, ...Ae] = x,
+    se = W ? await u.readSubagent(W.agentId, signal) : null;
+  for (let P of rt(se?.events)) v.add(P);
+  let q = new Set(se === null ? x.map(({
+      agentId: agentId
+    }) => agentId) : []),
+    _e = new Map();
+  if (W && se?.events.every(P => P.session_agent_id === W.agentId)) _e.set(W.agentId, At(se.events)), await Promise.all(Ae.map(async ({
+    agentId: agentId_2
+  }) => {
+    let L = await u.readSubagent(agentId_2, signal);
+    if (L === null) q.add(agentId_2);else _e.set(agentId_2, At(L.events));
+    for (let Z of rt(L?.events)) v.add(Z);
+  }));
+  if (o) {
+    for (let P of q) _e.set(P, new Set());
+    q.clear();
+  }
+  if (b !== z() || Nk(ji(b))) return t("[persistence-sync] Skipping subagent backfill: session id changed or egress was suppressed during the subagent server reads"), b !== z() || w9t(ji(b)) ? "rows_owed" : {
+    uploadedMain: M.length,
+    uploadedSubagents: 0
+  };
+  let uploadedSubagents = 0;
+  for (let {
+    agentId: agentId_3,
+    path: path
+  } of x) {
+    if (q.has(agentId_3)) continue;
+    let Z = await an(path, v, !1, S, w, B, _e.get(agentId_3) ?? null, {
+      signal: signal
+    });
+    if (Z === "aborted" || Z === "too-many-rows") return "rows_owed";
+    if (Z === "budget-exhausted") {
+      let Te = sZ(ji(b));
+      if (eoe(ji(b)), LEe(ji(b)), !Te) _xn(ji(b));
+      return "rows_owed";
+    }
+    if (Z === "tainted") {
+      yxn(ji(b));
+      break;
+    }
+    ln(s, Z, v, agentId_3), uploadedSubagents += Z.length;
+  }
+  return t(`[persistence-sync] Uploaded ${M.length} main + ${uploadedSubagents} subagent entries; ${q.size} subagent server reads failed`), q.size > 0 ? "read_failed" : {
+    uploadedMain: M.length,
+    uploadedSubagents: uploadedSubagents
+  };
+}
+function un({
+  writer: writer,
+  attemptSync: attemptSync,
+  onFallenBehind: onFallenBehind,
+  signal: signal_2,
+  clock = ga,
+  random = Math.random
+}) {
+  let w = new Set(),
+    B = (A, v, F) => {
+      let M = `${F?.agentId ?? ""}/${String(v.uuid)}`;
+      if (signal_2.aborted || w.has(M)) return Promise.resolve();
+      return w.add(M), writer(A, v, F);
+    },
+    _,
+    b = Promise.withResolvers(),
+    E,
+    outcome = (async () => {
+      for (let A = 0;; A++) {
+        if (A > 0) {
+          let v = Math.min(lr, dr * 2 ** (A - 1));
+          _ = new AbortController(), await J(P0({
+            baseMs: v,
+            capMs: v,
+            attempt: 0,
+            floorMs: v / 2,
+            random: random
+          }), AbortSignal.any([signal_2, _.signal]), {
+            unref: !0,
+            clock: clock
+          });
+        }
+        if (signal_2.aborted) return "abandoned";
+        try {
+          if ((await attemptSync(B)) !== "read_failed") {
+            if (signal_2.aborted) return "abandoned";
+            return A === 0 ? "caught_up" : A < sn ? "caught_up_after_retry" : "caught_up_late";
+          }
+        } catch (error) {
+          if (signal_2.aborted) return "abandoned";
+          let F = k(error) ?? String(error);
+          if (F === E) t(`[persistence-sync] Catch-up threw again: ${F}`);else a(error);
+          E = F;
+        }
+        if (A + 1 === sn && !signal_2.aborted) await Promise.resolve().then(onFallenBehind).catch(a);
+        b.resolve(!1), b = Promise.withResolvers();
+      }
+    })();
+  return {
+    outcome: outcome,
+    runNow: () => (_?.abort(), Promise.race([b.promise, outcome.then(A => A !== "abandoned")]))
+  };
+}
+async function cr(s, u) {
+  let o = (u !== void 0 ? await fr(u, s) : await Promise.all(s.map(item => fn(item)))).filter(item => item !== null),
+    y = o.filter(item => item.size <= Qte),
+    S = y.sort((itemA, itemB) => itemB.mtimeMs - itemA.mtimeMs).slice(0, on),
+    w = o.length - y.length,
+    B = y.length - S.length;
+  if (w > 0 || B > 0) t(`[persistence-sync] Subagent backfill capped: ${w} over ${Qte}B, ${B} beyond ${on}-agent limit (live stream unaffected)`);
+  return S;
+}
+async function an(s, u, p = !0, o, y, S, w = null, {
+  signal: signal_3,
+  budget: budget_2
+} = {}) {
+  let b = o ? pn(s) : null,
+    E = budget_2 ?? (o && b ? mDe.forBackendRead() : new mDe()),
+    T = [],
+    A = new Set(),
+    v = !1,
+    F = !1,
+    M = 0,
+    N = new Set(),
+    startMs = Date.now(),
+    fileBytes,
+    lines = 0,
+    charsRead = 0,
+    outcome_2 = "clean",
+    _e;
+  try {
+    let ne = o && b ? mxt(o, b) : Iwe(s, Lct, {
+      onOpen: P => {
+        fileBytes = P;
+      }
+    });
+    for await (let P of ne) {
+      if (_e ??= P, lines++, charsRead += P.length + 1, JOt(P)) return t("[persistence-sync] Refusing backfill: history-suppression entry in transcript"), outcome_2 = "found", "tainted";
+      if (v || F) {
+        if (p && E.spend(P)) return t("[persistence-sync] Refusing backfill: pre-boundary taint sweep exhausted its budget without a verdict"), outcome_2 = "budget-exhausted", outcome_2;
+        if (F || N.size === 0) continue;
+      }
+      let L;
+      try {
+        L = ee(P);
+      } catch {
+        continue;
+      }
+      if (!sxn(L)) continue;
+      if (k9t(L, y)) continue;
+      if (!v) A.add(L.uuid);else if (!N.delete(L.uuid)) continue;
+      if (S?.(L), !u.has(L.uuid)) T.push(L);
+      if (!v && Kr(L)) {
+        v = !0, M = T.length;
+        let Z = L.compactMetadata?.preservedMessages?.uuids,
+          Te = (Array.isArray(Z) ? Z : []).slice(-w6t).filter(item => !A.has(item));
+        if (w !== null && !u.has(L.uuid) && Te.some(item => !u.has(item))) N = new Set([...Te, ...w]);
+      }
+      if (v && !p && N.size === 0) break;
+    }
+    if (F) return t(`[persistence-sync] Refusing backfill: ${Opr} lines or more since the last compaction boundary`), outcome_2 = "too-many-rows", outcome_2;
+  } catch (error) {
+    if (outcome_2 = Coo(error), K(error)) return [];
+    throw error;
+  } finally {
+    if (p) Roo({
+      leg: "backfill-read",
+      throughBackend: Boolean(o && b),
+      outcome: outcome_2,
+      lines: lines,
+      charsRead: charsRead,
+      fileBytes: fileBytes,
+      startMs: startMs
+    });
+  }
+  if (N.size > 0) t(`[persistence-sync] Not uploading the messages the last compaction kept: ${N.size} rows needed first (kept messages, or compaction boundaries the server returned) could not be read from the local transcript. The rest of the backfill goes on; a session resumed from the server may lack the kept messages.`), T.splice(M);
+  return T.reverse();
+}
+function ur(s) {
+  if (s !== z()) return t("[persistence-sync] Refusing backfill: session id changed since the scan anchor was pinned (mid-scan /resume) \u2014 pinned content is not the current conversation"), "rows_owed";
+  if (Nk(ji(s))) return t("[persistence-sync] Refusing backfill: foreign binding or suppression carrier present at the post-await re-consult"), w9t(ji(s)) ? "rows_owed" : {
+    uploadedMain: 0,
+    uploadedSubagents: 0
+  };
+  return;
+}
+async function fn(agentId_4, path_2 = Em(agentId_4)) {
+  try {
+    let p = await ar(path_2);
+    return {
+      agentId: agentId_4,
+      path: path_2,
+      size: p.size,
+      mtimeMs: p.mtimeMs
+    };
+  } catch {
+    return null;
+  }
+}
+async function fr(s, u) {
+  let p = u.map(_ => {
+      let path_3 = Em(_);
+      return {
+        agentId: _,
+        path: path_3,
+        key: pn(path_3)
+      };
+    }),
+    o = _ => _ !== null && _.namespace === "transcript" && _.agentId !== void 0 ? _ : null,
+    y = _ => [_.projectKey, _.sessionId, ...(_.agentRelPath ?? [])].join("/"),
+    S = new Map();
+  for (let {
+    key: key
+  } of p) {
+    let b = o(key);
+    if (b !== null) S.set(y(b), {
+      projectKey: b.projectKey,
+      sessionId: b.sessionId,
+      ...(b.agentRelPath !== void 0 && {
+        agentRelPath: b.agentRelPath
+      })
+    });
+  }
+  let w = new Map(),
+    budget_3 = jFr();
+  return await Promise.all([...S].map(async ([_, {
+    projectKey: projectKey,
+    sessionId: sessionId,
+    agentRelPath: agentRelPath
+  }]) => {
+    let A = new Map();
+    w.set(_, A);
+    let v = () => w.delete(_),
+      F = agentRelPath === void 0 ? `session ${sessionId}` : `session ${sessionId} subtree ${agentRelPath.join("/")}`;
+    try {
+      let M = await qa(cursor => s.listEntries({
+        namespace: "transcript",
+        projectKey: projectKey,
+        sessionId: sessionId,
+        ...(agentRelPath !== void 0 && {
+          agentRelPath: agentRelPath
+        })
+      }, {
+        skipScopeStats: !0,
+        ...(cursor !== void 0 && {
+          cursor: cursor
+        })
+      }), N => {
+        for (let x of N) if (x.kind === "key" && x.key.namespace === "transcript" && x.key.agentId !== void 0 && y(x.key) === _ && x.size !== void 0 && x.mtimeMs !== void 0) A.set(x.key.agentId, {
+          size: x.size,
+          mtimeMs: x.mtimeMs
+        });
+      }, {
+        budget: budget_3
+      });
+      if (M.status !== "done") t(`[persistence-sync] subagent listing for ${F} ${M.status === "error" ? `failed: ${Ht(M.error)}` : "was capped"} \u2014 its subagents are skipped`), v();
+    } catch (error) {
+      t(`[persistence-sync] subagent listing for ${F} threw: ${d(error)} \u2014 its subagents are skipped`), v();
+    }
+  })), Promise.all(p.map(async ({
+    agentId: agentId_5,
+    path: path_4,
+    key: key_2
+  }) => {
+    let T = o(key_2);
+    if (T === null) return fn(agentId_5, path_4);
+    let A = w.get(y(T)),
+      v = A?.get(T.agentId);
+    if (v === void 0 && A !== void 0) t(`[persistence-sync] subagent ${agentId_5} not in its folder's listing \u2014 skipped`);
+    return v === void 0 ? null : {
+      agentId: agentId_5,
+      path: path_4,
+      ...v
+    };
+  }));
+}
+function pn(s) {
+  let u = Om() + rn;
+  if (!s.startsWith(u)) return null;
+  let p = s.slice(u.length).split(rn);
+  if (p.length === 2 && p[1].endsWith(".jsonl")) {
+    let o = p[0],
+      y = p[1].slice(0, -6);
+    return Hr(o) && Hr(y) ? dn(Ve.transcript(o, y)) : null;
+  }
+  if (p.length >= 4 && p[2] === "subagents" && p.at(-1).startsWith("agent-") && p.at(-1).endsWith(".jsonl")) {
+    let o = p[0],
+      y = p[1],
+      S = p.slice(3, -1),
+      w = p.at(-1).slice(6, -6);
+    return Hr(o) && Hr(y) && Hr(w) && (S.length === 0 || zR(S)) ? dn(Ve.transcript(o, y, w, S.length > 0 ? S : void 0)) : null;
+  }
+  return null;
+}
+function dn(s) {
+  return eg(s) === void 0 ? s : null;
+}
+function ln(s, u, p, agentId_6) {
+  let y = u.findLastIndex(S => Kr(S));
+  for (let [S, w] of u.entries()) p.add(w.uuid), s("transcript", w, {
+    ...(S === y && Kr(w) && {
+      isCompaction: !0,
+      preservedEventIds: w.compactMetadata?.preservedMessages?.uuids
+    }),
+    ...(agentId_6 !== void 0 && {
+      agentId: agentId_6
+    })
+  }).catch(B => {
+    t(`[persistence-sync] Write failed: ${B}`);
+  });
+}
+function At(s) {
+  return new Set(rt(s.filter(item => item.payload.type === "system" && item.payload.subtype === "compact_boundary")));
+}
+function rt(s) {
+  return (s ?? []).map(item => item.payload.uuid).filter(item => typeof item === "string");
+}
+var pr = 2100;
+function hn(s) {
+  let {
+      sessionId: sessionId_2,
+      apiBaseUrl: p,
+      requestFreshSecret: requestFreshSecret
+    } = s,
+    y = mn(s.secret, sessionId_2);
+  if (typeof y === "string") throw new R(`work secret rejected: ${y}`, "work secret rejected");
+  let S = u5e(p, sessionId_2),
+    w = null,
+    B = !1;
+  async function _() {
+    if (!requestFreshSecret) return t("[bridge:work-secret] the host offers no refresh path"), null;
+    let E;
+    try {
+      E = await requestFreshSecret(sessionId_2);
+    } catch (error) {
+      return t(`[bridge:work-secret] host refresh request failed: ${d(error)}`, {
+        level: "warn"
+      }), null;
+    }
+    if (!E) return t("[bridge:work-secret] host has no fresh secret yet"), null;
+    let T = mn(E, sessionId_2);
+    if (typeof T === "string") return t(`[bridge:work-secret] fresh secret rejected: ${T}`, {
+      level: "warn"
+    }), null;
+    let A = bU(T.session_ingress_token);
+    if (w && (T.session_ingress_token === w.secret.session_ingress_token || w.exp !== null && A !== null && A <= w.exp)) return t("[bridge:work-secret] host returned a secret no fresher than the registered one"), null;
+    return T;
+  }
+  async function b(secret, T = !1) {
+    let A = secret.session_ingress_token,
+      worker_epoch;
+    try {
+      worker_epoch = await zAt(S, A);
+    } catch (error) {
+      let {
+        kind: kind,
+        status: status
+      } = Ai(error);
+      if (t(`[bridge:work-secret] /worker/register failed kind=${kind} status=${status ?? "none"}: ${d(error)}`, {
+        level: "warn"
+      }), kind === "other") return {
+        terminal: !0,
+        reason: "malformed_response",
+        status: 200
+      };
+      if (status === void 0 || status === 408 || status === 429 || status >= 500) return null;
+      if (T && (status === 401 || status === 403)) return B = !0, null;
+      return {
+        terminal: !0,
+        reason: "request_rejected",
+        status: status
+      };
+    }
+    let exp = bU(A);
+    w = {
+      secret: secret,
+      exp: exp
+    }, B = !1;
+    let expires_in = exp === null ? pr : Math.max(0, exp - Math.floor(Date.now() / 1000));
+    return t(`[bridge:work-secret] registered worker epoch=${worker_epoch} expires_in=${expires_in}s`), {
+      worker_jwt: A,
+      api_base_url: p,
+      expires_in: expires_in,
+      worker_epoch: worker_epoch
+    };
+  }
+  return {
+    async register(E, T) {
+      if (E === "initial") return b(y);
+      let A = await _();
+      if (T?.stillWanted && !T.stillWanted()) return t("[bridge:work-secret] bridge torn down or superseded while the host was asked; not registering"), null;
+      if (A) return b(A);
+      let v = w !== null && w.exp !== null ? w.exp - Math.floor(Date.now() / 1000) : 0;
+      if (w !== null && !B && T?.reuseHeldAboveS !== void 0 && v > T.reuseHeldAboveS) return t(`[bridge:work-secret] nothing fresher from the host; re-registering the held secret (${v}s left)`), b(w.secret, !0);
+      return null;
+    }
+  };
+}
+function mn(s, u) {
+  let p;
+  try {
+    p = xve(s);
+  } catch (error) {
+    return error instanceof d5e ? error.message : "undecodable";
+  }
+  let o = YHt(p.session_ingress_token);
+  if (o === void 0) return "token carries no session_id claim";
+  if (!c5e(o, u)) return "token is for a different session";
+  return p;
+}
+var $i = {
+    perFileMs: 400,
+    totalMs: 1500
+  },
+  Wi = {
+    perFileMs: 2000,
+    totalMs: 6000
+  },
+  gr = 60000,
+  mr = new Set(["flags_disabled", "flags_unreachable", "gate_off"]);
+function hr(s) {
+  return u => {
+    let p = s?.();
+    return JKt(u, le() && p !== void 0 ? import.meta.require("B:/~BUN/root/chunk-1pj0nvp1.js").remoteRowTools(p) : p);
+  };
+}
+async function Gi(s) {
+  let {
+    getToolPermissionContext: getToolPermissionContext,
+    host: host,
+    workspaceDiffComputeBudget: workspaceDiffComputeBudget,
+    getTools: getTools,
+    onInboundMessage: onInboundMessage,
+    onQueuedNotification: onQueuedNotification,
+    onPermissionResponse: onPermissionResponse,
+    onInterrupt: onInterrupt,
+    onStopTask: onStopTask,
+    onBackgroundTasks: onBackgroundTasks,
+    onCancelAsyncMessage: onCancelAsyncMessage,
+    getInitializeState: getInitializeState,
+    getCommands: getCommands,
+    isTurnLive: isTurnLive,
+    onDialogKindsDeclared: onDialogKindsDeclared,
+    onClientInitialize: onClientInitialize,
+    onSetModel: onSetModel,
+    onSetMaxThinkingTokens: onSetMaxThinkingTokens,
+    onSetPermissionMode: onSetPermissionMode,
+    onApplyFlagSettings: onApplyFlagSettings,
+    onSetColor: onSetColor,
+    onMcpAuthenticate: onMcpAuthenticate,
+    onMcpOauthCallbackUrl: onMcpOauthCallbackUrl,
+    onMcpReconnect: onMcpReconnect,
+    onForkConversation: onForkConversation,
+    onBridgeInjectedMcp: onBridgeInjectedMcp,
+    onProjectsBindingHint: onProjectsBindingHint,
+    onGetContextUsage: onGetContextUsage,
+    answerSharedControlRequest: answerSharedControlRequest,
+    onStateChange: onStateChange,
+    reportGateRefusalReason: reportGateRefusalReason,
+    initialMessages: initialMessages,
+    getMessages: ot,
+    getBackfillMessages: getBackfillMessages,
+    remoteControlOrigin: remoteControlOrigin,
+    isTurnActive: kn,
+    initialName: initialName,
+    skipAutoTitle: skipAutoTitle,
+    outboundOnly: outboundOnly,
+    nameSourceForCreate: nameSourceForCreate,
+    tags: tags,
+    sessionGroupingId: Et,
+    reattachSessionId: reattachSessionId,
+    reattachSequenceNum: reattachSequenceNum,
+    reattachOrFail: reattachOrFail,
+    reviveInitiated: reviveInitiated,
+    neverArchive: neverArchive,
+    recordAtEnable: recordAtEnable,
+    recordWriterHonorsServerVouch: st = !1,
+    onReattachPointerDead: onReattachPointerDead,
+    localHolderGuard: localHolderGuard,
+    suppressHistoryBackfill: suppressHistoryBackfill,
+    onHistoryBackfillSuppressed: onHistoryBackfillSuppressed,
+    expectedAccount: expectedAccount,
+    onAuthProven: onAuthProven,
+    enableSessionPersistence: enableSessionPersistence,
+    onTransportRebuilt: onTransportRebuilt,
+    storageV5: storageV5,
+    credentials: G,
+    workSecret: Ye,
+    onWorkSecretRefresh: In
+  } = s ?? {};
+  tjs(pSs), PKi(SLe), $Ft(ENe);
+  let D = ji(z()),
+    lt = Fd() ?? void 0,
+    Fe = lt !== void 0 && D !== void 0 && !mye(D, lt),
+    ct = Fe ? void 0 : lt,
+    Qe = !1,
+    be,
+    ut,
+    Xe,
+    attributions_3 = new Map(),
+    j = Boolean(suppressHistoryBackfill) || T6() || sZ(D) || jde(D),
+    Re = () => Nk(ji(z())),
+    Ue = e => {
+      if (j || iZ() || Re()) return;
+      let n = z();
+      return n ? e(n) : void 0;
+    };
+  async function ft(e, n, r) {
+    if (j = !0, Qe = !0, Fe) c("rc_cross_account_suppression", "torn_entry_pair");else g("rc_cross_account_suppression");
+    if (Fe) eoe(D), l9e(D), t(`[bridge:repl] ${n} veto under a TORN entry pair (mid-/resume window): precautionary suppression only, no permanent taint write`, {
+      level: "warn"
+    });else await XOt(D, ct, e, r, storageV5);
+  }
+  function It() {
+    if (!be) return;
+    if (Xe?.holds()) return;
+    let {
+      cause: cause,
+      againstAccountUuid: againstAccountUuid
+    } = be;
+    be = void 0;
+    let r = cause === "env_owner_mismatch" ? "Env-handoff" : "Restored-pointer";
+    l("tengu_bridge_owner_veto_after_dead_pointer", {
+      cause: f(cause),
+      permanent: !Fe
+    }), t(`[bridge:repl] ${r} pointer is dead and nothing shows this login to be the recorded owner \u2014 applying the owner veto`, {
+      level: "warn"
+    }), ft(cause, r, againstAccountUuid).catch(a);
+  }
+  let pt,
+    Dn = {
+      onTransportPersistenceReady: (writer_2, n, r, h, C, O, te = writer_2) => {
+        pt?.abort();
+        let abortController = new AbortController();
+        pt = abortController;
+        let {
+            signal: signal_4
+          } = abortController,
+          et = !1,
+          me,
+          he = !1,
+          nr = (async () => {
+            me = un({
+              writer: writer_2,
+              signal: signal_4,
+              onFallenBehind: () => {
+                m("bridge_transcript_catch_up", "fell_behind"), t("[bridge:repl] Persistence sync failed on its first runs \u2014 no transcript writer until a later run works", {
+                  level: "error"
+                }), C?.(!1);
+              },
+              attemptSync: async wt => {
+                if (j || Re()) return t("[bridge:repl] Persistence backfill suppressed (cross-account veto or foreign binding) \u2014 installing live writer only"), he = Pe?.uncertaintyOnly === !0 || w9t(ji(z())), {
+                  uploadedMain: 0,
+                  uploadedSubagents: 0
+                };
+                let kt = await VLe(storageV5),
+                  tt = await cn(wt, n, kt, h, signal_4, storageV5, r, O && (vt => O([vt])));
+                return he = tt === "rows_owed", tt;
+              }
+            });
+            let Zt = await me.outcome;
+            if (Zt === "abandoned" || signal_4.aborted) {
+              t("[bridge:repl] Transport torn down during sync \u2014 skipping writer install");
+              return;
+            }
+            switch (Zt) {
+              case "caught_up":
+                g("bridge_transcript_catch_up");
+                break;
+              case "caught_up_after_retry":
+                c("bridge_transcript_catch_up", "retried");
+                break;
+              case "caught_up_late":
+                V("info", "bridge_repl_transcript_catch_up_late");
+                break;
+            }
+            cxn((wt, kt, tt) => (te(wt, kt, tt).catch(vt => {
+              l("tengu_session_persistence_failed", {}), t(`[bridge:repl] Internal event write failed: ${d(vt)}`, {
+                level: "error"
+              });
+            }), Promise.resolve()), r), uxn(() => n.readMain(), n.readSubagents), t("[bridge:repl] Session persistence enabled \u2014 transcript writer + hydrate readers registered"), et = !he;
+          })().catch(a).finally(() => C?.(et));
+        return {
+          runNow: async () => {
+            if (await me?.runNow()) await nr;
+          },
+          end: () => abortController.abort()
+        };
+      },
+      onTransportPersistenceTeardown: () => {
+        pt?.abort(), gss();
+      }
+    },
+    CLAUDE_BRIDGE_REATTACH_SESSION = process.env.CLAUDE_BRIDGE_REATTACH_SESSION,
+    I = CLAUDE_BRIDGE_REATTACH_SESSION ?? reattachSessionId,
+    CLAUDE_BRIDGE_REATTACH_SEQ = process.env.CLAUDE_BRIDGE_REATTACH_SEQ,
+    CLAUDE_BRIDGE_REATTACH_GROUPING = process.env.CLAUDE_BRIDGE_REATTACH_GROUPING,
+    Ft = i.CLAUDE_BRIDGE_REATTACH_OWNER_ACCT,
+    Un = i.CLAUDE_BRIDGE_REATTACH_OWNER_ORG,
+    CLAUDE_BRIDGE_REATTACH_NO_BACKFILL = i.CLAUDE_BRIDGE_REATTACH_NO_BACKFILL;
+  if (CLAUDE_BRIDGE_REATTACH_SESSION) delete process.env.CLAUDE_BRIDGE_REATTACH_SESSION, delete process.env.CLAUDE_BRIDGE_REATTACH_SEQ, delete process.env.CLAUDE_BRIDGE_REATTACH_OUTBOUND_ONLY, delete process.env.CLAUDE_BRIDGE_REATTACH_GROUPING, delete process.env.CLAUDE_BRIDGE_REATTACH_OWNER_ACCT, delete process.env.CLAUDE_BRIDGE_REATTACH_OWNER_ORG, delete process.env.CLAUDE_BRIDGE_REATTACH_NO_BACKFILL;
+  let reattachSequenceNum_2 = CLAUDE_BRIDGE_REATTACH_SESSION ? CLAUDE_BRIDGE_REATTACH_SEQ ? Number.parseInt(CLAUDE_BRIDGE_REATTACH_SEQ, 10) || void 0 : void 0 : reattachSequenceNum,
+    reattachOrFail_2 = reattachOrFail,
+    reattachOrigin = CLAUDE_BRIDGE_REATTACH_SESSION ? "env" : reattachSessionId ? "option" : void 0,
+    Ut = !1,
+    gt,
+    xe = (e, n) => e !== void 0 && n !== void 0 && jn(e) === jn(n),
+    H = recordAtEnable === void 0 ? dq() : recordAtEnable ?? void 0;
+  if (!CLAUDE_BRIDGE_REATTACH_SESSION) {
+    if (H) {
+      let e = Boolean(H.ownerAccountUuid),
+        n = {
+          accountUuid: H.ownerAccountUuid,
+          organizationUuid: H.ownerOrganizationUuid
+        },
+        fileLogin = e ? await EE(storageV5).catch(() => {
+          return;
+        }) : void 0,
+        h = await nt({
+          site: "restored",
+          fileLogin: fileLogin,
+          owner: n,
+          attributions: attributions_3,
+          writerHonorsVouch: st
+        }),
+        C = h.source === "unconfirmed" && Ye === void 0 && (!I || xe(I, H.id)),
+        O = h.source === "unconfirmed" && !C ? fileLogin : h.login;
+      if (h.source === "server" && fileLogin) Xe = {
+        claim: n,
+        login: h.login,
+        holds: qe({
+          login: h.login,
+          bearer: h.bearer,
+          attributions: attributions_3
+        })
+      }, be = {
+        cause: "restored_owner_mismatch",
+        againstAccountUuid: fileLogin.accountUuid ?? ""
+      };
+      let te = e && gu(O, n);
+      if (e && O?.accountUuid && !te) await ft("restored_owner_mismatch", I ? "Host-directed" : "Restored-pointer", O.accountUuid), t(`[bridge:repl] ${I ? "Host-directed" : "Restored-pointer"} reattach vetoed: the credential store account changed since this conversation's pointer was persisted \u2014 minting fresh, history channels suppressed`, {
+        level: "warn"
+      }), I = void 0, reattachSequenceNum_2 = void 0, reattachOrigin = void 0;else {
+        let ge = e && gu(O, n);
+        if (H.noHistoryBackfill) j = !0;
+        if (I && xe(I, H.id)) I = H.id;
+        if (!I) {
+          if (I = H.id, reattachSequenceNum_2 = H.seq, !ge || !_Ss()) reattachOrFail_2 = !0;
+          reattachOrigin = ge ? reattachOrFail_2 ? "restored_owner_match_pinned" : "restored_owner_match" : C ? "restored_owner_unconfirmed" : e ? "restored_identity_unreadable" : "restored_owner_unknown", Ut = !0, t(`[bridge:repl] Reattaching to persisted bridge session ${H.id} at seq ${H.seq} (${reattachOrFail_2 ? "reattach-or-fail" : "fresh-mint fallback"}, ${reattachOrigin})`);
+        } else if (ge) {
+          if (!xe(I, H.id)) gt = n;
+        } else if (xe(I, H.id)) reattachOrFail_2 = !0, t(`[bridge:repl] Reattaching to the recorded bridge session ${H.id} as named by the carrier; owner unconfirmed \u2014 reattach-or-fail`);else j = !0, eoe(D), l9e(D), t("[bridge:repl] Host-directed reattach: this conversation\u2019s recorded owner could not be confirmed as the current login \u2014 attaching with history channels suppressed", {
+          level: "warn"
+        });
+        if (h.source === "unconfirmed" && C) be = {
+          cause: "restored_owner_mismatch",
+          againstAccountUuid: h.mismatchAgainst
+        }, ut = {
+          claim: n,
+          login: h.attributed,
+          holds: qe({
+            login: h.attributed,
+            bearer: h.bearer,
+            attributions: attributions_3
+          })
+        };
+      }
+    }
+  }
+  if (CLAUDE_BRIDGE_REATTACH_SESSION && I) {
+    if (CLAUDE_BRIDGE_REATTACH_NO_BACKFILL) j = !0, eoe(D), l9e(D);
+    let e = {
+        accountUuid: Ft,
+        organizationUuid: Un
+      },
+      fileLogin_2 = await EE(storageV5).catch(() => {
+        return;
+      }),
+      r = await nt({
+        site: "env_handoff",
+        fileLogin: fileLogin_2,
+        owner: e,
+        attributions: attributions_3,
+        writerHonorsVouch: st
+      }),
+      h = r.source === "unconfirmed" && Ye !== void 0 ? fileLogin_2 : r.login;
+    if (r.source === "server" && fileLogin_2) Xe = {
+      claim: e,
+      login: r.login,
+      holds: qe({
+        login: r.login,
+        bearer: r.bearer,
+        attributions: attributions_3
+      })
+    }, be = {
+      cause: "env_owner_mismatch",
+      againstAccountUuid: fileLogin_2.accountUuid ?? ""
+    };
+    if (Ft && h?.accountUuid) {
+      if (!gu(h, e)) I = void 0, reattachSequenceNum_2 = void 0, reattachOrigin = void 0, await ft("env_owner_mismatch", "Env-handoff", h.accountUuid), t("[bridge:repl] Env-handoff reattach vetoed: the credential store account changed since the handoff was recorded \u2014 minting fresh, history channels suppressed", {
+        level: "warn"
+      });
+    } else {
+      if (reattachOrFail_2 = !0, reattachOrigin = "env_or_fail", r.source === "unconfirmed") be = {
+        cause: "env_owner_mismatch",
+        againstAccountUuid: r.mismatchAgainst
+      }, ut = {
+        claim: void 0,
+        login: r.attributed,
+        holds: qe({
+          login: r.attributed,
+          bearer: r.bearer,
+          attributions: attributions_3
+        })
+      };
+      t(`[bridge:repl] Env-handoff reattach: owner identity ${r.source === "unconfirmed" ? "unconfirmed" : "unavailable"} \u2014 reattach-or-fail`);
+    }
+  }
+  let xt = xe(I, H?.id);
+  if (xt) {
+    if (H?.noHistoryBackfill) j = !0;
+    reattachSequenceNum_2 ??= H?.seq;
+  }
+  let Pe,
+    Lt = () => w9t(D) && !suppressHistoryBackfill && !Qe && !T6() && !jde(D) && H?.noHistoryBackfill !== !0 && z() === D ? {
+      uncertaintyOnly: !0
+    } : void 0;
+  if (j) Pe = Lt(), onHistoryBackfillSuppressed?.(Pe);
+  let Nt = Qe ? [] : ibe(H?.declaredDialogKinds);
+  if (Nt.length > 0) onDialogKindsDeclared?.(Nt, "restored");
+  let sessionGroupingId;
+  if (I) sessionGroupingId = CLAUDE_BRIDGE_REATTACH_SESSION ? CLAUDE_BRIDGE_REATTACH_GROUPING : xt ? H?.groupingId : void 0;else sessionGroupingId = Et;
+  if (!(await uSs({
+    storageV5: storageV5,
+    credentials: G
+  }))) {
+    hO("not_enabled", "[bridge:repl] Skipping: bridge not enabled");
+    let e = await Rpo();
+    if (m("remote_control_entry", e ?? "bridge_disabled"), reportGateRefusalReason && e !== null && !mr.has(e)) {
+      let n = await qZt().catch(r => (a(r), null));
+      if (n !== null) onStateChange?.("failed", n.reason);
+    }
+    return null;
+  }
+  let Ne = X() && G !== void 0;
+  if (!(Ne ? await pD(G) : JW())) return hO("no_oauth", "[bridge:repl] Skipping: no OAuth tokens"), onStateChange?.("failed", obe, "auth"), null;
+  let $t = async (owner_2, n, r) => {
+    let fileLogin_3 = await Ife(storageV5, G).catch(() => {
+        return;
+      }),
+      {
+        login: login_2
+      } = await nt({
+        site: "recheck",
+        fileLogin: fileLogin_3,
+        owner: owner_2,
+        attributions: attributions_3,
+        writerHonorsVouch: st
+      });
+    if (gu(login_2, owner_2)) return !0;
+    return hO(n, r), onStateChange?.("failed", m$n, "terminal"), !1;
+  };
+  if (expectedAccount && !(await $t(expectedAccount, "revive_identity_recheck_failed", "[bridge:repl] Skipping: revive identity re-check failed (store changed or unreadable since the watcher validated)"))) return null;
+  await dh();
+  let Oe = xd("allow_remote_control");
+  if (Oe === "cache_miss") await QZ(), Oe = xd("allow_remote_control");
+  switch (Oe) {
+    case null:
+      break;
+    case "cache_miss":
+    case "route_missing":
+      return hO(Oe === "route_missing" ? "policy_route_missing" : "policy_unverified", `[bridge:repl] Skipping: allow_remote_control policy unverified (${Oe})`), onStateChange?.("failed", WRs("allow_remote_control"), "terminal"), null;
+    case "latched":
+      return hO("policy_denied", "[bridge:repl] Skipping: allow_remote_control denied by the latched HIPAA taint"), onStateChange?.("policy_disabled", oKe("Remote Control", "is")), null;
+    case "org_denied":
+      return hO("policy_denied", "[bridge:repl] Skipping: allow_remote_control policy not allowed"), onStateChange?.("policy_disabled", gvr()), null;
+    default:
+      return hO("policy_denied", "[bridge:repl] Skipping: allow_remote_control denied (unrecognized deny kind)"), onStateChange?.("policy_disabled", gvr()), null;
+  }
+  if (outboundOnly && !gn("allow_remote_sessions")) return hO("policy_denied", "[bridge:repl] Skipping mirror: allow_remote_sessions policy not allowed"), onStateChange?.("policy_disabled", "session mirroring is disabled by your organization's policy (allow_remote_sessions)"), null;
+  let Wt = !1;
+  if (localHolderGuard && Ut && I && ySs()) {
+    let e = await nn(I);
+    if (e) {
+      if (localHolderGuard.mode === "decline") return hO("restored_pointer_held_locally", `[bridge:repl] Skipping: bridge session ${I} from the resumed transcript is still served by local pid ${e.pid} \u2014 not taking it over (/remote-control here moves it)`), g("bridge_resume_guard"), localHolderGuard.onDeclined(e), null;
+      t(`[bridge:repl] Explicit enable is taking over bridge session ${I} from local pid ${e.pid}`), Wt = !0;
+    }
+  }
+  let Me = ji(z());
+  if (!T6()) {
+    let e = await pDe(storageV5);
+    if (e === "found") yxn(Me);else if (e === "clean") qss(Me);else if (e === "torn") c("rc_cross_account_suppression", "scan_torn");else {
+      c("rc_cross_account_suppression", e === "budget-exhausted" ? "scan_budget_exhausted" : "scan_read_error");
+      let n = sZ(Me);
+      if (eoe(Me), LEe(Me), !n) _xn(Me);
+    }
+  }
+  if (!j && (T6() || sZ(D) || jde(D) || z() !== D)) j = !0, Pe = Lt(), onHistoryBackfillSuppressed?.(Pe);
+  if (!bA()) {
+    let e = fe();
+    if (e.bridgeOauthDeadExpiresAt != null && (e.bridgeOauthDeadFailCount ?? 0) >= 3 && mFe() === e.bridgeOauthDeadExpiresAt) return t(`[bridge:repl] Skipping: cross-process backoff (dead token seen ${e.bridgeOauthDeadFailCount} times)`), null;
+    await ul({
+      credentials: G,
+      storageV5: storageV5
+    });
+    let n = mFe();
+    if (n !== null && n <= Date.now()) {
+      hO("oauth_expired_unrefreshable", "[bridge:repl] Skipping: OAuth token expired and refresh failed (re-login required)"), onStateChange?.("failed", obe, "auth");
+      let bridgeOauthDeadExpiresAt = n;
+      return await Le(h => ({
+        ...h,
+        bridgeOauthDeadExpiresAt: bridgeOauthDeadExpiresAt,
+        bridgeOauthDeadFailCount: h.bridgeOauthDeadExpiresAt === bridgeOauthDeadExpiresAt ? (h.bridgeOauthDeadFailCount ?? 0) + 1 : 1
+      }), storageV5), null;
+    }
+  }
+  let $e = await NCs(G);
+  if ($e) return hO("trusted_device_unenrolled", `[bridge:repl] Skipping: ${$e}`), onStateChange?.("failed", $e, $e === FFt || $e === h2e() ? "terminal" : "auth"), null;
+  let ae = E1(),
+    title = `${VJe()}-${Yfe()}`,
+    has_title = !1,
+    oe = !1;
+  if (initialName) title = initialName, has_title = !0, oe = !0;else if (!j) {
+    let e = Ue(cy),
+      n = Ue(roe);
+    if (e) title = e, has_title = !0, oe = !0;else if (n) title = n, has_title = !0;else if (initialMessages && initialMessages.length > 0) for (let r = initialMessages.length - 1; r >= 0; r--) {
+      let h = initialMessages[r];
+      if (!eSe(h) || _F(h)) continue;
+      let C = bm(h.message.content);
+      if (!C) continue;
+      let O = br(C);
+      if (!O) continue;
+      title = O, has_title = !0;
+      break;
+    }
+  }
+  let user_message_count = 0,
+    Je,
+    ue = null,
+    ht = 0,
+    pe = !1,
+    _t = !1,
+    bt,
+    xn = e => bt?.bridgeSessionId === e && bt.sessionId === z(),
+    titleWriter = u8n({
+      isOwnTitle: (e, n) => ye.has(n),
+      onRemoteTitleAdopted: (e, n) => {
+        r7e(e, n), ve = e;
+      }
+    }),
+    We = (e, n) => ye.has(n) || titleWriter.hasSent(e, n),
+    ve,
+    neutralFallbackTitle = `${VJe()}-${Yfe()}`,
+    ye = new Set([title]),
+    Gt;
+  if (j) {
+    let e = z(),
+      n = e ? roe(e) : void 0;
+    if (n) ye.add(n);
+    Gt = e ? cy(e) : void 0;
+  }
+  let Kt = Promise.resolve(),
+    yt = (e, n, r, h) => {
+      let C = () => h && (iZ() || Re()),
+        O = () => !_t;
+      if (pe || C() || Dx(n)) return !1;
+      return has_title = !0, title = e, ye.add(e), r7e(n, e), t(`[bridge:repl] derived title from message ${r}: ${e}`), titleWriter.update(n, e, {
+        baseUrl: ae,
+        getAccessToken: getAccessToken,
+        shouldSend: () => {
+          if (pe || C() || !O()) return !1;
+          return !Dx(n);
+        }
+      }).catch(() => {}), !0;
+    },
+    zt = (e, n, r) => {
+      if (pe) return;
+      let h = ++ht,
+        C = user_message_count,
+        O = AbortSignal.timeout(15000);
+      Ler(e, O, G).then(async te => {
+        let ge = () => {
+            let he = roe(z());
+            return Boolean(he && !ye.has(he));
+          },
+          Ie = () => {
+            let he = cy(z());
+            return pe || h !== ht || Je !== n || oe || Boolean(he && he !== Gt) || ge();
+          };
+        if (!te || Ie()) return;
+        let et = Ne ? await gLt(G) : void 0,
+          me = await H0t(n, {
+            baseUrl: ae,
+            getAccessToken: Ne ? () => et : getAccessToken,
+            credentials: G
+          }).catch(() => null);
+        if (Ie()) return;
+        if (me === null) return;
+        if (me.title && !We(n, me.title)) {
+          r7e(n, me.title), titleWriter.noteRemoteTitle(n, me.title), ve = n;
+          return;
+        }
+        yt(te, n, C, r);
+      });
+    },
+    onRenameSession = e => {
+      let n = ta(e);
+      if (!n) return {
+        ok: !1,
+        error: "title must be non-empty"
+      };
+      if (title = n, has_title = !0, oe = !0, ye.add(n), ye.add(e), ue) {
+        if (ue.selfTitle = n, titleWriter.noteRemoteTitle(ue.bridgeSessionId, n), e !== n) titleWriter.noteRemoteTitle(ue.bridgeSessionId, e);
+      }
+      let r = iZ(),
+        h = r ? Yss() : z();
+      if (h) k9(h, n, r ? gxn(h) : void 0, "remote", storageV5).catch(C => {
+        t(`saveCustomTitle: transcript append failed: ${d(C)}`);
+      });else t("[bridge:repl] Dropping inbound rename mirror: foreign binding with no bound-sid exposure \u2014 the live conversation is not the one the phone renamed");
+      if (!Fc() && !r) Kt = Kt.then(async () => {
+        try {
+          await xje(n, "user", storageV5);
+        } catch (error) {
+          t(`onRenameSession: name propagation failed: ${d(error)}`);
+        }
+      });
+      return {
+        ok: !0
+      };
+    },
+    qt = bridgeSessionId => {
+      let sessionId_3 = z(),
+        r = Ue(roe);
+      if (!r || We(bridgeSessionId, r)) return !1;
+      let h = user_message_count;
+      return H0t(bridgeSessionId, {
+        baseUrl: ae,
+        getAccessToken: getAccessToken
+      }).catch(() => null).then(C => {
+        if (oe || ve === bridgeSessionId || cy(z())) return;
+        if (C === null) return;
+        if (C.title && !We(bridgeSessionId, C.title)) {
+          r7e(bridgeSessionId, C.title), titleWriter.noteRemoteTitle(bridgeSessionId, C.title), ve = bridgeSessionId;
+          return;
+        }
+        if (z() !== sessionId_3 || Ue(roe) !== r) return;
+        if (ht++, yt(r, bridgeSessionId, h, !0)) bt = {
+          bridgeSessionId: bridgeSessionId,
+          sessionId: sessionId_3
+        };
+      }), !0;
+    },
+    Nn = () => {
+      let e = ue?.bridgeSessionId;
+      if (!e || pe || _t || oe || ve === e || cy(z())) return;
+      qt(e);
+    },
+    Vt = () => {
+      l("tengu_bridge_auto_title_skipped", {
+        user_message_count: user_message_count,
+        has_title: has_title
+      });
+    },
+    onUserMessage = (e, n) => {
+      if (pe) return !0;
+      if (oe || xn(n) || ve === n) return !0;
+      let r = Ue(cy);
+      if (r) {
+        if (!We(n, r)) H0t(n, {
+          baseUrl: ae,
+          getAccessToken: getAccessToken
+        }).catch(() => null).then(h => {
+          if (oe || cy(z()) !== r) return;
+          if (h === null) return;
+          if (h.title && !We(n, h.title)) {
+            r7e(n, h.title), titleWriter.noteRemoteTitle(n, h.title), ve = n;
+            return;
+          }
+          yt(r, n, user_message_count, !0), oe = !0;
+        });
+        return !0;
+      }
+      if (qt(n)) return !0;
+      if (Je !== void 0 && Je !== n) user_message_count = 0;
+      if (Je = n, user_message_count++, user_message_count === 1 && !has_title) {
+        if (skipAutoTitle) Vt();else zt(e, n, !1);
+      } else if (user_message_count === 3 && skipAutoTitle) Vt();else if (user_message_count === 3) {
+        let h = j || iZ() || Re() ? void 0 : ot?.(),
+          C = h ? Der(Es(h)) : e;
+        zt(C, n, h !== void 0);
+      }
+      return user_message_count >= 3 && (has_title || oe) || user_message_count >= 8;
+    },
+    initialHistoryCap = 200,
+    orgUUID = await QHt();
+  if (!orgUUID) return hO("no_org_uuid", "[bridge:repl] Skipping: no org UUID"), onStateChange?.("failed", obe, "auth"), null;
+  let Gn = Ne ? await pD(G) : void 0,
+    ownerPin = await Pmi({
+      getAccessToken: Ne ? () => Gn : JW,
+      storageV5: storageV5,
+      credentials: G
+    }),
+    onClassifyMissingOAuthToken = await tn(storageV5, G),
+    fixedCredentialNow = void 0,
+    Qt = await kar();
+  if (Qt) return hO("version_too_old", `[bridge:repl] Skipping: ${Qt}`, !0), onStateChange?.("failed", "run `claude update` to upgrade", "terminal"), null;
+  let {
+      branch: branch,
+      gitRepoUrl: gitRepoUrl,
+      defaultBranch: defaultBranch
+    } = await PSt(),
+    je,
+    Ge = Xn();
+  function onOwnerChanged() {
+    if (pe = !0, Ge.abort(), je?.teardown(), ue) titleWriter.forget(ue.bridgeSessionId), gmo(ue, storageV5);
+  }
+  if (gt) {
+    if (!(await $t(gt, "host_target_owner_recheck_failed", "[bridge:repl] Skipping: the login changed (or became unreadable) between adjudicating this conversation\u2019s owner and connecting \u2014 not attaching it to the host\u2019s session"))) return null;
+    t("[bridge:repl] Host-directed target on a recorded conversation: owner re-verified immediately before connecting");
+  }
+  let workSecretCredentials;
+  if (Ye !== void 0) {
+    if (!I) return t("[bridge:repl] Skipping: work secret supplied but this init has no session to reattach (no target, or the target was vetoed)", {
+      level: "error"
+    }), hO("work_secret_no_target", void 0, !0), onStateChange?.("failed", "Remote Control could not attach: no session to attach the host credential to", "terminal"), null;
+    try {
+      workSecretCredentials = hn({
+        secret: Ye,
+        sessionId: I,
+        apiBaseUrl: ae,
+        requestFreshSecret: In
+      });
+    } catch (error) {
+      return t(`[bridge:repl] Skipping: ${d(error)}`, {
+        level: "error"
+      }), hO("work_secret_rejected", void 0, !0), onStateChange?.("failed", `Remote Control could not attach: ${d(error)}`, "terminal"), null;
+    }
+    if (XPe() !== null) {
+      let e = () => cst(I, {
+          baseUrl: ae,
+          credentials: G
+        }),
+        n = await e();
+      if (n === null) await J(2000), n = await e();
+      let r = XPe();
+      if (r !== null && _2t(n, r)) {
+        let h = n === null ? `Remote Control could not attach: the session's record could not be read. ${r.message}` : `Remote Control could not attach: ${r.message}`;
+        return t(`[bridge:repl] Skipping: ${h}`, {
+          level: "error"
+        }), hO("machine_lane_floor", void 0, !0), m("bridge_machine_lane_floor", n === null ? `session_unread_${r.reason}` : r.reason), onStateChange?.("failed", h, "terminal"), null;
+      }
+    }
+    t(`[bridge:repl] Attaching ${I} with the host's work secret (worker-credential path)`);
+  }
+  if (Wt) l("tengu_bridge_restored_pointer_takeover", {});
+  let Ze,
+    Zn = 0,
+    er = $d(),
+    ze,
+    tr = Ja(1, B4e),
+    Q = ue = await ymi({
+      titleWriter: titleWriter,
+      noHistoryBackfill: j && Pe?.uncertaintyOnly !== !0,
+      neutralFallbackTitle: neutralFallbackTitle,
+      onReattachGoneBounce: () => {
+        ye.add(neutralFallbackTitle), j = !0, onHistoryBackfillSuppressed?.(), eoe(D), LEe(D), l9e(D), It();
+      },
+      reattachSessionId: I,
+      reattachSequenceNum: reattachSequenceNum_2,
+      reattachOrFail: reattachOrFail_2,
+      reattachOrigin: reattachOrigin,
+      reviveInitiated: reviveInitiated,
+      neverArchive: neverArchive,
+      onAuthProven: onAuthProven,
+      onReattachPointerDead: () => {
+        if (It(), eoe(D), LEe(D), l9e(D), !Fe) noe(D, ct, ct ? {
+          targetExists: !0
+        } : void 0, storageV5);
+        onReattachPointerDead?.();
+      },
+      baseUrl: ae,
+      orgUUID: orgUUID,
+      title: title,
+      ownerPin: ownerPin,
+      fixedCredentialNow: fixedCredentialNow,
+      onOwnerChanged: onOwnerChanged,
+      getAccessToken: getAccessToken,
+      onAuth401: (e, n) => eIr(e, G, storageV5, n),
+      classifyFailedOAuthRefresh: classifyFailedOAuthRefresh,
+      onReadFreshOAuthToken: async () => {
+        let e = await Kbe(G);
+        return e !== void 0 && uBt(e) ? void 0 : e;
+      },
+      onClassifyMissingOAuthToken: onClassifyMissingOAuthToken,
+      onProactiveRefresh: async () => {
+        await ul({
+          credentials: G,
+          storageV5: storageV5
+        });
+      },
+      toSDKMessages: hr(getTools),
+      placeAccountMemoryTool: mz(() => getTools?.()),
+      accountMemoryInPlay: () => _Ue(host),
+      initialHistoryCap: initialHistoryCap,
+      initialMessages: j ? void 0 : initialMessages,
+      conversationForPairing: () => ot?.() ?? initialMessages ?? [],
+      remoteControlOrigin: j ? void 0 : remoteControlOrigin,
+      getBackfillMessages: e => j || iZ() || Re() ? void 0 : getBackfillMessages?.(e),
+      gitRepoUrl: gitRepoUrl,
+      branch: branch,
+      defaultBranch: defaultBranch,
+      nameSourceForCreate: outboundOnly ? void 0 : nameSourceForCreate,
+      onInboundMessage: onInboundMessage,
+      onQueuedNotification: onQueuedNotification,
+      onUserMessage: onUserMessage,
+      onSessionEstablished: e => {
+        if (je?.teardown(), je = qYn(Ld(e), ae, () => {
+          let r = getAccessToken();
+          if (!r || pe) return null;
+          return {
+            Authorization: `Bearer ${r}`
+          };
+        }, async r => (await AR(r.Authorization?.replace(/^Bearer /, "") ?? "")) === "recovered"), Bft() && !St()) Pli(storageV5);
+        let n = Fct();
+        if (n && n !== "default") z_s(e, n, qS, {
+          baseUrl: ae,
+          getAccessToken: getAccessToken
+        });
+      },
+      onBeforePushTriggeringState: () => je?.pulseIfClientPresent(),
+      onPermissionResponse: onPermissionResponse,
+      onInterrupt: onInterrupt,
+      onStopTask: onStopTask,
+      onBackgroundTasks: onBackgroundTasks,
+      onCancelAsyncMessage: onCancelAsyncMessage,
+      getInitializeState: getInitializeState,
+      getCommands: getCommands,
+      isTurnLive: isTurnLive,
+      onDialogKindsDeclared: onDialogKindsDeclared,
+      onClientInitialize: onClientInitialize,
+      onSetModel: onSetModel,
+      onSetMaxThinkingTokens: onSetMaxThinkingTokens,
+      onSetPermissionMode: onSetPermissionMode,
+      onApplyFlagSettings: onApplyFlagSettings,
+      onRenameSession: onRenameSession,
+      onSetColor: onSetColor,
+      async onFileSuggestions(e) {
+        return (await iwn(eIe, e, !0, storageV5)).map(item => ({
+          path: item.displayText
+        }));
+      },
+      onReadFile: (e, n, encoding, anchor) => (anchor === void 0 ? B4e : tr)(e, n, () => getToolPermissionContext?.() ?? $d(), {
+        encoding: encoding,
+        anchor: anchor,
+        telemetrySource: "repl_bridge"
+      }),
+      onGetWorkspaceDiff: host ? e => {
+        let permissionContext = getToolPermissionContext?.() ?? er,
+          r = ze;
+        if (ze = void 0, r && r.permissionContext === permissionContext && Date.now() - r.settledAt <= gr) return Promise.resolve(r.result);
+        let h = Ze;
+        if (!h || h.permissionContext !== permissionContext) {
+          let O = {
+            sequence: ++Zn,
+            permissionContext: permissionContext,
+            pendingWaiters: 0,
+            promise: nLo(host, permissionContext, workspaceDiffComputeBudget).then(result => {
+              if (O.pendingWaiters === 0 && !(ze && ze.sequence > O.sequence)) ze = {
+                sequence: O.sequence,
+                settledAt: Date.now(),
+                permissionContext: permissionContext,
+                result: result
+              };
+              return result;
+            }).finally(() => {
+              if (Ze === O) Ze = void 0;
+            })
+          };
+          Ze = O, h = O;
+        }
+        let C = h;
+        if (!e.aborted) C.pendingWaiters++, e.addEventListener("abort", () => {
+          C.pendingWaiters--;
+        }, {
+          once: !0
+        });
+        return C.promise;
+      } : void 0,
+      async onSideQuestion({
+        question: question,
+        history: history
+      }, {
+        signal: signal_5,
+        onProgress: onProgress
+      }) {
+        if (j || iZ() || Re()) return t("[bridge:repl] side_question refused: current conversation egress is barred"), {
+          response: null,
+          synthetic: !1
+        };
+        let parentController = Xn(),
+          O = () => parentController.abort();
+        if (signal_5.aborted || Ge.signal.aborted) O();
+        signal_5.addEventListener("abort", O, {
+          once: !0
+        }), Ge.signal.addEventListener("abort", O, {
+          once: !0
+        });
+        try {
+          let te = await F3n({
+            question: question,
+            history: history,
+            parentController: parentController,
+            onProgress: onProgress,
+            getLiveMessages: ot,
+            isTurnInProgress: kn
+          });
+          if (te.cancelled) throw new Ke("Side question cancelled");
+          return te.response;
+        } finally {
+          signal_5.removeEventListener("abort", O), Ge.signal.removeEventListener("abort", O);
+        }
+      },
+      onMcpAuthenticate: onMcpAuthenticate,
+      onMcpOauthCallbackUrl: onMcpOauthCallbackUrl,
+      onMcpReconnect: onMcpReconnect,
+      onForkConversation: onForkConversation,
+      onBridgeInjectedMcp: onBridgeInjectedMcp,
+      onProjectsBindingHint: onProjectsBindingHint,
+      onGetContextUsage: onGetContextUsage,
+      answerSharedControlRequest: answerSharedControlRequest,
+      onStateChange: onStateChange,
+      outboundOnly: outboundOnly,
+      tags: tags,
+      sessionGroupingId: sessionGroupingId,
+      requestedSessionGroupingId: Et,
+      onTransportRebuilt: onTransportRebuilt,
+      storageV5: storageV5,
+      credentialsStore: G,
+      workSecretCredentials: workSecretCredentials,
+      ...(enableSessionPersistence ? Dn : {})
+    });
+  if (Q) {
+    let e = Q.detachForHandoff?.bind(Q);
+    Q.detachForHandoff = () => {
+      onOwnerChanged(), e?.();
+    };
+    let n = Q.teardown.bind(Q);
+    if (Q.teardown = async r => {
+      _t = !0, Ge.abort(), titleWriter.forget(Q.bridgeSessionId), await n(r);
+    }, pe) gmo(Q, storageV5);
+    Q.selfTitle = title, Q.adoptLocalAiTitle = Nn, Q.ownerVetoed = Qe, Q.serverVouch = Xe ?? (be ? ut : void 0);
+  }
+  return _r(Q, () => je);
+}
+function _r(s, u) {
+  if (!s) return u()?.teardown(), null;
+  let p = s.teardown.bind(s);
+  return s.teardown = async o => {
+    u()?.teardown(), await p(o);
+  }, s;
+}
+var _n = 50;
+function br(s) {
+  let u = mwt(s),
+    o = (/^(.*?[.!?])\s/.exec(u)?.[1] ?? u).replace(/\s+/g, " ").trim();
+  if (!o) return;
+  return o.length > _n ? o.slice(0, _n - 1) + "\u2026" : o;
+}
+export { Wi as HEADLESS_BRIDGE_WORKSPACE_DIFF_COMPUTE_BUDGET, $i as REPL_WORKSPACE_DIFF_COMPUTE_BUDGET, Gi as initReplBridge };

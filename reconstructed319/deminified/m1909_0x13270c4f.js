@@ -1,0 +1,832 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import { _7, Ml, S7, nWt } from "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import { f } from "B:/~BUN/root/chunk-drx9cnw1.js";
+import { R } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import { p } from "B:/~BUN/root/chunk-z6138ats.js";
+import "B:/~BUN/root/chunk-j6ahtce9.js";
+import { l } from "B:/~BUN/root/chunk-mb9chr1y.js";
+import { g } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import { N$t } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import "B:/~BUN/root/chunk-j6pt0v41.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import { P } from "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import "B:/~BUN/root/chunk-xrwdh0g4.js";
+import "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-1g25msn4.js";
+import "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-thn0wk2x.js";
+import "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-t4qpmjt5.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-fkr27nhj.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import { le } from "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import "B:/~BUN/root/chunk-sy1h8mf0.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import "B:/~BUN/root/chunk-8f4z6bdn.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import { _n, Tet } from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import "B:/~BUN/root/chunk-yhafkw66.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-0s9zh2h6.js";
+import { hi as name, hNe as content, ITs, F2i, Fyo, H2i, $2i, Hyo, U2i } from "B:/~BUN/root/chunk-7pxn9dsp.js";
+import "B:/~BUN/root/chunk-n0v0c6zt.js";
+import "B:/~BUN/root/chunk-2x2z0t2k.js";
+import "B:/~BUN/root/chunk-42915bn6.js";
+import "B:/~BUN/root/chunk-vk5b2c7t.js";
+import { co, Ka } from "B:/~BUN/root/chunk-tjfmeakx.js";
+import { Chi, cTn, gQo, Ahi, Zar, $6t, Fu, cq, kDe } from "B:/~BUN/root/chunk-27h4st9h.js";
+import "B:/~BUN/root/chunk-kfm993xq.js";
+import "B:/~BUN/root/chunk-j05gjqgd.js";
+import "B:/~BUN/root/chunk-4tp5kqnx.js";
+import "B:/~BUN/root/chunk-hvykkx00.js";
+import "B:/~BUN/root/chunk-f0zgv0ya.js";
+import "B:/~BUN/root/chunk-eswth6m1.js";
+import "B:/~BUN/root/chunk-nwv7r07s.js";
+import { lO, Fy, lgo } from "B:/~BUN/root/chunk-78494p3w.js";
+import "B:/~BUN/root/chunk-gezr7m08.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import "B:/~BUN/root/chunk-eds8xkh8.js";
+import "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import "B:/~BUN/root/chunk-tdekz3md.js";
+import "B:/~BUN/root/chunk-ke150ry1.js";
+import "B:/~BUN/root/chunk-wss0tnsx.js";
+import "B:/~BUN/root/chunk-wxhfn3za.js";
+import "B:/~BUN/root/chunk-pdtjaehv.js";
+import "B:/~BUN/root/chunk-x6frvp1m.js";
+import { dn } from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import "B:/~BUN/root/chunk-y5gyn2hc.js";
+import "B:/~BUN/root/chunk-9t9ygsbp.js";
+import "B:/~BUN/root/chunk-6j3fjnhn.js";
+import "B:/~BUN/root/chunk-sgy380eg.js";
+import "B:/~BUN/root/chunk-22y97556.js";
+import "B:/~BUN/root/chunk-9bs2y8fc.js";
+import "B:/~BUN/root/chunk-vzhm698f.js";
+import "B:/~BUN/root/chunk-4xvtrfzh.js";
+import "B:/~BUN/root/chunk-jh04j3yr.js";
+import "B:/~BUN/root/chunk-v29ccgfa.js";
+import "B:/~BUN/root/chunk-detjgwj4.js";
+import "B:/~BUN/root/chunk-knfpag6d.js";
+import { tT, Jue, l2e, RHn, VI, P2i, SFt, wFt, I2i, Mse, vFt, EFt } from "B:/~BUN/root/chunk-hr1m6fe3.js";
+import "B:/~BUN/root/chunk-cvaa202c.js";
+import "B:/~BUN/root/chunk-2r9r3hfm.js";
+import "B:/~BUN/root/chunk-jbf2dde1.js";
+import "B:/~BUN/root/chunk-6h5p2dxf.js";
+import "B:/~BUN/root/chunk-tdg0k3wq.js";
+import "B:/~BUN/root/chunk-n98vg3jf.js";
+import "B:/~BUN/root/chunk-838fxqce.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-2gz7xsvb.js";
+import "B:/~BUN/root/chunk-02j0cm13.js";
+import "B:/~BUN/root/chunk-0s00dkj6.js";
+import "B:/~BUN/root/chunk-hevmq1yj.js";
+import "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-ddamx62b.js";
+import "B:/~BUN/root/chunk-0aq7t0nw.js";
+import "B:/~BUN/root/chunk-fnf5t6te.js";
+import "B:/~BUN/root/chunk-ajvcvya3.js";
+import "B:/~BUN/root/chunk-sjvfcp1z.js";
+import "B:/~BUN/root/chunk-63btkzab.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-vke7wtay.js";
+import "B:/~BUN/root/chunk-ckdgegnz.js";
+import "B:/~BUN/root/chunk-x9bz04wf.js";
+import "B:/~BUN/root/chunk-6g8w5kyh.js";
+import "B:/~BUN/root/chunk-jmt91fq8.js";
+import "B:/~BUN/root/chunk-5x4j33v9.js";
+import "B:/~BUN/root/chunk-wm0axmjp.js";
+import "B:/~BUN/root/chunk-m8dg5txf.js";
+import "B:/~BUN/root/chunk-ekqreyhv.js";
+import "B:/~BUN/root/chunk-mf9c9p38.js";
+import "B:/~BUN/root/chunk-cxcakgnv.js";
+import "B:/~BUN/root/chunk-2htsebsg.js";
+import "B:/~BUN/root/chunk-875j4y83.js";
+import "B:/~BUN/root/chunk-t4pbv0np.js";
+import "B:/~BUN/root/chunk-xgwmwbnb.js";
+import "B:/~BUN/root/chunk-yg4ttpr7.js";
+import "B:/~BUN/root/chunk-6v74v9ar.js";
+import "B:/~BUN/root/chunk-eak7wp7z.js";
+import "B:/~BUN/root/chunk-mbh2s41k.js";
+import "B:/~BUN/root/chunk-s9vv4h32.js";
+import "B:/~BUN/root/chunk-7thhw21a.js";
+import "B:/~BUN/root/chunk-1012essb.js";
+import "B:/~BUN/root/chunk-kpr2et3s.js";
+import "B:/~BUN/root/chunk-jxvayzd7.js";
+import "B:/~BUN/root/chunk-e8znf4zw.js";
+import "B:/~BUN/root/chunk-xfqs9tac.js";
+import "B:/~BUN/root/chunk-5w7xhbnh.js";
+import "B:/~BUN/root/chunk-vmp6vbba.js";
+import "B:/~BUN/root/chunk-dxwyqd26.js";
+import "B:/~BUN/root/chunk-k5mszhcg.js";
+import "B:/~BUN/root/chunk-z4janqzm.js";
+import "B:/~BUN/root/chunk-zymc6pem.js";
+import "B:/~BUN/root/chunk-mjgazsjk.js";
+import "B:/~BUN/root/chunk-2f6ykbbh.js";
+import "B:/~BUN/root/chunk-7rwbs73j.js";
+import "B:/~BUN/root/chunk-z7bs0q82.js";
+import "B:/~BUN/root/chunk-5g1gmfkv.js";
+import "B:/~BUN/root/chunk-s89g0dw7.js";
+import "B:/~BUN/root/chunk-2392ztjf.js";
+import "B:/~BUN/root/chunk-rv3pfsrw.js";
+import "B:/~BUN/root/chunk-pw7914mv.js";
+import "B:/~BUN/root/chunk-hjds4dtx.js";
+import "B:/~BUN/root/chunk-8qv1t8b3.js";
+import "B:/~BUN/root/chunk-b7bhhce8.js";
+import "B:/~BUN/root/chunk-sx264pby.js";
+import "B:/~BUN/root/chunk-psjm1gcn.js";
+import "B:/~BUN/root/chunk-cj2cn5y2.js";
+import "B:/~BUN/root/chunk-6bx54the.js";
+import "B:/~BUN/root/chunk-m1v50w96.js";
+import "B:/~BUN/root/chunk-rpagz3p9.js";
+import "B:/~BUN/root/chunk-5bb21frh.js";
+import "B:/~BUN/root/chunk-vp8vb7t8.js";
+import "B:/~BUN/root/chunk-xkw95p5n.js";
+import "B:/~BUN/root/chunk-sa4785jr.js";
+import "B:/~BUN/root/chunk-nk59bmc9.js";
+import "B:/~BUN/root/chunk-n7ta2s3w.js";
+import "B:/~BUN/root/chunk-65j4e9bn.js";
+import "B:/~BUN/root/chunk-ex2shtaj.js";
+import "B:/~BUN/root/chunk-64qg3pvz.js";
+import "B:/~BUN/root/chunk-jv4ech2n.js";
+import "B:/~BUN/root/chunk-5fdpyc78.js";
+import "B:/~BUN/root/chunk-ybkgfvgz.js";
+import "B:/~BUN/root/chunk-gknte1ng.js";
+import "B:/~BUN/root/chunk-4tz0m6qq.js";
+import "B:/~BUN/root/chunk-3qkmk2e4.js";
+import "B:/~BUN/root/chunk-7pj7keyk.js";
+import "B:/~BUN/root/chunk-gr5se97s.js";
+import "B:/~BUN/root/chunk-3kdxvefh.js";
+import "B:/~BUN/root/chunk-apgsnbqk.js";
+import "B:/~BUN/root/chunk-vs3bcjd7.js";
+import "B:/~BUN/root/chunk-pmr34yc8.js";
+import "B:/~BUN/root/chunk-b3jc87kv.js";
+import "B:/~BUN/root/chunk-rhdsefgz.js";
+import "B:/~BUN/root/chunk-11wz0rq6.js";
+import "B:/~BUN/root/chunk-vy4t7613.js";
+import "B:/~BUN/root/chunk-kexqfgtm.js";
+import "B:/~BUN/root/chunk-rzc1dapy.js";
+import "B:/~BUN/root/chunk-ghar8fn5.js";
+import "B:/~BUN/root/chunk-8cgm9m8p.js";
+import "B:/~BUN/root/chunk-5gm1xyqv.js";
+import "B:/~BUN/root/chunk-hh77nseb.js";
+import "B:/~BUN/root/chunk-b5ry9py2.js";
+import "B:/~BUN/root/chunk-de98q5we.js";
+import "B:/~BUN/root/chunk-mwy4xyee.js";
+import "B:/~BUN/root/chunk-ajpcs9fs.js";
+import "B:/~BUN/root/chunk-gq4ywexf.js";
+import "B:/~BUN/root/chunk-p2ta953m.js";
+import { pZ, BEe, _2 } from "B:/~BUN/root/chunk-2fedt3ag.js";
+import "B:/~BUN/root/chunk-bfwh5k9e.js";
+import "B:/~BUN/root/chunk-wt8tyqt4.js";
+import "B:/~BUN/root/chunk-kfnabvp7.js";
+import "B:/~BUN/root/chunk-jj9s326a.js";
+import "B:/~BUN/root/chunk-p8dysp9f.js";
+import "B:/~BUN/root/chunk-dcmvdxnm.js";
+import "B:/~BUN/root/chunk-kk81ayzj.js";
+import "B:/~BUN/root/chunk-rc0vwsyy.js";
+import "B:/~BUN/root/chunk-c86vwcts.js";
+import "B:/~BUN/root/chunk-6sbka0ts.js";
+import "B:/~BUN/root/chunk-05q1awc0.js";
+import "B:/~BUN/root/chunk-wzeexm6f.js";
+import "B:/~BUN/root/chunk-076mmgjt.js";
+import "B:/~BUN/root/chunk-dwbkkfd6.js";
+import "B:/~BUN/root/chunk-k5xd4a86.js";
+import "B:/~BUN/root/chunk-98qgaht2.js";
+import "B:/~BUN/root/chunk-r1gg0qbg.js";
+import "B:/~BUN/root/chunk-5m83sh3a.js";
+import "B:/~BUN/root/chunk-pm850sj6.js";
+import "B:/~BUN/root/chunk-w0kge9aq.js";
+import "B:/~BUN/root/chunk-teehnwdh.js";
+import "B:/~BUN/root/chunk-x4zqd4cy.js";
+import "B:/~BUN/root/chunk-ysxmr1nk.js";
+import "B:/~BUN/root/chunk-8rnfdnh3.js";
+import "B:/~BUN/root/chunk-7wcc5pbk.js";
+import "B:/~BUN/root/chunk-400x0tcq.js";
+import "B:/~BUN/root/chunk-1tbewxs3.js";
+import "B:/~BUN/root/chunk-rrf8gvt4.js";
+import "B:/~BUN/root/chunk-7vfy9z2g.js";
+import "B:/~BUN/root/chunk-ftj46fnn.js";
+import "B:/~BUN/root/chunk-45td50dx.js";
+import "B:/~BUN/root/chunk-3vrk9h6f.js";
+import "B:/~BUN/root/chunk-0xtfwyhv.js";
+import "B:/~BUN/root/chunk-z2c6k7e2.js";
+import "B:/~BUN/root/chunk-h6zqt1s4.js";
+import "B:/~BUN/root/chunk-jmka9ye7.js";
+import "B:/~BUN/root/chunk-qk8tvzkn.js";
+import "B:/~BUN/root/chunk-fc7k1zas.js";
+import "B:/~BUN/root/chunk-nw79m6g4.js";
+import "B:/~BUN/root/chunk-4vcs773m.js";
+import "B:/~BUN/root/chunk-1ratk947.js";
+import "B:/~BUN/root/chunk-wznngf8b.js";
+import "B:/~BUN/root/chunk-2ys4h17s.js";
+import "B:/~BUN/root/chunk-wxztkjve.js";
+import "B:/~BUN/root/chunk-wjxjrbnh.js";
+import "B:/~BUN/root/chunk-yrh147c7.js";
+import "B:/~BUN/root/chunk-taw9ve37.js";
+import "B:/~BUN/root/chunk-vyjvp8sa.js";
+import "B:/~BUN/root/chunk-jypg1bby.js";
+import "B:/~BUN/root/chunk-w0nyevkg.js";
+import "B:/~BUN/root/chunk-z5apdcem.js";
+import "B:/~BUN/root/chunk-d5rmf5x5.js";
+import "B:/~BUN/root/chunk-8x466dw5.js";
+import "B:/~BUN/root/chunk-17caj8fw.js";
+import "B:/~BUN/root/chunk-hhd7smkx.js";
+import "B:/~BUN/root/chunk-cejfpzdt.js";
+import "B:/~BUN/root/chunk-0q69tvcp.js";
+import "B:/~BUN/root/chunk-0jhmwh3q.js";
+import "B:/~BUN/root/chunk-j3efez3c.js";
+import "B:/~BUN/root/chunk-6cgv9p77.js";
+import "B:/~BUN/root/chunk-9ajgj3y1.js";
+import "B:/~BUN/root/chunk-pjcve3z9.js";
+import "B:/~BUN/root/chunk-cjmntjcn.js";
+import "B:/~BUN/root/chunk-43aygqej.js";
+import "B:/~BUN/root/chunk-y7em5h10.js";
+import "B:/~BUN/root/chunk-tmn2g637.js";
+import "B:/~BUN/root/chunk-mjx3yttm.js";
+import "B:/~BUN/root/chunk-wdfwarp2.js";
+import "B:/~BUN/root/chunk-0ypwt1ew.js";
+import "B:/~BUN/root/chunk-3eq12f11.js";
+import "B:/~BUN/root/chunk-mq0pq26y.js";
+import "B:/~BUN/root/chunk-trf406sb.js";
+import "B:/~BUN/root/chunk-mcdkvptw.js";
+import "B:/~BUN/root/chunk-q2s07yzr.js";
+import "B:/~BUN/root/chunk-3aa152x8.js";
+import "B:/~BUN/root/chunk-ymawhbhz.js";
+import "B:/~BUN/root/chunk-rbfkfjk4.js";
+import "B:/~BUN/root/chunk-az0cmmyt.js";
+import "B:/~BUN/root/chunk-bw0w9zyr.js";
+import "B:/~BUN/root/chunk-hydnwtf3.js";
+import "B:/~BUN/root/chunk-15eyam7k.js";
+import "B:/~BUN/root/chunk-ynneeax2.js";
+import "B:/~BUN/root/chunk-4ffx6rrs.js";
+import "B:/~BUN/root/chunk-8ytf4evt.js";
+import "B:/~BUN/root/chunk-33ssadqt.js";
+import "B:/~BUN/root/chunk-4zhce32x.js";
+import "B:/~BUN/root/chunk-bsbbs1xs.js";
+import { qXn } from "B:/~BUN/root/chunk-wwrzj5mm.js";
+import "B:/~BUN/root/chunk-1403xdv8.js";
+import "B:/~BUN/root/chunk-dt45jjk2.js";
+import "B:/~BUN/root/chunk-n7rjc97z.js";
+import "B:/~BUN/root/chunk-bwk2g6e0.js";
+import "B:/~BUN/root/chunk-1b2nf93s.js";
+import "B:/~BUN/root/chunk-q7dbkm6t.js";
+import "B:/~BUN/root/chunk-pgm29tvd.js";
+import "B:/~BUN/root/chunk-992ex3nd.js";
+import "B:/~BUN/root/chunk-h2qbvrp4.js";
+import "B:/~BUN/root/chunk-0wyf4zb9.js";
+import { s1 } from "B:/~BUN/root/chunk-p77fkpvc.js";
+import "B:/~BUN/root/chunk-vxbt81wk.js";
+import "B:/~BUN/root/chunk-v04fapnf.js";
+import "B:/~BUN/root/chunk-rsz72fpd.js";
+import "B:/~BUN/root/chunk-69k97bnp.js";
+import "B:/~BUN/root/chunk-q82am8wz.js";
+import "B:/~BUN/root/chunk-spc3jrd3.js";
+import { Ko } from "B:/~BUN/root/chunk-kgvnwy91.js";
+import "B:/~BUN/root/chunk-p25ahy45.js";
+import "B:/~BUN/root/chunk-4xx5w1am.js";
+import "B:/~BUN/root/chunk-pgf3n8rv.js";
+import "B:/~BUN/root/chunk-stfp5qgr.js";
+import "B:/~BUN/root/chunk-az6xed3t.js";
+import "B:/~BUN/root/chunk-w179eqqe.js";
+import "B:/~BUN/root/chunk-p8898990.js";
+import "B:/~BUN/root/chunk-fkz77yzp.js";
+import "B:/~BUN/root/chunk-zy4xrndc.js";
+import "B:/~BUN/root/chunk-we53d1t3.js";
+import "B:/~BUN/root/chunk-1jrzd264.js";
+import "B:/~BUN/root/chunk-zz0hj0zg.js";
+import "B:/~BUN/root/chunk-md18120p.js";
+import "B:/~BUN/root/chunk-zwf5p7y7.js";
+import "B:/~BUN/root/chunk-k3f9rj85.js";
+import "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-8zx74r55.js";
+import "B:/~BUN/root/chunk-xagk1yaq.js";
+import "B:/~BUN/root/chunk-zeshc0ep.js";
+import "B:/~BUN/root/chunk-vvwzzpy4.js";
+import "B:/~BUN/root/chunk-4hx27rd1.js";
+import "B:/~BUN/root/chunk-jjjspatt.js";
+import "B:/~BUN/root/chunk-6bss7gp5.js";
+import "B:/~BUN/root/chunk-h29cx855.js";
+import "B:/~BUN/root/chunk-yjr7e11x.js";
+import "B:/~BUN/root/chunk-tnfsxzpz.js";
+import "B:/~BUN/root/chunk-pp5rqp7s.js";
+import "B:/~BUN/root/chunk-ea8gze25.js";
+import "B:/~BUN/root/chunk-z1wt3cb2.js";
+import "B:/~BUN/root/chunk-cjd8dpgw.js";
+import "B:/~BUN/root/chunk-yscb2r3d.js";
+import "B:/~BUN/root/chunk-s20ae4sg.js";
+import "B:/~BUN/root/chunk-n3m61sfz.js";
+import "B:/~BUN/root/chunk-nk52yc3v.js";
+import "B:/~BUN/root/chunk-kt29vc17.js";
+import "B:/~BUN/root/chunk-a5dg1k4h.js";
+import "B:/~BUN/root/chunk-kj33sgq2.js";
+import "B:/~BUN/root/chunk-kh33ctc6.js";
+import "B:/~BUN/root/chunk-x6ny3ghw.js";
+import "B:/~BUN/root/chunk-0p5dw980.js";
+import "B:/~BUN/root/chunk-dx2wvwvf.js";
+import "B:/~BUN/root/chunk-fcp4egnh.js";
+import "B:/~BUN/root/chunk-frv0tk8w.js";
+import "B:/~BUN/root/chunk-ym6b88b3.js";
+import "B:/~BUN/root/chunk-zx0hhrva.js";
+import "B:/~BUN/root/chunk-s937snw9.js";
+import "B:/~BUN/root/chunk-j5zjtxy5.js";
+import "B:/~BUN/root/chunk-vdqpev1m.js";
+import "B:/~BUN/root/chunk-kd0f2gn5.js";
+import "B:/~BUN/root/chunk-ymgf3kpk.js";
+import "B:/~BUN/root/chunk-dzjj3jwh.js";
+import "B:/~BUN/root/chunk-xbhv3nhf.js";
+import "B:/~BUN/root/chunk-21s8ygah.js";
+import "B:/~BUN/root/chunk-e99p2x0p.js";
+import "B:/~BUN/root/chunk-36r971cb.js";
+import "B:/~BUN/root/chunk-ynpwd78y.js";
+import "B:/~BUN/root/chunk-eyvtcj15.js";
+import "B:/~BUN/root/chunk-r6enj9cw.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import "B:/~BUN/root/chunk-j0enspnr.js";
+import "B:/~BUN/root/chunk-xr3thd43.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-62khcyrb.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import "B:/~BUN/root/chunk-4jfmvmew.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-cbv74thb.js";
+import "B:/~BUN/root/chunk-dc99dkg2.js";
+import "B:/~BUN/root/chunk-b37tyqej.js";
+import "B:/~BUN/root/chunk-dqan51g7.js";
+import "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-z35xf1k7.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import { o, E, C, u, He, Be, B, T } from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+var Y = p(() => He({})),
+  Z = p(() => Be([u({
+    type: T("image"),
+    source: u({
+      type: T("base64"),
+      media_type: B(["image/jpeg", "image/png", "image/gif", "image/webp"]),
+      data: o()
+    })
+  }), u({
+    type: T("document"),
+    source: u({
+      type: T("base64"),
+      media_type: T("application/pdf"),
+      data: o()
+    })
+  })]));
+var J = p(() => u({
+    content: o().describe(`Rendered event envelopes, or "${content}"`),
+    eventCount: E().int().describe("Number of events delivered in this result"),
+    remainingWakeCount: E().int().describe("Wake events still queued after this chunk; they follow in the next delivery"),
+    media: C(C(Z())).optional().describe("Each delivered event's images and documents, 1:1 with the events. Absent when none has any"),
+    toolsUsed: C(o()).optional(),
+    ...{},
+    provenance: C(u({
+      authority: B(l2e),
+      senderId: o().optional(),
+      senderText: o().optional()
+    }).nullable()).optional(),
+    declared: C(Chi().nullable()).optional()
+  })),
+  Ae = dn({
+    name: name,
+    searchHint: "wait for and receive queued harness events",
+    backgrounding: "never",
+    maxResultSizeChars: 200000,
+    persistenceThresholdCeiling: 200000,
+    skipAggregateToolResultBudget: !0,
+    get inputSchema() {
+      return Y();
+    },
+    get outputSchema() {
+      return J();
+    },
+    isEnabled() {
+      return VI();
+    },
+    isConcurrencySafe() {
+      return !0;
+    },
+    isReadOnly() {
+      return !0;
+    },
+    async description() {
+      return "Wait for pending harness events";
+    },
+    async prompt() {
+      let e = gQo(cTn());
+      if (le()) {
+        let {
+            isReplSpliceWaitEnabled: isReplSpliceWaitEnabled
+          } = import.meta.require("B:/~BUN/root/chunk-d4qts6qe.js"),
+          t = Zar() ? Ahi() : void 0,
+          d = e === void 0 || t === void 0 ? e ?? t : `${e}
+
+${t}`;
+        return Hyo(isReplSpliceWaitEnabled() ? F2i() : Fyo, H2i(), d, t === void 0 ? void 0 : $2i());
+      }
+      return e === void 0 ? U2i : Hyo(Fyo, void 0, e);
+    },
+    isTransparentWrapper() {
+      return le() && Fy();
+    },
+    mapToolResultToToolResultBlockParam(e, tool_use_id) {
+      return {
+        tool_use_id: tool_use_id,
+        type: "tool_result",
+        content: vFt(e.content, e.media)
+      };
+    },
+    stripForStorage(e) {
+      return e;
+    },
+    renderToolUseMessage() {
+      return "";
+    },
+    extractSearchText() {
+      return "";
+    },
+    create(e) {
+      let {
+        agentId: agentId,
+        messageQueue: messageQueue,
+        toolState: toolState,
+        taskRegistry: taskRegistry,
+        unlayeredPermissions: unlayeredPermissions
+      } = e;
+      return {
+        async call(F, k) {
+          let {
+              signal: signal,
+              parentMessage: parentMessage,
+              onProgress: onProgress
+            } = k,
+            agentId_2 = le() && Fy() && agentId !== void 0 && N$t({
+              agentId: agentId,
+              agentContext: e.agentContext,
+              teammateContext: e.teammateContext
+            }) ? agentId : void 0;
+          if (agentId !== void 0 && agentId_2 === void 0) throw new R(le() && Fy() ? `${name} isn't available here and isn't needed: each ${co} call you make here waits for its script to finish and returns the result.` : "Poll is available on the main thread only", "Poll refused for this agent");
+          let O = agentId_2 ?? lO,
+            z = messageQueue;
+          if (!z.tryBeginPollCall(agentId_2)) {
+            if (Q("duplicate_call", 0, 0), le() && Fy()) return {
+              data: {
+                content: content,
+                eventCount: 0,
+                remainingWakeCount: 0
+              },
+              hideRow: !0
+            };
+            return {
+              data: {
+                content: content,
+                eventCount: 0,
+                remainingWakeCount: 0
+              }
+            };
+          }
+          let codeModeExperiment = le() && Fy(),
+            a = le() && import.meta.require("B:/~BUN/root/chunk-d4qts6qe.js").isReplSpliceWaitEnabled(),
+            W;
+          try {
+            let m = le() ? import.meta.require("B:/~BUN/root/chunk-mpy7a0f0.js").getReplSessions({
+              toolState: toolState
+            }) : void 0;
+            if (le() && codeModeExperiment && Ml() && m !== void 0 && onProgress !== void 0 && !a) {
+              let r = ({
+                startedAt: s,
+                tick: tick
+              }) => onProgress({
+                type: "progress",
+                toolUseID: tick.toolUseId,
+                data: {
+                  ...tick,
+                  scriptStartedAt: s
+                }
+              });
+              for (let s of m.ticks(O)) r(s);
+              W = m.onTick(O, r);
+            }
+            let I = Date.now(),
+              S = await te(z, signal, m, {
+                messages: e.messages,
+                ...ne({
+                  ingress: nWt(),
+                  permissionMode: unlayeredPermissions().mode,
+                  cacheTtlMs: agentId_2 === void 0 ? _7() : null,
+                  ...(le() ? {
+                    codeModeExperiment: codeModeExperiment,
+                    besideReplCall: [parentMessage, ...(k.sameTurnToolUses ?? []).filter(item => item.message.id === parentMessage?.message.id)].some(item => Array.isArray(item?.message.content) && item.message.content.some(item => item.type === "tool_use" && Ka(item.name))),
+                    printInputClosed: S7(),
+                    selfArmed: P2i()
+                  } : {})
+                }),
+                ...(agentId_2 !== void 0 && {
+                  ownWorkOnly: !0,
+                  inputClosed: !1,
+                  idleWaitMs: void 0,
+                  agentId: agentId_2
+                }),
+                liveTasks: le() && codeModeExperiment ? () => Object.values(taskRegistry.all()).filter(item => X(item) && (agentId_2 === void 0 || ee(item, agentId_2))).map(item => item.description) : () => [],
+                ...(le() && {
+                  deliveryTurn: e.deliveryTurn
+                })
+              }),
+              {
+                endReason: endReason,
+                ...v
+              } = S;
+            if (Q(endReason, Date.now() - I, endReason === "delivered" ? v.data.eventCount : 0), le() && a && m !== void 0) {
+              if (v.data.eventCount > 0) m.takeUnwaited(O);else if (endReason === "queued_input_for_turn_end") {
+                let r = new Set(m.pending(O).map(item => item.id));
+                if (r.size > 0) m.takeUnwaited(O, r), m.noteStatusLine(O);
+              }
+            }
+            return le() && codeModeExperiment && v.data.eventCount === 0 ? {
+              ...v,
+              hideRow: !0
+            } : v;
+          } finally {
+            if (le()) W?.();
+            z.endPollCall(agentId_2);
+          }
+        }
+      };
+    }
+  });
+function X(e) {
+  return !Ko(e.status) && e.type !== "in_process_teammate" && !BEe(e) && !_2(e) && !(le() && pZ(e));
+}
+function ee(e, i) {
+  return (e.type === "local_agent" || e.type === "local_workflow" ? e.ownerAgentId : "agentId" in e ? e.agentId : void 0) === i;
+}
+function q(e) {
+  return Math.min(e ?? s1, s1) - lgo;
+}
+function ne(e) {
+  let {
+    ingress: ingress,
+    permissionMode: permissionMode,
+    cacheTtlMs: cacheTtlMs
+  } = e;
+  return {
+    ownWorkOnly: ingress === "evals" || le() && e.codeModeExperiment && (ingress === "terminal" || ingress === "host" && permissionMode !== "auto" || e.besideReplCall),
+    inputClosed: le() && e.codeModeExperiment && e.printInputClosed,
+    waitMs: (cacheTtlMs ?? s1) - lgo,
+    idleWaitMs: le() && e.codeModeExperiment && e.selfArmed ? q(cacheTtlMs) : void 0
+  };
+}
+async function te(e, i, t, d) {
+  let {
+      ownWorkOnly: ownWorkOnly,
+      inputClosed: inputClosed,
+      liveTasks: liveTasks,
+      waitMs: waitMs,
+      idleWaitMs: idleWaitMs,
+      agentId: agentId_3
+    } = d,
+    M = agentId_3 ?? lO;
+  if (le()) t?.takeStatusLineGiven(M);
+  let c = Date.now(),
+    O = () => (ownWorkOnly || inputClosed && e.pollEventAdmissionsPending() === 0) && (le() && t !== void 0 ? t.outstanding(M) === 0 : !0) && liveTasks().length === 0,
+    z = Math.min(waitMs, q(null));
+  function b() {
+    return le() && t !== void 0 && t.ledger(lO).length > 0 && Date.now() - c < z;
+  }
+  for (;;) {
+    if (i.aborted) return N("aborted");
+    let {
+      commands: commands,
+      remainingWakeCount: remainingWakeCount
+    } = e.drainPollEventChunk(agentId_3);
+    if (commands.length > 0) {
+      let v = commands.map(SFt),
+        declared = wFt(commands);
+      g("poll_event_delivery"), Tet(commands), EFt(commands);
+      let toolsUsed = $6t(commands, d.messages?.() ?? []),
+        data = {
+          content: Mse(v, remainingWakeCount, toolsUsed),
+          eventCount: commands.length,
+          remainingWakeCount: remainingWakeCount,
+          ...(toolsUsed.length > 0 && {
+            toolsUsed: toolsUsed
+          }),
+          ...(commands.some(item => item.pollEvent?.media !== void 0) && {
+            media: commands.map(item => item.pollEvent?.media ?? [])
+          }),
+          provenance: commands.map(item => item.pollEvent?.provenance ?? null),
+          ...(declared !== void 0 && {
+            declared: declared
+          })
+        };
+      if (le()) {
+        let D = qXn(commands),
+          {
+            clearPollEventFollowing: clearPollEventFollowing,
+            pollEventFollowingOf: pollEventFollowingOf
+          } = import.meta.require("B:/~BUN/root/chunk-k0mk7p8d.js"),
+          {
+            messages: messages,
+            contextLayers: contextLayers
+          } = pollEventFollowingOf(commands, d.deliveryTurn?.());
+        clearPollEventFollowing(commands);
+        let newMessages = [...D, ...messages];
+        return {
+          data: data,
+          endReason: commands.every(item => item.pollEvent?.kind === Jue) ? "status_work_running" : "delivered",
+          ...I2i(commands),
+          ...(newMessages.length > 0 && {
+            newMessages: newMessages
+          }),
+          ...(contextLayers.length > 0 && {
+            contextLayers: contextLayers
+          }),
+          ...(import.meta.require("B:/~BUN/root/chunk-qatsvc3v.js").clientsDrawScriptCalls() && commands.every(item => (item.pollEvent?.kind === tT || item.pollEvent?.kind === Jue) && item.pollEvent?.keepsRow !== !0) && {
+            hideRow: !0
+          })
+        };
+      }
+      return {
+        data: data,
+        endReason: "delivered"
+      };
+    }
+    if (j(e, b(), agentId_3)) return N(j(e, !0, agentId_3) ? "queued_input" : "queued_input_for_turn_end");
+    if (O()) return inputClosed && !ownWorkOnly ? {
+      data: {
+        content: ITs(),
+        eventCount: 0,
+        remainingWakeCount: 0
+      },
+      endReason: "nothing_to_wait_for_input_closed"
+    } : N("nothing_to_wait_for");
+    let m = Date.now() - c,
+      I = le() && t !== void 0 ? t.ledger(M) : [],
+      S = I.length > 0 ? [] : liveTasks();
+    if (m >= waitMs) {
+      if (le() && I.length > 0) {
+        import.meta.require("B:/~BUN/root/chunk-m92v50hd.js").enqueueReplStatus(e, I, agentId_3), t?.noteStatusLine(M);
+        continue;
+      }
+      if (le() && S.length > 0) return {
+        data: {
+          content: `No events yet \u2014 ${S.length} background ${P(S.length, "task")} still running: ${S.map(item => RHn(item)).join("; ")}. Poll again to keep waiting.`,
+          eventCount: 0,
+          remainingWakeCount: 0
+        },
+        endReason: "status_work_running"
+      };
+    }
+    let A = I.length === 0 && S.length === 0;
+    if (A && idleWaitMs !== void 0 && m >= idleWaitMs) return N("wait_limit_nothing_running");
+    await new Promise(v => {
+      let r = A ? idleWaitMs : j(e, !1, agentId_3) ? z : waitMs,
+        s = r !== void 0 ? setTimeout(y, Math.max(0, r - m)) : void 0;
+      function y() {
+        if (s !== void 0) clearTimeout(s);
+        D(), U(), i.removeEventListener("abort", y), v();
+      }
+      let D = e.subscribe(y),
+        U = le() && t !== void 0 ? t.onOutstandingChange(y) : () => {};
+      if (i.addEventListener("abort", y), i.aborted || j(e, b(), agentId_3) || O()) y();
+    });
+  }
+}
+function j(e, i, currentAgentId) {
+  if (currentAgentId !== void 0) return !e.isMidTurnFoldSuspended() && kDe(e.getCommandsByMaxPriority("next"), {
+    isMainThread: !1,
+    currentAgentId: currentAgentId
+  }).length > 0;
+  let d = e.isMidTurnFoldSuspended(),
+    w = i && !d;
+  return e.peek(_ => Fu(_) && !(w && _.priority === "later" && _.mode !== "poll-event")) !== void 0 || (d ? !_n() && e.peek(cq) !== void 0 : kDe(e.getCommandsByMaxPriority("next"), {
+    isMainThread: !0,
+    currentAgentId: void 0
+  }).some(item => item.drainOnly !== !0 && item.screeningPending !== !0));
+}
+function N(endReason_2) {
+  return {
+    data: {
+      content: content,
+      eventCount: 0,
+      remainingWakeCount: 0
+    },
+    endReason: endReason_2
+  };
+}
+function Q(e, waitedMs, deliveredEventCount) {
+  l("tengu_poll_call_end", {
+    reason: f(e),
+    waitedMs: waitedMs,
+    deliveredEventCount: deliveredEventCount
+  });
+}
+export { Ae as PollTool };

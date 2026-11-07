@@ -1,0 +1,1405 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import { MC } from "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import "B:/~BUN/root/chunk-drx9cnw1.js";
+import { d, k } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import "B:/~BUN/root/chunk-j6pt0v41.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import { tt, Pf } from "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import "B:/~BUN/root/chunk-xrwdh0g4.js";
+import { x } from "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-apgsnbqk.js";
+import "B:/~BUN/root/chunk-9957329g.js";
+import "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-bfwh5k9e.js";
+import "B:/~BUN/root/chunk-dwg8my6z.js";
+import { Br } from "B:/~BUN/root/chunk-vxjrk7vf.js";
+import { S } from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import "B:/~BUN/root/chunk-eswth6m1.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-y5gyn2hc.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import "B:/~BUN/root/chunk-z6138ats.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-gh4155re.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import "B:/~BUN/root/chunk-mb9chr1y.js";
+import "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-8f4z6bdn.js";
+import "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import "B:/~BUN/root/chunk-sy1h8mf0.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-fkr27nhj.js";
+import { rr, Ct } from "B:/~BUN/root/chunk-thn0wk2x.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import "B:/~BUN/root/chunk-t4qpmjt5.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import "B:/~BUN/root/chunk-1g25msn4.js";
+import "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import { un, Cr } from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import "B:/~BUN/root/chunk-yhafkw66.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-0s9zh2h6.js";
+import "B:/~BUN/root/chunk-sgy380eg.js";
+import "B:/~BUN/root/chunk-waswqpwd.js";
+import "B:/~BUN/root/chunk-p2ta953m.js";
+import { s, n } from "B:/~BUN/root/chunk-qey16aan.js";
+import "B:/~BUN/root/chunk-sc660841.js";
+import "B:/~BUN/root/chunk-31b4g6te.js";
+import "B:/~BUN/root/chunk-chv9g988.js";
+import "B:/~BUN/root/chunk-dwbkkfd6.js";
+import "B:/~BUN/root/chunk-rmd6bs96.js";
+import "B:/~BUN/root/chunk-b5ry9py2.js";
+import "B:/~BUN/root/chunk-de98q5we.js";
+import "B:/~BUN/root/chunk-ddamx62b.js";
+import "B:/~BUN/root/chunk-wzeexm6f.js";
+import "B:/~BUN/root/chunk-c0m1y3zd.js";
+import "B:/~BUN/root/chunk-pnm80mz6.js";
+import "B:/~BUN/root/chunk-gr5se97s.js";
+import "B:/~BUN/root/chunk-dsgmffrq.js";
+import "B:/~BUN/root/chunk-emd6eb45.js";
+import "B:/~BUN/root/chunk-y781qzhe.js";
+import "B:/~BUN/root/chunk-7g0t7h3t.js";
+import { Sn } from "B:/~BUN/root/chunk-v95bwhaa.js";
+import "B:/~BUN/root/chunk-wss0tnsx.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import { Uoe, K6, vL, q6, z0e, pJe, quo, Boe, m_e, jDn, Ge } from "B:/~BUN/root/chunk-z7bs0q82.js";
+import "B:/~BUN/root/chunk-5g1gmfkv.js";
+import "B:/~BUN/root/chunk-j05gjqgd.js";
+import "B:/~BUN/root/chunk-s89g0dw7.js";
+import "B:/~BUN/root/chunk-f0zgv0ya.js";
+import "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-eds8xkh8.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import "B:/~BUN/root/chunk-tdekz3md.js";
+import "B:/~BUN/root/chunk-ke150ry1.js";
+import "B:/~BUN/root/chunk-4tp5kqnx.js";
+import "B:/~BUN/root/chunk-hvykkx00.js";
+import "B:/~BUN/root/chunk-nwv7r07s.js";
+import "B:/~BUN/root/chunk-2x2z0t2k.js";
+import "B:/~BUN/root/chunk-78494p3w.js";
+import "B:/~BUN/root/chunk-gezr7m08.js";
+import "B:/~BUN/root/chunk-wxhfn3za.js";
+import "B:/~BUN/root/chunk-pdtjaehv.js";
+import "B:/~BUN/root/chunk-x6frvp1m.js";
+import "B:/~BUN/root/chunk-y1b1g4ac.js";
+import "B:/~BUN/root/chunk-9t9ygsbp.js";
+import "B:/~BUN/root/chunk-6j3fjnhn.js";
+import "B:/~BUN/root/chunk-22y97556.js";
+import "B:/~BUN/root/chunk-9bs2y8fc.js";
+import "B:/~BUN/root/chunk-tjfmeakx.js";
+import "B:/~BUN/root/chunk-7pxn9dsp.js";
+import "B:/~BUN/root/chunk-vzhm698f.js";
+import "B:/~BUN/root/chunk-4xvtrfzh.js";
+import "B:/~BUN/root/chunk-jh04j3yr.js";
+import "B:/~BUN/root/chunk-v29ccgfa.js";
+import "B:/~BUN/root/chunk-detjgwj4.js";
+import "B:/~BUN/root/chunk-knfpag6d.js";
+import "B:/~BUN/root/chunk-n0v0c6zt.js";
+import "B:/~BUN/root/chunk-42915bn6.js";
+import "B:/~BUN/root/chunk-vk5b2c7t.js";
+import "B:/~BUN/root/chunk-hr1m6fe3.js";
+import "B:/~BUN/root/chunk-cvaa202c.js";
+import "B:/~BUN/root/chunk-2r9r3hfm.js";
+import "B:/~BUN/root/chunk-jbf2dde1.js";
+import "B:/~BUN/root/chunk-xgwmwbnb.js";
+import "B:/~BUN/root/chunk-2392ztjf.js";
+import "B:/~BUN/root/chunk-rv3pfsrw.js";
+import "B:/~BUN/root/chunk-6v74v9ar.js";
+import "B:/~BUN/root/chunk-eak7wp7z.js";
+import "B:/~BUN/root/chunk-mbh2s41k.js";
+import "B:/~BUN/root/chunk-q8sf8fhe.js";
+import "B:/~BUN/root/chunk-qr2xxkqa.js";
+import "B:/~BUN/root/chunk-crjx6seq.js";
+import "B:/~BUN/root/chunk-cacx0j4x.js";
+import { Ze } from "B:/~BUN/root/chunk-cpzw87wr.js";
+import "B:/~BUN/root/chunk-fnf5t6te.js";
+import "B:/~BUN/root/chunk-qk8tvzkn.js";
+import "B:/~BUN/root/chunk-q793s85g.js";
+import "B:/~BUN/root/chunk-c1v460b9.js";
+import "B:/~BUN/root/chunk-hh79wmvd.js";
+import "B:/~BUN/root/chunk-xt7xbt1n.js";
+import "B:/~BUN/root/chunk-68y6snsb.js";
+import "B:/~BUN/root/chunk-qdyt0gq6.js";
+import "B:/~BUN/root/chunk-tmdrwqnv.js";
+import "B:/~BUN/root/chunk-9ezywpz7.js";
+import "B:/~BUN/root/chunk-dw9hahea.js";
+import "B:/~BUN/root/chunk-e8znf4zw.js";
+import "B:/~BUN/root/chunk-n8t98fhm.js";
+import "B:/~BUN/root/chunk-tzwf3sbj.js";
+import "B:/~BUN/root/chunk-2htsebsg.js";
+import "B:/~BUN/root/chunk-7vfy9z2g.js";
+import "B:/~BUN/root/chunk-cync0e08.js";
+import "B:/~BUN/root/chunk-z8bb1299.js";
+import "B:/~BUN/root/chunk-npkbazqf.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import "B:/~BUN/root/chunk-wt8tyqt4.js";
+import "B:/~BUN/root/chunk-j6ahtce9.js";
+import "B:/~BUN/root/chunk-076mmgjt.js";
+import "B:/~BUN/root/chunk-cxcakgnv.js";
+import "B:/~BUN/root/chunk-39zyvd3e.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import "B:/~BUN/root/chunk-8qv1t8b3.js";
+import "B:/~BUN/root/chunk-b7bhhce8.js";
+import "B:/~BUN/root/chunk-dcmvdxnm.js";
+import "B:/~BUN/root/chunk-psjm1gcn.js";
+import { dw, Cns, Bt } from "B:/~BUN/root/chunk-27h4st9h.js";
+import "B:/~BUN/root/chunk-sjvfcp1z.js";
+import "B:/~BUN/root/chunk-s9vv4h32.js";
+import "B:/~BUN/root/chunk-7thhw21a.js";
+import "B:/~BUN/root/chunk-wm0axmjp.js";
+import "B:/~BUN/root/chunk-1012essb.js";
+import "B:/~BUN/root/chunk-kpr2et3s.js";
+import "B:/~BUN/root/chunk-kfm993xq.js";
+import "B:/~BUN/root/chunk-ckdgegnz.js";
+import "B:/~BUN/root/chunk-x9bz04wf.js";
+import "B:/~BUN/root/chunk-pw7914mv.js";
+import "B:/~BUN/root/chunk-hjds4dtx.js";
+import "B:/~BUN/root/chunk-sx264pby.js";
+import "B:/~BUN/root/chunk-cj2cn5y2.js";
+import "B:/~BUN/root/chunk-6bx54the.js";
+import "B:/~BUN/root/chunk-7rwbs73j.js";
+import "B:/~BUN/root/chunk-m1v50w96.js";
+import "B:/~BUN/root/chunk-yg4ttpr7.js";
+import "B:/~BUN/root/chunk-6h5p2dxf.js";
+import "B:/~BUN/root/chunk-tdg0k3wq.js";
+import "B:/~BUN/root/chunk-n98vg3jf.js";
+import "B:/~BUN/root/chunk-838fxqce.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-2gz7xsvb.js";
+import "B:/~BUN/root/chunk-02j0cm13.js";
+import "B:/~BUN/root/chunk-0s00dkj6.js";
+import "B:/~BUN/root/chunk-hevmq1yj.js";
+import "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-0aq7t0nw.js";
+import "B:/~BUN/root/chunk-ajvcvya3.js";
+import "B:/~BUN/root/chunk-63btkzab.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-vke7wtay.js";
+import "B:/~BUN/root/chunk-6g8w5kyh.js";
+import "B:/~BUN/root/chunk-jmt91fq8.js";
+import "B:/~BUN/root/chunk-5x4j33v9.js";
+import "B:/~BUN/root/chunk-m8dg5txf.js";
+import "B:/~BUN/root/chunk-ekqreyhv.js";
+import "B:/~BUN/root/chunk-mf9c9p38.js";
+import "B:/~BUN/root/chunk-875j4y83.js";
+import "B:/~BUN/root/chunk-t4pbv0np.js";
+import "B:/~BUN/root/chunk-jxvayzd7.js";
+import "B:/~BUN/root/chunk-xfqs9tac.js";
+import "B:/~BUN/root/chunk-5w7xhbnh.js";
+import "B:/~BUN/root/chunk-vmp6vbba.js";
+import "B:/~BUN/root/chunk-dxwyqd26.js";
+import "B:/~BUN/root/chunk-k5mszhcg.js";
+import "B:/~BUN/root/chunk-z4janqzm.js";
+import "B:/~BUN/root/chunk-zymc6pem.js";
+import "B:/~BUN/root/chunk-mjgazsjk.js";
+import "B:/~BUN/root/chunk-2f6ykbbh.js";
+import "B:/~BUN/root/chunk-ghar8fn5.js";
+import "B:/~BUN/root/chunk-8cgm9m8p.js";
+import "B:/~BUN/root/chunk-5gm1xyqv.js";
+import "B:/~BUN/root/chunk-rpagz3p9.js";
+import "B:/~BUN/root/chunk-rzc1dapy.js";
+import "B:/~BUN/root/chunk-hh77nseb.js";
+import "B:/~BUN/root/chunk-7pj7keyk.js";
+import "B:/~BUN/root/chunk-3kdxvefh.js";
+import "B:/~BUN/root/chunk-vs3bcjd7.js";
+import "B:/~BUN/root/chunk-pmr34yc8.js";
+import "B:/~BUN/root/chunk-mwy4xyee.js";
+import "B:/~BUN/root/chunk-ajpcs9fs.js";
+import "B:/~BUN/root/chunk-gq4ywexf.js";
+import "B:/~BUN/root/chunk-rhdsefgz.js";
+import "B:/~BUN/root/chunk-2fedt3ag.js";
+import "B:/~BUN/root/chunk-kexqfgtm.js";
+import "B:/~BUN/root/chunk-5bb21frh.js";
+import "B:/~BUN/root/chunk-vp8vb7t8.js";
+import "B:/~BUN/root/chunk-xkw95p5n.js";
+import "B:/~BUN/root/chunk-sa4785jr.js";
+import "B:/~BUN/root/chunk-nk59bmc9.js";
+import "B:/~BUN/root/chunk-n7ta2s3w.js";
+import "B:/~BUN/root/chunk-65j4e9bn.js";
+import "B:/~BUN/root/chunk-ex2shtaj.js";
+import "B:/~BUN/root/chunk-64qg3pvz.js";
+import "B:/~BUN/root/chunk-jv4ech2n.js";
+import "B:/~BUN/root/chunk-5fdpyc78.js";
+import "B:/~BUN/root/chunk-ybkgfvgz.js";
+import "B:/~BUN/root/chunk-gknte1ng.js";
+import "B:/~BUN/root/chunk-4tz0m6qq.js";
+import "B:/~BUN/root/chunk-3qkmk2e4.js";
+import "B:/~BUN/root/chunk-b3jc87kv.js";
+import "B:/~BUN/root/chunk-11wz0rq6.js";
+import "B:/~BUN/root/chunk-vy4t7613.js";
+import "B:/~BUN/root/chunk-kfnabvp7.js";
+import "B:/~BUN/root/chunk-jj9s326a.js";
+import "B:/~BUN/root/chunk-p8dysp9f.js";
+import "B:/~BUN/root/chunk-5m83sh3a.js";
+import "B:/~BUN/root/chunk-pm850sj6.js";
+import "B:/~BUN/root/chunk-c86vwcts.js";
+import "B:/~BUN/root/chunk-6sbka0ts.js";
+import "B:/~BUN/root/chunk-05q1awc0.js";
+import "B:/~BUN/root/chunk-k5xd4a86.js";
+import "B:/~BUN/root/chunk-98qgaht2.js";
+import "B:/~BUN/root/chunk-r1gg0qbg.js";
+import "B:/~BUN/root/chunk-rc0vwsyy.js";
+import "B:/~BUN/root/chunk-w0kge9aq.js";
+import "B:/~BUN/root/chunk-teehnwdh.js";
+import "B:/~BUN/root/chunk-x4zqd4cy.js";
+import "B:/~BUN/root/chunk-ysxmr1nk.js";
+import "B:/~BUN/root/chunk-8rnfdnh3.js";
+import "B:/~BUN/root/chunk-7wcc5pbk.js";
+import "B:/~BUN/root/chunk-kk81ayzj.js";
+import "B:/~BUN/root/chunk-400x0tcq.js";
+import "B:/~BUN/root/chunk-1tbewxs3.js";
+import "B:/~BUN/root/chunk-rrf8gvt4.js";
+import "B:/~BUN/root/chunk-ftj46fnn.js";
+import "B:/~BUN/root/chunk-45td50dx.js";
+import "B:/~BUN/root/chunk-3vrk9h6f.js";
+import "B:/~BUN/root/chunk-0xtfwyhv.js";
+import "B:/~BUN/root/chunk-z2c6k7e2.js";
+import "B:/~BUN/root/chunk-h6zqt1s4.js";
+import "B:/~BUN/root/chunk-jmka9ye7.js";
+import "B:/~BUN/root/chunk-fc7k1zas.js";
+import "B:/~BUN/root/chunk-nw79m6g4.js";
+import "B:/~BUN/root/chunk-4vcs773m.js";
+import "B:/~BUN/root/chunk-1ratk947.js";
+import "B:/~BUN/root/chunk-wznngf8b.js";
+import "B:/~BUN/root/chunk-2ys4h17s.js";
+import "B:/~BUN/root/chunk-wxztkjve.js";
+import "B:/~BUN/root/chunk-wjxjrbnh.js";
+import "B:/~BUN/root/chunk-yrh147c7.js";
+import "B:/~BUN/root/chunk-taw9ve37.js";
+import "B:/~BUN/root/chunk-vyjvp8sa.js";
+import "B:/~BUN/root/chunk-jypg1bby.js";
+import "B:/~BUN/root/chunk-w0nyevkg.js";
+import "B:/~BUN/root/chunk-z5apdcem.js";
+import "B:/~BUN/root/chunk-d5rmf5x5.js";
+import "B:/~BUN/root/chunk-8x466dw5.js";
+import "B:/~BUN/root/chunk-17caj8fw.js";
+import "B:/~BUN/root/chunk-hhd7smkx.js";
+import "B:/~BUN/root/chunk-cejfpzdt.js";
+import "B:/~BUN/root/chunk-0q69tvcp.js";
+import "B:/~BUN/root/chunk-0jhmwh3q.js";
+import "B:/~BUN/root/chunk-j3efez3c.js";
+import "B:/~BUN/root/chunk-6cgv9p77.js";
+import "B:/~BUN/root/chunk-9ajgj3y1.js";
+import "B:/~BUN/root/chunk-pjcve3z9.js";
+import "B:/~BUN/root/chunk-cjmntjcn.js";
+import "B:/~BUN/root/chunk-43aygqej.js";
+import "B:/~BUN/root/chunk-y7em5h10.js";
+import "B:/~BUN/root/chunk-tmn2g637.js";
+import "B:/~BUN/root/chunk-mjx3yttm.js";
+import "B:/~BUN/root/chunk-wdfwarp2.js";
+import "B:/~BUN/root/chunk-0ypwt1ew.js";
+import "B:/~BUN/root/chunk-3eq12f11.js";
+import "B:/~BUN/root/chunk-mcdkvptw.js";
+import "B:/~BUN/root/chunk-q2s07yzr.js";
+import "B:/~BUN/root/chunk-3aa152x8.js";
+import "B:/~BUN/root/chunk-ymawhbhz.js";
+import "B:/~BUN/root/chunk-rbfkfjk4.js";
+import "B:/~BUN/root/chunk-az0cmmyt.js";
+import "B:/~BUN/root/chunk-bw0w9zyr.js";
+import "B:/~BUN/root/chunk-hydnwtf3.js";
+import "B:/~BUN/root/chunk-15eyam7k.js";
+import "B:/~BUN/root/chunk-ynneeax2.js";
+import "B:/~BUN/root/chunk-4ffx6rrs.js";
+import "B:/~BUN/root/chunk-8ytf4evt.js";
+import "B:/~BUN/root/chunk-33ssadqt.js";
+import "B:/~BUN/root/chunk-trf406sb.js";
+import "B:/~BUN/root/chunk-4zhce32x.js";
+import "B:/~BUN/root/chunk-bsbbs1xs.js";
+import "B:/~BUN/root/chunk-mq0pq26y.js";
+import "B:/~BUN/root/chunk-dgbjmrqs.js";
+import "B:/~BUN/root/chunk-h37egt7q.js";
+import "B:/~BUN/root/chunk-9yf7mr11.js";
+import "B:/~BUN/root/chunk-7qzy1jjf.js";
+import { uv, ld, Hw } from "B:/~BUN/root/chunk-h0jtmv4t.js";
+import "B:/~BUN/root/chunk-hfz1e87n.js";
+import { Ws } from "B:/~BUN/root/chunk-x2k0mb6b.js";
+import { w6n, k6n } from "B:/~BUN/root/chunk-2c49vqap.js";
+import { Lu } from "B:/~BUN/root/chunk-r1yz5tt7.js";
+import { LT } from "B:/~BUN/root/chunk-62cvkyvm.js";
+import "B:/~BUN/root/chunk-a2fp3xgm.js";
+import { Si } from "B:/~BUN/root/chunk-w2rkhp43.js";
+import "B:/~BUN/root/chunk-jx2rmjhh.js";
+import "B:/~BUN/root/chunk-w3jccevj.js";
+import "B:/~BUN/root/chunk-9d0b66j5.js";
+import "B:/~BUN/root/chunk-sx03ea6s.js";
+import "B:/~BUN/root/chunk-81tfbmye.js";
+import "B:/~BUN/root/chunk-nyy541yq.js";
+import { ne, e, r } from "B:/~BUN/root/chunk-t16eynda.js";
+import "B:/~BUN/root/chunk-12sstdsz.js";
+import "B:/~BUN/root/chunk-j5m7a98b.js";
+import "B:/~BUN/root/chunk-4w2c6jye.js";
+import "B:/~BUN/root/chunk-4z0wj4qn.js";
+import "B:/~BUN/root/chunk-af319kny.js";
+import "B:/~BUN/root/chunk-ggpp2a6r.js";
+import "B:/~BUN/root/chunk-qed5a8pe.js";
+import { lr } from "B:/~BUN/root/chunk-75wha2r5.js";
+import "B:/~BUN/root/chunk-yjbw4jd5.js";
+import { Iar } from "B:/~BUN/root/chunk-s0gfhbzk.js";
+import "B:/~BUN/root/chunk-1403xdv8.js";
+import "B:/~BUN/root/chunk-dt45jjk2.js";
+import "B:/~BUN/root/chunk-n7rjc97z.js";
+import "B:/~BUN/root/chunk-bwk2g6e0.js";
+import "B:/~BUN/root/chunk-1b2nf93s.js";
+import "B:/~BUN/root/chunk-q7dbkm6t.js";
+import "B:/~BUN/root/chunk-pgm29tvd.js";
+import "B:/~BUN/root/chunk-992ex3nd.js";
+import "B:/~BUN/root/chunk-h2qbvrp4.js";
+import "B:/~BUN/root/chunk-0wyf4zb9.js";
+import "B:/~BUN/root/chunk-vxbt81wk.js";
+import "B:/~BUN/root/chunk-v04fapnf.js";
+import "B:/~BUN/root/chunk-rsz72fpd.js";
+import "B:/~BUN/root/chunk-69k97bnp.js";
+import "B:/~BUN/root/chunk-q82am8wz.js";
+import "B:/~BUN/root/chunk-spc3jrd3.js";
+import "B:/~BUN/root/chunk-kgvnwy91.js";
+import "B:/~BUN/root/chunk-p25ahy45.js";
+import "B:/~BUN/root/chunk-4xx5w1am.js";
+import "B:/~BUN/root/chunk-pgf3n8rv.js";
+import { Ho, ko, Z, y, j } from "B:/~BUN/root/chunk-czy5r8bc.js";
+import "B:/~BUN/root/chunk-stfp5qgr.js";
+import "B:/~BUN/root/chunk-az6xed3t.js";
+import "B:/~BUN/root/chunk-w179eqqe.js";
+import "B:/~BUN/root/chunk-p8898990.js";
+import "B:/~BUN/root/chunk-fkz77yzp.js";
+import "B:/~BUN/root/chunk-zy4xrndc.js";
+import "B:/~BUN/root/chunk-we53d1t3.js";
+import "B:/~BUN/root/chunk-1jrzd264.js";
+import "B:/~BUN/root/chunk-zz0hj0zg.js";
+import "B:/~BUN/root/chunk-md18120p.js";
+import "B:/~BUN/root/chunk-zwf5p7y7.js";
+import "B:/~BUN/root/chunk-k3f9rj85.js";
+import "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-8zx74r55.js";
+import "B:/~BUN/root/chunk-xagk1yaq.js";
+import "B:/~BUN/root/chunk-zeshc0ep.js";
+import "B:/~BUN/root/chunk-vvwzzpy4.js";
+import "B:/~BUN/root/chunk-4hx27rd1.js";
+import "B:/~BUN/root/chunk-jjjspatt.js";
+import "B:/~BUN/root/chunk-6bss7gp5.js";
+import "B:/~BUN/root/chunk-h29cx855.js";
+import "B:/~BUN/root/chunk-yjr7e11x.js";
+import "B:/~BUN/root/chunk-tnfsxzpz.js";
+import "B:/~BUN/root/chunk-pp5rqp7s.js";
+import "B:/~BUN/root/chunk-ea8gze25.js";
+import "B:/~BUN/root/chunk-z1wt3cb2.js";
+import "B:/~BUN/root/chunk-cjd8dpgw.js";
+import "B:/~BUN/root/chunk-yscb2r3d.js";
+import "B:/~BUN/root/chunk-s20ae4sg.js";
+import "B:/~BUN/root/chunk-n3m61sfz.js";
+import "B:/~BUN/root/chunk-nk52yc3v.js";
+import "B:/~BUN/root/chunk-kt29vc17.js";
+import "B:/~BUN/root/chunk-a5dg1k4h.js";
+import "B:/~BUN/root/chunk-kj33sgq2.js";
+import "B:/~BUN/root/chunk-kh33ctc6.js";
+import "B:/~BUN/root/chunk-x6ny3ghw.js";
+import "B:/~BUN/root/chunk-0p5dw980.js";
+import "B:/~BUN/root/chunk-dx2wvwvf.js";
+import "B:/~BUN/root/chunk-fcp4egnh.js";
+import "B:/~BUN/root/chunk-frv0tk8w.js";
+import "B:/~BUN/root/chunk-ym6b88b3.js";
+import "B:/~BUN/root/chunk-zx0hhrva.js";
+import "B:/~BUN/root/chunk-s937snw9.js";
+import "B:/~BUN/root/chunk-j5zjtxy5.js";
+import "B:/~BUN/root/chunk-vdqpev1m.js";
+import "B:/~BUN/root/chunk-kd0f2gn5.js";
+import "B:/~BUN/root/chunk-ymgf3kpk.js";
+import "B:/~BUN/root/chunk-dzjj3jwh.js";
+import "B:/~BUN/root/chunk-xbhv3nhf.js";
+import "B:/~BUN/root/chunk-21s8ygah.js";
+import "B:/~BUN/root/chunk-e99p2x0p.js";
+import "B:/~BUN/root/chunk-36r971cb.js";
+import "B:/~BUN/root/chunk-ynpwd78y.js";
+import "B:/~BUN/root/chunk-eyvtcj15.js";
+import "B:/~BUN/root/chunk-r6enj9cw.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import "B:/~BUN/root/chunk-r2kdqtaa.js";
+import "B:/~BUN/root/chunk-j0enspnr.js";
+import "B:/~BUN/root/chunk-xr3thd43.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-62khcyrb.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import "B:/~BUN/root/chunk-4jfmvmew.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-cbv74thb.js";
+import "B:/~BUN/root/chunk-dc99dkg2.js";
+import "B:/~BUN/root/chunk-b37tyqej.js";
+import "B:/~BUN/root/chunk-dqan51g7.js";
+import "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-z35xf1k7.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+import { w } from "B:/~BUN/root/chunk-4qfwb3rf.js";
+import { relative as ht } from "path";
+j();
+function uo(children, P) {
+  return e(n, {
+    dimColor: !0,
+    children: children
+  }, P);
+}
+function Y() {
+  let t = S(3),
+    f = Ge.isSandboxingEnabled(),
+    l;
+  if (t[0] === w) {
+    let o = Ge.checkDependencies();
+    l = o.warnings.length > 0 ? e(s, {
+      marginTop: 1,
+      flexDirection: "column",
+      children: o.warnings.map(uo)
+    }) : null;
+    t[0] = l;
+  } else l = t[0];
+  let m = l;
+  if (!f) {
+    let u;
+    if (t[1] === w) u = r(s, {
+      flexDirection: "column",
+      children: [e(n, {
+        dimColor: !0,
+        children: "Sandbox is not enabled"
+      }), m]
+    }), t[1] = u;else u = t[1];
+    return u;
+  }
+  let u;
+  if (t[2] === w) {
+    let i = Ge.getFsReadConfig();
+    let p = Ge.getFsWriteConfig();
+    let a = Ge.getNetworkRestrictionConfig();
+    let c = Ge.getAllowUnixSockets();
+    let C = Ge.getExcludedCommands();
+    let g = Ge.getLinuxGlobPatternWarnings();
+    u = r(s, {
+      flexDirection: "column",
+      children: [r(s, {
+        flexDirection: "column",
+        children: [e(n, {
+          bold: !0,
+          color: "permission",
+          children: "Excluded Commands:"
+        }), e(n, {
+          dimColor: !0,
+          children: C.length > 0 ? C.join(", ") : "None"
+        })]
+      }), i.denyOnly.length > 0 && r(s, {
+        marginTop: 1,
+        flexDirection: "column",
+        children: [e(n, {
+          bold: !0,
+          color: "permission",
+          children: "Filesystem Read Restrictions:"
+        }), r(n, {
+          dimColor: !0,
+          children: ["Denied: ", i.denyOnly.join(", ")]
+        }), i.allowWithinDeny && i.allowWithinDeny.length > 0 && r(n, {
+          dimColor: !0,
+          children: ["Allowed within denied: ", i.allowWithinDeny.join(", ")]
+        })]
+      }), p.allowOnly.length > 0 && r(s, {
+        marginTop: 1,
+        flexDirection: "column",
+        children: [e(n, {
+          bold: !0,
+          color: "permission",
+          children: "Filesystem Write Restrictions:"
+        }), r(n, {
+          dimColor: !0,
+          children: ["Allowed: ", p.allowOnly.join(", ")]
+        }), p.denyWithinAllow.length > 0 && r(n, {
+          dimColor: !0,
+          children: ["Denied within allowed: ", p.denyWithinAllow.join(", ")]
+        })]
+      }), (a.allowedHosts && a.allowedHosts.length > 0 || a.deniedHosts && a.deniedHosts.length > 0) && r(s, {
+        marginTop: 1,
+        flexDirection: "column",
+        children: [r(n, {
+          bold: !0,
+          color: "permission",
+          children: ["Network Restrictions", Boe() ? " (Managed)" : "", ":"]
+        }), a.allowedHosts && a.allowedHosts.length > 0 && r(n, {
+          dimColor: !0,
+          children: ["Allowed: ", a.allowedHosts.join(", ")]
+        }), a.deniedHosts && a.deniedHosts.length > 0 && r(n, {
+          dimColor: !0,
+          children: ["Denied: ", a.deniedHosts.join(", ")]
+        })]
+      }), c && c.length > 0 && r(s, {
+        marginTop: 1,
+        flexDirection: "column",
+        children: [e(n, {
+          bold: !0,
+          color: "permission",
+          children: "Allowed Unix Sockets:"
+        }), e(n, {
+          dimColor: !0,
+          children: c.join(", ")
+        })]
+      }), g.length > 0 && r(s, {
+        marginTop: 1,
+        flexDirection: "column",
+        children: [e(n, {
+          bold: !0,
+          color: "warning",
+          children: "\u26A0 Warning: Glob patterns not fully supported on Linux"
+        }), r(n, {
+          dimColor: !0,
+          children: ["The following patterns will be ignored:", " ", g.slice(0, 3).join(", "), g.length > 3 && ` (${g.length - 3} more)`]
+        })]
+      }), m]
+    });
+    t[2] = u;
+  } else u = t[2];
+  return u;
+}
+j();
+function Po(N) {
+  return N.includes("ripgrep");
+}
+function Ao(q) {
+  return q.startsWith(`${U}not `);
+}
+function Wo(te) {
+  return te.startsWith(`${F}not `);
+}
+function vo(H) {
+  return !H.includes("ripgrep") && !H.startsWith(`${U}not `) && !H.startsWith(`${F}not `);
+}
+function Do(children_2) {
+  return e(n, {
+    color: "error",
+    children: children_2
+  }, children_2);
+}
+function To(i) {
+  let caTrusted = null;
+  let caManaged = !0;
+  if (pJe()) caTrusted = i.user.caCertThumb !== void 0 && quo(i.user.caCertThumb), caManaged = z0e().source === "managed";
+  return {
+    ...i,
+    caTrusted: caTrusted,
+    caManaged: caManaged
+  };
+}
+function Ro(c) {
+  return {
+    probeError: q6(d(c), {
+      omitCcRemedy: !0
+    })
+  };
+}
+function Eo() {
+  return Uoe({
+    srtWin: vL()
+  }).then(To).catch(Ro);
+}
+function Mo(c) {
+  return !c.startsWith("Sandbox user is not provisioned") && !c.startsWith("WFP filters not installed");
+}
+function No(C) {
+  return q6(C);
+}
+function Uo(children_3) {
+  return e(n, {
+    color: "error",
+    children: children_3
+  }, children_3);
+}
+var U = "bubblewrap (bwrap) ",
+  F = "socat ",
+  X = "not installed";
+function O(f) {
+  let l = S(26),
+    {
+      depCheck: depCheck
+    } = f,
+    o;
+  if (l[0] === w) o = x(), l[0] = o;else o = l[0];
+  let m = o,
+    u = m === "macos";
+  if (m === "windows") {
+    let i;
+    if (l[1] !== depCheck) i = e(ge, {
+      depCheck: depCheck
+    }), l[1] = depCheck, l[2] = i;else i = l[2];
+    return i;
+  }
+  let i;
+  if (l[3] !== depCheck.errors) i = depCheck.errors.some(Po), l[3] = depCheck.errors, l[4] = i;else i = l[4];
+  let p = i,
+    a;
+  if (l[5] !== depCheck.errors) a = depCheck.errors.find(Ao)?.slice(U.length), l[5] = depCheck.errors, l[6] = a;else a = l[6];
+  let children_4 = a,
+    C;
+  if (l[7] !== depCheck.errors) C = depCheck.errors.find(Wo)?.slice(F.length), l[7] = depCheck.errors, l[8] = C;else C = l[8];
+  let children_5 = C,
+    b = depCheck.warnings.length > 0,
+    P;
+  if (l[9] !== children_4 || l[10] !== depCheck.errors || l[11] !== p || l[12] !== b || l[13] !== children_5) {
+    let A = depCheck.errors.filter(vo);
+    let v = u ? "brew install ripgrep" : "apt install ripgrep";
+    let D;
+    if (l[15] === w) D = u && e(s, {
+      flexDirection: "column",
+      children: r(n, {
+        children: ["seatbelt: ", e(n, {
+          color: "success",
+          children: "built-in (macOS)"
+        })]
+      })
+    }), l[15] = D;else D = l[15];
+    let E, M;
+    if (l[16] !== p) E = r(n, {
+      children: ["ripgrep (rg):", " ", p ? e(n, {
+        color: "error",
+        children: "not found"
+      }) : e(n, {
+        color: "success",
+        children: "found"
+      })]
+    }), M = p && r(n, {
+      dimColor: !0,
+      children: ["  ", "\xB7 ", v]
+    }), l[16] = p, l[17] = E, l[18] = M;else E = l[17], M = l[18];
+    let W;
+    if (l[19] !== E || l[20] !== M) W = r(s, {
+      flexDirection: "column",
+      children: [E, M]
+    }), l[19] = E, l[20] = M, l[21] = W;else W = l[21];
+    let G;
+    if (l[22] !== children_4 || l[23] !== b || l[24] !== children_5) G = !u && r(ne, {
+      children: [r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          children: ["bubblewrap (bwrap):", " ", children_4 !== void 0 ? e(n, {
+            color: "error",
+            children: children_4
+          }) : e(n, {
+            color: "success",
+            children: "installed"
+          })]
+        }), children_4 === X && r(n, {
+          dimColor: !0,
+          children: ["  ", "\xB7 apt install bubblewrap"]
+        })]
+      }), r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          children: ["socat:", " ", children_5 !== void 0 ? e(n, {
+            color: "error",
+            children: children_5
+          }) : e(n, {
+            color: "success",
+            children: "installed"
+          })]
+        }), children_5 === X && r(n, {
+          dimColor: !0,
+          children: ["  ", "\xB7 apt install socat"]
+        })]
+      }), r(s, {
+        flexDirection: "column",
+        children: [r(n, {
+          children: ["seccomp filter:", " ", b ? e(n, {
+            color: "warning",
+            children: "not installed"
+          }) : e(n, {
+            color: "success",
+            children: "installed"
+          }), b && e(n, {
+            dimColor: !0,
+            children: " (required to block unix domain sockets)"
+          })]
+        }), b && r(s, {
+          flexDirection: "column",
+          children: [r(n, {
+            dimColor: !0,
+            children: ["  ", "\xB7 npm install -g @anthropic-ai/sandbox-runtime"]
+          }), r(n, {
+            dimColor: !0,
+            children: ["  ", "\xB7 or copy vendor/seccomp/* from sandbox-runtime and set"]
+          }), r(n, {
+            dimColor: !0,
+            children: ["    ", "sandbox.seccomp.bpfPath and applyPath in settings.json"]
+          })]
+        })]
+      })]
+    }), l[22] = children_4, l[23] = b, l[24] = children_5, l[25] = G;else G = l[25];
+    P = r(s, {
+      flexDirection: "column",
+      gap: 1,
+      children: [D, W, G, A.map(Do)]
+    });
+    l[9] = children_4, l[10] = depCheck.errors, l[11] = p, l[12] = b, l[13] = children_5, l[14] = P;
+  } else P = l[14];
+  return P;
+}
+function ge(f) {
+  let o = S(4),
+    {
+      depCheck: depCheck_2
+    } = f,
+    [statusPromise] = y(Eo),
+    fallback;
+  if (o[0] === w) fallback = e(n, {
+    dimColor: !0,
+    children: "Checking Windows sandbox status\u2026"
+  }), o[0] = fallback;else fallback = o[0];
+  let u;
+  if (o[1] !== depCheck_2 || o[2] !== statusPromise) u = e(Ho, {
+    fallback: fallback,
+    children: e(be, {
+      statusPromise: statusPromise,
+      depCheck: depCheck_2
+    })
+  }), o[1] = depCheck_2, o[2] = statusPromise, o[3] = u;else u = o[3];
+  return u;
+}
+function be(f) {
+  let m = S(10),
+    {
+      statusPromise: statusPromise_2,
+      depCheck: depCheck_3
+    } = f,
+    o = ko(statusPromise_2),
+    u;
+  if (m[0] !== o) u = "probeError" in o ? r(s, {
+    flexDirection: "column",
+    children: [r(n, {
+      color: "error",
+      children: ["could not check sandbox status: ", o.probeError]
+    }), r(n, {
+      dimColor: !0,
+      children: ["  ", "\xB7 ask your administrator to install the network filters, or see https://code.claude.com/docs/en/sandboxing"]
+    })]
+  }) : r(s, {
+    flexDirection: "column",
+    children: [r(n, {
+      children: ["sandbox user:", " ", o.user.provisioned && o.user.credPresent ? e(n, {
+        color: "success",
+        children: "provisioned"
+      }) : o.user.provisioned ? e(n, {
+        color: "warning",
+        children: "provisioned \u2014 credential not readable"
+      }) : e(n, {
+        color: "error",
+        children: "not installed"
+      })]
+    }), r(n, {
+      children: ["network filters (WFP):", " ", o.wfp.state === "installed" ? e(n, {
+        color: "success",
+        children: "installed"
+      }) : o.wfp.state === "cannot-read" ? e(n, {
+        color: "warning",
+        children: "cannot read (run elevated to check)"
+      }) : e(n, {
+        color: "error",
+        children: "not installed"
+      })]
+    }), o.caTrusted !== null && r(n, {
+      children: ["TLS inspection CA:", " ", o.caTrusted ? e(n, {
+        color: "success",
+        children: "trusted"
+      }) : e(n, {
+        color: "error",
+        children: "not trusted"
+      })]
+    }), (!o.user.provisioned || !o.user.credPresent || o.wfp.state === "absent" || o.caTrusted === !1 && o.caManaged) && r(n, {
+      dimColor: !0,
+      children: ["  ", "\xB7 run /sandbox install"]
+    }), o.caTrusted === !1 && !o.caManaged && r(n, {
+      dimColor: !0,
+      children: ["  ", "\xB7 ask your administrator to trust the configured sandbox CA \u2014 see https://code.claude.com/docs/en/sandboxing"]
+    })]
+  }), m[0] = o, m[1] = u;else u = m[1];
+  let i;
+  if (m[2] !== depCheck_3.errors || m[3] !== o) i = "probeError" in o ? depCheck_3.errors : depCheck_3.errors.filter(Mo), m[2] = depCheck_3.errors, m[3] = o, m[4] = i;else i = m[4];
+  let p;
+  if (m[5] !== i) p = i.map(No).map(Uo), m[5] = i, m[6] = p;else p = m[6];
+  let a;
+  if (m[7] !== u || m[8] !== p) a = r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [u, p]
+  }), m[7] = u, m[8] = p, m[9] = a;else a = m[9];
+  return a;
+}
+var $o = new Set(["EACCES", "EPERM", "EROFS"]);
+function $e(f) {
+  return dw(Pf(f));
+}
+function R({
+  error: error
+}, t) {
+  if (error === null) return t;
+  let l = error.cause instanceof Error ? error.cause : error,
+    o = k(l),
+    m = un("localSettings") ?? ".claude/settings.local.json",
+    u = o !== void 0 && $o.has(o) ? " Start Claude Code in a project folder you can write to." : "";
+  return `${Cns}${$e(m)} couldn't be updated (${$e(o ?? l.message)}).${u}`;
+}
+function ee(f) {
+  let u = S(5),
+    {
+      onComplete: onComplete
+    } = f,
+    l = Ge.isSandboxingEnabled(),
+    o = Ge.areSandboxSettingsLockedByPolicy() || Ge.areUnsandboxedCommandsForbiddenByPolicy() || Ge.isUnsandboxedFallbackClosedByTrustedTier(),
+    m = Ge.areUnsandboxedCommandsAllowed();
+  if (!l) {
+    let i;
+    if (u[0] === w) i = e(s, {
+      flexDirection: "column",
+      children: e(n, {
+        dimColor: !0,
+        children: "Sandbox is not enabled. Enable sandbox to configure override settings."
+      })
+    }), u[0] = i;else i = u[0];
+    return i;
+  }
+  if (o) {
+    let i;
+    if (u[1] === w) i = e(n, {
+      dimColor: !0,
+      children: "Override settings are managed by a higher-priority configuration and cannot be changed locally."
+    }), u[1] = i;else i = u[1];
+    let p;
+    if (u[2] === w) p = r(s, {
+      flexDirection: "column",
+      children: [i, e(s, {
+        marginTop: 1,
+        children: r(n, {
+          dimColor: !0,
+          children: ["Current setting:", " ", m ? "Allow unsandboxed fallback" : "Strict sandbox mode"]
+        })
+      })]
+    }), u[2] = p;else p = u[2];
+    return p;
+  }
+  let i;
+  if (u[3] !== onComplete) i = e(he, {
+    onComplete: onComplete,
+    currentMode: m ? "open" : "closed"
+  }), u[3] = onComplete, u[4] = i;else i = u[4];
+  return i;
+}
+function he(f) {
+  let i = S(24),
+    {
+      onComplete: onComplete_2,
+      currentMode: currentMode
+    } = f,
+    [o] = Br(),
+    {
+      headerFocused: m,
+      focusHeader: u
+    } = Hw(),
+    p;
+  if (i[0] !== o) p = lr("success", o)("(current)"), i[0] = o, i[1] = p;else p = i[1];
+  let a = p;
+  const label = currentMode === "open" ? `Allow unsandboxed fallback ${a}` : "Allow unsandboxed fallback";
+  let C;
+  if (i[2] !== label) C = {
+    label: label,
+    value: "open"
+  }, i[2] = label, i[3] = C;else C = i[3];
+  const label_2 = currentMode === "closed" ? `Strict sandbox mode ${a}` : "Strict sandbox mode";
+  let b;
+  if (i[4] !== label_2) b = {
+    label: label_2,
+    value: "closed"
+  }, i[4] = label_2, i[5] = b;else b = i[5];
+  let P;
+  if (i[6] !== C || i[7] !== b) P = [C, b], i[6] = C, i[7] = b, i[8] = P;else P = i[8];
+  let options = P,
+    v;
+  if (i[9] !== onComplete_2) v = async function W(D) {
+    let E = D;
+    let M = await Ge.setSandboxSettings({
+      allowUnsandboxedCommands: E === "open"
+    });
+    onComplete_2(R(M, E === "open" ? "\u2713 Unsandboxed fallback allowed - commands can run outside sandbox when necessary" : "\u2713 Strict sandbox mode - all commands must run in sandbox or be excluded via the `excludedCommands` option"));
+  }, i[9] = onComplete_2, i[10] = v;else v = i[10];
+  let onChange = v,
+    G;
+  if (i[11] === w) G = e(s, {
+    marginBottom: 1,
+    children: e(n, {
+      bold: !0,
+      children: "Configure overrides"
+    })
+  }), i[11] = G;else G = i[11];
+  let onCancel;
+  if (i[12] !== onComplete_2) onCancel = () => onComplete_2(void 0, {
+    display: "skip"
+  }), i[12] = onComplete_2, i[13] = onCancel;else onCancel = i[13];
+  let q;
+  if (i[14] !== u || i[15] !== onChange || i[16] !== m || i[17] !== options || i[18] !== onCancel) q = e(Ze, {
+    options: options,
+    onChange: onChange,
+    onCancel: onCancel,
+    onUpFromFirstItem: u,
+    isDisabled: m
+  }), i[14] = u, i[15] = onChange, i[16] = m, i[17] = options, i[18] = onCancel, i[19] = q;else q = i[19];
+  let te;
+  if (i[20] === w) te = r(n, {
+    dimColor: !0,
+    wrap: "wrap-trim",
+    children: [e(n, {
+      bold: !0,
+      dimColor: !0,
+      children: "Allow unsandboxed fallback:"
+    }), " ", "When a command fails due to sandbox restrictions, Claude can retry with dangerouslyDisableSandbox to run outside the sandbox (falling back to default permissions)."]
+  }), i[20] = te;else te = i[20];
+  let H;
+  if (i[21] === w) H = r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    gap: 1,
+    children: [te, r(n, {
+      dimColor: !0,
+      wrap: "wrap-trim",
+      children: [e(n, {
+        bold: !0,
+        dimColor: !0,
+        children: "Strict sandbox mode:"
+      }), " ", "All commands invoked by the model must run in the sandbox unless they are explicitly listed in excludedCommands."]
+    }), e(LT, {
+      url: "https://code.claude.com/docs/en/sandboxing#configure-sandboxing"
+    })]
+  }), i[21] = H;else H = i[21];
+  let z;
+  if (i[22] !== q) z = r(s, {
+    flexDirection: "column",
+    children: [G, q, H]
+  }), i[22] = q, i[23] = z;else z = i[23];
+  return z;
+}
+function bt(W) {
+  return W.value === "auto-allow";
+}
+function we(f) {
+  let o = S(36),
+    {
+      onComplete: onComplete_3,
+      depCheck: depCheck_4
+    } = f,
+    m;
+  if (o[0] === w) m = Ge.isSandboxingEnabled(), o[0] = m;else m = o[0];
+  let u = m,
+    i;
+  if (o[1] === w) i = Ge.isAutoAllowBashIfSandboxedEnabled(), o[1] = i;else i = o[1];
+  let p = i,
+    a = depCheck_4.warnings.length > 0,
+    c;
+  if (o[2] === w) c = Ge.isAllowAllUnixSocketsConfigured(), o[2] = c;else c = o[2];
+  let showSocketWarning = a && !c,
+    b;
+  if (o[3] === w) b = () => {
+    if (!u) {
+      return "disabled";
+    }
+    if (p) {
+      return "auto-allow";
+    }
+    return "regular";
+  }, o[3] = b;else b = o[3];
+  let P = b,
+    A;
+  if (o[4] === w) A = m_e(), o[4] = A;else A = o[4];
+  let v = A,
+    D = P(),
+    currentMode_2 = v && D === "disabled" ? "regular" : D,
+    M;
+  if (o[5] === w) M = Ge.isAutoAllowSupported(), o[5] = M;else M = o[5];
+  let W = M,
+    G;
+  if (o[6] === w) G = W ? [{
+    label: "Sandbox commands, with auto-allow",
+    value: "auto-allow"
+  }] : [], o[6] = G;else G = o[6];
+  let N;
+  if (o[7] === w) N = [...G, {
+    label: W ? "Sandbox commands, with regular permissions" : "Sandbox commands",
+    value: "regular"
+  }, ...(v ? [] : [{
+    label: "No Sandbox",
+    value: "disabled"
+  }])], o[7] = N;else N = o[7];
+  let options_2 = N,
+    noSandboxHint,
+    H;
+  if (o[8] !== onComplete_3) H = async function se(z) {
+    let wt = z;
+    let V;
+    On: switch (wt) {
+      case "auto-allow":
+        {
+          V = await Ge.setSandboxSettings({
+            enabled: !0,
+            autoAllowBashIfSandboxed: !0
+          }), onComplete_3(R(V, "\u2713 Sandbox enabled with auto-allow for bash commands"));
+          break On;
+        }
+      case "regular":
+        {
+          V = await Ge.setSandboxSettings({
+            enabled: !0,
+            ...(W && {
+              autoAllowBashIfSandboxed: !1
+            })
+          }), onComplete_3(R(V, W ? "\u2713 Sandbox enabled with regular bash permissions" : "\u2713 Sandbox enabled"));
+          break On;
+        }
+      case "disabled":
+        {
+          V = await Ge.setSandboxSettings({
+            enabled: !1,
+            ...(W && {
+              autoAllowBashIfSandboxed: !1
+            })
+          }), onComplete_3(R(V, "\u25CB Sandbox disabled"));
+        }
+    }
+  }, o[8] = onComplete_3, o[9] = H;else H = o[9];
+  let onSelect = H,
+    Ye;
+  if (o[10] !== onComplete_3) Ye = () => onComplete_3(void 0, {
+    display: "skip"
+  }), o[10] = onComplete_3, o[11] = Ye;else Ye = o[11];
+  let re = Ye,
+    Xe;
+  if (o[12] !== re) Xe = {
+    "confirm:no": re
+  }, o[12] = re, o[13] = Xe;else Xe = o[13];
+  let eo;
+  if (o[14] === w) eo = {
+    context: "Settings"
+  }, o[14] = eo;else eo = o[14];
+  Sn(Xe, eo);
+  let oo = Ws(re),
+    to;
+  if (o[15] !== onSelect || o[16] !== onComplete_3 || o[17] !== showSocketWarning) to = e(ld, {
+    title: "Mode",
+    children: e(Ce, {
+      showSocketWarning: showSocketWarning,
+      options: options_2,
+      currentMode: currentMode_2,
+      noSandboxHint: noSandboxHint,
+      onSelect: onSelect,
+      onComplete: onComplete_3
+    })
+  }, "mode"), o[15] = onSelect, o[16] = onComplete_3, o[17] = showSocketWarning, o[18] = to;else to = o[18];
+  let xe = to,
+    no;
+  if (o[19] !== onComplete_3) no = e(ld, {
+    title: "Overrides",
+    children: e(ee, {
+      onComplete: onComplete_3
+    })
+  }, "overrides"), o[19] = onComplete_3, o[20] = no;else no = o[20];
+  let Se = no,
+    so;
+  if (o[21] === w) so = e(ld, {
+    title: "Config",
+    children: e(Y, {})
+  }, "config"), o[21] = so;else so = o[21];
+  let xt = so,
+    ke = depCheck_4.errors.length > 0,
+    ro;
+  if (o[22] !== depCheck_4 || o[23] !== ke || o[24] !== a || o[25] !== xe || o[26] !== Se) ro = ke ? [e(ld, {
+    title: "Dependencies",
+    children: e(O, {
+      depCheck: depCheck_4
+    })
+  }, "dependencies")] : [xe, ...(a ? [e(ld, {
+    title: "Dependencies",
+    children: e(O, {
+      depCheck: depCheck_4
+    })
+  }, "dependencies")] : []), Se, xt], o[22] = depCheck_4, o[23] = ke, o[24] = a, o[25] = xe, o[26] = Se, o[27] = ro;else ro = o[27];
+  let children_6 = ro,
+    banner;
+  if (o[28] === w) banner = Ct() ? e(s, {
+    marginTop: 1,
+    children: e(n, {
+      dimColor: !0,
+      wrap: "wrap-trim",
+      children: rr()?.sessionId !== void 0 ? "Commands Claude runs on this computer use this sandbox; the cloud session's own sandbox, in its container, isn't shown or changed here." : "Commands Claude runs on this computer use this sandbox; the remote session's own sandbox isn't shown or changed here."
+    })
+  }) : void 0, o[28] = banner;else banner = o[28];
+  let ie;
+  if (o[29] !== children_6) ie = e(uv, {
+    title: "Sandbox",
+    color: "permission",
+    defaultTab: "Mode",
+    navFromContent: !0,
+    banner: banner,
+    children: children_6
+  }), o[29] = children_6, o[30] = ie;else ie = o[30];
+  const children_7 = oo.pending ? `Press ${oo.keyName} again to close` : "\u2190/\u2192 to switch \xB7 \u2191/\u2193 to navigate \xB7 Enter to select \xB7 Esc to close";
+  let ae;
+  if (o[31] !== children_7) ae = e(s, {
+    marginTop: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: children_7
+    })
+  }), o[31] = children_7, o[32] = ae;else ae = o[32];
+  let ao;
+  if (o[33] !== ie || o[34] !== ae) ao = r(Si, {
+    color: "permission",
+    children: [ie, ae]
+  }), o[33] = ie, o[34] = ae, o[35] = ao;else ao = o[35];
+  return ao;
+}
+function Ce(f) {
+  let c = S(24),
+    {
+      showSocketWarning: showSocketWarning_2,
+      options: options_3,
+      currentMode: o,
+      noSandboxHint: m,
+      onSelect: u,
+      onComplete: onComplete_4
+    } = f,
+    {
+      headerFocused: p,
+      focusHeader: a
+    } = Hw(),
+    C;
+  if (c[0] !== showSocketWarning_2) C = showSocketWarning_2 && e(s, {
+    marginBottom: 1,
+    children: e(Lu, {
+      status: "warning",
+      children: "Cannot block unix domain sockets (see Dependencies tab)"
+    })
+  }), c[0] = showSocketWarning_2, c[1] = C;else C = c[1];
+  let g;
+  if (c[2] === w) g = e(s, {
+    marginBottom: 1,
+    children: e(n, {
+      bold: !0,
+      children: "Configure mode"
+    })
+  }), c[2] = g;else g = c[2];
+  let onCancel_2;
+  if (c[3] !== onComplete_4) onCancel_2 = () => onComplete_4(void 0, {
+    display: "skip"
+  }), c[3] = onComplete_4, c[4] = onCancel_2;else onCancel_2 = c[4];
+  let P;
+  if (c[5] !== o || c[6] !== a || c[7] !== p || c[8] !== u || c[9] !== options_3 || c[10] !== onCancel_2) P = e(Ze, {
+    options: options_3,
+    defaultValue: o,
+    defaultFocusValue: o,
+    onChange: u,
+    onCancel: onCancel_2,
+    onUpFromFirstItem: a,
+    isDisabled: p
+  }), c[5] = o, c[6] = a, c[7] = p, c[8] = u, c[9] = options_3, c[10] = onCancel_2, c[11] = P;else P = c[11];
+  let A;
+  if (c[12] !== m) A = m && e(s, {
+    marginTop: 1,
+    children: e(n, {
+      dimColor: !0,
+      children: m
+    })
+  }), c[12] = m, c[13] = A;else A = c[13];
+  let v;
+  if (c[14] !== options_3) v = options_3.some(bt) && r(n, {
+    dimColor: !0,
+    children: [e(n, {
+      bold: !0,
+      dimColor: !0,
+      children: "Auto-allow mode:"
+    }), " ", "Commands will try to run in the sandbox automatically, and attempts to run outside of the sandbox fallback to regular permissions. Explicit ask/deny rules are always respected."]
+  }), c[14] = options_3, c[15] = v;else v = c[15];
+  let D;
+  if (c[16] === w) D = e(LT, {
+    url: "https://code.claude.com/docs/en/sandboxing"
+  }), c[16] = D;else D = c[16];
+  let E;
+  if (c[17] !== v) E = r(s, {
+    flexDirection: "column",
+    marginTop: 1,
+    gap: 1,
+    children: [v, D]
+  }), c[17] = v, c[18] = E;else E = c[18];
+  let M;
+  if (c[19] !== C || c[20] !== P || c[21] !== A || c[22] !== E) M = r(s, {
+    flexDirection: "column",
+    children: [C, g, P, A, E]
+  }), c[19] = C, c[20] = P, c[21] = A, c[22] = E, c[23] = M;else M = c[23];
+  return M;
+}
+async function Un(onComplete_5, t, l) {
+  let m = Cr().theme || "light",
+    u = x();
+  if (u === "windows" && tt(l?.trim() ?? "", " ") === "uninstall") return onComplete_5(lr("warning", m)("The sandbox can't be removed from inside a session. Close every Claude Code session, then run claude sandbox uninstall in a terminal.")), null;
+  if (!Ge.isSupportedPlatform()) {
+    let a = u === "wsl" ? "Error: Sandboxing requires WSL2. WSL1 is not supported." : "Error: Sandboxing is currently only supported on macOS, Linux, and WSL2.",
+      c = lr("error", m)(a);
+    return onComplete_5(c), null;
+  }
+  if (!Ge.isPlatformInEnabledList()) {
+    let a = lr("error", m)(`Error: Sandboxing is disabled for this platform (${u}) via the enabledPlatforms setting.`);
+    return onComplete_5(a), null;
+  }
+  let i = l?.trim() || "",
+    p = tt(i, " ");
+  if (p === "install" && u === "windows" && K6()) {
+    if (i !== "install") return onComplete_5(lr("error", m)("install takes no arguments. Run /sandbox install by itself.")), null;
+    t.appendSystemMessage?.({
+      ...Bt(w6n, "notice"),
+      persist: !1
+    });
+    let a = await k6n(t.session.host);
+    return onComplete_5(lr({
+      ok: "success",
+      cancelled: "warning",
+      partial: "warning",
+      error: "error"
+    }[a.status], m)(a.message)), null;
+  }
+  if (Ge.areSandboxSettingsLockedByPolicy()) {
+    let a = Ge.isSandboxEnabledInSettings() ? await Iar() : void 0,
+      c = lr("error", m)(`Error: Sandbox settings are overridden by a higher-priority configuration and cannot be changed locally.${a === void 0 ? "" : `
+${a}`}`);
+    return onComplete_5(c), null;
+  }
+  if (!i) {
+    let depCheck_5 = Ge.checkDependencies();
+    return e(we, {
+      onComplete: onComplete_5,
+      depCheck: depCheck_5
+    });
+  }
+  if (i) if (p === "exclude") {
+    let a = i.slice(8).trim();
+    if (!a) {
+      let D = lr("error", m)('Error: Please provide a command pattern to exclude (e.g., /sandbox exclude "npm run test:*")');
+      return onComplete_5(D), null;
+    }
+    let c = a.replace(/^["']|["']$/g, ""),
+      C = jDn(c);
+    if (C.outcome === "refused") {
+      let D = lr("error", m)(`Can't exclude "${c}": this session's sandbox policy limits exclusions to trusted settings (managed policy, a --settings file, user settings), and user settings are turned off here (--setting-sources), so there is no settings file where the exclusion would take effect. Re-enable user settings, or add it to the managed or --settings configuration.`);
+      return onComplete_5(D), null;
+    }
+    let {
+        settingsSource: settingsSource
+      } = C,
+      b = un(settingsSource),
+      P = b ? ht(MC(), b) : ".claude/settings.local.json",
+      A = b && P.startsWith("..") ? b : P,
+      v = lr("success", m)(`Added "${c}" to excluded commands in ${A}`);
+    return onComplete_5(v), null;
+  } else {
+    let a = lr("error", m)(`Error: Unknown subcommand "${p}". Available: ${u === "windows" && K6() ? "install, exclude" : "exclude"}`);
+    return onComplete_5(a), null;
+  }
+  return null;
+}
+export { Un as call };

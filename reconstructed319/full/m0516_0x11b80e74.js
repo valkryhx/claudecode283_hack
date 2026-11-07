@@ -1,0 +1,2944 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  Nt
+} from "B:/~BUN/root/chunk-q78ga0zw.js";
+import {
+  z,
+  q
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  R,
+  d,
+  k,
+  ci,
+  H_,
+  vY,
+  Nh
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  J
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  sB,
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  UDt
+} from "B:/~BUN/root/chunk-6g8w5kyh.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  t,
+  _,
+  ee,
+  ie
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  Ue,
+  drt
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  Q,
+  Ey,
+  Wn
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  zn
+} from "B:/~BUN/root/chunk-nsneqfcc.js";
+import {
+  Dn
+} from "B:/~BUN/root/chunk-9jpwd6f1.js";
+import {
+  Hr,
+  Ve,
+  tjt
+} from "B:/~BUN/root/chunk-myfamxtp.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import {
+  vc
+} from "B:/~BUN/root/chunk-jgwwv4gf.js";
+import {
+  hUt,
+  Cg,
+  Yo
+} from "B:/~BUN/root/chunk-smrt7z22.js";
+import {
+  jz,
+  hl,
+  YVe,
+  TUt
+} from "B:/~BUN/root/chunk-xqymp2nr.js";
+import {
+  Zd,
+  uS
+} from "B:/~BUN/root/chunk-3vtkd50k.js";
+import {
+  Ni
+} from "B:/~BUN/root/chunk-ghar8fn5.js";
+import {
+  aLr,
+  UU,
+  Cc
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  SC
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  _js,
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  eN,
+  kc
+} from "B:/~BUN/root/chunk-trd3c21n.js";
+import {
+  $Dt
+} from "B:/~BUN/root/chunk-1jrzd264.js";
+import {
+  qZ
+} from "B:/~BUN/root/chunk-x6ny3ghw.js";
+import {
+  aGe
+} from "B:/~BUN/root/chunk-ym6b88b3.js";
+import {
+  ou
+} from "B:/~BUN/root/chunk-epyd9ybj.js";
+import {
+  An,
+  rBt
+} from "B:/~BUN/root/chunk-7yd8y16n.js";
+import {
+  D
+} from "B:/~BUN/root/chunk-8mqsat26.js";
+import {
+  o,
+  I,
+  oe,
+  C,
+  u,
+  xt,
+  Dr,
+  me,
+  B,
+  T
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  ny,
+  qa
+} from "B:/~BUN/root/chunk-qzcyr88d.js";
+import {
+  Qm,
+  Ht
+} from "B:/~BUN/root/chunk-cbjnh04j.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-g9pw24zp.js";
+import {
+  U
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  he
+} from "B:/~BUN/root/chunk-fet34rqr.js";
+import {
+  join as Te
+} from "path";
+var bt = new Set(["to", "summary", "message", "notify_when_idle"]),
+  _e = "antml:",
+  ge = "</summary>",
+  Fe = '<parameter name="message">',
+  Ce = `<${_e}parameter name="message">`,
+  wt = new RegExp(`<(?:${_e})?parameter\\b|</(?:${_e})?(?:parameter|invoke|function_calls|message)>`);
+
+function vco(e) {
+  let n = Be(e);
+  return n !== void 0 && n.unrepaired === void 0 ? n.split : void 0
+}
+
+function Be(e) {
+  if (!D(e)) return;
+  let {
+    message: n,
+    summary: r
+  } = e;
+  if (typeof e.to !== "string" || n !== void 0 && n !== null || typeof r !== "string" || !Object.keys(e).every((f) => bt.has(f))) return;
+  let s = r.indexOf(ge);
+  while (s !== -1) {
+    let f = s + ge.length;
+    while (f < r.length && /\s/.test(r.charAt(f))) f++;
+    let y = r.startsWith(Ce, f) ? "namespaced" : r.startsWith(Fe, f) ? "bare" : void 0;
+    if (y !== void 0) {
+      let l = y === "namespaced" ? Ce : Fe,
+        h = r.slice(f + l.length).trimEnd();
+      if (h.trim().length === 0) return;
+      return {
+        split: {
+          summary: r.slice(0, s).trim(),
+          message: h,
+          openerForm: y
+        },
+        unrepaired: wt.test(h) ? "markup" : Tt(h) ? "json" : void 0
+      }
+    }
+    s = r.indexOf(ge, s + ge.length)
+  }
+  return
+}
+
+function iSr(e, {
+  applySplit: n = !0
+} = {}) {
+  if (!D(e)) return null;
+  let {
+    message: r,
+    summary: s
+  } = e, f = [], y = Be(e), l = y?.unrepaired === void 0 ? y?.split : void 0;
+  if (l !== void 0 && n) r = l.message, s = l.summary, f.push(`split_slipped_summary_${l.openerForm}`);
+  if (typeof r === "string" && (typeof s !== "string" || s.trim().length === 0)) {
+    let w = Wn(r.trim()).trim();
+    if (w.length > 0) s = w, f.push("derive_summary")
+  }
+  if (typeof s === "string" && s.length > rBt) s = Q(s, rBt - 1) + "\u2026", f.push("truncate_summary");
+  let [h] = f, b = y?.unrepaired !== void 0 ? `split_slipped_summary_${y.split.openerForm}_unrepaired_${y.unrepaired}` : l !== void 0 && !n ? `split_slipped_summary_${l.openerForm}_detect_only` : h;
+  if (b === void 0) return null;
+  return {
+    input: {
+      ...e,
+      ...r !== void 0 && {
+        message: r
+      },
+      summary: s
+    },
+    shapeClass: b
+  }
+}
+
+function Tt(e) {
+  let n = e.trim();
+  if (!n.startsWith("{") && !n.startsWith("[")) return !1;
+  try {
+    let r = ee(n);
+    return typeof r === "object" && r !== null
+  } catch {
+    return !1
+  }
+}
+var L = he(new Map, (e) => e.clear()),
+  _t = 64,
+  St = p(() => u({
+    type: B(["shutdown_approved", "shutdown_rejected"]),
+    requestId: o()
+  }));
+
+function PLi(e, n) {
+  if (L.set(e, n), L.size > _t) L.delete(L.keys().next().value ?? e)
+}
+
+function OLi(e, n) {
+  return n !== void 0 && L.get(e) === n
+}
+
+function ILi(e) {
+  L.delete(e)
+}
+
+function je(e) {
+  if (L.size === 0) return;
+  for (let n of e) {
+    let r = n?.text;
+    if (typeof r !== "string" || !r.includes('"shutdown_')) continue;
+    let s = St().safeParse(et(r));
+    if (s.success) L.delete(s.data.requestId)
+  }
+}
+
+function Se(e) {
+  let n = Rt(e);
+  return Mt(`\x00k${tjt(n)}`, {
+    at: "store",
+    key: n
+  })
+}
+
+function MLi(e, n, r) {
+  if (typeof e === "string") return n(e);
+  let s = r(e.key);
+  return s === void 0 ? void 0 : Se(s)
+}
+var ye = new Map,
+  Et = new FinalizationRegistry((e) => {
+    if (ye.get(e)?.deref() === void 0) ye.delete(e)
+  });
+
+function Mt(e, n) {
+  let r = ye.get(e)?.deref();
+  if (r !== void 0) return r;
+  let s = Object.freeze({
+    ...n,
+    toString: () => e
+  });
+  return ye.set(e, new WeakRef(s)), Et.register(s, e), s
+}
+
+function Rt(e) {
+  return Object.freeze(Object.fromEntries(Object.entries(e).filter(([, n]) => n !== void 0).map(([n, r]) => [n, Array.isArray(r) ? Object.freeze([...r]) : r])))
+}
+import {
+  mkdir as Bt
+} from "fs/promises";
+import {
+  dirname as ot,
+  join as qt
+} from "path";
+import {
+  lstat as Ee,
+  open as Pt,
+  realpath as Le
+} from "fs/promises";
+import * as Y from "path";
+var vt = 65536;
+async function m1(e) {
+  return (await Ee(e).catch(() => null))?.isDirectory() === !0 && !await _js(e)
+}
+async function gA(e, n) {
+  let r = e;
+  for (let y of Y.relative(e, n).split(Y.sep).filter(Boolean)) {
+    r = Y.join(r, y);
+    let l;
+    try {
+      l = await Ee(r)
+    } catch (h) {
+      let b = k(h);
+      return b === "ENOENT" || b === "ENOTDIR" ? "absent" : "refused"
+    }
+    if (!l.isDirectory()) return l.isSymbolicLink() ? "refused" : "not-a-directory";
+    if (await _js(r)) return "refused"
+  }
+  let [s, f] = await Promise.all([Le(e).catch(() => null), Le(n).catch(() => null)]);
+  if (s === null || f === null) return "refused";
+  return ou(s, f, !0) ? "ok" : "refused"
+}
+async function HW(e) {
+  let n = await j6(e);
+  return n.kind === "ok" ? n.content : void 0
+}
+async function j6(e, n = UU) {
+  let r = await shs(e, n);
+  return r.kind === "ok" ? {
+    kind: "ok",
+    content: r.bytes.toString("utf-8")
+  } : r
+}
+async function shs(e, n) {
+  let r;
+  try {
+    r = await Ee(e)
+  } catch (f) {
+    let y = k(f);
+    if (y === "ENOENT" || y === "ENOTDIR") return {
+      kind: "absent",
+      code: y
+    };
+    throw f
+  }
+  if (!r.isFile()) return {
+    kind: "refused"
+  };
+  let s;
+  try {
+    if (s = await Pt(e, Cc()), !(await s.stat()).isFile()) return {
+      kind: "refused"
+    };
+    let y = [],
+      l = 0;
+    while (l <= n) {
+      let h = Buffer.alloc(Math.min(vt, n + 1 - l)),
+        {
+          bytesRead: b
+        } = await s.read(h, 0, h.length);
+      if (b === 0) break;
+      y.push(h.subarray(0, b)), l += b
+    }
+    if (l > n) return {
+      kind: "too-large"
+    };
+    return {
+      kind: "ok",
+      bytes: Buffer.concat(y, l)
+    }
+  } finally {
+    await s?.close().catch(() => {
+      return
+    })
+  }
+}
+import {
+  readdir as ke,
+  readFile as He,
+  unlink as Re,
+  writeFile as Z
+} from "fs/promises";
+import {
+  join as ue
+} from "path";
+
+function ehs(e) {
+  if (Ni().taskList.leaderTeamName === e) return;
+  Ni().taskList.leaderTeamName = e, O()
+}
+
+function VMn(e) {
+  if (Ni().taskList.sessionListId === e) return;
+  Ni().taskList.sessionListId = e, O()
+}
+
+function ELi(e) {
+  return Ni().taskList.updated.subscribe(e)
+}
+
+function O() {
+  try {
+    Ni().taskList.updated.emit()
+  } catch {}
+}
+var NTe = p(() => B(["pending", "in_progress", "completed"])),
+  Xe = p(() => u({
+    id: o(),
+    subject: o(),
+    description: o(),
+    activeForm: o().optional(),
+    owner: o().optional(),
+    status: NTe(),
+    blocks: C(o()),
+    blockedBy: C(o()),
+    metadata: me(o(), oe()).optional()
+  })),
+  ths = ".highwatermark",
+  Ke = 16,
+  $t = new Set(["ELOOP", "EISDIR", "ENXIO"]);
+
+function Ge(e) {
+  return e.code === "AlreadyExists" || e.code === "Failed" && e.telemetryCode !== void 0 && $t.has(e.telemetryCode)
+}
+var be = {
+  retries: {
+    retries: 30,
+    minTimeout: 5,
+    maxTimeout: 100
+  },
+  onCompromised: (e) => a(e)
+};
+
+function Qe(e) {
+  return ue(lD(e), ths)
+}
+async function V(e, n) {
+  return await Ye(e, n) ?? 0
+}
+async function Ye(e, n) {
+  if (n) {
+    let s = await n.read([Ve.taskListHighWaterMark(SL(e))]);
+    if (!s.ok) return null;
+    let f = s.value.items[0];
+    if (!f?.found) return 0;
+    let y = parseInt(Buffer.from(f.value).toString("utf8").trim(), 10);
+    return isNaN(y) ? null : y
+  }
+  let r = Qe(e);
+  try {
+    let s = (await He(r, "utf8")).trim(),
+      f = parseInt(s, 10);
+    return isNaN(f) ? null : f
+  } catch (s) {
+    return k(s) === "ENOENT" ? 0 : null
+  }
+}
+async function te(e, n, r) {
+  if (r) {
+    let f = await r.write(Ve.taskListHighWaterMark(SL(e)), String(n), {
+      publishDiscipline: "inPlace"
+    });
+    if (!f.ok) {
+      let y = vY(Qm(f.error));
+      throw Object.assign(new R(`[Tasks] high-water mark write failed: ${f.error.code}`, "tasks high-water mark v5 write failed"), y === void 0 ? {} : {
+        code: y
+      })
+    }
+    return
+  }
+  let s = Qe(e);
+  await Z(s, String(n), {
+    encoding: "utf8"
+  })
+}
+async function It(e, n, r) {
+  try {
+    if (n > await V(e, r)) await te(e, n, r)
+  } catch (s) {
+    t(`[Tasks] could not record skipped task id ${n}: ${d(s)}`)
+  }
+}
+
+function bL() {
+  if (i.CLAUDE_CODE_ENABLE_TASKS === !1) return !1;
+  return !0
+}
+async function TLi(e, n) {
+  let r = lD(e),
+    s;
+  try {
+    s = await ne(e, n);
+    let f = [];
+    if (n) {
+      let l = await Pe(n, e);
+      if (l === null) return !1;
+      if (f = l.filter((h) => !h.startsWith(".")), f.length > 0) {
+        let h = await n.read(f.map((b) => K(e, b)));
+        if (!h.ok) return t(`[Tasks] Failed to read task list ${e} before a reset: ${h.error.code}`), !1;
+        if (h.value.items.length !== f.length) return !1;
+        for (let [b, w] of h.value.items.entries()) {
+          if (!w.found) continue;
+          let x = we(f[b], Buffer.from(w.value).toString("utf8"));
+          if (x === null) continue;
+          if (x.status !== "completed") return !1
+        }
+      }
+    } else if ((await II(e)).some((h) => h.status !== "completed")) return !1;
+    let y = n ? ve(f) : await Je(e);
+    if (y > 0) {
+      let l = await V(e, n);
+      if (y > l) await te(e, y, n)
+    }
+    if (n)
+      for (let l of f) await n.delete(Ve.task(SL(e), l));
+    else {
+      let l;
+      try {
+        l = await ke(r)
+      } catch {
+        l = []
+      }
+      for (let h of l)
+        if (h.endsWith(".json") && !h.startsWith(".")) {
+          let b = ue(r, h);
+          try {
+            await Re(b)
+          } catch {}
+        }
+    }
+    return O(), !0
+  } finally {
+    await uS(s, "[Tasks] resetTaskList")
+  }
+}
+
+function YT() {
+  if (i.CLAUDE_CODE_TASK_LIST_ID) return i.CLAUDE_CODE_TASK_LIST_ID;
+  let {
+    sessionListId: e,
+    leaderTeamName: n
+  } = Ni().taskList, r = eN();
+  if (r) return e ?? r.teamName;
+  return kc() || e || n || z()
+}
+
+function SL(e) {
+  return e.replace(/[^a-zA-Z0-9_-]/g, "-")
+}
+
+function lD(e) {
+  return ue(Ue(), "tasks", SL(e))
+}
+
+function N(e, n) {
+  return ue(lD(e), `${SL(n)}.json`)
+}
+
+function K(e, n) {
+  return Ve.task(SL(e), SL(n))
+}
+async function Pe(e, n) {
+  let r = {
+      namespace: "task",
+      listId: SL(n)
+    },
+    s = [],
+    f = await qa((y) => e.listEntries(r, {
+      cursor: y,
+      skipKeyStats: !0
+    }), (y) => {
+      for (let l of y)
+        if (l.kind === "key" && l.key.namespace === "task" && "taskId" in l.key) s.push(l.key.taskId)
+    });
+  switch (f.status) {
+    case "done":
+      return s;
+    case "error":
+      return t(`[Tasks] Failed to list task list ${n}: ${f.error.code}`), null;
+    case "capped":
+      return t(`[Tasks] Listing task list ${n} exceeded ${ny} pages; treating the listing as failed`), null
+  }
+}
+async function Ze(e, n) {
+  let r = {
+      namespace: "task",
+      listId: SL(n)
+    },
+    s = [],
+    f;
+  try {
+    f = await qa((l) => e.listEntries(r, {
+      cursor: l,
+      includeValue: !0
+    }), (l) => {
+      for (let h of l) {
+        if (h.kind !== "key" || h.key.namespace !== "task" || !("taskId" in h.key)) continue;
+        let b = h.key.taskId;
+        if (h.value instanceof Uint8Array && b === SL(b)) s.push(we(b, Buffer.from(h.value).toString("utf8")));
+        else s.push(z9(n, b, e))
+      }
+    })
+  } finally {
+    await Promise.allSettled(s)
+  }
+  switch (f.status) {
+    case "done":
+      break;
+    case "error":
+      return t(`[Tasks] Failed to list task list ${n}: ${f.error.code}`), null;
+    case "capped":
+      return t(`[Tasks] Listing task list ${n} exceeded ${ny} pages; treating the listing as failed`), null
+  }
+  return (await Promise.all(s)).filter((l) => l !== null).sort((l, h) => Number(l.id) - Number(h.id))
+}
+async function CLi(e, n) {
+  if (X() && n !== void 0) return Ze(n, e);
+  return II(e)
+}
+async function KMn(e, n) {
+  let r = lD(e);
+  try {
+    if (X() && n !== void 0) {
+      await n.ensureScope({
+        namespace: "task",
+        listId: SL(e)
+      });
+      return
+    }
+    await ie().mkdir(r)
+  } catch {}
+}
+
+function ve(e) {
+  let n = 0;
+  for (let r of e) {
+    let s = parseInt(r, 10);
+    if (!isNaN(s) && s > n) n = s
+  }
+  return n
+}
+async function Je(e, n) {
+  if (n) {
+    let y = await Pe(n, e);
+    if (y === null) throw new R("[Tasks] Could not list the task list to determine its highest task id");
+    return ve(y)
+  }
+  let r = lD(e),
+    s;
+  try {
+    s = await ke(r)
+  } catch {
+    return 0
+  }
+  let f = 0;
+  for (let y of s) {
+    if (!y.endsWith(".json")) continue;
+    let l = parseInt(y.replace(".json", ""), 10);
+    if (!isNaN(l) && l > f) f = l
+  }
+  return f
+}
+async function kco(e, n) {
+  let [r, s] = await Promise.all([Je(e, n), V(e, n)]);
+  return Math.max(r, s)
+}
+async function RLi(e, n, r) {
+  let s;
+  try {
+    s = await ne(e, r);
+    let f = await kco(e, r),
+      y = String(f + 1);
+    if (r)
+      for (let l = 1;; l++) {
+        let h = {
+            id: y,
+            ...n
+          },
+          b = await r.write(K(e, y), _(h, null, 2), {
+            precondition: {
+              type: "ifAbsent"
+            }
+          });
+        if (b.ok) break;
+        if (!Ge(b.error)) throw new R(`[Tasks] Failed to create task ${y}: ${b.error.code}`, "[Tasks] v5 task create write failed");
+        let w = b.error.code === "Failed" ? b.error.telemetryCode : void 0;
+        if (t(`[Tasks] createTask: task id ${y} is held by an entry the listing did not report (${w??b.error.code}); taking the next id`), await It(e, Number(y), r), l >= Ke) throw new R(`[Tasks] Failed to create a task: could not claim a free task id after ${Ke} attempts; last tried ${N(e,y)}, which exists and could not be claimed \u2014 the task listing may have failed, or the entry is not a task file`, "[Tasks] v5 task create gave up: no free task id");
+        y = String(Number(y) + 1)
+      } else {
+        let l = {
+            id: y,
+            ...n
+          },
+          h = N(e, y);
+        await Z(h, _(l, null, 2), {
+          encoding: "utf8"
+        })
+      }
+    return O(), y
+  } finally {
+    await uS(s, "[Tasks] createTask")
+  }
+}
+
+function we(e, n) {
+  try {
+    let r = ee(n),
+      s = Xe().safeParse(r);
+    if (!s.success) return t(`[Tasks] Task ${e} failed schema validation: ${s.error.message}`), null;
+    return s.data
+  } catch (r) {
+    if (t(`[Tasks] Failed to read task ${e}: ${d(r)}`), !(r instanceof SyntaxError)) a(r);
+    return null
+  }
+}
+async function tt(e, n, r) {
+  let s = await e.read([K(n, r)]);
+  if (!s.ok) return t(`[Tasks] Failed to read task ${r}: ${s.error.code}`), null;
+  let f = s.value.items[0];
+  if (!f.found) return null;
+  return we(r, Buffer.from(f.value).toString("utf8"))
+}
+async function nhs(e, n, r, s, {
+  wholeOrNothing: f = !1
+} = {}) {
+  let y, l = 0,
+    h = [],
+    b = async () => {
+      let w = 0;
+      for (let x of h) {
+        let S;
+        try {
+          if (s) {
+            let E = await s.delete(K(e, x));
+            S = E.ok ? void 0 : E.error.code
+          } else await Re(N(e, x))
+        } catch (E) {
+          let P = k(E);
+          S = P === "ENOENT" ? void 0 : P ?? d(E)
+        }
+        if (S !== void 0) w++, t(`[Tasks] restoreTaskList: task ${x} not taken back: ${S}`)
+      }
+      return w
+    };
+  try {
+    if (y = await ne(e, s), await kco(e, s) > 0) return {
+      restored: !1,
+      written: l
+    };
+    for (let w of n) {
+      if (s) {
+        let x = await s.write(K(e, w.id), _(w, null, 2), {
+          precondition: {
+            type: "ifAbsent"
+          }
+        });
+        if (x.ok) l++, h.push(w.id);
+        else t(`[Tasks] restoreTaskList: task ${w.id} not written: ${x.error.code}`);
+        continue
+      }
+      try {
+        await Z(N(e, w.id), _(w, null, 2), {
+          encoding: "utf8",
+          flag: "wx"
+        }), l++, h.push(w.id)
+      } catch (x) {
+        t(`[Tasks] restoreTaskList: task ${w.id} not written: ${k(x)??"unknown"}`)
+      }
+    }
+    if (f && l < n.length) {
+      let w = await b();
+      return {
+        restored: !1,
+        written: 0,
+        refused: n.length - l,
+        ...w > 0 && {
+          left: w
+        }
+      }
+    }
+    await te(e, r, s)
+  } catch (w) {
+    if (f) await b();
+    throw w
+  } finally {
+    await uS(y, "[Tasks] restoreTaskList")
+  }
+  return O(), {
+    restored: !0,
+    written: l
+  }
+}
+async function ALi(e, n, r) {
+  let s;
+  try {
+    s = await ne(e, r);
+    let f = !1;
+    if (r) {
+      let l = await r.write(K(e, n.id), _(n, null, 2), {
+        precondition: {
+          type: "ifAbsent"
+        }
+      });
+      if (!l.ok && !Ge(l.error)) throw new R(`[Tasks] Failed to write task ${n.id}: ${l.error.code}`, "[Tasks] v5 task write under id failed");
+      f = l.ok
+    } else try {
+      await Z(N(e, n.id), _(n, null, 2), {
+        encoding: "utf8",
+        flag: "wx"
+      }), f = !0
+    } catch (l) {
+      if (k(l) !== "EEXIST") throw l
+    }
+    let y = Number(n.id);
+    if (Number.isSafeInteger(y) && y > await V(e, r)) await te(e, y, r);
+    if (f) O();
+    return f
+  } finally {
+    await uS(s, "[Tasks] writeTaskUnderId")
+  }
+}
+async function sSr(e, n, r) {
+  let s;
+  try {
+    if (s = await ne(e, r), n <= await V(e, r)) return !1;
+    return await te(e, n, r), !0
+  } finally {
+    await uS(s, "[Tasks] raiseTaskIdMark")
+  }
+}
+async function z9(e, n, r) {
+  if (r) return tt(r, e, n);
+  let s = N(e, n);
+  try {
+    let f = await He(s, "utf8"),
+      y = ee(f),
+      l = Xe().safeParse(y);
+    if (!l.success) return t(`[Tasks] Task ${n} failed schema validation: ${l.error.message}`), null;
+    return l.data
+  } catch (f) {
+    if (k(f) === "ENOENT") return null;
+    if (t(`[Tasks] Failed to read task ${n}: ${d(f)}`, {
+        level: "error"
+      }), !(f instanceof SyntaxError) && !Nh(f) && !H_(f)) a(f);
+    return null
+  }
+}
+async function nt(e, n, r) {
+  let s = await z9(e, n);
+  if (!s) return null;
+  let f = {
+      ...s,
+      ...r,
+      id: n
+    },
+    y = N(e, n);
+  return await Z(y, _(f, null, 2), {
+    encoding: "utf8"
+  }), O(), f
+}
+var zt = 5,
+  Ot = $Dt(50);
+async function Me(e, n, r, s) {
+  let f = K(n, r);
+  for (let y = 1;; y++) {
+    let l = await e.update(f, (b) => {
+      let w = b === void 0 ? null : we(r, Buffer.from(b.value).toString("utf8")),
+        x = s(w);
+      return "write" in x ? {
+        write: _(x.write, null, 2),
+        result: x.result
+      } : {
+        skip: !0,
+        result: x.result
+      }
+    });
+    if (l.ok) {
+      if (l.value.written) O();
+      return l.value.result
+    }
+    if (!(l.error.code === "Unavailable" && l.error.telemetryCode === "LockSuspect") || y >= zt) throw t(`[Tasks] update of task ${r} failed after ${y} attempt(s): ${l.error.code}${"telemetryCode"in l.error&&l.error.telemetryCode?` (${l.error.telemetryCode})`:""}`), new R(`[Tasks] Failed to update task ${r}: ${l.error.code}`, "[Tasks] v5 task update write failed");
+    await (l.error.retryAfterMs !== void 0 ? J(l.error.retryAfterMs) : Ot(y))
+  }
+}
+
+function rt(e, n, r) {
+  return {
+    ...e,
+    ...n,
+    id: r
+  }
+}
+async function Dt(e, n, r, s) {
+  return await Me(e, n, r, (y) => {
+    if (!y) return {
+      result: null
+    };
+    let l = rt(y, s, r);
+    return {
+      write: l,
+      result: l
+    }
+  }) ?? null
+}
+async function FTe(e, n, r, s) {
+  let f = N(e, n);
+  if (s) {
+    if (!await tt(s, e, n)) return null;
+    let h;
+    try {
+      return h = await st(e, n), await Dt(s, e, n, r)
+    } finally {
+      await uS(h, "[Tasks] updateTask")
+    }
+  }
+  if (!await z9(e, n)) return null;
+  let l;
+  try {
+    return l = await Zd(f, be), await nt(e, n, r)
+  } finally {
+    await uS(l, "[Tasks] updateTask")
+  }
+}
+async function Z7t(e, n, r) {
+  let s = N(e, n);
+  try {
+    let f = parseInt(n, 10);
+    if (!isNaN(f)) {
+      let l = await V(e, r);
+      if (f > l) await te(e, f, r)
+    }
+    if (r) {
+      let l = await r.delete(K(e, n));
+      if (!l.ok) return t(`[Tasks] Failed to delete task ${n}: ${l.error.code}`), !1;
+      if (!l.value.existed) return !1
+    } else try {
+      await Re(s)
+    } catch (l) {
+      if (k(l) === "ENOENT") return !1;
+      throw l
+    }
+    let y = await II(e, r);
+    for (let l of y) {
+      let h = l.blocks.filter((w) => w !== n),
+        b = l.blockedBy.filter((w) => w !== n);
+      if (h.length !== l.blocks.length || b.length !== l.blockedBy.length) await FTe(e, l.id, {
+        blocks: h,
+        blockedBy: b
+      }, r)
+    }
+    return O(), !0
+  } catch {
+    return !1
+  }
+}
+async function II(e, n) {
+  if (n) return await Ze(n, e) ?? [];
+  let r = lD(e),
+    s;
+  try {
+    s = await ke(r)
+  } catch {
+    return []
+  }
+  let f = s.filter((l) => l.endsWith(".json")).map((l) => l.replace(".json", ""));
+  return (await Promise.all(f.map((l) => z9(e, l)))).filter((l) => l !== null).sort((l, h) => Number(l.id) - Number(h.id))
+}
+
+function rhs(e) {
+  return /^[1-9]\d*$/.test(e)
+}
+async function ohs(e, n) {
+  let r;
+  if (n) r = await Pe(n, e);
+  else try {
+    r = (await ke(lD(e))).filter((h) => h.endsWith(".json")).map((h) => h.replace(".json", ""))
+  } catch (h) {
+    r = k(h) === "ENOENT" ? [] : null
+  }
+  if (r === null) return null;
+  let s = r.filter(rhs).sort((h, b) => Number(h) - Number(b)),
+    f = await Promise.all(s.map((h) => z9(e, h, n))),
+    y = await Ye(e, n);
+  if (y === null) return null;
+  let l = f.filter((h, b) => h?.id === s[b]);
+  return {
+    tasks: l.length === s.length ? l : null,
+    highestId: Math.max(y, ve(r))
+  }
+}
+
+function NDt(e, n) {
+  let r = {
+    ...e
+  };
+  for (let [s, f] of Object.entries(n))
+    if (f === null) delete r[s];
+    else r[s] = f;
+  return r
+}
+async function eQt(e, n, r, s) {
+  let [f, y] = await Promise.all([z9(e, n, s), z9(e, r, s)]);
+  if (!f || !y) return !1;
+  if (!f.blocks.includes(r)) await FTe(e, n, {
+    blocks: [...f.blocks, r]
+  }, s);
+  if (!y.blockedBy.includes(n)) await FTe(e, r, {
+    blockedBy: [...y.blockedBy, n]
+  }, s);
+  return !0
+}
+async function Ft(e, n) {
+  await KMn(e, n);
+  let r = ue(lD(e), ".lock");
+  try {
+    await ie().mkdir(lD(e)), await Z(r, "", {
+      flag: "wx"
+    })
+  } catch {}
+  return r
+}
+async function ne(e, n) {
+  if (q()) return it(SL(e));
+  let r = await Ft(e, n);
+  return Zd(r, be)
+}
+
+function st(e, n) {
+  if (q()) return it(`${SL(e)}/${SL(n)}`);
+  let r = N(e, n);
+  return Zd(`${r}.v5-lock-anchor`, {
+    lockfilePath: `${r}.lock`,
+    realpath: !1,
+    ...be
+  })
+}
+
+function it(e) {
+  return new Promise((n) => {
+    Ni().taskList.locks.run(e, () => new Promise((r) => n(async () => r())))
+  })
+}
+async function xLi(e, n, r, s = {}, f) {
+  let y = N(e, n);
+  if (!await z9(e, n, f)) return {
+    success: !1,
+    reason: "task_not_found"
+  };
+  if (s.checkAgentBusy) return Ct(e, n, r, f);
+  let h;
+  try {
+    if (h = f ? await st(e, n) : await Zd(y, be), f) {
+      let P = await Me(f, e, n, (M) => We(M, n, r, void 0));
+      if (P !== "needs_open_blockers") return P ?? {
+        success: !1,
+        reason: "task_not_found"
+      };
+      let F = await II(e, f),
+        xe = new Set(F.filter((M) => M.status !== "completed").map((M) => M.id)),
+        G = await Me(f, e, n, (M) => We(M, n, r, xe));
+      return G === void 0 || G === "needs_open_blockers" ? {
+        success: !1,
+        reason: "task_not_found"
+      } : G
+    }
+    let b = await z9(e, n);
+    if (!b) return {
+      success: !1,
+      reason: "task_not_found"
+    };
+    if (b.owner && b.owner !== r) return {
+      success: !1,
+      reason: "already_claimed",
+      task: b
+    };
+    if (b.status === "completed") return {
+      success: !1,
+      reason: "already_resolved",
+      task: b
+    };
+    let w = await II(e),
+      x = new Set(w.filter((P) => P.status !== "completed").map((P) => P.id));
+    if (b.blockedBy.filter((P) => x.has(P)).length > 0) return {
+      success: !1,
+      reason: "blocked",
+      task: b
+    };
+    return {
+      success: !0,
+      task: await nt(e, n, {
+        owner: r
+      })
+    }
+  } catch (b) {
+    return t(`[Tasks] Failed to claim task ${n}: ${d(b)}`), a(b), {
+      success: !1,
+      reason: "task_not_found"
+    }
+  } finally {
+    await uS(h, "[Tasks] claimTask")
+  }
+}
+
+function We(e, n, r, s) {
+  if (!e) return {
+    result: {
+      success: !1,
+      reason: "task_not_found"
+    }
+  };
+  if (e.owner && e.owner !== r) return {
+    result: {
+      success: !1,
+      reason: "already_claimed",
+      task: e
+    }
+  };
+  if (e.status === "completed") return {
+    result: {
+      success: !1,
+      reason: "already_resolved",
+      task: e
+    }
+  };
+  if (e.blockedBy.length > 0) {
+    if (!s) return {
+      result: "needs_open_blockers"
+    };
+    if (e.blockedBy.filter((l) => s.has(l)).length > 0) return {
+      result: {
+        success: !1,
+        reason: "blocked",
+        task: e
+      }
+    }
+  }
+  let f = rt(e, {
+    owner: r
+  }, n);
+  return {
+    write: f,
+    result: {
+      success: !0,
+      task: f
+    }
+  }
+}
+async function Ct(e, n, r, s) {
+  let f;
+  try {
+    f = await ne(e, s);
+    let y = await II(e, s),
+      l = y.find((S) => S.id === n);
+    if (!l) return {
+      success: !1,
+      reason: "task_not_found"
+    };
+    if (l.owner && l.owner !== r) return {
+      success: !1,
+      reason: "already_claimed",
+      task: l
+    };
+    if (l.status === "completed") return {
+      success: !1,
+      reason: "already_resolved",
+      task: l
+    };
+    let h = new Set(y.filter((S) => S.status !== "completed").map((S) => S.id));
+    if (l.blockedBy.filter((S) => h.has(S)).length > 0) return {
+      success: !1,
+      reason: "blocked",
+      task: l
+    };
+    if (y.filter((S) => S.status !== "completed" && S.owner === r && S.id !== n).length > 0) return {
+      success: !1,
+      reason: "agent_busy",
+      task: l
+    };
+    return {
+      success: !0,
+      task: await FTe(e, n, {
+        owner: r
+      }, s)
+    }
+  } catch (y) {
+    return t(`[Tasks] Failed to claim task ${n} with busy check: ${d(y)}`), a(y), {
+      success: !1,
+      reason: "task_not_found"
+    }
+  } finally {
+    await uS(f, "[Tasks] claimTaskWithBusyCheck")
+  }
+}
+async function _ze(e, n, r, s, f) {
+  let y = Ni().taskList.sessionListId ?? e,
+    h = (await II(y, f)).filter((x) => x.status !== "completed" && (x.owner === n || x.owner === r));
+  for (let x of h) await FTe(y, x.id, {
+    owner: void 0,
+    status: "pending"
+  }, f);
+  if (h.length > 0) t(`[Tasks] Unassigned ${h.length} task(s) from ${r}`);
+  let w = `${r} ${s==="terminated"?"was terminated":"has shut down"}.`;
+  if (h.length > 0) {
+    let x = h.map((S) => `#${S.id} "${S.subject}"`).join(", ");
+    w += ` ${h.length} task(s) were unassigned: ${x}. Use TaskList to check availability and TaskUpdate with owner to reassign them to idle teammates.`
+  }
+  return {
+    unassignedTasks: h.map((x) => ({
+      id: x.id,
+      subject: x.subject
+    })),
+    notificationMessage: w
+  }
+}
+var tQt = "session",
+  Eco = ".session-list",
+  ihs = 64;
+
+function qMn(e) {
+  let n = Nt(e) ? e.slice(0, 8) : SC(e) ?? e;
+  return `${tQt}-${n}`
+}
+
+function Tco(e) {
+  let n = `${tQt}-`,
+    r = e.startsWith(n) ? e.slice(n.length) : void 0;
+  return aGe(e) || aGe(r) || /^[0-9a-f]{8}$/i.test(r ?? "")
+}
+async function dSa() {
+  let {
+    leaderTeamName: e,
+    sessionListId: n
+  } = Ni().taskList, r = n ?? e;
+  if (!r || q()) return;
+  try {
+    let s = lD(qMn(z())),
+      f = ot(s);
+    for (let y of [f, s])
+      if (await Bt(y).catch((l) => {
+          if (k(l) !== "EEXIST") throw l
+        }), await gA(ot(f), y) !== "ok") {
+        t("[sessionTeam] Not noting the task list of the cleared session: its folder is not a plain directory", {
+          level: "warn"
+        });
+        return
+      } await zn(qt(s, Eco), r)
+  } catch (s) {
+    t(`[sessionTeam] Could not note the task list of the cleared session: ${d(s)}`, {
+      level: "warn"
+    })
+  }
+}
+
+function A() {
+  return Ni().mailbox.ledger
+}
+
+function ahs(e, n) {
+  let r = Yo(e);
+  return Object.values(n ?? {}).find((s) => Yo(s.name) === r)
+}
+
+function jt(e, n) {
+  if (n.isPaneTeammate) return !1;
+  if (!Object.values(n.roster ?? {}).some((l) => l.tmuxPaneId === "leader")) return !1;
+  let s = Yo(e);
+  if (s === hl || s === YVe || s === TUt) return !0;
+  let y = ahs(e, n.roster);
+  return y?.tmuxPaneId === "in-process" || y?.tmuxPaneId === "leader"
+}
+
+function x0e(e, n, r) {
+  let s = A(),
+    f = new Set,
+    y = new Map;
+  for (let l of e)
+    if (l.msg_id !== void 0 && !f.has(l.msg_id) && s.wrote(n, l) && l.msg_id !== void 0) f.add(l.msg_id), y.set(l, "verified");
+    else y.set(l, jt(l.from, r) ? "forged" : "unverifiable");
+  return y
+}
+var re = {
+    retries: {
+      retries: 10,
+      minTimeout: 5,
+      maxTimeout: 100
+    },
+    onCompromised: (e) => a(e)
+  },
+  dt = p(() => xt({
+    type: o().optional(),
+    from: o(),
+    text: o(),
+    timestamp: o(),
+    read: I().optional(),
+    color: o().optional(),
+    summary: o().optional(),
+    from_plugin: o().optional()
+  }));
+
+function lt(e, n) {
+  if (e === null || typeof e !== "object" || Array.isArray(e)) return `entry is ${e===null?"null":Array.isArray(e)?"an array":typeof e}`;
+  return n.map((r) => {
+    let s = r.path[0],
+      f = typeof s === "string" ? s : String(s),
+      y = e[f],
+      l = y === void 0 ? f in e ? "undefined" : "missing" : y === null ? "null" : typeof y;
+    return `${f}:${r.code}:${l}`
+  }).join(", ")
+}
+var ct = 100,
+  Lt = 2048;
+
+function Ut(e, n) {
+  try {
+    let r = _(n);
+    return `${e}\x00${r.length}:${r.slice(0,Lt)}`
+  } catch {
+    return `${e}\x00(unserializable)`
+  }
+}
+
+function Kt(e, n, r) {
+  let s = Ni().mailbox.reportedDroppedEntries;
+  if (s.size >= ct) return !1;
+  let f = Ut(e, n);
+  if (s.has(f)) return !1;
+  s.add(f);
+  let y = `[TeammateMailbox] dropped schema-invalid inbox entry (${r})`;
+  if (n === null || typeof n !== "object" || Array.isArray(n)) return a(new R(y, "TeammateMailbox: dropped inbox entry that is not an object")), !0;
+  let l = n.text;
+  if (l === void 0) a(new R(y, "TeammateMailbox: dropped inbox entry with missing text"));
+  else if (l === null) a(new R(y, "TeammateMailbox: dropped inbox entry with null text"));
+  else if (typeof l !== "string") a(new R(y, "TeammateMailbox: dropped inbox entry with non-string text"));
+  else a(new R(y, "TeammateMailbox: dropped inbox entry failing schema validation"));
+  return !0
+}
+
+function Wt(e, n) {
+  let r = Ni().mailbox.reportedDroppedEntries;
+  if (r.size >= ct) return;
+  let s = `${e}\x00(not-an-array)`;
+  if (r.has(s)) return;
+  r.add(s), a(new R(`[TeammateMailbox] inbox file top level is ${n===null?"null":typeof n}, expected an array`, "TeammateMailbox: inbox file is not an array"))
+}
+
+function Ie(e, n) {
+  if (!Array.isArray(e)) return Wt(n, e), {
+    valid: [],
+    droppedCount: 1
+  };
+  let r = [],
+    s = 0;
+  for (let f of e) {
+    let y = dt().safeParse(f);
+    if (y.success) r.push(f);
+    else {
+      s++;
+      let l = lt(f, y.error.issues);
+      if (Kt(n, f, l)) t(`[TeammateMailbox] dropping schema-invalid inbox entry (${l})`, {
+        level: "warn"
+      })
+    }
+  }
+  return {
+    valid: r,
+    droppedCount: s
+  }
+}
+async function cSa() {
+  await Promise.all(Array.from(Ni().mailbox.pendingPrunes.values()))
+}
+
+function Xt(e, n, r) {
+  let s = Ni().mailbox.pendingPrunes;
+  if (s.has(e)) return;
+  let f = fca(e, n, r).finally(() => {
+    s.delete(e)
+  });
+  s.set(e, f)
+}
+
+function ce(e, n, r) {
+  if (e !== void 0 || !q()) return !1;
+  return t(`[TeammateMailbox] ${n}: nothing read or written for "${r}": this session has no disk, and the inbox cannot go to a store (tengu_hover_rest is off, no store was handed in, or the agent or team name is not a valid store key)`), !0
+}
+async function fca(e, n, r) {
+  if (X() && n !== void 0 && r !== void 0) {
+    try {
+      let y = await ae(n, r, e, (l) => l.droppedCount === 0 ? {
+        skip: !0,
+        result: 0
+      } : {
+        messages: l.messages,
+        result: l.droppedCount
+      }, !1);
+      if (y) t(`[TeammateMailbox] pruned ${y} schema-invalid entr${y===1?"y":"ies"} at ${e}`)
+    } catch (y) {
+      t(`[TeammateMailbox] invalid-entry prune skipped: ${y}`)
+    }
+    return
+  }
+  if (q()) return;
+  let s = `${e}.lock`,
+    f;
+  try {
+    f = await Zd(e, {
+      lockfilePath: s,
+      ...re
+    });
+    let y = await Dn().read(e),
+      {
+        valid: l,
+        droppedCount: h
+      } = Ie(ee(y), e);
+    if (h === 0) {
+      W(e, l, l);
+      return
+    }
+    await Dn().atomicWrite(e, _(l, null, 2)), W(e, l, l), t(`[TeammateMailbox] pruned ${h} schema-invalid entr${h===1?"y":"ies"} at ${e}`)
+  } catch (y) {
+    t(`[TeammateMailbox] invalid-entry prune skipped: ${y}`)
+  } finally {
+    await uS(f, "[TeammateMailbox] pruneInvalidMailboxEntries")
+  }
+}
+
+function M2(e, n) {
+  let r = n || kc() || "default",
+    s = SL(r),
+    f = SL(e),
+    y = Te(drt(), s, "inboxes"),
+    l = Te(y, `${f}.json`);
+  return t(`[TeammateMailbox] getInboxPath: agent=${e}, team=${r}, fullPath=${l}`), l
+}
+async function Gt(e) {
+  let n = e || kc() || "default",
+    r = SL(n),
+    s = Te(drt(), r, "inboxes");
+  await Dn().mkdir(s), t(`[TeammateMailbox] Ensured inbox directory: ${s}`)
+}
+
+function se(e, n) {
+  let r = SL(n || kc() || "default"),
+    s = SL(e);
+  return Hr(r) && Hr(s) ? Ve.mailbox(r, s) : void 0
+}
+
+function Qt(e, n, r) {
+  return q() ? Se(e) : M2(n, r)
+}
+
+function Yt(e, n, r) {
+  let s;
+  try {
+    s = ee(e)
+  } catch {
+    return {
+      messages: [],
+      droppedCount: 0,
+      corrupt: !0
+    }
+  }
+  let {
+    valid: f,
+    droppedCount: y
+  } = Ie(s, n);
+  if (r) {
+    for (let l of f)
+      if (l.type === void 0) l.type = "message"
+  }
+  return {
+    messages: f,
+    droppedCount: y,
+    corrupt: !1
+  }
+}
+async function ae(e, n, r, s, f = !0) {
+  let y, l = await e.updateText(n, (h) => {
+    let b = h === void 0 ? {
+        messages: [],
+        droppedCount: 0
+      } : Yt(h.value, r, f),
+      w = s({
+        messages: b.messages,
+        droppedCount: b.droppedCount,
+        found: h !== void 0
+      });
+    return y = {
+      read: b.messages,
+      remaining: "skip" in w ? b.messages : w.messages
+    }, "skip" in w ? {
+      skip: !0,
+      result: w.result
+    } : {
+      write: _(w.messages, null, 2),
+      result: w.result
+    }
+  }, {
+    mode: 438 & ~process.umask()
+  });
+  if (!l.ok) throw t(`[TeammateMailbox] inbox update failed: ${Ht(l.error)}`, {
+    level: "error"
+  }), Error("teammate inbox storage update failed");
+  if (y !== void 0) W(r, y.read, y.remaining);
+  return l.value.result
+}
+
+function W(e, n, r) {
+  let s = new Set(r),
+    f = new Set;
+  for (let l of n)
+    if (!s.has(l) && l.msg_id !== void 0) f.add(l.msg_id);
+  let y = new Set;
+  for (let l of r)
+    if (l.msg_id !== void 0 && !f.has(l.msg_id)) y.add(l.msg_id);
+  A().retain(e, y)
+}
+async function rpt(e, n, r, s) {
+  let f = X() && r !== void 0 ? se(e, n) : void 0;
+  if (ce(f, "readMailbox", e)) return [];
+  let y = M2(e, n);
+  t(`[TeammateMailbox] readMailbox: path=${y}`);
+  try {
+    let l;
+    if (X() && r !== void 0 && f !== void 0) {
+      let w = await r.readText([f]);
+      if (!w.ok) throw t(`[TeammateMailbox] readMailbox: inbox read failed: ${Ht(w.error)}`), Error("teammate inbox storage read failed");
+      if (!w.value.items[0].found) return t("[TeammateMailbox] readMailbox: file does not exist"), [];
+      l = w.value.items[0].value
+    } else l = await Dn().read(y);
+    let {
+      valid: h,
+      droppedCount: b
+    } = Ie(ee(l), y);
+    if (b > 0) Xt(y, r, f);
+    for (let w of h)
+      if (w.type === void 0) w.type = "message";
+    return t(`[TeammateMailbox] readMailbox: read ${h.length} message(s)` + (b > 0 ? `, dropped ${b} invalid` : "")), h
+  } catch (l) {
+    if (k(l) === "ENOENT") return t("[TeammateMailbox] readMailbox: file does not exist"), [];
+    if (l instanceof SyntaxError) return t(`[TeammateMailbox] readMailbox: unparseable inbox, treating as empty: ${l}`), [];
+    if (s?.throwOnUnknownReadError) throw l;
+    return t(`Failed to read inbox for ${e}: ${l}`), a(l), []
+  }
+}
+async function opt(e, n, r) {
+  let s = await rpt(e, n, r),
+    f = s.filter((y) => !y.read);
+  return t(`[TeammateMailbox] readUnreadMessages: ${f.length} unread of ${s.length} total`), je(f), f
+}
+async function ft(e) {
+  let n = e || kc() || "";
+  if (!n.startsWith(`${tQt}-`) || !/^[a-z0-9-]+$/.test(n) || q()) return !1;
+  try {
+    return await Dn().stat(Te(drt(), n, "config.json")), !1
+  } catch (r) {
+    return k(r) === "ENOENT"
+  }
+}
+async function at(e, n, r) {
+  if (!await ft(n)) return r;
+  let s = M2(e, n);
+  t(`[TeammateMailbox] writeToMailbox: removing ${s}: its team was deleted during this write`), A().forget(s), await Dn().delete(s).catch((f) => {
+    if (k(f) !== "ENOENT") t(`[TeammateMailbox] writeToMailbox: could not remove ${s}: ${f}`)
+  });
+  return
+}
+async function YE(e, n, r, s) {
+  if (await ft(r)) {
+    t(`[TeammateMailbox] writeToMailbox: nothing written to "${e}": team "${r||kc()}" was deleted (its config.json is gone)`);
+    return
+  }
+  let f = dt().safeParse(n);
+  if (!f.success) {
+    let w = lt(n, f.error.issues);
+    t(`[TeammateMailbox] writeToMailbox: refusing schema-invalid message for ${e} (${w})`, {
+      level: "warn"
+    }), a(typeof n.text !== "string" ? new R(`[TeammateMailbox] refused mailbox write (${w})`, "TeammateMailbox: refused mailbox write with non-string text") : new R(`[TeammateMailbox] refused mailbox write (${w})`, "TeammateMailbox: refused mailbox write failing schema validation"));
+    return
+  }
+  let y = X() && s !== void 0 ? se(e, r) : void 0;
+  if (X() && s !== void 0 && y !== void 0) {
+    let w = {
+        ...n,
+        ...qZ(),
+        type: "message",
+        read: !1
+      },
+      x = Qt(y, e, r);
+    try {
+      return await ae(s, y, x, (S) => (A().record(x, w), {
+        messages: [...S.messages, w],
+        result: !0
+      })), t(`[TeammateMailbox] Wrote message to ${e}'s inbox from ${n.from}`), await at(e, r, w.msg_id)
+    } catch (S) {
+      t(`Failed to write to inbox for ${e}: ${S}`, {
+        level: "error"
+      }), a(S);
+      return
+    }
+  }
+  if (q()) {
+    t(`[TeammateMailbox] writeToMailbox: nothing written for "${e}": this session has no disk, and the message cannot go to a store (tengu_hover_rest is off, no store was handed in, or the recipient's name is empty)`, {
+      level: "error"
+    });
+    return
+  }
+  try {
+    await Gt(r)
+  } catch (w) {
+    t(`[TeammateMailbox] writeToMailbox: failed to ensure inbox dir: ${w}`, {
+      level: "error"
+    });
+    return
+  }
+  let l = M2(e, r),
+    h = `${l}.lock`;
+  t(`[TeammateMailbox] writeToMailbox: recipient=${e}, from=${n.from}, path=${l}`);
+  try {
+    await Dn().writeExclusive(l, "[]"), t("[TeammateMailbox] writeToMailbox: created new inbox file")
+  } catch (w) {
+    if (k(w) !== "EEXIST") {
+      if (t(`[TeammateMailbox] writeToMailbox: failed to create inbox file: ${w}`, {
+          level: "error"
+        }), !ci(w)) a(w);
+      return
+    }
+  }
+  let b;
+  try {
+    b = await Zd(l, {
+      lockfilePath: h,
+      ...re
+    });
+    let w = await rpt(e, r),
+      x = {
+        ...n,
+        ...qZ(),
+        type: "message",
+        read: !1
+      };
+    w.push(x), A().record(l, x);
+    try {
+      await Dn().atomicWrite(l, _(w, null, 2))
+    } catch (S) {
+      throw A().retire(l, x.msg_id === void 0 ? [] : [x.msg_id]), S
+    }
+    return t(`[TeammateMailbox] Wrote message to ${e}'s inbox from ${n.from}`), await at(e, r, x.msg_id)
+  } catch (w) {
+    if (t(`Failed to write to inbox for ${e}: ${w}`, {
+        level: "error"
+      }), !ci(w)) a(w);
+    return
+  } finally {
+    await uS(b, `[TeammateMailbox] writeToMailbox(${e})`)
+  }
+}
+
+function Zt(e, n) {
+  let r = e.findIndex((f) => !f.read && f.from === n.from && f.timestamp === n.timestamp && f.text === n.text);
+  return {
+    messages: (r === -1 ? e : e.toSpliced(r, 1)).filter((f) => !f.read),
+    found: r !== -1
+  }
+}
+async function Cco(e, n, r, s) {
+  let f = X() && s !== void 0 ? se(e, n) : void 0;
+  if (ce(f, "markSingleMessageAsRead", e)) return;
+  let y = M2(e, n);
+  if (t(`[TeammateMailbox] markSingleMessageAsRead called: agentName=${e}, teamName=${n}, target=${r.from}@${r.timestamp}, path=${y}`), X() && s !== void 0 && f !== void 0) {
+    try {
+      let b = await ae(s, f, y, (w) => {
+        if (!w.found) return {
+          skip: !0,
+          result: "absent"
+        };
+        let x = Zt(w.messages, r);
+        return {
+          messages: x.messages,
+          result: x.found
+        }
+      });
+      t(b === "absent" ? `[TeammateMailbox] markSingleMessageAsRead: file does not exist at ${y}` : `[TeammateMailbox] markSingleMessageAsRead: dropped target (${b?"found":"not found"}) at ${y}`)
+    } catch (b) {
+      t(`[TeammateMailbox] markSingleMessageAsRead FAILED for ${e}: ${b}`), a(b)
+    }
+    return
+  }
+  let l = `${y}.lock`,
+    h;
+  try {
+    h = await Zd(y, {
+      lockfilePath: l,
+      ...re
+    });
+    let b = await rpt(e, n),
+      w = [...b],
+      x = b.findIndex((E) => !E.read && E.from === r.from && E.timestamp === r.timestamp && E.text === r.text);
+    if (x !== -1) b.splice(x, 1);
+    let S = b.filter((E) => !E.read);
+    await Dn().atomicWrite(y, _(S, null, 2)), W(y, w, S), t(`[TeammateMailbox] markSingleMessageAsRead: dropped target (${x===-1?"not found":"found"}); ${S.length} remain at ${y}`)
+  } catch (b) {
+    if (k(b) === "ENOENT") {
+      A().forget(y), t(`[TeammateMailbox] markSingleMessageAsRead: file does not exist at ${y}`);
+      return
+    }
+    t(`[TeammateMailbox] markSingleMessageAsRead FAILED for ${e}: ${b}`), a(b)
+  } finally {
+    await uS(h, "[TeammateMailbox] markSingleMessageAsRead")
+  }
+}
+var bze = 5;
+
+function $W(e) {
+  return `${e.from}|${e.timestamp}|${e.text}`
+}
+async function Sze(e, n, r, s) {
+  let f = X() && s !== void 0 ? se(e, n) : void 0;
+  if (ce(f, "markMessagesAsRead", e)) return !1;
+  let y = M2(e, n);
+  if (t(`[TeammateMailbox] markMessagesAsRead called: agentName=${e}, teamName=${n}, path=${y}`), X() && s !== void 0 && f !== void 0) {
+    let b = r === void 0 ? null : new Set(r.map($W));
+    try {
+      let w = await ae(s, f, y, (x) => {
+        if (!x.found || x.messages.length === 0) return {
+          skip: !0,
+          result: null
+        };
+        let S = x.messages.filter((E) => !E.read && b !== null && !b.has($W(E)));
+        return {
+          messages: S,
+          result: {
+            pruned: x.messages.length - S.length,
+            remain: S.length
+          }
+        }
+      });
+      return t(w ? `[TeammateMailbox] markMessagesAsRead: pruned ${w.pruned} delivered message(s), ${w.remain} remain at ${y}` : "[TeammateMailbox] markMessagesAsRead: no messages to mark"), !0
+    } catch (w) {
+      return t(`[TeammateMailbox] markMessagesAsRead FAILED for ${e}: ${w}`), a(w), !1
+    }
+  }
+  let l = `${y}.lock`,
+    h;
+  try {
+    t("[TeammateMailbox] markMessagesAsRead: acquiring lock..."), h = await Zd(y, {
+      lockfilePath: l,
+      ...re
+    }), t("[TeammateMailbox] markMessagesAsRead: lock acquired");
+    let b = await rpt(e, n, void 0, {
+      throwOnUnknownReadError: !0
+    });
+    if (t(`[TeammateMailbox] markMessagesAsRead: read ${b.length} messages after lock`), b.length === 0) return W(y, b, b), t("[TeammateMailbox] markMessagesAsRead: no messages to mark"), !0;
+    let w = U(b, (E) => !E.read);
+    t(`[TeammateMailbox] markMessagesAsRead: ${w} unread of ${b.length} total`);
+    let x = r === void 0 ? null : new Set(r.map($W)),
+      S = b.filter((E) => !E.read && x !== null && !x.has($W(E)));
+    return await Dn().atomicWrite(y, _(S, null, 2)), W(y, b, S), t(`[TeammateMailbox] markMessagesAsRead: pruned ${b.length-S.length} delivered message(s), ${S.length} remain at ${y}`), !0
+  } catch (b) {
+    if (k(b) === "ENOENT") return A().forget(y), t(`[TeammateMailbox] markMessagesAsRead: file does not exist at ${y}`), !0;
+    return t(`[TeammateMailbox] markMessagesAsRead FAILED for ${e}: ${b}`), a(b), !1
+  } finally {
+    await uS(h, "[TeammateMailbox] markMessagesAsRead")
+  }
+}
+async function aSr(e, n, r) {
+  let s = X() && r !== void 0 ? se(e, n) : void 0;
+  if (ce(s, "clearMailbox", e)) return;
+  let f = M2(e, n);
+  if (X() && r !== void 0 && s !== void 0) {
+    try {
+      if (await ae(r, s, f, (b) => b.found ? {
+          messages: [],
+          result: !0
+        } : {
+          skip: !0,
+          result: !1
+        })) t(`[TeammateMailbox] Cleared inbox for ${e}`)
+    } catch (h) {
+      t(`Failed to clear inbox for ${e}: ${h}`), a(h)
+    }
+    return
+  }
+  let y = `${f}.lock`,
+    l;
+  try {
+    l = await Zd(f, {
+      lockfilePath: y,
+      ...re
+    }), await Dn().atomicWrite(f, "[]"), A().forget(f), t(`[TeammateMailbox] Cleared inbox for ${e}`)
+  } catch (h) {
+    if (k(h) === "ENOENT") {
+      A().forget(f);
+      return
+    }
+    t(`Failed to clear inbox for ${e}: ${h}`), a(h)
+  } finally {
+    await uS(l, "[TeammateMailbox] clearMailbox")
+  }
+}
+
+function YMn(e) {
+  let n = jz(e.color) ? ` color="${e.color}"` : "",
+    r = HTe(e.summary),
+    s = r ? ` summary="${vc(r)}"` : "",
+    f = K_(e.from, aR) || fE,
+    y = e.provenance === "forged" ? ' verified="false"' : "",
+    l = hUt(e.text);
+  if (l !== e.text)
+    for (let h = 0; h < 4; h++) {
+      let b = hUt(Moe(l, e.from));
+      if (b === l) break;
+      l = b
+    }
+  return `<${sB} teammate_id="${vc(f)}"${n}${s}${y}>
+${l}
+</${sB}>`
+}
+
+function VXe(e, n) {
+  let s = gca(e).map((f) => YMn(n.recipientIsLead || f.provenance === "forged" ? f : {
+    ...f,
+    text: dQt(f.text, f.from)
+  })).join(`
+
+`);
+  return n.recipientIsLead ? UDt(s, {
+    midTurn: !1
+  }) : s
+}
+var P0e = p(() => u({
+    type: T("idle_notification"),
+    from: o(),
+    timestamp: o(),
+    idleReason: B(["available", "interrupted", "failed"]).optional(),
+    summary: o().optional(),
+    completedTaskId: o().optional(),
+    completedStatus: B(["resolved", "blocked", "failed"]).optional(),
+    failureReason: o().optional(),
+    result: o().optional()
+  })),
+  lhs = 200,
+  DLi = 200;
+
+function HTe(e) {
+  let n = e ? Wn(e).trim() : "";
+  return $Te(n, DLi)
+}
+
+function XMn(e) {
+  let n = e ? Wn(e).trim() : "";
+  return BW(Q(n, lhs))
+}
+var spt = 40000;
+
+function W6(e, n) {
+  if (!e) return "";
+  let r = BW(e),
+    s = Q(r, n);
+  if (s.length >= r.length) return r;
+  return `${BW(s)}
+[truncated for display]`
+}
+var G9 = 4000,
+  LLi = 16000;
+
+function pca(e, n = !0) {
+  let r = e ? ht(e) : "";
+  if (!r) return "";
+  let s = Q(r, G9);
+  if (s.length >= r.length) return s;
+  let f = BW(s);
+  return n ? `${f}
+[result truncated \u2014 ask the agent for the rest via ${An}]` : `${f}
+[result truncated]`
+}
+var mt = 200,
+  UW = DLi * 2 + 16,
+  aR = 256,
+  de = 256,
+  ze = 4,
+  nQt = G9 + mt + UW + lhs + 3 * aR + 1024;
+
+function le(e, n) {
+  if (typeof e === "string") return $Te(e, de);
+  if (e === null || typeof e !== "object") return e;
+  if (n <= 0) return null;
+  if (Array.isArray(e)) return e.map((s) => le(s, n - 1));
+  let r = [];
+  for (let [s, f] of Object.entries(e)) r.push([$Te(s, de), le(f, n - 1)]);
+  return Object.fromEntries(r)
+}
+
+function lSr(e, n) {
+  let r = BW(e);
+  if (Q(r, G9 + mt).length >= r.length) return r;
+  let f = BW(Q(r, G9));
+  return n ? `${f}
+[result truncated \u2014 ask the agent for the rest via ${An}]` : `${f}
+[result truncated]`
+}
+var pt = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,9})?(?:Z|[+-]\d{2}:\d{2})$/,
+  dhs = "[invalid timestamp]",
+  dSr = "[invalid id]",
+  JMn = "[display sanitized; the agent reads the raw frame]",
+  fE = "[unknown sender]",
+  Jt = /^perm-[0-9]{1,20}-[0-9a-z]{1,12}$/,
+  Vt = /^(?:shutdown|plan_approval)-[0-9]{1,20}@[^@\n]{1,300}(?:@[^@\n]{1,300})?$/u,
+  en = 320;
+
+function tn(e) {
+  return !e.includes(`
+`) && !e.includes("\r") && BW(e) === e && [...e].length <= en && (Jt.test(e) || Vt.test(e)) ? e : dSr
+}
+var nn = /^(%[0-9]{1,10}|[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12})$/;
+
+function rn(e) {
+  return nn.test(e) ? e : dSr
+}
+var sn = {
+  tmux: !0,
+  iterm2: !0,
+  "in-process": !0
+};
+
+function on(e) {
+  return Object.hasOwn(sn, e) ? e : dSr
+}
+
+function gt(e, n, r) {
+  let s = typeof n.result === "string" && n.result ? lSr(n.result, n.idleReason !== "failed") : n.result,
+    f = typeof n.summary === "string" && n.summary ? $Te(n.summary, UW) : n.summary,
+    y = typeof n.failureReason === "string" && n.failureReason ? XMn(n.failureReason) : n.failureReason,
+    l = typeof n.from === "string" && n.from ? K_(n.from, aR) : n.from,
+    h = typeof r === "string" ? K_(r, aR) || fE : void 0,
+    b = h !== void 0 && typeof l === "string" && l !== h ? h : l,
+    w = typeof n.timestamp === "string" && pt.test(n.timestamp) ? n.timestamp : dhs,
+    x = typeof n.completedTaskId === "string" && n.completedTaskId ? K_(n.completedTaskId, aR) : n.completedTaskId,
+    S = ee(e),
+    E = S !== null && typeof S === "object" && !Array.isArray(S) ? S : {
+      ...n
+    },
+    P = new Set(Object.keys(P0e().shape)),
+    F = [];
+  for (let [v, j] of Object.entries(E)) {
+    if (P.has(v)) {
+      F.push([v, j]);
+      continue
+    }
+    let fe = $Te(v, de);
+    if (P.has(fe)) continue;
+    F.push([fe, le(j, ze)])
+  }
+  let xe = Object.fromEntries(F),
+    G = {
+      result: s,
+      summary: f,
+      failureReason: y,
+      from: b,
+      timestamp: w,
+      completedTaskId: x
+    },
+    M = {
+      ...n,
+      ...G
+    },
+    H = _({
+      ...xe,
+      ...G
+    });
+  if (H.length > nQt) H = _(M);
+  let Ne = !1;
+  while (H.length > nQt) {
+    let v, j = 0;
+    for (let Oe of ["result", "summary", "failureReason"]) {
+      let pe = M[Oe];
+      if (typeof pe === "string" && pe) {
+        let De = _(pe).length;
+        if (De > j) v = {
+          key: Oe,
+          value: pe
+        }, j = De
+      }
+    }
+    if (!v) break;
+    let fe = [...v.value].length;
+    Ne ||= v.key === "result", M = {
+      ...M,
+      [v.key]: BW(Q(v.value, Math.floor(fe / 2)))
+    }, H = _(M)
+  }
+  if (Ne && M.result) {
+    let v = {
+        ...M,
+        result: `${M.result}
+[result truncated]`
+      },
+      j = _(v);
+    if (j.length <= nQt) M = v, H = j
+  }
+  return H === e ? {
+    text: e,
+    idle: n
+  } : {
+    text: H,
+    idle: M
+  }
+}
+
+function yt(e, n) {
+  let r = BW(e),
+    s = Q(r, n);
+  if (s.length >= r.length) return r;
+  return `${BW(s)}
+[truncated]`
+}
+var an = 1024,
+  un = 2048,
+  mca = new Map([
+    ["plan_approval_request", {
+      from: {
+        kind: "envelope-pinned-id"
+      },
+      timestamp: {
+        kind: "timestamp"
+      },
+      planFilePath: {
+        kind: "id"
+      },
+      planContent: {
+        kind: "body",
+        bound: spt
+      },
+      requestId: {
+        kind: "request-id"
+      }
+    }],
+    ["plan_approval_response", {
+      requestId: {
+        kind: "request-id"
+      },
+      approved: {
+        kind: "generic"
+      },
+      feedback: {
+        kind: "body",
+        bound: G9
+      },
+      timestamp: {
+        kind: "timestamp"
+      },
+      permissionMode: {
+        kind: "generic"
+      }
+    }],
+    ["shutdown_request", {
+      requestId: {
+        kind: "request-id"
+      },
+      from: {
+        kind: "envelope-pinned-id"
+      },
+      reason: {
+        kind: "body",
+        bound: UW
+      },
+      timestamp: {
+        kind: "timestamp"
+      }
+    }],
+    ["shutdown_approved", {
+      requestId: {
+        kind: "request-id"
+      },
+      from: {
+        kind: "envelope-pinned-id"
+      },
+      timestamp: {
+        kind: "timestamp"
+      },
+      paneId: {
+        kind: "pane-id"
+      },
+      backendType: {
+        kind: "backend-type"
+      }
+    }],
+    ["shutdown_rejected", {
+      requestId: {
+        kind: "request-id"
+      },
+      from: {
+        kind: "envelope-pinned-id"
+      },
+      reason: {
+        kind: "body",
+        bound: UW
+      },
+      timestamp: {
+        kind: "timestamp"
+      }
+    }],
+    ["task_assignment", {
+      taskId: {
+        kind: "id"
+      },
+      subject: {
+        kind: "line"
+      },
+      description: {
+        kind: "body",
+        bound: G9
+      },
+      assignedBy: {
+        kind: "envelope-pinned-id"
+      },
+      timestamp: {
+        kind: "timestamp"
+      }
+    }],
+    ["task_completed", {
+      from: {
+        kind: "envelope-pinned-id"
+      },
+      taskId: {
+        kind: "id"
+      },
+      taskSubject: {
+        kind: "line"
+      },
+      timestamp: {
+        kind: "timestamp"
+      }
+    }],
+    ["teammate_terminated", {
+      message: {
+        kind: "body",
+        bound: G9
+      }
+    }],
+    ["idle_notification", {
+      from: {
+        kind: "envelope-pinned-id"
+      },
+      timestamp: {
+        kind: "timestamp"
+      },
+      idleReason: {
+        kind: "generic"
+      },
+      summary: {
+        kind: "line"
+      },
+      completedTaskId: {
+        kind: "id"
+      },
+      completedStatus: {
+        kind: "generic"
+      },
+      failureReason: {
+        kind: "body",
+        bound: lhs
+      },
+      result: {
+        kind: "body",
+        bound: G9
+      }
+    }]
+  ]);
+
+function cSr(e, n) {
+  if (!kt.test(e)) return null;
+  let r;
+  try {
+    r = ee(e)
+  } catch {
+    return null
+  }
+  if (!D(r)) return null;
+  let s = r,
+    f = s.type,
+    y = typeof f === "string" ? mca.get(f) : void 0;
+  if (!y) return null;
+  let l = new Set(Object.keys(y)),
+    h = [],
+    b = 0;
+  for (let [x, S] of Object.entries(s)) {
+    if (x === "type") {
+      h.push([x, f]);
+      continue
+    }
+    if (l.has(x)) {
+      h.push([x, dn(y[x], S, n)]);
+      continue
+    }
+    let E = $Te(x, de);
+    if (E === "type" || l.has(E)) continue;
+    let P = le(S, ze),
+      F = _(P).length + E.length;
+    if (b + F > un) continue;
+    b += F, h.push([E, P])
+  }
+  let w = _(Object.fromEntries(h));
+  return w === e ? null : w
+}
+
+function dn(e, n, r) {
+  if (e.kind === "generic") {
+    let s = typeof n === "string" ? $Te(n, de) : le(n, ze);
+    if (s !== null && typeof s === "object" && _(s).length > an) return null;
+    return s
+  }
+  if (typeof n !== "string") switch (e.kind) {
+    case "envelope-pinned-id":
+      return (typeof r === "string" ? K_(r, aR) || fE : void 0) ?? dSr;
+    case "id":
+    case "request-id":
+    case "pane-id":
+    case "backend-type":
+      return dSr;
+    case "timestamp":
+      return dhs;
+    case "line":
+    case "body":
+      return ""
+  }
+  switch (e.kind) {
+    case "id":
+      return K_(n, aR);
+    case "request-id":
+      return tn(n);
+    case "pane-id":
+      return rn(n);
+    case "backend-type":
+      return on(n);
+    case "envelope-pinned-id": {
+      let s = K_(n, aR),
+        f = typeof r === "string" ? K_(r, aR) || fE : void 0;
+      return f !== void 0 && s !== f ? f : s
+    }
+    case "timestamp":
+      return pt.test(n) ? n : dhs;
+    case "line":
+      return K_(n, UW);
+    case "body":
+      return yt(n, e.bound)
+  }
+}
+
+function hca(e, n) {
+  let r = Date.parse(e.timestamp);
+  return Number.isNaN(r) ? Number.NEGATIVE_INFINITY : Math.min(r, n)
+}
+
+function gca(e) {
+  if (Ae.has(e)) return e;
+  let n = e.slice(),
+    r = [],
+    s = Date.now();
+  for (let l = 0; l < n.length; l++) {
+    let h = oQt(n[l].text);
+    if (!h) {
+      let x = cSr(n[l].text, n[l].from);
+      if (x !== null) n[l] = {
+        ...n[l],
+        text: x
+      };
+      continue
+    }
+    let b = gt(n[l].text, h, n[l].from);
+    if (b.text !== n[l].text) n[l] = {
+      ...n[l],
+      text: b.text
+    };
+    let w = b.idle;
+    if (typeof w.result === "string" && w.result) r.push({
+      index: l,
+      recency: hca(w, s),
+      idle: w
+    })
+  }
+  r.sort((l, h) => h.recency - l.recency || h.index - l.index);
+  let f = LLi,
+    y = 0;
+  for (let {
+      index: l,
+      idle: h
+    }
+    of r) {
+    let b = n[l];
+    if (b.text.length <= f) {
+      f -= b.text.length;
+      continue
+    }
+    let w = h.idleReason === "failed" ? "" : `; ask the agent for it via ${An}`,
+      x = {
+        type: "idle_notification",
+        from: h.from,
+        timestamp: h.timestamp,
+        idleReason: h.idleReason,
+        summary: h.summary,
+        completedTaskId: h.completedTaskId,
+        completedStatus: h.completedStatus,
+        failureReason: h.failureReason
+      },
+      S = _({
+        ...x,
+        result: `[result truncated \u2014 this drain's results exceeded ${LLi} characters${w}]`
+      });
+    if (S.length > f) S = _({
+      ...x,
+      result: "[result truncated]"
+    });
+    if (S.length >= b.text.length) {
+      f = Math.max(0, f - b.text.length);
+      continue
+    }
+    if (f = Math.max(0, f - S.length), S !== b.text) y++, n[l] = {
+      ...b,
+      text: S
+    }
+  }
+  if (y > 0 && !ut.has(e)) ut.add(e), c("swarm_idle_result_delivery", "budget_truncated");
+  if (n.every((l, h) => l === e[h])) return Ae.add(e), e;
+  return Ae.add(n), n
+}
+var ut = new WeakSet,
+  Ae = new WeakSet;
+
+function rQt(e, n) {
+  let r = pca(n?.result, n?.senderReachable ?? n?.idleReason !== "failed") || void 0;
+  return {
+    type: "idle_notification",
+    from: e,
+    timestamp: new Date().toISOString(),
+    idleReason: n?.idleReason,
+    summary: n?.summary ? BW(n.summary) : void 0,
+    completedTaskId: n?.completedTaskId,
+    completedStatus: n?.completedStatus,
+    failureReason: XMn(n?.failureReason ? BW(n.failureReason) : void 0) || void 0,
+    result: r
+  }
+}
+
+function FDt(e, n, r) {
+  if (e.result === void 0) return;
+  if (r === void 0) m("swarm_idle_result_delivery", "mailbox_write_failed");
+  else if (n !== void 0 && e.result === ht(n)) g("swarm_idle_result_delivery");
+  else c("swarm_idle_result_delivery", "per_frame_truncated")
+}
+var ln = /[\u0000-\u0008\u000B-\u001F\u007F-\u009F\u2028\u2029]|(?![\u200C\u200D\uFE00-\uFE0F\u{E0100}-\u{E01EF}])[\p{Cf}\p{Default_Ignorable_Code_Point}]/u,
+  cn = new RegExp(ln.source, "gu"),
+  $e = /[\u200C\u200D\uFE00-\uFE0F\u{E0100}-\u{E01EF}]/gu,
+  fn = 8,
+  mn = 7,
+  pn = 16,
+  gn = 4;
+
+function yn(e) {
+  let n = (e.match($e) ?? []).length,
+    r = [...e].length - n,
+    s = Math.max(pn, Math.ceil(r / gn));
+  return e.split(`
+`).map((f) => {
+    let y = (f.match($e) ?? []).length,
+      l = Math.max(fn, Math.ceil(([...f].length - y) / mn)),
+      h = 0;
+    return f.replace($e, (b) => h++ < l && s-- > 0 ? b : "")
+  }).join(`
+`)
+}
+
+function BW(e) {
+  return yn(Ey(e).replace(cn, ""))
+}
+
+function $Te(e, n) {
+  let r = BW(e),
+    s = Q(r, n);
+  return s.length >= r.length ? s : BW(s)
+}
+
+function K_(e, n) {
+  return $Te(e, n).replace(/\s+/g, " ").trim()
+}
+var kt = /^\s*\{/;
+
+function Moe(e, n) {
+  let r = kt.test(e) ? oQt(e) : null;
+  if (r) return gt(e, r, n).text;
+  return cSr(e, n) ?? e
+}
+
+function ht(e) {
+  return BW(e.trim())
+}
+
+function oQt(e) {
+  try {
+    let n = P0e().safeParse(ee(e));
+    return n.success ? n.data : null
+  } catch {}
+  return null
+}
+var NLi = p(() => u({
+    tool_use_id: o(),
+    tool_name: o(),
+    input_digest: o()
+  })),
+  yca = p(() => Dr("subtype", [u({
+    type: T("permission_response"),
+    request_id: o().min(1),
+    subtype: T("success"),
+    tool_use_id: o().optional(),
+    approved_request: NLi().optional(),
+    response: u({
+      updated_input: me(o(), oe()).optional(),
+      permission_updates: C(oe()).optional()
+    }).optional()
+  }), u({
+    type: T("permission_response"),
+    request_id: o().min(1),
+    subtype: T("error"),
+    tool_use_id: o().optional(),
+    approved_request: NLi().optional(),
+    error: o()
+  })]));
+
+function chs(e) {
+  return {
+    type: "permission_request",
+    request_id: e.request_id,
+    agent_id: e.agent_id,
+    tool_name: e.tool_name,
+    tool_use_id: e.tool_use_id,
+    description: e.description,
+    input: e.input,
+    permission_suggestions: e.permission_suggestions || []
+  }
+}
+
+function uhs(e) {
+  if (e.subtype === "error") return {
+    type: "permission_response",
+    request_id: e.request_id,
+    subtype: "error",
+    tool_use_id: e.tool_use_id,
+    approved_request: e.approved_request,
+    error: e.error || "Permission denied"
+  };
+  return {
+    type: "permission_response",
+    request_id: e.request_id,
+    subtype: "success",
+    tool_use_id: e.tool_use_id,
+    approved_request: e.approved_request,
+    response: {
+      updated_input: e.updated_input,
+      permission_updates: e.permission_updates
+    }
+  }
+}
+
+function Rco(e) {
+  try {
+    let n = ee(e);
+    if (n && n.type === "permission_request") return n
+  } catch {}
+  return null
+}
+
+function sQt(e) {
+  let n;
+  try {
+    n = ee(e)
+  } catch {
+    return null
+  }
+  if (n === null || typeof n !== "object" || !("type" in n) || n.type !== "permission_response") return null;
+  let r = yca().safeParse(n);
+  if (r.success) return r.data;
+  return t(`[TeammateMailbox] Dropping malformed permission_response frame: ${r.error.issues.map((s)=>`${s.path.join(".")}: ${s.message}`).join("; ")}`, {
+    level: "warn"
+  }), null
+}
+
+function fhs(e) {
+  return {
+    type: "sandbox_permission_request",
+    requestId: e.requestId,
+    workerId: e.workerId,
+    workerName: e.workerName,
+    workerColor: e.workerColor,
+    hostPattern: {
+      host: e.host
+    },
+    createdAt: Date.now()
+  }
+}
+
+function phs(e) {
+  return {
+    type: "sandbox_permission_response",
+    requestId: e.requestId,
+    host: e.host,
+    allow: e.allow,
+    timestamp: new Date().toISOString()
+  }
+}
+
+function Aco(e) {
+  try {
+    let n = ee(e);
+    if (n && n.type === "sandbox_permission_request") return n
+  } catch {}
+  return null
+}
+
+function xco(e) {
+  try {
+    let n = ee(e);
+    if (n && n.type === "sandbox_permission_response") return n
+  } catch {}
+  return null
+}
+var Pco = p(() => u({
+    type: T("plan_approval_request"),
+    from: o(),
+    timestamp: o(),
+    planFilePath: o(),
+    planContent: o(),
+    requestId: o()
+  })),
+  Oco = p(() => u({
+    type: T("plan_approval_response"),
+    requestId: o(),
+    approved: I(),
+    feedback: o().optional(),
+    timestamp: o(),
+    permissionMode: aLr().optional()
+  })),
+  Ico = p(() => u({
+    type: T("shutdown_request"),
+    requestId: o(),
+    from: o(),
+    reason: o().optional(),
+    timestamp: o()
+  })),
+  iQt = p(() => u({
+    type: T("shutdown_approved"),
+    requestId: o(),
+    from: o(),
+    timestamp: o(),
+    paneId: o().optional(),
+    backendType: o().optional()
+  })),
+  mhs = p(() => u({
+    type: T("shutdown_rejected"),
+    requestId: o(),
+    from: o(),
+    reason: o(),
+    timestamp: o()
+  }));
+
+function hhs(e) {
+  return {
+    type: "shutdown_request",
+    requestId: e.requestId,
+    from: e.from,
+    reason: e.reason,
+    timestamp: new Date().toISOString()
+  }
+}
+
+function ghs(e) {
+  return {
+    type: "shutdown_approved",
+    requestId: e.requestId,
+    from: e.from,
+    timestamp: new Date().toISOString(),
+    paneId: e.paneId,
+    backendType: e.backendType
+  }
+}
+
+function yhs(e) {
+  return {
+    type: "shutdown_rejected",
+    requestId: e.requestId,
+    from: e.from,
+    reason: e.reason,
+    timestamp: new Date().toISOString()
+  }
+}
+
+function HDt(e) {
+  try {
+    let n = Ico().safeParse(ee(e));
+    if (n.success) return n.data
+  } catch {}
+  return null
+}
+
+function uSr(e) {
+  try {
+    let n = Pco().safeParse(ee(e));
+    if (n.success) return n.data
+  } catch {}
+  return null
+}
+
+function wze(e) {
+  try {
+    let n = iQt().safeParse(ee(e));
+    if (n.success) return n.data
+  } catch {}
+  return null
+}
+var _ca = !0;
+
+function QMn(e, n) {
+  if (!e) return _ca ? "unbound" : "mismatch";
+  if (e.answered) return "already_answered";
+  return e.requestId === n.requestId ? "bound" : "mismatch"
+}
+
+function ZMn(e) {
+  return {
+    type: "plan_approval_response",
+    requestId: e.requestId,
+    approved: !1,
+    feedback: "The team lead's verdict was for a different request, not this plan. Call ExitPlanMode again to resubmit it for approval.",
+    timestamp: e.timestamp
+  }
+}
+
+function eDn(e) {
+  try {
+    let n = Oco().safeParse(ee(e));
+    if (n.success) return n.data
+  } catch {}
+  return null
+}
+var kn = p(() => u({
+  type: T("task_assignment"),
+  taskId: o(),
+  subject: o(),
+  description: o(),
+  assignedBy: o(),
+  timestamp: o()
+}));
+
+function _hs(e) {
+  return wL(kn(), e)
+}
+var aQt = p(() => u({
+    type: T("task_completed"),
+    from: o().optional(),
+    taskId: o(),
+    taskSubject: o().optional(),
+    timestamp: o().optional()
+  })),
+  bhs = p(() => u({
+    type: T("teammate_terminated"),
+    message: o()
+  }));
+
+function wL(e, n) {
+  try {
+    let r = e.strict().safeParse(ee(n));
+    if (r.success) return r.data
+  } catch {}
+  return null
+}
+
+function lQt(e) {
+  return e.filter((n) => {
+    let r = n;
+    if (!D(r)) return !1;
+    if (r.provenance === "forged") return !0;
+    if (r.summary !== void 0 && typeof r.summary !== "string") return !0;
+    if (HTe(r.summary)) return !0;
+    if (typeof r.text !== "string") return !0;
+    return !wL(iQt(), r.text)
+  })
+}
+
+function Shs(e) {
+  try {
+    let n = ee(e);
+    return !!n && n.type === "team_permission_update"
+  } catch {
+    return !1
+  }
+}
+
+function tDn(e) {
+  try {
+    let n = ee(e);
+    return !!n && n.type === "mode_set_request"
+  } catch {
+    return !1
+  }
+}
+var whs = "Teammate prompt must not be a mailbox protocol frame (permission/mode/plan/shutdown JSON) \u2014 pass plain-text instructions";
+
+function h1(e) {
+  try {
+    let n = ee(e);
+    if (!n || typeof n !== "object" || !("type" in n)) return !1;
+    let r = n.type;
+    return r === "permission_request" || r === "permission_response" || r === "sandbox_permission_request" || r === "sandbox_permission_response" || r === "shutdown_request" || r === "shutdown_response" || r === "shutdown_approved" || r === "team_permission_update" || r === "mode_set_request" || r === "plan_approval_request" || r === "plan_approval_response"
+  } catch {
+    return !1
+  }
+}
+
+function nDn(e) {
+  let n = e.feedback ? yt(e.feedback, G9) : "";
+  if (e.approved) return n ? `[Plan Approved] ${n}` : "[Plan Approved] You can now proceed with implementation";
+  return `[Plan Rejected] ${n||"Please revise your plan"}`
+}
+var hn = /^shutdown-[0-9]{1,20}@[\w.-]{1,64}$/,
+  bn = "<requestId of the shutdown request>";
+
+function bca(e) {
+  let n = hn.test(e),
+    r = _({
+      to: hl,
+      message: {
+        type: "shutdown_response",
+        request_id: n ? e : bn,
+        approve: !0
+      }
+    });
+  return `To approve it, call ${An} with exactly this input, where "message" is a JSON object rather than a string${n?"":" and request_id is the request's requestId value, copied verbatim"}: ${r}. Approving ends your process; a plain-text acknowledgment does not shut you down. To decline, for example because you're mid-task, send the same input with "approve": false and a "reason".`
+}
+
+function dQt(e, n) {
+  if (n !== hl || !e.includes('"shutdown_request"')) return e;
+  let r = HDt(e);
+  return r ? `${e}
+
+This is a shutdown request. ${bca(r.requestId)}` : e
+}
+
+function khs(e) {
+  return !h1(e) || wze(e) !== null || HDt(e) !== null || uSr(e) !== null
+}
+async function rDn(e, n, r, s) {
+  let f = X() && s !== void 0 ? se(e, r) : void 0;
+  if (ce(f, "markMessagesAsReadByPredicate", e)) return !1;
+  let y = M2(e, r);
+  if (X() && s !== void 0 && f !== void 0) try {
+    return await ae(s, f, y, (b) => !b.found || b.messages.length === 0 ? {
+      skip: !0,
+      result: void 0
+    } : {
+      messages: b.messages.filter((w) => !w.read && !n(w)),
+      result: void 0
+    }), !0
+  } catch (b) {
+    return a(b), !1
+  }
+  let l = `${y}.lock`,
+    h;
+  try {
+    h = await Zd(y, {
+      lockfilePath: l,
+      ...re
+    });
+    let b = await rpt(e, r, void 0, {
+      throwOnUnknownReadError: !0
+    });
+    if (b.length === 0) return W(y, b, b), !0;
+    let w = b.filter((x) => !x.read && !n(x));
+    return await Dn().atomicWrite(y, _(w, null, 2)), W(y, b, w), !0
+  } catch (b) {
+    if (k(b) === "ENOENT") return A().forget(y), !0;
+    return a(b), !1
+  } finally {
+    await uS(h, "[TeammateMailbox] markMessagesAsReadByPredicate")
+  }
+}
+
+function fSr(e) {
+  return e.type === "user" && e.isMeta !== !0 && e.turnCompanion !== !0 && (typeof e.message.content === "string" || !e.message.content.some((n) => n.type === "tool_result"))
+}
+
+function vhs(e) {
+  for (let n = e.length - 1; n >= 0; n--) {
+    let r = e[n];
+    if (!r) continue;
+    if (fSr(r)) break;
+    if (r.type !== "assistant") continue;
+    for (let s of r.message.content)
+      if (s.type === "tool_use" && s.name === An && typeof s.input === "object" && s.input !== null && "to" in s.input && typeof s.input.to === "string" && s.input.to !== "*" && s.input.to !== hl && s.input.to !== Cg) {
+        let f = "message" in s.input ? s.input.message : void 0,
+          y = "summary" in s.input && typeof s.input.summary === "string" ? s.input.summary : void 0,
+          l = vco(s.input);
+        if (l !== void 0) return `[to ${HTe(s.input.to)}] ${HTe(l.summary.length>0?l.summary:l.message.trim())}`;
+        if (typeof f === "string") return `[to ${HTe(s.input.to)}] ${HTe(y!==void 0?y:Q(f,80))}`
+      }
+  }
+  return
+}
+export {
+  ehs,
+  VMn,
+  ELi,
+  NTe,
+  ths,
+  bL,
+  TLi,
+  YT,
+  SL,
+  lD,
+  CLi,
+  KMn,
+  kco,
+  RLi,
+  nhs,
+  ALi,
+  sSr,
+  z9,
+  FTe,
+  Z7t,
+  II,
+  rhs,
+  ohs,
+  NDt,
+  eQt,
+  xLi,
+  _ze,
+  m1,
+  gA,
+  HW,
+  j6,
+  shs,
+  vco,
+  iSr,
+  PLi,
+  OLi,
+  ILi,
+  MLi,
+  tQt,
+  Eco,
+  ihs,
+  qMn,
+  Tco,
+  dSa,
+  ahs,
+  x0e,
+  cSa,
+  fca,
+  M2,
+  rpt,
+  opt,
+  YE,
+  Cco,
+  bze,
+  $W,
+  Sze,
+  aSr,
+  YMn,
+  VXe,
+  P0e,
+  lhs,
+  DLi,
+  HTe,
+  XMn,
+  spt,
+  W6,
+  G9,
+  LLi,
+  pca,
+  UW,
+  aR,
+  nQt,
+  lSr,
+  dhs,
+  dSr,
+  JMn,
+  fE,
+  mca,
+  cSr,
+  hca,
+  gca,
+  rQt,
+  FDt,
+  BW,
+  $Te,
+  K_,
+  Moe,
+  oQt,
+  NLi,
+  yca,
+  chs,
+  uhs,
+  Rco,
+  sQt,
+  fhs,
+  phs,
+  Aco,
+  xco,
+  Pco,
+  Oco,
+  Ico,
+  iQt,
+  mhs,
+  hhs,
+  ghs,
+  yhs,
+  HDt,
+  uSr,
+  wze,
+  _ca,
+  QMn,
+  ZMn,
+  eDn,
+  _hs,
+  aQt,
+  bhs,
+  wL,
+  lQt,
+  Shs,
+  tDn,
+  whs,
+  h1,
+  nDn,
+  bca,
+  dQt,
+  khs,
+  rDn,
+  fSr,
+  vhs
+};

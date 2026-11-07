@@ -1,0 +1,7204 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  n1e,
+  Gle,
+  bQ,
+  Jwn,
+  ja,
+  r1e,
+  eW,
+  o1e,
+  rrr,
+  B5r,
+  CRt,
+  pIe,
+  mrr,
+  j5r,
+  Aat,
+  Zwn,
+  W5r,
+  ekn,
+  z5r,
+  tkn,
+  G5r,
+  nkn,
+  hrr,
+  P4t,
+  mIe,
+  j5o,
+  rkn,
+  W5o,
+  K5r,
+  xat,
+  O4t,
+  q5r,
+  s3e,
+  I4t,
+  i3e,
+  Y5r,
+  X5r,
+  Ea
+} from "B:/~BUN/root/chunk-ahv8vexc.js";
+import {
+  yit,
+  Fne,
+  wKt,
+  N_n,
+  eQn,
+  F_n,
+  tQn,
+  nQn
+} from "B:/~BUN/root/chunk-eh2h5nfr.js";
+import "B:/~BUN/root/chunk-47qakrcr.js";
+import {
+  j0,
+  sge,
+  t1e
+} from "B:/~BUN/root/chunk-z2e0ksra.js";
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import {
+  z,
+  Vs,
+  Oo,
+  mo,
+  LE,
+  k0,
+  v0,
+  VKn,
+  fne,
+  KKn
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import {
+  b,
+  f,
+  de,
+  bo,
+  Qv
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  Ke,
+  We,
+  R,
+  F,
+  d,
+  A7,
+  Zwt
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  ga,
+  J,
+  we
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  nn
+} from "B:/~BUN/root/chunk-y1kkrqy9.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import {
+  PV,
+  wp,
+  $u,
+  xSe,
+  eKe,
+  hAe
+} from "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  vt,
+  sg,
+  t,
+  _
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import {
+  P,
+  Q,
+  tt
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import {
+  Dh,
+  Lw
+} from "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  a,
+  Gs,
+  ae,
+  Ont
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  Fn,
+  sbt
+} from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import {
+  bt,
+  DDr,
+  Yl,
+  zet,
+  LDr,
+  NDr,
+  FDr,
+  ian,
+  aan,
+  HDr
+} from "B:/~BUN/root/chunk-ja520myc.js";
+import {
+  na
+} from "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-sjvfcp1z.js";
+import {
+  ln,
+  FBt,
+  $n,
+  uc
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import {
+  NR,
+  twe,
+  ANr,
+  Ltt,
+  xNr,
+  Ntt,
+  E1t,
+  br
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import "B:/~BUN/root/chunk-eds8xkh8.js";
+import {
+  MF
+} from "B:/~BUN/root/chunk-s9vv4h32.js";
+import {
+  USr,
+  s_e,
+  kDn,
+  Lze,
+  vDn,
+  xQt,
+  hpt,
+  XDt,
+  EDn,
+  TDn
+} from "B:/~BUN/root/chunk-cj2cn5y2.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import {
+  Ow,
+  CC
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import {
+  xDt
+} from "B:/~BUN/root/chunk-ysxmr1nk.js";
+import {
+  cge,
+  yIe
+} from "B:/~BUN/root/chunk-2b85014z.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-wxhfn3za.js";
+import "B:/~BUN/root/chunk-pdtjaehv.js";
+import {
+  qtn
+} from "B:/~BUN/root/chunk-x6frvp1m.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import {
+  ht
+} from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  Ln,
+  fC,
+  Kl,
+  Kbe,
+  ul,
+  sJ,
+  l1n,
+  uie,
+  M$t,
+  zRe,
+  iH,
+  GRe,
+  mf,
+  WIr,
+  iT,
+  VIr,
+  KIr,
+  v4,
+  Iz,
+  Wyt,
+  qL,
+  qx,
+  AVe,
+  Na,
+  v,
+  aSe,
+  Kyt,
+  G$t,
+  $fe,
+  nMr,
+  rMr
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-thn0wk2x.js";
+import {
+  V
+} from "B:/~BUN/root/chunk-f9dwrymq.js";
+import {
+  AFr,
+  dP,
+  PFr,
+  gnt
+} from "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import "B:/~BUN/root/chunk-t4qpmjt5.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import {
+  $He
+} from "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import {
+  Dn
+} from "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import {
+  oS,
+  EO,
+  qy,
+  lUt,
+  _Se,
+  YMr,
+  Lin,
+  q3,
+  XMr,
+  $z,
+  Z1,
+  hjn,
+  RU,
+  ej,
+  JL,
+  pte,
+  Met,
+  Hin
+} from "B:/~BUN/root/chunk-q2rjek8y.js";
+import {
+  Xi
+} from "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import {
+  gin,
+  oUt
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import {
+  vC,
+  BR,
+  ba
+} from "B:/~BUN/root/chunk-wthaftk0.js";
+import {
+  bk,
+  MJ
+} from "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import {
+  HU
+} from "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import {
+  NI,
+  eGe,
+  aue
+} from "B:/~BUN/root/chunk-yhafkw66.js";
+import {
+  mUt
+} from "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import {
+  Xn
+} from "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import {
+  u_t
+} from "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import {
+  BFe,
+  es,
+  Fjn,
+  Hjn
+} from "B:/~BUN/root/chunk-0s9zh2h6.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import "B:/~BUN/root/chunk-y5gyn2hc.js";
+import "B:/~BUN/root/chunk-9t9ygsbp.js";
+import {
+  sp
+} from "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import "B:/~BUN/root/chunk-6j3fjnhn.js";
+import "B:/~BUN/root/chunk-hvykkx00.js";
+import "B:/~BUN/root/chunk-f0zgv0ya.js";
+import "B:/~BUN/root/chunk-sgy380eg.js";
+import "B:/~BUN/root/chunk-22y97556.js";
+import {
+  se
+} from "B:/~BUN/root/chunk-9bs2y8fc.js";
+import "B:/~BUN/root/chunk-tjfmeakx.js";
+import "B:/~BUN/root/chunk-jh04j3yr.js";
+import {
+  tNe
+} from "B:/~BUN/root/chunk-78494p3w.js";
+import "B:/~BUN/root/chunk-v29ccgfa.js";
+import "B:/~BUN/root/chunk-detjgwj4.js";
+import "B:/~BUN/root/chunk-knfpag6d.js";
+import "B:/~BUN/root/chunk-7pxn9dsp.js";
+import "B:/~BUN/root/chunk-n0v0c6zt.js";
+import "B:/~BUN/root/chunk-2x2z0t2k.js";
+import "B:/~BUN/root/chunk-42915bn6.js";
+import "B:/~BUN/root/chunk-vk5b2c7t.js";
+import "B:/~BUN/root/chunk-hr1m6fe3.js";
+import "B:/~BUN/root/chunk-cvaa202c.js";
+import "B:/~BUN/root/chunk-2r9r3hfm.js";
+import {
+  tse,
+  qW,
+  yLn,
+  fvr,
+  pvr,
+  yLe,
+  _Ln
+} from "B:/~BUN/root/chunk-7thhw21a.js";
+import {
+  Yhr,
+  ZXt,
+  Uut,
+  igr,
+  V9e,
+  Sgr,
+  wgr
+} from "B:/~BUN/root/chunk-cxcakgnv.js";
+import {
+  DB,
+  oYt,
+  zat,
+  D8,
+  LB
+} from "B:/~BUN/root/chunk-f444brrr.js";
+import "B:/~BUN/root/chunk-yg4ttpr7.js";
+import {
+  aTn,
+  Elr,
+  jB,
+  a3t,
+  SMe,
+  Vd,
+  Y0,
+  Wxt,
+  Dge,
+  Wlr,
+  zTn,
+  g3t,
+  zlr,
+  r9,
+  X0,
+  Glr,
+  Vlr,
+  y3t,
+  Vve,
+  B5e,
+  XTn,
+  zB,
+  YC,
+  Zlr,
+  edr,
+  ndr,
+  rdr,
+  l2,
+  T3t,
+  sdr,
+  C3t,
+  Q1e,
+  idr,
+  R3t,
+  Rfr,
+  c9t,
+  GOt,
+  VOt,
+  uw,
+  yW,
+  jo
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import "B:/~BUN/root/chunk-kfm993xq.js";
+import "B:/~BUN/root/chunk-j05gjqgd.js";
+import "B:/~BUN/root/chunk-4tp5kqnx.js";
+import "B:/~BUN/root/chunk-eswth6m1.js";
+import "B:/~BUN/root/chunk-nwv7r07s.js";
+import "B:/~BUN/root/chunk-gezr7m08.js";
+import "B:/~BUN/root/chunk-tdekz3md.js";
+import "B:/~BUN/root/chunk-ke150ry1.js";
+import "B:/~BUN/root/chunk-wss0tnsx.js";
+import "B:/~BUN/root/chunk-vzhm698f.js";
+import "B:/~BUN/root/chunk-4xvtrfzh.js";
+import "B:/~BUN/root/chunk-jbf2dde1.js";
+import "B:/~BUN/root/chunk-6h5p2dxf.js";
+import {
+  Oce,
+  Cq,
+  Rq
+} from "B:/~BUN/root/chunk-tdg0k3wq.js";
+import "B:/~BUN/root/chunk-n98vg3jf.js";
+import "B:/~BUN/root/chunk-838fxqce.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-2gz7xsvb.js";
+import "B:/~BUN/root/chunk-02j0cm13.js";
+import "B:/~BUN/root/chunk-0s00dkj6.js";
+import "B:/~BUN/root/chunk-hevmq1yj.js";
+import "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-ddamx62b.js";
+import "B:/~BUN/root/chunk-0aq7t0nw.js";
+import "B:/~BUN/root/chunk-fnf5t6te.js";
+import "B:/~BUN/root/chunk-ajvcvya3.js";
+import "B:/~BUN/root/chunk-63btkzab.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-vke7wtay.js";
+import "B:/~BUN/root/chunk-ckdgegnz.js";
+import "B:/~BUN/root/chunk-x9bz04wf.js";
+import "B:/~BUN/root/chunk-6g8w5kyh.js";
+import "B:/~BUN/root/chunk-jmt91fq8.js";
+import "B:/~BUN/root/chunk-5x4j33v9.js";
+import {
+  wLn
+} from "B:/~BUN/root/chunk-wm0axmjp.js";
+import "B:/~BUN/root/chunk-m8dg5txf.js";
+import "B:/~BUN/root/chunk-ekqreyhv.js";
+import "B:/~BUN/root/chunk-mf9c9p38.js";
+import {
+  hg
+} from "B:/~BUN/root/chunk-2htsebsg.js";
+import "B:/~BUN/root/chunk-875j4y83.js";
+import "B:/~BUN/root/chunk-t4pbv0np.js";
+import "B:/~BUN/root/chunk-xgwmwbnb.js";
+import "B:/~BUN/root/chunk-6v74v9ar.js";
+import "B:/~BUN/root/chunk-eak7wp7z.js";
+import "B:/~BUN/root/chunk-mbh2s41k.js";
+import "B:/~BUN/root/chunk-1012essb.js";
+import "B:/~BUN/root/chunk-kpr2et3s.js";
+import "B:/~BUN/root/chunk-jxvayzd7.js";
+import "B:/~BUN/root/chunk-e8znf4zw.js";
+import {
+  Lee
+} from "B:/~BUN/root/chunk-xfqs9tac.js";
+import "B:/~BUN/root/chunk-5w7xhbnh.js";
+import "B:/~BUN/root/chunk-vmp6vbba.js";
+import "B:/~BUN/root/chunk-dxwyqd26.js";
+import "B:/~BUN/root/chunk-k5mszhcg.js";
+import "B:/~BUN/root/chunk-z4janqzm.js";
+import "B:/~BUN/root/chunk-zymc6pem.js";
+import "B:/~BUN/root/chunk-mjgazsjk.js";
+import "B:/~BUN/root/chunk-2f6ykbbh.js";
+import "B:/~BUN/root/chunk-7rwbs73j.js";
+import "B:/~BUN/root/chunk-z7bs0q82.js";
+import "B:/~BUN/root/chunk-5g1gmfkv.js";
+import "B:/~BUN/root/chunk-s89g0dw7.js";
+import "B:/~BUN/root/chunk-2392ztjf.js";
+import "B:/~BUN/root/chunk-rv3pfsrw.js";
+import "B:/~BUN/root/chunk-pw7914mv.js";
+import "B:/~BUN/root/chunk-hjds4dtx.js";
+import "B:/~BUN/root/chunk-8qv1t8b3.js";
+import "B:/~BUN/root/chunk-b7bhhce8.js";
+import "B:/~BUN/root/chunk-sx264pby.js";
+import "B:/~BUN/root/chunk-psjm1gcn.js";
+import "B:/~BUN/root/chunk-6bx54the.js";
+import "B:/~BUN/root/chunk-m1v50w96.js";
+import "B:/~BUN/root/chunk-j6ahtce9.js";
+import {
+  lc
+} from "B:/~BUN/root/chunk-076mmgjt.js";
+import "B:/~BUN/root/chunk-ghar8fn5.js";
+import "B:/~BUN/root/chunk-8cgm9m8p.js";
+import "B:/~BUN/root/chunk-5gm1xyqv.js";
+import "B:/~BUN/root/chunk-rpagz3p9.js";
+import "B:/~BUN/root/chunk-rzc1dapy.js";
+import "B:/~BUN/root/chunk-hh77nseb.js";
+import "B:/~BUN/root/chunk-7pj7keyk.js";
+import "B:/~BUN/root/chunk-gr5se97s.js";
+import "B:/~BUN/root/chunk-3kdxvefh.js";
+import "B:/~BUN/root/chunk-apgsnbqk.js";
+import "B:/~BUN/root/chunk-vs3bcjd7.js";
+import "B:/~BUN/root/chunk-pmr34yc8.js";
+import "B:/~BUN/root/chunk-b5ry9py2.js";
+import "B:/~BUN/root/chunk-de98q5we.js";
+import "B:/~BUN/root/chunk-mwy4xyee.js";
+import "B:/~BUN/root/chunk-ajpcs9fs.js";
+import "B:/~BUN/root/chunk-gq4ywexf.js";
+import "B:/~BUN/root/chunk-p2ta953m.js";
+import "B:/~BUN/root/chunk-rhdsefgz.js";
+import {
+  mq
+} from "B:/~BUN/root/chunk-2fedt3ag.js";
+import "B:/~BUN/root/chunk-bfwh5k9e.js";
+import "B:/~BUN/root/chunk-kexqfgtm.js";
+import "B:/~BUN/root/chunk-5bb21frh.js";
+import {
+  Ug
+} from "B:/~BUN/root/chunk-vp8vb7t8.js";
+import "B:/~BUN/root/chunk-xkw95p5n.js";
+import "B:/~BUN/root/chunk-sa4785jr.js";
+import "B:/~BUN/root/chunk-nk59bmc9.js";
+import "B:/~BUN/root/chunk-n7ta2s3w.js";
+import "B:/~BUN/root/chunk-65j4e9bn.js";
+import {
+  zP,
+  GP,
+  L9,
+  Sce,
+  Wye,
+  VP
+} from "B:/~BUN/root/chunk-ex2shtaj.js";
+import {
+  da
+} from "B:/~BUN/root/chunk-64qg3pvz.js";
+import "B:/~BUN/root/chunk-jv4ech2n.js";
+import "B:/~BUN/root/chunk-5fdpyc78.js";
+import "B:/~BUN/root/chunk-ybkgfvgz.js";
+import "B:/~BUN/root/chunk-gknte1ng.js";
+import "B:/~BUN/root/chunk-4tz0m6qq.js";
+import "B:/~BUN/root/chunk-3qkmk2e4.js";
+import "B:/~BUN/root/chunk-b3jc87kv.js";
+import "B:/~BUN/root/chunk-11wz0rq6.js";
+import {
+  yL,
+  Kye,
+  N_r,
+  rze,
+  $_r
+} from "B:/~BUN/root/chunk-vy4t7613.js";
+import "B:/~BUN/root/chunk-wt8tyqt4.js";
+import {
+  jZ
+} from "B:/~BUN/root/chunk-kfnabvp7.js";
+import {
+  S_e
+} from "B:/~BUN/root/chunk-jj9s326a.js";
+import {
+  ZDn
+} from "B:/~BUN/root/chunk-p8dysp9f.js";
+import "B:/~BUN/root/chunk-dcmvdxnm.js";
+import "B:/~BUN/root/chunk-c86vwcts.js";
+import "B:/~BUN/root/chunk-6sbka0ts.js";
+import "B:/~BUN/root/chunk-05q1awc0.js";
+import "B:/~BUN/root/chunk-wzeexm6f.js";
+import "B:/~BUN/root/chunk-dwbkkfd6.js";
+import "B:/~BUN/root/chunk-k5xd4a86.js";
+import "B:/~BUN/root/chunk-98qgaht2.js";
+import {
+  Hee
+} from "B:/~BUN/root/chunk-r1gg0qbg.js";
+import "B:/~BUN/root/chunk-5m83sh3a.js";
+import "B:/~BUN/root/chunk-pm850sj6.js";
+import "B:/~BUN/root/chunk-w0kge9aq.js";
+import "B:/~BUN/root/chunk-teehnwdh.js";
+import "B:/~BUN/root/chunk-x4zqd4cy.js";
+import "B:/~BUN/root/chunk-8rnfdnh3.js";
+import "B:/~BUN/root/chunk-7wcc5pbk.js";
+import "B:/~BUN/root/chunk-kk81ayzj.js";
+import "B:/~BUN/root/chunk-400x0tcq.js";
+import {
+  Zl,
+  Ev,
+  Ece,
+  tze
+} from "B:/~BUN/root/chunk-1tbewxs3.js";
+import "B:/~BUN/root/chunk-rrf8gvt4.js";
+import {
+  Xb,
+  lX
+} from "B:/~BUN/root/chunk-7vfy9z2g.js";
+import {
+  F$,
+  Gye,
+  O_r,
+  I_r,
+  Vye
+} from "B:/~BUN/root/chunk-ftj46fnn.js";
+import "B:/~BUN/root/chunk-45td50dx.js";
+import "B:/~BUN/root/chunk-3vrk9h6f.js";
+import "B:/~BUN/root/chunk-0xtfwyhv.js";
+import "B:/~BUN/root/chunk-z2c6k7e2.js";
+import "B:/~BUN/root/chunk-h6zqt1s4.js";
+import "B:/~BUN/root/chunk-jmka9ye7.js";
+import "B:/~BUN/root/chunk-rc0vwsyy.js";
+import "B:/~BUN/root/chunk-qk8tvzkn.js";
+import "B:/~BUN/root/chunk-fc7k1zas.js";
+import "B:/~BUN/root/chunk-nw79m6g4.js";
+import "B:/~BUN/root/chunk-4vcs773m.js";
+import "B:/~BUN/root/chunk-1ratk947.js";
+import "B:/~BUN/root/chunk-wznngf8b.js";
+import "B:/~BUN/root/chunk-2ys4h17s.js";
+import "B:/~BUN/root/chunk-wxztkjve.js";
+import "B:/~BUN/root/chunk-wjxjrbnh.js";
+import "B:/~BUN/root/chunk-yrh147c7.js";
+import "B:/~BUN/root/chunk-taw9ve37.js";
+import "B:/~BUN/root/chunk-vyjvp8sa.js";
+import "B:/~BUN/root/chunk-jypg1bby.js";
+import "B:/~BUN/root/chunk-w0nyevkg.js";
+import "B:/~BUN/root/chunk-z5apdcem.js";
+import "B:/~BUN/root/chunk-d5rmf5x5.js";
+import "B:/~BUN/root/chunk-8x466dw5.js";
+import "B:/~BUN/root/chunk-17caj8fw.js";
+import "B:/~BUN/root/chunk-hhd7smkx.js";
+import "B:/~BUN/root/chunk-cejfpzdt.js";
+import "B:/~BUN/root/chunk-0q69tvcp.js";
+import "B:/~BUN/root/chunk-0jhmwh3q.js";
+import "B:/~BUN/root/chunk-j3efez3c.js";
+import "B:/~BUN/root/chunk-6cgv9p77.js";
+import "B:/~BUN/root/chunk-9ajgj3y1.js";
+import "B:/~BUN/root/chunk-pjcve3z9.js";
+import "B:/~BUN/root/chunk-cjmntjcn.js";
+import "B:/~BUN/root/chunk-43aygqej.js";
+import "B:/~BUN/root/chunk-y7em5h10.js";
+import "B:/~BUN/root/chunk-tmn2g637.js";
+import "B:/~BUN/root/chunk-mjx3yttm.js";
+import "B:/~BUN/root/chunk-wdfwarp2.js";
+import "B:/~BUN/root/chunk-0ypwt1ew.js";
+import "B:/~BUN/root/chunk-3eq12f11.js";
+import "B:/~BUN/root/chunk-mq0pq26y.js";
+import "B:/~BUN/root/chunk-trf406sb.js";
+import {
+  fWe,
+  J9t
+} from "B:/~BUN/root/chunk-mcdkvptw.js";
+import "B:/~BUN/root/chunk-q2s07yzr.js";
+import "B:/~BUN/root/chunk-3aa152x8.js";
+import "B:/~BUN/root/chunk-ymawhbhz.js";
+import "B:/~BUN/root/chunk-rbfkfjk4.js";
+import "B:/~BUN/root/chunk-az0cmmyt.js";
+import "B:/~BUN/root/chunk-bw0w9zyr.js";
+import {
+  hDn
+} from "B:/~BUN/root/chunk-hydnwtf3.js";
+import "B:/~BUN/root/chunk-15eyam7k.js";
+import "B:/~BUN/root/chunk-ynneeax2.js";
+import "B:/~BUN/root/chunk-4ffx6rrs.js";
+import "B:/~BUN/root/chunk-8ytf4evt.js";
+import {
+  EL
+} from "B:/~BUN/root/chunk-33ssadqt.js";
+import "B:/~BUN/root/chunk-4zhce32x.js";
+import "B:/~BUN/root/chunk-bsbbs1xs.js";
+import {
+  _3e
+} from "B:/~BUN/root/chunk-b1y7ctsd.js";
+import {
+  MB,
+  y3e,
+  jat,
+  nYt,
+  Wat,
+  rYt,
+  aF
+} from "B:/~BUN/root/chunk-s74geht1.js";
+import {
+  Tve,
+  mx,
+  Mo,
+  G8,
+  Ns,
+  L1e,
+  BB
+} from "B:/~BUN/root/chunk-4rgskab2.js";
+import {
+  nW,
+  nAt,
+  A3e,
+  x3e,
+  ilt,
+  rAt
+} from "B:/~BUN/root/chunk-mpzcg4gr.js";
+import {
+  kor
+} from "B:/~BUN/root/chunk-cy97h550.js";
+import "B:/~BUN/root/chunk-fphj3e2e.js";
+import "B:/~BUN/root/chunk-y9wt6fg7.js";
+import {
+  K7n,
+  q7n
+} from "B:/~BUN/root/chunk-sxgyn4zy.js";
+import "B:/~BUN/root/chunk-fnfdeqaa.js";
+import "B:/~BUN/root/chunk-p8dmgxyc.js";
+import {
+  Ng
+} from "B:/~BUN/root/chunk-j6qn83yk.js";
+import {
+  Okn,
+  Vat
+} from "B:/~BUN/root/chunk-gxjwzbjn.js";
+import {
+  nor,
+  ror,
+  URt,
+  dge,
+  Q4t,
+  Z4t,
+  oor,
+  sor,
+  ior,
+  eYt,
+  Ckn,
+  aor,
+  lor,
+  dor,
+  $at,
+  Uat,
+  cor,
+  uor,
+  por,
+  tYt,
+  mor,
+  hor,
+  Bat,
+  gor,
+  yor,
+  _or,
+  bor,
+  Sor,
+  wor
+} from "B:/~BUN/root/chunk-bfcx5fn8.js";
+import {
+  Rkn
+} from "B:/~BUN/root/chunk-y1r8474v.js";
+import {
+  WM
+} from "B:/~BUN/root/chunk-bf9d8yv4.js";
+import {
+  $ir,
+  Uir
+} from "B:/~BUN/root/chunk-2t24e304.js";
+import {
+  rvn,
+  ZRt,
+  olt,
+  _sr
+} from "B:/~BUN/root/chunk-z6x3rhe7.js";
+import {
+  bYt,
+  CIe,
+  psr,
+  kQ,
+  nlt,
+  msr,
+  SYt,
+  wYt,
+  hsr,
+  rlt,
+  w3e,
+  gsr,
+  kYt
+} from "B:/~BUN/root/chunk-2r6mec8n.js";
+import {
+  v1e,
+  FIe,
+  E1e
+} from "B:/~BUN/root/chunk-zqf91de4.js";
+import "B:/~BUN/root/chunk-s7zmwmdt.js";
+import {
+  SIe,
+  zr,
+  $kn,
+  fI,
+  Ukn,
+  Qor,
+  Zor,
+  esr,
+  KC,
+  wIe,
+  Yat,
+  NB,
+  XY,
+  nsr,
+  kIe,
+  tre,
+  rsr,
+  osr,
+  jkn,
+  aYt,
+  isr
+} from "B:/~BUN/root/chunk-7jbamvvk.js";
+import {
+  t4r,
+  z7n,
+  A_n
+} from "B:/~BUN/root/chunk-fzqvs3ck.js";
+import "B:/~BUN/root/chunk-1j1q5jh4.js";
+import {
+  Pvr
+} from "B:/~BUN/root/chunk-tqwjx62y.js";
+import "B:/~BUN/root/chunk-5jbxkytw.js";
+import "B:/~BUN/root/chunk-x29v5gdt.js";
+import "B:/~BUN/root/chunk-syedbbsr.js";
+import "B:/~BUN/root/chunk-gvv6aaq0.js";
+import "B:/~BUN/root/chunk-gnvjfqfc.js";
+import "B:/~BUN/root/chunk-thggwabf.js";
+import "B:/~BUN/root/chunk-gjq813eb.js";
+import "B:/~BUN/root/chunk-eahns82c.js";
+import "B:/~BUN/root/chunk-hwtache4.js";
+import "B:/~BUN/root/chunk-z8zg5v1y.js";
+import {
+  rde
+} from "B:/~BUN/root/chunk-dh9acrmw.js";
+import "B:/~BUN/root/chunk-6c65wqph.js";
+import "B:/~BUN/root/chunk-xq04c9n0.js";
+import {
+  hit,
+  T_n
+} from "B:/~BUN/root/chunk-0q6f4ks8.js";
+import {
+  jRt,
+  WRt,
+  Akn
+} from "B:/~BUN/root/chunk-b683jz6a.js";
+import {
+  _1e,
+  oAt,
+  Rsr,
+  Asr
+} from "B:/~BUN/root/chunk-rj8dknkb.js";
+import "B:/~BUN/root/chunk-44wgxs8c.js";
+import "B:/~BUN/root/chunk-560mcemn.js";
+import {
+  Cor,
+  Aor,
+  xor,
+  Por
+} from "B:/~BUN/root/chunk-wwbphjk5.js";
+import {
+  xsr
+} from "B:/~BUN/root/chunk-cyfw9sb9.js";
+import {
+  P_n,
+  U2o,
+  Y7n
+} from "B:/~BUN/root/chunk-w8tjs7tn.js";
+import {
+  qwn,
+  ERt,
+  oge,
+  err
+} from "B:/~BUN/root/chunk-r83ncggy.js";
+import {
+  bIe
+} from "B:/~BUN/root/chunk-bq7y7t0q.js";
+import {
+  BRt
+} from "B:/~BUN/root/chunk-pcgcya2e.js";
+import {
+  I8
+} from "B:/~BUN/root/chunk-ryr6jnq0.js";
+import "B:/~BUN/root/chunk-989rexdd.js";
+import {
+  vor,
+  Eor
+} from "B:/~BUN/root/chunk-ffe7s8s6.js";
+import {
+  Ior
+} from "B:/~BUN/root/chunk-30dn6k0j.js";
+import {
+  Gat,
+  Pkn
+} from "B:/~BUN/root/chunk-wbntv8hr.js";
+import {
+  Kle
+} from "B:/~BUN/root/chunk-5ydn06vz.js";
+import {
+  zRt
+} from "B:/~BUN/root/chunk-yjsk4qec.js";
+import "B:/~BUN/root/chunk-vah5p5v2.js";
+import {
+  qat,
+  $or,
+  jor,
+  Wor,
+  zor,
+  iYt
+} from "B:/~BUN/root/chunk-re62m27y.js";
+import "B:/~BUN/root/chunk-t24nmad3.js";
+import "B:/~BUN/root/chunk-5d6w0m6e.js";
+import {
+  tlt
+} from "B:/~BUN/root/chunk-zwc1c4bc.js";
+import "B:/~BUN/root/chunk-3rd5gzq1.js";
+import {
+  QRt
+} from "B:/~BUN/root/chunk-kv6ht8ms.js";
+import {
+  xP
+} from "B:/~BUN/root/chunk-kb3hq3bg.js";
+import {
+  pve,
+  vYt
+} from "B:/~BUN/root/chunk-jzac91sc.js";
+import {
+  lF,
+  Cu
+} from "B:/~BUN/root/chunk-2d2hmxhb.js";
+import {
+  T3e,
+  RS
+} from "B:/~BUN/root/chunk-pyp8n05h.js";
+import {
+  Tsr,
+  qle,
+  O3e,
+  alt,
+  Csr
+} from "B:/~BUN/root/chunk-eb8f1fhs.js";
+import "B:/~BUN/root/chunk-g91y7g02.js";
+import "B:/~BUN/root/chunk-vhw6mw44.js";
+import "B:/~BUN/root/chunk-hm7jb5w7.js";
+import {
+  Psr
+} from "B:/~BUN/root/chunk-grafhwky.js";
+import "B:/~BUN/root/chunk-m5r98b9b.js";
+import "B:/~BUN/root/chunk-wabgka6b.js";
+import {
+  hAt,
+  zM
+} from "B:/~BUN/root/chunk-kr1v6gnh.js";
+import {
+  _ve,
+  j3e,
+  wvn,
+  kvn,
+  are
+} from "B:/~BUN/root/chunk-6ecdk6hr.js";
+import {
+  Z3e
+} from "B:/~BUN/root/chunk-bwsdfe7a.js";
+import {
+  Do,
+  Qir,
+  N1e
+} from "B:/~BUN/root/chunk-4srmsy10.js";
+import "B:/~BUN/root/chunk-1403xdv8.js";
+import "B:/~BUN/root/chunk-dt45jjk2.js";
+import "B:/~BUN/root/chunk-n7rjc97z.js";
+import "B:/~BUN/root/chunk-bwk2g6e0.js";
+import "B:/~BUN/root/chunk-1b2nf93s.js";
+import "B:/~BUN/root/chunk-q7dbkm6t.js";
+import "B:/~BUN/root/chunk-pgm29tvd.js";
+import "B:/~BUN/root/chunk-992ex3nd.js";
+import "B:/~BUN/root/chunk-h2qbvrp4.js";
+import "B:/~BUN/root/chunk-0wyf4zb9.js";
+import "B:/~BUN/root/chunk-vxbt81wk.js";
+import "B:/~BUN/root/chunk-v04fapnf.js";
+import "B:/~BUN/root/chunk-rsz72fpd.js";
+import "B:/~BUN/root/chunk-69k97bnp.js";
+import "B:/~BUN/root/chunk-q82am8wz.js";
+import "B:/~BUN/root/chunk-spc3jrd3.js";
+import "B:/~BUN/root/chunk-kgvnwy91.js";
+import "B:/~BUN/root/chunk-p25ahy45.js";
+import "B:/~BUN/root/chunk-4xx5w1am.js";
+import "B:/~BUN/root/chunk-pgf3n8rv.js";
+import "B:/~BUN/root/chunk-stfp5qgr.js";
+import "B:/~BUN/root/chunk-az6xed3t.js";
+import "B:/~BUN/root/chunk-w179eqqe.js";
+import "B:/~BUN/root/chunk-p8898990.js";
+import "B:/~BUN/root/chunk-fkz77yzp.js";
+import "B:/~BUN/root/chunk-zy4xrndc.js";
+import "B:/~BUN/root/chunk-we53d1t3.js";
+import "B:/~BUN/root/chunk-1jrzd264.js";
+import "B:/~BUN/root/chunk-zz0hj0zg.js";
+import {
+  Al
+} from "B:/~BUN/root/chunk-md18120p.js";
+import "B:/~BUN/root/chunk-zwf5p7y7.js";
+import {
+  EF
+} from "B:/~BUN/root/chunk-k3f9rj85.js";
+import {
+  z6
+} from "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-8zx74r55.js";
+import "B:/~BUN/root/chunk-xagk1yaq.js";
+import "B:/~BUN/root/chunk-zeshc0ep.js";
+import "B:/~BUN/root/chunk-vvwzzpy4.js";
+import "B:/~BUN/root/chunk-4hx27rd1.js";
+import "B:/~BUN/root/chunk-jjjspatt.js";
+import "B:/~BUN/root/chunk-6bss7gp5.js";
+import "B:/~BUN/root/chunk-h29cx855.js";
+import "B:/~BUN/root/chunk-yjr7e11x.js";
+import "B:/~BUN/root/chunk-tnfsxzpz.js";
+import "B:/~BUN/root/chunk-pp5rqp7s.js";
+import "B:/~BUN/root/chunk-ea8gze25.js";
+import "B:/~BUN/root/chunk-z1wt3cb2.js";
+import "B:/~BUN/root/chunk-cjd8dpgw.js";
+import "B:/~BUN/root/chunk-yscb2r3d.js";
+import {
+  t0n,
+  S1,
+  mr
+} from "B:/~BUN/root/chunk-s20ae4sg.js";
+import "B:/~BUN/root/chunk-n3m61sfz.js";
+import {
+  ed
+} from "B:/~BUN/root/chunk-nk52yc3v.js";
+import "B:/~BUN/root/chunk-kt29vc17.js";
+import "B:/~BUN/root/chunk-a5dg1k4h.js";
+import "B:/~BUN/root/chunk-kj33sgq2.js";
+import "B:/~BUN/root/chunk-kh33ctc6.js";
+import "B:/~BUN/root/chunk-x6ny3ghw.js";
+import "B:/~BUN/root/chunk-0p5dw980.js";
+import "B:/~BUN/root/chunk-dx2wvwvf.js";
+import "B:/~BUN/root/chunk-fcp4egnh.js";
+import {
+  yw
+} from "B:/~BUN/root/chunk-x0zaah42.js";
+import "B:/~BUN/root/chunk-frv0tk8w.js";
+import "B:/~BUN/root/chunk-ym6b88b3.js";
+import "B:/~BUN/root/chunk-zx0hhrva.js";
+import "B:/~BUN/root/chunk-s937snw9.js";
+import {
+  tee
+} from "B:/~BUN/root/chunk-j5zjtxy5.js";
+import "B:/~BUN/root/chunk-vdqpev1m.js";
+import {
+  Y_
+} from "B:/~BUN/root/chunk-vtghd2qd.js";
+import "B:/~BUN/root/chunk-kd0f2gn5.js";
+import "B:/~BUN/root/chunk-ymgf3kpk.js";
+import "B:/~BUN/root/chunk-dzjj3jwh.js";
+import "B:/~BUN/root/chunk-xbhv3nhf.js";
+import "B:/~BUN/root/chunk-21s8ygah.js";
+import {
+  H7e,
+  Vq,
+  eNe
+} from "B:/~BUN/root/chunk-e99p2x0p.js";
+import "B:/~BUN/root/chunk-36r971cb.js";
+import "B:/~BUN/root/chunk-ynpwd78y.js";
+import "B:/~BUN/root/chunk-eyvtcj15.js";
+import "B:/~BUN/root/chunk-r6enj9cw.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import "B:/~BUN/root/chunk-r2kdqtaa.js";
+import {
+  kNe
+} from "B:/~BUN/root/chunk-j0enspnr.js";
+import "B:/~BUN/root/chunk-xr3thd43.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-62khcyrb.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import "B:/~BUN/root/chunk-4jfmvmew.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-cbv74thb.js";
+import "B:/~BUN/root/chunk-dc99dkg2.js";
+import "B:/~BUN/root/chunk-b37tyqej.js";
+import "B:/~BUN/root/chunk-dqan51g7.js";
+import "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-z35xf1k7.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import {
+  uT
+} from "B:/~BUN/root/chunk-e0q1m1z9.js";
+import {
+  jjn,
+  _a
+} from "B:/~BUN/root/chunk-5xe4wxb1.js";
+import {
+  PJ
+} from "B:/~BUN/root/chunk-bxk17zm0.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import {
+  Rc
+} from "B:/~BUN/root/chunk-rzaxm471.js";
+import {
+  bn
+} from "B:/~BUN/root/chunk-2631cdbp.js";
+import {
+  kn
+} from "B:/~BUN/root/chunk-t7d2hp9h.js";
+import {
+  iP,
+  o,
+  C,
+  u,
+  xt
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  zd
+} from "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import {
+  no
+} from "B:/~BUN/root/chunk-qszgzq5m.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import {
+  XFr
+} from "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import {
+  Ht
+} from "B:/~BUN/root/chunk-cbjnh04j.js";
+import {
+  Bp
+} from "B:/~BUN/root/chunk-bvb659eh.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-g9pw24zp.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+import {
+  U
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  Oe
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+class Qt {
+  constructor(e) {
+    this._client = e
+  }
+  async * callToolStream(e, r = mIe, n) {
+    let s = this._client,
+      h = {
+        ...n,
+        task: n?.task ?? (s.isToolTask(e.name) ? {} : void 0)
+      },
+      y = s.requestStream({
+        method: "tools/call",
+        params: e
+      }, r, h),
+      S = s.getToolOutputValidator(e.name);
+    for await (let T of y) {
+      if (T.type === "result" && S) {
+        let M = T.result;
+        if (!M.structuredContent && !M.isError) {
+          yield {
+            type: "error",
+            error: new Ea(ja.InvalidRequest, `Tool ${e.name} has an output schema but did not return structured content`)
+          };
+          return
+        }
+        if (M.structuredContent) try {
+          let E = S(M.structuredContent);
+          if (!E.valid) {
+            yield {
+              type: "error",
+              error: new Ea(ja.InvalidParams, `Structured content does not match the tool's output schema: ${E.errorMessage}`)
+            };
+            return
+          }
+        } catch (E) {
+          if (E instanceof Ea) {
+            yield {
+              type: "error",
+              error: E
+            };
+            return
+          }
+          yield {
+            type: "error",
+            error: new Ea(ja.InvalidParams, `Failed to validate structured content: ${E instanceof Error?E.message:String(E)}`)
+          };
+          return
+        }
+      }
+      yield T
+    }
+  }
+  async getTask(e, r) {
+    return this._client.getTask({
+      taskId: e
+    }, r)
+  }
+  async getTaskResult(e, r, n) {
+    return this._client.getTaskResult({
+      taskId: e
+    }, r, n)
+  }
+  async listTasks(e, r) {
+    return this._client.listTasks(e ? {
+      cursor: e
+    } : void 0, r)
+  }
+  async cancelTask(e, r) {
+    return this._client.cancelTask({
+      taskId: e
+    }, r)
+  }
+  requestStream(e, r, n) {
+    return this._client.requestStream(e, r, n)
+  }
+}
+
+function jt(e, r) {
+  if (!e || r === null || typeof r !== "object") return;
+  if (e.type === "object" && e.properties && typeof e.properties === "object") {
+    let n = r,
+      s = e.properties;
+    for (let h of Object.keys(s)) {
+      let y = s[h];
+      if (n[h] === void 0 && Object.prototype.hasOwnProperty.call(y, "default")) n[h] = y.default;
+      if (n[h] !== void 0) jt(y, n[h])
+    }
+  }
+  if (Array.isArray(e.anyOf)) {
+    for (let n of e.anyOf)
+      if (typeof n !== "boolean") jt(n, r)
+  }
+  if (Array.isArray(e.oneOf)) {
+    for (let n of e.oneOf)
+      if (typeof n !== "boolean") jt(n, r)
+  }
+}
+
+function Fr(e) {
+  if (!e) return {
+    supportsFormMode: !1,
+    supportsUrlMode: !1
+  };
+  let r = e.form !== void 0,
+    n = e.url !== void 0;
+  return {
+    supportsFormMode: r || !r && !n,
+    supportsUrlMode: n
+  }
+}
+class qt extends N_n {
+  constructor(e, r) {
+    super(r);
+    if (this._clientInfo = e, this._cachedToolOutputValidators = new Map, this._cachedKnownTaskTools = new Set, this._cachedRequiredTaskTools = new Set, this._listChangedDebounceTimers = new Map, this._capabilities = r?.capabilities ?? {}, this._jsonSchemaValidator = r?.jsonSchemaValidator ?? new F_n, r?.listChanged) this._pendingListChangedConfig = r.listChanged
+  }
+  _setupListChangedHandlers(e) {
+    if (e.tools && this._serverCapabilities?.tools?.listChanged) this._setupListChangedHandler("tools", rkn, e.tools, async () => (await this.listTools()).tools);
+    if (e.prompts && this._serverCapabilities?.prompts?.listChanged) this._setupListChangedHandler("prompts", nkn, e.prompts, async () => (await this.listPrompts()).prompts);
+    if (e.resources && this._serverCapabilities?.resources?.listChanged) this._setupListChangedHandler("resources", ekn, e.resources, async () => (await this.listResources()).resources)
+  }
+  get experimental() {
+    if (!this._experimental) this._experimental = {
+      tasks: new Qt(this)
+    };
+    return this._experimental
+  }
+  registerCapabilities(e) {
+    if (this.transport) throw Error("Cannot register capabilities after connecting to transport");
+    this._capabilities = eQn(this._capabilities, e)
+  }
+  setRequestHandler(e, r) {
+    let s = wKt(e)?.method;
+    if (!s) throw Error("Schema is missing a method literal");
+    let h;
+    if (yit(s)) {
+      let S = s;
+      h = S._zod?.def?.value ?? S.value
+    } else {
+      let S = s;
+      h = S._def?.value ?? S.value
+    }
+    if (typeof h !== "string") throw Error("Schema method literal must be a string");
+    let y = h;
+    if (y === "elicitation/create") {
+      let S = async (T, M) => {
+        let E = Fne(s3e, T);
+        if (!E.success) {
+          let K = E.error instanceof Error ? E.error.message : String(E.error);
+          throw new Ea(ja.InvalidParams, `Invalid elicitation request: ${K}`)
+        }
+        let {
+          params: I
+        } = E.data;
+        I.mode = I.mode ?? "form";
+        let {
+          supportsFormMode: O,
+          supportsUrlMode: j
+        } = Fr(this._capabilities.elicitation);
+        if (I.mode === "form" && !O) throw new Ea(ja.InvalidParams, "Client does not support form-mode elicitation requests");
+        if (I.mode === "url" && !j) throw new Ea(ja.InvalidParams, "Client does not support URL-mode elicitation requests");
+        let D = await Promise.resolve(r(T, M));
+        if (I.task) {
+          let K = Fne(pIe, D);
+          if (!K.success) {
+            let G = K.error instanceof Error ? K.error.message : String(K.error);
+            throw new Ea(ja.InvalidParams, `Invalid task creation result: ${G}`)
+          }
+          return K.data
+        }
+        let N = Fne(i3e, D);
+        if (!N.success) {
+          let K = N.error instanceof Error ? N.error.message : String(N.error);
+          throw new Ea(ja.InvalidParams, `Invalid elicitation result: ${K}`)
+        }
+        let ne = N.data,
+          me = I.mode === "form" ? I.requestedSchema : void 0;
+        if (I.mode === "form" && ne.action === "accept" && ne.content && me) {
+          if (this._capabilities.elicitation?.form?.applyDefaults) try {
+            jt(me, ne.content)
+          } catch {}
+        }
+        return ne
+      };
+      return super.setRequestHandler(e, S)
+    }
+    if (y === "sampling/createMessage") {
+      let S = async (T, M) => {
+        let E = Fne(K5r, T);
+        if (!E.success) {
+          let ne = E.error instanceof Error ? E.error.message : String(E.error);
+          throw new Ea(ja.InvalidParams, `Invalid sampling request: ${ne}`)
+        }
+        let {
+          params: I
+        } = E.data, O = await Promise.resolve(r(T, M));
+        if (I.task) {
+          let ne = Fne(pIe, O);
+          if (!ne.success) {
+            let me = ne.error instanceof Error ? ne.error.message : String(ne.error);
+            throw new Ea(ja.InvalidParams, `Invalid task creation result: ${me}`)
+          }
+          return ne.data
+        }
+        let D = I.tools || I.toolChoice ? O4t : xat,
+          N = Fne(D, O);
+        if (!N.success) {
+          let ne = N.error instanceof Error ? N.error.message : String(N.error);
+          throw new Ea(ja.InvalidParams, `Invalid sampling result: ${ne}`)
+        }
+        return N.data
+      };
+      return super.setRequestHandler(e, S)
+    }
+    return super.setRequestHandler(e, r)
+  }
+  assertCapability(e, r) {
+    if (!this._serverCapabilities?.[e]) throw Error(`Server does not support ${e} (required for ${r})`)
+  }
+  async connect(e, r) {
+    if (await super.connect(e), e.sessionId !== void 0) return;
+    try {
+      let n = await this.request({
+        method: "initialize",
+        params: {
+          protocolVersion: n1e,
+          capabilities: this._capabilities,
+          clientInfo: this._clientInfo
+        }
+      }, CRt, r);
+      if (n === void 0) throw Error(`Server sent invalid initialize result: ${n}`);
+      if (!Gle.includes(n.protocolVersion)) throw Error(`Server's protocol version is not supported: ${n.protocolVersion}`);
+      if (this._serverCapabilities = n.capabilities, this._serverVersion = n.serverInfo, e.setProtocolVersion) e.setProtocolVersion(n.protocolVersion);
+      if (this._instructions = n.instructions, await this.notification({
+          method: "notifications/initialized"
+        }), this._pendingListChangedConfig) this._setupListChangedHandlers(this._pendingListChangedConfig), this._pendingListChangedConfig = void 0
+    } catch (n) {
+      throw this.close(), n
+    }
+  }
+  getServerCapabilities() {
+    return this._serverCapabilities
+  }
+  getServerVersion() {
+    return this._serverVersion
+  }
+  getInstructions() {
+    return this._instructions
+  }
+  assertCapabilityForMethod(e) {
+    switch (e) {
+      case "logging/setLevel":
+        if (!this._serverCapabilities?.logging) throw Error(`Server does not support logging (required for ${e})`);
+        break;
+      case "prompts/get":
+      case "prompts/list":
+        if (!this._serverCapabilities?.prompts) throw Error(`Server does not support prompts (required for ${e})`);
+        break;
+      case "resources/list":
+      case "resources/templates/list":
+      case "resources/read":
+      case "resources/subscribe":
+      case "resources/unsubscribe":
+        if (!this._serverCapabilities?.resources) throw Error(`Server does not support resources (required for ${e})`);
+        if (e === "resources/subscribe" && !this._serverCapabilities.resources.subscribe) throw Error(`Server does not support resource subscriptions (required for ${e})`);
+        break;
+      case "tools/call":
+      case "tools/list":
+        if (!this._serverCapabilities?.tools) throw Error(`Server does not support tools (required for ${e})`);
+        break;
+      case "completion/complete":
+        if (!this._serverCapabilities?.completions) throw Error(`Server does not support completions (required for ${e})`);
+        break;
+      case "initialize":
+        break;
+      case "ping":
+        break
+    }
+  }
+  assertNotificationCapability(e) {
+    switch (e) {
+      case "notifications/roots/list_changed":
+        if (!this._capabilities.roots?.listChanged) throw Error(`Client does not support roots list changed notifications (required for ${e})`);
+        break;
+      case "notifications/initialized":
+        break;
+      case "notifications/cancelled":
+        break;
+      case "notifications/progress":
+        break
+    }
+  }
+  assertRequestHandlerCapability(e) {
+    if (!this._capabilities) return;
+    switch (e) {
+      case "sampling/createMessage":
+        if (!this._capabilities.sampling) throw Error(`Client does not support sampling capability (required for ${e})`);
+        break;
+      case "elicitation/create":
+        if (!this._capabilities.elicitation) throw Error(`Client does not support elicitation capability (required for ${e})`);
+        break;
+      case "roots/list":
+        if (!this._capabilities.roots) throw Error(`Client does not support roots capability (required for ${e})`);
+        break;
+      case "tasks/get":
+      case "tasks/list":
+      case "tasks/result":
+      case "tasks/cancel":
+        if (!this._capabilities.tasks) throw Error(`Client does not support tasks capability (required for ${e})`);
+        break;
+      case "ping":
+        break
+    }
+  }
+  assertTaskCapability(e) {
+    tQn(this._serverCapabilities?.tasks?.requests, e, "Server")
+  }
+  assertTaskHandlerCapability(e) {
+    if (!this._capabilities) return;
+    nQn(this._capabilities.tasks?.requests, e, "Client")
+  }
+  async ping(e) {
+    return this.request({
+      method: "ping"
+    }, o1e, e)
+  }
+  async complete(e, r) {
+    return this.request({
+      method: "completion/complete",
+      params: e
+    }, Y5r, r)
+  }
+  async setLoggingLevel(e, r) {
+    return this.request({
+      method: "logging/setLevel",
+      params: {
+        level: e
+      }
+    }, o1e, r)
+  }
+  async getPrompt(e, r) {
+    return this.request({
+      method: "prompts/get",
+      params: e
+    }, G5r, r)
+  }
+  async listPrompts(e, r) {
+    return this.request({
+      method: "prompts/list",
+      params: e
+    }, tkn, r)
+  }
+  async listResources(e, r) {
+    return this.request({
+      method: "resources/list",
+      params: e
+    }, Aat, r)
+  }
+  async listResourceTemplates(e, r) {
+    return this.request({
+      method: "resources/templates/list",
+      params: e
+    }, Zwn, r)
+  }
+  async readResource(e, r) {
+    return this.request({
+      method: "resources/read",
+      params: e
+    }, W5r, r)
+  }
+  async subscribeResource(e, r) {
+    return this.request({
+      method: "resources/subscribe",
+      params: e
+    }, o1e, r)
+  }
+  async unsubscribeResource(e, r) {
+    return this.request({
+      method: "resources/unsubscribe",
+      params: e
+    }, o1e, r)
+  }
+  async callTool(e, r = mIe, n) {
+    if (this.isToolTaskRequired(e.name)) throw new Ea(ja.InvalidRequest, `Tool "${e.name}" requires task-based execution. Use client.experimental.tasks.callToolStream() instead.`);
+    let s = await this.request({
+        method: "tools/call",
+        params: e
+      }, r, n),
+      h = this.getToolOutputValidator(e.name);
+    if (h) {
+      if (!s.structuredContent && !s.isError) throw new Ea(ja.InvalidRequest, `Tool ${e.name} has an output schema but did not return structured content`);
+      if (s.structuredContent) try {
+        let y = h(s.structuredContent);
+        if (!y.valid) throw new Ea(ja.InvalidParams, `Structured content does not match the tool's output schema: ${y.errorMessage}`)
+      } catch (y) {
+        if (y instanceof Ea) throw y;
+        throw new Ea(ja.InvalidParams, `Failed to validate structured content: ${y instanceof Error?y.message:String(y)}`)
+      }
+    }
+    return s
+  }
+  isToolTask(e) {
+    if (!this._serverCapabilities?.tasks?.requests?.tools?.call) return !1;
+    return this._cachedKnownTaskTools.has(e)
+  }
+  isToolTaskRequired(e) {
+    return this._cachedRequiredTaskTools.has(e)
+  }
+  cacheToolMetadata(e) {
+    this._cachedToolOutputValidators.clear(), this._cachedKnownTaskTools.clear(), this._cachedRequiredTaskTools.clear();
+    for (let r of e) {
+      if (r.outputSchema) {
+        let s = this._jsonSchemaValidator.getValidator(r.outputSchema);
+        this._cachedToolOutputValidators.set(r.name, s)
+      }
+      let n = r.execution?.taskSupport;
+      if (n === "required" || n === "optional") this._cachedKnownTaskTools.add(r.name);
+      if (n === "required") this._cachedRequiredTaskTools.add(r.name)
+    }
+  }
+  getToolOutputValidator(e) {
+    return this._cachedToolOutputValidators.get(e)
+  }
+  async listTools(e, r) {
+    let n = await this.request({
+      method: "tools/list",
+      params: e
+    }, P4t, r);
+    return this.cacheToolMetadata(n.tools), n
+  }
+  _setupListChangedHandler(e, r, n, s) {
+    let h = W5o.safeParse(n);
+    if (!h.success) throw Error(`Invalid ${e} listChanged options: ${h.error.message}`);
+    if (typeof n.onChanged !== "function") throw Error(`Invalid ${e} listChanged options: onChanged must be a function`);
+    let {
+      autoRefresh: y,
+      debounceMs: S
+    } = h.data, {
+      onChanged: T
+    } = n, M = async () => {
+      if (!y) {
+        T(null, null);
+        return
+      }
+      try {
+        let I = await s();
+        T(null, I)
+      } catch (I) {
+        let O = I instanceof Error ? I : Error(String(I));
+        T(O, null)
+      }
+    }, E = () => {
+      if (S) {
+        let I = this._listChangedDebounceTimers.get(e);
+        if (I) clearTimeout(I);
+        let O = setTimeout(M, S);
+        this._listChangedDebounceTimers.set(e, O)
+      } else M()
+    };
+    this.setNotificationHandler(r, E)
+  }
+  async sendRootsListChanged() {
+    return this.notification({
+      method: "notifications/roots/list_changed"
+    })
+  }
+}
+class kt extends Error {
+  constructor(e, r, n) {
+    super(`SSE error: ${r}`);
+    this.code = e, this.event = n
+  }
+}
+class Tt {
+  constructor(e, r) {
+    this._url = e, this._resourceMetadataUrl = void 0, this._scope = void 0, this._eventSourceInit = r?.eventSourceInit, this._requestInit = r?.requestInit, this._authProvider = r?.authProvider, this._fetch = r?.fetch, this._fetchWithInit = ERt(r?.fetch, r?.requestInit)
+  }
+  async _authThenStart() {
+    if (!this._authProvider) throw new j0("No auth provider");
+    let e;
+    try {
+      e = await sge(this._authProvider, {
+        serverUrl: this._url,
+        resourceMetadataUrl: this._resourceMetadataUrl,
+        scope: this._scope,
+        fetchFn: this._fetchWithInit
+      })
+    } catch (r) {
+      throw this.onerror?.(r), r
+    }
+    if (e !== "AUTHORIZED") throw new j0;
+    return await this._startOrAuth()
+  }
+  async _commonHeaders() {
+    let e = {};
+    if (this._authProvider) {
+      let n = await this._authProvider.tokens();
+      if (n) e.Authorization = `Bearer ${n.access_token}`
+    }
+    if (this._protocolVersion) e["mcp-protocol-version"] = this._protocolVersion;
+    let r = qwn(this._requestInit?.headers);
+    return new Headers({
+      ...e,
+      ...r
+    })
+  }
+  _startOrAuth() {
+    let e = this?._eventSourceInit?.fetch ?? this._fetch ?? fetch;
+    return new Promise((r, n) => {
+      this._eventSource = new tlt(this._url.href, {
+        ...this._eventSourceInit,
+        fetch: async (s, h) => {
+          let y = await this._commonHeaders();
+          y.set("Accept", "text/event-stream");
+          let S = await e(s, {
+            ...h,
+            headers: y
+          });
+          if (S.status === 401 && S.headers.has("www-authenticate")) {
+            let {
+              resourceMetadataUrl: T,
+              scope: M
+            } = t1e(S);
+            this._resourceMetadataUrl = T, this._scope = M
+          }
+          return S
+        }
+      }), this._abortController = new AbortController, this._eventSource.onerror = (s) => {
+        if (s.code === 401 && this._authProvider) {
+          this._authThenStart().then(r, n);
+          return
+        }
+        let h = new kt(s.code, s.message, s);
+        n(h), this.onerror?.(h)
+      }, this._eventSource.onopen = () => {}, this._eventSource.addEventListener("endpoint", (s) => {
+        let h = s;
+        try {
+          if (this._endpoint = new URL(h.data, this._url), this._endpoint.origin !== this._url.origin) throw Error(`Endpoint origin does not match connection origin: ${this._endpoint.origin}`)
+        } catch (y) {
+          n(y), this.onerror?.(y), this.close();
+          return
+        }
+        r()
+      }), this._eventSource.onmessage = (s) => {
+        let h = s,
+          y;
+        try {
+          y = eW.parse(JSON.parse(h.data))
+        } catch (S) {
+          this.onerror?.(S);
+          return
+        }
+        this.onmessage?.(y)
+      }
+    })
+  }
+  async start() {
+    if (this._eventSource) throw Error("SSEClientTransport already started! If using Client class, note that connect() calls start() automatically.");
+    return await this._startOrAuth()
+  }
+  async finishAuth(e) {
+    if (!this._authProvider) throw new j0("No auth provider");
+    if (await sge(this._authProvider, {
+        serverUrl: this._url,
+        authorizationCode: e,
+        resourceMetadataUrl: this._resourceMetadataUrl,
+        scope: this._scope,
+        fetchFn: this._fetchWithInit
+      }) !== "AUTHORIZED") throw new j0("Failed to authorize")
+  }
+  async close() {
+    this._abortController?.abort(), this._eventSource?.close(), this.onclose?.()
+  }
+  async send(e) {
+    if (!this._endpoint) throw Error("Not connected");
+    try {
+      let r = await this._commonHeaders();
+      r.set("content-type", "application/json");
+      let n = {
+          ...this._requestInit,
+          method: "POST",
+          headers: r,
+          body: JSON.stringify(e),
+          signal: this._abortController?.signal
+        },
+        s = await (this._fetch ?? fetch)(this._endpoint, n);
+      if (!s.ok) {
+        let h = await s.text().catch(() => null);
+        if (s.status === 401 && this._authProvider) {
+          let {
+            resourceMetadataUrl: y,
+            scope: S
+          } = t1e(s);
+          if (this._resourceMetadataUrl = y, this._scope = S, await sge(this._authProvider, {
+              serverUrl: this._url,
+              resourceMetadataUrl: this._resourceMetadataUrl,
+              scope: this._scope,
+              fetchFn: this._fetchWithInit
+            }) !== "AUTHORIZED") throw new j0;
+          return this.send(e)
+        }
+        throw Error(`Error POSTing to endpoint (HTTP ${s.status}): ${h}`)
+      }
+      await s.body?.cancel()
+    } catch (r) {
+      throw this.onerror?.(r), r
+    }
+  }
+  setProtocolVersion(e) {
+    this._protocolVersion = e
+  }
+}
+var Io = Oe(AFr(), 1);
+import eo from "process";
+import {
+  PassThrough as Nr
+} from "stream";
+var xr = eo.platform === "win32" ? ["APPDATA", "HOMEDRIVE", "HOMEPATH", "LOCALAPPDATA", "PATH", "PROCESSOR_ARCHITECTURE", "SYSTEMDRIVE", "SYSTEMROOT", "TEMP", "USERNAME", "USERPROFILE", "PROGRAMFILES"] : ["HOME", "LOGNAME", "PATH", "SHELL", "TERM", "USER"];
+
+function to() {
+  let e = {};
+  for (let r of xr) {
+    let n = eo.env[r];
+    if (n === void 0) continue;
+    if (n.startsWith("()")) continue;
+    e[r] = n
+  }
+  return e
+}
+class oo {
+  constructor(e) {
+    if (this._readBuffer = new P_n, this._stderrStream = null, this._serverParams = e, e.stderr === "pipe" || e.stderr === "overlapped") this._stderrStream = new Nr
+  }
+  async start() {
+    if (this._process) throw Error("StdioClientTransport already started! If using Client class, note that connect() calls start() automatically.");
+    return new Promise((e, r) => {
+      if (this._process = Io.default(this._serverParams.command, this._serverParams.args ?? [], {
+          env: {
+            ...to(),
+            ...this._serverParams.env
+          },
+          stdio: ["pipe", "pipe", this._serverParams.stderr ?? "inherit"],
+          shell: !1,
+          windowsHide: eo.platform === "win32",
+          cwd: this._serverParams.cwd
+        }), this._process.on("error", (n) => {
+          r(n), this.onerror?.(n)
+        }), this._process.on("spawn", () => {
+          e()
+        }), this._process.on("close", (n) => {
+          this._process = void 0, this.onclose?.()
+        }), this._process.stdin?.on("error", (n) => {
+          this.onerror?.(n)
+        }), this._process.stdout?.on("data", (n) => {
+          this._readBuffer.append(n), this.processReadBuffer()
+        }), this._process.stdout?.on("error", (n) => {
+          this.onerror?.(n)
+        }), this._stderrStream && this._process.stderr) this._process.stderr.pipe(this._stderrStream)
+    })
+  }
+  get stderr() {
+    if (this._stderrStream) return this._stderrStream;
+    return this._process?.stderr ?? null
+  }
+  get pid() {
+    return this._process?.pid ?? null
+  }
+  processReadBuffer() {
+    while (!0) try {
+      let e = this._readBuffer.readMessage();
+      if (e === null) break;
+      this.onmessage?.(e)
+    } catch (e) {
+      this.onerror?.(e)
+    }
+  }
+  async close() {
+    if (this._process) {
+      let e = this._process;
+      this._process = void 0;
+      let r = new Promise((n) => {
+        e.once("close", () => {
+          n()
+        })
+      });
+      try {
+        e.stdin?.end()
+      } catch {}
+      if (await Promise.race([r, new Promise((n) => setTimeout(n, 2000).unref())]), e.exitCode === null) {
+        try {
+          e.kill("SIGTERM")
+        } catch {}
+        await Promise.race([r, new Promise((n) => setTimeout(n, 2000).unref())])
+      }
+      if (e.exitCode === null) try {
+        e.kill("SIGKILL")
+      } catch {}
+    }
+    this._readBuffer.clear()
+  }
+  send(e) {
+    return new Promise((r) => {
+      if (!this._process?.stdin) throw Error("Not connected");
+      let n = Y7n(e);
+      if (this._process.stdin.write(n)) r();
+      else this._process.stdin.once("drain", r)
+    })
+  }
+}
+import {
+  randomUUID as Kr
+} from "crypto";
+import {
+  Readable as Yr
+} from "stream";
+import {
+  pathToFileURL as Jr
+} from "url";
+var wt = Vq,
+  Ur = 4 * wt,
+  $r = /^\s*text\/event-stream\s*(?:;|$)/i,
+  Br = 32,
+  Hr = new Map([
+    ["gzip", "gzip"],
+    ["x-gzip", "gzip"],
+    ["deflate", "deflate"]
+  ]),
+  ro = "so Claude Code stopped reading it";
+class gt extends Error {
+  constructor(e, r) {
+    let n = Math.round(e / 1024 / 1024);
+    super((r === "event" ? `sent more than ${n}MB in one event of an event stream (no blank line ended it)` : `sent a response larger than ${n}MB (counted after decompression)`) + `, ${ro}.`);
+    this.name = "HttpBodyOverflowError"
+  }
+}
+
+function jr(e, r) {
+  let n = 0,
+    s = 0,
+    h = r <= e,
+    y = 0,
+    S = !1,
+    T = performance.now();
+  return new TransformStream({
+    async transform(M, E) {
+      if (performance.now() - T > 8) await new Promise((N) => setImmediate(N)), T = performance.now();
+      if (n += M.length, n > r) {
+        E.error(new gt(r, "body"));
+        return
+      }
+      if (h) {
+        E.enqueue(M);
+        return
+      }
+      let I = -1,
+        {
+          length: O
+        } = M,
+        j = -1,
+        D = -1;
+      for (let N = 0; N < O; N++) {
+        let ne = M[N];
+        if (S && ne === 10) {
+          S = !1;
+          continue
+        }
+        if (S = !1, ne === 10 || ne === 13) {
+          if (y === 0) I = N;
+          y = 0, S = ne === 13;
+          continue
+        }
+        if (y++, y < Br) continue;
+        let me = N + 1;
+        if (j < me) j = M.indexOf(10, me), j = j === -1 ? O : j;
+        if (D < me) D = M.indexOf(13, me), D = D === -1 ? O : D;
+        let K = Math.min(j, D);
+        y += K - me, N = K - 1
+      }
+      if (s = I >= 0 ? M.length - 1 - I : s + M.length, s > e) {
+        E.error(new gt(e, "event"));
+        return
+      }
+      E.enqueue(M)
+    }
+  })
+}
+
+function Et(e, {
+  refusesCodings: r = !1
+} = {}) {
+  let n = ZDn();
+  return async (s, h) => {
+    n?.noteRequests(h?.body);
+    let y = (h?.method ?? "GET").toUpperCase(),
+      S = n !== void 0 && Bp() && typeof DecompressionStream < "u",
+      T = await e(s, {
+        ...h,
+        ...S && {
+          decompress: !1
+        }
+      });
+    if (!T.body || T.body.locked) return T;
+    let M = h?.body;
+    if (y === "POST" && typeof M === "string" && M.includes('"jsonrpc"') && (T.status === 202 || T.ok && Wr(M))) return await T.body.cancel().catch(() => {}), new Response(null, {
+      status: T.status,
+      statusText: T.statusText,
+      headers: T.headers
+    });
+    let [E, ...I] = (T.headers.get("content-encoding") ?? "").toLowerCase().split(",").map((ye) => ye.trim()).filter((ye) => ye !== "" && ye !== "identity");
+    if (r && E !== void 0) throw await T.body.cancel(), Error("sent a response with a Content-Encoding. Claude Code reads none from a tool container, so it did not read the response.");
+    let O = S && T.headers.get("content-length") !== "0";
+    if (O && (E === "br" || E === "zstd")) throw await T.body.cancel(), Error("sent a response compressed with br or zstd. Claude Code reads only gzip and deflate, so it did not read the response.");
+    let j = O && E !== void 0 && I.length === 0 ? Hr.get(E) : void 0,
+      D = j ? T.body.pipeThrough(new DecompressionStream(j)) : T.body,
+      N = wt,
+      ne = new Headers(h?.headers);
+    if (T.ok && $r.test(T.headers.get("content-type") ?? "") && ne.get("accept")?.includes("text/event-stream")) N = T.status === 200 && (n === void 0 || E === void 0) && (y === "GET" || ne.get("mcp-method") === "subscriptions/listen") ? 1 / 0 : Ur;
+    let me = D.pipeThrough(jr(wt, N)),
+      K = n?.judging({
+        url: String(s),
+        isGet: y === "GET",
+        ok: T.ok,
+        contentType: T.headers.get("content-type")
+      }),
+      G = K ? me.pipeThrough(K.through) : me,
+      {
+        headers: W
+      } = T;
+    if (K?.contentType !== void 0) W = new Headers(W), W.set("content-type", K.contentType);
+    let fe = T.status >= 200 && T.status <= 599,
+      ce = new Response(G, {
+        status: fe ? T.status : 200,
+        statusText: T.statusText,
+        headers: W
+      });
+    if (!fe) Object.defineProperty(ce, "status", {
+      value: T.status
+    }), Object.defineProperty(ce, "ok", {
+      value: T.ok
+    });
+    return Object.defineProperty(ce, "url", {
+      value: T.url
+    }), Object.defineProperty(ce, "redirected", {
+      value: T.redirected
+    }), Object.defineProperty(ce, "type", {
+      value: T.type
+    }), ce
+  }
+}
+var qr = new Set(["jsonrpc", "id", "method"]);
+
+function Wr(e) {
+  if (e.includes('"id":') && e.includes('"method":')) return !1;
+  let r = S_e(e, qr);
+  return r?.get("jsonrpc") === '"2.0"' && r.has("method") !== r.has("id")
+}
+class At extends Error {
+  constructor(e) {
+    super(`wrote >${Math.round(e/1024/1024)}MB to stdout without a JSON-RPC message boundary. The server is likely writing logs or other non-protocol data to stdout instead of stderr. Disconnecting to prevent unbounded memory growth.`);
+    this.name = "StdoutOverflowError"
+  }
+}
+class Lo {
+  capBytes;
+  onOverflow;
+  chunks = [];
+  byteLength = 0;
+  overflowed = !1;
+  overflowThrown = !1;
+  constructor(e, r) {
+    this.capBytes = e;
+    this.onOverflow = r
+  }
+  append(e) {
+    if (this.overflowed) return;
+    if (this.byteLength + e.length > this.capBytes) {
+      this.chunks = [], this.byteLength = 0, this.overflowed = !0, this.onOverflow(new At(this.capBytes));
+      return
+    }
+    this.chunks.push(e), this.byteLength += e.length
+  }
+  readMessage() {
+    if (this.overflowed) {
+      if (this.overflowThrown) return null;
+      throw this.overflowThrown = !0, new At(this.capBytes)
+    }
+    if (this.chunks.length === 0) return null;
+    let e = this.chunks.at(-1),
+      r = e.indexOf(10);
+    if (r === -1) return null;
+    let n = this.chunks.length === 1 ? e : Buffer.concat(this.chunks),
+      s = n.length - e.length + r,
+      h = n.toString("utf8", 0, s).replace(/\r$/, ""),
+      y = n.subarray(s + 1);
+    return this.chunks = y.length > 0 ? [y] : [], this.byteLength = y.length, U2o(h)
+  }
+  clear() {
+    this.chunks = [], this.byteLength = 0
+  }
+}
+class yt extends oo {
+  overflowError;
+  constructor(e) {
+    super(e);
+    this._readBuffer = new Lo(Vq, (r) => {
+      this.overflowError = r, queueMicrotask(() => void this.close())
+    })
+  }
+  get serverProcess() {
+    return this._process
+  }
+  #e;
+  async start() {
+    ior();
+    let e = this.serverProcess !== void 0,
+      r = super.start(),
+      n = this.serverProcess;
+    if (!e && n?.pid !== void 0) this.#e = eYt(n);
+    if (await r, !e && n === void 0) this.#t(this.serverProcess)
+  }
+  handOffExitCleanup() {
+    this.#e?.(), this.#e = void 0
+  }
+  #t(e) {
+    if (e?.pid !== void 0) {
+      this.#e = eYt(e);
+      return
+    }
+    if (this.pid !== null) throw Error("BoundedStdioClientTransport: the SDK transport no longer keeps its child process on _process \u2014 " + "the exit-time reaper for a still-connecting stdio server cannot arm; re-verify BoundedStdioClientTransport.start() against the SDK transport internals.")
+  }
+}
+
+function It(e) {
+  return e.type === "claudeai-proxy" && e.stateless === !0 && XTn()
+}
+
+function Fo(e) {
+  if (!It(e) || e.type !== "claudeai-proxy") return;
+  if (e.cachedInitResponse == null) return;
+  let r = CRt.safeParse(e.cachedInitResponse);
+  if (!r.success) {
+    t(`[claudeai-mcp] cached_init_response for ${e.id} failed InitializeResult validation \u2014 falling back to real initialize`);
+    return
+  }
+  if (!Gle.includes(r.data.protocolVersion)) {
+    t(`[claudeai-mcp] cached_init_response for ${e.id} carries unsupported protocolVersion ${eNe(r.data.protocolVersion)} \u2014 falling back to real initialize`);
+    return
+  }
+  return r.data
+}
+var Gr = p(() => xt({
+  supportedVersions: C(o()),
+  capabilities: xt({}),
+  serverInfo: xt({
+    name: o(),
+    version: o()
+  }).optional()
+}));
+
+function No(e) {
+  if (!It(e) || e.type !== "claudeai-proxy") return;
+  if (e.discoverSupport === "legacy") return "method-not-found";
+  if (e.discoverSupport !== "supported") return;
+  if (e.cachedDiscoverResponse == null) return;
+  let r = Gr().safeParse(e.cachedDiscoverResponse);
+  if (!r.success) {
+    t(`[claudeai-mcp] cached_discover_response for ${e.id} failed DiscoverResult shape check \u2014 passing server/discover through`);
+    return
+  }
+  return {
+    result: r.data
+  }
+}
+
+function xo(e, r, n) {
+  let s = e.send.bind(e);
+  e.send = async (h, y) => {
+    if (r !== void 0 && bQ(h) && h.method === "initialize") {
+      let S = {
+        jsonrpc: "2.0",
+        id: h.id,
+        result: r
+      };
+      queueMicrotask(() => e.onmessage?.(S));
+      return
+    }
+    if (n !== void 0 && bQ(h) && h.method === "server/discover") {
+      let S = n === "method-not-found" ? {
+        jsonrpc: "2.0",
+        id: h.id,
+        error: {
+          code: ja.MethodNotFound,
+          message: "server/discover resolved locally as unsupported"
+        }
+      } : {
+        jsonrpc: "2.0",
+        id: h.id,
+        result: n.result
+      };
+      queueMicrotask(() => e.onmessage?.(S));
+      return
+    }
+    if (Jwn(h) && h.method === "notifications/initialized") return;
+    return s(h, y)
+  }
+}
+
+function Uo(e, r) {
+  let n = new URL(r).href;
+  return async (s, h) => {
+    if ((h?.method ?? "GET").toUpperCase() !== "GET") return e(s, h);
+    let y = typeof s === "object" && s !== null && "url" in s ? s.url : String(s);
+    if (new URL(y).href === n) return new Response(null, {
+      status: 405,
+      statusText: "Method Not Allowed"
+    });
+    return e(s, h)
+  }
+}
+import {
+  dirname as mn
+} from "path";
+var ut = import.meta.require("B:/~BUN/root/chunk-p8kzaqgq.js");
+
+function go(e) {
+  if (e instanceof EO) return !0;
+  if (e instanceof Ea) return !1;
+  let r = "code" in e ? e.code : void 0;
+  if (r === 404) return !(e instanceof oge && e.message.includes("Failed to open SSE stream"));
+  return r === 400 && /Server not initialized|No valid session ID|Mcp-Session-Id header is required/i.test(e.message)
+}
+
+function cr(e, r, n = zB()) {
+  if (!e) return e;
+  return yo(e, "Server instructions", r, n)
+}
+
+function yo(e, r, n, s = zB()) {
+  if (e.length <= s) return e;
+  if (n !== void 0) ae(n, `${r} truncated from ${e.length} to ${s} chars`);
+  return Q(e, s) + "\u2026 [truncated]"
+}
+var dr = ["ECONNRESET", "ETIMEDOUT", "EPIPE", "EHOSTUNREACH", "ECONNREFUSED"],
+  Xr = new Set([...dr, "ConnectionRefused", "ConnectionClosed"]),
+  Zr = /^Error POSTing to endpoint \(HTTP (\d+)\)/;
+
+function so(e) {
+  return typeof e === "number" && e >= 100 && e <= 599
+}
+
+function Qr(e) {
+  if (e.name === "AbortError") return !0;
+  let r = "code" in e ? e.code : void 0,
+    n = "status" in e ? e.status : void 0,
+    s = Zr.exec(e.message)?.[1];
+  if (so(n) || so(r) || typeof r === "number" && r < 0 || s !== void 0 && so(Number(s))) return !1;
+  if (typeof r === "string" && Xr.has(r)) return !0;
+  let h = e.message;
+  return dr.some((y) => h.includes(y)) || h.includes("Body Timeout Error") || /\bterminated\b/.test(h) || h.includes("SSE stream disconnected") || h.includes("Failed to reconnect SSE stream")
+}
+var en = 1e8,
+  $o = 20,
+  tn = [250, 500, 1000];
+
+function on(e) {
+  if (T_n(e)) return !1;
+  if (hit(e)) return !1;
+  if (e instanceof DOMException && e.name === "TimeoutError") return !1;
+  if (e instanceof gt) return !1;
+  if (e instanceof Error && !(e instanceof Ea) && "code" in e && typeof e.code === "number" && e.code >= 400 && e.code < 500) return !1;
+  if (e instanceof Ea) return e.code !== ja.RequestTimeout && e.code !== ja.MethodNotFound && e.code !== ja.InvalidRequest && e.code !== ja.InvalidParams;
+  return !0
+}
+async function Xt(e, r, n, s, h, y) {
+  let S = !1;
+  for (let T = 0;; T++) {
+    let M = [],
+      E = new Set,
+      I, O = 0,
+      j;
+    try {
+      do {
+        let D = await e.request({
+          method: s,
+          ...I && {
+            params: {
+              cursor: I
+            }
+          }
+        }, h, {
+          timeout: ed()
+        });
+        O++;
+        let N = y(D);
+        if (N) M.push(...N);
+        if (I) E.add(I);
+        if (I = D.nextCursor, I && E.has(I)) {
+          j = "repeated_cursor";
+          break
+        }
+        if (I && O >= $o) {
+          j = "capped";
+          break
+        }
+      } while (I);
+      if (j === "repeated_cursor") ae(r, `${s} returned a nextCursor already sent in this walk (page ${O}); stopping`);
+      if (j === "capped") ae(r, `${s} still returning nextCursor after ${$o} pages; stopping`);
+      if (O > 1) Bo(s, O, M.length, j ?? "complete");
+      return M
+    } catch (D) {
+      if (O > 0 && !S) S = !0, Bo(s, O, M.length, "error");
+      let N = tn[T];
+      if (N === void 0 || !on(D)) throw D;
+      ae(r, `${s} failed (${Ns(D,n)}); retrying in ${N}ms`), await J(N)
+    }
+  }
+}
+
+function Bo(e, r, n, s) {
+  l("tengu_mcp_list_paginated", {
+    method: f(e),
+    pageCount: r,
+    itemCount: n,
+    outcome: f(s)
+  })
+}
+
+function lr(e) {
+  let n = (e?.timeout !== void 0 && e.timeout >= 1000 ? e.timeout : void 0) ?? i.MCP_TOOL_TIMEOUT ?? en;
+  return Math.min(Math.max(n, 1000), Rc)
+}
+var rn = 300000,
+  sn = 1800000,
+  an = new Set(["sse-ide", "ws-ide", "sdk"]);
+
+function cn(e) {
+  let r = e?.type ?? "stdio";
+  if (an.has(r)) return 0;
+  let n = i.CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT ?? (r === "stdio" ? sn : rn);
+  if (n <= 0) return 0;
+  let s = e?.timeout !== void 0 && e.timeout >= 1000 ? e.timeout : 0;
+  return Math.min(Math.max(n, s, 1000), lr(e))
+}
+var dn = () => import.meta.require("B:/~BUN/root/chunk-w36pz1e1.js");
+var un = () => import.meta.require("B:/~BUN/root/chunk-0h5qzsz2.js"),
+  Ho = () => import.meta.require("B:/~BUN/root/chunk-mqm0p7rv.js"),
+  pn = () => import.meta.require("B:/~BUN/root/chunk-kjef7s64.js"),
+  Wl = "v1",
+  fn = 900000,
+  hn = 14400000,
+  gn = 90000,
+  yn = 60000;
+async function qo(e, r, n) {
+  let h = (await Wat(n))[e];
+  if (!h) return !1;
+  if (r.type === "claudeai-proxy" && h.id !== r.id) return !1;
+  if ((r.type === "stdio" || r.type === void 0) && r.pluginSource === void 0) return !1;
+  if ((r.type === "stdio" || r.type === void 0) && r.pluginSource !== void 0 && h.id !== S1(r)) return !1;
+  if ((r.type === "http" || r.type === "sse") && r.pluginSource !== void 0 && h.id !== void 0) return !1;
+  let y = r.type === "claudeai-proxy" || r.pluginSource !== void 0 && (r.type === "http" || r.type === "sse") && !pte(r),
+    S = h.ttlMs ?? (y ? hn : fn),
+    T = Date.now() - h.timestamp,
+    M = T > -yn && T < S,
+    I = M && hAe(r) ? h.lapsedCcrSignInKey : void 0;
+  return Do().restoreLapsed(I, mr(e, r)), M
+}
+async function ur(e, r) {
+  let n = await e.write(nYt(), _(r), {
+    publishDiscipline: "inPlace"
+  });
+  if (!n.ok) ae("auth-cache", `needs-auth cache v5 write failed: ${Ht(n.error)}`);
+  return n.ok
+}
+
+function Eo(e, r, n, s, h) {
+  let y = bt();
+  y.authCacheWriteChain = y.authCacheWriteChain.then(async () => {
+    let S = await Wat(s);
+    if (S[e] = {
+        timestamp: Date.now(),
+        ...r && {
+          id: r
+        },
+        ...n !== void 0 && {
+          ttlMs: n
+        },
+        ...h && {
+          lapsedCcrSignInKey: h
+        }
+      }, X() && s !== void 0) {
+      if (!await ur(s, S)) return
+    } else {
+      let T = Dn(),
+        M = jat();
+      await T.mkdir(mn(M)), await T.write(M, _(S))
+    }
+    rYt()
+  }).catch(() => {})
+}
+
+function Vt(e, r) {
+  let n = bt(),
+    s = n.authCacheWriteChain.then(async () => {
+      let h = await Wat(r);
+      if (!(e in h)) return;
+      if (delete h[e], X() && r !== void 0) {
+        if (!await ur(r, h)) return
+      } else await Dn().write(jat(), _(h));
+      rYt()
+    }).catch(() => {});
+  return n.authCacheWriteChain = s, s
+}
+
+function eu(e = new Set, r = !0) {
+  if (!Vd()) return;
+  if (r) Ukn();
+  $kn();
+  let n = (s) => {
+    if (s) XFr(s, e)
+  };
+  if (!bt().holdStaleReauthEntryForTest) Do().reauthInFlight.clear();
+  Do().lapsedCcrSignIns.clear(), n(Ze.cache), n(Dt.cache), n(Jt.cache), n(Yt.cache), n(Ft.cache)
+}
+
+function rt(e, r) {
+  let n = YC(e),
+    s = r ? {
+      mcpServerKeyHash: qL(r)
+    } : {};
+  if (n) return {
+    mcpServerBaseUrl: n,
+    ...s
+  };
+  return s
+}
+
+function io(e, r, n) {
+  let s = mf(),
+    h = r.pluginSource ? uc(r.pluginSource) : void 0,
+    y = h && (Sce(L9(h.name, h.marketplace, null)) || s);
+  da("mcp_server_connection", {
+    status: n.status,
+    transport_type: r.type ?? "stdio",
+    server_scope: r.scope,
+    duration_ms: String(Math.round(n.durationMs)),
+    is_plugin: h !== void 0,
+    ...h && {
+      plugin_id_hash: GP(h.name, h.marketplace),
+      "plugin.name": y ? h.name : iT
+    },
+    ...n.errorCode && {
+      error_code: String(Er(n.errorCode))
+    },
+    ...s && {
+      server_name: e,
+      ...n.error && {
+        error: n.error
+      }
+    }
+  })
+}
+async function _o(e, r, n, s, h, y, S) {
+  pt();
+  let T = s instanceof iP,
+    M = T ? s.issues[0] : void 0,
+    E = M ? `Server OAuth metadata invalid: ${M.path.join(".")||"(root)"} \u2014 ${M.message}` : void 0;
+  l("tengu_mcp_server_needs_auth", {
+    transportType: f(n),
+    ...T && {
+      cause: b("discovery_schema")
+    },
+    ...rt(r, e)
+  }), ae(e, `Authentication required for ${{sse:"SSE",http:"HTTP","claudeai-proxy":"claude.ai proxy"}[n]} server`);
+  let O = h && (r.type === "http" || r.type === "sse") && await Met(e, r);
+  if (y === void 0 || fI(y)) Eo(e, r.type === "claudeai-proxy" ? r.id : void 0, O ? gn : void 0, S, Do().lapsedSignInKey(mr(e, r)));
+  return await pr(e, r, y), c("mcp_connect", "mcp_connect_needs_auth"), {
+    name: e,
+    type: "needs-auth",
+    config: r,
+    error: E
+  }
+}
+async function pr(e, r, n) {
+  let s = n === void 0 || fI(n);
+  if (Y0())
+    if (s) await tre(aYt(e, r));
+    else ae(e, "Discovery cache 401/403 purge skipped: identity changed since this connect round started (the current entry belongs to the new principal)")
+}
+var _n = {
+  AUTH_HEADER_REJECTED: {
+    severity: "bad",
+    featureErrorCode: "mcp_connect_auth_header_rejected"
+  },
+  HEADERS_HELPER_AUTH_REJECTED: {
+    severity: "bad",
+    featureErrorCode: "mcp_connect_headers_helper_auth_rejected"
+  },
+  CLI_OWNED_BEARER_REJECTED: {
+    severity: "bad",
+    featureErrorCode: "mcp_connect_cli_owned_bearer_rejected"
+  },
+  FIRST_PARTY_AUTH_REJECTED: {
+    severity: "sad",
+    featureErrorCode: "mcp_connect_first_party_auth_rejected"
+  }
+};
+
+function Wt({
+  name: e,
+  serverRef: r,
+  transportType: n,
+  errorCode: s,
+  message: h,
+  displayDetail: y
+}) {
+  l("tengu_mcp_server_connection_failed", {
+    transportType: f(n),
+    errorCode: f(s),
+    sdkGeneration: f(EL()),
+    ...rt(r, e),
+    ...Wye(r)
+  });
+  let {
+    severity: S,
+    featureErrorCode: T
+  } = _n[s];
+  if (S === "bad") m("mcp_connect", T);
+  else c("mcp_connect", T);
+  return Gs(e, h), {
+    name: e,
+    type: "failed",
+    config: r,
+    error: h,
+    ...y !== void 0 && {
+      displayDetail: y
+    },
+    errorCode: s
+  }
+}
+
+function Cn(e, r, n, s, h) {
+  let y = "api.anthropic.com";
+  try {
+    if ("url" in n) y = new URL(n.url).host
+  } catch {}
+  let S = `HTTP ${h??401}`,
+    T = gr(n),
+    M;
+  switch (e) {
+    case "design_credential":
+      M = h === 403 ? `${y} rejected your /design-login credential (HTTP 403). Check that your account has access to Claude Design, or run /design-login to re-authorize it and retry.` : `${y} rejected your /design-login credential (${S}). Run /design-login to re-authorize it and retry.`;
+      break;
+    case "none":
+      M = `${y} needs a claude.ai sign-in and Claude Code had no usable credential to send (${S}). Run ${T?"/design-login":"/login"} and retry.`;
+      break;
+    case "design_scoped_login":
+    case "login": {
+      if (h === 403 && T) M = e === "design_scoped_login" ? `${y} rejected your claude.ai login for Claude Design (HTTP 403) even though that login already includes Claude Design permissions, so this is most likely an account or project access problem. Check that your account has access to Claude Design; if it does, run /design-login and retry.` : `${y} rejected your claude.ai login for Claude Design (HTTP 403), most likely because a /login token carries no Claude Design access. Run /design-login and retry, or check that your account has access to Claude Design.`;
+      else M = h === 403 ? `${y} rejected your claude.ai login (HTTP 403). Check that your account has access to this server. If it does, your ` + `token may be missing a scope \u2014 run ${"/login"} and retry.` : `${y} rejected your claude.ai login (${S}). Run /login and retry.`;
+      break
+    }
+    default:
+      return e
+  }
+  return Wt({
+    name: r,
+    serverRef: n,
+    transportType: s,
+    errorCode: "FIRST_PARTY_AUTH_REJECTED",
+    message: M
+  })
+}
+
+function fr(e, r, n) {
+  return e instanceof j0 || e instanceof iP && n || r === 401 || r === 403
+}
+async function zo({
+  name: e,
+  serverRef: r,
+  transportType: n,
+  error: s,
+  statusCode: h,
+  sawAuthChallenge: y,
+  hasUserAuthHeader: S,
+  helperMintsAuthHeader: T,
+  cliOwnedBearer: M,
+  useFirstPartyAuth: E,
+  firstPartyBearer: I,
+  authProvider: O,
+  roundEpoch: j,
+  storageV5: D
+}) {
+  if (await jor(e, r, O), !fr(s, h, y)) return;
+  if (S) {
+    let me = Ev(Cu(e, r, s.message));
+    return Wt({
+      name: e,
+      serverRef: r,
+      transportType: n,
+      errorCode: "AUTH_HEADER_REJECTED",
+      message: `Server rejected the configured Authorization header (HTTP ${h??401}). ` + "Check that the token is valid for this MCP endpoint \u2014 OAuth fallback is " + "disabled when headers.Authorization is set.",
+      ...me !== "" && {
+        displayDetail: `Error detail: ${me}`
+      }
+    })
+  }
+  if (T) {
+    let me = Ev(Cu(e, r, s.message));
+    return Wt({
+      name: e,
+      serverRef: r,
+      transportType: n,
+      errorCode: "HEADERS_HELPER_AUTH_REJECTED",
+      message: `Server rejected the Authorization header minted by the configured headersHelper (HTTP ${h??401}). ` + "Check that the helper command returns a valid credential for this MCP endpoint \u2014 OAuth fallback is " + "disabled when the helper supplies Authorization.",
+      ...me !== "" && {
+        displayDetail: `Error detail: ${me}`
+      }
+    })
+  }
+  if (M) return Wt({
+    name: e,
+    serverRef: r,
+    transportType: n,
+    errorCode: "CLI_OWNED_BEARER_REJECTED",
+    message: `Server rejected the session credential (HTTP ${h??401}). It will be retried when the session credential is refreshed.`
+  });
+  if (E) return Cn(I ?? "none", e, r, n, h);
+  let N = s instanceof j0 || h === 401,
+    ne = await Wor({
+      name: e,
+      serverRef: r,
+      authProvider: O,
+      isRefreshPath401: N,
+      needsAuth: () => _o(e, r, n, s, N, j, D)
+    });
+  if (ne !== void 0) return await pr(e, r, j), ne;
+  return _o(e, r, n, s, N, j, D)
+}
+
+function Sn(e, r, n) {
+  return e = Bat(e), async (s, h) => {
+    let y = new Headers(h?.headers);
+    if (!y.has("Authorization")) {
+      let I = zd();
+      if (I) Ng().record(I), y.set("Authorization", `Bearer ${I}`)
+    }
+    let S = oUt();
+    if (y.delete(gin), S) y.set(gin, S);
+    if (y.delete(Vo), r?.toolUseId !== void 0) {
+      let I = Wo(h);
+      if (I === "handshake" || I === "listing" && r.withListings) y.set(Vo, r.toolUseId)
+    }
+    let T = h?.redirect === "error" ? "error" : "manual",
+      M = await e(s, {
+        ...h,
+        headers: y,
+        redirect: T
+      }),
+      E = Do();
+    if (E.noteToolPortMarks(s, M), n !== void 0 && (M.status === 401 || E.lapsedCcrSignIns.has(n)) && Wo(h) !== void 0) E.noteCcrDialAnswer(n, M);
+    return M
+  }
+}
+
+function Wo(e) {
+  if (e?.method?.toUpperCase() !== "POST" || typeof e.body !== "string") return;
+  let r = u({
+    method: o()
+  }).safeParse(et(e.body, !1)).data?.method;
+  if (r === "initialize" || r === "notifications/initialized") return "handshake";
+  return r === "tools/list" ? "listing" : void 0
+}
+var Vo = "X-CCR-Dial-Tool-Use-Id",
+  Tn = /^toolu_[A-Za-z0-9_-]{1,64}$/;
+
+function wn(e, r) {
+  let n = async (...[s, h]) => {
+    let y = {
+      method: (h?.method ?? "GET").toUpperCase(),
+      body: h?.body
+    };
+    await NDr(r, y);
+    let S = new Headers(h?.headers),
+      T = null,
+      M = !1;
+    if (!S.has("Authorization")) {
+      let O = await LDr(r);
+      if (O) Ng().record(O), S.set("Authorization", `Bearer ${O}`), T = kn(O);
+      else {
+        M = !0;
+        let j = DDr(r);
+        if (j !== void 0) throw new R(j, "CLI-owned MCP request not sent: its bearer was withheld")
+      }
+    }
+    let E = {};
+    for (let [O, j] of Object.entries(FDr(r, y)))
+      if (!S.has(O) && O.toLowerCase() !== "authorization" && !(M && ian(r, O))) S.set(O, j), E[O] = j;
+    let I = await e(s, {
+      ...h,
+      headers: S,
+      redirect: "error"
+    });
+    return HDr(r, {
+      method: y.method,
+      status: I.status,
+      headers: I.headers,
+      requestHeaders: {
+        get: (O) => O.toLowerCase() === "authorization" || ian(r, O) ? null : S.get(O)
+      },
+      bearerFingerprint: T
+    }), {
+      response: I,
+      owned: E
+    }
+  };
+  return async (s, h) => {
+    let {
+      response: y,
+      owned: S
+    } = await n(s, h);
+    if (!await aan(r, y, S)) return y;
+    await y.body?.cancel().catch(() => {});
+    let T = await n(s, h);
+    return aan(r, T.response, T.owned), T.response
+  }
+}
+class Co extends Error {
+  code = "CLAUDEAI_BEARER_REJECTED";
+  reasonCode = "claudeai_bearer_rejected";
+  constructor() {
+    super("claude.ai rejected the session token \u2014 it may lack connector scopes or be invalid. Run /login.");
+    this.name = "ClaudeAiProxyBearerRejectedError"
+  }
+}
+
+function En(e, r) {
+  return e = Bat(e), async (n, s) => {
+    let h = async () => {
+      await ul({
+        credentials: r
+      });
+      let O = X() && r !== void 0 ? await Kl(r) : Ln();
+      if (!O) throw Error("No claude.ai OAuth token available");
+      let j = new Headers(s?.headers);
+      Ng().record(O.accessToken), j.set("Authorization", `Bearer ${O.accessToken}`);
+      let D = s?.redirect === "error" ? "error" : "manual";
+      return {
+        response: await e(n, {
+          ...s,
+          headers: j,
+          redirect: D
+        }),
+        sentToken: O.accessToken
+      }
+    };
+    async function y(O) {
+      if (O.status >= 400 && O.headers.get("content-type")?.includes("text/event-stream")) {
+        let j = await O.text(),
+          D = j.split(`
+`).find((N) => N.startsWith("data: "));
+        return new Response(D ? D.slice(6) : j, {
+          status: O.status,
+          statusText: O.statusText,
+          headers: O.headers
+        })
+      }
+      return O
+    }
+    let {
+      response: S,
+      sentToken: T
+    } = await h();
+    if (S.status !== 401) return y(S);
+    let M = S.headers.get("X-Mcp-Error-Code") ?? void 0;
+    if (M) return l("tengu_mcp_claudeai_proxy_401", {
+      tokenChanged: !1,
+      proxyErrorCode: A7(M)
+    }), S;
+    let E = await fC(T, r).catch(() => !1);
+    if (l("tengu_mcp_claudeai_proxy_401", {
+        tokenChanged: E
+      }), !E) {
+      let O = X() && r !== void 0 ? await Kbe(r) : Ln()?.accessToken;
+      if (!O || O === T) throw new Co
+    }
+    let I = (await h()).response;
+    if (I.status === 401 && !I.headers.get("X-Mcp-Error-Code")) throw new Co;
+    return y(I)
+  }
+}
+async function vn(e, r) {
+  if (JL(e)) {
+    let s = await Tsr()?.(r);
+    if (s?.ok) {
+      if (s.expanded) Csr("Added user:design:read and user:design:write to your claude.ai login (for the Design MCP connector)."), l("tengu_mcp_first_party_scope_expanded", {
+        pathPrefix: b("/v1/design/")
+      });
+      return {
+        accessToken: s.accessToken,
+        bearer: s.bearer
+      }
+    }
+  }
+  await ul({
+    credentials: r
+  });
+  let n = X() && r !== void 0 ? await Kl(r) : Ln();
+  if (!n?.accessToken) return;
+  return {
+    accessToken: n.accessToken,
+    bearer: n.scopes?.includes("user:design:read") ? "design_scoped_login" : "login"
+  }
+}
+async function Pn(e) {
+  let r = alt();
+  if (r === null) return null;
+  let n;
+  try {
+    n = await e.clone().json()
+  } catch {
+    return null
+  }
+  if (n == null || typeof n !== "object" || n.error !== "needs_consent") return null;
+  let s = n.consent;
+  return r.isConsentBit(s) ? s : null
+}
+
+function Mn(e, r, n, s) {
+  if (!r || !A3e.has(n)) return;
+  let h = s.project_id;
+  if (typeof h === "string" && h.length > 0) x3e(e, h), nAt(e, h), ilt(e, h), rAt(e, h)
+}
+var hr = new Set(["write_files", "create_support_js", "copy_files"]);
+
+function Rn(e, r, n) {
+  if (!e || !hr.has(r)) return null;
+  let s = n?.plan_token;
+  if (typeof s === "string" && s.length > 0) return null;
+  return {
+    behavior: "deny",
+    message: `${r}: writing without a plan_token is available only through the native Claude Design tool \u2014 call finalize_plan with writes (and deletes if needed), then pass the returned plan_token.`,
+    decisionReason: {
+      type: "safetyCheck",
+      reason: "tokenless design writes are native-tool-only \u2014 this connector surface has no reserved-path or grant-approval flow",
+      classifierApprovable: !1
+    }
+  }
+}
+var An = new Set([...hr, "finalize_plan", "delete_files", ...A3e]);
+
+function ao(e, r) {
+  return e && An.has(r)
+}
+
+function In(e, r, n) {
+  return {
+    behavior: "ask",
+    message: e,
+    updatedInput: {
+      ...r,
+      __consentNonce: n
+    },
+    localDisplayOnly: !0,
+    decisionReason: {
+      type: "safetyCheck",
+      reason: "design agent consent \u2014 approving records a server-side grant for Claude agents to write your design projects",
+      classifierApprovable: !1
+    }
+  }
+}
+
+function gr(e) {
+  return (e.type === "sse" || e.type === "http") && JL(e.url) && !RU(e)
+}
+
+function yr(e) {
+  let r = se(e);
+  return !e.options.isNonInteractiveSession && r.mode !== "bypassPermissions" && !(r.mode === "plan" && r.isBypassPermissionsModeAvailable)
+}
+
+function On(e) {
+  let r = se(e);
+  return r.mode !== "bypassPermissions" && r.mode !== "dontAsk" && !(r.mode === "plan" && r.isBypassPermissionsModeAvailable) && !r.shouldAvoidPermissionPrompts
+}
+var Nn = 100;
+
+function xn(e, r, n) {
+  let s = bt().firstPartyDesignConsentAsks,
+    h = s.get(e),
+    y = h !== void 0 && h.bit === r,
+    S = y ? h.nonce : Kr();
+  s.delete(e), s.set(e, {
+    bit: r,
+    nonce: S,
+    askReachesUser: y ? h.askReachesUser && n : n
+  });
+  while (s.size > Nn) {
+    let T = s.keys().next().value;
+    if (T === void 0) break;
+    s.delete(T)
+  }
+  return S
+}
+
+function Un(e, r) {
+  if (e === void 0) return null;
+  let n = bt().firstPartyDesignConsentAsks,
+    s = n.get(e) ?? null;
+  if (n.delete(e), s === null || r === void 0 || s.nonce !== r) return null;
+  return {
+    bit: s.bit,
+    askReachesUser: s.askReachesUser
+  }
+}
+
+function Bn(e, r) {
+  let {
+    designSession: n,
+    approvedConsentBit: s,
+    consentAskReachesUser: h,
+    credentials: y
+  } = r;
+  return async (S) => {
+    let T = alt();
+    try {
+      let M = await e(S);
+      if (s !== null && !S.aborted) T?.seedDesignConsentBit(n, s, !0);
+      return M
+    } catch (M) {
+      if (!(M instanceof O3e) || !T) throw M;
+      let E = M.consent;
+      if (E !== s) throw T.seedDesignConsentBit(n, E, !1), new R(`${T.consentPromptFor(E)} The user hasn't granted this yet \u2014 ask them to retry (the prompt will show on the next call) or run /design consent.`, "first-party design MCP needs_consent (not shown)");
+      if (!h) throw T.seedDesignConsentBit(n, E, !1), new R(`${T.consentPromptFor(E)} The user hasn't granted this \u2014 run /design consent to grant it (it can't be approved automatically in this permission mode).`, "first-party design MCP needs_consent (no prompt)");
+      return await T.postDesignConsent(n, E, y), e(S)
+    }
+  }
+}
+
+function co(e, r, n) {
+  return e = Bat(e), async (s, h) => {
+    let y = new Headers(h?.headers),
+      S = h?.redirect === "error" ? "error" : "manual";
+    if (y.has("Authorization") || !ej(s) || !Fn()) return e(s, {
+      ...h,
+      redirect: S
+    });
+    let T = async () => {
+      let N = await vn(s, r);
+      if (n.last = N?.bearer ?? "none", !N) return {
+        response: await e(s, {
+          ...h,
+          redirect: S
+        }),
+        sentToken: void 0
+      };
+      let ne = N.accessToken;
+      Ng().record(ne);
+      let me = {
+        ...Object.fromEntries(new Headers(h?.headers)),
+        Authorization: `Bearer ${ne}`
+      };
+      return {
+        response: await e(s, {
+          ...h,
+          headers: me,
+          redirect: S
+        }),
+        sentToken: ne
+      }
+    }, M = async (N) => {
+      if (N.response.status === 403 && N.sentToken && JL(s)) {
+        let ne = await Pn(N.response);
+        if (ne !== null) throw new O3e(ne)
+      }
+    }, E = await T();
+    await M(E);
+    let {
+      response: I,
+      sentToken: O
+    } = E;
+    if (I.status !== 401 || !O) return I;
+    if (!await fC(O, r).catch(() => !1)) {
+      let N = X() && r !== void 0 ? await Kbe(r) : Ln()?.accessToken;
+      if (!N || N === O) return I
+    }
+    let D;
+    try {
+      D = await T()
+    } catch {
+      return I
+    }
+    return await M(D), D.response
+  }
+}
+
+function Hn(e, r, n) {
+  let s = new Headers({
+    "User-Agent": sJ(),
+    "Accept-Encoding": "identity",
+    ...r
+  });
+  new Headers(e).forEach((h, y) => s.set(y, h));
+  for (let [h, y] of Object.entries(n)) s.set(h, y);
+  return s.set("Accept", "text/event-stream"), s
+}
+var jn = new Set(["image/jpeg", "image/png", "image/gif", "image/webp"]);
+
+function Go(e) {
+  if (!e) return !1;
+  let r = tt(e, ";").trim().toLowerCase();
+  return jn.has(r === "image/jpg" ? "image/jpeg" : r)
+}
+var Ko = 60000;
+
+function _r(e) {
+  let n = (e?.timeout !== void 0 && e.timeout >= 1000 ? e.timeout : void 0) ?? i.MCP_TOOL_TIMEOUT;
+  return n !== void 0 ? Math.min(Math.max(n, Ko), Rc) : Ko
+}
+
+function Cr(e) {
+  return Math.max(_r(e), ed())
+}
+var qn = "application/json, text/event-stream";
+
+function lo(e) {
+  return async (r, n) => {
+    try {
+      return await e(r, n)
+    } catch (s) {
+      BB(s, r)
+    }
+  }
+}
+
+function zt(e, r) {
+  let n = Cr(r);
+  return async (s, h) => {
+    if ((h?.method ?? "GET").toUpperCase() === "GET") return e(s, h);
+    let S = new Headers(h?.headers);
+    if (!S.has("accept")) S.set("accept", qn);
+    if (sbt()) {
+      let I = rze();
+      if (I && !S.has("traceparent")) S.set("traceparent", I)
+    }
+    let T = new AbortController,
+      M = setTimeout((I) => I.abort(new DOMException("The operation timed out.", "TimeoutError")), TDn(n, h?.body), T);
+    M.unref?.();
+    let E = h?.signal ? AbortSignal.any([h.signal, T.signal]) : T.signal;
+    try {
+      return await e(s, {
+        ...h,
+        headers: S,
+        signal: E,
+        ..._r(r) > 300000 && {
+          timeout: !1
+        }
+      })
+    } finally {
+      clearTimeout(M)
+    }
+  }
+}
+
+function zn() {
+  return i.MCP_SERVER_CONNECTION_BATCH_SIZE ?? 3
+}
+
+function Yo() {
+  return i.MCP_REMOTE_SERVER_CONNECTION_BATCH_SIZE ?? 20
+}
+
+function Jo(e) {
+  return !e.type || e.type === "stdio" || e.type === "sdk"
+}
+var Wn = ["mcp__ide__executeCode", "mcp__ide__getDiagnostics"];
+
+function Sr(e) {
+  return !e.startsWith("mcp__ide__") || Wn.includes(e)
+}
+
+function Vn(e) {
+  return Sr(e.name)
+}
+
+function vo(e, r) {
+  let n = v(e, []);
+  if (!Array.isArray(n) || n.length === 0) return !1;
+  if (n.includes("*")) return !0;
+  if (!("url" in r) || typeof r.url !== "string") return !1;
+  try {
+    let s = new URL(r.url).hostname.toLowerCase();
+    return n.some((h) => {
+      if (typeof h !== "string" || h === "") return !1;
+      let y = h.toLowerCase();
+      return s === y || s.endsWith(`.${y}`)
+    })
+  } catch {
+    return !1
+  }
+}
+
+function Gn(e) {
+  return vo("tengu_mcp_normalize_root_combinators", e)
+}
+
+function Kn(e) {
+  return vo("tengu_mcp_drop_invalid_tool_schemas", e)
+}
+
+function tu(e) {
+  if (e) throw Error("setHoldStaleReauthEntryForTest is test-only");
+  bt().holdStaleReauthEntryForTest = e
+}
+
+function ou(e) {
+  bt().reauthDecisionSinkForTest = e
+}
+
+function Yn(e = !1) {
+  let r = [];
+  if (e) try {
+    r = [$He()]
+  } catch (S) {
+    t(`MCP: staging root unavailable, omitted from roots/list: ${d(S)}`)
+  }
+  let n = new Set,
+    s = [],
+    h = v0(),
+    y = h ? h.directory?.path ?? null : Vs();
+  for (let S of [...y === null ? [] : [y], ...aue(), ...r]) {
+    let T = Jr(S).href;
+    if (n.has(T)) continue;
+    n.add(T), s.push({
+      uri: T
+    })
+  }
+  return {
+    roots: s
+  }
+}
+var Jn = new Set(["documents"]);
+
+function Zn(e) {
+  if (x() === "windows") return !1;
+  if (!e.pluginSource) return !1;
+  try {
+    return Jn.has($n(e.pluginSource).name.toLowerCase())
+  } catch {
+    return !1
+  }
+}
+
+function ru() {
+  for (let e of Do().liveClients) e.sendRootsListChanged().catch((r) => {
+    t(`MCP: failed to send roots/list_changed: ${G8(r)}`)
+  })
+}
+var Qn = [
+    ["ECONNRESET", "Connection reset - server may have crashed or restarted"],
+    ["ETIMEDOUT", "Connection timeout - network issue or server unresponsive"],
+    ["ECONNREFUSED", "Connection refused - server may be down"],
+    ["EPIPE", "Broken pipe - server closed connection unexpectedly"],
+    ["EHOSTUNREACH", "Host unreachable - network connectivity issue"],
+    ["ESRCH", "Process not found - stdio server process terminated"],
+    ["spawn", "Failed to spawn process - check command and permissions"]
+  ],
+  Xo = "Error POSTing to endpoint: ";
+
+function ts(e) {
+  if (!(e instanceof oge)) return !1;
+  let r = e.code ?? 0;
+  if (!(r >= 400 && r < 500) || r === 401 || r === 403 || r === 429) return !1;
+  let n = e.message.indexOf(Xo);
+  if (n === -1) return !0;
+  return !os(e.message.slice(n + Xo.length))
+}
+
+function os(e) {
+  let r = e.split(/\r?\n/).find((s) => s.startsWith("data:")),
+    n = et(r === void 0 ? e : r.slice(5), !1);
+  return r1e(typeof n === "object" && n !== null && "id" in n && n.id === null ? {
+    ...n,
+    id: void 0
+  } : n)
+}
+var rs = 5000;
+
+function Tr(e) {
+  let r = new R(e, "MCP connection timeout");
+  if (v("tengu_mcp_connect_timeout_retry", !0)) return Object.assign(r, {
+    code: "CONNECT_TIMEOUT"
+  });
+  return r
+}
+
+function Zo(e, r, n) {
+  if ((r.type === "stdio" || r.type === void 0) && r.pluginSource !== void 0) Eo(e, S1(r), void 0, n)
+}
+var Ze = Qir(async (e, r, n, s, h, y, S) => {
+  Po();
+  let T = Date.now(),
+    M = Q4t(S?.clock ?? ga),
+    E, I = zr(),
+    O = aue(),
+    j = r.type ?? "stdio";
+  if (V("info", "mcp_connect_starting", {
+      transport: j
+    }), t0n(r)) {
+    let W = r.configError ?? "No URL configured for this server";
+    return ae(e, W), V("info", "mcp_connect_skipped", {
+      transport: j,
+      reason: "unconfigured"
+    }), {
+      name: e,
+      type: "failed",
+      config: r,
+      error: W,
+      errorCode: "UNCONFIGURED"
+    }
+  } {
+    let W = r.configError;
+    if (!W && "url" in r) try {
+      new URL(r.url)
+    } catch {
+      W = "'url' is not a valid URL. Update the server's config and reconnect."
+    }
+    if (W) return l("tengu_mcp_server_config_invalid", {
+      transportType: f(r.type ?? "stdio"),
+      field: b("url"),
+      source: b(r.configError ? "loader" : "connect")
+    }), ae(e, W), Gs(e, W), V("warn", "mcp_connect_failed", {
+      transport: j,
+      duration_ms: Date.now() - T,
+      reason: "invalid_config"
+    }), m("mcp_connect", "mcp_connect_invalid_config"), {
+      name: e,
+      type: "failed",
+      config: r,
+      error: W,
+      errorCode: "INVALID_CONFIG"
+    }
+  }
+  let D, N, ne = !1,
+    me = !1,
+    K, G;
+  try {
+    let B = function() {
+        let w = Date.now();
+        for (let A of Me.activeCallWatchdogs)
+          if (A.armedAt === 0) A.armedAt = w
+      },
+      W = xSe(e, r),
+      fe = zet(r),
+      ce = (r.type === "sse" || r.type === "http") && RU(r),
+      ye = r.type === "sse" || r.type === "http" || r.type === "ws" ? await iYt(e, r) : {},
+      ue = (r.type === "sse" || r.type === "http") && !!r.headersHelper && hjn(ye),
+      pe = (r.type === "sse" || r.type === "http") && !ce && !ue && !fe && !W && ej(r.url) && Fn() && (!!(X() && h !== void 0 ? await Kl(h) : Ln())?.accessToken || JL(r.url) && await qle(h));
+    if (pe) l("tengu_mcp_first_party_auto_auth", {
+      transportType: f(r.type),
+      ...rt(r, e)
+    });
+    let he = {};
+    if (r.type === "sse") {
+      kIe(r.headers, ye);
+      let w = ce || ue || pe || fe ? void 0 : new A_n(e, r);
+      N = w;
+      let A = await Kle(r.url),
+        H = Et(lo(ERt(void 0, A)));
+      if (w) H = z7n(H, w);
+      if (H = zt(H, r), pe) H = co(H, h, he);
+      let te = {
+          authProvider: w,
+          fetch: H,
+          requestInit: {
+            ...A,
+            headers: {
+              "User-Agent": sJ(),
+              "Accept-Encoding": "identity",
+              ...ye
+            }
+          }
+        },
+        Z = lo(async (le, ie) => {
+          let Se = {},
+            ke = await w?.tokens();
+          if (ke) Se.Authorization = `Bearer ${ke.access_token}`;
+          let Ne = await Kle(String(le));
+          return fetch(le, {
+            ...ie,
+            ...Ne,
+            headers: Hn(ie?.headers, Se, ye)
+          })
+        });
+      te.eventSourceInit = {
+        fetch: Et(w ? z7n(Z, w) : pe ? co(Z, h, he) : Z)
+      }, K = new Tt(new URL(r.url), te), ae(e, "SSE transport initialized, awaiting connection")
+    } else if (r.type === "sse-ide") {
+      ae(e, `Setting up SSE-IDE transport to ${Mo(r.url)}`);
+      let w = {
+        fetch: Et(globalThis.fetch),
+        requestInit: {
+          headers: {
+            "User-Agent": sJ(),
+            "Accept-Encoding": "identity"
+          }
+        }
+      };
+      K = new Tt(new URL(r.url), w)
+    } else if (r.type === "ws-ide") {
+      let w = vC(r.url);
+      Ng().record(r.authToken);
+      let A = {
+          "User-Agent": sJ(),
+          ...r.authToken && {
+            "X-Claude-Code-Ide-Authorization": r.authToken
+          }
+        },
+        H = new globalThis.WebSocket(r.url, {
+          protocols: ["mcp"],
+          headers: A,
+          proxy: BR(r.url),
+          tls: w || void 0
+        });
+      K = new URt(H, (te) => eW.parse(te))
+    } else if (r.type === "ws") {
+      kIe(r.headers, ye), ae(e, `Initializing WebSocket transport to ${Mo(r.url)}`);
+      let w = vC(r.url),
+        A = W ? zd() : null;
+      Ng().record(A ?? void 0);
+      let H = {
+          "User-Agent": sJ(),
+          ...A && {
+            Authorization: `Bearer ${A}`
+          },
+          ...ye
+        },
+        te = Tve(H);
+      ae(e, `WebSocket transport options: ${_({url:Mo(r.url),headers:te,hasSessionAuth:!!A})}`);
+      let re = new globalThis.WebSocket(r.url, {
+        protocols: ["mcp"],
+        headers: H,
+        proxy: BR(r.url),
+        tls: w || void 0
+      });
+      K = new URt(re, (Z) => eW.parse(Z))
+    } else if (r.type === "http") {
+      if (kIe(r.headers, ye), Ont()) ae(e, `Initializing HTTP transport to ${Mo(r.url)}`), ae(e, `Node version: ${process.version}, Platform: win32`), ae(e, `Environment: ${_({NODE_OPTIONS:i.NODE_OPTIONS||"not set",UV_THREADPOOL_SIZE:i.UV_THREADPOOL_SIZE||"default",HTTP_PROXY:Lw(i.HTTP_PROXY||"not set"),HTTPS_PROXY:Lw(i.HTTPS_PROXY||"not set"),NO_PROXY:i.NO_PROXY||"not set"})}`);
+      let w = ce || ue || pe || fe || W ? void 0 : new A_n(e, r);
+      N = w;
+      let A = await Kle(r.url),
+        H = Et(lo(ERt(W ? zRt : void 0, A)), {
+          refusesCodings: eKe(r.url)
+        });
+      if (w) H = z7n(H, w);
+      if (H = zt(H, r), pe) H = co(H, h, he);
+      if (W) H = dor(Sn(H, y, mr(e, r)), e, r.url);
+      if (H = KIr(H, r), eKe(r.url)) {
+        let re = H;
+        H = (Z, le) => {
+          let ie = le?.method === "POST" ? B5e()?.mark("own") : void 0;
+          return re(Z, le).finally(ie)
+        }
+      }
+      if (fe) H = wn(H, r);
+      let te = {
+        authProvider: w,
+        fetch: H,
+        requestInit: {
+          ...A,
+          headers: {
+            "User-Agent": sJ(),
+            "Accept-Encoding": "identity",
+            ...ye
+          }
+        }
+      };
+      if (Ont()) {
+        let re = te.requestInit?.headers ? Tve(te.requestInit.headers) : void 0;
+        ae(e, `HTTP transport options: ${_({url:Mo(r.url),headers:re,hasAuthProvider:!!w,timeoutMs:Cr(r)})}`)
+      }
+      if (K = new err(new URL(r.url), te), ae(e, "HTTP transport created successfully"), !hAe(r) && !ej(r.url) && !fe) G = ({
+        postMethodNotAllowed: re,
+        dialSignal: Z,
+        dialConnected: le
+      }) => {
+        let ie = (je) => le() ? je : {
+            ...je,
+            signal: je?.signal ? AbortSignal.any([je.signal, Z]) : Z
+          },
+          Se = !1,
+          ke = async (je, Qe) => {
+            let nt = await H(je, ie(Qe));
+            if (!re && !Se) {
+              if (nt.status === 401) throw await nt.body?.cancel().catch(() => {}), Error("legacy HTTP+SSE stream GET answered 401 after the initialize POST was not a 405; not starting OAuth against this URL");
+              Se = nt.ok
+            }
+            return nt
+          }, Ne = (je, Qe) => Qe?.body instanceof URLSearchParams && Qe.body.has("grant_type") ? H(je, Qe) : H(je, ie(Qe));
+        return new Tt(new URL(r.url), {
+          authProvider: w,
+          fetch: Ne,
+          eventSourceInit: {
+            fetch: ke
+          },
+          requestInit: te.requestInit
+        })
+      }
+    } else if (r.type === "sdk") throw Error("SDK servers should be handled in print.ts");
+    else if (r.type === "claudeai-proxy") {
+      if (!Fn()) throw Error("claude.ai MCP proxy is not available on third-party providers");
+      if (ae(e, `Initializing claude.ai proxy transport for server ${r.id}`), !(X() && h !== void 0 ? await Kl(h) : Ln())) throw Error("No claude.ai OAuth token found");
+      let A = nn(),
+        H = `${A.MCP_PROXY_URL}${A.MCP_PROXY_PATH.replace("{server_id}",r.id)}`;
+      ae(e, `Using claude.ai proxy at ${H}`);
+      let te = ba({
+          url: H
+        }),
+        re = En(Et(ERt(void 0, te)), h),
+        Z = lor(),
+        le = Z || It(r);
+      if (le) ae(e, Z ? "GET notification stream disabled for claude.ai connectors; a GET the SDK sends to the proxy URL is answered locally with 405" : "GET notification stream disabled (stateless connector); if the SDK requests it, it gets a local 405");
+      let Se = {
+        fetch: le ? Uo(zt(re, r), H) : zt(re, r),
+        requestInit: {
+          ...te,
+          headers: {
+            "User-Agent": sJ(),
+            "Accept-Encoding": "identity",
+            "X-Mcp-Client-Session-Id": z()
+          }
+        }
+      };
+      K = new err(new URL(H), Se), ae(e, "claude.ai proxy transport created successfully")
+    } else if (GRe(r) && uT(e)) {
+      let {
+        isClaudeInChromeAllowed: w
+      } = await import("B:/~BUN/root/chunk-jzfmvt6s.js");
+      if (!w()) return ae(e, "Skipping connection (Claude in Chrome is blocked by org policy)"), {
+        name: e,
+        type: "failed",
+        config: r,
+        error: Ece,
+        errorCode: "POLICY_BLOCKED"
+      };
+      let {
+        createChromeContext: A
+      } = await import("B:/~BUN/root/chunk-jjatx11q.js"), {
+        createChromeSocketClient: H,
+        createClaudeForChromeMcpServer: te
+      } = await import("B:/~BUN/root/chunk-qs3nzfym.js"), {
+        createLinkedTransportPair: re
+      } = await import("B:/~BUN/root/chunk-hs6dka22.js"), {
+        setChromeBinding: Z
+      } = await import("B:/~BUN/root/chunk-97jd6h92.js"), {
+        registerChromeTabGroupCleanup: le
+      } = await import("B:/~BUN/root/chunk-ke2w5r9a.js"), ie = A(r.env, {
+        availabilityFunnel: !0,
+        credentials: h,
+        bearerGate: async () => w()
+      }), Se = H(ie);
+      Z(ie, Se), le(), D = te(ie, Se);
+      let [ke, Ne] = re();
+      await D.connect(Ne), K = ke, ae(e, "In-process Chrome MCP server started")
+    } else if (r.type === "stdio" || !r.type) {
+      dP();
+      let w = () => ({
+          shellPrefix: i.CLAUDE_CODE_SHELL_PREFIX,
+          baseEnv: Fjn() ? {
+            ...to(),
+            ...BFe()
+          } : {
+            ...es()
+          }
+        }),
+        {
+          shellPrefix: A,
+          baseEnv: H
+        } = EF(r, w),
+        te = A || r.command,
+        re = A ? [no([r.command, ...r.args])] : r.args,
+        {
+          command: Z,
+          args: le,
+          pending: ie,
+          capped: Se
+        } = Uut(e) ? {
+          command: te,
+          args: re,
+          pending: !1,
+          capped: !1
+        } : PFr("mcp", te, re);
+      ne = ie, me = Se;
+      let {
+        CLAUDE_CODE_CHILD_SESSION: ke,
+        CLAUDE_CODE_CHROME_MCP_ORG_DENIED: Ne,
+        ...je
+      } = H, Qe = mo(), nt = {
+        ...je,
+        CLAUDE_PROJECT_DIR: Qe ?? Oo(),
+        CLAUDE_CODE_SESSION_ID: z(),
+        CLAUDECODE: "1",
+        ...r.env,
+        ...!bk("allow_claude_browser_extension") && {
+          CLAUDE_CODE_CHROME_MCP_ORG_DENIED: "1"
+        }
+      };
+      z6(r.pluginSource, nt, je), Hjn(nt), K = new yt({
+        command: Z,
+        args: le,
+        env: nt,
+        stderr: "pipe",
+        ...Qe !== null && {
+          cwd: Qe
+        }
+      })
+    } else throw Error(`Unsupported server type: ${r.type}`);
+    let Pe, Ee, k = "";
+    if (r.type === "stdio" || !r.type) {
+      let w = K;
+      if (w.stderr instanceof Yr) Ee = w.stderr, Pe = (A) => {
+        if (k.length < 67108864) try {
+          k += A.toString()
+        } catch {}
+      }, Ee.on("data", Pe)
+    }
+    let L = () => {
+        let w = new qt({
+          name: "claude-code",
+          title: "Claude Code",
+          version: {
+            ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+            PACKAGE_URL: "@anthropic-ai/claude-code",
+            README_URL: "https://code.claude.com/docs/en/overview",
+            VERSION: "2.1.319",
+            FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+            BUILD_TIME: "2026-11-05T18:14:18Z",
+            GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+            HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+            DD_SOURCEMAP_GROUP: "win32"
+          }.VERSION ?? "unknown",
+          description: "Anthropic's agentic coding tool",
+          websiteUrl: xDt
+        }, {
+          capabilities: y3t(r, {
+            denylisted: vo("tengu_mcp_legacy_url_elicitation_server_denylist", r)
+          }),
+          ...tNe() && {
+            jsonSchemaValidator: tYt
+          }
+        });
+        return w.setRequestHandler(X5r, async () => (ae(e, "Received ListRoots request from server"), Yn(Zn(r)))), w
+      },
+      ee = L();
+    if (ae(e, `Starting connection with timeout of ${ed()}ms`), r.type === "http" && Ont()) {
+      ae(e, `Testing basic HTTP connectivity to ${Mo(r.url)}`);
+      try {
+        let w = new URL(r.url),
+          A = Mo(w.href),
+          H = URL.canParse(A) ? new URL(A) : void 0;
+        if (ae(e, H ? `Parsed URL: host=${H.hostname}, port=${H.port||"default"}, protocol=${H.protocol}` : `Parsed URL: ${A}`), w.hostname === "127.0.0.1" || w.hostname === "localhost") ae(e, `Using loopback address: ${w.hostname}`)
+      } catch {
+        ae(e, `Failed to parse URL: ${Mo(r.url)}`)
+      }
+    }
+    let ze = Fo(r),
+      q = No(r);
+    if (It(r)) {
+      if (ae(e, ze ? "Stateless claudeai-proxy \u2014 resolving MCP initialize from cached projection" : "Stateless claudeai-proxy \u2014 no cached projection; real initialize, GET SSE suppressed"), q !== void 0) ae(e, q === "method-not-found" ? "Stateless claudeai-proxy \u2014 server/discover resolved locally as legacy (method-not-found)" : "Stateless claudeai-proxy \u2014 resolving server/discover from cached projection");
+      xo(K, ze, q)
+    }
+    eGe({
+      name: e
+    }, K);
+    let Ue = !1,
+      De = (w, A, H) => {
+        E ??= Q4t(M.clock);
+        let te = w.connect(A, {
+            timeout: H
+          }),
+          re = new Promise((Z, le) => {
+            let ie = M.clock.setTimeout(() => {
+              if (ae(e, `Connection timeout triggered after ${Z4t(M)} (limit: ${H}ms)`), D) D.close().catch(() => {});
+              A.close().catch(() => {}), Ue = !0, le(Tr(`MCP server "${e}" connection timed out after ${ed()}ms`))
+            }, H);
+            te.then(ie, ie)
+          });
+        return Promise.race([te, re])
+      };
+    try {
+      try {
+        await De(ee, K, ed())
+      } catch (A) {
+        if (G === void 0 || K instanceof err && K.protocolVersion !== void 0 || !ts(A) || !v("tengu_mcp_legacy_sse_fallback", !0)) throw A;
+        ae(e, `initialize POST rejected (${Q(Ns(A,r),200)}); trying legacy HTTP+SSE`);
+        let H = A.code === 405;
+        await K.close().catch(() => {});
+        let te = new AbortController,
+          re = !1,
+          Z = G({
+            postMethodNotAllowed: H,
+            dialSignal: te.signal,
+            dialConnected: () => re
+          });
+        K = Z, eGe({
+          name: e
+        }, Z), ee = L();
+        let le = N?.sawAuthChallenge === !0;
+        Ue = !1;
+        try {
+          await De(ee, Z, Math.min(rs, Math.max(1000, ed() - (Date.now() - T))))
+        } catch (ie) {
+          await Z.close().catch(() => {}), te.abort();
+          let Se = !le && N?.sawAuthChallenge === !0,
+            ke = fr(ie, ie instanceof kt ? ie.code : void 0, Se);
+          if (Ue && H && Se) throw ae(e, "legacy HTTP+SSE stream GET answered with an auth challenge; its auth flow outran the fallback budget, so routing to needs-auth"), new j0(`MCP server "${e}" requires authorization: its legacy HTTP+SSE stream answered with an auth challenge and the authorization flow did not finish within the connect budget`);
+          if (Ue || ie instanceof kt && !ke || ke && !H) throw ae(e, `legacy HTTP+SSE not confirmed (${Q(Ns(ie,r),200)}); surfacing the POST failure`), A;
+          throw ie
+        }
+        re = !0, ae(e, "connected over legacy HTTP+SSE")
+      }
+      if (k) Gs(e, `Server stderr: ${k}`), k = "";
+      if (Pe && Ee) Ee.off("data", Pe), Ee.resume();
+      let w = Date.now() - T;
+      if (ae(e, `Successfully connected (transport: ${r.type||"stdio"}) in ${w}ms`), (r.type === "stdio" || !r.type) && K instanceof yt && K.pid) {
+        if (M$t("mcp_stdio", K.pid), ne) gnt("mcp", K.pid, () => Uut(e));
+        if (me || ne) igr(e, K.pid)
+      }
+    } catch (w) {
+      let A = Date.now() - T;
+      if (K instanceof yt && K.overflowError) {
+        if (Gs(e, K.overflowError.message), k) Gs(e, `Server stderr: ${k}`);
+        throw K.overflowError
+      }
+      if (r.type === "sse" && w instanceof Error) {
+        ae(e, `SSE Connection failed after ${A}ms: ${_({url:Mo(r.url),error:Ns(w,r),errorType:w.constructor.name,stack:L1e(w,r)===w?w.stack:void 0})}`), Gs(e, L1e(w, r));
+        let H = await zo({
+          name: e,
+          serverRef: r,
+          transportType: "sse",
+          error: w,
+          statusCode: w.code,
+          sawAuthChallenge: N?.sawAuthChallenge === !0,
+          hasUserAuthHeader: ce,
+          helperMintsAuthHeader: ue,
+          cliOwnedBearer: fe,
+          useFirstPartyAuth: pe,
+          firstPartyBearer: he.last,
+          authProvider: N,
+          roundEpoch: I,
+          storageV5: s
+        });
+        if (H) return H
+      } else if (r.type === "http" && w instanceof Error) {
+        let H = w;
+        ae(e, `HTTP Connection failed after ${A}ms: ${Ns(w,r)} (code: ${H.code||"none"}, errno: ${H.errno||"none"})`), Gs(e, L1e(w, r));
+        let te = await zo({
+          name: e,
+          serverRef: r,
+          transportType: "http",
+          error: w,
+          statusCode: w.code,
+          sawAuthChallenge: N?.sawAuthChallenge === !0,
+          hasUserAuthHeader: ce,
+          helperMintsAuthHeader: ue,
+          cliOwnedBearer: fe,
+          useFirstPartyAuth: pe,
+          firstPartyBearer: he.last,
+          authProvider: N,
+          roundEpoch: I,
+          storageV5: s
+        });
+        if (te) return te
+      } else if (r.type === "claudeai-proxy" && w instanceof Error) {
+        if (ae(e, `claude.ai proxy connection failed after ${A}ms: ${Ns(w,r)}`), !hit(w)) Gs(e, L1e(w, r));
+        let H = w.code;
+        if (hit(w)) {
+          l("tengu_mcp_server_connection_failed", {
+            transportType: b("claudeai-proxy"),
+            errorCode: b("CLAUDEAI_BEARER_REJECTED"),
+            sdkGeneration: f(EL()),
+            ...rt(r, e),
+            ...Wye(r)
+          }), c("mcp_connect", "mcp_connect_claudeai_bearer_rejected");
+          let te = mr(e, r),
+            re = {
+              name: e,
+              type: "failed",
+              config: r,
+              error: w.message,
+              errorCode: "CLAUDEAI_BEARER_REJECTED"
+            },
+            Z = Do().connections.get(te);
+          if (Z) Z.then((le) => {
+            if (le === re && Do().connections.get(te) === Z) Do().connections.delete(te)
+          }, () => {});
+          return re
+        }
+        if (H === 401 || H === 403) return _o(e, r, "claudeai-proxy", void 0, !1, I, s)
+      } else if (r.type === "sse-ide" || r.type === "ws-ide") l("tengu_mcp_ide_server_connection_failed", {
+        connectionDurationMs: A
+      });
+      if (D) D.close().catch(() => {});
+      if (K.close().catch(() => {}), k && !sg()) Gs(e, `Server stderr: ${k}`);
+      throw w
+    }
+    let _e = ee.getServerCapabilities(),
+      ge = ee.getServerVersion(),
+      $e = Uat(r),
+      Te = cor($e, e) ?? ee.getInstructions(),
+      Ae = I8(r),
+      Be = cr(Te, e, Ae);
+    if (ae(e, `Connection established with capabilities: ${_({hasTools:!!_e?.tools,hasPrompts:!!_e?.prompts,hasResources:!!_e?.resources,hasResourceSubscribe:!!_e?.resources?.subscribe,serverVersion:ge||"unknown"})}`), t(`[MCP] Server "${e}" connected with subscribe=${!!_e?.resources?.subscribe}`), ee.setRequestHandler(s3e, async (w) => (ae(e, `Elicitation request received during initialization: ${_(w)}`), {
+        action: "cancel"
+      })), r.type === "sse-ide" || r.type === "ws-ide") {
+      let w = Date.now() - T;
+      l("tengu_mcp_ide_server_connection_succeeded", {
+        connectionDurationMs: w,
+        serverVersion: Na(ge?.version)
+      }), Rfr(ee).catch((A) => {
+        Gs(e, `Failed to send ide_connected notification: ${Ns(A,r)}`)
+      })
+    }
+    let He = Date.now(),
+      Ye = !1,
+      be = ee.onerror,
+      Ie = ee.onclose,
+      Ve = 3,
+      Me = {
+        consecutiveErrors: 0,
+        activeCallWatchdogs: new Set,
+        pendingElicitations: 0,
+        lastElicitationClosedAt: 0
+      },
+      Y = !1,
+      Ce = (w) => {
+        if (Y) return;
+        Y = !0, Me.closeReason = w, ae(e, `Closing transport (${w})`), ee.close().catch((A) => {
+          ae(e, `Error during close: ${Ns(A,r)}`)
+        })
+      };
+    if (ee.onerror = (w) => {
+        let A = r.type || "stdio";
+        if (A === "stdio" && w instanceof SyntaxError) {
+          Gs(e, `Ignoring non-JSON line on stdout: ${w.message}`);
+          return
+        }
+        if (w instanceof O3e) return;
+        if (A === "stdio" && w instanceof At) {
+          if (Gs(e, w.message), Ye = !0, Ce("stdout overflow"), be) be(w);
+          return
+        }
+        if ((A === "http" || A === "claudeai-proxy") && w instanceof gt) {
+          if (Gs(e, `sent a response larger than ${Math.round(wt/1024/1024)}MB. Claude Code stopped reading it and failed the request it answered; the connection stays open.`), be) be(w);
+          return
+        }
+        if ((A === "sse" || A === "sse-ide" || A === "http" || A === "claudeai-proxy") && w.message.includes(ro)) {
+          if (Gs(e, w.message), Ye = !0, Ce("http body overflow"), be) be(w);
+          return
+        }
+        if ((A === "sse" || A === "http" || A === "claudeai-proxy") && w instanceof SyntaxError) {
+          if (Ye = !0, B(), Ce(N?.authChallengeOpen === !0 && Me.activeCallWatchdogs.size <= 1 ? "malformed message after an auth challenge" : "malformed JSON-RPC message (response truncated)"), be) be(w);
+          return
+        }
+        let H = Date.now() - He;
+        if (Ye = !0, ae(e, `${A.toUpperCase()} connection dropped after ${Math.floor(H/1000)}s uptime`), w.message) {
+          let te = Qn.find(([re]) => w.message.includes(re))?.[1];
+          ae(e, te ?? `Connection error: ${Ns(w,r)}`)
+        }
+        if ((A === "http" || A === "claudeai-proxy") && ee.transport?.sessionId !== void 0 && go(w)) {
+          if (ae(e, "MCP session expired (server no longer recognizes session ID), triggering reconnection"), Ce("session expired"), be) be(w);
+          return
+        }
+        if ((A === "http" || A === "claudeai-proxy") && ee.transport?.sessionId !== void 0 && w instanceof oge && w.code === 404 && w.message.includes("Failed to open SSE stream")) c("mcp_session_recovery", "get_stream_404_not_reinit");
+        if (A === "sse" || A === "http" || A === "claudeai-proxy") {
+          if (w.message.includes("Maximum reconnection attempts")) {
+            if (ae(e, "SSE GET-stream reconnection exhausted; leaving transport up (POST still works)"), Me.consecutiveErrors = 0, B(), be) be(w);
+            return
+          }
+          if (Qr(w)) {
+            if (Me.consecutiveErrors++, B(), ae(e, `Terminal connection error ${Me.consecutiveErrors}/${Ve}`), Me.consecutiveErrors >= Ve) Me.consecutiveErrors = 0, Ce("max consecutive terminal errors")
+          } else Me.consecutiveErrors = 0
+        }
+        if (be) be(w)
+      }, (r.type === "http" || r.type === "claudeai-proxy") && ee.transport) Me.toolCallSends = $ir(ee.transport, go, Me.activeCallWatchdogs);
+    if (ee.transport) {
+      let w = ee.transport.onmessage;
+      ee.transport.onmessage = (A, H) => {
+        if (Me.consecutiveErrors !== 0) Me.consecutiveErrors = 0;
+        w?.(A, H)
+      }
+    }
+    ee.onclose = () => {
+      let w = Date.now() - He,
+        A = r.type ?? "unknown";
+      ae(e, `${A.toUpperCase()} connection closed after ${Math.floor(w/1000)}s (${Ye?"with errors":"cleanly"})`), io(e, r, {
+        status: "disconnected",
+        durationMs: w
+      });
+      let H = mr(e, r);
+      if (Do().liveClients.delete(ee), Do().toolLists.delete(H), Do().resourceLists.delete(H), Do().resourceTemplateLists.delete(H), Do().commandLists.delete(H), Do().connections.delete(H), ae(e, "Cleared connection cache for reconnection"), Ie) Ie()
+    };
+    let Re = async () => {
+      if (D) {
+        try {
+          await D.close()
+        } catch (w) {
+          ae(e, `Error closing in-process server: ${w}`)
+        }
+        try {
+          await ee.close()
+        } catch (w) {
+          ae(e, `Error closing client: ${Ns(w,r)}`)
+        }
+        return
+      }
+      if (K instanceof yt) try {
+        let w = K.pid;
+        if (K.serverProcess && x() === "windows") ae(e, "Closing MCP server stdin"), await Ckn(K.serverProcess);
+        else if (w) {
+          ae(e, "Sending SIGINT to MCP server process");
+          try {
+            process.kill(w, "SIGINT")
+          } catch (A) {
+            ae(e, `Error sending SIGINT: ${A}`);
+            return
+          }
+          await new Promise(async (A) => {
+            let H = !1,
+              te = () => {
+                if (H) return;
+                H = !0, clearInterval(Z), clearTimeout(le), A()
+              },
+              re = (ie) => {
+                try {
+                  return process.kill(ie, 0), !0
+                } catch {
+                  return !1
+                }
+              },
+              Z = setInterval((ie, Se, ke, Ne) => {
+                if (!ie(Se)) ae(ke, "MCP server process exited cleanly"), Ne()
+              }, 50, re, w, e, te),
+              le = setTimeout((ie, Se) => {
+                ae(ie, "Cleanup timeout reached, stopping process monitoring"), Se()
+              }, 600, e, te);
+            try {
+              if (await J(100), !H) {
+                if (!re(w)) {
+                  te();
+                  return
+                }
+                ae(e, "SIGINT failed, sending SIGTERM to MCP server process");
+                try {
+                  process.kill(w, "SIGTERM")
+                } catch (ie) {
+                  ae(e, `Error sending SIGTERM: ${ie}`), te();
+                  return
+                }
+                if (await J(400), !H)
+                  if (!re(w)) te();
+                  else {
+                    ae(e, "SIGTERM failed, sending SIGKILL to MCP server process");
+                    try {
+                      process.kill(w, "SIGKILL")
+                    } catch (ie) {
+                      ae(e, `Error sending SIGKILL: ${ie}`)
+                    }
+                  }
+              }
+              te()
+            } catch {
+              te()
+            }
+          })
+        }
+      } catch (w) {
+        ae(e, `Error terminating process: ${w}`)
+      }
+      try {
+        await ee.close()
+      } catch (w) {
+        ae(e, `Error closing client: ${Ns(w,r)}`)
+      }
+    }, oe = vt(Re);
+    if (K instanceof yt) K.handOffExitCleanup();
+    let Fe = async () => {
+      Do().liveClients.delete(ee), oe?.(), await Re()
+    };
+    if (Do().liveClients.add(ee), aue() !== O) ee.sendRootsListChanged().catch(() => {});
+    let qe = Date.now() - T;
+    io(e, r, {
+      status: "connected",
+      durationMs: qe
+    });
+    let ve = Te?.length ?? 0;
+    if (l("tengu_mcp_server_connection_succeeded", {
+        connectionDurationMs: qe,
+        instructionsLength: ve,
+        instructionsTruncated: ve > Ae,
+        transportType: f(r.type ?? "stdio"),
+        negotiatedLegacySse: r.type === "http" && K instanceof Tt,
+        sdkGeneration: f(EL()),
+        scope: f(r.scope),
+        isPlugin: r.pluginSource !== void 0,
+        ...Wye(r),
+        totalServers: n?.totalServers,
+        stdioCount: n?.stdioCount,
+        sseCount: n?.sseCount,
+        httpCount: n?.httpCount,
+        sseIdeCount: n?.sseIdeCount,
+        wsIdeCount: n?.wsIdeCount,
+        ...rt(r, e)
+      }), g("mcp_connect"), V("info", "mcp_connect_complete", {
+        transport: j,
+        duration_ms: qe
+      }), N) bt().clientAuthProviders.set(ee, N);
+    bt().clientFirstPartyBearers.set(ee, he);
+    let Le = {
+      name: e,
+      client: jjn(ee),
+      type: "connected",
+      capabilities: _e ?? {},
+      serverInfo: ge,
+      instructions: Be,
+      config: r,
+      cleanup: Fe,
+      transportErrorState: Me
+    };
+    NB(e);
+    try {
+      KKn()?.(Le)
+    } catch (w) {
+      Gs(e, `connected-client wiring failed (placeholder retained, adoption will retry): ${d(w)}`)
+    }
+    return Le
+  } catch (W) {
+    let fe = Date.now() - T;
+    if (sg()) {
+      if (ae(e, `Connection abandoned after ${fe}ms (Claude Code is shutting down)`), D) D.close().catch(() => {});
+      return {
+        name: e,
+        type: "failed",
+        config: r,
+        error: "Claude Code is shutting down",
+        errorCode: "SHUTTING_DOWN"
+      }
+    }
+    let ce = Ns(W, r),
+      ye = W instanceof Error ? W.cause : void 0,
+      ue = (W && typeof W === "object" && "code" in W ? W.code : void 0) ?? (ye && typeof ye === "object" && "code" in ye ? ye.code : void 0),
+      pe = ue !== void 0 ? String(ue) : void 0;
+    if (r.type === "http" && pe === "404" && K?.sessionId === void 0 && !hAe(r)) pe = "ENDPOINT_NOT_FOUND", ce = `MCP endpoint not found at ${lF(e,r,{detail:"origin"})??"(unparseable url)"}. Check the URL in your MCP config.`;
+    let he = pe === "CONNECT_TIMEOUT" && E !== void 0 ? oor(e, E) : void 0;
+    if (he !== void 0) pe = dge, ce = he;
+    ce = Cu(e, r, ce), io(e, r, {
+      status: "failed",
+      durationMs: fe,
+      errorCode: pe,
+      error: ce
+    });
+    let Pe = pe === "ENOENT" && (r.type === "stdio" || r.type === void 0) ? "mcp_connect_spawn_enoent" : pe === "ENDPOINT_NOT_FOUND" ? "mcp_connect_endpoint_not_found" : void 0;
+    if (Pe !== void 0) m("mcp_connect", Pe);
+    else {
+      let k = pe === "ECONNREFUSED" ? "mcp_connect_refused" : pe === dge ? "mcp_connect_suspended" : ce.includes("timed out") ? "mcp_connect_timeout" : "mcp_connect_failed";
+      c("mcp_connect", `${k}_${r.type??"stdio"}`)
+    }
+    if (l("tengu_mcp_server_connection_failed", {
+        connectionDurationMs: fe,
+        errorCode: Er(pe),
+        errorClassName: Zwt(W),
+        errorMessageHash: kn(u_t(ce)),
+        totalServers: n?.totalServers || 1,
+        stdioCount: n?.stdioCount || (r.type === "stdio" ? 1 : 0),
+        sseCount: n?.sseCount || (r.type === "sse" ? 1 : 0),
+        httpCount: n?.httpCount || (r.type === "http" ? 1 : 0),
+        sseIdeCount: n?.sseIdeCount || (r.type === "sse-ide" ? 1 : 0),
+        wsIdeCount: n?.wsIdeCount || (r.type === "ws-ide" ? 1 : 0),
+        transportType: f(r.type ?? "stdio"),
+        sdkGeneration: f(EL()),
+        scope: f(r.scope),
+        isPlugin: r.pluginSource !== void 0,
+        ...Wye(r),
+        ...rt(r, e)
+      }), ae(e, `Connection failed after ${Z4t(M)}${pe!==void 0?` (${pe})`:""}: ${ce}`), Gs(e, `Connection failed${pe!==void 0?` (${pe})`:""}: ${ce}`), V("error", "mcp_connect_failed", {
+        transport: j,
+        duration_ms: fe,
+        ...pe === "CONNECT_TIMEOUT" && {
+          reason: "timeout"
+        },
+        ...pe === dge && {
+          reason: "suspended"
+        }
+      }), D) D.close().catch(() => {});
+    if (pe !== dge) Zo(e, r, s);
+    let Ee = pe === "ERR_PROXY_TUNNEL" ? [W, ye].map((k) => k && typeof k === "object" && ("status" in k) ? k.status : void 0).find((k) => typeof k === "number") : void 0;
+    return {
+      name: e,
+      type: "failed",
+      config: r,
+      error: ce,
+      errorCode: pe,
+      notForwardedMessage: "url" in r && eKe(r.url) ? Cu(e, r, XMr(W) ?? "") || void 0 : void 0,
+      ...Ee !== void 0 && {
+        proxyConnectStatus: Ee
+      },
+      ...pe === void 0 && N?.sawAuthChallenge === !0 && await Hin(e, r, T)
+    }
+  }
+}, mr, () => Do().connections, (e, r, [n, s, , h]) => zor(() => sor(e, r, () => Zo(n, s, h)), r, n, s));
+
+function pt() {
+  if (yIe(), Zor(() => "legacy"), esr()) return;
+  Qor(gor)
+}
+
+function Po() {
+  if (fne()) return;
+  VKn(Ot)
+}
+
+function So(e, r) {
+  try {
+    FIe.emit(e, r)
+  } catch (n) {
+    ae(e, `cached-row adopt subscriber threw: ${d(n)}`)
+  }
+}
+
+function Ro(e, r) {
+  if (r) c("mcp_discovery_cache", "lazy_dial_failed");
+  Do().settledCachedDialFailures.set(mr(e.name, e.config), {
+    failure: e,
+    ownStrike: r
+  });
+  try {
+    E1e.emit(e, r)
+  } catch (n) {
+    ae(e.name, `cached-row dial-failed subscriber threw: ${d(n)}`)
+  }
+}
+
+function nu(e, r) {
+  let n = Do().settledCachedDialFailures,
+    s = mr(e, r),
+    h = n.get(s);
+  return n.delete(s), h
+}
+async function su(e, r) {
+  let n = Ze.cache?.get?.(mr(e, r));
+  return n !== void 0 && await mt(n) === void 0
+}
+
+function Gt(e, r, n) {
+  let s = mr(e, r);
+  if (Do().refusedCachedRows.has(s)) return;
+  if (Do().refusedCachedRows.add(s), n === "policy") Kt(e, r).catch(() => {});
+  Ro({
+    name: e,
+    type: "failed",
+    config: r,
+    ...n === "policy" ? RS("managed-policy", e, r) : {
+      error: tze,
+      errorCode: "DISABLED"
+    }
+  }, !1)
+}
+async function ns(e, r) {
+  let n = mr(e, r),
+    s = Do().connections.get(n);
+  if (!s) return !1;
+  if ((await mt(s))?.type !== "connected") return !1;
+  return !bt().swrRefreshDialsInFlight.has(s)
+}
+async function ss(e, r) {
+  let n = mr(e, r),
+    s = Do().connections.get(n);
+  if (!s) return;
+  let h = await mt(s);
+  if (h === void 0 || h.type === "connected") return;
+  if (Do().connections.get(n) === s) Do().connections.delete(n)
+}
+async function mt(e) {
+  return we(e.catch(() => {
+    return
+  }), 0)
+}
+async function wr(e, r) {
+  let n = Ze.cache?.get?.(mr(e, r));
+  return n === void 0 ? void 0 : mt(n)
+}
+
+function ko(e) {
+  Do().connections.delete(e), Do().toolLists.delete(e), Do().resourceLists.delete(e), Do().resourceTemplateLists.delete(e), Do().commandLists.delete(e)
+}
+async function Ct(e, r, n) {
+  pt();
+  let s = mr(e, r),
+    h = Do().connections.get(s);
+  if (h) {
+    let y = await mt(h);
+    if (y === void 0) is(e, r, h);
+    else if (y.type === "connected") {
+      if (n !== void 0 && Do().connections.get(s) === h && _a(y.client).transport !== void 0 && (y.transportErrorState?.activeCallWatchdogs.size ?? 0) > 0) {
+        n.connection = y;
+        return
+      }
+      await it(y)
+    }
+    let S = Do().connections.get(s);
+    if (S !== void 0 && S !== h) return
+  }
+  ko(s)
+}
+
+function it(e) {
+  if (_a(e.client).onclose = void 0, Vd()) {
+    let r = mr(e.name, e.config),
+      n = Ze.cache?.get?.(r);
+    if (n !== void 0) mt(n).then((s) => {
+      if (bIe(s, e) && Ze.cache?.get?.(r) === n) ko(r)
+    })
+  }
+  return e.cleanup().catch(() => {})
+}
+
+function is(e, r, n) {
+  pt();
+  let s = mr(e, r),
+    h = Do().connections.get(s);
+  if (n !== void 0 && h !== n) return;
+  if (h) bt().supersededDials.add(h);
+  if (ko(s), h) h.then((y) => {
+    if (y.type !== "connected") return;
+    it(y)
+  }, () => {})
+}
+async function Kt(e, r) {
+  pt(), await aYt(e, r)
+}
+async function iu(e, r) {
+  let n = mr(e, r);
+  if (!Vd()) return Do().connections.delete(n), !0;
+  let s = Do().connections.get(n);
+  if (s !== void 0) {
+    let h = await mt(s);
+    if (h === void 0 || h.type === "connected") return !1;
+    if (Do().connections.get(n) !== s) return !1
+  }
+  return Do().connections.delete(n), !0
+}
+
+function au(e) {
+  let r = mr(e.name, e.config);
+  Do().resourceLists.delete(r), Do().resourceTemplateLists.delete(r)
+}
+
+function cu(e, r) {
+  _a(e.client).setRequestHandler(s3e, r)
+}
+
+function du(e, r) {
+  _a(e.client).setNotificationHandler(I4t, (n) => r(n.params.elicitationId))
+}
+
+function lu(e, r) {
+  _a(e.client).setNotificationHandler(rkn, $at(e, r))
+}
+
+function uu(e, r) {
+  _a(e.client).setNotificationHandler(nkn, $at(e, r))
+}
+
+function pu(e, r) {
+  _a(e.client).setNotificationHandler(ekn, $at(e, r))
+}
+
+function mu(e, r, n) {
+  _a(e.client).setNotificationHandler(r, n)
+}
+async function Ot(e, r) {
+  if (e.type === "connected" && e.config.type === "sdk") return e;
+  if (GOt(e.name, e.config)) throw VOt(e.name);
+  let n = 0;
+  if (X0(e.config)) {
+    let T = Date.now();
+    await WM(l2(e.config), {
+      signal: r?.signal,
+      timeoutMs: r?.timeoutMs,
+      serverName: e.name,
+      context: r9
+    }), n = Date.now() - T
+  }
+  if (uw(e.name, e.config)) {
+    if (e.type === "cached") Gt(e.name, e.config, "policy");
+    if (uie(e.name, e.config)) throw new R(T3e(e.name), "MCP server refused at a reserved address");
+    throw new R(`MCP server "${e.name}" is blocked by managed policy`, "MCP server blocked by policy")
+  }
+  if (jo(e.name) && (await wr(e.name, e.config))?.type !== "connected") {
+    if (e.type === "cached") Gt(e.name, e.config, "disabled");
+    throw new R(`MCP server "${e.name}" is disabled \u2014 re-enable it via /mcp to use its tools`, "MCP server disabled")
+  }
+  let s = zr(),
+    h = e.type === "cached" && r?.toolUseId !== void 0 && Tn.test(r.toolUseId) ? {
+      toolUseId: r.toolUseId,
+      withListings: r.toolUseIdWithListingsUntil !== void 0
+    } : void 0,
+    y = h === void 0 ? Ze(e.name, e.config) : Ze(e.name, e.config, void 0, void 0, void 0, h);
+  if (h !== void 0) {
+    let T = () => {
+      h.toolUseId = void 0
+    };
+    (r?.toolUseIdWithListingsUntil ?? y).then(T, T)
+  }
+  if (e.type === "cached") y.then((T) => as(T, y, s), () => {});
+  let S = await WM(y, {
+    signal: r?.signal,
+    timeoutMs: r?.timeoutMs === void 0 ? void 0 : Math.max(0, r.timeoutMs - n),
+    serverName: e.name,
+    context: r?.context ?? "MCP connection"
+  });
+  if (S.type !== "connected") {
+    if (S.type === "needs-auth") throw Object.assign(new R(MB.dialNeedsAuth(e.name, e.config), "MCP server needs authentication"), {
+      mcpErrorSource: "user_auth"
+    });
+    let T = S.type === "failed" ? S.errorCode : void 0;
+    throw Object.assign(new R(MB.dialNotConnected(e.name, Vd() && S.type === "failed" && S.error ? `: ${Zl(S.error)}` : ""), "MCP server not connected"), {
+      mcpErrorSource: $z(Object.assign(Error("MCP dial failed"), {
+        code: T !== void 0 && /^-?\d+$/.test(T) ? Number(T) : T
+      })),
+      mcpDialCode: T,
+      mcpDialNotForwarded: S.type === "failed" ? S.notForwardedMessage : void 0
+    })
+  }
+  if (GOt(e.name, e.config)) throw await it(S), VOt(e.name);
+  return S
+}
+
+function _t(e, r, n) {
+  let s = Ze.cache;
+  if (!s?.get) return !1;
+  return s.get(mr(r, n)) !== e
+}
+
+function ot(e) {
+  return bt().supersededDials.has(e)
+}
+
+function as(e, r, n) {
+  let s = bt().cachedFirstDialArmsRan;
+  if (s.has(e)) return;
+  s.add(e);
+  let h = mr(e.name, e.config),
+    y = Do().connections.get(h),
+    S = zr() !== n,
+    T = y === void 0 && S;
+  if (ot(r) || y !== void 0 && y !== r || T) {
+    if (!ot(r) && S && e.type === "connected") it(e);
+    return
+  }
+  if (e.type === "connected" || e.type === "needs-auth") {
+    So(e.name, e.config);
+    return
+  }
+  if (Do().connections.delete(h), e.type === "failed") Ro(e, !bt().swrRefreshDialsInFlight.has(r))
+}
+
+function fu(e, r) {
+  return S1(e) === S1(r)
+}
+var cs = ["invalid_request", "invalid_client", "invalid_grant", "unauthorized_client", "access_denied", "unsupported_grant_type", "invalid_scope", "server_error", "temporarily_unavailable", "ENDPOINT_NOT_FOUND", "AUTH_HEADER_REJECTED", "HEADERS_HELPER_AUTH_REJECTED", "CONNECT_TIMEOUT", "CONNECT_SUSPENDED", "CREDENTIAL_STORE_UNAVAILABLE", "ISSUER_ECHO_DENIED", "CLAUDEAI_BEARER_REJECTED", "CLI_OWNED_BEARER_REJECTED", "FIRST_PARTY_AUTH_REJECTED", "INVALID_CONFIG", "UNCONFIGURED", "ENOENT", "EACCES", "EPERM", "EADDRINUSE", "ERR_INVALID_URL", "ABORT_ERR", "UNKNOWN_CERTIFICATE_VERIFICATION_ERROR", "NOT_CONNECTED", "ALREADY_CONNECTED", "NOT_INITIALIZED", "CAPABILITY_NOT_SUPPORTED", "REQUEST_TIMEOUT", "CONNECTION_CLOSED", "SEND_FAILED", "INVALID_RESULT", "UNSUPPORTED_RESULT_TYPE", "INPUT_REQUIRED_ROUNDS_EXCEEDED", "LIST_PAGINATION_EXCEEDED", "METHOD_NOT_SUPPORTED_BY_PROTOCOL_VERSION", "ERA_NEGOTIATION_FAILED", "CLIENT_HTTP_NOT_IMPLEMENTED", "CLIENT_HTTP_AUTHENTICATION", "CLIENT_HTTP_FORBIDDEN", "CLIENT_HTTP_UNEXPECTED_CONTENT", "CLIENT_HTTP_FAILED_TO_OPEN_STREAM", "CLIENT_HTTP_FAILED_TO_TERMINATE_SESSION"];
+
+function Er(e) {
+  if (e === void 0) return b("missing");
+  if (/^-?\d+$/.test(e)) return bo(Number(e));
+  let r = cs.find((n) => n === e);
+  if (r !== void 0) return f(r);
+  return mUt(e) ?? b("other")
+}
+var vr = {
+  [ja.ConnectionClosed]: "connection_closed",
+  [ja.RequestTimeout]: "request_timeout",
+  [q3]: "ccr_needs_approval",
+  [ja.ParseError]: "parse_error",
+  [ja.InvalidRequest]: "invalid_request",
+  [ja.MethodNotFound]: "method_not_found",
+  [ja.InvalidParams]: "invalid_params",
+  [ja.InternalError]: "internal_error"
+};
+
+function Pr(e, r) {
+  let n = Object.keys(e);
+  if (n.length === 0) return r;
+  return n.map((s) => {
+    let h = e[s],
+      y = typeof h === "object" && h !== null ? JSON.stringify(h) : String(h);
+    return `${s}=${y}`
+  }).join(" ")
+}
+
+function Mr(e) {
+  let r = bt().droppedToolsSeqByConnection,
+    n = r.get(e) ?? {
+      started: 0,
+      applied: 0
+    };
+  return r.set(e, n), n.started += 1, {
+    seq: n.started,
+    state: n
+  }
+}
+
+function hu(e) {
+  return bt().toolsListErrorByResult.get(e)
+}
+
+function To(e) {
+  return bt().discoveryFetchErrors.get(e)
+}
+
+function Rr() {
+  pt();
+  let e = SIe();
+  return Wxt(e) ? void 0 : e.token
+}
+
+function gu() {
+  let e = bt();
+  if (e.identitySeedAttempted) return;
+  e.identitySeedAttempted = !0;
+  let r = Rr();
+  if (r !== void 0) e.identityBaseline = r
+}
+
+function yu() {
+  let e = Rr(),
+    r = bt();
+  if (e === void 0) return r.identityBaseline = void 0, !0;
+  if (r.identityBaseline === void 0) return r.identityBaseline = e, !0;
+  if (r.identityBaseline === e) return !1;
+  return r.identityBaseline = e, !0
+}
+
+function uo(e, r) {
+  if (!Vd()) return;
+  let n = bt();
+  n.rawToolsByResult.set(e, r), n.rawFetchedAtByResult.set(e, Date.now())
+}
+
+function po(e, r) {
+  if (!Vd()) return;
+  let n = bt();
+  n.rawCommandsByResult.set(e, r), n.rawFetchedAtByResult.set(e, Date.now())
+}
+
+function Lt(e, r) {
+  if (!Vd()) return;
+  let n = bt();
+  n.rawResourcesByResult.set(e, r), n.rawFetchedAtByResult.set(e, Date.now())
+}
+
+function _u(e, r) {
+  bt().discoveryFetchErrors.set(e, r)
+}
+
+function ds(e) {
+  if (e.kind !== "fresh" && e.kind !== "stale") return e;
+  let r = e.entry.capabilities;
+  if (QRt(r)) return {
+    kind: "miss",
+    reason: "channel-capable"
+  };
+  return e
+}
+async function wo(e, r) {
+  pt();
+  let n = bt();
+  if (n.persistedDiscoveryRounds.has(r.tools)) return !0;
+  if (!fI(r.identityEpoch)) return !0;
+  let s = n.rawToolsByResult.get(r.tools),
+    h = n.rawCommandsByResult.get(r.commands),
+    y = n.rawResourcesByResult.get(r.resources);
+  if (s === void 0 || h === void 0 || y === void 0 || r.templates === void 0) return !1;
+  let S = Math.min(n.rawFetchedAtByResult.get(r.tools) ?? Number.POSITIVE_INFINITY, n.rawFetchedAtByResult.get(r.commands) ?? Number.POSITIVE_INFINITY, n.rawFetchedAtByResult.get(r.resources) ?? Number.POSITIVE_INFINITY);
+  if (!Number.isFinite(S)) return !0;
+  let T = S,
+    M = [r.tools, r.commands, r.resources].map((I) => [I, n.rawFetchedAtByResult.get(I)]);
+  n.rawToolsByResult.delete(r.tools), n.rawCommandsByResult.delete(r.commands), n.rawResourcesByResult.delete(r.resources), n.rawFetchedAtByResult.delete(r.tools), n.rawFetchedAtByResult.delete(r.commands), n.rawFetchedAtByResult.delete(r.resources), n.persistedDiscoveryRounds.add(r.tools);
+  let E = await rsr(e.name, e.config, {
+    ...e.serverInfo && {
+      serverInfo: {
+        name: e.serverInfo.name,
+        version: e.serverInfo.version
+      }
+    },
+    ...e.protocolEra !== void 0 && {
+      negotiatedEra: e.protocolEra
+    },
+    capabilities: e.capabilities,
+    tools: s,
+    commands: h,
+    resources: y,
+    templates: r.templates.map(({
+      server: I,
+      ...O
+    }) => O)
+  }, {
+    identityEpoch: r.identityEpoch,
+    grantLeg: r.grantLeg,
+    now: T
+  });
+  if (E === "terminal") return n.persistedDiscoveryRounds.delete(r.tools), !1;
+  if (E === "transient") {
+    n.rawToolsByResult.set(r.tools, s), n.rawCommandsByResult.set(r.commands, h), n.rawResourcesByResult.set(r.resources, y);
+    for (let [I, O] of M)
+      if (O !== void 0) n.rawFetchedAtByResult.set(I, O);
+    n.persistedDiscoveryRounds.delete(r.tools)
+  }
+  return !0
+}
+async function Su(e, r, n) {
+  if (pt(), !fI(n.identityEpoch)) return;
+  let s = bt(),
+    h = s.rawToolsByResult.get(r),
+    y = s.rawFetchedAtByResult.get(r);
+  if (h === void 0 || y === void 0) return;
+  await osr(e.name, e.config, h, {
+    identityEpoch: n.identityEpoch,
+    grantLeg: n.grantLeg,
+    fetchedAt: y
+  })
+}
+async function ls(e, r) {
+  if (!Vd() || !wIe(e.config) || jo(e.name) || uw(e.name, e.config)) return;
+  try {
+    let n = !!e.capabilities?.resources;
+    if (!n) Lt(r.resources, []);
+    let s = n && Yat(e.config) ? await Ft(e) : [];
+    if (await wr(e.name, e.config) !== e || jo(e.name) || uw(e.name, e.config)) return;
+    await wo(e, {
+      ...r,
+      templates: To(s) === void 0 ? s : void 0
+    })
+  } catch (n) {
+    ae(e.name, `Discovery cache write-through skipped: ${d(n)}`)
+  }
+}
+
+function us(e) {
+  switch (e.reason) {
+    case "absent":
+    case "expired":
+    case "corrupt":
+    case "strike-threshold":
+    case "no-fingerprint":
+    case "unsealed":
+      return !0;
+    case "disabled":
+    case "key-unavailable":
+    case "transport":
+    case "live-connection":
+    case "skills-capable":
+    case "channel-capable":
+      return !1;
+    default:
+      return e.reason
+  }
+}
+
+function ps(e) {
+  if (e.kind !== "miss") return "live";
+  switch (e.reason) {
+    case "disabled":
+      return "miss_disabled";
+    case "key-unavailable":
+      return "miss_disabled";
+    case "unsealed":
+      return "miss_corrupt";
+    case "transport":
+      return "live";
+    case "absent":
+      return "live";
+    case "expired":
+      return "miss_expired";
+    case "corrupt":
+      return "miss_corrupt";
+    case "strike-threshold":
+      return "miss_strike";
+    case "no-fingerprint":
+      return "miss_no_fingerprint";
+    case "live-connection":
+      return "live";
+    case "skills-capable":
+      return "live";
+    case "channel-capable":
+      return "live";
+    default:
+      return e.reason
+  }
+}
+
+function kr(e) {
+  let r = e._meta?.["anthropic/maxResultSizeChars"];
+  return typeof r === "number" && Number.isFinite(r) && r > 0 ? r : void 0
+}
+
+function Qo({
+  serverName: e,
+  scope: r,
+  pluginSource: n,
+  serverType: s,
+  source: h,
+  skipPrefix: y,
+  standardKey: S,
+  denyKey: T,
+  nameKey: M,
+  legacyGrantRefused: E = !1,
+  toolNameShared: I = !1,
+  legacyGrantRebindable: O = !1,
+  serverAlwaysLoad: j,
+  serverDefersAllTools: D = !1,
+  effectiveMaxPermission: N,
+  promptOverrides: ne,
+  isFirstPartyDesignServer: me,
+  maxDescriptionLength: K = zB(),
+  maxLoadedDescriptionLength: G = zB(!0),
+  pluginTelemetry: W,
+  cliOwned: fe,
+  accountMemory: ce = !1,
+  accountMemoryServer: ye = !1,
+  sdkDocsConnector: ue = !1,
+  displayName: pe,
+  serverId: he,
+  serverIdStamp: Pe,
+  serverProvenance: Ee,
+  serverUrl: k,
+  iconUrl: L,
+  serverInfoName: ee,
+  role: ze,
+  listed: q,
+  call: Ue,
+  overrides: De
+}) {
+  let _e = br(e, q.name),
+    ge = kr(q),
+    $e = ge !== void 0,
+    Te = q._meta?.["anthropic/requiresUserInteraction"] === !0,
+    Ae = wgr(q._meta),
+    Be = ne?.tools?.[q.name] ?? q.description ?? "",
+    He = yo(Be, `Tool "${q.name}" description`, e, K),
+    Ye = yo(Be, `Tool "${q.name}" description`, e, G),
+    be = ne?.search_hints?.[q.name] ?? (typeof q._meta?.["anthropic/searchHint"] === "string" ? q._meta["anthropic/searchHint"] : void 0),
+    Ie = por(e, q.name, Ue),
+    Ve = tse(e, {
+      scope: r,
+      pluginSource: n
+    }),
+    Me = Ve || E || I,
+    B = E && !I && O && !Te && N !== "ask" && De?.suppressesAlwaysAllowRule === void 0 && De?.requiresUserInteraction === void 0 && !ao(me, q.name),
+    Y = Me || ao(me, q.name),
+    Ce = () => Ve || I || E && !Ntt({
+      serverName: e,
+      serverType: s,
+      serverId: he
+    }) || E1t({
+      serverName: e,
+      serverType: s,
+      serverId: he
+    }) || Ltt({
+      serverName: e,
+      serverType: s,
+      serverId: he
+    });
+  if (Me) ae(e, Ve ? "Allow rules do not apply: this server's name starts like a claude.ai connector's. To use allow rules, the server needs another name, and the rules must use that name." : E ? "Allow rules do not apply: another MCP server already uses this name, or the name could not be recorded in the config file. Give this server a different name and write the rules for that name, or reconnect if the config file was busy." : `Allow rules do not apply to "${q.name}": another tool of this server gets the same name in Claude Code. To use allow rules, the server must rename one of them.`);
+  return {
+    ..._3e,
+    name: y ? q.name : _e,
+    mcpInfo: {
+      serverName: e,
+      scope: r,
+      ...n !== void 0 && {
+        pluginSource: n
+      },
+      serverType: s,
+      ...h !== void 0 && {
+        source: h
+      },
+      ...W && {
+        pluginTelemetry: W
+      },
+      displayName: pe,
+      serverId: he,
+      ...Pe !== void 0 && {
+        serverIdStamp: Pe
+      },
+      ...Ee !== void 0 && {
+        serverProvenance: Ee
+      },
+      ...k !== void 0 && {
+        serverUrl: k
+      },
+      iconUrl: L,
+      serverInfoName: ee,
+      ...fe && {
+        cliOwned: !0
+      },
+      ...S !== void 0 && {
+        standardKey: S
+      },
+      ...E && {
+        legacyGrantRefused: E
+      },
+      ...I && {
+        toolNameShared: I
+      },
+      ...B && {
+        legacyGrantRebindable: O
+      },
+      ...T !== void 0 && {
+        denyKey: T
+      },
+      ...M !== void 0 && {
+        nameKey: M
+      },
+      ...ce && {
+        accountMemory: !0
+      },
+      ...ye && {
+        accountMemoryServer: !0
+      },
+      ...ue && {
+        sdkDocsConnector: !0
+      },
+      toolName: q.name,
+      title: q.annotations?.title?.replace(/\s+/g, " ").trim() || void 0,
+      execution: q.execution,
+      role: ze,
+      effectiveMaxPermission: N,
+      ...Ae && {
+        uiMeta: Ae
+      },
+      ...Sgr(q._meta, e, q.name) && {
+        hiddenFromModel: !0
+      }
+    },
+    isMcp: !0,
+    searchHint: be?.replace(/\s+/g, " ").trim() || void 0,
+    alwaysLoad: !D && (j && !(r === "dynamic" && q._meta?.["anthropic/alwaysLoad"] === !1) || q._meta?.["anthropic/alwaysLoad"] === !0),
+    async description() {
+      return Be
+    },
+    async prompt({
+      loadedThroughToolSearch: Re
+    }) {
+      return Re ? Ye : He
+    },
+    isConcurrencySafe() {
+      return Ie.mayOverlap || (q.annotations?.readOnlyHint ?? !1)
+    },
+    isReadOnly() {
+      return q.annotations?.readOnlyHint ?? !1
+    },
+    readOnlyHint: q.annotations?.readOnlyHint,
+    openWorldHint: q.annotations?.openWorldHint,
+    toAutoClassifierInput(Re) {
+      return Pr(Re, q.name)
+    },
+    isDestructive() {
+      return q.annotations?.destructiveHint ?? !1
+    },
+    isOpenWorld() {
+      return q.annotations?.openWorldHint ?? !1
+    },
+    requiresUserInteraction() {
+      return Te
+    },
+    async validateInput(Re, oe) {
+      let Fe = ZXt(ye, q.name, oe);
+      if (Fe === void 0) return {
+        result: !0
+      };
+      return l("tengu_account_memory_spawned_write_refused", {
+        caller: de(oe.memoryCaller) ?? b("unmarked")
+      }), {
+        result: !1,
+        message: Fe,
+        errorCode: 1
+      }
+    },
+    suppressesAlwaysAllowRule: (Re, oe) => Te || N === "ask" && !oe || Ce() || ao(me, q.name),
+    ...(Me || NR()) && {
+      ignoresWholeToolAllowRule: Ce
+    },
+    maxResultSizeChars: $e ? Math.min(ge, PJ) : _3e.maxResultSizeChars,
+    persistenceThresholdCeiling: $e ? PJ : void 0,
+    inputJSONSchema: Vlr(Glr(uor(q.inputSchema, ne?.param_descriptions?.[q.name]), _e), _e),
+    async checkPermissions(Re, oe) {
+      let Fe = Rn(me, q.name, Re);
+      if (Fe) return Fe;
+      if (me) {
+        let qe = alt(),
+          ve = await qe?.wouldNeedDesignConsent(oe.toolState.get(nW), oe.credentials) ?? null;
+        if (ve !== null && qe && oe.toolUseId) {
+          let Le = xn(oe.toolUseId, ve, yr(oe));
+          return In(qe.consentPromptFor(ve), Re, Le)
+        }
+      }
+      if (Te) return {
+        behavior: "ask",
+        message: "MCPTool requires permission.",
+        suggestions: [],
+        suppressAlwaysAllowRule: !0
+      };
+      return {
+        behavior: "passthrough",
+        message: "MCPTool requires permission.",
+        suggestions: Y ? [] : [{
+          type: "addRules",
+          rules: [{
+            toolName: _e,
+            ruleContent: void 0
+          }],
+          behavior: "allow",
+          destination: e === wp && jZ() ? "session" : "localSettings"
+        }]
+      }
+    },
+    call: Ie.call,
+    userFacingName() {
+      let Re = (q.annotations?.title || q.name).replace(/\s+/g, " ").trim();
+      return `${e} - ${Re} (MCP)`
+    },
+    ...De
+  }
+}
+async function er({
+  name: e,
+  config: r,
+  capabilities: n,
+  serverInfo: s,
+  savedAt: h,
+  tools: y
+}) {
+  Po(), await ss(e, r);
+  let S = {
+    name: e,
+    type: "cached",
+    config: r,
+    capabilities: n,
+    ...s && {
+      serverInfo: {
+        name: s.name,
+        version: s.version
+      }
+    },
+    cacheSavedAt: h
+  };
+  return {
+    client: S,
+    tools: await Ar(S, y, Date.now(), "cache", Mr(S))
+  }
+}
+async function Ar(e, r, n, s, h) {
+  r = VIr(e.config, r);
+  let y = r.length,
+    S = oYt(),
+    T = (await Dge(r, (B) => S(B) ?? [])).flat();
+  r = [];
+  let M = YC(e.config),
+    E = rt(e.config, e.name),
+    I = Qv(bn(e.name), qx(e.name, e.config)),
+    O = y - T.length;
+  if (O > 0) Gs(e.name, zat("tools", O, y)), l("tengu_mcp_degraded", {
+    reason: b("tool_listing_over_limit"),
+    transportType: f(e.config.type ?? "stdio"),
+    skippedCount: O,
+    mcpServerName: I,
+    ...E
+  });
+  if (y === 0 && s === "live") l("tengu_mcp_degraded", {
+    reason: b("connected_zero_tools"),
+    transportType: f(e.config.type ?? "stdio"),
+    mcpServerName: I,
+    ...E
+  });
+  let j = e.config.type === "sdk" && i.CLAUDE_AGENT_SDK_MCP_NO_PREFIX,
+    D = e.config.type === "claudeai-proxy" || e.config.type === "http" || e.config.type === "sse" ? e.config.toolPermissions : void 0,
+    N = Iz(e.config) ? Pvr(D) : D;
+  if (N) {
+    let B = Object.keys(N).length;
+    if (B > 0 && !T.some((Y) => N[Y.name] !== void 0)) t(`[claudeai-mcp] ${e.name}: toolPermissions has ${B} entries but none matched upstream tool names \u2014 backend name drift?`, {
+      level: "warn"
+    })
+  }
+  let ne = Gn(e.config),
+    me = Kn(e.config),
+    K = 0,
+    G = 0,
+    W = 0,
+    fe = 0,
+    ce = 0,
+    ye = [],
+    ue = 0,
+    pe = 0,
+    he = await Dge(T, (B) => {
+      let Y = Rkn(B.inputSchema, {
+        normalizeEnabled: ne,
+        apiValidateEnabled: me
+      });
+      if (Y.verdict === "drop" && Y.cause !== "api_invalid") {
+        if (Y.cause === "normalize_gated") G++;
+        else W++;
+        return Gs(e.name, `Skipping tool "${B.name}": ${Y.reason}. Other tools from this server remain available.`), []
+      }
+      if (Y.normalized) K++, ae(e.name, `Normalized input schema for tool "${B.name}" (flattened top-level ${Y.normalized.combinators.join("/")})`);
+      if (Y.verdict === "drop") {
+        if (Y.rejection.check === "meta") fe++;
+        else ce++;
+        if (N?.[B.name] !== "blocked" && Sr(j ? B.name : br(e.name, B.name))) ye.push({
+          toolName: B.name,
+          reason: Y.rejection.detail
+        });
+        return Gs(e.name, `Skipping tool "${B.name}": its input schema would be rejected by the Anthropic API (${Y.rejection.detail}). Other tools from this server remain available.`), []
+      }
+      if (Y.apiWouldReject) {
+        if (Y.apiWouldReject.check === "meta") ue++;
+        else pe++;
+        ae(e.name, `Tool "${B.name}" input schema would be rejected by the Anthropic API (${Y.apiWouldReject.detail}); requests that include it may fail`)
+      }
+      return Y.normalized ? [{
+        ...B,
+        inputSchema: Y.normalized.schema,
+        description: qtn(Y.normalized.note, B.description)
+      }] : [B]
+    }),
+    Pe = Xi(he.flat(), "name"),
+    Ee = SMe(Xi(T, "name"), (B) => br(e.name, B.name));
+  if (h.seq > h.state.applied) h.state.applied = h.seq, e.droppedTools = Xi(ye, "toolName");
+  if (K > 0) l("tengu_mcp_degraded", {
+    reason: b("tool_schema_normalized"),
+    transportType: f(e.config.type ?? "stdio"),
+    normalizedCount: K,
+    mcpServerName: I,
+    ...E
+  });
+  if (G > 0) l("tengu_mcp_degraded", {
+    reason: b("tool_schema_normalize_gated"),
+    transportType: f(e.config.type ?? "stdio"),
+    skippedCount: G,
+    mcpServerName: I,
+    ...E
+  });
+  if (W > 0) l("tengu_mcp_degraded", {
+    reason: b("tool_schema_unsupported"),
+    transportType: f(e.config.type ?? "stdio"),
+    skippedCount: W,
+    mcpServerName: I,
+    ...E
+  });
+  if (fe > 0) l("tengu_mcp_degraded", {
+    reason: b("tool_schema_invalid"),
+    transportType: f(e.config.type ?? "stdio"),
+    skippedCount: fe,
+    mcpServerName: I,
+    ...E
+  });
+  if (ce > 0) l("tengu_mcp_degraded", {
+    reason: b("tool_property_key_invalid"),
+    transportType: f(e.config.type ?? "stdio"),
+    skippedCount: ce,
+    mcpServerName: I,
+    ...E
+  });
+  if (ue > 0) l("tengu_mcp_degraded", {
+    reason: b("tool_schema_invalid_gated"),
+    transportType: f(e.config.type ?? "stdio"),
+    keptCount: ue,
+    mcpServerName: I,
+    ...E
+  });
+  if (pe > 0) l("tengu_mcp_degraded", {
+    reason: b("tool_property_key_invalid_gated"),
+    transportType: f(e.config.type ?? "stdio"),
+    keptCount: pe,
+    mcpServerName: I,
+    ...E
+  });
+  let k = () => qx(e.name, e.config),
+    L = I8(e.config),
+    ee = I8(e.config, !0);
+  await Zlr(Pe, e.name, k(), M, e.instructions);
+  let ze = gr(e.config),
+    q = Uat(e.config),
+    Ue = e.config.pluginSource ? VP(e.config.pluginSource, sp()) : void 0,
+    De = Yl(e.config),
+    _e = De && e.name === na,
+    ge = _e || v4(e.config),
+    $e = !1,
+    Te = Pe,
+    Ae = T.some((B) => G$t(e, B.name)) || Te.some((B) => G$t(e, B.name)) || O > 0 && $fe(e),
+    Be = {
+      serverName: e.name,
+      scope: e.config.scope,
+      pluginSource: e.config.pluginSource,
+      serverType: e.config.type ?? "stdio",
+      sdkDocsConnector: Pkn(e),
+      source: MF(e.name, e.config),
+      skipPrefix: j,
+      serverAlwaysLoad: e.config.alwaysLoad === !0,
+      serverDefersAllTools: e.config.alwaysLoad === !1,
+      promptOverrides: q,
+      isFirstPartyDesignServer: ze,
+      maxDescriptionLength: L,
+      maxLoadedDescriptionLength: ee,
+      pluginTelemetry: Ue,
+      cliOwned: De,
+      displayName: vYt(e.config),
+      standardKey: qW() ? _Ln(e.name, e.config, De === !0) : void 0,
+      legacyGrantRefused: qW() && await ANr({
+        serverName: e.name,
+        serverType: e.config.type ?? "stdio",
+        serverId: yw(e.config)
+      }, tse(e.name, e.config), yLe(e.name, e.config)),
+      legacyGrantRebindable: qW() && !tse(e.name, e.config) && yLe(e.name, e.config) && xNr({
+        serverName: e.name,
+        serverType: e.config.type ?? "stdio",
+        serverId: yw(e.config)
+      }),
+      denyKey: yLn(e.config),
+      nameKey: fvr(e),
+      serverId: yw(e.config),
+      serverIdStamp: pve(e.name, e.config),
+      ...V9e(e),
+      iconUrl: "iconUrl" in e.config ? e.config.iconUrl : void 0,
+      serverInfoName: Dh(e.serverInfo?.name ?? "") || void 0,
+      role: "role" in e.config ? e.config.role : void 0
+    },
+    He = uT(e.name),
+    Ye = Gat(e),
+    be = kDn(T),
+    Ie = (await Dge(Te, (B) => {
+      let Y = br(e.name, B.name),
+        Ce = kr(B) !== void 0,
+        Re = {
+          ...He && GRe(e.config) && {
+            ...dn().getClaudeInChromeMCPToolOverrides(B.name),
+            builtinRenderFamily: "claude-in-chrome"
+          },
+          ...He && iH(e.config) && {
+            ...bor(B.name, B._meta, (w, A) => Sor(async (H, te, re) => (await Ut({
+              client: await Ot(e, {
+                context: "MCP tool call",
+                signal: re
+              }),
+              tool: H,
+              args: te,
+              signal: re,
+              resultNotForModel: !0,
+              imageLimits: Ow,
+              storageV5: void 0,
+              credentials: void 0
+            })).content, w, A))
+          },
+          ...e.name === wp && {
+            excludedFromModeBypassAllow: jZ
+          },
+          ...!1,
+          ...e.config.type === "sdk" && _1e(e.name) ? Asr(e.name, B.name, B.inputSchema.properties, Pr) : {},
+          ...vor(B.name) ? Eor() : {},
+          ...ndr(e.name, e.config.pluginSource, B.name) ? rdr() : {},
+          ...{},
+          ..._e ? Ho()?.artifactsMcpLaptopToolOverridesFor(e.config) : {},
+          ...Iz(e.config) && {
+            skipAggregateToolResultBudget: !0
+          }
+        },
+        oe = Qo({
+          ...Be,
+          accountMemory: Kyt(e, B.name),
+          accountMemoryServer: Ae,
+          effectiveMaxPermission: N?.[B.name],
+          toolNameShared: twe() && (Ee[Y] ?? 0) > 1,
+          listed: B,
+          overrides: Re,
+          async call(w, A, H, te, re, Z) {
+            let le = A.toolUseId ?? sr(te),
+              ie = ZXt(Ae, B.name, A);
+            if (ie !== void 0) throw new R(ie, "account memory write from a spawned loop");
+            let Se = {
+                ...rvn(e.config, A.mcpRequestMeta),
+                ...Z?.mcpCallMeta,
+                ...le && {
+                  "claudecode/toolUseId": le
+                },
+                ...olt(A.session, A.toolUseId, e.name, e.config),
+                ...uT(e.name) && iH(e.config) && wor(A),
+                ...(Gat(e) || Wyt(e.name, e.config)) && hDn(te.requestId),
+                ...l1n(e) && kor(N_r()),
+                ...Ior(e, A),
+                ...aSe(e) && mor(A.toolState, te.message.id)
+              },
+              ke = !1;
+
+            function Ne(Xe) {
+              if (!re || !le || ke) return;
+              re({
+                type: "progress",
+                toolUseID: le,
+                data: Xe
+              })
+            }
+            Ne({
+              type: "mcp_progress",
+              status: "started",
+              serverName: e.name,
+              toolName: B.name
+            });
+            let je = Date.now(),
+              Qe = e,
+              nt = !1,
+              ft, st = null,
+              at = typeof w.__consentNonce === "string" ? w.__consentNonce : void 0;
+            if ("__consentNonce" in w) {
+              let {
+                __consentNonce: Xe,
+                ...Mt
+              } = w;
+              w = Mt
+            }
+            let Pt = ze ? Un(le, at) : null;
+            if (ze) Mn(A.toolState.get(nW), ze, B.name, w);
+            let $t = (Xe) => {
+                if (nt = Xe, Xe) {
+                  if (ft ??= Z?.timing?.mark("approval"), !ke && oe.name !== LE() && st === null) st = Hee()
+                } else ft?.(), ft = void 0, st?.(), st = null
+              },
+              ct = !0,
+              dt = async (Xe) => {
+                for (let Rt = 0;; Rt++) try {
+                  let Je = ct ? le : void 0;
+                  ct = !1;
+                  let Bt = Z?.timing?.mark(e.config.type === "http" && eKe(e.config.url) ? "own" : "external"),
+                    St = await Ot(e, {
+                      context: "MCP tool call",
+                      toolUseId: Je
+                    }).finally(Bt);
+                  Qe = St, Yhr(Se, Ae, A, St);
+                  let xe = await Ss({
+                    client: St,
+                    clientConnection: e,
+                    tool: B.name,
+                    args: w,
+                    meta: Se,
+                    signal: Xe,
+                    imageLimits: Al(A.options.mainLoopModel),
+                    taskRegistry: A.taskRegistry,
+                    toolUseId: le,
+                    onProgress: re && le ? Ne : void 0,
+                    requestDialog: A.requestDialog,
+                    storageV5: A.storageV5,
+                    credentials: A.credentials,
+                    hasResultSizeAnnotation: Ce || A.innerCall === !0,
+                    onAwaitingUserInput: $t,
+                    timing: Z?.timing,
+                    offCriticalPath: (zRe(A.agentContext) ?? (A.isBackgroundAgent ? A.agentId : void 0)) !== void 0,
+                    ccrNeedsApprovalRetry: "url" in e.config && $u(e.config.url) && On(A) && !(LE() && LE() !== "stdio") ? {
+                      canUseTool: H,
+                      tool: oe,
+                      fullyQualifiedName: Y,
+                      toolUseContext: A,
+                      parentMessage: te
+                    } : void 0
+                  });
+                  if (xe.interrupted) throw new Ke(H7e);
+                  if (Ne({
+                      type: "mcp_progress",
+                      status: "completed",
+                      serverName: e.name,
+                      toolName: B.name,
+                      elapsedTimeMs: Date.now() - je
+                    }), !xe.isError) {
+                    if (ror(B.name), aSe(e)) hor(A.toolState, te.message.id, xe._meta);
+                    if (!ke && uT(e.name) && iH(e.config)) xe.content = xsr(xe.content, xe._meta, A)
+                  }
+                  if (xe.downloadOffers !== void 0) await Vat(xe, e.config, {
+                    canUseTool: H,
+                    toolUseContext: A,
+                    signal: Xe,
+                    backgrounded: ke,
+                    onAwaitingUserInput: $t,
+                    serverName: e.name,
+                    imageLimits: Al(A.options.mainLoopModel)
+                  });
+                  if (Rt > 0) g("mcp_session_recovery");
+                  let Zt = ZRt(e.config, zM(xe._meta));
+                  return {
+                    data: xe.content,
+                    ...xe.urlElicitationDeclined && {
+                      urlElicitationDeclined: xe.urlElicitationDeclined
+                    },
+                    ...(Zt || xe.structuredContent || xe.resourceLinks) && {
+                      mcpMeta: {
+                        ...Zt && {
+                          _meta: Zt
+                        },
+                        ...xe.structuredContent && {
+                          structuredContent: xe.structuredContent
+                        },
+                        ...xe.resourceLinks && {
+                          resourceLinks: xe.resourceLinks
+                        }
+                      }
+                    }
+                  }
+                } catch (Je) {
+                  if (Je instanceof EO && Rt < 1 && (!Je.mayHaveRun || oe.isConcurrencySafe(w) || B.annotations?.idempotentHint === !0)) {
+                    c("mcp_session_recovery", Je.expiryKind), ae(e.name, `Retrying tool '${B.name}' after session recovery`);
+                    continue
+                  }
+                  if (Je instanceof EO) m("mcp_session_recovery", Rt < 1 ? "may_have_run_no_retry" : "session_retry_exhausted");
+                  else if (Rt > 0 && !Xe.aborted) m("mcp_session_recovery", "retry_failed_other");
+                  if (Ne({
+                      type: "mcp_progress",
+                      status: "failed",
+                      serverName: e.name,
+                      toolName: B.name,
+                      elapsedTimeMs: Date.now() - je
+                    }), !Xe.aborted) rde(e.name, Je);
+                  if (Je instanceof Error && !(Je instanceof R)) {
+                    let Bt = Je.constructor.name,
+                      St = () => Xe.aborted ? "other" : $z(Je);
+                    if (Bt === "Error") {
+                      let xe = Ns(Je, e.config);
+                      throw Object.assign(new R(xe, xe.slice(0, 200)), {
+                        mcpErrorSource: St()
+                      })
+                    }
+                    if (Bt === "McpError" && "code" in Je && typeof Je.code === "number") {
+                      let xe = Object.assign(new R(Je.message, `McpError ${Je.code}`), {
+                        mcpErrorSource: St()
+                      });
+                      throw Cs(Je) ? kQ(xe) : xe
+                    }
+                  }
+                  throw rMr(Je, e, B.name), Je
+                }
+              }, lt = dt;
+            if (ze) lt = Bn(dt, {
+              designSession: A.toolState.get(nW),
+              approvedConsentBit: Pt?.bit ?? null,
+              consentAskReachesUser: (Pt?.askReachesUser ?? !1) && yr(A),
+              credentials: A.credentials
+            });
+            if (B.name === rlt && kYt(e)) {
+              let {
+                withTaskFilesRemembered: Xe
+              } = await import("B:/~BUN/root/chunk-e8e2d4cy.js");
+              lt = Xe(lt, {
+                client: e,
+                args: w,
+                session: A.session
+              })
+            }
+            if (ut && !A.agentId && A.taskRegistry !== mq && oe.name !== LE()) {
+              let Xe = ut.getMcpAutoBackgroundMs(e.config, {
+                  isNonInteractiveSession: A.options.isNonInteractiveSession
+                }),
+                Mt = Xe === 0 && ut.isMcpCallMovableWithoutTimer(e.config, {
+                  isNonInteractiveSession: A.options.isNonInteractiveSession,
+                  isInnerCall: A.innerCall === !0
+                });
+              if (Xe > 0 || Mt) return ut.callMcpToolWithAutoBackground({
+                run: lt,
+                serverName: e.name,
+                toolName: B.name,
+                accountMemoryTool: kNe(oe),
+                toolUseId: le,
+                parentAbortController: A.abortController,
+                taskRegistry: A.taskRegistry,
+                autoBackgroundMs: Mt ? null : Xe,
+                storageV5: A.storageV5,
+                credentials: A.credentials,
+                hasPendingElicitation: () => nt || ((Qe.type === "connected" ? Qe.transportErrorState?.pendingElicitations : void 0) ?? 0) > 0,
+                onBackgrounded: () => {
+                  ke = !0
+                },
+                foregroundCalls: A.innerCall ? void 0 : Vve.of(A.session),
+                noticeGate: Elr({
+                  hookCaller: A.hookCaller,
+                  hookServesModel: A.hookServesModel,
+                  pluginUnnamed: A.pluginUnnamed
+                })
+              })
+            }
+            return lt(A.abortController.signal)
+          }
+        });
+      if (He && (B.name === "file_upload" || B.name === "browser_batch")) {
+        let w = !GRe(e.config) && !i.CLAUDE_CODE_REMOTE && i.CLAUDE_CODE_IS_COWORK,
+          A = oe.call;
+        oe.call = async (H, te, re, Z, le, ie) => {
+          let {
+            FILE_UPLOAD_MAX_TOTAL_BYTES: Se,
+            passThroughChromeFileUploadInput: ke,
+            prepareChromeFileUploadInput: Ne
+          } = await import("B:/~BUN/root/chunk-zek9dn3r.js"), je = w ? await ke(B.name, H ?? {}, se(te)) : await Ne(B.name, H ?? {}, se(te), iH(e.config) ? {
+            maxTotalBytes: USr(B._meta, Se),
+            hosted: {
+              session: te.session,
+              signal: te.abortController.signal
+            }
+          } : void 0);
+          if (je.error) throw new R(je.error, "Claude in Chrome file_upload path rejected");
+          return A(je.input ?? H, te, re, Z, le, je.callMeta ? {
+            ...ie,
+            mcpCallMeta: je.callMeta
+          } : ie)
+        }
+      }
+      if (e.config.type === "sdk" && _1e(e.name) && oAt.includes(B.name) && !i.CLAUDE_CODE_REMOTE && !i.CLAUDE_CODE_IS_COWORK && PV().status === "absent") {
+        let w = B._meta?.[Rsr] === !0,
+          A = oe.call;
+        oe.call = async (H, te, re, Z, le, ie) => {
+          let Se = await import("B:/~BUN/root/chunk-dbhfy56c.js"),
+            ke = await Se.paneFileUploadCall(H, se(te), te.mcpRequestMeta, w, te.autoModeClassified === !0);
+          return A(ke.input, {
+            ...te,
+            mcpRequestMeta: ke.mcpRequestMeta
+          }, re, Z, le, ie && {
+            ...ie,
+            mcpCallMeta: {}
+          })
+        }
+      }
+      if (w3e(B.name)) {
+        let w = B.name,
+          A = oe.validateInput;
+        oe.validateInput = async (re, Z) => {
+          let le = A ? await A(re, Z) : {
+            result: !0
+          };
+          if (!le.result) return le;
+          let {
+            startTaskInputRefusal: ie
+          } = await import("B:/~BUN/root/chunk-hp5z6cqn.js"), Se = ie(e, w, re, oe.inputJSONSchema, Z.session);
+          return Se === void 0 ? le : {
+            result: !1,
+            message: Se,
+            errorCode: 2
+          }
+        };
+        let H = oe.prompt;
+        oe.prompt = async (re) => {
+          let Z = await H(re),
+            le = await re.getToolPermissionContext();
+          if (le.isRemoteMode !== !0) return Z;
+          let {
+            startTaskFilesPromptNote: ie
+          } = await import("B:/~BUN/root/chunk-hp5z6cqn.js"), Se = ie(e, w, le);
+          return Se === void 0 ? Z : `${Z}
+
+${Se}`
+        };
+        let te = oe.call;
+        if (oe.call = async (re, Z, le, ie, Se, ke) => {
+            let Ne = re ?? {};
+            if (!Array.isArray(Ne.files) || Ne.files.length === 0) return te(re, Z, le, ie, Se, ke);
+            let {
+              prepareStartTaskFileInputs: je,
+              removeStartTaskUploadsFor: Qe,
+              startTaskInputRefusal: nt,
+              startTaskSendRefusal: ft
+            } = await import("B:/~BUN/root/chunk-hp5z6cqn.js"), st = Z.toolUseId, at = bYt(Z.session, st, Ne.files);
+            if (at !== void 0 && st !== void 0) {
+              let dt = ft(at.uploadStartedAt, w);
+              if (dt !== void 0) throw await CIe(Z.session, at), new R(dt, "start_task files not sent after the approval");
+              at.state = "sending", SYt(Z.session, st, () => ft(at.uploadStartedAt, w));
+              try {
+                return await te(re, Z, le, ie, Se, ke)
+              } catch (lt) {
+                if (nlt(lt)) at.state = "pending", await CIe(Z.session, at);
+                throw lt
+              } finally {
+                wYt(Z.session, st), psr(Z.session, at)
+              }
+            }
+            let Pt = nt(e, w, Ne, oe.inputJSONSchema, Z.session);
+            if (Pt !== void 0) throw new R(Pt, "start_task input refused");
+            let $t = Date.now(),
+              ct = await je(e, w, Ne, se(Z), Z.abortController.signal, Z.session);
+            if (ct.error) throw new R(ct.error, "start_task file input rejected");
+            if (ct.input === void 0 || st === void 0) return te(ct.input ?? re, Z, le, ie, Se, ke);
+            SYt(Z.session, st, () => ft($t, w));
+            try {
+              return await te(ct.input, Z, le, ie, Se, ke)
+            } catch (dt) {
+              if (nlt(dt)) await Qe(e, Z.session, ct.input.files);
+              throw dt
+            } finally {
+              wYt(Z.session, st)
+            }
+          }, gsr(e)) oe.askInputPreparer = async (re, Z, le) => {
+          if (!Array.isArray(re.files) || re.files.length === 0) return;
+          let {
+            startTaskAskInputPreparer: ie,
+            startTaskInputRefusal: Se
+          } = await import("B:/~BUN/root/chunk-hp5z6cqn.js"), ke = ie(e, w, re, se(Z), Z.abortController.signal, Z.session, le);
+          return ke && {
+            prepare: () => {
+              let Ne = Se(e, w, re, oe.inputJSONSchema, Z.session);
+              return Ne === void 0 ? ke.prepare() : Promise.resolve({
+                error: Ne
+              })
+            }
+          }
+        }
+      }
+      let {
+        validateInput: Fe,
+        call: qe,
+        askInputPreparer: ve
+      } = oe;
+      if (B._meta?.[Z3e] !== void 0) yor(oe, {
+        client: e,
+        name: B.name,
+        meta: B._meta,
+        schema: oe.inputJSONSchema
+      }, (w) => async (A, H) => (await Ut({
+        client: await Ot(e, {
+          context: "MCP tool call"
+        }),
+        tool: A,
+        args: H,
+        signal: w.abortController.signal,
+        imageLimits: Al(w.options.mainLoopModel),
+        hasResultSizeAnnotation: !0,
+        storageV5: w.storageV5,
+        credentials: w.credentials
+      })).structuredContent);
+      {
+        let w = Lze(e, B.name, be);
+        if (w !== void 0) EDn(oe, w, {
+          validateInput: Fe,
+          call: qe,
+          askInputPreparer: ve
+        }, sr, vDn(e))
+      }
+      if (Lze(e, B.name) === void 0) _or(oe, {
+        client: e,
+        name: B.name,
+        meta: B._meta,
+        schema: oe.inputJSONSchema
+      });
+      if (oe.mcpInfo !== void 0 && s_e(e, B.name) !== void 0) oe.mcpInfo = {
+        ...oe.mcpInfo,
+        fileReference: !0
+      };
+      if (_e || Iz(e.config)) un()?.applyArtifactRules(e.config, oe);
+      if (ge) Ho()?.wrapArtifactsMcpLaptopPublishing(e.config, oe);
+      if (Ye) pn()?.wrapClaudeDocsCreateWake(oe);
+      if (He && e.config.type !== "sdk") {
+        let w = oe.call;
+        oe.call = async (A, H, te, re, Z, le) => {
+          let ie = MJ("allow_claude_browser_extension", "Claude in Chrome", "is");
+          if (ie !== null) throw new R(ie, "Claude in Chrome call refused by org policy");
+          return w(A, H, te, re, Z, le)
+        }
+      }
+      let Le = oe.call;
+      return oe.call = async (w, A, H, te, re, Z) => {
+        if (A.options.activeMcpServer = e.name, A.options.activeMcpTool = B.name, e.config.pluginSource) zP(e.config.pluginSource), jB(e.config.pluginSource, "mcp", {
+          kind: "mcp-server",
+          name: e.name
+        });
+        let le = k();
+        if (le) WIr(e.name);
+        let ie = w3e(B.name) && bYt(A.session, A.toolUseId, w?.files) !== void 0 || (B._meta?.[Z3e] !== void 0 ? (await import("B:/~BUN/root/chunk-8g8mjhct.js")).hasFileGrants(A.session, A.toolUseId) : !1);
+        return Le(ie ? w : edr(w, B.name, e.name, le, v("tengu_mcp_strip_trailing_xml_tags", !1), M), A, H, te, re, Z)
+      }, oe
+    })).filter(Vn),
+    Ve = Pe.map((B) => (q?.tools?.[B.name] ?? B.description ?? "").length),
+    Me = Ve.reduce((B, Y) => B + Y, 0);
+  if (l("tengu_mcp_tools_listed", {
+      transportType: f(e.config.type ?? "stdio"),
+      listDurationMs: Date.now() - n,
+      toolCount: Ie.length,
+      alwaysLoadCount: U(Ie, (B) => B.alwaysLoad === !0),
+      descriptionTotalLength: Me,
+      descriptionMaxLength: Ve.reduce((B, Y) => Math.max(B, Y), 0),
+      descriptionMeanLength: Ve.length ? Math.round(Me / Ve.length) : 0,
+      descriptionOverLimitCount: U(Ve, (B) => B > L),
+      discoverySource: f(s),
+      ...E,
+      mcpServerName: Qv(bn(e.name), qx(e.name, e.config))
+    }), s === "live") g("mcp_list_tools");
+  if (GRe(e.config) && uT(e.name)) Psr(Ie.length, s);
+  if (kYt(e)) {
+    let {
+      addTaskFileSaves: B
+    } = await import("B:/~BUN/root/chunk-e8e2d4cy.js");
+    B(Ie, {
+      client: e,
+      listed: Te,
+      compose: (Y, Ce, Re, oe) => Qo({
+        ...Be,
+        accountMemoryServer: Ae,
+        effectiveMaxPermission: oe,
+        listed: Y,
+        call: Ce,
+        overrides: Re
+      })
+    })
+  }
+  return Ie
+}
+var Dt = N1e(async (e, r, n) => {
+  if (e.type !== "connected") return [];
+  let s = zr(),
+    h = Mr(e);
+  try {
+    if (!e.capabilities?.tools) {
+      let M = [];
+      return uo(M, []), M
+    }
+    let y = Date.now(),
+      S = await Xt(_a(e.client), e.name, e.config, "tools/list", P4t, (M) => M.tools);
+    if (e.toolsListError = void 0, e.discoveryAuthFailure = void 0, n === !0) {
+      let M = [];
+      return uo(M, S), M
+    }
+    let T = await Ar(e, S, y, "live", h);
+    if (h.seq === h.state.started) e.toolsListError = void 0, e.discoveryAuthFailure = void 0;
+    return uo(T, S), T
+  } catch (y) {
+    let S = Cu(e.name, e.config, Ns(y, e.config));
+    if (e.config.type === "claudeai-proxy" && T_n(y)) {
+      if (l("tengu_mcp_server_needs_auth", {
+          transportType: b("claudeai-proxy"),
+          cause: b("discovery_tools_list"),
+          ...rt(e.config, e.name)
+        }), fI(s)) Eo(e.name, e.config.id, void 0, r);
+      return c("mcp_list_tools", "mcp_list_tools_needs_auth"), ae(e.name, "tools/list 401/403 on claude.ai proxy \u2014 flagging needs-auth"), e.discoveryAuthFailure = !0, Do().toolLists.delete(mr(e.name, e.config)), []
+    }
+    if (T_n(y) && y3e(e.name, e.config)) e.discoveryAuthFailure = !0;
+    let T = e.config.type === "claudeai-proxy" && hit(y),
+      M = T ? "mcp_list_tools_claudeai_bearer_rejected" : y instanceof Ea ? `mcp_list_tools_${vr[y.code]??"mcperr_other"}` : S.includes("timed out") ? "mcp_list_tools_timeout" : "mcp_list_tools_failed";
+    if (c("mcp_list_tools", M), (T ? ae : Gs)(e.name, `Failed to fetch tools: ${S}`), e.toolsListError = S, T) e.discoveryBearerRejected = !0;
+    let I = [];
+    if (bt().toolsListErrorByResult.set(I, S), !T) {
+      let O = rt(e.config, e.name);
+      l("tengu_mcp_degraded", {
+        reason: b("tools_list_failed"),
+        transportType: f(e.config.type ?? "stdio"),
+        ...O,
+        mcpServerName: Qv(bn(e.name), qx(e.name, e.config))
+      })
+    }
+    return Do().toolLists.delete(mr(e.name, e.config)), I
+  }
+}, (e) => mr(e.name, e.config), () => Do().toolLists);
+
+function Ir(e, r, n, s, h, y) {
+  let S = Ns(r, e.config),
+    T = e.config.type === "claudeai-proxy" && T_n(r),
+    M = e.config.type === "claudeai-proxy" && hit(r);
+  if (M) e.discoveryBearerRejected = !0;
+  let E = T ? `${n}_needs_auth` : M ? `${n}_claudeai_bearer_rejected` : r instanceof Ea ? `${n}_${vr[r.code]??"mcperr_other"}` : S.includes("timed out") ? `${n}_timeout` : `${n}_failed`;
+  if (s(E), (T || M ? ae : Gs)(e.name, `Failed to fetch ${y}: ${S}`), !T && !M) l("tengu_mcp_degraded", {
+    reason: h,
+    transportType: f(e.config.type ?? "stdio"),
+    ...rt(e.config, e.name),
+    mcpServerName: Qv(bn(e.name), qx(e.name, e.config))
+  })
+}
+var Yt = N1e(async (e) => {
+  if (e.type !== "connected") return [];
+  try {
+    if (!e.capabilities?.resources) {
+      let s = [];
+      return Lt(s, []), s
+    }
+    let r = await Xt(_a(e.client), e.name, e.config, "resources/list", Aat, (s) => s.resources);
+    J9t(e.config, r), g("mcp_list_resources");
+    let n = r.map((s) => ({
+      ...s,
+      server: e.name
+    }));
+    return Lt(n, r), n
+  } catch (r) {
+    Ir(e, r, "mcp_list_resources", (s) => c("mcp_list_resources", s), b("resources_list_failed"), "resources"), Do().resourceLists.delete(mr(e.name, e.config));
+    let n = [];
+    if (r instanceof Ea && r.code === ja.MethodNotFound) Lt(n, []);
+    else bt().discoveryFetchErrors.set(n, F(r));
+    return n
+  }
+}, (e) => mr(e.name, e.config), () => Do().resourceLists);
+var Ft = N1e(async (e) => {
+  if (e.type !== "connected") return [];
+  try {
+    if (!e.capabilities?.resources) return [];
+    let r = await Xt(_a(e.client), e.name, e.config, "resources/templates/list", Zwn, (n) => n.resourceTemplates);
+    return J9t(e.config, r), l("tengu_mcp_resource_templates_fetched", {
+      template_count: r.length
+    }), g("mcp_list_resource_templates"), r.map((n) => ({
+      ...n,
+      server: e.name
+    }))
+  } catch (r) {
+    Do().resourceTemplateLists.delete(mr(e.name, e.config)), ae(e.name, `Failed to fetch resource templates: ${Ns(r,e.config)}`);
+    let n = [];
+    if (!(r instanceof Ea && r.code === ja.MethodNotFound)) bt().discoveryFetchErrors.set(n, F(r));
+    return n
+  }
+}, (e) => mr(e.name, e.config), () => Do().resourceTemplateLists);
+
+function Tu(e, r) {
+  let n = [];
+  for (let s of e) {
+    if (s.type !== "connected") continue;
+    if (s.name in r) continue;
+    n.push(Ft(s).then((h) => ({
+      client: s,
+      templates: h
+    })))
+  }
+  return Promise.all(n)
+}
+async function wu(e, r, n, s, h) {
+  if (!e.capabilities?.completions) return [];
+  try {
+    let y = await _a(e.client).complete({
+      ref: {
+        type: "ref/resource",
+        uri: r
+      },
+      argument: {
+        name: n,
+        value: s
+      },
+      context: Object.keys(h).length > 0 ? {
+        arguments: h
+      } : void 0
+    });
+    return g("mcp_complete_resource_template"), y.completion.values
+  } catch (y) {
+    return m("mcp_complete_resource_template", "mcp_complete_resource_template_failed"), ae(e.name, `Failed to complete resource template: ${Ns(y,e.config)}`), []
+  }
+}
+var Jt = N1e(async (e) => {
+  if (e.type !== "connected") return [];
+  try {
+    if (!e.capabilities?.prompts) {
+      let s = [];
+      return po(s, []), s
+    }
+    let r = await Xt(_a(e.client), e.name, e.config, "prompts/list", tkn, (s) => s.prompts);
+    g("mcp_list_prompts");
+    let n = Or(e, r);
+    return po(n, r), n
+  } catch (r) {
+    Ir(e, r, "mcp_list_prompts", (s) => c("mcp_list_prompts", s), b("prompts_list_failed"), "commands"), Do().commandLists.delete(mr(e.name, e.config));
+    let n = [];
+    if (r instanceof Ea && r.code === ja.MethodNotFound) po(n, []);
+    else bt().discoveryFetchErrors.set(n, F(r));
+    return n
+  }
+}, (e) => mr(e.name, e.config), () => Do().commandLists);
+
+function Or(e, r) {
+  let n = oYt(),
+    s = r.flatMap((E) => n(E) ?? []),
+    h = r.length - s.length;
+  if (h > 0) Gs(e.name, zat("prompts", h, r.length));
+  let y = e.config,
+    S = (y.type === "http" || y.type === "sse") && JL(y.url),
+    T = Uat(e.config),
+    M = s.map((E) => {
+      let I = Object.values(E.arguments ?? {}),
+        O = I.map((D) => D.name),
+        j = T?.prompts?.[E.name] ?? E.description;
+      return {
+        type: "prompt",
+        name: "mcp__" + bn(e.name) + "__" + E.name,
+        description: j ?? "",
+        hasUserSpecifiedDescription: !!j,
+        contentLength: 0,
+        isEnabled: () => !0,
+        isHidden: !1,
+        isMcp: !0,
+        mcpInfo: FBt(e),
+        progressMessage: "running",
+        userFacingName() {
+          return S ? E.name : `${e.name}:${E.name} (MCP)`
+        },
+        aliases: S ? [`${e.name}:${E.name}`, `${e.name}:${E.name} (MCP)`] : void 0,
+        argNames: O,
+        source: "mcp",
+        async getPromptForCommand(D, N) {
+          let ne = D.trim(),
+            me = ne ? ne.split(/\s+/) : [],
+            K = NI(e);
+          if (K) throw K;
+          try {
+            let G = I.filter((ue, pe) => ue.required && me[pe] === void 0).map((ue) => ue.name);
+            if (G.length > 0) throw Error(`Missing required ${P(G.length,"argument")}: ${G.join(", ")}. Usage: /mcp__${bn(e.name)}__${E.name} ${O.join(" ")}`);
+            let W = await Ot(e, {
+                signal: N.abortController.signal,
+                context: "MCP prompt command"
+              }),
+              fe = await _a(W.client).getPrompt({
+                name: E.name,
+                arguments: nor(O, me)
+              }),
+              ce = Al(N.options.mainLoopModel),
+              ye = await Promise.all(fe.messages.map((ue) => Ao(ue.content, W.name, ce, N.storageV5)));
+            return g("mcp_get_prompt"), lc(br(e.name, E.name)), ye.flat()
+          } catch (G) {
+            if (!We(G))
+              if (e.config.type === "claudeai-proxy" && hit(G)) c("mcp_get_prompt", "mcp_get_prompt_claudeai_bearer_rejected"), ae(e.name, `Error running command '${E.name}': ${Ns(G,e.config)}`);
+              else m("mcp_get_prompt", "mcp_get_prompt_failed"), Gs(e.name, `Error running command '${E.name}': ${Ns(G,e.config)}`);
+            throw G
+          }
+        }
+      }
+    });
+  return a3t(M, (E) => ae(e.name, `Prompt '${E.name}' not listed: the server name ${aTn}. Rename the server in your MCP configuration to list its prompts.`))
+}
+async function Eu(e, r, n) {
+  return (await Ut({
+    client: n,
+    tool: e,
+    args: r,
+    signal: Xn().signal,
+    imageLimits: Ow,
+    idleTimeoutMs: 0,
+    storageV5: void 0,
+    credentials: void 0
+  })).content
+}
+
+function Lr(e, r) {
+  return c("mcp_reconnect", "mcp_reconnect_identity_changed"), {
+    client: {
+      name: e,
+      type: "failed",
+      config: r,
+      error: "Reconnect cancelled: the account changed while connecting. Choose Reconnect again.",
+      errorCode: "IDENTITY_CHANGED"
+    },
+    tools: [],
+    commands: []
+  }
+}
+async function vu(e, r, n, s) {
+  if (!Y0()) return tr(e, r, n, s);
+  let h = zr();
+  if (await tre(Kt(e, r)), KC(r) && zr() !== h) return Lr(e, r);
+  return tr(e, r, n, s)
+}
+async function tr(e, r, n, s, h = {}) {
+  let y = zr(),
+    S = KC(r),
+    T = () => S && zr() !== y,
+    M = () => Lr(e, r);
+  try {
+    HU();
+    let E = h.keepConnectionInUse ? {} : void 0;
+    if (await (E === void 0 ? Ct(e, r) : Ct(e, r, E)), T()) return M();
+    let I = X0(r);
+    if (I) {
+      if (await WM(l2(r, s), {
+          serverName: e,
+          context: r9
+        }), T()) return M()
+    }
+    if (c9t(r) || I && uw(e, r)) {
+      if (E?.connection !== void 0) {
+        if (await Ct(e, r), T()) return M()
+      }
+      return {
+        client: {
+          name: e,
+          type: "failed",
+          config: r,
+          ...RS("managed-policy", e, r)
+        },
+        tools: [],
+        commands: []
+      }
+    }
+    let O = Ze(e, r, void 0, n, s),
+      j = await O;
+    if (j.type === "needs-auth") {
+      if (ae(e, "Reconnect returned 'needs-auth'; retrying once after cache clear"), T()) return M();
+      let ce = mr(e, r);
+      if (Do().connections.get(ce) === O) Do().connections.delete(ce);
+      j = await Ze(e, r, void 0, n, s)
+    }
+    if (T()) {
+      if (j.type === "connected") await it(j);
+      return M()
+    }
+    if (j.type !== "connected") return c("mcp_reconnect", "mcp_reconnect_not_connected"), xP(r, {
+      client: j,
+      tools: [],
+      commands: []
+    });
+    if (r.type !== "claudeai-proxy") Vt(e, n);
+    if (r.type === "http" || r.type === "sse") await t4r(e, r);
+    NB(e);
+    let D;
+    if (Vd()) D = await XY(e, r);
+    if (T()) return await it(j), M();
+    let N = !!j.capabilities?.resources,
+      [ne, me, K, G] = await Promise.all([Dt(j, n), Jt(j), Promise.resolve([]), N ? Yt(j) : Promise.resolve([])]);
+    if (T()) return await it(j), M();
+    if (j.discoveryAuthFailure) return c("mcp_reconnect", "mcp_reconnect_needs_auth_discovery"), {
+      client: {
+        name: e,
+        type: "needs-auth",
+        config: r
+      },
+      tools: [],
+      commands: []
+    };
+    if (r.type === "claudeai-proxy" && !j.discoveryBearerRejected) Vt(e, n);
+    if (r.type === "claudeai-proxy" && !j.toolsListError && !j.discoveryBearerRejected) T3t(e, n);
+    ls(j, {
+      tools: ne,
+      commands: me,
+      resources: G,
+      identityEpoch: y,
+      grantLeg: D
+    });
+    let W = [...me, ...K],
+      fe = [];
+    if (N) {
+      if (![DB, LB].some((ye) => ne.some((ue) => ht(ue, ye.name)))) fe.push(DB, LB, D8)
+    }
+    if (j.discoveryBearerRejected) c("mcp_reconnect", "mcp_reconnect_bearer_rejected");
+    else if (j.toolsListError) c("mcp_reconnect", "mcp_reconnect_tools_list_failed");
+    else g("mcp_reconnect");
+    return xP(r, {
+      client: j,
+      tools: [...ne, ...fe],
+      commands: W,
+      resources: G.length > 0 ? G : void 0,
+      resourceTemplates: [],
+      ...E?.connection !== void 0 && j === E.connection && {
+        keptConnectionInUse: !0
+      }
+    })
+  } catch (E) {
+    return m("mcp_reconnect", "mcp_reconnect_failed"), Gs(e, `Error during reconnection: ${Ns(E,r)}`), {
+      client: {
+        name: e,
+        type: "failed",
+        config: r
+      },
+      tools: [],
+      commands: []
+    }
+  }
+}
+async function fo(e, r, n) {
+  await Y_(e, n, {
+    concurrency: r
+  })
+}
+async function Pu(e, r) {
+  if (e.length === 0) return 0;
+  let n, s = new Promise((h) => {
+    n = setTimeout((y) => y("deadline"), r, h)
+  });
+  try {
+    let h = await Promise.all(e.map((y) => Promise.race([y.then(() => "settled", () => "settled"), s])));
+    return U(h, (y) => y === "deadline")
+  } finally {
+    clearTimeout(n)
+  }
+}
+async function ms(e, r, n, s, h, y, S, T) {
+  let M = zr(),
+    E = (k) => zr() !== M && KC(k),
+    I = (k) => {
+      if (!E(k.client.config)) e({
+        ...k,
+        attemptEpoch: M
+      })
+    };
+  pt();
+  let O = !1,
+    j = Object.entries(r ?? (await yW()).servers),
+    D = [];
+  for (let k of j)
+    if (jo(k[0])) I({
+      client: {
+        name: k[0],
+        type: "disabled",
+        config: k[1]
+      },
+      tools: [],
+      commands: []
+    });
+    else D.push(k);
+  pvr(Object.fromEntries(D));
+  let N = D.length,
+    ne = U(D, ([k, L]) => L.type === "stdio"),
+    me = U(D, ([k, L]) => L.type === "sse"),
+    K = U(D, ([k, L]) => L.type === "http"),
+    G = U(D, ([k, L]) => L.type === "sse-ide"),
+    W = U(D, ([k, L]) => L.type === "ws-ide"),
+    fe = D.filter(([k, L]) => Jo(L)),
+    ce = D.filter(([k, L]) => !Jo(L)),
+    ye = {
+      totalServers: N,
+      stdioCount: ne,
+      sseCount: me,
+      httpCount: K,
+      sseIdeCount: G,
+      wsIdeCount: W
+    },
+    ue = [],
+    pe = new Map,
+    he = async ([k, L]) => {
+      try {
+        if (sg()) {
+          ae(k, "Skipping connection (Claude Code is shutting down)");
+          return
+        }
+        if (jo(k)) {
+          I({
+            client: {
+              name: k,
+              type: "disabled",
+              config: L
+            },
+            tools: [],
+            commands: []
+          });
+          return
+        }
+        if (uw(k, L)) {
+          ae(k, "Skipping connection (blocked by managed policy)"), I({
+            client: {
+              name: k,
+              type: "failed",
+              config: L,
+              error: RS("managed-policy", k, L).error
+            },
+            tools: [],
+            commands: []
+          });
+          return
+        }
+        let ee = pe.get(k);
+        if (ee !== void 0) {
+          I({
+            client: {
+              name: k,
+              type: "failed",
+              config: L,
+              error: ee
+            },
+            tools: [],
+            commands: []
+          });
+          return
+        }
+        if (BRt(L)) {
+          I({
+            client: {
+              name: k,
+              type: "needs-auth",
+              config: L
+            },
+            tools: aF(k, L),
+            commands: []
+          });
+          return
+        }
+        if ((L.type === "claudeai-proxy" || L.type === "http" || L.type === "sse") && !Yl(L) && (await qo(k, L, n) || (L.type === "http" || L.type === "sse") && $or(k, L, await Z1({
+            serverName: k,
+            serverConfig: L,
+            challenged: !1
+          })))) {
+          if (L.type !== "claudeai-proxy" && L.pluginSource === void 0) ae(k, "Skipping connection (cached needs-auth)");
+          I({
+            client: {
+              name: k,
+              type: "needs-auth",
+              config: L,
+              ...await Hin(k, L)
+            },
+            tools: aF(k, L),
+            commands: []
+          });
+          return
+        }
+        if ((L.type === "stdio" || L.type === void 0) && L.pluginSource !== void 0 && await qo(k, L, n)) {
+          I({
+            client: {
+              name: k,
+              type: "failed",
+              config: L,
+              error: "Skipping connection (recent failure cached; retries automatically in 15 min, or edit the plugin config to retry now)"
+            },
+            tools: [],
+            commands: []
+          });
+          return
+        }
+        let ze = await ns(k, L),
+          q = h !== void 0 && Object.hasOwn(h, k) ? h[k] : void 0;
+        if (q !== void 0 && !ze) {
+          let {
+            client: Te,
+            tools: Ae
+          } = await er({
+            name: k,
+            config: L,
+            capabilities: {
+              tools: {}
+            },
+            serverInfo: void 0,
+            savedAt: Date.now(),
+            tools: q
+          });
+          I({
+            client: Te,
+            tools: Ae,
+            commands: []
+          });
+          return
+        }
+        let Ue = ze ? {
+            kind: "miss",
+            reason: "live-connection"
+          } : await nsr(k, L),
+          De = ds(Ue);
+        if (De.kind === "fresh" || De.kind === "stale") {
+          let {
+            entry: Te,
+            ageMs: Ae
+          } = De, {
+            client: Be,
+            tools: He
+          } = await er({
+            name: k,
+            config: L,
+            capabilities: Te.capabilities,
+            serverInfo: Te.serverInfo,
+            savedAt: Te.savedAt,
+            tools: Te.tools
+          }), Ye = Or(Be, Te.commands), be = Te.resources.map((B) => ({
+            ...B,
+            server: k
+          })), Ie = (Te.templates ?? []).map((B) => ({
+            ...B,
+            server: k
+          })), Ve = !!Te.capabilities.resources || be.length > 0, Me = [];
+          if (Ve && !O) O = !0, Me.push(DB, LB, D8);
+          if (l("tengu_mcp_discovery_source", {
+              source: b(De.kind === "fresh" ? "cache_fresh" : "cache_stale"),
+              transportType: f(L.type ?? "stdio"),
+              entryAgeMs: Ae,
+              ...rt(L, k)
+            }), g("mcp_discovery_cache"), Do().settledCachedDialFailures.delete(mr(k, L)), Do().refusedCachedRows.delete(mr(k, L)), I({
+              client: Be,
+              tools: [...He, ...Me],
+              commands: Ye,
+              resources: be.length > 0 ? be : void 0,
+              resourceTemplates: Ie.length > 0 ? Ie : void 0
+            }), De.kind === "stale")(async () => {
+            let B = await XY(k, L),
+              Y, Ce = async () => {
+                if (Y !== void 0 && ot(Y) || zr() !== M) return;
+                c("mcp_discovery_cache", "strike"), await jkn(k, L, {
+                  identityEpoch: M,
+                  grantLeg: B
+                })
+              }, Re = await isr(k, L);
+            if (!Re) return;
+            if (jo(k)) {
+              await Re().catch(() => {}), Gt(k, L, "disabled");
+              return
+            }
+            if (uw(k, L)) {
+              await Re().catch(() => {}), Gt(k, L, "policy");
+              return
+            }
+            let oe = (ve) => {
+                if (!(!(Y !== void 0 && ot(Y)) && zr() === M)) return;
+                if (ve.type !== "needs-auth") Do().connections.delete(mr(k, L));
+                let w = bt().cachedFirstDialArmsRan;
+                if (w.has(ve)) return;
+                if (w.add(ve), ve.type === "needs-auth") So(k, L);
+                else if (ve.type === "failed") Ro(ve, !1)
+              },
+              Fe = (ve) => {
+                let Le = bt().cachedFirstDialArmsRan;
+                if (Le.has(ve)) return;
+                Le.add(ve), So(k, L)
+              },
+              qe = !1;
+            try {
+              Y = Ze(k, L, ye, n, s), bt().swrRefreshDialsInFlight.add(Y), Y.then(() => {
+                qe = !0
+              }, () => {
+                qe = !0
+              });
+              let ve = await WM(Y, {
+                serverName: k,
+                context: "MCP discovery-cache stale refresh"
+              });
+              if (ve.type !== "connected") {
+                oe(ve), await Ce();
+                return
+              }
+              if (ot(Y) || zr() !== M) return;
+              if (Te.negotiatedEra !== void 0 && ve.protocolEra !== void 0 && ve.protocolEra !== Te.negotiatedEra) {
+                if (ae(k, "Discovery cache entry dropped: server negotiated a different protocol era on revalidation"), await Kt(k, L).catch(() => {}), !ot(Y) && zr() === M) Fe(ve);
+                return
+              }
+              let Le = !!ve.capabilities?.resources;
+              NB(k);
+              let w = await XY(k, L);
+              if (ot(Y) || zr() !== M) return;
+              let [A, H, te, re] = await Promise.all([Dt(ve, n), Jt(ve), Yt(ve), Le && Yat(L) ? Ft(ve) : Promise.resolve([])]), Z = To(re) === void 0 ? re : void 0;
+              if (ot(Y) || _t(Y, k, L) || zr() !== M) return;
+              if (!jo(k) && !uw(k, L)) {
+                if (!await wo(ve, {
+                    tools: A,
+                    commands: H,
+                    resources: te,
+                    templates: Z,
+                    identityEpoch: M,
+                    grantLeg: w
+                  })) await Ce()
+              }
+              if (!(Y !== void 0 && ot(Y)) && !(Y !== void 0 && _t(Y, k, L)) && zr() === M) Fe(ve)
+            } catch {
+              if (Y !== void 0 && !qe) {
+                let ve = Y;
+                ve.then((Le) => {
+                  if (Le.type !== "connected") oe(Le), Ce().catch(() => {});
+                  else bt().swrRefreshDialsInFlight.delete(ve), (Te.negotiatedEra !== void 0 && Le.protocolEra !== void 0 && Le.protocolEra !== Te.negotiatedEra ? Kt(k, L).catch(() => {}) : Promise.resolve()).then(() => {
+                    if (!ot(ve) && zr() === M) Fe(Le)
+                  })
+                }, () => {
+                  Ce().catch(() => {})
+                })
+              } else await Ce()
+            } finally {
+              if (Y !== void 0 && qe) bt().swrRefreshDialsInFlight.delete(Y);
+              await Re().catch(() => {})
+            }
+          })();
+          return
+        }
+        let _e = Ze(k, L, ye, n, s, void 0, T),
+          ge = await _e,
+          $e = Ze.cache?.get?.(mr(k, L)) === _e;
+        if (Vd() && us(De)) l("tengu_mcp_discovery_source", {
+          source: b(ps(De)),
+          transportType: f(L.type ?? "stdio"),
+          ...rt(L, k)
+        });
+        if (ot(_e)) return;
+        if (E(L)) {
+          if (ge.type === "connected" && _t(_e, k, L)) it(ge);
+          return
+        }
+        if (ge.type !== "connected") {
+          I(xP(L, {
+            client: ge,
+            tools: ge.type === "needs-auth" ? aF(k, L) : [],
+            commands: []
+          }));
+          return
+        }
+        if (ge.discoveryBearerRejected = void 0, L.type !== "claudeai-proxy") Vt(k, n);
+        if (L.type === "http" || L.type === "sse") await t4r(k, L);
+        ue.push((async () => {
+          let Te = !1;
+          try {
+            let Ae = !!ge.capabilities?.resources;
+            NB(k);
+            let Be = await XY(k, L);
+            if (Vd() && (ot(_e) || E(L))) {
+              if (!ot(_e) && _t(_e, k, L)) it(ge);
+              return
+            }
+            let He = Promise.all([Dt(ge, n, S), Jt(ge), Promise.resolve([])]),
+              Ye = y === !0 && (L.type === "claudeai-proxy" ? !!ge.capabilities?.tools || !!ge.capabilities?.prompts : L.type === "http" && $u(L.url) && !wIe(L)),
+              be = Promise.all([Ae && !Ye ? Yt(ge) : Promise.resolve([]), Ae && Yat(ge.config) ? Ft(ge) : Promise.resolve([])]),
+              Ie = y === !0 && Ae && (L.type === "http" || L.type === "sse") && !Vd();
+            if (Ie) be.catch(() => {});
+            let [
+              [Ve, Me, B], Y
+            ] = await Promise.all([He, Ie ? void 0 : be]);
+            if (E(L)) {
+              if (_t(_e, k, L)) it(ge);
+              return
+            }
+            if (Vd() && ot(_e)) return;
+            if (Vd() && $e && _t(_e, k, L)) {
+              if (Ze.cache?.get?.(mr(k, L)) === void 0 && _a(ge.client).onclose !== void 0) it(ge), I({
+                client: {
+                  name: k,
+                  type: "failed",
+                  config: L,
+                  error: "Connection closed during discovery",
+                  errorCode: "ConnectionClosed"
+                },
+                tools: [],
+                commands: []
+              });
+              return
+            }
+            if (ge.discoveryAuthFailure) {
+              I({
+                client: {
+                  name: k,
+                  type: "needs-auth",
+                  config: L
+                },
+                tools: aF(k, L),
+                commands: []
+              });
+              return
+            }
+            if (L.type === "claudeai-proxy" && !ge.discoveryBearerRejected) Vt(k, n);
+            if (L.type === "claudeai-proxy" && !ge.toolsListError && !ge.discoveryBearerRejected) T3t(k, n);
+            let Ce = [...Me, ...B],
+              Re = (w) => {
+                let A = [];
+                if (Ae && !O) O = !0, A.push(DB, LB, D8);
+                I(xP(L, {
+                  client: ge,
+                  tools: [...Ve, ...A],
+                  commands: Ce,
+                  resources: w.length > 0 ? w : void 0,
+                  resourceTemplates: void 0
+                }))
+              };
+            if (Ie) Re([]), Te = !0;
+            let [oe, Fe] = Y ?? await be;
+            if (!Ae) Lt(oe, []);
+            let qe = To(Fe) === void 0 ? Fe : void 0,
+              Le = !Vd() || ot(_e) || _t(_e, k, L) || zr() !== M || jo(k) || uw(k, L) ? void 0 : wo(ge, {
+                tools: Ve,
+                commands: Me,
+                resources: oe,
+                templates: qe,
+                identityEpoch: M,
+                grantLeg: Be
+              });
+            if (!Ie) Re(oe);
+            await Le
+          } catch (Ae) {
+            if (Gs(k, `Error fetching tools/commands/resources: ${Ns(Ae,L)}`), Te) return;
+            I({
+              client: {
+                name: k,
+                type: "failed",
+                config: L
+              },
+              tools: [],
+              commands: []
+            })
+          }
+        })())
+      } catch (ee) {
+        Gs(k, `Error fetching tools/commands/resources: ${Ns(ee,L)}`), I({
+          client: {
+            name: k,
+            type: "failed",
+            config: L
+          },
+          tools: [],
+          commands: []
+        })
+      }
+    }, Pe = [], Ee = [];
+  for (let k of ce)(X0(k[1]) ? Pe : Ee).push(k);
+  await Promise.all([fo(fe, zn(), he), fo(Ee, Yo(), he), Promise.all(Pe.map(([k, L]) => WM(l2(L, s), {
+    serverName: k,
+    context: r9
+  }).catch((ee) => {
+    let ze = Ns(ee, L);
+    Gs(k, ze), pe.set(k, ze)
+  }))).then(() => fo(Pe, Yo(), he))]), await Promise.all(ue)
+}
+
+function Mu(e, r, n) {
+  return new Promise((s) => {
+    let h = 0,
+      y = 0;
+    if (h = Object.keys(e).length, h === 0) {
+      s({
+        clients: [],
+        tools: [],
+        commands: []
+      });
+      return
+    }
+    let S = [],
+      T = [],
+      M = [],
+      E = !1,
+      I = () => {
+        if (E) return;
+        E = !0;
+        let O = M.reduce((j, D) => {
+          let N = D.name.length + (D.description ?? "").length + (D.argumentHint ?? "").length;
+          return j + N
+        }, 0);
+        l("tengu_mcp_tools_commands_loaded", {
+          tools_count: T.length,
+          commands_count: M.length,
+          commands_metadata_length: O
+        }), s({
+          clients: S,
+          tools: T,
+          commands: M
+        })
+      };
+    ms((O) => {
+      if (S.push(O.client), T.push(...O.tools), M.push(...O.commands), y++, y >= h) I()
+    }, e, r, n).then(I).catch((O) => {
+      Gs("prefetchAllMcpResources", `Failed to get MCP resources: ${d(O)}`), s({
+        clients: [],
+        tools: [],
+        commands: []
+      })
+    })
+  })
+}
+async function Ao(e, r, n, s, h = !1, y) {
+  switch (e.type) {
+    case "text": {
+      let S = {
+        type: "text",
+        text: e.text
+      };
+      if (h) {
+        let T = e._meta;
+        if (T) S._meta = T
+      }
+      return [S]
+    }
+    case "audio": {
+      let S = e;
+      return await ho(Buffer.from(S.data, "base64"), S.mimeType, r, `[Audio from ${r}] `, s)
+    }
+    case "image": {
+      if (Go(e.mimeType)) return await or(Buffer.from(String(e.data), "base64"), e.mimeType, r, n, s);
+      return await ho(Buffer.from(String(e.data), "base64"), e.mimeType, r, `[Image from ${r}] `, s)
+    }
+    case "resource": {
+      let S = e.resource,
+        T = `[Resource from ${r} at ${S.uri}] `;
+      if ("text" in S) return [{
+        type: "text",
+        text: `${T}${S.text}`
+      }];
+      else if ("blob" in S)
+        if (Go(S.mimeType)) {
+          let E = await or(Buffer.from(S.blob, "base64"), S.mimeType, r, n, s, y),
+            I = [];
+          if (T) I.push({
+            type: "text",
+            text: T
+          });
+          return I.push(...E), I
+        } else {
+          let E = Buffer.from(S.blob, "base64"),
+            I = O_r(E, S.mimeType, r);
+          if (I) return [I];
+          return await ho(E, S.mimeType, r, T, s, y)
+        } return []
+    }
+    case "resource_link": {
+      let S = e,
+        T = `[Resource link: ${S.name}] ${S.uri}`;
+      if (S.description) T += ` (${S.description})`;
+      return [{
+        type: "text",
+        text: T
+      }]
+    }
+    default:
+      return []
+  }
+}
+
+function Dr(e) {
+  return `mcp-${bn(e)}-blob-${Date.now()}-${Math.random().toString(36).slice(2,8)}`
+}
+async function or(e, r, n, s, h, y) {
+  if (Ug() === void 0 && fs()) {
+    c("mcp_image_result_file", "persistence_off");
+    let {
+      block: D
+    } = await Xb({
+      data: e,
+      mediaType: r,
+      limits: s
+    });
+    return y?.(D.type === "image" ? "shown" : Q1e(), e.length), [D]
+  }
+  let [{
+    block: S,
+    dimensions: T
+  }, M] = await Promise.all([Xb({
+    data: e,
+    mediaType: r,
+    limits: s
+  }), F$(e, hg(e) ?? r, Dr(n), void 0, h).catch((D) => (a(D), {
+    error: "not saved"
+  }))]);
+  if ("error" in M) return c("mcp_image_result_file", "not_saved"), y?.(S.type === "image" ? "shown" : Q1e(), e.length), [S];
+  g("mcp_image_result_file");
+  let E = Ug(),
+    O = (S.type === "image" && E?.wantsPictureShrunk?.(e) !== !0 ? null : await E?.readPicture?.(M.filepath, e)) ?? {
+      block: S,
+      dimensions: T
+    };
+  y?.(O.block.type === "image" ? "shown" : "saved", e.length, M.filepath);
+  let j = lX(O.dimensions ?? {}, M.filepath);
+  return j === null ? [O.block] : [O.block, {
+    type: "text",
+    text: j
+  }]
+}
+
+function fs() {
+  return k0() || i.CLAUDE_CODE_SKIP_PROMPT_HISTORY
+}
+async function ho(e, r, n, s, h, y) {
+  let S = await F$(e, r, Dr(n), void 0, h).catch((T) => {
+    throw y?.(Q1e(), e.length), T
+  });
+  if ("error" in S) {
+    if (y?.(Q1e(), e.length), Ug() !== void 0) return [{
+      type: "text",
+      text: Vye(r, e.length)
+    }];
+    return [{
+      type: "text",
+      text: `${s}Binary content (${r||"unknown type"}, ${e.length} bytes) could not be saved to disk: ${S.error}`
+    }]
+  }
+  return y?.("saved", e.length, S.filepath), [{
+    type: "text",
+    text: Gye(S.filepath, r, S.size, s)
+  }]
+}
+
+function Nt(e, r = 2) {
+  if (e === null) return "null";
+  if (Array.isArray(e)) {
+    if (e.length === 0) return "[]";
+    return `[${Nt(e[0],r-1)}]`
+  }
+  if (typeof e === "object") {
+    if (r <= 0) return "{...}";
+    let s = Object.entries(e).slice(0, 10).map(([y, S]) => `${y}: ${Nt(S,r-1)}`),
+      h = Object.keys(e).length > 10 ? ", ..." : "";
+    return `{${s.join(", ")}${h}}`
+  }
+  return typeof e
+}
+async function rr(e, r, n, s, h) {
+  let y = (await Promise.all(e.map((S) => Ao(S, r, n, s, !0, h)))).flat();
+  return {
+    content: y,
+    type: "contentArray",
+    schema: Nt(_ve(y))
+  }
+}
+async function hs(e, r, n, s, h, y) {
+  if (e && typeof e === "object") {
+    if ("toolResult" in e) return {
+      content: String(e.toolResult),
+      type: "toolResult"
+    };
+    if ("structuredContent" in e && e.structuredContent !== void 0) {
+      if ("content" in e && Array.isArray(e.content)) {
+        let I = await aor(e.content, (O) => rr(O, n, s, h));
+        if (I !== void 0) return I
+      }
+      let T = fWe(e.structuredContent),
+        M = T ?? _(e.structuredContent),
+        E = T === void 0 ? Nt(e.structuredContent) : void 0;
+      if ("content" in e && Array.isArray(e.content)) {
+        let I = e.content.filter((O) => O && typeof O === "object" && ("type" in O) && O.type !== "text");
+        if (I.length > 0) {
+          let O = (await Promise.all(I.map((j) => Ao(j, n, s, h, !0)))).flat();
+          if (O.length > 0) {
+            let j = [...O, {
+              type: "text",
+              text: M
+            }];
+            return {
+              content: j,
+              type: "contentArray",
+              schema: Nt(_ve(j))
+            }
+          }
+        }
+      }
+      return {
+        content: M,
+        type: "structuredContent",
+        schema: E
+      }
+    }
+    if ("content" in e && Array.isArray(e.content)) return rr(e.content, n, s, h, y)
+  }
+  let S = `MCP server "${n}" tool "${r}": unexpected response format`;
+  throw Gs(n, S), Object.assign(new R(S, "MCP tool unexpected response format"), {
+    mcpErrorSource: "downstream_error"
+  })
+}
+
+function nr(e) {
+  if (!e || typeof e === "string") return !1;
+  return e.some((r) => r.type === "image" || r.type === "document")
+}
+async function gs(e, r, n, s, h, y, S, T, M, E) {
+  if (T && e !== null && typeof e === "object" && !("toolResult" in e) && "content" in e && Array.isArray(e.content)) return e.content;
+  let I = await hs(e, r, n, s, y, M),
+    {
+      type: O,
+      schema: j
+    } = I,
+    D = I_r(I.content);
+  if (n === "ide") return D;
+  if (T || h && !nr(D)) return Oce(E, "kept_in_conversation", D), D;
+  if (!await wvn(D, S)) return Oce(E, "kept_in_conversation", D), D;
+  let N = j3e(D);
+  if (i.ENABLE_MCP_LARGE_OUTPUT_FILES === !1) return l("tengu_mcp_large_result_handled", {
+    outcome: b("truncated"),
+    reason: b("env_disabled"),
+    sizeEstimateTokens: N
+  }), Oce(E, "cut_not_saved", D), await are(D, S);
+  if (!D) return D;
+  if (nr(D)) return l("tengu_mcp_large_result_handled", {
+    outcome: b("truncated"),
+    reason: b("contains_images"),
+    sizeEstimateTokens: N
+  }), await are(D, S);
+  let ne = Date.now(),
+    me = `mcp-${bn(n)}-${bn(r)}-${ne}`,
+    K = _ve(D),
+    G = zTn() || v("tengu_mcp_singleton_unwrap", !0),
+    W = Array.isArray(K) ? K.length : void 0,
+    fe = G && Array.isArray(K) && K.length === 1 && K[0]?.type === "text" && !("annotations" in K[0]) && !("_meta" in K[0]) ? K[0].text : void 0,
+    ce = typeof K === "string" ? K : fe ?? _(K, null, 2),
+    ye = O === "toolResult" || fe !== void 0,
+    ue = ye ? "text" : "json",
+    pe;
+  if (ye) {
+    let Ee = ce.split(`
+`);
+    if (Ee.length > 1 && Ee.at(-1) === "") Ee.pop();
+    let k = 0;
+    for (let L of Ee)
+      if (L.length > k) k = L.length;
+    pe = {
+      count: Ee.length,
+      maxLen: k
+    }
+  }
+  let he = await Cq(ce, me, CC(), y);
+  if (Rq(he)) {
+    if (Ug() !== void 0) return l("tengu_mcp_large_result_handled", {
+      outcome: b("truncated"),
+      reason: b("not_stored"),
+      sizeEstimateTokens: N
+    }), Oce(E, "cut_not_saved", D), await kvn(D);
+    let Ee = ce.length;
+    return l("tengu_mcp_large_result_handled", {
+      outcome: b("truncated"),
+      reason: b("persist_failed"),
+      sizeEstimateTokens: N
+    }), Oce(E, "save_failed", D), `Error: result (${Ee.toLocaleString()} characters) exceeds maximum allowed tokens. Failed to save output to file: ${he.error}. If this MCP server provides pagination or filtering tools, use them to retrieve specific portions of the data.`
+  }
+  l("tengu_mcp_large_result_handled", {
+    outcome: b("persisted"),
+    reason: b("file_saved"),
+    sizeEstimateTokens: N,
+    persistedSizeChars: he.originalSize,
+    truncatedAtCap: he.truncatedAtBytes !== void 0,
+    resultType: f(O),
+    blockCount: W,
+    persistedAs: f(ue)
+  }), Oce(E, "saved_as_text", D);
+  let Pe = fe !== void 0 ? g3t("toolResult") : g3t(O, j);
+  return zlr(he.filepath, he.originalSize, Pe, pe, he.truncatedAtBytes)
+}
+
+function ys(e) {
+  let r = e.data;
+  return (r != null && typeof r === "object" && "elicitations" in r && Array.isArray(r.elicitations) ? r.elicitations : []).filter((s) => q5r.safeParse(s).success)
+}
+
+function _s({
+  errorCode: e,
+  message: r,
+  isUnauthorizedError: n,
+  isOAuthShapedAuthError: s,
+  hasHeadersHelper: h,
+  pendingStepUpScope: y
+}) {
+  let S = y !== void 0;
+  if (!(e === 401 || n || s || e === 403 && h || S && e === 403)) return;
+  return S && e !== 401 && !(s && /^HTTP 401\b/.test(r)) ? "step_up" : "credential_rejected"
+}
+
+function Cs(e) {
+  if (nlt(e)) return !0;
+  if (!(e instanceof Error) || !("code" in e)) return !1;
+  if (e.code === q3) {
+    let r = "data" in e ? e.data : void 0;
+    return typeof r === "object" && r !== null && "args_sha256" in r
+  }
+  return e.code === -32000 && msr(e.message)
+}
+async function Ss({
+  client: e,
+  clientConnection: r,
+  tool: n,
+  args: s,
+  meta: h,
+  signal: y,
+  onProgress: S,
+  callToolFn: T = Ut,
+  requestDialog: M,
+  hasResultSizeAnnotation: E = !1,
+  resultNotForModel: I = !1,
+  imageLimits: O,
+  taskRegistry: j,
+  toolUseId: D,
+  onAwaitingUserInput: N,
+  timing: ne,
+  ccrNeedsApprovalRetry: me,
+  storageV5: K,
+  credentials: G,
+  offCriticalPath: W
+}) {
+  let ce = !1;
+  for (let ye = 0;; ye++) try {
+    let ue = () => T({
+        client: e,
+        tool: n,
+        args: s,
+        meta: h,
+        offCriticalPath: W,
+        signal: y,
+        onProgress: S,
+        hasResultSizeAnnotation: E,
+        resultNotForModel: I,
+        imageLimits: O,
+        timing: ne,
+        taskRegistry: j,
+        toolUseId: D,
+        storageV5: K,
+        credentials: G
+      }),
+      pe;
+    if (!Kye()) pe = await ue();
+    else {
+      let he;
+      try {
+        he = yL(_(s)).content
+      } catch {
+        he = void 0
+      }
+      let Pe = Kyt(e, n),
+        Ee = s_e(e, n),
+        k = Pe || xQt(Ee, D),
+        L = hpt(Ee, D);
+      if (k && he !== void 0) he = Lee(he);
+      pe = await $_r("claude_code.mcp.rpc", {
+        spanType: "mcp.rpc",
+        attrs: {
+          "rpc.system": "mcp",
+          "rpc.service": e.name,
+          "rpc.method": "tools/call",
+          mcp_tool: n,
+          attempt: ye
+        },
+        ...he !== void 0 && {
+          contentAttrs: {
+            mcp_args: he
+          }
+        },
+        withholdErrorText: (ee) => L || Pe && ee instanceof qy,
+        isExpectedError: (ee) => ee instanceof Ea && (ee.code === ja.UrlElicitationRequired || ee.code === q3 && typeof ee.data === "object" && ee.data !== null && ("args_sha256" in ee.data) && !!me && !!D && !ce && v("tengu_mcp_proxy_needs_approval_retry", !0))
+      }, ue)
+    }
+    if (ce) g("mcp_ccr_needs_approval");
+    return pe
+  } catch (ue) {
+    if (!(ue instanceof Ea)) {
+      if (ce && !(ue instanceof EO)) m("mcp_ccr_needs_approval", "retry_failed");
+      throw ue
+    }
+    if (ue.code === q3 && typeof ue.data === "object" && ue.data !== null && "args_sha256" in ue.data && me && D && !ce && v("tengu_mcp_proxy_needs_approval_retry", !0)) {
+      ce = !0;
+      let Pe = ue.data ?? {},
+        {
+          canUseTool: Ee,
+          tool: k,
+          fullyQualifiedName: L,
+          toolUseContext: ee,
+          parentMessage: ze
+        } = me,
+        q = Aor(e, ue.data),
+        Ue = q && xor(q, se(ee));
+      if (Ue) {
+        let Te = q?.kind === "unreadable";
+        if (ae(e.name, `Tool '${n}' returned -32003 needs_approval ${Te?"naming a site this session cannot read, and the session has ClaudeInChromeDomain deny rules":"for a site a ClaudeInChromeDomain deny rule covers"}: failing the call with no approval card`), Te) m("chrome_permission_prompt", "hosted_site_unreadable");
+        else c("chrome_permission_prompt", "domain_rule_denied");
+        throw await Ee(k, s, ee, ze, D, Ue), ee.onPermissionDenial?.(k, D, s), kQ(new R(Ue.message, "ccr_proxy_needs_approval_chrome_site_denied"))
+      }
+      ae(e.name, `Tool '${n}' returned -32003 needs_approval (tool_name=${Pe.tool_name}) \u2014 surfacing retroactive ` + "approval card"), l("tengu_mcp_proxy_needs_approval_retry", {
+        attempt: ye
+      }), N?.(!0);
+      let De = {
+          behavior: "ask",
+          suppressAlwaysAllowRule: !0,
+          message: `The ${L} connector requires approval for this call.`,
+          decisionReason: {
+            type: "other",
+            reason: "This connector call requires your approval to proceed."
+          }
+        },
+        _e = q && Por(q, n, s, ee),
+        ge = _e ?? De,
+        $e;
+      try {
+        $e = await Ee(k, s, ee, ze, D, ge)
+      } finally {
+        N?.(!1)
+      }
+      if (y.aborted) throw kQ(new Ke);
+      if ($e.behavior === "allow") {
+        if ($e.updatedInput !== void 0 && !ln($e.updatedInput, s)) throw c("mcp_ccr_needs_approval", "edited_input"), kQ(new R(`The approval for ${L} was conditioned on edited arguments, which can't be applied on this retroactive card. To run with different arguments, deny and re-issue the call.`, "ccr_proxy_needs_approval_edited_input"));
+        let Te = hsr(ee.session, D);
+        if (Te !== void 0) throw kQ(new R(Te, "ccr_proxy_needs_approval_resend_refused"));
+        if (q?.kind === "named" && _e && h) h[Cor] = q.site;
+        if (h) _sr(h, ee.session, ee.toolUseId, e.name, e.config);
+        continue
+      }
+      if ($e === ge) throw c("mcp_ccr_needs_approval", "no_prompt_surface"), kQ(ue);
+      throw g("mcp_ccr_needs_approval"), kQ(new R($e.message || `Approval denied for ${L}`, "ccr_proxy_needs_approval_denied"))
+    }
+    if (ue.code !== ja.UrlElicitationRequired) {
+      if (ce) m("mcp_ccr_needs_approval", "retry_failed");
+      else if (ue.code === q3 && me) m("mcp_ccr_needs_approval", "arm_not_fired");
+      throw ue
+    }
+    if (NI(r) !== void 0) throw ue;
+    if (ye - (ce ? 1 : 0) >= 3) throw ue;
+    let pe = ys(ue),
+      he = r.name;
+    if (pe.length === 0) throw ae(he, `Tool '${n}' returned -32042 but no valid elicitations in error data`), ue;
+    ae(he, `Tool '${n}' requires URL elicitation (error -32042, attempt ${ye+1}), processing ${pe.length} elicitation(s)`);
+    for (let Pe of pe) {
+      let {
+        elicitationId: Ee
+      } = Pe, k = await K7n(he, Pe, y);
+      if (k) {
+        if (ae(he, `URL elicitation ${Ee} resolved by hook: ${_(k)}`), k.action !== "accept") return {
+          content: `URL elicitation was ${k.action==="decline"?"declined":k.action+"ed"} by a hook. The tool "${n}" could not complete because it requires the user to open a URL.`,
+          urlElicitationDeclined: {
+            url: Pe.url
+          },
+          isError: !0
+        };
+        continue
+      }
+      let L;
+      N?.(!0);
+      try {
+        L = M && !tee() ? await M(cge, {
+          serverName: he,
+          params: Pe
+        }, {
+          signal: y
+        }) : {
+          action: "cancel"
+        }
+      } finally {
+        N?.(!1)
+      }
+      let ee = await q7n(he, L, y, "url", Ee);
+      if (ee.action !== "accept") return ae(he, `User ${ee.action==="decline"?"declined":ee.action+"ed"} URL elicitation ${Ee}`), {
+        content: `URL elicitation was ${ee.action==="decline"?"declined":ee.action+"ed"} by the user. The tool "${n}" could not complete because it requires the user to open a URL.`,
+        urlElicitationDeclined: {
+          url: Pe.url
+        },
+        isError: !0
+      };
+      ae(he, `Elicitation ${Ee} completed, retrying tool call`)
+    }
+  }
+}
+
+function Ts(e, r, n) {
+  if (!e.isError) return;
+  let s = "Unknown error";
+  if (Array.isArray(e.content) && e.content.length > 0) {
+    let y = e.content.flatMap((S) => {
+      if (S == null || typeof S !== "object") return [];
+      if ("text" in S) return [String(S.text)];
+      if (S.type === "resource_link") {
+        let T = S,
+          M = `[Resource link: ${T.name}] ${T.uri}`;
+        if (T.description) M += ` (${T.description})`;
+        return [M]
+      }
+      return []
+    });
+    if (y.length > 0) s = y.join(`
+`)
+  } else if ("error" in e) s = String(e.error);
+  Gs(r, n === void 0 ? s : n(s));
+  let h = zM(e._meta);
+  throw new qy(s, "MCP tool returned error", h ? {
+    _meta: h
+  } : void 0)
+}
+
+function Ru() {
+  return {
+    implementation: rrr,
+    serverCapabilities: B5r,
+    tool: hrr,
+    prompt: z5r,
+    resource: mrr,
+    resourceTemplate: j5r,
+    contentBlock: j5o.options[0].shape.content.unwrap().element
+  }
+}
+
+function bu(e, r) {
+  return _a(e).listTools(void 0, r)
+}
+
+function ku(e, r, n) {
+  return _a(e).readResource({
+    uri: r
+  }, n)
+}
+
+function Au(e, r, n) {
+  return _a(e).callTool(r, void 0, n)
+}
+async function Ut({
+  client: e,
+  tool: r,
+  args: n,
+  meta: s,
+  signal: h,
+  onProgress: y,
+  offCriticalPath: S = !1,
+  hasResultSizeAnnotation: T = !1,
+  resultNotForModel: M = !1,
+  imageLimits: E,
+  timing: I,
+  taskRegistry: O,
+  toolUseId: j,
+  idleTimeoutMs: D,
+  isAuthRetry: N = !1,
+  storageV5: ne,
+  credentials: me
+}) {
+  let {
+    client: K,
+    name: G,
+    config: W,
+    transportErrorState: fe
+  } = e, ce = _a(K), ye = s_e(e, r), ue = hpt(ye, j) ? ye : void 0, pe = Kyt(e, r) ? nMr : ue !== void 0 ? (q) => XDt(ue, q) : void 0, he = Date.now(), Pe = zr(), Ee = ce.transport?.sessionId === void 0, k, L = s?.["claudecode/toolUseId"], ee = {
+    armedAt: 0,
+    offCriticalPath: S,
+    toolUseId: typeof L === "string" ? L : void 0,
+    ownSends: {
+      started: 0,
+      ranNothing: 0
+    }
+  };
+  fe?.activeCallWatchdogs.add(ee);
+  let ze = fe?.toolCallSends?.started;
+  try {
+    ae(G, `Calling MCP tool: ${r}`);
+    let q = D ?? cn(W),
+      Ue = he,
+      De, _e = new Promise((Y, Ce) => {
+        De = Ce
+      });
+    k = setInterval(() => {
+      let Y = Math.floor((Date.now() - he) / 1000);
+      if (ae(G, `Tool '${r}' still running (${Y}s elapsed)`), ee.armedAt > 0 && Date.now() - ee.armedAt > 90000) {
+        ae(G, `Tool '${r}' aborting: transport error ${Math.floor((Date.now()-ee.armedAt)/1000)}s ago, response presumed lost`), De(Object.assign(new R(`MCP server "${G}" transport dropped mid-call; response for tool "${r}" was lost`, "MCP transport lost mid-call"), {
+          mcpErrorSource: "downstream_unreachable"
+        }));
+        return
+      }
+      if (fe?.pendingElicitations) Ue = Date.now();
+      else if (fe && fe.lastElicitationClosedAt > Ue) Ue = fe.lastElicitationClosedAt;
+      if (q > 0 && Date.now() - Ue > q) {
+        let Ce = Math.floor((Date.now() - Ue) / 1000);
+        ae(G, `Tool '${r}' aborting: no response or progress notification for ${Ce}s (idle timeout ${Math.floor(q/1000)}s)`), De(Object.assign(new R(`MCP server "${G}" tool "${r}" sent no response or progress for ${Ce}s; aborting. If this server is configured in your MCP settings, set a per-server "timeout" (ms) to allow longer silent runs for just this server; otherwise set CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT (ms) globally (0 disables).`, "MCP tool idle timeout"), {
+          mcpErrorSource: "downstream_unreachable"
+        }))
+      }
+    }, 30000);
+    let ge = lr(W),
+      $e, Te = new Promise((Y, Ce) => {
+        $e = setTimeout((Re, oe, Fe, qe) => {
+          Re(Object.assign(new R(`MCP server "${oe}" tool "${Fe}" timed out after ${Math.floor(qe/1000)}s`, "MCP tool timeout"), {
+            mcpErrorSource: "downstream_unreachable"
+          }))
+        }, ge, Ce, G, r, ge)
+      }),
+      Ae = () => {
+        if ($e) clearTimeout($e);
+        if (k !== void 0) clearInterval(k), k = void 0;
+        fe?.activeCallWatchdogs.delete(ee)
+      },
+      Be = I?.mark("external"),
+      He = await Promise.race([ce.callTool({
+        name: r,
+        arguments: n,
+        _meta: s
+      }, mIe, {
+        signal: h,
+        timeout: ge,
+        onprogress: (Y) => {
+          if (ee.armedAt = 0, Ue = Date.now(), ut?.reportBackgroundProgress(h, Y), y) y({
+            type: "mcp_progress",
+            status: "progress",
+            serverName: G,
+            toolName: r,
+            progress: Y.progress,
+            total: Y.total,
+            progressMessage: Y.message
+          })
+        }
+      }), Te, _e]).finally(() => {
+        Ae(), Be?.()
+      }),
+      {
+        result: Ye,
+        downloadOffers: be
+      } = Okn(He, e.config, wLn(ce.getServerCapabilities?.()));
+    Ts(Ye, G, pe);
+    let Ie = Date.now() - he,
+      Ve = Ie < 1000 ? `${Ie}ms` : Ie < 60000 ? `${Math.floor(Ie/1000)}s` : `${Math.floor(Ie/60000)}m ${Math.floor(Ie%60000/1000)}s`;
+    ae(G, `Tool '${r}' completed successfully in ${Ve}`);
+    let Me = Wlr(G);
+    if (Me) l("tengu_code_indexing_tool_used", {
+      tool: f(Me),
+      source: b("mcp"),
+      success: !0
+    });
+    let B = await gs(He, r, G, E, T, ne, me, M, idr(e, r), sdr(e, r, j, He));
+    return rde(G, void 0), {
+      content: B,
+      _meta: Ye._meta,
+      structuredContent: He.structuredContent,
+      resourceLinks: hAt(He.content),
+      ...be !== void 0 && {
+        downloadOffers: be
+      }
+    }
+  } catch (q) {
+    if (!h.aborted) rde(G, q);
+    if (k !== void 0) clearInterval(k);
+    fe?.activeCallWatchdogs.delete(ee);
+    let Ue = Date.now() - he;
+    if (q instanceof Error && q.name !== "AbortError") ae(G, `Tool '${r}' failed after ${Math.floor(Ue/1000)}s: ${pe!==void 0&&q instanceof qy?pe(q.message):ue!==void 0?XDt(ue,q.message,q.name):Ns(q,W)}`);
+    if (q instanceof Error) {
+      let _e = q instanceof Ea ? void 0 : ("code" in q) ? q.code : void 0,
+        ge = (W.type === "http" || W.type === "sse" || W.type === "ws") && !!W.headersHelper,
+        $e = zet(W),
+        Te = "errorCode" in q && typeof q.errorCode === "string" && !["invalid_grant", "invalid_client", "unauthorized_client"].includes(q.errorCode) && /^HTTP 40[13]\b/.test(q.message),
+        Ae = bt().clientAuthProviders.get(_a(K))?.pendingStepUpScope,
+        Be = _s({
+          errorCode: _e,
+          message: q.message,
+          isUnauthorizedError: q instanceof j0,
+          isOAuthShapedAuthError: Te,
+          hasHeadersHelper: ge,
+          pendingStepUpScope: Ae
+        }),
+        He = (W.type === "http" || W.type === "sse") && !W.headersHelper && !RU(W) ? W : void 0,
+        Ye = !N && Be === "credential_rejected" && !ge && He !== void 0,
+        be = Ye && await Met(G, He),
+        Ie = be || Ye && qat() && bt().clientAuthProviders.get(_a(K))?.lastAuthRejection?.status === 401 && bt().clientAuthProviders.get(_a(K))?.lastAuthRejection?.accessToken !== void 0;
+      if ((ge || $e || He !== void 0) && !N) {
+        let Y = mr(G, W);
+        if (zr() !== Pe) throw new R(`MCP tool call to server "${G}" was aborted: the account changed before re-authentication`, "MCP tool call aborted: account changed before reauth");
+        let Ce = Do().reauthInFlight,
+          Re = bt(),
+          oe = Ce.get(Y),
+          Fe = oe !== void 0 && oe.epoch === Pe ? oe.promise : void 0;
+        Re.reauthDecisionSinkForTest?.(Fe !== void 0 ? "joined" : oe !== void 0 ? "stale_refused" : "started");
+        let qe = Fe !== void 0 && q instanceof Ea && q.code === ja.ConnectionClosed && !Lin(fe?.closeReason);
+        if ((qe || Be === "credential_rejected" && ge || Be === "credential_rejected" && $e || Ie) && !jo(G) && !uw(G, W)) {
+          if (ae(G, ge ? `Tool '${r}' returned ${_e??401}; re-running headersHelper and retrying once` : $e ? `Tool '${r}' returned ${_e??401}; session credential rejected \u2014 reconnecting and retrying once` : qe ? `Tool '${r}' failed because a reconnect in progress closed its connection; retrying once on the new connection` : `Tool '${r}' returned ${_e??401}; ${be?"refresh token stored":"stored sign-in rejected, no refresh token"} \u2014 reconnecting and retrying once`), qe) c(ge ? "mcp_headers_helper" : "mcp_oauth_refresh", "collateral_rejoin");
+          if (!Fe) {
+            c(ge ? "mcp_headers_helper" : Ie && !be ? "mcp_signed_out_fallback" : "mcp_oauth_refresh", "reauth_retry"), ce.onclose = void 0;
+            let w = Pe;
+            Fe = (async () => (await Ct(G, W), Ze(G, W, void 0, void 0, me)))();
+            let A = {
+              promise: Fe,
+              epoch: w
+            };
+            Ce.set(Y, A), Fe.then((H) => {
+              if (H.type === "connected" && zr() === w) v1e.emit(G, W)
+            }).finally(() => {
+              if (Ce.get(Y) === A && !Re.holdStaleReauthEntryForTest) Ce.delete(Y)
+            }).catch(() => {})
+          }
+          let Le = await Fe;
+          if (zr() !== Pe) {
+            if (Le.type === "connected") await it(Le);
+            throw new R(`MCP tool call to server "${G}" was aborted: the account changed during re-authentication`, "MCP tool call aborted: account changed during reauth")
+          }
+          if (Le.type === "connected" && (jo(G) || uw(G, W))) await Ct(G, W);
+          else if (Le.type === "connected") return Ut({
+            client: Le,
+            tool: r,
+            args: n,
+            meta: s,
+            signal: h,
+            onProgress: y,
+            offCriticalPath: S,
+            hasResultSizeAnnotation: T,
+            resultNotForModel: M,
+            timing: I,
+            imageLimits: E,
+            taskRegistry: O,
+            toolUseId: j,
+            idleTimeoutMs: D,
+            isAuthRetry: !0,
+            storageV5: ne,
+            credentials: me
+          });
+          if (ae(G, `Auth reconnect returned '${Le.type}'; falling through to needs-auth`), Vd() && Le.type !== "needs-auth") {
+            let w = Ze.cache?.get?.(Y);
+            if (w !== void 0 && await mt(w) === Le && Ze.cache?.get?.(Y) === w) Do().connections.delete(Y)
+          }
+        }
+      }
+      if (Be === "credential_rejected" && $e) throw await Ct(G, W), ae(G, `Tool '${r}' rejected the session credential (${_e??401}); failing the call and clearing the connection for a fresh retry later`), Object.assign(new R(MB.sessionCredentialRejected(G, _e ?? 401), "MCP server rejected the session credential"), {
+        mcpErrorSource: "other"
+      });
+      if (Be !== void 0) {
+        let Y = W.type === "claudeai-proxy" && W.eligible === !1,
+          Ce = Y ? "not_connected" : Be === "step_up" ? "insufficient_scope" : "token_expired";
+        ae(G, Ce === "insufficient_scope" ? `Tool call returned 403 insufficient_scope (scope: ${mx("scope",Ae??"")})` : "Tool call returned 401 Unauthorized - token may have expired");
+        let Re = rt(W, G),
+          oe = qx(G, W);
+        l("tengu_mcp_tool_call_auth_error", {
+          errorCode: bo(_e ?? (Be === "step_up" ? 403 : 401)),
+          transportType: f(W.type ?? "stdio"),
+          authErrorKind: f(Ce),
+          ...Re,
+          mcpServerName: Qv(bn(G), oe),
+          mcpToolName: AVe(bn(G), bn(r), oe)
+        });
+        let Fe = (W.type === "http" || W.type === "sse") && RU(W);
+        throw new oS(G, Y ? MB.notConnected(G) : Ce === "insufficient_scope" ? MB.stepUp(G, Ae) : ge ? MB.helperRejected(G) : Fe ? MB.headerRejected(G) : MB.signInAgain(G, W), Ce, bt().clientFirstPartyBearers.get(_a(K))?.last, Ce === "insufficient_scope" ? Ae : void 0)
+      }
+      let Me = !(W.type === "http" && _e === 404 && Ee) && go(q),
+        B = "code" in q && q.code === -32000 && q.message.includes("Connection closed") && (W.type === "http" || W.type === "claudeai-proxy");
+      if (q instanceof gt) throw R3t(e, r, "too_large"), C3t(e, r, "http body overflow"), new _Se(G, r, {
+        kind: "too_large",
+        capBytes: wt
+      });
+      if (B && Lin(fe?.closeReason)) throw R3t(e, r, "connection_closed"), C3t(e, r, fe?.closeReason), new _Se(G, r, {
+        kind: "connection_closed"
+      });
+      if (Me || B) {
+        ae(G, `MCP session expired during tool call (${Me?"stale session":"connection closed"}), clearing connection cache for re-initialization`);
+        let Y = rt(W, G),
+          Ce = qx(G, W),
+          Re = AVe(bn(G), bn(r), Ce);
+        l("tengu_mcp_session_expired", {
+          errorCode: _e !== void 0 ? bo(_e) : void 0,
+          transportType: f(W.type ?? "stdio"),
+          ...Y,
+          mcpServerName: Qv(bn(G), Ce),
+          mcpToolName: Re
+        }), await Ct(G, W);
+        let oe = Uir(fe?.toolCallSends, ze, ee.ownSends);
+        throw new EO(G, Me ? "session_expired_404" : YMr(fe?.closeReason) || fe?.closeReason === "session expired" && oe ? "connection_closed_call_refused" : !N && oe ? "connection_closed_call_not_run" : "connection_closed_http")
+      }
+    }
+    let De = q;
+    if (q instanceof iP || (De?.name === "ZodError" || De?.name === "$ZodError") && Array.isArray(De?.issues)) throw new lUt(G, q);
+    if (!(q instanceof Error) || q.name !== "AbortError") throw q;
+    return {
+      content: H7e,
+      interrupted: !0,
+      isError: !0
+    }
+  } finally {
+    if (k !== void 0) clearInterval(k)
+  }
+}
+
+function sr(e) {
+  if (e.message.content[0]?.type !== "tool_use") return;
+  return e.message.content[0].id
+}
+
+function ws(e, r) {
+  if (r === void 0) return;
+  let n = CRt.safeParse(r.initializeResult);
+  if (!n.success || !Gle.includes(n.data.protocolVersion) || !ir(r.initializeResult)) {
+    ae(e, "Host manifest initializeResult is not a valid InitializeResult for this client \u2014 handshaking over the control channel instead"), c("mcp_sdk_manifest", "mcp_sdk_manifest_invalid_initialize");
+    return
+  }
+  if (r.toolsListResult !== void 0 && (!P4t.safeParse(r.toolsListResult).success || !ir(r.toolsListResult))) {
+    ae(e, "Host manifest toolsListResult is not a valid ListToolsResult \u2014 handshaking over the control channel instead"), c("mcp_sdk_manifest", "mcp_sdk_manifest_invalid_tools_list");
+    return
+  }
+  if (r.toolsListResult !== void 0 && r.toolsListResult.nextCursor !== void 0) return ae(e, "Host manifest toolsListResult is paginated (nextCursor) \u2014 replaying initialize only and listing tools over the control channel"), c("mcp_sdk_manifest", "mcp_sdk_manifest_paginated_tools_list"), {
+    initializeResult: r.initializeResult
+  };
+  return r
+}
+
+function ir(e) {
+  return eW.safeParse({
+    jsonrpc: "2.0",
+    id: 0,
+    result: e
+  }).success
+}
+
+function ar(e, r) {
+  switch (e) {
+    case "none":
+    case "pending":
+      return;
+    case "replayed":
+      if (r) g("mcp_sdk_manifest");
+      else m("mcp_sdk_manifest", "mcp_sdk_manifest_replay_failed");
+      return;
+    case "protocol_version_mismatch":
+    case "client_capabilities_declared":
+    case "malformed_result":
+    case "unexpected_message":
+      c("mcp_sdk_manifest", `mcp_sdk_manifest_${e}`);
+      return
+  }
+}
+async function Iu(e, r, n, s) {
+  let h = [],
+    y = [],
+    S = [];
+  Po();
+  let T = await Promise.allSettled(Object.entries(e).map(async ([E, I]) => {
+    let O = new Akn(E, r, ws(E, n?.get(E)));
+    eGe({
+      name: E
+    }, O);
+    let j = new qt({
+        ...WRt,
+        version: {
+          ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+          PACKAGE_URL: "@anthropic-ai/claude-code",
+          README_URL: "https://code.claude.com/docs/en/overview",
+          VERSION: "2.1.319",
+          FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+          BUILD_TIME: "2026-11-05T18:14:18Z",
+          GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+          HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+          DD_SOURCEMAP_GROUP: "win32"
+        }.VERSION ?? "unknown"
+      }, {
+        capabilities: jRt,
+        ...tNe() && {
+          jsonSchemaValidator: tYt
+        }
+      }),
+      D = !1;
+    try {
+      let N = j.connect(O, {
+        timeout: ed()
+      });
+      if (!await we(N.then(() => !0), ed())) throw N.catch(() => {}), O.close().catch(() => {}), D = !0, Tr(`SDK MCP server "${E}" connection timed out after ${ed()}ms`);
+      let me = j.getServerCapabilities(),
+        K = j.getInstructions(),
+        G = cr(K, E),
+        W = {
+          type: "connected",
+          serverInfo: j.getServerVersion(),
+          name: E,
+          capabilities: me || {},
+          instructions: G,
+          client: jjn(j),
+          config: {
+            ...I,
+            scope: "dynamic"
+          },
+          cleanup: async () => {
+            await j.close()
+          }
+        },
+        fe = mr(W.name, W.config);
+      Do().toolLists.delete(fe);
+      let ce = [];
+      if (me?.tools) {
+        let ue = await Dt(W, s);
+        ce.push(...ue)
+      }
+      let ye = [];
+      return g("mcp_sdk_connect"), ar(O.manifestOutcome, !0), {
+        client: W,
+        tools: ce,
+        commands: ye
+      }
+    } catch (N) {
+      return m("mcp_sdk_connect", D ? "mcp_sdk_connect_timeout" : "mcp_sdk_connect_failed"), ar(O.manifestOutcome, !1), Gs(E, `Failed to connect SDK MCP server: ${N}`), {
+        client: {
+          type: "failed",
+          name: E,
+          config: {
+            ...I,
+            scope: "user"
+          }
+        },
+        tools: [],
+        commands: []
+      }
+    }
+  }));
+  for (let E of T)
+    if (E.status === "fulfilled") h.push(E.value.client), y.push(...E.value.tools), S.push(...E.value.commands);
+  if (h.some((E) => E.type === "connected" && !!E.capabilities?.resources)) {
+    if (![DB, LB].some((I) => y.some((O) => ht(O, I.name)))) y.push(DB, LB, D8)
+  }
+  return {
+    clients: h,
+    tools: y,
+    commands: S
+  }
+}
+async function Ou(e) {
+  await Promise.all(e.map(async (r) => {
+    if (r.type !== "connected") return;
+    try {
+      await r.cleanup()
+    } catch (n) {
+      t(`MCP client cleanup failed for ${r.name}: ${n}`, {
+        level: "error"
+      })
+    }
+  }))
+}
+export {
+  Co as ClaudeAiProxyBearerRejectedError, hr as GRANT_ELIGIBLE_DESIGN_WRITE_OPS, Wl as MCP_TREE_ID, ds as applyCapabilityServeTimeMiss, fu as areMcpConfigsEqual, Pu as awaitEachWithDeadline, In as buildFirstPartyDesignConsentAsk, Hn as buildSseStreamHeaders, Eu as callIdeRpc, Ut as callMCPTool, Ss as callMCPToolWithUrlElicitationRetry, cr as capMcpInstructions, XY as captureDiscoveryGrantLeg, On as ccrRetroactiveAskCanPrompt, _s as classifyMcpAuthFailure, Ou as cleanupConnectedMcpClients, Ct as clearServerCache, wu as completeResourceTemplate, Qo as composeMcpTool, Ze as connectToServer, yr as consentAskCanReachUser, Sn as createCcrProxyFetch, En as createClaudeAiProxyFetch, wn as createCliOwnedBearerFetch, co as createFirstPartyApiMcpFetch, Rn as denyTokenlessFirstPartyDesignWrite, it as detachAndCloseConnection, iu as discardMemoizedConnectResult, ps as discoverySourceForMiss, Ru as discoveryWireSchemas, is as disposeServerConnectionDetached, Kt as dropDiscoveryEntry, io as emitMcpServerConnectionEvent, Ot as ensureConnectedClient, pt as ensureDiscoveryCacheAccount, eu as evictAllMcpMemosOnIdentityChange, ss as evictStaleFailedConnectMemoForServe, ys as extractUrlElicitationsFromMcpError, Jt as fetchCommandsForClient, Ft as fetchResourceTemplatesForClient, Yt as fetchResourcesForClient, Dt as fetchToolsForClient, Cr as getArmedRequestTimeoutMs, To as getDiscoveryFetchError, zr as getMcpIdentityEpoch, _r as getMcpRequestTimeoutMs, zn as getMcpServerConnectionBatchSize, cn as getMcpToolIdleTimeoutMs, lr as getMcpToolTimeoutMs, ms as getMcpToolsCommandsAndResources, Yo as getRemoteMcpServerConnectionBatchSize, Yn as getRootsListResponse, hu as getToolsListErrorForResult, ns as hasLiveConnection, su as hasUnsettledDial, Or as hydrateCommandsFromListing, Ar as hydrateToolsFromListing, Lr as inertReconnectShape, Nt as inferCompactSchema, au as invalidateMcpResourceListCaches, Au as invokeToolRaw, us as isCacheOutcomeMiss, ot as isDialDisposed, ej as isFirstPartyApiMcpUrl, gr as isFirstPartyDesignServerConfig, Jo as isLocalMcpServer, qo as isMcpAuthCached, go as isMcpSessionExpiredError, Kn as isSchemaApiValidateEnabledFor, Gn as isSchemaNormalizeEnabledFor, Qr as isTerminalConnectionError, bu as listToolsRaw, yu as mcpIdentityChangedSinceLastCheck, Pr as mcpToolInputToAutoClassifierInput, ru as notifyMcpRootsListChanged, cu as onMcpElicitRequest, du as onMcpElicitationComplete, mu as onMcpNotification, uu as onMcpPromptListChanged, pu as onMcpResourceListChanged, lu as onMcpToolListChanged, Pn as parseFirstPartyNeedsConsentBody, wr as peekSettledConnection, ls as persistLiveListing, wo as persistRawDiscoveryIfComplete, Su as persistRefreshedToolsIfPresent, Mu as prefetchAllMcpResources, gs as processMCPResult, ku as readResourceRaw, vu as reconnectMcpServerDistrusted, tr as reconnectMcpServerImpl, _u as recordDiscoveryFetchErrorForResult, xn as recordFirstPartyDesignConsentAsk, po as recordRawCommandsForResult, Lt as recordRawResourcesForResult, uo as recordRawToolsForResult, Tu as refreshResourceTemplates, Vt as removeMcpAuthCacheEntry, as as runCachedFirstDialArms, Er as sanitizeConnectErrorCodeForTelemetry, gu as seedMcpIdentityCheck, Zn as serverReceivesPluginToolStagingRoot, tu as setHoldStaleReauthEntryForTest, ou as setMcpReauthDecisionSinkForTest, Iu as setupSdkMcpClients, ao as suppressDesignWriteAddRules, Un as takeFirstPartyDesignConsentAsk, nu as takeSettledCachedDialFailure, hs as transformMCPResult, Ao as transformResultContent, Bn as withFirstPartyDesignConsentIntercept, Mn as withdrawForSharingWideningDesignMcpOp, zt as wrapFetchWithTimeout
+};

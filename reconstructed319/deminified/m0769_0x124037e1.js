@@ -1,0 +1,500 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { GKn, TG, E7, xj } from "B:/~BUN/root/chunk-game8aqv.js";
+import { f } from "B:/~BUN/root/chunk-drx9cnw1.js";
+import { p } from "B:/~BUN/root/chunk-z6138ats.js";
+import { Md, mM } from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import { l } from "B:/~BUN/root/chunk-mb9chr1y.js";
+import { g, c } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import { t, _ } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { c0r } from "B:/~BUN/root/chunk-5az22yft.js";
+import { ht, dn } from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import { Lt, yV } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import { RV, mDr } from "B:/~BUN/root/chunk-xqymp2nr.js";
+import { tN, Fc } from "B:/~BUN/root/chunk-trd3c21n.js";
+import { Zo } from "B:/~BUN/root/chunk-t4pbv0np.js";
+import { tC, xks, mR, qmt } from "B:/~BUN/root/chunk-j05gjqgd.js";
+import { ft, oC } from "B:/~BUN/root/chunk-2x2z0t2k.js";
+import { hMe, i2, Xlr, eZr, Nre, yb } from "B:/~BUN/root/chunk-27h4st9h.js";
+import { Ni } from "B:/~BUN/root/chunk-ghar8fn5.js";
+import { YE, QMn, ZMn } from "B:/~BUN/root/chunk-k5xd4a86.js";
+import { Q_e } from "B:/~BUN/root/chunk-64qg3pvz.js";
+import { cs } from "B:/~BUN/root/chunk-kfm993xq.js";
+import { tp } from "B:/~BUN/root/chunk-2fedt3ag.js";
+import { wco } from "B:/~BUN/root/chunk-98qgaht2.js";
+import { dNi, yQt, ESr, fpt, cNi, uNi, pDn } from "B:/~BUN/root/chunk-hydnwtf3.js";
+import { XSs, nee } from "B:/~BUN/root/chunk-j5zjtxy5.js";
+import { EA } from "B:/~BUN/root/chunk-eyvtcj15.js";
+import { $S } from "B:/~BUN/root/chunk-bmcb2qbs.js";
+import { ec as name } from "B:/~BUN/root/chunk-jjs9d8eg.js";
+import { An } from "B:/~BUN/root/chunk-7yd8y16n.js";
+import { o, I, C, u, He, B } from "B:/~BUN/root/chunk-4bfd0jkf.js";
+function R(a, e, n) {
+  e.update(a, m => ({
+    ...m,
+    awaitingPlanApproval: n !== null,
+    pendingPlanApproval: n ? {
+      requestId: n.requestId,
+      answered: !1
+    } : void 0
+  }));
+}
+function Wii(a, e, n, m) {
+  let r = n.get(a);
+  if (!r || !tp(r) || !r.awaitingPlanApproval) return null;
+  switch (QMn(r.pendingPlanApproval, e)) {
+    case "mismatch":
+      return t(`[InProcessTeammate] Plan approval response ${_(e.requestId)} does not name the pending plan request ${_(r.pendingPlanApproval?.requestId)}; resolving the wait as a rejection`, {
+        level: "warn"
+      }), c("plan_approval", "request_binding_mismatch"), R(a, n, null), ZMn(e);
+    case "unbound":
+      c("plan_approval", "verdict_unbound");
+      break;
+    case "bound":
+      g("plan_approval");
+      break;
+    case "already_answered":
+      return null;
+  }
+  if (!e.approved) return R(a, n, null), e;
+  let permissionMode = Z(e.permissionMode);
+  return n.update(a, d => ({
+    ...d,
+    awaitingPlanApproval: !1,
+    pendingPlanApproval: void 0,
+    permissionMode: permissionMode,
+    planHeldAfterSpawn: !1
+  })), wco(r.identity.teamName, r.identity.agentName, permissionMode, m), e;
+}
+function Z(a) {
+  let e = Md(mM(a ?? "default"));
+  if (e === "bypassPermissions" && EA()) return "default";
+  if (e === "auto" && !yb()) return "default";
+  return e;
+}
+function qZn({
+  recipientName: recipientName,
+  leaderMode: leaderMode,
+  leaderAutoPickedByLevel: leaderAutoPickedByLevel,
+  proactivityLevel: proactivityLevel,
+  tasks: tasks
+}) {
+  let h = Object.values(tasks).some(item => F(item, recipientName)) ? leaderMode : Nre(leaderMode, proactivityLevel, leaderAutoPickedByLevel),
+    s = Md(h);
+  return s === "plan" ? "default" : s;
+}
+function zii(a, e) {
+  return Object.values(e).some(item => tp(item) && item.status === "running" && item.identity.agentName === a && item.identity.planModeRequired && !item.planHeldAfterSpawn);
+}
+function F(a, e) {
+  return tp(a) && a.status === "running" && a.identity.agentName === e && a.paneTeardown === void 0 && a.identity.resumableAgentId !== void 0;
+}
+class PlanPreconditionError extends Error {
+  constructor(a) {
+    super(a);
+    this.name = "PlanPreconditionError";
+  }
+}
+function YZn(a) {
+  if (!a || yV() !== "default") return "";
+  return `
+
+If this plan can be broken down into multiple independent tasks, consider spawning named teammates with the ${ft} tool (pass a \`name\`) to parallelize the work.`;
+}
+var H = `Use this tool when you are in plan mode and have finished writing your plan to the plan file and are ready for user approval.
+
+## How This Tool Works
+- You should have already written your plan to the plan file specified in the plan mode system message
+- This tool does NOT take the plan content as a parameter - it will read the plan from the file you wrote
+- This tool simply signals that you're done planning and ready for the user to review and approve
+- The user will see the contents of your plan file when they review it
+
+## When to Use This Tool
+IMPORTANT: Only use this tool when the task requires planning the implementation steps of a task that requires writing code. For research tasks where you're gathering information, searching files, reading files or in general trying to understand the codebase - do NOT use this tool.
+
+## Before Using This Tool
+Ensure your plan is complete and unambiguous:
+- If you have unresolved questions about requirements or approach, use ${cs} first (in earlier phases)
+- Once your plan is finalized, use THIS tool to request approval
+
+**Important:** Do NOT use ${cs} to ask "Is this plan okay?" or "Should I proceed?" - that's exactly what THIS tool does. ExitPlanMode inherently requests user approval of your plan.
+
+## Examples
+
+1. Initial task: "Search for and understand the implementation of vim mode in the codebase" - Do not use the exit plan mode tool because you are not planning the implementation steps of a task.
+2. Initial task: "Help me implement yank mode for vim" - Use the exit plan mode tool after you have finished planning the implementation steps of the task.
+3. Initial task: "Add a new feature to handle user authentication" - If unsure about auth method (OAuth, JWT, etc.), use ${cs} first, then use exit plan mode tool after clarifying the approach.
+`,
+  W = `Use this tool when you are in plan mode and your plan is ready for the user to approve.
+
+- Pass the whole plan as \`plan\`, in Markdown. This session has no plan file, so do not write the plan to a file.
+- The user sees the plan on an approval card and approves or declines it. Do NOT ask "Is this plan okay?" or "Should I proceed?" in any other way: that is what this tool does.
+- If they approve, plan mode ends and you carry out the plan as approved.
+- If they decline, you stay in plan mode: find out what they want changed, revise the plan, and call this tool again.
+`,
+  V = `Use this tool when you are in plan mode and your plan is ready for the user to approve.
+
+- Plan mode's reminder says where this session's plan goes. If that is a Claude Doc, call this tool with no argument: the user has the Doc beside the chat, and a copy on the card could not be edited and would disagree with the Doc after their first change. Otherwise pass the whole plan as \`plan\`, in Markdown; this session has no plan file, so do not write the plan to a file.
+- The user approves or declines on a card. Do NOT ask "Is this plan okay?" or "Should I proceed?" in any other way: that is what this tool does.
+- If they approve, plan mode ends and you carry out the plan as approved. For a Doc, that is the Doc as it reads when they approve, their edits included, so read it before you start.
+- If they decline, you stay in plan mode: find out what they want changed, revise the plan in the same place (the same Doc, or a new \`plan\`), and call this tool again.
+`;
+var ee = p(() => u({
+    tool: B(["Bash"]).describe("The tool this prompt applies to"),
+    prompt: o().describe('Semantic description of the action, e.g. "run tests", "install dependencies"')
+  })),
+  X = p(() => He({
+    allowedPrompts: C(ee()).optional().describe("Deprecated: no longer used.")
+  }).passthrough()),
+  te = {
+    type: "object",
+    properties: {
+      plan: {
+        type: "string",
+        description: "The whole plan, in Markdown, as the user will see it"
+      }
+    },
+    required: ["plan"],
+    additionalProperties: !1
+  },
+  Y = 32768,
+  oe = {
+    type: "object",
+    properties: {
+      plan: {
+        type: "string",
+        description: "The whole plan, in Markdown, as the user will see it. Leave it out when plan mode's reminder has you keep the plan in a Claude Doc."
+      }
+    },
+    additionalProperties: !1
+  },
+  ot = p(() => X().extend({
+    plan: o().optional().describe("The plan content (injected by normalizeToolInput from disk)"),
+    planFilePath: o().optional().describe("The plan file path (injected by normalizeToolInput)")
+  })),
+  ne = p(() => u({
+    plan: o().nullable().describe("The plan that was presented to the user"),
+    isAgent: I(),
+    filePath: o().optional().describe("The file path where the plan was saved"),
+    hasTaskTool: I().optional().describe("Whether the Agent tool is available in the current context"),
+    planWasEdited: I().optional().describe("True when the user edited the plan (CCR web UI or Ctrl+G); determines whether the plan is echoed back in tool_result"),
+    awaitingLeaderApproval: I().optional().describe("When true, the teammate has sent a plan approval request to the team leader"),
+    requestId: o().optional().describe("Unique identifier for the plan approval request")
+  }));
+function L(a) {
+  if (a.teammateContext) return a.teammateContext;
+  let e = tN();
+  return e?.agentId && e.teamName ? e : void 0;
+}
+function J(a, e, n) {
+  let m = `The approved plan is ${pDn(a)}, as the user left it when they approved. They may have changed it after you last wrote it, up to that moment, so what you remember writing may not be what they approved.`;
+  return n === void 0 ? `${m}
+
+Before your todo list or any other step, read the Doc: first call ${e} with only \`ref\` {"object":"project","id":"${a.id}"}, which lists its tabs and the id of each tab's body (\`content.id\`); then read each body with \`ref\` {"object":"node","id":"<content.id>"} and \`container\` {"kind":"project","id":"${a.id}"}. A whole view cannot show what is no longer there, so read each body once more, with the same \`ref\` and \`container\` and with \`payload\` {"kind":"view","sinceRev":<the \`rev\` in the answer to your last write to that body>}: that view holds only what changed since you wrote, and marks each block that the user removed as \`<gone/>\`. A step that they struck out is their instruction like any other: carrying it out because you remember writing it would undo their edit. Work to the Doc: where it differs from your draft, the Doc is the user's instruction, and following your draft would drop their corrections while they believe that the work follows their plan. If you have not started the work yet, say in one line what they changed, or that nothing changed, then start.
+
+If the read fails, try it once more. If it still fails, do not work from memory: tell the user that you could not read the approved plan, and ask whether to go ahead with it as you last wrote it.` : `${m} Where it differs from what you last wrote, the user changed it: a step that is missing was removed on purpose, and carrying it out because you remember writing it would undo their edit. Work to the Doc as it reads here: it is the user's instruction, and following your draft would drop their corrections while they believe that the work follows their plan. If you have not started the work yet, say in one line what they changed, or that nothing changed, then start.
+
+${n}`;
+}
+var b8 = dn({
+  name: name,
+  searchHint: "present plan for approval and start coding (plan mode only)",
+  backgrounding: "never",
+  maxResultSizeChars: 1e5,
+  async description() {
+    return "Prompts the user to exit plan mode and start coding";
+  },
+  async prompt() {
+    if (!hMe()) return H;
+    return yQt() ? V : W;
+  },
+  get inputSchema() {
+    return X();
+  },
+  get inputJSONSchema() {
+    if (!hMe()) return;
+    return yQt() ? oe : te;
+  },
+  get outputSchema() {
+    return ne();
+  },
+  userFacingName() {
+    return "";
+  },
+  shouldDefer: !0,
+  isEnabled() {
+    return Fc() ? XSs() : nee();
+  },
+  isConcurrencySafe() {
+    return !0;
+  },
+  isReadOnly() {
+    return !1;
+  },
+  requiresUserInteraction() {
+    if (Fc()) return !1;
+    return !0;
+  },
+  renderToolUseMessage() {
+    return null;
+  },
+  create(a) {
+    return {
+      async validateInput(e) {
+        let n = a;
+        if (n.agentContext.agentType === "subagent" && n.agentContext.isBuiltIn === !0 && n.agentContext.subagentName === oC && (L(n) || n.permissions().mode === "plan")) return {
+          result: !1,
+          message: "A fork cannot exit plan mode; that belongs to the session that forked it. Finish your part and report back.",
+          errorCode: 2
+        };
+        if (L(n)) return {
+          result: !0
+        };
+        if (hMe() && n.agentId) return {
+          result: !1,
+          message: "Only the main conversation can ask for plan approval in this session. Give your plan in your final message.",
+          errorCode: 3
+        };
+        let mode = n.permissions().mode;
+        if (mode !== "plan") return l("tengu_exit_plan_mode_called_outside_plan", {
+          model: Lt(n.mainLoopModel()),
+          mode: f(mode),
+          hasExitedPlanModeInSession: GKn()
+        }), {
+          result: !1,
+          message: `You are not in plan mode. To enter plan mode, call the ${$S} tool first. If your plan was already approved, continue with implementation.`,
+          errorCode: 1
+        };
+        if (hMe()) {
+          let h = fpt(n.permissions());
+          if (h !== void 0) return Object.keys(e).length === 0 ? {
+            result: !0
+          } : {
+            result: !1,
+            message: `This session's plan is ${pDn(h)}, and the user approves the Doc as it stands. Put any change into the Doc, then call this tool with no argument.`,
+            errorCode: 6
+          };
+          let s = "plan" in e ? e.plan : void 0;
+          if (typeof s !== "string" || s.trim() === "" || Object.keys(e).length > 1) return {
+            result: !1,
+            message: ESr(n.tools, n.permissions()) === void 0 ? "Pass the whole plan as non-empty text in the `plan` argument, and pass no other argument. This session has no plan file to read it from." : "No plan Doc is recorded for this session: none was created, or it was created with arguments other than the ones that plan mode's reminder shows. If you created none, create it with exactly that call and then call this tool with no argument. If you already created one, pass the whole plan as non-empty text in `plan` as the only argument, so that the user is not left with two Docs.",
+            errorCode: 4
+          };
+          let d = Buffer.byteLength(_(e));
+          if (d > Y) return {
+            result: !1,
+            message: `The plan is ${d} bytes as JSON, over the ${Y} that the user's approval card can carry. A quote, backslash or line break counts as two bytes, and a non-ASCII character as two to four. Shorten the plan and call this tool again.`,
+            errorCode: 5
+          };
+        }
+        return {
+          result: !0
+        };
+      },
+      async checkPermissions(e) {
+        if (L(a)) return {
+          behavior: "allow",
+          updatedInput: i2(name, e)
+        };
+        let n = "plan" in e ? void 0 : fpt(a.permissions());
+        return {
+          behavior: "ask",
+          message: "Exit plan mode?",
+          updatedInput: n === void 0 ? e : {
+            plan: `${n.title === void 0 ? "This plan is a Claude Doc" : `**${n.title.replace(/[!-/:-@[-`{-~]/g, "\\$&")}**
+
+This plan is the Claude Doc of the same name`} that Claude made in this chat. To change the plan, edit the Doc before you answer. If you approve, Claude carries out the Doc as it reads at that moment; if you decline, Claude keeps planning.`,
+            planFilePath: cNi(n)
+          }
+        };
+      },
+      async call(e, {
+        onProgress: onProgress,
+        runEngine: runEngine
+      }) {
+        let r = a,
+          h = null,
+          s = null;
+        [h, s] = await Promise.all([import("B:/~BUN/root/chunk-5ap8vqjp.js"), import("B:/~BUN/root/chunk-prfqjhn8.js")]);
+        let isAgent = !!r.agentId,
+          v = hMe(),
+          S = fpt(r.permissions()),
+          id = yQt() && "planFilePath" in e ? uNi(e.planFilePath) : void 0,
+          w = id !== void 0 && id !== S?.id ? {
+            id: id,
+            title: void 0
+          } : id !== void 0 || !("plan" in e) ? S : void 0,
+          tool = r.tools.find(item => item.mcpInfo?.docsConnector === !0 && item.mcpInfo.toolName === c0r),
+          U = tool?.name ?? "the Claude Docs connector's read tool",
+          O = (w && J(w, U, void 0)) ?? ("plan" in e && typeof e.plan === "string" ? e.plan : void 0);
+        if (v && O === void 0) throw new PlanPreconditionError("The approval arrived without the plan, so plan mode was not exited. Call this tool again with the whole plan in the `plan` argument.");
+        let T = mR(r.agentId);
+        if (!v) tC(T);
+        let N = O ?? (await qmt(r.agentId, r.storageV5));
+        if (O !== void 0 && T) await xks(T, O, r.storageV5), eZr(r.storageV5);
+        let b = L(r),
+          D = b ? Object.values(r.tasks() ?? {}).find(item => F(item, b.agentName)) : void 0,
+          G = r.teammateContext !== void 0 && r.permissions().mode === "plan";
+        if (G && D === void 0) throw new PlanPreconditionError("This teammate's task could not be found, so plan mode was not exited. Ask the lead to approve your plan.");
+        let K = G && D?.permissionMode === "plan";
+        if (b && (b.planModeRequired || K)) {
+          if (!N) throw new PlanPreconditionError(`No plan file found at ${T}. Please write your plan to this file before calling ExitPlanMode.`);
+          let {
+              agentName: agentName,
+              teamName: teamName
+            } = b,
+            requestId = mDr("plan_approval", RV(agentName, teamName || "default")),
+            k = {
+              type: "plan_approval_request",
+              from: agentName,
+              timestamp: new Date().toISOString(),
+              planFilePath: T,
+              planContent: N,
+              requestId: requestId
+            };
+          if ((await YE("team-lead", {
+            from: agentName,
+            text: _(k),
+            timestamp: new Date().toISOString()
+          }, teamName, r.storageV5)) === void 0) throw new PlanPreconditionError("Failed to write the plan approval request to the lead's inbox \u2014 plan not submitted; try again");
+          if (D) R(D.id, r.taskRegistry, {
+            requestId: requestId
+          });else Ni().swarmPermissions.pendingPlanApproval = {
+            requestId: requestId,
+            answered: !1
+          };
+          return {
+            data: {
+              plan: N,
+              isAgent: !0,
+              filePath: T,
+              awaitingLeaderApproval: !0,
+              requestId: requestId
+            }
+          };
+        }
+        let q = null;
+        {
+          let i = r.permissions().prePlanMode ?? "default";
+          if (i === "auto" && !(s?.canPlanReturnToAutoMode(i) ?? !1)) {
+            let P = s?.getAutoModeUnavailableReason() ?? "circuit-breaker";
+            q = s?.getAutoModeUnavailableNotification(P) ?? "auto mode unavailable", t(`[auto-mode gate @ ExitPlanModeV2Tool] prePlanMode=${i} but plan may not return to it (reason=${P}) \u2014 falling back to default on plan exit`, {
+              level: "warn"
+            });
+          }
+        }
+        if (q) onProgress?.({
+          type: "notification",
+          notification: {
+            key: "auto-mode-gate-plan-exit-fallback",
+            text: `plan exit \u2192 default \xB7 ${q}`,
+            priority: "immediate",
+            color: "warning",
+            timeoutMs: 1e4
+          }
+        });
+        let z = r.permissions();
+        if (z.mode === "plan" && r.teammateContext === void 0) {
+          TG(!0), E7(!0);
+          let i = z.prePlanMode ?? "default";
+          {
+            if (i === "auto" && !(s?.canPlanReturnToAutoMode(i) ?? !1)) i = "default";
+            let k = i === "auto",
+              y = h?.isAutoModeActive() ?? !1;
+            if (h?.setAutoModeActive(k), y && !k) xj(!0);
+          }
+          Q_e({
+            from: "plan",
+            to: i,
+            trigger: "exit_plan_mode"
+          }, r.agentContext);
+          let P = i === "auto",
+            strippedDangerousRules = z.strippedDangerousRules;
+          r.setToolPermissionContext(k => {
+            let y = k;
+            if (P) y = s?.stripDangerousPermissionsForAutoMode(y) ?? y;else if (strippedDangerousRules) y = s?.restoreDangerousPermissions(y) ?? y;
+            return {
+              ...y,
+              mode: i,
+              prePlanMode: void 0
+            };
+          });
+        }
+        let E;
+        if (w && !isAgent && b === void 0) {
+          let i = dNi.read;
+          if (w.id !== S?.id) c("plan_doc_read", "not_on_record");else if (!tool) c("plan_doc_read", "no_read_tool");else if (!i) c("plan_doc_read", "no_reader");else E = await runEngine?.(i, {
+            id: w.id,
+            tool: tool
+          });
+        }
+        let Q = Zo() && r.tools.some(item => ht(item, ft)) && !Xlr(An, r.tools);
+        return {
+          data: {
+            plan: w && E?.text !== void 0 ? J(w, U, E.text) : N,
+            isAgent: isAgent,
+            filePath: v ? void 0 : T,
+            hasTaskTool: Q || void 0,
+            planWasEdited: O !== void 0 && !v || void 0
+          },
+          ...(E?.attachments.length && {
+            newMessages: E.attachments
+          })
+        };
+      }
+    };
+  },
+  mapToolResultToToolResultBlockParam({
+    isAgent: isAgent_2,
+    plan: plan,
+    filePath: filePath,
+    hasTaskTool: hasTaskTool,
+    planWasEdited: planWasEdited,
+    awaitingLeaderApproval: awaitingLeaderApproval,
+    requestId: requestId_2
+  }, tool_use_id) {
+    if (awaitingLeaderApproval) return {
+      type: "tool_result",
+      content: `Your plan has been submitted to the team lead for approval.
+
+Plan file: ${filePath}
+
+**What happens next:**
+1. Wait for the team lead to review your plan
+2. You will receive a message in your inbox with approval/rejection
+3. If approved, you can proceed with implementation
+4. If rejected, refine your plan based on the feedback
+
+**Important:** Do NOT proceed until you receive approval. Check your inbox for response.
+
+Request ID: ${requestId_2}`,
+      tool_use_id: tool_use_id
+    };
+    if (isAgent_2) return {
+      type: "tool_result",
+      content: 'User has approved the plan. There is nothing else needed from you now. Please respond with "ok"',
+      tool_use_id: tool_use_id
+    };
+    if (!plan || plan.trim() === "") return {
+      type: "tool_result",
+      content: "User has approved exiting plan mode. You can now proceed.",
+      tool_use_id: tool_use_id
+    };
+    let v = YZn(Boolean(hasTaskTool)),
+      S = planWasEdited ? "Approved Plan (edited by user)" : "Approved Plan";
+    return {
+      type: "tool_result",
+      content: `User has approved your plan. You can now start coding. Start with updating your todo list if applicable${filePath === void 0 ? "" : `
+
+Your plan has been saved to: ${filePath}
+You can refer back to it if needed during implementation.`}${v}
+
+## ${S}:
+${plan}`,
+      tool_use_id: tool_use_id
+    };
+  }
+});
+export { Wii, qZn, zii, YZn, b8 };

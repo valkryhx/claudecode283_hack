@@ -1,0 +1,536 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  S
+} from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import {
+  s,
+  n
+} from "B:/~BUN/root/chunk-qey16aan.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  Df
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  aj
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  Ze
+} from "B:/~BUN/root/chunk-cpzw87wr.js";
+import {
+  Tt
+} from "B:/~BUN/root/chunk-dw9hahea.js";
+import {
+  OI,
+  NXe
+} from "B:/~BUN/root/chunk-0jhmwh3q.js";
+import {
+  Jn
+} from "B:/~BUN/root/chunk-yd5nr5hc.js";
+import {
+  ke
+} from "B:/~BUN/root/chunk-bvcekd4j.js";
+import {
+  MY
+} from "B:/~BUN/root/chunk-58807hdh.js";
+import {
+  wEt,
+  kEt,
+  vEt,
+  b2t
+} from "B:/~BUN/root/chunk-5yr8g0ct.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import {
+  y,
+  j
+} from "B:/~BUN/root/chunk-czy5r8bc.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+j();
+import {
+  basename as po,
+  resolve as se
+} from "path";
+
+function Ao() {
+  return "Sent to Claude on each fire. Slash commands work."
+}
+
+function Io(mo) {
+  return mo.trim() === "" ? null : NXe(mo).error ?? null
+}
+
+function jo(uo) {
+  if (uo.trim() === "") {
+    return
+  }
+  let Re = NXe(uo);
+  return Re.error ? void 0 : `${Re.human} \xB7 ${Re.cron}`
+}
+
+function Lo(co) {
+  return {
+    label: aj(co),
+    value: co
+  }
+}
+async function e3s(u) {
+  return b2t(void 0, u).catch((o) => (a(o), []))
+}
+
+function ILo(u) {
+  let i = S(76),
+    {
+      task: o,
+      onBack: k,
+      onEdit: l,
+      onDone: v,
+      refresh: B,
+      storageV5: V
+    } = u,
+    [g, z] = y(!1),
+    [p, ee] = y(!1),
+    h;
+  if (i[0] !== g || i[1] !== v || i[2] !== B || i[3] !== V || i[4] !== o) h = async function I() {
+    if (g) {
+      return
+    }
+    z(!0);;
+    try {
+      await kEt(Ke({
+        ...o,
+        enabled: !o.enabled
+      }), void 0, V), await B(), v(`${o.enabled?"Disabled":"Enabled"} scheduled task '${o.id}'.`, {
+        display: "system"
+      })
+    } catch (U) {
+      let Be = U;
+      a(Be), v(`Toggle failed: ${d(Be)}`, {
+        display: "system"
+      })
+    }
+  }, i[0] = g, i[1] = v, i[2] = B, i[3] = V, i[4] = o, i[5] = h;
+  else h = i[5];
+  let I = h,
+    U;
+  if (i[6] !== g || i[7] !== v || i[8] !== B || i[9] !== V || i[10] !== o.id) U = async function L() {
+    if (g) {
+      return
+    }
+    z(!0);;
+    try {
+      await vEt(o.id, void 0, V), await B(), v(`Removed scheduled task '${o.id}'.`, {
+        display: "system"
+      })
+    } catch (b) {
+      let oe = b;
+      t(`Failed to remove scheduled task '${o.id}' from daemon.json: ${d(oe)}`, {
+        level: "error"
+      }), v(`Remove failed: ${d(oe)}`, {
+        display: "system"
+      })
+    }
+  }, i[6] = g, i[7] = v, i[8] = B, i[9] = V, i[10] = o.id, i[11] = U;
+  else U = i[11];
+  let L = U;
+  if (p) {
+    const b = `Delete '${o.id}' from daemon.json. The daemon will stop firing it on its next reconcile.`;
+    let x;
+    if (i[12] === w) x = () => ee(!1), i[12] = x;
+    else x = i[12];
+    let C;
+    if (i[13] !== L) C = () => void L(), i[13] = L, i[14] = C;
+    else C = i[14];
+    let E;
+    if (i[15] === w) E = () => ee(!1), i[15] = E;
+    else E = i[15];
+    let M;
+    if (i[16] !== C) M = e(Jn, {
+      cancelFirst: !0,
+      focus: "cancel",
+      confirmLabel: "Yes, remove",
+      cancelLabel: "No, cancel",
+      onConfirm: C,
+      onCancel: E
+    }), i[16] = C, i[17] = M;
+    else M = i[17];
+    let f;
+    if (i[18] !== b || i[19] !== M) f = e(ke, {
+      title: "Remove task?",
+      subtitle: b,
+      onCancel: x,
+      color: "error",
+      children: M
+    }), i[18] = b, i[19] = M, i[20] = f;
+    else f = i[20];
+    return f
+  }
+  const b = o.enabled ? "Disable" : "Enable";
+  let x;
+  if (i[21] !== b) x = {
+    label: b,
+    value: "toggle"
+  }, i[21] = b, i[22] = x;
+  else x = i[22];
+  let C, E, M;
+  if (i[23] === w) C = {
+    label: "Edit",
+    value: "edit"
+  }, E = {
+    label: "Remove",
+    value: "remove"
+  }, M = {
+    label: "Back",
+    value: "back"
+  }, i[23] = C, i[24] = E, i[25] = M;
+  else C = i[23], E = i[24], M = i[25];
+  let f;
+  if (i[26] !== x) f = [x, C, E, M], i[26] = x, i[27] = f;
+  else f = i[27];
+  let ce = f;
+  const {
+    id: F,
+    cron: We
+  } = o;
+  let Q;
+  if (i[28] !== o.cron) Q = OI(o.cron), i[28] = o.cron, i[29] = Q;
+  else Q = i[29];
+  let Y;
+  if (i[30] !== Q || i[31] !== o.cron) Y = r(n, {
+    dimColor: !0,
+    children: ["Cron ", We, " (", Q, ")"]
+  }), i[30] = Q, i[31] = o.cron, i[32] = Y;
+  else Y = i[32];
+  let G;
+  if (i[33] !== o.directory) G = r(n, {
+    dimColor: !0,
+    children: ["Directory ", o.directory]
+  }), i[33] = o.directory, i[34] = G;
+  else G = i[34];
+  let D;
+  if (i[35] !== o.prompt) D = r(n, {
+    dimColor: !0,
+    children: ["Prompt ", o.prompt]
+  }), i[35] = o.prompt, i[36] = D;
+  else D = i[36];
+  const te = o.enabled ? "on" : "off";
+  let N;
+  if (i[37] !== te) N = e(Tt, {
+    status: te,
+    withSpace: !0
+  }), i[37] = te, i[38] = N;
+  else N = i[38];
+  const q = o.enabled ? "enabled" : "disabled";
+  let P;
+  if (i[39] !== N || i[40] !== q) P = r(n, {
+    dimColor: !0,
+    children: ["Status ", N, q]
+  }), i[39] = N, i[40] = q, i[41] = P;
+  else P = i[41];
+  let H;
+  if (i[42] !== o.permissionMode) H = aj(o.permissionMode), i[42] = o.permissionMode, i[43] = H;
+  else H = i[43];
+  let ie;
+  if (i[44] !== H) ie = r(n, {
+    dimColor: !0,
+    children: ["Mode ", H]
+  }), i[44] = H, i[45] = ie;
+  else ie = i[45];
+  let T;
+  if (i[46] !== o.model) T = o.model && r(n, {
+    dimColor: !0,
+    children: ["Model ", o.model]
+  }), i[46] = o.model, i[47] = T;
+  else T = i[47];
+  let K;
+  if (i[48] !== o.runTimeoutMinutes) K = r(n, {
+    dimColor: !0,
+    children: ["Timeout ", o.runTimeoutMinutes, "m"]
+  }), i[48] = o.runTimeoutMinutes, i[49] = K;
+  else K = i[49];
+  let W;
+  if (i[50] !== o.maxQueued) W = r(n, {
+    dimColor: !0,
+    children: ["Max queue ", o.maxQueued]
+  }), i[50] = o.maxQueued, i[51] = W;
+  else W = i[51];
+  let O;
+  if (i[52] !== Y || i[53] !== G || i[54] !== D || i[55] !== P || i[56] !== ie || i[57] !== T || i[58] !== K || i[59] !== W) O = r(s, {
+    flexDirection: "column",
+    marginBottom: 1,
+    children: [Y, G, D, P, ie, T, K, W]
+  }), i[52] = Y, i[53] = G, i[54] = D, i[55] = P, i[56] = ie, i[57] = T, i[58] = K, i[59] = W, i[60] = O;
+  else O = i[60];
+  let A;
+  if (i[61] !== k || i[62] !== l || i[63] !== o || i[64] !== I) A = (re) => {
+    if (re === "back") {
+      return k()
+    }
+    if (re === "edit") {
+      return l(o)
+    }
+    if (re === "remove") {
+      return ee(!0)
+    }
+    if (re === "toggle") {
+      return void I()
+    }
+  }, i[61] = k, i[62] = l, i[63] = o, i[64] = I, i[65] = A;
+  else A = i[65];
+  let J;
+  if (i[66] !== g || i[67] !== k || i[68] !== ce || i[69] !== A) J = e(Ze, {
+    options: ce,
+    isDisabled: g,
+    onChange: A,
+    onCancel: k
+  }), i[66] = g, i[67] = k, i[68] = ce, i[69] = A, i[70] = J;
+  else J = i[70];
+  let Z;
+  if (i[71] !== k || i[72] !== O || i[73] !== J || i[74] !== o.id) Z = r(ke, {
+    title: F,
+    onCancel: k,
+    children: [O, J]
+  }), i[71] = k, i[72] = O, i[73] = J, i[74] = o.id, i[75] = Z;
+  else Z = i[75];
+  return Z
+}
+
+function MLo(u) {
+  let p = S(59),
+    {
+      defaultDir: o,
+      existingIds: k,
+      prefill: l,
+      modelOptions: v,
+      onCancel: B,
+      onDone: V,
+      onSaved: g,
+      storageV5: z
+    } = u,
+    ee;
+  if (p[0] !== v) ee = v === void 0 ? [{
+    label: "default",
+    value: ""
+  }] : v, p[0] = v, p[1] = ee;
+  else ee = p[1];
+  let i = ee,
+    h = l !== void 0,
+    U;
+  if (p[2] !== k || p[3] !== h || p[4] !== l) U = h ? k.filter((Be) => Be !== l.id) : k, p[2] = k, p[3] = h, p[4] = l, p[5] = U;
+  else U = p[5];
+  let I = U;
+  const b = l?.prompt ?? "",
+    oe = l?.cron ?? "",
+    L = l?.directory ?? o,
+    x = l?.id ?? "",
+    C = l?.permissionMode ?? "dontAsk",
+    E = l?.model ?? "";
+  let M;
+  if (p[6] !== b || p[7] !== oe || p[8] !== L || p[9] !== x || p[10] !== C || p[11] !== E) M = {
+    prompt: b,
+    schedule: oe,
+    dir: L,
+    id: x,
+    permissionMode: C,
+    model: E
+  }, p[6] = b, p[7] = oe, p[8] = L, p[9] = x, p[10] = C, p[11] = E, p[12] = M;
+  else M = p[12];
+  let [f, ce] = y(M), [F, We] = y(h), [Q, Y] = y(!1), G;
+  if (p[13] !== o || p[14] !== F) G = function P(D, te) {
+    if (D === "id") We(!0);
+    ce((N) => {
+      if (N[D] === te) {
+        return N
+      }
+      let q = {
+        ...N,
+        [D]: te
+      };
+      if (D !== "id" && !F && (D === "prompt" || D === "dir")) q.id = ue(se(Df(q.dir?.trim() || o)), q.prompt ?? "");
+      return q
+    })
+  }, p[13] = o, p[14] = F, p[15] = G;
+  else G = p[15];
+  let P = G,
+    H;
+  if (p[16] !== i || p[17] !== l) H = l?.model && !i.some((ie) => ie.value === l.model) ? [...i, {
+    label: l.model,
+    value: l.model
+  }] : i, p[16] = i, p[17] = l, p[18] = H;
+  else H = p[18];
+  let T = H,
+    K, W;
+  if (p[19] === w) K = {
+    type: "text",
+    key: "prompt",
+    label: "Prompt",
+    placeholder: "/babysit-prs",
+    required: !0,
+    hint: Ao
+  }, W = {
+    type: "text",
+    key: "schedule",
+    label: "Schedule",
+    placeholder: "5m, 2h, 1d  or  */15 * * * *",
+    required: !0,
+    validate: Io,
+    hint: jo
+  }, p[19] = K, p[20] = W;
+  else K = p[19], W = p[20];
+  let O;
+  if (p[21] !== o) O = {
+    type: "text",
+    key: "dir",
+    label: "Directory",
+    placeholder: o
+  }, p[21] = o, p[22] = O;
+  else O = p[22];
+  let A;
+  if (p[23] !== I) A = (re) => {
+    let J = re.trim();
+    if (J !== "" && I.includes(J)) {
+      return `id '${J}' is already in use`
+    }
+    return null
+  }, p[23] = I, p[24] = A;
+  else A = p[24];
+  let Z;
+  if (p[25] !== F) Z = () => F ? void 0 : "Auto-generated from prompt and directory.", p[25] = F, p[26] = Z;
+  else Z = p[26];
+  let pe;
+  if (p[27] !== A || p[28] !== Z) pe = {
+    type: "text",
+    key: "id",
+    label: "Id",
+    validate: A,
+    hint: Z
+  }, p[27] = A, p[28] = Z, p[29] = pe;
+  else pe = p[29];
+  let _e;
+  if (p[30] === w) _e = {
+    type: "select",
+    key: "permissionMode",
+    label: "Permission mode",
+    options: wEt.map(Lo)
+  }, p[30] = _e;
+  else _e = p[30];
+  let fe;
+  if (p[31] !== T) fe = (eo) => T.find((Fo) => Fo.value === eo)?.description ?? (eo === "" ? "Uses your configured default model." : void 0), p[31] = T, p[32] = fe;
+  else fe = p[32];
+  let ve;
+  if (p[33] !== T || p[34] !== fe) ve = {
+    type: "select",
+    key: "model",
+    label: "Model",
+    options: T,
+    hint: fe
+  }, p[33] = T, p[34] = fe, p[35] = ve;
+  else ve = p[35];
+  let oo;
+  if (p[36] !== O || p[37] !== pe || p[38] !== ve) oo = [K, W, O, pe, _e, ve], p[36] = O, p[37] = pe, p[38] = ve, p[39] = oo;
+  else oo = p[39];
+  let Ve = oo,
+    to;
+  if (p[40] !== Q || p[41] !== o || p[42] !== h || p[43] !== V || p[44] !== g || p[45] !== l || p[46] !== z || p[47] !== f) to = async function ye() {
+    if (Q) {
+      return
+    }
+    Y(!0);
+    let io = se(Df(f.dir?.trim() || o));
+    let ro = NXe(f.schedule ?? "");
+    if (ro.cron === void 0) {
+      Y(!1);
+      return
+    }
+    let no = f.id?.trim() || ue(io, f.prompt?.trim() ?? "");
+    let Qo = f.permissionMode ?? "dontAsk";
+    let so = f.model?.trim() || void 0;
+    let No = {
+      id: no,
+      cron: ro.cron,
+      prompt: f.prompt.trim(),
+      directory: io,
+      enabled: l?.enabled ?? !0,
+      permissionMode: Qo,
+      runTimeoutMinutes: l?.runTimeoutMinutes ?? 30,
+      maxQueued: l?.maxQueued ?? 1,
+      ...so && {
+        model: so
+      }
+    };;
+    try {
+      if (h && l.id !== no) await vEt(l.id, void 0, z);
+      await kEt(No, void 0, z), await g()
+    } catch (ne) {
+      let lo = ne;
+      a(lo), V(`Save failed: ${d(lo)}`, {
+        display: "system"
+      })
+    }
+  }, p[40] = Q, p[41] = o, p[42] = h, p[43] = V, p[44] = g, p[45] = l, p[46] = z, p[47] = f, p[48] = to;
+  else to = p[48];
+  let ye = to;
+  const ne = h ? `Edit '${l.id}'` : "New scheduled task";
+  let ge;
+  if (p[49] !== ye) ge = () => void ye(), p[49] = ye, p[50] = ge;
+  else ge = p[50];
+  const Me = h ? "Save changes" : "Create task";
+  let ao;
+  if (p[51] !== Ve || p[52] !== B || p[53] !== P || p[54] !== ne || p[55] !== ge || p[56] !== Me || p[57] !== f) ao = e(MY, {
+    title: ne,
+    subtitle: "Fire a prompt on a recurring schedule",
+    fields: Ve,
+    values: f,
+    onChange: P,
+    onSubmit: ge,
+    onCancel: B,
+    submitLabel: Me
+  }), p[51] = Ve, p[52] = B, p[53] = P, p[54] = ne, p[55] = ge, p[56] = Me, p[57] = f, p[58] = ao;
+  else ao = p[58];
+  return ao
+}
+
+function T1r(u) {
+  return u.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40)
+}
+
+function ue(u, o) {
+  let k = T1r(po(u)),
+    l = T1r(o.split(/\s+/).slice(0, 4).join(" "));
+  return [k, l].filter(Boolean).join("-") || "task"
+}
+
+function Ke(u) {
+  return {
+    id: u.id,
+    cron: u.cron,
+    prompt: u.prompt,
+    directory: u.directory,
+    enabled: u.enabled,
+    permissionMode: u.permissionMode,
+    runTimeoutMinutes: u.runTimeoutMinutes,
+    maxQueued: u.maxQueued,
+    ...u.model && {
+      model: u.model
+    }
+  }
+}
+export {
+  e3s,
+  ILo,
+  MLo,
+  T1r
+};

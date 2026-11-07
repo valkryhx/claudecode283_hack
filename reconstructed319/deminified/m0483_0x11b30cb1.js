@@ -1,0 +1,36 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { k } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { W } from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import { x } from "B:/~BUN/root/chunk-mwfggkjt.js";
+var s = 268435456,
+  iNi = s;
+async function aNi(n, e, t) {
+  let r = 0;
+  while (r < e.byteLength) {
+    let {
+      bytesWritten: bytesWritten
+    } = await n.write(e, r, e.byteLength - r, t === null ? null : t + r);
+    if (bytesWritten <= 0) throw Object.assign(Error("write made no progress"), {
+      code: "EIO"
+    });
+    r += bytesWritten;
+  }
+}
+var a = new Set(["EPERM", "ENOTSUP", "EOPNOTSUPP", "ENOSYS"]);
+class o {
+  logged = !1;
+  claim() {
+    if (this.logged) return !1;
+    return this.logged = !0, !0;
+  }
+}
+var K = new W(() => new o());
+function lNi(n) {
+  let e = k(n);
+  if (e === void 0) return !1;
+  return a.has(e) || e === "EISDIR" && x() === "windows";
+}
+export { iNi, aNi, lNi };

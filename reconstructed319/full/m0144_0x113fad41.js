@@ -1,0 +1,452 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  R,
+  d,
+  k,
+  mqn
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import {
+  H,
+  ye
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  t,
+  _
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  ae
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  Fn,
+  Od
+} from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import {
+  g,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  Bs,
+  TAe,
+  Kn
+} from "B:/~BUN/root/chunk-gvasf6q6.js";
+import {
+  F4
+} from "B:/~BUN/root/chunk-hacd8gcc.js";
+import {
+  Yl
+} from "B:/~BUN/root/chunk-ja520myc.js";
+import {
+  tBt
+} from "B:/~BUN/root/chunk-5az22yft.js";
+import {
+  yt
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import {
+  o,
+  u,
+  T
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+class oS extends Error {
+  authErrorKind;
+  firstPartyBearer;
+  requestedScope;
+  serverName;
+  constructor(e, r, a = "token_expired", n, s) {
+    super(r);
+    this.authErrorKind = a;
+    this.firstPartyBearer = n;
+    this.requestedScope = s;
+    this.name = "McpAuthError", this.serverName = e
+  }
+}
+class s_t extends R {
+  code;
+  constructor(e, r) {
+    super(e, "MCP tool file input rejected");
+    this.code = r
+  }
+}
+class EO extends R {
+  expiryKind;
+  constructor(e, r = "session_expired_404") {
+    super(r === "connection_closed_http" ? `MCP server "${e}" connection closed before the tool call was answered. The tool may have run: check whether it did before running it again.` : r === "connection_closed_call_not_run" ? `MCP server "${e}" connection closed before the tool call ran` : `MCP server "${e}" session expired`, "MCP session expired");
+    this.expiryKind = r;
+    this.name = "McpSessionExpiredError"
+  }
+  get mayHaveRun() {
+    switch (this.expiryKind) {
+      case "session_expired_404":
+      case "connection_closed_call_refused":
+      case "connection_closed_call_not_run":
+        return !1;
+      case "connection_closed_http":
+        return !0
+    }
+  }
+}
+class fte extends R {
+  code;
+  constructor(e, r = "unreadable") {
+    if (r === "unreadable") super(`Couldn't read the stored credentials for MCP server "${e}", so the request didn't run. ${x()==="macos"?"If your Mac's keychain is locked, unlock it, then try again.":"Try again."}`, "MCP credential store could not be read");
+    else super(`A request to MCP server "${e}" was sent without your stored credentials, so the server rejected it. The credentials are available now. Try again.`, "MCP credentials were read only after a request went out without them");
+    this.code = "CREDENTIAL_STORE_UNAVAILABLE", this.name = "McpCredentialStoreUnavailableError"
+  }
+}
+class qy extends R {
+  mcpMeta;
+  constructor(e, r, a, n) {
+    super(e, r, n);
+    this.mcpMeta = a;
+    this.name = "McpToolCallError"
+  }
+}
+class lUt extends R {
+  constructor(e, r) {
+    let a = typeof r?.message === "string" ? r.message : String(r);
+    super(`MCP server "${e}" returned a malformed result that failed schema validation: ${a}`, "MCP server returned a malformed result");
+    this.name = "McpResponseSchemaError", this.cause = r
+  }
+}
+class _Se extends R {
+  mcpErrorSource;
+  why;
+  constructor(e, r, a) {
+    if (a.kind === "too_large") super(`The response from MCP server "${e}" for tool "${r}" was larger than ${Math.round(a.capBytes/1024/1024)}MB, so it was not read. The tool may have run: check whether it did before running it again, and when you run it again, ask for less data.`, "MCP tool response over the size cap");
+    else super(`The connection to MCP server "${e}" was closed because a message from the server was too large or could not be parsed, so the result of tool "${r}" was not read. The tool may have run: check whether it did before running it again.`, "MCP connection closed after an unreadable server message");
+    this.name = "McpToolResultNotReadError", this.why = a, this.mcpErrorSource = a.kind === "too_large" ? "downstream_error" : "downstream_unreachable"
+  }
+}
+
+function YMr(e) {
+  return e === "malformed message after an auth challenge"
+}
+class vDs extends R {
+  mcpErrorSource = "downstream_error";
+  constructor(e, r) {
+    super(`The structured content in the response from MCP server "${e}" for tool "${r}" was not read here. This happens most often when it is too large, is nested too deep or holds a number that is too large. The tool may have run: check whether it did before calling it again, and ask for less data.`, "MCP tool response with structured content that is not read");
+    this.name = "McpStructuredContentNotReadError"
+  }
+}
+
+function Lin(e) {
+  return e === "http body overflow" || e === "malformed JSON-RPC message (response truncated)"
+}
+var q3 = -32003,
+  B = -32042,
+  X = ["downstream_error", "downstream_unreachable", "user_auth", "user_config", "other"],
+  j = new Set(X),
+  i_t = new Set(["ECONNREFUSED", "ETIMEDOUT", "ECONNRESET", "ECONNABORTED", "ENOTFOUND", "ENETUNREACH", "EAI_AGAIN", "ConnectionRefused", "ConnectionClosed", "FailedToOpenSocket", "ERR_SOCKET_CLOSED", "ERR_PROXY_TUNNEL"]),
+  G = new Set(["ERR_INVALID_URL", "MODULE_NOT_FOUND", "ENOENT", "ENOEXEC", "EACCES", "EPERM"]),
+  z = new Set(["ESOCKETTIMEDOUT", "EHOSTUNREACH", "EPIPE", "CONNECT_TIMEOUT", "CONNECT_SUSPENDED", "REQUEST_TIMEOUT", "CONNECTION_CLOSED", "NOT_CONNECTED", "SEND_FAILED"]);
+
+function V(e) {
+  return ("errorCode" in e && typeof e.errorCode === "string" ? e.errorCode : k(e)) !== void 0 && /^HTTP 40[13]\b/.test(e.message)
+}
+var q = p(() => u({
+  error: u({
+    type: T("not_forwarded"),
+    message: o()
+  })
+}));
+
+function XMr(e) {
+  let a = e instanceof Error ? e.message : "",
+    n = a.indexOf("Error POSTing to endpoint: ");
+  if (n === -1) return;
+  let s = q().safeParse(et(a.slice(n + 27), !1));
+  return s.success ? s.data.error.message : void 0
+}
+
+function $z(e) {
+  return P(e, !1)
+}
+
+function P(e, r) {
+  let a = e !== null && typeof e === "object" && "mcpErrorSource" in e ? e.mcpErrorSource : void 0;
+  if (typeof a === "string" && j.has(a)) return a;
+  if (e instanceof DOMException) return e.name === "TimeoutError" ? "downstream_unreachable" : "other";
+  if (!(e instanceof Error)) return "other";
+  if (e instanceof oS || e instanceof fte) return "user_auth";
+  if (e instanceof EO) return e.expiryKind === "session_expired_404" ? "downstream_error" : "downstream_unreachable";
+  if (e instanceof qy || e instanceof lUt) return "downstream_error";
+  if (V(e)) return "user_auth";
+  let n = "code" in e && typeof e.code === "number" ? e.code : ("status" in e) && typeof e.status === "number" ? e.status : void 0;
+  if (n !== void 0) {
+    if (n === q3 || n === B) return "other";
+    if (n === -32001 || n === -32000) return "downstream_unreachable";
+    if (n < -32000) return "downstream_error";
+    if (n === 401 || n === 403) return e.name === "McpError" || e.name === "ProtocolError" || n === 403 ? "downstream_error" : "user_auth";
+    if (n >= 400 && n <= 599) return "downstream_error";
+    return e.name === "McpError" || e.name === "ProtocolError" ? "downstream_error" : "other"
+  }
+  let s = k(e);
+  if (s !== void 0) {
+    if (s === "CLAUDEAI_BEARER_REJECTED") return "user_auth";
+    if (G.has(s) || s.includes("CERT") || s.startsWith("UNABLE_TO_")) return "user_config";
+    if (i_t.has(s) || z.has(s)) return "downstream_unreachable"
+  }
+  if (e.message.startsWith(mqn)) return "downstream_unreachable";
+  if (!r) {
+    let f = e.cause;
+    for (let S = 0; S < 4 && f !== void 0; S++) {
+      let l = P(f, !0);
+      if (l !== "other") return l;
+      f = f instanceof Error ? f.cause : void 0
+    }
+  }
+  return "other"
+}
+import {
+  createHash as Y
+} from "crypto";
+
+function CV() {
+  return i.CLAUDE_CODE_ENABLE_XAA
+}
+
+function Xfe() {
+  return yt().xaaIdp
+}
+async function Z1(e) {
+  if (e === void 0) return (await Kn().readAsync())?.mcpOAuth;
+  let r = await KD(e);
+  return r === Bs ? void 0 : r?.mcpOAuth
+}
+var b = 1000,
+  N = 30000,
+  v = new W(() => ({
+    inFlight: null,
+    verdict: void 0,
+    settledAt: 0,
+    seenPopulated: !1,
+    generation: 0,
+    keychainOnly: {
+      inFlight: null,
+      verdict: void 0,
+      settledAt: 0,
+      cacheGeneration: 0
+    }
+  }));
+
+function D(e) {
+  return e !== Bs && (!e || Object.keys(e).length === 0)
+}
+async function KD(e) {
+  let r = Kn();
+  if (e !== void 0) {
+    let l = v.of(H().host).keychainOnly,
+      L = l.verdict === "answered" && l.cacheGeneration === F4().generation && Date.now() - l.settledAt < N,
+      h = await KD(),
+      M = r.readAsyncStrict;
+    if (h === Bs || !M || L) return h;
+    let {
+      serverName: E,
+      serverConfig: y
+    } = e, C = ha(E, y), O = h?.mcpOAuth?.[C];
+    if (O?.accessToken || O?.refreshToken || !e.challenged && !l_t(E, y, h?.mcpOAuth) || !ye() || TAe() !== "keychain") return h;
+    if (l.verdict === "failed" && Date.now() - l.settledAt < b) return Bs;
+    let K = F4().generation;
+    l.inFlight ??= M.call(r, void 0, {
+      inaccessibleAs: "failure"
+    }).then((w) => (l.verdict = w === Bs ? "failed" : "answered", l.settledAt = Date.now(), l.cacheGeneration = K, w)).finally(() => {
+      l.inFlight = null
+    });
+    let m = await l.inFlight;
+    if (m === Bs || !e.challenged) return m ?? h;
+    let A = m?.mcpOAuth?.[C];
+    if (!A?.accessToken && !A?.refreshToken) return m ?? h;
+    throw ae(E, "Stored credentials turned up only after the server challenged a request sent without them; failing that request so the next one sends them"), new fte(E, "read-too-late")
+  }
+  let a = await r.readAsync(),
+    n = v.of(H().host),
+    s = r.readAsyncStrict;
+  if (!D(a)) return I(n), a;
+  if (!s) return a;
+  let f = Date.now() - n.settledAt;
+  if (n.verdict === "failed" && f < b) return n.seenPopulated ? Bs : a;
+  if (n.verdict === "empty" && f < N) return a;
+  n.inFlight ??= J(n, () => s.call(r));
+  let S = await n.inFlight;
+  return S === Bs && !n.seenPopulated ? a : S
+}
+
+function I(e) {
+  if (e.seenPopulated = !0, e.generation++, e.verdict === "empty") e.verdict = void 0
+}
+async function J(e, r) {
+  try {
+    let a = e.generation,
+      n = await r();
+    if (n !== Bs && !D(n)) e.verdict = void 0, I(e);
+    else if (a !== e.generation) return n;
+    else e.verdict = n === Bs ? "failed" : "empty";
+    return e.settledAt = Date.now(), n
+  } finally {
+    e.inFlight = null
+  }
+}
+
+function ha(e, r) {
+  let a = _({
+      type: r.type,
+      url: r.url,
+      headers: r.headers || {}
+    }),
+    n = Y("sha256").update(a).digest("hex").substring(0, 16);
+  return `${e}|${n}`
+}
+
+function hjn(e) {
+  return Object.keys(e).some((r) => r.toLowerCase() === "authorization")
+}
+
+function RU(e) {
+  return hjn(e.headers ?? {})
+}
+var F = "/v1/design/",
+  Q = [F, "/v1/claude/test/", tBt];
+
+function ej(e) {
+  try {
+    let r = new URL(e);
+    if (r.protocol !== "https:" || !Od(r.href)) return !1;
+    if (Q.some((a) => a.endsWith("/") ? r.pathname.startsWith(a) : r.pathname === a)) return !0;
+    return !1
+  } catch {
+    return !1
+  }
+}
+
+function JL(e) {
+  try {
+    let r = new URL(e);
+    return ej(r) && r.pathname.startsWith(F)
+  } catch {
+    return !1
+  }
+}
+
+function pte(e) {
+  if (CV() && e.oauth?.xaa) return !0;
+  if (e.headersHelper || e.headers && Object.keys(e.headers).length > 0) return !0;
+  if (ej(e.url) && Fn()) return !0;
+  return !1
+}
+
+function a_t(e, r) {
+  return RU(e) || Yl(e) || ej(e.url) && Fn() && r
+}
+async function Met(e, r) {
+  let a = await KD();
+  if (a === Bs) return !0;
+  return !!a?.mcpOAuth?.[ha(e, r)]?.refreshToken
+}
+async function j9i(e, r) {
+  let a = await KD();
+  if (a === Bs) return Bs;
+  let n = a?.mcpOAuth?.[ha(e, r)];
+  return !!n?.accessToken || !!n?.refreshToken
+}
+var EDs = 2592000000,
+  Z = 60000;
+
+function Nin(e) {
+  if (e === void 0) return !1;
+  let r = Date.now() - e;
+  return r > -Z && r <= EDs
+}
+
+function Fin(e) {
+  return e !== void 0 && !e.accessToken && !e.refreshToken && e.discoveryState?.oauthMetadataFound === !0
+}
+
+function U(e) {
+  return !e.oauth?.clientId && !e.oauth?.authServerMetadataUrl && !e.oauth?.xaa && !pte(e)
+}
+
+function TDs(e, r, a, n = 0) {
+  if (!U(r)) return !1;
+  let s = a?.[ha(e, r)],
+    f = s?.discoveryState?.registrationNotOfferedAt;
+  return Fin(s) && !s.clientId && f !== void 0 && f >= n && Nin(f)
+}
+async function Hin(e, r, a = 0) {
+  if (r.type !== "http" && r.type !== "sse" || !U(r)) return {};
+  let n = await Z1().catch((s) => {
+    t(`Could not read the credentials store to check whether ${e} offers client registration, so its status row will not say: ${d(s)}`, {
+      level: "error"
+    }), c("mcp_status_registration_mark", "store_read_failed");
+    return
+  });
+  if (!TDs(e, r, n, a)) return {};
+  return g("mcp_status_registration_mark"), {
+    clientRegistrationUnavailable: !0
+  }
+}
+
+function l_t(e, r, a) {
+  if (pte(r)) return !1;
+  let n = a?.[ha(e, r)],
+    s = n?.discoveryState?.registrationNotOfferedAt;
+  if (r.redialToRelearnRegistration === !0 && s !== void 0 && !Nin(s)) return !1;
+  return Fin(n)
+}
+
+function JMr(e, r, a) {
+  if (pte(r)) return !1;
+  let n = a?.[ha(e, r)];
+  return n !== void 0 && !!n.accessToken && !n.refreshToken && n.expiresAt !== void 0 && n.expiresAt < Date.now()
+}
+export {
+  oS,
+  s_t,
+  EO,
+  fte,
+  qy,
+  lUt,
+  _Se,
+  YMr,
+  vDs,
+  Lin,
+  q3,
+  i_t,
+  XMr,
+  $z,
+  CV,
+  Xfe,
+  Z1,
+  KD,
+  ha,
+  hjn,
+  RU,
+  ej,
+  JL,
+  pte,
+  a_t,
+  Met,
+  j9i,
+  EDs,
+  Nin,
+  Fin,
+  TDs,
+  Hin,
+  l_t,
+  JMr
+};

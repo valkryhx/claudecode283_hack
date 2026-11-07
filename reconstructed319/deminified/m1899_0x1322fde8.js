@@ -1,0 +1,207 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+var W_ = {
+  "ask_first.host_rule"({
+    name: name,
+    rules: rules
+  }) {
+    return `A permission rule of this session (${rules}) asks before it uses ${name}'s tools.`;
+  },
+  "ask_first.host_rule.cannot_ask"({
+    name: name_2,
+    rules: rules_2
+  }) {
+    return `The rule ${rules_2} asks before this session uses ${name_2}, and this context cannot ask.`;
+  },
+  "ask_first.file_rules_unread"({
+    name: name_3,
+    toolName: toolName,
+    rules: rules_3
+  }) {
+    return `This session cannot tell which files a ${toolName} command opens on ${name_3}, so it cannot check the command against its permission rules for the file tools (${rules_3}). Allow it only if it does nothing that those rules are there to stop.`;
+  },
+  "ask_first.file_rules_unread.cannot_ask"({
+    name: name_4,
+    toolName: toolName_2,
+    rules: rules_4
+  }) {
+    return `This session cannot tell which files a ${toolName_2} command opens on ${name_4}, so it cannot check the command against its permission rules for the file tools (${rules_4}), and this context cannot ask. A file tool's call there is checked against those rules.`;
+  },
+  "refused.file_rules_unread.managed"({
+    name: name_5,
+    toolName: toolName_3,
+    rules: rules_5
+  }) {
+    return `This session cannot tell which files a ${toolName_3} command opens on ${name_5}, so it cannot check the command against the deny rules for the file tools in its managed settings (${rules_5}). It sends no ${toolName_3} command to ${name_5} while those rules are set, and the user cannot approve one. A file tool's call there is checked against those rules.`;
+  },
+  "plan_mode.entered_while_asking"(e) {
+    return `This session entered plan mode while the approval was pending; a state-changing ${e} call is not approved from plan mode.`;
+  },
+  "away.until"(e) {
+    return e === void 0 ? "in this turn" : `until a later attached-machines note says ${e} is reachable again, or the user says it is back or asks you to try again`;
+  },
+  "away.ending"() {
+    return "Check once more only when the user says it is back or asks you to try again.";
+  },
+  host_unresponsive({
+    name: name_6,
+    checks: checks,
+    intervalMs: intervalMs,
+    whileRunning: whileRunning,
+    stillConnected: stillConnected,
+    returnNoted: returnNoted
+  }) {
+    if (stillConnected) return `${name_6} is still connected, but its reply to this command was not received (${checks} checks about ${Math.round(intervalMs / 1000)} s apart got no answer, though ${name_6} answered a liveness check). Its state is unknown \u2014 it may have completed, failed, or still be running; the reply may have been too large to deliver. Do not re-run non-idempotent commands on ${name_6} just to see the output. If the output may be large, try a narrower command (part of a file, a filter, or a smaller image); otherwise do the rest of the task without ${name_6}, and tell the user what you could not verify.`;
+    let r = `${name_6} stopped answering ${whileRunning ? "while this command was running" : "after this command was sent to it"} (${checks} checks about ${Math.round(intervalMs / 1000)} s apart went unanswered). Its state is unknown \u2014 it may have completed, failed, ${whileRunning ? "or still be running" : "never started, or still be running"}.`;
+    return returnNoted ? `${r} Do not call ${name_6} again ${W_["away.until"](name_6)}; then check what this command did before repeating it. Meanwhile do the rest of the task without ${name_6}, and tell the user what is blocked and what you could not verify.` : `${r} Do not retry non-idempotent commands on ${name_6} until ${name_6} reconnects, and do not call it again ${W_["away.until"]()}: do the rest of the task without ${name_6}, and tell the user what is blocked and what you could not verify. ${W_["away.ending"]()}`;
+  },
+  host_asleep({
+    name: name_7,
+    whileRunning: whileRunning_2,
+    withdrawn: withdrawn,
+    returnNoted: returnNoted_2
+  }) {
+    let a = withdrawn ? `This session has stopped waiting for it and withdrew its request: the command will be stopped when ${name_7} wakes, and may have partly run. Do not repeat it without checking.` : "The command was not cancelled: it is paused with the machine and will most likely continue when it wakes; what it had already done stays done. This session has stopped waiting for it. Do not repeat it, here or there.",
+      o = `${name_7} went to sleep ${whileRunning_2 ? "while this command was running" : "after this command was sent to it"} (it said so itself). ${a}`;
+    return returnNoted_2 ? `${o} Do not call ${name_7} again until a later attached-machines note says ${name_7} is reachable again, or the user says it is back or asks you to try again; then check what this command did before sending anything else to ${name_7}. Meanwhile do the rest of the task without ${name_7}, and tell the user what is paused.` : `${o} Do not call ${name_7} again in this turn: do the rest of the task without ${name_7}, and tell the user what is paused. Check once more only when the user says it is back or asks you to try again, and then check what this command did before sending anything else to ${name_7}.`;
+  },
+  "unverified_refusal.call_phase"({
+    name: name_8,
+    whileRunning: whileRunning_3
+  }) {
+    return `A reply that could not be verified says this session is no longer paired with ${name_8}. ${whileRunning_3 ? "It was running there; whether it finished is unknown." : "The state of this command there is unknown \u2014 it may or may not have run."} Do not retry it on ${name_8} until ${name_8} re-announces, and do not call it again in this turn; continue with what you can do without it, and tell the user you could not confirm whether it ${whileRunning_3 ? "finished" : "ran"}.`;
+  },
+  approval_no_longer_covers(e) {
+    return `A permission rule changed while this was waiting; nothing ran on ${e}. Ask again to get a fresh approval.`;
+  },
+  "in_progress.checkin"(e) {
+    return `Checking on ${e} \u2014 the call is still with it\u2026`;
+  },
+  "ask_seat.waiting"(e) {
+    return `Waiting to send to ${e} \u2014 earlier calls there still need a permission answer\u2026`;
+  },
+  "ask_seat.sending"(e) {
+    return `Sending to ${e}\u2026`;
+  },
+  "reconnect_hold.waiting"({
+    name: name_9,
+    holdMs: holdMs
+  }) {
+    return `Waiting for ${name_9} to come back (up to ${Math.round(holdMs / 1000)} s)\u2026`;
+  },
+  "reconnect_hold.ended"(e) {
+    return `Stopped waiting for ${e}.`;
+  },
+  "reconnect_hold.gave_up"({
+    name: name_10,
+    holdMs: holdMs_2
+  }) {
+    return `This call already waited up to ${Math.round(holdMs_2 / 1000)} s for ${name_10} to come back; if this session is later told that ${name_10} is back, use it again from then.`;
+  },
+  "card.standing_unavailable"({
+    name: name_11,
+    kind: kind
+  }) {
+    return `Always allow isn\u2019t available for ${kind === "command" ? "commands run" : "files"} on ${name_11} yet \u2014 this approves once.`;
+  },
+  no_answer({
+    name: name_12,
+    afterMs: afterMs,
+    waitAnnounced: waitAnnounced
+  }) {
+    let s = i(afterMs),
+      a = `No one approved or denied this within ${s}, so it was not run on ${name_12}. Nothing changed there, and this session has stopped waiting for an answer to this request.`,
+      o = `Assume the user is away: a further call to ${name_12} that needs approval, whether this one again, another command or a file edit, would wait up to ${s} and close the same way. Finish only what needs no approval on ${name_12}, then stop and tell the user which calls were not run`;
+    return waitAnnounced ? `${a} ${o} and that you will ask again when they say so.` : `${a} ${name_12} announced no wait of its own for approvals, so this session's ${s} applied. ${o}, that you will ask again when they say so, and that making sure Claude Code on ${name_12} is up to date (or the Claude desktop app, if that is what runs it there) may give them longer to answer.`;
+  },
+  "ask_ended.notice"({
+    name: name_13,
+    toolName: toolName_4,
+    reason: reason,
+    afterMs: afterMs_2
+  }) {
+    return `${toolName_4} on ${name_13} was not run: ${h(name_13, toolName_4, reason, afterMs_2)}.`;
+  },
+  withdrawn({
+    name: name_14,
+    reason: reason_2
+  }) {
+    let n = `The request to run this on ${name_14} was withdrawn \u2014 ${d(name_14, reason_2)}; nothing ran there.`;
+    switch (reason_2) {
+      case "superseded":
+      case "stale_answer":
+        return `${n} Send it again once. If that request is withdrawn too, ask the user how to proceed rather than retrying.`;
+      case "evicted":
+        return `${n} Send it again only after some of the approvals already waiting on ${name_14} have been answered.`;
+      case "replaced_by_retry":
+        return `${n} Do not send it again: the newer copy is already asking.`;
+      case "no_answer":
+      case "host_withdrawn":
+      case "tool_withdrawn":
+      case "host_unbound":
+      case "host_stopped":
+      case "record_evicted":
+      case "unrecognized":
+        return `${n} Ask the user how to proceed rather than retrying.`;
+    }
+  }
+};
+function h(e, t, n, s) {
+  switch (n) {
+    case "no_answer":
+      return `nobody answered the approval within ${i(s)}`;
+    case "host_withdrawn":
+      return `${e} disconnected`;
+    case "superseded":
+      return `Claude Code on ${e} restarted`;
+    case "evicted":
+      return `${e} had too many approvals waiting`;
+    case "tool_withdrawn":
+      return `${e} stopped offering ${t}`;
+    case "host_unbound":
+      return `${e} is no longer available to this session`;
+    case "host_stopped":
+      return `Claude Code on ${e} quit`;
+    case "stale_answer":
+      return `the answer reached ${e} too late`;
+    case "record_evicted":
+      return `${e} no longer had a record of the approval`;
+    case "replaced_by_retry":
+      return "a newer copy of the request replaced this one";
+    case "unrecognized":
+      return `${e} ended the approval`;
+  }
+}
+function i(e) {
+  let t = Math.round(e / 1000);
+  return t >= 60 && t % 60 === 0 ? `${t / 60} min` : `${t} s`;
+}
+function d(e, t) {
+  switch (t) {
+    case "no_answer":
+      return "no one answered it in time";
+    case "host_withdrawn":
+      return `Claude Code on ${e} left the session`;
+    case "superseded":
+      return `a newer Claude Code on ${e} took over from the one that asked`;
+    case "evicted":
+      return `too many requests were already waiting on ${e}`;
+    case "tool_withdrawn":
+      return `${e} stopped serving this tool`;
+    case "host_unbound":
+      return `${e} is no longer bound to this session`;
+    case "host_stopped":
+      return `Claude Code on ${e} was shutting down`;
+    case "stale_answer":
+      return `an answer was given but reached ${e} too late to count`;
+    case "record_evicted":
+      return `${e} no longer had a record of it`;
+    case "replaced_by_retry":
+      return "a newer copy of this request now carries the question";
+    case "unrecognized":
+      return `${e} let it go for a reason this build does not know`;
+  }
+}
+export { W_ };

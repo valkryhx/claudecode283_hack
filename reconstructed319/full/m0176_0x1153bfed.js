@@ -1,0 +1,53 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  kie
+} from "B:/~BUN/root/chunk-xwzn0yxv.js";
+var dt = "Edit",
+  gjn = "/.claude/**",
+  yjn = "~/.claude/**",
+  d_t = "File has not been read yet. Read it first before writing to it.",
+  CDs = `You were given only the start of this file, and nothing shows that you have since read all of it in one call, so a Write could lose the rest. To change part of it, use ${dt}. To replace it whole, first Read it in one call with no offset or limit. If Read returns only a page or says the file is too large, Read it again with ${kie}: true. If even that cannot return all of it, use ${dt}.`,
+  _jn = "File is in a directory that is denied by your permission settings.",
+  bjn = "File is covered by a Read deny rule in your permission settings and cannot be edited.",
+  Sjn = "File is covered by a Read deny rule in your permission settings and cannot be written.",
+  $in = "File content has changed since it was last read. This commonly happens when a linter or formatter run via Bash rewrites the file. Call Read on this file to refresh, then retry the edit.",
+  t = {
+    not_utf8: "is not valid UTF-8: it uses a legacy encoding such as Windows-1252, Shift-JIS or GBK, or it is binary",
+    nul: "has NUL bytes in its first 8 KB: binary data, UTF-16/UTF-32 without a byte-order mark, or text with embedded NULs",
+    utf16be: "is UTF-16 big-endian (it starts FE FF), which these tools cannot write"
+  };
+
+function dUt(e) {
+  return `File ${t[e]}. These tools write UTF-8 (or UTF-16LE behind its byte-order mark) and never convert a file's encoding on their own, so nothing was written. If the file is text, make the change with a shell command that reads and writes it in its own encoding (iconv, or PowerShell Get-Content/Set-Content -Encoding), or ask the user whether to convert it to UTF-8 first. To replace the whole file with new UTF-8 text anyway, delete it first, then Write it.`
+}
+
+function W9i(e) {
+  let o = e === "not_utf8" ? " Its undecodable bytes show above as U+FFFD." : "";
+  return `[This file ${t[e]}.${o} Edit and Write will refuse it: change it with a shell command that keeps its encoding, or ask the user whether to convert it to UTF-8.]`
+}
+class Y3 extends Error {
+  constructor(e) {
+    super(e);
+    this.name = "FileStateError"
+  }
+}
+var Yt = "Write";
+var Me = "Bash";
+export {
+  dt,
+  gjn,
+  yjn,
+  d_t,
+  CDs,
+  _jn,
+  bjn,
+  Sjn,
+  $in,
+  dUt,
+  W9i,
+  Y3,
+  Yt,
+  Me
+};

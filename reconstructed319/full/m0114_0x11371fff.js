@@ -1,0 +1,5773 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  eE,
+  De
+} from "B:/~BUN/root/chunk-vz9zea4j.js";
+import {
+  Ke,
+  R,
+  d,
+  k,
+  tr,
+  K,
+  wr,
+  Nh
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  Bo,
+  H,
+  z,
+  Ee,
+  Vs,
+  oKn,
+  q
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  we,
+  Ao
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  En,
+  or,
+  th,
+  UH,
+  ca,
+  Ba,
+  Sl,
+  BH,
+  fB,
+  cqn,
+  ad,
+  gWt,
+  CKs,
+  Wp
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  sa,
+  Fb,
+  yh,
+  og,
+  vt,
+  t,
+  gcn,
+  io,
+  _me,
+  Ha,
+  ie
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  P,
+  tt
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  ib,
+  _h,
+  nK
+} from "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  Ct,
+  ol,
+  pe
+} from "B:/~BUN/root/chunk-thn0wk2x.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  $c,
+  wj,
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  Om,
+  GR,
+  iv,
+  KSt,
+  Vdn
+} from "B:/~BUN/root/chunk-t4qpmjt5.js";
+import {
+  ro,
+  Ana,
+  kM,
+  OH,
+  Is
+} from "B:/~BUN/root/chunk-nsneqfcc.js";
+import {
+  C2n,
+  Bte,
+  q1t,
+  SFr,
+  Y1t,
+  xf,
+  R2n
+} from "B:/~BUN/root/chunk-x1xft50h.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  hh,
+  VO
+} from "B:/~BUN/root/chunk-5xx1vfdh.js";
+import {
+  yn,
+  fS,
+  ys
+} from "B:/~BUN/root/chunk-88zb3509.js";
+import {
+  Oqe,
+  ut,
+  lt
+} from "B:/~BUN/root/chunk-3mm90xb6.js";
+import {
+  hwe
+} from "B:/~BUN/root/chunk-bkfncj77.js";
+import {
+  V
+} from "B:/~BUN/root/chunk-f9dwrymq.js";
+import {
+  Dn
+} from "B:/~BUN/root/chunk-9jpwd6f1.js";
+import {
+  Hr,
+  zR,
+  B2n,
+  mae,
+  Ve
+} from "B:/~BUN/root/chunk-myfamxtp.js";
+import {
+  bj
+} from "B:/~BUN/root/chunk-rr294jrm.js";
+import {
+  jr,
+  fo
+} from "B:/~BUN/root/chunk-46ahshhq.js";
+import {
+  Sa
+} from "B:/~BUN/root/chunk-63176a0t.js";
+import {
+  ce
+} from "B:/~BUN/root/chunk-w7vsj9wa.js";
+import {
+  qa
+} from "B:/~BUN/root/chunk-qzcyr88d.js";
+import {
+  Ewe,
+  t$e
+} from "B:/~BUN/root/chunk-x3gsqe09.js";
+import {
+  n$e,
+  Go
+} from "B:/~BUN/root/chunk-cf143bsb.js";
+import {
+  lu
+} from "B:/~BUN/root/chunk-xfdxa8bd.js";
+import {
+  en
+} from "B:/~BUN/root/chunk-mdq0dxn3.js";
+import {
+  wd,
+  NVn,
+  WHr,
+  zHr,
+  Jra
+} from "B:/~BUN/root/chunk-cbjnh04j.js";
+import {
+  Je
+} from "B:/~BUN/root/chunk-9wbhv9z5.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-g9pw24zp.js";
+import {
+  closeSync as Us,
+  constants as Ys,
+  fstatSync as zs,
+  lstatSync as Xs,
+  openSync as Js,
+  readlinkSync as Zs,
+  readSync as Qs,
+  realpathSync as qs,
+  statSync as ea,
+  unwatchFile as ta
+} from "fs";
+import {
+  lstat as Sr,
+  readdir as na,
+  readFile as We,
+  realpath as ra,
+  stat as He
+} from "fs/promises";
+import * as _e from "fs/promises";
+import {
+  randomUUID as Oo
+} from "crypto";
+import {
+  constants as Ln
+} from "fs";
+import {
+  copyFile as Fo,
+  mkdir as Lo,
+  mkdtemp as To,
+  open as Do,
+  readdir as Bn,
+  rm as No
+} from "fs/promises";
+import {
+  basename as jo,
+  dirname as Mo,
+  join as xe,
+  win32 as Tn
+} from "path";
+var pta = 10485760,
+  mta = 2000,
+  hta = 2000,
+  kSt = 3000,
+  Q4 = 512000;
+var It = {
+    imageMaxRawBytes: 307200,
+    wholePdfMaxRawBytes: 0,
+    pdfMaxPagesPerRead: 3
+  },
+  Fr = {
+    imageMaxRawBytes: 512000,
+    wholePdfMaxRawBytes: 2500000,
+    pdfMaxPagesPerRead: 6
+  };
+
+function Pxo(e) {
+  switch (e) {
+    case "session":
+    case "relay":
+      return Fr;
+    case "bridge":
+    case "direct":
+      return It;
+    default: {
+      let n = e;
+      return It
+    }
+  }
+}
+var fFr = 28;
+
+function aae(e, n) {
+  if (e <= 0 || n <= 0) return 0;
+  return Math.ceil(e / fFr) * Math.ceil(n / fFr)
+}
+var Ow = {
+    maxWidth: 2000,
+    maxHeight: 2000,
+    maxBase64Size: 5242880,
+    targetRawSize: 3932160
+  },
+  vSt = 33554432,
+  pFr = 20971520,
+  gta = 100,
+  f2n = 104857600,
+  JJ = 20,
+  ESt = 10,
+  yta = 100,
+  mFr = 600,
+  MBs = 20,
+  _ta = [510, 255, 127],
+  bta = 78643200,
+  DBs = vSt - 8388608,
+  Sta = 25165824,
+  LBs = 10485760,
+  p2n = 64000;
+import {
+  constants as Ht
+} from "fs";
+import {
+  lstat as ri,
+  open as ii,
+  readlink as oi,
+  realpath as si,
+  stat as Ya
+} from "fs/promises";
+
+function Ot(e) {
+  if (e === 9 || e === 10) return !1;
+  return e < 32 || e >= 127 && e <= 159
+}
+
+function Ft(e) {
+  return e === 1564 || e >= 8234 && e <= 8238 || e >= 8294 && e <= 8297
+}
+
+function Lr(e) {
+  return e === 65038 || e === 65039
+}
+
+function Tr(e) {
+  return e >= 55296 && e <= 57343
+}
+
+function Lt(e) {
+  let n = e.codePointAt(0);
+  if (e.length === 1) {
+    if (n <= 31) return 0;
+    if (Ft(n)) return 1
+  }
+  let r = ce(e);
+  return r === 0 ? 0 : r === 1 ? 1 : r
+}
+var W1t = 4096,
+  vqe = /\u2026 \[\+\d+ graphemes\]/,
+  Dr = 4064,
+  Nr = 256;
+
+function wta(e) {
+  if (e.length <= W1t) return e;
+  return e.split(`
+`).map((n) => {
+    if (n.length <= W1t) return n;
+    let r = [],
+      o = "";
+    for (let {
+        segment: s
+      }
+      of Sa().segment(n))
+      if (o.length > 0 && o.length + s.length > Nr) r.push(o), o = s;
+      else o += s;
+    if (o.length > 0) r.push(o);
+    return r.join(`
+`)
+  }).join(`
+`)
+}
+
+function xt(e) {
+  let n = "",
+    r = 0;
+  for (let {
+      segment: o
+    }
+    of Sa().segment(e)) {
+    n += o;
+    let s = ce(n),
+      l = s - r;
+    if (r = s, l !== Lt(o)) return !1
+  }
+  return !0
+}
+
+function Mr(e) {
+  let n = "",
+    r = "",
+    o = 0;
+  for (let {
+      segment: s
+    }
+    of Sa().segment(e)) {
+    r += s;
+    let l = ce(r),
+      u = l - o;
+    o = l, n += u === Lt(s) ? s : "\uFFFD"
+  }
+  return n
+}
+
+function At(e) {
+  let n = e;
+  for (let r = 0; r < 16; r++) {
+    if (xt(n)) return n;
+    let o = Mr(n);
+    if (o === n) break;
+    n = o
+  }
+  if (xt(n)) return n;
+  return [...Sa().segment(n)].map(() => "\uFFFD").join("")
+}
+
+function Br(e, n) {
+  let r = "";
+  for (let {
+      segment: o
+    }
+    of Sa().segment(e)) {
+    if (r.length + o.length > n) break;
+    r += o
+  }
+  return r
+}
+
+function Gr(e) {
+  return Tt(e, Dr)
+}
+
+function Tt(e, n) {
+  let r = Br(e, n);
+  if (r.length > 0) return r;
+  let o = Math.min(n, e.length),
+    s = e.charCodeAt(o - 1);
+  if (s >= 55296 && s <= 56319) o -= 1;
+  return e.slice(0, o)
+}
+var Kr = 4 * W1t * W1t,
+  ct = 1024,
+  Wr = 64 * ct * ct;
+
+function $r(e) {
+  let n = Kr,
+    r = Wr,
+    o = (s) => [...Sa().segment(s)].length;
+  return e.split(`
+`).map((s) => {
+    if (s === "") return s;
+    if (/^\u2026 \[\+\d+ graphemes\]$/.test(s)) return s;
+    let l = s.match(/\u2026 \[\+\d+ graphemes\]$/),
+      u = l ? l[0] : "",
+      f = l ? s.slice(0, s.length - u.length) : s,
+      p = f.length > W1t,
+      h = p ? Gr(f) : f,
+      w = p ? `\u2026 [+${o(f.slice(h.length))} graphemes]` : "",
+      S = h.length + w.length + u.length,
+      E = S * S;
+    if (E <= n) return n -= E, At(h) + w + u;
+    let y = Tt(f, ct),
+      v = y.length < f.length ? `\u2026 [+${o(f.slice(y.length))} graphemes]` : "",
+      I = y.length + v.length + u.length,
+      b = I * I;
+    if (y.length > 0 && b <= r) return r -= b, At(y) + v + u;
+    return `\u2026 [+${o(f)} graphemes]` + u
+  }).join(`
+`)
+}
+
+function TC(e) {
+  for (let n = 0; n < e.length; n++)
+    if (Ot(e.charCodeAt(n))) return !1;
+  return !0
+}
+
+function ai(e) {
+  return Dt(e, !0)
+}
+
+function Dt(e, n) {
+  let r = "";
+  for (let s of e) {
+    let l = s.codePointAt(0);
+    if (Lr(l)) continue;
+    r += Ot(l) || Ft(l) || Tr(l) ? "\uFFFD" : s
+  }
+  let o = hwe(r);
+  return n ? $r(o) : o
+}
+var Ur = /\p{DI}/gu;
+
+function TSt(e) {
+  return e.replace(Ur, "")
+}
+
+function Oxo(e) {
+  return NBs(e) === void 0
+}
+
+function NBs(e) {
+  let n = Yr.exec(e);
+  if (n !== null) return n[0].codePointAt(0);
+  if (Vr.test(e)) return;
+  for (let {
+      segment: r
+    }
+    of Sa().segment(e)) {
+    if (zr.test(r)) continue;
+    let o = ce(r);
+    if (o === 0) return r.codePointAt(0);
+    if (o > 2 && r.length > 1) {
+      for (let s of r)
+        if (ce(s) === 0) return s.codePointAt(0)
+    }
+  }
+  return
+}
+var Yr = new RegExp(`(?![\\t\\n\\r])[${ib}]`, "u"),
+  zr = /^[\t\n\r]+$/,
+  Vr = /^[\t\n\r\x20-\x7e]*$/;
+
+function Z4(e) {
+  return Dt(TSt(_h(e)), !1)
+}
+import {
+  lstat as Nt,
+  readlink as Xr
+} from "fs/promises";
+import {
+  dirname as Jr,
+  isAbsolute as dt,
+  normalize as Zr,
+  parse as ft,
+  sep as jt
+} from "path";
+var Mt = 40;
+
+function Qr(e) {
+  return e === "win32" ? /[\\/]+/ : /\/+/
+}
+var qr = "names a network location (a UNC path or automounter node); copy it to a local file first",
+  ei = "reaches a network location (a UNC or automount target) through a link; copy it to a local file first",
+  ti = /^[a-zA-Z]:(?![\\/])/,
+  Ixo = "has a link chain that could not be fully checked for network targets; pass the real path of a local file";
+
+function pdn(e, n = "win32") {
+  return cqn(e) || fB(e, n)
+}
+async function FBs(e, n = "win32") {
+  if (!dt(e)) return Ixo;
+  if (pdn(e, n)) return qr;
+  let r = {
+    hops: Mt,
+    steps: Mt * 64
+  };
+  switch ((await Bt(ft(e).root, e, r, n)).kind) {
+    case "network":
+      return ei;
+    case "unvettable":
+      return Ixo;
+    case "local":
+    case "dead-end":
+      return
+  }
+}
+var ni = /^(?:[\\/]{2}[?.]|[\\/]\?\?)[\\/]([A-Za-z]:[\\/].*)$/;
+async function Bt(e, n, r, o, s = !1) {
+  if (o === "win32" && s) {
+    let w = ni.exec(n);
+    if (w) n = w[1]
+  }
+  if (pdn(n, o)) return {
+    kind: "network"
+  };
+  let l = n;
+  if (o === "win32") {
+    if (ti.test(n)) return {
+      kind: "unvettable"
+    };
+    if (s) {
+      if (th(n)) return {
+        kind: "unvettable"
+      }
+    } else if (l = Zr(n), pdn(l, o)) return {
+      kind: "network"
+    }
+  }
+  let u = o === "win32" && /^[\\/](?![\\/])/.test(l) ? `${ft(e).root.replace(/[\\/]+$/,"")}${l}` : l,
+    {
+      root: f
+    } = ft(u),
+    p = dt(u) ? f : e,
+    h = !s;
+  for (let w of u.slice(dt(u) ? f.length : 0).split(Qr(o))) {
+    if (w === "" || w === ".") continue;
+    if (--r.steps < 0) return {
+      kind: "unvettable"
+    };
+    if (w === "..") {
+      p = Jr(p);
+      continue
+    }
+    let S = p.endsWith(jt) ? `${p}${w}` : `${p}${jt}${w}`;
+    if (pdn(S, o)) return {
+      kind: "network"
+    };
+    let E;
+    try {
+      E = (await Nt(S)).isSymbolicLink()
+    } catch (I) {
+      let b = k(I);
+      if (b === "ENOENT" || b === "ENOTDIR") return {
+        kind: "dead-end"
+      };
+      if (h) {
+        let F = o !== "win32" ? b === "EACCES" || b === "EPERM" || b === "ENAMETOOLONG" || b === "ELOOP" : b === "ENAMETOOLONG";
+        if (!F) try {
+          await Nt(p)
+        } catch (C) {
+          let D = k(C);
+          F = D === "ENOENT" || D === "ENOTDIR" || D === "ENODEV" || D === "ENXIO"
+        }
+        if (F) return {
+          kind: "local",
+          physical: p
+        }
+      }
+      return {
+        kind: "unvettable"
+      }
+    }
+    if (!E) {
+      p = S;
+      continue
+    }
+    if (--r.hops < 0) return {
+      kind: "unvettable"
+    };
+    let y;
+    try {
+      y = await Xr(S)
+    } catch {
+      return {
+        kind: "unvettable"
+      }
+    }
+    let v = await Bt(p, y, r, o, !0);
+    if (v.kind !== "local") return v;
+    h = !1, p = v.physical
+  }
+  return {
+    kind: "local",
+    physical: p
+  }
+}
+async function Iw(e, n, r) {
+  let o = n + 1,
+    s = Buffer.alloc(r === void 0 ? o : Math.min(Math.max(Number(r) + 1, 1), o)),
+    l = 0;
+  while (l < o) {
+    if (l === s.length) {
+      let f = Buffer.alloc(o);
+      s.copy(f), s = f
+    }
+    let {
+      bytesRead: u
+    } = await e.read(s, l, s.length - l, l);
+    if (u === 0) break;
+    l += u
+  }
+  return {
+    bytes: s.subarray(0, Math.min(l, n)),
+    overLimit: l > n
+  }
+}
+var li = {
+  realpath: si,
+  lstat: ri,
+  readlink: oi
+};
+async function m2n(e, n, r, o = li) {
+  let s;
+  try {
+    s = await o.lstat(r, {
+      bigint: !0
+    })
+  } catch {
+    return
+  }
+  if (s.dev !== n.dev || s.ino !== n.ino) return;
+  try {
+    if (await o.realpath(r) !== r) return
+  } catch {
+    return
+  }
+  return r
+}
+var Za = Ht.O_RDONLY | Ht.O_NONBLOCK | ro;
+async function nnt(e) {
+  return ii(e, "r")
+}
+async function HBs(e, n = Ana) {
+  return {
+    handle: await nnt(e),
+    withNoAtime: !1
+  }
+}
+import {
+  constants as M
+} from "fs";
+import {
+  lstat as fe,
+  mkdir as ci,
+  open as Ie,
+  readlink as ui
+} from "fs/promises";
+import {
+  basename as Te,
+  dirname as U,
+  isAbsolute as Ut,
+  join as B
+} from "path";
+async function mdn(e, n, r, o, s) {
+  s?.throwIfAborted();
+  let l = o ? iG(e, n, r) : Ie(e, n | ro);
+  if (!s) return l;
+  let u, f = new Promise((p, h) => {
+    u = () => h(s.reason ?? Error("aborted")), s.addEventListener("abort", u, {
+      once: !0
+    })
+  });
+  try {
+    return await Promise.race([l, f])
+  } catch (p) {
+    throw l.then((h) => h.close(), () => {}), p
+  } finally {
+    if (u) s.removeEventListener("abort", u)
+  }
+}
+var di = /^(?:\/dev\/(?:stdin|stdout|stderr|fd\/\d+)|\/proc\/self\/fd\/\d+)$/;
+
+function Yt(e) {
+  return di.test(e) || /^\/proc\/\d+\/fd\/\d+$/.test(e) && e.startsWith(`/proc/${process.pid}/fd/`)
+}
+
+function Eqe(e) {
+  return `/proc/self/fd/${e}`
+}
+var fi = 2097152;
+async function iG(e, n, r) {
+  if (r !== "macos" || await SFr()) return Ie(e, n | ro);
+  return Ie(e, n & ~M.O_NOFOLLOW | q1t | ro)
+}
+async function Gt(e, n, r) {
+  if (r !== "macos") return !1;
+  for (let s = e;; s = U(s)) {
+    try {
+      if (!(await fe(s)).isDirectory()) return !1
+    } catch {
+      return !1
+    }
+    if (U(s) === s) break
+  }
+  let o;
+  try {
+    o = await Ie(e, M.O_RDONLY | M.O_DIRECTORY | q1t | ro)
+  } catch {
+    return !1
+  }
+  try {
+    let [s, l] = await Promise.all([o.stat({
+      bigint: !0
+    }), n.stat({
+      bigint: !0
+    })]);
+    return s.ino === l.ino && s.dev === l.dev
+  } catch {
+    return !1
+  } finally {
+    await o.close()
+  }
+}
+var gi = {
+  chain: "a link on the way now leads somewhere the check did not see",
+  networkLink: "a link now stands at the network path",
+  junction: "the junction no longer leads to the approved share",
+  unrenderable: "its real path can no longer be determined",
+  rendering: "it now resolves to a path the check did not see",
+  linkOnApproved: "a link now stands on the approved path",
+  openedElsewhere: "it opened at a different path than approved",
+  afterOpen: "it re-resolved elsewhere once opened"
+};
+async function hdn(e) {
+  try {
+    return await ui(Eqe(e))
+  } catch (n) {
+    if (wr(n)) return;
+    throw n
+  }
+}
+async function Kt(e, n, r) {
+  try {
+    return await hdn(e.fd)
+  } catch (o) {
+    if (r === "by-spelling") return;
+    throw new VO(`Refusing to read ${n}: the system would not say where it was opened (reading /proc/self/fd failed with ${k(o)??"an error"}), so it cannot be told apart from a path this session may not read.`)
+  }
+}
+
+function ae(e, n) {
+  return new VO(`Refusing to read ${e}: its symlink resolution changed after permission was checked (${gi[n]}). If a link in the working directory is being rewritten concurrently, stop that and retry.`)
+}
+var zt = !1;
+async function CSt(e) {
+  let n = [];
+  for (let u = e;; u = U(u))
+    if (n.unshift(u), U(u) === u) break;
+  let r = ie(),
+    o, s = [],
+    l = [];
+  for (let u of n) {
+    try {
+      let f = await fe(u, {
+        bigint: !0
+      });
+      if (!(u === e ? f.isFile() : f.isDirectory())) return;
+      s.push(f), l.push("lstat");
+      continue
+    } catch (f) {
+      let p = k(f);
+      if (u === e || p !== "EPERM" && p !== "EACCES") return
+    }
+    if (o ??= _me(r), o !== null && l.slice(1).every((f) => f === "passed") && gcn(u, o)) {
+      s.push(void 0), l.push("passed");
+      continue
+    }
+    return
+  }
+  for (let u = 0; u < n.length - 1; u++) {
+    let f = s[u];
+    if (f === void 0) continue;
+    let p;
+    try {
+      p = l[u] === "open" ? await pi(n[u]) : await fe(n[u], {
+        bigint: !0
+      })
+    } catch {
+      return
+    }
+    if (p === void 0 || !p.isDirectory() || p.dev !== f.dev || p.ino !== f.ino) return
+  }
+  return s.at(-1)
+}
+async function pi(e) {
+  let n;
+  try {
+    n = await Ie(e, M.O_RDONLY | M.O_DIRECTORY | M.O_NOFOLLOW | ro)
+  } catch {
+    return
+  }
+  try {
+    let r = await n.stat({
+      bigint: !0
+    });
+    return r.isDirectory() ? r : void 0
+  } catch {
+    return
+  } finally {
+    await n.close().catch(() => {})
+  }
+}
+
+function gt(e) {
+  return Ut(e) && !Sl(e) && !Yt(e)
+}
+async function lae(e) {
+  for (let n = e.length - 1; n >= 0; n--) {
+    let r = e[n];
+    if (!gt(r)) continue;
+    let o = await CSt(r);
+    if (o) return {
+      dev: o.dev,
+      ino: o.ino
+    }
+  }
+  return null
+}
+async function Wt(e, n, r, o, s) {
+  if (s == null) return;
+  for (let l = n.length - 1; l >= 0; l--) {
+    let u = n[l];
+    if (!gt(u) || !zt && !await CSt(u)) continue;
+    let f;
+    try {
+      f = await mdn(u, r & ~M.O_NOFOLLOW | q1t | M.O_NONBLOCK, "macos", !1, o)
+    } catch (h) {
+      if (o?.aborted) throw o.reason ?? h;
+      continue
+    }
+    let p = await f.stat({
+      bigint: !0
+    }).catch(() => {
+      return
+    });
+    if (p?.isFile() && p.dev === s.dev && p.ino === s.ino) return t(`openReadBoundToApproval: the fresh resolution of ${e} is not verbatim what the check approved (or realpath could not render it); reading approved ${u}, opened link-free`), {
+      canonicalPath: u,
+      ioPath: u,
+      handle: f,
+      close: () => f.close()
+    };
+    await f.close().catch(() => {})
+  }
+  return
+}
+async function rnt(e, n, r, o, s = "by-spelling") {
+  let l = new Set(n),
+    u = x(),
+    f = u === "windows" ? M.O_RDONLY : M.O_RDONLY | M.O_NOCTTY,
+    p = u === "windows" ? f : f | M.O_NOFOLLOW,
+    h = io(ie(), e),
+    w = (C) => o != null && C.isFile() && C.dev === o.dev && C.ino === o.ino,
+    S = async (C = h) => {
+      let D = C.resolvedPath;
+      if (o == null || !C.isCanonical || !gt(D) || D.startsWith("/dev/")) return !1;
+      if (!zt) {
+        let O = await CSt(D);
+        return O !== void 0 && w(O)
+      }
+      let _;
+      try {
+        _ = await mdn(D, p & ~M.O_NOFOLLOW | q1t | M.O_NONBLOCK, "macos", !1, r)
+      } catch (O) {
+        if (r?.aborted) throw r.reason ?? O;
+        return !1
+      }
+      try {
+        return await _.stat({
+          bigint: !0
+        }).then(w, () => !1)
+      } finally {
+        await _.close().catch(() => {})
+      }
+    }, E = async (C) => {
+      if (u === "macos" && await S()) {
+        let D = await Wt(e, n, p, r, o);
+        if (D) return D
+      }
+      throw ae(e, C)
+    }, y = Ha(e);
+  if (y.unresolved) throw ae(e, "unrenderable");
+  for (let C of y.spellings)
+    if (!l.has(C)) return E(h.isCanonical && C === h.resolvedPath ? "rendering" : "chain");
+  let v = async (C, D) => {
+    if ((await fe(C)).isSymbolicLink()) throw ae(e, "networkLink");
+    let _ = await mdn(C, p, u, !D, r);
+    if (u === "linux" || u === "wsl") {
+      let O = await Kt(_, e, s).catch(async (A) => {
+        throw await _.close().catch(() => {}), A
+      });
+      if (O !== void 0 && O !== C && !l.has(O)) throw await _.close().catch(() => {}), ae(e, "openedElsewhere");
+      if (O !== void 0) return {
+        ioPath: Eqe(_.fd),
+        canonicalPath: C,
+        handle: _,
+        close: () => _.close()
+      }
+    }
+    return {
+      ioPath: C,
+      canonicalPath: C,
+      handle: _,
+      close: () => _.close()
+    }
+  };
+  if (Y1t(e, u)) return v(e, !1);
+  let I = Yt(e) && !Ut(h.resolvedPath) && /^(?:pipe|socket|anon_inode):\[/.test(h.resolvedPath) && Te(y.landing) === h.resolvedPath;
+  if (!h.isCanonical && !I) {
+    if (h.isSymlink || h.resolvedPath !== e) {
+      if (l.has(h.resolvedPath) && Y1t(h.resolvedPath, u)) {
+        let _ = u === "macos" ? await v(h.resolvedPath, !1) : await v(e, !0),
+          O = io(ie(), e);
+        if (O.isCanonical || O.resolvedPath !== h.resolvedPath) throw await _.close().catch(() => {}), ae(e, "junction");
+        return _
+      }
+      throw ae(e, "junction")
+    }
+    let C = await mdn(e, u === "macos" ? f | M.O_NONBLOCK : f, u, !1, r),
+      D = u === "macos" && o != null ? await C.stat({
+        bigint: !0
+      }).catch(() => {
+        return
+      }) : void 0;
+    if (await C.close().catch(() => {}), D && w(D)) {
+      let _ = await Wt(e, n, p, r, o);
+      if (_) return _
+    }
+    throw ae(e, "unrenderable")
+  }
+  if (!I && !l.has(h.resolvedPath)) return E("rendering");
+  let b = I ? e : h.resolvedPath,
+    F;
+  try {
+    F = await mdn(b, I ? p & ~M.O_NOFOLLOW : p, u, !I, r)
+  } catch (C) {
+    if (k(C) === "ELOOP") throw ae(e, "linkOnApproved");
+    throw C
+  }
+  try {
+    let C = b;
+    if (u === "linux" || u === "wsl") {
+      let _ = await Kt(F, e, s);
+      if (_ !== void 0) {
+        if (_ !== (I ? h.resolvedPath : b)) throw ae(e, "openedElsewhere");
+        C = Eqe(F.fd)
+      }
+    }
+    if (C === b) {
+      let _ = Ha(e);
+      if (_.unresolved) throw ae(e, "afterOpen");
+      for (let O of _.spellings)
+        if (!l.has(O)) {
+          if (u === "macos" && await S(io(ie(), e)) && await F.stat({
+              bigint: !0
+            }).then(w, () => !1)) break;
+          throw ae(e, "afterOpen")
+        }
+    }
+    let D = F;
+    return {
+      canonicalPath: b,
+      ioPath: C,
+      handle: D,
+      close: () => D.close()
+    }
+  } catch (C) {
+    throw await F.close().catch(() => {}), C
+  }
+}
+class Ne extends Error {
+  dir;
+  reported;
+  constructor(e, n) {
+    super("held directory vanished");
+    this.dir = e;
+    this.reported = n
+  }
+}
+var $t = 3;
+
+function ne(e) {
+  return new hh(`Refusing to write ${e}: its parent-directory symlink resolution changed after permission was checked.`)
+}
+async function RSt(e, n, r, o, s = !1) {
+  let l = () => new hh(`Refusing to write ${n}: it is a symbolic link. Write to the link's target path instead.`);
+  if (r === "windows") try {
+    if ((await fe(e)).isSymbolicLink()) throw l()
+  } catch (p) {
+    if (k(p) === "ENOENT") return null;
+    throw p
+  }
+  let u = r === "windows" ? M.O_RDONLY : M.O_RDONLY | M.O_NOFOLLOW | M.O_NONBLOCK | (M.O_NOCTTY ?? 0),
+    f;
+  try {
+    f = s ? await Ie(e, u | ro) : await iG(e, u, r)
+  } catch (p) {
+    let h = k(p);
+    if (h === "ENOENT") return null;
+    if (h === "ELOOP" || h === "EMLINK" || h === "EFTYPE") throw l();
+    throw p
+  }
+  try {
+    return await t$e(f, n, o)
+  } finally {
+    await f.close()
+  }
+}
+async function JS(e, n, r) {
+  for (let o = 1;; o++) try {
+    return await mi(e, n, r)
+  } catch (s) {
+    if (!(s instanceof Ne)) throw s;
+    if (t(`pinWriteTarget: ${s.dir} was removed while held (attempt ${o}); ${o<$t?"taking the pin again":"refusing"}`, {
+        level: "warn"
+      }), o >= $t) throw s.reported ?? ne(e)
+  }
+}
+async function mi(e, n, r) {
+  let o = new Set(n),
+    s = Te(e),
+    l = x(),
+    u = () => {
+      let _ = Ha(r?.leaf === "replace" ? U(e) : e),
+        O = r?.leaf === "replace" ? _.spellings.map((A) => B(A, s)) : _.spellings;
+      return !_.unresolved && O.every((A) => o.has(A))
+    },
+    f = () => {
+      if (!u()) throw ne(e)
+    },
+    p = u();
+  if (!p && !(l === "macos" && !Y1t(e, l))) throw ne(e);
+  let h = async (_, O, A) => {
+    if (!await Gt(_, A, l)) return t(`pinWriteTarget: ${_} resolves to ${O}: not the same directory by a link-free route; refused`, {
+      level: "warn"
+    }), !1;
+    return t(`pinWriteTarget: ${_} is rendered ${O} by realpath; same directory (device and inode), treated as an alias`), !0
+  }, w = (_) => o.has(B(_, s)), S = (_) => {
+    let O = io(ie(), _);
+    if (!O.isCanonical) throw ne(e);
+    return O.resolvedPath
+  }, E = (_) => {
+    let O = io(ie(), _);
+    return O.isCanonical ? O.resolvedPath : _
+  };
+  if (Y1t(e, l) && l !== "linux" && l !== "wsl") {
+    let _ = async (A) => {
+      if (l !== "macos") return;
+      for (let L = A;; L = U(L)) try {
+        await (await iG(L, M.O_RDONLY | M.O_DIRECTORY, l)).close();
+        return
+      } catch (G) {
+        let te = k(G);
+        if (te === "ELOOP") throw ne(e);
+        if (te !== "ENOENT" || U(L) === L) throw G
+      }
+    };
+    if (await _(U(e)), r?.createParents) await ie().mkdir(U(e)), await _(U(e));
+    let O = async () => {
+      if (f(), l !== "macos") return;
+      try {
+        await (await iG(U(e), M.O_RDONLY | M.O_DIRECTORY, l)).close()
+      } catch (A) {
+        throw k(A) === "ELOOP" ? ne(e) : A
+      }
+    };
+    return {
+      ioPath: e,
+      canonicalPath: e,
+      readExisting: async (A) => {
+        await O();
+        let L = await RSt(e, e, l, A, !1);
+        return await O(), L
+      },
+      recheckBeforeWrite: O,
+      close: async () => {}
+    }
+  }
+  let y = async () => {
+    if (r?.createParents) await ie().mkdir(U(e)), f();
+    let _ = io(ie(), U(e));
+    if (!_.isCanonical && !(_.isSymlink && w(_.resolvedPath) && Y1t(B(_.resolvedPath, s), l))) {
+      if (!_.isSymlink) await fe(U(e));
+      throw ne(e)
+    }
+    let O = !_.isCanonical,
+      A = _.resolvedPath;
+    if (!w(A)) throw ne(e);
+    return {
+      ioPath: e,
+      canonicalPath: B(A, s),
+      readExisting: async (L) => {
+        f();
+        let G = await RSt(e, e, l, L, O);
+        if (f(), O && io(ie(), U(e)).resolvedPath !== A) throw ne(e);
+        return G
+      },
+      recheckBeforeWrite: f,
+      close: async () => {}
+    }
+  };
+  if (l === "windows") return y();
+  let I = l === "linux" || l === "wsl" ? fi | M.O_DIRECTORY : M.O_RDONLY | M.O_DIRECTORY,
+    b = U(e),
+    F = [],
+    C, D = "";
+  for (;;) try {
+    D = l === "macos" ? E(b) : b, C = await iG(D, I, l);
+    break
+  } catch (_) {
+    let O = k(_),
+      A = U(b),
+      L = O === "ELOOP" && l === "macos" && D === b && !io(ie(), b).isCanonical;
+    if (O === "ELOOP" && !L) {
+      let G = io(ie(), U(e));
+      if (p && !G.isCanonical && G.isSymlink && w(G.resolvedPath) && Y1t(B(G.resolvedPath, s), l)) return y();
+      throw ne(e)
+    }
+    if (L && !r?.createParents) {
+      let G = [Te(b)];
+      for (let te = A;; te = U(te)) {
+        let j = io(ie(), te);
+        if (j.isCanonical) {
+          await fe(B(j.resolvedPath, G[0]));
+          break
+        }
+        if (U(te) === te) break;
+        G.unshift(Te(te))
+      }
+      throw ne(e)
+    }
+    if ((O === "ENOENT" || L) && r?.createParents && A !== b) {
+      F.unshift(Te(b)), b = A;
+      continue
+    }
+    throw _
+  }
+  try {
+    let _ = !1,
+      O = async (j, Y) => {
+        let Z = l === "linux" || l === "wsl" ? await hdn(j.fd).catch(() => {
+          return
+        }) : void 0;
+        if (Z === void 0) return S(Y);
+        if (_ = !0, Z.endsWith(" (deleted)")) throw new Ne(Y);
+        return Z
+      }, A = await O(C, b);
+    if (!_ && A !== b && !w(B(A, ...F)) && w(B(b, ...F)) && await h(b, A, C)) A = b;
+    let L = B(A, ...F);
+    if (!w(L)) {
+      if (F.length === 0 && await fe(B(_ ? `/proc/self/fd/${C.fd}` : A, s)).then((Y) => Y.isSymbolicLink(), () => !1)) throw new hh(`Refusing to write ${e}: it is a symbolic link. Write to the link's target path instead.`);
+      throw ne(e)
+    }
+    for (let j of F) {
+      let Y = _ ? `/proc/self/fd/${C.fd}` : A,
+        Z = null;
+      try {
+        await ci(B(Y, j))
+      } catch (se) {
+        if (Z = se, k(se) === "ENOENT") throw new Ne(A);
+        if (k(se) !== "EEXIST") aG(se, {
+          ioPath: B(Y, j),
+          canonicalPath: B(A, j)
+        }, B(A, j))
+      }
+      let re;
+      try {
+        re = await iG(B(Y, j), I | M.O_NOFOLLOW, l)
+      } catch (se) {
+        if (k(se) === "ELOOP" || k(se) === "ENOTDIR") throw ne(e);
+        if (k(se) === "ENOENT") {
+          let Le;
+          if (Z !== null) try {
+            aG(Z, {
+              ioPath: B(Y, j),
+              canonicalPath: B(A, j)
+            }, B(A, j))
+          } catch ($e) {
+            Le = $e
+          }
+          throw new Ne(B(A, j), Le)
+        }
+        aG(Z !== null ? Z : se, {
+          ioPath: B(Y, j),
+          canonicalPath: B(A, j)
+        }, B(A, j))
+      }
+      await C.close(), C = re;
+      let de = B(A, j);
+      if (A = await O(C, de), A !== de) {
+        if (_ || !await h(de, A, C)) throw ne(e);
+        A = de
+      }
+    }
+    if (!_) {
+      let j = C,
+        Y = async () => {
+          if (u()) return;
+          if (!await Gt(L, j, l)) throw ne(e);
+          if (r?.leaf !== "replace" && await fe(B(L, s)).then((re) => re.isSymbolicLink(), (re) => k(re) !== "ENOENT")) throw ne(e)
+        };
+      await Y();
+      let Z = B(L, s);
+      return {
+        ioPath: Z,
+        canonicalPath: Z,
+        readExisting: async (re) => {
+          await Y();
+          let de = await RSt(Z, e, l, re);
+          return await Y(), de
+        },
+        recheckBeforeWrite: Y,
+        close: () => j.close()
+      }
+    }
+    let G = C,
+      te = `/proc/self/fd/${G.fd}/${s}`;
+    return {
+      ioPath: te,
+      canonicalPath: B(L, s),
+      readExisting: (j) => RSt(te, e, l, j),
+      recheckBeforeWrite: () => {},
+      close: () => G.close()
+    }
+  } catch (_) {
+    throw await C.close().catch(() => {}), _
+  }
+}
+
+function aG(e, n, r) {
+  if (e instanceof Error) {
+    let o = e.message;
+    for (let s of [n.ioPath, n.canonicalPath])
+      if (s !== r) o = o.split(s).join(r);
+    if (o !== e.message) e.message = o
+  }
+  throw e
+}
+import {
+  basename as Ro,
+  dirname as Po,
+  isAbsolute as ko,
+  join as yt,
+  relative as vo,
+  sep as Cn
+} from "path";
+import {
+  basename as In,
+  dirname as xn
+} from "path";
+import {
+  constants as pt
+} from "fs";
+import {
+  link as Ei,
+  lstat as be,
+  open as mt,
+  readlink as _i,
+  realpath as Si,
+  stat as Ri,
+  unlink as Pi
+} from "fs/promises";
+import {
+  basename as Cl,
+  dirname as Vt,
+  isAbsolute as Al,
+  join as Ol,
+  parse as Fl
+} from "path";
+var hi = new Set(["ENOENT", "ENOTDIR"]),
+  yi = new Set(["EAGAIN", "EBUSY", "EMFILE", "ENFILE", "ENOSPC", "EDQUOT", "ENOMEM"]);
+
+function bi(e) {
+  let n = k(e);
+  return n !== void 0 && hi.has(n)
+}
+
+function B1t(e, n) {
+  return k(e) === n
+}
+
+function lFr(e) {
+  let n = k(e);
+  return n !== void 0 && yi.has(n)
+}
+
+function wi(e) {
+  return bi(e) ? {
+    kind: "absent"
+  } : {
+    kind: "fs",
+    error: e
+  }
+}
+
+function ita(e) {
+  return e.kind === "fs" ? k(e.error) ?? "unknown" : e.kind
+}
+async function J(e) {
+  try {
+    return Fb(await e)
+  } catch (n) {
+    return yh(wi(n))
+  }
+}
+var Rxo = 384;
+async function CBs(e, n, r = Rxo) {
+  let o = await J(be(e));
+  if (!o.ok && o.error.kind !== "absent") return yh(o.error);
+  if (o.ok && !o.value.isFile()) return yh(vi(e, o.value));
+  return J(mt(e, n | Go, r))
+}
+async function aP(e) {
+  if (Go === 0) return CBs(e, pt.O_RDONLY);
+  return ki(e, await J(mt(e, pt.O_RDONLY | Go)))
+}
+
+function ki(e, n) {
+  return !n.ok && n.error.kind === "fs" && B1t(n.error.error, "ELOOP") ? yh({
+    kind: "fs",
+    error: Jt(e, "ELOOP")
+  }) : n
+}
+
+function Jt(e, n) {
+  return Object.assign(Ii(n), {
+    code: n,
+    path: e
+  })
+}
+
+function vi(e, n) {
+  return {
+    kind: "fs",
+    error: Jt(e, n.isSymbolicLink() ? "ELOOP" : "ENXIO")
+  }
+}
+
+function Ii(e) {
+  switch (e) {
+    case "ELOOP":
+      return Error("refusing a symlinked path");
+    case "ENXIO":
+      return Error("refusing a non-regular file");
+    case "EISDIR":
+      return Error("refusing a directory at the leaf");
+    case "ENOTDIR":
+      return Error("refusing a non-directory node on a write path");
+    case "EFBIG":
+      return Error("refusing a file over the size cap");
+    case WHr:
+      return Error("refusing a value that has a second name (hard link)");
+    case zHr:
+      return Error("refusing a value whose opened object is no longer at its key");
+    case Jra:
+      return Error("refusing a hardened read the host cannot verify")
+  }
+}
+async function dFr(e, n) {
+  let r = await Ai();
+  if (!r.ok) return r;
+  if (r.value) {
+    let h = await J(_i(`/proc/self/fd/${e.fd}`));
+    if (h.ok) return Fb(!h.value.endsWith(" (deleted)") && h.value === n);
+    if (h.error.kind === "fs" && lFr(h.error.error)) return h;
+    return h.error.kind === "fs" && B1t(h.error.error, "ENAMETOOLONG") ? Fb(!1) : Fb("unavailable")
+  }
+  let [o, s] = await Promise.all([J(be(n, {
+    bigint: !0
+  })), J(e.stat({
+    bigint: !0
+  }))]);
+  if (!s.ok) return s;
+  let l = Xt(o, s.value);
+  if (!l.ok || l.value !== !0) return l;
+  let u = await J(Si(Vt(n)));
+  if (!u.ok) return u.error.kind === "absent" ? Fb(!1) : u;
+  if (u.value !== Vt(n)) return Fb(!1);
+  let f = await J(be(n, {
+      bigint: !0
+    })),
+    p = Xt(f, s.value);
+  if (!p.ok || p.value !== !0) return p;
+  return o.ok && o.value.nlink > 1n || f.ok && f.value.nlink > 1n || s.value.nlink > 1n ? Fb("otherNames") : Fb(!0)
+}
+
+function Xt(e, n) {
+  if (!e.ok) return e.error.kind === "absent" ? Fb(!1) : e;
+  if (!e.value.isFile()) return Fb(!1);
+  if (!$te(n.ino) || !$te(e.value.ino) || n.nlink === 0n || e.value.nlink === 0n) return Fb("unavailable");
+  return Fb(e.value.ino === n.ino && e.value.dev === n.dev)
+}
+class Zt {
+  available = void 0;
+  probing = void 0;
+  procUnreadableLogged = !1
+}
+var xi = new W(() => new Zt);
+
+function Ci() {
+  return xi.of(H().host)
+}
+async function Ai() {
+  let e = Ci();
+  if (e.available !== void 0) return Fb(e.available);
+  return e.available = !1, Fb(!1)
+}
+
+function $te(e) {
+  return !sa(e)
+}
+var RBs = "LinkMisdirected",
+  cFr = "LinkUnverified";
+async function ata(e, n, r) {
+  if (!$te(n.inode)) return yh({
+    kind: "classified",
+    error: NVn("unknown", {
+      telemetryCode: cFr
+    })
+  });
+  let o = await J(Ei(e, r));
+  if (!o.ok) return o;
+  let s = await J(be(r, {
+    bigint: !0
+  }));
+  if (!s.ok) return s.error.kind === "absent" ? yh({
+    kind: "classified",
+    error: NVn("unknown", {
+      telemetryCode: cFr
+    })
+  }) : s;
+  if (!$te(s.value.ino)) return yh({
+    kind: "classified",
+    error: NVn("unknown", {
+      telemetryCode: cFr
+    })
+  });
+  if (je(s.value, n) || await Oi(r, n)) return Fb(void 0);
+  let l = {
+      device: s.value.dev,
+      inode: s.value.ino
+    },
+    [u, f] = await Promise.all([J(be(e, {
+      bigint: !0
+    })), J(Ri(e, {
+      bigint: !0
+    }))]),
+    p = u.ok && je(u.value, l) || f.ok && je(f.value, l);
+  if (t(`storage: a link publish landed on another object (expected ${n.device}:${n.inode}, found ${l.device}:${l.inode}, ${s.value.isSymbolicLink()?"a symlink":`nlink ${s.value.nlink}`}); ${p?"the staged name was swapped \u2014 removing the entry":"leaving the entry"}`, {
+      level: "warn"
+    }), p) {
+    let h = await J(be(r, {
+      bigint: !0
+    }));
+    if (h.ok && je(h.value, l)) await J(Pi(r))
+  }
+  return yh({
+    kind: "classified",
+    error: NVn("unknown", {
+      telemetryCode: RBs
+    })
+  })
+}
+async function Oi(e, n) {
+  let r = await J(mt(e, pt.O_RDONLY | Go));
+  if (!r.ok) return !1;
+  try {
+    let o = await J(r.value.stat({
+      bigint: !0
+    }));
+    return o.ok && je(o.value, n)
+  } finally {
+    await J(r.value.close())
+  }
+}
+
+function je(e, n) {
+  return $te(e.ino) && e.dev === n.device && e.ino === n.inode
+}
+
+function Fi(e) {
+  return wd(e, "expected a segment that is not empty or made only of dots and spaces, with no path separator, NUL or set-aside shape")
+}
+
+function eg(e) {
+  if (typeof e !== "object" || e === null) return wd("key", "expected a key object");
+  let n = Wi(e);
+  if (n !== void 0) return n;
+  let r = bo(e);
+  if (r === void 0) return wd("key", `${e.namespace} is not a storage namespace`);
+  return qt("key", r)
+}
+
+function qt(e, n) {
+  for (let [r, o, s] of n) {
+    let l = `${e}.${r}`;
+    if (o === void 0) {
+      if (s !== "optional") return wd(l, "required")
+    } else if (Li(r)) {
+      if (!(e === "scope" && r === "agentRelPath" && Array.isArray(o) && o.length === 0) && (!Array.isArray(o) || !zR(o))) return wd(l, "expected a non-empty array of segments, none empty or made only of dots and spaces, with no path separator, NUL or set-aside shape")
+    } else if (typeof o !== "string" || !Hr(o)) return Fi(l)
+  }
+  return
+}
+
+function Li(e) {
+  return e === "relPath" || e === "agentRelPath"
+}
+var tn = ["commands", "agents", "output-styles", "skills", "workflows", "routines", "themes", "rules", "session-env", "uploads", "mcp-skill-archives", "usage-data", "mcp-discovery-cache"];
+var nn = new Set(tn),
+  rn = `must be one of the userConfigDir directory names (${tn.join(", ")})`,
+  on = ["installed", "marketplaces", "flagged", "catalog", "inUseSweep"];
+var Ti = new Set(on),
+  Di = `must be one of the pluginRegistry files (${on.join(", ")})`,
+  sn = ["manifest", "catalog"];
+var Ni = new Set(sn),
+  ji = `must be one of the marketplaceCache forms (${sn.join(", ")})`;
+var an = ["world"];
+var Mi = new Set(an),
+  Bi = `must be one of the session journal names (${an.join(", ")})`;
+
+function Hi(e) {
+  return Mi.has(e)
+}
+
+function Ki(e) {
+  return typeof e === "string" && /^[0-9a-f]{64}$/.test(e)
+}
+
+function Wi(e) {
+  if (e.namespace === "transcript") return Yi(e);
+  if (e.namespace === "pluginAssetCache" && !Ki(e.digest)) return wd("key.digest", "must be a SHA-256 digest: 64 lowercase hexadecimal characters");
+  if (e.namespace === "globalConfig" && "kind" in e) {
+    if (!dn(e.kind)) return wd("key.kind", un);
+    if (typeof e.stamp !== "string") return wd("key.stamp", "a recovery copy key carries its stamp")
+  }
+  if (e.namespace === "task") return ao(e);
+  if (e.namespace === "sidecar") {
+    let n = Ye("key.sessionId", e.sessionId);
+    if (n !== void 0) return n;
+    if (ze(e.relPath)) return wd("key.relPath", Me);
+    return mn(e.relPath) ? wd("key.relPath", gn) : void 0
+  }
+  if (e.namespace === "recording") return Ye("key.sessionId", e.sessionId) ?? (pn(e.stamp) ? void 0 : wd("key.stamp", Vi));
+  if (e.namespace === "jobsRoot") return lo(e);
+  if (e.namespace === "userConfigDir" && !nn.has(e.dir)) return wd("key.dir", rn);
+  if (e.namespace === "fileHistory") return $i(e);
+  if (e.namespace === "settings" && !oo(e.layer)) return wd("key.layer", "must be user, project or local");
+  if (e.namespace === "log") return so(e);
+  if (e.namespace === "job" && kn(e.relPath)) return wd("key.relPath", Pn);
+  if (e.namespace === "sessionLog") return vn("key", e) ?? (mo(e.logName) ? void 0 : wd("key.logName", "must be the session-log stem <sessionId8>[-<title-slug>]: up to eight word characters, then lower-case a-z / 0-9 runs joined by single hyphens; not a bare device name"));
+  if (e.namespace === "pluginRegistry" && !Ti.has(e.file)) return wd("key.file", Di);
+  if (e.namespace === "marketplaceCache") {
+    if (!("relPath" in e)) return Ni.has(e.form) ? void 0 : wd("key.form", ji);
+    return e.form === void 0 ? void 0 : wd("key.form", "a tree file key carries relPath, not form")
+  }
+  if (e.namespace !== "agentMemory") return;
+  if (!ln(e.layer)) return wd("key.layer", "must be user, project or local");
+  if (e.layer === "user" && "projectKey" in e) return wd("key.projectKey", "the user layer is not keyed by project");
+  if (e.layer !== "user" && typeof e.projectKey !== "string") return wd("key.projectKey", "required for the project and local layers");
+  return typeof e.agentType === "string" ? void 0 : wd("key.agentType", "an agent memory key names its agent")
+}
+
+function $i(e) {
+  return typeof e.backupFileName !== "string" || !Vdn.test(e.backupFileName) ? wd("key.backupFileName", "must be a backup file name the engine has ever written (hex hash @v version)") : void 0
+}
+
+function ln(e) {
+  return e === "user" || e === "project" || e === "local"
+}
+var cn = ["backup", "corrupted"];
+var Ui = new Set(cn),
+  un = `must be one of the global-config copy kinds (${cn.join(", ")})`;
+
+function dn(e) {
+  return Ui.has(e)
+}
+
+function Yi(e) {
+  let n = Ye("key.sessionId", e.sessionId);
+  if (n !== void 0) return n;
+  if (ze(e.agentRelPath)) return wd("key.agentRelPath", Me);
+  if ("sessionJournal" in e) {
+    if (typeof e.sessionJournal !== "string" || !Hi(e.sessionJournal)) return wd("key.sessionJournal", Bi);
+    return e.agentId === void 0 && e.agentRelPath === void 0 && !("journal" in e) ? void 0 : wd("key.sessionJournal", "a session journal key names the session's own journal: no agentId, agentRelPath or run journal")
+  }
+  if ("journal" in e) {
+    if (e.journal !== !0) return wd("key.journal", "must be true");
+    if (!Array.isArray(e.agentRelPath)) return wd("key.agentRelPath", "a run journal key carries its run directory");
+    return e.agentId === void 0 ? void 0 : wd("key.agentId", "a transcript key names an agent transcript or the run journal, never both")
+  }
+  return e.agentRelPath !== void 0 && e.agentId === void 0 ? wd("key.agentRelPath", "requires agentId or journal") : void 0
+}
+var fdn = "cloud-snapshots",
+  uFr = "side.git",
+  lta = "archive-sync",
+  dta = "folder-sync";
+var ABs = "steps-under-way",
+  fn = new Set(["memory", "tiny_memory", "bagel", fdn, "bridge-pointer.json", ".session-aliases"]),
+  zi = /^[0-9]{1,16}$/,
+  Vi = "must be the recording stamp: 1 to 16 decimal digits (epoch milliseconds)",
+  Ue = ".cast",
+  gn = `<stamp>${Ue} inside a session's folder is that session's terminal recording stream: address it as keys.recording(projectKey, sessionId, stamp)`;
+
+function pn(e) {
+  return typeof e === "string" && zi.test(e)
+}
+
+function mn(e) {
+  return Array.isArray(e) && typeof e[0] === "string" && mae(e[0]).some((n) => xBs(n) !== void 0)
+}
+
+function xBs(e) {
+  if (!e.endsWith(Ue)) return;
+  let n = e.slice(0, -Ue.length);
+  return pn(n) ? n : void 0
+}
+var hn = [".ccr-tip.json", ".precompact.json", Ue],
+  Xi = `must not end with ${hn.join(", ")}: those name a session's project-level sibling files`;
+
+function bn(e) {
+  return mae(e).some((n) => hn.some((r) => n.endsWith(r)))
+}
+var Axo = ".dir-sync.json",
+  Ji = `must not end with ${Axo}: that name is reserved for a cloud session's record at the project level`;
+
+function Zi(e) {
+  return mae(e).some((n) => n.endsWith(Axo))
+}
+var Qi = `${[...fn].join(", ")} are reserved: they name project-level entries, not sessions`;
+
+function wn(e) {
+  return mae(e).some((n) => fn.has(n))
+}
+
+function cta(e) {
+  return !wn(e) && !B2n(e) && !bn(e)
+}
+
+function Ye(e, n) {
+  if (typeof n !== "string") return;
+  if (wn(n)) return wd(e, Qi);
+  if (bn(n)) return wd(e, Xi);
+  if (Zi(n)) return wd(e, Ji);
+  return B2n(n) ? wd(e, Me) : void 0
+}
+var qi = ".meta.json",
+  eo = ".meta is reserved for the list metadata key, under every spelling that opens its file";
+
+function to(e) {
+  return no(`${e}.json`)
+}
+
+function no(e) {
+  return mae(e).includes(qi)
+}
+var Me = "names a .jsonl stream, which only a transcript key addresses";
+
+function ze(e) {
+  return Array.isArray(e) && e.some((n) => typeof n === "string" && B2n(n))
+}
+
+function oo(e) {
+  return e === "user" || e === "project" || e === "local"
+}
+var _n = "must be debug, telemetry or apiDump";
+
+function Sn(e) {
+  return e === "debug" || e === "telemetry" || e === "apiDump"
+}
+
+function so(e) {
+  if (!Sn(e.channel)) return wd("key.channel", _n);
+  if (e.channel !== "apiDump") return;
+  for (let n of ["agentId", "runId"])
+    if (n in e && e[n] !== void 0) return wd(`key.${n}`, "an apiDump key names its dump by one id \u2014 the agent's for a subagent's requests, else the session's (today's dump-prompts/<id>.jsonl); agentId and runId nest nothing on this channel");
+  return
+}
+
+function ao(e) {
+  if ("taskId" in e && (("meta" in e) || ("highWaterMark" in e))) return wd("key.taskId", "a task key names an item, the list metadata or the list high-water mark, never more than one");
+  if ("meta" in e && "highWaterMark" in e) return wd("key.highWaterMark", "a task key names an item, the list metadata or the list high-water mark, never more than one");
+  if ("meta" in e && e.meta !== !0) return wd("key.meta", "must be true");
+  if ("highWaterMark" in e && e.highWaterMark !== !0) return wd("key.highWaterMark", "must be true");
+  if (typeof e.listId !== "string") return wd("key.listId", "a task key carries its listId");
+  if ("meta" in e || "highWaterMark" in e) return;
+  if (typeof e.taskId !== "string") return wd("key.taskId", "a task item key carries its taskId");
+  if (to(e.taskId)) return wd("key.taskId", eo);
+  return
+}
+
+function lo(e) {
+  if ("file" in e && "draftKey" in e) return wd("key.draftKey", "a jobs-root key names the pins file or one draft, never both");
+  if ("file" in e) return e.file === "pins" ? void 0 : wd("key.file", "must be pins");
+  if (typeof e.draftKey !== "string") return wd("key.draftKey", "a jobs-root draft key carries its draftKey");
+  return yo.test(e.draftKey) ? void 0 : wd("key.draftKey", "must be 8 lowercase hex characters")
+}
+var Rn = "timeline.jsonl",
+  Pn = `${Rn} is the job's timeline stream: address it as keys.jobTimeline(jobId)`;
+
+function kn(e) {
+  return Array.isArray(e) && typeof e[0] === "string" && mae(e[0]).includes(Rn)
+}
+var co = /^\d{4}$/,
+  Qt = /^\d{2}$/,
+  uo = /^[A-Za-z0-9_-]{1,8}(?:-[a-z0-9]+)*$/,
+  go = 128,
+  po = /^(?:con|prn|aux|nul|com\d|lpt\d)$/i;
+
+function mo(e) {
+  return typeof e === "string" && e.length <= go && uo.test(e) && !po.test(e)
+}
+
+function vn(e, n) {
+  if (n.year !== void 0 && !ht(co, n.year)) return wd(`${e}.year`, "must be four digits (YYYY)");
+  if (n.month !== void 0 && !ht(Qt, n.month)) return wd(`${e}.month`, "must be two digits (MM)");
+  if (n.day !== void 0 && !ht(Qt, n.day)) return wd(`${e}.day`, "must be two digits (DD)");
+  return
+}
+
+function ht(e, n) {
+  return typeof n === "string" && e.test(n)
+}
+
+function ho(e) {
+  if (e.year !== void 0 && e.projectKey === void 0) return wd("scope.projectKey", "required when year is given");
+  if (e.month !== void 0 && e.year === void 0) return wd("scope.year", "required when month is given");
+  if (e.day !== void 0 && e.month === void 0) return wd("scope.month", "required when day is given");
+  return vn("scope", e)
+}
+var yo = /^[0-9a-f]{8}$/;
+
+function bo(e) {
+  switch (e.namespace) {
+    case "transcript":
+      return [
+        ["projectKey", e.projectKey],
+        ["sessionId", e.sessionId],
+        ["agentId", e.agentId, "optional"],
+        ["agentRelPath", e.agentRelPath, "optional"]
+      ];
+    case "history":
+    case "identity":
+      return [];
+    case "globalConfig":
+      return "kind" in e ? [
+        ["stamp", e.stamp]
+      ] : [];
+    case "settings":
+      return e.layer === "user" ? [] : e.layer === "project" ? [
+        ["projectKey", e.projectKey]
+      ] : [
+        ["consentRootKey", e.consentRootKey]
+      ];
+    case "task":
+      return "taskId" in e ? [
+        ["listId", e.listId],
+        ["taskId", e.taskId]
+      ] : [
+        ["listId", e.listId]
+      ];
+    case "memory":
+      return [
+        ["projectKey", e.projectKey],
+        ["relPath", e.relPath]
+      ];
+    case "pluginRegistry":
+      return [];
+    case "marketplaceCache":
+      return "relPath" in e ? [
+        ["marketplace", e.marketplace],
+        ["relPath", e.relPath]
+      ] : [
+        ["marketplace", e.marketplace]
+      ];
+    case "pluginCache":
+      return [
+        ["marketplace", e.marketplace],
+        ["plugin", e.plugin],
+        ["version", e.version],
+        ["relPath", e.relPath]
+      ];
+    case "cache":
+      return [
+        ["store", e.store],
+        ["id", e.id]
+      ];
+    case "paste":
+      return [
+        ["id", e.id]
+      ];
+    case "pluginAssetCache":
+      return [
+        ["digest", e.digest]
+      ];
+    case "state":
+      return [
+        ["id", e.id]
+      ];
+    case "plan":
+      return [
+        ["name", e.name]
+      ];
+    case "feedbackDraft":
+      return [
+        ["draftId", e.draftId]
+      ];
+    case "agentMemory":
+      return [...e.layer === "user" ? [] : [
+          ["projectKey", e.projectKey]
+        ],
+        ["agentType", e.agentType],
+        ["relPath", e.relPath]
+      ];
+    case "team":
+      return [
+        ["team", e.team]
+      ];
+    case "sidecar":
+      return [
+        ["projectKey", e.projectKey],
+        ["sessionId", e.sessionId],
+        ["relPath", e.relPath]
+      ];
+    case "scratch":
+      return [
+        ["sessionId", e.sessionId],
+        ["relPath", e.relPath]
+      ];
+    case "userConfigDir":
+      return [
+        ["relPath", e.relPath]
+      ];
+    case "fileHistory":
+      return [
+        ["sessionId", e.sessionId],
+        ["backupFileName", e.backupFileName]
+      ];
+    case "job":
+      return [
+        ["jobId", e.jobId],
+        ["relPath", e.relPath]
+      ];
+    case "daemon":
+      return [
+        ["relPath", e.relPath]
+      ];
+    case "jobsRoot":
+      return "file" in e ? [] : [
+        ["draftKey", e.draftKey]
+      ];
+    case "session":
+      return [
+        ["file", e.file]
+      ];
+    case "bridgePointer":
+    case "sessionAliases":
+      return [
+        ["projectKey", e.projectKey]
+      ];
+    case "dirSyncRecord":
+      return [
+        ["projectKey", e.projectKey],
+        ["sessionId", e.sessionId]
+      ];
+    case "mailbox":
+      return [
+        ["team", e.team],
+        ["teammate", e.teammate]
+      ];
+    case "log":
+      return [
+        ["sessionId", e.sessionId],
+        ["agentId", e.agentId, "optional"],
+        ["runId", e.runId, "optional"]
+      ];
+    case "jobTimeline":
+      return [
+        ["jobId", e.jobId]
+      ];
+    case "recording":
+      return [
+        ["projectKey", e.projectKey],
+        ["sessionId", e.sessionId],
+        ["stamp", e.stamp]
+      ];
+    case "sessionLog":
+      return [
+        ["projectKey", e.projectKey],
+        ["year", e.year],
+        ["month", e.month],
+        ["day", e.day],
+        ["logName", e.logName]
+      ]
+  }
+  return
+}
+
+function j1t(e) {
+  if (typeof e !== "object" || e === null) return wd("scope", "expected a scope object");
+  let n = So(e);
+  if (n === void 0) return wd("scope", `${String(e.namespace)} is not a listable namespace`);
+  return Eo(e) ?? qt("scope", n)
+}
+var wo = {
+  transcript: [
+    ["agentId", "names one agent transcript, a stream key, not a scope: narrow a scope with agentRelPath"],
+    ["journal", "names a run journal, a stream key, not a scope: narrow a scope with agentRelPath"],
+    ["sessionJournal", "names a session's own journal, a stream key, not a scope: the session scope lists it"]
+  ],
+  log: [
+    ["agentId", "names one log stream, a stream key, not a scope"],
+    ["runId", "names one log stream, a stream key, not a scope"]
+  ],
+  sessionLog: [
+    ["logName", "names one session's log, a stream key, not a scope: a day scope lists its logs"]
+  ],
+  task: [
+    ["taskId", "names one task value, a key, not a scope: a list scope narrows with listId only"],
+    ["meta", "names one task value, a key, not a scope: a list scope narrows with listId only"],
+    ["highWaterMark", "names one task value, a key, not a scope: a list scope narrows with listId only"]
+  ],
+  mailbox: [
+    ["teammate", "names one inbox, a key, not a scope"]
+  ],
+  cache: [
+    ["id", "names one cached value, a key, not a scope: a cache scope narrows with store only"]
+  ],
+  pluginAssetCache: [
+    ["digest", "names one cached asset, a key, not a scope"]
+  ],
+  fileHistory: [
+    ["backupFileName", "names one backup, a key, not a scope: a file-history scope narrows with sessionId only"]
+  ],
+  state: [
+    ["id", "names one value, a key, not a scope"]
+  ],
+  feedbackDraft: [
+    ["draftId", "names one draft, a key, not a scope"]
+  ],
+  jobsRoot: [
+    ["file", "names one value, a key, not a scope"],
+    ["draftKey", "names one value, a key, not a scope"]
+  ],
+  plan: [
+    ["name", "names one plan, a key, not a scope"]
+  ],
+  paste: [
+    ["id", "names one paste, a key, not a scope"]
+  ],
+  session: [
+    ["file", "names one value, a key, not a scope"]
+  ],
+  globalConfig: [
+    ["stamp", "names one recovery copy, a key, not a scope: the scope narrows with kind only"]
+  ],
+  marketplaceCache: [
+    ["form", "names one of the marketplace's two engine-written files, a key, not a scope: the tree narrows with relPath only"]
+  ],
+  memory: [],
+  pluginCache: [],
+  daemon: [],
+  sidecar: [],
+  agentMemory: [],
+  scratch: [],
+  userConfigDir: [],
+  job: [],
+  bridgeSpawn: []
+};
+
+function Eo(e) {
+  let n = e.namespace === "agentMemory" ? _o(e) : void 0;
+  if (n !== void 0) return n;
+  if (e.namespace === "transcript" || e.namespace === "sidecar") {
+    let o = Ye("scope.sessionId", e.sessionId);
+    if (o !== void 0) return o
+  }
+  for (let [o, s] of wo[e.namespace])
+    if (o in e && e[o] !== void 0) return wd(`scope.${o}`, s);
+  if (e.namespace === "sidecar" && ze(e.relPath)) return wd("scope.relPath", Me);
+  if (e.namespace === "sidecar" && mn(e.relPath)) return wd("scope.relPath", gn);
+  if (e.namespace === "log" && e.channel !== void 0 && !Sn(e.channel)) return wd("scope.channel", _n);
+  if (e.namespace === "job" && kn(e.relPath)) return wd("scope.relPath", Pn);
+  let r = e.namespace === "sessionLog" ? ho(e) : void 0;
+  if (r !== void 0) return r;
+  if (e.namespace === "scratch" && e.sessionId === void 0 && e.relPath !== void 0) return wd("scope.relPath", "requires scope.sessionId: a scratch relPath narrows one session directory, and no cross-session prefix filter exists");
+  if (e.namespace === "userConfigDir" && !nn.has(e.dir)) return wd("scope.dir", rn);
+  if (e.namespace === "transcript" && e.agentRelPath !== void 0 && (e.projectKey === void 0 || e.sessionId === void 0)) return wd("scope.agentRelPath", "requires scope.projectKey and scope.sessionId: an agentRelPath narrows the subagents/ tree of one session directory");
+  if (e.namespace === "transcript" && ze(e.agentRelPath)) return wd("scope.agentRelPath", Me);
+  if (e.namespace === "pluginCache") {
+    if (e.marketplace === void 0 && e.plugin !== void 0) return wd("scope.plugin", "requires scope.marketplace: a plugin narrows one marketplace folder");
+    if (e.plugin === void 0 && e.version !== void 0) return wd("scope.version", "requires scope.plugin: a version narrows one plugin folder");
+    if (e.version === void 0 && e.relPath !== void 0) return wd("scope.relPath", "requires scope.version: a relPath narrows one version folder")
+  }
+  if (e.namespace === "job" && e.jobId === void 0 && e.relPath !== void 0) return wd("scope.relPath", "requires scope.jobId: a job relPath narrows one job directory, and no cross-job prefix filter exists");
+  if (e.namespace === "transcript" && e.projectKey === void 0 && e.sessionId !== void 0) return wd("scope.sessionId", "requires scope.projectKey: a session narrows one project folder, and no cross-project session filter exists");
+  if (e.namespace === "globalConfig" && e.kind !== void 0 && !dn(e.kind)) return wd("scope.kind", un);
+  return
+}
+
+function _o(e) {
+  if (!ln(e.layer)) return wd("scope.layer", "must be user, project or local");
+  if (e.layer === "user" && "projectKey" in e) return wd("scope.projectKey", "the user layer is not keyed by project");
+  if (e.layer !== "user" && typeof e.projectKey !== "string") return wd("scope.projectKey", "required for the project and local layers");
+  return e.agentType === void 0 && e.relPath !== void 0 ? wd("scope.relPath", "requires scope.agentType: an agent-memory relPath narrows one agent directory") : void 0
+}
+
+function So(e) {
+  switch (e.namespace) {
+    case "transcript":
+      return [
+        ["projectKey", e.projectKey, "optional"],
+        ["sessionId", e.sessionId, "optional"],
+        ["agentRelPath", e.agentRelPath, "optional"]
+      ];
+    case "task":
+      return [
+        ["listId", e.listId, "optional"]
+      ];
+    case "mailbox":
+      return [
+        ["team", e.team, "optional"]
+      ];
+    case "memory":
+      return [
+        ["projectKey", e.projectKey],
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "pluginCache":
+      return [
+        ["marketplace", e.marketplace, "optional"],
+        ["plugin", e.plugin, "optional"],
+        ["version", e.version, "optional"],
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "marketplaceCache":
+      return [
+        ["marketplace", e.marketplace],
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "cache":
+      return [
+        ["store", e.store]
+      ];
+    case "state":
+    case "plan":
+    case "paste":
+    case "pluginAssetCache":
+    case "feedbackDraft":
+      return [];
+    case "sidecar":
+      return [
+        ["projectKey", e.projectKey],
+        ["sessionId", e.sessionId],
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "agentMemory":
+      return [
+        ["projectKey", e.layer === "user" ? void 0 : e.projectKey, "optional"],
+        ["agentType", e.agentType, "optional"],
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "scratch":
+      return [
+        ["sessionId", e.sessionId, "optional"],
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "userConfigDir":
+      return [
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "fileHistory":
+      return [
+        ["sessionId", e.sessionId, "optional"]
+      ];
+    case "job":
+      return [
+        ["jobId", e.jobId, "optional"],
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "daemon":
+      return [
+        ["relPath", e.relPath, "optional"]
+      ];
+    case "jobsRoot":
+    case "session":
+      return [];
+    case "bridgeSpawn":
+      return [
+        ["dir", e.dir, "optional"]
+      ];
+    case "globalConfig":
+      return [
+        ["kind", e.kind, "optional"]
+      ];
+    case "log":
+      return [
+        ["sessionId", e.sessionId, "optional"]
+      ];
+    case "sessionLog":
+      return [
+        ["projectKey", e.projectKey, "optional"],
+        ["year", e.year, "optional"],
+        ["month", e.month, "optional"],
+        ["day", e.day, "optional"]
+      ]
+  }
+  return
+}
+var $Bs = 6;
+
+function axe(e) {
+  return e.endsWith(".meta.json") ? jR(e) : void 0
+}
+
+function jR(e) {
+  let n = In(e);
+  if (B2n(n)) return;
+  let r = Om(),
+    o = [n],
+    s = xn(e);
+  while (s !== r && o.length <= $Bs + 1) {
+    let h = xn(s);
+    if (h === s) return;
+    o.unshift(In(s)), s = h
+  }
+  if (s !== r || o.length < 3) return;
+  let [l, u, ...f] = o;
+  if (!Hr(l) || !Hr(u) || f.length === 0 || !f.every(Hr)) return;
+  let p = Ve.sidecar(l, u, f);
+  return eg(p) === void 0 ? p : void 0
+}
+
+function h2n(e) {
+  return typeof e === "string" ? jR(e) : e.key
+}
+var Kpe = "tool-results";
+
+function CT(e) {
+  return An(e.root.id, () => Bo(e.root).originalCwd)
+}
+
+function CC() {
+  return An(z(), Ee)
+}
+
+function XV(e) {
+  return q() ? null : CT(e)
+}
+
+function z1t() {
+  return q() ? null : CC()
+}
+
+function An(e, n) {
+  return yt(KSt() ?? iv(n()), e, Kpe)
+}
+
+function QJ(e, n) {
+  if (Ro(e) !== Kpe || !Hr(n)) return;
+  return jR(yt(e, n))
+}
+
+function Io(e) {
+  let n = QJ(e, "probe");
+  if (n === void 0 || n.namespace !== "sidecar") return;
+  return {
+    namespace: "sidecar",
+    projectKey: n.projectKey,
+    sessionId: n.sessionId,
+    relPath: n.relPath.slice(0, -1)
+  }
+}
+async function _M(e, n) {
+  if (X() && n !== void 0) {
+    let s = Io(e);
+    if (s !== void 0) try {
+      if ((await n.ensureScope(s)).ok) return
+    } catch {}
+  }
+  if (q()) {
+    t("tool-results folder not made: diskless session");
+    return
+  }
+  let r = Dn(),
+    o = !1;
+  try {
+    o = await Co(r, e)
+  } catch {}
+  if (!o) return;
+  try {
+    await r.mkdir(e)
+  } catch (s) {
+    return s
+  }
+}
+var xo = 3;
+async function Co(e, n) {
+  return await On(e, n) === void 0
+}
+async function On(e, n) {
+  let r = Om(),
+    o = vo(r, n);
+  if (o === "" || o === ".." || o.startsWith(".." + Cn) || ko(o)) return;
+  let s = r;
+  for (let l of o.split(Cn)) {
+    s = yt(s, l);
+    let u = await e.lstat(s);
+    if (u === void 0) return;
+    if (u.isSymbolicLink || !u.isDirectory) return s
+  }
+  return
+}
+async function g2n(e, n) {
+  if (q()) throw new R("tool-results file refused: this session keeps no files on this machine");
+  let r = await On(n, e);
+  if (r !== void 0) throw new R(`tool-results path refused: ${r} is a link or not a directory`, "tool-results path refused: a directory on the way is a link or not a directory")
+}
+async function mwe(e, n, r) {
+  let o = Dn();
+  await g2n(Po(e), o);
+  for (let s = 1;; s++) {
+    if (s > 1) await Fn(o, e);
+    else await UBs(e, o);
+    try {
+      await o.writeBytesExclusive(e, n, r);
+      return
+    } catch (l) {
+      if (k(l) !== "EEXIST" || s >= xo) throw l
+    }
+  }
+}
+async function UBs(e, n) {
+  if ((await n.lstat(e))?.isSymbolicLink) await Fn(n, e)
+}
+async function Fn(e, n) {
+  try {
+    await e.delete(n)
+  } catch (r) {
+    if (k(r) !== "ENOENT") throw r
+  }
+}
+
+function Ho(e) {
+  let {
+    firstPage: n,
+    lastPage: r
+  } = e ?? {};
+  if (n === void 0) return "page range";
+  if (r === void 0 || r === 1 / 0) return `pages ${n}-`;
+  if (n === r) return `page ${n}`;
+  return `pages ${n}-${r}`
+}
+async function kta(e, n) {
+  try {
+    let o = (await e.stat()).size;
+    if (o === 0) return {
+      success: !1,
+      error: {
+        reason: "empty",
+        message: `PDF file is empty: ${n}`
+      }
+    };
+    if (o > pFr) return {
+      success: !1,
+      error: {
+        reason: "too_large",
+        message: `PDF file exceeds maximum allowed size of ${en(pFr)}.`
+      }
+    };
+    let {
+      bytes: s
+    } = await Iw(e, o, o);
+    if (!s.subarray(0, 5).toString("ascii").startsWith("%PDF-")) return {
+      success: !1,
+      error: {
+        reason: "corrupted",
+        message: `File is not a valid PDF (missing %PDF- header): ${n}`
+      }
+    };
+    let u = s.toString("base64");
+    return {
+      success: !0,
+      data: {
+        type: "pdf",
+        file: {
+          filePath: n,
+          base64: u,
+          originalSize: o
+        }
+      }
+    }
+  } catch (r) {
+    if (Nh(r)) throw r;
+    return {
+      success: !1,
+      error: {
+        reason: "unknown",
+        message: d(r),
+        category: Xe(r),
+        site: "read"
+      }
+    }
+  }
+}
+async function Mxo(e, n, r = "win32") {
+  if (n === void 0) return bt($n(e, r), void 0);
+  if (e === Eqe(n.handle.fd)) return bt(Oqe, {
+    inheritFd: n.handle.fd,
+    abortSignal: n.signal
+  });
+  if (await $c("pdfinfo").catch(() => null) === null) return {
+    pageCount: null,
+    pdfinfoFailure: {
+      reason: "not_found"
+    }
+  };
+  if (n.size > f2n) return {
+    pageCount: null,
+    pdfinfoFailure: {
+      reason: "not_run"
+    }
+  };
+  try {
+    return await bt(Kn, {
+      input: await Wn(n.handle, n.size, AbortSignal.any([n.signal, AbortSignal.timeout(Gn)])),
+      abortSignal: n.signal
+    })
+  } catch (o) {
+    if (o instanceof Ke || Nh(o)) t(`PDF page count: the open file was not read for pdfinfo (${k(o)??d(o)}); going without a count`, {
+      level: "warn"
+    });
+    else a(o);
+    return {
+      pageCount: null,
+      pdfinfoFailure: {
+        reason: "not_run"
+      }
+    }
+  }
+}
+async function bt(e, n) {
+  let {
+    code: r,
+    stdout: o,
+    exitCode: s,
+    timedOut: l
+  } = await ut("pdfinfo", [e], {
+    timeout: Gn,
+    useCwd: !1,
+    ...n
+  });
+  if (r === 0) {
+    let p;
+    for (let [, h] of o.matchAll(Ko)) {
+      let w = Number(h);
+      if (Number.isSafeInteger(w) && w >= (p ?? 0)) p = w
+    }
+    return p !== void 0 ? {
+      pageCount: p
+    } : {
+      pageCount: null,
+      pdfinfoFailure: {
+        reason: "no_page_count"
+      }
+    }
+  }
+  if (l) return {
+    pageCount: null,
+    pdfinfoFailure: {
+      reason: "timeout"
+    }
+  };
+  if (s !== void 0) return {
+    pageCount: null,
+    pdfinfoFailure: {
+      reason: "nonzero_exit",
+      exitCode: s
+    }
+  };
+  return {
+    pageCount: null,
+    pdfinfoFailure: {
+      reason: await $c("pdfinfo").catch(() => null) === null ? "not_found" : "no_exit_status"
+    }
+  }
+}
+
+function vta(e) {
+  switch (e.reason) {
+    case "timeout":
+      return "pdfinfo timed out";
+    case "not_found":
+      return "pdfinfo was not found";
+    case "no_exit_status":
+      return "pdfinfo did not run to completion";
+    case "nonzero_exit":
+      return `pdfinfo failed (exit code ${e.exitCode})`;
+    case "no_page_count":
+      return "pdfinfo did not report a page count";
+    case "not_run":
+      return "pdfinfo was not run"
+  }
+}
+
+function wt(e) {
+  let n = e === "win32" ? 0 : Ln.O_NONBLOCK ?? 0;
+  return Ln.O_RDONLY | n
+}
+var Hn = 259,
+  Ko = /(?:^|\n)Pages:[ \t]+(\d+)[ \t\r]*(?=\n|$)/g,
+  Gn = 1e4,
+  Kn = "-",
+  Wo = 1048576;
+async function Wn(e, n, r) {
+  let o = Buffer.allocUnsafe(n),
+    s = 0;
+  while (s < n) {
+    let l = e.read(o, s, Math.min(Wo, n - s), s),
+      {
+        bytesRead: u
+      } = r === void 0 ? await l : await Ao(l, r, () => new Ke);
+    if (u === 0) break;
+    s += u
+  }
+  return o.subarray(0, s)
+}
+var $o = String(2147483647).length;
+
+function $n(e, n) {
+  if (n !== "win32" || e.length <= Hn || !Tn.isAbsolute(e)) return e;
+  return Tn.toNamespacedPath(e)
+}
+async function Uo(e, {
+  platform: n,
+  scratchRoot: r
+}) {
+  let o = {
+      prefix: xe(e, "page"),
+      collect: () => Promise.resolve(),
+      [Symbol.asyncDispose]: () => Promise.resolve()
+    },
+    s = o.prefix.length + 1 + $o + 4;
+  if (n !== "win32" || s <= Hn) return o;
+  let l;
+  try {
+    l = await To(xe(r(), R2n))
+  } catch (p) {
+    return t(`PDF extraction: could not create a scratch directory under the temp dir (${k(p)??d(p)}); rendering page images directly into the tool-results directory`, {
+      level: "warn"
+    }), o
+  }
+  let u = () => No(l, {
+      recursive: !0,
+      force: !0
+    }),
+    f = vt(u);
+  return {
+    prefix: xe(l, "p"),
+    collect: () => Yo(l, e),
+    [Symbol.asyncDispose]: () => u().then(f, (p) => t(`PDF extraction: scratch directory not removed (${k(p)??d(p)}); removal is retried at exit`, {
+      level: "warn"
+    }))
+  }
+}
+async function Yo(e, n) {
+  let r = await Bn(e),
+    s = (await Promise.allSettled(r.filter((l) => /^p-\d+\.jpg$/.test(l)).map((l) => zo(xe(e, l), xe(n, `page${l.slice(1)}`))))).find((l) => l.status === "rejected");
+  if (s !== void 0) throw s.reason
+}
+async function zo(e, n) {
+  try {
+    await Is(e, n)
+  } catch (r) {
+    let o = k(r);
+    if (o === void 0 || !(kM.has(o) || OH.has(o))) throw r;
+    await Fo(e, n)
+  }
+}
+class Un {
+  available = void 0;
+  markAvailable() {
+    this.available = !0
+  }
+  reset() {
+    this.available = void 0
+  }
+}
+var Vo = new W(() => new Un);
+
+function Xo() {
+  return Vo.of(H().host)
+}
+async function BBs() {
+  let e = Xo();
+  if (e.available !== void 0) return e.available;
+  let {
+    code: n,
+    stderr: r
+  } = await ut("pdftoppm", ["-v"], {
+    timeout: 5000,
+    useCwd: !1
+  }), o = n === 0 || n !== 127 && r.length > 0;
+  if (o) e.markAvailable();
+  return o
+}
+async function Eta(e, n, r, o = {
+  platform: "win32",
+  scratchRoot: xf
+}) {
+  try {
+    let s = n?.held !== void 0 && e === Eqe(n.held.fd) ? n.held : void 0,
+      l = s === void 0 ? n?.held : void 0,
+      u = l ?? await Do(e, wt("win32")),
+      f = await u.stat().finally(() => u === l ? void 0 : u.close());
+    if (!f.isFile()) return {
+      success: !1,
+      error: {
+        reason: "corrupted",
+        message: `Path is not a regular file: ${e}`
+      }
+    };
+    let p = f.size;
+    if (p === 0) return {
+      success: !1,
+      error: {
+        reason: "empty",
+        message: `PDF file is empty: ${e}`
+      }
+    };
+    if (p > f2n) return {
+      success: !1,
+      error: {
+        reason: "too_large",
+        message: `PDF file exceeds maximum allowed size for text extraction (${en(f2n)}).`
+      }
+    };
+    if (n?.signal?.aborted) throw new Ke;
+    if (!await BBs()) return {
+      success: !1,
+      error: {
+        reason: "unavailable",
+        message: "pdftoppm is not installed. Install poppler-utils (e.g. `brew install poppler` or `apt-get install poppler-utils`) to enable PDF page rendering."
+      }
+    };
+    let w = l === void 0 ? void 0 : await Wn(l, p, n?.signal),
+      S = Oo(),
+      E = xe(CC(), `pdf-${S}`),
+      y = r === void 0 ? void 0 : zn(E);
+    await Lo(E, {
+      recursive: !0
+    });
+    await using v = await Uo(E, o);
+    let I = s === void 0 ? $n(e, o.platform) : Oqe,
+      b = ["-jpeg", "-r", "100"];
+    if (n?.firstPage) b.push("-f", String(n.firstPage));
+    if (n?.lastPage && n.lastPage !== 1 / 0) b.push("-l", String(n.lastPage));
+    b.push(w === void 0 ? I : Kn, v.prefix);
+    let {
+      code: F,
+      stderr: C,
+      exitCode: D
+    } = await ut("pdftoppm", b, {
+      timeout: 120000,
+      abortSignal: n?.signal,
+      waitForExitAfterKill: !0,
+      useCwd: !1,
+      ...w !== void 0 && {
+        input: w
+      },
+      ...s !== void 0 && {
+        inheritFd: s.fd
+      }
+    });
+    if (F !== 0) {
+      if (n?.signal?.aborted && D === void 0) throw new Ke;
+      let L = jn(I),
+        G = C.split(L).map((Q) => Q.replaceAll(I, () => e)).join(e),
+        te = (Q) => ({
+          success: !1,
+          error: {
+            reason: "unknown",
+            message: `pdftoppm failed: ${G}`,
+            category: Q,
+            site: "extract",
+            exitCode: D
+          }
+        }),
+        j = C.split(/\r?\n/);
+      if (j.some((Q) => Yn.test(Q))) return te(Nn(C));
+      let Y = `I/O Error: Couldn't open file '${L}'`,
+        Z = j.find((Q) => {
+          let ve = Q.trimEnd();
+          return ve === Y || ve.startsWith(`${Y}: `) && !ve.endsWith("'") && !ve.slice(Y.length + 2).includes("': ")
+        }),
+        re = j.filter((Q) => Q !== Z).join(`
+`).replaceAll(L, " ").replaceAll(I, " ").replaceAll(jn(v.prefix), " ").replaceAll(v.prefix, " ");
+      if (/password/i.test(re)) return {
+        success: !1,
+        error: {
+          reason: "password_protected",
+          message: "PDF is password-protected. Please provide an unprotected version."
+        }
+      };
+      let de = /Wrong page range given.*last page \((\d+)\)/i.exec(re);
+      if (de) {
+        let Q = Number(de[1]);
+        if (Q === 0) return {
+          success: !1,
+          error: {
+            reason: "corrupted",
+            message: "PDF reports 0 pages (empty page tree). The PDF may be invalid."
+          }
+        };
+        let ve = Math.min(Q, JJ);
+        return {
+          success: !1,
+          error: {
+            reason: "page_out_of_range",
+            message: `Requested ${Ho(n)} is outside the document (PDF has ${Q} ${P(Q,"page")}). Use a range within 1-${Q}, maximum ${JJ} pages per request (e.g. pages: "1-${ve}").`
+          }
+        }
+      }
+      let se = /Syntax Error(?: \(\d+\))?: Couldn't (?:find trailer dictionary|read xref table)/i;
+      if (/damaged|corrupt|invalid/i.test(re) || se.test(re)) return {
+        success: !1,
+        error: {
+          reason: "corrupted",
+          message: "PDF file is corrupted or invalid."
+        }
+      };
+      let Le = j[0] ?? "",
+        $e = j.some((Q) => /^(Command Line Error|Internal Error)(?: \(\d+\))?: /.test(Q));
+      if (!$e && Z !== void 0 && D === 1) {
+        if (I !== e) return te("rewritten_input_unopenable");
+        return {
+          success: !1,
+          error: {
+            reason: "pdftoppm_input_error",
+            message: `Could not render PDF: ${Z.replaceAll(L,()=>e)}`
+          }
+        }
+      }
+      if (!$e && Le.startsWith("Permission Error: ")) return {
+        success: !1,
+        error: {
+          reason: "pdftoppm_input_error",
+          message: `Could not render PDF: ${Le}`
+        }
+      };
+      return te(Nn(C))
+    }
+    try {
+      await v.collect()
+    } catch (L) {
+      return {
+        success: !1,
+        error: {
+          reason: "unknown",
+          message: `Could not move the rendered PDF pages into ${E} (${k(L)??"no error code"})`,
+          category: Xe(L),
+          site: "extract",
+          exitCode: D
+        }
+      }
+    }
+    let _;
+    if (r !== void 0) {
+      let L = await jBs(r, E, y);
+      if (!L.ok) return {
+        success: !1,
+        error: {
+          reason: "unknown",
+          message: `Failed to list extracted PDF pages: ${L.code}`,
+          category: `storage_list_${L.code}`,
+          site: "extract"
+        }
+      };
+      if (L.names.length === 0 && !L.directoryExists) return {
+        success: !1,
+        error: {
+          reason: "unknown",
+          message: `Extraction directory missing after pdftoppm ran: ${E}`,
+          category: Xe({
+            code: "ENOENT"
+          }),
+          site: "extract"
+        }
+      };
+      _ = L.names
+    } else _ = (await Bn(E)).filter((G) => G.endsWith(".jpg")).sort();
+    if (_.length === 0) return {
+      success: !1,
+      error: {
+        reason: "corrupted",
+        message: "pdftoppm produced no output pages. The PDF may be invalid."
+      }
+    };
+    let A = _.length;
+    return {
+      success: !0,
+      data: {
+        type: "parts",
+        file: {
+          filePath: e,
+          originalSize: p,
+          outputDir: E,
+          count: A
+        },
+        ...y !== void 0 && {
+          v5SidecarScope: {
+            ...y,
+            pageNames: _
+          }
+        }
+      }
+    }
+  } catch (s) {
+    let l = s && typeof s === "object" && "path" in s ? s.path : void 0;
+    if (s instanceof Ke || Nh(s) && (l === e || l === void 0)) throw s;
+    return {
+      success: !1,
+      error: {
+        reason: "unknown",
+        message: d(s),
+        category: Xe(s),
+        site: "extract"
+      }
+    }
+  }
+}
+var Yn = /^Could not write image to [\s\S]*; exiting\s*$/,
+  Jo = [
+    [/^Internal Error(?: \(\d+\))?: /, "internal_error"],
+    [/^Command Line Error(?: \(\d+\))?: /, "command_line_error"],
+    [Yn, "output_write_failed"],
+    [/^Config Error(?: \(\d+\))?: /, "config_error"],
+    [/^Unimplemented Feature(?: \(\d+\))?: /, "unimplemented_feature"],
+    [/^I\/O Error(?: \(\d+\))?: /, "io_output"],
+    [/^Syntax (?:Error|Warning)(?: \(\d+\))?: /, "syntax_diagnostics"]
+  ];
+
+function Nn(e) {
+  if (e.trim() === "") return "empty_stderr";
+  let n = e.split(/\r?\n/);
+  return Jo.find(([o]) => n.some((s) => o.test(s)))?.[1] ?? "other"
+}
+
+function jn(e) {
+  return Array.from(Buffer.from(e, "utf8"), (n) => n < 32 || n >= 127 ? `<${n.toString(16).padStart(2,"0")}>` : String.fromCharCode(n)).join("")
+}
+
+function Xe(e) {
+  return `fs_wrapped_${tr(e)??"none"}`
+}
+var Mn = "ListCapExceeded";
+
+function zn(e) {
+  let n = CC();
+  if (Mo(e) !== n) throw new R(`PDF extraction directory is outside the session tool-results store: ${e}`, "pdf extraction dir outside tool-results");
+  return {
+    projectKey: GR(Ee()),
+    sessionId: z(),
+    relPath: [Kpe, jo(e)]
+  }
+}
+async function jBs(e, n, r) {
+  let o = r ?? zn(n),
+    {
+      projectKey: s,
+      sessionId: l,
+      relPath: u
+    } = o,
+    f = [],
+    p = await qa((w) => e.listEntries({
+      namespace: "sidecar",
+      projectKey: s,
+      sessionId: l,
+      relPath: u
+    }, {
+      cursor: w,
+      skipKeyStats: !0,
+      skipScopeStats: !0
+    }), (w) => {
+      for (let S of w) {
+        if (S.kind !== "key" || S.key.namespace !== "sidecar") continue;
+        let E = S.key.relPath.at(-1);
+        if (E === void 0 || S.key.relPath.length !== u.length + 1) continue;
+        if (!E.endsWith(".jpg")) continue;
+        f.push(E)
+      }
+    });
+  switch (p.status) {
+    case "done":
+      break;
+    case "error":
+      return {
+        ok: !1, code: p.error.code
+      };
+    case "capped":
+      return {
+        ok: !1, code: Mn
+      }
+  }
+  f.sort();
+  let h = !0;
+  if (f.length === 0) {
+    h = !1;
+    let w = u.at(-1),
+      S = await qa((E) => e.listEntries({
+        namespace: "sidecar",
+        projectKey: s,
+        sessionId: l,
+        relPath: u.slice(0, -1)
+      }, {
+        suffix: w,
+        cursor: E,
+        skipScopeStats: !0
+      }), (E) => {
+        h ||= E.some((y) => y.kind === "scope" && y.scope.namespace === "sidecar" && (y.scope.relPath ?? []).length === u.length && y.scope.relPath?.at(-1) === w)
+      }, {
+        until: () => h
+      });
+    switch (S.status) {
+      case "done":
+        break;
+      case "error":
+        return {
+          ok: !1, code: S.error.code
+        };
+      case "capped":
+        return {
+          ok: !1, code: Mn
+        }
+    }
+  }
+  return {
+    ok: !0,
+    names: f,
+    directoryExists: h,
+    scope: o
+  }
+}
+async function yN(e, n, r) {
+  let o = r?.fromTail === !0 ? "unreadable" : null,
+    s;
+  try {
+    let l = (r?.noFollow, 0);
+    s = await _e.open(e, wt("win32") | l);
+    let u = await s.stat();
+    if (!u.isFile()) return o;
+    if (r?.requireNlink1 && u.nlink !== 1) return o;
+    if (r?.verifyHandlePath) {
+      let S = null;
+      if (S === null) {
+        S = await _e.realpath(e);
+        let E = await _e.stat(S);
+        if (E.dev !== u.dev || E.ino !== u.ino) return o
+      }
+      if (!r.verifyHandlePath(S)) return o
+    }
+    if (r?.fromTail === !0) {
+      let S = u.size > n ? u.size - n : 0,
+        E = Buffer.alloc(u.size - S),
+        y = await Vn(s, E, S),
+        v = Et(E.subarray(0, y), r.sniffEncoding),
+        I = S + y;
+      if (S === 0) return {
+        content: v,
+        truncated: !1,
+        end: I
+      };
+      let b = v.indexOf(`
+`);
+      return {
+        content: b === -1 ? "" : v.slice(b + 1),
+        truncated: !0,
+        end: I
+      }
+    }
+    let f = Math.min(u.size, n + 1),
+      p = Buffer.alloc(f),
+      h = await Vn(s, p, 0);
+    if (r?.sniffEncoding === !0) {
+      let S = u.size > n ? Math.min(h, n) : h,
+        E = p.subarray(0, S),
+        y = Et(E, !0),
+        v = u.size > n,
+        I = v ? `${y}
+\u2026[truncated at ${n} bytes of ${u.size} bytes]` : y;
+      return r.withBytes === !0 ? {
+        content: I,
+        bytes: E,
+        truncated: v
+      } : I
+    }
+    let w = Et(p.subarray(0, h), !1);
+    return w.length > n ? `${w.slice(0,n)}
+\u2026[truncated at ${n} chars of ${u.size} bytes]` : w
+  } catch (l) {
+    return ASt(l) ? null : o
+  } finally {
+    await s?.close().catch(() => {
+      return
+    })
+  }
+}
+
+function ASt(e) {
+  let n = k(e);
+  return n === "ENOENT" || n === "ENOTDIR"
+}
+async function Vn(e, n, r) {
+  let o = 0;
+  while (o < n.length) {
+    let {
+      bytesRead: s
+    } = await e.read(n, o, n.length - o, r + o);
+    if (s === 0) break;
+    o += s
+  }
+  return o
+}
+
+function Et(e, n) {
+  if (n !== !0) return e.toString("utf8");
+  let r = Ewe(e),
+    o = 0;
+  if (r === "utf8") {
+    let l = e.subarray(0, Math.min(e.length, 512)),
+      u = 0,
+      f = 0;
+    for (let p = 0; p < l.length; p++)
+      if (l[p] === 0)
+        if (p % 2 === 0) u++;
+        else f++;
+    if (l.length >= 8 && (u + f) * 4 > l.length) r = "utf16le", o = u > f ? 1 : 0
+  }
+  let s = e.subarray(o).toString(r);
+  return s.charCodeAt(0) === 65279 ? s.slice(1) : s
+}
+import {
+  dirname as Oe,
+  isAbsolute as ia,
+  join as T,
+  relative as oa,
+  resolve as ue,
+  sep as rt
+} from "path";
+import {
+  unwatchFile as Qo,
+  watch as qo
+} from "fs";
+import {
+  basename as Xn,
+  dirname as Be
+} from "path";
+import {
+  watchFile as Zo
+} from "fs";
+
+function y2n(e, n, r) {
+  let o = (s, l) => {
+    try {
+      r(s, l)
+    } catch (u) {
+      a(u)
+    }
+  };
+  try {
+    Zo(e, n, o)
+  } catch (s) {
+    a(s)
+  }
+  return o
+}
+
+function gdn() {
+  return i.CLAUDE_CODE_CONFIG_WATCH_EVENTS && x() === "linux"
+}
+async function Jn(e) {
+  try {
+    let {
+      dev: n,
+      ino: r
+    } = await ie().statBigint(e);
+    return `${n}:${r}`
+  } catch {
+    return "absent"
+  }
+}
+class hFr {
+  file;
+  options;
+  onStat;
+  watcher = void 0;
+  watchedDirectory = void 0;
+  pollListener = void 0;
+  pollMs = void 0;
+  lastStatMtimeMs = void 0;
+  gaveUpOnEvents = !1;
+  settleTimer = void 0;
+  arming = !1;
+  statting = !1;
+  closed = !1;
+  statAfterSettle = () => {
+    this.settleTimer = void 0, this.statNow()
+  };
+  constructor(e, n, r) {
+    this.file = e, this.options = n, this.onStat = r, this.arm()
+  }
+  close() {
+    this.closed = !0, clearTimeout(this.settleTimer), this.stopPolling(), this.dropWatcher()
+  }
+  async target() {
+    try {
+      return await ie().realpath(this.file)
+    } catch {
+      return this.file
+    }
+  }
+  async arm() {
+    this.arming = !0;
+    let e = await this.target();
+    if (this.watchedDirectory = await Jn(Be(e)), this.arming = !1, this.closed) return;
+    let n = Xn(e),
+      r = Xn(Be(e));
+    try {
+      let o = (this.options.watch ?? qo)(Be(e), {
+        persistent: !1
+      }, (s, l) => {
+        if (this.watcher !== o) return;
+        if (l === null || l === n) this.statSoon();
+        else if (s === "rename" && l === r) this.pollInstead(o, "directory_event", "its directory was probably removed or renamed")
+      });
+      o.on("error", (s) => this.pollInstead(o, "watcher_error", d(s))), this.watcher = o
+    } catch (o) {
+      this.pollInstead(void 0, "cannot_watch", d(o));
+      return
+    }
+    t(`Watching ${Be(e)} for changes to ${n}`), this.poll(this.options.safetyPollMs), this.statSoon()
+  }
+  poll(e) {
+    this.stopPolling(), this.pollMs = e, this.pollListener = y2n(this.file, {
+      interval: e,
+      persistent: !1
+    }, ({
+      mtimeMs: n,
+      size: r
+    }) => {
+      if (this.settleTimer !== void 0) return;
+      if (this.onStat({
+          mtimeMs: n,
+          size: r
+        }), this.arming) return;
+      if (this.watcher === void 0) {
+        if (!this.gaveUpOnEvents) this.arm()
+      } else if (n !== this.lastStatMtimeMs && !this.statting) this.logMissedChange(), this.pollInstead(this.watcher, "missed_change", "a change went unnoticed")
+    })
+  }
+  async logMissedChange() {
+    let e = await Jn(Be(await this.target()));
+    V("warn", "file_watch_missed_change", {
+      watched: this.options.label,
+      directory: e === "absent" ? "absent" : e === this.watchedDirectory ? "unchanged" : "replaced"
+    })
+  }
+  stopPolling() {
+    if (this.pollListener !== void 0) Qo(this.file, this.pollListener), this.pollListener = void 0
+  }
+  pollInstead(e, n, r) {
+    if (e !== this.watcher) return;
+    if (this.gaveUpOnEvents ||= e !== void 0, this.dropWatcher(), this.pollMs !== this.options.fallbackPollMs) t(`Cannot watch for changes to ${this.file} (${r}); checking it every ${this.options.fallbackPollMs}ms instead`, {
+      level: "warn"
+    }), V("warn", "file_watch_fell_back_to_polling", {
+      watched: this.options.label,
+      cause: n
+    }), this.poll(this.options.fallbackPollMs), this.statSoon()
+  }
+  statSoon() {
+    if (this.closed || this.settleTimer !== void 0) return;
+    this.settleTimer = setTimeout(this.statAfterSettle, this.options.settleMs), this.settleTimer.unref()
+  }
+  async statNow() {
+    let e;
+    this.statting = !0;
+    try {
+      let {
+        mtimeMs: n,
+        size: r
+      } = await ie().stat(this.file);
+      e = {
+        mtimeMs: n,
+        size: r
+      }
+    } catch {
+      e = {
+        mtimeMs: 0,
+        size: 0
+      }
+    }
+    if (this.statting = !1, this.closed) return;
+    this.lastStatMtimeMs = e.mtimeMs;
+    try {
+      this.onStat(e)
+    } catch (n) {
+      a(n)
+    }
+  }
+  dropWatcher() {
+    this.watcher = void 0
+  }
+}
+import {
+  createHash as Es
+} from "crypto";
+import {
+  accessSync as _s,
+  constants as Ss,
+  lstatSync as nr,
+  readFileSync as he,
+  realpathSync as qe,
+  statSync as rr
+} from "fs";
+import {
+  lstat as Rs,
+  realpath as Ps
+} from "fs/promises";
+import {
+  homedir as ks
+} from "os";
+import {
+  basename as Ze,
+  dirname as Pe,
+  isAbsolute as Qe,
+  join as N,
+  resolve as ge,
+  sep as ee
+} from "path";
+import * as le from "path/win32";
+var es = new Set(["gh pr create -R*", "gh pr create -F*", "gh pr create -H*"]);
+
+function tnt(e) {
+  return e.flatMap((n) => es.has(n) ? [`Bash(${n})`] : [`Bash(${n})`, `PowerShell(${n})`])
+}
+
+function Zn(e) {
+  return e.filter((n) => n !== "PowerShell(git checkout -b *)")
+}
+var s2n = ["git commit *--fil*", "git commit -F*", "git commit * -F*", "git commit *--te*", "git commit -t*", "git commit * -t*", "git commit *--pathspec-fr*", "git commit *--no-veri*", "git commit *--no-g*", "git commit *--am*", "git commit *--allow-empty*", "git commit *--reu*", "git commit *--ree*"],
+  i2n = ["git push *--force*", "git push -f*", "git push * -f*", "git push *--de*", "git push -d*", "git push * -d*", "git push * :**", 'git push *":**', "git push *':**", "git push * +*", 'git push *"+*', "git push *'+*", "git push *--pu*", "git push -o*", "git push * -o*", "git push *--m*", "git push *--pru*", "git push *--no-veri*", "git push *--rece*", "git push *--e*"],
+  a2n = ["gh pr create *--repo*", "gh pr create -R*", "gh pr create * -R*", "gh pr create *--body-file*", "gh pr create -F*", "gh pr create * -F*", "gh pr create *--head*", "gh pr create -H*", "gh pr create * -H*", "gh pr create *--recover*"],
+  l2n = ["gh pr create *--base*", "gh pr create * -B*"],
+  PBs = ["git *--output*"],
+  d2n = ["git checkout *--f*", "git checkout -f*", "git checkout * -f*"],
+  c2n = ["git add --f*", "git add * --f*", "git add -f*", "git add * -f*", "git add --c*", "git add * --c*"],
+  OBs = ["gh pr edit *--repo*", "gh pr edit -R*", "gh pr edit * -R*", "gh pr edit *--body-file*", "gh pr edit -F*", "gh pr edit * -F*", "gh pr edit *--base*", "gh pr edit -B*", "gh pr edit * -B*", "gh pr edit http*"],
+  me = "A skill active in this turn",
+  Ce = "The match is on the command text, with quotes resolved on Bash (case-insensitive in PowerShell, so a lowercase short flag can trip an uppercase one), so message, body or path text that merely contains one of these fragments trips it too; reword that text if so.",
+  Re = "If the user explicitly asked for the refused form, say it cannot run inside this skill instead of substituting something else or routing it through another tool.",
+  ts = `${me} refuses \`git commit\` options that read the message from a file or template, skip hooks, amend, reuse a message or allow an empty commit (tokens starting \`--fil\`, \`--te\`, \`--pathspec-fr\`, \`--no-veri\`, \`--no-g\`, \`--am\`, \`--allow-empty\`, \`--reu\`, \`--ree\`, \` -F\`, \` -t\`). The option is refused, not the commit: pass the message inline with \`-m\` as the skill's example shows. ${Ce} ${Re}`,
+  ns = `${me} refuses \`git push\` forms that force, delete, mirror or prune refs, set push options, skip the pre-push hook or name a receive-pack (tokens starting \`--force\`, \` -f\`, \` +\`, \`--de\`, \` -d\`, \` :\`, \`--m\`, \`--pru\`, \`--pu\`, \` -o\`, \`--no-veri\`, \`--rece\`, \`--e\`). A plain push of the branch to the configured remote is fine. The match is on the command text, so a ref name containing one of these fragments trips it too; tell the user rather than rewriting the command to slip past. ${Re}`,
+  rs = `${me} runs \`gh pr create\` only in its instructed form and refuses \`--repo\`/\`-R\`, \`--head\`/\`-H\`, \`--body-file\`/\`-F\` and \`--recover\` on it. The option is refused, not opening the pull request: re-run it with the title and body passed inline as the skill's example shows; that retry is the intended fix, not a workaround. ${Ce} ${Re}`,
+  is = `${me} refuses \`--base\`/\`-B\` on \`gh pr create\` in PowerShell, where the \`-b\` short form of \`--body\` trips it too: spell it \`--body\`. The option is refused, not opening the pull request: if the default branch is the intended target, re-run it without \`--base\`, with the title and body passed inline as the skill's example shows, and the pull request opens against it. ${Ce} ${Re}`,
+  os = `${me} refuses \`gh pr edit\` with \`--repo\`/\`-R\`, \`--body-file\`/\`-F\`, \`--base\`/\`-B\` or a URL selector: edit the current branch's PR with the title and body passed inline and no selector. ${Ce} ${Re}`,
+  ss = `${me} refuses \`--output\` on git commands (it writes to an arbitrary path): drop it and read stdout. ${Ce}`,
+  as = `${me} refuses \`git checkout\` with \`--force\`/\`-f\` (tokens starting \`--f\` or \` -f\`): create the branch with a plain \`git checkout -b\`. The match is on the command text, so a branch name containing \`--f\` trips it too. ${Re}`,
+  ls = `${me} refuses \`git add\` with \`--force\`/\`-f\` (it stages ignored files such as \`.env\`) or \`--chmod\` (tokens starting \`--f\`, \`-f\`, \`--c\`): stage the paths by name without the option. ${Ce} ${Re}`;
+
+function Se(e, n) {
+  return tnt(e).map((r) => [r, n])
+}
+var xxo = Object.fromEntries([...Se(s2n, ts), ...Se(i2n, ns), ...Se(a2n, rs), ...l2n.map((e) => [`PowerShell(${e})`, is]), ...Se(OBs, os), ...Se(PBs, ss), ...Se(d2n, as), ...Se(c2n, ls)]);
+import {
+  open as cs
+} from "fs/promises";
+import {
+  join as us
+} from "path";
+
+function pwe(e) {
+  return e.includes("\x00")
+}
+async function u2n(e, n, r, o) {
+  let s = await ds(e);
+  return s.ok ? wSt(s.text, n, r, o) : null
+}
+async function ds(e) {
+  try {
+    let n = await cs(us(e, "config"), "r");
+    try {
+      let o = Buffer.allocUnsafe(1e6),
+        s = 0;
+      while (s < 1e6) {
+        let {
+          bytesRead: f
+        } = await n.read(o, s, 1e6 - s, s);
+        if (f === 0) break;
+        s += f
+      }
+      let l = !1;
+      if (s === 1e6) {
+        let f = Buffer.allocUnsafe(1),
+          {
+            bytesRead: p
+          } = await n.read(f, 0, 1, s);
+        l = p > 0
+      }
+      let u = o.subarray(0, s).toString("utf-8");
+      if (l) {
+        let f = u.lastIndexOf(`
+`);
+        u = f === -1 ? "" : u.slice(0, f)
+      }
+      return pwe(u) ? {
+        ok: !1,
+        cause: "nul_byte"
+      } : {
+        ok: !0,
+        text: u
+      }
+    } finally {
+      await n.close()
+    }
+  } catch {
+    return {
+      ok: !1,
+      cause: "read_failed"
+    }
+  }
+}
+
+function wSt(e, n, r, o) {
+  for (let s of St(e, n, r, o)) return s;
+  return null
+}
+
+function IBs(e, n, r, o) {
+  return [...St(e, n, r, o)]
+}
+
+function uta(e, n, r, o) {
+  return [...St(e, n, r, o, "true")]
+}
+var fs = /^([A-Za-z][A-Za-z0-9-]*)\s*(?:[#;].*)?$/;
+
+function* St(e, n, r, o, s) {
+  let l = e.split(`
+`),
+    u = n.toLowerCase(),
+    f = o.toLowerCase(),
+    p = !1;
+  for (let h of l) {
+    let w = h.trim();
+    if (w.length === 0 || w[0] === "#" || w[0] === ";") continue;
+    if (w[0] === "[") {
+      p = _t(w, u, r);
+      continue
+    }
+    if (!p) continue;
+    let S = Qn(w);
+    if (S && S.key.toLowerCase() === f) yield S.value;
+    else if (s !== void 0 && fs.exec(w)?.[1]?.toLowerCase() === f) yield s
+  }
+}
+
+function fta(e) {
+  let n = [],
+    r = [],
+    o = null;
+  for (let s of e.split(`
+`)) {
+    let l = s.trim();
+    if (l.length === 0 || l[0] === "#" || l[0] === ";") continue;
+    if (l[0] === "[") {
+      o = _t(l, "include", null) || gs.test(l) ? "include" : _t(l, "core", null) ? "core" : null;
+      continue
+    }
+    let u = o === null ? null : Qn(l);
+    if (!u || u.value.length === 0) continue;
+    let f = u.key.toLowerCase();
+    if (o === "include" && f === "path") n.push(u.value);
+    else if (o === "core" && (f === "excludesfile" || f === "attributesfile")) r.push(u.value)
+  }
+  return {
+    includes: n,
+    files: r
+  }
+}
+var gs = /^\[includeif[ \t]*"(?:[^"\\]|\\.)*"\]/i;
+
+function Qn(e) {
+  let n = 0;
+  while (n < e.length && bs(e[n])) n++;
+  if (n === 0) return null;
+  let r = e.slice(0, n);
+  while (n < e.length && (e[n] === " " || e[n] === "\t")) n++;
+  if (n >= e.length || e[n] !== "=") return null;
+  n++;
+  while (n < e.length && (e[n] === " " || e[n] === "\t")) n++;
+  let o = ps(e, n);
+  return {
+    key: r,
+    value: o
+  }
+}
+
+function ps(e, n) {
+  let r = "",
+    o = !1,
+    s = n;
+  while (s < e.length) {
+    let l = e[s];
+    if (!o && (l === "#" || l === ";")) break;
+    if (l === '"') {
+      o = !o, s++;
+      continue
+    }
+    if (l === "\\" && s + 1 < e.length) {
+      let u = e[s + 1];
+      if (o) {
+        switch (u) {
+          case "n":
+            r += `
+`;
+            break;
+          case "t":
+            r += "\t";
+            break;
+          case "b":
+            r += "\b";
+            break;
+          case '"':
+            r += '"';
+            break;
+          case "\\":
+            r += "\\";
+            break;
+          default:
+            r += u;
+            break
+        }
+        s += 2;
+        continue
+      }
+      if (u === "\\") {
+        r += "\\", s += 2;
+        continue
+      }
+    }
+    r += l, s++
+  }
+  if (!o) r = ms(r);
+  return r
+}
+
+function ms(e) {
+  let n = e.length;
+  while (n > 0 && (e[n - 1] === " " || e[n - 1] === "\t")) n--;
+  return e.slice(0, n)
+}
+
+function _t(e, n, r) {
+  let o = hs(e);
+  return o !== null && o.sectionLower === n && o.subsection === r
+}
+
+function hs(e) {
+  let n = 1;
+  while (n < e.length && e[n] !== "]" && e[n] !== " " && e[n] !== "\t" && e[n] !== '"') n++;
+  let r = e.slice(1, n).toLowerCase();
+  if (n < e.length && e[n] === "]") return {
+    sectionLower: r,
+    subsection: null
+  };
+  while (n < e.length && (e[n] === " " || e[n] === "\t")) n++;
+  if (n >= e.length || e[n] !== '"') return null;
+  n++;
+  let o = "";
+  while (n < e.length && e[n] !== '"') {
+    if (e[n] === "\\" && n + 1 < e.length) {
+      let s = e[n + 1];
+      if (s === "\\" || s === '"') {
+        o += s, n += 2;
+        continue
+      }
+      o += s, n += 2;
+      continue
+    }
+    o += e[n], n++
+  }
+  if (n >= e.length || e[n] !== '"') return null;
+  if (n++, n >= e.length || e[n] !== "]") return null;
+  return {
+    sectionLower: r,
+    subsection: o
+  }
+}
+
+function bs(e) {
+  return e >= "a" && e <= "z" || e >= "A" && e <= "Z" || e >= "0" && e <= "9" || e === "-"
+}
+var Vpe = Symbol("git-repo-negative-result"),
+  Ae = Symbol("git-repo-unreadable-result");
+class qn {
+  rootByPath = new lu({
+    max: 50
+  });
+  canonicalRootByRoot = new lu({
+    max: 50
+  });
+  remoteSlugByRoot = new lu({
+    max: 50
+  });
+  monorepoRuledOutByRoot = new lu({
+    max: 50
+  });
+  monorepoVerdictByDir = new lu({
+    max: 50
+  });
+  gitDirByCwd = new Map;
+  linkedFromRootByPin = new lu({
+    max: 64
+  });
+  hostWorktreeReport;
+  lastRemoteHash;
+  markersByRoot = new lu({
+    max: 50
+  });
+  repositoryByCwd = new Map;
+  remoteHostByCwd = new Map;
+  repoClassByCanonicalRoot = new Map;
+  linguistGeneratedByPath = new Map;
+  wcRootByPath = new lu({
+    max: 50
+  });
+  wcTrunkByRoot = new Map;
+  wcWorktreesByRoot = new lu({
+    max: 50,
+    ttl: 60000
+  });
+  wcRemoteHashByRoot = new lu({
+    max: 50
+  });
+  wcHeadByRoot = new Map;
+  sessionRepoNameByCwd = new lu({
+    max: 50
+  });
+  diffCheckoutIsRepo = new Map;
+  gitExecutable = null;
+  gitBehindLauncher = null;
+  gitLauncherProbe = null;
+  reportedHookInstallSkips = new Set;
+  clear() {
+    this.rootByPath.clear(), this.canonicalRootByRoot.clear(), this.remoteSlugByRoot.clear(), this.monorepoRuledOutByRoot.clear(), this.monorepoVerdictByDir.clear(), this.gitDirByCwd.clear(), this.linkedFromRootByPin.clear(), this.hostWorktreeReport = void 0, this.lastRemoteHash = void 0, this.markersByRoot.clear(), this.repositoryByCwd.clear(), this.remoteHostByCwd.clear(), this.repoClassByCanonicalRoot.clear(), this.linguistGeneratedByPath.clear(), this.wcRootByPath.clear(), this.wcTrunkByRoot.clear(), this.wcWorktreesByRoot.clear(), this.wcRemoteHashByRoot.clear(), this.wcHeadByRoot.clear(), this.sessionRepoNameByCwd.clear(), this.diffCheckoutIsRepo.clear(), this.gitExecutable = null, this.gitBehindLauncher = null, this.gitLauncherProbe = null, this.reportedHookInstallSkips.clear()
+  }
+}
+
+function SSt(e, n, r) {
+  let o = e.get(n);
+  if (o !== void 0) return o;
+  let s = r(n);
+  return e.set(n, s), s
+}
+var ws = new W(() => new qn);
+
+function um() {
+  return ws.of(H().host)
+}
+
+function et(e, n) {
+  try {
+    let r = nr(e);
+    if (r.isSymbolicLink()) {
+      let o = qpe(e);
+      if (o === null) return !1;
+      if (ca(o, n)) return !1;
+      if (A_(o, n)) return !1;
+      let s = rr(e);
+      return s.isDirectory() || s.isFile()
+    }
+    return r.isDirectory() || r.isFile()
+  } catch {
+    return !1
+  }
+}
+
+function ir(e) {
+  if (q()) return Vpe;
+  let n = Date.now();
+  V("info", "find_git_root_started");
+  let r = ge(e),
+    o = r.substring(0, r.indexOf(ee) + 1) || ee,
+    s = 0;
+  while (r !== o) {
+    let l = N(r, ".git");
+    if (s++, et(l, r)) return V("info", "find_git_root_completed", {
+      duration_ms: Date.now() - n,
+      stat_count: s,
+      found: !0
+    }), En(r);
+    let u = Pe(r);
+    if (u === r) break;
+    r = u
+  }
+  if (s++, et(N(o, ".git"), o)) return V("info", "find_git_root_completed", {
+    duration_ms: Date.now() - n,
+    stat_count: s,
+    found: !0
+  }), En(o);
+  return V("info", "find_git_root_completed", {
+    duration_ms: Date.now() - n,
+    stat_count: s,
+    found: !1
+  }), Vpe
+}
+
+function fr(e) {
+  let n = SSt(um().rootByPath, e, ir);
+  return n === Vpe ? null : n
+}
+
+function tg(e) {
+  let n = ir(e);
+  return n === Vpe ? null : n
+}
+async function Fxo(e, n) {
+  if (q()) return {
+    gitRoot: null
+  };
+  let r = ge(n),
+    o = r.substring(0, r.indexOf(ee) + 1) || ee;
+  for (;;) {
+    let s = await e.stat(og.workspace(N(r, ".git")), {
+      follow: !1
+    });
+    if (!s.ok || s.value.kind === "link") return;
+    if (s.value.kind === "directory" || s.value.kind === "file") return {
+      gitRoot: En(r),
+      entry: s.value.kind
+    };
+    if (r === o) return {
+      gitRoot: null
+    };
+    let l = Pe(r);
+    r = l === r ? o : l
+  }
+}
+
+function ty(e) {
+  let n = um().rootByPath;
+  if (n.peek(e) === Vpe) n.delete(e);
+  return fr(e)
+}
+async function k2n(e) {
+  let n = ty(e);
+  if (n === null) return null;
+  try {
+    return await Rs(N(n, ".git")), n
+  } catch (r) {
+    let o = r?.code;
+    if (o !== "ENOENT" && o !== "ENOTDIR") return n;
+    return um().rootByPath.delete(e), ty(e)
+  }
+}
+
+function V1t(e) {
+  let n = En(ge(e)),
+    r = um();
+  for (let o of [r.rootByPath, r.canonicalRootByRoot, r.remoteSlugByRoot, r.monorepoRuledOutByRoot, r.monorepoVerdictByDir, r.gitDirByCwd, r.markersByRoot, r.repositoryByCwd, r.repoClassByCanonicalRoot, r.wcRootByPath, r.wcWorktreesByRoot])
+    for (let s of [...o.keys()])
+      if (Wp(n, En(ge(s)))) o.delete(s)
+}
+
+function Rt(e) {
+  try {
+    return sr(e, he(N(e, ".git"), "utf-8"))
+  } catch {
+    return e
+  }
+}
+
+function sr(e, n) {
+  try {
+    let r = n.trim();
+    if (!r.startsWith("gitdir:")) return e;
+    let o = r.slice(7).trim();
+    if (ca(o, e)) return e;
+    if (A_(o, e)) return e;
+    let s = ge(e, o);
+    if (JV(N(s, "commondir"), s)) return e;
+    let l = he(N(s, "commondir"), "utf-8").trim();
+    if (ca(l, s)) return e;
+    if (A_(l, s)) return e;
+    let u = ge(s, l);
+    if (ge(Pe(s)) !== N(u, "worktrees")) return e;
+    if (JV(N(s, "gitdir"), s)) return e;
+    let f = he(N(s, "gitdir"), "utf-8").trim();
+    if (ca(f, e)) return e;
+    if (A_(f, s, e)) return e;
+    if (ee === "/" && [e, s, f, u].some((h) => h.includes("\\"))) return e;
+    if (qe(ge(s, f)) !== N(qe(e), ".git")) return e;
+    if (Ze(u) !== ".git") {
+      if (et(N(u, ".git"), u)) return e;
+      return En(u)
+    }
+    return En(Pe(u))
+  } catch {
+    return e
+  }
+}
+async function vs(e, n) {
+  let r = await e.readText(og.workspace(N(n, ".git")));
+  if (!r.ok || !r.value.found) return;
+  return sr(n, r.value.value)
+}
+
+function Gi(e) {
+  let n = fr(e);
+  if (!n) return null;
+  return SSt(um().canonicalRootByRoot, n, Rt)
+}
+
+function CH(e) {
+  let n = tg(e);
+  if (!n) return null;
+  return Rt(n)
+}
+async function QBs(e, n) {
+  if (e.hostFiles.serving("workspace") !== "host") return;
+  let r = um(),
+    o = r.rootByPath.peek(n);
+  if (o !== void 0) {
+    let u = o === Vpe ? null : o;
+    return {
+      gitRoot: u,
+      canonicalRoot: u === null ? null : r.canonicalRootByRoot.peek(u)
+    }
+  }
+  let s = await Fxo(e.hostFiles, n);
+  if (s === void 0) return;
+  let l = s.gitRoot === null ? {
+    gitRoot: null,
+    canonicalRoot: null
+  } : {
+    gitRoot: s.gitRoot,
+    canonicalRoot: s.entry === "directory" ? s.gitRoot : await vs(e.hostFiles, s.gitRoot)
+  };
+  return Hxo(n, l.gitRoot, l.canonicalRoot), l
+}
+
+function Hxo(e, n, r) {
+  let o = um(),
+    s = n ?? Vpe,
+    l = o.rootByPath.peek(e);
+  if (l === void 0) o.rootByPath.set(e, s);
+  else if (l !== s) {
+    t("git root prime: findGitRoot already holds a different answer for the start path; keeping the first", {
+      level: "warn"
+    });
+    return
+  }
+  if (n === null || r === void 0 || r === null) return;
+  let u = o.canonicalRootByRoot.peek(n);
+  if (u === void 0) o.canonicalRootByRoot.set(n, r);
+  else if (u !== r) t("git root prime: findCanonicalGitRoot already holds a different answer for the root; keeping the first", {
+    level: "warn"
+  })
+}
+
+function eY(e) {
+  let n = fr(e);
+  return n !== null && Gi(e) !== n
+}
+
+function ZBs(e) {
+  let n = tg(e);
+  return n !== null && Rt(n) !== n
+}
+async function e1s(e) {
+  if (Ct()) return null;
+  let n = await RC(e);
+  if (!n || Ze(n) === ".git" || Ze(Pe(n)) !== "worktrees") return null;
+  return Ze(n)
+}
+var Sdn = ["--no-ext-diff", "--no-textconv"],
+  t1s = ["--no-color", "--src-prefix=a/", "--dst-prefix=b/", "--submodule=short"];
+
+function Pt() {
+  if (q()) return "git";
+  let e = um();
+  if (e.gitExecutable ??= wj("git") || "git", e.gitLauncherProbe === null) {
+    let r = e.gitExecutable,
+      o = Cs(r).then((s) => {
+        if (s !== null && e.gitLauncherProbe === o) e.gitBehindLauncher = {
+          launcher: r,
+          program: s
+        }
+      }, a);
+    e.gitLauncherProbe = o
+  }
+  let n = e.gitBehindLauncher;
+  return n?.launcher === e.gitExecutable && process.env.MSYSTEM === void 0 ? n.program : e.gitExecutable
+}
+var xs = ["mingw64", "ucrt64"];
+async function Cs(e) {
+  if (!CKs(e) || le.basename(e).toLowerCase() !== "git.exe" || le.basename(le.dirname(e)).toLowerCase() !== "cmd") return null;
+  let n = le.join(e, "..", ".."),
+    r = {
+      ...process.env,
+      GIT_EXEC_PATH: void 0
+    };
+  for (let E of Object.keys(r))
+    if (E.toUpperCase() === "GIT_EXEC_PATH") r[E] = void 0;
+  let o = {
+      cwd: n,
+      env: r,
+      timeout: 1e4
+    },
+    s = await ut(e, [...yn, "--exec-path"], o),
+    l = le.normalize(s.stdout.trim()).replace(/[\\/]+$/, "").toLowerCase(),
+    u = xs.find((E) => le.join(n, E, "libexec", "git-core").toLowerCase() === l);
+  if (s.code !== 0 || u === void 0) return null;
+  let f = le.join(n, u, "bin", "git.exe");
+  if (gWt(f, process.cwd())) return null;
+  try {
+    if (!(await ie().stat(f)).isFile()) return null
+  } catch {
+    return null
+  }
+  let p = await ut(f, [...yn, "version"], o),
+    h = /^git version (\d+)\.(\d+)\.\d+\S*\.windows\.\d+/.exec(p.stdout.trim()),
+    w = Number(h?.[1]),
+    S = Number(h?.[2]);
+  return p.code === 0 && (w > 2 || w === 2 && S >= 26) ? f : null
+}
+var ar = new Je(() => new Map);
+async function As() {
+  let e = Date.now();
+  V("info", "is_git_check_started");
+  let n = ol(),
+    r = n !== null && fr(n) !== null;
+  return V("info", "is_git_check_completed", {
+    duration_ms: Date.now() - e,
+    is_git: r
+  }), r
+}
+
+function lr() {
+  return H()
+}
+
+function RH() {
+  let e = ar.of(lr()),
+    n = z(),
+    r = e.get(n);
+  if (r !== void 0) return r;
+  let o = As();
+  return e.set(n, o), o
+}
+
+function wdn(e) {
+  ar.of(e).clear(), um().diffCheckoutIsRepo.clear()
+}
+
+function $xo() {
+  wdn(lr())
+}
+
+function Ute(e) {
+  return RC(e)
+}
+var n1s = async (e) => fr(e) !== null, kdn = async () => gFr(), Qu = async (e, n = {
+  env: ys()
+}) => {
+  if (e === void 0) return Tta();
+  let {
+    stdout: r,
+    code: o
+  } = await lt(Pt(), [...yn, "rev-parse", "--abbrev-ref", "HEAD"], {
+    cwd: e,
+    preserveOutputOnError: !1,
+    ...n
+  });
+  return o === 0 ? r.trim() || "HEAD" : "HEAD"
+};
+async function v2n(e, n) {
+  return (await lt(Pt(), [...yn, "show-ref", "--verify", "--quiet", `refs/remotes/origin/${e}`], {
+    cwd: n ?? pe(),
+    preserveOutputOnError: !1,
+    env: ys()
+  })).code === 0
+}
+var bM = async (e, n = {
+  env: ys()
+}) => {
+  if (e === void 0) return Cta();
+  let r = await Uxo(e, n);
+  if (r) return r;
+  for (let o of S2n)
+    if ((await lt(Pt(), [...yn, "show-ref", "--verify", "--quiet", `refs/remotes/origin/${o}`], {
+        cwd: e,
+        preserveOutputOnError: !1,
+        ...n
+      })).code === 0) return o;
+  return "main"
+}, Uxo = async (e, n = {
+  env: ys()
+}) => {
+  let {
+    stdout: r,
+    code: o
+  } = await lt(Pt(), [...yn, "symbolic-ref", "--short", "refs/remotes/origin/HEAD"], {
+    cwd: e ?? pe(),
+    preserveOutputOnError: !1,
+    ...n
+  });
+  if (o !== 0) return null;
+  let s = r.trim().replace(/^origin\//, "");
+  if (!s) return null;
+  return (await lt(Pt(), [...yn, "show-ref", "--verify", "--quiet", `refs/remotes/origin/${s}`], {
+    cwd: e ?? pe(),
+    preserveOutputOnError: !1,
+    ...n
+  })).code === 0 ? s : null
+}, Os = /^[A-Za-z0-9][A-Za-z0-9._-]*$/;
+async function _Fr(e) {
+  let {
+    stdout: n,
+    code: r
+  } = await ut(Pt(), [...yn, "config", "--get", e], {
+    preserveOutputOnError: !1,
+    useCwd: !0,
+    env: ys()
+  });
+  if (r !== 0) return null;
+  let o = n.trim();
+  return o.length > 0 ? o : null
+}
+async function Bxo(e, n) {
+  let {
+    stdout: r,
+    code: o
+  } = await ut(Pt(), [...yn, "config", "--global", "--includes", "--get", e], {
+    preserveOutputOnError: !1,
+    cwd: n,
+    env: ys()
+  }), s = r.trim();
+  return o === 0 && s.length > 0 ? s : null
+}
+async function Fs(e) {
+  let n = await _Fr("remote.pushDefault");
+  if (n && e.includes(n)) return n;
+  if (e.length === 1) return e[0] ?? null;
+  return null
+}
+async function E2n() {
+  let {
+    stdout: e,
+    code: n
+  } = await ut(Pt(), [...yn, "remote"], {
+    preserveOutputOnError: !1,
+    useCwd: !0,
+    env: ys()
+  });
+  if (n !== 0) return [];
+  let r = e.split(`
+`).map((l) => l.trim()).filter(Boolean),
+    o = new Set;
+  if (r.includes("origin")) o.add("origin");
+  let s = await Fs(r);
+  if (s && Os.test(s)) o.add(s);
+  return [...o]
+}
+
+function T2n(e) {
+  return e.flatMap((n) => [`git push ${n} *`, `git push -u ${n} *`])
+}
+
+function Tqe(e) {
+  return Zn(tnt(e)).filter((n) => n.startsWith("PowerShell("))
+}
+var dxe = async () => WBs(), jxo = async () => {
+  let e = ol(),
+    n = e === null ? null : fr(e);
+  if (n === null || await vdn(n)) return null;
+  return WBs()
+};
+async function vdn(e) {
+  let n;
+  try {
+    n = ks()
+  } catch {
+    return !1
+  }
+  if (!n) return !1;
+  if (e === En(ge(n))) return !0;
+  let r = await Ps(n).then((o) => En(o), () => null);
+  return r !== null && e === r
+}
+var PSt = async () => {
+  let [e, n, r] = await Promise.all([Qu(), jxo(), Rta()]);
+  return {
+    branch: e,
+    gitRepoUrl: n,
+    defaultBranch: r
+  }
+};
+
+function ont(e) {
+  return e == null ? e : e.replace(/:\/\/[^/]*@/, "://***@")
+}
+
+function dae(e) {
+  let n = e.trim();
+  if (!n || nK(n) || Bte(n)) return null;
+  let r = n.match(/^git@([^:/@]+):(.+?)(?:\.git)?$/);
+  if (r && r[1] && r[2]) {
+    if (C2n(r[2])) return null;
+    return `${r[1]}/${r[2]}`.toLowerCase()
+  }
+  let o = n.match(/^(?:https?|ssh):\/\/(?:[^@/?#]*@)?([^/?#@]+)\/(.+?)(?:\.git)?$/);
+  if (o && o[1] && o[2]) {
+    let s = o[1],
+      l = o[2];
+    if (C2n(l)) return null;
+    if (bFr() && zxo(s) && l.startsWith("git/")) {
+      let u = l.slice(4),
+        f = u.split("/");
+      if (f.length >= 3 && f[0].includes(".")) return u.toLowerCase();
+      return `github.com/${u}`.toLowerCase()
+    }
+    return `${s}/${l}`.toLowerCase()
+  }
+  return null
+}
+
+function Ls(e) {
+  let n = e ? tt(e, ":").toLowerCase() : null;
+  if (!n) return "none";
+  if (fo(n) || n.endsWith(`.${jr}`)) return "github";
+  if (n.endsWith(".ghe.com") || n.includes("github")) return "ghe";
+  if (n === "gitlab.com" || n.includes("gitlab")) return "gitlab";
+  if (n === "bitbucket.org" || n.includes("bitbucket")) return "bitbucket";
+  if (n === "dev.azure.com" || n === "ssh.dev.azure.com" || n.endsWith(".visualstudio.com") || n.endsWith(".azure.com")) return "azure";
+  return "other"
+}
+async function r1s() {
+  if (Ct()) return null;
+  let [e, n] = await Promise.all([RH(), dxe()]).catch(() => [!1, null]), r = n ? dae(n) : null;
+  return {
+    is_git: e,
+    has_remote: r !== null,
+    remote_host_class: Ls(r ? tt(r, "/") : null)
+  }
+}
+
+function Ts(e) {
+  try {
+    let n = et(N(e, ".git"), e),
+      r = N(n ? N(e, ".git") : e, "config");
+    if (zO(r, e)) return Ae;
+    let o = he(r, "utf-8");
+    return pwe(o) ? Ae : o
+  } catch (n) {
+    return wr(n) ? Vpe : Ae
+  }
+}
+
+function Ds(e) {
+  let n = Ts(e);
+  if (n === Ae) t(`[git] could not read the git config of ${e} (a NUL byte, an unsafe path or a read error), so its origin is unknown`);
+  if (typeof n !== "string") return n;
+  let r = (o) => {
+    let s = wSt(n, "remote", "origin", o);
+    return s ? dae(s) : null
+  };
+  return r("pushurl") ?? r("url") ?? Vpe
+}
+
+function cr(e) {
+  return SSt(um().remoteSlugByRoot, e, Ds)
+}
+
+function K1t(e) {
+  let n = cr(e);
+  return typeof n === "string" ? n : null
+}
+
+function vva(e) {
+  return cr(e) === Ae
+}
+var Ns = 128000;
+
+function fpa(e, n) {
+  try {
+    let r = !0;
+    try {
+      if (nr(N(e, ".git")).isFile()) return {
+        ok: !1,
+        cause: "pointer_file"
+      }
+    } catch (l) {
+      if (!K(l)) return {
+        ok: !1,
+        cause: "read_failed"
+      };
+      r = !1
+    }
+    let o = r ? N(e, ".git") : e,
+      s = js(N(o, "config"), e, n);
+    return s.ok ? {
+      ...s,
+      gitDir: o
+    } : s
+  } catch {
+    return {
+      ok: !1,
+      cause: "read_failed"
+    }
+  }
+}
+
+function js(e, n, r) {
+  if (zO(e, n)) return {
+    ok: !1,
+    cause: "unsafe_path"
+  };
+  let o = rr(e);
+  if (!o.isFile()) return {
+    ok: !1,
+    cause: "not_a_file"
+  };
+  if (o.size > r) return {
+    ok: !1,
+    cause: "oversize"
+  };
+  let s = he(e, "utf-8");
+  return pwe(s) ? {
+    ok: !1,
+    cause: "nul_byte"
+  } : {
+    ok: !0,
+    text: s
+  }
+}
+
+function Eva(e) {
+  let n = fpa(e, Ns);
+  return n.ok && !n.text.includes("\x00") ? n.text : null
+}
+async function o1s() {
+  let e = await dxe(),
+    n = um();
+  if (!e) return n.lastRemoteHash = void 0, null;
+  let r = `${bFr()} ${e}`;
+  if (n.lastRemoteHash?.key !== r) {
+    let o = dae(e);
+    n.lastRemoteHash = {
+      key: r,
+      hash: o ? Es("sha256").update(o).digest("hex").substring(0, 16) : null
+    }
+  }
+  return n.lastRemoteHash.hash
+}
+var ppa = async () => {
+  let {
+    code: e
+  } = await ut(Pt(), [...yn, "rev-parse", "@{u}"], {
+    preserveOutputOnError: !1,
+    env: ys()
+  });
+  return e === 0
+}, s1s = async (e) => {
+  let {
+    stdout: n,
+    code: r
+  } = await lt(Pt(), [...yn, "rev-list", "--count", "@{u}..HEAD"], {
+    cwd: e,
+    preserveOutputOnError: !1,
+    env: ys()
+  });
+  return r === 0 && parseInt(n.trim(), 10) > 0
+}, Edn = async (e) => {
+  let n = [...yn, "--no-optional-locks", "status", "--porcelain", fS];
+  if (e?.ignoreUntracked) n.push("-uno");
+  let {
+    stdout: r
+  } = await ut(Pt(), n, {
+    preserveOutputOnError: !1,
+    env: ys(void 0, {
+      userLocale: !0
+    })
+  });
+  return r.trim().length === 0
+}, OSt = async (e, n = ys(void 0, {
+  userLocale: !0
+})) => {
+  let r = [...yn, "--no-optional-locks", "status", "--porcelain", fS],
+    {
+      stdout: o
+    } = e === void 0 ? await ut(Pt(), r, {
+      preserveOutputOnError: !1,
+      env: n
+    }) : await lt(Pt(), r, {
+      cwd: e,
+      preserveOutputOnError: !1,
+      env: n
+    }),
+    s = [],
+    l = [];
+  return o.split(/\r?\n/).filter((u) => u.length > 0).forEach((u) => {
+    let f = u.substring(0, 2),
+      p = u.substring(3);
+    if (f === "??") l.push(p);
+    else if (p) s.push(p)
+  }), {
+    tracked: s,
+    untracked: l
+  }
+}, Tdn = async () => Ata();
+async function Wxo() {
+  try {
+    let [e, n, r, o, s, l] = await Promise.all([kdn(), Qu(), dxe(), ppa(), Edn(), Tdn()]);
+    return g("git_status_fetch"), {
+      commitHash: e,
+      branchName: n,
+      remoteUrl: r,
+      isHeadOnRemote: o,
+      isClean: s,
+      worktreeCount: l
+    }
+  } catch (e) {
+    return m("git_status_fetch", "git_status_fetch_failed"), null
+  }
+}
+async function i1s() {
+  let {
+    parseGitRemote: e
+  } = await import("B:/~BUN/root/chunk-7he8bzc1.js"), n = await dxe();
+  if (!n) return t("Local GitHub repo: unknown"), null;
+  let r = e(n);
+  if (r && fo(r.host)) {
+    let o = `${r.owner}/${r.name}`;
+    return t(`Local GitHub repo: ${o}`), o
+  }
+  return t("Local GitHub repo: unknown"), null
+}
+
+function bFr() {
+  return i.CLAUDE_CODE_REMOTE || bj(i.CLAUDE_CODE_REMOTE_SESSION_ID ?? "") && i.CLAUDE_CODE_ENVIRONMENT_KIND === void 0
+}
+
+function zxo(e) {
+  let n = e.indexOf(":"),
+    r = n === -1 ? e : e.slice(0, n),
+    o = n === -1 ? "" : e.slice(n + 1);
+  if (o !== "" && !/^\d+$/.test(o)) return !1;
+  return r === "localhost" || /^127\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(r)
+}
+var Ms = 4096;
+
+function er(e, n, r) {
+  let o = /[\\/]+/,
+    s = n.split(o),
+    l = s[0] === "" ? ee : s[0] + ee,
+    u = 0;
+  for (let f = 1; f < s.length; f++) {
+    let p = s[f];
+    if (p === "" || p === ".") continue;
+    if (p === "..") {
+      l = Pe(l);
+      continue
+    }
+    let h = l.endsWith(ee) ? l + p : l + ee + p;
+    if (r !== void 0 ? UH(h, r) : Ba(h)) return null;
+    let w;
+    try {
+      w = e.lstatSync(h)
+    } catch {
+      return null
+    }
+    if (!w.isSymbolicLink()) {
+      l = h;
+      continue
+    }
+    if (++u > 64) return null;
+    let S;
+    try {
+      S = e.readlinkSync(h)
+    } catch {
+      return null
+    }
+    if (or(S)) return null;
+    if (r !== void 0 ? UH(S, r) : Ba(S)) return null;
+    let E = S.split(o);
+    if (Qe(S)) s.splice(0, f + 1, ...E), l = E[0] === "" ? ee : E[0] + ee, f = 0;
+    else s.splice(f, 1, ...E), f--
+  }
+  return l
+}
+
+function ISt() {
+  let e = ie(),
+    n = pe(),
+    r = er(e, n, n) ?? n;
+  try {
+    r = qe.native(r)
+  } catch {}
+  r = r.normalize("NFC").toLowerCase();
+  let o = r.endsWith(ee) ? r : r + ee,
+    s = (y) => {
+      let v = y.toLowerCase();
+      return v === r || v.startsWith(o)
+    };
+
+  function l(y) {
+    if (UH(y, n)) return null;
+    if (y.includes("\uFFFD")) return null;
+    if (or(y)) {
+      if (!ad(y)) return null;
+      if (!or(n)) return {
+        canonical: y.normalize("NFC"),
+        crossOs: !0
+      }
+    }
+    let v = er(e, y, n);
+    if (v === null) return null;
+    try {
+      v = qe.native(v)
+    } catch {
+      return null
+    }
+    if (v.includes("\uFFFD") || x() !== "macos" && v !== v.normalize("NFC")) return null;
+    return {
+      canonical: v.normalize("NFC"),
+      crossOs: !1
+    }
+  }
+
+  function u(y, v) {
+    if (!v && s(y)) return !0;
+    for (let I of y.split(v ? /[\\/]+/ : ee))
+      if (I.toLowerCase() === ".git") return !1;
+    return !0
+  }
+
+  function f(y, v) {
+    try {
+      let I = e.lstatSync(N(y, "HEAD"));
+      if (v === "gitfile" && I.isSymbolicLink() && x() !== "windows") return e.readlinkSync(N(y, "HEAD")).startsWith("refs/");
+      if (!I.isFile() || I.size > 4096) return !1;
+      let b = he(N(y, "HEAD"), "utf8").slice(0, 255);
+      return /^ref:[ \t]*refs\//.test(b) || /^[0-9a-f]{40}([0-9a-f]{24})?[ \t\n\r]*$/.test(b)
+    } catch {
+      return !1
+    }
+  }
+
+  function p(y) {
+    try {
+      for (let v of ["objects", "refs"]) {
+        let I = N(y, v),
+          b = e.lstatSync(I);
+        if (b.isSymbolicLink() ? zO(I, y) || !e.statSync(I).isDirectory() : !b.isDirectory()) return !1;
+        _s(I, Ss.X_OK)
+      }
+      return !0
+    } catch {
+      return !1
+    }
+  }
+
+  function h(y) {
+    try {
+      let v = N(y, "HEAD"),
+        I = e.lstatSync(v);
+      if (!I.isFile() || I.size > 4096) return !1;
+      let b = he(v, "utf8").slice(0, 255);
+      if (!/^ref:[ \t]*refs\//.test(b) && !/^[0-9a-f]{40}([0-9a-f]{24})?[ \t\n\r]*$/.test(b)) return !1;
+      return p(y)
+    } catch {
+      return !1
+    }
+  }
+
+  function w(y) {
+    try {
+      let v = e.lstatSync(N(y, "HEAD"));
+      if (v.isFile() || v.isSymbolicLink()) return !0
+    } catch {}
+    for (let v of ["objects", "refs"]) try {
+      return e.lstatSync(N(y, v)), !0
+    } catch {}
+    return !1
+  }
+
+  function S(y) {
+    let v = (I, b) => {
+      let F = l(I);
+      if (F === null) return c("git_bare_repo_gate", "gitdir_target_uncanonical"), "plantable";
+      if (u(F.canonical, F.crossOs)) return c("git_bare_repo_gate", "gitdir_target_plantable"), "plantable";
+      if (F.crossOs) return c("git_bare_repo_gate", "gitdir_target_on_wsl"), "plantable";
+      if (b === "symlink") {
+        let O;
+        try {
+          O = e.lstatSync(F.canonical).isFile()
+        } catch {
+          return c("git_bare_repo_gate", "symlink_target_lstat_failed"), "plantable"
+        }
+        if (O) return c("git_bare_repo_gate", "symlink_target_is_file"), "plantable"
+      }
+      let C = N(F.canonical, "commondir"),
+        D = F.canonical,
+        _;
+      try {
+        _ = e.lstatSync(C).isFile()
+      } catch (O) {
+        if (!wr(O)) return c("git_bare_repo_gate", "commondir_lstat_failed"), "plantable"
+      }
+      if (_ === !1) return c("git_bare_repo_gate", "commondir_not_regular_file"), "plantable";
+      if (_) {
+        let O = Qpe(C, Xpe);
+        if (O === void 0) return c("git_bare_repo_gate", "commondir_read_failed_or_oversized"), "plantable";
+        let A = O.length;
+        while (A > 0 && (O[A - 1] === `
+` || O[A - 1] === "\r")) A--;
+        let L = O.slice(0, A),
+          G = L === "" || L.includes("\x00") ? null : l(Qe(L) ? L : F.canonical + ee + L);
+        if (G === null) return c("git_bare_repo_gate", "commondir_uncanonical"), "plantable";
+        if (G.crossOs) return c("git_bare_repo_gate", "commondir_names_wsl_path"), "plantable";
+        if (u(G.canonical, !1)) return c("git_bare_repo_gate", "commondir_plantable"), "plantable";
+        D = G.canonical
+      }
+      return f(F.canonical, b) && (b === "gitfile" || p(D)) ? "trusted" : "none"
+    };
+    try {
+      let I = e.lstatSync(N(y, ".git"));
+      if (I.isSymbolicLink()) {
+        let b;
+        try {
+          b = e.readlinkSync(N(y, ".git"))
+        } catch {
+          return "plantable"
+        }
+        return v(Qe(b) ? b : y + ee + b, "symlink")
+      }
+      if (I.isFile()) {
+        if (I.size > Ms) return "oversized";
+        try {
+          let b = he(N(y, ".git"), "utf8");
+          if (b.includes("\x00")) return "plantable";
+          if (!b.startsWith("gitdir: ")) return "none";
+          let F = b.slice(8).replace(/[\r\n]+$/, "");
+          return v(Qe(F) ? F : y + ee + F, "gitfile")
+        } catch {
+          return "none"
+        }
+      }
+      if (I.isDirectory()) {
+        try {
+          return e.lstatSync(N(y, ".git", "commondir")), c("git_bare_repo_gate", "commondir_in_git_dir"), "plantable"
+        } catch {}
+        return h(N(y, ".git")) ? "trusted" : "none"
+      }
+    } catch {}
+    return "none"
+  }
+  switch (S(n)) {
+    case "plantable":
+      return "gitdir-redirect-plantable";
+    case "oversized":
+      return "gitdir-file-oversized";
+    case "trusted":
+      return g("git_bare_repo_gate"), !1;
+    case "none":
+      break
+  }
+  let E = n;
+  for (;;) {
+    if (w(E)) return c("git_bare_repo_gate", "bare_indicators"), "bare-indicators";
+    let y = Pe(E);
+    if (y === E) break;
+    switch (S(y)) {
+      case "trusted":
+        return g("git_bare_repo_gate"), !1;
+      case "plantable":
+        return "gitdir-redirect-plantable";
+      case "oversized":
+        return "gitdir-file-oversized";
+      case "none":
+        break
+    }
+    E = y
+  }
+  return g("git_bare_repo_gate"), !1
+}
+class ur {
+  guards = null;
+  setGuards(e) {
+    this.guards = e
+  }
+  blocked() {
+    if (!this.guards) return !0;
+    try {
+      return !this.guards.trustProbe()
+    } catch {
+      return !0
+    }
+  }
+}
+var Dxo = new W(() => new ur);
+import {
+  open as Bs
+} from "fs/promises";
+import {
+  join as Hs
+} from "path";
+var dr = 65536,
+  Gs = 4096,
+  ke = 10,
+  Ks = 32,
+  gr = 94,
+  Ws = 35,
+  $s = /^[0-9a-f]+$/;
+async function pr(e, n) {
+  let r = Buffer.from(n, "utf-8"),
+    o = r.length,
+    s = Buffer.allocUnsafe(dr + 1),
+    l, u = 0,
+    f = 0,
+    p = 0,
+    h = 0,
+    w = 0,
+    S = 0,
+    E = 0,
+    y = 0,
+    v = 0,
+    I = 0,
+    b = 0,
+    F = 0,
+    C;
+  try {
+    l = await Bs(Hs(e, "packed-refs"), "r"), u = (await l.stat()).size, p = u;
+    while (f < p) {
+      if (h = f + Math.floor((p - f) / 2), S = Math.max(f, h - Gs), E = (await l.read(s, 0, Math.min(dr, u - S), S)).bytesRead, w = h - S, w >= E) return null;
+      if (s[E] = ke, y = w > 0 ? s.lastIndexOf(ke, w - 1) + 1 : 0, y > 1 && s[y] === gr) y = s.lastIndexOf(ke, y - 2) + 1;
+      if (s[y] === Ws) {
+        b = s.indexOf(ke, y), f = S + (b < 0 || b >= E ? E : b + 1);
+        continue
+      }
+      if (v === 0) v = y + 40 < E && s[y + 40] === Ks ? 40 : 64;
+      if (I = y + v + 1, I >= E) return null;
+      if (F = s.compare(r, 0, o, I, Math.min(I + o, E)), F === 0) {
+        if (I + o < E && s[I + o] !== ke) {
+          p = S + y;
+          continue
+        }
+        return C = s.toString("ascii", y, y + v), $s.test(C) ? C : null
+      }
+      if (F < 0) {
+        if (b = s.indexOf(ke, w), b < 0 || b >= E) b = E - 1;
+        if (b + 1 < E && s[b + 1] === gr) {
+          if (b = s.indexOf(ke, b + 1), b < 0 || b >= E) b = E - 1
+        }
+        f = S + b + 1
+      } else p = S + y
+    }
+    return null
+  } catch {
+    return null
+  } finally {
+    await l?.close()
+  }
+}
+
+function xSt() {
+  um().gitDirByCwd.clear()
+}
+async function RC(e) {
+  let n = e ?? (Ct() ? Vs() : ol());
+  if (n === null) return null;
+  let r = ue(n),
+    o = um().gitDirByCwd.get(r);
+  if (o !== void 0) return o;
+  return Rr(r, fr(r))
+}
+async function _2n(e) {
+  let n = ue(e);
+  return Rr(n, tg(n))
+}
+async function Rr(e, n) {
+  let r = um().gitDirByCwd;
+  if (!n) return r.set(e, null), null;
+  let o = T(n, ".git");
+  try {
+    if ((await He(o)).isFile()) {
+      let l = await yN(o, Xpe, {
+        sniffEncoding: !0,
+        withBytes: !0
+      });
+      if (l === null || l.truncated) return r.set(e, null), null;
+      let u = l.content.trim();
+      if (u.startsWith("gitdir:")) {
+        let f = u.slice(7).trim();
+        if (ca(f, n)) return r.set(e, null), null;
+        let p = ue(n, f);
+        if (ye(f, n)) return r.set(e, null), null;
+        return r.set(e, p), p
+      }
+    }
+    return r.set(e, o), o
+  } catch {
+    return r.set(e, null), null
+  }
+}
+
+function kt(e) {
+  try {
+    let n = Xs(e);
+    if (n.isSymbolicLink()) return "symlink";
+    return n.isFile() ? "file" : n.isDirectory() ? "dir" : "special"
+  } catch (n) {
+    let r = k(n);
+    return r === "ENOENT" || r === "ENOTDIR" ? "absent" : "other"
+  }
+}
+
+function qpe(e) {
+  try {
+    let n = Zs(e, {
+        encoding: "buffer"
+      }),
+      r = n.toString("utf-8");
+    if (r.includes("\x00") || !Buffer.from(r, "utf-8").equals(n)) return null;
+    return r
+  } catch {
+    return null
+  }
+}
+
+function JV(e, n) {
+  if (!Ge(e, n)) return !0;
+  let r = kt(e);
+  return r === "symlink" || r === "special" || r === "other"
+}
+
+function aa(e, n) {
+  let r = oa(n, e);
+  return !(r === "" || r.startsWith("..") || ia(r))
+}
+
+function zO(e, n) {
+  if (!aa(e, n)) return !0;
+  return !Ge(e, n)
+}
+
+function la(e, n) {
+  return ca(e, n)
+}
+var ua = /[/\\]+/,
+  da = /[\\/]$/,
+  Pr = /^(?:[/\\]|[A-Za-z]:[/\\])/,
+  fa = /^(?:[/\\]{2}[^/\\]+[/\\][^/\\]+[/\\]?|[A-Za-z]:[/\\]|[/\\])/;
+
+function Ge(e, n, r = 40, o = n, s = !1, l, u = Number.POSITIVE_INFINITY, f) {
+  if (r <= 0) return !1;
+  let p = fa.exec(e),
+    h = p ? p[0] : "",
+    w = e.slice(h.length).split(ua),
+    S = Math.min(u, w.length);
+  for (let E = 0; E < w.length; E++) {
+    let y = w[E];
+    if (y === "" || y === ".") continue;
+    if (y === "..") {
+      if (h = Oe(h), l && E >= w.length - S) l.missingTail = null;
+      continue
+    }
+    if (h = T(h, y), UH(h, o) || BH(h)) return !1;
+    let v = f ? mr(f.kinds, h, kt) : kt(h);
+    if (l && l.stoppedAt === void 0 && (v === "absent" || v === "other" || v === "special" && !s)) l.stoppedAt = {
+      path: h,
+      kind: v
+    };
+    if (v === "other" || v === "special" && !s) return !1;
+    if (v === "absent" && l && l.missingTail === void 0) l.missingTail = E >= w.length - S ? w.length - E : null;
+    if (v === "symlink") {
+      if (l) l.throughLink = !0;
+      let I = f ? mr(f.linkTexts, h, qpe) : qpe(h);
+      if (I === null) return !1;
+      if (la(I, Oe(h))) return !1;
+      let b = Pr.test(I) ? I : Oe(h) + rt + I,
+        F = w.slice(E + 1).join(rt),
+        C = F ? da.test(b) ? b + F : b + rt + F : b;
+      return Ge(C, n, r - 1, o, s, l, Math.min(S, w.length - E - 1), f)
+    }
+  }
+  if (l && l.missingTail === void 0) l.missingTail = 0;
+  return !0
+}
+
+function b2n() {
+  return {
+    kinds: new Map,
+    linkTexts: new Map
+  }
+}
+
+function mr(e, n, r) {
+  let o = e.get(n);
+  if (o === void 0 && !e.has(n)) o = r(n), e.set(n, o);
+  return o
+}
+
+function ye(e, n, r = n, o = !1, s, l) {
+  let u = Pr.test(e) ? e : n + rt + e,
+    f = ue(n, e),
+    p = f === u ? s : void 0;
+  if (s && !p) s.throughLink = !0;
+  if (!Ge(u, n, void 0, r, o, p, void 0, l)) {
+    if (s) s.missingTail = null;
+    return !0
+  }
+  if (f === u) return !1;
+  if (s) s.missingTail = null;
+  return !Ge(f, n, void 0, r, o, void 0, void 0, l)
+}
+
+function A_(e, n, r = n) {
+  return ye(e, n, r)
+}
+
+function ydn(e, n, r) {
+  let o = {
+    missingTail: void 0
+  };
+  return {
+    unsafe: ye(e, n, n, !1, o, r),
+    missingTail: o.missingTail ?? null,
+    stoppedAt: o.stoppedAt,
+    throughLink: o.throughLink ?? !1
+  }
+}
+
+function lxe(e, n) {
+  return ye(e, n, n, !0)
+}
+
+function S5(e) {
+  return /^[0-9a-f]{40}$/.test(e) || /^[0-9a-f]{64}$/.test(e)
+}
+async function Ype(e) {
+  try {
+    if (zO(T(e, "HEAD"), e)) return null;
+    let n = (await We(T(e, "HEAD"), "utf-8")).trim();
+    if (n.startsWith("ref:")) {
+      let r = n.slice(4).trim();
+      if (r === vr) {
+        let s = await Fe(e, ["symbolic-ref", "-q", "--no-recurse", "HEAD"]);
+        if (s?.exitCode === 1) {
+          let l = await w5(e, "HEAD");
+          return l ? {
+            type: "detached",
+            sha: l
+          } : null
+        }
+        if (s === null || s.code !== 0) return null;
+        r = s.stdout.trim()
+      }
+      if (r.startsWith("refs/heads/")) {
+        let s = r.slice(11);
+        if (!eE(s)) return null;
+        return {
+          type: "branch",
+          name: s
+        }
+      }
+      if (!eE(r)) return null;
+      let o = await w5(e, r);
+      return o ? {
+        type: "detached",
+        sha: o
+      } : {
+        type: "detached",
+        sha: ""
+      }
+    }
+    if (!S5(n)) return null;
+    return {
+      type: "detached",
+      sha: n
+    }
+  } catch {
+    return null
+  }
+}
+async function w5(e, n, r = 5) {
+  if (r <= 0) return null;
+  if (await G1t(e)) {
+    if (n !== "HEAD" && (!n.startsWith("refs/") || !eE(n))) return null;
+    let l = await Fe(e, ["show-ref", "--verify", "--hash", "--end-of-options", n]),
+      u = l?.code === 0 ? l.stdout.trim() : null;
+    return u !== null && S5(u) ? u : null
+  }
+  let o = await hr(e, n, r);
+  if (o) return o;
+  let s = await YU(e);
+  if (s && s !== e) return hr(s, n, r);
+  return null
+}
+async function hr(e, n, r) {
+  try {
+    if (zO(T(e, n), e)) return null;
+    let o = (await We(T(e, n), "utf-8")).trim();
+    if (o.startsWith("ref:")) {
+      let s = o.slice(4).trim();
+      if (!eE(s)) return null;
+      return w5(e, s, r - 1)
+    }
+    if (!S5(o)) return null;
+    return o
+  } catch {}
+  if (zO(T(e, "packed-refs"), e)) return null;
+  return pr(e, n)
+}
+var Xpe = 65536;
+async function YU(e) {
+  try {
+    if (JV(T(e, "commondir"), e)) return null;
+    let n = await yN(T(e, "commondir"), Xpe, {
+      sniffEncoding: !0,
+      withBytes: !0
+    });
+    if (n === null || n.truncated) return null;
+    let r = n.content.trim();
+    if (ca(r, e)) return null;
+    if (ye(r, e)) return null;
+    return ue(e, r)
+  } catch {
+    return null
+  }
+}
+async function kr(e, n, r) {
+  if (await G1t(e)) {
+    if (!n.startsWith("refs/") || !eE(n)) return null;
+    let o = await Fe(e, ["symbolic-ref", "-q", "--no-recurse", "--end-of-options", n]),
+      s = o?.code === 0 ? o.stdout.trim() : "";
+    if (!s.startsWith(r)) return null;
+    let l = s.slice(r.length);
+    return eE(l) ? l : null
+  }
+  try {
+    if (zO(T(e, n), e)) return null;
+    let o = (await We(T(e, n), "utf-8")).trim();
+    if (o.startsWith("ref:")) {
+      let s = o.slice(4).trim();
+      if (s.startsWith(r)) {
+        let l = s.slice(r.length);
+        if (!eE(l)) return null;
+        return l
+      }
+    }
+  } catch {}
+  return null
+}
+var vr = "refs/heads/.invalid",
+  ga = 5000,
+  pa = 3;
+
+function it() {
+  return Dxo.of(H().host).blocked()
+}
+async function G1t(e) {
+  if (zO(T(e, "HEAD"), e)) return !1;
+  try {
+    let n = (await We(T(e, "HEAD"), "utf-8")).trim();
+    return n.startsWith("ref:") && n.slice(4).trim() === vr
+  } catch {
+    return !1
+  }
+}
+async function Fe(e, n) {
+  if (it()) return null;
+  let r = await YU(e) ?? e,
+    o = Vs(),
+    s = o === null ? null : await RC(o);
+  if (s === null) return null;
+  let [l, u, f] = await Promise.all([ot(e), ot(r), ot(await YU(s) ?? s)]);
+  if (l === null || u === null || f === null || l !== u && Oe(l) !== T(u, "worktrees")) return null;
+  let [p, h, w] = await Promise.all([He(u, {
+    bigint: !0
+  }).catch(() => null), He(f, {
+    bigint: !0
+  }).catch(() => null), He(Oe(u), {
+    bigint: !0
+  }).catch(() => null)]);
+  if (p === null || !p.isDirectory()) return null;
+  if (!(w !== null && p.dev !== 0n && !sa(p.ino) && !(p.dev === w.dev && p.ino === w.ino) ? h !== null && p.dev === h.dev && p.ino === h.ino : u === f)) return null;
+  let y = await lt(Pt(), [...yn, ...n], {
+    cwd: l,
+    timeout: ga,
+    preserveOutputOnError: !1,
+    env: ys(void 0, {
+      repository: {
+        gitDir: l,
+        commonDir: u,
+        workTree: null
+      }
+    })
+  });
+  if (y.exitCode === void 0) oe().noteInconclusiveRefRead();
+  return y
+}
+var nt = 1000,
+  ma = 60000,
+  ha = 200,
+  ya = 100;
+async function yr(e) {
+  try {
+    let {
+      dev: n,
+      ino: r,
+      size: o,
+      mtimeNs: s,
+      ctimeNs: l,
+      birthtimeNs: u
+    } = await He(e, {
+      bigint: !0
+    });
+    return `${n}:${r}:${o}:${s}:${l}:${u}`
+  } catch {
+    return "absent"
+  }
+}
+class Ir {
+  gitDir = null;
+  commonDir = null;
+  initialized = !1;
+  initPromise = null;
+  watchedFiles = [];
+  filesCheckedOnRead = new Set;
+  lastCheckMs = Number.NEGATIVE_INFINITY;
+  checkUnderWay = void 0;
+  mustCheckAgain = !1;
+  checkFilesNow = () => {
+    this.checkFiles("now")
+  };
+  repoHeadWatches = new Map;
+  stateChangeTimers = new Set;
+  branchRefPath = null;
+  reftable = !1;
+  generation = 0;
+  cache = new Map;
+  computing = new Map;
+  inconclusiveRefReads = 0;
+  retriesLeft = new Map;
+  stateChanged = De();
+  repoBranches = new Map;
+  repoWatchers = new Map;
+  repoBranchListeners = [];
+  async ensureStarted() {
+    if (this.initialized) return;
+    if (this.initPromise) return this.initPromise;
+    return this.initPromise = this.start(), this.initPromise
+  }
+  cleanupHandle = null;
+  async start() {
+    let e = this.generation;
+    if (Ct()) {
+      this.gitDir = null, this.initialized = !0;
+      return
+    }
+    let n = await RC(),
+      r = n !== null && await G1t(n);
+    if (e !== this.generation) return;
+    if (this.gitDir = n, this.reftable = r, this.initialized = !0, !this.cleanupHandle) this.cleanupHandle = vt(async () => {
+      this.stopWatching()
+    });
+    if (!this.gitDir) return;
+    let o = await YU(this.gitDir);
+    if (e !== this.generation) return;
+    if (this.commonDir = o, this.watchPath(T(this.gitDir, "HEAD"), this.gitDir, () => {
+        this.onHeadChanged()
+      }), this.watchPath(T(this.commonDir ?? this.gitDir, "config"), this.commonDir ?? this.gitDir, () => {
+        this.invalidate()
+      }), this.watchPath(T(this.commonDir ?? this.gitDir, "refs", "remotes", "origin", "HEAD"), this.commonDir ?? this.gitDir, () => {
+        this.invalidate()
+      }), this.reftable) {
+      if (this.watchPath(T(this.gitDir, "reftable", "tables.list"), this.gitDir, () => {
+          this.onHeadChanged()
+        }), this.commonDir && this.commonDir !== this.gitDir) this.watchPath(T(this.commonDir, "reftable", "tables.list"), this.commonDir, () => {
+        this.invalidate()
+      })
+    }
+    await this.watchCurrentBranchRef()
+  }
+  watchPath(e, n, r) {
+    if (zO(e, n)) return;
+    this.watchedFiles.push({
+      path: e,
+      stop: this.watchFile(e, r)
+    })
+  }
+  watchFile(e, n) {
+    if (gdn()) {
+      let o = {
+        path: e,
+        onChange: n,
+        seen: yr(e)
+      };
+      return this.filesCheckedOnRead.add(o), () => this.filesCheckedOnRead.delete(o)
+    }
+    let r = y2n(e, {
+      interval: nt
+    }, n);
+    return () => ta(e, r)
+  }
+  checkFiles(e) {
+    if (this.checkUnderWay) return this.mustCheckAgain ||= e === "now", this.checkUnderWay;
+    if (this.filesCheckedOnRead.size === 0 || e === "ifDue" && performance.now() - this.lastCheckMs < nt) return;
+    this.lastCheckMs = performance.now();
+    let n = new Map;
+    for (let {
+        path: o
+      }
+      of this.filesCheckedOnRead)
+      if (!n.has(o)) n.set(o, yr(o));
+    let r = Promise.all(Array.from(this.filesCheckedOnRead, (o) => this.reportIfChanged(o, n.get(o.path)))).then(() => {
+      if (this.checkUnderWay = void 0, this.mustCheckAgain) this.mustCheckAgain = !1, this.checkFilesNow()
+    });
+    return this.checkUnderWay = we(r, ya), this.checkUnderWay
+  }
+  async reportIfChanged(e, n) {
+    let [r, o] = await Promise.all([e.seen, n]);
+    if (o === r || !this.filesCheckedOnRead.has(e)) return;
+    e.seen = n;
+    try {
+      e.onChange()
+    } catch (s) {
+      a(s)
+    }
+  }
+  async watchCurrentBranchRef() {
+    if (!this.gitDir) return;
+    let e = this.generation,
+      n = this.reftable ? null : await Ype(this.gitDir);
+    if (e !== this.generation) return;
+    let r = this.commonDir ?? this.gitDir,
+      o = n?.type === "branch" ? T(r, "refs", "heads", n.name) : null;
+    if (o === this.branchRefPath) return;
+    if (this.branchRefPath) {
+      for (let {
+          path: s,
+          stop: l
+        }
+        of this.watchedFiles)
+        if (s === this.branchRefPath) l();
+      this.watchedFiles = this.watchedFiles.filter((s) => s.path !== this.branchRefPath)
+    }
+    if (this.branchRefPath = o, !o) return;
+    this.watchPath(o, r, () => {
+      this.invalidate()
+    })
+  }
+  async onHeadChanged() {
+    this.invalidate(), await oKn();
+    let e = this.branchRefPath;
+    if (await this.watchCurrentBranchRef(), this.branchRefPath !== e && this.filesCheckedOnRead.size > 0) await Promise.all(Array.from(this.filesCheckedOnRead, (n) => n.seen)), this.invalidate()
+  }
+  invalidate() {
+    for (let e of this.cache.values()) e.dirty = !0;
+    this.computing.clear(), this.retriesLeft.clear(), this.stateChanged.emit()
+  }
+  onStateChange(e) {
+    let n = this.stateChanged.subscribe(e);
+    if (!gdn()) return n;
+    let r = setInterval(this.checkFilesNow, nt);
+    return r.unref(), this.stateChangeTimers.add(r), () => {
+      clearInterval(r), this.stateChangeTimers.delete(r), n()
+    }
+  }
+  stopWatching() {
+    for (let {
+        stop: e
+      }
+      of this.watchedFiles) e();
+    for (let {
+        stop: e
+      }
+      of this.repoWatchers.values()) e();
+    for (let e of this.repoHeadWatches.values()) e.close();
+    this.repoHeadWatches.clear(), this.watchedFiles = [], this.branchRefPath = null
+  }
+  async get(e, n) {
+    for (;;) {
+      let r = this.generation;
+      await this.ensureStarted();
+      let o = this.checkFiles("ifDue");
+      if (o) await o;
+      let s = this.cache.get(e);
+      if (s && !s.dirty) return s.value;
+      let l = s ? void 0 : this.computing.get(e);
+      if (l?.generation === r && !(l.awaitedTrust && !(this.reftable && it()))) {
+        let y = await l.value;
+        if (r !== this.generation) continue;
+        return y
+      }
+      if (s) s.dirty = !1;
+      let u = this.reftable && it(),
+        f = this.inconclusiveRefReads,
+        p = n(),
+        h = {
+          generation: r,
+          awaitedTrust: u,
+          value: p
+        };
+      this.computing.set(e, h);
+      let w;
+      try {
+        w = await p
+      } finally {
+        if (this.computing.get(e) === h) this.computing.delete(e)
+      }
+      if (r !== this.generation) continue;
+      let S = u || this.retryAfterNoAnswer(e, f),
+        E = this.cache.get(e);
+      if (E && !E.dirty) E.value = w, E.dirty = S;
+      if (!E) this.cache.set(e, {
+        value: w,
+        dirty: S
+      });
+      return w
+    }
+  }
+  async getDefaultBranchIfKnownAnchored() {
+    let e = await this.get("defaultBranchIfKnown", this.computeDefaultBranchIfKnownAnchored);
+    if (e === null) return e;
+    let n = this.commonDir ?? this.gitDir;
+    if (n && await w5(n, `refs/remotes/origin/${e}`)) return e;
+    let r = this.cache.get("defaultBranchIfKnown");
+    if (r) r.dirty = !0;
+    return this.get("defaultBranchIfKnown", this.computeDefaultBranchIfKnownAnchored)
+  }
+  computeDefaultBranchIfKnownAnchored = async () => {
+    let e = this.gitDir;
+    if (!e) return null;
+    let n = this.commonDir ?? e,
+      r = await kr(n, "refs/remotes/origin/HEAD", "refs/remotes/origin/");
+    if (r && await w5(n, `refs/remotes/origin/${r}`)) return r;
+    return null
+  };
+  async addRepo(e) {
+    if (this.repoWatchers.has(e)) return;
+    let n = await RC(e);
+    if (!n) return;
+    let r = await G1t(n);
+    if (this.repoWatchers.has(e)) return;
+    let o = r ? T(n, "reftable", "tables.list") : T(n, "HEAD");
+    if (zO(o, n)) return;
+    let s = this.watchFile(o, () => {
+      this.repoBranches.delete(e), this.retriesLeft.delete(`repo:${e}`);
+      for (let l of this.repoBranchListeners) l()
+    });
+    if (gdn() && !this.repoHeadWatches.has(o)) this.repoHeadWatches.set(o, new hFr(o, {
+      fallbackPollMs: nt,
+      safetyPollMs: ma,
+      settleMs: ha,
+      label: "git_head"
+    }, this.checkFilesNow));
+    this.repoWatchers.set(e, {
+      gitDir: n,
+      headPath: o,
+      stop: s,
+      reftable: r
+    })
+  }
+  removeRepo(e) {
+    let n = this.repoWatchers.get(e);
+    if (!n) return;
+    n.stop(), this.repoWatchers.delete(e), this.repoBranches.delete(e), this.retriesLeft.delete(`repo:${e}`)
+  }
+  onRepoBranchChange(e) {
+    return this.repoBranchListeners.push(e), () => {
+      let n = this.repoBranchListeners.indexOf(e);
+      if (n !== -1) this.repoBranchListeners.splice(n, 1)
+    }
+  }
+  async getBranchForRepo(e) {
+    let n = this.checkFiles("ifDue");
+    if (n) await n;
+    if (this.repoBranches.has(e)) return this.repoBranches.get(e);
+    let r = this.repoWatchers.get(e);
+    if (!r) return;
+    let o = r.reftable && it(),
+      s = this.inconclusiveRefReads,
+      l = await Ype(r.gitDir),
+      u = l?.type === "branch" ? l.name : null;
+    if (!o && !this.retryAfterNoAnswer(`repo:${e}`, s)) this.repoBranches.set(e, u);
+    return u
+  }
+  noteInconclusiveRefRead() {
+    this.inconclusiveRefReads++
+  }
+  retryAfterNoAnswer(e, n) {
+    if (this.inconclusiveRefReads === n) return !1;
+    let r = this.retriesLeft.get(e) ?? pa;
+    if (r === 0) return !1;
+    return this.retriesLeft.set(e, r - 1), !0
+  }
+  reset() {
+    this.generation++, this.stopWatching(), this.cleanupHandle?.(), this.cleanupHandle = null, this.cache.clear(), this.computing.clear(), this.retriesLeft.clear(), this.stateChanged.clear();
+    for (let e of this.stateChangeTimers) clearInterval(e);
+    this.stateChangeTimers.clear(), this.lastCheckMs = Number.NEGATIVE_INFINITY, this.checkUnderWay = void 0, this.mustCheckAgain = !1, this.repoBranches.clear(), this.repoWatchers.clear(), this.repoBranchListeners = [], this.initialized = !1, this.initPromise = null, this.gitDir = null, this.commonDir = null, this.reftable = !1
+  }
+  reanchor() {
+    this.generation++;
+    for (let {
+        stop: e
+      }
+      of this.watchedFiles) e();
+    this.watchedFiles = [], this.branchRefPath = null, this.cache.clear(), this.computing.clear(), this.retriesLeft.clear(), this.initialized = !1, this.initPromise = null, this.gitDir = null, this.commonDir = null, this.reftable = !1
+  }
+}
+var ba = new W(() => new Ir);
+
+function oe() {
+  return ba.of(H().host)
+}
+async function wa() {
+  let e = await RC();
+  if (!e) return "";
+  let n = await Ype(e);
+  if (!n) return "";
+  if (n.type === "branch") return await w5(e, `refs/heads/${n.name}`) ?? "";
+  return n.sha
+}
+async function st(e) {
+  if (zO(T(e, "config"), e)) return null;
+  return await u2n(e, "remote", "origin", "pushurl") || await u2n(e, "remote", "origin", "url")
+}
+async function Ea() {
+  let e = await RC();
+  if (!e) return null;
+  let n = await st(e);
+  if (n) return n;
+  let r = await YU(e);
+  if (r && r !== e) return st(r);
+  return null
+}
+var S2n = ["main", "master"];
+async function _a() {
+  let e = await RC();
+  if (!e) return "main";
+  let n = await YU(e) ?? e,
+    r = await kr(n, "refs/remotes/origin/HEAD", "refs/remotes/origin/");
+  if (r && await w5(n, `refs/remotes/origin/${r}`)) return r;
+  for (let o of S2n)
+    if (await w5(n, `refs/remotes/origin/${o}`)) return o;
+  return "main"
+}
+
+function Tta() {
+  return oe().get("branch", () => Lxo())
+}
+
+function gFr() {
+  return oe().get("head", wa)
+}
+
+function WBs() {
+  return oe().get("remoteUrl", Ea)
+}
+
+function Cta() {
+  return oe().get("defaultBranch", _a)
+}
+
+function Rta() {
+  return oe().getDefaultBranchIfKnownAnchored()
+}
+
+function zBs(e) {
+  return oe().addRepo(e)
+}
+
+function wva(e) {
+  oe().removeRepo(e)
+}
+
+function GBs(e) {
+  return oe().onRepoBranchChange(e)
+}
+
+function VBs(e) {
+  let n = oe();
+  return n.ensureStarted(), n.onStateChange(e)
+}
+
+function KBs(e) {
+  return oe().getBranchForRepo(e)
+}
+
+function qBs() {
+  oe().reset()
+}
+
+function ZJ() {
+  oe().reanchor()
+}
+async function _dn(e) {
+  let n = await RC(e);
+  if (!n) return null;
+  let r = await Ype(n);
+  if (!r) return null;
+  if (r.type === "branch") return w5(n, `refs/heads/${r.name}`);
+  return r.sha
+}
+async function Lxo(e) {
+  let n = await RC(e);
+  if (!n) return "HEAD";
+  let r = await Ype(n);
+  return r?.type === "branch" ? r.name : "HEAD"
+}
+var at = new Map,
+  Ra = 4096,
+  xr = /^commit(?: \((?:amend|initial|merge|cherry-pick|rebase)\))?: /;
+async function Pa(e) {
+  if (zO(T(e, "logs", "HEAD"), e)) return null;
+  try {
+    let n = await Sr(T(e, "logs", "HEAD"));
+    return n.isFile() ? n.size : null
+  } catch (n) {
+    let r = k(n);
+    return r === "ENOENT" || r === "ENOTDIR" ? 0 : null
+  }
+}
+async function YBs(e) {
+  if (Ct()) return;
+  let n;
+  try {
+    let r = await RC(e);
+    if (r === null) return;
+    if (lxe(r, e)) return;
+    let o = qs(r),
+      s = at.get(o) ?? new Set;
+    n = {
+      gitDir: r,
+      realGitDir: o,
+      size: 0,
+      overlapped: s.size > 0
+    };
+    for (let u of s) u.overlapped = !0;
+    if (at.set(o, s.add(n)), await G1t(r)) {
+      let u = await Ar(r, 1);
+      if (u === void 0) {
+        w2n(n);
+        return
+      }
+      return n.reftableNewest = u[0]?.key ?? null, n
+    }
+    let l = await Pa(r);
+    if (l === null) {
+      w2n(n);
+      return
+    }
+    return n.size = l, n
+  } catch {
+    if (n !== void 0) w2n(n);
+    return
+  }
+}
+
+function w2n(e) {
+  for (let [n, r] of at)
+    if (r.delete(e)) {
+      if (r.size === 0) at.delete(n);
+      return
+    }
+}
+async function XBs(e) {
+  if (e.reftableNewest !== void 0) return ka(e, e.reftableNewest);
+  let n = T(e.gitDir, "logs", "HEAD");
+  if (e.overlapped || zO(n, e.gitDir)) return;
+  let r = await yN(n, Ra, {
+    noFollow: !0,
+    fromTail: !0,
+    requireNlink1: !0,
+    verifyHandlePath: (p) => p === T(e.realGitDir, "logs", "HEAD")
+  });
+  if (r === null || r === "unreadable" || r.end <= e.size || !r.content.endsWith(`
+`)) return;
+  let o = r.content.slice(0, -1),
+    s = o.slice(o.lastIndexOf(`
+`) + 1);
+  if (s.includes("\uFFFD") || r.end - Buffer.byteLength(s) - 1 !== e.size) return;
+  let l = s.indexOf("\t");
+  if (l === -1) return;
+  let [u = "", f = ""] = s.slice(0, l).split(" ");
+  if (!S5(u) || !S5(f) || u === f || !xr.test(s.slice(l + 1))) return;
+  return Cr(e, f)
+}
+async function ka(e, n) {
+  if (e.overlapped) return;
+  let r = await Ar(e.gitDir, 2),
+    [o, s] = r ?? [];
+  if (o === void 0 || o.key === n || (s?.key ?? null) !== n || o.id === s?.id || !xr.test(o.subject)) return;
+  return Cr(e, o.id)
+}
+async function Cr(e, n) {
+  let r = await Ype(e.gitDir);
+  if ((r?.type === "branch" ? await w5(e.gitDir, `refs/heads/${r.name}`) : r?.sha) !== n || e.overlapped) return;
+  return {
+    commitId: n,
+    ...r?.type === "branch" && {
+      branch: r.name
+    }
+  }
+}
+async function Ar(e, n) {
+  let r = await Fe(e, ["log", "--walk-reflogs", `--max-count=${n}`, "--no-show-signature", "--no-mailmap", "--no-decorate", "--no-color", "--date=raw", "--format=%H%x09%gd%x09%gs", "HEAD", "--"]);
+  if (r === null || r.exitCode === void 0) return;
+  if (r.code !== 0) {
+    let s = await Fe(e, ["symbolic-ref", "-q", "HEAD"]),
+      l = s?.code === 0 ? s.stdout.trim() : "";
+    if (!l.startsWith("refs/heads/") || !eE(l)) return;
+    return (await Fe(e, ["show-ref", "--exists", "--end-of-options", l]))?.exitCode === 2 ? [] : void 0
+  }
+  let o = [];
+  for (let s of r.stdout.split(`
+`)) {
+    if (s === "") continue;
+    let [l = "", u = "", ...f] = s.split("\t");
+    if (!S5(l) || u === "") return;
+    o.push({
+      key: s,
+      id: l,
+      subject: f.join("\t")
+    })
+  }
+  return o
+}
+async function JBs(e, n) {
+  if (q()) return {
+    repo: !0,
+    sha: null
+  };
+  let r = ue(e),
+    o = fr(r),
+    s = En(ue(n));
+  if (o === null || !Wp(s, o, {
+      alreadyComparable: !0
+    })) return await br(r, s) ? {
+    repo: !1
+  } : {
+    repo: !0,
+    sha: null
+  };
+  let [l, u] = await Promise.all([Er(s), Er(o)]);
+  if (l === null || u === null || !Wp(l, u, {
+      alreadyComparable: !0
+    })) return {
+    repo: !0,
+    sha: null
+  };
+  let f = await RC(r);
+  if (f !== null && await Or(T(f, "HEAD"))) {
+    if (await br(r, s, o)) return {
+      repo: !1
+    };
+    return {
+      repo: !0,
+      sha: null
+    }
+  }
+  return {
+    repo: !0,
+    sha: await _dn(r)
+  }
+}
+async function br(e, n, r) {
+  let o = e;
+  for (;;) {
+    let s = En(o);
+    if (s !== r && !await Or(T(o, ".git"))) return !1;
+    let l = Oe(o);
+    if (s === n || l === o) return !0;
+    o = l
+  }
+}
+async function Or(e) {
+  try {
+    return await Sr(e), !1
+  } catch (n) {
+    let r = k(n);
+    return r === "ENOENT" || r === "ENOTDIR"
+  }
+}
+async function Er(e) {
+  let n = await ot(e);
+  return n === null ? null : En(n)
+}
+async function ot(e) {
+  try {
+    return await ra(e)
+  } catch {
+    return null
+  }
+}
+async function yFr(e) {
+  let n;
+  try {
+    if (JV(T(e, ".git"), e)) return null;
+    let o = (await We(T(e, ".git"), "utf-8")).trim();
+    if (!o.startsWith("gitdir:")) return null;
+    let s = o.slice(7).trim();
+    if (ca(s, e)) return null;
+    if (ye(s, e)) return null;
+    n = ue(e, s)
+  } catch {
+    return null
+  }
+  let r = await Ype(n);
+  if (!r) return null;
+  if (r.type === "branch") return w5(n, `refs/heads/${r.name}`);
+  return r.sha
+}
+async function Jpe(e) {
+  let n = await RC(e);
+  if (!n) return null;
+  return Nxo(n)
+}
+async function Nxo(e, n) {
+  let r = await st(e);
+  if (r) return r;
+  let o = n ?? await YU(e);
+  if (o && o !== e) return st(o);
+  return null
+}
+
+function kva(e) {
+  let n = va(e);
+  if (!n) return null;
+  let r = _r(n);
+  if (r) return r;
+  let o = Ia(n);
+  return o && o !== n ? _r(o) : null
+}
+
+function va(e) {
+  let n = ue(e),
+    r = um().gitDirByCwd.get(n);
+  if (r !== void 0) return r;
+  let o = fr(n);
+  if (!o) return null;
+  let s = T(o, ".git");
+  try {
+    if (!ea(s).isFile()) return s;
+    let l = Qpe(s, Xpe)?.trim();
+    if (l === void 0 || !l.startsWith("gitdir:")) return l === void 0 ? null : s;
+    let u = l.slice(7).trim();
+    return ca(u, o) || ye(u, o) ? null : ue(o, u)
+  } catch {
+    return null
+  }
+}
+
+function Ia(e) {
+  try {
+    if (JV(T(e, "commondir"), e)) return null;
+    let n = Qpe(T(e, "commondir"), Xpe)?.trim();
+    return n === void 0 || ca(n, e) || ye(n, e) ? null : ue(e, n)
+  } catch {
+    return null
+  }
+}
+var bdn = 1e6;
+
+function _r(e) {
+  let n = T(e, "config");
+  if (zO(n, e)) return null;
+  let r = Qpe(n, bdn);
+  if (r === void 0 || pwe(r)) return null;
+  return wSt(r, "remote", "origin", "pushurl") || wSt(r, "remote", "origin", "url")
+}
+
+function Qpe(e, n) {
+  let r;
+  try {
+    r = Js(e, Ys.O_RDONLY | n$e);
+    let o = zs(r);
+    if (!o.isFile() || o.size > n) return;
+    let s = Buffer.allocUnsafe(n + 1),
+      l = 0;
+    while (l < s.length) {
+      let u = Qs(r, s, l, s.length - l, l);
+      if (u === 0) break;
+      l += u
+    }
+    return l > n ? void 0 : s.toString("utf-8", 0, l)
+  } catch {
+    return
+  } finally {
+    if (r !== void 0) Us(r)
+  }
+}
+async function Ata() {
+  try {
+    let e = await RC();
+    if (!e) return 0;
+    let n = await YU(e) ?? e;
+    if (zO(T(n, "worktrees"), n)) return 1;
+    return (await na(T(n, "worktrees"))).length + 1
+  } catch {
+    return 1
+  }
+}
+export {
+  B1t,
+  lFr,
+  ita,
+  Rxo,
+  CBs,
+  aP,
+  dFr,
+  $te,
+  RBs,
+  cFr,
+  ata,
+  eg,
+  fdn,
+  uFr,
+  lta,
+  dta,
+  ABs,
+  xBs,
+  Axo,
+  cta,
+  j1t,
+  Vpe,
+  SSt,
+  um,
+  tnt,
+  s2n,
+  i2n,
+  a2n,
+  l2n,
+  PBs,
+  d2n,
+  c2n,
+  OBs,
+  xxo,
+  pwe,
+  u2n,
+  wSt,
+  IBs,
+  uta,
+  fta,
+  pta,
+  mta,
+  hta,
+  kSt,
+  Q4,
+  Pxo,
+  fFr,
+  aae,
+  Ow,
+  vSt,
+  pFr,
+  gta,
+  f2n,
+  JJ,
+  ESt,
+  yta,
+  mFr,
+  MBs,
+  _ta,
+  bta,
+  DBs,
+  Sta,
+  LBs,
+  p2n,
+  W1t,
+  vqe,
+  wta,
+  TC,
+  ai,
+  TSt,
+  Oxo,
+  NBs,
+  Z4,
+  Ixo,
+  pdn,
+  FBs,
+  Iw,
+  m2n,
+  nnt,
+  HBs,
+  mdn,
+  Eqe,
+  iG,
+  hdn,
+  CSt,
+  lae,
+  rnt,
+  RSt,
+  JS,
+  aG,
+  $Bs,
+  axe,
+  jR,
+  h2n,
+  Kpe,
+  CT,
+  CC,
+  XV,
+  z1t,
+  QJ,
+  _M,
+  g2n,
+  mwe,
+  UBs,
+  kta,
+  Mxo,
+  vta,
+  BBs,
+  Eta,
+  jBs,
+  yN,
+  ASt,
+  y2n,
+  gdn,
+  hFr,
+  Dxo,
+  xSt,
+  RC,
+  _2n,
+  qpe,
+  JV,
+  zO,
+  b2n,
+  A_,
+  ydn,
+  lxe,
+  S5,
+  Ype,
+  w5,
+  Xpe,
+  YU,
+  G1t,
+  S2n,
+  Tta,
+  gFr,
+  WBs,
+  Cta,
+  Rta,
+  zBs,
+  wva,
+  GBs,
+  VBs,
+  KBs,
+  qBs,
+  ZJ,
+  _dn,
+  Lxo,
+  YBs,
+  w2n,
+  XBs,
+  JBs,
+  yFr,
+  Jpe,
+  Nxo,
+  kva,
+  bdn,
+  Qpe,
+  Ata,
+  fr,
+  tg,
+  Fxo,
+  ty,
+  k2n,
+  V1t,
+  Gi,
+  CH,
+  QBs,
+  Hxo,
+  eY,
+  ZBs,
+  e1s,
+  Sdn,
+  t1s,
+  Pt,
+  RH,
+  wdn,
+  $xo,
+  Ute,
+  n1s,
+  kdn,
+  Qu,
+  v2n,
+  bM,
+  Uxo,
+  _Fr,
+  Bxo,
+  E2n,
+  T2n,
+  Tqe,
+  dxe,
+  jxo,
+  vdn,
+  PSt,
+  ont,
+  dae,
+  r1s,
+  K1t,
+  vva,
+  fpa,
+  Eva,
+  o1s,
+  ppa,
+  s1s,
+  Edn,
+  OSt,
+  Tdn,
+  Wxo,
+  i1s,
+  bFr,
+  zxo,
+  ISt
+};

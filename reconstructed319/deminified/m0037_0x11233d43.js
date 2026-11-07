@@ -1,0 +1,993 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { E4e } from "B:/~BUN/root/chunk-wt4dg253.js";
+import { K } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { J } from "B:/~BUN/root/chunk-r5zmhp23.js";
+import { he } from "B:/~BUN/root/chunk-fet34rqr.js";
+import { lstatSync as _t, readFileSync as D, readlinkSync as Z, realpath as ft, realpathSync as X, statSync as Q } from "fs";
+import { readlink as Pt } from "fs/promises";
+var S4e = /[.\s]+$/,
+  EKs = /\.(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])$/i,
+  F$r = /~\d/;
+function FE(t) {
+  let n = t.indexOf("."),
+    e = (n === -1 ? t : t.slice(0, n)).replace(/ +$/, "");
+  return /^(con|prn|aux|nul|com[0-9\u00B9\u00B2\u00B3]|lpt[0-9\u00B9\u00B2\u00B3])$/i.test(e);
+}
+function H$r(t) {
+  return S4e.test(t) || EKs.test(t);
+}
+function lqn(t) {
+  return /^(?=[^.]{3,8}(?:\.|$))[^.]{1,6}~[0-9]{1,6}(?:\.[^.]{1,3})?$/.test(t);
+}
+function $$r(t) {
+  return lqn(t.replace(/\u0307/g, ""));
+}
+function qwt(t) {
+  return Array.from(t, n => {
+    let e = n.toUpperCase();
+    return [...e].length === 1 ? e : n;
+  }).join("").toLowerCase();
+}
+function mWt(t) {
+  let n = qwt(t);
+  return n === "users" || n === "documents and settings" || n === "dokumente und einstellungen" || /^do[ck]ume~[0-9]+$/.test(n);
+}
+function yt(t) {
+  if (t.length < 3 || !mWt(t[0])) return;
+  let n = Tt.get(t[2]) ?? Nt.find(([e]) => e.test(t[2]))?.[1];
+  return n === void 0 ? void 0 : [...t.slice(0, 2), ...n, ...t.slice(3)];
+}
+function U$r(t) {
+  return qwt(t).split("/").filter(Boolean);
+}
+function MIo(t) {
+  let n = U$r(t),
+    e = yt(n);
+  return e === void 0 ? [n] : [n, e];
+}
+function B$r(t, n) {
+  let e = MIo(n);
+  return MIo(t).flatMap(item => e.flatMap(o => item.length <= o.length && item.every((item, index) => Et(index, item, o[index])) ? [o.slice(item.length)] : []));
+}
+var Tt = new Map([["my documents", ["documents"]], ["application data", ["appdata", "roaming"]], ["local settings", ["appdata", "local"]]]),
+  Nt = [[/^mydocu~[0-9]+$/, ["documents"]], [/^applic~[0-9]+$/, ["appdata", "roaming"]], [/^locals~[0-9]+$/, ["appdata", "local"]]];
+function Et(t, n, e) {
+  return DIo(n, e) || t === 0 && mWt(n) && mWt(e);
+}
+function DIo(t, n) {
+  return t === n || $$r(t) || $$r(n);
+}
+function j$r(t) {
+  let n = t.replace(/(?!^)[\\/]+/g, "\\").replace(/^[\\/]\?\?(?=[\\/])/, "\\\\?").replace(/^[\\/]{2}[?.][\\/]UNC(?=[\\/])/i, "\\");
+  return t.startsWith("\\\\?\\") ? n : n.replace(/^([\\/]{2}[?.][\\/][a-z]:)[. ]+(?=[\\/]|$)/i, "$1");
+}
+var TKs = /^[\\/]{2}(?:wsl\.localhost|wsl\$)[\\/][^\\/]+[\\/]mnt[\\/]([a-z])(?=$|[\\/])/i,
+  vt = /^[\\/]{2}[^\\/]+[\\/]([a-z])\$[. ]*(?=$|[\\/])/i;
+function Roa(t) {
+  if (!/^[\\/](?:[\\/]|\?\?[\\/])/.test(t)) return t;
+  let n = j$r(t),
+    e = vt.exec(n) ?? TKs.exec(n);
+  if (e === null) return P$e(n);
+  let r = n.slice(e[0].length);
+  return `${e[1]}:${r === "" ? "\\" : r}`;
+}
+var Ot = 32767;
+function Aoa(t) {
+  if (t.length > Ot) return "named";
+  if (/^[\\/](?![\\/]|\?\?[\\/])/.test(t)) return "current";
+  return /^[\\/]{2}(?:[?.][\\/](?!(?:[a-z]:[. ]*|UNC)(?:[\\/]|$))|;)/i.test(t) || /^(?!\\\\\?\\)[\\/]{2}[?.][\\/].*[\\/]\.\.[. ]*(?:[\\/]|$)/s.test(t) ? "unknown" : "named";
+}
+function xoa(t, n, e, r, o) {
+  return (o === "unknown" ? [...t.keys()] : [0]).filter(item => n.every((s, index) => t[index + item] === s || o !== "named" && index === 0 && /^[a-z]$/.test(s) || index < n.length - 1 && DIo(t[index + item] ?? "", s) || s === e && r?.test(t[index + item] ?? "") === !0)).map(item => n.length + item);
+}
+function P$e(t) {
+  let n = /^[\\/]{2}(?:[?.][\\/]([A-Za-z]):|(?:localhost|127\.0\.0\.1)[\\/]([A-Za-z])\$)(?=$|[\\/])/i.exec(t);
+  if (n === null) return t;
+  let e = t.slice(n[0].length);
+  return `${n[1] ?? n[2]}:${e === "" ? "\\" : e}`;
+}
+import { homedir as Y } from "os";
+import { basename as F, dirname as f, isAbsolute as x, join as B, parse as E, relative as j, resolve as g, sep as d } from "path";
+import * as V from "path";
+function En(t) {
+  return t;
+}
+function or(t) {
+  return /^[\\/]{2}/.test(t) || R0(t);
+}
+function th(t) {
+  return /(^|[\\/])\.\.([\\/]|$)/.test(t);
+}
+function Oc(t) {
+  return !1;
+}
+function W$r() {
+  return Oc(E4e ?? "");
+}
+function yS(t) {
+  return /^[\\/]\?\?[\\/]/.test(t);
+}
+function SP(t) {
+  if (/^[\\/]{2}[?.][\\/](?!unc[\\/])/i.test(t)) return null;
+  return t.match(/^[\\/]{2}(?:[?.][\\/]unc[\\/])?([^\\/]+)/i)?.[1]?.replace(/[A-Z]/g, n => n.toLowerCase()) ?? null;
+}
+function bl(t) {
+  return /(^|[\\/])\.{1,2}[. ]*([\\/]|$)/.test(t);
+}
+function O$e(t) {
+  return t.split(/[/\\]/).some(item => /^\.\. [ .]*$/.test(item));
+}
+function LIo(t, n = "win32") {
+  return n === "win32" ? /(^|[\\/])\.{1,2}([\\/]|$)/.test(t) : /(^|\/)\.{1,2}(\/|$)/.test(t);
+}
+function CG(t) {
+  return bl(t);
+}
+function NC(t) {
+  return /^[\\/]{2}[?.][\\/]/.test(t);
+}
+function Bb(t) {
+  if (!/\/\.(?:vol|file|nofollow|resolve)(?:\/|$)/i.test(t)) return !1;
+  if (!t.startsWith("/")) return !1;
+  let n = [];
+  for (let e of t.split("/")) {
+    if (e === "" || e === ".") continue;
+    if (e === "..") {
+      n.pop();
+      continue;
+    }
+    if (n.push(e), n.length === 1 && /^\.(?:vol|file|nofollow|resolve)$/i.test(e)) return !0;
+  }
+  return !1;
+}
+function NIo(t) {
+  return /^[\\/](GLOBAL\?\?|GLOBALROOT|DosDevices|Device)[\\/]/i.test(t);
+}
+function R7(t, n) {
+  if (!or(t)) return !1;
+  if (NC(t) || R0(t)) return !0;
+  if (bl(t)) return !0;
+  let e = SP(t);
+  return e === null || e !== SP(n);
+}
+function A(t) {
+  return t.length === 2 && MT(t[0]) === "net" || t.length === 3 && MT(t[0]) === "network" && MT(t[1]) === "servers";
+}
+function iK(t) {
+  return null;
+}
+function b(t) {
+  return t.replace(/[A-Z]/g, n => n.toLowerCase());
+}
+function MT(t) {
+  return t.replace(/[\u200c-\u200f\u202a-\u202e\u206a-\u206f\ufeff]/g, "").toUpperCase().toLowerCase();
+}
+function dqn(t, n = "win32") {
+  let e = t.split("/");
+  if (e[0] !== "") return t;
+  let r, o;
+  if (n === "darwin" ? A(e.slice(1, 3)) : e[1] === "net" && e.length >= 3) r = "/net/", o = 2;else if (n === "darwin" && A(e.slice(1, 4))) r = "/Network/Servers/", o = 3;else return t;
+  let i = e[o];
+  if (i === void 0 || i === "") return t;
+  let s = e.slice(o + 1);
+  return r + b(i).replace(/\.$/, "") + (s.length > 0 ? "/" + s.join("/") : "");
+}
+function z$r(t) {
+  let n = /^([\\/]{2,})([A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*)\.(?=[\\/]|$)/.exec(t);
+  if (n === null || n[2].toLowerCase() === "wsl.localhost") return t;
+  return n[1][0].repeat(2) + n[2] + t.slice(n[1].length + n[2].length + 1);
+}
+function UH(t, n) {
+  if (Bb(t)) return !0;
+  if (Ba(t)) {
+    let e = iK(t);
+    if (e === null || e !== iK(n)) return !0;
+  }
+  return FIo(t, n);
+}
+function ca(t, n) {
+  let e = g(n, t);
+  if (R7(t, n) || R7(e, n)) return !0;
+  let r = iK(n);
+  for (let o of [t, e]) {
+    if (Ba(o)) {
+      let i = iK(o);
+      if (i === null || i !== r) return !0;
+    }
+    if (BH(o) || Xv(o) || Bb(o) || FIo(o, n)) return !0;
+  }
+  return !1;
+}
+function FIo(t, n, e = "win32", r = e === "darwin" && !0) {
+  if (e !== "darwin" || !fB(t, e, r)) return !1;
+  let o = G(n, e, r).complete[0] ?? null,
+    {
+      complete: complete,
+      partial: partial
+    } = G(t, e, r);
+  if (complete.length === 0 && partial.length === 0) return !0;
+  if (o === null) return !0;
+  return complete.some(item => item !== o) || partial.some(item => !o.startsWith(item));
+}
+var Zt = he({
+  value: void 0
+}, t => {
+  t.value = void 0;
+});
+var Rt = 6;
+function G(t, n, e) {
+  let complete_2 = [],
+    partial_2 = [];
+  if (!t.startsWith("/")) return {
+    complete: complete_2,
+    partial: partial_2
+  };
+  let i = [];
+  for (let s of t.split("/")) {
+    if (s === "" || s === ".") continue;
+    if (s === "..") {
+      i.pop();
+      continue;
+    }
+    if (i.push(s), i.length > Rt) continue;
+    let u = "/" + i.join("/"),
+      l = (n === "darwin" ? T0(u) : u).split("/").filter(item => item !== ""),
+      w = l[0]?.toLowerCase();
+    if (w === "network") {
+      if (l.length === 1) partial_2.push("/network/");else if (l.length === 2) partial_2.push(`/network/${b(l[1])}/`);else if (l.length === 3) complete_2.push(`/network/${b(l[1])}/${b(l[2])}`);
+    } else if (e && w === "home" && l.length === 2) complete_2.push(`/home/${l[1]}`);
+  }
+  return {
+    complete: complete_2,
+    partial: partial_2
+  };
+}
+function Ba(t) {
+  return !1;
+}
+function Poa() {
+  try {
+    let t = D("/proc/self/mountinfo", "utf8").split(`
+`).findLast(o => o.split(" ")[4] === "/net"),
+      [n, e, r] = t?.split(" - ")[1]?.split(" ") ?? [];
+    return n === "autofs" && (e === "-hosts" || /(?:^|\/)auto\.(?:net|smb)$/.test(e ?? "")) && r?.split(",").includes("indirect") === !0;
+  } catch {
+    return !1;
+  }
+}
+function Ooa() {
+  try {
+    return D("/proc/self/mountinfo", "utf8").split(`
+`).flatMap(item => {
+      let [n, e] = item.split(" - "),
+        r = n?.split(" ")[4];
+      return r !== void 0 && e?.startsWith("autofs ") === !0 ? [r.replace(/\\([0-7]{3})/g, (o, i) => String.fromCharCode(Number.parseInt(i, 8)))] : [];
+    });
+  } catch {
+    return;
+  }
+}
+function Ioa() {
+  try {
+    return D("/etc/auto_master", "utf8").split(`
+`).some(item => {
+      let n = item.replace(/#.*$/, "").trim().split(/\s+/);
+      return n[0]?.toLowerCase() === "/net" && n[1] === "-hosts";
+    }) && Q("/net").dev !== Q("/Users").dev;
+  } catch {
+    return !1;
+  }
+}
+function Moa() {
+  try {
+    return D("/etc/resolv.conf", "utf8").split(`
+`).map(item => item.replace(/[#;].*$/, "").trim().split(/\s+/)).findLast(([t]) => t === "search" || t === "domain")?.slice(1).map(t => b(t.replace(/\.$/, ""))) ?? [];
+  } catch (error) {
+    return K(error) ? [] : void 0;
+  }
+}
+function RG(t) {
+  return !1;
+}
+function Sl(t) {
+  return or(t) || Ba(t) || HE(t) || Bb(t);
+}
+function lb(t) {
+  return Ba(t) || HE(t) || Xv(t) || Bb(t);
+}
+function Cl(t) {
+  return Qxe(t) !== null;
+}
+var gt = 1024,
+  pt = 4096,
+  P = new Map(),
+  R = new Map();
+function Qxe(t) {
+  if (!t.startsWith("/")) return null;
+  if (t.length > pt) return tt(t);
+  let n = P.get(t);
+  if (n === void 0) {
+    if (n = tt(t), P.size >= gt) P.clear();
+    P.set(t, n);
+  }
+  return n;
+}
+function tt(t) {
+  let n = [];
+  for (let e of t.split("/")) {
+    if (e === "" || e === ".") continue;
+    if (e === "..") {
+      n.pop();
+      continue;
+    }
+    if (n.push(e), A(n)) return "/" + n.join("/");
+  }
+  return null;
+}
+function Doa(t) {
+  let n = Qxe(t);
+  return n === null ? null : n.slice(n.lastIndexOf("/") + 1);
+}
+var Ct = /^([\\/]{2}(?:wsl\.localhost|wsl\$)[\\/]+[^\\/]+)((?:[\\/].*)?)$/i;
+function oun(t) {
+  let n = Ct.exec(t);
+  return n === null ? void 0 : {
+    prefix: n[1],
+    rest: n[2] ?? ""
+  };
+}
+function Xv(t) {
+  if (!t.startsWith("/")) return !1;
+  let n = [];
+  for (let e of t.split("/")) {
+    if (e === "" || e === ".") continue;
+    if (e === "..") {
+      n.pop();
+      continue;
+    }
+    n.push(e);
+  }
+  return n.length === 1 && n[0].toLowerCase() === "net";
+}
+function BH(t) {
+  if (!t.startsWith("/")) return !1;
+  if (t.length > pt) return nt(t);
+  let n = R.get(t);
+  if (n === void 0) {
+    if (n = nt(t), R.size >= gt) R.clear();
+    R.set(t, n);
+  }
+  return n;
+}
+function nt(t) {
+  let n = [];
+  for (let e of t.split("/")) {
+    if (e === "" || e === ".") continue;
+    if (e === "..") {
+      n.pop();
+      continue;
+    }
+    if (n.push(e), n.length === 1 && n[0].toLowerCase() === "network") return !0;
+  }
+  return !1;
+}
+function HE(t) {
+  return !1;
+}
+function jb(t) {
+  return Cl(t) || Xv(t) || BH(t) || Bb(t);
+}
+function hWt(t, n, e = null) {
+  let r = kY(t),
+    o = kY(n);
+  if (!r && !o) return !1;
+  if (r && !o) return !0;
+  if (!r && o) {
+    let l = e === null || or(e) ? null : iK(e),
+      w = or(n) ? null : U(n);
+    if (l !== null && w !== null && l === w) return !1;
+    if (e !== null && or(e) && or(n) && !R7(n, e)) return !1;
+    return !0;
+  }
+  let i = or(t) ? null : U(t),
+    s = or(n) ? null : U(n);
+  if (i !== null || s !== null) return i === null || s === null || i !== s;
+  let u = SP(t),
+    a = SP(n);
+  if (u !== null || a !== null) return u === null || a === null || u !== a;
+  return t !== n;
+}
+function U(t) {
+  return BH(t) ? null : iK(t);
+}
+function fB(t, n = "win32", e = n === "darwin" && !0) {
+  if (n !== "darwin") return !1;
+  if (BH(t) || Bb(t)) return !0;
+  if (!t.startsWith("/")) return !1;
+  let {
+    complete: complete_3,
+    partial: partial_3
+  } = G(t, n, e);
+  if (partial_3.length > 0) return !0;
+  if (complete_3.some(item => item.startsWith("/network/"))) return !0;
+  let i = complete_3.filter(item => item.startsWith("/home/"));
+  if (i.length > 0) {
+    let s = Lt();
+    if (i.some(item => item !== s)) return !0;
+  }
+  return !1;
+}
+function Lt() {
+  let t;
+  try {
+    t = Y();
+  } catch {
+    return null;
+  }
+  let n = /^\/home\/([^/]+)/.exec(T0(t));
+  return n ? `/home/${n[1]}` : null;
+}
+function kY(t) {
+  return cqn(t) || BH(t);
+}
+function cqn(t) {
+  return Ks(t) || Cl(t) || Xv(t) || NC(t) || R0(t) || NIo(t) || Bb(t);
+}
+function uqn(t) {
+  let n = t.split("/").filter(Boolean);
+  if (n.length === 0) return t;
+  let e = n.at(-1);
+  return "/" + [...n.slice(0, -1).map(MT), b(e)].join("/");
+}
+function crt(t) {
+  if (!t.startsWith("/")) return [];
+  let n = [],
+    e = [];
+  for (let r of t.split("/")) {
+    if (r === "" || r === ".") continue;
+    if (r === "..") {
+      e.pop();
+      continue;
+    }
+    if (e.push(r), A(e)) n.push(uqn("/" + e.join("/")));
+  }
+  return n;
+}
+function ad(t) {
+  let n = /^[\\/]{2}wsl(?:\$|\.localhost)[\\/]([^\\/]*)/i.exec(t);
+  return n !== null && !/^\.{0,2}[. ]*$/.test(n[1] ?? "");
+}
+function Ks(t) {
+  return or(t) && !ad(t);
+}
+function Df(t) {
+  if (dt(t)) return Y() + t.slice(1);
+  return t;
+}
+function fqn(t, n) {
+  if (dt(t)) return n + t.slice(1);
+  return t;
+}
+function dt(t) {
+  return t === "~" || t.startsWith("~/") || t.startsWith("~\\");
+}
+function $N(t) {
+  for (let n = 0; n < t.length; n++) {
+    let e = t[n];
+    if (e === "*" || e === "?") return n;
+    if (e === "[" && t.indexOf("]", n + 1) !== -1) return n;
+  }
+  return -1;
+}
+function Jv(t) {
+  if (t.startsWith("\\\\?\\UNC\\")) return "\\\\" + t.slice(8);
+  if (t.startsWith("\\\\?\\") && t.length >= 7 && t[5] === ":") return t.slice(4);
+  return t;
+}
+function xM(t) {
+  if (jH(t)) {
+    let n = Jv(t).replace(/^([\\/])[\\/]+/, "$1");
+    for (let e = 0; e < kt && R0(n); e++) {
+      n = At(n).replace(/^([\\/])[\\/]+/, "$1");
+      let r = 1;
+      while (n[r] === "?" && n[r + 1] === "?" && (r + 2 === n.length || et(n[r + 2]))) {
+        r += 3;
+        while (et(n[r])) r++;
+      }
+      n = n.slice(0, 1) + n.slice(r);
+    }
+    return R0(n) ? n.slice(0, 1) : n;
+  }
+  return t;
+}
+var kt = 4;
+function et(t) {
+  return t === "\\" || t === "/";
+}
+function jH(t) {
+  if (/^\\\\\?\\volume\{/i.test(t)) return rt(t);
+  if (R0(t)) return !0;
+  let n = Jv(t);
+  if (n !== t && rt(n)) return !0;
+  return or(n) && !ad(n);
+}
+function rt(t) {
+  return bl(t) || t.includes("/");
+}
+function wh(t) {
+  try {
+    return Jv(X.native(t));
+  } catch {
+    return null;
+  }
+}
+async function Ome(t) {
+  return new Promise(n => {
+    try {
+      ft.native(t, (e, r) => {
+        n(e ? null : Jv(r));
+      });
+    } catch {
+      n(null);
+    }
+  });
+}
+function Loa(t) {
+  try {
+    return X(t);
+  } catch {
+    return null;
+  }
+}
+var mt = new Set(["EPERM", "EBUSY", "EACCES"]),
+  q = 4,
+  v = 50,
+  HIo = v * (q - 1),
+  ot;
+function pB(t) {
+  return Zxe(t).real ?? null;
+}
+function gWt(t, n) {
+  let e = g(n).toLowerCase(),
+    r = f(g(t)).toLowerCase();
+  if (r === e || it(r, e) || st(r, e, "lexical")) return !0;
+  let o = pB(n)?.toLowerCase();
+  if (o == null) return !1;
+  let i = pB(f(g(t)))?.toLowerCase();
+  if (i == null) return !0;
+  return i === o || it(i, o) || st(i, o, "canonical");
+}
+var Dt = new Set(["node_modules", ".venv", "venv", "env", ".env", "virtualenv", ".tox", ".nox", ".direnv", "__pypackages__"]);
+function it(t, n) {
+  if (!t.startsWith(L(n) + d)) return !1;
+  return t.split(d).some(item => Dt.has(item));
+}
+function L(t) {
+  return t.endsWith(d) ? t.slice(0, -1) : t;
+}
+var H;
+function st(t, n, e) {
+  let r = Y(),
+    o = (process.env.LOCALAPPDATA ?? "").trim();
+  if (e === "lexical") return z(ut(r, o, a => g(a).toLowerCase()), t, n);
+  let key = r + "\x00" + o;
+  if (H?.key === key) return z(H.aliasDirs, t, n);
+  let s = !0,
+    aliasDirs = ut(r, o, a => {
+      if (!CKs(a)) return g(a).toLowerCase();
+      let l = pB(a)?.toLowerCase();
+      if (l == null) return s = !1, g(a).toLowerCase();
+      return l;
+    });
+  if (s) H = {
+    key: key,
+    aliasDirs: aliasDirs
+  };
+  return z(aliasDirs, t, n);
+}
+function ut(t, n, e) {
+  let r = [];
+  if (t) r.push(L(e(t)) + d + ["appdata", "local", "microsoft", "windowsapps"].join(d));
+  if (n) {
+    let o = L(e(n)) + d + ["microsoft", "windowsapps"].join(d);
+    if (!r.includes(o)) r.push(o);
+  }
+  return r;
+}
+function CKs(t) {
+  return /^[A-Za-z]:[\\/](?![\\/])/.test(t);
+}
+function z(t, n, e) {
+  let r = L(e);
+  for (let o of t) {
+    if (!(o === r || o.startsWith(r + d))) continue;
+    if (n === o || n.startsWith(o + d)) return !0;
+  }
+  return !1;
+}
+var $t = ["usr/local", "usr/libexec/cups", "usr/share/snmp", "AppleInternal", "Applications", "Library", "Users", "Volumes", "cores", "home", "media", "mnt", "opt", "pkg", "private", "sw"];
+function T0(t) {
+  let n = t.split("/");
+  if (n.length < 5 || n[0] !== "" || N(n[1] ?? "") !== "system" || N(n[2] ?? "") !== "volumes" || N(n[3] ?? "") !== "data") return t;
+  let e = n.slice(4);
+  for (let r of $t) {
+    let o = r.split("/");
+    if (e.length < o.length) continue;
+    if (o.every((item, index) => N(e[index] ?? "") === N(item))) return "/" + e.join("/");
+  }
+  return t;
+}
+function N(t) {
+  return t.toUpperCase().toLowerCase();
+}
+function I$e(t) {
+  return F(f(t)) === "worktrees" && F(f(f(t))) === ".claude" ? f(f(f(t))) : null;
+}
+function q5(t, {
+  allowLocalWsl = !1
+} = {}) {
+  let e = i => allowLocalWsl && Ywt(i);
+  if (e(t)) return !1;
+  if (DT(t)) return !0;
+  let r = Vae(t);
+  if (!x(r) || /^[\\/](?![\\/])/.test(r)) return !0;
+  if (M$e(r, {
+    allowLocalWsl: allowLocalWsl
+  })) return !0;
+  let o = g(r);
+  for (;;) {
+    let i = Zxe(o);
+    if (i.real !== void 0) return DT(i.real) && !e(i.real);
+    if (i.code !== "ENOENT" && i.code !== "ENOTDIR") return !0;
+    let s = f(o);
+    if (s === o) return !1;
+    o = s;
+  }
+}
+function Ywt(t) {
+  let n = Vae(t);
+  return ad(n) && !bl(n);
+}
+function yWt(t) {
+  return t.replace(/^([\\/]{2})wsl\$(?=[\\/])/i, "$1wsl.localhost");
+}
+var Mt = /^\/mnt\/[a-z](?:\/|$)/i;
+function G$r(t, n, e = "") {
+  if (!t.startsWith("/") || Mt.test(t) || LIo(t, "linux")) return;
+  let r = e === "" ? t : t.startsWith(e + "/") ? t.slice(e.length) : void 0;
+  return r === void 0 ? void 0 : n.replace(/[\\/]+$/, "") + r.replace(/\//g, "\\");
+}
+function V$r(t, {
+  exactDots = !1
+} = {}) {
+  if (exactDots ? LIo(t, "linux") : bl(t)) return;
+  let e = /^\/mnt\/([A-Za-z])\/+(.+)$/.exec(t);
+  if (!e) return;
+  let r = e[2].replace(/\/+$/, "").replace(/\//g, "\\");
+  return r === "" || St(r) ? void 0 : `${e[1].toUpperCase()}:\\${r}`;
+}
+function K$r(t, {
+  exactDots: exactDots_2 = !1
+} = {}) {
+  let e = Vae(t);
+  return;
+}
+function Noa(t) {
+  return DT(t) && !Ywt(t);
+}
+function DT(t) {
+  let n = Vae(t);
+  return AKs(n) || jb(n) || NIo(n);
+}
+function $Io(t, {
+  allowLocalWsl: allowLocalWsl_2 = !1,
+  eisdirIsFolder = !1
+} = {}) {
+  let r = Vae(t);
+  if (!x(r)) return !0;
+  let {
+    root: root
+  } = E(r);
+  return S(root, w4e(r.slice(root.length)), 0, allowLocalWsl_2, {
+    eisdirIsFolder: eisdirIsFolder
+  });
+}
+function sun(trustedRoot, n) {
+  return S(trustedRoot, w4e(n), 0, !1, {
+    trustedStart: !0,
+    trustedRoot: trustedRoot
+  });
+}
+function q$r(t, trustedRoot_2 = f(t)) {
+  let e = O(() => Z(t));
+  if (e.value === void 0) return e.code !== "ENOENT" && e.code !== "EINVAL";
+  let r = e.value;
+  if (ht(r)) return !0;
+  let o = /^[\\/](?![\\/])/.test(r);
+  if (o && bl(r)) return !0;
+  let i = o ? B(E(trustedRoot_2).root, r) : r,
+    s = {
+      trustedStart: !0,
+      trustedRoot: trustedRoot_2
+    };
+  if (x(i)) {
+    let l = j(trustedRoot_2, i);
+    if (!bl(i) && l !== "" && !at(l) && !x(l)) return S(trustedRoot_2, w4e(l), 1, !1, s);
+    return DT(i) || M$e(i);
+  }
+  if (DT(i)) return !0;
+  let u = j(trustedRoot_2, f(t)),
+    a = !at(u) && !x(u);
+  return S(a ? trustedRoot_2 : f(t), [...(a ? w4e(u) : []), ...w4e(i)], 1, !1, s);
+}
+function M$e(t, n = {}) {
+  return $Io(t, n) || bl(t) && $Io(g(t), n);
+}
+var lt = 40;
+function RKs(t) {
+  let n = pB(t);
+  return n !== null && !C0(n);
+}
+function w4e(t) {
+  return t.split(/[\\/]+/).filter(Boolean);
+}
+function C(t, n) {
+  return DT(t) && !(n && Ywt(t));
+}
+function at(t) {
+  return t === ".." || /^\.\.[\\/]/.test(t);
+}
+function ht(t) {
+  return /^[A-Za-z]:(?![\\/])/.test(t);
+}
+function S(t, n, e, r, {
+  trustedStart = !1,
+  trustedRoot: trustedRoot_3 = t,
+  eisdirIsFolder: eisdirIsFolder_2 = !1
+} = {}) {
+  let u = trustedRoot_3.endsWith(d) ? trustedRoot_3 : trustedRoot_3 + d,
+    a = h => trustedStart && (h === trustedRoot_3 || h.startsWith(u)),
+    l = t;
+  if (!a(l) && C(l, r)) return !0;
+  let w;
+  for (let h = 0; h < n.length; h++) {
+    let W = n[h];
+    if (W === ".") continue;
+    if (W === "..") {
+      l = f(l);
+      continue;
+    }
+    let m = B(l, W);
+    if (!a(m) && C(m, r)) return !0;
+    let y = O(() => _t(m));
+    if (y.value === void 0) {
+      if (y.code !== "ENOENT" && y.code !== "ENOTDIR") return !0;
+      let c = m;
+      for (let T of n.slice(h + 1)) if (c = T === ".." ? f(c) : T === "." ? c : B(c, T), !a(c) && C(c, r)) return !0;
+      return !1;
+    }
+    let _;
+    if (y.value.isSymbolicLink()) {
+      if (e >= lt) return !0;
+      if (_ = O(() => Z(m)).value, _ === void 0) return !0;
+    } else if (y.value.isDirectory()) {
+      let c = iun(m);
+      if (c.kind === "junction") {
+        if (e >= lt) return !0;
+        _ = c.target;
+      } else if (c.kind === "directory") {
+        l = m;
+        continue;
+      } else if (eisdirIsFolder_2 && c.kind === "error" && c.code === "EISDIR" && !Ywt(m) && (w ??= RKs(E(m).root))) {
+        l = m;
+        continue;
+      } else return !0;
+    } else {
+      l = m;
+      continue;
+    }
+    let p = _;
+    if (!(trustedStart && x(p) && !bl(p) && a(p)) && C(p, r)) return !0;
+    let I = n.slice(h + 1);
+    if (ht(p)) return !0;
+    if (x(p)) {
+      if (trustedStart && !bl(p) && a(p)) return S(trustedRoot_3, [...w4e(p.slice(u.length)), ...I], e + 1, r, {
+        trustedStart: !0,
+        trustedRoot: trustedRoot_3,
+        eisdirIsFolder: eisdirIsFolder_2
+      });
+      let c = E(p).root,
+        T = /^[\\/]$/.test(c) ? E(l).root : c;
+      return S(T, [...w4e(p.slice(c.length)), ...I], e + 1, r, {
+        eisdirIsFolder: eisdirIsFolder_2
+      });
+    }
+    return S(l, [...w4e(p), ...I], e + 1, r, {
+      trustedStart: a(l),
+      trustedRoot: trustedRoot_3,
+      eisdirIsFolder: eisdirIsFolder_2
+    });
+  }
+  return !1;
+}
+function Zxe(t) {
+  let n = O(() => Jv(X.native(t)));
+  return {
+    real: n.value,
+    code: n.code
+  };
+}
+async function Foa(t) {
+  let n = await bt(() => new Promise((e, r) => {
+    ft.native(t, (o, i) => {
+      if (o) r(o);else e(Jv(i));
+    });
+  }));
+  return {
+    real: n.value,
+    code: n.code
+  };
+}
+function M(t) {
+  return t != null && typeof t === "object" && "code" in t && typeof t.code === "string" ? t.code : void 0;
+}
+function O(t) {
+  try {
+    return {
+      value: Y$r(t)
+    };
+  } catch (error) {
+    return {
+      code: M(error)
+    };
+  }
+}
+function Y$r(t) {
+  return xt(t, () => !0);
+}
+function UIo(t) {
+  let n = 0;
+  return e => xt(e, () => {
+    if (n + v > t) return !1;
+    return n += v, !0;
+  });
+}
+function xt(t, n) {
+  for (let e = 0;; e++) try {
+    return t();
+  } catch (error) {
+    let o = M(error);
+    if (o === void 0 || !1 || !mt.has(o) || e >= q - 1 || !n()) throw error;
+    ot ??= new Int32Array(new SharedArrayBuffer(4)), Atomics.wait(ot, 0, 0, v);
+  }
+}
+function wt(error_2) {
+  let code = M(error_2);
+  return code === "EINVAL" ? {
+    kind: "directory"
+  } : code === "ENOENT" ? {
+    kind: "absent"
+  } : {
+    kind: "error",
+    code: code,
+    error: error_2
+  };
+}
+function iun(t) {
+  let n,
+    e = O(() => {
+      try {
+        return Z(t);
+      } catch (error) {
+        throw n = error, error;
+      }
+    });
+  return e.value !== void 0 ? {
+    kind: "junction",
+    target: e.value
+  } : wt(n);
+}
+async function pne(t) {
+  let n,
+    e = await bt(async () => {
+      try {
+        return await Pt(t);
+      } catch (error) {
+        throw n = error, error;
+      }
+    });
+  return e.value !== void 0 ? {
+    kind: "junction",
+    target: e.value
+  } : wt(n);
+}
+async function bt(t) {
+  for (let n = 0;; n++) try {
+    return {
+      value: await t()
+    };
+  } catch (error) {
+    let code_2 = M(error);
+    if (code_2 === void 0 || !1 || !mt.has(code_2) || n >= q - 1) return {
+      code: code_2
+    };
+    await J(v);
+  }
+}
+function AKs(t) {
+  return C0(t) || Cl(t);
+}
+function St(t) {
+  return bl(t) || /[. :](?=[\\/]|$)/.test(t) || t.split(/[\\/]/).some(item => FE(item) || FE(item.slice(0, Math.max(0, item.indexOf(":")))));
+}
+function Vae(t) {
+  let n = /^(?:[\\/][\\/][?.][\\/]|[\\/]\?\?[\\/])(?=[A-Za-z]:[\\/])/.exec(t);
+  if (!n) return t;
+  let e = t.slice(n[0].length),
+    r = e.slice(2);
+  return n[0].includes("\\") && r.includes("/") || St(r) ? t : e;
+}
+function nw(t, {
+  foldCase: foldCase,
+  knownNotSuspect = !1
+} = {}) {
+  if (foldCase ??= !0, t = Vae(t), C0(t) || Cl(t)) {
+    let u = yWt(g(yWt(t))).normalize("NFC");
+    return foldCase ? u.toLowerCase() : u;
+  }
+  if (!knownNotSuspect && M$e(x(t) ? t : g(t))) {
+    let u = g(t).normalize("NFC");
+    return foldCase ? u.toLowerCase() : u;
+  }
+  let r = g(t),
+    o = [],
+    i = wh(r);
+  while (i === null && f(r) !== r) o.unshift(F(r)), r = f(r), i = wh(r);
+  i = o.length > 0 ? g(i ?? r, ...o) : i ?? r;
+  let s = yWt(i).normalize("NFC");
+  return foldCase ? s.toLowerCase() : s;
+}
+function Wp(t, n, {
+  alreadyComparable = !1,
+  foldCase: foldCase_2
+} = {}) {
+  let o = j(alreadyComparable ? t : nw(t, {
+    foldCase: foldCase_2
+  }), alreadyComparable ? n : nw(n, {
+    foldCase: foldCase_2
+  }));
+  return o === "" || !x(o) && o !== ".." && !o.startsWith(`..${d}`);
+}
+function ePe(t, n) {
+  let e = wh(t),
+    r = wh(n);
+  return e !== null && r !== null && k(e) === k(r);
+}
+function xKs(t, n) {
+  let e = wh(t),
+    r = wh(n);
+  return e !== null && r !== null && Wt(k(e), k(r), /[\\/]/);
+}
+function Wt(t, n, e) {
+  let regExp = new RegExp(`(?:${e.source})+$`),
+    o = t.replace(regExp, "").split(e),
+    i = n.replace(regExp, "").split(e);
+  return o.length <= i.length && o.every((item, index) => item === i[index]);
+}
+function k(t) {
+  return En(yWt(t));
+}
+function C0(t) {
+  return or(t);
+}
+function R0(t) {
+  return ct.test(t) || t.includes("??") && ct.test(At(t));
+}
+var ct = /^[\\/]\?\?[\\/]/;
+function At(t) {
+  return V.win32 ? V.win32.normalize(t) : t;
+}
+export { S4e, EKs, F$r, FE, H$r, lqn, $$r, qwt, mWt, U$r, MIo, B$r, DIo, j$r, TKs, Roa, Aoa, xoa, P$e, En, or, th, Oc, W$r, yS, SP, bl, O$e, LIo, CG, NC, Bb, NIo, R7, iK, MT, dqn, z$r, UH, ca, FIo, Ba, Poa, Ooa, Ioa, Moa, RG, Sl, lb, Cl, Qxe, Doa, oun, Xv, BH, HE, jb, hWt, fB, kY, cqn, uqn, crt, ad, Ks, Df, fqn, $N, Jv, xM, jH, wh, Ome, Loa, HIo, pB, gWt, CKs, T0, I$e, q5, Ywt, yWt, G$r, V$r, K$r, Noa, DT, $Io, sun, q$r, M$e, RKs, w4e, Zxe, Foa, Y$r, UIo, iun, pne, AKs, Vae, nw, Wp, ePe, xKs, C0, R0 };

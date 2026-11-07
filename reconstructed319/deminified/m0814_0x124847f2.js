@@ -1,0 +1,404 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { q, Du } from "B:/~BUN/root/chunk-game8aqv.js";
+import { f } from "B:/~BUN/root/chunk-drx9cnw1.js";
+import { R, k, ci } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { or, Sl, lb } from "B:/~BUN/root/chunk-h4acfc9y.js";
+import { _o } from "B:/~BUN/root/chunk-rr294jrm.js";
+import { i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { io, ps, ie } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { P } from "B:/~BUN/root/chunk-n8cnxns2.js";
+import { xc, tf } from "B:/~BUN/root/chunk-jdtvghyw.js";
+import { Hp } from "B:/~BUN/root/chunk-65j2302z.js";
+import { lae } from "B:/~BUN/root/chunk-1g25msn4.js";
+import { c } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import { pe } from "B:/~BUN/root/chunk-thn0wk2x.js";
+import { mt } from "B:/~BUN/root/chunk-d10hhz4p.js";
+import { Dqe, kwe } from "B:/~BUN/root/chunk-5xx1vfdh.js";
+import { tn, Hte } from "B:/~BUN/root/chunk-1fg2bpc3.js";
+import { v } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import { rk } from "B:/~BUN/root/chunk-x4zqd4cy.js";
+import { xue, Ly } from "B:/~BUN/root/chunk-j05gjqgd.js";
+import { eee, LSs, pLt } from "B:/~BUN/root/chunk-7vfy9z2g.js";
+import { p4t } from "B:/~BUN/root/chunk-yjbw4jd5.js";
+import { Sci, wci } from "B:/~BUN/root/chunk-a1wccacc.js";
+import { Ja, dGe } from "B:/~BUN/root/chunk-v91d7hbv.js";
+import { iY } from "B:/~BUN/root/chunk-tx4kppkg.js";
+import { stat as L } from "fs/promises";
+import { basename as F, extname as G, isAbsolute as K, join as Q } from "path";
+var Z = 3,
+  ee = 32;
+function Anr(n) {
+  if (i.CLAUDE_CODE_ATTACHMENTS_BY_PATH) return "none";
+  if (n.replBridgeEnabled) return "repl";
+  if (i.CLAUDE_CODE_BRIEF_UPLOAD) return "env_brief_upload";
+  if (i.CLAUDE_CODE_REMOTE_ENVIRONMENT_TYPE) return "env_ccr";
+  if (i.CLAUDE_CODE_REMOTE) return "env_byoc";
+  if (rk() !== null && Du()) return v("tengu_async_goblet", !0) ? "sdk_hosted" : "sdk_hosted_disabled";
+  return "none";
+}
+function xnr(n) {
+  return n === "sdk_hosted" && Hp();
+}
+var te = {
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".gif": "image/gif",
+  ".webp": "image/webp",
+  ".svg": "image/svg+xml",
+  ".bmp": "image/bmp",
+  ".ico": "image/x-icon",
+  ".heic": "image/heic",
+  ".heif": "image/heif",
+  ".avif": "image/avif",
+  ".tif": "image/tiff",
+  ".tiff": "image/tiff",
+  ".mp4": "video/mp4",
+  ".m4v": "video/x-m4v",
+  ".mov": "video/quicktime",
+  ".webm": "video/webm",
+  ".avi": "video/x-msvideo",
+  ".mkv": "video/x-matroska",
+  ".mp3": "audio/mpeg",
+  ".m4a": "audio/mp4",
+  ".wav": "audio/wav",
+  ".ogg": "audio/ogg",
+  ".aac": "audio/aac",
+  ".flac": "audio/flac",
+  ".pdf": "application/pdf",
+  ".txt": "text/plain",
+  ".log": "text/plain",
+  ".md": "text/markdown",
+  ".json": "application/json",
+  ".csv": "text/csv",
+  ".html": "text/html",
+  ".htm": "text/html",
+  ".xml": "application/xml",
+  ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  ".zip": "application/zip"
+};
+function bat(n) {
+  return te[G(n).toLowerCase()];
+}
+function N3o(n) {
+  return n.pathValidated === !0 && n.file_uuid !== void 0 && (n.media_type === "image/png" || n.media_type === "image/jpeg") && n.media_type !== bat(n.path);
+}
+function N(n) {
+  return typeof n !== "string";
+}
+async function ne(n, e, t) {
+  let r = await kwe(e);
+  if (r) return r;
+  if (!K(n)) {
+    let [l, ...u] = n.split(/[\\/]+/);
+    if (l === F(t) && u.length > 0) {
+      let m = Q(t, ...u);
+      try {
+        if ((await L(m)).isFile()) return u.join("/");
+      } catch {}
+    }
+  }
+  return await Dqe(e);
+}
+function F3o(n) {
+  let e = tf(n);
+  if (/^[a-z][a-z0-9+.-]+:\/\//i.test(n)) return {
+    result: !1,
+    message: `Attachment "${e}" looks like a URL, not a local file path. This tool can only send files that exist on the local filesystem \u2014 download or write the content to a local file first, then pass that path.`,
+    errorCode: 1
+  };
+  let t = mt(n);
+  if (or(t)) return {
+    result: !1,
+    message: `Attachment "${e}" is a UNC network path, which is not supported.`,
+    errorCode: 1
+  };
+  if (lb(t)) return {
+    result: !1,
+    message: `Attachment "${e}" is under /net, /Network, /.vol, /.file, /.nofollow or /.resolve, which could trigger a network mount, so it is not supported. Copy the file to an ordinary local path and pass that path instead.`,
+    errorCode: 1
+  };
+  return;
+}
+var message = "A file path cannot be attached here: this tool cannot read files in this session.";
+function Pnr(n, e) {
+  return x(n, e, void 0);
+}
+async function yci(n, e) {
+  if (!e.restricted && e.blockReadsOutsideWorkingDirectories !== !0) return {
+    verdict: await x(n, e, void 0),
+    judged: void 0
+  };
+  let paths = [],
+    identities = new Map();
+  return {
+    verdict: await x(n, e, {
+      paths: paths,
+      identities: identities
+    }),
+    judged: {
+      paths: paths,
+      identities: identities,
+      doorChannel: void 0
+    }
+  };
+}
+async function x(n, e, t) {
+  for (let r of n) {
+    if (N(r)) continue;
+    if (q()) return {
+      result: !1,
+      message: message,
+      errorCode: 1
+    };
+    let l = F3o(r);
+    if (l !== void 0) return l;
+    let u = tf(r),
+      m = mt(r),
+      h = t !== void 0 || e.restricted || e.blockReadsOutsideWorkingDirectories === !0 ? ps(m) : void 0;
+    if (e.restricted && !Ly(m, e, h)) return {
+      result: !1,
+      message: `Attachment "${u}" is outside the working directory; --restricted only sends files from inside it.`,
+      errorCode: 1
+    };
+    if (xue(m, e, h)) return {
+      result: !1,
+      message: `Attachment "${u}" is outside the working directories; reads outside them are blocked (permissions.blockReadsOutsideWorkingDirectories).`,
+      errorCode: 1
+    };
+    try {
+      if (!(await L(m)).isFile()) return {
+        result: !1,
+        message: `Attachment "${u}" is not a regular file.`,
+        errorCode: 1
+      };
+    } catch (error) {
+      let b = k(error);
+      if (b === "ENOENT") {
+        let S = pe(),
+          y = await ne(r, m, S),
+          C = tf(y);
+        return {
+          result: !1,
+          message: `Attachment "${u}" does not exist. Current working directory: ${tf(S)}.` + (y && C === y ? ` Did you mean "${C}"?` : ""),
+          errorCode: 1
+        };
+      }
+      if (ci(error)) return {
+        result: !1,
+        message: `Attachment "${u}" is not accessible (${b}).`,
+        errorCode: 1
+      };
+      throw error;
+    }
+    if (t !== void 0 && h !== void 0) t.paths.push(...h), t.identities.set(m, await lae(h));
+  }
+  return {
+    result: !0
+  };
+}
+async function Onr(n, e) {
+  let t = [],
+    r = [];
+  for (let o of n) {
+    if (N(o)) {
+      t.push({
+        path: o.file_name,
+        size: o.size,
+        isImage: o.is_image,
+        file_uuid: o.file_uuid,
+        media_type: o.media_type ?? bat(o.file_name),
+        pathValidated: !1
+      });
+      continue;
+    }
+    if (q()) throw new R(message, "attachment path refused in a diskless session");
+    let path = mt(o);
+    if (Sl(path)) throw Error(`Attachment "${tf(o)}" is a network path (UNC or /net autofs), which is not supported.`);
+    let p = await L(path).catch(s => {
+      if (s instanceof Error) s.message = tf(s.message);
+      throw s;
+    });
+    r.push(t.length), t.push({
+      path: path,
+      size: p.size,
+      isImage: p4t.test(path),
+      media_type: bat(path),
+      pathValidated: !0
+    });
+  }
+  let {
+      lane: lane
+    } = e,
+    u = _o().projectFilesDoor?.() ?? null,
+    m = u !== null && u.channelId === e.projectFilesChannel ? u : null,
+    h = lane !== "none" && lane !== "sdk_hosted_disabled";
+  if (r.length === 0 || m === null && !h) {
+    for (let o of r) {
+      let d = j(t[o].path, e.judged?.paths);
+      if (typeof d !== "string") t[o] = {
+        ...t[o],
+        upload_error: d.error
+      };
+    }
+    if (Hte()) for (let o of r) t[o] = {
+      ...t[o],
+      upload_error: u === null ? "not delivered: this session is not on a project thread, so it has nowhere to place a file" : "not delivered: the project folder is not written in plan mode until the plan is approved"
+    };
+    return t;
+  }
+  let {
+    readJudged: readJudged,
+    uploadBriefAttachment: uploadBriefAttachment,
+    writeAttachmentToProjectFolder: writeAttachmentToProjectFolder
+  } = await import("B:/~BUN/root/chunk-eb4a97d3.js");
+  if (e.refuseUnsaveableSkills && h) for (let o of r.filter(item => Sci(t[item].path))) {
+    let {
+        path: path_2
+      } = t[o],
+      p = j(path_2, e.judged?.paths),
+      s = typeof p === "string" ? await readJudged(p, D(path_2, e.judged?.identities), e.signal, pLt, () => Promise.resolve()).catch(() => {
+        return;
+      }) : void 0,
+      a = s && wci(path_2, s);
+    if (a) c("bridge_attachment_upload", `unsaveable_skill_${a.rule}`, {
+      upload_lane: f(lane)
+    }), t[o] = {
+      ...t[o],
+      upload_error: `not sent: claude.ai would refuse to save it as a skill, because ${a.why}. Fix the file and send it again; to send it only as a download, give the file a name that is not SKILL.md and does not end in .skill`
+    }, r.splice(r.indexOf(o), 1);
+  }
+  let copyLock = iY(),
+    telemetry = {
+      upload_lane: f(lane)
+    },
+    noPreviewCopies = !v("tengu_playful_panda", !0),
+    noScaledCopies = !v("tengu_level_wren", !0),
+    maxPosts = v("tengu_zany_flask", 2),
+    resendMaxMiB = v("tengu_shimmying_willow", 30),
+    V = tn() && i.CLAUDE_CODE_REMOTE_ENVIRONMENT_TYPE !== "self_hosted" && v("tengu_deep_plum", !0),
+    W = dGe(Z),
+    I = () => {},
+    promise = new Promise(o => {
+      I = o;
+    });
+  e.signal?.addEventListener("abort", I, {
+    once: !0
+  });
+  let X = Ja(ee, async o => {
+      let {
+          path: path_3,
+          size: size
+        } = t[o],
+        s = j(path_3, e.judged?.paths);
+      if (typeof s !== "string") return {
+        folder: {
+          error: s.error
+        },
+        chat: void 0
+      };
+      let filename = F(path_3),
+        identity = D(path_3, e.judged?.identities),
+        A,
+        waitForTurn = async () => {
+          await Promise.race([A ??= W.acquire(), promise]);
+        };
+      try {
+        let [E, T] = await Promise.allSettled([m ? writeAttachmentToProjectFolder(s, size, m, {
+          filename: filename,
+          identity: identity,
+          signal: e.signal,
+          telemetry: telemetry,
+          waitForTurn: waitForTurn
+        }) : void 0, h ? uploadBriefAttachment(s, size, {
+          lane: lane,
+          filename: filename,
+          saysIfReceived: V && /^(image|audio|video)\//.test(bat(filename) ?? ""),
+          identity: identity,
+          signal: e.signal,
+          credentials: e.credentials,
+          copyLock: copyLock,
+          waitForTurn: waitForTurn,
+          originalsOnly: e.originalsOnly,
+          noPreviewCopies: noPreviewCopies,
+          noScaledCopies: noScaledCopies,
+          maxPosts: maxPosts,
+          resendMaxMiB: resendMaxMiB
+        }) : void 0]);
+        if (E.status === "rejected") throw E.reason;
+        if (T.status === "rejected") throw T.reason;
+        return {
+          folder: E.value,
+          chat: T.value
+        };
+      } finally {
+        A?.then(E => E());
+      }
+    }),
+    O = r.map(X);
+  Promise.allSettled(O).then(() => e.signal?.removeEventListener("abort", I));
+  let J = await Promise.all(O);
+  return r.forEach((item, index) => {
+    let {
+        folder: folder,
+        chat: chat
+      } = J[index],
+      a = {
+        ...t[item]
+      };
+    if (typeof folder === "string") a.project_path = folder;
+    if (chat !== void 0 && !("error" in chat)) {
+      if (a.file_uuid = chat.file_uuid, chat.copy !== void 0) a.isImage = chat.copy.isImage, a.media_type = chat.copy.mediaType;
+      if (chat.scaled !== void 0) a.scaled = chat.scaled;
+    }
+    let w = folder !== void 0 && typeof folder !== "string",
+      A = chat !== void 0 && "error" in chat;
+    if (a.project_path === void 0 && a.file_uuid === void 0) {
+      let g = w ? folder : A ? chat : void 0;
+      if (g !== void 0) {
+        if (a.upload_error = g.error, g.errorCode !== void 0) a.upload_error_code = g.errorCode;
+        if (g.suspectedLimitBytes !== void 0) a.upload_suspected_limit_bytes = g.suspectedLimitBytes;
+      }
+    } else if (w) a.partial_error = `not placed in the project folder (${folder.error})`;else if (A) a.partial_error = `not sent to the chat viewers (${LSs(chat.error, chat.errorCode, !0)})`;
+    t[item] = a;
+  }), t;
+}
+function j(n, e) {
+  let {
+    resolvedPath: resolvedPath
+  } = io(ie(), n);
+  if (e === void 0) return resolvedPath;
+  return e.includes(resolvedPath) ? resolvedPath : {
+    error: "not sent: it now resolves to what was not approved"
+  };
+}
+function D(n, e) {
+  return e === void 0 || e.has(n) ? e?.get(n) : null;
+}
+function Inr(n) {
+  let e = n.flatMap(({
+      path: path_4,
+      scaled: scaled,
+      project_path: project_path
+    }) => scaled === void 0 ? [] : [{
+      path: xc(path_4),
+      scaled: scaled,
+      inFolder: project_path !== void 0
+    }]),
+    t = e.length;
+  if (t === 0) return;
+  return `${t} ${P(t, "image was sent to the chat as a scaled-down copy", "images were sent to the chat as scaled-down copies")}, because the server accepts images at most ${eee} pixels wide or tall:
+` + e.map(({
+    path: path_5,
+    scaled: scaled_2,
+    inFolder: inFolder
+  }) => `  ${path_5}: sent at ${scaled_2.width}\xD7${scaled_2.height} pixels; the original (${scaled_2.original_width}\xD7${scaled_2.original_height}) is ${inFolder ? "in the project folder" : "unchanged on disk"}`).join(`
+`) + `
+Tell the user they are seeing ${P(t, "a scaled-down copy", "scaled-down copies")}; ` + (e.every(item => item.inFolder) ? `the project folder has ${P(t, "the full-size original", "the full-size originals")}.` : `if they need ${P(t, "the full-size original", "a full-size original")}, offer to send it inside a .zip.`);
+}
+export { Anr, xnr, bat, N3o, F3o, Pnr, yci, Onr, Inr };

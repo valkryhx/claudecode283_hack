@@ -1,0 +1,1116 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  s,
+  n
+} from "B:/~BUN/root/chunk-qey16aan.js";
+import {
+  de
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  zt
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import {
+  ee
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  pWt
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  P
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  pt
+} from "B:/~BUN/root/chunk-v95bwhaa.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  ID,
+  QNe,
+  _Bn,
+  bBn
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  ks
+} from "B:/~BUN/root/chunk-d10hhz4p.js";
+import {
+  un,
+  qn
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import {
+  ts
+} from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import {
+  XL,
+  pin,
+  CFe,
+  RFe
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  E_e
+} from "B:/~BUN/root/chunk-yhafkw66.js";
+import {
+  Fe
+} from "B:/~BUN/root/chunk-vxjrk7vf.js";
+import {
+  Bot,
+  ym,
+  Lf,
+  $j,
+  EGt,
+  B3n
+} from "B:/~BUN/root/chunk-6twbgvt6.js";
+import {
+  Ze
+} from "B:/~BUN/root/chunk-cpzw87wr.js";
+import {
+  Y
+} from "B:/~BUN/root/chunk-c1v460b9.js";
+import {
+  Tt
+} from "B:/~BUN/root/chunk-dw9hahea.js";
+import {
+  Ce
+} from "B:/~BUN/root/chunk-cync0e08.js";
+import {
+  Ir
+} from "B:/~BUN/root/chunk-39zyvd3e.js";
+import {
+  Jn
+} from "B:/~BUN/root/chunk-yd5nr5hc.js";
+import {
+  H0
+} from "B:/~BUN/root/chunk-t85n63bg.js";
+import {
+  Tn
+} from "B:/~BUN/root/chunk-md70d2gd.js";
+import {
+  So
+} from "B:/~BUN/root/chunk-r9p4g17h.js";
+import {
+  Ys
+} from "B:/~BUN/root/chunk-28bb8488.js";
+import {
+  gt
+} from "B:/~BUN/root/chunk-sx03ea6s.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import {
+  fnr
+} from "B:/~BUN/root/chunk-vy0a90jx.js";
+import {
+  Ho,
+  ko,
+  O,
+  A,
+  y,
+  j
+} from "B:/~BUN/root/chunk-czy5r8bc.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+var k = {
+  AUTH_METHOD: 0,
+  SERVICE_ACCOUNT: 1,
+  PROJECT: 2,
+  REGION: 3,
+  VERIFY: 4,
+  PIN_MODELS: 5,
+  CONFIRM: 6
+};
+
+function te() {
+  let t = S(10),
+    {
+      goBack: o,
+      goToStep: c,
+      updateWizardData: a,
+      wizardData: m
+    } = ym(),
+    h;
+  if (t[0] === w) h = [{
+    label: "Application Default Credentials (gcloud auth)",
+    value: "adc"
+  }, {
+    label: "Service account key file",
+    value: "serviceAccount"
+  }, {
+    label: "Use credentials already in my environment",
+    value: "environment"
+  }], t[0] = h;
+  else h = t[0];
+  let p = h,
+    f;
+  if (t[1] === w) f = {
+    adc: k.PROJECT,
+    serviceAccount: k.SERVICE_ACCOUNT,
+    environment: k.PROJECT
+  }, t[1] = f;
+  else f = t[1];
+  let u = f,
+    R;
+  if (t[2] !== c || t[3] !== a) R = (g) => {
+    let T = g;
+    a({
+      authMethod: T
+    }), c(u[T])
+  }, t[2] = c, t[3] = a, t[4] = R;
+  else R = t[4];
+  let E = R,
+    d;
+  if (t[5] === w) d = e(n, {
+    dimColor: !0,
+    children: "Claude Code uses the standard GCP credential chain. Pick the method you already use with gcloud or in your deployment."
+  }), t[5] = d;
+  else d = t[5];
+  let D;
+  if (t[6] !== o || t[7] !== E || t[8] !== m.authMethod) D = e(Lf, {
+    subtitle: "How do you authenticate to Google Cloud?",
+    children: r(s, {
+      flexDirection: "column",
+      gap: 1,
+      children: [d, e(Ze, {
+        options: p,
+        defaultValue: m.authMethod,
+        onChange: E,
+        onCancel: o
+      })]
+    })
+  }), t[6] = o, t[7] = E, t[8] = m.authMethod, t[9] = D;
+  else D = t[9];
+  return D
+}
+j();
+
+function kt(J) {
+  return J[1] !== void 0
+}
+
+function Pt(o) {
+  let [N, G] = o;
+  return r(n, {
+    children: ["  ", e(n, {
+      color: "suggestion",
+      children: N
+    }), " = ", G]
+  }, N)
+}
+
+function _e(o) {
+  let c = {
+    CLAUDE_CODE_USE_VERTEX: "1",
+    CLAUDE_CODE_USE_BEDROCK: void 0,
+    CLAUDE_CODE_USE_FOUNDRY: void 0,
+    CLAUDE_CODE_USE_ANTHROPIC_AWS: void 0,
+    CLAUDE_CODE_USE_ANTHROPIC_GOOGLE_CLOUD: void 0,
+    CLAUDE_CODE_USE_MANTLE: void 0,
+    ANTHROPIC_VERTEX_PROJECT_ID: o.projectId,
+    CLOUD_ML_REGION: o.region,
+    GOOGLE_APPLICATION_CREDENTIALS: void 0,
+    ANTHROPIC_DEFAULT_SONNET_MODEL: void 0,
+    ANTHROPIC_DEFAULT_OPUS_MODEL: void 0,
+    ANTHROPIC_DEFAULT_HAIKU_MODEL: void 0,
+    ANTHROPIC_DEFAULT_FABLE_MODEL: void 0,
+    ANTHROPIC_SMALL_FAST_MODEL: void 0
+  };
+  if (o.authMethod === "serviceAccount") c.GOOGLE_APPLICATION_CREDENTIALS = o.keyFile;
+  if (o.pinSonnet) c.ANTHROPIC_DEFAULT_SONNET_MODEL = o.pinSonnet;
+  if (o.pinOpus) c.ANTHROPIC_DEFAULT_OPUS_MODEL = o.pinOpus;
+  if (o.pinFable) c.ANTHROPIC_DEFAULT_FABLE_MODEL = o.pinFable;
+  if (o.pinHaiku) c.ANTHROPIC_DEFAULT_HAIKU_MODEL = o.pinHaiku;
+  return c
+}
+
+function oe(o) {
+  let f = S(30),
+    {
+      onComplete: c
+    } = o,
+    {
+      storageV5: a
+    } = Fe(),
+    {
+      goBack: m,
+      wizardData: t
+    } = ym(),
+    [h, p] = y(null),
+    u;
+  if (f[0] === w) u = ks(un("userSettings") ?? "~/.claude/settings.json"), f[0] = u;
+  else u = f[0];
+  let R = u,
+    g;
+  if (f[1] !== t) g = _e(t), f[1] = t, f[2] = g;
+  else g = f[2];
+  let T = g,
+    E;
+  if (f[3] !== T) E = Object.entries(T).filter(kt), f[3] = T, f[4] = E;
+  else E = f[4];
+  let d = E,
+    D = A(!1),
+    x;
+  if (f[5] !== T || f[6] !== c || f[7] !== a || f[8] !== t.authMethod || f[9] !== t.pinFable || f[10] !== t.pinHaiku || f[11] !== t.pinOpus || f[12] !== t.pinSonnet || f[13] !== t.verifiedIdentity) x = async () => {
+    if (D.current) {
+      return
+    }
+    D.current = !0;
+    let {
+      error: I
+    } = await qn("userSettings", {
+      env: T
+    }, void 0, a);
+    if (I) {
+      D.current = !1, p(I.message);
+      return
+    }
+    l("tengu_vertex_setup_complete", {
+      auth_method: de(t.authMethod),
+      pinned_models: Boolean(t.pinSonnet || t.pinOpus || t.pinFable || t.pinHaiku),
+      verified: Boolean(t.verifiedIdentity)
+    }), c(`Vertex AI configuration saved to ${R}.${t.authMethod==="adc"?" When your ADC token expires, run `gcloud auth application-default login` \u2014 Claude Code picks up refreshed credentials automatically.":""}`)
+  }, f[5] = T, f[6] = c, f[7] = a, f[8] = t.authMethod, f[9] = t.pinFable, f[10] = t.pinHaiku, f[11] = t.pinOpus, f[12] = t.pinSonnet, f[13] = t.verifiedIdentity, f[14] = x;
+  else x = f[14];
+  let C = x,
+    v;
+  if (f[15] === w) v = r(n, {
+    children: ["These will be written to ", R, " under env:"]
+  }), f[15] = v;
+  else v = f[15];
+  let _;
+  if (f[16] !== d) _ = e(s, {
+    flexDirection: "column",
+    children: d.map(Pt)
+  }), f[16] = d, f[17] = _;
+  else _ = f[17];
+  let b;
+  if (f[18] !== t.verifiedIdentity) b = t.verifiedIdentity && r(n, {
+    dimColor: !0,
+    children: [e(Tt, {
+      status: "success",
+      withSpace: !0
+    }), "Verified as ", t.verifiedIdentity]
+  }), f[18] = t.verifiedIdentity, f[19] = b;
+  else b = f[19];
+  let W;
+  if (f[20] !== h) W = e(Ys, {
+    error: h
+  }), f[20] = h, f[21] = W;
+  else W = f[21];
+  let q;
+  if (f[22] !== m || f[23] !== C) q = e(Jn, {
+    confirmLabel: "Save",
+    cancelLabel: "Cancel",
+    onConfirm: C,
+    onCancel: m
+  }), f[22] = m, f[23] = C, f[24] = q;
+  else q = f[24];
+  let F;
+  if (f[25] !== _ || f[26] !== b || f[27] !== W || f[28] !== q) F = e(Lf, {
+    subtitle: "Confirm and save",
+    children: r(s, {
+      flexDirection: "column",
+      gap: 1,
+      children: [v, _, b, W, q]
+    })
+  }), f[25] = _, f[26] = b, f[27] = W, f[28] = q, f[29] = F;
+  else F = f[29];
+  return F
+}
+
+function ne() {
+  return {
+    sonnet: ts[ID].vertex,
+    opus: ts[_Bn].vertex,
+    haiku: ts[QNe].vertex,
+    fable: ts[bBn].vertex
+  }
+}
+
+function Pe(o) {
+  let c = new Set;
+  for (let a of Object.values(ts))
+    if (a.vertex !== null && a.vertex.toLowerCase().includes(o)) c.add(a.vertex);
+  return [...c].sort().reverse()
+}
+
+function Se(o) {
+  if (o.authMethod === "serviceAccount" && o.keyFile) return {
+    kind: "keyFile",
+    path: o.keyFile
+  };
+  return {
+    kind: "default"
+  }
+}
+var St = 12000;
+async function ae(o) {
+  let c;
+  try {
+    let t = await pin(Se(o), o.projectId),
+      h = (async () => {
+        await (await t.getClient()).getAccessToken()
+      })();
+    await zt(h, St, "Timed out waiting for GCP credentials");
+    let p;
+    try {
+      p = (await t.getCredentials()).client_email
+    } catch {
+      p = void 0
+    }
+    c = p ?? (o.authMethod === "serviceAccount" ? `service account (${o.keyFile})` : "Application Default Credentials")
+  } catch (t) {
+    return {
+      status: "error",
+      ...bt(t, o)
+    }
+  }
+  let a = ne().haiku,
+    m = await se(o, a);
+  if (m.ok) return {
+    status: "ok",
+    identity: c,
+    note: `Test request to ${a} succeeded.`
+  };
+  switch (m.reason) {
+    case "auth":
+      return {
+        status: "error", error: "Got a token, but Vertex AI rejected it. The credential may lack the cloud-platform scope."
+      };
+    case "permission":
+      return {
+        status: "error", error: `Permission denied calling Vertex AI in project "${o.projectId}". The principal needs the aiplatform.endpoints.predict permission (Vertex AI User role), and the Vertex AI API must be enabled.`
+      };
+    case "model":
+      return {
+        status: "ok", identity: c, note: `Credentials work, but ${a} returned not-found in ${o.region}. Pin a model you have access to on the next step, or try the 'global' region.`
+      };
+    case "network":
+      return {
+        status: "error", error: `Could not reach Vertex AI in region "${o.region}". Check the region name and your network.`
+      };
+    case "other":
+      return {
+        status: "ok", identity: c, note: `Credentials work, but the test request to ${a} failed. You can pin a different model on the next step.`
+      }
+  }
+}
+async function se(o, c) {
+  return B3n(() => Rt(o), c, () => "auth")
+}
+async function Rt(o) {
+  let [{
+    AnthropicVertex: c
+  }, {
+    getProxyFetchOptions: a
+  }] = await Promise.all([import("B:/~BUN/root/chunk-z72k92z8.js"), import("B:/~BUN/root/chunk-hm55wvr0.js")]), m = await pin(Se(o), o.projectId);
+  return CFe(new c({
+    region: o.region,
+    projectId: o.projectId,
+    googleAuth: m,
+    maxRetries: 0,
+    defaultHeaders: {
+      ...E_e(),
+      ...RFe()
+    },
+    ...XL,
+    timeout: 15000,
+    fetchOptions: a({
+      url: i.ANTHROPIC_VERTEX_BASE_URL || pWt(o.region)
+    })
+  }))
+}
+var ie = "gcloud auth application-default login";
+
+function bt(o, c) {
+  let a = o?.message ?? String(o);
+  if (/ENOENT|no such file/i.test(a)) {
+    if (c.authMethod === "serviceAccount" && c.keyFile && a.includes(c.keyFile)) return {
+      error: `Service account key file not found: ${c.keyFile}`
+    };
+    let m = i.GOOGLE_APPLICATION_CREDENTIALS ? ["GOOGLE_APPLICATION_CREDENTIALS", i.GOOGLE_APPLICATION_CREDENTIALS] : i.google_application_credentials ? ["google_application_credentials", i.google_application_credentials] : void 0;
+    if (m && c.authMethod !== "serviceAccount" && a.includes(`The file at ${m[1]} does not exist`)) return {
+      error: `Key file named by ${m[0]} not found: ${m[1]}`
+    }
+  }
+  if (/Could not load the default credentials/i.test(a)) return c.authMethod === "adc" ? {
+    error: "No Application Default Credentials found. Run:",
+    command: ie
+  } : {
+    error: "No GCP credentials found in the environment. Set GOOGLE_APPLICATION_CREDENTIALS or run gcloud auth application-default login."
+  };
+  if (/invalid_grant|Token has been expired|reauth/i.test(a)) {
+    if (c.authMethod === "serviceAccount") return {
+      error: "Service account credentials have been revoked or expired. Obtain a new key file from GCP IAM (IAM \u2192 Service Accounts \u2192 Keys \u2192 Add Key)."
+    };
+    if (c.authMethod === "adc") return {
+      error: "GCP credentials expired. Run:",
+      command: ie
+    };
+    return {
+      error: "GCP credentials in the environment have expired or been revoked. Refresh them (gcloud auth application-default login for ADC, or replace the GOOGLE_APPLICATION_CREDENTIALS key file)."
+    }
+  }
+  if (/Unable to detect a Project Id/i.test(a)) return {
+    error: "Could not determine a GCP project from the credentials. Go back and set the project ID explicitly."
+  };
+  if (/Timed out waiting for GCP/i.test(a)) return {
+    error: "Timed out resolving GCP credentials (no ADC, no key file, and no GCE metadata server).",
+    ...c.authMethod === "adc" && {
+      command: ie
+    }
+  };
+  return {
+    error: a
+  }
+}
+var Re = {
+  reasonLabel: {
+    auth: "auth failed",
+    permission: "no aiplatform.endpoints.predict permission",
+    model: "not enabled in this project",
+    network: "unreachable",
+    other: "request failed"
+  },
+  intro: "Without pinning, Claude Code uses its built-in defaults. When a new model ships, your install will try to call it even if it is not yet available in your project \u2014 Claude Code will fail to connect to Vertex AI until you enable the model or pin to one you have.",
+  resolveTierDefaults: () => {
+    let o = ne();
+    return Object.fromEntries($j.map((c) => [c, {
+      fallback: o[c]
+    }]))
+  },
+  listTierCandidates: (o) => Pe(o),
+  pickerSubtitle: (o) => `Available ${H0[o]} versions on Vertex AI \xB7 each tested with a one-token request.`,
+  preferOnSettle: ["current", "fallback"],
+  probe: (o, c) => se(o, c)
+};
+
+function ce() {
+  let c = S(2),
+    {
+      updateWizardData: o
+    } = ym(),
+    a;
+  if (c[0] !== o) a = e(EGt, {
+    provider: Re,
+    onPins: o
+  }), c[0] = o, c[1] = a;
+  else a = c[1];
+  return a
+}
+j();
+import {
+  readdir as Lt,
+  readFile as be
+} from "fs/promises";
+import {
+  join as le
+} from "path";
+async function ue() {
+  let o = new Set,
+    c = fnr();
+  try {
+    let a = le(c, "configurations");
+    for (let m of await Lt(a)) {
+      if (!m.startsWith("config_")) continue;
+      try {
+        let t = await be(le(a, m), "utf8");
+        for (let h of t.matchAll(/^project\s*=\s*(\S+)/gm)) {
+          let p = h[1]?.trim();
+          if (p) o.add(p)
+        }
+      } catch {}
+    }
+  } catch {}
+  try {
+    let a = ee(await be(le(c, "application_default_credentials.json"), "utf8"));
+    if (a.quota_project_id) o.add(a.quota_project_id)
+  } catch {}
+  return [...o].sort()
+}
+
+function Jt() {
+  return []
+}
+
+function Yt() {
+  return ue().catch(Jt)
+}
+
+function Xt(st) {
+  return e(Tn.Item, {
+    label: st
+  }, st)
+}
+var Ve = "__manual__",
+  Le = 12;
+
+function fe() {
+  let c = S(3),
+    [o] = y(Yt),
+    a;
+  if (c[0] === w) a = e(Lf, {
+    subtitle: "GCP project",
+    children: e(So, {
+      message: "Reading ~/.config/gcloud\u2026"
+    })
+  }), c[0] = a;
+  else a = c[0];
+  let m;
+  if (c[1] !== o) m = e(Ho, {
+    fallback: a,
+    children: e(pe, {
+      projectsPromise: o
+    })
+  }), c[1] = o, c[2] = m;
+  else m = c[2];
+  return m
+}
+
+function pe(o) {
+  let u = S(48),
+    {
+      projectsPromise: c
+    } = o,
+    a = ko(c),
+    {
+      goBack: m,
+      goToStep: t,
+      updateWizardData: h,
+      wizardData: p
+    } = ym(),
+    f = a.length > Le,
+    R;
+  if (u[0] !== a || u[1] !== p.projectId) R = p.projectId && !a.includes(p.projectId), u[0] = a, u[1] = p.projectId, u[2] = R;
+  else R = u[2];
+  let g = Boolean(R),
+    [T, E] = y(a.length === 0 || f || g),
+    [d, D] = y(p.projectId ?? ""),
+    [x, I] = y(d.length),
+    [C, v] = y(null);
+  const _ = T ? "Settings" : "Confirmation";
+  let b;
+  if (u[3] !== _) b = {
+    context: _
+  }, u[3] = _, u[4] = b;
+  else b = u[4];
+  pt("confirm:no", m, b);
+  let W;
+  if (u[5] !== t || u[6] !== h) W = (q) => {
+    h({
+      projectId: q
+    }), t(k.REGION)
+  }, u[5] = t, u[6] = h, u[7] = W;
+  else W = u[7];
+  let F = W;
+  if (!T) {
+    const J = a.length;
+    let N;
+    if (u[8] !== a.length) N = P(a.length, "project"), u[8] = a.length, u[9] = N;
+    else N = u[9];
+    let G;
+    if (u[10] !== a.length || u[11] !== N) G = r(n, {
+      dimColor: !0,
+      children: ["Found ", J, " ", N, " in your gcloud configurations."]
+    }), u[10] = a.length, u[11] = N, u[12] = G;
+    else G = u[12];
+    let B;
+    if (u[13] !== a || u[14] !== p.projectId) B = a.indexOf(p.projectId ?? ""), u[13] = a, u[14] = p.projectId, u[15] = B;
+    else B = u[15];
+    const H = Math.max(0, B);
+    let z;
+    if (u[16] !== a || u[17] !== F) z = (Ar) => {
+      let it = a[Ar];
+      if (it === void 0) E(!0);
+      else F(it)
+    }, u[16] = a, u[17] = F, u[18] = z;
+    else z = u[18];
+    let M;
+    if (u[19] !== a) M = a.map(Xt), u[19] = a, u[20] = M;
+    else M = u[20];
+    let X;
+    if (u[21] === w) X = e(Tn.Item, {
+      label: "Type a different project\u2026"
+    }, Ve), u[21] = X;
+    else X = u[21];
+    let Z;
+    if (u[22] !== z || u[23] !== M || u[24] !== H) Z = r(Tn, {
+      defaultFocusIndex: H,
+      onSelect: z,
+      children: [M, X]
+    }), u[22] = z, u[23] = M, u[24] = H, u[25] = Z;
+    else Z = u[25];
+    let nt;
+    if (u[26] !== Z || u[27] !== G) nt = e(Lf, {
+      subtitle: "GCP project",
+      children: r(s, {
+        flexDirection: "column",
+        gap: 1,
+        children: [G, Z]
+      })
+    }), u[26] = Z, u[27] = G, u[28] = nt;
+    else nt = u[28];
+    return nt
+  }
+  let J;
+  if (u[29] !== F || u[30] !== d) J = () => {
+    let at = d.trim();
+    if (!at) {
+      v("Project ID is required");
+      return
+    }
+    v(null), F(at)
+  }, u[29] = F, u[30] = d, u[31] = J;
+  else J = u[31];
+  let Ee = J,
+    N;
+  if (u[32] === w) N = r(Ce, {
+    children: [e(Y, {
+      chord: "enter",
+      action: "continue"
+    }), e(gt, {
+      action: "confirm:no",
+      context: "Settings",
+      fallback: "Esc",
+      description: "go back"
+    })]
+  }), u[32] = N;
+  else N = u[32];
+  let G;
+  if (u[33] === w) G = e(n, {
+    children: "The project where Vertex AI is enabled."
+  }), u[33] = G;
+  else G = u[33];
+  let B;
+  if (u[34] !== a.length || u[35] !== f) B = f && r(n, {
+    dimColor: !0,
+    children: ["Found ", a.length, " projects \u2014 too many to list."]
+  }), u[34] = a.length, u[35] = f, u[36] = B;
+  else B = u[36];
+  let H;
+  if (u[37] === w) H = e(n, {
+    dimColor: !0,
+    children: "Find it with `gcloud config get-value project` or in the GCP console header."
+  }), u[37] = H;
+  else H = u[37];
+  let z;
+  if (u[38] !== x || u[39] !== Ee || u[40] !== d) z = e(s, {
+    marginTop: 1,
+    children: e(Ir, {
+      value: d,
+      onChange: D,
+      onSubmit: Ee,
+      placeholder: "my-gcp-project",
+      columns: 60,
+      cursorOffset: x,
+      onChangeCursorOffset: I,
+      focus: !0,
+      showCursor: !0
+    })
+  }), u[38] = x, u[39] = Ee, u[40] = d, u[41] = z;
+  else z = u[41];
+  let M;
+  if (u[42] !== C) M = C && e(s, {
+    marginTop: 1,
+    children: e(Ys, {
+      error: C
+    })
+  }), u[42] = C, u[43] = M;
+  else M = u[43];
+  let X;
+  if (u[44] !== z || u[45] !== M || u[46] !== B) X = e(Lf, {
+    subtitle: "GCP project ID",
+    footerText: N,
+    children: r(s, {
+      flexDirection: "column",
+      children: [G, B, H, z, M]
+    })
+  }), u[44] = z, u[45] = M, u[46] = B, u[47] = X;
+  else X = u[47];
+  return X
+}
+j();
+
+function he() {
+  let g = S(17),
+    {
+      goBack: o,
+      goNext: c,
+      updateWizardData: a,
+      wizardData: m
+    } = ym(),
+    [t, h] = y(m.region ?? "global"),
+    [p, f] = y(t.length),
+    [u, R] = y(null),
+    T;
+  if (g[0] === w) T = {
+    context: "Settings"
+  }, g[0] = T;
+  else T = g[0];
+  pt("confirm:no", o, T);
+  let E;
+  if (g[1] !== c || g[2] !== a || g[3] !== t) E = () => {
+    let d = t.trim();
+    if (!d) {
+      R("Region is required");
+      return
+    }
+    R(null), a({
+      region: d
+    }), c()
+  }, g[1] = c, g[2] = a, g[3] = t, g[4] = E;
+  else E = g[4];
+  let D = E,
+    x;
+  if (g[5] === w) x = r(Ce, {
+    children: [e(Y, {
+      chord: "enter",
+      action: "continue"
+    }), e(gt, {
+      action: "confirm:no",
+      context: "Settings",
+      fallback: "Esc",
+      description: "go back"
+    })]
+  }), g[5] = x;
+  else x = g[5];
+  let I, C;
+  if (g[6] === w) I = e(n, {
+    children: "Where Claude models are served from."
+  }), C = e(n, {
+    dimColor: !0,
+    children: "Use 'global', 'us', or 'eu' for a multi-region endpoint (recommended), or a specific location like us-east5 if you have regional quota."
+  }), g[6] = I, g[7] = C;
+  else I = g[6], C = g[7];
+  let v;
+  if (g[8] !== p || g[9] !== D || g[10] !== t) v = e(s, {
+    marginTop: 1,
+    children: e(Ir, {
+      value: t,
+      onChange: h,
+      onSubmit: D,
+      placeholder: "global",
+      columns: 40,
+      cursorOffset: p,
+      onChangeCursorOffset: f,
+      focus: !0,
+      showCursor: !0
+    })
+  }), g[8] = p, g[9] = D, g[10] = t, g[11] = v;
+  else v = g[11];
+  let _;
+  if (g[12] !== u) _ = u && e(s, {
+    marginTop: 1,
+    children: e(Ys, {
+      error: u
+    })
+  }), g[12] = u, g[13] = _;
+  else _ = g[13];
+  let b;
+  if (g[14] !== v || g[15] !== _) b = e(Lf, {
+    subtitle: "Vertex AI region",
+    footerText: x,
+    children: r(s, {
+      flexDirection: "column",
+      children: [I, C, v, _]
+    })
+  }), g[14] = v, g[15] = _, g[16] = b;
+  else b = g[16];
+  return b
+}
+j();
+import {
+  homedir as Ke
+} from "os";
+import {
+  join as qe
+} from "path";
+
+function De() {
+  let g = S(17),
+    {
+      goBack: o,
+      goToStep: c,
+      updateWizardData: a,
+      wizardData: m
+    } = ym(),
+    [t, h] = y(m.keyFile ?? ""),
+    [p, f] = y(t.length),
+    [u, R] = y(null),
+    T;
+  if (g[0] === w) T = {
+    context: "Settings"
+  }, g[0] = T;
+  else T = g[0];
+  pt("confirm:no", o, T);
+  let E;
+  if (g[1] !== c || g[2] !== a || g[3] !== t) E = () => {
+    let d = t.trim();
+    if (!d) {
+      R("Path is required");
+      return
+    }
+    R(null);
+    let D = d === "~" || d.startsWith("~/") ? qe(Ke(), d.slice(1)) : d;
+    a({
+      keyFile: D
+    }), c(k.PROJECT)
+  }, g[1] = c, g[2] = a, g[3] = t, g[4] = E;
+  else E = g[4];
+  let x = E,
+    I;
+  if (g[5] === w) I = r(Ce, {
+    children: [e(Y, {
+      chord: "enter",
+      action: "continue"
+    }), e(gt, {
+      action: "confirm:no",
+      context: "Settings",
+      fallback: "Esc",
+      description: "go back"
+    })]
+  }), g[5] = I;
+  else I = g[5];
+  let C, v;
+  if (g[6] === w) C = e(n, {
+    children: "Path to the service account JSON key file."
+  }), v = e(n, {
+    dimColor: !0,
+    children: "Download one from the GCP console under IAM \u2192 Service Accounts \u2192 Keys \u2192 Add key."
+  }), g[6] = C, g[7] = v;
+  else C = g[6], v = g[7];
+  let _;
+  if (g[8] !== p || g[9] !== x || g[10] !== t) _ = e(s, {
+    marginTop: 1,
+    children: e(Ir, {
+      value: t,
+      onChange: h,
+      onSubmit: x,
+      placeholder: "~/keys/my-project-vertex.json",
+      columns: 60,
+      cursorOffset: p,
+      onChangeCursorOffset: f,
+      focus: !0,
+      showCursor: !0
+    })
+  }), g[8] = p, g[9] = x, g[10] = t, g[11] = _;
+  else _ = g[11];
+  let b;
+  if (g[12] !== u) b = u && e(s, {
+    marginTop: 1,
+    children: e(Ys, {
+      error: u
+    })
+  }), g[12] = u, g[13] = b;
+  else b = g[13];
+  let W;
+  if (g[14] !== _ || g[15] !== b) W = e(Lf, {
+    subtitle: "Service account key",
+    footerText: I,
+    children: r(s, {
+      flexDirection: "column",
+      children: [C, v, _, b]
+    })
+  }), g[14] = _, g[15] = b, g[16] = W;
+  else W = g[16];
+  return W
+}
+j();
+
+function Ae() {
+  let t = S(35),
+    {
+      goBack: o,
+      goNext: c,
+      updateWizardData: a,
+      wizardData: m
+    } = ym(),
+    h;
+  if (t[0] === w) h = {
+    phase: "checking"
+  }, t[0] = h;
+  else h = t[0];
+  let [p, f] = y(h), u;
+  if (t[1] !== a || t[2] !== m) u = () => {
+    let R = !1;
+    return ae(m).then((g) => {
+      if (R) {
+        return
+      }
+      if (g.status === "ok") a({
+        verifiedIdentity: g.identity
+      });
+      else a({
+        verifiedIdentity: void 0
+      });
+      f({
+        phase: "done",
+        result: g
+      })
+    }), () => {
+      R = !0
+    }
+  }, t[1] = a, t[2] = m, t[3] = u;
+  else u = t[3];
+  let T;
+  if (t[4] === w) T = [], t[4] = T;
+  else T = t[4];
+  if (O(u, T), p.phase === "checking") {
+    let E;
+    if (t[5] === w) E = e(Lf, {
+      subtitle: "Verifying credentials",
+      children: e(So, {
+        message: "Calling Google Cloud\u2026",
+        subtitle: "This may take a few seconds."
+      })
+    }), t[5] = E;
+    else E = t[5];
+    return E
+  }
+  let {
+    result: d
+  } = p;
+  switch (d.status) {
+    case "ok": {
+      let E;
+      if (t[6] === w) E = e(Tt, {
+        status: "success",
+        withSpace: !0
+      }), t[6] = E;
+      else E = t[6];
+      let D;
+      if (t[7] !== d.identity) D = r(n, {
+        children: [E, "Authenticated as ", e(n, {
+          bold: !0,
+          children: d.identity
+        })]
+      }), t[7] = d.identity, t[8] = D;
+      else D = t[8];
+      let x;
+      if (t[9] !== d.note) x = d.note && e(n, {
+        dimColor: !0,
+        children: d.note
+      }), t[9] = d.note, t[10] = x;
+      else x = t[10];
+      let I;
+      if (t[11] === w) I = [{
+        label: "Continue",
+        value: "continue"
+      }], t[11] = I;
+      else I = t[11];
+      let C;
+      if (t[12] !== c) C = () => c(), t[12] = c, t[13] = C;
+      else C = t[13];
+      let v;
+      if (t[14] !== o || t[15] !== C) v = e(Ze, {
+        options: I,
+        onChange: C,
+        onCancel: o
+      }), t[14] = o, t[15] = C, t[16] = v;
+      else v = t[16];
+      let _;
+      if (t[17] !== D || t[18] !== x || t[19] !== v) _ = e(Lf, {
+        subtitle: "Verification",
+        children: r(s, {
+          flexDirection: "column",
+          gap: 1,
+          children: [D, x, v]
+        })
+      }), t[17] = D, t[18] = x, t[19] = v, t[20] = _;
+      else _ = t[20];
+      return _
+    }
+    case "error": {
+      let E;
+      if (t[21] === w) E = e(Tt, {
+        status: "error",
+        withSpace: !0
+      }), t[21] = E;
+      else E = t[21];
+      let D;
+      if (t[22] !== d.error) D = r(n, {
+        children: [E, d.error]
+      }), t[22] = d.error, t[23] = D;
+      else D = t[23];
+      let x;
+      if (t[24] !== d.command) x = d.command && r(n, {
+        bold: !0,
+        color: "suggestion",
+        children: ["    ", d.command]
+      }), t[24] = d.command, t[25] = x;
+      else x = t[25];
+      let I;
+      if (t[26] !== D || t[27] !== x) I = r(s, {
+        flexDirection: "column",
+        children: [D, x]
+      }), t[26] = D, t[27] = x, t[28] = I;
+      else I = t[28];
+      let C;
+      if (t[29] !== o || t[30] !== c) C = e(Jn, {
+        hideIndexes: !0,
+        cancelFirst: !0,
+        focus: "cancel",
+        confirmLabel: "Save anyway (skip verification)",
+        cancelLabel: "Go back and fix",
+        onConfirm: c,
+        onCancel: o
+      }), t[29] = o, t[30] = c, t[31] = C;
+      else C = t[31];
+      let v;
+      if (t[32] !== I || t[33] !== C) v = e(Lf, {
+        subtitle: "Verification failed",
+        color: "error",
+        children: r(s, {
+          flexDirection: "column",
+          gap: 1,
+          children: [I, C]
+        })
+      }), t[32] = I, t[33] = C, t[34] = v;
+      else v = t[34];
+      return v
+    }
+  }
+}
+
+function xr() {}
+var ot = [te, De, fe, he, Ae, ce, oe];
+
+function vGt(o) {
+  let t = S(7),
+    {
+      onComplete: c,
+      onCancel: a,
+      exitOnCtrlCD: m
+    } = o,
+    h;
+  if (t[0] !== c) h = {
+    onComplete: c
+  }, t[0] = c, t[1] = h;
+  else h = t[1];
+  let p;
+  if (t[2] === w) p = {}, t[2] = p;
+  else p = t[2];
+  let f;
+  if (t[3] !== m || t[4] !== a || t[5] !== h) f = e(Bot, {
+    steps: ot,
+    stepProps: h,
+    initialData: p,
+    onComplete: xr,
+    onCancel: a,
+    exitOnCtrlCD: m,
+    title: "Set up Google Vertex AI"
+  }), t[3] = m, t[4] = a, t[5] = h, t[6] = f;
+  else f = t[6];
+  return f
+}
+export {
+  vGt
+};

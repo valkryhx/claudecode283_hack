@@ -1,0 +1,988 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  H
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  b,
+  f,
+  de,
+  ka,
+  xk,
+  Yn
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  aK,
+  db
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  Zr
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  vt,
+  zA,
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  tet,
+  bVe,
+  mf,
+  b8i,
+  iT,
+  Na,
+  v,
+  Le,
+  fe,
+  B1n
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  cLr,
+  zie,
+  pZi,
+  In,
+  ri,
+  dm,
+  i0,
+  di,
+  uc,
+  Sd,
+  t1t,
+  Tbt
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  sp
+} from "B:/~BUN/root/chunk-fzefftbw.js";
+import {
+  Mht,
+  lyo,
+  J7e,
+  dyo,
+  W_e
+} from "B:/~BUN/root/chunk-esnm3r09.js";
+import {
+  da
+} from "B:/~BUN/root/chunk-64qg3pvz.js";
+import {
+  o,
+  u
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-g9pw24zp.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  sep as pe
+} from "path";
+var K = new Set(["plugin command source printed a network path", "plugin command source path resolves to a network path", "plugin command source printed a path through a suspect link", "plugin command source entry traverses a suspect link", "plugin command source link escapes producer directory", "plugin command source relink entry not canonical", "plugin command source relink entry unreadable", "plugin command source relink target resolves to a network path", "plugin command source relink target traverses a suspect link", "plugin command source link marker not a small regular file", "plugin command source printed cwd or an ancestor", "plugin command source printed a relative path", "plugin command source printed nothing", "plugin command source printed multiple lines", "plugin command source exceeded the stdout cap", "plugin command source directory has no plugin content", "plugin command source directory has too many files", "plugin command source directory too large", "plugin command source link mode unsupported on windows", "plugin command source disabled by managed policy", "plugin command source held for the organization answer", "plugin command source not started by a tool server daemon", "plugin command source command changed since consent", "plugin command source never consented for an installed plugin", "plugin command source changed between display and run", "plugin command source without consent", "plugin command source declined at the prompt"]),
+  AIn = "plugin update refused during cli update: ";
+class z {
+  nameRegistration;
+  catalogEntryNames;
+  reviewerMarkedEntryNames;
+  isAccessAllowed;
+  lastFailedWalk;
+  staleCatalogFetchedAt;
+  catalogLoadInFlight;
+  bindingsWriteTail = Promise.resolve();
+  marketplaceChoice;
+  blockedLogged = new Set
+}
+var Pe = new W(() => new z);
+
+function qT() {
+  return Pe.of(H().host)
+}
+
+function GIi(e) {
+  qT().nameRegistration = e === void 0 ? "none" : e === "pluginDirectory" ? "built-in" : "other"
+}
+
+function e_r(e) {
+  if (e !== In) return !1;
+  let {
+    nameRegistration: n
+  } = qT();
+  return n === "built-in" || n === "none"
+}
+
+function A() {
+  let e = qT();
+  return e.nameRegistration === "built-in" && e.isAccessAllowed?.() === !0
+}
+
+function vft(e) {
+  return qT().reviewerMarkedEntryNames?.has(e) === !0
+}
+
+function j(e) {
+  return A() && qT().catalogEntryNames?.has(e) === !0
+}
+var hfs = ["agent", "subagentStatusLine"];
+
+function Y(e) {
+  return hfs.includes(e)
+}
+
+function J(e, n) {
+  return n ? `${e}@${n.toLowerCase()}` : e
+}
+class q {
+  #e = new Map;
+  #n = 0;
+  generation() {
+    return this.#n
+  }
+  register(e, n, r, s) {
+    if (s !== void 0 && s !== this.#n) return;
+    this.#e.set(J(e, n), r)
+  }
+  get(e, n) {
+    if (n === void 0) return;
+    return this.#e.get(J(e, n))
+  }
+  clear() {
+    this.#e.clear(), this.#n++
+  }
+}
+var ke = new W(() => new q);
+
+function k() {
+  return ke.of(H().host)
+}
+
+function VIi() {
+  return k().generation()
+}
+
+function KIi(e, n, r, s) {
+  k().register(e, n, r, s)
+}
+
+function T(e, n) {
+  return k().get(e, n)
+}
+
+function qIi() {
+  k().clear()
+}
+var Z = /^skill_(?:staging_|local_)?[A-Za-z0-9]{1,64}$/;
+
+function x(e) {
+  return Z.test(e)
+}
+var U = "skill_id";
+
+function RIn(e, n) {
+  let r = {};
+  if (typeof e === "string" && x(e)) r.skillId = e;
+  if (typeof n === "string" && W_e(n)) r.pluginId = n;
+  return r.skillId === void 0 && r.pluginId === void 0 ? void 0 : r
+}
+var Ee = p(() => u({
+    [U]: o().regex(Z).optional().catch(void 0),
+    [J7e]: o().regex(dyo).optional().catch(void 0)
+  })),
+  Ie = 262144,
+  be = () => {
+    return
+  };
+
+function XMt() {
+  let e = i.CLAUDE_CODE_SKILL_ATTRIBUTION;
+  if (e === void 0) return be;
+  let n = lyo("CLAUDE_CODE_SKILL_ATTRIBUTION", e, Ie, Ae);
+  return (r) => n.get(Mht(r))
+}
+
+function Ae(e) {
+  let n = Ee().safeParse(e);
+  if (!n.success) {
+    t("Ignoring a CLAUDE_CODE_SKILL_ATTRIBUTION entry: not a JSON object");
+    return
+  }
+  let r = RIn(n.data[U], n.data[J7e]);
+  if (typeof e === "object" && e !== null) {
+    for (let [s, g] of [
+        [U, r?.skillId],
+        [J7e, r?.pluginId]
+      ])
+      if (s in e && g === void 0) t(`Ignoring a CLAUDE_CODE_SKILL_ATTRIBUTION entry field: invalid ${s}`)
+  }
+  return r
+}
+class Q {
+  pendingUsage = new Map;
+  flushTimer = null;
+  exitFlushesInFlight = [];
+  flushStorageV5 = void 0
+}
+var ee = new W(() => new Q);
+class ne {
+  flushers = null;
+  exitFlushRegistered = !1
+}
+var h = new ne;
+var Te = 60000;
+
+function te(e) {
+  h.flushers = e;
+  let n = S();
+  if (n.pendingUsage.size > 0) ie(n, e)
+}
+
+function S() {
+  return ee.of(H().host)
+}
+
+function zP(e) {
+  let n = Date.now(),
+    r = S(),
+    s = r.pendingUsage.get(e);
+  if (s) s.count++, s.lastUsedAt = n;
+  else r.pendingUsage.set(e, {
+    count: 1,
+    lastUsedAt: n
+  });
+  if (h.flushers) ie(r, h.flushers)
+}
+
+function ie(e, n) {
+  if (!h.exitFlushRegistered) h.exitFlushRegistered = !0, process.on("exit", n.flushAtExit);
+  if (!e.flushTimer) e.flushTimer = setTimeout(n.flush, Te), e.flushTimer.unref?.()
+}
+
+function re(e) {
+  S().exitFlushesInFlight.push(e)
+}
+
+function oe(e) {
+  let n = S().exitFlushesInFlight,
+    r = n.indexOf(e);
+  if (r !== -1) n.splice(r, 1)
+}
+
+function se() {
+  let e = S(),
+    n = e.exitFlushesInFlight.flat();
+  return e.exitFlushesInFlight = [], n.length > 0 ? n : null
+}
+
+function le(e) {
+  S().flushStorageV5 = e
+}
+
+function ae() {
+  return S().flushStorageV5
+}
+
+function E() {
+  let e = S();
+  if (e.flushTimer) clearTimeout(e.flushTimer), e.flushTimer = null;
+  if (e.pendingUsage.size === 0) return null;
+  let n = [...e.pendingUsage.entries()];
+  return e.pendingUsage.clear(), n
+}
+
+function gfs(e) {
+  return S().pendingUsage.has(e)
+}
+
+function ue(e) {
+  let {
+    pendingUsage: n
+  } = S();
+  for (let r of n.keys())
+    if (e.has(r.toLowerCase())) n.delete(r)
+}
+
+function Ue() {
+  let e = E();
+  if (!e) return;
+  Le(C(e), ae())
+}
+async function ge(e) {
+  let n = E();
+  if (!n) return;
+  re(n), await Le(C(n), e), oe(n)
+}
+
+function YIi(e) {
+  if (X() && e !== void 0) le(e), vt(() => ge(e)), zA(() => ge(e))
+}
+
+function xe() {
+  let e = [...se() ?? [], ...E() ?? []];
+  if (e.length === 0) return;
+  B1n(C(e))
+}
+te({
+  flush: Ue,
+  flushAtExit: xe
+});
+
+function C(e) {
+  return (n) => {
+    let r = {
+      ...n.pluginUsage
+    };
+    for (let [s, g] of e) {
+      let c = r[s];
+      r[s] = {
+        usageCount: (c?.usageCount ?? 0) + g.count,
+        lastUsedAt: g.lastUsedAt,
+        lastUsedNumStartups: n.numStartups
+      }
+    }
+    return {
+      ...n,
+      pluginUsage: r
+    }
+  }
+}
+
+function Wlo(e, n) {
+  let r = Date.now();
+  Le((s) => {
+    let g = e.filter((m) => !s.pluginUsage?.[m]);
+    if (g.length === 0) return s;
+    let c = {
+      ...s.pluginUsage
+    };
+    for (let m of g) c[m] = {
+      usageCount: 0,
+      lastUsedAt: r,
+      lastUsedNumStartups: s.numStartups
+    };
+    return {
+      ...s,
+      pluginUsage: c
+    }
+  }, n)
+}
+
+function e7t(e, n) {
+  let r = new Set(e.map((s) => s.toLowerCase()));
+  ue(r), Le((s) => {
+    let c = Object.keys(s.pluginUsage ?? {}).filter((_) => r.has(_.toLowerCase()));
+    if (c.length === 0) return s;
+    let m = {
+      ...s.pluginUsage
+    };
+    for (let _ of c) delete m[_];
+    return {
+      ...s,
+      pluginUsage: m
+    }
+  }, n)
+}
+
+function t_r(e) {
+  let n = fe().pluginUsage;
+  return [e, ...i0(e)].map((r) => n?.[r]).find((r) => r !== void 0)
+}
+
+function XIi(e, n) {
+  let r = Date.now();
+  Le((s) => {
+    let g = e.filter((m) => s.pluginUsage?.[m]);
+    if (g.length === 0) return s;
+    let c = {
+      ...s.pluginUsage
+    };
+    for (let m of g) {
+      let _ = c[m];
+      if (!_) continue;
+      c[m] = {
+        ..._,
+        lastUsedAt: r,
+        lastUsedNumStartups: s.numStartups
+      }
+    }
+    return {
+      ...s,
+      pluginUsage: c
+    }
+  }, n)
+}
+
+function ce(e, n) {
+  let r = fe().pluginUsageLspGraceAppliedIds;
+  if (e.every((g) => r?.includes(g))) return;
+  let s = Date.now();
+  Le((g) => {
+    let c = new Set(g.pluginUsageLspGraceAppliedIds),
+      m = e.filter((y) => !c.has(y));
+    if (m.length === 0) return g;
+    let _ = {
+      ...g.pluginUsage
+    };
+    for (let y of m) {
+      let d = _[y];
+      if (!d || d.usageCount > 0) continue;
+      _[y] = {
+        ...d,
+        lastUsedAt: s,
+        lastUsedNumStartups: g.numStartups
+      }
+    }
+    return {
+      ...g,
+      pluginUsage: _,
+      pluginUsageLspGraceAppliedIds: [...c, ...m]
+    }
+  }, n)
+}
+
+function n_r(e, n, r) {
+  return {
+    sessionsSinceLastUse: Math.max(0, n - e.lastUsedNumStartups),
+    daysSinceLastUse: Math.max(0, Math.floor((r - e.lastUsedAt) / 86400000))
+  }
+}
+
+function zlo(e, n, r) {
+  return {
+    "plugin.name": r ? e : iT,
+    ...n && {
+      "marketplace.name": r ? n : iT
+    }
+  }
+}
+
+function GP(e, n) {
+  let r = T(e, n) ?? n,
+    s = r ? `${e}@${r.toLowerCase()}` : e;
+  return Yn(bVe(s))
+}
+
+function jye(e) {
+  let {
+    name: n,
+    marketplace: r
+  } = uc(e);
+  return t1t(r) || _e(n, r) ? Yn(e) : b("third-party")
+}
+
+function me(e) {
+  return e === In && v("tengu_wise_kite", !1)
+}
+
+function _e(e, n) {
+  return me(n) && j(e)
+}
+
+function JIi(e, n) {
+  return e.length > 0 ? xk(e.map((r) => n(r) ? jye(r) : b("third-party")).sort()) : void 0
+}
+
+function JWe(e) {
+  if (me(e) && A()) return b(In);
+  return t1t(e) ? Yn(e.toLowerCase()) : b("third-party")
+}
+
+function yfs(e) {
+  let n = new Map;
+  for (let {
+      pluginId: r
+    }
+    of e) {
+    if (!r) continue;
+    let {
+      name: s,
+      marketplace: g
+    } = uc(r), c = GP(s, g);
+    n.set(c, (n.get(c) ?? 0) + 1)
+  }
+  return n.size > 0 ? tet(n) : void 0
+}
+
+function L9(e, n, r) {
+  if (n === ri) return "default-bundle";
+  if (Sd(n)) return "official";
+  if (n !== void 0 && cLr.has(n.toLowerCase())) return "community";
+  if (r?.has(e)) return "org";
+  return "user-local"
+}
+
+function Sce(e) {
+  return e === "official" || e === "default-bundle"
+}
+
+function ve(e) {
+  return Sce(e) || e === "community"
+}
+
+function _fs(e) {
+  return Sce(e) || mf()
+}
+
+function t7t(e, n, r, s) {
+  let g = n?.type === "prompt" ? n.source : void 0,
+    c = n?.type === "prompt" ? n.pluginInfo : void 0,
+    m = c ? uc(c.repository).marketplace : void 0,
+    y = g === "builtin" || g === "bundled" || g === "plugin" && Sd(m) || mf();
+  da("skill_activated", {
+    "skill.name": y ? e : "custom_skill",
+    invocation_trigger: r,
+    ...g && {
+      "skill.source": g
+    },
+    ...n?.kind && {
+      "skill.kind": n.kind
+    },
+    ...y && c && {
+      "plugin.name": c.pluginManifest.name
+    },
+    ...y && m && {
+      "marketplace.name": m
+    }
+  }, s)
+}
+
+function vTe(e, n, r, s) {
+  return {
+    ...e && {
+      skill_source: f(e)
+    },
+    ...n && {
+      skill_loaded_from: f(n)
+    },
+    ...r && {
+      skill_kind: f(r)
+    },
+    ...s && {
+      skill_created_by: f(s)
+    }
+  }
+}
+
+function bfs(e) {
+  return {
+    skill_name_hash: Yn(bVe(e))
+  }
+}
+
+function Sfs(e, n) {
+  if (!e) return {};
+  return {
+    parent_skill_name_hash: Yn(bVe(e)),
+    parent_command_name: wfs(e, n)
+  }
+}
+
+function wfs(e, n) {
+  return Yn(n ? e : "custom")
+}
+
+function RZ({
+  rawName: e,
+  canonicalName: n,
+  isMcp: r,
+  isBuiltIn: s,
+  isBundled: g,
+  isOfficial: c
+}) {
+  let m = r ? "mcp" : s || g || c ? e : "custom";
+  return {
+    sanitizedName: Yn(m),
+    skillNameHash: m === "custom" ? bfs(n) : {}
+  }
+}
+
+function yoe(e) {
+  if (e.source !== "plugin" || !e.pluginInfo?.repository) return !1;
+  return Sd(uc(e.pluginInfo.repository).marketplace)
+}
+
+function xIn(e) {
+  let n = e.pluginInfo;
+  if (!n || !yoe(e)) return {
+    plugin_name: b(iT),
+    plugin_repository: b(iT)
+  };
+  return {
+    plugin_name: Yn(n.pluginManifest.name),
+    plugin_repository: Yn(n.repository)
+  }
+}
+
+function kfs(e, n, r) {
+  if (e.isBuiltin) return "default-enable";
+  if (n?.has(e.name)) return "org-policy";
+  if (e.installationPreference === "required" || e.installationPreference === "auto_install") return "admin-install";
+  if (r.some((s) => e.path.startsWith(s.endsWith(pe) ? s : s + pe))) return "seed-mount";
+  return "user-install"
+}
+
+function JMt(e, n, r = null) {
+  let s = L9(e, n, r),
+    g = ve(s) || Tbt(e, n) || _e(e, n),
+    c = n === ri ? pZi(e) : void 0;
+  return {
+    plugin_id_hash: GP(e, n),
+    plugin_scope: e_r(n) ? f("directory") : f(s),
+    plugin_name_redacted: g ? Yn(e) : b(iT),
+    marketplace_name_redacted: g && n ? Yn(n) : b(iT),
+    is_official_plugin: Sce(s),
+    ...c !== void 0 && {
+      plugin_name_previous: Yn(c),
+      plugin_id_hash_previous: GP(c, n)
+    }
+  }
+}
+
+function N9(e, n, r = null) {
+  let s = T(e, n) ?? n;
+  return {
+    _PROTO_plugin_name: e,
+    ...s && {
+      _PROTO_marketplace_name: s
+    },
+    ...JMt(e, n, r)
+  }
+}
+
+function F(e) {
+  if (e === void 0 || !W_e(e)) return;
+  return Yn(e)
+}
+
+function Ce(e) {
+  if (e === void 0 || !x(e)) return;
+  return Yn(e)
+}
+var Re = /^[0-9a-f]{40}$/;
+
+function Fe(e, n) {
+  if (e === void 0 || !t1t(n)) return;
+  let r = e.toLowerCase();
+  return Re.test(r) ? Yn(r) : void 0
+}
+
+function n7t(e, n) {
+  let r = Fe(n, uc(e).marketplace);
+  return r !== void 0 ? {
+    plugin_version_sha: r
+  } : {}
+}
+
+function Wye(e) {
+  return e.pluginSource !== void 0 ? VP(e.pluginSource, sp()) : {}
+}
+
+function Glo(e, n, r) {
+  l("tengu_plugin_folder_shadowed", {
+    component: f(r),
+    ...N9(e, n)
+  })
+}
+
+function Vlo(e, n, r) {
+  l("tengu_plugin_renamed", {
+    outcome: f(r.kind),
+    chain_depth: r.kind === "unresolved" ? void 0 : r.chainDepth,
+    reason: r.kind === "unresolved" ? f(r.reason) : void 0,
+    ...N9(e, n)
+  })
+}
+
+function QMt(e, n, r) {
+  let s = new Map;
+  for (let {
+      name: g,
+      source: c
+    }
+    of n) {
+    let m = s.get(g);
+    if (m === void 0) s.set(g, [c]);
+    else m.push(c)
+  }
+  for (let [g, c] of s) {
+    let m = L(c);
+    if (m.length < 2) continue;
+    l("tengu_plugin_name_collision", {
+      item_type: f(e),
+      _PROTO_skill_name: g,
+      item_name_hash: GP(g),
+      source_count: m.length,
+      sources: ka(m),
+      ...r.resolves && {
+        winner_source: de(c.at(-1))
+      }
+    })
+  }
+}
+
+function VP(e, n = null) {
+  let {
+    name: r,
+    marketplace: s
+  } = uc(e);
+  return N9(r, s, n)
+}
+
+function Ne(e, n = sp()) {
+  let {
+    marketplace: r
+  } = uc(e.repository), s = F(e.serverPluginId);
+  return {
+    ...N9(e.pluginManifest.name, r, n),
+    ...s !== void 0 && {
+      server_plugin_id: s
+    }
+  }
+}
+
+function ETe(e, n) {
+  let r = Ce(e.serverAttribution?.skillId),
+    s = F(e.serverAttribution?.pluginId);
+  return {
+    ...e.pluginInfo && Ne(e.pluginInfo, n),
+    ...r !== void 0 && {
+      skill_id: r
+    },
+    ...s !== void 0 && {
+      server_plugin_id: s
+    }
+  }
+}
+
+function QIi(e, n) {
+  for (let r of e) try {
+    let {
+      marketplace: s
+    } = uc(r.repository);
+    if (Sce(L9(r.name, s, n))) b8i(r.name, s)
+  } catch (s) {
+    a(s)
+  }
+}
+
+function ye(e) {
+  let n = di(e);
+  return n === void 0 || dm(n)
+}
+
+function De(e) {
+  return e.isBuiltin === !0 || ye(e.repository)
+}
+
+function vfs(e) {
+  return e.type === "prompt" && e.loadedFrom === "plugin" && e.pluginInfo !== void 0 && !ye(e.pluginInfo.repository)
+}
+
+function ZIi(e) {
+  let n = new Map;
+  for (let r of e) {
+    if (!vfs(r)) continue;
+    let s = n.get(r.pluginInfo.repository);
+    if (s) s.push(r.name);
+    else n.set(r.pluginInfo.repository, [r.name])
+  }
+  return n
+}
+
+function Me(e, n) {
+  if (e === null) return {};
+  let r = e.get(n) ?? [];
+  return {
+    skill_name_hash_count: r.length,
+    ...r.length > 0 && {
+      skill_name_hashes: Yn(r.map((s) => bVe(s)).sort().join(","))
+    }
+  }
+}
+
+function eMi(e, n, r, s, g) {
+  let c = fe().numStartups,
+    m = Date.now(),
+    _ = [],
+    y = e.filter((d) => d.lspServers && Object.keys(d.lspServers).length > 0).map((d) => d.repository);
+  if (y.length > 0) ce(y, g);
+  for (let d of e) {
+    let {
+      marketplace: P
+    } = uc(d.repository), I = t_r(d.repository);
+    if (!I) _.push(d.repository);
+    let {
+      sessionsSinceLastUse: Se,
+      daysSinceLastUse: he
+    } = I ? n_r(I, c, m) : {
+      sessionsSinceLastUse: 0,
+      daysSinceLastUse: 0
+    }, N = L9(d.name, P, n), D = kfs(d, n, r), M = (d.skillsPath ? 1 : 0) + (d.skillsPaths?.length ?? 0), O = (d.commandsPath ? 1 : 0) + (d.commandsPaths?.length ?? 0), w = (d.agentsPath ? 1 : 0) + (d.agentsPaths?.length ?? 0), B = F(d.serverPluginId), G = d.hooksConfig !== void 0 || d.modulePath !== void 0, V = _fs(N);
+    da("plugin_loaded", {
+      ...zlo(d.name, P, V),
+      ...V && d.manifest.version && {
+        "plugin.version": d.manifest.version
+      },
+      "plugin.scope": N,
+      enabled_via: D,
+      plugin_id_hash: GP(d.name, P),
+      has_hooks: G,
+      has_mcp: !d.skipMcpDiscovery && d.mcpServers !== void 0,
+      host_owned_mcp: d.skipMcpDiscovery === !0,
+      skill_path_count: M,
+      command_path_count: O,
+      agent_path_count: w,
+      safe_mode: String(Zr())
+    }), l("tengu_plugin_enabled_for_session", {
+      ...N9(d.name, P, n),
+      ...B !== void 0 && {
+        server_plugin_id: B
+      },
+      enabled_via: f(D),
+      ...d.installationPreference !== void 0 && {
+        installation_preference: f(d.installationPreference)
+      },
+      skill_path_count: M,
+      command_path_count: O,
+      agent_path_count: w,
+      ...Me(De(d) ? null : s, d.repository),
+      has_mcp: !d.skipMcpDiscovery && d.mcpServers !== void 0,
+      host_owned_mcp: d.skipMcpDiscovery === !0,
+      has_lsp: d.lspServers !== void 0,
+      has_hooks: G,
+      has_settings: d.settings !== void 0,
+      sessions_since_last_use: Se,
+      days_since_last_use: he,
+      safe_mode: Zr(),
+      ...d.settings && {
+        settings_keys: ka(Object.keys(d.settings).filter(Y))
+      },
+      ...d.manifest.version && {
+        version: Na(d.manifest.version)
+      },
+      ...n7t(d.repository, d.gitCommitSha)
+    })
+  }
+  if (_.length > 0) Wlo(_, g)
+}
+var Oe = ["network", "not-found", "permission", "policy", "validation", "in-use", "unknown"],
+  we = new Set(Oe);
+
+function Be(e) {
+  return typeof e === "string" && we.has(e)
+}
+
+function AZ(e) {
+  if (typeof e === "object" && e !== null && "pluginCommandErrorCategory" in e && Be(e.pluginCommandErrorCategory)) return e.pluginCommandErrorCategory;
+  let n = String(e?.message ?? e),
+    r = aK(e);
+  if (typeof r === "string" && (K.has(r) || r.startsWith(AIn))) return "policy";
+  if (/ENOTFOUND|ECONNREFUSED|EAI_AGAIN|ETIMEDOUT|ECONNRESET|network|Could not resolve|Connection refused|timed out/i.test(n)) return "network";
+  if (/\b404\b|not found|does not exist|no such plugin/i.test(n)) return "not-found";
+  if (/\b40[13]\b|EACCES|EPERM|permission denied|unauthorized/i.test(n)) return "permission";
+  if (/blocked by your organization'?s policy|required by your organization/i.test(n)) return "policy";
+  if (/(?:the command|it|nothing) was not run|nothing was run|command that installs it was not run|is ignored inside a Claude Code session|Command-sourced plugins are disabled|not supported on Windows yet/i.test(n)) return "policy";
+  if (/invalid|malformed|schema|validation|parse error/i.test(n)) return "validation";
+  return "unknown"
+}
+
+function Efs(e) {
+  let n = e.toLowerCase();
+  return zie.has(n) ? Yn(n) : b(iT)
+}
+
+function tMi(e, n, r) {
+  for (let s of e) {
+    let {
+      name: g,
+      marketplace: c
+    } = uc(s.source), m = "plugin" in s && s.plugin ? s.plugin : g;
+    l("tengu_plugin_load_failed", {
+      error_category: f(s.type),
+      cache_only: r?.cacheOnly ?? !1,
+      ..."component" in s && {
+        component: f(s.component)
+      },
+      ..."errno" in s && {
+        errno: db(s.errno)
+      },
+      ...{
+        is_directory: e_r(c),
+        removed_from_directory: "removedFromDirectory" in s && s.removedFromDirectory === !0
+      },
+      ...N9(m, c, n),
+      ...s.type === "marketplace-load-failed" && s.untrustedReservedName === !0 && {
+        plugin_name_redacted: b(iT),
+        marketplace_name_redacted: Efs(s.marketplace),
+        plugin_scope: f("user-local"),
+        is_official_plugin: !1
+      }
+    })
+  }
+}
+export {
+  RIn,
+  XMt,
+  AIn,
+  qT,
+  GIi,
+  e_r,
+  vft,
+  hfs,
+  VIi,
+  KIi,
+  qIi,
+  zP,
+  gfs,
+  YIi,
+  Wlo,
+  e7t,
+  t_r,
+  XIi,
+  n_r,
+  zlo,
+  GP,
+  jye,
+  JIi,
+  JWe,
+  yfs,
+  L9,
+  Sce,
+  _fs,
+  t7t,
+  vTe,
+  bfs,
+  Sfs,
+  wfs,
+  RZ,
+  yoe,
+  xIn,
+  kfs,
+  JMt,
+  N9,
+  n7t,
+  Wye,
+  Glo,
+  Vlo,
+  QMt,
+  VP,
+  ETe,
+  QIi,
+  vfs,
+  ZIi,
+  eMi,
+  AZ,
+  Efs,
+  tMi
+};

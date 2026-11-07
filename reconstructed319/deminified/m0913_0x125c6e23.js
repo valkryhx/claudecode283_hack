@@ -1,0 +1,906 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { qt } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { Die } from "B:/~BUN/root/chunk-zn7b14jn.js";
+import { t, _, ds, AVn } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { hY } from "B:/~BUN/root/chunk-n8cnxns2.js";
+import { rB, hP, mc, rg, C5, a } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import { Hr } from "B:/~BUN/root/chunk-myfamxtp.js";
+import { QHe, Om } from "B:/~BUN/root/chunk-t4qpmjt5.js";
+import { VGn } from "B:/~BUN/root/chunk-vaq2hdme.js";
+import { fT, dKe, KTo, D0s, uan, L0s, N_t, fan, Jjn, N0s, Qjn, Zjn, pan, BUt, jUt, man, H0s, han, gan, eWn } from "B:/~BUN/root/chunk-3v92y8yw.js";
+import { $se, gn, dp, xd } from "B:/~BUN/root/chunk-f0zgv0ya.js";
+import { Q7t } from "B:/~BUN/root/chunk-8rnfdnh3.js";
+import { ny, qa, jFr, Ena, Tna } from "B:/~BUN/root/chunk-qzcyr88d.js";
+var policy = "allow_usage_transcript_scan",
+  policy_2 = "allow_skill_doctor_transcript_scan",
+  policy_3 = "allow_stats_transcript_scan",
+  Ae = {
+    policy: policy,
+    hipaaReason: "Not shown under your organization's policy: this breakdown is built by scanning the session transcripts saved on this machine."
+  },
+  ke = {
+    policy: policy_2,
+    hipaaReason: "Not shown under your organization's policy: measured by scanning the session transcripts saved on this machine."
+  },
+  we = {
+    policy: policy_3,
+    hipaaReason: "Not shown under your organization's policy: these stats are built by scanning the session transcripts saved on this machine."
+  };
+function U(e) {
+  if (gn(e.policy)) return {
+    allowed: !0
+  };
+  if (xd(e.policy) === "org_denied" && Die().includes("hipaa")) return {
+    allowed: !1,
+    reason: e.hipaaReason
+  };
+  let {
+    featureLabel: featureLabel,
+    verb: verb
+  } = $se(e.policy);
+  return {
+    allowed: !1,
+    reason: dp(e.policy, featureLabel, verb) ?? `${featureLabel} ${verb} unavailable right now.`
+  };
+}
+function BOe() {
+  return U(Ae);
+}
+function lSn() {
+  return U(ke);
+}
+function wer() {
+  return U(we);
+}
+import { readdir as q, stat as Le } from "fs/promises";
+import { extname as Z, join as B, sep as H } from "path";
+var zai = 2.5;
+function V() {
+  return {
+    lastRequest: void 0,
+    lastContext: 0,
+    carriedTokens: 0,
+    firstPromptBytes: 0,
+    startTokens: 0,
+    pendingToolResultBytes: 0,
+    largeToolResultTokens: 0
+  };
+}
+function F(e, n) {
+  if (e.lastRequest === void 0) e.firstPromptBytes += n;
+}
+function dSn(e) {
+  return e / 2.5 > 1e4;
+}
+function Q(e, n) {
+  if (dSn(n)) e.pendingToolResultBytes += n;
+}
+function J(e, n) {
+  let o = n.cached + n.cacheCreate + n.uncached;
+  if (n.uuid === e.lastRequest) e.carriedTokens = Math.max(e.carriedTokens, o + n.output);else {
+    if (e.lastRequest === void 0) e.startTokens = o - Math.round(e.firstPromptBytes / 2.5);else if (o < e.lastContext) e.largeToolResultTokens = Math.max(0, e.largeToolResultTokens - (e.lastContext - o));else {
+      let s = Math.min(o - e.carriedTokens, e.pendingToolResultBytes / 2.5);
+      if (s > 1e4) e.largeToolResultTokens += s;
+    }
+    e.startTokens = Math.min(e.startTokens, o), e.lastRequest = n.uuid, e.lastContext = o, e.carriedTokens = o + n.output, e.pendingToolResultBytes = 0;
+  }
+  n.largeToolResultTokens = e.largeToolResultTokens, n.alwaysOnTokens = !n.isSubagent && e.startTokens > 40000 ? e.startTokens : 0;
+}
+var v = 4,
+  ae = 4194304,
+  length = ae,
+  ue = 604800000,
+  xe = 1e5,
+  Ie = 150000,
+  Pe = 3,
+  De = 0.5,
+  Be = 300000,
+  ve = 4,
+  Ue = 8,
+  Fe = `${H}subagents${H}${Q7t}${H}`,
+  textEncoder = new TextEncoder(),
+  d6r = textEncoder.encode('"type":"assistant"'),
+  He = textEncoder.encode('"usage":{'),
+  le = textEncoder.encode('"timestamp":"'),
+  Ke = textEncoder.encode('"sessionId":"'),
+  Ge = textEncoder.encode('"model":"'),
+  qe = textEncoder.encode('"requestId":"'),
+  c6r = textEncoder.encode('"id":"'),
+  We = textEncoder.encode("msg_"),
+  de = textEncoder.encode('"uuid":"'),
+  $e = textEncoder.encode('"input_tokens":'),
+  Ye = textEncoder.encode('"output_tokens":'),
+  je = textEncoder.encode('"cache_creation_input_tokens":'),
+  Xe = textEncoder.encode('"cache_read_input_tokens":'),
+  ze = textEncoder.encode('"isSidechain":true'),
+  Ve = textEncoder.encode('"isSidechain": true'),
+  Qe = textEncoder.encode('"effort":"max"'),
+  Je = textEncoder.encode('"attribution'),
+  Ze = textEncoder.encode('"attributionAgent":"'),
+  et = textEncoder.encode('"attributionSkill":"'),
+  tt = textEncoder.encode('"attributionPlugin":"'),
+  nt = textEncoder.encode('"attributionMcpServer":"'),
+  C4o = textEncoder.encode('"type":"user"'),
+  K = textEncoder.encode('"isMeta":true'),
+  ot = textEncoder.encode('"subtype":"scheduled_task_fire"'),
+  st = textEncoder.encode('"taskId":"'),
+  G = textEncoder.encode('"scheduledTaskId":"'),
+  rt = textEncoder.encode('"scheduledFireId":"'),
+  R4o = textEncoder.encode('"type":"tool_result"'),
+  A4o = textEncoder.encode('"toolUseResult":'),
+  it = textEncoder.encode('"turnCompanion":true'),
+  ct = textEncoder.encode(`"text":"${fT.slice(0, -1)}`),
+  ee = textEncoder.encode('"content":"['),
+  at = textEncoder.encode(" prior /loop wakeup"),
+  ut = textEncoder.encode('"isCompactSummary":true'),
+  lt = [textEncoder.encode('"subtype":"compact_boundary"'), ...[]],
+  dt = textEncoder.encode('"type":"attachment"'),
+  pt = textEncoder.encode('"attachment":{"type":"file"'),
+  ft = textEncoder.encode('"type":"queued_command"'),
+  mt = textEncoder.encode('"origin":{'),
+  Tt = textEncoder.encode('"origin":{"kind":"human"'),
+  _t = textEncoder.encode('"promptSource":"'),
+  St = textEncoder.encode('"type":"system"'),
+  Rt = textEncoder.encode('"subtype":"local_command"'),
+  w = e => [textEncoder.encode(`"content":"<${e}>`), textEncoder.encode(`"text":"<${e}>`)],
+  te = [...w("command-message"), ...w("command-name")],
+  gt = w(C5),
+  ne = [...w(mc), ...w(rg)],
+  Et = [...w(rB), ...w(hP)],
+  k = (e, n, o) => n.some(item => i_(e, item, 0, o) >= 0),
+  Ct = [textEncoder.encode(`"content":${_(dKe).slice(0, -1)}`), textEncoder.encode(`"text":${_(dKe).slice(0, -1)}`)],
+  pe = (e, n = !1) => {
+    let o = n ? _(e) : _(e).slice(0, -1);
+    return [textEncoder.encode(`"content":${o}`), textEncoder.encode(`"text":${o}`)];
+  },
+  ht = [...D0s.map(item => `${item}${KTo}`), uan, L0s, N_t, VGn, fan, eWn].filter(item => item.length > 0).flatMap(item => pe(item)),
+  yt = [Jjn, N0s, Qjn, Zjn, pan, BUt, jUt, H0s, man, han, gan].flatMap(item => pe(item, !0)),
+  bt = textEncoder.encode('"cron":"'),
+  Mt = textEncoder.encode('"prompt":"'),
+  Ot = textEncoder.encode('"taskKind":"loop"'),
+  At = textEncoder.encode('"content":"'),
+  kt = textEncoder.encode('"text":"'),
+  x = 34,
+  fe = 92,
+  wt = 123,
+  oe = 125,
+  Lt = 91,
+  Nt = 93,
+  W = 48,
+  me = 57;
+function i_(e, n, o, s) {
+  let r = e.subarray(o, s).indexOf(n);
+  return r < 0 ? -1 : o + r;
+}
+function VY(e, n, o, s) {
+  let r = i_(e, n, o, s);
+  if (r < 0) return;
+  let i = r + n.length,
+    c = i;
+  while (c < s && e[c] !== x) c++;
+  return e.toString("utf8", i, c);
+}
+function pqt(e, n, o, s, r) {
+  let i = i_(e, n, o, s);
+  if (i < 0) return;
+  let c = i + n.length,
+    p = c,
+    T = Math.min(s, c + r);
+  while (p < T && e[p] !== x) {
+    if (e[p] === fe) p++;
+    p++;
+  }
+  let u = p >= T;
+  if (p > T) p = T - 1;
+  if (u) p = xt(e, c, p);
+  let l = e.toString("utf8", c, p);
+  if (u) l = l.replace(/(^|[^\\])((?:\\\\)*)\\u[0-9a-fA-F]{0,3}$/, "$1$2");
+  try {
+    let g = ds(`"${l}"`);
+    return typeof g === "string" ? g : void 0;
+  } catch {
+    return;
+  }
+}
+function xt(e, n, o) {
+  let s = o;
+  while (s > n && (e[s - 1] & 192) === 128) s--;
+  if (s === n) return n;
+  let r = e[s - 1],
+    i = r >= 240 ? 4 : r >= 224 ? 3 : r >= 192 ? 2 : 1;
+  return o - (s - 1) < i ? s - 1 : o;
+}
+function It(e, n, o) {
+  let s = n;
+  while (!0) {
+    if (s = i_(e, c6r, s, o), s < 0) return;
+    let r = s + c6r.length;
+    if (i_(e, We, r, r + 4) === r) {
+      let i = r;
+      while (i < o && e[i] !== x) i++;
+      return e.toString("utf8", r, i);
+    }
+    s = r;
+  }
+}
+function I(e, n, o, s) {
+  let r = i_(e, n, o, s);
+  if (r < 0) return 0;
+  let i = r + n.length,
+    c = 0;
+  while (i < s && e[i] >= W && e[i] <= me) c = c * 10 + (e[i] - W), i++;
+  return c;
+}
+function Pt(e) {
+  if (!e) return 3;
+  let n = e.toLowerCase();
+  if (n.includes("fable")) return 10;
+  if (n.includes("opus")) return 5;
+  if (n.includes("haiku")) return 1;
+  return 3;
+}
+function x4o(e) {
+  return (e.cached + e.uncached * 10 + e.cacheCreate * 12.5 + e.output * 50) * e.modelTier;
+}
+async function Gai(e, n) {
+  let o = Date.now() - ue,
+    s = Date.now() - 86400000,
+    r = se(),
+    i = se();
+  return await Te(o, c => {
+    if (ie(i, c), c.ts >= s) ie(r, c, s);
+  }, e, c => {
+    if (re(i, c), c.ts >= s) re(r, c);
+  }, n), {
+    day: ce(r),
+    week: ce(i)
+  };
+}
+async function Te(e, n, o, s, r) {
+  if (o) return Dt(o, e, n, s, r);
+  let i = Om(),
+    c;
+  try {
+    c = await q(i);
+  } catch (error) {
+    if (qt(error)) return;
+    throw error;
+  }
+  let T = (await Promise.all(c.map(item => Ht(B(i, item))))).flat(),
+    u = _e(n, s);
+  for (let l = 0; l < T.length; l += v) {
+    let g = T.slice(l, l + v),
+      R = g.map(() => r && Ce(r()));
+    (await Promise.all(g.map((item, index) => Kt(item, e, R[index])))).forEach((item, index) => {
+      u(item), R[index]?.end(item);
+    });
+  }
+}
+function _e(e, n) {
+  let o = new Set(),
+    s = r => {
+      if (!r) return !0;
+      if (o.has(r)) return !1;
+      return o.add(r), !0;
+    };
+  return r => {
+    for (let i of r.records) if (s(i.uuid)) e(i);
+    if (n) {
+      for (let i of r.fires) if (s(i.uuid)) n(i);
+    }
+  };
+}
+async function Dt(e, n, o, s, r) {
+  let i = [],
+    budget = jFr(),
+    p = await qa(cursor => e.listEntries({
+      namespace: "transcript"
+    }, {
+      skipScopeStats: !0,
+      ...(cursor !== void 0 && {
+        cursor: cursor
+      })
+    }), R => {
+      for (let O of R) {
+        let y = QHe(O, Hr);
+        if (y !== void 0) i.push(y);
+      }
+    }, {
+      budget: budget
+    });
+  j("project", p, budget);
+  let u = (await Promise.all(i.map(item => Bt(e, item, n, budget)))).flat(),
+    l = _e(o, s);
+  for (let R = 0; R < u.length; R += v) {
+    let O = u.slice(R, R + v),
+      y = O.map(() => r && Ce(r()));
+    (await Promise.all(O.map((item, index) => vt(e, item, n, y[index])))).forEach((item, index) => {
+      l(item), y[index]?.end(item);
+    });
+  }
+  let g = Tna(budget);
+  if (g > 0) t(`foldRecentRecords: ${g} more v5 listings were cut short after the scan's ${ny}-page budget ran out`);
+}
+async function Bt(e, projectKey, o, budget_2) {
+  let r = [],
+    i = [],
+    c = await qa(cursor_2 => e.listEntries({
+      namespace: "transcript",
+      projectKey: projectKey
+    }, {
+      skipScopeStats: !0,
+      ...(cursor_2 !== void 0 && {
+        cursor: cursor_2
+      })
+    }), l => {
+      for (let g of l) if (g.kind === "key") Re(r, g);else if (g.scope.namespace === "transcript" && g.scope.sessionId !== void 0 && Hr(g.scope.sessionId)) i.push(g.scope.sessionId);
+    }, {
+      budget: budget_2
+    });
+  j("session", c, budget_2);
+  let p = new Map();
+  for (let l of r) if (l.key.namespace === "transcript" && l.key.agentId === void 0 && l.key.journal !== !0) p.set(l.key.sessionId, l.mtimeMs);
+  let T = i.filter(item => (p.get(item) ?? 1 / 0) >= o),
+    u = await Promise.all(T.map(item => Se(e, projectKey, item, budget_2)));
+  return r.concat(u.flat());
+}
+async function Se(e, projectKey_2, sessionId, budget_3, agentRelPath) {
+  let i = [],
+    c = [],
+    p = await qa(cursor_3 => e.listEntries({
+      namespace: "transcript",
+      projectKey: projectKey_2,
+      sessionId: sessionId,
+      ...(agentRelPath !== void 0 && {
+        agentRelPath: agentRelPath
+      })
+    }, {
+      skipScopeStats: !0,
+      ...(cursor_3 !== void 0 && {
+        cursor: cursor_3
+      })
+    }), u => {
+      for (let l of u) if (l.kind === "key") {
+        if (l.key.namespace === "transcript" && (l.key.agentId !== void 0 || l.key.journal === !0)) Re(i, l);
+      } else if (l.scope.namespace === "transcript" && l.scope.agentRelPath !== void 0 && l.scope.agentRelPath.length > (agentRelPath?.length ?? 0)) c.push(l.scope.agentRelPath);
+    }, {
+      budget: budget_3
+    });
+  j("subagent", p, budget_3);
+  let T = await Promise.all(c.map(item => Se(e, projectKey_2, sessionId, budget_3, item)));
+  return i.concat(T.flat());
+}
+function j(e, n, o) {
+  let s = Ena(n, o);
+  if (n.status === "error") t(`foldRecentRecords: v5 ${e} listing failed: ${n.error.code}`);else if (s === "first-truncation") t(`foldRecentRecords: v5 ${e} listing cut short (the scan's ${ny}-page budget is spent); keeping what was listed`);
+}
+function Re(e, n) {
+  if (n.kind === "key" && n.key.namespace === "transcript" && n.size !== void 0 && n.mtimeMs !== void 0) e.push({
+    key: n.key,
+    size: n.size,
+    mtimeMs: n.mtimeMs
+  });
+}
+async function vt(e, n, o, s) {
+  let r = ge();
+  if (n.mtimeMs >= o) await Ut(e, n, Ee(r, o, n.key.namespace === "transcript" && n.key.agentRelPath?.[0] === Q7t, s));
+  return r;
+}
+async function Ut(e, n, o) {
+  let {
+      key: key
+    } = n,
+    r = n.size <= ae,
+    offset = 0,
+    c = [],
+    p = 0;
+  while (!0) {
+    let T = await e.read([r ? key : {
+      key: key,
+      offset: offset,
+      length: length
+    }]);
+    if (!T.ok) {
+      t(`readRecordsFromStream: v5 read failed: ${T.error.code}`);
+      return;
+    }
+    let u = T.value.items[0];
+    if (!u.found) return;
+    let l = Buffer.from(u.value.buffer, u.value.byteOffset, u.value.byteLength),
+      g = 0;
+    while (g < l.length) {
+      let R = l.indexOf(10, g);
+      if (R === -1) {
+        c.push(Buffer.from(l.subarray(g))), p += l.length - g;
+        break;
+      }
+      if (p === 0) o(l.subarray(g, R));else o(Buffer.concat([...c, l.subarray(g, R)], p + (R - g))), c = [], p = 0;
+      g = R + 1;
+    }
+    if (offset += u.value.byteLength, r || u.value.byteLength === 0 || offset >= u.totalBytes) break;
+  }
+  if (p > 0) o(c.length === 1 ? c[0] : Buffer.concat(c, p));
+}
+function Ft(e, n) {
+  if (!n.attributionSkill) return;
+  e.set(n.attributionSkill, (e.get(n.attributionSkill) ?? 0) + n.cached + n.cacheCreate + n.uncached + n.output);
+}
+async function Vai(e) {
+  let n = Date.now() - ue,
+    o = new Map();
+  return await Te(n, s => Ft(o, s), e), o;
+}
+async function Ht(e) {
+  let n;
+  try {
+    n = await q(e, {
+      withFileTypes: !0
+    });
+  } catch (error) {
+    if (qt(error)) return [];
+    throw error;
+  }
+  let o = [],
+    s = [];
+  for (let i of n) if (i.isFile() && Z(i.name) === ".jsonl") o.push(B(e, i.name));else if (i.isDirectory()) s.push(i.name);
+  let r = await Promise.all(s.map(async item => {
+    let c = B(e, item, "subagents");
+    try {
+      return (await q(c, {
+        recursive: !0
+      })).filter(item => Z(item) === ".jsonl").map(item => B(c, item));
+    } catch (error) {
+      if (qt(error)) return [];
+      throw error;
+    }
+  }));
+  for (let i of r) for (let c of i) o.push(c);
+  return o;
+}
+async function Kt(e, n, o) {
+  let s = ge();
+  return await Gt(e, n, Ee(s, n, e.includes(Fe), o)), s;
+}
+async function Gt(e, n, o) {
+  let s;
+  try {
+    s = await Le(e);
+  } catch (error) {
+    if (qt(error)) return;
+    throw error;
+  }
+  if (!s.isFile() || s.mtimeMs < n) return;
+  try {
+    for await (let r of AVn(e)) o(r);
+  } catch (error) {
+    if (qt(error)) return;
+    throw error;
+  }
+}
+function ge() {
+  return {
+    records: [],
+    fires: []
+  };
+}
+function Ee(e, n, o, s) {
+  let r = $t(e, n, o);
+  if (!s) return r;
+  return i => {
+    r(i), s.line(i, e);
+  };
+}
+function Ce(e) {
+  let n = !0,
+    o = s => {
+      if (!n) return;
+      try {
+        s();
+      } catch (error) {
+        n = !1, a(error);
+      }
+    };
+  return {
+    line: (s, r) => o(() => e.line(s, r)),
+    end: s => o(() => e.end(s))
+  };
+}
+var Wt = /<command-name>([^<]{1,200})<\/command-name>/,
+  X = 200,
+  Y = 6 * X;
+function $t(e, n, o) {
+  let s = 0,
+    r = [],
+    i = [],
+    c = 0,
+    p = V(),
+    T = !0,
+    u,
+    l = new Map(),
+    g = () => {
+      s++, i = [], c = 0, T = !1;
+    },
+    R = () => {
+      s++, i = [], c = 0, T = !0, b = void 0, u = void 0;
+    },
+    O = () => {
+      if (!u) return;
+      if (c = Math.max(0, c - 1), u.run) e.fires.pop(), i.pop();
+      if (u.fire && u.fire.taskId === void 0) r.unshift(u.fire);
+      u = void 0;
+    },
+    y = () => {
+      if (u?.isCommandRecord) O(), R();
+    },
+    b,
+    L = (m, f) => {
+      let S = VY(m, rt, 0, f);
+      if (S !== void 0) {
+        let C = r.findIndex(item => item.uuid === S);
+        return C < 0 ? void 0 : r.splice(C, 1)[0];
+      }
+      let E = VY(m, G, 0, f);
+      if (E !== void 0) {
+        let C = r.findLastIndex(A => A.taskId === E);
+        if (C < 0) return;
+        let h = r[C];
+        return r = r.filter(item => item.taskId !== E), h;
+      }
+      if (!(i_(m, mt, 0, f) < 0 && (i_(m, K, 0, f) >= 0 || k(m, te, f)))) {
+        r = r.filter(item => item.taskId !== void 0);
+        return;
+      }
+      if (r[0]?.taskId === void 0) return r.shift();
+      return;
+    },
+    N = (m, f) => i_(m, K, 0, f) >= 0 && (ht.some(item => i_(m, item, 0, f) >= 0) || yt.some(item => i_(m, item, 0, f) >= 0));
+  return m => {
+    let f = m.length;
+    if (i_(m, d6r, 0, f) >= 0) {
+      let S = Vt(m, 0, f, o);
+      if (T = !0, u = void 0, S) {
+        J(p, S);
+        let E = l.get(S.isSubagent);
+        if (E?.cached === S.cached && E.cacheCreate === S.cacheCreate && E.uncached === S.uncached) S.recached = E.recached;else if (E) S.recached = Math.min(S.cacheCreate, Math.max(0, E.cached + E.cacheCreate - S.cached));
+        l.set(S.isSubagent, S);
+      }
+      if (S && S.ts >= n) {
+        if (c > 1 && i.length > 0) {
+          let share = 1 / c;
+          S.loopShares = i.map(item => ({
+            ...item,
+            share: share
+          }));
+        } else if (i[0]) S.loop = i[0].loop, S.loopFireTs = i[0].fireTs;
+        e.records.push(S);
+      }
+      return;
+    }
+    if (i_(m, C4o, 0, f) >= 0) {
+      let S = i_(m, R4o, 0, f);
+      if (S < 0) F(p, f);else if (dSn(f - S)) {
+        let z = i_(m, A4o, S, f);
+        Q(p, (z < 0 ? f : z) - S);
+      }
+      if (S >= 0 || i_(m, it, 0, f) >= 0 || i_(m, ut, 0, f) >= 0 || k(m, Et, f) || Yt(m, f) || N(m, f)) return;
+      if (i_(m, ct, 0, f) >= 0) {
+        R();
+        return;
+      }
+      let E = i_(m, K, 0, f) >= 0;
+      if (E && k(m, Ct, f)) {
+        if (O(), c === 0) R();
+        return;
+      }
+      if (k(m, ne, f)) {
+        y();
+        return;
+      }
+      let isCommandRecord = k(m, te, f);
+      if (k(m, gt, f) || E && !isCommandRecord && i_(m, _t, 0, f) < 0 && i_(m, G, 0, f) < 0) return;
+      let C = i_(m, Tt, 0, f) >= 0 || !E && !isCommandRecord && i_(m, G, 0, f) < 0,
+        fire = L(m, f);
+      if (fire?.openBatch === s && !T && c > 0) R();
+      if (T || C) g();
+      if (c++, u = {
+        fire: fire,
+        run: !1,
+        isCommandRecord: isCommandRecord
+      }, !fire) {
+        b = void 0;
+        return;
+      }
+      let loop = fire.loop ?? zt(m, f);
+      if (!loop) return;
+      if (!loop.isDynamic) b = void 0;
+      if (fire.ts < n) return;
+      e.fires.push({
+        ts: fire.ts,
+        uuid: fire.uuid,
+        loop: loop
+      }), i.push({
+        loop: loop,
+        fireTs: fire.ts
+      }), u.run = !0;
+      return;
+    }
+    if (k(m, lt, f)) {
+      l.clear();
+      return;
+    }
+    if (p.lastRequest === void 0 && i_(m, pt, 0, f) >= 0) {
+      F(p, f);
+      return;
+    }
+    if (i_(m, St, 0, f) >= 0 && i_(m, Rt, 0, f) >= 0 && k(m, ne, f)) {
+      y();
+      return;
+    }
+    if (i_(m, dt, 0, f) >= 0 && i_(m, ft, 0, f) >= 0) {
+      R();
+      return;
+    }
+    if (i_(m, ot, 0, f) >= 0) {
+      let S = VY(m, le, 0, f),
+        ts = S ? Date.parse(S) : NaN;
+      if (Number.isNaN(ts)) return;
+      let M = pqt(m, Mt, 0, f, Y),
+        prompt = M ? hY(M, X) : void 0,
+        isDynamic = i_(m, Ot, 0, f) >= 0;
+      if (prompt && isDynamic) b ??= prompt, prompt = b;
+      r.push({
+        ts: ts,
+        openBatch: c > 0 && !T ? s : void 0,
+        uuid: VY(m, de, 0, f) ?? "",
+        taskId: VY(m, st, 0, f),
+        loop: prompt ? {
+          prompt: prompt,
+          cron: Xt(pqt(m, bt, 0, f, jt)),
+          isDynamic: isDynamic
+        } : null
+      });
+    }
+  };
+}
+function Yt(e, n) {
+  let o = i_(e, ee, 0, n);
+  if (o < 0) return !1;
+  let s = o + ee.length,
+    r = s;
+  while (s < n && e[s] >= W && e[s] <= me) s++;
+  return s > r && i_(e, at, s, n) === s;
+}
+var he = 64,
+  jt = 6 * he;
+function Xt(e) {
+  return e === void 0 ? void 0 : hY(e, he);
+}
+function zt(e, n) {
+  let o = pqt(e, At, 0, n, Y) ?? pqt(e, kt, 0, n, Y);
+  if (!o) return null;
+  let s = o.match(Wt)?.[1],
+    prompt_2 = hY(s ?? o, X);
+  return prompt_2 ? {
+    prompt: prompt_2,
+    cron: void 0,
+    isDynamic: !1
+  } : null;
+}
+function Vt(e, n, o, isWorkflow) {
+  if (i_(e, d6r, n, o) < 0) return;
+  if (i_(e, He, n, o) < 0) return;
+  let r = VY(e, le, n, o),
+    sessionId_2 = VY(e, Ke, n, o);
+  if (!r || !sessionId_2) return;
+  let ts_2 = Date.parse(r);
+  if (Number.isNaN(ts_2)) return;
+  let uncached = I(e, $e, n, o),
+    output = I(e, Ye, n, o),
+    cacheCreate = I(e, je, n, o),
+    cached = I(e, Xe, n, o);
+  if (uncached + output + cacheCreate + cached === 0) return;
+  let g = i_(e, Je, n, o) >= 0,
+    model = VY(e, Ge, n, o);
+  return {
+    ts: ts_2,
+    sessionId: sessionId_2,
+    cached: cached,
+    cacheCreate: cacheCreate,
+    recached: 0,
+    uncached: uncached,
+    output: output,
+    isSubagent: i_(e, ze, n, o) >= 0 || i_(e, Ve, n, o) >= 0,
+    isMaxEffort: Qt(e.subarray(n, o), Qe),
+    isWorkflow: isWorkflow,
+    alwaysOnTokens: 0,
+    largeToolResultTokens: 0,
+    modelTier: Pt(model),
+    model: model,
+    uuid: VY(e, qe, n, o) ?? It(e, n, o) ?? VY(e, de, n, o) ?? "",
+    ...(g && {
+      attributionAgent: VY(e, Ze, n, o),
+      attributionSkill: VY(e, et, n, o),
+      attributionPlugin: VY(e, tt, n, o),
+      attributionMcpServer: VY(e, nt, n, o)
+    })
+  };
+}
+function Qt(e, n) {
+  let o = e.lastIndexOf(oe);
+  for (let s = e.lastIndexOf(n); s >= 0; s = s === 0 ? -1 : e.lastIndexOf(n, s - 1)) {
+    let r = 1,
+      i = !1,
+      c = s + n.length;
+    for (; c < e.length && r > 0; c++) {
+      let p = e[c];
+      if (i) {
+        if (p === fe) c++;else if (p === x) i = !1;
+      } else if (p === x) i = !0;else if (p === wt || p === Lt) r++;else if (p === oe || p === Nt) r--;
+    }
+    if (r === 0 && c - 1 === o) return !0;
+  }
+  return !1;
+}
+function se() {
+  return {
+    totalCost: 0,
+    requestCount: 0,
+    cacheMissCost: 0,
+    cacheMissCount: 0,
+    longCtxCost: 0,
+    longCtxCount: 0,
+    maxEffortCost: 0,
+    maxEffortCount: 0,
+    workflowCost: 0,
+    workflowCount: 0,
+    alwaysOnCost: 0,
+    alwaysOnCount: 0,
+    largeToolResultCost: 0,
+    largeToolResultCount: 0,
+    sessions: new Map(),
+    buckets: new Map(),
+    byAgent: new Map(),
+    bySkill: new Map(),
+    byPlugin: new Map(),
+    byMcpServer: new Map(),
+    loops: new Map()
+  };
+}
+function ye(e, n) {
+  let o = e.loops.get(n.prompt);
+  if (!o) o = {
+    prompt: n.prompt,
+    cron: n.cron,
+    isDynamic: n.isDynamic,
+    runs: 0,
+    tokens: 0,
+    lastRunMs: 0
+  }, e.loops.set(n.prompt, o);
+  return o;
+}
+function re(e, n) {
+  let o = ye(e, n.loop);
+  if (o.runs++, n.ts >= o.lastRunMs) o.lastRunMs = n.ts, o.cron = n.loop.cron ?? o.cron, o.isDynamic = n.loop.isDynamic;
+}
+function P(e, n, o) {
+  if (n) e.set(n, (e.get(n) ?? 0) + o);
+}
+function ie(e, n, o = -1 / 0) {
+  let s = x4o(n);
+  if (e.totalCost += s, e.requestCount++, n.attributionAgent) P(e.byAgent, n.attributionSkill ?? n.attributionAgent, s);else P(e.bySkill, n.attributionSkill, s);
+  if (P(e.byPlugin, n.attributionPlugin, s), P(e.byMcpServer, n.attributionMcpServer, s), n.loop || n.loopShares) {
+    let u = n.cached + n.cacheCreate + n.uncached + n.output;
+    for (let {
+      loop: loop_2,
+      fireTs: fireTs,
+      share: share_2
+    } of n.loopShares ?? [{
+      loop: n.loop,
+      fireTs: n.loopFireTs ?? n.ts,
+      share: 1
+    }]) if (fireTs >= o) ye(e, loop_2).tokens += u * share_2;
+  }
+  let r = n.cached + n.cacheCreate + n.uncached;
+  if (n.uncached + n.recached > xe) e.cacheMissCost += s, e.cacheMissCount++;
+  if (r > Ie) e.longCtxCost += s, e.longCtxCount++;
+  if (n.isMaxEffort) e.maxEffortCost += s, e.maxEffortCount++;
+  if (n.isWorkflow) e.workflowCost += s, e.workflowCount++;
+  let i = s - n.output * 50 * n.modelTier;
+  if (n.alwaysOnTokens > 0) e.alwaysOnCost += i * Math.min(1, n.alwaysOnTokens / r), e.alwaysOnCount++;
+  if (n.largeToolResultTokens > 0) e.largeToolResultCost += i * Math.min(1, n.largeToolResultTokens / r), e.largeToolResultCount++;
+  let c = e.sessions.get(n.sessionId);
+  if (!c) c = {
+    cost: 0,
+    requests: 0,
+    subCost: 0,
+    subCount: 0,
+    hours: new Set()
+  }, e.sessions.set(n.sessionId, c);
+  if (c.cost += s, c.requests++, n.isSubagent) c.subCost += s, c.subCount++;
+  c.hours.add(Math.floor(n.ts / 3600000));
+  let p = Math.floor(n.ts / Be),
+    T = e.buckets.get(p);
+  if (!T) T = {
+    sids: new Set(),
+    cost: 0,
+    count: 0
+  }, e.buckets.set(p, T);
+  T.sids.add(n.sessionId), T.cost += s, T.count++;
+}
+function ce(e) {
+  let cost_2 = 0,
+    count_2 = 0,
+    peakParallel = 0;
+  for (let u of e.buckets.values()) if (peakParallel = Math.max(peakParallel, u.sids.size), u.sids.size >= ve) cost_2 += u.cost, count_2 += u.count;
+  let cost = 0,
+    count = 0,
+    cost_3 = 0,
+    count_3 = 0;
+  for (let u of e.sessions.values()) {
+    if (u.subCount >= Pe || u.cost > 0 && u.subCost / u.cost > De) cost += u.cost, count++;
+    if (u.hours.size >= Ue) cost_3 += u.cost, count_3++;
+  }
+  let behaviors = [{
+    key: "cache_miss",
+    cost: e.cacheMissCost,
+    count: e.cacheMissCount
+  }, {
+    key: "long_context",
+    cost: e.longCtxCost,
+    count: e.longCtxCount
+  }, {
+    key: "subagent_heavy",
+    cost: cost,
+    count: count
+  }, {
+    key: "high_parallel",
+    cost: cost_2,
+    count: count_2
+  }, {
+    key: "cron",
+    cost: cost_3,
+    count: count_3
+  }, {
+    key: "max_effort",
+    cost: e.maxEffortCost,
+    count: e.maxEffortCount
+  }, {
+    key: "workflow",
+    cost: e.workflowCost,
+    count: e.workflowCount
+  }, {
+    key: "always_on_context",
+    cost: e.alwaysOnCost,
+    count: e.alwaysOnCount
+  }, {
+    key: "large_tool_results",
+    cost: e.largeToolResultCost,
+    count: e.largeToolResultCount
+  }];
+  return behaviors.sort((itemA, itemB) => itemB.cost - itemA.cost), {
+    totalCost: e.totalCost,
+    requestCount: e.requestCount,
+    sessionCount: e.sessions.size,
+    behaviors: behaviors,
+    agents: D(e.byAgent, e.totalCost),
+    skills: D(e.bySkill, e.totalCost),
+    plugins: D(e.byPlugin, e.totalCost),
+    mcpServers: D(e.byMcpServer, e.totalCost),
+    loops: [...e.loops.values()].map(item => ({
+      ...item,
+      tokens: Math.round(item.tokens)
+    })).sort((itemA, itemB) => itemB.tokens - itemA.tokens),
+    peakParallel: peakParallel
+  };
+}
+function D(e, n) {
+  if (e.size === 0 || n === 0) return [];
+  return [...e.entries()].sort((itemA, itemB) => itemB[1] - itemA[1]).map(([name, s]) => ({
+    name: name,
+    pct: Math.round(s / n * 100)
+  })).filter(item => item.pct > 0);
+}
+export { BOe, lSn, wer, zai, dSn, d6r, c6r, C4o, R4o, A4o, i_, VY, pqt, x4o, Gai, Vai };

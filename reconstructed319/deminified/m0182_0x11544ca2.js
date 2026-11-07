@@ -1,0 +1,850 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { hm } from "B:/~BUN/root/chunk-q78ga0zw.js";
+import { z, st } from "B:/~BUN/root/chunk-game8aqv.js";
+import { d, K } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { th } from "B:/~BUN/root/chunk-h4acfc9y.js";
+import { jn } from "B:/~BUN/root/chunk-rr294jrm.js";
+import { Ue } from "B:/~BUN/root/chunk-eev762xg.js";
+import { mP } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { t, _, ds } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { sB, _G, u7, Ant, fwt, Cae } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import { x } from "B:/~BUN/root/chunk-mwfggkjt.js";
+import { vc, DU, ELs as tail, CLs, Tan } from "B:/~BUN/root/chunk-jgwwv4gf.js";
+import { kc } from "B:/~BUN/root/chunk-trd3c21n.js";
+import { p } from "B:/~BUN/root/chunk-z6138ats.js";
+import { zn } from "B:/~BUN/root/chunk-nsneqfcc.js";
+import { cn } from "B:/~BUN/root/chunk-bkfncj77.js";
+import { Ve } from "B:/~BUN/root/chunk-myfamxtp.js";
+import { yd, ph, FFe, Rw, PU, ape, tc, CO, RV, hl, YVe, TUt, XDs, iS, nj, ASe, ETo, lpe } from "B:/~BUN/root/chunk-xqymp2nr.js";
+import { Xx, OU } from "B:/~BUN/root/chunk-pzs4x0zd.js";
+import { kn } from "B:/~BUN/root/chunk-t7d2hp9h.js";
+import { o, u } from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import { ny, qa } from "B:/~BUN/root/chunk-qzcyr88d.js";
+import { Ht } from "B:/~BUN/root/chunk-cbjnh04j.js";
+import { X } from "B:/~BUN/root/chunk-g9pw24zp.js";
+import { L } from "B:/~BUN/root/chunk-5ha2avah.js";
+import { basename as Ie } from "path";
+var tags = [u7, sB, Ant],
+  Pe = [...fwt, "system-reminder"],
+  B;
+function H() {
+  return B ??= CLs([{
+    tags: tags
+  }]), B;
+}
+function wSe(e) {
+  return H().neutralize(e);
+}
+function hTo(e) {
+  return H().openerOffsets(e);
+}
+var D;
+function j() {
+  return D ??= CLs([{
+    tags: Cae.filter(item => item !== _G)
+  }, {
+    tags: [_G],
+    tail: tail
+  }, {
+    tags: ["antml"],
+    tail: ({
+      colon: colon
+    }) => `[${colon}]`
+  }]), D;
+}
+function Yx(e) {
+  return j().neutralize(e);
+}
+function mXi(e) {
+  return j().openerOffsets(e);
+}
+var regExp = new RegExp(`[${DU.open}]`, "u");
+function U(e) {
+  return regExp.test(e) || e.includes("\\u");
+}
+var de = /^\s*(?:\{\s*["}]|\[\s*(?:["{[\]\d-]|true\b|false\b|null\b))/,
+  ue = new Map([['"', '"'], ["\\", "\\"], ["/", "/"], ["b", "\b"], ["f", "\f"], ["n", `
+`], ["r", "\r"], ["t", "\t"]]);
+function q(e, n) {
+  let r = n,
+    i = 1;
+  while (i % 2 === 1) {
+    if (r = e.indexOf('"', r + 1), r === -1) return -1;
+    i = 0;
+    while (e.charCodeAt(r - i - 1) === 92) i++;
+  }
+  return r;
+}
+function ce(e) {
+  let n = [],
+    r = e.indexOf('"');
+  while (r !== -1) {
+    let i = q(e, r);
+    if (i === -1) {
+      n.push([r + 1, e.length]);
+      break;
+    }
+    n.push([r + 1, i]), r = e.indexOf('"', i + 1);
+  }
+  return n;
+}
+function fe(e) {
+  if (de.test(e)) return !0;
+  let n = e.search(/\S/),
+    r = e[n] === '"' ? q(e, n) : -1;
+  return r !== -1 && e.slice(r + 1).trim() === "";
+}
+function le(e, n, r) {
+  let value = "",
+    starts = [],
+    ends = [];
+  for (let f = n; f < r;) {
+    let g = e[f],
+      k = 1;
+    if (g === "\\" && f + 1 < r) {
+      let S = ue.get(e[f + 1]),
+        m = e.slice(f + 2, f + 6);
+      if (S !== void 0) g = S, k = 2;else if (e[f + 1] === "u" && f + 6 <= r && /^[0-9a-fA-F]{4}$/.test(m)) g = String.fromCharCode(parseInt(m, 16)), k = 6;
+    }
+    value += g, starts.push(f), ends.push(f + k), f += k;
+  }
+  return {
+    value: value,
+    starts: starts,
+    ends: ends
+  };
+}
+function me(e) {
+  let n = new Map();
+  for (let c of hTo(e)) n.set(c, {
+    end: c + Tan(e, c),
+    keepsOpener: e[c] === "<"
+  });
+  for (let [c, a] of ce(e)) {
+    if (!U(e.slice(c, a))) continue;
+    let {
+      value: value_2,
+      starts: starts_2,
+      ends: ends_2
+    } = le(e, c, a);
+    for (let S of hTo(value_2)) n.set(starts_2[S], {
+      end: ends_2[S + Tan(value_2, S) - 1],
+      keepsOpener: value_2[S] === "<"
+    });
+  }
+  let r = "",
+    i = 0;
+  for (let c of [...n.keys()].sort((itemA, itemB) => itemA - itemB)) {
+    let {
+      end: end,
+      keepsOpener: keepsOpener
+    } = n.get(c);
+    r += e.slice(i, keepsOpener ? end : c) + (keepsOpener ? "\\\\" : "<\\\\"), i = end;
+  }
+  return r + e.slice(i);
+}
+function hUt(e) {
+  if (!U(e)) return e;
+  return fe(e) ? me(e) : wSe(e);
+}
+var name = "main";
+function zVe(e, n) {
+  return `<${Ant} from="${vc(e)}">
+${gUt(n)}
+</${Ant}>`;
+}
+function gUt(e) {
+  return hUt(e);
+}
+import { createHash as ge, randomBytes as Y } from "crypto";
+import { mkdir as pe, readdir as W, unlink as O } from "fs/promises";
+import { basename as Se, join as A, resolve as ke } from "path";
+async function gTo(e, n) {
+  let r = [],
+    i;
+  try {
+    i = await qa(cursor => e.listEntries({
+      namespace: "session"
+    }, {
+      cursor: cursor,
+      skipKeyStats: !0
+    }), c => {
+      for (let a of c) if (a.kind === "key" && a.key.namespace === "session") r.push(a.key.file);
+    });
+  } catch (error) {
+    n.onIssue?.(`failed: ${d(error)}`);
+    return;
+  }
+  switch (i.status) {
+    case "done":
+      return r;
+    case "error":
+      n.onIssue?.(`failed: ${Ht(i.error)}`);
+      return;
+    case "capped":
+      return n.onIssue?.(`truncated at ${ny} pages; ${r.length} names seen`, "warn"), n.partialOnCap ? r : void 0;
+  }
+}
+var type = "auth",
+  iDr = /^(\d+)\.[0-9a-f]{64}\.key$/,
+  he = /^(\d+)\.[0-9a-f]{64}\.key\.tmp\.[0-9a-f]+$/,
+  v = 16,
+  be = /^[0-9a-f]{32}$/,
+  R = 4096,
+  Q = p(() => u({
+    peerToken: o().regex(be),
+    procStart: o().optional(),
+    procStartFt: o().optional(),
+    pidDomain: o().optional()
+  }));
+function aDr() {
+  return x() === "windows";
+}
+function hXi() {
+  return {
+    peerToken: Y(v).toString("hex"),
+    childToken: Y(v).toString("hex")
+  };
+}
+var lDr = 25;
+function kSe() {
+  return A(Ue(), "sessions");
+}
+function TO(e) {
+  let n = lpe(e);
+  if (n !== void 0) return `\\\\.\\pipe\\${ETo(n)}`;
+  if (th(e)) return;
+  return ke(e);
+}
+function Z(e) {
+  let n = TO(e);
+  return n === void 0 ? void 0 : ge("sha256").update(n).digest("hex");
+}
+function V(e, n) {
+  let r = Z(n);
+  if (r === void 0) throw Error("refusing to derive a messaging key name for a non-canonical socket path");
+  return `${e}.${r}.key`;
+}
+async function gXi(e, peerToken, r, {
+  sweepPermitted: sweepPermitted
+}) {
+  if (X() && r !== void 0) return ye(r, e, peerToken);
+  let c = kSe();
+  await pe(c, {
+    recursive: !0,
+    mode: 448
+  }), await Ee(c, sweepPermitted);
+  let a = A(c, V(process.pid, e));
+  try {
+    await O(a);
+  } catch {}
+  return await zn(a, _({
+    peerToken: peerToken,
+    ...ape(await Rw()),
+    pidDomain: await Xx()
+  }), 384), a;
+}
+async function ye(e, n, peerToken_2) {
+  let i = V(process.pid, n),
+    c = await e.ensureScope({
+      namespace: "session"
+    });
+  if (!c.ok) throw t(`[uds-auth] sessions scope unavailable: ${Ht(c.error)}`), Error("messaging key folder could not be made through storage");
+  try {
+    await e.delete(Ve.session(i));
+  } catch {}
+  let a = await e.write(Ve.session(i), _({
+    peerToken: peerToken_2,
+    ...ape(await Rw()),
+    pidDomain: await Xx()
+  }), {
+    publishDiscipline: "atomic",
+    mode: 384,
+    exactMode: 384
+  });
+  if (!a.ok) throw t(`[uds-auth] key publish failed: ${Ht(a.error)}`), Error("messaging key could not be published through storage");
+  return A(kSe(), i);
+}
+async function dDr(e) {
+  try {
+    let n = await yd(e, R);
+    if (n === null) return;
+    let r = Q().safeParse(ds(n));
+    return r.success ? r.data.pidDomain : void 0;
+  } catch {
+    return;
+  }
+}
+async function Ee(e, n) {
+  if (!n) return;
+  let r;
+  try {
+    r = await W(e);
+  } catch {
+    return;
+  }
+  let i = await Xx();
+  await Promise.all(r.map(async item => {
+    let a = he.exec(item);
+    if (!a || !ph(parseInt(a[1], 10))) return;
+    let f = await dDr(A(e, item));
+    if (f !== void 0 && f !== i) return;
+    try {
+      await O(A(e, item));
+    } catch {}
+  }));
+}
+async function yXi(e, n) {
+  if (X() && n !== void 0) {
+    try {
+      await n.delete(Ve.session(Se(e)));
+    } catch {}
+    return;
+  }
+  try {
+    await O(e);
+  } catch {}
+}
+async function _Xi(e, n, r) {
+  let i = kSe(),
+    c;
+  if (X() && n !== void 0) {
+    let m = await gTo(n, {
+      partialOnCap: !1
+    });
+    if (m === void 0) return {
+      kind: "unusable"
+    };
+    c = m;
+  } else try {
+    c = await W(i);
+  } catch (error) {
+    return K(error) ? {
+      kind: "no-key"
+    } : {
+      kind: "unusable"
+    };
+  }
+  let a = Z(e);
+  if (a === void 0) return {
+    kind: "no-key"
+  };
+  let f = `.${a}.key`,
+    g = c.filter(item => item.endsWith(f)).map(m => {
+      let h = iDr.exec(m);
+      return h ? {
+        file: m,
+        pid: parseInt(h[1], 10)
+      } : void 0;
+    }).filter(item => item !== void 0);
+  if (g.length === 0) return {
+    kind: "no-key"
+  };
+  let k = async m => {
+    let h = X() && n !== void 0 ? await we(n, m) : await yd(A(i, m), R);
+    if (h === null) return;
+    try {
+      let y = Q().safeParse(ds(h));
+      return y.success ? y.data : void 0;
+    } catch {
+      return;
+    }
+  };
+  if (g.length === 1) {
+    let m = g[0];
+    if (r?.requireLiveOwner && ph(m.pid)) return {
+      kind: "dead-owner"
+    };
+    let h = await k(m.file);
+    if (h === void 0) return {
+      kind: "unusable"
+    };
+    if (r?.requireLiveOwner) {
+      let y = PU(h);
+      if (y !== void 0) {
+        let E = await tc(m.pid, {
+          skipCache: !0
+        });
+        if (E !== void 0 && !FFe(y, E)) return {
+          kind: "dead-owner"
+        };
+      }
+    }
+    return {
+      kind: "token",
+      token: h.peerToken
+    };
+  }
+  let S;
+  for (let {
+    file: file,
+    pid: pid
+  } of g) {
+    let y = await k(file);
+    if (y === void 0) continue;
+    let rank = 0;
+    if (!ph(pid)) {
+      let w = PU(y),
+        T = w === void 0 ? void 0 : await tc(pid, {
+          skipCache: !0
+        });
+      if (w === void 0 || T === void 0) rank = 1;else rank = FFe(w, T) ? 2 : 0;
+    }
+    if (S === void 0 || rank > S.rank) S = {
+      rank: rank,
+      peerToken: y.peerToken
+    };
+  }
+  if (S === void 0) return {
+    kind: "unusable"
+  };
+  if (r?.requireLiveOwner && S.rank === 0) return {
+    kind: "dead-owner"
+  };
+  return {
+    kind: "token",
+    token: S.peerToken
+  };
+}
+async function we(e, n) {
+  try {
+    let r = await e.readText([{
+      key: Ve.session(n),
+      offset: 0,
+      length: R + 1
+    }]);
+    if (!r.ok) return null;
+    let i = r.value.items[0];
+    if (!i.found || i.totalBytes > R) return null;
+    return i.value;
+  } catch {
+    return null;
+  }
+}
+function FDs(token) {
+  return _({
+    type: type,
+    token: token
+  }) + `
+`;
+}
+var bXi = FDs("0".repeat(v * 2)).length;
+function SXi(e) {
+  return typeof e === "object" && e !== null && "type" in e && e.type === type;
+}
+function wXi(e, n) {
+  if (n === void 0) return;
+  if (OU(e, n.peerToken)) return "peer";
+  if (OU(e, n.childToken)) return "child";
+  return;
+}
+function Eie() {
+  let {
+    getFeatureValue_SESSION_PINNED: getFeatureValue_SESSION_PINNED
+  } = import.meta.require("B:/~BUN/root/chunk-hckxtg11.js");
+  try {
+    return getFeatureValue_SESSION_PINNED("tengu_session_stable_address", !1);
+  } catch {
+    return !1;
+  }
+}
+var ee = "sid:";
+function qin(e) {
+  return `${ee}${e}`;
+}
+function yUt(e) {
+  return e.startsWith(ee);
+}
+function y_t(e) {
+  return !yUt(e.sock);
+}
+function yTo(e) {
+  let n = typeof e === "string" ? e.trim() : "",
+    r = aAe(n);
+  return !n || !r || r === "untitled session" && n.toLowerCase() !== "untitled session";
+}
+function Net(e) {
+  return e.environmentKind !== void 0 && e.environmentKind !== "bridge";
+}
+function _To(e) {
+  return !Net(e) && e.connected === !1;
+}
+function Yo(e) {
+  return e.normalize("NFKC").replace(/[\p{Cc}\p{Cf}\p{Cs}]/gu, n => /\s/.test(n) ? n : "").trim().toLowerCase().replace(/\s+/g, "-");
+}
+function kXi(e) {
+  return hm(Yo(e)) !== null;
+}
+function __t(e) {
+  return typeof e !== "string" || ZL(e);
+}
+function _Ut(e, n) {
+  return e.name === hl && n !== void 0 && e.agentId === n;
+}
+function spe(e) {
+  let teamContext = e.teamContext;
+  if (teamContext?.leadAgentId && teamContext.isLeader !== !1) return teamContext.leadAgentId;
+  let r = kc(teamContext);
+  return r ? RV(hl, r) : void 0;
+}
+function b_t(e, n) {
+  return e.members.filter(item => _Ut(item, n) || !__t(item.name));
+}
+function ZL(e) {
+  let n = Yo(e);
+  return n === name || n === hl || n === YVe || n === TUt || hm(n) !== null;
+}
+var M = 6,
+  HDs = 12,
+  GVe = `[0-9a-f]{${M},${HDs}}`,
+  regExp_2 = new RegExp(`^(.*\\S)\\s*\\[(${GVe})\\]$`);
+function wJ(e) {
+  let n = regExp_2.exec(e.trim());
+  return n ? {
+    name: n[1],
+    ref: n[2]
+  } : null;
+}
+function kJ(e, n) {
+  let r = [];
+  r.push({
+    name: name,
+    id: st(),
+    kind: "main",
+    where: "in-process",
+    lastActive: void 0,
+    sock: void 0
+  });
+  let i = new Set();
+  for (let [id, l] of Object.entries(e.teamContext?.teammates ?? {})) i.add(id), r.push({
+    name: l.name,
+    id: id,
+    kind: "teammate",
+    where: "in-process",
+    lastActive: void 0,
+    sock: void 0
+  });
+  for (let [name_2, id_2] of e.agentNameRegistry) {
+    let b = e.tasks[id_2],
+      I = b?.type === "local_agent" ? b : void 0;
+    r.push({
+      name: name_2,
+      id: id_2,
+      kind: "subagent",
+      where: "in-process",
+      lastActive: I?.startTime,
+      sock: void 0
+    });
+  }
+  for (let s of n.teamFile?.members ?? []) {
+    if (i.has(s.agentId)) continue;
+    i.add(s.agentId), r.push({
+      name: s.name,
+      id: s.agentId,
+      kind: "teammate",
+      where: "this-machine",
+      lastActive: void 0,
+      sock: void 0
+    });
+  }
+  let c = Eie(),
+    a = n.sessions.filter(y_t),
+    f = c ? re(a) : void 0,
+    g = c ? se(z(), a, f) : void 0;
+  for (let s of a) {
+    let l = f?.get(s)?.claims;
+    r.push({
+      name: s.name || Ie(s.cwd),
+      id: s.sock,
+      kind: "session",
+      where: "this-machine",
+      lastActive: s.statusUpdatedAt,
+      sock: s.sock,
+      ...(l !== void 0 && l.size > 0 && {
+        claimedSessionIds: [...l].sort()
+      }),
+      ...(c && s.sessionId !== void 0 && !g.has(s.sessionId) && {
+        stableId: qin(s.sessionId)
+      }),
+      ...(c && s.nameSource === "derived" && {
+        derivedName: !0
+      }),
+      ...(s.hostSessionId !== void 0 && {
+        hostSessionId: s.hostSessionId
+      })
+    });
+  }
+  let k = new Map();
+  for (let s of n.sessions) if (s.bridgeSessionId !== void 0) {
+    let l = jn(s.bridgeSessionId);
+    k.set(l, [...(k.get(l) ?? []), s.sock]);
+  }
+  let S = [];
+  for (let s of n.cloud ?? []) {
+    if (Ajn(n.sessions, s.id)) {
+      S.push({
+        rawName: s.title || "untitled",
+        socks: k.get(jn(s.id)) ?? []
+      });
+      continue;
+    }
+    r.push({
+      name: s.title || "untitled",
+      id: s.id,
+      kind: "cloud-session",
+      ...(yTo(s.title) && {
+        derivedName: !0
+      }),
+      ...(s.acceptsPeerMessages === !0 && {
+        reportsInbound: !0
+      }),
+      where: s.remoteControl ? "remote" : "cloud",
+      lastActive: s.lastActive,
+      sock: void 0,
+      ...(s.offline && {
+        offline: !0
+      })
+    });
+  }
+  let m = new Set((n.cloud ?? []).map(item => jn(item.id))),
+    h = Xin(n.sessions);
+  for (let s of n.bridge ?? []) {
+    let l = jn(s.id);
+    if (m.has(l)) continue;
+    if (h.has(l)) {
+      S.push({
+        rawName: s.title || "untitled",
+        socks: k.get(l) ?? []
+      });
+      continue;
+    }
+    let b = Date.parse(s.updated_at);
+    r.push({
+      name: s.title || "untitled",
+      id: s.id,
+      kind: "bridge-session",
+      ...(yTo(s.title) && {
+        derivedName: !0
+      }),
+      ...(s.acceptsPeerMessages === !0 && {
+        reportsInbound: !0
+      }),
+      ...(s.inboundReportUnavailable && {
+        inboundReportUnavailable: !0
+      }),
+      where: Net(s) ? "cloud" : "remote",
+      lastActive: Number.isNaN(b) ? void 0 : b,
+      sock: void 0,
+      ...(_To(s) && {
+        offline: !0
+      })
+    });
+  }
+  let y = spe(e),
+    E = r.flatMap(item => {
+      let name_3 = aAe(item.name);
+      if (name_3 === null || !F(name_3)) return [];
+      let b = item.kind === "main" || item.kind === "teammate" && _Ut({
+          name: item.name,
+          agentId: item.id
+        }, y),
+        I = (item.kind === "session" || item.kind === "cloud-session" || item.kind === "bridge-session") && Yo(name_3) === name;
+      return b || I || !__t(name_3) ? [{
+        ...item,
+        name: name_3
+      }] : [];
+    }),
+    w = new Set(),
+    candidates = Re(E.filter(item => {
+      if (item.kind !== "session") return !0;
+      let l = `${Yo(item.name)}\x00${TO(item.id) ?? item.id}`;
+      if (w.has(l)) return !1;
+      return w.add(l), !0;
+    })),
+    byName = new Map();
+  for (let s of candidates) {
+    let l = Yo(s.name),
+      b = byName.get(l);
+    if (b) b.push(s);else byName.set(l, [s]);
+  }
+  let remoteNamesClaimedLocally = new Map();
+  for (let {
+    rawName: rawName,
+    socks: socks
+  } of S) {
+    let b = aAe(rawName);
+    if (b === null || !F(b)) continue;
+    let I = Yo(b),
+      G = remoteNamesClaimedLocally.get(I) ?? new Set();
+    for (let ie of socks) G.add(ie);
+    remoteNamesClaimedLocally.set(I, G);
+  }
+  return {
+    candidates: candidates,
+    byName: byName,
+    remoteNamesClaimedLocally: remoteNamesClaimedLocally
+  };
+}
+function bUt(e, n, r) {
+  let i = e.get(n);
+  if (!i || i.length === 0) return;
+  let c = r === void 0 ? [] : i.filter(item => item.name === r),
+    candidate = (c.length > 0 ? c : i)[0];
+  if (candidate.where === "in-process") return {
+    kind: "one",
+    candidate: candidate
+  };
+  return {
+    kind: "ambiguous"
+  };
+}
+function LFe(e) {
+  return `${e.name} [${e.ref}]`;
+}
+function bTo(e) {
+  return e === "remote" ? `${STo(e)} (Remote Control)` : STo(e);
+}
+function STo(e) {
+  switch (e) {
+    case "in-process":
+      return "in this session";
+    case "cloud":
+      return "in the cloud";
+    case "remote":
+      return "on another machine";
+    case "this-machine":
+      return "on this machine";
+  }
+}
+function Tjn(e, n) {
+  let r = e.kind === "main" ? "main conversation" : e.kind === "session" || e.kind === "cloud-session" || e.kind === "bridge-session" ? "Claude session" : e.kind,
+    i = bTo(e.where),
+    c = e.lastActive === void 0 ? "" : `, ${e.kind === "subagent" ? "started" : "active"} ${cn(Math.max(0, n - e.lastActive), {
+      mostSignificantOnly: !0
+    })} ago`;
+  return `${LFe(e)} \u2014 ${r}, ${i}${c}`;
+}
+var Te = CO;
+function aAe(e) {
+  if (typeof e !== "string") return null;
+  return [...e.replace(/[\p{Cc}\p{Cf}\p{Cs}]/gu, r => /\s/.test(r) ? r : "").replace(/\s+/g, " ").trim()].slice(0, Te).join("").trim() || "untitled session";
+}
+function cDr(e, n) {
+  return e.find(item => item.name === n) ?? e.find(item => aAe(item.name) === n);
+}
+function VVe(e) {
+  let n = aAe(e);
+  return n !== null && !Yin(n) && nj(n) ? n : null;
+}
+function Cjn(e) {
+  let n = aAe(e);
+  return n !== null && F(n) && !ZL(n) ? n : null;
+}
+function F(e) {
+  return !Yin(e) && nj(e) && !e.includes("@") && e !== "*";
+}
+function Yin(e) {
+  let n = Yo(e);
+  return iS(e).scheme !== "other" || iS(n).scheme !== "other" || XDs(e) || XDs(n);
+}
+function Re(e) {
+  let n = e.map(item => N(item.kind, Rjn(item))),
+    r = _e().map(item => N("session", item)),
+    i = L([...n, ...r]).sort(),
+    c = new Map();
+  for (let a = 0; a < i.length; a++) {
+    let f = i[a],
+      g = Math.max(a > 0 ? ne(f, i[a - 1]) : 0, a + 1 < i.length ? ne(f, i[a + 1]) : 0);
+    c.set(f, Math.min(f.length, Math.max(M, g + 1)));
+  }
+  return e.map((item, index) => {
+    let g = n[index];
+    return {
+      ...item,
+      ref: g.slice(0, c.get(g))
+    };
+  });
+}
+function ne(e, n) {
+  let r = 0;
+  while (r < e.length && r < n.length && e[r] === n[r]) r++;
+  return r;
+}
+function N(e, n) {
+  return String(kn(`${e}:${n}`));
+}
+function Rjn(e) {
+  return e.stableId ?? e.id;
+}
+function _e() {
+  let CLAUDE_CODE_MESSAGING_SOCKET = mP.CLAUDE_CODE_MESSAGING_SOCKET;
+  return CLAUDE_CODE_MESSAGING_SOCKET === void 0 ? [] : te(CLAUDE_CODE_MESSAGING_SOCKET);
+}
+function $Ds(e) {
+  return Eie() ? qin(z()) : e;
+}
+function te(e) {
+  let n = $Ds(e);
+  return n === e ? [e] : [n, e];
+}
+function UDs(e, n) {
+  return te(n).some(item => xe(e, "session", item));
+}
+function re(e) {
+  let n = [];
+  for (let i of e) {
+    let c = n.filter(item => item.records.some(item => ASe(item.sock, i.sock))),
+      a = {
+        records: [],
+        claims: new Set()
+      };
+    for (let f of c) {
+      a.records.push(...f.records);
+      for (let g of f.claims) a.claims.add(g);
+    }
+    if (a.records.push(i), i.sessionId !== void 0) a.claims.add(i.sessionId);
+    n = n.filter(item => !c.includes(item)), n.push(a);
+  }
+  let r = new Map();
+  for (let i of n) for (let c of i.records) r.set(c, i);
+  return r;
+}
+function se(e, n, r) {
+  let i = new Set([e]),
+    c = new Set();
+  for (let a of n) {
+    if (a.sessionId === void 0) continue;
+    if (i.has(a.sessionId)) c.add(a.sessionId);
+    i.add(a.sessionId);
+  }
+  for (let a of new Set(r.values())) if (a.records.length > 1) for (let f of a.claims) c.add(f);
+  return c;
+}
+function vXi(e, sock, r) {
+  if (r) return !0;
+  let sessionId = z(),
+    c = e.filter(y_t);
+  if (sock !== void 0) c.push({
+    sock: sock,
+    sessionId: sessionId
+  });
+  let a = re(c);
+  return se("", c, a).has(sessionId);
+}
+function S_t(e, n) {
+  return N(e, n).slice(0, M);
+}
+function xe(e, n, r) {
+  return e.length >= M && N(n, r).startsWith(e);
+}
+function Xin(e) {
+  return new Set(e.flatMap(item => item.bridgeSessionId ? [jn(item.bridgeSessionId)] : []));
+}
+function Ajn(e, n) {
+  let r = jn(n);
+  return e.some(item => item.bridgeSessionId !== void 0 && jn(item.bridgeSessionId) === r);
+}
+export { wSe, hTo, Yx, mXi, hUt, name as Cg, zVe, gUt, gTo, iDr, aDr, hXi, lDr, kSe, TO, gXi, dDr, yXi, _Xi, FDs, bXi, SXi, wXi, Eie, qin, yUt, y_t, yTo, Net, _To, Yo, kXi, __t, _Ut, spe, b_t, ZL, HDs, GVe, wJ, kJ, bUt, LFe, bTo, STo, Tjn, aAe, cDr, VVe, Cjn, Yin, Rjn, $Ds, UDs, vXi, S_t, Xin, Ajn };

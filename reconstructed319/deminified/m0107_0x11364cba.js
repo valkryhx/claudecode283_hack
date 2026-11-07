@@ -1,0 +1,1031 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { _ae, sjt, Mqe, ME, au, hna } from "B:/~BUN/root/chunk-gq1er5y2.js";
+import { Yn } from "B:/~BUN/root/chunk-drx9cnw1.js";
+import { R, qe, F, k, ci } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { we } from "B:/~BUN/root/chunk-r5zmhp23.js";
+import { OPo } from "B:/~BUN/root/chunk-thn0wk2x.js";
+import { vt, sg, t, Hb, oi } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { tt } from "B:/~BUN/root/chunk-n8cnxns2.js";
+import { i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { a } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import { x } from "B:/~BUN/root/chunk-mwfggkjt.js";
+import { yn, CFr, $St } from "B:/~BUN/root/chunk-88zb3509.js";
+import { wN } from "B:/~BUN/root/chunk-83p1z1q5.js";
+import { Ro } from "B:/~BUN/root/chunk-143z690c.js";
+import { BSt } from "B:/~BUN/root/chunk-dzqsqewb.js";
+import { no } from "B:/~BUN/root/chunk-qszgzq5m.js";
+import { sVn, $qe } from "B:/~BUN/root/chunk-kyztcy3q.js";
+import { constants as Jt } from "buffer";
+import { basename as z } from "path";
+import { homedir as Ze } from "os";
+import { sep as Qe } from "path";
+function Odn(e) {
+  return;
+}
+var L2n = "<user-code>";
+function et() {
+  try {
+    return Ze();
+  } catch {
+    return "";
+  }
+}
+var ge = "cli",
+  _e = new Set(["cli.js", ge, "sdk.mjs", "browser-sdk.js", "agentSdk.js"]),
+  Ee = /^chunk-[0-9a-z]+\.js$/;
+function he(e) {
+  return e[0] === "/" && Ee.test(e.slice(1));
+}
+function Te(e) {
+  return he(e) || e[0] === "/" && _e.has(e.slice(1));
+}
+function Xta(e) {
+  return he(e) ? "/" + ge : e;
+}
+var nt = /^(?:\/(?:\$bunfs|~BUN)|\/?[A-Za-z]:[\\/](?:\$bunfs|~BUN))[\\/]/;
+function Se(e) {
+  let n = e.startsWith("file://") ? e.slice(7) : e;
+  return nt.test(n);
+}
+function rt(e) {
+  let n = e;
+  if (n.startsWith("file://")) n = n.slice(7);
+  if (Se(n)) return Qxo(n);
+  if (n.startsWith("/snapshot/")) n = n.slice(10);
+  let r = et();
+  if (r && n.startsWith(r + Qe)) n = "~" + n.slice(r.length);
+  return n;
+}
+var ot = ["src/", "packages/"];
+function Qxo(e) {
+  let n = Math.max(e.lastIndexOf("/"), e.lastIndexOf("\\"));
+  return n === -1 ? e : e.slice(n + 1);
+}
+function vFr(e) {
+  return Te(e.file) || ot.some(item => e.file.startsWith(item));
+}
+var it = ["node:", "bun:", "internal:"],
+  st = new Set(["native", "unknown", "ws", "undici", "node-fetch", "isomorphic-fetch", "vercel_fetch", "utf-8-validate"]);
+function Oe(e) {
+  return st.has(e) || it.some(item => e.startsWith(item));
+}
+function v1s(e) {
+  return Oe(e.file);
+}
+function Jta(e) {
+  let n = e.find(item => !v1s(item));
+  if (n === void 0) return e.length >= xe;
+  return n.file === L2n || n.file.startsWith("node_modules/");
+}
+function Qta(e) {
+  return Te(e.file) && (e.function == null || e.function === "<anonymous>");
+}
+function dt(e) {
+  let n = e.split(/[/\\]/),
+    r = -1;
+  for (let u = n.length - 1; u >= 0; u--) if (n[u] === "node_modules") {
+    r = u;
+    break;
+  }
+  if (r === -1 || r >= n.length - 1) return null;
+  let o = n[r + 1],
+    s;
+  if (o.startsWith("@")) {
+    if (r + 2 >= n.length) return null;
+    s = `${o}/${n[r + 2]}`;
+  } else s = o;
+  let d = n.at(-1);
+  if (!d) return null;
+  return `node_modules/${s}/${d}`;
+}
+function ct(e) {
+  let n = rt(e),
+    r = Qxo(n),
+    o = dt(n);
+  if (_e.has(r) && (o === null || o.startsWith("node_modules/@anthropic-ai/")) || Se(e) && Ee.test(r)) return "/" + r;
+  let s = null;
+  if (s) return s;
+  if (Oe(n)) return n;
+  return L2n;
+}
+function at(e) {
+  let n = e.trim();
+  if (!n.startsWith("at ")) return null;
+  let r = n.slice(3),
+    o = r.indexOf(" ("),
+    s,
+    d;
+  if (o !== -1 && r.endsWith(")")) s = r.slice(0, o).trim(), d = r.slice(o + 2, -1);else d = r.trim();
+  if (s) {
+    if (s = s.replace(/^async\s+/, "").replace(/^new\s+/, ""), s = s.replace(/\s*\[as\s+[^\]]+\]$/, ""), !s) s = void 0;
+  }
+  let u = d.match(/^(.*):(\d+):(\d+)$/);
+  if (!u) return null;
+  let [, c, m, f] = u,
+    file = ct(c);
+  return {
+    file: file,
+    line: Number(m),
+    column: Number(f),
+    function: file === L2n && s ? L2n : s
+  };
+}
+var xe = 50;
+function N2n(e, n = xe) {
+  let r = [];
+  for (let o of Idn(e).split(`
+`)) {
+    let s = at(o);
+    if (s) {
+      if (r.push(s), r.length >= n) break;
+    }
+  }
+  return r;
+}
+function Idn(e) {
+  let n = typeof e.stack === "string" ? e.stack : "",
+    r = typeof e.message === "string" ? e.message : "",
+    o = ft(n, e.name, r);
+  return o === -1 ? n : n.slice(o + 1);
+}
+function ft(e, n, r) {
+  let o = d => d !== "" && e.startsWith(`${d}
+`);
+  if (r !== "") {
+    let d = typeof n === "string" && n !== "" ? `${n}: ${r}` : "";
+    if (d !== "" && o(d)) return d.length;
+    let u = `: ${r}`,
+      c = e.indexOf(`${u}
+`);
+    return c > 0 && !e.slice(0, c).includes(`
+`) ? c + u.length : n === "" && o(r) ? r.length : -1;
+  }
+  let s = n === void 0 ? "Error" : typeof n === "string" ? n : typeof n === "number" || typeof n === "boolean" || typeof n === "bigint" || n === null ? String(n) : "";
+  return o(s) ? s.length : -1;
+}
+function Ne(e, n) {
+  try {
+    let r = typeof e.stack === "string" ? e.stack : "",
+      o = Idn(e),
+      d = o.length < r.length && r.endsWith(o) ? o.replace(/\n$/, "").split(`
+`) : [],
+      u = d.every(item => item.trimStart().startsWith("at ")) ? d : [];
+    e.stack = [`${e.name}: ${n}`, ...u].join(`
+`), e.message = n;
+  } catch {}
+  return e;
+}
+function Zta(e, n) {
+  return [`${e.name}: ${e.message}`, ...n.map(item => {
+    let o = `${item.file}${item.line ? `:${item.line}` : ""}${item.column ? `:${item.column}` : ""}`;
+    return item.function ? `    at ${item.function} (${o})` : `    at ${o}`;
+  })].join(`
+`);
+}
+import { isAbsolute as pt, parse as mt, sep as gt } from "path";
+class gxe {
+  #e;
+  constructor(e) {
+    this.#e = e;
+  }
+  get path() {
+    return this.#e;
+  }
+  static filesystemRoot() {
+    return new gxe(mt(process.execPath).root || gt);
+  }
+  static forTests(e) {
+    if (!pt(e)) throw Error("a test start folder must be absolute");
+    return new gxe(e);
+  }
+}
+function ye(e, n, r, o) {
+  let env = {
+    ...o
+  };
+  for (let d of Object.keys(o)) if (/^(?:OLD)?PWD$/i.test(d)) delete env[d];
+  return {
+    cwd: e.path,
+    args: ["-C", n, ...r],
+    env: env
+  };
+}
+var NSt = "CLAUDE_CODE_FOUND_REPOSITORY_GIT";
+import { mkdir as Et } from "fs/promises";
+import { homedir as ht } from "os";
+import { basename as Re, delimiter as J, dirname as K, isAbsolute as Tt, resolve as Y } from "path";
+var Q1t = `f() { git --git-dir="$1" for-each-ref --format='%(objectname)'; }; f`;
+import { delimiter as _t } from "path";
+function Zxo(e) {
+  return e.includes(_t) ? null : e;
+}
+function Z1t() {
+  return i.CLAUDE_CODE_REMOTE || i.CLAUDE_CODE_PLUGIN_PREFER_HTTPS;
+}
+var n7 = "--upload-pack=git-upload-pack",
+  ena = ["-c", `core.alternateRefsCommand=${Q1t}`],
+  E1s = [["log.showSignature", "false"], ["format.pretty", "medium"]],
+  T1s = [["gc.auto", "0"], ["maintenance.auto", "false"]],
+  C1s = [["diff.autoRefreshIndex", "false"]];
+function F2n() {
+  return x() === "windows" ? "\\\\.\\NUL" : "/dev/null";
+}
+var St = /^core\.hooksPath=(?:\/dev\/null|\\\\\.\\nul)$/i,
+  Ot = ["applypatch-msg", "pre-applypatch", "post-applypatch", "pre-commit", "pre-merge-commit", "prepare-commit-msg", "commit-msg", "post-commit", "pre-rebase", "post-checkout", "post-merge", "pre-push", "pre-receive", "update", "proc-receive", "post-receive", "post-update", "reference-transaction", "push-to-checkout", "pre-auto-gc", "post-rewrite", "sendemail-validate", "fsmonitor-watchman", "p4-changelist", "p4-prepare-changelist", "p4-post-changelist", "p4-pre-submit", "post-index-change"],
+  ePo = Ot.map(item => [`hook.${item}.enabled`, "false"]),
+  xt = "tengu_cozy_parasol",
+  Ie = new BSt();
+function tna(e) {
+  return Ie.register(e);
+}
+function Nt() {
+  return Ie.read(xt, !0);
+}
+function lnt() {
+  return [["core.fsmonitor", ""], ["core.hooksPath", F2n()], ["core.askPass", ""], ["protocol.ext.allow", "never"], ...(Nt() ? [["core.alternateRefsCommand", Q1t]] : []), ["submodule.recurse", "false"], ...E1s, ...T1s, ...C1s, ...ePo];
+}
+var yt = new Set(["core.hooksPath", "core.askPass", "submodule.recurse", ...ePo.map(([e]) => e)]),
+  tPo = {
+    GIT_NO_LAZY_FETCH: "1",
+    GIT_NO_REPLACE_OBJECTS: "1",
+    GIT_TERMINAL_PROMPT: "0",
+    ...CFr
+  };
+function R1s(e, {
+  allowGitTerminalPrompt = !1
+} = {}) {
+  return Ro(tPo, (r, o) => !(allowGitTerminalPrompt && o === "GIT_TERMINAL_PROMPT") && !Rt(e, o));
+}
+function eme(e, n, r, o = r.GIT_CONFIG_COUNT, {
+  allowRepoGitHooks = !1,
+  allowGitTerminalPrompt: allowGitTerminalPrompt_2 = !1
+} = {}) {
+  let u = Re(e).toLowerCase();
+  if (!/^git(\.exe|\.cmd|\.bat|\.com)?$/.test(u)) return null;
+  let c = allowRepoGitHooks ? lnt().filter(([f]) => !yt.has(f)) : lnt(),
+    m = Pe(n).map(item => n[item]);
+  return {
+    args: c.filter(([f]) => !m.some(item => item.startsWith(`${f}=`))).flatMap(([f, g]) => ["-c", `${f}=${g}`]).concat(Ct(n)),
+    env: {
+      ...r,
+      ...R1s(r, {
+        allowGitTerminalPrompt: allowGitTerminalPrompt_2
+      }),
+      ...rY(o, c),
+      GIT_PROXY_COMMAND: r.GIT_PROXY_COMMAND ?? ""
+    }
+  };
+}
+var wt = new Set(["-C", "--git-dir", "--work-tree", "--namespace", "--super-prefix", "--config-env", "--attr-source", "--exec-path"]);
+function Pe(e) {
+  let n = [],
+    r = 0;
+  while (r < e.length) {
+    let o = e[r];
+    if (o === "-c" && r + 1 < e.length) n.push(r + 1), r += 2;else if (wt.has(o) && r + 1 < e.length) r += 2;else if (o.startsWith("-")) r += 1;else break;
+  }
+  return n;
+}
+function Ct(e) {
+  let n = [...e];
+  for (let r of Pe(n)) if (St.test(n[r])) n[r] = `core.hooksPath=${F2n()}`;
+  return n;
+}
+var pae = {
+  GIT_TERMINAL_PROMPT: "0",
+  GIT_ASKPASS: "",
+  GCM_INTERACTIVE: "never"
+};
+function nna(e) {
+  let n = {};
+  for (let [r, o] of Object.entries(pae)) if (WR(e, r) === void 0) n[r] = o;
+  return n;
+}
+function FSt(e = process.env) {
+  return {
+    ...e,
+    ...T(e, (n, r) => Object.hasOwn(pae, n) && r !== n),
+    ...pae,
+    ...rY(WR(e, "GIT_CONFIG_COUNT"), [["credential.interactive", "false"]], e)
+  };
+}
+function T(e, n) {
+  let r = {};
+  for (let o of Object.keys(e)) if (n(o.toUpperCase(), o)) r[o] = void 0;
+  return r;
+}
+function WR(e, n) {
+  if (e[n] !== void 0 || x() !== "windows") return e[n];
+  for (let [r, o] of Object.entries(e)) if (r.toUpperCase() === n && o !== void 0) return o;
+  return;
+}
+function Rt(e, n) {
+  if (Object.hasOwn(e, n)) return !0;
+  return x() === "windows" && Object.keys(e).some(item => item.toUpperCase() === n);
+}
+function rY(e, n, r = {}) {
+  let o = Number(e),
+    s = Number.isInteger(o) && o > 0 ? o : 0,
+    d = {
+      GIT_CONFIG_COUNT: String(s + n.length)
+    };
+  n.forEach(([c, m], index) => {
+    d[`GIT_CONFIG_KEY_${s + index}`] = c, d[`GIT_CONFIG_VALUE_${s + index}`] = m;
+  });
+  let u = new Set(Object.keys(d));
+  return {
+    ...T(r, (c, m) => u.has(c) && !u.has(m)),
+    ...d
+  };
+}
+var dnt = ["-c", "core.sshCommand=ssh -o BatchMode=yes -o StrictHostKeyChecking=yes"],
+  It = "-o BatchMode=yes -o StrictHostKeyChecking=yes",
+  Pt = "-o BatchMode=yes",
+  Ae = "-batch";
+function At(e, n) {
+  switch (e) {
+    case "ssh":
+      return n ? It : Pt;
+    case "plink":
+      return Ae;
+    case "other":
+      return;
+  }
+}
+function H2n(e, n) {
+  let r = x() === "windows" ? e.replace(/\\/g, "/") : e;
+  return `CDPATH= cd -- ${no([r])} 2>/dev/null || cd / || exit 1; ${n}`;
+}
+function HSt() {
+  let e = "";
+  try {
+    e = ht();
+  } catch {}
+  return Tt(e) ? e : Y("/");
+}
+function A1s(e, n) {
+  if (e !== void 0 && e !== "auto") return e;
+  let r = bt(n).toLowerCase().replace(/\.exe$/, "");
+  return ["ssh", "plink", "tortoiseplink"].includes(r) ? r : "auto";
+}
+function bt(e) {
+  let n = "",
+    r,
+    o = !0;
+  for (let d = 0; d < e.length; d++) {
+    let u = e[d],
+      c;
+    if (r === void 0 && /[ \t\n\r]/.test(u)) o = !1;else if (r === void 0 && (u === "'" || u === '"')) r = u;else if (u === r) r = void 0;else if (u === "\\" && r !== "'") {
+      if (d++, d >= e.length) return "";
+      c = e[d];
+    } else c = u;
+    if (o && c !== void 0) n += c;
+  }
+  if (r !== void 0) return "";
+  let s = x() === "windows" ? /[\\/]/ : /\//;
+  return n.split(s).filter(item => item !== "").at(-1) ?? "";
+}
+function ve(e, GIT_SSH_COMMAND) {
+  return {
+    ...e,
+    ...T(e, r => r === "GIT_SSH_COMMAND" || r === "GIT_SSH"),
+    GIT_SSH: void 0,
+    GIT_SSH_COMMAND: GIT_SSH_COMMAND
+  };
+}
+function EFr(env_2, n, {
+  strictHostKeys = !0
+} = {}) {
+  let {
+      chosen: o,
+      named: named
+    } = X(env_2, n),
+    d = At(named === void 0 ? "ssh" : Ft(env_2, named), strictHostKeys);
+  if (d === void 0 || d === Ae && Gt(o)) return {
+    command: o,
+    env: env_2
+  };
+  let command = `${o} ${d}`;
+  return {
+    command: command,
+    env: ve(env_2, command)
+  };
+}
+function X(e, n) {
+  let r = j(WR(e, "GIT_SSH_COMMAND")) ?? j(n),
+    o = j(WR(e, "GIT_SSH"));
+  return {
+    chosen: r ?? no([o ?? "ssh"]),
+    named: r !== void 0 ? kt(r) : o
+  };
+}
+function rna(e, n) {
+  let r = WR(e, "GIT_SSH_VARIANT"),
+    {
+      chosen: chosen,
+      named: named_2
+    } = X(e, n);
+  return (r === void 0 || r === "auto") && named_2 !== void 0 && !["ssh", "plink", "tortoiseplink"].includes(be(named_2)) ? chosen : void 0;
+}
+async function ona(e, n) {
+  if (x() !== "windows") return e;
+  let r = WR(e, "GIT_SSH_COMMAND");
+  if (r !== void 0) return r.trim() === "" ? e : EFr(e, void 0, {
+    strictHostKeys: !1
+  }).env;
+  let o = await n(["config", "--null", "--get", "core.sshCommand"]),
+    s = o.exitCode === 0 && o.stdout.includes("\x00") ? tt(o.stdout, "\x00") : void 0;
+  if (s?.trim() === "") return e;
+  return EFr(e, s, {
+    strictHostKeys: !1
+  }).env;
+}
+function j(e) {
+  return e !== void 0 && e.trim() !== "" ? e : void 0;
+}
+function Ft(e, n) {
+  let r = WR(e, "GIT_SSH_VARIANT");
+  if (r !== void 0 && r !== "auto") return r === "plink" ? "plink" : ["putty", "tortoiseplink", "simple"].includes(r) ? "other" : "ssh";
+  let o = be(n);
+  return o === "ssh" || o === "plink" ? o : "other";
+}
+function be(e) {
+  return Re(e.trim().replace(/\\/g, "/")).toLowerCase().replace(/\.exe$/, "");
+}
+function Gt(e) {
+  let n = e.trim().match(/^(?:"[^"]*"|'[^']*'|\S+)/)?.[0] ?? "";
+  return /(?:^|\s)-batch(?:\s|$)/.test(e.trim().slice(n.length));
+}
+function kt(e) {
+  let n = e.trim().match(/^(?:"([^"]*)"|'([^']*)'|(\S+))/);
+  return n?.[1] ?? n?.[2] ?? n?.[3] ?? "";
+}
+var Lt = ["-c", "protocol.ext.allow=never", "-c", "protocol.fd.allow=never", "-c", "protocol.git.allow=never", "-c", "protocol.ftp.allow=never", "-c", "protocol.ftps.allow=never"];
+function Mt(e) {
+  return {
+    ...e,
+    ...T(e, n => n === "GIT_ALLOW_PROTOCOL"),
+    GIT_ALLOW_PROTOCOL: void 0
+  };
+}
+function Dt(e) {
+  let n = WR(e, "GIT_ALLOW_PROTOCOL");
+  if (n === void 0) return [];
+  let r = new Set(n.split(":"));
+  return ["https", "http", "ssh", "file"].filter(item => !r.has(item)).flatMap(item => ["-c", `protocol.${item}.allow=never`]);
+}
+function $t(e) {
+  return [...Lt, ...Dt(e)];
+}
+var Bt = ["-c", "init.defaultRefFormat=files"],
+  Ce = {
+    GIT_DEFAULT_REF_FORMAT: "files"
+  };
+function Ut(e = FSt(Ht()), n) {
+  let pinArgs = [...$t(e), ...Bt],
+    o = WR(e, "GIT_SSH_VARIANT"),
+    s = o === void 0 || o === "auto" ? {
+      ...e,
+      ...T(e, d => d === "GIT_SSH_VARIANT"),
+      GIT_SSH_VARIANT: A1s(n.variant, X(e, n.command).chosen)
+    } : e;
+  return {
+    pinArgs: pinArgs,
+    inCheckoutArgs: [...yn, ...dnt, ...pinArgs],
+    env: {
+      ...ve(Mt(s), H2n(HSt(), EFr(s, n.command).command)),
+      ...T(e, (d, u) => Object.hasOwn(CFr, d) && u !== d),
+      ...CFr,
+      ...T(e, (d, u) => Object.hasOwn(Ce, d) && u !== d),
+      ...Ce
+    }
+  };
+}
+function Ht() {
+  let e = new Set($St),
+    env_3 = process.env;
+  return {
+    ...env_3,
+    ...T(env_3, r => e.has(r)),
+    ...Object.fromEntries([...e].map(item => [item, void 0]))
+  };
+}
+function GHe(e, n) {
+  let r = Ut(void 0, n);
+  return {
+    ...r,
+    env: {
+      ...r.env,
+      GIT_CEILING_DIRECTORIES: Fe(K(e))
+    }
+  };
+}
+function TFr(e) {
+  let n = {};
+  for (let r of [...Object.keys(pae), "GIT_CEILING_DIRECTORIES"]) {
+    let o = e[r];
+    if (o !== void 0) n[r] = o;
+  }
+  return n;
+}
+function Fe(e) {
+  let n = Zxo(Y(e));
+  if (n === null) throw new R(`Cannot run git under ${Y(e)}: its path contains "${J}", which git's discovery ceiling (a "${J}"-separated list) cannot express. Use a location without "${J}" for this directory (the plugins cache \u2014 CLAUDE_CODE_PLUGIN_CACHE_DIR \u2014 or the temporary directory \u2014 TMPDIR \u2014 whichever this path is under).`, "git working directory path contains the PATH delimiter; git discovery ceiling inexpressible");
+  return n;
+}
+async function ejt(e, n) {
+  let cwd = K(e);
+  return await Et(cwd, {
+    recursive: !0
+  }), {
+    cwd: cwd,
+    env: {
+      ...n,
+      GIT_CEILING_DIRECTORIES: Fe(K(cwd))
+    }
+  };
+}
+var Wt = 1000,
+  Vt = 60;
+function $2n(e, {
+  abortSignal: abortSignal,
+  timeout = 10 * Vt * Wt,
+  input: input,
+  stdio = ["ignore", "pipe", "pipe"],
+  useToolMemoryCgroup: useToolMemoryCgroup
+} = {}) {
+  abortSignal?.throwIfAborted();
+  using u = Hb`exec: ${e.slice(0, 200)}`;
+  try {
+    let c = hna(e, {
+      env: process.env,
+      maxBuffer: 1e6,
+      timeout: timeout,
+      cwd: OPo(),
+      stdio: stdio,
+      reject: !1,
+      input: input,
+      useToolMemoryCgroup: useToolMemoryCgroup
+    });
+    if (!c.stdout) return null;
+    return c.stdout.trim() || null;
+  } catch {
+    return null;
+  }
+}
+var Z = 1000,
+  q = 60,
+  Oqe = "/proc/self/fd/3";
+function ut(e, n, r = {
+  timeout: 10 * q * Z,
+  preserveOutputOnError: !0,
+  useCwd: !0
+}) {
+  return Be(() => lt(e, n, {
+    allowRepoGitHooks: r.allowRepoGitHooks,
+    allowGitTerminalPrompt: r.allowGitTerminalPrompt,
+    abortSignal: r.abortSignal,
+    timeout: r.timeout,
+    preserveOutputOnError: r.preserveOutputOnError,
+    cwd: r.cwd ?? (r.useCwd && !ME() ? OPo() : void 0),
+    env: r.env,
+    extendEnv: r.extendEnv,
+    stdin: r.stdin,
+    input: r.input,
+    stdout: r.stdout,
+    stderr: r.stderr,
+    maxBuffer: r.maxBuffer,
+    stripFinalNewline: r.stripFinalNewline,
+    useToolMemoryCgroup: r.useToolMemoryCgroup,
+    toolCgroupClass: r.toolCgroupClass,
+    waitForExitAfterKill: r.waitForExitAfterKill,
+    inheritFd: r.inheritFd,
+    gitStartsIn: r.gitStartsIn
+  }));
+}
+async function Be(e) {
+  try {
+    return await e();
+  } catch (n) {
+    return a(n), {
+      stdout: "",
+      stderr: "",
+      code: 1,
+      error: F(n).message
+    };
+  }
+}
+function lt(e, n, r) {
+  return Be(() => r === void 0 ? $e(e, n) : $e(e, n, r));
+}
+function Q(e) {
+  if (e <= 1) return;
+  try {
+    process.kill(-e, "SIGTERM");
+  } catch {}
+}
+var jt = 6000,
+  Kt = 2000;
+function Yt(e, n, r) {
+  let o,
+    s = () => {
+      Q(n), o = setTimeout(({
+        stdout: stdout,
+        stderr: stderr
+      }) => {
+        stdout?.destroy(), stderr?.destroy();
+      }, Kt, e);
+    };
+  if (r.aborted) s();else r.addEventListener("abort", s, {
+    once: !0
+  });
+  return () => {
+    r.removeEventListener("abort", s), clearTimeout(o);
+  };
+}
+var Xt = 5000;
+function zt(e, n, r, o, s) {
+  let d,
+    u = !1,
+    c = () => {
+      if (e.exitCode !== null || e.signalCode !== null) return;
+      Promise.resolve().then(() => o(n)).catch(() => !1).then(m => {
+        if (u) return;
+        if (!m) {
+          s.abort(r.reason);
+          return;
+        }
+        d = setTimeout((f, g, {
+          stdout: stdout_2,
+          stderr: stderr_2
+        }) => {
+          f.abort(g), stdout_2?.destroy(), stderr_2?.destroy();
+        }, Xt, s, r.reason, e);
+      });
+    };
+  if (r.aborted) c();else r.addEventListener("abort", c, {
+    once: !0
+  });
+  return () => {
+    u = !0, r.removeEventListener("abort", c), clearTimeout(d);
+  };
+}
+async function Zt(e, n) {
+  if (e.pid === void 0 || e.exitCode !== null || e.signalCode !== null) return;
+  await we(new Promise(r => e.once("exit", () => r())), n);
+}
+function Ge(e) {
+  return k(e) === "ERR_CHILD_PROCESS_STDIO_MAXBUFFER" || e?.isMaxBuffer === !0 || e?.name === "MaxBufferError";
+}
+var v = {
+  cwd: "execFileNoThrow spawn rejected: null byte in cwd",
+  file: "execFileNoThrow spawn rejected: null byte in executable path",
+  argv: "execFileNoThrow spawn rejected: null byte in argv",
+  envName: "execFileNoThrow spawn rejected: null byte in env name",
+  envValue: "execFileNoThrow spawn rejected: null byte in env value"
+};
+function qt(e, n, r, o, s, d) {
+  let u = `the runtime rejected ${Ue(z(e))} because`;
+  if (typeof r === "string" && r.includes("\x00")) return {
+    telemetry: v.cwd,
+    local: `${u} the working directory contains a null byte (\\0)`
+  };
+  if (e.includes("\x00")) return {
+    telemetry: v.file,
+    local: `${u} the executable path contains a null byte (\\0)`
+  };
+  let c = n.findIndex(item => typeof item === "string" && item.includes("\x00"));
+  if (c !== -1) return {
+    telemetry: v.argv,
+    local: `${u} the argument at index ${c} (zero-based) contains a null byte (\\0)`
+  };
+  let m = Object.entries({
+      ...s,
+      ...o
+    }).filter(([, _]) => _ !== void 0),
+    f = m.find(([_]) => _.includes("\x00"));
+  if (f !== void 0) return {
+    telemetry: v.envName,
+    local: `${u} the name of environment variable ${Me(f[0])} contains a null byte (\\0)${ke(f, d)}`
+  };
+  let g = m.find(([, _]) => typeof _ === "string" && _.includes("\x00"));
+  return g && {
+    telemetry: v.envValue,
+    local: `${u} the value of environment variable ${Me(g[0])} contains a null byte (\\0)${ke(g, d)}`
+  };
+}
+function ke([e, n], r) {
+  return r[e] === n ? "; every program this process starts will fail the same way until that variable is removed from its environment" : " (in the env passed for this command)";
+}
+var Le = 200;
+function Qt(e) {
+  return e === 1 ? "1 character" : `${e} characters`;
+}
+function Ue(e) {
+  return oi(e).slice(1, -1).replace(/[^\x20-\x7e]/g, n => `\\u${n.charCodeAt(0).toString(16).padStart(4, "0")}`);
+}
+function Me(e) {
+  let n = e.indexOf("="),
+    r = n === -1 ? e : e.slice(0, n),
+    o = r.length > Le,
+    s = `"${Ue(o ? r.slice(0, Le) : r)}"${o ? "\u2026" : ""}`;
+  return n === -1 ? s : `${s} (then '=' and ${Qt(e.length - n - 1)}, not shown)`;
+}
+var en = new Set(["EPIPE", "ECONNRESET", "ENOTCONN", "EOF"]);
+function tn(e) {
+  let n = {},
+    r;
+  try {
+    r = e.stdin;
+  } catch {
+    return n;
+  }
+  if (!r) return n;
+  return r.removeAllListeners("error"), r.on("error", o => {
+    let s = k(o) ?? "unknown";
+    if (en.has(s)) return;
+    n.truncatedBy ??= s, e.kill();
+  }), n;
+}
+function nn(e, n) {
+  if (e.shortMessage) return e.shortMessage;
+  if (typeof e.signal === "string") return e.signal;
+  return String(n);
+}
+function rn(e, n) {
+  if (!ci(n) || n.code === void 0 || typeof n.syscall !== "string" || !n.syscall.startsWith("spawn") || e.exitCode !== void 0 || e.timedOut || e.isCanceled || k(e) === n.code) return;
+  return `Command failed with ${n.code}: ${e.command}
+${n.message}`;
+}
+var on = 3,
+  sn = 1e8;
+function De(e, n) {
+  if (e instanceof Uint8Array && n === "utf8-keep-bom") return Buffer.from(e.buffer, e.byteOffset, e.byteLength).toString("utf8");
+  let r = e instanceof Uint8Array ? Buffer.from(e).toString("latin1") : typeof e === "string" ? e : "";
+  return n === "utf8-keep-bom" ? Buffer.from(r, "latin1").toString("utf8") : r;
+}
+async function $e(e, n, {
+  abortSignal: abortSignal_2,
+  timeout: timeout_2 = 10 * q * Z,
+  preserveOutputOnError = !0,
+  cwd: cwd_2,
+  env: env_4,
+  extendEnv: extendEnv,
+  maxBuffer: maxBuffer,
+  shell: shell,
+  stdin: stdin,
+  input: input_2,
+  stdout: stdout_3,
+  stderr: stderr_3,
+  stripFinalNewline: stripFinalNewline,
+  encoding: encoding,
+  allowRepoGitHooks: allowRepoGitHooks_2,
+  allowGitTerminalPrompt: allowGitTerminalPrompt_3,
+  gitStartsIn: gitStartsIn,
+  useToolMemoryCgroup: useToolMemoryCgroup_2 = !0,
+  toolCgroupClass = "helper",
+  waitForExitAfterKill = !1,
+  onStdoutData: onStdoutData,
+  inheritFd: inheritFd,
+  withoutControllingTerminal = !1,
+  tellBeforeKill: tellBeforeKill,
+  abortEndsProcessGroup = !1
+} = {
+  timeout: 10 * q * Z,
+  preserveOutputOnError: !0,
+  maxBuffer: 1e6
+}) {
+  if (ME()) return {
+    stdout: "",
+    stderr: Mqe,
+    code: 126,
+    error: Mqe
+  };
+  let w = e;
+  if (!shell) {
+    let l = wN(e);
+    if (l === null) return {
+      stdout: "",
+      stderr: `Command '${e}' not found or is in an unsafe location (current directory)`,
+      code: 127,
+      error: `Command '${e}' not found or is in an unsafe location (current directory)`
+    };
+    w = l;
+  }
+  let env_5 = process.env,
+    E = eme(w, n, env_4 === void 0 ? env_5 : extendEnv === !1 ? env_4 : {
+      ...env_5,
+      ...env_4
+    }, env_4 && "GIT_CONFIG_COUNT" in env_4 ? env_4.GIT_CONFIG_COUNT : i.GIT_CONFIG_COUNT, {
+      allowRepoGitHooks: allowRepoGitHooks_2,
+      allowGitTerminalPrompt: allowGitTerminalPrompt_3
+    });
+  if (E !== null && $qe(w, E.env)) return {
+    stdout: "",
+    stderr: sVn,
+    code: 127,
+    error: sVn
+  };
+  let C = E !== null && gitStartsIn instanceof gxe && cwd_2 !== void 0 ? ye(gitStartsIn, cwd_2, E.args, E.env) : null;
+  if (E !== null && env_4?.[NSt] !== void 0 && C === null) {
+    let l = `${z(e)} was not started: a found repository's git must start outside the repository's folder`;
+    return t(l, {
+      level: "error"
+    }), {
+      stdout: "",
+      stderr: l,
+      code: 1,
+      error: l
+    };
+  }
+  let Xe = C?.args ?? E?.args ?? n,
+    cwd_3 = C?.cwd ?? cwd_2,
+    env_6 = C?.env ?? E?.env ?? env_4,
+    U = withoutControllingTerminal && x() !== "windows";
+  if (U && sg()) {
+    let l = `${z(e)} was not started because Claude Code was exiting; try again after it restarts`;
+    return {
+      stdout: "",
+      stderr: l,
+      code: 1,
+      error: l
+    };
+  }
+  let p,
+    I,
+    ie,
+    se,
+    de,
+    H = tellBeforeKill !== void 0 && abortSignal_2 !== void 0 ? new AbortController() : void 0,
+    W,
+    ue = x() === "linux" ? {
+      noChildLeft: !0
+    } : {},
+    b = ue,
+    ce,
+    S = encoding === "utf8-keep-bom" ? maxBuffer ?? sn : void 0;
+  try {
+    let l = sjt(w, Xe, {
+      signal: H?.signal ?? abortSignal_2,
+      timeout: timeout_2,
+      cwd: cwd_3,
+      env: env_6,
+      shell: shell,
+      ...(inheritFd === void 0 ? {
+        stdin: stdin,
+        ...(stdout_3 === void 0 ? {} : {
+          stdout: stdout_3
+        }),
+        ...(stderr_3 === void 0 ? {} : {
+          stderr: stderr_3
+        })
+      } : {
+        stdio: [stdin, stdout_3, stderr_3, inheritFd]
+      }),
+      ...(S !== void 0 ? {
+        maxBuffer: Math.min(S * on, Jt.MAX_STRING_LENGTH)
+      } : maxBuffer === void 0 ? {} : {
+        maxBuffer: maxBuffer
+      }),
+      ...(stripFinalNewline === void 0 ? {} : {
+        stripFinalNewline: stripFinalNewline
+      }),
+      ...(encoding !== void 0 && encoding !== "utf8" && {
+        encoding: "latin1"
+      }),
+      ...(C !== null ? {
+        extendEnv: !1
+      } : extendEnv === void 0 ? {} : {
+        extendEnv: extendEnv
+      }),
+      ...(useToolMemoryCgroup_2 ? au(toolCgroupClass) : {}),
+      ...(U && {
+        detached: !0
+      }),
+      reject: !1
+    });
+    if (b = l.pid === void 0 ? ue : {}, tellBeforeKill !== void 0 && abortSignal_2 !== void 0 && H !== void 0 && l.pid !== void 0) se = zt(l, l.pid, abortSignal_2, tellBeforeKill, H);
+    if (I = U ? l.pid : void 0, I !== void 0) {
+      let h = I;
+      if (abortEndsProcessGroup && abortSignal_2 !== void 0) de = Yt(l, h, abortSignal_2);
+      let O = () => Q(h),
+        V = vt(O),
+        P = _ae(O, {
+          alwaysLast: !0
+        });
+      ie = () => {
+        V(), P();
+      };
+    }
+    if (l.once("error", h => {
+      ce = h;
+    }), W = input_2 === void 0 ? void 0 : tn(l), input_2 !== void 0 && l.pid !== void 0) l.stdin?.end(input_2);
+    if (onStdoutData && l.pid !== void 0) l.stdout?.on("data", h => {
+      try {
+        onStdoutData(h.toString());
+      } catch (error) {
+        a(error);
+      }
+    });
+    if (p = await l, waitForExitAfterKill && p.exitCode === void 0 && (abortSignal_2?.aborted === !0 || p.timedOut)) await Zt(l, jt);
+  } catch (error) {
+    let {
+        message: message,
+        shortMessage: shortMessage,
+        originalMessage: originalMessage
+      } = error,
+      P = shortMessage === void 0 ? message : originalMessage ?? "the spawn threw a value that is not an Error";
+    if (ci(error)) return t(`execFileNoThrow spawn failed: ${k(error)} ${P}`, {
+      level: "error"
+    }), {
+      stdout: "",
+      stderr: "",
+      code: 1,
+      ...b
+    };else if (Ge(error)) return t(`execFileNoThrow maxBuffer exceeded: ${P}`, {
+      level: "error"
+    }), {
+      stdout: "",
+      stderr: "",
+      code: 1,
+      maxBufferExceeded: !0
+    };else {
+      let env_7 = process.env,
+        A = k(error) === "ERR_INVALID_ARG_VALUE" ? qt(w, n, cwd_2, env_6, extendEnv === !1 && env_6 !== void 0 ? void 0 : env_7, env_7) : void 0;
+      if (A) t(`execFileNoThrow spawn refused: ${A.local}`, {
+        level: "error"
+      });
+      let me = F(error);
+      a(qe(A === void 0 && shortMessage === void 0 ? me : Ne(me, A?.telemetry ?? P), A?.telemetry ?? "execFileNoThrow unexpected rejection"));
+    }
+    return {
+      stdout: "",
+      stderr: "",
+      code: 1
+    };
+  } finally {
+    if (se?.(), de?.(), ie?.(), I !== void 0 && (p === void 0 || p.exitCode === void 0)) Q(I);
+  }
+  if (W?.truncatedBy !== void 0) {
+    let error_2 = `stdin write failed: ${W.truncatedBy}`;
+    return t(`execFileNoThrow ${error_2}`, {
+      level: "error"
+    }), {
+      stdout: "",
+      stderr: "",
+      code: 1,
+      error: error_2
+    };
+  }
+  let stdout_4 = De(p.stdout, encoding),
+    stderr_4 = De(p.stderr, encoding);
+  if (S !== void 0 && (stdout_4.length > S || stderr_4.length > S)) return preserveOutputOnError ? {
+    stdout: stdout_4.slice(0, S),
+    stderr: stderr_4.slice(0, S),
+    code: 1,
+    error: `Command failed: ${p.command}
+maxBuffer exceeded`,
+    maxBufferExceeded: !0
+  } : {
+    stdout: "",
+    stderr: "",
+    code: 1,
+    maxBufferExceeded: !0
+  };
+  if (!p.failed) return {
+    stdout: stdout_4,
+    stderr: stderr_4,
+    code: 0,
+    exitCode: 0
+  };
+  let ae = Ge(p) ? {
+      maxBufferExceeded: !0
+    } : {},
+    le = p.timedOut ? {
+      timedOut: !0
+    } : {};
+  if (!preserveOutputOnError) return {
+    stdout: "",
+    stderr: "",
+    code: p.exitCode ?? 1,
+    exitCode: p.exitCode,
+    ...ae,
+    ...le,
+    ...b
+  };
+  let code = p.exitCode ?? 1;
+  return {
+    stdout: stdout_4,
+    stderr: stderr_4,
+    code: code,
+    error: rn(p, ce) ?? nn(p, code),
+    exitCode: p.exitCode,
+    ...ae,
+    ...le,
+    ...b
+  };
+}
+export { Odn, L2n, Xta, Qxo, vFr, v1s, Jta, Qta, N2n, Idn, Zta, gxe, NSt, Q1t, Zxo, Z1t, n7, ena, E1s, T1s, C1s, F2n, ePo, tna, lnt, tPo, R1s, eme, pae, nna, FSt, WR, rY, dnt, H2n, HSt, A1s, EFr, rna, ona, GHe, TFr, ejt, $2n, Oqe, ut, lt };

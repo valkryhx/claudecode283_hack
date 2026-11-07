@@ -1,0 +1,1133 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  Pe,
+  De
+} from "B:/~BUN/root/chunk-vz9zea4j.js";
+import {
+  Ee,
+  q
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  F,
+  k
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  we
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  qwt,
+  mWt,
+  U$r,
+  MIo
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  g,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  Ue
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  $c,
+  iwt,
+  i,
+  Ar
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  Sae
+} from "B:/~BUN/root/chunk-d10hhz4p.js";
+import {
+  dNe
+} from "B:/~BUN/root/chunk-wxhfn3za.js";
+import {
+  ea,
+  v
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  tg,
+  CH
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import {
+  ut
+} from "B:/~BUN/root/chunk-3mm90xb6.js";
+import {
+  gf
+} from "B:/~BUN/root/chunk-5xx1vfdh.js";
+import {
+  Tf
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  FU
+} from "B:/~BUN/root/chunk-hacd8gcc.js";
+import {
+  ap
+} from "B:/~BUN/root/chunk-m749kjym.js";
+import {
+  INn,
+  p7e,
+  GLt,
+  wEr,
+  hks,
+  Y1i,
+  X1i,
+  Qmo,
+  kEr,
+  VLt,
+  KLt,
+  rtn,
+  zNn
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  fD,
+  Y$
+} from "B:/~BUN/root/chunk-b7bhhce8.js";
+import {
+  Iq,
+  D0n,
+  LI,
+  cf,
+  T_s,
+  NHi,
+  C_s,
+  L0t
+} from "B:/~BUN/root/chunk-s89g0dw7.js";
+import {
+  mO,
+  xh,
+  xQe
+} from "B:/~BUN/root/chunk-psjm1gcn.js";
+import {
+  U,
+  L
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  he
+} from "B:/~BUN/root/chunk-fet34rqr.js";
+import {
+  readlink as $e,
+  realpath as ee,
+  stat as He
+} from "fs/promises";
+import {
+  join as D
+} from "path";
+async function A(e) {
+  try {
+    return (await He(e)).isFile() ? e : null
+  } catch {
+    return null
+  }
+}
+async function Ie(e) {
+  let n;
+  try {
+    n = await $e(e)
+  } catch {
+    return null
+  }
+  return A(n)
+}
+async function te(e) {
+  if (q()) return null;
+  let n = await ne("pwsh", e);
+  if (n) {
+    if (x() === "linux") {
+      let r = await ee(n).catch(() => n);
+      if (n.startsWith("/snap/") || r.startsWith("/snap/")) {
+        let s = await A("/opt/microsoft/powershell/7/pwsh") ?? await A("/usr/bin/pwsh");
+        if (s) {
+          let u = await ee(s).catch(() => s);
+          if (!s.startsWith("/snap/") && !u.startsWith("/snap/")) return c("shell_powershell_detect", "snap_workaround"), s
+        }
+      }
+    }
+    return g("shell_powershell_detect"), n
+  }
+  if (x() === "windows") {
+    let {
+      programFiles: r,
+      localAppData: s,
+      userProfile: u
+    } = e ?? Efo(), d = (r ? await A(D(r, "PowerShell", "7", "pwsh.exe")) : null) ?? (s ? await Ie(D(s, "Microsoft", "WindowsApps", "pwsh.exe")) : null) ?? (u ? await A(D(u, ".dotnet", "tools", "pwsh.exe")) : null);
+    if (d) return c("shell_powershell_detect", "windows_fallback_path"), d
+  }
+  let o = await ne("powershell", e);
+  if (o) return c("shell_powershell_detect", "fell_back_to_powershell_5"), o;
+  if (x() === "windows") {
+    let r = (e ?? Efo()).systemRoot ?? "C:\\Windows",
+      s = await A(D(r, "System32", "WindowsPowerShell", "v1.0", "powershell.exe"));
+    if (s) return c("shell_powershell_detect", "fell_back_to_powershell_5"), s
+  }
+  return null
+}
+async function ne(e, n) {
+  return n === void 0 ? $c(e) : iwt(e, n.path ?? "")
+}
+
+function Efo() {
+  return {
+    path: i.PATH,
+    programFiles: i.ProgramFiles,
+    localAppData: i.LOCALAPPDATA,
+    userProfile: i.USERPROFILE,
+    systemRoot: i.SYSTEMROOT
+  }
+}
+
+function vHi(e) {
+  if (q()) return Promise.resolve(null);
+  let n = Sae();
+  return n.organizationsPowerShellPath ??= te(e), n.organizationsPowerShellPath
+}
+
+function uD() {
+  if (q()) return Promise.resolve(null);
+  let e = Sae();
+  if (!e.powerShellPath) {
+    e.resolvedPowerShellPath = void 0;
+    let n = te().then((o) => {
+      if (e.powerShellPath === n) e.resolvedPowerShellPath = o;
+      return o
+    });
+    e.powerShellPath = n
+  }
+  return e.powerShellPath
+}
+
+function s_s() {
+  return Sae().resolvedPowerShellPath
+}
+async function v0n() {
+  let e = await uD();
+  return e ? oe(e) : null
+}
+
+function EHi() {
+  let e = s_s();
+  return typeof e === "string" ? oe(e) : e
+}
+
+function oe(e) {
+  return e.split(/[/\\]/).pop().toLowerCase().replace(/\.exe$/, "") === "pwsh" ? "core" : "desktop"
+}
+import {
+  lstatSync as sn,
+  realpathSync as ye,
+  statSync as ln
+} from "fs";
+import {
+  homedir as Y
+} from "os";
+import {
+  join as an,
+  posix as P
+} from "path";
+import {
+  realpath as re
+} from "fs/promises";
+import {
+  homedir as Ne
+} from "os";
+import {
+  win32 as _
+} from "path";
+
+function THi() {
+  if (x() !== "windows") return [];
+  let {
+    result: e
+  } = f, n = [e.settled ? e.documents : null, ...e.settled && !e.failed ? e.kept : [], ...ae()].filter((o) => o !== null);
+  return L(n.flatMap((o) => [o, f.resolved.get(o) ?? o]).flatMap((o) => [_.join(o, "PowerShell"), _.join(o, "WindowsPowerShell")]))
+}
+
+function CHi() {
+  if (x() !== "windows") return [];
+  let {
+    result: e
+  } = f, n = L([...le(), We(), ...e.settled && !e.failed ? O(e.autoRun) : []]);
+  return L(n.flatMap((o) => [o, f.resolved.get(o) ?? o]))
+}
+
+function le() {
+  return ["APPDATA", "LOCALAPPDATA"].flatMap((e) => {
+    let n = y(h(e));
+    return n === null ? [] : [n]
+  })
+}
+
+function We() {
+  let e = y(h("ProgramData") || h("PROGRAMDATA") || h("ALLUSERSPROFILE")) ?? Ye;
+  return _.join(e, "Microsoft", "Windows", "Start Menu")
+}
+
+function ae() {
+  return [h("OneDrive"), h("OneDriveConsumer"), h("OneDriveCommercial")].filter((e) => e !== void 0 && LI(e)).map((e) => _.join(e, "Documents"))
+}
+
+function h(e) {
+  let n = ap();
+  return n !== void 0 ? n[e] : i[e]
+}
+
+function RHi() {
+  return x() === "windows" && !f.result.settled
+}
+
+function AHi() {
+  let {
+    result: e
+  } = f;
+  return x() === "windows" && e.settled && e.failed ? e.why : void 0
+}
+var i_s = "served-profile-dirs-unreadable";
+async function JTe() {
+  if (x() !== "windows" || ue()) return;
+  if (de() && f.unresolved.length > 0) {
+    f.inFlight ??= V(f.unresolved).then(async ({
+      resolved: e,
+      unresolved: n,
+      missing: o
+    }) => {
+      let {
+        result: r
+      } = f, s;
+      try {
+        s = r.settled && !r.failed ? await Ke(r, o) : void 0
+      } catch (u) {
+        a(u), s = W(S(`checking a missing profile folder against PowerShell threw (${u instanceof Error?u.message:String(u)})`))
+      }
+      if (f.resolved = new Map([...f.resolved, ...e, ...s?.its?.resolved ?? []]), f.unresolved = [...n, ...s?.its?.unresolved ?? []], f.unresolvedAskedAt = Date.now(), s !== void 0) f.result = s.result;
+      if (f.inFlight = void 0, e.size > 0 || s !== void 0) N()
+    }).catch((e) => {
+      f.inFlight = void 0, f.unresolvedAskedAt = Date.now(), a(e), t(`[toolHosts] Re-asking the unresolved folders threw (${e instanceof Error?e.message:String(e)}); they are asked again the next time serving or a bind starts.`)
+    }), await f.inFlight;
+    return
+  }
+  f.inFlight ??= ze().catch((e) => ({
+    settled: !0,
+    documents: null,
+    failed: !0,
+    retry: !0,
+    why: e instanceof Error ? e.message : "the read threw"
+  })).then(async (e) => {
+    let {
+      resolved: n,
+      unresolved: o
+    } = await V([...e.failed || e.documents === null ? [] : [e.documents], ...e.failed ? [] : e.kept, ...ae(), ...e.failed ? [] : O(e.autoRun), ...le()]);
+    if (f.resolved = n, f.unresolved = o, f.unresolvedAskedAt = Date.now(), f.result = e, f.inFlight = void 0, e.failed) t(`[toolHosts] Could not read where this machine keeps its profile folders (${e.why}); its tools are not offered to cloud sessions until the next start reads them.`);
+    N()
+  }).catch((e) => {
+    f.result = {
+      settled: !0,
+      documents: null,
+      failed: !0,
+      retry: !0,
+      why: e instanceof Error ? e.message : "settling the read threw"
+    }, f.inFlight = void 0, a(e), t(`[toolHosts] Settling the profile-folder read threw (${e instanceof Error?e.message:String(e)}); serving stays off until the next start reads again.`), N()
+  }), await f.inFlight
+}
+
+function N() {
+  try {
+    f.settled.emit()
+  } catch (e) {
+    t(`[toolHosts] A profile-directory listener threw: ${e instanceof Error?e.message:String(e)}`)
+  }
+}
+
+function a_s() {
+  return x() !== "windows" || ue() ? void 0 : JTe()
+}
+
+function E0n(e) {
+  return f.settled.subscribe(e)
+}
+var f = he({
+  result: {
+    settled: !1
+  },
+  resolved: new Map,
+  unresolved: [],
+  unresolvedAskedAt: 0,
+  inFlight: void 0,
+  settled: De(),
+  volumeAnswers: new Map,
+  powershellAnswer: void 0
+}, (e) => {
+  e.result = {
+    settled: !1
+  }, e.resolved = new Map, e.unresolved = [], e.unresolvedAskedAt = 0, e.inFlight = void 0, e.settled.clear(), e.volumeAnswers.clear(), e.powershellAnswer = void 0
+});
+
+function ue() {
+  return de() && (f.unresolved.length === 0 || Date.now() - f.unresolvedAskedAt < Ve)
+}
+var Ve = 60000;
+
+function de() {
+  let {
+    result: e
+  } = f;
+  return e.settled && (!e.failed || !e.retry)
+}
+
+function Ge(e, n, o) {
+  let r = ce(n).exec(e)?.[1]?.replace(/%([^%]+)%/g, (s, u) => o[u.toUpperCase()] ?? s);
+  return y(r)
+}
+
+function ce(e, n = "REG_(?:EXPAND_)?SZ") {
+  return new RegExp("^[ \\t]+" + e.replace(/ /g, "[ ]") + "[ \\t]+" + n + "[ \\t]+(.+?)[ \\t]*\\r?$", "im")
+}
+
+function je(e) {
+  let n = e.trim().split(/\r?\n/).pop()?.trim() ?? "",
+    o = y(/^\d{1,5}(,\d{1,5})*$/.test(n) ? String.fromCharCode(...n.split(",").map(Number)) : n);
+  return o !== null && /\.ps1$/i.test(o) ? _.dirname(_.dirname(o)) : null
+}
+
+function y(e) {
+  return e === void 0 || /[%?\uFFFD]/.test(e) || !LI(e) ? null : e
+}
+async function fe() {
+  let e = _.join(Be, "System32", "reg.exe");
+  if (await gf(e)) return e;
+  let n = h("SystemRoot") || h("SYSTEMROOT");
+  return n !== void 0 && /^[A-Za-z]:[\\/]/.test(n) ? _.join(n, "System32", "reg.exe") : void 0
+}
+var Be = "C:\\Windows",
+  Ye = "C:\\ProgramData",
+  me = "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders";
+async function ze() {
+  let e = await Qe();
+  if (!e.failed && e.documents !== "unplaceable" && e.autoRun.every(([, o]) => o !== "unplaceable")) return ie(e.autoRun, e.documents);
+  let n = await Re();
+  if (n.failed) return S(`${e.failed?e.why:`reg.exe could not place the key's ${G(e.autoRun,e.documents).join(" and ")}`}; ${n.why}`, (e.failed ? e.retry : !0) || n.retry);
+  if (e.failed && n.autoRun === "unreadable") return S(`${e.why}; PowerShell could not read the User Shell Folders key`);
+  return ie(j(...e.failed ? [] : [e.autoRun], ...n.autoRun === "unreadable" ? [] : [n.autoRun]), e.failed || e.documents === "unplaceable" ? {
+    placed: [n.documents]
+  } : e.documents)
+}
+async function ie(e, n) {
+  let o = typeof n === "object" ? n.placed[0] ?? null : null,
+    r = [...o === null ? [] : [o], ...O(e)],
+    s = (await Promise.all(r.map(async (E) => ("missing" in await Se(E)) ? [E] : []))).flat(),
+    u = s.length > 0 ? await pe(o !== null && s.includes(o) ? o : null, s) : void 0;
+  if (u !== void 0 && u.failed) return u;
+  let d = u?.autoRun,
+    l = d === void 0 ? e : j(e, d),
+    m = G(l, n);
+  if (m.length > 0) return ge(m);
+  let w = u?.documents ?? null;
+  return {
+    settled: !0,
+    documents: w ?? o,
+    kept: w !== null && o !== null && w !== o ? [o] : [],
+    autoRun: l,
+    failed: !1
+  }
+}
+async function Ke(e, n) {
+  let o = [...e.documents === null ? [] : [e.documents], ...O(e.autoRun)].filter((w) => n.includes(w));
+  if (o.length === 0) return;
+  let r = e.documents !== null && o.includes(e.documents),
+    s = await pe(r ? e.documents : null, o);
+  if (s.failed) return W(s);
+  let u = s.autoRun === void 0 ? e.autoRun : j(e.autoRun, s.autoRun),
+    d = G(u, "absent");
+  if (d.length > 0) return W(ge(d));
+  let l = s.documents !== null && s.documents !== e.documents ? s.documents : null,
+    m = O(u).filter((w) => !O(e.autoRun).includes(w));
+  if (l === null && m.length === 0) return;
+  return {
+    result: {
+      ...e,
+      documents: l ?? e.documents,
+      kept: L([...e.kept, ...l === null || e.documents === null ? [] : [e.documents]]),
+      autoRun: u
+    },
+    its: await V([...l === null ? [] : [l], ...m])
+  }
+}
+
+function W(e) {
+  return _e(), t(`[toolHosts] Asked again where this machine keeps its profile folders and could not settle it \u2014 ${e.why}; its tools are not offered to cloud sessions until the next start reads again.`), {
+    result: e
+  }
+}
+async function pe(e, n) {
+  let o = await Re();
+  if (o.failed) return se(n, o.why);
+  let r = n.filter((s) => s !== e);
+  if (o.autoRun === "unreadable" && r.length > 0) return se(r, "its registry provider could not read the User Shell Folders key");
+  return {
+    failed: !1,
+    documents: e === null ? null : o.documents,
+    autoRun: o.autoRun === "unreadable" ? void 0 : o.autoRun
+  }
+}
+
+function se(e, n) {
+  return S(`${e.join(" and ")} ${e.length===1?"does not exist on its volume":"do not exist on their volumes"} as read, and PowerShell could not say where ${e.length===1?"the folder is":"they are"} (${n})`)
+}
+
+function G(e, n) {
+  return [...n === "unplaceable" ? ["Personal"] : [], ...e.flatMap(([o, r]) => r === "unplaceable" ? [o] : [])]
+}
+
+function j(...e) {
+  return M.map((n) => {
+    let o = qe(e.map((r) => Ze(r, n)));
+    return [n, o]
+  })
+}
+
+function O(e) {
+  return L(e.flatMap(([, n]) => typeof n === "object" ? n.placed : []))
+}
+
+function ge(e) {
+  return S(`the User Shell Folders key's ${e.join(" and ")} could not be placed by any source that read ${e.length===1?"it":"them"}`)
+}
+
+function qe(e) {
+  let n = L(e.flatMap((o) => typeof o === "object" ? o.placed : []));
+  if (n.length > 0) return {
+    placed: n
+  };
+  return e.includes("unplaceable") ? "unplaceable" : "absent"
+}
+
+function Ze(e, n) {
+  return e.find(([o]) => o === n)?.[1] ?? "absent"
+}
+async function Qe() {
+  let e = await fe();
+  if (e === void 0) return S("no reg.exe under a local Windows directory", !1);
+  let {
+    stdout: n,
+    stderr: o,
+    exitCode: r,
+    timedOut: s
+  } = await ut(e, ["query", me], {
+    cwd: _.dirname(e),
+    timeout: 5000,
+    stdin: "ignore"
+  });
+  if (s || r === void 0) return S(s ? "reg.exe took over five seconds" : "reg.exe did not run");
+  if (r !== 0) return /unable to find/i.test(`${o}${n}`) ? {
+    failed: !1,
+    documents: "absent",
+    autoRun: []
+  } : S(`reg.exe exited ${r}`);
+  let u = {
+      USERPROFILE: Ne(),
+      USERNAME: h("USERNAME"),
+      HOMESHARE: h("HOMESHARE"),
+      HOMEDRIVE: h("HOMEDRIVE"),
+      HOMEPATH: h("HOMEPATH"),
+      APPDATA: h("APPDATA"),
+      LOCALAPPDATA: h("LOCALAPPDATA")
+    },
+    d = (l) => {
+      let m = ce(l, "REG_\\w+").exec(n)?.[1]?.trim();
+      if (m === void 0 || m === "") return "absent";
+      let w = Ge(n, l, u);
+      return w === null ? "unplaceable" : {
+        placed: [w]
+      }
+    };
+  return {
+    failed: !1,
+    documents: d("Personal"),
+    autoRun: M.map((l) => [l, d(l)])
+  }
+}
+var M = ["AppData", "Local AppData", "Start Menu", "Programs", "Startup"],
+  Je = [`$k='HKCU:\\${me.slice(5)}'`, "$p=$null;$x='!';try{$p=Get-ItemProperty -LiteralPath $k -ErrorAction Stop;$x=''}catch{if($_.FullyQualifiedErrorId -like 'PathNotFound,*'){$x=''}}", `foreach($n in ${M.map((e)=>`'${e}'`).join(",")}){$v=$x;if($null -ne $p -and $null -ne $p.$n){$v=([int[]][char[]][string]$p.$n) -join ','};$n+'='+$v}`, "([int[]][char[]]$PROFILE.CurrentUserAllHosts) -join ','"].join(";");
+
+function Re() {
+  return f.powershellAnswer ??= Xe()
+}
+async function Xe() {
+  let e = await uD();
+  if (e === null || !_.isAbsolute(e)) return S("no PowerShell was found to ask for $PROFILE");
+  let n = ap(),
+    {
+      stdout: o,
+      exitCode: r,
+      timedOut: s
+    } = await ut(e, ["-NoProfile", "-NonInteractive", "-Command", Je], {
+      cwd: _.dirname(e),
+      timeout: 5000,
+      stdin: "ignore",
+      ...n === void 0 ? {} : {
+        env: n,
+        extendEnv: !1
+      }
+    });
+  if (s || r !== 0) return S(s ? "PowerShell took over five seconds to name $PROFILE" : "PowerShell did not name $PROFILE");
+  let u = je(o);
+  if (u === null) return S("PowerShell's $PROFILE could not be placed");
+  let d = M.map((l) => [l, new RegExp(`^${l.replace(/ /g,"[ ]")}=(.*?)\\r?$`, "m").exec(o)?.[1]]);
+  return {
+    failed: !1,
+    documents: u,
+    autoRun: d.some(([, l]) => l === void 0 || l === "!") ? "unreadable" : d.flatMap(([l, m]) => m === void 0 ? [] : [
+      [l, en(m)]
+    ])
+  }
+}
+
+function en(e) {
+  let n = /^\d{1,5}(,\d{1,5})*$/.test(e) ? String.fromCharCode(...e.split(",").map(Number)) : e;
+  if (n.trim() === "") return "absent";
+  let o = y(n === e ? void 0 : n);
+  return o === null ? "unplaceable" : {
+    placed: [o]
+  }
+}
+
+function S(e, n = !0) {
+  return {
+    settled: !0,
+    documents: null,
+    failed: !0,
+    retry: n,
+    why: e
+  }
+}
+async function V(e) {
+  if (x() !== "windows") return {
+    resolved: new Map,
+    unresolved: [],
+    missing: []
+  };
+  let n = await Promise.all(e.map(async (o) => {
+    let r = await Se(o);
+    return {
+      folder: o,
+      outcome: "unresolved" in r ? await on(o) : r
+    }
+  })).finally(_e);
+  return {
+    resolved: new Map(n.flatMap(({
+      folder: o,
+      outcome: r
+    }) => ("resolved" in r) && r.resolved !== o ? [
+      [o, r.resolved]
+    ] : [])),
+    unresolved: n.flatMap(({
+      folder: o,
+      outcome: r
+    }) => ("unresolved" in r) ? [o] : []),
+    missing: n.flatMap(({
+      folder: o,
+      outcome: r
+    }) => ("missing" in r) ? [o] : [])
+  }
+}
+var nn = 5000;
+
+function _e() {
+  f.volumeAnswers.clear(), f.powershellAnswer = void 0
+}
+
+function Se(e) {
+  let n = f.volumeAnswers.get(e);
+  if (n !== void 0) return n;
+  let o = we(tn(e), nn).then((r) => r ?? {
+    unresolved: !0
+  });
+  return f.volumeAnswers.set(e, o), o
+}
+async function tn(e) {
+  try {
+    return {
+      resolved: await re(e)
+    }
+  } catch (n) {
+    let o = k(n);
+    if (o !== "ENOENT" && o !== "ENOTDIR") return {
+      unresolved: !0
+    };
+    let r = _.parse(e).root;
+    if (r === "" || r === e) return {
+      unresolved: !0
+    };
+    return re(r).then((s) => ({
+      resolved: _.join(s, e.slice(r.length)),
+      missing: !0
+    }), () => ({
+      unresolved: !0
+    }))
+  }
+}
+async function on(e) {
+  let n = /^([A-Za-z]):[\\/]/.exec(e)?.[1]?.toUpperCase();
+  if (n === void 0) return {
+    unresolved: !0
+  };
+  let o = e.slice(2),
+    r = Ae(h("HOMESHARE"));
+  if (r !== null && h("HOMEDRIVE")?.toUpperCase() === `${n}:`) return {
+    resolved: _.join(r, o)
+  };
+  let s = await fe();
+  if (s === void 0) return {
+    unresolved: !0
+  };
+  let {
+    stdout: u,
+    exitCode: d,
+    timedOut: l
+  } = await ut(s, ["query", `HKCU\\Network\\${n}`, "/v", "RemotePath"], {
+    cwd: _.dirname(s),
+    timeout: 5000,
+    stdin: "ignore"
+  }), m = !l && d === 0 ? rn(u) : null;
+  return m === null ? {
+    unresolved: !0
+  } : {
+    resolved: _.join(m, o)
+  }
+}
+
+function rn(e) {
+  return Ae(/^[ \t]+RemotePath[ \t]+REG_SZ[ \t]+(.+?)[ \t]*\r?$/im.exec(e)?.[1])
+}
+
+function Ae(e) {
+  return e !== void 0 && /^\\\\(?![?.][\\/])[^\\/]+[\\/]+[^\\/]+/.test(e) ? y(e) : null
+}
+async function eue() {
+  return MS() && await mO()
+}
+
+function VZ() {
+  return MS() && xh()
+}
+
+function MS() {
+  return dNe()
+}
+var un = "tengu_violin_tailpiece";
+
+function iZt() {
+  try {
+    return v(un, !0) !== !1
+  } catch (e) {
+    return a(F(e)), !1
+  }
+}
+
+function T0n() {
+  return Boolean(i.CLAUDE_CODE_REMOTE_SESSION_ID)
+}
+
+function C0n() {
+  if (!T0n()) return;
+  if (!MS()) return "disabled_switch_off";
+  return xQe() ? "disabled_flag_off" : "not_ready"
+}
+
+function R0n() {
+  return !1
+}
+
+function WW() {
+  return Ar.CLAUDE_CODE_REMOTE_TOOLS_SESSION_CHANNEL === !1
+}
+
+function l_s() {
+  try {
+    return Ar.CLAUDE_CODE_REMOTE_TOOLS_JUMP_QUEUE ?? v("tengu_valiant_rain", !1) === !0
+  } catch (e) {
+    return a(F(e)), !1
+  }
+}
+
+function QTe() {
+  return eX() === void 0
+}
+
+function $pt() {
+  return xh() && QTe()
+}
+
+function TJe(e) {
+  return e === "launched_from_home"
+}
+var dn = "tengu_violin_mute",
+  A0t = "served-tools-muted",
+  aZt = "served-tools-unmuted",
+  cn = "tengu_violin_plan_classifier";
+
+function d_s() {
+  try {
+    return v(cn, !0) !== !1
+  } catch {
+    return !1
+  }
+}
+var fn = "tengu_unified_waterfall";
+
+function c_s() {
+  let e = Ar.CLAUDE_CODE_REMOTE_TOOLS_ASK_SEATS;
+  if (e !== void 0) return e;
+  try {
+    return v(fn, !0) !== !1
+  } catch (n) {
+    return a(F(n)), !1
+  }
+}
+var mn = "tengu_eventual_haven";
+
+function A0n() {
+  try {
+    return v(mn, !0) !== !1
+  } catch (e) {
+    return a(F(e)), !1
+  }
+}
+var pn = "tengu_violin_bassbar";
+
+function u_s() {
+  try {
+    return v(pn, !0) !== !1
+  } catch (e) {
+    return a(F(e)), !1
+  }
+}
+var gn = "tengu_violin_speculative_classifier";
+
+function f_s(e) {
+  try {
+    if (!(Ar.CLAUDE_CODE_REMOTE_TOOLS_SPECULATIVE_CLASSIFIER ?? v(gn, !1) === !0)) return !1;
+    return !1
+  } catch (n) {
+    return a(F(n)), !1
+  }
+}
+
+function ZTe() {
+  try {
+    return v(dn, !1) === !0
+  } catch {
+    return !1
+  }
+}
+var hn = 300000;
+
+function wn(e) {
+  try {
+    e()
+  } catch (n) {
+    a(F(n))
+  }
+}
+
+function tue(e) {
+  let n = ea(e),
+    o = setInterval(wn, Math.round(hn * (0.8 + Math.random() * 0.4)), e);
+  return o.unref(), () => {
+    clearInterval(o), n()
+  }
+}
+
+function eX(e = Ee(), n = {}) {
+  if (x() === "windows") return "windows";
+  if (!n.ignoringMute && ZTe()) return "muted";
+  if (!Rn()) return "switch_off";
+  let o = INn();
+  if (x0t(e)) return "launched_from_home";
+  if (o || INn()) return "mount_table_unreadable";
+  if (RHi()) return "profile_dirs_unread";
+  if (AHi() !== void 0) return "profile_dirs_unreadable";
+  return
+}
+
+function gSa() {
+  let e = Ar.CLAUDE_CODE_REMOTE_TOOLS_ADOPT_MCP;
+  return e === void 0 || Pe(e)
+}
+
+function Rn() {
+  let e = Ar.CLAUDE_CODE_REMOTE_TOOLS_SERVE;
+  return e === void 0 || Pe(e)
+}
+
+function x0t(e = Ee()) {
+  return z(e, "all")
+}
+
+function p_s(e = Ee()) {
+  return x() === "wsl" && z(e, "all") && !z(e, "drives_only")
+}
+
+function be(e) {
+  let n = b(e),
+    o = e === n ? [e] : [e, n],
+    r = o.map((l) => tg(l)).filter((l) => l !== null);
+  if (r.some((l) => {
+      try {
+        return sn(an(l, ".git")).isSymbolicLink()
+      } catch {
+        return !1
+      }
+    })) return "refused_outright";
+  let s = r.flatMap((l) => [l, CH(l)]).filter((l) => l !== null),
+    u = s.map((l) => b(l)),
+    d = [...s, ...u];
+  if (x() === "windows" && [n, ...u].some((l) => _n(cf(l)))) return "refused_outright";
+  return L([...o, ...d])
+}
+
+function Fe(e) {
+  let n = x() === "wsl" ? be(e) : void 0;
+  if (n === void 0 || n === "refused_outright") return;
+  return {
+    bases: n.map((o) => P.normalize(o)),
+    mountPoints: [...[...n, ...Y$(fD())].flatMap((o) => KLt(o).slice(1)), ...xe([Y(), b(Y())], "all"), ...Me("all").map(({
+      mountPoint: o
+    }) => o)]
+  }
+}
+
+function m_s(e = Ee()) {
+  let n = Fe(e);
+  return n !== void 0 && (n.bases.some((o) => hks(o, "except_two_drive_mounts")) || n.mountPoints.some((o) => hks(o, "all")))
+}
+
+function h_s(e = Ee()) {
+  let n = Fe(e);
+  return n !== void 0 && [...n.bases, ...n.mountPoints].some(Y1i)
+}
+
+function z(e, n) {
+  let o = Y(),
+    r = Ue(),
+    s = FU();
+  if (!LI(o) || !LI(r) || !LI(s)) return !0;
+  let u = be(e);
+  if (u === "refused_outright") return !0;
+  if (Pn(u, n) || An(u, n)) return !0;
+  let d = En(u),
+    l = b(o),
+    m = [o, l],
+    w = [...m, ...d],
+    E = Te(m),
+    Q = Y$(fD()),
+    J = x() === "windows" ? Q.map((p) => b(p)) : [],
+    I = L([...Q, ...J]);
+  if (x() === "windows" && ([...w, ...I].some((p) => {
+      let R = L0t(cf(p));
+      return R === "own_host" || R === "wsl_host"
+    }) || [l, ...J].some((p) => L0t(cf(p)) === "short_name"))) return !0;
+  let Ce = m.map((p) => cf(p)),
+    T = L(u.flatMap(KLt));
+  return [...w, ...I.flatMap(KLt)].some((p) => u.some((R) => H(p, R))) || T.some((p) => I.some((R) => H(p, R))) || T.some((p) => [p, D0n(p)].some((R) => K(R, m, E)) || Ce.some((R) => K(C_s(cf(p), R), [R]))) || xe(m, n).some((p) => T.some((R) => VLt(R, p) || VLt(p, R))) || Me(n).some(({
+    mountPoint: p,
+    place: R
+  }) => T.some((X) => VLt(p, X) || kEr(X, p).some((ke) => Le(P.join(R, ...ke))))) || yn([...THi(), ...CHi()], u)
+}
+
+function Te(e) {
+  return x() === "wsl" ? e.filter((n) => {
+    let o = P.normalize(n);
+    return p7e(o).length > 0 || wEr(o).length > 0
+  }) : []
+}
+
+function xe(e, n) {
+  let o = Te(e);
+  return L([...e.flatMap((r) => KLt(r).slice(1)).filter((r) => K(r, e, o)), ...KLt("/").slice(1).filter((r) => Z(r, n).some((s) => P.normalize(s) !== "/" && rtn(s, ["/"], "windows_on_wsl")))])
+}
+
+function Me(e) {
+  return KLt("/").slice(1).flatMap((n) => Z(n, e).filter((o) => o === "/" || zNn(o, ["/"], "windows_on_wsl")).map((o) => ({
+    mountPoint: n,
+    place: o
+  })))
+}
+
+function K(e, n, o = []) {
+  return rtn(e, n) || x() === "windows" && zNn(e, n) || o.length > 0 && rtn(e, o, "windows_on_wsl")
+}
+
+function H(e, n) {
+  let o = cf(n),
+    r = C_s(cf(e), o);
+  return Iq(r, o) || x() === "windows" && (T_s(r, o) || NHi(r, o)) || VLt(e, n)
+}
+
+function _n(e) {
+  switch (L0t(e)) {
+    case void 0:
+    case "webdav_host":
+      return !1;
+    case "numeric_host":
+      return !Sn.test(/^\\\\([^\\@]+)/.exec(e)?.[1] ?? "");
+    default:
+      return !0
+  }
+}
+var Sn = /^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d?)(?:\.(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$/;
+
+function En(e) {
+  if (x() !== "wsl") return [];
+  return L(e.flatMap((n) => p7e(P.normalize(n)).flatMap((o) => {
+    let r = o.beneath.split("/").filter(Boolean),
+      s = U(o.within.split("/"), Boolean);
+    return r.length >= 2 && s <= 2 && mWt(qwt(r[0])) ? [
+      [o.mountPoint, ...r.slice(s, 2)].join("/").replace(/^\/\//, "/")
+    ] : []
+  })))
+}
+
+function Pn(e, n) {
+  if (x() !== "wsl") return !1;
+  return e.some((o) => Z(o, n).some(Le))
+}
+
+function Le(e) {
+  return e === "/" || rtn(e, ["/"], "windows_on_wsl") || zNn(e, ["/"], "windows_on_wsl")
+}
+
+function Z(e, n) {
+  let o = P.normalize(e);
+  return (n === "all" ? [...p7e(o), ...wEr(o)] : p7e(o)).flatMap((s) => MIo(s.beneath).flatMap((u) => u.length >= 2 && mWt(u[0]) ? [`/${u.slice(2).join("/")}`] : []))
+}
+
+function An(e, n) {
+  if (x() !== "wsl") return !1;
+  return e.some((o) => {
+    let r = P.normalize(o),
+      s = p7e(r),
+      u = n === "all" ? wEr(r).filter((d) => !s.some((l) => l.within === "" && l.mountPoint === d.mountPoint && l.beneath === d.beneath)) : [];
+    return On.has(Tf(r.length > 1 ? r.replace(/\/+$/, "") : r)) || [...s, ...u].some((d) => {
+      let l = U$r(d.beneath);
+      return l.length === 1 && mWt(l[0])
+    }) || GLt(r).some((d) => Oe(d.within)) || n === "all" && Qmo(r).some((d) => Oe(d.within)) || GLt(r).some((d) => B(d.within) && C(d.mountPoint)) || s.some((d) => B(d.beneath) && C(d.mountPoint)) || u.some((d) => {
+      if (!B(d.beneath)) return !1;
+      let l = X1i(d.mountPoint);
+      if (l === void 0) return C(d.mountPoint);
+      let m = `${d.mountPoint}
+${l}`,
+        w = ve.get(m);
+      if (w !== void 0) return w;
+      let E = C(d.mountPoint);
+      return ve.set(m, E), E
+    })
+  })
+}
+
+function B(e) {
+  return U$r(e).length === 0
+}
+
+function Oe(e) {
+  let n = U$r(e);
+  return n.length > 0 && mWt(n[0])
+}
+var ve = he(new Map, (e) => e.clear()),
+  On = new Set(["/", "/mnt"]);
+
+function C(e) {
+  return vn.some((n) => {
+    try {
+      return ln(`${e}/${n}`).isDirectory()
+    } catch (o) {
+      let r = k(o);
+      return r !== "ENOENT" && r !== "ENOTDIR"
+    }
+  })
+}
+var vn = ["Users", "Documents and Settings", "Dokumente und Einstellungen"];
+
+function yn(e, n) {
+  return e.some((o) => n.some((r) => H(r, o) || H(o, r)))
+}
+
+function qwr(e) {
+  try {
+    return ye(e)
+  } catch {
+    return e
+  }
+}
+
+function b(e) {
+  if (x() !== "windows") return qwr(e);
+  try {
+    return ye.native(e)
+  } catch {
+    return qwr(e)
+  }
+}
+
+function lZt() {
+  let e = Ar.CLAUDE_CODE_REMOTE_TOOLS_POLICY;
+  return e === void 0 || e === "parity" ? "parity" : "interim"
+}
+
+function Ywr() {
+  return Ar.CLAUDE_CODE_REMOTE_TOOLS_CALLER_SESSIONS_MAX
+}
+export {
+  Efo,
+  vHi,
+  uD,
+  s_s,
+  v0n,
+  EHi,
+  THi,
+  CHi,
+  RHi,
+  AHi,
+  i_s,
+  JTe,
+  a_s,
+  E0n,
+  eue,
+  VZ,
+  MS,
+  iZt,
+  T0n,
+  C0n,
+  R0n,
+  WW,
+  l_s,
+  QTe,
+  $pt,
+  TJe,
+  A0t,
+  aZt,
+  d_s,
+  c_s,
+  A0n,
+  u_s,
+  f_s,
+  ZTe,
+  tue,
+  eX,
+  gSa,
+  x0t,
+  p_s,
+  m_s,
+  h_s,
+  qwr,
+  lZt,
+  Ywr
+};

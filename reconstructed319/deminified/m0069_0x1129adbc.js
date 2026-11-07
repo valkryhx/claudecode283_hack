@@ -1,0 +1,93 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { he } from "B:/~BUN/root/chunk-fet34rqr.js";
+function v(e) {
+  return e.replace(/[a-z]/g, n => n.toUpperCase());
+}
+function d(e) {
+  return e.toUpperCase();
+}
+var i = he(new Map(), e => e.clear());
+function c(e) {
+  let n = d(e);
+  return [...i].filter(([, t]) => d(t.name) === n);
+}
+function g(e, n) {
+  for (let [t, o] of c(e)) if (f(o.name) === n) i.delete(t);
+}
+var s = he({
+  isOpen: !1
+}, e => {
+  e.isOpen = !1;
+});
+function f(e) {
+  return process.env[e];
+}
+function p(e, n) {
+  if (n === void 0) {
+    delete process.env[e];
+    return;
+  }
+  process.env[e] = n;
+}
+function l(e) {
+  return f(e.name) === e.theirs;
+}
+function a() {
+  let e = [...i.values()];
+  return s.isOpen ? e : e.filter(l);
+}
+function hea(name, writer) {
+  let t = v(name);
+  for (let [r, u] of s.isOpen ? [] : c(name)) if (!l(u)) i.delete(r);
+  let o = i.get(t) ?? {
+    name: name,
+    before: f(name)
+  };
+  return () => {
+    i.set(t, {
+      ...o,
+      theirs: void 0,
+      writer: writer
+    });
+    for (let [r, u] of c(name)) i.set(r, {
+      ...u,
+      theirs: f(u.name),
+      writer: writer
+    });
+  };
+}
+function gea(e) {
+  return () => {
+    g(e, f(e));
+  };
+}
+function yea(e) {
+  if (s.isOpen) return;
+  for (let [n, t] of Object.entries(e)) if (t !== void 0) g(n, t);
+}
+function MHe() {
+  return a().map(item => item.name);
+}
+function _ea(e) {
+  let n = new Set(e.map(d));
+  return a().some(item => (item.theirs || void 0) !== (item.before || void 0) && n.has(d(item.name)));
+}
+function $tt(e, n) {
+  if (s.isOpen) return e();
+  let t = a();
+  if (t.length === 0) return e();
+  let o = t.filter(item => item.writer === void 0 || n === void 0 || !n(item.writer));
+  for (let r = o.length - 1; r >= 0; r--) p(o[r].name, o[r].before);
+  s.isOpen = !0;
+  try {
+    return e();
+  } finally {
+    for (let r of o) p(r.name, r.theirs);
+    s.isOpen = !1;
+  }
+}
+var Bpe = ["NODE_TLS_REJECT_UNAUTHORIZED", "BUN_TLS_REFUSE_DISTRUSTED_KEYS"];
+export { hea, gea, yea, MHe, _ea, $tt, Bpe };

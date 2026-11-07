@@ -1,0 +1,1269 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  H,
+  Ee,
+  q
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  R,
+  d,
+  k,
+  tr,
+  K,
+  wr
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  FE,
+  En,
+  or,
+  yS,
+  bl,
+  NC,
+  Bb,
+  MT,
+  dqn,
+  z$r,
+  Cl,
+  jb,
+  Ks,
+  T0,
+  R0
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  Ue
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  t,
+  Tj,
+  ZPo,
+  m7,
+  ps,
+  ie
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  hR,
+  xee
+} from "B:/~BUN/root/chunk-7pxn9dsp.js";
+import {
+  ql,
+  tb
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  um
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  mt
+} from "B:/~BUN/root/chunk-d10hhz4p.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  vH
+} from "B:/~BUN/root/chunk-r8p1hzqw.js";
+import {
+  Fte
+} from "B:/~BUN/root/chunk-pwj77283.js";
+import {
+  sz,
+  L_e,
+  RCe,
+  mee,
+  sk,
+  k7e,
+  OGe,
+  xue,
+  Ly,
+  Gc,
+  Aa,
+  PCe
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  lo,
+  dl
+} from "B:/~BUN/root/chunk-detjgwj4.js";
+import {
+  LQt,
+  qP
+} from "B:/~BUN/root/chunk-pw7914mv.js";
+import {
+  Hze,
+  dJe,
+  Spt
+} from "B:/~BUN/root/chunk-hjds4dtx.js";
+import {
+  oFi,
+  Dze
+} from "B:/~BUN/root/chunk-cj2cn5y2.js";
+import {
+  RF
+} from "B:/~BUN/root/chunk-pp5rqp7s.js";
+import {
+  Av,
+  LBi,
+  ymt
+} from "B:/~BUN/root/chunk-zx0hhrva.js";
+import {
+  ze
+} from "B:/~BUN/root/chunk-xwzn0yxv.js";
+import {
+  zFe,
+  IDr
+} from "B:/~BUN/root/chunk-e0q1m1z9.js";
+import {
+  oe,
+  C
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  nt
+} from "B:/~BUN/root/chunk-tq5dzbq9.js";
+import {
+  constants as ae
+} from "fs";
+import {
+  lstat as se,
+  open as le,
+  realpath as A,
+  stat as de
+} from "fs/promises";
+import {
+  basename as Z,
+  dirname as ce,
+  extname as _e,
+  isAbsolute as Ce,
+  sep as I
+} from "path";
+
+function K9(e, n) {
+  let r = n.restricted && k7e(e);
+  return r && !Ly(e, n, r) && PCe(e, {}, r, {
+    restricted: !0
+  }).behavior !== "allow" || xue(e, n)
+}
+class aJe extends Error {
+  constructor() {
+    super("the name or the place of a credential")
+  }
+}
+var ue = 0,
+  ye = 0,
+  Pe = 0,
+  PQt = 10485760,
+  F = {
+    tag: "chrome",
+    validate: $0e,
+    rejection: Se,
+    noPaths: "file_upload requires a non-empty `paths` array of files the user has shared with this session.",
+    namesSource: !1
+  };
+async function Re(e) {
+  let n = [{
+    path: Av(),
+    kind: "attachments"
+  }];
+  if (e.isRemoteMode || i.CLAUDE_STAGE_FILE_ROOT) try {
+    if (n.push({
+        path: hR(),
+        kind: "staging",
+        fromChat: !0
+      }), sz(i.CLAUDE_CODE_REMOTE_SESSION_ID, i.CLAUDE_CODE_ENVIRONMENT_KIND)) n.push({
+      path: xee(),
+      kind: "staging"
+    })
+  } catch (r) {
+    t(`[chrome file_upload] stage root unresolvable, skipping staging roots (${r instanceof Error?r.message:String(r)})`)
+  }
+  return n
+}
+async function xgs(e, n, r, {
+  maxTotalBytes: a = PQt,
+  hosted: o,
+  screen: s = F.validate
+} = {}) {
+  let l = {
+      remaining: a,
+      total: a
+    },
+    f = () => L(e, n, (b) => he(b, r, l, {
+      ...F,
+      validate: s
+    }));
+  if (o === void 0) return f();
+  if (e !== "file_upload") {
+    let b = {
+      error: IDr
+    };
+    return L(e, n, async () => b, Dze.peek(o.session)?.host ? b : z)
+  }
+  if ("files" in n) return {
+    error: "file_upload takes `paths`, not `files`. Nothing was uploaded. Call it again without `files`."
+  };
+  let w = q() ? Dze.peek(o.session)?.host : void 0,
+    h;
+  if (w) {
+    let {
+      paths: b
+    } = n;
+    if (!Array.isArray(b) || b.length === 0) return {
+      error: F.noPaths
+    };
+    h = await w.read(b, r, a, o.signal, !1)
+  } else {
+    let b = await f();
+    h = {
+      files: b.input?.files,
+      error: b.error
+    }
+  }
+  return h.error !== void 0 ? {
+    error: h.error
+  } : {
+    input: n,
+    callMeta: {
+      [oFi]: h.files
+    }
+  }
+}
+async function Pgs(e, n, {
+  hostAsksPerFile: r
+}) {
+  if (q()) return z;
+  if (Array.isArray(e.paths) && e.paths.length > 1) return {
+    error: "file_upload takes one file per call in this browser pane. Nothing was uploaded. Call it once for each file."
+  };
+  return he(e, n, {
+    remaining: PQt,
+    total: PQt
+  }, {
+    tag: "pane",
+    validate: (o, s) => Fe(o, s, r),
+    rejection: pe,
+    noPaths: "file_upload needs `paths` to be an array holding one absolute file path. Nothing was uploaded.",
+    namesSource: !0
+  })
+}
+async function fSa(e, n, r) {
+  return L(e, n, async (a) => {
+    let o = a.paths;
+    if (!Array.isArray(o) || o.length === 0) return {
+      error: "file_upload requires a non-empty `paths` array of files the user has shared with this session."
+    };
+    let s = [];
+    for (let h of o) {
+      if (typeof h !== "string") return {
+        error: "file_upload `paths` entries must be strings."
+      };
+      try {
+        s.push(await xe(h, r))
+      } catch (b) {
+        return t(`[chrome file_upload] rejected path (pass-through): ${h} (${b instanceof Error?b.message:String(b)})`), {
+          error: b instanceof V ? ve(h) : b instanceof aJe ? fe(h) : pe(h)
+        }
+      }
+    }
+    let {
+      files: l,
+      paths: f,
+      ...w
+    } = a;
+    return {
+      input: {
+        ...w,
+        paths: s
+      }
+    }
+  })
+}
+async function L(e, n, r, a = z) {
+  if (e === "file_upload") return q() ? a : r(n);
+  if (e === "browser_batch") {
+    if (!Array.isArray(n.actions)) return {
+      error: "browser_batch requires an `actions` array."
+    };
+    let o = [...n.actions],
+      s = !1;
+    for (let l = 0; l < o.length; l++) {
+      let f = o[l];
+      if (typeof f !== "object" || f === null || typeof f.name !== "string") return {
+        error: "browser_batch sub-actions must be objects with a string name, and browser_batch cannot be nested."
+      };
+      let w = f.name;
+      if (!/^[\x20-\x7E]+$/.test(w)) return {
+        error: ee(w)
+      };
+      let h = w.trim().toLowerCase();
+      if (h === "browser_batch") return {
+        error: "browser_batch sub-actions must be objects with a string name, and browser_batch cannot be nested."
+      };
+      if (h === "file_upload" && w !== "file_upload") return {
+        error: ee(w)
+      };
+      if (w !== "file_upload") continue;
+      let b = f,
+        P = typeof b.input === "object" && b.input !== null ? b.input : {},
+        y = q() ? a : await r(P);
+      if (y.error) return {
+        error: y.error
+      };
+      if (y.input !== b.input) o[l] = {
+        ...b,
+        input: y.input
+      }, s = !0
+    }
+    return s ? {
+      input: {
+        ...n,
+        actions: o
+      }
+    } : {
+      input: n
+    }
+  }
+  return {
+    input: n
+  }
+}
+var z = {
+  error: zFe
+};
+
+function E(e) {
+  return e.replace(/["\u0000-\u001f\u007f-\u009f\u2028\u2029]/g, "\uFFFD")
+}
+
+function Se(e) {
+  return `Cannot upload "${E(e)}": only files this session is allowed to read can be uploaded. Ask the user to share the file with this session, or to add its folder with /add-dir.`
+}
+
+function fe(e) {
+  return `Cannot upload "${E(e)}": its name or folder is one that credentials are kept under (such as .env, a .pem or .key file, or .ssh), so it is not uploaded on Claude's word alone. Tell the user it was not uploaded.`
+}
+
+function pe(e) {
+  return `Cannot upload "${E(e)}": only files this session is allowed to read can be uploaded. Ask the user to share the file or its folder with this session.`
+}
+
+function ve(e) {
+  return `Cannot upload "${E(e)}": file_upload \`paths\` must be absolute paths as this session sees them (for example /sessions/\u2026 in a Cowork VM, or a drive-letter path on Windows).`
+}
+
+function ee(e) {
+  return `browser_batch sub-action name "${E(e)}" is not a valid tool name.`
+}
+async function he(e, n, r, a) {
+  let o = e.paths;
+  if (!Array.isArray(o) || o.length === 0) return {
+    error: a.noPaths
+  };
+  let s = [];
+  for (let u of o) {
+    if (typeof u !== "string") return {
+      error: "file_upload `paths` entries must be strings."
+    };
+    let _, S, J, Q;
+    try {
+      ({
+        realPath: _,
+        requiredDigest: S,
+        outsideWorkingFolders: J,
+        needsHostAsk: Q
+      } = await a.validate(u, n))
+    } catch (T) {
+      return t(`[${a.tag} file_upload] rejected path: ${u} (${T instanceof Error?T.message:String(T)})`), {
+        error: T instanceof aJe ? fe(u) : a.rejection(u)
+      }
+    }
+    let U = await je(u, _, r, a.tag, J ? a.rejection : void 0);
+    if ("error" in U) return {
+      error: U.error
+    };
+    if (S !== void 0 && nt(U.buf) !== S) return t(`[${a.tag} file_upload] registered attachment digest mismatch: ${u}`), {
+      error: a.rejection(u)
+    };
+    s.push({
+      data: U.buf.toString("base64"),
+      name: await GTe(_),
+      mimeType: Me(_),
+      ...a.namesSource && {
+        sourcePath: _,
+        requestedPath: E(u).replace(/[\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/g, "\uFFFD"),
+        needsHostAsk: Q !== !1
+      }
+    })
+  }
+  let {
+    paths: l,
+    ...f
+  } = e;
+  if (!a.namesSource) return {
+    input: {
+      ...f,
+      files: s
+    }
+  };
+  let {
+    needsHostAsk: w,
+    sourcePath: h,
+    requestedPath: b,
+    hostAsksPerFile: P,
+    ...y
+  } = f;
+  return {
+    input: {
+      ...y,
+      files: s
+    }
+  }
+}
+async function GTe(e) {
+  let n = await A(Av()).catch(() => {
+    return
+  });
+  return n !== void 0 && ce(e) === n ? LBi(Z(e)) : Z(e)
+}
+
+function ge(e, n, r = !1) {
+  let a = r ? e.trim() : mt(e),
+    o = e.trim();
+  if (yS(o) || yS(a)) throw new R(`network path not allowed: ${yS(o)?o:a}`, "claudeInChrome/fileUpload: network path rejected before filesystem access");
+  let {
+    paths: s,
+    vetted: l
+  } = r ? {
+    paths: [a],
+    vetted: !0
+  } : m7(a);
+  if (!l) throw new R("path could not be vetted (symbolic link chain or unreadable component)", "claudeInChrome/fileUpload: unvettable path ancestry rejected before filesystem access");
+  let f = n.trustedNetworkDirectories;
+  for (let w of [o, ...s]) B(w, f);
+  return {
+    absPath: a,
+    absChain: s
+  }
+}
+
+function B(e, n) {
+  if (L_e(e, n) || RCe(e, n)) throw new R(`network path not allowed: ${e}`, "claudeInChrome/fileUpload: network path rejected");
+  if (mee(e, n)) throw new R(`suspicious path spelling: ${e}`, "claudeInChrome/fileUpload: suspicious Windows path pattern rejected")
+}
+
+function M(e, n, r = {}) {
+  for (let a of e) {
+    if (Aa(a, n, "read", "deny", r)) throw new R(`read denied: ${a}`, "claudeInChrome/fileUpload: path matches a read deny rule");
+    if (Aa(a, n, "read", "ask", r)) throw new R(`read requires approval: ${a}`, "claudeInChrome/fileUpload: path matches a read ask rule")
+  }
+}
+var Ae = 4096,
+  me = 3,
+  Oe = 64;
+async function xe(e, n, r = me, a = new Set) {
+  return (await IDn(e, n, r, a)).judged
+}
+async function IDn(e, n, r = me, a = new Set, {
+  mappedByHost: o = !1
+} = {}) {
+  let s = e.trim();
+  if (s !== e) throw new R("surrounding whitespace", "claudeInChrome/fileUpload: whitespace-padded path rejected on the pass-through");
+  if (s.length > Ae) throw new R("path too long", "claudeInChrome/fileUpload: over-long path rejected on the pass-through");
+  if (r < 0) throw new R(`nested percent-encoding: ${s}`, "claudeInChrome/fileUpload: multiply percent-encoded path rejected on the pass-through");
+  if (s.split(/[/\\]/).some((u) => u === "..")) throw new R(`parent-segment spelling not allowed: ${s}`, "claudeInChrome/fileUpload: dot-dot segment rejected on the pass-through");
+  j(s);
+  let l = o ? s : mt(s);
+  if (o ? !s.startsWith("/") : !De(s, l)) throw new V;
+  if (x() !== "windows" && s.includes("\\")) throw new R(`backslash in a POSIX spelling: ${s}`, "claudeInChrome/fileUpload: backslash spelling rejected on the pass-through");
+  if (/[/\\]\.?$/.test(s)) throw new R("trailing separator", "claudeInChrome/fileUpload: trailing-separator path rejected on the pass-through");
+  if (lo(n, {
+      name: ze
+    }) !== null || dl(n, {
+      name: ze
+    }) !== null) throw new R("Read tool is restricted for this session", "claudeInChrome/fileUpload: Read tool denied or ask-gated for this session (pass-through)");
+  for (let u of [s, l]) {
+    let _ = await ne(u);
+    if (_ !== void 0) throw _ === "credential_name" ? new aJe : N("a kernel or device path, or one of Claude Code's own credentials")
+  }
+  let f = s.split(/([/\\])/).map((u) => {
+    if (u === "/" || u === "\\" || !u.includes("%")) return u;
+    try {
+      return decodeURIComponent(u)
+    } catch {
+      return u
+    }
+  }).join("");
+  if (f !== s) await IDn(f, n, r - 1, a, {
+    mappedByHost: o
+  });
+  let {
+    absChain: w
+  } = ge(s, n, o);
+  for (let u of w) j(u);
+  let {
+    realPath: h,
+    looped: b,
+    spellings: P
+  } = o ? {
+    realPath: void 0,
+    looped: !1,
+    spellings: []
+  } : await Ie(l);
+  for (let u of P) B(u, n.trustedNetworkDirectories), j(u);
+  let y = new Set;
+  for (let u of new Set([s, ...w, ...P])) {
+    let _ = Te(u);
+    if (_ !== null && !a.has(_)) {
+      if (a.size >= Oe) throw new R("too many stream-base spellings", "claudeInChrome/fileUpload: stream-base fan-out rejected on the pass-through");
+      a.add(_);
+      try {
+        await IDn(_, n, r, a, {
+          mappedByHost: o
+        })
+      } catch (S) {
+        throw S instanceof aJe ? N(te) : S
+      }
+    }
+    for (let S of [u, MT(u)]) y.add(S).add(S.normalize("NFC")).add(S.normalize("NFD"))
+  }
+  M(y, n), M(y, n, {
+    caseInsensitiveTarget: !0
+  });
+  for (let u of y)
+    if (await ne(u) !== void 0) throw N(te);
+  return {
+    judged: l,
+    resolved: h,
+    linked: w.length > 1 || b
+  }
+}
+
+function ne(e) {
+  return dJe(e, e, {
+    readable: !0
+  })
+}
+var te = "a name or place reached through a link, a case- or Unicode-folded spelling, or the file before a ':stream'";
+
+function N(e) {
+  return new R(e, "claudeInChrome/fileUpload: path refused by its name or place on the pass-through")
+}
+
+function De(e, n) {
+  if (or(e) || or(n)) return !0;
+  if (!Ce(e)) return !1;
+  return x() !== "windows" || /^[a-z]:[\\/]/i.test(n)
+}
+
+function Te(e) {
+  let n = e.length;
+  for (;;) {
+    let l = e[n - 1];
+    if (l === "/" || l === "\\") {
+      n -= 1;
+      continue
+    }
+    if (l === "." && n >= 2 && (e[n - 2] === "/" || e[n - 2] === "\\")) {
+      n -= 2;
+      continue
+    }
+    break
+  }
+  let r = e.slice(0, n),
+    a = Math.max(r.lastIndexOf("/"), r.lastIndexOf("\\")) + 1,
+    o = r.indexOf(":", a + 1);
+  if (o === -1 || a === 0 && o === 1) return null;
+  let s = o;
+  while (s > a && r[s - 1] === " ") s -= 1;
+  return r.slice(0, s)
+}
+class V extends Error {
+  constructor() {
+    super("not an anchored absolute path")
+  }
+}
+async function Ie(e) {
+  let n;
+  try {
+    n = await A(e)
+  } catch (r) {
+    return {
+      realPath: void 0,
+      looped: k(r) === "ELOOP",
+      spellings: []
+    }
+  }
+  return {
+    realPath: n,
+    looped: !1,
+    spellings: ps(n)
+  }
+}
+
+function j(e) {
+  let n = e.replace(/\\/g, "/");
+  if (/^\/(?:dev|proc)(?:\/|$)/i.test(n) || Bb(n) || /(?:^|\/)\.\.namedfork(?:\/|$)/i.test(n) || /:\$[a-z_]/i.test(n) || jb(n) || n.split("/").some(FE)) throw new R(`alias namespace path not allowed: ${e}`, "claudeInChrome/fileUpload: kernel alias namespace path rejected on the pass-through")
+}
+async function D(e, n) {
+  if (await dJe(e, n, {
+      readable: !0
+    }) === "credential_name") throw new aJe
+}
+async function G(e, n) {
+  if (e.length > Hze) throw new R("path too long", "claudeInChrome/fileUpload: over-long path rejected");
+  let r = await Re(n),
+    a = mt(e);
+  if (!r.some((h) => (h.fromChat || h.kind === "attachments") && a.startsWith(h.path + I))) await D(a, a);
+  let {
+    absPath: o,
+    absChain: s
+  } = ge(e, n), l = n.trustedNetworkDirectories, f = await A(o), w = new Set([...s, ...ps(f)]);
+  for (let h of w) B(h, l);
+  if (M(w, n), await dJe(o, f, {
+      readable: !0,
+      attached: !0
+    }) !== void 0) throw new R(`kernel or device path, or one of Claude Code's credentials: ${f}`, "claudeInChrome/fileUpload: kernel or device path, or one of Claude Code's own credentials");
+  for (let h of r) {
+    let b = await se(h.path).catch(() => null);
+    if (b === null || b.isSymbolicLink() || !b.isDirectory()) continue;
+    let P = await le(h.path, ae.O_RDONLY | Pe | ue).catch(() => null);
+    if (P === null) continue;
+    let y;
+    try {
+      let u = await P.stat();
+      if (!u.isDirectory()) continue;
+      let _ = await A(h.path).catch(() => {
+        return
+      });
+      if (_ === void 0) continue;
+      let S = await de(_).catch(() => null);
+      if (S === null || S.ino !== u.ino || S.dev !== u.dev) continue;
+      y = _
+    } finally {
+      await P.close()
+    }
+    if (f === y || f.startsWith(y + I)) {
+      if (h.kind === "staging") {
+        let _ = await A(Ue()).catch(() => Ue());
+        if (y === _ || y.startsWith(_ + I) || _.startsWith(y + I)) continue;
+        if (!h.fromChat) await D(o, f);
+        return {
+          absPath: o,
+          realPath: f,
+          pathsToCheck: w,
+          sharedWithSession: h.fromChat ? {
+            fromChat: !0
+          } : {},
+          sessionRoot: h.kind
+        }
+      }
+      let u = ymt(f);
+      if (u !== void 0) return {
+        absPath: o,
+        realPath: f,
+        pathsToCheck: w,
+        sharedWithSession: {
+          requiredDigest: u
+        },
+        sessionRoot: h.kind
+      };
+      break
+    }
+  }
+  if (lo(n, {
+      name: ze
+    }) !== null || dl(n, {
+      name: ze
+    }) !== null) throw new R("Read tool is restricted for this session", "claudeInChrome/fileUpload: Read tool denied or ask-gated for this session");
+  if (n.blockReadsOutsideWorkingDirectories)
+    for (let h of w) {
+      let b = qP(h, n, "read");
+      if (!b.allowed && b.decisionReason?.type === "safetyCheck" && b.decisionReason.reason === vH) throw new R(`read not allowed: ${h}`, "claudeInChrome/fileUpload: path outside the working directories under the read block")
+    }
+  return {
+    absPath: o,
+    realPath: f,
+    pathsToCheck: w
+  }
+}
+class YSr extends R {
+  constructor(e) {
+    super(`read not allowed: ${e}`, "claudeInChrome/fileUpload: path read not allowed by session permissions")
+  }
+}
+async function $0e(e, n) {
+  let {
+    absPath: r,
+    realPath: a,
+    pathsToCheck: o,
+    sharedWithSession: s
+  } = await G(e, n);
+  if (s !== void 0) return {
+    realPath: a,
+    ...s
+  };
+  if (n.mode === "bypassPermissions" && !n.restricted) return await D(r, a), {
+    realPath: a
+  };
+  for (let l of o) {
+    let f = qP(l, n, "read");
+    if (LQt(f)) throw new YSr(l);
+    if (!f.allowed) throw new R(`read not allowed: ${l}`, "claudeInChrome/fileUpload: path read not allowed by session permissions");
+    if (n.restricted && K9(l, n)) throw new R(`read not allowed under --restricted: ${l}`, "claudeInChrome/fileUpload: restricted mode refused a file only an allow rule opens")
+  }
+  return await D(r, a), {
+    realPath: a
+  }
+}
+async function Ogs(e, n) {
+  let {
+    realPath: r,
+    sharedWithSession: a,
+    sessionRoot: o
+  } = await G(e, n);
+  return a === void 0 ? $0e(e, n) : {
+    realPath: r,
+    ...a,
+    sessionRoot: o
+  }
+}
+async function Fe(e, n, r) {
+  let {
+    absPath: a,
+    realPath: o,
+    pathsToCheck: s,
+    sharedWithSession: l
+  } = await G(e, n);
+  if (l !== void 0) return {
+    realPath: o,
+    ...l,
+    needsHostAsk: !0
+  };
+  let {
+    restricted: f
+  } = n, w = $e(o, n), h = !1, b = !1;
+  for (let y of s) {
+    let u = qP(y, n, "read");
+    if (u.allowed && !(f && u.decisionReason?.type === "rule") && (u.decisionReason !== void 0 || w)) {
+      b ||= u.decisionReason !== void 0;
+      continue
+    }
+    let _ = !u.allowed && !LQt(u) ? `refused by isPathAllowed (${u.decisionReason?.type??"no reason given"})` : f ? "--restricted session: no rule or host question reaches outside the working folders" : !r ? "outside the working folders, and the host does not ask per file" : void 0;
+    if (_ !== void 0) throw new R(`read not allowed (${_}): ${y}`, "claudeInChrome/fileUpload: pane path read not allowed by session permissions");
+    h = !0
+  }
+  if (!h) return await D(a, o), {
+    realPath: o,
+    needsHostAsk: b || await Spt(o, re).catch((y) => (t(`[pane file_upload] own-files check failed, so the host asks: ${d(y)}`), !0))
+  };
+  let P = await dJe(a, o, {
+    realDirectory: re
+  });
+  if (P !== void 0) throw new R(`refused by its name or place (${P}): ${o}`, "claudeInChrome/fileUpload: pane path outside the working folders is one of Claude Code's own files or is named like a credential");
+  return {
+    realPath: o,
+    outsideWorkingFolders: !0,
+    needsHostAsk: !0
+  }
+}
+
+function $e(e, n) {
+  return Array.from(sk(n)).flatMap((r) => OGe(r)).some((r) => Gc(e, r, {
+    caseFold: !1,
+    skipPrivateAlias: !0,
+    uncShapeParity: !0
+  }))
+}
+async function re(e) {
+  try {
+    return await A(e)
+  } catch (n) {
+    if (Ne(e, n)) return;
+    throw n
+  }
+}
+
+function Ne(e, n) {
+  if (wr(n)) return !0;
+  let r = k(n);
+  return e === ce(Fte) && (r === "EACCES" || r === "EPERM")
+}
+async function We(e, n) {
+  let r = n + 1,
+    a = Buffer.allocUnsafe(r),
+    o = 0;
+  while (o < r) {
+    let {
+      bytesRead: s
+    } = await e.read(a, o, r - o, o);
+    if (s === 0) break;
+    o += s
+  }
+  if (o > n) return "grew";
+  return {
+    buf: a.subarray(0, o)
+  }
+}
+async function puo(e, n, r) {
+  let o = await A(n).catch(() => null) === n ? await de(n).catch(() => null) : null;
+  if (o === null || o.ino !== r.ino || o.dev !== r.dev) return "moved";
+  return "ok"
+}
+async function Vce(e, n, r) {
+  let a = await se(e).catch(() => null);
+  if (a === null || !a.isFile()) return {
+    refusal: "not_regular"
+  };
+  let o;
+  try {
+    o = await le(e, ae.O_RDONLY | ue | ye)
+  } catch (s) {
+    return t(`readValidatedFileWithin: open failed: ${d(s)}`), {
+      refusal: "open_failed",
+      detail: tr(s) ?? "unknown error"
+    }
+  }
+  try {
+    let s = await o.stat();
+    if (s.nlink > 1) return {
+      refusal: "hard_links"
+    };
+    if (!s.isFile()) return {
+      refusal: "moved"
+    };
+    if (await puo(o, e, s) === "moved") return {
+      refusal: "moved"
+    };
+    if (r !== void 0) {
+      if (s.size > n) return {
+        refusal: "too_large",
+        size: s.size
+      };
+      return await r(o, s.size), {
+        buf: Buffer.alloc(0)
+      }
+    }
+    if (s.size > n) return {
+      refusal: "too_large"
+    };
+    let l = await We(o, s.size);
+    if (l === "grew") return {
+      refusal: "grew"
+    };
+    return {
+      buf: l.buf
+    }
+  } catch (s) {
+    return t(`readValidatedFileWithin: read failed: ${d(s)}`), {
+      refusal: "read_failed",
+      detail: tr(s) ?? "unknown error"
+    }
+  } finally {
+    await o.close()
+  }
+}
+async function je(e, n, r, a, o) {
+  let s = await Vce(n, r.remaining);
+  if ("buf" in s) return r.remaining -= s.buf.length, s;
+  if (o !== void 0) {
+    let l = "detail" in s ? `: ${s.detail}` : "";
+    return t(`[${a} file_upload] read refused (${s.refusal}${l}): ${e}`), {
+      error: o(e)
+    }
+  }
+  return {
+    error: Le(e, s, r.total)
+  }
+}
+
+function Le(e, n, r = PQt) {
+  let a = E(e);
+  switch (n.refusal) {
+    case "not_regular":
+      return `Cannot upload "${a}": not a regular file.`;
+    case "open_failed":
+      return `Cannot upload "${a}": failed to open file (${n.detail}).`;
+    case "hard_links":
+      return `Cannot upload "${a}": the file has multiple hard links, which can alias a file outside the session's allowed directories. This commonly triggers for files inside package-manager stores like node_modules (Bun and pnpm hard-link packages). Copy the file (e.g. with cp) and upload the copy.`;
+    case "moved":
+      return `Cannot upload "${a}": path moved during validation.`;
+    case "too_large":
+      return `Cannot upload "${a}": total upload size would exceed ${r>=1048576?`${Math.floor(r*10/1048576)/10} MB`:r>=1024?`${Math.floor(r/1024)} KB`:`${r} bytes`}. file_upload sends file contents over the browser bridge in a single message; use a smaller file, or split across multiple file_upload calls if the page accepts files one at a time.`;
+    case "grew":
+      return `Cannot upload "${a}": file grew during read.`;
+    case "read_failed":
+      return `Cannot upload "${a}": failed to read file (${n.detail}).`
+  }
+}
+var He = {
+  ".pdf": "application/pdf",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".gif": "image/gif",
+  ".webp": "image/webp",
+  ".svg": "image/svg+xml",
+  ".txt": "text/plain",
+  ".md": "text/markdown",
+  ".csv": "text/csv",
+  ".tsv": "text/tab-separated-values",
+  ".json": "application/json",
+  ".html": "text/html",
+  ".htm": "text/html",
+  ".xml": "application/xml",
+  ".zip": "application/zip",
+  ".doc": "application/msword",
+  ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  ".xls": "application/vnd.ms-excel",
+  ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  ".ppt": "application/vnd.ms-powerpoint",
+  ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  ".mp3": "audio/mpeg",
+  ".wav": "audio/wav",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm"
+};
+
+function Me(e) {
+  return He[_e(e).toLowerCase()] ?? "application/octet-stream"
+}
+import {
+  win32 as Be
+} from "path";
+
+function ZDt(e) {
+  let n = /^[\\/]{2}/.test(e);
+  return (n ? "\\\\" : "") + (n ? e.replace(/^[\\/]{2,}/, "") : e).replace(/[\\/]+/g, "\\")
+}
+
+function v(e, n, r) {
+  return t(`bg-containment: refusing ${n} spelling for containment: ${e}`, {
+    level: "warn"
+  }), r === void 0 ? {
+    lexical: e,
+    canonical: null,
+    skipped: !1
+  } : {
+    lexical: e,
+    canonical: null,
+    skipped: !1,
+    surfaced: r
+  }
+}
+
+function qe(e) {
+  if (!NC(e)) return e;
+  let n = /^[\\/]{2}\?[\\/]([A-Za-z]:[\\/].*)$/.exec(e);
+  if (n) return n[1];
+  let r = /^[\\/]{2}\?[\\/]UNC[\\/](.+)$/i.exec(e);
+  if (r) return "\\\\" + r[1];
+  return null
+}
+var we = /[. ](?=[\\/]|$)/;
+
+function Ke(e, n = "win32") {
+  if (bl(e)) return v(En(e), "dot-segment");
+  let r = En(e);
+  if (n === "win32") {
+    if (r = r.replace(/^([\\/])[\\/]{2,}/, (f, w) => w + w), NC(r) || R0(r)) return v(r, "device-namespace");
+    if (r = z$r(r), we.test(r)) return v(r, "trailing-dot-or-space");
+    if (Ks(r)) return {
+      lexical: ZDt(r),
+      canonical: null,
+      skipped: !0
+    };
+    r = ZDt(r)
+  } else {
+    if (r = r.replace(/\/{2,}/g, "/"), n === "darwin") r = T0(r);
+    if (Cl(r)) return {
+      lexical: dqn(r, n),
+      canonical: null,
+      skipped: !0
+    }
+  }
+  let a = Tj(ie(), r, {
+    surfaceDotDotTargets: !0
+  });
+  if (a === void 0) return {
+    lexical: r,
+    canonical: r,
+    skipped: !1
+  };
+  let o = n === "win32" ? qe(a) : a;
+  if (o === null) return v(r, "resolves-to-device-namespace");
+  let s = n === "win32" ? o : n === "darwin" ? T0(o.replace(/^\/{2,}/, "/")) : o.replace(/^\/{2,}/, "/");
+  if (Ks(s) || Cl(s) || Bb(s)) return v(r, "resolves-to-network", dqn(En(n === "win32" ? ZDt(s) : s), n));
+  if (bl(s)) return v(r, "resolves-to-dot-segment");
+  if (n === "win32" && we.test(s)) return v(r, "resolves-to-trailing-dot-or-space");
+  let l = n === "win32" ? ZDt(s) : s.replace(/\/{2,}/g, "/");
+  return {
+    lexical: r,
+    canonical: En(l),
+    skipped: !1
+  }
+}
+
+function Ox(e, n = "win32") {
+  let a, o = e;
+  try {
+    for (let s = 0; s < 8; s++) {
+      let l = Ke(o, n);
+      if (a ??= l, l.skipped) return s === 0 ? l : v(a.lexical, "resolves-to-network");
+      if (l.canonical === null) return s === 0 ? l : {
+        ...l,
+        lexical: a.lexical
+      };
+      if (l.canonical === o) {
+        try {
+          if (ie().lstatSync(o).isSymbolicLink()) return v(a.lexical, "resolution-not-convergent", o !== e ? o : void 0)
+        } catch (f) {
+          if (!K(f)) throw f;
+          if (n === "win32") try {
+            ie().realpathSync(Be.dirname(o))
+          } catch (w) {
+            if (!K(w)) return v(a.lexical, "resolution-not-convergent", o !== e ? o : void 0)
+          }
+        }
+        return {
+          lexical: a.lexical,
+          canonical: o,
+          skipped: !1
+        }
+      }
+      o = l.canonical
+    }
+  } catch {
+    return v(a?.lexical ?? En(e), "resolution-error", o !== e ? o : void 0)
+  }
+  return v(a.lexical, "resolution-not-convergent", o !== e ? o : void 0)
+}
+
+function Gce(e, n) {
+  if (jW(e)) return !0;
+  if (jW(n)) {
+    if (e.skipped) return !0;
+    if (O(e.lexical, n.lexical) || e.canonical !== null && O(e.canonical, n.lexical)) return !0;
+    if (n.surfaced !== void 0 && (O(e.lexical, n.surfaced) || e.canonical !== null && O(e.canonical, n.surfaced))) return !0;
+    return !1
+  }
+  if (e.skipped && !n.skipped) return t(`bg-containment: denying network-shaped target against a local root: ${e.lexical}`, {
+    level: "warn"
+  }), !0;
+  if (e.skipped || n.skipped) return O(e.lexical, n.lexical);
+  return O(e.lexical, n.lexical) || O(e.canonical, n.canonical) || Xe(e.canonical, n.canonical)
+}
+
+function O(e, n) {
+  return RF(e, n, !0)
+}
+var Ve = 64;
+class be {
+  expansionByRootCanonical = new Map;
+  expand(e) {
+    let n = this.expansionByRootCanonical.get(e);
+    if (n === void 0) {
+      if (n = ZPo(e), this.expansionByRootCanonical.size >= Ve) this.expansionByRootCanonical.clear();
+      this.expansionByRootCanonical.set(e, n)
+    }
+    return n
+  }
+  clear() {
+    this.expansionByRootCanonical.clear()
+  }
+}
+var Ge = new W(() => new be);
+
+function Ye() {
+  return Ge.of(H().host)
+}
+
+function Xe(e, n) {
+  if (x() !== "windows") return !1;
+  let r = ZPo(e),
+    a = Ye().expand(n);
+  if (r === e && a === n) return !1;
+  return Je(En(ZDt(r)), En(ZDt(a)))
+}
+
+function Je(e, n) {
+  return RF(e, n, !0)
+}
+
+function ypt(e, n) {
+  if (jW(e) || jW(n)) return !1;
+  if (e.skipped !== n.skipped) return !1;
+  if (e.skipped) return ke(e.lexical, n.lexical);
+  return ke(e.canonical, n.canonical)
+}
+
+function ke(e, n) {
+  return RF(e, n, !1)
+}
+
+function jW(e) {
+  return e.canonical === null && !e.skipped
+}
+import {
+  homedir as Qe
+} from "os";
+import {
+  isAbsolute as Ze
+} from "path";
+var en = p(() => C(oe()).min(1));
+
+function _pt(e, n) {
+  return (x() === "linux" ? ypt : Gce)({
+    lexical: n,
+    canonical: n,
+    skipped: !1
+  }, {
+    lexical: e,
+    canonical: e,
+    skipped: !1
+  })
+}
+
+function Y(e) {
+  if (typeof e !== "string" || !Ze(e)) return {
+    code: "not_absolute",
+    value: e
+  };
+  let {
+    canonical: n,
+    skipped: r
+  } = Ox(e);
+  return n === null ? {
+    code: r ? "network_path" : "unresolvable_path",
+    value: e
+  } : {
+    at: n
+  }
+}
+
+function nn(e, n, r) {
+  let a = en().safeParse(et(n, !1));
+  if (!a.success) return {
+    problems: [{
+      code: "bad_fence",
+      value: n
+    }]
+  };
+  let o = Y(e);
+  if ("code" in o) return {
+    problems: [o]
+  };
+  let s = Y(r);
+  if ("code" in s) return {
+    problems: [s]
+  };
+  if (!_pt(o.at, s.at)) return {
+    problems: [{
+      code: "session_outside_worktree",
+      value: r
+    }]
+  };
+  let l = Ox(Qe()),
+    f = l.canonical ?? l.lexical,
+    w = [],
+    h = [];
+  for (let b of a.data) {
+    let P = Y(b);
+    if ("code" in P) h.push(P);
+    else if (_pt(P.at, f) && !_pt(f, P.at)) h.push({
+      code: "fence_too_wide",
+      value: b
+    });
+    else w.push(P.at)
+  }
+  return {
+    answer: w.length > 0 ? {
+      tree: o.at,
+      fence: w
+    } : void 0,
+    problems: h
+  }
+}
+
+function X() {
+  let e = i.CLAUDE_CODE_HOST_WORKTREE,
+    n = i.CLAUDE_CODE_HOST_WORKTREE_FENCE;
+  return e === void 0 && n === void 0 ? void 0 : {
+    declared: e,
+    declaredFence: n
+  }
+}
+
+function SFi() {
+  let e = X();
+  if (e === void 0) return;
+  let {
+    declared: n,
+    declaredFence: r
+  } = e, a = ql()?.preEnterOriginalCwd ?? Ee(), {
+    answer: o,
+    problems: s
+  } = nn(n, r, a), l = `CLAUDE_CODE_HOST_WORKTREE=${n??"(not set)"} CLAUDE_CODE_HOST_WORKTREE_FENCE=${r??"(not set)"}, session folder ${a}: ${o===void 0?"ignored, so they block no file write":`file tools may not write in ${o.fence.join(", ")}, except inside ${o.tree}`}${s.map((w)=>`; ${w.code}${typeof w.value==="string"?` ${JSON.stringify(w.value)}`:""}`).join("")}`, f = um();
+  if (f.hostWorktreeReport !== l)
+    if (f.hostWorktreeReport = l, t(l, {
+        level: s.length > 0 ? "warn" : "debug"
+      }), s.length === 0) g("worktree_host_declared");
+    else if (o === void 0) m("worktree_host_declared", s[0].code);
+  else c("worktree_host_declared", s[0].code);
+  return o
+}
+
+function VTe(e) {
+  if (e.agentWorktree) return e.agentWorktree;
+  if (!OQt()) {
+    let n = e.session.project?.isolationRoot;
+    if (n && !U0e()) return n
+  }
+  return ql()?.worktreePath || void 0
+}
+
+function OQt() {
+  return i.CLAUDE_CODE_SESSION_KIND === "bg" || tb() !== null
+}
+
+function U0e() {
+  return X() !== void 0
+}
+export {
+  ZDt,
+  Ox,
+  Gce,
+  ypt,
+  jW,
+  K9,
+  aJe,
+  PQt,
+  xgs,
+  Pgs,
+  fSa,
+  GTe,
+  IDn,
+  YSr,
+  $0e,
+  Ogs,
+  puo,
+  Vce,
+  _pt,
+  SFi,
+  VTe,
+  OQt,
+  U0e
+};

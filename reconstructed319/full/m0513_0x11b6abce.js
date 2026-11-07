@@ -1,0 +1,1407 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  F
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  Gjt,
+  NWs,
+  GVn,
+  g0,
+  L_,
+  Zm,
+  If,
+  H,
+  VGs,
+  dKs,
+  cKs,
+  D$r,
+  AIo,
+  _4e,
+  _Ks,
+  ns
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  KZi,
+  qZi,
+  YZi,
+  twe,
+  XZi,
+  ZZi,
+  PNr,
+  pN,
+  T1t,
+  nwe,
+  gr,
+  to,
+  br
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  owe,
+  FNr
+} from "B:/~BUN/root/chunk-44q965xg.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  xa,
+  su,
+  Oon,
+  rOr,
+  rt,
+  MRe,
+  v4,
+  On,
+  v
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  jD,
+  VS,
+  rS
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  Ui,
+  Mzn,
+  iLr,
+  Cpe,
+  ubt
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  Xi
+} from "B:/~BUN/root/chunk-r8p1hzqw.js";
+import {
+  hs
+} from "B:/~BUN/root/chunk-zn7b14jn.js";
+import {
+  Yl
+} from "B:/~BUN/root/chunk-ja520myc.js";
+import {
+  zo,
+  na,
+  tHe,
+  f0r
+} from "B:/~BUN/root/chunk-5az22yft.js";
+import {
+  Me
+} from "B:/~BUN/root/chunk-9kvvd0hy.js";
+import {
+  Qt
+} from "B:/~BUN/root/chunk-3v92y8yw.js";
+import {
+  qW,
+  yLe
+} from "B:/~BUN/root/chunk-7thhw21a.js";
+import {
+  ht,
+  HCe,
+  lU,
+  wn
+} from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  co,
+  Iee,
+  Ka
+} from "B:/~BUN/root/chunk-tjfmeakx.js";
+import {
+  Hd,
+  ews
+} from "B:/~BUN/root/chunk-eak7wp7z.js";
+import {
+  Zl,
+  y7t,
+  _7t,
+  sD
+} from "B:/~BUN/root/chunk-1tbewxs3.js";
+import {
+  Rh,
+  L0e,
+  Oze
+} from "B:/~BUN/root/chunk-2f6ykbbh.js";
+import {
+  cl
+} from "B:/~BUN/root/chunk-78494p3w.js";
+import {
+  Gq,
+  Wl,
+  Vc,
+  lo,
+  lvs,
+  EFn,
+  DCe,
+  QLe
+} from "B:/~BUN/root/chunk-detjgwj4.js";
+import {
+  dfo,
+  cfo,
+  Lwr,
+  b0t,
+  q0e
+} from "B:/~BUN/root/chunk-7wcc5pbk.js";
+import {
+  $$
+} from "B:/~BUN/root/chunk-w179eqqe.js";
+import {
+  rm
+} from "B:/~BUN/root/chunk-bmb3dt02.js";
+import {
+  R_e
+} from "B:/~BUN/root/chunk-ymgf3kpk.js";
+import {
+  Vn
+} from "B:/~BUN/root/chunk-tacrdmts.js";
+import {
+  as
+} from "B:/~BUN/root/chunk-w4y83tgx.js";
+import {
+  Fs
+} from "B:/~BUN/root/chunk-fkcdzerj.js";
+import {
+  kt
+} from "B:/~BUN/root/chunk-86hj8bna.js";
+import {
+  ODr
+} from "B:/~BUN/root/chunk-e0q1m1z9.js";
+import {
+  bn
+} from "B:/~BUN/root/chunk-2631cdbp.js";
+import {
+  Je
+} from "B:/~BUN/root/chunk-9wbhv9z5.js";
+var A = new Je(() => ({
+  ok: !1,
+  kept: !1,
+  failed: !1,
+  resumedOnSharedKey: !1,
+  serverKeyMoved: !1
+}));
+
+function P({
+  mcpInfo: e
+}) {
+  return e != null && e.standardKey === void 0 && (typeof e.serverName !== "string" || typeof e.toolName !== "string")
+}
+
+function q(e) {
+  let n = e.filter((o) => !P(o));
+  return Xi(n, "name").flatMap((o) => o.mcpInfo !== void 0 && o.name === br(o.mcpInfo.serverName, o.mcpInfo.toolName) ? [{
+    name: o.name,
+    server: o.mcpInfo,
+    standardKey: o.mcpInfo.standardKey,
+    denyKey: o.mcpInfo.denyKey,
+    mayRecordOwner: o.mcpInfo.scope === void 0 ? void 0 : yLe(o.mcpInfo.serverName, o.mcpInfo)
+  }] : [])
+}
+
+function G(e) {
+  return "name" in e && typeof e.name === "string" ? {
+    ...e,
+    name: pN(e.name)
+  } : e
+}
+
+function w(e) {
+  return typeof e === "object" && e !== null
+}
+
+function M(e) {
+  return typeof e === "string" ? pN(e) : e
+}
+
+function D(e) {
+  if (Array.isArray(e)) return e.map(D);
+  if (!w(e)) return e;
+  let n = {};
+  for (let o of Object.keys(e)) {
+    let r = e[o];
+    n[o] = o === "input" ? r : o === "exclude_tools" && Array.isArray(r) ? r.map(M) : D(r)
+  }
+  switch (n.type) {
+    case "tool_use":
+      return {
+        ...n, name: typeof n.name === "string" ? T1t(n.name) : n.name
+      };
+    case "tool_reference":
+      return {
+        ...n, ..."name" in n && {
+          name: M(n.name)
+        }, ..."tool_name" in n && {
+          tool_name: M(n.tool_name)
+        }
+      };
+    case "tool_definition":
+      return w(n.definition) ? {
+        ...n,
+        definition: {
+          ...n.definition,
+          name: M(n.definition.name)
+        }
+      } : n;
+    default:
+      return n
+  }
+}
+
+function X(e) {
+  return Array.isArray(e.content) ? {
+    ...e,
+    content: D(e.content)
+  } : e
+}
+
+function J() {
+  let e = A.of(H());
+  if (KZi() && !e.serverKeyMoved) e.serverKeyMoved = !0, c("mcp_standard_key", "server_key_moved");
+  if (XZi() > 0 && !e.kept) e.kept = !0, c("mcp_standard_key", "kept_legacy_names");
+  else if (!e.ok && !e.kept) e.ok = !0, g("mcp_standard_key")
+}
+
+function Q(e) {
+  let n = A.of(H());
+  if (!n.resumedOnSharedKey && YZi() && e.some(({
+      content: o
+    }) => Array.isArray(o) && o.some((r) => w(r) && r.type === "tool_use" && typeof r.name === "string" && qZi(r.name)))) n.resumedOnSharedKey = !0, c("mcp_standard_key", "resumed_on_shared_key")
+}
+
+function B(e) {
+  a(e);
+  let n = A.of(H());
+  if (!n.failed) n.failed = !0, m("mcp_standard_key", "translate_failed")
+}
+
+function V(e) {
+  try {
+    if (!e.some(P) || !qW()) return e;
+    if (xa().claim("mcp_malformed_entry_withheld")) t("At least one MCP tool was not offered to the model: its entry has no server name or tool name. Other MCP tools are not affected.", {
+      level: "warn"
+    });
+    return e.filter((n) => !P(n))
+  } catch (n) {
+    return B(n), e
+  }
+}
+
+function tdo(e) {
+  try {
+    if (e.some((n) => n.mcpInfo !== void 0) && qW()) ZZi(q(e)), J();
+    return !0
+  } catch (n) {
+    return B(n), !1
+  }
+}
+
+function NIn(e) {
+  try {
+    if (!qW()) return e;
+    let n = e.tool_choice;
+    return Q(e.messages), PNr((e.tools ?? []).flatMap((o) => ("name" in o) && typeof o.name === "string" ? [o.name] : [])), {
+      ...e,
+      messages: e.messages.map(X),
+      ...e.context_management != null && {
+        context_management: D(e.context_management)
+      },
+      ...e.tools !== void 0 && {
+        tools: e.tools.map(G)
+      },
+      ...n !== void 0 && "name" in n && typeof n.name === "string" && {
+        tool_choice: {
+          ...n,
+          name: pN(n.name)
+        }
+      }
+    }
+  } catch (n) {
+    return B(n), e
+  }
+}
+
+function EMi(e) {
+  for (let n of e.content)
+    if (n.type === "tool_use" && n.name !== void 0) n.name = nwe(n.name)
+}
+var j = Symbol.for("claude-code.hostOnlyNativeTool");
+
+function TMi(e) {
+  return Object.defineProperty(e, j, {
+    value: !0,
+    enumerable: !0
+  }), e
+}
+
+function vq(e) {
+  return j in e
+}
+
+function tk(e, n, o) {
+  let r = wn(e, n, o);
+  {
+    let i = o && Object.hasOwn(o, n) ? o[n] : void 0;
+    if ((i !== void 0 ? i : n) === Iee && r?.name === co) return
+  }
+  return r
+}
+var c0e = "authenticate",
+  FIn = "complete_authentication";
+var zfs = "bypassPermissions not supported in restricted mode";
+
+function CMi(e) {
+  return e.restricted && (e.permissionMode === "bypassPermissions" || e.allowDangerouslySkipPermissions) ? zfs : void 0
+}
+
+function RMi(e) {
+  return e.some((n) => n.startsWith("preset:")) ? new Set : new Set(e)
+}
+
+function HIn(e, n) {
+  let o = [...e, Vn].filter((s) => !n.has(s)),
+    r = [...n.has(Me) ? [] : [owe], ...n.has(Vn) ? [] : [FNr]],
+    i = [...[...Mzn].map((s) => br(s, ODr)), ...iLr.map((s) => br(zo, `${s}${ODr}`)), br(Cpe, `${ubt}${ODr}`)];
+  return [...o, ...r, tHe, f0r, ...i]
+}
+
+function __r(e) {
+  return new Set([...e.filter((n) => n.enablesCodeExecution).map((n) => n.name), kt])
+}
+
+function ndo(e) {
+  return e.filter((n) => n.isEnabled()).map((n) => n.name)
+}
+
+function MW(e, n) {
+  let o = V(e),
+    r = tdo(o) || !twe(),
+    i = [...Wl(n), ...ne(o, n)],
+    s = EFn(n, i);
+  return o.filter((d) => {
+    if (K(n, d, i, s) || d.mcpInfo?.effectiveMaxPermission === "blocked" || !r && d.mcpInfo?.standardKey !== void 0) return !1;
+    if (!c7t(n, d)) return !0;
+    if (xa().claim(`tool_outside_launch_list:${d.name}`)) t(`${Rh(d)} is not on this session's --tools list and no deny rule names it; withheld. Name it in --tools to offer it`, {
+      level: "warn"
+    }), l("tengu_tool_withheld_outside_launch_list", {
+      toolName: On(Rh(d))
+    });
+    return !1
+  })
+}
+
+function c7t({
+  toolsKeptByLaunchList: e
+}, n) {
+  return !(e === void 0 || rm(n) || n.mcpInfo !== void 0 || vq(n) || Gq(n) || e.includes(n.name) || n.familyParentToolName !== void 0 && e.includes(n.familyParentToolName))
+}
+
+function wXe(e, n, o = Wl(e), r) {
+  return K(e, n, o, r)
+}
+
+function K(e, n, o, r) {
+  let i = (s) => r !== void 0 ? QLe(e, r, s) : lo(e, s, o) !== null;
+  if (i(n)) return !0;
+  if (n.underlyingV1ToolName && i({
+      name: n.underlyingV1ToolName
+    })) return !0;
+  if (n.mcpInfo === void 0) {
+    let s = L0e(n.name);
+    if (s !== void 0 && i(s) && s.isEnabled()) return !0
+  }
+  if (vq(n) && Z(e, o)) return !0;
+  if (n.mcpInfo === void 0 && u7t().includes(n.name) && I(e, o) !== null) return !0;
+  return !1
+}
+
+function aDt(e, n) {
+  if (!VGs().has(n.name)) return !1;
+  if (hs("hipaa")) return !1;
+  let o = Wl(e).filter((r) => r.source !== "toolsNarrowing");
+  return !wXe(e, n, o)
+}
+
+function Z(e, n) {
+  return n.some((o) => o.ruleValue.toolName === Me)
+}
+
+function u7t() {
+  return [Fs, import.meta.require("B:/~BUN/root/chunk-mh92bc27.js").APPIFACT_REPL_TOOL_NAME]
+}
+
+function I(e, n) {
+  return ee(e, n.filter((o) => o.source !== "toolsNarrowing"))
+}
+
+function f7t(e, n) {
+  let o = I(e, Wl(e));
+  if (o !== null) return {
+    rule: o,
+    verdict: {
+      behavior: "deny",
+      message: `Permission to use ${n} has been denied: it runs code as ${Me} does, and a rule denies ${Me}.`,
+      decisionReason: {
+        type: "rule",
+        rule: o
+      }
+    }
+  };
+  let r = I(e, Vc(e));
+  return r === null ? null : {
+    rule: r,
+    verdict: {
+      behavior: "ask",
+      message: `${n} runs code as ${Me} does, and a rule asks before ${Me} runs.`,
+      decisionReason: {
+        type: "rule",
+        rule: r
+      }
+    }
+  }
+}
+
+function ee(e, n) {
+  let o = e.toolAliases?.[Me],
+    r = [Me, ...o !== void 0 ? [o] : []];
+  for (let i of r) {
+    let s = lo(e, {
+      name: i
+    }, n);
+    if (s !== null) return s
+  }
+  return n.find((i) => r.includes(i.ruleValue.toolName) && i.ruleValue.ruleContent !== void 0 && lvs(i.ruleValue.ruleContent)) ?? null
+}
+
+function ne(e, {
+  restricted: n,
+  toolsKeptByLaunchList: o
+}) {
+  if (!(n === !0 && o === void 0)) return [];
+  let r = new Set([...e.filter((i) => i.enablesCodeExecution).map((i) => i.name), kt]);
+  return HIn(r, new Set).map((i) => ({
+    source: "toolsNarrowing",
+    ruleBehavior: "deny",
+    ruleValue: {
+      toolName: i
+    }
+  }))
+}
+
+function rdo(e) {
+  switch (e.kind) {
+    case "policy_blocked":
+    case "reserved_address":
+    case "org_blocked":
+    case "denied":
+    case "disabled":
+    case "switched_off":
+    case "not_configured":
+    case "replaced":
+      return !0;
+    case "reconnecting":
+    case "needs_auth":
+    case "disconnected":
+    case "auth_completed":
+    case "not_offered":
+    case "withdrawn":
+      return !1
+  }
+}
+
+function odo(e) {
+  return rdo(e) && e.kind !== "replaced"
+}
+
+function CTe(e, n, o, r, i = DCe(o), s) {
+  let d = r?.mcpInfo;
+  if (d === void 0 && gr(e) === null) {
+    let y = {
+      ...r,
+      name: e,
+      underlyingV1ToolName: Oze(e),
+      familyParentToolName: r?.familyParentToolName
+    };
+    if (wXe(o, y, i.rules, i.index) && !aDt(o, y)) return {
+      kind: "denied",
+      serverName: void 0
+    };
+    if (!ews(y)) return {
+      kind: "withdrawn"
+    };
+    if (Hd()) return {
+      kind: "replaced"
+    };
+    let T = {
+        name: Qt
+      },
+      h = wXe(o, T, i.rules, i.index) && !aDt(o, T);
+    return s !== void 0 && !h && oe(n, s) ? {
+      kind: "replaced"
+    } : {
+      kind: "withdrawn"
+    }
+  }
+  let f = d === void 0 ? QLe(o, i.index, {
+      name: e
+    }) : wXe(o, {
+      name: e,
+      mcpInfo: d
+    }, i.rules, i.index),
+    p = U(e, n, d).map(({
+      row: y,
+      upstream: T
+    }) => re(y, T, f)),
+    u = p.find(rdo) ?? p.find((y) => y.kind === "not_offered" || y.kind === "auth_completed") ?? p[0];
+  if (u) return u;
+  return f ? {
+    kind: "denied",
+    serverName: void 0
+  } : {
+    kind: "not_configured"
+  }
+}
+
+function oe(e, n) {
+  let o = e.find((r) => r.name === na);
+  return o !== void 0 && Ui(o) && v4(o.config) && !R_e(o) && !n.some((r) => r.name === Qt) && n.some((r) => r.mcpInfo?.serverName === na)
+}
+
+function AMi(e, n) {
+  return U(e, n, void 0).filter(({
+    row: o
+  }) => o.type === "pending").map(({
+    row: o
+  }) => o.name)
+}
+
+function U(e, n, o) {
+  if (o !== void 0) {
+    let s = bn(o.toolName);
+    return n.filter((d) => d.name === o.serverName).map((d) => ({
+      row: d,
+      upstream: s
+    }))
+  }
+  let r = n.map((s) => ({
+      row: s,
+      prefix: to(s.name)
+    })).filter(({
+      prefix: s
+    }) => e.startsWith(s)),
+    i = Math.max(0, ...r.map(({
+      prefix: s
+    }) => s.length));
+  return r.filter(({
+    prefix: s
+  }) => s.length === i).map(({
+    row: s,
+    prefix: d
+  }) => ({
+    row: s,
+    upstream: e.slice(d.length)
+  }))
+}
+
+function re(e, n, o) {
+  let r = Zl(e.name);
+  if (o) return {
+    kind: "denied",
+    serverName: r
+  };
+  if (te(e, n)) return {
+    kind: "org_blocked",
+    serverName: r,
+    ...Yl(e.config) && {
+      byClaudeCode: !0
+    }
+  };
+  switch (e.type) {
+    case "pending":
+      return {
+        kind: "reconnecting", serverName: r
+      };
+    case "needs-auth":
+      return {
+        kind: "needs_auth", serverName: r
+      };
+    case "failed":
+      if (y7t(e.error)) return {
+        kind: "policy_blocked",
+        serverName: r
+      };
+      if (_7t(e.error)) return {
+        kind: "reserved_address",
+        serverName: r
+      };
+      return sD(e) ? {
+        kind: "not_configured"
+      } : {
+        kind: "disconnected",
+        serverName: r
+      };
+    case "disabled":
+      return {
+        kind: e.config.type === "sdk" ? "switched_off" : "disabled", serverName: r
+      };
+    case "connected":
+    case "cached":
+      if (R_e(e)) return {
+        kind: "switched_off",
+        serverName: r
+      };
+      return n === c0e || n === FIn ? {
+        kind: "auth_completed",
+        serverName: r
+      } : {
+        kind: "not_offered",
+        serverName: r
+      }
+  }
+}
+
+function te(e, n) {
+  if (!("toolPermissions" in e.config)) return !1;
+  let o = e.config.toolPermissions;
+  if (!o) return !1;
+  return Object.entries(o).some(([r, i]) => i === "blocked" && bn(r) === n)
+}
+
+function RTe() {
+  return su()
+}
+class boe {
+  names;
+  recordedOnly;
+  recordOrder;
+  #e;
+  constructor(e, n = {
+    only: new Map,
+    order: []
+  }) {
+    this.names = n.names ?? [...e.map((o) => o.name), ...n.only.keys()], this.recordedOnly = n.only, this.recordOrder = n.order, this.#e = new Map(e.map((o) => [o.name, o]))
+  }
+  has(e) {
+    return this.#e.has(e) || this.recordedOnly.has(e)
+  }
+  keeps(e) {
+    return this.has(e) && e !== cl
+  }
+  toolFor(e) {
+    return this.#e.get(e)
+  }
+  without(e) {
+    return new boe([...this.#e.values()].filter((n) => !e.has(n.name)), {
+      only: new Map([...this.recordedOnly].filter(([n]) => !e.has(n))),
+      order: this.recordOrder.filter((n) => !e.has(n)),
+      names: this.names.filter((n) => !e.has(n))
+    })
+  }
+  sourceFor(e) {
+    let n = this.#e.get(e),
+      o = this.recordedOnly.get(e)?.server;
+    if (n !== void 0 || o === void 0) return n;
+    return Y(e, o)
+  }
+}
+
+function Gfs(e) {
+  return e ?? ns()
+}
+
+function zye(e) {
+  let n = e.declaredTools;
+  return n instanceof boe ? n : void 0
+}
+
+function $In(e) {
+  let n = e.noChannelTools;
+  return n instanceof boe ? n : void 0
+}
+
+function Vfs(e, n, o) {
+  if (n) {
+    e.noChannelTools = void 0;
+    return
+  }
+  if (e.noChannelTools === void 0 && !RTe()) return;
+  let r = o();
+  return e.noChannelTools = r, r
+}
+
+function Kfs(e, n, o) {
+  let r = new Set([...n, ...e].map((u) => u.name)),
+    i = new Map([...o ?? []].filter(([u]) => !r.has(u)));
+  if (i.size === 0) return new boe(e);
+  let s = (u) => u.isMcp === !0 || gr(u.name) !== null,
+    d = e.findIndex(s),
+    f = (u, y) => !s(u) && (u.name === cl && y === e.length - 1 || d !== -1 && y > d),
+    R = [...e.filter(s).map((u) => u.name), ...i.keys()].sort((u, y) => HCe({
+      name: u
+    }, {
+      name: y
+    })),
+    p = [...e.filter((u, y) => !s(u) && !f(u, y)).map((u) => u.name), ...R, ...e.filter(f).map((u) => u.name)];
+  return new boe(e, {
+    only: i,
+    order: p,
+    names: p
+  })
+}
+var ie = new Set(["name", "description", "input_schema", "type", ...dfo]);
+async function xMi({
+  recordedToolDescriptions: e,
+  recordedToolServers: n,
+  recordedToolEntries: o,
+  mcpClients: r = [],
+  getToolPermissionContext: i
+}, s, d) {
+  if (e === void 0 || e.has(as) || !RTe()) return;
+  let f = new Set(s.map((T) => T.name)),
+    R = [];
+  for (let T of e.keys()) {
+    let h = o?.get(T),
+      O = n?.get(T);
+    if (!f.has(T) && d?.has(T) !== !0 && h !== void 0 && O !== void 0 && T.startsWith(to(O)) && h.name === T && /^[a-zA-Z0-9_-]+$/.test(T) && Object.keys(h).every((b) => ie.has(b))) R.push({
+      name: T,
+      entry: h,
+      server: O
+    })
+  }
+  if (R.length === 0) return;
+  let p = await i(),
+    u = new Map,
+    y;
+  for (let {
+      name: T,
+      entry: h,
+      server: O
+    }
+    of R) try {
+    if (y ??= DCe(p), CTe(T, r, p, Y(T, O), y).kind === "reconnecting") u.set(T, {
+      entry: h,
+      server: O
+    })
+  } catch (b) {
+    a(F(b))
+  }
+  return u.size === 0 ? void 0 : u
+}
+async function PMi(e, n, {
+  mcpClients: o,
+  getPermissionContext: r,
+  byValue: i
+}) {
+  let s = S_r(e, n, !0);
+  if (s.length === 0) return {
+    kept: e,
+    unread: 0
+  };
+  let d = hs("hipaa"),
+    f = (h) => d && !x(h, e.sourceFor(h)?.mcpInfo?.serverName),
+    R = (h) => i?.has(h) === !0 || f(h),
+    p;
+  try {
+    p = await r()
+  } catch (h) {
+    a(F(h));
+    let O = new Set(s.filter(R));
+    return {
+      kept: O.size === 0 ? e : e.without(O),
+      unread: 0
+    }
+  }
+  let u = 0,
+    y, T = new Set(s.filter((h) => {
+      if (R(h)) return !0;
+      try {
+        return y ??= DCe(p), odo(CTe(h, o, p, e.sourceFor(h), y))
+      } catch (O) {
+        return a(F(O)), u++, !0
+      }
+    }));
+  return {
+    kept: T.size === 0 ? e : e.without(T),
+    unread: u
+  }
+}
+
+function kXe(e) {
+  if (e.agentId && !e.stickyBetas) return;
+  return Gfs(e.stickyBetas)
+}
+
+function u0e(e) {
+  let n = kXe(e);
+  return n === void 0 ? void 0 : zye(n)
+}
+
+function UIn(e) {
+  let n = kXe(e);
+  return n === void 0 ? void 0 : $In(n)
+}
+
+function OMi(e, n) {
+  if (Gjt(e), e.declaredTools !== void 0 || !RTe()) return !1;
+  return GVn(e, new boe(n)), !0
+}
+
+function se(e, n, {
+  servers: o,
+  entries: r
+} = de, i) {
+  let s = new Map(n.map((_) => [_.name, _])),
+    d, f = () => (d ??= lU() ?? null, d ?? void 0),
+    R = (_) => {
+      let S = f()?.find((E) => ht(E, _))?.underlyingV1ToolName;
+      return S === void 0 ? void 0 : s.get(S)
+    },
+    p = new Map,
+    u = new Map,
+    y = 0,
+    T = 0,
+    h = 0,
+    O = (_) => Ka(_) ? s.get(co) : void 0,
+    b = [...e];
+  for (let _ of b) {
+    let S = s.get(_) ?? O(_) ?? R(_);
+    if (S === void 0) {
+      let k = r?.get(_),
+        C = o?.get(_);
+      if (k === void 0 || pe(_, C, f())) continue;
+      if (ae(_, C, f(), n)) u.set(_, {
+        entry: k,
+        server: C
+      });
+      else {
+        let W = le(_, f(), i);
+        if (W === "launch_omitted") u.set(_, {
+          entry: k,
+          server: C
+        }), h++;
+        else if (W === "gate_off") {
+          if (u.set(_, {
+              entry: k,
+              server: C
+            }), y++, ue(_, f())) T++
+        }
+      }
+      continue
+    }
+    p.set(S.name, S);
+    let E = S.underlyingV1ToolName === void 0 ? void 0 : s.get(S.underlyingV1ToolName);
+    if (E !== void 0) p.set(E.name, E)
+  }
+  for (let _ of n)
+    if (_.underlyingV1ToolName !== void 0 && p.has(_.underlyingV1ToolName)) p.set(_.name, _);
+  for (let _ of p.keys()) u.delete(_);
+  return p.size === 0 && u.size === 0 ? void 0 : {
+    held: new boe(n.filter((_) => p.has(_.name)), {
+      only: u,
+      order: b
+    }),
+    recorded: b.length,
+    gateOff: y,
+    needsUser: T,
+    launchOmitted: h
+  }
+}
+
+function p7t(e, n, o, {
+  latch: r,
+  permissionContext: i
+}) {
+  let s = zye(e);
+  if (s !== void 0 || e.declaredToolsDecided) return s;
+  if (r) Gjt(e);
+  if (e.declaredTools !== void 0 || !RTe()) return;
+  let d = n(),
+    f = d === void 0 ? void 0 : se(d.names, o, d, i);
+  if (f === void 0 || !r) return f?.held;
+  return GVn(e, f.held), l("tengu_declared_tool_set_from_record", {
+    recorded: f.recorded,
+    held: f.held.names.length - f.held.recordedOnly.size,
+    heldByName: f.held.recordedOnly.size,
+    heldGateOff: f.gateOff,
+    heldNeedsUser: f.needsUser,
+    heldLaunchOmitted: f.launchOmitted
+  }), f.held
+}
+
+function sdo(e, n) {
+  if (n === void 0) return {
+    tools: e,
+    redeclared: []
+  };
+  let o = new Set(e.map((d) => d.name)),
+    r = (d) => o.has(d) || !n.keeps(d) ? void 0 : n.toolFor(d);
+  if (n.names.every((d) => r(d) === void 0)) return {
+    tools: e,
+    redeclared: []
+  };
+  let i = [...e],
+    s = [];
+  return n.names.forEach((d, f) => {
+    let R = r(d);
+    if (!R) return;
+    let p = -1;
+    for (let u = f - 1; u >= 0 && p === -1; u--) {
+      let y = n.names[u];
+      p = i.findIndex((T) => T.name === y)
+    }
+    if (p !== -1) i.splice(p + 1, 0, R);
+    else {
+      let u = i.findIndex((y) => n.has(y.name));
+      i.splice(u === -1 ? 0 : u, 0, R)
+    }
+    o.add(d), s.push(d)
+  }), s.length === 0 ? {
+    tools: e,
+    redeclared: s
+  } : {
+    tools: i,
+    redeclared: s
+  }
+}
+
+function b_r(e, n) {
+  let o = n.turnDeniedTools;
+  return sdo(e, o instanceof boe ? o : void 0).tools
+}
+
+function IMi(e, n) {
+  let o = zye(e);
+  if (o === void 0 || n.length === 0) return;
+  e.declaredTools = o.without(new Set(n)), l("tengu_declared_tools_dropped_at_compaction", {
+    dropped: n.length,
+    noDeferredChannel: !1
+  })
+}
+
+function MMi(e, n) {
+  let o = e === void 0 ? void 0 : $In(e);
+  return S_r(o, n, !0)
+}
+
+function DMi(e, n) {
+  let o = $In(e);
+  if (o === void 0 || n.length === 0) return;
+  e.noChannelTools = o.without(new Set(n)), l("tengu_declared_tools_dropped_at_compaction", {
+    dropped: n.length,
+    noDeferredChannel: !0
+  })
+}
+
+function S_r(e, n, o) {
+  if (e === void 0) return [];
+  let r = new Set(n.map((i) => i.name));
+  return e.names.filter((i) => {
+    if (r.has(i) || !e.keeps(i)) return !1;
+    let s = e.sourceFor(i)?.mcpInfo;
+    return o || !x(i, s?.serverName)
+  })
+}
+var de = {
+  servers: void 0,
+  entries: void 0
+};
+
+function ae(e, n, o, r) {
+  if (e === cl) return !1;
+  if (n !== void 0) return !0;
+  if (gr(e) !== null) return !1;
+  if (e === $$ && !r.some((i) => ht(i, as))) return !0;
+  return o !== void 0 && tk(o, e) === void 0
+}
+
+function le(e, n, o) {
+  if (o === void 0 || n === void 0) return;
+  if (e === cl || e === $$ || gr(e) !== null) return;
+  let r = n.find((i) => i.name === e);
+  if (r === void 0 || r.isMcp === !0) return;
+  if (!fe() || hs("hipaa")) return;
+  if (wXe(o, r)) return aDt(o, r) ? "launch_omitted" : void 0;
+  if (c7t(o, r)) return o.builtInToolsDisabled === !0 || o.restricted === !0 && HIn(__r([r]), new Set).includes(r.name) ? void 0 : "launch_omitted";
+  if (r.isEnabled()) return;
+  return "gate_off"
+}
+
+function ue(e, n) {
+  return n?.find((o) => o.name === e)?.requiresUserInteraction?.() === !0
+}
+var ce = "tengu_gleaming_cupcake";
+
+function fe() {
+  return v(ce, !0)
+}
+var me = "tengu_joyful_anchor";
+
+function pe(e, n, o) {
+  if (x(e, n)) return !1;
+  let r = v(me, null);
+  if (!Array.isArray(r) || r.length === 0) return !1;
+  let i = o?.find((s) => ht(s, e));
+  return r.some((s) => typeof s === "string" && (s === e || i !== void 0 && ht(i, s)))
+}
+
+function Y(e, n) {
+  let o = to(n);
+  return {
+    mcpInfo: {
+      serverName: n,
+      toolName: e.startsWith(o) ? e.slice(o.length) : e
+    }
+  }
+}
+
+function x(e, n) {
+  return n !== void 0 || gr(e) !== null
+}
+
+function LMi(e, n, {
+  pool: o,
+  keptDeferred: r,
+  keepMcp: i,
+  requestCarriesStructuredOutputs: s,
+  requestDeclaresSearchCitations: d,
+  recordedEntries: f
+}) {
+  let R = new Set(qfs(n, {
+    pool: o,
+    keptDeferred: r,
+    keepMcp: i
+  }));
+  if (R.size === 0) return [];
+  let p = new Set(e.map(N)),
+    u = n.recordOrder,
+    y = {
+      strict: s,
+      eager: cfo(e),
+      citations: d
+    },
+    T = [];
+  return u.forEach((h, O) => {
+    let b = n.recordedOnly.get(h);
+    if (b === void 0 || p.has(h) || !R.has(h)) return;
+    let _ = f?.get(h) ?? b.entry,
+      S = -1;
+    for (let E = O - 1; E >= 0 && S === -1; E--) {
+      let k = u[E];
+      if (p.has(k)) S = e.findIndex((C) => N(C) === k) + 1
+    }
+    if (S === -1) {
+      let E = new Set(u),
+        k = e.findIndex((C) => E.has(N(C) ?? ""));
+      S = k === -1 ? 0 : k
+    }
+    e.splice(S, 0, Lwr(_, y)), p.add(h), T.push(h)
+  }), T
+}
+
+function qfs(e, {
+  pool: n,
+  keptDeferred: o,
+  keepMcp: r
+}) {
+  let i = new Set([...n.map((s) => s.name), ...o]);
+  return e.recordOrder.filter((s) => {
+    let d = e.recordedOnly.get(s);
+    return d !== void 0 && !i.has(s) && (r || !x(s, d.server))
+  })
+}
+
+function N(e) {
+  return "name" in e && typeof e.name === "string" ? e.name : void 0
+}
+
+function NMi() {
+  return q0e()
+}
+
+function FMi(e) {
+  let n = new Set;
+  for (let o of e) {
+    let r = N(o);
+    if (r !== void 0) n.add(r)
+  }
+  return n
+}
+
+function HMi(e) {
+  if (e.deferredLate === 0 && e.redeclared === 0 && e.fromRecord === 0 && e.unclassifiedDepartures === 0) return;
+  l("tengu_declared_tool_set_held", {
+    deferredLate: e.deferredLate,
+    redeclared: e.redeclared,
+    fromRecord: e.fromRecord,
+    ...e.queryDepth !== void 0 && {
+      queryDepth: e.queryDepth
+    },
+    toolSearchAbsent: e.toolSearchAbsent,
+    noDeferredChannel: e.noDeferredChannel,
+    unclassifiedDepartures: e.unclassifiedDepartures
+  })
+}
+
+function m7t(e, n) {
+  return Aft(e) && MRe(n)
+}
+
+function Aft(e) {
+  return L_(e, VS) && !L(e)
+}
+
+function L(e) {
+  return If(e, jD) || dKs() || !q0e()
+}
+
+function ZWe(e, n) {
+  return (L_(e, VS) || rOr() && !If(e, VS)) && !L(e) && MRe(n)
+}
+
+function $Mi(e, n) {
+  return w_r(e) && m7t(e, n)
+}
+
+function w_r(e) {
+  return L_(e, rS) && !D$r() && Aft(e)
+}
+
+function ido(e, n) {
+  if (D$r() || If(e, rS)) return !1;
+  if (L_(e, rS)) return ZWe(e, n);
+  return !L_(e, VS) && Oon() && ZWe(e, n)
+}
+
+function ado(e, n, {
+  toolSearchToolFilteredOut: o,
+  toolPoolRefreshes: r,
+  aheadOfRequest: i
+}) {
+  return o && (i ? ZWe(e, n) : m7t(e, n)) && (zye(e) !== void 0 || r && RTe())
+}
+
+function UMi(e, n, o) {
+  let r = !L_(e, VS);
+  if (n.includes(VS) && !L(e)) {
+    if (g0(e, VS), r && n.includes(rS) && !D$r() && !If(e, rS)) g0(e, rS)
+  }
+  let i = m7t(e, o),
+    s = i && w_r(e),
+    d = n;
+  if (i && !d.includes(VS)) d = [...d, VS];
+  if (!i && d.includes(VS)) d = d.filter((f) => f !== VS);
+  if (s && !d.includes(rS)) d = [...d, rS];
+  if (!s && d.includes(rS)) d = d.filter((f) => f !== rS);
+  return d
+}
+
+function BMi(e, n, o, r) {
+  if (m7t(e, o) && MRe(r)) {
+    let i = n.includes(VS) ? n : [...n, VS],
+      s = w_r(e);
+    if (s && !i.includes(rS)) return [...i, rS];
+    return s ? i : i.filter((d) => d !== rS)
+  }
+  return n.filter((i) => i !== VS && i !== rS)
+}
+
+function jMi(e, n, {
+  mintModel: o,
+  retryModel: r,
+  advisorEntryMoved: i,
+  deferredEntriesMoved: s,
+  hasDeferredChannel: d
+}) {
+  try {
+    if (!m7t(e, o) || MRe(r)) return;
+    let f = {
+      advisor_entry: i,
+      deferred_entries: s,
+      announcement_blocks: d && n.some((R) => ye(e, R))
+    };
+    return Object.values(f).some(Boolean) ? f : void 0
+  } catch (f) {
+    a(F(f));
+    return
+  }
+}
+
+function ye(e, n) {
+  if (n.type !== "attachment" || n.attachment.type !== "deferred_tools_delta" || e.nameOnlyAnnouncements.has(n.uuid)) return !1;
+  let o = n.attachment.surfacedNames;
+  return Array.isArray(o) && o.some((r) => typeof r === "string" && (e.surfacedOnWire.has(r) || e.definedByValue.has(r)))
+}
+
+function WMi(e, n, o, r, i = new Set) {
+  if (!r) return;
+  let s = !Aft(e);
+  for (let d of n) {
+    if (d.type !== "attachment" || d.attachment.type !== "deferred_tools_delta" || e.nameOnlyAnnouncements.has(d.uuid)) continue;
+    let f = d.attachment.surfacedNames;
+    if (Array.isArray(f) && f.length > 0 && (s || f.some((R) => typeof R !== "string" || !o.has(R) && !i.has(R)))) e.nameOnlyAnnouncements.add(d.uuid)
+  }
+}
+
+function Yfs(e, n, o, {
+  useToolSearch: r,
+  toolSearchAbsent: i,
+  blocksEligible: s,
+  byValueNames: d = new Set,
+  byValueStaysOut: f
+}) {
+  if (!r && !i) return;
+  if (!s) {
+    if (!Aft(e)) e.surfacedOnWire.clear(), e.definedByValue.clear();
+    else if (f) e.definedByValue.clear();
+    return
+  }
+  e.surfacedOnWire.clear(), e.definedByValue.clear();
+  let R = new Set;
+  for (let p of o)
+    if (p.type === "api_system") {
+      for (let u of p.toolRemovals ?? []) e.definedByValue.delete(u);
+      for (let u of p.toolAdditions ?? [])
+        if (b0t(p.toolDefinitions, u) !== void 0) R.add(u), e.definedByValue.add(u);
+        else e.surfacedOnWire.add(u)
+    } if (i) return;
+  for (let p of n) {
+    if (p.type !== "attachment" || p.attachment.type !== "deferred_tools_delta" || e.nameOnlyAnnouncements.has(p.uuid)) continue;
+    let u = p.attachment.surfacedNames;
+    if (Array.isArray(u) && u.some((y) => typeof y === "string" && !e.surfacedOnWire.has(y) && !R.has(y) && !d.has(y))) e.nameOnlyAnnouncements.add(p.uuid)
+  }
+}
+
+function zMi(e, n, o, r) {
+  if (Xfs(e), n === "header_rejected" || n === "block_type_unknown") {
+    if (cKs(), n === "header_rejected") {
+      if (_4e(VS), r) AIo(), _4e(rS)
+    }
+  } else if (n === "model_unsupported") _Ks(rt(o));
+  t(`[late-tool-additions] tool_addition rejected (${n}) \u2014 falling back to the ToolSearch announcement (or to inline tools where there is no ToolSearch), sticky-rejecting the beta until /clear or /compact`, {
+    level: "warn"
+  }), c("mcp_late_tool_additions", `rejected_${n}`)
+}
+
+function Xfs(e) {
+  if (L_(e, VS)) Zm(e, VS);
+  z(e), e.surfacedOnWire.clear()
+}
+
+function z(e) {
+  if (L_(e, rS)) NWs(e, rS);
+  e.definedByValue.clear()
+}
+
+function GMi(e, n) {
+  if (z(e), n === "header_rejected" || n === "unsupported_on_platform") {
+    if (AIo(), n === "header_rejected") _4e(rS)
+  }
+  t(`[inline-tools] tool_definition rejected (${n}) \u2014 falling back to declaring late tools in tools[] and showing them by reference, off for the rest of this conversation (carried through a compaction; /clear starts afresh)`, {
+    level: "warn"
+  }), c("mcp_inline_tools", `rejected_${n}`)
+}
+
+function VMi(e, n, o, r = [], i = {}) {
+  let s = [...e ? [{
+    type: "text",
+    text: e
+  }] : [], ...r.map((d) => ({
+    type: "tool_removal",
+    tool: {
+      type: "tool_reference",
+      name: d
+    }
+  })), ...n.map((d) => {
+    let f = b0t(i, d);
+    return f === void 0 ? {
+      type: "tool_addition",
+      tool: {
+        type: "tool_reference",
+        name: d
+      }
+    } : {
+      type: "tool_addition",
+      tool: {
+        type: "tool_definition",
+        definition: f
+      }
+    }
+  })];
+  if (o !== void 0 && s.length > 0) s.push({
+    ...s.pop(),
+    cache_control: o
+  });
+  return s
+}
+export {
+  tdo,
+  NIn,
+  EMi,
+  c0e,
+  FIn,
+  TMi,
+  vq,
+  tk,
+  zfs,
+  CMi,
+  RMi,
+  HIn,
+  __r,
+  ndo,
+  MW,
+  c7t,
+  wXe,
+  aDt,
+  u7t,
+  f7t,
+  rdo,
+  odo,
+  CTe,
+  AMi,
+  RTe,
+  boe,
+  Gfs,
+  zye,
+  $In,
+  Vfs,
+  Kfs,
+  xMi,
+  PMi,
+  kXe,
+  u0e,
+  UIn,
+  OMi,
+  p7t,
+  sdo,
+  b_r,
+  IMi,
+  MMi,
+  DMi,
+  S_r,
+  LMi,
+  qfs,
+  NMi,
+  FMi,
+  HMi,
+  m7t,
+  Aft,
+  ZWe,
+  $Mi,
+  w_r,
+  ido,
+  ado,
+  UMi,
+  BMi,
+  jMi,
+  WMi,
+  Yfs,
+  zMi,
+  Xfs,
+  GMi,
+  VMi
+};

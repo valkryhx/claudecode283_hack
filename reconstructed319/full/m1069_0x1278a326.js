@@ -1,0 +1,447 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  wS
+} from "B:/~BUN/root/chunk-crjx6seq.js";
+import {
+  Dae,
+  vme
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import {
+  ot,
+  s,
+  n
+} from "B:/~BUN/root/chunk-qey16aan.js";
+import {
+  JR,
+  EUe,
+  TUe,
+  azr,
+  lhe,
+  CUe,
+  ihn,
+  Zf,
+  uzr,
+  ahn,
+  vYe
+} from "B:/~BUN/root/chunk-cpzw87wr.js";
+import {
+  Za
+} from "B:/~BUN/root/chunk-n8t98fhm.js";
+import {
+  re
+} from "B:/~BUN/root/chunk-xkw95p5n.js";
+import {
+  mv,
+  e2t
+} from "B:/~BUN/root/chunk-h37egt7q.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import {
+  ue,
+  A,
+  y,
+  j
+} from "B:/~BUN/root/chunk-czy5r8bc.js";
+j();
+j();
+import {
+  isDeepStrictEqual as qe
+} from "util";
+
+function ce({
+  isDisabled: o = !1,
+  visibleOptionCount: X = 5,
+  options: d,
+  defaultValue: u = [],
+  onChange: R,
+  onCancel: P,
+  onFocus: B,
+  submitButtonText: T,
+  onSubmit: p,
+  onDownFromLastItem: g,
+  hideIndexes: L = !1,
+  refuseSubmitFocus: H
+}) {
+  let [J, k, V] = Zf(u), [N, C, z] = Zf(!1), [i, he] = y(d);
+  if (d !== i && !qe(d, i)) k(u), he(d);
+  let [D, Q] = y(() => {
+    let t = new Map;
+    return d.forEach((a) => {
+      if (a.type === "input" && a.initialValue) t.set(a.value, a.initialValue)
+    }), t
+  }), E = ue((t) => {
+    let a = typeof t === "function" ? t(V()) : t;
+    if (R?.(a) === !1) return;
+    k(a)
+  }, [V, k, R]), F = ue((t) => {
+    if (d.find((a) => a.value === t)?.disabled === !0) return;
+    E((a) => a.includes(t) ? a.filter((f) => f !== t) : [...a, t])
+  }, [d, E]), c = uzr({
+    visibleOptionCount: X,
+    options: d,
+    onFocus: B
+  });
+  Za("multi-select");
+  let U = ue((t, a) => {
+    let f = d.find((b) => b.value === t);
+    if (f?.type === "input" && f.onChange(a) === !1) return;
+    Q((b) => {
+      let w = new Map(b);
+      return w.set(t, a), w
+    }), E((b) => {
+      if (a) {
+        if (!b.includes(t)) return [...b, t];
+        return b
+      } else return b.filter((w) => w !== t)
+    })
+  }, [d, E]);
+  return {
+    ...c,
+    focusOption: (t) => {
+      C(!1), c.focusOption(t)
+    },
+    scrollViewport: (t) => {
+      let a = c.getFocusedValue(),
+        f = c.scrollViewport(t);
+      if (c.getFocusedValue() !== a) C(!1);
+      return f
+    },
+    selectedValues: J,
+    getSelectedValues: V,
+    inputValues: D,
+    isSubmitFocused: N,
+    updateInputValue: U,
+    toggleValue: F,
+    onCancel: P,
+    handleKeyDown: (t) => {
+      if (o) return;
+      let a = Dae(t.key),
+        f = c.getFocusedValue(),
+        w = d.find((I) => I.value === f)?.type === "input",
+        h = z();
+      if (w) {
+        if (!(t.key === "up" || t.key === "down" || t.key === "escape" || t.key === "tab" || t.key === "return" || t.ctrl && (t.key === "n" || t.key === "p" || t.key === "return"))) return
+      }
+      let M = d.at(-1)?.value;
+      if (t.key === "tab" && !t.shift) {
+        if (t.preventDefault(), T && p && f === M && !h) {
+          if (H?.()) return;
+          C(!0)
+        } else if (!h) c.focusNextOption();
+        return
+      }
+      if (t.key === "tab" && t.shift) {
+        if (t.preventDefault(), T && p && h) C(!1), c.focusOption(M);
+        else c.focusPreviousOption();
+        return
+      }
+      if (t.key === "down" || t.ctrl && t.key === "n" || !t.ctrl && !t.shift && t.key === "j") {
+        if (t.preventDefault(), h && g) g();
+        else if (T && p && f === M && !h) {
+          if (H?.()) return;
+          C(!0)
+        } else if (!T && g && f === M) g();
+        else if (!h) c.focusNextOption();
+        return
+      }
+      if (t.key === "up" || t.ctrl && t.key === "p" || !t.ctrl && !t.shift && t.key === "k") {
+        if (t.preventDefault(), T && p && h) C(!1), c.focusOption(M);
+        else c.focusPreviousOption();
+        return
+      }
+      if (t.key === "pagedown") {
+        t.preventDefault(), c.focusNextPage();
+        return
+      }
+      if (t.key === "pageup") {
+        t.preventDefault(), c.focusPreviousPage();
+        return
+      }
+      if (t.key === "return" || vme(t.key) === " ") {
+        if (t.preventDefault(), t.ctrl && t.key === "return" && w && p) {
+          p(V());
+          return
+        }
+        if (t.key === "return" && h && p) {
+          p(V());
+          return
+        }
+        if (t.key === "return" && !T && p) {
+          p(V());
+          return
+        }
+        if (!h && f !== void 0) F(f);
+        return
+      }
+      if (!L && /^[0-9]$/.test(a)) {
+        t.preventDefault();
+        let I = parseInt(a) - 1;
+        if (I >= 0 && I < d.length) F(d[I].value);
+        return
+      }
+      if (t.key === "escape") P(), t.stopImmediatePropagation()
+    }
+  }
+}
+
+function vt(St) {
+  return St.description
+}
+
+function ht() {}
+
+function jj(o) {
+  let d = S(13);
+  if (ot()) {
+    let u;
+    if (d[0] !== o.defaultValue || d[1] !== o.isDisabled || d[2] !== o.onCancel || d[3] !== o.onChange || d[4] !== o.onFocus || d[5] !== o.onOpenEditor || d[6] !== o.onSubmit || d[7] !== o.options || d[8] !== o.refuseInput || d[9] !== o.submitButtonText) u = e(azr, {
+      options: o.options,
+      defaultValue: o.defaultValue,
+      onChange: o.onChange,
+      onSubmit: o.onSubmit,
+      onFocus: o.onFocus,
+      onCancel: o.onCancel,
+      onOpenEditor: o.onOpenEditor,
+      isDisabled: o.isDisabled,
+      submitButtonText: o.submitButtonText,
+      refuseInput: o.refuseInput
+    }), d[0] = o.defaultValue, d[1] = o.isDisabled, d[2] = o.onCancel, d[3] = o.onChange, d[4] = o.onFocus, d[5] = o.onOpenEditor, d[6] = o.onSubmit, d[7] = o.options, d[8] = o.refuseInput, d[9] = o.submitButtonText, d[10] = u;
+    else u = d[10];
+    return u
+  }
+  let u;
+  if (d[11] !== o) u = e(ve, {
+    ...o
+  }), d[11] = o, d[12] = u;
+  else u = d[12];
+  return u
+}
+
+function ve(o) {
+  let D = S(75),
+    {
+      isDisabled: X,
+      visibleOptionCount: d,
+      options: u,
+      defaultValue: R,
+      onCancel: P,
+      onChange: B,
+      onFocus: T,
+      submitButtonText: p,
+      onSubmit: g,
+      onDownFromLastItem: L,
+      onOpenEditor: H,
+      hideIndexes: J,
+      canPasteImage: k,
+      onImagePaste: V,
+      pastedContents: N,
+      onRemoveImage: C,
+      refuseSubmitFocus: z
+    } = o,
+    i = X === void 0 ? !1 : X,
+    he = d === void 0 ? 5 : d,
+    Q;
+  if (D[0] !== R) Q = R === void 0 ? [] : R, D[0] = R, D[1] = Q;
+  else Q = D[1];
+  let E = Q,
+    F = J === void 0 ? !1 : J,
+    c = u.some(vt);
+  const U = vYe(he, c ? "compact-vertical" : "compact");
+  let ge;
+  if (D[2] !== E || D[3] !== F || D[4] !== i || D[5] !== P || D[6] !== B || D[7] !== L || D[8] !== T || D[9] !== g || D[10] !== u || D[11] !== z || D[12] !== p || D[13] !== U) ge = {
+    isDisabled: i,
+    visibleOptionCount: U,
+    options: u,
+    defaultValue: E,
+    onChange: B,
+    onCancel: P,
+    onFocus: T,
+    submitButtonText: p,
+    onSubmit: g,
+    onDownFromLastItem: L,
+    hideIndexes: F,
+    refuseSubmitFocus: z
+  }, D[2] = E, D[3] = F, D[4] = i, D[5] = P, D[6] = B, D[7] = L, D[8] = T, D[9] = g, D[10] = u, D[11] = z, D[12] = p, D[13] = U, D[14] = ge;
+  else ge = D[14];
+  let t = ce(ge);
+  const a = t.isSubmitFocused ? void 0 : t.focusedValue;
+  let f;
+  if (D[15] !== k || D[16] !== u || D[17] !== t.focusOption || D[18] !== a) f = {
+    options: u,
+    focusedValue: a,
+    focusOption: t.focusOption,
+    canPaste: k
+  }, D[15] = k, D[16] = u, D[17] = t.focusOption, D[18] = a, D[19] = f;
+  else f = D[19];
+  let b = ihn(f),
+    w = A(null);
+  wS(w, !i);
+  let [h, M] = y(!1), I = EUe(), Y = !i && h && I === "inverse", K = mv(), ye = e2t(), Ke;
+  if (D[20] !== i || D[21] !== u.length || D[22] !== ye || D[23] !== t.scrollViewport || D[24] !== t.visibleFromIndex || D[25] !== t.visibleToIndex) Ke = {
+    isDisabled: i,
+    visibleFromIndex: t.visibleFromIndex,
+    visibleToIndex: t.visibleToIndex,
+    optionCount: u.length,
+    scrollViewport: t.scrollViewport,
+    shouldDropWheel: ye
+  }, D[20] = i, D[21] = u.length, D[22] = ye, D[23] = t.scrollViewport, D[24] = t.visibleFromIndex, D[25] = t.visibleToIndex, D[26] = Ke;
+  else Ke = D[26];
+  let De = ahn(Ke),
+    Be;
+  if (D[27] !== i || D[28] !== K || D[29] !== t) Be = (Z) => i || Z.disabled === !0 ? void 0 : (gt) => {
+    if (K(gt)) {
+      return
+    }
+    if (Z.type === "input") t.focusOption(Z.value);
+    else t.toggleValue(Z.value)
+  }, D[27] = i, D[28] = K, D[29] = t, D[30] = Be;
+  else Be = D[30];
+  let ee = Be,
+    te, oe, ie, ne, se, ae, _;
+  if (D[31] !== k || D[32] !== ee || D[33] !== b || D[34] !== F || D[35] !== i || D[36] !== P || D[37] !== V || D[38] !== H || D[39] !== C || D[40] !== u.length || D[41] !== N || D[42] !== De || D[43] !== t) {
+    let Le = u.length.toString().length;
+    oe = s;
+    se = "column";
+    ae = w;
+    if (D[51] !== b || D[52] !== i || D[53] !== t.handleKeyDown) _ = i ? {} : {
+      tabIndex: 0,
+      onKeyDown: t.handleKeyDown,
+      onPaste: b
+    }, D[51] = b, D[52] = i, D[53] = t.handleKeyDown, D[54] = _;
+    else _ = D[54];
+    te = TUe;
+    ie = De;
+    ne = t.visibleOptions.map((v, yt) => {
+      let Oe = !i && t.focusedValue === v.value && !t.isSubmitFocused;
+      let le = t.selectedValues.includes(v.value);
+      let Ne = v.index === t.visibleFromIndex;
+      let je = v.index === t.visibleToIndex - 1;
+      let ze = t.visibleToIndex < u.length;
+      let Ue = t.visibleFromIndex > 0;
+      let _e = t.visibleFromIndex + yt + 1;
+      if (v.type === "input") {
+        let Dt = t.inputValues.get(v.value) || "";
+        return e(s, {
+          flexDirection: "column",
+          children: e(CUe, {
+            option: v,
+            onClick: ee(v),
+            isFocused: Oe,
+            isSelected: !1,
+            shouldShowDownArrow: ze && je,
+            shouldShowUpArrow: Ue && Ne,
+            maxIndexWidth: Le,
+            index: _e,
+            inputValue: Dt,
+            onInputChange: (Ot) => {
+              t.updateInputValue(v.value, Ot)
+            },
+            onSubmit: ht,
+            onExit: () => {
+              P()
+            },
+            layout: "compact",
+            onOpenEditor: H,
+            canPasteImage: k,
+            onImagePaste: V,
+            pastedContents: N,
+            onRemoveImage: C,
+            extraChromeWidth: 4,
+            children: r(n, {
+              color: le ? "success" : void 0,
+              children: ["[", le ? re.tick : " ", "]", " "]
+            })
+          })
+        }, String(v.value))
+      }
+      return e(s, {
+        flexDirection: "column",
+        children: r(lhe, {
+          isFocused: Oe,
+          isSelected: !1,
+          shouldShowDownArrow: ze && je,
+          shouldShowUpArrow: Ue && Ne,
+          onClick: ee(v),
+          children: [!F && e(s, {
+            flexShrink: 0,
+            children: e(n, {
+              dimColor: !0,
+              children: `${_e}.`.padEnd(Le)
+            })
+          }), e(s, {
+            flexShrink: 0,
+            children: r(n, {
+              color: le ? "success" : void 0,
+              children: ["[", le ? re.tick : " ", "]"]
+            })
+          }), r(s, {
+            flexDirection: "column",
+            children: [e(n, {
+              color: Oe ? "suggestion" : void 0,
+              children: v.label
+            }), v.description && e(n, {
+              color: "inactive",
+              children: v.description
+            })]
+          })]
+        })
+      }, String(v.value))
+    });
+    D[31] = k, D[32] = ee, D[33] = b, D[34] = F, D[35] = i, D[36] = P, D[37] = V, D[38] = H, D[39] = C, D[40] = u.length, D[41] = N, D[42] = De, D[43] = t, D[44] = te, D[45] = oe, D[46] = ie, D[47] = ne, D[48] = se, D[49] = ae, D[50] = _
+  } else te = D[44], oe = D[45], ie = D[46], ne = D[47], se = D[48], ae = D[49], _ = D[50];
+  let de;
+  if (D[55] !== te || D[56] !== ie || D[57] !== ne) de = e(te, {
+    ...ie,
+    children: ne
+  }), D[55] = te, D[56] = ie, D[57] = ne, D[58] = de;
+  else de = D[58];
+  let pe;
+  if (D[59] !== i || D[60] !== g || D[61] !== K || D[62] !== t || D[63] !== p || D[64] !== I || D[65] !== h || D[66] !== Y) pe = p && g && r(s, {
+    marginTop: 0,
+    gap: 1,
+    onClick: i ? void 0 : (xt) => {
+      if (K(xt)) {
+        return
+      }
+      g(t.getSelectedValues())
+    },
+    backgroundColor: !i && h && I === "tint" ? JR : void 0,
+    onMouseEnter: () => M(!0),
+    onMouseLeave: () => M(!1),
+    children: [!i && t.isSubmitFocused ? e(n, {
+      color: "suggestion",
+      inverse: Y,
+      children: re.pointer
+    }) : e(n, {
+      inverse: Y,
+      children: " "
+    }), e(s, {
+      marginLeft: 3,
+      children: e(n, {
+        color: !i && t.isSubmitFocused ? "suggestion" : void 0,
+        bold: !0,
+        children: p
+      })
+    })]
+  }), D[59] = i, D[60] = g, D[61] = K, D[62] = t, D[63] = p, D[64] = I, D[65] = h, D[66] = Y, D[67] = pe;
+  else pe = D[67];
+  let $e;
+  if (D[68] !== oe || D[69] !== se || D[70] !== ae || D[71] !== _ || D[72] !== de || D[73] !== pe) $e = r(oe, {
+    flexDirection: se,
+    ref: ae,
+    ..._,
+    children: [de, pe]
+  }), D[68] = oe, D[69] = se, D[70] = ae, D[71] = _, D[72] = de, D[73] = pe, D[74] = $e;
+  else $e = D[74];
+  return $e
+}
+export {
+  jj
+};

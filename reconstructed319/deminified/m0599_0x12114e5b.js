@@ -1,0 +1,681 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { hY, VHr } from "B:/~BUN/root/chunk-n8cnxns2.js";
+import { Pe } from "B:/~BUN/root/chunk-vz9zea4j.js";
+import { H, q } from "B:/~BUN/root/chunk-game8aqv.js";
+import { K } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { W } from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import { Ue } from "B:/~BUN/root/chunk-eev762xg.js";
+import { $c, i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { t, _, ee, ie } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { x as platform } from "B:/~BUN/root/chunk-mwfggkjt.js";
+import { p } from "B:/~BUN/root/chunk-z6138ats.js";
+import { Ve } from "B:/~BUN/root/chunk-myfamxtp.js";
+import { s$e, pe } from "B:/~BUN/root/chunk-thn0wk2x.js";
+import { pS, _N } from "B:/~BUN/root/chunk-gq1er5y2.js";
+import { ut as execFileNoThrow } from "B:/~BUN/root/chunk-3mm90xb6.js";
+import { Dn } from "B:/~BUN/root/chunk-9jpwd6f1.js";
+import { s1n, fe, W1n, IVe } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import { NV } from "B:/~BUN/root/chunk-hacd8gcc.js";
+import { nJt, Dut } from "B:/~BUN/root/chunk-cxcakgnv.js";
+import { K6, xFi, Yce, Ge } from "B:/~BUN/root/chunk-z7bs0q82.js";
+import { jmi, h5e, qAt, Vlt, Z7o, Wmi, Vmi } from "B:/~BUN/root/chunk-a66hbqcf.js";
+import { R6t, aJr } from "B:/~BUN/root/chunk-d6kbxxs1.js";
+import { Iar } from "B:/~BUN/root/chunk-s0gfhbzk.js";
+import { Mee } from "B:/~BUN/root/chunk-xdzcgcjh.js";
+import { UX } from "B:/~BUN/root/chunk-7mppcgdr.js";
+import { ge, Ft, Ec } from "B:/~BUN/root/chunk-b3kw6jpx.js";
+import { Of } from "B:/~BUN/root/chunk-bvb659eh.js";
+import { X } from "B:/~BUN/root/chunk-g9pw24zp.js";
+import { lstat as ne, realpath as j } from "fs/promises";
+import { homedir as P } from "os";
+import { delimiter as ae, join as d, posix as v, win32 as A } from "path";
+import { join as Y } from "path";
+var J = p(() => Ft({
+  timestamp: ge(),
+  path: Ec(["npm-global", "npm-local", "native"]),
+  outcome: Ec(["success", "failed"]),
+  status: ge(),
+  version_from: ge(),
+  version_to: ge().nullable(),
+  error_code: ge().nullable()
+}));
+function M() {
+  return Y(Ue(), ".last-update-result.json");
+}
+function I() {
+  return Ve.state("last-update-result");
+}
+async function zlt(e, n) {
+  if (X() && n) {
+    let a = await n.write(I(), _(e), {
+      mode: 438 & ~process.umask()
+    });
+    if (!a.ok) t(`Failed to record update result: ${a.error.code}`, {
+      level: "error"
+    });
+    return;
+  }
+  if (q()) return;
+  try {
+    await Dn().atomicWrite(M(), _(e));
+  } catch (error) {
+    t(`Failed to record update result: ${error}`, {
+      level: "error"
+    });
+  }
+}
+async function iJr(e) {
+  let n;
+  if (X() && e) {
+    let a = await e.read([I()]);
+    if (!a.ok) return t(`Failed to read update result: ${a.error.code}`, {
+      level: "error"
+    }), null;
+    let o = a.value.items[0];
+    if (!o.found) return null;
+    n = Buffer.from(o.value).toString("utf8");
+  } else {
+    if (q()) return null;
+    try {
+      n = await Dn().read(M());
+    } catch (error) {
+      if (!K(error)) t(`Failed to read update result: ${error}`, {
+        level: "error"
+      });
+      return null;
+    }
+  }
+  try {
+    let a = J().safeParse(ee(n));
+    return a.success ? a.data : null;
+  } catch {
+    return null;
+  }
+}
+import { readFile as Q } from "fs/promises";
+function Z(e, n) {
+  return n.includes(e.id) || e.idLike.some(item => n.includes(item));
+}
+class L {
+  sources;
+  osRelease;
+  pacman;
+  deb;
+  rpm;
+  apk;
+  packageManager;
+  constructor(e) {
+    this.sources = e;
+  }
+  getOsRelease() {
+    return this.osRelease ??= this.sources.readOsRelease().then(e => {
+      let n = e.match(/^ID=["']?(\S+?)["']?\s*$/m),
+        a = e.match(/^ID_LIKE=["']?(.+?)["']?\s*$/m);
+      return {
+        id: n?.[1] ?? "",
+        idLike: a?.[1]?.split(" ") ?? []
+      };
+    }, () => null);
+  }
+  detectPacman() {
+    return this.pacman ??= this.ownsExecutable(["arch"], "pacman", ["-Qo"]);
+  }
+  detectDeb() {
+    return this.deb ??= this.ownsExecutable(["debian"], "dpkg", ["-S"]);
+  }
+  detectRpm() {
+    return this.rpm ??= this.ownsExecutable(["fedora", "rhel", "suse"], "rpm", ["-qf"]);
+  }
+  detectApk() {
+    return this.apk ??= this.ownsExecutable(["alpine"], "apk", ["info", "--who-owns"]);
+  }
+  async ownsExecutable(e, n, a) {
+    if (this.sources.platform() !== "linux") return !1;
+    let o = await this.getOsRelease();
+    if (o && !Z(o, e)) return !1;
+    let r = await this.sources.execFileNoThrow(n, [...a, this.sources.execPath()], {
+      timeout: 5000,
+      useCwd: !1,
+      useToolMemoryCgroup: !1
+    });
+    if (r.code === 0 && r.stdout) return t(`Detected ${n} installation: ${r.stdout.trim()}`), !0;
+    return !1;
+  }
+  detectHomebrew() {
+    let e = this.sources.platform();
+    if (e !== "macos" && e !== "linux" && e !== "wsl") return !1;
+    let n = this.sources.execPath();
+    if (n.includes("/Caskroom/")) return t(`Detected Homebrew cask installation: ${n}`), !0;
+    return !1;
+  }
+  getHomebrewCaskName() {
+    return this.sources.execPath().match(/\/Caskroom\/([^/]+)\//)?.[1] ?? null;
+  }
+  detectWinget() {
+    if (this.sources.platform() !== "windows") return !1;
+    let e = this.sources.execPath();
+    for (let n of [/Microsoft[/\\]WinGet[/\\]Packages/i, /Microsoft[/\\]WinGet[/\\]Links/i]) if (n.test(e)) return t(`Detected winget installation: ${e}`), !0;
+    return !1;
+  }
+  detectMise() {
+    let e = this.sources.execPath();
+    if (/[/\\]mise[/\\]installs[/\\]/i.test(e)) return t(`Detected mise installation: ${e}`), !0;
+    return !1;
+  }
+  detectAsdf() {
+    let e = this.sources.execPath();
+    if (/[/\\]\.?asdf[/\\]installs[/\\]/i.test(e)) return t(`Detected asdf installation: ${e}`), !0;
+    return !1;
+  }
+  getPackageManager() {
+    return this.packageManager ??= this.detectPackageManager();
+  }
+  async detectPackageManager() {
+    if (this.detectHomebrew()) return "homebrew";
+    if (this.detectWinget()) return "winget";
+    if (this.detectMise()) return "mise";
+    if (this.detectAsdf()) return "asdf";
+    if (await this.detectPacman()) return "pacman";
+    if (await this.detectApk()) return "apk";
+    if (await this.detectDeb()) return "deb";
+    if (await this.detectRpm()) return "rpm";
+    return "unknown";
+  }
+}
+var te = new W(() => new L({
+  platform: platform,
+  readOsRelease: () => Q("/etc/os-release", "utf8"),
+  execFileNoThrow: execFileNoThrow,
+  execPath: () => process.execPath || process.argv[0] || ""
+}));
+function y() {
+  return te.of(H().host);
+}
+function D() {
+  return y().detectPacman();
+}
+function E() {
+  return y().detectDeb();
+}
+function T() {
+  return y().detectRpm();
+}
+function O() {
+  return y().detectApk();
+}
+function Par() {
+  return y().detectHomebrew();
+}
+function GAt() {
+  return y().getHomebrewCaskName();
+}
+function U() {
+  return y().detectWinget();
+}
+function N() {
+  return y().detectMise();
+}
+function B() {
+  return y().detectAsdf();
+}
+function f5e() {
+  return y().getPackageManager();
+}
+function se() {
+  let e = process.argv[1] || "",
+    n = process.execPath || process.argv[0] || "";
+  if (platform() === "windows") e = e.split(A.sep).join(v.sep), n = n.split(A.sep).join(v.sep);
+  return [e, n];
+}
+async function oe() {
+  let [e, n] = se();
+  if (Of()) {
+    let l = Ue().replace(/\\/g, "/").replace(/\/+$/, "") + "/local/node_modules/";
+    if (n.startsWith(l)) return "npm-local";
+    if (n.includes("/node_modules/@anthropic-ai/")) return "npm-global";
+    if (Par() || U() || N() || B() || (await D()) || (await E()) || (await T()) || (await O())) return "package-manager";
+    return "native";
+  }
+  if (jmi()) return "npm-local";
+  if (["/usr/local/lib/node_modules", "/usr/lib/node_modules", "/opt/homebrew/lib/node_modules", "/opt/homebrew/bin", "/usr/local/bin", "/.nvm/versions/node/"].some(item => e.includes(item))) return "npm-global";
+  if (e.includes("/npm/") || e.includes("/nvm/")) return "npm-global";
+  let o = await _N("npm config get prefix", {
+      reject: !1
+    }),
+    r = o.exitCode === 0 ? o.stdout.trim() : null;
+  if (r && e.startsWith(r)) return "npm-global";
+  return "unknown";
+}
+class F {
+  attempted = !1;
+}
+var G = new W(() => new F());
+function X7o() {
+  return G.of(H().host).attempted;
+}
+async function p5e() {
+  return G.of(H().host).attempted = !0, await oe();
+}
+async function re() {
+  if (Of()) {
+    try {
+      return await j(process.execPath);
+    } catch {}
+    try {
+      let e = await $c("claude");
+      if (e) return e;
+    } catch {}
+    try {
+      return await ie().stat(d(P(), ".local/bin/claude")), d(P(), ".local/bin/claude");
+    } catch {}
+    return "native";
+  }
+  try {
+    return process.argv[0] || "unknown";
+  } catch {
+    return "unknown";
+  }
+}
+function le() {
+  try {
+    if (Of()) return process.execPath || "unknown";
+    return process.argv[1] || "unknown";
+  } catch {
+    return "unknown";
+  }
+}
+async function ce() {
+  let e = ie(),
+    n = [],
+    path = d(P(), ".claude", "local");
+  if (await h5e()) n.push({
+    type: "npm-local",
+    path: path
+  });
+  let o = ["@anthropic-ai/claude-code"];
+  if ({
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.319",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-11-05T18:14:18Z",
+    GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.PACKAGE_URL && {
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.319",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-11-05T18:14:18Z",
+    GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.PACKAGE_URL !== "@anthropic-ai/claude-code") o.push({
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.319",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-11-05T18:14:18Z",
+    GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.PACKAGE_URL);
+  let r = await execFileNoThrow("npm", ["-g", "config", "get", "prefix"], {
+    cwd: s$e(pe(), P())
+  });
+  if (r.code === 0 && r.stdout) {
+    let s = r.stdout.trim(),
+      b = platform() === "windows",
+      path_2 = b ? d(s, "claude") : d(s, "bin", "claude"),
+      R = !1;
+    try {
+      await e.stat(path_2), R = !0;
+    } catch {}
+    if (R) {
+      let h = !1;
+      try {
+        if ((await j(path_2)).includes("/Caskroom/")) h = Par();
+      } catch {}
+      if (!h) {
+        let g = !1;
+        for (let w of o) {
+          let k = b ? d(s, "node_modules", w) : d(s, "lib", "node_modules", w);
+          try {
+            await e.stat(k), g = !0;
+            break;
+          } catch {}
+        }
+        if (g) n.push({
+          type: "npm-global",
+          path: path_2
+        });
+      }
+    } else for (let h of o) {
+      let path_3 = b ? d(s, "node_modules", h) : d(s, "lib", "node_modules", h);
+      try {
+        await e.stat(path_3), n.push({
+          type: "npm-global-orphan",
+          path: path_3
+        });
+      } catch {}
+    }
+  }
+  let path_4 = d(P(), ".local", "bin", "claude");
+  try {
+    await e.stat(path_4), n.push({
+      type: "native",
+      path: path_4
+    });
+  } catch {}
+  if (fe().installMethod === "native") {
+    let path_5 = d(P(), ".local", "share", "claude");
+    try {
+      if (await e.stat(path_5), !n.some(item => item.type === "native")) n.push({
+        type: "native",
+        path: path_5
+      });
+    } catch {}
+  }
+  return n;
+}
+function ue(e, n) {
+  let a = platform() === "windows",
+    o = n;
+  if (a) o = n.split(A.sep).join(v.sep).toLowerCase();
+  return e.some(item => {
+    let l = item;
+    if (a) l = item.split(A.sep).join(v.sep).toLowerCase();
+    let c = l.replace(/\/+$/, ""),
+      s = item.replace(/[/\\]+$/, "");
+    return c === o || s === "~/.local/bin" || s === "$HOME/.local/bin";
+  });
+}
+async function de(e) {
+  let n = [],
+    a = s1n();
+  if (a) n.push({
+    issue: `otelHeadersHelper is configured but its last invocation failed: ${hY(a, VHr)}`,
+    fix: "Run the configured helper manually and confirm it prints a JSON object of string header values. If the value is a file path, confirm the file exists and is executable."
+  });
+  let o = fe();
+  if (e === "development") return n;
+  if (e === "native") {
+    let c = (i.PATH || "").split(ae),
+      s = P(),
+      b = d(s, ".local", "bin"),
+      f = d(Mee(), "claude");
+    if (!(await nJt(f)) && !(await Dut(f).catch(() => !1))) n.push({
+      issue: `${f} was not created by the native installer (it is not a symlink into the versions/ directory), so auto-update leaves it untouched.`,
+      fix: `If you put a launcher wrapper there on purpose, this is expected \u2014 new versions still install under $XDG_DATA_HOME/claude/versions, your launcher decides what runs, and automatic version cleanup is disabled on this machine (the installer cannot tell which version your launcher needs, so it keeps them all). To let Claude Code manage the launcher again, remove ${f} and run \`claude update\`.`
+    });
+    if (!ue(c, b)) if (platform() === "windows") {
+      let h = b.split(v.sep).join(A.sep);
+      n.push({
+        issue: `Native installation exists but ${h} is not in your PATH`,
+        fix: "Add it by opening: System Properties \u2192 Environment Variables \u2192 Edit User PATH \u2192 New \u2192 Add the path above. Then restart your terminal."
+      });
+    } else {
+      let h = qAt(),
+        w = Vlt()[h],
+        k = w ? w.replace(P(), "~") : "your shell config file";
+      n.push({
+        issue: "Native installation exists but ~/.local/bin is not in your PATH",
+        fix: `Run: echo 'export PATH="$HOME/.local/bin:$PATH"' >> ${k} then open a new terminal or run: source ${k}`
+      });
+    }
+  }
+  if (!Pe(process.env.DISABLE_INSTALLATION_CHECKS)) {
+    if (e === "npm-local" && o.installMethod !== "local") n.push({
+      issue: `Running from local installation but config install method is '${o.installMethod ?? "not set"}'`,
+      fix: "Consider using native installation: `claude install`"
+    });
+    if (e === "native" && o.installMethod !== "native") n.push({
+      issue: `Running native installation but config install method is '${o.installMethod ?? "not set"}'`,
+      fix: "Run `claude install` to update configuration"
+    });
+  }
+  if (e === "npm-global" && (await h5e())) n.push({
+    issue: "Local installation exists but not being used",
+    fix: "Consider using native installation: `claude install`"
+  });
+  let r = await Z7o(),
+    l = await Wmi();
+  if (e === "npm-local") {
+    if (!(await $c("claude")) && !l) if (r) n.push({
+      issue: "Local installation not accessible",
+      fix: `Alias exists but points to invalid target: ${r}. Update alias: alias claude="~/.claude/local/claude"`
+    });else n.push({
+      issue: "Local installation not accessible",
+      fix: 'Create alias: alias claude="~/.claude/local/claude"'
+    });
+  }
+  return n;
+}
+async function me() {
+  return null;
+}
+function he() {
+  if (!Ge.isSandboxingEnabled()) return [];
+  if (Ge.canMaskCredentialWarningFire()) Ge.checkDependencies();
+  let e = Ge.getMaskCredentialWarning();
+  if (!e) return [];
+  return e.split(" \xB7 ").map(item => {
+    if (item.includes("have an empty injectHosts")) return {
+      issue: item.replace(/\.\s*If the adapter forced this.*$/, ""),
+      fix: "If the adapter forced this (a filesystem.allowRead entry re-opened a denied credential path), remove the conflicting allowRead entry or the deny; if a parent/managed settings tier supplied this mask, sentinel-only is its intended posture (that channel cannot grant injection, so an injectHosts set there is stripped on load) and the entry can only be removed in the parent settings; otherwise set injectHosts or remove the entry"
+    };
+    if (item.includes("degrade to deny on macOS")) return {
+      issue: item.replace(/\.\s*Note that switching them.*$/, ""),
+      fix: "Set sandbox.filesystem.disabled: false in user or managed settings (overrides the GrowthBook policy; ignored if managed settings pin the filesystem layer), or remove the mask entries \u2014 a deny provides no protection while the relaxed filesystem policy is active"
+    };
+    return {
+      issue: item.replace(/\s*Enable sandbox\.network\.tlsTerminate.*$/, ""),
+      fix: Yce() ? "Set sandbox.enabled: true plus sandbox.network.tlsTerminate, or remove the mask entries \u2014 TLS termination is never enabled in scrub-only mode" : "Enable sandbox.network.tlsTerminate (or remove the mask entries)"
+    };
+  });
+}
+function be() {
+  if (platform() !== "linux") return [];
+  let e = [],
+    n = Ge.getLinuxGlobPatternWarnings();
+  if (n.length > 0) {
+    let a = R6t(n);
+    e.push({
+      issue: "Glob patterns in sandbox permission rules are not fully supported on Linux",
+      fix: `Found ${n.length} pattern(s): ${a}. On Linux, glob patterns in Edit/Read rules will be ignored.`
+    });
+  }
+  return e;
+}
+async function we() {
+  let e = platform();
+  if (e !== "linux" && e !== "wsl") return [];
+  if (!Ge.isSandboxingEnabled()) return [];
+  let n = Ge.getConfig();
+  if (n === void 0 || n.filesystem.disabled) return [];
+  let {
+      denyWithinAllow: denyWithinAllow
+    } = Ge.getFsWriteConfig(),
+    o = await Promise.all(denyWithinAllow.map(async item => {
+      try {
+        let c = await ne(item);
+        return c.isFile() && c.size === 0 && (c.mode & 146) === 0 && c.nlink === 1;
+      } catch {
+        return !1;
+      }
+    })),
+    r = new Set(denyWithinAllow.filter((item, index) => o[index]));
+  if (r.size === 0) return [];
+  return [{
+    issue: `Sandbox mask files left behind at write-deny paths: ${R6t([...r])}`,
+    fix: 'A session leaves one where it was killed, or where it exited while a sandboxed command was still running. Remove each with `rm <path>` while no other Claude Code session is running in that project \u2014 a 0-byte read-only file where a settings file belongs makes "Yes, and don\'t ask again" fail to save, and the sandbox binds it read-only again on every start'
+  }];
+}
+function ye() {
+  let e = Ge.getUnbracketedIpv6DomainWarnings();
+  if (e.length === 0) return [];
+  return [{
+    issue: "Sandbox network domain entries have unreliable spellings",
+    fix: `Found: ${R6t(e)}. IPv6 literals must be bracketed, with any port 1-65535 and no leading zeros ("[::1]", "[::1]:443"); non-IPv6 entries must not contain wildcards in brackets, extra colons, "@", or path/query characters, and must use their canonical spelling (lowercase, no trailing dot, punycode). Until fixed, enforcement is conservative: a denied entry denies at least what any parseable reading denies (an entry with no parseable reading denies nothing); an allowed entry never allows more than written and may be removed entirely; bracketed IPv6-glob entries apply to in-process checks only, not the sandbox proxy.`
+  }];
+}
+function xe() {
+  let e = Ge.getUnbracketedIpv6InjectHostWarnings();
+  if (e.length === 0) return [];
+  return [{
+    issue: "Sandbox credential injectHosts entries can never match their destination",
+    fix: `Found: ${R6t(e)}. Credential injection matches the bare, canonically-compressed destination address exactly and ignores ports \u2014 rewrite each entry as that bare form (e.g. "::1", "2001:db8::1"). Bracketed, zone-id, or non-canonical IPv6 spellings never match, so the credential is never injected there.`
+  }];
+}
+async function ke() {
+  if (!K6() || !Ge.isPlatformInEnabledList() || !Ge.isSandboxEnabledInSettings()) return [];
+  let fix = await Iar();
+  return fix === void 0 ? [] : [{
+    issue: "The sandbox is turned on but can't start, because of the Windows Secondary Logon service",
+    fix: fix
+  }];
+}
+async function VAt({
+  probeKeychain = !1,
+  storageV5: storageV5
+} = {}) {
+  let installationType = await p5e(),
+    version = typeof {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    } < "u" && {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION ? `${{
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION}${UX()}` : "unknown",
+    installationPath = await re(),
+    invokedBinary = le(),
+    multipleInstallations = await ce(),
+    warnings = await de(installationType),
+    {
+      checkInstall: checkInstall
+    } = await import("B:/~BUN/root/chunk-c7gcdt6a.js");
+  for (let m of await checkInstall()) if (m.type === "error") warnings.push({
+    issue: m.message,
+    fix: "Run claude install to repair the installation."
+  });
+  if (warnings.push(...be()), warnings.push(...ye()), Ge.isSandboxingEnabled()) await Ge.checkDependenciesAsync();
+  let f = aJr();
+  if (f) warnings.push(f);
+  if (warnings.push(...xe()), warnings.push(...he()), warnings.push(...(await we())), warnings.push(...(await ke())), probeKeychain) {
+    let m = await me();
+    if (m) warnings.push(m);
+  }
+  if (installationType === "native") {
+    let m = multipleInstallations.filter(item => item.type === "npm-global" || item.type === "npm-global-orphan" || item.type === "npm-local"),
+      S = platform() === "windows";
+    for (let u of m) if (u.type === "npm-global") {
+      let C = "npm -g uninstall @anthropic-ai/claude-code";
+      if ({
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.319",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-11-05T18:14:18Z",
+        GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.PACKAGE_URL && {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.319",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-11-05T18:14:18Z",
+        GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.PACKAGE_URL !== "@anthropic-ai/claude-code") C += ` && npm -g uninstall ${{
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.319",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-11-05T18:14:18Z",
+        GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.PACKAGE_URL}`;
+      warnings.push({
+        issue: `Leftover npm global installation at ${u.path}`,
+        fix: `Run: ${C}`
+      });
+    } else if (u.type === "npm-global-orphan") warnings.push({
+      issue: `Orphaned npm global package at ${u.path}`,
+      fix: S ? `Run: rmdir /s /q "${u.path}"` : `Run: rm -rf ${u.path}`
+    });else if (u.type === "npm-local") warnings.push({
+      issue: `Leftover npm local installation at ${u.path}`,
+      fix: S ? `Run: rmdir /s /q "${u.path}"` : `Run: rm -rf ${u.path}`
+    });
+  }
+  let configInstallMethod = fe().installMethod || "not set",
+    hasUpdatePermissions = null;
+  if (installationType === "npm-global") {
+    if (hasUpdatePermissions = (await Vmi()).hasPermissions, !hasUpdatePermissions && !IVe()) warnings.push({
+      issue: "Can't auto-update: npm global folder isn't writable",
+      fix: "Run `claude install` to switch to the native installer (no sudo)\nOr reinstall with a sudo-free npm (e.g. via nvm)\nOr `npm config set prefix ~/.npm-global`, add ~/.npm-global/bin to PATH, then reinstall"
+    });
+  }
+  let w = xFi(),
+    ripgrepStatus = {
+      working: w.working ?? !0,
+      mode: w.mode,
+      systemPath: w.mode === "system" ? w.path : null
+    },
+    packageManager = installationType === "package-manager" ? await f5e() : void 0,
+    lastUpdateResult = await iJr(storageV5);
+  return {
+    installationType: installationType,
+    version: version,
+    installationPath: installationPath,
+    invokedBinary: invokedBinary,
+    configInstallMethod: configInstallMethod,
+    autoUpdates: (() => {
+      let m = IVe();
+      return m ? `disabled (${W1n(m)})` : "enabled";
+    })(),
+    hasUpdatePermissions: hasUpdatePermissions,
+    lastUpdateResult: lastUpdateResult,
+    multipleInstallations: multipleInstallations,
+    warnings: warnings,
+    packageManager: packageManager,
+    ripgrepStatus: ripgrepStatus
+  };
+}
+export { zlt, iJr, Par, GAt, f5e, X7o, p5e, VAt };

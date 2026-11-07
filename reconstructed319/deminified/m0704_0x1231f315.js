@@ -1,0 +1,154 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { De } from "B:/~BUN/root/chunk-vz9zea4j.js";
+import { l } from "B:/~BUN/root/chunk-mb9chr1y.js";
+import { g, c } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import { t } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { my, EI, Uk, Yb, ml, hZ } from "B:/~BUN/root/chunk-4vcs773m.js";
+import { Jt, ve, j } from "B:/~BUN/root/chunk-czy5r8bc.js";
+j();
+async function ozr(e) {
+  let s = !1,
+    i = await EI(void 0, e, () => {
+      s = !0;
+    });
+  return s ? null : i;
+}
+var h = 120000,
+  f = 1800000,
+  p = 1e4,
+  m = 3;
+function S(e) {
+  return !w5n(e) && e.tempo === "blocked" && e.needs !== Uk;
+}
+function w5n(e) {
+  return ml(e) && !(Yb(e.state) === "success" && hZ(e));
+}
+class Zot {
+  #p;
+  #g;
+  #s = void 0;
+  #m = De();
+  #h = 0;
+  #n = !1;
+  #u = !0;
+  #o = null;
+  #e = null;
+  #d = !1;
+  #t = 0;
+  #i = null;
+  #l = 0;
+  #S;
+  constructor(e) {
+    this.#p = e?.sweepMs ?? p, this.#g = e?.ignoredAfterMs ?? f;
+    let s = e?.storageV5;
+    this.#S = () => ozr(s);
+  }
+  getSnapshot = () => this.#s;
+  subscribe = e => {
+    let s = this.#m.subscribe(e);
+    if (this.#h++, !this.#n) if (this.#n = !0, this.#s === void 0) this.#r();else this.#f();
+    let i = !1;
+    return () => {
+      if (i) return;
+      if (i = !0, s(), this.#h--, this.#h === 0) this.#N();
+    };
+  };
+  refetch = () => this.#r();
+  async quiesce() {
+    while (this.#e) await this.#e;
+  }
+  setFocused(e) {
+    if (e === this.#u) return;
+    if (this.#u = e, !this.#n) return;
+    if (e) this.#l = 0, this.#r();else this.#a();
+  }
+  recordOpenViaLeft() {
+    if (this.#c(), this.#t > 0 && Date.now() - this.#t <= h) g("fleet_needs_input_nudge"), this.#t = 0;
+    return this.#s;
+  }
+  #r() {
+    if (this.#a(), this.#e) return this.#d = !0, this.#e;
+    return this.#e = this.#b().finally(() => {
+      if (this.#e = null, this.#d) this.#d = !1, this.#r();
+    }), this.#e;
+  }
+  async #b() {
+    let e;
+    try {
+      e = await this.#S();
+    } catch {
+      e = [];
+    }
+    if (!this.#n) return;
+    if (e !== null) this.#l = 0;else if (++this.#l <= m) {
+      if (this.#l === 1) t("[fleet nudge] listing sessions failed for a reason that may pass; keeping the counts", {
+        level: "warn"
+      });
+      if (this.#u) this.#f();
+      return;
+    }
+    let s = e ?? [],
+      i = 0,
+      r = 0,
+      u = 0,
+      d = 0,
+      a = my();
+    for (let n of s) {
+      if (n.id === a) continue;
+      if (w5n(n.state)) {
+        if (r++, Yb(n.state.state) === "success") u++;
+        continue;
+      }
+      if (d++, S(n.state)) i++;
+    }
+    if (i === 0) this.#c(), this.#t = 0;
+    let o = this.#s;
+    if (o?.needsInput !== i || o?.done !== r || o?.succeeded !== u) {
+      let increased = o !== void 0 && i > o.needsInput;
+      if (this.#s = {
+        needsInput: i,
+        done: r,
+        succeeded: u
+      }, l("tengu_fleet_nudge_state", {
+        needs_input_count: i,
+        done_count: r,
+        succeeded_count: u,
+        increased: increased
+      }), increased) this.#t = Date.now(), this.#_();
+      this.#m.emit();
+    }
+    if (d > 0 && this.#u) this.#f();
+  }
+  #f() {
+    this.#a(), this.#o = setTimeout(() => void this.#r(), this.#p), this.#o.unref();
+  }
+  #_() {
+    this.#c(), this.#i = setTimeout(() => {
+      this.#i = null, c("fleet_needs_input_nudge", "ignored"), this.#t = 0;
+    }, this.#g), this.#i.unref();
+  }
+  #a() {
+    if (this.#o) clearTimeout(this.#o), this.#o = null;
+  }
+  #c() {
+    if (this.#i) clearTimeout(this.#i), this.#i = null;
+  }
+  #N() {
+    this.#a(), this.#d = !1, this.#n = !1;
+  }
+}
+function mha(e, storageV5) {
+  return e.fleetNudgeStore ??= new Zot({
+    storageV5: storageV5
+  }), e.fleetNudgeStore;
+}
+var k5n = Jt(null);
+function GGt() {
+  let e = ve(k5n);
+  if (!e) throw ReferenceError("useFleetNudgeStore cannot be called outside of a FleetNudgeStoreContext provider (mounted by <AppStateProvider />)");
+  return e;
+}
+export { ozr, w5n, Zot, mha, k5n, GGt };

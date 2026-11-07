@@ -1,0 +1,401 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import {
+  H
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  qe,
+  F
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  uKt,
+  fKt,
+  pKt,
+  HTt
+} from "B:/~BUN/root/chunk-pc91zyj7.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import "B:/~BUN/root/chunk-z6138ats.js";
+import "B:/~BUN/root/chunk-thn0wk2x.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import "B:/~BUN/root/chunk-j6pt0v41.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-t4qpmjt5.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import "B:/~BUN/root/chunk-sy1h8mf0.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-mb9chr1y.js";
+import "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-fkr27nhj.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import "B:/~BUN/root/chunk-1g25msn4.js";
+import "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import {
+  us
+} from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import {
+  SOe,
+  A7n
+} from "B:/~BUN/root/chunk-d0mxnbww.js";
+import {
+  rn
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-0s9zh2h6.js";
+import {
+  dQ,
+  AB
+} from "B:/~BUN/root/chunk-h434y56c.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import {
+  qF,
+  __
+} from "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+import {
+  M,
+  Rr
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+var U = M(function(Lo, j) {
+  j.exports = {
+    scan: {
+      hooks: ["session.start"],
+      calls: ["env.get", "settings.read"],
+      env: {
+        reads: ["CLAUDE_CODE_FORCE_TIP_ID", "USER_TYPE"],
+        writes: []
+      }
+    },
+    files: {}
+  }
+});
+var v = {};
+Rr(v, {
+  PLUGIN_DESCRIPTION: () => g,
+  PLUGIN_NAME: () => HTt,
+  default: () => v,
+  hostModuleOf: () => P,
+  hostSourcesOf: () => S,
+  isAvailable: () => y,
+  isOnByDefault: () => T,
+  registerPlugin: () => se,
+  sourcedTipOf: () => l,
+  tipHostOf: () => x
+});
+var u = {};
+Rr(u, {
+  COMMAND_CHECK_THREW_MESSAGE: () => R,
+  CONTENT_THREW_MESSAGE: () => N,
+  INTERNAL_USER_TYPE: () => A,
+  PICK_FAILED_MESSAGE: () => L,
+  RELEVANCE_THREW_MESSAGE: () => D,
+  contentSafe: () => h,
+  default: () => u,
+  isRelevantSafe: () => E,
+  pickGatesOf: () => w,
+  pickOf: () => _,
+  register: () => z,
+  registerHooks: () => C,
+  relevantTipsOf: () => k,
+  selectLongestUnshown: () => O,
+  showNextTip: () => G
+});
+var l = (e, o) => ({
+  id: e.id,
+  cooldownSessions: e.cooldownSessions,
+  ...e.maxLifetimeShows !== void 0 && {
+    maxLifetimeShows: e.maxLifetimeShows
+  },
+  ...e.priority !== void 0 && {
+    priority: e.priority
+  },
+  ...e.label !== void 0 && {
+    label: e.label
+  },
+  ...e.advertisedCommand !== void 0 && {
+    advertisedCommand: e.advertisedCommand
+  },
+  providerAgnostic: e.providerAgnostic === !0,
+  isRelevant: () => e.isRelevant(o),
+  content: () => e.content({
+    session: o.session,
+    theme: o.theme,
+    storageV5: o.storageV5
+  })
+});
+
+function S(e, o) {
+  let r = o.context(),
+    s = o.storageV5(),
+    f = new Map;
+
+  function m(i) {
+    for (let p of i) f.set(p.id, p);
+    return i
+  }
+  return {
+    candidates: async () => {
+      let {
+        getBuiltInTips: i,
+        tipSessionCaches: p
+      } = fKt();
+      return m([...i(), ...await p.of(e).getMarketplacePluginTips(r.storageV5)]).map((d) => l(d, r))
+    },
+    orgTips: async () => {
+      let {
+        tips: i,
+        trustedCount: p
+      } = await A7n(e);
+      return {
+        tips: m(i).map((d) => l(d, r)),
+        trustedCount: p
+      }
+    },
+    isDefaultSuppressed: () => SOe(),
+    isFirstPartyBackend: () => us(),
+    isCommandOffered: (i) => fKt().advertisedCommandIsOffered(i),
+    sessionsSinceShown: (i) => AB(i),
+    lifetimeShown: (i) => dQ(i),
+    hasFailed: (i) => fKt().tipSessionCaches.of(e).failedTipIds.has(i),
+    markFailed: (i) => {
+      fKt().tipSessionCaches.of(e).failedTipIds.add(i)
+    },
+    show: (i) => {
+      o.show(i)
+    },
+    record: (i) => {
+      let p = f.get(i);
+      if (p !== void 0) t(`tips plugin: showing spinner tip ${i}`), pKt(p, "spinner", s)
+    },
+    report: (i, p) => {
+      a(qe(F(i), p))
+    }
+  }
+}
+
+function x() {
+  let {
+    host: e
+  } = H();
+  return {
+    install: (o) => {
+      uKt.of(e).install((r) => {
+        o(S(e, r))
+      })
+    }
+  }
+}
+var P = (e) => ({
+  register: (o) => {
+    e.registerHooks(o, x())
+  }
+});
+var T = !1;
+var y = () => rn("tengu_tips_mod", T);
+var g = "Spinner tips as a plugin: the tip line under the spinner while Claude works, picked once a turn from the tips that fit the session";
+var R = "tip advertisedCommand check threw";
+var N = "tip content threw";
+var A = "ant";
+var L = "spinner tip failed";
+var D = "tip isRelevant threw";
+async function h(e, o) {
+  try {
+    return await o.content()
+  } catch (r) {
+    return e.markFailed(o.id), e.report(r, N), ""
+  }
+}
+async function E(e, o) {
+  if (!await q(e, o)) return !1;
+  try {
+    return await o.isRelevant()
+  } catch (s) {
+    return e.markFailed(o.id), e.report(s, D), !1
+  }
+}
+async function q(e, o) {
+  if (o.advertisedCommand === void 0) return !0;
+  try {
+    return await e.isCommandOffered(o.advertisedCommand)
+  } catch (r) {
+    return e.markFailed(o.id), e.report(r, R), !1
+  }
+}
+async function w(e) {
+  let o = await e.settings(),
+    s = await e.userType() === A ? await e.forcedTipId() : void 0;
+  return {
+    isEnabled: o.spinnerTipsEnabled !== !1,
+    forcedId: s === void 0 || s === "" ? void 0 : s
+  }
+}
+async function k(e, o) {
+  let r = await e.candidates(),
+    s = o === void 0 ? void 0 : r.find((n) => n.id === o);
+  if (s !== void 0) return [s];
+  let f = await e.orgTips(),
+    m = f.tips.filter((n) => e.sessionsSinceShown(n.id) >= n.cooldownSessions);
+  if (f.trustedCount > 0 && e.isDefaultSuppressed()) return m;
+  let i = r.filter((n) => !e.hasFailed(n.id)),
+    p = e.isFirstPartyBackend() ? i : i.filter((n) => n.providerAgnostic),
+    d = await Promise.all(p.map((n) => E(e, n)));
+  return [...p.filter((n, B) => d[B] === !0).filter((n) => e.sessionsSinceShown(n.id) >= n.cooldownSessions).filter((n) => n.maxLifetimeShows === void 0 || e.lifetimeShown(n.id) < n.maxLifetimeShows), ...m]
+}
+
+function O(e, o) {
+  if (o.length <= 1) return o[0];
+  return o.map((s) => ({
+    tip: s,
+    sessions: e.sessionsSinceShown(s.id)
+  })).toSorted((s, f) => s.sessions === f.sessions ? (f.tip.priority ?? 0) - (s.tip.priority ?? 0) : f.sessions - s.sessions)[0]?.tip
+}
+var _ = async (e, o) => o.isEnabled ? O(e, await k(e, o.forcedId)) : void 0;
+async function G(e, o) {
+  try {
+    let r = await _(e, await w(o)),
+      s = r === void 0 ? "" : await h(e, r);
+    if (r === void 0 || s === "") {
+      e.show(void 0);
+      return
+    }
+    e.show({
+      text: s,
+      label: r.label
+    }), e.record(r.id)
+  } catch (r) {
+    e.show(void 0), e.report(r, L)
+  }
+}
+
+function C(e, o) {
+  if (o === void 0) return;
+  e("session.start", (r, s, f) => {
+    if (s.isInteractive) o.install((m) => {
+      G(m, {
+        settings: () => r.settings.read(),
+        userType: () => r.env.get("USER_TYPE"),
+        forcedTipId: () => r.env.get("CLAUDE_CODE_FORCE_TIP_ID")
+      })
+    });
+    return f(s)
+  })
+}
+
+function z(e) {
+  C(e, void 0)
+}
+var se = () => __({
+  name: HTt,
+  description: g,
+  isAvailable: y,
+  hooksModule: qF(import.meta.dir, P(u), () => U())
+});
+export {
+  g as PLUGIN_DESCRIPTION, HTt as PLUGIN_NAME, v as
+  default, P as hostModuleOf, S as hostSourcesOf, y as isAvailable, T as isOnByDefault, se as registerPlugin, l as sourcedTipOf, x as tipHostOf
+};

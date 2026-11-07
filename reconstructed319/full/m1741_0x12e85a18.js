@@ -1,0 +1,1849 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import {
+  GIe
+} from "B:/~BUN/root/chunk-gvv6aaq0.js";
+import {
+  Zv,
+  wP
+} from "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import {
+  yY,
+  Mf,
+  gOo,
+  H
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  R,
+  d
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  S4e,
+  FE
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import {
+  t,
+  _,
+  ee
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import {
+  Yv
+} from "B:/~BUN/root/chunk-15vbkr6z.js";
+import {
+  Q,
+  Wn,
+  KHr
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import {
+  bi
+} from "B:/~BUN/root/chunk-jdtvghyw.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import {
+  JTt,
+  QTt,
+  Hhe
+} from "B:/~BUN/root/chunk-bq1zhyqz.js";
+import "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import "B:/~BUN/root/chunk-mb9chr1y.js";
+import "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-8f4z6bdn.js";
+import "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import "B:/~BUN/root/chunk-thn0wk2x.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import {
+  iv,
+  Dw
+} from "B:/~BUN/root/chunk-t4qpmjt5.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import {
+  Ow
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import {
+  at,
+  cc
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import {
+  Yt
+} from "B:/~BUN/root/chunk-9kvvd0hy.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-0s9zh2h6.js";
+import "B:/~BUN/root/chunk-yhafkw66.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-6v74v9ar.js";
+import "B:/~BUN/root/chunk-gnvjfqfc.js";
+import "B:/~BUN/root/chunk-5w7xhbnh.js";
+import "B:/~BUN/root/chunk-ckdgegnz.js";
+import "B:/~BUN/root/chunk-2392ztjf.js";
+import "B:/~BUN/root/chunk-teehnwdh.js";
+import "B:/~BUN/root/chunk-x4zqd4cy.js";
+import "B:/~BUN/root/chunk-17caj8fw.js";
+import "B:/~BUN/root/chunk-3kdxvefh.js";
+import "B:/~BUN/root/chunk-hhd7smkx.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import "B:/~BUN/root/chunk-kpr2et3s.js";
+import "B:/~BUN/root/chunk-thggwabf.js";
+import "B:/~BUN/root/chunk-z2c6k7e2.js";
+import "B:/~BUN/root/chunk-b5ry9py2.js";
+import "B:/~BUN/root/chunk-jxvayzd7.js";
+import {
+  SX
+} from "B:/~BUN/root/chunk-jbf2dde1.js";
+import "B:/~BUN/root/chunk-syedbbsr.js";
+import "B:/~BUN/root/chunk-5jbxkytw.js";
+import "B:/~BUN/root/chunk-bn4bjw9d.js";
+import "B:/~BUN/root/chunk-q8sf8fhe.js";
+import "B:/~BUN/root/chunk-dwg8my6z.js";
+import "B:/~BUN/root/chunk-qr2xxkqa.js";
+import "B:/~BUN/root/chunk-31b4g6te.js";
+import "B:/~BUN/root/chunk-qey16aan.js";
+import "B:/~BUN/root/chunk-crjx6seq.js";
+import "B:/~BUN/root/chunk-apgsnbqk.js";
+import "B:/~BUN/root/chunk-9957329g.js";
+import "B:/~BUN/root/chunk-bfwh5k9e.js";
+import "B:/~BUN/root/chunk-vxjrk7vf.js";
+import "B:/~BUN/root/chunk-eswth6m1.js";
+import "B:/~BUN/root/chunk-y5gyn2hc.js";
+import "B:/~BUN/root/chunk-gh4155re.js";
+import "B:/~BUN/root/chunk-sgy380eg.js";
+import "B:/~BUN/root/chunk-waswqpwd.js";
+import "B:/~BUN/root/chunk-p2ta953m.js";
+import "B:/~BUN/root/chunk-sc660841.js";
+import "B:/~BUN/root/chunk-chv9g988.js";
+import "B:/~BUN/root/chunk-dwbkkfd6.js";
+import "B:/~BUN/root/chunk-rmd6bs96.js";
+import "B:/~BUN/root/chunk-de98q5we.js";
+import "B:/~BUN/root/chunk-ddamx62b.js";
+import "B:/~BUN/root/chunk-wzeexm6f.js";
+import "B:/~BUN/root/chunk-c0m1y3zd.js";
+import "B:/~BUN/root/chunk-pnm80mz6.js";
+import "B:/~BUN/root/chunk-gr5se97s.js";
+import "B:/~BUN/root/chunk-dsgmffrq.js";
+import "B:/~BUN/root/chunk-emd6eb45.js";
+import "B:/~BUN/root/chunk-y781qzhe.js";
+import "B:/~BUN/root/chunk-cacx0j4x.js";
+import "B:/~BUN/root/chunk-cpzw87wr.js";
+import "B:/~BUN/root/chunk-7g0t7h3t.js";
+import "B:/~BUN/root/chunk-fnf5t6te.js";
+import "B:/~BUN/root/chunk-qk8tvzkn.js";
+import "B:/~BUN/root/chunk-q793s85g.js";
+import "B:/~BUN/root/chunk-c1v460b9.js";
+import "B:/~BUN/root/chunk-hh79wmvd.js";
+import "B:/~BUN/root/chunk-xt7xbt1n.js";
+import "B:/~BUN/root/chunk-68y6snsb.js";
+import "B:/~BUN/root/chunk-qdyt0gq6.js";
+import "B:/~BUN/root/chunk-tmdrwqnv.js";
+import "B:/~BUN/root/chunk-9ezywpz7.js";
+import "B:/~BUN/root/chunk-dw9hahea.js";
+import "B:/~BUN/root/chunk-e8znf4zw.js";
+import "B:/~BUN/root/chunk-n8t98fhm.js";
+import "B:/~BUN/root/chunk-v95bwhaa.js";
+import "B:/~BUN/root/chunk-tzwf3sbj.js";
+import {
+  hg
+} from "B:/~BUN/root/chunk-2htsebsg.js";
+import {
+  Xb
+} from "B:/~BUN/root/chunk-7vfy9z2g.js";
+import "B:/~BUN/root/chunk-cync0e08.js";
+import "B:/~BUN/root/chunk-z8bb1299.js";
+import "B:/~BUN/root/chunk-npkbazqf.js";
+import "B:/~BUN/root/chunk-wt8tyqt4.js";
+import "B:/~BUN/root/chunk-j6ahtce9.js";
+import {
+  pQe,
+  Mnn
+} from "B:/~BUN/root/chunk-7pxn9dsp.js";
+import "B:/~BUN/root/chunk-n0v0c6zt.js";
+import "B:/~BUN/root/chunk-2x2z0t2k.js";
+import "B:/~BUN/root/chunk-42915bn6.js";
+import "B:/~BUN/root/chunk-vk5b2c7t.js";
+import "B:/~BUN/root/chunk-tjfmeakx.js";
+import "B:/~BUN/root/chunk-076mmgjt.js";
+import "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  OW
+} from "B:/~BUN/root/chunk-cxcakgnv.js";
+import "B:/~BUN/root/chunk-39zyvd3e.js";
+import "B:/~BUN/root/chunk-wxhfn3za.js";
+import "B:/~BUN/root/chunk-pdtjaehv.js";
+import "B:/~BUN/root/chunk-x6frvp1m.js";
+import "B:/~BUN/root/chunk-eds8xkh8.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import "B:/~BUN/root/chunk-9t9ygsbp.js";
+import "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import "B:/~BUN/root/chunk-6j3fjnhn.js";
+import "B:/~BUN/root/chunk-hvykkx00.js";
+import "B:/~BUN/root/chunk-f0zgv0ya.js";
+import "B:/~BUN/root/chunk-22y97556.js";
+import {
+  se
+} from "B:/~BUN/root/chunk-9bs2y8fc.js";
+import {
+  To
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import "B:/~BUN/root/chunk-4tp5kqnx.js";
+import "B:/~BUN/root/chunk-nwv7r07s.js";
+import "B:/~BUN/root/chunk-78494p3w.js";
+import "B:/~BUN/root/chunk-gezr7m08.js";
+import {
+  aO
+} from "B:/~BUN/root/chunk-tdekz3md.js";
+import "B:/~BUN/root/chunk-ke150ry1.js";
+import "B:/~BUN/root/chunk-wss0tnsx.js";
+import "B:/~BUN/root/chunk-vzhm698f.js";
+import "B:/~BUN/root/chunk-4xvtrfzh.js";
+import "B:/~BUN/root/chunk-jh04j3yr.js";
+import "B:/~BUN/root/chunk-v29ccgfa.js";
+import "B:/~BUN/root/chunk-detjgwj4.js";
+import "B:/~BUN/root/chunk-knfpag6d.js";
+import "B:/~BUN/root/chunk-hr1m6fe3.js";
+import "B:/~BUN/root/chunk-cvaa202c.js";
+import "B:/~BUN/root/chunk-2r9r3hfm.js";
+import "B:/~BUN/root/chunk-rv3pfsrw.js";
+import "B:/~BUN/root/chunk-8qv1t8b3.js";
+import "B:/~BUN/root/chunk-b7bhhce8.js";
+import "B:/~BUN/root/chunk-s89g0dw7.js";
+import "B:/~BUN/root/chunk-dcmvdxnm.js";
+import "B:/~BUN/root/chunk-psjm1gcn.js";
+import {
+  VB,
+  Dfr,
+  an,
+  h2,
+  wm
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import "B:/~BUN/root/chunk-eak7wp7z.js";
+import "B:/~BUN/root/chunk-mbh2s41k.js";
+import "B:/~BUN/root/chunk-sjvfcp1z.js";
+import "B:/~BUN/root/chunk-s9vv4h32.js";
+import "B:/~BUN/root/chunk-7thhw21a.js";
+import "B:/~BUN/root/chunk-wm0axmjp.js";
+import "B:/~BUN/root/chunk-1012essb.js";
+import "B:/~BUN/root/chunk-kfm993xq.js";
+import "B:/~BUN/root/chunk-x9bz04wf.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import "B:/~BUN/root/chunk-z7bs0q82.js";
+import "B:/~BUN/root/chunk-5g1gmfkv.js";
+import "B:/~BUN/root/chunk-xgwmwbnb.js";
+import "B:/~BUN/root/chunk-pw7914mv.js";
+import "B:/~BUN/root/chunk-hjds4dtx.js";
+import "B:/~BUN/root/chunk-sx264pby.js";
+import "B:/~BUN/root/chunk-cj2cn5y2.js";
+import "B:/~BUN/root/chunk-6bx54the.js";
+import "B:/~BUN/root/chunk-7rwbs73j.js";
+import "B:/~BUN/root/chunk-m1v50w96.js";
+import "B:/~BUN/root/chunk-yg4ttpr7.js";
+import "B:/~BUN/root/chunk-6h5p2dxf.js";
+import "B:/~BUN/root/chunk-tdg0k3wq.js";
+import "B:/~BUN/root/chunk-n98vg3jf.js";
+import "B:/~BUN/root/chunk-838fxqce.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-2gz7xsvb.js";
+import "B:/~BUN/root/chunk-02j0cm13.js";
+import "B:/~BUN/root/chunk-0s00dkj6.js";
+import "B:/~BUN/root/chunk-hevmq1yj.js";
+import "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-0aq7t0nw.js";
+import "B:/~BUN/root/chunk-ajvcvya3.js";
+import "B:/~BUN/root/chunk-63btkzab.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-vke7wtay.js";
+import "B:/~BUN/root/chunk-6g8w5kyh.js";
+import "B:/~BUN/root/chunk-jmt91fq8.js";
+import "B:/~BUN/root/chunk-5x4j33v9.js";
+import "B:/~BUN/root/chunk-m8dg5txf.js";
+import "B:/~BUN/root/chunk-ekqreyhv.js";
+import "B:/~BUN/root/chunk-mf9c9p38.js";
+import "B:/~BUN/root/chunk-875j4y83.js";
+import "B:/~BUN/root/chunk-t4pbv0np.js";
+import "B:/~BUN/root/chunk-xfqs9tac.js";
+import "B:/~BUN/root/chunk-vmp6vbba.js";
+import "B:/~BUN/root/chunk-dxwyqd26.js";
+import "B:/~BUN/root/chunk-k5mszhcg.js";
+import "B:/~BUN/root/chunk-z4janqzm.js";
+import "B:/~BUN/root/chunk-zymc6pem.js";
+import "B:/~BUN/root/chunk-mjgazsjk.js";
+import "B:/~BUN/root/chunk-2f6ykbbh.js";
+import "B:/~BUN/root/chunk-ghar8fn5.js";
+import "B:/~BUN/root/chunk-8cgm9m8p.js";
+import "B:/~BUN/root/chunk-5gm1xyqv.js";
+import "B:/~BUN/root/chunk-rpagz3p9.js";
+import "B:/~BUN/root/chunk-rzc1dapy.js";
+import "B:/~BUN/root/chunk-hh77nseb.js";
+import "B:/~BUN/root/chunk-7pj7keyk.js";
+import "B:/~BUN/root/chunk-vs3bcjd7.js";
+import "B:/~BUN/root/chunk-pmr34yc8.js";
+import "B:/~BUN/root/chunk-mwy4xyee.js";
+import "B:/~BUN/root/chunk-ajpcs9fs.js";
+import "B:/~BUN/root/chunk-gq4ywexf.js";
+import "B:/~BUN/root/chunk-rhdsefgz.js";
+import {
+  mq
+} from "B:/~BUN/root/chunk-2fedt3ag.js";
+import "B:/~BUN/root/chunk-kexqfgtm.js";
+import "B:/~BUN/root/chunk-5bb21frh.js";
+import "B:/~BUN/root/chunk-vp8vb7t8.js";
+import "B:/~BUN/root/chunk-xkw95p5n.js";
+import "B:/~BUN/root/chunk-sa4785jr.js";
+import "B:/~BUN/root/chunk-nk59bmc9.js";
+import "B:/~BUN/root/chunk-n7ta2s3w.js";
+import "B:/~BUN/root/chunk-65j4e9bn.js";
+import "B:/~BUN/root/chunk-ex2shtaj.js";
+import "B:/~BUN/root/chunk-64qg3pvz.js";
+import "B:/~BUN/root/chunk-jv4ech2n.js";
+import "B:/~BUN/root/chunk-5fdpyc78.js";
+import "B:/~BUN/root/chunk-ybkgfvgz.js";
+import "B:/~BUN/root/chunk-gknte1ng.js";
+import "B:/~BUN/root/chunk-4tz0m6qq.js";
+import "B:/~BUN/root/chunk-3qkmk2e4.js";
+import "B:/~BUN/root/chunk-b3jc87kv.js";
+import "B:/~BUN/root/chunk-11wz0rq6.js";
+import "B:/~BUN/root/chunk-vy4t7613.js";
+import "B:/~BUN/root/chunk-kfnabvp7.js";
+import "B:/~BUN/root/chunk-jj9s326a.js";
+import "B:/~BUN/root/chunk-p8dysp9f.js";
+import "B:/~BUN/root/chunk-5m83sh3a.js";
+import "B:/~BUN/root/chunk-pm850sj6.js";
+import "B:/~BUN/root/chunk-c86vwcts.js";
+import "B:/~BUN/root/chunk-6sbka0ts.js";
+import "B:/~BUN/root/chunk-05q1awc0.js";
+import "B:/~BUN/root/chunk-k5xd4a86.js";
+import "B:/~BUN/root/chunk-98qgaht2.js";
+import "B:/~BUN/root/chunk-r1gg0qbg.js";
+import "B:/~BUN/root/chunk-rc0vwsyy.js";
+import "B:/~BUN/root/chunk-w0kge9aq.js";
+import "B:/~BUN/root/chunk-ysxmr1nk.js";
+import "B:/~BUN/root/chunk-8rnfdnh3.js";
+import "B:/~BUN/root/chunk-7wcc5pbk.js";
+import "B:/~BUN/root/chunk-kk81ayzj.js";
+import "B:/~BUN/root/chunk-400x0tcq.js";
+import "B:/~BUN/root/chunk-1tbewxs3.js";
+import "B:/~BUN/root/chunk-rrf8gvt4.js";
+import "B:/~BUN/root/chunk-ftj46fnn.js";
+import "B:/~BUN/root/chunk-45td50dx.js";
+import "B:/~BUN/root/chunk-3vrk9h6f.js";
+import "B:/~BUN/root/chunk-0xtfwyhv.js";
+import "B:/~BUN/root/chunk-h6zqt1s4.js";
+import "B:/~BUN/root/chunk-jmka9ye7.js";
+import "B:/~BUN/root/chunk-fc7k1zas.js";
+import "B:/~BUN/root/chunk-nw79m6g4.js";
+import "B:/~BUN/root/chunk-4vcs773m.js";
+import "B:/~BUN/root/chunk-1ratk947.js";
+import "B:/~BUN/root/chunk-wznngf8b.js";
+import "B:/~BUN/root/chunk-2ys4h17s.js";
+import "B:/~BUN/root/chunk-wxztkjve.js";
+import "B:/~BUN/root/chunk-wjxjrbnh.js";
+import "B:/~BUN/root/chunk-yrh147c7.js";
+import "B:/~BUN/root/chunk-taw9ve37.js";
+import "B:/~BUN/root/chunk-vyjvp8sa.js";
+import "B:/~BUN/root/chunk-jypg1bby.js";
+import "B:/~BUN/root/chunk-w0nyevkg.js";
+import "B:/~BUN/root/chunk-z5apdcem.js";
+import "B:/~BUN/root/chunk-d5rmf5x5.js";
+import "B:/~BUN/root/chunk-8x466dw5.js";
+import "B:/~BUN/root/chunk-cejfpzdt.js";
+import "B:/~BUN/root/chunk-0q69tvcp.js";
+import "B:/~BUN/root/chunk-0jhmwh3q.js";
+import "B:/~BUN/root/chunk-j3efez3c.js";
+import "B:/~BUN/root/chunk-6cgv9p77.js";
+import "B:/~BUN/root/chunk-9ajgj3y1.js";
+import "B:/~BUN/root/chunk-pjcve3z9.js";
+import "B:/~BUN/root/chunk-cjmntjcn.js";
+import "B:/~BUN/root/chunk-43aygqej.js";
+import "B:/~BUN/root/chunk-y7em5h10.js";
+import "B:/~BUN/root/chunk-tmn2g637.js";
+import "B:/~BUN/root/chunk-mjx3yttm.js";
+import "B:/~BUN/root/chunk-wdfwarp2.js";
+import "B:/~BUN/root/chunk-0ypwt1ew.js";
+import "B:/~BUN/root/chunk-3eq12f11.js";
+import "B:/~BUN/root/chunk-mcdkvptw.js";
+import "B:/~BUN/root/chunk-q2s07yzr.js";
+import "B:/~BUN/root/chunk-3aa152x8.js";
+import "B:/~BUN/root/chunk-ymawhbhz.js";
+import "B:/~BUN/root/chunk-rbfkfjk4.js";
+import "B:/~BUN/root/chunk-az0cmmyt.js";
+import "B:/~BUN/root/chunk-bw0w9zyr.js";
+import "B:/~BUN/root/chunk-hydnwtf3.js";
+import "B:/~BUN/root/chunk-15eyam7k.js";
+import "B:/~BUN/root/chunk-ynneeax2.js";
+import "B:/~BUN/root/chunk-4ffx6rrs.js";
+import "B:/~BUN/root/chunk-8ytf4evt.js";
+import "B:/~BUN/root/chunk-33ssadqt.js";
+import "B:/~BUN/root/chunk-trf406sb.js";
+import "B:/~BUN/root/chunk-4zhce32x.js";
+import "B:/~BUN/root/chunk-bsbbs1xs.js";
+import "B:/~BUN/root/chunk-mq0pq26y.js";
+import "B:/~BUN/root/chunk-dgbjmrqs.js";
+import "B:/~BUN/root/chunk-h37egt7q.js";
+import "B:/~BUN/root/chunk-yd5nr5hc.js";
+import "B:/~BUN/root/chunk-hfz1e87n.js";
+import "B:/~BUN/root/chunk-x2k0mb6b.js";
+import "B:/~BUN/root/chunk-bvcekd4j.js";
+import "B:/~BUN/root/chunk-6651s0bp.js";
+import "B:/~BUN/root/chunk-fh7pby6f.js";
+import "B:/~BUN/root/chunk-bdxfgzxk.js";
+import "B:/~BUN/root/chunk-9yf7mr11.js";
+import "B:/~BUN/root/chunk-7qzy1jjf.js";
+import "B:/~BUN/root/chunk-h0jtmv4t.js";
+import "B:/~BUN/root/chunk-58807hdh.js";
+import "B:/~BUN/root/chunk-5yr8g0ct.js";
+import {
+  T1r
+} from "B:/~BUN/root/chunk-30084gdg.js";
+import "B:/~BUN/root/chunk-ms3wcznz.js";
+import "B:/~BUN/root/chunk-ra105wwp.js";
+import {
+  SB
+} from "B:/~BUN/root/chunk-vsw8ycmm.js";
+import "B:/~BUN/root/chunk-xfh9db72.js";
+import "B:/~BUN/root/chunk-19gzc7zs.js";
+import "B:/~BUN/root/chunk-vz5vt69h.js";
+import "B:/~BUN/root/chunk-r92qsn81.js";
+import "B:/~BUN/root/chunk-h29xff1x.js";
+import "B:/~BUN/root/chunk-jcqwjvc4.js";
+import "B:/~BUN/root/chunk-xa7ng0zm.js";
+import "B:/~BUN/root/chunk-7fz5xawt.js";
+import "B:/~BUN/root/chunk-pcg5y2vq.js";
+import "B:/~BUN/root/chunk-dtdkznj3.js";
+import "B:/~BUN/root/chunk-5a1d0ksr.js";
+import "B:/~BUN/root/chunk-fnfdeqaa.js";
+import "B:/~BUN/root/chunk-p8dmgxyc.js";
+import "B:/~BUN/root/chunk-w5e3m3tb.js";
+import "B:/~BUN/root/chunk-t7h5ha99.js";
+import {
+  yhe
+} from "B:/~BUN/root/chunk-dzqzc2ax.js";
+import "B:/~BUN/root/chunk-dwxvvg5v.js";
+import "B:/~BUN/root/chunk-ht41bmdt.js";
+import "B:/~BUN/root/chunk-z6x3rhe7.js";
+import "B:/~BUN/root/chunk-az86sdh0.js";
+import "B:/~BUN/root/chunk-gjq813eb.js";
+import "B:/~BUN/root/chunk-eahns82c.js";
+import "B:/~BUN/root/chunk-61tvx6vn.js";
+import "B:/~BUN/root/chunk-eqb5w0h9.js";
+import "B:/~BUN/root/chunk-x12sgt91.js";
+import "B:/~BUN/root/chunk-3kg80bh2.js";
+import "B:/~BUN/root/chunk-a3hxbzwy.js";
+import "B:/~BUN/root/chunk-yhn9dxgz.js";
+import "B:/~BUN/root/chunk-t94jahzz.js";
+import {
+  eCt
+} from "B:/~BUN/root/chunk-dsf173dz.js";
+import {
+  c8
+} from "B:/~BUN/root/chunk-zk8rd694.js";
+import "B:/~BUN/root/chunk-bjs1wgty.js";
+import "B:/~BUN/root/chunk-y68gsn7d.js";
+import "B:/~BUN/root/chunk-2pgxjz0y.js";
+import "B:/~BUN/root/chunk-165gnw4r.js";
+import "B:/~BUN/root/chunk-f444brrr.js";
+import "B:/~BUN/root/chunk-zkjxrhgg.js";
+import "B:/~BUN/root/chunk-hc4mkn8m.js";
+import {
+  vn
+} from "B:/~BUN/root/chunk-wd9jb4af.js";
+import "B:/~BUN/root/chunk-a2fp3xgm.js";
+import "B:/~BUN/root/chunk-w2rkhp43.js";
+import "B:/~BUN/root/chunk-jx2rmjhh.js";
+import "B:/~BUN/root/chunk-w3jccevj.js";
+import "B:/~BUN/root/chunk-28bb8488.js";
+import "B:/~BUN/root/chunk-9d0b66j5.js";
+import "B:/~BUN/root/chunk-sx03ea6s.js";
+import "B:/~BUN/root/chunk-81tfbmye.js";
+import "B:/~BUN/root/chunk-nyy541yq.js";
+import "B:/~BUN/root/chunk-12sstdsz.js";
+import {
+  TEt
+} from "B:/~BUN/root/chunk-1zre46ws.js";
+import "B:/~BUN/root/chunk-3vwcxp6n.js";
+import "B:/~BUN/root/chunk-j5m7a98b.js";
+import "B:/~BUN/root/chunk-4w2c6jye.js";
+import "B:/~BUN/root/chunk-5z7p4cv1.js";
+import "B:/~BUN/root/chunk-4z0wj4qn.js";
+import "B:/~BUN/root/chunk-25095ayp.js";
+import "B:/~BUN/root/chunk-af319kny.js";
+import "B:/~BUN/root/chunk-kvmw05zs.js";
+import "B:/~BUN/root/chunk-5pkj74mh.js";
+import "B:/~BUN/root/chunk-cnzwpxwc.js";
+import "B:/~BUN/root/chunk-d5s87fq7.js";
+import "B:/~BUN/root/chunk-wwrzj5mm.js";
+import "B:/~BUN/root/chunk-h9wnxe2b.js";
+import "B:/~BUN/root/chunk-tfgfye7t.js";
+import "B:/~BUN/root/chunk-gn3x9avq.js";
+import "B:/~BUN/root/chunk-ggpp2a6r.js";
+import "B:/~BUN/root/chunk-39etksx8.js";
+import "B:/~BUN/root/chunk-dy8hc4zf.js";
+import "B:/~BUN/root/chunk-zkczp8ny.js";
+import "B:/~BUN/root/chunk-qnah4hmf.js";
+import "B:/~BUN/root/chunk-qpgfy792.js";
+import "B:/~BUN/root/chunk-df199zqm.js";
+import "B:/~BUN/root/chunk-cre1tnba.js";
+import "B:/~BUN/root/chunk-23ewg8ga.js";
+import "B:/~BUN/root/chunk-rqt5v6pf.js";
+import "B:/~BUN/root/chunk-jydryja2.js";
+import "B:/~BUN/root/chunk-mhb4gvpw.js";
+import "B:/~BUN/root/chunk-hcxmn0z0.js";
+import "B:/~BUN/root/chunk-dq64svjd.js";
+import "B:/~BUN/root/chunk-3namn0f2.js";
+import "B:/~BUN/root/chunk-nm56k8cy.js";
+import "B:/~BUN/root/chunk-texv5y87.js";
+import "B:/~BUN/root/chunk-815nev8v.js";
+import "B:/~BUN/root/chunk-qed5a8pe.js";
+import "B:/~BUN/root/chunk-75wha2r5.js";
+import "B:/~BUN/root/chunk-hx5a1a0a.js";
+import {
+  ZCt
+} from "B:/~BUN/root/chunk-xa8mb85y.js";
+import "B:/~BUN/root/chunk-2nzy6mgc.js";
+import "B:/~BUN/root/chunk-7efca3s1.js";
+import "B:/~BUN/root/chunk-6dpcedmk.js";
+import "B:/~BUN/root/chunk-g5ztxne9.js";
+import "B:/~BUN/root/chunk-yjbw4jd5.js";
+import "B:/~BUN/root/chunk-a1wccacc.js";
+import {
+  Qnr
+} from "B:/~BUN/root/chunk-ekrezzcg.js";
+import "B:/~BUN/root/chunk-mwd1j0ax.js";
+import "B:/~BUN/root/chunk-dmmmg90e.js";
+import "B:/~BUN/root/chunk-vah5p5v2.js";
+import "B:/~BUN/root/chunk-kb3hq3bg.js";
+import "B:/~BUN/root/chunk-jzac91sc.js";
+import "B:/~BUN/root/chunk-m5r98b9b.js";
+import "B:/~BUN/root/chunk-1403xdv8.js";
+import "B:/~BUN/root/chunk-dt45jjk2.js";
+import "B:/~BUN/root/chunk-n7rjc97z.js";
+import "B:/~BUN/root/chunk-bwk2g6e0.js";
+import {
+  FP,
+  Vp
+} from "B:/~BUN/root/chunk-1b2nf93s.js";
+import "B:/~BUN/root/chunk-q7dbkm6t.js";
+import "B:/~BUN/root/chunk-pgm29tvd.js";
+import "B:/~BUN/root/chunk-992ex3nd.js";
+import "B:/~BUN/root/chunk-h2qbvrp4.js";
+import "B:/~BUN/root/chunk-0wyf4zb9.js";
+import "B:/~BUN/root/chunk-vxbt81wk.js";
+import "B:/~BUN/root/chunk-v04fapnf.js";
+import "B:/~BUN/root/chunk-rsz72fpd.js";
+import "B:/~BUN/root/chunk-69k97bnp.js";
+import "B:/~BUN/root/chunk-q82am8wz.js";
+import "B:/~BUN/root/chunk-spc3jrd3.js";
+import "B:/~BUN/root/chunk-kgvnwy91.js";
+import "B:/~BUN/root/chunk-p25ahy45.js";
+import "B:/~BUN/root/chunk-4xx5w1am.js";
+import "B:/~BUN/root/chunk-pgf3n8rv.js";
+import "B:/~BUN/root/chunk-stfp5qgr.js";
+import "B:/~BUN/root/chunk-az6xed3t.js";
+import "B:/~BUN/root/chunk-w179eqqe.js";
+import "B:/~BUN/root/chunk-p8898990.js";
+import "B:/~BUN/root/chunk-fkz77yzp.js";
+import "B:/~BUN/root/chunk-zy4xrndc.js";
+import "B:/~BUN/root/chunk-we53d1t3.js";
+import "B:/~BUN/root/chunk-1jrzd264.js";
+import "B:/~BUN/root/chunk-zz0hj0zg.js";
+import "B:/~BUN/root/chunk-md18120p.js";
+import {
+  qXe
+} from "B:/~BUN/root/chunk-zwf5p7y7.js";
+import "B:/~BUN/root/chunk-k3f9rj85.js";
+import "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-8zx74r55.js";
+import "B:/~BUN/root/chunk-xagk1yaq.js";
+import "B:/~BUN/root/chunk-zeshc0ep.js";
+import "B:/~BUN/root/chunk-vvwzzpy4.js";
+import "B:/~BUN/root/chunk-4hx27rd1.js";
+import "B:/~BUN/root/chunk-jjjspatt.js";
+import "B:/~BUN/root/chunk-6bss7gp5.js";
+import "B:/~BUN/root/chunk-h29cx855.js";
+import "B:/~BUN/root/chunk-yjr7e11x.js";
+import "B:/~BUN/root/chunk-tnfsxzpz.js";
+import "B:/~BUN/root/chunk-pp5rqp7s.js";
+import "B:/~BUN/root/chunk-ea8gze25.js";
+import "B:/~BUN/root/chunk-z1wt3cb2.js";
+import "B:/~BUN/root/chunk-cjd8dpgw.js";
+import "B:/~BUN/root/chunk-yscb2r3d.js";
+import "B:/~BUN/root/chunk-s20ae4sg.js";
+import "B:/~BUN/root/chunk-n3m61sfz.js";
+import "B:/~BUN/root/chunk-nk52yc3v.js";
+import "B:/~BUN/root/chunk-kt29vc17.js";
+import "B:/~BUN/root/chunk-a5dg1k4h.js";
+import "B:/~BUN/root/chunk-kj33sgq2.js";
+import "B:/~BUN/root/chunk-kh33ctc6.js";
+import "B:/~BUN/root/chunk-x6ny3ghw.js";
+import "B:/~BUN/root/chunk-0p5dw980.js";
+import "B:/~BUN/root/chunk-dx2wvwvf.js";
+import "B:/~BUN/root/chunk-fcp4egnh.js";
+import "B:/~BUN/root/chunk-frv0tk8w.js";
+import "B:/~BUN/root/chunk-ym6b88b3.js";
+import "B:/~BUN/root/chunk-zx0hhrva.js";
+import "B:/~BUN/root/chunk-s937snw9.js";
+import "B:/~BUN/root/chunk-j5zjtxy5.js";
+import "B:/~BUN/root/chunk-vdqpev1m.js";
+import "B:/~BUN/root/chunk-kd0f2gn5.js";
+import "B:/~BUN/root/chunk-ymgf3kpk.js";
+import "B:/~BUN/root/chunk-dzjj3jwh.js";
+import {
+  $x,
+  _E
+} from "B:/~BUN/root/chunk-xbhv3nhf.js";
+import "B:/~BUN/root/chunk-21s8ygah.js";
+import "B:/~BUN/root/chunk-e99p2x0p.js";
+import "B:/~BUN/root/chunk-36r971cb.js";
+import "B:/~BUN/root/chunk-ynpwd78y.js";
+import "B:/~BUN/root/chunk-eyvtcj15.js";
+import "B:/~BUN/root/chunk-r6enj9cw.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import "B:/~BUN/root/chunk-r2kdqtaa.js";
+import "B:/~BUN/root/chunk-j0enspnr.js";
+import "B:/~BUN/root/chunk-xr3thd43.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-62khcyrb.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import "B:/~BUN/root/chunk-4jfmvmew.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-cbv74thb.js";
+import "B:/~BUN/root/chunk-dc99dkg2.js";
+import "B:/~BUN/root/chunk-b37tyqej.js";
+import "B:/~BUN/root/chunk-dqan51g7.js";
+import "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-z35xf1k7.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import {
+  Ca
+} from "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import {
+  o,
+  E,
+  oe,
+  C,
+  u
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  mkdir as rt,
+  readFile as mt,
+  stat as xt,
+  writeFile as Et
+} from "fs/promises";
+import {
+  basename as wt,
+  dirname as Pt,
+  join as Z
+} from "path";
+var ct = "5f3a2c5e-6b8f-4b27-9c0e-2d7f1a9b3c44",
+  St = /^[a-zA-Z0-9_-]+$/,
+  Ft = /\.(mp3|m4a|mp4|wav|ogg|oga|opus|flac|aac|webm)$/i;
+
+function tt(e) {
+  return C(oe()).catch([]).transform((n) => n.flatMap((s) => {
+    let r = e.safeParse(s);
+    return r.success ? [r.data] : []
+  }))
+}
+var F = p(() => o().optional().catch(void 0)),
+  Tt = p(() => u({
+    file_uuid: o(),
+    file_name: F()
+  })),
+  zt = p(() => u({
+    id: F(),
+    command: F(),
+    content: F(),
+    old_str: F(),
+    new_str: F(),
+    title: F(),
+    type: F(),
+    language: F(),
+    path: F(),
+    file_text: F()
+  }).optional().catch(void 0)),
+  Nt = p(() => u({
+    uuid: o(),
+    parent_message_uuid: o().nullish().catch(null),
+    sender: o().catch("assistant"),
+    text: o().catch(""),
+    content: tt(u({
+      type: o(),
+      text: F(),
+      name: F(),
+      server_name: F(),
+      input: zt()
+    })),
+    created_at: o().catch(""),
+    attachments: tt(u({
+      file_name: o().catch(""),
+      extracted_content: o()
+    })),
+    files: tt(Tt())
+  })),
+  Ut = p(() => u({
+    uuid: o(),
+    name: o().catch(""),
+    created_at: F(),
+    updated_at: F(),
+    project_uuid: o().nullish().catch(null),
+    chat_messages: tt(Nt())
+  })),
+  $t = p(() => u({
+    uuid: o(),
+    name: o().catch(""),
+    prompt_template: F(),
+    docs: tt(u({
+      filename: F(),
+      content: o()
+    })),
+    files: tt(Tt())
+  })),
+  gt = p(() => u({
+    manifest: oe().optional(),
+    conversations: tt(Ut()),
+    projects: tt($t())
+  }).catch({
+    manifest: void 0,
+    conversations: [],
+    projects: []
+  })),
+  Lt = p(() => u({
+    account_uuid: o().catch("unknown"),
+    conversations: C(u({
+      uuid: o().catch(""),
+      message_count: E()
+    })),
+    projects: C(u({
+      uuid: o().catch(""),
+      doc_count: E()
+    }))
+  }));
+
+function ft(e) {
+  return e.replace(/[^a-zA-Z0-9._-]+/g, "_")
+}
+
+function ut(e) {
+  return ft(e).slice(0, 128) || "file"
+}
+
+function lt(e) {
+  let n = To(e).replace(S4e, "");
+  return n === "claude.md" || n === "claude.local.md" || n === "architecture.md" || n === ".git" || n === "project-instructions.md" || n.startsWith(".claude") || Qnr.has(n) || n === ".windsurfrules" || n === ".clinerules" || n === ".gemini" || n === ".cursor" || SX.has(n) || n === ".worktreeinclude" || FE(n) ? `imported-${e}` : e
+}
+
+function Rt(e, n) {
+  return typeof n === "string" && n !== "" ? `${e}-${ut(n)}` : e
+}
+async function it(e, n) {
+  return Et(e, n, {
+    mode: 384,
+    flag: "wx"
+  }).then(() => !0, (s) => {
+    if (s.code !== "EEXIST") throw s;
+    return !1
+  })
+}
+async function Dt(e, n) {
+  if (n) return;
+  await rt(e, {
+    recursive: !0,
+    mode: 448
+  })
+}
+async function vt(e, n) {
+  if (n) {
+    let s = await n.backend.statMeta(n.key);
+    return s.ok || s.error.code !== "NotFound"
+  }
+  return xt(e).then(() => !0, () => !1)
+}
+async function Bt(e, n, s) {
+  if (s && n.length > 0) {
+    if (await vt(e, s)) return !1;
+    let c = await s.backend.append(s.key, n.map((g) => ({
+      data: _(g) + `
+`
+    })));
+    if (c.ok) return !0;
+    throw Object.assign(new R(`transcript import append failed: ${c.error.code}`, "transcript import append failed"), {
+      cause: c.error
+    })
+  }
+  if (s) await rt(Pt(e), {
+    recursive: !0,
+    mode: 448
+  });
+  let r = n.map((c) => _(c)).join(`
+`) + (n.length ? `
+` : "");
+  return Et(e, r, {
+    mode: 384,
+    flag: "wx"
+  }).then(() => !0, (c) => {
+    if (c.code !== "EEXIST") throw c;
+    return !1
+  })
+}
+
+function bt(e) {
+  return e.content.find((n) => n.type === "text" && n.text !== void 0)?.text ?? e.text
+}
+
+function Wt(e, n) {
+  let s = bt(e),
+    r = e.attachments.map((g) => `
+
+<file name="${g.file_name}">
+${g.extracted_content}
+</file>`).join("");
+  return (n.length > 0 ? `${n.join(`
+`)}
+` : "") + s + r
+}
+var Gt = "artifacts",
+  ht = "create_file",
+  _t = "str_replace",
+  Xt = 1000,
+  pt = 67108864,
+  Ht = 4 * pt,
+  qt = 4096,
+  Zt = 64,
+  Jt = 100,
+  Vt = 200,
+  jt = 64;
+
+function Qt(e, n, s) {
+  if (s === void 0) return;
+  if (e === void 0) return s;
+  if (n === void 0) return;
+  let r = e.includes(n) ? n : n.trim();
+  if (r === "") return;
+  return e.replace(r, () => s)
+}
+
+function Kt(e, n, s) {
+  if (e === void 0 || n === void 0 || n === "") return;
+  let r = e.indexOf(n);
+  if (r === -1 || e.indexOf(n, r + n.length) !== -1) return;
+  return e.slice(0, r) + (s ?? "") + e.slice(r + n.length)
+}
+var Mt = new Map(Object.entries({
+    python: ".py",
+    py: ".py",
+    javascript: ".js",
+    js: ".js",
+    typescript: ".ts",
+    ts: ".ts",
+    jsx: ".jsx",
+    tsx: ".tsx",
+    html: ".html",
+    css: ".css",
+    json: ".json",
+    yaml: ".yaml",
+    yml: ".yml",
+    toml: ".toml",
+    xml: ".xml",
+    markdown: ".md",
+    md: ".md",
+    bash: ".sh",
+    sh: ".sh",
+    shell: ".sh",
+    sql: ".sql",
+    java: ".java",
+    c: ".c",
+    cpp: ".cpp",
+    "c++": ".cpp",
+    csharp: ".cs",
+    "c#": ".cs",
+    go: ".go",
+    rust: ".rs",
+    ruby: ".rb",
+    php: ".php",
+    swift: ".swift",
+    kotlin: ".kt",
+    r: ".r",
+    svg: ".svg",
+    mermaid: ".mmd"
+  })),
+  te = new Set([...Mt.values(), ".txt", ".csv", ".tsv", ".log"]);
+
+function ne(e, n) {
+  switch (e) {
+    case "text/html":
+      return ".html";
+    case "application/vnd.ant.react":
+      return ".jsx";
+    case "text/markdown":
+      return ".md";
+    case "image/svg+xml":
+      return ".svg";
+    case "application/vnd.ant.mermaid":
+      return ".mmd";
+    case "application/vnd.ant.code":
+      return Mt.get(n.trim().toLowerCase()) ?? ".txt";
+    default:
+      return ".txt"
+  }
+}
+
+function kt(e) {
+  let n = e.lastIndexOf(".");
+  return n > 0 && n < e.length - 1 ? {
+    stem: e.slice(0, n),
+    extension: e.slice(n)
+  } : {
+    stem: e,
+    extension: ""
+  }
+}
+
+function ie(e) {
+  let n = e.title.replace(S4e, ""),
+    {
+      stem: s,
+      extension: r
+    } = e.kind === "file" ? kt(n) : {
+      stem: n,
+      extension: ne(e.type, e.language)
+    };
+  if (e.kind === "file") {
+    if (r = ft(r), !te.has(r.toLowerCase())) s += r, r = r === "" ? "" : ".txt"
+  } else if (s.length > r.length && s.toLowerCase().endsWith(r)) s = s.slice(0, -r.length);
+  return s = ut(s).replace(/^\.+/, "").replace(S4e, ""), {
+    stem: /[a-zA-Z0-9]/.test(s) ? s : e.kind,
+    extension: r
+  }
+}
+
+function re(e, n) {
+  switch (e) {
+    case "text/markdown":
+      return;
+    case "application/vnd.ant.code":
+      return Q(n.trim(), jt);
+    case "text/html":
+      return "html";
+    case "application/vnd.ant.react":
+      return "jsx";
+    case "image/svg+xml":
+      return "svg";
+    case "application/vnd.ant.mermaid":
+      return "mermaid";
+    case "text/plain":
+      return "text";
+    default:
+      return ""
+  }
+}
+
+function It(e) {
+  return `**${e.kind==="file"?"File":"Artifact"}: ${e.title}**${e.version>1?` (v${e.version})`:""}`
+}
+
+function ae(e) {
+  let n = It(e),
+    s = e.kind === "file" ? Q(kt(e.title).extension.slice(1).toLowerCase(), jt) : re(e.type, e.language);
+  if (s === void 0) return `${n}
+
+${e.content}`;
+  let r = e.content.endsWith(`
+`) ? e.content.slice(0, -1) : e.content;
+  return `${n}
+
+${KHr(r,s)}`
+}
+
+function ce(e) {
+  return `${It(e)} \u2014 updated; final version below.`
+}
+var ue = "_Artifact content from this point on was not imported (size limit)._";
+
+function Ct(e = Ht) {
+  return {
+    spent: 0,
+    cap: e
+  }
+}
+
+function de(e, n = pt, s = Ct()) {
+  let r = new Map;
+  e.forEach((m, h) => {
+    if (!r.has(m.uuid)) r.set(m.uuid, h)
+  });
+  let c = (m) => {
+      let h = e[m].parent_message_uuid,
+        b = typeof h === "string" ? r.get(h) : void 0;
+      return b === void 0 || b === m ? void 0 : b
+    },
+    g = new Map,
+    S = [];
+  e.forEach((m, h) => {
+    let b = c(h);
+    if (b === void 0) {
+      S.push(h);
+      return
+    }
+    let O = g.get(b);
+    if (O) O.push(h);
+    else g.set(b, [h])
+  });
+  let x = e.length - 1;
+  for (let m = 0; m < e.length; m++) {
+    let h = g.get(x);
+    if (h === void 0 || h.length === 0) break;
+    x = h.at(-1)
+  }
+  let X = new Map,
+    T = 0,
+    J = e.map((m) => m.content.map(() => {
+      return
+    })),
+    j = new Set,
+    w = 0,
+    P = (m) => {
+      w += m, s.spent += m
+    },
+    f = () => w > n || s.spent > s.cap,
+    y = [],
+    k = (m, h, b) => {
+      let O = e[m],
+        W = b;
+      if (O.sender === "human") return {
+        state: h,
+        marked: W
+      };
+      let N;
+      return O.content.forEach((U, K) => {
+        let l = U.input;
+        if (U.type !== "tool_use" || l === void 0) return;
+        let M = U.name === Gt,
+          D = U.name === ht || U.name === _t,
+          A = M && l.id !== void 0 ? `artifact:${l.id}` : D && l.path !== void 0 ? `file:${l.path}` : void 0;
+        if (A === void 0) return;
+        if (f()) {
+          if (!W) y.push({
+            i: m,
+            b: K
+          }), W = !0;
+          return
+        }
+        let z = (N ?? h).get(A),
+          Y = z?.content.length ?? 0,
+          nt = M && l.command === "update" && !l.content || U.name === _t ? Math.ceil(Y * (l.old_str?.length ?? 0) / Jt) : 0;
+        if (P(Math.max(qt, l.content?.length ?? 0, l.file_text?.length ?? 0, Y) + nt), f()) {
+          if (!W) y.push({
+            i: m,
+            b: K
+          }), W = !0;
+          return
+        }
+        let q;
+        if (M) q = l.command === "create" || l.command === "rewrite" ? l.content?.trimStart() : l.command === "update" ? l.content ? l.content : Qt(z?.content, l.old_str, l.new_str) : void 0;
+        else if (U.name === ht) q = l.file_text;
+        else if (q = Kt(z?.content, l.old_str, l.new_str), q === void 0 && z !== void 0) T += 1;
+        if (q === void 0) return;
+        let ot = {
+          kind: z?.kind ?? (M ? "artifact" : "file"),
+          title: z?.title ?? (bi(M ? l.title ?? "" : (l.path ?? "").split(/[/\\]/).pop() ?? "", {
+            drop: /`/g,
+            maxCodeUnits: Vt
+          }) || "Untitled"),
+          type: z?.type ?? (M ? l.type ?? "" : ""),
+          language: z?.language ?? (M ? l.language ?? "" : ""),
+          content: q,
+          version: (z?.version ?? 0) + 1,
+          final: !1
+        };
+        if (N === void 0) P(h.size * Zt), N = new Map(h);
+        N.set(A, ot), J[m][K] = ot
+      }), {
+        state: N ?? h,
+        marked: W
+      }
+    },
+    G = new WeakSet,
+    I = (m) => {
+      let h = [{
+        i: m,
+        inherited: new Map,
+        marked: !1
+      }];
+      while (h.length > 0) {
+        let {
+          i: b,
+          inherited: O,
+          marked: W
+        } = h.pop();
+        if (j.has(b)) continue;
+        j.add(b);
+        let {
+          state: N,
+          marked: U
+        } = k(b, O, W);
+        if (b === x) X = N;
+        let K = g.get(b) ?? [];
+        if (K.every((l) => j.has(l)) && !G.has(N)) {
+          G.add(N);
+          for (let l of N.values()) l.final = !0
+        }
+        for (let l = K.length - 1; l >= 0; l--) h.push({
+          i: K[l],
+          inherited: N,
+          marked: U
+        })
+      }
+    };
+  S.forEach(I), e.forEach((m, h) => {
+    if (j.has(h)) return;
+    let b = new Set,
+      O = h;
+    while (!b.has(O)) {
+      b.add(O);
+      let W = c(O);
+      if (W === void 0 || j.has(W)) break;
+      O = W
+    }
+    I(O)
+  });
+  let V = new Set(X.values()),
+    v = [],
+    B = J.map((m, h) => m.map((b, O) => {
+      if (b === void 0) return;
+      if (!b.final) return ce(b);
+      if (V.has(b)) v.push({
+        messageIndex: h,
+        blockIndex: O,
+        artifact: b
+      });
+      return ae(b)
+    }));
+  for (let m of y) B[m.i][m.b] = ue;
+  return {
+    texts: B,
+    kept: v,
+    editsFailed: T
+  }
+}
+
+function le(e, n, s) {
+  let r = [],
+    c = yhe(),
+    g = gOo({
+      host: H().host,
+      id: Zv(e),
+      project: {
+        originalCwd: n,
+        projectRoot: n,
+        cwd: n
+      }
+    }),
+    S = VB(c.toolPermissionContext, aO()),
+    x = {
+      ...c,
+      toolPermissionContext: S
+    };
+  return {
+    messageQueue: wm(),
+    session: g,
+    agentContext: cc(),
+    options: {
+      commands: [],
+      debug: !1,
+      mainLoopModel: at(),
+      tools: r,
+      toolCatalog: c8,
+      verbose: !1,
+      thinkingConfig: {
+        type: "disabled",
+        mechanical: !0
+      },
+      mcpClients: [],
+      mcpResources: {},
+      isNonInteractiveSession: !0,
+      runQuery: SB,
+      agentDefinitions: {
+        activeAgents: [],
+        allAgents: []
+      },
+      autoCompactWindow: x.autoCompactWindow,
+      fastMode: x.fastMode,
+      cacheBreakerPhrase: x.cacheBreakerPhrase
+    },
+    abortController: new AbortController,
+    readFileState: _E($x),
+    toolState: new OW,
+    toolDecisions: new Map,
+    permissionRelays: Hhe,
+    getAppState: () => x,
+    setAppState: () => {},
+    getAdvisorSetting: () => x.advisorModel,
+    getMcp: () => x.mcp,
+    getProactivityLevel: () => x.proactivityLevel,
+    getWebBrowser: () => x.webBrowser,
+    setToolPermissionContext: () => {},
+    setSessionToolPermissionContext: () => {},
+    taskRegistry: mq,
+    sessionHooksRegistry: TEt,
+    queuedNotificationsRegistry: eCt,
+    setWebBrowserSlice: () => {},
+    setArtifactReadVersion: () => {},
+    getArtifactReadObservation: GIe(() => x),
+    artifactRegistries: JTt(),
+    setArtifactContractTarget: () => {},
+    getArtifactContractTarget: () => ({
+      targetSlug: void 0,
+      pins: {}
+    }),
+    enqueuePendingMemoryUpdate: () => {},
+    agentLifecycle: ZCt,
+    teammateColors: QTt,
+    rootToolSurface: {
+      tools: r,
+      mainLoopModel: at()
+    },
+    messages: [],
+    turnStartIndex: 0,
+    getFileHistoryState: () => {
+      return
+    },
+    applyFileHistoryOp: () => {},
+    applyAttributionOp: () => {},
+    markPrResolvedThisSession: () => {},
+    isUltrareviewOverageConfirmed: () => !1,
+    markUltrareviewOverageConfirmed: () => {},
+    storageV5: s
+  }
+}
+
+function fe(e, n) {
+  if (typeof e.filename === "string") e.filename = n;
+  if (typeof e.displayPath === "string") e.displayPath = n;
+  let s = e.content,
+    r = s?.file;
+  if (r && typeof r.filePath === "string") r.filePath = n;
+  if (s?.type === "pdf" && r && "base64" in r) delete r.base64
+}
+async function pe(e, n, s, r, c, g) {
+  try {
+    if (h2(s, se(e))) return null;
+    let S = await Dfr(Z(n, s), e, "tengu_import_attachment_success", "tengu_import_attachment_error", "at-mention");
+    if (!S) return null;
+    return fe(S, s), an(S, {
+      now: () => g,
+      uuid: () => wP(`${r}:${c}:attachment`, ct)
+    })
+  } catch (S) {
+    return t(`import attachment enrichment failed: ${String(S)}`, {
+      level: "error"
+    }), null
+  }
+}
+
+function me(e, n, s) {
+  return {
+    type: "user",
+    uuid: wP(`${n}:${e.toolUseId}:result`, ct),
+    timestamp: s,
+    message: {
+      role: "user",
+      content: [{
+        type: "tool_result",
+        tool_use_id: e.toolUseId,
+        content: `File created successfully at: ${e.path}`
+      }]
+    },
+    toolUseResult: {
+      type: "create",
+      filePath: e.path,
+      content: e.content,
+      structuredPatch: [],
+      originalFile: null
+    }
+  }
+}
+async function ge(e, n, s, r, c, g, S, x, X) {
+  let T = {
+    parentUuid: e.parent_message_uuid ?? null,
+    isSidechain: !1,
+    uuid: e.uuid,
+    timestamp: e.created_at,
+    cwd: n,
+    userType: "external",
+    sessionId: s,
+    version: "claude-export-import"
+  };
+  if (e.sender === "human") {
+    let w = [],
+      P = [],
+      f = (v) => ft(c[v.file_uuid] ?? "").length <= 128,
+      y = (v) => `files/${Rt(v.file_uuid,c[v.file_uuid])}`,
+      k = (v) => {
+        let B = y(v);
+        if (g.set(v.file_uuid, B), !S.some((m) => m.fileUuid === v.file_uuid)) S.push({
+          fileUuid: v.file_uuid,
+          rel: B,
+          attachable: f(v)
+        });
+        return `@"${B}"`
+      },
+      G = new Set;
+    for (let v of e.files) {
+      if (G.has(v.file_uuid)) continue;
+      G.add(v.file_uuid);
+      let B = r[v.file_uuid];
+      if (!B) continue;
+      let m = hg(Buffer.from(B));
+      if (m) try {
+        let {
+          block: h
+        } = await Xb({
+          data: Buffer.from(B),
+          mediaType: m,
+          limits: Ow
+        });
+        if (h.type === "image") w.push(h);
+        else P.push(k(v))
+      } catch {
+        P.push(k(v))
+      } else P.push(k(v))
+    }
+    let I = Wt(e, P),
+      V = w.length > 0 ? I.trim().length > 0 ? [...w, {
+        type: "text",
+        text: I
+      }] : w : I;
+    return {
+      ...T,
+      type: "user",
+      message: {
+        role: "user",
+        content: V
+      }
+    }
+  }
+  let J = e.content.flatMap((w, P) => {
+    let f = w.type === "text" && w.text !== void 0 && w.text.trim() !== "" ? w.text : x[P];
+    return f !== void 0 ? [{
+      type: "text",
+      text: f,
+      citations: []
+    }] : []
+  });
+  for (let w of X) J.push({
+    type: "tool_use",
+    id: w.toolUseId,
+    name: Yt,
+    input: {
+      file_path: w.path,
+      content: w.content
+    }
+  });
+  let j = bt(e);
+  return {
+    ...T,
+    type: "assistant",
+    requestId: void 0,
+    message: {
+      diagnostics: null,
+      id: e.uuid,
+      type: "message",
+      role: "assistant",
+      model: "claude-export-import",
+      content: J.length > 0 ? J : [{
+        type: "text",
+        text: j.trim() ? j : Mf,
+        citations: []
+      }],
+      container: null,
+      context_management: null,
+      stop_details: null,
+      stop_reason: X.length > 0 ? "tool_use" : "end_turn",
+      stop_sequence: null,
+      usage: {
+        output_tokens_details: null,
+        input_tokens: 0,
+        output_tokens: 0,
+        cache_creation_input_tokens: 0,
+        cache_read_input_tokens: 0,
+        cache_creation: null,
+        server_tool_use: null,
+        service_tier: null,
+        inference_geo: null,
+        iterations: null,
+        speed: null,
+        fallback_credit: null
+      }
+    }
+  }
+}
+
+function yt(e) {
+  let n = typeof e === "string" ? Date.parse(e) : NaN;
+  return Number.isNaN(n) ? null : n
+}
+
+function Ot(e) {
+  let n = `${T1r(e.name)||"project"}-${e.uuid}`;
+  return St.test(n) && n.length <= 200 ? n : null
+}
+
+function At(e, n, s, r) {
+  let c = Lt().safeParse(e);
+  if (c.success) return c.data;
+  return {
+    account_uuid: typeof r === "string" ? r : "unknown",
+    conversations: n.map((g) => ({
+      uuid: g.uuid,
+      message_count: g.chat_messages.length
+    })),
+    projects: s.flatMap((g) => Ot(g) !== null ? [{
+      uuid: g.uuid,
+      doc_count: g.docs.length
+    }] : [])
+  }
+}
+
+function he(e, n) {
+  let s = [];
+  if (e.conversations.length !== n.conversations + n.skipped) s.push(`conversations: manifest=${e.conversations.length} imported=${n.conversations+n.skipped}`);
+  let r = e.conversations.reduce((g, S) => g + S.message_count, 0);
+  if (r !== n.messages) s.push(`messages: manifest=${r} imported=${n.messages}`);
+  if (e.projects.length !== n.projects) s.push(`projects: manifest=${e.projects.length} imported=${n.projects}`);
+  let c = e.projects.reduce((g, S) => g + S.doc_count, 0);
+  if (c !== n.docs) s.push(`docs: manifest=${c} imported=${n.docs}`);
+  return s
+}
+var _e = 1073741824;
+async function ye(e) {
+  let {
+    size: n
+  } = await xt(e);
+  if (n > _e) throw Error("export file exceeds MAX_EXPORT_BYTES");
+  if (!e.toLowerCase().endsWith(".zip")) {
+    let j = await mt(e, "utf8"),
+      w;
+    try {
+      w = ee(j)
+    } catch {
+      throw Error("export file is not valid JSON")
+    }
+    let {
+      manifest: P,
+      conversations: f,
+      projects: y
+    } = gt().parse(w);
+    return {
+      manifest: At(P, f, y, void 0),
+      conversations: f,
+      projects: y,
+      files: Object.create(null)
+    }
+  }
+  let s = await qXe(await mt(e)),
+    r = new TextDecoder,
+    c = (j) => {
+      let w = s[j];
+      return w ? et(r.decode(w), !1) ?? void 0 : void 0
+    },
+    g;
+  try {
+    let j = s["conversations.json"];
+    g = j ? ee(r.decode(j)) : void 0
+  } catch {
+    throw Error("export conversations.json is not valid JSON")
+  }
+  let S = c("projects.json") ?? Object.keys(s).flatMap((j) => j.startsWith("projects/") && j.endsWith(".json") ? [c(j)].flat() : []),
+    {
+      conversations: x,
+      projects: X
+    } = gt().parse({
+      conversations: g,
+      projects: S
+    }),
+    T = At(c("manifest.json"), x, X, tt(u({
+      uuid: o()
+    })).parse(c("users.json"))[0]?.uuid),
+    J = Object.create(null);
+  for (let [j, w] of Object.entries(s)) {
+    if (!j.startsWith("files/") || j.endsWith("/")) continue;
+    let P = wt(j);
+    if (P.length === 0 || !St.test(P)) continue;
+    J[P] = w
+  }
+  return {
+    manifest: T,
+    conversations: x,
+    projects: X,
+    files: J
+  }
+}
+async function Ae(e, n) {
+  let s = await ye(e),
+    r = iv(n.cwd),
+    c = Ct(),
+    g = n.storageV5,
+    S = Vp(Z(r, "00000000-0000-0000-0000-000000000000.jsonl"), g) !== void 0,
+    x = s.projects.flatMap((f) => {
+      let y = Ot(f);
+      return y === null ? [] : [{
+        project: f,
+        dirName: y
+      }]
+    }),
+    X = s.conversations,
+    T = {
+      conversations: 0,
+      skipped: 0,
+      messages: 0,
+      projects: 0,
+      docs: 0,
+      files: 0,
+      artifacts: 0,
+      fileEditsFailed: 0,
+      manifestDiff: [],
+      jsonlPaths: [],
+      titles: [],
+      createdAts: [],
+      updatedAts: [],
+      projectList: x.map(({
+        project: f,
+        dirName: y
+      }) => ({
+        uuid: f.uuid,
+        name: f.name,
+        dirName: y
+      })),
+      conversationProjects: {},
+      attachmentFiles: {}
+    };
+  if (!n.dryRun) await Dt(r, S ? g : void 0), await rt(Z(n.cwd, "projects"), {
+    recursive: !0,
+    mode: 448
+  }), await rt(Z(n.cwd, "files"), {
+    recursive: !0,
+    mode: 448
+  });
+  let J = (f) => {
+      let y = f.name.trim();
+      if (y && y !== "New conversation") return y;
+      let k = f.chat_messages.find((G) => G.sender === "human")?.text ?? "";
+      return Q(k.trim(), 60) || "Untitled"
+    },
+    j = Object.create(null);
+  for (let f of X)
+    for (let y of f.chat_messages)
+      for (let k of y.files) j[k.file_uuid] = k.file_name;
+  let w = new Set;
+  for (let {
+      project: f,
+      dirName: y
+    }
+    of x) {
+    let k = Z(n.cwd, "projects", y);
+    if (!n.dryRun) await rt(k, {
+      recursive: !0,
+      mode: 448
+    });
+    let G = f.prompt_template?.trim();
+    if (G && !n.dryRun) await it(Z(k, "project-instructions.md"), G);
+    for (let I of f.docs) {
+      let V = I.filename ? ut(I.filename) : "",
+        v = lt(/[a-zA-Z0-9]/.test(V) ? V : "untitled.md");
+      if (T.docs += 1, !n.dryRun) await it(Z(k, v), I.content)
+    }
+    for (let I of f.files) {
+      let V = s.files[I.file_uuid];
+      if (!V) continue;
+      w.add(I.file_uuid), T.files += 1;
+      let v = I.file_name ? ut(I.file_name) : "",
+        B = lt(/[a-zA-Z0-9]/.test(v) ? v : I.file_uuid);
+      if (!n.dryRun) await it(Z(k, B), V)
+    }
+    T.projects += 1
+  }
+  for (let [f, y] of Object.entries(s.files)) {
+    if (w.has(f)) continue;
+    let k = Rt(f, j[f]);
+    if (!n.dryRun) await it(Z(n.cwd, "files", k), y);
+    T.files += 1
+  }
+  let P = new Map;
+  for (let f of X) {
+    let y = wP(f.uuid, ct),
+      k = new Map,
+      G = [],
+      I = f.chat_messages.map(() => []),
+      V = async (l) => {
+        let {
+          stem: M,
+          extension: D
+        } = ie(l), A = `${M}${D}`.toLowerCase();
+        for (let z = 0; z < Xt; z++) {
+          let Y = (P.get(A) ?? 0) + 1;
+          P.set(A, Y);
+          let st = lt(Y === 1 ? `${M}${D}` : `${M}-${Y}${D}`);
+          if (n.dryRun || await it(Z(n.cwd, "files", st), l.content)) return `files/${st}`
+        }
+        return
+      }, v = le(y, n.cwd, g), B = f.chat_messages.map(() => []), m = Z(r, `${y}.jsonl`), h = Vp(m, g), b = n.dryRun ? !1 : await vt(m, h), O = b ? {
+        texts: f.chat_messages.map(() => []),
+        kept: [],
+        editsFailed: 0
+      } : de(f.chat_messages, pt, c), W = O.texts;
+    T.fileEditsFailed += O.editsFailed;
+    for (let {
+        messageIndex: l,
+        blockIndex: M,
+        artifact: D
+      }
+      of O.kept) {
+      let A = await V(D);
+      if (A === void 0) continue;
+      G.push(A), W[l][M] += `
+
+_Saved to ${A}_`;
+      let z = f.chat_messages[l].uuid;
+      I[l].push({
+        toolUseId: `toolu_${wP(`${z}:${A}`,ct).replaceAll("-","")}`,
+        path: A,
+        content: D.content
+      })
+    }
+    T.artifacts += G.length;
+    let N = await Promise.all(f.chat_messages.map((l, M) => ge(l, n.cwd, y, s.files, j, k, B[M], W[M], I[M]))),
+      U = N;
+    if (!n.dryRun && !b) {
+      let l = new Map,
+        M = new Map;
+      U = [];
+      for (let D = 0; D < N.length; D++) {
+        let A = N[D],
+          z = A.parentUuid ? l.get(A.parentUuid) : void 0;
+        U.push(z ? {
+          ...A,
+          parentUuid: z
+        } : A);
+        let Y = A.uuid;
+        for (let nt of I[D]) {
+          let q = me(nt, A.uuid, A.timestamp);
+          U.push({
+            ...q,
+            parentUuid: Y,
+            isSidechain: !1,
+            cwd: n.cwd,
+            userType: "external",
+            sessionId: y,
+            version: "claude-export-import"
+          }), Y = q.uuid
+        }
+        let st = new Set(A.parentUuid && M.get(A.parentUuid) || []);
+        for (let {
+            fileUuid: nt,
+            rel: q,
+            attachable: ot
+          }
+          of B[D]) {
+          if (!ot || w.has(nt) || Ft.test(q)) continue;
+          if (!st.has(nt)) v.readFileState.delete(Z(n.cwd, q));
+          let dt = await pe(v, n.cwd, q, A.uuid, nt, A.timestamp);
+          if (!dt) continue;
+          st.add(nt), U.push({
+            ...dt,
+            parentUuid: Y,
+            isSidechain: !1,
+            cwd: n.cwd,
+            userType: "external",
+            sessionId: y,
+            version: "claude-export-import"
+          }), Y = dt.uuid
+        }
+        if (M.set(A.uuid, st), Y !== A.uuid) l.set(A.uuid, Y)
+      }
+    }
+    T.jsonlPaths.push(m), T.titles.push(J(f)), T.createdAts.push(yt(f.created_at)), T.updatedAts.push(yt(f.updated_at)), T.conversationProjects[y] = f.project_uuid ?? null;
+    let K = [...k].filter(([l]) => !w.has(l)).map(([, l]) => l).concat(G).sort();
+    if (K.length > 0) T.attachmentFiles[y] = K;
+    if (T.messages += N.length, !n.dryRun) {
+      let l = f.chat_messages.flatMap((D) => D.content.filter((A) => pQe(A.type)).map((A) => yY(Mnn({
+        ...A,
+        name: A.name ?? ""
+      }))));
+      if (!await Bt(m, l.length > 0 ? [...U, {
+          type: "tools-used",
+          tools: L(l),
+          sessionId: y
+        }] : U, h)) {
+        T.skipped += 1;
+        continue
+      }
+    }
+    T.conversations += 1
+  }
+  return T.manifestDiff = he(s.manifest, T), T
+}
+async function Tn(e, n, s) {
+  if (!i.CLAUDE_IMPORT_CONVERSATIONS) return vn("import-conversations is not enabled");
+  if (!n.cwd) return vn("--cwd is required");
+  let r, c;
+  try {
+    r = await Dw(n.cwd, FP(s)), c = await Ae(e, {
+      cwd: r,
+      dryRun: n.dryRun,
+      storageV5: s
+    })
+  } catch (S) {
+    a(S);
+    let x = d(S),
+      X = x.startsWith("export file exceeds MAX_EXPORT_BYTES") || x.startsWith("Archive total size is too large") || x.startsWith("Suspicious compression ratio detected") || x.startsWith("Archive contains too many files") || x.startsWith('File "') && x.includes("is too large:");
+    Yv("cli_error"), await new Promise((T) => process.stderr.write(`import-conversations failed: ${Q(Ca(Wn(x)),400)}
+` + (X ? `Import failed: the export exceeds the import size limit (IMPORT_TOO_LARGE)
+` : `Import failed (IMPORT_ERROR)
+`), T)), process.exit(1)
+  }
+  let g = n.dryRun ? "[dry-run] " : "";
+  if (process.stdout.write(`${g}imported: conversations=${c.conversations} skipped=${c.skipped} messages=${c.messages} projects=${c.projects} docs=${c.docs} files=${c.files} artifacts=${c.artifacts}
+`), await new Promise((S) => process.stdout.write(_({
+      sessionIds: c.jsonlPaths.map((x) => wt(x, ".jsonl")),
+      titles: c.titles,
+      jsonlPaths: c.jsonlPaths,
+      createdAts: c.createdAts,
+      updatedAts: c.updatedAts,
+      cwd: r,
+      projects: c.projectList,
+      conversationProjects: c.conversationProjects,
+      attachmentFiles: c.attachmentFiles,
+      counts: {
+        conversations: c.conversations,
+        projects: c.projects,
+        files: c.files,
+        docs: c.docs,
+        artifacts: c.artifacts,
+        fileEditsFailed: c.fileEditsFailed,
+        skipped: c.skipped
+      }
+    }) + `
+`, S)), c.manifestDiff.length > 0) Yv("cli_error"), await new Promise((S) => process.stderr.write(`manifest mismatch:
+  ` + c.manifestDiff.join(`
+  `) + `
+Import completed with mismatches (IMPORT_MANIFEST_MISMATCH)
+`, S)), process.exit(1);
+  process.exit(0)
+}
+export {
+  Tn as importConversationsHandler
+};

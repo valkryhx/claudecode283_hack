@@ -1,0 +1,1572 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  FR
+} from "B:/~BUN/root/chunk-begxsvab.js";
+import {
+  at,
+  SO,
+  Pko,
+  gi,
+  xA,
+  Qr,
+  _r,
+  Mz,
+  v,
+  C4,
+  oMs
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  Vs,
+  ye,
+  WGs,
+  GGs,
+  KGs,
+  TG,
+  Xxe,
+  xj,
+  eVs,
+  xn
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  b,
+  f,
+  de,
+  ka
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  t,
+  io,
+  ie
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  Ua
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  yi,
+  $o,
+  Ib
+} from "B:/~BUN/root/chunk-6n5g80b8.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  g,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  ol
+} from "B:/~BUN/root/chunk-thn0wk2x.js";
+import {
+  mt
+} from "B:/~BUN/root/chunk-d10hhz4p.js";
+import {
+  yf
+} from "B:/~BUN/root/chunk-65j2302z.js";
+import {
+  Md,
+  iln,
+  BAe
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  Lb,
+  Pg,
+  JAe
+} from "B:/~BUN/root/chunk-r8p1hzqw.js";
+import {
+  Xl,
+  $pe,
+  dS,
+  yr,
+  mn,
+  qV,
+  Eu
+} from "B:/~BUN/root/chunk-44q965xg.js";
+import {
+  gr
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  un,
+  be,
+  Cr,
+  zv,
+  rtt,
+  eFs,
+  wBt
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import {
+  adn
+} from "B:/~BUN/root/chunk-1fg2bpc3.js";
+import {
+  lT,
+  VD,
+  Ou,
+  njn,
+  XMs,
+  QMs,
+  rjn,
+  gSe,
+  ZMs,
+  $Eo,
+  gJ,
+  Ret,
+  UEo,
+  wMr
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  dt,
+  Yt,
+  Me
+} from "B:/~BUN/root/chunk-9kvvd0hy.js";
+import {
+  Cf
+} from "B:/~BUN/root/chunk-0s9zh2h6.js";
+import {
+  CGe,
+  MEr,
+  QLt,
+  sm,
+  nFn
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  Ip,
+  aO,
+  bFn,
+  L7e
+} from "B:/~BUN/root/chunk-tdekz3md.js";
+import {
+  dO
+} from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  jCe,
+  Syo,
+  t2i,
+  t2e,
+  rTs,
+  _Hn
+} from "B:/~BUN/root/chunk-6j3fjnhn.js";
+import {
+  jho,
+  avs,
+  Who,
+  zho,
+  pTr,
+  _ee,
+  _D,
+  N7e,
+  Wl,
+  Vc
+} from "B:/~BUN/root/chunk-detjgwj4.js";
+import {
+  lQr,
+  uQr,
+  rje,
+  a5t,
+  ZK,
+  eL,
+  VB,
+  F5t,
+  Tur,
+  kns,
+  yb,
+  nL,
+  GQ
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import {
+  zfs,
+  RMi,
+  HIn,
+  __r,
+  ndo,
+  u7t
+} from "B:/~BUN/root/chunk-kk81ayzj.js";
+import {
+  Q_e
+} from "B:/~BUN/root/chunk-64qg3pvz.js";
+import {
+  V_
+} from "B:/~BUN/root/chunk-x9bz04wf.js";
+import {
+  hA
+} from "B:/~BUN/root/chunk-45td50dx.js";
+import {
+  Coe
+} from "B:/~BUN/root/chunk-y7em5h10.js";
+import {
+  qli,
+  _tr
+} from "B:/~BUN/root/chunk-815nev8v.js";
+import {
+  sIe,
+  iIe
+} from "B:/~BUN/root/chunk-6dpcedmk.js";
+import {
+  Uf,
+  jk,
+  Ll
+} from "B:/~BUN/root/chunk-zy4xrndc.js";
+import {
+  Mvr
+} from "B:/~BUN/root/chunk-j5zjtxy5.js";
+import {
+  fht,
+  aU,
+  m_
+} from "B:/~BUN/root/chunk-21s8ygah.js";
+import {
+  EA
+} from "B:/~BUN/root/chunk-eyvtcj15.js";
+import {
+  _t
+} from "B:/~BUN/root/chunk-3a409jmn.js";
+import {
+  ze
+} from "B:/~BUN/root/chunk-xwzn0yxv.js";
+import {
+  kt
+} from "B:/~BUN/root/chunk-86hj8bna.js";
+import {
+  D
+} from "B:/~BUN/root/chunk-8mqsat26.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-g9pw24zp.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  relative as ke,
+  resolve as ge
+} from "path";
+var Be = ["default"];
+
+function ctr(e) {
+  let s = e.toLowerCase();
+  if (!Be.includes(s)) return null;
+  return s
+}
+import {
+  createHash as Ne
+} from "crypto";
+
+function me(e) {
+  return Ne("sha256").update(e.join(`
+`)).digest("hex")
+}
+
+function j(e) {
+  if (yi.includes(e)) {
+    let s = un(e);
+    if (s) {
+      let o = ol(),
+        r = o === null ? s : ke(o, s);
+      return r.length < s.length ? r : s
+    }
+  }
+  return e
+}
+
+function $li(e, s) {
+  let o = [];
+  for (let r of e)
+    if (r.ruleBehavior === "allow" && _ee(r.ruleValue.toolName, r.ruleValue.ruleContent)) {
+      let n = r.ruleValue.ruleContent ? `${r.ruleValue.toolName}(${r.ruleValue.ruleContent})` : `${r.ruleValue.toolName}(*)`;
+      o.push({
+        ruleValue: r.ruleValue,
+        source: r.source,
+        ruleDisplay: n,
+        sourceDisplay: j(r.source)
+      })
+    } for (let r of s) {
+    let n = yr(r);
+    if (_ee(n.toolName, n.ruleContent)) o.push({
+      ruleValue: n,
+      source: "cliArg",
+      ruleDisplay: n.ruleContent ? `${n.toolName}(${n.ruleContent})` : `${n.toolName}(*)`,
+      sourceDisplay: "--allowed-tools"
+    })
+  }
+  return o
+}
+var utr = `--allow-dangerously-skip-permissions ignored: ${rTs}`,
+  Le = [...avs, ...Who, ...zho];
+
+function W(e) {
+  return e === void 0 || /^[\s*]+$/.test(e)
+}
+
+function xe(e) {
+  return !1
+}
+
+function Ie(e) {
+  if (e.toolName === kt) return "powershell";
+  let s = e.ruleContent;
+  if (s === void 0 || W(s)) return "bare";
+  if (pTr(s, zho)) return "cluster";
+  if (pTr(s, Who)) return "network";
+  return "ace"
+}
+
+function Uli(e, s = !1) {
+  {
+    let {
+      APPIFACT_REPL_TOOL_NAME: r
+    } = import.meta.require("B:/~BUN/root/chunk-mh92bc27.js");
+    if (e.toolName === r) return W(e.ruleContent)
+  }
+  if (e.toolName !== Me) return !1;
+  let o = e.ruleContent;
+  if (o === void 0 || W(o) || xe(o)) return !0;
+  return s && pTr(o, Le)
+}
+
+function fe(e) {
+  return e.toolName === Me && e.ruleContent === void 0
+}
+
+function Bli(e) {
+  return e.toolName === kt && W(e.ruleContent)
+}
+
+function Xia() {
+  let e = v("tengu_ant_yolo_equiv_strip_config", {});
+  if (!e.enabled) return !1;
+  let s = i.CLAUDE_CODE_ENTRYPOINT ?? "cli";
+  if (e.includeEntrypoints) return e.includeEntrypoints.includes(s);
+  return !(e.excludeEntrypoints ?? []).includes(s)
+}
+
+function jli(e, s, o = !1) {
+  let r = [];
+  for (let n of e)
+    if (n.ruleBehavior === "allow" && Uli(n.ruleValue, o)) r.push({
+      ruleValue: n.ruleValue,
+      source: n.source,
+      ruleDisplay: n.ruleValue.ruleContent ? `${n.ruleValue.toolName}(${n.ruleValue.ruleContent})` : `${n.ruleValue.toolName}(*)`,
+      sourceDisplay: j(n.source)
+    });
+  for (let n of s) {
+    let d = yr(n);
+    if (Uli(d, o)) r.push({
+      ruleValue: d,
+      source: "cliArg",
+      ruleDisplay: d.ruleContent ? `${d.toolName}(${d.ruleContent})` : `${d.toolName}(*)`,
+      sourceDisplay: "--allowed-tools"
+    })
+  }
+  return r
+}
+
+function Wli(e, s) {
+  let o = [];
+  for (let r of e)
+    if (r.ruleBehavior === "allow" && Bli(r.ruleValue)) o.push({
+      ruleValue: r.ruleValue,
+      source: r.source,
+      ruleDisplay: `${kt}(*)`,
+      sourceDisplay: j(r.source)
+    });
+  for (let r of s) {
+    let n = yr(r);
+    if (Bli(n)) o.push({
+      ruleValue: n,
+      source: "cliArg",
+      ruleDisplay: `${kt}(*)`,
+      sourceDisplay: "--allowed-tools"
+    })
+  }
+  return o
+}
+
+function u3r(e) {
+  return []
+}
+
+function $e(e) {
+  return Ib.includes(e) || e === "session" || e === "cliArg"
+}
+
+function Jia(e, s, o = !1) {
+  let r = new Map;
+  for (let d of s) {
+    if (!o && !$e(d.source)) continue;
+    let a = d.source,
+      u = r.get(a) || [];
+    u.push(d.ruleValue), r.set(a, u)
+  }
+  let n = e;
+  for (let [d, a] of r) n = sm(n, {
+    type: "removeRules",
+    rules: a,
+    behavior: "allow",
+    destination: d
+  });
+  return n
+}
+
+function T8(e) {
+  let s = N7e(e.alwaysAllowRules, "allow"),
+    o = $li(s, []);
+  if (o.length === 0) return e.strippedDangerousRules !== void 0 ? e : {
+    ...e,
+    strippedDangerousRules: {}
+  };
+  for (let n of o) t(`Ignoring dangerous permission ${n.ruleDisplay} from ${n.sourceDisplay} (bypasses classifier)`);
+  let r = {};
+  for (let [n, d] of Object.entries(e.strippedDangerousRules ?? {}))
+    if (d) r[n] = [...d];
+  for (let n of o) {
+    let d = mn(n.ruleValue),
+      a = r[n.source] ??= [];
+    if (!a.includes(d)) a.push(d)
+  }
+  return {
+    ...Jia(e, o, !0),
+    strippedDangerousRules: r
+  }
+}
+
+function PYo(e, s, o = []) {
+  let r = {
+    ...e,
+    toolAliases: s
+  };
+  if (!v("tengu_sorted_zebra", !1)) return r;
+  for (let [n, d] of Object.entries(s ?? {})) {
+    if (n.startsWith("mcp__") || !_ee(n, void 0)) continue;
+    let a = typeof d === "string" ? gr(d) : null;
+    if (a?.toolName) {
+      jho(a.serverName, [a.toolName]), g("auto_mode_tool_alias");
+      continue
+    }
+    let u = i.CLAUDE_AGENT_SDK_MCP_NO_PREFIX && typeof d === "string" && d !== "" && a === null;
+    if (u && o.length > 0) {
+      for (let y of o) jho(y, [d]);
+      g("auto_mode_tool_alias");
+      continue
+    }
+    c("auto_mode_tool_alias", u ? "no_sdk_server" : "target_not_mcp_tool"), t(`Auto mode: toolAliases maps ${n} to ${typeof d==="string"?d:`a value of type ${typeof d}`}, ${u?"and no SDK MCP server is registered that could hold it":"which is not of the form mcp__<server>__<tool>"}, so an allow rule for that tool still runs its calls without the classifier's check`, {
+      level: "warn"
+    })
+  }
+  return f3r(r)
+}
+
+function OYo(e) {
+  let s = D(e),
+    o = new Map,
+    r = s ? 0 : 1;
+  for (let [n, d] of s ? Object.entries(e) : []) {
+    if (n === "" || n.startsWith("mcp__") || !Array.isArray(d)) {
+      r++;
+      continue
+    }
+    for (let a of d)
+      if (typeof a === "string" && a !== "" && !a.startsWith("mcp__")) {
+        jho(n, [a]);
+        let u = o.get(n) ?? [];
+        if (!u.includes(a)) u.push(a);
+        o.set(n, u)
+      } else r++
+  }
+  if (o.size > 0) g("auto_mode_code_running_mcp_tools");
+  if (r > 0) c("auto_mode_code_running_mcp_tools", "malformed_entry"), t(`Auto mode: ignored ${r} malformed ${r===1?"part":"parts"} of codeRunningMcpTools, which should map each MCP server name to a list of tool names, e.g. {"workspace": ["bash"]}. In auto mode, allow rules and hooks can still approve calls to the tools meant there without the classifier.`, {
+    level: "warn"
+  });
+  return Object.fromEntries(o)
+}
+
+function f3r(e) {
+  return e.strippedDangerousRules === void 0 ? e : T8(e)
+}
+
+function VOe(e) {
+  let s = e.strippedDangerousRules;
+  if (!s) return e;
+  let o = e;
+  for (let [r, n] of Object.entries(s)) {
+    if (!n || n.length === 0) continue;
+    let d = r === "command" ? n.filter((a) => !a5t(a)) : [...n];
+    if (d.length === 0) continue;
+    o = sm(o, {
+      type: "addRules",
+      rules: d.map((a) => m_(a, "allow")),
+      behavior: "allow",
+      destination: r
+    })
+  }
+  return {
+    ...o,
+    strippedDangerousRules: void 0
+  }
+}
+
+function IYo(e, s) {
+  return {
+    ...s,
+    mode: e.mode,
+    prePlanMode: e.prePlanMode,
+    startupModeDecidedByProactivityLevel: e.startupModeDecidedByProactivityLevel,
+    alwaysAllowRules: pe(e.alwaysAllowRules, s),
+    strippedDangerousRules: e.strippedDangerousRules && pe(e.strippedDangerousRules, s)
+  }
+}
+
+function pe(e, s) {
+  let o = Object.keys(e).reduce((r, n) => {
+    let d = s.strippedDangerousRules?.[n] ?? [],
+      a = new Set([...s.alwaysAllowRules[n] ?? [], ...n === "command" ? d.filter((P) => !a5t(P)) : d]),
+      u = e[n] ?? [],
+      y = u.filter((P) => a.has(P));
+    return r.rules[n] = y, r.dropped ||= y.length !== u.length, r
+  }, {
+    rules: {},
+    dropped: !1
+  });
+  return o.dropped ? o.rules : e
+}
+
+function c$(e, s, o, r) {
+  if (e === s) return o;
+  if (o.startupModeDecidedByProactivityLevel !== void 0) o = {
+    ...o,
+    startupModeDecidedByProactivityLevel: void 0
+  };
+  if (Ret(void 0), Q_e({
+      from: e,
+      to: s,
+      trigger: r
+    }), Xxe(e, s), eVs(e, s), e === "plan" && s !== "plan") TG(!0);
+  if (s === "plan" && e !== "plan") return VCt(o);
+  let n = e === "auto" || e === "plan" && Ou(),
+    d = s === "auto";
+  if (d && !n) {
+    if (!yb()) throw Error("Cannot transition to auto mode: gate is not enabled");
+    VD(!0), o = T8(o)
+  } else if (n && !d) VD(!1), xj(!0), o = VOe(o);
+  if (e === "plan" && s !== "plan" && o.prePlanMode) return {
+    ...o,
+    prePlanMode: void 0
+  };
+  return o
+}
+async function MYo() {
+  return !1
+}
+var Fe = {
+  settings: "auto_mode_settings",
+  "circuit-breaker": "auto_mode_circuit_breaker",
+  "fast-mode": "auto_mode_fast_mode",
+  model: "auto_mode_model"
+};
+
+function Lle(e, s) {
+  let o = Pg(e);
+  if (o === void 0) return {
+    ok: !1,
+    error: JAe,
+    code: "invalid_mode"
+  };
+  if (o === "bypassPermissions") {
+    if (s.restricted) return {
+      ok: !1,
+      error: zfs,
+      code: "bypass_restricted"
+    };
+    if (EA()) return {
+      ok: !1,
+      error: "Cannot set permission mode to bypassPermissions because it is disabled by settings or configuration",
+      code: "bypass_disabled"
+    };
+    if (!s.isBypassPermissionsModeAvailable) return {
+      ok: !1,
+      error: "Cannot set permission mode to bypassPermissions because the session was not launched with --dangerously-skip-permissions",
+      code: "bypass_not_launched"
+    }
+  }
+  if (o === "auto" && !yb()) return p3r(nL());
+  return {
+    ok: !0,
+    mode: o
+  }
+}
+
+function p3r(e) {
+  return {
+    ok: !1,
+    error: e ? `Cannot set permission mode to auto: ${GQ(e)}` : "Cannot set permission mode to auto",
+    code: e ? Fe[e] : "auto_mode_unavailable"
+  }
+}
+
+function VC(e, s, o, r) {
+  let n = Lle(e, s);
+  if (!n.ok) return n;
+  let d = n.mode,
+    a;
+  if (o((u) => {
+      if (u.mode === d) return u;
+      if (u !== s) {
+        let P = Lle(d, u);
+        if (!P.ok) return a = P, u
+      }
+      return {
+        ...c$(u.mode, d, u, r),
+        mode: d
+      }
+    }), a !== void 0) return a;
+  return setImmediate(() => {
+    eL.emit()
+  }), {
+    ok: !0,
+    mode: d
+  }
+}
+
+function DYo(e, s) {
+  let o = s.context.mode;
+  if (!Lle(o, e).ok) return s.context;
+  c$(e.mode, o, e);
+  let r = s.autoModeActive && yb() && (o === "auto" || o === "plan" && jYo());
+  if (Ou() !== r) VD(r), xj(!r);
+  return setImmediate(() => {
+    eL.emit()
+  }), s.autoModeActive && !r ? VOe(s.context) : s.context
+}
+
+function ftr(e) {
+  let s = [],
+    o = new Set,
+    r = !1,
+    n = [],
+    d = [],
+    a = v("tengu_tools_exclusion_killswitch", !1);
+  for (let u = 0; u < e.length; u++) {
+    let y = e[u];
+    if (y === void 0) continue;
+    if (!y.startsWith(qV)) {
+      s.push(y);
+      continue
+    }
+    let P = y.slice(qV.length);
+    if (P === "") {
+      let A = e[u + 1];
+      if (A === void 0 || A.startsWith(qV) || A.startsWith("(")) {
+        r = !0;
+        continue
+      }
+      if (u++, !a) n.push(A);
+      y = qV + A, P = A
+    }
+    let T = P.indexOf("(");
+    if (T === 0) {
+      r = !0;
+      continue
+    }
+    if (T > 0) {
+      if (P = P.slice(0, T), !a) d.push(y)
+    }
+    if (!a) o.add(Xl(P))
+  }
+  return {
+    kept: s,
+    excluded: o,
+    bare: r,
+    detached: n,
+    scoped: d
+  }
+}
+
+function Qia(e, s) {
+  let o = e.join(" ").trim();
+  if (ctr(o)) return ndo(s());
+  let {
+    kept: n,
+    excluded: d
+  } = ftr(Eu(e)), a = n.includes("preset:default") ? s().map((u) => u.name).concat(n.filter((u) => u !== "preset:default")) : n;
+  if (d.size === 0) return a;
+  return a.filter((u) => !d.has(Xl(u)))
+}
+var Pe = [Me, kt, Qr, _r];
+
+function Zia({
+  baseToolsCli: e,
+  baseToolsIsPreset: s,
+  parsedBaseTools: o,
+  getAllBaseTools: r
+}) {
+  let n = [],
+    d = [],
+    a = Qia(e, r),
+    u = new Set(a.map(Xl)),
+    y = r(),
+    P = s ? null : y,
+    T = P === null ? ndo(y) : P.map((p) => p.name),
+    {
+      excluded: A
+    } = o;
+  for (let p of P ?? r())
+    if (p.familyParentToolName !== void 0 && A.has(p.familyParentToolName)) u.delete(p.name);
+  for (let p of y)
+    if (p.familyParentToolName !== void 0 && u.has(p.familyParentToolName)) u.add(p.name);
+  if (Uf.some((p) => u.has(p))) u.add(V_);
+  for (let p of A) u.delete(p);
+  if (A.has(Me))
+    for (let p of u7t()) u.delete(p);
+  let S = T.filter((p) => !u.has(p));
+  for (let p of A) {
+    if (T.includes(p)) continue;
+    if (rje.has(p)) {
+      t(`--tools exclusion names a removed tool: ${p}`);
+      continue
+    }
+    if (S.push(p), Pe.includes(p)) continue;
+    n.push(`--tools entry "${qV}${p}" matches no built-in tool \u2014 check for typos. An MCP tool with exactly that name is still withheld.`), d.push(`--tools "${qV}${p}" matches no tool \xB7 check for typos`)
+  }
+  for (let p of o.scoped) n.push(`--tools entry "${p}" names a rule, not a tool; the whole tool is withheld. Write "${qV}${p.slice(qV.length,p.indexOf("("))}" to say so.`);
+  for (let p of o.detached) n.push(`--tools entry "${qV} ${p}" was read as "${qV}${p}" and ${p} is withheld; write it without the space.`);
+  if (o.bare) n.push(`--tools has a "${qV}" with no tool name after it; write the name right after it, as in "${qV}Bash".`), d.push(`--tools has a "${qV}" with no tool name \xB7 write "${qV}Bash"`);
+  if (!s) {
+    for (let p of [...x() === "windows" ? [kt] : [], Qr, _r])
+      if (!u.has(p) && !S.includes(p)) S.push(p)
+  }
+  return {
+    toolsToDisallow: S,
+    toolsKept: s || o.kept.includes("preset:default") ? void 0 : u,
+    warnings: n,
+    securityWarnings: d
+  }
+}
+
+function Ve({
+  processPwd: e,
+  originalCwd: s
+}) {
+  let {
+    resolvedPath: o,
+    isSymlink: r
+  } = io(ie(), e);
+  return r ? o === ge(s) : !1
+}
+
+function LYo({
+  permissionModeCli: e,
+  inheritPermissionModeCli: s,
+  dangerouslySkipPermissions: o,
+  allowDangerouslySkipPermissions: r,
+  bypassPermissionsBlockedByHost: n,
+  agentPermissionMode: d,
+  proactivityLevel: a
+}) {
+  let u = Lb(e),
+    y = Lb(s),
+    P = qli(Boolean(o || r)),
+    T = _tr();
+  if (Cf()) {
+    let R = o || u && u !== "default" || y && y !== "default" || d && d !== "default",
+      E = "Permission mode forced to default \u2014 CLAUDE_CODE_SUBPROCESS_ENV_SCRUB is set " + "(allowed_non_write_users hardening). Declare allowedTools explicitly, or set CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=0 to opt out.";
+    if (R) process.stderr.write(`\u26A0 ${E}
+`);
+    return {
+      mode: "default",
+      notification: R ? E : void 0,
+      modeSuppliedOnInvocation: !0
+    }
+  }
+  let S = {
+      cli: {
+        permissionMode: T === !0 && a !== void 0 && u !== void 0 && t2e(a, u, void 0) !== void 0 ? void 0 : u,
+        inheritPermissionMode: y,
+        dangerouslySkipPermissions: o,
+        allowDangerouslySkipPermissions: r,
+        bypassPermissionsBlockedByHost: n,
+        isNonInteractiveSession: ye()
+      },
+      env: {
+        ...process.env,
+        CLAUDE_CODE_SUBPROCESS_ENV_SCRUB: void 0
+      },
+      settings: Cr() || {},
+      agentFrontmatter: d ? {
+        permissionMode: d
+      } : void 0,
+      proactivityLevel: T === !1 ? void 0 : a
+    },
+    p = Syo(S);
+  $Eo(p.fromAutoFallback), UEo(p.autoStartWithheldForHipaaTaint);
+  let w = !ye() && Mz(),
+    _ = p.autoDefaultWithheldForPendingVerdict;
+  Ret(!p.modeSuppliedOnInvocation && (w || _) ? {
+    mode: p.mode,
+    inputs: S,
+    awaitsGrowthBook: w,
+    awaitsPolicyVerdict: _
+  } : void 0);
+  let C;
+  {
+    let R = p.decidedByProactivityLevel || T === !0 && a !== void 0;
+    C = {
+      proactivityBaseline: {
+        mode: P ?? p.baselineMode,
+        fromRelaunchHandoff: P !== void 0
+      },
+      startupModeDecidedByProactivityLevel: R ? a : void 0
+    }
+  }
+  if (p.mode === "auto") VD(!0);
+  return {
+    mode: p.mode,
+    notification: p.notification,
+    proactivity: C,
+    modeSuppliedOnInvocation: p.modeSuppliedOnInvocation
+  }
+}
+
+function m3r() {
+  return i.CLAUDE_CODE_SESSION_KIND !== "bg"
+}
+
+function eaa(e) {
+  return e === "cliArg" && m3r()
+}
+
+function h3r() {
+  return i.CLAUDE_CHROME_CLASSIFIER_FLOOR ?? (i.CLAUDE_CODE_REMOTE ? _t("tengu_cowork_chrome_automode_default", {
+    safe: !0
+  }) : v("tengu_cowork_chrome_automode_default", !1))
+}
+
+function g3r(e) {
+  return {
+    ...e,
+    blockWritesOutsideWorkingDirectories: !0,
+    alwaysDenyRules: {
+      ...e.alwaysDenyRules,
+      toolsNarrowing: L([...e.alwaysDenyRules.toolsNarrowing ?? [], hA, Coe])
+    }
+  }
+}
+async function NYo({
+  allowedToolsCli: e,
+  disallowedToolsCli: s,
+  baseToolsCli: o,
+  getAllBaseTools: r,
+  restricted: n = !1,
+  permissionMode: d,
+  allowDangerouslySkipPermissions: a,
+  addDirs: u,
+  bgSessionPermissionRules: y,
+  relaunchSessionAddDirs: P,
+  storageV5: T
+}) {
+  let A = [],
+    S = [],
+    p = null,
+    w = d === "bypassPermissions" || a,
+    _ = Eu(e).map((m) => mn(m_(m, "allow"))).filter((m) => {
+      let h = iln(yr(m).toolName);
+      if (h) return A.push(`Ignoring --allowedTools rule "${m}": ${h.error}. ${h.suggestion}.`), !1;
+      return !0
+    }),
+    C = L([...Eu(s), ...ZK()]),
+    R = !!o && o.length > 0 && ctr(o.join(" ").trim()) !== null,
+    E = o && !R ? ftr(Eu(o)) : {
+      kept: [],
+      excluded: new Set,
+      bare: !1,
+      detached: [],
+      scoped: []
+    },
+    O = E.kept.map(Xl).filter((m) => !E.excluded.has(m)),
+    G = !!o?.length && !R && O.length === 0,
+    ee = (m) => O.includes(m) || _.some((h) => yr(h).toolName === m);
+  WGs([Qr, _r].some(ee)), GGs(lQr.some(ee));
+  let I = [],
+    oe = [],
+    Y, te = new Set;
+  if (o && o.length > 0) {
+    let m = Zia({
+      baseToolsCli: o,
+      baseToolsIsPreset: R,
+      parsedBaseTools: E,
+      getAllBaseTools: r
+    });
+    A.push(...m.warnings), S.push(...m.securityWarnings.map((h) => ({
+      text: h
+    }))), I = m.toolsToDisallow, oe = G ? [] : m.toolsToDisallow, Y = m.toolsKept
+  }
+  if (n) {
+    let m = HIn(__r(r()), RMi(O));
+    for (let h of m) te.add(h);
+    I = L([...I, ...m])
+  }
+  KGs(oe.filter((m) => !te.has(m)));
+  let se = new Map,
+    F = i.PWD,
+    H = F ? Vs() : null;
+  if (F && H !== null && F !== H && Ve({
+      originalCwd: H,
+      processPwd: F
+    })) se.set(F, {
+    path: F,
+    source: "session"
+  });
+  let ne = (Cr() || {}).permissions?.disableBypassPermissionsMode === "disable",
+    K = a && d !== "bypassPermissions" && !ne && !n && _Hn("bypassPermissions");
+  if (K) l("tengu_bg_allow_bypass_unconsented_ignored", {}), A.push(utr);
+  let _e = (d === "bypassPermissions" || a && !K) && !ne && !n && !0,
+    re = X() && T !== void 0 && T.hostFiles.serving("workspace") === "host" ? {
+      strictPersistedTrust: await oMs(T)
+    } : {},
+    k = aO(re),
+    q = [...C, ...I].map(yr),
+    ve = q.some(fe),
+    Ce = q.some((m) => m.toolName === Me) || k.some((m) => m.ruleBehavior === "deny" && m.ruleValue.toolName === Me),
+    we = i.CLAUDE_CODE_USE_POWERSHELL_TOOL || Eu(o ?? []).map(Xl).includes(kt) || _.some((m) => yr(m).toolName === kt) || q.some((m) => m.toolName === kt) || k.some((m) => m.ruleValue.toolName === kt);
+  if (x() === "windows" && Ll() && Ce && !we) {
+    C = [...C, kt];
+    let m = k.filter((h) => h.ruleBehavior === "deny" && fe(h.ruleValue));
+    if (jk() && (ve || m.length > 0) && !m.some((h) => h.source === "policySettings")) A.push(`Denying ${Me} also turns off the ${kt} tool, so Claude has neither. To use ${kt}, set CLAUDE_CODE_USE_POWERSHELL_TOOL=1.`)
+  }
+  let ae = [];
+  if (!i.CLAUDE_CODE_REMOTE && i.CLAUDE_CODE_ENTRYPOINT !== "local-agent") {
+    let m = [...jli(k, _, !0), ...Wli(k, _)];
+    if (m.length > 0) {
+      let h = m.map((V) => Ie(V.ruleValue)),
+        B = !1,
+        Q = !1;
+      l("tengu_ant_overly_broad_bash_detected", {
+        count: m.length,
+        categories: ka(L(h)),
+        yoloEquivEnabled: B,
+        willStrip: ae.length,
+        entrypoint: de(yf()) ?? b("other"),
+        ...!1
+      })
+    }
+  }
+  let le = [];
+  if (d === "auto") le = $li(k, _);
+  let z = Ip(),
+    ue = MEr();
+  if (nFn(), z && _.length > 0) A.push(`Ignoring --allowedTools ${_.join(", ")}: permission rules are restricted to managed settings (allowManagedPermissionRulesOnly).`);
+  let M = VB({
+    mode: d,
+    additionalWorkingDirectories: se,
+    alwaysAllowRules: {
+      cliArg: z ? [] : _,
+      ...y && {
+        session: z ? [] : y.allow
+      }
+    },
+    alwaysDenyRules: {
+      cliArg: C,
+      ...y && {
+        session: y.deny
+      },
+      ...I.length > 0 && {
+        toolsNarrowing: I
+      }
+    },
+    alwaysAskRules: {},
+    mcpPermissionModeOverrides: {},
+    ...n && {
+      restricted: n
+    },
+    ...G && {
+      builtInToolsDisabled: G
+    },
+    ...Y !== void 0 && {
+      toolsKeptByLaunchList: Object.freeze([...Y])
+    },
+    ...QLt() && {
+      blockReadsOutsideWorkingDirectories: !0
+    },
+    ...ue.length > 0 && {
+      readBlockExemptPaths: ue
+    },
+    isBypassPermissionsModeAvailable: _e,
+    ...((m) => ({
+      isAutoModeAvailable: m,
+      canAutoClassifierRun: m,
+      chromeClassifierFloorEnabled: h3r(),
+      chromeNavigationClassifierEnabled: v("tengu_auto_mode_config", {})?.chromeNavigation === !0,
+      chromeClickClassifierEnabled: v("tengu_auto_mode_config", {})?.classifyChromeClicks === !0 || uQr("browserClicks"),
+      chromeHostToolAsksEnabled: v("tengu_cozy_eagle", !0) !== !1
+    }))(yb()),
+    isRemoteMode: i.CLAUDE_CODE_REMOTE || xn()
+  }, k);
+  if (CGe()) M = g3r(M);
+  M = Mvr(M);
+  for (let m of L([...Eu(e), ...$o().flatMap((h) => be(h)?.permissions?.allow ?? [])])) {
+    let h = m_(m, "allow");
+    if (aU(h) && Object.values(M.alwaysAllowRules).flat().includes(mn(h))) {
+      let {
+        toolName: B
+      } = h;
+      A.push(`Permission allow rule "${m}" ${fht(m,B)}`), S.push({
+        text: `Allow rule "${m}" ${fht(m,B)}`
+      })
+    }
+  }
+  for (let m of taa([..._D(M), ...Wl(M), ...Vc(M)], r))
+    if (A.push(m.line), m.securityWarning !== void 0) S.push(m.securityWarning);
+  let {
+    repoOnly: De
+  } = bFn((m) => {
+    try {
+      return [ge(mt(m))]
+    } catch {
+      return []
+    }
+  }, T), Re = [...L7e(re).map((m) => ({
+    dir: m,
+    destination: "localSettings"
+  })), ...[...y?.addDirs ?? [], ...P ?? []].map((m) => ({
+    dir: m,
+    destination: "session"
+  })), ...u.map((m) => ({
+    dir: m,
+    destination: "cliArg"
+  }))], Oe = await Promise.all(Re.map(async ({
+    dir: m,
+    destination: h
+  }) => ({
+    destination: h,
+    result: await sIe(m, M)
+  }))), Z = new Map, ce = [];
+  for (let {
+      result: m,
+      destination: h
+    }
+    of Oe)
+    if (m.resultType === "success") {
+      if (h === "session") ce.push(m.absolutePath);
+      if (M = sm(M, {
+          type: "addDirectories",
+          directories: [m.absolutePath],
+          destination: h === "localSettings" && De.has(m.absolutePath) ? "projectSettings" : h
+        }), eaa(h)) {
+        let B = adn(m.absolutePath);
+        if (B.length > 0) {
+          Z.set(m.absolutePath, B);
+          let Q = B.filter((V) => V !== m.absolutePath);
+          if (Q.length > 0) M = sm(M, {
+            type: "addDirectories",
+            directories: Q,
+            destination: h
+          })
+        }
+      }
+    } else if (m.resultType !== "alreadyInWorkingDirectory" && m.resultType !== "pathNotFound") A.push(iIe(m));
+  if (Z.size > 0) M = {
+    ...M,
+    trustedNetworkDirectories: Z
+  };
+  return {
+    toolPermissionContext: M,
+    warnings: A,
+    securityWarnings: S,
+    dangerousPermissions: le,
+    overlyBroadBashPermissions: ae,
+    ...K && {
+      bypassCapabilityNotification: utr
+    },
+    inheritedSessionDirectories: ce
+  }
+}
+
+function taa(e, s) {
+  let o = [],
+    r = s(),
+    n = new Set([...r.map((a) => a.name), ...Pe]),
+    d = new Map([
+      [Me, "command"],
+      [kt, "command"],
+      [Qr, "path"],
+      [_r, "path"], ...r.filter((a) => a.ruleContentField).map((a) => [a.name, a.ruleContentField])
+    ]);
+  for (let a of [...U(e, "deny"), ...U(e, "ask")]) {
+    if (a.source === "toolsNarrowing" || a.source === "session") continue;
+    let {
+      toolName: u,
+      ruleContent: y
+    } = a.ruleValue;
+    if (rje.has(u)) {
+      t(`Permission ${a.ruleBehavior} rule names a removed tool: ${u}`);
+      continue
+    }
+    if (dS(u) || u.includes("_") || $pe(u).length > 0 || n.has(u)) {
+      let P = d.get(u);
+      if (P && y !== void 0) {
+        let T = y.indexOf(":");
+        if (T > 0 && y.slice(0, T).trim() === P) {
+          let A = `Permission ${a.ruleBehavior} rule "${mn(a.ruleValue)}" targets ${P} as a raw string and will not match`,
+            S = u === _r ? "." : u === Qr ? ` \u2014 use ${ze}(${"\u2026"}) to match file-read paths.` : u === Yt || u === gi ? ` \u2014 use ${dt}(${"\u2026"}) to match file-write paths.` : ` \u2014 use ${u}(${"\u2026"}) for ${u}'s own matcher.`;
+          o.push(J(a, A + S, `${Ua(a.ruleBehavior)} rule ${mn(a.ruleValue)} never matches${u===_r?"":` \xB7 use ${u===Qr?ze:u===Yt||u===gi?dt:u}(${"\u2026"})`}`))
+        }
+      }
+      continue
+    }
+    o.push(J(a, `Permission ${a.ruleBehavior} rule "${mn(a.ruleValue)}" matches no known tool \u2014 check for typos.`, `${Ua(a.ruleBehavior)} rule ${mn(a.ruleValue)} matches no tool \xB7 check for typos`))
+  }
+  for (let a of [...U(e, "allow"), ...U(e, "deny"), ...U(e, "ask")]) {
+    if (a.source === "session" || a.source === "toolsNarrowing") continue;
+    if (a.source === "cliArg" && a.ruleBehavior === "allow" && a.ruleValue.toolName === Qr) continue;
+    let {
+      ruleContent: u
+    } = a.ruleValue;
+    if (u !== void 0) {
+      let P = u.indexOf(":");
+      if (P > 0 && /^[A-Za-z_][A-Za-z0-9_]*$/.test(u.slice(0, P).trim()) && !/^[A-Za-z]:[\\/]/.test(u.trim())) continue
+    }
+    let y = BAe(mn(a.ruleValue), a.ruleBehavior);
+    if (y.valid && y.warning) {
+      let P = a.source === "cliArg" ? a.ruleBehavior === "allow" ? "--allowed-tools" : "--disallowed-tools" : a.source === "flagSettings" && !un("flagSettings") ? "--settings" : a.source === "policySettings" ? "managed policy settings" : j(a.source);
+      o.push(J(a, `Permission ${a.ruleBehavior} rule (${P}): ${y.warning}`, y.securityNotice === void 0 ? void 0 : `${Ua(a.ruleBehavior)} rule ${y.securityNotice}`))
+    }
+  }
+  return o
+}
+
+function J(e, s, o) {
+  if (o === void 0) return {
+    line: s
+  };
+  let r = yi.find((d) => d === e.source && d !== "flagSettings"),
+    n = r === void 0 ? void 0 : un(r);
+  return {
+    line: s,
+    securityWarning: n === void 0 ? {
+      text: o
+    } : {
+      text: o,
+      seenKey: me([e.source, n, o])
+    }
+  }
+}
+
+function U(e, s) {
+  return e.filter((o) => o.ruleBehavior === s)
+}
+
+function FYo(e, s) {
+  if (Ip()) return e;
+  return {
+    ...e,
+    alwaysAllowRules: {
+      ...e.alwaysAllowRules,
+      cliArg: [...e.alwaysAllowRules.cliArg ?? [], ...s]
+    }
+  }
+}
+
+function ptr(e, s = {}) {
+  let o = wMr();
+  if (!o) return e;
+  let r = o.awaitsGrowthBook && Mz();
+  if (r && !o.awaitsPolicyVerdict) return e;
+  if (e.mode !== o.mode) return Ret(void 0), e;
+  let n = Syo(o.inputs);
+  if (n.autoDefaultWithheldForPendingVerdict) return e;
+  let d = r ? {
+    mode: n.mode,
+    inputs: o.inputs,
+    awaitsGrowthBook: !0,
+    awaitsPolicyVerdict: !1
+  } : void 0;
+  if (Ret(d), UEo(n.autoStartWithheldForHipaaTaint), n.notification !== void 0) s.onNotification?.(n.notification);
+  if (n.mode === e.mode || n.mode === "bypassPermissions" && !e.isBypassPermissionsModeAvailable || n.mode === "auto" && !yb()) return e;
+  t(`[permission-mode] startup resolved ${e.mode} against ${o.awaitsPolicyVerdict?"a pending policy verdict":"an empty GrowthBook cache"}; re-resolved to ${n.mode}`), $Eo(n.fromAutoFallback);
+  let a = {
+    ...c$(e.mode, n.mode, e, "startup_reresolve"),
+    mode: n.mode,
+    ...o.awaitsPolicyVerdict && n.decidedByProactivityLevel && {
+      startupModeDecidedByProactivityLevel: o.inputs.proactivityLevel
+    }
+  };
+  return Ret(d), a
+}
+
+function y3r() {
+  let e = wMr();
+  if (!e?.awaitsPolicyVerdict || e.inputs.proactivityLevel === void 0) return;
+  let s = Syo(e.inputs).levelPickHeldForPendingVerdict;
+  return s === void 0 ? void 0 : t2i(s)
+}
+
+function _3r() {
+  let e = wMr();
+  if (!e?.awaitsPolicyVerdict) return;
+  Ret(e.awaitsGrowthBook && Mz() ? {
+    ...e,
+    awaitsPolicyVerdict: !1
+  } : void 0)
+}
+async function W6e(e, s, o = !1) {
+  let r = await C4("tengu_auto_mode_config", {}),
+    n = he(r?.enabled),
+    d = Tur();
+  if (!gSe()) rjn(n === "disabled");
+  let a = at(),
+    {
+      supported: u,
+      disableFastModeBreakerFires: y
+    } = Pko({
+      model: a,
+      fastMode: !!s,
+      disableFastMode: !!r?.disableFastMode
+    });
+  ZMs(y ? s ? "fast-mode" : "model" : null);
+  let P = n !== "disabled" && !d && u,
+    T = P,
+    A = d && n !== "disabled" && u;
+  t(`[auto-mode] verifyAutoModeGateAccess: enabledState=${n} disabledBySettings=${d} model=${a} modelSupported=${u} disableFastModeBreakerFires=${y} carouselAvailable=${T} canEnterAuto=${P}`);
+  let S = QMs();
+  if (!P) Ret(void 0);
+  let p = (E, O) => {
+    if (E.isAutoModeAvailable !== O) t(`[auto-mode] verifyAutoModeGateAccess setAvailable: ${E.isAutoModeAvailable} -> ${O}`);
+    return E.isAutoModeAvailable === O && E.canAutoClassifierRun === P ? E : {
+      ...E,
+      isAutoModeAvailable: O,
+      canAutoClassifierRun: P
+    }
+  };
+  if (P) return {
+    canEnterAuto: P,
+    refusedForSettingsAlone: A,
+    updateContext: (E) => {
+      if (_3r(), E = ptr(E), Ret(void 0), E.mode === "plan" && !E.prePlanMode) {
+        let O = htr(E);
+        if (O) return p({
+          ...O,
+          prePlanMode: "default"
+        }, T)
+      }
+      return p(E, T)
+    }
+  };
+  let w;
+  if (d) w = "settings", t("auto mode disabled: disableAutoMode in settings", {
+    level: "warn"
+  });
+  else if (n === "disabled") w = "circuit-breaker", t('auto mode disabled: tengu_auto_mode_config.enabled === "disabled" (circuit breaker)', {
+    level: "warn"
+  });
+  else if (s && y && SO(a)) w = "fast-mode", t("auto mode disabled: tengu_auto_mode_config.disableFastMode with the /fast toggle on", {
+    level: "warn"
+  });
+  else w = "model", t(`auto mode disabled: model ${at()} does not support auto mode`, {
+    level: "warn"
+  });
+  let _ = GQ(w),
+    C = (E) => {
+      if (t(`[auto-mode] kickOutOfAutoIfNeeded applying: ctx.mode=${E.mode} ctx.prePlanMode=${E.prePlanMode} reason=${w}`), !DBe(E)) return p(E, !1);
+      return b3r(E)
+    },
+    R = DBe(e);
+  if (!R && !S) return {
+    updateContext: C,
+    canEnterAuto: P,
+    refusedForSettingsAlone: A
+  };
+  if (R) {
+    let E = o && w === "model" && gJ();
+    return {
+      updateContext: C,
+      canEnterAuto: P,
+      refusedForSettingsAlone: A,
+      notification: E ? void 0 : _
+    }
+  }
+  return {
+    updateContext: C,
+    canEnterAuto: P,
+    refusedForSettingsAlone: A,
+    notification: e.isAutoModeAvailable ? _ : void 0
+  }
+}
+
+function Fqt() {
+  return gSe() || Tur()
+}
+
+function Ue() {
+  return $o().findLast((e) => F5t(be(e) || {}))
+}
+
+function HYo() {
+  return $o().filter((e) => F5t(be(e) || {}))
+}
+
+function mtr() {
+  let e = Ue(),
+    s = zli();
+  return {
+    autoModeAvailable: yb(),
+    autoModeUnavailableReason: de(nL()),
+    autoModeDisabledBySettingsSource: de(e),
+    autoModeDisabledByPolicyOrigin: e === "policySettings" ? de(zv()) : void 0,
+    autoModeDisabledByTrustedPolicy: GCt(),
+    autoModeEnabledState: f(s.value),
+    autoModeEnabledStateSource: f(s.src),
+    autoModeCircuitBroken: gSe(),
+    defaultModeSetting: de((Cr() || {}).permissions?.defaultMode),
+    autoModeFromFallback: gJ()
+  }
+}
+
+function GCt() {
+  return F5t(be("policySettings") || {}) && rtt().some(F5t)
+}
+var We = "enabled";
+
+function he(e) {
+  if (e === "enabled" || e === "disabled" || e === "opt-in") return e;
+  return We
+}
+
+function $Yo() {
+  return zli().value
+}
+
+function zli() {
+  let s = v("tengu_auto_mode_config", {})?.enabled,
+    o = he(s);
+  return {
+    value: o,
+    src: s === o ? "gb" : "default"
+  }
+}
+
+function UYo(e) {
+  let s = e;
+  if (e.mode === "bypassPermissions") s = sm(e, {
+    type: "setMode",
+    mode: "default",
+    destination: "session"
+  });
+  return {
+    ...s,
+    isBypassPermissionsModeAvailable: !1
+  }
+}
+
+function DBe(e) {
+  return e.mode === "auto" || e.mode === "plan" && (e.prePlanMode === "auto" || !!e.strippedDangerousRules)
+}
+
+function b3r(e) {
+  let s = "default";
+  {
+    let o = e.startupModeDecidedByProactivityLevel;
+    if ((e.mode === "auto" || e.prePlanMode === "auto") && o !== void 0) {
+      if (dO()) {
+        let r = Md(jCe(o, {
+            isAutoModeAvailable: !1,
+            isBypassPermissionsModeAvailable: !1
+          }, e.proactivityBaseline?.mode)),
+          n = t2e(o, r, e.proactivityBaseline?.mode) !== void 0;
+        s = r === "plan" || n ? "default" : r
+      }
+      e = {
+        ...e,
+        startupModeDecidedByProactivityLevel: void 0
+      }
+    }
+  }
+  if (VD(!1), xj(!0), e.mode === "auto") return Q_e({
+    from: "auto",
+    to: s,
+    trigger: "auto_gate_denied"
+  }), {
+    ...sm(VOe(e), {
+      type: "setMode",
+      mode: s,
+      destination: "session"
+    }),
+    isAutoModeAvailable: !1,
+    canAutoClassifierRun: !1
+  };
+  return {
+    ...VOe(e),
+    prePlanMode: e.prePlanMode === "auto" ? s : e.prePlanMode,
+    isAutoModeAvailable: !1,
+    canAutoClassifierRun: !1
+  }
+}
+
+function BYo() {
+  return (Cr() || {}).permissions?.defaultMode === "auto"
+}
+
+function jYo() {
+  return yb() && wBt()
+}
+
+function Ae() {
+  return Ou() && kns() && !GCt() && !F5t(be("flagSettings") || {})
+}
+
+function Ee() {
+  if (FR()) return !1;
+  if (lT().endOfferChoice === "switch") return !1;
+  return jYo()
+}
+
+function WSn(e) {
+  return yb() || e === "auto" && Ae()
+}
+
+function S3r() {
+  njn(!wBt())
+}
+
+function w3r(e) {
+  return S3r(), Se(e, jYo)
+}
+
+function Te() {
+  return (yb() || Ae()) && (!XMs() || wBt()) && !eFs("useAutoModeDuringPlan")
+}
+
+function htr(e) {
+  if (!Ee()) return null;
+  return VD(!0), T8(e)
+}
+
+function VCt(e) {
+  let s = e.mode;
+  if (s === "plan") return e;
+  if (e.planDoc !== void 0) return VCt({
+    ...e,
+    planDoc: void 0
+  });
+  if (s === "auto") {
+    if (Te()) return {
+      ...e,
+      prePlanMode: "auto"
+    };
+    return VD(!1), xj(!0), {
+      ...VOe(e),
+      prePlanMode: "auto"
+    }
+  }
+  if (s !== "bypassPermissions") {
+    let o = htr(e);
+    if (o) return {
+      ...o,
+      prePlanMode: s
+    }
+  }
+  return t(`[prepareContextForPlanMode] plain plan entry, prePlanMode=${s}`, {
+    level: "info"
+  }), {
+    ...e,
+    prePlanMode: s
+  }
+}
+
+function WYo(e, s) {
+  let o = e;
+  if (o.startupModeDecidedByProactivityLevel !== void 0) o = {
+    ...o,
+    startupModeDecidedByProactivityLevel: void 0
+  };
+  if (o.mode !== "bypassPermissions" && o.isBypassPermissionsModeAvailable && !s.bypassAvailableByFlag) o = {
+    ...o,
+    isBypassPermissionsModeAvailable: !1
+  };
+  if (o.mode === "plan" && o.prePlanMode !== void 0) {
+    let r = LBe({
+      ...o,
+      prePlanMode: "default"
+    });
+    o = Ou() ? r : {
+      ...r,
+      prePlanMode: void 0
+    }
+  }
+  return o
+}
+
+function LBe(e) {
+  return Se(e, Te)
+}
+
+function Se(e, s) {
+  if (e.mode === "auto") return T8(e);
+  if (e.mode !== "plan") return e;
+  if (!e.prePlanMode || e.prePlanMode === "bypassPermissions") return e;
+  let o = Ou(),
+    r = o ? s() : Ee();
+  if (r && o) return T8(e);
+  if (!r && !o) return e;
+  if (r) return VD(!0), xj(!1), T8(e);
+  return VD(!1), xj(!0), VOe(e)
+}
+export {
+  ctr,
+  $li,
+  utr,
+  Uli,
+  Bli,
+  Xia,
+  jli,
+  Wli,
+  u3r,
+  Jia,
+  T8,
+  PYo,
+  OYo,
+  f3r,
+  VOe,
+  IYo,
+  c$,
+  MYo,
+  Lle,
+  p3r,
+  VC,
+  DYo,
+  ftr,
+  Qia,
+  Zia,
+  LYo,
+  m3r,
+  eaa,
+  h3r,
+  g3r,
+  NYo,
+  taa,
+  FYo,
+  ptr,
+  y3r,
+  _3r,
+  W6e,
+  Fqt,
+  HYo,
+  mtr,
+  GCt,
+  $Yo,
+  zli,
+  UYo,
+  DBe,
+  b3r,
+  BYo,
+  jYo,
+  WSn,
+  S3r,
+  w3r,
+  htr,
+  VCt,
+  WYo,
+  LBe
+};

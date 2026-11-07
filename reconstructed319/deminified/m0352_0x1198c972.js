@@ -1,0 +1,41 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { he } from "B:/~BUN/root/chunk-fet34rqr.js";
+var u = ["BUN_GC_TIMER_INTERVAL", "MIMALLOC_PURGE_HOLES_MIN_INTERVAL", "BUN_IDLE_GC_SECONDS", "MIMALLOC_PURGE_DELAY", "BUN_JSC_useFTLJIT", "BUN_JSC_percentCPUPerMBForEdenTimer", "BUN_JSC_percentCPUPerMBForFullTimer"],
+  d = new Set(["", "0", "false", "no", "off"]),
+  n = he({
+    isNoted: !1,
+    namesSet: void 0,
+    purgeDelayMs: void 0,
+    isCollectionTimerOff: void 0
+  }, e => {
+    e.isNoted = !1, e.namesSet = void 0, e.purgeDelayMs = void 0, e.isCollectionTimerOff = void 0;
+  });
+function a(e) {
+  return e !== void 0 && !d.has(e.toLowerCase());
+}
+function jva() {
+  if (n.isNoted) return;
+  n.isNoted = !0;
+  try {
+    let env = process.env,
+      r = 0;
+    for (let [s, f] of u.entries()) if (env[f]) r |= 1 << s;
+    let MIMALLOC_PURGE_DELAY = env.MIMALLOC_PURGE_DELAY,
+      o = MIMALLOC_PURGE_DELAY !== void 0 && /^\d{1,7}$/.test(MIMALLOC_PURGE_DELAY) ? Number(MIMALLOC_PURGE_DELAY) : void 0,
+      i = a(env.BUN_GC_TIMER_DISABLE);
+    n.purgeDelayMs = o, n.isCollectionTimerOff = i, n.namesSet = r;
+  } catch {}
+}
+function bqn() {
+  return n.namesSet;
+}
+function Sqn() {
+  return n.purgeDelayMs;
+}
+function jKs() {
+  return n.isCollectionTimerOff;
+}
+export { jva, bqn, Sqn, jKs };

@@ -1,0 +1,1389 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  d
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import "B:/~BUN/root/chunk-j6pt0v41.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import {
+  t,
+  _
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import "B:/~BUN/root/chunk-xrwdh0g4.js";
+import "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-apgsnbqk.js";
+import "B:/~BUN/root/chunk-9957329g.js";
+import "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-bfwh5k9e.js";
+import "B:/~BUN/root/chunk-dwg8my6z.js";
+import {
+  Fe
+} from "B:/~BUN/root/chunk-vxjrk7vf.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import "B:/~BUN/root/chunk-eswth6m1.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-y5gyn2hc.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import "B:/~BUN/root/chunk-z6138ats.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-gh4155re.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import "B:/~BUN/root/chunk-mb9chr1y.js";
+import "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-8f4z6bdn.js";
+import "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import "B:/~BUN/root/chunk-sy1h8mf0.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-fkr27nhj.js";
+import "B:/~BUN/root/chunk-thn0wk2x.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import "B:/~BUN/root/chunk-t4qpmjt5.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import {
+  ai
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import {
+  ct
+} from "B:/~BUN/root/chunk-bkfncj77.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import "B:/~BUN/root/chunk-yhafkw66.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-0s9zh2h6.js";
+import "B:/~BUN/root/chunk-sgy380eg.js";
+import "B:/~BUN/root/chunk-waswqpwd.js";
+import "B:/~BUN/root/chunk-p2ta953m.js";
+import {
+  ot,
+  s,
+  n,
+  Qi
+} from "B:/~BUN/root/chunk-qey16aan.js";
+import "B:/~BUN/root/chunk-sc660841.js";
+import "B:/~BUN/root/chunk-31b4g6te.js";
+import "B:/~BUN/root/chunk-chv9g988.js";
+import "B:/~BUN/root/chunk-dwbkkfd6.js";
+import "B:/~BUN/root/chunk-rmd6bs96.js";
+import "B:/~BUN/root/chunk-b5ry9py2.js";
+import "B:/~BUN/root/chunk-de98q5we.js";
+import "B:/~BUN/root/chunk-ddamx62b.js";
+import "B:/~BUN/root/chunk-wzeexm6f.js";
+import "B:/~BUN/root/chunk-c0m1y3zd.js";
+import "B:/~BUN/root/chunk-pnm80mz6.js";
+import "B:/~BUN/root/chunk-gr5se97s.js";
+import "B:/~BUN/root/chunk-dsgmffrq.js";
+import "B:/~BUN/root/chunk-emd6eb45.js";
+import "B:/~BUN/root/chunk-y781qzhe.js";
+import "B:/~BUN/root/chunk-e8znf4zw.js";
+import "B:/~BUN/root/chunk-68y6snsb.js";
+import "B:/~BUN/root/chunk-qdyt0gq6.js";
+import {
+  Uw
+} from "B:/~BUN/root/chunk-tmdrwqnv.js";
+import "B:/~BUN/root/chunk-n8t98fhm.js";
+import "B:/~BUN/root/chunk-crjx6seq.js";
+import "B:/~BUN/root/chunk-cacx0j4x.js";
+import "B:/~BUN/root/chunk-7g0t7h3t.js";
+import "B:/~BUN/root/chunk-v95bwhaa.js";
+import {
+  ra,
+  nE
+} from "B:/~BUN/root/chunk-tzwf3sbj.js";
+import {
+  si,
+  Qc,
+  cu,
+  so,
+  ti,
+  Ze
+} from "B:/~BUN/root/chunk-cpzw87wr.js";
+import "B:/~BUN/root/chunk-q8sf8fhe.js";
+import {
+  Re
+} from "B:/~BUN/root/chunk-qr2xxkqa.js";
+import "B:/~BUN/root/chunk-fnf5t6te.js";
+import "B:/~BUN/root/chunk-qk8tvzkn.js";
+import {
+  ia
+} from "B:/~BUN/root/chunk-q793s85g.js";
+import "B:/~BUN/root/chunk-c1v460b9.js";
+import "B:/~BUN/root/chunk-hh79wmvd.js";
+import "B:/~BUN/root/chunk-xt7xbt1n.js";
+import "B:/~BUN/root/chunk-9ezywpz7.js";
+import "B:/~BUN/root/chunk-dw9hahea.js";
+import "B:/~BUN/root/chunk-2htsebsg.js";
+import "B:/~BUN/root/chunk-7vfy9z2g.js";
+import "B:/~BUN/root/chunk-cync0e08.js";
+import "B:/~BUN/root/chunk-z8bb1299.js";
+import "B:/~BUN/root/chunk-npkbazqf.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import "B:/~BUN/root/chunk-wt8tyqt4.js";
+import "B:/~BUN/root/chunk-j6ahtce9.js";
+import "B:/~BUN/root/chunk-7pxn9dsp.js";
+import "B:/~BUN/root/chunk-n0v0c6zt.js";
+import "B:/~BUN/root/chunk-2x2z0t2k.js";
+import "B:/~BUN/root/chunk-42915bn6.js";
+import "B:/~BUN/root/chunk-vk5b2c7t.js";
+import "B:/~BUN/root/chunk-tjfmeakx.js";
+import "B:/~BUN/root/chunk-076mmgjt.js";
+import "B:/~BUN/root/chunk-y1b1g4ac.js";
+import "B:/~BUN/root/chunk-cxcakgnv.js";
+import "B:/~BUN/root/chunk-39zyvd3e.js";
+import "B:/~BUN/root/chunk-wxhfn3za.js";
+import "B:/~BUN/root/chunk-pdtjaehv.js";
+import "B:/~BUN/root/chunk-x6frvp1m.js";
+import "B:/~BUN/root/chunk-eds8xkh8.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import "B:/~BUN/root/chunk-9t9ygsbp.js";
+import "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import "B:/~BUN/root/chunk-6j3fjnhn.js";
+import "B:/~BUN/root/chunk-hvykkx00.js";
+import "B:/~BUN/root/chunk-f0zgv0ya.js";
+import "B:/~BUN/root/chunk-22y97556.js";
+import "B:/~BUN/root/chunk-9bs2y8fc.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  mAr
+} from "B:/~BUN/root/chunk-4tp5kqnx.js";
+import "B:/~BUN/root/chunk-nwv7r07s.js";
+import "B:/~BUN/root/chunk-78494p3w.js";
+import "B:/~BUN/root/chunk-gezr7m08.js";
+import "B:/~BUN/root/chunk-tdekz3md.js";
+import "B:/~BUN/root/chunk-ke150ry1.js";
+import "B:/~BUN/root/chunk-wss0tnsx.js";
+import "B:/~BUN/root/chunk-vzhm698f.js";
+import "B:/~BUN/root/chunk-4xvtrfzh.js";
+import "B:/~BUN/root/chunk-jh04j3yr.js";
+import "B:/~BUN/root/chunk-v29ccgfa.js";
+import "B:/~BUN/root/chunk-detjgwj4.js";
+import "B:/~BUN/root/chunk-knfpag6d.js";
+import "B:/~BUN/root/chunk-hr1m6fe3.js";
+import "B:/~BUN/root/chunk-cvaa202c.js";
+import "B:/~BUN/root/chunk-2r9r3hfm.js";
+import "B:/~BUN/root/chunk-jbf2dde1.js";
+import "B:/~BUN/root/chunk-rv3pfsrw.js";
+import "B:/~BUN/root/chunk-8qv1t8b3.js";
+import "B:/~BUN/root/chunk-b7bhhce8.js";
+import "B:/~BUN/root/chunk-s89g0dw7.js";
+import "B:/~BUN/root/chunk-dcmvdxnm.js";
+import "B:/~BUN/root/chunk-psjm1gcn.js";
+import "B:/~BUN/root/chunk-27h4st9h.js";
+import "B:/~BUN/root/chunk-6v74v9ar.js";
+import "B:/~BUN/root/chunk-eak7wp7z.js";
+import "B:/~BUN/root/chunk-mbh2s41k.js";
+import "B:/~BUN/root/chunk-sjvfcp1z.js";
+import "B:/~BUN/root/chunk-s9vv4h32.js";
+import "B:/~BUN/root/chunk-7thhw21a.js";
+import "B:/~BUN/root/chunk-wm0axmjp.js";
+import "B:/~BUN/root/chunk-1012essb.js";
+import "B:/~BUN/root/chunk-kpr2et3s.js";
+import "B:/~BUN/root/chunk-kfm993xq.js";
+import "B:/~BUN/root/chunk-ckdgegnz.js";
+import "B:/~BUN/root/chunk-x9bz04wf.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import "B:/~BUN/root/chunk-z7bs0q82.js";
+import "B:/~BUN/root/chunk-5g1gmfkv.js";
+import "B:/~BUN/root/chunk-xgwmwbnb.js";
+import "B:/~BUN/root/chunk-2392ztjf.js";
+import "B:/~BUN/root/chunk-pw7914mv.js";
+import "B:/~BUN/root/chunk-hjds4dtx.js";
+import "B:/~BUN/root/chunk-sx264pby.js";
+import "B:/~BUN/root/chunk-cj2cn5y2.js";
+import "B:/~BUN/root/chunk-6bx54the.js";
+import "B:/~BUN/root/chunk-7rwbs73j.js";
+import "B:/~BUN/root/chunk-m1v50w96.js";
+import "B:/~BUN/root/chunk-yg4ttpr7.js";
+import "B:/~BUN/root/chunk-6h5p2dxf.js";
+import "B:/~BUN/root/chunk-tdg0k3wq.js";
+import "B:/~BUN/root/chunk-n98vg3jf.js";
+import "B:/~BUN/root/chunk-838fxqce.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-2gz7xsvb.js";
+import "B:/~BUN/root/chunk-02j0cm13.js";
+import "B:/~BUN/root/chunk-0s00dkj6.js";
+import "B:/~BUN/root/chunk-hevmq1yj.js";
+import "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-0aq7t0nw.js";
+import "B:/~BUN/root/chunk-ajvcvya3.js";
+import "B:/~BUN/root/chunk-63btkzab.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-vke7wtay.js";
+import "B:/~BUN/root/chunk-6g8w5kyh.js";
+import "B:/~BUN/root/chunk-jmt91fq8.js";
+import "B:/~BUN/root/chunk-5x4j33v9.js";
+import "B:/~BUN/root/chunk-m8dg5txf.js";
+import "B:/~BUN/root/chunk-ekqreyhv.js";
+import "B:/~BUN/root/chunk-mf9c9p38.js";
+import "B:/~BUN/root/chunk-875j4y83.js";
+import "B:/~BUN/root/chunk-t4pbv0np.js";
+import "B:/~BUN/root/chunk-jxvayzd7.js";
+import "B:/~BUN/root/chunk-xfqs9tac.js";
+import "B:/~BUN/root/chunk-5w7xhbnh.js";
+import "B:/~BUN/root/chunk-vmp6vbba.js";
+import "B:/~BUN/root/chunk-dxwyqd26.js";
+import "B:/~BUN/root/chunk-k5mszhcg.js";
+import "B:/~BUN/root/chunk-z4janqzm.js";
+import "B:/~BUN/root/chunk-zymc6pem.js";
+import "B:/~BUN/root/chunk-mjgazsjk.js";
+import "B:/~BUN/root/chunk-2f6ykbbh.js";
+import "B:/~BUN/root/chunk-ghar8fn5.js";
+import "B:/~BUN/root/chunk-8cgm9m8p.js";
+import "B:/~BUN/root/chunk-5gm1xyqv.js";
+import "B:/~BUN/root/chunk-rpagz3p9.js";
+import "B:/~BUN/root/chunk-rzc1dapy.js";
+import "B:/~BUN/root/chunk-hh77nseb.js";
+import "B:/~BUN/root/chunk-7pj7keyk.js";
+import "B:/~BUN/root/chunk-3kdxvefh.js";
+import "B:/~BUN/root/chunk-vs3bcjd7.js";
+import "B:/~BUN/root/chunk-pmr34yc8.js";
+import "B:/~BUN/root/chunk-mwy4xyee.js";
+import "B:/~BUN/root/chunk-ajpcs9fs.js";
+import "B:/~BUN/root/chunk-gq4ywexf.js";
+import "B:/~BUN/root/chunk-rhdsefgz.js";
+import "B:/~BUN/root/chunk-2fedt3ag.js";
+import "B:/~BUN/root/chunk-kexqfgtm.js";
+import "B:/~BUN/root/chunk-5bb21frh.js";
+import "B:/~BUN/root/chunk-vp8vb7t8.js";
+import "B:/~BUN/root/chunk-xkw95p5n.js";
+import "B:/~BUN/root/chunk-sa4785jr.js";
+import "B:/~BUN/root/chunk-nk59bmc9.js";
+import "B:/~BUN/root/chunk-n7ta2s3w.js";
+import "B:/~BUN/root/chunk-65j4e9bn.js";
+import "B:/~BUN/root/chunk-ex2shtaj.js";
+import "B:/~BUN/root/chunk-64qg3pvz.js";
+import "B:/~BUN/root/chunk-jv4ech2n.js";
+import "B:/~BUN/root/chunk-5fdpyc78.js";
+import "B:/~BUN/root/chunk-ybkgfvgz.js";
+import "B:/~BUN/root/chunk-gknte1ng.js";
+import "B:/~BUN/root/chunk-4tz0m6qq.js";
+import "B:/~BUN/root/chunk-3qkmk2e4.js";
+import "B:/~BUN/root/chunk-b3jc87kv.js";
+import "B:/~BUN/root/chunk-11wz0rq6.js";
+import "B:/~BUN/root/chunk-vy4t7613.js";
+import "B:/~BUN/root/chunk-kfnabvp7.js";
+import "B:/~BUN/root/chunk-jj9s326a.js";
+import "B:/~BUN/root/chunk-p8dysp9f.js";
+import "B:/~BUN/root/chunk-5m83sh3a.js";
+import "B:/~BUN/root/chunk-pm850sj6.js";
+import "B:/~BUN/root/chunk-c86vwcts.js";
+import "B:/~BUN/root/chunk-6sbka0ts.js";
+import "B:/~BUN/root/chunk-05q1awc0.js";
+import "B:/~BUN/root/chunk-k5xd4a86.js";
+import "B:/~BUN/root/chunk-98qgaht2.js";
+import "B:/~BUN/root/chunk-r1gg0qbg.js";
+import "B:/~BUN/root/chunk-rc0vwsyy.js";
+import "B:/~BUN/root/chunk-w0kge9aq.js";
+import "B:/~BUN/root/chunk-teehnwdh.js";
+import "B:/~BUN/root/chunk-x4zqd4cy.js";
+import "B:/~BUN/root/chunk-ysxmr1nk.js";
+import "B:/~BUN/root/chunk-8rnfdnh3.js";
+import "B:/~BUN/root/chunk-7wcc5pbk.js";
+import "B:/~BUN/root/chunk-kk81ayzj.js";
+import "B:/~BUN/root/chunk-400x0tcq.js";
+import "B:/~BUN/root/chunk-1tbewxs3.js";
+import "B:/~BUN/root/chunk-rrf8gvt4.js";
+import "B:/~BUN/root/chunk-ftj46fnn.js";
+import "B:/~BUN/root/chunk-45td50dx.js";
+import "B:/~BUN/root/chunk-3vrk9h6f.js";
+import "B:/~BUN/root/chunk-0xtfwyhv.js";
+import "B:/~BUN/root/chunk-z2c6k7e2.js";
+import "B:/~BUN/root/chunk-h6zqt1s4.js";
+import "B:/~BUN/root/chunk-jmka9ye7.js";
+import "B:/~BUN/root/chunk-fc7k1zas.js";
+import "B:/~BUN/root/chunk-nw79m6g4.js";
+import "B:/~BUN/root/chunk-4vcs773m.js";
+import "B:/~BUN/root/chunk-1ratk947.js";
+import "B:/~BUN/root/chunk-wznngf8b.js";
+import "B:/~BUN/root/chunk-2ys4h17s.js";
+import "B:/~BUN/root/chunk-wxztkjve.js";
+import "B:/~BUN/root/chunk-wjxjrbnh.js";
+import "B:/~BUN/root/chunk-yrh147c7.js";
+import "B:/~BUN/root/chunk-taw9ve37.js";
+import "B:/~BUN/root/chunk-vyjvp8sa.js";
+import "B:/~BUN/root/chunk-jypg1bby.js";
+import "B:/~BUN/root/chunk-w0nyevkg.js";
+import "B:/~BUN/root/chunk-z5apdcem.js";
+import "B:/~BUN/root/chunk-d5rmf5x5.js";
+import "B:/~BUN/root/chunk-8x466dw5.js";
+import "B:/~BUN/root/chunk-17caj8fw.js";
+import "B:/~BUN/root/chunk-hhd7smkx.js";
+import "B:/~BUN/root/chunk-cejfpzdt.js";
+import "B:/~BUN/root/chunk-0q69tvcp.js";
+import "B:/~BUN/root/chunk-0jhmwh3q.js";
+import "B:/~BUN/root/chunk-j3efez3c.js";
+import "B:/~BUN/root/chunk-6cgv9p77.js";
+import "B:/~BUN/root/chunk-9ajgj3y1.js";
+import "B:/~BUN/root/chunk-pjcve3z9.js";
+import "B:/~BUN/root/chunk-cjmntjcn.js";
+import "B:/~BUN/root/chunk-43aygqej.js";
+import "B:/~BUN/root/chunk-y7em5h10.js";
+import "B:/~BUN/root/chunk-tmn2g637.js";
+import "B:/~BUN/root/chunk-mjx3yttm.js";
+import "B:/~BUN/root/chunk-wdfwarp2.js";
+import "B:/~BUN/root/chunk-0ypwt1ew.js";
+import "B:/~BUN/root/chunk-3eq12f11.js";
+import "B:/~BUN/root/chunk-mcdkvptw.js";
+import "B:/~BUN/root/chunk-q2s07yzr.js";
+import "B:/~BUN/root/chunk-3aa152x8.js";
+import "B:/~BUN/root/chunk-ymawhbhz.js";
+import "B:/~BUN/root/chunk-rbfkfjk4.js";
+import "B:/~BUN/root/chunk-az0cmmyt.js";
+import "B:/~BUN/root/chunk-bw0w9zyr.js";
+import "B:/~BUN/root/chunk-hydnwtf3.js";
+import "B:/~BUN/root/chunk-15eyam7k.js";
+import "B:/~BUN/root/chunk-ynneeax2.js";
+import "B:/~BUN/root/chunk-4ffx6rrs.js";
+import "B:/~BUN/root/chunk-8ytf4evt.js";
+import "B:/~BUN/root/chunk-33ssadqt.js";
+import "B:/~BUN/root/chunk-trf406sb.js";
+import "B:/~BUN/root/chunk-4zhce32x.js";
+import "B:/~BUN/root/chunk-bsbbs1xs.js";
+import "B:/~BUN/root/chunk-mq0pq26y.js";
+import "B:/~BUN/root/chunk-dgbjmrqs.js";
+import "B:/~BUN/root/chunk-h37egt7q.js";
+import {
+  Jn
+} from "B:/~BUN/root/chunk-yd5nr5hc.js";
+import "B:/~BUN/root/chunk-h6416p81.js";
+import {
+  P3n,
+  ua
+} from "B:/~BUN/root/chunk-kbk5awdm.js";
+import "B:/~BUN/root/chunk-hfz1e87n.js";
+import "B:/~BUN/root/chunk-x2k0mb6b.js";
+import "B:/~BUN/root/chunk-bvcekd4j.js";
+import "B:/~BUN/root/chunk-6651s0bp.js";
+import "B:/~BUN/root/chunk-fh7pby6f.js";
+import "B:/~BUN/root/chunk-bdxfgzxk.js";
+import {
+  sit,
+  _Oe,
+  iKt
+} from "B:/~BUN/root/chunk-et08qf3a.js";
+import {
+  ox,
+  Fkt,
+  y1r,
+  U6s,
+  Hkt,
+  bzt
+} from "B:/~BUN/root/chunk-tf23fzgg.js";
+import {
+  j6n,
+  Xkt
+} from "B:/~BUN/root/chunk-26h23f75.js";
+import "B:/~BUN/root/chunk-5fq49yza.js";
+import "B:/~BUN/root/chunk-pzgjv2gh.js";
+import {
+  Hf,
+  tQ,
+  RK,
+  rKt,
+  JJn,
+  sqr,
+  a_n,
+  ITt,
+  iqr,
+  Tni,
+  MTt,
+  Cni,
+  Sle,
+  e7n,
+  aqr,
+  dqr,
+  n7n,
+  lBe,
+  cqr,
+  uqr,
+  DGo,
+  LGo,
+  d_n,
+  s6e
+} from "B:/~BUN/root/chunk-q2dmnwgx.js";
+import {
+  Szt,
+  wzt
+} from "B:/~BUN/root/chunk-s5hmgy7n.js";
+import "B:/~BUN/root/chunk-w2rkhp43.js";
+import "B:/~BUN/root/chunk-jx2rmjhh.js";
+import "B:/~BUN/root/chunk-w3jccevj.js";
+import "B:/~BUN/root/chunk-9d0b66j5.js";
+import "B:/~BUN/root/chunk-sx03ea6s.js";
+import "B:/~BUN/root/chunk-81tfbmye.js";
+import "B:/~BUN/root/chunk-nyy541yq.js";
+import {
+  ne,
+  e,
+  r
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import "B:/~BUN/root/chunk-12sstdsz.js";
+import "B:/~BUN/root/chunk-j5m7a98b.js";
+import "B:/~BUN/root/chunk-4w2c6jye.js";
+import "B:/~BUN/root/chunk-4z0wj4qn.js";
+import "B:/~BUN/root/chunk-af319kny.js";
+import "B:/~BUN/root/chunk-daywa44q.js";
+import "B:/~BUN/root/chunk-9ygmp0tr.js";
+import "B:/~BUN/root/chunk-9t9mprhn.js";
+import "B:/~BUN/root/chunk-ggpp2a6r.js";
+import "B:/~BUN/root/chunk-qed5a8pe.js";
+import "B:/~BUN/root/chunk-75wha2r5.js";
+import "B:/~BUN/root/chunk-7vt2r34f.js";
+import "B:/~BUN/root/chunk-yjbw4jd5.js";
+import {
+  jM
+} from "B:/~BUN/root/chunk-9fbg6p79.js";
+import "B:/~BUN/root/chunk-1403xdv8.js";
+import "B:/~BUN/root/chunk-dt45jjk2.js";
+import "B:/~BUN/root/chunk-n7rjc97z.js";
+import "B:/~BUN/root/chunk-bwk2g6e0.js";
+import "B:/~BUN/root/chunk-1b2nf93s.js";
+import "B:/~BUN/root/chunk-q7dbkm6t.js";
+import "B:/~BUN/root/chunk-pgm29tvd.js";
+import "B:/~BUN/root/chunk-992ex3nd.js";
+import "B:/~BUN/root/chunk-h2qbvrp4.js";
+import "B:/~BUN/root/chunk-0wyf4zb9.js";
+import "B:/~BUN/root/chunk-vxbt81wk.js";
+import "B:/~BUN/root/chunk-v04fapnf.js";
+import "B:/~BUN/root/chunk-rsz72fpd.js";
+import "B:/~BUN/root/chunk-69k97bnp.js";
+import "B:/~BUN/root/chunk-q82am8wz.js";
+import "B:/~BUN/root/chunk-spc3jrd3.js";
+import "B:/~BUN/root/chunk-kgvnwy91.js";
+import "B:/~BUN/root/chunk-p25ahy45.js";
+import "B:/~BUN/root/chunk-4xx5w1am.js";
+import "B:/~BUN/root/chunk-pgf3n8rv.js";
+import {
+  ue,
+  O,
+  Z,
+  A,
+  y,
+  j
+} from "B:/~BUN/root/chunk-czy5r8bc.js";
+import "B:/~BUN/root/chunk-stfp5qgr.js";
+import "B:/~BUN/root/chunk-az6xed3t.js";
+import "B:/~BUN/root/chunk-w179eqqe.js";
+import "B:/~BUN/root/chunk-p8898990.js";
+import "B:/~BUN/root/chunk-fkz77yzp.js";
+import "B:/~BUN/root/chunk-zy4xrndc.js";
+import "B:/~BUN/root/chunk-we53d1t3.js";
+import "B:/~BUN/root/chunk-1jrzd264.js";
+import "B:/~BUN/root/chunk-zz0hj0zg.js";
+import "B:/~BUN/root/chunk-md18120p.js";
+import "B:/~BUN/root/chunk-zwf5p7y7.js";
+import "B:/~BUN/root/chunk-k3f9rj85.js";
+import "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-8zx74r55.js";
+import "B:/~BUN/root/chunk-xagk1yaq.js";
+import "B:/~BUN/root/chunk-zeshc0ep.js";
+import "B:/~BUN/root/chunk-vvwzzpy4.js";
+import "B:/~BUN/root/chunk-4hx27rd1.js";
+import "B:/~BUN/root/chunk-jjjspatt.js";
+import "B:/~BUN/root/chunk-6bss7gp5.js";
+import "B:/~BUN/root/chunk-h29cx855.js";
+import "B:/~BUN/root/chunk-yjr7e11x.js";
+import "B:/~BUN/root/chunk-tnfsxzpz.js";
+import "B:/~BUN/root/chunk-pp5rqp7s.js";
+import "B:/~BUN/root/chunk-ea8gze25.js";
+import "B:/~BUN/root/chunk-z1wt3cb2.js";
+import "B:/~BUN/root/chunk-cjd8dpgw.js";
+import "B:/~BUN/root/chunk-yscb2r3d.js";
+import "B:/~BUN/root/chunk-s20ae4sg.js";
+import "B:/~BUN/root/chunk-n3m61sfz.js";
+import "B:/~BUN/root/chunk-nk52yc3v.js";
+import "B:/~BUN/root/chunk-kt29vc17.js";
+import "B:/~BUN/root/chunk-a5dg1k4h.js";
+import "B:/~BUN/root/chunk-kj33sgq2.js";
+import "B:/~BUN/root/chunk-kh33ctc6.js";
+import "B:/~BUN/root/chunk-x6ny3ghw.js";
+import "B:/~BUN/root/chunk-0p5dw980.js";
+import "B:/~BUN/root/chunk-dx2wvwvf.js";
+import "B:/~BUN/root/chunk-fcp4egnh.js";
+import "B:/~BUN/root/chunk-frv0tk8w.js";
+import "B:/~BUN/root/chunk-ym6b88b3.js";
+import "B:/~BUN/root/chunk-zx0hhrva.js";
+import "B:/~BUN/root/chunk-s937snw9.js";
+import "B:/~BUN/root/chunk-j5zjtxy5.js";
+import "B:/~BUN/root/chunk-vdqpev1m.js";
+import "B:/~BUN/root/chunk-kd0f2gn5.js";
+import "B:/~BUN/root/chunk-ymgf3kpk.js";
+import "B:/~BUN/root/chunk-dzjj3jwh.js";
+import "B:/~BUN/root/chunk-xbhv3nhf.js";
+import "B:/~BUN/root/chunk-21s8ygah.js";
+import "B:/~BUN/root/chunk-e99p2x0p.js";
+import "B:/~BUN/root/chunk-36r971cb.js";
+import "B:/~BUN/root/chunk-ynpwd78y.js";
+import "B:/~BUN/root/chunk-eyvtcj15.js";
+import "B:/~BUN/root/chunk-r6enj9cw.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import "B:/~BUN/root/chunk-r2kdqtaa.js";
+import "B:/~BUN/root/chunk-j0enspnr.js";
+import "B:/~BUN/root/chunk-xr3thd43.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-62khcyrb.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import {
+  s4
+} from "B:/~BUN/root/chunk-4jfmvmew.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-cbv74thb.js";
+import "B:/~BUN/root/chunk-dc99dkg2.js";
+import "B:/~BUN/root/chunk-b37tyqej.js";
+import "B:/~BUN/root/chunk-dqan51g7.js";
+import "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-z35xf1k7.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import {
+  Sa
+} from "B:/~BUN/root/chunk-63176a0t.js";
+import {
+  ce
+} from "B:/~BUN/root/chunk-w7vsj9wa.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+j();
+var X = " \xB7 ",
+  uo = 4,
+  z = 3,
+  Bo = `${"\u9805".repeat(80)}\u2026`,
+  po = "Send to your project (looking it up\u2026) with the following:",
+  Te = "\u2423",
+  ho = "\\p{Default_Ignorable_Code_Point}",
+  Go = new RegExp(ho, "gu"),
+  je = `(?:\\p{White_Space}|${j6n.source}|${Xkt.source}|${ho})`,
+  Uo = new RegExp(`(?! )${je}|(?<=^|${je}) | (?=$|${je})`, "gu"),
+  mo = 6,
+  Me = {
+    transient: "That project couldn\u2019t be looked up just now. Close and run /send-to-project again.",
+    not_a_target: "That project can\u2019t take this session. Only a personal project that is not paused or archived can. Close and run /send-to-project again to pick another.",
+    auth_or_access: "This login can\u2019t use that project. Check that you are signed in and that the project is yours, then close and run /send-to-project again.",
+    request_failed: "That project was not found, or the server did not accept the request. Close and run /send-to-project again to pick another.",
+    policy_disabled: "Claude Projects can\u2019t be reached with this session\u2019s provider or traffic settings, so that project couldn\u2019t be looked up.",
+    invalid_input: "That project couldn\u2019t be looked up. Close and run /send-to-project again.",
+    bad_response: "That project couldn\u2019t be looked up. Close and run /send-to-project again."
+  },
+  Ko = {
+    anthropic_cloud: "cloud",
+    byoc: "self-hosted",
+    self_hosted_pool: "self-hosted"
+  };
+
+function wo(o) {
+  let {
+    width: i,
+    existing: l
+  } = o, u = l === null ? void 0 : l.project;
+  if (u === null) {
+    let f = ox(Me[l?.failure ?? "transient"], Math.max(1, i)).map((g, N) => ({
+      key: `lead-${N}`,
+      text: g
+    }));
+    return {
+      rows: f,
+      whole: {
+        environment: !0,
+        repository: !0
+      },
+      rowsAtMost: f.length
+    }
+  }
+  if (o.oneMessage && l !== null) return {
+    rows: [],
+    whole: {
+      environment: !0,
+      repository: !0
+    },
+    rowsAtMost: u === void 0 ? z : 0
+  };
+  let p = o.proposal.sessions?.length ?? 0,
+    h = o.attach && o.detection?.repo.kind === "github" && (!a_n(o.detection.repo) || o.monorepoEnvironment),
+    c = o.environment != null ? Ae(o.environment.name) : "",
+    R = l === null ? ["instructions", "icon", "color"].filter((f) => (o.proposal[f] ?? "") !== "") : [],
+    m = [...l === null ? [{
+      key: "env",
+      label: "Cloud environment",
+      value: Vo(o).slice(c.length),
+      maxRows: mo,
+      ...o.environment != null && {
+        bound: c
+      }
+    }, {
+      key: "repository",
+      label: "Repository",
+      value: h ? "" : go(o),
+      maxRows: h ? uo : z,
+      underBullet: h,
+      ...h && {
+        bound: go(o)
+      }
+    }] : [], {
+      key: "brief",
+      label: "Brief",
+      value: iKt(aqr(o.proposal, l === null ? "new" : "existing", "pane")) ? "saved to project memory. No setup card is posted." : "saved to project memory and posted as the setup card",
+      maxRows: 2
+    }, ...R.length > 0 ? [{
+      key: "settings",
+      label: "Project settings",
+      value: `${e7n(R)} from the brief`,
+      maxRows: 2
+    }] : [], ...p > 0 ? [{
+      key: "threads",
+      label: "Threads",
+      value: `${p} on the setup card. You start ${p===1?"it":"them"} there.`,
+      maxRows: 2
+    }] : [], {
+      key: "session",
+      label: "This session",
+      value: "the project can read it",
+      maxRows: 2
+    }],
+    b = (o.oneMessage ? m.filter(({
+      key: f
+    }) => f === "env" || f === "repository") : m).map(({
+      key: f,
+      label: g,
+      value: N,
+      maxRows: D,
+      underBullet: I,
+      bound: k
+    }) => {
+      let W = k === void 0 ? we(g, N, i, D) : fo(g, k, N, i, D, I),
+        B = k === void 0 ? we(g, N, i, Number.MAX_SAFE_INTEGER) : fo(g, k, "", i, Number.MAX_SAFE_INTEGER, I);
+      return {
+        key: f,
+        rows: W,
+        whole: B.length <= D && (k === void 0 || B.every((v, U) => W[U]?.startsWith(v.trimEnd()) === !0)),
+        rowsAtMost: f === "env" && o.environment === void 0 || f === "repository" && o.detection === null && !o.detectFailed ? f === "env" ? mo : uo : 0
+      }
+    }),
+    x = b.flatMap((f) => f.rows.map((g, N) => ({
+      key: `${f.key}-${N}`,
+      text: g
+    }))),
+    P = l === null ? o.oneMessage ? K("New personal project with this setup:", i).map((f, g) => ({
+      key: `lead-${g}`,
+      text: f
+    })) : Ne("Create personal project ", o.projectName, " with the following setup:", i) : u === void 0 ? K(po, i).map((f, g) => ({
+      key: `lead-${g}`,
+      text: f
+    })) : Ne("Send to personal project ", u.name !== "" ? u.name : "Untitled project", " with the following:", i, K(po, i).length);
+  return {
+    rows: [...P, ...x],
+    whole: {
+      environment: b.every((f) => f.key !== "env" || f.whole),
+      repository: b.every((f) => f.key !== "repository" || f.whole)
+    },
+    rowsAtMost: (l !== null && u === void 0 ? Math.max(P.length, Ne("Send to personal project ", Bo, " with the following:", i).length) : P.length) + b.reduce((f, g) => f + Math.max(g.rows.length, g.rowsAtMost), 0)
+  }
+}
+var yn = Object.keys(Me).filter(Yo);
+
+function Yo(o) {
+  return Object.hasOwn(Me, o)
+}
+
+function Ro(o) {
+  return o.replace(Uo, Te)
+}
+
+function xe(o, i, l = i) {
+  let u = [],
+    p = "",
+    h = 0,
+    c = Math.max(1, l);
+  for (let {
+      segment: R
+    }
+    of Sa().segment(Ro(o))) {
+    let m = ce(R);
+    if (p !== "" && h + m > c) {
+      c = Math.max(1, i);
+      let E = p.trimEnd(),
+        b = p.slice(E.length),
+        x = E !== "" && b !== "" && ce(b) + m <= c;
+      u.push(x ? E : p), p = x ? b : "", h = x ? ce(b) : 0
+    }
+    p += R, h += m
+  }
+  return [...u, p]
+}
+
+function we(o, i, l, u) {
+  let p = `${X}${o}: `,
+    h = ce(p) <= l / 2,
+    c = ce(h ? p : X),
+    R = ox(h ? i : `${o}: ${i}`, Math.max(1, l - c)),
+    m = R.slice(0, u).map((b, x) => (x === 0 ? h ? p : X : " ".repeat(c)) + b),
+    E = m.at(-1);
+  if (R.length > u && E !== void 0) m[m.length - 1] = ct(`${E}\u2026`, Math.max(1, l));
+  return m
+}
+
+function fo(o, i, l, u, p, h = !1) {
+  let c = Math.max(2, u),
+    R = `${X}${o}: `,
+    m = ce(X),
+    E = ce(R) <= c / 2 && !h ? ce(R) : m,
+    b = ox(`${o}:`, c - m).map((k, W) => (W === 0 ? X : " ".repeat(m)) + k),
+    x = `${b.at(-1)??""} `,
+    P = c - ce(x) >= 2,
+    f = l.trim() === "" ? [] : l.trim().split(" "),
+    g = [...b.slice(0, P ? -1 : void 0), ...xe(i, c - E, P ? c - ce(x) : c - E).map((k, W) => (P && W === 0 ? x : " ".repeat(E)) + k)],
+    N = 0;
+  for (let k = f[N]; k !== void 0 && ce(`${g.at(-1)} ${k}`) <= c; k = f[N]) g[g.length - 1] = `${g.at(-1)} ${k}`, N += 1;
+  if (N < f.length) {
+    let k = N === 0 ? g.at(-1) ?? "" : "",
+      W = k.slice(k.trimEnd().length);
+    if (W !== "" && ce(k.trimEnd()) > E) g[g.length - 1] = k.trimEnd();
+    let B = k !== g.at(-1) ? W : "";
+    g.push(...ox(f.slice(N).join(" "), Math.max(1, c - E - ce(B))).map((v, U) => " ".repeat(E) + (U === 0 ? B : "") + v))
+  }
+  let D = g.slice(0, p),
+    I = D.at(-1);
+  if (g.length > p && I !== void 0) D[D.length - 1] = ct(`${I}\u2026`, c);
+  return D
+}
+
+function K(o, i) {
+  let l = ox(o, Math.max(1, i)),
+    u = l.slice(0, z),
+    p = u.at(-1);
+  if (l.length > z && p !== void 0) u[u.length - 1] = ct(`${p}\u2026`, Math.max(1, i));
+  return u
+}
+
+function Ne(o, i, l, u, p = 1) {
+  let h = Ro(Ae(i)),
+    c = `\u201C${h}\u201D`,
+    R = Math.max(2, u),
+    m = ox(o.trimEnd(), R),
+    E = ox(l.trimStart(), R),
+    b = `${m.at(-1)??""} `,
+    x = R - ce(b),
+    P = xe(c, R, x),
+    f = (ce(c) <= x || ce(c) > R && x >= 2) && m.length - 1 + P.length + E.length >= p;
+  return (p <= 1 && ce(`${o}${c}${l}`) <= u ? [`${o}${c}${l}`] : [...m.slice(0, f ? -1 : void 0), ...f ? P.map((g, N) => N === 0 ? b + g : g) : xe(c, R), ...E]).map((g, N) => {
+    let D = g.indexOf(c);
+    return {
+      key: `lead-${N}`,
+      text: g,
+      ...D >= 0 && {
+        named: {
+          before: g.slice(0, D),
+          name: h,
+          after: g.slice(D + c.length)
+        }
+      }
+    }
+  })
+}
+
+function Vo(o) {
+  let {
+    environment: i
+  } = o;
+  if (i === void 0) return "looking it up\u2026";
+  if (i === null) return o.environmentLookupFailed ? "your organization\u2019s default (yours could not be looked up)" : "your organization\u2019s default";
+  let l = `(${Ko[i.kind]??"cloud"})`,
+    u = o.monorepoEnvironment && o.attach && o.detection?.repo.kind === "github" && a_n(o.detection.repo) ? "If the server refuses it, your organization\u2019s default is used and no repository is added." : "If the server refuses it, your organization\u2019s default is used.";
+  return `${Ae(i.name)} ${l}. ${u}`
+}
+
+function go(o) {
+  let {
+    detection: i
+  } = o;
+  if (i === null) return o.detectFailed ? "couldn\u2019t read this folder\u2019s git state. Close and run /send-to-project again." : "reading this folder\u2019s git remote\u2026";
+  let l = i.repo;
+  if (!o.attach) return "none";
+  switch (l.kind) {
+    case "github":
+      return `github.com/${l.owner}/${l.name}`;
+    case "no-github-remote":
+      return l.hasOrigin ? "none. The origin is not a github.com repository. Add one from project settings afterwards." : "none. This repository has no origin remote.";
+    case "no-git":
+      return "none. This folder is not a git repository."
+  }
+}
+
+function Ae(o) {
+  return ai(o.replace(Go, Te).replaceAll("\t", Te))
+}
+var bo = 2,
+  qo = 2,
+  Ho = 2,
+  Xo = 3,
+  zo = 5,
+  Ie = "tell Claude what to change",
+  Jo = 10,
+  oe = 2,
+  te = 1,
+  ve = 2,
+  Qo = 80,
+  Zo = "Choose Yes again to confirm.",
+  en = "Couldn\u2019t read this folder\u2019s git state. Close and run /send-to-project again.",
+  on = "This terminal is too narrow to show the repository in full. Widen it, or choose No.",
+  nn = "This terminal is too narrow to show the cloud environment in full. Widen it, or choose No.",
+  tn = "This terminal is too small to show the whole request. Make it taller or wider, or choose No.",
+  rn = ["Select with numbers [1-2] or up / down arrow keys. Then Enter to submit or Escape to cancel: 12", 'Invalid selection "12". Enter a number between 1 and 2.'];
+
+function Eo(o) {
+  let i = o.titleRows + o.previewHeadRows + o.warningRows + o.noticeRows + (o.oneMessage ? Xo : Ho) + o.feedbackExtraRows,
+    l = o.oneMessage ? 0 : Jo,
+    u = i + o.localRows + Math.max(l, o.blockRows),
+    p = i + Math.max(o.localRows, o.localRowsAtMost) + Math.max(l, o.blockRows, o.blockRowsAtMost),
+    h = o.terminalRows - Math.max(p + bo + oe, o.screenReader ? p + o.widgetRows : 0),
+    c = u + bo + oe + te - o.terminalRows;
+  return {
+    preview: o.oneMessage || o.terminalColumns >= Qo ? h : Math.min(jM - 1, h),
+    gapsDropped: Math.min(oe, Math.max(0, c)),
+    tooShort: o.optionsWrap || o.terminalColumns - _o < ko || c > oe || o.screenReader && u + o.widgetRows + te > o.terminalRows
+  }
+}
+
+function sn(o) {
+  switch (o?.type) {
+    case "workflow-agent": {
+      let i = s4(o.workflowName);
+      return i === null ? "\xB7 from a workflow" : `\xB7 from the "${String(i)}" workflow`
+    }
+    case "subagent": {
+      let i = s4(o.agentName);
+      return i === null ? "\xB7 from a subagent" : `\xB7 from the ${String(i)} agent`
+    }
+    case "remote-agent":
+      return "\xB7 from a remote cloud agent";
+    case "plugin": {
+      let i = s4(o.pluginName);
+      return i === null ? "\xB7 from a plugin" : `\xB7 from the ${String(i)} plugin`
+    }
+    default:
+      return null
+  }
+}
+
+function ln(o, i, l, u, p, h) {
+  let c = p ? `Permission Required: ${o}` : o,
+    R = Math.max(1, p ? l : l - 2),
+    m = sn(i),
+    E = m !== null && ce(c) + 1 + ce(m) <= R,
+    b = m === null || E ? [] : ox(m, u),
+    x = h !== null && ce(o) + (E && m !== null ? 1 + ce(m) : 0) + 1 + ce(h) <= l - 2,
+    P = [c, ...E && m !== null ? [m] : [], ...x && h !== null ? [h] : []].join(" ");
+  return {
+    rows: (p ? ox(P, R, !0).length : E ? 1 : ox(c, R).length) + b.length,
+    beside: E,
+    sourceRows: b
+  }
+}
+
+function Po(o) {
+  let {
+    project_name: i,
+    project_id: l,
+    proposal: u,
+    attach_git_remote: p
+  } = o;
+  if (typeof i !== "string" || l !== void 0 && (typeof l !== "string" || !RK.test(l)) || typeof p !== "boolean") return null;
+  let h = sit().safeParse(u);
+  if (!h.success) return null;
+  return {
+    projectName: Sle(i),
+    projectId: typeof l === "string" ? l : null,
+    proposal: _Oe(h.data),
+    attach: p,
+    messageFrom: uqr(o[lBe], h.data)
+  }
+}
+
+function an(o, i, l, u, p, h, c) {
+  let R = cn(i.input, u, p);
+  switch (o) {
+    case "yes": {
+      let m = Po(i.input);
+      return m === null ? {
+        behavior: "deny"
+      } : {
+        behavior: "allow",
+        updatedInput: {
+          ...R,
+          [cqr]: DGo(l, i.requestId, R, {
+            toolsUsed: h,
+            messageFrom: m.messageFrom
+          })
+        }
+      }
+    }
+    case "no": {
+      let m = c?.trim() ?? "";
+      return m === "" ? {
+        behavior: "deny"
+      } : {
+        behavior: "deny",
+        feedback: m
+      }
+    }
+  }
+}
+
+function cn(o, i, l) {
+  return {
+    ...o,
+    [dqr]: i,
+    [n7n]: l ?? "",
+    ...l === null && {
+      [d_n]: !0
+    }
+  }
+}
+
+function yo(o, i) {
+  return o === null ? "" : sqr(o.repo, i)
+}
+
+function So(o, i, l, u, p) {
+  return [...i ? [{
+    label: Co(o, p),
+    value: "yes"
+  }] : [], p ? {
+    type: "input",
+    label: Oe,
+    value: "edit",
+    placeholder: Ie,
+    initialValue: l,
+    onChange: u,
+    ignoreEmptySubmit: !0
+  } : {
+    type: "input",
+    label: "No",
+    value: "no",
+    placeholder: Ie,
+    initialValue: l,
+    onChange: u,
+    allowEmptySubmitToCancel: !0
+  }, ...p ? [{
+    label: "No",
+    value: "no"
+  }] : []]
+}
+var Oe = "Edit the message";
+
+function Co(o, i) {
+  return i ? o !== null ? "Send" : "Create and send" : o !== null ? "Yes, send it to the project" : "Yes, create the project"
+}
+var ko = 20,
+  _o = 8,
+  un = 500;
+
+function $e(o) {
+  let l = S(8),
+    {
+      row: i
+    } = o;
+  if (i.named === void 0) {
+    let u;
+    if (l[0] !== i.text) u = e(n, {
+      children: i.text
+    }), l[0] = i.text, l[1] = u;
+    else u = l[1];
+    return u
+  }
+  let u;
+  if (l[2] !== i.named.name) u = e(n, {
+    bold: !0,
+    children: i.named.name
+  }), l[2] = i.named.name, l[3] = u;
+  else u = l[3];
+  let p;
+  if (l[4] !== i.named.after || l[5] !== i.named.before || l[6] !== u) p = r(n, {
+    children: [i.named.before, "\u201C", u, "\u201D", i.named.after]
+  }), l[4] = i.named.after, l[5] = i.named.before, l[6] = u, l[7] = p;
+  else p = l[7];
+  return p
+}
+
+function Zn({
+  payload: o,
+  answer: i,
+  wouldTakeAnswer: l
+}) {
+  let u = Qi(),
+    p = si(),
+    {
+      refusedWithin: h,
+      noteRefused: c,
+      epoch: R
+    } = so();
+
+  function m() {
+    if (p() || h()) return c(), !0;
+    return !1
+  }
+  let E = Qc(),
+    b = cu(R),
+    P = ot(),
+    [f, g] = y(!1),
+    [N, D] = y(b.remountKey);
+  O(() => {
+    if (!(P && f)) D(b.remountKey)
+  }, [b.remountKey, P, f]);
+  let {
+    columns: I,
+    rows: k
+  } = Re(), W = P3n(), B = ia("app:toggleTranscript", "Global", "ctrl+o"), v = Math.max(ko, I - _o), [U, jo] = y(""), be = A(""), [No, To] = y(!0), C = Z(() => Po(o.input), [o.input]), M = C !== null && C.messageFrom !== null, J = M ? "edit" : "no", xo = U === "" && (!No || P) ? 0 : ox(`${M?Oe:"No"}, ${U===""?Ie:U}`, Math.max(1, I - 14), !0).length - 1, {
+    storageV5: re,
+    credentials: se
+  } = Fe(), ie = Uw(), T = C?.projectId ?? null, Le = M ? Szt(C.projectName, T === null) : T !== null ? "Send this session to a Claude Project?" : "Create a Claude Project from this session?", Ee = A(!1), De = ue((a) => {
+    be.current = a, Ee.current = !0, g(!0), jo(a)
+  }, []), [L, Mo] = y(null), Y = MTt.peek(ie)?.current ?? null, ye = Y !== null && L !== null && Y.cwd === L.cwd ? Y.tools : null, We = Y !== null && (L === null || Y.cwd === L.cwd) ? Cni(Y.tools, "this computer") : null, [le, Ao] = y(!1), [Se, Be] = y(void 0), [vo, Io] = y(null);
+  O(() => {
+    if (T === null) return;
+    let a = new AbortController;
+    return rKt(T, a.signal, se).then((w) => {
+      if (!a.signal.aborted) Be({
+        name: w.name
+      }), c()
+    }, (w) => {
+      if (!a.signal.aborted) t(`send-to-project: project lookup failed: ${d(w)}`), Io(w instanceof Hf && !tQ(w) ? w.telemetryCode : "transient"), Be(null)
+    }), () => a.abort()
+  }, [T, se, c]);
+  let [G, Ge] = y(void 0), [Pe, Oo] = y(!1);
+  O(() => {
+    if (T !== null) return;
+    let a = !0;
+    return JJn(re, se).then((w) => {
+      if (a) Ge(w), c()
+    }, (w) => {
+      if (t(`send-to-project: environment lookup failed: ${d(w)}`), a) Oo(!0), Ge(null), c()
+    }), () => {
+      a = !1
+    }
+  }, [T, re, se, c]);
+  let Ue = mAr(G?.id);
+  O(() => {
+    let a = new AbortController;
+    return ITt({
+      checkAccess: !1,
+      withSessions: !1
+    }, a.signal, re).then((w) => {
+      if (!a.signal.aborted) Mo(w), c()
+    }, (w) => {
+      if (t(`send-to-project: pane detection failed: ${d(w)}`), !a.signal.aborted) Ao(!0)
+    }), () => a.abort()
+  }, [re, c]);
+  let ae = C !== null ? wo({
+      width: v - 2,
+      projectName: C.projectName,
+      proposal: C.proposal,
+      existing: T !== null ? {
+        project: Se,
+        failure: vo
+      } : null,
+      environment: G,
+      environmentLookupFailed: Pe,
+      detection: L,
+      detectFailed: le,
+      attach: C.attach,
+      monorepoEnvironment: Ue,
+      oneMessage: M
+    }) : null,
+    pe = ae?.rows ?? [],
+    Ke = G != null && C !== null && T === null && ae?.whole.environment === !1,
+    de = ln(Le, o.requestSource, I, v - 2, P, W),
+    me = M ? s6e.flatMap((a) => K(a, v - 2)) : T !== null ? K(iqr, v - 2) : L !== null && C !== null ? K(Tni(L, C.attach && L.repo.kind === "github" && (!a_n(L.repo) || Ue)), v - 2) : [],
+    Ye = ox(M ? wzt : Zo, v - 2),
+    Ve = L !== null && L.repo.kind === "github" && C !== null && C.attach && T === null && yo(L, G?.id) !== "" && ae?.whole.repository === !1,
+    qe = Ve || Ke,
+    He = [...T !== null && le ? [en] : [], ...Ve ? [on] : [], ...Ke ? [nn] : []].flatMap((a) => ox(a, v - 2)),
+    Xe = C !== null ? Buffer.byteLength(_(C.proposal), "utf8") : 0,
+    ze = {
+      terminalRows: k,
+      terminalColumns: I,
+      screenReader: P,
+      titleRows: de.rows,
+      previewHeadRows: M ? 1 + (C.messageFrom === "drafted" ? ox(y1r, P ? I : v - 5).length : 0) : P && C !== null ? U6s(C.proposal, Xe, B, I) : qo,
+      warningRows: He.length,
+      localRows: me.length,
+      localRowsAtMost: !M && T === null && L === null && !le ? z : me.length,
+      optionsWrap: zo + ce(M ? Oe : Co(T, !1)) > I - 4,
+      blockRows: pe.length,
+      blockRowsAtMost: ae?.rowsAtMost ?? 0,
+      feedbackExtraRows: xo,
+      noticeRows: Ye.length,
+      widgetRows: P ? rn.reduce((a, w) => a + ox(w, Math.max(1, I)).length, 0) : 0,
+      oneMessage: M
+    },
+    Ce = Eo(ze),
+    F = L !== null && (T !== null ? Se !== void 0 : G !== void 0),
+    Je = Math.max(0, Math.floor((F ? Ce.preview : Eo({
+      ...ze,
+      localRows: 0,
+      localRowsAtMost: 0,
+      blockRows: 0,
+      blockRowsAtMost: 0
+    }).preview) / 2)),
+    Qe = We !== null ? we("MCP tools used", We, v - 2, Je + 1) : [],
+    fe = Qe.length <= Je ? Qe : [],
+    {
+      gapsDropped: eo,
+      tooShort: ke
+    } = Ce,
+    oo = ke ? ox(tn, v - 2) : [],
+    ge = Math.max(te, Ce.preview - fe.length - oo.length),
+    he = ge - ve > te ? 1 : 0,
+    no = !F && ge === ve + te ? ge - 1 : ge - ve * he,
+    to = Z(() => M ? Fkt(C.proposal.summary ?? "", v - 2) : [], [M, C, v]),
+    ro = Hkt(to, no, P ? I : null) < to.length,
+    V = P || F,
+    Q = `${N}:${V?"both":"no-only"}`,
+    [_e, $o] = y(() => ({
+      key: Q,
+      options: So(T, V, "", De, M)
+    })),
+    io = _e.key === Q ? _e.options : So(T, V, be.current, De, M);
+  if (_e.key !== Q) $o({
+    key: Q,
+    options: io
+  });
+  let lo = A("yes"),
+    [q, Lo] = y(() => ({
+      ready: F,
+      at: F ? Date.now() : 0
+    }));
+  if (q.ready !== F) Lo({
+    ready: F,
+    at: F ? Date.now() : q.at
+  });
+  let ao = nE(q.at),
+    [Do, co] = y(!1),
+    [Fo, Wo] = y(!1);
+  O(() => {
+    if (F) co(!1)
+  }, [F]);
+  let H = ue((a, w) => {
+    if (p() || h()) return c(), !1;
+    if (!l()) return !1;
+    if (a === "yes" && !F) return co(!0), c(), !1;
+    if (a === "yes" && (qe || ke || ro)) return c(), !1;
+    if (a === "yes" && (q.at === 0 || ra(u, ao(q.at), un))) return Wo(!0), c(), !1;
+    if (i(an(a, o, ie, yo(L, G?.id), Pe ? null : G?.id ?? "", fe.length > 0 ? ye : null, w)) !== !1 && a === "no" && (w?.trim() ?? "") !== "") LGo(ie);
+    return !0
+  }, [i, l, o, ie, L, F, qe, ke, ro, G, Pe, ye, fe.length, p, h, c, u, q.at, ao]);
+  if (C === null) return e(ua, {
+    title: "Create a Claude Project from this session?",
+    requestSource: o.requestSource,
+    children: r(s, {
+      flexDirection: "column",
+      marginTop: 1,
+      paddingX: 1,
+      children: [e(n, {
+        color: "error",
+        children: "The request is missing its project name, brief or repository choice, or the brief could not be read. There is nothing to approve."
+      }), e(s, {
+        marginTop: 1,
+        children: e(Jn, {
+          refuseInput: m,
+          openedAt: E,
+          hideIndexes: !0,
+          focus: "cancel",
+          confirmLabel: "Dismiss",
+          cancelLabel: "Dismiss",
+          onConfirm: () => H("no"),
+          onCancel: () => H("no")
+        }, b.remountKey)
+      })]
+    })
+  });
+  return r(ua, {
+    title: Le,
+    requestSource: de.beside ? o.requestSource : void 0,
+    children: [de.sourceRows.length > 0 ? e(s, {
+      flexDirection: "column",
+      paddingX: 1,
+      children: de.sourceRows.map((a, w) => e(n, {
+        children: a
+      }, `source-${w}`))
+    }) : null, r(s, {
+      flexDirection: "column",
+      marginTop: eo < oe ? 1 : 0,
+      paddingX: 1,
+      children: [M ? null : pe.map((a) => e($e, {
+        row: a
+      }, a.key)), ye !== null && F ? fe.map((a, w) => e(n, {
+        children: a
+      }, `tools-${w}`)) : null, [...He, ...oo].map((a, w) => e(n, {
+        color: "warning",
+        children: a
+      }, `warning-${w}`)), e(bzt, {
+        proposal: C.proposal,
+        proposalBytes: Xe,
+        existingProject: T !== null,
+        width: v - 2,
+        maxRows: no,
+        marginTop: M ? 0 : he,
+        transcriptChord: B,
+        screenReaderColumns: P ? I : null,
+        messageFrom: C.messageFrom
+      }), M && pe.length > 0 ? e(s, {
+        flexDirection: "column",
+        marginTop: he,
+        children: pe.map((a) => e($e, {
+          row: a
+        }, a.key))
+      }) : null, me.length > 0 ? e(s, {
+        flexDirection: "column",
+        marginTop: he,
+        children: me.map((a, w) => e(n, {
+          dimColor: !0,
+          children: a
+        }, `local-${w}`))
+      }) : null, e(s, {
+        marginTop: eo > 0 ? 0 : 1,
+        flexDirection: "column",
+        children: le || T !== null && Se === null ? e(Jn, {
+          refuseInput: m,
+          openedAt: E,
+          hideIndexes: !0,
+          focus: "cancel",
+          confirmLabel: "Close",
+          cancelLabel: "Close",
+          onConfirm: () => H("no"),
+          onCancel: () => H("no")
+        }, b.remountKey) : r(ne, {
+          children: [!F ? r(n, {
+            dimColor: !0,
+            children: ["Preparing\u2026", Do ? ` Still reading the lines above. Choose ${M?"Send":"Yes"} again in a moment.` : ""]
+          }) : Fo ? Ye.map((a, w) => e(n, {
+            dimColor: !0,
+            children: a
+          }, `notice-${w}`)) : null, e(Ze, {
+            refuseInput: m,
+            selectedValue: ti,
+            hideIndexes: !V,
+            inlineDescriptions: !0,
+            defaultFocusValue: V && !Ee.current ? lo.current : J,
+            inputChromeWidth: 4,
+            options: io,
+            onChange: (a) => H(a === "yes" ? "yes" : "no", a === J ? be.current : void 0),
+            onFocus: (a) => {
+              if (To(a === J), V && (a !== "yes" || b.settled)) {
+                if (lo.current = a, a !== J) Ee.current = !1
+              }
+              if (a !== J) g(!1)
+            },
+            onCancel: () => {
+              H("no")
+            }
+          }, Q)]
+        })
+      })]
+    })]
+  })
+}
+export {
+  Zn as ContinueInProjectsPermissionDialog
+};

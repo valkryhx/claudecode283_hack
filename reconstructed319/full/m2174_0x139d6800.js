@@ -1,0 +1,1878 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  qe,
+  F,
+  d
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  NE
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import {
+  jnt,
+  Wnt,
+  ye
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import {
+  Se
+} from "B:/~BUN/root/chunk-x24hm796.js";
+import {
+  Ct,
+  QFr,
+  pe
+} from "B:/~BUN/root/chunk-thn0wk2x.js";
+import "B:/~BUN/root/chunk-ajvcvya3.js";
+import "B:/~BUN/root/chunk-mb9chr1y.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-t4qpmjt5.js";
+import {
+  Tdn
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-7pxn9dsp.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  LO,
+  nP,
+  jV,
+  In,
+  Un
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  g,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import {
+  gr
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-fkr27nhj.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import {
+  Kt
+} from "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import {
+  be,
+  yt,
+  Cr
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import {
+  Te,
+  us,
+  Ci
+} from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import {
+  kGe
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  eS,
+  at,
+  Rt,
+  vyt,
+  Gt,
+  Fl,
+  jsn,
+  v,
+  oM,
+  fe
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import {
+  Ou
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import {
+  hs,
+  lBt
+} from "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import {
+  QP
+} from "B:/~BUN/root/chunk-yhafkw66.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import {
+  cdn
+} from "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import {
+  iu
+} from "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-0s9zh2h6.js";
+import {
+  Tge,
+  _Me,
+  Tdt,
+  J0,
+  Eur,
+  KMe,
+  yb,
+  oOt,
+  Mur,
+  K5t,
+  cct,
+  Dje,
+  _Ot,
+  iye,
+  _6,
+  Bno,
+  fvi,
+  pvi,
+  mvi,
+  hvi,
+  Nc,
+  ZC,
+  eu,
+  eD,
+  hW,
+  lDe,
+  fw,
+  cg,
+  Ma,
+  Fct
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import "B:/~BUN/root/chunk-n0v0c6zt.js";
+import "B:/~BUN/root/chunk-2x2z0t2k.js";
+import "B:/~BUN/root/chunk-42915bn6.js";
+import "B:/~BUN/root/chunk-vk5b2c7t.js";
+import "B:/~BUN/root/chunk-tjfmeakx.js";
+import "B:/~BUN/root/chunk-j6ahtce9.js";
+import "B:/~BUN/root/chunk-jxvayzd7.js";
+import "B:/~BUN/root/chunk-838fxqce.js";
+import "B:/~BUN/root/chunk-e8znf4zw.js";
+import "B:/~BUN/root/chunk-5w7xhbnh.js";
+import "B:/~BUN/root/chunk-xfqs9tac.js";
+import "B:/~BUN/root/chunk-nwv7r07s.js";
+import "B:/~BUN/root/chunk-vmp6vbba.js";
+import "B:/~BUN/root/chunk-dxwyqd26.js";
+import "B:/~BUN/root/chunk-k5mszhcg.js";
+import "B:/~BUN/root/chunk-z4janqzm.js";
+import {
+  Cd,
+  VOi,
+  PMt,
+  Ms,
+  OMt,
+  lXe,
+  oft
+} from "B:/~BUN/root/chunk-cxcakgnv.js";
+import "B:/~BUN/root/chunk-zymc6pem.js";
+import "B:/~BUN/root/chunk-hvykkx00.js";
+import "B:/~BUN/root/chunk-f0zgv0ya.js";
+import "B:/~BUN/root/chunk-kpr2et3s.js";
+import "B:/~BUN/root/chunk-rpagz3p9.js";
+import "B:/~BUN/root/chunk-2392ztjf.js";
+import "B:/~BUN/root/chunk-rzc1dapy.js";
+import "B:/~BUN/root/chunk-ghar8fn5.js";
+import "B:/~BUN/root/chunk-8cgm9m8p.js";
+import "B:/~BUN/root/chunk-5gm1xyqv.js";
+import "B:/~BUN/root/chunk-hh77nseb.js";
+import "B:/~BUN/root/chunk-7rwbs73j.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-7pj7keyk.js";
+import "B:/~BUN/root/chunk-gr5se97s.js";
+import "B:/~BUN/root/chunk-78494p3w.js";
+import {
+  $ht
+} from "B:/~BUN/root/chunk-6j3fjnhn.js";
+import "B:/~BUN/root/chunk-sgy380eg.js";
+import {
+  im
+} from "B:/~BUN/root/chunk-22y97556.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import "B:/~BUN/root/chunk-1012essb.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import "B:/~BUN/root/chunk-wxhfn3za.js";
+import "B:/~BUN/root/chunk-pdtjaehv.js";
+import "B:/~BUN/root/chunk-x6frvp1m.js";
+import "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  NHt
+} from "B:/~BUN/root/chunk-eds8xkh8.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import {
+  fd,
+  g_,
+  $m
+} from "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import {
+  ur
+} from "B:/~BUN/root/chunk-y5gyn2hc.js";
+import "B:/~BUN/root/chunk-9t9ygsbp.js";
+import {
+  Ese
+} from "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import {
+  Sg,
+  L1,
+  mHn,
+  hHn
+} from "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import "B:/~BUN/root/chunk-9bs2y8fc.js";
+import "B:/~BUN/root/chunk-knfpag6d.js";
+import "B:/~BUN/root/chunk-hr1m6fe3.js";
+import "B:/~BUN/root/chunk-cvaa202c.js";
+import "B:/~BUN/root/chunk-detjgwj4.js";
+import "B:/~BUN/root/chunk-6v74v9ar.js";
+import "B:/~BUN/root/chunk-eak7wp7z.js";
+import "B:/~BUN/root/chunk-mbh2s41k.js";
+import "B:/~BUN/root/chunk-jh04j3yr.js";
+import "B:/~BUN/root/chunk-v29ccgfa.js";
+import "B:/~BUN/root/chunk-2r9r3hfm.js";
+import "B:/~BUN/root/chunk-sjvfcp1z.js";
+import "B:/~BUN/root/chunk-s9vv4h32.js";
+import "B:/~BUN/root/chunk-7thhw21a.js";
+import "B:/~BUN/root/chunk-wm0axmjp.js";
+import "B:/~BUN/root/chunk-3kdxvefh.js";
+import "B:/~BUN/root/chunk-4tp5kqnx.js";
+import "B:/~BUN/root/chunk-m8dg5txf.js";
+import "B:/~BUN/root/chunk-ekqreyhv.js";
+import "B:/~BUN/root/chunk-apgsnbqk.js";
+import "B:/~BUN/root/chunk-vs3bcjd7.js";
+import "B:/~BUN/root/chunk-pmr34yc8.js";
+import "B:/~BUN/root/chunk-b5ry9py2.js";
+import "B:/~BUN/root/chunk-de98q5we.js";
+import "B:/~BUN/root/chunk-mwy4xyee.js";
+import "B:/~BUN/root/chunk-ajpcs9fs.js";
+import "B:/~BUN/root/chunk-gq4ywexf.js";
+import {
+  Kd,
+  TW,
+  Chr
+} from "B:/~BUN/root/chunk-p2ta953m.js";
+import "B:/~BUN/root/chunk-ke150ry1.js";
+import "B:/~BUN/root/chunk-eswth6m1.js";
+import "B:/~BUN/root/chunk-gezr7m08.js";
+import "B:/~BUN/root/chunk-tdekz3md.js";
+import "B:/~BUN/root/chunk-wss0tnsx.js";
+import "B:/~BUN/root/chunk-vzhm698f.js";
+import "B:/~BUN/root/chunk-4xvtrfzh.js";
+import "B:/~BUN/root/chunk-jbf2dde1.js";
+import "B:/~BUN/root/chunk-xgwmwbnb.js";
+import "B:/~BUN/root/chunk-rhdsefgz.js";
+import "B:/~BUN/root/chunk-ckdgegnz.js";
+import "B:/~BUN/root/chunk-2fedt3ag.js";
+import "B:/~BUN/root/chunk-bfwh5k9e.js";
+import "B:/~BUN/root/chunk-psjm1gcn.js";
+import "B:/~BUN/root/chunk-kfm993xq.js";
+import "B:/~BUN/root/chunk-6h5p2dxf.js";
+import "B:/~BUN/root/chunk-tdg0k3wq.js";
+import "B:/~BUN/root/chunk-n98vg3jf.js";
+import "B:/~BUN/root/chunk-fg0appz9.js";
+import "B:/~BUN/root/chunk-2gz7xsvb.js";
+import "B:/~BUN/root/chunk-02j0cm13.js";
+import "B:/~BUN/root/chunk-0s00dkj6.js";
+import "B:/~BUN/root/chunk-hevmq1yj.js";
+import {
+  Gf
+} from "B:/~BUN/root/chunk-zstr1969.js";
+import "B:/~BUN/root/chunk-ddamx62b.js";
+import "B:/~BUN/root/chunk-0aq7t0nw.js";
+import "B:/~BUN/root/chunk-fnf5t6te.js";
+import "B:/~BUN/root/chunk-63btkzab.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-vke7wtay.js";
+import "B:/~BUN/root/chunk-x9bz04wf.js";
+import "B:/~BUN/root/chunk-6g8w5kyh.js";
+import "B:/~BUN/root/chunk-jmt91fq8.js";
+import "B:/~BUN/root/chunk-5x4j33v9.js";
+import "B:/~BUN/root/chunk-mf9c9p38.js";
+import "B:/~BUN/root/chunk-2htsebsg.js";
+import "B:/~BUN/root/chunk-875j4y83.js";
+import "B:/~BUN/root/chunk-t4pbv0np.js";
+import "B:/~BUN/root/chunk-yg4ttpr7.js";
+import "B:/~BUN/root/chunk-mjgazsjk.js";
+import "B:/~BUN/root/chunk-2f6ykbbh.js";
+import "B:/~BUN/root/chunk-z7bs0q82.js";
+import "B:/~BUN/root/chunk-5g1gmfkv.js";
+import "B:/~BUN/root/chunk-s89g0dw7.js";
+import "B:/~BUN/root/chunk-rv3pfsrw.js";
+import "B:/~BUN/root/chunk-pw7914mv.js";
+import "B:/~BUN/root/chunk-hjds4dtx.js";
+import "B:/~BUN/root/chunk-8qv1t8b3.js";
+import "B:/~BUN/root/chunk-b7bhhce8.js";
+import "B:/~BUN/root/chunk-sx264pby.js";
+import "B:/~BUN/root/chunk-cj2cn5y2.js";
+import "B:/~BUN/root/chunk-6bx54the.js";
+import "B:/~BUN/root/chunk-m1v50w96.js";
+import "B:/~BUN/root/chunk-076mmgjt.js";
+import "B:/~BUN/root/chunk-5bb21frh.js";
+import "B:/~BUN/root/chunk-vp8vb7t8.js";
+import {
+  _It,
+  hPn
+} from "B:/~BUN/root/chunk-xkw95p5n.js";
+import {
+  $Jt
+} from "B:/~BUN/root/chunk-sa4785jr.js";
+import "B:/~BUN/root/chunk-nk59bmc9.js";
+import "B:/~BUN/root/chunk-n7ta2s3w.js";
+import "B:/~BUN/root/chunk-65j4e9bn.js";
+import "B:/~BUN/root/chunk-ex2shtaj.js";
+import "B:/~BUN/root/chunk-64qg3pvz.js";
+import "B:/~BUN/root/chunk-jv4ech2n.js";
+import "B:/~BUN/root/chunk-5fdpyc78.js";
+import "B:/~BUN/root/chunk-ybkgfvgz.js";
+import "B:/~BUN/root/chunk-gknte1ng.js";
+import "B:/~BUN/root/chunk-4tz0m6qq.js";
+import "B:/~BUN/root/chunk-3qkmk2e4.js";
+import "B:/~BUN/root/chunk-b3jc87kv.js";
+import "B:/~BUN/root/chunk-11wz0rq6.js";
+import "B:/~BUN/root/chunk-vy4t7613.js";
+import "B:/~BUN/root/chunk-kexqfgtm.js";
+import "B:/~BUN/root/chunk-wt8tyqt4.js";
+import "B:/~BUN/root/chunk-kfnabvp7.js";
+import "B:/~BUN/root/chunk-jj9s326a.js";
+import "B:/~BUN/root/chunk-p8dysp9f.js";
+import "B:/~BUN/root/chunk-dcmvdxnm.js";
+import "B:/~BUN/root/chunk-kk81ayzj.js";
+import "B:/~BUN/root/chunk-rc0vwsyy.js";
+import "B:/~BUN/root/chunk-c86vwcts.js";
+import "B:/~BUN/root/chunk-6sbka0ts.js";
+import "B:/~BUN/root/chunk-05q1awc0.js";
+import "B:/~BUN/root/chunk-wzeexm6f.js";
+import "B:/~BUN/root/chunk-dwbkkfd6.js";
+import "B:/~BUN/root/chunk-k5xd4a86.js";
+import "B:/~BUN/root/chunk-98qgaht2.js";
+import "B:/~BUN/root/chunk-r1gg0qbg.js";
+import "B:/~BUN/root/chunk-5m83sh3a.js";
+import "B:/~BUN/root/chunk-pm850sj6.js";
+import "B:/~BUN/root/chunk-w0kge9aq.js";
+import "B:/~BUN/root/chunk-teehnwdh.js";
+import "B:/~BUN/root/chunk-x4zqd4cy.js";
+import "B:/~BUN/root/chunk-ysxmr1nk.js";
+import {
+  qu
+} from "B:/~BUN/root/chunk-8rnfdnh3.js";
+import "B:/~BUN/root/chunk-7wcc5pbk.js";
+import "B:/~BUN/root/chunk-400x0tcq.js";
+import "B:/~BUN/root/chunk-1tbewxs3.js";
+import "B:/~BUN/root/chunk-rrf8gvt4.js";
+import "B:/~BUN/root/chunk-7vfy9z2g.js";
+import "B:/~BUN/root/chunk-ftj46fnn.js";
+import "B:/~BUN/root/chunk-45td50dx.js";
+import "B:/~BUN/root/chunk-3vrk9h6f.js";
+import {
+  SA
+} from "B:/~BUN/root/chunk-0xtfwyhv.js";
+import "B:/~BUN/root/chunk-z2c6k7e2.js";
+import "B:/~BUN/root/chunk-h6zqt1s4.js";
+import {
+  iX,
+  k1,
+  ZZ
+} from "B:/~BUN/root/chunk-jmka9ye7.js";
+import {
+  Px,
+  Sps,
+  RXe
+} from "B:/~BUN/root/chunk-qk8tvzkn.js";
+import "B:/~BUN/root/chunk-fc7k1zas.js";
+import "B:/~BUN/root/chunk-nw79m6g4.js";
+import "B:/~BUN/root/chunk-4vcs773m.js";
+import "B:/~BUN/root/chunk-1ratk947.js";
+import "B:/~BUN/root/chunk-wznngf8b.js";
+import "B:/~BUN/root/chunk-2ys4h17s.js";
+import "B:/~BUN/root/chunk-wxztkjve.js";
+import "B:/~BUN/root/chunk-wjxjrbnh.js";
+import "B:/~BUN/root/chunk-yrh147c7.js";
+import "B:/~BUN/root/chunk-taw9ve37.js";
+import {
+  IW,
+  QWe
+} from "B:/~BUN/root/chunk-vyjvp8sa.js";
+import "B:/~BUN/root/chunk-jypg1bby.js";
+import "B:/~BUN/root/chunk-w0nyevkg.js";
+import "B:/~BUN/root/chunk-z5apdcem.js";
+import "B:/~BUN/root/chunk-d5rmf5x5.js";
+import "B:/~BUN/root/chunk-8x466dw5.js";
+import "B:/~BUN/root/chunk-17caj8fw.js";
+import "B:/~BUN/root/chunk-hhd7smkx.js";
+import "B:/~BUN/root/chunk-cejfpzdt.js";
+import "B:/~BUN/root/chunk-0q69tvcp.js";
+import "B:/~BUN/root/chunk-0jhmwh3q.js";
+import "B:/~BUN/root/chunk-j3efez3c.js";
+import "B:/~BUN/root/chunk-6cgv9p77.js";
+import {
+  iD
+} from "B:/~BUN/root/chunk-9ajgj3y1.js";
+import "B:/~BUN/root/chunk-pjcve3z9.js";
+import "B:/~BUN/root/chunk-cjmntjcn.js";
+import "B:/~BUN/root/chunk-43aygqej.js";
+import "B:/~BUN/root/chunk-y7em5h10.js";
+import "B:/~BUN/root/chunk-tmn2g637.js";
+import "B:/~BUN/root/chunk-mjx3yttm.js";
+import "B:/~BUN/root/chunk-wdfwarp2.js";
+import "B:/~BUN/root/chunk-0ypwt1ew.js";
+import "B:/~BUN/root/chunk-3eq12f11.js";
+import "B:/~BUN/root/chunk-mq0pq26y.js";
+import "B:/~BUN/root/chunk-trf406sb.js";
+import "B:/~BUN/root/chunk-mcdkvptw.js";
+import "B:/~BUN/root/chunk-q2s07yzr.js";
+import "B:/~BUN/root/chunk-3aa152x8.js";
+import "B:/~BUN/root/chunk-ymawhbhz.js";
+import "B:/~BUN/root/chunk-rbfkfjk4.js";
+import "B:/~BUN/root/chunk-az0cmmyt.js";
+import "B:/~BUN/root/chunk-bw0w9zyr.js";
+import "B:/~BUN/root/chunk-hydnwtf3.js";
+import "B:/~BUN/root/chunk-15eyam7k.js";
+import "B:/~BUN/root/chunk-ynneeax2.js";
+import "B:/~BUN/root/chunk-4ffx6rrs.js";
+import "B:/~BUN/root/chunk-8ytf4evt.js";
+import "B:/~BUN/root/chunk-33ssadqt.js";
+import "B:/~BUN/root/chunk-4zhce32x.js";
+import "B:/~BUN/root/chunk-bsbbs1xs.js";
+import {
+  j6e
+} from "B:/~BUN/root/chunk-ms3wcznz.js";
+import "B:/~BUN/root/chunk-y0ct2ybq.js";
+import {
+  Wne
+} from "B:/~BUN/root/chunk-0yg1pq2n.js";
+import {
+  b4o,
+  her,
+  l6r,
+  S4o,
+  w4o
+} from "B:/~BUN/root/chunk-20mmppss.js";
+import {
+  RBe,
+  dQ,
+  AB
+} from "B:/~BUN/root/chunk-h434y56c.js";
+import "B:/~BUN/root/chunk-x12sgt91.js";
+import {
+  sw
+} from "B:/~BUN/root/chunk-9957329g.js";
+import {
+  ari
+} from "B:/~BUN/root/chunk-qy4hev1y.js";
+import {
+  p7n
+} from "B:/~BUN/root/chunk-a5a2wdx1.js";
+import {
+  TS
+} from "B:/~BUN/root/chunk-y781qzhe.js";
+import {
+  Rqr,
+  g7n,
+  y7n
+} from "B:/~BUN/root/chunk-b83kgjtm.js";
+import {
+  Bhe,
+  h6e,
+  fCt,
+  POe
+} from "B:/~BUN/root/chunk-qpnb2qqh.js";
+import {
+  tsi,
+  nsi,
+  rsi,
+  osi,
+  ssi
+} from "B:/~BUN/root/chunk-bjs1wgty.js";
+import {
+  SOe,
+  A7n
+} from "B:/~BUN/root/chunk-d0mxnbww.js";
+import {
+  FTt
+} from "B:/~BUN/root/chunk-c15106hj.js";
+import {
+  p_n
+} from "B:/~BUN/root/chunk-yxyf732v.js";
+import "B:/~BUN/root/chunk-9kmejvef.js";
+import {
+  S7n,
+  cri,
+  w7n
+} from "B:/~BUN/root/chunk-8pgg04y0.js";
+import {
+  ES
+} from "B:/~BUN/root/chunk-09wqth96.js";
+import {
+  i6e
+} from "B:/~BUN/root/chunk-ggpp2a6r.js";
+import {
+  mri
+} from "B:/~BUN/root/chunk-rgmqpj32.js";
+import {
+  a6e
+} from "B:/~BUN/root/chunk-cz1vqbkq.js";
+import {
+  o2o,
+  s2o
+} from "B:/~BUN/root/chunk-7p033aw4.js";
+import {
+  Pqr
+} from "B:/~BUN/root/chunk-q91zvchc.js";
+import "B:/~BUN/root/chunk-zh1rck2m.js";
+import {
+  Git
+} from "B:/~BUN/root/chunk-3b3dm3a9.js";
+import "B:/~BUN/root/chunk-yezcbz8m.js";
+import "B:/~BUN/root/chunk-texv5y87.js";
+import "B:/~BUN/root/chunk-815nev8v.js";
+import {
+  lr
+} from "B:/~BUN/root/chunk-75wha2r5.js";
+import "B:/~BUN/root/chunk-6dpcedmk.js";
+import "B:/~BUN/root/chunk-1403xdv8.js";
+import {
+  Sb
+} from "B:/~BUN/root/chunk-dt45jjk2.js";
+import "B:/~BUN/root/chunk-n7rjc97z.js";
+import "B:/~BUN/root/chunk-bwk2g6e0.js";
+import "B:/~BUN/root/chunk-1b2nf93s.js";
+import "B:/~BUN/root/chunk-q7dbkm6t.js";
+import "B:/~BUN/root/chunk-pgm29tvd.js";
+import "B:/~BUN/root/chunk-992ex3nd.js";
+import "B:/~BUN/root/chunk-h2qbvrp4.js";
+import "B:/~BUN/root/chunk-0wyf4zb9.js";
+import "B:/~BUN/root/chunk-vxbt81wk.js";
+import "B:/~BUN/root/chunk-v04fapnf.js";
+import "B:/~BUN/root/chunk-rsz72fpd.js";
+import "B:/~BUN/root/chunk-69k97bnp.js";
+import "B:/~BUN/root/chunk-q82am8wz.js";
+import "B:/~BUN/root/chunk-spc3jrd3.js";
+import "B:/~BUN/root/chunk-kgvnwy91.js";
+import "B:/~BUN/root/chunk-p25ahy45.js";
+import "B:/~BUN/root/chunk-4xx5w1am.js";
+import "B:/~BUN/root/chunk-pgf3n8rv.js";
+import "B:/~BUN/root/chunk-stfp5qgr.js";
+import "B:/~BUN/root/chunk-az6xed3t.js";
+import "B:/~BUN/root/chunk-w179eqqe.js";
+import "B:/~BUN/root/chunk-p8898990.js";
+import "B:/~BUN/root/chunk-fkz77yzp.js";
+import {
+  wf
+} from "B:/~BUN/root/chunk-dew5sv9w.js";
+import "B:/~BUN/root/chunk-zy4xrndc.js";
+import "B:/~BUN/root/chunk-we53d1t3.js";
+import "B:/~BUN/root/chunk-1jrzd264.js";
+import "B:/~BUN/root/chunk-zz0hj0zg.js";
+import "B:/~BUN/root/chunk-md18120p.js";
+import "B:/~BUN/root/chunk-zwf5p7y7.js";
+import "B:/~BUN/root/chunk-k3f9rj85.js";
+import "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-8zx74r55.js";
+import "B:/~BUN/root/chunk-xagk1yaq.js";
+import "B:/~BUN/root/chunk-zeshc0ep.js";
+import "B:/~BUN/root/chunk-vvwzzpy4.js";
+import "B:/~BUN/root/chunk-4hx27rd1.js";
+import "B:/~BUN/root/chunk-jjjspatt.js";
+import "B:/~BUN/root/chunk-6bss7gp5.js";
+import "B:/~BUN/root/chunk-h29cx855.js";
+import "B:/~BUN/root/chunk-yjr7e11x.js";
+import {
+  Nze,
+  V9,
+  GSr,
+  H0e
+} from "B:/~BUN/root/chunk-hskja58z.js";
+import "B:/~BUN/root/chunk-tnfsxzpz.js";
+import "B:/~BUN/root/chunk-pp5rqp7s.js";
+import "B:/~BUN/root/chunk-ea8gze25.js";
+import "B:/~BUN/root/chunk-z1wt3cb2.js";
+import "B:/~BUN/root/chunk-cjd8dpgw.js";
+import "B:/~BUN/root/chunk-yscb2r3d.js";
+import "B:/~BUN/root/chunk-s20ae4sg.js";
+import "B:/~BUN/root/chunk-n3m61sfz.js";
+import "B:/~BUN/root/chunk-nk52yc3v.js";
+import "B:/~BUN/root/chunk-kt29vc17.js";
+import "B:/~BUN/root/chunk-a5dg1k4h.js";
+import "B:/~BUN/root/chunk-kj33sgq2.js";
+import "B:/~BUN/root/chunk-kh33ctc6.js";
+import "B:/~BUN/root/chunk-x6ny3ghw.js";
+import "B:/~BUN/root/chunk-0p5dw980.js";
+import "B:/~BUN/root/chunk-dx2wvwvf.js";
+import "B:/~BUN/root/chunk-fcp4egnh.js";
+import "B:/~BUN/root/chunk-frv0tk8w.js";
+import "B:/~BUN/root/chunk-ym6b88b3.js";
+import "B:/~BUN/root/chunk-zx0hhrva.js";
+import "B:/~BUN/root/chunk-s937snw9.js";
+import "B:/~BUN/root/chunk-j5zjtxy5.js";
+import "B:/~BUN/root/chunk-vdqpev1m.js";
+import "B:/~BUN/root/chunk-kd0f2gn5.js";
+import "B:/~BUN/root/chunk-ymgf3kpk.js";
+import "B:/~BUN/root/chunk-dzjj3jwh.js";
+import {
+  yNt
+} from "B:/~BUN/root/chunk-xbhv3nhf.js";
+import "B:/~BUN/root/chunk-21s8ygah.js";
+import "B:/~BUN/root/chunk-e99p2x0p.js";
+import "B:/~BUN/root/chunk-36r971cb.js";
+import "B:/~BUN/root/chunk-ynpwd78y.js";
+import "B:/~BUN/root/chunk-eyvtcj15.js";
+import "B:/~BUN/root/chunk-r6enj9cw.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import "B:/~BUN/root/chunk-j0enspnr.js";
+import "B:/~BUN/root/chunk-xr3thd43.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-62khcyrb.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import "B:/~BUN/root/chunk-4jfmvmew.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-cbv74thb.js";
+import "B:/~BUN/root/chunk-dc99dkg2.js";
+import "B:/~BUN/root/chunk-b37tyqej.js";
+import "B:/~BUN/root/chunk-dqan51g7.js";
+import {
+  Obe
+} from "B:/~BUN/root/chunk-jy87sa4x.js";
+import "B:/~BUN/root/chunk-z35xf1k7.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import {
+  o,
+  oe,
+  u,
+  me,
+  B
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import {
+  gN
+} from "B:/~BUN/root/chunk-q15wjdnk.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-g9pw24zp.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+import {
+  he
+} from "B:/~BUN/root/chunk-fet34rqr.js";
+var Ae = {
+  enable_shortcut_tip: !1,
+  enable_contextual_tip: !1
+};
+
+function L() {
+  return oM("tengu_desktop_upsell", Ae)
+}
+
+function _(e, n, s) {
+  return e.some((r) => r !== n && AB(r) < s)
+}
+var Pe = "tengu_enumerated_locket",
+  Oe = "content_link_tips",
+  Le = ["docs", "article", "guide", "video"],
+  Ue = {
+    docs: "Read the docs",
+    article: "Read the article",
+    guide: "Read the guide",
+    video: "Watch the video"
+  },
+  V = ["claude.com", "code.claude.com", "claude.dev", "academy.claude.com"],
+  Me = [...V, "www.youtube.com"],
+  Ne = ["/docs/", "/resources/"],
+  De = /^\?v=[\w-]+$/,
+  $e = /^\/[\w./-]*$/,
+  Fe = /^(#[\w-]+)?$/,
+  We = /\p{Cc}/u,
+  Ke = p(() => me(o(), oe()).nullable()),
+  xe = p(() => u({
+    url: o().refine((e) => {
+      let n = URL.parse(e);
+      return n !== null && !We.test(e) && n.protocol === "https:" && Me.includes(n.hostname) && $e.test(n.pathname) && !n.pathname.includes("..") && Fe.test(n.hash) && (n.hostname === "www.youtube.com" ? n.pathname === "/watch" && De.test(n.search) : n.search === "" && (n.hostname !== "claude.com" || Ne.some((s) => `${n.pathname}/`.startsWith(s)))) && n.username === "" && n.password === "" && n.port === ""
+    }),
+    label: B(Le)
+  }).optional()),
+  Be = ["content-link-hooks", "content-link-mcp", "content-link-mods", "content-link-long-sessions", "content-link-auto-mode", "content-link-team-workflows"],
+  Ge = 5,
+  He = 20,
+  Ye = 3,
+  Ve = 20,
+  ze = 10,
+  je = 10,
+  Xe = 100,
+  Qe = 150000;
+
+function f(e, n, s) {
+  let r = TS() ? Q(e, s.session.host) : void 0;
+  if (r === void 0) return n;
+  let l = new URL(r.url);
+  if (V.includes(l.hostname)) l.searchParams.set("utm_source", "claude_code"), l.searchParams.set("utm_medium", "tip"), l.searchParams.set("utm_campaign", Oe), l.searchParams.set("utm_content", e);
+  let y = ES(l.toString(), Ue[r.label], {
+    themeName: s.theme
+  });
+  return `${n.replace(/\.$/,"")} \xB7 ${y}`
+}
+class z {
+  mcpServersConfigured = void 0;
+  invalidLinkReported = !1;
+  get hasReadMcpServers() {
+    return this.mcpServersConfigured !== void 0
+  }
+  hasMcpServersConfigured(e) {
+    return this.mcpServersConfigured ??= fw({}, {
+      storageV5: e
+    }).then(({
+      servers: n
+    }) => Object.keys(n).length > 0), this.mcpServersConfigured
+  }
+  claimInvalidLinkReport() {
+    let e = !this.invalidLinkReported;
+    return this.invalidLinkReported = !0, e
+  }
+  forget() {
+    this.mcpServersConfigured = void 0, this.invalidLinkReported = !1
+  }
+}
+var j = new W(() => he(new z, (e) => e.forget())),
+  q = [k({
+    id: "content-link-hooks",
+    text: "Run your own scripts on Claude Code events with hooks",
+    isTriggered: () => fe().numStartups > Ve && !Ct() && !Y() && !ur("hooks") && !g_() && !$m() && !fd("hooks")
+  }), k({
+    id: "content-link-mcp",
+    text: "Connect Claude to your tools and data with MCP",
+    isTriggered: async (e) => fe().numStartups > ze && !Ct() && !ur("mcpAutoDiscovered") && !fd("mcp") && !cg() && !lDe() && Tdt().size === 0 && ![...e.toolsUsed ?? []].some((n) => gr(n)) && !await j.of(e.session.host).hasMcpServersConfigured(e.storageV5)
+  }), k({
+    id: "content-link-mods",
+    text: "Change how Claude Code looks and behaves with a mod",
+    isTriggered: () => {
+      let e = Cr(),
+        n = e.statusLine !== void 0 || Y() || Object.entries(e.enabledPlugins ?? {}).some(([r, l]) => Boolean(l) && !Gf(r)),
+        s = be("policySettings")?.pluginConfigs?.[Ese]?.options?.allowManagedModsOnly;
+      return n && !Ct() && (s === void 0 || s === !1) && $Jt()
+    }
+  }), k({
+    id: "content-link-long-sessions",
+    text: "Long session? Run /context to see what fills it",
+    advertisedCommand: "context",
+    isTriggered: () => jnt() + Wnt() >= Qe
+  }), k({
+    id: "content-link-auto-mode",
+    text: "Skip most permission prompts with auto mode",
+    isTriggered: () => fe().numStartups > je && !Ou() && yb()
+  }), k({
+    id: "content-link-team-workflows",
+    text: "See how the Claude Code team works day to day",
+    isTriggered: () => fe().numStartups > Xe
+  })];
+
+function Q(e, n) {
+  let s = Ke().safeParse(v(Pe, null)),
+    r = xe().safeParse(s.data?.[e]);
+  if (!s.success || !r.success) {
+    if (t(`Ignoring an invalid content link for tip ${e}`, {
+        level: "warn"
+      }), j.of(n).claimInvalidLinkReport()) c("tips_content_link_table", s.success ? "invalid_entry" : "invalid_table")
+  }
+  return r.data
+}
+
+function Y() {
+  return Object.keys(Cr().hooks ?? {}).length > 0
+}
+
+function k({
+  id: e,
+  text: n,
+  advertisedCommand: s,
+  isTriggered: r
+}) {
+  return {
+    id: e,
+    cooldownSessions: He,
+    maxLifetimeShows: Ye,
+    advertisedCommand: s,
+    content: async (l) => f(e, n, l),
+    isRelevant: async (l) => TS() && await r(l) && Q(e, l.session.host) !== void 0 && !_(Be, e, Ge)
+  }
+}
+var Z = "marketplace-plugin:";
+class ve {
+  knownMarketplaces = void 0;
+  marketplacePluginTips = void 0;
+  sessionCountInFlight = void 0;
+  desktopInstalled = void 0;
+  ghAuthStatus = void 0;
+  claudeSecurityInstalledUnderOtherId = void 0;
+  failedTipIds = new Set;
+  getKnownMarketplaces(e) {
+    return this.knownMarketplaces ??= Nc(e), this.knownMarketplaces
+  }
+  getMarketplacePluginTips(e) {
+    return this.marketplacePluginTips ??= this.loadMarketplacePluginTips(e), this.marketplacePluginTips
+  }
+  async loadMarketplacePluginTips(e) {
+    let n = new Set(mHn());
+    if (n.size === 0) return [];
+    return this.buildMarketplacePluginTips(n, await this.getKnownMarketplaces(e), e)
+  }
+  async buildMarketplacePluginTips(e, n, s) {
+    let r = [];
+    for (let l of e) {
+      let y = n[l];
+      if (!y) continue;
+      if (l !== wf && !hHn(l, y.source)) {
+        t(`Skipping plugin suggestion tips for marketplace "${l}": its registered source is not declared in managed settings (extraKnownMarketplaces or strictKnownMarketplaces)`);
+        continue
+      }
+      let w = await ZC(l, s).catch(() => null);
+      if (!w) continue;
+      for (let S of w.plugins) {
+        let T = S.relevance,
+          I = g7n(S.name, T);
+        if (!I) continue;
+        if (l === wf && b.some((h) => h.id === `${S.name}-plugin`)) continue;
+        let H = T?.topic ?? S.name.split("-").map((h) => h ? h.charAt(0).toUpperCase() + h.slice(1) : h).join("-"),
+          m = l === wf ? `${Z}${S.name}` : `${Z}${S.name}@${l}`;
+        r.push({
+          id: m,
+          pluginId: `${S.name}@${l}`,
+          advertisedCommand: "plugin",
+          priority: 1,
+          providerAgnostic: !0,
+          cooldownSessions: 3,
+          content: async (h) => {
+            let Re = lr("suggestion", h.theme);
+            return `Working with ${H}? Install the ${S.name} plugin:
+${Re(`/plugin install ${S.name}@${l}`)}`
+          },
+          isRelevant: async (h) => _e(this, S.name, h, I, l)
+        })
+      }
+    }
+    return r
+  }
+  getDesktopInstalled() {
+    return this.desktopInstalled ??= ari(), this.desktopInstalled
+  }
+  getGhAuthStatus() {
+    return this.ghAuthStatus ??= FTt({
+      allowNetworkFallbackForOldGh: !1
+    }), this.ghAuthStatus
+  }
+  getClaudeSecurityInstalledUnderOtherId(e) {
+    return this.claudeSecurityInstalledUnderOtherId ??= Dje(P, e).then((n) => n !== void 0, (n) => {
+      throw this.claudeSecurityInstalledUnderOtherId = void 0, n
+    }), this.claudeSecurityInstalledUnderOtherId
+  }
+  countSessionsOnce(e) {
+    if (this.sessionCountInFlight !== void 0) return this.sessionCountInFlight;
+    let n = jsn(e).finally(() => {
+      if (this.sessionCountInFlight === n) this.sessionCountInFlight = void 0
+    });
+    return this.sessionCountInFlight = n, n
+  }
+}
+var C = new W(() => new ve);
+
+function J(e) {
+  if (X() && e?.storageV5 !== void 0) return C.of(e.session.host).countSessionsOnce(e.storageV5);
+  return jsn(e?.storageV5)
+}
+async function Ce(e, n, s, r = wf) {
+  if (!(await e.getKnownMarketplaces(s.storageV5))[r]) return !1;
+  if (hW(`${n}@${r}`)) return !1;
+  return !Sg(`${n}@${r}`)
+}
+async function _e(e, n, s, r, l = wf) {
+  return await Ce(e, n, s, l) && await y7n(r, s) !== null
+}
+async function ke(e) {
+  if (SOe() || Fl() || Ct() || !im()) return !1;
+  let n = C.of(e.session.host),
+    s = await n.getKnownMarketplaces(e.storageV5);
+  if (L1(s[wf]?.source) || !await Ce(n, A, e)) return !1;
+  let r = await NHt()?.catch((l) => {
+    t(`Claude Security plugin tips: plugin load failed: ${d(l)}`, {
+      level: "error"
+    });
+    return
+  });
+  return !(r === void 0 || eD(eu()) || hW(P) || hW(`${A}@${In}`) || [...r.enabled, ...r.disabled].some((l) => Un(l.name) === A) || await n.getClaudeSecurityInstalledUnderOtherId(e.storageV5))
+}
+
+function Ie(e) {
+  return v("tengu_noble_piglet", null)?.[e] === !0
+}
+async function ts(e) {
+  if (yt().spinnerTipsEnabled === !1 || ye()) return null;
+  let n = cct.of(e.session.host);
+  if (!await Ee("plugin") || !await ke(e) || n.tipOfLaunch !== void 0 || dQ(K) >= ot || AB(K) < 1 || !Ie("security_review_tip")) return null;
+  return n.tipOfLaunch = "closing", RBe(K, e.storageV5, "plugin"), g("tips_security_review_show"), ["Tip: For a deeper, verified scan, install the Claude Security plugin:", `/plugin install ${P}`]
+}
+async function ee(e, n) {
+  try {
+    return (await Tge(e, pe(), n)).length > 0
+  } catch (s) {
+    return t(`hasUserDefined(${e}) failed: ${s}`), !1
+  }
+}
+var Ze = /\.(html?|css|s[ac]ss|less|[jt]sx|vue|svelte|astro|png|jpe?g|gif|svg|webp|avif|ico)$/i,
+  Je = new Set(["vite", "next", "nuxt", "astro", "gatsby", "ng", "parcel", "webpack-dev-server", "serve", "http-server", "live-server", "browser-sync"]);
+
+function U(e) {
+  let {
+    bashTools: n,
+    readFileState: s
+  } = e ?? {};
+  if (n) {
+    for (let r of n)
+      if (Je.has(r)) return !0
+  }
+  if (s) {
+    let r = Rqr();
+    for (let l of yNt(s))
+      if (Ze.test(l) && !r(l)) return !0
+  }
+  return !1
+}
+var et = 2,
+  M = "desktop-ios-simulator",
+  te = 15,
+  ne = 5;
+
+function se(e) {
+  if (!KMe() || x() !== "macos") return !1;
+  if (!Rt() || hs("hipaa")) return !1;
+  if (!e.devIntents?.has("ios_app")) return !1;
+  return v("tengu_magical_pixel", !1)
+}
+
+function N(e) {
+  return `available in Claude for Enterprise \xB7 ${ES("https://clau.de/enterprise","Learn more",{themeName:e.theme})}`
+}
+var ie = 15,
+  A = "claude-security",
+  P = `${A}@${wf}`,
+  D = "claude-security-plugin",
+  re = 15,
+  ae = 3,
+  tt = 30,
+  nt = 2,
+  K = "claude-security-review-closing",
+  ot = 5,
+  st = ["c4e-desktop", "c4e-remote-sessions", "c4e-ultrareview"],
+  it = 5;
+
+function G(e) {
+  return _(st, e, it)
+}
+var rt = ["workflow-size-prompting", "workflow-size-prompting-ambient"],
+  lt = 12;
+
+function le(e) {
+  return _(rt, e, lt)
+}
+var ct = ["artifact-publish-plan", "artifact-duplicate"],
+  ut = 5;
+
+function ce(e) {
+  return _(ct, e, ut)
+}
+var ue = 10,
+  de = 4;
+
+function ge() {
+  return _It() || hPn(fe().workflowSizeGuideline) !== void 0
+}
+
+function we() {
+  let e = Px.bindings ?? Sps();
+  return RXe(mri(e), "Chat", e)
+}
+
+function R(e) {
+  return RXe(e, "Chat", Px.bindings ?? Sps())
+}
+
+function ns() {
+  return b
+}
+
+function os() {
+  return O
+}
+
+function ss() {
+  return [...b, ...O]
+}
+
+function is(e) {
+  return b.some((n) => n.id === e) || O.some((n) => n.id === e)
+}
+async function Ee(e) {
+  let {
+    filterCommandsForRemoteMode: n,
+    getBuiltinCommands: s
+  } = await import("B:/~BUN/root/chunk-rrektmek.js"), r = Ct(), y = (r ? n(s()) : s()).filter((w) => w.name === e || w.aliases?.includes(e));
+  if (y.length === 0) return !r;
+  return y.some((w) => _Me(w) && Cd(w))
+}
+var b = [{
+    id: "team-artifacts",
+    priority: 4,
+    content: async (e) => {
+      let n = await nsi(e.session, e.storageV5).catch((s) => (c("tips_team_artifact_show", s instanceof Error ? "content_scan_error" : "content_unknown_error"), []));
+      if (n.length === 0) return "";
+      return osi(n), rsi(e.session, e.storageV5), ssi(n)
+    },
+    cooldownSessions: 1,
+    isRelevant: async (e) => tsi(e.session, e.storageV5)
+  }, {
+    id: "fotw-campaign",
+    priority: 4,
+    content: async () => {
+      let e = Bhe();
+      if (!e?.command) return "";
+      let n = POe();
+      if (!n) return "";
+      let s = Ms(n.amountMinorUnits, n.currency, "fit"),
+        r = e.tipBlurb ? `/${e.command} ${e.tipBlurb}` : `/${e.command}`,
+        l = e.tips?.[dQ("fotw-campaign") % e.tips.length] ?? "";
+      if (l) return `${l} Try it for ${s} in usage credits.`;
+      return `${e.titleLabel??"Feature of the week:"} ${r}. Try it for ${s} in usage credits.`
+    },
+    cooldownSessions: 1,
+    isRelevant: async () => h6e()
+  }, {
+    id: "fotw-campaign-upsell",
+    priority: 4,
+    content: async () => {
+      let e = Bhe();
+      if (!e?.command) return "";
+      let n = e.tips?.[dQ("fotw-campaign-upsell") % e.tips.length] ?? "";
+      if (n) return n;
+      let s = e.tipBlurb ? `/${e.command} ${e.tipBlurb}` : `/${e.command}`;
+      return `${e.titleLabel??"Feature of the week:"} ${s}.`
+    },
+    cooldownSessions: 1,
+    isRelevant: async () => fCt()
+  }, {
+    id: "powerup-onboarding",
+    priority: 3,
+    providerAgnostic: !0,
+    content: async (e) => `New to Claude Code? Run ${lr("suggestion",e.theme)("/powerup")} for a quick interactive tutorial`,
+    cooldownSessions: 1,
+    async isRelevant() {
+      let e = fe();
+      if (e.numStartups >= 10) return !1;
+      if (e.powerupsUnlocked?.length) return !1;
+      return v("tengu_alder_compass", !1)
+    }
+  }, {
+    id: "new-user-warmup",
+    priority: 2,
+    providerAgnostic: !0,
+    content: async () => "Start with small features or bug fixes, tell Claude to propose a plan, and verify its suggested edits",
+    cooldownSessions: 3,
+    async isRelevant() {
+      return fe().numStartups < 10
+    }
+  }, {
+    id: "plan-mode-for-complex-tasks",
+    priority: 2,
+    providerAgnostic: !0,
+    content: async (e) => f("plan-mode-for-complex-tasks", `Use Plan Mode to prepare for a complex request before making changes. Press ${Sb("chat:cycleMode","Chat","shift+tab")} twice to enable.`, e),
+    cooldownSessions: 5,
+    isRelevant: async () => {
+      let e = fe();
+      return (e.lastPlanModeUse ? (Date.now() - e.lastPlanModeUse) / 86400000 : 1 / 0) > 7
+    }
+  }, {
+    id: "default-permission-mode-config",
+    providerAgnostic: !0,
+    advertisedCommand: "config",
+    content: async () => "Use /config to change your default permission mode (including Plan Mode)",
+    cooldownSessions: 10,
+    isRelevant: async () => {
+      try {
+        let e = fe(),
+          n = Cr(),
+          s = Boolean(e.lastPlanModeUse),
+          r = Boolean(n?.permissions?.defaultMode);
+        return s && !r
+      } catch (e) {
+        return t(`Failed to check default-permission-mode-config tip relevance: ${e}`, {
+          level: "warn"
+        }), !1
+      }
+    }
+  }, {
+    id: "git-worktrees",
+    providerAgnostic: !0,
+    content: async (e) => f("git-worktrees", "Use git worktrees to run multiple Claude sessions in parallel.", e),
+    cooldownSessions: 10,
+    isRelevant: async () => {
+      try {
+        let e = fe();
+        return await Tdn() <= 1 && e.numStartups > 50
+      } catch (e) {
+        return !1
+      }
+    }
+  }, {
+    id: "color-when-multi-clauding",
+    providerAgnostic: !0,
+    content: async () => "Running multiple Claude sessions? Use /color and /rename to tell them apart at a glance.",
+    cooldownSessions: 10,
+    isRelevant: async (e) => {
+      if (Eur.isHidden) return !1;
+      if (e.sessionColor || Fct()) return !1;
+      return await J(e) >= 2
+    }
+  }, {
+    id: "agents-view-multiclauding",
+    priority: 3,
+    providerAgnostic: !0,
+    maxLifetimeShows: 5,
+    cooldownSessions: 1,
+    content: async (e) => {
+      let n = lr("suggestion", e.theme);
+      return f("agents-view-multiclauding", `Running multiple Claude sessions? Press ${n(jV)} on an empty prompt to see them all in one place`, e)
+    },
+    isRelevant: async (e) => {
+      if (!j6e()) return !1;
+      if (Ma()) return !1;
+      let n = fe();
+      if (n.leftArrowOpensAgents === !1) return !1;
+      if (Gt()) return !1;
+      if (n.hasOpenedAgentsView || n.hasUsedAgentsFleet) return !1;
+      return await J(e) >= 2
+    }
+  }, {
+    id: "terminal-setup",
+    providerAgnostic: !0,
+    content: async () => i.terminal === "Apple_Terminal" ? "Run /terminal-setup to enable convenient terminal integration like Option + Enter for new line and more" : "Run /terminal-setup to enable convenient terminal integration like Shift + Enter for new line and more",
+    cooldownSessions: 10,
+    async isRelevant() {
+      if (!i6e()) return !1;
+      let e = fe();
+      if (i.terminal === "Apple_Terminal") return !e.optionAsMetaKeyInstalled;
+      return !e.shiftEnterKeyBindingInstalled
+    }
+  }, {
+    id: "vscode-gpu-accel-garbled-glyphs",
+    providerAgnostic: !0,
+    maxLifetimeShows: 5,
+    content: async () => "Corrupted terminal glyphs? Disable terminal GPU acceleration in settings or run /terminal-setup",
+    cooldownSessions: 8,
+    async isRelevant() {
+      return sw()
+    }
+  }, {
+    id: "shift-enter",
+    providerAgnostic: !0,
+    content: async () => i.terminal === "Apple_Terminal" ? "Press Option+Enter to send a multi-line message" : "Press Shift+Enter to send a multi-line message",
+    cooldownSessions: 10,
+    async isRelevant() {
+      let e = fe();
+      return Boolean((i.terminal === "Apple_Terminal" ? e.optionAsMetaKeyInstalled : e.shiftEnterKeyBindingInstalled) && e.numStartups > 3)
+    }
+  }, {
+    id: "shift-enter-setup",
+    providerAgnostic: !0,
+    content: async () => i.terminal === "Apple_Terminal" ? "Run /terminal-setup to enable Option+Enter for new lines" : "Run /terminal-setup to enable Shift+Enter for new lines",
+    cooldownSessions: 10,
+    async isRelevant() {
+      if (!i6e()) return !1;
+      let e = fe();
+      return !(i.terminal === "Apple_Terminal" ? e.optionAsMetaKeyInstalled : e.shiftEnterKeyBindingInstalled)
+    }
+  }, {
+    id: "memory-command",
+    providerAgnostic: !0,
+    content: async (e) => f("memory-command", "Use /memory to view and manage Claude memory", e),
+    cooldownSessions: 15,
+    advertisedCommand: "memory",
+    async isRelevant() {
+      return fe().memoryUsageCount <= 0
+    }
+  }, {
+    id: "theme-command",
+    providerAgnostic: !0,
+    content: async () => "Use /theme to change the color theme",
+    cooldownSessions: 20,
+    isRelevant: async () => !0
+  }, {
+    id: "colorterm-truecolor",
+    providerAgnostic: !0,
+    content: async () => "Try setting environment variable COLORTERM=truecolor for richer colors",
+    cooldownSessions: 30,
+    isRelevant: async () => !i.COLORTERM && Se.level < 3
+  }, {
+    id: "powershell-tool-env",
+    providerAgnostic: !0,
+    content: async () => "Set CLAUDE_CODE_USE_POWERSHELL_TOOL=1 to enable the PowerShell tool (preview)",
+    cooldownSessions: 10,
+    isRelevant: async () => x() === "windows" && process.env.CLAUDE_CODE_USE_POWERSHELL_TOOL === void 0
+  }, {
+    id: "status-line",
+    providerAgnostic: !0,
+    content: async (e) => f("status-line", "Use /statusline to set up a custom status line that will display beneath the input box", e),
+    cooldownSessions: 25,
+    advertisedCommand: "statusline",
+    isRelevant: async () => !g_() && Cr().statusLine === void 0
+  }, {
+    id: "prompt-queue",
+    providerAgnostic: !0,
+    content: async () => "Hit Enter to queue up additional messages while Claude is working.",
+    cooldownSessions: 5,
+    async isRelevant() {
+      return fe().promptQueueUseCount <= 3
+    }
+  }, {
+    id: "enter-to-steer-in-relatime",
+    providerAgnostic: !0,
+    content: async () => "Send messages to Claude while it works to steer Claude in real-time",
+    cooldownSessions: 20,
+    isRelevant: async () => !0
+  }, {
+    id: "vscode-command-install",
+    providerAgnostic: !0,
+    content: async () => `Open the Command Palette (Cmd+Shift+P) and run "Shell Command: Install '${i.terminal==="vscode"?"code":i.terminal}' command in PATH" to enable IDE integration`,
+    cooldownSessions: 0,
+    async isRelevant() {
+      if (!iye()) return !1;
+      if (x() !== "macos") return !1;
+      switch (i.terminal) {
+        case "vscode":
+          return !await mvi();
+        case "cursor":
+          return !await fvi();
+        case "windsurf":
+          return !await pvi();
+        default:
+          return !1
+      }
+    }
+  }, {
+    id: "ide-upsell-external-terminal",
+    providerAgnostic: !0,
+    advertisedCommand: "ide",
+    content: async () => "Connect Claude to your IDE \xB7 /ide",
+    cooldownSessions: 4,
+    async isRelevant() {
+      if (_6()) return !1;
+      if ((await Bno()).length !== 0) return !1;
+      return (await hvi()).length > 0
+    }
+  }, {
+    id: "install-github-app",
+    content: async (e) => f("install-github-app", "Run /install-github-app to tag @claude right from your Github issues and PRs", e),
+    cooldownSessions: 10,
+    advertisedCommand: "install-github-app",
+    async isRelevant() {
+      if (fe().githubActionSetupCount) return !1;
+      let e = cdn(),
+        n = e ? gN(e) : null;
+      return n !== "gitlab" && n !== "bitbucket"
+    }
+  }, {
+    id: "install-slack-app",
+    content: async (e) => f("install-slack-app", "Run /install-slack-app to use Claude in Slack", e),
+    cooldownSessions: 10,
+    advertisedCommand: "install-slack-app",
+    isRelevant: async () => !fe().slackAppInstallCount
+  }, {
+    id: "install-slack-app-mcp",
+    content: async () => "Using a Slack MCP? With Claude Tag you can @Claude directly in Slack \u2014 run /install-slack-app or share claude.com/product/tag with your org owner",
+    cooldownSessions: 10,
+    advertisedCommand: "install-slack-app",
+    isRelevant: async (e) => {
+      try {
+        if (!Rt()) return !1;
+        if (fe().slackAppInstallCount) return !1;
+        let {
+          servers: n
+        } = await fw({}, {
+          storageV5: e?.storageV5
+        });
+        return Object.keys(n).some((s) => s.toLowerCase().includes("slack"))
+      } catch (n) {
+        return !1
+      }
+    }
+  }, {
+    id: "permissions",
+    providerAgnostic: !0,
+    content: async (e) => f("permissions", "Use /permissions to pre-approve and pre-deny bash, edit, and MCP tools", e),
+    cooldownSessions: 10,
+    advertisedCommand: "permissions",
+    async isRelevant() {
+      return fe().numStartups > 10 && !Ct()
+    }
+  }, {
+    id: "drag-and-drop-images",
+    providerAgnostic: !0,
+    content: async () => "Did you know you can drag and drop image files into your terminal?",
+    cooldownSessions: 10,
+    isRelevant: async () => !i.isSSH()
+  }, {
+    id: "paste-images-mac",
+    providerAgnostic: !0,
+    content: async () => "Paste images into Claude Code using control+v (not cmd+v!)",
+    cooldownSessions: 10,
+    isRelevant: async () => x() === "macos"
+  }, {
+    id: "double-esc",
+    providerAgnostic: !0,
+    content: async () => "Double-tap esc to rewind the conversation to a previous point in time",
+    cooldownSessions: 10,
+    isRelevant: async () => !J0() && (!Ct() || QFr())
+  }, {
+    id: "double-esc-code-restore",
+    providerAgnostic: !0,
+    content: async (e) => f("double-esc-code-restore", "Double-tap esc to rewind the code and/or conversation to a previous point in time", e),
+    cooldownSessions: 10,
+    isRelevant: async () => J0()
+  }, {
+    id: "continue",
+    providerAgnostic: !0,
+    content: async () => "Run claude --continue or claude --resume to resume a conversation",
+    cooldownSessions: 10,
+    isRelevant: async () => !0
+  }, {
+    id: "rename-conversation",
+    providerAgnostic: !0,
+    content: async () => "Name your conversations with /rename to find them easily in /resume later",
+    cooldownSessions: 15,
+    isRelevant: async () => fe().numStartups > 10
+  }, {
+    id: "custom-commands",
+    providerAgnostic: !0,
+    content: async (e) => f("custom-commands", "Create skills by adding .md files to .claude/skills/ in your project or ~/.claude/skills/ for skills that work in any project", e),
+    cooldownSessions: 15,
+    async isRelevant(e) {
+      let n = fe();
+      return !ur("skills") && n.numStartups > 10 && !await ee("skills", e?.storageV5)
+    }
+  }, {
+    id: "shift-tab",
+    providerAgnostic: !0,
+    async content(e) {
+      let n = we() ?? "shift+tab";
+      return f("shift-tab", `Hit ${n} to cycle between manual mode, auto-accept edit mode, and plan mode`, e)
+    },
+    cooldownSessions: 10,
+    async isRelevant() {
+      if (ye()) return !1;
+      return we() !== null
+    }
+  }, {
+    id: "image-paste",
+    providerAgnostic: !0,
+    content: async () => `Use ${Sb("chat:imagePaste","Chat","ctrl+v")} to paste images from your clipboard`,
+    cooldownSessions: 20,
+    isRelevant: async () => !0
+  }, {
+    id: "effort-step-keys",
+    providerAgnostic: !0,
+    content: async () => `Press ${R("chat:increaseEffort")??`shift+${LO}`} or ${R("chat:decreaseEffort")??`shift+${nP}`} at the prompt to raise or lower the effort level for this session`,
+    cooldownSessions: 10,
+    isRelevant: async () => p_n() && $ht(at()) && typeof R("chat:increaseEffort") === "string" && typeof R("chat:decreaseEffort") === "string"
+  }, {
+    id: "agent-flag",
+    providerAgnostic: !0,
+    content: async (e) => f("agent-flag", "Use --agent <agent_name> to directly start a conversation with a subagent", e),
+    cooldownSessions: 15,
+    async isRelevant(e) {
+      let n = fe();
+      return !ur("agents") && n.numStartups > 5 && await ee("agents", e?.storageV5)
+    }
+  }, {
+    id: "desktop-app",
+    advertisedCommand: "desktop",
+    content: async (e) => `Run Claude Code locally or remotely using the Claude desktop app \xB7 run ${lr("suggestion",e.theme)("/desktop")}`,
+    cooldownSessions: 15,
+    isRelevant: async (e) => KMe() && !_Ot() && !await C.of(e.session.host).getDesktopInstalled()
+  }, {
+    id: "desktop-third-party",
+    providerAgnostic: !0,
+    content: async (e) => `Run Claude Code in the Claude desktop app with your cloud provider or LLM gateway \xB7 ${ES("https://clau.de/desktop-3p","clau.de/desktop-3p",{themeName:e.theme})}`,
+    cooldownSessions: 15,
+    isRelevant: async (e) => KMe() && pt() && !await C.of(e.session.host).getDesktopInstalled()
+  }, {
+    id: "desktop-shortcut",
+    advertisedCommand: "desktop",
+    content: async (e) => `Continue your session in Claude Code Desktop with ${lr("suggestion",e.theme)("/desktop")}`,
+    cooldownSessions: 15,
+    isRelevant: async () => KMe() && L().enable_shortcut_tip
+  }, {
+    id: "desktop-contextual",
+    advertisedCommand: "desktop",
+    priority: 1,
+    content: async (e) => {
+      let n = lr("suggestion", e.theme);
+      if (await C.of(e.session.host).getDesktopInstalled()) return `Working on UI? See a live preview in Claude Code Desktop \xB7 run ${n("/desktop")}`;
+      return `Working on UI? Claude Code Desktop has live preview and inline images \xB7 ${n("clau.de/desktop")}`
+    },
+    cooldownSessions: 15,
+    isRelevant: async (e) => {
+      if (!KMe()) return !1;
+      if (!L().enable_contextual_tip) return !1;
+      if (!U(e)) return !1;
+      return !(se(e) && AB(M) >= te && dQ(M) < ne)
+    }
+  }, {
+    id: M,
+    advertisedCommand: "desktop",
+    priority: 1,
+    content: async (e) => `In Claude Code Desktop, each session gets its own iOS Simulator pane, where Claude tests your app, fixes what it finds, and checks again. \xB7 run ${lr("suggestion",e.theme)("/desktop")}`,
+    cooldownSessions: te,
+    maxLifetimeShows: ne,
+    isRelevant: async (e) => se(e)
+  }, {
+    id: "claude-design-contextual",
+    priority: 1,
+    content: async (e) => `Use Claude Design to mock up screens before you build \xB7 ${ES("https://claude.ai/design?utm_source=claude_code&utm_medium=tip&utm_campaign=tengu_cedar_plume","claude.ai/design",{themeName:e.theme})}`,
+    cooldownSessions: 15,
+    isRelevant: async (e) => {
+      if (!Rt()) return !1;
+      if (!U(e)) return !1;
+      return v("tengu_cedar_plume", !1)
+    }
+  }, {
+    id: "claude-design-command",
+    advertisedCommand: "design",
+    priority: 1,
+    content: async (e) => `Working on UI? Run ${lr("suggestion",e.theme)("/design")} to mock up a few directions before you build`,
+    cooldownSessions: 15,
+    isRelevant: async (e) => {
+      if (!U(e)) return !1;
+      if (Obe(Nze)) return !1;
+      let n = await import("B:/~BUN/root/chunk-37wvwg8q.js");
+      if (n.isArtifactTypeAliasEnabled() && !n.orgAllowsArtifactTypeAlias(n.DESIGN_TYPE_ALIAS)) return !1;
+      return a6e()
+    }
+  }, {
+    id: "artifact-publish-plan",
+    priority: 3,
+    maxLifetimeShows: 5,
+    cooldownSessions: 5,
+    content: async () => "Working on a plan or design doc? Ask Claude to publish it as an artifact \u2014 a polished web page you can open in your browser.",
+    isRelevant: async () => !ce("artifact-publish-plan") && SA() && iu() === null
+  }, {
+    id: "artifact-duplicate",
+    priority: 3,
+    maxLifetimeShows: 5,
+    cooldownSessions: 5,
+    content: async () => "See an artifact you'd like to build on? Duplicate, in its title menu, gives you your own editable copy.",
+    isRelevant: async () => !ce("artifact-duplicate") && SA() && iu() === null
+  }, {
+    id: "web-app",
+    content: async () => "Run tasks in the cloud while you keep coding locally \xB7 clau.de/web",
+    cooldownSessions: 15,
+    isRelevant: async () => !_Ot() && lBt(IW.policy)
+  }, {
+    id: "web-setup-github",
+    advertisedCommand: "web-setup",
+    priority: 1,
+    cooldownSessions: ue,
+    maxLifetimeShows: de,
+    content: async (e) => `Run ${lr("suggestion",e.theme)("/web-setup")} to use cloud sessions with the GitHub account gh is signed in to`,
+    isRelevant: async (e) => {
+      if (ye() || !Rt() || !QWe()) return !1;
+      let n = cdn(),
+        s = n ? gN(n) : null;
+      if (s === "gitlab" || s === "bitbucket") return !1;
+      if (dQ("web-setup-github") >= de || AB("web-setup-github") < ue) return !1;
+      if ((await C.of(e.session.host).getGhAuthStatus()).status !== "authenticated") return !1;
+      return Wne.of(e.session.host).peek(e.credentials, e.storageV5) === "not_connected"
+    }
+  }, {
+    id: "remote-control",
+    content: async (e) => {
+      let n = lr("suggestion", e.theme);
+      return `Control this session from ${ES("https://claude.com/download#mobile","the Claude mobile app",{themeName:e.theme})} \xB7 run ${n("/remote-control")}`
+    },
+    cooldownSessions: 15,
+    isRelevant: async () => iX() && !fe().hasUsedRemoteControl && !ZZ()
+  }, {
+    id: "remote-control-next-surface",
+    content: async (e) => {
+      let [n, s, r] = s2o() === "web" ? ["https://claude.ai/code", "claude.ai/code", " on any browser"] : ["https://claude.com/download#mobile", "the Claude mobile app", ""];
+      return `You can also drive this session from ${ES(n,s,{themeName:e.theme})}${r}`
+    },
+    cooldownSessions: 15,
+    maxLifetimeShows: 3,
+    isRelevant: async () => {
+      if (!iX() || !ZZ()) return !1;
+      if (s2o() === void 0) return !1;
+      return v("tengu_maple_rung", !1)
+    }
+  }, {
+    id: "push-notif",
+    content: async (e) => `Get pinged on your phone when long tasks finish \xB7 enable push notifications in ${lr("suggestion",e.theme)("/config")}`,
+    cooldownSessions: 15,
+    isRelevant: async () => o2o()
+  }, {
+    id: "voice-mode",
+    content: async () => "Use /voice to enable push-to-talk dictation",
+    cooldownSessions: 10,
+    advertisedCommand: "voice",
+    isRelevant: async () => PMt() && !VOi(yt()) && !NE() && !i.CLAUDE_CODE_REMOTE && !i.isSSH()
+  }, {
+    id: "no-flicker",
+    providerAgnostic: !0,
+    content: async () => "Try the new fullscreen renderer \u2014 flicker-free output, mouse support, auto-copy on select \xB7 /tui fullscreen",
+    cooldownSessions: 10,
+    advertisedCommand: "tui",
+    isRelevant: async () => !Kd() && yt().tui === void 0 && !p7n() && !Chr(TW())
+  }, {
+    id: "focus-view",
+    providerAgnostic: !0,
+    content: async () => S7n,
+    cooldownSessions: ie,
+    advertisedCommand: "focus",
+    isRelevant: async (e) => {
+      if (!Kd() || yt().viewMode !== void 0 || kGe()) return !1;
+      if (yt().spinnerTipsEnabled === !1 || AB("focus-view") < ie) return !1;
+      switch (v("tengu_linear_fog", "off")) {
+        case "holdout":
+          return !1;
+        case "after_long_turn":
+          return (e.lastTurnToolUseCount ?? 0) >= cri;
+        default:
+          return !0
+      }
+    }
+  }, {
+    id: "explanatory-output-style",
+    priority: 1,
+    providerAgnostic: !0,
+    content: async () => w7n,
+    cooldownSessions: 15,
+    maxLifetimeShows: 3,
+    advertisedCommand: "config",
+    isRelevant: async (e) => (e.explanationRequestCount ?? 0) >= et && !Ct() && Kt("localSettings") && be("flagSettings")?.outputStyle === void 0 && be("policySettings")?.outputStyle === void 0 && await oOt() === null
+  }, {
+    id: "c4e-desktop",
+    content: async (e) => `Run Claude Code locally or remotely using the Claude desktop app \u2014 ${N(e)}`,
+    cooldownSessions: 15,
+    isRelevant: async () => {
+      if (!_Ot() || G("c4e-desktop")) return !1;
+      return KMe()
+    }
+  }, {
+    id: "c4e-remote-sessions",
+    content: async (e) => `Run tasks in the cloud while you keep coding locally \u2014 ${N(e)}`,
+    cooldownSessions: 15,
+    isRelevant: async () => _Ot() && !G("c4e-remote-sessions")
+  }, {
+    id: "c4e-ultrareview",
+    content: async (e) => `/ultrareview runs a deep, multi-agent review of your changes \u2014 ${N(e)}`,
+    cooldownSessions: 15,
+    advertisedCommand: "ultrareview",
+    isRelevant: async () => _Ot() && !G("c4e-ultrareview")
+  }, {
+    id: "ultrareview-awareness",
+    priority: 1,
+    cooldownSessions: 8,
+    content: async (e) => {
+      let n = lr("suggestion", e.theme),
+        s = her(),
+        r = s !== null && s.reviews_remaining > 0 ? ` \u2014 ${w4o(s.reviews_remaining)}` : "";
+      return `Run ${n("/ultrareview")} for a cloud-based multi-agent review that finds and verifies bugs in your branch${r}`
+    },
+    isRelevant: async (e) => {
+      if (!l6r("startup_tip")) return !1;
+      if (S4o()) return !1;
+      return b4o(e.credentials), !0
+    }
+  }, {
+    id: "opusplan-mode-reminder",
+    providerAgnostic: !0,
+    content: async () => `Your default model setting is Opus Plan Mode. Press ${Sb("chat:cycleMode","Chat","shift+tab")} twice to activate Plan Mode and plan with Claude Opus.`,
+    cooldownSessions: 2,
+    async isRelevant() {
+      let e = fe(),
+        s = eS() === "opusplan",
+        r = e.lastPlanModeUse ? (Date.now() - e.lastPlanModeUse) / 86400000 : 1 / 0;
+      return s && r > 3
+    }
+  }, {
+    id: "frontend-design-plugin",
+    priority: 1,
+    providerAgnostic: !0,
+    content: async (e) => `Working with HTML/CSS? Install the frontend-design plugin:
+${lr("suggestion",e.theme)(`/plugin install frontend-design@${wf}`)}`,
+    cooldownSessions: 3,
+    maxLifetimeShows: 3,
+    advertisedCommand: "plugin",
+    isRelevant: async (e) => _e(C.of(e.session.host), "frontend-design", e, {
+      filesRead: ["**/*.html", "**/*.css", "**/*.htm"]
+    })
+  }, {
+    id: D,
+    priority: 1,
+    providerAgnostic: !0,
+    content: async (e) => {
+      let n = cct.of(e.session.host);
+      if (n.tipOfLaunch === "closing") return "";
+      return n.tipOfLaunch = "spinner", `Looking to improve the security of your code? Install the Claude Security plugin to run scans on legacy code and recent changes:
+${lr("suggestion",e.theme)(`/plugin install ${P}`)}`
+    },
+    cooldownSessions: re,
+    maxLifetimeShows: ae,
+    advertisedCommand: "plugin",
+    isRelevant: async (e) => {
+      let n = Mur(GSr);
+      if ((n === null || n.daysSinceUse >= tt) && (e.securityCheckRequestScore ?? 0) < nt) return !1;
+      if (yt().spinnerTipsEnabled === !1 || AB(D) < re || dQ(D) >= ae) return !1;
+      return await ke(e) && cct.of(e.session.host).tipOfLaunch === void 0 && Ie("spinner_tip")
+    }
+  }, Pqr, {
+    id: "subagent-fanout-nudge",
+    providerAgnostic: !0,
+    content: async (e) => `Say ${lr("suggestion",e.theme)('"fan out subagents"')} and Claude sends a team. Each one digs deep so nothing gets missed.`,
+    cooldownSessions: 3,
+    isRelevant: async () => !Rt()
+  }, {
+    id: "workflow-size-prompting",
+    providerAgnostic: !0,
+    advertisedCommand: "config",
+    priority: 1,
+    content: async (e) => {
+      let n = lr("suggestion", e.theme);
+      return `You can control how big a workflow is just by prompting. Try ${n('"use a small workflow, 5 agents max"')}, or set a default with ${n("Dynamic workflow size")} in ${n("/config")}.`
+    },
+    cooldownSessions: 5,
+    isRelevant: async (e) => im() && !ge() && (e?.toolsUsed?.has(qu) ?? !1) && !le("workflow-size-prompting")
+  }, {
+    id: "workflow-size-prompting-ambient",
+    providerAgnostic: !0,
+    advertisedCommand: "config",
+    content: async (e) => {
+      let n = lr("suggestion", e.theme);
+      return `You can control how big a workflow is just by prompting. Ask for a small workflow, cap it with ${n('"use at most 5 agents"')}, or set a default with ${n("Dynamic workflow size")} in ${n("/config")}.`
+    },
+    cooldownSessions: 12,
+    isRelevant: async (e) => im() && !ge() && !(e?.toolsUsed?.has(qu) ?? !1) && !le("workflow-size-prompting-ambient")
+  }, {
+    id: "loop-command-nudge",
+    providerAgnostic: !0,
+    content: async (e) => `${lr("suggestion",e.theme)(`/${H0e}`)} runs any prompt on a recurring schedule. Great for monitoring deploys, babysitting PRs, or polling status.`,
+    cooldownSessions: 3,
+    isRelevant: async () => {
+      if (k1()) return !1;
+      if (!iD()) return !1;
+      return !Rt()
+    }
+  }, {
+    id: "code-review-low-fast",
+    providerAgnostic: !0,
+    content: async (e) => {
+      let n = lr("suggestion", e.theme);
+      return f("code-review-low-fast", `For a fast, cheap code review, try ${n("/code-review low")}. It runs the built-in skill at its lightest effort level.`, e)
+    },
+    cooldownSessions: 8,
+    isRelevant: async () => {
+      let e = fe().skillUsage ?? {};
+      return Object.keys(e).some((n) => {
+        if (n === V9) return !1;
+        return n.toLowerCase().replace(/[^a-z0-9]/g, "").includes("codereview")
+      })
+    }
+  }, {
+    id: "plugin-disuse-review",
+    providerAgnostic: !0,
+    advertisedCommand: "plugin",
+    content: async (e) => {
+      let n = lr("suggestion", e.theme),
+        s = await Git(),
+        r = s[0];
+      if (!r) return "";
+      if (s.length === 1) return `You haven't used the ${Se.bold(r.name)} plugin lately. Disable it with ${n("/plugin")} to free up context and speed up startup.`;
+      return `You have ${s.length} plugins you haven't used lately. Disable them with ${n("/plugin")} to free up context and speed up startup.`
+    },
+    cooldownSessions: 30,
+    isRelevant: async () => (await Git()).length > 0
+  }, {
+    id: "goal-command-nudge",
+    content: async (e) => {
+      let n = lr("suggestion", e.theme);
+      return f("goal-command-nudge", `Set an objective with ${n("/goal")} \u2014 Claude keeps working until it's met`, e)
+    },
+    cooldownSessions: 3,
+    isRelevant: async () => vyt()
+  }, {
+    id: "guest-passes",
+    content: async (e) => {
+      let n = lr("claude", e.theme),
+        s = oft();
+      return s ? `Share Claude Code and earn ${n(lXe(s))} in usage credits \xB7 ${n("/passes")}` : `You have free guest passes to share \xB7 ${n("/passes")}`
+    },
+    cooldownSessions: 3,
+    isRelevant: async () => {
+      if (fe().hasVisitedPasses) return !1;
+      let {
+        eligible: n
+      } = OMt();
+      return n
+    }
+  }, {
+    id: "feedback-command",
+    content: async () => "Use /feedback to help us improve!",
+    cooldownSessions: 15,
+    async isRelevant() {
+      if (!QP()) return !1;
+      return fe().numStartups > 5
+    }
+  }, {
+    id: "team-onboarding-share",
+    advertisedCommand: "team-onboarding",
+    content: async (e) => `Run ${lr("suggestion",e.theme)("/team-onboarding")} to turn your Claude usage into an onboarding guide \u2014 share it with your team in one link`,
+    cooldownSessions: 5,
+    async isRelevant() {
+      let e = fe();
+      if (e.numStartups < 15) return !1;
+      if (e.teamOnboardingLastUsedAt !== void 0 && Date.now() - e.teamOnboardingLastUsedAt < 2592000000) return !1;
+      return K5t()
+    }
+  }, ...q],
+  O = [];
+async function dt(e, n) {
+  let s = "tip advertisedCommand check threw";
+  try {
+    if (e.advertisedCommand !== void 0 && !await Ee(e.advertisedCommand)) return !1;
+    return s = "tip isRelevant threw", await e.isRelevant(n)
+  } catch (r) {
+    return C.of(n.session.host).failedTipIds.add(e.id), a(qe(F(r), s)), !1
+  }
+}
+async function rs(e) {
+  let n = C.of(e.session.host),
+    {
+      tips: s,
+      trustedCount: r
+    } = await A7n(e.session.host),
+    l = s.filter((m) => AB(m.id) >= m.cooldownSessions);
+  if (r > 0 && SOe()) return l;
+  let y = [...b, ...O, ...await n.getMarketplacePluginTips(e.storageV5)],
+    w = !us(),
+    S = y.filter((m) => !n.failedTipIds.has(m.id)),
+    T = w ? S.filter((m) => m.providerAgnostic) : S,
+    I = await Promise.all(T.map((m) => dt(m, e)));
+  return [...T.filter((m, h) => I[h]).filter((m) => AB(m.id) >= m.cooldownSessions).filter((m) => m.maxLifetimeShows === void 0 || dQ(m.id) < m.maxLifetimeShows), ...l]
+}
+
+function pt() {
+  switch (Te()) {
+    case "bedrock":
+    case "mantle":
+    case "vertex":
+    case "foundry":
+    case "gateway":
+      return !0;
+    case "anthropicAws":
+    case "anthropicGoogleCloud":
+      return !1;
+    case "firstParty":
+      return !Ci()
+  }
+}
+export {
+  Z as MARKETPLACE_PLUGIN_TIP_ID_PREFIX, ve as TipSessionCache, ns as _getExternalTipsForTests, os as _getInternalOnlyTipsForTests, Ee as advertisedCommandIsOffered, ss as getBuiltInTips, rs as getRelevantTips, ts as getSecurityReviewClosingTip, U as hasDesktopContextualSignal, is as isBuiltInTipId, dt as isTipRelevantSafe, C as tipSessionCaches
+};

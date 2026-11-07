@@ -1,0 +1,156 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  V3
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  _,
+  ee
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  Nb
+} from "B:/~BUN/root/chunk-rr294jrm.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  Wt
+} from "B:/~BUN/root/chunk-b91sxvrb.js";
+import {
+  R$n
+} from "B:/~BUN/root/chunk-5w7xhbnh.js";
+import {
+  Rc
+} from "B:/~BUN/root/chunk-rzaxm471.js";
+import {
+  o,
+  E,
+  I,
+  C,
+  u,
+  xt,
+  me,
+  T
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  ui
+} from "B:/~BUN/root/chunk-xwsv2hvn.js";
+var n = {
+  non_exclusive_heartbeat_interval_ms: 0,
+  multisession_poll_interval_ms_not_at_capacity: 2000,
+  multisession_poll_interval_ms_partial_capacity: 2000,
+  multisession_poll_interval_ms_at_capacity: 600000,
+  reclaim_older_than_ms: 5000,
+  session_keepalive_interval_v2_ms: 120000,
+  sse_connect_timeout_ms: 30000,
+  watch_sessions: !1,
+  watch_connected_poll_interval_ms: 60000,
+  watch_fallback_poll_interval_ms: 30000,
+  watch_session_end_window_ms: 600000
+};
+var c = {
+    message: "must be 0 (disabled) or \u2265100ms"
+  },
+  m = p(() => u({
+    non_exclusive_heartbeat_interval_ms: E().int().min(0).default(0),
+    multisession_poll_interval_ms_not_at_capacity: E().int().min(100).default(n.multisession_poll_interval_ms_not_at_capacity),
+    multisession_poll_interval_ms_partial_capacity: E().int().min(100).default(n.multisession_poll_interval_ms_partial_capacity),
+    multisession_poll_interval_ms_at_capacity: E().int().refine((e) => e === 0 || e >= 100, c).default(n.multisession_poll_interval_ms_at_capacity),
+    reclaim_older_than_ms: E().int().min(1).default(5000),
+    session_keepalive_interval_v2_ms: E().int().min(0).default(120000),
+    sse_connect_timeout_ms: E().int().max(Rc).refine((e) => e === 0 || e >= 20000, {
+      message: "must be 0 (disabled) or \u226520000ms"
+    }).default(n.sse_connect_timeout_ms),
+    watch_sessions: I().catch(n.watch_sessions),
+    watch_connected_poll_interval_ms: E().int().min(15000).max(96000).catch(n.watch_connected_poll_interval_ms),
+    watch_fallback_poll_interval_ms: E().int().min(15000).max(96000).catch(n.watch_fallback_poll_interval_ms),
+    watch_session_end_window_ms: E().int().min(0).max(3600000).catch(n.watch_session_end_window_ms)
+  }).refine((e) => e.non_exclusive_heartbeat_interval_ms > 0 || e.multisession_poll_interval_ms_at_capacity > 0, {
+    message: "at-capacity liveness requires non_exclusive_heartbeat_interval_ms > 0 or multisession_poll_interval_ms_at_capacity > 0"
+  }));
+
+function pre() {
+  let e = V3("tengu_bridge_poll_interval_config", n, 300000),
+    t = m().safeParse(e);
+  return t.success ? t.data : n
+}
+var d = p(() => xt({
+    version: T(1),
+    session_ingress_token: o().min(1),
+    api_base_url: o(),
+    claude_code_args: me(o(), o()).optional().catch(void 0),
+    mcp_config: xt({
+      content: o(),
+      path: o().optional(),
+      mode: E().optional()
+    }).optional().catch(void 0),
+    auto_mode_environment: C(o()).optional().catch(void 0),
+    worktree: I().optional().catch(void 0)
+  })),
+  f = {
+    secret_did_not_decode: "Work secret is not valid JSON",
+    unsupported_version: "Unsupported work secret version",
+    missing_session_ingress_token: "Invalid work secret: missing or empty session_ingress_token",
+    missing_api_base_url: "Invalid work secret: missing api_base_url"
+  };
+class d5e extends Error {
+  verdict;
+  constructor(e) {
+    super(f[e]);
+    this.verdict = e;
+    this.name = "WorkSecretShapeError"
+  }
+}
+
+function xve(e) {
+  let t;
+  try {
+    t = ee(Buffer.from(e, "base64url").toString("utf-8"))
+  } catch {
+    throw new d5e("secret_did_not_decode")
+  }
+  let s = d().safeParse(t);
+  if (s.success) return s.data;
+  let i = new Set(s.error.issues.map((r) => r.path[0]));
+  if (i.has(void 0) || i.has("version")) throw new d5e("unsupported_version");
+  if (i.has("session_ingress_token")) throw new d5e("missing_session_ingress_token");
+  throw new d5e("missing_api_base_url")
+}
+
+function c5e(e, t) {
+  if (e === t) return !0;
+  let s = e.slice(e.lastIndexOf("_") + 1),
+    i = t.slice(t.lastIndexOf("_") + 1);
+  return s.length >= 4 && s === i
+}
+
+function u5e(e, t) {
+  return Nb(t, "sessionId"), `${e.replace(/\/+$/,"")}/v1/code/sessions/${t}`
+}
+async function zAt(e, t) {
+  let s = await Wt.post(`${e}/worker/register`, {}, {
+      headers: {
+        Authorization: `Bearer ${t}`,
+        "Content-Type": "application/json",
+        "anthropic-version": "2023-06-01",
+        "User-Agent": ui()
+      },
+      timeout: 1e4
+    }),
+    i = s.data?.worker_epoch,
+    r = typeof i === "string" ? Number(i) : i;
+  if (typeof r !== "number" || !Number.isFinite(r) || !Number.isSafeInteger(r)) {
+    let a = R$n(`${_(s.data)}`, "register_worker_response");
+    throw Error(`registerWorker: invalid worker_epoch in response${a===void 0?" (the response is not quoted: it is too long or is not one plain line)":`: ${a}`}`)
+  }
+  return r
+}
+export {
+  pre,
+  d5e,
+  xve,
+  c5e,
+  u5e,
+  zAt
+};

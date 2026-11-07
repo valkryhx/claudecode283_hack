@@ -1,0 +1,239 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { we } from "B:/~BUN/root/chunk-r5zmhp23.js";
+import { t } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { St } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import { VNe, Tm, Kl, Ife, hn, vR, mJ, EE } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import { bA } from "B:/~BUN/root/chunk-q2s07yzr.js";
+import { Lx, wLe } from "B:/~BUN/root/chunk-jmka9ye7.js";
+async function B7o(d) {
+  let r = vR();
+  if (r?.accountUuid) return {
+    accountUuid: r.accountUuid,
+    organizationUuid: r.organizationUuid || void 0
+  };
+  if (!wLe() || St()) return;
+  let c = d(),
+    o = c === void 0 ? void 0 : await v6t(c);
+  if (o === void 0) t("[bridge:owner-pin] daemon owner not declared: no bootstrap stamp, and the daemon credential is absent or was not attributed by the server in time \u2014 spawned sessions run the unverified inbox path", {
+    level: "warn"
+  });
+  return o;
+}
+var V = 1000,
+  I = 300000,
+  C = 15000,
+  N = 4,
+  Ear = 1e4,
+  H = 3000;
+async function j7o(d) {
+  return bA() === void 0 && Lx() && (await Tm(d)) === "store";
+}
+async function Pmi(d) {
+  return (await W7o(d)).pin;
+}
+async function W7o({
+  getAccessToken: getAccessToken,
+  storageV5: storageV5,
+  credentials: credentials,
+  presetOwner: presetOwner
+}) {
+  let k = getAccessToken();
+  if (k === void 0) return {
+    pin: void 0,
+    reason: "no_token"
+  };
+  if (!wLe() || St()) return {
+    pin: void 0,
+    reason: "disabled"
+  };
+  if (presetOwner === void 0 && !(await j7o(credentials))) return {
+    pin: void 0,
+    reason: "not_store_login"
+  };
+  let _ = await EE(storageV5),
+    i,
+    s = k,
+    a = !1;
+  if (presetOwner !== void 0) {
+    i = {
+      accountUuid: presetOwner.accountUuid,
+      organizationUuid: presetOwner.organizationUuid || void 0
+    };
+    let e = (await A(k)) ? "unknown" : await D(k);
+    if (e === "foreign") return {
+      pin: void 0,
+      reason: "not_owner"
+    };
+    if (e === "unknown" && !u(_)) return {
+      pin: void 0,
+      reason: "unresolved"
+    };
+  } else {
+    if (!_?.accountUuid) return {
+      pin: void 0,
+      reason: "no_identity"
+    };
+    i = {
+      accountUuid: _.accountUuid,
+      organizationUuid: _.organizationUuid || void 0
+    };
+  }
+  let R = presetOwner === void 0 ? vR() : void 0;
+  if (R !== void 0 && !v(R) && !(await x())) return t("[bridge:owner-pin] identity sources disagree and the credential could not be validated \u2014 session runs unpinned"), {
+    pin: void 0,
+    reason: "unresolved"
+  };
+  let f,
+    l,
+    P = 0,
+    O = "unchanged",
+    g = 0,
+    w,
+    p,
+    h,
+    E = N;
+  function u(e) {
+    return e !== void 0 && Boolean(e.accountUuid) && e.accountUuid === i.accountUuid && (!e.organizationUuid || !i.organizationUuid || e.organizationUuid === i.organizationUuid);
+  }
+  function v(e) {
+    if (!u(e)) return !1;
+    return i = {
+      accountUuid: i.accountUuid,
+      organizationUuid: i.organizationUuid ?? (e.organizationUuid || void 0)
+    }, a = !0, !0;
+  }
+  async function x() {
+    let e = await v6t(s);
+    if (e === void 0) return !1;
+    return i = e, a = !0, !0;
+  }
+  async function D(e) {
+    let n = await v6t(e);
+    if (n === void 0) return "unknown";
+    if (!u(n)) return "foreign";
+    return i = {
+      accountUuid: i.accountUuid,
+      organizationUuid: i.organizationUuid ?? n.organizationUuid
+    }, s = e, a = !0, "owner";
+  }
+  async function A(e) {
+    let n = await Kl(credentials).catch(() => null);
+    return n?.accessToken === e && n.expiresAt !== null && n.expiresAt <= Date.now();
+  }
+  function identityLooksChanged() {
+    if (!a && presetOwner !== void 0) return !0;
+    if (!a) {
+      let n = vR();
+      if (n !== void 0 && !v(n)) return !0;
+    }
+    let e = hn();
+    return Boolean(e?.accountUuid) && !u(e);
+  }
+  function T(e) {
+    if (P = Date.now() + e, E = N, e > 0) O = "unchanged", g = Date.now() + Ear;
+  }
+  function m(e) {
+    if (P = Date.now() + C, e === "inconclusive") O = e, g = Date.now() + Ear;
+    if (w === void 0 || h !== void 0 || E === 0) return e;
+    return E--, h = setTimeout(() => {
+      h = void 0;
+      try {
+        if (identityLooksChanged()) w?.();
+      } catch {}
+    }, C), e;
+  }
+  async function F(e) {
+    if (l !== void 0) await l;
+    let n = void 0;
+    if (!a && presetOwner !== void 0) {
+      if (n = await Ife(storageV5, credentials).catch(() => {
+        return;
+      }), n === void 0) return m("inconclusive");
+      let y = (await A(n.accessToken)) ? "unknown" : await D(n.accessToken);
+      if (y === "foreign") return T(0), "changed";
+      if (y === "unknown") return m(u(n) ? "unchanged" : "inconclusive");
+    } else if (!a) {
+      let y = vR();
+      if (!(y !== void 0 && v(y)) && !(await x())) return m("inconclusive");
+    }
+    if (n ??= await Ife(storageV5, credentials).catch(() => {
+      return;
+    }), !n?.accountUuid) return m(e ? "inconclusive" : "unchanged");
+    let b = u(n);
+    if (n.accessToken === s) return T(b ? C : I), "unchanged";
+    let U = (await A(n.accessToken)) ? void 0 : await v6t(n.accessToken);
+    if (U === void 0) return m("inconclusive");
+    if (u(U)) return t("[bridge:owner-pin] the server attributes the rotated credential to the owner \u2014 re-baselining"), i = {
+      accountUuid: i.accountUuid,
+      organizationUuid: i.organizationUuid ?? U.organizationUuid
+    }, s = n.accessToken, T(b ? C : I), "unchanged";
+    return T(0), "changed";
+  }
+  function B() {
+    let e = g - Date.now();
+    return e > 0 && e <= Ear;
+  }
+  let pin = {
+    identityLooksChanged: identityLooksChanged,
+    confirmChanged(e) {
+      if (e?.fresh) {
+        g = 0;
+        let n = f;
+        if (n !== void 0) return n.then(() => pin.confirmChanged({
+          fresh: !0
+        }));
+      } else if (f === void 0 && B()) return Promise.resolve(O);
+      return f ??= F(e?.fresh === !0).finally(() => {
+        f = void 0;
+      }), f;
+    },
+    confirmedUnchangedRecently() {
+      return f === void 0 && O === "unchanged" && B();
+    },
+    noteAcceptedToken(e) {
+      let n = e !== s;
+      if (s = e, g = 0, !n || l !== void 0 || !wLe()) return;
+      l = EE(storageV5).then(async b => {
+        if (!b?.accountUuid || u(b)) return;
+        let U = await x();
+        t(U ? "[bridge:owner-pin] request accepted while the identity file names another account \u2014 re-pinned to the tenant the server attributes the credential to" : "[bridge:owner-pin] request accepted while the identity file names another account, but the credential could not be attributed \u2014 keeping the pinned owner");
+      }).finally(() => {
+        l = void 0;
+      });
+    },
+    ownerToken: () => s,
+    ownerVerified: () => a,
+    subscribe(e) {
+      w = e;
+      let n = mJ(() => {
+        try {
+          if (Date.now() < P || !identityLooksChanged()) return;
+        } catch {
+          return;
+        }
+        clearTimeout(p), p = setTimeout(() => {
+          p = void 0, w?.();
+        }, V);
+      });
+      return () => {
+        w = void 0, clearTimeout(p), p = void 0, clearTimeout(h), h = void 0, n();
+      };
+    }
+  };
+  return {
+    pin: pin
+  };
+}
+async function v6t(d) {
+  let r = await we(VNe(d).catch(() => {
+    return;
+  }), H);
+  return r?.account_uuid ? {
+    accountUuid: r.account_uuid,
+    organizationUuid: r.organization_uuid || void 0
+  } : void 0;
+}
+export { B7o, Ear, j7o, Pmi, W7o, v6t };

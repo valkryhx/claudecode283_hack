@@ -1,0 +1,1195 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  H,
+  q,
+  er
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  R,
+  A7
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  ht
+} from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  Wqe
+} from "B:/~BUN/root/chunk-65j2302z.js";
+import {
+  Qd
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  dPs,
+  Dwo,
+  cPs,
+  qHt,
+  Nwo,
+  bV,
+  KRe,
+  pn,
+  v,
+  Vy
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  oS,
+  qy
+} from "B:/~BUN/root/chunk-q2rjek8y.js";
+import {
+  oan,
+  TDr,
+  jFe,
+  J3
+} from "B:/~BUN/root/chunk-grwykqvw.js";
+import {
+  Jl
+} from "B:/~BUN/root/chunk-nzh2qzgc.js";
+import {
+  oFr
+} from "B:/~BUN/root/chunk-1fg2bpc3.js";
+import {
+  _e
+} from "B:/~BUN/root/chunk-4vxp7kvb.js";
+import {
+  hs,
+  bk,
+  nv
+} from "B:/~BUN/root/chunk-zn7b14jn.js";
+import {
+  Sz,
+  hgt
+} from "B:/~BUN/root/chunk-f0zgv0ya.js";
+import {
+  se
+} from "B:/~BUN/root/chunk-9bs2y8fc.js";
+import {
+  co
+} from "B:/~BUN/root/chunk-tjfmeakx.js";
+import {
+  bGe
+} from "B:/~BUN/root/chunk-s9vv4h32.js";
+import {
+  WZ,
+  tZt,
+  Dys,
+  wJe,
+  q$
+} from "B:/~BUN/root/chunk-4ffx6rrs.js";
+import {
+  yw
+} from "B:/~BUN/root/chunk-x0zaah42.js";
+import {
+  nt
+} from "B:/~BUN/root/chunk-tq5dzbq9.js";
+import {
+  Je
+} from "B:/~BUN/root/chunk-9wbhv9z5.js";
+var oFi = "anthropic/chromeUploadFiles",
+  ze = "anthropic/chromeUploadMaxBytes",
+  sFi = "anthropic/chromeUploadAutoModeOnly",
+  Dze = new Je(() => ({}));
+
+function USr(n, e) {
+  let t = n?.[ze];
+  return typeof t === "number" && Number.isInteger(t) && t > 0 ? Math.min(t, e) : e
+}
+var o_e = "x-mcp-server-origin",
+  Hoe = "x-ccr-owner-slack-user-id",
+  BSr = "x-ccr-gmail-attachments";
+
+function kL(n, e) {
+  return Object.entries(n ?? {}).filter(([t]) => t.toLowerCase() === e).map(([, t]) => t)
+}
+var F0e = new Je(() => ({}));
+
+function qDt(n) {
+  if (q() && Dze.peek(H())?.host === void 0) return "diskless";
+  if (Wqe()) return "slack_or_teams_relay";
+  return ee(n)
+}
+
+function ee(n) {
+  let e = qe();
+  if (e !== void 0) return e;
+  if (nv()) return "policy_not_loaded";
+  if (hgt() && hs("hipaa")) return "policy_not_loaded";
+  if (!bk(n.policy)) return "policy_denied";
+  return
+}
+
+function qe() {
+  let n;
+  try {
+    n = Sz()
+  } catch {
+    return "policy_not_asked"
+  }
+  switch (n) {
+    case void 0:
+    case "prosumer_oauth":
+      return;
+    case "third_party_provider":
+    case "custom_base_url":
+      return "policy_never_served";
+    default:
+      return "policy_not_asked"
+  }
+}
+class Ee {
+  #i = new Set;
+  #e = new Map;
+  #n = "not_checked";
+  #t = !1;
+  mayLogTypedRow(n) {
+    if (this.#t) return !1;
+    let e = fe(n);
+    if (e === "no") this.#r();
+    return e === "yes"
+  }
+  undecidedReason() {
+    return this.#n
+  }
+  holdUndecidedReason(n) {
+    this.#n = n
+  }
+  note(n, e) {
+    try {
+      let t = e.state === "offered" ? e.state : `${e.state}:${e.reason}`;
+      if (e.state === "offered" || e.state === "latched_off") {
+        this.#n = "not_checked";
+        for (let [r, {
+            availability: o
+          }] of this.#e)
+          if (o.state === "latched_off") this.#e.delete(r)
+      }
+      if (e.state === "latched_off" && e.reason === "policy_denied" || fe(n) === "no") this.#r();
+      if (!this.#t && !this.#i.has(t)) this.#e.set(t, {
+        row: n,
+        availability: e
+      })
+    } catch {}
+    this.flush()
+  }
+  flush() {
+    try {
+      for (let [n, {
+          row: e,
+          availability: t
+        }] of this.#e) {
+        if (!v(e.flag, !1)) continue;
+        let r = fe(e);
+        if (r === "no") {
+          this.#r();
+          return
+        }
+        if (r === "pending") continue;
+        this.#e.delete(n), this.#i.add(n), l("tengu_mcp_drive_file_reference_availability", {
+          state: f(t.state),
+          ...t.state !== "offered" && {
+            reason: f(t.reason)
+          }
+        })
+      }
+    } catch {}
+  }
+  #r() {
+    this.#t = !0, this.#e.clear()
+  }
+}
+
+function fe(n) {
+  if (hs("hipaa")) return "no";
+  let e = ee(n);
+  if (e === "policy_not_asked" || e === "policy_not_loaded" || nv()) return "pending";
+  return e === "policy_denied" ? "no" : "yes"
+}
+var Ve = new Je(() => new Ee);
+
+function YDt() {
+  return Ve.of(H())
+}
+
+function Oe(n) {
+  let e = Dwo(n.flag);
+  if (e !== null) return e && x(n);
+  let t = pn(n.flag, !1),
+    r = n.recipientCheck === void 0 ? YDt() : void 0;
+  if (!t.value) {
+    if (Vy(t.source)) cPs(n.flag, !1), r?.note(n, {
+      state: "latched_off",
+      reason: "flag_off_served"
+    });
+    else r?.holdUndecidedReason("flag_not_served");
+    return !1
+  }
+  let o = qDt(n);
+  if (!Vy(t.source)) return r?.holdUndecidedReason("flag_not_served"), !1;
+  if (o === "policy_not_loaded" || o === "policy_not_asked") return r?.holdUndecidedReason(o), !1;
+  if (nv()) return r?.holdUndecidedReason("policy_verdict_absent"), !1;
+  let d = o === void 0;
+  return cPs(n.flag, d), r?.note(n, o === void 0 ? {
+    state: "offered"
+  } : {
+    state: "latched_off",
+    reason: o
+  }), d
+}
+
+function uSa(n) {
+  G(() => YDt().flush());
+  let e = n.mcpInfo?.fileReference === !0 && (!i.CLAUDE_CODE_REMOTE || n.mcpInfo.remoteFileReferenceFill === !0) ? q$.find((t) => t.toolName === n.mcpInfo?.toolName) : void 0;
+  return e?.descriptionHint !== void 0 && Oe(e) ? "FR1:" : ""
+}
+
+function Pe(n, e) {
+  if (!q$.some((r) => r.toolName === e)) return;
+  if (n.config.type === "sdk") {
+    let r = bGe(n);
+    return r === void 0 ? void 0 : q$.find((o) => o.toolName === e && (te(r, o) === "fill" || te(r, o) === "hostFill"))
+  }
+  if (yw(n.config) === void 0 || !("url" in n.config) || typeof n.config.url !== "string") return;
+  let {
+    url: t
+  } = n.config;
+  return q$.find((r) => {
+    let o = `${r.connectorOrigin}${r.connectorPath}`;
+    return r.toolName === e && (t === o || t === `${o}/`)
+  })
+}
+
+function s_e(n, e) {
+  if (!q$.some((t) => t.toolName === e)) return;
+  try {
+    let t = bGe(n),
+      r = Pe(n, e) ?? (t === void 0 ? void 0 : q$.find((_) => _.toolName === e && te(t, _) === "conflicting"));
+    if (r !== void 0 || i.CLAUDE_CODE_REMOTE !== !0) return r;
+    let {
+      config: o
+    } = n;
+    if (o.type !== "http" || o.scope !== "dynamic" || Qd(o) || !("url" in o) || typeof o.url !== "string") return;
+    let d = new URL(o.url, "https://no-origin.invalid"),
+      u = oan.find((_) => d.pathname.startsWith(_));
+    if (u === void 0 || !/^[^/]+\/mcp$/.test(d.pathname.slice(u.length))) return;
+    let y = d.searchParams.getAll("mcp_url");
+    return q$.find((_) => {
+      let k = `${_.connectorOrigin}${_.connectorPath}`;
+      return _.toolName === e && y.some((E) => E === k || E === `${k}/`)
+    })
+  } catch (t) {
+    if (i.CLAUDE_CODE_REMOTE !== !0) throw t;
+    return a(new R(`[file reference] could not check whether an MCP server is a connector whose uploads may carry a file's contents (${A7(t instanceof Error?t.name:typeof t)}), so it is treated as one: the text of errors from its upload tool is left out of logs and traces.`, "[file reference] could not check whether an MCP server is a connector whose uploads may carry a file's contents; it is treated as one")), q$.find((r) => r.toolName === e)
+  }
+}
+
+function kDn(n) {
+  return n.flatMap(({
+    name: e,
+    description: t
+  }) => q$.some((r) => r.proxyFills?.toolName === e) ? [{
+    name: e,
+    description: t
+  }] : [])
+}
+
+function Lze(n, e, t = []) {
+  if (!q$.some((o) => o.toolName === e)) return;
+  if (!i.CLAUDE_CODE_REMOTE) {
+    let o = Pe(n, e),
+      d = bGe(n);
+    if (o !== void 0) {
+      if (d === void 0) return o;
+      return te(d, o) === "hostFill" ? {
+        ...o,
+        hostFills: !0
+      } : o
+    }
+    let u = q$.find((E) => E.toolName === e),
+      y = d !== void 0 && Object.hasOwn(d, "connectorUrl") ? Reflect.get(d, "connectorUrl") : void 0,
+      _ = u === void 0 ? void 0 : `${u.connectorOrigin}${u.connectorPath}`;
+    if (u === void 0 || d === void 0 || y !== void 0 && y !== _ && y !== `${_}/`) {
+      let {
+        config: E
+      } = n, S = "url" in E ? E.url : void 0;
+      return D(n, e, "not_claudeai_connector", u?.recipientCheck !== void 0 && d === void 0 && (S === _ || S === `${_}/`) ? {
+        ...u,
+        refusesReferences: "not_filled_here"
+      } : void 0)
+    }
+    let k = te(d, u) === "conflicting" ? "conflicting" : "undeclared";
+    if (k === "conflicting") D(n, e, "desktop_conflicting");
+    return {
+      ...u,
+      refusesReferences: k
+    }
+  }
+  let r;
+  try {
+    let {
+      config: o
+    } = n, d = er(), u = "url" in o && typeof o.url === "string" ? J3(o.url)?.upstreamUrl : void 0, y = q$.find((U) => {
+      let B = `${U.connectorOrigin}${U.connectorPath}`;
+      return U.toolName === e && U.recipientCheck !== void 0 && (u === B || u === `${B}/`)
+    });
+    if (r = y === void 0 || be(y, o, t) ? void 0 : {
+        ...y,
+        refusesReferences: "not_filled_here"
+      }, !(oFr() || d)) {
+      let U = i.CLAUDE_CODE_ENVIRONMENT_KIND;
+      return D(n, e, U === "byoc" ? "environment_byoc" : U === "bridge" ? "environment_bridge" : "environment_other", r)
+    }
+    if (o.type !== "http" || o.scope !== "dynamic" || Qd(o)) return D(n, e, "entry_shape", r);
+    if (Jl.bridgeCarrier !== void 0) return D(n, e, "bridge_carrier", r);
+    if (!jFe(o.url)) return D(n, e, "not_own_route", r);
+    if (!KRe(o.url, TDr)) return D(n, e, "route_query_ambiguous", r);
+    let _ = F0e.peek(H()),
+      k = _?.read?.(n.name, o.url);
+    if (k === void 0) return D(n, e, "no_startup_headers", r);
+    if (kL(k, Hoe).length > 0) return D(n, e, "owner_header", r);
+    let E = kL(k, o_e);
+    if (E.length !== 1) return D(n, e, E.length === 0 ? "origin_missing" : "origin_multiple", r);
+    if (E[0] !== "directory" && E[0] !== "custom") return D(n, e, "origin_other", r);
+    let S = q$.find((U) => {
+      let B = `${U.connectorOrigin}${U.connectorPath}`;
+      return U.toolName === e && (u === B || u === `${B}/`)
+    });
+    if (S === void 0) return D(n, e, u === void 0 ? "upstream_unread" : "upstream_not_drive");
+    if (S.proxyFills !== void 0 && (kL(k, BSr).length > 0 || be(S, o, t))) return;
+    if (!d && _?.isStartupEntry?.(n.name, o) !== !0) return D(n, e, "not_startup_entry", r);
+    let {
+      name: w
+    } = n, {
+      url: ie
+    } = o;
+    return {
+      ...S,
+      approvalSeesContent: !0,
+      stillHeld: () => F0e.peek(H())?.read?.(w, ie) !== void 0
+    }
+  } catch {
+    return r
+  }
+}
+
+function D(n, e, t, r) {
+  return G(() => {
+    let {
+      config: o
+    } = n, d = "url" in o ? o.url : void 0, u = s_e(n, e) ?? q$.find((y) => {
+      let _ = `${y.connectorOrigin}${y.connectorPath}`;
+      return y.toolName === e && (d === _ || d === `${_}/`)
+    });
+    if (u !== void 0 && u.recipientCheck === void 0) YDt().note(u, {
+      state: "not_wrapped",
+      reason: t
+    })
+  }), r
+}
+
+function be(n, e, t) {
+  let {
+    proxyFills: r
+  } = n;
+  if (r === void 0) return !1;
+  return "headers" in e && kL(e.headers, BSr).length > 0 || t.some((o) => o.name === r.toolName && typeof o.description === "string" && o.description.includes(r.descriptionIncludes))
+}
+var Ye = "anthropic/filledFromFileReference",
+  je = "anthropic/hostFillsFileReference";
+
+function vDn(n) {
+  return n.config.type === "sdk" ? {
+    [Ye]: "true"
+  } : void 0
+}
+
+function xQt(n, e) {
+  return n !== void 0 && (qHt(e) || x(n))
+}
+
+function hpt(n, e) {
+  return n !== void 0 && (i.CLAUDE_CODE_REMOTE || xQt(n, e))
+}
+
+function duo(n, e) {
+  return n.mcpInfo?.fileReference === !0 && hpt(q$.find((t) => t.toolName === n.mcpInfo?.toolName), e)
+}
+
+function XDt(n, e, t = "McpToolCallError") {
+  return `${t}; its message (${e.length} characters) is not logged because errors from ${n.serviceName}'s ${n.toolName} tool can contain the file being uploaded. The tool result in this session's transcript shows the message, shortened if long.`
+}
+var ve = /^[\r\n]*[A-Za-z0-9+/_-][A-Za-z0-9+/_\r\n-]*(?:=[\r\n]*){0,2}$/,
+  We = 100,
+  Xe = 16;
+
+function re(n, e) {
+  if (typeof n !== "string") return;
+  let t = Buffer.from(n, "base64");
+  if (nt(t) !== e.split(":")[1]) return;
+  let r = (o) => o.replace(/[\s=]/g, "").replace(/-/g, "+").replace(/_/g, "/");
+  return r(n) === r(t.toString("base64")) ? t.length : void 0
+}
+
+function EDn(n, e, t, r, o) {
+  let d = () => import("B:/~BUN/root/chunk-3rystsr1.js");
+  if (e.refusesReferences) {
+    let b = {
+        validateInput: n.validateInput,
+        call: n.call
+      },
+      s = e.refusesReferences === "conflicting" ? "desktop_drive_fill_declaration_conflict" : e.refusesReferences === "not_filled_here" ? "gmail_entry_not_filled_here" : "desktop_drive_fill_not_declared";
+    n.validateInput = async (p, T) => {
+      let O = Me(e, p, !1);
+      if (O === void 0) return await b.validateInput?.(p, T) ?? {
+        result: !0
+      };
+      c(e.featureName, "not_available"), N(e, {
+        stage: "plan",
+        outcome: "refused",
+        reason: "not_available",
+        detail: s,
+        toolUseId: T.toolUseId
+      });
+      let {
+        refusalText: h
+      } = await d();
+      return {
+        result: !1,
+        message: h(O, "not_available", {}),
+        errorCode: 2,
+        notAnError: !0
+      }
+    }, n.call = async (p, T, ...O) => {
+      let h = Me(e, p, T.toolUseId !== void 0 && qHt(T.toolUseId));
+      if (h === void 0) return ce(e, p, T, O[1], () => b.call(p, T, ...O));
+      c(e.featureName, "not_available"), N(e, {
+        stage: "fill",
+        outcome: "refused",
+        reason: "not_available",
+        detail: s,
+        toolUseId: T.toolUseId,
+        requestId: O[1]?.requestId
+      });
+      let {
+        refusalText: F
+      } = await d();
+      return {
+        data: F(h, "not_available", {})
+      }
+    };
+    return
+  }
+  let u = n.prompt;
+  n.prompt = async (b) => {
+    let s = await u(b),
+      p = e.descriptionHint;
+    if (p === void 0 || !Oe(e) || e.recipientCheck !== void 0 && Te(b.tools)) return s;
+    return s === "" ? p : `${p} ${s}`
+  };
+  let y = new Map,
+    _ = new Set,
+    k, E = new Map,
+    S = {
+      validateInput: n.validateInput,
+      call: n.call,
+      askInputPreparer: n.askInputPreparer
+    },
+    w = (b) => b !== void 0 && qHt(b) ? t : S;
+  n.validateInput = async (b, s) => {
+    k = void 0;
+    let p = E.size > 0 ? WZ(b, e) : [];
+    for (let {
+        value: A
+      }
+      of p) {
+      if (typeof A !== "string") continue;
+      let L = nt(Buffer.from(A, "base64")),
+        W = E.get(L);
+      if (W !== void 0 && !W.toolUses.has(s.toolUseId ?? "") && re(A, W.reference) !== void 0) E.delete(L)
+    }
+    let T = s.toolUseId === void 0 ? void 0 : y.get(s.toolUseId);
+    if (s.toolUseId !== void 0 && T !== void 0 && !(e.approvalSeesContent && Fe(b, e, T.references) !== void 0)) y.delete(s.toolUseId);
+    if (!Q(e)) {
+      if (Se(e, b)) return {
+        result: !1,
+        message: await Ae(e, "plan", {
+          toolUseId: s.toolUseId
+        }),
+        errorCode: 2,
+        notAnError: !0
+      };
+      return await w(s.toolUseId).validateInput?.(b, s) ?? {
+        result: !0
+      }
+    }
+    let O = await t.validateInput?.(b, s) ?? {
+      result: !0
+    };
+    if (!O.result) return O;
+    Nwo(s.toolUseId);
+    let h = Dys(e.recipientCheck === void 0 ? b : ke(b), e);
+    if (!ne(h, e)) return O;
+    if (e.recipientCheck !== void 0 && Te(s.options.tools)) {
+      N(e, {
+        stage: "plan",
+        outcome: "refused",
+        reason: "not_available",
+        detail: "code_mode",
+        toolUseId: s.toolUseId
+      }), c(e.featureName, "not_available");
+      let {
+        refusalText: A
+      } = await d();
+      return {
+        result: !1,
+        message: A(e, "not_available", {
+          case: "code_mode"
+        }),
+        errorCode: 2,
+        notAnError: !0
+      }
+    }
+    let {
+      readReferencedFile: F,
+      callBinding: z
+    } = await d(), V = Date.now(), M = await F(h, se(s), "check", e, {
+      session: s.session,
+      signal: s.abortController.signal
+    }), j = Date.now() - V;
+    if ("refusal" in M) return N(e, {
+      stage: M.beforeRead ? "plan" : "check",
+      outcome: "refused",
+      reason: M.refusal,
+      detail: M.detail,
+      fileRefPathKind: M.fileRefPathKind,
+      checkReadMs: j,
+      toolUseId: s.toolUseId
+    }), {
+      result: !1,
+      message: M.message,
+      errorCode: 2,
+      ...M.notAnError && {
+        notAnError: M.notAnError
+      }
+    };
+    N(e, "files" in M ? {
+      stage: "check",
+      outcome: "passed",
+      sizeBytes: M.files.reduce((A, L) => A + L.buf.length, 0),
+      checkReadMs: j,
+      toolUseId: s.toolUseId
+    } : {
+      stage: "plan",
+      outcome: "passed",
+      detail: "host_fills",
+      checkReadMs: j,
+      toolUseId: s.toolUseId
+    });
+    let Z = "files" in M ? M.files.map(({
+      entry: A,
+      reference: L
+    }) => ({
+      entry: A,
+      reference: L
+    })) : M.references;
+    if (s.toolUseId !== void 0 && Z.length > 0) {
+      if (y.size >= We) {
+        let A = y.keys().next().value;
+        if (A !== void 0) {
+          if (y.delete(A), e.approvalSeesContent) {
+            let L = _.values().next().value;
+            if (_.size >= dPs && L !== void 0) _.delete(L);
+            _.add(A)
+          }
+        }
+      }
+      if (_.delete(s.toolUseId), y.set(s.toolUseId, {
+          references: Z,
+          checkReadMs: j,
+          ...e.recipientCheck !== void 0 && {
+            binding: z(h, e, Z)
+          }
+        }), e.approvalSeesContent && "files" in M) k = {
+        fills: M.files.map(({
+          entry: A,
+          reference: L,
+          buf: W
+        }) => ({
+          entry: A,
+          reference: L,
+          base64: W.toString("base64")
+        })),
+        toolUseId: s.toolUseId
+      }
+    }
+    return O
+  };
+  let ie = n.checkPermissions;
+  if (n.checkPermissions = async (b, s) => {
+      let p = s.toolUseId === void 0 ? void 0 : y.get(s.toolUseId);
+      if (p?.binding !== void 0) p.binding = (await d()).callBinding(b, e, p.references);
+      return ie.call(n, b, s)
+    }, e.approvalSeesContent) {
+    if (n.mcpInfo !== void 0) n.mcpInfo = {
+      ...n.mcpInfo,
+      remoteFileReferenceFill: !0
+    };
+    let b = n.backfillObservableInput;
+    n.backfillObservableInput = (p) => {
+      let T = b?.call(n, p),
+        O = new Map(k === void 0 ? [] : WZ(p, e).map(({
+          entry: h,
+          value: F
+        }) => [h, F]));
+      if (k !== void 0 && k.fills.every((h) => O.get(h.entry) === h.reference)) {
+        if (x(e)) {
+          p[e.argument] = tZt(p, e, new Map(k.fills.map((h) => [h.entry, h.base64])))[e.argument];
+          for (let h of k.fills) {
+            let F = h.reference.split(":")[1] ?? "",
+              z = E.get(F);
+            E.delete(F), E.set(F, {
+              reference: h.reference,
+              toolUses: (z?.toolUses ?? new Set).add(k.toolUseId)
+            })
+          }
+          for (let [h, F] of E) {
+            if (E.size <= Xe) break;
+            if (!F.toolUses.has(k.toolUseId)) E.delete(h)
+          }
+        }
+        k = void 0
+      }
+      return T
+    };
+    let s = n.toAutoClassifierInput;
+    n.toAutoClassifierInput = (p) => {
+      let T = Ce(p, e, E);
+      return s.call(n, T.size === 0 ? p : tZt(p, e, T))
+    }
+  }
+  let U = n.toAutoClassifierInput;
+  n.toAutoClassifierInput = (b) => {
+    let s = U.call(n, b);
+    return ne(b, e) || Ce(b, e, E).size > 0 ? `${String(s)} (this reference ${e.referenceEffect})` : s
+  };
+  let B = t.call;
+  if (n.call = async (b, s, ...p) => {
+      let {
+        toolUseId: T
+      } = s;
+      for (let [C, I] of E)
+        if (I.toolUses.delete(T ?? "") && I.toolUses.size === 0) E.delete(C);
+      if (!(T !== void 0 && (y.has(T) || _.has(T) || qHt(T))) && !Q(e)) {
+        if (Se(e, b)) return {
+          data: await Ae(e, "fill", {
+            toolUseId: T,
+            requestId: p[1]?.requestId
+          })
+        };
+        return ce(e, b, s, p[1], () => S.call(b, s, ...p))
+      }
+      Nwo(T ?? (p[1] === void 0 ? void 0 : r(p[1])));
+      let h = Dys(e.recipientCheck === void 0 ? b : ke(b), e),
+        F = T === void 0 ? void 0 : y.get(T),
+        z = ne(h, e);
+      if (e.recipientCheck !== void 0 && (s.innerCall === !0 || bV(s) !== void 0) && (z || F !== void 0)) {
+        let {
+          refusalText: C
+        } = await d();
+        throw c(e.featureName, "not_available"), N(e, {
+          toolUseId: T,
+          requestId: p[1]?.requestId,
+          stage: "fill",
+          outcome: "refused",
+          reason: "not_available",
+          detail: "not_a_direct_call"
+        }), new R(C(e, "not_available", {
+          case: "not_a_direct_call"
+        }), "file reference refused")
+      }
+      let V = F !== void 0 && e.approvalSeesContent && !z ? Fe(h, e, F.references) : void 0,
+        M = !z && F === void 0 && T !== void 0 && _.has(T) && (!Q(e) || qDt(e) !== void 0 || e.stillHeld?.() === !1 || e.recipientCheck !== void 0),
+        j = e.recipientCheck === void 0 || F === void 0 || z ? void 0 : new Map(WZ(h, e).map(({
+          entry: C,
+          value: I
+        }) => [C, I]));
+      if (j !== void 0 && F !== void 0 && (V === void 0 || F.references.some(({
+          entry: C,
+          reference: I
+        }) => re(j.get(C), I) === void 0))) {
+        let {
+          refusalText: C
+        } = await d();
+        return c(e.featureName, "not_available"), N(e, {
+          toolUseId: T,
+          requestId: p[1]?.requestId,
+          checkReadMs: F.checkReadMs,
+          stage: "fill",
+          outcome: "refused",
+          reason: "not_available",
+          detail: "call_changed"
+        }), {
+          data: C(e, "not_available", {
+            case: "call_changed"
+          })
+        }
+      }
+      if (V === void 0 && !z && !M) {
+        if (e.recipientCheck !== void 0) return ce(e, h, s, p[1], () => B(h, s, ...p));
+        let C = Dwo(e.flag);
+        if (!(C === !0 && De((Y) => Y.mayLogTypedRow(e))) || !x(e)) {
+          if (C === null && x(e)) G(() => {
+            let Y = YDt();
+            Y.note(e, {
+              state: "undecided",
+              reason: Y.undecidedReason()
+            })
+          });
+          return B(h, s, ...p)
+        }
+        let P = He(h, e);
+        return P === void 0 ? B(h, s, ...p) : Ne(e, P, s, p[1], () => B(h, s, ...p))
+      }
+      let Z = {
+          toolUseId: T,
+          requestId: p[1]?.requestId,
+          checkReadMs: F?.checkReadMs
+        },
+        {
+          readReferencedFile: A,
+          callBinding: L,
+          gmailShapeRefusal: W,
+          recipientsNotShown: $e,
+          refusalText: X
+        } = await d(),
+        K = (C, I, P) => N(e, {
+          ...Z,
+          stage: "fill",
+          outcome: "refused",
+          reason: C,
+          detail: I,
+          fileRefPathKind: P
+        });
+      if (!Q(e)) return c(e.featureName, "not_available"), K("not_available", ue(e)), {
+        data: X(e, "not_available", {})
+      };
+      let pe = V === void 0 && !M ? void 0 : qDt(e) ?? (e.stillHeld?.() === !1 ? "entry_not_held" : void 0);
+      if (pe !== void 0) return c(e.featureName, "not_available"), K("not_available", pe), {
+        data: X(e, "not_available", {})
+      };
+      if (F?.binding !== void 0 && L(h, e, F.references) !== F.binding) return c(e.featureName, "not_available"), K("not_available", "call_changed"), {
+        data: X(e, "not_available", {
+          case: "call_changed"
+        })
+      };
+      if (M && e.recipientCheck !== void 0) return c(e.featureName, "not_available"), K("not_available", "record_dropped"), {
+        data: X(e, "not_available", {
+          case: "record_dropped"
+        })
+      };
+      let oe = V === void 0 ? void 0 : $e(h, e.recipientCheck),
+        ge = V === void 0 || oe !== void 0 || e.recipientCheck === void 0 ? void 0 : W(h, e);
+      if (oe !== void 0 || ge !== void 0) {
+        let C = ge ?? {
+          error: "not_available",
+          case: oe
+        };
+        return c(e.featureName, C.error), K(C.error, C.case), {
+          data: X(e, C.error, C)
+        }
+      }
+      let ae = h,
+        me, he = V,
+        J = !1;
+      if (V === void 0) {
+        let C = Date.now(),
+          I = await A(h, se(s), "send", e, {
+            session: s.session,
+            signal: s.abortController.signal
+          }, F?.references);
+        if (me = Date.now() - C, "refusal" in I) {
+          if (K(I.refusal, I.detail, I.fileRefPathKind), I.notAnError) return {
+            data: I.message
+          };
+          throw new R(I.message, "file reference refused")
+        }
+        if ("files" in I) ae = tZt(h, e, new Map(I.files.map(({
+          entry: P,
+          buf: Y
+        }) => [P, Y.toString("base64")]))), he = I.files.reduce((P, {
+          buf: Y
+        }) => P + Y.length, 0);
+        else if (!Q(e)) return c(e.featureName, "not_available"), K("not_available", ue(e)), {
+          data: X(e, "not_available", {})
+        };
+        else ae = h, J = !0
+      }
+      if (e.stillHeld?.() === !1) return c(e.featureName, "not_available"), K("not_available", "entry_not_held"), {
+        data: X(e, "not_available", {})
+      };
+      let Re = J ? {
+          [je]: "true"
+        } : o,
+        de = Date.now(),
+        ye = {
+          ...Z,
+          ...Be(s, p[1], de),
+          ...J ? {
+            stage: "host_fill"
+          } : {
+            stage: "fill",
+            outcome: "filled",
+            fillMs: me,
+            sizeBytes: he
+          }
+        },
+        le;
+      try {
+        le = await B(ae, Re === void 0 ? s : {
+          ...s,
+          mcpRequestMeta: {
+            ...s.mcpRequestMeta,
+            ...Re
+          }
+        }, ...p)
+      } catch (C) {
+        let I = Date.now() - de;
+        throw G(() => {
+          let P = Ue(C, s.abortController.signal);
+          if (J);
+          else if (P === "aborted" || P === "auth_failed") c(e.featureName, P);
+          else m(e.featureName, P);
+          N(e, {
+            ...ye,
+            result: P,
+            callMs: I
+          })
+        }), C
+      }
+      let xe = Date.now() - de;
+      return G(() => {
+        let C = Le(le, s.taskRegistry, T);
+        if (J);
+        else if (C === "auth_failed") c(e.featureName, C);
+        else if (C === "uploaded") g(e.featureName);
+        N(e, {
+          ...ye,
+          result: C,
+          callMs: xe
+        })
+      }), le
+    }, S.askInputPreparer !== t.askInputPreparer) n.askInputPreparer = async (b, s, p) => {
+    if (!Q(e)) return w(p).askInputPreparer?.(b, s, p);
+    return Nwo(p), t.askInputPreparer?.(b, s, p)
+  }
+}
+
+function Te(n) {
+  return n?.some((e) => e.isMcp !== !0 && ht(e, co)) === !0
+}
+
+function ke(n) {
+  let e = {
+    ...n
+  };
+  for (let t of Object.keys(e)) {
+    let r = e[t];
+    if (Array.isArray(r)) e[t] = [...r]
+  }
+  return e
+}
+
+function Ce(n, e, t) {
+  let r = new Map;
+  if (t.size === 0) return r;
+  for (let {
+      entry: o,
+      value: d
+    }
+    of WZ(n, e)) {
+    let u = typeof d === "string" ? t.get(nt(Buffer.from(d, "base64"))) : void 0;
+    if (u !== void 0 && re(d, u.reference) !== void 0) r.set(o, u.reference)
+  }
+  return r
+}
+
+function Fe(n, e, t) {
+  let r = new Map(t.map(({
+      reference: d
+    }) => [d.split(":")[1] ?? "", d])),
+    o;
+  for (let {
+      value: d
+    }
+    of WZ(n, e)) {
+    let u = typeof d === "string" ? r.get(nt(Buffer.from(d, "base64"))) : void 0,
+      y = u === void 0 ? void 0 : re(d, u);
+    if (y !== void 0) o = (o ?? 0) + y
+  }
+  return o
+}
+
+function G(n) {
+  try {
+    n()
+  } catch {}
+}
+
+function Ue(n, e) {
+  if (e.aborted) return "aborted";
+  if (Ge(n)) return "auth_failed";
+  return n instanceof qy ? "error_result" : "call_failed"
+}
+
+function Le(n, e, t) {
+  if (n.urlElicitationDeclined !== void 0) return "auth_failed";
+  return we(e, t) ? "backgrounded" : "uploaded"
+}
+
+function Ge(n) {
+  if (n instanceof oS) return !0;
+  if (!(n instanceof Error)) return !1;
+  if ("code" in n && n.code === "CLAUDEAI_BEARER_REJECTED") return !0;
+  return n instanceof R && /^(McpError|ProtocolError) -32042$/.test(n.telemetryMessage)
+}
+
+function we(n, e) {
+  return e !== void 0 && Object.values(n.all()).some((t) => t.type === "mcp_task" && t.toolUseId === e)
+}
+
+function De(n) {
+  try {
+    return n(YDt())
+  } catch {
+    return !1
+  }
+}
+
+function He(n, e) {
+  try {
+    let t = WZ(n, e).flatMap(({
+        value: u
+      }) => typeof u === "string" && ve.test(u) ? [u] : []),
+      r = e.wrongArguments.map((u) => n[u]).find((u) => typeof u === "string" && ve.test(u)),
+      o = t.length > 0 ? t : typeof r === "string" ? [r] : [];
+    if (o.length > 0) {
+      let u = 0;
+      for (let y of o) {
+        let _ = 0;
+        for (let k = 0; k < y.length; k++) {
+          let E = y.charCodeAt(k);
+          _ += Number(E !== 10 && E !== 13 && E !== 61)
+        }
+        u += Math.floor(_ * 3 / 4)
+      }
+      return {
+        stage: "typed_base64",
+        sizeBytes: u
+      }
+    }
+    let d = e.textArgument === void 0 ? void 0 : n[e.textArgument];
+    return typeof d === "string" ? {
+      stage: "typed_text",
+      sizeBytes: Buffer.byteLength(d, "utf8")
+    } : void 0
+  } catch {
+    return
+  }
+}
+
+function ce(n, e, t, r, o) {
+  let d = n.recipientCheck === void 0 ? void 0 : He(e, n);
+  return d === void 0 || !De((u) => ee(n) !== "policy_never_served" && u.mayLogTypedRow(n)) ? o() : Ne(n, d, t, r, o)
+}
+async function Ne(n, e, t, r, o) {
+  let {
+    toolUseId: d
+  } = t, u = Date.now(), y = {
+    ...e,
+    ...Be(t, r, u),
+    ...n.recipientCheck !== void 0 && {
+      offered: n.descriptionHint !== void 0 && n.refusesReferences === void 0 && t.innerCall !== !0 && bV(t) === void 0 && Dwo(n.flag) === !0 && x(n)
+    },
+    toolUseId: d,
+    requestId: r?.requestId
+  }, _;
+  try {
+    _ = await o()
+  } catch (E) {
+    let S = Date.now() - u;
+    throw G(() => N(n, {
+      ...y,
+      result: Ue(E, t.abortController.signal),
+      callMs: S
+    })), E
+  }
+  let k = Date.now() - u;
+  return G(() => N(n, {
+    ...y,
+    result: Le(_, t.taskRegistry, d),
+    callMs: k
+  })), _
+}
+
+function Be(n, e, t) {
+  let r = Date.parse(e?.timestamp ?? "");
+  if (!Number.isSafeInteger(e?.toolInputStreamMs) || !Number.isFinite(r) || n.innerCall === !0) return {};
+  return {
+    toolInputStreamMs: e?.toolInputStreamMs,
+    waitMs: Math.max(0, t - r)
+  }
+}
+
+function N(n, e) {
+  l(n.uploadEvent, {
+    stage: f(e.stage),
+    ...e.outcome !== void 0 && {
+      outcome: f(e.outcome)
+    },
+    ...e.reason !== void 0 && {
+      reason: A7(e.reason)
+    },
+    ...e.detail !== void 0 && {
+      detail: A7(e.detail)
+    },
+    ...e.fileRefPathKind !== void 0 && {
+      fileRefPathKind: A7(e.fileRefPathKind)
+    },
+    ...e.result !== void 0 && {
+      result: f(e.result)
+    },
+    ...e.checkReadMs !== void 0 && {
+      checkReadMs: e.checkReadMs
+    },
+    ...e.fillMs !== void 0 && {
+      fill_ms: e.fillMs
+    },
+    ...e.callMs !== void 0 && {
+      callMs: e.callMs
+    },
+    ...e.sizeBytes !== void 0 && {
+      size_bytes: e.sizeBytes
+    },
+    ...e.toolInputStreamMs !== void 0 && {
+      tool_input_stream_ms: e.toolInputStreamMs
+    },
+    ...e.waitMs !== void 0 && {
+      wait_ms: e.waitMs
+    },
+    ...e.offered !== void 0 && {
+      offered: e.offered
+    },
+    toolUseID: _e(e.toolUseId),
+    requestId: _e(e.requestId)
+  })
+}
+
+function ne(n, e) {
+  return WZ(n, e).some((t) => wJe(t.value)) || e.wrongArguments.some((t) => wJe(n?.[t]))
+}
+var Ie = /^sha256:[0-9a-f]{64}:(?:[A-Za-z]:)?\//;
+
+function Me(n, e, t) {
+  return q$.find((r) => r.toolName === n.toolName && (t ? ne(e, r) : r.recipientCheck !== void 0 && WZ(e, r).some((o) => typeof o.value === "string" && Ie.test(o.value)) || (WZ(e, r).some((o) => wJe(o.value)) || r.wrongArguments.some((o) => {
+    let d = e?.[o];
+    return typeof d === "string" && Ie.test(d)
+  })) && x(r)))
+}
+
+function te(n, e) {
+  let t = e.desktopMark !== void 0 && Reflect.get(n, e.desktopMark) === !0,
+    r = e.desktopHostFillMark === void 0 ? void 0 : Reflect.get(n, e.desktopHostFillMark),
+    o = t && r !== void 0 && r !== !1 ? "conflicting" : t ? "fill" : r === !0 ? "hostFill" : void 0;
+  if (!Object.hasOwn(n, "connectorUrl")) return o;
+  let d = Reflect.get(n, "connectorUrl"),
+    u = `${e.connectorOrigin}${e.connectorPath}`;
+  if (d !== u && d !== `${u}/`) return;
+  let y = Ze(n, "fileReferenceFill"),
+    _ = Object.hasOwn(n, "fileReferenceHostFill") ? Reflect.get(n, "fileReferenceHostFill") : void 0,
+    k = y && _ !== void 0 && _ !== !1 ? "conflicting" : y ? "fill" : _ === !0 ? "hostFill" : void 0;
+  return [
+    [e.desktopMark, "fill"],
+    [e.desktopHostFillMark, "hostFill"]
+  ].some(([S, w]) => S !== void 0 && Object.hasOwn(n, S) && Reflect.get(n, S) !== (k === w)) ? "conflicting" : k
+}
+
+function Ze(n, e) {
+  return e !== void 0 && Object.hasOwn(n, e) && Reflect.get(n, e) === !0
+}
+
+function Se(n, e) {
+  return (n.recipientCheck !== void 0 || x(n)) && ne(e, n)
+}
+async function Ae(n, e, t) {
+  c(n.featureName, "not_available"), N(n, {
+    stage: e,
+    outcome: "refused",
+    reason: "not_available",
+    detail: ue(n),
+    ...t
+  });
+  let {
+    refusalText: r
+  } = await import("B:/~BUN/root/chunk-3rystsr1.js");
+  return r(n, "not_available", {})
+}
+
+function x(n) {
+  return v(n.flag, !1)
+}
+
+function Q(n) {
+  let e = pn(n.flag, !1);
+  return e.value && Vy(e.source)
+}
+
+function ue(n) {
+  return x(n) ? "flag_not_served" : "flag_off_at_fill"
+}
+var Qe = 1048576,
+  en = 40,
+  nn = 300000;
+
+function TDn(n, e) {
+  if (typeof e !== "string" || e.length <= Qe || !q$.some(x)) return n;
+  return Math.max(n, Math.min(nn, Math.ceil(e.length / en)))
+}
+export {
+  oFi,
+  sFi,
+  Dze,
+  USr,
+  o_e,
+  Hoe,
+  BSr,
+  kL,
+  F0e,
+  qDt,
+  YDt,
+  uSa,
+  s_e,
+  kDn,
+  Lze,
+  vDn,
+  xQt,
+  hpt,
+  duo,
+  XDt,
+  EDn,
+  TDn
+};

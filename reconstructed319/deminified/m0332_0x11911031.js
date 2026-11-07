@@ -1,0 +1,1504 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { R, d, k, K } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { ca } from "B:/~BUN/root/chunk-h4acfc9y.js";
+import { sa, t } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { x } from "B:/~BUN/root/chunk-mwfggkjt.js";
+import { yN, _2n, CH, Pt } from "B:/~BUN/root/chunk-1g25msn4.js";
+import { i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { ro, vxe } from "B:/~BUN/root/chunk-nsneqfcc.js";
+import { yn, ys } from "B:/~BUN/root/chunk-88zb3509.js";
+import { lt } from "B:/~BUN/root/chunk-3mm90xb6.js";
+import { Pan } from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import { Tf, zEo, _u, wie, yin, _in, Hz, nDs, rDs } from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import { he } from "B:/~BUN/root/chunk-fet34rqr.js";
+import { constants as U } from "fs";
+import { lstat as Me, open as ge, realpath as ne, stat as St } from "fs/promises";
+import { basename as be, dirname as B, isAbsolute as It, join as F, normalize as re, parse as me, relative as Fe, resolve as We, sep as Le } from "path";
+import { lstat as G, readdir as Oe, readlink as Ne, realpath as ce, stat as le } from "fs/promises";
+import { dirname as yt, isAbsolute as ue, join as N, normalize as Q, relative as bt, resolve as ee, sep as Z } from "path";
+var Re = 65536,
+  vt = 4096,
+  Et = (e, n) => lt(Pt(), e, n);
+async function DIt(e, {
+  dotGitLink = "refuse",
+  run = Et
+} = {}) {
+  let r = (skipped, why) => (t(`Could not vet the worktree registrations of ${e}: ${why}`, {
+      level: "warn"
+    }), {
+      skipped: skipped,
+      why: why
+    }),
+    s = x() === "windows",
+    a = async p => {
+      let E = await Ne(p).then(() => "link", v => k(v) === "EINVAL" ? "clear" : K(v) ? "missing" : "unknown");
+      if (E !== "missing") return E;
+      return (await rDs(p)) ? "missing" : "unknown";
+    },
+    l = N(e, ".git"),
+    u = await Hz(l, e),
+    gitDir,
+    w;
+  if (u === "clear") {
+    let [p, E] = await Promise.all([G(l).catch(() => null), le(e).then(v => v, v => K(v) ? null : void 0)]);
+    if (E === null) return r("gone", "the repository root is gone");
+    if (E === void 0) return r("unvettable", "the repository root cannot be stat'd");
+    if (p === null) return r("unvettable", ".git vanished");
+    if (!p.isDirectory()) return r("pointer", ".git is not a real directory (a pointer file)");
+    gitDir = l, w = [p.uid, E.uid];
+  } else if (u === "missing") {
+    let [p, E, v] = await Promise.all([G(N(e, "HEAD")).catch(() => null), G(N(e, "objects")).catch(() => null), le(e).then(y => y, y => K(y) ? null : void 0)]);
+    if (v === null) return r("gone", "the repository root is gone");
+    if (v === void 0) return r("unvettable", "the repository root cannot be stat'd");
+    if (p === null || !p.isFile() || E === null || !E.isDirectory()) return r("not-a-repository", "no .git, and the root is not a bare git directory");
+    gitDir = e, w = [v.uid];
+  } else if (u === "link" && dotGitLink === "vet") {
+    let p = await fe(l, e);
+    if ("refused" in p) return r("unvettable", `.git is a link whose text ${p.refused}`);
+    let E = p.text,
+      v = _u(ee(e, E)),
+      y = _u(Q(e));
+    if ((await Hz(v, v.startsWith(y + Z) ? y : void 0)) !== "clear") return r("unvettable", ".git is a link whose target is missing, goes through another link, or cannot be probed");
+    let [P, C, z, j] = await Promise.all([G(v).catch(() => null), G(N(v, "HEAD")).catch(() => null), G(N(v, "objects")).catch(() => null), le(e).then(D => D, D => K(D) ? null : void 0)]);
+    if (j === null) return r("gone", "the repository root is gone");
+    if (j === void 0) return r("unvettable", "the repository root cannot be stat'd");
+    if (P === null || !P.isDirectory() || C === null || !C.isFile() || z === null || !z.isDirectory()) return r("unvettable", ".git is a link to something other than a git directory");
+    gitDir = v, w = [P.uid, j.uid];
+  } else return r("unvettable", ".git is a link, a mount point, or cannot be probed");
+  if ((await a(N(gitDir, "commondir"))) !== "missing") return r("unvettable", `${gitDir}/commondir exists, which git never writes into a main git dir`);
+  let h = s || !w.every(_t) ? await Tt(e, gitDir, run) : null;
+  if (h !== null) return r("unvettable", h);
+  let g = N(gitDir, "worktrees"),
+    b = await Hz(g, e),
+    vetted = new Map(),
+    refused = new Map();
+  if (b === "missing") return {
+    gitDir: gitDir,
+    vetted: vetted,
+    refused: refused
+  };
+  let f = b === "clear" ? await Oe(g, {
+    encoding: "buffer"
+  }).catch(() => null) : null;
+  if (f === null) return r("unvettable", `${g} is a link or cannot be read`);
+  for (let p of f) {
+    let E = xe(p);
+    if (E === null) {
+      let A = N(g, `<${p.toString("hex")}>`),
+        P = "has a name this check and git would read differently";
+      refused.set(A, "has a name this check and git would read differently"), t(`Refused worktree admin entry ${A}: has a name this check and git would read differently`, {
+        level: "warn"
+      });
+      continue;
+    }
+    let v = N(g, E),
+      y = await $t(v, e, a, s);
+    if (y === "missing") continue;
+    if (y === null) continue;
+    if (typeof y === "object") vetted.set(v, y.worktree);else refused.set(v, y), t(`Refused worktree admin entry ${v}: ${y}`, {
+      level: "warn"
+    });
+  }
+  return {
+    gitDir: gitDir,
+    vetted: vetted,
+    refused: refused
+  };
+}
+async function te(e) {
+  for (let n of ["objects", "config", "packed-refs", "hooks", "worktrees"]) if ((await e(n).catch(() => "unchecked")) !== null) return !0;
+  return !1;
+}
+async function $t(e, n, o, r) {
+  let s = await Hz(e, n);
+  if (s === "missing") return "missing";
+  if (s !== "clear") return "is a link, a mount point, or cannot be probed";
+  let a = await G(e).then(m => m, m => K(m) ? null : void 0);
+  if (a === void 0) return "cannot be probed";
+  if (a === null) return "missing";
+  if (a.isSymbolicLink()) return "became a link";
+  if (!a.isDirectory()) return r ? "is not a directory" : null;
+  let l = await At(e, o, r ? 1 / 0 : 1);
+  if (l !== null) return l;
+  if (await te(m => G(N(e, m)).catch(f => {
+    if (K(f)) return null;
+    throw f;
+  }))) return "holds a git directory's own files (objects, config, packed-refs, hooks or worktrees), or could not be checked for them";
+  let u = N(e, "gitdir"),
+    c = await G(u).then(m => m, m => K(m) ? null : void 0);
+  if (c === void 0) return "gitdir cannot be probed";
+  if (c === null) return (await o(u)) === "missing" ? {
+    worktree: null
+  } : "gitdir is absent to lstat but not to the probe (a shortcut beside it, or a race)";
+  if (!c.isFile()) return "gitdir is not a regular file";
+  if (c.size > Re) return "gitdir is larger than any git writes";
+  let w = await yN(u, Re, {
+    noFollow: !0
+  }).catch(() => null);
+  if (w === null) return "gitdir cannot be read";
+  let h = w.replace(/[\r\n]+$/, "");
+  if (h === "") return {
+    worktree: null
+  };
+  let g = de(h, n, r);
+  if (g !== null) return g;
+  let b, T;
+  if (ue(h)) {
+    let m = Q(h),
+      f = _u(Q(n));
+    b = [m];
+    let p = (y, A) => r && A === 0 ? y.toLowerCase() : y,
+      E = m.split(Z),
+      v = f.split(Z);
+    T = E.length > v.length && v.every((item, index) => p(item, index) === p(E[index] ?? "", index)) ? E.slice(0, v.length).join(Z) : void 0;
+  } else {
+    let m = await ce(n).catch(() => null);
+    if (m === null) return "the repository root does not resolve";
+    T = m;
+    let f = _u(Q(n)),
+      p = e.startsWith(f + Z) ? N(m, bt(n, e)) : e;
+    b = [ee(p, h), ee(m, h)];
+  }
+  for (let m of b) {
+    if (ca(m, T ?? n)) return "gitdir names another host";
+    let f = await Hz(yt(m), T);
+    if (f === "link" || f === "unknown") return "gitdir walks through a link, or a component cannot be probed";
+    if (f === "clear") {
+      let p = await o(m);
+      if (p === "link" || p === "unknown") return "gitdir names a link, or one that cannot be probed";
+    }
+  }
+  return {
+    worktree: b[0] ?? null
+  };
+}
+async function Tt(cwd, n, o) {
+  let r = {};
+  for (let c of ["GIT_CONFIG_GLOBAL", "GIT_CONFIG_SYSTEM"]) {
+    let w = process.env[c];
+    if (w !== void 0) r[c] = w;
+  }
+  let s = await o([...yn, "-C", cwd, "rev-parse", "--git-dir"], {
+    cwd: cwd,
+    env: ys({
+      ...r,
+      ...Pan()
+    }),
+    timeout: 1e4
+  }).catch(c => (t(`Could not run git to check the ownership of ${n}: ${d(c)}`, {
+    level: "error"
+  }), null));
+  if (s === null) return `git could not be run to check the ownership of ${n}`;
+  if (s.code !== 0) return `git's ownership check for ${n} failed (exit ${s.code}); if another user owns it, it needs a safe.directory entry`;
+  let a = s.stdout.trim();
+  if (a === "") return `git gave no answer when checking the ownership of ${n}`;
+  let [l, u] = await Promise.all([ce(ee(cwd, a)).catch(() => null), ce(n).catch(() => null)]);
+  return l !== null && u !== null && _u(l) === _u(u) ? null : `git's ownership check did not name ${n}`;
+}
+function _t(e) {
+  let n = process.geteuid?.();
+  if (n === void 0 || e === n) return !0;
+  if (n !== 0) return !1;
+  let SUDO_UID = i.SUDO_UID;
+  return e === 0 || SUDO_UID !== void 0 && e === SUDO_UID;
+}
+function de(e, n, o) {
+  if (e.includes("\uFFFD") || /\p{Cc}/u.test(e) || /^[A-Za-z]:(?![\\/])/.test(e)) return "gitdir holds bytes git would read differently";
+  let r = o ? /[\\/]+/ : /\/+/;
+  if (o && e.split(r).some(item => item !== "." && item !== ".." && /[. ]$/.test(item))) return "gitdir holds a component ending in a dot or space";
+  if (!ue(e)) {
+    let s = e.split(r),
+      a = s.findIndex(item => item !== "..");
+    return (a < 0 ? [] : s.slice(a)).some(item => item === "" || item === "." || item === "..") ? "gitdir is a relative value git would not write" : null;
+  }
+  if (e.split(r).some(item => item === "." || item === "..")) return "gitdir holds a dot segment git would not write";
+  if (!_in(e)) return "gitdir is rooted without a drive or a host";
+  if (ca(e, n)) return "gitdir names another host";
+  return r.test(e.slice(-1)) ? "gitdir ends in a separator git would not write" : null;
+}
+async function fe(e, n) {
+  let text = await Ne(e, {
+    encoding: "buffer"
+  }).then(a => {
+    let l = a.toString("utf-8");
+    return l.includes("\x00") || !Buffer.from(l, "utf-8").equals(a) ? null : l;
+  }, () => null);
+  if (text === null) return {
+    refused: "cannot be read"
+  };
+  if (/[\p{Cc}\uFFFD]/u.test(text)) return {
+    refused: "holds a control character or U+FFFD"
+  };
+  if (ca(text, n)) return {
+    refused: "names another host"
+  };
+  let r = x() === "windows",
+    s = r ? /[\\/]+/ : /\/+/;
+  if (text === "" || s.test(text.slice(-1)) || text.split(s).some(item => item === "." || item === "..") || ue(text) && !_in(text) || r && /^[A-Za-z]:(?![\\/])/.test(text)) return {
+    refused: "is empty, ends in a separator, holds a dot segment, or is rooted or drive-relative in a way git would read differently"
+  };
+  return {
+    text: text
+  };
+}
+function xe(e) {
+  let n = e.toString("utf8");
+  return !n.includes("\uFFFD") && !/\p{Cc}/u.test(n) && !(x() === "windows" && /[. ]$/.test(n)) && Buffer.from(n, "utf8").equals(e) ? n : null;
+}
+async function At(e, n, o) {
+  let r = x() === "windows",
+    s = vt,
+    a = async (l, u) => {
+      let c = await Oe(l, {
+        encoding: "buffer"
+      }).catch(() => null);
+      if (c === null) return `${l} cannot be read`;
+      for (let w of c) {
+        if (--s < 0) return "holds more files than any entry git writes";
+        let h = xe(w);
+        if (h === null) return `${l} holds a name that is not valid UTF-8`;
+        if (r && h.toLowerCase().endsWith(".lnk")) return `${N(l, h)} is named as a shortcut, which git never writes here`;
+        let g = N(l, h),
+          b = await G(g).catch(() => null);
+        if (b === null) return `${g} cannot be probed`;
+        let T = r && b.isDirectory() ? await Hz(g, l) : await n(g);
+        if (T === "link" || T === "unknown") return `${g} is a link or cannot be probed`;
+        if (b.isDirectory() && u > 1) {
+          let m = await a(g, u - 1);
+          if (m !== null) return m;
+        }
+      }
+      return null;
+    };
+  return a(e, o);
+}
+var He = 65536,
+  je = 65536,
+  pe = he({
+    afterMatch: null,
+    beforeMutation: null
+  }, e => {
+    e.afterMatch = null, e.beforeMutation = null;
+  });
+async function RPn(e) {
+  let n = await DIt(e, {
+    dotGitLink: "vet"
+  });
+  if ("skipped" in n) return null;
+  let o = await O9e(e, n.gitDir);
+  if ("refused" in o) return t(`Could not vet the worktree registrations of ${e}: ${o.refused}`, {
+    level: "warn"
+  }), null;
+  return o.gitDir;
+}
+async function O9e(e, n) {
+  let o = q(e),
+    gitDir_2 = q(n);
+  if (gitDir_2 === o) return (await Me(F(o, ".git")).then(() => !0, l => !K(l))) ? {
+    refused: `the repository's .git is a link to its own root, ${o}, which cannot be used as a git directory safely`
+  } : Ge(o, "");
+  if (gitDir_2 === q(F(e, ".git"))) return Ge(o, ".git");
+  let s = await Rt(gitDir_2, o);
+  return s === "elsewhere" ? {
+    gitDir: gitDir_2
+  } : {
+    refused: s === "inside" ? `the repository's .git is a link to ${gitDir_2}, inside its own working tree, which cannot be opened safely` : `the repository's .git is a link to ${gitDir_2}, which could not be checked against the working tree`
+  };
+}
+async function Ge(e, n) {
+  let o = await ne(e).catch(() => null);
+  return o === null ? {
+    refused: `${e} could not be resolved`
+  } : {
+    gitDir: F(o, n)
+  };
+}
+function q(e) {
+  let n = re(e);
+  return me(n).root === n ? n : _u(n);
+}
+async function Rt(e, n) {
+  if (ve(wie(e), wie(n))) return "inside";
+  let o = await St(n, {
+    bigint: !0
+  }).catch(() => null);
+  if (o === null) return "unknown";
+  for (let r = e;; r = B(r)) {
+    let s = await Me(r, {
+      bigint: !0
+    }).catch(() => null);
+    if (s === null) return "unknown";
+    if (s.dev === o.dev && s.ino === o.ino) return "inside";
+    if (B(r) === r) return "elsewhere";
+  }
+}
+async function Ue(e) {
+  let root = q(e),
+    o = await ne(root).catch(() => null);
+  return {
+    root: root,
+    tops: [root, o].filter(item => item !== null)
+  };
+}
+async function Ot(e, n) {
+  let gitdirs = new Set(),
+    unresolved = [],
+    {
+      root: root_2,
+      tops: tops
+    } = await Ue(n);
+  for (let l of e) {
+    let u = _u(re(l));
+    if (gitdirs.add(F(u, ".git")), ca(u, root_2)) continue;
+    let c = B(u),
+      w = await Nt(c, Ye(c, tops));
+    if ("refused" in w) {
+      unresolved.push(`${u}: ${w.refused}`);
+      continue;
+    }
+    gitdirs.add(F(w.resolved, be(u), ".git"));
+  }
+  return {
+    gitdirs: gitdirs,
+    unresolved: unresolved,
+    tops: tops
+  };
+}
+var Ce = 16;
+async function Nt(e, n) {
+  let resolved = e,
+    r = n;
+  for (let s = 0; s <= Ce; s++) {
+    let a = resolved === r ? {
+      verdict: "clear",
+      at: void 0
+    } : await nDs(resolved, r);
+    if (a.verdict === "clear" || a.verdict === "missing") {
+      if (r === void 0) return {
+        resolved: resolved
+      };
+      let c = await ne(r).catch(() => null);
+      return c === null ? {
+        refused: `${r} could not be resolved`
+      } : {
+        resolved: F(c, Fe(r, resolved))
+      };
+    }
+    if (a.verdict !== "link" || a.at === void 0) return {
+      refused: `a component of ${resolved} cannot be probed`
+    };
+    let l = await fe(a.at, B(a.at));
+    if ("refused" in l) return {
+      refused: `the text of the link ${a.at} ${l.refused}`
+    };
+    let u = We(B(a.at), l.text);
+    if (resolved = F(u, Fe(a.at, resolved)), r !== void 0 && !ve(u, r)) r = void 0;
+  }
+  return {
+    refused: `more than ${Ce} links lead to ${e}`
+  };
+}
+function ve(e, n) {
+  return e === n || e.startsWith(n.endsWith(Le) ? n : n + Le);
+}
+function Ke(e, n) {
+  let o = e.replace(/[\r\n]+$/, "");
+  if (o === "" || de(o, n, x() === "windows") !== null || ca(o, n)) return null;
+  let r = re(It(o) ? o : We(n, o));
+  return be(r) === ".git" && _in(r) ? r : null;
+}
+function Ye(e, n) {
+  let o;
+  for (let r of n) for (let s = r;; s = B(s)) {
+    if (ve(e, s)) {
+      if (o === void 0 || s.length > o.length) o = s;
+      break;
+    }
+    if (B(s) === s) break;
+  }
+  return o;
+}
+async function Ve(e, n, o) {
+  let r = o?.tops ?? (await Ue(n.repoSpelled)).tops;
+  return (await Hz(e, Ye(B(e), r))) === "missing";
+}
+function ze(e) {
+  return e !== "" && e !== "." && e !== ".." && !/[\\/\p{Cc}\uFFFD]/u.test(e);
+}
+function Xe(e) {
+  let n = new Set();
+  for (let o of e) {
+    let r = be(_u(re(o)));
+    for (let s of [xt(r), r]) {
+      if (s === "") continue;
+      n.add(s);
+      for (let a = 1; a <= 99; a++) n.add(`${s}${a}`);
+    }
+  }
+  return [...n];
+}
+function xt(e) {
+  let n = "";
+  for (let o = 0; o < e.length; o++) {
+    let r = e[o],
+      s = r.charCodeAt(0);
+    if (r === "." && (o === 0 || e[o - 1] === ".")) n += o === 0 ? "-" : "";else if (r === "{" && e[o - 1] === "@") n += "-";else if (s < 32 || s === 127 || " :?[\\^~*".includes(r)) n += "-";else n += r;
+  }
+  while (n.endsWith(".lock")) n = n.slice(0, -5);
+  return n;
+}
+async function Ft() {
+  let [e, n] = await Promise.all([import("B:/~BUN/root/chunk-9hg2pcwc.js"), import("B:/~BUN/root/chunk-27nd6ewm.js")]);
+  return {
+    ...e,
+    host: n.createDeviceTreeHost()
+  };
+}
+async function Ze(e, n) {
+  let modules = await Ft().catch(u => ({
+    failed: d(u)
+  }));
+  if ("failed" in modules) return {
+    unavailable: `its module did not load: ${modules.failed}`,
+    modules: null
+  };
+  let r = await ne(q(n)).catch(() => null),
+    s = r !== null && me(r).root !== r && e === F(r, ".git"),
+    a = s ? r : e,
+    l = await (s || me(e).root === e ? modules.openTreeAnchor(modules.host, {
+      gitRoot: a,
+      realRoot: a
+    }) : modules.openTreeAnchorAtName(modules.host, e)).catch(u => ({
+      unavailable: d(u)
+    }));
+  if ("unavailable" in l) return {
+    unavailable: l.unavailable,
+    modules: modules
+  };
+  if (!s) return l;
+  try {
+    let u = await l.anchorBeneath(".git"),
+      c = await u.lstat("").catch(() => null);
+    if (c === null || c.ino === 0n) return await u.close().catch(() => {}), {
+      refused: c === null ? `${e}: its file id could not be read once it was opened` : `${e} is on a volume that reports no file ids`
+    };
+    return u;
+  } catch (error) {
+    return {
+      refused: `could not open ${e} from ${a} without following a link: ${d(error)}`
+    };
+  } finally {
+    await l.close().catch(() => {});
+  }
+}
+async function qe(e, n, o) {
+  let r = await e.open(n, U.O_RDONLY | U.O_NONBLOCK).catch(s => k(s) ?? "EIO");
+  if (typeof r === "string") {
+    if (r !== "ENOENT") return {
+      unread: ye(r)
+    };
+    let s = await e.lstat(n).then(() => "present", a => k(a) ?? "EIO");
+    return s === "ENOENT" ? "absent" : {
+      unread: s === "present" ? "could not be opened where the held folder has it" : ye(s)
+    };
+  }
+  try {
+    let s = await r.stat({
+      bigint: !0
+    });
+    if (e.backend === "darwin_at") {
+      let l = await e.lstat(n);
+      if (s.dev !== l.dev || s.ino !== l.ino) return {
+        unread: "was replaced as it was opened"
+      };
+    }
+    if (!s.isFile()) return {
+      unread: "is not a regular file"
+    };
+    let text_2 = await ke(r, o);
+    return text_2 === null ? {
+      unread: "is larger than git writes"
+    } : {
+      text: text_2
+    };
+  } catch {
+    return {
+      unread: "could not be read"
+    };
+  } finally {
+    await r.close().catch(() => {});
+  }
+}
+async function ke(e, n) {
+  let o = Buffer.alloc(n + 1),
+    r = 0;
+  for (;;) {
+    let {
+      bytesRead: bytesRead
+    } = await e.read(o, r, o.length - r, r);
+    if (bytesRead === 0) break;
+    if (r += bytesRead, r > n) return null;
+  }
+  return o.subarray(0, r).toString("utf-8");
+}
+function Ee(e) {
+  return typeof e.worktreePath === "string" ? [e.worktreePath] : e.worktreePath;
+}
+async function $e(e) {
+  return "worktreePath" in e ? Ot(Ee(e), e.repoSpelled) : null;
+}
+function L(e, n) {
+  e.unchecked++, e.kinds.add(n);
+}
+function ye(e) {
+  return e === "ELOOP" ? "is a link" : e === "EISDIR" ? "is not a regular file" : "could not be opened";
+}
+function Je(e) {
+  return e.replace(/[\r\n]+$/, "") === "";
+}
+function Te(e, n, o) {
+  let r = F(e, "worktrees"),
+    {
+      unchecked: unchecked,
+      kinds: kinds
+    } = o,
+    l = [...(n === null || n.unresolved.length === 0 ? [] : [`a folder on the way to the worktree could not be resolved safely (${n.unresolved.join("; ")}), so a registration recorded under its resolved path could not be matched`]), ...(o.guessed ? [`${r} cannot be listed here without following links, so only the names git would have given this worktree were checked, and a registration under another name may remain`] : []), ...(unchecked === 0 ? [] : [o.guessed ? `some of the names tried in ${r} could not be checked (${[...kinds].join(", ")}), so one of them may still register this worktree` : `${unchecked === 1 ? "one entry" : `${unchecked} entries`} in ${r} could not be checked (${[...kinds].join(", ")}), so ${unchecked === 1 ? "it" : "one of them"} may still register this worktree`])];
+  return l.length === 0 ? {
+    outcome: "none"
+  } : {
+    unmatched: l.join("; ")
+  };
+}
+function Qe(e, n) {
+  return n === null || yin(De(e), [...n.gitdirs].map(De));
+}
+function De(e) {
+  return x() === "windows" ? e.replace(/^[a-z](?=:)/, n => n.toUpperCase()) : e;
+}
+async function et(e, n, o, r) {
+  let s = {
+      guessed: !1,
+      unchecked: 0,
+      kinds: new Set()
+    },
+    a = "entryId" in o ? [o.entryId] : await e.list("worktrees").catch(l => {
+      if (K(l)) return [];
+      if (k(l) === "WORKING_LIST_UNSUPPORTED") return s.guessed = !0, Xe(Ee(o));
+      throw l;
+    });
+  for (let entryId of a) {
+    if (!ze(entryId)) {
+      if (!s.guessed) L(s, "an entry name this check cannot read exactly");
+      continue;
+    }
+    let rel = `worktrees/${entryId}`,
+      c = await e.lstat(rel).catch(b => K(b) ? null : void 0);
+    if (c === void 0) {
+      L(s, "an entry that could not be inspected");
+      continue;
+    }
+    if (c === null || !c.isDirectory()) {
+      if (c?.isSymbolicLink()) L(s, "an entry that is a link");else if (c !== null && x() === "windows") L(s, "an entry that is not a folder");
+      continue;
+    }
+    let w = await qe(e, `${rel}/gitdir`, He);
+    if (w === "absent") continue;
+    if ("unread" in w) {
+      L(s, `a gitdir file that ${w.unread}`);
+      continue;
+    }
+    let recordedGitdir = Ke(w.text, F(n, "worktrees", entryId));
+    if (recordedGitdir === null && !Je(w.text)) L(s, "a gitdir file whose path could not be checked safely");
+    if (recordedGitdir === null || !Qe(recordedGitdir, r)) continue;
+    let locked = await e.lstat(`${rel}/locked`).then(() => !0, b => !K(b));
+    return {
+      entryId: entryId,
+      locked: locked,
+      recordedGitdir: recordedGitdir,
+      rel: rel,
+      identity: {
+        dev: c.dev,
+        ino: c.ino
+      }
+    };
+  }
+  return s;
+}
+async function _e(e, n) {
+  return Lt(e, n).catch(o => ({
+    unavailable: d(o)
+  }));
+}
+async function Lt(e, n) {
+  let o = await Ze(e, n.repoSpelled);
+  if ("refused" in o) return {
+    unavailable: o.refused
+  };
+  if ("unavailable" in o) return {
+    unavailable: o.unavailable
+  };
+  try {
+    let r = await $e(n),
+      s = await et(o, e, n, r);
+    if ("unchecked" in s) {
+      let a = Te(e, r, s);
+      return "unmatched" in a ? {
+        unavailable: a.unmatched
+      } : null;
+    }
+    return {
+      entryId: s.entryId,
+      locked: s.locked,
+      recordedGitdir: s.recordedGitdir
+    };
+  } finally {
+    await o.close().catch(() => {});
+  }
+}
+async function Zde(e, n, o) {
+  return Gt(e, n, o).catch(r => S(e, d(r)));
+}
+async function Gt(e, n, o) {
+  let r = await Ze(e, n.repoSpelled);
+  if ("refused" in r) return S(e, r.refused);
+  if ("unavailable" in r) {
+    let {
+      modules: modules_2
+    } = r;
+    return r.unavailable === "no_ffi" && modules_2 !== null && modules_2.host.platform() === "macos" ? Kt(e, n, o, await modules_2.darwinNoFollowAnyEnforced(modules_2.host)) : S(e, `this build cannot open files here without following links (${r.unavailable})`);
+  }
+  try {
+    let s = await $e(n),
+      a = await et(r, e, n, s);
+    if ("unchecked" in a) {
+      let c = Te(e, s, a);
+      return "unmatched" in c ? S(e, c.unmatched) : c;
+    }
+    if (!(await Ve(a.recordedGitdir, n, s))) return S(e, `could not confirm the worktree is gone: ${a.recordedGitdir} exists, or a link or unreadable folder is on the way to it`);
+    await pe.afterMatch?.(a.entryId);
+    let l = async () => {
+      let c = await r.lstat(a.rel).catch(() => null);
+      return c !== null && ie(c, a.identity);
+    };
+    if (!(await l())) return S(e, `worktrees/${a.entryId} changed since it was read, or this volume cannot show it is the same folder`);
+    if (await Be(r, a.rel)) return S(e, `${tt(a.entryId)}, so nothing in it was removed`);
+    if (a.locked) {
+      if (!(await Ut(r, a.rel, o.locked))) return S(e, `worktrees/${a.entryId} is locked`);
+    }
+    if (await pe.beforeMutation?.(a.entryId), await r.unlink(`${a.rel}/gitdir`), !(await l())) return {
+      outcome: "dropped",
+      entryId: a.entryId,
+      adminRemoved: !1
+    };
+    if (await Be(r, a.rel)) return t(`Dropped the registration worktrees/${a.entryId} in ${e} (git no longer lists it) but left its folder, which now has a git directory's own files (objects, config, packed-refs, hooks or worktrees) in it, or could not be checked for them. git's next \`git worktree prune\` or \`git gc\` deletes that folder whole; move out anything you need first.`, {
+      level: "warn"
+    }), {
+      outcome: "dropped",
+      entryId: a.entryId,
+      adminRemoved: !1
+    };
+    let adminRemoved = await Bt(r, a.rel, a.identity);
+    return await r.rmdir("worktrees").catch(() => {}), {
+      outcome: "dropped",
+      entryId: a.entryId,
+      adminRemoved: adminRemoved
+    };
+  } catch (error) {
+    return S(e, d(error));
+  } finally {
+    await r.close().catch(() => {});
+  }
+}
+async function hut(repoSpelled, worktreePath, o = {
+  locked: "keep"
+}) {
+  let r = await RPn(repoSpelled);
+  return r === null ? S(repoSpelled, 'the repository could not be vetted (see the "Could not vet the worktree registrations" line above)') : Zde(r, {
+    worktreePath: worktreePath,
+    repoSpelled: repoSpelled
+  }, o);
+}
+function S(e, reason) {
+  return t(`Left a git worktree registration in ${e} in place: ${reason}`, {
+    level: "warn"
+  }), {
+    outcome: "kept",
+    reason: reason
+  };
+}
+var Ct = ["logs/HEAD", "HEAD", "ORIG_HEAD", "FETCH_HEAD", "AUTO_MERGE", "MERGE_HEAD", "MERGE_MSG", "MERGE_RR", "MERGE_AUTOSTASH", "MERGE_MODE", "SQUASH_MSG", "COMMIT_EDITMSG", "REBASE_HEAD", "CHERRY_PICK_HEAD", "REVERT_HEAD", "BISECT_LOG", "BISECT_START", "BISECT_TERMS", "BISECT_NAMES", "BISECT_EXPECTED_REV", "BISECT_ANCESTORS_OK", "BISECT_RUN", "BISECT_FIRST_PARENT", "BISECT_HEAD", "index", "index.lock", "commondir", "locked", "config.worktree", "info/sparse-checkout", "CLAUDE_BASE"],
+  Dt = ["refs/bisect", "refs/worktree", "refs/rewritten", "refs", "logs", "info"];
+function Be(e, n) {
+  return te(o => e.lstat(`${n}/${o}`).catch(r => {
+    if (K(r)) return null;
+    throw r;
+  }));
+}
+function tt(e) {
+  return `worktrees/${e} has a git directory's own files (objects, config, packed-refs, hooks or worktrees) in it, or could not be checked for them`;
+}
+async function Bt(e, n, o) {
+  return await Pe(e, n, o), e.rmdir(n).then(() => !0, r => (t(`Dropped the registration ${n} but left its folder: ${d(r)}`, {
+    level: "warn"
+  }), !1));
+}
+function ie(e, n) {
+  return e.isDirectory() && e.dev !== 0n && !sa(e.ino) && e.dev === n.dev && e.ino === n.ino;
+}
+async function Pe(e, n, o) {
+  for (let r of Ct) await e.unlink(`${n}/${r}`).catch(() => {});
+  await jt(e, n, o);
+  for (let r of Dt) await e.rmdir(`${n}/${r}`).catch(() => {});
+}
+var Mt = /^(?:tables\.list(?:\.lock)?|0x[0-9a-f]{12,16}-0x[0-9a-f]{12,16}-[0-9a-f]{8}\.(?:(?:ref|log)(?:\.lock)?|temp\.[A-Za-z0-9]{6}))$/,
+  Wt = 1024,
+  Ht = "refs/heads",
+  we = "reftable";
+async function jt(e, n, o) {
+  let r = await Promise.resolve().then(() => e.anchorBeneath(n)).catch(() => null);
+  if (r === null) return;
+  try {
+    let s = await r.lstat("").catch(() => null);
+    if (s === null || !ie(s, o)) return;
+    let a = await r.anchorBeneath(we).catch(() => null);
+    if (a === null) return;
+    try {
+      let [l, u] = await Promise.all([a.lstat("").catch(() => null), e.lstat(we).catch(() => null)]);
+      if (l === null || u === null || !l.isDirectory() || !u.isDirectory() || l.dev === u.dev && l.ino === u.ino) return;
+      let c = await a.list("", Wt).catch(w => k(w) === "WORKING_LIST_UNSUPPORTED" ? a.list("").catch(() => null) : null);
+      if (c === null) return;
+      for (let w of c) if (Mt.test(w)) await a.unlink(w).catch(() => {});
+    } finally {
+      await a.close().catch(() => {});
+    }
+    await r.unlink(Ht).catch(() => {}), await r.rmdir(we).catch(() => {});
+  } finally {
+    await r.close().catch(() => {});
+  }
+}
+async function Ut(e, n, o) {
+  if (o === "drop") return !0;
+  if (o === "keep") return !1;
+  let r = await qe(e, `${n}/locked`, je);
+  if (r === "absent" || "unread" in r || !o.unlockIf(r.text.replace(/[\r\n]+$/, ""))) return !1;
+  return await e.unlink(`${n}/locked`), !0;
+}
+async function Kt(e, n, o, r) {
+  if (!r) return S(e, "this macOS version does not enforce O_NOFOLLOW_ANY, so links cannot be refused");
+  let s = await $e(n),
+    a = "entryId" in n ? [n.entryId] : Xe(Ee(n)),
+    l = {
+      guessed: !("entryId" in n),
+      unchecked: 0,
+      kinds: new Set()
+    },
+    u = U.O_NONBLOCK | vxe | ro;
+  for (let entryId_2 of a) {
+    if (!ze(entryId_2)) {
+      if (!l.guessed) L(l, "an entry name this check cannot read exactly");
+      continue;
+    }
+    let h = F(e, "worktrees", entryId_2),
+      g = await ge(F(h, "gitdir"), U.O_RDWR | u).catch(b => k(b) ?? "EIO");
+    if (typeof g === "string") {
+      if (g !== "ENOENT" && g !== "ENOTDIR") L(l, g === "ELOOP" ? "a gitdir file that is a link, or a link on the way to it" : `a gitdir file that ${ye(g)}`);
+      continue;
+    }
+    try {
+      let b = await g.stat();
+      if (!b.isFile() || b.nlink !== 1) {
+        L(l, !b.isFile() ? "a gitdir file that is not a regular file" : b.nlink > 1 ? "a gitdir file with more than one name" : "a gitdir file that was removed after it was opened");
+        continue;
+      }
+      let T = await ke(g, He),
+        m = T === null ? null : Ke(T, h);
+      if (T === null) L(l, "a gitdir file that is larger than git writes");else if (m === null && !Je(T)) L(l, "a gitdir file whose path could not be checked safely");
+      if (m === null || !Qe(m, s)) continue;
+      let f = await ge(F(h, "locked"), U.O_RDONLY | u).catch(p => K(p) ? null : void 0);
+      if (f !== null) {
+        let p = await f?.stat().catch(() => null),
+          E = f !== void 0 && p?.isFile() === !0 ? await ke(f, je).catch(() => null) : null;
+        if (await f?.close().catch(() => {}), E === null || o.locked === "keep" || o.locked !== "drop" && !o.locked.unlockIf(E.replace(/[\r\n]+$/, ""))) return S(e, `worktrees/${entryId_2} is locked`);
+      }
+      if (!(await Ve(m, n, s))) return S(e, `could not confirm the worktree is gone: ${m} exists, or a link or unreadable folder is on the way to it`);
+      if (await te(async p => {
+        let E = await ge(F(h, p), U.O_RDONLY | u).catch(v => {
+          if (K(v)) return null;
+          throw v;
+        });
+        if (E === null) return null;
+        try {
+          return await E.stat();
+        } finally {
+          await E.close().catch(() => {});
+        }
+      })) return S(e, `${tt(entryId_2)}, so nothing in it was changed`);
+      return await pe.beforeMutation?.(entryId_2), await g.truncate(0), {
+        outcome: "dropped",
+        entryId: entryId_2,
+        adminRemoved: !1
+      };
+    } catch (error) {
+      return S(e, d(error));
+    } finally {
+      await g.close().catch(() => {});
+    }
+  }
+  let c = Te(e, s, l);
+  return "unmatched" in c ? S(e, c.unmatched) : c;
+}
+import { randomBytes as Yt } from "crypto";
+import { constants as Y } from "fs";
+import { access as Vt, lstat as H, readlink as zt, realpath as M, rm as Xt } from "fs/promises";
+import { basename as ct, dirname as V, isAbsolute as Ae, join as O, normalize as W, parse as J, resolve as Zt, sep as I } from "path";
+var qt = 65536,
+  Jt = 3,
+  nt = null;
+function Qt() {
+  return nt ??= Promise.all([import("B:/~BUN/root/chunk-9hg2pcwc.js"), import("B:/~BUN/root/chunk-27nd6ewm.js")]).then(([tree, n]) => ({
+    tree: tree,
+    host: n.createDeviceTreeHost()
+  })).catch(e => {
+    throw nt = null, e;
+  });
+}
+function en() {
+  return x() === "windows" ? Y.O_RDONLY : Y.O_RDONLY | Y.O_NONBLOCK;
+}
+async function LIt(e, n, {
+  forceTwice = !1,
+  git: git,
+  trustedRoot: trustedRoot,
+  resolveAboveParent: a = !1,
+  deregisterIfStopped = !1,
+  pointerFirst = !1
+} = {}) {
+  let c = await ht(trustedRoot === void 0 ? [e] : [e, trustedRoot], n, {
+    parentLinkToRoot: a
+  });
+  if (c === null) return {
+    outcome: "refused",
+    reason: `${n} has no parent directory`
+  };
+  if ("refused" in c) return {
+    outcome: "refused",
+    reason: c.refused
+  };
+  let {
+      base: base,
+      rel: rel_2,
+      underRoot: underRoot
+    } = c,
+    b = git ?? (await ln(e));
+  if ("why" in b) return {
+    outcome: "refused",
+    reason: `the repository's git directory failed its safety checks (${b.why})`
+  };
+  let dir = b.dir,
+    m = await ae(base, underRoot ? "root" : a ? "not_a_link" : "canonical");
+  if (!("held" in m)) return m.outcome === "unanchored" ? m : {
+    outcome: "refused",
+    reason: m.reason
+  };
+  let {
+    held: held,
+    realBase: realBase
+  } = m;
+  try {
+    let E = await held.lstat(rel_2).then(_ => _.isDirectory(), () => !1);
+    if (E && (await held.list(rel_2).then(() => !1, _ => Se(_)))) return {
+      outcome: "unanchored",
+      reason: "no_descriptor_listing"
+    };
+    let worktreePath_2 = underRoot || a ? [n, O(realBase, ...rel_2.split("/"))] : [n],
+      y = await _e(dir, {
+        worktreePath: worktreePath_2,
+        repoSpelled: b.root
+      });
+    if (E && y !== null && !("unavailable" in y)) {
+      let entryId_3 = await hn(held, rel_2, [n, O(realBase, ...rel_2.split("/"))], e, dir);
+      if (entryId_3 !== null && entryId_3 !== y.entryId) {
+        let X = await _e(dir, {
+          entryId: entryId_3,
+          worktreePath: worktreePath_2,
+          repoSpelled: b.root
+        });
+        if (X !== null && !("unavailable" in X)) y = X;
+      }
+    }
+    if (y !== null && "unavailable" in y) return {
+      outcome: "refused",
+      reason: `git's records of worktrees in ${dir} could not be checked safely (${y.unavailable})`
+    };
+    if (y === null) return {
+      outcome: "not_registered"
+    };
+    if (!underRoot && !dt(y.recordedGitdir, [n, O(realBase, ...rel_2.split("/"))].map(item => O(W(item), ".git")))) return {
+      outcome: "refused",
+      reason: `the folder holding ${n} resolved to a different place while it was being checked (a link may have been swapped in)`
+    };
+    if (y.locked && !forceTwice) return {
+      outcome: "locked"
+    };
+    let locked_2 = forceTwice ? "drop" : "keep",
+      P = await held.lstat(rel_2).then(_ => _, error_2 => ({
+        error: error_2
+      }));
+    if ("error" in P && K(P.error) && (await held.lstat(nn(rel_2)).then(_ => _.isDirectory(), () => !1))) return st(n, await Zde(dir, {
+      entryId: y.entryId,
+      repoSpelled: b.root
+    }, {
+      locked: locked_2
+    }), dir, y.entryId);
+    if ("error" in P || !P.isDirectory()) return {
+      outcome: "refused",
+      reason: "error" in P && K(P.error) ? `the directory holding ${n} is missing` : `${n} is not a directory reachable without a link (${"error" in P ? k(P.error) ?? "unknown error" : "not a directory"})`
+    };
+    let C = await mt(held, `${rel_2}/.git`);
+    if ("error" in C) return {
+      outcome: "refused",
+      reason: `the .git file in ${n} could not be read (${C.error})`
+    };
+    if (C.value === null || !(await wt(C.value, [n, O(realBase, ...rel_2.split("/"))], e, dir, y.entryId))) return {
+      outcome: "not_pointing_back"
+    };
+    let z = deregisterIfStopped ? await ut(dir, y.entryId) : null,
+      j = typeof z === "object" ? z : null,
+      D = {
+        deleted: !1
+      };
+    try {
+      await wn(held, rel_2, C.bytes, D, {
+        pointerFirst: pointerFirst
+      });
+    } catch (error) {
+      if (!D.deleted && Se(error)) return {
+        outcome: "unanchored",
+        reason: "no_descriptor_listing"
+      };
+      let reason_2 = un(error);
+      t(`Worktree checkout ${n} not fully deleted: ${d(error)}`, {
+        level: "warn"
+      });
+      let deregistered = j !== null && D.deleted && (await cn(dir, y.entryId, j, locked_2));
+      return {
+        outcome: "delete_failed",
+        reason: reason_2,
+        started: D.deleted,
+        deregistered: deregistered
+      };
+    }
+    return st(n, await Zde(dir, {
+      entryId: y.entryId,
+      repoSpelled: b.root
+    }, {
+      locked: locked_2
+    }), dir, y.entryId);
+  } finally {
+    await held.close().catch(() => {});
+  }
+}
+async function tn(e, n, {
+  rootIsCanonical = !1
+} = {}) {
+  let r = n === void 0 ? gt(e) : await ht([n], e);
+  if (r === null) throw new R(`${e} has no parent directory`, "the path to delete has no parent directory");
+  if ("refused" in r) throw new R(r.refused, "the path to delete reaches its root by a spelling that cannot be checked safely");
+  let s = await ae(r.base, n === void 0 || !r.underRoot ? "not_a_link" : rootIsCanonical ? "canonical" : "root");
+  if (!("held" in s)) {
+    if (s.outcome === "unanchored") return {
+      unanchored: s.reason
+    };
+    if (s.absent === !0) return "absent";
+    throw new R(`could not open the directory above ${e}: ${s.reason}`, "the directory above the path to delete could not be opened");
+  }
+  try {
+    return (await pt(s.held, r.rel)) ? "deleted" : "absent";
+  } catch (error) {
+    if (Se(error)) return {
+      unanchored: "no_descriptor_listing"
+    };
+    throw error;
+  } finally {
+    await s.held.close().catch(() => {});
+  }
+}
+async function RRi(e, n, o = {}) {
+  if (typeof (await tn(e, n, o)) === "object") await Xt(e, {
+    recursive: !0,
+    force: !0
+  });
+}
+function vWe(e) {
+  switch (e.outcome) {
+    case "removed":
+      return "removed";
+    case "not_registered":
+      return "git has no usable record of a worktree at this path; nothing was deleted";
+    case "locked":
+      return "the worktree is locked (by `git worktree lock`); nothing was deleted. `git worktree unlock <path>` unlocks it";
+    case "not_pointing_back":
+      return "the worktree's .git file is missing or does not point to git's record of it; nothing was deleted";
+    case "refused":
+      return `${e.reason}; nothing was deleted`;
+    case "delete_failed":
+      if (e.reason === rt) return `${rt}; try removing it again once nothing is writing to it`;
+      if (e.reason === "WORKING_NAME_NOT_PLAIN") return "it holds a file name that Windows cannot delete this way; some of its other files may already be deleted";
+      if (e.reason === "ENOTEMPTY") return "a folder in it could not be emptied: it may be unreadable, or something may still be writing to it; check its permissions and try removing it again";
+      if (e.reason === "WORKING_FILE_HELD") return "a program has one of its files open; try removing it again once that program closes it";
+      return e.reason === "EBUSY" ? "some of its files could not be deleted: EBUSY; a program may have them open, so try removing it again" : `some of its files could not be deleted: ${e.reason}`;
+    case "registration_kept":
+      return `its files were deleted, but git still lists it (${e.reason})`;
+    case "unanchored":
+      return e.reason === "no_descriptor_listing" ? "this machine cannot list a folder it holds open, so it cannot delete it without following links" : `this machine cannot open folders without following links (${e.reason})`;
+  }
+}
+var rt = "files kept appearing in the worktree while it was being deleted";
+function Se(e) {
+  return k(e) === "WORKING_LIST_UNSUPPORTED";
+}
+function nn(e) {
+  return e.includes("/") ? e.slice(0, e.lastIndexOf("/")) : "";
+}
+async function ae(e, n, {
+  holdBase = !1
+} = {}) {
+  let r = (reason_3, absent = !1) => ({
+      outcome: "refused",
+      reason: reason_3,
+      absent: absent
+    }),
+    realBase_2 = await (async () => {
+      if (n === "root") return M(e);
+      let f = O(await M(V(e)), ct(e));
+      return n === "not_a_link" && x() !== "windows" && (await sn(f)) ? M(f) : f;
+    })().catch(f => K(f) ? void 0 : k(f) === "ELOOP" ? "link" : null);
+  if (realBase_2 === "link") return r(`${e} is a link, or its spelling differs from the one on disk`);
+  if (realBase_2 === void 0 || realBase_2 === null) return r(`${e} does not exist or cannot be read`, realBase_2 === void 0);
+  if (n === "canonical" && !oe(realBase_2, e)) return r(`${e} is reached through a link, or its spelling differs from the one on disk (it resolves to ${realBase_2})`);
+  let l = J(realBase_2).root,
+    u = x() === "windows" || holdBase ? realBase_2 : await rn(realBase_2);
+  if (u === null) return r(`a directory above ${e} cannot be read`);
+  let c = await Qt().catch(f => ({
+    failed: d(f)
+  }));
+  if ("failed" in c) return r(`${e} could not be opened safely (${c.failed})`);
+  let {
+      tree: tree_2,
+      host: host
+    } = c,
+    g = await tree_2.openTreeAnchor(host, {
+      gitRoot: u,
+      realRoot: u
+    }).catch(f => ({
+      failed: d(f),
+      code: k(f)
+    }));
+  if ("failed" in g) {
+    let f = u === realBase_2;
+    return f && g.code === "ENOENT" ? r(`${e} does not exist`, !0) : f && (g.code === "ELOOP" || g.code === "ENOTDIR") ? r(`${e} is a link, or changed while it was being opened`) : f && g.code === "WORKING_ROOT_NOT_CANONICAL" ? r(`${e} is reached through a link, or its spelling differs from the one on disk`) : r(`${e} could not be opened safely (${g.failed})`);
+  }
+  if ("unavailable" in g) {
+    let reason_4 = tree_2.getUnavailableReason(await tree_2.checkAnchoring(l, {
+        host: host
+      })),
+      p = reason_4 === "no_ffi" || reason_4 === "remote_volume" && (n !== "not_a_link" || (await on(e, l)));
+    return reason_4 !== null && (x() !== "windows" || p) ? {
+      outcome: "unanchored",
+      reason: reason_4
+    } : r(`${e} could not be opened safely (${g.unavailable})`);
+  }
+  let b = u === realBase_2 ? "" : realBase_2.slice(_u(u).length).split(I).filter(Boolean).join("/"),
+    held_2 = an(g, b),
+    m = await held_2.lstat("").then(f => f, error_3 => ({
+      error: error_3
+    }));
+  if ("error" in m || !m.isDirectory()) return await g.close().catch(() => {}), "error" in m && K(m.error) ? r(`${e} does not exist`, !0) : r(`${e} is a link, or changed while it was being opened`);
+  return {
+    held: held_2,
+    realBase: realBase_2
+  };
+}
+async function rn(e) {
+  let n = J(e).root,
+    o = e.slice(n.length).split(I).filter(Boolean),
+    r = n,
+    s = n,
+    a = !1;
+  for (let l of o) {
+    let u = await Ie(s, Y.R_OK),
+      c = await Ie(s, Y.W_OK);
+    if (u === null || c === null) return null;
+    if (!u) {
+      let w = await H(s).then(h => h.uid, () => null);
+      if (w === null || w === process.getuid?.() || c || a) return null;
+      r = O(s, l);
+    }
+    a ||= c, s = O(s, l);
+  }
+  return r;
+}
+async function on(e, n) {
+  let o = await M(J(e).root).catch(() => null);
+  return o !== null && Tf(_u(J(o).root)) === Tf(_u(n));
+}
+async function Ie(e, n) {
+  return Vt(e, n).then(() => !0, o => ["EACCES", "EPERM", "EROFS"].includes(k(o) ?? "") ? !1 : null);
+}
+async function sn(e) {
+  let n = await H(e).catch(() => null);
+  if (n === null || !n.isSymbolicLink()) return !1;
+  for (let o = V(e);; o = V(o)) {
+    if ((await H(o).then(s => s.uid, () => null)) !== 0 || (await Ie(o, Y.W_OK)) !== !1) return !1;
+    if (V(o) === o) return !0;
+  }
+}
+function an(e, n) {
+  let o = r => n === "" ? r : r === "" ? n : `${n}/${r}`;
+  return {
+    lstat: r => e.lstat(o(r)),
+    list: (r, s) => e.list(o(r), s),
+    unlink: r => e.unlink(o(r)),
+    rmdir: r => e.rmdir(o(r)),
+    rename: (r, s) => e.rename(o(r), o(s)),
+    removeTree: (r, s) => e.removeTree(o(r), s),
+    open: (r, s) => e.open(o(r), s),
+    create: (r, s, a) => e.create(o(r), s, a),
+    close: () => e.close(),
+    anchorBeneath: r => e.anchorBeneath(o(r))
+  };
+}
+async function ln(root_3) {
+  let root_4 = root_3,
+    o = await DIt(root_3, {
+      dotGitLink: "vet"
+    });
+  if ("skipped" in o && o.skipped === "pointer") {
+    let s = CH(root_3);
+    if (s !== null && s !== root_3) root_4 = s, o = await DIt(s, {
+      dotGitLink: "vet"
+    });else {
+      let a = await _2n(root_3);
+      if (a === null) return {
+        why: "its .git file names no usable git directory"
+      };
+      if ("refused" in (await O9e(root_3, a))) return {
+        why: `its .git file names ${a}, which is inside the working tree, or could not be checked against it`
+      };
+      let [dir_2, u] = await Promise.all([a, root_3].map(item => M(item).catch(() => null)));
+      if (dir_2 == null || u == null) return {
+        why: dir_2 == null ? `its .git file names ${a}, which does not exist or cannot be resolved` : "the repository root cannot be resolved"
+      };
+      if (ft(zEo(dir_2), zEo(u))) return {
+        why: `its .git file names ${a}, which resolves into the working tree`
+      };
+      return (await H(O(dir_2, "commondir")).then(() => !1, w => K(w))) ? {
+        dir: dir_2,
+        root: root_3
+      } : {
+        why: "its .git file names another worktree"
+      };
+    }
+  }
+  if ("skipped" in o) return {
+    why: o.why
+  };
+  let r = await O9e(root_4, o.gitDir);
+  return "refused" in r ? {
+    why: r.refused
+  } : {
+    dir: r.gitDir,
+    root: root_4
+  };
+}
+async function it(e, n, o) {
+  return e.lstat(n).then(r => ie(r, o), () => !1);
+}
+async function ot(e, n) {
+  for (let o of ["objects", "config", "packed-refs", "hooks", "worktrees"]) if (await e.lstat(`${n}/${o}`).then(() => !0, s => !K(s))) return !0;
+  return !1;
+}
+async function cn(e, n, o, r) {
+  let s = await ae(e, "canonical", {
+    holdBase: !0
+  });
+  if (!("held" in s)) return t(`Kept the registration ${n} in ${e}: ${s.reason}`, {
+    level: "warn"
+  }), !1;
+  try {
+    let a = `worktrees/${n}`;
+    if (!(await it(s.held, a, o))) throw Error("its folder changed after it was checked, or this volume cannot show it is the same folder");
+    if (r === "keep" && (await s.held.lstat(`worktrees/${n}/locked`).then(() => !0, c => !K(c)))) throw Error("it was locked while the checkout was being deleted");
+    let l = new R(`${a} has a git directory's own files (objects, config, packed-refs, hooks or worktrees) in it, or could not be checked for them, so nothing in it was removed`, "the registration entry has a git directory's own files in it, or could not be checked for them");
+    if (await ot(s.held, a)) throw l;
+    if (await s.held.unlink(`${a}/gitdir`).catch(c => {
+      if (!K(c)) throw c;
+    }), await ot(s.held, a)) return t(`Dropped the registration ${a} in ${e} (git no longer lists it) but left its folder, which now has a git directory's own files (objects, config, packed-refs, hooks or worktrees) in it, or could not be checked for them. git's next \`git worktree prune\` or \`git gc\` deletes that folder whole; move out anything you need first.`, {
+      level: "warn"
+    }), !1;
+    if (await Pe(s.held, a, o), await s.held.rmdir(a).then(() => !0, c => K(c))) return !0;
+    if (!(await it(s.held, a, o))) return t(`Dropped the registration ${a} in ${e} (git no longer lists it) but left its folder: it changed while it was being emptied`, {
+      level: "warn"
+    }), !1;
+    let u = `${a}.claude-dropped-${Yt(4).toString("hex")}`;
+    return await s.held.rename(a, u).then(() => (t(`Dropped the registration ${a} in ${e}; its folder held files Claude Code does not delete (such as a submodule's git directory), so it was moved to ${u}; git worktree prune removes it`, {
+      level: "warn"
+    }), !0), c => (t(`Dropped the registration ${a} in ${e} (git no longer lists it) but could not move its folder aside (${d(c)}); git worktree prune removes it`, {
+      level: "warn"
+    }), !1));
+  } catch (error) {
+    return t(`Kept the registration ${n} in ${e}: ${d(error)}`, {
+      level: "warn"
+    }), !1;
+  } finally {
+    await s.held.close().catch(() => {});
+  }
+}
+async function st(e, n, o, r) {
+  let s = O(o, "worktrees", r);
+  if (n.outcome === "dropped" || n.outcome === "none" && (await ut(o, r)) === "absent") return {
+    outcome: "removed"
+  };
+  let reason_5 = n.outcome === "kept" ? n.reason : `git's record of it at ${s} could not be read`;
+  return t(`Worktree ${e} is gone but git still lists it: ${reason_5}`, {
+    level: "warn"
+  }), {
+    outcome: "registration_kept",
+    reason: reason_5
+  };
+}
+async function ut(e, n) {
+  let o = await ae(e, "canonical", {
+    holdBase: !0
+  });
+  if (!("held" in o)) return null;
+  try {
+    return await o.held.lstat(`worktrees/${n}`).then(r => ({
+      dev: r.dev,
+      ino: r.ino
+    }), r => K(r) ? "absent" : null);
+  } finally {
+    await o.held.close().catch(() => {});
+  }
+}
+function un(e) {
+  return k(e) === "ENOTEMPTY" && !("syscall" in Object(e)) ? d(e) : k(e) ?? "an unknown error";
+}
+function oe(e, n) {
+  return se(e) === se(n);
+}
+function dt(e, n) {
+  return yin(se(e), n.map(se));
+}
+function se(e) {
+  return x() === "windows" ? e.replace(/^[a-z](?=:)/, n => n.toUpperCase()) : e;
+}
+function at(e, n) {
+  return e.length > n.length + 1 && oe(e.slice(0, n.length + 1), n + I);
+}
+function ft(e, n) {
+  return e === n || e.startsWith(n.endsWith(I) ? n : n + I);
+}
+async function dn(e, n) {
+  let [o, r, s] = await Promise.all([H(e, {
+    bigint: !0
+  }).catch(() => null), H(n, {
+    bigint: !0
+  }).catch(() => null), H(V(n), {
+    bigint: !0
+  }).catch(() => null)]);
+  return o !== null && r !== null && s !== null && o.dev !== 0n && !sa(o.ino) && o.dev === r.dev && o.ino === r.ino && !(s.dev === r.dev && s.ino === r.ino);
+}
+async function ht(e, n, {
+  parentLinkToRoot = !1
+} = {}) {
+  let r = _u(W(n)),
+    s = (h, g) => h.slice(g.length + 1).split(I).join("/"),
+    a = [],
+    l = [];
+  for (let h of e) {
+    let g = await M(h).catch(() => null);
+    if (a.push(h, ...(g === null ? [] : [g])), g !== null) l.push(_u(g));
+  }
+  let u = a.map(item => _u(W(item)));
+  for (let h of u) if (at(r, h)) {
+    let g = r.slice(0, h.length);
+    return {
+      base: g.endsWith(":") ? g + I : g,
+      rel: s(r, h),
+      underRoot: !0
+    };
+  }
+  let c = h => Tf(h.normalize("NFC")),
+    base_2 = u.find(item => at(c(r), c(item)));
+  if (base_2 !== void 0) {
+    let h = r.split(I),
+      g = base_2.split(I).length;
+    if (x() !== "windows" && (await dn(h.slice(0, g).join(I), base_2))) return {
+      base: base_2,
+      rel: h.slice(g).join("/"),
+      underRoot: !0
+    };
+    return {
+      refused: `${n} spells the repository folder ${base_2} in another letter case or Unicode form (use the path as git records it)`
+    };
+  }
+  if (l.length > 0) {
+    let h = r.split(I),
+      g = null;
+    for (let f = 1; f < h.length - 1; f++) {
+      let p = h.slice(0, f).join(I),
+        E = p === "" || p.endsWith(":") ? p + I : p,
+        v = await M(E).catch(() => null);
+      g = v;
+      let y = v === null ? null : _u(v),
+        base_3 = y === null ? void 0 : l.find(item => oe(y, item));
+      if (base_3 !== void 0) return {
+        base: base_3,
+        rel: h.slice(f).join("/"),
+        underRoot: !0
+      };
+      if (y !== null && l.some(item => ft(y, item))) return {
+        refused: `${n} is reached through a link into the repository at ${E}`
+      };
+    }
+    let b = g === null ? null : O(g, h.at(-2)),
+      T = b === null || !parentLinkToRoot ? null : await fn(b),
+      base_4 = [b, T].flatMap(item => item === null ? [] : [item]).map(item => l.find(p => oe(item, p))).find(item => item !== void 0);
+    if (base_4 !== void 0) return {
+      base: base_4,
+      rel: h.at(-1),
+      underRoot: !0
+    };
+  }
+  return gt(r);
+}
+async function fn(e) {
+  let n = await zt(e).catch(() => null);
+  if (n === null) return null;
+  let o = x() === "windows" && /^\\\\\?\\[A-Za-z]:\\/.test(n);
+  if (o && n.includes("/")) return null;
+  let r = o ? n.slice(4) : n,
+    s = r.split(I === "\\" ? /[\\/]/ : /\//);
+  if ((Ae(r) ? s : s.slice(Math.max(0, s.findIndex(item => item !== "..")))).some(item => item === "." || item === "..")) return null;
+  return _u(W(Ae(r) ? r : O(V(e), r)));
+}
+function gt(e) {
+  let n = _u(W(e)),
+    o = J(n).root,
+    r = n.lastIndexOf(I);
+  if (n === o || r === n.length - 1 || r < 0) return null;
+  return {
+    base: r < o.length ? o : n.slice(0, r),
+    rel: n.slice(r + 1),
+    underRoot: !1
+  };
+}
+async function wt(e, n, o, r, s) {
+  let a = Ae(e) ? [W(e)] : n.map(item => W(Zt(item, e))),
+    l = await M(o).catch(() => null),
+    u = [r, O(o, ".git")].concat(l === null ? [] : [O(l, ".git")]).map(item => O(item, "worktrees", s));
+  return a.some(item => dt(item, u));
+}
+async function hn(e, n, o, r, s) {
+  let a = await mt(e, `${n}/.git`);
+  if ("error" in a || a.value === null) return null;
+  let l = ct(W(a.value));
+  return (await wt(a.value, o, r, s, l)) ? l : null;
+}
+async function gn(e, n) {
+  let o = Buffer.alloc(n + 1),
+    r = 0;
+  for (;;) {
+    let {
+      bytesRead: bytesRead_2
+    } = await e.read(o, r, o.length - r, r);
+    if (bytesRead_2 === 0) return o.subarray(0, r);
+    if (r += bytesRead_2, r > n) return null;
+  }
+}
+async function mt(e, n) {
+  let o = {
+      value: null,
+      bytes: Buffer.alloc(0)
+    },
+    r;
+  try {
+    r = await e.open(n, en());
+  } catch (s) {
+    let a = k(s);
+    return a === "ENOENT" || a === "ELOOP" || a === "EISDIR" ? o : {
+      error: a ?? d(s)
+    };
+  }
+  try {
+    if (!(await r.stat()).isFile()) return o;
+    let bytes = await gn(r, qt);
+    if (bytes === null) return o;
+    let a = /^gitdir: ([^\r\n]+)[\r\n]*$/.exec(bytes.toString("utf8"));
+    return {
+      value: a ? a[1] : null,
+      bytes: bytes
+    };
+  } catch (s) {
+    return {
+      error: k(s) ?? d(s)
+    };
+  } finally {
+    await r.close().catch(() => {});
+  }
+}
+async function pt(e, n, o = {
+  deleted: !1
+}) {
+  try {
+    return await e.unlink(n), o.deleted = !0, !0;
+  } catch (error) {
+    let s = k(error);
+    if (s === "ENOENT") return !1;
+    if (s !== "EISDIR" && s !== "EPERM" && s !== "EACCES") throw error;
+    let a = await e.lstat(n).catch(() => null);
+    if (a === null || !a.isDirectory()) throw error;
+    return await e.removeTree(n, {
+      onDeleted: () => {
+        o.deleted = !0;
+      }
+    }), !0;
+  }
+}
+async function wn(e, n, o, r = {
+  deleted: !1
+}, {
+  pointerFirst: pointerFirst_2 = !1
+} = {}) {
+  if (pointerFirst_2) await e.unlink(`${n}/.git`), r.deleted = !0;
+  for (let a = 0;; a++) {
+    let l = (await e.list(n)).filter(item => item !== ".git");
+    if (l.length === 0) break;
+    if (a === Jt) {
+      let u = Error("files kept appearing in the worktree while it was being deleted");
+      throw u.code = "ENOTEMPTY", u;
+    }
+    if (l.some(item => item.includes("\uFFFD"))) {
+      await e.removeTree(n, {
+        keep: ".git",
+        onDeleted: () => {
+          r.deleted = !0;
+        }
+      });
+      continue;
+    }
+    for (let u of l) await pt(e, `${n}/${u}`, r);
+  }
+  if (!pointerFirst_2) await e.unlink(`${n}/.git`), r.deleted = !0;
+  try {
+    await e.removeTree(n);
+  } catch (error) {
+    if (!pointerFirst_2) await e.create(`${n}/.git`, o, 420).catch(() => {});
+    throw error;
+  }
+}
+export { DIt, RPn, O9e, Zde, hut, LIt, RRi, vWe };

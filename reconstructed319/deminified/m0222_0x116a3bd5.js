@@ -1,0 +1,386 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { d, k } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { vj, nn } from "B:/~BUN/root/chunk-y1kkrqy9.js";
+import { Xr, vKn, Uwt, b$e } from "B:/~BUN/root/chunk-game8aqv.js";
+import { i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { t } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { a } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import { Te, Ci } from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import { Gfe, aT, nUt } from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import { vpe, vp, FO, FHs, UHs, BHs, zHs, _C, VHs, Pte, Jy, bC, YHs, XHs, JHs, Ibt, QHs, Pw } from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import { Wqe } from "B:/~BUN/root/chunk-65j2302z.js";
+import { CAe, tzn, $Ns } from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import { tn, Tp } from "B:/~BUN/root/chunk-1fg2bpc3.js";
+import { KU, qU } from "B:/~BUN/root/chunk-pwj77283.js";
+import { md, nsn, rie, g$t, kOs, Tg, Vx, kE, B3, Rt, mV, Vf, Mfe, C$t, Yd as readAccount, SIr } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import { pqe } from "B:/~BUN/root/chunk-c79wfkj4.js";
+import { H1 } from "B:/~BUN/root/chunk-2wkhcc7d.js";
+import { gRs } from "B:/~BUN/root/chunk-sjvfdrzm.js";
+import { dRe } from "B:/~BUN/root/chunk-n9ctns18.js";
+import { he } from "B:/~BUN/root/chunk-fet34rqr.js";
+var m = null,
+  b = null;
+function nKi(e, n) {
+  m = e, b = n;
+}
+function _(e) {
+  return m?.(e) ?? null;
+}
+function S(e) {
+  return b?.(e) ?? null;
+}
+function Qht() {
+  let e = Jy();
+  if (e) return e;
+  if (_C() === !1) {
+    let reason = Pte();
+    if (reason) return {
+      state: "ineligible",
+      reason: reason
+    };
+  }
+  return;
+}
+function rKi() {
+  return _C() === !0 && Jy() === void 0;
+}
+function OFt() {
+  if (_C() !== !0) return !1;
+  let e = Jy();
+  if (e !== void 0) return e.state === "failed";
+  let n = Pw();
+  return n === null || Object.keys(n).length === 0;
+}
+function P(e) {
+  switch (e) {
+    case "third_party_provider":
+      return "not available on Bedrock/Vertex/third-party providers";
+    case "custom_base_url":
+      return "not available with a custom ANTHROPIC_BASE_URL";
+    case "hybrid_yields_to_device_policy":
+      return "";
+    case "profile_base_url_mismatch":
+      return "not available: the active profile's base_url is not the Anthropic API host";
+    case "sandboxed_entrypoint":
+      return "not available in sandboxed sessions";
+    case "claude_tag":
+      return "Claude in Slack and Claude in Teams sessions don't apply server-managed settings; organization policy limits are decided separately";
+    case "hermetic_remote_session":
+      return "not available in hermetic remote sessions";
+    case "unpinned_gateway":
+      return "gateway auth is unpinned; run `claude auth login` to pin";
+    case "host_gateway_not_accepted":
+      return "Claude Desktop's gateway is not an accepted source of managed settings on this machine (not the gateway its managed settings name in forceLoginGatewayUrl, not on your organization's network, or not reached over https); contact your administrator";
+    case "unsupported_subscription":
+      return "requires an Enterprise or Team subscription";
+    case "no_auth":
+      return "no usable credentials for the settings fetch";
+  }
+}
+function p2e(e, n) {
+  switch (e) {
+    case "no_auth_available":
+      return "no credentials available";
+    case "profile_credential_error":
+      return "the profile credential could not authenticate the fetch (details in the debug log)";
+    case "api_key_not_sent":
+    case "http_401":
+      return "authentication rejected (401)";
+    case "http_403":
+      return "access denied (403)";
+    case "http_4xx":
+      if (n === 204 || n === 404) return `answered by a network intermediary, not Anthropic (${n}); check this network's proxy`;
+      return `client error${n ? ` (${n})` : ""}`;
+    case "http_5xx":
+      return `server error${n ? ` (${n})` : ""}`;
+    case "timeout":
+      return "request timed out";
+    case "network_error":
+      return "network error";
+    case "gateway_cert_mismatch":
+      return "gateway certificate mismatch";
+    case "gateway_pin_refused":
+      return "gateway TLS pin is in a symlinked credentials file";
+    case "gateway_pin_unreadable":
+      return "gateway TLS pin could not be read from the credentials file";
+    case "gateway_public_address":
+      return "gateway host resolved to a public address at fetch time";
+    case "parse_error":
+      return "server response could not be parsed";
+    case "ruled_empty":
+      return "no setting in the server response could be applied as written";
+    case "unknown_error":
+      return "unexpected error";
+  }
+}
+function oKi(e) {
+  switch (e.state) {
+    case "failed":
+    case "stale_cache":
+      return !0;
+    case "ok":
+      return !1;
+    case "ineligible":
+      return e.reason === "third_party_provider" || e.reason === "custom_base_url" || e.reason === "hybrid_yields_to_device_policy" || e.reason === "profile_base_url_mismatch" || e.reason === "unpinned_gateway" || e.reason === "host_gateway_not_accepted";
+  }
+}
+function rAr(e) {
+  switch (e.state) {
+    case "ok":
+      return e.hasSettings ? "loaded" : "none configured for this organization";
+    case "stale_cache":
+      return `fetch failed \u2014 using stale cache (${p2e(e.failure.errorKind, e.failure.httpStatus)})${e.transportEnvWithheld ? "; proxy/CA/provider env withheld until a fetch succeeds" : ""}`;
+    case "failed":
+      {
+        let n = `fetch failed \u2014 ${e.restrictionsOnly ? "the stale cache's restrictions still apply" : "no policy applied"} (${p2e(e.failure.errorKind, e.failure.httpStatus)})`;
+        return e.restrictionsOnly && !n.includes("`claude auth") ? `${n}; to clear them, run \`claude auth logout\` (signs out of all accounts)` : n;
+      }
+    case "ineligible":
+      return `not fetched \u2014 ${P(e.reason)}`;
+  }
+}
+function A(e) {
+  try {
+    return new URL(e).host;
+  } catch {
+    return;
+  }
+}
+function t_o(e = i.ANTHROPIC_BASE_URL || pqe()) {
+  if (!e) return !0;
+  let n = A(nn().BASE_API_URL);
+  return n !== void 0 && A(e) === n;
+}
+function Dee() {
+  FHs();
+}
+function sKi() {
+  BHs(O(Rb()));
+}
+function O(e) {
+  if (!vpe() && !c(e)) return {
+    kind: "unreadable"
+  };
+  try {
+    return {
+      kind: "read",
+      orgs: dRe()
+    };
+  } catch {
+    return {
+      kind: "unreadable"
+    };
+  }
+}
+function sCs(e) {
+  {
+    if (!e || Te() === "gateway" || XHs() || Ibt() !== null || vj() !== "") return;
+    let n = Mfe();
+    return n === "enterprise" || n === "team" ? readAccount()?.organizationUuid || void 0 : void 0;
+  }
+  return;
+}
+function c(e, n = !1) {
+  try {
+    if (sCs(e) === void 0) return !1;
+    let {
+      kind: kind
+    } = oAr();
+    return kind !== "api_key" && kind !== "host_bearer" && (n || kind !== "profile") && kE() === "store";
+  } catch (error) {
+    if (k(error) !== void 0) return t(`Remote settings: could not read the profile store: ${d(error)}`, {
+      level: "error"
+    }), !0;
+    return a(error), !0;
+  }
+}
+function oAr() {
+  if (Rt() && n_o() && mV()) return {
+    kind: "org_login"
+  };
+  try {
+    let {
+      key: key
+    } = Vx({
+      skipRetrievingKeyFromApiKeyHelper: !0
+    });
+    if (key) return {
+      kind: "api_key",
+      key: key
+    };
+  } catch {}
+  let bearer = nsn();
+  if (bearer !== void 0) return {
+    kind: "host_bearer",
+    bearer: bearer
+  };
+  return {
+    kind: g$t() ? "profile" : "login"
+  };
+}
+function Rb() {
+  let e = _C();
+  if (e !== void 0) return e;
+  let {
+    eligible: eligible,
+    ineligibleReason: ineligibleReason,
+    hybridOrganizationUuid: hybridOrganizationUuid,
+    hybridSignInEnded: hybridSignInEnded,
+    hybridBlockFilter: hybridBlockFilter,
+    hybridProviderFromOrganization: hybridProviderFromOrganization,
+    hybridOnlyForConnection: hybridOnlyForConnection
+  } = U();
+  if (JHs(i.CLAUDE_CODE_USE_GATEWAY === !0), QHs(hybridOrganizationUuid ?? null, hybridSignInEnded === !0, hybridBlockFilter ?? null, hybridProviderFromOrganization === !0, hybridOnlyForConnection === !0), eligible && hybridOrganizationUuid === void 0) UHs({
+    readAccount: readAccount,
+    covers: Te() !== "gateway" || kOs() && !Uwt() && !b$e(),
+    orgPin: O(eligible),
+    mayHideDialog: () => c(Rb()),
+    writesForHiddenDialog: () => c(Rb(), !0)
+  });
+  let H = i.CLAUDE_CODE_EVAL_CONFINED === !0,
+    p = !eligible && H;
+  YHs(p);
+  let y = eligible || p;
+  return zHs(y, y ? void 0 : ineligibleReason);
+}
+function w() {
+  return n_o() || Vf() && (Mfe() === null || tzn());
+}
+function T() {
+  let ineligibleReason_2 = gRs();
+  return ineligibleReason_2 === null ? {
+    eligible: !0
+  } : {
+    eligible: !1,
+    ineligibleReason: ineligibleReason_2
+  };
+}
+function n_o() {
+  if (!Vf()) return !1;
+  let e = Mfe();
+  return e === "enterprise" || e === "team" || VHs($Ns, CAe);
+}
+function v() {
+  try {
+    return Vf() && !B3();
+  } catch (error) {
+    return t(`Remote settings: could not read the claude.ai login (${d(error)}); treating it as the stored login, so this session's surface skip does not apply`, {
+      level: "warn"
+    }), !0;
+  }
+}
+function I() {
+  let CLAUDE_CODE_ENTRYPOINT = i.CLAUDE_CODE_ENTRYPOINT;
+  return CLAUDE_CODE_ENTRYPOINT === "local-agent" || CLAUDE_CODE_ENTRYPOINT?.startsWith("claude-coworker") === !0;
+}
+function iKi() {
+  return H1() || vp() && gRs() !== null || I() || C("for_stored_login");
+}
+var l = [...FO, "ANTHROPIC_CUSTOM_HEADERS"];
+function N() {
+  try {
+    if (md()) return !0;
+    if (KU("CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR") || KU("CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR")) return !0;
+    let e = _(l),
+      n = S(l),
+      r = e && n ? new Map(l.map(item => [item, [n(item), e(item)].flatMap(item => item?.trim() ? [item] : [])])) : null;
+    return !rie() && (qU() !== null || (r ? FO.some(item => !!r.get(item)?.length) : !!i.ANTHROPIC_API_KEY || !!Tg())) || (r ? !!r.get("ANTHROPIC_CUSTOM_HEADERS")?.some(o => Gfe(o).some(([s]) => ["authorization", "x-api-key"].includes(s.toLowerCase()))) || !!r.get("CLAUDE_CODE_OAUTH_TOKEN")?.length : nUt() || aT()) || B3();
+  } catch (error) {
+    return t(`Remote settings: could not read the host's credential (${d(error)}); keeping the surface's settings skip`, {
+      level: "warn"
+    }), !0;
+  }
+}
+function C(e) {
+  return Wqe() && !Tp() && (tn() || N() || e === "for_session" && !v());
+}
+function U() {
+  if (bC()) return {
+    eligible: !0
+  };
+  if (H1()) return {
+    eligible: !1,
+    ineligibleReason: "hermetic_remote_session"
+  };
+  if (vp()) return T();
+  if (Te() === "gateway") {
+    let o = Xr(),
+      eligible_2 = vKn(o);
+    return {
+      eligible: eligible_2,
+      ineligibleReason: eligible_2 ? void 0 : o?.hostVerdict !== void 0 ? "host_gateway_not_accepted" : "unpinned_gateway"
+    };
+  }
+  let ineligibleReason_3 = Te() !== "firstParty" ? "third_party_provider" : !Ci() ? "custom_base_url" : void 0;
+  if (ineligibleReason_3) return R(!1) ?? {
+    eligible: !1,
+    ineligibleReason: ineligibleReason_3
+  };
+  if (I()) return {
+    eligible: !1,
+    ineligibleReason: "sandboxed_entrypoint"
+  };
+  if (C("for_session")) return {
+    eligible: !1,
+    ineligibleReason: "claude_tag"
+  };
+  let n = !1;
+  try {
+    n = g$t();
+  } catch (error) {
+    t(`Remote settings: could not read the profile store (${d(error)}); not treating this session as profile-authenticated`, {
+      level: "warn"
+    });
+  }
+  if (n) return t_o() ? {
+    eligible: !0
+  } : {
+    eligible: !1,
+    ineligibleReason: "profile_base_url_mismatch"
+  };
+  if (w()) return {
+    eligible: !0
+  };
+  try {
+    let {
+      key: key_2
+    } = Vx({
+      skipRetrievingKeyFromApiKeyHelper: !0
+    });
+    if (key_2) return {
+      eligible: !0
+    };
+  } catch {}
+  if (nsn() !== void 0) return {
+    eligible: !0
+  };
+  let r = R(!0);
+  if (r !== null) return r;
+  if (Vf() && SIr(Mfe(), C$t()) === null) return {
+    eligible: !0
+  };
+  return {
+    eligible: !1,
+    ineligibleReason: Vf() ? "unsupported_subscription" : "no_auth"
+  };
+}
+function aKi(e = !0) {
+  return !1;
+}
+var en = he({
+  isNoted: !1,
+  hybridOrganizationUuid: null,
+  hasReportedRefusal: !1
+}, e => {
+  e.isNoted = !1, e.hybridOrganizationUuid = null, e.hasReportedRefusal = !1;
+});
+function lKi() {
+  return;
+}
+function R(e) {
+  return null;
+}
+export { nKi, Qht, rKi, OFt, p2e, oKi, rAr, t_o, Dee, sKi, sCs, oAr, Rb, n_o, iKi, aKi, lKi };

@@ -1,0 +1,587 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  k
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  FE
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  t
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  AC
+} from "B:/~BUN/root/chunk-nsneqfcc.js";
+import {
+  xEn
+} from "B:/~BUN/root/chunk-t8dpb5qp.js";
+import {
+  BT,
+  IXr,
+  qir,
+  e5e,
+  t6,
+  cF,
+  MXr,
+  DXr,
+  qIe,
+  REn,
+  a7o
+} from "B:/~BUN/root/chunk-4pm45nxw.js";
+import {
+  tys,
+  WDn
+} from "B:/~BUN/root/chunk-yscb2r3d.js";
+import {
+  Rpt
+} from "B:/~BUN/root/chunk-56gmm7gd.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import {
+  constants as w
+} from "fs";
+var x = BT.FILE_LIST_DIRECTORY | BT.FILE_TRAVERSE | BT.FILE_READ_ATTRIBUTES | BT.SYNCHRONIZE,
+  oe = BT.FILE_TRAVERSE | BT.FILE_READ_ATTRIBUTES | BT.SYNCHRONIZE,
+  v = t6.FILE_DIRECTORY_FILE | t6.FILE_OPEN_REPARSE_POINT | t6.FILE_SYNCHRONOUS_IO_NONALERT,
+  g = t6.FILE_OPEN_REPARSE_POINT | t6.FILE_SYNCHRONOUS_IO_NONALERT,
+  ae = 4096,
+  ce = 4194304,
+  le = new Set([2147483693, 3221226763]);
+
+function Q(i) {
+  return (i & ce) !== 0 || (i & ae) !== 0 && (i & cF.REPARSE_POINT) !== 0
+}
+var Ee = /[. ]+$/,
+  H = BT.FILE_READ_ATTRIBUTES | BT.SYNCHRONIZE,
+  D = 1048576,
+  ee = 262144,
+  de = w.O_WRONLY | w.O_RDWR | w.O_APPEND | w.O_TRUNC,
+  ue = (w.O_NOFOLLOW ?? 0) | (w.O_NONBLOCK ?? 0),
+  ne = 116444736000000000n;
+
+function Ne(i) {
+  switch (i) {
+    case "EBADF":
+      return Error("the file is closed");
+    case "EEXIST":
+      return Error("the name is taken");
+    case "EINVAL":
+      return Error("write(): offset, length and position must be whole numbers of at least 0, and offset plus length must not pass the end of the buffer");
+    case "WORKING_NAME_NOT_PLAIN":
+      return Error("not a plain file name here");
+    case "WORKING_FILE_HELD":
+      return Error("another program holds the file");
+    case "ELOOP":
+      return Error("a link stands at the name");
+    case "EISDIR":
+      return Error("a directory stands at the name");
+    case "ENOTDIR":
+      return Error("a link stands where a directory should be");
+    case "WORKING_ROOT_NOT_CANONICAL":
+      return Error("tree anchor root is not a canonical path");
+    case "WORKING_FILE_NOT_SERVED":
+      return Error("this file is stored through a Windows storage feature (cloud sync, deduplication) and could not be reopened to read its real contents; it is skipped this round");
+    case "WORKING_FILE_OFFLINE":
+      return Error("this file is online-only (its data is not on this machine); it is not downloaded, so it is skipped this round")
+  }
+}
+
+function m(i) {
+  let e = Ne(i);
+  return e.code = i, e
+}
+
+function S(i, e = !1) {
+  if (i === "" || i === "." || i === ".." || /[\\/:*?"<>|\x00-\x1f]/.test(i) || Ee.test(i) || FE(i) || tys(i) || !e && WDn(i)) throw m("WORKING_NAME_NOT_PLAIN");
+  return i
+}
+
+function B(i) {
+  return (i - ne) * 100n
+}
+
+function W(i) {
+  return BigInt(Math.round(i * 1e6)) * 10n + ne
+}
+
+function Ie(i, e, E, T) {
+  let R = (e.attributes & cF.REPARSE_POINT) !== 0 && DXr(e.reparseTag),
+    O = !R && (e.attributes & cF.DIRECTORY) !== 0,
+    _ = R ? 0o120000n : O ? 0o040000n : 0o100000n,
+    b = (e.attributes & cF.READONLY) !== 0 ? 0o444n : 0o666n,
+    h = (y) => y / 1000000n,
+    L = (y) => new Date(Number(y / 1000000n));
+  return {
+    dev: i,
+    ino: e.ino,
+    mode: _ | b,
+    nlink: e.nlink,
+    uid: 0n,
+    gid: 0n,
+    rdev: 0n,
+    size: O ? 0n : e.size,
+    blksize: 4096n,
+    blocks: T / 512n,
+    atimeMs: h(E.atimeNs),
+    mtimeMs: h(e.mtimeNs),
+    ctimeMs: h(e.ctimeNs),
+    birthtimeMs: h(E.birthtimeNs),
+    atimeNs: E.atimeNs,
+    mtimeNs: e.mtimeNs,
+    ctimeNs: e.ctimeNs,
+    birthtimeNs: E.birthtimeNs,
+    atime: L(E.atimeNs),
+    mtime: L(e.mtimeNs),
+    ctime: L(e.ctimeNs),
+    birthtime: L(E.birthtimeNs),
+    isFile: () => !R && !O,
+    isDirectory: () => O,
+    isSymbolicLink: () => R,
+    isBlockDevice: () => !1,
+    isCharacterDevice: () => !1,
+    isFIFO: () => !1,
+    isSocket: () => !1
+  }
+}
+
+function me(i) {
+  let e = (E) => Number(E);
+  return {
+    dev: e(i.dev),
+    ino: e(i.ino),
+    mode: e(i.mode),
+    nlink: e(i.nlink),
+    uid: 0,
+    gid: 0,
+    rdev: 0,
+    size: e(i.size),
+    blksize: e(i.blksize),
+    blocks: e(i.blocks),
+    atimeMs: e(i.atimeNs) / 1e6,
+    mtimeMs: e(i.mtimeNs) / 1e6,
+    ctimeMs: e(i.ctimeNs) / 1e6,
+    birthtimeMs: e(i.birthtimeNs) / 1e6,
+    atime: i.atime,
+    mtime: i.mtime,
+    ctime: i.ctime,
+    birthtime: i.birthtime,
+    isFile: () => i.isFile(),
+    isDirectory: () => i.isDirectory(),
+    isSymbolicLink: () => i.isSymbolicLink(),
+    isBlockDevice: () => !1,
+    isCharacterDevice: () => !1,
+    isFIFO: () => !1,
+    isSocket: () => !1
+  }
+}
+
+function A(i, e) {
+  let E = i.queryInformation(e),
+    T = (E.attributes & cF.REPARSE_POINT) !== 0 ? i.queryAttributeTag(e).reparseTag : 0,
+    R = i.queryId(e),
+    O = i.queryVolume(e),
+    _ = {
+      dev32: BigInt(O.serialNumber),
+      dev64: R?.volumeSerialNumber ?? null,
+      ino: E.indexNumber,
+      size: E.size,
+      nlink: BigInt(E.numberOfLinks),
+      mtimeNs: B(E.lastWriteTime),
+      ctimeNs: B(E.changeTime),
+      attributes: E.attributes,
+      reparseTag: T
+    },
+    b = {
+      atimeNs: B(E.lastAccessTime),
+      birthtimeNs: B(E.creationTime)
+    };
+  return {
+    ..._,
+    stats: (h) => Ie(h === "serial64" && _.dev64 !== null ? _.dev64 : _.dev32, _, b, E.allocationSize)
+  }
+}
+
+function F(i) {
+  return (i.attributes & cF.REPARSE_POINT) !== 0 && DXr(i.reparseTag)
+}
+
+function U(i, e) {
+  let E = i.queryAttributes(e);
+  return (E & cF.REPARSE_POINT) !== 0 ? i.queryAttributeTag(e) : {
+    attributes: E,
+    reparseTag: 0
+  }
+}
+
+function Oe(i, e) {
+  let E = (R) => R !== null && e.ino !== 0n && e.dev === R && Rpt(e.ino, i.ino),
+    T = E(i.dev32) ? "serial32" : E(i.dev64) ? "serial64" : null;
+  return t(`anchor (win32): identity bridge ${T??"none"} \u2014 bun dev=${e.dev} ino=${e.ino}; nt serial32=${i.dev32} serial64=${i.dev64??"n/a"} index=${i.ino}`), T
+}
+
+function te(i) {
+  return /^\\\\\?\\UNC\\/i.test(i) || i.startsWith("\\\\") && !i.startsWith("\\\\?\\") && !i.startsWith("\\\\.\\")
+}
+async function pe(i, e, E) {
+  let {
+    fs: T
+  } = i, {
+    realRoot: R
+  } = E;
+  if (te(R)) return t("anchor (win32): the root is on a network share: no anchored backend here"), {
+    unanchored: "remote_volume"
+  };
+  let O = 0,
+    _;
+  try {
+    if (O = e.open(0, REn(R), {
+        access: x,
+        disposition: e5e.FILE_OPEN,
+        options: v
+      }), (e.queryDevice(O).characteristics & MXr) !== 0) return e.close(O), t("anchor (win32): the root is on a remote volume: no anchored backend here"), {
+      unanchored: "remote_volume"
+    };
+    let n = A(e, O);
+    if (F(n)) throw m("ELOOP");
+    if (await xEn(i, E) !== R) throw m("WORKING_ROOT_NOT_CANONICAL");
+    let r = Oe(n, await T.lstat(R, {
+      bigint: !0
+    }));
+    if (r === null) return e.close(O), {
+      unanchored: "unstable_identity"
+    };
+    _ = r
+  } catch (n) {
+    if (O !== 0) e.close(O);
+    let r = k(n);
+    if (r === "ENOENT" || r === "ENOTDIR" || r === "ELOOP" || r === "EPERM" || r === "WORKING_ROOT_NOT_CANONICAL" || r === "EBUSY" || r === "EMFILE" || r === "ENFILE" || r === "ENOMEM" || r === "EAGAIN" || r === "ETIMEDOUT" || r === "EIO") throw n;
+    return t(`anchor (win32): bring-up failed (${r??"no code"}, status 0x${(qIe(n)??0).toString(16)}): no anchored backend here`, {
+      level: "warn"
+    }), {
+      unanchored: "bring_up_failed"
+    }
+  }
+  let b = (n, r, s, o, c = !1) => e.open(n, S(r, c), {
+      access: s,
+      disposition: e5e.FILE_OPEN,
+      options: o
+    }),
+    h = async (n, r, s, o, c) => {
+      let u = b(n, r, s, o);
+      try {
+        return await c(u)
+      } finally {
+        e.close(u)
+      }
+    }, L = (n, r) => h(n, r, H, g, (s) => A(e, s).stats(_)), y = async (n, r, s) => {
+      if ((s & ~ue & de) !== 0) throw Error("anchored open never writes on this backend");
+      let o = K(n, r, g, !1);
+      try {
+        let c = U(e, o);
+        if (F(c)) throw m("ELOOP");
+        if ((c.attributes & cF.DIRECTORY) !== 0) throw m("EISDIR");
+        if (Q(c.attributes)) throw m("WORKING_FILE_OFFLINE");
+        if ((c.attributes & cF.REPARSE_POINT) === 0) return V(o)
+      } catch (c) {
+        throw e.close(o), c
+      }
+      return V(ie(n, r, o))
+    }, K = (n, r, s, o) => {
+      let c = (u) => e.open(n, S(r), {
+        access: u,
+        disposition: e5e.FILE_OPEN,
+        options: s,
+        dontReparse: o
+      });
+      try {
+        return c(IXr | BT.FILE_WRITE_ATTRIBUTES)
+      } catch (u) {
+        let I = k(u);
+        if (I !== "EPERM" && I !== "EROFS") throw u;
+        return c(IXr)
+      }
+    }, ie = (n, r, s) => {
+      try {
+        let o;
+        try {
+          o = K(n, r, t6.FILE_SYNCHRONOUS_IO_NONALERT, !0)
+        } catch (c) {
+          if (le.has(qIe(c) ?? 0)) throw t(`anchor (win32): a filter-served file's second open met a link refusal (status 0x${(qIe(c)??0).toString(16)}); reported as a link`), c;
+          throw t(`anchor (win32): a filter-served file could not be reopened for its bytes (${k(c)??"no code"}, status 0x${(qIe(c)??0).toString(16)}); unreadable this round`), m("WORKING_FILE_NOT_SERVED")
+        }
+        try {
+          let c = e.queryInformation(o);
+          if (Q(c.attributes)) throw m("WORKING_FILE_OFFLINE");
+          if (c.indexNumber !== e.queryInformation(s).indexNumber || e.queryVolume(o).serialNumber !== e.queryVolume(s).serialNumber) throw t("anchor (win32): a filter-served file reopened as another file; unreadable this round"), m("WORKING_FILE_NOT_SERVED");
+          return o
+        } catch (c) {
+          throw e.close(o), c
+        }
+      } finally {
+        e.close(s)
+      }
+    }, V = (n) => {
+      let r = !1,
+        s = () => {
+          if (r) throw m("EBADF");
+          return n
+        },
+        o = () => A(e, s()).stats(_);
+      async function c(d) {
+        return d?.bigint === !0 ? o() : me(o())
+      }
+      let u = (d, l) => e.read(s(), d, BigInt(l));
+      async function* I() {
+        for (let d = 0;;) {
+          let l = Buffer.allocUnsafe(ee),
+            N = u(l, d);
+          if (N === 0) return;
+          d += N, yield l.subarray(0, N), await new Promise((f) => setImmediate(f))
+        }
+      }
+      return {
+        stat: c,
+        read: async (d, l, N, f) => {
+          let C = u(d.subarray(l, l + Math.min(N, ee)), f);
+          return await new Promise((p) => setImmediate(p)), {
+            bytesRead: C
+          }
+        },
+        readFile: async () => {
+          let d = [];
+          for await (let l of I()) d.push(l);
+          return Buffer.concat(d)
+        },
+        createReadStream: () => I(),
+        chmod: async (d) => {
+          let l = e.queryAttributes(s()),
+            N = (d & 128) === 0 ? l | cF.READONLY : l & ~cF.READONLY;
+          if (N !== l) e.setAttributes(s(), N === 0 ? cF.NORMAL : N)
+        },
+        utimes: async (d, l) => e.setTimes(s(), W(d), W(l)),
+        close: async () => {
+          if (!r) r = !0, e.close(n)
+        }
+      }
+    }, q = async (n) => {
+      try {
+        await n()
+      } catch (r) {
+        throw k(r) === "EBUSY" ? Object.assign(m("WORKING_FILE_HELD"), {
+          cause: r
+        }) : r
+      }
+    }, G = (n) => q(async () => {
+      await AC(n)
+    }), Y = BT.DELETE | BT.FILE_WRITE_ATTRIBUTES | H, z = (n) => {
+      try {
+        return A(e, n).stats(_)
+      } catch (r) {
+        return re("a new file's stat could not be read through its handle, so the folder check goes on without it", r), null
+      }
+    }, P = (n, r, s, o, c, u) => (c ? q : G)(() => h(n, r, u === void 0 ? BT.DELETE | H : Y, g, async (I) => {
+      e.renameByHandle(I, s, S(o), c);
+      try {
+        if (await u?.(z(I)) === !0) e.deleteByHandle(I)
+      } catch (d) {
+        re("a renamed file could not be removed through its handle after its folder failed the check, so it stays at its new name", d)
+      }
+    })), Z = (n, r, s, o) => G(() => h(n, r, BT.FILE_WRITE_ATTRIBUTES | BT.SYNCHRONIZE, g, (c) => e.linkByHandle(c, s, S(o)))), X = (n, r) => G(() => h(n, r, Y, g, (s) => {
+      let o = U(e, s);
+      if ((o.attributes & cF.DIRECTORY) !== 0 && !F(o)) throw m("EISDIR");
+      e.deleteByHandle(s)
+    })), j = (n, r, s, o = !1) => {
+      let c = b(n, r, s, v, o);
+      try {
+        if (F(U(e, c))) throw m("ENOTDIR");
+        return c
+      } catch (u) {
+        throw e.close(c), u
+      }
+    }, J = {
+      openDir: async (n, r, s) => j(n, r, x, s),
+      openDirToPass: async (n, r, s) => j(n, r, oe, s),
+      mkdir: async (n, r) => {
+        e.close(e.open(n, S(r), {
+          access: H,
+          disposition: e5e.FILE_CREATE,
+          options: v,
+          attributes: cF.NORMAL
+        }))
+      },
+      closeDir: async (n) => e.close(n),
+      create: async (n, r, s, o, c, u, I, d) => {
+        let l = e.open(n, S(r), {
+          access: qir | BT.FILE_READ_ATTRIBUTES | BT.DELETE,
+          disposition: e5e.FILE_CREATE,
+          options: t6.FILE_NON_DIRECTORY_FILE | t6.FILE_OPEN_REPARSE_POINT | t6.FILE_SYNCHRONOUS_IO_NONALERT | (u ? t6.FILE_WRITE_THROUGH : 0),
+          attributes: (c & 128) === 0 ? cF.READONLY : cF.NORMAL
+        });
+        try {
+          for (let N = 0; N < o.length; N += D)
+            if (e.write(l, o.subarray(N, N + D), BigInt(N)), N + D < o.length) await new Promise((f) => setImmediate(f));
+          await d?.(z(l))
+        } catch (N) {
+          try {
+            e.deleteByHandle(l)
+          } catch {}
+          throw e.close(l), N
+        }
+        e.close(l)
+      },
+      createAndOpen: async (n, r, s, o) => {
+        let c = e.open(n, S(r), {
+            access: qir | BT.FILE_READ_ATTRIBUTES,
+            disposition: e5e.FILE_CREATE,
+            options: t6.FILE_NON_DIRECTORY_FILE | t6.FILE_OPEN_REPARSE_POINT | t6.FILE_SYNCHRONOUS_IO_NONALERT | t6.FILE_WRITE_THROUGH,
+            attributes: (o & 128) === 0 ? cF.READONLY : cF.NORMAL
+          }),
+          u = !1,
+          I = () => {
+            if (u) throw m("EBADF");
+            return c
+          };
+        return {
+          stat: async () => A(e, I()).stats(_),
+          writeFile: async (d) => {
+            for (let l = 0; l < d.length; l += D) e.write(I(), d.subarray(l, l + D), BigInt(l)), await new Promise((N) => setImmediate(N))
+          },
+          write: async (d, l, N, f) => {
+            if (![l, N, f].every((p) => Number.isSafeInteger(p) && p >= 0) || l + N > d.length) throw m("EINVAL");
+            let C = d.subarray(l, l + Math.min(N, D));
+            return e.write(I(), C, BigInt(f)), await new Promise((p) => setImmediate(p)), {
+              bytesWritten: C.length
+            }
+          },
+          utimes: async (d, l) => e.setTimes(I(), W(d), W(l)),
+          sync: async () => {},
+          close: async () => {
+            if (!u) u = !0, e.close(c)
+          }
+        }
+      },
+      link: Z,
+      rename: (n, r, s, o) => P(n, r, s, o, !0),
+      renameNoReplace: (n, r, s, o, c) => P(n, r, s, o, !1, c),
+      symlink: async (n, r, s) => {
+        a7o(n);
+        let o;
+        try {
+          o = e.open(r, S(s), {
+            access: qir | BT.FILE_READ_ATTRIBUTES | BT.DELETE,
+            disposition: e5e.FILE_CREATE,
+            options: t6.FILE_NON_DIRECTORY_FILE | t6.FILE_OPEN_REPARSE_POINT | t6.FILE_SYNCHRONOUS_IO_NONALERT,
+            attributes: cF.NORMAL
+          })
+        } catch (c) {
+          throw k(c) === "EISDIR" ? m("EEXIST") : c
+        }
+        try {
+          e.setSymlink(o, n)
+        } catch (c) {
+          try {
+            e.deleteByHandle(o)
+          } catch {}
+          throw e.close(o), c
+        }
+        e.close(o)
+      },
+      readlink: (n, r) => h(n, r, H, g, (s) => e.readSymlink(s)),
+      unlink: X,
+      rmdir: (n, r) => h(n, r, Y, v, (s) => {
+        if (F(U(e, s))) throw m("ENOTDIR");
+        e.deleteByHandle(s)
+      }),
+      list: async (n, r) => e.listDirectory(n, r),
+      lstat: L,
+      open: (n, r, s, o) => y(n, r, o),
+      hold: async (n) => {
+        let r = await T.realpath(n).catch(() => null),
+          s = r !== null && /^[a-zA-Z]:$/.test(r) ? `${r}\\` : r;
+        if (s === null || te(s)) return null;
+        let o;
+        try {
+          o = e.open(0, REn(s), {
+            access: x,
+            disposition: e5e.FILE_OPEN,
+            options: v
+          })
+        } catch {
+          return null
+        }
+        try {
+          if ((e.queryDevice(o).characteristics & MXr) !== 0) return e.close(o), null;
+          let [c, u] = await Promise.all([A(e, o), T.lstat(s, {
+            bigint: !0
+          })]), I = c.stats(_);
+          if (F(c) || !I.isDirectory() || !u.isDirectory() || I.ino === 0n || I.dev !== u.dev || !Rpt(I.ino, u.ino)) return e.close(o), null
+        } catch {
+          return e.close(o), null
+        }
+        return J.holdOpenedDir(o, s)
+      },
+      getHeldDir: (n) => n.dir,
+      holdOpenedDir: (n, r) => {
+        let s = !1;
+        return {
+          realPath: r,
+          dir: n,
+          stat: async () => A(e, n).stats(_),
+          close: async () => {
+            if (!s) s = !0, e.close(n)
+          }
+        }
+      },
+      renameOut: (n, r, s, o) => P(n, r, s.dir, o, !0),
+      renameIn: (n, r, s, o) => P(n.dir, r, s, o, !0),
+      linkIn: (n, r, s, o) => Z(n.dir, r, s, o),
+      renameInNoReplace: (n, r, s, o, c) => P(n.dir, r, s, o, !1, c),
+      statIn: (n, r) => L(n.dir, r),
+      openIn: (n, r, s) => y(n.dir, r, s),
+      unlinkIn: (n, r) => X(n.dir, r)
+    }, M = !1, se = {
+      stat: async () => {
+        if (M) throw m("EBADF");
+        return A(e, O).stats(_)
+      },
+      close: async () => {
+        if (!M) M = !0, e.close(O)
+      }
+    };
+  return t("anchor (win32): held-handle backend up"), {
+    root: se,
+    held: O,
+    ops: J
+  }
+}
+
+function re(i, e) {
+  let E = qIe(e);
+  if (E === void 0) {
+    a(e);
+    return
+  }
+  t(`anchor (win32): ${i} (${k(e)??"no code"}, status 0x${E.toString(16)})`)
+}
+export {
+  pe as openWin32Backend
+};

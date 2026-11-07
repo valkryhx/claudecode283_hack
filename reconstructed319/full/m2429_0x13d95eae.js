@@ -1,0 +1,2702 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  d,
+  k,
+  K
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  th,
+  O$e
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  t,
+  ee
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  P,
+  Wn,
+  Il,
+  Yr
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  _h
+} from "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  mE,
+  xNn
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  d7
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  lbt,
+  Van,
+  NBt,
+  Rzn,
+  jie,
+  FAe,
+  Wie,
+  dLr,
+  bT,
+  $Ae,
+  Fzn,
+  uLr,
+  eln,
+  eHs,
+  tln,
+  IRo,
+  UU,
+  nln,
+  Gie,
+  tHs,
+  fLr,
+  hbt,
+  $Ro,
+  URo,
+  gLr,
+  BRo,
+  oHs,
+  sHs,
+  oln,
+  jKe,
+  Bzn,
+  dj,
+  s0,
+  sln,
+  Pm,
+  VJ,
+  PZi,
+  a1t
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  dV,
+  sPr,
+  Ngt,
+  PHt
+} from "B:/~BUN/root/chunk-zstr1969.js";
+import {
+  gs
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import {
+  Fr
+} from "B:/~BUN/root/chunk-ge2k1jpp.js";
+import {
+  Obo,
+  Kbo
+} from "B:/~BUN/root/chunk-n98vg3jf.js";
+import {
+  Ae
+} from "B:/~BUN/root/chunk-eds8xkh8.js";
+import {
+  Nve,
+  $ve,
+  Baa,
+  Igi,
+  Mgi,
+  $Qo,
+  prs,
+  uAn,
+  q8t,
+  Fro,
+  Hro,
+  Y8t,
+  $ro,
+  n9t
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import {
+  Z_
+} from "B:/~BUN/root/chunk-esnm3r09.js";
+import {
+  hze,
+  jms
+} from "B:/~BUN/root/chunk-63btkzab.js";
+import {
+  m1,
+  gA,
+  HW,
+  j6
+} from "B:/~BUN/root/chunk-k5xd4a86.js";
+import {
+  Dke
+} from "B:/~BUN/root/chunk-qcxpj564.js";
+import {
+  iBe
+} from "B:/~BUN/root/chunk-59e03kdq.js";
+import {
+  pni,
+  nit
+} from "B:/~BUN/root/chunk-dsg3ep96.js";
+import {
+  D
+} from "B:/~BUN/root/chunk-8mqsat26.js";
+import {
+  o,
+  C,
+  u,
+  me,
+  gl
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  U,
+  L
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  lstat as Fn,
+  readdir as Le,
+  readFile as Ie,
+  stat as bt
+} from "fs/promises";
+import * as y from "path";
+
+function ge(e) {
+  let n = /@ts-/i.test(e),
+    s = /\u2500\u2500 from plugin |\/\/\s*Skipped:/.test(e);
+  return n ? "@ts-" : s ? "framing" : void 0
+}
+var j = (e, n, ...s) => e?.kind === n && s.includes(e.text);
+
+function Be(e) {
+  let n = j(e, "punct", "{", "(", "["),
+    s = j(e, "punct", "}", ")", "]");
+  return n ? 1 : s ? -1 : 0
+}
+var V = (e, n, s) => ({
+  kind: e,
+  text: n,
+  line: s
+});
+var It = (e, n, s) => {
+  let r = e.indexOf("*/", n + 2),
+    a = r !== -1,
+    i = a ? r + 2 : e.length,
+    l = e.slice(n, i),
+    c = l.match(/\r\n|[\n\r\u2028\u2029]/g),
+    m = s + (c?.length ?? 0),
+    p = a ? ge(l) : "/*",
+    g = {
+      end: i,
+      line: m
+    };
+  return p ? {
+    ...g,
+    token: V("stray", p, s)
+  } : g
+};
+var Ft = (e, n, s) => {
+  let r = e.slice(n).search(/[\n\r\u2028\u2029]/),
+    a = r === -1 ? e.length : n + r,
+    i = e.slice(n, a).trim(),
+    l = ge(i),
+    m = i.startsWith("///") ? V("reference", i, s) : l ? V("stray", l, s) : void 0;
+  return m ? {
+    end: a,
+    line: s,
+    token: m
+  } : {
+    end: a,
+    line: s
+  }
+};
+var Ue = (e, n, s) => {
+  let r = e[n] ?? "",
+    a = "",
+    i = n + 1;
+  while (i < e.length) {
+    let c = e[i] ?? "",
+      m = c === "\\" && i + 1 < e.length;
+    if (c === r || c === `
+` || c === "\r") break;
+    a += m ? e[i + 1] ?? "" : c, i += m ? 2 : 1
+  }
+  return e[i] === r ? {
+    end: i + 1,
+    line: s,
+    token: V("string", a, s)
+  } : {
+    end: i,
+    line: s,
+    token: V("stray", r, s)
+  }
+};
+var Dt = (e, n, s) => {
+  let r = n + 1;
+  while (r < e.length && /[\w$]/.test(e[r] ?? "")) r += 1;
+  return {
+    end: r,
+    line: s,
+    token: V("word", e.slice(n, r), s)
+  }
+};
+
+function Ke(e, n) {
+  let s = e[n] ?? "",
+    r = e.slice(n, n + 2),
+    a = {
+      "//": Ft,
+      "/*": It
+    },
+    i = {
+      "'": Ue,
+      '"': Ue
+    },
+    l = /[\w$]/.test(s);
+  return a[r] ?? i[s] ?? (l ? Dt : void 0)
+}
+
+function Ge(e) {
+  let n = [],
+    s = [],
+    r = 0,
+    a = 0,
+    i = 1,
+    l = !1,
+    c = 1;
+  while (a < e.length) {
+    let m = e[a] ?? "",
+      p = m === `
+` || m === "\u2028" || m === "\u2029" || m === "\r" && e[a + 1] !== `
+`;
+    if (l) {
+      let T = m === "\\",
+        w = m === "$" && e[a + 1] === "{",
+        E = m === "`";
+      if (w) s.push(r);
+      l = !w && !E, i += p ? 1 : 0, a += T || w ? 2 : 1;
+      continue
+    }
+    let g = Ke(e, a),
+      h = m === "`",
+      v = m === "}" && s.length > 0 && r === s.at(-1),
+      b = /[\t\n\v\f\r \u2028\u2029]/.test(m),
+      R = m === "/" || m === "\\",
+      S = /[!-~]/.test(m) && !R,
+      x = !b && !S,
+      f = R ? m : "other";
+    if (g) {
+      let T = g(e, a, i);
+      if (T.token) n.push(T.token);
+      a = T.end, i = T.line;
+      continue
+    }
+    if (h) n.push(V("string", "`", i)), c = i;
+    if (x) n.push(V("stray", f, i));
+    if (v) s.pop();
+    if (!h && !v && !x && !b) n.push(V("punct", m, i)), r += m === "{" ? 1 : m === "}" ? -1 : 0;
+    l = h || v, i += p ? 1 : 0, a += 1
+  }
+  if (l || s.length > 0) n.push(V("stray", "`", c));
+  return n
+}
+var le = (e, n) => [e[n], e[n + 1], e[n + 2]];
+
+function Ye(e, n) {
+  let [s, r, a] = le(e, n), i = j(s, "word", "global") && j(r, "punct", "{"), l = j(s, "word", "module", "namespace") && r?.kind === "string", c = j(s, "word", "as") && j(r, "word", "namespace"), m = j(s, "word", "interface") && r?.kind === "word" && r.line !== s?.line, p = j(s, "word", "interface") && j(r, "word", "EngineInterface") && !j(a, "punct", "{");
+  return i ? "`global { \u2026 }` augments the global scope" : l ? `a nested \`module '${r.text}'\` augments another module` : c ? "`as namespace` declares a global" : m ? "`interface` without its name on the same line" : p ? "`EngineInterface` takes members only, no `extends` or type parameters" : void 0
+}
+
+function qe(e) {
+  let n = [],
+    s = 0;
+  for (let [r, a] of e.entries()) {
+    let l = s === 0 && j(e[r - 1], "word", "declare") && j(a, "word", "module") ? void 0 : Ye(e, r);
+    if (s += Be(a), l !== void 0) n.push(`line ${a.line}: ${l}; the contract may only augment 'claude-code', at its top level`)
+  }
+  return n
+}
+
+function ye(e, n, s) {
+  let [r, a, i] = le(e, n);
+  return r?.kind === "word" && r.text === "interface" && a?.kind === "word" && a.text === s && a.line === r.line && i?.kind === "punct" && i.text === "{"
+}
+
+function oe(e, n) {
+  let s = 0;
+  for (let r = n; r < e.length; r += 1) {
+    let a = e[r];
+    if (!(a?.kind === "punct" && (a.text === "{" || a.text === "}"))) continue;
+    if (s += a.text === "{" ? 1 : -1, s === 0) return r
+  }
+  return e.length
+}
+
+function ce(e, n) {
+  let s = [],
+    r = oe(e, n),
+    a = (c, ...m) => e[c]?.kind === "punct" && m.includes(e[c].text),
+    i = 0,
+    l = !0;
+  for (let c = n + 1; c < r; c += 1) {
+    let m = a(c, "{", "(", "["),
+      p = a(c, "}", ")", "]"),
+      g = i === 0 && a(c, ";", ","),
+      h = (e[c - 1]?.line ?? 0) < (e[c]?.line ?? 0),
+      b = e[c]?.text === "readonly" && e[c + 1]?.kind !== "punct" ? c + 1 : c,
+      R = e[b],
+      S = i === 0 && (l || h) && R !== void 0 && R.kind !== "punct" && a(b + 1, ":", "?", "(", "<");
+    if (i += m ? 1 : p ? -1 : 0, l = g, S) s.push(R.text)
+  }
+  return s
+}
+
+function Ze(e, n) {
+  let s = new Set;
+  for (let {
+      start: r,
+      end: a
+    }
+    of n)
+    for (let i = r; i < a; i += 1) {
+      if (!ye(e, i, "EngineInterface")) continue;
+      let l = i + 2;
+      for (let c of ce(e, l)) s.add(c)
+    }
+  return [...s]
+}
+var Je = (e) => e.split(/\r\n|[\n\r\u2028\u2029]/).flatMap((n, s) => /^\s*(?:\*\s*)?\/\/\s*(?:\u2500\u2500 from plugin |Skipped:)/.test(n) || /^\s*(?:\/\/\/?|\/?\*)\s*@ts-/i.test(n) ? [`line ${s+1}: a line that would read as the roll-up's framing or a compiler pragma once copied; a contract carries neither`] : []);
+
+function Xe(e) {
+  let n = [],
+    s = "reaches outside the file; the contract must be self-contained (no " + "import, export \u2026 from, require or reference)",
+    r = 0;
+  for (let [a, i] of e.entries()) {
+    let l = e[a + 1],
+      c = e[a + 2],
+      m = (f) => i.kind === "word" && i.text === f,
+      p = l?.kind === "punct" && l.text === "(" && c?.kind === "string",
+      g = l?.kind === "string" || l?.kind === "word" || l?.kind === "punct" && (l.text === "{" || l.text === "*") || p,
+      h = i.line !== r,
+      v = i.kind === "reference",
+      b = m("import") && g,
+      R = m("from") && h && l?.kind === "string",
+      S = m("require") && h && p,
+      x = v ? "a triple-slash reference" : b ? "`import`" : R ? `\`from '${l.text}'\`` : S ? `\`require('${c.text}')\`` : void 0;
+    if (x === void 0) continue;
+    r = i.line, n.push(`line ${i.line}: ${x} ${s}`)
+  }
+  return n
+}
+var Qe = /[\p{Cc}\p{Cf}\p{Cs}\p{Default_Ignorable_Code_Point}\u2028\u2029]/u;
+var et = (e) => e.split(`
+`).flatMap((n, s) => Qe.test(n.replace(/[\t\r]/g, "")) ? [`line ${s+1}: an invisible or reordering character (control, bidi, zero-width, line separator); a contract holds none`] : []);
+
+function tt(e) {
+  try {
+    sPr("contract.d.ts", e);
+    return
+  } catch (n) {
+    return `does not parse as TypeScript: ${d(n)}`
+  }
+}
+
+function nt(e, n) {
+  let s = new Map,
+    r = (a, i) => e[a]?.kind === "punct" && e[a].text === i;
+  for (let {
+      start: a,
+      end: i
+    }
+    of n)
+    for (let l = a; l < i; l += 1) {
+      if (!ye(e, l, "PluginState")) continue;
+      let c = l + 2,
+        m = oe(e, c),
+        p = new Set(ce(e, c)),
+        g = 0;
+      for (let h = c + 1; h < m; h += 1) {
+        let v = e[h];
+        if (g === 0 && v !== void 0 && v.kind !== "punct" && p.has(v.text) && r(h + 1, ":") && r(h + 2, "{")) {
+          let x = s.get(v.text) ?? new Set;
+          for (let f of ce(e, h + 2)) x.add(f);
+          s.set(v.text, x)
+        }
+        let R = r(h, "{") || r(h, "(") || r(h, "["),
+          S = r(h, "}") || r(h, ")") || r(h, "]");
+        g += Number(R) - Number(S)
+      }
+    }
+  return [...s].map(([a, i]) => ({
+    plugin: a,
+    keys: [...i]
+  }))
+}
+
+function st(e) {
+  let n = sPr("contract.ts", e).replace(/^\s*export\s*\{\s*\};?\s*$/m, "").trim(),
+    s = Wn(n);
+  return n === "" ? [] : [`the contract holds code that would run (\`${s}\`); a contract is types only`]
+}
+var ot = (e) => e.flatMap((n, s) => {
+  let r = e[s - 1],
+    a = j(n, "word", "class", "const", "enum", "function", "let", "var"),
+    i = r === void 0 || r.line < n.line || j(r, "punct", ";", "{", "}") || j(r, "word", "abstract", "async", "declare", "default", "export"),
+    l = j(e[s + 1], "punct", ":", "?", "(", "<");
+  return a && i && !l ? [`line ${n.line}: \`${n.text}\` declares something that runs; a contract holds types only`] : []
+});
+var rt = {
+  "/": "a `/` outside a comment or string (a regular expression or arithmetic)",
+  "\\": "a `\\` outside a string",
+  "`": "a template literal that never closes",
+  "'": "a string that never closes on its line",
+  '"': "a string that never closes on its line",
+  "/*": "a comment that never closes",
+  "@ts-": "a `@ts-` compiler pragma in a comment",
+  framing: "a comment that imitates the roll-up's banner or trailer",
+  other: "a character outside plain ASCII (or a control character) in code"
+};
+var at = (e) => e.filter((n) => n.kind === "stray").map((n) => `line ${n.line}: ` + (rt[n.text] ?? `\`${n.text}\``) + ": a type contract never holds one, so the check refuses it rather than read past it");
+var pe = "claude-code";
+
+function it(e, n) {
+  let [s, r, a] = le(e, n), [, , i] = le(e, n + 1), l = j(s, "word", "declare") && j(r, "word", "module") && a?.kind === "string" && s?.line === r?.line && r?.line === a.line && j(i, "punct", "{"), c = l && a.text !== pe, m = j(s, "word", "declare") && !l, p = j(s, "word", "export") && !j(r, "word", "type", "interface"), g = j(s, "word", "abstract", "async", "default", "module", "namespace"), h = j(s, "word", "type", "interface") && !j(e[n - 1], "word", "export", "import");
+  return c ? `augments module '${a.text}'; the contract may only augment '${pe}'` : m ? `\`declare\` at the top level opens only \`declare module '${pe}' { \u2026 }\`, its three words on one line` : p ? "`export` at the top level is followed by `type` or `interface`: a contract exports types and nothing else" : g ? `\`${s?.text}\` at the top level: a contract holds type exports and \`declare module '${pe}'\` blocks only` : h ? `a top-level \`${s?.text}\` without \`export\` would be global in a dependent's program; export it` : void 0
+}
+
+function lt(e) {
+  let n = [],
+    s = [],
+    r = 0,
+    a = 0;
+  while (a < e.length) {
+    let [i, l, c] = le(e, a), p = r === 0 && i?.kind === "word" ? it(e, a) : void 0, g = p === void 0 || p.startsWith("augments"), h = r === 0 && g && j(i, "word", "declare") && j(l, "word", "module") && c?.kind === "string", v = a + 2;
+    if (r += Be(i), p !== void 0) n.push(`line ${i?.line}: ${p}`);
+    if (!h) {
+      a += 1;
+      continue
+    }
+    let b = oe(e, v + 1);
+    if (b === e.length) n.push(`line ${i?.line}: \`declare module\` never closes: the text does not lex as a type contract, so the check refuses it`);
+    s.push({
+      start: v + 2,
+      end: b
+    }), a = b + 1
+  }
+  return {
+    problems: n,
+    blocks: s
+  }
+}
+
+function ct(e) {
+  let n = tt(e);
+  if (n !== void 0) return {
+    problems: [n],
+    nouns: [],
+    state: []
+  };
+  let s = Ge(e),
+    r = s.filter((l) => l.kind !== "reference"),
+    {
+      problems: a,
+      blocks: i
+    } = lt(r);
+  return {
+    problems: [...et(e), ...at(s), ...Je(e), ...Xe(s), ...a, ...ot(r), ...st(e), ...qe(r)],
+    nouns: Ze(r, i),
+    state: nt(r, i)
+  }
+}
+import {
+  isAbsolute as yn,
+  relative as kn,
+  resolve as wn
+} from "path";
+var de = (...e) => ({
+  kind: "refused",
+  problems: e.map(Yr)
+});
+async function ke(e, n, s) {
+  let r = e ?? q8t,
+    a = wn(n, r),
+    i = kn(n, a);
+  if (i.startsWith("..") || yn(i)) return de(`${r} leaves the plugin's folder`);
+  let c = (x) => de(`${r}: ${Hro(s,a,x)}`),
+    m = await Ngt(a, n, s).then((x) => x, (x) => e === void 0 && Fro(x) ? void 0 : c(x));
+  if (m === void 0 || "kind" in m) return m;
+  if (m.size > Y8t) return de(`${r} is over ${Y8t} bytes and was not read`);
+  let h = await $ro(m.real).then((x) => x, c);
+  if (typeof h !== "string") return h;
+  let {
+    problems: v,
+    nouns: b,
+    state: R
+  } = ct(h);
+  return v.length === 0 ? {
+    kind: "read",
+    text: h,
+    nouns: b,
+    state: R
+  } : de(...v)
+}
+
+function xn({
+  names: e,
+  owner: n,
+  declared: s,
+  others: r,
+  contract: a,
+  refusal: i
+}) {
+  let l = new Map;
+  for (let {
+      plugin: p,
+      keys: g
+    }
+    of [...s, ...r ?? []]) {
+    let h = l.get(p) ?? new Set;
+    g.forEach((v) => h.add(v)), l.set(p, h)
+  }
+  let c = [],
+    m = new Set;
+  for (let {
+      plugin: p,
+      key: g
+    }
+    of e.writes)
+    if (p !== n) c.push(`$.state.set refers to ${PHt({plugin:p,key:g})}, which ${p} owns: only a value's owner writes it (to change what is written, hook ${p}'s state.set and rewrite e.value)`);
+  for (let {
+      plugin: p,
+      key: g
+    }
+    of [...e.reads, ...e.writes]) {
+    let h = p === n,
+      v = h || r !== void 0,
+      b = PHt({
+        plugin: p,
+        key: g
+      });
+    if (!v) {
+      m.add(b);
+      continue
+    }
+    let R = l.get(p)?.has(g) === !0,
+      S = h ? a ?? "the manifest's types contract" : "no enabled plugin's contract",
+      x = i ?? `${S} must name it in interface PluginState { ${p}: { ${g}: ... } }`,
+      f = h ? `${b} is not declared: ${x}` : `${b} is not declared: ${S} names it in PluginState`;
+    if (!R && !c.includes(f)) c.push(f)
+  }
+  return {
+    problems: c,
+    unchecked: [...m]
+  }
+}
+var Ce = ["monitors", "themes"],
+  Cn = [{
+    key: "commands",
+    recordPathProperty: "source"
+  }, {
+    key: "hooks",
+    bareStringIndexed: !0,
+    jsonFile: !0
+  }, {
+    key: "agents",
+    bareStringIndexed: !0
+  }, {
+    key: "skills",
+    bareStringIndexed: !0
+  }, {
+    key: "outputStyles"
+  }, {
+    key: "themes"
+  }, {
+    key: "monitors",
+    jsonFile: !0
+  }, {
+    key: "lspServers",
+    jsonFile: !0
+  }, {
+    key: "workflows",
+    bareStringIndexed: !0
+  }, {
+    key: "types",
+    bareStringOnly: !0
+  }, {
+    key: "mcpServers",
+    jsonFile: !0,
+    acceptsUrl: !0,
+    missingConsequence: (e) => e.endsWith(".json") ? "The plugin loader skips a missing MCP servers file without reporting it, so none of its servers will load." : void 0
+  }];
+
+function dt(e) {
+  let n = D(e.experimental) ? e.experimental : void 0,
+    s = [];
+  for (let r of Cn) {
+    let a = e[r.key],
+      i = r.key,
+      l = n !== void 0 && Ce.includes(r.key) && Object.hasOwn(n, r.key) ? n[r.key] : void 0;
+    if (l != null) a = l, i = `experimental.${r.key}`;
+    let c = [];
+    if (r.bareStringOnly) c.push([i, a]);
+    else if (Array.isArray(a))
+      for (let [m, p] of a.entries()) c.push([`${i}[${m}]`, p]);
+    else if (!D(a)) c.push([r.bareStringIndexed ? `${i}[0]` : i, a]);
+    else if (r.recordPathProperty !== void 0) {
+      for (let [m, p] of Object.entries(a))
+        if (D(p)) c.push([`${i}.${m}.${r.recordPathProperty}`, p[r.recordPathProperty]])
+    }
+    for (let [m, p] of c)
+      if (typeof p === "string" && !(r.acceptsUrl && /^[a-z][a-z0-9+.-]*:\/\//i.test(p))) s.push({
+        spec: r,
+        field: m,
+        relPath: p
+      })
+  }
+  return s
+}
+var WKr = ["privacyPolicyUrl", "privacy_policy", "privacyPolicy"],
+  SGo = ["supportUrl", "support", "bugs"],
+  wGo = ["termsOfServiceUrl", "terms_of_service"],
+  kGo = ["documentationUrl", "docs"],
+  ut = new Set(["icon", "screenshots", "classification", ...WKr, ...SGo, ...wGo, ...kGo]);
+var Rn = ["CLAUDE_PLUGIN_ROOT", "CLAUDE_PLUGIN_DATA", "CLAUDE_PROJECT_DIR"];
+
+function mt(e) {
+  let n = [];
+  for (let [s, r] of Object.entries(e))
+    for (let a of r ?? [])
+      for (let i of a.hooks) {
+        if (i.type !== "command" || i.args !== void 0 || i.shell === "powershell") continue;
+        let l = En(i.command);
+        if (l.length > 0) n.push({
+          event: s,
+          command: i.command,
+          placeholders: l
+        })
+      }
+  return n
+}
+
+function En(e) {
+  let n = new Set,
+    s = !1,
+    r = !1;
+  for (let a = 0; a < e.length; a++) {
+    let i = e[a];
+    if (!s && i === "\\") {
+      a++;
+      continue
+    }
+    if (i === "'" && !r) {
+      s = !s;
+      continue
+    }
+    if (i === '"' && !s) {
+      r = !r;
+      continue
+    }
+    if (i !== "$" || s || r) continue;
+    for (let l of Rn) {
+      let c = e.startsWith(`{${l}}`, a + 1),
+        m = e.startsWith(l, a + 1) && !/[A-Za-z0-9_]/.test(e.charAt(a + 1 + l.length));
+      if (c || m) {
+        n.add(`\${${l}}`);
+        break
+      }
+    }
+  }
+  return [...n]
+}
+import {
+  resolve as jn
+} from "path";
+import {
+  resolve as ht
+} from "path";
+import {
+  sep as ft
+} from "path";
+var Re = (e) => e.endsWith(ft) ? e.slice(0, -ft.length) : e;
+var Jyn = (e, n) => Re(ht(e)) === Re(ht(n));
+
+function we(e, n, s) {
+  let {
+    source: r
+  } = e;
+  return typeof r === "string" && Jyn(jn(n, r), s)
+}
+
+function zKr(e, n, s) {
+  return typeof e.source === "string" ? we(e, n, s.root) : e.name === s.name
+}
+import {
+  readFile as _n
+} from "fs/promises";
+async function GKr(e) {
+  try {
+    let n = Bzn().safeParse(ee(gs(await _n(e, {
+      encoding: "utf-8"
+    }))));
+    return n.success ? n.data : void 0
+  } catch {
+    return
+  }
+}
+var Dn = new Set(["category", "source", "tags", "strict", "id", "relevance", "headers", "headersHelper"]),
+  vt = new Map([
+    ["publisher", "a VS Code/Cursor extension manifest"],
+    ["engines", "a VS Code/Cursor extension manifest"],
+    ["categories", "a VS Code/Cursor extension manifest"],
+    ["icon", "a VS Code/Cursor extension manifest"],
+    ["contributes", "a VS Code/Cursor extension manifest"],
+    ["activationEvents", "a VS Code/Cursor extension manifest"],
+    ["preview", "a VS Code/Cursor extension manifest"],
+    ["main", "an npm package.json"],
+    ["type", "an npm package.json"],
+    ["files", "an npm package.json"],
+    ["bin", "an npm package.json"],
+    ["scripts", "an npm package.json"],
+    ["private", "an npm package.json"],
+    ["bugs", "an npm package.json"],
+    ["contributors", "an npm package.json"],
+    ["dxt_version", "an MCPB/DXT manifest"],
+    ["mcpb_version", "an MCPB/DXT manifest"],
+    ["user_config", "an MCPB/DXT manifest"],
+    ["compatibility", "an MCPB/DXT manifest"],
+    ["server", "an MCP server manifest"],
+    ["tools", "an MCP server manifest"],
+    ["prompts", "an MCP server manifest"],
+    ["resources", "an MCP server manifest"],
+    ["logo", "manifests across many tools"],
+    ["readme", "manifests across many tools"],
+    ["changelog", "manifests across many tools"],
+    ["support", "manifests across many tools"],
+    ["privacy_policy", "manifests across many tools"],
+    ["privacy_policies", "manifests across many tools"],
+    ["terms_of_service", "manifests across many tools"],
+    ["_comment", "manifests across many tools"],
+    ["$id", "a JSON Schema document"],
+    ["$comment", "a JSON Schema document"]
+  ]),
+  zn = new Map([
+    ["user_config", "userConfig"]
+  ]),
+  $t = new Set(["themes", "monitors", "outputStyles", "evals", "syntaxHighlighting"]),
+  Vn = new Set(prs.map(Z_));
+
+function uni(e, n) {
+  let s = e.every((a) => a.success),
+    r = e.some((a) => a.warnings.length > 0);
+  return {
+    noErrors: s,
+    hasWarnings: r,
+    allSuccess: n.strict ? s && !r : s
+  }
+}
+
+function Z(e) {
+  return e === null ? "null" : Array.isArray(e) ? "array" : typeof e
+}
+
+function Hn(e) {
+  let n = y.basename(e),
+    s = y.basename(y.dirname(e));
+  if (n === "plugin.json") return "plugin";
+  if (n === "marketplace.json") return "marketplace";
+  if (s === ".claude-plugin") return "plugin";
+  return "unknown"
+}
+
+function fe(e) {
+  return e.issues.map((n) => ({
+    path: n.path.join(".") || "root",
+    message: n.message,
+    code: n.code
+  }))
+}
+
+function Bn(e, n) {
+  if (vt.has(e)) return;
+  let s = e.length <= 3 ? 1 : 2,
+    r = e.toLowerCase(),
+    a, i = s + 1;
+  for (let l of n) {
+    if (Math.abs(l.length - e.length) > s) continue;
+    if (l.toLowerCase() === r) return l;
+    let c = VJ(e, l, s);
+    if (c < i) i = c, a = l
+  }
+  return a
+}
+
+function Un(e, n, s) {
+  if (s?.has(e)) return `Field '${e}' belongs in the marketplace entry (marketplace.json), ` + "not plugin.json. It's harmless here but unused \u2014 Claude Code " + "ignores it at load time.";
+  let r = Bn(e, n);
+  if (r) return `Unknown field '${e}' \u2014 did you mean '${r}'? Claude Code ignores unrecognized fields at load time, so this field has no effect.`;
+  let a = zn.get(e);
+  if (a && n.has(a)) return `Field '${e}' is the cross-tool spelling of Claude Code's '${a}'. Rename it to '${a}' for Claude Code to read it (the option ` + "shapes differ slightly \u2014 re-run validate after renaming to check). " + "As-is, Claude Code ignores it at load time.";
+  let i = vt.get(e);
+  if (i) return `Unknown field '${e}' (commonly seen in ${i}). Claude Code ignores unrecognized fields at load time, so it's safe to keep.`;
+  return `Unknown field '${e}'. Claude Code ignores it at load time.`
+}
+
+function Q(e, n, s, r, a, i) {
+  for (let l of Object.keys(e)) {
+    if (n.has(l) || i?.has(l)) continue;
+    r.push({
+      path: s ? `${s}.${l}` : l,
+      message: Un(l, n, a)
+    })
+  }
+}
+
+function Te(e) {
+  let n = e.replace(/^[a-zA-Z]:/, "");
+  return th(n) || O$e(n)
+}
+
+function Oe(e, n, s, r) {
+  if (Te(e)) s.push({
+    path: n,
+    message: r ? `Path contains "..": ${e}. ${r}` : `Path contains ".." which could be a path traversal attempt: ${e}`
+  })
+}
+
+function Kn(e) {
+  let n = e.replace(/^(\.\.\/)+/, "");
+  return `Plugin source paths are resolved relative to the marketplace root (the directory containing .claude-plugin/), not relative to marketplace.json. Use "${n!==e?`./${n}`:"./plugins/my-plugin"}" instead of "${e}".`
+}
+async function Qyn(e, n = {
+  kind: "alone"
+}) {
+  return ie(await Gn(e, n))
+}
+async function Gn(e, n) {
+  let s = y.resolve(e),
+    r;
+  try {
+    r = await Ie(s, {
+      encoding: "utf-8"
+    })
+  } catch (a) {
+    let i = k(a),
+      l;
+    if (i === "ENOENT") l = `File not found: ${s}`;
+    else if (i === "EISDIR") l = `Path is not a file: ${s}`;
+    else l = `Failed to read file: ${d(a)}`;
+    return {
+      success: !1,
+      errors: [{
+        path: "file",
+        message: l,
+        code: i
+      }],
+      warnings: [],
+      filePath: s,
+      fileType: "plugin"
+    }
+  }
+  return xt(s, r, n)
+}
+async function xt(e, n, s) {
+  let r = [],
+    a = [],
+    i = [],
+    l;
+  try {
+    l = ee(gs(n))
+  } catch (p) {
+    return {
+      success: !1,
+      errors: [{
+        path: "json",
+        message: `Invalid JSON syntax: ${d(p)}`
+      }],
+      warnings: [],
+      filePath: e,
+      fileType: "plugin"
+    }
+  }
+  let c = Nve(l, "plugin-json", {
+    pluginName: y.basename(y.dirname(y.dirname(e))),
+    manifestPath: e
+  });
+  if (!c.ok) r.push(...c.errors.map((p) => ({
+    ...p,
+    path: p.path || "root"
+  })));
+  else a.push(...c.hookNotes.map((p) => ({
+    path: "hooks",
+    message: `${p} at runtime`
+  })));
+  if (l && typeof l === "object") {
+    let p = c.rawCandidate ?? l,
+      g = y.dirname(e),
+      h = y.basename(g) === ".claude-plugin" ? y.dirname(g) : g,
+      v = async (b, R, S = "The runtime loader will report this as a load failure.") => {
+        if (Oe(b, R, r), Te(b) || y.isAbsolute(b) || /^[a-zA-Z]:/.test(b)) return;
+        try {
+          return await bt(y.resolve(h, b))
+        } catch (x) {
+          let f = k(x);
+          r.push({
+            path: R,
+            message: `Path not found: ${b}${f&&f!=="ENOENT"?` (${f})`:""}. ${S}`
+          });
+          return
+        }
+      };
+    for (let {
+        spec: b,
+        field: R,
+        relPath: S
+      }
+      of dt(p)) {
+      let x = await v(S, R, b.missingConsequence?.(S));
+      if (x === void 0) continue;
+      if (b.key === "skills" && !x.isDirectory()) {
+        let f = y.dirname(S),
+          T = y.basename(S).toLowerCase() === "skill.md" ? f === "." ? " \u2014 point to the plugin root '.' instead" : ` \u2014 point to the parent directory '${f}' instead` : "";
+        r.push({
+          path: R,
+          message: `Path is a file; skills entries must be directories containing SKILL.md${T}: ${S}`
+        })
+      }
+      if (b.jsonFile && S.endsWith(".json") && x.isDirectory()) r.push({
+        path: R,
+        message: `Path is a directory; ${b.key} must point to a JSON file: ${S}`
+      });
+      if (b.key === "types") {
+        let f = yt(await ke(S, h, y.basename(h)), {
+          relPath: S,
+          field: R
+        });
+        r.push(...f.errors), i.push(...f.notes)
+      }
+    }
+    if (p.types === void 0) {
+      let b = await ke(void 0, h, y.basename(h));
+      if (b?.kind === "read") i.push(...yt(b, {
+        relPath: q8t,
+        field: "types"
+      }).notes)
+    }
+    if (p.mcpServers !== void 0) {
+      let b = Array.isArray(p.mcpServers) ? p.mcpServers : [p.mcpServers],
+        R;
+      for (let [S, x] of b.entries()) {
+        let f = Array.isArray(p.mcpServers) ? `mcpServers[${S}]` : "mcpServers";
+        if (D(x)) {
+          R ??= await us(p, e);
+          for (let [T, w] of Object.entries(x)) {
+            let E = Rt(`${f}.${Ay(T,64)}`, w, R(T));
+            r.push(...E.errors), a.push(...E.warnings)
+          }
+        }
+      }
+    }
+  }
+  if (D(l)) {
+    let p = l,
+      g = c.rawCandidate ?? p;
+    if (Q(g, new Set(Object.keys(Gie().shape)), "", a, Dn, ut), "capabilities" in g) {
+      let h = a.findIndex((b) => b.path === "capabilities"),
+        v = {
+          path: "capabilities",
+          message: "'capabilities' is no longer read: what a hooks module hooks and calls on $ is read from its source and listed under its hooks.json below. Delete the field."
+        };
+      if (h === -1) a.push(v);
+      else a[h] = v
+    }
+    for (let h of Ce)
+      if (h in p) a.push({
+        path: h,
+        message: `'${h}' is an experimental component; declare it under 'experimental.${h}' instead of at the top level. Top-level still loads for now but will be removed in a future release.`
+      });
+    if ("experimental" in p)
+      if (D(p.experimental)) {
+        let h = p.experimental;
+        Q(h, $t, "experimental", a)
+      } else a.push({
+        path: "experimental",
+        message: `'experimental' must be an object containing component declarations; got ${Z(p.experimental)}. It will be ignored at load time.`
+      });
+    if ("metadata" in g && !D(g.metadata)) a.push({
+      path: "metadata",
+      message: `'metadata' must be a free-form object; got ${Z(g.metadata)}. It will be ignored at load time.`
+    });
+    if ("binaries" in p)
+      if (D(p.binaries)) {
+        let h = nln(p.binaries) ?? {},
+          v = 0;
+        for (let [R, S] of Object.entries(p.binaries)) {
+          if (eln.test(R) && typeof S === "object" && S !== null && typeof S.sha256 === "string" && eHs.test(S.sha256)) {
+            v++;
+            continue
+          }
+          if (!Object.hasOwn(h, R)) a.push({
+            path: `binaries.${R}`,
+            message: `Invalid binaries entry; it will be ignored at install time. The basename must match ${String(eln)} (lowercase, no leading or trailing dot) and the value must be an object with a 64-character lowercase-hex 'sha256'.`
+          })
+        }
+        if (v > IRo) a.push({
+          path: "binaries",
+          message: `${v} valid binaries entries declared, but the install hook processes at most ${IRo}; the rest are dropped entirely.`
+        });
+        let b = Object.keys(h).length;
+        if (b > tln) a.push({
+          path: "binaries",
+          message: `${b} valid binaries entries declared, but only the first ${tln} are fetched at install time; the rest are ignored. Reduce the count or split across plugins.`
+        })
+      } else a.push({
+        path: "binaries",
+        message: `'binaries' must be an object mapping basenames to { sha256 }; got ${Z(p.binaries)}. It will be ignored at install time.`
+      })
+  }
+  let m = c.manifest;
+  if (m) {
+    let p = m;
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.name)) {
+      let v = "Claude Code accepts it, but the";
+      if (sln.test(p.name)) v = "Claude Code refuses a plugin with this name when it is loaded by path (such as --plugin-dir), and cannot install it from a marketplace that lists it under this name. The";
+      else if (!dj(p.name)) v = "Claude Code cannot install it from a marketplace that lists it under this name, and the";
+      a.push({
+        path: "name",
+        message: `Plugin name "${p.name}" is not kebab-case. ${v} Claude.ai marketplace sync requires kebab-case (lowercase letters, digits, and hyphens only, e.g., "my-plugin").` + ue(p.name)
+      })
+    }
+    let h = s.kind === "alone" || s.kind === "entry" && s.entryName !== p.name ? nit(p.name) : void 0;
+    if (h)(h.severity === "error" ? r : a).push({
+      path: "name",
+      message: s.kind === "alone" ? `${h.message} ${pni}` : h.message
+    });
+    if (!p.version) a.push({
+      path: "version",
+      message: 'No version specified. Consider adding a version following semver (e.g., "1.0.0")'
+    });
+    if (!p.description) a.push({
+      path: "description",
+      message: "No description provided. Adding a description helps users understand what your plugin does"
+    });
+    if (!p.author) a.push({
+      path: "author",
+      message: "No author information provided. Consider adding author details for plugin attribution"
+    })
+  }
+  return {
+    success: r.length === 0,
+    errors: r,
+    warnings: a,
+    filePath: e,
+    fileType: "plugin",
+    ...i.length > 0 && {
+      notes: i
+    }
+  }
+}
+var gt = /^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$/,
+  Yn = new Set(["org", "org-provisioned", "unknown"]),
+  $e = "UNRECORDABLE_NAME",
+  VKr = 'Each part of a plugin id (plugin@marketplace) may use only the letters a-z and A-Z, digits, ".", "_" and "-", and must start with a letter or digit.';
+
+function ue(e) {
+  return Ay(e, e.length) === e ? "" : " The name holds a character that is not shown here."
+}
+async function Ee(e) {
+  return ie(await qn(e))
+}
+async function qn(e) {
+  let n = [],
+    s = [],
+    r = y.resolve(e),
+    a;
+  try {
+    a = await Ie(r, {
+      encoding: "utf-8"
+    })
+  } catch (f) {
+    let T = k(f),
+      w;
+    if (T === "ENOENT") w = `File not found: ${r}`;
+    else if (T === "EISDIR") w = `Path is not a file: ${r}`;
+    else w = `Failed to read file: ${d(f)}`;
+    return {
+      success: !1,
+      errors: [{
+        path: "file",
+        message: w,
+        code: T
+      }],
+      warnings: [],
+      filePath: r,
+      fileType: "marketplace"
+    }
+  }
+  let i;
+  try {
+    i = ee(gs(a))
+  } catch (f) {
+    return {
+      success: !1,
+      errors: [{
+        path: "json",
+        message: `Invalid JSON syntax: ${d(f)}`
+      }],
+      warnings: [],
+      filePath: r,
+      fileType: "marketplace"
+    }
+  }
+  let l = [],
+    c = D(i) && D(i.metadata) ? i.metadata.pluginRoot : void 0,
+    m = oHs(c),
+    p = D(i) && typeof i.name === "string" && Fzn(i.name);
+  if (i && typeof i === "object") {
+    let f = i;
+    if (Array.isArray(f.plugins)) l = f.plugins, f.plugins.forEach((T, w) => {
+      if (T && typeof T === "object" && "source" in T) {
+        let E = T.source;
+        if (typeof E === "string") Oe(E, `plugins[${w}].source`, n, Kn(E));
+        if (BRo(E) && m === void 0) n.push({
+          path: `plugins[${w}].source`,
+          message: c === void 0 ? `Bare source name "${E}" requires metadata.pluginRoot. Use "./relative/path", or set metadata.pluginRoot (e.g. "./plugins") to allow bare names.` : typeof c === "string" ? `Bare source name "${E}" cannot resolve: metadata.pluginRoot ("${c}") must be a relative path inside the marketplace (e.g. "./plugins").` : `Bare source name "${E}" cannot resolve: metadata.pluginRoot must be a relative path inside the marketplace (e.g. "./plugins").`
+        });
+        if (E && typeof E === "object" && "path" in E && typeof E.path === "string") Oe(E.path, `plugins[${w}].source.path`, n)
+      }
+    })
+  }
+  let g = URo().extend({
+      topic: o().min(1).max(64).optional(),
+      signals: $Ro().extend({
+        cli: C(o().min(1).max(64)).max(10).optional(),
+        hosts: C(o().min(1).max(128).refine((f) => /^[a-z0-9.-]+$/.test(f), "must be a lowercase bare hostname (no scheme, port, or path)")).max(20).optional(),
+        filesRead: C(o().min(1).max(256).refine((f) => !f.includes("\\"), 'must use forward slashes (e.g. "**/*.tf"), not backslashes')).max(10).optional(),
+        manifestDeps: C(u({
+          file: o().min(1).max(256).refine(fLr, "must be a valid regular expression"),
+          pattern: o().min(1).max(256).refine(fLr, "must be a valid regular expression")
+        })).min(1).max(10).optional(),
+        cwd: C(o().min(1).max(256).refine((f) => !f.includes("\\"), 'must use forward slashes (e.g. "Engine/Source/**"), not backslashes')).max(10).optional()
+      }).refine((f) => (f.cli?.length ?? 0) > 0 || (f.hosts?.length ?? 0) > 0 || (f.filesRead?.length ?? 0) > 0 || (f.manifestDeps?.length ?? 0) > 0 || (f.cwd?.length ?? 0) > 0, "must declare at least one signal (cli, hosts, filesRead, manifestDeps, or cwd)")
+    }).optional(),
+    h = gLr().extend({
+      relevance: gl((f) => D(f) ? f : void 0, g)
+    }).refine((f) => typeof f.source === "string" || f.source.source !== "unsupported", {
+      message: "source.source: 'unsupported' is a parse-time placeholder and cannot be authored"
+    }),
+    b = jKe().extend({
+      plugins: C(h),
+      renames: me(o(), o().nullable()).optional()
+    }).safeParse(oln(i));
+  if (!b.success) n.push(...fe(b.error));
+  if (b.success && b.data.renames) {
+    let f = new Set(b.data.plugins.map((T) => T.name));
+    for (let T of Object.keys(b.data.renames)) {
+      let w = n9t(T, b.data.renames, f);
+      if (w?.kind === "unresolved") n.push({
+        path: `renames.${T}`,
+        message: `chain does not resolve (${w.reason}) \u2014 target must be a name in plugins[], a key in renames, or null`
+      });
+      else if (w?.kind === "renamed" && !s0().safeParse(`${w.to}@placeholder`).success) n.push({
+        path: `renames.${T}`,
+        message: `target "${w.to}" is not a valid plugin name (PluginIdSchema)`
+      })
+    }
+  }
+  if (D(i)) {
+    let f = i;
+    if (Q(f, new Set(Object.keys(jKe().shape)), "", s), typeof f.name === "string" && f.name) {
+      let w = dj(f.name);
+      if (!w) n.push({
+        path: "name",
+        code: $e,
+        message: `Claude Code cannot install plugins from marketplace "${Ay(f.name,64)}". ${VKr} Change the marketplace's "name".` + ue(f.name)
+      });
+      if (Yn.has(f.name.toLowerCase())) s.push({
+        path: "name",
+        message: `Marketplace name "${f.name}" is reserved in Claude Desktop. Claude Code accepts it, but the Claude Desktop managed marketplace sync (allowedPluginMarketplaces) will reject the whole marketplace.`
+      });
+      else if (!gt.test(f.name)) s.push({
+        path: "name",
+        message: `Marketplace name "${f.name}" is not accepted by Claude Desktop (letters, digits, ".", "_", "-"; must start alphanumeric; max 128 chars). ` + (w ? "Claude Code accepts it, but the " : "The ") + "Claude Desktop managed marketplace sync (allowedPluginMarketplaces) will reject the whole marketplace." + ue(f.name)
+      })
+    }
+    let T = f.metadata;
+    if (D(T)) Q(T, new Set(Object.keys(jKe().shape.metadata.unwrap().shape)), "metadata", s);
+    if (Array.isArray(f.plugins)) {
+      let w = new Set(Object.keys(gLr().shape)),
+        E = new Set(Object.keys(URo().shape)),
+        _ = new Set(Object.keys($Ro().shape));
+      f.plugins.forEach((O, M) => {
+        if (!D(O)) return;
+        let N = O;
+        if (Q(N, w, `plugins[${M}]`, s), typeof N.name === "string" && N.name) {
+          let H = dj(N.name);
+          if (!H) n.push({
+            path: `plugins[${M}].name`,
+            code: $e,
+            message: `Claude Code cannot install plugin "${Ay(N.name,64)}". ${VKr} Change this entry's "name".` + ue(N.name)
+          });
+          if (!gt.test(N.name)) s.push({
+            path: `plugins[${M}].name`,
+            message: `Plugin name "${N.name}" is not accepted by Claude Desktop (letters, digits, ".", "_", "-"; must start alphanumeric; max 128 chars). ` + (H ? "Claude Code accepts it, but the " : "The ") + "Claude Desktop managed marketplace sync (allowedPluginMarketplaces) will drop this entry." + ue(N.name)
+          });
+          let X = p ? void 0 : nit(N.name);
+          if (X)(X.severity === "error" ? n : s).push({
+            path: `plugins[${M}].name`,
+            message: X.message
+          })
+        }
+        let B = N.experimental;
+        if (D(B)) Q(B, $t, `plugins[${M}].experimental`, s);
+        else if (B !== void 0) s.push({
+          path: `plugins[${M}].experimental`,
+          message: `'experimental' must be an object containing component declarations; got ${Z(B)}. It will be ignored at load time.`
+        });
+        let z = N.relevance;
+        if (D(z)) {
+          Q(z, E, `plugins[${M}].relevance`, s);
+          let H = z.signals;
+          if (D(H)) Q(H, _, `plugins[${M}].relevance.signals`, s)
+        } else if (z !== void 0) s.push({
+          path: `plugins[${M}].relevance`,
+          message: `'relevance' must be an object containing topic and signals; got ${Z(z)}. It will be ignored at load time.`
+        });
+        let J = N.metadata;
+        if (J !== void 0 && !D(J)) s.push({
+          path: `plugins[${M}].metadata`,
+          message: `'metadata' must be a free-form object; got ${Z(J)}. It will be ignored at load time.`
+        })
+      })
+    }
+  }
+  if (b.success) {
+    let f = b.data;
+    if (!f.plugins || f.plugins.length === 0) s.push({
+      path: "plugins",
+      message: "Marketplace has no plugins defined"
+    });
+    if (f.plugins) f.plugins.forEach((T, w) => {
+      if (f.plugins.filter((O) => O.name === T.name).length > 1) n.push({
+        path: `plugins[${w}].name`,
+        message: `Duplicate plugin name "${T.name}" found in marketplace`
+      });
+      let _ = typeof T.source === "object" && T.source.source === "archive";
+      if (_ && hze(T) && T.strict !== !1) n.push({
+        path: `plugins[${w}].headersHelper`,
+        message: `Plugin "${Pm(T.name)}" sets headersHelper but is not "strict": false. An entry with headersHelper must inline its full manifest (strict: false, with commands/agents/hooks/mcpServers declared in the entry) so users can review what it ships before the command runs; Claude Code refuses to run the helper otherwise.`
+      });
+      if ((T.headers !== void 0 || hze(T)) && !_) s.push({
+        path: `plugins[${w}].${hze(T)?"headersHelper":"headers"}`,
+        message: `Plugin "${Pm(T.name)}" sets headers/headersHelper, which only apply to "archive" sources; they have no effect on this entry.`
+      });
+      else if (hze(T) && typeof T.source === "object" && T.source.source === "archive" && !T.source.sha256) s.push({
+        path: `plugins[${w}].source.sha256`,
+        message: `Plugin "${Pm(T.name)}" fetches its archive with a headersHelper but sets no sha256 pin. Consider pinning the digest so the bytes users install are exactly the ones you reviewed (omit it only if you rely on digest-versioned updates).`
+      });
+      for (let O of _ ? Object.keys(T.headers ?? {}) : [])
+        if (jms(O)) s.push({
+          path: `plugins[${w}].headers.${Pm(O)}`,
+          message: `Header "${Pm(O)}" is a request-routing/identity header that catalog entries may not set; Claude Code drops it at download time.`
+        })
+    });
+    if (!f.description && !f.metadata?.description) s.push({
+      path: "description",
+      message: "No marketplace description provided. Adding a description helps users understand what this marketplace offers"
+    })
+  }
+  let R = gLr(),
+    S = y.dirname(r),
+    x = y.basename(S) === ".claude-plugin" ? y.dirname(S) : S;
+  for (let [f, T] of l.entries()) {
+    let w = R.safeParse(sHs(T, m));
+    if (!w.success) continue;
+    let E = w.data,
+      _ = E.source;
+    if (!hbt(_) || Te(_)) continue;
+    let O = y.join(x, _),
+      M = y.join(O, ".claude-plugin", "plugin.json"),
+      N = y.relative(x, M),
+      B = await gA(x, y.join(O, ".claude-plugin"));
+    if (B === "not-a-directory") {
+      n.push({
+        path: `plugins[${f}] plugin.json \u2192 file`,
+        code: "ENOTDIR",
+        message: `A path component of ${N} is not a directory, so the file cannot be read. The entry will fail to load at install time.`
+      });
+      continue
+    }
+    if (B === "refused") {
+      s.push({
+        path: `plugins[${f}].source`,
+        message: `Local source "${_}" is or traverses a symlink, so ${N} was not read \u2014 ` + "validation never follows one. Install dereferences symlinks that stay inside the marketplace, so this entry still loads. Validate the real path separately."
+      });
+      continue
+    }
+    if (B !== "ok") continue;
+    let z;
+    try {
+      z = await j6(M)
+    } catch (I) {
+      n.push({
+        path: `plugins[${f}] plugin.json \u2192 file`,
+        message: `Failed to read ${N}: ${d(I)}`
+      });
+      continue
+    }
+    if (z.kind === "refused" || z.kind === "too-large") {
+      s.push({
+        path: `plugins[${f}].source`,
+        message: `${N} ${z.kind==="refused"?"is a symlink or is not a regular file":`is larger than ${UU} bytes`}, so it was not validated. Install reads it anyway. Validate it separately.`
+      });
+      continue
+    }
+    if (z.kind === "absent") continue;
+    let J = z.content;
+    if (E.version) {
+      let I;
+      try {
+        let W = ee(gs(J));
+        if (typeof W.version === "string") I = W.version
+      } catch (W) {
+        s.push({
+          path: `plugins[${f}].source`,
+          message: `Could not parse ${y.relative(x,M)} for version cross-check: ${d(W)}`
+        })
+      }
+      if (I && I !== E.version) {
+        let W = y.relative(x, M);
+        s.push({
+          path: `plugins[${f}].version`,
+          message: `Entry declares version "${E.version}" but ${W} says "${I}". ` + "At install time, plugin.json wins (calculatePluginVersion precedence) \u2014 the entry version is silently ignored. " + `Update this entry to "${I}" to match.`
+        })
+      }
+    }
+    let H = ie(await xt(M, J, p ? {
+        kind: "anthropic"
+      } : {
+        kind: "entry",
+        entryName: E.name
+      })),
+      X = `plugins[${f}] plugin.json \u2192 `;
+    for (let I of H.errors) n.push({
+      ...I,
+      path: X + I.path
+    });
+    for (let I of H.warnings) s.push({
+      ...I,
+      path: X + I.path
+    })
+  }
+  return {
+    success: n.length === 0,
+    errors: n,
+    warnings: s,
+    filePath: r,
+    fileType: "marketplace"
+  }
+}
+
+function Ay(e, n) {
+  return Yr(Il(_h(e), n))
+}
+
+function ie(e) {
+  return {
+    ...e,
+    errors: e.errors.map((n) => ({
+      ...n,
+      path: Ay(n.path, 200),
+      message: Ay(n.message, 1000)
+    })),
+    warnings: e.warnings.map((n) => ({
+      path: Ay(n.path, 200),
+      message: Ay(n.message, 1000)
+    })),
+    ...e.notes !== void 0 && {
+      notes: e.notes.map((n) => Ay(n, 1000))
+    },
+    ...e.gatingHooks !== void 0 && {
+      gatingHooks: e.gatingHooks.map((n) => ({
+        module: Ay(n.module, 200),
+        pattern: Ay(n.pattern, 200),
+        hook: Ay(n.hook, 1000),
+        hasCatch: n.hasCatch
+      }))
+    }
+  }
+}
+
+function Zn(e, n, s, r) {
+  let a = [],
+    i = [],
+    l = r === "project" && s === "agent",
+    c = gs(n).match(mE);
+  if (!c) {
+    if (!l) i.push({
+      path: "frontmatter",
+      message: "No frontmatter block found. Add YAML frontmatter between --- delimiters at the top of the file to set description and other metadata."
+    });
+    return {
+      success: !0,
+      errors: a,
+      warnings: i,
+      filePath: e,
+      fileType: s
+    }
+  }
+  let m = xNn(c[1] || "");
+  if (!m.ok) {
+    let v = s !== "agent" ? `At runtime this ${s} loads with empty metadata (all frontmatter fields silently dropped).` : r === "project" ? "At runtime this agent does not load at all \u2014 with no frontmatter " + "name it is treated as a co-located reference document and skipped." : "At runtime this agent loads with its name taken from the filename and every other frontmatter field silently dropped.";
+    return a.push({
+      path: "frontmatter",
+      message: `YAML frontmatter failed to parse: ${Ay(m.error,200)}. ` + v
+    }), {
+      success: !1,
+      errors: a,
+      warnings: i,
+      filePath: e,
+      fileType: s
+    }
+  }
+  let p = m.value;
+  if (p !== null && !D(p)) return a.push({
+    path: "frontmatter",
+    message: `Frontmatter must be a YAML mapping (key: value pairs), got ${Array.isArray(p)?"an array":typeof p}.`
+  }), {
+    success: !1,
+    errors: a,
+    warnings: i,
+    filePath: e,
+    fileType: s
+  };
+  let g = p ?? {};
+  if (g.description !== void 0) {
+    let v = g.description;
+    if (typeof v !== "string" && typeof v !== "number" && typeof v !== "boolean" && v !== null) a.push({
+      path: "description",
+      message: `description must be a string, got ${Array.isArray(v)?"array":typeof v}. At runtime this value is dropped.`
+    })
+  } else if (!l || typeof g.name === "string") i.push({
+    path: "description",
+    message: `No description in frontmatter. A description helps users and Claude understand when to use this ${s}.`
+  });
+  if (g.name !== void 0 && g.name !== null && typeof g.name !== "string") a.push({
+    path: "name",
+    message: `name must be a string, got ${typeof g.name}.`
+  });
+  let h = g["allowed-tools"];
+  if (h !== void 0 && h !== null) {
+    if (typeof h !== "string" && !Array.isArray(h)) a.push({
+      path: "allowed-tools",
+      message: `allowed-tools must be a string or array of strings, got ${typeof h}.`
+    });
+    else if (Array.isArray(h) && h.some((v) => typeof v !== "string")) a.push({
+      path: "allowed-tools",
+      message: "allowed-tools array must contain only strings."
+    })
+  }
+  if (s === "skill" || s === "command") {
+    let v = !1;
+    ((R) => {
+      if (R == null || D(R)) return;
+      v = !0, i.push({
+        path: "metadata",
+        message: `'metadata' must be a mapping (key: value pairs); got ${Array.isArray(R)?"array":typeof R}. It is dropped at load time.`
+      })
+    })(g.metadata)
+  }
+  if (s === "skill" || s === "command") {
+    let v = g.shell;
+    if (v !== void 0 && v !== null)
+      if (typeof v !== "string") a.push({
+        path: "shell",
+        message: `shell must be a string, got ${typeof v}.`
+      });
+      else {
+        let b = v.trim().toLowerCase();
+        if (b !== "bash" && b !== "powershell") a.push({
+          path: "shell",
+          message: `shell must be 'bash' or 'powershell', got '${Ay(v,64)}'.`
+        })
+      }
+  }
+  return {
+    success: a.length === 0,
+    errors: a,
+    warnings: i,
+    filePath: e,
+    fileType: s
+  }
+}
+
+function Pe(e) {
+  if (e === null || typeof e !== "object" || !("modules" in e)) return !1;
+  return Array.isArray(e.modules) && e.modules.length === 1
+}
+async function Tt(e, n) {
+  let s = {
+      result: {
+        success: !0,
+        errors: [],
+        warnings: [],
+        filePath: e,
+        fileType: "hooks"
+      },
+      modules: []
+    },
+    r = (w) => ({
+      result: q(e, "hooks", `${w} \u2014 hooks are read without following symlinks and are capped at ` + `${UU} bytes. The plugin loader has neither limit and fails the whole plugin on bad hook config, so validate the real file separately.`),
+      modules: []
+    }),
+    a = y.dirname(e),
+    i = await gA(y.dirname(a), a);
+  if (i === "refused") return r("The hooks directory is a link (a symlink or a Windows junction) and was not read");
+  if (i !== "ok") return s;
+  let l;
+  try {
+    l = await j6(e)
+  } catch (w) {
+    return {
+      result: {
+        success: !1,
+        errors: [{
+          path: "file",
+          message: `Failed to read file: ${d(w)}`
+        }],
+        warnings: [],
+        filePath: e,
+        fileType: "hooks"
+      },
+      modules: []
+    }
+  }
+  if (l.kind === "refused") return r("hooks.json is not a regular file (a symlink, a FIFO, a directory)");
+  if (l.kind === "too-large") return r("hooks.json is past the size cap and was not read");
+  if (l.kind === "absent") return s;
+  let c = l.content,
+    m;
+  try {
+    m = ee(c)
+  } catch (w) {
+    return {
+      result: {
+        success: !1,
+        errors: [{
+          path: "json",
+          message: `Invalid JSON syntax: ${d(w)}. At runtime this breaks the entire plugin load.`
+        }],
+        warnings: [],
+        filePath: e,
+        fileType: "hooks"
+      },
+      modules: []
+    }
+  }
+  if (Wie(m, dLr) || FAe(m)) return {
+    result: {
+      success: !1,
+      errors: [{
+        path: "hooks",
+        message: `PreToolUse/PermissionRequest is declared at the top level, outside the "hooks" object \u2014 ${bT}`
+      }],
+      warnings: [],
+      filePath: e,
+      fileType: "hooks"
+    },
+    modules: [],
+    namesModuleInRefusedFile: Pe(m)
+  };
+  let p = m && typeof m === "object" && "hooks" in m ? $Ae(m.hooks) : {
+      notes: [],
+      unloadableGuards: []
+    },
+    g = p.notes.map((w) => ({
+      path: "hooks",
+      message: `${w} at runtime`
+    }));
+  if (p.unloadableGuards.length > 0) return {
+    result: {
+      success: !1,
+      errors: p.unloadableGuards.map((w) => ({
+        path: "hooks",
+        message: `${w} \u2014 ${bT}`
+      })),
+      warnings: g,
+      filePath: e,
+      fileType: "hooks"
+    },
+    modules: [],
+    namesModuleInRefusedFile: Pe(m)
+  };
+  let h = uLr().safeParse(m);
+  if (!h.success) return {
+    result: {
+      success: !1,
+      errors: fe(h.error),
+      warnings: g,
+      filePath: e,
+      fileType: "hooks"
+    },
+    modules: [],
+    namesModuleInRefusedFile: Pe(m)
+  };
+  let v = [];
+  for (let w of mt(h.data.hooks ?? {})) v.push({
+    path: `hooks.${w.event}`,
+    message: `Shell command uses ${w.placeholders.join(", ")} without quotes: ${Ay(w.command,200)}. If the expanded path contains a space the command can split into several words and fail. Wrap the placeholder in double quotes, or use exec form: {"command": "<executable>", "args": ["\${CLAUDE_PLUGIN_ROOT}/..."]}.`
+  });
+  let b = [],
+    R = [],
+    S = [],
+    x = h.data.modules ?? [],
+    f = x.length > 0 ? await Jn(n) : ne,
+    T = f.nouns;
+  for (let w of x) {
+    let E = y.resolve(a, w),
+      _ = y.relative(n, E);
+    if (_ === ".." || _.startsWith(`..${y.sep}`) || y.resolve(_) === _ || O$e(w)) {
+      b.push({
+        path: `modules.${w}`,
+        message: "The module path leaves the plugin directory"
+      });
+      continue
+    }
+    try {
+      let {
+        scan: O,
+        registrations: M,
+        renderMatchers: N,
+        helperCalls: B,
+        catchReads: z
+      } = await Baa(E, n, y.basename(n)), J = M.length === 0 ? "nothing" : M.join(", "), H = [...O.calls.map((A) => {
+        let F = B.get(A);
+        return F === void 0 ? `$.${A}` : `$.${A} (via ${F.join(", ")})`
+      }), ...(O.nextTo ?? []).map((A) => `next.to:${A}`)], X = H.length === 0 ? "nothing on $" : H.join(", "), I = z.filter((A) => A.isOwnCommand), W = [];
+      if (I.length > 0) {
+        let A = Fr();
+        try {
+          if (!A.shippedTablesFillFailed) {
+            Dke(), iBe();
+            let F = uAn(),
+              G = (Y) => F(Y) || Vn.has(Z_(Y));
+            W.push(...I.filter((Y) => !Y.commands.some(G))), g.push(...L(I.flatMap((Y) => Y.commands)).filter(G).map((Y) => ({
+              path: `modules.${w}`,
+              message: `"/${Ay(Y,200)}" is a name Claude Code ships: $.command.register refuses it and the hook that calls it is skipped`
+            })))
+          }
+        } catch (F) {
+          A.shippedTablesFillFailed = !0, t(`plugin validate: shipped command names unread, every command.run hook is listed as a gate: ${d(F)}`, {
+            level: "error"
+          })
+        }
+      }
+      let De = z.filter((A) => !W.includes(A) && Obo(A.pattern));
+      R.push(`${w} hooks: ${J}`, ...W.map((A) => `${w} answers its own command: ${A.registration}`), ...De.map(({
+        registration: A,
+        hasCatch: F
+      }) => `${w} gating hook ${F?"with":"without"} .catch: ` + A), `${w} calls: ${X}`), S.push(...De.map(({
+        registration: A,
+        pattern: F,
+        hasCatch: G
+      }) => ({
+        module: w,
+        pattern: F,
+        hook: A,
+        hasCatch: G
+      })));
+      for (let {
+          registration: A,
+          matcher: F
+        }
+        of N) {
+        let G = Kbo(F);
+        if (G !== void 0) g.push({
+          path: `modules.${w}`,
+          message: `on ${A}: ${G}`
+        })
+      }
+      let At = O.hooks.some((A) => dV(A, "engine.create"));
+      if (T.length > 0 && !At) g.push({
+        path: `modules.${w}`,
+        message: `the manifest's types contract declares ${T.map((A)=>`$.${A}`).join(", ")} on EngineInterface, but ${w} registers no hook on engine.create, so the plugin never adds ${P(T.length,"it","them")} to $`
+      });
+      if (O.env !== void 0) {
+        let A = (F) => F.length === 0 ? "nothing" : F.join(", ");
+        R.push(`${w} env writes: ${A(O.env.writes)}`, `${w} env reads: ${A(O.env.reads)}`)
+      }
+      let ze = Mgi(O);
+      if (ze !== void 0) R.push(`${w} hooks telemetry for: ${ze}`);
+      let Ve = Igi(O, {
+        isBuiltin: !1
+      });
+      if (Ve !== void 0) b.push({
+        path: `modules.${w}`,
+        message: Ve
+      });
+      if (O.state !== void 0) {
+        let A = (se) => se.length === 0 ? "nothing" : se.map((Ot) => PHt(Ot)).join(", ");
+        R.push(`${w} state writes: ${A(O.state.writes)}`, `${w} state reads: ${A(O.state.reads)}`);
+        let F = f.name ?? y.basename(n),
+          G = (se) => se.plugin !== F,
+          {
+            reads: Y,
+            writes: jt
+          } = O.state,
+          Se = xn({
+            names: f.isRefused ? {
+              reads: Y.filter(G),
+              writes: jt.filter(G)
+            } : O.state,
+            owner: F,
+            declared: f.state,
+            contract: f.conventional,
+            refusal: f.refusal,
+            others: await Xn(n)
+          });
+        if (b.push(...Se.problems.map((se) => ({
+            path: `modules.${w}`,
+            message: se
+          }))), Se.unchecked.length > 0) R.push(`${w} state of other plugins, not checked (run validate in a session with them enabled): ${Se.unchecked.join(", ")}`)
+      }
+      let He = await $Qo(O.clients, n, y.basename(n));
+      if (He !== void 0) R.push(`${w} surface modules: ${He.map((A)=>A.module).join(", ")}`)
+    } catch (O) {
+      b.push({
+        path: `modules.${w}`,
+        message: Ay(d(O), 400)
+      })
+    }
+  }
+  return {
+    result: {
+      success: b.length === 0,
+      errors: b,
+      warnings: [...g, ...v],
+      filePath: e,
+      fileType: "hooks",
+      ...R.length > 0 && {
+        notes: R
+      },
+      ...S.length > 0 && {
+        gatingHooks: S
+      }
+    },
+    modules: x
+  }
+}
+
+function yt(e, {
+  relPath: n,
+  field: s
+}) {
+  if (e === void 0) return {
+    errors: [],
+    notes: []
+  };
+  if (e.kind === "refused") return {
+    errors: e.problems.map((i) => ({
+      path: s,
+      message: i
+    })),
+    notes: []
+  };
+  let r = `types ${n} declares on $: ` + (e.nouns.length > 0 ? e.nouns.map((i) => `$.${i}`).join(", ") : "nothing (no EngineInterface member)"),
+    a = e.state.flatMap(({
+      plugin: i,
+      keys: l
+    }) => l.map((c) => PHt({
+      plugin: i,
+      key: c
+    })));
+  return {
+    errors: [],
+    notes: a.length > 0 ? [r, `types ${n} declares state: ${a.join(", ")}`] : [r]
+  }
+}
+var ne = {
+  name: void 0,
+  nouns: [],
+  state: [],
+  isRefused: !1,
+  conventional: void 0,
+  refusal: void 0
+};
+async function Jn(e) {
+  let n = await re(y.join(e, ".claude-plugin", "plugin.json")),
+    s = n === void 0 ? void 0 : ae(gs(n)),
+    r = typeof s?.name === "string" ? s.name : void 0,
+    a = s?.types;
+  if (s === void 0 || a !== void 0 && typeof a !== "string") return {
+    ...ne,
+    name: r
+  };
+  let i = await ke(a, e, y.basename(e));
+  if (i === void 0) return {
+    ...ne,
+    name: r
+  };
+  if (a !== void 0) return i.kind === "read" ? {
+    ...ne,
+    name: r,
+    nouns: i.nouns,
+    state: i.state
+  } : {
+    ...ne,
+    name: r,
+    isRefused: !0
+  };
+  let l = `the types contract at ${q8t}`;
+  if (i.kind === "read") return {
+    ...ne,
+    name: r,
+    state: i.state,
+    conventional: l
+  };
+  let c = i.problems.length - 1;
+  return {
+    ...ne,
+    name: r,
+    conventional: l,
+    refusal: Ay(`the file at ${q8t} could not be taken as the types contract (${i.problems[0]??"refused"}${c>0?`, and ${c} more`:""})`, 1000)
+  }
+}
+async function Xn(e) {
+  let n = Ae(),
+    s = n.pluginLoadCacheOnly ?? n.pluginLoad;
+  if (s === void 0) return;
+  let r;
+  try {
+    r = (await s).enabled
+  } catch {
+    return
+  }
+  let a = [];
+  for (let i of r) {
+    let l = i.manifest.types;
+    if (!((l !== void 0 || i.isBuiltin !== !0) && y.resolve(i.path) !== y.resolve(e))) continue;
+    let m = await ke(l, i.path, i.name);
+    if (m?.kind === "read") a.push(...m.state)
+  }
+  return a
+}
+async function St(e) {
+  let n = [y.join(e, "hooks", "hooks.json")];
+  if (!await m1(y.join(e, ".claude-plugin"))) return n;
+  let s = await re(y.join(e, ".claude-plugin", "plugin.json")),
+    r = s === void 0 ? void 0 : ae(gs(s))?.hooks,
+    a = Array.isArray(r) ? r : [r];
+  for (let i of a) {
+    if (typeof i !== "string") continue;
+    let l = y.resolve(e, i),
+      c = y.relative(e, l);
+    if (c === ".." || c.startsWith(`..${y.sep}`) || y.resolve(c) === c || O$e(i)) continue;
+    if (!n.includes(l)) n.push(l)
+  }
+  return n
+}
+async function fni(e) {
+  for (let n of await St(e)) {
+    let {
+      modules: s,
+      namesModuleInRefusedFile: r
+    } = await Tt(n, e);
+    if (s.length > 0 || r === !0) return !0
+  }
+  return !1
+}
+async function Qn(e) {
+  let n = [],
+    s = [];
+  for (let a of await St(e)) {
+    let {
+      result: i,
+      modules: l
+    } = await Tt(a, e);
+    if (l.length > 0) s.push(a);
+    if (i.errors.length > 0 || i.warnings.length > 0 || i.notes !== void 0) n.push(i)
+  }
+  let [, r] = s;
+  if (r !== void 0) {
+    let a = s.map((i) => y.relative(e, i));
+    n.push({
+      success: !1,
+      errors: [{
+        path: "modules",
+        message: `The plugin names one hooks module per plugin, but ${a.join(" and ")} each name one; the loader refuses both`
+      }],
+      warnings: [],
+      filePath: r,
+      fileType: "hooks"
+    })
+  }
+  return n
+}
+var es = new Set(["stdio", "http", "streamable-http", "sse", "ws", "sdk", "sse-ide", "ws-ide", "claudeai-proxy"]),
+  ts = /\$\{user_config\.([^}$]+)\}/g,
+  Ct = /\$\{[^}$]+\}/,
+  Ne = 16,
+  ns = 8192,
+  ss = [/\bsk-[A-Za-z0-9_-]{16,}/, /\bgh[opsur]_[A-Za-z0-9]{30,}/, /\bgithub_pat_[A-Za-z0-9_]{30,}/, /\bxox[abeprs]-[A-Za-z0-9-]{10,}/, /\bAKIA[0-9A-Z]{16}\b/, /\bglpat-[A-Za-z0-9_-]{20,}/, /\bAIza[0-9A-Za-z_-]{35}\b/, /(?:^|[^A-Za-z0-9_-])eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]+/],
+  os = /authorization|api[-_]?key|token|secret|password|credential/i,
+  rs = /your[-_ ]|replace|example|changeme|placeholder|dummy|redacted|xxx|[<>]|\*\*\*/i;
+
+function as(e) {
+  let n = new Map;
+  for (let r of e) n.set(r, (n.get(r) ?? 0) + 1);
+  let s = 0;
+  for (let r of n.values()) {
+    let a = r / e.length;
+    s -= a * Math.log2(a)
+  }
+  return s
+}
+
+function is(e, n) {
+  if (n.length > ns || Ct.test(n) || rs.test(n)) return !1;
+  let s = n.trim();
+  if (ss.some((a) => a.test(s))) return !0;
+  if (!os.test(e)) return !1;
+  let r = s.match(/^(?:Bearer|Basic|Token|Bot)\s+(\S+)$/i)?.[1] ?? s;
+  return r.length >= 20 && !/\s/.test(r) && as(r) >= 3
+}
+var ls = /\$\{[^}$]+\}/g;
+
+function be(e, n) {
+  return URL.parse(e.replace(ls, n)) ?? void 0
+}
+
+function cs(e) {
+  let n = be(e, "probe-a.invalid") ?? be(e, "1"),
+    s = be(e, "probe-b.invalid") ?? be(e, "2");
+  if (!n || !s || n.hostname !== s.hostname) return;
+  let r = n.protocol === "http:" ? "http" : n.protocol === "ws:" ? "ws" : void 0;
+  if (r === void 0) return;
+  let a = n.hostname;
+  if (a === "localhost" || a.endsWith(".localhost") || a === "127.0.0.1" || a === "[::1]") return;
+  let i = r === "http" ? "https" : "wss";
+  return `url uses ${r}:// to a non-loopback host \u2014 requests, headers and any ` + `credentials travel in cleartext. Use ${i}://; plugin directories may reject insecure remote server urls.`
+}
+
+function ps(e) {
+  let n = [],
+    s = [],
+    r;
+  if (e.type === void 0 || e.type === "stdio") {
+    if (s.push("command"), r = "env", Array.isArray(e.args)) {
+      for (let [i, l] of e.args.entries())
+        if (typeof l === "string") n.push({
+          field: `args[${i}]`,
+          value: l
+        })
+    }
+  } else if (Me(e.type)) s.push("url", "headersHelper"), r = "headers";
+  for (let i of s) {
+    let l = e[i];
+    if (typeof l === "string") n.push({
+      field: i,
+      value: l
+    })
+  }
+  let a = r === void 0 ? void 0 : e[r];
+  if (r !== void 0 && D(a)) {
+    for (let [i, l] of Object.entries(a))
+      if (typeof l === "string") n.push({
+        field: `${r}.${i}`,
+        value: l
+      })
+  }
+  return n
+}
+
+function Me(e) {
+  return e === "http" || e === "streamable-http" || e === "sse" || e === "ws"
+}
+
+function Rt(e, n, s) {
+  let r = [],
+    a = [];
+  if (!D(n)) return {
+    errors: r,
+    warnings: a
+  };
+  for (let {
+      field: i,
+      value: l
+    }
+    of ps(n)) {
+    let c = new Set([...l.matchAll(ts)].map((p) => p[1]));
+    if (c.size === 0) continue;
+    let m = `${e}.${Ay(i,64)}`;
+    if (i === "headersHelper") {
+      r.push({
+        path: m,
+        message: 'headersHelper references ${user_config.*}. Options are never substituted into headersHelper: the plugin loader refuses the server when the plugin declares any options (the value would be spliced into a shell command), and otherwise the literal text reaches the shell. Read the value inside the helper script instead (for example from a variable set in the server\'s "env" block).'
+      });
+      continue
+    }
+    if (s === null) continue;
+    for (let p of c)
+      if (p !== void 0 && !s.has(p)) r.push({
+        path: m,
+        message: `references \${user_config.${Ay(p,64)}}, which plugin.json does not declare under "userConfig" (or in this server's "channels" entry), so on a fresh install it cannot resolve: the loader drops the server or passes the literal text through. Declare the option or fix the key.`
+      })
+  }
+  if (Me(n.type) && typeof n.url === "string")
+    if (n.url.trim() === "") {
+      if (typeof n.directory === "string" && n.directory !== "") a.push({
+        path: `${e}.directory`,
+        message: `"directory" is set but url is empty. The key names a directory entry and counts only when this server's url is that entry's url, so plugin directories may reject this plugin. Set url to that entry's url, or remove the "directory" key.`
+      })
+    } else if (!Ct.test(n.url) && !URL.canParse(n.url)) r.push({
+    path: `${e}.url`,
+    message: 'url is not a valid absolute URL (for example "https://host/path"). The plugin loader marks this server as invalid config and it never connects.'
+  });
+  else {
+    let i = cs(n.url);
+    if (i) a.push({
+      path: `${e}.url`,
+      message: i
+    })
+  }
+  if (Me(n.type) && D(n.headers)) {
+    for (let [i, l] of Object.entries(n.headers))
+      if (typeof l === "string" && is(i, l)) a.push({
+        path: `${e}.headers.${Ay(i,64)}`,
+        message: "header value looks like a literal credential. Everything shipped in a plugin is readable by everyone who installs it; reference a sensitive userConfig option (${user_config.KEY}) or an environment variable (${VAR}) instead of committing the value."
+      })
+  }
+  return {
+    errors: r,
+    warnings: a
+  }
+}
+
+function ds(e, n, s) {
+  if (!D(n)) return [{
+    path: e,
+    message: `server config must be an object (got ${Z(n)}). The plugin loader silently drops this server at load.`
+  }];
+  let a = n.type;
+  if (a === void 0 && !("command" in n) && "url" in n) return [{
+    path: `${e}.type`,
+    message: 'server has a "url" but no "type". Remote servers must set "type" to "http" (or "sse" / "ws"); without it the entry is parsed as a stdio server, fails for lacking "command", and is silently dropped at load.'
+  }];
+  if (a !== void 0 && (typeof a !== "string" || !es.has(a))) {
+    let m = typeof a === "string" ? `"${Ay(a,32)}"` : Z(a);
+    return [{
+      path: `${e}.type`,
+      message: `unknown server type ${m} \u2014 expected "stdio" (or no type) for a local ` + 'command, or "http", "sse", "ws" for a remote server. The plugin loader silently drops this server at load.'
+    }]
+  }
+  let l = (a === void 0 || a === "stdio" ? lbt() : a === "http" || a === "streamable-http" ? NBt() : a === "sse" ? Van() : a === "ws" ? Rzn() : void 0)?.safeParse(n);
+  if (!l) return [{
+    path: e,
+    message: `is not a valid "${String(a)}" server config (${fe(s)[0]?.message??"invalid"}). The plugin loader silently drops this server at load.`
+  }];
+  return (l.success ? fe(s) : fe(l.error)).map((m) => ({
+    ...m,
+    path: m.path === "root" ? e : `${e}.${m.path}`,
+    message: `${m.message}. The plugin loader silently drops this server at load.`
+  }))
+}
+async function kt(e, n, s) {
+  let a = (b) => q(n, "mcp", `${b} \u2014 MCP server files are read without following symlinks and are capped at ` + `${UU} bytes. The plugin loader has neither limit, so validate the real file separately.`),
+    i;
+  try {
+    i = await j6(e)
+  } catch (b) {
+    return {
+      success: !1,
+      errors: [{
+        path: "file",
+        message: `Failed to read file: ${d(b)}`
+      }],
+      warnings: [],
+      filePath: n,
+      fileType: "mcp"
+    }
+  }
+  if (i.kind === "absent") return null;
+  if (i.kind === "refused") return a("The file is not a regular file (a symlink, a FIFO, a directory) and was not read");
+  if (i.kind === "too-large") return a("The file is past the size cap and was not read");
+  let l;
+  try {
+    l = ee(i.content)
+  } catch (b) {
+    return {
+      success: !1,
+      errors: [{
+        path: "json",
+        message: `Invalid JSON syntax: ${i.content.startsWith("\uFEFF")?"the file starts with a UTF-8 byte-order mark (BOM), which this file (unlike plugin.json) must not have \u2014 re-save it as UTF-8 without BOM":d(b)}. The plugin loader logs this at debug level and loads no servers from the file.`
+      }],
+      warnings: [],
+      filePath: n,
+      fileType: "mcp"
+    }
+  }
+  let c = [],
+    m = [],
+    p = D(l) && Boolean(l.mcpServers),
+    g = p && D(l) ? l.mcpServers : l,
+    h = p ? "mcpServers" : "root",
+    v;
+  if (D(g)) v = Object.entries(g);
+  else if (Array.isArray(g)) {
+    if (v = g.map((b, R) => [String(R), b]), g.length > 0) m.push({
+      path: h,
+      message: `is an array; the plugin loader keys its servers by array index ("0", "1", ...), and review tooling has misread this shape as 'no servers'. Use an object keyed by server name.`
+    })
+  } else return {
+    success: !1,
+    errors: [{
+      path: h,
+      message: `must be an object mapping server names to server configs (got ${Z(g)}). No servers load from this file.`
+    }],
+    warnings: [],
+    filePath: n,
+    fileType: "mcp"
+  };
+  for (let [b, R] of v) {
+    let S = Ay(b, 64),
+      x = p ? `mcpServers.${S}` : S,
+      f = jie().safeParse(R);
+    if (!f.success) {
+      c.push(...ds(x, R, f.error));
+      continue
+    }
+    let T = $ve(f.data.type);
+    if (T !== null) {
+      c.push({
+        path: `${x}.type`,
+        message: T === "host-only" ? `type "${f.data.type}" servers are registered by the host application at runtime and cannot be declared by a plugin. The plugin loader drops this server at load.` : 'type "claudeai-proxy" is used only by claude.ai connectors and cannot be declared ' + 'by a plugin \u2014 declare the server with type "http" instead. The plugin loader drops ' + "this server at load."
+      });
+      continue
+    }
+    let w = Rt(x, R, s(b));
+    c.push(...w.errors), m.push(...w.warnings)
+  }
+  return {
+    success: c.length === 0,
+    errors: c,
+    warnings: m,
+    filePath: n,
+    fileType: "mcp"
+  }
+}
+
+function Et(e) {
+  let n = new Set(D(e.userConfig) ? Object.keys(e.userConfig) : []),
+    s = new Map;
+  if (Array.isArray(e.channels)) {
+    for (let r of e.channels)
+      if (D(r) && typeof r.server === "string" && !s.has(r.server)) s.set(r.server, new Set(D(r.userConfig) ? Object.keys(r.userConfig) : []))
+  }
+  return (r) => {
+    let a = s.get(r);
+    return a === void 0 ? n : {
+      has: (i) => n.has(i) || a.has(i)
+    }
+  }
+}
+async function us(e, n) {
+  return Et(e)
+}
+async function ms(e, n) {
+  let s, r = y.join(e, ".claude-plugin", "plugin.json");
+  if (await m1(y.dirname(r))) {
+    let S = await re(r),
+      x = S === void 0 ? void 0 : ae(gs(S));
+    if (x) s = Nve(x, "plugin-json", {
+      pluginName: y.basename(e),
+      manifestPath: r
+    }).rawCandidate ?? x
+  }
+  let i = s ? Et(s) : void 0,
+    l = (S) => i ? i(S) : null,
+    c = [],
+    m = y.join(e, ".mcp.json"),
+    p = await kt(m, m, l);
+  if (p) c.push(p);
+  let g = new Set([y.resolve(m)]),
+    h = s?.mcpServers,
+    v = h === void 0 ? [] : Array.isArray(h) ? h : [h],
+    b = Ne,
+    R = 0;
+  for (let S of v) {
+    if (typeof S !== "string") continue;
+    if (!S.startsWith("./") || !S.endsWith(".json") || S.includes("..")) continue;
+    let x = y.join(e, S),
+      f = y.resolve(x);
+    if (g.has(f)) continue;
+    if (g.add(f), b <= 0) {
+      R++;
+      continue
+    }
+    b--;
+    let T = y.join(e, Ay(S, 128)),
+      w = await gA(e, y.dirname(x));
+    if (w === "refused") {
+      c.push(q(T, "mcp", "A directory on the way to this MCP servers file is a link (a symlink or a Windows junction) or " + "escapes the plugin, and the file was not read \u2014 the plugin loader " + "follows it, so validate the real file separately."));
+      continue
+    }
+    if (w !== "ok") continue;
+    let E = await kt(x, T, l);
+    if (E) c.push(E)
+  }
+  if (R > 0) c.push(q(r, "mcp", `plugin.json names more than ${Ne} MCP server files; ${R} ${P(R,"file")} past that limit were not examined. The plugin loader reads them all, so validate those files separately.`));
+  return c.filter((S) => S.errors.length > 0 || S.warnings.length > 0)
+}
+async function Fe(e, n) {
+  let s;
+  try {
+    s = await Le(e, {
+      withFileTypes: !0
+    })
+  } catch (i) {
+    let l = k(i);
+    if (l === "ENOENT" || l === "ENOTDIR") return {
+      files: [],
+      skippedSymlinks: 0
+    };
+    throw i
+  }
+  let r = U(s, (i) => i.isSymbolicLink());
+  if (n) {
+    let i = [];
+    for (let l of s.filter((c) => c.isDirectory()))
+      if (await d7(y.join(e, l.name))) r++;
+      else i.push(y.join(e, l.name, "SKILL.md"));
+    return {
+      files: i,
+      skippedSymlinks: r
+    }
+  }
+  let a = [];
+  for (let i of s) {
+    let l = y.join(e, i.name);
+    if (i.isDirectory()) {
+      if (await d7(l)) {
+        r++;
+        continue
+      }
+      let c = await Fe(l, !1);
+      a.push(...c.files), r += c.skippedSymlinks
+    } else if (i.isFile() && i.name.toLowerCase().endsWith(".md")) a.push(l)
+  }
+  return {
+    files: a,
+    skippedSymlinks: r
+  }
+}
+var KKr = "NO_MANIFEST",
+  Pt = new Map([
+    ["skills", "skill"],
+    ["agents", "agent"],
+    ["commands", "command"]
+  ]);
+
+function wt(e, n) {
+  return e === "project" || n === "skill"
+}
+async function _e(e) {
+  let n = [...Pt].map(([r, a]) => [a, y.join(e, r)]),
+    s = await Promise.all(n.map(([, r]) => gA(e, r)));
+  return {
+    dirs: n.filter((r, a) => s[a] === "ok"),
+    refused: n.filter((r, a) => s[a] === "refused")
+  }
+}
+async function fs(e) {
+  if (await gA(e, y.join(e, ".claude-plugin")) === "ok") return !0;
+  let n = y.join(e, "skills"),
+    s = await gA(e, n);
+  if (s === "refused") return !0;
+  if (s !== "ok") return !1;
+  let {
+    files: r
+  } = await Fe(n, !0);
+  for (let a of r)
+    if (await Fn(a).then(() => !0, (l) => {
+        let c = k(l);
+        return c !== "ENOENT" && c !== "ENOTDIR"
+      })) return !0;
+  return !1
+}
+
+function q(e, n, s) {
+  return {
+    success: !0,
+    errors: [],
+    warnings: [{
+      path: "directory",
+      message: s
+    }],
+    filePath: e,
+    fileType: n
+  }
+}
+async function ve(e, n, s) {
+  let r = [],
+    a = 0,
+    i = n.length;
+  for (let [l, c] of n) r.push(q(c, l, s === "plugin" ? "This directory is a symlink, so the validator read nothing in it. An installed plugin loads it only if it points inside the plugin's installed folder, or, for a plugin read in place from a local marketplace folder, inside that folder; a project's .claude/skills plugin, only if it points inside the folder holding that .claude. Otherwise replace the link with a copy of the folder. To check its files, validate the folder it points to." : "This directory is a symlink and nothing in it was read \u2014 " + "component directories are read without following symlinks. A session loading this project does follow it, so validate the real directory separately."));
+  for (let [l, c] of e) {
+    let {
+      files: m,
+      skippedSymlinks: p
+    } = await Fe(c, l === "skill"), g = wt(s, l) ? p : 0, h = 0, v = 0;
+    for (let R of m) {
+      let S = Ay(R, 256),
+        x;
+      try {
+        x = await j6(R)
+      } catch (T) {
+        r.push({
+          success: !1,
+          errors: [{
+            path: "file",
+            message: `Failed to read: ${Ay(d(T),200)}`
+          }],
+          warnings: [],
+          filePath: S,
+          fileType: l
+        });
+        continue
+      }
+      if (x.kind !== "ok") {
+        if (x.kind === "refused" && wt(s, l)) h++;
+        else if (x.kind === "too-large") v++;
+        continue
+      }
+      a++;
+      let f = Zn(S, x.content, l, s);
+      if (f.errors.length > 0 || f.warnings.length > 0) r.push(f)
+    }
+    i += g + h + v;
+    let b = s === "plugin" ? "A session started with --plugin-dir on this plugin follows a symlink here. An installed plugin follows one only if it points inside the plugin's installed folder, or, for a plugin read in place from a local marketplace folder, inside that folder; a project's .claude/skills plugin, only if it points inside the folder holding that .claude. To check what a symlink points to, validate that path." : "A session loading this directory does follow them, so validate the real paths separately.";
+    if (g > 0) r.push(q(c, l, `${g} ${P(g,"entry","entries")} here ${P(g,"is","are")} ${P(g,"a symlink","symlinks")} and ${P(g,"was","were")} not read \u2014 components are read ` + `without following symlinks. ${b}`));
+    if (h > 0) r.push(q(c, l, `${h} ${P(h,"component")} here ${P(h,"was","were")} not read \u2014 the path is not a ` + `regular file (a symlink, a FIFO, a directory). ${s==="plugin"?"A FIFO or a directory is never read. ":""}${b}`));
+    if (v > 0) r.push(q(c, l, `${v} ${P(v,"file")} here ${P(v,"is","are")} larger than ${UU} bytes and ${P(v,"was","were")} not validated.`))
+  }
+  return {
+    results: r,
+    scanned: a,
+    skipped: i
+  }
+}
+async function hs(e) {
+  return (await ys(e))?.map(ie) ?? null
+}
+async function ys(e) {
+  let n = Pt.get(y.basename(e));
+  if (n) {
+    let R = y.dirname(e),
+      S;
+    if (y.basename(R) === ".claude" && !await m1(R)) S = "The enclosing .claude directory is a link (a symlink or a Windows junction).";
+    else if (!await m1(e)) S = "This path is a link (a symlink or a Windows junction).";
+    if (S) return [{
+      success: !1,
+      errors: [{
+        path: "directory",
+        message: `${S} Component directories are read without following links, so nothing here was validated. Pass the real directory instead.`
+      }],
+      warnings: [],
+      filePath: e,
+      fileType: n
+    }];
+    return (await ve([
+      [n, e]
+    ], [], "project")).results
+  }
+  let s = y.join(e, ".claude"),
+    r = y.basename(e) === ".claude",
+    [a, i] = await Promise.all([gA(e, s), r ? Promise.resolve(!1) : fs(e)]),
+    l = r || i ? await _e(e) : {
+      dirs: [],
+      refused: []
+    },
+    c = a === "ok" ? await _e(s) : {
+      dirs: [],
+      refused: []
+    },
+    m = r ? "project" : "plugin",
+    [p, g] = await Promise.all([ve(l.dirs, l.refused, m), ve(c.dirs, c.refused, "project")]),
+    h = [...p.results, ...g.results],
+    v = p.scanned + g.scanned,
+    b = p.skipped + g.skipped;
+  if (a === "refused") h.push(q(s, "plugin", "This directory is a link (a symlink or a Windows junction) and nothing in it was read \u2014 .claude is " + "read without following links. A session loading this project does follow it, so validate the real directory separately."));
+  return v > 0 || b > 0 || h.length > 0 ? h : null
+}
+async function qKr(e) {
+  let n = [],
+    s = new Set(["claude.md", "claude.local.md"]),
+    r = [];
+  try {
+    r = await Le(e, {
+      withFileTypes: !0
+    })
+  } catch {}
+  for (let i of r) {
+    if (!i.isFile() || !s.has(i.name.toLowerCase())) continue;
+    let c = i.name.toLowerCase() === "claude.local.md" ? "Remove it from the plugin root." : "To ship context with your plugin, use a skill (skills/<name>/SKILL.md) instead.";
+    n.push({
+      success: !0,
+      errors: [],
+      warnings: [{
+        path: "root",
+        message: `${i.name} at the plugin root is not loaded as project context. ${c}`
+      }],
+      filePath: y.join(e, Ay(i.name, 64)),
+      fileType: "plugin"
+    })
+  }
+  n.push(...await ws(e));
+  let a = await _e(e);
+  return n.push(...(await ve(a.dirs, a.refused, "plugin")).results), n.push(...await Qn(e)), n.push(...await ms(e, r)), n.map(ie)
+}
+async function vGo(e, n) {
+  let s = ie(await ks(e));
+  if (n?.unrecordableNames !== "warn") return s;
+  let r = s.errors.filter((i) => i.code !== $e),
+    a = s.errors.filter((i) => i.code === $e).map(({
+      path: i,
+      message: l
+    }) => ({
+      path: i,
+      message: l
+    }));
+  return {
+    ...s,
+    success: r.length === 0,
+    errors: r,
+    warnings: [...a, ...s.warnings]
+  }
+}
+async function ks(e) {
+  let n = y.resolve(e),
+    s = null;
+  try {
+    s = await bt(n)
+  } catch (a) {
+    if (!K(a)) throw a
+  }
+  if (s?.isDirectory()) {
+    let a = y.join(n, ".claude-plugin", "marketplace.json"),
+      i = await Ee(a),
+      l = i.errors[0];
+    if (!(l?.path === "file" && (l.code === "ENOENT" || l.code === "ENOTDIR"))) return i;
+    let m = y.join(n, ".claude-plugin", "plugin.json"),
+      p = await Qyn(m),
+      g = p.errors[0]?.code;
+    if (g !== "ENOENT" && g !== "ENOTDIR") return p;
+    return {
+      success: !1,
+      errors: [{
+        path: "directory",
+        code: KKr,
+        message: "No manifest found in directory. Expected .claude-plugin/marketplace.json or .claude-plugin/plugin.json"
+      }],
+      warnings: [],
+      filePath: n,
+      fileType: "plugin"
+    }
+  }
+  switch (Hn(n)) {
+    case "plugin":
+      return Qyn(e);
+    case "marketplace":
+      return Ee(e);
+    case "unknown": {
+      try {
+        let a = await Ie(n, {
+            encoding: "utf-8"
+          }),
+          i = ee(gs(a));
+        if (D(i)) {
+          let l = Object.keys(i),
+            c = jKe().shape,
+            m = l.some((g) => Object.hasOwn(c, g) && !tHs(g)),
+            p = l.some((g) => tHs(g) && !Object.hasOwn(c, g));
+          if (Array.isArray(i.plugins) || Object.hasOwn(i, "plugins") && Object.hasOwn(i, "owner") || m && !p) return Ee(e)
+        }
+      } catch (a) {
+        if (k(a) === "ENOENT") return {
+          success: !1,
+          errors: [{
+            path: "file",
+            message: `File not found: ${n}`
+          }],
+          warnings: [],
+          filePath: n,
+          fileType: "plugin"
+        }
+      }
+      return Qyn(e)
+    }
+  }
+}
+async function tit(e) {
+  let n = await vGo(e),
+    s = n.filePath;
+  if (n.errors.some((p) => p.code === KKr)) {
+    let p = await hs(s);
+    return p ? {
+      manifest: null,
+      contents: p,
+      resolvedPath: s,
+      pluginRoot: null
+    } : {
+      manifest: n,
+      contents: [],
+      resolvedPath: s,
+      pluginRoot: null
+    }
+  }
+  let r = y.dirname(s),
+    a = y.dirname(r);
+  if (y.basename(r) !== ".claude-plugin") return {
+    manifest: n,
+    contents: [],
+    resolvedPath: s,
+    pluginRoot: null
+  };
+  if (n.fileType === "plugin") {
+    let p = await qKr(a);
+    return {
+      manifest: n,
+      contents: p,
+      resolvedPath: s,
+      pluginRoot: a
+    }
+  }
+  if (y.resolve(e) !== a) return {
+    manifest: n,
+    contents: [],
+    resolvedPath: s,
+    pluginRoot: null
+  };
+  let i = await GKr(s),
+    l = i !== void 0 && Fzn(i.name) && i.plugins.some((p) => we(p, a, a)),
+    c = await Qyn(y.join(r, "plugin.json"), {
+      kind: l ? "anthropic" : "alone"
+    });
+  if (c.errors[0]?.code === "ENOENT") return {
+    manifest: n,
+    contents: [],
+    resolvedPath: s,
+    pluginRoot: null
+  };
+  let m = c.errors.length > 0 || c.warnings.length > 0 || (c.notes?.length ?? 0) > 0;
+  return {
+    manifest: n,
+    contents: [...m ? [c] : [], ...await qKr(a)],
+    resolvedPath: s,
+    pluginRoot: a
+  }
+}
+async function re(e) {
+  return HW(e).catch(() => {
+    return
+  })
+}
+
+function he(e) {
+  return D(e) ? e : void 0
+}
+
+function ae(e) {
+  try {
+    return he(ee(e))
+  } catch {
+    return
+  }
+}
+
+function je(e, n, s) {
+  let r = [];
+  for (let [a, i] of Object.entries(e)) {
+    let l = he(i);
+    if (!l || typeof l.command !== "string") continue;
+    let m = l.command.match(/^\$\{CLAUDE_PLUGIN_ROOT\}\/bin\/([^/\\]+)$/)?.[1];
+    if (m === void 0 || n.has(m) || s.has(m)) continue;
+    let p = Ay(a, 64),
+      g = Ay(m, 64);
+    r.push({
+      path: `mcpServers.${p}`,
+      message: `bin/${g} is not a shipped file, a declared binaries entry, or ` + "a name derivable from the declared entries \u2014 the server will " + 'fail to start. Check for a typo against the "binaries" map in plugin.json.'
+    })
+  }
+  return r
+}
+async function ws(e) {
+  if (!await m1(y.join(e, ".claude-plugin"))) return [];
+  let n = y.join(e, ".claude-plugin", "plugin.json"),
+    s = await re(n);
+  if (s === void 0) return [];
+  let r = ae(gs(s)),
+    a = nln(r?.binaries);
+  if (!r || !a) return [];
+  let i = new Set(Object.keys(a));
+  for (let x of PZi) {
+    let f = new Map;
+    for (let T of Object.keys(a)) {
+      let w = a1t(T, x);
+      if (w !== void 0) f.set(w, (f.get(w) ?? 0) + 1)
+    }
+    for (let [T, w] of f)
+      if (w === 1) i.add(T)
+  }
+  let l = y.join(e, "bin"),
+    c = new Set;
+  if (await m1(l)) c = await Le(l).then((x) => new Set(x)).catch(() => new Set);
+  let m = [];
+
+  function p(x, f) {
+    if (f.length > 0) m.push({
+      success: !0,
+      errors: [],
+      warnings: f,
+      filePath: x,
+      fileType: "plugin"
+    })
+  }
+  let g = y.join(e, ".mcp.json"),
+    h = await re(g);
+  if (h !== void 0) {
+    let x = ae(h);
+    if (x) {
+      let f = he(x.mcpServers || x);
+      if (f) p(g, je(f, c, i))
+    }
+  }
+  let v = r.mcpServers,
+    b = v === void 0 ? [] : Array.isArray(v) ? v : [v],
+    R = [],
+    S = Ne;
+  for (let x of b) {
+    if (typeof x === "string" && S <= 0) continue;
+    if (typeof x === "string") {
+      if (S--, !x.startsWith("./") || Te(x)) continue;
+      let T = y.join(e, x);
+      if (await gA(e, y.dirname(T)) !== "ok") continue;
+      let w = await re(T);
+      if (w === void 0) continue;
+      let E = ae(w);
+      if (!E) continue;
+      let _ = he(E.mcpServers || E);
+      if (_) p(y.join(e, Ay(x, 128)), je(_, c, i));
+      continue
+    }
+    let f = he(x);
+    if (f) R.push(...je(f, c, i))
+  }
+  return p(n, R), m
+}
+export {
+  WKr,
+  SGo,
+  wGo,
+  kGo,
+  Jyn,
+  zKr,
+  GKr,
+  uni,
+  Qyn,
+  VKr,
+  Ay,
+  fni,
+  KKr,
+  qKr,
+  vGo,
+  tit
+};

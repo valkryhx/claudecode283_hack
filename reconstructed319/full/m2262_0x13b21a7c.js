@@ -1,0 +1,1081 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  f
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  Le,
+  fe
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  Fe
+} from "B:/~BUN/root/chunk-vxjrk7vf.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  Jo,
+  xzn,
+  yHe,
+  jBt,
+  Gv,
+  NO
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  s,
+  n,
+  pl,
+  Vr
+} from "B:/~BUN/root/chunk-qey16aan.js";
+import {
+  wi
+} from "B:/~BUN/root/chunk-hfz1e87n.js";
+import {
+  re
+} from "B:/~BUN/root/chunk-xkw95p5n.js";
+import {
+  Ce
+} from "B:/~BUN/root/chunk-cync0e08.js";
+import {
+  Y
+} from "B:/~BUN/root/chunk-c1v460b9.js";
+import {
+  Sn
+} from "B:/~BUN/root/chunk-v95bwhaa.js";
+import {
+  Ze
+} from "B:/~BUN/root/chunk-cpzw87wr.js";
+import {
+  Tt
+} from "B:/~BUN/root/chunk-dw9hahea.js";
+import {
+  MM
+} from "B:/~BUN/root/chunk-5t8ewsey.js";
+import {
+  fa
+} from "B:/~BUN/root/chunk-t99rgr48.js";
+import {
+  Si
+} from "B:/~BUN/root/chunk-w2rkhp43.js";
+import {
+  Ic
+} from "B:/~BUN/root/chunk-c7kw6nqt.js";
+import {
+  gK
+} from "B:/~BUN/root/chunk-bnbh68ja.js";
+import {
+  j_
+} from "B:/~BUN/root/chunk-nyy541yq.js";
+import {
+  e,
+  r
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import {
+  g2t
+} from "B:/~BUN/root/chunk-t6wq64cz.js";
+import {
+  Z,
+  y,
+  j
+} from "B:/~BUN/root/chunk-czy5r8bc.js";
+import {
+  ce
+} from "B:/~BUN/root/chunk-w7vsj9wa.js";
+import {
+  w
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+j();
+
+function tt(c) {
+  return c.split(`
+`).map(je)
+}
+
+function st(C, k) {
+  return e(n, {
+    color: C.color,
+    children: C.text
+  }, k)
+}
+
+function nt(R, q) {
+  return e(n, {
+    dimColor: R.dim,
+    children: R.segments.map(st)
+  }, q)
+}
+
+function it() {
+  return []
+}
+
+function rt(Ne, z) {
+  return Ne.x - z.x
+}
+
+function lt(K, qe) {
+  let I = 0;
+  return e(s, {
+    height: 1,
+    children: K.map((L, ao) => {
+      let F = Math.max(0, L.x - I);
+      return I = Math.max(I, L.x) + 1, r(n, {
+        children: [" ".repeat(F), e(n, {
+          color: L.color,
+          children: L.char
+        })]
+      }, ao)
+    })
+  }, qe)
+}
+
+function at(g) {
+  return (g + 1) % X.length
+}
+var J = 3000,
+  E = 48,
+  O = 3;
+
+function V(m) {
+  let d = S(10),
+    {
+      live: t,
+      boxRef: i,
+      children: o
+    } = m,
+    a;
+  if (d[0] !== o) a = e(s, {
+    flexDirection: "column",
+    width: E - 4,
+    height: O,
+    children: o
+  }), d[0] = o, d[1] = a;
+  else a = d[1];
+  const h = !t,
+    x = t ? "claude" : void 0,
+    b = t ? `${NO} try it` : `  ${xzn} demo`;
+  let p;
+  if (d[2] !== h || d[3] !== x || d[4] !== b) p = e(s, {
+    position: "absolute",
+    marginLeft: E - 12,
+    children: e(n, {
+      dimColor: h,
+      color: x,
+      children: b
+    })
+  }), d[2] = h, d[3] = x, d[4] = b, d[5] = p;
+  else p = d[5];
+  let v;
+  if (d[6] !== i || d[7] !== a || d[8] !== p) v = r(s, {
+    ref: i,
+    borderStyle: "round",
+    borderColor: "inactive",
+    paddingX: 1,
+    width: E,
+    height: O + 2,
+    children: [a, p]
+  }), d[6] = i, d[7] = a, d[8] = p, d[9] = v;
+  else v = d[9];
+  return v
+}
+var yo = /\[(\w+):([^\]]*)\]/g;
+
+function je(m) {
+  let t = m.startsWith("#"),
+    i = t ? m.slice(1) : m,
+    o = [],
+    d = 0;
+  for (let a of i.matchAll(yo)) {
+    if (a.index > d) o.push({
+      text: i.slice(d, a.index)
+    });
+    o.push({
+      text: a[2],
+      color: a[1]
+    }), d = a.index + a[0].length
+  }
+  if (d < i.length) o.push({
+    text: i.slice(d)
+  });
+  if (o.length === 0) o.push({
+    text: ""
+  });
+  return {
+    dim: t,
+    segments: o
+  }
+}
+
+function T(m) {
+  let v = S(4),
+    {
+      frames: t
+    } = m,
+    i = t.map(tt),
+    o = j_(Ic().prefersReducedMotion),
+    [d, a] = pl(o ? null : J),
+    h = Math.floor(a / J) % i.length,
+    x = i[h];
+  const b = V,
+    p = x.map(nt);
+  let g;
+  if (v[0] !== b || v[1] !== d || v[2] !== p) g = e(b, {
+    boxRef: d,
+    children: p
+  }), v[0] = b, v[1] = d, v[2] = p, v[3] = g;
+  else g = v[3];
+  return g
+}
+var X = [{
+    label: "default",
+    symbol: "",
+    color: "text"
+  }, {
+    label: "accept edits on",
+    symbol: jBt,
+    color: "autoAccept"
+  }, {
+    label: "plan mode on",
+    symbol: yHe,
+    color: "planMode"
+  }, {
+    label: "auto mode on",
+    symbol: jBt,
+    color: "warning"
+  }],
+  G = 80,
+  Je = 60,
+  Q = 1400,
+  A = 16,
+  Oe = 60,
+  Ue = 100,
+  Lo = [NO, Gv, Jo, "\xB7"],
+  Po = ["claude", "success", "warning", "suggestion", "autoAccept"];
+
+function Xe(m) {
+  let t = [];
+  for (let i = 0; i < m; i++) t.push({
+    x: Math.floor(Math.random() * Ue),
+    delay: Math.random() * 400,
+    speed: 0.7 + Math.random() * 0.6,
+    char: gK(Lo),
+    color: gK(Po)
+  });
+  return t
+}
+
+function oe(m) {
+  let i = S(6),
+    {
+      onDone: t
+    } = m,
+    o;
+  if (i[0] === w) o = Xe(40), i[0] = o;
+  else o = i[0];
+  let d = o,
+    a = j_(Ic().prefersReducedMotion),
+    [h, x] = pl(a ? null : Je),
+    [b] = y(x),
+    p = x - b,
+    v;
+  if (i[1] !== t) v = [t], i[1] = t, i[2] = v;
+  else v = i[2];
+  Vr(t, Q + 600, v);
+  let g;
+  if (i[3] !== p || i[4] !== h) {
+    let c = Array.from({
+      length: A
+    }, it);
+    for (const C of d) {
+      let k = Math.max(0, p - C.delay);
+      let R = Math.floor(k / Q * A * C.speed);
+      if (R >= 0 && R < A) c[R].push(C)
+    }
+    for (const q of c) q.sort(rt);
+    g = e(s, {
+      ref: h,
+      position: "absolute",
+      marginLeft: Oe,
+      flexDirection: "column",
+      width: Ue,
+      height: A,
+      children: c.map(lt)
+    });
+    i[3] = p, i[4] = h, i[5] = g
+  } else g = i[5];
+  return g
+}
+
+function te(m) {
+  let b = S(14),
+    {
+      text: t
+    } = m,
+    i = ce(t),
+    o = j_(Ic().prefersReducedMotion),
+    [d, a] = pl(o ? null : G),
+    h = i + 20,
+    x = Math.floor(a / G) % h - 10,
+    p;
+  if (b[0] !== x || b[1] !== t) p = g2t(t, x), b[0] = x, b[1] = t, b[2] = p;
+  else p = b[2];
+  let {
+    before: v,
+    shimmer: g,
+    after: c
+  } = p, C;
+  if (b[3] !== v) C = e(n, {
+    bold: !0,
+    color: "claude",
+    children: v
+  }), b[3] = v, b[4] = C;
+  else C = b[4];
+  let k;
+  if (b[5] !== g) k = e(n, {
+    bold: !0,
+    color: "claudeShimmer",
+    children: g
+  }), b[5] = g, b[6] = k;
+  else k = b[6];
+  let R;
+  if (b[7] !== c) R = e(n, {
+    bold: !0,
+    color: "claude",
+    children: c
+  }), b[7] = c, b[8] = R;
+  else R = b[8];
+  let q;
+  if (b[9] !== d || b[10] !== C || b[11] !== k || b[12] !== R) q = r(s, {
+    ref: d,
+    children: [C, k, R]
+  }), b[9] = d, b[10] = C, b[11] = k, b[12] = R, b[13] = q;
+  else q = b[13];
+  return q
+}
+
+function ne() {
+  let d = S(11),
+    [m, t] = y(0),
+    i = X[m],
+    o = wi("confirm:cycleMode", "Confirmation", "shift+tab"),
+    a, h;
+  if (d[0] === w) a = {
+    "confirm:cycleMode": () => t(at)
+  }, h = {
+    context: "Confirmation"
+  }, d[0] = a, d[1] = h;
+  else a = d[0], h = d[1];
+  Sn(a, h);
+  let x;
+  if (d[2] !== o) x = r(n, {
+    dimColor: !0,
+    children: ["Press ", o, " now", `
+
+`]
+  }), d[2] = o, d[3] = x;
+  else x = d[3];
+  const b = i.symbol ? `${i.symbol} ` : "  ";
+  let p;
+  if (d[4] !== i.color || d[5] !== i.label || d[6] !== b) p = r(n, {
+    color: i.color,
+    children: [b, i.label]
+  }), d[4] = i.color, d[5] = i.label, d[6] = b, d[7] = p;
+  else p = d[7];
+  let v;
+  if (d[8] !== x || d[9] !== p) v = e(V, {
+    live: !0,
+    children: r(n, {
+      children: [x, p]
+    })
+  }), d[8] = x, d[9] = p, d[10] = v;
+  else v = d[10];
+  return v
+}
+
+function B(m) {
+  let i = S(2),
+    {
+      children: t
+    } = m,
+    o;
+  if (i[0] !== t) o = e(n, {
+    bold: !0,
+    color: "claude",
+    children: t
+  }), i[0] = t, i[1] = o;
+  else o = i[1];
+  return o
+}
+
+function u(m) {
+  let i = S(2),
+    {
+      children: t
+    } = m,
+    o;
+  if (i[0] !== t) o = e(n, {
+    color: "suggestion",
+    children: t
+  }), i[0] = t, i[1] = o;
+  else o = i[1];
+  return o
+}
+var KH = [{
+  id: "at-mentions",
+  title: "Talk to your codebase",
+  tagline: "@ files, line refs",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(n, {
+      children: ["Type ", e(B, {
+        children: "@"
+      }), " anywhere in your prompt to fuzzy-find and attach a file. Claude reads it before answering \u2014 no more pasting code."]
+    }), e(T, {
+      frames: [`> what does [suggestion:@]
+#type a file name\u2026`, `> what does [suggestion:@src/auth.ts]
+  [suggestion:\u276F src/auth.ts]
+#   src/auth.test.ts`, `> what does [suggestion:@src/auth.ts] do?
+#\u25D0 Reading src/auth.ts\u2026`, `> what does [suggestion:@src/auth.ts] do?
+Exports validateToken() which
+checks JWT expiry and signature.`]
+    }), r(n, {
+      children: ["Reference specific lines with ", e(u, {
+        children: "src/app.ts:42"
+      }), " and Claude jumps straight there. Works in both directions: Claude cites files the same way, so you can click to open them in your editor."]
+    }), r(n, {
+      dimColor: !0,
+      children: ["Also try: ", e(u, {
+        children: "@folder/"
+      }), " to attach a whole directory tree."]
+    })]
+  })
+}, {
+  id: "modes",
+  title: "Steer with modes",
+  tagline: "shift+tab, plan, auto",
+  body: e(Se, {})
+}, {
+  id: "undo",
+  title: "Undo anything",
+  tagline: "/rewind, Esc-Esc",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(n, {
+      children: ["Claude checkpoints your files before every edit. Press", " ", e(B, {
+        children: "Esc Esc"
+      }), " (double-tap) to open ", e(u, {
+        children: "/rewind"
+      }), " and roll back to any prior state \u2014 code, conversation, or both."]
+    }), e(T, {
+      frames: [`[success:\u2713] Updated regex in parser.ts
+#[error:8 tests failing]`, `#press Esc Esc
+Rewind to:
+  [suggestion:\u276F before parser.ts edit]`, `#[success:\u2713] parser.ts restored
+> try a simpler approach
+#\u25D0 thinking\u2026`]
+    }), e(n, {
+      children: "Went down the wrong path? Rewind to before the detour and try a different prompt. Your git history stays clean."
+    }), r(n, {
+      dimColor: !0,
+      children: ["Also: ", e(u, {
+        children: "/clear"
+      }), " wipes conversation but keeps files.", " ", e(u, {
+        children: "/branch"
+      }), " forks the conversation to try two approaches."]
+    })]
+  })
+}, {
+  id: "background",
+  title: "Run in the background",
+  tagline: "tasks, /tasks",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(n, {
+      children: ["Long builds and test suites do not have to block you. Add", " ", e(B, {
+        children: "&"
+      }), " to any bash command and it runs in the background \u2014 you keep chatting, Claude notifies you when it finishes."]
+    }), e(T, {
+      frames: [`> run the test suite [claude:&]
+#task started in background`, `> now fix the lint in app.ts
+#\u25D0 Editing app.ts\u2026
+#[warning:\u25D0] bun test \xB7 12s`, `> now fix the lint in app.ts
+[success:\u2713] Removed unused import
+#[warning:\u25D0] bun test \xB7 28s`, `> now fix the lint in app.ts
+[success:\u2713] Removed unused import
+#[success:\u2713] bun test \xB7 284 pass`]
+    }), r(n, {
+      children: ["Run ", e(u, {
+        children: "/tasks"
+      }), " to see everything in flight. Claude can read task output mid-run and react to failures automatically."]
+    }), e(n, {
+      dimColor: !0,
+      children: "Subagents also run as tasks \u2014 it is all one queue."
+    })]
+  })
+}, {
+  id: "memory",
+  title: "Teach Claude your rules",
+  tagline: "CLAUDE.md, /memory",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(n, {
+      children: ["Drop a ", e(u, {
+        children: "CLAUDE.md"
+      }), " file in your repo and Claude reads it at the start of every session. Put your conventions there: test commands, style rules, do-not-touch directories."]
+    }), e(T, {
+      frames: [`#\u2500 CLAUDE.md \u2500
+#Run tests with: [suggestion:bun test]
+#Never edit src/legacy/`, `> add tests for the cache
+#\u25D0 reading CLAUDE.md\u2026`, `> add tests for the cache
+Writing cache.test.ts,
+running [suggestion:bun test] to verify.`]
+    }), r(n, {
+      children: ["Run ", e(u, {
+        children: "/init"
+      }), " to generate a starter CLAUDE.md from your codebase. Run ", e(u, {
+        children: "/memory"
+      }), " to edit it inline."]
+    }), e(n, {
+      dimColor: !0,
+      children: "Works at three levels: repo, your home directory (all projects), and per-directory overrides."
+    })]
+  })
+}, {
+  id: "mcp",
+  title: "Extend with tools",
+  tagline: "MCP, /mcp",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(n, {
+      children: ["MCP servers give Claude new tools: read your Slack, query your database, control your browser. Run ", e(u, {
+        children: "/mcp"
+      }), " to browse and connect servers."]
+    }), e(T, {
+      frames: [`> [suggestion:/mcp]
+Connected servers:
+  [success:\u2713] slack    [success:\u2713] github`, `> anything urgent in #eng?
+#\u25D0 [suggestion:slack] \xB7 reading channel\u2026`, `Boris posted about the merge
+freeze. Also 3 PRs await
+your review on github.`]
+    }), e(n, {
+      children: 'Once connected, tools appear automatically \u2014 ask Claude to "check my calendar" or "search our Notion" and it just works.'
+    }), r(n, {
+      dimColor: !0,
+      children: ["From your shell:", " ", e(u, {
+        children: "claude mcp add my-server -- npx some-mcp-pkg"
+      }), " to wire one up without leaving the terminal."]
+    })]
+  })
+}, {
+  id: "automate",
+  title: "Automate your workflow",
+  tagline: "skills, hooks",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(n, {
+      children: ["Save a prompt to ", e(u, {
+        children: ".claude/skills/deploy/SKILL.md"
+      }), " and it becomes ", e(u, {
+        children: "/deploy"
+      }), " \u2014 type it, Claude runs it. Run", " ", e(u, {
+        children: "/skills"
+      }), " to see what you have."]
+    }), e(T, {
+      frames: [`> [suggestion:/deploy] staging
+#\u25D0 skill: deploy`, `[success:\u2713] built
+[success:\u2713] tests pass
+#\u25D0 pushing to staging\u2026`, `[success:\u2713] deployed
+#[suggestion:staging.app.com]
+#PostToolUse hook ran prettier`]
+    }), r(n, {
+      children: ["Hooks run your own scripts on events: before a tool call, after a response, on session start. Use them to enforce rules, log activity, or inject context. Run ", e(u, {
+        children: "/hooks"
+      }), " to see what fires when."]
+    }), r(n, {
+      dimColor: !0,
+      children: ["Run ", e(u, {
+        children: "/install-github-app"
+      }), " to let Claude review PRs when tagged."]
+    })]
+  })
+}, {
+  id: "subagents",
+  title: "Multiply yourself",
+  tagline: "subagents",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [e(n, {
+      children: 'Claude can spawn copies of itself to work in parallel. Ask it to "use subagents to search these 5 directories" and watch the fan-out.'
+    }), e(T, {
+      frames: [`> find any error handling bugs
+#\u25D0 Spawning 3 agents\u2026`, `#[warning:\u25D0] agent-1 \xB7 scanning api
+#[warning:\u25D0] agent-2 \xB7 scanning utils
+#[warning:\u25D0] agent-3 \xB7 scanning cli`, `#[success:\u2713] agent-1 \xB7 found reject
+#[warning:\u25D0] agent-2 \xB7 scanning utils
+#[success:\u2713] agent-3 \xB7 no issues`, `Found 2 issues:
+  [suggestion:api/fetch.ts:42] unhandled
+  [suggestion:utils/retry.ts:18] swallowed`]
+    }), r(n, {
+      dimColor: !0,
+      children: ["Subagents run in isolated context. For true parallel sessions on separate branches, launch with ", e(u, {
+        children: "claude --worktree"
+      }), "."]
+    })]
+  })
+}, {
+  id: "cross-device",
+  title: "Code from anywhere",
+  tagline: "/remote-control, /teleport",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(n, {
+      children: ["Run ", e(u, {
+        children: "/remote-control"
+      }), " to take this session with you and pick up right where you left off on any device. Open the Code tab in the Claude mobile app, or visit claude.ai/code in a browser. The session keeps running on this machine while your other devices act as a remote control."]
+    }), e(T, {
+      frames: [`> [suggestion:/remote-control]
+#\u25D0 connecting\u2026`, `[success:\u2713] connected
+see this session at
+[suggestion:claude.ai/code/abc123]`, `#\u2500 on your phone \u2500
+#abc123 \xB7 running tests
+[warning:\u25D0] 142 of 284`, `#\u2500 on your phone \u2500
+#abc123 \xB7 [success:\u2713] all pass
+> ship it`]
+    }), r(n, {
+      children: ["Run ", e(u, {
+        children: "/teleport"
+      }), " to move a session between here and the cloud \u2014 send this one up to keep it going after you close the lid, or pull a cloud session into this terminal with full history."]
+    }), e(n, {
+      dimColor: !0,
+      children: "Kick off a long task, close your laptop, check progress from your phone."
+    })]
+  })
+}, {
+  id: "model-dial",
+  title: "Dial the model",
+  tagline: "/model, /effort",
+  body: r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [r(n, {
+      children: ["Run ", e(u, {
+        children: "/model"
+      }), " to switch models. Fable for the hardest problems, Opus for complex work, Sonnet for most tasks, Haiku for quick questions. Each trades speed for depth."]
+    }), e(T, {
+      frames: [`> [suggestion:/effort] high
+#effort set to [claude:high]`, `> why is the list page slow?
+#[claude:\u25D0 thinking deeply\u2026]`, `Three hypotheses, ranked:
+ 1. N+1 query in loader
+ 2. missing index on users`]
+    }), r(n, {
+      children: [e(u, {
+        children: "/effort"
+      }), " controls how long Claude thinks before answering.", " ", e(B, {
+        children: "high"
+      }), " for tricky bugs, ", e(B, {
+        children: "low"
+      }), " when you just need a quick edit."]
+    }), r(n, {
+      dimColor: !0,
+      children: ["Also: ", e(u, {
+        children: "/fast"
+      }), " toggles fast mode \u2014 same model, faster output."]
+    })]
+  })
+}];
+
+function se(m) {
+  let i = S(3),
+    {
+      hint: t
+    } = m,
+    o;
+  if (i[0] === w) o = ["up", "down"], i[0] = o;
+  else o = i[0];
+  let d;
+  if (i[1] !== t) d = e(n, {
+    dimColor: !0,
+    italic: !0,
+    children: r(Ce, {
+      children: [e(Y, {
+        chord: o,
+        action: "select",
+        ...t
+      }), e(Y, {
+        chord: "enter",
+        action: "open",
+        ...t
+      }), e(Y, {
+        chord: "escape",
+        action: "close",
+        ...t
+      })]
+    })
+  }), i[1] = t, i[2] = d;
+  else d = i[2];
+  return d
+}
+
+function ie(m) {
+  let i = S(2),
+    {
+      hint: t
+    } = m,
+    o;
+  if (i[0] !== t) o = e(n, {
+    dimColor: !0,
+    italic: !0,
+    children: r(Ce, {
+      children: [e(Y, {
+        chord: "enter",
+        action: "mark done",
+        ...t
+      }), e(Y, {
+        chord: "escape",
+        action: "back",
+        ...t
+      })]
+    })
+  }), i[0] = t, i[1] = o;
+  else o = i[1];
+  return o
+}
+
+function Se() {
+  let m = S(9),
+    t, i;
+  if (m[0] === w) t = r(n, {
+    children: ["Press ", e(B, {
+      children: "shift+tab"
+    }), " to cycle permission modes. Each mode changes how much Claude asks before acting:"]
+  }), i = e(ne, {}), m[0] = t, m[1] = i;
+  else t = m[0], i = m[1];
+  let o;
+  if (m[2] === w) o = r(n, {
+    children: [e(n, {
+      color: "success",
+      children: "default"
+    }), " \u2014 ask before every edit"]
+  }), m[2] = o;
+  else o = m[2];
+  let d;
+  if (m[3] === w) d = r(n, {
+    children: [e(n, {
+      color: "autoAccept",
+      children: "accept edits"
+    }), " \u2014 edit freely, ask for commands"]
+  }), m[3] = d;
+  else d = m[3];
+  let a;
+  if (m[4] === w) a = r(n, {
+    children: [e(n, {
+      color: "planMode",
+      children: "plan"
+    }), " \u2014 research and propose, never touch files"]
+  }), m[4] = a;
+  else a = m[4];
+  let h;
+  if (m[5] === w) h = r(s, {
+    flexDirection: "column",
+    paddingLeft: 2,
+    children: [o, d, a, r(n, {
+      children: [e(n, {
+        color: "warning",
+        children: "auto"
+      }), " \u2014 Claude decides what is safe"]
+    })]
+  }), m[5] = h;
+  else h = m[5];
+  let x;
+  if (m[6] === w) x = e(n, {
+    color: "planMode",
+    children: "plan"
+  }), m[6] = x;
+  else x = m[6];
+  let b;
+  if (m[7] === w) b = e(n, {
+    color: "warning",
+    children: "auto"
+  }), m[7] = b;
+  else b = m[7];
+  let p;
+  if (m[8] === w) p = r(s, {
+    flexDirection: "column",
+    gap: 1,
+    children: [t, i, h, r(n, {
+      dimColor: !0,
+      children: ["Use ", x, " for big refactors you want to review first. Use ", b, " for long unattended tasks. Run ", e(u, {
+        children: "/permissions"
+      }), " to pre-allow specific commands so Claude stops asking about them."]
+    })]
+  }), m[8] = p;
+  else p = m[8];
+  return p
+}
+j();
+
+function Vt(Kt) {
+  return KH.some((jt) => jt.id === Kt)
+}
+
+function It() {
+  let Ft = fe().powerupsUnlocked ?? [];
+  return new Set(Ft.filter(Vt))
+}
+
+function _t() {
+  return !1
+}
+
+function Mzt(m) {
+  let c = S(57),
+    {
+      onExit: t
+    } = m,
+    {
+      storageV5: i
+    } = Fe(),
+    [o, d] = y(It),
+    [a, h] = y(null),
+    [x, b] = y(KH[0].id),
+    [p, v] = y(!1),
+    [g] = y(_t),
+    C;
+  if (c[0] !== g) C = fa(g), c[0] = g, c[1] = C;
+  else C = c[1];
+  let k = C,
+    R;
+  if (c[2] === w) R = () => v(!1), c[2] = R;
+  else R = c[2];
+  let q = R,
+    Ne;
+  if (c[3] !== o) Ne = function K(z) {
+    b(z.id), h(z), l("tengu_powerup_lesson_opened", {
+      lesson_id: f(z.id),
+      was_already_unlocked: o.has(z.id),
+      unlocked_count: o.size
+    })
+  }, c[3] = o, c[4] = Ne;
+  else Ne = c[4];
+  let K = Ne,
+    qe;
+  if (c[5] !== i || c[6] !== o) qe = function F(I) {
+    if (o.has(I)) {
+      return
+    }
+    let L = new Set(o).add(I);
+    if (d(L), Le((ao) => ({
+        ...ao,
+        powerupsUnlocked: [...L]
+      }), i), l("tengu_powerup_lesson_completed", {
+        lesson_id: f(I),
+        unlocked_count: L.size,
+        all_unlocked: L.size === KH.length
+      }), L.size === KH.length) v(!0)
+  }, c[5] = i, c[6] = o, c[7] = qe;
+  else qe = c[7];
+  let F = qe,
+    co;
+  if (c[8] !== o) co = KH.map((me) => {
+    let uo = o.has(me.id);
+    let mo = `${uo?re.tick:re.circle} ${me.title}`;
+    return {
+      label: uo ? e(n, {
+        color: "success",
+        children: mo
+      }) : mo,
+      value: me.id,
+      description: me.tagline
+    }
+  }), c[8] = o, c[9] = co;
+  else co = c[9];
+  let ze = co;
+  if (a) {
+    let P;
+    if (c[10] !== o || c[11] !== a.id) P = o.has(a.id), c[10] = o, c[11] = a.id, c[12] = P;
+    else P = c[12];
+    let U;
+    if (c[13] !== F || c[14] !== a.id) U = () => {
+      F(a.id), h(null)
+    }, c[13] = F, c[14] = a.id, c[15] = U;
+    else U = c[15];
+    let M;
+    if (c[16] === w) M = () => h(null), c[16] = M;
+    else M = c[16];
+    let _;
+    if (c[17] !== k || c[18] !== g || c[19] !== P || c[20] !== U || c[21] !== a) _ = e(Ve, {
+      lesson: a,
+      isUnlocked: P,
+      isRedesign: g,
+      hint: k,
+      onDone: U,
+      onBack: M
+    }), c[17] = k, c[18] = g, c[19] = P, c[20] = U, c[21] = a, c[22] = _;
+    else _ = c[22];
+    return _
+  }
+  let H = o.size === KH.length,
+    pe = H ? "All powered up" : "Power-ups",
+    P;
+  if (c[23] !== H || c[24] !== g || c[25] !== pe) P = !g && (H ? e(te, {
+    text: pe
+  }) : e(n, {
+    bold: !0,
+    color: "claude",
+    children: pe
+  })), c[23] = H, c[24] = g, c[25] = pe, c[26] = P;
+  else P = c[26];
+  const U = !g && " ";
+  let M;
+  if (c[27] !== U || c[28] !== o.size) M = r(n, {
+    dimColor: !0,
+    children: [U, o.size, "/", KH.length, " unlocked", " "]
+  }), c[27] = U, c[28] = o.size, c[29] = M;
+  else M = c[29];
+  const _ = o.size / KH.length;
+  let he;
+  if (c[30] !== _) he = e(MM, {
+    ratio: _,
+    width: 16,
+    fillColor: "claude",
+    emptyColor: "inactive"
+  }), c[30] = _, c[31] = he;
+  else he = c[31];
+  let ge;
+  if (c[32] !== he || c[33] !== P || c[34] !== M) ge = r(s, {
+    marginBottom: 1,
+    children: [P, M, he]
+  }), c[32] = he, c[33] = P, c[34] = M, c[35] = ge;
+  else ge = c[35];
+  const Ke = H ? "Now go build something." : "Each power-up teaches one thing Claude Code can do that most people miss. Open one, read it, try it, mark it done.";
+  let ye;
+  if (c[36] !== Ke) ye = e(s, {
+    marginBottom: 1,
+    children: e(n, {
+      dimColor: !0,
+      wrap: "wrap",
+      children: Ke
+    })
+  }), c[36] = Ke, c[37] = ye;
+  else ye = c[37];
+  let xe;
+  if (c[38] !== K) xe = (Nt) => {
+    let po = KH.find((qt) => qt.id === Nt);
+    if (po) K(po)
+  }, c[38] = K, c[39] = xe;
+  else xe = c[39];
+  let be;
+  if (c[40] !== t) be = () => t("Power-ups closed"), c[40] = t, c[41] = be;
+  else be = c[41];
+  let we;
+  if (c[42] !== ze || c[43] !== x || c[44] !== xe || c[45] !== be) we = e(Ze, {
+    options: ze,
+    hideIndexes: !0,
+    visibleOptionCount: KH.length,
+    defaultFocusValue: x,
+    onChange: xe,
+    onCancel: be
+  }), c[42] = ze, c[43] = x, c[44] = xe, c[45] = be, c[46] = we;
+  else we = c[46];
+  let ke;
+  if (c[47] !== k) ke = e(s, {
+    marginTop: 1,
+    children: e(se, {
+      hint: k
+    })
+  }), c[47] = k, c[48] = ke;
+  else ke = c[48];
+  let ve;
+  if (c[49] !== p) ve = p && e(oe, {
+    onDone: q
+  }), c[49] = p, c[50] = ve;
+  else ve = c[50];
+  let ho;
+  if (c[51] !== ge || c[52] !== ye || c[53] !== we || c[54] !== ke || c[55] !== ve) {
+    let zt = r(s, {
+      flexDirection: "column",
+      children: [ge, ye, we, ke, ve]
+    });
+    ho = e(Si, {
+      color: "claude",
+      children: zt
+    });
+    c[51] = ge, c[52] = ye, c[53] = we, c[54] = ke, c[55] = ve, c[56] = ho
+  } else ho = c[56];
+  return ho
+}
+
+function Ve(m) {
+  let h = S(17),
+    {
+      lesson: t,
+      isUnlocked: i,
+      hint: o,
+      onDone: d,
+      onBack: a
+    } = m,
+    x;
+  if (h[0] !== a || h[1] !== d) x = {
+    "confirm:yes": d,
+    "confirm:no": a
+  }, h[0] = a, h[1] = d, h[2] = x;
+  else x = h[2];
+  let b;
+  if (h[3] === w) b = {
+    context: "Confirmation"
+  }, h[3] = b;
+  else b = h[3];
+  Sn(x, b);
+  const p = i ? "success" : "pending";
+  let v;
+  if (h[4] !== p) v = e(Tt, {
+    status: p,
+    withSpace: !0
+  }), h[4] = p, h[5] = v;
+  else v = h[5];
+  let g = v,
+    c;
+  if (h[6] !== t.title) c = e(n, {
+    bold: !0,
+    color: "claude",
+    children: t.title
+  }), h[6] = t.title, h[7] = c;
+  else c = h[7];
+  let C;
+  if (h[8] !== g || h[9] !== c) C = r(s, {
+    children: [g, c]
+  }), h[8] = g, h[9] = c, h[10] = C;
+  else C = h[10];
+  let k;
+  if (h[11] !== o) k = e(ie, {
+    hint: o
+  }), h[11] = o, h[12] = k;
+  else k = h[12];
+  let R;
+  if (h[13] !== t.body || h[14] !== C || h[15] !== k) R = e(Si, {
+    color: "claude",
+    children: r(s, {
+      flexDirection: "column",
+      gap: 1,
+      children: [C, t.body, k]
+    })
+  }), h[13] = t.body, h[14] = C, h[15] = k, h[16] = R;
+  else R = h[16];
+  return R
+}
+export {
+  KH,
+  Mzt
+};

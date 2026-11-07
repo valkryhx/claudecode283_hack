@@ -1,0 +1,316 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { R, d, k, qt } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { OC, uY } from "B:/~BUN/root/chunk-y1kkrqy9.js";
+import { t, ee } from "B:/~BUN/root/chunk-2pp12te6.js";
+import { i } from "B:/~BUN/root/chunk-j6pt0v41.js";
+import { p } from "B:/~BUN/root/chunk-z6138ats.js";
+import { hC, Te, Od } from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import { rsn, ovo } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import { Btt, aSt, nxo, DHe, EH } from "B:/~BUN/root/chunk-c79wfkj4.js";
+import { Nqi as version, z$n as version_2, XRs, wbo } from "B:/~BUN/root/chunk-1012essb.js";
+import { o, xt } from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import { mkdir as m, readFile as w, unlink as A, writeFile as E } from "fs/promises";
+import { join as f } from "path";
+var mqt = "41077d10-94b8-4194-be48-d251e9eb21b4",
+  Kai = [uY, OC],
+  O = p(() => xt({
+    created_by: o().optional(),
+    base_url: o().optional(),
+    authentication: xt({
+      type: o(),
+      client_id: o().optional(),
+      credentials_path: o().optional()
+    })
+  })),
+  T = p(() => xt({
+    created_by: o().optional()
+  })),
+  P = {
+    no_config_dir: !0,
+    invalid_profile_name: !0,
+    foreign_profile: !0,
+    custom_credentials_path: !0,
+    api_key_env_nondispatching: !0,
+    wif_env_quad: !1,
+    third_party_provider: !1,
+    api_key_env: !1,
+    env_credential_shadow: !1,
+    other_deployment_profile: !1,
+    federation_profile: !1,
+    unreadable_profile: !1
+  };
+function b(e) {
+  return Object.hasOwn(P, e);
+}
+function qai(e) {
+  if (!(e instanceof R) || e.errorClass === void 0 || !b(e.errorClass)) return null;
+  return P[e.errorClass];
+}
+var y = {
+  no_config_dir: "no Anthropic config directory was found",
+  invalid_profile_name: "the configured profile name isn't valid",
+  foreign_profile: "the profile on this machine belongs to another tool",
+  custom_credentials_path: "the existing profile keeps its sign-in somewhere custom",
+  api_key_env_nondispatching: "ANTHROPIC_API_KEY is set in this environment"
+};
+function Yai(e) {
+  if (!(e instanceof R) || e.errorClass === void 0 || !N(e.errorClass)) return null;
+  return y[e.errorClass];
+}
+function N(e) {
+  return Object.hasOwn(y, e);
+}
+async function f6r() {
+  if (!nxo(i.ANTHROPIC_PROFILE) && i.ANTHROPIC_FEDERATION_RULE_ID && i.ANTHROPIC_ORGANIZATION_ID) throw new R("Workload identity federation is configured in this environment (ANTHROPIC_FEDERATION_RULE_ID and ANTHROPIC_ORGANIZATION_ID), and it takes precedence over the default profile. Set ANTHROPIC_PROFILE to a profile name to sign in with a profile that outranks it.", "Console profile login refused: env-quad federation outranks the implicit profile", "wif_env_quad");
+  let e = Te();
+  if (e !== "firstParty") throw new R(`This session uses ${hC[e]}, which does not use Anthropic Console sign-in.`, "This session uses a third-party provider, which does not use Anthropic Console sign-in.", "third_party_provider");
+  let ANTHROPIC_API_KEY = i.ANTHROPIC_API_KEY;
+  if (ANTHROPIC_API_KEY) {
+    let l = await ovo({
+      skipRetrievingKeyFromApiKeyHelper: !0
+    });
+    if (l.source === "ANTHROPIC_API_KEY" && l.key === ANTHROPIC_API_KEY) throw new R("ANTHROPIC_API_KEY is set in this environment and takes precedence over a profile, so a profile sign-in would not be used. Unset it to sign in this way.", "Console profile login refused: env credential shadows the profile", "api_key_env");
+  }
+  if (rsn()) throw new R("Something in this environment \u2014 an API key helper, an injected token, or a third-party provider setting \u2014 takes precedence over a profile sign-in, so it would not be used here.", "Console profile login refused: env credential shadows the profile", "env_credential_shadow");
+  let configDir = EH();
+  if (configDir === null) throw new R("Cannot locate the Anthropic config directory. Set ANTHROPIC_CONFIG_DIR (or HOME) and try again.", "Console profile login refused: no config directory", "no_config_dir");
+  let profile = g(configDir),
+    s = await _(f(configDir, "configs", `${profile}.json`));
+  if (s !== null) {
+    if (s.base_url && !Od(s.base_url)) throw new R("This profile is bound to a different Anthropic deployment, so Claude Code will not replace it here. Sign out of it with the tool that created it, then try again.", "Console profile login refused: profile bound to another deployment", "other_deployment_profile");
+    if (s.authentication.type === "oidc_federation") throw new R("This machine is set up for workload identity federation, which signs in on its own. If you need a different sign-in, ask whoever configured it.", "Console profile login refused: federation profile", "federation_profile");
+    if (s.authentication.type !== "user_oauth") throw new R("Claude Code cannot read the existing sign-in on this machine, so it will not overwrite it. Check the permissions on your Anthropic config directory, then try again.", "Console profile login refused: unreadable or unrecognized profile config", "unreadable_profile");
+    if (s.authentication.client_id !== mqt) throw new R("This machine already has a sign-in from another tool that Claude Code cannot replace. Sign out with that tool, then try again.", "Console profile login refused: profile is not a same-client login", "foreign_profile");
+    if (s.authentication.credentials_path) throw new R("This profile keeps its sign-in somewhere custom, so Claude Code cannot replace it. Sign out of it with the tool that created it, then try again.", "Console profile login refused: custom credentials_path", "custom_credentials_path");
+  }
+  if (ANTHROPIC_API_KEY) throw new R("ANTHROPIC_API_KEY is set in this environment. Unset it to sign in without an API key.", "Console profile login refused: non-dispatching env API key present", "api_key_env_nondispatching");
+  return {
+    profile: profile,
+    configDir: configDir,
+    isNewProfile: s === null
+  };
+}
+async function Xai(e) {
+  let n = await f6r();
+  return await m(f(n.configDir, "credentials"), {
+    recursive: !0,
+    mode: 448
+  }), XRs(u(n.configDir, n.profile), () => L(e));
+}
+async function L(e) {
+  let {
+      profile: profile_2,
+      configDir: configDir_2,
+      isNewProfile: isNewProfile
+    } = await f6r(),
+    s = f(configDir_2, "configs", `${profile_2}.json`);
+  await m(f(configDir_2, "configs"), {
+    recursive: !0,
+    mode: 448
+  });
+  let l = {
+    version: version,
+    organization_id: e.organizationUuid,
+    workspace_id: e.workspaceId,
+    authentication: {
+      type: "user_oauth",
+      client_id: mqt
+    },
+    ...aSt
+  };
+  await Btt(s, l);
+  let c = isNewProfile,
+    h = {
+      version: version_2,
+      type: "oauth_token",
+      access_token: e.accessToken,
+      refresh_token: e.refreshToken,
+      expires_at: Math.floor(e.expiresAtMs / 1000),
+      scope: e.scopes.join(" "),
+      organization_uuid: e.organizationUuid,
+      organization_name: e.organizationName,
+      account_email: e.accountEmail
+    };
+  await Btt(u(configDir_2, profile_2), {
+    ...h,
+    workspace_id: e.workspaceId,
+    workspace_name: e.workspaceName,
+    ...aSt
+  });
+  let v = await F(f(configDir_2, "active_config"), profile_2 + `
+`);
+  return t(`Console profile login: wrote credentials for profile ${profile_2}${c ? " (new profile)" : ""}${v ? " (set active)" : ""}`), wbo(), {
+    profile: profile_2,
+    configDir: configDir_2
+  };
+}
+async function Jai({
+  revoke: revoke
+} = {}) {
+  try {
+    let n = EH();
+    if (n === null) return {
+      removed: !1
+    };
+    let r;
+    try {
+      r = g(n);
+    } catch {
+      return {
+        removed: !1
+      };
+    }
+    let a = await _(f(n, "configs", `${r}.json`));
+    if (a === null || !I(a)) return {
+      removed: !1
+    };
+    if ((await C(u(n, r))) === null) return {
+      removed: !1
+    };
+    return await XRs(u(n, r), () => S(revoke));
+  } catch (error) {
+    if (k(error) === "ENOENT") return {
+      removed: !1
+    };
+    return t(`Logout: profile credential removal failed: ${d(error)}`, {
+      level: "error"
+    }), {
+      removed: !1
+    };
+  }
+}
+async function S(e) {
+  let n = EH();
+  if (n === null) return {
+    removed: !1
+  };
+  let r;
+  try {
+    r = g(n);
+  } catch {
+    return {
+      removed: !1
+    };
+  }
+  let a = await _(f(n, "configs", `${r}.json`));
+  if (a === null || !I(a)) return {
+    removed: !1
+  };
+  let s = u(n, r),
+    l = await C(s);
+  if (l === null) return {
+    removed: !1
+  };
+  let c = {
+    refreshToken: l.refreshToken,
+    clientId: mqt
+  };
+  if (e && c.refreshToken) await e({
+    refreshToken: c.refreshToken,
+    clientId: c.clientId
+  });
+  try {
+    await A(s);
+  } catch (error) {
+    return t(`Logout: could not remove profile credentials: ${d(error)}`, {
+      level: "error"
+    }), {
+      removed: !1,
+      ...c
+    };
+  }
+  return t(`Logout: removed credentials for profile ${r}`), wbo(), {
+    removed: !0,
+    ...c
+  };
+}
+function g(e) {
+  let n = i.ANTHROPIC_PROFILE || DHe(e);
+  if (!nxo(n)) throw new R(`ANTHROPIC_PROFILE "${n}" is not a valid profile name (letters, digits, '_', '.', '-')`, "ANTHROPIC_PROFILE is not a valid profile name", "invalid_profile_name");
+  return n;
+}
+function u(e, n) {
+  return f(e, "credentials", `${n}.json`);
+}
+async function _(e) {
+  let n;
+  try {
+    n = await w(e, "utf-8");
+  } catch (error) {
+    if (k(error) === "ENOENT") return null;
+    if (qt(error)) return {
+      authentication: {
+        type: "unreadable"
+      }
+    };
+    throw error;
+  }
+  let r;
+  try {
+    r = ee(n);
+  } catch (error) {
+    return t(`Profile config is not JSON, treating as foreign: ${d(error)}`), {
+      authentication: {
+        type: "unreadable"
+      }
+    };
+  }
+  let a = O().safeParse(r);
+  return a.success ? a.data : {
+    authentication: {
+      type: "unreadable"
+    }
+  };
+}
+function I(e) {
+  return e.created_by === aSt.created_by && e.authentication.type === "user_oauth" && e.authentication.client_id === mqt;
+}
+async function C(e) {
+  let n;
+  try {
+    n = await w(e, "utf-8");
+  } catch (error) {
+    if (qt(error)) return null;
+    throw error;
+  }
+  let r;
+  try {
+    r = ee(n);
+  } catch {
+    return null;
+  }
+  let a = T().safeParse(r);
+  if (!a.success || a.data.created_by !== aSt.created_by) return null;
+  let refresh_token = a.data.refresh_token;
+  return {
+    refreshToken: typeof refresh_token === "string" ? refresh_token : void 0
+  };
+}
+async function Qai(e) {
+  let n = EH();
+  if (n === null) return !1;
+  try {
+    let r = await C(u(n, g(n)));
+    return r !== null && r.refreshToken === e;
+  } catch {
+    return !0;
+  }
+}
+async function Zai() {
+  return !1;
+}
+async function F(e, n) {
+  try {
+    return await E(e, n, {
+      flag: "wx",
+      mode: 420
+    }), !0;
+  } catch (error) {
+    if (k(error) === "EEXIST") return !1;
+    throw error;
+  }
+}
+export { mqt, Kai, qai, Yai, f6r, Xai, Jai, Qai, Zai };

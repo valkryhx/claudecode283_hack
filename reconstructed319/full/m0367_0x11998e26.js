@@ -1,0 +1,2046 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  $e
+} from "B:/~BUN/root/chunk-fg0appz9.js";
+import {
+  R,
+  qe,
+  F,
+  d,
+  k,
+  K
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  Q
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  TM,
+  Jm,
+  xxe,
+  ew
+} from "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  BS,
+  kR,
+  LUn,
+  Bxs,
+  jxs,
+  qd,
+  dZe,
+  lon,
+  awo
+} from "B:/~BUN/root/chunk-2gz7xsvb.js";
+import {
+  NNe
+} from "B:/~BUN/root/chunk-02j0cm13.js";
+import {
+  YA,
+  ye,
+  Rk,
+  qR,
+  nIo
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  Ao
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  PC,
+  yl,
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  t,
+  ee,
+  ie
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  ir
+} from "B:/~BUN/root/chunk-6n5g80b8.js";
+import {
+  ZV,
+  Is
+} from "B:/~BUN/root/chunk-nsneqfcc.js";
+import {
+  JU
+} from "B:/~BUN/root/chunk-5xx1vfdh.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  Wr,
+  i0
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  Bln
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  un,
+  Pl,
+  qn,
+  tl
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import {
+  hd
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  X4
+} from "B:/~BUN/root/chunk-wthaftk0.js";
+import {
+  Bs,
+  Kn
+} from "B:/~BUN/root/chunk-gvasf6q6.js";
+import {
+  jx,
+  yfe,
+  Vxr,
+  m4i,
+  h4i,
+  g4i,
+  ZQe,
+  hRe,
+  M2e,
+  NSo,
+  _xs
+} from "B:/~BUN/root/chunk-n98vg3jf.js";
+import {
+  Ae
+} from "B:/~BUN/root/chunk-eds8xkh8.js";
+import {
+  Bf
+} from "B:/~BUN/root/chunk-sjvfcp1z.js";
+import {
+  bRe
+} from "B:/~BUN/root/chunk-hnth82be.js";
+import {
+  SRe,
+  Mbe,
+  hon
+} from "B:/~BUN/root/chunk-t0w3xyzh.js";
+import {
+  ih,
+  aNe
+} from "B:/~BUN/root/chunk-esnm3r09.js";
+import {
+  Uye
+} from "B:/~BUN/root/chunk-v04fapnf.js";
+import {
+  vF,
+  j9
+} from "B:/~BUN/root/chunk-fkz77yzp.js";
+import {
+  qXe,
+  YXe,
+  uQt
+} from "B:/~BUN/root/chunk-zwf5p7y7.js";
+import {
+  Wco
+} from "B:/~BUN/root/chunk-zeshc0ep.js";
+import {
+  sX
+} from "B:/~BUN/root/chunk-dx2wvwvf.js";
+import {
+  go
+} from "B:/~BUN/root/chunk-eyrj3wyr.js";
+import {
+  D
+} from "B:/~BUN/root/chunk-8mqsat26.js";
+import {
+  o,
+  E,
+  u
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  po
+} from "B:/~BUN/root/chunk-67erjrg5.js";
+import {
+  L
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+import {
+  he
+} from "B:/~BUN/root/chunk-fet34rqr.js";
+var Ce = he(new Map, (e) => e.clear());
+var ve = he(new Set, (e) => e.clear());
+
+function W(e, r, n) {
+  let s = `${e.name}#${e.environmentId} ${r}`,
+    f = Ce.get(s) ?? 0;
+  if (f >= jxs) return;
+  Ce.set(s, f + 1);
+  let m = LUn(e.matcherFor(r), n);
+  if (m === void 0) return;
+  let c = `${s} ${m.path}`;
+  if (ve.has(c)) return;
+  ve.add(c), qd().log(Bxs(e.name, r, m), "warn")
+}
+
+function Ilo(e, r, n) {
+  let s = e.matcherFor(r),
+    f = e.hopKey.kind === "worker";
+  if (s === void 0) return !0;
+  let m = NNe(r),
+    c = f ? lon(s, n, m) : dZe(s, n, m);
+  if (!c) W(e, r, n);
+  return c
+}
+
+function me(e, r, n) {
+  let s = e.findIndex((m) => Ilo(m, r, n));
+  return s === -1 ? [] : e.slice(s)
+}
+
+function Y(e, r, n) {
+  let s = BS(n) ? Object.fromEntries((yfe(r).pinnedKeys ?? []).filter((f) => Object.hasOwn(n, f)).map((f) => [f, n[f]])) : {};
+  return e.catches(r, void 0, (f) => awo(f, s, NNe(r)))
+}
+
+function V(e, r) {
+  let n = [];
+  for (let s of e) {
+    if (!Bf(s)) {
+      t(`hooks module ${s.label}: judged under a policy text other than the one in force (during ${r}); passing on`);
+      continue
+    }
+    let f = s.status();
+    if (f.kind !== "live") {
+      let m = f.kind === "retiring" || f.kind === "unloaded" && f.retired,
+        c = f.kind === "unloaded";
+      t(`hooks module ${m?`${s.label}: its environment was retired by a reload during ${r}`:c?`${s.label}: its environment was unloaded (during ${r})`:`${s.label}: ${f.reason} (during ${r})`}; passing on`);
+      continue
+    }
+    n.push(s)
+  }
+  return n
+}
+var ce = (e, r, n) => me(V(e, r), r, n);
+var Vyr = he(go(), (e) => e.set(void 0));
+var Hye = he(go(), (e) => e.set(void 0));
+var qJt = he(go(), (e) => e.set(void 0));
+
+function ifs() {
+  return i.CLAUDE_CODE_PLUGIN_DIR_WATCH ?? !ye()
+}
+import {
+  resolve as de
+} from "path";
+
+function Mlo(e) {
+  let r = new Set((Hye.get() ?? []).map((s) => de(s))),
+    n = new Set((qJt.get() ?? []).map((s) => de(s)));
+  return e.filter((s) => r.has(de(s)) || !n.has(de(s)))
+}
+import {
+  resolve as je
+} from "path";
+
+function Dlo(e) {
+  if (ifs()) return Mlo(e);
+  let r = new Set((Hye.get() ?? []).map((s) => je(s)));
+  return i.CLAUDE_CODE_PLUGIN_DIR_WATCH === !1 ? [] : e.filter((s) => r.has(je(s)))
+}
+var Llo = () => [...Rk(), ...qR()];
+var wTe = () => Dlo(Llo()).length > 0;
+var Kyr = 1e4;
+
+function gXe(e) {
+  return e.length <= Kyr ? e : `${Q(e,Kyr)}\u2026`
+}
+var Ue = 100;
+
+function wq(e, r, n = "again") {
+  let s = gXe(r),
+    f = Ae();
+  if (t(`[${e}] $.ui.log: ${s}`), f.uiLogSink) {
+    f.uiLogSink({
+      plugin: e,
+      text: s
+    }, n);
+    return
+  }
+  if (f.pendingUiLog.length < Ue) f.pendingUiLog = [...f.pendingUiLog, {
+    plugin: e,
+    text: s
+  }]
+}
+
+function kq(e, r, n = "again") {
+  if (wTe()) {
+    wq(e, Q(r, jx), n);
+    return
+  }
+  t(`${e}: ${r}`, {
+    level: "error"
+  })
+}
+var Te = (e, r) => e.filter((n) => {
+  let s = n.status();
+  return s.kind === "dead" && s.reason === r
+});
+var qyr = (e) => typeof e !== "string" && ("rewritten" in e);
+
+function afs(e) {
+  let r = qyr(e),
+    n = r ? e.of : e,
+    f = typeof n === "string" ? [n] : [n.plugin, n.registration];
+  return JSON.stringify([r, ...f])
+}
+
+function ue(e, r, n) {
+  let s = typeof e === "string",
+    f = !s && "plugin" in e;
+  return s ? e : f ? r(e) : n
+}
+var Yyr = (e) => ue(e, (r) => `${r.plugin}#${r.registration}`, "/rewritten beneath");
+var mft = (e) => ue(e, (r) => r.plugin, void 0);
+
+function le(e, r) {
+  let n = new Set;
+  for (let s of e ?? []) {
+    if (mft(s) !== r) continue;
+    if (typeof s === "string") return "every";
+    if ("registration" in s) n.add(s.registration)
+  }
+  return [...n].sort((s, f) => s - f)
+}
+
+function qo(e, r) {
+  let n = e ?? [],
+    s = n.length - 1;
+  return {
+    caller: le(n.slice(s), r),
+    above: le(n.slice(0, s), r)
+  }
+}
+
+function PIi(e, r) {
+  if (typeof e === "string" || typeof r === "string") return e === r;
+  let s = "plugin" in e && "plugin" in r,
+    f = "rewritten" in e && "rewritten" in r;
+  return s ? e.plugin === r.plugin && e.registration === r.registration : f && PIi(e.of, r.of)
+}
+var zMt = po(() => new WeakMap);
+var aca = (e) => (e ?? []).map(afs).join(" > ");
+var Nlo = (e) => (e ?? []).map(Yyr).join(" > ");
+var lca = (e) => Object.freeze({
+  rewritten: !0,
+  of: e
+});
+var _In = ({
+  name: e,
+  method: r
+}) => `$.${e}.${r}`;
+var lfs = (e) => Array.from(e).join(",") || "none";
+var dca = "the hooks worker was replaced; the plugin stays loaded for its .catch";
+var GMt = (e) => e.map((r) => r.label).join(", ");
+
+function bIn({
+  pluginName: e,
+  pluginStorageId: r
+}) {
+  return r.startsWith(`${e}@`) ? r : `${r}+${e}`
+}
+var OIi = (e) => `next() result not cloneable: ${d(e)}`;
+import {
+  lstat as oe,
+  rmdir as gt
+} from "fs/promises";
+import {
+  basename as te,
+  dirname as re
+} from "path";
+import {
+  createHash as De
+} from "crypto";
+import {
+  chmod as ft,
+  writeFile as Le
+} from "fs/promises";
+import {
+  dirname as pt,
+  join as _
+} from "path";
+async function it(e) {
+  let {
+    McpbManifestSchema: r
+  } = await import("B:/~BUN/root/chunk-8n6b5xf1.js"), n = r.safeParse(e);
+  if (!n.success) {
+    let s = n.error.flatten(),
+      f = [...Object.entries(s.fieldErrors).map(([m, c]) => `${m}: ${c?.join(", ")}`), ...s.formErrors || []].filter(Boolean).join("; ");
+    throw new R(`Invalid manifest: ${f}`, "MCPB manifest schema validation failed")
+  }
+  return n.data
+}
+async function st(e) {
+  let r;
+  try {
+    r = ee(e)
+  } catch (n) {
+    throw Error(`Invalid JSON in manifest.json: ${d(n)}`)
+  }
+  return it(r)
+}
+async function Pe(e) {
+  let r = new TextDecoder().decode(e);
+  return st(r)
+}
+import {
+  homedir as at
+} from "os";
+import {
+  join as G
+} from "path";
+
+function Be(e) {
+  let r = e?.platform ?? x(),
+    n = e?.homedir ?? at(),
+    s = e?.env ?? process.env,
+    f = {
+      HOME: n,
+      DESKTOP: G(n, "Desktop"),
+      DOCUMENTS: G(n, "Documents"),
+      DOWNLOADS: G(n, "Downloads")
+    };
+  switch (r) {
+    case "windows": {
+      let m = s.USERPROFILE || n;
+      return {
+        HOME: n,
+        DESKTOP: G(m, "Desktop"),
+        DOCUMENTS: G(m, "Documents"),
+        DOWNLOADS: G(m, "Downloads")
+      }
+    }
+    case "linux":
+    case "wsl":
+      return {
+        HOME: n, DESKTOP: s.XDG_DESKTOP_DIR || f.DESKTOP, DOCUMENTS: s.XDG_DOCUMENTS_DIR || f.DOCUMENTS, DOWNLOADS: s.XDG_DOWNLOAD_DIR || f.DOWNLOADS
+      };
+    case "macos":
+    default: {
+      if (r === "unknown") t("Unknown platform detected, using default paths");
+      return f
+    }
+  }
+}
+var mt = p(() => u({
+  source: o(),
+  contentHash: o(),
+  extractedPath: o(),
+  cachedAt: o(),
+  lastChecked: o(),
+  sourceMtimeMs: E().optional()
+}));
+
+function pL(e) {
+  return e.endsWith(".mcpb") || e.endsWith(".dxt")
+}
+
+function Re(e) {
+  return e.startsWith("http://") || e.startsWith("https://")
+}
+
+function SIn(e) {
+  return pL(e) && !Re(e)
+}
+
+function Ke(e) {
+  return _(e, ".mcpb-cache")
+}
+
+function ct(e, r) {
+  let n = De("md5").update(r).digest("hex").substring(0, 8);
+  return _(e, `${n}.metadata.json`)
+}
+
+function We(e, r) {
+  return Uye(ct(e, r), () => mt().nullable(), {
+    defaultValue: null,
+    indent: 2
+  })
+}
+
+function Ve(e, r) {
+  return `${e}/${r}`
+}
+async function a0e(e, r, n) {
+  try {
+    let s = SRe(e).mcpServers?.[r],
+      f = (await Kn().readAsync(n))?.pluginSecrets?.[Ve(e, r)];
+    if (!s && !f) return null;
+    return t(`Loaded user config for ${e}/${r} (settings + secureStorage)`), {
+      ...s,
+      ...f
+    }
+  } catch (s) {
+    return t(`Failed to load user config for ${e}/${r}: ${s}`, {
+      level: "error"
+    }), null
+  }
+}
+async function VMt(e, r, n, s, f, m) {
+  try {
+    let c = {},
+      l = {};
+    for (let [C, O] of Object.entries(n))
+      if (s[C]?.sensitive === !0) l[C] = String(O);
+      else c[C] = O;
+    let g = new Set(Object.keys(l)),
+      h = new Set(Object.keys(c)),
+      w = Ve(e, r),
+      H = 0,
+      y = await Kn().mutate((C) => {
+        let O = C.pluginSecrets?.[w],
+          T = O ? kR(O, (v, P) => !h.has(P)) : void 0;
+        if (H = T && O ? Object.keys(O).length - Object.keys(T).length : 0, Object.keys(l).length === 0 && H === 0) return C;
+        return {
+          ...C,
+          pluginSecrets: {
+            ...C.pluginSecrets,
+            [w]: {
+              ...T,
+              ...l
+            }
+          }
+        }
+      }, m);
+    if (!y.success) throw Error(`Failed to save sensitive config to secure storage for ${w}`);
+    if (y.warning) t(`Server secrets save warning: ${y.warning}`, {
+      level: "warn"
+    });
+    if (H > 0) t(`saveMcpServerUserConfig: scrubbed ${H} stale non-sensitive key(s) from secureStorage for ${w}`);
+    let b = Pl("userSettings")?.pluginConfigs,
+      S = {},
+      M = 0;
+    for (let C of Mbe(e)) {
+      let O = Object.keys(b?.[C]?.mcpServers?.[r] ?? {}).filter((P) => g.has(P)),
+        T = Object.fromEntries(O.map((P) => [P, void 0])),
+        v = C === e ? c : {};
+      if (Object.keys(v).length > 0 || O.length > 0) S[C] = {
+        mcpServers: {
+          [r]: {
+            ...v,
+            ...T
+          }
+        }
+      }, M += O.length
+    }
+    if (Object.keys(S).length > 0) {
+      let C = await qn("userSettings", {
+        pluginConfigs: S
+      }, void 0, f);
+      if (C.error) throw C.error;
+      if (M > 0) t(`saveMcpServerUserConfig: scrubbed ${M} plaintext sensitive key(s) from settings.json for ${e}/${r}`)
+    }
+    t(`Saved user config for ${e}/${r} (${Object.keys(c).length} non-sensitive, ${Object.keys(l).length} sensitive)`)
+  } catch (c) {
+    let l = F(c);
+    throw t(`Failed to save user config for ${e}/${r}: ${l.message}`, {
+      level: "error"
+    }), Error(`Failed to save user configuration for ${e}/${r}: ${l.message}`)
+  }
+}
+
+function EZ(e, r) {
+  let n = [];
+  for (let [s, f] of Object.entries(r)) {
+    let m = Wr(e, s);
+    if (f.required && (m === void 0 || m === "")) {
+      n.push(`${f.title||s} is required but not provided`);
+      continue
+    }
+    if (m === void 0 || m === "") continue;
+    if (f.type === "string") {
+      if (Array.isArray(m)) {
+        if (!f.multiple) n.push(`${f.title||s} must be a string, not an array`);
+        else if (!m.every((c) => typeof c === "string")) n.push(`${f.title||s} must be an array of strings`)
+      } else if (typeof m !== "string") n.push(`${f.title||s} must be a string`);
+      else if (f.options !== void 0 && !f.options.includes(m)) n.push(`${f.title||s} must be one of: ${f.options.join(", ")}`)
+    } else if (f.type === "number" && typeof m !== "number") n.push(`${f.title||s} must be a number`);
+    else if (f.type === "boolean" && typeof m !== "boolean") n.push(`${f.title||s} must be a boolean`);
+    else if ((f.type === "file" || f.type === "directory") && typeof m !== "string") n.push(`${f.title||s} must be a path string`);
+    if (f.type === "number" && typeof m === "number") {
+      if (f.min !== void 0 && m < f.min) n.push(`${f.title||s} must be at least ${f.min}`);
+      if (f.max !== void 0 && m > f.max) n.push(`${f.title||s} must be at most ${f.max}`)
+    }
+  }
+  return {
+    valid: n.length === 0,
+    errors: n
+  }
+}
+async function ge(e, r, n = {}) {
+  let {
+    getMcpConfigForManifest: s
+  } = await import("B:/~BUN/root/chunk-8n6b5xf1.js"), f = await s({
+    manifest: e,
+    extensionPath: r,
+    systemDirs: Be(),
+    userConfig: n,
+    pathSeparator: "/"
+  });
+  if (!f) {
+    let c = qe(Error(`Failed to generate MCP server configuration from manifest "${e.name}"`), "MCPB manifest: failed to generate MCP server configuration");
+    throw a(c), c
+  }
+  let m = Bln(e.server.mcp_config, f);
+  return {
+    ...f,
+    ...m && {
+      configuredCommand: m
+    }
+  }
+}
+async function Ge(e, r) {
+  try {
+    return await We(e, r).read()
+  } catch (n) {
+    return t(`Failed to load MCPB cache metadata: ${n}`, {
+      level: "error"
+    }), null
+  }
+}
+async function Fe(e, r, n) {
+  await ie().mkdir(e), await We(e, r).write(n)
+}
+async function dt(e, r, n) {
+  let s = Jm(e);
+  if (t(`Downloading MCPB from ${s}`), n) n(`Downloading ${s}...`);
+  let f = performance.now(),
+    m = !1;
+  try {
+    let l = await (X4(e) ? sX.get : hd.get)(e, {
+        timeout: 120000,
+        responseType: "arraybuffer",
+        maxRedirects: 5,
+        onDownloadProgress: (h) => {
+          if (h.total && n) {
+            let w = Math.round(h.loaded / h.total * 100);
+            n(`Downloading... ${w}%`)
+          }
+        }
+      }),
+      g = new Uint8Array(l.data);
+    if (vF("mcpb", e, "success", performance.now() - f), m = !0, await Le(r, Buffer.from(g)), t(`Downloaded ${g.length} bytes to ${r}`), n) n("Download complete");
+    return g
+  } catch (c) {
+    if (!m) vF("mcpb", e, "failure", performance.now() - f, j9(c));
+    let l = ew(xxe(d(c), e, s)),
+      g = Error(`Failed to download MCPB file from ${s}: ${l}`);
+    throw t(`Failed to download MCPB file from ${s}: ${l}`, {
+      level: "error"
+    }), g
+  }
+}
+async function ut(e, r, n, s) {
+  if (s) s("Extracting files...");
+  await ie().mkdir(r);
+  let f = 0,
+    m = Object.entries(e).filter(([l]) => !l.endsWith("/")),
+    c = m.length;
+  for (let [l, g] of m) {
+    let h = _(r, l),
+      w = pt(h);
+    if (w !== r) await ie().mkdir(w);
+    if (l.endsWith(".json") || l.endsWith(".js") || l.endsWith(".ts") || l.endsWith(".txt") || l.endsWith(".md") || l.endsWith(".yml") || l.endsWith(".yaml")) {
+      let b = new TextDecoder().decode(g);
+      await Le(h, b, "utf-8")
+    } else await Le(h, Buffer.from(g));
+    let y = n[l];
+    if (y && y & 73) await ft(h, y & YXe).catch(() => {});
+    if (f++, s && f % 10 === 0) s(`Extracted ${f}/${c} files`)
+  }
+  if (t(`Extracted ${f} files to ${r}`), s) s(`Extraction complete (${f} files)`)
+}
+async function lt(e, r) {
+  let n = ie(),
+    s = Ke(r),
+    f = await Ge(s, e);
+  if (!f) return !0;
+  try {
+    await n.stat(f.extractedPath)
+  } catch (m) {
+    if (k(m) === "ENOENT") t(`MCPB extraction path missing: ${f.extractedPath}`);
+    else t(`MCPB extraction path inaccessible: ${f.extractedPath}: ${m}`, {
+      level: "error"
+    });
+    return !0
+  }
+  if (!Re(e)) {
+    let m = _(r, e),
+      c = _(r, Jm(e)),
+      l;
+    try {
+      l = await n.stat(m)
+    } catch (h) {
+      if (k(h) === "ENOENT") t(`MCPB source file missing: ${c}`);
+      else t(`MCPB source file inaccessible: ${c}: ${xxe(String(h),m,c)}`, {
+        level: "error"
+      });
+      return !0
+    }
+    if (f.sourceMtimeMs === void 0) return !0;
+    let g = Math.floor(l.mtimeMs);
+    if (g !== f.sourceMtimeMs) return t(`MCPB file modified: mtime ${new Date(g).toISOString()} != cached ${new Date(f.sourceMtimeMs).toISOString()}`), !0
+  }
+  return !1
+}
+async function hft(e, r, n, s, f, m, c, l) {
+  let g = Jm(e),
+    h = ie(),
+    w = Ke(r);
+  await h.mkdir(w), t(`Loading MCPB from source: ${g}`);
+  let H = await Ge(w, e);
+  if (H && !await lt(e, r)) {
+    t(`Using cached MCPB from ${H.extractedPath} (hash: ${H.contentHash})`);
+    let N = _(H.extractedPath, "manifest.json"),
+      j;
+    try {
+      j = await h.readFile(N, {
+        encoding: "utf-8"
+      })
+    } catch (I) {
+      if (K(I)) {
+        let B = Error(`Cached manifest not found: ${N}`);
+        throw a(B), B
+      }
+      throw I
+    }
+    let U = new TextEncoder().encode(j),
+      A = await Pe(U);
+    if (A.user_config && Object.keys(A.user_config).length > 0) {
+      let I = A.name,
+        B = await a0e(n, I, l),
+        _e = f || B || {},
+        Me = EZ(_e, A.user_config);
+      if (m || !Me.valid) return {
+        status: "needs-config",
+        manifest: A,
+        extractedPath: H.extractedPath,
+        contentHash: H.contentHash,
+        configSchema: A.user_config,
+        existingConfig: B || {},
+        validationErrors: Me.valid ? [] : Me.errors
+      };
+      if (f) await VMt(n, I, f, A.user_config ?? {}, c, l);
+      let lo = await ge(A, H.extractedPath, _e);
+      return {
+        manifest: A,
+        mcpConfig: lo,
+        extractedPath: H.extractedPath,
+        contentHash: H.contentHash
+      }
+    }
+    let Oe = await ge(A, H.extractedPath);
+    return {
+      manifest: A,
+      mcpConfig: Oe,
+      extractedPath: H.extractedPath,
+      contentHash: H.contentHash
+    }
+  }
+  let y, b, S;
+  if (Re(e)) {
+    let N = De("md5").update(e).digest("hex").substring(0, 8);
+    b = _(w, `${N}.mcpb`), y = await dt(e, b, s)
+  } else {
+    let N = _(r, e);
+    if (s) s(`Loading ${g}...`);
+    try {
+      y = await h.readFileBytes(N), b = N, S = Math.floor((await h.stat(N)).mtimeMs)
+    } catch (j) {
+      let U = _(r, g);
+      if (K(j)) {
+        let A = Error(`MCPB file not found: ${U}`);
+        throw t(`MCPB file not found: ${U}`, {
+          level: "error"
+        }), A
+      }
+      throw N === U ? j : new R(xxe(d(j), N, U), "MCPB local file read failed")
+    }
+  }
+  let M = De("sha256").update(y).digest("hex").substring(0, 16);
+  if (t(`MCPB content hash: ${M}`), s) s("Extracting MCPB archive...");
+  let C = await qXe(Buffer.from(y)),
+    O = uQt(y),
+    T = C["manifest.json"];
+  if (!T) {
+    let N = Error("No manifest.json found in MCPB file");
+    throw t(`No manifest.json found in MCPB file: ${b}`, {
+      level: "error"
+    }), N
+  }
+  let v = await Pe(T);
+  if (t(`MCPB manifest: ${v.name} v${v.version} by ${v.author.name}`), !v.server) {
+    let N = qe(Error(`MCPB manifest for "${v.name}" does not define a server configuration`), "MCPB manifest does not define a server configuration");
+    throw a(N), N
+  }
+  let P = _(w, M);
+  if (await ut(C, P, O, s), v.user_config && Object.keys(v.user_config).length > 0) {
+    let N = v.name,
+      j = await a0e(n, N, l),
+      U = f || j || {},
+      A = EZ(U, v.user_config);
+    if (m || !A.valid) {
+      let B = {
+        source: e,
+        contentHash: M,
+        extractedPath: P,
+        cachedAt: new Date().toISOString(),
+        lastChecked: new Date().toISOString(),
+        sourceMtimeMs: S
+      };
+      return await Fe(w, e, B), {
+        status: "needs-config",
+        manifest: v,
+        extractedPath: P,
+        contentHash: M,
+        configSchema: v.user_config,
+        existingConfig: j || {},
+        validationErrors: A.valid ? [] : A.errors
+      }
+    }
+    if (f) await VMt(n, N, f, v.user_config ?? {}, c, l);
+    if (s) s("Generating MCP server configuration...");
+    let Oe = await ge(v, P, U),
+      I = {
+        source: e,
+        contentHash: M,
+        extractedPath: P,
+        cachedAt: new Date().toISOString(),
+        lastChecked: new Date().toISOString(),
+        sourceMtimeMs: S
+      };
+    return await Fe(w, e, I), {
+      manifest: v,
+      mcpConfig: Oe,
+      extractedPath: P,
+      contentHash: M
+    }
+  }
+  if (s) s("Generating MCP server configuration...");
+  let J = await ge(v, P),
+    uo = {
+      source: e,
+      contentHash: M,
+      extractedPath: P,
+      cachedAt: new Date().toISOString(),
+      lastChecked: new Date().toISOString(),
+      sourceMtimeMs: S
+    };
+  return await Fe(w, e, uo), t(`Successfully loaded MCPB: ${v.name} (extracted to ${P})`), {
+    manifest: v,
+    mcpConfig: J,
+    extractedPath: P,
+    contentHash: M
+  }
+}
+
+function Gh(e) {
+  return e.source
+}
+
+function KMt(e, r) {
+  return e.find((n) => n.repository === r || n.source === r)
+}
+
+function mL(e, r) {
+  if (bRe()) return Promise.resolve({});
+  let {
+    optionValues: n
+  } = Ae(), s = n.get(e);
+  if (s !== void 0) return s;
+  let f = ht(e, r);
+  return n.set(e, f), f.catch(() => {
+    if (n.get(e) === f) n.delete(e)
+  }), f
+}
+async function ht(e, r) {
+  let n = SRe(e).options ?? {},
+    s = (await Kn().readAsync(r))?.pluginSecrets,
+    f = [...i0(e).toReversed(), e].reduce((m, c) => ({
+      ...m,
+      ...s?.[c]
+    }), {});
+  return {
+    ...n,
+    ...f
+  }
+}
+
+function l0e() {
+  Ae().optionValues.clear()
+}
+async function qWe(e, r, n, s, f) {
+  let m = {},
+    c = {};
+  for (let [y, b] of Object.entries(r))
+    if (n[y]?.sensitive === !0) c[y] = String(b);
+    else m[y] = b;
+  let l = new Set(Object.keys(c)),
+    g = new Set(Object.keys(m)),
+    h = await Kn().mutate((y) => {
+      let b = hon(y.pluginSecrets, e),
+        S = b.replaced.length === 0 ? y.pluginSecrets?.[b.written] : [...b.replaced.toReversed(), b.written].reduce((O, T) => ({
+          ...O,
+          ...y.pluginSecrets?.[T]
+        }), {}),
+        M = S ? kR(S, (O, T) => !g.has(T)) : void 0,
+        C = M && S && Object.keys(M).length !== Object.keys(S).length;
+      if (Object.keys(c).length === 0 && !C && b.replaced.length === 0) return y;
+      return {
+        ...y,
+        pluginSecrets: {
+          ...kR(y.pluginSecrets ?? {}, (O, T) => !b.replaced.includes(T)),
+          [b.written]: {
+            ...M,
+            ...c
+          }
+        }
+      }
+    }, f);
+  if (!h.success) {
+    let y = Error(`Failed to save sensitive plugin options for ${e} to secure storage`);
+    throw t(y.message, {
+      level: "error"
+    }), y
+  }
+  if (h.warning) t(`Plugin secrets save warning: ${h.warning}`, {
+    level: "warn"
+  });
+  let w = Pl("userSettings")?.pluginConfigs,
+    H = {};
+  for (let y of Mbe(e)) {
+    let b = Object.keys(w?.[y]?.options ?? {}).filter((C) => l.has(C)),
+      S = Object.fromEntries(b.map((C) => [C, void 0])),
+      M = y === e ? m : {};
+    if (Object.keys(M).length > 0 || b.length > 0) H[y] = {
+      options: {
+        ...M,
+        ...S
+      }
+    }
+  }
+  if (Object.keys(H).length > 0) {
+    let y = await qn("userSettings", {
+      pluginConfigs: yt(w, e, H)
+    }, void 0, s);
+    if (y.error) throw t(`Failed to save plugin options for ${e} to settings.json: ${d(y.error)}`, {
+      level: "error"
+    }), Error(`Failed to save plugin options for ${e}: ${y.error.message}`)
+  }
+  l0e()
+}
+async function IIi(e) {
+  let r = [],
+    n = new Set;
+  ir();
+  let s = Pl("userSettings");
+  if (s === null || s === void 0) {
+    let f = un("userSettings");
+    if (f !== void 0 && await JU(f) !== "gone") r.push("settings_unreadable")
+  }
+  for (let f of Object.keys(s?.pluginConfigs ?? {})) n.add(f);
+  try {
+    let f = Kn(),
+      m = f.readAsyncStrict ? await f.readAsyncStrict(e, {
+        inaccessibleAs: "failure"
+      }) : await f.readAsync(e);
+    if (m === Bs) r.push("secrets_unreadable");
+    else
+      for (let c of Object.keys(m?.pluginSecrets ?? {})) {
+        let l = c.indexOf("/");
+        n.add(l === -1 ? c : c.slice(0, l))
+      }
+  } catch {
+    r.push("secrets_unreadable")
+  }
+  return {
+    ids: [...n],
+    unreadable: r
+  }
+}
+async function ze(e) {
+  ir();
+  let r = Pl("userSettings");
+  if (r !== null && r !== void 0) return r;
+  let n = un("userSettings");
+  if (n === void 0 || await JU(n) === "gone") return;
+  return t(`deletePluginOptions: the user settings file (${n}) is there and could not be read, so options of ${e} may remain in it`, {
+    level: "warn"
+  }), "unreadable"
+}
+async function MIi(e, r, n, s) {
+  let f = !0,
+    m = await ze(e);
+  if (m === "unreadable") f = !1, s?.push("settings_unreadable");
+  let c = m === "unreadable" ? void 0 : m,
+    l = Mbe(e).filter((w) => c?.pluginConfigs?.[w] !== void 0);
+  if (l.length > 0) {
+    let w = Object.fromEntries(l.map((y) => [y, void 0])),
+      {
+        error: H
+      } = await qn("userSettings", {
+        pluginConfigs: w
+      }, void 0, r);
+    if (H) t(`deletePluginOptions: failed to clear settings.pluginConfigs[${e}]: ${H.message}`, {
+      level: "warn"
+    }), f = !1, s?.push("settings_write_failed");
+    else {
+      let y = await ze(e);
+      if (y === "unreadable") f = !1, s?.push("settings_unreadable");
+      let b = y === "unreadable" ? void 0 : y?.pluginConfigs;
+      if (l.some((S) => b?.[S] !== void 0)) t(`deletePluginOptions: settings.pluginConfigs[${e}] still reads back after a write that reported no error`, {
+        level: "warn"
+      }), f = !1, s?.push("settings_remain")
+    }
+  }
+  let g = [e, ...i0(e)],
+    h = (w) => g.some((H) => w === H || w.startsWith(`${H}/`));
+  try {
+    let w = Kn();
+    if (!(await w.mutate((y) => {
+        if (!y.pluginSecrets) return y;
+        let b = Object.entries(y.pluginSecrets).filter(([S]) => !h(S));
+        if (b.length === Object.keys(y.pluginSecrets).length) return y;
+        return {
+          ...y,
+          pluginSecrets: b.length > 0 ? Object.fromEntries(b) : void 0
+        }
+      }, n)).success) t(`deletePluginOptions: failed to clear pluginSecrets for ${e} from keychain`, {
+      level: "warn"
+    }), f = !1, s?.push("secrets_write_failed");
+    else {
+      let y = w.readAsyncStrict ? await w.readAsyncStrict(n, {
+        inaccessibleAs: "failure"
+      }) : await w.readAsync(n);
+      if (y === Bs || Object.keys(y?.pluginSecrets ?? {}).some(h)) t(`deletePluginOptions: after the delete, secure storage could not be read or still holds pluginSecrets for ${e}`, {
+        level: "warn"
+      }), f = !1, s?.push(y === Bs ? "secrets_unreadable" : "secrets_remain")
+    }
+  } catch (w) {
+    t(`deletePluginOptions: storage lock unavailable for ${e}: ${d(w)}`, {
+      level: "warn"
+    }), f = !1, s?.push("secrets_write_failed")
+  }
+  return l0e(), f
+}
+async function dfs(e, r, n, s, f) {
+  {
+    let m = !0,
+      c = !1,
+      {
+        error: l
+      } = await tl("userSettings", (C) => {
+        let O = C?.pluginConfigs?.[e];
+        if (O === void 0) return null;
+        if (C?.pluginConfigs?.[r] !== void 0) return c = !0, null;
+        return {
+          pluginConfigs: {
+            [r]: O
+          }
+        }
+      }, void 0, s);
+    if (l) m = !1, t(`copyPluginOptions: failed to copy settings.pluginConfigs[${e}]: ${l.message}`, {
+      level: "warn"
+    });
+    if (!m) return t(`copyPluginOptions: the settings write failed, so the secrets of ${e} were not copied`, {
+      level: "warn"
+    }), l0e(), {
+      optionsCarried: m,
+      secretsCarried: !1,
+      oldDataDirDisposable: !1,
+      dataDirCopied: !1,
+      targetHadOwn: c
+    };
+    let g = !0;
+    try {
+      if (!(await Kn().mutate((O) => {
+          if (!O.pluginSecrets) return O;
+          let T = {};
+          for (let [v, P] of Object.entries(O.pluginSecrets)) {
+            let J = Je(v, e, r);
+            if (J === void 0) continue;
+            if (O.pluginSecrets[J] === void 0) T[J] = P;
+            else c = !0
+          }
+          return Object.keys(T).length === 0 ? O : {
+            ...O,
+            pluginSecrets: {
+              ...O.pluginSecrets,
+              ...T
+            }
+          }
+        }, f)).success) g = !1, t(`copyPluginOptions: failed to copy pluginSecrets for ${e}`, {
+        level: "warn"
+      })
+    } catch {
+      g = !1, t(`copyPluginOptions: secure storage unavailable for ${e}`, {
+        level: "warn"
+      })
+    }
+    if (!m || !g) return l0e(), {
+      optionsCarried: m,
+      secretsCarried: g,
+      oldDataDirDisposable: !1,
+      dataDirCopied: !1,
+      targetHadOwn: c
+    };
+    let h = ih(e),
+      w = ih(r),
+      H = `${w}.switching-${process.pid}`,
+      y = !1,
+      b = !1,
+      S, M;
+    try {
+      let C = await JU(h);
+      if (C === "gone") y = !0;
+      else if (C === "unreadable") S = "copy-failed", t(`copyPluginOptions: the data directory of ${e} could not be examined; it is kept and was not copied`, {
+        level: "warn"
+      });
+      else if (!(M = await oe(h, {
+          bigint: !0
+        })).isDirectory() || !await ZV(re(h), te(h))) S = "copy-failed", t(`copyPluginOptions: the data directory of ${e} is not a real directory; it is kept and was not copied`, {
+        level: "warn"
+      });
+      else {
+        let O = await gt(w).then(() => {
+          return
+        }, (T) => K(T) ? void 0 : k(T));
+        if (O === void 0) {
+          await yl(H);
+          let T = await ZV(re(h), te(h)),
+            v = await oe(h, {
+              bigint: !0
+            });
+          if (!T || !v.isDirectory() || v.dev !== M?.dev || v.ino !== M?.ino) throw Error("the old data directory is not the real directory first seen");
+          await n(h, H, h, H, h, !0, new Set, void 0, !1, !0);
+          let P = await oe(h, {
+            bigint: !0
+          });
+          if (!P.isDirectory() || !await ZV(re(h), te(h)) || P.dev !== v.dev || P.ino !== v.ino) throw Error("the old data directory changed during the copy");
+          if (!(await oe(H)).isDirectory() || !await ZV(re(H), te(H))) throw Error("the staging folder is not a real directory");
+          if (await Is(H, w), !(await oe(w)).isDirectory() || !await ZV(re(w), te(w))) throw await PC(w).catch(() => {}), Error("what stands at the target after the move is not a real directory");
+          y = !0, b = !0
+        } else S = O === "ENOTEMPTY" || O === "EEXIST" || O === "ENOTDIR" ? "target-had-own" : "copy-failed"
+      }
+    } catch (C) {
+      S = "copy-failed", t(`copyPluginOptions: failed to copy the data directory of ${e}: ${d(C)}`, {
+        level: "warn"
+      }), await yl(H).catch(() => {})
+    }
+    return l0e(), {
+      optionsCarried: m,
+      secretsCarried: g,
+      oldDataDirDisposable: y,
+      dataDirCopied: b,
+      dataDirKeptReason: S,
+      targetHadOwn: c
+    }
+  }
+  return {
+    optionsCarried: !1,
+    secretsCarried: !1,
+    oldDataDirDisposable: !1,
+    dataDirCopied: !1,
+    targetHadOwn: !1
+  }
+}
+
+function Je(e, r, n) {
+  {
+    let s = `${r}/`;
+    return e === r ? n : e.startsWith(s) ? `${n}/${e.slice(s.length)}` : void 0
+  }
+  return
+}
+async function DIi(e, r) {
+  {
+    let n = Pl("userSettings")?.pluginConfigs;
+    if (n?.[e] !== void 0 && n[r] !== void 0) return !0;
+    try {
+      let s = (await Kn().readAsync())?.pluginSecrets ?? {};
+      return Object.keys(s).some((f) => {
+        let m = Je(f, e, r);
+        return m !== void 0 && s[m] !== void 0
+      })
+    } catch {
+      return t(`wouldTargetKeepOwnPluginOptions: secure storage could not be read (switch from ${e}), so the answer is 'unknown'`, {
+        level: "warn"
+      }), "unknown"
+    }
+  }
+  return !1
+}
+async function YWe(e, r) {
+  let n = e.manifest.userConfig;
+  if (!n || Object.keys(n).length === 0) return {};
+  let s = await mL(Gh(e), r),
+    f = {};
+  for (let [m, c] of Object.entries(n)) {
+    let l = Wr(s, m);
+    if (l === void 0 || l === "" || c.sensitive !== !0 && !EZ({
+        [m]: l
+      }, {
+        [m]: c
+      }).valid) f[m] = c
+  }
+  return f
+}
+
+function cfs(e, r) {
+  let n = e?.options;
+  return n !== void 0 && !(typeof r === "string" && n.includes(r))
+}
+
+function gft(e, r) {
+  let n = {};
+  for (let [f, m] of Object.entries(r)) {
+    if (m.required && m.default === void 0) continue;
+    n[f] = m.default ?? ""
+  }
+  let s = kR(e, (f, m) => {
+    let c = r[m]?.options;
+    if (c === void 0 || !cfs(r[m], f)) return !0;
+    return t(`plugin option ${m} holds a value that is not one of ${c.join(", ")}; it reads as unset`, {
+      level: "warn"
+    }), !1
+  });
+  return {
+    ...n,
+    ...s
+  }
+}
+
+function $ye(e, r, n = (s) => s) {
+  let s = (m) => n(m.replace(/\\/g, "/")),
+    f = e.replace(/\$\{CLAUDE_PLUGIN_ROOT\}/g, () => s(r.path));
+  if (r.projectDir !== null) f = f.replace(/\$\{CLAUDE_PROJECT_DIR\}/g, () => {
+    let m = nIo();
+    if (m === null) throw new YA;
+    return s(m)
+  });
+  if (r.source) {
+    let {
+      source: m,
+      dataDir: c
+    } = r;
+    f = f.replace(/\$\{CLAUDE_PLUGIN_DATA\}/g, () => {
+      let l = Ye({
+        source: m,
+        dataDir: c
+      }, aNe);
+      if (l === null) throw new Ne;
+      return s(l)
+    })
+  }
+  return f
+}
+class Ne extends Error {
+  name = "PluginDataDirUnknownError";
+  constructor() {
+    super("CLAUDE_PLUGIN_DATA cannot be filled in: the plugin is on another machine, and its data folder there did not come with it")
+  }
+}
+
+function LIi(e, r) {
+  if (r.dataDir !== null) return !1;
+  try {
+    return $ye(e, {
+      ...r,
+      projectDir: null
+    }), !1
+  } catch (n) {
+    return n instanceof Ne
+  }
+}
+
+function Ye(e, r) {
+  return e.dataDir === void 0 ? r(e.source) : e.dataDir
+}
+var Xe = "${CLAUDE_";
+
+function NIi(e, r, n = "") {
+  let s = e.split(Xe).length - 1;
+  if (s === 0) return 0;
+  let f = nIo();
+  return r.path.includes(Xe) || f?.includes("$") || r.dataDir?.includes("$") ? 1 / 0 : s * 3 * Math.max(r.path.length, f?.length ?? 0, TM, (Ye(r, ih) ?? "").length, n.length)
+}
+
+function YJt(e, r, {
+  missingKey: n = "throw"
+} = {}) {
+  return e.replace(/\$\{user_config\.([^}]+)\}/g, (s, f) => {
+    let m = Wr(r, f);
+    if (m === void 0) {
+      if (n === "literal") return s;
+      throw Error(`Plugin option "${f}" isn't set. Open /plugin manage to configure it, or check that the plugin's userConfig schema declares "${f}".`)
+    }
+    return String(m)
+  })
+}
+
+function XJt(e, r) {
+  try {
+    return YJt(e, r) !== e
+  } catch {
+    return !0
+  }
+}
+
+function Flo(e, r, n, s) {
+  return e.replace(/\$\{user_config\.([^}]+)\}/g, (f, m) => {
+    if (n[m]?.sensitive === !0) return `[sensitive option '${m}' not available in skill content]`;
+    let c = Wr(r, m);
+    if (c === void 0) return f;
+    let l = String(c);
+    return s ? s(l) : l
+  })
+}
+
+function yt(e, r, n) {
+  let s = hon(e, r);
+  if (s.replaced.length === 0) return n;
+  let f = [...s.replaced.toReversed(), s.written],
+    m = kR(n, (g, h) => !s.replaced.includes(h)),
+    c = {
+      ...kR(f.reduce((g, h) => ({
+        ...g,
+        ...e?.[h]?.options,
+        ...h === s.written ? void 0 : n[h]?.options
+      }), {}), (g) => g !== void 0),
+      ...m[s.written]?.options
+    },
+    l = L(f.flatMap((g) => Object.keys(e?.[g]?.mcpServers ?? {})));
+  return {
+    ...m,
+    ...Object.fromEntries(s.replaced.map((g) => [g, void 0])),
+    [s.written]: {
+      options: c,
+      ...l.length === 0 ? {} : {
+        mcpServers: Object.fromEntries(l.map((g) => [g, f.reduce((h, w) => ({
+          ...h,
+          ...e?.[w]?.mcpServers?.[g]
+        }), {})]))
+      }
+    }
+  }
+}
+var Hlo = (e) => bIn({
+  pluginName: e.name,
+  pluginStorageId: Gh(e)
+});
+var FIi = (e, r, n) => `${e}: ${r} did not answer within ${n}ms`;
+var HIi = "the plugin is unloaded; /reload-plugins brings it back";
+
+function q({
+  members: e,
+  event: r,
+  e: n,
+  hookOrigin: s,
+  origin: f,
+  raise: m,
+  floors: c,
+  cutAt: l,
+  gestureAt: g,
+  kind: h
+}) {
+  let [w] = e;
+  if (s) t(`hooks module ${GMt(e)}: ${r}${h} nested in ${Nlo(s)}`);
+  let H = e.flatMap((y) => {
+    let b = [...y.leftOut ?? []],
+      {
+        environmentId: S
+      } = y;
+    return b.length > 0 ? [{
+      environmentId: S,
+      registrations: b
+    }] : []
+  });
+  return {
+    id: w ? w.hopKey.nextDispatchId() : 0,
+    event: r,
+    payload: n,
+    environments: e.map((y) => y.environmentId),
+    leftOut: H.length === 0 ? void 0 : H,
+    origin: f,
+    hookOrigin: s,
+    raise: m,
+    floors: c.length === 0 ? void 0 : c,
+    cutAt: l,
+    ...g !== void 0 && {
+      gestureAt: g
+    }
+  }
+}
+
+function X(e, r, n) {
+  if (!n || n.length === 0) return e;
+  let s = zMt().get(n) ?? [],
+    f = Date.now(),
+    m = (b) => s[b]?.isLent !== !0 || s[b].isHeld === !0,
+    {
+      caller: c,
+      above: l
+    } = qo(n.filter((b, S) => m(S) || f < (s[S]?.until ?? 0)), e.name),
+    g = (b, S) => b === "every" || b.includes(S),
+    h = le(n.slice(0, -1).filter((b, S) => m(S)), e.name),
+    H = e.registrationsFor(r).filter((b) => g(c, b) || g(h, b));
+  if (H.length === 0) return e;
+  let y = `origin ${Nlo(n)}`;
+  if (!e.hooks(r, H)) {
+    let b = c === "every" || l === "every";
+    t(`hooks module ${e.label} ${r} skipped: re-entry (` + (b ? `the plugin's own code raised it; ${y})` : `its own frame is being dispatched; ${y})`));
+    return
+  }
+  return t(`hooks module ${e.label} ${r}: hooks ${H.join(", ")} left out for re-entry (${y})`), {
+    ...e,
+    leftOut: H,
+    hooks: (b, S = []) => e.hooks(b, [...H, ...S]),
+    catches: (b, S = [], M) => e.catches(b, [...H, ...S], M),
+    matcherFor: (b, S = []) => e.matcherFor(b, [...H, ...S]),
+    standingFor: (b, S = []) => e.standingFor(b, [...H, ...S])
+  }
+}
+async function Ze({
+  members: e,
+  event: r,
+  hookOrigin: n,
+  signal: s
+}) {
+  let f = e.find((m) => m.status().kind === "dead")?.hopKey.replaced?.();
+  if (f === void 0) return e;
+  return t(`hooks module ${e.map((m)=>m.label).join(", ")}: ${r} waits for the hooks worker's replacement`), await new Promise((m) => {
+    s.addEventListener("abort", () => m(), {
+      once: !0
+    }), f.then(m, m)
+  }), e.flatMap((m) => {
+    let c = Ae().loadedModules.find((h) => h.name === m.name);
+    if (!(m.status().kind !== "live" && c !== void 0 && c.environmentId !== m.environmentId)) return [m];
+    let g = c.hooks(r) && Bf(c) ? X(c, r, n) : void 0;
+    return g === void 0 ? [] : [g]
+  })
+}
+async function Qe({
+  hop: e,
+  dispatchId: r,
+  members: n,
+  error: s,
+  called: f,
+  beneath: m
+}) {
+  let {
+    event: c,
+    e: l,
+    signal: g
+  } = e, h = (S) => S.filter((M) => Y(M, c, l)), w = d(s), H = Te(h(n), w), y = H[0]?.hopKey, b = y?.kept;
+  while (H.length > 0 && !g.aborted) {
+    let S = h(V(await Ze({
+        ...e,
+        members: H
+      }), c)),
+      M = S[0]?.hopKey,
+      C = S.find((O) => O.name === b?.plugin);
+    if (M === void 0 || g.aborted) break;
+    t(`hooks module ${GMt(S)}: .catch asked in the replacement after the hooks worker ended during ${c}`);
+    for (let O of S) O.enter();
+    try {
+      let O = await M.dispatch({
+          ...q({
+            ...e,
+            members: S,
+            kind: ""
+          }),
+          ended: {
+            reason: w,
+            called: f(),
+            ...C !== void 0 && {
+              kept: C.environmentId
+            }
+          }
+        }, m, g),
+        T = C !== void 0 && b !== void 0 && y?.isKeptVerdict?.(r, O.unmatched !== !0) === !0;
+      for (let v of S)
+        if (O.answered?.includes(v.environmentId) === !0) kq(v.name, `the hooks worker was replaced during ${c}; ${v.name}'s .catch answered in place of its hook`);
+      if (T) M.unloadCrashed?.(C.environmentId, b);
+      return O
+    } catch (O) {
+      w = d(O), H = Te(S, w), t(`hooks module ${GMt(S)}: .catch not heard after the hooks worker ended during ${c}: ${w}` + (H.length > 0 ? "; asked again of whoever stands" : ""), {
+        level: "error"
+      })
+    } finally {
+      for (let O of S) O.leave()
+    }
+  }
+  if (H.length > 0) t(`hooks module ${GMt(H)}: no .catch is asked after the hooks worker ended during ${c}: ` + (g.aborted ? "its caller is gone" : "no replacement that may be waited for holds its hook"), {
+    level: "error"
+  });
+  return
+}
+
+function xe(e) {
+  let r = new $e(`${GMt(e)}: next refused: the floors handed back are not ones a next.to of these plugins leaves (host rule)`);
+  return t(r.message, {
+    level: "error"
+  }), r
+}
+import {
+  isDeepStrictEqual as eo
+} from "util";
+
+function oo(e, r, n, s, f) {
+  return r.some((c) => eo(c, n)) ? r : e.slice(Math.max(e.findIndex((c) => c.name === r.at(-1)?.plugin), 0)).filter((c) => m4i(r, c.tier, c.name) === void 0).flatMap((c) => (c.args.scan.nextTo ?? []).filter((l) => l !== "user" || D(n) && n.isPastPeers === !0 && Vxr({
+    clauses: c.standingFor(s),
+    scan: c.args.scan,
+    event: s,
+    raised: f
+  })).map((l) => g4i(r, {
+    from: c.tier,
+    to: l,
+    plugin: c.name
+  }))).find((c) => eo(c.at(-1), n))
+}
+
+function we(e, r, n, s, f) {
+  if (!Array.isArray(n)) return;
+  let m = e;
+  for (let c of n)
+    if (m = oo(r, m, c, s, f), m === void 0) return;
+  return m
+}
+async function $lo(e) {
+  let {
+    event: r,
+    e: n,
+    call: s,
+    signal: f,
+    floors: m
+  } = e, c = ce(e.members, r, n), l = c[0]?.hopKey;
+  if (!l) return s(n, void 0, m);
+  let g, h = (M, C, O) => {
+      let T = we(m, c, O, r, n);
+      if (T === void 0) return Promise.reject(xe(c));
+      return g = s(M, C, T), g
+    },
+    w = q({
+      ...e,
+      members: c,
+      kind: ""
+    }),
+    H = performance.now();
+  for (let M of c) M.enter();
+  let y;
+  try {
+    y = await l.dispatch({
+      ...w,
+      caughtBy: c.filter((M) => Y(M, r, n)).map((M) => M.environmentId)
+    }, h, f)
+  } catch (M) {
+    let C = await Qe({
+      hop: e,
+      dispatchId: w.id,
+      members: c,
+      error: M,
+      called: () => g !== void 0,
+      beneath: (O, T, v) => g ?? h(O, T, v)
+    });
+    if (C === void 0) throw M;
+    y = C
+  } finally {
+    for (let M of c) M.leave()
+  }
+  let S = typeof n === "object" && "requestId" in n && typeof n.requestId === "string" ? ` key=${n.requestId}` : "";
+  if (t(`hooks module ${GMt(c)} ${r} settled in ${(performance.now()-H).toFixed(1)}ms (${l.kind} hop, next() included)${S}`), y.withheld === !0) e.withheld?.();
+  return to(y.result)
+}
+
+function He(e, r, n) {
+  e.leave(), t(`hooks module ${e.label} ${r} settled in ${(performance.now()-n).toFixed(1)}ms (native link, next() included)`)
+}
+
+function be({
+  loaded: e,
+  event: r,
+  origin: n
+}, s) {
+  let f = V([e], r).length === 1 && Ilo(e, r, s);
+  if (f && n) t(`hooks module ${e.label} (native): ${r} nested in ` + Nlo(n));
+  return f
+}
+
+function Ft(e) {
+  let {
+    loaded: r,
+    event: n,
+    origin: s
+  } = e;
+  if (r.link === void 0) throw new $e(`${r.name}: ${n}: not a native module; it runs in a hop`);
+  let f = r.link({
+      event: n,
+      leftOut: r.leftOut,
+      hookOrigin: s,
+      gestureAt: e.gestureAt
+    }),
+    m = f.catch;
+  async function c(h) {
+    let w = performance.now();
+    r.enter();
+    try {
+      return await h()
+    } finally {
+      He(r, n, w)
+    }
+  }
+  async function l(h, w) {
+    r.enter();
+    try {
+      return await m?.(h, w)
+    } finally {
+      r.leave()
+    }
+  }
+  let g = (h, w, H) => be({
+    loaded: r,
+    event: n,
+    origin: s
+  }, h) ? c(() => f.run(h, w, H)) : w(h);
+  return $t({
+    ...f,
+    run: g,
+    ...m !== void 0 && {
+      catch: l
+    }
+  })
+}
+
+function ro(e) {
+  let {
+    event: r,
+    e: n,
+    open: s,
+    signal: f,
+    floors: m
+  } = e, c = ce(e.members, r, n), l = c[0]?.hopKey;
+  if (!l) return s(n, void 0, m);
+  let g = (H, y, b) => {
+      let S = we(m, c, b, r, n);
+      if (S === void 0) throw xe(c);
+      return M2e(s(H, y, S))
+    },
+    h = performance.now();
+  for (let H of c) H.enter();
+  let w = l.dispatchStream(q({
+    ...e,
+    members: c,
+    kind: " stream"
+  }), g, f);
+  return async function*() {
+    try {
+      let H = yield* M2e(w);
+      return to(H)
+    } finally {
+      for (let H of c) H.leave();
+      t(`hooks module ${GMt(c)} ${r} stream settled in ${(performance.now()-h).toFixed(1)}ms (${l.kind} hop, next() included)`)
+    }
+  }()
+}
+
+function Nt(e) {
+  let {
+    loaded: r,
+    event: n,
+    origin: s
+  } = e;
+  if (r.streamLinks === void 0) throw new $e(`${r.name}: ${n}: not a native module; it runs in a hop`);
+
+  function f(m) {
+    let c = performance.now();
+    return r.enter(), async function*() {
+      try {
+        return yield* m
+      } finally {
+        He(r, n, c)
+      }
+    }()
+  }
+  return r.streamLinks({
+    event: n,
+    leftOut: r.leftOut,
+    hookOrigin: s
+  }).map((m) => {
+    let c = m.catch;
+    return {
+      ...m,
+      run: async (l, g, h) => be({
+        loaded: r,
+        event: n,
+        origin: s
+      }, l) ? f(await m.run(l, g, h)) : g(l),
+      ...c !== void 0 && {
+        catch: async (l, g, h) => f(await c(l, g, h))
+      }
+    }
+  })
+}
+var Se = (e, r, n) => e.map((s) => {
+  let f = r.get(s);
+  if (f === void 0) throw new $e(`${n}: a hop member is not one of these handlers`);
+  return f
+});
+var no = ({
+  loaded: e,
+  event: r,
+  origin: n,
+  raise: s,
+  gestureAt: f,
+  owners: m,
+  withheld: c
+}) => ({
+  name: e.name,
+  tier: e.tier,
+  ..._xs(e.args.modulePath) && {
+    answersForEngine: !0
+  },
+  ...c && {
+    withheld: c
+  },
+  run: (l, g, {
+    call: h,
+    floors: w,
+    cutAt: H
+  }) => $lo({
+    members: [e],
+    event: r,
+    e: l,
+    call: h,
+    signal: g.signal,
+    hookOrigin: n,
+    raise: s,
+    gestureAt: f,
+    withheld: c,
+    origin: g.origin,
+    floors: w,
+    cutAt: H
+  }),
+  hop: {
+    key: e.hopKey,
+    run: (l) => $lo({
+      members: Se(l.members, m, r),
+      event: r,
+      e: l.e,
+      call: l.call,
+      signal: l.signal,
+      hookOrigin: n,
+      raise: s,
+      gestureAt: f,
+      withheld: c,
+      origin: l.origin,
+      floors: l.floors,
+      cutAt: l.cutAt
+    })
+  }
+});
+
+function io(e) {
+  return e.loaded.link !== void 0 ? Ft(e) : no(e)
+}
+
+function Ee(e) {
+  let {
+    loadedModules: r,
+    moduleSeats: n
+  } = Ae();
+  return r.find((s) => s.name === e)?.tier ?? n.get(e) ?? "user"
+}
+var JJt = (e) => h4i.some((r) => r === Ee(e));
+
+function ufs(e, r, n) {
+  let s = e.matcherFor(r);
+  if (s === void 0) return !0;
+  try {
+    if (dZe(s, n, NNe(r))) return !0
+  } catch (f) {
+    return t(`hooks module ${e.label}: on('${r}') matcher threw on the host (${d(f)}); the hop decides`), !0
+  }
+  return W(e, r, n), !1
+}
+
+function so(e, r, {
+  keys: n,
+  e: s
+}) {
+  let f = e.matcherFor(r);
+  if (f === void 0 || !BS(s)) return !1;
+  try {
+    let c = NNe(r),
+      l = n.some((g) => Object.hasOwn(s, g) && !awo(f, {
+        [g]: s[g]
+      }, c));
+    if (l) W(e, r, s);
+    return l
+  } catch (c) {
+    return t(`hooks module ${e.label}: on('${r}') matcher threw on the host (${d(c)}); the hop decides`), !1
+  }
+}
+
+function bce(e, r, {
+  only: n,
+  e: s,
+  among: f,
+  pinned: m
+} = {}) {
+  let c = (f ?? Ae().loadedModules).flatMap((g) => {
+    if (!(g.hooks(e) && g.name === (n ?? g.name) && Bf(g))) return [];
+    let w = X(g, e, r);
+    return w === void 0 || m !== void 0 && so(w, e, m) ? [] : [w]
+  });
+  if (s === void 0) return c;
+  let l = c.findIndex((g) => ufs(g, e, s));
+  return l === -1 ? [] : c.slice(l)
+}
+
+function ao({
+  event: e,
+  e: r,
+  origin: n,
+  only: s
+}) {
+  let f = me(bce(e, n, {
+    only: s
+  }), e, r).filter((c) => c.link === void 0 && c.hopKey.isDeclared?.(c.name) !== !1 && Y(c, e, r)).map((c) => c.name);
+  return f.length === 0 ? void 0 : new $e(`${e} refused: the hooks worker is being replaced, and a hook on it with a .catch (${f.join(", ")}) cannot be asked until the reload is in`)
+}
+import {
+  AsyncLocalStorage as Xt
+} from "async_hooks";
+var wIn = new Xt;
+
+function Ulo(e, r) {
+  let n = {
+      isOver: !1
+    },
+    s = e.run(n, r),
+    f = () => {
+      n.isOver = !0
+    };
+  return s.then(f, f), s
+}
+var cca = (e) => Ulo(wIn, e);
+var ffs = () => wIn.getStore()?.isOver === !1;
+
+function Xyr(e, r) {
+  let n = [...Ae().hooksRespawns],
+    s = n.length > 0 && ffs(),
+    f = s ? ao(e) : void 0;
+  if (f !== void 0) return t(f.message, {
+    level: "error"
+  }), Promise.reject(f);
+  if (n.length === 0 || s) return;
+  let m = Promise.all(n).then(() => {
+    return
+  });
+  return (r !== void 0 ? Ao(m, r, () => NSo(r)) : m).then(() => Xyr(e, r))
+}
+
+function QJt(e, r) {
+  let n = Ae();
+  return n.hooksRespawns.size > 0 && n.loadedModules.some((f) => f.link === void 0 && f.hooks(e.event)) ? Xyr(e, r) : void 0
+}
+
+function pfs(e, r) {
+  let s = e.event === "classic.SessionEnd" ? void 0 : QJt(e, r);
+  return s !== void 0 && r !== void 0 ? s.catch((m) => Promise.reject(r.aborted ? hRe(r) : m)) : s
+}
+
+function hL(e, r, n = {}) {
+  let s = [],
+    f = new Map;
+  for (let m of bce(e, r, n)) {
+    let c = io({
+      loaded: m,
+      event: e,
+      origin: r,
+      raise: n.raise,
+      gestureAt: n.gestureAt,
+      owners: f,
+      withheld: n.withheld
+    });
+    f.set(c, m), s.push(c), n.drawn?.(c, m)
+  }
+  return s
+}
+
+function F6(e, r, n) {
+  let s = NNe(e);
+  return Ae().loadedModules.filter((f) => {
+    let m = f.hooks(e) && Bf(f) ? X(f, e, n) : void 0;
+    if (m === void 0) return !1;
+    return Wco(m, e, r, s)
+  }).map((f) => f.name)
+}
+var to = (e) => e;
+var $t = (e) => e;
+var mo = (e) => [...e];
+
+function TZ(e) {
+  let r = e?.map(mft).findLast((n) => n !== void 0);
+  if (r === void 0) return ZQe;
+  return Object.freeze({
+    plugin: r,
+    tier: Ee(r)
+  })
+}
+
+function $Ii(e) {
+  let {
+    promise: r,
+    resolve: n
+  } = Promise.withResolvers();
+  return e.add(r), {
+    respawn: r,
+    loaded: () => {
+      e.delete(r), n()
+    }
+  }
+}
+var co = (e, r) => ({
+  name: e.loaded.name,
+  tier: e.loaded.tier,
+  run: (n, s, {
+    open: f,
+    floors: m
+  }) => ro({
+    members: [e.loaded],
+    event: e.event,
+    e: n,
+    open: f,
+    signal: s.signal,
+    hookOrigin: e.origin,
+    raise: e.raise,
+    origin: s.origin,
+    floors: m
+  }),
+  hop: {
+    key: e.loaded.hopKey,
+    run: ({
+      members: n,
+      e: s,
+      open: f,
+      signal: m,
+      origin: c,
+      floors: l
+    }) => ro({
+      members: Se(n, r, e.event),
+      event: e.event,
+      e: s,
+      open: f,
+      signal: m,
+      hookOrigin: e.origin,
+      raise: e.raise,
+      origin: c,
+      floors: l
+    })
+  }
+});
+
+function UIi(e, r, n = {}) {
+  let s = new Map;
+  return bce(e, r, n).flatMap((f) => {
+    if (f.streamLinks !== void 0) return mo(Nt({
+      loaded: f,
+      event: e,
+      origin: r
+    }));
+    let m = co({
+      loaded: f,
+      event: e,
+      origin: r,
+      raise: n.raise,
+      gestureAt: void 0
+    }, s);
+    return s.set(m, f), [m]
+  })
+}
+var uca = 3;
+var BIi = (e) => `${e}: the op was aborted: the plugin's environment was unloaded`;
+export {
+  Ilo,
+  Vyr,
+  Hye,
+  qJt,
+  ifs,
+  Mlo,
+  Dlo,
+  Llo,
+  wTe,
+  Kyr,
+  gXe,
+  wq,
+  kq,
+  qyr,
+  afs,
+  Yyr,
+  mft,
+  PIi,
+  zMt,
+  aca,
+  Nlo,
+  lca,
+  _In,
+  lfs,
+  dca,
+  GMt,
+  bIn,
+  OIi,
+  pL,
+  SIn,
+  a0e,
+  VMt,
+  EZ,
+  hft,
+  Gh,
+  KMt,
+  mL,
+  l0e,
+  qWe,
+  IIi,
+  MIi,
+  dfs,
+  DIi,
+  YWe,
+  cfs,
+  gft,
+  $ye,
+  LIi,
+  NIi,
+  YJt,
+  XJt,
+  Flo,
+  Hlo,
+  FIi,
+  HIi,
+  $lo,
+  JJt,
+  ufs,
+  bce,
+  wIn,
+  Ulo,
+  cca,
+  ffs,
+  Xyr,
+  QJt,
+  pfs,
+  hL,
+  F6,
+  TZ,
+  $Ii,
+  UIi,
+  uca,
+  BIi
+};

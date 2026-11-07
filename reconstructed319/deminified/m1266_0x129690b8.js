@@ -1,0 +1,378 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import { q } from "B:/~BUN/root/chunk-game8aqv.js";
+import { K } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { g, c } from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import { lDt } from "B:/~BUN/root/chunk-yg4ttpr7.js";
+import { P } from "B:/~BUN/root/chunk-n8cnxns2.js";
+import { a } from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import { mt } from "B:/~BUN/root/chunk-d10hhz4p.js";
+import { cP } from "B:/~BUN/root/chunk-5xx1vfdh.js";
+import { yU } from "B:/~BUN/root/chunk-hevmq1yj.js";
+import { Oq } from "B:/~BUN/root/chunk-trf406sb.js";
+import { z2, te } from "B:/~BUN/root/chunk-6v74v9ar.js";
+import { iDi } from "B:/~BUN/root/chunk-ftj46fnn.js";
+import { h4o } from "B:/~BUN/root/chunk-egzenm3s.js";
+import { RQ, Eve, kge, cEn } from "B:/~BUN/root/chunk-gvv6aaq0.js";
+import { T1 } from "B:/~BUN/root/chunk-vdqpev1m.js";
+import { createHash as M } from "crypto";
+import { readFile as U, stat as z, unlink as J } from "fs/promises";
+function Gke(e, i, n) {
+  return e.ver === i && (e.observers === void 0 || Object.hasOwn(e.observers, n));
+}
+function O(e, i, n) {
+  return Gke(e.getArtifactReadObservation(i), n, e.agentId ?? "main") && !Eve(e.agentId, i, n);
+}
+function JYr(e) {
+  return e.fileReadingLimits?.maxTokens ?? yU().maxTokens;
+}
+function lqt(e, i) {
+  let n = JYr(i),
+    overlong = [],
+    d = 0,
+    start = 0;
+  while (start <= e.length) {
+    let o = e.indexOf(`
+`, start),
+      end = o === -1 ? e.length : o;
+    if (d++, lDt(e.slice(start, end), "html") > n / 4) overlong.push({
+      line: d,
+      start: start,
+      end: end
+    });
+    start = end + 1;
+  }
+  return {
+    lines: d,
+    unterminated: !e.endsWith(`
+`),
+    overlong: overlong
+  };
+}
+var T = 3,
+  X = 8,
+  Q = 32;
+function eSn({
+  html: html,
+  ver: ver,
+  shape: shape,
+  sent: sent,
+  recorded: recorded,
+  lineCount = !0
+}) {
+  let o = s => s.toLocaleString("en-US"),
+    f = shape.unterminated ? shape.lines : shape.lines - 1,
+    b = `version ${ver}: ${o(Buffer.byteLength(html))} bytes${lineCount ? `, ${o(f)} ${P(f, "line")}` : ""}`;
+  if (shape.overlong.length === 0) return `${b}, ${lineCount ? "each" : "every line"} short enough to Read with offset/limit`;
+  let p = (sent !== void 0 && shape.overlong.length <= Q ? sent : void 0)?.replace(/\r\n/g, `
+`),
+    C;
+  try {
+    C = p === void 0 ? void 0 : cEn(p);
+  } catch (error) {
+    if (!(error instanceof kge)) throw error;
+  }
+  let x = p === void 0 ? void 0 : new Set([...p.split(`
+`), ...(C?.split(`
+`) ?? [])]),
+    y = shape.overlong.map(item => {
+      let B = html.slice(item.start, item.end).replace(/\r$/, ""),
+        verdict = x === void 0 ? void 0 : x.has(B) ? "same" : "differs";
+      return {
+        line: item.line,
+        chars: item.end - item.start,
+        verdict: verdict
+      };
+    }),
+    S = y.slice(0, T),
+    R = y.slice(T),
+    v = R.length,
+    u = R.filter(item => item.verdict === "differs"),
+    H = v > 0 && R.every(item => item.verdict === "same"),
+    h = u.slice(0, X).map(item => o(item.line)),
+    m = u.length - h.length,
+    w = u.length === 0 ? H ? ", none differing from what you sent" : "" : `, of which ${P(u.length, "line")} ${h.join(", ")}${m > 0 ? ` and ${o(m)} more` : ""} ${u.length === 1 ? "differs" : "differ"} from what you sent`,
+    L = s => `line ${o(s.line)} (${o(s.chars)} characters${s.verdict === "differs" ? ", which differs from the content you sent" : s.verdict === "same" ? ", identical to a line you sent" : ""})`;
+  return `${b}; a single Read may not return ${S.map(L).join(", or ")}${v > 0 ? `, or ${o(v)} more such ${P(v, "line")}${w}` : ""}` + (recorded ? " \u2014 no whole Read of it is needed: Read the lines you need with offset/limit, and take those long lines from the saved file, never from your own copy" : "");
+}
+async function OCt({
+  filepath: filepath,
+  persistId: persistId,
+  html: html_2,
+  slug: slug,
+  ver: ver_2,
+  confirmsResend: confirmsResend,
+  batch: batch,
+  heldSkipsRead: heldSkipsRead
+}, b) {
+  let l = b.agentId ?? "main",
+    {
+      lines: p,
+      overlong: overlong_2
+    } = lqt(html_2, b),
+    x = overlong_2.length === 0,
+    y = O(b, slug, ver_2),
+    S = y && heldSkipsRead ? "held" : "unverifiable",
+    R = mt(filepath),
+    mtimeMs;
+  if (q()) Oq("handover_read");else mtimeMs = await cP(R).catch(() => {
+    return;
+  });
+  if (mtimeMs === void 0) return S === "held" ? "held" : "unexaminable";
+  let contentHash = M("sha256").update(html_2).digest("hex"),
+    pendingHandoverReads = te().pendingHandoverReads,
+    h = pendingHandoverReads.get(R),
+    m = h !== void 0 && h.slug === slug && h.ver === ver_2 && h.contentHash === contentHash ? h : void 0;
+  if (m !== void 0) m.mtimeMs = mtimeMs;
+  if (!x) return S;
+  let w = y && heldSkipsRead;
+  if (m !== void 0) {
+    if (m.handedTo.add(l), w) return m.completedBy.add(l), "held";
+    if (confirmsResend) m.confirmsResendFor.set(l, batch ?? "");else m.confirmsResendFor.delete(l);
+    return m.completedBy.delete(l), m.unrecordableBy.has(l) ? "unverifiable" : "pending";
+  }
+  let unrecordableBy = new Set();
+  for (let [B, I] of pendingHandoverReads) if (I.slug === slug) {
+    for (let W of I.unrecordableBy) unrecordableBy.add(W);
+    pendingHandoverReads.delete(B);
+  }
+  let unterminated = !html_2.endsWith(`
+`);
+  return pendingHandoverReads.set(R, {
+    slug: slug,
+    ver: ver_2,
+    mtimeMs: mtimeMs,
+    totalLines: p,
+    unterminated: unterminated,
+    contentHash: contentHash,
+    bytes: Buffer.byteLength(html_2),
+    requiredLines: unterminated ? p : p - 1,
+    linesReturned: new Map(),
+    linesPrepared: new Map(),
+    completedBy: new Set(w ? [l] : []),
+    handedTo: new Set([l]),
+    unrecordableBy: unrecordableBy,
+    persistId: persistId,
+    confirmsResendFor: new Map(confirmsResend ? [[l, batch ?? ""]] : [])
+  }), w ? "held" : unrecordableBy.has(l) ? "unverifiable" : "pending";
+}
+async function ler(e, i, persistId_2) {
+  for (let [editedCopy, d] of te().pendingHandoverReads) if (d.slug === e && d.ver === i) {
+    let r = await cP(editedCopy).catch(() => {
+      return;
+    });
+    return r !== void 0 && r !== d.mtimeMs ? {
+      persistId: `${persistId_2}-${Date.now().toString(36)}`,
+      editedCopy: editedCopy
+    } : {
+      persistId: d.persistId
+    };
+  }
+  return {
+    persistId: persistId_2
+  };
+}
+async function Fit(e, i) {
+  let n = mt(e),
+    pendingHandoverReads_2 = te().pendingHandoverReads,
+    d = pendingHandoverReads_2.get(n);
+  if (d === void 0) return;
+  if (M("sha256").update(i).digest("hex") !== d.contentHash) {
+    pendingHandoverReads_2.delete(n);
+    return;
+  }
+  let r = await cP(n).catch(() => {
+    return;
+  });
+  if (r !== void 0) d.mtimeMs = r;
+}
+function N(e, i, n) {
+  for (let [t, d] of te().pendingHandoverReads) if (d.slug === i && (n === void 0 || d.ver === n) && d.handedTo.has(e) && !d.completedBy.has(e) && !d.unrecordableBy.has(e)) return [t, d];
+  return;
+}
+function c4o(e, i, n) {
+  return N(e ?? "main", i, n) !== void 0;
+}
+function _(e, i, n, t = !1) {
+  let d = e.agentId ?? "main",
+    r = N(d, i, n);
+  if (r === void 0) return;
+  let o = r[1];
+  return G(o, e) || !t && O(e, i, o.ver) ? void 0 : r;
+}
+function QYr(e, i, n, {
+  ignoreHold = !1
+} = {}) {
+  let d = _(e, i, n, ignoreHold);
+  return d === void 0 ? void 0 : k(d[0], d[1], e.agentId);
+}
+async function u4o(e, i, n) {
+  let t = _(e, i, n);
+  if (t === void 0) return;
+  let [d, r] = t,
+    file;
+  try {
+    file = (await cP(d)) === r.mtimeMs ? "intact" : "changed";
+  } catch (error) {
+    file = K(error) ? "changed" : "unknown";
+  }
+  return {
+    ...k(d, r, e.agentId),
+    file: file
+  };
+}
+function k(path, i, n) {
+  return {
+    path: path,
+    slug: i.slug,
+    ver: i.ver,
+    lines: i.requiredLines,
+    unterminated: i.unterminated,
+    unread: D(i.linesReturned.get(n ?? "main") ?? [], i.requiredLines)
+  };
+}
+function f4o(e, i, n) {
+  let t = _(e, i, n);
+  return t !== void 0 && j(t[1], e.agentId, e.agentId ?? "main") === void 0;
+}
+function p4o(e, i, n, t) {
+  _(e, i, n)?.[1].confirmsResendFor.set(e.agentId ?? "main", t);
+}
+function ZYr({
+  lines: lines,
+  unterminated: unterminated_2,
+  unread: unread
+}) {
+  let t = unread.reduce((acc, [r, o]) => acc + o - r + 1, 0);
+  return `${lines} ${P(lines, "line")}` + (unterminated_2 ? `; the last has no trailing newline, so \`wc -l\` reports ${lines - 1} \u2014 Read through line ${lines} and leave the file as it is` : "") + (t > 0 && t < lines ? `; you have not yet Read ${P(t, "line")} ${unread.map(([d, r]) => d === r ? `${d}` : `${d}-${r}`).join(", ")}` : "");
+}
+function Hit(e, i, n, t) {
+  let d = QYr(e, i, n, t);
+  return d === void 0 ? "" : ` (${ZYr(d)})`;
+}
+function D(e, i) {
+  let n = [],
+    t = 0;
+  for (let [d, r] of F(e)) {
+    if (d > t) n.push([t + 1, Math.min(d, i)]);
+    if (t = Math.max(t, r), t >= i) break;
+  }
+  if (t < i) n.push([t + 1, i]);
+  return n;
+}
+async function m4o(e, i) {
+  if (te().pendingHandoverReads.delete(mt(e)), iDi(i, e), q()) Oq("handover_discard");else await J(e).then(() => h4o(e), () => {});
+}
+var A = {
+  artifactRead: void 0,
+  remaining: void 0,
+  commit: () => {
+    return;
+  }
+};
+async function Pya(e, i, messageId, t) {
+  try {
+    let pendingHandoverReads_3 = te().pendingHandoverReads,
+      r = pendingHandoverReads_3.get(e),
+      o = i.agentId ?? "main";
+    if (r === void 0 || messageId === void 0 || t.lineCount <= 0 || r.completedBy.has(o)) return A;
+    if (Math.floor(t.mtimeMs) !== r.mtimeMs || t.totalLines !== r.totalLines) return c("artifact_handover_read", "file_changed"), A;
+    if (V(r, e, i)) return A;
+    let range = [t.firstLine, t.firstLine + t.lineCount],
+      b = await Z(e, r.bytes, r.contentHash);
+    if (b === "changed") return pendingHandoverReads_3.delete(e), c("artifact_handover_read", "file_changed"), A;
+    if (b === "unreadable") c("artifact_handover_read", "file_unreadable");
+    let l = b === "holds",
+      p = (r.linesPrepared.get(o) ?? []).filter(item => item.messageId === messageId),
+      C = F([...(r.linesReturned.get(o) ?? []), ...p.map(item => item.range), range]),
+      x = E(C, r.requiredLines),
+      y = {
+        messageId: messageId,
+        range: range
+      };
+    r.linesPrepared.set(o, [...p, y]);
+    let commit = () => {
+        try {
+          let u = r.linesPrepared.get(o) ?? [];
+          if (pendingHandoverReads_3.get(e) !== r || r.completedBy.has(o) || !u.includes(y)) return;
+          let H = u.filter(item => item !== y);
+          if (H.length > 0) r.linesPrepared.set(o, H);else r.linesPrepared.delete(o);
+          let h = F([...(r.linesReturned.get(o) ?? []), range]);
+          if (!l || !E(h, r.requiredLines)) {
+            r.linesReturned.set(o, h);
+            return;
+          }
+          return r.linesReturned.delete(o), r.completedBy.add(o), Y(r, e, i, messageId, o) ? {
+            slug: r.slug,
+            ver: r.ver
+          } : void 0;
+        } catch (error) {
+          a(error);
+          return;
+        }
+      },
+      R = !r.unrecordableBy.has(o),
+      v = R && r.handedTo.has(o) && !O(i, r.slug, r.ver);
+    return {
+      artifactRead: x && l && R ? {
+        slug: r.slug,
+        ver: r.ver
+      } : void 0,
+      remaining: x || !v ? void 0 : {
+        ...k(e, r, i.agentId),
+        unread: D(C, r.requiredLines)
+      },
+      commit: commit
+    };
+  } catch (error) {
+    return a(error), A;
+  }
+}
+function G(e, i) {
+  let ver_3 = i.getArtifactReadObservation(e.slug).ver;
+  return ver_3 !== void 0 && ver_3 !== e.ver && (T1(ver_3, e.ver) ?? 0) > 0;
+}
+function V(e, i, n) {
+  if (G(e, n)) return te().pendingHandoverReads.delete(i), c("artifact_handover_read", "superseded"), !0;
+  return !1;
+}
+function F(e) {
+  let i = e.map(item => [item[0], item[1]]).sort((itemA, itemB) => itemA[0] - itemB[0]),
+    n = [];
+  for (let t of i) {
+    let d = n.at(-1);
+    if (d !== void 0 && t[0] <= d[1]) d[1] = Math.max(d[1], t[1]);else n.push(t);
+  }
+  return n;
+}
+function E(e, i) {
+  let n = e[0];
+  return n !== void 0 && n[0] <= 0 && n[1] >= i;
+}
+function j(e, i, n) {
+  let t = te().refusedPublishBodies.get(z2(i, e.slug)),
+    d = e.confirmsResendFor.get(n);
+  return d !== void 0 && (t === void 0 || t.batch !== d) ? void 0 : t;
+}
+function Y(e, i, n, t, d) {
+  if (V(e, i, n)) return !1;
+  let r = j(e, n.agentId, d),
+    o = r?.observedFrom;
+  try {
+    n.setArtifactReadVersion(e.slug, e.ver, RQ(n.agentId, t));
+  } finally {
+    if (r !== void 0) if (o === void 0) delete r.observedFrom;else r.observedFrom = o;
+  }
+  if (Gke(n.getArtifactReadObservation(e.slug), e.ver, d)) return g("artifact_handover_read"), !0;
+  return e.unrecordableBy.add(d), c("artifact_handover_read", "seed_not_persisted"), !1;
+}
+async function Z(e, i, n) {
+  try {
+    return (await z(e)).size === i && M("sha256").update(await U(e)).digest("hex") === n ? "holds" : "changed";
+  } catch (error) {
+    return K(error) ? "changed" : "unreadable";
+  }
+}
+export { Gke, JYr, lqt, eSn, OCt, ler, Fit, c4o, QYr, u4o, f4o, p4o, ZYr, Hit, m4o, Pya };

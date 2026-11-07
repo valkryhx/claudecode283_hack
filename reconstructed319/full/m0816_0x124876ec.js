@@ -1,0 +1,7403 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  Pr,
+  hm
+} from "B:/~BUN/root/chunk-q78ga0zw.js";
+import {
+  XO,
+  Mi,
+  z,
+  Ee,
+  Oo,
+  y0,
+  h$e,
+  $5,
+  Zjt,
+  ye,
+  AM,
+  FGs,
+  HGs,
+  q,
+  G2s,
+  e_,
+  qKn,
+  dWt,
+  ns
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  b,
+  f,
+  de,
+  bo
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  Ke,
+  du,
+  R,
+  Sr,
+  F,
+  d,
+  K,
+  wr,
+  qt,
+  tx
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  lb,
+  Ks
+} from "B:/~BUN/root/chunk-h4acfc9y.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  g,
+  m
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  dt,
+  Me
+} from "B:/~BUN/root/chunk-9kvvd0hy.js";
+import {
+  t,
+  Hb,
+  _,
+  ee,
+  ds,
+  sWs,
+  xN,
+  Og,
+  Ha,
+  ie,
+  Mh
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  Ue
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  P,
+  Q,
+  IC,
+  gY
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  xc,
+  tf,
+  ib,
+  _h,
+  Nn
+} from "B:/~BUN/root/chunk-jdtvghyw.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  cr,
+  AX,
+  t4,
+  zf
+} from "B:/~BUN/root/chunk-wxhfn3za.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  CHr,
+  Cae,
+  St,
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  ht,
+  HCe,
+  Uzi,
+  dn,
+  Mv
+} from "B:/~BUN/root/chunk-y1b1g4ac.js";
+import {
+  ng,
+  cHr
+} from "B:/~BUN/root/chunk-65j2302z.js";
+import {
+  le
+} from "B:/~BUN/root/chunk-begxsvab.js";
+import {
+  Vv,
+  Ite,
+  cj,
+  EHe
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  su,
+  Hn,
+  Ti,
+  za,
+  Kk,
+  at,
+  S_,
+  rt,
+  xko,
+  L$t,
+  ql,
+  pn,
+  v,
+  rn,
+  oM
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  eg,
+  rnt,
+  ZJ,
+  Gi,
+  Pt
+} from "B:/~BUN/root/chunk-1g25msn4.js";
+import {
+  eB,
+  pe
+} from "B:/~BUN/root/chunk-thn0wk2x.js";
+import {
+  yn,
+  Gte
+} from "B:/~BUN/root/chunk-88zb3509.js";
+import {
+  ut,
+  lt
+} from "B:/~BUN/root/chunk-3mm90xb6.js";
+import {
+  mt
+} from "B:/~BUN/root/chunk-d10hhz4p.js";
+import {
+  xf
+} from "B:/~BUN/root/chunk-x1xft50h.js";
+import {
+  Bdn,
+  zs
+} from "B:/~BUN/root/chunk-5xx1vfdh.js";
+import {
+  Os
+} from "B:/~BUN/root/chunk-bkfncj77.js";
+import {
+  Dn
+} from "B:/~BUN/root/chunk-9jpwd6f1.js";
+import {
+  Hr,
+  Ve
+} from "B:/~BUN/root/chunk-myfamxtp.js";
+import {
+  Et,
+  q4,
+  zU
+} from "B:/~BUN/root/chunk-2f1svh63.js";
+import {
+  to,
+  Dd
+} from "B:/~BUN/root/chunk-sy1h8mf0.js";
+import {
+  IO,
+  ACo
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import {
+  Te,
+  Fn,
+  cM
+} from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import {
+  Bv,
+  Hl,
+  e_t,
+  LVe,
+  hMr,
+  m9i,
+  h9i,
+  Pb,
+  g9i,
+  gMr,
+  rd
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  Ikr,
+  pLe,
+  iLn,
+  dmt
+} from "B:/~BUN/root/chunk-yhafkw66.js";
+import {
+  Yz
+} from "B:/~BUN/root/chunk-xc0c1vfp.js";
+import {
+  Af,
+  yqe,
+  BUs,
+  jUs,
+  WUs
+} from "B:/~BUN/root/chunk-vaq2hdme.js";
+import {
+  Xt,
+  DU,
+  Ean,
+  LU
+} from "B:/~BUN/root/chunk-jgwwv4gf.js";
+import {
+  Yo
+} from "B:/~BUN/root/chunk-smrt7z22.js";
+import {
+  qD,
+  CE,
+  kc,
+  RO
+} from "B:/~BUN/root/chunk-trd3c21n.js";
+import {
+  Xq,
+  ann
+} from "B:/~BUN/root/chunk-79dw4seg.js";
+import {
+  sp
+} from "B:/~BUN/root/chunk-fzefftbw.js";
+import {
+  Kg
+} from "B:/~BUN/root/chunk-6j3fjnhn.js";
+import {
+  oRe,
+  gn
+} from "B:/~BUN/root/chunk-f0zgv0ya.js";
+import {
+  im
+} from "B:/~BUN/root/chunk-22y97556.js";
+import {
+  co
+} from "B:/~BUN/root/chunk-tjfmeakx.js";
+import {
+  MW
+} from "B:/~BUN/root/chunk-kk81ayzj.js";
+import {
+  $Sr
+} from "B:/~BUN/root/chunk-2f6ykbbh.js";
+import {
+  bD,
+  cl,
+  $i,
+  X2,
+  h_,
+  NCe
+} from "B:/~BUN/root/chunk-78494p3w.js";
+import {
+  uf,
+  eWi,
+  Kho,
+  SNt,
+  fvs,
+  rWi,
+  FF,
+  oWi,
+  sWi
+} from "B:/~BUN/root/chunk-v29ccgfa.js";
+import {
+  lo
+} from "B:/~BUN/root/chunk-detjgwj4.js";
+import {
+  $Fn,
+  fgo,
+  vi
+} from "B:/~BUN/root/chunk-knfpag6d.js";
+import {
+  ft,
+  bc
+} from "B:/~BUN/root/chunk-2x2z0t2k.js";
+import {
+  VI
+} from "B:/~BUN/root/chunk-hr1m6fe3.js";
+import {
+  hre,
+  NJr,
+  ghi,
+  dTn,
+  FJr,
+  _hi,
+  ext,
+  bhi,
+  Shi,
+  yx,
+  sde,
+  Pge,
+  cxt,
+  B1e,
+  slr,
+  _x,
+  Bgi,
+  g$,
+  Uxt,
+  Flr,
+  n9,
+  Mge,
+  EMe,
+  Gxt,
+  G5e,
+  t_i,
+  lW,
+  Vw,
+  XC,
+  uF,
+  fF,
+  qQr,
+  _de,
+  Q0,
+  gZr,
+  t5t,
+  Fbi,
+  SPt,
+  Wdt,
+  jMe,
+  $h,
+  S5t,
+  WMe,
+  tq,
+  wx,
+  tL,
+  dur,
+  _m,
+  g8e,
+  cEe,
+  RRn,
+  lto,
+  ins,
+  ans,
+  lns,
+  zQ,
+  b8e,
+  D5t,
+  L5t,
+  nwi,
+  sct,
+  uns,
+  fns,
+  K5t,
+  Vwi,
+  Fns,
+  Kwi,
+  Mto,
+  C8e,
+  _b,
+  Q5t,
+  m2,
+  x8t,
+  oro,
+  N8t,
+  uos,
+  xAn,
+  kx,
+  fye,
+  _W,
+  qOt,
+  PS,
+  YOt,
+  vpr,
+  QB,
+  nR,
+  Ie,
+  vs,
+  li
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import {
+  ok,
+  FLe,
+  eC,
+  gE,
+  TCe,
+  rp,
+  WI
+} from "B:/~BUN/root/chunk-j05gjqgd.js";
+import {
+  KI,
+  lh
+} from "B:/~BUN/root/chunk-gezr7m08.js";
+import {
+  UXe
+} from "B:/~BUN/root/chunk-nk59bmc9.js";
+import {
+  H2
+} from "B:/~BUN/root/chunk-65j4e9bn.js";
+import {
+  zP,
+  VP
+} from "B:/~BUN/root/chunk-ex2shtaj.js";
+import {
+  sMt,
+  Ql,
+  LWe,
+  dce,
+  gce,
+  xMt,
+  JOn,
+  M9,
+  rft,
+  zOi
+} from "B:/~BUN/root/chunk-cxcakgnv.js";
+import {
+  DXe
+} from "B:/~BUN/root/chunk-6h5p2dxf.js";
+import {
+  Uy
+} from "B:/~BUN/root/chunk-ckdgegnz.js";
+import {
+  V_,
+  oMn,
+  R7t,
+  Ops,
+  qye,
+  A7t,
+  pDt,
+  ODi,
+  IDi
+} from "B:/~BUN/root/chunk-x9bz04wf.js";
+import {
+  Xa
+} from "B:/~BUN/root/chunk-m8dg5txf.js";
+import {
+  Zo
+} from "B:/~BUN/root/chunk-t4pbv0np.js";
+import {
+  cue
+} from "B:/~BUN/root/chunk-xgwmwbnb.js";
+import {
+  U0e
+} from "B:/~BUN/root/chunk-6bx54the.js";
+import {
+  Lso,
+  $as,
+  Uas,
+  gIt,
+  Bas,
+  sXt,
+  iXt,
+  VCi,
+  yIt,
+  R9,
+  xDe,
+  KCi,
+  iut,
+  aXt,
+  YCi,
+  dXt,
+  JCi,
+  xmr
+} from "B:/~BUN/root/chunk-m1v50w96.js";
+import {
+  rX
+} from "B:/~BUN/root/chunk-076mmgjt.js";
+import {
+  Va
+} from "B:/~BUN/root/chunk-gr5se97s.js";
+import {
+  VT,
+  uut,
+  Gmr,
+  C9e,
+  TIt,
+  nm,
+  bXt,
+  M6,
+  u_,
+  mio,
+  Cn
+} from "B:/~BUN/root/chunk-2fedt3ag.js";
+import {
+  Ni
+} from "B:/~BUN/root/chunk-ghar8fn5.js";
+import {
+  Evr,
+  ren,
+  Cvr
+} from "B:/~BUN/root/chunk-7vfy9z2g.js";
+import {
+  Ad
+} from "B:/~BUN/root/chunk-x4zqd4cy.js";
+import {
+  NTe,
+  bL,
+  YT,
+  RLi,
+  z9,
+  FTe,
+  Z7t,
+  II,
+  NDt,
+  eQt,
+  YE
+} from "B:/~BUN/root/chunk-k5xd4a86.js";
+import {
+  hA,
+  aD,
+  lms,
+  lze,
+  dms
+} from "B:/~BUN/root/chunk-45td50dx.js";
+import {
+  JPn
+} from "B:/~BUN/root/chunk-4vcs773m.js";
+import {
+  xXe
+} from "B:/~BUN/root/chunk-z5apdcem.js";
+import {
+  LW
+} from "B:/~BUN/root/chunk-d5rmf5x5.js";
+import {
+  pCe
+} from "B:/~BUN/root/chunk-0q69tvcp.js";
+import {
+  ya,
+  bbr,
+  A0i
+} from "B:/~BUN/root/chunk-6cgv9p77.js";
+import {
+  MZ,
+  b0e,
+  e0i,
+  t0i,
+  n0i,
+  r0i,
+  o0i,
+  s0i,
+  i0i,
+  Coe,
+  M7t,
+  a0i,
+  l0i,
+  S0e,
+  d0i,
+  c0i
+} from "B:/~BUN/root/chunk-y7em5h10.js";
+import {
+  VSr
+} from "B:/~BUN/root/chunk-0ypwt1ew.js";
+import {
+  Voe,
+  eLe,
+  y_e
+} from "B:/~BUN/root/chunk-ymawhbhz.js";
+import {
+  nyn
+} from "B:/~BUN/root/chunk-ht41bmdt.js";
+import {
+  Qqo,
+  jYr,
+  zYr,
+  tai
+} from "B:/~BUN/root/chunk-61tvx6vn.js";
+import {
+  b8
+} from "B:/~BUN/root/chunk-3kg80bh2.js";
+import {
+  yCt,
+  Iit,
+  _Ct,
+  k6e
+} from "B:/~BUN/root/chunk-yhn9dxgz.js";
+import {
+  d4r,
+  lQn,
+  Soi
+} from "B:/~BUN/root/chunk-dsf173dz.js";
+import {
+  BJn,
+  eit
+} from "B:/~BUN/root/chunk-y68gsn7d.js";
+import {
+  Yni,
+  Jni
+} from "B:/~BUN/root/chunk-165gnw4r.js";
+import {
+  L8
+} from "B:/~BUN/root/chunk-fnfdeqaa.js";
+import {
+  DB,
+  D8,
+  LB
+} from "B:/~BUN/root/chunk-f444brrr.js";
+import {
+  Che
+} from "B:/~BUN/root/chunk-zkjxrhgg.js";
+import {
+  KXn,
+  fei,
+  pei
+} from "B:/~BUN/root/chunk-xa7ng0zm.js";
+import {
+  hVt
+} from "B:/~BUN/root/chunk-hc4mkn8m.js";
+import {
+  gVt
+} from "B:/~BUN/root/chunk-kvmw05zs.js";
+import {
+  VXn
+} from "B:/~BUN/root/chunk-d5s87fq7.js";
+import {
+  jJn,
+  Vti,
+  xTt,
+  Wyn
+} from "B:/~BUN/root/chunk-tfgfye7t.js";
+import {
+  v8
+} from "B:/~BUN/root/chunk-nm56k8cy.js";
+import {
+  Zqt
+} from "B:/~BUN/root/chunk-2nzy6mgc.js";
+import {
+  Anr,
+  xnr,
+  Pnr,
+  yci,
+  Onr,
+  Inr
+} from "B:/~BUN/root/chunk-g5ztxne9.js";
+import {
+  mvn
+} from "B:/~BUN/root/chunk-m5r98b9b.js";
+import {
+  SZ,
+  Nyr
+} from "B:/~BUN/root/chunk-h2qbvrp4.js";
+import {
+  Ko
+} from "B:/~BUN/root/chunk-kgvnwy91.js";
+import {
+  KP
+} from "B:/~BUN/root/chunk-48hpv12e.js";
+import {
+  f_,
+  vb
+} from "B:/~BUN/root/chunk-az6xed3t.js";
+import {
+  $$
+} from "B:/~BUN/root/chunk-w179eqqe.js";
+import {
+  jk,
+  Ll
+} from "B:/~BUN/root/chunk-zy4xrndc.js";
+import {
+  Al
+} from "B:/~BUN/root/chunk-md18120p.js";
+import {
+  j$,
+  t_e
+} from "B:/~BUN/root/chunk-vvwzzpy4.js";
+import {
+  nk
+} from "B:/~BUN/root/chunk-j7y9vsxb.js";
+import {
+  nee
+} from "B:/~BUN/root/chunk-j5zjtxy5.js";
+import {
+  Pv
+} from "B:/~BUN/root/chunk-m1zmpfya.js";
+import {
+  HF,
+  mvs
+} from "B:/~BUN/root/chunk-b9f6eh39.js";
+import {
+  Vn
+} from "B:/~BUN/root/chunk-tacrdmts.js";
+import {
+  as
+} from "B:/~BUN/root/chunk-w4y83tgx.js";
+import {
+  fz
+} from "B:/~BUN/root/chunk-r6enj9cw.js";
+import {
+  Fs
+} from "B:/~BUN/root/chunk-fkcdzerj.js";
+import {
+  dc,
+  ma
+} from "B:/~BUN/root/chunk-4jfmvmew.js";
+import {
+  mT,
+  Wv
+} from "B:/~BUN/root/chunk-bxk17zm0.js";
+import {
+  ge,
+  vr,
+  Ft
+} from "B:/~BUN/root/chunk-b3kw6jpx.js";
+import {
+  D
+} from "B:/~BUN/root/chunk-8mqsat26.js";
+import {
+  o,
+  mqe,
+  E,
+  I,
+  oe,
+  C,
+  u,
+  He,
+  Be,
+  Dr,
+  kk,
+  me,
+  B,
+  T
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  qa
+} from "B:/~BUN/root/chunk-qzcyr88d.js";
+import {
+  Je
+} from "B:/~BUN/root/chunk-9wbhv9z5.js";
+import {
+  X
+} from "B:/~BUN/root/chunk-g9pw24zp.js";
+import {
+  U,
+  L,
+  Wwe
+} from "B:/~BUN/root/chunk-5ha2avah.js";
+var ys = p(() => He({})),
+  ks = p(() => u({
+    notifications: C(u({
+      notification_id: o().describe("Server-assigned stable id \u2014 the dedup key across redeliveries."),
+      origin: o().describe('Server-attested source token: "github_webhook" | "trigger_fire" | "mcp_send_message" (open set; unknown well-formed tokens pass through verbatim, off-grammar values coerce to "unknown").'),
+      queued_at: o().describe("RFC3339 timestamp of when the backend queued it."),
+      content: o().describe("Verbatim notification body."),
+      arrived_at: o().optional().describe("RFC3339 timestamp, by this machine's clock, of when the notification reached this session's queue. Missing from results saved before this field existed.")
+    })),
+    remaining: E().describe("Notifications still queued after this drain (drains are size-budgeted); call the tool again to read them."),
+    read_at: o().optional().describe("RFC3339 timestamp, by this machine's clock, of when this call read the queue. Missing from results saved before this field existed.")
+  })),
+  io = dn({
+    name: Pb,
+    searchHint: "read queued external notifications (webhooks, triggers)",
+    backgrounding: "never",
+    maxResultSizeChars: d4r,
+    persistenceThresholdCeiling: d4r,
+    skipAggregateToolResultBudget: !0,
+    get inputSchema() {
+      return ys()
+    },
+    get outputSchema() {
+      return ks()
+    },
+    isEnabled: lQn,
+    isConcurrencySafe() {
+      return !0
+    },
+    isReadOnly() {
+      return !0
+    },
+    async description() {
+      return g9i
+    },
+    async prompt() {
+      return gMr
+    },
+    toAutoClassifierInput() {
+      return "read queued notifications"
+    },
+    create({
+      agentId: e,
+      queuedNotificationsRegistry: r
+    }) {
+      return {
+        async call(n) {
+          if (e !== void 0) throw Error("ReadNotifications can only be called from the main conversation \u2014 subagents must not drain the session notification buffer.");
+          let s = new Date(Date.now()).toISOString(),
+            {
+              notifications: c,
+              remaining: h
+            } = r.drain();
+          return {
+            data: {
+              notifications: c.map((y) => ({
+                notification_id: y.notificationId,
+                origin: y.origin,
+                queued_at: y.queuedAt,
+                content: y.content,
+                arrived_at: y.arrivedAt
+              })),
+              remaining: h,
+              read_at: s
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: Soi(e.notifications, e.remaining, e.read_at)
+      }
+    },
+    renderToolUseMessage() {
+      return ""
+    },
+    extractSearchText(e) {
+      return e.notifications.map((r) => r.content).join(`
+`)
+    }
+  });
+var Ts = `Inside the <${CHr}> tag: what the apps' views shared and their tool names, as the apps wrote them, and each view's ids, as the host set them.`,
+  We = mT,
+  bs = We - 5000,
+  Ss = 1048576,
+  ws = 8,
+  _s = 16,
+  _t = 20,
+  Cs = 2000,
+  ho = new RegExp(`[${DU.open}${DU.close}&\\u2028\\u2029]`, "g");
+
+function go(e) {
+  return `\\u${e.charCodeAt(0).toString(16).padStart(4,"0")}`
+}
+
+function ao(e, r, n = 1 / 0) {
+  let s = e.content.flatMap((h) => h.type === "text" ? [h.text] : []).join(`
+`),
+    c = s;
+  for (;;) {
+    let h = Ean(_({
+      widget_id: r ?? null,
+      tool_name: e.tool_name,
+      view: NJr(e.view) === void 0 ? null : e.view,
+      widget_reported_state: c,
+      ...c.length < s.length && {
+        cut_for_size: !0
+      }
+    })).replace(ho, go);
+    if (h.length <= n || c === "") return h;
+    c = Q(c, Math.floor(c.length * (n / h.length) * 0.9))
+  }
+}
+class yo {
+  bytes = Ss;
+  count = ws;
+  attempts = _s;
+  leftOut = 0;
+  async of(e, r) {
+    let n = [];
+    for (let s of e.content) {
+      if (s.type !== "image") continue;
+      if (this.count === 0 || this.attempts === 0) {
+        this.leftOut++;
+        continue
+      }
+      this.attempts--;
+      let c = await Cvr(Buffer.from(s.data, "base64"), r);
+      if (!c || c.source.type !== "base64" || c.source.data.length > this.bytes) {
+        this.leftOut++;
+        continue
+      }
+      this.count--, this.bytes -= c.source.data.length, n.push({
+        type: "image",
+        source: c.source
+      })
+    }
+    return n
+  }
+  note() {
+    if (this.leftOut === 0) return "";
+    return `${this.leftOut===1?"1 image was":`${this.leftOut} images were`} left out (too many, too large, or not an image the model can read). `
+  }
+}
+var wt = "not_sent_for_size",
+  uo = "left_out_of_this_answer",
+  mo = "views_with_held_state",
+  po = 64;
+
+function ko(e, r, n = _t) {
+  let s = Math.max(0, r.length - n);
+  return {
+    type: "text",
+    text: Ean(_({
+      [e]: r.slice(0, n),
+      ...s > 0 && {
+        more: s
+      }
+    })).replace(ho, go)
+  }
+}
+
+function fo(e, r, n) {
+  return ko(e, r.map((s) => ({
+    widget_id: n.get(s) ?? null,
+    tool_name: _hi(s.tool_name)
+  })))
+}
+
+function Ct(e, r) {
+  return e > r ? `the first ${r} of them` : "them"
+}
+
+function Oe(e, r = !1) {
+  return {
+    blocks: [{
+      type: "text",
+      text: e
+    }],
+    isError: r
+  }
+}
+
+function To(e, r, n = !1) {
+  return {
+    blocks: [{
+      type: "text",
+      text: `${Ts}
+<${CHr}>`
+    }, ...e, {
+      type: "text",
+      text: `</${CHr}>${r.trim()===""?"":`
+${r.trim()}`}`
+    }],
+    isError: n
+  }
+}
+async function Rs(e, r, n, s, c) {
+  let h = new yo,
+    y = e.map((x, H) => ({
+      state: x,
+      index: H
+    })).sort((x, H) => n(H.state) - n(x.state) || H.index - x.index),
+    k = new Map,
+    w = [],
+    S = c,
+    O = 0;
+  for (let {
+      state: x,
+      index: H
+    }
+    of y) {
+    let Z = ao(x, r.get(x));
+    if (Z.length > S) {
+      let V = (!r.has(x) || e.length === 1) && S >= Cs ? ao(x, r.get(x), S) : void 0;
+      if (V === void 0 || V.length > S) {
+        w.push(x);
+        continue
+      }
+      Z = V, O++
+    }
+    S -= Z.length, k.set(H, [{
+      type: "text",
+      text: Z
+    }, ...await h.of(x, s)])
+  }
+  let A = e.filter((x) => x.omitted === "too_large"),
+    W = e.length > 1 && w.length > 0,
+    M = [...[...k.entries()].sort(([x], [H]) => x - H).flatMap(([, x]) => x), ...A.length > 0 ? [fo(wt, A, r)] : [], ...W ? [fo(uo, w, r)] : []],
+    j = A.length === 0 ? "" : A.length === 1 ? `1 view shared more than could be sent with the user's message, so what it shared is not here; "${wt}" inside the tag above names it. ` : `${A.length} views shared more than could be sent with the user's message, so what they shared is not here; "${wt}" inside the tag above names ${Ct(A.length,_t)}. `,
+    Y = w.length === 0 ? "" : e.length === 1 ? "The view is too large to return. " : `${w.length===1?"1 view was":`${w.length} of the ${e.length} views were`} left out because the answer would be too large; "${uo}" inside the tag above names ${w.length===1?"it":Ct(w.length,_t)}. To get one, call again with its widget_id, where the tag shows one. `,
+    G = j + Y + (O === 0 ? "" : e.length === 1 ? 'The view shared more than fits in one answer, so what it shared was cut; "cut_for_size" marks it inside the tag above. ' : `${O===1?"1 view has":`${O} views have`} no widget_id, so ${O===1?"it":"they"} cannot be read alone: what ${O===1?"it":"each"} shared was cut to fit, and "cut_for_size" marks ${O===1?"it":"them"} inside the tag above. `) + h.note(),
+    N = k.size === 0 && (e.length === 1 || !w.some((x) => r.has(x))) ? `If you need what ${e.length===1?"it shows":"these views show"}, ask the user to describe it. ` : "";
+  return M.length === 0 ? Oe(`${G}${N}`.trim()) : To(M, G + N)
+}
+async function So(e, r) {
+  if (!e?.length) return Oe("No view's shared state is held right now, so there is nothing to read. You cannot tell from here what the view shows; if what you do next depends on that, ask the user.");
+  let n = FJr(e),
+    s = ghi(r.widgetId),
+    c = s === "" ? e : e.filter((k) => n.get(k) === s);
+  if (c.length === 0) {
+    let k = [...n.values()];
+    return k.length === 0 ? Oe("No held view has that widget_id. Call again without widget_id to read every held view.", !0) : To([ko(mo, k, po)], `No held view has that widget_id; "${mo}" inside the tag above lists ${Ct(k.length,po)}. Call again with one of those, or without widget_id for all of them. `, !0)
+  }
+  let [h] = c;
+  if (c.length === 1 && !h?.view && h?.omitted === "too_large") return Oe("The view shared more than could be sent with the user's message, so none of it is here. If you need what it shows, ask the user to describe it.");
+  let y = bs;
+  for (let k = 0; k < 4; k++) {
+    let w = await Rs(c, n, r.changedAt ?? (() => 0), r.imageLimits, y),
+      S = w.blocks.reduce((O, A) => O + (A.type === "text" ? A.text.length : 0), 0) - We;
+    if (S <= 0) return w;
+    y = Math.max(0, y - S - 1000)
+  }
+  return Oe("What these views shared is too large to return. If you need what they show, ask the user to describe it.")
+}
+var Es = p(() => He({
+    widget_id: o().optional().describe("A widget_id as a reminder or an earlier answer named it, to read only that view; omit it to read every held view.")
+  })),
+  Is = p(() => u({
+    blocks: C(Be([u({
+      type: T("text"),
+      text: o()
+    }), u({
+      type: T("image"),
+      source: u({
+        type: T("base64"),
+        media_type: B(["image/png", "image/jpeg", "image/gif", "image/webp"]),
+        data: o()
+      })
+    })])).describe("The views' shared text and images, or a note."),
+    isError: I()
+  })),
+  wo = dn({
+    name: ext,
+    searchHint: "read the state an MCP App view shared",
+    backgrounding: "never",
+    maxResultSizeChars: We,
+    skipAggregateToolResultBudget: !0,
+    get inputSchema() {
+      return Es()
+    },
+    get outputSchema() {
+      return Is()
+    },
+    isEnabled: Uxt,
+    isConcurrencySafe() {
+      return !0
+    },
+    isReadOnly() {
+      return !0
+    },
+    async description() {
+      return bhi
+    },
+    async prompt() {
+      return Shi
+    },
+    toAutoClassifierInput(e) {
+      return `read widget context${e.widget_id?` ${e.widget_id}`:""}`
+    },
+    create({
+      session: e,
+      mainLoopModel: r
+    }) {
+      return {
+        async call(n) {
+          let s = Flr.peek(e);
+          return {
+            data: await So(s?.states, {
+              imageLimits: Al(r()),
+              widgetId: n.widget_id,
+              changedAt: (h) => s?.changedAt.get(dTn(h)) ?? 0
+            })
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: e.blocks,
+        ...e.isError && {
+          is_error: !0
+        }
+      }
+    },
+    renderToolUseMessage(e) {
+      return e.widget_id ?? ""
+    },
+    extractSearchText() {
+      return ""
+    }
+  });
+import {
+  readFile as _o,
+  stat as Co
+} from "fs/promises";
+import {
+  join as vo
+} from "path";
+var As = p(() => He({
+    mode: B(["check", "update", "create", "delete"]).default("check").describe("'check' (default): if ONBOARDING.md is present locally, uploads it to the most-recent guide (creates one if none exist); otherwise reports the existing link without uploading. 'update': upload to a specific guide by short_code. 'create': always make a new link. 'delete': remove the guide named by short_code; with no short_code, nothing is deleted and the user's guides are listed."),
+    short_code: o().regex(/^[A-Za-z0-9_-]{1,64}$/).optional().describe("Short code of one guide, from an earlier call's result. Required by delete. With check or update, targets that guide instead of the most recently updated one.")
+  })),
+  xs = p(() => u({
+    status: B(["created", "updated", "deleted", "has_existing", "unavailable"]),
+    share_url: o().optional(),
+    short_code: o().optional(),
+    message: o()
+  })),
+  Ae = "ONBOARDING.md",
+  qe = 65536,
+  Eo = dn({
+    name: lze,
+    searchHint: "upload ONBOARDING.md and get a team share link",
+    backgrounding: "never",
+    maxResultSizeChars: 1000,
+    async description() {
+      return dms
+    },
+    isEnabled() {
+      return K5t()
+    },
+    isConcurrencySafe() {
+      return !1
+    },
+    isReadOnly() {
+      return !1
+    },
+    get inputSchema() {
+      return As()
+    },
+    get outputSchema() {
+      return xs()
+    },
+    async prompt() {
+      return dms
+    },
+    toAutoClassifierInput(e) {
+      let r = e.short_code ? `, short_code: ${e.short_code}` : "";
+      return `share onboarding guide (mode: ${e.mode??"check"}${r})`
+    },
+    isDestructive(e) {
+      return e.mode === "delete"
+    },
+    renderToolUseMessage(e) {
+      if (e.mode === "delete" && e.short_code) return `delete ${e.short_code}`;
+      return e.mode && e.mode !== "check" ? e.mode : null
+    },
+    create({
+      credentials: e
+    }) {
+      return {
+        async call({
+          mode: r = "check",
+          short_code: n
+        }) {
+          if (r === "delete") try {
+            if (!n) {
+              let k = await Mto(e);
+              if (k.length === 0) return fe("The user has no guides to delete.");
+              let w = k.map((S) => `${S.short_code} (updated ${S.updated_at})`).join(", ");
+              return fe(`Nothing was deleted. Ask the user which guide to delete, then call again with its short_code. The user's guides: ${w}.`)
+            }
+            return {
+              data: {
+                status: "deleted",
+                message: await Kwi(n, e) === "already_gone" ? `The server found no guide ${n} in this organization: it was already deleted, or the code is wrong. Call delete with no short_code to list the user's guides.` : `Guide ${n} deleted.`
+              }
+            }
+          } catch (y) {
+            let k = y instanceof Error ? y.message : String(y);
+            return fe(`Delete didn't go through (${k}).`)
+          }
+          if (r === "check") try {
+            let y = n ? (await Mto(e)).find((k) => k.short_code === n) : await Ro(e);
+            if (y) {
+              let k = vo(Ee(), Ae),
+                w = null;
+              try {
+                w = (await Co(k)).size
+              } catch (A) {
+                if (!K(A)) throw A
+              }
+              if (w === null) return {
+                data: {
+                  status: "has_existing",
+                  share_url: y.share_url,
+                  short_code: y.short_code,
+                  message: `A guide already exists for this org at ${y.share_url} (short_code: ${y.short_code}). If this link is what the user needed, share it. If they want to create or update a guide, tell them to run /team-onboarding themselves (it scans local session data and cannot be invoked by the model).`
+                }
+              };
+              if (w > qe) return fe(`${Ae} is over ${qe/1024}KB. Trim it before sharing.`);
+              let S = await _o(k, "utf8"),
+                O = await Fns(y.short_code, S, e);
+              return vt("updated", O, !1)
+            }
+          } catch (y) {
+            let k = y instanceof Error ? y.message : String(y);
+            return fe(`Upload didn't go through (${k}). Fall back to the manual share copy.`)
+          }
+          let s = vo(Ee(), Ae),
+            c;
+          try {
+            c = (await Co(s)).size
+          } catch (y) {
+            if (K(y)) return fe(`${Ae} not found in the current directory. Write the guide first.`);
+            throw y
+          }
+          if (c > qe) return fe(`${Ae} is over ${qe/1024}KB. Trim it before sharing.`);
+          let h = await _o(s, "utf8");
+          try {
+            if (r === "update") {
+              let k = n ?? (await Ro(e))?.short_code;
+              if (k) {
+                let w = await Fns(k, h, e);
+                return vt("updated", w, !0)
+              }
+            }
+            let y = await Vwi(h, void 0, e);
+            return vt("created", y, !1)
+          } catch (y) {
+            let k = y instanceof Error ? y.message : String(y);
+            return fe(`Upload didn't go through (${k}). Fall back to the manual share copy.`)
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: `[${e.status}] ${e.message}`
+      }
+    }
+  });
+async function Ro(e) {
+  let r = await Mto(e);
+  if (r.length === 0) return;
+  return r.reduce((n, s) => n.updated_at > s.updated_at ? n : s)
+}
+
+function vt(e, r, n) {
+  let s = n ? `
+
+Close with: "Here's your onboarding guide: ${r.share_url}" followed by the send-to-teammates line.` : "",
+    c = "";
+  return {
+    data: {
+      status: e,
+      share_url: r.share_url,
+      short_code: r.short_code,
+      message: `Share link ${e}: ${r.share_url} (short_code: ${r.short_code})${s}`
+    }
+  }
+}
+
+function fe(e) {
+  return {
+    data: {
+      status: "unavailable",
+      message: e
+    }
+  }
+}
+var Io = 1e4;
+
+function Ao(e, r) {
+  try {
+    let n = Object.getPrototypeOf(r);
+    if (n !== Object.prototype && n !== null) return he("not_an_object");
+    let s = Object.keys(r),
+      c = s[0];
+    if (c === void 0 || s.length > 1) return he("unknown_field");
+    if (Object.keys(e).length > 0) return he("changed_shown_field");
+    let h = r[c];
+    switch (c) {
+      case "role":
+        if (typeof h !== "string") return he("response");
+        return h.length > 9991 || JSON.stringify(h).length > 9991 ? he("too_large") : {
+          kind: "admitted",
+          input: {
+            role: h
+          }
+        };
+      case "dismissed":
+        return h === !0 ? {
+          kind: "admitted",
+          input: {
+            dismissed: !0
+          }
+        } : he("response");
+      default:
+        return he("unknown_field")
+    }
+  } catch {
+    return he("threw")
+  }
+}
+
+function he(e) {
+  return {
+    kind: "refused",
+    rule: e
+  }
+}
+var Ps = p(() => He({})),
+  Ds = p(() => u({
+    role: o().optional(),
+    dismissed: I().optional()
+  }));
+
+function Ls() {
+  return i.CLAUDE_CODE_REMOTE
+}
+var xo = dn({
+  name: S0e,
+  searchHint: "show the Cowork onboarding role picker",
+  backgrounding: "never",
+  maxResultSizeChars: Io,
+  get inputSchema() {
+    return Ps()
+  },
+  get outputSchema() {
+    return Ds()
+  },
+  isEnabled: Ls,
+  isConcurrencySafe() {
+    return !0
+  },
+  isReadOnly() {
+    return !0
+  },
+  requiresUserInteraction() {
+    return !0
+  },
+  admitCardAnswer: Ao,
+  async description() {
+    return d0i
+  },
+  async prompt() {
+    return c0i
+  },
+  toAutoClassifierInput() {
+    return "show onboarding role picker"
+  },
+  create() {
+    return {
+      async checkPermissions(e) {
+        return {
+          behavior: "ask",
+          message: "Pick your role?",
+          updatedInput: {}
+        }
+      },
+      async call(e) {
+        let {
+          role: r,
+          dismissed: n
+        } = e;
+        return {
+          data: {
+            ...typeof r === "string" && r.trim() !== "" && {
+              role: r
+            },
+            ...typeof n === "boolean" && {
+              dismissed: n
+            }
+          }
+        }
+      }
+    }
+  },
+  mapToolResultToToolResultBlockParam(e, r) {
+    return {
+      tool_use_id: r,
+      type: "tool_result",
+      content: _(e)
+    }
+  },
+  renderToolUseMessage() {
+    return null
+  }
+});
+
+function Po(e, r) {
+  try {
+    let n = Object.getPrototypeOf(r);
+    if (n !== Object.prototype && n !== null) return Ge("not_an_object");
+    let s = {};
+    for (let c of Object.keys(e)) {
+      if (!Object.hasOwn(r, c) || r[c] !== e[c]) return Ge("changed_shown_field");
+      s[c] = e[c]
+    }
+    for (let c of Object.keys(r)) {
+      if (Object.hasOwn(e, c)) continue;
+      if (c !== "outcome") return Ge("unknown_field");
+      if (r[c] === "connected") s.outcome = "connected"
+    }
+    return {
+      kind: "admitted",
+      input: s
+    }
+  } catch {
+    return Ge("threw")
+  }
+}
+
+function Ge(e) {
+  return {
+    kind: "refused",
+    rule: e
+  }
+}
+var Ms = "tengu_brass_kite",
+  Ns = "tengu_gentle_dijkstra";
+
+function $s() {
+  return ng() ? Ns : Ms
+}
+
+function lVr() {
+  return Zjt() && mvn() && Fn() && nee() && Ws() && Bs()
+}
+
+function Bs() {
+  let e = vi();
+  if (e.chromeSetupOfferArm !== void 0) return e.chromeSetupOfferArm;
+  if (e.chromeSetupOfferStateUnread || !js()) return !1;
+  let {
+    value: r,
+    source: n
+  } = pn($s(), !1);
+  if (n === "fallback" || n === "disabled") return !1;
+  return e.chromeSetupOfferArm = r === !0, e.chromeSetupOfferArm
+}
+
+function KQs(e, r) {
+  let n = fgo.of(e.host);
+  if (r !== void 0 && rX(r)) n.lastTurnClientPlatform = r;
+  else if (n.lastTurnClientPlatform === void 0) n.lastTurnClientPlatform = null
+}
+
+function Do(e, r) {
+  return $Fn(r !== void 0 && rX(r) ? r : fgo.of(e.host).lastTurnClientPlatform)
+}
+
+function Rt() {
+  return ng()
+}
+
+function js() {
+  if (!Rt()) return !0;
+  let e = vi().lastTurnClientPlatform;
+  return e !== void 0 && e !== null && !$Fn(e)
+}
+
+function zo() {
+  return Us() || mvn()
+}
+
+function Ws() {
+  return su() && lh() && !KI().includes(b0e)
+}
+
+function Us() {
+  return dWt().has("tool_attempted")
+}
+var Hs = new Je(() => ({
+  calls: 0
+}));
+
+function Ye(e, r, n) {
+  let s = Hs.of(e);
+  s.calls++, l("tengu_chrome_setup_offered", {
+    outcome: f(r),
+    nth_call: s.calls,
+    chrome_tool_attempted: dWt().has("tool_attempted"),
+    isRemoteSession: Boolean(i.CLAUDE_CODE_REMOTE_SESSION_ID),
+    ...n && {
+      messageClientPlatform: g$(n)
+    }
+  })
+}
+var qs = p(() => He({
+    reason: o().max(200).optional().describe("A short phrase naming what the task needs the user's own browser for.")
+  })),
+  Gs = p(() => u({
+    outcome: B(["connected", "not_now", "no_attempt_yet"])
+  }));
+
+function Vs(e) {
+  let {
+    reason: r
+  } = e;
+  return r === void 0 ? {} : {
+    reason: r
+  }
+}
+var Lo = dn({
+  name: b0e,
+  searchHint: "offer the user Claude in Chrome setup for their own browser",
+  shouldDefer: !0,
+  whenToUse: e0i,
+  backgrounding: "never",
+  maxResultSizeChars: 2000,
+  get inputSchema() {
+    return qs()
+  },
+  get outputSchema() {
+    return Gs()
+  },
+  isEnabled: lVr,
+  isConcurrencySafe() {
+    return !1
+  },
+  isReadOnly() {
+    return !0
+  },
+  requiresUserInteraction() {
+    return !0
+  },
+  admitCardAnswer: Po,
+  async description() {
+    return t0i
+  },
+  async prompt() {
+    return n0i
+  },
+  toAutoClassifierInput(e) {
+    return e.reason ? `offer Claude in Chrome setup: ${e.reason}` : "offer Claude in Chrome setup"
+  },
+  create({
+    messageClientPlatform: e,
+    session: r
+  }) {
+    return {
+      async validateInput() {
+        if (Rt() && Do(r, e)) return Ye(r, "phone", e), {
+          result: !1,
+          message: s0i,
+          errorCode: 2
+        };
+        if (zo()) return {
+          result: !0
+        };
+        return Ye(r, "no_attempt_yet", e), {
+          result: !1,
+          message: i0i,
+          errorCode: 1
+        }
+      },
+      async checkPermissions(n) {
+        return {
+          behavior: "ask",
+          message: "Set up Claude in Chrome?",
+          suppressAlwaysAllowRule: !0,
+          updatedInput: Vs(n)
+        }
+      },
+      async call(n) {
+        let {
+          outcome: s
+        } = n, c = s === "connected" ? "connected" : "not_now";
+        return Ye(r, c, e), {
+          data: {
+            outcome: c
+          }
+        }
+      }
+    }
+  },
+  mapToolResultToToolResultBlockParam(e, r) {
+    return {
+      tool_use_id: r,
+      type: "tool_result",
+      content: e.outcome === "connected" ? r0i : o0i
+    }
+  },
+  renderToolUseMessage(e) {
+    return e.reason ?? null
+  }
+});
+var Ys = String.raw`\u0334-\u0338\u1CD4\u1CE2-\u1CE8\u20D2\u20D3\u20D8-\u20DA\u20E5\u20E6\u20EA\u20EB\u{10A39}\u{16AF0}-\u{16AF4}\u{1BC9E}\u{1D167}-\u{1D169}`,
+  Pe = String.raw`[\p{L}\p{N}](?:(?![${Ys}])[\p{Mn}\p{Mc}])*`,
+  Bo = String.raw`[.\-#'\u2018\u201C\u201E\u00AB\u00BF\u00A1\u300C\u300E]`,
+  At = String.raw`['\u2019\-/._,:\u3001\u3002\uFF0C\uFF1A\u30FB\uFF0F\u060C]`,
+  jo = String.raw`[,.:?!%+/#'\u2019\u2026\u00BB\u201D\u201C\u300D\u300F\u3001\u3002\uFF0C\uFF1A\uFF01\uFF1F\uFF05\uFF0B\u060C\u061F]`,
+  Ot = `${Pe}(?:${At}?${Pe})*`,
+  Mo = String.raw`(?:\(${Ot}\)|\uFF08${Ot}\uFF09)`,
+  No = new RegExp(`^(?:${Bo}?${Ot}${Mo}?|${Mo})${jo}*$`, "u"),
+  $o = `(?:${Pe}(?:${At}(?=${Pe}))?)*`,
+  Xs = new RegExp(`^${Bo}?(?:(?=${Pe}|[(\uFF08])${$o}(?:[(\uFF08]${$o}[)\uFF09]?)?${jo}*)?`, "u"),
+  Qs = new RegExp(`^${At}$`, "u"),
+  Fo = new Set(["&", "\uFF06", "-", "\u2013", "\u2014", ":", "\uFF1A"]),
+  It = new Set(["!", "?", "\uFF01", "\uFF1F"]);
+
+function Wo(e) {
+  if (e.trim() === "") return "is empty";
+  if (/^\d{1,9}\.(?: |$)/.test(e)) return "starts like a numbered list, whose number an app may not show";
+  let r = e.split(" ");
+  for (let [n, s] of r.entries()) {
+    if (s === "") return "starts or ends with a blank, or holds two in a row";
+    if (Fo.has(s) || It.has(s)) {
+      if (n > 0 && No.test(r[n - 1]) && (n < r.length - 1 ? Fo : It).has(s)) continue;
+      return `has ${xe(s)} on its own, which may only ${It.has(s)?"end the label, right after a word":"stand between two words"}`
+    }
+    if (/www\./iu.test(s)) return "has www., which an app may draw as a link";
+    if (/[:\uFF1A].*[:\uFF1A]/u.test(s)) return "has two colons in one word, which an app may read as the name of an emoji";
+    if (No.test(s)) continue;
+    let c = Xs.exec(s)?.[0] ?? "",
+      h = Array.from(s.slice(c.length)),
+      y = h[0] !== void 0 && /[\p{L}\p{N}]/u.test(h[0]) ? Array.from(c).at(-1) : h[0];
+    if (/[()\uFF08\uFF09]/u.test(y ?? s)) return 'has a bracket out of place: "(" and ")" go around one word with no blank in it, as in "Yes (safer)", and only signs that may end a word follow ")"';
+    if (!/[\p{L}\p{N}]/u.test(c)) return `has a word that starts with ${xe(y??s)}: start each word with a letter or digit`;
+    if (!/[\p{L}\p{N}]/u.test(h.join(""))) return `has ${xe(y)} at the end of a word, where only , . : ? ! % + / # ' or a bracketed word may stand`;
+    return y !== void 0 && Qs.test(y) ? `has ${xe(y)} next to another sign inside a word, where signs stand one at a time` : `has ${xe(y)} inside a word, where only one of ' - / . _ , : may stand, between two letters or digits`
+  }
+  return
+}
+
+function xe(e = "") {
+  let r = `U+${(e.codePointAt(0)??0).toString(16).toUpperCase().padStart(4,"0")}`;
+  if (/^[!#-~]$/.test(e)) return `"${e}"`;
+  return /[\p{C}\p{Z}\p{M}"]/u.test(e) ? `${r}${e==="\xA0"?" (a no-break space)":""}` : `"${e}" (${r})`
+}
+var Zs = "tengu_merry_thunder",
+  xt = 24,
+  Dt = /[^\p{L}\p{N}]/gu,
+  Js = String.raw`\uFFFC\u{1D159}\u{13441}\u{13442}\u{16910}\u{16FE4}`,
+  ei = new RegExp(`[${ib}${Js}]`, "u"),
+  ti = [Wo, (e) => sMt(e.replace(Dt, "").toUpperCase()) === e.replace(Dt, "").toUpperCase() ? void 0 : "spells ultracode, ultraplan, ultrareview or ultrathink, in any case or width, once blanks and punctuation are left out: they change how a turn runs, and only the user may type them", (e) => Bgi(e.replace(Dt, "").toUpperCase()) ? "has letters that, once blanks and punctuation are left out, spell the start of a code or link that only the user may paste: use other words" : void 0, (e) => ei.test(e) ? "holds a line break, a tab, or a character that may not show as written" : void 0, (e) => /\S\s{2,}\S/.test(e) ? "holds two blanks in a row" : void 0],
+  oi = p(() => He({
+    recap: o().describe("Two or three short sentences to the user, under 300 characters if you can: what is now true or changed, then where it stands, including what is not done or not verified."),
+    ask: o().optional().describe("The one decision that is the user's call, under 100 characters if you can: a choice, a go-ahead, an approval. No reason, no recommendation, no list of the options the buttons give."),
+    blocked: Vv(I().optional()).describe("true when your work stops here until the user answers; omit when the answer can wait."),
+    actions: C(Be([He({
+      label: o().describe(`A reply: the button's text, which a click sends you as the user's message. 1-3 plain words, at most ${xt} characters ("Yes, fix 1", "Not now"). The first button is your pick, so no need to say so. Each word starts with a letter or digit. No quotes, code marks, arrows, emoji, @ or =. Write & only between blanks.`)
+    }), He({
+      action: B(["verify", "fix_ci", "address_comments", "resolve_conflicts"]).describe("One of the app's own buttons, which asks you to check this turn's changes (verify) or, on an open pull request, to fix its failing checks, address its requested changes or resolve its merge conflicts. The app shows it only while that applies, so prefer a reply.")
+    })])).max(2, {
+      message: "The box has room for two buttons. Call again with two."
+    }).optional().describe("One or two buttons that answer ask, your recommendation first; a second only when it is a realistic alternative. Needs ask.")
+  }).superRefine(({
+    ask: e,
+    actions: r = []
+  }, n) => {
+    if (r.length > 0 && (e ?? "").trim() === "") n.addIssue({
+      code: "custom",
+      path: ["ask"],
+      message: "actions came without ask, and the box draws buttons only under a question. Call again with ask, or without actions.",
+      params: {
+        [t_e]: !0
+      }
+    });
+    for (let [s, c] of r.entries()) {
+      let h = !("label" in c) ? [] : c.label.length > xt ? [`is longer than ${xt} characters, the longest allowed`] : ti.flatMap((y) => y(c.label) ?? y(c.label.normalize("NFKD"))?.replace(/^/, "(once decomposed, NFKD) ") ?? []);
+      if (h.length > 0) n.addIssue({
+        code: "custom",
+        path: ["actions", s, "label"],
+        message: `The label of button ${s+1} ${h.join("; ")}. Call again with 1-3 plain words.`,
+        params: {
+          [t_e]: !0
+        }
+      })
+    }
+  })),
+  ri = p(() => u({
+    asks: I().describe("Whether the call put a question to the user")
+  })),
+  qgn = dn({
+    name: M7t,
+    searchHint: "offer the user a next step when a turn ends",
+    backgrounding: "never",
+    maxResultSizeChars: 1000,
+    stampsOwnResults: !0,
+    isEnabled() {
+      return G2s() && !X2() && rn(Zs, !1)
+    },
+    async description() {
+      return a0i
+    },
+    async prompt() {
+      return l0i
+    },
+    get inputSchema() {
+      return oi()
+    },
+    get outputSchema() {
+      return ri()
+    },
+    isReadOnly() {
+      return !0
+    },
+    toAutoClassifierInput(e) {
+      let r = (e.actions ?? []).map((n) => ("label" in n) ? n.label : n.action);
+      return `${e.ask??""} [${r.join(" | ")}]`
+    },
+    userFacingName() {
+      return "Wrap up"
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create() {
+      return {
+        async checkPermissions(e) {
+          return {
+            behavior: "allow",
+            updatedInput: e
+          }
+        },
+        async call({
+          ask: e
+        }) {
+          return {
+            data: {
+              asks: e !== void 0 && e.trim() !== ""
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam({
+      asks: e
+    }, r) {
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: e ? "Recorded. Write your closing message now, as the last thing you say this turn, and end it with your question in one short sentence: a client without the box still sees it." : "Recorded. Write your closing message now, as the last thing you say this turn."
+      }
+    }
+  });
+var bXn = {
+  name: "AutoModeScanTask",
+  type: "auto_mode_scan",
+  async kill(e, r) {
+    let n = !1;
+    if (r.update(e, (s) => {
+        if (s.status !== "running") return s;
+        return s.abortController?.abort(), n = !0, {
+          ...s,
+          status: "killed",
+          endTime: Date.now(),
+          notified: !0,
+          abortController: void 0
+        }
+      }), n) za(e, "stopped", {
+      skipTranscript: !0,
+      ambient: !0
+    })
+  }
+};
+var SXn = {
+  name: "DreamTask",
+  type: "dream",
+  async kill(e, r) {
+    let n, s;
+    if (r.update(e, (c) => {
+        if (c.status !== "running") return c;
+        return c.abortController?.abort(), n = c.priorMtime, s = c.storageV5, {
+          ...c,
+          status: "killed",
+          endTime: Date.now(),
+          notified: !0,
+          abortController: void 0
+        }
+      }), n !== void 0) za(e, "stopped", {
+      skipTranscript: !0,
+      ambient: !0
+    }), await gVt(n, s)
+  }
+};
+var wXn = {
+  name: "LocalAgentTask",
+  type: "local_agent",
+  async kill(e, r, n, s) {
+    wx(e, r, s)
+  }
+};
+var kXn = {
+  name: "LocalMemoryImportTask",
+  type: "local_memory_import",
+  async kill(e, r) {
+    let n = !1;
+    if (r.update(e, (s) => {
+        if (s.status !== "running") return s;
+        return s.abortController?.abort(), n = !0, {
+          ...s,
+          status: "killed",
+          endTime: Date.now(),
+          notified: !0,
+          abortController: void 0
+        }
+      }), n) za(e, "stopped", {
+      skipTranscript: !0,
+      ambient: !0
+    })
+  }
+};
+var vXn = {
+  name: "LocalShellTask",
+  type: "local_bash",
+  async kill(e, r, n, s, c, h) {
+    tq(e, r, {
+      by: h === "client" ? "client" : s
+    })
+  }
+};
+var Uo = {
+  name: "MonitorMcpTask",
+  type: "monitor_mcp",
+  async kill(e, r) {
+    ni(e, r)
+  }
+};
+
+function ni(e, r, n) {
+  zYr(e, r, {
+    ...n,
+    onKilled: () => {
+      n?.onKilled?.();
+      let {
+        streamedMonitorStops: s
+      } = Hn(), c = s.get(e);
+      s.delete(e);
+      try {
+        c?.()
+      } catch (h) {
+        a(F(h))
+      }
+    }
+  })
+}
+var EXn = {
+  name: "PostTurnMemoryTask",
+  type: "post_turn_memory",
+  async kill(e, r) {
+    let n = !1;
+    if (r.update(e, (s) => {
+        if (s.status !== "running") return s;
+        return s.abortController?.abort(), n = !0, {
+          ...s,
+          status: "killed",
+          endTime: Date.now(),
+          notified: !0,
+          abortController: void 0
+        }
+      }), n) za(e, "stopped", {
+      skipTranscript: !0,
+      ambient: !0
+    })
+  }
+};
+class Ho {
+  dispatch = void 0;
+  lookup(e) {
+    return this.dispatch ??= ai(), this.dispatch.get(e)
+  }
+}
+var ii = new Ho;
+
+function ai() {
+  let e = [vXn, wXn, C8e, SXn, bXn, kXn, EXn, Uo, tai, Wyn, import.meta.require("B:/~BUN/root/chunk-xph038re.js").LocalWorkflowTask];
+  return e.push(import.meta.require("B:/~BUN/root/chunk-xaj4b991.js").MCP_TASK), new Map(e.map((r) => [r.type, r]))
+}
+
+function nTt(e) {
+  if (le() && e === "local_script") return import.meta.require("B:/~BUN/root/chunk-fmaaem8y.js").ScriptTask;
+  return ii.lookup(e)
+}
+
+function De(e) {
+  return !Ko(e.status) || Q0(e)
+}
+
+function Xe(e, r, n) {
+  let s = r.all(),
+    c = jJn(e, s),
+    h = Vo((S) => S === e, r, n);
+  if (c.status !== "not_found" && h) {
+    let S = c.status === "found" ? [c.task.identity.agentId] : c.candidates,
+      O = c.status === "found" ? De(c.task) : c.anyLive;
+    return {
+      status: "ambiguous",
+      message: Go(e, S, h.id),
+      anyLiveCandidate: O || De(h)
+    }
+  }
+  if (c.status === "ambiguous") return {
+    status: "ambiguous",
+    message: qo(e, c.candidates),
+    anyLiveCandidate: c.anyLive
+  };
+  if (c.status === "found") return {
+    status: "found",
+    task: c.task
+  };
+  if (h) return {
+    status: "found",
+    task: h
+  };
+  let y = Yo(e),
+    k = ci(y, s),
+    w = Vo((S) => Yo(S) === y, r, n);
+  if (k.length > 0 && w) return {
+    status: "ambiguous",
+    message: Go(e, k.map((S) => S.identity.agentId), w.id),
+    anyLiveCandidate: k.some(De) || De(w)
+  };
+  if (k.length > 1) return {
+    status: "ambiguous",
+    message: qo(e, k.map((S) => S.identity.agentId)),
+    anyLiveCandidate: k.some(De)
+  };
+  if (k.length === 1) return {
+    status: "found",
+    task: k[0]
+  };
+  if (w) return {
+    status: "found",
+    task: w
+  };
+  return {
+    status: "not_found",
+    suggestion: ui(y, r, n)
+  }
+}
+
+function qo(e, r) {
+  return `Multiple teammates match "${q4(e)}": ${r.map((n)=>q4(n)).join(", ")}. Use the full address (name@team).`
+}
+
+function Go(e, r, n) {
+  return `"${q4(e)}" matches both teammate ${r.map((s)=>q4(s)).join(", ")} and background agent ${q4(n)}. Use the full address (name@team) for the teammate or the task ID for the background agent.`
+}
+
+function ui(e, r, n) {
+  let s = new Map;
+  for (let y of xTt(r.all())) {
+    if (y.status !== "running") continue;
+    s.set(Yo(y.identity.agentName), y.identity.agentId)
+  }
+  let c = n?.().agentNameRegistry;
+  if (c)
+    for (let [y, k] of c) {
+      let w = r.get(k);
+      if (w?.type === "local_agent" && (w.status === "running" || Q0(w))) s.set(Yo(y), y)
+    }
+  let h = Ite(e, [...s.keys()], 1)[0];
+  return h === void 0 ? void 0 : s.get(h)
+}
+
+function ci(e, r) {
+  let n = new Map;
+  for (let h of xTt(r)) {
+    if (Yo(h.identity.agentName) !== e) continue;
+    let y = n.get(h.identity.agentId);
+    if (!y || y.status !== "running" && h.status === "running") n.set(h.identity.agentId, h)
+  }
+  let s = [...n.values()],
+    c = s.filter((h) => h.status === "running");
+  return c.length > 0 ? c : s
+}
+
+function Vo(e, r, n) {
+  let s = n?.().agentNameRegistry;
+  if (!s) return;
+  for (let [c, h] of s) {
+    if (!e(c)) continue;
+    let y = r.get(h);
+    if (y?.type === "local_agent") return y
+  }
+  return
+}
+
+function Xo(e, r, n) {
+  let s = new Set(r?.().agentNameRegistry?.values() ?? []),
+    c = Object.values(e.all()).filter((h) => h.type === "local_agent" && h.id !== n && h.agentType !== "main-session" && h.isBackgrounded && h.isObserver !== !0 && !s.has(h.id) && (h.status === "running" || Q0(h))).map((h) => h.description ? `${h.id} (${Et(h.description)})` : h.id);
+  return c.length > 0 ? `. Running background agents: ${c.join(", ")}` : ""
+}
+
+function Ygn(e) {
+  for (let r of Hn().cascadeStopExemptions)
+    if (r(e)) return !0;
+  return !1
+}
+
+function dVr(e, r, n) {
+  let s = "agentId" in e && typeof e.agentId === "string" ? e.agentId : void 0;
+  return s !== void 0 && Ygn(s) && bXt(e, r, n, (c) => c !== s && Ygn(c))
+}
+
+function cVr(e, r, n, s) {
+  if (r.length === 0) return;
+  Hn().cascadeSpared.emit({
+    stoppedAgentId: e,
+    sparedAgentIds: r,
+    killedBy: n,
+    taskRegistry: s
+  })
+}
+class ce extends Sr {
+  code;
+  taskStatus;
+  constructor(e, r, n) {
+    super(e, `StopTask: ${r}`, "stop_task_refused");
+    this.code = r;
+    this.taskStatus = n;
+    this.name = "StopTaskError"
+  }
+}
+
+function di(e, r) {
+  let n = r?.().agentNameRegistry?.entries();
+  if (!n) return [];
+  let s = [];
+  for (let [c, h] of n) {
+    let y = e.get(h);
+    if (y?.type === "local_agent" && (y.status === "running" || Q0(y))) s.push(c)
+  }
+  return s
+}
+
+function zt(e, r, n, s, c) {
+  let h = Vti(r.all()),
+    y = di(r, n),
+    k = `No task found with ID: ${q4(e)}`;
+  if (s !== void 0) k += `. Did you mean: ${q4(s)}?`;
+  if (h.length > 0) k += `. Running teammates: ${h.map((w)=>q4(w)).join(", ")}`;
+  if (y.length > 0) k += `. Running named agents: ${y.map((w)=>q4(w)).join(", ")}`;
+  return k + Xo(r, n, c)
+}
+var mi = "No result will follow. The MCP server may already have done some of the work, or may still finish it.";
+async function rTt(e, r) {
+  let {
+    taskRegistry: n,
+    setAppState: s,
+    getAppState: c,
+    callerAgentId: h,
+    killedBy: y = "user",
+    storageV5: k
+  } = r, w = e, S = n.get(w), O;
+  if (!S) {
+    let x = Xe(e, n, c);
+    if (x.status === "ambiguous") {
+      if (!x.anyLiveCandidate) throw new ce(x.message, "not_running", "completed");
+      throw new ce(x.message, "ambiguous")
+    }
+    if (x.status === "found") S = x.task, w = x.task.id;
+    else O = x.suggestion
+  }
+  if (!S) throw new ce(zt(e, n, c, O, h), "not_found");
+  let A = w === e ? w : `${q4(e)} (${w})`;
+  if (nm(S)) {
+    if (h !== void 0 && h === S.agentId) throw new ce(`Observer ${A} cannot stop itself; use the task UI or a main-session TaskStop.`, "not_owner");
+    if (!xMt(h, S.agentId)) throw new ce(`Task ${A} is owned by ${q4(JOn(S.agentId))}; agent ${q4(String(h))} cannot stop it.`, "not_owner");
+    if (r.source !== void 0) Zqt(r.session, w, {
+      agentType: S.agentType
+    }, k);
+    if (S.status !== "running" && !(Ko(S.status) && !VT(w))) return wx(w, n), {
+      taskId: w,
+      taskType: S.type,
+      command: S.description
+    }
+  }
+  let W = S.status !== "running" && S.type === "monitor_ws" && r.source !== void 0,
+    M = Lt(S, w),
+    j = M ? uut(w) : void 0;
+  if (S.status !== "running" && !Q0(S) && !W && !M) throw new ce(`Task ${A} is not running (status: ${S.status})`, "not_running", S.status);
+  if (!nm(S) && !xMt(h, S.agentId)) throw new ce(`Task ${A} is owned by ${q4(JOn(S.agentId))}; agent ${q4(String(h))} cannot stop it.`, "not_owner");
+  let Y = nTt(S.type);
+  if (!Y) throw new ce(`Unsupported task type: ${S.type}`, "unsupported_type");
+  if (r.source !== void 0) Cke(w, n, k);
+  if (M) {
+    let x = Gmr(w);
+    if (x && !x.signal.aborted) x.abort();
+    for (let V of TIt(w)) V.abort(new DOMException("workflow-abort", "AbortError"));
+    let H = new Set(C9e(w));
+    if (S.type === "local_agent") H.add(w);
+    let Z = 0;
+    for (let V of H) {
+      if (uut(w) !== j) break;
+      let ue = cxt(V);
+      slr(ue), Z += (await ue).length
+    }
+    return B1e(w, S.type === "local_agent" ? [w] : [], {
+      expectedLoopToken: j
+    }), {
+      taskId: w,
+      taskType: S.type,
+      command: Ql(S) ? S.command : S.description,
+      note: `had already ended (${S.status}) but its loop had not exited; re-signalled it and killed ${Z} process group(s). The record remains listed while the loop is still live.`
+    }
+  }
+  let G = Q0(S);
+  if (await Y.kill(w, n, s, y, k, r.source), G) {
+    let x = S.agentId ?? w,
+      H = n.all(),
+      Z = [];
+    for (let V of Object.values(H)) {
+      if (V.type !== "local_agent" || V.id === w || V.status !== "running" && !Q0(V)) continue;
+      if (dVr(V, x, H)) {
+        Z.push(V.id);
+        continue
+      }
+      if (bXt(V, x, H, Ygn)) {
+        if (tL(V.id, n), !nm(V)) za(V.id, "stopped", {
+          toolUseId: V.toolUseId,
+          summary: V.description
+        });
+        if (r.source !== void 0) Cke(V.id, n, k);
+        await Y.kill(V.id, n, s, y, k)
+      }
+    }
+    cVr(x, Z, y, n)
+  }
+  if (Ql(S)) {
+    let x = !1;
+    if (n.update(w, (H) => {
+        if (H.notified) return H;
+        return x = !0, {
+          ...H,
+          notified: !0
+        }
+      }), x) za(w, "stopped", {
+      toolUseId: S.toolUseId,
+      summary: S.description
+    })
+  }
+  if (Ql(S) && S.agentId !== void 0 && h !== S.agentId) Qqo({
+    taskId: w,
+    toolUseId: S.toolUseId,
+    description: S.description,
+    ownerAgentId: S.agentId
+  });
+  if (Ql(S) && S.agentId === void 0 && r.source !== void 0 && Pge()) jYr({
+    taskId: w,
+    toolUseId: S.toolUseId,
+    description: S.description,
+    source: r.source,
+    outputFile: S.elsewhere ? Xt(S.outputFile) : S.outputFile
+  });
+  if (S.type === "mcp_task" && r.source !== void 0 && Pge() && n.get(w)?.status === "killed") jYr({
+    taskId: w,
+    toolUseId: S.toolUseId,
+    description: S.description,
+    source: r.source,
+    note: mi
+  });
+  let N = Ql(S) ? S.command : S.description;
+  if (S.type === "mcp_task" && Pge() && n.get(w)?.status === "killed") return {
+    taskId: w,
+    taskType: S.type,
+    command: N,
+    note: `(${zU(S.description)}) is stopped. Cancellations are fire and forget, so there is no confirmation from the MCP server, and it may already have done some of the work. Only check on it if the user asks.`
+  };
+  return {
+    taskId: w,
+    taskType: S.type,
+    command: N
+  }
+}
+async function Ehe(e, r) {
+  try {
+    await rTt(e, r), g("task_stop_user")
+  } catch (n) {
+    if (n instanceof ce) {
+      if (n.code === "not_found") {
+        if (r.source !== void 0 && hm(e) !== null) qOt(Pr(e), "stoppedByUser", () => _W(Pr(e), {
+          stoppedByUser: !0
+        }, r.storageV5, wr), r.storageV5);
+        g("task_stop_user");
+        return
+      }
+      if (n.code === "not_running" && n.taskStatus !== void 0 && Ko(n.taskStatus)) {
+        g("task_stop_user");
+        return
+      }
+      throw m("task_stop_user", n.code), n
+    }
+    throw m("task_stop_user", "unexpected"), n
+  }
+}
+
+function The(e) {
+  let {
+    taskRegistry: r,
+    setAppState: n,
+    shouldStop: s,
+    storageV5: c
+  } = e;
+  Xgn(e);
+  for (let h of Object.values(r.all())) {
+    let y = Q0(h) && M6(h);
+    if (nm(h) || !y && (h.status !== "running" || !u_(h) || !M6(h)) || s !== void 0 && !s(h)) continue;
+    if (Cke(h.id, r, c), h.type === "local_agent") tL(h.id, r), dur(h.id);
+    if (nTt(h.type)?.kill(h.id, r, n, "system", c), h.type === "local_agent") za(h.id, "stopped", {
+      toolUseId: h.toolUseId,
+      summary: h.description
+    })
+  }
+}
+
+function Xgn(e) {
+  for (let r of Object.values(e.taskRegistry.all()))
+    if (nm(r) && r.status === "running") nTt(r.type)?.kill(r.id, e.taskRegistry, e.setAppState, "system")
+}
+
+function Cke(e, r, n) {
+  r.update(e, (c) => Cn(c) ? {
+    ...c,
+    stoppedByUser: !0,
+    userStopCount: (c.userStopCount ?? 0) + 1
+  } : c.stoppedByUser ? c : {
+    ...c,
+    stoppedByUser: !0
+  });
+  let s = r.get(e);
+  if (s?.type === "local_agent") {
+    let c = "agentType" in s && typeof s.agentType === "string" ? s.agentType : "general-purpose";
+    pi(e, c, n)
+  }
+}
+
+function Lt(e, r) {
+  return Ko(e.status) && (e.type === "local_agent" || e.type === "local_workflow") && !VT(r)
+}
+async function pi(e, r, n) {
+  await qOt(Pr(e), "stoppedByUser", async () => {
+    let s = await PS(Pr(e), n, wr);
+    if (s?.stoppedByUser) return;
+    await fye(Pr(e), {
+      ...s ?? {
+        agentType: r
+      },
+      stoppedByUser: !0
+    }, n)
+  }, n)
+}
+var Jo = p(() => He({
+    task_id: o().optional().describe("The ID of the background task to stop. Agent-team teammates and named background agents are also accepted by agent ID or name."),
+    shell_id: o().optional().describe("Deprecated: use task_id instead")
+  })),
+  fi = p(() => Jo().extend(AX())),
+  hi = p(() => u({
+    message: o().describe("Status message about the operation"),
+    task_id: o().describe("The ID of the task that was stopped"),
+    task_type: o().describe("The type of the task that was stopped"),
+    command: o().optional().describe("The command or description of the stopped task")
+  })),
+  Qe = dn({
+    name: ya,
+    searchHint: "kill a running background task",
+    aliases: [...bbr],
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    userFacingName: () => "Stop Task",
+    get remoteExecution() {
+      return {
+        supported: M9()
+      }
+    },
+    get inputSchema() {
+      return M9() ? fi() : Jo()
+    },
+    get outputSchema() {
+      return hi()
+    },
+    shouldDefer: !0,
+    isConcurrencySafe() {
+      return !0
+    },
+    toAutoClassifierInput(e) {
+      return e.task_id ?? e.shell_id ?? ""
+    },
+    async description() {
+      return "Stop a running background task by ID"
+    },
+    async prompt() {
+      return A0i
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: _(e)
+      }
+    },
+    renderToolUseMessage() {
+      return ""
+    },
+    create(e) {
+      return {
+        async validateInput(r, n) {
+          let {
+            taskRegistry: s,
+            namedAgents: c
+          } = e;
+          if (zf(r)) return {
+            result: !1,
+            message: t4(),
+            errorCode: 3
+          };
+          let h = r.task_id ?? r.shell_id;
+          if (!h) return {
+            result: !1,
+            message: "Missing required parameter: task_id",
+            errorCode: 1
+          };
+          let y = n.remoteCall;
+          if (y !== void 0) return y.ownBackgroundShells?.holds(h) === !0 ? {
+            result: !0
+          } : {
+            result: !1,
+            message: Qo(h, y),
+            errorCode: 1
+          };
+          let k = s.get(h),
+            w;
+          if (!k) {
+            let S = Xe(h, s, c);
+            if (S.status === "ambiguous") return {
+              result: !1,
+              message: S.message,
+              errorCode: 1
+            };
+            if (S.status === "found") k = S.task;
+            else w = S.suggestion
+          }
+          if (!k) {
+            let S = gce(e),
+              O = M9() ? e.toolState.get(rft).find(h, S) : void 0;
+            return {
+              result: !1,
+              message: O !== void 0 ? `Task ${h} needs ${cr}: "${O.hostName}".` : zt(h, s, c, w, S),
+              errorCode: 1
+            }
+          }
+          if (k.status !== "running" && !Q0(k) && !nm(k) && !Lt(k, k.id)) return {
+            result: !1,
+            message: `Task ${h} is not running (status: ${k.status})`,
+            errorCode: 3
+          };
+          return {
+            result: !0
+          }
+        },
+        async call({
+          task_id: r,
+          shell_id: n
+        }, s) {
+          let {
+            taskRegistry: c,
+            setTaskKillState: h,
+            namedAgents: y
+          } = e, k = r ?? n;
+          if (!k) throw Error("Missing required parameter: task_id");
+          let w = s.remoteCall;
+          if (w !== void 0) return {
+            data: {
+              message: w.ownBackgroundShells?.stop(k) === !0 ? `Successfully stopped background command ${k} on ${w.origin.hostName}` : Qo(k, w),
+              task_id: k,
+              task_type: "local_bash"
+            }
+          };
+          let S = await rTt(k, {
+            taskRegistry: c,
+            setAppState: h,
+            session: e.session,
+            getAppState: y,
+            callerAgentId: gce(e),
+            killedBy: "parent",
+            storageV5: e.storageV5
+          });
+          return {
+            data: {
+              message: S.note ? `Task ${S.taskId} ${S.note}` : `Successfully stopped task: ${S.taskId} (${S.command})`,
+              task_id: S.taskId,
+              task_type: S.taskType,
+              command: S.command
+            }
+          }
+        }
+      }
+    }
+  });
+
+function Qo(e, r) {
+  return `No background command with ID ${e} is running on ${r.origin.hostName} for this session: it has already finished or been stopped, or it was never this session's.`
+}
+var gi = p(() => He({
+    file_uuid: o(),
+    file_name: o(),
+    size: E(),
+    is_image: I(),
+    media_type: o().optional()
+  }).describe("A file already uploaded to the filestore (e.g. by the device attach_file tool). Passed through without local stat or upload.")),
+  tr = "The message for the user. Supports markdown formatting.",
+  yi = p(() => He({
+    message: o().describe(tr),
+    attachments: C(Be([o(), gi()])).optional().describe("Optional attachments for the user to see alongside your message. Each entry is either a file path (absolute or relative to cwd) for a file you can read locally, or a pre-resolved {file_uuid, file_name, size, is_image} object you obtained from a device tool such as attach_file."),
+    status: B(["normal", "proactive"]).describe("Use 'proactive' when you're surfacing something the user hasn't asked for and needs to see now \u2014 task completion while they're away, a blocker you hit, an unsolicited status update. Use 'normal' when replying to something the user just said.")
+  })),
+  ki = p(() => u({
+    message: o().describe(tr)
+  }));
+
+function er(e) {
+  return LW() && "attachments" in e ? e.attachments : void 0
+}
+var bi = p(() => u({
+    message: o().describe("The message"),
+    attachments: C(u({
+      path: o(),
+      size: E(),
+      isImage: I(),
+      file_uuid: o().optional(),
+      media_type: o().optional(),
+      pathValidated: I().optional(),
+      upload_error: o().optional(),
+      upload_error_code: o().optional(),
+      upload_suspected_limit_bytes: E().optional(),
+      scaled: u({
+        width: E(),
+        height: E(),
+        original_width: E(),
+        original_height: E()
+      }).optional()
+    })).optional().describe("Resolved attachment metadata"),
+    sentAt: o().optional().describe("ISO timestamp captured at tool execution on the emitting process. Optional \u2014 resumed sessions replay pre-sentAt outputs verbatim."),
+    rendered_locally: I().optional()
+  })),
+  or = dn({
+    name: Af,
+    aliases: [yqe],
+    searchHint: "send a message to the user \u2014 your primary visible output channel",
+    briefStandalone: !0,
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    userFacingName() {
+      return ""
+    },
+    get inputSchema() {
+      return LW() ? yi() : ki()
+    },
+    get outputSchema() {
+      return bi()
+    },
+    isEnabled() {
+      return LW() || xXe()
+    },
+    isConcurrencySafe() {
+      return !0
+    },
+    isReadOnly() {
+      return !0
+    },
+    toAutoClassifierInput(e) {
+      return e.message
+    },
+    async description() {
+      return BUs
+    },
+    async prompt() {
+      return LW() ? jUs : WUs
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      let n = (e.attachments ?? []).map((w) => ({
+          ...w,
+          path: xc(w.path),
+          ...w.upload_error !== void 0 && {
+            upload_error: tf(w.upload_error)
+          }
+        })),
+        s = n.filter((w) => w.upload_error !== void 0),
+        c = n.length - s.length,
+        h = Inr(n),
+        y = (c === 0 ? "" : ` (${c} ${P(c,"attachment")} included)`) + (h === void 0 ? "" : `
+${h}`);
+      if (s.length === 0) return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: `Message delivered to user.${y}`
+      };
+      let k = s.map((w) => `  ${w.path}: ${Evr(w)}`).join(`
+`);
+      if (e.rendered_locally) return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: `Message delivered to user.${y}
+${s.length} ${P(s.length,"attachment")} NOT delivered to Remote Control (phone/web) viewers \u2014 only visible in the desktop app on this machine:
+` + k + `
+Tell the user the ${P(s.length,"attachment is","attachments are")} only visible in the desktop app, and why.${ren(s)}`
+      };
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        is_error: !0,
+        content: `Message delivered to user.${y}
+${s.length} ${P(s.length,"attachment")} could NOT be delivered:
+` + k + `
+Tell the user the ${P(s.length,"attachment was","attachments were")} not delivered and why.${ren(s)}`
+      }
+    },
+    renderToolUseMessage() {
+      return ""
+    },
+    create(e) {
+      return {
+        async validateInput(r) {
+          let n = er(r);
+          if (!n?.length) return {
+            result: !0
+          };
+          return Pnr(n, e.permissions())
+        },
+        async call(r, n) {
+          let {
+            message: s
+          } = r, c = er(r), h = new Date().toISOString(), y = Anr({
+            replBridgeEnabled: e.replBridgeEnabled()
+          });
+          if (l("tengu_brief_send", {
+              proactive: "status" in r && r.status === "proactive",
+              attachment_count: c?.length ?? 0,
+              ignored_attachments: c === void 0 && "attachments" in r,
+              upload_lane: f(y)
+            }), !c?.length) return {
+            data: {
+              message: s,
+              sentAt: h
+            }
+          };
+          let {
+            verdict: k,
+            judged: w
+          } = await yci(c, e.permissions());
+          if (!k.result) throw new R(k.message, "attachment refused at the call");
+          let S = await Onr(c, {
+            lane: y,
+            signal: n.signal,
+            credentials: e.credentials,
+            judged: w
+          });
+          return {
+            data: {
+              message: s,
+              attachments: S,
+              sentAt: h,
+              ...xnr(y) && {
+                rendered_locally: !0
+              }
+            }
+          }
+        }
+      }
+    }
+  });
+class Ze extends Error {
+  constructor(e) {
+    super(e);
+    this.name = "ScheduleWakeupInputError"
+  }
+}
+var Si = p(() => He({
+    delaySeconds: j$(E()).optional().describe("Seconds from now to wake up. Clamped to [60, 3600] by the runtime. Required unless `stop` is true."),
+    reason: o().optional().describe("One short sentence explaining the chosen delay. Goes to telemetry and is shown to the user. Be specific. Required unless `stop` is true."),
+    prompt: o().optional().describe(`The /loop input to fire on wake-up. Pass the same /loop input verbatim each turn so the next firing re-enters the skill and continues the loop. For autonomous /loop (no user prompt), pass the literal sentinel \`${LVe}\` instead (the dynamic-pacing variant, not the CronCreate-mode \`${e_t}\`). Required unless \`stop\` is true.`),
+    stop: I().optional().describe("Set to true to end the dynamic loop immediately instead of scheduling another wakeup. When true, all other fields are ignored and no further wakeups fire."),
+    noop: I().optional().describe("true = nothing changed (you checked and there is nothing to report). false = something happened worth keeping (edited a file, posted a message, advanced state, surfaced a finding). Consecutive noop:true ticks are collapsed in the user's terminal view and tracked as a streak. Required unless `stop` is true.")
+  })),
+  wi = p(() => u({
+    scheduledFor: E().describe("Epoch ms timestamp when the next wakeup will fire"),
+    clampedDelaySeconds: E().describe("Actual delay used after clamping to runtime bounds"),
+    wasClamped: I().describe("True if the requested delaySeconds was outside [60, 3600]"),
+    stopped: I().optional().describe("True when the model ended the loop via `stop: true`"),
+    cancelledWakeups: E().optional().describe("How many pending dynamic-loop wakeups stop:true cancelled. 0 means nothing was pending \u2014 a recurring /loop cron is not cancelled by stop:true.")
+  })),
+  rr = dn({
+    name: Hl,
+    searchHint: `self-pace the dynamic /loop: pick a delay before the next tick, or stop/end/cancel the dynamic loop with stop:true (a fixed-interval /loop is a recurring cron \u2014 cancel it with ${Bv})`,
+    backgrounding: "never",
+    maxResultSizeChars: 1000,
+    async description() {
+      return h9i
+    },
+    async prompt() {
+      let e = m2("repl_main_thread", {
+          ignoreOverage: !0
+        }),
+        r = m2("sdk", {
+          ignoreOverage: !0
+        });
+      return m9i(e === r ? e : void 0)
+    },
+    get inputSchema() {
+      return Si()
+    },
+    get outputSchema() {
+      return wi()
+    },
+    userFacingName() {
+      return ""
+    },
+    shouldDefer: !1,
+    toAutoClassifierInput(e) {
+      if (e.stop === !0) return "stop the /loop \u2014 cancel pending wakeups, schedule nothing";
+      if (e.delaySeconds == null || e.prompt == null) return `malformed ${Hl} call missing delaySeconds/prompt \u2014 the tool will reject it`;
+      return `wake in ${e.delaySeconds}s: ${e.prompt}`
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create(e) {
+      let {
+        permissions: r
+      } = e;
+      return {
+        async checkPermissions(n) {
+          if (r().mode === "auto") return {
+            behavior: "passthrough",
+            message: "Scheduling a /loop wakeup requires classifier review."
+          };
+          return {
+            behavior: "allow",
+            updatedInput: n
+          }
+        },
+        async call(n, {
+          toolUseId: s
+        }) {
+          let {
+            delaySeconds: c,
+            reason: h,
+            prompt: y,
+            stop: k
+          } = n, w = k !== !0 && SZ(e) ? Nyr : void 0;
+          if (w !== void 0) throw t(`ScheduleWakeup refused: ${w}`), new Ze(w);
+          if (k === !0) return {
+            data: {
+              scheduledFor: 0,
+              clampedDelaySeconds: 0,
+              wasClamped: !1,
+              stopped: !0,
+              cancelledWakeups: Jni()
+            }
+          };
+          if (c === void 0 || h === void 0) throw new Ze("`delaySeconds` and `reason` are required when `stop` is not true.");
+          if (y === void 0) throw new Ze("`prompt` is required when `stop` is not true.");
+          let S = Yni(c, y, h, s, e);
+          if (S === null) return {
+            data: {
+              scheduledFor: 0,
+              clampedDelaySeconds: 0,
+              wasClamped: !1
+            }
+          };
+          return {
+            data: {
+              scheduledFor: S.scheduledFor,
+              clampedDelaySeconds: S.clampedDelaySeconds,
+              wasClamped: S.wasClamped
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam({
+      scheduledFor: e,
+      clampedDelaySeconds: r,
+      wasClamped: n,
+      stopped: s,
+      cancelledWakeups: c
+    }, h) {
+      let y = LW(),
+        k = `Then ${hMr({briefMode:y})} \u2014 and end the turn.`;
+      if (s === !0) {
+        let j = `If you armed a ${Fs} for this loop, ${ya} it now. ${k}`;
+        if (c === 0) return {
+          tool_use_id: h,
+          type: "tool_result",
+          content: `Loop stopped \u2014 any dynamic loop in this session is ended; there was no pending wakeup to cancel. If you are running a fixed-interval /loop (a recurring cron), it is NOT stopped by this call \u2014 cancel it with ${Bv}. ${j}`
+        };
+        let Y = c === void 0 ? "no further wakeups scheduled" : `cancelled ${c} pending wakeup(s); no further dynamic-loop wakeups scheduled`;
+        return {
+          tool_use_id: h,
+          type: "tool_result",
+          content: `Loop stopped \u2014 ${Y}. ${j}`
+        }
+      }
+      if (e === 0) return {
+        tool_use_id: h,
+        type: "tool_result",
+        content: `Wakeup not scheduled. The loop reached its maximum duration \u2014 the loop has ended; do not re-issue. ${k}`
+      };
+      let w = new Date(e).toTimeString().slice(0, 8),
+        S = Math.max(0, Math.round((e - Date.now()) / 1000)),
+        O = n ? ` (clamped to ${r}s from your requested value)` : "",
+        A = y ? `send it now via ${Af} (\`status: 'proactive'\`) \u2014 plain response text is treated as unread in this session` : "write it now as ordinary response text",
+        W = at(),
+        M = fz(rt(W), W) ? `When this call is your only tool call, the turn ends when it returns \u2014 there is no post-arm slot for a status update, so ${y?`send the per-tick update via ${Af} (\`status: 'proactive'\`)`:"write the per-tick update as ordinary response text"} immediately BEFORE calling ${Hl}. If you are reading this mid-turn, end the turn now \u2014 the harness re-invokes you when the wakeup fires or a task-notification arrives.` : `If you owe the user a status update this tick, ${A}; then end the turn \u2014 the harness re-invokes you when the wakeup fires or a task-notification arrives.`;
+      return {
+        tool_use_id: h,
+        type: "tool_result",
+        content: `Next wakeup scheduled for ${w} (in ${S}s)${O}. ${M}`
+      }
+    }
+  });
+var _i = p(() => Ft({
+    results: vr(Ft({
+      title: ge().optional().default(""),
+      url: ge().optional().default(""),
+      snippet: ge().optional().default("")
+    })).optional().default([]),
+    error: Ft({
+      error_type: ge(),
+      error_message: ge()
+    }).nullable().optional()
+  })),
+  Ci = 1e4,
+  Ri = mT,
+  Ei = 500,
+  Ii = 2048;
+
+function nr(e) {
+  if (Te() !== "firstParty") return !1;
+  if (!i.CLAUDE_CODE_WEBSEARCH_USE_CCR_PROXY) return !1;
+  return !!UXe(e)
+}
+async function sr(e, r, n, s, c) {
+  let h = await fns({
+    session: e,
+    route: "web-search",
+    toolName: "WebSearch",
+    logLabel: "websearch-proxy",
+    targetErrorLabel: "search error",
+    body: {
+      query: r,
+      ...s?.allowed_domains?.length && {
+        allowed_domains: s.allowed_domains
+      },
+      ...s?.blocked_domains?.length && {
+        blocked_domains: s.blocked_domains
+      },
+      ...c && {
+        search_profile: c
+      }
+    },
+    schema: _i(),
+    signal: n
+  });
+  if (!h.ok) return h;
+  let y = h.data.results.filter((k) => k.url);
+  return {
+    ok: !0,
+    results: i.CLAUDE_CODE_WEBSEARCH_CITATIONS ? Oi(y) : y.map((k) => ({
+      title: k.title,
+      url: k.url
+    }))
+  }
+}
+
+function Oi(e) {
+  let r = Ri;
+  return e.flatMap((n) => {
+    if (Mt(n.url, Ii) !== n.url) return [];
+    let s = Mt(n.snippet, Math.min(Ci, r));
+    return r -= s.length, [{
+      title: Mt(n.title, Ei),
+      url: n.url,
+      ...s && {
+        snippet: s
+      }
+    }]
+  })
+}
+
+function Mt(e, r) {
+  return VSr(LU("system-reminder", Q(e.trimStart(), r)), Cae).trim()
+}
+var Ai = null;
+
+function et() {
+  return Kho() ? Ai : null
+}
+var ar = p(() => He({
+    query: o().min(2).describe("The search query to use"),
+    allowed_domains: C(o()).optional().describe("Only include search results from these domains"),
+    blocked_domains: C(o()).optional().describe("Never include search results from these domains")
+  })),
+  xi = p(() => ar().extend({
+    mode: B(["standard", "extended"]).describe(SNt()?.mode_description ?? "").prefault("extended")
+  })),
+  Pi = p(() => {
+    let e = u({
+      title: o().describe("The title of the search result"),
+      url: o().describe("The URL of the search result"),
+      snippet: o().optional().describe("Page text. PostToolUse hooks get it; tool_use_result does not.")
+    });
+    return u({
+      tool_use_id: o().describe("ID of the tool use"),
+      content: C(e).describe("Array of search hits")
+    })
+  });
+
+function Nt({
+  snippet: e,
+  ...r
+}) {
+  return r
+}
+var Di = p(() => u({
+  query: o().describe("The search query that was executed"),
+  results: C(Be([Pi(), o()])).describe("Search results and/or text commentary from the model"),
+  durationSeconds: E().describe("Time taken to complete the search operation"),
+  searchCount: E().optional().describe("Number of web searches performed")
+}));
+
+function zi(e, r, n) {
+  let s = [],
+    c = "",
+    h = 0,
+    y = 0;
+  for (let k of e) {
+    if (k.type === "server_tool_use") {
+      if (h++, c.trim().length > 0) s.push(c.trim());
+      c = "";
+      continue
+    }
+    if (k.type === "web_search_tool_result") {
+      if (y++, !Array.isArray(k.content)) {
+        let S = `Web search error: ${k.content.error_code}`;
+        t(S, {
+          level: "error"
+        }), s.push(S);
+        continue
+      }
+      let w = k.content.map((S) => ({
+        title: S.title,
+        url: S.url
+      }));
+      s.push({
+        tool_use_id: k.tool_use_id,
+        content: w
+      })
+    }
+    if (k.type === "text") c += k.text
+  }
+  if (c.trim().length > 0) s.push(c.trim());
+  return {
+    query: r,
+    results: s,
+    durationSeconds: n,
+    searchCount: Math.max(h, y)
+  }
+}
+
+function ir(e) {
+  if (!e?.query) return null;
+  return Os(e.query, Wv)
+}
+var lr = dn({
+  name: uf,
+  searchHint: "search the web for current information",
+  backgrounding: "detach",
+  maxResultSizeChars: 1e5,
+  shouldDefer: !0,
+  async description(e) {
+    return `Claude wants to search the web for: ${e.query}`
+  },
+  userFacingName() {
+    return "Web Search"
+  },
+  getToolUseSummary: ir,
+  getActivityDescription(e) {
+    let r = ir(e);
+    return r ? `Searching for ${r}` : "Searching the web"
+  },
+  isEnabled() {
+    if (!gn(eWi)) return !1;
+    let e = Te();
+    if (e === "firstParty" || cM(e)) return !0;
+    if (e === "gateway") return !1;
+    if (e === "vertex") return xko(rt(at()));
+    if (e === "foundry") return !0;
+    return !1
+  },
+  get inputSchema() {
+    return SNt() ? xi() : ar()
+  },
+  get outputSchema() {
+    return Di()
+  },
+  isConcurrencySafe() {
+    return !0
+  },
+  isReadOnly() {
+    return !0
+  },
+  coerceInput(e) {
+    if (SNt() || !D(e) || !("mode" in e)) return null;
+    let {
+      mode: r,
+      ...n
+    } = e;
+    return {
+      input: n,
+      shapeClass: "mode_while_off"
+    }
+  },
+  toAutoClassifierInput(e) {
+    return et()?.queryAsSent(e.query, e) ?? e.query
+  },
+  async prompt({
+    model: e,
+    leanPrompt: r
+  }) {
+    let n = rWi(e, r),
+      s = et()?.SEARCH_SERVICE_PROMPT ?? SNt()?.web_search_addendum;
+    return s ? `${n.trimEnd()}
+
+${s}
+` : n
+  },
+  renderToolUseMessage({
+    query: e,
+    allowed_domains: r,
+    blocked_domains: n
+  }, {
+    verbose: s
+  }) {
+    if (!e) return null;
+    let c = "";
+    if (e) c += `"${e}"`;
+    if (s) {
+      if (r && r.length > 0) c += `, only allowing domains: ${r.join(", ")}`;
+      if (n && n.length > 0) c += `, blocking domains: ${n.join(", ")}`
+    }
+    return c
+  },
+  extractSearchText() {
+    return ""
+  },
+  create(e) {
+    return {
+      async checkPermissions(r) {
+        return {
+          behavior: "passthrough",
+          message: "WebSearchTool requires permission.",
+          suggestions: [{
+            type: "addRules",
+            rules: [{
+              toolName: uf
+            }],
+            behavior: "allow",
+            destination: "localSettings"
+          }]
+        }
+      },
+      async validateInput(r) {
+        let {
+          query: n,
+          allowed_domains: s,
+          blocked_domains: c
+        } = r;
+        if (!n.length) return {
+          result: !1,
+          message: "Error: Missing query",
+          errorCode: 1
+        };
+        if (s?.length && c?.length) return {
+          result: !1,
+          message: "Error: Cannot specify both allowed_domains and blocked_domains in the same request",
+          errorCode: 2
+        };
+        let h = et()?.searchServiceInputRefusal(n, r);
+        if (h) return {
+          result: !1,
+          message: h,
+          errorCode: 3
+        };
+        return {
+          result: !0
+        }
+      },
+      async call(r, {
+        signal: n,
+        onProgress: s,
+        timing: c
+      }) {
+        let h = e,
+          y = performance.now(),
+          {
+            query: k
+          } = r,
+          w = fvs(r) ? "fast" : void 0,
+          S = h.taskRegistry.getWebSearchBudget();
+        if (!S.tryConsume()) {
+          let ne = mio(),
+            te = S.refillsPerHour(),
+            se = S.msUntilNextCall();
+          m("tool_web_search", "web_search_session_cap", {
+            max_web_searches_per_session: ne,
+            web_search_refills_per_hour: te,
+            ...Number.isFinite(se) && {
+              ms_until_next_web_search: se
+            }
+          });
+          let ae = ye() ? "turn" : "session",
+            ve = `${ne} ${uf} ${P(ne,"call")}`,
+            Re = te > 0,
+            ps = ae === "turn" ? `limit: ${ve} per turn, shared by every agent in it` : `limit: ${ve}, shared by every agent in this session; it does not refill`,
+            fs = Re ? `limit: ${ve} shared by every agent in this ${ae}; the budget refills at about ${te} ${P(te,"call")} per hour, so searching becomes possible again later in the ${ae}` : ps,
+            hs = Re ? "Do not pause or wait for the refill: continue with the information already gathered and say so in your answer" : "Continue with the information already gathered instead of searching again, and say so in your answer",
+            so = [...ae === "turn" ? ["tell the user they can send a follow-up message after this reply to continue the search"] : [], ...cHr() ? [ae === "turn" ? "ask them to raise CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION" : "ask the user to raise CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION"] : []],
+            gs = so.length > 0 ? ` If more searches are genuinely needed, ${so.join(", or ")}.` : "";
+          return {
+            data: {
+              query: k,
+              results: [`Web search was not performed: this ${ae}'s web search budget is used up (${fs}). ${hs}; do not work around the limit by querying search engines with curl or wget from ${Me}, by querying them in a browser or through a computer-use tool, or by searching or fetching through a third-party reader, proxy or archive service.${gs}`],
+              durationSeconds: 0,
+              searchCount: 0
+            }
+          }
+        }
+        let O = et();
+        if (O) {
+          let ne = c?.mark("external"),
+            te = await O.searchViaSearchService(k, r, n, () => S.acquireDirectSearchSlot()).finally(ne);
+          if (!te.ok) throw new R(te.message, "web-search-service");
+          return s?.({
+            type: "progress",
+            toolUseID: "search-service-1",
+            data: {
+              type: "search_results_received",
+              resultCount: te.results.length,
+              query: k
+            }
+          }), {
+            data: {
+              query: k,
+              results: [{
+                tool_use_id: "search-service-1",
+                content: h.agentId !== void 0 && i.CLAUDE_CODE_WEBSEARCH_CITATIONS ? te.results.map(Nt) : te.results
+              }, ...te.leftOut > 0 ? [`${te.leftOut} ${P(te.leftOut,"result")} left out by allowed_domains or blocked_domains.`] : []],
+              durationSeconds: (performance.now() - y) / 1000,
+              searchCount: 1
+            }
+          }
+        }
+        if (nr(h.session)) {
+          let ne = c?.mark("external"),
+            te = await sr(h.session, k, n, {
+              allowed_domains: r.allowed_domains,
+              blocked_domains: r.blocked_domains
+            }, w).finally(ne),
+            se = (performance.now() - y) / 1000;
+          if (!te.ok) throw new R(_({
+            error_type: te.errorType,
+            source: te.source,
+            message: te.errorMessage
+          }), "web-search-ccr-proxy");
+          if (s) s({
+            type: "progress",
+            toolUseID: "ccr-proxy-search-1",
+            data: {
+              type: "search_results_received",
+              resultCount: te.results.length,
+              query: k
+            }
+          });
+          return {
+            data: {
+              query: k,
+              results: [{
+                tool_use_id: "ccr-proxy-search-1",
+                content: h.agentId === void 0 ? te.results : te.results.map(Nt)
+              }],
+              durationSeconds: se,
+              searchCount: 1
+            }
+          }
+        }
+        let A = Ie({
+            content: "Perform a web search for the query: " + k
+          }),
+          W = {
+            type: "web_search_20250305",
+            name: "web_search",
+            allowed_domains: r.allowed_domains,
+            blocked_domains: r.blocked_domains,
+            max_uses: 8,
+            ...w && {
+              search_profile: w
+            }
+          },
+          j = v("tengu_plum_vx3", !1) ? Kk() : h.mainLoopModel();
+        if (Te() === "foundry" && !dmt(j, "web_search")) throw Error("Web search is not available on this Foundry deployment.");
+        let Y = c?.mark("model"),
+          G = x8t({
+            messages: [A],
+            systemPrompt: Xa(["You run a web search for another Claude model, which is waiting on the result and can search again. Search once, then reply with a brief summary of the results."]),
+            thinkingConfig: {
+              type: "disabled",
+              mechanical: !0
+            },
+            tools: [],
+            signal: n,
+            options: {
+              getToolPermissionContext: async () => h.permissions(),
+              model: j,
+              toolChoice: {
+                type: "tool",
+                name: "web_search"
+              },
+              isNonInteractiveSession: h.isNonInteractiveSession,
+              hasAppendSystemPrompt: !!h.appendSystemPrompt,
+              extraToolSchemas: [W],
+              querySource: "web_search_tool",
+              enablePromptCaching: !1,
+              agents: h.agentDefinitions.activeAgents,
+              mcpTools: [],
+              agentId: h.agentId,
+              agentContext: h.agentContext,
+              credentials: h.credentials,
+              storageV5: h.storageV5,
+              stickyBetas: XO(ns()),
+              proactivityLevel: h.proactivityLevel(),
+              ...h.helperEffortFor(j)
+            }
+          }),
+          N = [],
+          x = null,
+          H = "",
+          Z = 0,
+          V = new Map,
+          ue = null;
+        for await (let ne of G) {
+          if (ne.type === "assistant") {
+            if (ne.isApiErrorMessage) {
+              ue = ne.truncatedAfterOutput ? "The search was cut off before any results arrived. Try again." : vs(ne.message.content);
+              continue
+            }
+            N.push(...ne.message.content);
+            continue
+          }
+          if (ne.type !== "stream_event") continue;
+          if (ne.event?.type === "content_block_start") {
+            let se = ne.event.content_block;
+            if (se?.type === "server_tool_use") {
+              x = se.id, H = "";
+              continue
+            }
+            if (se?.type === "web_search_tool_result") {
+              let ae = se.tool_use_id,
+                ve = V.get(ae) || k,
+                Re = se.content;
+              if (Z++, s) s({
+                type: "progress",
+                toolUseID: ae || `search-progress-${Z}`,
+                data: {
+                  type: "search_results_received",
+                  resultCount: Array.isArray(Re) ? Re.length : 0,
+                  query: ve
+                }
+              })
+            }
+            continue
+          }
+          if (ne.event?.type !== "content_block_delta" || !x) continue;
+          let te = ne.event.delta;
+          if (te?.type !== "input_json_delta" || !te.partial_json) continue;
+          H += te.partial_json;
+          try {
+            let se = H.match(/"query"\s*:\s*"((?:[^"\\]|\\.)*)"/);
+            if (!se?.[1]) continue;
+            let ae = ee('"' + se[1] + '"');
+            if (V.has(x) && V.get(x) === ae) continue;
+            if (V.set(x, ae), Z++, s) s({
+              type: "progress",
+              toolUseID: `search-progress-${Z}`,
+              data: {
+                type: "query_update",
+                query: ae
+              }
+            })
+          } catch {}
+        }
+        if (Y?.(), Te() === "foundry" && !dmt(j, "web_search")) throw Error("Web search is not available on this Foundry deployment.");
+        let Se = (performance.now() - y) / 1000,
+          we = zi(N, k, Se);
+        if (ue !== null && we.results.length === 0) throw new R(ue, "web-search-side-query-api-error");
+        return {
+          data: we
+        }
+      }
+    }
+  },
+  stripForCreation: (e) => ({
+    ...e,
+    results: e.results?.map((r) => r == null || typeof r === "string" ? r : {
+      ...r,
+      content: r.content?.map(Nt)
+    })
+  }),
+  mapToolResultToToolResultBlockParam(e, r) {
+    let {
+      query: n,
+      results: s
+    } = e, c = (s ?? []).flatMap((y) => y == null || typeof y === "string" ? [] : y.content ?? []);
+    if (i.CLAUDE_CODE_WEBSEARCH_CITATIONS && c.some((y) => y.snippet)) return {
+      tool_use_id: r,
+      type: "tool_result",
+      content: c.map((y) => ({
+        type: "search_result",
+        source: y.url,
+        title: y.title || y.url,
+        content: [{
+          type: "text",
+          text: y.snippet || y.title || y.url
+        }],
+        citations: {
+          enabled: !0
+        }
+      }))
+    };
+    let h = `Web search results for query: "${n}"
+
+`;
+    return (s ?? []).forEach((y) => {
+      if (y == null) return;
+      if (typeof y === "string") h += y + `
+
+`;
+      else if (y.content?.length > 0) h += `Links: ${_(y.content)}
+
+`;
+      else h += `No links found.
+
+`
+    }), h += `
+REMINDER: You MUST include the sources above in your response to the user using markdown hyperlinks.`, {
+      tool_use_id: r,
+      type: "tool_result",
+      content: h.trim()
+    }
+  }
+});
+var $t = p(() => u({
+    file: o().describe("Repo-relative path of the file the finding is in"),
+    line: E().int().optional().describe("1-indexed line the finding anchors to"),
+    summary: o().describe("One-sentence statement of the defect"),
+    short_summary: o().max(60).optional().describe("Compressed label for compact UI (\u226460 chars): the claim alone, no rationale or consequence clause"),
+    failure_scenario: o().describe("Concrete inputs/state \u2192 wrong output/crash"),
+    category: o().max(40).optional().describe('Short kebab-case slug of the finding type, e.g. "correctness", "simplification", "efficiency", "test-coverage"'),
+    verdict: B(["CONFIRMED", "PLAUSIBLE"]).optional().describe("Set when a verify pass ran; absent on inline-only reviews"),
+    outcome: B(["fixed", "skipped", "no_change_needed"]).optional().describe("Set ONLY when re-reporting after applying fixes: what happened to this finding")
+  })),
+  ur = p(() => He({
+    level: B(["low", "medium", "high", "xhigh", "max"]).optional().describe("Effort level the review ran at"),
+    findings: C($t()).max(32).describe("Verified findings, most-severe first; empty if none survived")
+  }));
+var Li = p(() => u({
+    count: E().describe("Number of findings reported"),
+    level: B(["low", "medium", "high", "xhigh", "max"]).optional().describe("Effort level the review ran at"),
+    findings: C($t()).describe("Echoed for the result body")
+  })),
+  dr = dn({
+    name: aD,
+    searchHint: "report code-review findings as a structured list",
+    backgrounding: "never",
+    maxResultSizeChars: 256,
+    strict: !0,
+    async description() {
+      return lms
+    },
+    async prompt() {
+      return lms
+    },
+    get inputSchema() {
+      return ur()
+    },
+    get outputSchema() {
+      return Li()
+    },
+    isReadOnly() {
+      return !0
+    },
+    isConcurrencySafe() {
+      return !0
+    },
+    toAutoClassifierInput(e) {
+      return `${e.findings.length} findings`
+    },
+    userFacingName() {
+      return "Code review"
+    },
+    renderToolUseMessage(e) {
+      let r = e.findings?.length ?? 0;
+      return `${e.level??"review"} \xB7 ${r} ${P(r,"finding")}`
+    },
+    create() {
+      return {
+        async call({
+          findings: e,
+          level: r
+        }) {
+          return {
+            data: {
+              count: e.length,
+              level: r,
+              findings: e
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam({
+      count: e
+    }, r) {
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: e === 0 ? "No findings reported." : `${e} ${P(e,"finding")} reported.`
+      }
+    }
+  });
+var Fi = 'Create and update a task list for the current session. The list is rendered to the user as your working plan.\n\n- Each todo has `content`, `status` ("pending" | "in_progress" | "completed"), and `activeForm` (present-tense label shown while in progress).\n- Send the full list each call; it replaces the previous one.\n- Keep one item `in_progress` at a time and mark it `completed` when done.';
+
+function mr(e, r) {
+  return bD({
+    model: e,
+    leanPrompt: r
+  }) ? Fi : Bi
+}
+var Bi = `Use this tool to create and manage a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.
+It also helps the user understand the progress of the task and overall progress of their requests.
+
+## When to Use This Tool
+Use this tool proactively in these scenarios:
+
+1. Complex multi-step tasks - When a task requires 3 or more distinct steps or actions
+2. Non-trivial and complex tasks - Tasks that require careful planning or multiple operations
+3. User explicitly requests todo list - When the user directly asks you to use the todo list
+4. User provides multiple tasks - When users provide a list of things to be done (numbered or comma-separated)
+5. After receiving new instructions - Immediately capture user requirements as todos
+6. When you start working on a task - Mark it as in_progress BEFORE beginning work. Ideally you should only have one todo as in_progress at a time
+7. After completing a task - Mark it as completed and add any new follow-up tasks discovered during implementation
+
+## When NOT to Use This Tool
+
+Skip using this tool when:
+1. There is only a single, straightforward task
+2. The task is trivial and tracking it provides no organizational benefit
+3. The task can be completed in less than 3 trivial steps
+4. The task is purely conversational or informational
+
+NOTE that you should not use this tool if there is only one trivial task to do. In this case you are better off just doing the task directly.
+
+## Examples of When to Use the Todo List
+
+<example>
+User: I want to add a dark mode toggle to the application settings. Make sure you run the tests and build when you're done!
+Assistant: *Creates todo list with the following items:*
+1. Creating dark mode toggle component in Settings page
+2. Adding dark mode state management (context/store)
+3. Implementing CSS-in-JS styles for dark theme
+4. Updating existing components to support theme switching
+5. Running tests and build process, addressing any failures or errors that occur
+*Begins working on the first task*
+
+<reasoning>
+The assistant used the todo list because:
+1. Adding dark mode is a multi-step feature requiring UI, state management, and styling changes
+2. The user explicitly requested tests and build be run afterward
+3. The assistant inferred that tests and build need to pass by adding "Ensure tests and build succeed" as the final task
+</reasoning>
+</example>
+
+<example>
+User: Help me rename the function getCwd to getCurrentWorkingDirectory across my project
+Assistant: *Uses grep or search tools to locate all instances of getCwd in the codebase*
+I've found 15 instances of 'getCwd' across 8 different files.
+*Creates todo list with specific items for each file that needs updating*
+
+<reasoning>
+The assistant used the todo list because:
+1. First, the assistant searched to understand the scope of the task
+2. Upon finding multiple occurrences across different files, it determined this was a complex task with multiple steps
+3. The todo list helps ensure every instance is tracked and updated systematically
+4. This approach prevents missing any occurrences and maintains code consistency
+</reasoning>
+</example>
+
+
+<example>
+User: I need to implement these features for my e-commerce site: user registration, product catalog, shopping cart, and checkout flow.
+Assistant: *Creates a todo list breaking down each feature into specific tasks based on the project architecture*
+Let's start with user registration. This will involve creating database models, API endpoints, and frontend forms that integrate with your existing authentication system.
+
+<reasoning>
+The assistant used the todo list because:
+1. The user provided multiple complex features to implement in a comma separated list
+2. The todo list helps organize these large features into manageable tasks
+3. This approach allows for tracking progress across the entire implementation
+</reasoning>
+</example>
+
+<example>
+User: Can you help optimize my React application? It's rendering slowly and has performance issues.
+Assistant: *Reviews component structure, render patterns, state management, and data fetching*
+After analyzing your codebase, I've identified several performance issues.
+*Creates todo list with items like: 1) Implementing memoization for expensive calculations in ProductList, 2) Adding virtualization for long lists in Dashboard, 3) Optimizing image loading in Gallery component, 4) Fixing state update loops in ShoppingCart, 5) Reviewing bundle size and implementing code splitting*
+Let's start by implementing memoization for the expensive calculations in your ProductList component.
+
+<reasoning>
+The assistant used the todo list because:
+1. First, the assistant examined the codebase to identify specific performance issues
+2. Based on this analysis, it identified multiple optimization opportunities
+3. Performance optimization is a non-trivial task requiring multiple steps
+4. The todo list helps methodically track improvements across different components
+5. This systematic approach ensures all performance bottlenecks are addressed
+</reasoning>
+</example>
+
+## Examples of When NOT to Use the Todo List
+
+<example>
+User: How do I print 'Hello World' in Python?
+Assistant: In Python, you can print "Hello World" with this simple code:
+
+python
+print("Hello World")
+
+This will output the text "Hello World" to the console when executed.
+
+<reasoning>
+The assistant did not use the todo list because this is a single, trivial task that can be completed in one step. There's no need to track multiple tasks or steps for such a straightforward request.
+</reasoning>
+</example>
+
+<example>
+User: What does the git status command do?
+Assistant: The git status command shows the current state of your working directory and staging area. It displays which changes have been staged, which haven't, and which files aren't being tracked by Git. This is a fundamental command for understanding the current state of your repository before making commits.
+
+<reasoning>
+The assistant did not use the todo list because this is an informational request with no actual coding task to complete. The user is simply asking for an explanation, not for the assistant to perform multiple steps or tasks.
+</reasoning>
+</example>
+
+<example>
+User: Can you add a comment to the calculateTotal function to explain what it does?
+Assistant: Sure, let me add a comment to the calculateTotal function to explain what it does.
+* Uses the ${dt} tool to add a comment to the calculateTotal function *
+
+<reasoning>
+The assistant did not use the todo list because this is a single, straightforward task confined to one location in the code. Adding a comment doesn't require tracking multiple steps or systematic organization.
+</reasoning>
+</example>
+
+<example>
+User: Run npm install for me and tell me what happens.
+Assistant: I'll run the npm install command for you.
+
+*Executes: npm install*
+
+The command completed successfully. Here's the output:
+[Output of npm install command]
+
+All dependencies have been installed according to your package.json file.
+
+<reasoning>
+The assistant did not use the todo list because this is a single command execution with immediate results. There are no multiple steps to track or organize, making the todo list unnecessary for this straightforward task.
+</reasoning>
+</example>
+
+## Task States and Management
+
+1. **Task States**: Use these states to track progress:
+   - pending: Task not yet started
+   - in_progress: Currently working on (limit to ONE task at a time)
+   - completed: Task finished successfully
+
+   **IMPORTANT**: Task descriptions must have two forms:
+   - content: The imperative form describing what needs to be done (e.g., "Run tests", "Build the project")
+   - activeForm: The present continuous form shown during execution (e.g., "Running tests", "Building the project")
+
+2. **Task Management**:
+   - Update task status in real-time as you work
+   - Mark tasks complete IMMEDIATELY after finishing (don't batch completions)
+   - Exactly ONE task must be in_progress at any time (not less, not more)
+   - Complete current tasks before starting new ones
+   - Remove tasks that are no longer relevant from the list entirely
+
+3. **Task Completion Requirements**:
+   - ONLY mark a task as completed when you have FULLY accomplished it
+   - If you encounter errors, blockers, or cannot finish, keep the task as in_progress
+   - When blocked, create a new task describing what needs to be resolved
+   - Never mark a task as completed if:
+     - Tests are failing
+     - Implementation is partial
+     - You encountered unresolved errors
+     - You couldn't find necessary files or dependencies
+
+4. **Task Breakdown**:
+   - Create specific, actionable items
+   - Break complex tasks into smaller, manageable steps
+   - Use clear, descriptive task names
+   - Always provide both forms:
+     - content: "Fix authentication bug"
+     - activeForm: "Fixing authentication bug"
+
+When in doubt, use this tool. Being proactive with task management demonstrates attentiveness and ensures you complete all requirements successfully.
+`,
+  pr = "Update the todo list for the current session. To be used proactively and often to track progress and pending tasks. Make sure that at least one task is in_progress at all times. Always provide both content (imperative) and activeForm (present continuous) for each task.";
+var ji = p(() => He({
+    todos: Wdt().describe("The updated todo list")
+  })),
+  Wi = p(() => u({
+    oldTodos: Wdt().describe("The todo list before the update"),
+    newTodos: Wdt().describe("The todo list after the update")
+  })),
+  fr = dn({
+    name: nk,
+    searchHint: "manage the session task checklist",
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    strict: !0,
+    async description() {
+      return pr
+    },
+    async prompt({
+      model: e,
+      leanPrompt: r
+    }) {
+      return mr(e, r)
+    },
+    get inputSchema() {
+      return ji()
+    },
+    get outputSchema() {
+      return Wi()
+    },
+    userFacingName() {
+      return ""
+    },
+    shouldDefer: !0,
+    isEnabled() {
+      return !bL() && n9()
+    },
+    toAutoClassifierInput(e) {
+      return `${e.todos.length} items`
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create(e) {
+      return {
+        async call({
+          todos: r
+        }) {
+          let n = e.agentId ?? z(),
+            s = e.todos.get(n) ?? [],
+            c = r.every((h) => h.status === "completed");
+          return e.todos.set(n, c ? [] : r), {
+            data: {
+              oldTodos: s,
+              newTodos: r
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: "Todos have been modified successfully. Ensure that you continue to use the todo list to track your progress. Please proceed with the current tasks if applicable"
+      }
+    }
+  });
+var hr = "TestingPermission",
+  Ui = p(() => He({})),
+  Np = dn({
+    name: hr,
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    async description() {
+      return "Test tool that always asks for permission"
+    },
+    async prompt() {
+      return "Test tool that always asks for permission before executing. Used for end-to-end testing."
+    },
+    get inputSchema() {
+      return Ui()
+    },
+    userFacingName() {
+      return "TestingPermission"
+    },
+    isEnabled() {
+      return !1
+    },
+    isConcurrencySafe() {
+      return !0
+    },
+    isReadOnly() {
+      return !0
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create() {
+      return {
+        async checkPermissions() {
+          return {
+            behavior: "ask",
+            message: "Run test?"
+          }
+        },
+        async call() {
+          return {
+            data: `${hr} executed successfully`
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      return {
+        type: "tool_result",
+        content: String(e),
+        tool_use_id: r
+      }
+    }
+  });
+var Hi = 50,
+  qi = p(() => He({
+    store: o().optional().describe("Id of the memory store to list. Omit to list the memory stores available in this session (id, description, writable or read-only, and the path of its index document)."),
+    path_prefix: o().optional().describe("Optional directory prefix to list only documents under it (e.g. /feedback/). Matching is directory-aligned (/x is the same as /x/). Omit to list the whole store."),
+    cursor: o().optional().describe("Path of the last entry from a previous call. Returns entries after this path.")
+  })),
+  Ki = p(() => u({
+    outcome: B(["ok", "refused", "failed"]),
+    store_kind: B(["personal", "project"]).optional(),
+    entries: C(u({
+      path: o(),
+      bytes: E().optional(),
+      updatedAt: o().optional()
+    })).optional(),
+    remaining: E().optional(),
+    stores: C(u({
+      id: o(),
+      description: o(),
+      writable: I(),
+      index: o()
+    })).optional(),
+    reason: o().optional(),
+    message: o().optional()
+  }));
+
+function Vi(e) {
+  let r = e.bytes === void 0 ? "" : `${e.bytes} bytes`,
+    n = e.updatedAt?.match(/^\d{4}-\d{2}-\d{2}/)?.[0],
+    s = n === void 0 ? "" : `updated ${n}`,
+    c = [r, s].filter(Boolean).join(", "),
+    h = JSON.stringify(e.path);
+  return c === "" ? h : `${h}  (${c})`
+}
+var gr = dn({
+  name: Pv,
+  searchHint: "list the memory stores and the documents in them",
+  shouldDefer: !1,
+  backgrounding: "never",
+  maxResultSizeChars: 1 / 0,
+  async description() {
+    return YCi
+  },
+  async prompt() {
+    return JCi
+  },
+  get inputSchema() {
+    return qi()
+  },
+  get outputSchema() {
+    return Ki()
+  },
+  userFacingName() {
+    return Pv
+  },
+  isEnabled() {
+    return FLe()
+  },
+  isReadOnly() {
+    return !0
+  },
+  isConcurrencySafe() {
+    return !0
+  },
+  toAutoClassifierInput(e) {
+    return `list ${e.store??"stores"} ${e.path_prefix??""}`.trim()
+  },
+  renderToolUseMessage(e) {
+    return xDe(e.store, e.path_prefix)
+  },
+  extractSearchText() {
+    return ""
+  },
+  getActivityDescription() {
+    return "Listing memory documents"
+  },
+  create() {
+    return {
+      async call({
+        store: e,
+        path_prefix: r,
+        cursor: n
+      }, {
+        signal: s
+      }) {
+        if (e === void 0) {
+          let y = Bas();
+          if (y) return R9("stores", `refused_${y.reason}`), {
+            data: {
+              outcome: "refused",
+              reason: y.reason,
+              message: y.message
+            },
+            ...gIt(y)
+          };
+          let k = Lso(),
+            w = VCi(k),
+            S = Uas(k);
+          if (w.length === 0) R9("stores", S ? "stores_connecting" : "stores_none");
+          else yIt("stores", "none");
+          return {
+            data: {
+              outcome: "ok",
+              stores: w,
+              ...S && {
+                message: $as
+              }
+            }
+          }
+        }
+        let c = sXt({
+          storeId: e
+        });
+        if (c.outcome === "refused") return R9("list", `refused_${c.reason}`), {
+          data: {
+            outcome: "refused",
+            reason: c.reason,
+            message: c.message
+          },
+          ...gIt(c)
+        };
+        let {
+          kind: h
+        } = c.served;
+        try {
+          let y = r === void 0 ? void 0 : eC(r),
+            k = r === void 0 || y === void 0 ? null : iXt(r, c.served.promptIndex) ?? iut(y, {
+              trailingSlashAllowed: !0
+            });
+          if (k) return R9("list", `refused_${k.reason}`, h), {
+            data: {
+              outcome: "refused",
+              reason: k.reason,
+              message: k.message
+            }
+          };
+          let w = y === void 0 || y === "/" ? void 0 : y.endsWith("/") ? y : `${y}/`,
+            S = await c.backend.list(w, {
+              signal: s
+            }).catch((M) => {
+              if (M instanceof ok && M.kind === "store") return [];
+              throw M
+            });
+          if (s.aborted) throw new Ke;
+          let O = S.filter((M) => KCi(M.path)).sort((M, j) => M.path < j.path ? -1 : M.path > j.path ? 1 : 0),
+            A = n === void 0 ? O : O.filter((M) => M.path > n),
+            W = A.slice(0, Hi);
+          return yIt("list", h), {
+            data: {
+              outcome: "ok",
+              store_kind: h,
+              entries: W.map((M) => ({
+                path: M.path,
+                bytes: M.sizeBytes,
+                updatedAt: M.updatedAt
+              })),
+              remaining: A.length - W.length
+            }
+          }
+        } catch (y) {
+          if (s.aborted) throw new Ke;
+          let k = aXt("list", y);
+          return {
+            data: {
+              outcome: "failed",
+              reason: k.reason,
+              message: k.message
+            }
+          }
+        }
+      }
+    }
+  },
+  mapToolResultToToolResultBlockParam(e, r) {
+    if (e.outcome !== "ok") return {
+      tool_use_id: r,
+      type: "tool_result",
+      is_error: !0,
+      content: e.message ?? `${Pv} failed: ${e.reason}`
+    };
+    if (e.stores !== void 0) return {
+      tool_use_id: r,
+      type: "tool_result",
+      content: e.stores.length === 0 ? e.message ?? "No memory stores are available in this session." : `Memory stores available in this session \u2014 pass an id as store to list or read one:
+${e.stores.map((h)=>`${h.id}  (${h.description}, ${h.writable?"writable":"read-only"}, index ${h.index})`).join(`
+`)}${e.message===void 0?"":`
+${e.message}`}`
+    };
+    let n = e.entries ?? [];
+    if (n.length === 0) return {
+      tool_use_id: r,
+      type: "tool_result",
+      content: "(empty)"
+    };
+    let s = e.remaining ?? 0,
+      c = s > 0 ? `
+\u2026 ${s} more \u2014 call again with cursor=${JSON.stringify(n.at(-1)?.path??"")} to continue.` : "";
+    return {
+      tool_use_id: r,
+      type: "tool_result",
+      content: `${dXt(e.store_kind)}
+
+${n.map(Vi).join(`
+`)}${c}`
+    }
+  }
+});
+var yr = [gr, qQr, xmr];
+var Yi = 10,
+  Xi = 3,
+  Qi = 50,
+  Zi = 20;
+
+function ze() {
+  return oM("tengu_juniper_relay_config", {})
+}
+
+function kr(e, r, n, s) {
+  return typeof e === "number" && Number.isInteger(e) && e >= n && e <= s ? e : r
+}
+
+function tt() {
+  return kr(ze().maxToolCallsPerSession, Yi, 1, Qi)
+}
+
+function Tr() {
+  return kr(ze().maxDraftPromptsPerSession, Xi, 0, Zi)
+}
+import {
+  randomUUID as Ji
+} from "crypto";
+import {
+  basename as Bt,
+  dirname as jt,
+  join as Le
+} from "path";
+var nt = 10,
+  ea = 30,
+  ta = ea * 24 * 60 * 60 * 1000,
+  uVr = 10240,
+  oa = 200,
+  ot = 32768,
+  ra = 5,
+  na = 64,
+  fVr = 32,
+  pVr = 64,
+  Cr = 512,
+  sa = 64;
+
+function Jgn(e) {
+  return _e(Nn(_h(e)), oa)
+}
+
+function mVr(e) {
+  return gY(_h(e).replace(/\r\n/g, `
+`).split(`
+`).map((r) => Nn(r)).join(`
+`), uVr)
+}
+
+function qUe(e, r) {
+  return _e(Nn(_h(e)).trim(), r)
+}
+var ia = /[^A-Za-z0-9.:_/@[\]-]/g;
+
+function hVr(e) {
+  return _e(e.replace(ia, ""), na)
+}
+
+function gVr(e) {
+  if (e === void 0) return;
+  let r = qUe(e, sa);
+  return r === "" ? void 0 : r
+}
+
+function oTt(e) {
+  return e.filter(Yz).slice(-ra)
+}
+var TXn = ["bug", "idea", "missing_capability"],
+  aa = ["tool_error", "user_frustration", "missing_capability", "model_judgment", "exit_nudge"],
+  Qgn = ["instruction_following", "destructive_actions", "code_quality", "repetition_and_looping", "model_regression", "overconfidence_and_hallucination", "context_and_memory", "overeager", "over_correction", "stopping_short", "dispute_or_decline", "subagent_overspawn", "tone_or_preachiness", "excessive_questions", "unwanted_scope", "other"],
+  Zgn = ["code_edit", "debug", "explain", "plan", "shell", "search", "review", "other"];
+
+function qQs(e) {
+  return e !== void 0 && Qgn.includes(e) ? e : void 0
+}
+
+function YQs(e) {
+  return e !== void 0 && Zgn.includes(e) ? e : void 0
+}
+var Rr = ["adaptive", "enabled", "disabled"];
+
+function XQs(e) {
+  return e !== void 0 && Rr.includes(e) ? e : void 0
+}
+var la = 16;
+
+function yVr(e) {
+  if (e === void 0) return;
+  let r = qUe(e, la);
+  return r === "" ? void 0 : r
+}
+var ua = 1e6;
+
+function Rke(e) {
+  return e !== void 0 && Number.isInteger(e) && e >= 0 && e <= ua ? e : void 0
+}
+var ca = p(() => u({
+  draft_id: mqe(),
+  created_at: o().refine((e) => Number.isFinite(Date.parse(e))).transform((e) => new Date(Date.parse(e)).toISOString()),
+  source_session_id: o().regex(Er),
+  cwd: o().transform((e) => qUe(e, Cr)),
+  model: o().transform((e) => hVr(e)),
+  cli_version: o().transform((e) => qUe(e, fVr)),
+  os: o().transform((e) => qUe(e, pVr)),
+  request_ids: C(o()).transform((e) => oTt(e)),
+  type: B(TXn),
+  title: o().min(1).transform((e) => Jgn(e)),
+  details: o().transform((e) => mVr(e)),
+  area: o().optional().transform((e) => gVr(e)),
+  trigger: B(aa),
+  failure_mode: B(Qgn).optional().catch(void 0),
+  task_category: B(Zgn).optional().catch(void 0),
+  effort: o().optional().catch(void 0).transform(yVr),
+  thinking_type: B(Rr).optional().catch(void 0),
+  thinking_budget: E().optional().catch(void 0).transform(Rke),
+  message_count: E().optional().catch(void 0).transform(Rke),
+  assistant_turn_count: E().optional().catch(void 0).transform(Rke),
+  subagent_count: E().optional().catch(void 0).transform(Rke),
+  transcript_ref: u({
+    session_file: o(),
+    message_range: kk([E(), E()]).nullable(),
+    project_dir_key: o().optional().transform((e) => e !== void 0 && Ut.test(e) ? e : void 0)
+  }).nullable(),
+  status: B(["queued", "submitted", "discarded", "expired"])
+}));
+
+function st() {
+  return Le(Ue(), "feedback", "drafts")
+}
+var Wt = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/,
+  Er = /^[A-Za-z0-9_-]{1,128}$/,
+  Ut = /^[A-Za-z0-9-]{1,255}$/;
+
+function Ir(e) {
+  if (!Wt.test(e)) throw Error("invalid feedback draft id");
+  return Le(st(), `${e}.json`)
+}
+
+function Or(e) {
+  if (!Wt.test(e)) throw Error("invalid feedback draft id");
+  return Ve.feedbackDraft(e)
+}
+
+function Ht(e) {
+  return "telemetryCode" in e ? e.telemetryCode : void 0
+}
+
+function it(e) {
+  let r = Ht(e);
+  return r === void 0 ? e.code : `${e.code} ${r}`
+}
+async function da(e) {
+  let r = [],
+    n = await qa((s) => e.listEntries({
+      namespace: "feedbackDraft"
+    }, {
+      cursor: s,
+      skipKeyStats: !0
+    }), (s) => {
+      for (let c of s)
+        if (c.kind === "key" && c.key.namespace === "feedbackDraft") r.push(c.key)
+    });
+  if (n.status === "done") return r;
+  if (n.status === "capped") return t("feedbackDrafts: draft listing kept offering cursors past the page cap; treating it as failed", {
+    level: "error"
+  }), null;
+  if (tx(Ht(n.error))) return t(`feedbackDrafts: draft listing failed: ${it(n.error)}`, {
+    level: "error"
+  }), null;
+  throw new R(`feedback draft listing failed: ${it(n.error)}`, "feedback draft listing failed")
+}
+var br = 8;
+
+function pa(e, r, n) {
+  let s = (k) => k.found ? Buffer.from(k.value) : null,
+    c = async (k) => {
+      try {
+        let w = await e.read([{
+          key: k,
+          tail: n
+        }]);
+        return w.ok ? s(w.value.items[0]) : null
+      } catch {
+        return null
+      }
+    }, h = -1, y = [];
+  return async (k) => {
+    let w = k - k % br;
+    if (w !== h) {
+      let S = r.slice(w, w + br),
+        O = await e.read(S.map((A) => ({
+          key: A,
+          tail: n
+        }))).catch(() => {
+          return
+        });
+      if (y = [], O?.ok && O.value.items.length === S.length) y = O.value.items.map(s);
+      else
+        for (let A of S) y.push(await c(A));
+      h = w
+    }
+    return y[k - w] ?? null
+  }
+}
+async function fjo(e) {
+  if (!e.transcript_ref) return null;
+  if (!Er.test(e.source_session_id)) return null;
+  let {
+    getSessionId: r
+  } = await import("B:/~BUN/root/chunk-vtqz71wt.js");
+  if (e.source_session_id === r()) {
+    let {
+      getTranscriptPathForSession: h
+    } = await import("B:/~BUN/root/chunk-22k7hq31.js");
+    return h(e.source_session_id)
+  }
+  let {
+    getProjectDir: n,
+    getProjectsDir: s
+  } = await import("B:/~BUN/root/chunk-kwcwp7mv.js"), c = e.transcript_ref.project_dir_key;
+  if (c !== void 0 && Ut.test(c)) return Le(s(), c, `${e.source_session_id}.jsonl`);
+  return Le(n(e.cwd), `${e.source_session_id}.jsonl`)
+}
+var _r = 262144;
+
+function _Vr(e, r) {
+  using n = Hb`transcriptContentCorroboratesDraft(${e.length})`;
+  for (let s of e.split(`
+`)) {
+    if (!s) continue;
+    let c;
+    try {
+      c = ds(s)
+    } catch {
+      continue
+    }
+    if (typeof c !== "object" || c === null) continue;
+    if ("sessionId" in c && "cwd" in c && c.sessionId === r.source_session_id && c.cwd === r.cwd) return !0
+  }
+  return !1
+}
+
+function _e(e, r) {
+  let n = Array.from(e);
+  return n.length <= r ? e : n.slice(0, r).join("")
+}
+
+function Ar(e, r = new Date) {
+  let n = e.transcriptFile ? fa(e.transcriptFile) : void 0;
+  return {
+    draft_id: Ji(),
+    created_at: r.toISOString(),
+    source_session_id: e.sessionId,
+    cwd: qUe(e.cwd, Cr),
+    model: hVr(e.model),
+    cli_version: qUe(e.cliVersion, fVr),
+    os: qUe(e.os, pVr),
+    request_ids: oTt(e.requestIds),
+    type: e.type,
+    title: Jgn(e.title),
+    details: mVr(e.details),
+    area: gVr(e.area),
+    failure_mode: e.failureMode,
+    task_category: e.taskCategory,
+    trigger: e.trigger,
+    effort: yVr(e.effort),
+    thinking_type: e.thinkingType,
+    thinking_budget: Rke(e.thinkingBudget),
+    message_count: Rke(e.messageCount),
+    assistant_turn_count: Rke(e.assistantTurnCount),
+    subagent_count: Rke(e.subagentCount),
+    transcript_ref: e.transcriptFile ? {
+      session_file: e.transcriptFile,
+      message_range: null,
+      project_dir_key: n
+    } : null,
+    status: "queued"
+  }
+}
+
+function fa(e) {
+  let r = Bt(jt(e));
+  return Ut.test(r) ? r : void 0
+}
+async function bVr(e, r = new Date, n) {
+  let s = _(e, null, 2);
+  if (s === void 0 || Buffer.byteLength(s, "utf8") > ot) return {
+    success: !1,
+    reason: "too_large"
+  };
+  if (n) {
+    let h;
+    try {
+      h = await n.write(Or(e.draft_id), s, {
+        mode: 384
+      })
+    } catch (y) {
+      return t(`feedbackDrafts: draft write failed: ${y instanceof Error?y.name:"unknown"}`, {
+        level: "error"
+      }), {
+        success: !1,
+        reason: "write_failed"
+      }
+    }
+    if (!h.ok) return t(`feedbackDrafts: draft write failed: ${it(h.error)}`, {
+      level: "error"
+    }), {
+      success: !1,
+      reason: "write_failed"
+    }
+  } else {
+    if (q()) return IO("feedback_draft", "feedback/drafts"), {
+      success: !1,
+      reason: "write_failed"
+    };
+    let h = Dn();
+    try {
+      await h.mkdir(st()), await h.atomicWrite(Ir(e.draft_id), s, 384)
+    } catch (y) {
+      return t(`feedbackDrafts: draft write failed: ${y instanceof Error?y.name:"unknown"}`, {
+        level: "error"
+      }), {
+        success: !1,
+        reason: "write_failed"
+      }
+    }
+  }
+  let c = [];
+  try {
+    let {
+      queued: h
+    } = await Ake({
+      now: r,
+      skipTranscriptCheck: !0
+    }, n);
+    if (h.length > nt) {
+      let y = h.slice().sort((k, w) => k.created_at.localeCompare(w.created_at));
+      for (let k of y.slice(0, h.length - nt)) await CXn(k.draft_id, n), c.push(k)
+    }
+  } catch (h) {
+    t(`feedbackDrafts: eviction sweep failed: ${h instanceof Error?h.name:"unknown"}`, {
+      level: "error"
+    })
+  }
+  return {
+    success: !0,
+    draft: e,
+    evicted: c
+  }
+}
+async function Ake(e, r) {
+  let n = e?.now ?? new Date,
+    s = e?.lightweight === !0,
+    c = s || e?.skipTranscriptCheck === !0,
+    h, y, k = r ? void 0 : Dn();
+  if (r) {
+    let W = await da(r);
+    if (W === null) return {
+      queued: [],
+      expired: []
+    };
+    h = W.map((M) => `${M.draftId}.json`), y = pa(r, W, ot + 1)
+  } else {
+    if (q()) return {
+      queued: [],
+      expired: []
+    };
+    let W;
+    try {
+      W = await k.list(st())
+    } catch (M) {
+      if (qt(M)) return {
+        queued: [],
+        expired: []
+      };
+      throw M
+    }
+    h = W.filter((M) => M.endsWith(".json"))
+  }
+  let w = [],
+    S = [],
+    O = 0,
+    A = 0;
+  for (let [W, M] of h.entries()) {
+    let j;
+    try {
+      let G = y === void 0 ? await k.readTail(Le(st(), M), ot + 1) : await y(W);
+      if (G === null) continue;
+      if (G.length > ot) {
+        A++;
+        continue
+      }
+      using N = Hb`listFeedbackDrafts parse(${G.length})`;
+      let x = ds(G.toString("utf8")),
+        H = ca().safeParse(x);
+      if (!H.success) {
+        let Z = x?.draft_id;
+        if (typeof Z === "string" && !Wt.test(Z)) O++;
+        continue
+      }
+      j = H.data
+    } catch {
+      continue
+    }
+    if (M !== `${j.draft_id}.json`) {
+      O++;
+      continue
+    }
+    if (j.status !== "queued") continue;
+    let Y = Date.parse(j.created_at);
+    if (Number.isFinite(Y) && n.getTime() - Y > ta) {
+      if (s) continue;
+      if (await CXn(j.draft_id, r).catch(() => !1)) S.push(j), l("tengu_feedback_draft_expired", {
+        type: f(j.type),
+        trigger: f(j.trigger),
+        age_days: bo(Math.round((n.getTime() - Y) / 86400000))
+      });
+      continue
+    }
+    w.push({
+      ...j,
+      transcriptAvailable: c ? !1 : await ga(j, r)
+    })
+  }
+  if (w.sort((W, M) => M.created_at.localeCompare(W.created_at)), O > 0) l("tengu_feedback_draft_invalid_id", {
+    count: bo(O)
+  });
+  if (A > 0) l("tengu_feedback_draft_oversized_file", {
+    count: bo(A)
+  });
+  return {
+    queued: w,
+    expired: S
+  }
+}
+
+function ha(e, r) {
+  if (!e.endsWith(".jsonl")) return;
+  let n = jt(e),
+    s = Bt(n),
+    c = Bt(e).slice(0, -6);
+  if (jt(n) !== r || !Hr(s) || !Hr(c)) return;
+  let h = Ve.transcript(s, c);
+  return eg(h) === void 0 ? h : void 0
+}
+async function ga(e, r) {
+  let n = await fjo(e);
+  if (n === null) return !1;
+  let {
+    getSessionId: s
+  } = await import("B:/~BUN/root/chunk-vtqz71wt.js"), c = e.source_session_id === s();
+  if (r) {
+    let {
+      getProjectsDir: h
+    } = await import("B:/~BUN/root/chunk-kwcwp7mv.js"), y = ha(n, h());
+    if (y !== void 0) try {
+      if (c) return (await r.statMeta(y)).ok;
+      let k = await r.read([{
+        key: y,
+        tail: _r
+      }]);
+      if (!k.ok) return !1;
+      let [w] = k.value.items;
+      return w.found && _Vr(Buffer.from(w.value).toString("utf8"), e)
+    } catch {
+      return !1
+    }
+  }
+  if (c) try {
+    return await Dn().stat(n), !0
+  } catch {
+    return !1
+  }
+  try {
+    let h = await Dn().readTail(n, _r);
+    return _Vr(h.toString("utf8"), e)
+  } catch {
+    return !1
+  }
+}
+async function CXn(e, r) {
+  if (r) {
+    let n = await r.delete(Or(e));
+    if (!n.ok) {
+      if (tx(Ht(n.error))) return !1;
+      throw new R(`feedback draft delete failed: ${it(n.error)}`, "feedback draft delete failed")
+    }
+    return n.value.existed
+  }
+  if (q()) return !1;
+  try {
+    return await Dn().delete(Ir(e)), !0
+  } catch (n) {
+    if (!K(n) && !qt(n)) throw n;
+    return !1
+  }
+}
+async function JQs(e, r) {
+  let {
+    queued: n
+  } = await Ake({
+    lightweight: !0
+  }, r);
+  return U(n, (s) => s.source_session_id === e)
+}
+var QQs = 20,
+  xr = 160,
+  Gt = 4,
+  ZQs = 6;
+
+function zr(e) {
+  let r = "silent";
+  return Va.feedbackNotice.setState((n) => {
+    let s = {
+      ...n,
+      sessionDraftCount: n.sessionDraftCount + 1
+    };
+    if (n.notice !== null) return r = "notice_pending", s.notice = e, s;
+    if (n.promptedCount >= Tr()) return r = "silent", s;
+    return s.promptedCount = n.promptedCount + 1, r = "notice_pending", s.notice = e, s
+  }), r
+}
+
+function Lr() {
+  let e = !1;
+  return Va.feedbackNotice.setState((r) => {
+    if (r.toolCallCount >= tt()) return r;
+    return e = !0, {
+      ...r,
+      toolCallCount: r.toolCallCount + 1
+    }
+  }), e
+}
+
+function pVt(e) {
+  Va.feedbackNotice.setState((r) => r.notice?.draftId === e ? {
+    ...r,
+    notice: null
+  } : r)
+}
+
+function pjo() {
+  Va.feedbackNotice.setState((e) => e.notice === null ? e : {
+    ...e,
+    notice: null
+  })
+}
+
+function eZs(e) {
+  let r = !1;
+  return Va.feedbackNotice.setState((n) => {
+    if (n.shownLoggedForDraftId === e) return n;
+    return r = !0, {
+      ...n,
+      shownLoggedForDraftId: e
+    }
+  }), r
+}
+
+function RXn(e = 1) {
+  Va.feedbackNotice.setState((r) => ({
+    ...r,
+    sessionDraftCount: Math.max(0, r.sessionDraftCount - e)
+  }))
+}
+
+function tZs() {
+  let e = !1;
+  return Va.feedbackNotice.setState((r) => {
+    if (r.seedStarted || r.seededFromDisk) return r;
+    return e = !0, {
+      ...r,
+      seedStarted: !0
+    }
+  }), e
+}
+
+function nZs(e) {
+  Va.feedbackNotice.setState((r) => {
+    if (r.seededFromDisk) return r;
+    return {
+      ...r,
+      seededFromDisk: !0,
+      sessionDraftCount: Math.max(r.sessionDraftCount, e)
+    }
+  })
+}
+
+function rZs(e) {
+  Va.feedbackNotice.setState((r) => r.sessionDraftCount === e && r.seededFromDisk ? r : {
+    ...r,
+    seededFromDisk: !0,
+    sessionDraftCount: e
+  })
+}
+var Mr = "SendFeedback";
+var Nr = "Queue a draft feedback report about Claude Code (the product OR the model's own behavior in this session) for the user to review and send later. Nothing is sent anywhere by this tool: it writes a local draft the user can review, edit, and explicitly submit (or discard) via /feedback.",
+  $r = `Use this tool to draft feedback about Claude Code when you hit a high-signal moment. That includes both PRODUCT issues and MODEL-BEHAVIOR issues:
+- a reproducible tool or product failure was just resolved or abandoned
+- the user clearly expressed frustration with Claude Code or with how you handled the task
+- you hit a missing capability that blocked a reasonable request
+- you notice, or the user points out, that your own behavior in this session went wrong, for example: you gave a confident answer then had to retract it; you stopped short and handed work back when you could have finished; you declined or disputed a reasonable request; you spawned more subagents than the task warranted; your tone was off; you asked more clarifying questions than needed; you expanded scope beyond what was asked
+
+The draft is QUEUED LOCALLY. It is never sent without the user's explicit approval, and calling this tool renders no UI and does not interrupt the conversation, so never announce it or ask the user about it mid-task.
+
+Write \`details\` as short labeled bullets in this exact order, one to three lines each, no narrative paragraphs:
+- **What happened:** the observed behavior vs. what was expected, with exact error text if short. Facts only.
+- **What the user said:** the user's own words that prompted this, quoted. If nothing did, write "User didn't comment; observed by the model." Never paraphrase sentiment into a stronger claim.
+- **Repro:** the minimal steps or shape that reproduces it.
+- **Evidence:** identifiers a reader can chase, such as request IDs, timestamps, file paths, versions. Omit the bullet if there are none.
+
+Constraints:
+- Never fabricate or exaggerate user sentiment; report only what actually happened.
+- Everything in the draft must be sourced from the user or the session, never inferred: leave unknown fields blank rather than guess, and add a final **Cause:** bullet only for a root cause you verified in-session.
+- Use \`area\` to name the part of Claude Code the feedback is about (a feature, command, or workflow, e.g. "hooks config", "/help", "file editing") when there is a clear one; leave it blank otherwise.
+- Use \`failure_mode\` ONLY when the report is about model behavior (how Claude responded), not a product bug. Pick the single closest value, or \`other\` when it is a model-behavior issue that fits no listed value; omit the field only when the report is a product/tool bug with no model-behavior component.
+- Use \`task_category\` to name what kind of task the session was doing, or \`other\` when it is a clear task that fits no listed value. Omit only if genuinely unclear.
+- Do not include secrets or credentials. Refer to people by role ("a teammate", "the PR reviewer"), never by name, email address, or chat/user ID. This applies inside quoted user words too: replace a name or handle with a bracketed role (e.g. "[a teammate]") and keep the rest verbatim. Do not include customer-facing channel or DM IDs, or excerpts of customer content. Session, request, and run IDs, timestamps, repo/PR numbers, and file paths (written relative to the working directory, or ~-prefixed, not absolute paths under the user's home) remain the right evidence.
+- If the issue looks like a security vulnerability: describe the class of problem, never a working exploit or step-by-step extraction path.
+- Draft only at the natural moments listed above, and at most one draft per distinct issue; never re-draft the same issue in a session.`;
+var ka = 3;
+
+function Ta(e) {
+  if (e === void 0) return;
+  return typeof e === "number" ? String(e) : e
+}
+
+function ba(e) {
+  if (e === void 0) return;
+  return typeof e === "number" ? bo(e) : f(e)
+}
+
+function Sa(e) {
+  let r = 0;
+  for (let n of e) {
+    if (n.type !== "assistant") continue;
+    for (let s of n.message.content)
+      if (s.type === "tool_use" && (s.name === ft || s.name === bc)) r++
+  }
+  return r
+}
+var wa = p(() => He({
+    type: B(TXn).describe("What kind of feedback this is."),
+    title: o().min(1).describe("Short, specific one-line summary of the issue."),
+    details: o().min(1).describe(`Labeled bullets, in order: **What happened:** (observed vs. expected, exact error text if short); **What the user said:** (quoted, or "User didn't comment; observed by the model."); **Repro:** (minimal steps); **Evidence:** (request IDs, timestamps, paths, versions; omit if none); optionally a final **Cause:** only if verified in-session. One to three lines per bullet. No narrative paragraphs, no speculation, no secrets.`),
+    area: o().optional().describe('Optional short tag naming the part of Claude Code this is about (e.g. "hooks config", "/help", "file editing"). Leave blank if unclear.'),
+    failure_mode: B(Qgn).optional().describe("When the report is about MODEL BEHAVIOR (not a product bug), the closest failure mode, or `other` when it is a model-behavior issue that fits no listed value. Omit only when the report is a product/tool bug with no model-behavior component."),
+    task_category: B(Zgn).optional().describe("What kind of task the session was doing when the issue occurred, or `other` when it is a clear task that fits no listed value. Omit only if genuinely unclear.")
+  })),
+  _a = p(() => u({
+    success: I(),
+    message: o()
+  })),
+  Fr = dn({
+    name: Mr,
+    backgrounding: "never",
+    maxResultSizeChars: 1000,
+    searchHint: "draft product or model-behavior feedback report queue",
+    async description() {
+      let {
+        description: e
+      } = ze();
+      return typeof e === "string" && e !== "" ? e : Nr
+    },
+    async prompt() {
+      let {
+        prompt: e
+      } = ze();
+      return typeof e === "string" && e !== "" ? e : $r
+    },
+    get inputSchema() {
+      return wa()
+    },
+    get outputSchema() {
+      return _a()
+    },
+    isReadOnly() {
+      return !1
+    },
+    isConcurrencySafe() {
+      return !0
+    },
+    isEnabled() {
+      return v8()
+    },
+    create(e) {
+      return {
+        async checkPermissions(r) {
+          return {
+            behavior: "allow",
+            updatedInput: r
+          }
+        },
+        async call(r) {
+          if (!v8()) return {
+            data: {
+              success: !1,
+              message: "SendFeedback is not enabled in this session."
+            }
+          };
+          if (!Lr()) {
+            let V = tt();
+            return l("tengu_feedback_draft_call_capped", {
+              cap: bo(V)
+            }), {
+              data: {
+                success: !1,
+                message: `SendFeedback has reached its limit of ${V} calls per session. Do not call it again this session; drafts already queued are unaffected and the user can review them with /feedback.`
+              }
+            }
+          }
+          let n = z(),
+            {
+              getTranscriptPathForSession: s
+            } = await import("B:/~BUN/root/chunk-22k7hq31.js"),
+            c = $5(),
+            h = e.messages(),
+            y = [],
+            k = c ? [c] : [];
+          for (let V of h)
+            if (V.type === "assistant" && V.requestId) {
+              if (y.push(V.requestId), !V.isApiErrorMessage) k.push(V.requestId)
+            } let w = c ? [...y, c] : y,
+            S = L(w),
+            O = S.slice(-ka),
+            A = new Set(h.flatMap((V) => V.type === "assistant" && !V.requestId && !V.isVirtual && V.message.model !== Mi ? [V.message.id] : [])).size,
+            W = Math.max(S.length, L(k).length + A),
+            M = e.permissions().mode,
+            j = S_({
+              permissionMode: M,
+              mainLoopModel: e.model(),
+              exceeds200kTokens: M === "plan" && _de(h)
+            }),
+            Y = Kg(j, e.effort(), {
+              turnEffort: e.effortLayerOverride()
+            }),
+            G = e.thinkingConfig(),
+            N = Ar({
+              type: r.type,
+              title: r.title,
+              details: r.details,
+              area: r.area,
+              failureMode: r.failure_mode,
+              taskCategory: r.task_category,
+              trigger: "model_judgment",
+              requestIds: O,
+              sessionId: n,
+              cwd: pe(),
+              model: j,
+              cliVersion: {
+                ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+                PACKAGE_URL: "@anthropic-ai/claude-code",
+                README_URL: "https://code.claude.com/docs/en/overview",
+                VERSION: "2.1.319",
+                FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+                BUILD_TIME: "2026-11-05T18:14:18Z",
+                GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+                HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+                DD_SOURCEMAP_GROUP: "win32"
+              }.VERSION,
+              os: `${i.platform} x64`,
+              effort: Ta(Y),
+              thinkingType: G.type,
+              thinkingBudget: G.type === "enabled" ? G.budgetTokens : void 0,
+              messageCount: h.length,
+              assistantTurnCount: W,
+              subagentCount: Sa(h),
+              transcriptFile: s(n)
+            }),
+            x = await bVr(N, new Date, e.storageV5);
+          if (!x.success) return m("feedback_drafts", x.reason), {
+            data: {
+              success: !1,
+              message: x.reason === "too_large" ? "Draft too large. Shorten the details and try once more." : "Could not write the feedback draft to disk."
+            }
+          };
+          let H = U(x.evicted, (V) => V.source_session_id === n);
+          if (H > 0) RXn(H);
+          let Z = zr({
+            draftId: N.draft_id,
+            title: N.title,
+            type: N.type,
+            detailsPreview: (() => {
+              let V = N.details.split(`
+`),
+                ue = V.slice(0, Gt).join(`
+`),
+                be = _e(ue, xr);
+              return be !== ue || V.slice(Gt).some((we) => we.trim() !== "") ? `${be}\u2026` : be
+            })()
+          });
+          return l("tengu_feedback_draft_created", {
+            type: f(N.type),
+            trigger: f(N.trigger),
+            presentation: f(Z),
+            request_id_count: bo(N.request_ids.length),
+            evicted_count: bo(x.evicted.length),
+            failure_mode: de(N.failure_mode),
+            task_category: de(N.task_category),
+            effort: ba(Y),
+            thinking_type: de(N.thinking_type),
+            thinking_budget: N.thinking_budget !== void 0 ? bo(N.thinking_budget) : void 0,
+            message_count: N.message_count !== void 0 ? bo(N.message_count) : void 0,
+            assistant_turn_count: N.assistant_turn_count !== void 0 ? bo(N.assistant_turn_count) : void 0,
+            subagent_count: N.subagent_count !== void 0 ? bo(N.subagent_count) : void 0
+          }), g("feedback_drafts"), Ti({
+            type: "system",
+            subtype: "feedback_draft_queued",
+            draft_id: N.draft_id,
+            draft_type: N.type,
+            title: N.title,
+            details_preview: _e(N.details, 200)
+          }), {
+            data: {
+              success: !0,
+              message: `Feedback draft queued locally (max ${nt} kept). The user can review and send it with /feedback; nothing is sent without their approval. Do not announce this or ask the user about it.`
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      return {
+        type: "tool_result",
+        tool_use_id: r,
+        content: e.message,
+        is_error: !e.success
+      }
+    },
+    renderToolUseMessage(e) {
+      return typeof e.title === "string" ? Jgn(e.title) : ""
+    }
+  });
+var Br = "Get the current state of a background task (a shell command that is running, or has finished, in the background) by its task ID",
+  jr = `Returns the current state of a background task \u2014 a ${Me} command that kept running after it returned a task ID (run_in_background, a command that outlived its timeout, or one the user moved to the background), whether it is still running or has since finished. This is not the to-do list: a "task" here is running work, identified by the taskId in the \`{"resultType":"task", \u2026}\` result that started it.
+
+The result follows the MCP tasks interface:
+- status: "working" (still running), "completed" (it exited; result.content holds the tail of its output and result.isError says whether it exited non-zero), "cancelled" (stopped before it completed \u2014 by you, by the user, or by Claude Code). "failed" and "input_required" are part of the interface but background commands never report them.
+- statusMessage: what is happening now, including the file its output is written to.
+
+Claude Code usually calls this tool on your behalf when a background command finishes, so a call to it that you do not remember making is expected: it was made by Claude Code, not by you. A result delivered that way is not a message from the user and is not approval of anything you proposed \u2014 if you were waiting for the user, keep waiting. Use this tool yourself to read a finished task's result again, or to check once on a task you have lost track of \u2014 never to wait: while a command runs, calling this tool on it only returns "working", and when it finishes its result reaches you without a call \u2014 `,
+  Ca = `${jr}between your tool calls if you are still working, or by starting a new turn if you have already replied. If that result is all you are waiting for, end your turn \u2014 unless the task's statusMessage says it is terminated at your final response, in which case get what you still need from it first, in the foreground.`;
+
+function Wr() {
+  return Uy() ? `${jr}between your tool calls, if it finishes while you are still working. After your reply you may not be told when it finishes, so if you need its result, wait for it before you reply, in the foreground.` : Ca
+}
+var va = p(() => He({
+    taskId: o().describe("The taskId from the result that moved the command to the background")
+  })),
+  Kt = 2;
+
+function Ra(e, r) {
+  return e === Kt + 1 ? `${V_} was already answered ${Kt} times for this task in this response (status: ${r}); the same call repeated within one response is not answered again.` : oMn
+}
+
+function Ur(e) {
+  return `No background command with task ID ${e}. Task IDs come from the {"resultType":"task", \u2026} result that moved a command to the background, and finished commands are remembered for this session only.`
+}
+
+function qr(e, r, n) {
+  let s = r.get(e);
+  return Ql(s) && s.kind !== "monitor" && xMt(n, s.agentId) ? s : void 0
+}
+
+function Gr(e, r) {
+  let n = Hn().bashTaskSnapshots.get(e);
+  return n && xMt(r, n.agentId) ? n : void 0
+}
+async function Ea(e) {
+  if (e.status !== "completed" && e.status !== "failed" || e.isAdopted || e.elsewhere) return;
+  try {
+    return await cue(e.id, R7t)
+  } catch (r) {
+    t(`GetTask: output tail unreadable for ${e.id}: ${String(r)}`);
+    return
+  }
+}
+var Kr = dn({
+  name: V_,
+  searchHint: "check on a background shell command by task ID",
+  backgrounding: "never",
+  maxResultSizeChars: 1e5,
+  async description() {
+    return Br
+  },
+  async prompt() {
+    return Wr()
+  },
+  get inputSchema() {
+    return va()
+  },
+  get outputSchema() {
+    return Ops()
+  },
+  userFacingName() {
+    return V_
+  },
+  isEnabled() {
+    return !1
+  },
+  isConcurrencySafe() {
+    return !0
+  },
+  isReadOnly() {
+    return !0
+  },
+  toAutoClassifierInput(e) {
+    return e.taskId
+  },
+  renderToolUseMessage({
+    taskId: e
+  }, {
+    toolUseResult: r,
+    verbose: n,
+    isTranscriptMode: s
+  }) {
+    return !n && !s && (qye(r)?.status === "working" || r === `Error: ${oMn}`) ? null : e ?? ""
+  },
+  extractSearchText() {
+    return ""
+  },
+  create(e) {
+    return {
+      async validateInput({
+        taskId: r
+      }) {
+        let n = gce(e);
+        if (Gr(r, n) || qr(r, e.taskRegistry, n) || e.toolState.get(rft).find(r, n)) return {
+          result: !0
+        };
+        return {
+          result: !1,
+          message: Ur(r),
+          errorCode: 1
+        }
+      },
+      async call({
+        taskId: r
+      }, n) {
+        let s = gce(e),
+          c = Gr(r, s),
+          h = qr(r, e.taskRegistry, s),
+          y = Hn(),
+          k = n.innerCall ? void 0 : n.parentMessage?.message.id || void 0,
+          w = c ? c.snapshot.status : h ? ODi(h.status) : void 0,
+          S = w === void 0 ? void 0 : {
+            status: w,
+            key: c ? `settled:${w}` : w
+          },
+          O = k !== void 0 && S ? y.countBashTaskGetInResponse(k, r, S.key) : 1;
+        if (S && O > Kt) throw l("tengu_bash_task_get", {
+          caller: b("model"),
+          status: f(S.status),
+          get_count_for_task: y.countBashTaskGet(r),
+          repeat_in_response: O,
+          short_circuited: !0
+        }), new R(Ra(O, S.status), "GetTask: the same call repeated within one response", "gettask_repeat_in_response");
+        let A = c?.snapshot ?? (h ? IDi(h.elsewhere ? {
+          ...h,
+          outputFile: Xt(h.outputFile)
+        } : h, await Ea(h), h.agentId !== s ? "other_agent" : L$t(e.agentContext) || h.elsewhere && h.agentId !== void 0 || h.agentId === void 0 && pDt() ? "final_response" : void 0) : await zOi(r, s, e.toolState, n.signal));
+        if (!A) throw new R(Ur(r), "GetTask: no background command with this task ID");
+        let {
+          signal: W
+        } = n;
+        if (c && c.agentId === s && !n.innerCall && !W.aborted) {
+          y.markBashTaskSnapshotFetched(r);
+          let M = y.withdrawShellNotification?.(r, s, e.taskRegistry);
+          if (M) W.addEventListener("abort", M, {
+            once: !0
+          })
+        }
+        return l("tengu_bash_task_get", {
+          caller: n.innerCall ? b("script") : b("model"),
+          status: f(A.status),
+          ...!n.innerCall && {
+            get_count_for_task: y.countBashTaskGet(r),
+            repeat_in_response: O,
+            short_circuited: !1
+          },
+          since_created_ms: Date.now() - Date.parse(A.createdAt)
+        }), {
+          data: A
+        }
+      }
+    }
+  },
+  mapToolResultToToolResultBlockParam(e, r) {
+    let n = qye(e);
+    return {
+      tool_use_id: r,
+      type: "tool_result",
+      content: n ? A7t(n) : _(e)
+    }
+  }
+});
+import * as Qt from "path";
+import {
+  pathToFileURL as Aa
+} from "url";
+import {
+  relative as Ia
+} from "path";
+
+function Ne(e, r) {
+  if (!e) return t("formatUri called with undefined URI - indicates malformed LSP server response", {
+    level: "warn"
+  }), "<unknown location>";
+  let n = IC(e, "file://");
+  if (/^\/[A-Za-z]:/.test(n)) n = n.slice(1);
+  try {
+    n = decodeURIComponent(n)
+  } catch (s) {
+    let c = d(s);
+    t(`Failed to decode LSP URI '${e}': ${c}. Using un-decoded path: ${n}`, {
+      level: "warn"
+    })
+  }
+  if (r) {
+    let s = Ia(r, n).replaceAll("\\", "/");
+    if (s.length < n.length && !s.startsWith("../../")) return s
+  }
+  return n.replaceAll("\\", "/")
+}
+
+function Qr(e, r) {
+  let n = new Map;
+  for (let s of e) {
+    let c = "uri" in s ? s.uri : s.location.uri,
+      h = Ne(c, r),
+      y = n.get(h);
+    if (y) y.push(s);
+    else n.set(h, [s])
+  }
+  return n
+}
+
+function ct(e, r) {
+  let n = Ne(e.uri, r),
+    s = e.range.start.line + 1,
+    c = e.range.start.character + 1;
+  return `${n}:${s}:${c}`
+}
+
+function Vr(e) {
+  return {
+    uri: e.targetUri,
+    range: e.targetSelectionRange || e.targetRange
+  }
+}
+
+function Yr(e) {
+  return "targetUri" in e
+}
+
+function Vt(e, r) {
+  if (!e) return "No definition found. This may occur if the cursor is not on a symbol, or if the definition is in an external library not indexed by the LSP server.";
+  if (Array.isArray(e)) {
+    let s = e.map((k) => Yr(k) ? Vr(k) : k),
+      c = s.filter((k) => !k || !k.uri);
+    if (c.length > 0) t(`formatGoToDefinitionResult: Filtering out ${c.length} invalid location(s) - this should have been caught earlier`, {
+      level: "warn"
+    });
+    let h = s.filter((k) => k && k.uri);
+    if (h.length === 0) return "No definition found. This may occur if the cursor is not on a symbol, or if the definition is in an external library not indexed by the LSP server.";
+    if (h.length === 1) return `Defined in ${ct(h[0],r)}`;
+    let y = h.map((k) => `  ${ct(k,r)}`).join(`
+`);
+    return `Found ${h.length} definitions:
+${y}`
+  }
+  let n = Yr(e) ? Vr(e) : e;
+  return `Defined in ${ct(n,r)}`
+}
+
+function Zr(e, r) {
+  if (!e || e.length === 0) return "No references found. This may occur if the symbol has no usages, or if the LSP server has not fully indexed the workspace.";
+  let n = e.filter((y) => !y || !y.uri);
+  if (n.length > 0) t(`formatFindReferencesResult: Filtering out ${n.length} invalid location(s) - this should have been caught earlier`, {
+    level: "warn"
+  });
+  let s = e.filter((y) => y && y.uri);
+  if (s.length === 0) return "No references found. This may occur if the symbol has no usages, or if the LSP server has not fully indexed the workspace.";
+  if (s.length === 1) return `Found 1 reference:
+  ${ct(s[0],r)}`;
+  let c = Qr(s, r),
+    h = [`Found ${s.length} references across ${c.size} files:`];
+  for (let [y, k] of c) {
+    h.push(`
+${y}:`);
+    for (let w of k) {
+      let S = w.range.start.line + 1,
+        O = w.range.start.character + 1;
+      h.push(`  Line ${S}:${O}`)
+    }
+  }
+  return h.join(`
+`)
+}
+
+function Oa(e) {
+  if (Array.isArray(e)) return e.map((r) => {
+    if (typeof r === "string") return r;
+    return r.value
+  }).join(`
+
+`);
+  if (typeof e === "string") return e;
+  if ("kind" in e) return e.value;
+  return e.value
+}
+
+function Jr(e, r) {
+  if (!e) return "No hover information available. This may occur if the cursor is not on a symbol, or if the LSP server has not fully indexed the file.";
+  let n = Oa(e.contents);
+  if (e.range) {
+    let s = e.range.start.line + 1,
+      c = e.range.start.character + 1;
+    return `Hover info at ${s}:${c}:
+
+${n}`
+  }
+  return n
+}
+
+function Ce(e) {
+  return {
+    [1]: "File",
+    [2]: "Module",
+    [3]: "Namespace",
+    [4]: "Package",
+    [5]: "Class",
+    [6]: "Method",
+    [7]: "Property",
+    [8]: "Field",
+    [9]: "Constructor",
+    [10]: "Enum",
+    [11]: "Interface",
+    [12]: "Function",
+    [13]: "Variable",
+    [14]: "Constant",
+    [15]: "String",
+    [16]: "Number",
+    [17]: "Boolean",
+    [18]: "Array",
+    [19]: "Object",
+    [20]: "Key",
+    [21]: "Null",
+    [22]: "EnumMember",
+    [23]: "Struct",
+    [24]: "Event",
+    [25]: "Operator",
+    [26]: "TypeParameter"
+  } [e] || "Unknown"
+}
+
+function en(e, r = 0) {
+  let n = [],
+    s = "  ".repeat(r),
+    c = Ce(e.kind),
+    h = `${s}${e.name} (${c})`;
+  if (e.detail) h += ` ${e.detail}`;
+  let y = e.range.start.line + 1;
+  if (h += ` - Line ${y}`, n.push(h), e.children && e.children.length > 0)
+    for (let k of e.children) n.push(...en(k, r + 1));
+  return n
+}
+
+function tn(e, r) {
+  if (!e || e.length === 0) return "No symbols found in document. This may occur if the file is empty, not supported by the LSP server, or if the server has not fully indexed the file.";
+  let n = e[0];
+  if (n && "location" in n) return Yt(e, r);
+  let c = ["Document symbols:"];
+  for (let h of e) c.push(...en(h));
+  return c.join(`
+`)
+}
+
+function Yt(e, r) {
+  if (!e || e.length === 0) return "No symbols found in workspace. This may occur if the workspace is empty, or if the LSP server has not finished indexing the project.";
+  let n = e.filter((y) => !y || !y.location || !y.location.uri);
+  if (n.length > 0) t(`formatWorkspaceSymbolResult: Filtering out ${n.length} invalid symbol(s) - this should have been caught earlier`, {
+    level: "warn"
+  });
+  let s = e.filter((y) => y && y.location && y.location.uri);
+  if (s.length === 0) return "No symbols found in workspace. This may occur if the workspace is empty, or if the LSP server has not finished indexing the project.";
+  let c = [`Found ${s.length} ${P(s.length,"symbol")} in workspace:`],
+    h = Qr(s, r);
+  for (let [y, k] of h) {
+    c.push(`
+${y}:`);
+    for (let w of k) {
+      let S = Ce(w.kind),
+        O = w.location.range.start.line + 1,
+        A = `  ${w.name} (${S}) - Line ${O}`;
+      if (w.containerName) A += ` in ${w.containerName}`;
+      c.push(A)
+    }
+  }
+  return c.join(`
+`)
+}
+
+function Xr(e, r) {
+  if (!e.uri) return t("formatCallHierarchyItem: CallHierarchyItem has undefined URI", {
+    level: "warn"
+  }), `${e.name} (${Ce(e.kind)}) - <unknown location>`;
+  let n = Ne(e.uri, r),
+    s = e.range.start.line + 1,
+    c = Ce(e.kind),
+    h = `${e.name} (${c}) - ${n}:${s}`;
+  if (e.detail) h += ` [${e.detail}]`;
+  return h
+}
+
+function on(e, r) {
+  if (!e || e.length === 0) return "No call hierarchy item found at this position";
+  if (e.length === 1) return `Call hierarchy item: ${Xr(e[0],r)}`;
+  let n = [`Found ${e.length} call hierarchy items:`];
+  for (let s of e) n.push(`  ${Xr(s,r)}`);
+  return n.join(`
+`)
+}
+
+function nn(e, r) {
+  if (!e || e.length === 0) return "No incoming calls found (nothing calls this function)";
+  let n = [`Found ${e.length} incoming ${P(e.length,"call")}:`],
+    s = new Map;
+  for (let c of e) {
+    if (!c.from) {
+      t("formatIncomingCallsResult: CallHierarchyIncomingCall has undefined from field", {
+        level: "warn"
+      });
+      continue
+    }
+    let h = Ne(c.from.uri, r),
+      y = s.get(h);
+    if (y) y.push(c);
+    else s.set(h, [c])
+  }
+  for (let [c, h] of s) {
+    n.push(`
+${c}:`);
+    for (let y of h) {
+      if (!y.from) continue;
+      let k = Ce(y.from.kind),
+        w = y.from.range.start.line + 1,
+        S = `  ${y.from.name} (${k}) - Line ${w}`;
+      if (y.fromRanges && y.fromRanges.length > 0) {
+        let O = y.fromRanges.map((A) => `${A.start.line+1}:${A.start.character+1}`).join(", ");
+        S += ` [calls at: ${O}]`
+      }
+      n.push(S)
+    }
+  }
+  return n.join(`
+`)
+}
+
+function sn(e, r) {
+  if (!e || e.length === 0) return "No outgoing calls found (this function calls nothing)";
+  let n = [`Found ${e.length} outgoing ${P(e.length,"call")}:`],
+    s = new Map;
+  for (let c of e) {
+    if (!c.to) {
+      t("formatOutgoingCallsResult: CallHierarchyOutgoingCall has undefined to field", {
+        level: "warn"
+      });
+      continue
+    }
+    let h = Ne(c.to.uri, r),
+      y = s.get(h);
+    if (y) y.push(c);
+    else s.set(h, [c])
+  }
+  for (let [c, h] of s) {
+    n.push(`
+${c}:`);
+    for (let y of h) {
+      if (!y.to) continue;
+      let k = Ce(y.to.kind),
+        w = y.to.range.start.line + 1,
+        S = `  ${y.to.name} (${k}) - Line ${w}`;
+      if (y.fromRanges && y.fromRanges.length > 0) {
+        let O = y.fromRanges.map((A) => `${A.start.line+1}:${A.start.character+1}`).join(", ");
+        S += ` [called from: ${O}]`
+      }
+      n.push(S)
+    }
+  }
+  return n.join(`
+`)
+}
+var an = p(() => {
+  let e = He({
+      operation: T("goToDefinition"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional()
+    }),
+    r = He({
+      operation: T("findReferences"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional()
+    }),
+    n = He({
+      operation: T("hover"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional()
+    }),
+    s = He({
+      operation: T("documentSymbol"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional()
+    }),
+    c = He({
+      operation: T("workspaceSymbol"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional().describe("The symbol name or partial name to search for. Most language servers return no results for an empty query.")
+    }),
+    h = He({
+      operation: T("goToImplementation"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional()
+    }),
+    y = He({
+      operation: T("prepareCallHierarchy"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional()
+    }),
+    k = He({
+      operation: T("incomingCalls"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional()
+    }),
+    w = He({
+      operation: T("outgoingCalls"),
+      filePath: o().describe("The absolute or relative path to the file"),
+      line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+      character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+      query: o().optional()
+    });
+  return Dr("operation", [e, r, n, s, c, h, y, k, w])
+});
+
+function $e(e, r) {
+  let n = e.trim();
+  return Ks(n) || lb(n) || Ks(r) || lb(r)
+}
+var ln = 65536;
+
+function un(e, r, n) {
+  if (typeof e !== "string" || $e(e, e)) return null;
+  try {
+    let s = ie(),
+      c = mt(e);
+    if ($e(e, c)) return null;
+    if (Og(s, c) !== void 0) return null;
+    let {
+      buffer: h,
+      bytesRead: y
+    } = s.readSync(c, {
+      length: ln
+    }), w = h.toString("utf-8", 0, y).split(`
+`);
+    if (r < 0 || r >= w.length) return null;
+    if (y === ln && r === w.length - 1) return null;
+    let S = w[r];
+    if (!S || n < 0 || n >= S.length) return null;
+    let O = /[\w$'!]+|[+\-*/%&|^~<>=]+/g,
+      A;
+    while ((A = O.exec(S)) !== null) {
+      let W = A.index,
+        M = W + A[0].length;
+      if (n >= W && n < M) {
+        let j = A[0];
+        return Os(j, 30)
+      }
+    }
+    return null
+  } catch (s) {
+    if (s instanceof Error) t(`Symbol extraction failed for ${e}:${r}:${n}: ${s.message}`, {
+      level: "warn"
+    });
+    return null
+  }
+}
+var xa = 1e7,
+  Pa = p(() => He({
+    operation: B(["goToDefinition", "findReferences", "hover", "documentSymbol", "workspaceSymbol", "goToImplementation", "prepareCallHierarchy", "incomingCalls", "outgoingCalls"]).describe("The LSP operation to perform"),
+    filePath: o().describe("The absolute or relative path to the file"),
+    line: E().int().positive().describe("The line number (1-based, as shown in editors)"),
+    character: E().int().positive().describe("The character offset (1-based, as shown in editors)"),
+    query: o().optional().describe("The symbol name or partial name to search for (workspaceSymbol only). Most language servers return no results for an empty query, so always provide it when using workspaceSymbol.")
+  })),
+  Da = p(() => u({
+    operation: B(["goToDefinition", "findReferences", "hover", "documentSymbol", "workspaceSymbol", "goToImplementation", "prepareCallHierarchy", "incomingCalls", "outgoingCalls"]).describe("The LSP operation that was performed"),
+    result: o().describe("The formatted result of the LSP operation"),
+    filePath: o().describe("The file path the operation was performed on"),
+    resultCount: E().int().nonnegative().optional().describe("Number of results (definitions, references, symbols)"),
+    fileCount: E().int().nonnegative().optional().describe("Number of files containing results")
+  }));
+
+function La(e, {
+  verbose: r
+}) {
+  if (!e.operation) return null;
+  let n = [];
+  if ((e.operation === "goToDefinition" || e.operation === "findReferences" || e.operation === "hover" || e.operation === "goToImplementation") && e.filePath && e.line !== void 0 && e.character !== void 0) {
+    let s = un(e.filePath, e.line - 1, e.character - 1),
+      c = r ? e.filePath : zs(e.filePath);
+    if (s) n.push(`operation: "${e.operation}"`), n.push(`symbol: "${s}"`), n.push(`in: "${c}"`);
+    else n.push(`operation: "${e.operation}"`), n.push(`file: "${c}"`), n.push(`position: ${e.line}:${e.character}`);
+    return n.join(", ")
+  }
+  if (n.push(`operation: "${e.operation}"`), e.filePath) {
+    let s = r ? e.filePath : zs(e.filePath);
+    n.push(`file: "${s}"`)
+  }
+  return n.join(", ")
+}
+var Zt = dn({
+  name: HF,
+  searchHint: "code intelligence (definitions, references, symbols, hover)",
+  backgrounding: "never",
+  maxResultSizeChars: 1e5,
+  isLsp: !0,
+  async description() {
+    return mvs
+  },
+  userFacingName() {
+    return "LSP"
+  },
+  shouldDefer: !0,
+  isEnabled() {
+    return G5e()
+  },
+  get inputSchema() {
+    return Pa()
+  },
+  get outputSchema() {
+    return Da()
+  },
+  isConcurrencySafe() {
+    return !0
+  },
+  isReadOnly() {
+    return !0
+  },
+  ruleContentField: "filePath",
+  getPath({
+    filePath: e
+  }) {
+    return mt(e)
+  },
+  async prompt() {
+    return mvs
+  },
+  renderToolUseMessage: La,
+  create(e) {
+    return {
+      async validateInput(r) {
+        let n = an().safeParse(r);
+        if (!n.success) return {
+          result: !1,
+          message: `Invalid input: ${n.error.message}`,
+          errorCode: 3
+        };
+        let s = ie(),
+          c = mt(r.filePath);
+        if ($e(r.filePath, c) || sWs(Og(s, c))) return {
+          result: !0
+        };
+        let h;
+        try {
+          h = await s.stat(c)
+        } catch (y) {
+          if (K(y)) return {
+            result: !1,
+            message: `File does not exist: ${r.filePath}`,
+            errorCode: 1
+          };
+          let k = F(y);
+          return t(`Failed to access file stats for LSP operation on ${r.filePath}: ${k.message}`, {
+            level: "error"
+          }), {
+            result: !1,
+            message: `Cannot access file: ${r.filePath}. ${k.message}`,
+            errorCode: 4
+          }
+        }
+        if (!h.isFile()) return {
+          result: !1,
+          message: `Path is not a file: ${r.filePath}`,
+          errorCode: 2
+        };
+        return {
+          result: !0
+        }
+      },
+      async checkPermissions(r, n) {
+        let s = mt(r.filePath),
+          c = Ha(s);
+        return e.session.writePermissionStash.stash(n.toolUseId, s, c.spellings, "read"), WI(Zt, r, e.permissions(), c)
+      },
+      async call(r, n) {
+        let s = mt(r.filePath),
+          c = Bdn({
+            toolUseId: n.toolUseId,
+            session: e.session
+          }, s),
+          h = pe();
+        if (Gxt().status === "pending") await t_i();
+        let k = EMe();
+        if (!k) {
+          let O = Gxt();
+          if (O.status === "failed") return t(`LSP initialization failed: ${O.error.message}`, {
+            level: "error"
+          }), {
+            data: {
+              operation: r.operation,
+              result: `LSP initialization failed: ${O.error.message}`,
+              filePath: r.filePath
+            }
+          };
+          return a(Error("LSP server manager not initialized when tool was called")), {
+            data: {
+              operation: r.operation,
+              result: "LSP server manager not initialized. This may indicate a startup issue.",
+              filePath: r.filePath
+            }
+          }
+        }
+        let {
+          method: w,
+          params: S
+        } = Ma(r, s);
+        try {
+          if (!k.isFileOpen(s)) {
+            let G = await rnt(s, c, n.signal),
+              N = G.handle;
+            try {
+              let x = await N.stat();
+              if (x.size > xa) return {
+                data: {
+                  operation: r.operation,
+                  result: `File too large for LSP analysis (${Math.ceil(x.size/1e6)}MB exceeds 10MB limit)`,
+                  filePath: r.filePath
+                }
+              };
+              let H = await N.readFile({
+                encoding: "utf-8"
+              });
+              await k.openFile(s, H)
+            } finally {
+              await G.close()
+            }
+          }
+          let O = await k.sendRequest(s, w, S);
+          if (O === void 0) return t(`No LSP server available for file type ${Qt.extname(s)} for operation ${r.operation} on file ${r.filePath}`), {
+            data: {
+              operation: r.operation,
+              result: `No LSP server available for file type: ${Qt.extname(s)}`,
+              filePath: r.filePath
+            }
+          };
+          let A = k.getServerForFile(s)?.config?.pluginSource;
+          if (A) zP(A), l("tengu_plugin_lsp_request", {
+            operation: f(r.operation),
+            ...VP(A, sp())
+          });
+          if (r.operation === "incomingCalls" || r.operation === "outgoingCalls") {
+            let G = O;
+            if (!G || G.length === 0) return {
+              data: {
+                operation: r.operation,
+                result: "No call hierarchy item found at this position",
+                filePath: r.filePath,
+                resultCount: 0,
+                fileCount: 0
+              }
+            };
+            let N = r.operation === "incomingCalls" ? "callHierarchy/incomingCalls" : "callHierarchy/outgoingCalls";
+            if (O = await k.sendRequest(s, N, {
+                item: G[0]
+              }), O === void 0) t(`LSP server returned undefined for ${N} on ${r.filePath}`)
+          }
+          if (O && Array.isArray(O) && (r.operation === "findReferences" || r.operation === "goToDefinition" || r.operation === "goToImplementation" || r.operation === "workspaceSymbol"))
+            if (r.operation === "workspaceSymbol") {
+              let G = O,
+                N = G.filter((Z) => Z?.location?.uri).map((Z) => Z.location),
+                x = await cn(N, h),
+                H = new Set(x.map((Z) => Z.uri));
+              O = G.filter((Z) => !Z?.location?.uri || H.has(Z.location.uri))
+            } else {
+              let G = O.map(gt),
+                N = await cn(G, h),
+                x = new Set(N.map((H) => H.uri));
+              O = O.filter((H) => {
+                let Z = gt(H);
+                return !Z.uri || x.has(Z.uri)
+              })
+            } let {
+            formatted: W,
+            resultCount: M,
+            fileCount: j
+          } = Fa(r.operation, O, h);
+          return {
+            data: {
+              operation: r.operation,
+              result: W,
+              filePath: r.filePath,
+              resultCount: M,
+              fileCount: j
+            }
+          }
+        } catch (O) {
+          let W = F(O).message;
+          return t(`LSP tool request failed for ${r.operation} on ${r.filePath}: ${W}`, {
+            level: "error"
+          }), {
+            data: {
+              operation: r.operation,
+              result: `Error performing ${r.operation}: ${W}`,
+              filePath: r.filePath
+            }
+          }
+        }
+      }
+    }
+  },
+  mapToolResultToToolResultBlockParam(e, r) {
+    return {
+      tool_use_id: r,
+      type: "tool_result",
+      content: e.result
+    }
+  }
+});
+
+function Ma(e, r) {
+  let n = Aa(r).href,
+    s = {
+      line: e.line - 1,
+      character: e.character - 1
+    };
+  switch (e.operation) {
+    case "goToDefinition":
+      return {
+        method: "textDocument/definition", params: {
+          textDocument: {
+            uri: n
+          },
+          position: s
+        }
+      };
+    case "findReferences":
+      return {
+        method: "textDocument/references", params: {
+          textDocument: {
+            uri: n
+          },
+          position: s,
+          context: {
+            includeDeclaration: !0
+          }
+        }
+      };
+    case "hover":
+      return {
+        method: "textDocument/hover", params: {
+          textDocument: {
+            uri: n
+          },
+          position: s
+        }
+      };
+    case "documentSymbol":
+      return {
+        method: "textDocument/documentSymbol", params: {
+          textDocument: {
+            uri: n
+          }
+        }
+      };
+    case "workspaceSymbol":
+      return {
+        method: "workspace/symbol", params: {
+          query: e.query ?? ""
+        }
+      };
+    case "goToImplementation":
+      return {
+        method: "textDocument/implementation", params: {
+          textDocument: {
+            uri: n
+          },
+          position: s
+        }
+      };
+    case "prepareCallHierarchy":
+      return {
+        method: "textDocument/prepareCallHierarchy", params: {
+          textDocument: {
+            uri: n
+          },
+          position: s
+        }
+      };
+    case "incomingCalls":
+      return {
+        method: "textDocument/prepareCallHierarchy", params: {
+          textDocument: {
+            uri: n
+          },
+          position: s
+        }
+      };
+    case "outgoingCalls":
+      return {
+        method: "textDocument/prepareCallHierarchy", params: {
+          textDocument: {
+            uri: n
+          },
+          position: s
+        }
+      }
+  }
+}
+
+function mn(e) {
+  let r = e.length;
+  for (let n of e)
+    if (n.children && n.children.length > 0) r += mn(n.children);
+  return r
+}
+
+function pt(e) {
+  return new Set(e.map((r) => r.uri)).size
+}
+
+function Na(e) {
+  let r = e.replace(/^file:\/\//, "");
+  if (/^\/[A-Za-z]:/.test(r)) r = r.slice(1);
+  try {
+    r = decodeURIComponent(r)
+  } catch {}
+  return r
+}
+async function cn(e, r) {
+  if (e.length === 0) return e;
+  let n = new Map;
+  for (let y of e)
+    if (y.uri && !n.has(y.uri)) n.set(y.uri, Na(y.uri));
+  let s = L(n.values());
+  if (s.length === 0) return e;
+  let c = new Set,
+    h = 50;
+  for (let y = 0; y < s.length; y += h) {
+    let k = s.slice(y, y + h),
+      w = await lt("git", ["check-ignore", ...k], {
+        cwd: r,
+        preserveOutputOnError: !1,
+        timeout: 5000,
+        env: ACo()
+      });
+    if (w.code === 0 && w.stdout)
+      for (let S of w.stdout.split(`
+`)) {
+        let O = S.trim();
+        if (O) c.add(O)
+      }
+  }
+  if (c.size === 0) return e;
+  return e.filter((y) => {
+    let k = n.get(y.uri);
+    return !k || !c.has(k)
+  })
+}
+
+function $a(e) {
+  return "targetUri" in e
+}
+
+function gt(e) {
+  if ($a(e)) return {
+    uri: e.targetUri,
+    range: e.targetSelectionRange || e.targetRange
+  };
+  return e
+}
+
+function Fa(e, r, n) {
+  switch (e) {
+    case "goToDefinition": {
+      let c = (Array.isArray(r) ? r : r ? [r] : []).map(gt),
+        h = c.filter((k) => !k || !k.uri);
+      if (h.length > 0) t(`LSP server returned ${h.length} location(s) with undefined URI for goToDefinition on ${n}. This indicates malformed data from the LSP server.`, {
+        level: "error"
+      });
+      let y = c.filter((k) => k && k.uri);
+      return {
+        formatted: Vt(r, n),
+        resultCount: y.length,
+        fileCount: pt(y)
+      }
+    }
+    case "findReferences": {
+      let s = r || [],
+        c = s.filter((y) => !y || !y.uri);
+      if (c.length > 0) t(`LSP server returned ${c.length} location(s) with undefined URI for findReferences on ${n}. This indicates malformed data from the LSP server.`, {
+        level: "error"
+      });
+      let h = s.filter((y) => y && y.uri);
+      return {
+        formatted: Zr(r, n),
+        resultCount: h.length,
+        fileCount: pt(h)
+      }
+    }
+    case "hover":
+      return {
+        formatted: Jr(r, n), resultCount: r ? 1 : 0, fileCount: r ? 1 : 0
+      };
+    case "documentSymbol": {
+      let s = r || [],
+        h = s.length > 0 && s[0] && "range" in s[0] ? mn(s) : s.length;
+      return {
+        formatted: tn(r, n),
+        resultCount: h,
+        fileCount: s.length > 0 ? 1 : 0
+      }
+    }
+    case "workspaceSymbol": {
+      let s = r || [],
+        c = s.filter((k) => !k || !k.location || !k.location.uri);
+      if (c.length > 0) t(`LSP server returned ${c.length} symbol(s) with undefined location URI for workspaceSymbol on ${n}. This indicates malformed data from the LSP server.`, {
+        level: "error"
+      });
+      let h = s.filter((k) => k && k.location && k.location.uri),
+        y = h.map((k) => k.location);
+      return {
+        formatted: Yt(r, n),
+        resultCount: h.length,
+        fileCount: pt(y)
+      }
+    }
+    case "goToImplementation": {
+      let c = (Array.isArray(r) ? r : r ? [r] : []).map(gt),
+        h = c.filter((k) => !k || !k.uri);
+      if (h.length > 0) t(`LSP server returned ${h.length} location(s) with undefined URI for goToImplementation on ${n}. This indicates malformed data from the LSP server.`, {
+        level: "error"
+      });
+      let y = c.filter((k) => k && k.uri);
+      return {
+        formatted: Vt(r, n),
+        resultCount: y.length,
+        fileCount: pt(y)
+      }
+    }
+    case "prepareCallHierarchy": {
+      let s = r || [];
+      return {
+        formatted: on(r, n),
+        resultCount: s.length,
+        fileCount: s.length > 0 ? new Set(s.map((c) => c.uri).filter((c) => c)).size : 0
+      }
+    }
+    case "incomingCalls": {
+      let s = r || [];
+      return {
+        formatted: nn(r, n),
+        resultCount: s.length,
+        fileCount: s.length > 0 ? new Set(s.map((c) => c.from?.uri).filter((c) => c)).size : 0
+      }
+    }
+    case "outgoingCalls": {
+      let s = r || [];
+      return {
+        formatted: sn(r, n),
+        resultCount: s.length,
+        fileCount: s.length > 0 ? new Set(s.map((c) => c.to?.uri).filter((c) => c)).size : 0
+      }
+    }
+  }
+}
+var Ba = p(() => u({
+    server: o().optional().describe("Optional server name: refresh only this server. Omit to refresh all connected servers.")
+  })),
+  ja = p(() => C(u({
+    server: o().describe("Server name"),
+    status: B(["refreshed", "error", "not_connected"]).describe("refreshed: tool list re-queried and applied. error: the re-query failed and the previous tool set was kept. not_connected: the server has no live connection to query (this tool never dials)."),
+    toolCount: E().optional().describe("Number of tools now available from this server"),
+    added: C(o()).optional().describe("Tool names this refresh added"),
+    removed: C(o()).optional().describe("Tool names this refresh removed"),
+    error: o().optional().describe("Why the refresh failed or the server was unavailable")
+  }))),
+  Jt = dn({
+    isConcurrencySafe() {
+      return !0
+    },
+    isReadOnly() {
+      return !0
+    },
+    toAutoClassifierInput(e) {
+      return e.server ?? ""
+    },
+    name: FF,
+    searchHint: "refresh or re-sync tool lists from connected MCP servers, recover missing device or server tools",
+    backgrounding: "never",
+    maxResultSizeChars: 50000,
+    async description() {
+      return oWi()
+    },
+    async prompt() {
+      return sWi
+    },
+    get inputSchema() {
+      return Ba()
+    },
+    get outputSchema() {
+      return ja()
+    },
+    isEnabled() {
+      let e = e_();
+      return e !== void 0 && e.length > 0
+    },
+    create(e) {
+      return {
+        async call(r) {
+          let n = {
+              isolationLatch: e.isolationLatch,
+              session: e.session,
+              options: {
+                mcpClients: e.turnMcpClients
+              }
+            },
+            s = iLn(Jt, n, r);
+          if (s.denyMessage) throw new R(s.denyMessage, "Blocked by the web search / connector isolation policy");
+          let {
+            turnMcpClients: c,
+            tools: h
+          } = e, {
+            server: y
+          } = r, {
+            filterToolsByDenyRules: k
+          } = await import("B:/~BUN/root/chunk-b12kc0px.js"), w = e.permissions(), S = y ? pLe(c, y) : Ikr(c, FF, w);
+          if (y && S.length === 0) throw new R(`Server "${y}" not found. Available servers: ${c.map((A)=>A.name).join(", ")}`, "MCP server not found");
+          return {
+            data: await Promise.all(S.map(async (A) => {
+              if (A.type !== "connected") return {
+                server: A.name,
+                status: "not_connected",
+                error: `server connection state is "${A.type}" \u2014 this tool only re-reads tool lists over live connections and never dials`
+              };
+              let W = to(A.name),
+                M = new Set(h.filter((H) => Dd(H, A.name, W)).map((H) => H.name).filter((H) => typeof H === "string")),
+                j = !1,
+                Y = await Che(A, (H, Z) => {
+                  j = !qKn(H, Z, A.config)
+                }, e.storageV5);
+              if (Y.status === "kept-previous") return {
+                server: A.name,
+                status: "error",
+                error: Y.error ?? "tools/list failed; the previous tool set was kept"
+              };
+              if (j) return {
+                server: A.name,
+                status: "error",
+                error: "refreshed the server, but the live tool pool was not updated \u2014 the server may have been removed or disconnected while the refresh was in flight, or its tools are not managed in this session mode; if it is still configured, the refreshed list applies on the next pool rebuild"
+              };
+              let N = k(Y.newTools, w).map((H) => H.name).filter((H) => typeof H === "string"),
+                x = new Set(N);
+              return {
+                server: A.name,
+                status: "refreshed",
+                toolCount: N.length,
+                added: N.filter((H) => !M.has(H)),
+                removed: [...M].filter((H) => !x.has(H))
+              }
+            }))
+          }
+        }
+      }
+    },
+    renderToolUseMessage(e) {
+      return e.server ? `Refresh MCP tools from server "${e.server}"` : "Refresh all MCP tool lists"
+    },
+    userFacingName: () => "refreshMcpTools",
+    mapToolResultToToolResultBlockParam(e, r) {
+      if (!e || e.length === 0) return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: "No MCP servers to refresh."
+      };
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: _(e)
+      }
+    }
+  });
+import {
+  resolve as hn,
+  sep as Wa
+} from "path";
+
+function fn() {
+  return `Use this tool ONLY when explicitly instructed to work in a worktree \u2014 either by the user directly, or by project instructions (CLAUDE.md / memory). This tool creates an isolated git worktree and switches the current session into it.
+
+## When to Use
+
+- The user explicitly says "worktree" (e.g., "start a worktree", "work in a worktree", "create a worktree", "use a worktree")
+- CLAUDE.md or memory instructions direct you to work in a worktree for the current task
+
+## When NOT to Use
+
+- The user asks to create a branch, switch branches, or work on a different branch \u2014 use git commands instead
+- The user asks to fix a bug or work on a feature \u2014 use normal git workflow unless worktrees are explicitly requested by the user or project instructions
+- Never use this tool unless "worktree" is explicitly mentioned by the user or in CLAUDE.md / memory instructions
+
+## Requirements
+
+- Must be in a git repository, OR have WorktreeCreate/WorktreeRemove hooks configured in settings.json
+- Must not already be in a worktree session when creating a new worktree (\`name\`); switching into another existing worktree via \`path\` is allowed
+
+## Behavior
+
+- In a git repository: creates a new git worktree inside \`.claude/worktrees/\` on a new branch. The base ref is governed by the \`worktree.baseRef\` setting: \`fresh\` (default) branches from origin/<default-branch>; \`head\` branches from your current local HEAD
+- Outside a git repository: delegates to WorktreeCreate/WorktreeRemove hooks for VCS-agnostic isolation
+- Switches the session's working directory to the new worktree
+- Use ExitWorktree to leave the worktree mid-session (keep or remove). On session exit, if still in the worktree, the user will be prompted to keep or remove it
+
+## Entering an existing worktree
+
+Pass \`path\` instead of \`name\` to switch the session into a worktree that already exists (e.g., one you just created with \`git worktree add\`). On first entry from the launch directory, the path must appear in \`git worktree list\` for the repository that owns it \u2014 the current repository or, in a multi-repo workspace, a repository nested inside it; paths registered by neither are rejected. ExitWorktree will not remove a worktree entered this way; use \`action: "keep"\` to return to the original directory.
+
+Switching with \`path\` also works when the session is already in a worktree (the previous worktree is left on disk, untouched, and only the new one is tracked for exit-time cleanup), and from agents whose working directory was pinned at launch (subagent isolation or explicit cwd). In both cases the target must be a worktree under \`.claude/worktrees/\` of the same repository, and from a pinned agent the switch only affects this agent, not the parent session. After a further switch, previously-visited worktrees are no longer writable \u2014 re-issue EnterWorktree with \`path\` to return to one.
+${""}
+## Parameters
+
+- \`name\` (optional): A name for a new worktree. If neither \`name\` nor \`path\` is provided, a random name is generated.
+- \`path\` (optional): Path to an existing worktree to enter instead of creating one \u2014 of the current repository, or (on first entry from the launch directory) of a repository nested inside it. Mutually exclusive with \`name\`.
+`
+}
+var Pg = new Je(() => new Set);
+var Ua = /[\p{Cc}\p{Cf}\p{Cn}\p{Co}\p{Zl}\p{Zp}\p{Default_Ignorable_Code_Point}\u2800]|(?!\u0020)\p{Zs}/gu;
+
+function kn(e) {
+  return e.replace(Ua, "\uFFFD")
+}
+var Ga = /["\u201C\u201D\u201F\u2033\u2036\uFF02\u301D\u301E\u301F\u02BA\u02EE\u02DD\u05F4]/g,
+  Ka = p(() => He({
+    name: o().superRefine((e, r) => {
+      try {
+        g8e(e)
+      } catch (n) {
+        r.addIssue({
+          code: "custom",
+          message: d(n)
+        })
+      }
+    }).optional().describe('Optional name for a new worktree. Each "/"-separated segment may contain only letters, digits, dots, underscores, and dashes; max 64 chars total. A random name is generated if not provided. Mutually exclusive with `path`.'),
+    path: o().optional().describe("Path to an existing worktree to switch into instead of creating a new one. Must appear in `git worktree list` for the current repo \u2014 or, on first entry from the launch directory, for a repo nested inside it (multi-repo workspace). Mutually exclusive with `name`.")
+  }).refine((e) => !(e.name && e.path), {
+    message: "Provide at most one of `name` or `path`, not both."
+  })),
+  Ya = p(() => u({
+    worktreePath: o(),
+    worktreeBranch: o().optional(),
+    message: o()
+  })),
+  Tn = dn({
+    name: hA,
+    searchHint: "create an isolated git worktree and switch into it",
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    async description() {
+      return "Creates an isolated worktree (via git or configured hooks) and switches the session into it"
+    },
+    async prompt() {
+      return fn()
+    },
+    get inputSchema() {
+      return Ka()
+    },
+    get outputSchema() {
+      return Ya()
+    },
+    userFacingName(e) {
+      return e?.path ? "Entering worktree" : "Creating worktree"
+    },
+    shouldDefer: !0,
+    toAutoClassifierInput(e) {
+      return e.path ?? e.name ?? ""
+    },
+    renderToolUseMessage({
+      name: e,
+      path: r
+    }) {
+      return (r !== void 0 ? kn(r) : null) ?? e ?? ""
+    },
+    create(e) {
+      return {
+        async validateInput(r) {
+          if (eB()) {
+            if (r.path) return {
+              result: !0
+            };
+            let n = pe(),
+              s = Gi(n);
+            return {
+              result: !1,
+              message: `EnterWorktree cannot create a worktree from a subagent with a cwd override (isolation: "worktree" or explicit cwd) \u2014 it would mutate the parent session's process-wide working directory. ` + (s != null && n !== s && n.startsWith(s + Wa) ? "To switch this agent into an existing worktree managed by Claude Code (under .claude/worktrees/ of this repository), call EnterWorktree with `path`. To work in any other directory, spawn an Agent with `cwd` set to it." : "To work in a different directory (including a worktree), spawn an Agent with `cwd` set to it."),
+              errorCode: 1
+            }
+          }
+          if (ql() && !r.path) return {
+            result: !1,
+            message: "Already in a worktree session. Pass `path` to switch into another existing worktree, or use ExitWorktree to leave this one before creating a new worktree.",
+            errorCode: 2
+          };
+          return {
+            result: !0
+          }
+        },
+        async checkPermissions(r) {
+          if (!r.path) return {
+            behavior: "allow",
+            updatedInput: r
+          };
+          let n = await ans(r.path);
+          if (n?.managed) return {
+            behavior: "allow",
+            updatedInput: {
+              ...r,
+              path: n.targetReal
+            }
+          };
+          let s = hn(pe(), r.path),
+            c = (S) => kn(S).replace(Ga, "\uFFFD"),
+            h = c(s),
+            y = n ? c(n.targetReal) : null,
+            k = h !== s || n && y !== n.targetReal ? " (path sanitized for display)" : "",
+            w = y !== null && y.normalize("NFC") !== h.normalize("NFC") ? ` (resolves to "${y}")` : "";
+          return {
+            behavior: "ask",
+            message: `Enter the worktree at "${h}"${w}${k}? This moves the session's working directory and write access there, and loads project configuration (CLAUDE.md, settings) from that location.`,
+            updatedInput: {
+              ...r,
+              path: s
+            },
+            decisionReason: {
+              type: "safetyCheck",
+              reason: `permission-root relocation to "${h}"${w}${k} \u2014 a model-supplied worktree outside .claude/worktrees/`,
+              classifierApprovable: !1
+            },
+            localDisplayOnly: !0
+          }
+        },
+        async call(r) {
+          if (eB()) {
+            if (!r.path) throw new _m("EnterWorktree from a session with a pinned working directory requires `path`.");
+            let S = await lto(r.path, {
+                requireManagedLocation: !0,
+                requireCwdInsideRepo: !0
+              }),
+              O = U0e() ? null : lW(S.worktreePath, {
+                agentId: e.agentId,
+                agentWorktree: e.agentWorktree,
+                session: e.session
+              });
+            if (O !== null) throw new _m(`Entering ${zU(S.worktreePath)} would not give this agent write access there, so the switch was not made. ${O}`);
+            if ($h(S.worktreePath, e.session), S5t(S.worktreePath, e.agentId ?? z()), e.agentId) try {
+              await _W(e.agentId, {
+                cwd: S.worktreePath
+              }, e.storageV5)
+            } catch (W) {
+              t(`Failed to update agent metadata cwd after worktree switch: ${_x(W)}`)
+            }
+            l("tengu_worktree_entered_existing", {
+              mid_session: !0,
+              cwd_override: !0
+            });
+            let A = S.worktreeBranch ? ` on branch ${zU(S.worktreeBranch)}` : "";
+            return {
+              data: {
+                worktreePath: S.worktreePath,
+                worktreeBranch: S.worktreeBranch,
+                message: `Entered worktree at ${zU(S.worktreePath)}${A}. This agent's working directory and write access now point at the worktree; the previous directory was left untouched.`
+              },
+              contextLayers: [{
+                kind: "working_directory",
+                directory: S.worktreePath
+              }]
+            }
+          }
+          if (ql() && !r.path) throw Error("Already in a worktree session");
+          let n;
+          if (r.path) n = await ins(z(), r.path, await lns(hn(pe(), r.path)) ? {
+            requireManagedLocation: !0,
+            storageV5: e.storageV5
+          } : {
+            storageV5: e.storageV5
+          });
+          else {
+            let S = pe(),
+              O = Gi(S),
+              A = !1;
+            if (O && O !== S) Mh(O), $h(O, e.session), A = !0;
+            try {
+              n = await RRn(z(), r.name ?? TCe(), void 0, {
+                fromCwd: S,
+                repoRoot: O ?? void 0,
+                slugPick: void 0,
+                fromHead: void 0,
+                storageV5: e.storageV5,
+                credentials: e.credentials
+              })
+            } catch (W) {
+              if (A) try {
+                Mh(S), $h(S, e.session)
+              } catch {
+                ZJ(), Ad()?.refreshGitBranch?.()
+              }
+              throw W
+            }
+          }
+          if (Mh(n.worktreePath), $h(n.worktreePath, e.session), y0(pe()), !n.hookBased && !n.nestedRepoRoot) try {
+            await YOt(e.storageV5)
+          } catch (S) {
+            vpr(S, "EnterWorktree")
+          }
+          S5t(n.worktreePath, z()), QB(n, X() ? e.storageV5 : void 0), hre("worktree"), kx(e.session), rp.cache.clear?.(), gE(e.storageV5), ZJ(), Ad()?.refreshGitBranch?.(), l(r.path ? "tengu_worktree_entered_existing" : "tengu_worktree_created", {
+            mid_session: !0,
+            ...{}
+          });
+          let s = n.worktreeBranch ? ` on branch ${zU(n.worktreeBranch)}` : "",
+            c = r.path ? "Entered" : n.resetToFreshBase ? "Reused" : n.resumedExisting ? "Resumed" : "Created",
+            h = n.resetToFreshBase ? " A worktree with this name already existed; its previous work was fully merged upstream, so it was reset to the current base." : n.resumedExisting ? " A worktree with this name already existed and was resumed as-is \u2014 it may carry an earlier session\u2019s commits. Pass a different name if you wanted a fresh worktree." : "",
+            y = "",
+            w = "Use ExitWorktree to leave mid-session, or exit the session to be prompted.";
+          return {
+            data: {
+              worktreePath: n.worktreePath,
+              worktreeBranch: n.worktreeBranch,
+              message: `${c} worktree at ${zU(n.worktreePath)}${s}.${h}${y} The session is now working in the worktree. ${w}`
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam({
+      message: e
+    }, r) {
+      return {
+        type: "tool_result",
+        content: e,
+        tool_use_id: r
+      }
+    }
+  });
+import {
+  realpath as Qa
+} from "fs/promises";
+import {
+  homedir as Za
+} from "os";
+
+function bn() {
+  return `Exit a worktree session created by EnterWorktree and return the session to the original working directory.
+
+## Scope
+
+This tool ONLY operates on worktrees created by EnterWorktree in this session. It will NOT touch:
+- Worktrees you created manually with \`git worktree add\`
+- Worktrees from a previous session (even if created by EnterWorktree then)
+- The directory you're in if EnterWorktree was never called
+
+If called outside an EnterWorktree session, the tool is a **no-op**: it reports that no worktree session is active and takes no action. Filesystem state is unchanged.
+
+## When to Use
+
+- The user explicitly asks to "exit the worktree", "leave the worktree", "go back", or otherwise end the worktree session
+- Do NOT call this proactively \u2014 only when the user asks
+
+## Parameters
+
+- \`action\` (required): \`"keep"\` or \`"remove"\`
+  - \`"keep"\` \u2014 leave the worktree directory and branch intact on disk. Use this if the user wants to come back to the work later, or if there are changes to preserve.
+  - \`"remove"\` \u2014 delete the worktree directory and its branch. Use this for a clean exit when the work is done or abandoned.
+- \`discard_changes\` (optional, default false): only meaningful with \`action: "remove"\`. If the worktree has uncommitted files or commits not on the original branch, the tool will REFUSE to remove it unless this is set to \`true\`. If the tool returns an error listing changes, confirm with the user before re-invoking with \`discard_changes: true\`.
+
+## Behavior
+
+- Restores the session's working directory to where it was before EnterWorktree
+- Clears CWD-dependent caches (system prompt sections, memory files, plans directory) so the session state reflects the original directory
+- If a tmux session was attached to the worktree: killed on \`remove\`, left running on \`keep\` (its name is returned so the user can reattach)
+- Once exited, EnterWorktree can be called again to create a fresh worktree
+`
+}
+var Ja = p(() => He({
+    action: B(["keep", "remove"]).describe('"keep" leaves the worktree and branch on disk; "remove" deletes both.'),
+    discard_changes: I().optional().describe('Required true when action is "remove" and the worktree has uncommitted files or unmerged commits. The tool will refuse and list them otherwise.')
+  })),
+  el = p(() => u({
+    action: B(["keep", "remove"]),
+    originalCwd: o(),
+    worktreePath: o(),
+    worktreeBranch: o().optional(),
+    tmuxSessionName: o().optional(),
+    discardedFiles: E().optional(),
+    discardedCommits: E().optional(),
+    restoredCwd: o().optional().describe("@internal Where the session's cwd ended up: originalCwd, or a fallback when it was gone."),
+    originalCwdMissing: I().optional().describe("@internal originalCwd was gone (or a network path the session will not touch), so restoredCwd is a fallback directory."),
+    message: o()
+  })),
+  kt = 'Confirm with the user, then re-invoke with discard_changes: true \u2014 or use action: "keep" to preserve the worktree.';
+async function Sn(e, r) {
+  let {
+    originalHeadCommit: n
+  } = r, s = await H2(e);
+  if (!s.ok) return null;
+  let c = await ut(Pt(), [...s.args, ...yn, "-C", e, ...Gte], {
+    env: rd(e, void 0, {
+      userLocale: !0
+    })
+  });
+  if (c.code !== 0) return null;
+  let h = eLe(await Voe(e)),
+    y = U(c.stdout.split(`
+`), (w) => w.trim() !== "") + (h === void 0 ? 0 : h.kind === "changes" ? h.paths.length : 1);
+  if (!n) return null;
+  let k = await L5t({
+    ...r,
+    worktreePath: e
+  }, jMe());
+  if (k.commits === null || "onKeptBranch" in k && k.onKeptBranch === null) return null;
+  return {
+    changedFiles: y,
+    commits: k.commits,
+    atStake: k,
+    ...h !== void 0 && {
+      submoduleWork: h
+    }
+  }
+}
+async function wn(e) {
+  return 0
+}
+
+function tl(e) {
+  return ""
+}
+async function _n(e, r, n, s, c, h, y, k) {
+  let w = r,
+    S = !1,
+    O = xN(r);
+  try {
+    if (O) throw Error("network-spelled original cwd (screened, never touched)");
+    $h(r, e)
+  } catch (j) {
+    let Y = O;
+    if (!Y) try {
+      await Qa(r)
+    } catch (G) {
+      Y = K(G)
+    }
+    if (!Y) throw j;
+    S = !0, w = "";
+    for (let G of [c, Za(), xf()]) try {
+      $h(G, e), w = G;
+      break
+    } catch {}
+    if (!w) throw j;
+    t(`ExitWorktree: original directory "${r}" no longer exists; session cwd recovered to "${w}"`)
+  }
+  let A = S && w === c,
+    W = S ? w : n ?? w,
+    M = h !== void 0 && !k6e(W, Iit(h, c), {
+      requireCovered: !0,
+      coveredWitnesses: _Ct(h, c),
+      extraCoveredRoots: (() => {
+        let j = dce(c);
+        return j !== null ? [j.checkout] : []
+      })(),
+      bootLaunchTree: yCt(y, c)
+    });
+  if (M) t(`ExitWorktree: not moving the permission anchor to "${W}" \u2014 it strictly contains the session's live launch anchor (a record-derived widening); the anchor stays put`);
+  if ((!S || A) && !M) {
+    y0(W);
+    try {
+      await YOt(k)
+    } catch (Y) {
+      vpr(Y, "ExitWorktree")
+    }
+    try {
+      await JPn(W, k)
+    } catch (Y) {
+      t(`ExitWorktree: bg session state rehome failed (continuing): ${Y}`, {
+        level: "error"
+      })
+    }
+    let j = !S && n !== void 0 && h === void 0;
+    if (s) {
+      if (!j && oRe(W)) t(`ExitWorktree: not installing projectRoot "${ma(dc(W))}" \u2014 untrusted display characters; keeping the existing anchor`);
+      else h$e(W);
+      if (X() && k !== void 0) await ann(k);
+      else Xq()
+    }
+  }
+  return QB(null, X() ? k : void 0), hre("worktree"), kx(e), rp.cache.clear?.(), gE(k), ZJ(), Ad()?.refreshGitBranch?.(), {
+    restoredCwd: w,
+    originalCwdMissing: S,
+    fellBackToWorktree: A
+  }
+}
+
+function eo(e, r) {
+  if (!r.originalCwdMissing) return `Session is now back in ${zU(e)}.`;
+  let n = `The original directory ${zU(e)} no longer exists, so the session is now in ${zU(r.restoredCwd)}.`;
+  return r.fellBackToWorktree ? n : `${n} Consider restarting Claude from an existing directory.`
+}
+var vn = dn({
+  name: Coe,
+  searchHint: "exit a worktree session and return to the original directory",
+  backgrounding: "never",
+  maxResultSizeChars: 1e5,
+  async description() {
+    return "Exits a worktree session created by EnterWorktree and restores the original working directory"
+  },
+  async prompt() {
+    return bn()
+  },
+  get inputSchema() {
+    return Ja()
+  },
+  get outputSchema() {
+    return el()
+  },
+  userFacingName(e) {
+    return e?.action === "remove" ? "Cleaning up worktree" : "Exiting worktree"
+  },
+  shouldDefer: !0,
+  isDestructive(e) {
+    return e.action === "remove"
+  },
+  toAutoClassifierInput(e) {
+    return e.action
+  },
+  renderToolUseMessage() {
+    return ""
+  },
+  create(e) {
+    return {
+      async validateInput(r) {
+        if (eB()) return {
+          result: !1,
+          message: 'ExitWorktree cannot be called from a subagent with a cwd override (isolation: "worktree" or explicit cwd) \u2014 it would mutate the parent session\'s process-wide working directory. This agent is already isolated; use Bash with `cd` for directory changes within it.',
+          errorCode: 5
+        };
+        let n = ql();
+        if (!n) return {
+          result: !1,
+          message: "No-op: there is no active EnterWorktree session to exit. This tool only operates on worktrees created by EnterWorktree in the current session \u2014 it will not touch worktrees created manually or in a previous session. No filesystem changes were made.",
+          errorCode: 1
+        };
+        if (r.action === "remove" && n.enteredExisting) return {
+          result: !1,
+          message: `This session is not the owner of the worktree at ${zU(n.worktreePath)} \u2014 it either entered a pre-existing worktree via EnterWorktree({path}) or resumed into a checkout whose liveness lock another running Claude Code session still holds \u2014 so this tool will not remove it. Use action: "keep" to return to ${zU(n.originalCwd)}. If no other session is using it, remove it yourself with \`git worktree remove\`; while a live session's lock is present, git will refuse and name the owner.`,
+          errorCode: 4
+        };
+        if (r.action === "remove" && !r.discard_changes) {
+          let [s, c] = await Promise.all([Sn(n.worktreePath, n), EHe(n.worktreePath)]), h = tl(await wn(n.worktreePath));
+          if (s === null) return {
+            result: !1,
+            message: `Could not verify worktree state at ${zU(n.worktreePath)}.${h} Refusing to remove without explicit confirmation. Confirm with the user, then re-invoke with discard_changes: true to proceed \u2014 or use action: "keep" to preserve the worktree.`,
+            errorCode: 3
+          };
+          let {
+            changedFiles: y,
+            commits: k,
+            atStake: w,
+            submoduleWork: S,
+            movedToChangeset: O
+          } = s;
+          if (c === "unknown" && y === 0 && k === 0) return {
+            result: !1,
+            message: `Could not check the worktree's ${cj} folder, which may hold files saved from connectors that removing the worktree would delete.${h} Refusing to remove without explicit confirmation. Confirm with the user, then re-invoke with discard_changes: true to proceed \u2014 or use action: "keep" to preserve the worktree.`,
+            errorCode: 3
+          };
+          if (y > 0 || k > 0 || c !== 0) {
+            let A = [];
+            if (y > 0) A.push(`${y} uncommitted ${y===1?"file":"files"}${S?` (including ${y_e(S)}, which git status in the worktree does not show)`:""}`);
+            if (k > 0) A.push(`${k} ${k===1?"commit":"commits"} ${D5t(w??{head:"not_read",commits:k},n.worktreeBranch?zU(n.worktreeBranch):"the worktree branch","the worktree's current branch")}`);
+            if (c !== 0) A.push(c === "unknown" ? `a ${cj} folder that could not be checked, which may hold files saved from connectors that git doesn't track` : `${c===1?"1 item":`${c} items`} saved from connectors in ${cj}, a folder git doesn't track`);
+            return {
+              result: !1,
+              message: `Worktree has ${A.join(" and ")}. Removing will discard this work permanently.${O?` (Commits made in this worktree are already stored server-side, head changeset ${O.slice(0,12)}, and are not affected by removing it.)`:""}${h} ${kt}`,
+              errorCode: 2
+            }
+          }
+          if (w !== void 0 && "onKeptBranch" in w) {
+            let A = w.onKeptBranch;
+            return {
+              result: !1,
+              message: `The worktree is now on another branch, which has ${A} ${A===1?"commit":"commits"} that this session's starting commit lacks. Removing the worktree keeps that branch, so no commit is lost, but the user may still be working there.${h} ${kt}`,
+              errorCode: 2
+            }
+          }
+          if (h !== "") return {
+            result: !1,
+            message: `${h.trimStart()} ${kt}`,
+            errorCode: 6
+          }
+        }
+        return {
+          result: !0
+        }
+      },
+      async call(r) {
+        let n = ql();
+        if (!n) throw Error("Not in a worktree session");
+        let {
+          originalCwd: s,
+          preEnterOriginalCwd: c,
+          worktreePath: h,
+          worktreeBranch: y,
+          tmuxSessionName: k,
+          liveLaunchAnchor: w,
+          rootBeforeResume: S
+        } = n, O = Oo() === Ee(), A = r.action === "keep" && !1, {
+          changedFiles: W,
+          commits: M,
+          atStake: j,
+          movedToChangeset: Y
+        } = (A ? null : await Sn(h, n)) ?? {
+          changedFiles: 0,
+          commits: 0
+        }, G = j !== void 0 && j.head !== "not_read" && {
+          head: f(j.head),
+          ..."onKeptBranch" in j && {
+            commits_on_kept_branch: j.onKeptBranch ?? -1
+          }
+        };
+        if (r.action === "keep") {
+          await zQ(e.storageV5);
+          let Se = await _n(e.session, s, c, O, h, w, S, e.storageV5);
+          l("tengu_worktree_kept", {
+            mid_session: !0,
+            commits: M,
+            changed_files: W,
+            ...G
+          });
+          let we = k ? ` Tmux session ${zU(k)} is still running; reattach with \`tmux attach -t\` and that name.` : "";
+          return {
+            data: {
+              action: "keep",
+              originalCwd: s,
+              worktreePath: h,
+              worktreeBranch: y,
+              tmuxSessionName: k,
+              restoredCwd: Se.restoredCwd,
+              originalCwdMissing: Se.originalCwdMissing,
+              message: `Exited worktree. Your work is preserved at ${zU(h)}${y?` on branch ${zU(y)}`:""}. ${eo(s,Se)}${we}`
+            }
+          }
+        }
+        let N = await wn(h),
+          x = r.discard_changes ? 0 : await EHe(h);
+        if (x !== 0) throw new R(`Worktree not removed; the session is still in it. ${x==="unknown"?`Its ${cj} folder could not be checked, and may hold files saved from connectors that removing the worktree would delete.`:`Its ${cj} folder now holds files saved from connectors that removing the worktree would delete.`} ${kt}`, "ExitWorktree: stopped for files saved from connectors", "connector_downloads");
+        if (k) await cEe(k);
+        let H = await b8e(e.storageV5, e.credentials),
+          Z = await _n(e.session, s, c, O, h, w, S, e.storageV5);
+        if (!H) return {
+          data: {
+            action: "remove",
+            originalCwd: s,
+            worktreePath: h,
+            worktreeBranch: y,
+            discardedFiles: 0,
+            discardedCommits: 0,
+            restoredCwd: Z.restoredCwd,
+            originalCwdMissing: Z.originalCwdMissing,
+            message: `Exited worktree but could not remove it \u2014 kept at ${zU(h)}. ${eo(s,Z)}`
+          }
+        };
+        l("tengu_worktree_removed", {
+          source: b("exit_tool"),
+          mid_session: !0,
+          commits: M,
+          changed_files: W,
+          ...G,
+          ...N !== 0 && {
+            worktrees_inside: N ?? -1
+          }
+        });
+        let V = [];
+        if (M > 0) V.push(`${M} ${M===1?"commit":"commits"}`);
+        if (W > 0) V.push(`${W} uncommitted ${W===1?"file":"files"}`);
+        let ue = V.length > 0 ? ` Discarded ${V.join(" and ")}.` : "",
+          be = Y ? ` Commits made there remain stored server-side (head changeset ${Y.slice(0,12)}).` : "";
+        return {
+          data: {
+            action: "remove",
+            originalCwd: s,
+            worktreePath: h,
+            worktreeBranch: y,
+            discardedFiles: W,
+            discardedCommits: M,
+            restoredCwd: Z.restoredCwd,
+            originalCwdMissing: Z.originalCwdMissing,
+            message: `Exited and removed worktree at ${zU(h)}.${ue}${be} ${eo(s,Z)}`
+          }
+        }
+      }
+    }
+  },
+  mapToolResultToToolResultBlockParam({
+    message: e
+  }, r) {
+    return {
+      type: "tool_result",
+      content: e,
+      tool_use_id: r
+    }
+  }
+});
+var Rn = "Create a new task in the task list";
+
+function En() {
+  let e = Zo() ? " and potentially assigned to teammates" : "",
+    r = Zo() ? "- Include enough detail in the description for another agent to understand and complete the task\n- New tasks are created with status 'pending' and no owner - use TaskUpdate with the `owner` parameter to assign them\n" : "";
+  return `Use this tool to create a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.
+It also helps the user understand the progress of the task and overall progress of their requests.
+
+## When to Use This Tool
+
+Use this tool proactively in these scenarios:
+
+- Complex multi-step tasks - When a task requires 3 or more distinct steps or actions
+- Non-trivial and complex tasks - Tasks that require careful planning or multiple operations${e}
+- Plan mode - When using plan mode, create a task list to track the work
+- User explicitly requests todo list - When the user directly asks you to use the todo list
+- User provides multiple tasks - When users provide a list of things to be done (numbered or comma-separated)
+- After receiving new instructions - Immediately capture user requirements as tasks
+- When you start working on a task - Mark it as in_progress BEFORE beginning work
+- After completing a task - Mark it as completed and add any new follow-up tasks discovered during implementation
+
+## When NOT to Use This Tool
+
+Skip using this tool when:
+- There is only a single, straightforward task
+- The task is trivial and tracking it provides no organizational benefit
+- The task can be completed in less than 3 trivial steps
+- The task is purely conversational or informational
+
+NOTE that you should not use this tool if there is only one trivial task to do. In this case you are better off just doing the task directly.
+
+## Task Fields
+
+- **subject**: A brief, actionable title in imperative form (e.g., "Fix authentication bug in login flow")
+- **description**: What needs to be done
+- **activeForm** (optional): Present continuous form shown in the spinner when the task is in_progress (e.g., "Fixing authentication bug"). If omitted, the spinner shows the subject instead.
+
+All tasks are created with status \`pending\`.
+
+## Tips
+
+- Create tasks with clear, specific subjects that describe the outcome
+- After creating tasks, use TaskUpdate to set up dependencies (blocks/blockedBy) if needed
+${r}- Check TaskList first to avoid creating duplicate tasks
+`
+}
+var ol = p(() => He({
+    subject: o().describe("A brief title for the task"),
+    description: o().describe("What needs to be done"),
+    activeForm: o().optional().describe('Present continuous form shown in spinner when in_progress (e.g., "Running tests")'),
+    metadata: me(o(), oe()).optional().describe("Arbitrary metadata to attach to the task")
+  })),
+  rl = p(() => u({
+    task: u({
+      id: o(),
+      subject: o(),
+      description: o().optional().catch(void 0).describe("The task's description as saved. It can differ from the tool_use input if Claude Code corrects a malformed call or a PreToolUse hook changes the input. Absent in results from older Claude Code versions.")
+    })
+  })),
+  In = dn({
+    name: f_,
+    searchHint: "create a task in the task list",
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    async description() {
+      return Rn
+    },
+    async prompt() {
+      return En()
+    },
+    get inputSchema() {
+      return ol()
+    },
+    get outputSchema() {
+      return rl()
+    },
+    userFacingName() {
+      return "TaskCreate"
+    },
+    shouldDefer: !0,
+    coerceInput: t5t,
+    validationErrorSteer: Fbi,
+    isEnabled() {
+      return Mge()
+    },
+    isConcurrencySafe() {
+      return !1
+    },
+    toAutoClassifierInput(e) {
+      return e.subject
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create(e) {
+      return {
+        async call({
+          subject: r,
+          description: n,
+          activeForm: s,
+          metadata: c
+        }, {
+          signal: h,
+          onProgress: y
+        }) {
+          let k = await RLi(YT(), {
+              subject: r,
+              description: n,
+              activeForm: s,
+              status: "pending",
+              owner: void 0,
+              blocks: [],
+              blockedBy: [],
+              metadata: c
+            }, e.storageV5),
+            w = [],
+            S = e.runTaskHooks(oro, k, r, n, CE(), kc(), void 0, h);
+          try {
+            for await (let O of S) if (O.blockingError) w.push(uos(O.blockingError))
+          } catch (O) {
+            if (!(O instanceof du)) throw O;
+            t("TaskCreated hooks cancelled (control stream closed)")
+          }
+          if (w.length > 0) throw await Z7t(YT(), k, e.storageV5), Error(w.join(`
+`));
+          return y?.({
+            type: "set_expanded_view",
+            expandedView: "tasks"
+          }), {
+            data: {
+              task: {
+                id: k,
+                subject: r,
+                description: n
+              }
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      let {
+        task: n
+      } = e;
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: `Task #${n.id} created successfully: ${n.subject}`
+      }
+    }
+  });
+var On = "Get a task by ID from the task list",
+  An = `Use this tool to retrieve a task by its ID from the task list.
+
+## When to Use This Tool
+
+- When you need the full description and context before starting work on a task
+- To understand task dependencies (what it blocks, what blocks it)
+- After being assigned a task, to get complete requirements
+
+## Output
+
+Returns full task details:
+- **subject**: Task title
+- **description**: Detailed requirements and context
+- **status**: 'pending', 'in_progress', or 'completed'
+- **blocks**: Tasks waiting on this one to complete
+- **blockedBy**: Tasks that must complete before this one can start
+
+## Tips
+
+- After fetching a task, verify its blockedBy list is empty before beginning work.
+- Use TaskList to see all tasks in summary form.
+`;
+var nl = p(() => He({
+    taskId: o().describe("The ID of the task to retrieve")
+  })),
+  sl = p(() => u({
+    task: u({
+      id: o(),
+      subject: o(),
+      description: o(),
+      status: NTe(),
+      blocks: C(o()),
+      blockedBy: C(o())
+    }).nullable()
+  })),
+  xn = dn({
+    name: MZ,
+    searchHint: "retrieve a task by ID",
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    async description() {
+      return On
+    },
+    async prompt() {
+      return An
+    },
+    get inputSchema() {
+      return nl()
+    },
+    get outputSchema() {
+      return sl()
+    },
+    userFacingName() {
+      return "TaskGet"
+    },
+    shouldDefer: !0,
+    isEnabled() {
+      return Mge()
+    },
+    isConcurrencySafe() {
+      return !0
+    },
+    isReadOnly() {
+      return !0
+    },
+    toAutoClassifierInput(e) {
+      return e.taskId
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create({
+      storageV5: e
+    }) {
+      return {
+        async call({
+          taskId: r
+        }) {
+          let n = YT(),
+            s = await z9(n, r, e);
+          if (!s) return {
+            data: {
+              task: null
+            }
+          };
+          return {
+            data: {
+              task: {
+                id: s.id,
+                subject: s.subject,
+                description: s.description,
+                status: s.status,
+                blocks: s.blocks,
+                blockedBy: s.blockedBy
+              }
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      let {
+        task: n
+      } = e;
+      if (!n) return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: "Task not found"
+      };
+      let s = [`Task #${n.id}: ${n.subject}`, `Status: ${n.status}`, `Description: ${n.description}`];
+      if (n.blockedBy.length > 0) s.push(`Blocked by: ${n.blockedBy.map((c)=>`#${c}`).join(", ")}`);
+      if (n.blocks.length > 0) s.push(`Blocks: ${n.blocks.map((c)=>`#${c}`).join(", ")}`);
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: s.join(`
+`)
+      }
+    }
+  });
+var Pn = "Update a task in the task list",
+  zn = `Use this tool to update a task in the task list.
+
+## When to Use This Tool
+
+**Mark tasks as resolved:**
+- When you have completed the work described in a task
+- When a task is no longer needed or has been superseded
+- IMPORTANT: Always mark your assigned tasks as resolved when you finish them
+- After resolving, call TaskList to find your next task
+
+- ONLY mark a task as completed when you have FULLY accomplished it
+- If you encounter errors, blockers, or cannot finish, keep the task as in_progress
+- When blocked, create a new task describing what needs to be resolved
+- Never mark a task as completed if:
+  - Tests are failing
+  - Implementation is partial
+  - You encountered unresolved errors
+  - You couldn't find necessary files or dependencies
+
+**Delete tasks:**
+- When a task is no longer relevant or was created in error
+- Setting status to \`deleted\` permanently removes the task
+
+**Update task details:**
+- When requirements change or become clearer
+- When establishing dependencies between tasks
+
+## Fields You Can Update
+
+- **status**: The task status (see Status Workflow below)
+- **subject**: Change the task title (imperative form, e.g., "Run tests")
+- **description**: Change the task description
+- **activeForm**: Present continuous form shown in spinner when in_progress (e.g., "Running tests")
+- **owner**: Change the task owner (agent name)
+- **metadata**: Merge metadata keys into the task (set a key to null to delete it)
+- **addBlocks**: Mark tasks that cannot start until this one completes
+- **addBlockedBy**: Mark tasks that must complete before this one can start
+
+## Status Workflow
+
+Status progresses: \`pending\` \u2192 \`in_progress\` \u2192 \`completed\`
+
+Use \`deleted\` to permanently remove a task.
+
+## Staleness
+
+Make sure to read a task's latest state using \`TaskGet\` before updating it.
+
+## Examples
+
+Mark task as in progress when starting work:
+\`\`\`json
+{"taskId": "1", "status": "in_progress"}
+\`\`\`
+
+Mark task as completed after finishing work:
+\`\`\`json
+{"taskId": "1", "status": "completed"}
+\`\`\`
+
+Delete a task:
+\`\`\`json
+{"taskId": "1", "status": "deleted"}
+\`\`\`
+
+Claim a task by setting owner:
+\`\`\`json
+{"taskId": "1", "owner": "my-name"}
+\`\`\`
+
+Set up task dependencies:
+\`\`\`json
+{"taskId": "2", "addBlockedBy": ["1"]}
+\`\`\`
+`;
+var il = p(() => {
+    let e = NTe().or(T("deleted"));
+    return He({
+      taskId: o().describe("The ID of the task to update"),
+      subject: o().optional().describe("New subject for the task"),
+      description: o().optional().describe("New description for the task"),
+      activeForm: o().optional().describe('Present continuous form shown in spinner when in_progress (e.g., "Running tests")'),
+      status: e.optional().describe("New status for the task"),
+      addBlocks: C(o()).optional().describe("Task IDs that this task blocks"),
+      addBlockedBy: C(o()).optional().describe("Task IDs that block this task"),
+      owner: o().optional().describe("New owner for the task"),
+      metadata: me(o(), oe()).optional().describe("Metadata keys to merge into the task. Set a key to null to delete it.")
+    })
+  }),
+  al = p(() => u({
+    success: I(),
+    taskId: o(),
+    updatedFields: C(o()),
+    error: o().optional(),
+    statusChange: u({
+      from: o(),
+      to: o()
+    }).optional()
+  })),
+  Ln = dn({
+    name: vb,
+    searchHint: "update a task",
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    async description() {
+      return Pn
+    },
+    async prompt() {
+      return zn
+    },
+    get inputSchema() {
+      return il()
+    },
+    get outputSchema() {
+      return al()
+    },
+    userFacingName() {
+      return "TaskUpdate"
+    },
+    coerceInput: SPt,
+    shouldDefer: !0,
+    isEnabled() {
+      return Mge()
+    },
+    isConcurrencySafe() {
+      return !0
+    },
+    toAutoClassifierInput(e) {
+      let r = SPt(e)?.input ?? e,
+        n = [r.taskId];
+      if (r.status) n.push(r.status);
+      if (r.subject) n.push(r.subject);
+      return n.join(" ")
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create(e) {
+      return {
+        async call({
+          taskId: r,
+          subject: n,
+          description: s,
+          activeForm: c,
+          status: h,
+          owner: y,
+          addBlocks: k,
+          addBlockedBy: w,
+          metadata: S
+        }, {
+          signal: O,
+          onProgress: A
+        }) {
+          let W = YT();
+          A?.({
+            type: "set_expanded_view",
+            expandedView: "tasks"
+          });
+          let M = e.storageV5,
+            j = await z9(W, r, M);
+          if (!j) return {
+            data: {
+              success: !1,
+              taskId: r,
+              updatedFields: [],
+              error: "Task not found"
+            }
+          };
+          let Y = [],
+            G = {};
+          if (n !== void 0 && n !== j.subject) G.subject = n, Y.push("subject");
+          if (s !== void 0 && s !== j.description) G.description = s, Y.push("description");
+          if (c !== void 0 && c !== j.activeForm) G.activeForm = c, Y.push("activeForm");
+          if (y !== void 0 && y !== j.owner) G.owner = y, Y.push("owner");
+          if (Zo() && h === "in_progress" && y === void 0 && !j.owner) {
+            let N = CE();
+            if (N) G.owner = N, Y.push("owner")
+          }
+          if (S !== void 0) G.metadata = NDt(j.metadata, S), Y.push("metadata");
+          if (h !== void 0) {
+            if (h === "deleted") {
+              let N = await Z7t(W, r, M);
+              return {
+                data: {
+                  success: N,
+                  taskId: r,
+                  updatedFields: N ? ["deleted"] : [],
+                  error: N ? void 0 : "Failed to delete task",
+                  statusChange: N ? {
+                    from: j.status,
+                    to: "deleted"
+                  } : void 0
+                }
+              }
+            }
+            if (h !== j.status) {
+              if (h === "completed") {
+                let N = [],
+                  x = e.runTaskHooks(N8t, r, j.subject, j.description, CE(), kc(), void 0, O);
+                try {
+                  for await (let H of x) if (H.blockingError) N.push(xAn(H.blockingError))
+                } catch (H) {
+                  if (!(H instanceof du)) throw H;
+                  t("TaskCompleted hooks cancelled (control stream closed)")
+                }
+                if (N.length > 0) return {
+                  data: {
+                    success: !1,
+                    taskId: r,
+                    updatedFields: [],
+                    error: N.join(`
+`)
+                  }
+                }
+              }
+              G.status = h, Y.push("status")
+            }
+          }
+          if (Object.keys(G).length > 0) await FTe(W, r, G, M);
+          if (G.owner && Zo()) {
+            let N = CE() || "team-lead",
+              x = RO(),
+              H = _({
+                type: "task_assignment",
+                taskId: r,
+                subject: j.subject,
+                description: j.description,
+                assignedBy: N,
+                timestamp: new Date().toISOString()
+              });
+            await YE(G.owner, {
+              from: N,
+              text: H,
+              timestamp: new Date().toISOString(),
+              color: x
+            }, kc() ?? Ni().taskList.leaderTeamName ?? W, M)
+          }
+          if (k && k.length > 0) {
+            let N = k.filter((x) => !j.blocks.includes(x));
+            for (let x of N) await eQt(W, r, x, M);
+            if (N.length > 0) Y.push("blocks")
+          }
+          if (w && w.length > 0) {
+            let N = w.filter((x) => !j.blockedBy.includes(x));
+            for (let x of N) await eQt(W, x, r, M);
+            if (N.length > 0) Y.push("blockedBy")
+          }
+          return {
+            data: {
+              success: !0,
+              taskId: r,
+              updatedFields: Y,
+              statusChange: G.status !== void 0 ? {
+                from: j.status,
+                to: G.status
+              } : void 0
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      let {
+        success: n,
+        taskId: s,
+        updatedFields: c,
+        error: h,
+        statusChange: y
+      } = e;
+      if (!n) return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: h || `Task #${s} not found`
+      };
+      let k = `Updated task #${s} ${c.join(", ")}`;
+      if (y?.to === "completed" && qD() && Zo()) k += `
+
+Task completed. Call TaskList now to find your next available task or see if your work unblocked others.`;
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: k
+      }
+    }
+  });
+var Mn = "List all tasks in the task list";
+
+function $n() {
+  let e = Zo() ? `- Before assigning tasks to teammates, to see what's available
+` : "",
+    r = Zo() ? "- **id**: Task identifier (use with TaskGet, TaskUpdate)" : "- **id**: Task identifier (use with TaskGet, TaskUpdate)",
+    n = Zo() ? `
+## Teammate Workflow
+
+When working as a teammate:
+1. After completing your current task, call TaskList to find available work
+2. Look for tasks with status 'pending', no owner, and empty blockedBy
+3. **Prefer tasks in ID order** (lowest ID first) when multiple tasks are available, as earlier tasks often set up context for later ones
+4. Claim an available task using TaskUpdate (set \`owner\` to your name), or wait for leader assignment
+5. If blocked, focus on unblocking tasks or notify the team lead
+` : "";
+  return `Use this tool to list all tasks in the task list.
+
+## When to Use This Tool
+
+- To see what tasks are available to work on (status: 'pending', no owner, not blocked)
+- To check overall progress on the project
+- To find tasks that are blocked and need dependencies resolved
+${e}- After completing a task, to check for newly unblocked work or claim the next available task
+- **Prefer working on tasks in ID order** (lowest ID first) when multiple tasks are available, as earlier tasks often set up context for later ones
+
+## Output
+
+Returns a summary of each task:
+${r}
+- **subject**: Brief description of the task
+- **status**: 'pending', 'in_progress', or 'completed'
+- **owner**: Agent ID if assigned, empty if available
+- **blockedBy**: List of open task IDs that must be resolved first (tasks with blockedBy cannot be claimed until dependencies resolve)
+
+Use TaskGet with a specific task ID to view full details including description and comments.
+${n}`
+}
+var ll = p(() => He({})),
+  ul = p(() => u({
+    tasks: C(u({
+      id: o(),
+      subject: o(),
+      status: NTe(),
+      owner: o().optional(),
+      blockedBy: C(o())
+    }))
+  })),
+  Bn = dn({
+    name: KP,
+    searchHint: "list all tasks",
+    backgrounding: "never",
+    maxResultSizeChars: 1e5,
+    async description() {
+      return Mn
+    },
+    async prompt() {
+      return $n()
+    },
+    get inputSchema() {
+      return ll()
+    },
+    get outputSchema() {
+      return ul()
+    },
+    userFacingName() {
+      return "TaskList"
+    },
+    shouldDefer: !0,
+    isEnabled() {
+      return Mge()
+    },
+    isConcurrencySafe() {
+      return !0
+    },
+    isReadOnly() {
+      return !0
+    },
+    renderToolUseMessage() {
+      return null
+    },
+    create({
+      storageV5: e
+    }) {
+      return {
+        async call(r) {
+          let n = YT(),
+            s = (await II(n, e)).filter((y) => !y.metadata?._internal),
+            c = new Set(s.filter((y) => y.status === "completed").map((y) => y.id));
+          return {
+            data: {
+              tasks: s.map((y) => ({
+                id: y.id,
+                subject: y.subject,
+                status: y.status,
+                owner: y.owner,
+                blockedBy: y.blockedBy.filter((k) => !c.has(k))
+              }))
+            }
+          }
+        }
+      }
+    },
+    mapToolResultToToolResultBlockParam(e, r) {
+      let {
+        tasks: n
+      } = e;
+      if (n.length === 0) return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: "No tasks found"
+      };
+      let s = n.map((c) => {
+        let h = c.owner ? ` (${c.owner})` : "",
+          y = c.blockedBy.length > 0 ? ` [blocked by ${c.blockedBy.map((k)=>`#${k}`).join(", ")}]` : "";
+        return `#${c.id} [${c.status}] ${c.subject}${h}${y}`
+      });
+      return {
+        tool_use_id: r,
+        type: "tool_result",
+        content: s.join(`
+`)
+      }
+    }
+  });
+
+function jn(e, r) {
+  let n, s = () => n ??= r(),
+    c = new Set(Reflect.ownKeys(e));
+  return new Proxy(e, {
+    get(h, y, k) {
+      if (c.has(y)) return Reflect.get(h, y, k);
+      return typeof y === "symbol" && n === void 0 ? void 0 : Reflect.get(s(), y, k)
+    },
+    has(h, y) {
+      if (c.has(y)) return !0;
+      return typeof y === "symbol" && n === void 0 ? !1 : (y in s())
+    },
+    ownKeys() {
+      return Reflect.ownKeys(s())
+    },
+    getOwnPropertyDescriptor(h, y) {
+      let k = c.has(y) ? Reflect.getOwnPropertyDescriptor(h, y) : Reflect.getOwnPropertyDescriptor(s(), y);
+      return k && {
+        ...k,
+        configurable: !0
+      }
+    },
+    set(h, y, k) {
+      return c.delete(y), Reflect.set(s(), y, k)
+    },
+    defineProperty(h, y, k) {
+      return c.delete(y), Reflect.defineProperty(s(), y, k)
+    },
+    deleteProperty(h, y) {
+      return c.delete(y), Reflect.deleteProperty(s(), y)
+    }
+  })
+}
+
+function oZs() {
+  FGs(!0)
+}
+
+function Wn() {
+  return HGs()
+}
+var dl = [import.meta.require("B:/~BUN/root/chunk-1r99j4rz.js").CronCreateTool, import.meta.require("B:/~BUN/root/chunk-jd68penw.js").CronDeleteTool, import.meta.require("B:/~BUN/root/chunk-nd548xb7.js").CronListTool],
+  ml = import.meta.require("B:/~BUN/root/chunk-pqagxeyc.js").SELF_HOSTED_RUNNER_TOOLS,
+  Un = import.meta.require("B:/~BUN/root/chunk-2yymb2pe.js").RemoteTriggerTool,
+  qn = import.meta.require("B:/~BUN/root/chunk-w3epq04v.js").SearchMcpRegistryTool,
+  Gn = import.meta.require("B:/~BUN/root/chunk-2ae5b41c.js").SuggestConnectorsTool,
+  Kn = import.meta.require("B:/~BUN/root/chunk-mqrgt1kk.js").ListConnectorsTool,
+  pl = import.meta.require("B:/~BUN/root/chunk-6a33xc00.js").PLUGIN_SKILL_TOOLS,
+  Yn = import.meta.require("B:/~BUN/root/chunk-8bynsdd8.js").MonitorTool,
+  fl = import.meta.require("B:/~BUN/root/chunk-wr8sez6j.js").SendUserFileTool,
+  hl = import.meta.require("B:/~BUN/root/chunk-amc25bq2.js").ProposeSkillsTool,
+  gl = import.meta.require("B:/~BUN/root/chunk-qff4gw0g.js").ProposeGoalTool,
+  yl = import.meta.require("B:/~BUN/root/chunk-ej5xjm5b.js").PublishPluginTool,
+  Xn = import.meta.require("B:/~BUN/root/chunk-278kzvy3.js").PushNotificationTool,
+  kl = import.meta.require("B:/~BUN/root/chunk-xnnmqy1z.js").DesignSyncTool,
+  Tl = () => {
+    if (St()) return null;
+    return import.meta.require("B:/~BUN/root/chunk-yjf1e64e.js").DesignTool
+  },
+  bl = import.meta.require("B:/~BUN/root/chunk-k860qadp.js").ProjectsTool,
+  je = import.meta.require("B:/~BUN/root/chunk-r113m98m.js").FetchInboxMessageTool,
+  Qn = import.meta.require("B:/~BUN/root/chunk-p9dxx93h.js").EndConversationTool,
+  oo = () => import.meta.require("B:/~BUN/root/chunk-0gm26237.js").SendMessageTool,
+  Sl = () => import.meta.require("B:/~BUN/root/chunk-np78y18p.js").SendFileTool,
+  Zn = import.meta.require("B:/~BUN/root/chunk-5maah5ae.js").ContinueInProjectsTool,
+  Jn = import.meta.require("B:/~BUN/root/chunk-5maah5ae.js").ContinueInProjectsContextTool,
+  wl = import.meta.require("B:/~BUN/root/chunk-1ykd6vc0.js").ENABLE_STUB_TOOLS,
+  ke = import.meta.require("B:/~BUN/root/chunk-bg22c8j9.js").PollTool,
+  es = jn(import.meta.require("B:/~BUN/root/chunk-eadtx02y.js").ARTIFACT_TOOL_HEAD, () => import.meta.require("B:/~BUN/root/chunk-6xxjm8vn.js").ArtifactTool);
+
+function _l() {
+  import.meta.require("B:/~BUN/root/chunk-6xxjm8vn.js")
+}
+var Cl = () => import.meta.require("B:/~BUN/root/chunk-18rcsp30.js").ARTIFACT_ADDON_TOOLS,
+  ts = import.meta.require("B:/~BUN/root/chunk-aq3kac7d.js").AppifactReplTool,
+  os = null,
+  vl = [],
+  rs = null,
+  ss = null,
+  bt = import.meta.require("B:/~BUN/root/chunk-0rsphtkf.js"),
+  is = null,
+  ls = null,
+  Rl = null,
+  us = null,
+  cs = import.meta.require("B:/~BUN/root/chunk-3haeg7n6.js").ListAgentsTool,
+  ro = (() => (import.meta.require("B:/~BUN/root/chunk-jxjw352j.js").initBundledWorkflows(), import.meta.require("B:/~BUN/root/chunk-4nakdarb.js").WorkflowTool))(),
+  no = () => {
+    if (!jk()) return null;
+    return import.meta.require("B:/~BUN/root/chunk-939483qt.js").PowerShellTool
+  };
+
+function ms() {
+  if (le()) {
+    let e = import.meta.require("B:/~BUN/root/chunk-2bp0143q.js");
+    return e.registerEvalToolSeams(), e.EvalTool
+  }
+  return null
+}
+
+function vS() {
+  pCe.loadWriters = _l;
+  let e = Tl(),
+    r = ms();
+  return [nyn, ...Ll() ? [li] : [], ...[uF, fF].filter((n) => !sde().has(n.name)), b8, nR, Vw, XC, ...(Rl?.() ?? []).filter((n) => !sde().has(n.underlyingV1ToolName)), WMe, ...yr, _b, fr, dr, lr, Qe, L8, Fr, eit, ...Zn ? [Zn] : [], ...Jn ? [Jn] : [], BJn, ...[], kl, ...e ? [e] : [], bl, ...ss ? [ss] : [], ...bL() ? [In, xn, Ln, Bn] : [], ...es ? [es] : [], ...Cl(), ...ts ? [ts] : [], ...rs ? [rs] : [], ...vl, ...DXe() ? [Zt] : [], ...hVt() ? [Tn, vn] : [], oo(), Sl(), ...cs ? [cs] : [], Eo, ...r ? [r] : [], ...os ? [os] : [], ...ke ? [ke] : [], ro, ...dl, ...Wn() ? ml : [], rr, ...Un ? [Un] : [], ...qn ? [qn] : [], ...Gn ? [Gn] : [], xo, Lo, qgn, io, wo, ...wl, ...Kn ? [Kn] : [], ...pl, ...Yn ? [Yn] : [], or, fl, hl, gl, yl, ...Xn ? [Xn] : [], ...je ? [je] : [], ...Qn ? [Qn] : [], ...no() ? [no()] : [], ...is ? [is] : [], ...ls ? [ls] : [], ...us ? [us()] : [], ...[], DB, LB, D8, ...i.CLAUDE_CODE_ENABLE_REFRESH_MCP_TOOLS ? [Jt] : [], ...lh() ? [gZr] : [], uns, Kr]
+}
+Uzi(vS);
+
+function mjo(e, r) {
+  let n = new Set(vS().map((s) => s.name));
+  return Wwe([...n$(r), ...e.filter((s) => !n.has(s.name))], (s) => s.name)
+}
+
+function hjo(e, r) {
+  let n = [];
+  if (ke !== null && !e.includes(ke)) n.push(ke);
+  if (je && !e.includes(je)) n.push(je);
+  if (n.length === 0) return e;
+  let s = n$(r),
+    c = n.filter((h) => s.includes(h));
+  return c.length === 0 ? e : [...e, ...c]
+}
+
+function Tt(e, r) {
+  return r === void 0 ? e : e.filter((n) => r.has(n.name))
+}
+var n$ = (e, r) => {
+    if (i.CLAUDE_CODE_SIMPLE && !r?.skipSimpleModeFilter) {
+      let S = ms();
+      if (S !== null && $i() && !r?.skipReplFilter) {
+        let M = AM() || e.restricted === !0 && lo(e, S) !== null ? [nR, Vw, XC] : [S, Vw, XC];
+        if (ke !== null && VI()) M.push(ke);
+        if (bt.isCoordinatorMode()) M.push(nyn, Qe, oo(), ...im() ? [ro] : []);
+        return Tt(MW(M, e), r?.onlyNames)
+      }
+      let O = no(),
+        A = [...Ll() ? [li] : [], ...O ? [O] : [], nR, Vw];
+      if (bt.isCoordinatorMode()) A.push(nyn, Qe, oo(), ...im() ? [ro] : []);
+      return Tt(MW(A, e), r?.onlyNames)
+    }
+    let n = new Set([DB.name, LB.name, D8.name, cl]),
+      s = vS().filter((S) => !n.has(S.name)),
+      c = MW(s, e),
+      h = c.some((S) => ht(S, Me)) && li.isEnabled(),
+      y = !1;
+    if ($i() && !r?.skipReplFilter) {
+      if (c.some((O) => ht(O, co))) c = c.filter((O) => !Mv(O, NCe)), y = !0
+    }
+    if (!r?.skipReplFilter && Q5t(c, e, {
+        activeAgents: r?.activeAgents
+      })) c = c.filter((S) => !ht(S, Vn));
+    c = Tt(c, r?.onlyNames);
+    let k = c.map((S) => S.isEnabled()),
+      w = c.filter((S, O) => k[O]);
+    if (yx() && !h && !y) {
+      let S = MW([uF, fF, ...$Sr([fF.name, uF.name])].filter((O) => !w.includes(O)), e);
+      w = [...w, ...S]
+    }
+    if ((nwi() || sct()) && !h_(w) && !w.some((S) => ht(S, as)) && !w.some((S) => ht(S, $$))) w = [...w, ...MW([uns], e)];
+    return Tt(w, r?.onlyNames)
+  },
+  gjo = 30000;
+
+function mVt(e, r, n) {
+  pei();
+  let s = n$(e, n),
+    c = Wwe(LWe([...n?.machineMcpTools ?? [], ...r]), (k) => k.name),
+    h = KXn(VXn(MW(c, e), c), c),
+    y = fei(s, h);
+  return Wwe(y.toSorted(HCe).concat(h.sort(HCe)), (k) => k.name)
+}
+var c8 = {
+  getAllBaseTools: vS,
+  getTools: n$,
+  assembleToolPool: mVt
+};
+export {
+  lVr,
+  KQs,
+  qgn,
+  bXn,
+  SXn,
+  wXn,
+  kXn,
+  vXn,
+  EXn,
+  nTt,
+  Ygn,
+  dVr,
+  cVr,
+  rTt,
+  Ehe,
+  The,
+  Xgn,
+  Cke,
+  uVr,
+  fVr,
+  pVr,
+  Jgn,
+  mVr,
+  qUe,
+  hVr,
+  gVr,
+  oTt,
+  TXn,
+  Qgn,
+  Zgn,
+  qQs,
+  YQs,
+  XQs,
+  yVr,
+  Rke,
+  fjo,
+  _Vr,
+  bVr,
+  Ake,
+  CXn,
+  JQs,
+  QQs,
+  ZQs,
+  pVt,
+  pjo,
+  eZs,
+  RXn,
+  tZs,
+  nZs,
+  rZs,
+  oZs,
+  vS,
+  mjo,
+  hjo,
+  n$,
+  gjo,
+  mVt,
+  c8
+};

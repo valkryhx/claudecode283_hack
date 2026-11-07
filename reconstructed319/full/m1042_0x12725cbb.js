@@ -1,0 +1,272 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  wa,
+  bh
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  Jo,
+  UBt
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  S
+} from "B:/~BUN/root/chunk-bn4bjw9d.js";
+import {
+  ot,
+  n,
+  PYe,
+  pl
+} from "B:/~BUN/root/chunk-qey16aan.js";
+import {
+  ow
+} from "B:/~BUN/root/chunk-vxjrk7vf.js";
+import {
+  Se
+} from "B:/~BUN/root/chunk-x24hm796.js";
+import {
+  AYe,
+  kS,
+  Ry,
+  hv
+} from "B:/~BUN/root/chunk-9ezywpz7.js";
+import {
+  gp
+} from "B:/~BUN/root/chunk-nyy541yq.js";
+import {
+  ne,
+  e,
+  r
+} from "B:/~BUN/root/chunk-t16eynda.js";
+import {
+  Lg
+} from "B:/~BUN/root/chunk-e7wx2kwq.js";
+import {
+  re
+} from "B:/~BUN/root/chunk-xkw95p5n.js";
+import {
+  ce
+} from "B:/~BUN/root/chunk-w7vsj9wa.js";
+var WPe = {
+    success: {
+      icon: re.tick,
+      color: "success",
+      ariaLabel: "done:"
+    },
+    error: {
+      icon: re.cross,
+      color: "error",
+      ariaLabel: "failed:"
+    },
+    warning: {
+      icon: re.warning,
+      color: "warning",
+      ariaLabel: "warning:"
+    },
+    info: {
+      icon: re.info,
+      color: "suggestion",
+      ariaLabel: "note:"
+    },
+    pending: {
+      icon: re.circle,
+      color: void 0,
+      ariaLabel: "pending:"
+    },
+    loading: {
+      icon: "\u2026",
+      color: void 0,
+      ariaLabel: "loading:"
+    },
+    running: {
+      icon: Jo,
+      color: void 0,
+      ariaLabel: "running:"
+    },
+    on: {
+      icon: re.tick,
+      color: "success",
+      ariaLabel: "on:"
+    },
+    off: {
+      icon: re.circle,
+      color: void 0,
+      ariaLabel: "off:"
+    },
+    working: {
+      icon: UBt,
+      color: void 0,
+      ariaLabel: "working:"
+    },
+    needsYou: {
+      icon: UBt,
+      color: "warning",
+      ariaLabel: "needs you:"
+    },
+    idle: {
+      icon: UBt,
+      color: void 0,
+      ariaLabel: "idle:"
+    },
+    failed: {
+      icon: UBt,
+      color: "error",
+      ariaLabel: "error:"
+    }
+  },
+  I = {
+    working: UBt,
+    needsYou: "!",
+    idle: "\u25E6",
+    failed: "\xD7"
+  },
+  L = 8,
+  Y = 200;
+
+function rEt() {
+  return Math.max(...Object.values(WPe).map((l) => ce(l.icon)))
+}
+
+function N5n() {
+  return rEt() + 1
+}
+
+function Tt(l) {
+  let a = S(20),
+    {
+      status: i,
+      "aria-label": s,
+      withSpace: u,
+      slot: o
+    } = l,
+    c = u === void 0 ? !1 : u;
+  if (i === void 0) {
+    let p;
+    if (a[0] !== o) p = o && e(n, {
+      children: " ".repeat(N5n())
+    }), a[0] = o, a[1] = p;
+    else p = a[1];
+    return p
+  }
+  let t = WPe[i],
+    p;
+  if (a[2] !== s || a[3] !== t || a[4] !== o) p = s ?? (o === "trailing" ? bh(t.ariaLabel, ":") : t.ariaLabel), a[2] = s, a[3] = t, a[4] = o, a[5] = p;
+  else p = a[5];
+  let d = p;
+  if (B(i)) {
+    let f;
+    if (a[6] !== o || a[7] !== d || a[8] !== i || a[9] !== c) f = e(M, {
+      status: i,
+      spoken: d,
+      slot: o,
+      withSpace: c
+    }), a[6] = o, a[7] = d, a[8] = i, a[9] = c, a[10] = f;
+    else f = a[10];
+    return f
+  }
+  const f = t.color,
+    m = !t.color;
+  let g;
+  if (a[11] !== t.icon || a[12] !== o || a[13] !== d || a[14] !== c) g = x(t.icon, d, o, c), a[11] = t.icon, a[12] = o, a[13] = d, a[14] = c, a[15] = g;
+  else g = a[15];
+  let k;
+  if (a[16] !== t.color || a[17] !== m || a[18] !== g) k = e(n, {
+    color: f,
+    dimColor: m,
+    children: g
+  }), a[16] = t.color, a[17] = m, a[18] = g, a[19] = k;
+  else k = a[19];
+  return k
+}
+
+function x(l, i, s, u) {
+  let o = s === void 0 ? u && " " : wa(" ", N5n() - ce(l));
+  return r(ne, {
+    children: [s === "trailing" && o, e(n, {
+      "aria-label": i,
+      children: l
+    }), s !== "trailing" && o]
+  })
+}
+
+function B(l) {
+  return l in I
+}
+
+function M(l) {
+  let a = S(17),
+    {
+      status: i,
+      spoken: s,
+      slot: u,
+      withSpace: o
+    } = l,
+    c = ow(),
+    p;
+  if (a[0] !== c.subtle) p = hv(c.subtle), a[0] = c.subtle, a[1] = p;
+  else p = a[1];
+  let t = p,
+    d;
+  if (a[2] !== c.inactive) d = hv(c.inactive), a[2] = c.inactive, a[3] = d;
+  else d = a[3];
+  let f = d,
+    {
+      color: m
+    } = WPe[i],
+    g = Se.level >= 2 && t !== null && f !== null;
+  const k = g ? UBt : I[i];
+  let K;
+  if (a[4] !== u || a[5] !== s || a[6] !== k || a[7] !== o) K = x(k, s, u, o), a[4] = u, a[5] = s, a[6] = k, a[7] = o, a[8] = K;
+  else K = a[8];
+  let b = K;
+  if (g && i === "working") {
+    let w;
+    if (a[9] !== f || a[10] !== t || a[11] !== b) w = e(N, {
+      dimmer: t,
+      dim: f,
+      children: b
+    }), a[9] = f, a[10] = t, a[11] = b, a[12] = w;
+    else w = a[12];
+    return w
+  }
+  const w = !m;
+  let Q;
+  if (a[13] !== m || a[14] !== b || a[15] !== w) Q = e(n, {
+    color: m,
+    dimColor: w,
+    children: b
+  }), a[13] = m, a[14] = b, a[15] = w, a[16] = Q;
+  else Q = a[16];
+  return Q
+}
+
+function N(l) {
+  let d = S(8),
+    {
+      dimmer: i,
+      dim: s,
+      children: u
+    } = l,
+    o = gp(),
+    c = ot(),
+    a = o || c,
+    p = Math.ceil(PYe(Y) / Lg) * Lg,
+    [, t] = pl(a ? null : p),
+    f;
+  if (d[0] !== s || d[1] !== i || d[2] !== a || d[3] !== t) f = a ? "subtle" : Ry(kS(i, s, AYe(Math.floor(t / p) % L, L))), d[0] = s, d[1] = i, d[2] = a, d[3] = t, d[4] = f;
+  else f = d[4];
+  let m = f,
+    g;
+  if (d[5] !== u || d[6] !== m) g = e(n, {
+    color: m,
+    children: u
+  }), d[5] = u, d[6] = m, d[7] = g;
+  else g = d[7];
+  return g
+}
+export {
+  WPe,
+  rEt,
+  N5n,
+  Tt
+};

@@ -1,0 +1,1568 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  m5
+} from "B:/~BUN/root/chunk-fjzk7kwf.js";
+import {
+  d,
+  k,
+  K
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  J
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  bt,
+  Yl,
+  zet
+} from "B:/~BUN/root/chunk-ja520myc.js";
+import {
+  vt,
+  t,
+  oi
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  Ue
+} from "B:/~BUN/root/chunk-eev762xg.js";
+import {
+  Zd
+} from "B:/~BUN/root/chunk-3vtkd50k.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  ae
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  jn,
+  bj
+} from "B:/~BUN/root/chunk-rr294jrm.js";
+import {
+  Jl
+} from "B:/~BUN/root/chunk-nzh2qzgc.js";
+import {
+  tn
+} from "B:/~BUN/root/chunk-1fg2bpc3.js";
+import {
+  jIr
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  Qd
+} from "B:/~BUN/root/chunk-3xdsa4p8.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  Ve
+} from "B:/~BUN/root/chunk-myfamxtp.js";
+import {
+  et
+} from "B:/~BUN/root/chunk-fkr27nhj.js";
+import {
+  Bs,
+  Kn
+} from "B:/~BUN/root/chunk-gvasf6q6.js";
+import {
+  IUt,
+  $u,
+  san,
+  J3,
+  WFe
+} from "B:/~BUN/root/chunk-grwykqvw.js";
+import {
+  wAe,
+  mH,
+  n5,
+  na
+} from "B:/~BUN/root/chunk-5az22yft.js";
+import {
+  KD,
+  ha,
+  RU,
+  ej
+} from "B:/~BUN/root/chunk-q2rjek8y.js";
+import {
+  k3
+} from "B:/~BUN/root/chunk-m749kjym.js";
+import {
+  Hyi,
+  Vd,
+  Y0,
+  h3t,
+  xZo,
+  PZo,
+  dQr,
+  _$,
+  GTn
+} from "B:/~BUN/root/chunk-27h4st9h.js";
+import {
+  T_r
+} from "B:/~BUN/root/chunk-1tbewxs3.js";
+import {
+  o_e,
+  Hoe,
+  kL
+} from "B:/~BUN/root/chunk-cj2cn5y2.js";
+import {
+  Ng
+} from "B:/~BUN/root/chunk-j6qn83yk.js";
+import {
+  mr
+} from "B:/~BUN/root/chunk-s20ae4sg.js";
+import {
+  o,
+  E,
+  C,
+  u,
+  B,
+  T
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  Go
+} from "B:/~BUN/root/chunk-cf143bsb.js";
+import {
+  nt
+} from "B:/~BUN/root/chunk-tq5dzbq9.js";
+import {
+  createHash as Te
+} from "crypto";
+import {
+  basename as st,
+  join as Y
+} from "path";
+
+function ve(e) {
+  if (e.kind !== "resolved" || !Vd()) return;
+  let r = _$(),
+    n = r.lastResolvedAccountToken;
+  if (r.lastResolvedAccountToken = e.token, n === void 0 || n === e.token) return;
+  bt().identityEpoch += 1, Ukn(), Ze()
+}
+
+function Ze() {
+  let e = bt();
+  if (!e.identityTrippedHandler) {
+    e.identityTripUnowned = !0;
+    return
+  }
+  queueMicrotask(() => {
+    let r = bt().identityTrippedHandler;
+    if (!r) {
+      bt().identityTripUnowned = !0;
+      return
+    }
+    try {
+      r()
+    } catch (n) {
+      t(`MCP identity-change handler failed: ${d(n)}`, {
+        level: "warn"
+      })
+    }
+  })
+}
+
+function Xor(e) {
+  let r = bt();
+  return r.identityTrippedHandler = e, () => {
+    if (r.identityTrippedHandler === e) r.identityTrippedHandler = null
+  }
+}
+
+function Jor() {
+  let e = bt(),
+    r = e.identityTripUnowned;
+  return e.identityTripUnowned = !1, r
+}
+
+function se() {
+  if (!Vd()) return;
+  ve(PZo())
+}
+
+function SIe() {
+  let e = PZo();
+  return ve(e), e
+}
+
+function V8o() {
+  let e = SIe();
+  return e.kind === "unwired" || e.kind === "incomplete" ? void 0 : e.token
+}
+
+function zr() {
+  return se(), bt().identityEpoch
+}
+
+function $kn() {
+  let e = bt();
+  if (!Vd()) return e.identityEpoch;
+  return e.identityEpoch += 1, e.identityEpoch
+}
+var Je = "baseline:rearmed";
+
+function Vui() {
+  if (!Vd()) return;
+  $kn(), _$().lastResolvedAccountToken = Je
+}
+
+function fI(e) {
+  return se(), e === bt().identityEpoch
+}
+
+function Ukn() {
+  let e = bt();
+  if (e.identityChangedThisProcess) return;
+  e.identityChangedThisProcess = !0, c("mcp_discovery_cache", "identity_changed")
+}
+
+function me() {
+  return se(), bt().identityChangedThisProcess
+}
+import {
+  createCipheriv as Qe,
+  createDecipheriv as Ne,
+  createHash as tt,
+  randomBytes as we
+} from "crypto";
+var Ce = 32,
+  X = 12,
+  V = 16,
+  z = "v2:",
+  Se = Buffer.from("mcp-dc", "utf8"),
+  rt = /^[A-Za-z0-9+/]{43}=$/;
+
+function De(e) {
+  if (typeof e !== "string" || !rt.test(e)) return;
+  let r = Buffer.from(e, "base64");
+  return r.length === Ce ? r : void 0
+}
+async function q() {
+  let e = await KD();
+  if (e === Bs) return;
+  let r = Ee(e?.mcpDiscoveryCacheKey);
+  if (r) return r;
+  let n = we(Ce).toString("base64"),
+    s = !1;
+  try {
+    s = (await Kn().mutate((y) => De(y.mcpDiscoveryCacheKey) ? y : {
+      ...y,
+      mcpDiscoveryCacheKey: n
+    })).success
+  } catch {
+    s = !1
+  }
+  if (!s) return;
+  let a = await KD();
+  if (a === Bs) return;
+  return Ee(a?.mcpDiscoveryCacheKey)
+}
+
+function Ee(e) {
+  return De(e)
+}
+
+function ke(e, r, n) {
+  if (!Number.isInteger(e) || e < 0 || e > 255) throw Error("discovery-cache seal: schema version must fit one byte");
+  let s = [r, n].map((y) => Buffer.from(y, "utf8")),
+    a = Buffer.allocUnsafe(Se.length + 1 + s.reduce((y, l) => y + 4 + l.length, 0)),
+    f = Se.copy(a, 0);
+  f = a.writeUInt8(e, f);
+  for (let y of s) f = a.writeUInt32BE(y.length, f), f += y.copy(a, f);
+  return a
+}
+
+function _e(e, r) {
+  let n = we(X),
+    s = Qe("aes-256-gcm", e.key, n, {
+      authTagLength: V
+    });
+  s.setAAD(e.aad);
+  let a = Buffer.concat([s.update(r, "utf8"), s.final()]),
+    f = s.getAuthTag();
+  return z + Z(e.cacheKey) + ":" + Buffer.concat([n, a, f]).toString("base64url")
+}
+
+function Z(e) {
+  return tt("sha256").update(e, "utf8").digest().subarray(0, Re).toString("base64url")
+}
+var Re = 16,
+  be = Math.ceil(Re * 4 / 3),
+  it = new RegExp(`^[A-Za-z0-9_-]{${be}}$`),
+  ot = /^[A-Za-z0-9_-]*$/;
+
+function Me(e) {
+  return Ae(e)?.digest
+}
+
+function Ae(e) {
+  if (!e.startsWith(z)) return;
+  let r = z.length + be;
+  if (e.length <= r || e[r] !== ":") return;
+  let n = e.slice(z.length, r),
+    s = e.slice(r + 1);
+  if (!it.test(n) || !ot.test(s)) return;
+  return {
+    digest: n,
+    body: s
+  }
+}
+
+function ce(e, r) {
+  if (!r.startsWith(z)) return {
+    ok: !1,
+    reason: "v1"
+  };
+  let n = Ae(r);
+  if (!n) return {
+    ok: !1,
+    reason: "short"
+  };
+  if (n.digest !== Z(e.cacheKey)) return {
+    ok: !1,
+    reason: "header"
+  };
+  let s = Buffer.from(n.body, "base64url");
+  if (s.length < X + V) return {
+    ok: !1,
+    reason: "short"
+  };
+  let a = s.subarray(0, X),
+    f = s.subarray(s.length - V),
+    y = s.subarray(X, s.length - V);
+  try {
+    let l = Ne("aes-256-gcm", e.key, a, {
+      authTagLength: V
+    });
+    return l.setAuthTag(f), l.setAAD(e.aad), {
+      ok: !0,
+      plaintext: Buffer.concat([l.update(y), l.final()]).toString("utf8")
+    }
+  } catch {
+    return {
+      ok: !1,
+      reason: "tag"
+    }
+  }
+}
+
+function Qor(e) {
+  let r = _$();
+  r.accountResolver = e, r.lastResolvedAccountToken = void 0
+}
+
+function Zor(e) {
+  _$().eraResolver = e
+}
+
+function ct() {
+  return _$().eraResolver()
+}
+
+function esr() {
+  return _$().accountResolver !== void 0
+}
+
+function KC(e) {
+  switch (e.type) {
+    case "stdio":
+    case void 0:
+    case "sdk":
+    case "sse-ide":
+    case "ws-ide":
+      return !1;
+    default:
+      return !0
+  }
+}
+
+function GRt(e, r) {
+  return !fI(r) && KC(e)
+}
+
+function Bkn(e, r) {
+  return {
+    name: e,
+    type: "failed",
+    config: r,
+    error: T_r,
+    errorCode: "IDENTITY_CHANGED"
+  }
+}
+
+function tsr(e) {
+  return e.some((r) => KC(r.config))
+}
+
+function at() {
+  return SIe().token
+}
+var ue = 1,
+  dt = 900,
+  ut = 14400,
+  ft = 604800,
+  lt = 1;
+
+function Ie() {
+  let e = i.MCP_DISCOVERY_CACHE_STRIKES;
+  return e && e > 0 ? e : lt
+}
+var pt = 384,
+  Oe = 448,
+  ee = p(() => {
+    let e = import.meta.require("B:/~BUN/root/chunk-y5d9tpmg.js").mcpClientModule().discoveryWireSchemas();
+    return u({
+      v: T(ue),
+      serverName: o(),
+      cacheKey: o(),
+      savedAt: E(),
+      toolsSavedAt: E().optional(),
+      consecutiveRefreshFailures: E().int().nonnegative(),
+      serverInfo: e.implementation.optional(),
+      negotiatedEra: B(dQr).optional(),
+      capabilities: e.serverCapabilities,
+      tools: C(e.tool),
+      commands: C(e.prompt),
+      resources: C(e.resource),
+      templates: C(e.resourceTemplate).optional()
+    })
+  });
+
+function yt() {
+  let e = i.MCP_DISCOVERY_CACHE_TTL_S;
+  return Math.min((e && e > 0 ? e : dt) * 1000, Le())
+}
+
+function Le() {
+  let e = i.MCP_DISCOVERY_CACHE_MAX_STALE_S;
+  return Math.min(e && e > 0 ? e : ut, ft) * 1000
+}
+
+function wIe(e) {
+  return $e(e) === void 0
+}
+
+function ht(e) {
+  return te.some((r) => r.reason === e)
+}
+var te = [{
+  prop: "discoveryCache",
+  reason: "opt-out",
+  excludes: (e) => e === !1,
+  normalize: (e) => e === !1 ? !1 : void 0,
+  valueDomain: [void 0, !1]
+}, {
+  prop: "headersHelper",
+  reason: "headers-helper",
+  excludes: (e) => Boolean(e),
+  normalize: (e) => e ? e : void 0,
+  valueDomain: [void 0]
+}];
+
+function Fe(e) {
+  let r = {
+    ...e
+  };
+  for (let {
+      prop: n,
+      normalize: s
+    }
+    of te) {
+    if (!(n in r)) continue;
+    let a = s(r[n]);
+    if (a === void 0) delete r[n];
+    else r[n] = a
+  }
+  return r
+}
+
+function gt(e) {
+  let r = e;
+  if (typeof r.url === "string" && m5(r.url)) return !0;
+  if (r.headers && typeof r.headers === "object") {
+    for (let n of Object.values(r.headers))
+      if (typeof n === "string" && m5(n)) return !0
+  }
+  return !1
+}
+var mt = ["MCP_DISCOVERY_CACHE_TTL_S", "MCP_DISCOVERY_CACHE_MAX_STALE_S", "MCP_DISCOVERY_CACHE_STRIKES"],
+  St = [wAe, mH, na];
+
+function Be(e) {
+  let r = process.env[e];
+  return r !== void 0 && k3(e, r)
+}
+
+function He() {
+  return tn() && i.MCP_DISCOVERY_CACHE === !0 && !Be("MCP_DISCOVERY_CACHE")
+}
+
+function Ke(e) {
+  if (!He() || mt.some(Be) || e.type !== "http" || e.scope !== "dynamic" || e.agentSource !== void 0 || Qd(e)) return !1;
+  let r = J3(e.url);
+  if (r === null) return !1;
+  let n = jn(r.sessionSegment);
+  if (!bj(r.sessionSegment) || !Jl.ownCcrSessionIds.some((h) => jn(h) === n)) return !1;
+  let s = kL(e.headers, "x-mcp-server-id"),
+    a = s[0];
+  if (s.length !== 1 || a === void 0 || !san.test(a) || r.toolboxMcpServerId !== a || r.mcpServerId === a) return !1;
+  let f = kL(e.headers, o_e);
+  if (f.length !== 1 || f[0] !== "directory" && f[0] !== "custom") return !1;
+  if (kL(e.headers, Hoe).length > 0 || !r.upstreamUrl || /^ccr-owner-resolved:/i.test(r.upstreamUrl)) return !1;
+  let y = [r.mcpServerId, a],
+    l = [`cse_${n}`, `session_${n}`];
+  return !(WFe(e.url) || y.some((h) => IUt.includes(h)) || [...jIr(), ...St].some((h) => l.some((v) => y.includes(n5(v, h)))))
+}
+
+function Yat(e) {
+  return wIe(e) && !Ke(e)
+}
+
+function $e(e) {
+  let r = h3t();
+  if (r !== void 0) return r;
+  if (me()) return "identity-changed";
+  if (e.type !== "http" && e.type !== "sse") return "transport";
+  if (Yl(e) || zet(e)) return "cli-owned";
+  if (gt(e)) return "env-placeholder";
+  if (ej(e.url) && !RU(e)) return "ambient-credential";
+  if ($u(e.url)) {
+    if (!Ke(e)) return "ambient-credential"
+  } else if (He()) return "ambient-credential";
+  let n = e;
+  for (let {
+      prop: s,
+      reason: a,
+      excludes: f
+    }
+    of te)
+    if (f(n[s])) return a;
+  return
+}
+
+function O() {
+  return Y(Ue(), "mcp-discovery-cache")
+}
+async function Et(e, r) {
+  if (!wIe(r)) return !1;
+  return (await ze(e, r)).kind !== "degenerate"
+}
+async function ze(e, r) {
+  if (r.type !== "http" && r.type !== "sse") return {
+    kind: "none"
+  };
+  let n = await KD();
+  if (n === Bs) return {
+    kind: "degenerate"
+  };
+  let s = n?.mcpOAuth?.[ha(e, r)];
+  if (!s) return {
+    kind: "none"
+  };
+  let a = s.refreshToken;
+  if (!a) return {
+    kind: "degenerate"
+  };
+  return {
+    kind: "resolved",
+    hash: nt(a).slice(0, 16)
+  }
+}
+async function wt(e, r) {
+  if (r.type !== "http" && r.type !== "sse") return "grant:none";
+  let n = await ze(e, r);
+  switch (n.kind) {
+    case "none":
+      return "grant:none";
+    case "resolved":
+      return `grant:${n.hash}`;
+    case "degenerate":
+      return
+  }
+}
+async function Ct(e, r) {
+  let n = SIe();
+  if (n.kind === "unwired" || n.kind === "incomplete") return;
+  let s = await wt(e, r);
+  if (s === void 0) return;
+  let a = [n.token];
+  if (r.type === "http" || r.type === "sse") a.push(s);
+  return {
+    fingerprint: Te("sha256").update(a.join("\x00")).digest("hex"),
+    grantToken: s
+  }
+}
+
+function fe(e, r, n, s) {
+  let a = [e, r, `era:${n}`, {
+    ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+    PACKAGE_URL: "@anthropic-ai/claude-code",
+    README_URL: "https://code.claude.com/docs/en/overview",
+    VERSION: "2.1.319",
+    FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+    BUILD_TIME: "2026-11-05T18:14:18Z",
+    GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+    HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+    DD_SOURCEMAP_GROUP: "win32"
+  }.VERSION ?? "unknown", ...s ? ["offer:io.modelcontextprotocol/ui"] : []].join("\x00");
+  return `${Te("sha256").update(a).digest("hex").slice(0,32)}.json`
+}
+var Dt = /^[0-9a-f]{16}\0/;
+
+function NB(e) {
+  let r = `${e}-`,
+    n = _$().filePathMemo;
+  for (let s of n.keys()) {
+    if (!s.startsWith(r)) continue;
+    if (Dt.test(s.slice(r.length))) n.delete(s)
+  }
+}
+
+function x(e, r) {
+  return mr(e, Fe(r))
+}
+async function kt(e, r) {
+  return (await M(e, r))?.path
+}
+async function XY(e, r) {
+  if (!Vd()) return;
+  try {
+    return (await M(e, r))?.legToken
+  } catch {
+    return
+  }
+}
+async function M(e, r) {
+  let n = x(e, r),
+    s = ct(),
+    a = GTn(),
+    f = at(),
+    y = `${n}\x00${f}\x00era:${s}\x00ui:${a}`,
+    l = _$().filePathMemo,
+    h = l.get(y);
+  if (h) return h;
+  let v = (async () => {
+    let S = await Ct(e, r);
+    if (S === void 0) return;
+    return {
+      path: Y(O(), fe(n, S.fingerprint, s, a)),
+      grantToken: S.grantToken,
+      fingerprint: S.fingerprint,
+      cacheKey: n,
+      aad: ke(ue, n, S.fingerprint),
+      legToken: `${S.grantToken}\x00era:${s}\x00${f}`
+    }
+  })();
+  l.set(y, v);
+  let w = () => {
+    if (l.get(y) === v) l.delete(y)
+  };
+  return v.then((S) => {
+    if (S === void 0) w()
+  }, w), v
+}
+
+function L() {
+  return _$().storage
+}
+
+function b() {
+  return _$().storageV5
+}
+
+function le(e) {
+  return Ve.userConfigDir("mcp-discovery-cache", [st(e)])
+}
+var _t = {
+    namespace: "userConfigDir",
+    dir: "mcp-discovery-cache"
+  },
+  F = 8388608;
+
+function pe(e) {
+  return Math.max(e.savedAt, e.toolsSavedAt ?? 0)
+}
+class G extends Error {
+  entryPath;
+  reason;
+  constructor(e, r, n) {
+    super(n);
+    this.entryPath = e;
+    this.reason = r;
+    this.name = "RefusedDiscoveryEntryError"
+  }
+}
+class ye extends G {
+  constructor(e) {
+    super(e, "oversize", "discovery-cache: oversize entry");
+    this.name = "OversizeDiscoveryEntryError"
+  }
+}
+class Q extends G {
+  constructor(e) {
+    super(e, "symlink", "discovery-cache: symlinked entry refused");
+    this.name = "SymlinkedDiscoveryEntryError"
+  }
+}
+class N extends G {
+  constructor(e) {
+    super(e, "non-regular", "discovery-cache: non-regular entry refused");
+    this.name = "NonRegularDiscoveryEntryError"
+  }
+}
+
+function re(e) {
+  return e instanceof G
+}
+async function ne(e, r) {
+  let n = _$().readGateForTest;
+  if (n) await n;
+  if (r) return Rt(r, e);
+  try {
+    if (Go === 0) {
+      let a = await L().lstat(e);
+      if (a === void 0) return;
+      if (a.isSymbolicLink) throw new Q(e);
+      if (!a.isFile) throw new N(e)
+    }
+    let s;
+    try {
+      s = await L().readTail(e, F + 1, {
+        noFollow: !0
+      })
+    } catch (a) {
+      let f = k(a);
+      if (f === "ELOOP") throw new Q(e);
+      if (f === "ENXIO") throw new N(e);
+      throw a
+    }
+    if (s.length > F) throw new ye(e);
+    return s.toString("utf8")
+  } catch (s) {
+    if (K(s)) return;
+    throw s
+  }
+}
+async function Rt(e, r) {
+  let n = le(r),
+    s = await e.read([{
+      key: n,
+      offset: 0,
+      length: F + 1
+    }], {
+      symlinks: "refuse"
+    });
+  if (!s.ok) {
+    let f = "cause" in s.error ? k(s.error.cause) : void 0;
+    if (f === "ELOOP") throw new Q(r);
+    if (f === "ENXIO") throw new N(r);
+    throw Error("discovery-cache: read failed", {
+      cause: s.error
+    })
+  }
+  let a = s.value.items[0];
+  if (!a.found) return;
+  if (a.totalBytes > F) throw new ye(r);
+  return Buffer.from(a.value).toString("utf8")
+}
+async function Mt(e, r, n) {
+  if (n) {
+    let a = await n.write(le(e), r);
+    if (!a.ok) throw Error("discovery-cache: write failed", {
+      cause: a.error
+    });
+    return
+  }
+  let s = L();
+  await s.mkdir(O(), Oe), await s.atomicWrite(e, r, pt)
+}
+async function At(e) {
+  if (!e) return L().list(O());
+  let r = [],
+    n;
+  do {
+    let s = await e.listEntries(_t, {
+      skipKeyStats: !0,
+      skipScopeStats: !0,
+      ...n !== void 0 && {
+        cursor: n
+      }
+    });
+    if (!s.ok) throw Error("discovery-cache: list failed", {
+      cause: s.error
+    });
+    for (let a of s.value.items)
+      if (a.kind === "key" && a.key.namespace === "userConfigDir") {
+        let f = a.key.relPath[0];
+        if (f !== void 0 && a.key.relPath.length === 1) r.push(f)
+      } n = s.value.cursor
+  } while (n);
+  return r
+}
+async function U(e, r) {
+  if (r) {
+    let n = await r.delete(le(e));
+    if (!n.ok) throw Error("discovery-cache: delete failed", {
+      cause: n.error
+    });
+    return
+  }
+  try {
+    await L().delete(e)
+  } catch (n) {
+    if (!K(n)) throw n
+  }
+}
+async function nsr(e, r, n = Date.now()) {
+  let s = $e(r);
+  if (s !== void 0 && !ht(s)) return {
+    kind: "miss",
+    reason: s === "transport" ? "transport" : "disabled"
+  };
+  if (s !== void 0) {
+    H();
+    let _ = Ft(e, r),
+      A = Bt(_),
+      oe = _$().admissionPurgedKeySets;
+    if (!oe.has(A)) oe.add(A), Lt(e, r, _).then((qe) => {
+      if (!qe) oe.delete(A)
+    });
+    return ae(e, `discovery-cache: ${s} \u2014 purging this server's cache-key family, serving miss`), {
+      kind: "miss",
+      reason: "disabled"
+    }
+  }
+  let a;
+  try {
+    a = await M(e, r)
+  } catch (_) {
+    return ae(e, `discovery-cache: fingerprint failed: ${_}`), {
+      kind: "miss",
+      reason: "no-fingerprint"
+    }
+  }
+  if (a === void 0) return {
+    kind: "miss",
+    reason: "no-fingerprint"
+  };
+  let f = a.path,
+    y = () => {
+      P(f, e, void 0).catch(() => {})
+    },
+    l = () => (y(), m("mcp_discovery_cache", "corrupt_entry"), {
+      kind: "miss",
+      reason: "corrupt"
+    }),
+    h;
+  try {
+    h = await ne(f, b())
+  } catch (_) {
+    if (re(_)) return ae(e, `discovery-cache: ${_.reason} entry, deleting`), l();
+    return ae(e, `discovery-cache: read failed: ${_}`), {
+      kind: "miss",
+      reason: "absent"
+    }
+  }
+  if (h === void 0) return {
+    kind: "miss",
+    reason: "absent"
+  };
+  let v = await je(h, a, e, () => P(f, e, void 0));
+  if (v.miss) {
+    if (v.miss === "unsealed")
+      if (v.cause === "v1") c("mcp_discovery_cache", "unsealed_v1");
+      else m("mcp_discovery_cache", `unsealed_${v.cause}`);
+    return {
+      kind: "miss",
+      reason: v.miss
+    }
+  }
+  let w = ee().safeParse(et(v.plaintext, !1));
+  if (!w.success) return ae(e, "discovery-cache: corrupt entry, deleting"), l();
+  let S = w.data;
+  if (S.cacheKey !== x(e, r)) return ae(e, "discovery-cache: entry keyed for another server, deleting"), l();
+  if (S.consecutiveRefreshFailures >= Ie()) return y(), {
+    kind: "miss",
+    reason: "strike-threshold"
+  };
+  let R = Le();
+  if (pe(S) - n > R) return y(), {
+    kind: "miss",
+    reason: "expired"
+  };
+  let D = Math.max(0, n - S.savedAt);
+  if (D >= R) return y(), {
+    kind: "miss",
+    reason: "expired"
+  };
+  if (D < yt() && !(S.capabilities.tools && S.tools.length === 0)) return {
+    kind: "fresh",
+    entry: S,
+    ageMs: D
+  };
+  return {
+    kind: "stale",
+    entry: S,
+    ageMs: D
+  }
+}
+
+function j(e, r, n) {
+  return _$().serializeWrite(e, n).catch((s) => {
+    ae(r, `discovery-cache: write op failed: ${s}`)
+  })
+}
+
+function W(e) {
+  return _$().deleteGenerationByCacheKey.get(e) ?? 0
+}
+
+function ie(e) {
+  _$().deleteGenerationByCacheKey.set(e, W(e) + 1)
+}
+var Ye = 8;
+async function Pt(e, r) {
+  if (r.type !== "http" && r.type !== "sse") return [];
+  let n = await KD();
+  if (n === Bs) return Bs;
+  let s = ha(e, r),
+    a = n?.mcpOAuth?.[s],
+    f = [];
+  if (typeof a?.accessToken === "string") f.push(a.accessToken);
+  if (typeof a?.refreshToken === "string") f.push(a.refreshToken);
+  if (typeof a?.clientSecret === "string") f.push(a.clientSecret);
+  let y = n?.mcpOAuthClientConfig?.[s]?.clientSecret;
+  if (typeof y === "string") f.push(y);
+  return f
+}
+var de = /auth|token|key|secret|cookie|session|sig|pass|cred|bearer/i,
+  xt = /^\s*[A-Za-z][A-Za-z0-9!#$%&'*+.^_`|~-]*\s+(?=\S)/;
+
+function Ge(e, r, n) {
+  if (typeof r !== "string" || !de.test(e)) return;
+  if (n(r.trim()), n(r.replace(xt, "").trim()), /^cookie$/i.test(e))
+    for (let s of r.split(";")) {
+      let a = s.indexOf("=");
+      n((a === -1 ? s : s.slice(a + 1)).trim())
+    }
+}
+
+function kIe(e, r) {
+  let n = Ng();
+  if (n.recordingOff()) return;
+  let s = new Map;
+  for (let [a, f] of Object.entries(e ?? {})) s.set(a.toLowerCase(), f);
+  for (let [a, f] of Object.entries(r)) {
+    if (s.get(a.toLowerCase()) === f) continue;
+    Ge(a, f, (y) => {
+      if (y.length >= Ye) n.record(y)
+    })
+  }
+}
+var Tt = 268435456;
+
+function Pe(e) {
+  let r = [e],
+    n = oi(e).slice(1, -1);
+  if (n !== e) r.push(n);
+  try {
+    let s = encodeURIComponent(e);
+    if (s !== e) r.push(s)
+  } catch {}
+  return r
+}
+
+function It(e, r, n = []) {
+  let s = r,
+    a = new Set,
+    f = (l) => {
+      if (l !== void 0 && l.length >= Ye) a.add(l)
+    };
+  for (let [l, h] of Object.entries(s.headers ?? {})) Ge(l, h, f);
+  try {
+    let l = typeof s.url === "string" ? new URL(s.url) : void 0;
+    for (let [h, v] of l?.searchParams.entries() ?? [])
+      if (de.test(h))
+        for (let w of Pe(v)) f(w);
+    for (let h of l?.search.replace(/^\?/, "").split("&") ?? []) {
+      let v = h.indexOf("=");
+      if (v > 0 && de.test(h.slice(0, v))) f(h.slice(v + 1))
+    }
+    for (let h of l ? [l.password, l.username] : [])
+      if (h) {
+        f(h);
+        try {
+          f(decodeURIComponent(h))
+        } catch {}
+      }
+  } catch {}
+  for (let l of n) f(l);
+  let y = Ng().snapshot();
+  if (!y.complete) return "presented-log-incomplete";
+  for (let l of y.atoms) f(l);
+  if (a.size * e.length > Tt) return "scan-budget";
+  for (let l of a)
+    for (let h of Pe(l))
+      if (e.includes(h)) return "material";
+  return
+}
+
+function he(e, r) {
+  return {
+    key: e,
+    cacheKey: r.cacheKey,
+    aad: r.aad
+  }
+}
+async function je(e, r, n, s) {
+  let a = await q();
+  if (a === void 0) return ae(n, "Discovery cache: sealing key unavailable (secure storage unreadable) \u2014 cache off for this process"), xZo(), {
+    miss: "key-unavailable"
+  };
+  let f = ce(he(a, r), e);
+  if (f.ok) return {
+    plaintext: f.plaintext
+  };
+  ae(n, `Discovery cache: entry did not open (${f.reason}) \u2014 discarded`);
+  try {
+    await s()
+  } catch (y) {
+    ae(n, `discovery-cache: reap after failed open skipped ${y}`)
+  }
+  return {
+    miss: "unsealed",
+    cause: f.reason
+  }
+}
+
+function I({
+  verdict: e,
+  code: r
+}) {
+  if (e === "written") g("mcp_discovery_cache");
+  else if (e === "terminal") m("mcp_discovery_cache", r);
+  else c("mcp_discovery_cache", r);
+  return e
+}
+async function ge(e) {
+  let {
+    path: r,
+    serverName: n,
+    config: s,
+    cacheKey: a,
+    entry: f,
+    context: y,
+    label: l
+  } = e;
+  if (h3t() !== void 0) return ae(n, `Discovery cache ${l} refused: the cache turned off since this round started`), {
+    verdict: "superseded",
+    code: "disabled"
+  };
+  if (W(a) !== e.capturedDeleteGeneration) return ae(n, `Discovery cache ${l} refused: entry deleted since this round started (tombstone)`), {
+    verdict: "superseded",
+    code: "tombstone"
+  };
+  if (!fI(y.identityEpoch)) return ae(n, `Discovery cache ${l} refused: identity changed since this round was fetched (stale epoch)`), {
+    verdict: "superseded",
+    code: "stale_epoch"
+  };
+  let h = await q();
+  if (h === void 0) return xZo(), ae(n, `Discovery cache ${l} refused: sealing key unavailable (secure storage unreadable) \u2014 cache off for this process`), {
+    verdict: "superseded",
+    code: "key_unavailable"
+  };
+  let v;
+  try {
+    v = await Pt(n, s)
+  } catch {
+    v = Bs
+  }
+  if (v === Bs) return ae(n, `Discovery cache ${l} refused: OAuth token store unreadable (cannot verify no secrets on disk)`), {
+    verdict: "transient",
+    code: "transient"
+  };
+  let w;
+  try {
+    w = await M(n, s)
+  } catch {
+    return {
+      verdict: "transient",
+      code: "transient"
+    }
+  }
+  if (w === void 0 || w.path !== r || w.legToken !== y.grantLeg) return ae(n, `Discovery cache ${l} refused: grant or era changed since this round was fetched (stale leg)`), {
+    verdict: "superseded",
+    code: "stale_grant"
+  };
+  let S = ee().safeParse(f);
+  if (!S.success) return ae(n, `Discovery cache ${l} refused: entry failed schema validation`), {
+    verdict: "terminal",
+    code: "schema"
+  };
+  let R = oi(S.data);
+  if (Buffer.byteLength(R, "utf8") > F) return ae(n, `Discovery cache ${l} refused: serialized entry exceeds DISCOVERY_ENTRY_MAX_BYTES`), {
+    verdict: "terminal",
+    code: "oversize"
+  };
+  if (h3t() !== void 0) return ae(n, `Discovery cache ${l} refused: the cache turned off since this round started`), {
+    verdict: "superseded",
+    code: "disabled"
+  };
+  let D = It(R, s, v);
+  if (D !== void 0) {
+    if (Ng().takeOverflowNotice()) ae(n, "Discovery cache: presented-credential log is full \u2014 cache writes are refused for the rest of this process");
+    if (D === "scan-budget") return ae(n, `Discovery cache ${l} refused: secret-material scan exceeds its work budget (materials \xD7 entry size) \u2014 not scanned, not written`), {
+      verdict: "terminal",
+      code: "scan_budget"
+    };
+    if (D === "presented-log-incomplete") return ae(n, `Discovery cache ${l} refused: presented-credential log incomplete (cannot verify no secrets on disk)`), {
+      verdict: "terminal",
+      code: "presented_log_incomplete"
+    };
+    return ae(n, `Discovery cache ${l} refused: entry would carry presented secret material`), {
+      verdict: "terminal",
+      code: "secret_material"
+    }
+  }
+  let _ = _e(he(h, w), R);
+  if (Buffer.byteLength(_, "utf8") > F) return ae(n, `Discovery cache ${l} refused: sealed entry exceeds DISCOVERY_ENTRY_MAX_BYTES`), {
+    verdict: "terminal",
+    code: "oversize"
+  };
+  try {
+    await Mt(r, _, b())
+  } catch (A) {
+    return ae(n, `Discovery cache ${l} refused: disk write failed (${d(A)})`), {
+      verdict: "transient",
+      code: "transient"
+    }
+  }
+  return {
+    verdict: "written",
+    code: "written"
+  }
+}
+async function P(e, r, n) {
+  if (n !== void 0) ie(n);
+  await j(e, r, () => U(e, b()))
+}
+async function Ot(e, r) {
+  await Promise.race([e.then(() => {}, () => {}), J(r, void 0, {
+    unref: !0
+  })])
+}
+async function tre(e, r = 1500) {
+  H(), await Ot(e, r)
+}
+
+function H() {
+  if (!Y0()) return;
+  let e = _$();
+  if (e.flushCleanup) return;
+  e.flushCleanup = vt(() => e.drain(Hyi))
+}
+async function rsr(e, r, n, s) {
+  let a = s.now ?? Date.now(),
+    f = x(e, r),
+    y = W(f);
+  if (!fI(s.identityEpoch)) return "superseded";
+  if (s.grantLeg === void 0) return "superseded";
+  if (!wIe(r)) return "superseded";
+  H();
+  let l;
+  try {
+    l = await M(e, r)
+  } catch {
+    return I({
+      verdict: "transient",
+      code: "transient"
+    })
+  }
+  if (l === void 0) return "superseded";
+  if (l.legToken !== s.grantLeg) return ae(e, "Discovery cache write refused: grant changed since this round was fetched (stale grant)"), I({
+    verdict: "superseded",
+    code: "stale_grant"
+  });
+  let h = l.path,
+    v = {
+      v: ue,
+      serverName: e,
+      cacheKey: f,
+      savedAt: a,
+      consecutiveRefreshFailures: 0,
+      ...n.serverInfo && {
+        serverInfo: n.serverInfo
+      },
+      ...n.negotiatedEra !== void 0 && {
+        negotiatedEra: n.negotiatedEra
+      },
+      capabilities: n.capabilities,
+      tools: n.tools,
+      commands: n.commands,
+      resources: n.resources,
+      templates: n.templates
+    },
+    w = h,
+    S;
+  return await j(w, e, async () => {
+    if (!await Et(e, r)) return;
+    let R;
+    try {
+      R = await ne(w, b())
+    } catch (D) {
+      if (!re(D)) {
+        ae(e, `Discovery cache write deferred: existing entry unreadable (${d(D)})`), S = {
+          verdict: "transient",
+          code: "transient"
+        };
+        return
+      }
+      R = void 0
+    }
+    if (R !== void 0) {
+      let D = await q(),
+        _ = D && l ? ce(he(D, l), R) : void 0,
+        A = _?.ok ? ee().safeParse(et(_.plaintext, !1)) : void 0;
+      if (A?.success && pe(A.data) > a) {
+        S = {
+          verdict: "superseded",
+          code: "fresher_on_disk"
+        };
+        return
+      }
+    }
+    S = await ge({
+      path: w,
+      serverName: e,
+      config: r,
+      cacheKey: f,
+      entry: v,
+      context: s,
+      capturedDeleteGeneration: y,
+      label: "write"
+    })
+  }), S ? I(S) : "superseded"
+}
+async function We(e, r) {
+  let n = e.path,
+    s;
+  try {
+    s = await ne(n, b())
+  } catch (y) {
+    if (re(y)) {
+      await U(n, b());
+      return
+    }
+    throw y
+  }
+  if (s === void 0) return;
+  let a = await je(s, e, r, () => U(n, b()));
+  if (a.miss) return;
+  let f = ee().safeParse(et(a.plaintext, !1));
+  if (!f.success) {
+    await U(n, b());
+    return
+  }
+  return f.data
+}
+async function osr(e, r, n, s) {
+  if (!fI(s.identityEpoch)) return;
+  if (s.grantLeg === void 0) return;
+  let a = x(e, r),
+    f = W(a);
+  if (H(), !wIe(r)) return;
+  let y;
+  try {
+    y = await M(e, r)
+  } catch {
+    I({
+      verdict: "transient",
+      code: "transient"
+    });
+    return
+  }
+  if (y === void 0) return;
+  if (y.legToken !== s.grantLeg) {
+    ae(e, "Discovery cache tools merge refused: grant changed since this refresh was fetched (stale grant)"), I({
+      verdict: "superseded",
+      code: "stale_grant"
+    });
+    return
+  }
+  let l = y.path;
+  await j(l, e, async () => {
+    let h = await We(y, e);
+    if (!h) return;
+    if (pe(h) > s.fetchedAt) {
+      I({
+        verdict: "superseded",
+        code: "fresher_on_disk"
+      });
+      return
+    }
+    let v = {
+      ...h,
+      tools: n,
+      ...Number.isFinite(s.fetchedAt) && s.fetchedAt > h.savedAt && {
+        toolsSavedAt: s.fetchedAt
+      }
+    };
+    I(await ge({
+      path: l,
+      serverName: e,
+      config: r,
+      cacheKey: a,
+      entry: v,
+      context: s,
+      capturedDeleteGeneration: f,
+      label: "tools merge"
+    }))
+  })
+}
+async function jkn(e, r, n) {
+  if (!fI(n.identityEpoch)) return;
+  if (n.grantLeg === void 0) return;
+  let s = x(e, r),
+    a = W(s);
+  if (H(), !wIe(r)) return;
+  let f;
+  try {
+    f = await M(e, r)
+  } catch {
+    return
+  }
+  if (f === void 0) return;
+  if (f.legToken !== n.grantLeg) {
+    ae(e, "Discovery cache refresh-failure strike refused: grant changed since this refresh was fetched (stale grant)");
+    return
+  }
+  let y = f.path;
+  await j(y, e, async () => {
+    let l = await We(f, e);
+    if (!l) return;
+    if (!fI(n.identityEpoch)) {
+      ae(e, "Discovery cache refresh-failure strike refused: identity changed since this refresh was fetched (stale epoch)");
+      return
+    }
+    let h;
+    try {
+      h = await M(e, r)
+    } catch {
+      return
+    }
+    if (h === void 0 || h.path !== y || h.legToken !== n.grantLeg) {
+      ae(e, "Discovery cache refresh-failure strike refused: grant changed since this refresh was fetched (stale grant)");
+      return
+    }
+    let v = {
+      ...l,
+      consecutiveRefreshFailures: l.consecutiveRefreshFailures + 1
+    };
+    if (v.consecutiveRefreshFailures >= Ie()) {
+      ie(s), await U(y, b());
+      return
+    }
+    await ge({
+      path: y,
+      serverName: e,
+      config: r,
+      cacheKey: s,
+      entry: v,
+      context: n,
+      capturedDeleteGeneration: a,
+      label: "refresh-failure strike"
+    })
+  })
+}
+
+function ssr(e, r) {
+  (async () => {
+    let n = zr();
+    await jkn(e, r, {
+      identityEpoch: n,
+      grantLeg: await XY(e, r)
+    })
+  })().catch((n) => t(`discovery-cache: strike after failed lazy dial of "${e}" did not land: ${d(n)}`))
+}
+async function Xe(e, r) {
+  for (let a of r) ie(a);
+  let n = new Set([...r].map(Z)),
+    s = await At(b());
+  for (let a of s) {
+    if (!a.endsWith(".json")) continue;
+    let f = Y(O(), a);
+    try {
+      let y;
+      try {
+        y = await ne(f, b())
+      } catch (h) {
+        if (re(h)) {
+          await P(f, e, void 0);
+          continue
+        }
+        throw h
+      }
+      if (y === void 0) continue;
+      let l = Me(y);
+      if (l === void 0) {
+        await P(f, e, void 0);
+        continue
+      }
+      if (n.has(l)) await P(f, e, void 0)
+    } catch (y) {
+      ae(e, `discovery-cache: purge scan skipped ${y}`)
+    }
+  }
+}
+async function xe(e, r) {
+  await Xe(e, new Set([x(e, r)]))
+}
+
+function Lt(e, r, n) {
+  let s = O(),
+    a = !1;
+  return j(s, e, async () => {
+    let f;
+    try {
+      f = (await M(e, r))?.fingerprint
+    } catch {
+      f = void 0
+    }
+    if (f === void 0) {
+      await Xe(e, n), a = !0;
+      return
+    }
+    let y = [];
+    for (let l of n) {
+      let h = l;
+      for (let v of dQr)
+        for (let w of [!1, !0]) y.push(P(Y(s, fe(l, f, v, w)), e, h)), h = void 0
+    }
+    await Promise.all(y), a = !0
+  }).then(() => a)
+}
+
+function Ft(e, r) {
+  let n = Fe(r),
+    s = te.map(({
+      prop: y,
+      normalize: l,
+      valueDomain: h
+    }) => {
+      let v = new Set(h.map((S) => l(S))),
+        w = n[y];
+      if (w !== void 0) v.add(w);
+      return {
+        prop: y,
+        states: [...v]
+      }
+    }),
+    a = new Set,
+    f = (y, l) => {
+      if (y === s.length) {
+        a.add(mr(e, l));
+        return
+      }
+      let {
+        prop: h,
+        states: v
+      } = s[y];
+      for (let w of v) {
+        let S = {
+          ...l
+        };
+        if (w === void 0) delete S[h];
+        else S[h] = w;
+        f(y + 1, S)
+      }
+    };
+  return f(0, {
+    ...n
+  }), a
+}
+
+function Bt(e) {
+  return [...e].sort().join(`
+`)
+}
+async function aYt(e, r) {
+  if (r.type !== "http" && r.type !== "sse") return;
+  if (!Y0()) return;
+  H(), ie(x(e, r));
+  try {
+    let n = await M(e, r);
+    if (n === void 0) {
+      await xe(e, r);
+      return
+    }
+    let s = x(e, r),
+      a = O(),
+      f = new Set(dQr.flatMap((l) => [!1, !0].map((h) => Y(a, fe(s, n.fingerprint, l, h))))),
+      y = [P(n.path, e, s)];
+    for (let l of f)
+      if (l !== n.path) y.push(P(l, e, void 0));
+    await Promise.all(y), await xe(e, r)
+  } catch (n) {
+    ae(e, `discovery-cache: delete failed: ${n}`)
+  }
+}
+async function isr(e, r) {
+  let n;
+  try {
+    n = await kt(e, r)
+  } catch {
+    return async () => {}
+  }
+  if (n === void 0) return async () => {};
+  try {
+    return await L().mkdir(O(), Oe), await Zd(n, {
+      realpath: !1,
+      retries: 0,
+      stale: 60000,
+      onCompromised: (s) => ae(e, `discovery-cache: refresh lock compromised, skipping refresh: ${s}`)
+    })
+  } catch (s) {
+    let a = s instanceof Error ? s.message : String(s);
+    if (s?.code === "ELOCKED" || a.includes("already being held")) {
+      ae(e, "discovery-cache: refresh lock held elsewhere, skipping");
+      return
+    }
+    return ae(e, `discovery-cache: lock error, proceeding: ${a}`), async () => {}
+  }
+}
+export {
+  Xor,
+  Jor,
+  SIe,
+  V8o,
+  zr,
+  $kn,
+  Vui,
+  fI,
+  Ukn,
+  Qor,
+  Zor,
+  esr,
+  KC,
+  GRt,
+  Bkn,
+  tsr,
+  wIe,
+  Yat,
+  NB,
+  XY,
+  nsr,
+  kIe,
+  tre,
+  rsr,
+  osr,
+  jkn,
+  ssr,
+  aYt,
+  isr
+};

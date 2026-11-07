@@ -1,0 +1,3174 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+
+// Version: 2.1.319
+import "B:/~BUN/root/chunk-vz9zea4j.js";
+import "B:/~BUN/root/chunk-q78ga0zw.js";
+import "B:/~BUN/root/chunk-db8vh085.js";
+import "B:/~BUN/root/chunk-game8aqv.js";
+import "B:/~BUN/root/chunk-wt4dg253.js";
+import "B:/~BUN/root/chunk-drx9cnw1.js";
+import { d, qt } from "B:/~BUN/root/chunk-y2g9f85n.js";
+import { zt } from "B:/~BUN/root/chunk-r5zmhp23.js";
+import "B:/~BUN/root/chunk-h4acfc9y.js";
+import "B:/~BUN/root/chunk-ppmmt0c3.js";
+import { t, ds } from "B:/~BUN/root/chunk-2pp12te6.js";
+import "B:/~BUN/root/chunk-dayhhbfr.js";
+import "B:/~BUN/root/chunk-eev762xg.js";
+import "B:/~BUN/root/chunk-15vbkr6z.js";
+import "B:/~BUN/root/chunk-n8cnxns2.js";
+import "B:/~BUN/root/chunk-09sn55yf.js";
+import "B:/~BUN/root/chunk-jdtvghyw.js";
+import "B:/~BUN/root/chunk-mb9chr1y.js";
+import "B:/~BUN/root/chunk-kjwczfsg.js";
+import "B:/~BUN/root/chunk-j6pt0v41.js";
+import "B:/~BUN/root/chunk-y1kkrqy9.js";
+import "B:/~BUN/root/chunk-xrwdh0g4.js";
+import "B:/~BUN/root/chunk-mwfggkjt.js";
+import { fna, au, hnt, X2n, IFr, d0 } from "B:/~BUN/root/chunk-gq1er5y2.js";
+import "B:/~BUN/root/chunk-thn0wk2x.js";
+import "B:/~BUN/root/chunk-4jt3t3ds.js";
+import "B:/~BUN/root/chunk-88zb3509.js";
+import "B:/~BUN/root/chunk-3mm90xb6.js";
+import "B:/~BUN/root/chunk-83p1z1q5.js";
+import "B:/~BUN/root/chunk-3z3yrbk4.js";
+import "B:/~BUN/root/chunk-xqymp2nr.js";
+import "B:/~BUN/root/chunk-65j2302z.js";
+import { Ab, M$t, i8i } from "B:/~BUN/root/chunk-1ks9vs37.js";
+import "B:/~BUN/root/chunk-sxvr9rzb.js";
+import "B:/~BUN/root/chunk-grwykqvw.js";
+import "B:/~BUN/root/chunk-rr294jrm.js";
+import "B:/~BUN/root/chunk-nzh2qzgc.js";
+import "B:/~BUN/root/chunk-q8eknvfd.js";
+import "B:/~BUN/root/chunk-ja520myc.js";
+import "B:/~BUN/root/chunk-5az22yft.js";
+import "B:/~BUN/root/chunk-fjzk7kwf.js";
+import "B:/~BUN/root/chunk-zn7b14jn.js";
+import "B:/~BUN/root/chunk-z6138ats.js";
+import "B:/~BUN/root/chunk-c79wfkj4.js";
+import "B:/~BUN/root/chunk-7wn6n2hd.js";
+import "B:/~BUN/root/chunk-z31ebsm2.js";
+import "B:/~BUN/root/chunk-1g25msn4.js";
+import "B:/~BUN/root/chunk-f9dwrymq.js";
+import "B:/~BUN/root/chunk-46ahshhq.js";
+import "B:/~BUN/root/chunk-1w2vha2y.js";
+import "B:/~BUN/root/chunk-d10hhz4p.js";
+import "B:/~BUN/root/chunk-0w2htvr6.js";
+import "B:/~BUN/root/chunk-t4qpmjt5.js";
+import "B:/~BUN/root/chunk-nsneqfcc.js";
+import "B:/~BUN/root/chunk-x1xft50h.js";
+import "B:/~BUN/root/chunk-5xx1vfdh.js";
+import "B:/~BUN/root/chunk-bkfncj77.js";
+import "B:/~BUN/root/chunk-9jpwd6f1.js";
+import "B:/~BUN/root/chunk-myfamxtp.js";
+import "B:/~BUN/root/chunk-3xdsa4p8.js";
+import "B:/~BUN/root/chunk-8998nbf3.js";
+import "B:/~BUN/root/chunk-pc24rkga.js";
+import "B:/~BUN/root/chunk-r8p1hzqw.js";
+import "B:/~BUN/root/chunk-acjt1b7f.js";
+import "B:/~BUN/root/chunk-2f1svh63.js";
+import "B:/~BUN/root/chunk-begxsvab.js";
+import "B:/~BUN/root/chunk-44q965xg.js";
+import "B:/~BUN/root/chunk-sy1h8mf0.js";
+import "B:/~BUN/root/chunk-fkr27nhj.js";
+import "B:/~BUN/root/chunk-6n5g80b8.js";
+import "B:/~BUN/root/chunk-hwg4hdxm.js";
+import "B:/~BUN/root/chunk-1fg2bpc3.js";
+import "B:/~BUN/root/chunk-8f4z6bdn.js";
+import "B:/~BUN/root/chunk-ctmjjbhk.js";
+import "B:/~BUN/root/chunk-4vxp7kvb.js";
+import "B:/~BUN/root/chunk-x2th98na.js";
+import "B:/~BUN/root/chunk-b91sxvrb.js";
+import "B:/~BUN/root/chunk-pwj77283.js";
+import "B:/~BUN/root/chunk-wthaftk0.js";
+import { es } from "B:/~BUN/root/chunk-0s9zh2h6.js";
+import "B:/~BUN/root/chunk-x24hm796.js";
+import "B:/~BUN/root/chunk-1s0yt4vj.js";
+import "B:/~BUN/root/chunk-gvasf6q6.js";
+import "B:/~BUN/root/chunk-3vtkd50k.js";
+import "B:/~BUN/root/chunk-hacd8gcc.js";
+import "B:/~BUN/root/chunk-f7w7sw0m.js";
+import "B:/~BUN/root/chunk-amar4116.js";
+import "B:/~BUN/root/chunk-vaq2hdme.js";
+import "B:/~BUN/root/chunk-pzs4x0zd.js";
+import "B:/~BUN/root/chunk-qt1wryw6.js";
+import "B:/~BUN/root/chunk-sjfczffk.js";
+import "B:/~BUN/root/chunk-dm4rzkqc.js";
+import "B:/~BUN/root/chunk-9kvvd0hy.js";
+import "B:/~BUN/root/chunk-xc0c1vfp.js";
+import "B:/~BUN/root/chunk-1x03q1j7.js";
+import "B:/~BUN/root/chunk-jgwwv4gf.js";
+import "B:/~BUN/root/chunk-q2rjek8y.js";
+import "B:/~BUN/root/chunk-3v92y8yw.js";
+import "B:/~BUN/root/chunk-5h4fwkjy.js";
+import "B:/~BUN/root/chunk-ge2k1jpp.js";
+import "B:/~BUN/root/chunk-smrt7z22.js";
+import "B:/~BUN/root/chunk-trd3c21n.js";
+import "B:/~BUN/root/chunk-xgg9zsk6.js";
+import "B:/~BUN/root/chunk-7s3m410n.js";
+import "B:/~BUN/root/chunk-qfq22jk9.js";
+import "B:/~BUN/root/chunk-vmcmhkh2.js";
+import "B:/~BUN/root/chunk-1zzrbtzr.js";
+import "B:/~BUN/root/chunk-m749kjym.js";
+import "B:/~BUN/root/chunk-ht2sp6s6.js";
+import "B:/~BUN/root/chunk-0zd0vn8w.js";
+import "B:/~BUN/root/chunk-3v5ng1y2.js";
+import "B:/~BUN/root/chunk-fzefftbw.js";
+import "B:/~BUN/root/chunk-hnth82be.js";
+import "B:/~BUN/root/chunk-yr3hf5bg.js";
+import "B:/~BUN/root/chunk-79dw4seg.js";
+import "B:/~BUN/root/chunk-2xc4webm.js";
+import "B:/~BUN/root/chunk-esnm3r09.js";
+import "B:/~BUN/root/chunk-t0w3xyzh.js";
+import "B:/~BUN/root/chunk-eds8xkh8.js";
+import { EF, Loe } from "B:/~BUN/root/chunk-k3f9rj85.js";
+import { z6 } from "B:/~BUN/root/chunk-4110my9j.js";
+import "B:/~BUN/root/chunk-xdzcgcjh.js";
+import "B:/~BUN/root/chunk-tc6a3318.js";
+import "B:/~BUN/root/chunk-2wkhcc7d.js";
+import "B:/~BUN/root/chunk-vy3btdd1.js";
+import "B:/~BUN/root/chunk-3a409jmn.js";
+import "B:/~BUN/root/chunk-sjvfdrzm.js";
+import "B:/~BUN/root/chunk-n9ctns18.js";
+import "B:/~BUN/root/chunk-3xtmwvra.js";
+import "B:/~BUN/root/chunk-qtjkgnxr.js";
+import "B:/~BUN/root/chunk-5g14jzvf.js";
+import "B:/~BUN/root/chunk-zvpxvfbv.js";
+import "B:/~BUN/root/chunk-v8nkpg4j.js";
+import "B:/~BUN/root/chunk-65zedn3n.js";
+import "B:/~BUN/root/chunk-zpne314q.js";
+import "B:/~BUN/root/chunk-t7d2hp9h.js";
+import "B:/~BUN/root/chunk-79595s9y.js";
+import "B:/~BUN/root/chunk-ww0cdpg4.js";
+import "B:/~BUN/root/chunk-q15wjdnk.js";
+import "B:/~BUN/root/chunk-x3gsqe09.js";
+import "B:/~BUN/root/chunk-4hj5k2m3.js";
+import "B:/~BUN/root/chunk-hamfx3hn.js";
+import "B:/~BUN/root/chunk-12nc74pv.js";
+import "B:/~BUN/root/chunk-9wbhv9z5.js";
+import "B:/~BUN/root/chunk-jbjsy1k0.js";
+import { Oe, M, je } from "B:/~BUN/root/chunk-4qfwb3rf.js";
+var we = M(function (Kt) {
+  Object.defineProperty(Kt, "__esModule", {
+    value: !0
+  });
+  Kt.stringArray = Kt.array = Kt.func = Kt.error = Kt.number = Kt.string = Kt.boolean = void 0;
+  function ti(e) {
+    return e === !0 || e === !1;
+  }
+  Kt.boolean = ti;
+  function Vt(e) {
+    return typeof e === "string" || e instanceof String;
+  }
+  Kt.string = Vt;
+  function ri(e) {
+    return typeof e === "number" || e instanceof Number;
+  }
+  Kt.number = ri;
+  function ni(e) {
+    return e instanceof Error;
+  }
+  Kt.error = ni;
+  function ii(e) {
+    return typeof e === "function";
+  }
+  Kt.func = ii;
+  function Jt(e) {
+    return Array.isArray(e);
+  }
+  Kt.array = Jt;
+  function si(e) {
+    return Jt(e) && e.every(item => Vt(item));
+  }
+  Kt.stringArray = si;
+});
+var ht = M(function (vr) {
+  Object.defineProperty(vr, "__esModule", {
+    value: !0
+  });
+  vr.Message = vr.NotificationType9 = vr.NotificationType8 = vr.NotificationType7 = vr.NotificationType6 = vr.NotificationType5 = vr.NotificationType4 = vr.NotificationType3 = vr.NotificationType2 = vr.NotificationType1 = vr.NotificationType0 = vr.NotificationType = vr.RequestType9 = vr.RequestType8 = vr.RequestType7 = vr.RequestType6 = vr.RequestType5 = vr.RequestType4 = vr.RequestType3 = vr.RequestType2 = vr.RequestType1 = vr.RequestType = vr.RequestType0 = vr.AbstractMessageSignature = vr.ParameterStructures = vr.ResponseError = vr.ErrorCodes = void 0;
+  var K = we(),
+    lt;
+  (function (e) {
+    e.ParseError = -32700, e.InvalidRequest = -32600, e.MethodNotFound = -32601, e.InvalidParams = -32602, e.InternalError = -32603, e.jsonrpcReservedErrorRangeStart = -32099, e.serverErrorStart = -32099, e.MessageWriteError = -32099, e.MessageReadError = -32098, e.PendingResponseRejected = -32097, e.ConnectionInactive = -32096, e.ServerNotInitialized = -32002, e.UnknownErrorCode = -32001, e.jsonrpcReservedErrorRangeEnd = -32000, e.serverErrorEnd = -32000;
+  })(lt || (vr.ErrorCodes = lt = {}));
+  class ft extends Error {
+    constructor(e, r, n) {
+      super(r);
+      this.code = K.number(e) ? e : lt.UnknownErrorCode, this.data = n, Object.setPrototypeOf(this, ft.prototype);
+    }
+    toJson() {
+      let e = {
+        code: this.code,
+        message: this.message
+      };
+      if (this.data !== void 0) e.data = this.data;
+      return e;
+    }
+  }
+  vr.ResponseError = ft;
+  class H {
+    constructor(e) {
+      this.kind = e;
+    }
+    static is(e) {
+      return e === H.auto || e === H.byName || e === H.byPosition;
+    }
+    toString() {
+      return this.kind;
+    }
+  }
+  vr.ParameterStructures = H;
+  H.auto = new H("auto");
+  H.byPosition = new H("byPosition");
+  H.byName = new H("byName");
+  class q {
+    constructor(e, r) {
+      this.method = e, this.numberOfParams = r;
+    }
+    get parameterStructures() {
+      return H.auto;
+    }
+  }
+  vr.AbstractMessageSignature = q;
+  class Yt extends q {
+    constructor(e) {
+      super(e, 0);
+    }
+  }
+  vr.RequestType0 = Yt;
+  class Xt extends q {
+    constructor(e, r = H.auto) {
+      super(e, 1);
+      this._parameterStructures = r;
+    }
+    get parameterStructures() {
+      return this._parameterStructures;
+    }
+  }
+  vr.RequestType = Xt;
+  class Zt extends q {
+    constructor(e, r = H.auto) {
+      super(e, 1);
+      this._parameterStructures = r;
+    }
+    get parameterStructures() {
+      return this._parameterStructures;
+    }
+  }
+  vr.RequestType1 = Zt;
+  class er extends q {
+    constructor(e) {
+      super(e, 2);
+    }
+  }
+  vr.RequestType2 = er;
+  class tr extends q {
+    constructor(e) {
+      super(e, 3);
+    }
+  }
+  vr.RequestType3 = tr;
+  class rr extends q {
+    constructor(e) {
+      super(e, 4);
+    }
+  }
+  vr.RequestType4 = rr;
+  class nr extends q {
+    constructor(e) {
+      super(e, 5);
+    }
+  }
+  vr.RequestType5 = nr;
+  class ir extends q {
+    constructor(e) {
+      super(e, 6);
+    }
+  }
+  vr.RequestType6 = ir;
+  class sr extends q {
+    constructor(e) {
+      super(e, 7);
+    }
+  }
+  vr.RequestType7 = sr;
+  class or extends q {
+    constructor(e) {
+      super(e, 8);
+    }
+  }
+  vr.RequestType8 = or;
+  class ar extends q {
+    constructor(e) {
+      super(e, 9);
+    }
+  }
+  vr.RequestType9 = ar;
+  class cr extends q {
+    constructor(e, r = H.auto) {
+      super(e, 1);
+      this._parameterStructures = r;
+    }
+    get parameterStructures() {
+      return this._parameterStructures;
+    }
+  }
+  vr.NotificationType = cr;
+  class ur extends q {
+    constructor(e) {
+      super(e, 0);
+    }
+  }
+  vr.NotificationType0 = ur;
+  class dr extends q {
+    constructor(e, r = H.auto) {
+      super(e, 1);
+      this._parameterStructures = r;
+    }
+    get parameterStructures() {
+      return this._parameterStructures;
+    }
+  }
+  vr.NotificationType1 = dr;
+  class lr extends q {
+    constructor(e) {
+      super(e, 2);
+    }
+  }
+  vr.NotificationType2 = lr;
+  class fr extends q {
+    constructor(e) {
+      super(e, 3);
+    }
+  }
+  vr.NotificationType3 = fr;
+  class hr extends q {
+    constructor(e) {
+      super(e, 4);
+    }
+  }
+  vr.NotificationType4 = hr;
+  class pr extends q {
+    constructor(e) {
+      super(e, 5);
+    }
+  }
+  vr.NotificationType5 = pr;
+  class mr extends q {
+    constructor(e) {
+      super(e, 6);
+    }
+  }
+  vr.NotificationType6 = mr;
+  class gr extends q {
+    constructor(e) {
+      super(e, 7);
+    }
+  }
+  vr.NotificationType7 = gr;
+  class yr extends q {
+    constructor(e) {
+      super(e, 8);
+    }
+  }
+  vr.NotificationType8 = yr;
+  class br extends q {
+    constructor(e) {
+      super(e, 9);
+    }
+  }
+  vr.NotificationType9 = br;
+  var Gt;
+  (function (e) {
+    function r(c) {
+      let h = c;
+      return h && K.string(h.method) && (K.string(h.id) || K.number(h.id));
+    }
+    e.isRequest = r;
+    function n(c) {
+      let h = c;
+      return h && K.string(h.method) && c.id === void 0;
+    }
+    e.isNotification = n;
+    function s(c) {
+      let h = c;
+      return h && (h.result !== void 0 || !!h.error) && (K.string(h.id) || K.number(h.id) || h.id === null);
+    }
+    e.isResponse = s;
+  })(Gt || (vr.Message = Gt = {}));
+});
+var mt = M(function (Rr) {
+  var _r;
+  Object.defineProperty(Rr, "__esModule", {
+    value: !0
+  });
+  Rr.LRUCache = Rr.LinkedMap = Rr.Touch = void 0;
+  var U;
+  (function (e) {
+    e.None = 0, e.First = 1, e.AsOld = e.First, e.Last = 2, e.AsNew = e.Last;
+  })(U || (Rr.Touch = U = {}));
+  class pt {
+    constructor() {
+      this[_r] = "LinkedMap", this._map = new Map(), this._head = void 0, this._tail = void 0, this._size = 0, this._state = 0;
+    }
+    clear() {
+      this._map.clear(), this._head = void 0, this._tail = void 0, this._size = 0, this._state++;
+    }
+    isEmpty() {
+      return !this._head && !this._tail;
+    }
+    get size() {
+      return this._size;
+    }
+    get first() {
+      return this._head?.value;
+    }
+    get last() {
+      return this._tail?.value;
+    }
+    has(e) {
+      return this._map.has(e);
+    }
+    get(e, r = U.None) {
+      let n = this._map.get(e);
+      if (!n) return;
+      if (r !== U.None) this.touch(n, r);
+      return n.value;
+    }
+    set(key, value, n = U.None) {
+      let s = this._map.get(key);
+      if (s) {
+        if (s.value = value, n !== U.None) this.touch(s, n);
+      } else {
+        switch (s = {
+          key: key,
+          value: value,
+          next: void 0,
+          previous: void 0
+        }, n) {
+          case U.None:
+            this.addItemLast(s);
+            break;
+          case U.First:
+            this.addItemFirst(s);
+            break;
+          case U.Last:
+            this.addItemLast(s);
+            break;
+          default:
+            this.addItemLast(s);
+            break;
+        }
+        this._map.set(key, s), this._size++;
+      }
+      return this;
+    }
+    delete(e) {
+      return !!this.remove(e);
+    }
+    remove(e) {
+      let r = this._map.get(e);
+      if (!r) return;
+      return this._map.delete(e), this.removeItem(r), this._size--, r.value;
+    }
+    shift() {
+      if (!this._head && !this._tail) return;
+      if (!this._head || !this._tail) throw Error("Invalid list");
+      let _head = this._head;
+      return this._map.delete(_head.key), this.removeItem(_head), this._size--, _head.value;
+    }
+    forEach(e, r) {
+      let _state = this._state,
+        _head_2 = this._head;
+      while (_head_2) {
+        if (r) e.bind(r)(_head_2.value, _head_2.key, this);else e(_head_2.value, _head_2.key, this);
+        if (this._state !== _state) throw Error("LinkedMap got modified during iteration.");
+        _head_2 = _head_2.next;
+      }
+    }
+    keys() {
+      let _state_2 = this._state,
+        _head_3 = this._head,
+        n = {
+          [Symbol.iterator]: () => n,
+          next: () => {
+            if (this._state !== _state_2) throw Error("LinkedMap got modified during iteration.");
+            if (_head_3) {
+              let s = {
+                value: _head_3.key,
+                done: !1
+              };
+              return _head_3 = _head_3.next, s;
+            } else return {
+              value: void 0,
+              done: !0
+            };
+          }
+        };
+      return n;
+    }
+    values() {
+      let _state_3 = this._state,
+        _head_4 = this._head,
+        n = {
+          [Symbol.iterator]: () => n,
+          next: () => {
+            if (this._state !== _state_3) throw Error("LinkedMap got modified during iteration.");
+            if (_head_4) {
+              let s = {
+                value: _head_4.value,
+                done: !1
+              };
+              return _head_4 = _head_4.next, s;
+            } else return {
+              value: void 0,
+              done: !0
+            };
+          }
+        };
+      return n;
+    }
+    entries() {
+      let _state_4 = this._state,
+        _head_5 = this._head,
+        n = {
+          [Symbol.iterator]: () => n,
+          next: () => {
+            if (this._state !== _state_4) throw Error("LinkedMap got modified during iteration.");
+            if (_head_5) {
+              let s = {
+                value: [_head_5.key, _head_5.value],
+                done: !1
+              };
+              return _head_5 = _head_5.next, s;
+            } else return {
+              value: void 0,
+              done: !0
+            };
+          }
+        };
+      return n;
+    }
+    [(_r = Symbol.toStringTag, Symbol.iterator)]() {
+      return this.entries();
+    }
+    trimOld(e) {
+      if (e >= this.size) return;
+      if (e === 0) {
+        this.clear();
+        return;
+      }
+      let _head_6 = this._head,
+        n = this.size;
+      while (_head_6 && n > e) this._map.delete(_head_6.key), _head_6 = _head_6.next, n--;
+      if (this._head = _head_6, this._size = n, _head_6) _head_6.previous = void 0;
+      this._state++;
+    }
+    addItemFirst(e) {
+      if (!this._head && !this._tail) this._tail = e;else if (!this._head) throw Error("Invalid list");else e.next = this._head, this._head.previous = e;
+      this._head = e, this._state++;
+    }
+    addItemLast(e) {
+      if (!this._head && !this._tail) this._head = e;else if (!this._tail) throw Error("Invalid list");else e.previous = this._tail, this._tail.next = e;
+      this._tail = e, this._state++;
+    }
+    removeItem(e) {
+      if (e === this._head && e === this._tail) this._head = void 0, this._tail = void 0;else if (e === this._head) {
+        if (!e.next) throw Error("Invalid list");
+        e.next.previous = void 0, this._head = e.next;
+      } else if (e === this._tail) {
+        if (!e.previous) throw Error("Invalid list");
+        e.previous.next = void 0, this._tail = e.previous;
+      } else {
+        let {
+          next: next,
+          previous: previous
+        } = e;
+        if (!next || !previous) throw Error("Invalid list");
+        next.previous = previous, previous.next = next;
+      }
+      e.next = void 0, e.previous = void 0, this._state++;
+    }
+    touch(e, r) {
+      if (!this._head || !this._tail) throw Error("Invalid list");
+      if (r !== U.First && r !== U.Last) return;
+      if (r === U.First) {
+        if (e === this._head) return;
+        let {
+          next: next_2,
+          previous: previous_2
+        } = e;
+        if (e === this._tail) previous_2.next = void 0, this._tail = previous_2;else next_2.previous = previous_2, previous_2.next = next_2;
+        e.previous = void 0, e.next = this._head, this._head.previous = e, this._head = e, this._state++;
+      } else if (r === U.Last) {
+        if (e === this._tail) return;
+        let {
+          next: next_3,
+          previous: previous_3
+        } = e;
+        if (e === this._head) next_3.previous = void 0, this._head = next_3;else next_3.previous = previous_3, previous_3.next = next_3;
+        e.next = void 0, e.previous = this._tail, this._tail.next = e, this._tail = e, this._state++;
+      }
+    }
+    toJSON() {
+      let e = [];
+      return this.forEach((item, index) => {
+        e.push([index, item]);
+      }), e;
+    }
+    fromJSON(e) {
+      this.clear();
+      for (let [r, n] of e) this.set(r, n);
+    }
+  }
+  Rr.LinkedMap = pt;
+  class Sr extends pt {
+    constructor(e, r = 1) {
+      super();
+      this._limit = e, this._ratio = Math.min(Math.max(0, r), 1);
+    }
+    get limit() {
+      return this._limit;
+    }
+    set limit(e) {
+      this._limit = e, this.checkTrim();
+    }
+    get ratio() {
+      return this._ratio;
+    }
+    set ratio(e) {
+      this._ratio = Math.min(Math.max(0, e), 1), this.checkTrim();
+    }
+    get(e, r = U.AsNew) {
+      return super.get(e, r);
+    }
+    peek(e) {
+      return super.get(e, U.None);
+    }
+    set(e, r) {
+      return super.set(e, r, U.Last), this.checkTrim(), this;
+    }
+    checkTrim() {
+      if (this.size > this._limit) this.trimOld(Math.round(this._limit * this._ratio));
+    }
+  }
+  Rr.LRUCache = Sr;
+});
+var xr = M(function (Er) {
+  Object.defineProperty(Er, "__esModule", {
+    value: !0
+  });
+  Er.Disposable = void 0;
+  var Tr;
+  (function (e) {
+    function r(dispose) {
+      return {
+        dispose: dispose
+      };
+    }
+    e.create = r;
+  })(Tr || (Er.Disposable = Tr = {}));
+});
+var de = M(function (kr) {
+  Object.defineProperty(kr, "__esModule", {
+    value: !0
+  });
+  var gt;
+  function yt() {
+    if (gt === void 0) throw Error("No runtime abstraction layer installed");
+    return gt;
+  }
+  (function (e) {
+    function r(n) {
+      if (n === void 0) throw Error("No runtime abstraction layer provided");
+      gt = n;
+    }
+    e.install = r;
+  })(yt || (yt = {}));
+  kr.default = yt;
+});
+var _e = M(function (Or) {
+  Object.defineProperty(Or, "__esModule", {
+    value: !0
+  });
+  Or.Emitter = Or.Event = void 0;
+  var zi = de(),
+    Lr;
+  (function (e) {
+    let r = {
+      dispose() {}
+    };
+    e.None = function None() {
+      return r;
+    };
+  })(Lr || (Or.Event = Lr = {}));
+  class Nr {
+    add(e, r = null, n) {
+      if (!this._callbacks) this._callbacks = [], this._contexts = [];
+      if (this._callbacks.push(e), this._contexts.push(r), Array.isArray(n)) n.push({
+        dispose: () => this.remove(e, r)
+      });
+    }
+    remove(e, r = null) {
+      if (!this._callbacks) return;
+      let n = !1;
+      for (let s = 0, c = this._callbacks.length; s < c; s++) if (this._callbacks[s] === e) if (this._contexts[s] === r) {
+        this._callbacks.splice(s, 1), this._contexts.splice(s, 1);
+        return;
+      } else n = !0;
+      if (n) throw Error("When adding a listener with a context, you should remove it with the same context");
+    }
+    invoke(...e) {
+      if (!this._callbacks) return [];
+      let r = [],
+        n = this._callbacks.slice(0),
+        s = this._contexts.slice(0);
+      for (let c = 0, h = n.length; c < h; c++) try {
+        r.push(n[c].apply(s[c], e));
+      } catch (P) {
+        (0, zi.default)().console.error(P);
+      }
+      return r;
+    }
+    isEmpty() {
+      return !this._callbacks || this._callbacks.length === 0;
+    }
+    dispose() {
+      this._callbacks = void 0, this._contexts = void 0;
+    }
+  }
+  class He {
+    constructor(e) {
+      this._options = e;
+    }
+    get event() {
+      if (!this._event) this._event = (e, r, n) => {
+        if (!this._callbacks) this._callbacks = new Nr();
+        if (this._options && this._options.onFirstListenerAdd && this._callbacks.isEmpty()) this._options.onFirstListenerAdd(this);
+        this._callbacks.add(e, r);
+        let s = {
+          dispose: () => {
+            if (!this._callbacks) return;
+            if (this._callbacks.remove(e, r), s.dispose = He._noop, this._options && this._options.onLastListenerRemove && this._callbacks.isEmpty()) this._options.onLastListenerRemove(this);
+          }
+        };
+        if (Array.isArray(n)) n.push(s);
+        return s;
+      };
+      return this._event;
+    }
+    fire(e) {
+      if (this._callbacks) this._callbacks.invoke.call(this._callbacks, e);
+    }
+    dispose() {
+      if (this._callbacks) this._callbacks.dispose(), this._callbacks = void 0;
+    }
+  }
+  Or.Emitter = He;
+  He._noop = function _noop() {};
+});
+var Ve = M(function (qr) {
+  Object.defineProperty(qr, "__esModule", {
+    value: !0
+  });
+  qr.CancellationTokenSource = qr.CancellationToken = void 0;
+  var Fi = de(),
+    jr = we(),
+    Se = _e(),
+    Ue;
+  (function (e) {
+    e.None = Object.freeze({
+      isCancellationRequested: !1,
+      onCancellationRequested: Se.Event.None
+    }), e.Cancelled = Object.freeze({
+      isCancellationRequested: !0,
+      onCancellationRequested: Se.Event.None
+    });
+    function r(n) {
+      let s = n;
+      return s && (s === e.None || s === e.Cancelled || jr.boolean(s.isCancellationRequested) && !!s.onCancellationRequested);
+    }
+    e.is = r;
+  })(Ue || (qr.CancellationToken = Ue = {}));
+  var Hi = Object.freeze(function (e, r) {
+    let n = (0, Fi.default)().timer.setTimeout(e.bind(r), 0);
+    return {
+      dispose() {
+        n.dispose();
+      }
+    };
+  });
+  class bt {
+    constructor() {
+      this._isCancelled = !1;
+    }
+    cancel() {
+      if (!this._isCancelled) {
+        if (this._isCancelled = !0, this._emitter) this._emitter.fire(void 0), this.dispose();
+      }
+    }
+    get isCancellationRequested() {
+      return this._isCancelled;
+    }
+    get onCancellationRequested() {
+      if (this._isCancelled) return Hi;
+      if (!this._emitter) this._emitter = new Se.Emitter();
+      return this._emitter.event;
+    }
+    dispose() {
+      if (this._emitter) this._emitter.dispose(), this._emitter = void 0;
+    }
+  }
+  class $r {
+    get token() {
+      if (!this._token) this._token = new bt();
+      return this._token;
+    }
+    cancel() {
+      if (!this._token) this._token = Ue.Cancelled;else this._token.cancel();
+    }
+    dispose() {
+      if (!this._token) this._token = Ue.None;else if (this._token instanceof bt) this._token.dispose();
+    }
+  }
+  qr.CancellationTokenSource = $r;
+});
+var Ur = M(function (Fr) {
+  Object.defineProperty(Fr, "__esModule", {
+    value: !0
+  });
+  Fr.SharedArrayReceiverStrategy = Fr.SharedArraySenderStrategy = void 0;
+  var Dr = Ve(),
+    De;
+  (function (e) {
+    e.Continue = 0, e.Cancelled = 1;
+  })(De || (De = {}));
+  class Br {
+    constructor() {
+      this.buffers = new Map();
+    }
+    enableCancellation(e) {
+      if (e.id === null) return;
+      let sharedArrayBuffer = new SharedArrayBuffer(4),
+        int32Array = new Int32Array(sharedArrayBuffer, 0, 1);
+      int32Array[0] = De.Continue, this.buffers.set(e.id, sharedArrayBuffer), e.$cancellationData = sharedArrayBuffer;
+    }
+    async sendCancellation(e, r) {
+      let n = this.buffers.get(r);
+      if (n === void 0) return;
+      let int32Array_2 = new Int32Array(n, 0, 1);
+      Atomics.store(int32Array_2, 0, De.Cancelled);
+    }
+    cleanup(e) {
+      this.buffers.delete(e);
+    }
+    dispose() {
+      this.buffers.clear();
+    }
+  }
+  Fr.SharedArraySenderStrategy = Br;
+  class Ar {
+    constructor(e) {
+      this.data = new Int32Array(e, 0, 1);
+    }
+    get isCancellationRequested() {
+      return Atomics.load(this.data, 0) === De.Cancelled;
+    }
+    get onCancellationRequested() {
+      throw Error("Cancellation over SharedArrayBuffer doesn't support cancellation events");
+    }
+  }
+  class zr {
+    constructor(e) {
+      this.token = new Ar(e);
+    }
+    cancel() {}
+    dispose() {}
+  }
+  class Wr {
+    constructor() {
+      this.kind = "request";
+    }
+    createCancellationTokenSource(e) {
+      let $cancellationData = e.$cancellationData;
+      if ($cancellationData === void 0) return new Dr.CancellationTokenSource();
+      return new zr($cancellationData);
+    }
+  }
+  Fr.SharedArrayReceiverStrategy = Wr;
+});
+var vt = M(function (Jr) {
+  Object.defineProperty(Jr, "__esModule", {
+    value: !0
+  });
+  Jr.Semaphore = void 0;
+  var Ji = de();
+  class Vr {
+    constructor(e = 1) {
+      if (e <= 0) throw Error("Capacity must be greater than 0");
+      this._capacity = e, this._active = 0, this._waiting = [];
+    }
+    lock(thunk) {
+      return new Promise((resolve, reject) => {
+        this._waiting.push({
+          thunk: thunk,
+          resolve: resolve,
+          reject: reject
+        }), this.runNext();
+      });
+    }
+    get active() {
+      return this._active;
+    }
+    runNext() {
+      if (this._waiting.length === 0 || this._active === this._capacity) return;
+      (0, Ji.default)().timer.setImmediate(() => this.doRunNext());
+    }
+    doRunNext() {
+      if (this._waiting.length === 0 || this._active === this._capacity) return;
+      let e = this._waiting.shift();
+      if (this._active++, this._active > this._capacity) throw Error("To many thunks active");
+      try {
+        let r = e.thunk();
+        if (r instanceof Promise) r.then(n => {
+          this._active--, e.resolve(n), this.runNext();
+        }, n => {
+          this._active--, e.reject(n), this.runNext();
+        });else this._active--, e.resolve(r), this.runNext();
+      } catch (error) {
+        this._active--, e.reject(error), this.runNext();
+      }
+    }
+  }
+  Jr.Semaphore = Vr;
+});
+var en = M(function (Xr) {
+  Object.defineProperty(Xr, "__esModule", {
+    value: !0
+  });
+  Xr.ReadableStreamMessageReader = Xr.AbstractMessageReader = Xr.MessageReader = void 0;
+  var wt = de(),
+    ee = we(),
+    Re = _e(),
+    Gr = vt(),
+    Qr;
+  (function (e) {
+    function r(n) {
+      let s = n;
+      return s && ee.func(s.listen) && ee.func(s.dispose) && ee.func(s.onError) && ee.func(s.onClose) && ee.func(s.onPartialMessage);
+    }
+    e.is = r;
+  })(Qr || (Xr.MessageReader = Qr = {}));
+  class St {
+    constructor() {
+      this.errorEmitter = new Re.Emitter(), this.closeEmitter = new Re.Emitter(), this.partialMessageEmitter = new Re.Emitter();
+    }
+    dispose() {
+      this.errorEmitter.dispose(), this.closeEmitter.dispose();
+    }
+    get onError() {
+      return this.errorEmitter.event;
+    }
+    fireError(e) {
+      this.errorEmitter.fire(this.asError(e));
+    }
+    get onClose() {
+      return this.closeEmitter.event;
+    }
+    fireClose() {
+      this.closeEmitter.fire(void 0);
+    }
+    get onPartialMessage() {
+      return this.partialMessageEmitter.event;
+    }
+    firePartialMessage(e) {
+      this.partialMessageEmitter.fire(e);
+    }
+    asError(e) {
+      if (e instanceof Error) return e;else return Error(`Reader received error. Reason: ${ee.string(e.message) ? e.message : "unknown"}`);
+    }
+  }
+  Xr.AbstractMessageReader = St;
+  var _t;
+  (function (e) {
+    function r(n) {
+      let charset,
+        c,
+        contentDecoder,
+        contentDecoders = new Map(),
+        contentTypeDecoder,
+        contentTypeDecoders = new Map();
+      if (n === void 0 || typeof n === "string") charset = n ?? "utf-8";else {
+        if (charset = n.charset ?? "utf-8", n.contentDecoder !== void 0) contentDecoder = n.contentDecoder, contentDecoders.set(contentDecoder.name, contentDecoder);
+        if (n.contentDecoders !== void 0) for (let I of n.contentDecoders) contentDecoders.set(I.name, I);
+        if (n.contentTypeDecoder !== void 0) contentTypeDecoder = n.contentTypeDecoder, contentTypeDecoders.set(contentTypeDecoder.name, contentTypeDecoder);
+        if (n.contentTypeDecoders !== void 0) for (let I of n.contentTypeDecoders) contentTypeDecoders.set(I.name, I);
+      }
+      if (contentTypeDecoder === void 0) contentTypeDecoder = (0, wt.default)().applicationJson.decoder, contentTypeDecoders.set(contentTypeDecoder.name, contentTypeDecoder);
+      return {
+        charset: charset,
+        contentDecoder: contentDecoder,
+        contentDecoders: contentDecoders,
+        contentTypeDecoder: contentTypeDecoder,
+        contentTypeDecoders: contentTypeDecoders
+      };
+    }
+    e.fromOptions = r;
+  })(_t || (_t = {}));
+  class Yr extends St {
+    constructor(e, r) {
+      super();
+      this.readable = e, this.options = _t.fromOptions(r), this.buffer = (0, wt.default)().messageBuffer.create(this.options.charset), this._partialMessageTimeout = 1e4, this.nextMessageLength = -1, this.messageToken = 0, this.readSemaphore = new Gr.Semaphore(1);
+    }
+    set partialMessageTimeout(e) {
+      this._partialMessageTimeout = e;
+    }
+    get partialMessageTimeout() {
+      return this._partialMessageTimeout;
+    }
+    listen(e) {
+      this.nextMessageLength = -1, this.messageToken = 0, this.partialMessageTimer = void 0, this.callback = e;
+      let r = this.readable.onData(n => {
+        this.onData(n);
+      });
+      return this.readable.onError(n => this.fireError(n)), this.readable.onClose(() => this.fireClose()), r;
+    }
+    onData(e) {
+      try {
+        this.buffer.append(e);
+        while (!0) {
+          if (this.nextMessageLength === -1) {
+            let n = this.buffer.tryReadHeaders(!0);
+            if (!n) return;
+            let s = n.get("content-length");
+            if (!s) {
+              this.fireError(Error(`Header must provide a Content-Length property.
+${JSON.stringify(Object.fromEntries(n))}`));
+              return;
+            }
+            let c = parseInt(s);
+            if (isNaN(c)) {
+              this.fireError(Error(`Content-Length value must be a number. Got ${s}`));
+              return;
+            }
+            this.nextMessageLength = c;
+          }
+          let r = this.buffer.tryReadBody(this.nextMessageLength);
+          if (r === void 0) {
+            this.setPartialMessageTimer();
+            return;
+          }
+          this.clearPartialMessageTimer(), this.nextMessageLength = -1, this.readSemaphore.lock(async () => {
+            let n = this.options.contentDecoder !== void 0 ? await this.options.contentDecoder.decode(r) : r,
+              s = await this.options.contentTypeDecoder.decode(n, this.options);
+            this.callback(s);
+          }).catch(n => {
+            this.fireError(n);
+          });
+        }
+      } catch (error) {
+        this.fireError(error);
+      }
+    }
+    clearPartialMessageTimer() {
+      if (this.partialMessageTimer) this.partialMessageTimer.dispose(), this.partialMessageTimer = void 0;
+    }
+    setPartialMessageTimer() {
+      if (this.clearPartialMessageTimer(), this._partialMessageTimeout <= 0) return;
+      this.partialMessageTimer = (0, wt.default)().timer.setTimeout((messageToken, waitingTime) => {
+        if (this.partialMessageTimer = void 0, messageToken === this.messageToken) this.firePartialMessage({
+          messageToken: messageToken,
+          waitingTime: waitingTime
+        }), this.setPartialMessageTimer();
+      }, this._partialMessageTimeout, this.messageToken, this._partialMessageTimeout);
+    }
+  }
+  Xr.ReadableStreamMessageReader = Yr;
+});
+var un = M(function (an) {
+  Object.defineProperty(an, "__esModule", {
+    value: !0
+  });
+  an.WriteableStreamMessageWriter = an.AbstractMessageWriter = an.MessageWriter = void 0;
+  var tn = de(),
+    ie = we(),
+    sn = vt(),
+    Je = _e(),
+    Gi = "Content-Length: ",
+    rn = `\r
+`,
+    nn;
+  (function (e) {
+    function r(n) {
+      let s = n;
+      return s && ie.func(s.dispose) && ie.func(s.onClose) && ie.func(s.onError) && ie.func(s.write);
+    }
+    e.is = r;
+  })(nn || (an.MessageWriter = nn = {}));
+  class Pt {
+    constructor() {
+      this.errorEmitter = new Je.Emitter(), this.closeEmitter = new Je.Emitter();
+    }
+    dispose() {
+      this.errorEmitter.dispose(), this.closeEmitter.dispose();
+    }
+    get onError() {
+      return this.errorEmitter.event;
+    }
+    fireError(e, r, n) {
+      this.errorEmitter.fire([this.asError(e), r, n]);
+    }
+    get onClose() {
+      return this.closeEmitter.event;
+    }
+    fireClose() {
+      this.closeEmitter.fire(void 0);
+    }
+    asError(e) {
+      if (e instanceof Error) return e;else return Error(`Writer received error. Reason: ${ie.string(e.message) ? e.message : "unknown"}`);
+    }
+  }
+  an.AbstractMessageWriter = Pt;
+  var Rt;
+  (function (e) {
+    function r(n) {
+      if (n === void 0 || typeof n === "string") return {
+        charset: n ?? "utf-8",
+        contentTypeEncoder: (0, tn.default)().applicationJson.encoder
+      };else return {
+        charset: n.charset ?? "utf-8",
+        contentEncoder: n.contentEncoder,
+        contentTypeEncoder: n.contentTypeEncoder ?? (0, tn.default)().applicationJson.encoder
+      };
+    }
+    e.fromOptions = r;
+  })(Rt || (Rt = {}));
+  class on extends Pt {
+    constructor(e, r) {
+      super();
+      this.writable = e, this.options = Rt.fromOptions(r), this.errorCount = 0, this.writeSemaphore = new sn.Semaphore(1), this.writable.onError(n => this.fireError(n)), this.writable.onClose(() => this.fireClose());
+    }
+    async write(e) {
+      return this.writeSemaphore.lock(async () => this.options.contentTypeEncoder.encode(e, this.options).then(n => {
+        if (this.options.contentEncoder !== void 0) return this.options.contentEncoder.encode(n);else return n;
+      }).then(n => {
+        let s = [];
+        return s.push(Gi, n.byteLength.toString(), rn), s.push(rn), this.doWrite(e, s, n);
+      }, n => {
+        throw this.fireError(n), n;
+      }));
+    }
+    async doWrite(e, r, n) {
+      try {
+        return await this.writable.write(r.join(""), "ascii"), this.writable.write(n);
+      } catch (error) {
+        return this.handleError(error, e), Promise.reject(error);
+      }
+    }
+    handleError(e, r) {
+      this.errorCount++, this.fireError(e, r, this.errorCount);
+    }
+    end() {
+      this.writable.end();
+    }
+  }
+  an.WriteableStreamMessageWriter = on;
+});
+var hn = M(function (ln) {
+  Object.defineProperty(ln, "__esModule", {
+    value: !0
+  });
+  ln.AbstractMessageBuffer = void 0;
+  var Zi = 13,
+    ts = 10,
+    rs = `\r
+`;
+  class dn {
+    constructor(e = "utf-8") {
+      this._encoding = e, this._chunks = [], this._totalLength = 0;
+    }
+    get encoding() {
+      return this._encoding;
+    }
+    append(e) {
+      let r = typeof e === "string" ? this.fromString(e, this._encoding) : e;
+      this._chunks.push(r), this._totalLength += r.byteLength;
+    }
+    tryReadHeaders(e = !1) {
+      if (this._chunks.length === 0) return;
+      let r = 0,
+        n = 0,
+        s = 0,
+        c = 0;
+      e: while (n < this._chunks.length) {
+        let j = this._chunks[n];
+        s = 0;
+        t: while (s < j.length) {
+          switch (j[s]) {
+            case Zi:
+              switch (r) {
+                case 0:
+                  r = 1;
+                  break;
+                case 2:
+                  r = 3;
+                  break;
+                default:
+                  r = 0;
+              }
+              break;
+            case ts:
+              switch (r) {
+                case 1:
+                  r = 2;
+                  break;
+                case 3:
+                  r = 4, s++;
+                  break e;
+                default:
+                  r = 0;
+              }
+              break;
+            default:
+              r = 0;
+          }
+          s++;
+        }
+        c += j.byteLength, n++;
+      }
+      if (r !== 4) return;
+      let h = this._read(c + s),
+        P = new Map(),
+        _ = this.toString(h, "ascii").split(rs);
+      if (_.length < 2) return P;
+      for (let j = 0; j < _.length - 2; j++) {
+        let I = _[j],
+          X = I.indexOf(":");
+        if (X === -1) throw Error(`Message header must separate key and value using ':'
+${I}`);
+        let J = I.substr(0, X),
+          oe = I.substr(X + 1).trim();
+        P.set(e ? J.toLowerCase() : J, oe);
+      }
+      return P;
+    }
+    tryReadBody(e) {
+      if (this._totalLength < e) return;
+      return this._read(e);
+    }
+    get numberOfBytes() {
+      return this._totalLength;
+    }
+    _read(e) {
+      if (e === 0) return this.emptyBuffer();
+      if (e > this._totalLength) throw Error("Cannot read so many bytes!");
+      if (this._chunks[0].byteLength === e) {
+        let c = this._chunks[0];
+        return this._chunks.shift(), this._totalLength -= e, this.asNative(c);
+      }
+      if (this._chunks[0].byteLength > e) {
+        let c = this._chunks[0],
+          h = this.asNative(c, e);
+        return this._chunks[0] = c.slice(e), this._totalLength -= e, h;
+      }
+      let r = this.allocNative(e),
+        n = 0,
+        s = 0;
+      while (e > 0) {
+        let c = this._chunks[s];
+        if (c.byteLength > e) {
+          let h = c.slice(0, e);
+          r.set(h, n), n += e, this._chunks[s] = c.slice(e), this._totalLength -= e, e -= e;
+        } else r.set(c, n), n += c.byteLength, this._chunks.shift(), this._totalLength -= c.byteLength, e -= c.byteLength;
+      }
+      return r;
+    }
+  }
+  ln.AbstractMessageBuffer = dn;
+});
+var Rn = M(function (bn) {
+  Object.defineProperty(bn, "__esModule", {
+    value: !0
+  });
+  bn.createMessageConnection = bn.ConnectionOptions = bn.MessageStrategy = bn.CancellationStrategy = bn.CancellationSenderStrategy = bn.CancellationReceiverStrategy = bn.RequestCancellationReceiverStrategy = bn.IdCancellationReceiverStrategy = bn.ConnectionStrategy = bn.ConnectionError = bn.ConnectionErrors = bn.LogTraceNotification = bn.SetTraceNotification = bn.TraceFormat = bn.TraceValues = bn.Trace = bn.NullLogger = bn.ProgressType = bn.ProgressToken = void 0;
+  var pn = de(),
+    m = we(),
+    a = ht(),
+    Ke = mt(),
+    se = _e(),
+    Te = Ve(),
+    ze;
+  (function (e) {
+    e.type = new a.NotificationType("$/cancelRequest");
+  })(ze || (ze = {}));
+  var Tt;
+  (function (e) {
+    function r(n) {
+      return typeof n === "string" || typeof n === "number";
+    }
+    e.is = r;
+  })(Tt || (bn.ProgressToken = Tt = {}));
+  var Be;
+  (function (e) {
+    e.type = new a.NotificationType("$/progress");
+  })(Be || (Be = {}));
+  class yn {
+    constructor() {}
+  }
+  bn.ProgressType = yn;
+  var Et;
+  (function (e) {
+    function r(n) {
+      return m.func(n);
+    }
+    e.is = r;
+  })(Et || (Et = {}));
+  bn.NullLogger = Object.freeze({
+    error: () => {},
+    warn: () => {},
+    info: () => {},
+    log: () => {}
+  });
+  var E;
+  (function (e) {
+    e[e.Off = 0] = "Off", e[e.Messages = 1] = "Messages", e[e.Compact = 2] = "Compact", e[e.Verbose = 3] = "Verbose";
+  })(E || (bn.Trace = E = {}));
+  var mn;
+  (function (e) {
+    e.Off = "off", e.Messages = "messages", e.Compact = "compact", e.Verbose = "verbose";
+  })(mn || (bn.TraceValues = mn = {}));
+  (function (e) {
+    function r(s) {
+      if (!m.string(s)) return e.Off;
+      switch (s = s.toLowerCase(), s) {
+        case "off":
+          return e.Off;
+        case "messages":
+          return e.Messages;
+        case "compact":
+          return e.Compact;
+        case "verbose":
+          return e.Verbose;
+        default:
+          return e.Off;
+      }
+    }
+    e.fromString = r;
+    function n(s) {
+      switch (s) {
+        case e.Off:
+          return "off";
+        case e.Messages:
+          return "messages";
+        case e.Compact:
+          return "compact";
+        case e.Verbose:
+          return "verbose";
+        default:
+          return "off";
+      }
+    }
+    e.toString = n;
+  })(E || (bn.Trace = E = {}));
+  var Y;
+  (function (e) {
+    e.Text = "text", e.JSON = "json";
+  })(Y || (bn.TraceFormat = Y = {}));
+  (function (e) {
+    function r(n) {
+      if (!m.string(n)) return e.Text;
+      if (n = n.toLowerCase(), n === "json") return e.JSON;else return e.Text;
+    }
+    e.fromString = r;
+  })(Y || (bn.TraceFormat = Y = {}));
+  var Ct;
+  (function (e) {
+    e.type = new a.NotificationType("$/setTrace");
+  })(Ct || (bn.SetTraceNotification = Ct = {}));
+  var Qe;
+  (function (e) {
+    e.type = new a.NotificationType("$/logTrace");
+  })(Qe || (bn.LogTraceNotification = Qe = {}));
+  var Ae;
+  (function (e) {
+    e[e.Closed = 1] = "Closed", e[e.Disposed = 2] = "Disposed", e[e.AlreadyListening = 3] = "AlreadyListening";
+  })(Ae || (bn.ConnectionErrors = Ae = {}));
+  class Pe extends Error {
+    constructor(e, r) {
+      super(r);
+      this.code = e, Object.setPrototypeOf(this, Pe.prototype);
+    }
+  }
+  bn.ConnectionError = Pe;
+  var xt;
+  (function (e) {
+    function r(n) {
+      let s = n;
+      return s && m.func(s.cancelUndispatched);
+    }
+    e.is = r;
+  })(xt || (bn.ConnectionStrategy = xt = {}));
+  var Ge;
+  (function (e) {
+    function r(n) {
+      let s = n;
+      return s && (s.kind === void 0 || s.kind === "id") && m.func(s.createCancellationTokenSource) && (s.dispose === void 0 || m.func(s.dispose));
+    }
+    e.is = r;
+  })(Ge || (bn.IdCancellationReceiverStrategy = Ge = {}));
+  var kt;
+  (function (e) {
+    function r(n) {
+      let s = n;
+      return s && s.kind === "request" && m.func(s.createCancellationTokenSource) && (s.dispose === void 0 || m.func(s.dispose));
+    }
+    e.is = r;
+  })(kt || (bn.RequestCancellationReceiverStrategy = kt = {}));
+  var Ye;
+  (function (e) {
+    e.Message = Object.freeze({
+      createCancellationTokenSource(n) {
+        return new Te.CancellationTokenSource();
+      }
+    });
+    function r(n) {
+      return Ge.is(n) || kt.is(n);
+    }
+    e.is = r;
+  })(Ye || (bn.CancellationReceiverStrategy = Ye = {}));
+  var Xe;
+  (function (e) {
+    e.Message = Object.freeze({
+      sendCancellation(n, id) {
+        return n.sendNotification(ze.type, {
+          id: id
+        });
+      },
+      cleanup(n) {}
+    });
+    function r(n) {
+      let s = n;
+      return s && m.func(s.sendCancellation) && m.func(s.cleanup);
+    }
+    e.is = r;
+  })(Xe || (bn.CancellationSenderStrategy = Xe = {}));
+  var Ze;
+  (function (e) {
+    e.Message = Object.freeze({
+      receiver: Ye.Message,
+      sender: Xe.Message
+    });
+    function r(n) {
+      let s = n;
+      return s && Ye.is(s.receiver) && Xe.is(s.sender);
+    }
+    e.is = r;
+  })(Ze || (bn.CancellationStrategy = Ze = {}));
+  var et;
+  (function (e) {
+    function r(n) {
+      let s = n;
+      return s && m.func(s.handleMessage);
+    }
+    e.is = r;
+  })(et || (bn.MessageStrategy = et = {}));
+  var gn;
+  (function (e) {
+    function r(n) {
+      let s = n;
+      return s && (Ze.is(s.cancellationStrategy) || xt.is(s.connectionStrategy) || et.is(s.messageStrategy));
+    }
+    e.is = r;
+  })(gn || (bn.ConnectionOptions = gn = {}));
+  var te;
+  (function (e) {
+    e[e.New = 1] = "New", e[e.Listening = 2] = "Listening", e[e.Closed = 3] = "Closed", e[e.Disposed = 4] = "Disposed";
+  })(te || (te = {}));
+  function ns(e, r, n, s) {
+    let c = n !== void 0 ? n : bn.NullLogger,
+      h = 0,
+      P = 0,
+      _ = 0,
+      jsonrpc = "2.0",
+      I = void 0,
+      X = new Map(),
+      J = void 0,
+      oe = new Map(),
+      fe = new Map(),
+      re,
+      Q = new Ke.LinkedMap(),
+      Z = new Map(),
+      y = new Set(),
+      b = new Map(),
+      Off = E.Off,
+      Text = Y.Text,
+      x,
+      New = te.New,
+      ne = new se.Emitter(),
+      ce = new se.Emitter(),
+      he = new se.Emitter(),
+      v = new se.Emitter(),
+      z = new se.Emitter(),
+      G = s && s.cancellationStrategy ? s.cancellationStrategy : Ze.Message;
+    function pe(i) {
+      if (i === null) throw Error("Can't send requests with id null since the response can't be correlated.");
+      return "req-" + i.toString();
+    }
+    function me(i) {
+      if (i === null) return "res-unknown-" + (++_).toString();else return "res-" + i.toString();
+    }
+    function ge() {
+      return "not-" + (++P).toString();
+    }
+    function We(i, o) {
+      if (a.Message.isRequest(o)) i.set(pe(o.id), o);else if (a.Message.isResponse(o)) i.set(me(o.id), o);else i.set(ge(), o);
+    }
+    function $e(i) {
+      return;
+    }
+    function It() {
+      return New === te.Listening;
+    }
+    function Dt() {
+      return New === te.Closed;
+    }
+    function ye() {
+      return New === te.Disposed;
+    }
+    function Bt() {
+      if (New === te.New || New === te.Listening) New = te.Closed, ce.fire(void 0);
+    }
+    function An(i) {
+      ne.fire([i, void 0, void 0]);
+    }
+    function zn(i) {
+      ne.fire(i);
+    }
+    e.onClose(Bt), e.onError(An), r.onClose(Bt), r.onError(zn);
+    function At() {
+      if (re || Q.size === 0) return;
+      re = (0, pn.default)().timer.setImmediate(() => {
+        re = void 0, Wn();
+      });
+    }
+    function Wt(i) {
+      if (a.Message.isRequest(i)) Hn(i);else if (a.Message.isNotification(i)) Vn(i);else if (a.Message.isResponse(i)) Un(i);else Jn(i);
+    }
+    function Wn() {
+      if (Q.size === 0) return;
+      let i = Q.shift();
+      try {
+        let o = s?.messageStrategy;
+        if (et.is(o)) o.handleMessage(i, Wt);else Wt(i);
+      } finally {
+        At();
+      }
+    }
+    let Fn = i => {
+      try {
+        if (a.Message.isNotification(i) && i.method === ze.type.method) {
+          let o = i.params.id,
+            u = pe(o),
+            f = Q.get(u);
+          if (a.Message.isRequest(f)) {
+            let k = s?.connectionStrategy,
+              B = k && k.cancelUndispatched ? k.cancelUndispatched(f, $e) : $e(f);
+            if (B && (B.error !== void 0 || B.result !== void 0)) {
+              Q.delete(u), b.delete(o), B.id = f.id, Fe(B, i.method, Date.now()), r.write(B).catch(() => c.error("Sending response for canceled message failed."));
+              return;
+            }
+          }
+          let O = b.get(o);
+          if (O !== void 0) {
+            O.cancel(), ut(i);
+            return;
+          } else y.add(o);
+        }
+        We(Q, i);
+      } finally {
+        At();
+      }
+    };
+    function Hn(i) {
+      if (ye()) return;
+      function o(T, D, C) {
+        let W = {
+          jsonrpc: jsonrpc,
+          id: i.id
+        };
+        if (T instanceof a.ResponseError) W.error = T.toJson();else W.result = T === void 0 ? null : T;
+        Fe(W, D, C), r.write(W).catch(() => c.error("Sending response failed."));
+      }
+      function u(T, D, C) {
+        let W = {
+          jsonrpc: jsonrpc,
+          id: i.id,
+          error: T.toJson()
+        };
+        Fe(W, D, C), r.write(W).catch(() => c.error("Sending response failed."));
+      }
+      function f(result, D, C) {
+        if (result === void 0) result = null;
+        let W = {
+          jsonrpc: jsonrpc,
+          id: i.id,
+          result: result
+        };
+        Fe(W, D, C), r.write(W).catch(() => c.error("Sending response failed."));
+      }
+      Gn(i);
+      let O = X.get(i.method),
+        k,
+        B;
+      if (O) k = O.type, B = O.handler;
+      let A = Date.now();
+      if (B || I) {
+        let T = i.id ?? String(Date.now()),
+          D = Ge.is(G.receiver) ? G.receiver.createCancellationTokenSource(T) : G.receiver.createCancellationTokenSource(i);
+        if (i.id !== null && y.has(i.id)) D.cancel();
+        if (i.id !== null) b.set(T, D);
+        try {
+          let C;
+          if (B) {
+            if (i.params === void 0) {
+              if (k !== void 0 && k.numberOfParams !== 0) {
+                u(new a.ResponseError(a.ErrorCodes.InvalidParams, `Request ${i.method} defines ${k.numberOfParams} params but received none.`), i.method, A);
+                return;
+              }
+              C = B(D.token);
+            } else if (Array.isArray(i.params)) {
+              if (k !== void 0 && k.parameterStructures === a.ParameterStructures.byName) {
+                u(new a.ResponseError(a.ErrorCodes.InvalidParams, `Request ${i.method} defines parameters by name but received parameters by position`), i.method, A);
+                return;
+              }
+              C = B(...i.params, D.token);
+            } else {
+              if (k !== void 0 && k.parameterStructures === a.ParameterStructures.byPosition) {
+                u(new a.ResponseError(a.ErrorCodes.InvalidParams, `Request ${i.method} defines parameters by position but received parameters by name`), i.method, A);
+                return;
+              }
+              C = B(i.params, D.token);
+            }
+          } else if (I) C = I(i.method, i.params, D.token);
+          let W = C;
+          if (!C) b.delete(T), f(C, i.method, A);else if (W.then) W.then(V => {
+            b.delete(T), o(V, i.method, A);
+          }, V => {
+            if (b.delete(T), V instanceof a.ResponseError) u(V, i.method, A);else if (V && m.string(V.message)) u(new a.ResponseError(a.ErrorCodes.InternalError, `Request ${i.method} failed with message: ${V.message}`), i.method, A);else u(new a.ResponseError(a.ErrorCodes.InternalError, `Request ${i.method} failed unexpectedly without providing any details.`), i.method, A);
+          });else b.delete(T), o(C, i.method, A);
+        } catch (error) {
+          if (b.delete(T), error instanceof a.ResponseError) o(error, i.method, A);else if (error && m.string(error.message)) u(new a.ResponseError(a.ErrorCodes.InternalError, `Request ${i.method} failed with message: ${error.message}`), i.method, A);else u(new a.ResponseError(a.ErrorCodes.InternalError, `Request ${i.method} failed unexpectedly without providing any details.`), i.method, A);
+        }
+      } else u(new a.ResponseError(a.ErrorCodes.MethodNotFound, `Unhandled method ${i.method}`), i.method, A);
+    }
+    function Un(i) {
+      if (ye()) return;
+      if (i.id === null) {
+        if (i.error) c.error(`Received response message without id: Error is: 
+${JSON.stringify(i.error, void 0, 4)}`);else c.error("Received response message without id. No further error information provided.");
+      } else {
+        let o = i.id,
+          u = Z.get(o);
+        if (Yn(i, u), u !== void 0) {
+          Z.delete(o);
+          try {
+            if (i.error) {
+              let f = i.error;
+              u.reject(new a.ResponseError(f.code, f.message, f.data));
+            } else if (i.result !== void 0) u.resolve(i.result);else throw Error("Should never happen.");
+          } catch (f) {
+            if (f.message) c.error(`Response handler '${u.method}' failed with message: ${f.message}`);else c.error(`Response handler '${u.method}' failed unexpectedly.`);
+          }
+        }
+      }
+    }
+    function Vn(i) {
+      if (ye()) return;
+      let o = void 0,
+        u;
+      if (i.method === ze.type.method) {
+        let f = i.params.id;
+        y.delete(f), ut(i);
+        return;
+      } else {
+        let f = oe.get(i.method);
+        if (f) u = f.handler, o = f.type;
+      }
+      if (u || J) try {
+        if (ut(i), u) {
+          if (i.params === void 0) {
+            if (o !== void 0) {
+              if (o.numberOfParams !== 0 && o.parameterStructures !== a.ParameterStructures.byName) c.error(`Notification ${i.method} defines ${o.numberOfParams} params but received none.`);
+            }
+            u();
+          } else if (Array.isArray(i.params)) {
+            let params = i.params;
+            if (i.method === Be.type.method && params.length === 2 && Tt.is(params[0])) u({
+              token: params[0],
+              value: params[1]
+            });else {
+              if (o !== void 0) {
+                if (o.parameterStructures === a.ParameterStructures.byName) c.error(`Notification ${i.method} defines parameters by name but received parameters by position`);
+                if (o.numberOfParams !== i.params.length) c.error(`Notification ${i.method} defines ${o.numberOfParams} params but received ${params.length} arguments`);
+              }
+              u(...params);
+            }
+          } else {
+            if (o !== void 0 && o.parameterStructures === a.ParameterStructures.byPosition) c.error(`Notification ${i.method} defines parameters by position but received parameters by name`);
+            u(i.params);
+          }
+        } else if (J) J(i.method, i.params);
+      } catch (f) {
+        if (f.message) c.error(`Notification handler '${i.method}' failed with message: ${f.message}`);else c.error(`Notification handler '${i.method}' failed unexpectedly.`);
+      } else he.fire(i);
+    }
+    function Jn(i) {
+      if (!i) {
+        c.error("Received empty message.");
+        return;
+      }
+      c.error(`Received message which is neither a response nor a notification message:
+${JSON.stringify(i, null, 4)}`);
+      let o = i;
+      if (m.string(o.id) || m.number(o.id)) {
+        let u = o.id,
+          f = Z.get(u);
+        if (f) f.reject(Error("The received response has neither a result nor an error property."));
+      }
+    }
+    function ue(i) {
+      if (i === void 0 || i === null) return;
+      switch (Off) {
+        case E.Verbose:
+          return JSON.stringify(i, null, 4);
+        case E.Compact:
+          return JSON.stringify(i);
+        default:
+          return;
+      }
+    }
+    function Kn(i) {
+      if (Off === E.Off || !x) return;
+      if (Text === Y.Text) {
+        let o = void 0;
+        if ((Off === E.Verbose || Off === E.Compact) && i.params) o = `Params: ${ue(i.params)}
+
+`;
+        x.log(`Sending request '${i.method} - (${i.id})'.`, o);
+      } else be("send-request", i);
+    }
+    function Qn(i) {
+      if (Off === E.Off || !x) return;
+      if (Text === Y.Text) {
+        let o = void 0;
+        if (Off === E.Verbose || Off === E.Compact) if (i.params) o = `Params: ${ue(i.params)}
+
+`;else o = `No parameters provided.
+
+`;
+        x.log(`Sending notification '${i.method}'.`, o);
+      } else be("send-notification", i);
+    }
+    function Fe(i, o, u) {
+      if (Off === E.Off || !x) return;
+      if (Text === Y.Text) {
+        let f = void 0;
+        if (Off === E.Verbose || Off === E.Compact) {
+          if (i.error && i.error.data) f = `Error data: ${ue(i.error.data)}
+
+`;else if (i.result) f = `Result: ${ue(i.result)}
+
+`;else if (i.error === void 0) f = `No result returned.
+
+`;
+        }
+        x.log(`Sending response '${o} - (${i.id})'. Processing request took ${Date.now() - u}ms`, f);
+      } else be("send-response", i);
+    }
+    function Gn(i) {
+      if (Off === E.Off || !x) return;
+      if (Text === Y.Text) {
+        let o = void 0;
+        if ((Off === E.Verbose || Off === E.Compact) && i.params) o = `Params: ${ue(i.params)}
+
+`;
+        x.log(`Received request '${i.method} - (${i.id})'.`, o);
+      } else be("receive-request", i);
+    }
+    function ut(i) {
+      if (Off === E.Off || !x || i.method === Qe.type.method) return;
+      if (Text === Y.Text) {
+        let o = void 0;
+        if (Off === E.Verbose || Off === E.Compact) if (i.params) o = `Params: ${ue(i.params)}
+
+`;else o = `No parameters provided.
+
+`;
+        x.log(`Received notification '${i.method}'.`, o);
+      } else be("receive-notification", i);
+    }
+    function Yn(i, o) {
+      if (Off === E.Off || !x) return;
+      if (Text === Y.Text) {
+        let u = void 0;
+        if (Off === E.Verbose || Off === E.Compact) {
+          if (i.error && i.error.data) u = `Error data: ${ue(i.error.data)}
+
+`;else if (i.result) u = `Result: ${ue(i.result)}
+
+`;else if (i.error === void 0) u = `No result returned.
+
+`;
+        }
+        if (o) {
+          let f = i.error ? ` Request failed: ${i.error.message} (${i.error.code}).` : "";
+          x.log(`Received response '${o.method} - (${i.id})' in ${Date.now() - o.timerStart}ms.${f}`, u);
+        } else x.log(`Received response ${i.id} without active response promise.`, u);
+      } else be("receive-response", i);
+    }
+    function be(type, message) {
+      if (!x || Off === E.Off) return;
+      let u = {
+        isLSPMessage: !0,
+        type: type,
+        message: message,
+        timestamp: Date.now()
+      };
+      x.log(u);
+    }
+    function qe() {
+      if (Dt()) throw new Pe(Ae.Closed, "Connection is closed.");
+      if (ye()) throw new Pe(Ae.Disposed, "Connection is disposed.");
+    }
+    function Xn() {
+      if (It()) throw new Pe(Ae.AlreadyListening, "Connection is already listening");
+    }
+    function Zn() {
+      if (!It()) throw Error("Call listen() first.");
+    }
+    function Ie(i) {
+      if (i === void 0) return null;else return i;
+    }
+    function Ft(i) {
+      if (i === null) return;else return i;
+    }
+    function Ht(i) {
+      return i !== void 0 && i !== null && !Array.isArray(i) && typeof i === "object";
+    }
+    function dt(i, o) {
+      switch (i) {
+        case a.ParameterStructures.auto:
+          if (Ht(o)) return Ft(o);else return [Ie(o)];
+        case a.ParameterStructures.byName:
+          if (!Ht(o)) throw Error("Received parameters by name but param is not an object literal.");
+          return Ft(o);
+        case a.ParameterStructures.byPosition:
+          return [Ie(o)];
+        default:
+          throw Error(`Unknown parameter structure ${i.toString()}`);
+      }
+    }
+    function Ut(i, o) {
+      let u,
+        numberOfParams = i.numberOfParams;
+      switch (numberOfParams) {
+        case 0:
+          u = void 0;
+          break;
+        case 1:
+          u = dt(i.parameterStructures, o[0]);
+          break;
+        default:
+          u = [];
+          for (let O = 0; O < o.length && O < numberOfParams; O++) u.push(Ie(o[O]));
+          if (o.length < numberOfParams) for (let O = o.length; O < numberOfParams; O++) u.push(null);
+          break;
+      }
+      return u;
+    }
+    let ve = {
+      sendNotification: (i, ...o) => {
+        qe();
+        let method, params_2;
+        if (m.string(i)) {
+          method = i;
+          let k = o[0],
+            B = 0,
+            auto = a.ParameterStructures.auto;
+          if (a.ParameterStructures.is(k)) B = 1, auto = k;
+          let T = o.length,
+            D = T - B;
+          switch (D) {
+            case 0:
+              params_2 = void 0;
+              break;
+            case 1:
+              params_2 = dt(auto, o[B]);
+              break;
+            default:
+              if (auto === a.ParameterStructures.byName) throw Error(`Received ${D} parameters for 'by Name' notification parameter structure.`);
+              params_2 = o.slice(B, T).map(item => Ie(item));
+              break;
+          }
+        } else {
+          let k = o;
+          method = i.method, params_2 = Ut(i, k);
+        }
+        let O = {
+          jsonrpc: jsonrpc,
+          method: method,
+          params: params_2
+        };
+        return Qn(O), r.write(O).catch(k => {
+          throw c.error("Sending notification failed."), k;
+        });
+      },
+      onNotification: (type_2, handler) => {
+        qe();
+        let u;
+        if (m.func(type_2)) J = type_2;else if (handler) if (m.string(type_2)) u = type_2, oe.set(type_2, {
+          type: void 0,
+          handler: handler
+        });else u = type_2.method, oe.set(type_2.method, {
+          type: type_2,
+          handler: handler
+        });
+        return {
+          dispose: () => {
+            if (u !== void 0) oe.delete(u);else J = void 0;
+          }
+        };
+      },
+      onProgress: (i, o, u) => {
+        if (fe.has(o)) throw Error(`Progress handler for token ${o} already registered`);
+        return fe.set(o, u), {
+          dispose: () => {
+            fe.delete(o);
+          }
+        };
+      },
+      sendProgress: (i, token, value_2) => ve.sendNotification(Be.type, {
+        token: token,
+        value: value_2
+      }),
+      onUnhandledProgress: v.event,
+      sendRequest: (i, ...o) => {
+        qe(), Zn();
+        let method_2,
+          params_3,
+          O = void 0;
+        if (m.string(i)) {
+          method_2 = i;
+          let T = o[0],
+            D = o[o.length - 1],
+            C = 0,
+            auto_2 = a.ParameterStructures.auto;
+          if (a.ParameterStructures.is(T)) C = 1, auto_2 = T;
+          let V = o.length;
+          if (Te.CancellationToken.is(D)) V = V - 1, O = D;
+          let ae = V - C;
+          switch (ae) {
+            case 0:
+              params_3 = void 0;
+              break;
+            case 1:
+              params_3 = dt(auto_2, o[C]);
+              break;
+            default:
+              if (auto_2 === a.ParameterStructures.byName) throw Error(`Received ${ae} parameters for 'by Name' request parameter structure.`);
+              params_3 = o.slice(C, V).map(item => Ie(item));
+              break;
+          }
+        } else {
+          let T = o;
+          method_2 = i.method, params_3 = Ut(i, T);
+          let numberOfParams_2 = i.numberOfParams;
+          O = Te.CancellationToken.is(T[numberOfParams_2]) ? T[numberOfParams_2] : void 0;
+        }
+        let id_2 = h++,
+          B;
+        if (O) B = O.onCancellationRequested(() => {
+          let T = G.sender.sendCancellation(ve, id_2);
+          if (T === void 0) return c.log(`Received no promise from cancellation strategy when cancelling id ${id_2}`), Promise.resolve();else return T.catch(() => {
+            c.log(`Sending cancellation messages for id ${id_2} failed`);
+          });
+        });
+        let A = {
+          jsonrpc: jsonrpc,
+          id: id_2,
+          method: method_2,
+          params: params_3
+        };
+        if (Kn(A), typeof G.sender.enableCancellation === "function") G.sender.enableCancellation(A);
+        return new Promise(async (T, D) => {
+          let resolve_2 = ae => {
+              T(ae), G.sender.cleanup(id_2), B?.dispose();
+            },
+            reject_2 = ae => {
+              D(ae), G.sender.cleanup(id_2), B?.dispose();
+            },
+            V = {
+              method: method_2,
+              timerStart: Date.now(),
+              resolve: resolve_2,
+              reject: reject_2
+            };
+          try {
+            Z.set(id_2, V), await r.write(A);
+          } catch (ae) {
+            Z.delete(id_2), V.reject(new a.ResponseError(a.ErrorCodes.MessageWriteError, ae.message ? ae.message : "Unknown reason")), c.error("Sending request failed.");
+          }
+        });
+      },
+      onRequest: (type_3, handler_2) => {
+        qe();
+        let u = null;
+        if (Et.is(type_3)) u = void 0, I = type_3;else if (m.string(type_3)) {
+          if (u = null, handler_2 !== void 0) u = type_3, X.set(type_3, {
+            handler: handler_2,
+            type: void 0
+          });
+        } else if (handler_2 !== void 0) u = type_3.method, X.set(type_3.method, {
+          type: type_3,
+          handler: handler_2
+        });
+        return {
+          dispose: () => {
+            if (u === null) return;
+            if (u !== void 0) X.delete(u);else I = void 0;
+          }
+        };
+      },
+      hasPendingResponse: () => Z.size > 0,
+      trace: async (i, o, u) => {
+        let f = !1,
+          Text_2 = Y.Text;
+        if (u !== void 0) if (m.boolean(u)) f = u;else f = u.sendNotification || !1, Text_2 = u.traceFormat || Y.Text;
+        if (Off = i, Text = Text_2, Off === E.Off) x = void 0;else x = o;
+        if (f && !Dt() && !ye()) await ve.sendNotification(Ct.type, {
+          value: E.toString(i)
+        });
+      },
+      onError: ne.event,
+      onClose: ce.event,
+      onUnhandledNotification: he.event,
+      onDispose: z.event,
+      end: () => {
+        r.end();
+      },
+      dispose: () => {
+        if (ye()) return;
+        New = te.Disposed, z.fire(void 0);
+        let i = new a.ResponseError(a.ErrorCodes.PendingResponseRejected, "Pending response rejected since connection got disposed");
+        for (let o of Z.values()) o.reject(i);
+        if (Z = new Map(), b = new Map(), y = new Set(), Q = new Ke.LinkedMap(), m.func(r.dispose)) r.dispose();
+        if (m.func(e.dispose)) e.dispose();
+      },
+      listen: () => {
+        qe(), Xn(), New = te.Listening, e.listen(Fn);
+      },
+      inspect: () => {
+        (0, pn.default)().console.log("inspect");
+      }
+    };
+    return ve.onNotification(Qe.type, i => {
+      if (Off === E.Off || !x) return;
+      let o = Off === E.Verbose || Off === E.Compact;
+      x.log(i.message, o ? i.verbose : void 0);
+    }), ve.onNotification(Be.type, i => {
+      let o = fe.get(i.token);
+      if (o) o(i.value);else v.fire(i);
+    }), ve;
+  }
+  bn.createMessageConnection = ns;
+});
+var it = M(function (l) {
+  Object.defineProperty(l, "__esModule", {
+    value: !0
+  });
+  l.ProgressType = l.ProgressToken = l.createMessageConnection = l.NullLogger = l.ConnectionOptions = l.ConnectionStrategy = l.AbstractMessageBuffer = l.WriteableStreamMessageWriter = l.AbstractMessageWriter = l.MessageWriter = l.ReadableStreamMessageReader = l.AbstractMessageReader = l.MessageReader = l.SharedArrayReceiverStrategy = l.SharedArraySenderStrategy = l.CancellationToken = l.CancellationTokenSource = l.Emitter = l.Event = l.Disposable = l.LRUCache = l.Touch = l.LinkedMap = l.ParameterStructures = l.NotificationType9 = l.NotificationType8 = l.NotificationType7 = l.NotificationType6 = l.NotificationType5 = l.NotificationType4 = l.NotificationType3 = l.NotificationType2 = l.NotificationType1 = l.NotificationType0 = l.NotificationType = l.ErrorCodes = l.ResponseError = l.RequestType9 = l.RequestType8 = l.RequestType7 = l.RequestType6 = l.RequestType5 = l.RequestType4 = l.RequestType3 = l.RequestType2 = l.RequestType1 = l.RequestType0 = l.RequestType = l.Message = l.RAL = void 0;
+  l.MessageStrategy = l.CancellationStrategy = l.CancellationSenderStrategy = l.CancellationReceiverStrategy = l.ConnectionError = l.ConnectionErrors = l.LogTraceNotification = l.SetTraceNotification = l.TraceFormat = l.TraceValues = l.Trace = void 0;
+  var p = ht();
+  Object.defineProperty(l, "Message", {
+    enumerable: !0,
+    get: function () {
+      return p.Message;
+    }
+  });
+  Object.defineProperty(l, "RequestType", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType;
+    }
+  });
+  Object.defineProperty(l, "RequestType0", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType0;
+    }
+  });
+  Object.defineProperty(l, "RequestType1", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType1;
+    }
+  });
+  Object.defineProperty(l, "RequestType2", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType2;
+    }
+  });
+  Object.defineProperty(l, "RequestType3", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType3;
+    }
+  });
+  Object.defineProperty(l, "RequestType4", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType4;
+    }
+  });
+  Object.defineProperty(l, "RequestType5", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType5;
+    }
+  });
+  Object.defineProperty(l, "RequestType6", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType6;
+    }
+  });
+  Object.defineProperty(l, "RequestType7", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType7;
+    }
+  });
+  Object.defineProperty(l, "RequestType8", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType8;
+    }
+  });
+  Object.defineProperty(l, "RequestType9", {
+    enumerable: !0,
+    get: function () {
+      return p.RequestType9;
+    }
+  });
+  Object.defineProperty(l, "ResponseError", {
+    enumerable: !0,
+    get: function () {
+      return p.ResponseError;
+    }
+  });
+  Object.defineProperty(l, "ErrorCodes", {
+    enumerable: !0,
+    get: function () {
+      return p.ErrorCodes;
+    }
+  });
+  Object.defineProperty(l, "NotificationType", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType;
+    }
+  });
+  Object.defineProperty(l, "NotificationType0", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType0;
+    }
+  });
+  Object.defineProperty(l, "NotificationType1", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType1;
+    }
+  });
+  Object.defineProperty(l, "NotificationType2", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType2;
+    }
+  });
+  Object.defineProperty(l, "NotificationType3", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType3;
+    }
+  });
+  Object.defineProperty(l, "NotificationType4", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType4;
+    }
+  });
+  Object.defineProperty(l, "NotificationType5", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType5;
+    }
+  });
+  Object.defineProperty(l, "NotificationType6", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType6;
+    }
+  });
+  Object.defineProperty(l, "NotificationType7", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType7;
+    }
+  });
+  Object.defineProperty(l, "NotificationType8", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType8;
+    }
+  });
+  Object.defineProperty(l, "NotificationType9", {
+    enumerable: !0,
+    get: function () {
+      return p.NotificationType9;
+    }
+  });
+  Object.defineProperty(l, "ParameterStructures", {
+    enumerable: !0,
+    get: function () {
+      return p.ParameterStructures;
+    }
+  });
+  var Ee = mt();
+  Object.defineProperty(l, "LinkedMap", {
+    enumerable: !0,
+    get: function () {
+      return Ee.LinkedMap;
+    }
+  });
+  Object.defineProperty(l, "LRUCache", {
+    enumerable: !0,
+    get: function () {
+      return Ee.LRUCache;
+    }
+  });
+  Object.defineProperty(l, "Touch", {
+    enumerable: !0,
+    get: function () {
+      return Ee.Touch;
+    }
+  });
+  var Pn = xr();
+  Object.defineProperty(l, "Disposable", {
+    enumerable: !0,
+    get: function () {
+      return Pn.Disposable;
+    }
+  });
+  var tt = _e();
+  Object.defineProperty(l, "Event", {
+    enumerable: !0,
+    get: function () {
+      return tt.Event;
+    }
+  });
+  Object.defineProperty(l, "Emitter", {
+    enumerable: !0,
+    get: function () {
+      return tt.Emitter;
+    }
+  });
+  var rt = Ve();
+  Object.defineProperty(l, "CancellationTokenSource", {
+    enumerable: !0,
+    get: function () {
+      return rt.CancellationTokenSource;
+    }
+  });
+  Object.defineProperty(l, "CancellationToken", {
+    enumerable: !0,
+    get: function () {
+      return rt.CancellationToken;
+    }
+  });
+  var nt = Ur();
+  Object.defineProperty(l, "SharedArraySenderStrategy", {
+    enumerable: !0,
+    get: function () {
+      return nt.SharedArraySenderStrategy;
+    }
+  });
+  Object.defineProperty(l, "SharedArrayReceiverStrategy", {
+    enumerable: !0,
+    get: function () {
+      return nt.SharedArrayReceiverStrategy;
+    }
+  });
+  var Ce = en();
+  Object.defineProperty(l, "MessageReader", {
+    enumerable: !0,
+    get: function () {
+      return Ce.MessageReader;
+    }
+  });
+  Object.defineProperty(l, "AbstractMessageReader", {
+    enumerable: !0,
+    get: function () {
+      return Ce.AbstractMessageReader;
+    }
+  });
+  Object.defineProperty(l, "ReadableStreamMessageReader", {
+    enumerable: !0,
+    get: function () {
+      return Ce.ReadableStreamMessageReader;
+    }
+  });
+  var xe = un();
+  Object.defineProperty(l, "MessageWriter", {
+    enumerable: !0,
+    get: function () {
+      return xe.MessageWriter;
+    }
+  });
+  Object.defineProperty(l, "AbstractMessageWriter", {
+    enumerable: !0,
+    get: function () {
+      return xe.AbstractMessageWriter;
+    }
+  });
+  Object.defineProperty(l, "WriteableStreamMessageWriter", {
+    enumerable: !0,
+    get: function () {
+      return xe.WriteableStreamMessageWriter;
+    }
+  });
+  var Tn = hn();
+  Object.defineProperty(l, "AbstractMessageBuffer", {
+    enumerable: !0,
+    get: function () {
+      return Tn.AbstractMessageBuffer;
+    }
+  });
+  var R = Rn();
+  Object.defineProperty(l, "ConnectionStrategy", {
+    enumerable: !0,
+    get: function () {
+      return R.ConnectionStrategy;
+    }
+  });
+  Object.defineProperty(l, "ConnectionOptions", {
+    enumerable: !0,
+    get: function () {
+      return R.ConnectionOptions;
+    }
+  });
+  Object.defineProperty(l, "NullLogger", {
+    enumerable: !0,
+    get: function () {
+      return R.NullLogger;
+    }
+  });
+  Object.defineProperty(l, "createMessageConnection", {
+    enumerable: !0,
+    get: function () {
+      return R.createMessageConnection;
+    }
+  });
+  Object.defineProperty(l, "ProgressToken", {
+    enumerable: !0,
+    get: function () {
+      return R.ProgressToken;
+    }
+  });
+  Object.defineProperty(l, "ProgressType", {
+    enumerable: !0,
+    get: function () {
+      return R.ProgressType;
+    }
+  });
+  Object.defineProperty(l, "Trace", {
+    enumerable: !0,
+    get: function () {
+      return R.Trace;
+    }
+  });
+  Object.defineProperty(l, "TraceValues", {
+    enumerable: !0,
+    get: function () {
+      return R.TraceValues;
+    }
+  });
+  Object.defineProperty(l, "TraceFormat", {
+    enumerable: !0,
+    get: function () {
+      return R.TraceFormat;
+    }
+  });
+  Object.defineProperty(l, "SetTraceNotification", {
+    enumerable: !0,
+    get: function () {
+      return R.SetTraceNotification;
+    }
+  });
+  Object.defineProperty(l, "LogTraceNotification", {
+    enumerable: !0,
+    get: function () {
+      return R.LogTraceNotification;
+    }
+  });
+  Object.defineProperty(l, "ConnectionErrors", {
+    enumerable: !0,
+    get: function () {
+      return R.ConnectionErrors;
+    }
+  });
+  Object.defineProperty(l, "ConnectionError", {
+    enumerable: !0,
+    get: function () {
+      return R.ConnectionError;
+    }
+  });
+  Object.defineProperty(l, "CancellationReceiverStrategy", {
+    enumerable: !0,
+    get: function () {
+      return R.CancellationReceiverStrategy;
+    }
+  });
+  Object.defineProperty(l, "CancellationSenderStrategy", {
+    enumerable: !0,
+    get: function () {
+      return R.CancellationSenderStrategy;
+    }
+  });
+  Object.defineProperty(l, "CancellationStrategy", {
+    enumerable: !0,
+    get: function () {
+      return R.CancellationStrategy;
+    }
+  });
+  Object.defineProperty(l, "MessageStrategy", {
+    enumerable: !0,
+    get: function () {
+      return R.MessageStrategy;
+    }
+  });
+  var ws = de();
+  l.RAL = ws.default;
+});
+var Ln = M(function (kn) {
+  Object.defineProperty(kn, "__esModule", {
+    value: !0
+  });
+  var st = je("util"),
+    F = it();
+  class ot extends F.AbstractMessageBuffer {
+    constructor(e = "utf-8") {
+      super(e);
+    }
+    emptyBuffer() {
+      return ot.emptyBuffer;
+    }
+    fromString(e, r) {
+      return Buffer.from(e, r);
+    }
+    toString(e, r) {
+      if (e instanceof Buffer) return e.toString(r);else return new st.TextDecoder(r).decode(e);
+    }
+    asNative(e, r) {
+      if (r === void 0) return e instanceof Buffer ? e : Buffer.from(e);else return e instanceof Buffer ? e.slice(0, r) : Buffer.from(e, 0, r);
+    }
+    allocNative(e) {
+      return Buffer.allocUnsafe(e);
+    }
+  }
+  ot.emptyBuffer = Buffer.allocUnsafe(0);
+  class En {
+    constructor(e) {
+      this.stream = e;
+    }
+    onClose(e) {
+      return this.stream.on("close", e), F.Disposable.create(() => this.stream.off("close", e));
+    }
+    onError(e) {
+      return this.stream.on("error", e), F.Disposable.create(() => this.stream.off("error", e));
+    }
+    onEnd(e) {
+      return this.stream.on("end", e), F.Disposable.create(() => this.stream.off("end", e));
+    }
+    onData(e) {
+      return this.stream.on("data", e), F.Disposable.create(() => this.stream.off("data", e));
+    }
+  }
+  class Cn {
+    constructor(e) {
+      this.stream = e;
+    }
+    onClose(e) {
+      return this.stream.on("close", e), F.Disposable.create(() => this.stream.off("close", e));
+    }
+    onError(e) {
+      return this.stream.on("error", e), F.Disposable.create(() => this.stream.off("error", e));
+    }
+    onEnd(e) {
+      return this.stream.on("end", e), F.Disposable.create(() => this.stream.off("end", e));
+    }
+    write(e, r) {
+      return new Promise((n, s) => {
+        let c = h => {
+          if (h === void 0 || h === null) n();else s(h);
+        };
+        if (typeof e === "string") this.stream.write(e, r, c);else this.stream.write(e, c);
+      });
+    }
+    end() {
+      this.stream.end();
+    }
+  }
+  var xn = Object.freeze({
+    messageBuffer: Object.freeze({
+      create: e => new ot(e)
+    }),
+    applicationJson: Object.freeze({
+      encoder: Object.freeze({
+        name: "application/json",
+        encode: (e, r) => {
+          try {
+            return Promise.resolve(Buffer.from(JSON.stringify(e, void 0, 0), r.charset));
+          } catch (error) {
+            return Promise.reject(error);
+          }
+        }
+      }),
+      decoder: Object.freeze({
+        name: "application/json",
+        decode: (e, r) => {
+          try {
+            if (e instanceof Buffer) return Promise.resolve(JSON.parse(e.toString(r.charset)));else return Promise.resolve(JSON.parse(new st.TextDecoder(r.charset).decode(e)));
+          } catch (error) {
+            return Promise.reject(error);
+          }
+        }
+      })
+    }),
+    stream: Object.freeze({
+      asReadableStream: e => new En(e),
+      asWritableStream: e => new Cn(e)
+    }),
+    console,
+    timer: Object.freeze({
+      setTimeout(e, r, ...n) {
+        let s = setTimeout(e, r, ...n);
+        return {
+          dispose: () => clearTimeout(s)
+        };
+      },
+      setImmediate(e, ...r) {
+        let n = setImmediate(e, ...r);
+        return {
+          dispose: () => clearImmediate(n)
+        };
+      },
+      setInterval(e, r, ...n) {
+        let s = setInterval(e, r, ...n);
+        return {
+          dispose: () => clearInterval(s)
+        };
+      }
+    })
+  });
+  function Lt() {
+    return xn;
+  }
+  (function (e) {
+    function r() {
+      F.RAL.install(xn);
+    }
+    e.install = r;
+  })(Lt || (Lt = {}));
+  kn.default = Lt;
+});
+var Mt = M(function (w) {
+  var Ts = w && w.__createBinding || (Object.create ? function (e, r, n, s) {
+      if (s === void 0) s = n;
+      var c = Object.getOwnPropertyDescriptor(r, n);
+      if (!c || ("get" in c ? !r.__esModule : c.writable || c.configurable)) c = {
+        enumerable: !0,
+        get: function () {
+          return r[n];
+        }
+      };
+      Object.defineProperty(e, s, c);
+    } : function (e, r, n, s) {
+      if (s === void 0) s = n;
+      e[s] = r[n];
+    }),
+    Es = w && w.__exportStar || function (e, r) {
+      for (var n in e) if (n !== "default" && !Object.prototype.hasOwnProperty.call(r, n)) Ts(r, e, n);
+    };
+  Object.defineProperty(w, "__esModule", {
+    value: !0
+  });
+  w.createMessageConnection = w.createServerSocketTransport = w.createClientSocketTransport = w.createServerPipeTransport = w.createClientPipeTransport = w.generateRandomPipeName = w.StreamMessageWriter = w.StreamMessageReader = w.SocketMessageWriter = w.SocketMessageReader = w.PortMessageWriter = w.PortMessageReader = w.IPCMessageWriter = w.IPCMessageReader = void 0;
+  var ke = Ln();
+  ke.default.install();
+  var at = je("path"),
+    On = je("os"),
+    Mn = je("crypto"),
+    le = je("net"),
+    N = it();
+  Es(it(), w);
+  class jn extends N.AbstractMessageReader {
+    constructor(e) {
+      super();
+      this.process = e;
+      let process_2 = this.process;
+      process_2.on("error", n => this.fireError(n)), process_2.on("close", () => this.fireClose());
+    }
+    listen(e) {
+      return this.process.on("message", e), N.Disposable.create(() => this.process.off("message", e));
+    }
+  }
+  w.IPCMessageReader = jn;
+  class $n extends N.AbstractMessageWriter {
+    constructor(e) {
+      super();
+      this.process = e, this.errorCount = 0;
+      let process_3 = this.process;
+      process_3.on("error", n => this.fireError(n)), process_3.on("close", () => this.fireClose);
+    }
+    write(e) {
+      try {
+        if (typeof this.process.send === "function") this.process.send(e, void 0, void 0, r => {
+          if (r) this.errorCount++, this.handleError(r, e);else this.errorCount = 0;
+        });
+        return Promise.resolve();
+      } catch (error) {
+        return this.handleError(error, e), Promise.reject(error);
+      }
+    }
+    handleError(e, r) {
+      this.errorCount++, this.fireError(e, r, this.errorCount);
+    }
+    end() {}
+  }
+  w.IPCMessageWriter = $n;
+  class qn extends N.AbstractMessageReader {
+    constructor(e) {
+      super();
+      this.onData = new N.Emitter(), e.on("close", () => this.fireClose), e.on("error", r => this.fireError(r)), e.on("message", r => {
+        this.onData.fire(r);
+      });
+    }
+    listen(e) {
+      return this.onData.event(e);
+    }
+  }
+  w.PortMessageReader = qn;
+  class In extends N.AbstractMessageWriter {
+    constructor(e) {
+      super();
+      this.port = e, this.errorCount = 0, e.on("close", () => this.fireClose()), e.on("error", r => this.fireError(r));
+    }
+    write(e) {
+      try {
+        return this.port.postMessage(e), Promise.resolve();
+      } catch (error) {
+        return this.handleError(error, e), Promise.reject(error);
+      }
+    }
+    handleError(e, r) {
+      this.errorCount++, this.fireError(e, r, this.errorCount);
+    }
+    end() {}
+  }
+  w.PortMessageWriter = In;
+  class Le extends N.ReadableStreamMessageReader {
+    constructor(e, r = "utf-8") {
+      super((0, ke.default)().stream.asReadableStream(e), r);
+    }
+  }
+  w.SocketMessageReader = Le;
+  class Ne extends N.WriteableStreamMessageWriter {
+    constructor(e, r) {
+      super((0, ke.default)().stream.asWritableStream(e), r);
+      this.socket = e;
+    }
+    dispose() {
+      super.dispose(), this.socket.destroy();
+    }
+  }
+  w.SocketMessageWriter = Ne;
+  class Nt extends N.ReadableStreamMessageReader {
+    constructor(e, r) {
+      super((0, ke.default)().stream.asReadableStream(e), r);
+    }
+  }
+  w.StreamMessageReader = Nt;
+  class Ot extends N.WriteableStreamMessageWriter {
+    constructor(e, r) {
+      super((0, ke.default)().stream.asWritableStream(e), r);
+    }
+  }
+  w.StreamMessageWriter = Ot;
+  var XDG_RUNTIME_DIR = process.env.XDG_RUNTIME_DIR,
+    Cs = new Map([["linux", 107], ["darwin", 103]]);
+  function xs() {
+    let e = Mn.randomBytes(21).toString("hex");
+    return `\\\\.\\pipe\\vscode-jsonrpc-${e}-sock`;
+  }
+  w.generateRandomPipeName = xs;
+  function ks(e, r = "utf-8") {
+    let n,
+      promise = new Promise((c, h) => {
+        n = c;
+      });
+    return new Promise((c, h) => {
+      let P = le.createServer(_ => {
+        P.close(), n([new Le(_, r), new Ne(_, r)]);
+      });
+      P.on("error", h), P.listen(e, () => {
+        P.removeListener("error", h), c({
+          onConnected: () => promise
+        });
+      });
+    });
+  }
+  w.createClientPipeTransport = ks;
+  function Ls(e, r = "utf-8") {
+    let n = le.createConnection(e);
+    return [new Le(n, r), new Ne(n, r)];
+  }
+  w.createServerPipeTransport = Ls;
+  function Ns(e, r = "utf-8") {
+    let n,
+      promise_2 = new Promise((c, h) => {
+        n = c;
+      });
+    return new Promise((c, h) => {
+      let P = le.createServer(_ => {
+        P.close(), n([new Le(_, r), new Ne(_, r)]);
+      });
+      P.on("error", h), P.listen(e, "127.0.0.1", () => {
+        P.removeListener("error", h), c({
+          onConnected: () => promise_2
+        });
+      });
+    });
+  }
+  w.createClientSocketTransport = Ns;
+  function Os(e, r = "utf-8") {
+    let n = le.createConnection(e, "127.0.0.1");
+    return [new Le(n, r), new Ne(n, r)];
+  }
+  w.createServerSocketTransport = Os;
+  function Ms(e) {
+    let r = e;
+    return r.read !== void 0 && r.addListener !== void 0;
+  }
+  function js(e) {
+    let r = e;
+    return r.write !== void 0 && r.addListener !== void 0;
+  }
+  function $s(e, r, n, connectionStrategy) {
+    if (!n) n = N.NullLogger;
+    let c = Ms(e) ? new Nt(e) : e,
+      h = js(r) ? new Ot(r) : r;
+    if (N.ConnectionStrategy.is(connectionStrategy)) connectionStrategy = {
+      connectionStrategy: connectionStrategy
+    };
+    return N.createMessageConnection(c, h, n, connectionStrategy);
+  }
+  w.createMessageConnection = $s;
+});
+var Me = Oe(Mt(), 1);
+var ct = Oe(Mt(), 1);
+var qs = 65536,
+  Is = 33554432,
+  jt = Buffer.from(`\r
+\r
+`),
+  Dn = Buffer.alloc(0);
+class $t extends ct.AbstractMessageReader {
+  readable;
+  onProtocolViolation;
+  callback;
+  stopped = !1;
+  headerChunks = [];
+  headerBytes = 0;
+  headerTail = Dn;
+  expectedBodyLength;
+  bodyChunks = [];
+  bodyBytes = 0;
+  onData = e => this.handleData(e);
+  onStreamError = e => this.fireError(e);
+  onStreamClose = () => this.fireClose();
+  constructor(e, r) {
+    super();
+    this.readable = e;
+    this.onProtocolViolation = r;
+  }
+  listen(e) {
+    return this.callback = e, this.readable.on("data", this.onData), this.readable.on("error", this.onStreamError), this.readable.on("close", this.onStreamClose), ct.Disposable.create(() => this.detach());
+  }
+  dispose() {
+    this.detach(), super.dispose();
+  }
+  detach() {
+    this.stopped = !0, this.readable.removeListener("data", this.onData), this.readable.removeListener("error", this.onStreamError), this.readable.removeListener("close", this.onStreamClose), this.resetHeader(), this.bodyChunks = [], this.bodyBytes = 0, this.expectedBodyLength = void 0;
+  }
+  handleData(e) {
+    if (this.stopped) return;
+    let r = typeof e === "string" ? Buffer.from(e, "utf8") : e;
+    while (r && r.length > 0 && !this.stopped) {
+      let expectedBodyLength = this.expectedBodyLength;
+      r = expectedBodyLength === void 0 ? this.consumeHeader(r) : this.consumeBody(r, expectedBodyLength);
+    }
+  }
+  consumeHeader(e) {
+    let r = this.headerTail.length === 0 ? e : Buffer.concat([this.headerTail, e]),
+      n = r.indexOf(jt);
+    if (n === -1) {
+      if (this.headerChunks.push(e), this.headerBytes += e.length, this.headerTail = r.subarray(Math.max(0, r.length - (jt.length - 1))), this.headerBytes > qs) this.protocolViolation(Error("LSP server exceeded the header size limit without a message header \u2014 it is likely printing logs or other non-protocol output to stdout instead of stderr"));
+      return;
+    }
+    let s = n - this.headerTail.length + jt.length,
+      c = this.headerBytes - this.headerTail.length + n;
+    this.headerChunks.push(e.subarray(0, s));
+    let h = Buffer.concat(this.headerChunks).subarray(0, c).toString("latin1"),
+      P = e.subarray(s);
+    this.resetHeader();
+    let _ = zs(h);
+    if (_ instanceof Error) {
+      this.protocolViolation(_);
+      return;
+    }
+    return this.expectedBodyLength = _, P.length > 0 ? P : void 0;
+  }
+  consumeBody(e, r) {
+    let n = r - this.bodyBytes;
+    if (e.length < n) {
+      this.bodyChunks.push(e), this.bodyBytes += e.length;
+      return;
+    }
+    this.bodyChunks.push(e.length === n ? e : e.subarray(0, n));
+    let s = e.length > n ? e.subarray(n) : void 0,
+      c = Buffer.concat(this.bodyChunks, r);
+    return this.bodyChunks = [], this.bodyBytes = 0, this.expectedBodyLength = void 0, this.deliver(c), s;
+  }
+  deliver(e) {
+    let r;
+    try {
+      r = ds(e.toString("utf8"));
+    } catch (error) {
+      t(`LSP: dropped unparseable message body: ${error}`, {
+        level: "warn"
+      });
+      return;
+    }
+    if (!Ds(r)) {
+      t("LSP: dropped message body that is not an object", {
+        level: "warn"
+      });
+      return;
+    }
+    try {
+      this.callback?.(r);
+    } catch (error) {
+      this.fireError(error);
+    }
+  }
+  resetHeader() {
+    this.headerChunks = [], this.headerBytes = 0, this.headerTail = Dn;
+  }
+  protocolViolation(e) {
+    if (this.stopped) return;
+    this.stopped = !0, this.detach(), this.fireError(e);
+    try {
+      this.onProtocolViolation(e);
+    } catch (error) {
+      this.fireError(error);
+    }
+  }
+}
+function Ds(e) {
+  return typeof e === "object" && e !== null;
+}
+var Bs = /^([!#$%&'*+.^_`|~0-9A-Za-z-]+)[ \t]*:[ \t]*([^\r\n]*)$/,
+  As = new Set(["content-length", "content-type"]);
+function zs(e) {
+  let r;
+  for (let s of e.split(`\r
+`)) {
+    let c = Bs.exec(s),
+      h = c?.[1]?.toLowerCase();
+    if (!c || h === void 0 || !As.has(h)) return Error("LSP server sent non-protocol output in the header block \u2014 its stdout is desynchronized from the base protocol (logs/banners on stdout instead of stderr?)");
+    if (h === "content-length") r = c[2]?.trim();
+  }
+  if (r === void 0) return Error("LSP server sent a header block without a Content-Length \u2014 its stdout is desynchronized from the base protocol (non-protocol output on stdout?)");
+  if (!/^\d+$/.test(r)) return Error("LSP server sent a Content-Length that is not a number \u2014 its stdout is desynchronized from the base protocol");
+  let n = Number(r);
+  if (n > Is) return Error("LSP server declared a message larger than the size limit \u2014 refusing to buffer it");
+  return n;
+}
+class LSPServerCrashError extends Error {
+  oomKilledInToolCgroup;
+  constructor(e, r = !1) {
+    super(e);
+    this.oomKilledInToolCgroup = r;
+    this.name = "LSPServerCrashError";
+  }
+}
+function Pa(e, r) {
+  let n,
+    s,
+    c = !1,
+    h = !1,
+    P,
+    _ = !1,
+    j,
+    I,
+    X,
+    J,
+    oe = new Map(),
+    fe = new Map();
+  function re() {
+    if (h) throw P || Error(`LSP server ${e} failed to start`);
+  }
+  function Q(y) {
+    try {
+      y.dispose();
+    } catch (error) {
+      t(`Connection disposal failed for ${e}: ${d(error)}`);
+    }
+  }
+  function Z(y, b, {
+    force: force
+  }) {
+    if (b) Q(b);
+    if (y === n) {
+      if (j) y.removeListener("error", j);
+      if (I) y.removeListener("exit", I);
+      if (y.stderr && J) y.stderr.removeListener("data", J);
+      j = void 0, I = void 0, X = void 0, J = void 0;
+    }
+    if (typeof y.exitCode === "number" || typeof y.signalCode === "string") return;
+    try {
+      if ((force || globalThis.process.platform === "win32") && y.pid !== void 0) Ab(y.pid);else y.kill();
+    } catch (error) {
+      t(`Process kill failed for ${e} (may already be dead): ${d(error)}`);
+    }
+  }
+  return {
+    get isInitialized() {
+      return c;
+    },
+    async start(y, b, g) {
+      h = !1, P = void 0, c = !1, _ = !1;
+      try {
+        let L = au("lsp").cgroup !== void 0 ? "capped" : hnt() ? "parked" : "uncapped",
+          x = L === "capped" ? X2n() : void 0;
+        if (n = EF({
+          pluginSource: g?.pluginId
+        }, () => {
+          let v = es(),
+            env = {
+              ...v,
+              ...g?.env
+            };
+          return z6(g?.pluginId, env, v), d0(y, b, {
+            stdio: ["pipe", "pipe", "pipe"],
+            env: env,
+            extendEnv: !1,
+            cwd: g?.cwd,
+            windowsHide: !0,
+            toolCgroupClass: "lsp"
+          });
+        }), !n.stdout || !n.stdin) throw Error("LSP server process stdio not available");
+        let S = n;
+        if (await new Promise((v, z) => {
+          let G = () => {
+              me(), v();
+            },
+            pe = ge => {
+              me(), z(ge);
+            },
+            me = () => {
+              S.removeListener("spawn", G), S.removeListener("error", pe);
+            };
+          S.once("spawn", G), S.once("error", pe);
+        }), S.pid) M$t("lsp", S.pid), S.once("close", () => {
+          if (S.pid) i8i(S.pid);
+        });
+        if (n.stderr) J = v => {
+          let z = v.toString().trim();
+          if (z) t(`[LSP SERVER ${e}] ${z}`);
+        }, n.stderr.on("data", J);
+        j = v => {
+          if (n !== S) return;
+          if (!_) h = !0, P = v, t(`LSP server ${e} failed to start: ${v.message}`, {
+            level: "error"
+          });
+        }, n.on("error", j), I = (v, z) => {
+          if (n !== S) return;
+          if ((v === null ? z !== null : v !== 0) && !_) {
+            c = !1;
+            let pe = L === "capped" || L === "parked" && fna("lsp"),
+              me = (z === "SIGKILL" || v === 137) && pe ? IFr(x) : !1,
+              ge = me === !0,
+              We = (v === null ? `killed by signal ${z}` : `exit code ${v}`) + (ge ? " \u2014 killed at the tool memory limit (CLAUDE_CODE_TOOL_MEMORY_LIMIT)" : me === void 0 ? " \u2014 likely killed at the tool memory limit (CLAUDE_CODE_TOOL_MEMORY_LIMIT)" : ""),
+              $e = new LSPServerCrashError(`LSP server ${e} crashed with ${We}`, ge);
+            t(`LSP server ${e} crashed with ${We}`, {
+              level: "error"
+            }), h = !0, P = $e, Z(S, s, {
+              force: !1
+            }), n = void 0, s = void 0, r?.($e);
+          }
+        }, n.on("exit", I), X = v => {
+          if (!_) t(`LSP server ${e} stdin error: ${v.message}`);
+        }, n.stdin.on("error", X);
+        let ne = new $t(n.stdout, v => {
+            if (n !== S) {
+              Q(he);
+              return;
+            }
+            if (_) {
+              Q(he);
+              return;
+            }
+            if (S.exitCode !== null || S.signalCode !== null) {
+              Q(he);
+              return;
+            }
+            h = !0, P = v, c = !1, t(`LSP server ${e} protocol violation, stopping process: ${v.message}`, {
+              level: "error"
+            }), Z(S, s, {
+              force: !0
+            }), n = void 0, s = void 0, r?.(v);
+          }),
+          ce = new Me.StreamMessageWriter(n.stdin),
+          he = Me.createMessageConnection(ne, ce);
+        s = he, s.onError(([v, z, G]) => {
+          if (!_ && n === S) h = !0, P = v, t(`LSP server ${e} connection error: ${v.message}`, {
+            level: "error"
+          });
+        }), s.onClose(() => {
+          if (!_ && n === S) c = !1, t(`LSP server ${e} connection closed`);
+        }), s.listen(), s.trace(Me.Trace.Verbose, {
+          log: v => {
+            t(`[LSP PROTOCOL ${e}] ${v}`);
+          }
+        }).catch(v => {
+          t(`Failed to enable tracing for ${e}: ${v.message}`);
+        });
+        for (let [v, z] of oe) s.onNotification(v, z), t(`Applied notification handler for ${e}.${v}`);
+        for (let [v, z] of fe) s.onRequest(v, z), t(`Applied request handler for ${e}.${v}`);
+        t(`LSP client started for ${e}`);
+      } catch (error) {
+        if (qt(error)) t(`LSP server ${e} failed to start: ${d(error)}`, {
+          level: "error"
+        });else Loe(Error(`LSP server ${e} failed to start: ${d(error)}`), "LSP server failed to start");
+        throw error;
+      }
+    },
+    async initialize(y) {
+      if (!s) throw Error("LSP client not started");
+      re();
+      try {
+        let b = await s.sendRequest("initialize", y);
+        if (await s.sendNotification("initialized", {}), re(), !s) throw Error("LSP server stopped during initialize");
+        return c = !0, t(`LSP server ${e} initialized`), b;
+      } catch (error) {
+        throw t(`LSP server ${e} initialize failed: ${error.message}`, {
+          level: "error"
+        }), h && P || error;
+      }
+    },
+    async sendRequest(y, b) {
+      if (!s) throw Error("LSP client not started");
+      if (re(), !c) throw Error("LSP server not initialized");
+      try {
+        return await s.sendRequest(y, b);
+      } catch (error) {
+        throw t(`LSP server ${e} request ${y} failed: ${error.message}`, {
+          level: "error"
+        }), error;
+      }
+    },
+    async sendNotification(y, b) {
+      if (!s) throw Error("LSP client not started");
+      re();
+      try {
+        await s.sendNotification(y, b);
+      } catch (error) {
+        t(`LSP server ${e} notification ${y} failed (continuing): ${error.message}`, {
+          level: "error"
+        });
+      }
+    },
+    onNotification(y, b) {
+      if (oe.set(y, b), !s) {
+        t(`Registered notification handler for ${e}.${y} (connection not ready)`);
+        return;
+      }
+      re(), s.onNotification(y, b);
+    },
+    onRequest(y, b) {
+      if (fe.set(y, b), !s) {
+        t(`Registered request handler for ${e}.${y} (connection not ready)`);
+        return;
+      }
+      re(), s.onRequest(y, b);
+    },
+    async stop(y) {
+      let b;
+      _ = !0;
+      let g = n,
+        L = s;
+      try {
+        if (L) {
+          let x = L,
+            S = (async () => {
+              let ne;
+              try {
+                await x.sendRequest("shutdown");
+              } catch (error) {
+                ne = error;
+              }
+              try {
+                await x.sendNotification("exit");
+              } catch (error) {
+                throw ne ?? error;
+              }
+              if (ne !== void 0) throw ne;
+            })();
+          if (S.catch(() => {}), y !== void 0) await zt(S, y, `LSP server '${e}' timed out after ${y}ms during shutdown`);else await S;
+        }
+      } catch (error) {
+        let S = error;
+        t(`LSP server ${e} stop failed: ${S.message}`, {
+          level: "error"
+        }), b = S;
+      } finally {
+        let x = n === g;
+        if (g) Z(g, L, {
+          force: !1
+        });else if (L) Q(L);
+        if (n === g) n = void 0;
+        if (s === L) s = void 0;
+        if (x) {
+          if (c = !1, _ = !1, b) h = !0, P = b;
+        }
+        t(`LSP client stopped for ${e}`);
+      }
+      if (b) throw b;
+    }
+  };
+}
+export { Pa as createLSPClient };

@@ -1,0 +1,3098 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  WS,
+  Ew,
+  eM,
+  J2e,
+  xA,
+  Na,
+  G3,
+  ms,
+  v,
+  Le,
+  fe
+} from "B:/~BUN/root/chunk-1ks9vs37.js";
+import {
+  Pe
+} from "B:/~BUN/root/chunk-vz9zea4j.js";
+import {
+  H
+} from "B:/~BUN/root/chunk-game8aqv.js";
+import {
+  f
+} from "B:/~BUN/root/chunk-drx9cnw1.js";
+import {
+  R,
+  PM,
+  F,
+  d,
+  k,
+  kh,
+  ci,
+  K,
+  wr
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  Cy,
+  J
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  W
+} from "B:/~BUN/root/chunk-ppmmt0c3.js";
+import {
+  i
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  vt,
+  t,
+  _,
+  ee,
+  ie
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  St,
+  a
+} from "B:/~BUN/root/chunk-xrwdh0g4.js";
+import {
+  x
+} from "B:/~BUN/root/chunk-mwfggkjt.js";
+import {
+  l
+} from "B:/~BUN/root/chunk-mb9chr1y.js";
+import {
+  g,
+  m,
+  c
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  lt
+} from "B:/~BUN/root/chunk-3mm90xb6.js";
+import {
+  Is,
+  Bqe,
+  ZU
+} from "B:/~BUN/root/chunk-nsneqfcc.js";
+import {
+  p
+} from "B:/~BUN/root/chunk-z6138ats.js";
+import {
+  OR
+} from "B:/~BUN/root/chunk-7wn6n2hd.js";
+import {
+  Te
+} from "B:/~BUN/root/chunk-8f4z6bdn.js";
+import {
+  Zd,
+  Tea
+} from "B:/~BUN/root/chunk-3vtkd50k.js";
+import {
+  nb,
+  hd
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  nl,
+  rc
+} from "B:/~BUN/root/chunk-b91sxvrb.js";
+import {
+  X4,
+  VU
+} from "B:/~BUN/root/chunk-wthaftk0.js";
+import {
+  Uz,
+  O4,
+  Gm
+} from "B:/~BUN/root/chunk-xgg9zsk6.js";
+import {
+  GDs
+} from "B:/~BUN/root/chunk-xqymp2nr.js";
+import {
+  am,
+  Mp
+} from "B:/~BUN/root/chunk-ht2sp6s6.js";
+import {
+  nJt,
+  Dut
+} from "B:/~BUN/root/chunk-cxcakgnv.js";
+import {
+  Rze
+} from "B:/~BUN/root/chunk-3v5ng1y2.js";
+import {
+  g1
+} from "B:/~BUN/root/chunk-wt8tyqt4.js";
+import {
+  dJr,
+  qAt,
+  Vlt,
+  cJr,
+  Dar,
+  uJr,
+  g5e,
+  Klt,
+  qlt
+} from "B:/~BUN/root/chunk-a66hbqcf.js";
+import {
+  p5e
+} from "B:/~BUN/root/chunk-v1x5zyj3.js";
+import {
+  Glt,
+  lJr,
+  XEn,
+  JEn,
+  Ive,
+  QEn,
+  ZEn
+} from "B:/~BUN/root/chunk-0ye1geyg.js";
+import {
+  Q7o,
+  m5e,
+  Mar
+} from "B:/~BUN/root/chunk-3d92p18g.js";
+import {
+  sX
+} from "B:/~BUN/root/chunk-dx2wvwvf.js";
+import {
+  tKi,
+  _Ne,
+  Mee
+} from "B:/~BUN/root/chunk-xdzcgcjh.js";
+import {
+  kn,
+  pea
+} from "B:/~BUN/root/chunk-t7d2hp9h.js";
+import {
+  o,
+  E,
+  u,
+  xt,
+  me,
+  T
+} from "B:/~BUN/root/chunk-4bfd0jkf.js";
+import {
+  Oe
+} from "B:/~BUN/root/chunk-4qfwb3rf.js";
+var _n = Oe(nb(), 1);
+import {
+  constants as Nr
+} from "fs";
+import {
+  access as Ir,
+  chmod as Dr,
+  copyFile as un,
+  lstat as Mr,
+  mkdir as he,
+  readdir as Ce,
+  readlink as fn,
+  realpath as nn,
+  rename as ve,
+  rm as Ne,
+  rmdir as Fr,
+  stat as re,
+  symlink as rn,
+  unlink as ce,
+  utimes as Lr,
+  writeFile as Or
+} from "fs/promises";
+import {
+  homedir as pn
+} from "os";
+import {
+  randomBytes as mn
+} from "crypto";
+import {
+  basename as gn,
+  delimiter as Vr,
+  dirname as ne,
+  join as Y,
+  resolve as de
+} from "path";
+import {
+  createHash as it
+} from "crypto";
+import {
+  createReadStream as Qn,
+  createWriteStream as Zn
+} from "fs";
+import {
+  chmod as Jn,
+  rm as er
+} from "fs/promises";
+import {
+  dirname as tr,
+  join as nr
+} from "path";
+import {
+  Readable as rr,
+  Transform as At
+} from "stream";
+import {
+  pipeline as at
+} from "stream/promises";
+import {
+  createZstdDecompress as ir
+} from "zlib";
+import {
+  createHash as Dn,
+  randomBytes as Mn
+} from "crypto";
+import {
+  constants as Je,
+  createReadStream as bt,
+  createWriteStream as Fn
+} from "fs";
+import {
+  lstat as tt,
+  mkdir as kt,
+  mkdtemp as Ln,
+  open as On,
+  readdir as $t,
+  readlink as Vn,
+  rm as Ie,
+  stat as Bn,
+  symlink as Un
+} from "fs/promises";
+import {
+  join as te,
+  sep as zn
+} from "path";
+import {
+  pipeline as Tt
+} from "stream/promises";
+import {
+  createZstdDecompress as Gn
+} from "zlib";
+import {
+  createHash as Rn,
+  createPublicKey as An,
+  verify as xn
+} from "crypto";
+
+function Ye() {
+  return `-----BEGIN PUBLIC KEY-----
+MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAp28rSV5I8HmK8CK9GixB
+UZR/gtJxeOCsRXO4EJiej40jzBmQA3cWXGosVO82ZfFsRKVTtMC5iB/HH9sxjncr
+mYNWGroJNbx29m/FgYQBgkCXT4AfFl6rnnXqRGLZOerj/4AqE4yQ1GZbhBgR55Z7
+ro0ieKK8RHYUspBKAFHyWRhCCz6THW6YRbf0p/hG/08TOY6Sj3cJ7/AEoTRf9ZmV
+NX1k0KvbUSiVGpGY9OIHWgxRJUF2pArU4o/hk+sqGAgEUh8Bjvjwvz6+quLXPg+y
+0Y8Ugb1Fg6BUppam/zydYY/Q/+yNjnuF154gD1jEeeir8R5czs6zUHSbo2yXUpAs
+IdWYo5End8vGsluVmFExnUWm/fTVMGoM5Wm3v1VRepMydEnJ+atz4oQdmPQcKNAi
+p5GJO2uyk++xFr9CpKvlR5jral92toYV/m+mur3va8ydamWBo/qG7/wt0sdS81Iw
+H6lcu0SQ39rgKD+bdoPLv05EqVMYTFRI2QZEsWGYTMs0DOrfCIJFH50qyD0x4sWw
+1gEWeG3jDgY8cj2StZz+zjqzUd05CibcCzEAGm1EQg5y9D40tIsAU1OI7bpgQ9V0
+lC8lrqE7zJY66UK9Z1daA8jrdDi6migNjHFrXfT3V4QvMthCIO05q05SS3x2G3Zp
+IgmI+CePUPB1pDf+lhPkU1MCAwEAAQ==
+-----END PUBLIC KEY-----
+`
+}
+var wt = Buffer.from("claude-code-manifest-v1\x00"),
+  Xe = "2.1.207",
+  yt = "flag";
+var Pn = 1,
+  Cn = "RSASSA-PKCS1-v1_5-SHA512",
+  Nn = p(() => u({
+    schema: T(Pn),
+    algorithm: T(Cn),
+    signature: o().min(1),
+    publicKeySha256: o().regex(/^[0-9a-f]{64}$/)
+  })),
+  Qe = p(() => xt({
+    version: o(),
+    manifestSignatureEnforcement: o().optional(),
+    platforms: me(o(), xt({
+      checksum: o(),
+      size: E().optional(),
+      binary: o().optional()
+    }))
+  }));
+class hx extends R {
+  reason;
+  verifyThrew;
+  constructor(e, n, r = "update", h) {
+    super(r === "update" ? `Release verification failed for Claude Code ${e} (${n}). The update was not installed.` : `Release verification failed for the macOS app bundle of Claude Code ${e} (${n}).`, "Release manifest signature verification failed", n);
+    this.name = "ManifestSignatureError", this.reason = n, this.verifyThrew = h?.verifyThrew
+  }
+}
+
+function Ze({
+  manifestBytes: e,
+  sidecar: n,
+  expectedVersion: r,
+  publicKeyPem: h
+}) {
+  let s = Nn().safeParse(n);
+  if (!s.success) throw new hx(r, "sidecar_malformed");
+  let {
+    signature: w,
+    publicKeySha256: S
+  } = s.data;
+  if (Buffer.from(w, "base64").toString("base64") !== w) throw new hx(r, "sidecar_malformed");
+  let y;
+  try {
+    y = An(h)
+  } catch {
+    throw new hx(r, "key_mismatch")
+  }
+  let b = Rn("sha256").update(y.export({
+    type: "spki",
+    format: "der"
+  })).digest("hex");
+  if (S !== b) throw new hx(r, "key_mismatch");
+  let A = !1,
+    C = !1;
+  try {
+    A = xn("sha512", Buffer.concat([wt, e]), y, Buffer.from(w, "base64"))
+  } catch {
+    A = !1, C = !0
+  }
+  if (!A) throw new hx(r, "signature_invalid", "update", {
+    verifyThrew: C
+  });
+  let N;
+  try {
+    let M = Qe().safeParse(ee(e.toString("utf8")));
+    N = M.success ? M.data : void 0
+  } catch {
+    N = void 0
+  }
+  if (!N || N.version !== r) throw new hx(r, "version_mismatch");
+  return N
+}
+var In = p(() => u({
+  checksum: o().regex(/^[a-f0-9]{64}$/),
+  size: E().int().positive()
+}));
+
+function Et({
+  platform: e,
+  expectedBinaryName: n,
+  ...r
+}) {
+  let h;
+  try {
+    h = Ze(r).platforms
+  } catch (S) {
+    throw S instanceof hx ? new hx(r.expectedVersion, S.reason, "app_bundle") : S
+  }
+  let s = Object.hasOwn(h, e) ? h[e] : void 0;
+  if (s === void 0) return;
+  if (s.binary !== n) throw new hx(r.expectedVersion, "binary_name_mismatch", "app_bundle");
+  if (s.bundle === void 0) return;
+  let w = In().safeParse(s.bundle);
+  if (!w.success) throw new hx(r.expectedVersion, "app_bundle_entry_malformed", "app_bundle");
+  return w.data
+}
+var De = "claude.app",
+  Wn = 64,
+  et = 65536,
+  jn = 300000,
+  Hn = 60000,
+  qn = 45000,
+  Kn = '=anchor apple generic and identifier "com.anthropic.claude-code" and certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists and certificate leaf[subject.OU] = "Q6L2SF6YDW"',
+  Me = {
+    env: {
+      PATH: "/usr/bin:/bin",
+      USER_TYPE: "external",
+      NODE_ENV: "production"
+    },
+    extendEnv: !1,
+    stdin: "ignore",
+    maxBuffer: 65536,
+    withoutControllingTerminal: !0,
+    waitForExitAfterKill: !0
+  };
+class Z extends R {
+  reason;
+  constructor(e) {
+    super(`Could not install or verify the macOS app bundle (${e})`);
+    this.reason = e
+  }
+}
+async function nt({
+  versionsDir: e,
+  name: n,
+  version: r
+}) {
+  if (JEn.exec(n)?.[1] !== r) throw new Z("folder_name");
+  let h = te(e, Glt),
+    s = te(h, n);
+  for (let D of [h, s]) {
+    let I = await tt(D);
+    if (!I.isDirectory() || !ZEn(I)) throw new Z(D === s ? "file_unsafe" : "bundles_folder_unsafe")
+  }
+  if ((await $t(s)).join() !== De) throw new Z("file_unexpected");
+  let w = [te(s, De)],
+    S = 0;
+  for (let D = w.pop(); D !== void 0; D = w.pop()) {
+    if (S++, S + w.length > Wn) throw new Z("file_unexpected");
+    let I = await tt(D);
+    if (!(I.isDirectory() || I.isFile() && I.nlink === 1) || !ZEn(I) || (I.mode & 3584) !== 0) throw new Z("file_unsafe");
+    if (I.isDirectory()) {
+      let V = D;
+      w.push(...(await $t(V)).map((z) => te(V, z)))
+    }
+  }
+  let y = await On(te(s, De, "Contents", "Info.plist"), Je.O_RDONLY | Je.O_NOFOLLOW | Je.O_NONBLOCK),
+    {
+      bytesRead: b,
+      buffer: A
+    } = await y.read(Buffer.alloc(et + 1), 0, et + 1, 0).finally(() => y.close());
+  if (b > et) throw new Z("info_plist");
+  let C = A.toString("utf8", 0, b).replace(/\s+/g, ""),
+    N = {
+      CFBundleIdentifier: "com.anthropic.claude-code",
+      CFBundleExecutable: "claude",
+      CFBundleShortVersionString: r
+    };
+  for (let [D, I] of Object.entries(N))
+    if (!C.includes(`<key>${D}</key><string>${I}</string>`)) throw new Z("info_plist");
+  let {
+    exitCode: M
+  } = await lt("/usr/bin/codesign", ["--verify", "--deep", "--strict", "-R", Kn, te(s, De)], {
+    ...Me,
+    cwd: s,
+    timeout: Hn
+  });
+  if (M !== 0) throw new Z(M === void 0 ? "codesign_unavailable" : "codesign")
+}
+async function Yn({
+  versionsDir: e,
+  version: n,
+  checksum: r,
+  downloadArchive: h
+}) {
+  let s = te(e, Glt),
+    w = `${n}@${r.slice(0,12)}.${Mn(4).toString("hex")}`;
+  if (!JEn.test(w)) throw new Z("folder_name");
+  await kt(s, {
+    recursive: !0,
+    mode: 448
+  });
+  let S = await tt(s);
+  if (!S.isDirectory() || !ZEn(S)) throw new Z("bundles_folder_unsafe");
+  let y = await Ln(te(s, ".staging-")),
+    b = Date.now();
+  try {
+    let A = y,
+      C = te(A, "claude.app.tar.zst");
+    await h(C);
+    let N = Dn("sha256");
+    if (await Tt(bt(C), N), N.digest("hex") !== r) throw new Z("archive_checksum");
+    let M = te(A, "claude.app.tar");
+    await Tt(bt(C), Gn(), Fn(M, {
+      flags: "wx"
+    })), await Ie(C);
+    let D = te(A, "unpacked");
+    await kt(D, {
+      mode: 448
+    });
+    let I = await lt("/usr/bin/tar", ["-x", "-m", "-k", "-f", M, "-C", D, "--no-same-owner", "--no-same-permissions", "--no-xattrs", "--no-acls", "--no-fflags", "--no-mac-metadata"], {
+      ...Me,
+      cwd: D,
+      timeout: jn
+    });
+    if (I.code !== 0) throw t(`Could not unpack the bundle: ${I.stderr||I.error||"tar did not start"}`, {
+      level: "warn"
+    }), new Z("unpack");
+    if (await Bqe(D, te(s, w)), y = te(s, w), await Ie(A, {
+        recursive: !0,
+        force: !0
+      }), await nt({
+        versionsDir: e,
+        name: w,
+        version: n
+      }), Mp() !== null) throw new Z("process_wrapper");
+    let V = te(y, XEn),
+      z = g1({
+        cmd: V,
+        prefixArgs: [],
+        target: V
+      }),
+      P = AbortSignal.timeout(qn),
+      L = z.cmd !== V,
+      O = await lt(z.cmd, [...z.prefixArgs, "--version"], {
+        ...Me,
+        cwd: s,
+        env: L ? Rze(OR(() => ({
+          ...process.env
+        }))) : {
+          ...Me.env,
+          HOME: i.HOME,
+          TMPDIR: i.TMPDIR
+        },
+        abortSignal: P,
+        abortEndsProcessGroup: !0
+      });
+    if (P.aborted || O.code !== 0 || !O.stdout.startsWith(`${n} `)) throw t(`The new bundle failed its trial run (${V} --version${L?", through the process wrapper":""}): ${P.aborted?"timed out":`code ${O.code}, printed ${_(O.stdout.slice(0,80))}`}`, {
+      level: "warn"
+    }), new Z("trial_run");
+    if (Date.now() - b > lJr / 2) throw new Z("too_slow");
+    await nt({
+      versionsDir: e,
+      name: w,
+      version: n
+    });
+    let B = te(e, n),
+      U = `${B}.tmp.${process.pid}.${Date.now()}`;
+    try {
+      await Un(te(Glt, w, XEn), U), await Bn(U), await Is(U, B)
+    } catch (G) {
+      throw await Ie(U, {
+        force: !0
+      }).catch(() => {}), t(`Could not link ${B} to its bundle: ${d(G)}`, {
+        level: "warn"
+      }), new Z("link")
+    }
+    return w
+  } catch (A) {
+    throw await Ie(y, {
+      recursive: !0,
+      force: !0
+    }).catch(() => {}), A
+  }
+}
+
+function Fe(e, n, r) {
+  l("tengu_native_app_bundle_install", {
+    outcome: f(e),
+    reason: n === void 0 ? void 0 : f(n instanceof Z || n instanceof hx ? n.reason : "other"),
+    launcher_configured: am().length > 0 || Mp() !== null,
+    latency_ms: Date.now() - r
+  })
+}
+async function Rt({
+  fetchArchive: e,
+  downloadArchive: n,
+  ...r
+}) {
+  let h = Date.now();
+  try {
+    let s = await e();
+    if (s === void 0) {
+      Fe("release_has_none", void 0, h);
+      return
+    }
+    let w = await Yn({
+      ...r,
+      checksum: s.checksum,
+      downloadArchive: async (S) => {
+        try {
+          await n(s, S)
+        } catch (y) {
+          throw t(`Could not download the app bundle: ${d(y)}`, {
+            level: "warn"
+          }), new Z("download")
+        }
+      }
+    });
+    return Fe("installed", void 0, h), w
+  } catch (s) {
+    t(`Could not install ${r.version} as an app bundle; installing the plain binary instead: ${d(s)}`, {
+      level: "warn"
+    }), Fe("failed", s, h);
+    return
+  }
+}
+async function be(e) {
+  let n = Date.now();
+  try {
+    return await nt(e), !0
+  } catch (r) {
+    return t(`The installed app bundle of ${e.version} did not pass its check; installing the plain binary in its place: ${d(r)}`, {
+      level: "warn"
+    }), Fe("retained_failed", r, n), !1
+  }
+}
+async function ke(e, n) {
+  if (x() !== "macos") return;
+  let r = await Vn(te(e, n)).catch(() => ""),
+    h = r.split(zn)[1] ?? "";
+  return JEn.exec(h)?.[1] === n && r === te(Glt, h, XEn) ? h : void 0
+}
+var Xn = !1;
+
+function oe() {
+  let e = i.platform,
+    n = "x64";
+  if (!n) {
+    let r = Error("Unsupported architecture: x64");
+    throw t("Native installer does not support architecture: x64", {
+      level: "error"
+    }), r
+  }
+  if (Xn) n = "arm64";
+  if (e === "linux") {
+    if (xA.isAndroidEnvironment()) return `linux-${n}-android`;
+    if (xA.isMuslEnvironment()) return `linux-${n}-musl`
+  }
+  return `${e}-${n}`
+}
+var Be = "https://downloads.claude.ai/claude-code-releases",
+  Pt = 30000,
+  Ct = 3;
+class K7o extends R {}
+
+function ot(e, n) {
+  return X4(e) ? sX.get(e, n) : hd.get(e, n)
+}
+async function ar(e = "latest", n, r) {
+  let h = Date.now(),
+    s = 0,
+    w;
+  try {
+    w = await dJr((A) => (s++, ot(`${n}/${e}`, {
+      timeout: Pt,
+      responseType: "text",
+      signal: A,
+      ...r
+    })), {
+      attempts: Ct,
+      timeoutMs: Pt,
+      onRetry: (A, C) => {
+        t(`Version check failed on attempt ${A}/${Ct}, retrying: ${C instanceof Error?C.message:String(C)}`)
+      }
+    })
+  } catch (A) {
+    let C = Date.now() - h,
+      N = A instanceof Error ? A.message : String(A),
+      M = we(A);
+    m("update_check", "update_check_binary_repo_failed"), l("tengu_version_check_failure", {
+      latency_ms: C,
+      http_status: M,
+      is_timeout: Se(A),
+      attempt: s,
+      platform: G3(Er()),
+      channel: f(e)
+    });
+    let D = new R(`Failed to fetch version from ${n}/${e} after ${s} attempt(s): ${N}`, "Failed to fetch version from binary repo");
+    throw t(`Failed to fetch version from ${n}/${e} after ${s} attempt(s): ${N}`, {
+      level: "error"
+    }), D
+  }
+  let S = Date.now() - h,
+    y = w.data.trim(),
+    b = y.length;
+  if (!J2e(y)) throw m("update_check", "update_check_binary_repo_invalid_response"), new R(`Version pointer for ${e} did not return a version (got ${b} bytes)`, "Version pointer returned a non-version body");
+  if (l("tengu_version_check_success", {
+      latency_ms: S,
+      attempt: s
+    }), s > 1) c("update_check", "update_check_binary_repo_retry");
+  else g("update_check");
+  return y
+}
+async function xar(e) {
+  if (/^v?\d+\.\d+\.\d+(-\S+)?$/.test(e)) {
+    let r = e.startsWith("v") ? e.slice(1) : e;
+    if (/^99\.99\./.test(r)) throw new R(`Version ${r} is not available for installation. Use 'stable' or 'latest'.`, "Test-fixture version rejected outside test builds");
+    return r
+  }
+  let n = e;
+  if (n !== "stable" && n !== "latest" && n !== "rc") throw new R(`Invalid channel: ${e}. Use 'latest' or 'stable'`, "Invalid release channel");
+  if (n === "rc") throw new R(`Invalid channel: ${e}. Use 'stable' or 'latest'`, "Invalid release channel");
+  return ar(n, Be)
+}
+var Ca = p(() => u({
+  dist: u({
+    integrity: o().min(1),
+    tarball: o().min(1).optional()
+  })
+}));
+var or = 120000,
+  $e = 3,
+  It = 600000,
+  Re = 1e4,
+  sr = 1000,
+  cr = 5,
+  Ve = 33000,
+  lr = 2 * Ve;
+
+function dr() {
+  return Number(i.CLAUDE_CODE_STALL_TIMEOUT_MS_FOR_TESTING) || or
+}
+
+function ur() {
+  return Number(i.CLAUDE_CODE_DOWNLOAD_DEADLINE_MS_FOR_TESTING) || It
+}
+class KEn extends Error {
+  constructor() {
+    super("Download stalled: no data received for 120 seconds");
+    this.name = "StallTimeoutError"
+  }
+}
+
+function Dt(e) {
+  if (rc(e) && e.response) return !1;
+  let n = Gm(e)?.code;
+  if (n === "ECONNABORTED" || n === "ETIMEDOUT") return !1;
+  if (n !== void 0 && (O4.has(n) || Uz.has(n))) return !0;
+  return PM(e, "aborted")
+}
+async function rt(e, n, r, h = {}, s, w) {
+  let S, y = !1,
+    b = !1;
+  for (let A = 1; A <= $e; A++) {
+    let C = new AbortController,
+      N = !1,
+      M = !1,
+      D, I, V, z = () => {
+        if (D) clearTimeout(D), D = void 0;
+        if (I) clearTimeout(I), I = void 0
+      },
+      P = () => {
+        if (D) D.refresh();
+        else D = setTimeout((L) => L.abort("stall"), dr(), C)
+      };
+    try {
+      P(), I = setTimeout((q) => q.abort("deadline"), ur(), C);
+      let L = await ot(e, {
+          timeout: It,
+          responseType: "stream",
+          signal: C.signal,
+          ...h
+        }),
+        O = it("sha256"),
+        B = s ? it("sha256") : void 0,
+        U = B ?? O,
+        G = 0,
+        X = new At({
+          transform(q, j, Q) {
+            if (P(), G += q.length, w !== void 0 && G > w) {
+              Q(new R(`Download exceeds the signed size of ${w} bytes`));
+              return
+            }
+            U.update(q), Q(null, q)
+          }
+        });
+      if (V = Zn(r, {
+          highWaterMark: 4194304
+        }), V.on("drain", P), s) {
+        let q = 0,
+          j = new At({
+            transform(Q, ue, le) {
+              if (q += Q.length, q > s.decompressedSize) {
+                le(new R(`Decompressed binary exceeds the manifest size of ${s.decompressedSize} bytes`, "Decompressed binary larger than manifest size"));
+                return
+              }
+              O.update(Q), le(null, Q)
+            }
+          });
+        await at(L.data, X, ir(), j, V, {
+          signal: C.signal
+        })
+      } else await at(L.data, X, V, {
+        signal: C.signal
+      });
+      if (N = !0, z(), s) {
+        let q = B?.digest("hex");
+        if (q !== s.checksum) throw new R(`Checksum mismatch: expected ${s.checksum}, got ${q} (compressed)`, "Checksum mismatch during compressed binary download")
+      }
+      let se = O.digest("hex");
+      if (se !== n) throw Object.assign(new R(`Checksum mismatch: expected ${n}, got ${se}`, "Checksum mismatch during binary download"), {
+        deterministic: s !== void 0
+      });
+      return M = !0, await Jn(r, 493), {
+        checksumRetried: y,
+        dropRetried: b
+      }
+    } catch (L) {
+      z();
+      let O = _r(L) ? Object.assign(new R(`Checksum mismatch: zstd decoder rejected the frame (${k(L)})`, "zstd decoder rejected the frame"), {
+        cause: L
+      }) : L;
+      if (rc(O) && O.response?.data instanceof rr) O.response.data.destroy();
+      if (V && !M) {
+        let j = V;
+        await new Promise((Q) => j.close(() => Q())), await er(r, {
+          force: !0
+        }).catch((Q) => t(`Failed to remove partial download: ${Q instanceof Error?Q.message:String(Q)}`, {
+          level: "error"
+        }))
+      }
+      let B = C.signal.aborted ? C.signal.reason : void 0,
+        U = B === "deadline",
+        G = !U && (B === "stall" || nl(O));
+      if (U) throw Object.assign(new R("Download timed out: exceeded the total deadline"), {
+        attempt: A
+      });
+      let X = O instanceof Error && O.message.includes("Checksum mismatch"),
+        se = !N && (Dt(O) || Gm(O)?.code === "ERR_STREAM_PREMATURE_CLOSE"),
+        q = G ? new KEn : F(O);
+      if (S = q, (G || X || se) && !yr(O) && A < $e) {
+        if (X) y = !0;
+        else if (se) b = !0;
+        t(`Download ${X?"checksum mismatch":G?"stalled":"connection dropped"} on attempt ${A}/${$e}, retrying...`), await J(1000);
+        continue
+      }
+      if (se) {
+        let j = k(q);
+        throw Object.assign(new R(`The connection dropped while downloading the update (attempt ${A}/${$e}: ${q.message}). Check your network \u2014 proxies sometimes cut off large downloads.`, "Connection dropped repeatedly during binary download"), {
+          attempt: A,
+          connectionDrop: !0,
+          cause: q,
+          ...j && {
+            code: j
+          }
+        })
+      }
+      throw Object.assign(q, {
+        attempt: A
+      })
+    }
+  }
+  throw S ?? Error("Download failed after all retries")
+}
+
+function Mt() {
+  return v("tengu_elegant_pancake", null)
+}
+
+function st(e, n = Mt()) {
+  return e === "always" ? n !== !1 : n === !0
+}
+
+function Ft() {
+  return yt
+}
+
+function fr() {
+  return st(Ft())
+}
+
+function pr(e, n) {
+  return e === "always" || e === "flag" && st("flag", n)
+}
+async function Lt(e, n, {
+  authConfig: r,
+  signaturePolicy: h,
+  platform: s,
+  startTime: w,
+  purpose: S = "download"
+}) {
+  let y = S === "download",
+    b, A, C = !1,
+    N = qEn(s);
+  try {
+    let I = await Ae(`${e}/${n}/manifest.json`, {
+      timeout: Re,
+      ...r,
+      responseType: "arraybuffer",
+      maxContentLength: 1048576
+    });
+    C = I.dropRetried, b = Buffer.from(I.data);
+    let V = Qe().safeParse(ee(b.toString("utf8")));
+    if (!V.success) throw new R(`Manifest for ${n} is not a valid release manifest`, "Release manifest failed schema validation");
+    A = V.data
+  } catch (I) {
+    let V = Date.now() - w,
+      z = I instanceof Error ? I.message : String(I);
+    if (y) m("update_download", "update_download_manifest_failed");
+    throw l("tengu_binary_manifest_fetch_failure", {
+      latency_ms: V,
+      http_status: we(I),
+      is_timeout: Se(I),
+      platform: G3(s)
+    }), t(`Failed to fetch manifest from ${e}/${n}/manifest.json: ${z}`, {
+      level: "error"
+    }), I
+  }
+  let M = !1,
+    D = !1;
+  if (h !== "skip") {
+    let I = `${e}/${n}/manifest.json.raw-sig.json`,
+      V = Date.now(),
+      z, P = 1,
+      L, O;
+    try {
+      let B = !1;
+      try {
+        let U = await Ae(I, {
+          timeout: Re,
+          ...r,
+          responseType: "json",
+          maxContentLength: 65536
+        }, {
+          maxAttempts: cr,
+          alsoRetry: (G) => {
+            let X = we(G);
+            return X === void 0 ? Se(G) : X === 429 || X >= 500
+          },
+          deadline: AbortSignal.timeout(Ve)
+        });
+        P = U.attempt, C ||= U.dropRetried, O = U.data
+      } catch (U) {
+        if (z = we(U), P = zt(U) ?? 1, z !== 404) throw new hx(n, z !== void 0 ? "sidecar_fetch_http_error" : Date.now() - V > lr ? "sidecar_fetch_interrupted" : Se(U) ? "sidecar_fetch_timeout" : "sidecar_fetch_connection_error");
+        if (h !== "allow-unsigned-legacy") throw new hx(n, "sidecar_missing");
+        B = !0
+      }
+      if (B) c("update_manifest_signature", "unsigned_legacy"), t(`No manifest signature published for ${n} (predates ${Xe}); continuing with checksum-only verification`, {
+        level: "warn"
+      });
+      else {
+        let U = Ze({
+          manifestBytes: b,
+          sidecar: O,
+          expectedVersion: n,
+          publicKeyPem: Ye()
+        });
+        t(`Verified manifest signature for ${n}`);
+        let G = U.platforms[s];
+        if (G && G.binary !== N) throw new hx(n, "binary_name_mismatch");
+        if (A = U, M = !0, h === "require-enforcing-release") {
+          if (await ms().catch(() => null), L = {
+              flag: Mt()
+            }, !pr(U.manifestSignatureEnforcement, L.flag)) throw new hx(n, "release_predates_enforcement")
+        }
+        D = !0, g("update_manifest_signature", {
+          attempt: P
+        })
+      }
+    } catch (B) {
+      if (!(B instanceof hx)) throw B;
+      let U = Date.now() - V;
+      await ms().catch(() => null);
+      let G = L ? st(Ft(), L.flag) : fr();
+      if (l("tengu_binary_manifest_signature_failed", {
+          reason: f(B.reason),
+          http_status: z,
+          attempt: P,
+          enforced: G,
+          platform: G3(s),
+          latency_ms: U,
+          purpose: f(S),
+          target_version: Na(n),
+          manifest_bytes: M ? void 0 : b.length,
+          manifest_sha12: M ? void 0 : pea(b),
+          sidecar_signature_sha12: !M && O !== null && typeof O === "object" && "signature" in O && typeof O.signature === "string" ? kn(O.signature) : void 0,
+          verify_threw: B.verifyThrew,
+          https_proxy: VU() !== void 0,
+          extra_ca_certs: Boolean(i.NODE_EXTRA_CA_CERTS)
+        }), G) {
+        if (B.reason === "release_predates_enforcement") c("update_manifest_signature", B.reason), t(`${n} is signed but predates manifest-signature enforcement; not eligible as a channel target for this client`, {
+          level: "warn"
+        });
+        else if (B.reason === "sidecar_fetch_interrupted") c("update_manifest_signature", B.reason), t(`Signature sidecar fetch for ${n} was interrupted (process suspended mid-request); will retry on the next update check`, {
+          level: "warn"
+        });
+        else {
+          if (m("update_manifest_signature", B.reason), y) m("update_download", "update_download_manifest_signature");
+          t(`Manifest signature check failed for ${I}: ${B.reason}`, {
+            level: "error"
+          })
+        }
+        throw B
+      }
+      c("update_manifest_signature", B.reason), t(`Manifest signature check failed for ${I}: ${B.reason} (enforcement disabled; continuing)`, {
+        level: "warn"
+      })
+    }
+  }
+  return {
+    manifest: A,
+    manifestAuthenticated: M,
+    signatureVerified: D,
+    metadataDropRetried: C
+  }
+}
+async function mr(e, n, r, {
+  authConfig: h,
+  signaturePolicy: s,
+  appBundleVersionsDir: w
+}) {
+  let S = ie();
+  await S.rm(n, {
+    recursive: !0,
+    force: !0
+  });
+  let y = oe(),
+    b = qEn(y),
+    A = Date.now();
+  l("tengu_binary_download_attempt", {});
+  let [C, N] = await Promise.all([Lt(r, e, {
+    authConfig: h,
+    signaturePolicy: s,
+    platform: y,
+    startTime: A
+  }), Ae(`${r}/${e}/manifest.zst.json`, {
+    timeout: Re,
+    ...h,
+    responseType: "json",
+    maxContentLength: 1048576
+  }).catch((j) => {
+    t(`No compressed manifest for ${e}: ${d(j)}`);
+    return
+  })]), {
+    manifest: M,
+    signatureVerified: D
+  } = C, I = N?.data, V = C.metadataDropRetried || N?.dropRetried === !0, z = M.platforms[y];
+  if (!z) throw m("update_download", "update_download_platform_not_found"), l("tengu_binary_platform_not_found", {}), new R(`Native binaries for ${y} are not available on this release channel (version ${e} ships: ${Object.keys(M.platforms).sort().join(", ")}).`, "Native binaries not available for platform on this channel");
+  let P = z.checksum,
+    L = A;
+  if (w !== void 0 && D) {
+    let j, Q = await Rt({
+      versionsDir: w,
+      version: e,
+      fetchArchive: () => gr(e, y),
+      downloadArchive: async (ue, le) => {
+        j = await rt(`${r}/${e}/${y}/claude.app.tar.zst`, ue.checksum, le, h || {}, void 0, ue.size)
+      }
+    });
+    if (Q !== void 0) {
+      if (j?.checksumRetried) c("update_download", "update_download_checksum_retry");
+      else if (j?.dropRetried || V) c("update_download", "update_download_drop_retry");
+      else g("update_download");
+      return l("tengu_binary_download_success", {
+        latency_ms: Date.now() - A,
+        compressed: !0,
+        app_bundle: !0
+      }), {
+        signatureVerified: D,
+        expectedChecksum: P,
+        appBundleName: Q
+      }
+    }
+    L = Date.now()
+  } else if (w !== void 0) t(`Installing ${e} as the plain binary, not as an app bundle: its manifest did not pass every check`);
+  let O = I?.platforms?.[y]?.checksum,
+    B = z.size,
+    U = O !== void 0 && /^[a-f0-9]{64}$/.test(O) && B !== void 0 && Number.isInteger(B) && B > 0 ? {
+      checksum: O,
+      decompressedSize: B
+    } : void 0,
+    G = `${r}/${e}/${y}/${b}`;
+  await S.mkdir(n);
+  let X = nr(n, b),
+    se = U !== void 0,
+    q = se ? `${G}.zst` : G;
+  try {
+    let j;
+    if (U) try {
+      j = await rt(q, P, X, h || {}, U)
+    } catch (ye) {
+      if (we(ye) === void 0 && !hr(ye)) throw ye;
+      se = !1, q = G, t(`Compressed binary unusable (${ye instanceof Error?ye.message:String(ye)}), falling back to ${G}`)
+    }
+    let {
+      checksumRetried: Q,
+      dropRetried: ue
+    } = j ?? await rt(q, P, X, h || {}), le = Date.now() - L;
+    if (U && !se) c("update_download", "update_download_zst_fallback");
+    else if (Q) c("update_download", "update_download_checksum_retry");
+    else if (ue || V) c("update_download", "update_download_drop_retry");
+    else g("update_download");
+    return l("tengu_binary_download_success", {
+      latency_ms: le,
+      compressed: se
+    }), {
+      signatureVerified: D,
+      expectedChecksum: P
+    }
+  } catch (j) {
+    let Q = Date.now() - L,
+      ue = j instanceof Error ? j.message : String(j),
+      le = ue.includes("Checksum mismatch");
+    if (le) m("update_download", "update_download_checksum_mismatch");
+    else if (j instanceof KEn) m("update_download", "update_download_stall_timeout");
+    else if (vr(j)) m("update_download", "update_download_connection_drop");
+    else m("update_download", "update_download_binary_failed");
+    throw l("tengu_binary_download_failure", {
+      latency_ms: Q,
+      http_status: we(j),
+      is_timeout: Se(j),
+      is_checksum_mismatch: le,
+      attempt: zt(j),
+      platform: G3(y),
+      compressed: se
+    }), t(`Failed to download binary from ${q}: ${ue}`, {
+      level: "error"
+    }), j
+  }
+}
+
+function Ot(e, {
+  explicitVersionRequested: n,
+  requireEnforcingRelease: r
+}) {
+  return r ? "require-enforcing-release" : n && eM(e, Xe) ? "allow-unsigned-legacy" : "require"
+}
+async function Vt(e, n, r) {
+  let h = oe(),
+    {
+      manifest: s,
+      manifestAuthenticated: w,
+      signatureVerified: S
+    } = await Lt(Be, e, {
+      signaturePolicy: Ot(e, r),
+      platform: h,
+      startTime: Date.now(),
+      purpose: "reverify"
+    }),
+    y = tr(n),
+    b = await ke(y, e);
+  if (b !== void 0) return {
+    signatureVerified: S,
+    binaryMatches: await be({
+      versionsDir: y,
+      name: b,
+      version: e
+    }),
+    expectedChecksum: void 0,
+    appBundleName: b
+  };
+  if (!w) return t(`Manifest for retained ${e} is unauthenticated; activating the retained copy without a checksum comparison`, {
+    level: "warn"
+  }), {
+    signatureVerified: !1,
+    binaryMatches: !0,
+    expectedChecksum: void 0
+  };
+  let A = s.platforms[h]?.checksum,
+    C = A !== void 0 && await ze(n, A);
+  if (!C) t(`Retained ${e} does not match its signed manifest checksum; re-downloading`);
+  return {
+    signatureVerified: S,
+    binaryMatches: C,
+    expectedChecksum: A
+  }
+}
+
+function ct() {
+  return Te() === "firstParty" && !St()
+}
+async function gr(e, n) {
+  if (!ct()) return;
+  let r = `${Be}/${e}/manifest.zst.json`,
+    [h, s] = await Promise.all([Ae(r, {
+      timeout: Re,
+      responseType: "arraybuffer",
+      maxContentLength: 1048576
+    }, {
+      deadline: AbortSignal.timeout(Ve)
+    }), Ae(`${r}.raw-sig.json`, {
+      timeout: Re,
+      responseType: "json",
+      maxContentLength: 65536
+    }, {
+      deadline: AbortSignal.timeout(Ve)
+    })]);
+  return Et({
+    manifestBytes: Buffer.from(h.data),
+    sidecar: s.data,
+    expectedVersion: e,
+    publicKeyPem: Ye(),
+    platform: n,
+    expectedBinaryName: `${qEn(n)}.zst`
+  })
+}
+
+function Bt(e) {
+  if (!rc(e) || e.response) return !1;
+  let n = Gm(e)?.code;
+  return n !== void 0 && (Uz.has(n) || n === "ETIMEDOUT")
+}
+async function Ue(e) {
+  let n = it("sha256");
+  return await at(Qn(e), n), n.digest("hex")
+}
+async function ze(e, n) {
+  try {
+    return await Ue(e) === n
+  } catch (r) {
+    return t(`Could not hash ${e} (${k(r)??F(r).name}); treating as mismatched`), !1
+  }
+}
+async function Ut(e, n, {
+  explicitVersionRequested: r,
+  requireEnforcingRelease: h,
+  appBundleVersionsDir: s
+}) {
+  let {
+    signatureVerified: w,
+    expectedChecksum: S,
+    appBundleName: y
+  } = await mr(e, n, Be, {
+    signaturePolicy: Ot(e, {
+      explicitVersionRequested: r,
+      requireEnforcingRelease: h
+    }),
+    appBundleVersionsDir: s
+  });
+  return {
+    downloadType: "binary",
+    signatureVerified: w,
+    expectedChecksum: S,
+    appBundleName: y
+  }
+}
+
+function we(e) {
+  if (rc(e) && e.response) return e.response.status;
+  return
+}
+
+function Se(e) {
+  if (e instanceof KEn) return !0;
+  if (nl(e)) return !0;
+  if (rc(e) && (e.code === "ECONNABORTED" || e.code === "ETIMEDOUT")) return !0;
+  if (e !== null && typeof e === "object" && "code" in e && e.code === "ETIMEDOUT") return !0;
+  let n = (e instanceof Error ? e.message : String(e)).toLowerCase();
+  return n.includes("timeout") || n.includes("timed out")
+}
+
+function _r(e) {
+  return k(e)?.startsWith("ZSTD_error_") === !0
+}
+
+function hr(e) {
+  let n = e instanceof Error ? e.message : String(e);
+  return n.includes("Checksum mismatch") || n.includes("exceeds the manifest size")
+}
+
+function yr(e) {
+  return e !== null && typeof e === "object" && "deterministic" in e && e.deterministic === !0
+}
+
+function vr(e) {
+  return e !== null && typeof e === "object" && "connectionDrop" in e && e.connectionDrop === !0
+}
+
+function zt(e) {
+  if (e !== null && typeof e === "object" && "attempt" in e && typeof e.attempt === "number") return e.attempt;
+  return
+}
+
+function Er() {
+  try {
+    return oe()
+  } catch {
+    return "unknown"
+  }
+}
+async function Ae(e, n, {
+  maxAttempts: r = $e,
+  alsoRetry: h,
+  deadline: s
+} = {}) {
+  let w = !1,
+    S;
+  for (let y = 1;; y++) try {
+    return {
+      data: (await ot(e, {
+        ...n,
+        signal: s
+      })).data,
+      attempt: y,
+      dropRetried: w
+    }
+  } catch (b) {
+    let A = Object.assign(s?.aborted && nl(b) && S || F(b), {
+        attempt: y
+      }),
+      C = Dt(A);
+    if (y >= r || s?.aborted || !(C || h?.(A))) throw A;
+    if (S = A, w ||= C, await J(Cy({
+        attempt: y,
+        baseMs: sr,
+        jitter: {
+          kind: "symmetric",
+          ratio: 0.25
+        }
+      }), s), s?.aborted) throw A;
+    t(`Fetch of ${e} failed on attempt ${y}/${r} (${we(A)??"no response"}), retrying...`)
+  }
+}
+import {
+  lstat as dt,
+  readdir as br,
+  realpath as kr,
+  rm as $r,
+  stat as Sr
+} from "fs/promises";
+import {
+  join as Ge,
+  sep as We
+} from "path";
+var Tr = /^\.staging-[A-Za-z0-9]+$/;
+async function Gt(e, n) {
+  let r = Ge(e, Glt),
+    h, s;
+  try {
+    if (s = await dt(r), !s.isDirectory() || !ZEn(s)) return t(`Not cleaning up ${r}: it must be a real folder that you own and only you can write`, {
+      level: "warn"
+    }), "refused";
+    h = await br(r)
+  } catch (A) {
+    return t(`Could not list ${r} to clean it up: ${d(A)}`), wr(A) ? 0 : "unreadable"
+  }
+  let w = "",
+    S = !0;
+  if (n !== void 0) try {
+    w = await kr(n.launcherPath)
+  } catch (A) {
+    if (S = wr(A), !S) t(`Keeping every app bundle in this cleanup: could not follow the launcher link ${n.launcherPath}: ${d(A)}`, {
+      level: "warn"
+    })
+  }
+  let y = Date.now(),
+    b = 0;
+  for (let A of h) {
+    let C = JEn.exec(A)?.[1];
+    if (C === void 0 && !Tr.test(A)) continue;
+    let N = Ge(r, A);
+    try {
+      let M = await dt(N);
+      if (!M.isDirectory() || y - M.mtimeMs <= lJr) continue;
+      if (C !== void 0) {
+        if (n === void 0 || !S || process.execPath.includes(We + A + We) || w.includes(We + A + We)) continue;
+        try {
+          await Sr(Ge(e, C));
+          continue
+        } catch (I) {
+          if (!wr(I)) throw I
+        }
+        if (await n.isVersionLockActive(Ge(N, XEn))) continue
+      }
+      let D = await dt(r);
+      if (D.dev !== s.dev || D.ino !== s.ino) return t(`Stopped cleaning up ${r}: it is no longer the folder that was checked`, {
+        level: "warn"
+      }), "refused";
+      await $r(N, {
+        recursive: !0,
+        force: !0
+      }), b++, t(`Cleaned up ${A} in ${r}`)
+    } catch (M) {
+      t(`Could not clean up ${A} in ${r}: ${d(M)}`)
+    }
+  }
+  return b
+}
+import {
+  lstat as Rr,
+  readdir as qt
+} from "fs/promises";
+import {
+  join as He
+} from "path";
+var Ar = 7200000;
+
+function xe(e) {
+  if (e <= 1) return !1;
+  try {
+    return process.kill(e, 0), !0
+  } catch (n) {
+    return k(n) === "EPERM"
+  }
+}
+
+function xr(e, n) {
+  if (!xe(e)) return !1;
+  if (e === process.pid) return !0;
+  try {
+    let r = GDs(e);
+    if (!r) return !0;
+    let h = r.toLowerCase(),
+      s = n.toLowerCase();
+    return h.includes("claude") || h.includes(s)
+  } catch {
+    return !0
+  }
+}
+
+function qe(e) {
+  try {
+    if (!e || e.trim() === "") return null;
+    let n = ee(e);
+    if (typeof n.pid !== "number" || !n.version || !n.execPath) return null;
+    return n
+  } catch {
+    return null
+  }
+}
+
+function pe(e) {
+  let n = ie();
+  try {
+    let r = n.readFileSync(e, {
+      encoding: "utf8"
+    });
+    return qe(r)
+  } catch {
+    return null
+  }
+}
+
+function ge(e, n) {
+  let r = n !== void 0 ? n : pe(e);
+  if (!r) return !1;
+  let {
+    pid: h,
+    execPath: s
+  } = r;
+  if (!xe(h)) return !1;
+  if (!xr(h, s)) return t(`Lock PID ${h} is running but does not appear to be Claude - treating as stale`), !1;
+  let w = ie();
+  try {
+    let S = w.statSync(e);
+    if (Date.now() - S.mtimeMs > Ar) {
+      if (!xe(h)) return !1
+    }
+  } catch {}
+  return !0
+}
+
+function Kt(e, n) {
+  ZU(e, _(n, null, 2))
+}
+async function ft(e, n) {
+  let r = ie(),
+    h = QEn(e);
+  if (ge(n)) {
+    let w = pe(n);
+    return t(`Cannot acquire lock for ${h} - held by PID ${w?.pid}`), null
+  }
+  let s = {
+    pid: process.pid,
+    version: h,
+    execPath: process.execPath,
+    acquiredAt: Date.now()
+  };
+  try {
+    if (Kt(n, s), pe(n)?.pid !== process.pid) return null;
+    return t(`Acquired PID lock for ${h} (PID ${process.pid})`), () => {
+      try {
+        if (pe(n)?.pid === process.pid) r.unlinkSync(n), t(`Released PID lock for ${h}`)
+      } catch (S) {
+        t(`Failed to release lock for ${h}: ${S}`)
+      }
+    }
+  } catch (w) {
+    return t(`Failed to acquire lock for ${h}: ${w}`), null
+  }
+}
+async function Yt(e, n) {
+  let r = await ft(e, n);
+  if (!r) return !1;
+  let h = () => {
+    try {
+      r()
+    } catch {}
+  };
+  return process.on("exit", h), process.on("SIGINT", h), process.on("SIGTERM", h), !0
+}
+async function Xt(e, n, r) {
+  let h = await ft(e, n);
+  if (!h) return !1;
+  try {
+    return await r(), !0
+  } finally {
+    h()
+  }
+}
+async function Qt(e) {
+  let n = ie(),
+    r = 0,
+    h;
+  try {
+    h = (await qt(e)).filter((s) => s.endsWith(".lock"))
+  } catch (s) {
+    if (K(s)) return 0;
+    return t(`Failed to readdir locks directory: ${F(s).message}`, {
+      level: "error"
+    }), 0
+  }
+  for (let s of h) {
+    let w = He(e, s);
+    try {
+      if ((await Rr(w)).isDirectory()) n.rmSync(w, {
+        recursive: !0,
+        force: !0
+      }), r++, t(`Cleaned up legacy directory lock: ${s}`);
+      else {
+        let y = null,
+          b = !1;
+        try {
+          y = n.readFileSync(w, {
+            encoding: "utf8"
+          })
+        } catch (A) {
+          if (K(A)) continue;
+          b = !0, t(`Skipping stale-lock sweep of unreadable lock ${s}: ${F(A).message}`)
+        }
+        if (!b && !ge(w, qe(y ?? ""))) n.unlinkSync(w), r++, t(`Cleaned up stale lock: ${s}`)
+      }
+    } catch {}
+    await new Promise((S) => setImmediate(S))
+  }
+  return r
+}
+var Pr = new Set(["EMFILE", "ENFILE", "EAGAIN", "EINTR", "EBUSY"]);
+
+function ut(e) {
+  let n = k(e);
+  if (n && Pr.has(n)) return "transient";
+  if (n === "EISDIR" || n === "ENOTDIR") return "directory";
+  return "permanent"
+}
+var Zt = "#";
+
+function pt(e, n, r) {
+  return He(e, `${n}${Zt}${r}.lock`)
+}
+
+function Cr(e, n) {
+  return e === `${n}.lock` || e.startsWith(`${n}${Zt}`) && e.endsWith(".lock")
+}
+var je = null,
+  Wt = !1;
+
+function mt(e, n) {
+  let r = ie(),
+    h = QEn(e),
+    s = pt(n, h, process.pid);
+  try {
+    Kt(s, {
+      pid: process.pid,
+      version: h,
+      execPath: process.execPath,
+      acquiredAt: Date.now()
+    })
+  } catch (w) {
+    return t(`NON-FATAL: Failed to write per-PID lock for ${h}: ${w}`), !1
+  }
+  if (je = s, !Wt) {
+    Wt = !0;
+    let w = () => {
+      try {
+        if (je) r.unlinkSync(je), je = null
+      } catch {}
+    };
+    process.on("exit", w)
+  }
+  return t(`Wrote per-PID lock for ${h} (PID ${process.pid})`), !0
+}
+var jt = null,
+  Ht = !1;
+async function Jt(e, n) {
+  let r = await ft(e, n);
+  if (!r) return !1;
+  if (jt = r, !Ht) {
+    Ht = !0;
+    let h = () => {
+      try {
+        jt?.()
+      } catch {}
+    };
+    process.on("exit", h)
+  }
+  return !0
+}
+async function en(e) {
+  let n = new Set,
+    r;
+  try {
+    r = (await qt(e)).filter((s) => s.endsWith(".lock"))
+  } catch (s) {
+    if (K(s)) return n;
+    let w = ut(s) === "transient";
+    if (t(`Failed to readdir locks directory (${w?"transient":"permanent"}): ${F(s).message}`, {
+        level: "error"
+      }), !w) a(F(s));
+    return null
+  }
+  let h = ie();
+  for (let s of r) {
+    let w = He(e, s),
+      S;
+    try {
+      S = h.readFileSync(w, {
+        encoding: "utf8"
+      })
+    } catch (b) {
+      if (K(b)) continue;
+      let A = ut(b);
+      if (A === "transient") return null;
+      if (A === "permanent") a(F(b));
+      continue
+    }
+    let y = qe(S);
+    if (y && !n.has(y.version)) try {
+      if (ge(w, y)) n.add(y.version)
+    } catch {}
+    await new Promise((b) => setImmediate(b))
+  }
+  return n
+}
+
+function tn(e, n) {
+  let r = ie(),
+    h;
+  try {
+    h = r.readdirSync(e).map((s) => s.name).filter((s) => Cr(s, n))
+  } catch (s) {
+    return !K(s)
+  }
+  for (let s of h) {
+    let w = He(e, s),
+      S;
+    try {
+      S = r.readFileSync(w, {
+        encoding: "utf8"
+      })
+    } catch (b) {
+      if (K(b)) continue;
+      if (ut(b) === "transient") return !0;
+      continue
+    }
+    let y = qe(S);
+    if (y && y.version === n && y.pid !== process.pid && ge(w, y)) return !0
+  }
+  return !1
+}
+var gt = 2,
+  _t = 604800000;
+
+function qEn(e) {
+  return e.startsWith("win32") ? "claude.exe" : "claude"
+}
+
+function ae() {
+  let e = oe(),
+    n = qEn(e);
+  return {
+    versions: _Ne(),
+    staging: Y(tKi(), "claude", "staging"),
+    locks: Q7o(),
+    executable: Y(Mee(), n)
+  }
+}
+async function hn(e) {
+  return re(e).then((n) => n.isFile() && n.size > 0, () => !1)
+}
+async function Br(e, n) {
+  for (let r of e)
+    if (await hn(n(r))) return r;
+  return
+}
+
+function Ur(e) {
+  return `${e}.old.${Date.now()}.${process.pid}`
+}
+var zr = 2592000000;
+
+function Gr(e, n) {
+  if (!e.toLowerCase().startsWith(`${n.toLowerCase()}.`)) return;
+  let r = /^(?:old\.(\d+)(?:\.(\d+))?|new\.\d+\.(\d+)\.[0-9a-f]+)$/i.exec(e.slice(n.length + 1));
+  return r === null ? void 0 : r[1] !== void 0 ? {
+    kind: "backup",
+    stampedMs: Number(r[1]),
+    ownerPid: r[2] === void 0 ? void 0 : Number(r[2])
+  } : {
+    kind: "staged",
+    stampedMs: Number(r[3])
+  }
+}
+async function _e(e) {
+  try {
+    let n = await re(e);
+    if (!n.isFile() || n.size === 0) return !1;
+    return !0
+  } catch {
+    return !1
+  }
+}
+async function ht(e) {
+  let n = ae(),
+    r = [n.versions, n.staging, n.locks];
+  await Promise.all(r.map((w) => he(w, {
+    recursive: !0
+  })));
+  let h = ne(n.executable);
+  if (await he(h, {
+      recursive: !0
+    }), !/^[a-zA-Z0-9._+-]+$/.test(e) || e.includes("..") || e === ".") throw Error(`Invalid version string "${e}": contains path-unsafe characters`);
+  let s = Y(n.versions, e);
+  try {
+    await Or(s, "", {
+      encoding: "utf8",
+      flag: "wx"
+    })
+  } catch (w) {
+    if (k(w) !== "EEXIST") throw w;
+    try {
+      if ((await re(s)).size === 0) {
+        let S = new Date;
+        await Lr(s, S, S)
+      }
+    } catch {}
+  }
+  return {
+    stagingPath: Y(n.staging, e),
+    installPath: s
+  }
+}
+async function wn(e, n, r = 0) {
+  let h = ae(),
+    s = Ee(h, e);
+  if (await he(h.locks, {
+      recursive: !0
+    }), m5e()) {
+    let S = 0,
+      y = r + 1,
+      b = r > 0 ? 1000 : 100,
+      A = r > 0 ? 5000 : 500;
+    while (S < y) {
+      if (await Xt(e, s, async () => {
+          try {
+            await n()
+          } catch (N) {
+            throw t(`Native installer version-lock callback failed: ${N}`, {
+              level: "error"
+            }), N
+          }
+        })) return l("tengu_version_lock_acquired", {
+        is_pid_based: !0,
+        is_lifetime_lock: !1,
+        attempts: S + 1
+      }), !0;
+      if (S++, S < y) {
+        let N = Math.min(b * Math.pow(2, S - 1), A);
+        await J(N)
+      }
+    }
+    return l("tengu_version_lock_failed", {
+      is_pid_based: !0,
+      is_lifetime_lock: !1,
+      attempts: y
+    }), Ke(e, Error("Lock held by another process")), !1
+  }
+  let w = null;
+  try {
+    try {
+      w = await Zd(e, {
+        stale: _t,
+        retries: {
+          retries: r,
+          minTimeout: r > 0 ? 1000 : 100,
+          maxTimeout: r > 0 ? 5000 : 500
+        },
+        lockfilePath: s,
+        onCompromised: (S) => {
+          t(`NON-FATAL: Version lock was compromised during operation: ${S.message}`, {
+            level: "info"
+          })
+        }
+      })
+    } catch (S) {
+      return l("tengu_version_lock_failed", {
+        is_pid_based: !1,
+        is_lifetime_lock: !1
+      }), Ke(e, S), !1
+    }
+    try {
+      return await n(), l("tengu_version_lock_acquired", {
+        is_pid_based: !1,
+        is_lifetime_lock: !1
+      }), !0
+    } catch (S) {
+      throw t(`tryWithVersionLock: callback failed under version lock: ${d(S)}`, {
+        level: "error"
+      }), S
+    }
+  } finally {
+    if (w) await w()
+  }
+}
+var an = [100, 500, 2000];
+class YEn extends R {
+  constructor() {
+    super("Staged binary no longer matches the verified checksum; refusing to install", "Staged binary checksum mismatch at install")
+  }
+}
+async function yn(e, n, r) {
+  await he(ne(n), {
+    recursive: !0
+  });
+  let h;
+  for (let s = 1; s <= an.length + 1; s++) {
+    let w = `${n}.tmp.${process.pid}.${Date.now()}.${s}`;
+    try {
+      if (await un(e, w), await Dr(w, 493), r !== void 0 && await Ue(w) !== r) throw new YEn;
+      return await ve(w, n), t(`Atomically installed binary to ${n}` + (s > 1 ? ` (attempt ${s})` : "")), {
+        attempts: s
+      }
+    } catch (S) {
+      h = S;
+      try {
+        await ce(w)
+      } catch {}
+      let y = k(S),
+        b = y === "EBUSY" || y === "EPERM" && !0,
+        A = an[s - 1];
+      if (!b || A === void 0) throw S;
+      t(`atomicMoveToInstallPath attempt ${s} failed with ${y}; retrying in ${A}ms`), await J(A)
+    }
+  }
+  throw h
+}
+async function Wr(e, n, r) {
+  try {
+    let h = Y(e, "node_modules", "@anthropic-ai"),
+      w = (await Ce(h)).find((b) => b.startsWith("claude-cli-native-"));
+    if (!w) throw l("tengu_native_install_package_failure", {
+      stage_find_package: !0,
+      error_package_not_found: !0
+    }), Error("Could not find platform-specific native package");
+    let S = Y(h, w, "cli");
+    try {
+      await re(S)
+    } catch {
+      throw l("tengu_native_install_package_failure", {
+        stage_binary_exists: !0,
+        error_binary_not_found: !0
+      }), Error("Native binary not found in staged package")
+    }
+    let {
+      attempts: y
+    } = await yn(S, n, r);
+    return await Ne(e, {
+      recursive: !0,
+      force: !0
+    }), l("tengu_native_install_package_success", {
+      install_attempts: y
+    }), {
+      moveRetried: y > 1
+    }
+  } catch (h) {
+    let s = d(h);
+    if (!(s.includes("Could not find platform-specific") || s.includes("Native binary not found")))
+      if (l("tengu_native_install_package_failure", {
+          stage_atomic_move: !0,
+          error_move_failed: !0
+        }), m("update_apply", "update_apply_native_move_failed"), ci(h)) t(`installVersionFromPackage: atomic move failed: ${s}`, {
+        level: "error"
+      });
+      else a(F(h));
+    else m("update_apply", "update_apply_native_staging_missing"), t(`installVersionFromPackage: ${s}`, {
+      level: "error"
+    });
+    throw h
+  }
+}
+async function jr(e, n, r) {
+  try {
+    let h = oe(),
+      s = qEn(h),
+      w = Y(e, s);
+    try {
+      await re(w)
+    } catch (y) {
+      throw l("tengu_native_install_binary_failure", {
+        stage_binary_exists: !0,
+        error_binary_not_found: !0,
+        error_code: kh(y)
+      }), Error("Staged binary not found")
+    }
+    let {
+      attempts: S
+    } = await yn(w, n, r);
+    return await Ne(e, {
+      recursive: !0,
+      force: !0
+    }), l("tengu_native_install_binary_success", {
+      install_attempts: S
+    }), {
+      moveRetried: S > 1
+    }
+  } catch (h) {
+    if (h instanceof YEn) l("tengu_native_install_binary_failure", {
+      stage_atomic_move: !0,
+      error_checksum_mismatch: !0
+    }), m("update_apply", "update_apply_staged_checksum_mismatch");
+    else if (!d(h).includes("Staged binary not found")) l("tengu_native_install_binary_failure", {
+      stage_atomic_move: !0,
+      error_move_failed: !0,
+      error_code: kh(h)
+    }), m("update_apply", "update_apply_native_move_failed");
+    else m("update_apply", "update_apply_native_staging_missing");
+    if (ci(h)) t(`installVersionFromBinary: atomic move failed: ${d(h)}`, {
+      level: "error"
+    });
+    else a(F(h));
+    throw h
+  }
+}
+async function Hr(e, n, r, h) {
+  if (r === "npm") return Wr(e, n, h);
+  return jr(e, n, h)
+}
+var qr = new W(() => new Map);
+async function on(e, {
+  forceReinstall: n,
+  explicitVersionRequested: r,
+  requireEnforcingRelease: h
+}) {
+  let {
+    stagingPath: s,
+    installPath: w
+  } = await ht(e), {
+    executable: S
+  } = ae(), y = Pe("true"), b = y ? `${s}.${process.pid}.${Date.now()}.${mn(4).toString("hex")}` : s, A = qr.of(H().host), C = A.get(e), N = C !== void 0 && C.appBundleName === await ke(ne(w), e) ? C : void 0, M = !(N && (N.enforcingRelease || !h)), D = {
+    wasNewInstall: !1,
+    moveRetried: !1,
+    activationFailed: !1,
+    activationRefused: !1,
+    skippedUnverifiedRelease: !0
+  }, I = M ? void 0 : N?.checksum, V = n || !await vn(e), z = !1;
+  if (!V && M) try {
+    let O = await Vt(e, w, {
+      explicitVersionRequested: r,
+      requireEnforcingRelease: h
+    });
+    if (I = O.expectedChecksum, !O.binaryMatches) V = !0, z = O.appBundleName !== void 0;
+    else if (O.signatureVerified) A.set(e, {
+      enforcingRelease: h,
+      checksum: I,
+      appBundleName: O.appBundleName
+    })
+  } catch (O) {
+    if (O instanceof hx) {
+      if (h && O.reason === "release_predates_enforcement") return D;
+      throw O
+    }
+    if (!r || h || !Bt(O)) throw O;
+    let B = ne(w),
+      U = await ke(B, e);
+    if (U === void 0) t(`Could not re-verify retained ${e} (${F(O).name}); offline, activating as requested`, {
+      level: "warn"
+    });
+    else if (!await be({
+        versionsDir: B,
+        name: U,
+        version: e
+      })) V = !0, z = !0
+  } else if (!V && N?.appBundleName !== void 0) {
+    if (!await be({
+        versionsDir: ne(w),
+        name: N.appBundleName,
+        version: e
+      })) A.delete(e), V = !0, z = !0
+  } else if (!V && N?.checksum !== void 0) {
+    if (!await ze(w, N.checksum)) t(`Retained ${e} no longer matches the checksum verified earlier in this process; re-downloading`, {
+      level: "warn"
+    }), A.delete(e), V = !0
+  }
+  let P = !1;
+  if (V) {
+    t(n ? `Force reinstalling native installer version ${e}` : `Downloading native installer version ${e}`), await Sn(ne(b));
+    let O = !z && await Kr(e) ? ne(w) : void 0,
+      B, U, G;
+    try {
+      if ({
+          downloadType: B,
+          signatureVerified: U,
+          expectedChecksum: I,
+          appBundleName: G
+        } = await Ut(e, b, {
+          explicitVersionRequested: r,
+          requireEnforcingRelease: h,
+          appBundleVersionsDir: O
+        }), G === void 0)({
+        moveRetried: P
+      } = await Hr(b, w, B, I))
+    } catch (X) {
+      if (h && X instanceof hx && X.reason === "release_predates_enforcement") return D;
+      throw X
+    } finally {
+      if (y) await Ne(b, {
+        recursive: !0,
+        force: !0
+      }).catch((X) => t(`Could not remove the update staging directory (a later update removes it after one hour): ${d(X)}`, {
+        level: "warn"
+      }))
+    }
+    if (U) A.set(e, {
+      enforcingRelease: h,
+      checksum: I,
+      appBundleName: G
+    })
+  } else t(`Version ${e} already installed, updating symlink`);
+  await Jr(S);
+  let L = await ei(S, w, {
+    expectedChecksum: I
+  });
+  if (L !== "updated" && !await _e(S)) {
+    let O = !1;
+    try {
+      await re(w), O = !0
+    } catch {}
+    throw m("update_apply", "update_apply_native_symlink_failed"), Error(`Failed to create executable at ${S}. Source file exists: ${O}. Either ${S} is not writable, or the existing file there was not created by the native installer and is not a working launcher \u2014 the updater will not overwrite a launcher it does not own. Remove it and re-run the update.`)
+  }
+  return {
+    wasNewInstall: V,
+    moveRetried: P,
+    activationFailed: L === "failed",
+    activationRefused: L === "refused",
+    skippedUnverifiedRelease: !1
+  }
+}
+async function Kr(e) {
+  try {
+    if (x() !== "macos" || !1 || !ct() || !Ew(e, {
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.319",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-11-05T18:14:18Z",
+        GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION) || !await En() || (await re(ae().versions)).uid !== process.getuid?.()) return !1;
+    return i.CLAUDE_CODE_NATIVE_APP_BUNDLE ?? v("tengu_purring_aurora", !1) === !0
+  } catch (n) {
+    return t(`Installing ${e} as the plain binary: could not tell whether an app bundle is allowed: ${d(n)}`), !1
+  }
+}
+async function vn(e) {
+  let {
+    installPath: n
+  } = await ht(e);
+  return _e(n)
+}
+async function Yr() {
+  if (await En()) return !0;
+  let {
+    executable: e
+  } = ae();
+  return await _e(e) && !await Dut(e).catch(() => !1)
+}
+async function En() {
+  let {
+    versions: e,
+    executable: n
+  } = ae(), r = !0, h = [{
+    versions: e,
+    executable: n
+  }], [s, w] = await Promise.all([nn(e).catch(() => e), nn(ne(n)).catch(() => ne(n))]), S = Y(w, gn(n));
+  if (s !== e || S !== n) h.push({
+    versions: s,
+    executable: S
+  });
+  return h.some((y) => Xr(process.execPath, {
+    ...y,
+    isWindows: !0
+  }))
+}
+
+function Xr(e, {
+  versions: n,
+  executable: r,
+  isWindows: h
+}) {
+  let s = (y) => h ? y.replaceAll("\\", "/").toLowerCase() : y,
+    w = s(e),
+    S = s(n).replace(/\/+$/, "") + "/";
+  return w.startsWith(S) || w === s(r)
+}
+
+function Qr() {
+  try {
+    let e = v("tengu_canary", {});
+    return typeof e.external === "string" && _n.valid(e.external) || null
+  } catch (e) {
+    return t(`getCanaryVersion: GB read failed, falling through: ${d(e)}`), null
+  }
+}
+async function Zr(e, n = !1) {
+  let r = Date.now(),
+    {
+      executable: h
+    } = ae(),
+    s = !/^v?\d+\.\d+\.\d+(-\S+)?$/.test(e),
+    {
+      maxVersion: w,
+      forceDowngradeEnabled: S
+    } = await g5e(),
+    y = S && !n && s && !!w && Klt({
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION, w, "native_update"),
+    b = y ? w : await xar(e),
+    A = b.length;
+  if (!J2e(b)) throw new R(`Invalid version string from ${s?"version pointer":"argument"}: not a well-formed version (${A} characters)`, "Invalid version string: not a well-formed version");
+  t(`Checking for native installer update to version ${b}`);
+  let C = s && await Yr();
+  if (e === "latest" && !y) {
+    let P = Qr(),
+      L = P && w && WS(P, w);
+    if (P && WS(P, b) && !L) t(`Native installer: canary ${P} active, overriding ${b}`), b = P;
+    else if (L) t(`Native installer: canary ${P} exceeds maxVersion ${w}, not applying`)
+  }
+  if (!y && !n && w && WS(b, w)) {
+    if (t(`Native installer: maxVersion ${w} is set, capping update from ${b} to ${w}`), Ew({
+        ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+        PACKAGE_URL: "@anthropic-ai/claude-code",
+        README_URL: "https://code.claude.com/docs/en/overview",
+        VERSION: "2.1.319",
+        FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+        BUILD_TIME: "2026-11-05T18:14:18Z",
+        GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+        HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+        DD_SOURCEMAP_GROUP: "win32"
+      }.VERSION, w)) return t(`Native installer: current version ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://code.claude.com/docs/en/overview",VERSION:"2.1.319",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues",BUILD_TIME:"2026-11-05T18:14:18Z",GIT_SHA:"fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",HOOKS_WORKER_URL:"B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",DD_SOURCEMAP_GROUP:"win32"}.VERSION} is already at or above maxVersion ${w}, skipping update`), l("tengu_native_update_skipped_max_version", {
+      latency_ms: Date.now() - r,
+      max_version: Na(w),
+      available_version: Na(b)
+    }), {
+      success: !0,
+      wasSkipped: !0,
+      latestVersion: b
+    };
+    b = w
+  }
+  if (!n && b === {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION && await vn(b) && await _e(h)) return t(`Found ${b} at ${h}, skipping install`), l("tengu_native_update_complete", {
+    latency_ms: Date.now() - r,
+    was_new_install: !1,
+    was_force_reinstall: !1,
+    was_already_running: !0
+  }), {
+    success: !0,
+    wasSkipped: !0,
+    latestVersion: b
+  };
+  if (!n && qlt(b)) return l("tengu_native_update_skipped_minimum_version", {
+    latency_ms: Date.now() - r,
+    target_version: Na(b)
+  }), {
+    success: !0,
+    wasSkipped: !0,
+    latestVersion: b
+  };
+  if (y) l("tengu_native_update_forced_downgrade", {
+    from_version: Na({
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.VERSION),
+    to_version: Na(b)
+  });
+  let N = !1,
+    M = !1,
+    D = !1,
+    I = !1,
+    V = !1,
+    z;
+  if (Pe("true"))({
+    wasNewInstall: N,
+    moveRetried: M,
+    activationFailed: D,
+    activationRefused: I,
+    skippedUnverifiedRelease: V
+  } = await on(b, {
+    forceReinstall: n,
+    explicitVersionRequested: !s,
+    requireEnforcingRelease: C
+  })), z = Date.now() - r;
+  else {
+    let {
+      installPath: P
+    } = await ht(b);
+    if (n) await oi(P);
+    let L = await wn(P, async () => {
+      ({
+        wasNewInstall: N,
+        moveRetried: M,
+        activationFailed: D,
+        activationRefused: I,
+        skippedUnverifiedRelease: V
+      } = await on(b, {
+        forceReinstall: n,
+        explicitVersionRequested: !s,
+        requireEnforcingRelease: C
+      }))
+    }, 3);
+    if (z = Date.now() - r, !L) {
+      let O = ae(),
+        B;
+      if (m5e()) {
+        let U = Ee(O, P);
+        if (ge(U)) B = pe(U)?.pid
+      }
+      return c("update_apply", "update_apply_native_lock_failed"), l("tengu_native_update_lock_failed", {
+        latency_ms: z,
+        lock_holder_pid: B
+      }), {
+        success: !1,
+        latestVersion: b,
+        lockFailed: !0,
+        lockHolderPid: B
+      }
+    }
+  }
+  if (V) return l("tengu_native_update_skipped_unverified_release", {
+    latency_ms: z,
+    target_version: Na(b)
+  }), t(`Native installer: resolved ${b} predates manifest signature enforcement; staying on ${{ISSUES_EXPLAINER:"report the issue at https://github.com/anthropics/claude-code/issues",PACKAGE_URL:"@anthropic-ai/claude-code",README_URL:"https://code.claude.com/docs/en/overview",VERSION:"2.1.319",FEEDBACK_CHANNEL:"https://github.com/anthropics/claude-code/issues",BUILD_TIME:"2026-11-05T18:14:18Z",GIT_SHA:"fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",HOOKS_WORKER_URL:"B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",DD_SOURCEMAP_GROUP:"win32"}.VERSION}`, {
+    level: "warn"
+  }), {
+    success: !0,
+    wasSkipped: !0,
+    skippedUnverifiedRelease: !0,
+    latestVersion: b
+  };
+  if (D) c("update_apply", "update_apply_native_activation_failed_old_binary_kept");
+  else if (I) c("update_apply", "update_apply_native_activation_refused_external_launcher");
+  else if (M) c("update_apply", "update_apply_native_move_retry");
+  else g("update_apply");
+  return l("tengu_native_update_complete", {
+    latency_ms: z,
+    was_new_install: N,
+    was_force_reinstall: n
+  }), t(`Successfully updated to version ${b}`), {
+    success: !0,
+    latestVersion: b
+  }
+}
+async function Jr(e) {
+  try {
+    await Fr(e), t(`Removed empty directory at ${e}`)
+  } catch (n) {
+    let r = k(n);
+    if (r !== "ENOTDIR" && r !== "ENOENT" && r !== "ENOTEMPTY") t(`Could not remove directory at ${e}: ${n}`)
+  }
+}
+async function ei(e, n, {
+  expectedChecksum: r
+} = {}) {
+  if (oe().startsWith("win32")) try {
+    let y = ne(e);
+    await he(y, {
+      recursive: !0
+    });
+    let b;
+    try {
+      b = await re(e)
+    } catch {}
+    if (b) try {
+      let N = await re(n);
+      if (b.size === N.size && (r === void 0 || await ze(e, r))) return "noop"
+    } catch {}
+    let A = `${e}.new.${process.pid}.${Date.now()}.${mn(4).toString("hex")}`;
+    try {
+      await un(n, A)
+    } catch (N) {
+      if (K(N)) throw Error(`Source file does not exist: ${n}`);
+      throw N
+    }
+    let C;
+    try {
+      C = r === void 0 || await Ue(A) === r
+    } catch (N) {
+      throw await ce(A).catch(() => {}), N
+    }
+    if (!C) return await ce(A).catch(() => {}), t(`Refusing to install a launcher copy of ${n} that does not match its signed checksum`, {
+      level: "error"
+    }), "failed";
+    try {
+      let N = b !== void 0;
+      if (!N) try {
+        await ve(A, e)
+      } catch (M) {
+        let D = k(M);
+        if (D !== "EEXIST" && D !== "EPERM" && D !== "EBUSY") throw M;
+        N = !0
+      }
+      if (N) {
+        let M = Ur(e);
+        await ve(e, M);
+        try {
+          await ve(A, e)
+        } catch (D) {
+          try {
+            await ve(M, e)
+          } catch (I) {
+            let V = Error(`Failed to restore old executable: ${I}`, {
+              cause: D
+            });
+            throw a(V), V
+          }
+          throw D
+        }
+      }
+    } catch (N) {
+      throw await ce(A).catch(() => {}), N
+    }
+    return "updated"
+  } catch (y) {
+    return t(`Failed to copy executable from ${n} to ${e}: ${y}`, {
+      level: "error"
+    }), "failed"
+  }
+  let w = ne(e);
+  try {
+    await he(w, {
+      recursive: !0
+    }), t(`Created directory ${w} for symlink`)
+  } catch (y) {
+    return t(`Failed to create directory ${w}: ${y}`, {
+      level: "error"
+    }), "failed"
+  }
+  try {
+    return await rn(n, e), t(`Created symlink ${e} -> ${n}`), "updated"
+  } catch (y) {
+    if (k(y) !== "EEXIST") return t(`Failed to create symlink from ${e} to ${n}: ${y}`, {
+      level: "error"
+    }), "failed"
+  }
+  if (!await nJt(e) && !await Dut(e).catch(() => !1)) return t(`Not replacing ${e}: it was not created by the native installer (not a symlink into a claude/versions/ directory) and is not an npm shim, so this update will not overwrite it. New versions still install under the versions/ directory; remove ${e} and re-run the update to let the installer manage the launcher again.`, {
+    level: "warn"
+  }), "refused";
+  let S = `${e}.tmp.${process.pid}.${Date.now()}`;
+  try {
+    return await rn(n, S), await ve(S, e), t(`Atomically updated symlink ${e} -> ${n}`), "updated"
+  } catch (y) {
+    try {
+      await ce(S)
+    } catch {}
+    return t(`Failed to create symlink from ${e} to ${n}: ${y}`, {
+      level: "error"
+    }), "failed"
+  }
+}
+async function jlt(e = !1) {
+  if (Pe(process.env.DISABLE_INSTALLATION_CHECKS)) return [];
+  let n = await p5e();
+  if (n === "development") return [];
+  let r = fe();
+  if (!(e || n === "native" || r.installMethod === "native")) return [];
+  let s = ae(),
+    w = [],
+    S = [],
+    y = ne(s.executable),
+    b = de(y),
+    C = oe().startsWith("win32");
+  try {
+    await Ir(y)
+  } catch {
+    w.push({
+      message: `claude command at ${s.executable} missing or broken (${y} does not exist)`,
+      userActionRequired: !0,
+      type: "error"
+    }), S.push("bin_dir_missing")
+  }
+  if (C) {
+    if (!await _e(s.executable)) w.push({
+      message: `claude command at ${s.executable} missing or broken`,
+      userActionRequired: !0,
+      type: "error"
+    }), S.push("executable_missing")
+  } else try {
+    let M = await fn(s.executable),
+      D = de(ne(s.executable), M);
+    if (!await _e(D)) w.push({
+      message: `claude command at ${s.executable} missing or broken (symlink points to ${M})`,
+      userActionRequired: !0,
+      type: "error"
+    }), S.push("executable_invalid")
+  } catch (M) {
+    if (K(M)) w.push({
+      message: `claude command at ${s.executable} missing or broken`,
+      userActionRequired: !0,
+      type: "error"
+    }), S.push("executable_missing");
+    else if (!await _e(s.executable)) w.push({
+      message: `claude command at ${s.executable} missing or broken (not a valid Claude binary)`,
+      userActionRequired: !0,
+      type: "error"
+    }), S.push("executable_invalid")
+  }
+  if (!(i.PATH || "").split(Vr).some((M) => {
+      try {
+        let D = de(M);
+        if (C) return D.toLowerCase() === b.toLowerCase();
+        return D === b
+      } catch {
+        return !1
+      }
+    }))
+    if (S.push("not_in_path"), C) {
+      let M = y.replaceAll("/", "\\");
+      w.push({
+        message: `Native installation exists but ${M} is not in your PATH. Add it by opening: System Properties \u2192 Environment Variables \u2192 Edit User PATH \u2192 New \u2192 Add the path above. Then restart your terminal.`,
+        userActionRequired: !0,
+        type: "path"
+      })
+    } else {
+      let M = qAt(),
+        I = Vlt()[M],
+        V = I ? I.replace(pn(), "~") : "your shell config file";
+      w.push({
+        message: `Native installation exists but ~/.local/bin is not in your PATH. Run:
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ${V} && source ${V}`,
+        userActionRequired: !0,
+        type: "path"
+      })
+    } if (S.length === 0) g("native_check_install");
+  else c("native_check_install", S[0]);
+  return w
+}
+class bn {
+  inFlight = null;
+  begin(e) {
+    this.inFlight = e
+  }
+  reset() {
+    this.inFlight = null
+  }
+}
+var ti = new W(() => new bn);
+
+function Wlt(e, n = !1, r) {
+  if (n) return sn(e, n, r);
+  let h = ti.of(H().host);
+  if (h.inFlight) return t("installLatest: joining in-flight call"), h.inFlight;
+  let s = sn(e, n, r);
+  h.begin(s);
+  let w = () => {
+    h.reset()
+  };
+  return s.then(w, w), s
+}
+async function sn(e, n = !1, r) {
+  let h = await Zr(e, n);
+  if (!h.success) return {
+    latestVersion: null,
+    wasUpdated: !1,
+    lockFailed: h.lockFailed,
+    lockHolderPid: h.lockHolderPid
+  };
+  if (h.skippedUnverifiedRelease) return {
+    latestVersion: h.latestVersion,
+    wasUpdated: !1,
+    wasSkipped: !0,
+    skippedUnverifiedRelease: !0,
+    lockFailed: !1
+  };
+  if (fe().installMethod !== "native") await Le((w) => ({
+    ...w,
+    installMethod: "native",
+    autoUpdates: !1,
+    autoUpdatesProtectedForNative: !0
+  }), r), t('Native installer: Set installMethod to "native" and disabled legacy auto-updater for protection');
+  return sJr(), {
+    latestVersion: h.latestVersion,
+    wasUpdated: h.success && !h.wasSkipped,
+    wasSkipped: h.wasSkipped,
+    lockFailed: !1
+  }
+}
+async function ni(e) {
+  try {
+    let n = await fn(e),
+      r = de(ne(e), n);
+    if (await _e(r)) return r
+  } catch {}
+  return null
+}
+
+function Ee(e, n) {
+  return Y(e.locks, `${QEn(n)}.lock`)
+}
+async function $n(e, n) {
+  let r = Ee(e, n);
+  if (m5e()) {
+    if (ge(r)) return !0;
+    let h = Ive(n);
+    if (h === void 0) return !1;
+    let s;
+    try {
+      s = await Ce(e.locks)
+    } catch (w) {
+      if (K(w)) return !1;
+      return t(`Keeping the app bundle of ${h}: could not list the locks folder ${e.locks}: ${d(w)}`, {
+        level: "warn"
+      }), !0
+    }
+    return s.some((w) => w.startsWith(`${h}@`) && /^\d+\.lock$/.test(w.slice(h.length + 1)) && ge(Y(e.locks, w)))
+  }
+  try {
+    return await Tea(n, {
+      stale: _t,
+      lockfilePath: r
+    })
+  } catch (h) {
+    return Ive(n) !== void 0 && !K(h)
+  }
+}
+var ri = 300000,
+  cn = null;
+
+function ii() {
+  if (cn) return;
+  let e = setInterval(() => {
+    ai()
+  }, ri);
+  e.unref?.(), cn = e
+}
+async function ai() {
+  try {
+    if (!m5e()) return;
+    let e = ae();
+    if (!process.execPath.includes(e.versions) && Ive(process.execPath) === void 0) return;
+    let n = de(process.execPath);
+    await he(e.locks, {
+      recursive: !0
+    });
+    let r = pt(e.locks, QEn(n), process.pid);
+    if (pe(r)?.pid !== process.pid) mt(n, e.locks);
+    let h = Ee(e, n),
+      s = pe(h);
+    if (s?.pid === process.pid) return;
+    if (s && xe(s.pid)) return;
+    await Jt(n, h)
+  } catch (e) {
+    t(`NON-FATAL: version lock maintenance failed: ${d(e)}`)
+  }
+}
+async function eMe() {
+  let e = ae();
+  if (!process.execPath.includes(e.versions) && Ive(process.execPath) === void 0) return;
+  let n = de(process.execPath);
+  try {
+    let r = Ee(e, n);
+    if (await he(e.locks, {
+        recursive: !0
+      }), m5e()) {
+      let h = mt(n, e.locks);
+      if (ii(), await Mar(), !await Yt(n, r)) {
+        l("tengu_version_lock_failed", {
+          is_pid_based: !0,
+          is_lifetime_lock: !0,
+          per_pid_lock_written: h
+        }), Ke(n, Error("Lock already held by another process"));
+        return
+      }
+      l("tengu_version_lock_acquired", {
+        is_pid_based: !0,
+        is_lifetime_lock: !0,
+        per_pid_lock_written: h
+      }), t(`Acquired PID lock on running version: ${n}`)
+    } else {
+      let h;
+      try {
+        h = await Zd(n, {
+          stale: _t,
+          retries: 0,
+          lockfilePath: r,
+          onCompromised: (s) => {
+            t(`NON-FATAL: Lock on running version was compromised: ${s.message}`, {
+              level: "info"
+            })
+          }
+        }), l("tengu_version_lock_acquired", {
+          is_pid_based: !1,
+          is_lifetime_lock: !0
+        }), t(`Acquired mtime-based lock on running version: ${n}`), vt(async () => {
+          try {
+            await h?.()
+          } catch {}
+        })
+      } catch (s) {
+        if (K(s)) {
+          t(`Cannot lock current version - file does not exist: ${n}`, {
+            level: "info"
+          });
+          return
+        }
+        l("tengu_version_lock_failed", {
+          is_pid_based: !1,
+          is_lifetime_lock: !0
+        }), Ke(n, s);
+        return
+      }
+    }
+  } catch (r) {
+    if (K(r)) {
+      t(`Cannot lock current version - file does not exist: ${n}`, {
+        level: "info"
+      });
+      return
+    }
+    t(`NON-FATAL: Failed to lock current version during execution ${d(r)}`, {
+      level: "info"
+    })
+  }
+}
+
+function Ke(e, n) {
+  t(`NON-FATAL: Lock acquisition failed for ${e} (expected in multi-process scenarios): ${d(n)}`, {
+    level: "error"
+  })
+}
+async function oi(e) {
+  let n = ae(),
+    r = Ee(n, e);
+  try {
+    await ce(r), t(`Force-removed lock file at ${r}`)
+  } catch (h) {
+    t(`Failed to force-remove lock file: ${d(h)}`)
+  }
+}
+var si = 3600000;
+async function Sn(e) {
+  let n = Date.now() - si;
+  try {
+    let r = await Ce(e),
+      h = 0;
+    for (let s of r) {
+      let w = Y(e, s);
+      try {
+        if ((await re(w)).mtime.getTime() < n) await Ne(w, {
+          recursive: !0,
+          force: !0
+        }), h++, t(`Cleaned up old staging directory: ${s}`)
+      } catch {}
+    }
+    if (h > 0) t(`Cleaned up ${h} orphaned staging directories`), l("tengu_native_staging_cleanup", {
+      cleaned_count: h
+    })
+  } catch (r) {
+    if (!K(r)) t(`Failed to clean up staging directories: ${r}`)
+  }
+}
+async function sJr() {
+  await Promise.resolve();
+  let e = ae(),
+    n = Date.now() - 3600000,
+    r = Date.now() - 1209600000,
+    h = Date.now() - zr;
+  if (oe().startsWith("win32")) {
+    let b = ne(e.executable),
+      A = gn(e.executable);
+    try {
+      let C = await Ce(b),
+        N = C.flatMap((P) => {
+          let L = Gr(P, A);
+          return L === void 0 ? [] : [{
+            file: P,
+            ...L
+          }]
+        }),
+        M = N.filter((P) => P.kind === "backup").sort((P, L) => L.stampedMs - P.stampedMs),
+        D = C.find((P) => P.toLowerCase() === A.toLowerCase()),
+        I = M.length > 0 && !(D !== void 0 && await hn(Y(b, D))),
+        V = I ? await Br(M, (P) => Y(b, P.file)) : void 0,
+        z = 0;
+      for (let P of N) {
+        if (P.kind === "backup" && I && (P === V && P.stampedMs >= h || P.stampedMs >= r)) continue;
+        try {
+          let L = Y(b, P.file);
+          if (P.stampedMs >= n || (await re(L)).mtime.getTime() >= n) continue;
+          await ce(L), z++
+        } catch {}
+      }
+      if (z > 0) t(`Cleaned up ${z} old Windows executables on startup`)
+    } catch (C) {
+      if (!K(C)) t(`Failed to clean up old Windows executables: ${C}`)
+    }
+  }
+  if (await Sn(e.staging), m5e()) {
+    let b = await Qt(e.locks);
+    if (b > 0) t(`Cleaned up ${b} stale version locks`), l("tengu_native_stale_locks_cleanup", {
+      cleaned_count: b
+    })
+  }
+  let s;
+  try {
+    s = await Ce(e.versions)
+  } catch (b) {
+    if (!K(b)) t(`Failed to readdir versions directory: ${b}`), c("native_cleanup_versions", "readdir_failed");
+    else g("native_cleanup_versions");
+    return
+  }
+  let w = [],
+    S = 0;
+  for (let b of s) {
+    let A = Y(e.versions, b);
+    if (/\.tmp\.\d+\.\d+(\.\d+)?$/.test(b)) {
+      try {
+        if ((await Mr(A)).mtime.getTime() < n) await ce(A), S++, t(`Cleaned up orphaned temp install file: ${b}`)
+      } catch {}
+      continue
+    }
+    try {
+      let C = await re(A);
+      if (!C.isFile()) continue;
+      w.push({
+        name: b,
+        path: A,
+        resolvedPath: de(A),
+        mtime: C.mtime,
+        size: C.size
+      })
+    } catch {}
+  }
+  if (S > 0) t(`Cleaned up ${S} orphaned temp install files`), l("tengu_native_temp_files_cleanup", {
+    cleaned_count: S
+  });
+  let y = s.includes(Glt);
+  if (w.length === 0 && !y) {
+    g("native_cleanup_versions");
+    return
+  }
+  if (!await nJt(e.executable) && !await Dut(e.executable).catch(() => !1)) {
+    if (y) await ln(e, {
+      keepEveryBundle: !0
+    });
+    t(`Skipping native version cleanup: the launcher at ${e.executable} is externally managed, so the version(s) it needs cannot be determined`), c("native_cleanup_versions", "skipped_external_launcher");
+    return
+  }
+  try {
+    let b = process.execPath,
+      A = new Set;
+    if (b && b.includes(e.versions)) A.add(de(b));
+    let C = Ive(b);
+    if (C !== void 0) A.add(de(e.versions, C));
+    let N = await ni(e.executable);
+    if (N) A.add(N);
+    else if (oe().startsWith("win32")) try {
+      let P = await re(e.executable);
+      for (let L of w)
+        if (L.size === P.size) A.add(L.resolvedPath)
+    } catch {}
+    if (m5e()) {
+      let P = await en(e.locks);
+      if (P === null) {
+        t("Skipping version cleanup: could not read the locks, so lock protection is unavailable", {
+          level: "error"
+        }), c("native_cleanup_versions", "lock_scan_failed");
+        return
+      }
+      for (let L of w) {
+        if (A.has(L.resolvedPath)) continue;
+        if (P.has(L.name)) A.add(L.resolvedPath), t(`Protecting locked version from cleanup: ${L.name}`)
+      }
+    } else
+      for (let P of w) {
+        if (A.has(P.resolvedPath)) continue;
+        if (await $n(e, P.resolvedPath)) A.add(P.resolvedPath), t(`Protecting locked version from cleanup: ${P.name}`);
+        await new Promise((L) => setImmediate(L))
+      }
+    let M = w.filter((P) => !A.has(P.resolvedPath)).sort((P, L) => L.mtime.getTime() - P.mtime.getTime()),
+      D = [...M.filter((P) => P.size > 0).slice(gt), ...M.filter((P) => P.size === 0 && P.mtime.getTime() < n)];
+    if (D.length === 0) {
+      l("tengu_native_version_cleanup", {
+        total_count: w.length,
+        deleted_count: 0,
+        protected_count: A.size,
+        retained_count: gt,
+        lock_failed_count: 0,
+        error_count: 0
+      }), g("native_cleanup_versions");
+      return
+    }
+    let I = 0,
+      V = 0,
+      z = 0;
+    if (await Promise.all(D.map(async (P) => {
+        try {
+          let L = !0,
+            O = !1,
+            B = await wn(P.path, async () => {
+              if (P.size === 0) {
+                let U = await re(P.path);
+                if (U.size > 0 || U.mtime.getTime() >= n) {
+                  L = !1;
+                  return
+                }
+              }
+              if (m5e() && tn(e.locks, P.name)) {
+                O = !0;
+                return
+              }
+              await ce(P.path)
+            });
+          if (B && O) V++, t(`Skipping deletion of ${P.name} - a live process may be using it`);
+          else if (B && L) I++;
+          else if (!B) V++, t(`Skipping deletion of ${P.name} - locked by another process`)
+        } catch (L) {
+          z++, t(`Failed to delete version ${P.name}: ${L}`, {
+            level: "error"
+          })
+        }
+      })), l("tengu_native_version_cleanup", {
+        total_count: w.length,
+        deleted_count: I,
+        protected_count: A.size,
+        retained_count: gt,
+        lock_failed_count: V,
+        error_count: z
+      }), z > 0) c("native_cleanup_versions", "delete_errors");
+    else if (V > 0) c("native_cleanup_versions", "lock_failed");
+    else g("native_cleanup_versions")
+  } catch (b) {
+    if (!K(b)) a(Error(`Version cleanup failed: ${b}`)), c("native_cleanup_versions", "unexpected_error");
+    else g("native_cleanup_versions")
+  } finally {
+    if (y) await ln(e, {
+      keepEveryBundle: !1
+    })
+  }
+}
+async function ln(e, {
+  keepEveryBundle: n
+}) {
+  let r = await Gt(e.versions, n ? void 0 : {
+    launcherPath: e.executable,
+    isVersionLockActive: (h) => $n(e, h)
+  });
+  if (typeof r === "number") g("native_cleanup_app_bundles", {
+    cleaned_count: r
+  });
+  else c("native_cleanup_app_bundles", r)
+}
+async function C6t() {
+  let e = ae();
+  try {
+    if (await Dut(e.executable).catch((n) => {
+        if (K(n)) return !1;
+        throw n
+      })) {
+      t(`Skipping removal of ${e.executable} - appears to be npm-managed`), g("native_remove_symlink");
+      return
+    }
+    if (!await nJt(e.executable)) {
+      t(`Skipping removal of ${e.executable} - not created by the native installer`), g("native_remove_symlink");
+      return
+    }
+    await ce(e.executable), t(`Removed claude symlink at ${e.executable}`), g("native_remove_symlink")
+  } catch (n) {
+    if (K(n)) {
+      g("native_remove_symlink");
+      return
+    }
+    t(`Failed to remove claude symlink: ${n}`, {
+      level: "error"
+    }), m("native_remove_symlink", "unlink_failed")
+  }
+}
+async function q7o() {
+  let e = [],
+    n = Vlt(),
+    r = !1;
+  for (let [h, s] of Object.entries(n)) try {
+    let w = await Dar(s);
+    if (!w) continue;
+    let {
+      filtered: S,
+      hadAlias: y
+    } = cJr(w);
+    if (y) await uJr(s, S), e.push({
+      message: `Removed claude alias from ${s}. Run: unalias claude`,
+      userActionRequired: !0,
+      type: "alias"
+    }), t(`Cleaned up claude alias from ${h} config`)
+  } catch (w) {
+    r = !0, t(`Failed to clean up claude alias from ${s}: ${w}`, {
+      level: "error"
+    }), e.push({
+      message: `Failed to clean up ${s}: ${w}`,
+      userActionRequired: !1,
+      type: "error"
+    })
+  }
+  if (r) c("native_cleanup_aliases", "config_write_failed");
+  else g("native_cleanup_aliases");
+  return e
+}
+async function li(e) {
+  try {
+    let n = await lt("npm", ["config", "get", "prefix"], {
+      useToolMemoryCgroup: !1
+    });
+    if (n.code !== 0 || !n.stdout) return {
+      success: !1,
+      error: "Failed to get npm global prefix"
+    };
+    let r = n.stdout.trim(),
+      h = !1;
+    async function s(w, S) {
+      try {
+        return await ce(w), t(`Manually removed ${S}: ${w}`), !0
+      } catch {
+        return !1
+      }
+    }
+    if (oe().startsWith("win32")) {
+      let w = Y(r, "claude.cmd"),
+        S = Y(r, "claude.ps1"),
+        y = Y(r, "claude");
+      if (await s(w, "bin script")) h = !0;
+      if (await s(S, "PowerShell script")) h = !0;
+      if (await s(y, "bin executable")) h = !0
+    } else {
+      let w = Y(r, "bin", "claude");
+      if (await s(w, "bin symlink")) h = !0
+    }
+    if (h) {
+      t(`Successfully removed ${e} manually`);
+      let w = oe().startsWith("win32") ? Y(r, "node_modules", e) : Y(r, "lib", "node_modules", e);
+      return {
+        success: !0,
+        warning: `${e} executables removed, but node_modules directory was left intact for safety. You may manually delete it later at: ${w}`
+      }
+    } else return {
+      success: !1
+    }
+  } catch (n) {
+    return t(`Manual removal failed: ${n}`, {
+      level: "error"
+    }), {
+      success: !1,
+      error: `Manual removal failed: ${n}`
+    }
+  }
+}
+async function dn(e) {
+  let {
+    code: n,
+    stderr: r
+  } = await lt("npm", ["uninstall", "-g", e], {
+    cwd: process.cwd(),
+    useToolMemoryCgroup: !1
+  });
+  if (n === 0) return t(`Removed global npm installation of ${e}`), {
+    success: !0
+  };
+  else if (r && !r.includes("npm ERR! code E404")) {
+    if (r.includes("npm error code ENOTEMPTY")) {
+      t(`Failed to uninstall global npm package ${e}: ${r}`, {
+        level: "error"
+      }), t("Attempting manual removal due to ENOTEMPTY error");
+      let h = await li(e);
+      if (h.success) return {
+        success: !0,
+        warning: h.warning
+      };
+      else if (h.error) return {
+        success: !1,
+        error: `Failed to remove global npm installation of ${e}: ${r}. Manual removal also failed: ${h.error}`
+      }
+    }
+    return t(`Failed to uninstall global npm package ${e}: ${r}`, {
+      level: "error"
+    }), {
+      success: !1,
+      error: `Failed to remove global npm installation of ${e}: ${r}`
+    }
+  }
+  return {
+    success: !1
+  }
+}
+async function Y7o() {
+  let e = [],
+    n = [],
+    r = 0,
+    h = !1,
+    s = !1,
+    w = await dn("@anthropic-ai/claude-code");
+  if (w.success) {
+    if (r++, w.warning) n.push(w.warning)
+  } else if (w.error) e.push(w.error), h = !0;
+  if ({
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.PACKAGE_URL && {
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.PACKAGE_URL !== "@anthropic-ai/claude-code") {
+    let y = await dn({
+      ISSUES_EXPLAINER: "report the issue at https://github.com/anthropics/claude-code/issues",
+      PACKAGE_URL: "@anthropic-ai/claude-code",
+      README_URL: "https://code.claude.com/docs/en/overview",
+      VERSION: "2.1.319",
+      FEEDBACK_CHANNEL: "https://github.com/anthropics/claude-code/issues",
+      BUILD_TIME: "2026-11-05T18:14:18Z",
+      GIT_SHA: "fbdd7e02e8530e4c2ade8cc67d30104e53d2c8f2",
+      HOOKS_WORKER_URL: "B:/~BUN/root/src/plugins/functionHooks/hooks-worker/hooks-worker.js",
+      DD_SOURCEMAP_GROUP: "win32"
+    }.PACKAGE_URL);
+    if (y.success) {
+      if (r++, y.warning) n.push(y.warning)
+    } else if (y.error) e.push(y.error), h = !0
+  }
+  let S = Y(pn(), ".claude", "local");
+  try {
+    await Ne(S, {
+      recursive: !0
+    }), r++, t(`Removed local installation at ${S}`)
+  } catch (y) {
+    if (!K(y)) e.push(`Failed to remove ${S}: ${y}`), t(`Failed to remove local installation: ${y}`, {
+      level: "error"
+    }), s = !0
+  }
+  if (e.length === 0) g("native_cleanup_npm");
+  else if (r > 0) c("native_cleanup_npm", "partial_errors");
+  else if (h && !s) m("native_cleanup_npm", "npm_uninstall_failed");
+  else if (s && !h) m("native_cleanup_npm", "local_install_remove_failed");
+  else m("native_cleanup_npm", "npm_uninstall_failed");
+  return {
+    removed: r,
+    errors: e,
+    warnings: n
+  }
+}
+export {
+  hx,
+  K7o,
+  xar,
+  KEn,
+  qEn,
+  YEn,
+  jlt,
+  Wlt,
+  eMe,
+  sJr,
+  C6t,
+  q7o,
+  Y7o
+};

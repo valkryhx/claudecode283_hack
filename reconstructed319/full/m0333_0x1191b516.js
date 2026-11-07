@@ -1,0 +1,1653 @@
+// @bun @bytecode
+// (c) Anthropic PBC. All rights reserved. Use is subject to the Legal Agreements outlined here: https://code.claude.com/docs/en/legal-and-compliance.
+// Version: 2.1.319
+import {
+  eE
+} from "B:/~BUN/root/chunk-vz9zea4j.js";
+import {
+  Q,
+  Pa
+} from "B:/~BUN/root/chunk-n8cnxns2.js";
+import {
+  Mc
+} from "B:/~BUN/root/chunk-46f9vyk7.js";
+import {
+  R,
+  wr
+} from "B:/~BUN/root/chunk-y2g9f85n.js";
+import {
+  J
+} from "B:/~BUN/root/chunk-r5zmhp23.js";
+import {
+  g,
+  m
+} from "B:/~BUN/root/chunk-3z3yrbk4.js";
+import {
+  i,
+  Ar
+} from "B:/~BUN/root/chunk-j6pt0v41.js";
+import {
+  _
+} from "B:/~BUN/root/chunk-2pp12te6.js";
+import {
+  F2n,
+  pae
+} from "B:/~BUN/root/chunk-3mm90xb6.js";
+import {
+  au
+} from "B:/~BUN/root/chunk-gq1er5y2.js";
+import {
+  Zde,
+  hut,
+  LIt,
+  RRi,
+  vWe
+} from "B:/~BUN/root/chunk-rbfkfjk4.js";
+import {
+  Dl
+} from "B:/~BUN/root/chunk-ebpsjtma.js";
+import {
+  xet
+} from "B:/~BUN/root/chunk-1s0yt4vj.js";
+import {
+  USe
+} from "B:/~BUN/root/chunk-ts69mavc.js";
+import {
+  spawn as wt
+} from "child_process";
+import {
+  randomUUID as yt
+} from "crypto";
+import {
+  lstat as Tt,
+  mkdir as St,
+  readdir as On,
+  realpath as Ke,
+  unlink as vt,
+  writeFile as Ve
+} from "fs/promises";
+import {
+  basename as Le,
+  dirname as be,
+  join as v,
+  relative as kn,
+  resolve as we,
+  sep as Re
+} from "path";
+var me = 50;
+
+function lci(e, n) {
+  return {
+    certificateFile: Ue(e, "GIT_SSL_CAINFO", n),
+    skipVerification: Ue(e, "GIT_SSL_NO_VERIFY", n)
+  }
+}
+
+function Ue(e, n, t) {
+  let r = [];
+  for (let [s, o] of Object.entries(e)) {
+    if (o === void 0) continue;
+    if (s === n) r.unshift({
+      name: s,
+      value: o
+    });
+    else if (t && s.toUpperCase() === n) r.push({
+      name: s,
+      value: o
+    })
+  }
+  return r
+}
+
+function l4t(e) {
+  return e.flatMap(([n, t]) => ["-c", `${n}=${t}`])
+}
+var Ee = {
+  envOverrides: {},
+  commandScopeEntries: [],
+  fileSeedLines: ""
+};
+
+function Twn(e) {
+  let n = e.operator.certificateFile.length > 0,
+    t = e.operator.skipVerification.length > 0 || e.role === "child" && e.serverSetsSkipVerification;
+  if (!e.routing) return {
+    ...Ee,
+    decision: {
+      role: e.role,
+      certificateFile: n ? "left_no_routing" : "left_unset",
+      skipVerification: t ? "left" : "unset",
+      mountEntries: !1,
+      mountVerificationPinned: !1
+    }
+  };
+  switch (e.role) {
+    case "prep":
+    case "resume":
+    case "outcome":
+      return _t(e, n, t);
+    case "child":
+      return Rt(e, e.routing, t);
+    case "hook":
+      return ht(e, e.routing, n, t)
+  }
+}
+
+function ht(e, n, t, r) {
+  let s = t ? "left_operators_hook" : "left_unset";
+  if (!e.reachesGitMount) return {
+    ...Ee,
+    decision: {
+      role: "hook",
+      certificateFile: s,
+      skipVerification: r ? "left" : "unset",
+      mountEntries: !1,
+      mountVerificationPinned: !1
+    }
+  };
+  let o = URL.canParse(n.mountBaseUrl) ? Me(n) : [],
+    a = He(o, []),
+    c = r && o.length > 0;
+  return {
+    ...Ee,
+    envOverrides: r ? re(e.operator.skipVerification) : {},
+    commandScopeEntries: c ? [
+      ["http.sslVerify", "false"], ...a
+    ] : a,
+    decision: {
+      role: "hook",
+      certificateFile: s,
+      skipVerification: !r ? "unset" : c ? "moved" : "pinned_off",
+      mountEntries: !1,
+      mountVerificationPinned: o.length > 0
+    }
+  }
+}
+
+function mt(e, n) {
+  return ["", `${new URL(e).origin}.`, `${e}.`].map((r) => [`http.${r}sslCAInfo`, n])
+}
+
+function re(e) {
+  let n = {};
+  for (let {
+      name: t
+    }
+    of e) n[t] = void 0;
+  return n
+}
+
+function _t(e, n, t) {
+  if (!e.target.mountRouted) return {
+    ...Ee,
+    decision: {
+      role: e.role,
+      certificateFile: n ? "left_direct_target" : "left_unset",
+      skipVerification: t ? "left" : "unset",
+      mountEntries: !1,
+      mountVerificationPinned: !1
+    }
+  };
+  let r = re(e.operator.skipVerification),
+    s = t ? "pinned_off" : "unset";
+  if (!n) return {
+    envOverrides: r,
+    commandScopeEntries: [],
+    fileSeedLines: "",
+    decision: {
+      role: e.role,
+      certificateFile: "left_unset",
+      skipVerification: s,
+      mountEntries: !1,
+      mountVerificationPinned: !1
+    }
+  };
+  if (e.trustBundle.status !== "built" || !URL.canParse(e.target.url)) return {
+    envOverrides: r,
+    commandScopeEntries: [],
+    fileSeedLines: "",
+    decision: {
+      role: e.role,
+      certificateFile: e.trustBundle.status !== "built" ? "left_no_trust_bundle" : "left_unparseable_target",
+      skipVerification: s,
+      mountEntries: !1,
+      mountVerificationPinned: !1
+    }
+  };
+  return {
+    envOverrides: {
+      ...re(e.operator.certificateFile),
+      ...r
+    },
+    commandScopeEntries: mt(e.target.url, e.trustBundle.path),
+    fileSeedLines: "",
+    decision: {
+      role: e.role,
+      certificateFile: "moved",
+      skipVerification: s,
+      mountEntries: !0,
+      mountVerificationPinned: !1
+    }
+  }
+}
+
+function Et(e) {
+  let t = (e.serverCertificateFile ?? e.operator.certificateFile[0]?.value)?.trim();
+  if (!t || /[\n\r\0]/.test(t)) return;
+  return t
+}
+
+function _e(e) {
+  return `"${e.replace(/\\/g,"\\\\").replace(/"/g,"\\\"")}"`
+}
+
+function Me(e) {
+  let n = new Set;
+  for (let t of [e.mountBaseUrl, e.pushBaseUrl])
+    if (t && URL.canParse(t)) {
+      for (let r of [new URL(t).origin, t])
+        if (!r.includes("=")) n.add(r)
+    } return [...n]
+}
+
+function He(e, n) {
+  return [...e, ...n.map((t) => `https://${t}/`)].map((t) => [`http.${t}.sslVerify`, "true"])
+}
+
+function bt(e) {
+  return e.map(([n, t]) => {
+    let r = n.slice(5, n.length - 10);
+    return `[http ${_e(r)}]
+	sslVerify = ${t}
+`
+  }).join("")
+}
+
+function Rt(e, n, t) {
+  let r = e.serverCertificateFile !== void 0 || e.operator.certificateFile.length > 0,
+    s = Et(e),
+    o = !r ? "left_unset" : !e.gitConfigArm ? "left_git_config_arm_off" : s === void 0 ? "left_unusable_value" : !e.gitReadsEnvironmentConfig ? "left_old_git" : "moved",
+    a = Me(n),
+    c = !t ? "unset" : e.gitConfigArm && e.gitReadsEnvironmentConfig && a.length > 0 ? "moved" : "left",
+    d = [],
+    u = "",
+    h = {};
+  if (o === "moved" && s !== void 0) {
+    if (d.push(["http.sslCAInfo", s]), u += `
+[http]
+	sslCAInfo = ${_e(s)}
+`, e.trustBundle.status === "built")
+      for (let f of a) d.push([`http.${f}.sslCAInfo`, e.trustBundle.path]), u += `[http ${_e(f)}]
+	sslCAInfo = ${_e(e.trustBundle.path)}
+`;
+    h = {
+      GIT_SSL_CAINFO: void 0,
+      ...re(e.operator.certificateFile)
+    }
+  }
+  if (c === "moved") d.push(["http.sslVerify", "false"]), u += `${u===""?`
+`:""}[http]
+	sslVerify = false
+`, h = {
+    ...h,
+    GIT_SSL_NO_VERIFY: void 0,
+    ...re(e.operator.skipVerification)
+  };
+  let T = He(a, e.gitConfigArm ? n.governedHosts : []);
+  if (d.push(...T), T.length > 0) u += `${u===""?`
+`:""}${bt(T)}`;
+  return {
+    envOverrides: h,
+    commandScopeEntries: d,
+    fileSeedLines: u,
+    decision: {
+      role: "child",
+      certificateFile: o,
+      skipVerification: c,
+      mountEntries: o === "moved" && e.trustBundle.status === "built" && a.length > 0,
+      mountVerificationPinned: a.length > 0
+    }
+  }
+}
+var ynr = "+refs/heads/*:refs/remotes/origin/*";
+
+function t5r(e) {
+  return e.upstreamUrl
+}
+
+function Je(e) {
+  if (e) return [];
+  let {
+    depth: n
+  } = Xe();
+  return n === void 0 ? [] : ["--depth", String(n)]
+}
+
+function Xe() {
+  let e = i.CLAUDE_RUNNER_FETCH_DEPTH;
+  if (e === void 0) return {
+    depth: me,
+    invalid: void 0
+  };
+  if (e === "full" || e === "0") return {
+    depth: void 0,
+    invalid: void 0
+  };
+  let n = Number(e);
+  if (Number.isInteger(n) && n > 0) return {
+    depth: n,
+    invalid: void 0
+  };
+  return {
+    depth: me,
+    invalid: e
+  }
+}
+var qe = 120000,
+  Oe = 600000,
+  Be = 300000,
+  se = 1800000;
+
+function Ze() {
+  let e = i.CLAUDE_RUNNER_FETCH_SERVER_PROGRESS_CAP_MS;
+  if (e === void 0) return {
+    capMs: Oe,
+    invalid: void 0,
+    clamped: void 0
+  };
+  if (e === "0" || e.toLowerCase() === "off") return {
+    capMs: 0,
+    invalid: void 0,
+    clamped: void 0
+  };
+  let n = Number(e);
+  if (Number.isInteger(n) && n > 0) {
+    let t = Math.min(Math.max(n, qe), se);
+    return {
+      capMs: t,
+      invalid: void 0,
+      clamped: t === n ? void 0 : e
+    }
+  }
+  return {
+    capMs: Oe,
+    invalid: e,
+    clamped: void 0
+  }
+}
+var Ae = 5000,
+  Qe = /^(Counting objects|Compressing objects|Receiving objects|Resolving deltas|Updating files|Checking out files|Filtering content):\s+(\d+)%(?:\s+\((\d+)\/(\d+)\))?(?:, ([\d.]+) (KiB|MiB|GiB))?/,
+  et = /^(Enumerating objects): (\d{1,15})\b/,
+  Pt = "Receiving objects",
+  Gt = {
+    KiB: 1024,
+    MiB: 1048576,
+    GiB: 1073741824
+  },
+  At = 5000,
+  Ct = 500,
+  _nr = 600000,
+  Ot = new Set(["worktree"]);
+
+function $t(e, n = !1) {
+  let t, r, s, o = 0,
+    a = e.split(/\r|\n/);
+  if (n) a = a.slice(1);
+  for (let c of a) {
+    if (c.length === 0) continue;
+    let d = c.startsWith("remote: ");
+    if (d) o++;
+    let u = d ? c.slice(8) : c,
+      h = Qe.exec(u);
+    if (h === null) {
+      if (d) {
+        let E = et.exec(u);
+        if (E !== null) {
+          let l = Number(E[2]);
+          s = {
+            sideband: d,
+            label: E[1],
+            pct: 0,
+            done: l,
+            raw: `remote: ${E[1]}: ${l}`
+          }
+        }
+      }
+      continue
+    }
+    let [, T, f, w, b, G, P] = h, C = {
+      sideband: d,
+      label: T,
+      pct: Math.min(100, Number(f)),
+      done: w !== void 0 ? Number(w) : void 0,
+      total: b !== void 0 ? Number(b) : void 0,
+      bytes: G !== void 0 && P !== void 0 ? Math.round(Number(G) * Gt[P]) : void 0,
+      raw: `${d?"remote: ":""}${T}: ${f}%${w!==void 0?` (${w}/${b})`:""}`
+    };
+    if (t = C, d) s = C;
+    else r = C
+  }
+  return {
+    display: t,
+    client: r,
+    server: s,
+    remoteLines: o
+  }
+}
+var kt = 1000;
+
+function Lt(e, n, t) {
+  if (e.active) return;
+  if (n.display?.sideband) {
+    e.active = !0;
+    return
+  }
+  if (n.remoteLines === 0) return;
+  if (e.firstRemoteLineAt === void 0) e.firstRemoteLineAt = t;
+  else if (t - e.firstRemoteLineAt >= kt) e.active = !0
+}
+
+function Dt(e, n) {
+  if (e === void 0) return !0;
+  if (n.label !== e.label) return !0;
+  if (n.done !== void 0 && e.done !== void 0) return n.done > e.done || (n.bytes ?? 0) > (e.bytes ?? 0);
+  return n.pct > e.pct
+}
+
+function It(e, n, t) {
+  if (e === void 0 || t.label !== e.label) return !n.has(t.label);
+  if (t.done !== void 0 && e.done !== void 0) return t.done > e.done;
+  if (t.done === void 0 !== (e.done === void 0)) return !1;
+  return t.pct > e.pct
+}
+
+function Nt(e) {
+  return e.label === "Resolving deltas" && e.pct === 100
+}
+
+function Ft(e) {
+  let n = e.startsWith("remote: "),
+    t = n ? e.slice(8) : e;
+  return Qe.test(t) || n && et.test(t)
+}
+var ae = 2000;
+
+function Ut(e, n, t, r) {
+  let s = n ? e.replace(/^[^\r\n]*[\r\n]?/, "") : e,
+    o = knr(s, t, r).split(/\r|\n/).filter((c) => c.length > 0 && !Ft(c)).join(`
+`),
+    a = pt(o);
+  return gt.test(a) ? a.slice(0, ae) : a.slice(-ae)
+}
+var de = 1e4,
+  Mt = 30000,
+  $e = 3,
+  Ht = 6,
+  ie = 5,
+  xe = 300,
+  We = 150,
+  tt = 2,
+  oe = 3,
+  Vt = 1000,
+  Bt = 15;
+
+function nt() {
+  return Boolean(Ar.CLAUDE_RUNNER_FAIL_FAST_FETCH)
+}
+
+function xt() {
+  return Boolean(Ar.CLAUDE_RUNNER_STALL_GIVEUP)
+}
+
+function Wt(e) {
+  return e.split(`
+`).some((n) => {
+    let t = n.indexOf("Operation too slow");
+    if (t === -1) return !1;
+    let r = n.slice(0, t);
+    return !/\bremote(?: error)?: /.test(r) && /curl 28\b|unable to access '[^']*': $/.test(r)
+  })
+}
+
+function Yt() {
+  return Boolean(Ar.CCR_DELTA_RESET)
+}
+var rt = ["couldn't find remote ref"];
+
+function bnr(e) {
+  let n = e.toLowerCase();
+  return rt.some((t) => n.includes(t))
+}
+var jt = new RegExp(rt[0].replaceAll("i", "[i\\u0130]"), "gi");
+
+function Cwn(e) {
+  return e.replace(jt, (n) => `could not${n.slice(8)}`)
+}
+class Rwn extends R {
+  constructor(e) {
+    super(`git fetch failed (permanent): ${e}`, "git fetch failed (permanent): ref not found on the remote");
+    this.name = "FetchRefNotFoundError"
+  }
+}
+var dci = {
+    refused_by_git_wrapper: "a wrapper installed as git exited with 75",
+    http_429: "the host answered HTTP 429"
+  },
+  zt = /^fatal: unable to access '.*': the requested url returned error: 429$/;
+
+function De(e, n, t) {
+  if (/^git \S+ failed \(watchdog:/.test(e)) return;
+  if (n === USe) return "refused_by_git_wrapper";
+  if (!/^https?:/i.test(t)) return;
+  let r = e.replace(/^git \S+ failed: /, "");
+  if (r.length >= ae) return;
+  let s = r.toLowerCase().split(/\r|\n/).map((o) => o.trim()).filter((o) => o !== "" && !o.startsWith("remote:"));
+  return s.length > 0 && s.every((o) => zt.test(o)) ? "http_429" : void 0
+}
+class n5r extends R {
+  throttle;
+  constructor(e, n) {
+    super(e, "git fetch failed: throttled on its last attempt");
+    this.name = "FetchThrottledError", this.throttle = n
+  }
+}
+var FK = ["-c", `core.hooksPath=${F2n()}`, "-c", "core.fsmonitor=", "-c", "core.askPass=", "-c", "gc.auto=0", "-c", "maintenance.auto=false"],
+  KBe = {
+    SELF_HOSTED_RUNNER_POOL_SECRET: void 0,
+    SELF_HOSTED_RUNNER_ENVIRONMENT_SECRET: void 0,
+    GIT_ALLOW_PROTOCOL: "https:http:ssh"
+  },
+  V = {
+    GIT_NO_LAZY_FETCH: "1",
+    GIT_ALLOW_PROTOCOL: "none",
+    GIT_SSH_COMMAND: "false",
+    GIT_NO_REPLACE_OBJECTS: "1",
+    GIT_TERMINAL_PROMPT: "0",
+    CLAUDE_CODE_SESSION_ACCESS_TOKEN: void 0
+  },
+  Kt = ["-c", "alias.remote-none=", "-c", "fetch.bundleURI="];
+async function cci(e) {
+  let {
+    baseDir: n,
+    sources: t,
+    outcomes: r,
+    skipValidation: s,
+    alwaysFetch: o,
+    skipReset: a,
+    initWithoutTemplate: c,
+    onDebug: d,
+    onPhase: u,
+    onProgress: h,
+    signal: T
+  } = e, f = wn(r ?? []);
+  for (let w of t) {
+    if (!r5r(w.type)) {
+      d(`[byoc:git] Skipping unsupported source type: ${w.type}`);
+      continue
+    }
+    await Jt({
+      baseDir: n,
+      source: w,
+      targetBranch: f.get(w.repo),
+      skipValidation: s ?? !1,
+      alwaysFetch: o ?? !1,
+      skipReset: a ?? !0,
+      initWithoutTemplate: c ?? !1,
+      onDebug: d,
+      onPhase: u,
+      onProgress: h,
+      signal: T
+    })
+  }
+}
+
+function r5r(e) {
+  return e === "github" || e === "github-ssh" || e === "test-file"
+}
+async function Jt(e) {
+  let n = Date.now();
+  try {
+    let {
+      repoExisted: t
+    } = await Xt(e);
+    g("byoc_git_prepare_repo", {
+      repo_existed: t,
+      duration_ms: Date.now() - n
+    })
+  } catch (t) {
+    throw m("byoc_git_prepare_repo", "error", {
+      duration_ms: Date.now() - n
+    }), t
+  }
+}
+async function Xt(e) {
+  let {
+    baseDir: n,
+    source: t,
+    targetBranch: r,
+    skipValidation: s,
+    alwaysFetch: o,
+    skipReset: a,
+    initWithoutTemplate: c,
+    onDebug: d,
+    onPhase: u,
+    onProgress: h,
+    signal: T
+  } = e, f = En(t), w = t.getAuthToken ? f : T3o(f, t.token), b = C3o(n, t);
+  if (!b) throw Error(`Could not determine repository directory for: ${t.repo}`);
+  if (t.ref && !eE(t.ref)) throw Error(`Invalid ref: ${t.ref}`);
+  if (r && !eE(r)) throw Error(`Invalid target branch: ${r}`);
+  let G = Date.now();
+  d(`[byoc:git] Preparing ${t.repo} at ${b} (ref=${t.ref??"HEAD"}, auth=${t.getAuthToken?"git-proxy":w!==f})`);
+  let {
+    invalid: P
+  } = Xe();
+  if (P !== void 0) d(`[byoc:git] Ignoring CLAUDE_RUNNER_FETCH_DEPTH='${P}' \u2014 expected 'full', '0', or a positive integer; using default ${me}`);
+  let C = Ze();
+  if (C.invalid !== void 0) d(`[byoc:git] Ignoring CLAUDE_RUNNER_FETCH_SERVER_PROGRESS_CAP_MS='${C.invalid}' \u2014 expected a positive integer (milliseconds), '0' or 'off'; using default ${Oe}`);
+  else if (C.clamped !== void 0) d(`[byoc:git] CLAUDE_RUNNER_FETCH_SERVER_PROGRESS_CAP_MS='${C.clamped}' is ${C.capMs===se?"above the thirty-minute ceiling":"below the two-minute floor"}; using ${C.capMs} ms`);
+  let E = {
+      repoPath: b,
+      gitURL: f,
+      authURL: w,
+      originURL: t5r(t) ?? w,
+      token: t.token,
+      getAuthToken: t.getAuthToken,
+      governedMount: t.governedMount,
+      gitEnvironment: t.gitEnvironment,
+      sanitized: t.sanitized,
+      initWithoutTemplate: c,
+      onDebug: d,
+      onPhase: u,
+      onProgress: h,
+      signal: T
+    },
+    l = void 0;
+  if (!s) await ke(E, "validateAccess", () => en(E, t.repo, t.skippedIfThrottled === !0));
+  let S = await ke(E, "ensureRepository", () => sn(E, n, l !== void 0));
+  if (o) await Ce(E, t.ref, a, S, l);
+  else if (S && !t.ref) d("[byoc:git] Using prefetched repo as-is (no ref requested)");
+  else if (S && t.ref) {
+    if (r && await dt(E, r)) return d(`[byoc:git] Task branch ${r} exists on remote, fetching it`), await at(E, r, S), d(`[byoc:git] Ready: ${t.repo} (${Date.now()-G}ms)`), {
+      repoExisted: S
+    };
+    if (await gn(E, t.ref)) d(`[byoc:git] Ref ${t.ref} resolves locally, skipping fetch`), await p(E, E.repoPath, ["checkout", "--progress", "--force", t.ref]);
+    else await Ce(E, t.ref, !1, S)
+  } else await Ce(E, t.ref, !1, S);
+  if (r) await fn(E, r, S);
+  return d(`[byoc:git] Ready: ${t.repo} (${Date.now()-G}ms)`), {
+    repoExisted: S
+  }
+}
+
+function q(e, n, t, r) {
+  e.onDebug(`[byoc:git] phase ${n} ${t}ms${r?" "+_(r):""}`);
+  try {
+    e.onPhase?.(n, t, r)
+  } catch (s) {
+    e.onDebug(`[byoc:git] onPhase callback threw: ${A(s)}`)
+  }
+}
+async function ke(e, n, t, r) {
+  let s = Date.now(),
+    o = await t();
+  return q(e, n, Date.now() - s, r), o
+}
+var uci = {
+    repo_not_found_or_no_permission: "repository not found or no permission",
+    no_credentials: "no credentials for the repository's git host",
+    authentication_failed: "authentication failed",
+    blocked_by_git_proxy: "blocked by the git proxy"
+  },
+  qt = [
+    [/^fatal: repository '.*' not found$/, "repo_not_found_or_no_permission"],
+    [/^fatal: unable to access '.*': the requested url returned error: 404$/, "repo_not_found_or_no_permission"],
+    [/^error: repository not found\.?$/, "repo_not_found_or_no_permission"],
+    [/^fatal: could not read (username|password) for /, "no_credentials"],
+    [/^fatal: authentication failed for /, "authentication_failed"],
+    [/^fatal: unable to access '.*': the requested url returned error: 401$/, "authentication_failed"],
+    [/^\S+@\S+: permission denied \(publickey(,[a-z0-9,-]+)?\)\.?$/, "authentication_failed"]
+  ],
+  Zt = /^fatal: unable to access '.*': the requested url returned error: (?!40[14]$)\d+$/;
+
+function Qt(e, n) {
+  if (/^git \S+ failed \(watchdog:/.test(e)) return;
+  let t = e.replace(/^git \S+ failed: /, "");
+  if (t.length >= ae) return;
+  let r = t.toLowerCase().split(`
+`).map((s) => s.trim());
+  if (n) return r.some((s) => s.startsWith("remote: access denied by the git proxy")) ? "blocked_by_git_proxy" : void 0;
+  if (r.some((s) => Zt.test(s))) return;
+  for (let [s, o] of qt)
+    if (r.some((a) => s.test(a))) return o;
+  return
+}
+class d4t extends R {
+  denial;
+  throttle;
+  repository;
+  constructor(e, n, t) {
+    super(`Repository access validation failed after ${$e} attempts: ${A(e)}`, "Repository access validation failed");
+    this.name = "RepositoryAccessError";
+    let r = URL.canParse(t.gitURL) ? new URL(t.gitURL) : void 0;
+    this.repository = {
+      repo: t.repo,
+      address: r !== void 0 && (r.protocol === "https:" || r.protocol === "http:") && r.hostname !== "" ? {
+        scheme: r.protocol.slice(0, -1),
+        host: r.hostname,
+        port: r.port || void 0
+      } : void 0
+    }, this.denial = Qt(A(e), n), this.throttle = this.denial === void 0 ? De(A(e), t.lastAttemptExitCode, t.gitURL) : void 0
+  }
+}
+async function en(e, n, t) {
+  let r = 2000 + Math.random() * 2000,
+    s, o = {};
+  for (let a = 0; a < $e; a++) {
+    if (a > 0) {
+      let c = t && De(A(s), o.exitCode, e.gitURL) !== void 0,
+        d = r * (1 << a - 1) * (c ? Ht : 1);
+      e.onDebug(`[byoc:git] Validation retry ${a+1}/${$e}, backing off ${Math.round(d)}ms`), await J(d, e.signal, {
+        throwOnAbort: !0
+      })
+    }
+    o = {};
+    try {
+      if (await p(e, "", ["ls-remote", "--heads", e.authURL, "HEAD"], void 0, void 0, o), a > 0) e.onDebug(`[byoc:git] Validation succeeded on attempt ${a+1}`);
+      return
+    } catch (c) {
+      s = c
+    }
+  }
+  throw new d4t(s, e.getAuthToken !== void 0, {
+    repo: n,
+    gitURL: e.gitURL,
+    lastAttemptExitCode: o.exitCode
+  })
+}
+
+function tn(e) {
+  let n = e.trim().match(/^(url\.(https?:\/\/[^\s@]+)\.pushinsteadof) (\S+)$/i);
+  if (!n) return;
+  let [, t, r, s] = n, o = s.match(/^https?:\/\/([^/@\s]+\/[^/\s]+\/[^/\s]+)$/i)?.[1], a;
+  try {
+    a = new URL(r).pathname
+  } catch {
+    return
+  }
+  if (o === void 0 || !a.endsWith(`/${o}`)) return;
+  return t
+}
+var nn = "CLAUDE_CODE_SESSION_ACCESS_TOKEN";
+
+function rn(e) {
+  let n = e.trim().match(/^(credential\.(https?:\/\/[^\s@]+)\.helper) (.+)$/i);
+  if (!n) return;
+  let [, t, r, s] = n;
+  return s === wnr(nn) ? {
+    key: t,
+    base: r.replace(/\/+$/, "")
+  } : void 0
+}
+
+function on(e, n) {
+  let t = e.trim().match(/^(url\.(https?:\/\/[^\s@]+)\.insteadof) (\S+)$/i);
+  if (!t) return;
+  let [, r, s, o] = t, a = o.replace(/\.git$/i, "").match(/^https?:\/\/([^/@\s]+\/[^/\s]+\/[^/\s]+)$/i)?.[1];
+  if (a === void 0) return;
+  return n.some((c) => s === `${c}/${a}`) ? r : void 0
+}
+async function sn(e, n, t) {
+  let r = {};
+  if (e.originURL === e.authURL ? await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "remote", "set-url", "origin", e.authURL], void 0, void 0, r).then(() => !0, () => !1) : await cn(e)) {
+    await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--unset-all", "remote.origin.pushurl"]).catch(() => {});
+    let o = await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--local", "--get-regexp", "^url\\..*\\.pushinsteadof$"]).catch(() => "");
+    for (let u of o.split(`
+`)) {
+      let h = tn(u);
+      if (h === void 0) continue;
+      await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--local", "--unset-all", h]).catch(() => {}), e.onDebug(`[byoc:git] Dropped a stale git-mount push rewrite (${Z(h)}) from ${e.repoPath}`)
+    }
+    let a = await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--local", "--get-regexp", "^credential\\..*\\.helper$"]).catch(() => ""),
+      c = new Set,
+      d = [];
+    for (let u of a.split(`
+`)) {
+      let h = rn(u);
+      if (h !== void 0 && !c.has(h.key)) c.add(h.key), d.push(h.base)
+    }
+    if (d.length > 0) {
+      let u = await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--local", "--get-regexp", "^url\\..*\\.insteadof$"]).catch(() => ""),
+        h = new Set;
+      for (let T of u.split(`
+`)) {
+        let f = on(T, d);
+        if (f === void 0 || h.has(f)) continue;
+        h.add(f), await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--local", "--unset-all", f]).catch(() => {}), e.onDebug(`[byoc:git] Dropped a stale git-mount fetch rewrite (${Z(f)}) from ${e.repoPath}`)
+      }
+    }
+    for (let u of c) await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--local", "--unset-all", u]).catch(() => {}), e.onDebug(`[byoc:git] Dropped a stale git-mount credential helper (${Z(u)}) from ${e.repoPath}`);
+    return await ze(e), e.onDebug(`[byoc:git] Prefetched repo found at ${e.repoPath}`), !0
+  }
+  return e.onDebug(`[byoc:git] No prefetched repo, fresh init at ${e.repoPath}`), await Dl(St(n, {
+    recursive: !0
+  }), de, `[runner:stuck] mkdir ${n} (check NFS/CSI mount health)`), await p(e, "", ["init", ...e.initWithoutTemplate ? ["--template="] : [], e.repoPath]), await p(e, e.repoPath, ["config", "gc.auto", "0"]).catch(() => {}), await p(e, e.repoPath, ["remote", "add", "origin", e.originURL]).catch(() => p(e, e.repoPath, ["remote", "set-url", "origin", e.originURL])), await ze(e), !1
+}
+var Ye = 7,
+  an = 100,
+  it = {
+    GIT_CONFIG_NOSYSTEM: "1",
+    GIT_CONFIG_GLOBAL: "/dev/null",
+    GIT_CONFIG_COUNT: "0",
+    GIT_CONFIG_PARAMETERS: ""
+  },
+  o5r = {
+    GIT_CONFIG_GLOBAL: "/dev/null",
+    HOME: F2n(),
+    XDG_CONFIG_HOME: F2n()
+  },
+  dn = {
+    ...it,
+    ...o5r
+  };
+async function je(e, n, t, r) {
+  let s = {};
+  return p(e, "", ["--git-dir", n, "config", ...t], r, void 0, s).catch((o) => {
+    if (s.exitCode === 1) return;
+    if (e.signal?.aborted) throw o;
+    throw new R(`Could not read remote.origin.url from ${n}/config (${A(o)}). The clone was left as it is: repair that file, or remove the clone when no session is using it; the next session will clone it again.`, "Could not read remote.origin.url of the repository's clone")
+  })
+}
+async function cn(e) {
+  let n = v(e.repoPath, ".git"),
+    t = await je(e, n, ["--get-all", "remote.origin.url"]);
+  if (t === void 0) {
+    if (await je(e, n, ["--get-regexp", "^remote\\.origin\\."], it) === void 0) return !1;
+    let o = {};
+    if (!await p(e, "", ["--git-dir", n, "config", "--get-regexp", "^remote\\.origin\\."], dn, void 0, o).then(() => !0, (c) => {
+        if (e.signal?.aborted) throw c;
+        return o.exitCode !== 1 || o.wroteStderr !== !1
+      })) return !1
+  }
+  let r = (t ?? "").split(`
+`).filter((s) => s.length > 0);
+  if (r.length === 1 && r[0] === e.originURL) return !0;
+  for (let s = 1;; s++) {
+    let o = await p(e, e.repoPath, ["--git-dir", n, "config", "--replace-all", "remote.origin.url", e.originURL]).then(() => {
+      return
+    }, (a) => a ?? Error("git config failed"));
+    if (o === void 0) return e.onDebug(`[byoc:git] remote.origin.url in ${e.repoPath} did not hold the upstream address; corrected`), !0;
+    if (e.signal?.aborted) throw o;
+    if (s === Ye) throw new R(`Could not correct remote.origin.url in ${n}/config after ${Ye} tries over about six seconds (${A(o)}). The clone was left as it is; if that error says "could not lock config file" and "File exists", and no git is running there, remove ${n}/config.lock.`, "Could not write remote.origin.url of the repository's clone");
+    await J(an * 2 ** (s - 1), e.signal, {
+      throwOnAbort: !0
+    })
+  }
+}
+async function ze(e) {
+  if (e.originURL !== e.authURL) {
+    let n = (await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--get-all", "remote.origin.fetch"]).catch(() => "")).split(`
+`).filter((t) => /^\+?refs\/heads\//.test(t));
+    if (n.length > 0 && n.every((t) => t === ynr)) return
+  }
+  await p(e, e.repoPath, ["--git-dir", v(e.repoPath, ".git"), "config", "--replace-all", "remote.origin.fetch", ynr, "^\\+?refs/heads/"]).catch((n) => e.onDebug(`[byoc:git] Could not normalize remote.origin.fetch: ${A(n)}`))
+}
+
+function ot(e) {
+  if (e.originURL === e.authURL) return {
+    configArgs: [],
+    remote: "origin"
+  };
+  let n = `claude-runner-prep-${yt()}`,
+    t = lt();
+  return {
+    configArgs: ["-c", `remote.${n}.url=${e.authURL}`, "-c", `remote.${n}.fetch=${ynr}`, ...t ? ["-c", `remote.${n}.proxy=${t}`] : []],
+    remote: n
+  }
+}
+async function Ce(e, n, t, r, s) {
+  let o = n || "HEAD",
+    a = () => {
+      let b = ot(e);
+      return [...b.configArgs, "fetch", ...Je(r), "--progress", "--no-tags", ...[], b.remote, o]
+    },
+    c = !t && Yt(),
+    d = !1,
+    u = c && !d && await p(e, e.repoPath, ["rev-parse", "--verify", "--quiet", "HEAD^{commit}"], {
+      ...V
+    }).then(() => !0, () => !1),
+    h = !1,
+    T = await st(e, a, async () => (h = await pn(e), !h), r && nt());
+  if (h) {
+    if (e.onDebug("[byoc:git] Repository is empty, skipping checkout"), e.sanitized) {
+      let b = v(e.repoPath, ".git"),
+        G = {};
+      await p(e, e.repoPath, ["--git-dir", b, "read-tree", "HEAD"], {
+        ...V
+      }, Mt, G).then(e.sanitized.onIndexFromHead, async (P) => {
+        if (e.signal?.throwIfAborted(), e.onDebug(`[byoc:git] Could not read HEAD into the index: ${A(P)}`), typeof G.exitCode !== "number" || G.exitCode > 128) await vt(v(b, "index.lock")).catch(() => {})
+      })
+    }
+    return
+  }
+  if (!T) throw Error(`git fetch failed for ${e.gitURL}`);
+  if (await p(e, e.repoPath, ["update-ref", "refs/remotes/origin/HEAD", "FETCH_HEAD^{commit}"], {
+      ...V
+    }).catch((b) => e.onDebug(`[byoc:git] Could not set origin/HEAD: ${A(b)}`)), t) {
+    e.onDebug("[byoc:git] Fetched to FETCH_HEAD, skipping reset-hard (worktree mode)");
+    return
+  }
+  let f = () => p(e, e.repoPath, ["update-ref", "--no-deref", "HEAD", "HEAD"], {
+      ...V
+    }).catch(() => {}),
+    w = () => p(e, e.repoPath, ["-c", "core.checkStat=minimal", "-c", "core.trustctime=false", "reset", "--hard", "FETCH_HEAD^{commit}"]);
+  if (!u) await f();
+  await ke(e, "reset", async () => {
+    if (u) try {
+      await p(e, e.repoPath, ["-c", "core.checkStat=minimal", "-c", "core.trustctime=false", "checkout", "-q", "--progress", "--detach", "FETCH_HEAD^{commit}"]);
+      return
+    } catch (b) {
+      if (e.signal?.aborted) throw b;
+      e.onDebug(`[byoc:git] Delta reset failed, falling back to reset --hard: ${A(b)}`), await f()
+    }
+    await w()
+  }, d ? {
+    delta_reset: "withheld"
+  } : void 0)
+}
+
+function ln(e, n) {
+  let t = [];
+  if (n && e < tt) t.push("-c", `http.lowSpeedLimit=${Vt}`, "-c", `http.lowSpeedTime=${Bt}`);
+  if (e >= 3) t.push("-c", "http.version=HTTP/1.1");
+  return t
+}
+
+function un(e, n, t, r, s) {
+  return p(e, e.repoPath, n, t, r, s)
+}
+async function st(e, n, t, r = !1, s = un) {
+  let o = Date.now(),
+    a = 4000 + Math.random() * 4000,
+    c = r && xt(),
+    d = 0,
+    u, h, T = [],
+    f = (l) => l.length <= xe ? l : Q(l, We) + "\u2026" + Pa(l, xe - We - 1),
+    w = () => T.length > 0 ? {
+      attempt_errors: _(T)
+    } : {},
+    b = 0,
+    G = 0,
+    P = (l) => ({
+      failfast_aborts: String(b),
+      client_aborts: String(G),
+      ...l?.transferBytes !== void 0 && {
+        pack_bytes: String(l.transferBytes)
+      },
+      ...l?.sawServerProgress === !0 && {
+        server_progress: "true"
+      }
+    });
+  for (let l = 0; l < ie; l++) {
+    if (l > 0) {
+      let N = a * (1 << l - 1);
+      e.onDebug(`[byoc:git] Fetch retry ${l+1}/${ie}, backing off ${Math.round(N)}ms`), await J(N, e.signal, {
+        throwOnAbort: !0
+      })
+    }
+    let S = [...ln(l, r), ...typeof n === "function" ? n() : n],
+      z = l === ie - 1 || c && l === oe - 1 && d === oe - 1 ? {
+        GIT_TRACE_PACKET: "1"
+      } : void 0,
+      k = {};
+    try {
+      let N = se - (Date.now() - o);
+      if (await s(e, S, z, Math.max(1, N), k), l > 0) e.onDebug(`[byoc:git] Fetch succeeded on attempt ${l+1}`);
+      return q(e, "fetch", Date.now() - o, {
+        attempts: String(l + 1),
+        ...P(k),
+        ...w()
+      }), !0
+    } catch (N) {
+      u = N, h = k.exitCode;
+      let O = A(N);
+      e.onDebug(`[byoc:git] Fetch attempt ${l+1} failed: ${O}`), T.push(f(Mc(O)));
+      let ee = r && l < tt && Wt(O);
+      if (k.killReason !== void 0) G++;
+      else if (ee) b++;
+      if (d = (ee || k.killReason === "silence" || k.killReason === "escalated") && !k.sawClientProgress && !k.sawRemoteActivity ? d + 1 : 0, Date.now() - o >= se) {
+        if (e.onDebug(`[byoc:git] Fetch cumulative wall-clock ${Date.now()-o}ms \u2265 hard cap \u2014 not retrying`), q(e, "fetch", Date.now() - o, {
+            attempts: String(l + 1),
+            hard_cap: "true",
+            ...P(),
+            ...w()
+          }), bnr(O)) throw new Rwn(O);
+        throw Error(`git fetch failed (cumulative hard cap after ${l+1} attempts): ${O}`)
+      }
+      if (t && bnr(O) && !await t()) return !1;
+      if (bnr(O)) throw e.onDebug("[byoc:git] Fetch error is permanent (ref not found on a non-empty remote) \u2014 skipping remaining retries"), q(e, "fetch", Date.now() - o, {
+        attempts: String(l + 1),
+        permanent: "true",
+        ...P(),
+        ...w()
+      }), new Rwn(O);
+      if (c && l === oe - 1 && d === oe) throw e.onDebug(`[byoc:git] Fetch remote mute on all ${oe} attempts (no progress, no remote activity) \u2014 giving up so the session can be reassigned`), q(e, "fetch", Date.now() - o, {
+        attempts: String(l + 1),
+        exhausted: "true",
+        giveup: "mute",
+        ...P(),
+        ...w()
+      }), Error(`git fetch failed after ${l+1} mute attempts (no progress, no remote activity; giving up early for reassignment): ${O}`)
+    }
+  }
+  q(e, "fetch", Date.now() - o, {
+    attempts: String(ie),
+    exhausted: "true",
+    ...P(),
+    ...w()
+  });
+  let C = `git fetch failed after ${ie} attempts: ${A(u)}`,
+    E = De(A(u), h, e.gitURL);
+  if (E !== void 0) throw new n5r(C, E);
+  throw Error(C)
+}
+async function fn(e, n, t) {
+  if ((await p(e, e.repoPath, ["branch", "--show-current"]).catch(() => "")).trim() === n) {
+    e.onDebug(`[byoc:git] Already on target branch ${n}`);
+    return
+  }
+  if (await dt(e, n)) e.onDebug("[byoc:git] Target branch exists on remote, fetching"), await at(e, n, t);
+  else e.onDebug(`[byoc:git] Creating local branch ${n} from HEAD`), await p(e, e.repoPath, ["checkout", "-B", n]), await p(e, e.repoPath, ["update-ref", `refs/remotes/origin/${n}`, "HEAD"], {
+    ...V
+  }).catch(() => {})
+}
+async function at(e, n, t) {
+  await st(e, () => {
+    let r = ot(e);
+    return [...r.configArgs, "fetch", ...Je(t), "--progress", r.remote, n]
+  }, void 0, t && nt()), await p(e, e.repoPath, ["checkout", "--progress", "--force", "-B", n, "FETCH_HEAD"])
+}
+async function dt(e, n) {
+  try {
+    return (await p(e, e.repoPath, ["ls-remote", "--heads", e.authURL, `refs/heads/${n}`])).trim().length > 0
+  } catch {
+    return !1
+  }
+}
+async function gn(e, n) {
+  try {
+    return await p(e, e.repoPath, ["rev-parse", "--verify", "--quiet", n], {
+      ...V
+    }), !0
+  } catch {
+    return !1
+  }
+}
+async function pn(e) {
+  try {
+    return (await p(e, e.repoPath, ["ls-remote", "--symref", e.authURL, "HEAD"])).trim() === ""
+  } catch {
+    return !1
+  }
+}
+var Snr = "SHR_GIT_PROXY_TOKEN",
+  v3o = ["-c", "lfs.locksverify=false"];
+
+function E3o(e) {
+  return ct("unused", e)
+}
+
+function ct(e, n) {
+  return `!f() { if test "$1" = get; then printf 'username=${e}\\npassword=%s\\n' "$${n}"; fi; }; f`
+}
+
+function wnr(e) {
+  return ct("x-access-token", e)
+}
+
+function s5r(e) {
+  let n = new URL(e).origin;
+  return ["-c", "credential.helper=", "-c", `credential.${n}.helper=`, "-c", `credential.${n}.helper=${E3o(Snr)}`]
+}
+
+function lt() {
+  return process.env.HTTPS_PROXY || process.env.https_proxy || process.env.ALL_PROXY || process.env.all_proxy || ""
+}
+
+function i5r(e) {
+  let t = ["", `${new URL(e).origin}.`, `${e}.`],
+    r = lt(),
+    s = r ? ["-c", `remote.origin.proxy=${r}`] : [];
+  for (let o of t) {
+    if (r) s.push("-c", `http.${o}proxy=${r}`);
+    s.push("-c", `http.${o}sslVerify=true`)
+  }
+  return s
+}
+var hn = new Set(["fetch", "ls-remote"]);
+
+function mn(e) {
+  for (let n = 0; n < e.length; n++) {
+    if (e[n] === "-c" || e[n] === "--git-dir" || e[n] === "-C") {
+      n++;
+      continue
+    }
+    return e[n]
+  }
+  return
+}
+async function p(e, n, t, r, s = se, o) {
+  let a = e.getAuthToken !== void 0,
+    c = mn(t),
+    d = c !== void 0 && hn.has(c),
+    u = a && d ? e.getAuthToken() : void 0,
+    h = r?.GIT_ALLOW_PROTOCOL === "none",
+    T = [...FK, ...l4t(e.gitEnvironment?.commandScopeEntries ?? []), ...h ? Kt : [], "-c", "http.proxyAuthMethod=basic", ...a && d ? i5r(e.gitURL) : [], ...u ? s5r(e.gitURL) : [], ...e.governedMount && d ? v3o : [], ...t],
+    f = u ?? e.token,
+    w = T.map((B) => yn(B, e.authURL, e.gitURL, f));
+  e.onDebug(`[byoc:git] git ${w.join(" ")} (dir=${n||"."})`);
+  let b = !d || a || Boolean(e.token),
+    G = {
+      ...process.env,
+      ...r,
+      ...e.gitEnvironment?.envOverrides,
+      ...u ? {
+        [Snr]: u
+      } : void 0,
+      CLAUDE_CODE_SESSION_ACCESS_TOKEN: void 0,
+      ...a ? {
+        GIT_CONFIG_GLOBAL: "/dev/null"
+      } : void 0,
+      ...b ? {
+        GIT_CONFIG: void 0
+      } : void 0,
+      GIT_TERMINAL_PROMPT: "0",
+      GCM_INTERACTIVE: pae.GCM_INTERACTIVE,
+      LC_ALL: "C",
+      GIT_PROGRESS_DELAY: "0",
+      ...KBe,
+      ...e.authURL.startsWith("file://") && {
+        GIT_ALLOW_PROTOCOL: `file:${KBe.GIT_ALLOW_PROTOCOL}`
+      },
+      GIT_SSH_COMMAND: `${process.env.GIT_SSH_COMMAND||"ssh"} -o BatchMode=yes -o ConnectTimeout=30`,
+      ...h && {
+        GIT_ALLOW_PROTOCOL: "none",
+        GIT_SSH_COMMAND: "false"
+      }
+    };
+  if (b) {
+    for (let B of Object.keys(G))
+      if (B.toUpperCase() === "GIT_CONFIG") G[B] = void 0
+  }
+  let {
+    signal: P,
+    dispose: C
+  } = _n(e.signal, s), E = c !== void 0 && Ot.has(c) ? _nr : e.watchdog?.silenceMs ?? qe, l, S, ye = Date.now(), z = e.watchdog?.preTransferCapMs ?? Ze().capMs, k, N = new Set, O, ee = !1, Te = {
+    active: !1
+  }, ce = Date.now();
+  try {
+    return await new Promise((x, W) => {
+      let F = wt("git", T, {
+          cwd: n || void 0,
+          windowsHide: !0,
+          ...au("helper"),
+          env: G,
+          stdio: ["ignore", "pipe", "pipe"]
+        }),
+        le = 10485760,
+        K = 8192,
+        te = 0,
+        M = [],
+        D = "",
+        ue = !1,
+        L = 0,
+        ne = -1,
+        Ie, Se = (y) => {
+          if (typeof y === "object" && "unref" in y) y.unref();
+          return y
+        },
+        X = !1,
+        ve, Ne = (y) => {
+          if (l === void 0) l = y;
+          F.kill("SIGTERM"), ve ??= Se(setTimeout(() => {
+            if (X) return;
+            F.kill("SIGKILL"), l = "escalated", X = !0, W(Object.assign(Error("git did not exit after SIGTERM"), {
+              stdout: Buffer.concat(M).toString("utf8"),
+              stderr: D
+            }))
+          }, Ae))
+        },
+        fe = (y = E) => Se(setTimeout((I) => I("silence"), y, Ne)),
+        Y = fe();
+      F.stdout.on("data", (y) => {
+        if (te < 10485760) M.push(y), te += y.length;
+        else if (o) o.stdoutTruncated = !0
+      }), F.stderr.on("data", (y) => {
+        let I = y.toString("utf8"),
+          j = D + I;
+        if (j.length > 8192) ee = !0;
+        D = j.slice(-8192);
+        let ge = $t(I, ue),
+          {
+            display: U,
+            client: H,
+            server: pe
+          } = ge;
+        if (I.length > 0) ue = !/[\r\n]$/.test(I);
+        if (o !== void 0) {
+          if (Lt(Te, ge, Date.now()), Te.active) o.sawRemoteActivity = !0
+        }
+        if (H) {
+          if (o !== void 0) o.sawClientProgress = !0;
+          if (E < Be && Nt(H)) E = Be, clearTimeout(Y), Y = fe();
+          if (Dt(S, H)) ye = Date.now(), clearTimeout(Y), Y = fe();
+          if (S = H, o !== void 0 && H.bytes !== void 0 && H.label === Pt && H.bytes > (o.transferBytes ?? -1)) o.transferBytes = H.bytes
+        } else if (pe !== void 0 && S === void 0) {
+          if (It(k, N, pe)) {
+            k = pe;
+            let he = ce + z - Date.now();
+            if (z > 0 && he > 0) {
+              if (O = Date.now(), clearTimeout(Y), Y = fe(Math.min(E, he)), o !== void 0) o.sawServerProgress = !0
+            }
+          }
+          N.add(pe.label)
+        }
+        if (U) {
+          if (U.label !== Ie) Ie = U.label, ne = -1;
+          let he = Math.floor(U.pct / 10),
+            Fe = Date.now() - L;
+          if (Fe >= Ct && (Fe >= At || he > Math.floor(ne / 10))) {
+            L = Date.now(), ne = U.pct;
+            try {
+              e.onDebug(`[byoc:git] ${c??"git"}: ${U.raw}`), e.onProgress?.(c ?? "git", U)
+            } catch {}
+          }
+        }
+      });
+      let Pe = () => {
+        if (e.signal?.aborted) F.kill("SIGTERM"), ve ??= Se(setTimeout(() => {
+          if (X) return;
+          F.kill("SIGKILL"), X = !0;
+          let y = Error("The operation was aborted");
+          y.name = "AbortError", W(Object.assign(y, {
+            stderr: D
+          }))
+        }, Ae));
+        else Ne("hard-cap")
+      };
+      if (P.aborted) Pe();
+      else P.addEventListener("abort", Pe, {
+        once: !0
+      });
+      let Ge;
+      F.on("error", (y) => {
+        Ge = y
+      }), F.on("close", (y, I) => {
+        if (X) return;
+        if (X = !0, clearTimeout(Y), clearTimeout(ve), P.removeEventListener("abort", Pe), o !== void 0) o.exitCode = y, o.wroteStderr = D.length > 0;
+        let j = Buffer.concat(M).toString("utf8");
+        if (e.signal?.aborted && l === void 0) {
+          let U = Error("The operation was aborted");
+          return U.name = "AbortError", W(Object.assign(U, {
+            stdout: j,
+            stderr: D,
+            code: y,
+            signal: I
+          }))
+        }
+        if (Ge) return W(Object.assign(Ge, {
+          stdout: j,
+          stderr: D
+        }));
+        if (y === 0) return x(j);
+        let ge = Error(I !== null ? `git exited on signal ${I}` : `git exited with code ${y}`);
+        W(Object.assign(ge, {
+          stdout: j,
+          stderr: D,
+          code: y,
+          signal: I
+        }))
+      })
+    })
+  } catch (B) {
+    let x = B;
+    if (l !== void 0) {
+      let le = S ? ` at ${S.label} ${S.pct}%${S.total?` (${S.done}/${S.total})`:""}` : "",
+        K = Date.now(),
+        te = K - ye,
+        M = "",
+        D = `no forward progress for ${te}ms (budget ${E}ms)${le}`;
+      if (S === void 0 && k !== void 0 && O !== void 0) {
+        let L = k,
+          ne = L.done !== void 0 ? L.pct > 0 ? ` ${L.pct}% (${L.done}${L.total!==void 0?`/${L.total}`:""})` : ` ${L.done}` : ` ${L.pct}%`;
+        M = ` \u2014 no pack data received; server-side progress last advanced ${K-O}ms ago at ${L.label}${ne}`, D = K - ce >= z ? `pre-transfer cap ${z}ms reached with no client-side progress${M}` : `no client-side progress for ${K-ce}ms and server-side progress stopped advancing (budget ${E}ms)${M}`
+      }
+      let ue = l === "silence" ? D : l === "hard-cap" ? `hard cap ${s}ms after ${K-ce}ms${le}${M}` : `did not exit within ${Ae}ms of SIGTERM (D-state? \u2014 last forward ${te}ms ago)${le}`;
+      e.onDebug(`[runner:stuck] git ${w.join(" ")} (dir=${n||"."}) \u2014 ${ue} \u2014 killing subprocess`)
+    }
+    let W = x.stderr !== void 0 && x.stderr.length > 0 ? Ut(x.stderr, ee, e.authURL, f) : pt(knr(x.stdout || x.message || "", e.authURL, f)).slice(0, ae),
+      F = l !== void 0 ? ` (watchdog: ${l})` : "";
+    throw Error(`git ${c??"?"} failed${F}: ${W}`)
+  } finally {
+    if (o !== void 0 && l !== void 0) o.killReason = l;
+    C()
+  }
+}
+
+function Awn(e) {
+  return e.startsWith("https://") || e.startsWith("http://") || e.startsWith("ssh://") || !e.includes("://") && /^[A-Za-z0-9][A-Za-z0-9._-]*@[^:]+:/.test(e)
+}
+
+function _n(e, n) {
+  let t = new AbortController,
+    r = setTimeout((a) => a.abort(), n, t);
+  if (typeof r === "object" && "unref" in r) r.unref();
+  let s;
+  if (e) {
+    if (e.aborted) {
+      clearTimeout(r), t.abort();
+      let a = () => {};
+      return {
+        signal: t.signal,
+        dispose: a,
+        [Symbol.dispose]: a
+      }
+    }
+    s = () => {
+      clearTimeout(r), t.abort()
+    }, e.addEventListener("abort", s, {
+      once: !0
+    })
+  }
+  t.signal.addEventListener("abort", () => clearTimeout(r));
+  let o = () => {
+    if (clearTimeout(r), e && s) e.removeEventListener("abort", s)
+  };
+  return {
+    signal: t.signal,
+    dispose: o,
+    [Symbol.dispose]: o
+  }
+}
+
+function En(e) {
+  if (e.url) {
+    if (!Awn(e.url)) throw Error(`Unsupported git URL protocol (only https/http/ssh/user@host:path allowed): ${e.url}`);
+    return e.url
+  }
+  switch (e.type) {
+    case "github":
+      return `https://github.com/${e.repo}`;
+    case "github-ssh":
+      throw Error(`github-ssh source for '${e.repo}' is missing url \u2014 SSH URLs are not synthesizable from slug alone`);
+    case "test-file":
+      return `file://${e.repo}`;
+    default:
+      throw Error(`Unsupported git source type: ${e.type}`)
+  }
+}
+
+function T3o(e, n) {
+  if (!n) return e;
+  if (e.startsWith("git@") || e.startsWith("ssh://")) return e;
+  let t;
+  try {
+    t = new URL(e)
+  } catch {
+    return e
+  }
+  if (t.protocol !== "https:") return e;
+  if (n.startsWith("sk-ant-ccsr-")) t.username = "unused", t.password = n;
+  else t.username = n;
+  return t.toString()
+}
+
+function C3o(e, n) {
+  if (n.type === "test-file") {
+    let r = Le(n.repo);
+    if (!r || r === "." || r === "..") return "";
+    return v(e, r)
+  }
+  let t = n.repo.split("/").filter((r) => r.length > 0);
+  if (t.length === 0) return "";
+  for (let r of t)
+    if (r === "." || r === "..") return "";
+  return v(e, ...t)
+}
+
+function fci(e) {
+  let n = e.repo.split("/").filter((t) => t.length > 0);
+  for (let t of n)
+    if (t === "." || t === "..") return "";
+  return n.join("-")
+}
+
+function ut(e, n) {
+  let t = be(be(we(n)));
+  return Le(t) === "_sessions" && we(e).startsWith(be(t) + Re) ? t : bn(e, n)
+}
+
+function bn(e, n) {
+  let t = we(e).split(Re),
+    r = we(n).split(Re),
+    s = 0;
+  while (s < t.length && s < r.length && t[s] === r[s]) s++;
+  return s >= 2 ? t.slice(0, s).join(Re) : void 0
+}
+async function pci(e) {
+  let {
+    canonicalRepoPath: n,
+    worktreePath: t,
+    ref: r,
+    onDebug: s,
+    signal: o,
+    gitEnvironment: a
+  } = e;
+  if (t === n) throw Error("addSessionWorktree: worktreePath must not equal canonicalRepoPath");
+  let c = {
+      repoPath: n,
+      gitURL: "",
+      authURL: "",
+      originURL: "",
+      gitEnvironment: a,
+      onDebug: s,
+      signal: o
+    },
+    d = (await p(c, n, ["rev-parse", "--verify", "FETCH_HEAD^{commit}"], {
+      ...V
+    })).trim(),
+    u;
+  try {
+    u = (await p(c, t, ["--git-dir", v(t, ".git"), "rev-parse", "HEAD"], {
+      ...V
+    })).trim()
+  } catch (f) {
+    if (o?.aborted) throw f
+  }
+  if (u === d) {
+    let f = (await p(c, t, ["rev-parse", "--absolute-git-dir"])).trim();
+    await Ve(v(f, "FETCH_HEAD"), `${d}
+`).catch(() => {}), s(`[byoc:git] Worktree ${t} already at ${d.slice(0,12)} \u2014 keeping`);
+    return
+  }
+  s(u ? `[byoc:git] Worktree ${t} at wrong commit ${u.slice(0,12)}, clearing before re-add` : `[byoc:git] Clearing ${t} before worktree add`), await Dl(RRi(t, ut(n, t)), _nr, `[runner:stuck] rm ${t} (check NFS/CSI mount health)`).catch((f) => {
+    s(`[byoc:git] rm ${t} failed (continuing): ${f}`)
+  });
+  let h = await Dl(ft(t).then((f) => hut(n, f)), de, `[runner:stuck] worktree deregister ${n} (check NFS/CSI mount health)`).then((f) => {
+    if (f.outcome === "kept") s(`[byoc:git] left the worktree registration of ${t} in place: ${f.reason}`);
+    return !0
+  }, (f) => (s(`[byoc:git] worktree deregister did not finish: ${f}`), !1));
+  await Rn(c, n, t, d, h);
+  let T = (await p(c, t, ["rev-parse", "--absolute-git-dir"])).trim();
+  await Ve(v(T, "FETCH_HEAD"), `${d}
+`), s(`[byoc:git] Added worktree ${t} at ${d.slice(0,12)} (detached)`)
+}
+async function Rn(e, n, t, r, s) {
+  let o = () => p(e, n, ["worktree", "add", "--detach", t, r]);
+  try {
+    await o();
+    return
+  } catch (a) {
+    if (!s || !A(a).includes("is a missing but already registered worktree")) throw a;
+    let c = await Dl(Promise.all([Ke(n), ft(t)]).then(([d, u]) => Zde(v(d, ".git"), {
+      worktreePath: u,
+      repoSpelled: n
+    }, {
+      locked: "keep"
+    })), de, `[runner:stuck] worktree deregister ${n} (check NFS/CSI mount health)`).catch((d) => ({
+      outcome: "kept",
+      reason: A(d)
+    }));
+    if (c.outcome !== "dropped") throw e.onDebug(`[byoc:git] git still registers ${t} with its folder gone, and the registration could not be dropped${c.outcome==="kept"?`: ${c.reason}`:""}; not retrying`), a;
+    e.onDebug(`[byoc:git] dropped the registration git still had for ${t} with its folder gone; retrying worktree add`)
+  }
+  await o()
+}
+async function ft(e) {
+  let n = await Ke(be(e)).catch(() => null),
+    t = n === null ? null : v(n, Le(e));
+  return t === null || t === e ? [e] : [e, t]
+}
+async function mci(e) {
+  let {
+    worktrees: n,
+    onDebug: t,
+    signal: r
+  } = e;
+  for (let {
+      canonicalRepoPath: s,
+      worktreePath: o
+    }
+    of n) {
+    let a = {
+      repoPath: s,
+      gitURL: "",
+      authURL: "",
+      originURL: "",
+      onDebug: t,
+      signal: r
+    };
+    if (await Dl(Tt(o).then(() => !1, (d) => wr(d)), de, `[runner:stuck] worktree probe ${o} (check NFS/CSI mount health)`).catch(() => !1)) continue;
+    try {
+      if (!await xet(o)) {
+        t(`[byoc:git] kept worktree ${o} \u2014 unremovable reparse point`);
+        continue
+      }
+      let d = await Dl(LIt(s, o, {
+        trustedRoot: ut(s, o),
+        deregisterIfStopped: !0,
+        pointerFirst: !0
+      }), _nr, `[runner:stuck] remove ${o} (check NFS/CSI mount health)`);
+      if (d.outcome === "unanchored") await p(a, s, ["worktree", "remove", "--force", o]);
+      else if (d.outcome !== "removed") {
+        t(`[byoc:git] worktree remove ${o} failed: ${vWe(d)}`);
+        continue
+      }
+      t(`[byoc:git] Removed worktree ${o}`)
+    } catch (d) {
+      t(`[byoc:git] worktree remove ${o} failed: ${d}`)
+    }
+  }
+  for (let {
+      canonicalRepoPath: s,
+      worktreePath: o
+    }
+    of n) await Dl(hut(s, o), de, `[runner:stuck] worktree deregister ${s} (check NFS/CSI mount health)`).then((a) => {
+    if (a.outcome === "kept") t(`[byoc:git] left the worktree registration of ${o} in place: ${a.reason}`)
+  }, (a) => {
+    t(`[byoc:git] worktree deregister did not finish: ${a}`)
+  })
+}
+
+function wn(e) {
+  let n = new Map;
+  for (let t of e) {
+    let r = t.branches ?? [],
+      [s, ...o] = r;
+    if (o.length > 0) throw Error(`Outcome for ${t.repo} has ${r.length} branches, expected 0 or 1`);
+    if (s) n.set(t.repo, s)
+  }
+  return n
+}
+
+function yn(e, n, t, r) {
+  if (e === n && e !== t) return Z(e);
+  if (e.includes("://") && e.includes("@")) return Z(e);
+  if (r && e.includes(r)) return e.split(r).join("<token>");
+  return e
+}
+
+function knr(e, n, t) {
+  if (n && /:\/\/[^/]*@/.test(n)) e = e.split(n).join(Z(n));
+  if (t) e = e.split(t).join("<token>");
+  return e.replace(/sk-ant-ccsr-[A-Za-z0-9_.-]+/g, "<token>").replace(/sk-ant-[A-Za-z0-9_.-]+/g, "<token>").replace(/github_pat_[A-Za-z0-9_]+/g, "<token>").replace(/gh[psour]_[A-Za-z0-9]+/g, "<token>").replace(/gl(?:pat|dt|rt|ft|soat|oas|agent|ptt|cbt|imt|ffct)-[A-Za-z0-9_=-]+(?:\.[0-9a-z]{9})?/g, "<token>")
+}
+
+function Z(e) {
+  let n;
+  try {
+    n = new URL(e)
+  } catch {}
+  if (n && (n.username || n.password)) {
+    let s = n.search || "",
+      o = n.hash || "";
+    return `${n.protocol}//<token>@${n.host}${n.pathname}${s}${o}`
+  }
+  if (n) return e;
+  let t = e.indexOf("@"),
+    r = e.indexOf("://");
+  if (r >= 0 && t > r) return e.slice(0, r + 3) + "<token>" + e.slice(t);
+  return e
+}
+
+function A(e) {
+  return e instanceof Error ? e.message : String(e)
+}
+var gt = /^(remote:\s+)?(fatal|error):/i;
+
+function pt(e) {
+  if (!e) return "";
+  let n = [];
+  for (let r of e.split(`
+`))
+    if (gt.test(r)) n.push(r);
+  if (n.length === 0) return e;
+  let t = n.join(`
+`);
+  if (e.startsWith(t)) return e;
+  return t + `
+` + e
+}
+export {
+  lci,
+  l4t,
+  Twn,
+  ynr,
+  t5r,
+  _nr,
+  bnr,
+  Cwn,
+  Rwn,
+  dci,
+  n5r,
+  FK,
+  KBe,
+  cci,
+  r5r,
+  uci,
+  d4t,
+  o5r,
+  Snr,
+  v3o,
+  E3o,
+  wnr,
+  s5r,
+  i5r,
+  Awn,
+  T3o,
+  C3o,
+  fci,
+  pci,
+  mci,
+  knr
+};

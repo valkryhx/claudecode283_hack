@@ -1,0 +1,125 @@
+ swaps
+            NUL with LF in the input and the output.  When combined with option
+            --encoding=ENCODING, output each line terminated by a zero byte
+            without affecting the input specified as per ENCODING.  Instead of
+            option --null-data, option --encoding=null-data treats the input as
+            a sequence of lines terminated by a zero byte without affecting the
+            output.  Option --null-data is not compatible with UTF-16/32 input.
+            Since ugrep matches multiple lines when patterns are specified
+            containing a newline `\n' or `\R', this option is not required for
+            multi-line matching.  See also options --encoding and --null.
+    -O EXTENSIONS, --file-extension=EXTENSIONS
+            Only search files whose filename extensions match the specified
+            comma-separated list of EXTENSIONS, same as -g '*.ext' for each
+            `ext' in EXTENSIONS.  When an `ext' is preceded by a `!' or a `^',
+            skip files whose filename extensions matches `ext', same as
+            -g '^*.ext'.  This option may be repeated and may be combined with
+            options -g, -M and -t.
+    -o, --only-matching
+            Only the matching part of a pattern match is output.  When -A, -B
+            or -C is specified, fits the match and its context on a line within
+            the specified number of columns.
+    --only-line-number
+            Only the line number of a matching line is output.  The line number
+            counter is reset for each file processed.
+    -P, --perl-regexp
+            Interpret PATTERN as a Perl regular expression using PCRE2.
+            Note that Perl pattern matching differs from the default grep POSIX
+            pattern matching.
+    -p, --no-dereference
+            If -R or -r is specified, do not follow symbolic links, even when
+            symbolic links are specified on the command line.
+    --pager[=COMMAND]
+            When output is sent to the terminal, uses COMMAND to page through
+            the output.  COMMAND defaults to environment variable PAGER when
+            defined or `more'.  Enables --heading and --line-buffered.
+    --pretty[=WHEN]
+            When output is sent to the terminal, enables options --color,
+            --heading, -n, --sort, --tree and -T when not explicitly disabled.
+            WHEN can be `never', `always', or `auto'.  The default is `auto'.
+    -Q[=DELAY], --query[=DELAY]
+            Query mode: start a TUI to perform interactive searches.  This mode
+            requires an ANSI capable terminal.  An optional DELAY argument may
+            be specified to reduce or increase the response time to execute
+            searches after the last key press, in increments of 100ms, where
+            the default is 3 (300ms delay).  No whitespace may be given between
+            -Q and its argument DELAY.  Initial patterns may be specified with
+            -e PATTERN, i.e. a PATTERN argument requires option -e.  Press F1
+            or CTRL-Z to view the help screen.  Press F2 or CTRL-Y to invoke a
+            command to view or edit the file shown at the top of the screen.
+            This command can be specified with option --view and defaults to
+            environment variable PAGER when defined, or VISUAL or EDITOR.
+            Press TAB or SHIFT-TAB to navigate directories and to select a file
+            to search.  Press ENTER to select lines to output.  Press ALT-l for
+            option -l to list files, ALT-n for -n, etc.  Non-option commands
+            include ALT-] to increase context and ALT-} to increase fuzzyness.
+            If ALT or OPTION keys are not available, then press CTRL-O + KEY to
+            switch option `KEY', or press F1 or CTRL-Z for help and press KEY.
+            See also options --no-confirm, --delay, --split and --view.
+    -q, --quiet, --silent
+            Quiet mode: suppress all output.  Only search a file until a match
+            has been found.
+    -R, --dereference-recursive
+            Recursively read all files under each directory, following symbolic
+            links to files and directories, unlike -r.
+    -r, --recursive
+            Recursively read all files under each directory, following symbolic
+            links only if they are on the command line.  Note that when no FILE
+            arguments are specified and input is read from a terminal,
+            recursive searches are performed as if -r is specified.
+    --replace=FORMAT
+            Replace matching patterns in the output by FORMAT with `%' fields.
+            If -P is specified, FORMAT may include `%1' to `%9', `%[NUM]#' and
+            `%[NAME]#' to output group captures.  A `%%' outputs `%' and `%~'
+            outputs a newline.  See also option --format, `ugrep --help format'
+            and `man ugrep' section FORMAT for details.
+    -S, --dereference-files
+            When -r is specified, follow symbolic links to files, but not to
+            directories.  The default is not to follow symbolic links.
+    -s, --no-messages
+            Silent mode: nonexistent and unreadable files are ignored and
+            their error messages and warnings are suppressed.
+    --save-config[=FILE] [OPTIONS]
+            Save configuration FILE to include OPTIONS.  Update FILE when
+            first loaded with --config=FILE.  The default FILE is `.ugrep',
+            which is automatically loaded by the ug command.  When FILE is a
+            `-', writes the configuration to standard output.  Only part of the
+            OPTIONS are saved that do not cause searches to fail when combined
+            with other options.  Additional options may be specified by editing
+            the saved configuration file.  A configuration file may be modified
+            by adding one or more config=FILE to include configuration files,
+            but recursive configuration file inclusion is not permitted.
+    --separator[=SEP], --context-separator=SEP
+            Use SEP as field separator between file name, line number, column
+            number, byte offset and the matched line.  The default separator is
+            a colon (`:') and a bar (`|') for multi-line pattern matches, and a
+            dash (`-') for context lines.  See also option --group-separator.
+    --split
+            Split the -Q query TUI screen on startup.
+    --sort[=KEY]
+            Displays matching files in the order specified by KEY in recursive
+            searches.  Normally the ug command sorts by name whereas the ugrep
+            batch command displays matches in no particular order to improve
+            performance.  The sort KEY can be `name' to sort by pathname
+            (default), `best' to sort by best match with option -Z (sort by
+            best match requires two passes over files, which is expensive),
+            `size' to sort by file size, `used' to sort by last access time,
+            `changed' to sort by last modification time and `created' to sort
+            by creation time.  Sorting is reversed with `rname', `rbest',
+            `rsize', `rused', `rchanged', or `rcreated'.  Archive contents are
+            not sorted.  Subdirectories are sorted and displayed after matching
+            files.  FILE arguments are searched in the same order as specified.
+    --stats
+            Output statistics on the number of files and directories searched
+            and the inclusion and exclusion constraints applied.
+    -T, --initial-tab
+            Add a tab space to separate the file name, line number, column
+            number and byte offset with the matched line.
+    -t TYPES, --file-type=TYPES
+            Search only files associated with TYPES, a comma-separated list of
+            file types.  Each file type corresponds to a set of filename
+            extensions passed to option -O and filenames passed to option -g.
+            For capitalized file types, the search is expanded to include files
+            with matching file signature magic bytes, as if passed to option
+            -M.  When a type is preceded by a `!' or a `^', excludes files of
+            the specified type.  Specifying the initial part of a type n
