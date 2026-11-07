@@ -24,6 +24,9 @@ __pycache__/
 # ============================================================
 .tmp_probe/
 .tmp_*.py
+.tmp_*.js
+.tmp_*.mjs
+.tmp_*.sh
 .tmp_*.md
 .tmp_*.json
 .tmp_*.txt
