@@ -20,21 +20,32 @@
 
 ---
 
-## 1. 环境铁律（Windows / Git Bash）
+## 1. 环境铁律（Windows：外层 PowerShell，内层 Git Bash）
 
-- **交互命令统一走 Git Bash**。`exec_command` 的默认 shell 是 **PowerShell**。**禁止使用 `shell="bash"`**：本机该值会命中 WSL 存根，不是 Git Bash。统一用 PowerShell 包装器调用绝对路径 Git Bash：
+- **命令内容在 Git Bash 子进程执行，但工具外层永远不是 Bash。** `exec_command` 的默认 shell 是 **PowerShell**；**禁止使用 `shell="bash"`**，本机该值可能命中 WSL 存根，并且会把下面的 PowerShell wrapper 当成 Bash 语法而报错。唯一允许的调用骨架是：
 
   ```text
   exec_command(
-    cmd="& '<Git Bash 可执行文件绝对路径>' -lc '<script>'",
+    cmd="& '<Git Bash 可执行文件绝对路径>' -lc '<bash-payload>'",
     shell="powershell",
     login=false,
     workdir=...
   )
   ```
 
+  多行 payload 用 PowerShell 单引号 here-string 传入：
+
+  ```text
+  $script = @'
+  ... bash payload ...
+  '@
+  & '<Git Bash 可执行文件绝对路径>' -lc $script
+  ```
+
+  `$script = @'`、`'@` 和开头的 `&` 都是 **PowerShell 语法**，不能作为 `shell="bash"` 的 `cmd`。看到 `export`、heredoc、`bash $'\r'`、`&&`、管道等 Bash 语法时，也只说明它们是 `-lc` 的内部 payload，绝不代表应把工具参数改成 `shell="bash"`。
+
   - ❗ 不显式传参时走的是 **PowerShell**（`PSVersion=...`）——这就是之前“嘴上说 Git Bash、实际跑 PowerShell”、以致中文与 heredoc 报错的根因。**不要依赖默认值，也不要只“声称”在 Git Bash。**
-  - ⚠️ **本机实测（2026-10-19）**：`shell="bash"` 会命中 **WSL 存根**，报“没有已安装的分发版”，不是 Git Bash。此时必须用下面的绝对路径兜底，不能把 WSL 的失败当成命令本身失败。
+  - ⚠️ **本机实测（2026-10-19）**：`shell="bash"` 会命中 **WSL 存根**，不是 Git Bash；即使某次没有命中 WSL，也会把 PowerShell wrapper 当成 Bash 语法并报 `syntax error near unexpected token '&'`。两种情况都不得改用 `shell="bash"`。
   - 🛡 Git Bash 绝对路径兜底：先用 `where.exe bash` / `where.exe git` 确认本机安装位置，再用 PowerShell 包装器调用，最确定：
 
     ```powershell
@@ -69,6 +80,31 @@
   - 按 Markdown 章节边界拆，不拆 code fence、JSON object、表格行或源码片段的中间；每段独立闭合 heredoc。
   - 看到 `here-document ... delimited by end-of-file (wanted ...)` 时，先检查是命令截断还是正文中出现了同名的 delimiter 行：检查文件尾部与 delimiter 出现位置，从最后完整章节继续，换一个新的唯一 delimiter，并缩小下一段；禁止原样重试同一大命令。
   - 完整机制、证据和模板见 `docs/20261021-Codex长文本写入边界与AGENTS约束.md`；OS 边界探针见 `docs/probes/20261021-codex-command-length-probe.py`。
+
+- **heredoc 只用于「写死内容」，不用于「跑逻辑」（2026-10-26 补充）**：
+  - 判定标准只有一条：**这段内容是不是原样落盘**。是 → 可以用 heredoc；需要循环、正则、读现有文件、条件分支、多步改动 → **一律写成独立 `.py` / `.mjs` 脚本再执行**，禁止用 `python - <<'X'` 跑脚本。
+  - ❌ 反面例（本仓库实际踩过）：`python - <<'PY_X' && echo done` —— 正文和闭合行都没写，bash 报 `here-document ... delimited by end-of-file`，`python -` 读到空 stdin 进入 REPL，后面的 `&& echo` 照样执行，于是**既没改文件也没报错**。
+  - ✅ 正面例（插入表格行 / 改行 / 条件写入这类“要判断”的活）：
+
+    ```bash
+    cat > work/_patch.py <<'PY_PATCH_20261026_0713'
+    import sys
+    path = sys.argv[1]
+    text = open(path, encoding="utf-8", newline="").read()
+    if "已插入" in text:
+        print("skip: already patched")
+        sys.exit(0)
+    ...  # 真实逻辑
+    PY_PATCH_20261026_0713
+    python work/_patch.py AGENTS.md
+    ```
+
+  - 闭合行必须**独占一行且后面不接 `&&` / `;` / `|`**；命令里出现第二个命令时，把 heredoc 段写成单独一条 `exec_command`。
+  - **heredoc 正文里不要出现“单独一行的 delimiter 候选”**，尤其别写 `EOF`、`END`、`DONE`、`PY`、`PYTHON` 这类通用词；统一用 `用途_日期_随机4位`，如 `PY_PATCH_20261026_K3M9`。
+  - 每条一次写入的正文 ≤ 2K-4K 中文字符 / ≤ 8KB ASCII；超了就按 Markdown 章节或函数边界拆成多条 `cat >>`，每条独立闭合。
+  - 需要写“包含 heredoc 示例的 Markdown”时，**外层 delimiter 必须与正文里所有内层 delimiter 不同**，且外层不要用 `MD`、`EOF` 这类会被示例正文命中的词。
+  - **自查（写完必跑一条）**：`tail -c 200 <file>` 看结尾是否完整；`grep -c $'\r' <file>` 期望 0；含中文再 `python -c "open('<file>','rb').read().decode('utf-8')"`。
+  - **写坏后的恢复顺序**（不要原样重试同一条命令）：① 看 `tail -c 300 <file>` 判断是“截断”还是“正文里撞了 delimiter”；② 若是截断，从最后一个完整章节/函数边界继续，换新 delimiter、缩小下一段；③ 若是撞 delimiter，只重写被截断的那一段；④ 逻辑类命令直接删掉 heredoc，改独立脚本重做。
 
 
 ---
@@ -222,13 +258,27 @@ node deminify.mjs --only m0869
 
 ```bash
 cd reconstructed/tools
-export RE_ROOT="D:/git_codes/claudecode283_hack/reconstructed303"
-export RE_MODULES="D:/git_codes/claudecode283_hack/claudecode303/modules"
-export RE_FULL="D:/git_codes/claudecode283_hack/reconstructed303/full"
-export RE_DEMINIFIED="D:/git_codes/claudecode283_hack/reconstructed303/deminified"
+export RE_ROOT="../../reconstructed303"
+export RE_MODULES="../../claudecode303/modules"
+export RE_FULL="../../reconstructed303/full"
+export RE_DEMINIFIED="../../reconstructed303/deminified"
 node verify-full.mjs
 node verify-deminified.mjs
 ```
+
+> 性能提示：`verify-deminified.mjs` **单进程跑全量约 2 分钟**（本机 303 实测 121.7s，2431/2431 ok）。
+> 要反复跑，用 §5 那套 6 分片并行写法明显更快（每片只校验 `i % 6 == shardIdx` 的文件）：
+>
+> ```bash
+> cd reconstructed/tools
+> export RE_ROOT="../../reconstructed303"
+> export RE_MODULES="../../claudecode303/modules"
+> export RE_FULL="../../reconstructed303/full"
+> export RE_DEMINIFIED="../../reconstructed303/deminified"
+> for i in 0 1 2 3 4 5; do node verify-deminified.mjs --shard $i/6 & done; wait
+> ```
+>
+> 单分片输出形如 `[verify shard 0/6] ok: N bad: 0 big: ...`；各片 ok 相加应等于 2431。
 
 > 303 提取时使用 **6 MiB** 上限（283 用 4 MiB）。完整命令与 PE/Bun 事实见
 > `claudecode303/MANIFEST.md`。
@@ -297,7 +347,7 @@ python tools/carve_skipped_spans.py \
 | --- | --- |
 | **怎么从 exe 抠出源码**（Bun 单文件逆向全流程） | `docs/bun-standalone-re.md` |
 | **为什么源码能直接读**（Bun `--compile` 原理） | `docs/why-source-is-readable.md` |
-| **Windows 上 Git Bash / 中文 UTF-8 怎么正确调用**（实测结论、兜底方案、编码坑） | `docs/20261012-codex-shell-utf8执行指引.md` + `docs/windows-git-bash-execution-note.md` |
+| **Windows 上 Git Bash / 中文 UTF-8 怎么正确调用**（以本文件 §1 为唯一现行契约；`docs/windows-git-bash-execution-note.md` 仅作历史说明；`docs/20261012-codex-shell-utf8执行指引.md` 中 `shell="bash"` 建议已废弃，禁止照抄） | `docs/windows-git-bash-execution-note.md` |
 | **Git 行尾策略**（为什么总刷 LF/CRLF 警告 / 本仓库统一 LF 的做法与验证） | `docs/git-line-endings-policy.md` |
 | **自动去混淆怎么做**（四级证据 / 五条安全规则 / 怎么扩展） | `reconstructed/AUTO-NAMING.md` ★ |
 | **人工命名怎么做**（SOP / 范例 / 反模式） | `reconstructed/NAMING-METHOD.md` |
@@ -314,6 +364,7 @@ python tools/carve_skipped_spans.py \
 | **Dynamic Workflow 复刻指南**（面向自研 Agent / Codex 开发者的实现蓝图 + 逐 API 源码核对 + 坑清单 + §9 执行期 UI/交互与“再跑历史 workflow”） | `docs/20261012-复刻dynamic-workflow指南.md` |
 | **Skill 渐进式披露 / 通用 tool_result 预算**（L1/L2/L3、Skill 正文/工具结果分通道、50K/2K/500K 阈值、持久化与截断、GA 复刻映射） | `docs/20261017-CC-skill渐进式披露调研.md` |
 | **CC 的 ACP 支持与 adapter 机制**（原生 stream-json control protocol vs 外部 `claude-agent-acp`、JSON-RPC session/update、permission/cancel 映射、GA 复刻边界） | `docs/20261019-CC-ACP支持调研.md` |
+| **CC 被外部调用面全景（303 复核）**（ACP 0 命中；8 条通道：headless / 双向 stream-json / `--sdk-url` / 后台会话 / 预热池 / `mcp serve` / 内置 SDK / hooks 与权限代答；控制子类型清单与报文；GA 复刻分期） | `docs/20261106-CC被外部调用面调研.md` |
 | **CC 看图（view image）实现**（无独立 view_image 工具；用户粘贴/路径 → image block、Read 工具图片分支、magic bytes 校验、预算常量、tool_result 数组结构、OpenAI 兼容降级、复刻代码骨架） | `docs/20261024-CC-view-image实现调研.md` |
 | **CC 输入框预测补全（prompt suggestion）实现**（四层开关、焦点/plan/限流/缓存门禁、复用父前缀的 forked query、固定指令全文、14 条过滤规则与中日韩词数加权、placeholder 展示、Tab/→ 接受、20 次未用的退避机制、SDK `prompt_suggestion` 帧与 `set_prompt_suggestions_paused`、复刻骨架） | `docs/20261024-CC-prompt-suggestion实现调研.md` |
 | **CC 执行中继续输入（边跑边收）机理**（统一命令队列、now/next/later 优先级、prompt.submit hook 与 screeningPending、轮内 fold 的 queued_command attachment 与包装文本、drain 循环与 followers 合并、now→abort 中断、低延迟提交 background/interrupt/cancel、Esc 清队列、上箭头编辑与 queued_turn_count、复刻清单） | `docs/20261024-CC-执行中继续输入机理调研.md` |
@@ -323,9 +374,13 @@ python tools/carve_skipped_spans.py \
 | **本机 Claude Code 2.1.303 的 Stop beep 实例**（配置、脚本、stdin/stdout、Stop 与内部 Turn 的区别） | `docs/20261020-beep-stop-hook实施记录.md` + `claudecode303/extracted/20261020-hooks入口分析.md` §15 |
 | **GA hooks 设计与实现方案**（本地 command hook、Stop beep、接入点、分阶段实施与 DoD；不含云端会话） | `docs/20261020-GA-hooks设计与实现方案.md` |
 | **303 mods / plugin hooks module**（`mods` 不是独立目录 API；plugin、hooks module、内置安全 plugin、加载链） | `claudecode303/extracted/20261020-mods入口分析.md` |
+| **303 WebFetch 调研与 GA 落地建议**（工具契约、直连/代理链路、登录与付费边界、SSRF/DNS 安全设计、Phase 1/2 计划） | `docs/20261021-CC-WebFetch功能调研.md` |
+| **GA WebFetch A 方案（当前实施契约）**（透明网络出口、CC 行为对齐、基础 URL/大小/超时、GA 接入与验收） | `docs/20261021-GA-WebFetch-A方案.md`；GA 仓库实施副本 `D:/git_codes/GenericAgent/docs/superpowers/plans/2026-10-21-ga-web-fetch.md` |
+| **GA WebFetch B 参考方案（A 完成后再做）**（direct SSRF、DNS rebinding、peer 复核、trusted-proxy） | `docs/20261021-GA-WebFetch设计与实现方案.md` |
 | **303 跨版本候选附录**（61 个 283 模块的算法候选；相似度不是等价证明） | `claudecode303/extracted/20261020-cross-version-candidates.md` + `cross-version-candidates.json` |
 | **303 resume / 会话转录机制**（JSONL 事件流、uuid/parentUuid/logicalParentUuid、按类型持久化策略、compact_boundary + preservedMessages、`cnn`/`rer`/`ter` 两种视图与 `Rx=4096` 裁剪、fork、列表轻量扫描） | `docs/20261025-CC-resume机制调研.md` |
 | **GA resume 只显示部分历史的根因与优化设计**（history_replace 未重置视口、compact 无锚点、深度相等推断失效、转录 v2 uuid 事件、backend adapter、分阶段实施） | `docs/20261025-GA-resume优化设计.md` |
+| **CC 子 agent 工作目录管理（软提示 + 代码硬切换）与 GA 对比**（283/303 证据坐标、workflow/Agent Team 双机制、GA 现状对齐、A/B/C 优化建议） | `docs/20261029-CC子agent工作目录管理与GA对比.md` |
 | **319 输入物 / 模块 / 格式化 / 去混淆总览**（2,882 模块、100,496 改名、复验、限制、复现命令） | `claudecode319/MANIFEST.md` |
 | **319 被跳过 span 的完整分析**（marker 1 跨 15 个 PE 段、只有 Bun 运行时表；marker 2882 头部是独有原子状态库 `chunk-sa45ym56.js`；marker 数 ≠ 模块数的原因；**§8 二进制尾三段解剖：141 帧 zstd 内嵌文档 7.74 MB + 2,878×2 的 chunk 名表 + 247 条资源索引；「5,756 个 chunk 名」实为 2,878×2 条目数，真正无引用仅 7 个**） | `claudecode319/extracted/20261107-被跳过span完整分析.md` |
 | **subagent 异步执行 + agent 间通信四通道**（`task-notification` 推送与 fold 点、`SendMessage` 五路由与 `in_process` 分派、`SubagentHandback` 一次性上缴、`notify_when_idle` 订阅；含「不阻塞但也不抢占」的准确语义、反权限洗白三条硬规则、复刻清单） | `docs/20261108-CC-subagent异步与agent间通信机制调研.md` |
@@ -385,8 +440,10 @@ python tools/carve_skipped_spans.py \
 
 ## 9. 禁忌清单
 
-- ❌ **禁止使用 `shell="bash"`**：本机该值会命中 WSL 存根，不是 Git Bash。统一用 `shell="powershell"` + `& '<Git Bash 绝对路径>' -lc ...`；不要只“声称”在 Git Bash 而不验证 `$0` / `uname`。
+- ❌ **禁止使用 `shell="bash"`，没有例外。** Git Bash 只能作为 PowerShell 的子进程运行：`shell="powershell"` + `cmd="& '<Git Bash 绝对路径>' -lc '<bash-payload>'"`。不要因为命令里出现 `export`、heredoc 或其他 Bash 语法就切换外层 `shell`；不要只“声称”在 Git Bash 而不验证 `$0` / `uname`。
 - ❌ 中文内容不要经 `python -c` 参数或 shell 变量往返（会损坏编码）；用单引号 heredoc 直写文件（`cat > file << 'EOF'`）。
+- ❌ 不要用 heredoc 跑逻辑：`python - <<'X'` / `node - <<'X'` 一旦命令被截断，正文和闭合行一起消失，程序会读到空 stdin（Python 直接进 REPL）而表面不报错；把逻辑写成 `work/_xxx.py` 再执行。
+- ❌ heredoc 闭合行后不要接 `&&` / `;` / `|`；正文里不要出现 `EOF`、`END`、`PY` 这类通用 delimiter 词。
 - ❌ 反斜杠会被吃：内容**直写文件**（`cat > f << 'EOF'`）安全；但内容若**穿过 Python 字符串字面量 / 嵌套 shell 层**（如 `python - << 'EOF'` 里写 `"C:\Git\bin"`），`\b`/`\a`/`\G` 会被当转义吃掉。此时用 raw string 或 `chr(92)` 构造，源码里不出现字面反斜杠。
 - ❌ 中文正确性**看字节不看终端回显**：`open(p,"rb").read().decode("utf-8")` 不报错即合法；输出中文用 `sys.stdout.buffer.write(...encode("utf-8"))`。控制台代码页 GBK 会误导。
 - ❌ 跨 bash/python 传文件时不要用 `/tmp`：Git Bash 的 `/tmp` 与 Windows 版 `python` 不互通（`FileNotFoundError`）；用工作区内 Windows 路径。

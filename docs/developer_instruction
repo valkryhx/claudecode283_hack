@@ -1,19 +1,44 @@
 developer_instructions = '''
-On Windows, always run commands through Git Bash.
+On Windows, always run commands through Git Bash, but never select Git Bash with
+the tool's `shell` parameter.
 
-Use exec_command with shell="bash" and login=false. The tool's DEFAULT shell is
-PowerShell, so you MUST pass shell="bash" explicitly on every call - do not rely on
-the default and do not merely claim you are in Git Bash. Use login=true only when
-shell startup files are explicitly required.
+HARD CONTRACT:
+- Every `exec_command` call MUST use `shell="powershell"` and `login=false`.
+- NEVER set the tool's `shell` parameter to `bash`. On this machine that value
+  may launch WSL Bash rather than Git Bash, and it will reject the PowerShell
+  wrapper described below.
+- Git Bash is the child process, not the outer executor. Invoke it explicitly
+  from PowerShell with an absolute path:
+      cmd="& 'D:\Git\bin\bash.exe' -lc '<bash-script>'"
+  `D:\Git\bin\bash.exe` is an example; use the absolute Git Bash path
+  confirmed for this machine.
+- Do not rely on the tool's default shell. Do not merely claim you are in Bash.
+- For a multiline Bash script, use this complete PowerShell form as `cmd`:
+      $script = @'
+      ...
+      '@
+      & 'D:\Git\bin\bash.exe' -lc $script
+  `$script = @'` and `& 'D:\Git\bin\bash.exe'` are PowerShell syntax. They
+  must never be passed to Bash. If the tool's `shell` is `bash`, this form is
+  invalid and must not be used.
+- When verification is needed, confirm the child is Git Bash by checking for
+  `bash=/usr/bin/bash`, `MINGW64_NT-...`, and `LANG=C.UTF-8`.
 
-For any command that touches Chinese paths, arguments, or output, set at the top of
-the script:
+All Bash syntax below is payload for the Git Bash child passed to `-lc`, not
+content for the outer `cmd`: `export`, heredocs, `$'\r'`, `&&`, pipes, and
+similar constructs. Seeing Bash syntax is not a reason to select a different
+outer shell.
+
+For any command that touches Chinese paths, arguments, or output, set the locale
+at the top of the Bash payload:
   export LANG=C.UTF-8
   export LC_ALL=C.UTF-8
 
-Path formats are not interchangeable. Inside Git Bash use POSIX paths (/d/... or
-./relative). Windows programs (python, node) do NOT understand /d/... - pass them
-native paths (D:\... or D:/...). Never mix the two in one command.
+Path formats are not interchangeable. Inside the Git Bash child use POSIX paths
+(/d/... or ./relative). Windows programs (python, node) do NOT understand /d/...
+- pass them native paths (D:\... or D:/...). Never mix the two in one command.
+The PowerShell transport must use a native Windows path for the Git Bash
+executable and `workdir`.
 
 Write text files as UTF-8 without BOM and with LF endings. In Python use
 open(path, "w", encoding="utf-8", newline="\n"). Never use GBK / code page
@@ -25,52 +50,57 @@ unique delimiter per write; see the delimiter and size rules below:
   ...content...
   MDOC_20261021_A7F3
 
-Do not round-trip Chinese through `python -c` command arguments or shell variables
-(this corrupts encoding). To verify Chinese content, check BYTES, not terminal echo:
-read the file as rb and decode("utf-8"); write verification output via sys.stdout.buffer
-with UTF-8.
+Do not round-trip Chinese through `python -c` command arguments or shell
+variables (this corrupts encoding). To verify Chinese content, check BYTES,
+not terminal echo: read the file as bytes and decode UTF-8; write verification
+output via sys.stdout.buffer with UTF-8.
 
-Backslashes are lost only when content passes through a Python string literal or a
-nested shell layer, not when a heredoc writes straight to a file. For paths built
-inside Python, use a raw string or chr(92) so no literal backslash is parsed.
+Backslashes are lost only when content passes through a Python string literal or
+a nested shell layer, not when a heredoc writes straight to a file. For paths
+built inside Python, use a raw string or chr(92) so no literal backslash is
+parsed.
 
 Long text writes and heredoc delimiters:
 - Windows CreateProcessW has a hard command-line limit of 32767 UTF-16 code units.
-  On this machine, a bash -c body was executable at roughly 32730-32735 units,
-  depending on argv overhead; larger values fail with WinError 206.
+  On this machine, the Git Bash child's `-c` script body was executable at
+  roughly 32730-32735 units, depending on argv overhead; larger values fail with
+  WinError 206.
 - The Codex tool-call/transport layer can truncate a command well before that OS
-  limit. A heredoc may therefore lose its closing delimiter and leave only a prefix.
-  Never put an entire long document in one exec_command.
-- For Chinese prose, write about 2K-4K characters per segment. For ASCII/code, keep
-  each segment at or below 8KB. Aim for a total command size <= 8KB and never exceed
-  12KB.
-- Split only at Markdown section boundaries. Never split a code fence, JSON object,
-  table row, or source excerpt in the middle.
-- Never use a bare EOF delimiter when the content may itself contain a standalone
-  line "EOF". Quoting the delimiter (<<'EOF') prevents shell expansion, NOT early
-  termination: the first matching line ends the heredoc.
-- For every write, use a unique delimiter that does not occur as a standalone line
-  anywhere in the content. Example:
+  limit. A heredoc may therefore lose its closing delimiter and leave only a
+  prefix. Never put an entire long document in one `exec_command`.
+- For Chinese prose, write about 2K-4K characters per segment. For ASCII/code,
+  keep each segment at or below 8KB. Aim for a total command size <= 8KB and
+  never exceed 12KB.
+- Split only at Markdown section boundaries. Never split a code fence, JSON
+  object, table row, or source excerpt in the middle.
+- Never use a bare `EOF` delimiter when the content may itself contain a
+  standalone line "EOF". Quoting the delimiter (<<'EOF') prevents shell
+  expansion, NOT early termination: the first matching line ends the heredoc.
+- For every write, use a unique delimiter that does not occur as a standalone
+  line anywhere in the content. Example:
     cat > "docs/zh.md" <<'MDOC_20261021_A7F3'
     ...content...
     MDOC_20261021_A7F3
-  Use cat >> with a new unique delimiter for later segments.
-- If Bash reports: here-document ... delimited by end-of-file (wanted ...), first
-  determine whether the expected delimiter was truncated from the command or whether
-  the same delimiter already occurred in the content. Inspect the file tail and the
-  delimiter positions, resume from the last complete section, choose a new unique
-  delimiter, and reduce the segment size. Never retry the same oversized command.
-- After all segments are written, verify that the file decodes as UTF-8, has no BOM,
-  contains no CRLF, and actually ends with the final expected section or marker.
+  Use `cat >>` with a new unique delimiter for later segments.
+- If Bash reports: here-document ... delimited by end-of-file (wanted ...),
+  first determine whether the expected delimiter was truncated from the command
+  or whether the same delimiter already occurred in the content. Inspect the file
+  tail and delimiter positions, resume from the last complete section, choose a
+  new unique delimiter, and reduce the segment size. Never retry the same
+  oversized command.
+- After all segments are written, verify that the file decodes as UTF-8, has no
+  BOM, contains no CRLF, and actually ends with the final expected section or
+  marker.
 
-NEVER run rm -rf or any recursive deletion. Delete single files with Python os.remove().
+NEVER run rm -rf or any recursive deletion. Delete single files with Python
+os.remove().
 
-If a necessary and otherwise safe Git Bash command fails specifically because of the
-Windows sandbox, retry with sandbox_permissions="require_escalated" and a narrow
-justification - do not switch shells to work around a sandbox failure. Treat
-require_escalated commands as running outside the sandbox: keep them read-only or
-tightly scoped unless the user explicitly requests writes, and never use escalation
-to bypass a safety rule.
+If a necessary and otherwise safe Git Bash command fails specifically because of
+the Windows sandbox, retry with `sandbox_permissions="require_escalated"` and a
+narrow justification - do not switch outer shells to work around a sandbox
+failure. Treat require_escalated commands as running outside the sandbox: keep
+them read-only or tightly scoped unless the user explicitly requests writes, and
+never use escalation to bypass a safety rule.
 
 Prefer Chinese for user-facing interaction and responses unless the user requests
 another language.
