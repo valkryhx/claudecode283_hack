@@ -390,6 +390,7 @@ python tools/carve_skipped_spans.py \
 | **CC 内置工具实现调研（Bash / PowerShell / Read / Write / Edit / Glob / Grep / WebFetch / WebSearch / Todo / Task / AskUserQuestion / ToolSearch）**（Windows 不吃 PS 语法错的根因：强制 Git Bash + 平台分支提示词；shell snapshot；32767 命令行上限的分段携带 + sha256；只读证明→免权限；结果预算与 `<persisted-output>`；并发分组；路径安全层；复刻清单与常量速查；**§21 为第三方对抗式核验记录：183 条 `模块:行号` 坐标已全部复算落到实码，含 24 处符号/坐标错配与 3 处结论订正**） | `docs/20261107-CC内置工具实现调研.md` |
 | **CC 执行期 UI 渲染对标（283 的字形/文案层）**（具名字形表、`⎿` 结果行、折叠组件 `Hj`、动态键位提示、spinner 帧与 190 个动词、转录模式头） | `docs/20261016-CC-UI渲染对标调研.md` |
 | **CC UX/UI 设计深挖与 319 源码对标（机制层：为什么丝滑/不抖/不跳）**（帧节流 16ms/输入优先 4ms/stdout 背压；双缓冲逐格 diff；`CSI ?2026h` 同步输出包帧；DECSTBM 滚动区 + 已滚出行跳过；`ScrollBox` 与 `pendingScrollDelta` 衰减 + 滚轮加速度曲线；粘底/HWM/锚点；高度锁 `LG`；根限高 + 正文 `overflow:scroll` + 底栏 `flexShrink:0` 的三层分区；底栏单提示优先级状态机 + 三级宽度降级；折叠计数单调化；**§7 复刻清单 P0/P1/P2 + §8 反模式对照表**） | `docs/20261107-CC-UXUI设计深挖与319源码对标.md` |
+| **319 上下文压缩机制（自动 / 手动 / 反应式 / 预计算 / 微型压缩）**（四档水位 `effectiveWindow−13000` 及常量 20000/13000/3000；`$f` 锚点计量；`hxr`+`Dno` 触发决策树；`nPe` 分轮阶梯 4 种步长；摘要 prompt 全文与 3 条注入防护；`aPe` 压缩后 20 项重建；`XMe` 12 项全局重置；`hOo` 6 道预计算复用校验；`preservedMessages` relink；复刻蓝图 P0–P3 + 14 个坑；**§73 用 28 个真实 boundary 实证阈值公式，并订正「`Ino` 与 `mfr` 是两套实现」「`trigger` 有三值」「这些机制是 319 新增」三处结论**） | `docs/20261108-CC319上下文压缩机制调研.md` |
 
 **命名方法一句话**：Bun `--compile` 是 minify 不是混淆，只压标识符，
 **字符串 / 属性名 / 解构键 / 对象键一律保留**——所有真名只能从这四类保留物里读出来。
