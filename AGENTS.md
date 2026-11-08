@@ -442,6 +442,50 @@ python tools/carve_skipped_spans.py \
 
 ---
 
+## 8.5 TDD 红绿灯（修 bug / 加功能 / 改行为一律强制）
+
+**铁律：没有先失败的测试，就不写生产代码。** 用 superpowers 的 `test-driven-development` skill：
+
+```
+RED     → 写一个最小失败测试，跑，确认它因为「功能缺失」而失败（不是笔误、不是报错）
+GREEN   → 只写让该测试通过的最小实现，跑，确认全绿
+REFACTOR→ 保持全绿的前提下清理
+```
+
+**先写了代码？删掉，从测试重来。** 不许“留作参考”、不许“边写测试边调整”——那是测试后补。
+
+### 必须做反向确认（这一步抓出过两次假验收）
+
+测试变绿**不能**证明它有效。修 bug 时必须把实现 stash 掉再跑一次：
+
+```powershell
+git stash push -- <被修改的源文件>
+python -m pytest tests/test_xxx.py -q      # 必须重新变红
+git stash pop
+```
+
+没经过这一步，不许说"修好了"。
+
+### 本仓库真实踩过的假验收
+
+| 假验收 | 为什么会绿 |
+| --- | --- |
+| 探针自己重新推导产品路径公式 | 探针与产品共用同一个错误假设 |
+| 静态守卫用 tokenize 逐 token 拼行 | 每 token 单独成行，目标表达式永远拼不出来 → 仍有 7 处缺陷时全绿 |
+| 只读 `output.txt` 判后续轮次 | 第 N 轮写 `outputN.txt`，正常投递被误判成丢消息 |
+
+### 判定「生效 / 送达」的硬信号
+
+只断言"没有错误行"不够——消息根本没入队时它也是绿的。让载荷带一个**只存在于该次操作**的
+随机 token，要求下游复述出来。
+
+### 静态守卫的正确写法
+
+不要用纯文本匹配（注释里会合法提到旧写法 → 因错误原因失败 → 被下一个人删掉），
+用 AST 按函数作用域限定。反面参照：`D:/git_repos/GenericAgent/tests/test_child_bus_handdown_paths.py`
+
+---
+
 ## 9. 禁忌清单
 
 - ❌ **禁止使用 `shell="bash"`，没有例外。** Git Bash 只能作为 PowerShell 的子进程运行：`shell="powershell"` + `cmd="& '<Git Bash 绝对路径>' -lc '<bash-payload>'"`。不要因为命令里出现 `export`、heredoc 或其他 Bash 语法就切换外层 `shell`；不要只“声称”在 Git Bash 而不验证 `$0` / `uname`。
@@ -461,6 +505,7 @@ python tools/carve_skipped_spans.py \
 - ❌ 不要把 303 的 `mods` 当成独立 `mods/` 目录 API；它是 installed plugins / plugin function hooks / built-in security plugin 的产品层称呼。
 - ❌ 不要覆盖 `reconstructed/` 去写 303；303 只能写 `reconstructed303/`。
 - ❌ 不要 `rm -rf` / 递归删除（本机安全规则）。
+- ❌ 不要先写生产代码后补测试。修 bug / 加功能一律 TDD 红绿灯，且必须做「stash 掉实现后测试重新变红」的反向确认（见 §8.5）。
 
 ---
 
