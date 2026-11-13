@@ -349,6 +349,7 @@ python tools/carve_skipped_spans.py \
 | **为什么源码能直接读**（Bun `--compile` 原理） | `docs/why-source-is-readable.md` |
 | **Windows 上 Git Bash / 中文 UTF-8 怎么正确调用**（以本文件 §1 为唯一现行契约；`docs/windows-git-bash-execution-note.md` 仅作历史说明；`docs/20261012-codex-shell-utf8执行指引.md` 中 `shell="bash"` 建议已废弃，禁止照抄） | `docs/windows-git-bash-execution-note.md` |
 | **Git 行尾策略**（为什么总刷 LF/CRLF 警告 / 本仓库统一 LF 的做法与验证） | `docs/git-line-endings-policy.md` |
+| **源码调研怎么复核**（为什么第一遍必然漏 / 压缩符号身份 / 断言化 / 反向确认 / SOP / 反模式）★ | `docs/20261113-源码调研复核方法.md`；与 §8.6 配套 |
 | **自动去混淆怎么做**（四级证据 / 五条安全规则 / 怎么扩展） | `reconstructed/AUTO-NAMING.md` ★ |
 | **人工命名怎么做**（SOP / 范例 / 反模式） | `reconstructed/NAMING-METHOD.md` |
 | **workflow 子系统有哪些符号** | `reconstructed/GLOSSARY.md` |
@@ -398,6 +399,7 @@ python tools/carve_skipped_spans.py \
 | **319 goal 模式（`/goal` + ProposeGoal）**（**本质＝session 级 `Stop` hook，`type:"prompt"`**；`HNt` 注册 / `$Nt` 清除 / `G7e` 收集 / `qFn` 三道门禁；评估器走 `querySource:"hook_prompt"` 无工具 side query，schema `{ok,reason,impossible}`，默认小快模型 `Kk()`；`Oqr` 按组从尾裁到窗口 0.5/0.25 并注入截断横幅；`Bf()` 把终止原因分成 none/retry/pause/stop，退避 `[60s,300s,900s]×3`、`BLOCK_CAP=8`、check-in `30/60/120min×3`；ProposeGoal 500 字符上限、`modelProposedGoals` 三档、`tengu_propose_goal` 默认关；**§26 三个 Stop hook 相位（`loop_tick` 评估但丢弃阻断、`blockable_turn_end` 唯一生效、`turn_end_reactions` 只跑函数 hook）**；§10 跨版本 283 起架构稳定，差异只在 `hooks_held`/`fEs`；**§24 复刻清单 + §24.5 四处"不要照抄"**；**§30 `/compact` 不误评估 goal——不是靠 compact 门禁，而是压缩 fork 经 `_S()` 拿到新 `agentId`，按 `z()`=session id 注册的 goal hook 键不匹配；推论：配置文件的 Stop hook 会在这个隐藏 turn 里多跑一次（A 级未实证）；§30.9 十条门禁总表**） | `docs/20261109-CC-goal模式实现调研.md` |
 | **AskUserQuestion 结构化提问机制**（把提问做成**权限请求**的一种：`requiresUserInteraction()` + `checkPermissions()` 恒 ask，直接复用「弹卡片→阻塞→`updatedInput` 回传」的现成管道；**答案准入 `admitCardAnswer`** 四条硬规则 + 引擎侧二次校验；五种结局话术（规整 / 不规整 / `response` / `followUp` / `afkTimeoutMs`）；`unanswered` 三态 `skipped|replied_in_chat|dismissed` 与能力协商 `ask_user_question_unanswered_v1`（**319 唯一实质新增**，283/303 都没有）；AFK 默认 `never`、只读安全层设置、终端失焦不算；「Chat about this」走 `deny + feedback` 不伪造答案；`(notes only)` 哨兵；远程 `request_user_dialog` 的 `permission_ask_user_question`；引擎内部 `confirmWithUser` 复用同一工具；**§15 复刻清单 P0/P1/P2 + 四处「不要照抄」**） | `docs/20261113-CC-AskUserQuestion交互机制调研.md` |
 | **CC319 Projects / coordinator 调研**（Project = 云端工作区，含 **一个 coordinator 会话 + 多条干活的 thread**；**283 就有雏形，不是 319 新增**；三能力落点：主动汇报＝**回合末旁路 LLM 状态卡**（`m2458` 五态 `needs_reply/needs_approval/done/failed/working`，`headline≤60`/`happened≤100`/`reply≤8词`，`Fe=15000`/`Xe=5000` 节流，**迟到即丢弃**）、回答提问＝`mcp__hearthbot__reply` + **319 独有**的 `message_coordinator`/`message_thread` 两个投递目标 + `projects_thread_ask` 回执状态机 + `projects_reply_gate_policy` 四态闸门（`answered/still_silent/skip/bounce`，工具不在池/服务端挂 → 回退 `no_bounce`）、通报进展＝timeline + `projects_thread_state` + **other-thread 行**（303 起；裸 `"yes"` 清不了 SOFT BLOCK，防权限洗白）；**关键负面结论：客户端里没有一句面向 coordinator 自己的系统提示词，只有线程视角的下游规则 → coordinator 指令在服务端**；`/send-to-project`（`m2213`）319 独有；**§4 有完整三版本 token 矩阵**；注意 `CLAUDE_CODE_COORDINATOR_MODE`(本地 agent-team) 与 Projects coordinator 无代码交集） | `docs/20261115-CC319-Projects-coordinator调研.md` |
+| **319 记忆系统（读＝attachment / 写＝后台 fork 子代理，都不是 hook）**（读侧 `dc(label,fn)` 附件计算器与 `tengu_attachment_compute_duration`；`nested_memory`/`memory_update`/`withheld_memory`/`late_memory_context` 四个 producer；写入侧 mcp 与 laptop **两条后端**、`CLAUDE_CODE_POST_TURN_MEMORY` 总闸、直写闸 + first look + prose 闸 + 权限闸、CJK 一字算两词；记忆根按 host 分桶、`bie()` 才是写入域、`agent-memory` 三作用域档；`nD=200`；**§6.6 压缩符号→工具名对照表（`ze`=`Read` 不是 WebFetch）；§6/§7.1 125 条可执行断言与反向确认**） | `docs/20261112-CC319记忆系统源码调研.md` |
 
 **命名方法一句话**：Bun `--compile` 是 minify 不是混淆，只压标识符，
 **字符串 / 属性名 / 解构键 / 对象键一律保留**——所有真名只能从这四类保留物里读出来。
@@ -492,6 +494,84 @@ git stash pop
 
 ---
 
+## 8.6 源码调研必须两遍：理解一遍 + 证明一遍（强制）
+
+**铁律：写「源码调研」类文档，不许一遍就交付。** 这不是建议——
+2026-11-13 复核 `docs/20261112-CC319记忆系统源码调研.md` 时，
+第一遍复核自己**新增了 1 处错**（把 `ze` 写成 WebFetch，实际是 `var ze = "Read"`），
+第二遍才抓出来，并又抓出 2 处漏项。完整方法论见
+`docs/20261113-源码调研复核方法.md`。
+
+### 为什么第一遍必然漏
+
+第一遍在做**理解**（读通、自洽、写机制），第二遍在做**证明**（每条结论钉到可复算的点）。
+**自洽 ≠ 正确**：主线对的时候，细节错的地方不会「读起来别扭」，
+只有强制取证据才会暴露。所以这两遍不是「检查一遍更保险」，是两种不同的认知活动。
+
+### 四条硬规则（对应四类真实失误）
+
+| # | 规则 | 不这么做会怎样（本仓库实测） |
+| --- | --- | --- |
+| 1 | **压缩符号必须查定义行，禁止全仓 grep 定名**。先解析 `import … from "chunk-X.js"` → 源 `m*.js`（`docs/probes/20261113-319-chunk映射核验.py`），再在该模块查 `= "..."`（`docs/probes/20261113-319-符号定义定位.py`） | Bun 每个模块独立压缩，`dt`/`as`/`yg`/`ze` 在别的模块是同名但完全不同的东西。全仓搜到的是「某个模块的它」，不是「目标模块的它」 |
+| 2 | **「怎么注册 / 怎么触发 / 谁调用」必须 `grep -c` 数总数再逐个看完** | `dc("nested_memory")` 有 2 处（`:151783` 主路径 + `:151746` `inputMentionsOnly` 短路），只取第一处就漏了整条分支 |
+| 3 | **并列列举的位置相近 ≠ 同一个函数**，往上找最近的 `function` 行 | `:76049`/`:76063` 在 `B9e()`，`:76090` 在 `_rn()`；当成「同一段逻辑三分支」会写错归属 |
+| 4 | **否定结论（没有 X / 不用 Y）必须写成 `must_not` 断言，每次重跑** | 「我没搜到」≠「它不存在」。`m0832` 无 `WebFetch`/`WebSearch`、无 `embedding` 这类结论，靠一次性 grep 记在文档里，下次谁也不会重验 |
+
+### 交付前必须跑的两步
+
+```bash
+python docs/probes/<你的>断言核验.py        # 全部关键事实 → (模块, 精确片段, 期望行号)
+python docs/probes/<你的>核验反向确认.py    # 故意注入错误断言，证明引擎会变红
+```
+
+- 断言三要素：**模块名显式**（防撞名）、**精确片段抄源码原文**（不许写成「我以为的样子」）、
+  **期望行号**（坐标漂移立刻暴露）。
+- **反向确认必须同时包含一个「应该 PASS」的用例**——否则引擎只会返回 FAIL，
+  全绿和全红都不携带信息。参照 `docs/probes/20261113-记忆调研核验反向确认.py`。
+- 反向确认抓出过：断言把 `requireReadBeforeWrite` 写在 `:62`（实际 `:63`）、
+  断言串与源码原文不符、把 4 处 `the pass is not skipped` 记成 1 处。
+
+### 文档里必须写清的三件事
+
+每条 `模块:行号` 都要能回查，且文档头部要交代清楚：
+① 哪些是**订正**（原文错）；② 哪些是**补漏**（原文没有）；
+③ **哪些是自己第一轮复核写错、第二轮抓出来的**——第 ③ 项不是自我批评，
+是给下一个人的信息：**错误模式比正确结论更有复用价值**。
+
+### 方法论文档自己也要自检
+
+**方法论文档最容易腐烂**：它通篇讲「必须查证据」，但自己的举例（哪个符号是什么、
+几处命中、某行是什么）却没人复核。所以：
+
+- `docs/probes/20261113-复核方法文档自检.py`（23 条）断言本文档 §1/§2/§5.1/§9 的全部举例；
+- `docs/probes/20261113-复核方法文档自检反向确认.py` 证明上一条的自检引擎会变红。
+
+改源码后跑这两个，就知道方法文档哪句话失效了。
+
+### 假信号：没报错 ≠ 有效信号
+
+判定「有没有问题」前，先确认**这个信号本身是不是有效信号**。本仓库两实例：
+
+- `python - <<'PY'` 被截断 → 读到空 stdin 进 REPL，表面无报错，实际没验证任何东西；
+- `grep -c $'\r' file` 在 PowerShell here-string 里 `$'\r'` 不展开 → 退化成空模式，
+  返回「等于总行数」，看着像整文件 CRLF，实际 `CR=0`。
+
+**行尾/编码一律用字节级检查裁决**（`docs/probes/20261113-文本字节校验.py`），不要用 grep 猜。
+完整分析见 `docs/20261113-源码调研复核方法.md` §10。
+
+### 反模式速查
+
+| 反模式 | 正确做法 |
+| --- | --- |
+| 全仓 `grep 'X = "'` 定符号身份 | 先 chunk→模块，再查定义行 |
+| grep 第一处命中就写结论 | 先 `grep -c` 数总数 |
+| 「这个符号大概是 XX」 | 身份是事实，必须拿到 `= "..."` 行；拿不到就写符号本身（对应 §0 铁律 4） |
+| 否定结论靠「我没搜到」 | `must_not` 断言，每次重跑 |
+| 断言全绿就交付 | 反向确认：必须能变红 |
+| 只做一遍 | 理解一遍 + 证明一遍 |
+
+---
+
 ## 9. 禁忌清单
 
 - ❌ **禁止使用 `shell="bash"`，没有例外。** Git Bash 只能作为 PowerShell 的子进程运行：`shell="powershell"` + `cmd="& '<Git Bash 绝对路径>' -lc '<bash-payload>'"`。不要因为命令里出现 `export`、heredoc 或其他 Bash 语法就切换外层 `shell`；不要只“声称”在 Git Bash 而不验证 `$0` / `uname`。
@@ -512,6 +592,10 @@ git stash pop
 - ❌ 不要覆盖 `reconstructed/` 去写 303；303 只能写 `reconstructed303/`。
 - ❌ 不要 `rm -rf` / 递归删除（本机安全规则）。
 - ❌ 不要先写生产代码后补测试。修 bug / 加功能一律 TDD 红绿灯，且必须做「stash 掉实现后测试重新变红」的反向确认（见 §8.5）。
+- ❌ **源码调研文档不许一遍交付**：必须「理解一遍 + 证明一遍」，且关键事实要脚本化成断言、并做反向确认证明断言会变红（见 §8.6）。反面实例：2026-11-13 首轮复核把 `ze` 写成 WebFetch（实际 `var ze = "Read"`）。
+- ❌ **禁止全仓 grep 压缩符号来定身份**（`dt` / `as` / `yg` / `ze` 这类）。Bun 每个模块独立压缩，跨模块同名符号指向完全不同的东西；必须先解析 `chunk → m*.js` 再查定义行（见 §8.6 规则 1）。
+- ❌ 不用「我没搜到」当否定结论的证据。否定事实必须写成 `must_not` 断言并在每次复核时重跑（见 §8.6 规则 4）。
+- ❌ **不用 `grep -c $'\r'` 判行尾**：在 PowerShell here-string 里 `$'\r'` 不展开，退化成空模式会返回「等于总行数」的假信号。行尾/编码一律用 `docs/probes/20261113-文本字节校验.py` 字节级裁决（见 §8.6「假信号」）。
 
 ---
 
