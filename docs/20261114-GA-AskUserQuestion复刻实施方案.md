@@ -741,11 +741,111 @@ Start by asking them what they would like to clarify.
 > **这是调研文档 §9.3 最值得抄的一条**：把「不选」建模成一条正式出口，
 > 比「假装用户答了某个选项」干净得多。
 
-### 7.4 允许未答完就提交
+### 7.4 多题流程：分题作答 → 确认页 → 提交
 
-CC 的做法：只警告不阻断（调研 §9.7）。GA 同样——
+这是**整个前端最容易做错的一段**，不是「每题一提交」。
+CC 的完整状态机见调研 §9.7，这里只给 GA 要落的东西。
+
+#### 7.4.1 两条路径，二选一
+
+```python
+hide_submit_tab = (len(questions) == 1 and not questions[0].get("multiSelect", False))
+```
+
+| `hideSubmitTab` | 触发条件 | 用户体验 |
+| --- | --- | --- |
+| `True` | 恰好 1 题，且非多选 | **选中即提交**，无确认页 |
+| `False` | ≥2 题，或 1 题多选 | 逐题作答 → 确认页 → 点 `Submit answers` |
+
+单题快捷路径值得抄：多一次确认对单题只是摩擦。
+多选不走快捷路径，因为多选状态下用户需要「我选完了」这个显式信号。
+
+> ⚠️ **这里有两套独立判断，不要把上面这一行同时当成两件事的开关。**
+>
+> | 判断 | CC 依据 | 作用 |
+> | --- | --- | --- |
+> | `hide_submit_tab` | schema 的 `multiSelect` 字段 | 渲染不渲染 Submit 格、导航上界 |
+> | 是否自动提交 | **运行时**答案是不是 `list` | 答完要不要直接发请求 |
+>
+> CC 用 `nt[0]?.multiSelect`（`full:69153`）决定前者、用 `Array.isArray(ds)`
+> （`full:69267`）决定后者。两者在「单题单选」时恰好同时为真，但来源不同。
+> GA 若只写一套，会在「单题多选但一个都没勾」这类边界上分叉。
+
+#### 7.4.2 页索引：确认页是「第 N 格」
+
+GA 的 `questionPanel` 建议照 CC 的模型：**页索引 `0..n-1` 是题目，索引 `n` 是确认页**。
+
+```python
+current_question = questions[idx] if idx < len(questions) else None
+is_review_page = (idx == len(questions))
+
+# 导航上界
+last_index = len(questions) - 1 if hide_submit_tab else len(questions)
+```
+
+不要另造一个 `mode: "form" | "review"` 字段——CC 用索引复用这一格，
+少一个状态变量就少一处不一致。
+
+#### 7.4.3 答题只记状态，提交才发请求
+
+| 动作 | 该做什么 | **不该做什么** |
+| --- | --- | --- |
+| 单选某题（多题场景） | 写入 `answers[q]`，停留 | 调用任何 runtime |
+| 多选某题 | 写入 `answers[q]`（列表），停留 | 提交 |
+| 多选页内的「Submit/Next」按钮 | **只是翻页**（`idx += 1`） | 提交答案 |
+| 确认页「Submit answers」 | 一次性提交**全部** `answers` | 逐题提交 |
+| Esc / Cancel | 走 `deny`（调研 §9.4） | 伪造答案 |
+
+> ⚠️ **最易踩的坑**：多选控件自己的按钮文字在最后一页是 `"Submit"`，
+> 但它的语义是**前往下一页**（CC：`submitButtonText: te === N.length - 1 ? "Submit" : "Next"`，
+> `onSubmit: () => Mt()`，`Mt` = `nextQuestion`）。真正的提交只在确认页发生。
+> GA 复刻时建议**把这个按钮改名为「Next →」/「Review →」**，避免和真正的提交混淆。
+
+#### 7.4.4 页签条（`questionPanel` 顶部）
+
+```
+[☐ Q1] [☑ Q2] [✓ Review/Submit]
+```
+
+- 每题的勾：`bool(answers.get(q["key"]))` —— **空串也算没答**（CC 用 `!!qp(...)`）；
+- 最后一格：`hide_submit_tab` 时不渲染；
+- 宽度不够时降级：完整 → 截断 → 只保留当前题。GA 的 Ink 有 `columns` 可直接用。
+
+#### 7.4.5 确认页内容
+
+```
+─────────────────────────
+[☐ Q1] [☑ Q2] [✓ Submit]
+Review your answers
+⚠ You have not answered all questions      ← 仅未答全时
+  Q1 text
+    → answer1
+  Q2 text
+    → answer2
+Ready to submit your answers?
+  [ Submit answers ]  [ Cancel ]
+```
+
+- 已答列表**只列已答的题**（`filter`，不是全部）；
+- 「未答完」**只警告，不阻止**（详见 §7.5）；
+- `Cancel` 走 `deny`，不是「空答案提交」。
+
+#### 7.4.6 允许未答完就提交
+
+CC 的做法：只警告不阻断（调研 §9.7.5）。GA 同样——
 卡片底部给「未答完」提示，但**允许提交**，未答的题进 `unanswered`。
 强行拦住会逼出「随便选一个」的坏结果。
+
+> **不要把 `all_answered` 接到按钮的 `disabled` 上。** CC 的
+> `allQuestionsAnswered` 只用于渲染那条警告（`full:68712`），
+> 提交路径 `ba("submit")` 完全不看它。接了 `disabled` 就是复刻出了 CC 没有的行为，
+> 而且会让「我就有一题不想答」的用户无法提交。
+
+#### 7.4.7 读屏器分支（可选，P2）
+
+CC 在读屏模式下把页签条换成一句 `Questions: Q1, Q2 (answered)`。
+GA 的 Ink 若不做 a11y 可跳过；要做就照这个形状——**不要渲染复选框**，
+用 `(answered)` 后缀补偿。
 
 ---
 
@@ -780,11 +880,94 @@ asking about in the question itself.
 **④ 不要给 Other / Skip**（写进 schema 的 `options.description` 里）
 ——见 §3.2 已含：`There should be no 'Other' option, that will be provided automatically.`
 
-> **落地位置**：GA 的系统提示词在别处拼装（不在本文范围）。
+> **落地位置**：GA 的系统提示词在 `genericagent/resources/assets/sys_prompt.txt` /
+> `sys_prompt_en.txt`（各 77 行）里拼装。
 > 只需确保上面四段进了模型可见的提示词，且**只在 `ask_user_question` 工具可见时才拼**
 > （CC 用 `hQr(tools)` 做这件事，调研 §11.5——「提示词按可用工具裁剪」）。
 
-### 8.1 顺手要做的一件事：调整那两条 DANGER 提示
+> ⚠️ **CC 的坑：`A$i`（即上面第 ② 段）只在该会话处于 lean 模式时才拼**
+> （`m0805:455`，包在 `if (i)` 里；`i = bD({model, leanPrompt})`）。
+> GA 没有 lean 模式二分，所以**把 ② 无条件拼进去**——这比 CC 更保守，是刻意的改进方向。
+> 调研 §11.3 有详细说明。
+
+### 8.1 系统级判据：真正决定「该不该问」的是这两段
+
+工具提示词（上面四段）只解释了**怎么问**；「什么情况下值得阻塞用户」由**系统提示词**给判据。
+CC 的两段（调研 §11.8.2）比工具提示词里那句抽象的「真正属于用户的决定」好落地得多：
+
+**① 主动行动（`Zvr` / `YWi`）**
+
+```
+When you have enough information to act, act. Do not re-derive facts already established
+in the conversation, re-litigate a decision the user has already made, or narrate options
+you will not pursue. If you are weighing a choice, give a recommendation, not an
+exhaustive survey.
+```
+
+**② 交付工作（`eCr` 节选）—— 这段是本方案最该进 GA 系统提示词的一条**
+
+```
+Interpret ambiguity the way a careful colleague would: make routine judgment calls
+yourself, and check in only when different readings would lead to materially different work.
+
+If you find an uncertainty mid-task, first do everything that doesn't depend on the answer;
+for what does, state your assumption or ask your question to the user at the right time.
+Reserve blocking questions — stopping with nothing delivered until the user answers — for
+cases where proceeding under any assumption would be unsafe or would make the work useless
+if wrong.
+```
+
+**为什么这段比工具提示词更重要**：它给了**四条可操作判据**（调研 §11.8.2 的表），
+而工具提示词只给了一句抽象条件。模型在没看到这段时，会把「我不确定」当成「该问」；
+看到这段后，判据变成「不同解读是否导致实质上不同的工作」。
+
+> **落地建议**：把 ② 放进 GA 系统提示词的「Delivering work」等价位置。
+> GA 的 `sys_prompt_en.txt` 目前 77 行，没有等价段落——这是**独立于 `ask_user_question` 的改进**，
+> 即使不做新工具也值得加。
+
+### 8.2 无人值守抑制：GA 需要自己造这一层
+
+CC 按 `surface` 切换提示词（调研 §11.8.3）：`scheduled` / `github_action` 两个 surface
+明说「没人会回答你的问题，请在明示假设下继续」。
+
+**GA 的现状（已核对）**：
+
+| 入口 | 有 emit？ | 当前行为 | 是否已抑制提问 |
+| --- | --- | --- | --- |
+| Ink 前端 | 是（`bridge.py:428` `set_emit`） | 弹卡片 | — |
+| ACP 前端 | 是（`genericagent_acp_bridge.py:267`） | 弹卡片 | — |
+| headless / 无 UI | **否** | `PermissionRuntime.wait_for_decision` **fail-closed → deny** | ⚠️ 形式上是「拒绝」，不是「别问」 |
+| workflow 子 agent | **否**（`child_agent.py:1103-1120` 只传 `hook_runtime`，不传 `permission_runtime`） | 同上 | ⚠️ 同上 |
+
+`runtime.py` 头部注释就写着：「无 emit（headless）→ deny（fail-closed）」。
+
+⇒ **GA 目前不会「崩溃」，但会「白问一次」**：模型调用 → 卡住 → 立即被 deny →
+模型收到拒绝话术 → 才知道问不了。这比 CC 的「提前告诉它没人回答」浪费一轮。
+
+**要做的事**：在 GA 的系统提示词里按入口加一段等价抑制。建议措辞（照 CC 的 `scheduled`）：
+
+```
+There is no one to answer a question mid-run: this session is running unattended
+(headless, a workflow sub-agent, or a scheduled job). Do not call ask_user_question;
+proceed under stated assumptions and make the final message a complete record.
+```
+
+判定条件（GA 侧）：**用 `PermissionRuntime.has_emit()`**（`runtime.py:59`，已存在，无需新写）。
+返回 `False` ⇒ 无人值守 ⇒ 拼抑制段、且让 `ask_user_question` 直接从工具列表里消失。
+
+> `has_emit()` 比 `_emit is not None` 更合适——它是公开方法，不用碰私有字段。
+> `runtime.py:4` 的模块注释也明确了这个语义：「无 emit（headless）→ deny（fail-closed）」。
+>
+> ⚠️ 但**只抑制「拼提示词」和「工具可见性」两层，不要动 `do_ask_user_question` 本身**：
+> 模型仍可能凭旧习惯调用它（历史上下文里的旧提示词、或用户明确要求）。
+> 那时应当让它走现有的 fail-closed → 返回一条说明性 `status: "error"`，
+> 而不是抛异常——调研 §11.8.4 的「三层」里没有「硬崩」这一层。
+
+> **注意不要用「子 agent」当唯一判据**：workflow 子 agent 借宿主的 `hook_runtime`，
+> 但不需要提问通道；而 Ink/ACP 的前台会话即使被包成子 agent 也应该能问。
+> 判据应当是「**有没有活的 emit**」，不是「是不是子 agent」。
+
+### 8.3 顺手要做的一件事：调整那两条 DANGER 提示
 
 `handler.py:2839` 和 `:2846` 现在硬编码「必须 ask_user 汇报进度」。
 有了新工具后，这两处**应当改成 `ask_user_question`**：
@@ -795,6 +978,20 @@ asking about in the question itself.
 
 > ⚠️ 但要**先确认** `ask_user_question` 在多轮长任务里不会因为 `full_access` 档被吞掉
 > （§4.5 那一步必须先做）。
+
+### 8.4 提示词的落地清单（三份文件）
+
+| 内容 | 落到哪 | 条件 |
+| --- | --- | --- |
+| ① 使用条件 + ③ 模态提示 + ④ 不给 Other | `ask_user_question` 的 `description` / `options.description` | 工具可见时 |
+| ② 克制条款（`A$i`） | 同上 | **无条件**（CC 只在 lean 时拼，GA 全拼，更保守） |
+| ⑤ 主动行动（`Zvr`） | `sys_prompt_en.txt` / `sys_prompt.txt` | 无条件 |
+| ⑥ 交付判据（`eCr`） | 同上，作为独立小节 | 无条件 |
+| ⑦ 无人值守抑制 | 同上，按 `has_emit()` 决定是否拼 | **仅无人值守时** |
+
+> CC 的 `hQr` 裁剪（plan 工具缺席时去掉 plan-mode 段）GA 用不上——
+> GA 没有 plan mode。但**「提示词按可用工具裁剪」这个手法值得保留**：
+> 未来加任何条件段（如「GA 没有 workflow 工具时别提 workflow」）都可以照这个模式。
 
 ---
 
@@ -818,17 +1015,20 @@ asking about in the question itself.
 
 8. `questionPanel.ts` + `App.tsx` 接线（§7.1）。
 9. 「Other」行 + 多选 + 只写备注 → `NOTES_ONLY` 哨兵（§7.3）。
-10. 未答完可提交 + `unanswered` 三态（§7.4）。
-11. 六种结局里的 3/4/5/6 四段话术（§6）。
-12. 提示词四段（§8）。
-13. 把 `handler.py:2839/2846` 的 DANGER 提示切到新工具（§8.1）。
+10. **多题流程两分支**（§7.4）：`hideSubmitTab` 判定、页索引复用第 N 格、
+    单题自动提交、多选按钮只翻页、确认页、未答完只警告。
+11. 未答完可提交 + `unanswered` 三态（§7.4.6）。
+12. 六种结局里的 3/4/5/6 四段话术（§6）。
+13. 提示词：四段工具提示 + **系统级判据两条**（§8）。
+14. 把 `handler.py:2839/2846` 的 DANGER 提示切到新工具（§8.1）。
 
 ### P2：锦上添花（可选）
 
-14. `header` 加不加 `maxLength: 12`——建议加，GA 没有 CC 的 UI 截断兜底。
-15. `metadata.source` 的埋点（CC 用它区分 `/remember` 等来源）。
-16. 多客户端会话的去重（CC 有 `supportedDialogKinds` + first-attached-wins，GA 无此概念，
+15. `header` 加不加 `maxLength: 12`——建议加，GA 没有 CC 的 UI 截断兜底。
+16. `metadata.source` 的埋点（CC 用它区分 `/remember` 等来源）。
+17. 多客户端会话的去重（CC 有 `supportedDialogKinds` + first-attached-wins，GA 无此概念，
     但 `frontends/acp/` 若接入多端需考虑）。
+18. 页签条宽度降级 + 读屏器分支（§7.4.7）。
 
 ### 明确「不要做」的四件事
 
@@ -863,10 +1063,18 @@ asking about in the question itself.
 | §5.5 拒绝话术 | §4 `validationErrorSteer` |
 | §6 六种结局 | §5.1 / §5.2 |
 | §7.3 Chat about this | §9.3 |
-| §7.4 未答完可提交 | §9.7 |
-| §8 提示词 | §11 |
+| §7.4 多题流程（两分支 / 页索引 / 确认页） | **§9.7 全节**（§9.7.2–§9.7.8） |
+| §7.4.6 未答完可提交 | §9.7.5 |
+| §8 工具提示词四段 | §11.1–§11.7 |
+| §8.1 系统级判据 | **§11.8.2**（`YWi`/`Zvr`/`eCr`） |
+| §8.2 无人值守抑制 | **§11.8.3**（`surface`） |
 | §3.3 不做 kind/preview/followUp | §10.2 订正 / §8.2 / §7 |
 
 **最后一句**：调研文档 §3.1.0 那条订正，是这份实施方案存在的理由。
 如果照 CC 的接线方式抄，你会得到一个**看起来有准入、实际永远不会执行**的实现。
 本文把准入挂到了唯一的那条路径上——这不是「比 CC 更好」，而是**GA 的架构让正确做法成为默认**。
+
+第二个要记住的点是**§7.4 的多题流程**：它不是「每题一提交」。
+单题单选走「选中即提交」，其余走「逐题作答 → 确认页 → 一次性提交」，
+而多选控件上那颗写着 `Submit` 的按钮**只是翻页**。
+搞错这个，用户会在第一题就提交掉一份只有一题答案的结果。

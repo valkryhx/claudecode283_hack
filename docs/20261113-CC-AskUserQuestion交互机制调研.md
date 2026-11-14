@@ -34,6 +34,11 @@
 复刻时的最小必要件：**工具声明（隔离）+ 权限旁路（承载）+ 答案准入（安全）+ 结局分支（表达）**。
 少任何一环都会退化成「问了但答不清楚」或「模型被用户输入劫持」。
 
+**另有一条独立的追问**：「为什么有时候 CC 会问我、有时候不问？」
+答案是**没有任何分类器在判断**，只有三层约束：能力门禁（工具可见性）、提示词判据、
+无人值守抑制。详见 **§11.8**——那一节也是本节回复中最容易被误解的一点（不是「它自己判断」，
+而是「提示词让它按这些判据判断」）。
+
 ---
 
 ## 1. 交付面：输入 / 输出 schema 全貌
@@ -1020,7 +1025,7 @@ Ctrl+G         → 在外部编辑器里编辑当前输入
 
 `full:68620` 起：
 
-- 多选走 `jj`（带 `submitButtonText`：最后一题是 `"Submit"`，否则 `"Next"`）；
+- 多选走 `jj`（带 `submitButtonText`：最后一题是 `"Submit"`，否则 `"Next"`，`full:68636`）；
 - 单选走 `Ze`，`layout: "compact-vertical"`。
 
 多选的「Other」是**把 Other 行的文本值并进数组**（`full:68627-68632`）：
@@ -1033,33 +1038,226 @@ nt(er, vi, void 0, !1);
 
 于是「多选 + 自己写一个」在数据层是**同一个字符串数组**，落地时由 `sYt` 序列化成 `"A, B, 我写的"`。
 
-### 9.7 提交页：允许「没答完就提交」【S】
+> 注意第三个实参 `void 0`、第四个 `!1`。第四个是 `Zd` 的 `Cs`（"是否允许直接提交"），
+> 多选**显式传 false**——这就是下一节「多选不走自动提交」的来源。
 
-`full:68712-68724`：
+### 9.7 多题流程：分题作答 → 确认页 → 提交（完整状态机）【S】
+
+这一节回答「CC 问好几个问题时，用户逐题作答、最后才提交」到底是怎么走的。
+它不是「一题一提交」，而是一个**页签式向导**。
+
+#### 9.7.1 三层组件
+
+| 组件 | 行 | 职责 |
+| --- | --- | --- |
+| `sAe` | `full:69028` | 状态容器：持有 `answers`、`questionStates`、`currentQuestionIndex`，装配下面两者 |
+| `Ok` | `full:67744` | 页签条：每题一个页签 + 末尾一个 `✓ Submit` 页签 |
+| `cZ` | `full:68333` | **单题表单**：选项列表 / 多选 / Other 行 / Chat 行 |
+| `pZ` | `full:68684` | **确认页**：列出已答，给 `Submit answers` / `Cancel` |
+
+`cZ` 与 `pZ` **互斥**，由当前页索引决定（`full:69406-69437`）：
+
+```js
+ud = Kn ? e(cZ, {...})            // 有当前题 → 单题表单
+   : vr ? e(pZ, {...})            // 当前页是确认页 → 确认页
+   : null,                        // 都没有 → 什么都不渲染
+```
+
+两个索引来源就在上一行（`full:69147-69148`）：
+
+```js
+let Kn = Mn < (nt?.length || 0) ? nt?.[Mn] : null,   // 当前页对应的题目；确认页时是 null
+    vr = Mn === (nt?.length || 0),                   // 当前页 === 题目数 → 这就是确认页
+```
+
+⇒ **确认页不是「第 N+1 题」，而是把「页索引 == 题目数」这一格征用来当确认页。**
+页签条里那个 `✓ Submit` 页签占的就是这一格（`full:67877`，索引 `M.length`）。
+
+#### 9.7.2 什么时候**没有**确认页（单题快捷路径）【S】
+
+`full:69153`：
+
+```js
+or = nt.length === 1 && !nt[0]?.multiSelect          // 变量名 hideSubmitTab
+```
+
+⇒ **只有「恰好 1 题 且 非多选」时才隐藏确认页。** 其他情况（≥2 题，或 1 题多选）都有确认页。
+
+隐藏确认页之后，导航上界也跟着变（`full:69325`）：
+
+```js
+Pi = or ? (nt?.length || 1) - 1 : nt?.length || 0   // 最后一页的索引
+```
+
+- `or` 为真 → 最后一页是**第 0 题**（只有一页），`Pi = 0`；
+- `or` 为假 → 最后一页是**确认页**，`Pi = nt.length`（第 0..n-1 题 + 第 n 格确认页）。
+
+> **注意这里有两套彼此独立的判断，别把它们合并成一个。**
+>
+> | 判断 | 位置 | 依据 | 作用 |
+> | --- | --- | --- | --- |
+> | `hideSubmitTab`（`or`） | `full:69153` | `nt[0].multiSelect` 字段 | 页签条渲不渲染 Submit 格、导航上界 |
+> | 自动提交（`!Jr && Dl && Cs`） | `full:69277` | `Array.isArray(答案)` | 答完要不要直接发请求 |
+>
+> 它们在「单题单选」时**恰好同时为真**，所以行为看起来是一件事；但判据来源不同：
+> 一个是 schema 字段，一个是**运行时答案形状**。
+> GA 复刻时**两套都要写**——只写一套会在「单题多选 + 未选任何项」这类边界上分叉。
+
+#### 9.7.3 单题路径：答完即提交，**跳过**确认页【S】
+
+`Zd`（`onAnswer`，`full:69266` 起）：
+
+```js
+let Cs = ks === void 0 ? !0 : ks;    // allowImmediateSubmit，默认 true（full:69266）
+let Jr = Array.isArray(ds);          // 这个答案是不是数组（多选）（full:69267）
+...
+let Dl = nt.length === 1;            // 只有一题（full:69276）
+if (!Jr && Dl && Cs) {               // 非数组 + 单题 + 允许直提（full:69277）
+  let od = { ...lo, [jr]: gi };      // full:69278-69281
+  if (!ts("user")) { ...; return }   // 按键来源不是真人？拒（full:69282）
+  wr.current = { question: jr, answer: gi },
+  }, Ls(od).catch(V0o).then((Vc) => {  // ← 直接提交，不进确认页（full:69292）
+  return
+}
+er(jr, gi, Cs)                       // 否则：只记答案，留在表单里（full:69299）
+```
+
+单选控件传的是 `nt(er, xi, ya)`（`full:68665`）——第三实参缺省 ⇒ `Cs = true`；
+多选控件传的是 `nt(er, vi, void 0, !1)`（`full:68632`）——`Cs = false`。
+
+⇒ **单题单选的路径是「选中即提交」，用户看不到确认页，也不需要点第二次。**
+这是刻意的：多一次确认对单题来说只是摩擦。
+
+> `ts("user")` 是「这次交互是不是真人驱动」的门禁。非真人（AFK / 脚本）走同一函数时不进这条快捷路径。
+
+#### 9.7.4 多题路径：答题只记状态，提交在确认页【S】
+
+`Zd` 落到 `er(jr, gi, Cs)` 时，只把答案写进 `lo`（`answers`），**不发请求**。
+用户接下来：
+
+1. 用页签条（`Ok`）或 `←`/`→` 在题间移动（`tZ` 的 `Ar` 键位，`full:67897`）；
+2. 每题答完，页签上的方框从 `checkboxOff` 变 `checkboxOn`（`full:67857`）；
+3. 走到最后一格（`✓ Submit`）→ 渲染 `pZ` 确认页；
+4. 在确认页点 `Submit answers`（`full:68762`）→ `Oe("submit")` → `ba("submit")`（`full:69304`）→ `Ls(lo)` 一次性提交**全部**答案。
+
+`ba` 的完整逻辑：
+
+```js
+function ba(Sl) {
+  if (Sl === "cancel") { Dr(); return }              // Esc / Cancel → 普通 deny（§9.4）
+  if (Sl === "submit") {
+    if (!te()) return                                // wouldTakeAnswer 为假 → 不提交
+    if (!ts("user")) return                          // 非真人 → 不提交
+    Ls(lo).then((fs) => { if (!fs) pr.current = !1 }).catch(...)
+  }
+}
+```
+
+**多选控件自己的按钮不是页签条的 `Submit`。** 它是 `jj` 的 `submitButtonText`（`full:68636`），
+只在本页内前进/后退：
+
+```js
+submitButtonText: te === N.length - 1 ? "Submit" : "Next",
+onSubmit: () => { if (!M()) return; Mt() },          // Mt = An = nextQuestion
+```
+
+⇒ 多选页上写「Submit」的那颗按钮，**语义是「前往下一页」**（单题多选时下一页就是确认页）。
+真正的提交只发生在确认页。这是最容易被复刻者搞错的一点。
+
+#### 9.7.5 `allQuestionsAnswered`：只用来显示警告【S】
+
+`full:69150`：
+
+```js
+Qr = nt?.every((ls) => !!qp(lo, ls.key)) ?? !1       // → Ar（full:69152）→ 传给 pZ
+```
+
+`qp` 本身是取值而非判真（`full:67728`）：
+
+```js
+function qp(h, M) { return M !== void 0 && Object.hasOwn(h, M) ? h[M] : void 0 }
+```
+
+⇒ `!!qp(...)` 意味着**答案为空串也算「没答」**。这是有意的：
+用户点了 Other 但什么都没输，不该被当成已答。
+
+`Ar` 在 `pZ` 里只做一件事（`full:68712-68719`）：
 
 ```js
 Xe = !te && e(s, { marginBottom: 1, children: e(Lu, {
   status: "warning",
   children: "You have not answered all questions"     // full:68717
 })});
-...
-e(Jn, { confirmLabel: "Submit answers", cancelLabel: "Cancel", ... })   // full:68762
 ```
 
-**只警告，不阻止。** 这是刻意的：有的问题用户就是不想答，
-强行拦住会逼出「随便选一个」的坏结果。配合 §6 的三态，模型能知道「哪个没答」。
+**只警告，不阻止。** 提交按钮不看 `Ar`，`ba("submit")` 也不看 `Ar`。
+这是刻意的：有的问题用户就是不想答，强行拦住会逼出「随便选一个」的坏结果。
+配合 §6 的三态，模型能知道「哪个没答」。
 
-### 9.8 页签条的降级【A】
+> 反过来说，**`allQuestionsAnswered` 不是提交前置条件**——复刻时不要把它接到按钮的 `disabled` 上。
 
-`full:67744` `Ok`：可用宽度算不出足够位置时：
+#### 9.7.6 确认页的完整内容【S】
 
-1. 优先完整显示（含 `✓ Submit`）；
-2. 放不下就**只显示当前题的 header**；
-3. 再放不下就把非当前题压到 `Math.max(6, ...)` 个字符。
+`pZ`（`full:68684`-`68780`），自上而下：
+
+| 位置 | 内容 | 行 |
+| --- | --- | --- |
+| 分隔线 `Gd` | `color: "inactive"` | `:68695-68696` |
+| 页签条 | 复用 `Ok`（**不传 `hideSubmitTab`** ⇒ 显示 Submit 页签） | `:68700` |
+| 标题 | `"Review your answers"` | `:68708` |
+| 警告 | `You have not answered all questions`（仅未答全时） | `:68717` |
+| 已答列表 | 每题：题目文字（`displayQuestion.text`）+ `→ 答案`（`re.arrowRight`，`color: "success"`） | `:68722-68744` |
+| 权限信息 | `e(bS, { permissionResult, toolType: "tool" })` | `:68747-68749` |
+| 引导语 | `"Ready to submit your answers?"`（`color: "inactive"`） | `:68755` |
+| 按钮组 | `confirmLabel: "Submit answers"` / `cancelLabel: "Cancel"` | `:68762` |
+
+**已答列表只列已答的题**——`M.filter((wt) => qp(N, wt?.key))`（`full:68725`）。
+没答的题在列表里不出现，只由上面那条警告统一提示。
+
+#### 9.7.7 页签条 `Ok` 的构成与四级降级【S】
+
+完整形态（`full:67744`）：
+
+```
+[← ] [☐ Q1] [☑ Q2] [☑ Q3] [✓ Submit] [→]
+```
+
+- 第 i 个页签的文字：`Co[tn] || dn?.displayHeader || Q${tn+1}`（`full:67859`）；
+- 方框：`qp(N, dn?.key) ? re.checkboxOn : re.checkboxOff`（`full:67858`）；
+- `✓ Submit` 页签：`!xe && e(fb, { children: [re.tick, " Submit"] }, "submit")`（`full:67874-67879`），
+  只有当页索引 `D === M.length` 时高亮成 `color: "permission"`；
+- 左右箭头：单题时隐藏（`Qo = M.length === 1 && xe`，`full:67846`）。
+
+宽度不够时按四档降级（`full:67757-67843`）：
+
+| 档 | 条件 | 显示 |
+| --- | --- | --- |
+| 1 | 全部页签所需宽度 ≤ 可用宽度 | 完整显示全部 |
+| 2 | 放不下 | 当前题给 `min(4+len, 可用/2)`，其余每题 `max(6, floor(剩余/(n-1)))` 个字符 |
+| 3 | 可用宽度 ≤ 0 | **只显示当前题的 header**，其余留空 |
+| 4 | 读屏模式 | 换成分隔文本（见下） |
+
+降级预留的宽度来自 `Xe = ce("← ") + ce(" →") + ce(" ✓ Submit ")`（`full:67759-67761`）；
+隐藏 Submit 页签时末尾那段变成空串。
 
 窄终端不会崩，只是丢信息。**这是 CC 所有 UI 的一致做法（渐进降级）。**
 
-### 9.9 读屏器适配【S】
+#### 9.7.8 读屏模式：页签条换成分隔的一句话【S】
+
+读屏分支（`full:67811-67845`）不渲染方框，而渲染：
+
+```js
+let ho = un?.displayHeader || `Q${Mo+1}`;
+let bn = ho.includes(",") || /answered/i.test(ho) ? _(ho) : ho;    // _ = 引号包裹
+return qp(N, un?.key) ? `${bn} (answered)` : bn
+...
+const Xo = `${wt}: ${xt}`;      // wt = "Question" / "Questions"，xt = 各页签以 ", " 连接
+```
+
+⇒ 屏幕上（朗读出的）是 `Questions: Q1, Q2 (answered)` 这样一句。
+**读屏用户拿不到页签高亮，靠 `(answered)` 后缀补偿。**
+
+### 9.8 读屏器适配【S】
 
 `iAe` / `Lht` 相关：
 
@@ -1207,10 +1405,10 @@ else if (!s.startsWith("sdk-") && s !== "claude-desktop" && s !== "local-agent" 
 ```js
 async prompt({ model, leanPrompt, leanRewrite, tools }) {
   let i = bD({ model, leanPrompt }),           // 是否 lean 模式
-      a = hQr(tools),                          // 工具列表里是否含 EnterPlanMode / ExitPlanMode
+      a = hQr(tools),                          // plan 工具「缺席」→ true（Xlr 是取反，见 §11.5）
       h = i && p3({ model, leanRewrite })
-            ? (a ? Svs : TWi)                  // lean + 新提示词
-            : (a ? X_s : C$i),                 // 完整提示词
+            ? (a ? Svs : TWi)                  // lean 版：plan 工具缺席 → Svs，在场 → TWi
+            : (a ? X_s : C$i),                 // 完整版：plan 工具缺席 → X_s，在场 → C$i
       c = "";
   if (i) {
     let x = v("tengu_cinder_plover", "").trim();
@@ -1263,6 +1461,12 @@ option, mention it in your response, and proceed.
 配上 §4 的 `validationErrorSteer`（防凑数选项），
 以及「单选项提问直接拒绝」的规则，构成三重防线。
 
+> ⚠️ **但这段只在 lean 模式下拼进去。** 见 §11.1 的 `if (i)`——
+> `A$i` 被包在 `if (i)` 里面，而 `i = bD({model, leanPrompt})` 是 lean 模式判定。
+> **非 lean 会话里，模型根本看不到这段「克制」提示。**
+> 这是 319 里一个反直觉的细节：最像「礼貌条款」的那段，反而是可选的。
+> 详见 §11.8。
+
 ### 11.4 「模态 UI」段（`x$i`，`m0403:62`）【S】
 
 ```
@@ -1292,11 +1496,33 @@ the user cannot see the plan until you call ${Vg} for approval.
 **注意 `hQr(tools)` 的判定**（`m0591:74373`）：
 
 ```js
-function hQr(e) { return Xlr($S, e) || Xlr(ec, e) }   // "EnterPlanMode" or "ExitPlanMode" 在工具列表里
+function hQr(e) { return Xlr($S, e) || Xlr(ec, e) }   // EnterPlanMode / ExitPlanMode 是否「不在」工具列表里
 ```
 
-⇒ **只有当前会话真的有 plan 模式工具时，plan-mode 那段提示词才出现。**
+关键在 `Xlr` 是**取反**的（`m0591:74365`）：
+
+```js
+function Xlr(e, n) { return q() && (n === void 0 || !n.some((r) => ht(r, e))) }
+```
+
+- `ht` = 工具名匹配（`m0268:842`：`e.name === o || (e.aliases?.includes(o) ?? !1)`）；
+- `q()` = diskless 会话（`m0040:5935`：`return er()`，`er()` = `host.launchOptions.diskless()`）；
+- 于是 `Xlr(name, tools)` = **diskless 且 `name` 不在工具列表里**。
+
+所以 `hQr(tools) === true` 的语义是「**plan 工具缺席**」。
+变量名 `a` 在提示词选择里的位置也就对上了：
+
+| `hQr(tools)` | 选中的常量 | 含义 |
+| --- | --- | --- |
+| `true`（工具缺席） | `X_s` / `Svs` | 只有核心使用规则 |
+| `false`（工具在场） | `C$i` / `TWi` | 核心规则 **+ plan-mode 段** |
+
+⇒ **`C$i` 才是「带 plan-mode 段」的那一份**。`plan-mode note` 只在会话真的有 plan 模式工具时才出现——
 这是「提示词按可用工具裁剪」的标准做法，值得抄。
+
+> 交叉印证：`Uon()`（`m0591:74369`）就是 `Xlr(An)`，`An = "SendMessage"`（`m0142:6`）；
+> 它在 `m0591:112029` 的 WebFetch 提示词里被用作 `Uon() ? "" : "它跑完后仍可寻址……"` ——
+> 工具**缺席**时抹掉那段说明。同一函数的用法与上面结论一致。
 
 ### 11.6 扩展题型段（`R$i`，`m0403:51`）【S】
 
@@ -1330,6 +1556,146 @@ or leave a question unanswered.
 
 因为这两个**由 UI 无条件提供**（`full:68468` 的 Other 行、提交页允许未答完）。
 模型再加就会重复，且会让「Other 里的 Other」这种荒谬结构出现在屏幕上。
+
+### 11.8 「什么时候会问 / 什么时候不问」到底由谁决定【S】
+
+这是最常被问的问题，答案是**三层，且没有一层是「分类器」**：
+
+```
+① 能力层：这个宿主能不能弹卡片？     → 不能就整个工具不可见（nee）
+② 提示词层：模型被怎样告知「该问 / 不该问」 → 六段文本 + 系统级两条判据
+③ 会话层：当前是不是无人值守？       → scheduled / github_action 明说「没人回答」
+```
+
+**没有任何一处代码在判断「这个问题值不值得问」。** 搜遍 319 也找不到这样一个函数。
+判断完全交给模型，CC 只做「给不给它工具」和「怎么措辞引导」。
+
+#### 11.8.1 能力层：`nee()` 决定工具可不可见【S】
+
+`m0805:504`：
+
+```js
+isEnabled() { return nee(); }
+```
+
+`nee` 在 `m0589:40`：
+
+```js
+function nee() { return !tee() && XSs() }
+
+function tee() {                       // 有没有「只 deny 不弹窗」的宿主
+  if (er()) return !1;
+  return $o().some(item => !hf.has(item) && be(item)?.permissions?.denyInsteadOfPrompting === !0)
+      || kte().some(item => item.permissions?.denyInsteadOfPrompting === !0);
+}
+
+function XSs() {                       // 有没有交互出口
+  if (dv().length > 0 && ye()) return !1;
+  if (ye() && !mue(LE())) return !1;
+  return !0;
+}
+```
+
+两条否决：
+
+- `tee()` = 当前装的 MCP server / plugin 声明了「别弹窗，直接 deny」⇒ **没得问**；
+- `XSs()` = 非交互模式（`ye()`）且没有可用的 permission prompt 通道（`mue(LE())`）⇒ **没地方问**。
+
+⇒ **工具直接不出现**，模型连「有这个选项」都不知道。这是最硬的一层。
+
+#### 11.8.2 提示词层：五段引导 + 两条系统级判据【S】
+
+工具自己的提示词（§11.1-11.7）里，与「何时该问」直接相关的只有三段：
+
+| 段 | 生效条件 | 说了什么 |
+| --- | --- | --- |
+| `X_s` / `Svs` | 总是 | 「只在你被一个**真正属于用户的决定**卡住时用：从请求、代码、或合理默认值里解不出来的那种」 |
+| `A$i` | **仅 lean 模式** | 「留给『答案会改变你下一步做什么』的决定；有惯例默认值、或你能自己在代码里查证的事实，就别问——挑明显的那个，说出来，继续做」 |
+| `x$i` | 总是 | 「用户可能只看得见这个对话框」⇒ 要求问题自包含 |
+
+真正定义「克制」的是 `A$i`，**但它只在 lean 模式出现**（见 §11.3 的警告框）。
+非 lean 会话里，模型只拿到 `X_s` 那句「被真正属于用户的决定卡住」——
+**这比 `A$i` 宽松得多，所以非 lean 会话更容易多问。**
+
+系统提示词层面另有两条**更硬的判据**，它们不在工具提示词里，而是随会话注入：
+
+**① `YWi` / `Zvr`（主动行动，别多问）** — `m0274:486` / `m0591:110031`
+
+```
+It is best to be proactive with your own work when you have enough information to do so.
+... you don't need to ask the user a question which has already been asked, or narrate options
+which you are obviously not going to pursue. If you are weighing a choice with the user, it's
+best to give a recommendation rather than an exhaustive survey. The user is often quite short
+on time, so make things as easy on them as possible, and only bother them when you know you
+need them!
+```
+
+**② `eCr`（# Delivering work）** — `m0591:110032`
+
+```
+Interpret ambiguity the way a careful colleague would: make routine judgment calls yourself,
+and check in only when different readings would lead to materially different work.
+
+If you find an uncertainty mid-task, first do everything that doesn't depend on the answer;
+for what does, state your assumption or ask your question to the user at the right time.
+Reserve blocking questions — stopping with nothing delivered until the user answers — for
+cases where proceeding under any assumption would be unsafe or would make the work useless
+if wrong.
+```
+
+这两段给了**可操作的判据**（比 `X_s` 那句抽象的「真正属于用户」好落地）：
+
+| 判据 | 含义 |
+| --- | --- |
+| 「不同解读会导致**实质上不同**的工作」 | 能等价描述 ⇒ 不问，直接做 |
+| 「先做不依赖答案的部分」 | 把问题攒到**真的必须问**的时候 |
+| 「任何假设下继续都不安全 / 会白做」 | **这才是**该阻塞的标准 |
+| 「只在你确定需要他们时才打扰」 | 默认不问 |
+
+**这两段也是 lean 相关的**：`G_n`（`m0591:110515`）里
+
+```js
+actsWithoutRederiving: (s) => s ? (r ? YWi : Zvr) : null,
+deliversWork:        (s) => s ? (r ? wWi : eCr) : null,
+hasCorrections:      (s) => s ? (r ? kWi : tCr) : null,
+```
+
+- `s` = 该段是否启用（由各自的 Iy 前置判定，如 `Jvr()` 的 growthbook 开关、`CLAUDE_CODE_BISON_CAIRN` 环境变量）；
+- `r` = `leanRewrite`（`G_n(y, Ce, w)` 的 `w` 就是 `$_e(h)`）；
+- ⇒ **lean 用 `wWi`（旧版长文），非 lean 用 `eCr`（新版短判据）。**
+
+⇒ **同一个「什么时候该问」，在三种配置下会给出三套不同措辞。**
+这是 CC 极少数「提示词本身就分叉」的地方，复刻时别只抄一套。
+
+#### 11.8.3 会话层：无人值守时说「没人回答」【S】
+
+`m0274:392-412` 的 `surface` 表，两个值直接劝退提问：
+
+| surface | 原文（节选） |
+| --- | --- |
+| `scheduled` | 「You are running as a scheduled or triggered run… **nobody is watching live: there is no one to answer a question mid-run, so proceed under stated assumptions**, and make the final message a complete record someone can read later.」 |
+| `github_action` | 「There is no human reading in real time and **nobody to answer questions**; … Make decisions under stated assumptions rather than asking…」 |
+
+`surface` 由 `N_n()`（`m0591:110043`）按 entrypoint 解析：
+`remote_trigger` / `remote_cowork_trigger` → `scheduled`；
+`claude-code-github-action` → `github_action`。
+
+⇒ **同一个模型，在终端里问、在定时任务里不问，不是因为「它更聪明了」，而是提示词换了。**
+
+#### 11.8.4 小结：三层各自的作用
+
+| 层 | 什么时候起作用 | 效果 |
+| --- | --- | --- |
+| `nee()` | 工具列表构造时 | 工具**根本不可见**（硬） |
+| 工具提示词（`X_s`/`A$i`/`x$i`） | 每次请求 | 引导「问什么、怎么问」（软） |
+| 系统提示词（`YWi`/`eCr`/`surface`） | 每次请求 | 给出**可操作判据**（软，但更硬） |
+
+**没有第四层「判断这个问题值不值得问」的代码。** 这是刻意设计：
+把判断留给模型，把约束写进提示词——因为「什么问题值得问」几乎无法用规则表达。
+
+> **对 GA 的启示**：不要在 GA 里写一个「问题重要性打分器」。
+> 照 CC 的做法：工具可见性 + 提示词判据 + 无人值守抑制，三层就够。
+> 打分器会引入一个 CC 没有的、必然出错的中间层。详见 `20261114-GA-AskUserQuestion复刻实施方案.md` §8。
 
 ---
 
@@ -1601,7 +1967,7 @@ function Kat(e) {
 ### P1：决定体验好坏的
 
 6. **「Chat about this」用 `deny + feedback` 实现**，不要伪造答案（§9.3）。
-7. **允许未答完就提交**，只警告不阻断（§9.7）；配合 `unanswered` 三态。
+7. **允许未答完就提交**，只警告不阻断（§9.7.5）；配合 `unanswered` 三态。
 8. **提示词三段式**：
    - 使用条件（"blocked on a decision that is genuinely the user's"）
    - 克制条款 + 替代动作（"pick the obvious option, mention it, proceed"）
@@ -1615,9 +1981,10 @@ function Kat(e) {
 11. `followUp` 再来一轮协议（§8），注意它绑在「每题都有 kind」上。
 12. AFK 自动继续（§7）：默认关、只读安全层设置、终端失焦不算、任何按键刷新。
 13. preview 双格式 + 三条 HTML 校验 + 超长占位文案（§10.3/10.4）。
-14. 页签条三级宽度降级（§9.8）。
-15. 读屏器不做 preview 假数据（§9.9）。
-16. 内部确认复用同一工具（§14）。
+14. 页签条四级宽度降级（§9.7.7）。
+15. 读屏器不做 preview 假数据（§9.8）。
+16. 多题确认页与单题自动提交两条路径（§9.7.2-9.7.4）。
+17. 内部确认复用同一工具（§14）。
 
 ### 明确「不要照抄」的五处
 
