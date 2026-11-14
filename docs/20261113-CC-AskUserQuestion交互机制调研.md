@@ -19,8 +19,14 @@
    并让 `checkPermissions()` 永远返回 `behavior: "ask"`，于是它天然获得
    「弹卡片 → 阻塞等用户 → 把用户的回答当作 `updatedInput` 回传」这条**已存在的**权限管道，
    不需要为它新造一套 UI↔引擎的通信协议。**这是整个机制最核心的设计复用。**
-2. **答案必须过一道「只能回答、不能篡改」的白名单校验**（`admitCardAnswer`），
-   由工具自己实现、引擎强制调用。用户/宿主改不了模型看到的题目、选项、预览。
+2. **答案要过一道「只能回答、不能篡改」的白名单校验**（`admitCardAnswer`），
+   由工具自己实现、引擎在**特定的答案策略分支上**调用。用户/宿主改不了模型看到的题目、选项、预览。
+   > ⚠️ **复核订正（2026-11-14）**：这条**不是**无条件成立的。`admitCardAnswer` 只在
+   > 答案策略 `kind === "strict"` 时被调用（`m2132:173-178`）；而 319 全库**没有任何地方产出
+   > `kind:"strict"`**（唯一的内置策略常量是 `Z8 = {kind:"launcher"}`）。交互式终端走的正是
+   > `launcher`。详见 §3.1「可达性」与 §18.1 第 1 条。
+   > 在 `launcher` 路径上，实际守住形状的是另外两道：`updatedInput` 的 **inputSchema 校验**
+   > （`m0591:181780-181790`）和 **hook 侧 `K1e` 深比较**（`m0591:138051` 等）。
 3. **把「没答」也建模成一等状态**（`unanswered: skipped|replied_in_chat|dismissed`、
    `afkTimeoutMs`、`followUp`），所以模型能区分「用户选了 A」/「用户没选但写了话」/
    「用户要求再问几个」/「用户走开了」。**这是它比大多数 agent 框架的 ask_user 更成熟的地方。**
@@ -177,7 +183,16 @@ if (Gzi(e) !== "detach" || ...) return !1;    // 只有 detach 才允许后台�
 
 CC 里声明 `backgrounding: "detach"` 的**只有两个内置工具**（全库 grep 确认）：
 `WebFetch`（`m0591:107215`）与 `WebSearch`（`m0816_0x124876ec.js:2188`）。
-其余内置工具全部 `"never"`（`m0591` 内 9 处）。
+其余内置工具全部 `"never"`（`m0591` 内 9 处，全库 89 处）。
+
+> **复核补充（2026-11-14）**：全库还有 **4 个工具声明 `backgrounding: "self"`**
+> （`m0591:222555`、`m0795:2238`、`m1531:3841`、`m2043:44`）。
+> 原文说"其余内置工具全部 never"**不准确**。不过 `"self"` 没有任何读取点：
+> 唯一读 `backgrounding` 的地方是 `Gzi(e) !== "detach"`（`m0591:179004`）
+> 和 `e?.backgrounding === "detach"`（`m0591:105547`），**两者都只认 `"detach"`**，
+> 所以 `"self"` 是死值（在当前版本里不影响行为，但说明这个字段还有未接线的一档）。
+> 对 AskUserQuestion 的结论不变：它是 `"never"`，行为等价于「永不后台化」。
+
 `AskUserQuestion` 从设计上**不允许被移出前台**：一个正在等用户回答的卡片如果被后台化，
 用户就再也看不到它了。
 
@@ -186,8 +201,8 @@ CC 里声明 `backgrounding: "detach"` 的**只有两个内置工具**（全库 
 
 ### 2.3 ③ `requiresUserInteraction()` 带来的四道自动旁路【S】
 
-这个布尔在引擎里被读了 **14 处**（`m0591` 内 `requiresUserInteraction` 出现次数）。
-关键几处：
+这个布尔在 `m0591` 内出现 **14 次**，其中 **11 次是调用** `requiresUserInteraction?.()`
+（另 3 次是定义/导出）。关键几处：
 
 | 位置 | 作用 |
 | --- | --- |
@@ -271,6 +286,73 @@ function hHr(e, n) { return n !== void 0 && e.mcpInfo === void 0 && gHr.has(e.na
 于是模型会以为「用户选了 B」，其实是宿主改的。
 `admitCardAnswer` 的作用是：**用户只能回答，不能改写问题。**
 
+#### 3.1.0 ⚠️ 可达性（复核订正，2026-11-14）：这道闸只在 `kind:"strict"` 上生效，而终端不是
+
+**这是本文最重要的一条订正，直接改变复刻结论。**
+
+`admitCardAnswer` **不是无条件调用**。引擎侧的调用点 `Ggi` 只有一个调用者——
+`m2132_0x138210f6.js:173-178` 的 `eTt`，而它位于 `switch (r.kind)` 的 **`case "strict"`** 分支里：
+
+```js
+switch (r.kind) {
+  case "launcher": {                       // ← 交互式终端走这条
+    let updatedInput = toolResult.updatedInput && Object.keys(toolResult.updatedInput).length > 0
+      ? toolResult.updatedInput
+      : i2(s.name, e);
+    return { ...toolResult, updatedInput, ... };   // 直接采信，不调 admitCardAnswer
+  }
+  case "strict": {                         // ← 只有这条调
+    let k = Ggi(toolResult.updatedInput, e, s, r.onAnswerNotAdmitted),
+        P = k === void 0 ? Vgi(r, toolResult.updatedInput, e, s) : void 0,
+        updatedInput_2 = k ?? P?.input;
+    ...
+}
+```
+
+而 `r.kind` 的取值来自「答案策略」对象。全库检索（raw 模块，字符串未被 minify 破坏）结果：
+
+| 检索 | 结果 |
+| --- | --- |
+| `Object.freeze({kind:"launcher"})` | **1 处**：`m0591:48905` 的 `Z8` |
+| `kind:"strict"` / `kind = "strict"` / `.kind = "strict"` | **0 处**（283 / 303 / 319 三版都是 0） |
+| `Z8`（`launcher`）的消费者 | `Kw`（主 `canUseTool`，`m0591:138300`）、`S$`、`m1982:53`、`m2124:86712`、`m2159` 的 `answers_3` |
+
+**结论：319 里没有任何代码路径会构造出 `kind:"strict"`。** 所有内置入口——
+交互式终端（`m2124:86712` 走 `Z8`）、teammate 车道（`m1982:53` 走 `Z8`）、
+headless / SDK 的 `--permission-prompt-tool` 与 `createCanUseTool`（`m2159` 里 `answers_3 === Z8`）、
+`createSandboxAskCallback`（`m2139:1775`）——传的都是同一个 `launcher` 策略。
+
+**于是必须区分两件事：**
+
+1. **`admitCardAnswer` 本身的规则设计是真实且完整的**（§3.2–§3.5 全部逐字可查，值得抄）；
+2. **但在 319 的交互式终端里它根本不会被调用**。终端上的 `updatedInput` 走 `launcher` 分支
+   被直接采信，随后由**另两道校验**兜底：
+   - **`updatedInput` 的 inputSchema 校验**（`m0591:181780`）：
+     ```js
+     Uo.updatedInput !== void 0 && !Ufe(Uo.updatedInput)) {
+       let xs = rus(e.inputSchema, Uo.updatedInput);
+       if (xs !== null) { /* 拒绝：permission_updated_input_invalid */ }
+     ```
+     `rus` 只过滤 `unrecognized_keys` 类错误（`m0591:181068`），所以「多塞字段」会被放行，
+     「字段类型错 / 缺必填」会被拒。
+   - **hook 侧 `K1e` 深比较**（`m0591:138051`、`138169`、`138184`、`m2132:841`）：
+     只在 PermissionRequest hook 参与时用，且语义是「hook 有没有改调用」，
+     不是「用户的答案有没有改题目」。
+
+**这对复刻意味着什么（重要）：**
+
+- 如果你要的是「终端里也一样安全」，那 **CC 319 做不到**，不能照抄成"引擎强制调用"。
+- `launcher` 与 `strict` 的差别是**信任模型不同**：`launcher` 假定交互式宿主可信
+  （终端 UI 是 CC 自己的），`strict` 假定宿主不可信（SDK / 远程 / `--permission-prompt-tool`
+  这类外部进程给的 `updatedInput` 必须逐字段核对）。
+- 复刻时**应当把 `admitCardAnswer` 挂到所有分支上**——这正是 §15「不要照抄」里该补的一条。
+  CC 之所以敢只在 `strict` 上挂，是因为它对自家终端 UI 有绝对控制权；这在你自己的实现里通常不成立。
+
+> 读法：**§3 余下各节讲的是"这道闸内部怎么设计"，请当作设计参考而不是 319 的运行时行为事实。**
+> 是否被调用、在哪条分支上被调用，以本节为准。
+
+#### 3.1.1 这道闸本身的实现
+
 引擎调用点（`m0591:48917` `Ggi`，下面按语义改写、省略了日志与 telemetry）：
 
 ```js
@@ -296,7 +378,20 @@ function K1e(e, n) { return m2t(e) || (e !== void 0 && d6(e, n)) }
 - `d6(e, n)`（`m0591:48862`）是**带预算的深度相等**：先 `Mxt` 量一遍
   （`values / depth / chars` 三项，超过 `nZo` / `tZo` / `rZo = 1048576` 就放弃并 warn），
   再 `vGo(ee(_(e)), ee(_(n)))` 比对。**它是防 DoS 的**：一个超深的答案对象不会把引擎卡死。
-- `m2t(e)`（`m0591:49231`）判「是不是宿主的 `cardForms` 那一类形状」。
+- `m2t(e)`（`m0591:49231`）判「答案是不是**空对象**」——注意不是"宿主的 `cardForms` 形状"：
+
+  ```js
+  function m2t(e) { return e === void 0 || Object.keys(e).length === 0 }
+  ```
+
+  > **复核订正（2026-11-14）**：原文把它写成「判是不是宿主的 `cardForms` 那一类形状」，**错**。
+  > 它判的是「空 == 用户什么都没改」。所以第 ① 条 `K1e(e,n)` 的整体含义是：
+  > **「答案为空」或「答案与原输入深度相等」⇒ 视为未改动**。
+  > 空答案时走 `i2(r.name, n)`——`i2`（`m0591:48759`）按 `bGo` 表剥掉 plan 模式专属字段
+  > （`bGo = new Map([[ec, new Set(["plan","planFilePath"])]])`，`m0591:48747`），
+  > **这是「进 plan 模式时不受理的字段要剥掉」的处理，与 cardForms 无关。**
+  > 真正的 `cardForms` 在 `Vgi`（`m0591:48951`）里，且**只对 MCP 工具**
+  > （`if (s.mcpInfo === void 0) return;`）生效。两者被原文混成一条了。
 
 所以第 ① 条的真实含义是：**「用户什么都没改」也要先付一次有界的深比较成本**。
 第 ② 条：**没实现 `admitCardAnswer` 的工具不受此约束**——这是向后兼容的缺口，
@@ -481,9 +576,13 @@ alone in a new call.
 
 ## 5. 答案回给模型的形态：`mapToolResultToToolResultBlockParam`
 
-### 5.1 五种结局，五段话术【S】
+### 5.1 六种结局，六段话术【S】
 
 `m0805:663`。按优先级判定（前一个命中就不看后面）：
+
+> **复核订正（2026-11-14）**：原文标题写「五种结局，五段话术」，但同一张表列了 6 行，
+> 源码也是 6 个分支（`if(afk)/else if(followUp)/else if(response)/else if(c)` 再在 `c` 里二分
+> + 最后的 else）。已改为六。
 
 | 序 | 条件 | 回给模型的文本 |
 | --- | --- | --- |
@@ -594,6 +693,20 @@ askUserQuestionTimeout: () => B(["60s", "5m", "10m", "never"]).optional().catch(
 - `n0` 只从**安全层**读（`m0126:4614` `jfa = ["policySettings","flagSettings","userSettings"]`，
   取值器 `vte` 在 `:4615`），
   **不读仓库里的 `.claude/settings.json`**——否则一个仓库就能让你「自动同意一切」。
+
+  > **复核补充（2026-11-14）**：`vte` 的过滤条件比"只读这三个来源"更严格。它不是无条件读，
+  > 而是每个来源还要过一次 `Kt(source)` **或** `UJ()` 里的 restrictive 声明
+  > （`m0126:4620-4621`）：
+  >
+  > ```js
+  > if (value_7 !== void 0 && (Kt(source_3) ||
+  >     UJ().some(item => item.path.length === 1 && item.path[0] === e &&
+  >        hHe(item.restrictive).some(h => h === zSe(item, s))))) n.push(...)
+  > ```
+  >
+  > 也就是说：来源固定为 `policySettings / flagSettings / userSettings` 三者，
+  > **在此之上**还要么该来源可信（`Kt`），要么这一项被显式标成了 restrictive。
+  > 结论（仓库不能设置）不变，但机制比原文描述的「只从这三个来源读」多一层开关。
 - 映射成毫秒（`m0349_0x1193beaf.js:11762`）：`{"60s":60000,"5m":300000,"10m":600000}`（`Pbs`）。
 
 ### 7.2 计时器【S】
@@ -801,12 +914,25 @@ let _r = [...jn, ...wr, ...rs];    // jn=真实选项  wr=[Other行](或空)  rs
 
 三个开关：
 
-- `hideOtherRow`（`cZ` 的 `$e`，`full:68343`；默认化在 `full:68360`）：
+- `hideOtherRow`（`cZ` 的 `$e`，`full:68343`；默认化在 `full:68360` 的 `no = $e === void 0 ? !1 : $e`）：
   由上游 `sAe` 传 `M.isEngineConfirm && M.metadataSource === Hqr`（`full:69414`）
   ⇒ **引擎内部确认弹窗不给 Other 行**。
-  `Hqr` 就是 `m2122_0x13630d78.js:82` 的 `"mod_hot_reload"`（热更新插件的渲染来源）。
-- `no`（`isInTextInput`，`full:68487` 的 `wr = no ? [] : [qr]`）：
-  光标进入 Other 的文本框时，**列表里的 Other 行被移除**（否则同一行出现两次）。
+  `Hqr` 就是 `m2122_0x13630d78.js` 里 `source = "mod_hot_reload"` 的导出别名（`m2122:850` 的
+  `export { source as Hqr, ... }`，`source` 定义在同一文件内）——
+  **确认无误，这是热更新插件的渲染来源。**
+
+  > **复核订正（2026-11-14）**：原文下面这一段把 `no` 说成 `isInTextInput`，**是错的。**
+  > `cZ`（`full:68333`–`68684`）**整个函数体里没有任何 `isInTextInput`**
+  > （`awk 'NR>=68333 && NR<=68684' | grep -c isInTextInput` → 0）。
+  > `isInTextInput` 只出现在 `tZ`（状态机，`full:67638/67642/67669/67675/67683/67719`）
+  > 和 `sAe` 的解构里（`full:69129`），**不属于 `cZ`**。
+  >
+  > `cZ` 里真正控制「Other 行去留」的**只有** `no`（= `hideOtherRow`），
+  > 见 `full:68487` 的 `wr = no ? [] : [qr]`——**没有任何"光标进文本框就移除 Other 行"的逻辑**。
+  > 原文那条描述在 319 源码里找不到依据。
+
+- `no`（= `hideOtherRow`，见上）：**唯一的 Other 行开关**。
+  另有一处 `vn = D.options.length + (no ? 1 : 2)`（`full:68404`）用它算「Chat about this」的编号位。
 - `ao`（`ot()`，读屏器，`full:68479-68483`）：`ao && !D.multiSelect` 才给 Chat 行
   ⇒ **读屏模式下多选不给「Chat about this」**，只有单选给。
 
@@ -863,7 +989,7 @@ deny 之后模型收到的就是标准的
 
 ### 9.5 键盘：一套可读的约定【S】
 
-`full:68041` `Ar`（onKeyDown）：
+`full:68041` `Ar`（onKeyDown，**位于 `tZ`（`full:67897`）内**，不在 `cZ`）：
 
 ```
 Esc            → 取消
@@ -879,6 +1005,16 @@ Ctrl+G         → 在外部编辑器里编辑当前输入
 底部提示条只在能力可用时显示（`full:68241-68273`）：
 `enter select · ↑↓ navigate · n add notes · tab switch questions · Ctrl+G edit in X · esc cancel`。
 **「提示条文案由实际可用能力生成」**——`fi` 那一项只有 `$t && ao` 才出现（`full:68261-68266`）。
+
+> **复核补充（2026-11-14）**：`1–9` 的判定条件是 `or.key.length === 1 && or.key >= "1" && or.key <= "9"`
+> （`full:68064`），然后用 `parseInt(key,10)-1` 去比 `yo.length`——**这是 9 项以内的直接选择**。
+> 注意 `full:68064` 这一行紧跟 `escape` 分支之后，`n`（add notes）在它之前
+> （`full:68063` `or.key === "n" && !or.ctrl && !or.meta`），所以按 `n` 不会落到数字分支。
+>
+> `cZ`（单题表单）自己**也有一套更简的键盘处理**（`full:68394-68407`），只有
+> `up/ctrl+p`、`return`、`escape`、`up/down` 四种，**不含数字选择与 `n`**。
+> 数字选择与 `n` 只在 `tZ` 的文本框/选项列表上生效。
+> 原文把两者混成一节，容易让人以为单题表单也支持 `1–9`。
 
 ### 9.6 多选 vs 单选的两种控件【S】
 
@@ -967,8 +1103,12 @@ e(Jn, { confirmLabel: "Submit answers", cancelLabel: "Cancel", ... })   // full:
 68878/68880   kind: "withheld"
 68882         kind: "full"
 69054   if (It.preview?.kind !== "full") { ... }
-69617   wt = nt?.preview?.kind === "full" ? ... : void 0
+69535   wt = nt?.preview?.kind === "full" ? nt.preview.markdown : void 0
 ```
+
+（上表最后一行原写 `69617`，**2026-11-14 复核订正为 `69535`**；
+`69617` 那一行实际是 `function m4n({`，与 `kind` 无关。
+重扫区间 `67897`–`69640` 后，命中数仍是 5 组、全部为 `preview.kind`，结论不变。）
 
 同一区间内也**没有** `placeholder` / `step` / 数字滑块相关的处理
 （命中的 `Math.max` 全是宽度/行数计算，`placeholder` 只有 Other 行与 Notes 输入框）。
@@ -1248,7 +1388,7 @@ if (I && i.CLAUDE_CODE_QUESTION_OPTIONAL_DESCRIPTIONS) JGs(!0);
 ### 12.4 设置项【S】
 
 `askUserQuestionTimeout`（§7.1）、`dialogExpiry`（`m0126:4659` `azn()`）。
-两者都只从 `policySettings` / `flagSettings` / `userSettings` 读（`jfa`，`m0126:4626`），
+两者都只从 `policySettings` / `flagSettings` / `userSettings` 读（`jfa`，`m0126:4614`），
 **仓库/项目 settings 不能设置它们** —— 这是安全设计：不能让一个仓库决定「自动同意」。
 
 ---
@@ -1438,6 +1578,10 @@ function Kat(e) {
 代价是内部调用要 `forcedByCaller` + 隐藏 Other；收益是**永远只有一条交互管道要维护**。
 如果复刻时另造一套「确认对话框」，这两条路径的分歧会成为长期 bug 源。
 
+> ⚠️ 这里说"同一个准入函数"指的是**代码只有一份**（`m0805` 的 `admitCardAnswer`），
+> 但**它是否被调用取决于答案策略**，而内部确认与终端提问都走 `launcher`（`Z8`），
+> 所以实际上**两边都没有跑这道闸**（§3.1.0）。"共用"是架构上的，不是运行时的。
+
 ---
 
 ## 15. 复刻清单（按优先级）
@@ -1448,10 +1592,11 @@ function Kat(e) {
    最小接口：`requiresUserInteraction() -> true` + `checkPermissions() -> {behavior:"ask", updatedInput}`。
 2. **`admitCardAnswer(shown, answer)` 准入函数**，四条规则逐条实现：
    禁宿主字段、禁重带已显示字段、禁未知字段、禁改已显示值。
+   **并且必须挂到所有答案路径上**——319 只挂在 `kind:"strict"` 上，而那条分支没有生产者（§3.1.0）。
 3. **引擎侧二次校验**（§3.1 末段）：每个原字段都要在结果里原样存在。
-   不信任 admitter 自己报的 ok。
+   不信任 admitter 自己报的 ok。**同样只存在于 `strict` 分支**，复刻时要自己接全。
 4. **`answers` 的 key 用问题原文**，并且**强制问题文本唯一**（否则答案串）。
-5. **五种结局分支**都要有独立话术（§5.1），尤其是「有答案但不规整」那一支。
+5. **六种结局分支**都要有独立话术（§5.1），尤其是「有答案但不规整」那一支。
 
 ### P1：决定体验好坏的
 
@@ -1474,10 +1619,14 @@ function Kat(e) {
 15. 读屏器不做 preview 假数据（§9.9）。
 16. 内部确认复用同一工具（§14）。
 
-### 明确「不要照抄」的四处
+### 明确「不要照抄」的五处
 
 - ❌ **`header` 的 12 字符上限只写在描述里**，schema 没卡（§1.1）。要强约束就自己加 `.max()`。
 - ❌ **`admitCardAnswer` 未实现时直接放行**（§3.1 第 ② 条）。安全优先应反过来。
+- ❌ **`admitCardAnswer` 只挂在 `kind:"strict"` 分支上**（§3.1.0）。
+  319 里这条分支**没有生产者**，交互式终端走的是 `launcher`，答案被直接采信。
+  CC 敢这么做是因为终端 UI 是它自己的、宿主可信；**你的实现里通常没有这个前提**，
+  所以应当把准入函数挂到**所有**分支上，只保留"空答案/深度相等"这一条快路径。
 - ❌ **`multiSelect` 答案用 `", "` 拼串**。标签里带逗号时必须靠引号转义（§1.4），
   一旦你的下游不用 `W()` 反解就会错位。建议直接存数组。
 - ❌ **`answers` 以问题原文为主键**。问题一改（哪怕加个标点）答案就全丢。
@@ -1600,7 +1749,7 @@ python work/_chunkmap.py who work/_chunkmap319.json chunk-kfm993xq.js
 | AFK 计时器 `qPe` | 同上 `:68795` |
 | AFK 倒计时条 `iAe` | 同上 `:69458` |
 | 对话框描述符 `dialog_4` | `reconstructed319/deminified/m1980_0x13438c9a.js:132` |
-| 渲染 payload `build_3` | 同上 `:432` |
+| 渲染 payload `build_3` | 同上 `:430`（`build_4` 在 `:258`；`hasExternalRacer` 传递在 `:318`） |
 | 权限对话匹配表 | 同上 `:1888-1930` |
 | 远程对话框发送 `kbs` | `reconstructed319/deminified/m0349_0x1193beaf.js:9965` |
 | AFK 设置常量 `Pbs` | 同上 `:11762` |
@@ -1608,7 +1757,7 @@ python work/_chunkmap.py who work/_chunkmap319.json chunk-kfm993xq.js
 | 能力开关读取 | `reconstructed319/deminified/m0040_0x11239205.js:5399-5415` |
 | 能力设置时机 | `reconstructed319/deminified/m0975_0x1267ad81.js:944-951` |
 | 设置项 schema | `reconstructed319/deminified/m0094_0x112cc57f.js:7542` |
-| 设置项读取 | `reconstructed319/deminified/m0126_0x1139c145.js:4626-4659` |
+| 设置项读取 | `reconstructed319/deminified/m0126_0x1139c145.js:4614-4659`（`jfa` 在 `:4614`，`vte` 在 `:4615`，`kBt` 在 `:4655`，`azn` 在 `:4658`） |
 | 引擎准入调用 `Ggi` | `reconstructed319/deminified/m0591_0x11be624e.js:48917` |
 | 引擎二次校验 | 同上 `:48930` |
 | `requiresUserInteraction` 强制 ask | 同上 `:140842` |
@@ -1638,13 +1787,54 @@ python work/_chunkmap.py who work/_chunkmap319.json chunk-kfm993xq.js
    `answers`/`annotations` 的组装在 `CZ`（`full:69523`）里很清楚，
    但 `response` 字段在哪里被写进 `updatedInput` 没定位到。
    可能是远端/SDK 宿主专有字段（`afkTimeoutMs`/`followUp` 都有明确来源，`response` 没有）。
+
+   > **复核更新（2026-11-14）**：这一条**再验一次仍然成立**，而且证据更硬了：
+   > 用 `grep -n 'response:'` 扫 `full` 的整个 AUQ 对话框区间（`67700`–`69700`）**零命中**；
+   > 全库唯一一处 `response: f(wr.answer.response)`（`full:55618`）属于 **feedback survey**
+   > （外层 `function LCe({...})` 在 `full:55322`），与 AskUserQuestion 无关。
+   > AUQ 的 UI 只有 `onRespondToClaude`（"Chat about this"），它走的是
+   > **`deny + feedback`**（§9.3），**不是** `response` 字段。
+   > 所以 `response` 在当前版本里是**只读不写**的字段：schema 认它、结果映射用它，
+   > 但 319 自身没有任何生产点。复刻时可以直接把它当"宿主扩展位"。
 3. **`unanswered: "replied_in_chat"` 的实际写入点在引擎侧没找到。**
    只在 schema 描述与能力名里出现；UI 侧的 `Ci(lo, "afk_timeout")`
-   （`full:69385`）是「跳过统计」，不是写 `unanswered`。
+   （`full:69397`）是「跳过统计」，不是写 `unanswered`。
    推测由远端宿主在 `admitCardAnswer` 之前的答案体里给出，未验证。
+
+   > **复核更新（2026-11-14）**：行号已订正 `full:69385` → **`full:69397`**
+   > （`69385` 那一行是 `if (N(ol) === !1) {`）。
+   > 另外，"推测由远端宿主给出"这一步现在有了旁证：`replied_in_chat` 在 319 全库只出现在
+   > **2 个文件**里——`m0805`（工具 schema/校验）与 `m0165`（协议能力描述）。
+   > **UI 模块 `m2124` 完全不含这个字面量**，所以终端确实不产出它。
 4. **`hasExternalRacer`（外部竞争应答者）的完整语义没追。**
    只在 `full:14460` 见到置 true 的一处，与 AFK 的互斥关系是读代码推断的。
-5. **`Gt()`**（AFK 禁用的那个模式判定）没定位到定义。
+
+   > **复核更新（2026-11-14）**：置 true 的位置追到了——它在
+   > **`async function iz(h)`（`full:14451`）** 里，而这个函数是
+   > **"工具参数渲染失败"的兜底卡片**路径（同函数内 `toolUseRenderFailed: !0`）。
+   > 两个调用点：`full:14750` 与 `full:88053`（后者是 served-call / 设备桥路径）。
+   > 语义即：**兜底卡片已经由另一条通道确认在展示**，所以 AFK 自动继续必须让位
+   > （与 `full:69353` 的 `!M.hasExternalRacer` 互斥）。
+   > 传递链已确认：`build_4`（`m1980:258`）末尾 `hasExternalRacer: e.hasExternalRacer ?? !1`。
+   > 这已从"推断"升级为"A 级"。
+5. ~~**`Gt()`（AFK 禁用的那个模式判定）没定位到定义。**~~ → **已定位（2026-11-14）**：
+   `m0191_0x1155a4cc.js:36090`：
+
+   ```js
+   function E4() {
+     let CLAUDE_CODE_SESSION_KIND = i.CLAUDE_CODE_SESSION_KIND;
+     if (CLAUDE_CODE_SESSION_KIND === "bg" || CLAUDE_CODE_SESSION_KIND === "daemon" ||
+         CLAUDE_CODE_SESSION_KIND === "daemon-worker") return CLAUDE_CODE_SESSION_KIND;
+     return;
+   }
+   function Gt() { return E4() === "bg"; }
+   ```
+
+   ⇒ **`Gt()` 只在 `CLAUDE_CODE_SESSION_KIND === "bg"` 时为真**，
+   即「后台会话」里不给 AFK 倒计时（没有人在前台看它）。
+   注意它**只认 `"bg"`**，不认 `daemon` / `daemon-worker`（那两个值能被 `E4()` 返回，
+   但 `Gt()` 显式比 `"bg"`）——这是个容易抄错的细节。
+   m2124 通过 `chunk-1ks9vs37.js` 引入同一个 `Gt`。
 6. **283 → 319 的逐行 diff 没做**，§16 只是关键字符串命中对比。
 7. **`preview` 在 html 宿主下的实际渲染**没看到（终端只有 markdown 路径）。
 8. **多客户端会话下 `supportedDialogKinds` 的「first-attached-client-wins」**
@@ -1677,6 +1867,51 @@ python tools/audit_doc_citations.py docs/20261113-CC-AskUserQuestion交互机制
 第 1 条是唯一会直接误导复刻的。其余 8 条是行号偏移，描述本身没错。
 **教训**：行号引用必须机器复算，人工记忆在 2.7 MB 的模块里误差普遍在 1–5 行。
 
+### 18.2 第二轮独立复核（2026-11-14，为「复现到 GA」而做）
+
+第二轮针对「这些结论能不能照着重写」而做，不复算排版，只查**语义**是否站得住。
+方法：把 188 条引用重新解析到源码（`work/_rev_audit.py` → `work/_rev_citations.tsv`），
+再对每个非平凡断言回读原文窗口；对「有没有生产者/消费者」这类问题，
+直接在**未改名的 raw 模块**上检索字符串（minify 保留了所有字符串字面量，这是最硬的证据）。
+
+修正 **1 条会直接写错实现的**、**5 条语义错误**、**4 处行号/计数**：
+
+| # | 位置 | 原文问题 | 订正 |
+| --- | --- | --- | --- |
+| **1** | §0.2 / §3.1 / §15 | 称 `admitCardAnswer`「**引擎强制调用**」，是安全保证 | **最重要的一条错误**。它只在答案策略 `kind:"strict"` 分支被调（`m2132:173-178`）；而 **283/303/319 三版都没有任何 `kind:"strict"` 的生产者**（raw 检索 0 命中），唯一内置策略是 `Z8 = {kind:"launcher"}`（`m0591:48905`）。交互式终端（`m2124:86712`）、teammate 车道（`m1982:53`）、headless/SDK（`m2159` 的 `answers_3`）、sandbox ask（`m2139:1775`）**传的全是 `Z8`**。新增 §3.1.0 专节说明可达性，并补进 §15「不要照抄」 |
+| 2 | §3.1 | `m2t(e)` 判「是不是宿主 `cardForms` 那一类形状」 | **错**。`m2t(e){return e===void 0\|\|Object.keys(e).length===0}` 是**判空**。真正的 `cardForms` 在 `Vgi`（`m0591:48951`），且**只对 MCP 工具**（`if(s.mcpInfo===void 0)return`）。两者是不同机制，原文混成一条 |
+| 3 | §9.2 | `no` 变量是 `isInTextInput`，「光标进 Other 文本框就移除 Other 行」 | **错**。`cZ` 整个函数体（`full:68333`–`68684`）**零处 `isInTextInput`**（`grep -c` → 0）。`no = $e === void 0 ? !1 : $e`（`full:68360`），其中 `$e` 是 `hideOtherRow`。`isInTextInput` 只在 `tZ` 与 `sAe` 里。「光标进文本框移除 Other 行」在 319 里**没有依据** |
+| 4 | §9.5 | 「`full:68041` `Ar`」当成主对话框的键盘约定，暗示单题表单也支持 `1–9` | **错位**。`Ar` 在 `tZ`（`full:67897`）内。`cZ` 有自己更简的一套（`full:68394-68407`），**只有 up/ctrl+p/return/escape，没有数字选择与 `n`** |
+| 5 | §2.2 | 「其余内置工具**全部** `"never"`」 | **不准确**。全库另有 **4 个工具声明 `"self"`**（`m0591:222555`、`m0795:2238`、`m1531:3841`、`m2043:44`）。不过 `"self"` 是**死值**（唯一两个读取点都只比 `"detach"`：`m0591:179004`、`m0591:105547`）。
+| 6 | §5.1 | 标题「五种结局，五段话术」，表里 6 行 | 源码确是 **6 个分支**，标题已改 |
+| 7 | §2.3 | 「读了 **14 处**」 | m0591 内出现 14 次，其中 **11 次是调用** `requiresUserInteraction?.()`，另 3 次是定义/导出 |
+| 8 | §12.4 | `jfa` 引 `m0126:4626` | 实际 **`:4614`**（`vte` 在 `:4615`） |
+| 9 | §18.3 | `Ci(lo,"afk_timeout")` 引 `full:69385` | 实际 **`full:69397`**（69385 是 `if (N(ol) === !1) {`） |
+| 10 | §7.1 | 「只从三个来源读」 | 不完整：`vte` 每个来源还要过 `Kt(source) \|\| UJ().some(...restrictive...)`（`m0126:4620-4621`）。结论不变，机制多一层 |
+
+**同时把 3 条「已知缺口」推进了：**
+
+- `Gt()` 定位到 `m0191:36090`（`return E4()==="bg"`，`E4()` 读 `CLAUDE_CODE_SESSION_KIND`）。
+  **注意它只认 `"bg"`，不认 `daemon`/`daemon-worker`**，尽管 `E4()` 会返回后两者。
+- `hasExternalRacer` 的生产点追到 `iz()`（`full:14451`）——**工具参数渲染失败的兜底卡片**路径，
+  传递链经 `build_4`（`m1980:318`）的 `hasExternalRacer: e.hasExternalRacer ?? !1`。从推断升为 A 级。
+- `response` **再验仍无生产者**：`full` 的 AUQ 区间（`67700`–`69700`）`grep "response:"` 零命中；
+  全库唯一 `response: f(wr.answer.response)`（`full:55618`）属于 feedback survey（外层 `LCe`，`full:55322`）。
+  AUQ 的「Chat about this」走 `deny + feedback`，**不是** `response`。⇒ `response` 在 319 是**只读不写**字段。
+
+**复算脚本**（可重跑，均为独立 `.py`，符合 AGENTS.md「heredoc 不跑逻辑」）：
+
+```bash
+python work/_rev_audit.py        # 188 条引用 → work/_rev_citations.tsv
+python work/_rev_kind_scan.py    # 扫 kind:"strict"/"launcher"/"composer" 的生产者
+python work/_rev_strict_ctx.py   # 7 个相关模块里所有 "strict" 字面量的上下文
+```
+
+**教训（比 §18.1 更值得记）**：上一轮只查了「行号对不对」，所以第 1 条这种
+**「函数存在、行号正确、但根本不会被调用」**的错误查不出来。
+**复算行号 ≠ 核实语义。** 对每条「机制 X 保证了 Y」的断言，
+必须额外追问一句：**X 在这个版本里到底有没有被调用？调用点在哪条分支上？**
+
 ---
 
 ## 19. 一句话复刻建议
@@ -1684,6 +1919,10 @@ python tools/audit_doc_citations.py docs/20261113-CC-AskUserQuestion交互机制
 > **把「提问」实现成权限请求的一个特例，用准入函数守住「只能答不能改」，
 > 再把「没答完 / 只写备注 / 想聊聊 / 要求再问 / 人走开了」这五种非标准结局
 > 各自建模成显式状态，而不是让模型去猜。**
+
+> ⚠️ 但前半句要按 §3.1.0 修正：CC 319 自己**只在 `strict` 分支上**挂准入，
+> 而交互式终端走 `launcher`，实际并没有挂。**照抄它的接线方式会得到一个没有准入的实现。**
+> 抄它的**规则**（§3.2–§3.5 那四条 + 二次确认），把准入挂到**所有**分支上。
 
 这就是 CC 这套机制能长期稳定工作的全部秘密：
 **它把不确定性收进了枚举，而不是留给提示词。**
