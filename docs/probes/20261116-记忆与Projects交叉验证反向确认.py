@@ -90,6 +90,19 @@ def case_i():
                     "m0832_0x124c3af6.js", ".default(5)", expect_line=959)
 
 
+def case_j():
+    """本轮最严重的错误：把 CJK 加权套到默认 legacy 路径上。
+    加权在 bt（:137），legacy 走 Rt（:219）——在 Rt 那一行找不到加权正则。"""
+    return cv.check("J 在 legacy 的 Rt 行找 CJK 加权正则（该行没有）",
+                    "m0832_0x124c3af6.js", "Script=Han", expect_line=219)
+
+
+def case_k():
+    """把 KEPT_MOST（nD=200）与 SHOWN_MOST（pTe=20）当成同一个常量。"""
+    return cv.check("K 在 nD 定义行找 SHOWN_MOST 的次常量 pTe（不同行）",
+                    "m0591_0x11be624e.js", "var pTe = 20;", expect_line=69141)
+
+
 run_case("D. 正确断言 + 正确行号 -> 应 PASS", case_d, True)
 run_case("A. 正确内容 + 错行号 -> 应 FAIL", case_a, False)
 run_case("B. 不存在的字符串 -> 应 FAIL", case_b, False)
@@ -99,8 +112,10 @@ run_case("F. 字节偏移当行号（本轮真实踩过的坑）-> 应 FAIL", ca
 run_case("G. 跨模块 must_not -> 应 PASS（m0848 确实没有）", case_g, True)
 run_case("H. 多处命中未指定 nth -> 应 FAIL", case_h, False)
 run_case("I. schema 默认值写错模块 -> 应 FAIL", case_i, False)
+run_case("J. 把 chat 的 CJK 加权套到 legacy 行 -> 应 FAIL", case_j, False)
+run_case("K. 混淆 KEPT_MOST 与 SHOWN_MOST -> 应 FAIL", case_k, False)
 
-print("== 反向确认：九个用例都应满足预期 ==")
+print("== 反向确认：十一个用例都应满足预期 ==")
 allok = True
 for passed, name, expect, got, detail in CASES:
     tag = "PASS" if passed else "BROKEN"

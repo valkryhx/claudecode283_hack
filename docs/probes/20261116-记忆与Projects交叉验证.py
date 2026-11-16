@@ -454,6 +454,49 @@ def main():
           "默认配置下 every_n_turns=5 + CJK 加权 prose 判定 => 实际写入频率远低于每轮")
 
     # =====================================================================
+    # M. 第三轮自审订正：读/写机制里被上一版写错或写浅的地方
+    # =====================================================================
+    # M1: .slice(0,5) 属于 Uzr（relevant_memories），不是 nested_memory 的上限
+    check("M1 .slice(0,5) 在 Uzr 内，产出 relevant_memories（不是 nested_memory 上限）",
+          M0591_319, 'type: "relevant_memories",', expect_line=153873)
+    check("M2 nested_memory 的 _0n 内部无条数 slice",
+          M0591_319, "async function _0n(e, n, r, s, h = null, y = !1) {", expect_line=153040)
+    # M3: nD 的导出名是 KEPT_MOST；SHOWN_MOST 是另一个常量
+    check("M3 nD 的导出名 KEPT_MOST（扣留保留上限）",
+          M0591_319, "KEPT_MOST: () => nD,", expect_line=7077)
+    check("M4 SHOWN_MOST 是独立常量（展示条数，与 KEPT_MOST 不同）",
+          M0591_319, "SHOWN_MOST: () => pTe,", expect_line=7080)
+    check("M5 pTe = 20（展示条数）", M0591_319, "var pTe = 20;", expect_line=69194)
+    check("M6 aXo = 200（扫描文件数上限，与 nD 同值但不同常量）",
+          M0591_319, "var aXo = 200,", expect_line=68606)
+    # M7: 默认 legacy 模式无 CJK 加权
+    check("M7 legacy 模式的 Rt 用纯空格分词 Pe（无 CJK 加权）",
+          M0832_319, "var vt = 3;", expect_line=218)
+    check("M8 Pe 是 split(/\\s+/) 纯空格分词",
+          M0832_319, "function Pe(e) {", expect_line=131)
+    check("M9 CJK 加权只存在于 chat 模式的 bt",
+          M0832_319, "function bt(e, r) {", expect_line=137)
+    check("M10 prose 两模式分流：chat 走 Dt、否则走 $t",
+          M0832_319, 'ur = Fe ? Dt(messages_2, config_2.minProseWords, st) : $t(messages_2, sinceUuid_2)',
+          expect_line=948)
+    # M11: MEMORY.md 排除有两套分支
+    check("M11 U3e 的三目：有 promptIndex 走集合、否则只按文件名排除",
+          M0591_319, 'oXo(e) !== "MEMORY.md")', expect_line=68652)
+    # M12: V$t 有旗标旁路
+    check("M12 V$t 在 fet() 为 null 时仍有旗标旁路",
+          M0191_319, 'if (!v("tengu_passport_quail", !1)) return !1;', expect_line=2593)
+    # M13: 真实闸门数量
+    check("M13 权限闸（第 6 道）", M0832_319, "if (Ue !== void 0) {", expect_line=977)
+    check("M14 竞态闸·新轮次已开始（第 7 道）", M0832_319, "if (V5() !== promptIndex_2) {", expect_line=997)
+    check("M15 竞态闸·工具被 hold（第 8 道）", M0832_319, "if (o8e(toolPermissionContext_3)) {", expect_line=1001)
+    check("M16 超额闸 when_overage=skip（第 9 道）", M0832_319, 'if (_e === "skip") {', expect_line=1005)
+
+    blank("M17 结论：上一版有三处写错/写浅，本节订正",
+          "(a) .slice(0,5) 是 relevant_memories 候选上限，不是 nested_memory；"
+          "(b) CJK 加权只在 chat 模式，默认 legacy 用纯空格分词 => 中文几乎过不了 prose 闸；"
+          "(c) 闸门是 9 道不是 5 道；另补 KEPT_MOST vs SHOWN_MOST、V$t 旗标旁路、U3e 两套排除分支")
+
+    # =====================================================================
     # 输出
     # =====================================================================
     passed = [r for r in RESULTS if r[0] is True]
