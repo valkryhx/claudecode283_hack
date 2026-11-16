@@ -103,6 +103,19 @@ def case_k():
                     "m0591_0x11be624e.js", "var pTe = 20;", expect_line=69141)
 
 
+def case_l():
+    """第五轮的假设错误：以为 nested_memory 也会避开 relevant_memories。
+    azr 里只有 nested_memory 的 flatMap，没有 relevant_memories 字样。"""
+    return cv.check("L 在 azr 去重函数里找 relevant_memories（不存在，是单向去重）",
+                    "m0591_0x11be624e.js", 'r.type === "relevant_memories"', expect_line=151796)
+
+
+def case_m():
+    """以为 .slice(0,5) 的 5 有配置键。Uzr 体内 0 处 v(" / .data. / config。"""
+    return cv.check("M 在 Uzr 的 slice 行找配置读取（硬编码，没有）",
+                    "m0591_0x11be624e.js", 'v("', expect_line=153870)
+
+
 run_case("D. 正确断言 + 正确行号 -> 应 PASS", case_d, True)
 run_case("A. 正确内容 + 错行号 -> 应 FAIL", case_a, False)
 run_case("B. 不存在的字符串 -> 应 FAIL", case_b, False)
@@ -114,8 +127,10 @@ run_case("H. 多处命中未指定 nth -> 应 FAIL", case_h, False)
 run_case("I. schema 默认值写错模块 -> 应 FAIL", case_i, False)
 run_case("J. 把 chat 的 CJK 加权套到 legacy 行 -> 应 FAIL", case_j, False)
 run_case("K. 混淆 KEPT_MOST 与 SHOWN_MOST -> 应 FAIL", case_k, False)
+run_case("L. 以为去重是双向的 -> 应 FAIL", case_l, False)
+run_case("M. 以为 5 可配置 -> 应 FAIL", case_m, False)
 
-print("== 反向确认：十一个用例都应满足预期 ==")
+print("== 反向确认：十三个用例都应满足预期 ==")
 allok = True
 for passed, name, expect, got, detail in CASES:
     tag = "PASS" if passed else "BROKEN"

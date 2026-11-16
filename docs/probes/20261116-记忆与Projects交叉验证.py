@@ -497,6 +497,34 @@ def main():
           "(c) 闸门是 9 道不是 5 道；另补 KEPT_MOST vs SHOWN_MOST、V$t 旗标旁路、U3e 两套排除分支")
 
     # =====================================================================
+    # N. 第五轮：两条通道的去重方向 + slice(0,5) 是否可配置 + 召回总开关
+    # =====================================================================
+    check("N1 azr 只拿 nested_memory 的 path 去压 withheld（不看 relevant_memories）",
+          M0591_319, 'r.type === "nested_memory" ? [r.path] : []', expect_line=151796)
+    check("N2 _0n 的去重只看 readFileState",
+          M0591_319, "if (n.readFileState.has(G.path)) continue;", expect_line=153045)
+    check("N3 Uzr 的过滤链含 readFileState 与历史 relevant paths",
+          M0591_319, "!THn(s, ot.path, Y)", expect_line=153870)
+    check("N4 THn 判据 = readFileState.has 且 offset 未定义",
+          M0591_319, "return e.has(n) && (!r || e.get(n)?.offset === void 0)", expect_line=153837)
+    check("N5 jzr 收集历史 relevant_memories 的 path",
+          M0591_319, 'if (s.attachment.type === "relevant_memories")', expect_line=153883)
+    check("N6 记忆召回入口 Ivi",
+          M0591_319, "function Ivi(e, n, r, s) {", expect_line=153923)
+    check("N7 memorySelector 恒由 Gge() 构造（不是开关）",
+          M0591_319, "function Gge() {", expect_line=85557)
+    check("N8 召回的真正门禁 = fh() && lSe()",
+          M0591_319, "let y = fh() && lSe(),", expect_line=153926)
+    check("N9 召回还要求当前输入含空白（/\\s/ 测试）",
+          M0591_319, "if (!N || !/\\s/.test(N.trim())) return;", expect_line=153932)
+
+    blank("N10 结论：去重是单向的 + 召回有两个语言相关的硬条件",
+          "(a) relevant_memories 借 readFileState 间接避开 nested_memory，"
+          "但反向不去重 => 存在重复窗口，代码层无保证；"
+          "(b) .slice(0,5) 是硬编码（Uzr 体内 0 处配置读取），不可配；"
+          "(c) 召回要求输入含空白，中文整句不带空格则连召回都不触发——与 prose 闸同一类问题")
+
+    # =====================================================================
     # 输出
     # =====================================================================
     passed = [r for r in RESULTS if r[0] is True]
