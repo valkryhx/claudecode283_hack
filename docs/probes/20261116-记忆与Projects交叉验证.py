@@ -32,6 +32,7 @@ M2159_319 = "m2159_0x138a5541.js"   # runHeadless / drainPendingExtraction
 M0094_319 = "m0094_0x112cc57f.js"   # settings schema：disableAllHooks / disableReplyCheck 描述
 M0779_319 = "m0779_0x12409ec4.js"   # agent_summary 的 fork 构造点
 M0833_319 = "m0833_0x124cce31.js"   # auto-dream：runner / 阈值 / prompt / PXs
+M0191_319 = "m0191_0x1155a4cc.js"   # extract/dream 配置 schema 与落地
 M0349_319 = "m0349_0x1193beaf.js"   # Anthropic SDK：/v1/dreams 端点
 
 M0671_303 = "m0671_0xf53ce11.js"
@@ -153,6 +154,11 @@ def check_settingsoff_assignment():
 
 
 def main():
+    # 统一输出编码，避免 GBK 控制台对非 ASCII 符号报错
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
     verbose = "--verbose" in sys.argv
 
     # =====================================================================
@@ -378,6 +384,74 @@ def main():
     blank("J5 结论：MEMORY.md「被排除」≠「不出现」",
           "它不进 nested_memory（J3），但以 AutoMem 档进 instructions 附件（J1）——"
           "两条互斥的 producer，运行时实测见文档 §7.2")
+
+    # =====================================================================
+    # K. §8 读机制：双通道 + 延迟档 + 预算
+    # =====================================================================
+    check("K1 记忆正文必须是 .md 且不在排除集（U3e）",
+          M0591_319, "function U3e(e, n, r) {", expect_line=68651)
+    check("K2 nested_memory 的 producer 入口（无触发即返回空）",
+          M0591_319, "async function E0n(e, n) {", expect_line=153809)
+    check("K3 producer 内消费后清空触发队列",
+          M0591_319, "return r.length = 0, S", expect_line=153833)
+    check("K4 CLAUDE_CODE_DISABLE_CLAUDE_MDS 是读侧总开关",
+          M0591_319, "if (i.CLAUDE_CODE_DISABLE_CLAUDE_MDS) {", expect_line=153819)
+    check("K5 单轮注入正文候选上限 = 5（不是 200）",
+          M0591_319, ".slice(0, 5)", expect_line=153870)
+    check("K6 withheld 记账上限 = nD（两处命中 .slice(0, nD)，这里是第 2 处）",
+          M0591_319, ".slice(0, nD)", nth=2, expect_line=153193)
+    check("K7 扣留条目打包成 withheld_memory",
+          M0591_319, 'type: "withheld_memory",', expect_line=153154)
+    check("K8 扣留按 session token 记账",
+          M0591_319, "by: BT.of(e).token", expect_line=153159)
+    check("K9 relevance 检索是独立通道",
+          M0591_319, 'type: "relevant_memories",', expect_line=153873)
+    check("K10 延迟档在 afterToolStep + NO_WAIT 时启用",
+          M0591_319, "late_memory_context", expect_line=151789)
+
+    blank("K11 结论：读有三条通道 + 一条 relevance 旁路",
+          "索引走 instructions/AutoMem、正文走 nested_memory（读到才注入，每轮≤5 条）、"
+          "NO_WAIT 时走 late_memory_context、另有 relevant_memories")
+
+    # =====================================================================
+    # L. §9 写机制：5 道闸 / prose 闸 / first_look / 成本
+    # =====================================================================
+    check("L1 写触发在 Jd 内受 !Nr() 环境闸",
+          M0848_319, "!Nr()", expect_line=3849)
+    check("L2 写触发要求 !agentId 且后端 active",
+          M0848_319, "isLaptopExtractActive", expect_line=3851)
+    check("L3 sync 时才 await（否则 fire-and-forget）",
+          M0848_319, "fet()?.sync", expect_line=3853)
+    check("L4 直写闸 Nt（本窗口已写过则跳过）",
+          M0832_319, "Nt(messages_2", expect_line=938)
+    check("L5 频率闸 every_n_turns 的兜底值 1 只在本轮无配置时生效",
+          M0832_319, "every_n_turns", expect_line=959)
+    check("L6 schema 里 every_n_turns 默认 5（这才是配置下发后的真实默认）",
+          M0191_319, "every_n_turns: Xc().min(1).max(100).default(5)", expect_line=2370)
+    check("L7 SYNC 模式强制 everyNTurns=1",
+          M0191_319, "everyNTurns: s ? 1 : r.data.every_n_turns", expect_line=2417)
+    check("L8 prose 闸不通过则 return",
+          M0832_319, "if (!ur) {", expect_line=950)
+    check("L9 prose_gate 默认 legacy、min_prose_words 默认 3",
+          M0191_319, 'prose_gate: B(["legacy", "chat"]).catch("legacy")', expect_line=2374)
+    check("L10 CJK 一字算两词（Et = 2）",
+          M0832_319, "Et = 2", expect_line=127)
+    check("L11 prose 判定只算人的正文（跳过 isMeta/纯 tool_result）",
+          M0832_319, "function ce(e) {", expect_line=253)
+    check("L12 first_look 默认 off（成本闸默认不开）",
+          M0832_319, 'config_2.firstLook === void 0 ? "off"', expect_line=1015)
+    check("L13 first_look 是一次独立的模型调用",
+          M0832_319, 'querySource: "extract_memories_first_look"', expect_line=461)
+    check("L14 first_look 输出被 schema 锁成一个布尔",
+          M0832_319, "output_format", expect_line=444)
+    check("L15 max_turns 默认 4（限制子代理工具轮数）",
+          M0191_319, "max_turns: Xc().min(1).max(8).default(4)", expect_line=2371)
+    check("L16 写完后刷新主对话读缓存（K8n）",
+          M0832_319, "async function K8n(", expect_line=56)
+
+    blank("L17 结论：写不是每轮都发生",
+          "轮末触发，但要过 5 道闸；prose 闸把纯工具轮次挡在外面。"
+          "默认配置下 every_n_turns=5 + CJK 加权 prose 判定 => 实际写入频率远低于每轮")
 
     # =====================================================================
     # 输出

@@ -5,11 +5,11 @@ AGENTS.md §8.6 要求：反向确认必须同时含「应该 PASS」的用例�
 否则全绿和全红一样不携带信息。
 
 四个用例：
-  D. 正确断言 + 正确期望行号 → 应 PASS（证明引擎不是恒 FAIL）
-  A. 正确内容 + 错行号       → 应 FAIL（证明行号参与判定）
-  B. 不存在的字符串           → 应 FAIL（证明找不到会红）
-  C. must_not 撞真实存在      → 应 FAIL（证明否定断言有效）
-  E. 语义错配（把状态卡的片段挂到记忆写入的标题下）→ 应 FAIL
+  D. 正确断言 + 正确期望行号 -> 应 PASS（证明引擎不是恒 FAIL）
+  A. 正确内容 + 错行号       -> 应 FAIL（证明行号参与判定）
+  B. 不存在的字符串           -> 应 FAIL（证明找不到会红）
+  C. must_not 撞真实存在      -> 应 FAIL（证明否定断言有效）
+  E. 语义错配（把状态卡的片段挂到记忆写入的标题下）-> 应 FAIL
 """
 import os
 import sys
@@ -77,15 +77,30 @@ def case_g():
                     M, 'fork: "dream"', must_not=True)
 
 
-run_case("D. 正确断言 + 正确行号 → 应 PASS", case_d, True)
-run_case("A. 正确内容 + 错行号 → 应 FAIL", case_a, False)
-run_case("B. 不存在的字符串 → 应 FAIL", case_b, False)
-run_case("C. must_not 撞真实存在 → 应 FAIL", case_c, False)
-run_case("E. 语义错配（片段与行号不匹配）→ 应 FAIL", case_e, False)
-run_case("F. 字节偏移当行号（本轮真实踩过的坑）→ 应 FAIL", case_f, False)
-run_case("G. 跨模块 must_not → 应 PASS（m0848 确实没有）", case_g, True)
+def case_h():
+    """同一片段多处命中：不指定 nth 会取到第 1 处，行号断言必须能抓住。"""
+    # .slice(0, nD) 在 m0591 有 2 处（:69678 与 :153193），默认 nth=1 会落到 69678
+    return cv.check("H 多处命中未指定 nth（应落到第 1 处而非第 2 处）",
+                    "m0591_0x11be624e.js", ".slice(0, nD)", expect_line=153193)
 
-print("== 反向确认：七个用例都应满足预期 ==")
+
+def case_i():
+    """默认值口径错误：把"无配置时的兜底 1"当成"schema 默认 5"。"""
+    return cv.check("I 把兜底值 1 当成 schema 默认（m0832 只有兜底，没有 default(5)）",
+                    "m0832_0x124c3af6.js", ".default(5)", expect_line=959)
+
+
+run_case("D. 正确断言 + 正确行号 -> 应 PASS", case_d, True)
+run_case("A. 正确内容 + 错行号 -> 应 FAIL", case_a, False)
+run_case("B. 不存在的字符串 -> 应 FAIL", case_b, False)
+run_case("C. must_not 撞真实存在 -> 应 FAIL", case_c, False)
+run_case("E. 语义错配（片段与行号不匹配）-> 应 FAIL", case_e, False)
+run_case("F. 字节偏移当行号（本轮真实踩过的坑）-> 应 FAIL", case_f, False)
+run_case("G. 跨模块 must_not -> 应 PASS（m0848 确实没有）", case_g, True)
+run_case("H. 多处命中未指定 nth -> 应 FAIL", case_h, False)
+run_case("I. schema 默认值写错模块 -> 应 FAIL", case_i, False)
+
+print("== 反向确认：九个用例都应满足预期 ==")
 allok = True
 for passed, name, expect, got, detail in CASES:
     tag = "PASS" if passed else "BROKEN"
