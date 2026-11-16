@@ -525,6 +525,51 @@ def main():
           "(c) 召回要求输入含空白，中文整句不带空格则连召回都不触发——与 prose 闸同一类问题")
 
     # =====================================================================
+    # O. 第六轮：相关性判定走 LLM / owed 清零时机 / 并发写保护
+    # =====================================================================
+    check("O1 相关性判定的 prompt：明确要求挑有用的记忆",
+          M0591_319, "You are selecting memories that will be useful", expect_line=151404)
+    check("O2 prompt 里明写 up to 5（与代码 .slice(0,5) 双重约束）",
+          M0591_319, "up to 5", expect_line=151406)
+    check("O3 prompt 要求对 user/project 档保守",
+          M0591_319, "Be especially conservative with user-profile", expect_line=151409)
+    check("O4 判定输出被 JSON schema 锁成 selected_memories（第 2 处才是 schema）",
+          M0591_319, "selected_memories: {", expect_line=151511)
+    check("O5 判定 max_tokens = VGr = 512",
+          M0591_319, "VGr = 512", expect_line=151414)
+    check("O6 判定有独立 querySource（可单独计量成本）",
+          M0591_319, "querySource: RRe", expect_line=151523)
+    check("O7 模型回退链按单价挑备选（只接受不更贵的）",
+          M0591_319, "if (Gn(s) !== Gn(e) && F3(s) && h !== void 0 && h <= n) {", expect_line=151564)
+    check("O8 拒绝时换模型重试的包装器 ezr",
+          M0591_319, "async function ezr(e, n, r) {", expect_line=151581)
+
+    check("O9 owed 是 session 级 Map",
+          M0591_319, "var BT = new Je(() => ({", expect_line=69151)
+    check("O10 owed 写入有 nD 上限（超了静默丢弃）",
+          M0591_319, "if (!r.has(s.path) && r.size < nD) r.set(s.path, s)", expect_line=69176)
+    check("O11 读取并同时清除 = Y3e",
+          M0591_319, "function Y3e(e, n) {", expect_line=69186)
+    check("O12 withheld_memory producer 每轮调用 Y3e",
+          M0591_319, 'dc("withheld_memory"', expect_line=151789)
+
+    check("O13 extract 进程内并发标志 b（不并行、只尾随合并）",
+          M0832_319, "if (b) {", expect_line=1285)
+    check("O14 合并遥测 coalesced",
+          M0832_319, "stashing for trailing run", expect_line=1286)
+    check("O15 dream 跨进程抢锁函数",
+          "m0809_0x12481d5c.js", "async function S(e, n) {", expect_line=106)
+    check("O16 锁里记录持有者 PID，可判活",
+          "m0809_0x12481d5c.js", "if (i.holderPid !== void 0 && El(i.holderPid))", expect_line=112)
+    check("O17 CAS 写入（版本没变才写）",
+          "m0809_0x12481d5c.js", "write: h(process.pid, Date.now())", expect_line=115)
+
+    blank("O18 结论：三条机制各不相同，只有 dream 做了跨进程互斥",
+          "(a) 相关性判定是每轮一次 LLM side query（有 schema + 模型回退，成本真实）；"
+          "(b) owed 每轮清空但 Y3e 返回剩余全部 => 扣留通知会持续重复，不是只提示一次；"
+          "(c) extract 的并发保护只在进程内（合并尾随），跨进程无锁；dream 有 PID+CAS 文件锁，是三任务里唯一跨进程互斥的")
+
+    # =====================================================================
     # 输出
     # =====================================================================
     passed = [r for r in RESULTS if r[0] is True]

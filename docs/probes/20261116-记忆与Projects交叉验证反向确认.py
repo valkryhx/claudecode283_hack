@@ -116,6 +116,18 @@ def case_m():
                     "m0591_0x11be624e.js", 'v("', expect_line=153870)
 
 
+def case_n():
+    """误以为 Y3e 只返回本轮新增（实际返回剩余全部，所以扣留通知会持续重复）。"""
+    return cv.check("N 在 Y3e 里找 'return 新增' 语义（它是 return 剩余全部）",
+                    "m0591_0x11be624e.js", "return Array.from(r.values())", expect_line=69186)
+
+
+def case_o():
+    """误以为 extract 没有并发保护。b 标志就是进程内合并开关。"""
+    return cv.check("O 在 extract 的并发分支行找 coalesced 遥测（不在此行）",
+                    "m0832_0x124c3af6.js", "stashing for trailing run", expect_line=1285)
+
+
 run_case("D. 正确断言 + 正确行号 -> 应 PASS", case_d, True)
 run_case("A. 正确内容 + 错行号 -> 应 FAIL", case_a, False)
 run_case("B. 不存在的字符串 -> 应 FAIL", case_b, False)
@@ -129,8 +141,10 @@ run_case("J. 把 chat 的 CJK 加权套到 legacy 行 -> 应 FAIL", case_j, Fals
 run_case("K. 混淆 KEPT_MOST 与 SHOWN_MOST -> 应 FAIL", case_k, False)
 run_case("L. 以为去重是双向的 -> 应 FAIL", case_l, False)
 run_case("M. 以为 5 可配置 -> 应 FAIL", case_m, False)
+run_case("N. 以为 owed 只提示一次（Y3e 返回剩余全部，不是新增）-> 应 FAIL", case_n, False)
+run_case("O. 以为只有 dream 才有并发保护（extract 也有进程内合并）-> 应 FAIL", case_o, False)
 
-print("== 反向确认：十三个用例都应满足预期 ==")
+print("== 反向确认：十五个用例都应满足预期 ==")
 allok = True
 for passed, name, expect, got, detail in CASES:
     tag = "PASS" if passed else "BROKEN"
