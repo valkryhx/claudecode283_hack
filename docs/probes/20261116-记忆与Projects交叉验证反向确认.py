@@ -1,0 +1,101 @@
+# -*- coding: utf-8 -*-
+"""反向确认：证明 20261116-记忆与Projects交叉验证.py 的断言引擎真的会变红。
+
+AGENTS.md §8.6 要求：反向确认必须同时含「应该 PASS」的用例，
+否则全绿和全红一样不携带信息。
+
+四个用例：
+  D. 正确断言 + 正确期望行号 → 应 PASS（证明引擎不是恒 FAIL）
+  A. 正确内容 + 错行号       → 应 FAIL（证明行号参与判定）
+  B. 不存在的字符串           → 应 FAIL（证明找不到会红）
+  C. must_not 撞真实存在      → 应 FAIL（证明否定断言有效）
+  E. 语义错配（把状态卡的片段挂到记忆写入的标题下）→ 应 FAIL
+"""
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.join(ROOT, "docs", "probes"))
+
+import importlib.util
+
+spec = importlib.util.spec_from_file_location(
+    "crossval", os.path.join(ROOT, "docs", "probes", "20261116-记忆与Projects交叉验证.py"))
+cv = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(cv)
+
+M = "m0848_0x124d7ee6.js"
+CASES = []
+
+
+def run_case(name, fn, expect_pass):
+    before = len(cv.RESULTS)
+    ok = fn()
+    after = cv.RESULTS[before:]
+    del cv.RESULTS[before:]
+    got = bool(ok)
+    passed = got == expect_pass
+    CASES.append((passed, name, expect_pass, got, after))
+
+
+def case_d():
+    return cv.check("D 正确断言", M,
+                    "let ke = qn.executeExtractMemories(G, toolUseContext_5.appendSystemMessage);",
+                    expect_line=3852)
+
+
+def case_a():
+    return cv.check("A 错行号", M,
+                    "let ke = qn.executeExtractMemories(G, toolUseContext_5.appendSystemMessage);",
+                    expect_line=9999)
+
+
+def case_b():
+    return cv.check("B 不存在的串", M,
+                    "THIS_STRING_DOES_NOT_EXIST_ANYWHERE_XYZ", expect_line=1)
+
+
+def case_c():
+    return cv.check("C must_not 撞真实存在", M, "executeExtractMemories", must_not=True)
+
+
+def case_e():
+    # 状态卡的精确片段 + 记忆写入的行号：内容与坐标错配，必须红
+    return cv.check("E 语义错配（状态卡片段配记忆写入行号）", M,
+                    'subtype: "post_turn_summary",', expect_line=3852)
+
+
+def case_f():
+    """dream 的字节偏移当行号用：这轮真实踩过的错误（m0833 只有 410 行）。"""
+    return cv.check("F 把字节偏移当行号（m0833 无 758814 行）",
+                    "m0833_0x124cce31.js", "dream", expect_line=758814)
+
+
+def case_g():
+    """cross-module 撞名：dream 只存在于 m0833，m0848 里不该有。"""
+    return cv.check("G must_not 跨模块（m0848 不含 auto_dream 的 fork 标记）",
+                    M, 'fork: "dream"', must_not=True)
+
+
+run_case("D. 正确断言 + 正确行号 → 应 PASS", case_d, True)
+run_case("A. 正确内容 + 错行号 → 应 FAIL", case_a, False)
+run_case("B. 不存在的字符串 → 应 FAIL", case_b, False)
+run_case("C. must_not 撞真实存在 → 应 FAIL", case_c, False)
+run_case("E. 语义错配（片段与行号不匹配）→ 应 FAIL", case_e, False)
+run_case("F. 字节偏移当行号（本轮真实踩过的坑）→ 应 FAIL", case_f, False)
+run_case("G. 跨模块 must_not → 应 PASS（m0848 确实没有）", case_g, True)
+
+print("== 反向确认：七个用例都应满足预期 ==")
+allok = True
+for passed, name, expect, got, detail in CASES:
+    tag = "PASS" if passed else "BROKEN"
+    print("\n[%s] %s" % (tag, name))
+    print("        期望通过=%s，实际=%s" % (expect, got))
+    for ok, label, d in detail:
+        print("        %s %s | %s" % ("PASS" if ok else "FAIL", label, d))
+    if not passed:
+        allok = False
+
+print("\n%s" % ("反向确认通过：断言引擎会变红，不是恒绿。" if allok
+                else "反向确认失败：有用例没按预期变化，断言引擎不可信。"))
+sys.exit(0 if allok else 1)
